@@ -1,0 +1,25 @@
+name: validar-servidor
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-self-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar codigo
+        uses: actions/checkout@v4
+      - name: Preparar .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Restaurar
+        run: dotnet restore src/TurboRamaPixOnlineServer/TurboRamaPixOnlineServer.csproj
+      - name: Compilar com avisos como erro
+        run: dotnet build src/TurboRamaPixOnlineServer/TurboRamaPixOnlineServer.csproj -c Release --no-restore -warnaserror
+      - name: Executar autoteste sem dinheiro real
+        run: dotnet src/TurboRamaPixOnlineServer/bin/Release/net8.0/TurboRamaPixOnlineServer.dll --self-test

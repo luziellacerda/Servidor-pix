@@ -1,0 +1,42 @@
+# Compilacao .NET
+**/bin/
+**/obj/
+outputs/
+artifacts/
+TestResults/
+*.pdb
+.dotnet-cli-home/
+
+# IDE e sistema operacional
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+
+# Segredos e credenciais: nunca publicar
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.pem
+*.key
+*.jks
+*.keystore
+secrets/
+credentials/
+
+# Estado operacional e backups: nunca publicar
+data/
+state/
+**/state.json
+**/*.state.json
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+*.log
+*.tmp
