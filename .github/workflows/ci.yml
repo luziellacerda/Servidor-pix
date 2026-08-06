@@ -23,3 +23,9 @@ jobs:
         run: dotnet build src/TurboRamaPixOnlineServer/TurboRamaPixOnlineServer.csproj -c Release --no-restore -warnaserror
       - name: Executar autoteste sem dinheiro real
         run: dotnet src/TurboRamaPixOnlineServer/bin/Release/net8.0/TurboRamaPixOnlineServer.dll --self-test
+      - name: Validar publicacao portatil
+        run: >-
+          dotnet publish src/TurboRamaPixOnlineServer/TurboRamaPixOnlineServer.csproj
+          -c Release --no-restore --self-contained false -o artifacts/portable
+          -p:UseAppHost=false -p:IsTransformWebConfigDisabled=true
+          -p:DebugType=None -p:DebugSymbols=false -p:Deterministic=true

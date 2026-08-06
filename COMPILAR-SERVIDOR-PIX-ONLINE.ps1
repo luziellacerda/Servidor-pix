@@ -50,6 +50,7 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'Autoteste do servidor falhou.' }
     if ($RuntimeIdentifier -eq 'portable') {
         & $dotnet publish $Project -c Release --no-restore --self-contained false -o $publish `
+            -p:UseAppHost=false -p:IsTransformWebConfigDisabled=true `
             -p:DebugType=None -p:DebugSymbols=false -p:Deterministic=true
     }
     else {

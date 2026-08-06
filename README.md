@@ -41,13 +41,16 @@ O autoteste usa um provedor falso e não cria cobranças reais.
 
 ## Compilação para o Linux
 
-Com o Git limpo e revisado:
+O pacote portátil é o recomendado para o servidor Linux com ASP.NET Core Runtime 8 instalado. Com o
+Git limpo e revisado:
 
 ```powershell
-.\COMPILAR-SERVIDOR-PIX-ONLINE.ps1 -RuntimeIdentifier linux-x64
+.\COMPILAR-SERVIDOR-PIX-ONLINE.ps1 -RuntimeIdentifier portable
 ```
 
-A saída fica em `outputs/servidor-pix-online-linux-x64` e inclui checksums SHA-256. A pasta `outputs` é ignorada pelo Git.
+A saída fica em `outputs/servidor-pix-online-portable`, sem iniciador específico do Windows, e inclui
+checksums SHA-256. A pasta `outputs` é ignorada pelo Git. O alvo `linux-x64` permanece disponível
+quando for necessário publicar para um runtime específico.
 
 ## Configuração secreta
 
