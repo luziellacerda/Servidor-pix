@@ -13,6 +13,7 @@ Backend privado de licenciamento, prova de máquina e criação de cobranças PI
 - sessão exclusiva e registro de tentativas de clonagem;
 - tabela de preços controlada pelo servidor;
 - Access Token Mercado Pago cifrado com AES-256-GCM;
+- validação sem cobrança de que o caixa informado pertence à credencial Mercado Pago;
 - criação e consulta de orders QR do Mercado Pago;
 - estado autenticado com HMAC-SHA256 e gravação atômica;
 - autoteste sem dinheiro real e sem conexão com o Mercado Pago.
@@ -66,6 +67,17 @@ TURBORAMA_PAYMENT_EXPIRATION_MINUTES
 As duas chaves devem conter 32 bytes aleatórios em Base64 e precisam ser diferentes. `TURBORAMA_ALLOW_HTTP_LOOPBACK=true` é permitido apenas quando o Cloudflare Tunnel acessa a aplicação pela interface local do mesmo servidor.
 
 Consulte [a arquitetura completa](docs/ARQUITETURA-LICENCIAMENTO-ONLINE-PIX-v25.md) e [a implantação isolada no Linux](deploy/linux/README.md) antes de iniciar qualquer serviço.
+
+## Administração Mercado Pago
+
+O argumento usado como caixa é o `external_id` definido quando o PDV foi criado no Mercado Pago. Ele
+não é Public Key, Client ID, User ID nem o ID numérico interno do caixa. Segundo a documentação oficial,
+deve ser alfanumérico e possuir menos de 40 caracteres.
+
+`--set-mercadopago CLIENTE EXTERNAL_POS_ID` solicita o Access Token por entrada oculta, consulta
+`GET /pos?external_id=...` e só grava a credencial cifrada se encontrar exatamente o caixa informado.
+Essa consulta não cria order, QR ou cobrança. Depois, `--validate-mercadopago CLIENTE` permite repetir
+a validação usando a credencial já protegida no estado do servidor.
 
 ## Regras de segurança
 

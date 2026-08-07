@@ -87,15 +87,25 @@ if (args.Length == 3 && args[0].Equals("--set-mercadopago", StringComparison.Ord
     Console.WriteLine();
     try
     {
+        using var validator = new MercadoPagoServerGateway(repository, configuration.PaymentExpirationMinutes);
+        await validator.ValidateConnectionAsync(args[2], token, CancellationToken.None);
         repository.SetMercadoPagoConnection(args[1], args[2], token);
-        Console.WriteLine("Conexao Mercado Pago criptografada para o cliente. O token nao foi exibido nem salvo em texto aberto.");
+        Console.WriteLine("Conexao Mercado Pago e caixa validados sem cobranca. A credencial foi criptografada e nao foi exibida nem salva em texto aberto.");
         return 0;
     }
     finally { token = ""; }
 }
 
+if (args.Length == 2 && args[0].Equals("--validate-mercadopago", StringComparison.OrdinalIgnoreCase))
+{
+    using var validator = new MercadoPagoServerGateway(repository, configuration.PaymentExpirationMinutes);
+    await validator.ValidateStoredConnectionAsync(args[1], CancellationToken.None);
+    Console.WriteLine("Conexao Mercado Pago valida; o caixa cadastrado pertence a credencial protegida.");
+    return 0;
+}
+
 if (args.Length != 0)
-    throw new InvalidOperationException("Comando desconhecido. Use --self-test, --create-license, --list-licenses, --list-devices, --issue-activation-code, --set-prices, --set-mercadopago, --set-license-status, --set-device-status ou --force-reauth.");
+    throw new InvalidOperationException("Comando desconhecido. Use --self-test, --create-license, --list-licenses, --list-devices, --issue-activation-code, --set-prices, --set-mercadopago, --validate-mercadopago, --set-license-status, --set-device-status ou --force-reauth.");
 
 var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.ConfigureKestrel(options => options.Limits.MaxRequestBodySize = OnlineLicenseProtocol.MaximumBodyBytes);

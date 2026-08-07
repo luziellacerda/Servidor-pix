@@ -943,7 +943,7 @@ interface IPixPaymentGateway
     Task<OnlineOrderResponse> ReadAsync(string customerId, OnlinePaymentReadContext context, CancellationToken token);
 }
 
-sealed class MercadoPagoServerGateway : IPixPaymentGateway
+sealed class MercadoPagoServerGateway : IPixPaymentGateway, IDisposable
 {
     private readonly HttpClient _http;
     private readonly OnlineStateRepository _repository;
@@ -960,6 +960,39 @@ sealed class MercadoPagoServerGateway : IPixPaymentGateway
         _http.Timeout = TimeSpan.FromSeconds(20);
         _http.DefaultRequestHeaders.UserAgent.ParseAdd("TurboRamaPixOnlineServer/1.0");
     }
+
+    public async Task ValidateStoredConnectionAsync(string customerId, CancellationToken token)
+    {
+        var connection = _repository.GetMercadoPagoConnection(customerId);
+        await ValidateConnectionAsync(connection.ExternalPosId, connection.AccessToken, token);
+    }
+
+    public async Task ValidateConnectionAsync(string externalPosId, string accessToken, CancellationToken token)
+    {
+        externalPosId = (externalPosId ?? "").Trim();
+        accessToken = (accessToken ?? "").Trim();
+        if (externalPosId.Length is < 1 or > 40 || !externalPosId.All(char.IsAsciiLetterOrDigit))
+            throw new SecurityException("O ExternalPosId e invalido.");
+        if (accessToken.Length is < 40 or > 384 || !accessToken.StartsWith("APP_USR-", StringComparison.Ordinal)
+            || accessToken.Any(char.IsWhiteSpace))
+            throw new SecurityException("O Access Token possui formato invalido.");
+
+        using var message = Authorized(HttpMethod.Get,
+            "pos?external_id=" + Uri.EscapeDataString(externalPosId), accessToken);
+        message.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        using var response = await _http.SendAsync(message, HttpCompletionOption.ResponseHeadersRead, token);
+        using var root = await ReadJsonAsync(response, token);
+        if (!root.RootElement.TryGetProperty("results", out var results)
+            || results.ValueKind != JsonValueKind.Array)
+            throw new SecurityException("O Mercado Pago retornou uma lista de caixas invalida.");
+
+        var matches = results.EnumerateArray().Count(item =>
+            String(item, "external_id").Equals(externalPosId, StringComparison.Ordinal));
+        if (matches != 1)
+            throw new SecurityException("O caixa informado nao pertence a credencial do Mercado Pago.");
+    }
+
+    public void Dispose() => _http.Dispose();
 
     public async Task<OnlineOrderResponse> CreateAsync(string customerId,
         OnlinePaymentCreateContext context, string idempotencyKey, CancellationToken token)
@@ -1026,7 +1059,9 @@ sealed class MercadoPagoServerGateway : IPixPaymentGateway
             if (bytes.Length < 2) throw new OnlineServerException(502, "PROVIDER_INVALID", "BODY_SIZE");
             if (!response.IsSuccessStatusCode)
                 throw new OnlineServerException((int)response.StatusCode, "PROVIDER_DENIED", "MERCADOPAGO_DENIED");
-            try { return JsonDocument.Parse(bytes); }
+            // JsonDocument can retain the supplied buffer. Give it an owned copy before clearing the
+            // transport buffer, otherwise the parsed provider response becomes corrupted after return.
+            try { return JsonDocument.Parse(bytes.ToArray()); }
             catch (JsonException ex) { throw new OnlineServerException(502, "PROVIDER_INVALID", ex.Message); }
         }
         finally { CryptographicOperations.ZeroMemory(bytes); }
