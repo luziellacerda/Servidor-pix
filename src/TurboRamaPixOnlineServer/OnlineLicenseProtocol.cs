@@ -79,6 +79,8 @@ sealed record OnlineOperationProof(
 sealed record OnlinePaymentCreateProof(OnlineOperationProof Proof, OnlinePaymentCreateContext Context);
 sealed record OnlinePaymentReadProof(OnlineOperationProof Proof, OnlinePaymentReadContext Context);
 sealed record OnlineSessionProof(OnlineOperationProof Proof, OnlineSessionContext Context);
+sealed record OnlineConfigurationReadProof(OnlineOperationProof Proof, OnlineConfigurationReadContext Context);
+sealed record OnlineConfigurationWriteProof(OnlineOperationProof Proof, OnlineConfigurationWriteContext Context);
 
 sealed record OnlineActivationResult(
     int SchemaVersion,
@@ -109,6 +111,25 @@ sealed record OnlinePaymentReadContext(
     string ProviderOrderId,
     long AmountCents,
     string Currency);
+
+sealed record OnlineConfigurationReadContext(
+    int SchemaVersion,
+    string SessionId,
+    long KnownVersion);
+
+sealed record OnlineConfigurationWriteContext(
+    int SchemaVersion,
+    string SessionId,
+    long ExpectedVersion,
+    Dictionary<int, long> PackagePricesCents);
+
+sealed record OnlinePriceConfigurationResponse(
+    int SchemaVersion,
+    string LicenseId,
+    long Version,
+    bool PixEnabled,
+    Dictionary<int, long> PackagePricesCents,
+    long UpdatedAtUnixSeconds);
 
 sealed record OnlineOrderResponse(
     int SchemaVersion,
@@ -189,6 +210,18 @@ static class OnlineLicenseProtocol
     {
         ArgumentNullException.ThrowIfNull(context);
         return HashCanonical(writer => WritePaymentReadContext(writer, context));
+    }
+
+    public static string ContextHash(OnlineConfigurationReadContext context)
+    {
+        ArgumentNullException.ThrowIfNull(context);
+        return HashCanonical(writer => WriteConfigurationReadContext(writer, context));
+    }
+
+    public static string ContextHash(OnlineConfigurationWriteContext context)
+    {
+        ArgumentNullException.ThrowIfNull(context);
+        return HashCanonical(writer => WriteConfigurationWriteContext(writer, context));
     }
 
     public static string ActivationContextHash(string licenseId, OnlineDeviceDescriptor device)
@@ -385,9 +418,50 @@ static class OnlineLicenseProtocol
         writer.WriteEndObject();
     }
 
+    private static void WriteConfigurationReadContext(Utf8JsonWriter writer,
+        OnlineConfigurationReadContext context)
+    {
+        if (context.SchemaVersion != SchemaVersion || context.KnownVersion < 0)
+            throw new SecurityException("O contexto de leitura da configuracao e invalido.");
+        writer.WriteStartObject();
+        writer.WriteNumber("schemaVersion", context.SchemaVersion);
+        writer.WriteString("sessionId", RequireHex(context.SessionId, "SessionId", 64));
+        writer.WriteNumber("knownVersion", context.KnownVersion);
+        writer.WriteEndObject();
+    }
+
+    private static void WriteConfigurationWriteContext(Utf8JsonWriter writer,
+        OnlineConfigurationWriteContext context)
+    {
+        if (context.SchemaVersion != SchemaVersion || context.ExpectedVersion < 0)
+            throw new SecurityException("O contexto de escrita da configuracao e invalido.");
+        ValidatePackagePrices(context.PackagePricesCents);
+        writer.WriteStartObject();
+        writer.WriteNumber("schemaVersion", context.SchemaVersion);
+        writer.WriteString("sessionId", RequireHex(context.SessionId, "SessionId", 64));
+        writer.WriteNumber("expectedVersion", context.ExpectedVersion);
+        writer.WritePropertyName("packagePricesCents");
+        writer.WriteStartObject();
+        foreach (var minutes in new[] { 15, 30, 45, 60, 120 })
+            writer.WriteNumber(minutes.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                context.PackagePricesCents[minutes]);
+        writer.WriteEndObject();
+        writer.WriteEndObject();
+    }
+
+    public static void ValidatePackagePrices(IReadOnlyDictionary<int, long>? prices)
+    {
+        var required = new[] { 15, 30, 45, 60, 120 };
+        if (prices is null || prices.Count != required.Length
+            || required.Any(minutes => !prices.TryGetValue(minutes, out var cents)
+                || cents is < 50 or > 100_000_000))
+            throw new SecurityException("A tabela de precos da configuracao e invalida.");
+    }
+
     private static string RequireAction(string? action) => action switch
     {
-        "device.activate" or "session.open" or "session.heartbeat" or "payment.create" or "payment.read" => action,
+        "device.activate" or "session.open" or "session.heartbeat" or "payment.create" or "payment.read"
+            or "configuration.read" or "configuration.write" => action,
         _ => throw new SecurityException("A acao on-line e invalida.")
     };
 

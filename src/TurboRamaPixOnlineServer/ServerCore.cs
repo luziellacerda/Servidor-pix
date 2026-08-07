@@ -88,10 +88,13 @@ sealed class OnlineLicenseEntry
     public string LicenseId { get; set; } = "";
     public string BindingType { get; set; } = "";
     public string Status { get; set; } = "ACTIVE";
+    public bool PixEnabled { get; set; } = true;
     public int MaximumDevices { get; set; } = 1;
     public string ActivationSalt { get; set; } = "";
     public string ActivationHash { get; set; } = "";
     public Dictionary<int, long> PackagePricesCents { get; set; } = [];
+    public long ConfigurationVersion { get; set; }
+    public long ConfigurationUpdatedAtUnixSeconds { get; set; }
     public List<OnlineDeviceEntry> Devices { get; set; } = [];
 }
 
@@ -104,6 +107,7 @@ sealed class OnlineDeviceEntry
     public string ActiveSessionId { get; set; } = "";
     public long SessionExpiresAtUnixSeconds { get; set; }
     public int RejectedAttempts { get; set; }
+    public bool CanManageConfiguration { get; set; }
 }
 
 sealed class OnlinePaymentEntry
@@ -123,6 +127,20 @@ sealed class OnlinePaymentEntry
 
 sealed record OnlineAuditEntry(long AtUnixSeconds, string Event, string LicenseId,
     string DeviceId, string Detail);
+
+sealed record AdminDeviceSnapshot(string DeviceId, string Status, string BindingType,
+    string AgentVersion, long ActivatedAtUnixSeconds, long LastContactUnixSeconds,
+    long SessionExpiresAtUnixSeconds, bool Online, int RejectedAttempts,
+    bool CanManageConfiguration);
+
+sealed record AdminLicenseSnapshot(string CustomerId, string LicenseId, string Status,
+    bool PixEnabled, string BindingType, int MaximumDevices, long ConfigurationVersion,
+    long ConfigurationUpdatedAtUnixSeconds, IReadOnlyDictionary<int, long> PackagePricesCents,
+    IReadOnlyList<AdminDeviceSnapshot> Devices, bool MercadoPagoConfigured, string ExternalPosId);
+
+sealed record AdminDashboardSnapshot(long GeneratedAtUnixSeconds,
+    int RejectedMachineAttempts, IReadOnlyList<AdminLicenseSnapshot> Licenses,
+    IReadOnlyList<OnlineAuditEntry> RecentAudit);
 
 sealed record StateEnvelope(int SchemaVersion, string Payload, string Hmac);
 
@@ -159,7 +177,15 @@ sealed class OnlineStateRepository : IDisposable
         }
         try
         {
-            lock (_gate) { if (!File.Exists(_path)) SaveUnlocked(new OnlineServerState()); else _ = LoadUnlocked(); }
+            lock (_gate)
+            {
+                if (!File.Exists(_path)) SaveUnlocked(new OnlineServerState());
+                else
+                {
+                    var state = LoadUnlocked();
+                    if (NormalizeState(state)) SaveUnlocked(state);
+                }
+            }
         }
         catch
         {
@@ -196,6 +222,7 @@ sealed class OnlineStateRepository : IDisposable
                 LicenseId = licenseId,
                 BindingType = OnlineProtectionProfileCodec.Format(profile),
                 Status = "ACTIVE",
+                PixEnabled = true,
                 MaximumDevices = maximumDevices,
                 ActivationSalt = Convert.ToBase64String(salt),
                 ActivationHash = Convert.ToBase64String(hash)
@@ -243,6 +270,24 @@ sealed class OnlineStateRepository : IDisposable
         }
     }
 
+    public void SetPixEnabled(string licenseId, bool enabled)
+    {
+        licenseId = OnlineLicenseProtocol.RequireIdentifier(licenseId, "LicenseId", 6, 64);
+        lock (_gate)
+        {
+            var state = LoadUnlocked();
+            var license = state.Licenses.SingleOrDefault(item => item.LicenseId == licenseId)
+                ?? throw new InvalidOperationException("A licenca nao existe.");
+            license.PixEnabled = enabled;
+            if (!enabled)
+                foreach (var device in license.Devices) ClearSession(device);
+            state.Audit.Add(new OnlineAuditEntry(Now(), enabled ? "PIX_ENABLED" : "PIX_DISABLED",
+                licenseId, "", "admin_panel"));
+            TrimAudit(state);
+            SaveUnlocked(state);
+        }
+    }
+
     public void SetDeviceStatus(string licenseId, string deviceId, string status)
     {
         licenseId = OnlineLicenseProtocol.RequireIdentifier(licenseId, "LicenseId", 6, 64);
@@ -276,6 +321,25 @@ sealed class OnlineStateRepository : IDisposable
                 ?? throw new InvalidOperationException("A maquina nao existe.");
             ClearSession(device);
             state.Audit.Add(new OnlineAuditEntry(Now(), "FORCE_REAUTH", licenseId, deviceId, "session_cleared"));
+            TrimAudit(state);
+            SaveUnlocked(state);
+        }
+    }
+
+    public void SetDeviceConfigurationPermission(string licenseId, string deviceId, bool allowed)
+    {
+        licenseId = OnlineLicenseProtocol.RequireIdentifier(licenseId, "LicenseId", 6, 64);
+        deviceId = OnlineLicenseProtocol.RequireHex(deviceId, "DeviceId", 64);
+        lock (_gate)
+        {
+            var state = LoadUnlocked();
+            var license = state.Licenses.SingleOrDefault(item => item.LicenseId == licenseId)
+                ?? throw new InvalidOperationException("A licenca nao existe.");
+            var device = license.Devices.SingleOrDefault(item => item.Descriptor.DeviceId == deviceId)
+                ?? throw new InvalidOperationException("A maquina nao existe.");
+            device.CanManageConfiguration = allowed;
+            state.Audit.Add(new OnlineAuditEntry(Now(), "DEVICE_CONFIGURATION_PERMISSION_CHANGED",
+                licenseId, deviceId, allowed ? "allowed" : "denied"));
             TrimAudit(state);
             SaveUnlocked(state);
         }
@@ -323,7 +387,135 @@ sealed class OnlineStateRepository : IDisposable
             var license = state.Licenses.SingleOrDefault(item => item.LicenseId == licenseId)
                 ?? throw new InvalidOperationException("A licenca nao existe.");
             license.PackagePricesCents = required.ToDictionary(minutes => minutes, minutes => prices[minutes]);
-            state.Audit.Add(new OnlineAuditEntry(Now(), "PRICE_TABLE_UPDATED", licenseId, "", "five_packages"));
+            license.ConfigurationVersion = Math.Max(1, license.ConfigurationVersion + 1);
+            license.ConfigurationUpdatedAtUnixSeconds = Now();
+            state.Audit.Add(new OnlineAuditEntry(Now(), "PRICE_TABLE_UPDATED", licenseId, "", "admin"));
+            TrimAudit(state);
+            SaveUnlocked(state);
+        }
+    }
+
+    public OnlinePriceConfigurationResponse ReadPriceConfiguration(string licenseId, string deviceId,
+        string sessionId)
+    {
+        licenseId = OnlineLicenseProtocol.RequireIdentifier(licenseId, "LicenseId", 6, 64);
+        deviceId = OnlineLicenseProtocol.RequireHex(deviceId, "DeviceId", 64);
+        sessionId = OnlineLicenseProtocol.RequireHex(sessionId, "SessionId", 64);
+        lock (_gate)
+        {
+            var state = LoadUnlocked();
+            var license = RequireConfigurationSession(state, licenseId, deviceId, sessionId);
+            ValidatePrices(license.PackagePricesCents);
+            return ToPriceConfiguration(license);
+        }
+    }
+
+    public OnlinePriceConfigurationResponse UpdatePriceConfigurationFromDevice(string licenseId,
+        string deviceId, string sessionId, long expectedVersion, IReadOnlyDictionary<int, long> prices)
+    {
+        licenseId = OnlineLicenseProtocol.RequireIdentifier(licenseId, "LicenseId", 6, 64);
+        deviceId = OnlineLicenseProtocol.RequireHex(deviceId, "DeviceId", 64);
+        sessionId = OnlineLicenseProtocol.RequireHex(sessionId, "SessionId", 64);
+        ValidatePrices(prices);
+        lock (_gate)
+        {
+            var state = LoadUnlocked();
+            var license = RequireConfigurationSession(state, licenseId, deviceId, sessionId);
+            var device = license.Devices.Single(item => item.Descriptor.DeviceId == deviceId);
+            if (!device.CanManageConfiguration)
+                throw new OnlineServerException(403, "CONFIGURATION_WRITE_DENIED", "CONFIGURATION_WRITE_DENIED");
+            if (license.ConfigurationVersion != expectedVersion)
+                throw new OnlineServerException(409, "CONFIGURATION_CONFLICT", "CONFIGURATION_CONFLICT");
+            license.PackagePricesCents = RequiredPriceMinutes.ToDictionary(
+                minutes => minutes, minutes => prices[minutes]);
+            license.ConfigurationVersion = Math.Max(1, license.ConfigurationVersion + 1);
+            license.ConfigurationUpdatedAtUnixSeconds = Now();
+            state.Audit.Add(new OnlineAuditEntry(Now(), "PRICE_TABLE_UPDATED", licenseId, deviceId,
+                "registered_device"));
+            TrimAudit(state);
+            SaveUnlocked(state);
+            return ToPriceConfiguration(license);
+        }
+    }
+
+    public AdminDashboardSnapshot ReadAdminDashboard(int auditLimit = 100)
+    {
+        auditLimit = Math.Clamp(auditLimit, 1, 500);
+        lock (_gate)
+        {
+            var state = LoadUnlocked();
+            var now = Now();
+            var licenses = state.Licenses
+                .OrderBy(item => item.LicenseId, StringComparer.Ordinal)
+                .Select(license =>
+                {
+                    var customer = state.Customers.SingleOrDefault(item => item.CustomerId == license.CustomerId);
+                    var connection = customer?.MercadoPago;
+                    var devices = license.Devices
+                        .OrderBy(item => item.Descriptor.DeviceId, StringComparer.Ordinal)
+                        .Select(device => new AdminDeviceSnapshot(
+                            device.Descriptor.DeviceId,
+                            device.Status,
+                            device.Descriptor.BindingType,
+                            device.Descriptor.AgentVersion,
+                            device.ActivatedAtUnixSeconds,
+                            device.LastContactUnixSeconds,
+                            device.SessionExpiresAtUnixSeconds,
+                            device.Status == "ACTIVE" && device.SessionExpiresAtUnixSeconds >= now,
+                            device.RejectedAttempts,
+                            device.CanManageConfiguration))
+                        .ToArray();
+                    return new AdminLicenseSnapshot(
+                        license.CustomerId,
+                        license.LicenseId,
+                        license.Status,
+                        license.PixEnabled,
+                        license.BindingType,
+                        license.MaximumDevices,
+                        license.ConfigurationVersion,
+                        license.ConfigurationUpdatedAtUnixSeconds,
+                        new Dictionary<int, long>(license.PackagePricesCents),
+                        devices,
+                        connection is not null,
+                        connection?.ExternalPosId ?? "");
+                })
+                .ToArray();
+            var audit = state.Audit.TakeLast(auditLimit).Reverse().ToArray();
+            var rejectedMachineAttempts = state.Audit.Count(item => IsRejectedMachineEvent(item.Event));
+            return new AdminDashboardSnapshot(now, rejectedMachineAttempts, licenses, audit);
+        }
+    }
+
+    public void RecordSecurityAttempt(string eventName, string licenseId, string deviceId, string detail)
+    {
+        eventName = OnlineLicenseProtocol.RequireIdentifier(eventName, "Event", 3, 64);
+        licenseId = OnlineLicenseProtocol.RequireIdentifier(licenseId, "LicenseId", 6, 64);
+        deviceId = OnlineLicenseProtocol.RequireHex(deviceId, "DeviceId", 64);
+        detail = (detail ?? "").Trim();
+        if (detail.Length > 128 || detail.Any(char.IsControl))
+            throw new SecurityException("O detalhe de seguranca e invalido.");
+        lock (_gate)
+        {
+            var state = LoadUnlocked();
+            var knownDevice = state.Licenses.SingleOrDefault(item => item.LicenseId == licenseId)?
+                .Devices.SingleOrDefault(item => item.Descriptor.DeviceId == deviceId);
+            if (knownDevice is not null) knownDevice.RejectedAttempts++;
+            state.Audit.Add(new OnlineAuditEntry(Now(), eventName, licenseId, deviceId, detail));
+            TrimAudit(state);
+            SaveUnlocked(state);
+        }
+    }
+
+    public void RecordAdministrativeEvent(string eventName, string detail)
+    {
+        eventName = OnlineLicenseProtocol.RequireIdentifier(eventName, "Event", 3, 64);
+        detail = (detail ?? "").Trim();
+        if (detail.Length > 128 || detail.Any(character => char.IsControl(character)))
+            throw new SecurityException("O detalhe administrativo e invalido.");
+        lock (_gate)
+        {
+            var state = LoadUnlocked();
+            state.Audit.Add(new OnlineAuditEntry(Now(), eventName, "", "", detail));
             TrimAudit(state);
             SaveUnlocked(state);
         }
@@ -492,6 +684,40 @@ sealed class OnlineStateRepository : IDisposable
         }
     }
 
+    private static bool NormalizeState(OnlineServerState state)
+    {
+        var changed = false;
+        foreach (var license in state.Licenses)
+        {
+            license.PackagePricesCents ??= [];
+            license.Devices ??= [];
+            if (license.ConfigurationVersion < 1 && PricesAreValid(license.PackagePricesCents))
+            {
+                license.ConfigurationVersion = 1;
+                license.ConfigurationUpdatedAtUnixSeconds = Math.Max(1, Now());
+                state.Audit.Add(new OnlineAuditEntry(Now(), "CONFIGURATION_MIGRATED",
+                    license.LicenseId, "", "existing_prices_preserved"));
+                changed = true;
+            }
+            if (license.Devices.Count != 0 && !license.Devices.Any(device => device.CanManageConfiguration))
+            {
+                var firstActive = license.Devices
+                    .Where(device => device.Status == "ACTIVE")
+                    .OrderBy(device => device.ActivatedAtUnixSeconds)
+                    .FirstOrDefault();
+                if (firstActive is not null)
+                {
+                    firstActive.CanManageConfiguration = true;
+                    state.Audit.Add(new OnlineAuditEntry(Now(), "DEVICE_CONFIGURATION_PERMISSION_MIGRATED",
+                        license.LicenseId, firstActive.Descriptor.DeviceId, "first_active_device"));
+                    changed = true;
+                }
+            }
+        }
+        if (changed) TrimAudit(state);
+        return changed;
+    }
+
     private void SaveUnlocked(OnlineServerState state)
     {
         var payload = JsonSerializer.SerializeToUtf8Bytes(state, Json.Options);
@@ -537,6 +763,43 @@ sealed class OnlineStateRepository : IDisposable
     }
 
     private static long Now() => DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+    private static readonly int[] RequiredPriceMinutes = [15, 30, 45, 60, 120];
+    private static readonly HashSet<string> RejectedMachineEvents = new(StringComparer.Ordinal)
+    {
+        "ACTIVATION_INVALID", "BINDING_DOWNGRADE_DENIED", "DEVICE_LIMIT_REACHED",
+        "DEVICE_UNKNOWN", "MACHINE_PROOF_INVALID", "MACHINE_BINDING_MISMATCH",
+        "DUPLICATE_SESSION_DENIED"
+    };
+    private static bool IsRejectedMachineEvent(string eventName) => RejectedMachineEvents.Contains(eventName);
+    private static bool PricesAreValid(IReadOnlyDictionary<int, long> prices)
+        => prices.Count == RequiredPriceMinutes.Length
+            && RequiredPriceMinutes.All(minutes => prices.TryGetValue(minutes, out var cents)
+                && cents is >= 50 and <= 100_000_000);
+    private static void ValidatePrices(IReadOnlyDictionary<int, long> prices)
+    {
+        if (!PricesAreValid(prices))
+            throw new SecurityException("A tabela deve conter os cinco pacotes e valores validos em centavos.");
+    }
+    private static OnlinePriceConfigurationResponse ToPriceConfiguration(OnlineLicenseEntry license)
+        => new(OnlineLicenseProtocol.SchemaVersion, license.LicenseId, license.ConfigurationVersion,
+            license.PixEnabled, new Dictionary<int, long>(license.PackagePricesCents),
+            license.ConfigurationUpdatedAtUnixSeconds);
+    private static OnlineLicenseEntry RequireConfigurationSession(OnlineServerState state,
+        string licenseId, string deviceId, string sessionId)
+    {
+        var license = state.Licenses.SingleOrDefault(item => item.LicenseId == licenseId);
+        var customer = license is null ? null
+            : state.Customers.SingleOrDefault(item => item.CustomerId == license.CustomerId);
+        if (license is null || license.Status != "ACTIVE" || customer is null || customer.Status != "ACTIVE")
+            throw new OnlineServerException(403, "LICENSE_REVOKED", "LICENSE_REVOKED");
+        var device = license.Devices.SingleOrDefault(item => item.Descriptor.DeviceId == deviceId);
+        if (device is null || device.Status != "ACTIVE")
+            throw new OnlineServerException(403, "MACHINE_BINDING_MISMATCH", "MACHINE_BINDING_MISMATCH");
+        if (device.SessionExpiresAtUnixSeconds < Now()
+            || !device.ActiveSessionId.Equals(sessionId, StringComparison.Ordinal))
+            throw new OnlineServerException(409, "SESSION_EXPIRED", "SESSION_EXPIRED");
+        return license;
+    }
     private static string RequireStatus(string? status, bool allowTransfer)
     {
         var normalized = (status ?? "").Trim().ToUpperInvariant();
@@ -583,19 +846,29 @@ sealed class OnlineLicensingService
         var spki = OnlineLicenseProtocol.ParseAndValidateSpki(request.Device);
         CryptographicOperations.ZeroMemory(spki);
         var contextHash = OnlineLicenseProtocol.ActivationContextHash(request.LicenseId, request.Device);
-        var activationVerifier = _repository.Read(state =>
+        string activationVerifier;
+        try
         {
-            var license = RequireActiveLicense(state, request.LicenseId);
-            if (!license.BindingType.Equals(request.Device.BindingType, StringComparison.Ordinal))
-                Deny("BINDING_DOWNGRADE_DENIED");
-            if (string.IsNullOrEmpty(license.ActivationHash)
-                || !_repository.VerifyActivationCode(license, activationCode))
-                Deny("ACTIVATION_INVALID");
-            if (license.Devices.Count(device => device.Status == "ACTIVE") >= license.MaximumDevices
-                && !license.Devices.Any(device => device.Descriptor.DeviceId == request.Device.DeviceId))
-                Deny("DEVICE_LIMIT_REACHED");
-            return license.ActivationHash;
-        });
+            activationVerifier = _repository.Read(state =>
+            {
+                var license = RequireActiveLicense(state, request.LicenseId);
+                if (!license.BindingType.Equals(request.Device.BindingType, StringComparison.Ordinal))
+                    Deny("BINDING_DOWNGRADE_DENIED");
+                if (string.IsNullOrEmpty(license.ActivationHash)
+                    || !_repository.VerifyActivationCode(license, activationCode))
+                    Deny("ACTIVATION_INVALID");
+                if (license.Devices.Count(device => device.Status == "ACTIVE") >= license.MaximumDevices
+                    && !license.Devices.Any(device => device.Descriptor.DeviceId == request.Device.DeviceId))
+                    Deny("DEVICE_LIMIT_REACHED");
+                return license.ActivationHash;
+            });
+        }
+        catch (OnlineServerException ex) when (IsRejectedMachineReason(ex.InternalReason))
+        {
+            _repository.RecordSecurityAttempt(ex.InternalReason, request.LicenseId,
+                request.Device.DeviceId, "activation_challenge_denied");
+            throw;
+        }
         return Task.FromResult(CreateChallenge(request.LicenseId, request.Device.DeviceId, "",
             "device.activate", contextHash, activationVerifier));
     }
@@ -608,46 +881,56 @@ sealed class OnlineLicensingService
         var challenge = ConsumeChallenge(proof.ChallengeId, "device.activate");
         var contextHash = OnlineLicenseProtocol.ActivationContextHash(proof.LicenseId, proof.Device);
         RequireChallengeMatch(challenge, proof.LicenseId, proof.Device.DeviceId, "", "device.activate", contextHash);
-        if (!OnlineLicenseProtocol.VerifyProof(proof.Device, challenge.Response, proof.LicenseId,
-                "", "device.activate", contextHash, proof.Signature))
-            Deny("MACHINE_PROOF_INVALID");
-        var result = _repository.Update(state =>
+        try
         {
-            var license = RequireActiveLicense(state, proof.LicenseId);
-            if (!license.BindingType.Equals(proof.Device.BindingType, StringComparison.Ordinal))
-                Deny("BINDING_DOWNGRADE_DENIED");
-            if (string.IsNullOrEmpty(challenge.ActivationVerifier)
-                || !FixedBase64Equals(license.ActivationHash, challenge.ActivationVerifier))
-                Deny("ACTIVATION_INVALID");
-            var device = license.Devices.SingleOrDefault(item => item.Descriptor.DeviceId == proof.Device.DeviceId);
-            if (device is null)
+            if (!OnlineLicenseProtocol.VerifyProof(proof.Device, challenge.Response, proof.LicenseId,
+                    "", "device.activate", contextHash, proof.Signature))
+                Deny("MACHINE_PROOF_INVALID");
+            var result = _repository.Update(state =>
             {
-                if (license.Devices.Count(item => item.Status == "ACTIVE") >= license.MaximumDevices)
-                    Deny("DEVICE_LIMIT_REACHED");
-                device = new OnlineDeviceEntry
+                var license = RequireActiveLicense(state, proof.LicenseId);
+                if (!license.BindingType.Equals(proof.Device.BindingType, StringComparison.Ordinal))
+                    Deny("BINDING_DOWNGRADE_DENIED");
+                if (string.IsNullOrEmpty(challenge.ActivationVerifier)
+                    || !FixedBase64Equals(license.ActivationHash, challenge.ActivationVerifier))
+                    Deny("ACTIVATION_INVALID");
+                var device = license.Devices.SingleOrDefault(item => item.Descriptor.DeviceId == proof.Device.DeviceId);
+                if (device is null)
                 {
-                    Descriptor = proof.Device,
-                    Status = "ACTIVE",
-                    ActivatedAtUnixSeconds = Now(),
-                    LastContactUnixSeconds = Now()
-                };
-                license.Devices.Add(device);
-            }
-            else
-            {
-                if (!DescriptorsEqual(device.Descriptor, proof.Device)) Deny("MACHINE_BINDING_MISMATCH");
-                device.Status = "ACTIVE";
-                device.LastContactUnixSeconds = Now();
-            }
-            // O codigo validado ao criar o desafio e de uso unico. Um novo
-            // cadastro ou transferencia exige emissao administrativa de outro.
-            license.ActivationSalt = "";
-            license.ActivationHash = "";
-            state.Audit.Add(new OnlineAuditEntry(Now(), "DEVICE_ACTIVATED", license.LicenseId,
-                proof.Device.DeviceId, proof.Device.BindingType));
-            return new OnlineActivationResult(1, "ACTIVE", proof.Device.DeviceId, proof.Device.BindingType);
-        });
-        return Task.FromResult(result);
+                    if (license.Devices.Count(item => item.Status == "ACTIVE") >= license.MaximumDevices)
+                        Deny("DEVICE_LIMIT_REACHED");
+                    device = new OnlineDeviceEntry
+                    {
+                        Descriptor = proof.Device,
+                        Status = "ACTIVE",
+                        ActivatedAtUnixSeconds = Now(),
+                        LastContactUnixSeconds = Now(),
+                        CanManageConfiguration = license.Devices.Count == 0
+                    };
+                    license.Devices.Add(device);
+                }
+                else
+                {
+                    if (!DescriptorsEqual(device.Descriptor, proof.Device)) Deny("MACHINE_BINDING_MISMATCH");
+                    device.Status = "ACTIVE";
+                    device.LastContactUnixSeconds = Now();
+                }
+                // O codigo validado ao criar o desafio e de uso unico. Um novo
+                // cadastro ou transferencia exige emissao administrativa de outro.
+                license.ActivationSalt = "";
+                license.ActivationHash = "";
+                state.Audit.Add(new OnlineAuditEntry(Now(), "DEVICE_ACTIVATED", license.LicenseId,
+                    proof.Device.DeviceId, proof.Device.BindingType));
+                return new OnlineActivationResult(1, "ACTIVE", proof.Device.DeviceId, proof.Device.BindingType);
+            });
+            return Task.FromResult(result);
+        }
+        catch (OnlineServerException ex) when (IsRejectedMachineReason(ex.InternalReason))
+        {
+            _repository.RecordSecurityAttempt(ex.InternalReason, proof.LicenseId,
+                proof.Device.DeviceId, "activation_completion_denied");
+            throw;
+        }
     }
 
     public Task<OnlineChallengeResponse> CreateOperationChallengeAsync(OnlineChallengeRequest request,
@@ -656,18 +939,28 @@ sealed class OnlineLicensingService
         ArgumentNullException.ThrowIfNull(request);
         token.ThrowIfCancellationRequested();
         if (request.SchemaVersion != 1) Deny("INVALID_PROTOCOL");
-        if (request.Action is not ("session.open" or "session.heartbeat" or "payment.create" or "payment.read"))
+        if (request.Action is not ("session.open" or "session.heartbeat" or "payment.create" or "payment.read"
+            or "configuration.read" or "configuration.write"))
             Deny("ACTION_INVALID");
         OnlineLicenseProtocol.RequireHex(request.DeviceId, "DeviceId", 64);
         OnlineLicenseProtocol.RequireHex(request.SessionId, "SessionId", 64);
         OnlineLicenseProtocol.RequireHex(request.ContextHash, "ContextHash", 64);
-        _repository.Read(state =>
+        try
         {
-            var license = RequireActiveLicense(state, request.LicenseId);
-            var device = RequireActiveDevice(license, request.DeviceId);
-            if (request.Action != "session.open") RequireActiveSession(device, request.SessionId);
-            return 0;
-        });
+            _repository.Read(state =>
+            {
+                var license = RequireActiveLicense(state, request.LicenseId);
+                var device = RequireActiveDevice(license, request.DeviceId);
+                if (request.Action != "session.open") RequireActiveSession(device, request.SessionId);
+                return 0;
+            });
+        }
+        catch (OnlineServerException ex) when (IsRejectedMachineReason(ex.InternalReason))
+        {
+            _repository.RecordSecurityAttempt(ex.InternalReason, request.LicenseId,
+                request.DeviceId, "operation_challenge_denied");
+            throw;
+        }
         return Task.FromResult(CreateChallenge(request.LicenseId, request.DeviceId, request.SessionId,
             request.Action, request.ContextHash, ""));
     }
@@ -739,6 +1032,7 @@ sealed class OnlineLicensingService
             var customerId = _repository.Read(state =>
             {
                 var license = RequireActiveLicense(state, request.Proof.LicenseId);
+                if (!license.PixEnabled) Deny("PIX_DISABLED");
                 var device = RequireActiveDevice(license, request.Proof.DeviceId);
                 RequireActiveSession(device, request.Proof.SessionId);
                 if (!license.PackagePricesCents.TryGetValue(request.Context.Minutes, out var expectedCents)
@@ -784,6 +1078,53 @@ sealed class OnlineLicensingService
         finally { paymentLock.Release(); }
     }
 
+    public Task<OnlinePriceConfigurationResponse> ReadConfigurationAsync(
+        OnlineConfigurationReadProof request, CancellationToken token)
+    {
+        ArgumentNullException.ThrowIfNull(request);
+        ArgumentNullException.ThrowIfNull(request.Proof);
+        ArgumentNullException.ThrowIfNull(request.Context);
+        token.ThrowIfCancellationRequested();
+        var contextHash = OnlineLicenseProtocol.ContextHash(request.Context);
+        _ = VerifyOperationProof(request.Proof, contextHash);
+        if (request.Proof.Action != "configuration.read"
+            || request.Context.SessionId != request.Proof.SessionId)
+            Deny("ACTION_MISMATCH");
+        _repository.Read(state =>
+        {
+            var license = RequireActiveLicense(state, request.Proof.LicenseId);
+            var device = RequireActiveDevice(license, request.Proof.DeviceId);
+            RequireActiveSession(device, request.Proof.SessionId);
+            return 0;
+        });
+        return Task.FromResult(_repository.ReadPriceConfiguration(
+            request.Proof.LicenseId, request.Proof.DeviceId, request.Proof.SessionId));
+    }
+
+    public Task<OnlinePriceConfigurationResponse> WriteConfigurationAsync(
+        OnlineConfigurationWriteProof request, CancellationToken token)
+    {
+        ArgumentNullException.ThrowIfNull(request);
+        ArgumentNullException.ThrowIfNull(request.Proof);
+        ArgumentNullException.ThrowIfNull(request.Context);
+        token.ThrowIfCancellationRequested();
+        var contextHash = OnlineLicenseProtocol.ContextHash(request.Context);
+        _ = VerifyOperationProof(request.Proof, contextHash);
+        if (request.Proof.Action != "configuration.write"
+            || request.Context.SessionId != request.Proof.SessionId)
+            Deny("ACTION_MISMATCH");
+        _repository.Read(state =>
+        {
+            var license = RequireActiveLicense(state, request.Proof.LicenseId);
+            var device = RequireActiveDevice(license, request.Proof.DeviceId);
+            RequireActiveSession(device, request.Proof.SessionId);
+            return 0;
+        });
+        return Task.FromResult(_repository.UpdatePriceConfigurationFromDevice(
+            request.Proof.LicenseId, request.Proof.DeviceId, request.Proof.SessionId,
+            request.Context.ExpectedVersion, request.Context.PackagePricesCents));
+    }
+
     public async Task<OnlineOrderResponse> ReadOrderAsync(OnlinePaymentReadProof request, CancellationToken token)
     {
         ArgumentNullException.ThrowIfNull(request);
@@ -827,7 +1168,11 @@ sealed class OnlineLicensingService
             RequireActiveLicense(state, proof.LicenseId), proof.DeviceId).Descriptor);
         if (!OnlineLicenseProtocol.VerifyProof(descriptor, challenge.Response, proof.LicenseId,
                 proof.SessionId, proof.Action, expectedContextHash, proof.Signature))
+        {
+            _repository.RecordSecurityAttempt("MACHINE_PROOF_INVALID", proof.LicenseId,
+                proof.DeviceId, "operation_proof_denied");
             Deny("MACHINE_PROOF_INVALID");
+        }
         return challenge;
     }
 
@@ -931,6 +1276,9 @@ sealed class OnlineLicensingService
     }
 
     private static long Now() => DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+    private static bool IsRejectedMachineReason(string reason)
+        => reason is "ACTIVATION_INVALID" or "BINDING_DOWNGRADE_DENIED" or "DEVICE_LIMIT_REACHED"
+            or "MACHINE_PROOF_INVALID" or "MACHINE_BINDING_MISMATCH";
     private static void Deny(string reason, int statusCode = 403)
         => throw new OnlineServerException(statusCode, reason, reason);
 }

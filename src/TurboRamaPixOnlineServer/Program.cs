@@ -2,12 +2,32 @@ using System.Security;
 using System.Security.Cryptography;
 using System.Text.Json;
 using System.Threading.RateLimiting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.RateLimiting;
 
 if (args.Contains("--self-test", StringComparer.OrdinalIgnoreCase))
     return await OnlineServerSelfTest.RunAsync();
 
+if (args.Length == 1 && args[0].Equals("--hash-admin-password", StringComparison.OrdinalIgnoreCase))
+{
+    Console.Write("Digite a nova senha administrativa: ");
+    var first = ReadSecret();
+    Console.WriteLine();
+    Console.Write("Confirme a nova senha administrativa: ");
+    var second = ReadSecret();
+    Console.WriteLine();
+    try
+    {
+        if (first != second) throw new SecurityException("As senhas informadas nao coincidem.");
+        Console.WriteLine("Hash PBKDF2 da senha administrativa:");
+        Console.WriteLine(AdminPasswordHash.Create(first));
+        return 0;
+    }
+    finally { first = ""; second = ""; }
+}
+
 var configuration = OnlineServerConfiguration.Load();
+var adminConfiguration = OnlineAdminConfiguration.Load(configuration.StateFile);
 using var repository = new OnlineStateRepository(configuration.StateFile, configuration.StateIntegrityKey,
     configuration.StateEncryptionKey);
 
@@ -105,10 +125,19 @@ if (args.Length == 2 && args[0].Equals("--validate-mercadopago", StringCompariso
 }
 
 if (args.Length != 0)
-    throw new InvalidOperationException("Comando desconhecido. Use --self-test, --create-license, --list-licenses, --list-devices, --issue-activation-code, --set-prices, --set-mercadopago, --validate-mercadopago, --set-license-status, --set-device-status ou --force-reauth.");
+    throw new InvalidOperationException("Comando desconhecido. Use --self-test, --hash-admin-password, --create-license, --list-licenses, --list-devices, --issue-activation-code, --set-prices, --set-mercadopago, --validate-mercadopago, --set-license-status, --set-device-status ou --force-reauth.");
 
 var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.ConfigureKestrel(options => options.Limits.MaxRequestBodySize = OnlineLicenseProtocol.MaximumBodyBytes);
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    // O cloudflared autorizado conecta somente pela interface local. Aceitamos
+    // apenas o protocolo original e somente desses proxies; X-Forwarded-For nao
+    // e confiado nem usado para liberar a aplicacao.
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedProto;
+    options.KnownProxies.Add(System.Net.IPAddress.Loopback);
+    options.KnownProxies.Add(System.Net.IPAddress.IPv6Loopback);
+});
 builder.Services.AddRateLimiter(options =>
 {
     options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
@@ -127,9 +156,12 @@ builder.Services.AddSingleton(repository);
 builder.Services.AddSingleton<IPixPaymentGateway>(_ => new MercadoPagoServerGateway(repository,
     configuration.PaymentExpirationMinutes));
 builder.Services.AddSingleton<OnlineLicensingService>();
+AdminPanel.ConfigureServices(builder, adminConfiguration);
 
 var app = builder.Build();
+app.UseForwardedHeaders();
 app.UseRateLimiter();
+AdminPanel.UseSecurityHeaders(app);
 app.Use(async (context, next) =>
 {
     var loopbackAllowed = configuration.AllowHttpLoopback
@@ -143,6 +175,8 @@ app.Use(async (context, next) =>
     }
     await next();
 });
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapGet("/v1/health", (OnlineLicensingService service) => service.Readiness());
 app.MapPost("/v1/activations/challenge", async (HttpContext context, OnlineActivationChallengeRequest request,
@@ -163,6 +197,13 @@ app.MapPost("/v1/orders", async (HttpContext context, OnlinePaymentCreateProof r
 app.MapPost("/v1/orders/status", async (HttpContext context, OnlinePaymentReadProof request,
     OnlineLicensingService service, CancellationToken token) =>
     await Endpoint.Run(context, () => service.ReadOrderAsync(request, token)));
+app.MapPost("/v1/configuration/read", async (HttpContext context, OnlineConfigurationReadProof request,
+    OnlineLicensingService service, CancellationToken token) =>
+    await Endpoint.Run(context, () => service.ReadConfigurationAsync(request, token)));
+app.MapPost("/v1/configuration/write", async (HttpContext context, OnlineConfigurationWriteProof request,
+    OnlineLicensingService service, CancellationToken token) =>
+    await Endpoint.Run(context, () => service.WriteConfigurationAsync(request, token)));
+AdminPanel.Map(app, configuration);
 
 await app.RunAsync();
 return 0;

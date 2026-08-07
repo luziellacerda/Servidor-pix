@@ -9,7 +9,8 @@ Estes arquivos são exemplos. Eles **não devem substituir** a configuração do
 - variáveis privadas: `/etc/turborama-pix/server.env` com proprietário `root` e permissão `600`;
 - usuário dedicado sem login: `turborama-pix`;
 - escuta somente em `127.0.0.1:5187`;
-- hostname Cloudflare separado, por exemplo `pix-api.seudominio.com`.
+- hostname da API separado, por exemplo `pix-api.seudominio.com`;
+- hostname administrativo separado, por exemplo `painel-pix.seudominio.com`, protegido pelo Cloudflare Access.
 
 Não use a pasta do site atual, não compartilhe o usuário do site e não abra a porta 5187 no roteador ou firewall público.
 
@@ -27,6 +28,12 @@ ingress:
 
 Não crie outro túnel se o túnel atual já atende ao servidor. Adicione um novo hostname ao mesmo túnel, valide a configuração e recarregue somente depois de confirmar que o site atual continua respondendo.
 
+O hostname administrativo pode apontar para o mesmo `127.0.0.1:5187`, mas deve ser protegido pelo
+Cloudflare Access. Não aplique essa regra humana ao hostname ou caminho usado pelos gabinetes em
+`/v1/*`, pois o agente utiliza prova criptográfica própria. O servidor confia no
+`X-Forwarded-Proto` somente quando ele chega do proxy local; isso permite cookies seguros mesmo com
+o trecho interno do túnel em HTTP.
+
 ## Arquivo privado de ambiente
 
 Use `.env.example` apenas como referência. No servidor, gere duas chaves diferentes de 32 bytes e guarde-as fora do Git. Não copie os valores para conversa, issue ou terminal compartilhado.
@@ -38,6 +45,12 @@ proprietário: root
 permissão: leitura e escrita somente para root (600)
 ```
 
+Gere o hash da senha administrativa com `--hash-admin-password` em terminal privado. Coloque no
+arquivo de ambiente apenas o hash. Nunca coloque a senha, o Access Token Mercado Pago ou as chaves
+do estado no Git, no handoff ou na conversa. O diretório configurado em
+`TURBORAMA_ADMIN_KEY_DIRECTORY` precisa pertencer ao usuário do serviço e permanecer com permissão
+restrita.
+
 ## Ordem segura de ativação
 
 1. Faça backup verificável do site, do túnel e das configurações atuais.
@@ -48,8 +61,10 @@ permissão: leitura e escrita somente para root (600)
 6. Execute o autoteste local.
 7. Inicie o serviço apenas em `127.0.0.1:5187`.
 8. Teste `/v1/health` localmente.
-9. Adicione o hostname ao túnel existente sem remover as regras atuais.
-10. Teste o site antigo e o novo endpoint antes de habilitar um gabinete.
+9. Teste o login local simulando o protocolo HTTPS encaminhado pelo túnel.
+10. Adicione os hostnames ao túnel existente sem remover as regras atuais.
+11. Proteja somente o hostname administrativo com Cloudflare Access.
+12. Teste o site antigo, a API e o painel antes de habilitar um gabinete.
 
 ## Importante
 

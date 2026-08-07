@@ -13,6 +13,11 @@ static class OnlineServerSelfTest
         var integrityKey = RandomNumberGenerator.GetBytes(32);
         try
         {
+            var adminPassword = "TurboRama-SelfTest-Admin-2026!";
+            var adminHash = AdminPasswordHash.Create(adminPassword);
+            Require(AdminPasswordHash.Verify(adminHash, adminPassword)
+                && !AdminPasswordHash.Verify(adminHash, adminPassword + "x"),
+                "hash da senha administrativa");
             using var repository = new OnlineStateRepository(Path.Combine(root, "state.json"), integrityKey);
             var concurrentRepositoryDenied = false;
             try { _ = new OnlineStateRepository(Path.Combine(root, "state.json"), integrityKey); }
@@ -96,8 +101,59 @@ static class OnlineServerSelfTest
             try { await OpenSession(service, key, descriptor, sessionTwo); }
             catch (OnlineServerException ex) { duplicateDenied = ex.InternalReason == "DUPLICATE_DEVICE"; }
             Require(duplicateDenied, "clone concorrente nao foi recusado");
-            Require(repository.ListDevices("TR-000125").Single().RejectedAttempts == 2,
+            Require(repository.ListDevices("TR-000125").Single().RejectedAttempts == 3,
                 "tentativa de clone nao foi registrada");
+
+            var configurationRead = new OnlineConfigurationReadContext(1, sessionOne, 0);
+            var configurationReadHash = OnlineLicenseProtocol.ContextHash(configurationRead);
+            var configurationReadChallenge = await service.CreateOperationChallengeAsync(new OnlineChallengeRequest(1,
+                "TR-000125", descriptor.DeviceId, sessionOne, "configuration.read", configurationReadHash),
+                CancellationToken.None);
+            var configurationReadProof = new OnlineOperationProof(1, "TR-000125", descriptor.DeviceId,
+                sessionOne, "configuration.read", configurationReadHash, configurationReadChallenge.ChallengeId,
+                Sign(key, configurationReadChallenge, "TR-000125", sessionOne,
+                    "configuration.read", configurationReadHash));
+            var synchronized = await service.ReadConfigurationAsync(
+                new OnlineConfigurationReadProof(configurationReadProof, configurationRead), CancellationToken.None);
+            Require(synchronized.PixEnabled && synchronized.Version == 1
+                && synchronized.PackagePricesCents[15] == 750,
+                "leitura sincronizada da configuracao");
+
+            var configurationWrite = new OnlineConfigurationWriteContext(1, sessionOne, synchronized.Version,
+                new Dictionary<int, long>
+                {
+                    [15] = 750, [30] = 1_500, [45] = 2_250, [60] = 3_000, [120] = 6_000
+                });
+            var configurationWriteHash = OnlineLicenseProtocol.ContextHash(configurationWrite);
+            var configurationWriteChallenge = await service.CreateOperationChallengeAsync(new OnlineChallengeRequest(1,
+                "TR-000125", descriptor.DeviceId, sessionOne, "configuration.write", configurationWriteHash),
+                CancellationToken.None);
+            var configurationWriteProof = new OnlineOperationProof(1, "TR-000125", descriptor.DeviceId,
+                sessionOne, "configuration.write", configurationWriteHash, configurationWriteChallenge.ChallengeId,
+                Sign(key, configurationWriteChallenge, "TR-000125", sessionOne,
+                    "configuration.write", configurationWriteHash));
+            var updatedConfiguration = await service.WriteConfigurationAsync(
+                new OnlineConfigurationWriteProof(configurationWriteProof, configurationWrite), CancellationToken.None);
+            Require(updatedConfiguration.Version == synchronized.Version + 1,
+                "gravacao sincronizada da configuracao");
+
+            var staleWriteChallenge = await service.CreateOperationChallengeAsync(new OnlineChallengeRequest(1,
+                "TR-000125", descriptor.DeviceId, sessionOne, "configuration.write", configurationWriteHash),
+                CancellationToken.None);
+            var staleWriteProof = configurationWriteProof with
+            {
+                ChallengeId = staleWriteChallenge.ChallengeId,
+                Signature = Sign(key, staleWriteChallenge, "TR-000125", sessionOne,
+                    "configuration.write", configurationWriteHash)
+            };
+            var staleWriteDenied = false;
+            try
+            {
+                await service.WriteConfigurationAsync(
+                    new OnlineConfigurationWriteProof(staleWriteProof, configurationWrite), CancellationToken.None);
+            }
+            catch (OnlineServerException ex) { staleWriteDenied = ex.InternalReason == "CONFIGURATION_CONFLICT"; }
+            Require(staleWriteDenied, "conflito de versao da configuracao nao foi recusado");
 
             var payment = new OnlinePaymentCreateContext(1, sessionOne, "PIXSELFTEST", 750, "BRL", 15,
                 DateTimeOffset.UtcNow.AddMinutes(10).ToUnixTimeSeconds(), 900);
@@ -166,7 +222,16 @@ static class OnlineServerSelfTest
             catch (OnlineServerException ex) { forcedReauthDenied = ex.InternalReason == "SESSION_EXPIRED"; }
             Require(forcedReauthDenied, "FORCE_REAUTH nao encerrou a sessao");
 
-            Console.WriteLine("SELF-TEST SERVIDOR ONLINE: OK (ativacao de uso unico, prova RSA-PSS, sessao exclusiva, clone registrado, original preservada, tabela de precos, validacao segura do caixa Mercado Pago, cobranca, idempotencia, anti-replay e reautenticacao remota).");
+            repository.SetPixEnabled("TR-000125", false);
+            var dashboard = repository.ReadAdminDashboard();
+            Require(!dashboard.Licenses.Single().PixEnabled
+                && dashboard.RejectedMachineAttempts >= 3
+                && dashboard.Licenses.Single().Devices.Single().RejectedAttempts == 3,
+                "painel administrativo nao refletiu estado e recusas");
+
+            repository.SetPixEnabled("TR-000125", true);
+
+            Console.WriteLine("SELF-TEST SERVIDOR ONLINE: OK (ativacao de uso unico, prova RSA-PSS, sessao exclusiva, clone registrado, original preservada, painel administrativo, login protegido, configuracao sincronizada e versionada, bloqueio PIX, tabela de precos, validacao segura do caixa Mercado Pago, cobranca, idempotencia, anti-replay e reautenticacao remota).");
             return 0;
         }
         catch (Exception ex)

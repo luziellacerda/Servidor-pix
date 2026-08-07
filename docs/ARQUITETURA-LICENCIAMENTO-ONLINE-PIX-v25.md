@@ -23,7 +23,10 @@ de licenças, as chaves privadas e os instaladores do consumidor permanecem fora
 - assinatura do desafio vinculada à licença, máquina, sessão, ação e hash canônico da operação;
 - sessão exclusiva com lease de 180 segundos. Um clone não derruba a sessão original;
 - criação e consulta de cobranças somente pelo servidor;
-- tabela de preços fixada no servidor por licença; o cliente não consegue autorizar outro valor;
+- tabela de preços versionada no servidor por licença, editável no painel e, quando autorizado,
+  no EmulationStation;
+- bloqueio remoto de novas cobranças PIX sem apagar a tabela de preços;
+- painel Web administrativo com login, CSRF, cookie seguro, expiração curta e auditoria;
 - idempotência derivada de licença, máquina e referência externa;
 - estado persistente com HMAC-SHA256 e promoção atômica;
 - Access Token separado por cliente, cifrado com AES-256-GCM no estado do servidor;
@@ -69,6 +72,9 @@ TURBORAMA_SERVER_STATE_FILE      caminho absoluto do estado
 TURBORAMA_SERVER_STATE_KEY       32 bytes aleatórios em Base64, para HMAC
 TURBORAMA_SERVER_SECRET_KEY      outros 32 bytes aleatórios em Base64, para AES-GCM
 TURBORAMA_PAYMENT_EXPIRATION_MINUTES
+TURBORAMA_ADMIN_USERNAME         usuário do painel
+TURBORAMA_ADMIN_PASSWORD_HASH    hash PBKDF2; nunca a senha
+TURBORAMA_ADMIN_KEY_DIRECTORY    chaves de proteção da sessão Web
 ```
 
 As duas chaves precisam ser diferentes. Perder qualquer uma impede abrir o estado. Guarde cópias
@@ -76,6 +82,26 @@ protegidas fora do servidor e teste a restauração.
 
 `TURBORAMA_ALLOW_HTTP_LOOPBACK=true` existe apenas para testar diretamente a saúde do servidor em
 laboratório local. O agente comercial exige HTTPS inclusive quando o endereço é local.
+
+## Uma configuração para site e EmulationStation
+
+O estado autenticado do servidor é a fonte de verdade. Cada licença possui os cinco valores, um
+número de versão e a data da última mudança. O painel grava diretamente esse registro. O gabinete
+faz leitura e escrita com desafio, assinatura da máquina e sessão ativa.
+
+O `owner-settings.json` continua existindo apenas como cache protegido local para a interface e para
+retomar a sincronização. Ele não substitui a autorização do servidor. Ao salvar no EmulationStation,
+o agente envia a versão que leu. Se o painel já tiver criado uma versão nova, o servidor responde
+conflito e o gabinete recarrega a configuração do site, sem sobrescrever silenciosamente.
+
+Na atualização de um estado antigo, a migração preserva exatamente a tabela que já existe, atribui a
+primeira versão e concede a edição à primeira máquina ativa. Depois, o painel permite retirar ou
+conceder essa permissão explicitamente. O estado `PIX bloqueado` somente impede cobranças novas e não
+zera os preços.
+
+O painel mostra licenças, máquinas, online/offline, versão, recusas, permissão de configuração e
+eventos recentes. As ações remotas são declarativas; não existe endpoint para PowerShell, scripts,
+executáveis ou código arbitrário.
 
 ## Administração inicial
 
@@ -199,8 +225,8 @@ na maquina de compilacao.
   sem confiar no cliente, que a chave foi gerada no hardware.
 - o repositório de estado atual é transacional e autenticado para uma instância, mas não substitui um
   banco gerenciado com replicação, backup, monitoramento e alta disponibilidade.
-- a administração implementada nesta fase é por comandos locais no servidor. Um painel Web com
-  autenticação multifator, perfis de acesso e trilha de auditoria externa ainda não foi construído.
+- o painel possui login local forte e pode receber uma segunda barreira pelo Cloudflare Access, mas
+  ainda não possui perfis de acesso por operador nem trilha de auditoria em armazenamento externo;
 - o fluxo OAuth Mercado Pago para autoatendimento do cliente ainda precisa de domínio público,
   callback HTTPS e aplicação comercial registrada. Até lá, o cadastro do token é feito no servidor
   privado por entrada oculta.
@@ -209,9 +235,10 @@ na maquina de compilacao.
 
 ## Testes automáticos atuais
 
-O agente verifica serialização HTTP, ativação, RSA-PSS, abertura/heartbeat de sessão, criação e consulta
-de cobrança. O servidor verifica ativação de uso único, cofre AES-GCM, prova de posse, preservação da
-sessão original, clone concorrente, tabela de preços, alteração de valor, idempotência e replay de nonce.
+O agente verifica serialização HTTP, ativação, RSA-PSS, abertura/heartbeat de sessão, sincronização
+versionada, conflito de edição, criação e consulta de cobrança. O servidor verifica ativação de uso
+único, cofre AES-GCM, login administrativo, prova de posse, preservação da sessão original, clone
+concorrente, bloqueio PIX, tabela de preços, alteração de valor, idempotência e replay de nonce.
 
 O formato de cobrança segue a API oficial atual de Orders do Mercado Pago: `POST /v1/orders`,
 consulta em `GET /v1/orders/{order_id}`, QR dinâmico e caixa em `config.qr.external_pos_id`.
