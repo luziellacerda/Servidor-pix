@@ -34,6 +34,12 @@ Cloudflare Access. Não aplique essa regra humana ao hostname ou caminho usado p
 `X-Forwarded-Proto` somente quando ele chega do proxy local; isso permite cookies seguros mesmo com
 o trecho interno do túnel em HTTP.
 
+Mantenha `TURBORAMA_ADMIN_PUBLIC_HOST` vazio durante a instalação. Primeiro crie no Cloudflare
+Access uma aplicação que proteja todo o hostname administrativo e habilite a validação do Access no
+conector do túnel. Depois adicione a rota desse hostname ao túnel. Somente após confirmar a barreira
+do Access, configure o hostname exato na variável e reinicie apenas o serviço TurboRama. O hostname
+da API deve continuar recebendo `404` em qualquer caminho `/admin`.
+
 ## Arquivo privado de ambiente
 
 Use `.env.example` apenas como referência. No servidor, gere duas chaves diferentes de 32 bytes e guarde-as fora do Git. Não copie os valores para conversa, issue ou terminal compartilhado.
@@ -51,6 +57,9 @@ do estado no Git, no handoff ou na conversa. O diretório configurado em
 `TURBORAMA_ADMIN_KEY_DIRECTORY` precisa pertencer ao usuário do serviço e permanecer com permissão
 restrita.
 
+`TURBORAMA_ADMIN_PUBLIC_HOST` não aceita URL, porta, caminho ou curinga; informe somente o nome DNS
+administrativo. Vazio significa que todas as rotas do painel permanecem desativadas.
+
 ## Ordem segura de ativação
 
 1. Faça backup verificável do site, do túnel e das configurações atuais.
@@ -61,10 +70,11 @@ restrita.
 6. Execute o autoteste local.
 7. Inicie o serviço apenas em `127.0.0.1:5187`.
 8. Teste `/v1/health` localmente.
-9. Teste o login local simulando o protocolo HTTPS encaminhado pelo túnel.
-10. Adicione os hostnames ao túnel existente sem remover as regras atuais.
-11. Proteja somente o hostname administrativo com Cloudflare Access.
-12. Teste o site antigo, a API e o painel antes de habilitar um gabinete.
+9. Confirme que `/admin` devolve `404` no hostname público da API.
+10. Crie e valide a proteção Cloudflare Access para todo o hostname administrativo.
+11. Adicione somente depois a rota administrativa ao túnel existente, sem remover regras atuais.
+12. Configure `TURBORAMA_ADMIN_PUBLIC_HOST` e teste Access + login do TurboRama.
+13. Teste o site antigo, a API e o painel antes de habilitar um gabinete.
 
 ## Importante
 

@@ -18,6 +18,22 @@ static class OnlineServerSelfTest
             Require(AdminPasswordHash.Verify(adminHash, adminPassword)
                 && !AdminPasswordHash.Verify(adminHash, adminPassword + "x"),
                 "hash da senha administrativa");
+            Require(!AdminPanel.IsHostAllowed("127.0.0.1", true, ""),
+                "painel abriu localmente sem hostname administrativo configurado");
+            Require(!AdminPanel.IsHostAllowed("pix.lzgames.com.br", true, ""),
+                "painel apareceu no hostname publico da API");
+            Require(!AdminPanel.IsHostAllowed("painelpix.lzgames.com.br", true, ""),
+                "painel publico abriu sem autorizacao explicita");
+            Require(AdminPanel.IsHostAllowed("painelpix.lzgames.com.br", true,
+                "painelpix.lzgames.com.br"),
+                "hostname publico autorizado foi bloqueado");
+            Require(!AdminPanel.IsHostAllowed("painelpix.lzgames.com.br", false,
+                    "painelpix.lzgames.com.br")
+                && !AdminPanel.IsHostAllowed("evil-painelpix.lzgames.com.br", true,
+                    "painelpix.lzgames.com.br")
+                && !AdminPanel.IsHostAllowed("pix.lzgames.com.br", true,
+                    "painelpix.lzgames.com.br"),
+                "isolamento de hostname ou HTTPS do painel falhou");
             using var repository = new OnlineStateRepository(Path.Combine(root, "state.json"), integrityKey);
             var concurrentRepositoryDenied = false;
             try { _ = new OnlineStateRepository(Path.Combine(root, "state.json"), integrityKey); }
@@ -231,7 +247,7 @@ static class OnlineServerSelfTest
 
             repository.SetPixEnabled("TR-000125", true);
 
-            Console.WriteLine("SELF-TEST SERVIDOR ONLINE: OK (ativacao de uso unico, prova RSA-PSS, sessao exclusiva, clone registrado, original preservada, painel administrativo, login protegido, configuracao sincronizada e versionada, bloqueio PIX, tabela de precos, validacao segura do caixa Mercado Pago, cobranca, idempotencia, anti-replay e reautenticacao remota).");
+            Console.WriteLine("SELF-TEST SERVIDOR ONLINE: OK (ativacao de uso unico, prova RSA-PSS, sessao exclusiva, clone registrado, original preservada, painel administrativo isolado por hostname e HTTPS, login protegido, configuracao sincronizada e versionada, bloqueio PIX, tabela de precos, validacao segura do caixa Mercado Pago, cobranca, idempotencia, anti-replay e reautenticacao remota).");
             return 0;
         }
         catch (Exception ex)

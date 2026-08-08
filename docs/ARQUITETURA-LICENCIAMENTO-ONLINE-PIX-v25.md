@@ -74,6 +74,7 @@ TURBORAMA_SERVER_SECRET_KEY      outros 32 bytes aleatórios em Base64, para AES
 TURBORAMA_PAYMENT_EXPIRATION_MINUTES
 TURBORAMA_ADMIN_USERNAME         usuário do painel
 TURBORAMA_ADMIN_PASSWORD_HASH    hash PBKDF2; nunca a senha
+TURBORAMA_ADMIN_PUBLIC_HOST      hostname DNS administrativo exato; vazio desativa publicação externa
 TURBORAMA_ADMIN_KEY_DIRECTORY    chaves de proteção da sessão Web
 ```
 
@@ -102,6 +103,12 @@ zera os preços.
 O painel mostra licenças, máquinas, online/offline, versão, recusas, permissão de configuração e
 eventos recentes. As ações remotas são declarativas; não existe endpoint para PowerShell, scripts,
 executáveis ou código arbitrário.
+
+O painel também é isolado por hostname dentro da aplicação. O nome administrativo precisa coincidir
+exatamente com `TURBORAMA_ADMIN_PUBLIC_HOST` e chegar como HTTPS pelo proxy local confiável. Prefixos,
+sufixos, HTTP comum e o hostname da API recebem `404`. A variável fica vazia até o Cloudflare Access
+estar configurado para o hostname inteiro; o Access deve validar o usuário antes de o login interno
+ser exibido.
 
 ## Administração inicial
 

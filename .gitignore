@@ -6,6 +6,7 @@ artifacts/
 TestResults/
 *.pdb
 .dotnet-cli-home/
+.round*-http-test*/
 
 # IDE e sistema operacional
 .vs/

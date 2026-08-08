@@ -66,6 +66,7 @@ TURBORAMA_SERVER_SECRET_KEY
 TURBORAMA_PAYMENT_EXPIRATION_MINUTES
 TURBORAMA_ADMIN_USERNAME
 TURBORAMA_ADMIN_PASSWORD_HASH
+TURBORAMA_ADMIN_PUBLIC_HOST
 TURBORAMA_ADMIN_KEY_DIRECTORY
 ```
 
@@ -73,7 +74,13 @@ As duas chaves devem conter 32 bytes aleatórios em Base64 e precisam ser difere
 
 ## Painel e preços compartilhados
 
-O painel fica em `/admin`. A senha não é gravada: o servidor recebe apenas um hash PBKDF2 gerado
+O painel fica em `/admin`, mas falha fechado por hostname. Com
+`TURBORAMA_ADMIN_PUBLIC_HOST` vazio ele fica totalmente desativado. Quando a variável recebe, por
+exemplo, `painelpix.lzgames.com.br`, o painel aceita somente esse nome exato e somente uma requisição
+HTTPS encaminhada pelo proxy local confiável. No hostname da API, como `pix.lzgames.com.br`, qualquer
+rota `/admin` responde `404` e não redireciona para o login.
+
+A senha não é gravada: o servidor recebe apenas um hash PBKDF2 gerado
 interativamente pelo próprio executável com `--hash-admin-password`. A sessão administrativa usa
 cookie cifrado, `Secure`, `HttpOnly`, `SameSite=Strict`, expira em 30 minutos e todas as alterações
 exigem token antifalsificação.
@@ -89,8 +96,10 @@ protegido dessa configuração. Assim:
 - na primeira atualização, os preços que já existem no estado são preservados e recebem versão;
 - o painel pode bloquear novas cobranças sem apagar os preços existentes.
 
-Para reduzir risco, publique o painel em hostname separado protegido pelo Cloudflare Access, sem
-colocar a rota da API `/v1/*` atrás do login humano. O login do próprio TurboRama continua obrigatório.
+O hostname administrativo deve ser criado primeiro como aplicação protegida pelo Cloudflare Access
+e com validação do token no `cloudflared`; somente depois ele pode ser ligado ao túnel e colocado em
+`TURBORAMA_ADMIN_PUBLIC_HOST`. Não coloque a rota da API `/v1/*` atrás do login humano. O login do
+próprio TurboRama continua obrigatório como segunda barreira.
 
 Consulte [a arquitetura completa](docs/ARQUITETURA-LICENCIAMENTO-ONLINE-PIX-v25.md) e [a implantação isolada no Linux](deploy/linux/README.md) antes de iniciar qualquer serviço.
 

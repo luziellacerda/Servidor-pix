@@ -10,7 +10,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.DataProtection;
 
-sealed record OnlineAdminConfiguration(string Username, string PasswordHash, string DataProtectionDirectory)
+sealed record OnlineAdminConfiguration(string Username, string PasswordHash, string DataProtectionDirectory,
+    string PublicHostname)
 {
     public bool Enabled => Username.Length != 0 && PasswordHash.Length != 0;
 
@@ -29,7 +30,18 @@ sealed record OnlineAdminConfiguration(string Username, string PasswordHash, str
         if (string.IsNullOrWhiteSpace(keyDirectory))
             keyDirectory = Path.Combine(Path.GetDirectoryName(Path.GetFullPath(stateFile))
                 ?? throw new SecurityException("Diretorio de estado invalido."), "admin-data-protection");
-        return new OnlineAdminConfiguration(username, passwordHash, Path.GetFullPath(keyDirectory));
+        var publicHostname = (Environment.GetEnvironmentVariable("TURBORAMA_ADMIN_PUBLIC_HOST") ?? "").Trim();
+        if (publicHostname.Length != 0)
+        {
+            if (publicHostname.Length > 253 || publicHostname.EndsWith(".", StringComparison.Ordinal)
+                || publicHostname.Contains(":", StringComparison.Ordinal)
+                || publicHostname.Contains("/", StringComparison.Ordinal)
+                || publicHostname.Contains("*", StringComparison.Ordinal)
+                || Uri.CheckHostName(publicHostname) != UriHostNameType.Dns)
+                throw new SecurityException("O hostname publico do painel possui formato invalido.");
+            publicHostname = publicHostname.ToLowerInvariant();
+        }
+        return new OnlineAdminConfiguration(username, passwordHash, Path.GetFullPath(keyDirectory), publicHostname);
     }
 }
 
@@ -203,6 +215,38 @@ static class AdminPanel
             }
             await next();
         });
+    }
+
+    public static void UseHostIsolation(WebApplication app)
+    {
+        app.Use(async (context, next) =>
+        {
+            if (!context.Request.Path.StartsWithSegments("/admin"))
+            {
+                await next();
+                return;
+            }
+
+            var configuration = context.RequestServices.GetRequiredService<OnlineAdminConfiguration>();
+            if (IsHostAllowed(context.Request.Host.Host, context.Request.IsHttps,
+                    configuration.PublicHostname))
+            {
+                await next();
+                return;
+            }
+
+            // Falha fechada e sem redirecionamento: no hostname da API o painel
+            // deve parecer inexistente, mesmo quando as credenciais estao configuradas.
+            context.Response.StatusCode = StatusCodes.Status404NotFound;
+            context.Response.Headers.CacheControl = "no-store, max-age=0";
+            context.Response.ContentLength = 0;
+        });
+    }
+
+    public static bool IsHostAllowed(string host, bool isHttps, string publicHostname)
+    {
+        return publicHostname.Length != 0 && isHttps
+            && string.Equals(host, publicHostname, StringComparison.OrdinalIgnoreCase);
     }
 
     public static void Map(WebApplication app, OnlineServerConfiguration serverConfiguration)

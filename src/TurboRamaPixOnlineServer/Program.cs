@@ -160,6 +160,7 @@ AdminPanel.ConfigureServices(builder, adminConfiguration);
 
 var app = builder.Build();
 app.UseForwardedHeaders();
+AdminPanel.UseHostIsolation(app);
 app.UseRateLimiter();
 AdminPanel.UseSecurityHeaders(app);
 app.Use(async (context, next) =>
