@@ -209,7 +209,7 @@ static class AdminPanel
                 context.Response.Headers["X-Frame-Options"] = "DENY";
                 context.Response.Headers["Referrer-Policy"] = "no-referrer";
                 context.Response.Headers["Content-Security-Policy"] =
-                    "default-src 'none'; style-src 'self'; img-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'";
+                    "default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'";
                 context.Response.Headers["Permissions-Policy"] =
                     "camera=(), microphone=(), geolocation=(), payment=(), usb=()";
             }
@@ -252,6 +252,8 @@ static class AdminPanel
     public static void Map(WebApplication app, OnlineServerConfiguration serverConfiguration)
     {
         app.MapGet("/admin/assets/admin.css", () => Results.Text(Css, "text/css; charset=utf-8"));
+        app.MapGet("/admin/assets/admin.js", () => Results.Text(AdminJavascript,
+            "text/javascript; charset=utf-8"));
 
         app.MapGet("/admin/login", (HttpContext context, IAntiforgery antiforgery,
             OnlineAdminConfiguration configuration) =>
@@ -429,7 +431,8 @@ static class AdminPanel
             .Append("<label>Proteção<select name=bindingType><option>SOFTWARE_BOUND_ONLINE</option><option>TPM_BOUND</option></select></label>")
             .Append(Input("maximumDevices", "Máquinas permitidas", "1", "number"))
             .Append(Input("adminPassword", "Confirme sua senha", "", "password"))
-            .Append("<button class=primary>Criar e mostrar código único</button></form></section>");
+            .Append(CreateLicenseSubmitButton)
+            .Append("<div class=submit-status role=status aria-live=polite></div></form></section>");
         foreach (var license in snapshot.Licenses) AppendLicense(html, license, token);
         AppendAudit(html, snapshot.RecentAudit);
         html.Append(PageEnd());
@@ -579,10 +582,45 @@ static class AdminPanel
             .Append(E(css)).Append("\">").Append(Hidden("__RequestVerificationToken", token));
     private static string PageStart(string title)
         => "<!doctype html><html lang=pt-BR><head><meta charset=utf-8><meta name=viewport content=\"width=device-width,initial-scale=1\"><title>"
-            + E(title) + "</title><link rel=stylesheet href=/admin/assets/admin.css></head><body><main class=shell>";
+            + E(title) + "</title><link rel=stylesheet href=/admin/assets/admin.css><script defer src=/admin/assets/admin.js></script></head><body><main class=shell>";
     private static string PageEnd() => "</main></body></html>";
 
     private const string Css = """
-:root{color-scheme:dark;--bg:#071015;--panel:#101d24;--line:#243943;--text:#eef7f8;--muted:#91a9b2;--cyan:#1dcbe8;--green:#39e58c;--red:#ff6577;--amber:#ffcc4a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#13323d 0,#071015 42%);color:var(--text);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}.shell{width:min(1500px,94vw);margin:auto;padding:34px 0 70px}.top,.section-title,.actions,.inline-form,.row-actions{display:flex;align-items:center;gap:12px}.top,.section-title{justify-content:space-between}.top{margin-bottom:28px}.top h1,.panel h2,.login h1{margin:.2rem 0}.top p,.section-title p,.muted{color:var(--muted)}.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.15em;color:var(--cyan)}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:18px}.summary article,.panel,.login-card{background:linear-gradient(145deg,rgba(16,29,36,.97),rgba(10,20,26,.97));border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 48px rgba(0,0,0,.25)}.summary article{padding:20px}.summary strong{display:block;font-size:2rem;color:var(--green)}.summary span{color:var(--muted)}.panel{padding:24px;margin:18px 0}.pill,.status{display:inline-block;border-radius:999px;padding:7px 12px;font-weight:800;font-size:.75rem;letter-spacing:.05em}.pill.on,.status.online{background:rgba(57,229,140,.12);color:var(--green);border:1px solid rgba(57,229,140,.4)}.pill.off,.status.offline{background:rgba(255,101,119,.12);color:var(--red);border:1px solid rgba(255,101,119,.4)}button,.button,select,input{border-radius:10px;border:1px solid #35505d;background:#0a171d;color:var(--text);padding:10px 13px;font:inherit}button,.button{cursor:pointer;font-weight:750;text-decoration:none}.primary{background:linear-gradient(135deg,#0ea5c6,#1bc98a);border:0;color:#041114}.danger{border-color:rgba(255,101,119,.55);color:#ff9baa}.ghost{background:transparent}.actions{flex-wrap:wrap;margin:18px 0}.grid-form{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:end}.columns{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;margin:24px 0}.price-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:end}.price-grid button{grid-column:1/-1}.stack{display:grid;gap:12px}.stack button{width:100%}label{display:grid;gap:6px;color:var(--muted);font-size:.82rem;font-weight:700}input:focus,select:focus,button:focus{outline:2px solid var(--cyan);outline-offset:2px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;min-width:850px}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-size:.72rem;letter-spacing:.08em}code{color:#b9eff8}.row-actions{align-items:flex-start;flex-wrap:wrap}.row-actions button{font-size:.75rem;padding:7px 9px}.activation-form{margin-top:16px;display:flex;align-items:end;gap:10px}.notice{padding:13px 16px;border-radius:10px;margin-bottom:15px}.success{background:rgba(57,229,140,.12);color:var(--green)}.notice.danger{background:rgba(255,101,119,.12);color:#ffb4bd}.login{min-height:82vh;display:grid;place-items:center}.login-card{width:min(460px,92vw);padding:32px}.activation{display:block;padding:16px;margin:18px 0;background:#061015;border:1px solid var(--line);border-radius:10px;overflow-wrap:anywhere;color:var(--amber)}@media(max-width:900px){.summary,.columns,.grid-form{grid-template-columns:1fr}.price-grid{grid-template-columns:repeat(2,1fr)}.top,.section-title{align-items:flex-start;flex-direction:column}.activation-form{display:grid}}
+:root{color-scheme:dark;--bg:#071015;--panel:#101d24;--line:#243943;--text:#eef7f8;--muted:#91a9b2;--cyan:#1dcbe8;--green:#39e58c;--red:#ff6577;--amber:#ffcc4a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#13323d 0,#071015 42%);color:var(--text);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}.shell{width:min(1500px,94vw);margin:auto;padding:34px 0 70px}.top,.section-title,.actions,.inline-form,.row-actions{display:flex;align-items:center;gap:12px}.top,.section-title{justify-content:space-between}.top{margin-bottom:28px}.top h1,.panel h2,.login h1{margin:.2rem 0}.top p,.section-title p,.muted{color:var(--muted)}.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.15em;color:var(--cyan)}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:18px}.summary article,.panel,.login-card{background:linear-gradient(145deg,rgba(16,29,36,.97),rgba(10,20,26,.97));border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 48px rgba(0,0,0,.25)}.summary article{padding:20px}.summary strong{display:block;font-size:2rem;color:var(--green)}.summary span{color:var(--muted)}.panel{padding:24px;margin:18px 0}.pill,.status{display:inline-block;border-radius:999px;padding:7px 12px;font-weight:800;font-size:.75rem;letter-spacing:.05em}.pill.on,.status.online{background:rgba(57,229,140,.12);color:var(--green);border:1px solid rgba(57,229,140,.4)}.pill.off,.status.offline{background:rgba(255,101,119,.12);color:var(--red);border:1px solid rgba(255,101,119,.4)}button,.button,select,input{border-radius:10px;border:1px solid #35505d;background:#0a171d;color:var(--text);padding:10px 13px;font:inherit}button,.button{cursor:pointer;font-weight:750;text-decoration:none}.primary{background:linear-gradient(135deg,#0ea5c6,#1bc98a);border:0;color:#041114}.danger{border-color:rgba(255,101,119,.55);color:#ff9baa}.ghost{background:transparent}.actions{flex-wrap:wrap;margin:18px 0}.grid-form{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:end}.grid-form>.submit-status{grid-column:1/-1;color:#ffb4bd;font-weight:700}.columns{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;margin:24px 0}.price-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:end}.price-grid button{grid-column:1/-1}.stack{display:grid;gap:12px}.stack button{width:100%}label{display:grid;gap:6px;color:var(--muted);font-size:.82rem;font-weight:700}input:focus,select:focus,button:focus{outline:2px solid var(--cyan);outline-offset:2px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;min-width:850px}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-size:.72rem;letter-spacing:.08em}code{color:#b9eff8}.row-actions{align-items:flex-start;flex-wrap:wrap}.row-actions button{font-size:.75rem;padding:7px 9px}.activation-form{margin-top:16px;display:flex;align-items:end;gap:10px}.notice{padding:13px 16px;border-radius:10px;margin-bottom:15px}.success{background:rgba(57,229,140,.12);color:var(--green)}.notice.danger{background:rgba(255,101,119,.12);color:#ffb4bd}.login{min-height:82vh;display:grid;place-items:center}.login-card{width:min(460px,92vw);padding:32px}.activation{display:block;padding:16px;margin:18px 0;background:#061015;border:1px solid var(--line);border-radius:10px;overflow-wrap:anywhere;color:var(--amber)}@media(max-width:900px){.summary,.columns,.grid-form{grid-template-columns:1fr}.price-grid{grid-template-columns:repeat(2,1fr)}.top,.section-title{align-items:flex-start;flex-direction:column}.activation-form{display:grid}}
 """;
+
+    private const string CreateLicenseSubmitButton =
+        "<button type=submit class=primary data-force-submit data-busy=\"Criando licença...\">Criar e mostrar código único</button>";
+
+    private const string AdminJavascript = """
+(() => {
+  "use strict";
+  for (const button of document.querySelectorAll("button[data-force-submit]")) {
+    button.addEventListener("click", event => {
+      const form = button.form;
+      if (!form || button.disabled) return;
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const original = button.textContent;
+      const status = form.querySelector(".submit-status");
+      button.disabled = true;
+      button.textContent = button.dataset.busy || "Enviando...";
+      if (status) status.textContent = "";
+      window.setTimeout(() => {
+        if (!document.contains(button)) return;
+        button.disabled = false;
+        button.textContent = original;
+        if (status) status.textContent = "O servidor não confirmou o envio. Atualize o painel e confira a lista antes de tentar novamente.";
+      }, 10000);
+      HTMLFormElement.prototype.submit.call(form);
+    });
+  }
+})();
+""";
+
+    internal static bool HasForcedCreateLicenseSubmissionForSelfTest()
+        => CreateLicenseSubmitButton.Contains("type=submit", StringComparison.Ordinal)
+            && CreateLicenseSubmitButton.Contains("data-force-submit", StringComparison.Ordinal)
+            && AdminJavascript.Contains("HTMLFormElement.prototype.submit.call(form)", StringComparison.Ordinal)
+            && PageStart("self-test").Contains("/admin/assets/admin.js", StringComparison.Ordinal);
 }

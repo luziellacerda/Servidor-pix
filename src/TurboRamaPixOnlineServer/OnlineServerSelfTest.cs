@@ -18,6 +18,8 @@ static class OnlineServerSelfTest
             Require(AdminPasswordHash.Verify(adminHash, adminPassword)
                 && !AdminPasswordHash.Verify(adminHash, adminPassword + "x"),
                 "hash da senha administrativa");
+            Require(AdminPanel.HasForcedCreateLicenseSubmissionForSelfTest(),
+                "envio assistido da criacao de licenca no painel");
             Require(!AdminPanel.IsHostAllowed("127.0.0.1", true, ""),
                 "painel abriu localmente sem hostname administrativo configurado");
             Require(!AdminPanel.IsHostAllowed("pix.lzgames.com.br", true, ""),
