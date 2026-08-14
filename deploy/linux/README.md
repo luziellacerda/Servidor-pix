@@ -52,8 +52,9 @@ permissão: leitura e escrita somente para root (600)
 ```
 
 Gere o hash da senha administrativa com `--hash-admin-password` em terminal privado. Coloque no
-arquivo de ambiente apenas o hash. Nunca coloque a senha, o Access Token Mercado Pago ou as chaves
-do estado no Git, no handoff ou na conversa. O diretório configurado em
+arquivo de ambiente apenas o hash. Nunca coloque a senha ou as chaves do estado no Git, no handoff
+ou na conversa. A credencial Mercado Pago pertence ao gabinete e não deve ser enviada ao servidor
+de licenciamento. O diretório configurado em
 `TURBORAMA_ADMIN_KEY_DIRECTORY` precisa pertencer ao usuário do serviço e permanecer com permissão
 restrita.
 
@@ -78,4 +79,6 @@ administrativo. Vazio significa que todas as rotas do painel permanecem desativa
 
 ## Importante
 
-O serviço ainda precisa de backup restaurado em teste, monitoramento, rotação de segredos e um ensaio real controlado do fluxo Mercado Pago antes de ser usado comercialmente.
+O serviço precisa de backup restaurado em teste, monitoramento e rotação de segredos antes do uso
+comercial. O ensaio real do Mercado Pago é feito no gabinete; a implantação do servidor deve validar
+licença, máquina, painel, auditoria e isolamento sem criar cobrança.

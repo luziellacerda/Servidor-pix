@@ -3,6 +3,7 @@ param(
     [ValidateSet('portable','win-x64','linux-x64')]
     [string]$RuntimeIdentifier = 'portable',
     [string]$Saida,
+    [string]$DiretorioTemporarioBuild,
     [switch]$PermitirGitSujo
 )
 
@@ -25,13 +26,25 @@ if (-not $PermitirGitSujo) {
 }
 
 $dotnet = (Get-Command dotnet -ErrorAction Stop).Source
-$tempRoot = Join-Path ([IO.Path]::GetTempPath()) ('turborama-online-build-' + [Guid]::NewGuid().ToString('N'))
+if (-not $DiretorioTemporarioBuild) {
+    $DiretorioTemporarioBuild = [IO.Path]::GetTempPath()
+}
+$buildRoot = [IO.Path]::GetFullPath($DiretorioTemporarioBuild)
+$buildRootPath = [IO.Path]::GetPathRoot($buildRoot)
+if ($buildRoot.TrimEnd('\') -eq $buildRootPath.TrimEnd('\')) {
+    throw 'O diretorio temporario de build nao pode ser a raiz de uma unidade.'
+}
+New-Item -ItemType Directory -Path $buildRoot -Force | Out-Null
+$tempRoot = Join-Path $buildRoot ('turborama-online-build-' + [Guid]::NewGuid().ToString('N'))
 $publish = Join-Path $tempRoot 'publish'
+$artifacts = Join-Path $tempRoot 'artifacts'
+$packages = Join-Path $tempRoot 'nuget-packages'
 $previousDotnetCliHome = $env:DOTNET_CLI_HOME
 $previousDotnetFirstUse = $env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE
 $previousDotnetNoLogo = $env:DOTNET_NOLOGO
 $previousDotnetTelemetry = $env:DOTNET_CLI_TELEMETRY_OPTOUT
 $previousDotnetToolsPath = $env:DOTNET_ADD_GLOBAL_TOOLS_TO_PATH
+$previousNugetPackages = $env:NUGET_PACKAGES
 try {
     New-Item -ItemType Directory -Path $publish -Force | Out-Null
     $env:DOTNET_CLI_HOME = Join-Path $tempRoot 'dotnet-home'
@@ -39,24 +52,25 @@ try {
     $env:DOTNET_NOLOGO = '1'
     $env:DOTNET_CLI_TELEMETRY_OPTOUT = '1'
     $env:DOTNET_ADD_GLOBAL_TOOLS_TO_PATH = '0'
+    $env:NUGET_PACKAGES = $packages
     New-Item -ItemType Directory -Path $env:DOTNET_CLI_HOME -Force | Out-Null
-    & $dotnet restore $Project --ignore-failed-sources --verbosity minimal
+    & $dotnet restore $Project --artifacts-path $artifacts --ignore-failed-sources --verbosity minimal
     if ($LASTEXITCODE -ne 0) { throw 'Restore do servidor falhou.' }
-    & $dotnet build $Project -c Release --no-restore -warnaserror --verbosity minimal
+    & $dotnet build $Project -c Release --artifacts-path $artifacts --no-restore -warnaserror --verbosity minimal
     if ($LASTEXITCODE -ne 0) { throw 'Compilacao do servidor falhou.' }
-    $releaseDirectory = Join-Path (Join-Path (Join-Path $ProjectDirectory 'bin') 'Release') 'net8.0'
+    $releaseDirectory = Join-Path (Join-Path (Join-Path $artifacts 'bin') 'TurboRamaPixOnlineServer') 'release'
     $builtDll = Join-Path $releaseDirectory 'TurboRamaPixOnlineServer.dll'
     & $dotnet $builtDll --self-test
     if ($LASTEXITCODE -ne 0) { throw 'Autoteste do servidor falhou.' }
     if ($RuntimeIdentifier -eq 'portable') {
-        & $dotnet publish $Project -c Release --no-restore --self-contained false -o $publish `
+        & $dotnet publish $Project -c Release --artifacts-path $artifacts --no-restore --self-contained false -o $publish `
             -p:UseAppHost=false -p:IsTransformWebConfigDisabled=true `
             -p:DebugType=None -p:DebugSymbols=false -p:Deterministic=true
     }
     else {
-        & $dotnet restore $Project -r $RuntimeIdentifier --ignore-failed-sources --verbosity minimal
+        & $dotnet restore $Project -r $RuntimeIdentifier --artifacts-path $artifacts --ignore-failed-sources --verbosity minimal
         if ($LASTEXITCODE -ne 0) { throw 'Restore do runtime do servidor falhou.' }
-        & $dotnet publish $Project -c Release --no-restore --self-contained false -r $RuntimeIdentifier -o $publish `
+        & $dotnet publish $Project -c Release --artifacts-path $artifacts --no-restore --self-contained false -r $RuntimeIdentifier -o $publish `
             -p:DebugType=None -p:DebugSymbols=false -p:Deterministic=true
     }
     if ($LASTEXITCODE -ne 0) { throw 'Publicacao do servidor falhou.' }
@@ -95,5 +109,13 @@ finally {
     $env:DOTNET_NOLOGO = $previousDotnetNoLogo
     $env:DOTNET_CLI_TELEMETRY_OPTOUT = $previousDotnetTelemetry
     $env:DOTNET_ADD_GLOBAL_TOOLS_TO_PATH = $previousDotnetToolsPath
-    if (Test-Path -LiteralPath $tempRoot) { Remove-Item -LiteralPath $tempRoot -Recurse -Force }
+    $env:NUGET_PACKAGES = $previousNugetPackages
+    if (Test-Path -LiteralPath $tempRoot) {
+        $resolvedTemp = (Resolve-Path -LiteralPath $tempRoot).Path
+        $allowedPrefix = $buildRoot.TrimEnd([IO.Path]::DirectorySeparatorChar) + [IO.Path]::DirectorySeparatorChar
+        if (-not $resolvedTemp.StartsWith($allowedPrefix, [StringComparison]::OrdinalIgnoreCase)) {
+            throw 'A limpeza temporaria escaparia do diretorio de build autorizado.'
+        }
+        Remove-Item -LiteralPath $resolvedTemp -Recurse -Force
+    }
 }

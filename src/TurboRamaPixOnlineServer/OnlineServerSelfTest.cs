@@ -20,6 +20,10 @@ static class OnlineServerSelfTest
                 "hash da senha administrativa");
             Require(AdminPanel.HasForcedCreateLicenseSubmissionForSelfTest(),
                 "envio assistido da criacao de licenca no painel");
+            Require(AdminPanel.HasProfessionalDashboardForSelfTest(),
+                "painel profissional, filtros, estados ou separacao da configuracao local");
+            Require(AdminPanel.HasSafeAuditCsvForSelfTest(),
+                "exportacao CSV segura da auditoria administrativa");
             Require(!AdminPanel.IsHostAllowed("127.0.0.1", true, ""),
                 "painel abriu localmente sem hostname administrativo configurado");
             Require(!AdminPanel.IsHostAllowed("pix.lzgames.com.br", true, ""),
@@ -246,6 +250,9 @@ static class OnlineServerSelfTest
                 && dashboard.RejectedMachineAttempts >= 3
                 && dashboard.Licenses.Single().Devices.Single().RejectedAttempts == 3,
                 "painel administrativo nao refletiu estado e recusas");
+            Require(repository.ReadAdminAudit().Count >= dashboard.RecentAudit.Count
+                && repository.ReadAdminAudit().First().Event == dashboard.RecentAudit.First().Event,
+                "exportacao administrativa nao preservou a auditoria completa e sua ordem");
 
             repository.SetPixEnabled("TR-000125", true);
 
@@ -317,7 +324,7 @@ static class OnlineServerSelfTest
             }
             Require(retiredDeviceDenied, "dispositivo aposentado permaneceu autorizado");
 
-            Console.WriteLine("SELF-TEST SERVIDOR ONLINE: OK (ativacao de uso unico, transferencia administrativa de hardware, prova RSA-PSS, sessao exclusiva, clone registrado, original preservada, painel administrativo isolado por hostname e HTTPS, login protegido, configuracao sincronizada e versionada, bloqueio PIX, tabela de precos, validacao segura do caixa Mercado Pago, cobranca, idempotencia, anti-replay e reautenticacao remota).");
+            Console.WriteLine("SELF-TEST SERVIDOR ONLINE: OK (ativacao de uso unico, transferencia administrativa de hardware, prova RSA-PSS, sessao exclusiva, clone registrado, original preservada, painel administrativo isolado por hostname e HTTPS, login protegido, painel profissional e exportacao de auditoria, bloqueio PIX, idempotencia, anti-replay, reautenticacao remota e compatibilidade das rotas legadas fora do painel).");
             return 0;
         }
         catch (Exception ex)

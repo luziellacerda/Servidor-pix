@@ -318,6 +318,15 @@ static class AdminPanel
                 context.Request.Query["ok"].ToString(), context.Request.Query["error"].ToString()));
         }).RequireAuthorization();
 
+        app.MapGet("/admin/export/audit.csv", (OnlineStateRepository repository) =>
+        {
+            var bytes = Encoding.UTF8.GetPreamble().Concat(Encoding.UTF8.GetBytes(
+                AuditCsv(repository.ReadAdminAudit()))).ToArray();
+            var fileName = "turborama-auditoria-" + DateTimeOffset.UtcNow.ToString("yyyyMMdd-HHmmss",
+                CultureInfo.InvariantCulture) + ".csv";
+            return Results.File(bytes, "text/csv; charset=utf-8", fileName);
+        }).RequireAuthorization();
+
         MapAction(app, "/admin/actions/pix", (form, repository, _, _) =>
         {
             repository.SetPixEnabled(Required(form, "licenseId"), Required(form, "enabled") == "true");
@@ -418,19 +427,28 @@ static class AdminPanel
     private static string DashboardPage(AdminDashboardSnapshot snapshot, string token, string ok, string error)
     {
         var online = snapshot.Licenses.Sum(license => license.Devices.Count(device => device.Online));
+        var devices = snapshot.Licenses.Sum(license => license.Devices.Count);
+        var activeLicenses = snapshot.Licenses.Count(license => license.Status == "ACTIVE");
+        var pixEnabled = snapshot.Licenses.Count(license => license.PixEnabled);
         var rejected = snapshot.RejectedMachineAttempts;
         var html = new StringBuilder();
         html.Append(PageStart("Central TurboRama PIX"));
-        html.Append("<header class=top><div><span class=eyebrow>LZ GAMES / TURBORAMA</span><h1>Central de licenças e PIX</h1><p>Controle de máquinas, sessões, preços e recebimento.</p></div>");
-        html.Append(FormStart("/admin/logout", token)).Append("<button class=ghost>Sair</button></form></header>");
-        if (ok.Length != 0) html.Append("<div class='notice success'>Alteração aplicada e registrada.</div>");
+        html.Append("<header class=top><div><span class=eyebrow>LZ GAMES / TURBORAMA</span><h1>Central de licenças</h1><p>Máquinas autorizadas, disponibilidade e segurança em um só lugar.</p></div><nav class=top-actions aria-label=\"Ações do painel\"><a class='button ghost' href=#new-license>Nova licença</a><a class='button ghost' href=/admin/export/audit.csv>Exportar auditoria</a>");
+        html.Append(FormStart("/admin/logout", token)).Append("<button class=ghost>Sair</button></form></nav></header>");
+        if (ok.Length != 0) html.Append("<div class='notice success' role=status>Alteração aplicada e registrada.</div>");
         if (error.Length != 0) html.Append("<div class='notice danger'>A operação foi recusada. Código: ")
             .Append(E(error)).Append("</div>");
-        html.Append("<section class=summary><article><strong>").Append(snapshot.Licenses.Count)
-            .Append("</strong><span>Licenças</span></article><article><strong>").Append(online)
-            .Append("</strong><span>Máquinas online</span></article><article><strong>").Append(rejected)
-            .Append("</strong><span>Tentativas recusadas</span></article></section>");
-        html.Append("<section class=panel><div class=section-title><div><span class=eyebrow>NOVA INSTALAÇÃO</span><h2>Criar licença</h2></div></div>")
+        html.Append("<section class=summary aria-label=\"Resumo operacional\"><article><span class=metric-icon>LIC</span><strong>")
+            .Append(activeLicenses).Append("<small>/").Append(snapshot.Licenses.Count)
+            .Append("</small></strong><span>Licenças ativas</span></article><article><span class=metric-icon>PC</span><strong>")
+            .Append(online).Append("<small>/").Append(devices)
+            .Append("</small></strong><span>Máquinas online</span></article><article><span class=metric-icon>PIX</span><strong>")
+            .Append(pixEnabled).Append("</strong><span>Licenças com PIX liberado</span></article><article class='")
+            .Append(rejected > 0 ? "metric-alert" : "").Append("'><span class=metric-icon>SEG</span><strong>")
+            .Append(rejected).Append("</strong><span>Tentativas recusadas</span></article></section>");
+        html.Append("<section class='scope-banner'><div><span class=eyebrow>ARQUITETURA CONFIRMADA</span><h2>Servidor de licença, gabinete autônomo</h2><p>Este servidor autoriza licenças e máquinas. Preços, Mercado Pago, PDV, QR Code e créditos continuam configurados e processados localmente no gabinete.</p></div><span class='pill on'>MODELO LOCAL PRESERVADO</span></section>");
+        html.Append("<section class='panel toolbar' aria-label=\"Filtros de licenças\"><label>Localizar licença ou máquina<input id=license-search type=search placeholder=\"Cliente, licença, máquina ou versão\" autocomplete=off></label><label>Status<select id=license-status-filter><option value=all>Todos</option><option value=ACTIVE>Ativas</option><option value=SUSPENDED>Suspensas</option><option value=MAINTENANCE>Manutenção</option><option value=TRANSFER_PENDING>Transferência</option><option value=REVOKED>Revogadas</option></select></label><div class=filter-result id=license-filter-result role=status aria-live=polite></div></section>");
+        html.Append("<details class='panel create-panel' id=new-license><summary><span><span class=eyebrow>NOVA INSTALAÇÃO</span><strong>Criar licença</strong></span><span class=summary-hint>Abrir formulário</span></summary>")
             .Append(FormStart("/admin/actions/create-license", token, "grid-form"))
             .Append(Input("customerId", "Cliente", "CLI-TURBORAMA-TESTE"))
             .Append(Input("licenseId", "Licença", "TR-TURBORAMA-TESTE-001"))
@@ -438,8 +456,13 @@ static class AdminPanel
             .Append(Input("maximumDevices", "Máquinas permitidas", "1", "number"))
             .Append(Input("adminPassword", "Confirme sua senha", "", "password"))
             .Append(CreateLicenseSubmitButton)
-            .Append("<div class=submit-status role=status aria-live=polite></div></form></section>");
+            .Append("<div class=submit-status role=status aria-live=polite></div></form></details>");
+        html.Append("<div class=section-heading id=licenses><div><span class=eyebrow>OPERAÇÃO</span><h2>Licenças e máquinas</h2></div><span class=generated>Atualizado em ")
+            .Append(When(snapshot.GeneratedAtUnixSeconds)).Append("</span></div><div id=license-list>");
         foreach (var license in snapshot.Licenses) AppendLicense(html, license, token);
+        if (snapshot.Licenses.Count == 0)
+            html.Append("<section class='panel empty-state'><strong>Nenhuma licença cadastrada</strong><p>Use “Nova licença” para preparar a primeira instalação.</p></section>");
+        html.Append("</div>");
         AppendAudit(html, snapshot.RecentAudit);
         html.Append(PageEnd());
         return html.ToString();
@@ -447,86 +470,101 @@ static class AdminPanel
 
     private static void AppendLicense(StringBuilder html, AdminLicenseSnapshot license, string token)
     {
-        html.Append("<section class=panel><div class=section-title><div><span class=eyebrow>")
+        var activeDevices = license.Devices.Count(device => device.Status == "ACTIVE");
+        var search = string.Join(' ', new[] { license.CustomerId, license.LicenseId, license.Status,
+            license.BindingType }.Concat(license.Devices.SelectMany(device => new[]
+            { device.DeviceId, device.AgentVersion, device.Status, device.BindingType })));
+        html.Append("<article class='panel license-card' data-license-card data-status=\"")
+            .Append(E(license.Status)).Append("\" data-search=\"").Append(E(search.ToLowerInvariant()))
+            .Append("\"><div class=license-head><div><span class=eyebrow>")
             .Append(E(license.CustomerId)).Append("</span><h2>").Append(E(license.LicenseId))
-            .Append("</h2><p>").Append(E(license.BindingType)).Append(" · ")
-            .Append(license.Devices.Count).Append('/').Append(license.MaximumDevices).Append(" máquinas</p></div>")
-            .Append("<div class='pill ").Append(license.PixEnabled ? "on'>PIX ATIVO" : "off'>PIX BLOQUEADO")
-            .Append("</div></div>");
-        html.Append("<div class=actions>")
-            .Append(FormStart("/admin/actions/pix", token)).Append(Hidden("licenseId", license.LicenseId))
+            .Append("</h2></div><div class=license-pills><span class='pill state-").Append(E(license.Status.ToLowerInvariant()))
+            .Append("'>").Append(E(StatusTitle(license.Status))).Append("</span><span class='pill ")
+            .Append(license.PixEnabled ? "on'>PIX LIBERADO" : "off'>PIX BLOQUEADO").Append("</span></div></div>");
+        html.Append("<div class=license-facts><div><span>Proteção</span><strong>").Append(E(BindingTitle(license.BindingType)))
+            .Append("</strong></div><div><span>Ocupação</span><strong>").Append(activeDevices).Append('/')
+            .Append(license.MaximumDevices).Append(" máquinas</strong></div><div><span>Online agora</span><strong>")
+            .Append(license.Devices.Count(device => device.Online)).Append("</strong></div><div><span>Recusas</span><strong>")
+            .Append(license.Devices.Sum(device => device.RejectedAttempts)).Append("</strong></div></div>");
+        html.Append("<div class=operation-grid><section class=operation-card><span class=eyebrow>LICENÇA</span><h3>Estado operacional</h3><p>Suspender ou colocar em manutenção encerra as sessões ativas.</p>")
+            .Append(FormStart("/admin/actions/license-status", token, "stack")).Append(Hidden("licenseId", license.LicenseId))
+            .Append("<label>Novo estado<select name=status>").Append(StatusOptions(license.Status, true))
+            .Append("</select></label><button data-busy=\"Aplicando...\" data-confirm=\"Confirma a alteração do estado desta licença?\">Aplicar estado</button></form></section>");
+        html.Append("<section class=operation-card><span class=eyebrow>PIX</span><h3>Autorização remota</h3><p>Controla somente a permissão de novas cobranças; não altera preços nem credenciais locais.</p>")
+            .Append(FormStart("/admin/actions/pix", token, "stack")).Append(Hidden("licenseId", license.LicenseId))
             .Append(Hidden("enabled", license.PixEnabled ? "false" : "true"))
-            .Append("<button class='").Append(license.PixEnabled ? "danger" : "primary").Append("'>")
-            .Append(license.PixEnabled ? "Bloquear novas cobranças PIX" : "Ativar serviço PIX").Append("</button></form>")
-            .Append(FormStart("/admin/actions/license-status", token)).Append(Hidden("licenseId", license.LicenseId))
-            .Append("<select name=status><option>ACTIVE</option><option>SUSPENDED</option><option>MAINTENANCE</option><option>TRANSFER_PENDING</option><option>REVOKED</option></select><button>Alterar licença</button></form></div>");
-        html.Append("<div class=columns><div><h3>Preços sincronizados</h3><p class=muted>Versão ")
-            .Append(license.ConfigurationVersion).Append(". Site e EmulationStation usam esta configuração.</p>")
-            .Append(FormStart("/admin/actions/prices", token, "price-grid")).Append(Hidden("licenseId", license.LicenseId));
-        foreach (var minutes in new[] { 15, 30, 45, 60, 120 })
-        {
-            license.PackagePricesCents.TryGetValue(minutes, out var cents);
-            html.Append(Input("price" + minutes, minutes + " minutos", cents == 0 ? "" : Reais(cents), "text"));
-        }
-        html.Append("<button class=primary>Salvar preços no servidor</button></form></div>");
-        html.Append("<div><h3>Mercado Pago</h3><p class=muted>")
-            .Append(license.MercadoPagoConfigured ? "Credencial protegida · caixa " + E(license.ExternalPosId) : "Ainda não configurado")
-            .Append("</p>").Append(FormStart("/admin/actions/mercadopago", token, "stack"))
-            .Append(Hidden("customerId", license.CustomerId))
-            .Append(Input("externalPosId", "External ID do caixa", license.ExternalPosId))
-            .Append(Input("accessToken", "Novo Access Token", "", "password"))
-            .Append(Input("adminPassword", "Confirme sua senha", "", "password"))
-            .Append("<button>Validar e substituir credencial</button></form></div></div>");
-        html.Append("<h3>Máquinas autorizadas</h3><div class=table-wrap><table><thead><tr><th>Máquina</th><th>Proteção</th><th>Versão</th><th>Conexão</th><th>Recusas</th><th>Configuração</th><th>Ações</th></tr></thead><tbody>");
+            .Append("<button class='").Append(license.PixEnabled ? "danger" : "primary")
+            .Append("' data-busy=\"Aplicando...\" data-confirm=\"")
+            .Append(license.PixEnabled ? "Confirma o bloqueio de novas cobranças PIX?" : "Confirma a liberação de novas cobranças PIX?")
+            .Append("\">").Append(license.PixEnabled ? "Bloquear novas cobranças" : "Liberar novas cobranças")
+            .Append("</button></form></section>");
+        html.Append("<section class='operation-card local-card'><span class=eyebrow>CONFIGURAÇÃO LOCAL</span><h3>Pagamento no gabinete</h3><p>Valores, Mercado Pago, PDV, QR e créditos são gerenciados no EmulationStation e nos configuradores instalados.</p><span class='pill neutral'>SEM DEPENDÊNCIA DO PAINEL</span></section></div>");
+        html.Append("<div class=machines-title><div><h3>Máquinas autorizadas</h3><p class=muted>Identidade criptográfica, versão e último contato.</p></div></div><div class=table-wrap><table class=machine-table><thead><tr><th>Máquina</th><th>Proteção</th><th>Versão</th><th>Conexão</th><th>Segurança</th><th>Ações</th></tr></thead><tbody>");
         if (license.Devices.Count == 0) html.Append("<tr><td colspan=7 class=muted>Nenhuma máquina ativada.</td></tr>");
         foreach (var device in license.Devices)
         {
-            html.Append("<tr><td><code>").Append(E(Short(device.DeviceId))).Append("</code><br><span class=muted>")
-                .Append(E(device.Status)).Append("</span></td><td>").Append(E(device.BindingType))
-                .Append("</td><td>").Append(E(device.AgentVersion)).Append("</td><td><span class='status ")
+            html.Append("<tr><td><div class=id-line><code title=\"").Append(E(device.DeviceId)).Append("\">")
+                .Append(E(Short(device.DeviceId))).Append("</code><button type=button class=copy-button data-copy=\"")
+                .Append(E(device.DeviceId)).Append("\" aria-label=\"Copiar identificador da máquina\">Copiar</button></div><span class='pill compact state-")
+                .Append(E(device.Status.ToLowerInvariant())).Append("'>").Append(E(StatusTitle(device.Status)))
+                .Append("</span></td><td>").Append(E(BindingTitle(device.BindingType)))
+                .Append("</td><td><strong>").Append(E(device.AgentVersion)).Append("</strong><br><span class=muted>Ativada ")
+                .Append(When(device.ActivatedAtUnixSeconds)).Append("</span></td><td><span class='status ")
                 .Append(device.Online ? "online'>ONLINE" : "offline'>OFFLINE").Append("</span><br><span class=muted>")
-                .Append(When(device.LastContactUnixSeconds)).Append("</span></td><td>").Append(device.RejectedAttempts)
-                .Append("</td><td>").Append(device.CanManageConfiguration ? "Permitida" : "Somente leitura")
-                .Append("</td><td><div class=row-actions>");
+                .Append(When(device.LastContactUnixSeconds)).Append("</span></td><td><strong>").Append(device.RejectedAttempts)
+                .Append(" recusas</strong><br><span class=muted>").Append(device.CanManageConfiguration ? "Configuração permitida" : "Configuração bloqueada")
+                .Append("</span></td><td><div class=row-actions>");
             html.Append(FormStart("/admin/actions/device-status", token)).Append(Hidden("licenseId", license.LicenseId))
                 .Append(Hidden("deviceId", device.DeviceId)).Append(Hidden("status", device.Status == "ACTIVE" ? "SUSPENDED" : "ACTIVE"))
-                .Append("<button>").Append(device.Status == "ACTIVE" ? "Recusar" : "Permitir").Append("</button></form>");
+                .Append("<button data-busy=\"Aplicando...\" data-confirm=\"")
+                .Append(device.Status == "ACTIVE" ? "Confirma a suspensão desta máquina?" : "Confirma a reativação desta máquina?")
+                .Append("\">").Append(device.Status == "ACTIVE" ? "Suspender" : "Reativar").Append("</button></form>");
             html.Append(FormStart("/admin/actions/device-configuration", token)).Append(Hidden("licenseId", license.LicenseId))
                 .Append(Hidden("deviceId", device.DeviceId)).Append(Hidden("allowed", device.CanManageConfiguration ? "false" : "true"))
-                .Append("<button>").Append(device.CanManageConfiguration ? "Bloquear edição" : "Permitir edição").Append("</button></form>");
+                .Append("<button data-busy=\"Aplicando...\" data-confirm=\"Confirma a alteração da permissão de configuração?\">")
+                .Append(device.CanManageConfiguration ? "Bloquear configuração" : "Permitir configuração").Append("</button></form>");
             html.Append(FormStart("/admin/actions/force-reauth", token)).Append(Hidden("licenseId", license.LicenseId))
-                .Append(Hidden("deviceId", device.DeviceId)).Append("<button>Encerrar sessão</button></form></div></td></tr>");
+                .Append(Hidden("deviceId", device.DeviceId)).Append("<button data-busy=\"Encerrando...\" data-confirm=\"Confirma o encerramento da sessão desta máquina?\">Encerrar sessão</button></form></div></td></tr>");
         }
-        html.Append("</tbody></table></div>")
-            .Append(FormStart("/admin/actions/activation-code", token, "activation-form"))
+        html.Append("</tbody></table></div><details class=advanced><summary>Ativação e transferência de hardware</summary><div class=advanced-grid>")
+            .Append(FormStart("/admin/actions/activation-code", token, "stack operation-card"))
             .Append(Hidden("licenseId", license.LicenseId))
             .Append(Input("adminPassword", "Senha para gerar novo código", "", "password"))
-            .Append("<button>Gerar novo código de ativação</button></form>")
-            .Append(FormStart("/admin/actions/device-transfer", token, "activation-form"))
+            .Append("<button data-busy=\"Gerando...\" data-confirm=\"O código anterior deixará de valer. Deseja continuar?\">Gerar novo código de ativação</button></form>")
+            .Append(FormStart("/admin/actions/device-transfer", token, "stack operation-card danger-zone"))
             .Append(Hidden("licenseId", license.LicenseId))
             .Append(Input("adminPassword", "Senha para transferir esta licença", "", "password"))
-            .Append("<button class=danger>Transferir para outro hardware e mostrar código único</button></form></section>");
+            .Append("<button class=danger data-busy=\"Preparando...\" data-confirm=\"ATENÇÃO: isso suspenderá as máquinas atuais e preparará a licença para outro hardware. Continuar?\">Preparar transferência de hardware</button></form></div></details></article>");
     }
 
     private static void AppendAudit(StringBuilder html, IReadOnlyList<OnlineAuditEntry> audit)
     {
-        html.Append("<section class=panel><div class=section-title><div><span class=eyebrow>SEGURANÇA</span><h2>Eventos recentes</h2></div></div><div class=table-wrap><table><thead><tr><th>Quando</th><th>Evento</th><th>Licença</th><th>Máquina</th><th>Detalhe</th></tr></thead><tbody>");
+        html.Append("<section class=panel id=audit><div class=section-title><div><span class=eyebrow>SEGURANÇA</span><h2>Eventos recentes</h2><p>Histórico administrativo e recusas criptográficas.</p></div><a class='button ghost' href=/admin/export/audit.csv>Baixar CSV</a></div><div class=audit-toolbar><label>Pesquisar eventos<input id=audit-search type=search placeholder=\"Evento, licença, máquina ou detalhe\" autocomplete=off></label><label>Tipo<select id=audit-severity><option value=all>Todos</option><option value=critical>Críticos</option><option value=warning>Atenção</option><option value=success>Sucesso</option><option value=info>Informativos</option></select></label><div class=filter-result id=audit-filter-result role=status aria-live=polite></div></div><div class=table-wrap><table class=audit-table><thead><tr><th>Quando</th><th>Evento</th><th>Licença / máquina</th><th>Detalhe</th></tr></thead><tbody>");
+        if (audit.Count == 0) html.Append("<tr><td colspan=4 class=muted>Nenhum evento registrado.</td></tr>");
         foreach (var item in audit)
-            html.Append("<tr><td>").Append(When(item.AtUnixSeconds)).Append("</td><td>").Append(E(item.Event))
-                .Append("</td><td>").Append(E(item.LicenseId)).Append("</td><td><code>")
+        {
+            var severity = AuditSeverity(item.Event);
+            var search = (item.Event + " " + item.LicenseId + " " + item.DeviceId + " " + item.Detail).ToLowerInvariant();
+            html.Append("<tr data-audit-row data-severity=\"").Append(severity).Append("\" data-search=\"")
+                .Append(E(search)).Append("\"><td>").Append(When(item.AtUnixSeconds))
+                .Append("</td><td><span class='event-badge event-").Append(severity).Append("'>")
+                .Append(E(EventTitle(item.Event))).Append("</span><br><code class=event-code>").Append(E(item.Event))
+                .Append("</code></td><td>").Append(E(item.LicenseId)).Append("<br><code>")
                 .Append(E(Short(item.DeviceId))).Append("</code></td><td>").Append(E(item.Detail)).Append("</td></tr>");
+        }
         html.Append("</tbody></table></div></section>");
     }
 
     private static string LoginPage(string token, string message, bool enabled)
-        => PageStart("Acesso administrativo") + "<section class=login><div class=login-card><span class=eyebrow>LZ GAMES / TURBORAMA</span><h1>Central PIX</h1><p>"
+        => PageStart("Acesso administrativo") + "<section class=login><div class=login-card><div class=login-mark>TR</div><span class=eyebrow>LZ GAMES / TURBORAMA</span><h1>Central de licenças</h1><p>"
             + E(message) + "</p>" + (enabled ? FormStart("/admin/login", token, "stack")
                 + Input("username", "Usuário", "") + Input("password", "Senha", "", "password")
-                + "<button class=primary>Entrar com segurança</button></form>" : "") + "</div></section>" + PageEnd();
+                + "<button class=primary data-busy=\"Autenticando...\">Entrar com segurança</button></form>" : "")
+                + "<div class=login-security>Protegido por Cloudflare Access + autenticação TurboRama</div></div></section>" + PageEnd();
 
     private static string ActivationCodePage(string code)
-        => PageStart("Código de ativação") + "<section class=login><div class=login-card><span class=eyebrow>USO ÚNICO</span><h1>Código de ativação</h1><p>Ele não será mostrado novamente. Transporte-o diretamente para o único gabinete autorizado.</p><code class=activation>"
-            + E(code) + "</code><a class='button primary' href=/admin>Voltar ao painel</a></div></section>" + PageEnd();
+        => PageStart("Código de ativação") + "<section class=login><div class=login-card><span class=eyebrow>USO ÚNICO</span><h1>Código de ativação</h1><p>Ele não será mostrado novamente. Transporte-o diretamente para o único gabinete autorizado.</p><code class=activation id=activation-code>"
+            + E(code) + "</code><div class=activation-actions><button type=button class=ghost data-copy-target=\"#activation-code\">Copiar código</button><a class='button primary' href=/admin>Voltar ao painel</a></div><p class='muted compact-text'>Não salve este código no Git, em capturas ou mensagens.</p></div></section>" + PageEnd();
 
     private static Dictionary<int, long> ReadPrices(IFormCollection form)
     {
@@ -576,6 +614,91 @@ static class AdminPanel
         _ => "ADMIN-ERROR"
     };
 
+    private static string StatusOptions(string selected, bool allowTransfer)
+    {
+        var options = allowTransfer
+            ? new[] { "ACTIVE", "SUSPENDED", "MAINTENANCE", "TRANSFER_PENDING", "REVOKED" }
+            : new[] { "ACTIVE", "SUSPENDED", "MAINTENANCE", "REVOKED" };
+        var html = new StringBuilder();
+        foreach (var status in options)
+            html.Append("<option value=\"").Append(E(status)).Append("\"")
+                .Append(status == selected ? " selected" : "").Append('>')
+                .Append(E(StatusTitle(status))).Append("</option>");
+        return html.ToString();
+    }
+
+    private static string StatusTitle(string status) => status switch
+    {
+        "ACTIVE" => "Ativa",
+        "SUSPENDED" => "Suspensa",
+        "MAINTENANCE" => "Manutenção",
+        "TRANSFER_PENDING" => "Transferência pendente",
+        "REVOKED" => "Revogada",
+        _ => status
+    };
+
+    private static string BindingTitle(string binding) => binding switch
+    {
+        "SOFTWARE_BOUND_ONLINE" => "Software + servidor",
+        "TPM_BOUND" => "TPM",
+        "USB_TOKEN_BOUND" => "Token criptográfico",
+        _ => binding
+    };
+
+    private static string AuditSeverity(string eventName)
+    {
+        if (eventName.Contains("MISMATCH", StringComparison.Ordinal)
+            || eventName.Contains("INVALID", StringComparison.Ordinal)
+            || eventName.Contains("DENIED", StringComparison.Ordinal)
+            || eventName.Contains("REVOKED", StringComparison.Ordinal)
+            || eventName.Contains("FAILED", StringComparison.Ordinal)) return "critical";
+        if (eventName.Contains("SUSPENDED", StringComparison.Ordinal)
+            || eventName.Contains("DISABLED", StringComparison.Ordinal)
+            || eventName.Contains("BLOCKED", StringComparison.Ordinal)
+            || eventName.Contains("REAUTH", StringComparison.Ordinal)
+            || eventName.Contains("TRANSFER", StringComparison.Ordinal)) return "warning";
+        if (eventName.Contains("SUCCEEDED", StringComparison.Ordinal)
+            || eventName.Contains("ACTIVATED", StringComparison.Ordinal)
+            || eventName.Contains("ENABLED", StringComparison.Ordinal)
+            || eventName.Contains("CREATED", StringComparison.Ordinal)) return "success";
+        return "info";
+    }
+
+    private static string EventTitle(string eventName) => eventName switch
+    {
+        "ADMIN_LOGIN_SUCCEEDED" => "Login administrativo",
+        "ADMIN_LOGIN_FAILED" => "Falha de login",
+        "ADMIN_LOGIN_BLOCKED" => "Login bloqueado",
+        "ADMIN_LOGOUT" => "Saída administrativa",
+        "LICENSE_CREATED" => "Licença criada",
+        "LICENSE_STATUS_CHANGED" => "Estado da licença alterado",
+        "PIX_ENABLED" => "PIX liberado",
+        "PIX_DISABLED" => "PIX bloqueado",
+        "DEVICE_ACTIVATED" => "Máquina ativada",
+        "DEVICE_STATUS_CHANGED" => "Estado da máquina alterado",
+        "DEVICE_CONFIGURATION_PERMISSION_CHANGED" => "Permissão alterada",
+        "DEVICE_TRANSFER_PREPARED" => "Transferência preparada",
+        "ACTIVATION_CODE_ISSUED" => "Código de ativação emitido",
+        "FORCE_REAUTH" => "Nova autenticação exigida",
+        "MACHINE_BINDING_MISMATCH" => "Máquina divergente recusada",
+        "DUPLICATE_SESSION_DENIED" => "Sessão duplicada recusada",
+        "ACTIVATION_INVALID" => "Ativação inválida",
+        _ => eventName.Replace('_', ' ')
+    };
+
+    private static string AuditCsv(IReadOnlyList<OnlineAuditEntry> audit)
+    {
+        var csv = new StringBuilder("Quando;Evento;Licenca;Maquina;Detalhe\r\n");
+        foreach (var item in audit)
+            csv.Append(Csv(When(item.AtUnixSeconds))).Append(';').Append(Csv(item.Event)).Append(';')
+                .Append(Csv(item.LicenseId)).Append(';').Append(Csv(item.DeviceId)).Append(';')
+                .Append(Csv(item.Detail)).Append("\r\n");
+        return csv.ToString();
+    }
+
+    private static string Csv(string? value) => "\"" + (value ?? "").Replace("\"", "\"\"",
+        StringComparison.Ordinal) + "\"";
+
     private static IResult Html(string value, int statusCode = 200)
         => Results.Content(value, "text/html; charset=utf-8", Encoding.UTF8, statusCode);
     private static string E(string? value) => WebUtility.HtmlEncode(value ?? "");
@@ -596,7 +719,7 @@ static class AdminPanel
     private static string PageEnd() => "</main></body></html>";
 
     private const string Css = """
-:root{color-scheme:dark;--bg:#071015;--panel:#101d24;--line:#243943;--text:#eef7f8;--muted:#91a9b2;--cyan:#1dcbe8;--green:#39e58c;--red:#ff6577;--amber:#ffcc4a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#13323d 0,#071015 42%);color:var(--text);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}.shell{width:min(1500px,94vw);margin:auto;padding:34px 0 70px}.top,.section-title,.actions,.inline-form,.row-actions{display:flex;align-items:center;gap:12px}.top,.section-title{justify-content:space-between}.top{margin-bottom:28px}.top h1,.panel h2,.login h1{margin:.2rem 0}.top p,.section-title p,.muted{color:var(--muted)}.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.15em;color:var(--cyan)}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:18px}.summary article,.panel,.login-card{background:linear-gradient(145deg,rgba(16,29,36,.97),rgba(10,20,26,.97));border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 48px rgba(0,0,0,.25)}.summary article{padding:20px}.summary strong{display:block;font-size:2rem;color:var(--green)}.summary span{color:var(--muted)}.panel{padding:24px;margin:18px 0}.pill,.status{display:inline-block;border-radius:999px;padding:7px 12px;font-weight:800;font-size:.75rem;letter-spacing:.05em}.pill.on,.status.online{background:rgba(57,229,140,.12);color:var(--green);border:1px solid rgba(57,229,140,.4)}.pill.off,.status.offline{background:rgba(255,101,119,.12);color:var(--red);border:1px solid rgba(255,101,119,.4)}button,.button,select,input{border-radius:10px;border:1px solid #35505d;background:#0a171d;color:var(--text);padding:10px 13px;font:inherit}button,.button{cursor:pointer;font-weight:750;text-decoration:none}.primary{background:linear-gradient(135deg,#0ea5c6,#1bc98a);border:0;color:#041114}.danger{border-color:rgba(255,101,119,.55);color:#ff9baa}.ghost{background:transparent}.actions{flex-wrap:wrap;margin:18px 0}.grid-form{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:end}.grid-form>.submit-status{grid-column:1/-1;color:#ffb4bd;font-weight:700}.columns{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;margin:24px 0}.price-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:end}.price-grid button{grid-column:1/-1}.stack{display:grid;gap:12px}.stack button{width:100%}label{display:grid;gap:6px;color:var(--muted);font-size:.82rem;font-weight:700}input:focus,select:focus,button:focus{outline:2px solid var(--cyan);outline-offset:2px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;min-width:850px}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-size:.72rem;letter-spacing:.08em}code{color:#b9eff8}.row-actions{align-items:flex-start;flex-wrap:wrap}.row-actions button{font-size:.75rem;padding:7px 9px}.activation-form{margin-top:16px;display:flex;align-items:end;gap:10px}.notice{padding:13px 16px;border-radius:10px;margin-bottom:15px}.success{background:rgba(57,229,140,.12);color:var(--green)}.notice.danger{background:rgba(255,101,119,.12);color:#ffb4bd}.login{min-height:82vh;display:grid;place-items:center}.login-card{width:min(460px,92vw);padding:32px}.activation{display:block;padding:16px;margin:18px 0;background:#061015;border:1px solid var(--line);border-radius:10px;overflow-wrap:anywhere;color:var(--amber)}@media(max-width:900px){.summary,.columns,.grid-form{grid-template-columns:1fr}.price-grid{grid-template-columns:repeat(2,1fr)}.top,.section-title{align-items:flex-start;flex-direction:column}.activation-form{display:grid}}
+:root{color-scheme:dark;--bg:#061016;--panel:#0d1a21;--panel-2:#12232c;--line:#213943;--line-strong:#315563;--text:#f3f8f9;--muted:#94aab2;--cyan:#29c9e8;--green:#35df91;--red:#ff6e7f;--amber:#ffc857;--blue:#69a7ff;--shadow:0 20px 60px rgba(0,0,0,.28)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 85% -10%,#164352 0,transparent 34%),linear-gradient(180deg,#07141a,#050c11 70%);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}.shell{width:min(1480px,94vw);margin:auto;padding:32px 0 72px}.top,.top-actions,.section-title,.license-head,.license-pills,.row-actions,.id-line,.activation-actions{display:flex;align-items:center;gap:12px}.top,.section-title,.license-head{justify-content:space-between}.top{margin-bottom:24px}.top h1,.section-heading h2,.panel h2,.login h1,.scope-banner h2{margin:.2rem 0}.top p,.section-title p,.muted,.generated,.operation-card p,.scope-banner p{color:var(--muted)}.top-actions{justify-content:flex-end;flex-wrap:wrap}.top-actions form{display:inline-flex}.eyebrow{display:block;font-size:.7rem;font-weight:850;letter-spacing:.16em;color:var(--cyan)}.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}.summary article,.panel,.login-card,.scope-banner{background:linear-gradient(145deg,rgba(15,29,36,.98),rgba(8,18,24,.98));border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.summary article{position:relative;padding:20px;min-height:122px}.summary strong{display:block;margin-top:10px;font-size:2rem;line-height:1;color:var(--green)}.summary strong small{font-size:.95rem;color:var(--muted);font-weight:700}.summary article>span:last-child{display:block;margin-top:10px;color:var(--muted)}.metric-icon{position:absolute;right:16px;top:16px;color:#53727e;font-size:.67rem;font-weight:900;letter-spacing:.12em}.summary .metric-alert strong{color:var(--amber)}.scope-banner{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:22px 24px;margin-bottom:18px;border-color:rgba(41,201,232,.3);background:linear-gradient(120deg,rgba(17,43,52,.98),rgba(8,20,26,.98))}.scope-banner p{max-width:900px;margin:.45rem 0 0}.panel{padding:22px;margin:18px 0}.toolbar,.audit-toolbar{display:grid;grid-template-columns:minmax(280px,1fr) 220px auto;gap:14px;align-items:end}.filter-result{color:var(--muted);font-size:.82rem;text-align:right;padding-bottom:10px}.section-heading{display:flex;align-items:end;justify-content:space-between;margin:30px 2px 10px}.section-heading h2{font-size:1.35rem}.create-panel{scroll-margin-top:18px}.create-panel>summary,.advanced>summary{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none}.create-panel>summary::-webkit-details-marker,.advanced>summary::-webkit-details-marker{display:none}.create-panel>summary strong{display:block;margin-top:5px;font-size:1.25rem}.summary-hint{color:var(--cyan);font-weight:800}.create-panel[open]>summary{padding-bottom:20px;border-bottom:1px solid var(--line)}.grid-form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:end;margin-top:20px}.grid-form>.submit-status{grid-column:1/-1;color:#ffb4bd;font-weight:700}.license-card{scroll-margin-top:18px}.license-card[hidden],[data-audit-row][hidden]{display:none}.license-head{padding-bottom:18px;border-bottom:1px solid var(--line)}.license-head h2{overflow-wrap:anywhere}.license-pills{justify-content:flex-end;flex-wrap:wrap}.license-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0}.license-facts>div{padding:13px 14px;background:rgba(5,15,20,.65);border:1px solid var(--line);border-radius:12px}.license-facts span{display:block;color:var(--muted);font-size:.75rem}.license-facts strong{display:block;margin-top:4px}.operation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0}.operation-card{padding:17px;background:linear-gradient(145deg,rgba(18,35,44,.88),rgba(8,19,25,.88));border:1px solid var(--line);border-radius:14px}.operation-card h3{margin:.35rem 0}.operation-card p{min-height:45px;font-size:.84rem}.local-card{border-color:rgba(41,201,232,.25)}.machines-title{display:flex;align-items:end;justify-content:space-between;margin:24px 0 10px}.machines-title h3,.machines-title p{margin:.2rem 0}.pill,.status,.event-badge{display:inline-block;border-radius:999px;padding:6px 10px;font-weight:850;font-size:.69rem;letter-spacing:.045em;white-space:nowrap}.compact{padding:4px 8px;margin-top:7px}.pill.on,.status.online,.state-active,.event-success{background:rgba(53,223,145,.12);color:var(--green);border:1px solid rgba(53,223,145,.35)}.pill.off,.status.offline,.state-revoked,.event-critical{background:rgba(255,110,127,.11);color:#ff9baa;border:1px solid rgba(255,110,127,.36)}.state-suspended,.state-maintenance,.state-transfer_pending,.event-warning{background:rgba(255,200,87,.1);color:var(--amber);border:1px solid rgba(255,200,87,.35)}.neutral,.event-info{background:rgba(105,167,255,.1);color:#9fc6ff;border:1px solid rgba(105,167,255,.3)}button,.button,select,input{border-radius:10px;border:1px solid var(--line-strong);background:#07151b;color:var(--text);padding:10px 13px;font:inherit}button,.button{cursor:pointer;font-weight:780;text-decoration:none;text-align:center}button:hover,.button:hover{border-color:var(--cyan);transform:translateY(-1px)}button:disabled{opacity:.55;cursor:wait;transform:none}.primary{background:linear-gradient(135deg,#16bfe0,#2ad487);border:0;color:#031116}.danger,.danger-zone button{border-color:rgba(255,110,127,.55);color:#ff9baa}.ghost{background:transparent}.stack{display:grid;gap:11px}.stack button{width:100%}label{display:grid;gap:6px;color:var(--muted);font-size:.8rem;font-weight:750}input:focus,select:focus,button:focus,.button:focus,summary:focus{outline:2px solid var(--cyan);outline-offset:2px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:13px;background:rgba(5,14,19,.45)}table{width:100%;border-collapse:collapse;min-width:980px}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line);vertical-align:top}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:rgba(41,201,232,.035)}th{color:var(--muted);font-size:.69rem;letter-spacing:.09em;text-transform:uppercase}code{color:#b9eff8}.id-line{align-items:flex-start}.copy-button{font-size:.68rem;padding:4px 7px}.row-actions{align-items:flex-start;flex-wrap:wrap}.row-actions form{display:inline-flex}.row-actions button{font-size:.72rem;padding:7px 9px}.advanced{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}.advanced>summary{color:var(--muted);font-weight:800}.advanced[open]>summary{color:var(--text);margin-bottom:14px}.advanced-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.danger-zone{border-color:rgba(255,110,127,.28)}.audit-toolbar{margin:18px 0 12px}.audit-table{min-width:900px}.event-code{font-size:.68rem;color:var(--muted)}.notice{padding:13px 16px;border-radius:11px;margin-bottom:15px;border:1px solid transparent}.success{background:rgba(53,223,145,.11);color:var(--green);border-color:rgba(53,223,145,.25)}.notice.danger{background:rgba(255,110,127,.11);color:#ffb4bd;border-color:rgba(255,110,127,.25)}.empty-state{text-align:center;padding:42px}.empty-state strong{font-size:1.2rem}.login{min-height:82vh;display:grid;place-items:center}.login-card{width:min(470px,92vw);padding:34px}.login-mark{width:52px;height:52px;display:grid;place-items:center;border-radius:15px;margin-bottom:20px;background:linear-gradient(135deg,var(--cyan),var(--green));color:#031116;font-weight:950;letter-spacing:.05em}.login-security{margin-top:22px;padding-top:17px;border-top:1px solid var(--line);color:var(--muted);font-size:.75rem}.activation{display:block;padding:16px;margin:18px 0;background:#061015;border:1px solid var(--line);border-radius:10px;overflow-wrap:anywhere;color:var(--amber);font-size:1rem}.activation-actions{align-items:stretch}.activation-actions>*{flex:1}.compact-text{font-size:.78rem}@media(max-width:1100px){.summary{grid-template-columns:repeat(2,1fr)}.operation-grid{grid-template-columns:1fr 1fr}.local-card{grid-column:1/-1}.license-facts{grid-template-columns:repeat(2,1fr)}}@media(max-width:760px){.shell{width:min(94vw,680px);padding-top:22px}.top,.scope-banner,.section-title,.license-head,.section-heading{align-items:flex-start;flex-direction:column}.top-actions{justify-content:flex-start}.summary,.operation-grid,.license-facts,.grid-form,.toolbar,.audit-toolbar,.advanced-grid{grid-template-columns:1fr}.local-card{grid-column:auto}.filter-result{text-align:left;padding:0}.license-pills{justify-content:flex-start}.scope-banner .pill{white-space:normal}.activation-actions{flex-direction:column}table{min-width:820px}}
 """;
 
     private const string CreateLicenseSubmitButton =
@@ -605,6 +728,28 @@ static class AdminPanel
     private const string AdminJavascript = """
 (() => {
   "use strict";
+
+  const normalize = value => (value || "").toLocaleLowerCase("pt-BR").trim();
+  const setBusy = button => {
+    if (!button || button.disabled) return;
+    button.dataset.originalText = button.textContent || "";
+    button.disabled = true;
+    button.textContent = button.dataset.busy || "Aplicando...";
+  };
+
+  for (const button of document.querySelectorAll("button[data-confirm]")) {
+    button.addEventListener("click", event => {
+      if (!window.confirm(button.dataset.confirm || "Confirma esta operação?")) event.preventDefault();
+    });
+  }
+
+  for (const form of document.querySelectorAll("form")) {
+    form.addEventListener("submit", event => {
+      const button = event.submitter;
+      if (button && !button.hasAttribute("data-force-submit")) setBusy(button);
+    });
+  }
+
   for (const button of document.querySelectorAll("button[data-force-submit]")) {
     button.addEventListener("click", event => {
       const form = button.form;
@@ -625,6 +770,65 @@ static class AdminPanel
       HTMLFormElement.prototype.submit.call(form);
     });
   }
+
+  const copyText = async (text, button) => {
+    if (!text) return;
+    try {
+      await navigator.clipboard.writeText(text);
+      const original = button.textContent;
+      button.textContent = "Copiado";
+      window.setTimeout(() => { if (document.contains(button)) button.textContent = original; }, 1600);
+    } catch (_) {
+      button.textContent = "Não copiado";
+    }
+  };
+  for (const button of document.querySelectorAll("[data-copy]"))
+    button.addEventListener("click", () => copyText(button.dataset.copy || "", button));
+  for (const button of document.querySelectorAll("[data-copy-target]"))
+    button.addEventListener("click", () => {
+      const target = document.querySelector(button.dataset.copyTarget || "");
+      copyText(target ? target.textContent || "" : "", button);
+    });
+
+  const licenseSearch = document.querySelector("#license-search");
+  const licenseStatus = document.querySelector("#license-status-filter");
+  const licenseResult = document.querySelector("#license-filter-result");
+  const licenseCards = [...document.querySelectorAll("[data-license-card]")];
+  const filterLicenses = () => {
+    const query = normalize(licenseSearch && licenseSearch.value);
+    const status = licenseStatus ? licenseStatus.value : "all";
+    let visible = 0;
+    for (const card of licenseCards) {
+      const matchesText = !query || normalize(card.dataset.search).includes(query);
+      const matchesStatus = status === "all" || card.dataset.status === status;
+      card.hidden = !(matchesText && matchesStatus);
+      if (!card.hidden) visible += 1;
+    }
+    if (licenseResult) licenseResult.textContent = `${visible} de ${licenseCards.length} licenças`;
+  };
+  if (licenseSearch) licenseSearch.addEventListener("input", filterLicenses);
+  if (licenseStatus) licenseStatus.addEventListener("change", filterLicenses);
+  filterLicenses();
+
+  const auditSearch = document.querySelector("#audit-search");
+  const auditSeverity = document.querySelector("#audit-severity");
+  const auditResult = document.querySelector("#audit-filter-result");
+  const auditRows = [...document.querySelectorAll("[data-audit-row]")];
+  const filterAudit = () => {
+    const query = normalize(auditSearch && auditSearch.value);
+    const severity = auditSeverity ? auditSeverity.value : "all";
+    let visible = 0;
+    for (const row of auditRows) {
+      const matchesText = !query || normalize(row.dataset.search).includes(query);
+      const matchesSeverity = severity === "all" || row.dataset.severity === severity;
+      row.hidden = !(matchesText && matchesSeverity);
+      if (!row.hidden) visible += 1;
+    }
+    if (auditResult) auditResult.textContent = `${visible} de ${auditRows.length} eventos`;
+  };
+  if (auditSearch) auditSearch.addEventListener("input", filterAudit);
+  if (auditSeverity) auditSeverity.addEventListener("change", filterAudit);
+  filterAudit();
 })();
 """;
 
@@ -633,4 +837,32 @@ static class AdminPanel
             && CreateLicenseSubmitButton.Contains("data-force-submit", StringComparison.Ordinal)
             && AdminJavascript.Contains("HTMLFormElement.prototype.submit.call(form)", StringComparison.Ordinal)
             && PageStart("self-test").Contains("/admin/assets/admin.js", StringComparison.Ordinal);
+
+    internal static bool HasProfessionalDashboardForSelfTest()
+    {
+        var device = new AdminDeviceSnapshot(new string('a', 64), "ACTIVE", "SOFTWARE_BOUND_ONLINE",
+            "25.0.0.0", 1, 2, long.MaxValue, true, 3, true);
+        var license = new AdminLicenseSnapshot("CLI-0018", "TR-000125", "MAINTENANCE", true,
+            "SOFTWARE_BOUND_ONLINE", 1, 0, 0, new Dictionary<int, long>(), [device], false, "");
+        var page = DashboardPage(new AdminDashboardSnapshot(1, 3, [license],
+            [new OnlineAuditEntry(1, "MACHINE_BINDING_MISMATCH", "TR-000125", new string('a', 64), "denied")]),
+            "csrf", "", "");
+        return page.Contains("Servidor de licença, gabinete autônomo", StringComparison.Ordinal)
+            && page.Contains("Preços, Mercado Pago, PDV, QR Code e créditos", StringComparison.Ordinal)
+            && page.Contains("/admin/export/audit.csv", StringComparison.Ordinal)
+            && page.Contains("data-license-card", StringComparison.Ordinal)
+            && page.Contains("value=\"MAINTENANCE\" selected", StringComparison.Ordinal)
+            && page.Contains("data-confirm", StringComparison.Ordinal)
+            && page.Contains("id=audit-search", StringComparison.Ordinal)
+            && !page.Contains("/admin/actions/prices", StringComparison.Ordinal)
+            && !page.Contains("/admin/actions/mercadopago", StringComparison.Ordinal);
+    }
+
+    internal static bool HasSafeAuditCsvForSelfTest()
+    {
+        var csv = AuditCsv([new OnlineAuditEntry(1, "EVENT", "TR-000125", new string('a', 64), "valor;\"teste\"")]);
+        return csv.StartsWith("Quando;Evento;Licenca;Maquina;Detalhe\r\n", StringComparison.Ordinal)
+            && csv.Contains("\"valor;\"\"teste\"\"\"", StringComparison.Ordinal)
+            && csv.EndsWith("\r\n", StringComparison.Ordinal);
+    }
 }

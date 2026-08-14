@@ -524,6 +524,16 @@ sealed class OnlineStateRepository : IDisposable
         }
     }
 
+    public IReadOnlyList<OnlineAuditEntry> ReadAdminAudit(int limit = 20_000)
+    {
+        limit = Math.Clamp(limit, 1, 20_000);
+        lock (_gate)
+        {
+            var state = LoadUnlocked();
+            return state.Audit.TakeLast(limit).Reverse().ToArray();
+        }
+    }
+
     public void RecordSecurityAttempt(string eventName, string licenseId, string deviceId, string detail)
     {
         eventName = OnlineLicenseProtocol.RequireIdentifier(eventName, "Event", 3, 64);
