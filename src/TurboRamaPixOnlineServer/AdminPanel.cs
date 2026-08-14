@@ -381,6 +381,12 @@ static class AdminPanel
             RequireStepUp(admin, Required(form, "adminPassword"));
             return Task.FromResult("activation:" + repository.IssueActivationCode(Required(form, "licenseId")));
         }, showActivationCode: true);
+        MapAction(app, "/admin/actions/device-transfer", (form, repository, admin, _) =>
+        {
+            RequireStepUp(admin, Required(form, "adminPassword"));
+            return Task.FromResult("activation:" + repository.PrepareDeviceTransfer(
+                Required(form, "licenseId")));
+        }, showActivationCode: true);
     }
 
     private static void MapAction(WebApplication app, string path,
@@ -495,7 +501,11 @@ static class AdminPanel
             .Append(FormStart("/admin/actions/activation-code", token, "activation-form"))
             .Append(Hidden("licenseId", license.LicenseId))
             .Append(Input("adminPassword", "Senha para gerar novo código", "", "password"))
-            .Append("<button>Gerar novo código de ativação</button></form></section>");
+            .Append("<button>Gerar novo código de ativação</button></form>")
+            .Append(FormStart("/admin/actions/device-transfer", token, "activation-form"))
+            .Append(Hidden("licenseId", license.LicenseId))
+            .Append(Input("adminPassword", "Senha para transferir esta licença", "", "password"))
+            .Append("<button class=danger>Transferir para outro hardware e mostrar código único</button></form></section>");
     }
 
     private static void AppendAudit(StringBuilder html, IReadOnlyList<OnlineAuditEntry> audit)

@@ -374,6 +374,44 @@ sealed class OnlineStateRepository : IDisposable
         }
     }
 
+    public string PrepareDeviceTransfer(string licenseId)
+    {
+        licenseId = OnlineLicenseProtocol.RequireIdentifier(licenseId, "LicenseId", 6, 64);
+        var activation = Base64Url(RandomNumberGenerator.GetBytes(24));
+        var salt = RandomNumberGenerator.GetBytes(16);
+        var hash = HashActivation(activation, salt);
+        try
+        {
+            lock (_gate)
+            {
+                var state = LoadUnlocked();
+                var license = state.Licenses.SingleOrDefault(item => item.LicenseId == licenseId)
+                    ?? throw new InvalidOperationException("A licenca nao existe.");
+                if (license.Status is not ("ACTIVE" or "TRANSFER_PENDING"))
+                    throw new InvalidOperationException("A licenca nao pode ser transferida neste estado.");
+
+                license.Status = "TRANSFER_PENDING";
+                foreach (var device in license.Devices)
+                {
+                    device.Status = "SUSPENDED";
+                    device.CanManageConfiguration = false;
+                    ClearSession(device);
+                }
+                license.ActivationSalt = Convert.ToBase64String(salt);
+                license.ActivationHash = Convert.ToBase64String(hash);
+                state.Audit.Add(new OnlineAuditEntry(Now(), "DEVICE_TRANSFER_PREPARED", licenseId, "", "one_time"));
+                TrimAudit(state);
+                SaveUnlocked(state);
+            }
+            return activation;
+        }
+        finally
+        {
+            CryptographicOperations.ZeroMemory(salt);
+            CryptographicOperations.ZeroMemory(hash);
+        }
+    }
+
     public void SetPackagePrices(string licenseId, IReadOnlyDictionary<int, long> prices)
     {
         licenseId = OnlineLicenseProtocol.RequireIdentifier(licenseId, "LicenseId", 6, 64);
@@ -851,7 +889,7 @@ sealed class OnlineLicensingService
         {
             activationVerifier = _repository.Read(state =>
             {
-                var license = RequireActiveLicense(state, request.LicenseId);
+                var license = RequireLicenseForActivation(state, request.LicenseId);
                 if (!license.BindingType.Equals(request.Device.BindingType, StringComparison.Ordinal))
                     Deny("BINDING_DOWNGRADE_DENIED");
                 if (string.IsNullOrEmpty(license.ActivationHash)
@@ -888,7 +926,8 @@ sealed class OnlineLicensingService
                 Deny("MACHINE_PROOF_INVALID");
             var result = _repository.Update(state =>
             {
-                var license = RequireActiveLicense(state, proof.LicenseId);
+                var license = RequireLicenseForActivation(state, proof.LicenseId);
+                var transferPending = license.Status == "TRANSFER_PENDING";
                 if (!license.BindingType.Equals(proof.Device.BindingType, StringComparison.Ordinal))
                     Deny("BINDING_DOWNGRADE_DENIED");
                 if (string.IsNullOrEmpty(challenge.ActivationVerifier)
@@ -905,22 +944,30 @@ sealed class OnlineLicensingService
                         Status = "ACTIVE",
                         ActivatedAtUnixSeconds = Now(),
                         LastContactUnixSeconds = Now(),
-                        CanManageConfiguration = license.Devices.Count == 0
+                        CanManageConfiguration = transferPending || license.Devices.Count == 0
                     };
                     license.Devices.Add(device);
                 }
                 else
                 {
-                    if (!DescriptorsEqual(device.Descriptor, proof.Device)) Deny("MACHINE_BINDING_MISMATCH");
+                    if (!DescriptorsEqual(device.Descriptor, proof.Device))
+                    {
+                        if (!transferPending) Deny("MACHINE_BINDING_MISMATCH");
+                        device.Descriptor = proof.Device;
+                        device.ActivatedAtUnixSeconds = Now();
+                        device.RejectedAttempts = 0;
+                    }
                     device.Status = "ACTIVE";
                     device.LastContactUnixSeconds = Now();
+                    if (transferPending) device.CanManageConfiguration = true;
                 }
+                if (transferPending) license.Status = "ACTIVE";
                 // O codigo validado ao criar o desafio e de uso unico. Um novo
                 // cadastro ou transferencia exige emissao administrativa de outro.
                 license.ActivationSalt = "";
                 license.ActivationHash = "";
                 state.Audit.Add(new OnlineAuditEntry(Now(), "DEVICE_ACTIVATED", license.LicenseId,
-                    proof.Device.DeviceId, proof.Device.BindingType));
+                    proof.Device.DeviceId, transferPending ? "transfer:" + proof.Device.BindingType : proof.Device.BindingType));
                 return new OnlineActivationResult(1, "ACTIVE", proof.Device.DeviceId, proof.Device.BindingType);
             });
             return Task.FromResult(result);
@@ -1212,6 +1259,17 @@ sealed class OnlineLicensingService
         OnlineLicenseProtocol.RequireIdentifier(licenseId, "LicenseId", 6, 64);
         var license = state.Licenses.SingleOrDefault(item => item.LicenseId == licenseId);
         if (license is null || license.Status != "ACTIVE") Deny("LICENSE_REVOKED");
+        var customer = state.Customers.SingleOrDefault(item => item.CustomerId == license!.CustomerId);
+        if (customer is null || customer.Status != "ACTIVE") Deny("CUSTOMER_SUSPENDED");
+        return license!;
+    }
+
+    private static OnlineLicenseEntry RequireLicenseForActivation(OnlineServerState state, string licenseId)
+    {
+        OnlineLicenseProtocol.RequireIdentifier(licenseId, "LicenseId", 6, 64);
+        var license = state.Licenses.SingleOrDefault(item => item.LicenseId == licenseId);
+        if (license is null || license.Status is not ("ACTIVE" or "TRANSFER_PENDING"))
+            Deny("LICENSE_REVOKED");
         var customer = state.Customers.SingleOrDefault(item => item.CustomerId == license!.CustomerId);
         if (customer is null || customer.Status != "ACTIVE") Deny("CUSTOMER_SUSPENDED");
         return license!;

@@ -249,7 +249,75 @@ static class OnlineServerSelfTest
 
             repository.SetPixEnabled("TR-000125", true);
 
-            Console.WriteLine("SELF-TEST SERVIDOR ONLINE: OK (ativacao de uso unico, prova RSA-PSS, sessao exclusiva, clone registrado, original preservada, painel administrativo isolado por hostname e HTTPS, login protegido, configuracao sincronizada e versionada, bloqueio PIX, tabela de precos, validacao segura do caixa Mercado Pago, cobranca, idempotencia, anti-replay e reautenticacao remota).");
+            var transferCode = repository.PrepareDeviceTransfer("TR-000125");
+            var transferPrepared = repository.ListLicenses().Single();
+            Require(transferPrepared.Status == "TRANSFER_PENDING"
+                && transferPrepared.Devices.Single().Status == "SUSPENDED"
+                && !transferPrepared.Devices.Single().CanManageConfiguration,
+                "preparacao da transferencia nao suspendeu o vinculo anterior");
+            var transferredDescriptor = descriptor with { HardwareFingerprint = new string('b', 64) };
+            var transferChallenge = await service.CreateActivationChallengeAsync(
+                new OnlineActivationChallengeRequest(1, "TR-000125", transferCode, transferredDescriptor),
+                CancellationToken.None);
+            var transferHash = OnlineLicenseProtocol.ActivationContextHash("TR-000125", transferredDescriptor);
+            var transferProof = new OnlineActivationProof(1, "TR-000125", transferChallenge.ChallengeId,
+                transferredDescriptor, Sign(key, transferChallenge, "TR-000125", "", "device.activate", transferHash));
+            var transferred = await service.CompleteActivationAsync(transferProof, CancellationToken.None);
+            var transferredLicense = repository.ListLicenses().Single();
+            Require(transferred.Status == "ACTIVE" && transferredLicense.Status == "ACTIVE"
+                && transferredLicense.Devices.Single().Status == "ACTIVE"
+                && transferredLicense.Devices.Single().Descriptor.HardwareFingerprint == new string('b', 64)
+                && transferredLicense.Devices.Single().CanManageConfiguration,
+                "transferencia autorizada nao atualizou o hardware mantendo a prova da chave");
+            var transferredSession = Convert.ToHexString(RandomNumberGenerator.GetBytes(32)).ToLowerInvariant();
+            await OpenSession(service, key, transferredDescriptor, transferredSession);
+            var oldHardwareDeniedAfterTransfer = false;
+            try
+            {
+                await OpenSession(service, key, transferredDescriptor,
+                    Convert.ToHexString(RandomNumberGenerator.GetBytes(32)).ToLowerInvariant(), new string('a', 64));
+            }
+            catch (OnlineServerException ex)
+            {
+                oldHardwareDeniedAfterTransfer = ex.InternalReason == "MACHINE_BINDING_MISMATCH";
+            }
+            Require(oldHardwareDeniedAfterTransfer,
+                "hardware anterior permaneceu autorizado depois da transferencia");
+
+            using var replacementKey = RSA.Create(2048);
+            var replacementDescriptor = Descriptor(replacementKey,
+                OnlineProtectionProfile.SoftwareBoundOnline, new string('c', 64));
+            var replacementCode = repository.PrepareDeviceTransfer("TR-000125");
+            var replacementChallenge = await service.CreateActivationChallengeAsync(
+                new OnlineActivationChallengeRequest(1, "TR-000125", replacementCode, replacementDescriptor),
+                CancellationToken.None);
+            var replacementHash = OnlineLicenseProtocol.ActivationContextHash("TR-000125", replacementDescriptor);
+            var replacementProof = new OnlineActivationProof(1, "TR-000125", replacementChallenge.ChallengeId,
+                replacementDescriptor, Sign(replacementKey, replacementChallenge, "TR-000125", "",
+                    "device.activate", replacementHash));
+            await service.CompleteActivationAsync(replacementProof, CancellationToken.None);
+            var replacementLicense = repository.ListLicenses().Single();
+            Require(replacementLicense.Status == "ACTIVE"
+                && replacementLicense.Devices.Count(device => device.Status == "ACTIVE") == 1
+                && replacementLicense.Devices.Single(device => device.Status == "ACTIVE").Descriptor.DeviceId
+                    == replacementDescriptor.DeviceId
+                && replacementLicense.Devices.Single(device => device.Status == "ACTIVE").CanManageConfiguration
+                && replacementLicense.Devices.Single(device => device.Descriptor.DeviceId == descriptor.DeviceId).Status
+                    == "SUSPENDED",
+                "transferencia para uma nova chave nao preservou somente o novo dispositivo ativo");
+            var retiredDeviceDenied = false;
+            try
+            {
+                await OpenSession(service, key, transferredDescriptor,
+                    Convert.ToHexString(RandomNumberGenerator.GetBytes(32)).ToLowerInvariant());
+            }
+            catch (OnlineServerException ex)
+            {
+                retiredDeviceDenied = ex.InternalReason == "MACHINE_BINDING_MISMATCH";
+            }
+            Require(retiredDeviceDenied, "dispositivo aposentado permaneceu autorizado");
+
+            Console.WriteLine("SELF-TEST SERVIDOR ONLINE: OK (ativacao de uso unico, transferencia administrativa de hardware, prova RSA-PSS, sessao exclusiva, clone registrado, original preservada, painel administrativo isolado por hostname e HTTPS, login protegido, configuracao sincronizada e versionada, bloqueio PIX, tabela de precos, validacao segura do caixa Mercado Pago, cobranca, idempotencia, anti-replay e reautenticacao remota).");
             return 0;
         }
         catch (Exception ex)

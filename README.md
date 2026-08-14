@@ -14,6 +14,7 @@ Backend privado de licenciamento, prova de máquina e criação de cobranças PI
 - tabela de preços versionada e sincronizada entre painel e EmulationStation;
 - painel Web administrativo com login, proteção CSRF, sessão curta e trilha de auditoria;
 - bloqueio remoto de novas cobranças PIX, licenças e máquinas;
+- transferência administrativa de licença para outra placa-mãe ou nova identidade, com código único;
 - Access Token Mercado Pago cifrado com AES-256-GCM;
 - validação sem cobrança de que o caixa informado pertence à credencial Mercado Pago;
 - criação e consulta de orders QR do Mercado Pago;
@@ -124,3 +125,16 @@ a validação usando a credencial já protegida no estado do servidor.
 - não execute exemplos de implantação sem revisar o site e o túnel Cloudflare que já estão funcionando.
 
 O endpoint `POST /v1/orders`, o cabeçalho de idempotência e a consulta `GET /v1/orders/{order_id}` seguem a documentação oficial atual do Mercado Pago.
+
+## Troca de placa-mãe ou reinstalação
+
+O painel possui uma ação específica para transferência de hardware. Depois de confirmar novamente a
+senha administrativa, o servidor suspende as sessões e os vínculos anteriores, coloca a licença em
+`TRANSFER_PENDING` e mostra um código de ativação de uso único. A instalação nova precisa provar a
+posse de sua chave privada e apresentar esse código. Somente depois da prova válida o servidor volta
+a licença para `ACTIVE` e autoriza uma única máquina. Uma tentativa inválida não conclui a
+transferência nem cria sessão.
+
+Não use apenas **Gerar novo código de ativação** para trocar placa-mãe. Essa opção continua destinada
+a uma máquina adicional quando a licença possui vaga. Para substituição, use **Transferir para outro
+hardware e mostrar código único**.

@@ -45,3 +45,22 @@ protegida e preços locais.
 Qualquer endpoint antigo de preço/pagamento no servidor é legado e não deve ser chamado pelos
 clientes atuais. Sua remoção pública precisa ocorrer em rodada Linux controlada, com handoff,
 rollback e validação do site/túnel existentes.
+
+## Transferência comprovada de hardware
+
+Trocar placa-mãe pode manter a chave de software já protegida no perfil Windows, mas altera o
+fingerprint de hardware. Esse caso deve continuar sendo recusado como `MACHINE_BINDING_MISMATCH`
+até existir uma autorização administrativa explícita.
+
+A transferência correta é atômica:
+
+1. o administrador confirma novamente sua senha no painel;
+2. o servidor coloca a licença em `TRANSFER_PENDING`, encerra sessões, suspende os vínculos antigos
+   e emite um código de uso único;
+3. o configurador local envia a prova da chave privada, o novo fingerprint e o código;
+4. o servidor aceita tanto a mesma chave em hardware novo quanto uma chave nova criada após
+   reinstalação;
+5. somente após a prova válida a licença volta para `ACTIVE`, com exatamente uma máquina ativa;
+6. os vínculos antigos permanecem suspensos na auditoria e não podem abrir sessão.
+
+Gerar um código comum não autoriza mudança de fingerprint e não substitui esse fluxo.
