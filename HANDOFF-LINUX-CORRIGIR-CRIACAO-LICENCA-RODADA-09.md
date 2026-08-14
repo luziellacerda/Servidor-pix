@@ -2,6 +2,12 @@
 
 Data: 2026-08-09
 
+> **HISTÓRICO — NÃO EXECUTAR COMO RODADA ATIVA.** Este documento foi substituído por
+> `HANDOFF-LINUX-ACEITAR-PIX-RODADA-10.md`. A rodada 10 é somente de conferência do
+> serviço Linux já instalado para aceitar chamadas PIX; não copia executáveis Windows,
+> não troca o serviço, não cria licença e não altera o painel. Este arquivo permanece
+> apenas para auditoria da rodada 09.
+
 ## Instrução para a conversa no Linux
 
 O usuário está no servidor Linux. Leia este arquivo inteiro antes de agir e continue exatamente do
