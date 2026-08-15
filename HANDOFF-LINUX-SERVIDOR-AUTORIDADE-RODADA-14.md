@@ -76,6 +76,17 @@ Usar o compilador versionado `COMPILAR-SERVIDOR-PIX-ONLINE.ps1` ou o artefato
 portátil produzido pelo mesmo commit. A compilação deve estar em diretório novo,
 nunca sobre `/opt/turborama-pix`.
 
+Artefato Windows já compilado e revalidado depois de extraído:
+
+- arquivo: `outputs/TurboRamaPixOnlineServer-portable-RODADA14-20260815.zip`;
+- SHA-256 do ZIP: `07F3154D04CB64CA945315602D89B1AA2E03023C10A4536388C7B9EFF9CBFEA0`;
+- fonte usada: commit `1dfdccf` da branch indicada no início;
+- conteúdo: cinco arquivos, sem configuração privada ou segredo.
+
+O Linux deve conferir primeiro o SHA-256 do ZIP e depois todos os itens de
+`CHECKSUMS-SHA256.txt`. Se o commit, o hash ou o conteúdo divergirem, não
+publicar e registrar a diferença no retorno.
+
 Condições obrigatórias:
 
 1. Git limpo e no commit informado.
