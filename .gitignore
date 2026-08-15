@@ -41,3 +41,8 @@ state/
 *.bak
 *.log
 *.tmp
+
+# Copias acidentais de outros repositorios dentro deste repositorio
+/Servidor-pix-publicar/
+/TurboramaEmulationStation-repo-QR-FINAL/
+/.tmp-*/
