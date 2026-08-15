@@ -448,7 +448,7 @@ static class AdminPanel
             .Append(pixEnabled).Append("</strong><span>Licenças com PIX liberado</span></article><article class='")
             .Append(rejected > 0 ? "metric-alert" : "").Append("'><span class=metric-icon>SEG</span><strong>")
             .Append(rejected).Append("</strong><span>Tentativas recusadas</span></article></section>");
-        html.Append("<section class='scope-banner'><div><span class=eyebrow>ARQUITETURA CONFIRMADA</span><h2>Servidor de licença, gabinete autônomo</h2><p>Este servidor autoriza licenças e máquinas. Preços, Mercado Pago, PDV, QR Code e créditos continuam configurados e processados localmente no gabinete.</p></div><span class='pill on'>MODELO LOCAL PRESERVADO</span></section>");
+        html.Append("<section class='scope-banner'><div><span class=eyebrow>ARQUITETURA SERVIDOR-AUTORITATIVO</span><h2>Licença e cada nova cobrança validadas no servidor</h2><p>Access Token e PDV permanecem somente no servidor LZ Games. O gabinete prova sua identidade, recebe apenas QR e estado do pagamento e continua executando jogos e créditos locais mesmo sem o serviço PIX.</p></div><span class='pill on'>SEGREDOS FORA DO GABINETE</span></section>");
         html.Append("<section class='panel toolbar' aria-label=\"Filtros de licenças\"><label>Localizar licença ou máquina<input id=license-search type=search placeholder=\"Cliente, licença, máquina ou versão\" autocomplete=off></label><label>Status<select id=license-status-filter><option value=all>Todos</option><option value=ACTIVE>Ativas</option><option value=SUSPENDED>Suspensas</option><option value=MAINTENANCE>Manutenção</option><option value=TRANSFER_PENDING>Transferência</option><option value=REVOKED>Revogadas</option></select></label><div class=filter-result id=license-filter-result role=status aria-live=polite></div></section>");
         html.Append("<details class='panel create-panel' id=new-license><summary><span><span class=eyebrow>NOVA INSTALAÇÃO</span><strong>Criar licença</strong></span><span class=summary-hint>Abrir formulário</span></summary>")
             .Append(FormStart("/admin/actions/create-license", token, "grid-form"))
@@ -492,7 +492,7 @@ static class AdminPanel
             .Append(FormStart("/admin/actions/license-status", token, "stack")).Append(Hidden("licenseId", license.LicenseId))
             .Append("<label>Novo estado<select name=status>").Append(StatusOptions(license.Status, true))
             .Append("</select></label><button data-busy=\"Aplicando...\" data-confirm=\"Confirma a alteração do estado desta licença?\">Aplicar estado</button></form></section>");
-        html.Append("<section class=operation-card><span class=eyebrow>PIX</span><h3>Autorização remota</h3><p>Controla somente a permissão de novas cobranças; não altera preços nem credenciais locais.</p>")
+        html.Append("<section class=operation-card><span class=eyebrow>PIX</span><h3>Autorização remota</h3><p>Controla no servidor a permissão de criar cada nova cobrança PIX desta licença.</p>")
             .Append(FormStart("/admin/actions/pix", token, "stack")).Append(Hidden("licenseId", license.LicenseId))
             .Append(Hidden("enabled", license.PixEnabled ? "false" : "true"))
             .Append("<button class='").Append(license.PixEnabled ? "danger" : "primary")
@@ -500,7 +500,7 @@ static class AdminPanel
             .Append(license.PixEnabled ? "Confirma o bloqueio de novas cobranças PIX?" : "Confirma a liberação de novas cobranças PIX?")
             .Append("\">").Append(license.PixEnabled ? "Bloquear novas cobranças" : "Liberar novas cobranças")
             .Append("</button></form></section>");
-        html.Append("<section class='operation-card local-card'><span class=eyebrow>CONFIGURAÇÃO LOCAL</span><h3>Pagamento no gabinete</h3><p>Valores, Mercado Pago, PDV, QR e créditos são gerenciados no EmulationStation e nos configuradores instalados.</p><span class='pill neutral'>SEM DEPENDÊNCIA DO PAINEL</span></section></div>");
+        html.Append("<section class='operation-card local-card'><span class=eyebrow>DADOS BANCÁRIOS</span><h3>Segredos somente no servidor</h3><p>Mercado Pago e PDV ficam cifrados no Linux. O gabinete recebe somente o QR e o estado vinculados ao pedido assinado.</p><span class='pill neutral'>NENHUM TOKEN NO CLIENTE</span></section></div>");
         html.Append("<div class=machines-title><div><h3>Máquinas autorizadas</h3><p class=muted>Identidade criptográfica, versão e último contato.</p></div></div><div class=table-wrap><table class=machine-table><thead><tr><th>Máquina</th><th>Proteção</th><th>Versão</th><th>Conexão</th><th>Segurança</th><th>Ações</th></tr></thead><tbody>");
         if (license.Devices.Count == 0) html.Append("<tr><td colspan=7 class=muted>Nenhuma máquina ativada.</td></tr>");
         foreach (var device in license.Devices)
@@ -849,8 +849,8 @@ static class AdminPanel
         var page = DashboardPage(new AdminDashboardSnapshot(1, 3, [license],
             [new OnlineAuditEntry(1, "MACHINE_BINDING_MISMATCH", "TR-000125", new string('a', 64), "denied")]),
             "csrf", "", "");
-        return page.Contains("Servidor de licença, gabinete autônomo", StringComparison.Ordinal)
-            && page.Contains("Preços, Mercado Pago, PDV, QR Code e créditos", StringComparison.Ordinal)
+        return page.Contains("Licença e cada nova cobrança validadas no servidor", StringComparison.Ordinal)
+            && page.Contains("Access Token e PDV permanecem somente no servidor", StringComparison.Ordinal)
             && page.Contains("/admin/export/audit.csv", StringComparison.Ordinal)
             && page.Contains("data-license-card", StringComparison.Ordinal)
             && page.Contains("value=\"MAINTENANCE\" selected", StringComparison.Ordinal)
