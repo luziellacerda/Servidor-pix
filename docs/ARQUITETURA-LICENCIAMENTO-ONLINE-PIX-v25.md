@@ -1,66 +1,71 @@
-# TurboRama Online — fronteira definitiva do servidor
+# TurboRama Online — servidor como autoridade
 
-O servidor TurboRama Online licencia e reconhece máquinas. Ele não é o provedor PIX, não controla os
-preços locais do quiosque e não deve ser necessário para o funcionamento normal do EmulationStation.
+O servidor LZ Games autoriza máquinas e cria cada nova cobrança PIX. O
+EmulationStation continua responsável pela experiência local, pelos preços e
+pelos créditos.
 
-## O servidor faz
+## Fluxo de ativação
 
-- cadastro de Cliente, Licença e Máquina;
-- associação da chave pública ao DeviceId;
-- desafio de uso único e prova de posse da chave privada;
-- perfis `TPM_BOUND`, `SOFTWARE_BOUND_ONLINE` e, futuramente, `USB_TOKEN_BOUND`;
-- status `ACTIVE`, `SUSPENDED`, `REVOKED`, `MAINTENANCE` e `TRANSFER_PENDING`;
-- registro de último contato, sessão e tentativa de clonagem;
-- suspensão, revogação, transferência e nova autenticação declarativas.
+1. O programa administrativo cria no gabinete uma chave privada vinculada ao
+   TPM ou, sem TPM, ao perfil `SOFTWARE_BOUND_ONLINE`.
+2. O servidor recebe somente a chave pública e calcula o `DeviceId`.
+3. Cada sessão e cada operação usam desafio aleatório de uso único e assinatura
+   RSA-PSS-SHA256 da máquina.
+4. Cliente ID e License ID nunca bastam para autorizar uma cobrança.
 
-## O servidor não faz
+`USB_TOKEN_BOUND` permanece reservado até existir um token criptográfico real
+homologado. Pendrive comum não é aceito.
 
-- não recebe nem altera a tabela de preços do TurboRama;
-- não guarda o Access Token do estabelecimento;
-- não cria nem consulta cobrança Mercado Pago;
-- não entrega QR Code ao quiosque;
-- não envia PowerShell, script, executável ou código arbitrário ao cliente.
+## Cadastro bancário
 
-## Pagamento
+1. O administrador gera no painel um código bancário de 256 bits, válido por
+   15 minutos e uma única utilização.
+2. `CONFIGURAR-USER-TOKEN-PIX.exe` consulta a conta e os PDVs reais no Mercado
+   Pago e envia Cliente ID, código, PDV escolhido e Access Token ao servidor por
+   HTTPS.
+3. O servidor valida código, Access Token e PDV antes de consumir o código.
+4. O Access Token é cifrado com AES-256-GCM no estado privado do servidor.
+5. Um novo cadastro confirmado substitui a única conexão bancária do cliente.
 
-Preços, criação da cobrança, consulta da confirmação e concessão de créditos permanecem no conjunto
-local TurboRama + agente PIX + provedor Mercado Pago/adaptador bancário.
+O Access Token não é salvo nem devolvido ao kiosk. Os programas administrativos
+são portáteis, ficam com o administrador e não entram no instalador do gabinete.
+
+## Nova cobrança
+
+1. O agente monta o contexto com licença, máquina, sessão, minutos, valor,
+   moeda e referência externa.
+2. O servidor envia um desafio único.
+3. A máquina assina desafio e hash canônico do contexto.
+4. O servidor valida licença, máquina, sessão, preço e estado PIX.
+5. O servidor cria a cobrança usando sua credencial cifrada.
+6. O agente recebe somente identificador, status e QR público.
+
+Não existe fallback local para criar cobrança. Idempotência, expiração e
+anti-replay são obrigatórios.
 
 ## Indisponibilidade
 
-Timeout, DNS, perda de internet, túnel indisponível e erro `5xx` preservam a última autorização local.
-Somente uma recusa explícita e autenticada da licença pode bloquear novas cobranças PIX. Ela nunca
-deve encerrar jogos, retirar créditos existentes, bloquear F10/F12 ou impedir o uso normal do
-quiosque.
+Sem internet, DNS, túnel ou servidor, somente novas cobranças PIX ficam
+indisponíveis. EmulationStation, jogos, créditos já concedidos, F10/F12 e preços
+locais continuam funcionando. Uma falha de rede não revoga licença e não encerra
+partida.
 
-Sem internet, o provedor de pagamento também não consegue criar/confirmar uma nova cobrança; somente
-essa compra fica temporariamente indisponível. O restante do sistema continua local.
+## Cloudflare
 
-## Regra de compatibilidade
+O painel humano em `/admin/*` usa Cloudflare Access e o login próprio do
+TurboRama. As rotas `/v1/*` não podem apresentar login humano: elas são
+protegidas pelo protocolo criptográfico da máquina, códigos de uso único,
+limites de requisição e HTTPS.
 
-`provider=online` é legado e incorreto. O provedor local deve ser `mercadopago` ou `adapter`; a
-licença on-line é habilitada em campo separado. Ativação de licença preserva provedor, PDV, credencial
-protegida e preços locais.
+No estado verificado em 15/08/2026, `https://painelpix.lzgames.com.br/v1/health`
+retornava redirecionamento `302` para o login Cloudflare. Portanto a publicação
+da API permanece bloqueada até uma regra específica e mais restrita para
+`/v1/*` ou um hostname de API separado ser configurado e testado.
 
-Qualquer endpoint antigo de preço/pagamento no servidor é legado e não deve ser chamado pelos
-clientes atuais. Sua remoção pública precisa ocorrer em rodada Linux controlada, com handoff,
-rollback e validação do site/túnel existentes.
+## Limites reais
 
-## Transferência comprovada de hardware
-
-Trocar placa-mãe pode manter a chave de software já protegida no perfil Windows, mas altera o
-fingerprint de hardware. Esse caso deve continuar sendo recusado como `MACHINE_BINDING_MISMATCH`
-até existir uma autorização administrativa explícita.
-
-A transferência correta é atômica:
-
-1. o administrador confirma novamente sua senha no painel;
-2. o servidor coloca a licença em `TRANSFER_PENDING`, encerra sessões, suspende os vínculos antigos
-   e emite um código de uso único;
-3. o configurador local envia a prova da chave privada, o novo fingerprint e o código;
-4. o servidor aceita tanto a mesma chave em hardware novo quanto uma chave nova criada após
-   reinstalação;
-5. somente após a prova válida a licença volta para `ACTIVE`, com exatamente uma máquina ativa;
-6. os vínculos antigos permanecem suspensos na auditoria e não podem abrir sessão.
-
-Gerar um código comum não autoriza mudança de fingerprint e não substitui esse fluxo.
+- controle administrativo completo da máquina pode alterar software local;
+- `SOFTWARE_BOUND_ONLINE` é menos forte que TPM;
+- QR e status de pagamento são dados públicos da transação, não segredos;
+- nenhuma proteção torna um EXE impossível de analisar;
+- segurança comercial exige servidor, chaves, backups e repositórios privados.

@@ -85,6 +85,13 @@ if (args.Length == 2 && args[0].Equals("--issue-activation-code", StringComparis
     return 0;
 }
 
+if (args.Length == 2 && args[0].Equals("--issue-payment-setup-code", StringComparison.OrdinalIgnoreCase))
+{
+    Console.WriteLine("Codigo de configuracao bancaria valido por 15 minutos e uso unico:");
+    Console.WriteLine(repository.IssuePaymentEnrollmentCode(args[1]));
+    return 0;
+}
+
 if (args.Length == 7 && args[0].Equals("--set-prices", StringComparison.OrdinalIgnoreCase))
 {
     var minutes = new[] { 15, 30, 45, 60, 120 };
@@ -125,7 +132,7 @@ if (args.Length == 2 && args[0].Equals("--validate-mercadopago", StringCompariso
 }
 
 if (args.Length != 0)
-    throw new InvalidOperationException("Comando desconhecido. Use --self-test, --hash-admin-password, --create-license, --list-licenses, --list-devices, --issue-activation-code, --set-prices, --set-mercadopago, --validate-mercadopago, --set-license-status, --set-device-status ou --force-reauth.");
+    throw new InvalidOperationException("Comando desconhecido. Use --self-test, --hash-admin-password, --create-license, --list-licenses, --list-devices, --issue-activation-code, --issue-payment-setup-code, --set-prices, --set-mercadopago, --validate-mercadopago, --set-license-status, --set-device-status ou --force-reauth.");
 
 var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.ConfigureKestrel(options => options.Limits.MaxRequestBodySize = OnlineLicenseProtocol.MaximumBodyBytes);
@@ -151,6 +158,13 @@ builder.Services.AddRateLimiter(options =>
                 Window = TimeSpan.FromMinutes(1),
                 AutoReplenishment = true
             }));
+    options.AddFixedWindowLimiter("payment-enrollment", limiter =>
+    {
+        limiter.PermitLimit = 5;
+        limiter.QueueLimit = 0;
+        limiter.Window = TimeSpan.FromMinutes(1);
+        limiter.AutoReplenishment = true;
+    });
 });
 builder.Services.AddSingleton(repository);
 builder.Services.AddSingleton<IPixPaymentGateway>(_ => new MercadoPagoServerGateway(repository,
@@ -197,6 +211,11 @@ app.MapPost("/v1/orders", async (HttpContext context, OnlinePaymentCreateProof r
 app.MapPost("/v1/orders/status", async (HttpContext context, OnlinePaymentReadProof request,
     OnlineLicensingService service, CancellationToken token) =>
     await Endpoint.Run(context, () => service.ReadOrderAsync(request, token)));
+app.MapPost("/v1/enrollment/mercadopago", async (HttpContext context,
+    OnlineMercadoPagoEnrollmentRequest request, OnlineLicensingService service,
+    CancellationToken token) =>
+    await Endpoint.Run(context, () => service.EnrollMercadoPagoAsync(request, token)))
+    .RequireRateLimiting("payment-enrollment");
 app.MapPost("/v1/configuration/read", async (HttpContext context, OnlineConfigurationReadProof request,
     OnlineLicensingService service, CancellationToken token) =>
     await Endpoint.Run(context, () => service.ReadConfigurationAsync(request, token)));

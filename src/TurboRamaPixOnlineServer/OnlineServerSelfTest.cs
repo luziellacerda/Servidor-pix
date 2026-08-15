@@ -75,7 +75,41 @@ static class OnlineServerSelfTest
                 [15] = 750, [30] = 1_500, [45] = 2_250, [60] = 3_000, [120] = 6_000
             });
             var testToken = "APP_USR-" + new string('A', 64);
-            repository.SetMercadoPagoConnection("CLI-0018", "TURBORAMATEST01", testToken);
+            var enrollmentCode = repository.IssuePaymentEnrollmentCode("CLI-0018");
+            var enrollmentGateway = new FakeGateway();
+            var enrollmentService = new OnlineLicensingService(repository, enrollmentGateway);
+            enrollmentGateway.RejectNextValidation = true;
+            var providerFailurePreservedCode = false;
+            try
+            {
+                await enrollmentService.EnrollMercadoPagoAsync(
+                    new OnlineMercadoPagoEnrollmentRequest(1, "CLI-0018", enrollmentCode,
+                        "TURBORAMATEST01", testToken), CancellationToken.None);
+            }
+            catch (OnlineServerException ex)
+            {
+                providerFailurePreservedCode = ex.InternalReason == "MERCADOPAGO_VALIDATION_FAILED"
+                    && repository.VerifyPaymentEnrollmentCode("CLI-0018", enrollmentCode);
+            }
+            Require(providerFailurePreservedCode, "falha do provedor consumiu o codigo bancario");
+            var enrolled = await enrollmentService.EnrollMercadoPagoAsync(
+                new OnlineMercadoPagoEnrollmentRequest(1, "CLI-0018", enrollmentCode,
+                    "TURBORAMATEST01", testToken), CancellationToken.None);
+            Require(enrolled.Status == "ACTIVE" && enrollmentGateway.ValidateCount == 2,
+                "cadastro bancario de uso unico");
+            var enrollmentReplayDenied = false;
+            try
+            {
+                await enrollmentService.EnrollMercadoPagoAsync(
+                    new OnlineMercadoPagoEnrollmentRequest(1, "CLI-0018", enrollmentCode,
+                        "TURBORAMATEST01", testToken), CancellationToken.None);
+            }
+            catch (OnlineServerException ex)
+            {
+                enrollmentReplayDenied = ex.InternalReason == "PAYMENT_ENROLLMENT_DENIED";
+            }
+            Require(enrollmentReplayDenied && enrollmentGateway.ValidateCount == 2,
+                "codigo bancario aceitou reutilizacao");
             var decrypted = repository.GetMercadoPagoConnection("CLI-0018");
             Require(decrypted.AccessToken == testToken && decrypted.ExternalPosId == "TURBORAMATEST01",
                 "cofre de credencial do servidor");
@@ -347,7 +381,7 @@ static class OnlineServerSelfTest
             }
             Require(retiredDeviceDenied, "dispositivo aposentado permaneceu autorizado");
 
-            Console.WriteLine("SELF-TEST SERVIDOR ONLINE: OK (ativacao de uso unico, transferencia administrativa de hardware, prova RSA-PSS, sessao exclusiva, clone registrado, original preservada, painel administrativo isolado por hostname e HTTPS, login protegido, painel profissional e exportacao de auditoria, bloqueio PIX, idempotencia, anti-replay, reautenticacao remota e compatibilidade das rotas legadas fora do painel).");
+            Console.WriteLine("SELF-TEST SERVIDOR ONLINE: OK (ativacao de maquina e cadastro bancario de uso unico, Access Token cifrado sem copia local, troca de hardware, prova RSA-PSS, sessao exclusiva, clone recusado com original preservada, painel isolado por hostname e HTTPS, login protegido, auditoria, bloqueio PIX, idempotencia, anti-replay e reautenticacao remota).");
             return 0;
         }
         catch (Exception ex)
@@ -406,6 +440,19 @@ static class OnlineServerSelfTest
     private sealed class FakeGateway : IPixPaymentGateway
     {
         public bool IsReady => true;
+        public int ValidateCount { get; private set; }
+        public bool RejectNextValidation { get; set; }
+        public Task ValidateConnectionAsync(string externalPosId, string accessToken,
+            CancellationToken token)
+        {
+            ValidateCount++;
+            if (RejectNextValidation)
+            {
+                RejectNextValidation = false;
+                throw new OnlineServerException(400, "MERCADOPAGO_VALIDATION_FAILED", "synthetic provider validation failure");
+            }
+            return Task.CompletedTask;
+        }
         public int CreateCount { get; private set; }
         public Task<OnlineOrderResponse> CreateAsync(string customerId, OnlinePaymentCreateContext context,
             string idempotencyKey, CancellationToken token)

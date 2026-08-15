@@ -68,6 +68,9 @@ sealed class OnlineCustomerEntry
     public string CustomerId { get; set; } = "";
     public string Status { get; set; } = "ACTIVE";
     public OnlineMercadoPagoConnection? MercadoPago { get; set; }
+    public string PaymentEnrollmentSalt { get; set; } = "";
+    public string PaymentEnrollmentHash { get; set; } = "";
+    public long PaymentEnrollmentExpiresAtUnixSeconds { get; set; }
 }
 
 sealed class OnlineMercadoPagoConnection
@@ -621,6 +624,133 @@ sealed class OnlineStateRepository : IDisposable
         }
     }
 
+    public string IssuePaymentEnrollmentCode(string customerId)
+    {
+        customerId = OnlineLicenseProtocol.RequireIdentifier(customerId, "CustomerId", 4, 64);
+        var code = Base64Url(RandomNumberGenerator.GetBytes(32));
+        var salt = RandomNumberGenerator.GetBytes(16);
+        var hash = HashActivation(code, salt);
+        try
+        {
+            lock (_gate)
+            {
+                var state = LoadUnlocked();
+                var customer = state.Customers.SingleOrDefault(item => item.CustomerId == customerId)
+                    ?? throw new InvalidOperationException("O cliente nao existe.");
+                if (customer.Status != "ACTIVE") throw new InvalidOperationException("O cliente nao esta ativo.");
+                customer.PaymentEnrollmentSalt = Convert.ToBase64String(salt);
+                customer.PaymentEnrollmentHash = Convert.ToBase64String(hash);
+                customer.PaymentEnrollmentExpiresAtUnixSeconds = Now() + 15 * 60;
+                state.Audit.Add(new OnlineAuditEntry(Now(), "PAYMENT_ENROLLMENT_CODE_ISSUED",
+                    "", "", customerId));
+                TrimAudit(state);
+                SaveUnlocked(state);
+            }
+            return code;
+        }
+        finally
+        {
+            CryptographicOperations.ZeroMemory(salt);
+            CryptographicOperations.ZeroMemory(hash);
+        }
+    }
+
+    public bool VerifyPaymentEnrollmentCode(string customerId, string code)
+    {
+        customerId = OnlineLicenseProtocol.RequireIdentifier(customerId, "CustomerId", 4, 64);
+        code = (code ?? "").Trim();
+        if (code.Length is < 32 or > 128 || code.Any(char.IsWhiteSpace)) return false;
+        lock (_gate)
+        {
+            var customer = LoadUnlocked().Customers.SingleOrDefault(item => item.CustomerId == customerId);
+            return customer is not null && customer.Status == "ACTIVE"
+                && customer.PaymentEnrollmentExpiresAtUnixSeconds >= Now()
+                && VerifyEnrollmentHash(customer, code);
+        }
+    }
+
+    public void SetMercadoPagoConnectionWithEnrollmentCode(string customerId, string code,
+        string externalPosId, string accessToken)
+    {
+        customerId = OnlineLicenseProtocol.RequireIdentifier(customerId, "CustomerId", 4, 64);
+        code = (code ?? "").Trim();
+        if (!VerifyPaymentEnrollmentCode(customerId, code))
+            throw new OnlineServerException(403, "PAYMENT_ENROLLMENT_DENIED", "PAYMENT_ENROLLMENT_DENIED");
+
+        // A conexao e cifrada antes da secao critica. Dentro dela o codigo e
+        // verificado novamente e consumido junto com a gravacao, impedindo duas
+        // ferramentas concorrentes de reutilizarem a mesma autorizacao.
+        externalPosId = (externalPosId ?? "").Trim();
+        accessToken = (accessToken ?? "").Trim();
+        if (externalPosId.Length is < 1 or > 40 || !externalPosId.All(char.IsAsciiLetterOrDigit)
+            || accessToken.Length is < 40 or > 384
+            || !accessToken.StartsWith("APP_USR-", StringComparison.Ordinal)
+            || accessToken.Any(char.IsWhiteSpace))
+            throw new SecurityException("Os dados Mercado Pago possuem formato invalido.");
+        var nonce = RandomNumberGenerator.GetBytes(12);
+        var tag = new byte[16];
+        var plaintext = Encoding.UTF8.GetBytes(accessToken);
+        var ciphertext = new byte[plaintext.Length];
+        var aad = Encoding.UTF8.GetBytes("TurboRamaMercadoPagoConnection/v1\0" + customerId);
+        try
+        {
+            using (var aes = new AesGcm(_encryptionKey, tag.Length))
+                aes.Encrypt(nonce, plaintext, ciphertext, tag, aad);
+            lock (_gate)
+            {
+                var state = LoadUnlocked();
+                var customer = state.Customers.SingleOrDefault(item => item.CustomerId == customerId);
+                if (customer is null || customer.Status != "ACTIVE"
+                    || customer.PaymentEnrollmentExpiresAtUnixSeconds < Now()
+                    || !VerifyEnrollmentHash(customer, code))
+                    throw new OnlineServerException(403, "PAYMENT_ENROLLMENT_DENIED", "PAYMENT_ENROLLMENT_DENIED");
+                customer.PaymentEnrollmentSalt = "";
+                customer.PaymentEnrollmentHash = "";
+                customer.PaymentEnrollmentExpiresAtUnixSeconds = 0;
+                customer.MercadoPago = new OnlineMercadoPagoConnection
+                {
+                    ExternalPosId = externalPosId,
+                    Nonce = Convert.ToBase64String(nonce),
+                    Tag = Convert.ToBase64String(tag),
+                    Ciphertext = Convert.ToBase64String(ciphertext),
+                    UpdatedAtUnixSeconds = Now()
+                };
+                state.Audit.Add(new OnlineAuditEntry(Now(), "MERCADOPAGO_CONNECTION_ENROLLED",
+                    "", "", customerId));
+                TrimAudit(state);
+                SaveUnlocked(state);
+            }
+        }
+        finally
+        {
+            CryptographicOperations.ZeroMemory(nonce);
+            CryptographicOperations.ZeroMemory(tag);
+            CryptographicOperations.ZeroMemory(plaintext);
+            CryptographicOperations.ZeroMemory(ciphertext);
+            CryptographicOperations.ZeroMemory(aad);
+        }
+    }
+
+    private static bool VerifyEnrollmentHash(OnlineCustomerEntry customer, string code)
+    {
+        byte[] salt;
+        byte[] expected;
+        try
+        {
+            salt = Convert.FromBase64String(customer.PaymentEnrollmentSalt);
+            expected = Convert.FromBase64String(customer.PaymentEnrollmentHash);
+        }
+        catch (FormatException) { return false; }
+        var actual = HashActivation(code, salt);
+        try { return expected.Length == 32 && CryptographicOperations.FixedTimeEquals(expected, actual); }
+        finally
+        {
+            CryptographicOperations.ZeroMemory(salt);
+            CryptographicOperations.ZeroMemory(expected);
+            CryptographicOperations.ZeroMemory(actual);
+        }
+    }
+
     public DecryptedMercadoPagoConnection GetMercadoPagoConnection(string customerId)
     {
         customerId = OnlineLicenseProtocol.RequireIdentifier(customerId, "CustomerId", 4, 64);
@@ -1136,6 +1266,20 @@ sealed class OnlineLicensingService
         finally { paymentLock.Release(); }
     }
 
+    public async Task<OnlineMercadoPagoEnrollmentResult> EnrollMercadoPagoAsync(
+        OnlineMercadoPagoEnrollmentRequest request, CancellationToken token)
+    {
+        ArgumentNullException.ThrowIfNull(request);
+        if (request.SchemaVersion != OnlineLicenseProtocol.SchemaVersion
+            || !_repository.VerifyPaymentEnrollmentCode(request.CustomerId, request.EnrollmentCode))
+            Deny("PAYMENT_ENROLLMENT_DENIED");
+        await _payments.ValidateConnectionAsync(request.ExternalPosId, request.AccessToken, token);
+        _repository.SetMercadoPagoConnectionWithEnrollmentCode(request.CustomerId,
+            request.EnrollmentCode, request.ExternalPosId, request.AccessToken);
+        return new OnlineMercadoPagoEnrollmentResult(OnlineLicenseProtocol.SchemaVersion,
+            "ACTIVE", request.CustomerId, request.ExternalPosId);
+    }
+
     public Task<OnlinePriceConfigurationResponse> ReadConfigurationAsync(
         OnlineConfigurationReadProof request, CancellationToken token)
     {
@@ -1355,6 +1499,7 @@ sealed class OnlineLicensingService
 interface IPixPaymentGateway
 {
     bool IsReady { get; }
+    Task ValidateConnectionAsync(string externalPosId, string accessToken, CancellationToken token);
     Task<OnlineOrderResponse> CreateAsync(string customerId, OnlinePaymentCreateContext context,
         string idempotencyKey, CancellationToken token);
     Task<OnlineOrderResponse> ReadAsync(string customerId, OnlinePaymentReadContext context, CancellationToken token);

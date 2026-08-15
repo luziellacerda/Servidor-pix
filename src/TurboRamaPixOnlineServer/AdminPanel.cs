@@ -392,6 +392,12 @@ static class AdminPanel
             RequireStepUp(admin, Required(form, "adminPassword"));
             return Task.FromResult("activation:" + repository.IssueActivationCode(Required(form, "licenseId")));
         }, showActivationCode: true);
+        MapAction(app, "/admin/actions/payment-enrollment-code", (form, repository, admin, _) =>
+        {
+            RequireStepUp(admin, Required(form, "adminPassword"));
+            return Task.FromResult("payment:" + repository.IssuePaymentEnrollmentCode(
+                Required(form, "customerId")));
+        }, showActivationCode: true);
         MapAction(app, "/admin/actions/device-transfer", (form, repository, admin, _) =>
         {
             RequireStepUp(admin, Required(form, "adminPassword"));
@@ -414,7 +420,13 @@ static class AdminPanel
                 var outcome = await action(form, repository, admin, context);
                 if (showActivationCode && outcome.StartsWith("activation:", StringComparison.Ordinal))
                 {
-                    return Html(ActivationCodePage(outcome[11..]));
+                    return Html(OneTimeCodePage(outcome[11..], "Código de ativação",
+                        "Transporte-o diretamente para o único gabinete autorizado."));
+                }
+                if (showActivationCode && outcome.StartsWith("payment:", StringComparison.Ordinal))
+                {
+                    return Html(OneTimeCodePage(outcome[8..], "Código bancário",
+                        "Use-o no CONFIGURAR-USER-TOKEN-PIX.exe em até 15 minutos."));
                 }
                 return Results.Redirect("/admin?ok=" + Uri.EscapeDataString(outcome));
             }
@@ -500,7 +512,11 @@ static class AdminPanel
             .Append(license.PixEnabled ? "Confirma o bloqueio de novas cobranças PIX?" : "Confirma a liberação de novas cobranças PIX?")
             .Append("\">").Append(license.PixEnabled ? "Bloquear novas cobranças" : "Liberar novas cobranças")
             .Append("</button></form></section>");
-        html.Append("<section class='operation-card local-card'><span class=eyebrow>DADOS BANCÁRIOS</span><h3>Segredos somente no servidor</h3><p>Mercado Pago e PDV ficam cifrados no Linux. O gabinete recebe somente o QR e o estado vinculados ao pedido assinado.</p><span class='pill neutral'>NENHUM TOKEN NO CLIENTE</span></section></div>");
+        html.Append("<section class='operation-card local-card'><span class=eyebrow>DADOS BANCÁRIOS</span><h3>Segredos somente no servidor</h3><p>Gere um código de uso único para o configurador portátil enviar o token e o PDV diretamente ao Linux.</p>")
+            .Append(FormStart("/admin/actions/payment-enrollment-code", token, "stack"))
+            .Append(Hidden("customerId", license.CustomerId))
+            .Append(Input("adminPassword", "Confirme sua senha", "", "password"))
+            .Append("<button class=primary data-busy=\"Gerando...\">Gerar código bancário (15 min)</button></form></section></div>");
         html.Append("<div class=machines-title><div><h3>Máquinas autorizadas</h3><p class=muted>Identidade criptográfica, versão e último contato.</p></div></div><div class=table-wrap><table class=machine-table><thead><tr><th>Máquina</th><th>Proteção</th><th>Versão</th><th>Conexão</th><th>Segurança</th><th>Ações</th></tr></thead><tbody>");
         if (license.Devices.Count == 0) html.Append("<tr><td colspan=7 class=muted>Nenhuma máquina ativada.</td></tr>");
         foreach (var device in license.Devices)
@@ -564,8 +580,8 @@ static class AdminPanel
                 + "<button class=primary data-busy=\"Autenticando...\">Entrar com segurança</button></form>" : "")
                 + "<div class=login-security>Protegido por Cloudflare Access + autenticação TurboRama</div></div></section>" + PageEnd();
 
-    private static string ActivationCodePage(string code)
-        => PageStart("Código de ativação") + "<section class=login><div class=login-card><span class=eyebrow>USO ÚNICO</span><h1>Código de ativação</h1><p>Ele não será mostrado novamente. Transporte-o diretamente para o único gabinete autorizado.</p><code class=activation id=activation-code>"
+    private static string OneTimeCodePage(string code, string title, string instruction)
+		=> PageStart(title) + "<section class=login><div class=login-card><span class=eyebrow>USO ÚNICO</span><h1>" + E(title) + "</h1><p>Ele não será mostrado novamente. " + E(instruction) + "</p><code class=activation id=activation-code>"
             + E(code) + "</code><div class=activation-actions><button type=button class=ghost data-copy-target=\"#activation-code\">Copiar código</button><a class='button primary' href=/admin>Voltar ao painel</a></div><p class='muted compact-text'>Não salve este código no Git, em capturas ou mensagens.</p></div></section>" + PageEnd();
 
     private static Dictionary<int, long> ReadPrices(IFormCollection form)
