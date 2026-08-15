@@ -205,6 +205,7 @@ sealed class OnlineStateRepository : IDisposable
     {
         customerId = OnlineLicenseProtocol.RequireIdentifier(customerId, "CustomerId", 4, 64);
         licenseId = OnlineLicenseProtocol.RequireIdentifier(licenseId, "LicenseId", 6, 64);
+        OnlineProtectionProfileCodec.RequireImplemented(profile);
         if (maximumDevices is < 1 or > 100) throw new SecurityException("Quantidade de maquinas invalida.");
         var activation = Base64Url(RandomNumberGenerator.GetBytes(24));
         var salt = RandomNumberGenerator.GetBytes(16);

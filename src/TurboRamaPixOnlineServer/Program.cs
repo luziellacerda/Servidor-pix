@@ -165,9 +165,8 @@ app.UseRateLimiter();
 AdminPanel.UseSecurityHeaders(app);
 app.Use(async (context, next) =>
 {
-    var loopbackAllowed = configuration.AllowHttpLoopback
-        && context.Connection.RemoteIpAddress is { } address && System.Net.IPAddress.IsLoopback(address);
-    if (!context.Request.IsHttps && !loopbackAllowed)
+    if (!RequestTransportPolicy.IsAllowed(context.Request.IsHttps, context.Request.Host.Host,
+            context.Connection.RemoteIpAddress, configuration.AllowHttpLoopback))
     {
         context.Response.StatusCode = StatusCodes.Status400BadRequest;
         await context.Response.WriteAsJsonAsync(new OnlineErrorResponse(1, "TR-ACT-104",
@@ -221,6 +220,20 @@ static string ReadSecret()
         if (!char.IsControl(key.KeyChar)) { value.Append(key.KeyChar); Console.Write('*'); }
     }
     return value.ToString().Trim();
+}
+
+static class RequestTransportPolicy
+{
+    public static bool IsAllowed(bool isHttps, string host, System.Net.IPAddress? remoteAddress,
+        bool allowHttpLoopback)
+    {
+        if (isHttps) return true;
+        if (!allowHttpLoopback || remoteAddress is null
+            || !System.Net.IPAddress.IsLoopback(remoteAddress)) return false;
+        if (host.Equals("localhost", StringComparison.OrdinalIgnoreCase)) return true;
+        return System.Net.IPAddress.TryParse(host, out var hostAddress)
+            && System.Net.IPAddress.IsLoopback(hostAddress);
+    }
 }
 
 static class Endpoint

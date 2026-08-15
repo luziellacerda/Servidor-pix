@@ -28,6 +28,13 @@ static class OnlineProtectionProfileCodec
         "SOFTWARE_BOUND_ONLINE" => OnlineProtectionProfile.SoftwareBoundOnline,
         _ => throw new SecurityException("O perfil de protecao on-line e invalido.")
     };
+
+    public static void RequireImplemented(OnlineProtectionProfile profile)
+    {
+        if (profile == OnlineProtectionProfile.UsbTokenBound)
+            throw new SecurityException(
+                "USB_TOKEN_BOUND permanece indisponivel ate existir um token criptografico homologado.");
+    }
 }
 
 sealed record OnlineDeviceDescriptor(
@@ -303,7 +310,8 @@ static class OnlineLicenseProtocol
         if (descriptor.SchemaVersion != SchemaVersion)
             throw new SecurityException("A versao da identidade da maquina e invalida.");
         RequireHex(descriptor.DeviceId, "DeviceId", 64);
-        _ = OnlineProtectionProfileCodec.Parse(descriptor.BindingType);
+        var profile = OnlineProtectionProfileCodec.Parse(descriptor.BindingType);
+        OnlineProtectionProfileCodec.RequireImplemented(profile);
         if (!string.Equals(descriptor.Algorithm, SigningAlgorithm, StringComparison.Ordinal))
             throw new SecurityException("O algoritmo da identidade da maquina e invalido.");
         RequireHex(descriptor.HardwareFingerprint, "HardwareFingerprint", 64);

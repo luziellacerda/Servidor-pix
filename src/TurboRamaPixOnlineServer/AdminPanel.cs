@@ -201,6 +201,8 @@ static class AdminPanel
     {
         app.Use(async (context, next) =>
         {
+            if (context.Request.IsHttps)
+                context.Response.Headers.StrictTransportSecurity = "max-age=31536000";
             if (context.Request.Path.StartsWithSegments("/admin"))
             {
                 context.Response.Headers.CacheControl = "no-store, max-age=0";

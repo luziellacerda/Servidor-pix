@@ -40,11 +40,34 @@ static class OnlineServerSelfTest
                 && !AdminPanel.IsHostAllowed("pix.lzgames.com.br", true,
                     "painelpix.lzgames.com.br"),
                 "isolamento de hostname ou HTTPS do painel falhou");
+            Require(RequestTransportPolicy.IsAllowed(true, "pix.lzgames.com.br",
+                    System.Net.IPAddress.Loopback, allowHttpLoopback: true)
+                && RequestTransportPolicy.IsAllowed(false, "127.0.0.1",
+                    System.Net.IPAddress.Loopback, allowHttpLoopback: true)
+                && RequestTransportPolicy.IsAllowed(false, "::1",
+                    System.Net.IPAddress.IPv6Loopback, allowHttpLoopback: true)
+                && RequestTransportPolicy.IsAllowed(false, "localhost",
+                    System.Net.IPAddress.Loopback, allowHttpLoopback: true)
+                && !RequestTransportPolicy.IsAllowed(false, "pix.lzgames.com.br",
+                    System.Net.IPAddress.Loopback, allowHttpLoopback: true)
+                && !RequestTransportPolicy.IsAllowed(false, "127.0.0.1",
+                    System.Net.IPAddress.Parse("192.0.2.10"), allowHttpLoopback: true)
+                && !RequestTransportPolicy.IsAllowed(false, "127.0.0.1",
+                    System.Net.IPAddress.Loopback, allowHttpLoopback: false),
+                "politica de HTTPS confundiu tunel publico com health local");
             using var repository = new OnlineStateRepository(Path.Combine(root, "state.json"), integrityKey);
             var concurrentRepositoryDenied = false;
             try { _ = new OnlineStateRepository(Path.Combine(root, "state.json"), integrityKey); }
             catch (InvalidOperationException) { concurrentRepositoryDenied = true; }
             Require(concurrentRepositoryDenied, "estado aceitou dois processos simultaneos");
+            var unsupportedUsbDenied = false;
+            try
+            {
+                _ = repository.CreateLicense("CLI-USB-TEST", "TR-USB-TEST-001",
+                    OnlineProtectionProfile.UsbTokenBound, 1);
+            }
+            catch (SecurityException) { unsupportedUsbDenied = true; }
+            Require(unsupportedUsbDenied, "servidor aceitou USB_TOKEN_BOUND sem token homologado");
             var activation = repository.CreateLicense("CLI-0018", "TR-000125",
                 OnlineProtectionProfile.SoftwareBoundOnline, 1);
             repository.SetPackagePrices("TR-000125", new Dictionary<int, long>
