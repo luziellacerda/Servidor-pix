@@ -1,5 +1,10 @@
 # HANDOFF Linux — servidor como autoridade PIX — rodada 14
 
+> **HISTÓRICO SUPERADO:** esta rodada descreve o servidor como responsável por
+> criar cobranças e guardar a credencial bancária. Essa não é a arquitetura
+> vigente. Para qualquer retomada, use
+> `HANDOFF-LINUX-VALIDACAO-RODADA-15-20260815.md`.
+
 Data de origem: 15/08/2026
 Branch obrigatória: `SERVIDOR-AUTORIDADE-PIX-20260815`
 
