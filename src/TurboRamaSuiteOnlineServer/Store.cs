@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 namespace TurboRamaSuiteOnlineServer;
 
 public sealed record LicenseRecord(string LicenseId, string ProductId, string Status,
-    string ActivationVerifier, long ActivationExpiresAt, bool ActivationConsumed,
+    string? ActivationVerifier, long? ActivationExpiresAt, bool ActivationConsumed,
     string LicenseTerm = "LIFETIME", long? ExpiresAt = null,
     string IdentityPolicy = "SOFTWARE_ONLY", int MaximumActiveDevices = 1);
 public sealed record DeviceRecord(string LicenseId, string DeviceId, string BindingType,
@@ -43,7 +43,7 @@ public sealed class PostgresSuiteStore : ISuiteStore
     {
         await using var cmd = _dataSource.CreateCommand("SELECT license_id,product_id,status,activation_verifier,extract(epoch from activation_expires_at)::bigint,activation_consumed,license_term,CASE WHEN expires_at IS NULL THEN NULL ELSE extract(epoch from expires_at)::bigint END,identity_policy,maximum_active_devices FROM suite.suite_licenses WHERE license_id=$1");
         cmd.Parameters.AddWithValue(id); await using var r = await cmd.ExecuteReaderAsync(ct);
-        return await r.ReadAsync(ct) ? new(r.GetString(0), r.GetString(1), r.GetString(2), r.GetString(3), r.GetInt64(4), r.GetBoolean(5), r.GetString(6), r.IsDBNull(7) ? null : r.GetInt64(7), r.GetString(8), r.GetInt16(9)) : null;
+        return await r.ReadAsync(ct) ? new(r.GetString(0), r.GetString(1), r.GetString(2), r.IsDBNull(3) ? null : r.GetString(3), r.IsDBNull(4) ? null : r.GetInt64(4), r.GetBoolean(5), r.GetString(6), r.IsDBNull(7) ? null : r.GetInt64(7), r.GetString(8), r.GetInt16(9)) : null;
     }
     public async Task<DeviceRecord?> FindDeviceAsync(string l, string d, CancellationToken ct)
     {

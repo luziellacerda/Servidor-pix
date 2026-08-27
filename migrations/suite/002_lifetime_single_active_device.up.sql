@@ -1,10 +1,13 @@
 BEGIN;
 ALTER TABLE suite.suite_licenses
+  ALTER COLUMN activation_verifier DROP NOT NULL,
+  ALTER COLUMN activation_expires_at DROP NOT NULL,
   ADD COLUMN license_term varchar(16) NOT NULL DEFAULT 'LIFETIME',
   ADD COLUMN expires_at timestamptz NULL,
   ADD COLUMN identity_policy varchar(24) NOT NULL DEFAULT 'SOFTWARE_ONLY',
   ADD COLUMN maximum_active_devices smallint NOT NULL DEFAULT 1;
 ALTER TABLE suite.suite_licenses
+  ADD CONSTRAINT ck_suite_activation_pair CHECK ((activation_verifier IS NULL) = (activation_expires_at IS NULL)),
   ADD CONSTRAINT ck_suite_licenses_lifetime CHECK (license_term = 'LIFETIME' AND expires_at IS NULL),
   ADD CONSTRAINT ck_suite_licenses_identity_policy CHECK (identity_policy IN ('TPM_REQUIRED','TPM_PREFERRED','SOFTWARE_ONLY')),
   ADD CONSTRAINT ck_suite_licenses_single_device CHECK (maximum_active_devices = 1);

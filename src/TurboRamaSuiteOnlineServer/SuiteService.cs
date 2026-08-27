@@ -15,8 +15,10 @@ public sealed class SuiteService
     {
         Protocol.RequireVersion(request.SchemaVersion); Protocol.RequireProduct(request.ProductId); Protocol.ValidateDevice(request.Device);
         Protocol.ValidateActivationCode(request.ActivationCode);
-        var license = await ActiveLicense(request.LicenseId, ct); var verifier = ActivationCodes.Verify(_pepper, request.ActivationCode);
-        if (license.ActivationConsumed || license.ActivationExpiresAt <= Now() || !Protocol.FixedEquals(verifier, license.ActivationVerifier)) throw new SuiteException(403, "ACTIVATION_INVALID", "Activation is not authorized.");
+        var license = await ActiveLicense(request.LicenseId, ct);
+        if (license.ActivationConsumed || license.ActivationVerifier is null || license.ActivationExpiresAt is null || license.ActivationExpiresAt <= Now()) throw new SuiteException(403, "ACTIVATION_INVALID", "Activation is not authorized.");
+        var verifier = ActivationCodes.Verify(_pepper, request.ActivationCode);
+        if (!Protocol.FixedEquals(verifier, license.ActivationVerifier)) throw new SuiteException(403, "ACTIVATION_INVALID", "Activation is not authorized.");
         var hash = Protocol.ActivationContextHash(request.LicenseId, request.Device); var challenge = NewChallenge(request.LicenseId, request.Device.DeviceId, "", "device.activate", hash, verifier, JsonSerializer.Serialize(request.Device, StrictJson.Options)); await _store.InsertChallengeAsync(challenge, ct);
         return _signer.Sign(new ActivationChallengeAssertion(1, Protocol.ActivationChallengeKind, Protocol.ProductId, request.LicenseId, request.Device.DeviceId, "device.activate", hash, challenge.ChallengeId, challenge.Nonce, "ISSUED", Now(), challenge.ExpiresAt));
     }
