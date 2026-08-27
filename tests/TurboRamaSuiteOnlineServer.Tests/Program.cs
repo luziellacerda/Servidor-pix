@@ -23,6 +23,9 @@ Expect<SuiteException>(() => StrictJson.Parse<ErrorResponse>(Encoding.UTF8.GetBy
 Expect<SuiteException>(() => Protocol.RequireProduct("TURBORAMA_PIX"), "cross product");
 Expect<SuiteException>(() => Protocol.ValidateActivationCode("too-short"), "short activation code");
 Expect<SuiteException>(() => Protocol.ValidateActivationCode("sixteen chars bad "), "activation code whitespace");
+var rateClock = new ManualTime(1_800_000_000); var limiter = new SuiteRateLimiter(rateClock);
+for (var i = 0; i < 30; i++) Equal(true, limiter.Allow("127.0.0.1", "/route", new ChallengeRequest(1, Protocol.ProductId, licenseId, new string('1', 64), new string('2', 64), "session.open", new string('3', 64))), "rate allowance");
+Equal(false, limiter.Allow("127.0.0.1", "/route", new ChallengeRequest(1, Protocol.ProductId, licenseId, new string('1', 64), new string('2', 64), "session.open", new string('3', 64))), "rate rejection");
 
 var pepper = Convert.ToBase64String(RandomNumberGenerator.GetBytes(32)); var code = "test-activation-code"; var verifier = ActivationCodes.Verify(pepper, code);
 var store = new MemoryStore(new LicenseRecord(licenseId, Protocol.ProductId, "ACTIVE", verifier, 2_000_000_000, false)); var clock = new ManualTime(1_800_000_000); using var signer = new RsaAssertionSigner(online); var serviceA = new SuiteService(store, signer, clock, pepper); var serviceB = new SuiteService(store, signer, clock, pepper);

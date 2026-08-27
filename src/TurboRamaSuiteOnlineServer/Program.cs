@@ -14,6 +14,7 @@ if (enabled && (string.IsNullOrWhiteSpace(connection) || string.IsNullOrWhiteSpa
     throw new InvalidOperationException("Suite is enabled but protected dependencies are unavailable.");
 
 builder.Services.AddSingleton(TimeProvider.System);
+builder.Services.AddSingleton<SuiteRateLimiter>();
 if (enabled)
 {
     builder.Services.AddSingleton(NpgsqlDataSource.Create(connection!));
@@ -46,11 +47,18 @@ void Map<T>(string route, Func<SuiteService, T, CancellationToken, Task<SignedAs
         try
         {
             using var memory = new MemoryStream(); await context.Request.Body.CopyToAsync(memory, context.RequestAborted);
-            var request = StrictJson.Parse<T>(memory.ToArray()); var response = await action(context.RequestServices.GetRequiredService<SuiteService>(), request, context.RequestAborted);
+            var request = StrictJson.Parse<T>(memory.ToArray());
+            var limiter = context.RequestServices.GetRequiredService<SuiteRateLimiter>();
+            if (!limiter.Allow(context.Connection.RemoteIpAddress?.ToString() ?? "unknown", route, request))
+                return Results.Json(new ErrorResponse(1, "RATE_LIMITED", "Too many requests."), StrictJson.Options, statusCode: 429);
+            using var timeout = CancellationTokenSource.CreateLinkedTokenSource(context.RequestAborted);
+            timeout.CancelAfter(TimeSpan.FromSeconds(10));
+            var response = await action(context.RequestServices.GetRequiredService<SuiteService>(), request, timeout.Token);
             return Results.Json(response, StrictJson.Options, contentType: "application/json; charset=utf-8");
         }
         catch (SuiteException ex) { return Results.Json(new ErrorResponse(1, ex.Code, ex.Message), StrictJson.Options, statusCode: ex.StatusCode); }
         catch (OperationCanceledException) when (context.RequestAborted.IsCancellationRequested) { return Results.StatusCode(499); }
+        catch (OperationCanceledException) { return Results.Json(new ErrorResponse(1, "REQUEST_TIMEOUT", "Request timed out."), StrictJson.Options, statusCode: 504); }
         catch (Exception ex) { app.Logger.LogError(ex, "Suite request failed. Correlation {CorrelationId}", context.Response.Headers["X-Correlation-ID"].ToString()); return Results.Json(new ErrorResponse(1, "INTERNAL_ERROR", "Request could not be completed."), StrictJson.Options, statusCode: 500); }
     }).DisableAntiforgery();
 }
