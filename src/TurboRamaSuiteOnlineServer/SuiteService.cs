@@ -16,6 +16,7 @@ public sealed class SuiteService
         Protocol.RequireVersion(request.SchemaVersion); Protocol.RequireProduct(request.ProductId); Protocol.ValidateDevice(request.Device);
         Protocol.ValidateActivationCode(request.ActivationCode);
         var license = await ActiveLicense(request.LicenseId, ct);
+        await RequireEnrollment(request.LicenseId, request.Device, ct);
         if (license.ActivationConsumed || license.ActivationVerifier is null || license.ActivationExpiresAt is null || license.ActivationExpiresAt <= Now()) throw new SuiteException(403, "ACTIVATION_INVALID", "Activation is not authorized.");
         var verifier = ActivationCodes.Verify(_pepper, request.ActivationCode);
         if (!Protocol.FixedEquals(verifier, license.ActivationVerifier)) throw new SuiteException(403, "ACTIVATION_INVALID", "Activation is not authorized.");
@@ -25,6 +26,7 @@ public sealed class SuiteService
     public async Task<SignedAssertionEnvelope> CompleteActivationAsync(ActivationProof proof, CancellationToken ct)
     {
         Protocol.RequireVersion(proof.SchemaVersion); Protocol.RequireProduct(proof.ProductId); Protocol.ValidateDevice(proof.Device);
+        await RequireEnrollment(proof.LicenseId, proof.Device, ct);
         var digest = Digest(JsonSerializer.SerializeToUtf8Bytes(proof, StrictJson.Options)); var prior = await _store.FindCompletionAsync(proof.ChallengeId, ct); if (prior is not null) { if (!Protocol.FixedEquals(prior.RequestDigest, digest)) throw new SuiteException(409, "REPLAY_DENIED", "Replay was denied."); return prior.Result; }
         var challenge = await _store.FindChallengeAsync(proof.ChallengeId, "device.activate", Now(), ct) ?? throw new SuiteException(409, "CHALLENGE_INVALID", "Challenge is invalid or expired.");
         var contextHash = Protocol.ActivationContextHash(proof.LicenseId, proof.Device); Match(challenge, proof.LicenseId, proof.Device.DeviceId, "", contextHash);
@@ -50,6 +52,7 @@ public sealed class SuiteService
         return _signer.Sign(new SessionAssertion(1, kind, Protocol.ProductId, session.LicenseId, session.DeviceId, session.SessionId, request.Proof.Action, hash, challenge.ChallengeId, "ACTIVE", session.LastServerTime, session.AuthorizedUntil, HeartbeatAfter));
     }
     private async Task<LicenseRecord> ActiveLicense(string id, CancellationToken ct) { var l = await _store.FindLicenseAsync(id, ct) ?? throw new SuiteException(404, "LICENSE_NOT_FOUND", "License was not found."); if (l.ProductId != Protocol.ProductId || l.Status != "ACTIVE" || l.LicenseTerm != "LIFETIME" || l.ExpiresAt is not null || l.MaximumActiveDevices != 1) throw new SuiteException(403, "LICENSE_DENIED", "License is not active."); return l; }
+    private async Task RequireEnrollment(string licenseId, DeviceDescriptor device, CancellationToken ct) { var e = await _store.FindEnrollmentAsync(licenseId, ct) ?? throw new SuiteException(403, "DEVICE_DENIED", "Device is not authorized."); if (e.DeviceId != device.DeviceId || e.BindingType != device.BindingType || e.IdentityPolicy != "SOFTWARE_ONLY" || e.Algorithm != device.Algorithm || e.PublicKeySpki != device.PublicKeySpki || e.HardwareFingerprint != device.HardwareFingerprint) throw new SuiteException(403, "DEVICE_DENIED", "Device is not authorized."); }
     private ChallengeRecord NewChallenge(string l, string d, string s, string a, string h, string? v, string? j) { var now = Now(); return new(Digest(RandomNumberGenerator.GetBytes(32)), Protocol.ProductId, l, d, s, a, h, Convert.ToBase64String(RandomNumberGenerator.GetBytes(32)), now + ChallengeLifetime, v, j); }
     private static string Digest(ReadOnlySpan<byte> b) => Convert.ToHexString(SHA256.HashData(b)).ToLowerInvariant();
     private static void Match(ChallengeRecord c, string l, string d, string s, string h) { if (c.ProductId != Protocol.ProductId || c.LicenseId != l || c.DeviceId != d || c.SessionId != s || !Protocol.FixedEquals(c.ContextHash, h)) throw new SuiteException(409, "CHALLENGE_MISMATCH", "Challenge does not match the request."); }

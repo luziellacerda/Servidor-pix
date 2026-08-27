@@ -28,8 +28,9 @@ for (var i = 0; i < 30; i++) Equal(true, limiter.Allow("127.0.0.1", "/route", ne
 Equal(false, limiter.Allow("127.0.0.1", "/route", new ChallengeRequest(1, Protocol.ProductId, licenseId, new string('1', 64), new string('2', 64), "session.open", new string('3', 64))), "rate rejection");
 
 var pepper = Convert.ToBase64String(RandomNumberGenerator.GetBytes(32)); var code = "test-activation-code"; var verifier = ActivationCodes.Verify(pepper, code);
-var store = new MemoryStore(new LicenseRecord(licenseId, Protocol.ProductId, "ACTIVE", verifier, 2_000_000_000, false)); var clock = new ManualTime(1_800_000_000); using var signer = new RsaAssertionSigner(online); var serviceA = new SuiteService(store, signer, clock, pepper); var serviceB = new SuiteService(store, signer, clock, pepper);
-var nonLifetime = new SuiteService(new MemoryStore(new LicenseRecord(licenseId, Protocol.ProductId, "ACTIVE", verifier, 2_000_000_000, false, "TERM")), signer, clock, pepper);
+var store = new MemoryStore(new LicenseRecord(licenseId, Protocol.ProductId, "ACTIVE", verifier, 2_000_000_000, false), device); var clock = new ManualTime(1_800_000_000); using var signer = new RsaAssertionSigner(online); var serviceA = new SuiteService(store, signer, clock, pepper); var serviceB = new SuiteService(store, signer, clock, pepper);
+await ExpectAsync<SuiteException>(() => serviceA.ActivationChallengeAsync(new(1, Protocol.ProductId, licenseId, code, device with { HardwareFingerprint = new string('b', 64) }), default), "unenrolled device");
+var nonLifetime = new SuiteService(new MemoryStore(new LicenseRecord(licenseId, Protocol.ProductId, "ACTIVE", verifier, 2_000_000_000, false, "TERM"), device), signer, clock, pepper);
 await ExpectAsync<SuiteException>(() => nonLifetime.ActivationChallengeAsync(new(1, Protocol.ProductId, licenseId, code, device), default), "non-lifetime license");
 var issued = await serviceA.ActivationChallengeAsync(new(1, Protocol.ProductId, licenseId, code, device), default); var issuedPayload = Payload<ActivationChallengeAssertion>(issued); var activationChallenge = new ChallengeResponse(1, issuedPayload.ChallengeId, issuedPayload.Nonce, issuedPayload.ExpiresAtUnixSeconds);
 var activationSignature = Sign(machine, activationChallenge, licenseId, deviceId, "", "device.activate", activation);
@@ -51,10 +52,11 @@ static void Expect<T>(Action action, string label) where T : Exception { try { a
 static async Task ExpectAsync<T>(Func<Task> action, string label) where T : Exception { try { await action(); } catch (T) { return; } throw new InvalidOperationException(label + " was accepted"); }
 
 sealed class ManualTime(long unix) : TimeProvider { public override DateTimeOffset GetUtcNow() => DateTimeOffset.FromUnixTimeSeconds(unix); }
-sealed class MemoryStore(LicenseRecord license) : ISuiteStore
+sealed class MemoryStore(LicenseRecord license, DeviceDescriptor enrolled) : ISuiteStore
 {
     private LicenseRecord _license = license; private readonly ConcurrentDictionary<string, ChallengeRecord> _challenges = new(); private readonly ConcurrentDictionary<string, CompletionRecord> _completions = new(); private readonly ConcurrentDictionary<string, DeviceRecord> _devices = new(); private readonly ConcurrentDictionary<string, SessionRecord> _sessions = new();
     public Task<LicenseRecord?> FindLicenseAsync(string id, CancellationToken _) => Task.FromResult<LicenseRecord?>(_license.LicenseId == id ? _license : null);
+    public Task<EnrollmentRecord?> FindEnrollmentAsync(string id, CancellationToken _) => Task.FromResult<EnrollmentRecord?>(_license.LicenseId == id ? new(id, enrolled.DeviceId, enrolled.BindingType, "SOFTWARE_ONLY", enrolled.Algorithm, enrolled.PublicKeySpki, enrolled.HardwareFingerprint) : null);
     public Task<DeviceRecord?> FindDeviceAsync(string l, string d, CancellationToken _) { _devices.TryGetValue(l + ":" + d, out var value); return Task.FromResult<DeviceRecord?>(value); }
     public Task InsertChallengeAsync(ChallengeRecord c, CancellationToken _) { if (!_challenges.TryAdd(c.ChallengeId, c)) throw new InvalidOperationException(); return Task.CompletedTask; }
     public Task<ChallengeRecord?> FindChallengeAsync(string id, string action, long now, CancellationToken _) { if (_challenges.TryGetValue(id, out var c) && c.Action == action && c.ExpiresAt > now) return Task.FromResult<ChallengeRecord?>(c); return Task.FromResult<ChallengeRecord?>(null); }

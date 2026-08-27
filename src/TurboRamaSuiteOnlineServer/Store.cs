@@ -11,6 +11,9 @@ public sealed record LicenseRecord(string LicenseId, string ProductId, string St
 public sealed record DeviceRecord(string LicenseId, string DeviceId, string BindingType,
     string PublicKeySpki, string HardwareFingerprint, string Status,
     string Algorithm = Protocol.Algorithm);
+public sealed record EnrollmentRecord(string LicenseId, string DeviceId, string BindingType,
+    string IdentityPolicy, string Algorithm, string PublicKeySpki,
+    string HardwareFingerprint);
 public sealed record ChallengeRecord(string ChallengeId, string ProductId, string LicenseId,
     string DeviceId, string SessionId, string Action, string ContextHash, string Nonce,
     long ExpiresAt, string? ActivationVerifier, string? DeviceJson);
@@ -22,6 +25,7 @@ public sealed record CompletionRecord(string ChallengeId, string RequestDigest,
 public interface ISuiteStore
 {
     Task<LicenseRecord?> FindLicenseAsync(string licenseId, CancellationToken token);
+    Task<EnrollmentRecord?> FindEnrollmentAsync(string licenseId, CancellationToken token);
     Task<DeviceRecord?> FindDeviceAsync(string licenseId, string deviceId, CancellationToken token);
     Task InsertChallengeAsync(ChallengeRecord challenge, CancellationToken token);
     Task<ChallengeRecord?> FindChallengeAsync(string id, string action, long now,
@@ -48,6 +52,12 @@ public sealed class PostgresSuiteStore : ISuiteStore
     public async Task<DeviceRecord?> FindDeviceAsync(string l, string d, CancellationToken ct)
     {
         await using var cmd = _dataSource.CreateCommand("SELECT license_id,device_id,binding_type,public_key_spki,hardware_fingerprint,status,algorithm FROM suite.suite_devices WHERE license_id=$1 AND device_id=$2"); cmd.Parameters.AddWithValue(l); cmd.Parameters.AddWithValue(d); await using var r = await cmd.ExecuteReaderAsync(ct); return await r.ReadAsync(ct) ? new(r.GetString(0), r.GetString(1), r.GetString(2), r.GetString(3), r.GetString(4), r.GetString(5), r.GetString(6)) : null;
+    }
+    public async Task<EnrollmentRecord?> FindEnrollmentAsync(string licenseId, CancellationToken ct)
+    {
+        await using var cmd = _dataSource.CreateCommand("SELECT license_id,device_id,binding_type,identity_policy,algorithm,public_key_spki,hardware_fingerprint FROM suite.suite_license_enrollments WHERE license_id=$1");
+        cmd.Parameters.AddWithValue(licenseId); await using var r = await cmd.ExecuteReaderAsync(ct);
+        return await r.ReadAsync(ct) ? new(r.GetString(0), r.GetString(1), r.GetString(2), r.GetString(3), r.GetString(4), r.GetString(5), r.GetString(6)) : null;
     }
     public async Task InsertChallengeAsync(ChallengeRecord c, CancellationToken ct)
     { await using var cmd = _dataSource.CreateCommand("INSERT INTO suite.suite_challenges(challenge_id,product_id,license_id,device_id,session_id,action,context_hash,nonce,expires_at,activation_verifier,device_json) VALUES($1,$2,$3,$4,$5,$6,$7,$8,to_timestamp($9),$10,$11::jsonb)"); cmd.Parameters.AddWithValue(c.ChallengeId); cmd.Parameters.AddWithValue(c.ProductId); cmd.Parameters.AddWithValue(c.LicenseId); cmd.Parameters.AddWithValue(c.DeviceId); cmd.Parameters.AddWithValue(c.SessionId); cmd.Parameters.AddWithValue(c.Action); cmd.Parameters.AddWithValue(c.ContextHash); cmd.Parameters.AddWithValue(c.Nonce); cmd.Parameters.AddWithValue(c.ExpiresAt); cmd.Parameters.AddWithValue((object?)c.ActivationVerifier ?? DBNull.Value); cmd.Parameters.AddWithValue((object?)c.DeviceJson ?? DBNull.Value); await cmd.ExecuteNonQueryAsync(ct); }

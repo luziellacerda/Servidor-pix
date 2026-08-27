@@ -1,4 +1,5 @@
 BEGIN;
+DROP TABLE IF EXISTS suite.suite_license_enrollments;
 DROP INDEX IF EXISTS suite.ux_suite_devices_one_active_per_license;
 ALTER TABLE suite.suite_devices DROP CONSTRAINT IF EXISTS ck_suite_devices_algorithm;
 ALTER TABLE suite.suite_devices DROP COLUMN IF EXISTS algorithm;
