@@ -1,0 +1,12 @@
+BEGIN;
+DROP INDEX IF EXISTS suite.ux_suite_devices_one_active_per_license;
+ALTER TABLE suite.suite_devices DROP CONSTRAINT IF EXISTS ck_suite_devices_algorithm;
+ALTER TABLE suite.suite_devices DROP COLUMN IF EXISTS algorithm;
+ALTER TABLE suite.suite_licenses DROP CONSTRAINT IF EXISTS ck_suite_licenses_single_device;
+ALTER TABLE suite.suite_licenses DROP CONSTRAINT IF EXISTS ck_suite_licenses_identity_policy;
+ALTER TABLE suite.suite_licenses DROP CONSTRAINT IF EXISTS ck_suite_licenses_lifetime;
+ALTER TABLE suite.suite_licenses DROP COLUMN IF EXISTS maximum_active_devices;
+ALTER TABLE suite.suite_licenses DROP COLUMN IF EXISTS identity_policy;
+ALTER TABLE suite.suite_licenses DROP COLUMN IF EXISTS expires_at;
+ALTER TABLE suite.suite_licenses DROP COLUMN IF EXISTS license_term;
+COMMIT;

@@ -21,9 +21,13 @@ Equal(506, message.Length, "machine proof length"); Equal("e446888f27083109d8fb4
 Expect<SuiteException>(() => StrictJson.Parse<ErrorResponse>(Encoding.UTF8.GetBytes("{\"schemaVersion\":1,\"schemaVersion\":1,\"code\":\"X\",\"message\":\"x\"}")), "duplicate JSON");
 Expect<SuiteException>(() => StrictJson.Parse<ErrorResponse>(Encoding.UTF8.GetBytes("{\"schemaVersion\":1,\"code\":\"X\",\"message\":\"x\",\"extra\":1}")), "unknown JSON");
 Expect<SuiteException>(() => Protocol.RequireProduct("TURBORAMA_PIX"), "cross product");
+Expect<SuiteException>(() => Protocol.ValidateActivationCode("too-short"), "short activation code");
+Expect<SuiteException>(() => Protocol.ValidateActivationCode("sixteen chars bad "), "activation code whitespace");
 
 var pepper = Convert.ToBase64String(RandomNumberGenerator.GetBytes(32)); var code = "test-activation-code"; var verifier = ActivationCodes.Verify(pepper, code);
 var store = new MemoryStore(new LicenseRecord(licenseId, Protocol.ProductId, "ACTIVE", verifier, 2_000_000_000, false)); var clock = new ManualTime(1_800_000_000); using var signer = new RsaAssertionSigner(online); var serviceA = new SuiteService(store, signer, clock, pepper); var serviceB = new SuiteService(store, signer, clock, pepper);
+var nonLifetime = new SuiteService(new MemoryStore(new LicenseRecord(licenseId, Protocol.ProductId, "ACTIVE", verifier, 2_000_000_000, false, "TERM")), signer, clock, pepper);
+await ExpectAsync<SuiteException>(() => nonLifetime.ActivationChallengeAsync(new(1, Protocol.ProductId, licenseId, code, device), default), "non-lifetime license");
 var issued = await serviceA.ActivationChallengeAsync(new(1, Protocol.ProductId, licenseId, code, device), default); var issuedPayload = Payload<ActivationChallengeAssertion>(issued); var activationChallenge = new ChallengeResponse(1, issuedPayload.ChallengeId, issuedPayload.Nonce, issuedPayload.ExpiresAtUnixSeconds);
 var activationSignature = Sign(machine, activationChallenge, licenseId, deviceId, "", "device.activate", activation);
 var proof = new ActivationProof(1, Protocol.ProductId, licenseId, issuedPayload.ChallengeId, device, activationSignature); var completed = await serviceB.CompleteActivationAsync(proof, default); var retry = await serviceA.CompleteActivationAsync(proof, default); Equal(completed.Signature, retry.Signature, "idempotent activation");

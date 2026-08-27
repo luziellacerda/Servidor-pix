@@ -158,6 +158,7 @@ public static class Protocol
     private static void ValidateContext(SessionContext c)
     { RequireVersion(c.SchemaVersion); if (c.ProductId != ProductId) Invalid(); Identifier(c.LicenseId, 6, 64); Hex(c.DeviceId); Hex(c.SessionId); Action(c.Action); Hex(c.HardwareFingerprint); if (c.ClientVersion.Length is < 1 or > 64 || c.ClientVersion.Any(ch => !(char.IsAsciiLetterOrDigit(ch) || ch is '.' or '-' or '+'))) Invalid(); }
     public static void RequireProduct(string product) { if (product != ProductId) throw new SuiteException(403, "PRODUCT_DENIED", "Product is not authorized."); }
+    public static void ValidateActivationCode(string value) { if (value is null || value.Length is < 16 or > 128 || value.Any(char.IsWhiteSpace)) Invalid(); }
     public static void RequireVersion(int version) { if (version != 1) Invalid(); }
     public static bool FixedEquals(string a, string b) => a.Length == b.Length && CryptographicOperations.FixedTimeEquals(Encoding.ASCII.GetBytes(a), Encoding.ASCII.GetBytes(b));
     private static void Invalid() => throw new SuiteException(400, "CONTRACT_INVALID", "Request contract is invalid.");
