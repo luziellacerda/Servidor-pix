@@ -8,8 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.ConfigureKestrel(options => options.Limits.MaxRequestBodySize = Protocol.MaximumBodyBytes);
 var enabled = builder.Configuration.GetValue("Suite:Enabled", false);
 var connection = builder.Configuration.GetConnectionString("SuiteStore");
-var pepper = builder.Configuration["Suite:ActivationPepper"];
-var signingPem = builder.Configuration["Suite:OnlineAssertionPrivateKeyPem"];
+var pepper = ReadProtected("Suite:ActivationPepper", "Suite:ActivationPepperFile");
+var signingPem = ReadProtected("Suite:OnlineAssertionPrivateKeyPem", "Suite:OnlineAssertionPrivateKeyPemFile");
 if (enabled && (string.IsNullOrWhiteSpace(connection) || string.IsNullOrWhiteSpace(pepper) || string.IsNullOrWhiteSpace(signingPem)))
     throw new InvalidOperationException("Suite is enabled but protected dependencies are unavailable.");
 
@@ -38,6 +38,14 @@ Map<ActivationProof>("/v1/suite/activations/complete", (s, r, c) => s.CompleteAc
 Map<ChallengeRequest>("/v1/suite/challenges", (s, r, c) => s.ChallengeAsync(r, c));
 Map<SessionProof>("/v1/suite/sessions", (s, r, c) => s.SessionAsync(r, c));
 app.Run();
+
+string? ReadProtected(string valueKey, string fileKey)
+{
+    var direct = builder.Configuration[valueKey];
+    if (!string.IsNullOrWhiteSpace(direct)) return direct;
+    var path = builder.Configuration[fileKey];
+    return string.IsNullOrWhiteSpace(path) ? null : File.ReadAllText(path).Trim();
+}
 
 void Map<T>(string route, Func<SuiteService, T, CancellationToken, Task<SignedAssertionEnvelope>> action) where T : class
 {
