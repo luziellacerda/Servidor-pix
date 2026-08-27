@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TurboRama PIX — Painel minimalista</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span>TR</span><strong>TurboRama <i>PIX</i></strong></a>
+    <nav><a class="active" href="#overview">Visão geral</a><a href="#licenses">Licenças</a><a href="#audit">Auditoria</a></nav>
+    <div class="top-actions"><span class="server"><i></i> Servidor online</span><button class="quiet">Exportar</button><button class="quiet">Sair</button></div>
+  </header>
+
+  <main>
+    <section class="page-head" id="overview">
+      <div><p>CONTROLE OPERACIONAL</p><h1>Licenças</h1></div>
+      <button class="primary">+ Nova licença</button>
+    </section>
+
+    <section class="metrics" aria-label="Resumo">
+      <article><span>Licenças ativas</span><strong>12</strong><small>de 14</small></article>
+      <article><span>Máquinas online</span><strong>10</strong><small>de 12</small></article>
+      <article><span>PIX liberado</span><strong>11</strong><small>licenças</small></article>
+      <article><span>Tentativas recusadas</span><strong class="warning">2</strong><small>últimas 24h</small></article>
+    </section>
+
+    <section class="toolbar" id="licenses">
+      <label class="search"><span>⌕</span><input type="search" placeholder="Buscar licença, cliente ou máquina"></label>
+      <select aria-label="Status"><option>Todos os status</option><option>Ativas</option><option>Suspensas</option></select>
+      <span class="count">12 licenças</span>
+    </section>
+
+    <section class="license">
+      <div class="license-main">
+        <span class="health"></span>
+        <div class="identity"><small>CLI-0018</small><strong>TR-000125</strong></div>
+        <div class="stat"><small>Status</small><span class="tag green">ATIVA</span></div>
+        <div class="stat"><small>PIX</small><span class="tag cyan">LIBERADO</span></div>
+        <div class="stat"><small>Máquinas</small><strong>1 / 1</strong></div>
+        <div class="stat"><small>Online</small><strong>1</strong></div>
+        <div class="stat"><small>Último contato</small><strong>Agora</strong></div>
+        <button class="more" aria-label="Mais ações">•••</button>
+      </div>
+      <div class="machine">
+        <div><span class="dot"></span><strong>Gabinete principal</strong><code>a17fc812…94ba2281</code></div>
+        <span>Software + online</span><span>v25.0.0</span><span class="online">ONLINE</span>
+        <button class="quiet small">Detalhes</button>
+      </div>
+      <details>
+        <summary>Configurações e ações administrativas</summary>
+        <div class="details-grid">
+          <label>Estado da licença<select><option>Ativa</option><option>Manutenção</option></select></label>
+          <button class="quiet">Aplicar estado</button>
+          <button class="danger">Bloquear novas cobranças</button>
+          <button class="quiet">Encerrar sessão</button>
+        </div>
+      </details>
+    </section>
+
+    <section class="license">
+      <div class="license-main">
+        <span class="health amber"></span>
+        <div class="identity"><small>CLI-0021</small><strong>TR-000131</strong></div>
+        <div class="stat"><small>Status</small><span class="tag amber-tag">MANUTENÇÃO</span></div>
+        <div class="stat"><small>PIX</small><span class="tag muted-tag">BLOQUEADO</span></div>
+        <div class="stat"><small>Máquinas</small><strong>1 / 2</strong></div>
+        <div class="stat"><small>Online</small><strong>0</strong></div>
+        <div class="stat"><small>Último contato</small><strong>14:32</strong></div>
+        <button class="more" aria-label="Mais ações">•••</button>
+      </div>
+    </section>
+
+    <section class="audit" id="audit">
+      <div class="section-title"><div><p>SEGURANÇA</p><h2>Eventos recentes</h2></div><button class="quiet">Ver auditoria completa</button></div>
+      <div class="event"><time>14:42</time><span class="event-icon ok">✓</span><div><strong>Sessão autorizada</strong><small>TR-000125 · Gabinete principal</small></div><code>SESSION_CREATED</code></div>
+      <div class="event"><time>14:31</time><span class="event-icon warn">!</span><div><strong>Identidade recusada</strong><small>TR-000131 · Assinatura incompatível</small></div><code>MACHINE_BINDING_MISMATCH</code></div>
+    </section>
+  </main>
+</body>
+</html>

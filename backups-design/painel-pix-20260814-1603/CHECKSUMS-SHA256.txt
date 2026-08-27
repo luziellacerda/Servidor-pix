@@ -1,0 +1,2 @@
+b54ed35bfbd3ea8b9fc2cf2bea16af7b62422a040ac331888dc85851d67aa91d  /home/lz-servidor/turborama-download/Servidor-pix/backups-design/painel-pix-20260814-1603/PREVIA-PAINEL-PIX-v1.html
+59cdd97d0c6f49b9854cfb5f7452963b3ea2206557592519c3ce9894aa5144d8  /home/lz-servidor/turborama-download/Servidor-pix/backups-design/painel-pix-20260814-1603/AdminPanel.cs.before-v2

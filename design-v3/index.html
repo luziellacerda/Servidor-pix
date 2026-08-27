@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TurboRama PIX — Central administrativa</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegação principal">
+      <a class="brand" href="#overview"><span class="brand-mark">TR</span><span><strong>TurboRama PIX</strong><small>Central administrativa</small></span></a>
+      <nav class="nav">
+        <span class="nav-label">Operação</span>
+        <a class="nav-link active" href="#overview" data-section="overview"><span>▦</span>Visão geral</a>
+        <a class="nav-link" href="#licenses" data-section="licenses"><span>◇</span>Licenças</a>
+        <a class="nav-link" href="#machines" data-section="machines"><span>▣</span>Máquinas</a>
+        <span class="nav-label">Segurança</span>
+        <a class="nav-link" href="#audit" data-section="audit"><span>↗</span>Auditoria</a>
+      </nav>
+      <div class="security-state"><span class="status-dot"></span><div><strong>Ambiente protegido</strong><small>Access + autenticação local</small></div></div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <button class="mobile-menu" type="button" aria-label="Abrir menu">☰</button>
+        <div class="command-search"><span>⌕</span><input id="global-search" type="search" placeholder="Pesquisar licença, cliente ou máquina"><kbd>Ctrl K</kbd></div>
+        <div class="top-actions"><button class="button secondary" type="button" data-toast="Exportação CSV preparada">Exportar CSV</button><button class="button primary" type="button" data-open-dialog>+ Nova licença</button><span class="avatar">AD</span></div>
+      </header>
+
+      <div class="content">
+        <section id="overview" class="page-section" data-page-section>
+          <div class="page-heading"><div><span class="overline">VISÃO GERAL</span><h1>Central de licenças</h1><p>Acompanhe a operação sem interferir nos pagamentos locais dos gabinetes.</p></div><span class="health"><i></i>Servidor operacional</span></div>
+          <div class="metrics">
+            <article><span>Licenças ativas</span><strong>12</strong><small>de 14 cadastradas</small></article>
+            <article><span>Máquinas online</span><strong>9</strong><small>de 12 vinculadas</small></article>
+            <article><span>PIX autorizado</span><strong>8</strong><small>licenças liberadas</small></article>
+            <article class="attention"><span>Recusas de segurança</span><strong>3</strong><small>nas últimas 24 horas</small></article>
+          </div>
+          <div class="architecture"><span>✓</span><p><strong>Arquitetura preservada.</strong> O servidor administra licenças e vínculos. Preços, Mercado Pago, QR Code e créditos permanecem no gabinete.</p></div>
+        </section>
+
+        <div class="dashboard-grid">
+          <section id="licenses" class="card licenses-card page-section" data-page-section>
+            <header class="card-header"><div><span class="overline">OPERAÇÃO</span><h2>Licenças</h2><p>Estado, vínculo e disponibilidade em tempo real.</p></div><button class="text-button" type="button" data-open-dialog>Nova licença</button></header>
+            <div class="filters"><label class="filter-search"><span>⌕</span><input id="license-search" type="search" placeholder="Filtrar esta lista"></label><select id="status-filter"><option value="all">Todos os status</option><option value="active">Ativas</option><option value="maintenance">Manutenção</option><option value="suspended">Suspensas</option></select><span id="result-count">3 licenças</span></div>
+            <div class="table-scroll"><table><thead><tr><th>Licença</th><th>Cliente</th><th>Status</th><th>Máquinas</th><th>PIX</th><th>Último contato</th><th></th></tr></thead><tbody id="license-rows">
+              <tr data-row data-status="active" data-search="tr-000125 cli-0018 software"><td><button class="license-link" data-license="TR-000125">TR-000125</button><small>Software + servidor</small></td><td>CLI-0018</td><td><span class="badge success">Ativa</span></td><td id="machines">1 / 1 online</td><td><span class="positive">Autorizado</span></td><td>Agora</td><td><button class="row-menu" data-license="TR-000125">•••</button></td></tr>
+              <tr data-row data-status="active" data-search="tr-000124 cli-0017 software"><td><button class="license-link" data-license="TR-000124">TR-000124</button><small>Software + servidor</small></td><td>CLI-0017</td><td><span class="badge success">Ativa</span></td><td>1 / 1 online</td><td><span class="positive">Autorizado</span></td><td>Há 2 min</td><td><button class="row-menu" data-license="TR-000124">•••</button></td></tr>
+              <tr data-row data-status="maintenance" data-search="tr-000123 cli-0016 tpm"><td><button class="license-link" data-license="TR-000123">TR-000123</button><small>TPM</small></td><td>CLI-0016</td><td><span class="badge warning">Manutenção</span></td><td>0 / 1 online</td><td>Bloqueado</td><td>Ontem, 18:42</td><td><button class="row-menu" data-license="TR-000123">•••</button></td></tr>
+            </tbody></table></div>
+          </section>
+
+          <aside class="right-column">
+            <section id="audit" class="card page-section" data-page-section><header class="card-header compact"><div><span class="overline">SEGURANÇA</span><h2>Atividade recente</h2></div><button class="icon-button" title="Ver auditoria">↗</button></header><div class="timeline"><article><i class="ok"></i><div><strong>Login administrativo</strong><p>Acesso autenticado com sucesso</p><time>Agora</time></div></article><article><i class="ok"></i><div><strong>Máquina validada</strong><p>TR-000125 · sessão íntegra</p><time>Há 1 min</time></div></article><article><i class="warn"></i><div><strong>Tentativa recusada</strong><p>Assinatura de máquina divergente</p><time>Há 24 min</time></div></article></div></section>
+            <section class="card quick-card"><header class="card-header compact"><h2>Ações rápidas</h2></header><div class="quick-actions"><button data-focus-search><span>⌕</span><b>Pesquisar</b><small>Localizar cadastro</small></button><button data-toast="Exportação CSV preparada"><span>⇩</span><b>Exportar</b><small>Auditoria em CSV</small></button><button data-open-dialog><span>＋</span><b>Nova licença</b><small>Criar cadastro</small></button><button data-section-jump="machines"><span>▣</span><b>Máquinas</b><small>Revisar vínculos</small></button></div></section>
+          </aside>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <aside class="detail-drawer" aria-hidden="true"><div class="drawer-head"><div><span class="overline">DETALHES DA LICENÇA</span><h2 id="drawer-license">TR-000125</h2></div><button class="icon-button" data-close-drawer>×</button></div><div class="drawer-body"><div class="detail-grid"><div><span>Status</span><strong class="positive">Ativa</strong></div><div><span>PIX</span><strong>Autorizado</strong></div><div><span>Máquinas</span><strong>1 de 1</strong></div><div><span>Recusas</span><strong>0</strong></div></div><section><h3>Máquina autorizada</h3><div class="machine-row"><span class="machine-icon">▣</span><div><strong>8f61…a091</strong><small>Online · versão 25.0.0.0</small></div><span class="badge success">Online</span></div></section><section><h3>Ações administrativas</h3><div class="drawer-actions"><button>Alterar estado</button><button>Encerrar sessão</button><button class="danger">Suspender máquina</button></div></section><p class="drawer-note">Prévia visual: nenhuma ação altera dados.</p></div></aside>
+  <div class="drawer-backdrop" data-close-drawer></div>
+
+  <dialog id="license-dialog"><form method="dialog"><header><div><span class="overline">NOVA INSTALAÇÃO</span><h2>Criar licença</h2></div><button value="cancel" class="icon-button">×</button></header><div class="dialog-grid"><label>Cliente<input value="CLI-"></label><label>Licença<input value="TR-"></label><label>Proteção<select><option>Software + servidor</option><option>TPM</option></select></label><label>Máquinas permitidas<input type="number" value="1"></label></div><p>Na aplicação real, esta operação exige confirmação administrativa e CSRF válido.</p><footer><button value="cancel" class="button secondary">Cancelar</button><button value="default" class="button primary" data-toast="Prévia: nenhuma licença foi criada">Criar licença</button></footer></form></dialog>
+  <div id="toast" role="status"></div>
+</body></html>
