@@ -204,6 +204,7 @@ app.MapPost("/v1/configuration/write", async (HttpContext context, OnlineConfigu
     OnlineLicensingService service, CancellationToken token) =>
     await Endpoint.Run(context, () => service.WriteConfigurationAsync(request, token)));
 AdminPanel.Map(app, configuration);
+SuiteAdminPanel.Map(app);
 
 await app.RunAsync();
 return 0;

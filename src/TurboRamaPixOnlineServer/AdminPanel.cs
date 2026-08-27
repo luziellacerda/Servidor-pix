@@ -195,6 +195,8 @@ static class AdminPanel
         });
         builder.Services.AddSingleton(configuration);
         builder.Services.AddSingleton<AdminLoginGuard>();
+        builder.Services.AddSingleton<SuiteAdminBff>();
+        builder.Services.AddSingleton<SuiteIssueGuard>();
     }
 
     public static void UseSecurityHeaders(WebApplication app)
@@ -295,7 +297,10 @@ static class AdminPanel
             guard.Succeeded(guardKey);
             var identity = new ClaimsIdentity([
                 new Claim(ClaimTypes.Name, configuration.Username),
-                new Claim(ClaimTypes.Role, "Administrator")
+                new Claim(ClaimTypes.Role, "Administrator"),
+                new Claim("permission", "suite.read"),
+                new Claim("permission", "suite.activation.issue"),
+                new Claim("permission", "suite.audit.export")
             ], AuthenticationScheme);
             await context.SignInAsync(AuthenticationScheme, new ClaimsPrincipal(identity),
                 new AuthenticationProperties { IsPersistent = false, AllowRefresh = false });
@@ -447,7 +452,7 @@ static class AdminPanel
         var pixRate = snapshot.Licenses.Count == 0 ? 0 : pixEnabled * 100 / snapshot.Licenses.Count;
         var html = new StringBuilder();
         html.Append(PageStart("Central TurboRama PIX", "dashboard-shell"));
-        html.Append("<aside class=sidebar aria-label=\"Navegação principal\"><a class=side-brand href=#overview><span class=side-mark>TR</span><span><strong>TurboRama</strong><small>PIX CONTROL</small></span></a><nav class=side-nav><a href=#overview><span>01</span>Visão geral</a><a href=#licenses><span>02</span>Licenças</a><a href=#machines><span>03</span>Máquinas</a><a href=#audit><span>04</span>Auditoria</a></nav><div class=side-status><i></i><span><strong>Servidor protegido</strong><small>Operação monitorada</small></span></div></aside>");
+        html.Append("<aside class=sidebar aria-label=\"Navegação principal\"><a class=side-brand href=#overview><span class=side-mark>TR</span><span><strong>TurboRama</strong><small>PIX CONTROL</small></span></a><nav class=side-nav><a href=/admin/suite><span>SU</span>SUITE</a><a href=#overview><span>01</span>Visão geral</a><a href=#licenses><span>02</span>Licenças</a><a href=#machines><span>03</span>Máquinas</a><a href=#audit><span>04</span>Auditoria</a></nav><div class=side-status><i></i><span><strong>Servidor protegido</strong><small>Operação monitorada</small></span></div></aside>");
         html.Append("<header class=top><div><span class=eyebrow>LZ GAMES / TURBORAMA</span><h1>Central de licenças</h1><p>Máquinas autorizadas, disponibilidade e segurança em um só lugar.</p></div><nav class=compact-nav aria-label=\"Navegação do painel\"><a href=#overview>Visão geral</a><button type=button data-open-modal=licenses-modal>Licenças</button><button type=button data-open-modal=security-modal>Segurança</button><button type=button data-open-modal=audit-modal>Auditoria</button></nav><nav class=top-actions aria-label=\"Ações do painel\"><button type=button class=primary data-open-modal=licenses-modal>Licenças</button><a class='button ghost' href=/admin/export/audit.csv>Exportar</a>");
         html.Append(FormStart("/admin/logout", token)).Append("<button class=ghost>Sair</button></form></nav></header>");
         if (ok.Length != 0) html.Append("<div class='notice success' role=status>Alteração aplicada e registrada.</div>");
