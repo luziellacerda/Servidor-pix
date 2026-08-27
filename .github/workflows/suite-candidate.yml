@@ -1,0 +1,23 @@
+name: suite-candidate
+on:
+  pull_request:
+    paths: ['src/TurboRamaSuiteOnlineServer/**','tests/TurboRamaSuiteOnlineServer.Tests/**','migrations/suite/**','docs/suite/**']
+  push:
+    branches: ['codex/turborama-suite-servidor-producao']
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: '8.0.x' }
+      - run: dotnet restore tests/TurboRamaSuiteOnlineServer.Tests/TurboRamaSuiteOnlineServer.Tests.csproj --locked-mode
+      - run: dotnet build tests/TurboRamaSuiteOnlineServer.Tests/TurboRamaSuiteOnlineServer.Tests.csproj -c Release --no-restore
+      - run: dotnet format src/TurboRamaSuiteOnlineServer/TurboRamaSuiteOnlineServer.csproj --verify-no-changes --no-restore
+      - run: dotnet format tests/TurboRamaSuiteOnlineServer.Tests/TurboRamaSuiteOnlineServer.Tests.csproj --verify-no-changes --no-restore
+      - run: dotnet run --project tests/TurboRamaSuiteOnlineServer.Tests/TurboRamaSuiteOnlineServer.Tests.csproj -c Release --no-build
+      - name: Reject secret and state files
+        run: |
+          ! git ls-files | grep -E '(^|/)(\.env|secrets?|credentials?|state)(\.|/|$)|\.(pem|key|pfx|p12|dump|sql\.gz)$'
+      - run: dotnet list src/TurboRamaSuiteOnlineServer/TurboRamaSuiteOnlineServer.csproj package --vulnerable --include-transitive

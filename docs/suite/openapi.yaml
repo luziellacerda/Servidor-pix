@@ -1,0 +1,24 @@
+openapi: 3.1.0
+info: { title: TurboRama Suite Online Authority, version: 1.0.0-candidate }
+servers: [{ url: https://licensing.example.invalid }]
+paths:
+  /v1/suite/activations/challenge:
+    post: { operationId: activationChallenge, requestBody: { required: true, content: { application/json: { schema: { $ref: '#/components/schemas/ActivationChallengeRequest' } } } }, responses: { '200': { $ref: '#/components/responses/Signed' }, '4XX': { $ref: '#/components/responses/Error' } } }
+  /v1/suite/activations/complete:
+    post: { operationId: activationComplete, requestBody: { required: true, content: { application/json: { schema: { $ref: '#/components/schemas/ActivationProof' } } } }, responses: { '200': { $ref: '#/components/responses/Signed' }, '4XX': { $ref: '#/components/responses/Error' } } }
+  /v1/suite/challenges:
+    post: { operationId: operationChallenge, requestBody: { required: true, content: { application/json: { schema: { $ref: '#/components/schemas/ChallengeRequest' } } } }, responses: { '200': { $ref: '#/components/responses/Signed' }, '4XX': { $ref: '#/components/responses/Error' } } }
+  /v1/suite/sessions:
+    post: { operationId: session, requestBody: { required: true, content: { application/json: { schema: { $ref: '#/components/schemas/SessionProof' } } } }, responses: { '200': { $ref: '#/components/responses/Signed' }, '4XX': { $ref: '#/components/responses/Error' } } }
+components:
+  responses:
+    Signed: { description: Signed Suite assertion, content: { application/json: { schema: { $ref: '#/components/schemas/SignedEnvelope' } } } }
+    Error: { description: Sanitized error, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+  schemas:
+    Device: { type: object, additionalProperties: false, required: [schemaVersion,deviceId,bindingType,algorithm,publicKeySpki,hardwareFingerprint,agentVersion], properties: { schemaVersion: { const: 1 }, deviceId: { type: string, pattern: '^[0-9a-f]{64}$' }, bindingType: { enum: [TPM_BOUND,SOFTWARE_BOUND_ONLINE] }, algorithm: { const: rsa-pss-sha256 }, publicKeySpki: { type: string }, hardwareFingerprint: { type: string, pattern: '^[0-9a-f]{64}$' }, agentVersion: { type: string } } }
+    ActivationChallengeRequest: { type: object, additionalProperties: false, required: [schemaVersion,productId,licenseId,activationCode,device], properties: { schemaVersion: { const: 1 }, productId: { const: TURBORAMA_SUITE }, licenseId: { type: string }, activationCode: { type: string }, device: { $ref: '#/components/schemas/Device' } } }
+    ActivationProof: { type: object, additionalProperties: false, required: [schemaVersion,productId,licenseId,challengeId,device,signature], properties: { schemaVersion: { const: 1 }, productId: { const: TURBORAMA_SUITE }, licenseId: { type: string }, challengeId: { type: string }, device: { $ref: '#/components/schemas/Device' }, signature: { type: string } } }
+    ChallengeRequest: { type: object, additionalProperties: false, required: [schemaVersion,productId,licenseId,deviceId,sessionId,action,contextHash], properties: { schemaVersion: { const: 1 }, productId: { const: TURBORAMA_SUITE }, licenseId: { type: string }, deviceId: { type: string }, sessionId: { type: string }, action: { enum: [session.open,session.heartbeat] }, contextHash: { type: string } } }
+    SessionProof: { type: object, additionalProperties: false, required: [proof,context], properties: { proof: { type: object }, context: { type: object } } }
+    SignedEnvelope: { type: object, additionalProperties: false, required: [schemaVersion,kind,algorithm,keyId,payload,signature], properties: { schemaVersion: { const: 1 }, kind: { type: string }, algorithm: { const: rsa-pss-sha256 }, keyId: { type: string }, payload: { type: string }, signature: { type: string } } }
+    Error: { type: object, additionalProperties: false, required: [schemaVersion,code,message], properties: { schemaVersion: { const: 1 }, code: { type: string }, message: { type: string } } }
