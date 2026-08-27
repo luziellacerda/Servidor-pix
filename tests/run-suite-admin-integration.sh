@@ -37,4 +37,9 @@ curl -s -H 'Host: admin.test.local' -H 'X-Forwarded-Proto: https' http://127.0.0
 node "$root/tests/browser-suite-one-time.mjs" "$work/one-time.html" "$work/admin.js"
 curl -s --unix-socket "$work/socket/admin.sock" -H "X-Suite-Admin-Token: $token" http://localhost/audit.csv > "$work/audit.csv"
 rg -q '"[0-9]{4}-[0-9]{2}-[0-9]{2}T' "$work/audit.csv"
+before_unavailable=$(docker exec "$pg" psql -U postgres -Atc "select count(*) from suite.suite_audit_events where event_type='SUITE_OTP_ISSUED'")
+kill "$admin_pid";wait "$admin_pid" 2>/dev/null || true;admin_pid=;sleep 1
+unavailable_http=$(curl -s -o "$work/unavailable.html" -w '%{http_code}' -H "Cookie: $auth_cookie" -H 'Host: admin.test.local' -H 'X-Forwarded-Proto: https' http://127.0.0.1:55188/admin/suite)
+after_unavailable=$(docker exec "$pg" psql -U postgres -Atc "select count(*) from suite.suite_audit_events where event_type='SUITE_OTP_ISSUED'")
+[ "$unavailable_http" = 503 ];[ "$before_unavailable" = "$after_unavailable" ]
 echo 'SUITE ADMIN INTEGRATION: OK (auth, CSRF/step-up, rate limit, audit CSV, socket, CSP/browser one-time)'
