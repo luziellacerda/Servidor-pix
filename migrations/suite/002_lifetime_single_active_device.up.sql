@@ -25,4 +25,12 @@ CREATE TABLE suite.suite_license_enrollments(
   hardware_fingerprint char(64) NOT NULL,
   created_at timestamptz NOT NULL DEFAULT clock_timestamp()
 );
+CREATE TABLE IF NOT EXISTS suite.schema_migrations(
+  version varchar(96) PRIMARY KEY,
+  applied_at timestamptz NOT NULL DEFAULT clock_timestamp()
+);
+INSERT INTO suite.schema_migrations(version) VALUES
+  ('001_suite_foundation'),
+  ('002_lifetime_single_active_device')
+ON CONFLICT(version) DO NOTHING;
 COMMIT;
