@@ -67,12 +67,25 @@ public static class StrictJson
                 MaxDepth = 16
             });
             RejectDuplicateProperties(document.RootElement);
-            return JsonSerializer.Deserialize<T>(body, Options)
+            var value = JsonSerializer.Deserialize<T>(body, Options)
                 ?? throw new JsonException("Null root.");
+            RejectNullProperties(value);
+            return value;
         }
         catch (JsonException ex)
         {
             throw new SuiteException(400, "JSON_INVALID", "Request JSON is invalid.", ex);
+        }
+    }
+
+    private static void RejectNullProperties(object value)
+    {
+        foreach (var property in value.GetType().GetProperties())
+        {
+            var member = property.GetValue(value);
+            if (member is null) throw new JsonException("Required member is missing.");
+            if (member is not string && member.GetType().Namespace == typeof(StrictJson).Namespace)
+                RejectNullProperties(member);
         }
     }
 

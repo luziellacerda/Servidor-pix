@@ -20,6 +20,7 @@ Equal(506, message.Length, "machine proof length"); Equal("e446888f27083109d8fb4
 
 Expect<SuiteException>(() => StrictJson.Parse<ErrorResponse>(Encoding.UTF8.GetBytes("{\"schemaVersion\":1,\"schemaVersion\":1,\"code\":\"X\",\"message\":\"x\"}")), "duplicate JSON");
 Expect<SuiteException>(() => StrictJson.Parse<ErrorResponse>(Encoding.UTF8.GetBytes("{\"schemaVersion\":1,\"code\":\"X\",\"message\":\"x\",\"extra\":1}")), "unknown JSON");
+Expect<SuiteException>(() => StrictJson.Parse<ActivationChallengeRequest>(Encoding.UTF8.GetBytes("{\"schemaVersion\":1,\"productId\":\"TURBORAMA_SUITE\",\"licenseId\":\"ABCDEF\",\"activationCode\":\"1234567890123456\"}")), "missing required JSON member");
 Expect<SuiteException>(() => Protocol.RequireProduct("TURBORAMA_PIX"), "cross product");
 Expect<SuiteException>(() => Protocol.ValidateActivationCode("too-short"), "short activation code");
 Expect<SuiteException>(() => Protocol.ValidateActivationCode("sixteen chars bad "), "activation code whitespace");
