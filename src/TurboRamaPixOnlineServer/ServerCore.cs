@@ -535,6 +535,24 @@ sealed class OnlineStateRepository : IDisposable
         }
     }
 
+    public int PurgeAuditOlderThan(int retentionDays, string scope)
+    {
+        if (retentionDays is not (0 or 30 or 90 or 180))
+            throw new SecurityException("Período de retenção inválido.");
+        if (scope is not ("security" or "audit"))
+            throw new SecurityException("Categoria de histórico inválida.");
+        lock (_gate)
+        {
+            var state = LoadUnlocked();
+            var cutoff = retentionDays == 0 ? long.MaxValue : Now() - retentionDays * 86_400L;
+            var removed = state.Audit.RemoveAll(item =>
+                item.AtUnixSeconds < cutoff && (scope == "security") == IsSecurityEvent(item.Event));
+            TrimAudit(state);
+            SaveUnlocked(state);
+            return removed;
+        }
+    }
+
     public void RecordSecurityAttempt(string eventName, string licenseId, string deviceId, string detail)
     {
         eventName = OnlineLicenseProtocol.RequireIdentifier(eventName, "Event", 3, 64);
@@ -820,6 +838,17 @@ sealed class OnlineStateRepository : IDisposable
         "DUPLICATE_SESSION_DENIED"
     };
     private static bool IsRejectedMachineEvent(string eventName) => RejectedMachineEvents.Contains(eventName);
+    private static bool IsSecurityEvent(string eventName)
+        => eventName.Contains("MISMATCH", StringComparison.Ordinal)
+            || eventName.Contains("INVALID", StringComparison.Ordinal)
+            || eventName.Contains("DENIED", StringComparison.Ordinal)
+            || eventName.Contains("REVOKED", StringComparison.Ordinal)
+            || eventName.Contains("FAILED", StringComparison.Ordinal)
+            || eventName.Contains("SUSPENDED", StringComparison.Ordinal)
+            || eventName.Contains("DISABLED", StringComparison.Ordinal)
+            || eventName.Contains("BLOCKED", StringComparison.Ordinal)
+            || eventName.Contains("REAUTH", StringComparison.Ordinal)
+            || eventName.Contains("TRANSFER", StringComparison.Ordinal);
     private static bool PricesAreValid(IReadOnlyDictionary<int, long> prices)
         => prices.Count == RequiredPriceMinutes.Length
             && RequiredPriceMinutes.All(minutes => prices.TryGetValue(minutes, out var cents)
