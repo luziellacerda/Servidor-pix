@@ -1,0 +1,32 @@
+[Unit]
+Description=TurboRama Suite isolated OTP administration
+After=postgresql.service
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=turborama-suite-admin
+Group=turborama-suite-bff
+RuntimeDirectory=turborama-suite-admin
+RuntimeDirectoryMode=0750
+WorkingDirectory=/opt/turborama-suite-admin
+EnvironmentFile=/etc/turborama-suite-bff/admin.env
+ExecStart=/usr/bin/dotnet /opt/turborama-suite-admin/TurboRamaSuiteAdminServer.dll
+ExecStartPost=/usr/bin/chmod 0660 /run/turborama-suite-admin/admin.sock
+Restart=on-failure
+RestartSec=5s
+UMask=0027
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_UNIX
+CapabilityBoundingSet=
+AmbientCapabilities=
+
+[Install]
+WantedBy=multi-user.target
