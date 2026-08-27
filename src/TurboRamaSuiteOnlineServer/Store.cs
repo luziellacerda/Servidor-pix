@@ -65,8 +65,96 @@ public sealed class PostgresSuiteStore : ISuiteStore
     { await using var cmd = _dataSource.CreateCommand("SELECT challenge_id,product_id,license_id,device_id,session_id,action,context_hash,nonce,extract(epoch from expires_at)::bigint,activation_verifier,device_json::text FROM suite.suite_challenges WHERE challenge_id=$1 AND action=$2 AND consumed_at IS NULL AND expires_at>to_timestamp($3)"); cmd.Parameters.AddWithValue(id); cmd.Parameters.AddWithValue(action); cmd.Parameters.AddWithValue(now); await using var r = await cmd.ExecuteReaderAsync(ct); return await r.ReadAsync(ct) ? ReadChallenge(r) : null; }
     public async Task<CompletionRecord?> FindCompletionAsync(string id, CancellationToken ct)
     { await using var cmd = _dataSource.CreateCommand("SELECT challenge_id,request_digest,result_json::text FROM suite.suite_activation_completions WHERE challenge_id=$1"); cmd.Parameters.AddWithValue(id); await using var r = await cmd.ExecuteReaderAsync(ct); if (!await r.ReadAsync(ct)) return null; return new(r.GetString(0), r.GetString(1), StrictJson.Parse<SignedAssertionEnvelope>(System.Text.Encoding.UTF8.GetBytes(r.GetString(2)))); }
-    public async Task<SignedAssertionEnvelope> CompleteActivationAsync(ChallengeRecord c, string digest, DeviceRecord d, SignedAssertionEnvelope result, CancellationToken ct)
-    { await using var conn = await _dataSource.OpenConnectionAsync(ct); await using var tx = await conn.BeginTransactionAsync(IsolationLevel.Serializable, ct); await Consume(c, conn, tx, ct); await using (var device = new NpgsqlCommand("INSERT INTO suite.suite_devices(license_id,device_id,binding_type,public_key_spki,hardware_fingerprint,status,algorithm) VALUES($1,$2,$3,$4,$5,'ACTIVE',$6) ON CONFLICT(license_id,device_id) DO UPDATE SET hardware_fingerprint=excluded.hardware_fingerprint,status='ACTIVE',algorithm=excluded.algorithm", conn, tx)) { device.Parameters.AddWithValue(d.LicenseId); device.Parameters.AddWithValue(d.DeviceId); device.Parameters.AddWithValue(d.BindingType); device.Parameters.AddWithValue(d.PublicKeySpki); device.Parameters.AddWithValue(d.HardwareFingerprint); device.Parameters.AddWithValue(d.Algorithm); try { await device.ExecuteNonQueryAsync(ct); } catch (PostgresException ex) when (ex.SqlState == PostgresErrorCodes.UniqueViolation && ex.ConstraintName == "ux_suite_devices_one_active_per_license") { throw new SuiteException(409, "DEVICE_LIMIT_REACHED", "The license already has an active device.", ex); } } await using (var license = new NpgsqlCommand("UPDATE suite.suite_licenses SET activation_consumed=true,activation_verifier=NULL,activation_expires_at=NULL,updated_at=clock_timestamp() WHERE license_id=$1 AND product_id=$2 AND status='ACTIVE' AND license_term='LIFETIME' AND expires_at IS NULL AND maximum_active_devices=1 AND activation_consumed=false AND activation_verifier=$3 AND activation_expires_at>clock_timestamp()", conn, tx)) { license.Parameters.AddWithValue(c.LicenseId); license.Parameters.AddWithValue(Protocol.ProductId); license.Parameters.AddWithValue((object?)c.ActivationVerifier ?? DBNull.Value); if (await license.ExecuteNonQueryAsync(ct) != 1) throw new SuiteException(409, "ACTIVATION_REPLAY", "Activation is no longer available."); } await using (var completion = new NpgsqlCommand("INSERT INTO suite.suite_activation_completions(challenge_id,request_digest,result_json) VALUES($1,$2,$3::jsonb)", conn, tx)) { completion.Parameters.AddWithValue(c.ChallengeId); completion.Parameters.AddWithValue(digest); completion.Parameters.AddWithValue(System.Text.Json.JsonSerializer.Serialize(result, StrictJson.Options)); await completion.ExecuteNonQueryAsync(ct); } await tx.CommitAsync(ct); return result; }
+    public async Task<SignedAssertionEnvelope> CompleteActivationAsync(ChallengeRecord c, string digest,
+        DeviceRecord d, SignedAssertionEnvelope result, CancellationToken ct)
+    {
+        for (var attempt = 1; attempt <= 3; attempt++)
+        {
+            try { return await CompleteActivationOnceAsync(c, digest, d, result, ct); }
+            catch (PostgresException ex) when (ex.SqlState is PostgresErrorCodes.SerializationFailure
+                or PostgresErrorCodes.DeadlockDetected && attempt < 3)
+            { await Task.Delay(RandomNumberGenerator.GetInt32(15, 75) * attempt, ct); }
+            catch (PostgresException ex) when (ex.SqlState is PostgresErrorCodes.SerializationFailure
+                or PostgresErrorCodes.DeadlockDetected)
+            { throw new SuiteException(409, "TRANSACTION_CONFLICT", "The operation could not be completed safely.", ex); }
+        }
+        throw new SuiteException(409, "TRANSACTION_CONFLICT", "The operation could not be completed safely.");
+    }
+
+    private async Task<SignedAssertionEnvelope> CompleteActivationOnceAsync(ChallengeRecord c,
+        string digest, DeviceRecord d, SignedAssertionEnvelope result, CancellationToken ct)
+    {
+        await using var conn = await _dataSource.OpenConnectionAsync(ct);
+        await using var tx = await conn.BeginTransactionAsync(IsolationLevel.Serializable, ct);
+        await using (var license = new NpgsqlCommand("""
+            SELECT activation_verifier,activation_expires_at>clock_timestamp(),activation_consumed,
+              status,license_term,expires_at,maximum_active_devices
+            FROM suite.suite_licenses WHERE license_id=$1 AND product_id=$2 FOR UPDATE
+            """, conn, tx))
+        {
+            license.Parameters.AddWithValue(c.LicenseId); license.Parameters.AddWithValue(Protocol.ProductId);
+            await using var reader = await license.ExecuteReaderAsync(ct);
+            if (!await reader.ReadAsync(ct)) throw new SuiteException(409, "ACTIVATION_REPLAY", "Activation is no longer available.");
+            var verifier = reader.IsDBNull(0) ? null : reader.GetString(0);
+            var verifierValid = !reader.IsDBNull(1) && reader.GetBoolean(1);
+            var consumed = reader.GetBoolean(2); var status = reader.GetString(3);
+            var term = reader.GetString(4); var lifetime = reader.IsDBNull(5);
+            var maximum = reader.GetInt16(6); await reader.DisposeAsync();
+
+            await using var prior = new NpgsqlCommand("SELECT request_digest,result_json::text FROM suite.suite_activation_completions WHERE challenge_id=$1", conn, tx);
+            prior.Parameters.AddWithValue(c.ChallengeId);
+            await using var priorReader = await prior.ExecuteReaderAsync(ct);
+            if (await priorReader.ReadAsync(ct))
+            {
+                var priorDigest = priorReader.GetString(0);
+                var priorResult = StrictJson.Parse<SignedAssertionEnvelope>(System.Text.Encoding.UTF8.GetBytes(priorReader.GetString(1)));
+                await priorReader.DisposeAsync();
+                if (!Protocol.FixedEquals(priorDigest, digest)) throw new SuiteException(409, "REPLAY_DENIED", "Replay was denied.");
+                await tx.CommitAsync(ct); return priorResult;
+            }
+            await priorReader.DisposeAsync();
+            if (consumed || status != "ACTIVE" || term != "LIFETIME" || !lifetime || maximum != 1
+                || !verifierValid || c.ActivationVerifier is null || !Protocol.FixedEquals(verifier ?? "", c.ActivationVerifier))
+                throw new SuiteException(409, "ACTIVATION_REPLAY", "Activation is no longer available.");
+        }
+
+        await Consume(c, conn, tx, ct);
+        await using (var device = new NpgsqlCommand("""
+            INSERT INTO suite.suite_devices(license_id,device_id,binding_type,public_key_spki,hardware_fingerprint,status,algorithm)
+            VALUES($1,$2,$3,$4,$5,'ACTIVE',$6)
+            ON CONFLICT(license_id,device_id) DO UPDATE SET hardware_fingerprint=excluded.hardware_fingerprint,
+              status='ACTIVE',algorithm=excluded.algorithm
+            """, conn, tx))
+        {
+            device.Parameters.AddWithValue(d.LicenseId);device.Parameters.AddWithValue(d.DeviceId);
+            device.Parameters.AddWithValue(d.BindingType);device.Parameters.AddWithValue(d.PublicKeySpki);
+            device.Parameters.AddWithValue(d.HardwareFingerprint);device.Parameters.AddWithValue(d.Algorithm);
+            try { await device.ExecuteNonQueryAsync(ct); }
+            catch (PostgresException ex) when (ex.SqlState == PostgresErrorCodes.UniqueViolation
+                && ex.ConstraintName == "ux_suite_devices_one_active_per_license")
+            { throw new SuiteException(409, "DEVICE_LIMIT_REACHED", "The license already has an active device.", ex); }
+        }
+        await using (var update = new NpgsqlCommand("""
+            UPDATE suite.suite_licenses SET activation_consumed=true,activation_verifier=NULL,
+              activation_expires_at=NULL,updated_at=clock_timestamp()
+            WHERE license_id=$1 AND product_id=$2 AND status='ACTIVE' AND license_term='LIFETIME'
+              AND expires_at IS NULL AND maximum_active_devices=1 AND activation_consumed=false
+              AND activation_verifier=$3 AND activation_expires_at>clock_timestamp()
+            """, conn, tx))
+        {
+            update.Parameters.AddWithValue(c.LicenseId);update.Parameters.AddWithValue(Protocol.ProductId);
+            update.Parameters.AddWithValue(c.ActivationVerifier!);
+            if (await update.ExecuteNonQueryAsync(ct) != 1)
+                throw new SuiteException(409, "ACTIVATION_REPLAY", "Activation is no longer available.");
+        }
+        await using (var completion = new NpgsqlCommand("INSERT INTO suite.suite_activation_completions(challenge_id,request_digest,result_json) VALUES($1,$2,$3::jsonb)", conn, tx))
+        {
+            completion.Parameters.AddWithValue(c.ChallengeId);completion.Parameters.AddWithValue(digest);
+            completion.Parameters.AddWithValue(System.Text.Json.JsonSerializer.Serialize(result, StrictJson.Options));
+            await completion.ExecuteNonQueryAsync(ct);
+        }
+        await tx.CommitAsync(ct); return result;
+    }
     public async Task<SessionRecord> CompleteSessionAsync(ChallengeRecord c, SessionRecord s, string action, long now, CancellationToken ct)
     { await using var conn = await _dataSource.OpenConnectionAsync(ct); await using var tx = await conn.BeginTransactionAsync(IsolationLevel.Serializable, ct); await Consume(c, conn, tx, ct); await using var cmd = new NpgsqlCommand("INSERT INTO suite.suite_sessions(license_id,device_id,session_id,status,authorized_until,last_server_time,revocation_generation) VALUES($1,$2,$3,'ACTIVE',to_timestamp($4),$5,$6) ON CONFLICT(license_id,device_id) DO UPDATE SET session_id=CASE WHEN $7='session.open' OR suite.suite_sessions.session_id=$3 THEN $3 ELSE suite.suite_sessions.session_id END,status='ACTIVE',authorized_until=to_timestamp($4),last_server_time=GREATEST(suite.suite_sessions.last_server_time+1,$5) WHERE $7='session.open' OR (suite.suite_sessions.session_id=$3 AND suite.suite_sessions.status='ACTIVE') RETURNING license_id,device_id,session_id,status,extract(epoch from authorized_until)::bigint,last_server_time,revocation_generation", conn, tx); cmd.Parameters.AddWithValue(s.LicenseId); cmd.Parameters.AddWithValue(s.DeviceId); cmd.Parameters.AddWithValue(s.SessionId); cmd.Parameters.AddWithValue(s.AuthorizedUntil); cmd.Parameters.AddWithValue(now); cmd.Parameters.AddWithValue(s.RevocationGeneration); cmd.Parameters.AddWithValue(action); await using var r = await cmd.ExecuteReaderAsync(ct); if (!await r.ReadAsync(ct)) throw new SuiteException(409, "SESSION_INVALID", "Session is not current."); var result = new SessionRecord(r.GetString(0), r.GetString(1), r.GetString(2), r.GetString(3), r.GetInt64(4), r.GetInt64(5), r.GetInt64(6)); await r.DisposeAsync(); await tx.CommitAsync(ct); return result; }
     private static async Task Consume(ChallengeRecord c, NpgsqlConnection connection, NpgsqlTransaction transaction, CancellationToken ct) { await using var cmd = new NpgsqlCommand("UPDATE suite.suite_challenges SET consumed_at=clock_timestamp() WHERE challenge_id=$1 AND action=$2 AND consumed_at IS NULL AND expires_at>clock_timestamp()", connection, transaction); cmd.Parameters.AddWithValue(c.ChallengeId); cmd.Parameters.AddWithValue(c.Action); if (await cmd.ExecuteNonQueryAsync(ct) != 1) throw new SuiteException(409, "CHALLENGE_INVALID", "Challenge is invalid or expired."); }

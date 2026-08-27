@@ -347,6 +347,8 @@ static class OnlineServerSelfTest
             }
             Require(retiredDeviceDenied, "dispositivo aposentado permaneceu autorizado");
 
+            Require(SuiteAdminPanel.HasCspSafeOneTimePageForTest(), "pagina Suite one-time viola CSP ou nao troca historico externamente");
+            Require(SuiteAdminPanel.DefaultsDenySuitePermissionsForTest(), "permissoes Suite nao falham por padrao");
             Console.WriteLine("SELF-TEST SERVIDOR ONLINE: OK (ativacao de uso unico, transferencia administrativa de hardware, prova RSA-PSS, sessao exclusiva, clone registrado, original preservada, painel administrativo isolado por hostname e HTTPS, login protegido, painel profissional e exportacao de auditoria, bloqueio PIX, idempotencia, anti-replay, reautenticacao remota e compatibilidade das rotas legadas fora do painel).");
             return 0;
         }

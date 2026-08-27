@@ -924,6 +924,8 @@ body:has(.app-modal[open]){overflow:hidden}
   };
   for (const button of document.querySelectorAll("[data-copy]"))
     button.addEventListener("click", () => copyText(button.dataset.copy || "", button));
+  const oneTime = document.querySelector("[data-one-time-url]");
+  if (oneTime) history.replaceState(null, "", oneTime.dataset.oneTimeUrl || "/admin/suite/issued");
   for (const button of document.querySelectorAll("[data-copy-target]"))
     button.addEventListener("click", () => {
       const target = document.querySelector(button.dataset.copyTarget || "");
