@@ -75,7 +75,7 @@ static class SuiteAdminPanel
         html.Append("</tbody></table></div></section>");
         return Shell("TurboRama SUITE",html.ToString());
     }
-    static string Otp(SuiteOtpResult result)=>Shell("OTP SUITE","<section class=login data-one-time-url=/admin/suite/issued><div class=login-card><span class=eyebrow>USO ÚNICO / "+E(result.ProductId)+"</span><h1>OTP de ativação</h1><p>Não será mostrado novamente. Expira em "+E(Utc(result.ExpiresAt))+".</p><code class=activation id=activation-code>"+E(result.Otp)+"</code><div class=activation-actions><button type=button class=ghost data-copy-target='#activation-code'>Copiar código</button><a class='button primary' href=/admin/suite>Ocultar e voltar</a></div></div></section>");
+    static string Otp(SuiteOtpResult result)=>Shell("OTP SUITE","<section class=login data-one-time-url=/admin/suite/issued><div class=login-card><span class=eyebrow>USO ÚNICO / "+E(result.ProductId)+"</span><h1>OTP de ativação</h1><p>Não será mostrado novamente. Expira em "+E(Utc(result.ExpiresAt))+".</p><code class=activation id=activation-code>"+E(result.Otp)+"</code><div class=activation-actions><button type=button class=ghost data-copy-target='#activation-code'>Copiar código</button><a class='button primary' data-one-time-exit href=/admin/suite>Ocultar e voltar</a></div></div></section>");
     static string Utc(DateTime? value)=>value is null?"":value.Value.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss 'UTC'",CultureInfo.InvariantCulture);
     static string Unavailable()=>Shell("SUITE indisponível","<section class='panel empty-state'><h1>Emissor SUITE indisponível</h1><p>Nenhuma emissão foi realizada.</p><a class='button ghost' href=/admin>Voltar ao PIX</a></section>");
 

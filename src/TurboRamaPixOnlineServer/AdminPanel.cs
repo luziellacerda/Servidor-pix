@@ -925,7 +925,19 @@ body:has(.app-modal[open]){overflow:hidden}
   for (const button of document.querySelectorAll("[data-copy]"))
     button.addEventListener("click", () => copyText(button.dataset.copy || "", button));
   const oneTime = document.querySelector("[data-one-time-url]");
-  if (oneTime) history.replaceState(null, "", oneTime.dataset.oneTimeUrl || "/admin/suite/issued");
+  const clearOneTime = () => {
+    if (!oneTime) return;
+    const code = oneTime.querySelector("#activation-code");
+    if (code) { code.textContent = ""; code.removeAttribute("id"); code.remove(); }
+    for (const button of oneTime.querySelectorAll("[data-copy-target]")) { button.removeAttribute("data-copy-target"); button.disabled = true; button.remove(); }
+  };
+  if (oneTime) {
+    history.replaceState(null, "", oneTime.dataset.oneTimeUrl || "/admin/suite/issued");
+    window.addEventListener("pagehide", clearOneTime);
+    window.addEventListener("pageshow", event => { if (event.persisted) { clearOneTime(); location.replace(oneTime.dataset.oneTimeUrl || "/admin/suite/issued"); } });
+    const exit = oneTime.querySelector("[data-one-time-exit]");
+    if (exit) exit.addEventListener("click", event => { event.preventDefault(); const target = exit.href; clearOneTime(); location.replace(target); });
+  }
   for (const button of document.querySelectorAll("[data-copy-target]"))
     button.addEventListener("click", () => {
       const target = document.querySelector(button.dataset.copyTarget || "");

@@ -36,50 +36,33 @@ app.MapGet("/status/{licenseId}", async (string licenseId, NpgsqlDataSource db, 
     await using var conn = await db.OpenConnectionAsync(ct);
     await using var cmd = new NpgsqlCommand("""
         SELECT l.license_id,l.product_id,l.status,l.license_term,l.expires_at,l.identity_policy,
-          l.maximum_active_devices,l.activation_consumed,l.activation_verifier IS NOT NULL,
-          l.activation_expires_at,e.device_id,e.binding_type,e.identity_policy,e.algorithm,
-          e.hardware_fingerprint,
+          l.maximum_active_devices,l.activation_consumed,l.activation_verifier IS NOT NULL,l.activation_expires_at,
+          e.device_id,e.binding_type,e.identity_policy,e.algorithm,e.hardware_fingerprint,e.public_key_spki,
           (SELECT count(*) FROM suite.suite_devices d WHERE d.license_id=l.license_id AND d.status='ACTIVE'),
           (SELECT session_id FROM suite.suite_sessions s WHERE s.license_id=l.license_id AND s.status='ACTIVE' LIMIT 1),
-          CASE WHEN l.activation_consumed THEN 'CONSUMED'
-               WHEN l.activation_verifier IS NULL THEN 'NOT_ISSUED'
-               WHEN l.activation_expires_at > clock_timestamp() THEN 'VALID'
-               ELSE 'EXPIRED' END,
-          (l.product_id='TURBORAMA_SUITE' AND l.status='ACTIVE' AND l.license_term='LIFETIME' AND l.expires_at IS NULL
-             AND l.identity_policy='SOFTWARE_ONLY' AND l.maximum_active_devices=1 AND NOT l.activation_consumed
-             AND NOT EXISTS(SELECT 1 FROM suite.suite_devices d WHERE d.license_id=l.license_id AND d.status='ACTIVE')
-             AND (l.activation_verifier IS NULL OR l.activation_expires_at <= clock_timestamp())
-             AND e.device_id ~ '^[0-9a-f]{64}$' AND e.binding_type='SOFTWARE_BOUND_ONLINE'
-             AND e.identity_policy='SOFTWARE_ONLY' AND e.algorithm='rsa-pss-sha256'
-             AND e.public_key_spki ~ '^[A-Za-z0-9+/]+={0,2}$' AND length(e.public_key_spki)>=300
-             AND e.hardware_fingerprint ~ '^[0-9a-f]{64}$')
+          CASE WHEN l.activation_consumed THEN 'CONSUMED' WHEN l.activation_verifier IS NULL THEN 'NOT_ISSUED'
+               WHEN l.activation_expires_at > clock_timestamp() THEN 'VALID' ELSE 'EXPIRED' END,clock_timestamp()
         FROM suite.suite_licenses l JOIN suite.suite_license_enrollments e USING(license_id)
         WHERE l.license_id=$1 AND l.product_id='TURBORAMA_SUITE'
         """, conn);
-    cmd.Parameters.AddWithValue(licenseId);
-    SuiteStatus status;
+    cmd.Parameters.AddWithValue(licenseId);SuiteStatus status;
     await using (var reader = await cmd.ExecuteReaderAsync(ct))
     {
         if (!await reader.ReadAsync(ct)) return Results.NotFound();
-        status = new SuiteStatus(reader.GetString(0),reader.GetString(1),reader.GetString(2),reader.GetString(3),
-            reader.IsDBNull(4)?null:reader.GetDateTime(4),reader.GetString(5),reader.GetInt16(6),reader.GetBoolean(7),
-            reader.GetBoolean(8),reader.IsDBNull(9)?null:reader.GetDateTime(9),reader.GetString(10),reader.GetString(11),
-            reader.GetString(12),reader.GetString(13),reader.GetString(14),reader.GetInt64(15),
-            reader.IsDBNull(16)?null:reader.GetString(16),reader.GetString(17),reader.GetBoolean(18),[]);
+        var expires=reader.IsDBNull(4)?null:(DateTime?)reader.GetDateTime(4);var otpExpires=reader.IsDBNull(9)?null:(DateTime?)reader.GetDateTime(9);var active=reader.GetInt64(16);
+        var eligible=new SuiteEligibilityInput(reader.GetString(1),reader.GetString(2),reader.GetString(3),expires is null,reader.GetString(5),reader.GetInt16(6),reader.GetBoolean(7),reader.GetBoolean(8),otpExpires,reader.GetDateTime(19),reader.GetString(10),reader.GetString(10),reader.GetString(11),reader.GetString(12),reader.GetString(13),reader.GetString(15),reader.GetString(14),active);
+        status=new SuiteStatus(reader.GetString(0),reader.GetString(1),reader.GetString(2),reader.GetString(3),expires,reader.GetString(5),reader.GetInt16(6),reader.GetBoolean(7),reader.GetBoolean(8),otpExpires,reader.GetString(10),reader.GetString(11),reader.GetString(12),reader.GetString(13),reader.GetString(14),active,reader.IsDBNull(17)?null:reader.GetString(17),reader.GetString(18),SuiteEligibility.CanIssue(eligible),[]);
     }
     var events = new List<SuiteAuditItem>();
     await using var audit = new NpgsqlCommand("""
         SELECT to_char(occurred_at AT TIME ZONE 'UTC','YYYY-MM-DD"T"HH24:MI:SS.US"Z"'),event_type,
           outcome,detail_code,coalesce(admin_actor,''),coalesce(request_id,''),
           CASE WHEN otp_expires_at IS NULL THEN NULL ELSE to_char(otp_expires_at AT TIME ZONE 'UTC','YYYY-MM-DD"T"HH24:MI:SS.US"Z"') END
-        FROM suite.suite_audit_events WHERE license_id=$1 AND event_type LIKE 'SUITE_OTP_%'
-        ORDER BY occurred_at DESC LIMIT 20
-        """, conn);
-    audit.Parameters.AddWithValue(licenseId);
-    await using var ar = await audit.ExecuteReaderAsync(ct);
-    while (await ar.ReadAsync(ct)) events.Add(new(ar.GetString(0),ar.GetString(1),ar.GetString(2),
-        ar.GetString(3),ar.GetString(4),ar.GetString(5),ar.IsDBNull(6)?null:ar.GetString(6)));
-    return Results.Json(status with { RecentEvents = events });
+        FROM suite.suite_audit_events WHERE license_id=$1 AND event_type LIKE 'SUITE_OTP_%' ORDER BY occurred_at DESC LIMIT 20
+        """,conn);
+    audit.Parameters.AddWithValue(licenseId);await using var ar=await audit.ExecuteReaderAsync(ct);
+    while(await ar.ReadAsync(ct))events.Add(new(ar.GetString(0),ar.GetString(1),ar.GetString(2),ar.GetString(3),ar.GetString(4),ar.GetString(5),ar.IsDBNull(6)?null:ar.GetString(6)));
+    return Results.Json(status with { RecentEvents=events });
 });
 app.MapPost("/issue", async (IssueRequest request, NpgsqlDataSource db, CancellationToken ct) =>
 {
@@ -136,25 +119,20 @@ static async Task<IResult> IssueOnce(IssueRequest request,NpgsqlDataSource db,st
     await using var conn=await db.OpenConnectionAsync(ct);
     await using var tx=await conn.BeginTransactionAsync(IsolationLevel.Serializable,ct);
     await using var read=new NpgsqlCommand("""
-        SELECT l.status,l.license_term,l.expires_at,l.maximum_active_devices,l.activation_consumed,
-          l.activation_verifier,l.activation_expires_at,e.device_id,e.binding_type,e.identity_policy,
-          e.algorithm,e.public_key_spki,e.hardware_fingerprint,clock_timestamp()
+        SELECT l.status,l.license_term,l.expires_at,l.maximum_active_devices,l.identity_policy,l.activation_consumed,
+          l.activation_verifier,l.activation_expires_at,e.device_id,e.binding_type,e.identity_policy,e.algorithm,
+          e.public_key_spki,e.hardware_fingerprint,clock_timestamp()
         FROM suite.suite_licenses l JOIN suite.suite_license_enrollments e USING(license_id)
         WHERE l.license_id=$1 AND l.product_id=$2 FOR UPDATE OF l,e
         """,conn,tx);
-    read.Parameters.AddWithValue(request.LicenseId);read.Parameters.AddWithValue(product);
-    await using var row=await read.ExecuteReaderAsync(ct);
+    read.Parameters.AddWithValue(request.LicenseId);read.Parameters.AddWithValue(product);await using var row=await read.ExecuteReaderAsync(ct);
     if(!await row.ReadAsync(ct)){await row.DisposeAsync();await Deny("LICENSE_NOT_FOUND");return Results.NotFound(new Error("LICENSE_NOT_FOUND"));}
-    var status=row.GetString(0);var term=row.GetString(1);var noExpiry=row.IsDBNull(2);var maximum=row.GetInt16(3);
-    var consumed=row.GetBoolean(4);var hasVerifier=!row.IsDBNull(5);var oldExpiry=row.IsDBNull(6)?(DateTime?)null:row.GetDateTime(6);
-    var device=row.GetString(7);var binding=row.GetString(8);var policy=row.GetString(9);var algorithm=row.GetString(10);
-    var spki=row.GetString(11);var fingerprint=row.GetString(12);var databaseNow=row.GetDateTime(13);await row.DisposeAsync();
-    if(status!="ACTIVE"||term!="LIFETIME"||!noExpiry||maximum!=1||consumed||device!=request.DeviceId
-       ||binding!="SOFTWARE_BOUND_ONLINE"||policy!="SOFTWARE_ONLY"||algorithm!="rsa-pss-sha256"
-       ||!ValidSpki(spki)||!ValidHex(fingerprint)){await Deny("LICENSE_OR_ENROLLMENT_DENIED");return Results.Conflict(new Error("LICENSE_OR_ENROLLMENT_DENIED"));}
-    await using(var count=new NpgsqlCommand("SELECT count(*) FROM suite.suite_devices WHERE license_id=$1 AND status='ACTIVE'",conn,tx))
-    {count.Parameters.AddWithValue(request.LicenseId);if((long)(await count.ExecuteScalarAsync(ct)??0L)!=0){await Deny("ACTIVE_DEVICE_EXISTS");return Results.Conflict(new Error("ACTIVE_DEVICE_EXISTS"));}}
-    if(hasVerifier&&oldExpiry>databaseNow){await Deny("OTP_STILL_VALID");return Results.Conflict(new Error("OTP_STILL_VALID"));}
+    var status=row.GetString(0);var term=row.GetString(1);var noExpiry=row.IsDBNull(2);var maximum=row.GetInt16(3);var licensePolicy=row.GetString(4);
+    var consumed=row.GetBoolean(5);var hasVerifier=!row.IsDBNull(6);var oldExpiry=row.IsDBNull(7)?(DateTime?)null:row.GetDateTime(7);
+    var device=row.GetString(8);var binding=row.GetString(9);var policy=row.GetString(10);var algorithm=row.GetString(11);var spki=row.GetString(12);var fingerprint=row.GetString(13);var databaseNow=row.GetDateTime(14);await row.DisposeAsync();
+    long activeDevices;await using(var count=new NpgsqlCommand("SELECT count(*) FROM suite.suite_devices WHERE license_id=$1 AND status='ACTIVE'",conn,tx)){count.Parameters.AddWithValue(request.LicenseId);activeDevices=(long)(await count.ExecuteScalarAsync(ct)??0L);}
+    var eligible=new SuiteEligibilityInput(product,status,term,noExpiry,licensePolicy,maximum,consumed,hasVerifier,oldExpiry,databaseNow,device,request.DeviceId,binding,policy,algorithm,spki,fingerprint,activeDevices);
+    if(!SuiteEligibility.CanIssue(eligible)){await Deny("LICENSE_OR_ENROLLMENT_DENIED");return Results.Conflict(new Error("LICENSE_OR_ENROLLMENT_DENIED"));}
     await using(var invalidate=new NpgsqlCommand("UPDATE suite.suite_challenges SET consumed_at=clock_timestamp() WHERE license_id=$1 AND action='device.activate' AND consumed_at IS NULL",conn,tx))
     {invalidate.Parameters.AddWithValue(request.LicenseId);await invalidate.ExecuteNonQueryAsync(ct);}
     var otpBytes=RandomNumberGenerator.GetBytes(32);
@@ -178,8 +156,6 @@ static async Task<IResult> IssueOnce(IssueRequest request,NpgsqlDataSource db,st
     {CryptographicOperations.ZeroMemory(otpBytes);if(pepper.Length>0)CryptographicOperations.ZeroMemory(pepper);if(otpUtf8.Length>0)CryptographicOperations.ZeroMemory(otpUtf8);verifier="";otp="";}
     async Task Deny(string code)
     {await using var audit=new NpgsqlCommand("INSERT INTO suite.suite_audit_events(event_type,license_id,device_id,correlation_id,outcome,detail_code,admin_actor,request_id) VALUES('SUITE_OTP_DENIED',$1,$2,$3,'DENIED',$4,$5,$6)",conn,tx);audit.Parameters.AddWithValue(request.LicenseId);audit.Parameters.AddWithValue(request.DeviceId);audit.Parameters.AddWithValue(request.RequestId);audit.Parameters.AddWithValue(code);audit.Parameters.AddWithValue(request.Actor);audit.Parameters.AddWithValue(request.RequestId);await audit.ExecuteNonQueryAsync(ct);await tx.CommitAsync(ct);}
-static bool ValidHex(string value)=>value.Length==64&&value.All(c=>c is >= '0' and <= '9' or >= 'a' and <= 'f');
-static bool ValidSpki(string value){try{var decoded=Convert.FromBase64String(value);return decoded.Length>=256&&Convert.ToBase64String(decoded)==value;}catch(FormatException){return false;}}
 }
 
 static string Required(string key)=>Environment.GetEnvironmentVariable(key)?.Trim() is {Length:>0} value?value:throw new InvalidOperationException("Required configuration is missing.");
@@ -245,7 +221,18 @@ static class AdminSelfTest
             var token=InternalToken.Load(path);
             if(!token.Authenticates(valid)||token.Authenticates("")||token.Authenticates(Convert.ToBase64String(RandomNumberGenerator.GetBytes(48))))throw new InvalidOperationException("token authentication test failed");
             File.SetUnixFileMode(path,UnixFileMode.UserRead|UnixFileMode.UserWrite|UnixFileMode.GroupRead|UnixFileMode.OtherRead);ExpectFailure(path,"permissions");
-            Console.WriteLine("SUITE ADMIN SELF-TEST: OK (missing, empty, short, malformed, permissions, absent header, divergent and valid token)");
+            using(var rsa=RSA.Create(2048))
+            {
+                var der=rsa.ExportSubjectPublicKeyInfo();var encoded=Convert.ToBase64String(der);var device=Convert.ToHexString(SHA256.HashData(der)).ToLowerInvariant();
+                if(!SuiteEligibility.ValidIdentity(encoded,device,device)||!SuiteEligibility.ValidFingerprint(new string('b',64)))throw new InvalidOperationException("valid SPKI rejected");
+                if(SuiteEligibility.ValidIdentity(encoded+"\n",device,device))throw new InvalidOperationException("noncanonical Base64 accepted");
+                if(SuiteEligibility.ValidIdentity(Convert.ToBase64String(RandomNumberGenerator.GetBytes(300)),device,device))throw new InvalidOperationException("invalid DER accepted");
+                if(SuiteEligibility.ValidIdentity(new string('A',300),device,device))throw new InvalidOperationException("300 A accepted");
+                if(SuiteEligibility.ValidIdentity(encoded,new string('a',64),new string('a',64)))throw new InvalidOperationException("divergent SPKI hash accepted");
+                if(SuiteEligibility.ValidFingerprint(new string('G',64)))throw new InvalidOperationException("invalid fingerprint accepted");
+            }
+            using(var weak=RSA.Create(1024)){var der=weak.ExportSubjectPublicKeyInfo();var encoded=Convert.ToBase64String(der);var device=Convert.ToHexString(SHA256.HashData(der)).ToLowerInvariant();if(SuiteEligibility.ValidIdentity(encoded,device,device))throw new InvalidOperationException("weak RSA accepted");}
+            Console.WriteLine("SUITE ADMIN SELF-TEST: OK (missing, empty, short, malformed, permissions, absent header, divergent and valid token; SPKI canonical DER RSA 2048-4096, hash and fingerprint)");
             return 0;
         }
         finally{Directory.Delete(directory,true);}
