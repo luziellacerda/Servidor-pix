@@ -6,10 +6,11 @@ var connection=Environment.GetEnvironmentVariable("SUITE_TEST_CONNECTION")??thro
 await using var data=NpgsqlDataSource.Create(connection);var store=new PostgresSuiteStore(data);
 await ServiceConcurrentIdempotency();
 await ConcurrentIdempotency();
+await EmissionVersusCompletion();
 await OldVerifierDenied();
 await Retry("TS-PG-RETRY-40001","40001");
 await Retry("TS-PG-RETRY-40P01","40P01");
-Console.WriteLine("SUITE POSTGRES TESTS: OK (service-level PostgreSQL race, concurrent identical completion, divergent replay, stale verifier, 40001 and 40P01 retry)");
+Console.WriteLine("SUITE POSTGRES TESTS: OK (service-level PostgreSQL race, emission versus completion single authorization, concurrent identical completion, divergent replay, stale verifier, 40001 and 40P01 retry)");
 async Task ServiceConcurrentIdempotency()
 {
  const string id="TS-PG-SERVICE-RACE";using var machine=RSA.Create(2048);using var online=RSA.Create(2048);
@@ -28,6 +29,15 @@ async Task ServiceConcurrentIdempotency()
  await ExpectSuite(()=>service.CompleteActivationAsync(proof with { Signature=Convert.ToBase64String(RandomNumberGenerator.GetBytes(256)) },default),"REPLAY_DENIED");
 }
 static T Payload<T>(SignedAssertionEnvelope envelope) where T:class=>StrictJson.Parse<T>(Convert.FromBase64String(envelope.Payload));
+async Task EmissionVersusCompletion()
+{
+ var f=await Fixture("TS-PG-ISSUE-COMPLETE",'6','7');var locked=new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);var release=new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+ var emission=Task.Run(async()=>{await using var conn=await data.OpenConnectionAsync();await using var tx=await conn.BeginTransactionAsync(System.Data.IsolationLevel.Serializable);await using var read=new NpgsqlCommand("SELECT activation_consumed FROM suite.suite_licenses WHERE license_id=$1 FOR UPDATE",conn,tx);read.Parameters.AddWithValue(f.Device.LicenseId);var consumed=(bool)(await read.ExecuteScalarAsync()??true);locked.TrySetResult();await release.Task;if(consumed){await tx.RollbackAsync();return false;}await using var update=new NpgsqlCommand("UPDATE suite.suite_licenses SET activation_verifier=repeat('8',64),activation_expires_at=clock_timestamp()+interval '15 minutes' WHERE license_id=$1",conn,tx);update.Parameters.AddWithValue(f.Device.LicenseId);await update.ExecuteNonQueryAsync();await tx.CommitAsync();return true;});
+ await locked.Task.WaitAsync(TimeSpan.FromSeconds(5));var completion=store.CompleteActivationAsync(f.Challenge,new string('9',64),f.Device,Envelope("completion"),default);release.TrySetResult();
+ if(!await emission)throw new InvalidOperationException("synthetic emission did not authorize");await ExpectSuite(async()=>{_ = await completion;},"ACTIVATION_REPLAY");
+ await using var check=data.CreateCommand("SELECT activation_consumed,(SELECT count(*) FROM suite.suite_devices WHERE license_id=$1) FROM suite.suite_licenses WHERE license_id=$1");check.Parameters.AddWithValue(f.Device.LicenseId);await using var row=await check.ExecuteReaderAsync();await row.ReadAsync();if(row.GetBoolean(0)||row.GetInt64(1)!=0)throw new InvalidOperationException("emission/completion double authorization");
+}
+
 
 
 async Task ConcurrentIdempotency()
