@@ -4,7 +4,6 @@ using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 using Npgsql;
-using TurboRamaSuiteAdminServer.Safety;
 if (args.Contains("--self-test", StringComparer.OrdinalIgnoreCase)) return AdminSelfTest.Run();
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,8 +17,6 @@ if (File.Exists(socketPath)) File.Delete(socketPath);
 builder.WebHost.ConfigureKestrel(options => { options.Limits.MaxRequestBodySize = 16 * 1024; options.ListenUnixSocket(socketPath); });
 builder.Services.AddSingleton(NpgsqlDataSource.Create(connection));
 builder.Services.AddSingleton(token);
-builder.Services.AddSingleton<IExternalLifecycleJournal,UnavailableExternalLifecycleJournal>();
-builder.Services.AddSingleton<IRestoreGateReader,UnavailableRestoreGateReader>();
 var app = builder.Build();
 app.Lifetime.ApplicationStarted.Register(() => { if (!OperatingSystem.IsLinux()) throw new PlatformNotSupportedException(); File.SetUnixFileMode(socketPath,
     UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.GroupRead | UnixFileMode.GroupWrite); });
@@ -39,23 +36,26 @@ app.Use(async (context, next) =>
     await next();
 });
 app.MapGet("/health", () => Results.Json(new { status = "ok", service = "turborama-suite-admin" }));
-app.MapGet("/readiness", async (NpgsqlDataSource db,IRestoreGateReader restoreGate,CancellationToken ct) =>
+app.MapGet("/readiness", async (NpgsqlDataSource db,CancellationToken ct) =>
 {
-    var schemaReady=false;
+    var schemaReady=false;long inconsistentDeliveries=-1;
     try
     {
-        await using var cmd=db.CreateCommand("SELECT EXISTS(SELECT 1 FROM suite.schema_migrations WHERE version='004_suite_commerce_lifecycle')");
-        schemaReady=(bool)(await cmd.ExecuteScalarAsync(ct)??false);
+        await using var cmd=db.CreateCommand("""
+          SELECT EXISTS(SELECT 1 FROM suite.schema_migrations WHERE version='005_suite_commerce_permissions'),
+            (SELECT count(*) FROM suite.suite_license_deliveries
+             WHERE (provisioning_state='PROVISIONED' AND license_id IS NULL)
+                OR (financial_state='PAID' AND provisioning_state<>'PROVISIONED'))
+          """);
+        await using var row=await cmd.ExecuteReaderAsync(ct);
+        if(await row.ReadAsync(ct)){schemaReady=row.GetBoolean(0);inconsistentDeliveries=row.GetInt64(1);}
     }
-    catch { schemaReady=false; }
-    RestoreGateState gate;
-    try { gate=await restoreGate.ReadAuthoritativeAsync(ct); }
-    catch { gate=new(false,"","",-1,false); }
-    var ready=schemaReady&&gate.Authentic&&gate.Open;
+    catch { schemaReady=false;inconsistentDeliveries=-1; }
+    var ready=commerceEnabled&&schemaReady&&inconsistentDeliveries==0;
     return Results.Json(new
     {
         status=ready?"ready":"not_ready", service="turborama-suite-admin", commerce_enabled=commerceEnabled,
-        checks=new { schema=schemaReady?"ok":"unavailable", external_journal="unavailable", restore_gate=gate.Authentic?(gate.Open?"open":"closed"):"unavailable" }
+        checks=new { database=schemaReady?"ok":"unavailable",migration_005=schemaReady?"ok":"missing",delivery_consistency=inconsistentDeliveries==0?"ok":"blocked",inconsistent_deliveries=inconsistentDeliveries }
     },statusCode:ready?StatusCodes.Status200OK:StatusCodes.Status503ServiceUnavailable);
 });
 CommerceEndpoints.Map(app, commerceEnabled, pepperFile);
