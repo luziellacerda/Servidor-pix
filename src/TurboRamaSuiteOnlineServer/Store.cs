@@ -172,6 +172,8 @@ public sealed class PostgresSuiteStore : ISuiteStore
             completion.Parameters.AddWithValue(c.LicenseId);
             await completion.ExecuteNonQueryAsync(ct);
         }
+        await using (var transfer = new NpgsqlCommand("UPDATE suite.suite_transfer_history SET status='COMPLETED',completed_at=clock_timestamp() WHERE license_id=$1 AND status='PENDING' AND activation_generation=(SELECT activation_generation FROM suite.suite_licenses WHERE license_id=$1)", conn, tx))
+        { transfer.Parameters.AddWithValue(c.LicenseId); if(await transfer.ExecuteNonQueryAsync(ct)>0){await using var audit=new NpgsqlCommand("INSERT INTO suite.suite_audit_events(event_type,license_id,device_id,correlation_id,outcome,detail_code) VALUES('SUITE_DEVICE_TRANSFER_COMPLETED',$1,$2,$3,'SUCCESS','NEW_DEVICE_BOUND')",conn,tx);audit.Parameters.AddWithValue(c.LicenseId);audit.Parameters.AddWithValue(c.DeviceId);audit.Parameters.AddWithValue(c.ChallengeId);await audit.ExecuteNonQueryAsync(ct);} }
         await tx.CommitAsync(ct); return result;
     }
     public async Task<SessionRecord> CompleteSessionAsync(ChallengeRecord c,SessionRecord s,string action,long now,CancellationToken ct)
