@@ -9,10 +9,12 @@ if (args.Contains("--self-test", StringComparer.OrdinalIgnoreCase)) return Admin
 var builder = WebApplication.CreateBuilder(args);
 var socketPath = Required("SUITE_ADMIN_SOCKET");
 var token = InternalToken.Load(Required("SUITE_ADMIN_TOKEN_FILE"));
+var commerceEnabled = Environment.GetEnvironmentVariable("SUITE_COMMERCE_ENABLED") == "1";
+var commerceToken = commerceEnabled ? InternalToken.Load(Required("SUITE_COMMERCE_TOKEN_FILE")) : null;
 var pepperFile = Required("SUITE_ADMIN_PEPPER_FILE");
 var connection = Required("SUITE_ADMIN_CONNECTION");
 if (File.Exists(socketPath)) File.Delete(socketPath);
-builder.WebHost.ConfigureKestrel(options => options.ListenUnixSocket(socketPath));
+builder.WebHost.ConfigureKestrel(options => { options.Limits.MaxRequestBodySize = 16 * 1024; options.ListenUnixSocket(socketPath); });
 builder.Services.AddSingleton(NpgsqlDataSource.Create(connection));
 builder.Services.AddSingleton(token);
 var app = builder.Build();
@@ -20,7 +22,11 @@ app.Lifetime.ApplicationStarted.Register(() => { if (!OperatingSystem.IsLinux())
     UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.GroupRead | UnixFileMode.GroupWrite); });
 app.Use(async (context, next) =>
 {
-    if (!token.Authenticates(context.Request.Headers["X-Suite-Admin-Token"].ToString()))
+    var commerceRequest = context.Request.Path.StartsWithSegments("/commerce");
+    var authenticated = commerceRequest
+        ? commerceEnabled && commerceToken!.Authenticates(context.Request.Headers["X-Suite-Commerce-Token"].ToString())
+        : token.Authenticates(context.Request.Headers["X-Suite-Admin-Token"].ToString());
+    if (!authenticated)
     {
         context.Response.StatusCode = StatusCodes.Status404NotFound;
         return;
@@ -30,6 +36,7 @@ app.Use(async (context, next) =>
     await next();
 });
 app.MapGet("/health", () => Results.Json(new { status = "ok", service = "turborama-suite-admin" }));
+CommerceEndpoints.Map(app, commerceEnabled, pepperFile);
 app.MapGet("/status/{licenseId}", async (string licenseId, NpgsqlDataSource db, CancellationToken ct) =>
 {
     ValidateId(licenseId);
