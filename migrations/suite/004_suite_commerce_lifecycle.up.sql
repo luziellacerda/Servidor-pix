@@ -117,7 +117,14 @@ ALTER TABLE suite.suite_challenges
   ADD COLUMN revocation_generation bigint NOT NULL DEFAULT 0,
   ADD COLUMN activation_generation bigint,
   ADD COLUMN invalidated_at timestamptz,
-  ADD COLUMN invalidation_reason varchar(64),
+  ADD COLUMN invalidation_reason varchar(64);
+
+UPDATE suite.suite_challenges c
+SET activation_generation=l.activation_generation
+FROM suite.suite_licenses l
+WHERE c.license_id=l.license_id AND c.action='device.activate';
+
+ALTER TABLE suite.suite_challenges
   ADD CONSTRAINT ck_suite_challenge_activation_generation CHECK(
     (action='device.activate' AND activation_generation IS NOT NULL) OR
     (action<>'device.activate' AND activation_generation IS NULL));
