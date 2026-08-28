@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 using Npgsql;
+using TurboRamaSuiteAdminServer.Safety;
 if (args.Contains("--self-test", StringComparer.OrdinalIgnoreCase)) return AdminSelfTest.Run();
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,8 @@ if (File.Exists(socketPath)) File.Delete(socketPath);
 builder.WebHost.ConfigureKestrel(options => { options.Limits.MaxRequestBodySize = 16 * 1024; options.ListenUnixSocket(socketPath); });
 builder.Services.AddSingleton(NpgsqlDataSource.Create(connection));
 builder.Services.AddSingleton(token);
+builder.Services.AddSingleton<IExternalLifecycleJournal,UnavailableExternalLifecycleJournal>();
+builder.Services.AddSingleton<IRestoreGateReader,UnavailableRestoreGateReader>();
 var app = builder.Build();
 app.Lifetime.ApplicationStarted.Register(() => { if (!OperatingSystem.IsLinux()) throw new PlatformNotSupportedException(); File.SetUnixFileMode(socketPath,
     UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.GroupRead | UnixFileMode.GroupWrite); });
@@ -36,6 +39,25 @@ app.Use(async (context, next) =>
     await next();
 });
 app.MapGet("/health", () => Results.Json(new { status = "ok", service = "turborama-suite-admin" }));
+app.MapGet("/readiness", async (NpgsqlDataSource db,IRestoreGateReader restoreGate,CancellationToken ct) =>
+{
+    var schemaReady=false;
+    try
+    {
+        await using var cmd=db.CreateCommand("SELECT EXISTS(SELECT 1 FROM suite.schema_migrations WHERE version='004_suite_commerce_lifecycle')");
+        schemaReady=(bool)(await cmd.ExecuteScalarAsync(ct)??false);
+    }
+    catch { schemaReady=false; }
+    RestoreGateState gate;
+    try { gate=await restoreGate.ReadAuthoritativeAsync(ct); }
+    catch { gate=new(false,"","",-1,false); }
+    var ready=schemaReady&&gate.Authentic&&gate.Open;
+    return Results.Json(new
+    {
+        status=ready?"ready":"not_ready", service="turborama-suite-admin", commerce_enabled=commerceEnabled,
+        checks=new { schema=schemaReady?"ok":"unavailable", external_journal="unavailable", restore_gate=gate.Authentic?(gate.Open?"open":"closed"):"unavailable" }
+    },statusCode:ready?StatusCodes.Status200OK:StatusCodes.Status503ServiceUnavailable);
+});
 CommerceEndpoints.Map(app, commerceEnabled, pepperFile);
 app.MapGet("/status/{licenseId}", async (string licenseId, NpgsqlDataSource db, CancellationToken ct) =>
 {
@@ -49,7 +71,7 @@ app.MapGet("/status/{licenseId}", async (string licenseId, NpgsqlDataSource db, 
           (SELECT session_id FROM suite.suite_sessions s WHERE s.license_id=l.license_id AND s.status='ACTIVE' LIMIT 1),
           CASE WHEN l.activation_consumed THEN 'CONSUMED' WHEN l.activation_verifier IS NULL THEN 'NOT_ISSUED'
                WHEN l.activation_expires_at > clock_timestamp() THEN 'VALID' ELSE 'EXPIRED' END,clock_timestamp()
-        FROM suite.suite_licenses l JOIN suite.suite_license_enrollments e USING(license_id)
+        FROM suite.suite_licenses l LEFT JOIN suite.suite_license_enrollments e USING(license_id)
         WHERE l.license_id=$1 AND l.product_id='TURBORAMA_SUITE'
         """, conn);
     cmd.Parameters.AddWithValue(licenseId);SuiteStatus status;
@@ -57,8 +79,12 @@ app.MapGet("/status/{licenseId}", async (string licenseId, NpgsqlDataSource db, 
     {
         if (!await reader.ReadAsync(ct)) return Results.NotFound();
         var expires=reader.IsDBNull(4)?null:(DateTime?)reader.GetDateTime(4);var otpExpires=reader.IsDBNull(9)?null:(DateTime?)reader.GetDateTime(9);var active=reader.GetInt64(16);
-        var eligible=new SuiteEligibilityInput(reader.GetString(1),reader.GetString(2),reader.GetString(3),expires is null,reader.GetString(5),reader.GetInt16(6),reader.GetBoolean(7),reader.GetBoolean(8),otpExpires,reader.GetDateTime(19),reader.GetString(10),reader.GetString(10),reader.GetString(11),reader.GetString(12),reader.GetString(13),reader.GetString(15),reader.GetString(14),active);
-        status=new SuiteStatus(reader.GetString(0),reader.GetString(1),reader.GetString(2),reader.GetString(3),expires,reader.GetString(5),reader.GetInt16(6),reader.GetBoolean(7),reader.GetBoolean(8),otpExpires,reader.GetString(10),reader.GetString(11),reader.GetString(12),reader.GetString(13),reader.GetString(14),active,reader.IsDBNull(17)?null:reader.GetString(17),reader.GetString(18),SuiteEligibility.CanIssue(eligible),[]);
+        var hasEnrollment=!reader.IsDBNull(10);
+        var device=hasEnrollment?reader.GetString(10):null;var binding=hasEnrollment?reader.GetString(11):null;var enrollmentPolicy=hasEnrollment?reader.GetString(12):null;
+        var algorithm=hasEnrollment?reader.GetString(13):null;var fingerprint=hasEnrollment?reader.GetString(14):null;var spki=hasEnrollment?reader.GetString(15):null;
+        var canIssue=false;
+        if(hasEnrollment)canIssue=SuiteEligibility.CanIssue(new SuiteEligibilityInput(reader.GetString(1),reader.GetString(2),reader.GetString(3),expires is null,reader.GetString(5),reader.GetInt16(6),reader.GetBoolean(7),reader.GetBoolean(8),otpExpires,reader.GetDateTime(19),device!,device!,binding!,enrollmentPolicy!,algorithm!,spki!,fingerprint!,active));
+        status=new SuiteStatus(reader.GetString(0),reader.GetString(1),reader.GetString(2),reader.GetString(3),expires,reader.GetString(5),reader.GetInt16(6),reader.GetBoolean(7),reader.GetBoolean(8),otpExpires,device,binding,enrollmentPolicy,algorithm,fingerprint,active,reader.IsDBNull(17)?null:reader.GetString(17),reader.GetString(18),canIssue,[]);
     }
     var events = new List<SuiteAuditItem>();
     await using var audit = new NpgsqlCommand("""
@@ -207,7 +233,7 @@ sealed record IssueRequest(string LicenseId,string DeviceId,int TtlSeconds,strin
 sealed record IssueResponse(string ProductId,string LicenseId,string DeviceId,string Otp,DateTime ExpiresAt);
 sealed record Error(string Code);
 sealed record SuiteAuditItem(string OccurredAt,string EventType,string Outcome,string DetailCode,string Actor,string RequestId,string? OtpExpiresAt);
-sealed record SuiteStatus(string LicenseId,string ProductId,string Status,string LicenseTerm,DateTime? ExpiresAt,string IdentityPolicy,int MaximumActiveDevices,bool ActivationConsumed,bool OtpIssued,DateTime? OtpExpiresAt,string DeviceId,string BindingType,string EnrollmentPolicy,string Algorithm,string HardwareFingerprint,long ActiveDevices,string? SessionId,string OtpState,bool CanIssue,IReadOnlyList<SuiteAuditItem> RecentEvents);
+sealed record SuiteStatus(string LicenseId,string ProductId,string Status,string LicenseTerm,DateTime? ExpiresAt,string IdentityPolicy,int MaximumActiveDevices,bool ActivationConsumed,bool OtpIssued,DateTime? OtpExpiresAt,string? DeviceId,string? BindingType,string? EnrollmentPolicy,string? Algorithm,string? HardwareFingerprint,long ActiveDevices,string? SessionId,string OtpState,bool CanIssue,IReadOnlyList<SuiteAuditItem> RecentEvents);
 public partial class Program;
 
 static class AdminSelfTest
