@@ -1,13 +1,34 @@
 using Npgsql;
+using System.Security.Cryptography;
 using TurboRamaSuiteOnlineServer;
 
 var connection=Environment.GetEnvironmentVariable("SUITE_TEST_CONNECTION")??throw new InvalidOperationException("SUITE_TEST_CONNECTION missing");
 await using var data=NpgsqlDataSource.Create(connection);var store=new PostgresSuiteStore(data);
+await ServiceConcurrentIdempotency();
 await ConcurrentIdempotency();
 await OldVerifierDenied();
 await Retry("TS-PG-RETRY-40001","40001");
 await Retry("TS-PG-RETRY-40P01","40P01");
-Console.WriteLine("SUITE POSTGRES TESTS: OK (concurrent identical completion, divergent replay, stale verifier, 40001 and 40P01 retry)");
+Console.WriteLine("SUITE POSTGRES TESTS: OK (service-level PostgreSQL race, concurrent identical completion, divergent replay, stale verifier, 40001 and 40P01 retry)");
+async Task ServiceConcurrentIdempotency()
+{
+ const string id="TS-PG-SERVICE-RACE";using var machine=RSA.Create(2048);using var online=RSA.Create(2048);
+ var spki=machine.ExportSubjectPublicKeyInfo();var deviceId=Convert.ToHexString(SHA256.HashData(spki)).ToLowerInvariant();var fingerprint=new string('a',64);
+ var descriptor=new DeviceDescriptor(1,deviceId,"SOFTWARE_BOUND_ONLINE",Protocol.Algorithm,Convert.ToBase64String(spki),fingerprint,"1.0.0");
+ var pepper=Convert.ToBase64String(RandomNumberGenerator.GetBytes(32));var code="postgres-service-race-code";var verifier=ActivationCodes.Verify(pepper,code);
+ await using(var cleanup=data.CreateCommand("DELETE FROM suite.suite_licenses WHERE license_id=$1")){cleanup.Parameters.AddWithValue(id);await cleanup.ExecuteNonQueryAsync();}
+ await using(var setupLicense=data.CreateCommand("INSERT INTO suite.suite_licenses(license_id,product_id,status,activation_verifier,activation_expires_at,activation_consumed,license_term,expires_at,identity_policy,maximum_active_devices) VALUES($1,'TURBORAMA_SUITE','ACTIVE',$2,clock_timestamp()+interval '15 minutes',false,'LIFETIME',NULL,'SOFTWARE_ONLY',1)")){setupLicense.Parameters.AddWithValue(id);setupLicense.Parameters.AddWithValue(verifier);await setupLicense.ExecuteNonQueryAsync();}
+ await using(var setupEnrollment=data.CreateCommand("INSERT INTO suite.suite_license_enrollments(license_id,device_id,binding_type,identity_policy,algorithm,public_key_spki,hardware_fingerprint) VALUES($1,$2,'SOFTWARE_BOUND_ONLINE','SOFTWARE_ONLY','rsa-pss-sha256',$3,$4)")){setupEnrollment.Parameters.AddWithValue(id);setupEnrollment.Parameters.AddWithValue(deviceId);setupEnrollment.Parameters.AddWithValue(descriptor.PublicKeySpki);setupEnrollment.Parameters.AddWithValue(fingerprint);await setupEnrollment.ExecuteNonQueryAsync();}
+ using var signer=new RsaAssertionSigner(online);var service=new SuiteService(store,signer,TimeProvider.System,pepper);
+ var issued=Payload<ActivationChallengeAssertion>(await service.ActivationChallengeAsync(new(1,Protocol.ProductId,id,code,descriptor),default));
+ var challenge=new ChallengeResponse(1,issued.ChallengeId,issued.Nonce,issued.ExpiresAtUnixSeconds);var context=Protocol.ActivationContextHash(id,descriptor);var message=Protocol.SigningMessage(challenge,id,deviceId,"","device.activate",context);
+ string signature;try{signature=Convert.ToBase64String(machine.SignData(message,HashAlgorithmName.SHA256,RSASignaturePadding.Pss));}finally{CryptographicOperations.ZeroMemory(message);}
+ var proof=new ActivationProof(1,Protocol.ProductId,id,issued.ChallengeId,descriptor,signature);var calls=new[]{service.CompleteActivationAsync(proof,default),service.CompleteActivationAsync(proof,default)};await Task.WhenAll(calls);
+ if(calls[0].Result.Signature!=calls[1].Result.Signature)throw new InvalidOperationException("service PostgreSQL race diverged");
+ await ExpectSuite(()=>service.CompleteActivationAsync(proof with { Signature=Convert.ToBase64String(RandomNumberGenerator.GetBytes(256)) },default),"REPLAY_DENIED");
+}
+static T Payload<T>(SignedAssertionEnvelope envelope) where T:class=>StrictJson.Parse<T>(Convert.FromBase64String(envelope.Payload));
+
 
 async Task ConcurrentIdempotency()
 {

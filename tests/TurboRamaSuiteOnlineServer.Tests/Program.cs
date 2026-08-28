@@ -37,6 +37,20 @@ var issued = await serviceA.ActivationChallengeAsync(new(1, Protocol.ProductId, 
 var activationSignature = Sign(machine, activationChallenge, licenseId, deviceId, "", "device.activate", activation);
 var proof = new ActivationProof(1, Protocol.ProductId, licenseId, issuedPayload.ChallengeId, device, activationSignature); var completed = await serviceB.CompleteActivationAsync(proof, default); var retry = await serviceA.CompleteActivationAsync(proof, default); Equal(completed.Signature, retry.Signature, "idempotent activation");
 await ExpectAsync<SuiteException>(() => serviceA.CompleteActivationAsync(proof with { Signature = Convert.ToBase64String(RandomNumberGenerator.GetBytes(256)) }, default), "different replay");
+var raceInner = new MemoryStore(new LicenseRecord(licenseId, Protocol.ProductId, "ACTIVE", verifier, 2_000_000_000, false), device);
+var raceStore = new CoordinatedActivationStore(raceInner); var raceService = new SuiteService(raceStore, signer, clock, pepper);
+var raceIssued = Payload<ActivationChallengeAssertion>(await raceService.ActivationChallengeAsync(new(1, Protocol.ProductId, licenseId, code, device), default));
+var raceChallenge = new ChallengeResponse(1, raceIssued.ChallengeId, raceIssued.Nonce, raceIssued.ExpiresAtUnixSeconds);
+var raceProof = new ActivationProof(1, Protocol.ProductId, licenseId, raceIssued.ChallengeId, device, Sign(machine, raceChallenge, licenseId, deviceId, "", "device.activate", activation));
+var delayedB = raceService.CompleteActivationAsync(raceProof, default);
+await raceStore.FirstCompletionObserved.Task.WaitAsync(TimeSpan.FromSeconds(5));
+var winnerA = await raceService.CompleteActivationAsync(raceProof, default);
+raceStore.ReleaseFirstCompletion.TrySetResult();
+var recoveredB = await delayedB;
+Equal(winnerA.Signature, recoveredB.Signature, "deterministic service race returns identical completion");
+await ExpectSuiteAsync(() => raceService.CompleteActivationAsync(raceProof with { Signature = Convert.ToBase64String(RandomNumberGenerator.GetBytes(256)) }, default), "REPLAY_DENIED", "deterministic divergent replay");
+await ExpectSuiteAsync(() => raceService.CompleteActivationAsync(raceProof with { ChallengeId = new string('f', 64) }, default), "CHALLENGE_INVALID", "missing challenge without completion");
+
 
 var contextHash = Protocol.SessionContextHash(sessionContext); var challengeEnvelope = await serviceA.ChallengeAsync(new(1, Protocol.ProductId, licenseId, deviceId, sessionId, "session.open", contextHash), default); var operation = Payload<OperationChallengeAssertion>(challengeEnvelope); var operationChallenge = new ChallengeResponse(1, operation.ChallengeId, operation.Nonce, operation.ExpiresAtUnixSeconds); var operationProof = new OperationProof(1, Protocol.ProductId, licenseId, deviceId, sessionId, "session.open", contextHash, operation.ChallengeId, Sign(machine, operationChallenge, licenseId, deviceId, sessionId, "session.open", contextHash));
 _ = await serviceB.SessionAsync(new(operationProof, sessionContext), default); await ExpectAsync<SuiteException>(() => serviceA.SessionAsync(new(operationProof, sessionContext), default), "atomic challenge consumption");
@@ -51,6 +65,7 @@ static string Sha(ReadOnlySpan<byte> b) => Convert.ToHexString(SHA256.HashData(b
 static void Equal<T>(T expected, T actual, string label) { if (!EqualityComparer<T>.Default.Equals(expected, actual)) throw new InvalidOperationException($"{label}: expected {expected}, got {actual}"); }
 static void Expect<T>(Action action, string label) where T : Exception { try { action(); } catch (T) { return; } throw new InvalidOperationException(label + " was accepted"); }
 static async Task ExpectAsync<T>(Func<Task> action, string label) where T : Exception { try { await action(); } catch (T) { return; } throw new InvalidOperationException(label + " was accepted"); }
+static async Task ExpectSuiteAsync(Func<Task> action, string code, string label) { try { await action(); } catch (SuiteException ex) when (ex.Code == code) { return; } throw new InvalidOperationException(label + " did not return " + code); }
 
 sealed class ManualTime(long unix) : TimeProvider { public override DateTimeOffset GetUtcNow() => DateTimeOffset.FromUnixTimeSeconds(unix); }
 sealed class MemoryStore(LicenseRecord license, DeviceDescriptor enrolled) : ISuiteStore
@@ -64,4 +79,28 @@ sealed class MemoryStore(LicenseRecord license, DeviceDescriptor enrolled) : ISu
     public Task<CompletionRecord?> FindCompletionAsync(string id, CancellationToken _) { _completions.TryGetValue(id, out var c); return Task.FromResult<CompletionRecord?>(c); }
     public Task<SignedAssertionEnvelope> CompleteActivationAsync(ChallengeRecord c, string digest, DeviceRecord d, SignedAssertionEnvelope result, CancellationToken ct) { _ = ct; lock (this) { if (_completions.TryGetValue(c.ChallengeId, out var prior)) { if (prior.RequestDigest != digest) throw new SuiteException(409, "REPLAY_DENIED", "Replay was denied."); return Task.FromResult(prior.Result); } if (!_challenges.TryRemove(c.ChallengeId, out _) || _license.ActivationConsumed) throw new SuiteException(409, "ACTIVATION_REPLAY", "Activation is no longer available."); _license = _license with { ActivationConsumed = true }; _devices[d.LicenseId + ":" + d.DeviceId] = d; _completions[c.ChallengeId] = new(c.ChallengeId, digest, result); return Task.FromResult(result); } }
     public Task<SessionRecord> CompleteSessionAsync(ChallengeRecord c, SessionRecord s, string action, long now, CancellationToken ct) { _ = ct; lock (this) { if (!_challenges.TryRemove(c.ChallengeId, out _)) throw new SuiteException(409, "CHALLENGE_INVALID", "Challenge is invalid or expired."); var key = s.LicenseId + ":" + s.DeviceId; if (_sessions.TryGetValue(key, out var old) && action != "session.open" && old.SessionId != s.SessionId) throw new SuiteException(409, "SESSION_INVALID", "Session is not current."); var time = Math.Max(now, (old?.LastServerTime ?? 0) + 1); var value = s with { LastServerTime = time }; _sessions[key] = value; return Task.FromResult(value); } }
+}
+
+sealed class CoordinatedActivationStore(ISuiteStore inner) : ISuiteStore
+{
+    private int completionCalls;
+    public TaskCompletionSource FirstCompletionObserved { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
+    public TaskCompletionSource ReleaseFirstCompletion { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
+    public Task<LicenseRecord?> FindLicenseAsync(string id, CancellationToken ct) => inner.FindLicenseAsync(id, ct);
+    public Task<EnrollmentRecord?> FindEnrollmentAsync(string id, CancellationToken ct) => inner.FindEnrollmentAsync(id, ct);
+    public Task<DeviceRecord?> FindDeviceAsync(string l, string d, CancellationToken ct) => inner.FindDeviceAsync(l, d, ct);
+    public Task InsertChallengeAsync(ChallengeRecord c, CancellationToken ct) => inner.InsertChallengeAsync(c, ct);
+    public Task<ChallengeRecord?> FindChallengeAsync(string id, string action, long now, CancellationToken ct) => inner.FindChallengeAsync(id, action, now, ct);
+    public async Task<CompletionRecord?> FindCompletionAsync(string id, CancellationToken ct)
+    {
+        var observed = await inner.FindCompletionAsync(id, ct);
+        if (Interlocked.Increment(ref completionCalls) == 1)
+        {
+            FirstCompletionObserved.TrySetResult();
+            await ReleaseFirstCompletion.Task.WaitAsync(ct);
+        }
+        return observed;
+    }
+    public Task<SignedAssertionEnvelope> CompleteActivationAsync(ChallengeRecord c, string digest, DeviceRecord d, SignedAssertionEnvelope result, CancellationToken ct) => inner.CompleteActivationAsync(c, digest, d, result, ct);
+    public Task<SessionRecord> CompleteSessionAsync(ChallengeRecord c, SessionRecord s, string action, long now, CancellationToken ct) => inner.CompleteSessionAsync(c, s, action, now, ct);
 }

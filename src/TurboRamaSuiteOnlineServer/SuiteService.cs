@@ -28,7 +28,17 @@ public sealed class SuiteService
         Protocol.RequireVersion(proof.SchemaVersion); Protocol.RequireProduct(proof.ProductId); Protocol.ValidateDevice(proof.Device);
         await RequireEnrollment(proof.LicenseId, proof.Device, ct);
         var digest = Digest(JsonSerializer.SerializeToUtf8Bytes(proof, StrictJson.Options)); var prior = await _store.FindCompletionAsync(proof.ChallengeId, ct); if (prior is not null) { if (!Protocol.FixedEquals(prior.RequestDigest, digest)) throw new SuiteException(409, "REPLAY_DENIED", "Replay was denied."); return prior.Result; }
-        var challenge = await _store.FindChallengeAsync(proof.ChallengeId, "device.activate", Now(), ct) ?? throw new SuiteException(409, "CHALLENGE_INVALID", "Challenge is invalid or expired.");
+        var challenge = await _store.FindChallengeAsync(proof.ChallengeId, "device.activate", Now(), ct);
+        if (challenge is null)
+        {
+            prior = await _store.FindCompletionAsync(proof.ChallengeId, ct);
+            if (prior is not null)
+            {
+                if (!Protocol.FixedEquals(prior.RequestDigest, digest)) throw new SuiteException(409, "REPLAY_DENIED", "Replay was denied.");
+                return prior.Result;
+            }
+            throw new SuiteException(409, "CHALLENGE_INVALID", "Challenge is invalid or expired.");
+        }
         var contextHash = Protocol.ActivationContextHash(proof.LicenseId, proof.Device); Match(challenge, proof.LicenseId, proof.Device.DeviceId, "", contextHash);
         if (!Protocol.Verify(proof.Device, new(1, challenge.ChallengeId, challenge.Nonce, challenge.ExpiresAt), proof.LicenseId, "", "device.activate", contextHash, proof.Signature)) throw new SuiteException(403, "PROOF_INVALID", "Machine proof is invalid.");
         var result = _signer.Sign(new ActivationResultAssertion(1, Protocol.ActivationResultKind, Protocol.ProductId, proof.LicenseId, proof.Device.DeviceId, "device.activate", contextHash, challenge.ChallengeId, "ACTIVE", proof.Device.BindingType, Now()));

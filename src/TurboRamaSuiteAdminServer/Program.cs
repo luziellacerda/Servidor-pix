@@ -45,9 +45,14 @@ app.MapGet("/status/{licenseId}", async (string licenseId, NpgsqlDataSource db, 
                WHEN l.activation_verifier IS NULL THEN 'NOT_ISSUED'
                WHEN l.activation_expires_at > clock_timestamp() THEN 'VALID'
                ELSE 'EXPIRED' END,
-          (NOT l.activation_consumed
+          (l.product_id='TURBORAMA_SUITE' AND l.status='ACTIVE' AND l.license_term='LIFETIME' AND l.expires_at IS NULL
+             AND l.identity_policy='SOFTWARE_ONLY' AND l.maximum_active_devices=1 AND NOT l.activation_consumed
              AND NOT EXISTS(SELECT 1 FROM suite.suite_devices d WHERE d.license_id=l.license_id AND d.status='ACTIVE')
-             AND (l.activation_verifier IS NULL OR l.activation_expires_at <= clock_timestamp()))
+             AND (l.activation_verifier IS NULL OR l.activation_expires_at <= clock_timestamp())
+             AND e.device_id ~ '^[0-9a-f]{64}$' AND e.binding_type='SOFTWARE_BOUND_ONLINE'
+             AND e.identity_policy='SOFTWARE_ONLY' AND e.algorithm='rsa-pss-sha256'
+             AND e.public_key_spki ~ '^[A-Za-z0-9+/]+={0,2}$' AND length(e.public_key_spki)>=300
+             AND e.hardware_fingerprint ~ '^[0-9a-f]{64}$')
         FROM suite.suite_licenses l JOIN suite.suite_license_enrollments e USING(license_id)
         WHERE l.license_id=$1 AND l.product_id='TURBORAMA_SUITE'
         """, conn);
@@ -146,7 +151,7 @@ static async Task<IResult> IssueOnce(IssueRequest request,NpgsqlDataSource db,st
     var spki=row.GetString(11);var fingerprint=row.GetString(12);var databaseNow=row.GetDateTime(13);await row.DisposeAsync();
     if(status!="ACTIVE"||term!="LIFETIME"||!noExpiry||maximum!=1||consumed||device!=request.DeviceId
        ||binding!="SOFTWARE_BOUND_ONLINE"||policy!="SOFTWARE_ONLY"||algorithm!="rsa-pss-sha256"
-       ||spki.Length<300||fingerprint.Length!=64){await Deny("LICENSE_OR_ENROLLMENT_DENIED");return Results.Conflict(new Error("LICENSE_OR_ENROLLMENT_DENIED"));}
+       ||!ValidSpki(spki)||!ValidHex(fingerprint)){await Deny("LICENSE_OR_ENROLLMENT_DENIED");return Results.Conflict(new Error("LICENSE_OR_ENROLLMENT_DENIED"));}
     await using(var count=new NpgsqlCommand("SELECT count(*) FROM suite.suite_devices WHERE license_id=$1 AND status='ACTIVE'",conn,tx))
     {count.Parameters.AddWithValue(request.LicenseId);if((long)(await count.ExecuteScalarAsync(ct)??0L)!=0){await Deny("ACTIVE_DEVICE_EXISTS");return Results.Conflict(new Error("ACTIVE_DEVICE_EXISTS"));}}
     if(hasVerifier&&oldExpiry>databaseNow){await Deny("OTP_STILL_VALID");return Results.Conflict(new Error("OTP_STILL_VALID"));}
@@ -173,6 +178,8 @@ static async Task<IResult> IssueOnce(IssueRequest request,NpgsqlDataSource db,st
     {CryptographicOperations.ZeroMemory(otpBytes);if(pepper.Length>0)CryptographicOperations.ZeroMemory(pepper);if(otpUtf8.Length>0)CryptographicOperations.ZeroMemory(otpUtf8);verifier="";otp="";}
     async Task Deny(string code)
     {await using var audit=new NpgsqlCommand("INSERT INTO suite.suite_audit_events(event_type,license_id,device_id,correlation_id,outcome,detail_code,admin_actor,request_id) VALUES('SUITE_OTP_DENIED',$1,$2,$3,'DENIED',$4,$5,$6)",conn,tx);audit.Parameters.AddWithValue(request.LicenseId);audit.Parameters.AddWithValue(request.DeviceId);audit.Parameters.AddWithValue(request.RequestId);audit.Parameters.AddWithValue(code);audit.Parameters.AddWithValue(request.Actor);audit.Parameters.AddWithValue(request.RequestId);await audit.ExecuteNonQueryAsync(ct);await tx.CommitAsync(ct);}
+static bool ValidHex(string value)=>value.Length==64&&value.All(c=>c is >= '0' and <= '9' or >= 'a' and <= 'f');
+static bool ValidSpki(string value){try{var decoded=Convert.FromBase64String(value);return decoded.Length>=256&&Convert.ToBase64String(decoded)==value;}catch(FormatException){return false;}}
 }
 
 static string Required(string key)=>Environment.GetEnvironmentVariable(key)?.Trim() is {Length:>0} value?value:throw new InvalidOperationException("Required configuration is missing.");
