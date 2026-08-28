@@ -189,7 +189,8 @@ static class CommerceEndpoints
     {
         var digest=Digest(Encoding.UTF8.GetBytes(string.Join('\n',[purchase,item,request.Actor,request.Reason])));
         await using var conn=await db.OpenConnectionAsync(ct);await using var tx=await conn.BeginTransactionAsync(IsolationLevel.Serializable,ct);
-        await using(var prior=new NpgsqlCommand("SELECT request_digest,result_json::text FROM suite.suite_lifecycle_commands WHERE scope='COMMERCE_TRANSFER' AND request_id=$1 FOR UPDATE",conn,tx))
+        await using(var requestLock=new NpgsqlCommand("SELECT pg_advisory_xact_lock(hashtextextended('COMMERCE_TRANSFER:'||$1,0))",conn,tx)){requestLock.Parameters.AddWithValue(request.RequestId);await requestLock.ExecuteNonQueryAsync(ct);}
+        await using(var prior=new NpgsqlCommand("SELECT request_digest,result_json::text FROM suite.suite_lifecycle_commands WHERE scope='COMMERCE_TRANSFER' AND request_id=$1",conn,tx))
         {prior.Parameters.AddWithValue(request.RequestId);await using var r=await prior.ExecuteReaderAsync(ct);if(await r.ReadAsync(ct)){if(!Fixed(r.GetString(0),digest))throw new CommerceConflict("TRANSFER_REQUEST_CONFLICT");var priorResult=System.Text.Json.JsonSerializer.Deserialize<CommerceTransferResult>(r.GetString(1))??throw new CommerceConflict("RESULT_INVALID");await r.DisposeAsync();await tx.CommitAsync(ct);return priorResult;}}
         string licenseId,enrollmentState,origin;long revocationGeneration,activationGeneration;
         await using(var delivery=new NpgsqlCommand("""
