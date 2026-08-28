@@ -32,6 +32,7 @@ static class CommerceEndpoints
             return await r.ReadAsync(ct)?Results.Json(new CommerceResult(r.GetString(0),r.GetString(1),r.GetString(2),Empty(r.GetString(3)),r.GetString(4),r.GetString(5),r.GetInt64(6),"CURRENT")):Results.NotFound();
         });
         app.MapPost("/commerce/deliveries/{purchase}/{item}/issue",async(string purchase,string item,CommerceIssueRequest request,NpgsqlDataSource db,CancellationToken ct)=>{if(!enabled)return Results.NotFound();ValidateText(purchase,64);ValidateText(item,32);ValidateText(request.Actor,64);ValidateText(request.RequestId,128);try{return Results.Json(await Issue(purchase,item,request,db,pepperFile,ct));}catch(CommerceConflict ex){return Results.Conflict(new CommerceError(ex.Code));}});
+        app.MapPost("/commerce/deliveries/{purchase}/{item}/transfer",async(string purchase,string item,CommerceTransferRequest request,NpgsqlDataSource db,CancellationToken ct)=>{if(!enabled)return Results.NotFound();try{ValidateText(purchase,64);ValidateText(item,32);ValidateText(request.Actor,64);ValidateText(request.RequestId,128);ValidateReason(request.Reason);return Results.Json(await Transfer(purchase,item,request,db,ct));}catch(CommerceInvalid ex){return Results.BadRequest(new CommerceError(ex.Code));}catch(CommerceConflict ex){return Results.Conflict(new CommerceError(ex.Code));}});
     }
 
     static async Task<CommerceResult> Apply(CommerceEvent e,NpgsqlDataSource db,CancellationToken ct)
@@ -184,6 +185,39 @@ static class CommerceEndpoints
         await using(var audit=new NpgsqlCommand("INSERT INTO suite.suite_audit_events(event_type,license_id,correlation_id,outcome,detail_code,admin_actor,request_id,otp_expires_at) VALUES('SUITE_OTP_ISSUED',$1,$2,'SUCCESS','FIRST_CLAIM_OTP_ISSUED',$3,$2,$4)",conn,tx)){audit.Parameters.AddWithValue(licenseId);audit.Parameters.AddWithValue(request.RequestId);audit.Parameters.AddWithValue(request.Actor);audit.Parameters.AddWithValue(expires);await audit.ExecuteNonQueryAsync(ct);}await tx.CommitAsync(ct);return new(licenseId,otp,expires);}
         finally{CryptographicOperations.ZeroMemory(otpBytes);if(pepper.Length>0)CryptographicOperations.ZeroMemory(pepper);if(otpUtf8.Length>0)CryptographicOperations.ZeroMemory(otpUtf8);}
     }
+    static async Task<CommerceTransferResult> Transfer(string purchase,string item,CommerceTransferRequest request,NpgsqlDataSource db,CancellationToken ct)
+    {
+        var digest=Digest(Encoding.UTF8.GetBytes(string.Join('\n',[purchase,item,request.Actor,request.Reason])));
+        await using var conn=await db.OpenConnectionAsync(ct);await using var tx=await conn.BeginTransactionAsync(IsolationLevel.Serializable,ct);
+        await using(var prior=new NpgsqlCommand("SELECT request_digest,result_json::text FROM suite.suite_lifecycle_commands WHERE scope='COMMERCE_TRANSFER' AND request_id=$1 FOR UPDATE",conn,tx))
+        {prior.Parameters.AddWithValue(request.RequestId);await using var r=await prior.ExecuteReaderAsync(ct);if(await r.ReadAsync(ct)){if(!Fixed(r.GetString(0),digest))throw new CommerceConflict("TRANSFER_REQUEST_CONFLICT");var priorResult=System.Text.Json.JsonSerializer.Deserialize<CommerceTransferResult>(r.GetString(1))??throw new CommerceConflict("RESULT_INVALID");await r.DisposeAsync();await tx.CommitAsync(ct);return priorResult;}}
+        string licenseId,enrollmentState,origin;long revocationGeneration,activationGeneration;
+        await using(var delivery=new NpgsqlCommand("""
+          SELECT d.license_id,d.provisioning_state,d.financial_state,l.status,l.enrollment_state,
+            l.provisioning_origin,l.revocation_generation,l.activation_generation
+          FROM suite.suite_license_deliveries d JOIN suite.suite_licenses l USING(license_id)
+          WHERE d.source_system='TURBOBOX_V1' AND d.source_purchase_id=$1 AND d.source_item_key=$2
+            AND d.product_id='TURBORAMA_SUITE' FOR UPDATE OF d,l
+          """,conn,tx))
+        {delivery.Parameters.AddWithValue(purchase);delivery.Parameters.AddWithValue(item);await using var r=await delivery.ExecuteReaderAsync(ct);if(!await r.ReadAsync(ct))throw new CommerceConflict("DELIVERY_NOT_READY");licenseId=r.GetString(0);if(r.GetString(1)!="PROVISIONED"||r.GetString(2)!="PAID"||r.GetString(3)!="ACTIVE")throw new CommerceConflict("DELIVERY_NOT_ELIGIBLE");enrollmentState=r.GetString(4);origin=r.GetString(5);revocationGeneration=r.GetInt64(6);activationGeneration=r.GetInt64(7);}
+        if(origin!="COMMERCE"||enrollmentState!="BOUND")throw new CommerceConflict("TRANSFER_NOT_ELIGIBLE");
+        string? previousDevice=null,previousEnrollment=null;
+        await using(var enrollment=new NpgsqlCommand("SELECT device_id,to_jsonb(e)::text FROM suite.suite_license_enrollments e WHERE license_id=$1 FOR UPDATE",conn,tx))
+        {enrollment.Parameters.AddWithValue(licenseId);await using var r=await enrollment.ExecuteReaderAsync(ct);if(await r.ReadAsync(ct)){previousDevice=r.GetString(0);previousEnrollment=r.GetString(1);}}
+        if(previousDevice is null)throw new CommerceConflict("TRANSFER_NOT_ELIGIBLE");
+        var newRevocation=revocationGeneration+1;var newActivation=activationGeneration+1;
+        await using(var challenges=new NpgsqlCommand("UPDATE suite.suite_challenges SET invalidated_at=clock_timestamp(),invalidation_reason='ADMIN_TRANSFER',consumed_at=coalesce(consumed_at,clock_timestamp()) WHERE license_id=$1 AND invalidated_at IS NULL",conn,tx)){challenges.Parameters.AddWithValue(licenseId);await challenges.ExecuteNonQueryAsync(ct);}
+        await using(var sessions=new NpgsqlCommand("UPDATE suite.suite_sessions SET status='REVOKED',revoked_at=clock_timestamp(),revocation_reason='ADMIN_TRANSFER',authorized_until=least(authorized_until,clock_timestamp()) WHERE license_id=$1 AND status='ACTIVE'",conn,tx)){sessions.Parameters.AddWithValue(licenseId);await sessions.ExecuteNonQueryAsync(ct);}
+        await using(var devices=new NpgsqlCommand("UPDATE suite.suite_devices SET status='REVOKED',updated_at=clock_timestamp() WHERE license_id=$1 AND status='ACTIVE'",conn,tx)){devices.Parameters.AddWithValue(licenseId);await devices.ExecuteNonQueryAsync(ct);}
+        await using(var remove=new NpgsqlCommand("DELETE FROM suite.suite_license_enrollments WHERE license_id=$1",conn,tx)){remove.Parameters.AddWithValue(licenseId);if(await remove.ExecuteNonQueryAsync(ct)!=1)throw new CommerceConflict("TRANSFER_NOT_ELIGIBLE");}
+        await using(var license=new NpgsqlCommand("UPDATE suite.suite_licenses SET revocation_generation=$2,activation_generation=$3,activation_verifier=NULL,activation_expires_at=NULL,activation_consumed=false,enrollment_state='PENDING_ENROLLMENT',updated_at=clock_timestamp() WHERE license_id=$1",conn,tx)){license.Parameters.AddWithValue(licenseId);license.Parameters.AddWithValue(newRevocation);license.Parameters.AddWithValue(newActivation);await license.ExecuteNonQueryAsync(ct);}
+        var result=new CommerceTransferResult(licenseId,"PENDING_ENROLLMENT",newRevocation,newActivation);
+        await using(var history=new NpgsqlCommand("INSERT INTO suite.suite_transfer_history(license_id,request_id,request_digest,previous_device_id,previous_enrollment_json,revocation_generation,activation_generation,status,actor,reason) VALUES($1,$2,$3,$4,$5::jsonb,$6,$7,'PENDING',$8,$9)",conn,tx)){history.Parameters.AddWithValue(licenseId);history.Parameters.AddWithValue(request.RequestId);history.Parameters.AddWithValue(digest);history.Parameters.AddWithValue((object?)previousDevice??DBNull.Value);history.Parameters.AddWithValue((object?)previousEnrollment??DBNull.Value);history.Parameters.AddWithValue(newRevocation);history.Parameters.AddWithValue(newActivation);history.Parameters.AddWithValue(request.Actor);history.Parameters.AddWithValue(request.Reason);await history.ExecuteNonQueryAsync(ct);}
+        var resultJson=System.Text.Json.JsonSerializer.Serialize(result);
+        await using(var command=new NpgsqlCommand("INSERT INTO suite.suite_lifecycle_commands(scope,request_id,request_digest,license_id,action,expected_generation,resulting_generation,actor,reason,outcome,result_json) VALUES('COMMERCE_TRANSFER',$1,$2,$3,'TRANSFER',$4,$5,$6,$7,'SUCCESS',$8::jsonb)",conn,tx)){command.Parameters.AddWithValue(request.RequestId);command.Parameters.AddWithValue(digest);command.Parameters.AddWithValue(licenseId);command.Parameters.AddWithValue(revocationGeneration);command.Parameters.AddWithValue(newRevocation);command.Parameters.AddWithValue(request.Actor);command.Parameters.AddWithValue(request.Reason);command.Parameters.AddWithValue(resultJson);await command.ExecuteNonQueryAsync(ct);}
+        await using(var audit=new NpgsqlCommand("INSERT INTO suite.suite_audit_events(event_type,license_id,device_id,correlation_id,outcome,detail_code,admin_actor,request_id) VALUES('SUITE_DEVICE_TRANSFER_AUTHORIZED',$1,$2,$3,'SUCCESS','OLD_DEVICE_REVOKED',$4,$3)",conn,tx)){audit.Parameters.AddWithValue(licenseId);audit.Parameters.AddWithValue(previousDevice!);audit.Parameters.AddWithValue(request.RequestId);audit.Parameters.AddWithValue(request.Actor);await audit.ExecuteNonQueryAsync(ct);}
+        await tx.CommitAsync(ct);return result;
+    }
     static async Task Audit(NpgsqlConnection conn,NpgsqlTransaction tx,string type,string license,string outcome,string detail,string correlation,CancellationToken ct)
     {await using var cmd=new NpgsqlCommand("INSERT INTO suite.suite_audit_events(event_type,license_id,correlation_id,outcome,detail_code) VALUES($1,$2,$3,$4,$5)",conn,tx);cmd.Parameters.AddWithValue(type);cmd.Parameters.AddWithValue(license);cmd.Parameters.AddWithValue(correlation);cmd.Parameters.AddWithValue(outcome);cmd.Parameters.AddWithValue(detail);await cmd.ExecuteNonQueryAsync(ct);}
     static CommerceResult Result(CommerceEvent e,Delivery d,string outcome)=>new(e.SourcePurchaseId,e.SourceItemKey,e.SourceProductSku,d.LicenseId,d.State,d.Financial,d.Version,outcome);
@@ -196,6 +230,7 @@ static class CommerceEndpoints
     static void Validate(CommerceEvent e){if(e.SourceSystem!="TURBOBOX_V1"||e.SourceProductSku!=Sku||e.EventType is not("PURCHASE_PAID" or "PURCHASE_SUSPENDED")||e.SourceVersion<1)throw new CommerceInvalid("EVENT_INVALID");Hex(e.SourceEventId,32);Hex(e.PayloadDigest,64);ValidateText(e.SourcePurchaseId,64);ValidateText(e.SourceItemKey,32);}
     static void Hex(string value,int length){if(value.Length!=length||value.Any(c=>!(c is>='0'and<='9'or>='a'and<='f')))throw new CommerceInvalid("EVENT_INVALID");}
     static void ValidateText(string value,int max){if(value.Length<1||value.Length>max||value.Any(c=>char.IsControl(c)||c is '\\' or '/' or ':' or '|'))throw new CommerceInvalid("EVENT_INVALID");}
+    static void ValidateReason(string value){if(value.Length is <10 or >256||value.Any(char.IsControl))throw new CommerceInvalid("TRANSFER_REASON_INVALID");}
     sealed record Delivery(string? LicenseId,string State,string Financial,long Version);
 }
 
@@ -204,6 +239,8 @@ sealed record CommerceEvent(string SourceSystem,string SourceEventId,string Sour
 sealed record CommerceResult(string SourcePurchaseId,string SourceItemKey,string SourceProductSku,string? LicenseId,string ProvisioningState,string FinancialState,long SourceVersion,string Outcome);
 sealed record CommerceIssueRequest(string Actor,string RequestId);
 sealed record CommerceOtpResult(string LicenseId,string Otp,DateTime ExpiresAt);
+sealed record CommerceTransferRequest(string Actor,string RequestId,string Reason);
+sealed record CommerceTransferResult(string LicenseId,string EnrollmentState,long RevocationGeneration,long ActivationGeneration);
 sealed record CommerceError(string Code);
 sealed class CommerceConflict : Exception { public CommerceConflict(string code) : base(code) { Code = code; } public string Code { get; } }
 sealed class CommerceInvalid : Exception { public CommerceInvalid(string code) : base(code) { Code = code; } public string Code { get; } }
