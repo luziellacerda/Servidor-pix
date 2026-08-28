@@ -1,0 +1,15 @@
+BEGIN;
+SET LOCAL lock_timeout = '5s';
+SELECT pg_advisory_xact_lock(hashtextextended('suite:004_commerce_lifecycle',0));
+DELETE FROM suite.schema_migrations WHERE version='004_suite_commerce_lifecycle';
+ALTER TABLE suite.suite_sessions DROP COLUMN IF EXISTS revocation_reason, DROP COLUMN IF EXISTS revoked_at;
+ALTER TABLE suite.suite_activation_completions DROP COLUMN IF EXISTS invalidation_reason, DROP COLUMN IF EXISTS invalidated_at, DROP COLUMN IF EXISTS activation_generation, DROP COLUMN IF EXISTS revocation_generation;
+ALTER TABLE suite.suite_challenges DROP CONSTRAINT IF EXISTS ck_suite_challenge_activation_generation;
+ALTER TABLE suite.suite_challenges DROP COLUMN IF EXISTS invalidation_reason, DROP COLUMN IF EXISTS invalidated_at, DROP COLUMN IF EXISTS activation_generation, DROP COLUMN IF EXISTS revocation_generation;
+DROP TABLE IF EXISTS suite.suite_transfer_history;
+DROP TABLE IF EXISTS suite.suite_lifecycle_commands;
+DROP TABLE IF EXISTS suite.suite_license_deliveries;
+DROP TABLE IF EXISTS suite.suite_commerce_inbox;
+ALTER TABLE suite.suite_licenses DROP CONSTRAINT IF EXISTS ck_suite_applied_journal_sequence, DROP CONSTRAINT IF EXISTS ck_suite_activation_generation, DROP CONSTRAINT IF EXISTS ck_suite_claim_mode, DROP CONSTRAINT IF EXISTS ck_suite_enrollment_state, DROP CONSTRAINT IF EXISTS ck_suite_provisioning_origin;
+ALTER TABLE suite.suite_licenses DROP COLUMN IF EXISTS applied_journal_sequence, DROP COLUMN IF EXISTS activation_generation, DROP COLUMN IF EXISTS claim_mode, DROP COLUMN IF EXISTS enrollment_state, DROP COLUMN IF EXISTS provisioning_origin;
+COMMIT;
