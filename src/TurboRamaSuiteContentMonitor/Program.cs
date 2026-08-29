@@ -50,11 +50,11 @@ internal static class Program
             Console.Error.WriteLine($"SUITE CONTENT MONITOR: FAILED code={ex.Code}");
             return 2;
         }
-        catch
+        catch (Exception ex)
         {
             // Exception messages from networking and databases are intentionally suppressed:
             // they can include private upstream material.
-            Console.Error.WriteLine("SUITE CONTENT MONITOR: FAILED code=UNEXPECTED_FAILURE");
+            Console.Error.WriteLine($"SUITE CONTENT MONITOR: FAILED code=UNEXPECTED_FAILURE type={ex.GetType().Name} stage={ex.TargetSite?.Name ?? "unknown"}");
             return 3;
         }
     }
