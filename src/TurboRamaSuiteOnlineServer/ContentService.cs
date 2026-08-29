@@ -60,8 +60,11 @@ public static class ContentProtectedSecret
         if (!OperatingSystem.IsWindows())
         {
             var mode = File.GetUnixFileMode(fullPath);
-            var allowed = UnixFileMode.UserRead | UnixFileMode.UserWrite;
-            if (IsSystemdCredential(fullPath)) allowed |= UnixFileMode.GroupRead;
+            // Production secrets may be root-owned and projected to the service
+            // through a dedicated group (0440). Group write and all public bits
+            // remain forbidden.
+            var allowed = UnixFileMode.UserRead | UnixFileMode.UserWrite |
+                          UnixFileMode.GroupRead;
             if ((mode & ~allowed) != 0 || (mode & UnixFileMode.UserRead) == 0)
                 throw new InvalidOperationException(
                     "Protected content secret permissions are unsafe.");
