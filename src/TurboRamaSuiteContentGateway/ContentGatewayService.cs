@@ -90,6 +90,45 @@ public sealed class ContentGatewayService
         }
     }
 
+    public async Task<Uri> AuthorizeDirectAsync(
+        HttpContext context,
+        string grantId,
+        CancellationToken cancellationToken)
+    {
+        ValidateGrantId(grantId);
+        await _deploymentGuard.RequireReadyAsync(cancellationToken);
+        var bearer = ParseBearer(context.Request.Headers.Authorization);
+        var requestedRange = ParseRange(context.Request.Headers.Range);
+        var tokenDigest = _tokenHasher.Digest(bearer);
+        ClaimedContentGrantRecord? grant = null;
+        try
+        {
+            grant = await _store.ClaimDownloadGrantAsync(grantId, tokenDigest,
+                requestedRange, Now(), cancellationToken);
+            ValidateGrantMetadata(grant);
+            var ownETag = '"' + grant.Sha256 + '"';
+            ValidateIfRange(context.Request.Headers.IfRange, requestedRange, ownETag);
+            var uri = _keyRing.Decrypt(grant);
+            _upstream.ValidateUri(uri);
+            await TryFinalizeAsync(grantId, true, null);
+            return uri;
+        }
+        catch
+        {
+            if (grant is not null) await TryFinalizeAsync(grantId, false, "AUTHORIZATION_DENIED");
+            throw;
+        }
+        finally
+        {
+            if (grant is not null)
+            {
+                CryptographicOperations.ZeroMemory(grant.UpstreamUrlCiphertext);
+                CryptographicOperations.ZeroMemory(grant.UpstreamUrlNonce);
+                CryptographicOperations.ZeroMemory(grant.UpstreamUrlTag);
+            }
+        }
+    }
+
     private static TransferPlan ValidateUpstream(
         HttpResponseMessage response,
         ClaimedContentGrantRecord grant,

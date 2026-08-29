@@ -96,6 +96,59 @@ internal static class CatalogPublisher
         return 0;
     }
 
+    public static async Task<int> PublishDirectAsync(
+        PublisherOptions options, CancellationToken cancellationToken)
+    {
+        var policy = await OriginPolicy.LoadAsync(options.AllowedHostsPath!, cancellationToken);
+        using (var preflightKeyRing = await ContentKeyRing.LoadAsync(options.KeyRingPath!,
+                   cancellationToken))
+            await RequireGatewayKeyRingAsync(options.GatewayKeyRingReadinessUri!,
+                preflightKeyRing, policy, cancellationToken);
+        var catalog = await CatalogLoader.LoadAsync(options, policy, cancellationToken);
+        RequireProductionCardinality(catalog, options);
+        var probes = await ProbeAllAsync(catalog, policy, options.MaximumConcurrency,
+            cancellationToken);
+        if (probes.FatalFailures != 0) throw new PublisherFailure("PROBE_BATCH_BLOCKED");
+
+        var ready = catalog.Items.Where(item => probes.Probes.ContainsKey(item.ItemId))
+            .Select(item =>
+            {
+                var probe = probes.Probes[item.ItemId];
+                return new VerifiedItem(item.ItemId, item.DisplayOrder, probe.ContentLength,
+                    new string('0', 64), CatalogLoader.SafeFileName(item), item.DeclaredExtension,
+                    item.ExtractPolicy, probe.Etag, probe.LastModified, probe.ContentType);
+            }).ToArray();
+        var maintenanceIds = probes.MaintenanceItems
+            .Select(item => item.ItemId).ToHashSet(StringComparer.Ordinal);
+        var maintenance = catalog.Items.Where(item => maintenanceIds.Contains(item.ItemId))
+            .Select(item => new MaintenanceItem(item.ItemId, item.DisplayOrder,
+                MaintenanceReason)).ToArray();
+        var plan = new PublicationPlan(ready, maintenance);
+        RequireCompletePlan(catalog, plan);
+
+        var currentPolicy = await OriginPolicy.LoadAsync(options.AllowedHostsPath!,
+            cancellationToken);
+        if (!policy.HasSameDeploymentFingerprint(currentPolicy))
+            throw new PublisherFailure("ALLOWED_HOSTS_CHANGED_DURING_PUBLISH");
+        using var keyRing = await ContentKeyRing.LoadAsync(options.KeyRingPath!, cancellationToken);
+        await RequireGatewayKeyRingAsync(options.GatewayKeyRingReadinessUri!, keyRing,
+            currentPolicy, cancellationToken);
+        var connectionString = await ConnectionSecret.LoadAsync(options.ConnectionFilePath!,
+            cancellationToken);
+        var allowlistFingerprint = currentPolicy.CopyDeploymentFingerprint();
+        try
+        {
+            var allowlistFingerprintHex = Convert.ToHexString(allowlistFingerprint).ToLowerInvariant();
+            var catalogIdentity = CanonicalIdentity.CatalogIdentity(catalog, ready, maintenance,
+                keyRing.ActiveVersion, keyRing.KeySetFingerprint, allowlistFingerprintHex);
+            await PersistAsync(connectionString, catalog, plan, catalogIdentity, keyRing,
+                allowlistFingerprintHex, cancellationToken);
+            Console.WriteLine($"SUITE CONTENT DIRECT PUBLISH: OK total=850 ready={ready.Length} maintenance={maintenance.Length} catalog={catalogIdentity} urls=encrypted hashes=deferred-to-client");
+        }
+        finally { CryptographicOperations.ZeroMemory(allowlistFingerprint); }
+        return 0;
+    }
+
     private static async Task RequireGatewayKeyRingAsync(
         Uri readinessUri,
         ContentKeyRing keyRing,

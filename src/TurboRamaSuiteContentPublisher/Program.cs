@@ -24,6 +24,7 @@ internal static class Program
                 PublisherCommand.Validate => await CatalogPublisher.ValidateAsync(options, shutdown.Token),
                 PublisherCommand.Probe => await CatalogPublisher.ProbeAsync(options, shutdown.Token),
                 PublisherCommand.Publish => await CatalogPublisher.PublishAsync(options, shutdown.Token),
+                PublisherCommand.PublishDirect => await CatalogPublisher.PublishDirectAsync(options, shutdown.Token),
                 PublisherCommand.ReconcileEntitlements =>
                     await CatalogPublisher.ReconcileEntitlementsAsync(options, shutdown.Token),
                 _ => throw new PublisherFailure("COMMAND_INVALID")
@@ -49,7 +50,7 @@ internal static class Program
     }
 }
 
-internal enum PublisherCommand { Validate, Probe, Publish, ReconcileEntitlements }
+internal enum PublisherCommand { Validate, Probe, Publish, PublishDirect, ReconcileEntitlements }
 
 internal sealed record PublisherOptions(
     PublisherCommand Command,
@@ -74,6 +75,7 @@ internal sealed record PublisherOptions(
             "validate" => PublisherCommand.Validate,
             "probe" => PublisherCommand.Probe,
             "publish" => PublisherCommand.Publish,
+            "publish-direct" => PublisherCommand.PublishDirect,
             "reconcile-entitlements" => PublisherCommand.ReconcileEntitlements,
             _ => throw new PublisherFailure("COMMAND_INVALID")
         };
@@ -134,7 +136,7 @@ internal sealed record PublisherOptions(
             Require(options.ExpectedInventorySha256, "EXPECTED_INVENTORY_DIGEST_REQUIRED");
             Require(options.ExpectedVisualCatalogSha256, "EXPECTED_VISUAL_DIGEST_REQUIRED");
         }
-        if (command == PublisherCommand.Publish)
+        if (command is PublisherCommand.Publish or PublisherCommand.PublishDirect)
         {
             Require(options.JournalPath, "JOURNAL_PATH_REQUIRED");
             Require(options.KeyRingPath, "KEY_RING_PATH_REQUIRED");

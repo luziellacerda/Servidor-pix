@@ -208,8 +208,11 @@ app.MapGet("/v1/suite-content/artifacts/{grantId}", async (
             "Too many requests."), StrictJson.Options, statusCode: 429);
     try
     {
-        await context.RequestServices.GetRequiredService<ContentGatewayService>()
-            .StreamAsync(context, grantId, context.RequestAborted);
+        var directUri = await context.RequestServices.GetRequiredService<ContentGatewayService>()
+            .AuthorizeDirectAsync(context, grantId, context.RequestAborted);
+        context.Response.StatusCode = StatusCodes.Status307TemporaryRedirect;
+        context.Response.Headers.Location = directUri.AbsoluteUri;
+        context.Response.Headers.CacheControl = "no-store";
         return Results.Empty;
     }
     catch (SuiteException exception) when (!context.Response.HasStarted)
