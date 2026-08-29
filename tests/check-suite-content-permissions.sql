@@ -446,13 +446,13 @@ DELETE FROM suite.suite_challenges
 WHERE license_id='TS-CONTENT-RESUME-POS' AND nonce LIKE 'quota-%';
 
 -- Exercise the production invariant with one unavailable object.  A published
--- catalog is complete at 850 IDs, but only READY rows have descriptors/origins.
+-- catalog is complete at 902 IDs, but only READY rows have descriptors/origins.
 INSERT INTO suite.suite_content_snapshots(
   catalog_identity,catalog_sequence,inventory_sha256,visual_catalog_sha256,
   item_count,ready_item_count,maintenance_item_count,status,
   origin_active_key_version,origin_key_set_fingerprint,origin_allowlist_fingerprint)
 VALUES(repeat('c',64),(SELECT coalesce(max(catalog_sequence),0)+1
-  FROM suite.suite_content_snapshots),repeat('d',64),repeat('e',64),850,849,1,'STAGING',
+  FROM suite.suite_content_snapshots),repeat('d',64),repeat('e',64),902,901,1,'STAGING',
   1,repeat('1',64),repeat('2',64));
 
 INSERT INTO suite.suite_content_items(
@@ -461,11 +461,11 @@ INSERT INTO suite.suite_content_items(
 SELECT repeat('c',64),md5(position::text),position,'Jogo '||position,'NONE',md5(position::text),1,position,
   repeat('a',64),md5(position::text)||'.bin','.bin','NONE',repeat('c',64),repeat('b',64),
   'application/octet-stream','READY'
-FROM generate_series(1,849) AS generated(position);
+FROM generate_series(1,901) AS generated(position);
 
 INSERT INTO suite.suite_content_items(
   catalog_identity,item_id,display_order,display_name,visual_extract_policy,status,maintenance_reason)
-VALUES(repeat('c',64),md5('850'),850,'Jogo 850','NONE','MAINTENANCE','CONTENT_TEMPORARILY_UNAVAILABLE');
+VALUES(repeat('c',64),md5('902'),902,'Jogo 902','NONE','MAINTENANCE','CONTENT_TEMPORARILY_UNAVAILABLE');
 
 DO $$
 BEGIN
@@ -500,7 +500,7 @@ INSERT INTO suite.suite_content_snapshots(
   item_count,ready_item_count,maintenance_item_count,status,published_at,
   origin_active_key_version,origin_key_set_fingerprint,origin_allowlist_fingerprint)
 VALUES(repeat('f',64),(SELECT coalesce(max(catalog_sequence),0)+1
-  FROM suite.suite_content_snapshots),repeat('d',64),repeat('e',64),850,850,0,'STAGING',
+  FROM suite.suite_content_snapshots),repeat('d',64),repeat('e',64),902,902,0,'STAGING',
   NULL,1,repeat('1',64),repeat('2',64));
 INSERT INTO suite.suite_content_items(
   catalog_identity,item_id,display_order,display_name,visual_extract_policy,
@@ -531,7 +531,7 @@ DO $$
 DECLARE expected_policy varchar(24);
 BEGIN
   SELECT expected_extract_policy INTO expected_policy
-  FROM suite.get_suite_content_candidate_context(md5('850')::char(32),'AUTO_REPLACEMENT');
+  FROM suite.get_suite_content_candidate_context(md5('902')::char(32),'AUTO_REPLACEMENT');
   IF expected_policy<>'NONE' THEN
     RAISE EXCEPTION 'CONTENT_INITIAL_RECOVERY_VISUAL_POLICY_NOT_BOUND';
   END IF;
@@ -549,7 +549,7 @@ BEGIN
   WHERE i.catalog_identity=repeat('c',64);
   SELECT count(*) INTO origin_count FROM suite.suite_content_artifact_origins o
     WHERE o.catalog_identity=repeat('c',64);
-  IF total_count<>850 OR ready_count<>849 OR maintenance_count<>1 OR origin_count<>ready_count OR
+  IF total_count<>902 OR ready_count<>901 OR maintenance_count<>1 OR origin_count<>ready_count OR
      NOT EXISTS(SELECT 1 FROM suite.suite_content_catalog_state
        WHERE product_id='TURBORAMA_SUITE' AND active_catalog_identity=repeat('c',64)) THEN
     RAISE EXCEPTION 'CONTENT_MAINTENANCE_PUBLICATION_FAILED';
@@ -665,11 +665,11 @@ INSERT INTO suite.suite_content_origin_candidates(
   change_intent,expected_extract_policy,submitted_by,submitted_at,updated_at,
   internal_result_code)
 VALUES
-  (repeat('a',64),md5('850'),repeat('c',64),'retention-candidate-old-0001','REJECTED',
+  (repeat('a',64),md5('902'),repeat('c',64),'retention-candidate-old-0001','REJECTED',
    decode('01','hex'),decode(repeat('00',12),'hex'),decode(repeat('00',16),'hex'),1,
    'INITIAL_RECOVERY','NONE','content-admin',clock_timestamp()-interval '40 days',
    clock_timestamp()-interval '31 days','TERMINAL_UNAVAILABLE'),
-  (repeat('b',64),md5('850'),repeat('c',64),'retention-candidate-live-001','STAGED',
+  (repeat('b',64),md5('902'),repeat('c',64),'retention-candidate-live-001','STAGED',
    decode('01','hex'),decode(repeat('00',12),'hex'),decode(repeat('00',16),'hex'),1,
    'INITIAL_RECOVERY','NONE','content-admin',clock_timestamp()-interval '40 days',
    clock_timestamp()-interval '31 days','STAGED');

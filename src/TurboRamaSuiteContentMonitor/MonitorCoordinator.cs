@@ -77,7 +77,7 @@ internal sealed class MonitorCoordinator : IDisposable
             databaseStage = "SYNCHRONIZE_HEALTH";
             await store.SynchronizeHealthAsync(ct);
             databaseStage = "LOAD_TARGETS";
-            var targets = await store.GetDueHealthTargetsAsync(manualOnly ? 1 : 850,
+            var targets = await store.GetDueHealthTargetsAsync(manualOnly ? 1 : 902,
                 manualOnly, ct);
             databaseStage = "PROBE_HEALTH";
             var results = await ProbeHealthAsync(targets, ct);

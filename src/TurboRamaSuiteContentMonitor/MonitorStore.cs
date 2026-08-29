@@ -464,7 +464,7 @@ internal sealed class MonitorStore : IDisposable
                 reader.IsDBNull(16) ? null : (byte[])reader[16],
                 reader.IsDBNull(17) ? null : (byte[])reader[17],
                 reader.IsDBNull(18) ? null : reader.GetInt32(18)));
-        if (rows.Count != 850 || rows.Select(item => item.ItemId).Distinct(StringComparer.Ordinal).Count() != 850)
+        if (rows.Count != 902 || rows.Select(item => item.ItemId).Distinct(StringComparer.Ordinal).Count() != 902)
             throw new MonitorFailure("CATALOG_CARDINALITY_INVALID");
         return rows;
     }
@@ -492,7 +492,7 @@ internal sealed class MonitorStore : IDisposable
         var items = Transform(sourceItems, mutation);
         var readyCount = items.Count(item => item.Status == "READY");
         var maintenanceCount = items.Count - readyCount;
-        if (items.Count != 850 || readyCount + maintenanceCount != 850)
+        if (items.Count != 902 || readyCount + maintenanceCount != 902)
             throw new MonitorFailure("CATALOG_CARDINALITY_INVALID");
         if (HealthPolicy.OpensMassFailureGuard(maintenanceCount))
             throw new MonitorFailure("MASS_FAILURE_GUARD");
@@ -532,7 +532,7 @@ internal sealed class MonitorStore : IDisposable
               inventory_sha256,visual_catalog_sha256,item_count,ready_item_count,
               maintenance_item_count,status,origin_active_key_version,
               origin_key_set_fingerprint,origin_allowlist_fingerprint)
-            VALUES($1,$2,$3,$4,850,$5,$6,'STAGING',$7,$8,$9)
+            VALUES($1,$2,$3,$4,902,$5,$6,'STAGING',$7,$8,$9)
             """, connection, transaction))
         {
             snapshot.Parameters.AddWithValue(identity);
@@ -578,10 +578,16 @@ internal sealed class MonitorStore : IDisposable
                 insert.Parameters.AddWithValue(item.ItemId);
                 insert.Parameters.AddWithValue(item.DisplayOrder);
                 insert.Parameters.AddWithValue(item.ArtifactVersion!.Value);
-                insert.Parameters.Add(new NpgsqlParameter { NpgsqlDbType = NpgsqlDbType.Bigint,
-                    Value = DBNull.Value });
-                insert.Parameters.Add(new NpgsqlParameter { NpgsqlDbType = NpgsqlDbType.Char,
-                    Value = DBNull.Value });
+                insert.Parameters.Add(new NpgsqlParameter
+                {
+                    NpgsqlDbType = NpgsqlDbType.Bigint,
+                    Value = DBNull.Value
+                });
+                insert.Parameters.Add(new NpgsqlParameter
+                {
+                    NpgsqlDbType = NpgsqlDbType.Char,
+                    Value = DBNull.Value
+                });
                 insert.Parameters.AddWithValue(item.SafeFileName!);
                 insert.Parameters.AddWithValue(item.FileExtension!);
                 insert.Parameters.AddWithValue(item.ExtractPolicy!);
@@ -623,7 +629,7 @@ internal sealed class MonitorStore : IDisposable
             INSERT INTO suite.suite_content_publish_runs(run_id,catalog_identity,inventory_sha256,
               expected_item_count,published_item_count,ready_item_count,maintenance_item_count,
               outcome,detail_code)
-            VALUES($1,$2,$3,850,850,$4,$5,'PUBLISHED','CONTENT_MONITOR_PUBLISHED')
+            VALUES($1,$2,$3,902,902,$4,$5,'PUBLISHED','CONTENT_MONITOR_PUBLISHED')
             """, connection, transaction))
         {
             run.Parameters.AddWithValue(runId);

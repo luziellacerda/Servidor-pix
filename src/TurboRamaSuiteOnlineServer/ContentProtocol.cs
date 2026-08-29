@@ -22,7 +22,7 @@ public static class ContentProtocol
     public const string DownloadChallengeAssertionDomain = "TurboRamaSuiteOnlineAssertion/download-authorize-challenge/v1\0";
     public const int MaximumCatalogPageSize = 64;
     public const int MaximumCatalogResponseItems = 24;
-    public const int ExpectedProductionItemCount = 850;
+    public const int ExpectedProductionItemCount = 902;
     public const int MaximumSafeFileNameLength = 180;
     public const long MaximumContentLength = 512L * 1024 * 1024 * 1024;
 

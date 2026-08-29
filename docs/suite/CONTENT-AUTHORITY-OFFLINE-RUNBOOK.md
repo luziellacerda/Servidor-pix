@@ -121,7 +121,7 @@ private key is a client build input.
 
 Before public release, the canary must additionally verify that the server's configured content
 assertion `KeyId` equals the `contentAssertionKeyId` in this envelope, validate the TLS pin, read all
-850 signed catalog identities and authorize/stream a READY artifact. A mismatch disables content
+902 signed catalog identities and authorize/stream a READY artifact. A mismatch disables content
 routes; it must never fall back to the licensing key.
 
 ## Rotation and recovery

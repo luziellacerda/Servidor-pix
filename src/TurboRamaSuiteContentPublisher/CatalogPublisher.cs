@@ -39,7 +39,7 @@ internal static class CatalogPublisher
         }
         if (fatal != 0) throw new PublisherFailure("CATALOG_VALIDATION_BLOCKED");
         RequireMaintenanceBelowMassFailureThreshold(maintenance.Count);
-        Console.WriteLine($"SUITE CONTENT VALIDATION: OK items=850 maintenance_candidates={maintenance.Count} rejected_extras=2 urls=private");
+        Console.WriteLine($"SUITE CONTENT VALIDATION: OK items=902 maintenance_candidates={maintenance.Count} rejected_extras=0 urls=private");
         return 0;
     }
 
@@ -51,7 +51,7 @@ internal static class CatalogPublisher
         var batch = await ProbeAllAsync(catalog, policy, options.MaximumConcurrency, cancellationToken);
         if (batch.FatalFailures != 0) throw new PublisherFailure("PROBE_BATCH_BLOCKED");
         var bytes = batch.Probes.Values.Aggregate(0L, (total, item) => checked(total + item.ContentLength));
-        Console.WriteLine($"SUITE CONTENT PROBE: OK total=850 ready={batch.Probes.Count} maintenance={batch.MaintenanceItems.Count} ready_bytes={bytes} urls=private");
+        Console.WriteLine($"SUITE CONTENT PROBE: OK total=902 ready={batch.Probes.Count} maintenance={batch.MaintenanceItems.Count} ready_bytes={bytes} urls=private");
         return 0;
     }
 
@@ -91,7 +91,7 @@ internal static class CatalogPublisher
                 allowlistFingerprintHex);
             await PersistAsync(connectionString, catalog, plan, catalogIdentity, keyRing,
                 allowlistFingerprintHex, cancellationToken);
-            Console.WriteLine($"SUITE CONTENT PUBLISH: OK total=850 ready={plan.ReadyItems.Count} maintenance={plan.MaintenanceItems.Count} catalog={catalogIdentity} urls=encrypted");
+            Console.WriteLine($"SUITE CONTENT PUBLISH: OK total=902 ready={plan.ReadyItems.Count} maintenance={plan.MaintenanceItems.Count} catalog={catalogIdentity} urls=encrypted");
         }
         finally { CryptographicOperations.ZeroMemory(allowlistFingerprint); }
         return 0;
@@ -144,7 +144,7 @@ internal static class CatalogPublisher
                 keyRing.ActiveVersion, keyRing.KeySetFingerprint, allowlistFingerprintHex);
             await PersistAsync(connectionString, catalog, plan, catalogIdentity, keyRing,
                 allowlistFingerprintHex, cancellationToken);
-            Console.WriteLine($"SUITE CONTENT DIRECT PUBLISH: OK total=850 ready={ready.Length} maintenance={maintenance.Length} catalog={catalogIdentity} urls=encrypted hashes=deferred-to-client");
+            Console.WriteLine($"SUITE CONTENT DIRECT PUBLISH: OK total=902 ready={ready.Length} maintenance={maintenance.Length} catalog={catalogIdentity} urls=encrypted hashes=deferred-to-client");
         }
         finally { CryptographicOperations.ZeroMemory(allowlistFingerprint); }
         return 0;
@@ -233,16 +233,16 @@ internal static class CatalogPublisher
 
     private static void RequireProductionCardinality(PreparedCatalog catalog, PublisherOptions options)
     {
-        if (options.ExpectedItemCount != 850 || options.ExpectedRejectedExtraCount != 2 ||
-            catalog.Items.Count != 850 || catalog.RejectedExtraCount != 2)
-            throw new PublisherFailure("PRODUCTION_CATALOG_REQUIRES_850_ITEMS");
+        if (options.ExpectedItemCount != 902 || options.ExpectedRejectedExtraCount != 0 ||
+            catalog.Items.Count != 902 || catalog.RejectedExtraCount != 0)
+            throw new PublisherFailure("PRODUCTION_CATALOG_REQUIRES_902_ITEMS");
     }
 
     private static void RequireCompletePlan(PreparedCatalog catalog, PublicationPlan plan)
     {
         var identities = plan.ReadyItems.Select(item => item.ItemId)
             .Concat(plan.MaintenanceItems.Select(item => item.ItemId)).ToArray();
-        if (identities.Length != 850 || identities.Distinct(StringComparer.Ordinal).Count() != 850 ||
+        if (identities.Length != 902 || identities.Distinct(StringComparer.Ordinal).Count() != 902 ||
             identities.Except(catalog.Items.Select(item => item.ItemId), StringComparer.Ordinal).Any() ||
             catalog.Items.Select(item => item.ItemId).Except(identities, StringComparer.Ordinal).Any())
             throw new PublisherFailure("PUBLICATION_PLAN_INCOMPLETE");
@@ -300,17 +300,17 @@ internal static class CatalogPublisher
                     probes.TryRemove(item.ItemId, out _);
                     Interlocked.Add(ref fatalCount, fatal.Length);
                     foreach (var code in distinct)
-                        Console.Error.WriteLine($"PROBE {count}/850 item={item.ItemId} state=blocked code={code}");
+                        Console.Error.WriteLine($"PROBE {count}/902 item={item.ItemId} state=blocked code={code}");
                 }
                 else if (distinct.Length != 0)
                 {
                     probes.TryRemove(item.ItemId, out _);
                     maintenance[item.ItemId] = new MaintenanceItem(item.ItemId, item.DisplayOrder, MaintenanceReason);
                     foreach (var code in distinct)
-                        Console.Error.WriteLine($"PROBE {count}/850 item={item.ItemId} state=maintenance code={code}");
+                        Console.Error.WriteLine($"PROBE {count}/902 item={item.ItemId} state=maintenance code={code}");
                 }
                 else
-                    Console.WriteLine($"PROBE {count}/850 item={item.ItemId} state=ready bytes={probes[item.ItemId].ContentLength}");
+                    Console.WriteLine($"PROBE {count}/902 item={item.ItemId} state=ready bytes={probes[item.ItemId].ContentLength}");
             });
         if (maintenance.Count > MaximumMaintenanceItems)
         {
@@ -318,9 +318,9 @@ internal static class CatalogPublisher
             Console.Error.WriteLine($"PROBE item=batch state=blocked code=MASS_FAILURE_GUARD_TRIGGERED maintenance={maintenance.Count} maximum={MaximumMaintenanceItems}");
         }
         if (fatalCount != 0)
-            Console.Error.WriteLine($"PROBE SUMMARY: blocked fatal_failures={fatalCount} ready={probes.Count} maintenance={maintenance.Count} required=850");
+            Console.Error.WriteLine($"PROBE SUMMARY: blocked fatal_failures={fatalCount} ready={probes.Count} maintenance={maintenance.Count} required=902");
         else
-            Console.WriteLine($"PROBE SUMMARY: complete ready={probes.Count} maintenance={maintenance.Count} required=850");
+            Console.WriteLine($"PROBE SUMMARY: complete ready={probes.Count} maintenance={maintenance.Count} required=902");
         return new ProbeBatch(probes, maintenance.Values.ToArray(), fatalCount);
     }
 
@@ -434,7 +434,7 @@ internal static class CatalogPublisher
                     var count = reader.GetInt32(1);
                     var readyCount = reader.GetInt32(2);
                     var maintenanceCount = reader.GetInt32(3);
-                    if (status != "PUBLISHED" || count != 850 || readyCount != plan.ReadyItems.Count ||
+                    if (status != "PUBLISHED" || count != 902 || readyCount != plan.ReadyItems.Count ||
                         maintenanceCount != plan.MaintenanceItems.Count || reader.IsDBNull(4) ||
                         reader.GetInt32(4) != keyRing.ActiveVersion || reader.IsDBNull(5) ||
                         !CatalogLoader.FixedAscii(reader.GetString(5), keyRing.KeySetFingerprint) ||
@@ -458,7 +458,7 @@ internal static class CatalogPublisher
                 INSERT INTO suite.suite_content_snapshots(catalog_identity,catalog_sequence,inventory_sha256,
                   visual_catalog_sha256,item_count,ready_item_count,maintenance_item_count,status,
                   origin_active_key_version,origin_key_set_fingerprint,origin_allowlist_fingerprint)
-                VALUES($1,$2,$3,$4,850,$5,$6,'STAGING',$7,$8,$9)
+                VALUES($1,$2,$3,$4,902,$5,$6,'STAGING',$7,$8,$9)
                 """, connection, transaction))
             {
                 snapshot.Parameters.AddWithValue(catalogIdentity);
@@ -510,10 +510,16 @@ internal static class CatalogPublisher
                     insert.Parameters.AddWithValue(catalogIdentity);
                     insert.Parameters.AddWithValue(item.ItemId);
                     insert.Parameters.AddWithValue(item.DisplayOrder);
-                    insert.Parameters.Add(new NpgsqlParameter { NpgsqlDbType = NpgsqlDbType.Bigint,
-                        Value = DBNull.Value });
-                    insert.Parameters.Add(new NpgsqlParameter { NpgsqlDbType = NpgsqlDbType.Char,
-                        Value = DBNull.Value });
+                    insert.Parameters.Add(new NpgsqlParameter
+                    {
+                        NpgsqlDbType = NpgsqlDbType.Bigint,
+                        Value = DBNull.Value
+                    });
+                    insert.Parameters.Add(new NpgsqlParameter
+                    {
+                        NpgsqlDbType = NpgsqlDbType.Char,
+                        Value = DBNull.Value
+                    });
                     insert.Parameters.AddWithValue(item.SafeFileName);
                     insert.Parameters.AddWithValue(item.FileExtension);
                     insert.Parameters.AddWithValue(item.ExtractPolicy);
@@ -543,7 +549,7 @@ internal static class CatalogPublisher
             await using (var run = new NpgsqlCommand("""
                 INSERT INTO suite.suite_content_publish_runs(run_id,catalog_identity,inventory_sha256,
                   expected_item_count,published_item_count,ready_item_count,maintenance_item_count,outcome,detail_code)
-                VALUES($1,$2,$3,850,850,$4,$5,'PUBLISHED','READY_HASHED_MAINTENANCE_WITHOUT_ORIGIN')
+                VALUES($1,$2,$3,902,902,$4,$5,'PUBLISHED','READY_HASHED_MAINTENANCE_WITHOUT_ORIGIN')
                 ON CONFLICT(catalog_identity,inventory_sha256) DO NOTHING
                 """, connection, transaction))
             {

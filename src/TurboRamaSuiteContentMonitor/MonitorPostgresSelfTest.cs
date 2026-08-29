@@ -34,7 +34,7 @@ internal static class MonitorPostgresSelfTest
               maintenance_item_count,status,origin_active_key_version,
               origin_key_set_fingerprint,origin_allowlist_fingerprint)
             VALUES($1,(SELECT coalesce(max(catalog_sequence),0)+1
-              FROM suite.suite_content_snapshots),$2,$3,850,0,850,'STAGING',1,$4,$5);
+              FROM suite.suite_content_snapshots),$2,$3,902,0,902,'STAGING',1,$4,$5);
             INSERT INTO suite.suite_content_origin_candidates(candidate_id,product_id,item_id,
               base_catalog_identity,request_id,state,upstream_url_ciphertext,
               upstream_url_nonce,upstream_url_tag,key_version,change_intent,
@@ -82,9 +82,9 @@ internal static class MonitorPostgresSelfTest
               origin_key_set_fingerprint,origin_allowlist_fingerprint)
             VALUES
               ($1,(SELECT coalesce(max(catalog_sequence),0)+1 FROM suite.suite_content_snapshots),
-               $3,$4,850,850,0,'STAGING',NULL,1,$5,$6),
+               $3,$4,902,902,0,'STAGING',NULL,1,$5,$6),
               ($2,(SELECT coalesce(max(catalog_sequence),0)+2 FROM suite.suite_content_snapshots),
-               $3,$4,850,850,0,'STAGING',NULL,1,$5,$6);
+               $3,$4,902,902,0,'STAGING',NULL,1,$5,$6);
             INSERT INTO suite.suite_content_items(catalog_identity,item_id,display_order,
               display_name,visual_extract_policy,artifact_id,artifact_version,content_length,
               sha256,safe_file_name,file_extension,extract_policy,manifest_identity,
@@ -147,9 +147,9 @@ internal static class MonitorPostgresSelfTest
               origin_key_set_fingerprint,origin_allowlist_fingerprint)
             VALUES
               ($1,(SELECT coalesce(max(catalog_sequence),0)+1 FROM suite.suite_content_snapshots),
-               $3,$4,850,850,0,'STAGING',NULL,1,$5,$6),
+               $3,$4,902,902,0,'STAGING',NULL,1,$5,$6),
               ($2,(SELECT coalesce(max(catalog_sequence),0)+2 FROM suite.suite_content_snapshots),
-               $3,$4,850,850,0,'STAGING',NULL,1,$5,$6);
+               $3,$4,902,902,0,'STAGING',NULL,1,$5,$6);
             INSERT INTO suite.suite_content_items(catalog_identity,item_id,display_order,
               display_name,visual_extract_policy,artifact_id,artifact_version,content_length,
               sha256,safe_file_name,file_extension,extract_policy,manifest_identity,

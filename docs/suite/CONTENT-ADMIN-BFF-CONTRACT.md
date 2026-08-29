@@ -101,7 +101,7 @@ falha. Sem ETag forte vinculado ao corpo — inclusive quando existe apenas Last
 vencidos por ciclo recebem revalidação integral de assinatura, tamanho e SHA-256 a cada sete dias;
 Last-Modified é somente um sinal rápido. Falhas de segurança preservam o snapshot e geram alerta crítico.
 Recuperação ocorre somente após candidato integralmente validado; um probe rápido nunca restaura item.
-A publicação clona exatamente 850 IDs, recriptografa as origens READY com o novo AAD e troca o snapshot
+A publicação clona exatamente 902 IDs, recriptografa as origens READY com o novo AAD e troca o snapshot
 por `suite.publish_suite_content_catalog` na mesma transação.
 
 O candidato mantém heartbeat de lease durante todo probe/hash/publicação e cada transição usa CAS do

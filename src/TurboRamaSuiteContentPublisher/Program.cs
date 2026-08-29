@@ -113,8 +113,8 @@ internal sealed record PublisherOptions(
             Value("connection-file", "SUITE_CONTENT_PUBLISHER_CONNECTION_FILE"),
             Value("expected-inventory-sha256", "SUITE_CONTENT_EXPECTED_INVENTORY_SHA256"),
             Value("expected-visual-sha256", "SUITE_CONTENT_EXPECTED_VISUAL_SHA256"),
-            850,
-            2,
+            902,
+            0,
             Number("max-concurrency", 2, 1, 4));
 
         var known = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
