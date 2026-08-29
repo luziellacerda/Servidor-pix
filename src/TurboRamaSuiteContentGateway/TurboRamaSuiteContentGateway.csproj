@@ -6,6 +6,9 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <InvariantGlobalization>false</InvariantGlobalization>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <!-- The referenced control-plane project contributes its own Web SDK content
+         files. The gateway owns the publish-root appsettings and lock file. -->
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../TurboRamaSuiteOnlineServer/TurboRamaSuiteOnlineServer.csproj" />
