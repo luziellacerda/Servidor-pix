@@ -313,6 +313,11 @@ sealed class ContentManagementRuntime : IDisposable
             Console.Error.WriteLine("SUITE CONTENT ADMIN: READINESS_STATE_INVALID");
             return false;
         }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"SUITE CONTENT ADMIN: READINESS_EXCEPTION_{ex.GetType().Name}");
+            return false;
+        }
     }
 
     internal static bool ReadinessChecksMutationPrivilegesForSelfTest()
