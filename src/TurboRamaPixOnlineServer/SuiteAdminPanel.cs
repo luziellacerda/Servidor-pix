@@ -173,6 +173,7 @@ static class SuiteAdminPanel
                 RequireItemConfirmation(form, itemId);
                 RequireStepUp(admin, ContentPassword(form, "adminPassword"));
                 proof = proof with { StepUpAt = DateTimeOffset.UtcNow.ToUnixTimeSeconds() };
+                var checkStarted = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 _ = await bff.CheckContentAsync(proof, itemId, RequestId(), ct);
                 if (form["returnTo"].ToString() == "health")
                     return Results.Redirect("/admin/suite/content/health" + QueryString.Create(
@@ -180,8 +181,7 @@ static class SuiteAdminPanel
                         {
                             ["ok"] = "VERIFICACAO_ENFILEIRADA",
                             ["testing"] = itemId,
-                            ["started"] = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
-                                .ToString(CultureInfo.InvariantCulture)
+                            ["started"] = checkStarted.ToString(CultureInfo.InvariantCulture)
                         }).ToUriComponent());
                 return ContentRedirect(ok: "VERIFICACAO_ENFILEIRADA", manage: itemId);
             }
@@ -538,7 +538,7 @@ static class SuiteAdminPanel
         var validTestingStarted = long.TryParse(testingStarted, NumberStyles.None,
             CultureInfo.InvariantCulture, out var startedUnix) &&
             startedUnix <= DateTimeOffset.UtcNow.ToUnixTimeSeconds() &&
-            startedUnix >= DateTimeOffset.UtcNow.AddHours(-1).ToUnixTimeSeconds()
+            startedUnix >= DateTimeOffset.UtcNow.AddMinutes(-2).ToUnixTimeSeconds()
             ? DateTimeOffset.FromUnixTimeSeconds(startedUnix) : (DateTimeOffset?)null;
         var online = page.Items.Count(item => item.Availability == "ONLINE");
         var offline = page.Items.Count - online;
@@ -589,12 +589,13 @@ static class SuiteAdminPanel
                 .Append(isOnline ? "online" : "state-maintenance").Append("'>")
                 .Append(isOnline ? "ONLINE" : "OFF / MANUTENÇÃO").Append("</span></td><td>")
                 .Append(E(item.LastCheckedAt ?? "Nunca")).Append("</td><td><span class=health-result>")
-                .Append(isTesting ? "TESTANDO_1_BYTE" : E(item.LastResultCode)).Append("</span></td><td><span class='range-state ")
+                .Append(isTesting ? "TESTANDO" : item.LastResultCode == "CHECK_OK"
+                    ? "OK — DADOS RECEBIDOS" : E(item.LastResultCode)).Append("</span></td><td><span class='range-state ")
                 .Append(item.LastResultCode == "CHECK_OK" ? "range-ok" : "range-pending").Append("'>").Append(E(range)).Append("</span>")
                 .Append("</td><td>").Append(item.ArtifactVersion?.ToString(CultureInfo.InvariantCulture) ?? "—")
                 .Append("</td><td><div class=health-actions>");
             if (isTesting)
-                html.Append("<span class=health-testing><i></i>Testando 1 byte…</span>");
+                html.Append("<span class=health-testing><i></i>Testando…</span>");
             else if (canCheck)
                 html.Append("<details class=health-test><summary>Testar dados</summary>")
                     .Append("<form method=post action=/admin/suite/content/actions/check autocomplete=off>")

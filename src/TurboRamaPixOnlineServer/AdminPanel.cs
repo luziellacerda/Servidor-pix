@@ -899,7 +899,7 @@ body:has(.app-modal[open]){overflow:hidden}
   }
 
   if (document.querySelector("[data-health-pending]"))
-    window.setTimeout(() => window.location.reload(), 3000);
+    window.setTimeout(() => window.location.reload(), 2000);
 
   for (const button of document.querySelectorAll("button[data-force-submit]")) {
     button.addEventListener("click", event => {
