@@ -298,8 +298,21 @@ sealed class ContentManagementRuntime : IDisposable
             return checks.All(value => value);
         }
         catch (OperationCanceledException) when (!ct.IsCancellationRequested) { return false; }
-        catch (NpgsqlException) { return false; }
-        catch (InvalidOperationException) { return false; }
+        catch (PostgresException ex)
+        {
+            Console.Error.WriteLine($"SUITE CONTENT ADMIN: READINESS_DATABASE_{ex.SqlState}");
+            return false;
+        }
+        catch (NpgsqlException ex)
+        {
+            Console.Error.WriteLine($"SUITE CONTENT ADMIN: READINESS_DRIVER_{ex.GetType().Name}");
+            return false;
+        }
+        catch (InvalidOperationException)
+        {
+            Console.Error.WriteLine("SUITE CONTENT ADMIN: READINESS_STATE_INVALID");
+            return false;
+        }
     }
 
     internal static bool ReadinessChecksMutationPrivilegesForSelfTest()
