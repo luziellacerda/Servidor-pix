@@ -679,7 +679,7 @@ static class SuiteAdminPanel
 
     private static string? AllowedOk(string value) => value switch
     {
-        "VERIFICACAO_ENFILEIRADA" => "Verificação agendada. O worker executará a validação protegida.",
+        "VERIFICACAO_ENFILEIRADA" => "Teste de 1 byte agendado. O worker lê uma amostra mínima e fecha a conexão.",
         "SUBSTITUICAO_ENFILEIRADA" => "URL candidata recebida e cifrada. A publicação depende da validação integral.",
         "NOVA_VERSAO_ENFILEIRADA" => "Nova versão recebida e cifrada. Nada foi publicado antes da validação.",
         _ => null
