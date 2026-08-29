@@ -234,25 +234,31 @@ sealed class ContentManagementRuntime : IDisposable
 
     public static async Task<ContentManagementRuntime> LoadAsync(CancellationToken cancellationToken)
     {
+        var stage = "CONFIGURATION";
         var connectionPath = Required("SUITE_CONTENT_ADMIN_CONNECTION_FILE");
         var keyRingPath = ProtectedPath("SUITE_CONTENT_ADMIN_CANDIDATE_KEYRING_FILE",
             "SUITE_CONTENT_ADMIN_CANDIDATE_KEYRING_CREDENTIAL");
         var allowedHostsPath = ProtectedPath("SUITE_CONTENT_ADMIN_ALLOWED_HOSTS_FILE",
             "SUITE_CONTENT_ADMIN_ALLOWED_HOSTS_CREDENTIAL");
+        stage = "CONNECTION_FILE";
         var connection = await ContentAdminProtectedFile.ReadTextAsync(connectionPath, 16 * 1024,
             cancellationToken);
         ContentCandidateProtector? protector = null;
         try
         {
+            stage = "CONNECTION_ROLE";
             var parsed = new NpgsqlConnectionStringBuilder(connection);
             if (!string.Equals(parsed.Username, "turborama-suite-content-admin",
                     StringComparison.Ordinal))
                 throw new InvalidOperationException();
+            stage = "PROTECTOR";
             protector = await ContentCandidateProtector.LoadAsync(keyRingPath,
                 allowedHostsPath, cancellationToken);
+            stage = "DATASOURCE";
             var dataSource = NpgsqlDataSource.Create(connection);
             connection = string.Empty;
             var runtime = new ContentManagementRuntime(dataSource, protector);
+            stage = "DATABASE_READINESS";
             if (!await runtime.IsReadyAsync(cancellationToken))
             {
                 runtime.Dispose();
@@ -269,6 +275,7 @@ sealed class ContentManagementRuntime : IDisposable
         }
         catch
         {
+            Console.Error.WriteLine($"SUITE CONTENT ADMIN: INIT_FAILED stage={stage}");
             protector?.Dispose();
             connection = string.Empty;
             throw new InvalidOperationException("Content administration configuration is invalid.");
