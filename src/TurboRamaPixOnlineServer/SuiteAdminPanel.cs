@@ -3,6 +3,7 @@ using System.Net;
 using System.Security;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 using Microsoft.AspNetCore.Antiforgery;
 
 static class SuiteAdminPanel
@@ -129,7 +130,7 @@ static class SuiteAdminPanel
                 return Html(ContentUnavailable("LIMITE_ATINGIDO"), 429);
             try
             {
-                var page = await bff.ContentItemsAsync(proof, query!.Cursor, 100,
+                var page = await bff.ContentItemsAsync(proof, query!.Cursor, 850,
                     query.Availability, query.ResultCode, null, query.ItemPrefix,
                     query.Name, ct);
                 var token = antiforgery.GetAndStoreTokens(context).RequestToken ?? "";
@@ -534,16 +535,24 @@ static class SuiteAdminPanel
         ContentPageQuery query, string token, string ok, string error, bool canCheck,
         string testingItem, string testingStarted)
     {
+        var categories = VisualCategories.Value;
+        var categorizedItems = page.Items.Select(item => (Item: item,
+            Category: categories.TryGetValue(item.ItemId, out var category)
+                ? category : VisualCategory.Other)).ToArray();
+        var visibleItems = categorizedItems
+            .Where(entry => query.Platform is null || entry.Category.Id == query.Platform)
+            .OrderBy(entry => entry.Category.Order).ThenBy(entry => entry.Item.DisplayName,
+                StringComparer.CurrentCultureIgnoreCase).ToArray();
         var validTestingItem = IsHex(testingItem, 32) ? testingItem : "";
         var validTestingStarted = long.TryParse(testingStarted, NumberStyles.None,
             CultureInfo.InvariantCulture, out var startedUnix) &&
             startedUnix <= DateTimeOffset.UtcNow.ToUnixTimeSeconds() &&
             startedUnix >= DateTimeOffset.UtcNow.AddMinutes(-2).ToUnixTimeSeconds()
             ? DateTimeOffset.FromUnixTimeSeconds(startedUnix) : (DateTimeOffset?)null;
-        var online = page.Items.Count(item => item.Availability == "ONLINE");
-        var offline = page.Items.Count - online;
-        var checkedItems = page.Items.Count(item => item.LastCheckedAt is not null);
-        var rangeOk = page.Items.Count(item => item.LastResultCode == "CHECK_OK");
+        var online = visibleItems.Count(entry => entry.Item.Availability == "ONLINE");
+        var offline = visibleItems.Length - online;
+        var checkedItems = visibleItems.Count(entry => entry.Item.LastCheckedAt is not null);
+        var rangeOk = visibleItems.Count(entry => entry.Item.LastResultCode == "CHECK_OK");
         var html = new StringBuilder("<div class=health-dashboard><section class='scope-banner health-hero'><div><span class=eyebrow>MONITOR DE ORIGENS</span>")
             .Append("<h2>Saúde dos links</h2><p>Diagnóstico separado do gerenciamento. ")
             .Append("Nenhuma URL é exibida e nenhum jogo completo é transferido pelo servidor.</p></div>")
@@ -554,14 +563,19 @@ static class SuiteAdminPanel
             html.Append("<div class='notice success'>").Append(E(success))
                 .Append(" Atualize os dados em alguns instantes para ver o resultado.</div>");
         html.Append("<section class='summary health-summary'><article><span class=metric-icon>PG</span><small>ITENS EXIBIDOS</small><strong>")
-            .Append(page.Items.Count).Append("</strong><span>Página atual</span></article><article class=health-online><span class=metric-icon>ON</span><small>LINKS ONLINE</small><strong>")
+            .Append(visibleItems.Length).Append("</strong><span>Seleção atual</span></article><article class=health-online><span class=metric-icon>ON</span><small>LINKS ONLINE</small><strong>")
             .Append(online).Append("</strong><span>Disponíveis agora</span></article><article class=health-offline><span class=metric-icon>OF</span><small>PRECISAM DE ATENÇÃO</small><strong>")
             .Append(offline).Append("</strong><span>Offline ou manutenção</span></article><article class=health-range><span class=metric-icon>RG</span><small>RANGE VALIDADO</small><strong>")
             .Append(rangeOk).Append("/").Append(checkedItems).Append("</strong></article></section>")
             .Append("<section class='panel health-controls'><div class=section-title><div><span class=eyebrow>LOCALIZAR</span><h2>Filtros de diagnóstico</h2></div><a class='button ghost' href=/admin/suite/content/health>Limpar filtros</a></div>")
             .Append("<form method=get action=/admin/suite/content/health class=health-filter autocomplete=off>")
             .Append("<label>Jogo<input name=name maxlength=100 value='").Append(E(query.Name))
-            .Append("' placeholder='Buscar pelo título'></label><label>Estado<select name=availability>")
+            .Append("' placeholder='Buscar pelo título'></label><label>Plataforma<select name=platform>")
+            .Append(Option("", "Todas as plataformas", query.Platform));
+        foreach (var category in categorizedItems.Select(entry => entry.Category).DistinctBy(value => value.Id)
+                     .OrderBy(value => value.Order))
+            html.Append(Option(category.Id, category.Name, query.Platform));
+        html.Append("</select></label><label>Estado<select name=availability>")
             .Append(Option("", "Todos", query.Availability)).Append(Option("ONLINE", "Online", query.Availability))
             .Append(Option("EM_MANUTENCAO", "Offline / manutenção", query.Availability))
             .Append("</select></label><label>Resultado<input name=resultCode maxlength=64 value='")
@@ -573,8 +587,18 @@ static class SuiteAdminPanel
             .Append("<div class=table-wrap><table class='audit-table health-table'><thead><tr><th>Jogo</th><th>Estado</th>")
             .Append("<th>Última verificação</th><th>Resultado</th><th>Retomada Range</th><th>Versão</th><th>Ação</th>")
             .Append("</tr></thead><tbody>");
-        foreach (var item in page.Items)
+        string? currentCategory = null;
+        foreach (var entry in visibleItems)
         {
+            var item = entry.Item;
+            if (currentCategory != entry.Category.Id)
+            {
+                currentCategory = entry.Category.Id;
+                html.Append("<tr class=platform-row><th colspan=7><span>")
+                    .Append(E(entry.Category.Name)).Append("</span><small>")
+                    .Append(visibleItems.Count(value => value.Category.Id == currentCategory))
+                    .Append(" itens</small></th></tr>");
+            }
             var isOnline = item.Availability == "ONLINE";
             var checkedAfterRequest = validTestingStarted is not null &&
                 DateTimeOffset.TryParse(item.LastCheckedAt, CultureInfo.InvariantCulture,
@@ -608,7 +632,7 @@ static class SuiteAdminPanel
             html.Append("<a class='button ghost' href='/admin/suite/content?manage=")
                 .Append(E(item.ItemId)).Append("'>Gerenciar</a></div></td></tr>");
         }
-        if (page.Items.Count == 0)
+        if (visibleItems.Length == 0)
             html.Append("<tr><td colspan=7>Nenhum link corresponde aos filtros.</td></tr>");
         html.Append("</tbody></table></div><div class=top-actions><a class='button ghost' href=/admin/suite/content/health>Primeira página</a>");
         if (page.NextCursor is not null)
@@ -679,6 +703,7 @@ static class SuiteAdminPanel
             ["auditCursor"] = auditCursor ?? query.AuditCursor,
             ["availability"] = query.Availability,
             ["resultCode"] = query.ResultCode,
+            ["platform"] = query.Platform,
             ["jobState"] = query.JobState,
             ["item"] = query.ItemPrefix,
             ["name"] = query.Name,
@@ -695,6 +720,7 @@ static class SuiteAdminPanel
             ["cursor"] = cursor ?? query.Cursor,
             ["availability"] = query.Availability,
             ["resultCode"] = query.ResultCode,
+            ["platform"] = query.Platform,
             ["item"] = query.ItemPrefix,
             ["name"] = query.Name
         };
@@ -778,7 +804,7 @@ static class SuiteAdminPanel
         var item = new SuiteContentItem(new string('a', 32), "Jogo <Teste> & Seguro", "ONLINE",
             7, "2026-08-29T00:00:00Z", "CHECK_OK", null, null, null);
         var page = ContentPage(new([item], null), new([], null),
-            new ContentPageQuery(null, null, null, null, null, null, item.ItemId, null),
+            new ContentPageQuery(null, null, null, null, null, null, item.ItemId, null, null),
             "csrf-test", "", "", true, true, true);
         var postForms = new[] { "/actions/check", "/actions/replace", "/actions/version" };
         return !page.Contains(marker, StringComparison.Ordinal) &&
@@ -802,10 +828,42 @@ static class SuiteAdminPanel
             AllowedOk(secret) is null && rejected == "/admin/suite/content" &&
             !rejected.Contains(secret, StringComparison.Ordinal);
     }
+
+    private static readonly Lazy<IReadOnlyDictionary<string, VisualCategory>> VisualCategories =
+        new(LoadVisualCategories, LazyThreadSafetyMode.ExecutionAndPublication);
+
+    private static IReadOnlyDictionary<string, VisualCategory> LoadVisualCategories()
+    {
+        const string path = "/opt/turborama-suite-content-publisher/catalog.visual.json";
+        try
+        {
+            using var stream = File.OpenRead(path);
+            using var document = JsonDocument.Parse(stream, new JsonDocumentOptions { MaxDepth = 16 });
+            var names = document.RootElement.GetProperty("categories").EnumerateArray()
+                .ToDictionary(value => value.GetProperty("id").GetString()!, value => new VisualCategory(
+                    value.GetProperty("id").GetString()!, value.GetProperty("displayName").GetString()!,
+                    value.GetProperty("order").GetInt32()), StringComparer.Ordinal);
+            return document.RootElement.GetProperty("items").EnumerateArray().ToDictionary(
+                value => value.GetProperty("id").GetString()!,
+                value => names.GetValueOrDefault(value.GetProperty("categoryId").GetString()!,
+                    VisualCategory.Other), StringComparer.Ordinal);
+        }
+        catch (Exception exception) when (exception is IOException or UnauthorizedAccessException or
+            JsonException or InvalidOperationException or KeyNotFoundException)
+        {
+            return new Dictionary<string, VisualCategory>(StringComparer.Ordinal);
+        }
+    }
+
+    private sealed record VisualCategory(string Id, string Name, int Order)
+    {
+        public static readonly VisualCategory Other = new("other", "Outros", int.MaxValue);
+    }
 }
 
 sealed record ContentPageQuery(string? Cursor, string? AuditCursor, string? Availability,
-    string? ResultCode, string? JobState, string? ItemPrefix, string? ManageItem, string? Name)
+    string? ResultCode, string? JobState, string? ItemPrefix, string? ManageItem, string? Name,
+    string? Platform)
 {
     public static bool TryParse(IQueryCollection values, out ContentPageQuery? query)
     {
@@ -828,13 +886,16 @@ sealed record ContentPageQuery(string? Cursor, string? AuditCursor, string? Avai
         var item = Empty(values["item"].ToString());
         var manage = Empty(values["manage"].ToString());
         var name = Empty(values["name"].ToString());
+        var platform = Empty(values["platform"].ToString());
         if (!Cursor(cursor) || !Cursor(auditCursor) ||
             availability is not (null or "ONLINE" or "EM_MANUTENCAO") ||
             !Code(result, 64) || !Code(job, 16) || !HexPrefix(item) || !Hex(manage, 32) ||
-            name is { Length: > 100 } || name?.Any(char.IsControl) == true)
+            name is { Length: > 100 } || name?.Any(char.IsControl) == true ||
+            platform is { Length: > 64 } || platform?.Any(character =>
+                !(character is >= 'a' and <= 'z' or >= '0' and <= '9' or '-')) == true)
             return false;
         query = new ContentPageQuery(cursor, auditCursor, availability, result, job, item,
-            manage, name);
+            manage, name, platform);
         return true;
     }
 }
