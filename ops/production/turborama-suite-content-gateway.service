@@ -1,0 +1,60 @@
+[Unit]
+Description=TurboRama Suite protected content gateway
+After=network-online.target postgresql.service
+Wants=network-online.target
+Requires=postgresql.service
+ConditionPathExists=/opt/turborama-suite-content-gateway/TurboRamaSuiteContentGateway.dll
+ConditionPathExists=/etc/turborama-suite-content/gateway.env
+ConditionPathExists=/etc/turborama-suite-content/gateway.connection
+
+[Service]
+Type=exec
+User=turborama-suite-gateway
+Group=turborama-suite-gateway
+WorkingDirectory=/opt/turborama-suite-content-gateway
+EnvironmentFile=/etc/turborama-suite-content/gateway.env
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_EnableDiagnostics=0
+LoadCredential=content-url-keyring
+LoadCredential=content-grant-token-pepper
+LoadCredential=content-allowed-hosts
+ExecStart=/usr/bin/dotnet /opt/turborama-suite-content-gateway/TurboRamaSuiteContentGateway.dll --urls http://127.0.0.1:5191 --Suite:ContentUrlKeyRingFile=%d/content-url-keyring --Suite:ContentGrantTokenPepperFile=%d/content-grant-token-pepper --Suite:Content:AllowedUpstreamHostsFile=%d/content-allowed-hosts
+Restart=on-failure
+RestartSec=5s
+TimeoutStartSec=30s
+TimeoutStopSec=180s
+KillSignal=SIGINT
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ProtectClock=true
+ProtectHostname=true
+ProtectProc=invisible
+ProcSubset=pid
+RestrictSUIDSGID=true
+RestrictRealtime=true
+RestrictNamespaces=true
+LockPersonality=true
+SystemCallArchitectures=native
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+CapabilityBoundingSet=
+AmbientCapabilities=
+ReadOnlyPaths=/etc/turborama-suite-content /opt/turborama-suite-content-gateway
+LimitNOFILE=65536
+TasksMax=512
+MemoryHigh=384M
+MemoryMax=512M
+CPUQuota=200%
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=turborama-suite-content-gateway
+
+[Install]
+WantedBy=multi-user.target

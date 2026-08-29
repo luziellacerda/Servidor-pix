@@ -4,6 +4,12 @@ using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 using Npgsql;
+if (args.Contains("--content-self-test", StringComparer.OrdinalIgnoreCase))
+{
+    ContentManagementSelfTest.Run();
+    Console.WriteLine("SUITE CONTENT ADMIN SELF-TEST: OK");
+    return 0;
+}
 if (args.Contains("--self-test", StringComparer.OrdinalIgnoreCase)) return AdminSelfTest.Run();
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +19,9 @@ var commerceEnabled = Environment.GetEnvironmentVariable("SUITE_COMMERCE_ENABLED
 var commerceToken = commerceEnabled ? InternalToken.Load(Required("SUITE_COMMERCE_TOKEN_FILE")) : null;
 var pepperFile = Required("SUITE_ADMIN_PEPPER_FILE");
 var connection = Required("SUITE_ADMIN_CONNECTION");
+var contentManagementEnabled = Environment.GetEnvironmentVariable("SUITE_CONTENT_ADMIN_ENABLED") == "1";
+using var contentManagement = await ContentManagementBootstrap.TryLoadAsync(
+    contentManagementEnabled, CancellationToken.None);
 if (File.Exists(socketPath)) File.Delete(socketPath);
 builder.WebHost.ConfigureKestrel(options => { options.Limits.MaxRequestBodySize = 16 * 1024; options.ListenUnixSocket(socketPath); });
 builder.Services.AddSingleton(NpgsqlDataSource.Create(connection));
@@ -28,6 +37,10 @@ app.Use(async (context, next) =>
         : token.Authenticates(context.Request.Headers["X-Suite-Admin-Token"].ToString());
     if (!authenticated)
     {
+        if (contentManagement is not null && context.Request.Path.StartsWithSegments("/content"))
+            await contentManagement.TryAuditDenialAsync("CONTENT_AUTH_DENIED",
+                context.Request.Headers["X-Suite-Admin-Actor"].ToString(), null,
+                "AUTH_REQUIRED", context.RequestAborted);
         context.Response.StatusCode = StatusCodes.Status404NotFound;
         return;
     }
@@ -52,13 +65,27 @@ app.MapGet("/readiness", async (NpgsqlDataSource db,CancellationToken ct) =>
     }
     catch { schemaReady=false;inconsistentDeliveries=-1; }
     var ready=commerceEnabled&&schemaReady&&inconsistentDeliveries==0;
+    var contentReady=!contentManagementEnabled||contentManagement is not null&&await contentManagement.IsReadyAsync(ct);
     return Results.Json(new
     {
-        status=ready?"ready":"not_ready", service="turborama-suite-admin", commerce_enabled=commerceEnabled,
-        checks=new { database=schemaReady?"ok":"unavailable",migration_005=schemaReady?"ok":"missing",delivery_consistency=inconsistentDeliveries==0?"ok":"blocked",inconsistent_deliveries=inconsistentDeliveries }
+        status=ready?(contentReady?"ready":"degraded"):"not_ready", service="turborama-suite-admin", commerce_enabled=commerceEnabled,
+        content_management_enabled=contentManagementEnabled,
+        checks=new { database=schemaReady?"ok":"unavailable",migration_005=schemaReady?"ok":"missing",
+          migration_013=contentReady?"ok":"missing_or_unreachable",
+          content_management=contentReady?"ok":"unavailable",
+          delivery_consistency=inconsistentDeliveries==0?"ok":"blocked",inconsistent_deliveries=inconsistentDeliveries }
     },statusCode:ready?StatusCodes.Status200OK:StatusCodes.Status503ServiceUnavailable);
 });
+app.MapGet("/readiness/content", async (CancellationToken ct) =>
+{
+    var ready=contentManagementEnabled&&contentManagement is not null&&
+      await contentManagement.IsReadyAsync(ct);
+    return Results.Json(new { status=ready?"ready":"unavailable",
+      service="turborama-suite-content-admin" },
+      statusCode:ready?StatusCodes.Status200OK:StatusCodes.Status503ServiceUnavailable);
+});
 CommerceEndpoints.Map(app, commerceEnabled, pepperFile);
+ContentManagementEndpoints.Map(app, contentManagement, contentManagementEnabled);
 app.MapGet("/status/{licenseId}", async (string licenseId, NpgsqlDataSource db, CancellationToken ct) =>
 {
     ValidateId(licenseId);
@@ -241,6 +268,7 @@ static class AdminSelfTest
     public static int Run()
     {
         if(!OperatingSystem.IsLinux())throw new PlatformNotSupportedException();
+        ContentManagementSelfTest.Run();
         var directory=Path.Combine(Path.GetTempPath(),"suite-admin-token-test-"+Guid.NewGuid().ToString("N"));
         Directory.CreateDirectory(directory);
         try

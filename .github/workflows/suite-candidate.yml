@@ -1,23 +1,168 @@
 name: suite-candidate
 on:
   pull_request:
-    paths: ['src/TurboRamaSuiteOnlineServer/**','tests/TurboRamaSuiteOnlineServer.Tests/**','migrations/suite/**','docs/suite/**']
+    paths: ['.github/workflows/suite-candidate.yml','src/TurboRamaPixOnlineServer/**','src/TurboRamaSuiteOnlineServer/**','src/TurboRamaSuiteAdminServer/**','src/TurboRamaSuiteContentGateway/**','src/TurboRamaSuiteContentPublisher/**','src/TurboRamaSuiteContentMonitor/**','src/TurboRamaSuiteContentJanitor/**','src/TurboRamaSuiteContentAuthorityTool/**','tests/TurboRamaSuiteOnlineServer.Tests/**','tests/TurboRamaSuitePostgres.Tests/**','tests/TurboRamaSuiteContentAuthorityTool.Tests/**','tests/check-suite-content-permissions.sql','migrations/suite/**','docs/suite/**','ops/production/**']
   push:
-    branches: ['codex/turborama-suite-servidor-producao']
+    branches: ['codex/turborama-suite-servidor-producao','codex/suite-*']
 jobs:
   build-test:
     runs-on: ubuntu-latest
     permissions: { contents: read }
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: suite-ci-only
+          POSTGRES_DB: turborama_suite_ci
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres -d turborama_suite_ci"
+          --health-interval 5s --health-timeout 5s --health-retries 10
     steps:
       - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
       - uses: actions/setup-dotnet@v4
         with: { dotnet-version: '8.0.x' }
+      - run: dotnet restore src/TurboRamaPixOnlineServer/TurboRamaPixOnlineServer.csproj --locked-mode
       - run: dotnet restore tests/TurboRamaSuiteOnlineServer.Tests/TurboRamaSuiteOnlineServer.Tests.csproj --locked-mode
+      - run: dotnet restore src/TurboRamaSuiteAdminServer/TurboRamaSuiteAdminServer.csproj --locked-mode
+      - run: dotnet restore src/TurboRamaSuiteContentGateway/TurboRamaSuiteContentGateway.csproj --locked-mode
+      - run: dotnet restore src/TurboRamaSuiteContentPublisher/TurboRamaSuiteContentPublisher.csproj --locked-mode
+      - run: dotnet restore src/TurboRamaSuiteContentMonitor/TurboRamaSuiteContentMonitor.csproj --locked-mode
+      - run: dotnet restore src/TurboRamaSuiteContentJanitor/TurboRamaSuiteContentJanitor.csproj --locked-mode
+      - run: dotnet restore tests/TurboRamaSuiteContentAuthorityTool.Tests/TurboRamaSuiteContentAuthorityTool.Tests.csproj --locked-mode
+      - run: dotnet build src/TurboRamaPixOnlineServer/TurboRamaPixOnlineServer.csproj -c Release --no-restore
       - run: dotnet build tests/TurboRamaSuiteOnlineServer.Tests/TurboRamaSuiteOnlineServer.Tests.csproj -c Release --no-restore
-      - run: dotnet format src/TurboRamaSuiteOnlineServer/TurboRamaSuiteOnlineServer.csproj --verify-no-changes --no-restore
-      - run: dotnet format tests/TurboRamaSuiteOnlineServer.Tests/TurboRamaSuiteOnlineServer.Tests.csproj --verify-no-changes --no-restore
+      - run: dotnet build src/TurboRamaSuiteAdminServer/TurboRamaSuiteAdminServer.csproj -c Release --no-restore
+      - run: dotnet build src/TurboRamaSuiteContentGateway/TurboRamaSuiteContentGateway.csproj -c Release --no-restore
+      - run: dotnet build src/TurboRamaSuiteContentPublisher/TurboRamaSuiteContentPublisher.csproj -c Release --no-restore
+      - run: dotnet build src/TurboRamaSuiteContentMonitor/TurboRamaSuiteContentMonitor.csproj -c Release --no-restore
+      - run: dotnet build src/TurboRamaSuiteContentJanitor/TurboRamaSuiteContentJanitor.csproj -c Release --no-restore
+      - run: dotnet build tests/TurboRamaSuiteContentAuthorityTool.Tests/TurboRamaSuiteContentAuthorityTool.Tests.csproj -c Release --no-restore
+      # The inherited OnlineServer/Tests contain intentionally compact legacy files.
+      # Format only the new, independently formatted projects; builds and tests
+      # still cover the complete OnlineServer and test assemblies.
+      - run: dotnet format src/TurboRamaSuiteContentGateway/TurboRamaSuiteContentGateway.csproj --verify-no-changes --no-restore
+      - run: dotnet format src/TurboRamaSuiteContentPublisher/TurboRamaSuiteContentPublisher.csproj --verify-no-changes --no-restore
+      - run: dotnet format src/TurboRamaSuiteContentMonitor/TurboRamaSuiteContentMonitor.csproj --verify-no-changes --no-restore
+      - run: dotnet format src/TurboRamaSuiteContentJanitor/TurboRamaSuiteContentJanitor.csproj --verify-no-changes --no-restore
+      - run: dotnet format src/TurboRamaSuiteContentAuthorityTool/TurboRamaSuiteContentAuthorityTool.csproj --verify-no-changes --no-restore
+      - run: dotnet format tests/TurboRamaSuiteContentAuthorityTool.Tests/TurboRamaSuiteContentAuthorityTool.Tests.csproj --verify-no-changes --no-restore
+      - name: Reject whitespace errors in this change
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BASE: ${{ github.event.before }}
+        run: |
+          base="$PR_BASE"
+          if [ -z "$base" ]; then base="$PUSH_BASE"; fi
+          if [ -z "$base" ] || [ "$base" = "0000000000000000000000000000000000000000" ]; then
+            base=$(git rev-list --max-parents=0 HEAD)
+          fi
+          git diff --check "$base" HEAD
       - run: dotnet run --project tests/TurboRamaSuiteOnlineServer.Tests/TurboRamaSuiteOnlineServer.Tests.csproj -c Release --no-build
+      - run: dotnet run --project src/TurboRamaPixOnlineServer/TurboRamaPixOnlineServer.csproj -c Release --no-build -- --self-test
+      - run: dotnet run --project src/TurboRamaSuiteAdminServer/TurboRamaSuiteAdminServer.csproj -c Release --no-build -- --self-test
+      - run: dotnet run --project src/TurboRamaSuiteAdminServer/TurboRamaSuiteAdminServer.csproj -c Release --no-build -- --content-self-test
+      - run: dotnet run --project src/TurboRamaSuiteContentPublisher/TurboRamaSuiteContentPublisher.csproj -c Release --no-build -- --self-test
+      - run: dotnet run --project src/TurboRamaSuiteContentMonitor/TurboRamaSuiteContentMonitor.csproj -c Release --no-build -- --self-test
+      - run: dotnet run --project src/TurboRamaSuiteContentJanitor/TurboRamaSuiteContentJanitor.csproj -c Release --no-build -- --self-test
+      - run: dotnet run --project tests/TurboRamaSuiteContentAuthorityTool.Tests/TurboRamaSuiteContentAuthorityTool.Tests.csproj -c Release --no-build
+      - name: Validate forward migrations and role isolation
+        env:
+          PGPASSWORD: suite-ci-only
+          PGHOST: 127.0.0.1
+          PGUSER: postgres
+          PGDATABASE: turborama_suite_ci
+        run: |
+          psql --set=ON_ERROR_STOP=1 --command='CREATE ROLE "turborama-suite" LOGIN; CREATE ROLE "turborama-suite-admin" LOGIN;'
+          psql --set=ON_ERROR_STOP=1 --file=ops/production/prepare-suite-content-roles.sql
+          sha256sum --check --strict ops/production/suite-content-migrations.sha256
+          migrations=(
+            migrations/suite/001_suite_foundation.up.sql
+            migrations/suite/002_lifetime_single_active_device.up.sql
+            migrations/suite/003_admin_otp_audit.up.sql
+            migrations/suite/004_suite_commerce_lifecycle.up.sql
+            migrations/suite/005_suite_commerce_permissions.up.sql
+            migrations/suite/006_suite_readiness_permissions.up.sql
+            migrations/suite/007_suite_device_transfer_permissions.up.sql
+            migrations/suite/008_suite_transfer_runtime_permissions.up.sql
+            migrations/suite/009_suite_commerce_provision_permissions.up.sql
+            migrations/suite/010_suite_content_catalog.up.sql
+            migrations/suite/011_suite_content_publish_integrity.up.sql
+            migrations/suite/012_suite_content_permissions.up.sql
+            migrations/suite/013_suite_content_management.up.sql
+            migrations/suite/014_suite_content_retention.up.sql
+          )
+          for migration in "${migrations[@]}"; do
+            name=$(basename "$migration" .up.sql)
+            if [[ "$name" =~ ^01[0-4]_ ]]; then
+              expected=$(awk -v path="$migration" '$2 == path { print $1 }' \
+                ops/production/suite-content-migrations.sha256)
+              test "$expected" != ""
+              psql --set=ON_ERROR_STOP=1 --set=migration_sha256="$expected" --file="$migration"
+            else
+              psql --set=ON_ERROR_STOP=1 --file="$migration"
+            fi
+          done
+          test "$(psql --tuples-only --no-align --command='SELECT count(*) FROM suite.schema_migrations;')" = 14
+          test "$(psql --tuples-only --no-align --command='SELECT count(*) FROM suite.schema_migration_checksums;')" = 5
+      - name: Exercise monitor ownership and catalog races on PostgreSQL 16
+        env:
+          SUITE_TEST_CONNECTION: Host=127.0.0.1;Port=5432;Database=turborama_suite_ci;Username=postgres;Password=suite-ci-only
+        run: dotnet run --project src/TurboRamaSuiteContentMonitor/TurboRamaSuiteContentMonitor.csproj -c Release --no-build -- --postgres-self-test
+      - name: Validate role isolation
+        env:
+          PGPASSWORD: suite-ci-only
+          PGHOST: 127.0.0.1
+          PGUSER: postgres
+          PGDATABASE: turborama_suite_ci
+        run: psql --set=ON_ERROR_STOP=1 --file=tests/check-suite-content-permissions.sql
       - name: Reject secret and state files
         run: |
-          ! git ls-files | grep -E '(^|/)(\.env|secrets?|credentials?|state)(\.|/|$)|\.(pem|key|pfx|p12|dump|sql\.gz)$'
+          ! git ls-files | grep -Ev '(^|/)[^/]*\.env\.example$' | grep -E '(^|/)(\.env|secrets?|credentials?|state)(\.|/|$)|\.(pem|key|pfx|p12|dump|sql\.gz)$'
+          ! git ls-files | grep -E '(^|/)(catalog\.full\.json|url-keyring\.json|publisher\.connection|publisher-journal\.json)$'
+          ! git ls-files | grep -E '(^|/)(content-authority-envelope\.json|content-authority-issuer\.spki\.der)(\.sha256)?$'
+          ! git grep -I -n -E '"(downloadUrl|upstreamUrl)"[[:space:]]*:[[:space:]]*"https://'
+          env_examples=$(git ls-files | grep -E '(^|/)[^/]*\.env\.example$')
+          test -n "$env_examples"
+          ! grep -I -n -E '(^|;)[[:space:]]*(Password|Pwd)[[:space:]]*=' $env_examples
+          ! grep -I -n -E '^[A-Za-z_][A-Za-z0-9_]*(KEY|SECRET|TOKEN|PEPPER|PASSWORD)(_[A-Za-z0-9_]+)?=.+' $env_examples |
+            grep -Ev '=(SUBSTITUA_|replace-with-|/etc/|/run/|/var/)'
+          ! grep -I -n -E 'https?://' $env_examples |
+            grep -Ev 'https?://(127\.0\.0\.1|localhost|\[::1\])(:[0-9]+)?(/|$)|https?://[^/?#[:space:]]+\.example\.invalid([:/]|$)'
+      - name: Reject locators in any packaged visual catalog
+        run: |
+          while IFS= read -r visual; do
+            if grep -Eqi 'https?://|"(url|uri|href|locator|location|download(url|uri)?|upstream(url|uri)?|origin(url|uri)?)"[[:space:]]*:' "$visual"; then
+              echo 'BLOCKED: packaged visual catalog contains a locator.' >&2
+              exit 1
+            fi
+          done < <(find . -type f -name catalog.visual.json -print)
+      - name: Keep shared-service content credentials optional and canonical
+        run: |
+          shared_dropins=(
+            ops/production/turborama-suite-api-content-credentials.conf.example
+            ops/production/turborama-suite-admin.service.d/content.conf.example
+          )
+          ! grep -nE '^ConditionPathExists=' "${shared_dropins[@]}"
+          ! grep -nE '^LoadCredential=[^[:space:]]+:' "${shared_dropins[@]}"
+          grep -qx 'EnvironmentFile=-/etc/turborama-suite-content-admin/content.env' ops/production/turborama-suite-admin.service.d/content.conf.example
+          grep -qx 'LoadCredential=candidate-url-keyring' ops/production/turborama-suite-admin.service.d/content.conf.example
+          grep -qx 'LoadCredential=content-allowed-hosts' ops/production/turborama-suite-admin.service.d/content.conf.example
+      - name: Keep long-running workers isolated and completion-scheduled
+        run: |
+          grep -qx 'TimeoutStartSec=infinity' ops/production/turborama-suite-content-monitor.service
+          grep -qx 'TimeoutStartSec=infinity' ops/production/turborama-suite-content-candidate.service
+          grep -qx 'OnUnitInactiveSec=15min' ops/production/turborama-suite-content-monitor.timer
+          grep -qx 'OnUnitInactiveSec=2min' ops/production/turborama-suite-content-candidate.timer
+          ! grep -q '^OnUnitActiveSec=' ops/production/turborama-suite-content-monitor.timer ops/production/turborama-suite-content-candidate.timer
+          grep -q ' run-once$' ops/production/turborama-suite-content-monitor.service
+          grep -q ' candidate-once$' ops/production/turborama-suite-content-candidate.service
       - run: dotnet list src/TurboRamaSuiteOnlineServer/TurboRamaSuiteOnlineServer.csproj package --vulnerable --include-transitive
+      - run: dotnet list src/TurboRamaPixOnlineServer/TurboRamaPixOnlineServer.csproj package --vulnerable --include-transitive
+      - run: dotnet list src/TurboRamaSuiteAdminServer/TurboRamaSuiteAdminServer.csproj package --vulnerable --include-transitive
+      - run: dotnet list src/TurboRamaSuiteContentGateway/TurboRamaSuiteContentGateway.csproj package --vulnerable --include-transitive
+      - run: dotnet list src/TurboRamaSuiteContentPublisher/TurboRamaSuiteContentPublisher.csproj package --vulnerable --include-transitive
+      - run: dotnet list src/TurboRamaSuiteContentMonitor/TurboRamaSuiteContentMonitor.csproj package --vulnerable --include-transitive
+      - run: dotnet list src/TurboRamaSuiteContentJanitor/TurboRamaSuiteContentJanitor.csproj package --vulnerable --include-transitive
+      - run: dotnet list src/TurboRamaSuiteContentAuthorityTool/TurboRamaSuiteContentAuthorityTool.csproj package --vulnerable --include-transitive

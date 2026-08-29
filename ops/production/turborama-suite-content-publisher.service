@@ -1,0 +1,45 @@
+[Unit]
+Description=TurboRama Suite private content publisher
+After=network-online.target postgresql.service turborama-suite-content-gateway.service
+Wants=network-online.target
+Requires=postgresql.service turborama-suite-content-gateway.service
+ConditionPathIsReadWrite=/var/lib/turborama-suite-content
+ConditionPathExists=/var/lib/turborama-suite-content/incoming/catalog.full.json
+ConditionPathExists=/opt/turborama-suite-content-publisher/catalog.visual.json
+
+[Service]
+Type=oneshot
+TimeoutStartSec=infinity
+User=turborama-suite-publisher
+Group=turborama-suite-publisher
+WorkingDirectory=/var/lib/turborama-suite-content
+EnvironmentFile=/etc/turborama-suite-content/publisher.env
+LoadCredential=content-url-keyring
+LoadCredential=content-allowed-hosts
+ExecStart=/usr/bin/dotnet /opt/turborama-suite-content-publisher/TurboRamaSuiteContentPublisher.dll publish --catalog /var/lib/turborama-suite-content/incoming/catalog.full.json --visual-catalog /opt/turborama-suite-content-publisher/catalog.visual.json --journal /var/lib/turborama-suite-content/publisher-journal.json --key-ring %d/content-url-keyring --allowed-hosts %d/content-allowed-hosts --max-concurrency 2
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ProtectClock=true
+ProtectHostname=true
+ProtectProc=invisible
+ProcSubset=pid
+RestrictSUIDSGID=true
+RestrictRealtime=true
+RestrictNamespaces=true
+LockPersonality=true
+SystemCallArchitectures=native
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+CapabilityBoundingSet=
+AmbientCapabilities=
+ReadWritePaths=/var/lib/turborama-suite-content
+ReadOnlyPaths=/etc/turborama-suite-content /opt/turborama-suite-content-publisher
+
+# No [Install] target: this multi-terabyte operation is started manually only.

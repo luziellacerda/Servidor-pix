@@ -1,0 +1,13 @@
+[Unit]
+Description=Validate one TurboRama Suite content candidate after the prior run finishes
+
+[Timer]
+OnBootSec=2min
+OnUnitInactiveSec=2min
+RandomizedDelaySec=30s
+AccuracySec=15s
+Persistent=true
+Unit=turborama-suite-content-candidate.service
+
+[Install]
+WantedBy=timers.target

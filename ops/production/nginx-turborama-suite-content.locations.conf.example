@@ -1,0 +1,105 @@
+# Include this file inside the existing public Suite TLS server block. The edge
+# (or cloudflared) must reach Nginx only; neither loopback service is public.
+# The following zones MUST be declared once in the top-level `http {}` block
+# (outside this server/location include):
+#   limit_req_zone $binary_remote_addr zone=suite_content_control:10m rate=2r/s;
+#   limit_req_zone $binary_remote_addr zone=suite_content_bytes:10m rate=2r/s;
+#   limit_conn_zone $binary_remote_addr zone=suite_content_conn:10m;
+# Cloudflare edge rules should enforce the same IP+route budgets before traffic
+# reaches this host. Do not key limits from an untrusted request header.
+# CF-Connecting-IP is trusted only when the immediate peer is the local tunnel.
+set_real_ip_from 127.0.0.1;
+set_real_ip_from ::1;
+real_ip_header CF-Connecting-IP;
+real_ip_recursive off;
+
+location = /v1/suite-content/catalog/current {
+    if ($request_method != POST) { return 405; }
+    client_max_body_size 64k;
+    client_body_timeout 10s;
+    limit_req zone=suite_content_control burst=120 nodelay;
+    limit_conn suite_content_conn 8;
+
+    proxy_http_version 1.1;
+    proxy_pass http://127.0.0.1:5190;
+    proxy_connect_timeout 5s;
+    proxy_send_timeout 15s;
+    proxy_read_timeout 15s;
+    proxy_set_header Connection "";
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Correlation-ID $request_id;
+    proxy_set_header Cookie "";
+    proxy_set_header Proxy "";
+    proxy_intercept_errors off;
+    proxy_cache off;
+}
+
+location = /v1/suite-content/downloads/authorize {
+    if ($request_method != POST) { return 405; }
+    client_max_body_size 64k;
+    client_body_timeout 10s;
+    limit_req zone=suite_content_control burst=30 nodelay;
+    limit_conn suite_content_conn 8;
+
+    proxy_http_version 1.1;
+    proxy_pass http://127.0.0.1:5190;
+    proxy_connect_timeout 5s;
+    proxy_send_timeout 15s;
+    proxy_read_timeout 15s;
+    proxy_set_header Connection "";
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Correlation-ID $request_id;
+    proxy_set_header Cookie "";
+    proxy_set_header Proxy "";
+    proxy_intercept_errors off;
+    proxy_cache off;
+}
+
+location ~ "^/v1/suite-content/artifacts/[0-9a-f]{64}$" {
+    if ($request_method != GET) { return 405; }
+    if ($is_args != "") { return 404; }
+    limit_req zone=suite_content_bytes burst=12 nodelay;
+    limit_conn suite_content_conn 4;
+
+    # The grant id is intentionally omitted from access logs and the bearer is
+    # never part of a log format. Keep error logging at crit (never debug).
+    access_log off;
+    error_log /var/log/nginx/turborama-suite-content-error.log crit;
+
+    proxy_http_version 1.1;
+    proxy_pass http://127.0.0.1:5191;
+    proxy_pass_request_body off;
+    proxy_request_buffering off;
+    proxy_buffering off;
+    proxy_cache off;
+    proxy_max_temp_file_size 0;
+    proxy_connect_timeout 5s;
+    proxy_send_timeout 120s;
+    proxy_read_timeout 120s;
+    send_timeout 120s;
+
+    proxy_set_header Connection "";
+    proxy_set_header Content-Length "";
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Correlation-ID $request_id;
+    proxy_set_header Authorization $http_authorization;
+    proxy_set_header Range $http_range;
+    proxy_set_header If-Range $http_if_range;
+    proxy_set_header Cookie "";
+    proxy_set_header Proxy "";
+    proxy_hide_header Location;
+    proxy_hide_header Server;
+    proxy_intercept_errors off;
+    add_header X-Content-Type-Options nosniff always;
+}
+
+# Fail closed for every unrecognized content path. Health/readiness stay local.
+location /v1/suite-content/ {
+    return 404;
+}

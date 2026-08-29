@@ -197,6 +197,7 @@ static class AdminPanel
         builder.Services.AddSingleton<AdminLoginGuard>();
         builder.Services.AddSingleton<SuiteAdminBff>();
         builder.Services.AddSingleton<SuiteIssueGuard>();
+        builder.Services.AddSingleton<SuiteContentAdminGuard>();
     }
 
     public static void UseSecurityHeaders(WebApplication app)
@@ -300,7 +301,11 @@ static class AdminPanel
                 new Claim(ClaimTypes.Role, "Administrator"),
                 new Claim("permission", "suite.read"),
                 new Claim("permission", "suite.activation.issue"),
-                new Claim("permission", "suite.audit.export")
+                new Claim("permission", "suite.audit.export"),
+                new Claim("permission", "suite.content.read"),
+                new Claim("permission", "suite.content.origin.replace"),
+                new Claim("permission", "suite.content.version.publish"),
+                new Claim("permission", "suite.content.check")
             ], AuthenticationScheme);
             await context.SignInAsync(AuthenticationScheme, new ClaimsPrincipal(identity),
                 new AuthenticationProperties { IsPersistent = false, AllowRefresh = false });

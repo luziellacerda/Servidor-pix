@@ -1,0 +1,13 @@
+[Unit]
+Description=Run TurboRama Suite content retention every ten minutes
+
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=10min
+RandomizedDelaySec=1min
+AccuracySec=30s
+Persistent=true
+Unit=turborama-suite-content-janitor.service
+
+[Install]
+WantedBy=timers.target

@@ -24,6 +24,7 @@ ProtectKernelTunables=true
 ProtectKernelModules=true
 ProtectControlGroups=true
 RestrictAddressFamilies=AF_UNIX
+ReadOnlyPaths=/opt/turborama-suite-admin
 CapabilityBoundingSet=
 AmbientCapabilities=
 
