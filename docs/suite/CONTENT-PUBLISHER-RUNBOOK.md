@@ -7,7 +7,7 @@
 The publisher imports the external `catalog.full.json` without copying any upstream URL into Git,
 logs, service responses, grants or the client executable. It downloads each origin only to a hashing
 stream, records resumable non-secret verification metadata, encrypts each URL with AES-256-GCM and
-atomically publishes exactly 850 catalog IDs. Each ID is either READY, with verified descriptor and
+atomically publishes exactly 902 catalog IDs. Each ID is either READY, with verified descriptor and
 private origin, or MAINTENANCE, without descriptor or origin. It never stores an artifact body.
 
 ## Fail-closed prerequisites
@@ -51,7 +51,7 @@ entitlements is not an acceptable empty success. Reconciliation after publicatio
 state to an exact delivery/entitlement bijection. Run `DATABASE production 2` once as the initial
 cutover proof, then use `DATABASE production` for continuous checks.
 
-Run `validate` first. It must report 850 selected items and exactly two rejected source-only extras.
+Run `validate` first. It must report 902 selected items and exactly two rejected source-only extras.
 It performs no origin request. Run `probe` next; it checks every origin with Range `0-0`/HEAD and
 reports only item IDs, result codes and sizes. The real `publish` repeats the complete probe before
 hashing. Terminal per-item failures (invalid extension, non-retryable unavailable response or zero-byte
@@ -95,7 +95,7 @@ declared extension is `ORIGIN_CONTENT_INVALID` and follows the same per-item MAI
 Only a fully verified object can be READY. The public assertion maps every internal maintenance reason
 to the single generic code `CONTENT_TEMPORARILY_UNAVAILABLE`; it never exposes an origin status or URL.
 The database transaction changes the active pointer only after the union READY + MAINTENANCE contains
-exactly 850 unique IDs and every READY row has exactly one encrypted origin. Before that, both planes
+exactly 902 unique IDs and every READY row has exactly one encrypted origin. Before that, both planes
 remain fail-closed.
 
 The 2026-08-29 preflight found five selected origins returning 404 and one returning zero-byte/416.
@@ -111,7 +111,7 @@ fail-closed. It does not revive a core license, device or session: those must al
 catalog/grant/stream authorization revalidates them. New purchases are maintained in the original
 commerce transaction; no PIX or sales semantics are changed by content reconciliation.
 
-Run `check-suite-content-readiness.sh DATABASE production`. It must prove total items = 850, every item
+Run `check-suite-content-readiness.sh DATABASE production`. It must prove total items = 902, every item
 is READY or MAINTENANCE, and origin count = READY count with no origin attached to MAINTENANCE. It
 also proves the entitlement relation in both directions: every ACTIVE full-catalog entitlement is
 backed by exactly its eligible COMMERCE delivery and every eligible PROVISIONED delivery (PAID or fully
@@ -133,7 +133,7 @@ close all three public `/v1/suite-content/` ingress routes while leaving activat
 online. Verify the migration ledger adoption gate against the exact legacy schema, take the approved
 backup, and apply 014. Legacy active snapshots intentionally have no deployment provenance, so both
 content readiness endpoints must return 503 at this point. Run the publisher to create a new immutable
-850-ID snapshot; its identity binds active origin key version, complete key-set fingerprint and allowlist
+902-ID snapshot; its identity binds active origin key version, complete key-set fingerprint and allowlist
 fingerprint, so it cannot collide with the legacy snapshot. Restart gateway and API, require both
 `127.0.0.1:5191/ready` and `127.0.0.1:5190/ready/content` to return 200, run the authorized canary, and
 only then reopen the content ingress. Never backfill a published legacy snapshot or bypass this 503 gate.
@@ -156,7 +156,7 @@ administrator session, the existing origin/host allowlist, same-origin CSRF vali
 input and an append-only audit record containing actor, item ID, timestamp, correlation ID and outcome
 but no URL or bearer. Test the candidate through the same SSRF-safe resolver/TLS/redirect policy used
 by the publisher. Encrypt the accepted URL before persistence. Write only a staging snapshot; promote
-the complete 850-ID snapshot atomically after its invariants pass. A failed test leaves the active
+the complete 902-ID snapshot atomically after its invariants pass. A failed test leaves the active
 snapshot untouched and the item MAINTENANCE. Runtime roles remain unable to decrypt or select origins:
 only the publisher/admin repair role writes staging origins and only the gateway role reads an encrypted
 origin while atomically claiming a READY grant.
@@ -169,7 +169,7 @@ the active row or saves plaintext is not an acceptable interim implementation.
 Availability detection runs on the server through the restricted content reconciler. A single timeout
 or transient HTTP error must not mutate customer-visible state. The worker records bounded, URL-free
 check evidence and changes an item to MAINTENANCE only after the configured confirmation policy is met.
-It never updates an active immutable snapshot in place: it clones all 850 IDs into staging, removes the
+It never updates an active immutable snapshot in place: it clones all 902 IDs into staging, removes the
 descriptor and origin for the affected item, validates the union and atomically promotes the new
 snapshot. Returning MAINTENANCE to READY is stricter: the replacement origin must pass SSRF-safe TLS
 resolution, extension and filename rules, exact content length and a complete SHA-256 verification
@@ -345,7 +345,7 @@ or bearer value appears in headers, logs or traces. The 120-second Nginx read/se
 timeouts and therefore permit multi-hour transfers while data continues flowing.
 
 Rollback public routing first, then stop the gateway and restore the previous binary. Do not roll back
-the active snapshot pointer unless the prior snapshot independently satisfies the 850-ID invariant.
+the active snapshot pointer unless the prior snapshot independently satisfies the 902-ID invariant.
 
 ## Retention janitor
 

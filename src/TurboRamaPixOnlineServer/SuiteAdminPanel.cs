@@ -130,7 +130,7 @@ static class SuiteAdminPanel
                 return Html(ContentUnavailable("LIMITE_ATINGIDO"), 429);
             try
             {
-                var page = await bff.ContentItemsAsync(proof, query!.Cursor, 850,
+                var page = await bff.ContentItemsAsync(proof, query!.Cursor, 902,
                     query.Availability, query.ResultCode, null, query.ItemPrefix,
                     query.Name, ct);
                 var token = antiforgery.GetAndStoreTokens(context).RequestToken ?? "";

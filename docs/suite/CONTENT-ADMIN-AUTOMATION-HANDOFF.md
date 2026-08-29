@@ -133,9 +133,9 @@ Para item `READY`:
    estado antes do ciclo, o mass-failure guard não publica mudança alguma. Ele é reavaliado dentro da
    transação de publicação, preserva o snapshot ativo e abre alerta crítico para intervenção.
 
-Ao confirmar manutenção, o worker clona os 850 IDs para um snapshot `STAGING`, marca somente o item
+Ao confirmar manutenção, o worker clona os 902 IDs para um snapshot `STAGING`, marca somente o item
 como `MAINTENANCE`, remove descriptor e origem desse item, recriptografa as demais origens porque o AAD
-inclui o novo `catalogIdentity`, valida `READY + MAINTENANCE = 850` e `origins = READY`, e só então chama
+inclui o novo `catalogIdentity`, valida `READY + MAINTENANCE = 902` e `origins = READY`, e só então chama
 a função de publicação atômica. O snapshot anterior permanece íntegro para rollback.
 
 Para candidato `STAGED`:
@@ -150,7 +150,7 @@ Para candidato `STAGED`:
    nenhum snapshot publicado contém descriptor READY para o item. Em `NEW_ARTIFACT_VERSION`, exigir a
    autorização reforçada/auditoria e incrementar `artifactVersion`; nunca sobrescrever a versão atual.
 6. Confirmar extensão, nome e política de extração; marcar `VERIFIED`.
-7. Clonar 850 IDs, substituir somente o item, recalcular descriptor e identidade, recriptografar todas
+7. Clonar 902 IDs, substituir somente o item, recalcular descriptor e identidade, recriptografar todas
    as origens com o novo AAD, publicar atomicamente e marcar candidato `PUBLISHED`.
 8. Um item em manutenção volta a `READY` somente por esse fluxo integral; probes rápidos isolados não
    restauram disponibilidade. Isso é a histerese de recuperação e evita flapping.
@@ -170,12 +170,12 @@ e recomeçar o item. Nunca inventar hash e nunca copiar o arquivo para disco.
 - Unit e timer sem segredos em `Environment=`; paths de connection/key/allowlist são absolutos e `0600`.
 - `ProtectSystem=strict`, `PrivateTmp=true`, `NoNewPrivileges=true`, `RestrictSUIDSGID=true`, sem acesso
   ao webroot, Git ou diretórios do gateway/API.
-- readiness exige migrations, worker sem lease vencida, total 850, soma de estados 850 e origem somente
+- readiness exige migrations, worker sem lease vencida, total 902, soma de estados 902 e origem somente
   para READY. A indisponibilidade do worker não deve derrubar downloads READY já publicados.
 - métricas permitidas: contagem por estado/código e idade do último check; labels nunca contêm item URL,
   token, candidate ID ou grant.
 - testes: CSRF/claims/step-up/rate limit, URL nunca em GET/log/audit, SSRF IPv4/IPv6/NAT64, redirect,
-  retry/limiar/histerese, dois workers concorrentes, crash/restart, hash/tamanho alterado, snapshot de 850,
+  retry/limiar/histerese, dois workers concorrentes, crash/restart, hash/tamanho alterado, snapshot de 902,
   origem ausente em manutenção, rollback e matriz de privilégios PostgreSQL 16.
 
 Aceite final exige uma substituição canário por item de teste: a página mostra `VALIDANDO`, o worker

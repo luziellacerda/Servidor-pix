@@ -50,9 +50,9 @@ fi
 read -r -d '' query <<'SQL' || :
 SELECT concat_ws('|',
   (SELECT count(*) FROM suite.schema_migrations WHERE version IN
-    ('010_suite_content_catalog','011_suite_content_publish_integrity','012_suite_content_permissions','013_suite_content_management','014_suite_content_retention','015_suite_content_direct_metadata')),
+    ('010_suite_content_catalog','011_suite_content_publish_integrity','012_suite_content_permissions','013_suite_content_management','014_suite_content_retention','015_suite_content_direct_metadata','016_suite_content_catalog_902')),
   (SELECT count(*) FROM suite.schema_migration_checksums WHERE version IN
-    ('010_suite_content_catalog','011_suite_content_publish_integrity','012_suite_content_permissions','013_suite_content_management','014_suite_content_retention','015_suite_content_direct_metadata')),
+    ('010_suite_content_catalog','011_suite_content_publish_integrity','012_suite_content_permissions','013_suite_content_management','014_suite_content_retention','015_suite_content_direct_metadata','016_suite_content_catalog_902')),
   (SELECT count(*) FROM suite.suite_content_snapshots WHERE status='PUBLISHED'),
   (SELECT count(*) FROM suite.suite_content_catalog_state cs
     JOIN suite.suite_content_snapshots s ON s.catalog_identity=cs.active_catalog_identity
@@ -155,7 +155,7 @@ state=$(runuser -u postgres -- psql --no-psqlrc --set=ON_ERROR_STOP=1 --tuples-o
 IFS='|' read -r migrations checksums snapshots active total ready maintenance origins invalid_origins invalid invalid_entitlements missing_or_duplicate_entitlements eligible_deliveries active_entitlements legacy_entitlements duplicate_entitlements expired_leases worker_fresh <<<"$state"
 
 if [[ "$mode" == prepublish ]]; then
-  [[ "$migrations" == 6 && "$checksums" == 6 && "$snapshots" == 0 &&
+  [[ "$migrations" == 7 && "$checksums" == 7 && "$snapshots" == 0 &&
      "$active" == 0 && "$total" == 0 && "$ready" == 0 && "$maintenance" == 0 &&
      "$origins" == 0 && "$invalid_origins" == 0 && "$invalid" == 0 &&
      "$invalid_entitlements" == 0 &&
@@ -168,8 +168,8 @@ if [[ "$mode" == prepublish ]]; then
   }
   echo 'OK: schema ready and fail-closed; no catalog exposed.'
 else
-  [[ "$migrations" == 6 && "$checksums" == 6 && "$snapshots" -ge 1 && "$active" == 1 && "$total" == 850 &&
-     $((ready + maintenance)) == 850 && "$origins" == "$ready" && "$invalid_origins" == 0 &&
+  [[ "$migrations" == 7 && "$checksums" == 7 && "$snapshots" -ge 1 && "$active" == 1 && "$total" == 902 &&
+     $((ready + maintenance)) == 902 && "$origins" == "$ready" && "$invalid_origins" == 0 &&
      "$invalid" == 0 ]] &&
     production_entitlements_ready "$invalid_entitlements" \
       "$missing_or_duplicate_entitlements" "$eligible_deliveries" \
@@ -179,5 +179,5 @@ else
     echo "BLOCKED: production content state $state" >&2
     exit 1
   }
-  echo "OK: active immutable catalog has 850 items ($ready READY, $maintenance MAINTENANCE), one private origin per READY item, a complete commerce-entitlement bijection ($active_entitlements active), and a current monitor cycle."
+  echo "OK: active immutable catalog has 902 items ($ready READY, $maintenance MAINTENANCE), one private origin per READY item, a complete commerce-entitlement bijection ($active_entitlements active), and a current monitor cycle."
 fi
