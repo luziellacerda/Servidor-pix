@@ -70,11 +70,15 @@ internal sealed class MonitorCoordinator : IDisposable
             return new MonitorRunResult(MonitorRunOutcome.AlreadyRunning,
                 "CYCLE_ALREADY_RUNNING");
         var cycleId = RandomId();
-        await store.StartCycleAsync(cycleId, ct);
+        var databaseStage = "START_CYCLE";
         try
         {
+            await store.StartCycleAsync(cycleId, ct);
+            databaseStage = "SYNCHRONIZE_HEALTH";
             await store.SynchronizeHealthAsync(ct);
+            databaseStage = "LOAD_TARGETS";
             var targets = await store.GetDueHealthTargetsAsync(850, ct);
+            databaseStage = "PROBE_HEALTH";
             var results = await ProbeHealthAsync(targets, ct);
             if (results.Any(result => result.SecurityFailure))
             {
@@ -84,6 +88,7 @@ internal sealed class MonitorCoordinator : IDisposable
                 return new MonitorRunResult(MonitorRunOutcome.Blocked,
                     "SECURITY_CYCLE_ABORTED");
             }
+            databaseStage = "APPLY_RESULTS";
             var promotions = await store.ApplyHealthResultsAsync(results, ct);
             if (promotions.Count > 0)
             {
@@ -112,9 +117,15 @@ internal sealed class MonitorCoordinator : IDisposable
                 }
                 finally { ClearOrigins(items); }
             }
+            databaseStage = "COMPLETE_CYCLE";
             await store.CompleteCycleAsync(cycleId, "SUCCESS", "CYCLE_COMPLETED", ct);
+            databaseStage = "DISPATCH_ALERTS";
             await store.DispatchPendingAlertsAsync(100, ct);
             return new MonitorRunResult(MonitorRunOutcome.Success, "CYCLE_COMPLETED");
+        }
+        catch (Npgsql.PostgresException)
+        {
+            throw new MonitorFailure("DATABASE_" + databaseStage);
         }
         catch
         {
