@@ -350,7 +350,13 @@ sealed class ContentManagementRuntime : IDisposable
               AND ($3='' OR last_result_code=$3)
               AND ($4='' OR job_state=$4)
               AND ($5='' OR item_id::varchar LIKE $5||'%')
-              AND ($6='' OR position(lower($6) in lower(display_name))>0)
+              AND ($6='' OR position(
+                translate(lower(btrim($6)),
+                  'áàâãäéèêëíìîïóòôõöúùûüçñ',
+                  'aaaaaeeeeiiiiooooouuuucn')
+                in translate(lower(display_name),
+                  'áàâãäéèêëíìîïóòôõöúùûüçñ',
+                  'aaaaaeeeeiiiiooooouuuucn'))>0)
             ORDER BY item_id LIMIT $7
             """);
         command.Parameters.AddWithValue(query.AfterItemId);
