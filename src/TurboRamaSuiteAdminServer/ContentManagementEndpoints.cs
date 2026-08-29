@@ -290,9 +290,12 @@ sealed class ContentManagementRuntime : IDisposable
         {
             await using var command = dataSource.CreateCommand(ReadinessSql);
             await using var reader = await command.ExecuteReaderAsync(timeout.Token);
-            return await reader.ReadAsync(timeout.Token) && reader.GetBoolean(0) &&
-                reader.GetBoolean(1) && reader.GetBoolean(2) && reader.GetBoolean(3) &&
-                reader.GetBoolean(4);
+            if (!await reader.ReadAsync(timeout.Token)) return false;
+            var checks = Enumerable.Range(0, 5).Select(reader.GetBoolean).ToArray();
+            if (checks.Any(value => !value))
+                Console.Error.WriteLine("SUITE CONTENT ADMIN: READINESS_CHECKS=" +
+                    string.Join(',', checks.Select(value => value ? '1' : '0')));
+            return checks.All(value => value);
         }
         catch (OperationCanceledException) when (!ct.IsCancellationRequested) { return false; }
         catch (NpgsqlException) { return false; }
