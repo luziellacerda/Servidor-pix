@@ -13,10 +13,11 @@ internal sealed class MonitorCoordinator : IDisposable
     private readonly OriginVerifier verifier;
     private readonly Uri gatewayKeyRingReadinessUri;
     private readonly int maximumConcurrency;
+    private readonly bool directMode;
 
     private MonitorCoordinator(MonitorStore store, MonitorKeyRing candidateKeys,
         MonitorKeyRing originKeys, OriginPolicy originPolicy, Uri gatewayKeyRingReadinessUri,
-        int maximumConcurrency)
+        int maximumConcurrency, bool directMode)
     {
         this.store = store;
         this.candidateKeys = candidateKeys;
@@ -24,6 +25,7 @@ internal sealed class MonitorCoordinator : IDisposable
         this.originPolicy = originPolicy;
         this.gatewayKeyRingReadinessUri = gatewayKeyRingReadinessUri;
         this.maximumConcurrency = maximumConcurrency;
+        this.directMode = directMode;
         verifier = new OriginVerifier(originPolicy);
     }
 
@@ -53,7 +55,7 @@ internal sealed class MonitorCoordinator : IDisposable
                 var policy = await OriginPolicy.LoadAsync(options.AllowedHostsFile, ct);
                 return new MonitorCoordinator(new MonitorStore(connection), candidates,
                     origins, policy, options.GatewayKeyRingReadinessUri,
-                    options.MaximumConcurrency);
+                    options.MaximumConcurrency, options.DirectMode);
             }
             catch { origins.Dispose(); throw; }
         }
@@ -249,6 +251,15 @@ internal sealed class MonitorCoordinator : IDisposable
                 !string.Equals(extension, candidate.ExpectedFileExtension, StringComparison.Ordinal))
                 throw new PublisherFailure("MIRROR_EXTENSION_MISMATCH");
             var probe = await verifier.ProbeOnlyAsync(decrypted.Uri, ct);
+            if (directMode)
+            {
+                if (candidate.ChangeIntent == "MIRROR_REPLACEMENT" &&
+                    probe.ContentLength != candidate.ExpectedContentLength)
+                    throw new PublisherFailure("MIRROR_LENGTH_MISMATCH");
+                return new ValidatedCandidate(candidate, decrypted, probe.ContentLength,
+                    new string('0', 64), safeFileName, extension, extractPolicy,
+                    probe.ContentType, probe.Etag, probe.LastModified);
+            }
             var full = await verifier.HashOnlyAsync(decrypted.Uri, probe, extension, ct);
             if (probe.Etag is not null && full.Etag is not null && probe.Etag != full.Etag ||
                 probe.LastModified is not null && full.LastModified is not null &&
@@ -275,7 +286,9 @@ internal sealed class MonitorCoordinator : IDisposable
         IReadOnlyList<HealthTarget> targets, CancellationToken ct)
     {
         var results = new HealthProbeResult[targets.Count];
-        var fullValidationTargets = targets.Where(target =>
+        var fullValidationTargets = directMode
+            ? new HashSet<string>(StringComparer.Ordinal)
+            : targets.Where(target =>
                 HealthPolicy.RequiresFullValidation(target, DateTime.UtcNow))
             .Take(HealthPolicy.MaximumFullValidationsPerCycle)
             .Select(target => target.ItemId)
