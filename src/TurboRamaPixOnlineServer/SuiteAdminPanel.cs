@@ -588,16 +588,25 @@ static class SuiteAdminPanel
             .Append("<th>Última verificação</th><th>Resultado</th><th>Retomada Range</th><th>Versão</th><th>Ação</th>")
             .Append("</tr></thead><tbody>");
         string? currentCategory = null;
+        var currentPlatformOpen = false;
         foreach (var entry in visibleItems)
         {
             var item = entry.Item;
             if (currentCategory != entry.Category.Id)
             {
                 currentCategory = entry.Category.Id;
-                html.Append("<tr class=platform-row><th colspan=7><span>")
-                    .Append(E(entry.Category.Name)).Append("</span><small>")
-                    .Append(visibleItems.Count(value => value.Category.Id == currentCategory))
-                    .Append(" itens</small></th></tr>");
+                currentPlatformOpen = query.Platform is not null || query.Name is not null ||
+                    visibleItems.Any(value => value.Category.Id == currentCategory &&
+                        value.Item.ItemId == validTestingItem);
+                var platformItems = visibleItems.Where(value => value.Category.Id == currentCategory)
+                    .ToArray();
+                html.Append("<tr class=platform-row><th colspan=7><button type=button class=platform-toggle data-toggle-platform='")
+                    .Append(E(currentCategory)).Append("' aria-expanded='")
+                    .Append(currentPlatformOpen ? "true" : "false").Append("'><span><b>")
+                    .Append(E(entry.Category.Name)).Append("</b><small>")
+                    .Append(platformItems.Length).Append(" jogos · ")
+                    .Append(platformItems.Count(value => value.Item.Availability == "ONLINE"))
+                    .Append(" online</small></span><i aria-hidden=true>⌄</i></button></th></tr>");
             }
             var isOnline = item.Availability == "ONLINE";
             var checkedAfterRequest = validTestingStarted is not null &&
@@ -608,7 +617,9 @@ static class SuiteAdminPanel
                 validTestingStarted is not null && !checkedAfterRequest;
             var range = item.LastCheckedAt is null ? "Ainda não verificado" :
                 item.LastResultCode == "CHECK_OK" ? "Compatível" : "Não confirmado";
-            html.Append("<tr").Append(isTesting ? " data-health-pending" : "").Append("><td><div class=health-game><strong>").Append(E(item.DisplayName))
+            html.Append("<tr data-platform-item='").Append(E(entry.Category.Id)).Append("'")
+                .Append(currentPlatformOpen ? "" : " hidden").Append(isTesting ? " data-health-pending" : "")
+                .Append("><td><div class=health-game><strong>").Append(E(item.DisplayName))
                 .Append("</strong></div></td><td><span class='status ")
                 .Append(isOnline ? "online" : "state-maintenance").Append("'>")
                 .Append(isOnline ? "ONLINE" : "OFF / MANUTENÇÃO").Append("</span></td><td>")
