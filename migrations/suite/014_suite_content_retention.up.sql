@@ -415,7 +415,7 @@ REVOKE ALL ON FUNCTION suite.enforce_suite_content_grant_quota(
 REVOKE ALL ON suite.suite_content_grants,
   suite.suite_content_origin_candidates,suite.suite_challenges
   FROM "turborama-suite-content-maintenance";
-GRANT USAGE ON SCHEMA suite TO "turborama-suite-content-maintenance";
+GRANT USAGE ON SCHEMA suite TO "turborama-suite-content-maintenance","turborama-suite";
 GRANT SELECT ON suite.schema_migrations TO "turborama-suite-content-maintenance";
 GRANT SELECT ON suite.schema_migration_checksums TO "turborama-suite-content-maintenance";
 GRANT EXECUTE ON FUNCTION suite.run_suite_content_retention(integer)
