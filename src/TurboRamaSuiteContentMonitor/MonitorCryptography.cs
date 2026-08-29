@@ -311,8 +311,6 @@ internal static class ManagedSnapshotIdentity
                 if (item.Status == "READY")
                 {
                     writer.WriteNumber("artifactVersion", item.ArtifactVersion!.Value);
-                    writer.WriteNumber("contentLength", item.ContentLength!.Value);
-                    writer.WriteString("sha256", item.Sha256);
                     writer.WriteString("safeFileName", item.SafeFileName);
                     writer.WriteString("fileExtension", item.FileExtension);
                     writer.WriteString("extractPolicy", item.ExtractPolicy);
@@ -321,8 +319,6 @@ internal static class ManagedSnapshotIdentity
                 else
                 {
                     writer.WriteNull("artifactVersion");
-                    writer.WriteNull("contentLength");
-                    writer.WriteNull("sha256");
                     writer.WriteNull("safeFileName");
                     writer.WriteNull("fileExtension");
                     writer.WriteNull("extractPolicy");
@@ -348,8 +344,6 @@ internal static class ManagedSnapshotIdentity
             writer.WriteString("itemId", item.ItemId);
             writer.WriteString("artifactId", item.ItemId);
             writer.WriteNumber("artifactVersion", item.ArtifactVersion!.Value);
-            writer.WriteNumber("contentLength", item.ContentLength!.Value);
-            writer.WriteString("sha256", item.Sha256);
             writer.WriteString("safeFileName", item.SafeFileName);
             writer.WriteString("fileExtension", item.FileExtension);
             writer.WriteString("extractPolicy", item.ExtractPolicy);

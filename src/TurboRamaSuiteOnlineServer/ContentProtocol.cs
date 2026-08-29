@@ -76,6 +76,8 @@ public static class ContentProtocol
             writer.WriteString("manifestIdentity", context.ManifestIdentity);
             writer.WriteString("descriptorHash", context.DescriptorHash);
             writer.WriteNumber("offset", context.Offset);
+            writer.WriteString("sourceETag", context.SourceETag);
+            writer.WriteString("sourceLastModified", context.SourceLastModified);
             writer.WriteEndObject();
         }));
     }
@@ -198,14 +200,18 @@ public static class ContentProtocol
         ValidateHex(context.ManifestIdentity);
         ValidateHex(context.DescriptorHash);
         if (context.Offset < 0) Invalid();
+        ValidateSourceValidator(context.SourceETag, 512);
+        ValidateSourceValidator(context.SourceLastModified, 128);
+        if (context.Offset == 0 &&
+            (context.SourceETag.Length != 0 || context.SourceLastModified.Length != 0)) Invalid();
+        if (context.Offset > 0 &&
+            context.SourceETag.Length == 0 && context.SourceLastModified.Length == 0) Invalid();
     }
 
     public static void Validate(ContentArtifactDescriptor descriptor)
     {
         ValidateArtifactId(descriptor.ArtifactId);
-        if (descriptor.ArtifactVersion < 1 || descriptor.ContentLength is < 1 or > MaximumContentLength)
-            Invalid();
-        ValidateHex(descriptor.Sha256);
+        if (descriptor.ArtifactVersion < 1) Invalid();
         ValidateSafeFileName(descriptor.SafeFileName);
         ValidateExtension(descriptor.FileExtension);
         if (!descriptor.SafeFileName.EndsWith(descriptor.FileExtension,
@@ -218,6 +224,12 @@ public static class ContentProtocol
     public static void ValidateTokenDigest(string value) => ValidateHex(value);
     public static bool IsSha256(string? value) => value is { Length: 64 } &&
         value.All(character => character is >= '0' and <= '9' or >= 'a' and <= 'f');
+
+    private static void ValidateSourceValidator(string value, int maximumLength)
+    {
+        if (value is null || value.Length > maximumLength ||
+            value.Any(character => char.IsControl(character))) Invalid();
+    }
 
     private static void Write(Utf8JsonWriter writer, CatalogPageAssertion assertion)
     {
@@ -314,8 +326,6 @@ public static class ContentProtocol
     {
         writer.WriteString("artifactId", descriptor.ArtifactId);
         writer.WriteNumber("artifactVersion", descriptor.ArtifactVersion);
-        writer.WriteNumber("contentLength", descriptor.ContentLength);
-        writer.WriteString("sha256", descriptor.Sha256);
         writer.WriteString("safeFileName", descriptor.SafeFileName);
         writer.WriteString("fileExtension", descriptor.FileExtension);
         writer.WriteString("extractPolicy", descriptor.ExtractPolicy);

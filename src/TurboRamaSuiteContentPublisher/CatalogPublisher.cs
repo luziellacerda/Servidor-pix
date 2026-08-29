@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text.Json;
 using Npgsql;
+using NpgsqlTypes;
 
 namespace TurboRamaSuiteContentPublisher;
 
@@ -509,8 +510,10 @@ internal static class CatalogPublisher
                     insert.Parameters.AddWithValue(catalogIdentity);
                     insert.Parameters.AddWithValue(item.ItemId);
                     insert.Parameters.AddWithValue(item.DisplayOrder);
-                    insert.Parameters.AddWithValue(item.ContentLength);
-                    insert.Parameters.AddWithValue(item.Sha256);
+                    insert.Parameters.Add(new NpgsqlParameter { NpgsqlDbType = NpgsqlDbType.Bigint,
+                        Value = DBNull.Value });
+                    insert.Parameters.Add(new NpgsqlParameter { NpgsqlDbType = NpgsqlDbType.Char,
+                        Value = DBNull.Value });
                     insert.Parameters.AddWithValue(item.SafeFileName);
                     insert.Parameters.AddWithValue(item.FileExtension);
                     insert.Parameters.AddWithValue(item.ExtractPolicy);

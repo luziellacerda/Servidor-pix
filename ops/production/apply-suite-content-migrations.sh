@@ -33,7 +33,8 @@ manifest="$repository/ops/production/suite-content-migrations.sha256"
 }
 
 migrations=(010_suite_content_catalog 011_suite_content_publish_integrity \
-  012_suite_content_permissions 013_suite_content_management 014_suite_content_retention)
+  012_suite_content_permissions 013_suite_content_management 014_suite_content_retention \
+  015_suite_content_direct_metadata)
 for migration in "${migrations[@]}"; do
   migration_file="$migration.up.sql"
   [[ -f "$repository/migrations/suite/$migration_file" ]] || {
@@ -43,7 +44,7 @@ for migration in "${migrations[@]}"; do
 done
 
 marker_count=$(runuser -u postgres -- psql --no-psqlrc --set=ON_ERROR_STOP=1 \
-  --tuples-only --no-align --dbname="$database" --command="SELECT count(*) FROM suite.schema_migrations WHERE version IN ('010_suite_content_catalog','011_suite_content_publish_integrity','012_suite_content_permissions','013_suite_content_management','014_suite_content_retention');")
+  --tuples-only --no-align --dbname="$database" --command="SELECT count(*) FROM suite.schema_migrations WHERE version IN ('010_suite_content_catalog','011_suite_content_publish_integrity','012_suite_content_permissions','013_suite_content_management','014_suite_content_retention','015_suite_content_direct_metadata');")
 ledger_exists=$(runuser -u postgres -- psql --no-psqlrc --set=ON_ERROR_STOP=1 \
   --tuples-only --no-align --dbname="$database" --command="SELECT CASE WHEN to_regclass('suite.schema_migration_checksums') IS NULL THEN 0 ELSE 1 END;")
 baseline_count=$(runuser -u postgres -- psql --no-psqlrc --set=ON_ERROR_STOP=1 \
@@ -101,9 +102,9 @@ for migration in "${migrations[@]}"; do
 done
 
 runuser -u postgres -- psql --no-psqlrc --set=ON_ERROR_STOP=1 --tuples-only --no-align \
-  --dbname="$database" --command="SELECT count(*) FROM suite.schema_migrations WHERE version IN ('010_suite_content_catalog','011_suite_content_publish_integrity','012_suite_content_permissions','013_suite_content_management','014_suite_content_retention');" \
-  | grep -qx '5' || { echo 'BLOCKED: migration verification failed.' >&2; exit 1; }
+  --dbname="$database" --command="SELECT count(*) FROM suite.schema_migrations WHERE version IN ('010_suite_content_catalog','011_suite_content_publish_integrity','012_suite_content_permissions','013_suite_content_management','014_suite_content_retention','015_suite_content_direct_metadata');" \
+  | grep -qx '6' || { echo 'BLOCKED: migration verification failed.' >&2; exit 1; }
 runuser -u postgres -- psql --no-psqlrc --set=ON_ERROR_STOP=1 --tuples-only --no-align \
-  --dbname="$database" --command="SELECT count(*) FROM suite.schema_migration_checksums WHERE version IN ('010_suite_content_catalog','011_suite_content_publish_integrity','012_suite_content_permissions','013_suite_content_management','014_suite_content_retention');" \
-  | grep -qx '5' || { echo 'BLOCKED: migration checksum ledger incomplete.' >&2; exit 1; }
-echo 'OK: Suite content migrations 010-014 applied; no catalog was published.'
+  --dbname="$database" --command="SELECT count(*) FROM suite.schema_migration_checksums WHERE version IN ('010_suite_content_catalog','011_suite_content_publish_integrity','012_suite_content_permissions','013_suite_content_management','014_suite_content_retention','015_suite_content_direct_metadata');" \
+  | grep -qx '6' || { echo 'BLOCKED: migration checksum ledger incomplete.' >&2; exit 1; }
+echo 'OK: Suite content migrations 010-015 applied; no catalog was published.'

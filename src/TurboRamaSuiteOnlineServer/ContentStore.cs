@@ -1,6 +1,7 @@
 using System.Data;
 using System.Security.Cryptography;
 using Npgsql;
+using NpgsqlTypes;
 
 namespace TurboRamaSuiteOnlineServer;
 
@@ -37,8 +38,6 @@ public sealed record ClaimedContentGrantRecord(
     string ManifestIdentity,
     string DescriptorHash,
     long RangeStart,
-    long ContentLength,
-    string Sha256,
     string SafeFileName,
     string FileExtension,
     string ExtractPolicy,
@@ -291,7 +290,7 @@ public sealed class PostgresContentStore : IContentControlStore, IContentGateway
             ContentProtocol.MaximumCatalogResponseItems);
         var rows = new List<ContentCatalogItemRecord>(responseItemLimit + 1);
         await using (var command = new NpgsqlCommand("""
-            SELECT item_id,status,artifact_id,artifact_version,content_length,sha256,
+            SELECT item_id,status,artifact_id,artifact_version,
                    safe_file_name,file_extension,extract_policy,manifest_identity,
                    descriptor_hash,maintenance_reason
             FROM suite.suite_content_items
@@ -313,13 +312,12 @@ public sealed class PostgresContentStore : IContentControlStore, IContentGateway
                 if (availability == ContentProtocol.ReadyAvailability)
                 {
                     descriptor = new ContentArtifactDescriptor(
-                        reader.GetString(2), reader.GetInt32(3), reader.GetInt64(4),
-                        reader.GetString(5), reader.GetString(6), reader.GetString(7),
-                        reader.GetString(8), reader.GetString(9));
-                    descriptorHash = reader.GetString(10);
+                        reader.GetString(2), reader.GetInt32(3), reader.GetString(4),
+                        reader.GetString(5), reader.GetString(6), reader.GetString(7));
+                    descriptorHash = reader.GetString(8);
                 }
                 else if (availability == ContentProtocol.MaintenanceAvailability &&
-                         !reader.IsDBNull(11))
+                         !reader.IsDBNull(9))
                     reasonCode = ContentProtocol.MaintenanceReasonCode;
                 var item = new ContentCatalogItemRecord(reader.GetString(0), availability,
                     descriptor, descriptorHash, reasonCode);
@@ -370,7 +368,7 @@ public sealed class PostgresContentStore : IContentControlStore, IContentGateway
         string? sourceETag;
         string? sourceLastModified;
         await using (var command = new NpgsqlCommand("""
-            SELECT i.item_id,i.artifact_id,i.artifact_version,i.content_length,i.sha256,
+            SELECT i.item_id,i.artifact_id,i.artifact_version,
                    i.safe_file_name,i.file_extension,i.extract_policy,i.manifest_identity,
                    i.descriptor_hash,i.source_etag,i.source_last_modified
             FROM suite.suite_content_catalog_state cs
@@ -399,13 +397,12 @@ public sealed class PostgresContentStore : IContentControlStore, IContentGateway
                 throw new SuiteException(404, "CONTENT_NOT_AVAILABLE",
                     "The requested content is not available.");
             var descriptor = new ContentArtifactDescriptor(
-                reader.GetString(1), reader.GetInt32(2), reader.GetInt64(3),
-                reader.GetString(4), reader.GetString(5), reader.GetString(6),
-                reader.GetString(7), reader.GetString(8));
+                reader.GetString(1), reader.GetInt32(2), reader.GetString(3),
+                reader.GetString(4), reader.GetString(5), reader.GetString(6));
             item = new ContentCatalogItemRecord(reader.GetString(0),
-                ContentProtocol.ReadyAvailability, descriptor, reader.GetString(9), null);
-            sourceETag = reader.IsDBNull(10) ? null : reader.GetString(10);
-            sourceLastModified = reader.IsDBNull(11) ? null : reader.GetString(11);
+                ContentProtocol.ReadyAvailability, descriptor, reader.GetString(7), null);
+            sourceETag = reader.IsDBNull(8) ? null : reader.GetString(8);
+            sourceLastModified = reader.IsDBNull(9) ? null : reader.GetString(9);
         }
 
         ValidateStoredItem(item);
@@ -414,7 +411,9 @@ public sealed class PostgresContentStore : IContentControlStore, IContentGateway
             item.Descriptor.ArtifactVersion != context.ArtifactVersion ||
             item.Descriptor.ManifestIdentity != context.ManifestIdentity ||
             !Protocol.FixedEquals(item.DescriptorHash!, context.DescriptorHash) ||
-            context.Offset >= item.Descriptor.ContentLength)
+            (context.Offset > 0 &&
+             context.SourceETag != (sourceETag ?? string.Empty) &&
+             context.SourceLastModified != (sourceLastModified ?? string.Empty)))
             throw new SuiteException(409, "CONTENT_DESCRIPTOR_MISMATCH",
                 "The authorized content descriptor is no longer current.");
 
@@ -447,8 +446,10 @@ public sealed class PostgresContentStore : IContentControlStore, IContentGateway
             insert.Parameters.AddWithValue(context.ManifestIdentity);
             insert.Parameters.AddWithValue(context.DescriptorHash);
             insert.Parameters.AddWithValue(context.Offset);
-            insert.Parameters.AddWithValue(item.Descriptor.ContentLength);
-            insert.Parameters.AddWithValue(item.Descriptor.Sha256);
+            insert.Parameters.Add(new NpgsqlParameter { NpgsqlDbType = NpgsqlDbType.Bigint,
+                Value = DBNull.Value });
+            insert.Parameters.Add(new NpgsqlParameter { NpgsqlDbType = NpgsqlDbType.Char,
+                Value = DBNull.Value });
             insert.Parameters.AddWithValue((object?)sourceETag ?? DBNull.Value);
             insert.Parameters.AddWithValue((object?)sourceLastModified ?? DBNull.Value);
             insert.Parameters.AddWithValue(draft.CorrelationId);
@@ -473,8 +474,8 @@ public sealed class PostgresContentStore : IContentControlStore, IContentGateway
             SELECT g.token_digest,g.license_id,g.device_id,g.session_id,
                    g.revocation_generation,g.catalog_identity,g.item_id,
                    g.artifact_id,g.artifact_version,
-                   g.manifest_identity,g.descriptor_hash,g.range_start,g.content_length,
-                   g.sha256,g.state,extract(epoch from g.expires_at)::bigint,
+                   g.manifest_identity,g.descriptor_hash,g.range_start,
+                   g.state,extract(epoch from g.expires_at)::bigint,
                    extract(epoch from g.authorized_until)::bigint,
                    i.safe_file_name,i.file_extension,i.extract_policy,i.content_type,
                    i.source_etag,i.source_last_modified,o.upstream_url_ciphertext,
@@ -486,7 +487,6 @@ public sealed class PostgresContentStore : IContentControlStore, IContentGateway
              AND i.artifact_version=g.artifact_version
              AND i.manifest_identity=g.manifest_identity
              AND i.descriptor_hash=g.descriptor_hash
-             AND i.content_length=g.content_length AND i.sha256=g.sha256
              AND i.status='READY'
             JOIN suite.suite_content_artifact_origins o
               ON o.catalog_identity=i.catalog_identity AND o.item_id=i.item_id
@@ -502,13 +502,12 @@ public sealed class PostgresContentStore : IContentControlStore, IContentGateway
                 reader.GetString(3), reader.GetInt64(4), reader.GetString(5),
                 reader.GetString(6), reader.GetString(7), reader.GetInt32(8),
                 reader.GetString(9), reader.GetString(10), reader.GetInt64(11),
-                reader.GetInt64(12), reader.GetString(13), reader.GetString(14),
-                reader.GetInt64(15), reader.GetInt64(16), reader.GetString(17),
-                reader.GetString(18), reader.GetString(19), reader.GetString(20),
-                reader.IsDBNull(21) ? null : reader.GetString(21),
-                reader.IsDBNull(22) ? null : reader.GetString(22),
-                (byte[])reader[23], (byte[])reader[24], (byte[])reader[25],
-                reader.GetInt32(26));
+                reader.GetString(12), reader.GetInt64(13), reader.GetInt64(14),
+                reader.GetString(15), reader.GetString(16), reader.GetString(17),
+                reader.GetString(18), reader.IsDBNull(19) ? null : reader.GetString(19),
+                reader.IsDBNull(20) ? null : reader.GetString(20),
+                (byte[])reader[21], (byte[])reader[22], (byte[])reader[23],
+                reader.GetInt32(24));
         }
 
         if (!Protocol.FixedEquals(row.TokenDigest, tokenDigest) || row.State != "ISSUED" ||
@@ -536,7 +535,7 @@ public sealed class PostgresContentStore : IContentControlStore, IContentGateway
         return new ClaimedContentGrantRecord(
             grantId, row.CatalogIdentity, row.ItemId, row.ArtifactId,
             row.ArtifactVersion, row.ManifestIdentity, row.DescriptorHash,
-            row.RangeStart, row.ContentLength, row.Sha256, row.SafeFileName,
+            row.RangeStart, row.SafeFileName,
             row.FileExtension, row.ExtractPolicy, row.ContentType, row.SourceETag,
             row.SourceLastModified, row.Ciphertext, row.Nonce, row.Tag,
             row.KeyVersion);
@@ -760,8 +759,6 @@ public sealed class PostgresContentStore : IContentControlStore, IContentGateway
         string ManifestIdentity,
         string DescriptorHash,
         long RangeStart,
-        long ContentLength,
-        string Sha256,
         string State,
         long ExpiresAt,
         long AuthorizedUntil,

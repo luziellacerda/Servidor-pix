@@ -250,8 +250,6 @@ internal static class CanonicalIdentity
             writer.WriteString("itemId", item.ItemId);
             writer.WriteString("artifactId", item.ItemId);
             writer.WriteNumber("artifactVersion", 1);
-            writer.WriteNumber("contentLength", item.ContentLength);
-            writer.WriteString("sha256", item.Sha256);
             writer.WriteString("safeFileName", item.SafeFileName);
             writer.WriteString("fileExtension", item.FileExtension);
             writer.WriteString("extractPolicy", item.ExtractPolicy);
@@ -296,8 +294,6 @@ internal static class CanonicalIdentity
                 if (ready.TryGetValue(source.ItemId, out var item))
                 {
                     writer.WriteString("status", "READY");
-                    writer.WriteNumber("contentLength", item.ContentLength);
-                    writer.WriteString("sha256", item.Sha256);
                     writer.WriteString("fileExtension", item.FileExtension);
                     writer.WriteString("extractPolicy", item.ExtractPolicy);
                     writer.WriteNull("maintenanceReason");
@@ -305,8 +301,6 @@ internal static class CanonicalIdentity
                 else if (maintenance.TryGetValue(source.ItemId, out var unavailable))
                 {
                     writer.WriteString("status", "MAINTENANCE");
-                    writer.WriteNull("contentLength");
-                    writer.WriteNull("sha256");
                     writer.WriteNull("fileExtension");
                     writer.WriteNull("extractPolicy");
                     writer.WriteString("maintenanceReason", unavailable.ReasonCode);

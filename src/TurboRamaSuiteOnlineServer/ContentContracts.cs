@@ -15,8 +15,6 @@ public sealed record CatalogPageProof(OperationProof Proof, CatalogPageContext C
 public sealed record ContentArtifactDescriptor(
     string ArtifactId,
     int ArtifactVersion,
-    long ContentLength,
-    string Sha256,
     string SafeFileName,
     string FileExtension,
     string ExtractPolicy,
@@ -59,7 +57,9 @@ public sealed record DownloadAuthorizationContext(
     int ArtifactVersion,
     string ManifestIdentity,
     string DescriptorHash,
-    long Offset);
+    long Offset,
+    string SourceETag,
+    string SourceLastModified);
 
 public sealed record DownloadAuthorizationProof(
     OperationProof Proof,
