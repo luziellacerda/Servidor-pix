@@ -1,6 +1,7 @@
 using System.Data;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 using Npgsql;
 using NpgsqlTypes;
 using TurboRamaSuiteContentPublisher;
@@ -9,6 +10,8 @@ namespace TurboRamaSuiteContentMonitor;
 
 internal sealed class MonitorStore : IDisposable
 {
+    private const string LinkAlertReport =
+        "/run/turborama-suite-content-monitor/link-alerts.json";
     private readonly NpgsqlDataSource dataSource;
     public MonitorStore(string connection) => dataSource = NpgsqlDataSource.Create(connection);
 
@@ -317,6 +320,41 @@ internal sealed class MonitorStore : IDisposable
                 reader.IsDBNull(13) ? null : reader.GetDateTime(13),
                 reader.IsDBNull(14) ? null : reader.GetDateTime(14), reader.GetInt64(15)));
         return rows;
+    }
+
+    public async Task WriteLinkAlertReportAsync(IReadOnlyList<HealthProbeResult> results,
+        CancellationToken ct)
+    {
+        var failures = new List<object>();
+        foreach (var result in results.Where(value => !value.Success))
+        {
+            await using var command = dataSource.CreateCommand("""
+                SELECT display_name FROM suite.suite_content_management_items
+                WHERE item_id=$1 LIMIT 1
+                """);
+            command.Parameters.AddWithValue(result.Target.ItemId);
+            if (await command.ExecuteScalarAsync(ct) is string displayName)
+                failures.Add(new { game = displayName, code = result.ResultCode });
+        }
+        var payload = JsonSerializer.SerializeToUtf8Bytes(new
+        {
+            generatedAt = DateTimeOffset.UtcNow,
+            failures
+        });
+        var temporary = LinkAlertReport + ".new";
+        try
+        {
+            await File.WriteAllBytesAsync(temporary, payload, ct);
+            if (!OperatingSystem.IsWindows())
+                File.SetUnixFileMode(temporary, UnixFileMode.UserRead | UnixFileMode.UserWrite |
+                    UnixFileMode.GroupRead | UnixFileMode.OtherRead);
+            File.Move(temporary, LinkAlertReport, true);
+        }
+        finally
+        {
+            CryptographicOperations.ZeroMemory(payload);
+            try { File.Delete(temporary); } catch (IOException) { }
+        }
     }
 
     public async Task<IReadOnlyDictionary<string, MaintenancePromotion>> ApplyHealthResultsAsync(

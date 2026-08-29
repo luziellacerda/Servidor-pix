@@ -633,14 +633,7 @@ static class SuiteAdminPanel
             if (isTesting)
                 html.Append("<span class=health-testing><i></i>Testando…</span>");
             else if (canCheck)
-                html.Append("<details class=health-test><summary>Testar link</summary>")
-                    .Append("<form method=post action=/admin/suite/content/actions/check autocomplete=off data-health-probe-form>")
-                    .Append(Csrf(token)).Append(ItemFields(item.ItemId))
-                    .Append("<input type=hidden name=confirmItemId value='").Append(E(item.ItemId))
-                    .Append("'><input type=hidden name=returnTo value=health>")
-                    .Append("<label>Senha administrativa<input type=password name=adminPassword maxlength=256 required autocomplete=new-password></label>")
-                    .Append("<small>Transfere somente uma amostra segura para confirmar entrega e retomada.</small>")
-                    .Append("<button class=primary data-busy='Testando...'>Executar teste</button></form></details>");
+                html.Append("<span class=health-daily>Teste automático diário</span>");
             html.Append("<a class='button ghost' href='/admin/suite/content?manage=")
                 .Append(E(item.ItemId)).Append("'>Gerenciar</a></div></td></tr>");
         }
