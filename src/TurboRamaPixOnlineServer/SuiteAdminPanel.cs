@@ -556,7 +556,8 @@ static class SuiteAdminPanel
         var html = new StringBuilder("<div class=health-dashboard><section class='scope-banner health-hero'><div><span class=eyebrow>MONITOR DE ORIGENS</span>")
             .Append("<h2>Saúde dos links</h2><p>Diagnóstico separado do gerenciamento. ")
             .Append("Nenhuma URL é exibida e nenhum jogo completo é transferido pelo servidor.</p></div>")
-            .Append("<span class='pill on'>MONITOR ATIVO</span></section>");
+            .Append("<span class='pill on'>MONITOR ATIVO</span></section>")
+            .Append("<div class=health-loading-overlay hidden data-health-loading role=status aria-live=polite><div><i></i><strong>Verificando link</strong><span>Lendo uma amostra mínima de dados…</span></div></div>");
         if (error.Length > 0)
             html.Append("<div class='notice danger'>Consulta inválida ou serviço indisponível.</div>");
         if (AllowedOk(ok) is { } success)
@@ -632,8 +633,8 @@ static class SuiteAdminPanel
             if (isTesting)
                 html.Append("<span class=health-testing><i></i>Testando…</span>");
             else if (canCheck)
-                html.Append("<details class=health-test><summary>Testar dados</summary>")
-                    .Append("<form method=post action=/admin/suite/content/actions/check autocomplete=off>")
+                html.Append("<details class=health-test><summary>Testar link</summary>")
+                    .Append("<form method=post action=/admin/suite/content/actions/check autocomplete=off data-health-probe-form>")
                     .Append(Csrf(token)).Append(ItemFields(item.ItemId))
                     .Append("<input type=hidden name=confirmItemId value='").Append(E(item.ItemId))
                     .Append("'><input type=hidden name=returnTo value=health>")
