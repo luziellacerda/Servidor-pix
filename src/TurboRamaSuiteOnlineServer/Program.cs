@@ -18,10 +18,12 @@ string? contentSigningPem = null;
 string? contentGrantPepper = null;
 Uri? gatewayPepperProofUri = null;
 string? contentAssertionKeyId = null;
+var contentStartupStage = "not-started";
 if (enabled && (string.IsNullOrWhiteSpace(connection) || string.IsNullOrWhiteSpace(pepper) || string.IsNullOrWhiteSpace(signingPem)))
     throw new InvalidOperationException("Suite is enabled but protected dependencies are unavailable.");
 var contentAvailable = contentRequested && ContentStartupIsolation.TryInitialize(() =>
 {
+    contentStartupStage = "protected-inputs";
     contentConnection = ReadContentProtected("ConnectionStrings:SuiteContentApiStore",
         "ConnectionStrings:SuiteContentApiStoreFile", 4096);
     contentSigningPem = ReadContentProtected("Suite:ContentAssertionPrivateKeyPem",
@@ -37,10 +39,12 @@ var contentAvailable = contentRequested && ContentStartupIsolation.TryInitialize
         !Uri.TryCreate(gatewayPepperProofUriText, UriKind.Absolute,
             out var parsedProofUri))
         throw new InvalidOperationException("Content dependencies are unavailable.");
+    contentStartupStage = "connection-role";
     contentConnection = ContentConnectionPolicy.RequireRole(contentConnection,
         "turborama-suite-content-api");
     gatewayPepperProofUri = ContentGatewayPepperVerifier.RequireLoopbackProofUri(
         parsedProofUri);
+    contentStartupStage = "assertion-key";
     using var validationRsa = RSA.Create();
     validationRsa.ImportFromPem(contentSigningPem);
     using var validationSigner = new RsaContentAssertionSigner(validationRsa);
@@ -48,10 +52,12 @@ var contentAvailable = contentRequested && ContentStartupIsolation.TryInitialize
     ContentAssertionKeyPolicy.RequireExpectedKeyId(contentAssertionKeyId,
         builder.Configuration["Suite:ContentAssertionExpectedKeyId"],
         builder.Environment.IsProduction());
+    contentStartupStage = "pepper";
     using var validationHasher = new ContentGrantTokenHasher(contentGrantPepper);
     if (SamePublicKey(signingPem!, contentSigningPem))
         throw new InvalidOperationException(
             "Suite online and content assertion keys must be independent.");
+    contentStartupStage = "complete";
 });
 
 builder.Services.AddSingleton(TimeProvider.System);
@@ -90,7 +96,8 @@ if (enabled)
 var app = builder.Build();
 if (contentRequested && !contentAvailable)
     app.Logger.LogError(
-        "Suite content startup validation failed; licensing v1 remains available and content is fail-closed.");
+        "Suite content startup validation failed at {Stage}; licensing v1 remains available and content is fail-closed.",
+        contentStartupStage);
 app.UseForwardedHeaders();
 app.Use(async (context, next) =>
 {
