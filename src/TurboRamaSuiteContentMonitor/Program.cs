@@ -50,6 +50,11 @@ internal static class Program
             Console.Error.WriteLine($"SUITE CONTENT MONITOR: FAILED code={ex.Code}");
             return 2;
         }
+        catch (Npgsql.PostgresException ex)
+        {
+            Console.Error.WriteLine($"SUITE CONTENT MONITOR: FAILED code=DATABASE_{ex.SqlState}");
+            return 3;
+        }
         catch (Exception ex)
         {
             // Exception messages from networking and databases are intentionally suppressed:
