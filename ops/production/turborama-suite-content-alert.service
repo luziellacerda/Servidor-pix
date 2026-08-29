@@ -19,5 +19,4 @@ ProtectControlGroups=true
 RestrictSUIDSGID=true
 LockPersonality=true
 ReadOnlyPaths=/run/turborama-suite-content-monitor
-ReadWritePaths=/home/lz-servidor/HOSTINGER\x20SITE\x20DOCUMENTOS/sistema2026.lzgames.com.br/public_html/turbobox/.data
-
+ReadWritePaths="/home/lz-servidor/HOSTINGER SITE DOCUMENTOS/sistema2026.lzgames.com.br/public_html/turbobox/.data"
