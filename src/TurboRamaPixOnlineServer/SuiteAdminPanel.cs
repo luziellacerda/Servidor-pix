@@ -562,8 +562,8 @@ static class SuiteAdminPanel
             var isOnline = item.Availability == "ONLINE";
             var range = item.LastCheckedAt is null ? "Ainda não verificado" :
                 item.LastResultCode == "CHECK_OK" ? "Compatível" : "Não confirmado";
-            html.Append("<tr><td><div class=health-game><strong>").Append(E(item.DisplayName)).Append("</strong><code>")
-                .Append(E(item.ItemId)).Append("</code></div></td><td><span class='status ")
+            html.Append("<tr><td><div class=health-game><strong>").Append(E(item.DisplayName))
+                .Append("</strong></div></td><td><span class='status ")
                 .Append(isOnline ? "online" : "state-maintenance").Append("'>")
                 .Append(isOnline ? "ONLINE" : "OFF / MANUTENÇÃO").Append("</span></td><td>")
                 .Append(E(item.LastCheckedAt ?? "Nunca")).Append("</td><td><span class=health-result>")
