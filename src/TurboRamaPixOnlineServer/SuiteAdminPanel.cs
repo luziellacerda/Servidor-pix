@@ -176,6 +176,8 @@ static class SuiteAdminPanel
                 proof = proof with { StepUpAt = DateTimeOffset.UtcNow.ToUnixTimeSeconds() };
                 var checkStarted = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 _ = await bff.CheckContentAsync(proof, itemId, RequestId(), ct);
+                await File.WriteAllTextAsync("/var/lib/turborama-pix/content-monitor.trigger",
+                    $"{itemId} {checkStarted}\n", ct);
                 if (form["returnTo"].ToString() == "health")
                     return Results.Redirect("/admin/suite/content/health" + QueryString.Create(
                         new Dictionary<string, string?>
@@ -633,7 +635,14 @@ static class SuiteAdminPanel
             if (isTesting)
                 html.Append("<span class=health-testing><i></i>Testando…</span>");
             else if (canCheck)
-                html.Append("<span class=health-daily>Teste automático diário</span>");
+                html.Append("<details class=health-test><summary>Testar agora</summary>")
+                    .Append("<form method=post action=/admin/suite/content/actions/check autocomplete=off data-health-probe-form>")
+                    .Append(Csrf(token)).Append(ItemFields(item.ItemId))
+                    .Append("<input type=hidden name=confirmItemId value='").Append(E(item.ItemId))
+                    .Append("'><input type=hidden name=returnTo value=health>")
+                    .Append("<label>Senha administrativa<input type=password name=adminPassword maxlength=256 required autocomplete=new-password></label>")
+                    .Append("<small>Teste rápido: lê somente uma pequena amostra de dados.</small>")
+                    .Append("<button class=primary data-busy='Testando...'>Executar teste</button></form></details>");
             html.Append("<a class='button ghost' href='/admin/suite/content?manage=")
                 .Append(E(item.ItemId)).Append("'>Gerenciar</a></div></td></tr>");
         }

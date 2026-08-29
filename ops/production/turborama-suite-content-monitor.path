@@ -1,0 +1,9 @@
+[Unit]
+Description=Run TurboRama content monitor after an administrator requests a manual check
+
+[Path]
+PathChanged=/var/lib/turborama-pix/content-monitor.trigger
+Unit=turborama-suite-content-monitor.service
+
+[Install]
+WantedBy=multi-user.target
