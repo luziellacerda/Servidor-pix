@@ -28,7 +28,7 @@ internal static class MonitorPostgresSelfTest
         var itemId = RandomHex(32);
         var oldOwner = RandomHex(64);
         var newOwner = RandomHex(64);
-        await using (var setup = dataSource.CreateCommand("""
+        await ExecuteSetupAsync(dataSource, """
             INSERT INTO suite.suite_content_snapshots(catalog_identity,catalog_sequence,
               inventory_sha256,visual_catalog_sha256,item_count,ready_item_count,
               maintenance_item_count,status,origin_active_key_version,
@@ -42,22 +42,9 @@ internal static class MonitorPostgresSelfTest
             VALUES($6,'TURBORAMA_SUITE',$7,$1,$8,'VALIDATING',$9,$10,$11,1,
               'INITIAL_RECOVERY','NONE','postgres-self-test',$12,
               clock_timestamp()-interval '1 minute')
-            """))
-        {
-            setup.Parameters.AddWithValue(snapshot);
-            setup.Parameters.AddWithValue(RandomHex(64));
-            setup.Parameters.AddWithValue(RandomHex(64));
-            setup.Parameters.AddWithValue(RandomHex(64));
-            setup.Parameters.AddWithValue(RandomHex(64));
-            setup.Parameters.AddWithValue(candidateId);
-            setup.Parameters.AddWithValue(itemId);
-            setup.Parameters.AddWithValue(RandomHex(32));
-            setup.Parameters.AddWithValue(new byte[] { 1 });
-            setup.Parameters.AddWithValue(new byte[12]);
-            setup.Parameters.AddWithValue(new byte[16]);
-            setup.Parameters.AddWithValue(oldOwner);
-            await setup.ExecuteNonQueryAsync();
-        }
+            """, snapshot, RandomHex(64), RandomHex(64), RandomHex(64), RandomHex(64),
+            candidateId, itemId, RandomHex(32), new byte[] { 1 }, new byte[12],
+            new byte[16], oldOwner);
 
         var stale = new CandidateLease(candidateId, itemId, snapshot, RandomHex(32),
             "VALIDATING", [1], new byte[12], new byte[16], 1, "INITIAL_RECOVERY", null,
@@ -88,16 +75,16 @@ internal static class MonitorPostgresSelfTest
         var firstCatalog = RandomHex(64);
         var secondCatalog = RandomHex(64);
         var itemId = RandomHex(32);
-        await using (var setup = dataSource.CreateCommand("""
+        await ExecuteSetupAsync(dataSource, """
             INSERT INTO suite.suite_content_snapshots(catalog_identity,catalog_sequence,
               inventory_sha256,visual_catalog_sha256,item_count,ready_item_count,
               maintenance_item_count,status,published_at,origin_active_key_version,
               origin_key_set_fingerprint,origin_allowlist_fingerprint)
             VALUES
               ($1,(SELECT coalesce(max(catalog_sequence),0)+1 FROM suite.suite_content_snapshots),
-               $3,$4,850,850,0,'PUBLISHED',clock_timestamp(),1,$5,$6),
+               $3,$4,850,850,0,'STAGING',NULL,1,$5,$6),
               ($2,(SELECT coalesce(max(catalog_sequence),0)+2 FROM suite.suite_content_snapshots),
-               $3,$4,850,850,0,'PUBLISHED',clock_timestamp(),1,$5,$6);
+               $3,$4,850,850,0,'STAGING',NULL,1,$5,$6);
             INSERT INTO suite.suite_content_items(catalog_identity,item_id,display_order,
               display_name,visual_extract_policy,artifact_id,artifact_version,content_length,
               sha256,safe_file_name,file_extension,extract_policy,manifest_identity,
@@ -107,6 +94,8 @@ internal static class MonitorPostgresSelfTest
                $1,$9,'application/octet-stream','READY'),
               ($2,$7,1,'Postgres CAS B','NONE',$7,2,12,$8,'cas.zip','.zip','NONE',
                $2,$9,'application/octet-stream','READY');
+            UPDATE suite.suite_content_snapshots SET status='PUBLISHED',
+              published_at=clock_timestamp() WHERE catalog_identity IN ($1,$2);
             INSERT INTO suite.suite_content_catalog_state(product_id,active_catalog_identity)
             VALUES('TURBORAMA_SUITE',$1)
             ON CONFLICT(product_id) DO UPDATE SET active_catalog_identity=excluded.active_catalog_identity;
@@ -116,19 +105,8 @@ internal static class MonitorPostgresSelfTest
               last_result_code,next_check_at,row_version)
             VALUES('TURBORAMA_SUITE',$7,$1,'READY',2,4,clock_timestamp(),
               clock_timestamp(),'ORIGIN_REQUEST_FAILED',clock_timestamp(),1)
-            """))
-        {
-            setup.Parameters.AddWithValue(firstCatalog);
-            setup.Parameters.AddWithValue(secondCatalog);
-            setup.Parameters.AddWithValue(RandomHex(64));
-            setup.Parameters.AddWithValue(RandomHex(64));
-            setup.Parameters.AddWithValue(RandomHex(64));
-            setup.Parameters.AddWithValue(RandomHex(64));
-            setup.Parameters.AddWithValue(itemId);
-            setup.Parameters.AddWithValue(new string('a', 64));
-            setup.Parameters.AddWithValue(new string('b', 64));
-            await setup.ExecuteNonQueryAsync();
-        }
+            """, firstCatalog, secondCatalog, RandomHex(64), RandomHex(64), RandomHex(64),
+            RandomHex(64), itemId, new string('a', 64), new string('b', 64));
 
         var target = new HealthTarget(itemId, firstCatalog, 1, 12, new string('a', 64),
             ".zip", null, null, [], [], [], 1, 2, null, null, 1);
@@ -162,16 +140,16 @@ internal static class MonitorPostgresSelfTest
         var firstCatalog = RandomHex(64);
         var secondCatalog = RandomHex(64);
         var itemId = RandomHex(32);
-        await using (var setup = dataSource.CreateCommand("""
+        await ExecuteSetupAsync(dataSource, """
             INSERT INTO suite.suite_content_snapshots(catalog_identity,catalog_sequence,
               inventory_sha256,visual_catalog_sha256,item_count,ready_item_count,
               maintenance_item_count,status,published_at,origin_active_key_version,
               origin_key_set_fingerprint,origin_allowlist_fingerprint)
             VALUES
               ($1,(SELECT coalesce(max(catalog_sequence),0)+1 FROM suite.suite_content_snapshots),
-               $3,$4,850,850,0,'PUBLISHED',clock_timestamp(),1,$5,$6),
+               $3,$4,850,850,0,'STAGING',NULL,1,$5,$6),
               ($2,(SELECT coalesce(max(catalog_sequence),0)+2 FROM suite.suite_content_snapshots),
-               $3,$4,850,850,0,'PUBLISHED',clock_timestamp(),1,$5,$6);
+               $3,$4,850,850,0,'STAGING',NULL,1,$5,$6);
             INSERT INTO suite.suite_content_items(catalog_identity,item_id,display_order,
               display_name,visual_extract_policy,artifact_id,artifact_version,content_length,
               sha256,safe_file_name,file_extension,extract_policy,manifest_identity,
@@ -181,25 +159,16 @@ internal static class MonitorPostgresSelfTest
                $1,$9,'application/octet-stream','READY'),
               ($2,$7,1,'Corrected mirror','NONE',$7,7,12,$8,'same.zip','.zip','NONE',
                $2,$9,'application/octet-stream','READY');
+            UPDATE suite.suite_content_snapshots SET status='PUBLISHED',
+              published_at=clock_timestamp() WHERE catalog_identity IN ($1,$2);
             UPDATE suite.suite_content_catalog_state SET active_catalog_identity=$1,
               updated_at=clock_timestamp() WHERE product_id='TURBORAMA_SUITE';
             INSERT INTO suite.suite_content_item_health(product_id,item_id,
               observed_catalog_identity,observed_availability,consecutive_terminal_failures,
               next_check_at,row_version)
             VALUES('TURBORAMA_SUITE',$7,$1,'READY',2,clock_timestamp(),1)
-            """))
-        {
-            setup.Parameters.AddWithValue(firstCatalog);
-            setup.Parameters.AddWithValue(secondCatalog);
-            setup.Parameters.AddWithValue(RandomHex(64));
-            setup.Parameters.AddWithValue(RandomHex(64));
-            setup.Parameters.AddWithValue(RandomHex(64));
-            setup.Parameters.AddWithValue(RandomHex(64));
-            setup.Parameters.AddWithValue(itemId);
-            setup.Parameters.AddWithValue(new string('c', 64));
-            setup.Parameters.AddWithValue(new string('d', 64));
-            await setup.ExecuteNonQueryAsync();
-        }
+            """, firstCatalog, secondCatalog, RandomHex(64), RandomHex(64), RandomHex(64),
+            RandomHex(64), itemId, new string('c', 64), new string('d', 64));
 
         var target = new HealthTarget(itemId, firstCatalog, 7, 12, new string('c', 64),
             ".zip", null, null, [], [], [], 1, 2, null, null, 1);
@@ -287,6 +256,26 @@ internal static class MonitorPostgresSelfTest
             return;
         }
         throw new InvalidOperationException("stale candidate worker transition was accepted");
+    }
+
+    private static async Task ExecuteSetupAsync(NpgsqlDataSource dataSource, string sql,
+        params object[] parameters)
+    {
+        await using var connection = await dataSource.OpenConnectionAsync();
+        await using var transaction = await connection.BeginTransactionAsync();
+        foreach (var statement in sql.Split(';', StringSplitOptions.RemoveEmptyEntries |
+                     StringSplitOptions.TrimEntries))
+        {
+            await using var command = new NpgsqlCommand(statement, connection, transaction);
+            var highestParameter = 0;
+            foreach (System.Text.RegularExpressions.Match match in
+                     System.Text.RegularExpressions.Regex.Matches(statement, @"\$(\d+)"))
+                highestParameter = Math.Max(highestParameter, int.Parse(match.Groups[1].Value));
+            for (var index = 0; index < highestParameter; index++)
+                command.Parameters.AddWithValue(parameters[index]);
+            await command.ExecuteNonQueryAsync();
+        }
+        await transaction.CommitAsync();
     }
 
     private static string RandomHex(int length) => Convert.ToHexString(

@@ -205,10 +205,10 @@ BEGIN
        NOT LIKE '%pg_advisory_xact_lock%' OR
      pg_get_functiondef(
        'suite.enforce_suite_content_grant_quota(character varying,character,character)'::regprocedure)
-       NOT LIKE '%device_id = p_device_id%' OR
+       !~ 'device_id[[:space:]]*=[[:space:]]*p_device_id' OR
      pg_get_functiondef(
        'suite.enforce_suite_content_grant_quota(character varying,character,character)'::regprocedure)
-       LIKE '%session_id = p_session_id%' THEN
+       ~ 'session_id[[:space:]]*=[[:space:]]*p_session_id' THEN
     RAISE EXCEPTION 'CONTENT_PERSISTENT_QUOTA_PRIVILEGE_OR_LOCK_FAILED';
   END IF;
 END $$;
@@ -451,7 +451,8 @@ INSERT INTO suite.suite_content_snapshots(
   catalog_identity,catalog_sequence,inventory_sha256,visual_catalog_sha256,
   item_count,ready_item_count,maintenance_item_count,status,
   origin_active_key_version,origin_key_set_fingerprint,origin_allowlist_fingerprint)
-VALUES(repeat('c',64),1,repeat('d',64),repeat('e',64),850,849,1,'STAGING',
+VALUES(repeat('c',64),(SELECT coalesce(max(catalog_sequence),0)+1
+  FROM suite.suite_content_snapshots),repeat('d',64),repeat('e',64),850,849,1,'STAGING',
   1,repeat('1',64),repeat('2',64));
 
 INSERT INTO suite.suite_content_items(
@@ -498,8 +499,9 @@ INSERT INTO suite.suite_content_snapshots(
   catalog_identity,catalog_sequence,inventory_sha256,visual_catalog_sha256,
   item_count,ready_item_count,maintenance_item_count,status,published_at,
   origin_active_key_version,origin_key_set_fingerprint,origin_allowlist_fingerprint)
-VALUES(repeat('f',64),2,repeat('d',64),repeat('e',64),850,850,0,'PUBLISHED',
-  clock_timestamp(),1,repeat('1',64),repeat('2',64));
+VALUES(repeat('f',64),(SELECT coalesce(max(catalog_sequence),0)+1
+  FROM suite.suite_content_snapshots),repeat('d',64),repeat('e',64),850,850,0,'STAGING',
+  NULL,1,repeat('1',64),repeat('2',64));
 INSERT INTO suite.suite_content_items(
   catalog_identity,item_id,display_order,display_name,visual_extract_policy,
   artifact_id,artifact_version,content_length,sha256,safe_file_name,file_extension,
@@ -507,6 +509,8 @@ INSERT INTO suite.suite_content_items(
 VALUES(repeat('f',64),md5('1'),1,'Jogo 1 versão 2','NONE',md5('1'),2,999,
   repeat('9',64),md5('1')||'.bin','.bin','NONE',repeat('f',64),repeat('8',64),
   'application/octet-stream','READY');
+UPDATE suite.suite_content_snapshots SET status='PUBLISHED',published_at=clock_timestamp()
+WHERE catalog_identity=repeat('f',64);
 UPDATE suite.suite_content_catalog_state SET active_catalog_identity=repeat('f',64),
   updated_at=clock_timestamp() WHERE product_id='TURBORAMA_SUITE';
 UPDATE suite.suite_content_catalog_state SET active_catalog_identity=repeat('c',64),
