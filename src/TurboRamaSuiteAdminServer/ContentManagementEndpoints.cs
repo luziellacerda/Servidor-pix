@@ -754,8 +754,9 @@ static class ContentAdminProtectedFile
                 throw new InvalidOperationException();
             if (OperatingSystem.IsLinux())
             {
-                var forbidden = UnixFileMode.GroupRead | UnixFileMode.GroupWrite | UnixFileMode.GroupExecute |
+                var forbidden = UnixFileMode.GroupWrite | UnixFileMode.GroupExecute |
                     UnixFileMode.OtherRead | UnixFileMode.OtherWrite | UnixFileMode.OtherExecute;
+                if (!IsSystemdCredential(path)) forbidden |= UnixFileMode.GroupRead;
                 if ((File.GetUnixFileMode(path) & forbidden) != 0) throw new InvalidOperationException();
             }
             var value = await File.ReadAllTextAsync(path, ct);
@@ -766,6 +767,14 @@ static class ContentAdminProtectedFile
         {
             throw new InvalidOperationException("Protected content administration file is invalid.");
         }
+    }
+
+    private static bool IsSystemdCredential(string path)
+    {
+        var directory = Environment.GetEnvironmentVariable("CREDENTIALS_DIRECTORY");
+        return !string.IsNullOrWhiteSpace(directory) && Path.IsPathFullyQualified(directory) &&
+            string.Equals(Path.GetDirectoryName(Path.GetFullPath(path)),
+                Path.TrimEndingDirectorySeparator(Path.GetFullPath(directory)), StringComparison.Ordinal);
     }
 }
 

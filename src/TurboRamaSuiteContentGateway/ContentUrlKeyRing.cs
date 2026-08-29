@@ -71,6 +71,8 @@ public sealed class ContentUrlKeyRing : IDisposable
         {
             var mode = File.GetUnixFileMode(fullPath);
             var allowed = UnixFileMode.UserRead | UnixFileMode.UserWrite;
+            if (ContentProtectedSecret.IsSystemdCredential(fullPath))
+                allowed |= UnixFileMode.GroupRead;
             if ((mode & ~allowed) != 0 || (mode & UnixFileMode.UserRead) == 0)
                 throw new InvalidOperationException(
                     "Content URL key ring permissions are unsafe.");

@@ -338,8 +338,9 @@ internal static class ProtectedFile
                 throw new PublisherFailure(code);
             if (!OperatingSystem.IsLinux() || !requirePrivateMode) return;
             var mode = File.GetUnixFileMode(path);
-            var forbidden = UnixFileMode.GroupRead | UnixFileMode.GroupWrite | UnixFileMode.GroupExecute |
+            var forbidden = UnixFileMode.GroupWrite | UnixFileMode.GroupExecute |
                             UnixFileMode.OtherRead | UnixFileMode.OtherWrite | UnixFileMode.OtherExecute;
+            if (!IsSystemdCredential(path)) forbidden |= UnixFileMode.GroupRead;
             if ((mode & forbidden) != 0) throw new PublisherFailure(code);
         }
         catch (PublisherFailure) { throw; }
@@ -351,6 +352,14 @@ internal static class ProtectedFile
     {
         if (OperatingSystem.IsLinux())
             File.SetUnixFileMode(path, UnixFileMode.UserRead | UnixFileMode.UserWrite);
+    }
+
+    private static bool IsSystemdCredential(string path)
+    {
+        var directory = Environment.GetEnvironmentVariable("CREDENTIALS_DIRECTORY");
+        return !string.IsNullOrWhiteSpace(directory) && Path.IsPathFullyQualified(directory) &&
+            string.Equals(Path.GetDirectoryName(Path.GetFullPath(path)),
+                Path.TrimEndingDirectorySeparator(Path.GetFullPath(directory)), StringComparison.Ordinal);
     }
 }
 

@@ -25,8 +25,15 @@ internal static class ProtectedFile
                 (info.Attributes & FileAttributes.ReparsePoint) != 0 || info.LinkTarget is not null)
                 throw new PublisherFailure(code);
             if (!OperatingSystem.IsLinux() || !requirePrivateMode) return;
-            var forbidden = UnixFileMode.GroupRead | UnixFileMode.GroupWrite | UnixFileMode.GroupExecute |
+            var forbidden = UnixFileMode.GroupWrite | UnixFileMode.GroupExecute |
                             UnixFileMode.OtherRead | UnixFileMode.OtherWrite | UnixFileMode.OtherExecute;
+            var credentialDirectory = Environment.GetEnvironmentVariable("CREDENTIALS_DIRECTORY");
+            var isCredential = !string.IsNullOrWhiteSpace(credentialDirectory) &&
+                Path.IsPathFullyQualified(credentialDirectory) &&
+                string.Equals(Path.GetDirectoryName(Path.GetFullPath(path)),
+                    Path.TrimEndingDirectorySeparator(Path.GetFullPath(credentialDirectory)),
+                    StringComparison.Ordinal);
+            if (!isCredential) forbidden |= UnixFileMode.GroupRead;
             if ((File.GetUnixFileMode(path) & forbidden) != 0) throw new PublisherFailure(code);
         }
         catch (PublisherFailure) { throw; }

@@ -371,14 +371,23 @@ internal static class ProtectedMonitorFile
                 (info.Attributes & FileAttributes.ReparsePoint) != 0 || info.LinkTarget is not null)
                 throw new MonitorFailure("PROTECTED_FILE_INVALID");
             if (!OperatingSystem.IsLinux()) return;
-            var forbidden = UnixFileMode.GroupRead | UnixFileMode.GroupWrite | UnixFileMode.GroupExecute |
+            var forbidden = UnixFileMode.GroupWrite | UnixFileMode.GroupExecute |
                             UnixFileMode.OtherRead | UnixFileMode.OtherWrite | UnixFileMode.OtherExecute;
+            if (!IsSystemdCredential(path)) forbidden |= UnixFileMode.GroupRead;
             if ((File.GetUnixFileMode(path) & forbidden) != 0)
                 throw new MonitorFailure("PROTECTED_FILE_INVALID");
         }
         catch (MonitorFailure) { throw; }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
         { throw new MonitorFailure("PROTECTED_FILE_INVALID"); }
+    }
+
+    private static bool IsSystemdCredential(string path)
+    {
+        var directory = Environment.GetEnvironmentVariable("CREDENTIALS_DIRECTORY");
+        return !string.IsNullOrWhiteSpace(directory) && Path.IsPathFullyQualified(directory) &&
+            string.Equals(Path.GetDirectoryName(Path.GetFullPath(path)),
+                Path.TrimEndingDirectorySeparator(Path.GetFullPath(directory)), StringComparison.Ordinal);
     }
 }
 

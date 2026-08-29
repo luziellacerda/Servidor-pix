@@ -61,6 +61,7 @@ public static class ContentProtectedSecret
         {
             var mode = File.GetUnixFileMode(fullPath);
             var allowed = UnixFileMode.UserRead | UnixFileMode.UserWrite;
+            if (IsSystemdCredential(fullPath)) allowed |= UnixFileMode.GroupRead;
             if ((mode & ~allowed) != 0 || (mode & UnixFileMode.UserRead) == 0)
                 throw new InvalidOperationException(
                     "Protected content secret permissions are unsafe.");
@@ -69,6 +70,15 @@ public static class ContentProtectedSecret
         if (value.Length == 0 || Encoding.UTF8.GetByteCount(value) > maximumBytes)
             throw new InvalidOperationException("Protected content secret is unavailable.");
         return value;
+    }
+
+    public static bool IsSystemdCredential(string path)
+    {
+        var directory = Environment.GetEnvironmentVariable("CREDENTIALS_DIRECTORY");
+        return !string.IsNullOrWhiteSpace(directory) && Path.IsPathFullyQualified(directory) &&
+            string.Equals(Path.GetDirectoryName(Path.GetFullPath(path)),
+                Path.TrimEndingDirectorySeparator(Path.GetFullPath(directory)),
+                StringComparison.Ordinal);
     }
 }
 
