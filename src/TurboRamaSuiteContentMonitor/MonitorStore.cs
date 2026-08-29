@@ -80,21 +80,34 @@ internal sealed class MonitorStore : IDisposable
     {
         var eventType = outcome == "SUCCESS" ? "CONTENT_WORKER_CYCLE_COMPLETED" :
             "CONTENT_WORKER_CYCLE_FAILED";
-        await using var command = dataSource.CreateCommand("""
+        await using var connection = await dataSource.OpenConnectionAsync(ct);
+        await using var transaction = await connection.BeginTransactionAsync(ct);
+        await using (var update = new NpgsqlCommand("""
             UPDATE suite.suite_content_monitor_state
             SET last_completed_at=clock_timestamp(),last_outcome=$2,last_result_code=$3,
                 updated_at=clock_timestamp()
-            WHERE product_id='TURBORAMA_SUITE' AND last_cycle_id=$1;
+            WHERE product_id='TURBORAMA_SUITE' AND last_cycle_id=$1
+            """, connection, transaction))
+        {
+            update.Parameters.AddWithValue(cycleId);
+            update.Parameters.AddWithValue(outcome);
+            update.Parameters.AddWithValue(code);
+            await update.ExecuteNonQueryAsync(ct);
+        }
+        await using (var audit = new NpgsqlCommand("""
             INSERT INTO suite.suite_content_management_audit(
               event_type,actor,job_id,correlation_id,outcome,detail_code)
             VALUES($4,'content-monitor',$1,$1,$5,$3)
-            """);
-        command.Parameters.AddWithValue(cycleId);
-        command.Parameters.AddWithValue(outcome);
-        command.Parameters.AddWithValue(code);
-        command.Parameters.AddWithValue(eventType);
-        command.Parameters.AddWithValue(outcome == "SUCCESS" ? "SUCCESS" : "FAILED");
-        await command.ExecuteNonQueryAsync(ct);
+            """, connection, transaction))
+        {
+            audit.Parameters.AddWithValue(cycleId);
+            audit.Parameters.AddWithValue(outcome);
+            audit.Parameters.AddWithValue(code);
+            audit.Parameters.AddWithValue(eventType);
+            audit.Parameters.AddWithValue(outcome == "SUCCESS" ? "SUCCESS" : "FAILED");
+            await audit.ExecuteNonQueryAsync(ct);
+        }
+        await transaction.CommitAsync(ct);
     }
 
     public async Task SynchronizeHealthAsync(CancellationToken ct)
