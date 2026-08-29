@@ -117,6 +117,29 @@ static class SuiteAdminPanel
             catch (HttpRequestException) { return Html(ContentUnavailable("SERVICO_INDISPONIVEL"), 503); }
         }).RequireAuthorization();
 
+        app.MapGet("/admin/suite/content/health", async (HttpContext context,
+            SuiteAdminBff bff, SuiteContentAdminGuard guard, CancellationToken ct) =>
+        {
+            if (!Has(context, ContentRead)) return Results.Forbid();
+            if (!ContentPageQuery.TryParse(context.Request.Query, out var query))
+                return Results.Redirect("/admin/suite/content/health?error=CONSULTA_INVALIDA");
+            var proof = ContentProof(context, ContentRead);
+            if (!guard.Allow(proof.Actor, proof.IpDigest, "link-health", "read", 120, 60))
+                return Html(ContentUnavailable("LIMITE_ATINGIDO"), 429);
+            try
+            {
+                var page = await bff.ContentItemsAsync(proof, query!.Cursor, 100,
+                    query.Availability, query.ResultCode, null, query.ItemPrefix,
+                    query.Name, ct);
+                return Html(ContentHealthPage(page, query,
+                    context.Request.Query["error"].ToString()));
+            }
+            catch (HttpRequestException)
+            {
+                return Html(ContentUnavailable("SERVICO_INDISPONIVEL"), 503);
+            }
+        }).RequireAuthorization();
+
         app.MapGet("/admin/suite/content/jobs/{candidateId}", async (HttpContext context,
             string candidateId, SuiteAdminBff bff, CancellationToken ct) =>
         {
@@ -352,6 +375,7 @@ static class SuiteAdminPanel
         "<h1>Central de licenças</h1></div><nav class=top-actions>" +
         "<a class='button ghost' href=/admin>PIX</a>" +
         "<a class='button ghost' href=/admin/suite>SUITE</a>" +
+        "<a class='button ghost' href=/admin/suite/content/health>Saúde dos links</a>" +
         "<a class='button primary' href=/admin/suite/content>Conteúdo</a></nav></header>" +
         body + "</main></body></html>";
 
@@ -420,7 +444,7 @@ static class SuiteAdminPanel
         var jobs = page.Items.Count(item => item.JobState is "STAGED" or "VALIDATING" or "VERIFIED");
         var html = new StringBuilder("<section class=scope-banner><div><span class=eyebrow>CATÁLOGO PROTEGIDO</span>")
             .Append("<h2>Conteúdo da SUITE</h2><p>Links permanecem cifrados no servidor. ")
-            .Append("A publicação só ocorre após tamanho, SHA-256, assinatura e política aprovados.</p></div>")
+            .Append("A publicação direta só ocorre após política de origem e metadados seguros aprovados.</p></div>")
             .Append("<span class='pill on'>PRODUÇÃO</span></section>");
         if (AllowedOk(ok) is { } okText)
             html.Append("<div class='notice success'>").Append(E(okText)).Append("</div>");
@@ -492,6 +516,62 @@ static class SuiteAdminPanel
         return Shell("Conteúdo da SUITE", html.ToString());
     }
 
+    private static string ContentHealthPage(SuiteContentItemPage page,
+        ContentPageQuery query, string error)
+    {
+        var online = page.Items.Count(item => item.Availability == "ONLINE");
+        var offline = page.Items.Count - online;
+        var checkedItems = page.Items.Count(item => item.LastCheckedAt is not null);
+        var rangeOk = page.Items.Count(item => item.LastResultCode == "CHECK_OK");
+        var html = new StringBuilder("<section class=scope-banner><div><span class=eyebrow>MONITOR DE ORIGENS</span>")
+            .Append("<h2>Saúde dos links</h2><p>Diagnóstico separado do gerenciamento. ")
+            .Append("Nenhuma URL é exibida e nenhum jogo completo é transferido pelo servidor.</p></div>")
+            .Append("<span class='pill on'>MONITOR ATIVO</span></section>");
+        if (error.Length > 0)
+            html.Append("<div class='notice danger'>Consulta inválida ou serviço indisponível.</div>");
+        html.Append("<section class=summary><article><span class=metric-icon>PG</span><small>NESTA PÁGINA</small><strong>")
+            .Append(page.Items.Count).Append("</strong></article><article><span class=metric-icon>ON</span><small>ONLINE</small><strong>")
+            .Append(online).Append("</strong></article><article><span class=metric-icon>OF</span><small>OFF / MANUTENÇÃO</small><strong>")
+            .Append(offline).Append("</strong></article><article><span class=metric-icon>RG</span><small>RANGE VALIDADO</small><strong>")
+            .Append(rangeOk).Append("/").Append(checkedItems).Append("</strong></article></section>")
+            .Append("<section class=panel><form method=get action=/admin/suite/content/health class=toolbar autocomplete=off>")
+            .Append("<label>Jogo<input name=name maxlength=100 value='").Append(E(query.Name))
+            .Append("' placeholder='Buscar pelo título'></label><label>Estado<select name=availability>")
+            .Append(Option("", "Todos", query.Availability)).Append(Option("ONLINE", "Online", query.Availability))
+            .Append(Option("EM_MANUTENCAO", "Offline / manutenção", query.Availability))
+            .Append("</select></label><label>Resultado<input name=resultCode maxlength=64 value='")
+            .Append(E(query.ResultCode)).Append("' placeholder='CHECK_OK'></label><button class=primary>Filtrar</button>")
+            .Append("<a class='button ghost' href=/admin/suite/content/health>Atualizar</a></form></section>")
+            .Append("<section class=panel><div class=section-title><div><span class=eyebrow>VERIFICAÇÃO SEGURA</span>")
+            .Append("<h2>Links online e offline</h2></div><a class='button ghost' href=/admin/suite/content>Gerenciar conteúdo</a></div>")
+            .Append("<div class=table-wrap><table class=audit-table><thead><tr><th>Jogo</th><th>Estado</th>")
+            .Append("<th>Última verificação</th><th>Resultado</th><th>Retomada Range</th><th>Versão</th><th>Ação</th>")
+            .Append("</tr></thead><tbody>");
+        foreach (var item in page.Items)
+        {
+            var isOnline = item.Availability == "ONLINE";
+            var range = item.LastCheckedAt is null ? "Ainda não verificado" :
+                item.LastResultCode == "CHECK_OK" ? "Compatível" : "Não confirmado";
+            html.Append("<tr><td><strong>").Append(E(item.DisplayName)).Append("</strong><br><code>")
+                .Append(E(item.ItemId)).Append("</code></td><td><span class='status ")
+                .Append(isOnline ? "online" : "state-maintenance").Append("'>")
+                .Append(isOnline ? "ONLINE" : "OFF / MANUTENÇÃO").Append("</span></td><td>")
+                .Append(E(item.LastCheckedAt ?? "Nunca")).Append("</td><td><code>")
+                .Append(E(item.LastResultCode)).Append("</code></td><td>").Append(E(range))
+                .Append("</td><td>").Append(item.ArtifactVersion?.ToString(CultureInfo.InvariantCulture) ?? "—")
+                .Append("</td><td><a class='button ghost' href='/admin/suite/content?manage=")
+                .Append(E(item.ItemId)).Append("'>Verificar / gerenciar</a></td></tr>");
+        }
+        if (page.Items.Count == 0)
+            html.Append("<tr><td colspan=7>Nenhum link corresponde aos filtros.</td></tr>");
+        html.Append("</tbody></table></div><div class=top-actions><a class='button ghost' href=/admin/suite/content/health>Primeira página</a>");
+        if (page.NextCursor is not null)
+            html.Append("<a class='button primary' href='").Append(E(ContentHealthUrl(query,
+                page.NextCursor))).Append("'>Próxima página</a>");
+        html.Append("</div></section>");
+        return Shell("Saúde dos links TurboRama", html.ToString());
+    }
+
     private static string ContentActions(SuiteContentItem item, string token, bool canReplace,
         bool canVersion, bool canCheck)
     {
@@ -507,7 +587,7 @@ static class SuiteAdminPanel
         if (canReplace)
             html.Append("<form method=post action=/admin/suite/content/actions/replace class=operation-card autocomplete=off>")
                 .Append("<span class=eyebrow>SUBSTITUIÇÃO</span><h3>Trocar espelho da mesma versão</h3>")
-                .Append("<p>Só publica se tamanho, SHA-256, extensão e política forem idênticos.</p>")
+                .Append("<p>Valida a origem, extensão, política e versão sem armazenar tamanho ou SHA-256.</p>")
                 .Append(Csrf(token)).Append(ItemFields(item.ItemId))
                 .Append("<label>Nova URL candidata<input type=url name=candidateUrl maxlength=4096 required autocomplete=off></label>")
                 .Append("<label>Digite o itemId<input name=confirmItemId required autocomplete=off></label>")
@@ -559,6 +639,20 @@ static class SuiteAdminPanel
             ["manage"] = clearManage ? null : manage ?? query.ManageItem
         };
         return "/admin/suite/content" + QueryString.Create(values.Where(pair =>
+            !string.IsNullOrEmpty(pair.Value))).ToUriComponent();
+    }
+
+    private static string ContentHealthUrl(ContentPageQuery query, string? cursor = null)
+    {
+        var values = new Dictionary<string, string?>
+        {
+            ["cursor"] = cursor ?? query.Cursor,
+            ["availability"] = query.Availability,
+            ["resultCode"] = query.ResultCode,
+            ["item"] = query.ItemPrefix,
+            ["name"] = query.Name
+        };
+        return "/admin/suite/content/health" + QueryString.Create(values.Where(pair =>
             !string.IsNullOrEmpty(pair.Value))).ToUriComponent();
     }
 
