@@ -51,17 +51,28 @@ internal sealed class MonitorStore : IDisposable
 
     public async Task StartCycleAsync(string cycleId, CancellationToken ct)
     {
-        await using var command = dataSource.CreateCommand("""
+        await using var connection = await dataSource.OpenConnectionAsync(ct);
+        await using var transaction = await connection.BeginTransactionAsync(ct);
+        await using (var update = new NpgsqlCommand("""
             UPDATE suite.suite_content_monitor_state
             SET last_cycle_id=$1,last_started_at=clock_timestamp(),last_outcome='RUNNING',
                 last_result_code='CYCLE_STARTED',updated_at=clock_timestamp()
-            WHERE product_id='TURBORAMA_SUITE';
+            WHERE product_id='TURBORAMA_SUITE'
+            """, connection, transaction))
+        {
+            update.Parameters.AddWithValue(cycleId);
+            await update.ExecuteNonQueryAsync(ct);
+        }
+        await using (var audit = new NpgsqlCommand("""
             INSERT INTO suite.suite_content_management_audit(
               event_type,actor,job_id,correlation_id,outcome,detail_code)
             VALUES('CONTENT_WORKER_CYCLE_STARTED','content-monitor',$1,$1,'ACCEPTED','CYCLE_STARTED')
-            """);
-        command.Parameters.AddWithValue(cycleId);
-        await command.ExecuteNonQueryAsync(ct);
+            """, connection, transaction))
+        {
+            audit.Parameters.AddWithValue(cycleId);
+            await audit.ExecuteNonQueryAsync(ct);
+        }
+        await transaction.CommitAsync(ct);
     }
 
     public async Task CompleteCycleAsync(string cycleId, string outcome, string code,
