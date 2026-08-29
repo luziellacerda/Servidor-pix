@@ -21,7 +21,7 @@ BEGIN
 END $$;
 
 ALTER TABLE suite.suite_content_snapshots
-  ADD CONSTRAINT ck_suite_content_snapshots_item_count_902 CHECK(item_count=902);
+  ADD CONSTRAINT ck_suite_content_snapshots_item_count_902 CHECK(item_count=902) NOT VALID;
 
 CREATE OR REPLACE FUNCTION suite.publish_suite_content_catalog(p_catalog_identity char(64))
 RETURNS void LANGUAGE plpgsql SECURITY DEFINER SET search_path=pg_catalog,suite AS $$
