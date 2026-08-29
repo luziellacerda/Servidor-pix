@@ -286,7 +286,7 @@ internal sealed class MonitorStore : IDisposable
     }
 
     public async Task<IReadOnlyList<HealthTarget>> GetDueHealthTargetsAsync(int maximum,
-        CancellationToken ct)
+        bool manualOnly, CancellationToken ct)
     {
         await using var command = dataSource.CreateCommand("""
             SELECT btrim(i.item_id),btrim(cs.active_catalog_identity),i.artifact_version,
@@ -300,6 +300,11 @@ internal sealed class MonitorStore : IDisposable
             JOIN suite.suite_content_item_health h
               ON h.product_id=cs.product_id AND h.item_id=i.item_id
             WHERE cs.product_id='TURBORAMA_SUITE' AND h.next_check_at<=clock_timestamp()
+              AND (NOT $2 OR i.item_id=(
+                SELECT a.item_id FROM suite.suite_content_management_audit a
+                WHERE a.event_type='CONTENT_CHECK_REQUESTED' AND a.item_id IS NOT NULL
+                  AND a.occurred_at>=clock_timestamp()-interval '5 minutes'
+                ORDER BY a.occurred_at DESC,a.audit_id DESC LIMIT 1))
             ORDER BY CASE WHEN (i.source_etag IS NULL OR char_length(i.source_etag)<2 OR
               left(i.source_etag,1)<>'"' OR right(i.source_etag,1)<>'"' OR
               i.source_etag ILIKE 'W/%') AND
@@ -308,6 +313,7 @@ internal sealed class MonitorStore : IDisposable
               h.last_full_validation_at NULLS FIRST,h.next_check_at,i.item_id LIMIT $1
             """);
         command.Parameters.AddWithValue(maximum);
+        command.Parameters.AddWithValue(manualOnly);
         var rows = new List<HealthTarget>();
         await using var reader = await command.ExecuteReaderAsync(ct);
         while (await reader.ReadAsync(ct))

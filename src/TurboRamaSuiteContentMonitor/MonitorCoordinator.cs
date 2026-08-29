@@ -63,7 +63,7 @@ internal sealed class MonitorCoordinator : IDisposable
         finally { connection = string.Empty; }
     }
 
-    public async Task<MonitorRunResult> RunOnceAsync(CancellationToken ct)
+    public async Task<MonitorRunResult> RunOnceAsync(bool manualOnly, CancellationToken ct)
     {
         await using var cycleLock = await store.TryAcquireCycleLockAsync(ct);
         if (cycleLock is null)
@@ -77,7 +77,8 @@ internal sealed class MonitorCoordinator : IDisposable
             databaseStage = "SYNCHRONIZE_HEALTH";
             await store.SynchronizeHealthAsync(ct);
             databaseStage = "LOAD_TARGETS";
-            var targets = await store.GetDueHealthTargetsAsync(850, ct);
+            var targets = await store.GetDueHealthTargetsAsync(manualOnly ? 1 : 850,
+                manualOnly, ct);
             databaseStage = "PROBE_HEALTH";
             var results = await ProbeHealthAsync(targets, ct);
             await store.WriteLinkAlertReportAsync(results, ct);
