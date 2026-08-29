@@ -9,8 +9,8 @@ ConditionPathExists=/etc/turborama-suite-content-janitor/janitor.connection
 [Service]
 Type=oneshot
 TimeoutStartSec=10min
-User=turborama-suite-content-maintenance
-Group=turborama-suite-content-maintenance
+User=turborama-suite-maintenance
+Group=turborama-suite-maintenance
 WorkingDirectory=/opt/turborama-suite-content-janitor
 EnvironmentFile=/etc/turborama-suite-content-janitor/janitor.env
 ExecStart=/usr/bin/dotnet /opt/turborama-suite-content-janitor/TurboRamaSuiteContentJanitor.dll run-once
