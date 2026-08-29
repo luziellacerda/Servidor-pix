@@ -318,7 +318,7 @@ internal sealed class MonitorCoordinator : IDisposable
                     decrypted = originKeys.DecryptOrigin(target);
                     originPolicy.ValidateUri(decrypted.Uri);
                     var probe = await verifier.ProbeOnlyAsync(decrypted.Uri, token);
-                    if (probe.ContentLength != target.ExpectedContentLength ||
+                    if ((!directMode && probe.ContentLength != target.ExpectedContentLength) ||
                         !HealthPolicy.ValidatorsMatch(target, probe.Etag,
                             probe.LastModified))
                         throw new PublisherFailure("ORIGIN_LENGTH_CHANGED");

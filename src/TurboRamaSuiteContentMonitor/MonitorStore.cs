@@ -309,7 +309,8 @@ internal sealed class MonitorStore : IDisposable
         await using var reader = await command.ExecuteReaderAsync(ct);
         while (await reader.ReadAsync(ct))
             rows.Add(new HealthTarget(reader.GetString(0), reader.GetString(1), reader.GetInt32(2),
-                reader.GetInt64(3), reader.GetString(4), reader.GetString(5),
+                reader.IsDBNull(3) ? null : reader.GetInt64(3),
+                reader.IsDBNull(4) ? null : reader.GetString(4), reader.GetString(5),
                 reader.IsDBNull(6) ? null : reader.GetString(6),
                 reader.IsDBNull(7) ? null : reader.GetString(7), (byte[])reader[8],
                 (byte[])reader[9], (byte[])reader[10], reader.GetInt32(11), reader.GetInt32(12),
@@ -948,8 +949,10 @@ internal static class HealthPolicy
         (target.LastFullValidationAt is null ||
          target.LastFullValidationAt <= utcNow.Subtract(FullValidationInterval));
     public static bool FullArtifactMatches(HealthTarget target, OriginMetadata full) =>
-        full.ContentLength == target.ExpectedContentLength &&
-        FixedHexEquals(target.ExpectedSha256, full.Sha256);
+        target.ExpectedContentLength is long expectedLength &&
+        target.ExpectedSha256 is string expectedSha256 &&
+        full.ContentLength == expectedLength &&
+        FixedHexEquals(expectedSha256, full.Sha256);
     public static bool ValidatorsMatch(HealthTarget target, string? observedEtag,
         string? observedLastModified) =>
         (target.ExpectedEtag is null || string.Equals(target.ExpectedEtag, observedEtag,
