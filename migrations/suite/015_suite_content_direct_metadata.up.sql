@@ -30,8 +30,10 @@ ALTER TABLE suite.suite_content_grants
   ALTER COLUMN content_length DROP NOT NULL,
   ALTER COLUMN sha256 DROP NOT NULL;
 
+ALTER TABLE suite.suite_content_items DISABLE TRIGGER tr_suite_content_item_immutable;
 UPDATE suite.suite_content_items SET content_length=NULL,sha256=NULL
 WHERE content_length IS NOT NULL OR sha256 IS NOT NULL;
+ALTER TABLE suite.suite_content_items ENABLE TRIGGER tr_suite_content_item_immutable;
 UPDATE suite.suite_content_grants SET content_length=NULL,sha256=NULL
 WHERE content_length IS NOT NULL OR sha256 IS NOT NULL;
 UPDATE suite.suite_content_origin_candidates
