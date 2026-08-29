@@ -756,7 +756,6 @@ static class ContentAdminProtectedFile
             {
                 var forbidden = UnixFileMode.GroupWrite | UnixFileMode.GroupExecute |
                     UnixFileMode.OtherRead | UnixFileMode.OtherWrite | UnixFileMode.OtherExecute;
-                if (!IsSystemdCredential(path)) forbidden |= UnixFileMode.GroupRead;
                 if ((File.GetUnixFileMode(path) & forbidden) != 0) throw new InvalidOperationException();
             }
             var value = await File.ReadAllTextAsync(path, ct);
