@@ -3,7 +3,7 @@ Description=Run TurboRama content monitor after an administrator requests a manu
 
 [Path]
 PathChanged=/var/lib/turborama-pix/content-monitor.trigger
-Unit=turborama-suite-content-monitor.service
+Unit=turborama-suite-content-monitor-manual.service
 
 [Install]
 WantedBy=multi-user.target

@@ -9,7 +9,7 @@ internal static class Program
         if (args.Length == 1 && args[0] == "--self-test") return MonitorSelfTest.Run();
         if (args.Length == 1 && args[0] == "--postgres-self-test")
             return await MonitorPostgresSelfTest.RunAsync();
-        if (args.Length != 1 || args[0] is not ("run-once" or "candidate-once"))
+        if (args.Length != 1 || args[0] is not ("run-once" or "manual-once" or "candidate-once"))
         {
             Console.Error.WriteLine("SUITE CONTENT MONITOR: FAILED code=COMMAND_INVALID");
             return 2;
@@ -24,9 +24,12 @@ internal static class Program
                 shutdown.Cancel();
             };
             using var coordinator = await MonitorCoordinator.CreateAsync(options, shutdown.Token);
-            var result = args[0] == "run-once"
-                ? await coordinator.RunOnceAsync(shutdown.Token)
-                : await coordinator.RunCandidateOnceAsync(shutdown.Token);
+            var result = args[0] switch
+            {
+                "run-once" => await coordinator.RunOnceAsync(false, shutdown.Token),
+                "manual-once" => await coordinator.RunOnceAsync(true, shutdown.Token),
+                _ => await coordinator.RunCandidateOnceAsync(shutdown.Token)
+            };
             if (result.Outcome == MonitorRunOutcome.Blocked)
             {
                 Console.Error.WriteLine($"SUITE CONTENT MONITOR: BLOCKED code={result.Code}");
