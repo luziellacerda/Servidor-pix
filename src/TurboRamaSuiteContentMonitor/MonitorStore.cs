@@ -2,6 +2,7 @@ using System.Data;
 using System.Security.Cryptography;
 using System.Text;
 using Npgsql;
+using NpgsqlTypes;
 using TurboRamaSuiteContentPublisher;
 
 namespace TurboRamaSuiteContentMonitor;
@@ -532,8 +533,10 @@ internal sealed class MonitorStore : IDisposable
                 insert.Parameters.AddWithValue(item.ItemId);
                 insert.Parameters.AddWithValue(item.DisplayOrder);
                 insert.Parameters.AddWithValue(item.ArtifactVersion!.Value);
-                insert.Parameters.AddWithValue(item.ContentLength!.Value);
-                insert.Parameters.AddWithValue(item.Sha256!);
+                insert.Parameters.Add(new NpgsqlParameter { NpgsqlDbType = NpgsqlDbType.Bigint,
+                    Value = DBNull.Value });
+                insert.Parameters.Add(new NpgsqlParameter { NpgsqlDbType = NpgsqlDbType.Char,
+                    Value = DBNull.Value });
                 insert.Parameters.AddWithValue(item.SafeFileName!);
                 insert.Parameters.AddWithValue(item.FileExtension!);
                 insert.Parameters.AddWithValue(item.ExtractPolicy!);

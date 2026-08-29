@@ -36,58 +36,9 @@ public sealed class ContentGatewayService
         string grantId,
         CancellationToken cancellationToken)
     {
-        ValidateGrantId(grantId);
-        // Never consume a one-use grant when the process credentials do not
-        // match the active snapshot. This is the same gate used by /ready.
-        await _deploymentGuard.RequireReadyAsync(cancellationToken);
-        var bearer = ParseBearer(context.Request.Headers.Authorization);
-        var requestedRange = ParseRange(context.Request.Headers.Range);
-        var tokenDigest = _tokenHasher.Digest(bearer);
-        ClaimedContentGrantRecord? grant = null;
-        try
-        {
-            grant = await _store.ClaimDownloadGrantAsync(grantId, tokenDigest,
-                requestedRange, Now(), cancellationToken);
-            ValidateGrantMetadata(grant);
-            var ownETag = '"' + grant.Sha256 + '"';
-            ValidateIfRange(context.Request.Headers.IfRange, requestedRange, ownETag);
-
-            var uri = _keyRing.Decrypt(grant);
-            _upstream.ValidateUri(uri);
-            using var response = await _upstream.SendAsync(uri, requestedRange,
-                cancellationToken);
-            var transfer = ValidateUpstream(response, grant, requestedRange);
-
-            ConfigureResponse(context.Response, grant, ownETag, transfer);
-            await CopyExactAsync(response, context.Response, grant.GrantId,
-                grant.Sha256, transfer, cancellationToken);
-            await TryFinalizeAsync(grantId, true, null);
-        }
-        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
-        {
-            if (grant is not null) await TryFinalizeAsync(grantId, false, "CLIENT_ABORTED");
-            throw;
-        }
-        catch (SuiteException)
-        {
-            if (grant is not null) await TryFinalizeAsync(grantId, false, "TRANSFER_DENIED");
-            throw;
-        }
-        catch
-        {
-            if (grant is not null) await TryFinalizeAsync(grantId, false, "UPSTREAM_FAILURE");
-            throw new SuiteException(502, "CONTENT_UPSTREAM_FAILURE",
-                "The content transfer could not be completed.");
-        }
-        finally
-        {
-            if (grant is not null)
-            {
-                CryptographicOperations.ZeroMemory(grant.UpstreamUrlCiphertext);
-                CryptographicOperations.ZeroMemory(grant.UpstreamUrlNonce);
-                CryptographicOperations.ZeroMemory(grant.UpstreamUrlTag);
-            }
-        }
+        await Task.CompletedTask;
+        throw new SuiteException(410, "CONTENT_RELAY_DISABLED",
+            "Server-side content transfer is permanently disabled.");
     }
 
     public async Task<Uri> AuthorizeDirectAsync(
@@ -106,8 +57,8 @@ public sealed class ContentGatewayService
             grant = await _store.ClaimDownloadGrantAsync(grantId, tokenDigest,
                 requestedRange, Now(), cancellationToken);
             ValidateGrantMetadata(grant);
-            var ownETag = '"' + grant.Sha256 + '"';
-            ValidateIfRange(context.Request.Headers.IfRange, requestedRange, ownETag);
+            ValidateIfRange(context.Request.Headers.IfRange, requestedRange,
+                grant.SourceETag, grant.SourceLastModified);
             var uri = _keyRing.Decrypt(grant);
             _upstream.ValidateUri(uri);
             await TryFinalizeAsync(grantId, true, null);
@@ -143,21 +94,19 @@ public sealed class ContentGatewayService
 
         if (requestedRange == 0)
         {
-            if (response.Content.Headers.ContentLength != grant.ContentLength)
+            if (response.Content.Headers.ContentLength is not long responseLength)
                 throw UpstreamFailure();
-            return new TransferPlan(HttpStatusCode.OK, 0, grant.ContentLength,
-                grant.ContentLength, true);
+            return new TransferPlan(HttpStatusCode.OK, 0, responseLength,
+                responseLength, true);
         }
 
         var contentRange = response.Content.Headers.ContentRange;
-        var expectedLength = grant.ContentLength - requestedRange;
+        var expectedLength = response.Content.Headers.ContentLength ?? throw UpstreamFailure();
         if (contentRange?.Unit != "bytes" || contentRange.From != requestedRange ||
-            contentRange.To != grant.ContentLength - 1 ||
-            contentRange.Length != grant.ContentLength ||
             response.Content.Headers.ContentLength != expectedLength)
             throw UpstreamFailure();
         return new TransferPlan(HttpStatusCode.PartialContent, requestedRange,
-            expectedLength, grant.ContentLength, false);
+            expectedLength, contentRange.Length ?? checked(requestedRange + expectedLength), false);
     }
 
     private static void ValidateSourceValidators(
@@ -358,8 +307,7 @@ public sealed class ContentGatewayService
     private static void ValidateGrantMetadata(ClaimedContentGrantRecord grant)
     {
         var descriptor = new ContentArtifactDescriptor(grant.ArtifactId,
-            grant.ArtifactVersion, grant.ContentLength, grant.Sha256,
-            grant.SafeFileName, grant.FileExtension, grant.ExtractPolicy,
+            grant.ArtifactVersion, grant.SafeFileName, grant.FileExtension, grant.ExtractPolicy,
             grant.ManifestIdentity);
         ContentProtocol.ValidateGrantId(grant.GrantId);
         ContentProtocol.Validate(descriptor);
@@ -406,7 +354,8 @@ public sealed class ContentGatewayService
     private static void ValidateIfRange(
         StringValues values,
         long requestedRange,
-        string ownETag)
+        string? sourceETag,
+        string? sourceLastModified)
     {
         if (requestedRange == 0)
         {
@@ -414,7 +363,8 @@ public sealed class ContentGatewayService
             return;
         }
         if (values.Count != 1 ||
-            !string.Equals(values[0], ownETag, StringComparison.Ordinal))
+            (!string.Equals(values[0], sourceETag, StringComparison.Ordinal) &&
+             !string.Equals(values[0], sourceLastModified, StringComparison.Ordinal)))
             NotAvailable();
     }
 

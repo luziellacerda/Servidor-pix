@@ -38,11 +38,11 @@ Equal(506, message.Length, "machine proof length"); Equal("e446888f27083109d8fb4
 
 var contentItemId = "0123456789abcdef0123456789abcdef";
 var contentDescriptor = new ContentArtifactDescriptor(
-    "fedcba9876543210fedcba9876543210", 1, 123_456_789,
-    new string('a', 64), "arquivo.zip", ".zip", "EXTRACT_ARCHIVE",
+    "fedcba9876543210fedcba9876543210", 1,
+    "arquivo.zip", ".zip", "EXTRACT_ARCHIVE",
     new string('b', 64));
 var descriptorHash = ContentProtocol.DescriptorHash(contentItemId, contentDescriptor);
-Equal("dfb1008460baecf93759f3bf28793401035007a34d743e10700f4989958e53a0",
+Equal("c99cff0e70f7783bcf79536670e675d61a0fa37b5a4acdf4d9704f764aa825c1",
     descriptorHash, "content descriptor hash golden vector");
 var catalogContext = new CatalogPageContext(1, Protocol.ProductId, licenseId,
     new string('4', 64), new string('1', 64), ContentProtocol.CatalogReadAction,
@@ -54,8 +54,8 @@ var downloadContext = new DownloadAuthorizationContext(1, Protocol.ProductId,
     licenseId, new string('4', 64), new string('1', 64),
     ContentProtocol.DownloadAuthorizeAction, new string('b', 64), contentItemId,
     contentDescriptor.ArtifactId, contentDescriptor.ArtifactVersion,
-    contentDescriptor.ManifestIdentity, descriptorHash, 4096);
-Equal("97a330e07b7c888b21a97f37a63c72a71477b40d1212dec0aa43d8014b1513a7",
+    contentDescriptor.ManifestIdentity, descriptorHash, 4096, "\"etag\"", "");
+Equal("7f8f91c6e6ba7d75ee1403d3793a68c690b820c1d6a54049c4130ed861cd5a1a",
     ContentProtocol.DownloadContextHash(downloadContext),
     "download context hash golden vector");
 Equal(contentItemId,
@@ -69,12 +69,6 @@ Expect<SuiteException>(() => ContentProtocol.DescriptorHash(contentItemId,
 Expect<SuiteException>(() => ContentProtocol.DescriptorHash(contentItemId,
     contentDescriptor with { SafeFileName = "arquivo.ZIP" }),
     "noncanonical uppercase content extension");
-_ = ContentProtocol.DescriptorHash(contentItemId,
-    contentDescriptor with { ContentLength = ContentProtocol.MaximumContentLength });
-Expect<SuiteException>(() => ContentProtocol.DescriptorHash(contentItemId,
-    contentDescriptor with { ContentLength = ContentProtocol.MaximumContentLength + 1 }),
-    "content larger than 512 GiB");
-
 using var contentKey = RSA.Create(2048);
 using var contentSigner = new RsaContentAssertionSigner(contentKey);
 Equal(true, ContentStartupIsolation.TryInitialize(() => { }),
@@ -139,7 +133,7 @@ var contentPayload = Convert.FromBase64String(contentEnvelope.Payload);
 var contentDomain = Encoding.ASCII.GetBytes(ContentProtocol.CatalogAssertionDomain);
 var contentMessage = new byte[contentDomain.Length + contentPayload.Length];
 contentDomain.CopyTo(contentMessage, 0); contentPayload.CopyTo(contentMessage, contentDomain.Length);
-Equal("4f2487db2fa1bd870ec4a7ba3c2945fdd6f7b944fca6bd0bb34309623f80f879",
+Equal("eeb8cf7f645f32b1a25caab01721d0071d15d4b17dc1431644e2479791c94b35",
     Sha(contentPayload),
     "ready catalog item canonical golden vector");
 Equal(true, contentKey.VerifyData(contentMessage,
@@ -240,8 +234,8 @@ try
                 NullLogger<ContentGatewayService>.Instance);
             await ExpectSuiteAsync(() => guardedService.StreamAsync(
                     new DefaultHttpContext(), new string('7', 64), default),
-                "CONTENT_GATEWAY_NOT_READY",
-                "artifact fails deployment readiness before claim");
+                "CONTENT_RELAY_DISABLED",
+                "server-side relay is permanently disabled");
             Equal(0, unavailableStore.ClaimCalls,
                 "deployment mismatch does not consume a one-use grant");
         }
@@ -262,7 +256,7 @@ try
             aes.Encrypt(urlNonce, urlPlaintext, urlCiphertext, urlTag, urlAad);
             var boundaryGrant = new ClaimedContentGrantRecord(new string('7', 64),
                 urlCatalogIdentity, urlItemId, urlItemId, 1, urlCatalogIdentity,
-                new string('6', 64), 0, 1, new string('5', 64), "file.zip", ".zip",
+                new string('6', 64), 0, "file.zip", ".zip",
                 "NONE", "application/octet-stream", null, null, urlCiphertext,
                 urlNonce, urlTag, 7);
             Equal(maximumUrlText, keyRing.Decrypt(boundaryGrant).AbsoluteUri,
