@@ -85,6 +85,7 @@ static class CommerceEndpoints
         else
             result=new(e.SourcePurchaseId,e.SourceItemKey,e.SourceProductSku,delivery?.LicenseId,delivery?.State??"GAP_PENDING",delivery?.Financial??"UNKNOWN",delivery?.Version??0,"GAP_PENDING");
 
+        await SynchronizeContentEntitlement(e,result,conn,tx,ct);
         await using(var inbox=new NpgsqlCommand("""
           INSERT INTO suite.suite_commerce_inbox(source_system,source_event_id,source_purchase_id,source_item_key,
             source_version,source_product_sku,event_type,payload_digest,processed_at,outcome,detail_code,result_json)
@@ -97,6 +98,55 @@ static class CommerceEndpoints
             catch(PostgresException ex)when(ex.SqlState==PostgresErrorCodes.UniqueViolation){throw new CommerceConflict("EVENT_CONFLICT");}
         }
         await tx.CommitAsync(ct);return result;
+    }
+
+    static async Task SynchronizeContentEntitlement(CommerceEvent e,CommerceResult result,NpgsqlConnection conn,NpgsqlTransaction tx,CancellationToken ct)
+    {
+        if(result.LicenseId is null)return;
+        string? entitlementStatus;
+        await using(var status=new NpgsqlCommand("""
+          SELECT CASE
+            WHEN d.provisioning_state='PROVISIONED' AND l.status='ACTIVE' AND
+              (d.financial_state='PAID' OR
+               (d.financial_state='SUSPENDED' AND
+                d.administrative_resume_source_version=d.last_source_version AND
+                d.administrative_resume_actor IS NOT NULL AND
+                d.administrative_resume_reason IS NOT NULL AND
+                d.administrative_resume_request_id IS NOT NULL)) THEN 'ACTIVE'
+            WHEN d.provisioning_state='SUSPENDED' AND d.financial_state='SUSPENDED' THEN 'SUSPENDED'
+            WHEN d.provisioning_state='REVOKED' THEN 'REVOKED'
+            ELSE NULL END
+          FROM suite.suite_license_deliveries d
+          JOIN suite.suite_licenses l ON l.license_id=d.license_id
+          WHERE d.source_system=$1 AND d.source_purchase_id=$2 AND d.source_item_key=$3
+            AND d.product_id='TURBORAMA_SUITE' AND d.license_id=$4
+          """,conn,tx))
+        {
+            status.Parameters.AddWithValue(e.SourceSystem);
+            status.Parameters.AddWithValue(e.SourcePurchaseId);
+            status.Parameters.AddWithValue(e.SourceItemKey);
+            status.Parameters.AddWithValue(result.LicenseId);
+            entitlementStatus=(string?)await status.ExecuteScalarAsync(ct);
+        }
+        if(entitlementStatus is null)return;
+        await using var entitlement=new NpgsqlCommand("""
+          INSERT INTO suite.suite_content_entitlements(license_id,scope,status,source_system,
+            source_purchase_id,source_item_key,product_id,created_at,updated_at)
+          VALUES($1,'FULL_CATALOG',$2,$3,$4,$5,'TURBORAMA_SUITE',clock_timestamp(),clock_timestamp())
+          ON CONFLICT(license_id,scope) DO UPDATE
+            SET status=excluded.status,source_system=excluded.source_system,
+                source_purchase_id=excluded.source_purchase_id,source_item_key=excluded.source_item_key,
+                updated_at=clock_timestamp()
+          WHERE suite_content_entitlements.source_system=excluded.source_system
+            AND suite_content_entitlements.source_purchase_id=excluded.source_purchase_id
+            AND suite_content_entitlements.source_item_key=excluded.source_item_key
+          """,conn,tx);
+        entitlement.Parameters.AddWithValue(result.LicenseId);
+        entitlement.Parameters.AddWithValue(entitlementStatus);
+        entitlement.Parameters.AddWithValue(e.SourceSystem);
+        entitlement.Parameters.AddWithValue(e.SourcePurchaseId);
+        entitlement.Parameters.AddWithValue(e.SourceItemKey);
+        if(await entitlement.ExecuteNonQueryAsync(ct)!=1)throw new CommerceConflict("CONTENT_ENTITLEMENT_CONFLICT");
     }
 
     static async Task<CommerceResult?> Prior(CommerceEvent e,NpgsqlConnection conn,NpgsqlTransaction tx,CancellationToken ct)

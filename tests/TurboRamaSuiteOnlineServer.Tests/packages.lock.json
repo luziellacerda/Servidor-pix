@@ -23,6 +23,12 @@
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
         }
       },
+      "turboramasuitecontentgateway": {
+        "type": "Project",
+        "dependencies": {
+          "TurboRamaSuiteOnlineServer": "[1.0.0, )"
+        }
+      },
       "turboramasuiteonlineserver": {
         "type": "Project",
         "dependencies": {

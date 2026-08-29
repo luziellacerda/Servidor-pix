@@ -1,0 +1,4 @@
+[Service]
+EnvironmentFile=-/etc/turborama-suite-content-admin/content.env
+LoadCredential=candidate-url-keyring
+LoadCredential=content-allowed-hosts

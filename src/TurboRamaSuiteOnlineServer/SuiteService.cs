@@ -47,14 +47,45 @@ public sealed class SuiteService
     }
     public async Task<SignedAssertionEnvelope> ChallengeAsync(ChallengeRequest request, CancellationToken ct)
     {
-        Protocol.RequireVersion(request.SchemaVersion); Protocol.RequireProduct(request.ProductId); if (request.Action is not ("session.open" or "session.heartbeat")) throw new SuiteException(400, "ACTION_INVALID", "Action is invalid.");
-        _ = await ActiveLicense(request.LicenseId, ct); var device = await _store.FindDeviceAsync(request.LicenseId, request.DeviceId, ct) ?? throw new SuiteException(403, "DEVICE_DENIED", "Device is not authorized."); if (device.Status != "ACTIVE") throw new SuiteException(403, "DEVICE_DENIED", "Device is not authorized.");
-        var challenge = NewChallenge(request.LicenseId, request.DeviceId, request.SessionId, request.Action, request.ContextHash, null, null); await _store.InsertChallengeAsync(challenge, ct); var kind = request.Action == "session.open" ? Protocol.SessionOpenChallengeKind : Protocol.SessionHeartbeatChallengeKind;
-        return _signer.Sign(new OperationChallengeAssertion(1, kind, Protocol.ProductId, request.LicenseId, request.DeviceId, request.SessionId, request.Action, request.ContextHash, challenge.ChallengeId, challenge.Nonce, "ISSUED", Now(), challenge.ExpiresAt));
+        Protocol.ValidateChallengeRequest(request);
+        if (request.Action is not ("session.open" or "session.heartbeat" or
+            ContentProtocol.CatalogReadAction or ContentProtocol.DownloadAuthorizeAction))
+            throw new SuiteException(400, "ACTION_INVALID", "Action is invalid.");
+        _ = await ActiveLicense(request.LicenseId, ct);
+        var device = await _store.FindDeviceAsync(request.LicenseId, request.DeviceId, ct) ??
+                     throw new SuiteException(403, "DEVICE_DENIED",
+                         "Device is not authorized.");
+        if (device.Status != "ACTIVE")
+            throw new SuiteException(403, "DEVICE_DENIED", "Device is not authorized.");
+        if (ContentProtocol.IsContentAction(request.Action) &&
+            !await _store.IsActiveSessionAsync(request.LicenseId, request.DeviceId,
+                request.SessionId, Now(), ct))
+            throw new SuiteException(409, "SESSION_INVALID", "Session is not current.");
+        var challenge = NewChallenge(request.LicenseId, request.DeviceId, request.SessionId,
+            request.Action, request.ContextHash, null, null);
+        await _store.InsertChallengeAsync(challenge, ct);
+        var kind = request.Action switch
+        {
+            "session.open" => Protocol.SessionOpenChallengeKind,
+            "session.heartbeat" => Protocol.SessionHeartbeatChallengeKind,
+            ContentProtocol.CatalogReadAction => ContentProtocol.CatalogChallengeKind,
+            ContentProtocol.DownloadAuthorizeAction => ContentProtocol.DownloadChallengeKind,
+            _ => throw new SuiteException(400, "ACTION_INVALID", "Action is invalid.")
+        };
+        return _signer.Sign(new OperationChallengeAssertion(1, kind, Protocol.ProductId,
+            request.LicenseId, request.DeviceId, request.SessionId, request.Action,
+            request.ContextHash, challenge.ChallengeId, challenge.Nonce, "ISSUED", Now(),
+            challenge.ExpiresAt));
     }
     public async Task<SignedAssertionEnvelope> SessionAsync(SessionProof request, CancellationToken ct)
     {
-        Protocol.RequireVersion(request.Proof.SchemaVersion); Protocol.RequireProduct(request.Proof.ProductId); var hash = Protocol.SessionContextHash(request.Context); if (!Protocol.FixedEquals(hash, request.Proof.ContextHash)) throw new SuiteException(400, "CONTEXT_INVALID", "Context is invalid.");
+        Protocol.RequireVersion(request.Proof.SchemaVersion);
+        Protocol.RequireProduct(request.Proof.ProductId);
+        if (request.Proof.Action is not ("session.open" or "session.heartbeat"))
+            throw new SuiteException(400, "ACTION_INVALID", "Action is invalid.");
+        var hash = Protocol.SessionContextHash(request.Context);
+        if (!Protocol.FixedEquals(hash, request.Proof.ContextHash))
+            throw new SuiteException(400, "CONTEXT_INVALID", "Context is invalid.");
         if (request.Proof.Action != request.Context.Action || request.Proof.LicenseId != request.Context.LicenseId || request.Proof.DeviceId != request.Context.DeviceId || request.Proof.SessionId != request.Context.SessionId) throw new SuiteException(400, "CONTEXT_INVALID", "Context is invalid.");
         _ = await ActiveLicense(request.Proof.LicenseId, ct); var challenge = await _store.FindChallengeAsync(request.Proof.ChallengeId, request.Proof.Action, Now(), ct) ?? throw new SuiteException(409, "CHALLENGE_INVALID", "Challenge is invalid or expired."); Match(challenge, request.Proof.LicenseId, request.Proof.DeviceId, request.Proof.SessionId, hash);
         var device = await _store.FindDeviceAsync(request.Proof.LicenseId, request.Proof.DeviceId, ct) ?? throw new SuiteException(403, "DEVICE_DENIED", "Device is not authorized."); var descriptor = new DeviceDescriptor(1, device.DeviceId, device.BindingType, Protocol.Algorithm, device.PublicKeySpki, request.Context.HardwareFingerprint, request.Context.ClientVersion);

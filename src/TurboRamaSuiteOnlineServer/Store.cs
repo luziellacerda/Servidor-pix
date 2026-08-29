@@ -29,6 +29,8 @@ public interface ISuiteStore
     Task<LicenseRecord?> FindLicenseAsync(string licenseId, CancellationToken token);
     Task<EnrollmentRecord?> FindEnrollmentAsync(string licenseId, CancellationToken token);
     Task<DeviceRecord?> FindDeviceAsync(string licenseId, string deviceId, CancellationToken token);
+    Task<bool> IsActiveSessionAsync(string licenseId, string deviceId, string sessionId,
+        long now, CancellationToken token);
     Task InsertChallengeAsync(ChallengeRecord challenge, CancellationToken token);
     Task<ChallengeRecord?> FindChallengeAsync(string id, string action, long now,
         CancellationToken token);
@@ -55,6 +57,24 @@ public sealed class PostgresSuiteStore : ISuiteStore
     {
         await using var cmd = _dataSource.CreateCommand("SELECT license_id,device_id,binding_type,public_key_spki,hardware_fingerprint,status,algorithm FROM suite.suite_devices WHERE license_id=$1 AND device_id=$2"); cmd.Parameters.AddWithValue(l); cmd.Parameters.AddWithValue(d); await using var r = await cmd.ExecuteReaderAsync(ct); return await r.ReadAsync(ct) ? new(r.GetString(0), r.GetString(1), r.GetString(2), r.GetString(3), r.GetString(4), r.GetString(5), r.GetString(6)) : null;
     }
+    public async Task<bool> IsActiveSessionAsync(string licenseId, string deviceId,
+        string sessionId, long now, CancellationToken ct)
+    {
+        await using var command = _dataSource.CreateCommand("""
+            SELECT EXISTS(
+              SELECT 1 FROM suite.suite_sessions session
+              JOIN suite.suite_licenses license ON license.license_id=session.license_id
+              WHERE session.license_id=$1 AND session.device_id=$2 AND session.session_id=$3
+                AND session.status='ACTIVE' AND session.authorized_until>to_timestamp($4)
+                AND session.revocation_generation=license.revocation_generation
+                AND license.status='ACTIVE')
+            """);
+        command.Parameters.AddWithValue(licenseId);
+        command.Parameters.AddWithValue(deviceId);
+        command.Parameters.AddWithValue(sessionId);
+        command.Parameters.AddWithValue(now);
+        return (bool)(await command.ExecuteScalarAsync(ct) ?? false);
+    }
     public async Task<EnrollmentRecord?> FindEnrollmentAsync(string licenseId, CancellationToken ct)
     {
         await using var cmd = _dataSource.CreateCommand("SELECT license_id,device_id,binding_type,identity_policy,algorithm,public_key_spki,hardware_fingerprint FROM suite.suite_license_enrollments WHERE license_id=$1");
@@ -62,7 +82,56 @@ public sealed class PostgresSuiteStore : ISuiteStore
         return await r.ReadAsync(ct) ? new(r.GetString(0), r.GetString(1), r.GetString(2), r.GetString(3), r.GetString(4), r.GetString(5), r.GetString(6)) : null;
     }
     public async Task InsertChallengeAsync(ChallengeRecord c, CancellationToken ct)
-    { await using var cmd = _dataSource.CreateCommand("INSERT INTO suite.suite_challenges(challenge_id,product_id,license_id,device_id,session_id,action,context_hash,nonce,expires_at,activation_verifier,device_json,activation_generation,revocation_generation) SELECT $1,$2,$3,$4,$5,$6,$7,$8,to_timestamp($9),$10,$11::jsonb,CASE WHEN $6='device.activate' THEN activation_generation ELSE NULL END,revocation_generation FROM suite.suite_licenses WHERE license_id=$3"); cmd.Parameters.AddWithValue(c.ChallengeId); cmd.Parameters.AddWithValue(c.ProductId); cmd.Parameters.AddWithValue(c.LicenseId); cmd.Parameters.AddWithValue(c.DeviceId); cmd.Parameters.AddWithValue(c.SessionId); cmd.Parameters.AddWithValue(c.Action); cmd.Parameters.AddWithValue(c.ContextHash); cmd.Parameters.AddWithValue(c.Nonce); cmd.Parameters.AddWithValue(c.ExpiresAt); cmd.Parameters.AddWithValue((object?)c.ActivationVerifier ?? DBNull.Value); cmd.Parameters.AddWithValue((object?)c.DeviceJson ?? DBNull.Value); await cmd.ExecuteNonQueryAsync(ct); }
+    {
+        await using var connection = await _dataSource.OpenConnectionAsync(ct);
+        await using var transaction = await connection.BeginTransactionAsync(
+            IsolationLevel.ReadCommitted, ct);
+        if (ContentProtocol.IsContentAction(c.Action))
+        {
+            await using var quota = new NpgsqlCommand(
+                "SELECT suite.enforce_suite_content_challenge_quota($1,$2,$3)",
+                connection, transaction);
+            quota.Parameters.AddWithValue(c.LicenseId);
+            quota.Parameters.AddWithValue(c.DeviceId);
+            quota.Parameters.AddWithValue(c.SessionId);
+            try { await quota.ExecuteNonQueryAsync(ct); }
+            catch (PostgresException exception) when (
+                exception.MessageText == "SUITE_CONTENT_CHALLENGE_QUOTA_EXCEEDED")
+            {
+                throw new SuiteException(429, "CONTENT_QUOTA_EXCEEDED",
+                    "Content request quota was exceeded.");
+            }
+            catch (PostgresException exception) when (
+                exception.MessageText == "SUITE_CONTENT_SESSION_INVALID")
+            {
+                throw new SuiteException(409, "SESSION_INVALID", "Session is not current.");
+            }
+        }
+
+        await using var command = new NpgsqlCommand("""
+            INSERT INTO suite.suite_challenges(
+              challenge_id,product_id,license_id,device_id,session_id,action,
+              context_hash,nonce,expires_at,activation_verifier,device_json,
+              activation_generation,revocation_generation)
+            SELECT $1,$2,$3,$4,$5,$6,$7,$8,to_timestamp($9),$10,$11::jsonb,
+              CASE WHEN $6='device.activate' THEN activation_generation ELSE NULL END,
+              revocation_generation
+            FROM suite.suite_licenses WHERE license_id=$3
+            """, connection, transaction);
+        command.Parameters.AddWithValue(c.ChallengeId);
+        command.Parameters.AddWithValue(c.ProductId);
+        command.Parameters.AddWithValue(c.LicenseId);
+        command.Parameters.AddWithValue(c.DeviceId);
+        command.Parameters.AddWithValue(c.SessionId);
+        command.Parameters.AddWithValue(c.Action);
+        command.Parameters.AddWithValue(c.ContextHash);
+        command.Parameters.AddWithValue(c.Nonce);
+        command.Parameters.AddWithValue(c.ExpiresAt);
+        command.Parameters.AddWithValue((object?)c.ActivationVerifier ?? DBNull.Value);
+        command.Parameters.AddWithValue((object?)c.DeviceJson ?? DBNull.Value);
+        await command.ExecuteNonQueryAsync(ct);
+        await transaction.CommitAsync(ct);
+    }
     public async Task<ChallengeRecord?> FindChallengeAsync(string id, string action, long now, CancellationToken ct)
     { await using var cmd = _dataSource.CreateCommand("SELECT challenge_id,product_id,license_id,device_id,session_id,action,context_hash,nonce,extract(epoch from expires_at)::bigint,activation_verifier,device_json::text FROM suite.suite_challenges WHERE challenge_id=$1 AND action=$2 AND consumed_at IS NULL AND expires_at>to_timestamp($3)"); cmd.Parameters.AddWithValue(id); cmd.Parameters.AddWithValue(action); cmd.Parameters.AddWithValue(now); await using var r = await cmd.ExecuteReaderAsync(ct); return await r.ReadAsync(ct) ? ReadChallenge(r) : null; }
     public async Task<CompletionRecord?> FindCompletionAsync(string id, CancellationToken ct)

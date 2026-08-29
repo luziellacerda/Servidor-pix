@@ -29,6 +29,21 @@ Thumbs.db
 *.keystore
 secrets/
 credentials/
+private-import/
+**/catalog.full.json
+**/content-url-keyring.json
+**/candidate-url-keyring.json
+**/content-url-keyring
+**/candidate-url-keyring
+**/content-allowed-hosts
+**/candidate-allowed-hosts
+**/grant-token-pepper
+**/content-grant-token-pepper
+**/*.connection
+**/content-authority-envelope.json
+**/content-authority-issuer.spki.der
+**/content-authority-envelope.json.sha256
+**/content-authority-issuer.spki.der.sha256
 
 # Estado operacional e backups: nunca publicar
 data/

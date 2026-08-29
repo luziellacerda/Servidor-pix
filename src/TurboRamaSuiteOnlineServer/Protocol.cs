@@ -123,6 +123,10 @@ public static class Protocol
         ActivationResultAssertion => "TurboRamaSuiteOnlineAssertion/activation-result/v1\0",
         OperationChallengeAssertion value when value.Action == "session.open" =>
             "TurboRamaSuiteOnlineAssertion/session-open-challenge/v1\0",
+        OperationChallengeAssertion value when value.Action == ContentProtocol.CatalogReadAction =>
+            ContentProtocol.CatalogChallengeAssertionDomain,
+        OperationChallengeAssertion value when value.Action == ContentProtocol.DownloadAuthorizeAction =>
+            ContentProtocol.DownloadChallengeAssertionDomain,
         OperationChallengeAssertion => "TurboRamaSuiteOnlineAssertion/session-heartbeat-challenge/v1\0",
         SessionAssertion value when value.Action == "session.open" =>
             "TurboRamaSuiteOnlineAssertion/session-open/v1\0",
@@ -152,12 +156,18 @@ public static class Protocol
     private static string Hex(string value)
     { if (value.Length != 64 || value.Any(c => !(c is >= '0' and <= '9' or >= 'a' and <= 'f'))) Invalid(); return value; }
     private static string Action(string value)
-    { if (value is not ("device.activate" or "session.open" or "session.heartbeat")) Invalid(); return value; }
+    { if (value is not ("device.activate" or "session.open" or "session.heartbeat" or ContentProtocol.CatalogReadAction or ContentProtocol.DownloadAuthorizeAction)) Invalid(); return value; }
     private static byte[] CanonicalBase64(string value, int min, int max)
     { byte[] b; try { b = Convert.FromBase64String(value); } catch (FormatException) { Invalid(); throw; } if (b.Length < min || b.Length > max || Convert.ToBase64String(b) != value) { CryptographicOperations.ZeroMemory(b); Invalid(); } return b; }
     private static void ValidateContext(SessionContext c)
     { RequireVersion(c.SchemaVersion); if (c.ProductId != ProductId) Invalid(); Identifier(c.LicenseId, 6, 64); Hex(c.DeviceId); Hex(c.SessionId); Action(c.Action); Hex(c.HardwareFingerprint); if (c.ClientVersion.Length is < 1 or > 64 || c.ClientVersion.Any(ch => !(char.IsAsciiLetterOrDigit(ch) || ch is '.' or '-' or '+'))) Invalid(); }
     public static void RequireProduct(string product) { if (product != ProductId) throw new SuiteException(403, "PRODUCT_DENIED", "Product is not authorized."); }
+    public static void ValidateChallengeRequest(ChallengeRequest request)
+    {
+        RequireVersion(request.SchemaVersion); RequireProduct(request.ProductId);
+        Identifier(request.LicenseId, 6, 64); Hex(request.DeviceId); Hex(request.SessionId);
+        Action(request.Action); Hex(request.ContextHash);
+    }
     public static void ValidateActivationCode(string value) { if (value is null || value.Length is < 16 or > 128 || value.Any(char.IsWhiteSpace)) Invalid(); }
     public static void RequireVersion(int version) { if (version != 1) Invalid(); }
     public static bool FixedEquals(string a, string b) => a.Length == b.Length && CryptographicOperations.FixedTimeEquals(Encoding.ASCII.GetBytes(a), Encoding.ASCII.GetBytes(b));

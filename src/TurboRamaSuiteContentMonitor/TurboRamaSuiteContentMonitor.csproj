@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="8.0.6" />
+    <Compile Include="../TurboRamaSuiteContentPublisher/PublicNetworkPolicy.cs" Link="Shared/PublicNetworkPolicy.cs" />
+    <Compile Include="../TurboRamaSuiteContentPublisher/OriginPolicy.cs" Link="Shared/OriginPolicy.cs" />
+    <Compile Include="../TurboRamaSuiteContentPublisher/ContentSignatureValidator.cs" Link="Shared/ContentSignatureValidator.cs" />
+  </ItemGroup>
+</Project>

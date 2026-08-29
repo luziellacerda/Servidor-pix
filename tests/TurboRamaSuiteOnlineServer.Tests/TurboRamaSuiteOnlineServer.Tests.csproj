@@ -1,4 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings><TreatWarningsAsErrors>true</TreatWarningsAsErrors></PropertyGroup>
-  <ItemGroup><ProjectReference Include="../../src/TurboRamaSuiteOnlineServer/TurboRamaSuiteOnlineServer.csproj" /></ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/TurboRamaSuiteOnlineServer/TurboRamaSuiteOnlineServer.csproj" />
+    <ProjectReference Include="../../src/TurboRamaSuiteContentGateway/TurboRamaSuiteContentGateway.csproj" />
+  </ItemGroup>
 </Project>

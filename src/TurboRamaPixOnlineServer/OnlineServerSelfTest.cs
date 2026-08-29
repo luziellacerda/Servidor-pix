@@ -349,6 +349,44 @@ static class OnlineServerSelfTest
 
             Require(SuiteAdminPanel.HasCspSafeOneTimePageForTest(), "pagina Suite one-time viola CSP ou nao troca historico externamente");
             Require(SuiteAdminPanel.DefaultsDenySuitePermissionsForTest(), "permissoes Suite nao falham por padrao");
+            Require(SuiteAdminPanel.HasSafeContentHtmlForTest(),
+                "painel de conteudo vazou URL, nao escapou titulo ou omitiu CSRF/step-up");
+            Require(SuiteAdminPanel.UsesContentPrgForTest(),
+                "painel de conteudo nao aplica PRG sanitizado");
+            var validContentProof = new SuiteContentAdminProof("admin", new string('a', 64),
+                "suite.content.origin.replace", DateTimeOffset.UtcNow.ToUnixTimeSeconds());
+            var wrongContentClaim = validContentProof with
+            {
+                Claim = "suite.content.version.publish"
+            };
+            var forgedContentActor = validContentProof with
+            {
+                Actor = "admin\r\nX-Forged: 1"
+            };
+            var missingContentStepUp = validContentProof with
+            {
+                StepUpAt = null
+            };
+            Require(SuiteAdminBff.IsValidContentProofForTest(validContentProof,
+                    "suite.content.origin.replace", true, false)
+                && !SuiteAdminBff.IsValidContentProofForTest(wrongContentClaim,
+                    "suite.content.origin.replace", true, false)
+                && !SuiteAdminBff.IsValidContentProofForTest(forgedContentActor,
+                    "suite.content.origin.replace", true, false)
+                && !SuiteAdminBff.IsValidContentProofForTest(missingContentStepUp,
+                    "suite.content.origin.replace", true, false)
+                && !SuiteAdminBff.IsValidContentProofForTest(validContentProof,
+                    "suite.content.version.publish", true, true),
+                "BFF de conteudo aceitou claims, ator ou step-up frouxos");
+            var contentGuard = new SuiteContentAdminGuard();
+            Require(contentGuard.Allow("admin", new string('b', 64), new string('c', 32),
+                    "replace", 2, 60)
+                && contentGuard.Allow("admin", new string('b', 64), new string('c', 32),
+                    "replace", 2, 60)
+                && !contentGuard.Allow("admin", new string('b', 64), new string('c', 32),
+                    "replace", 2, 60)
+                && contentGuard.Count == 1,
+                "rate limit de conteudo nao limita por ator/IP/item/acao");
             Console.WriteLine("SELF-TEST SERVIDOR ONLINE: OK (ativacao de uso unico, transferencia administrativa de hardware, prova RSA-PSS, sessao exclusiva, clone registrado, original preservada, painel administrativo isolado por hostname e HTTPS, login protegido, painel profissional e exportacao de auditoria, bloqueio PIX, idempotencia, anti-replay, reautenticacao remota e compatibilidade das rotas legadas fora do painel).");
             return 0;
         }
