@@ -101,6 +101,7 @@ internal sealed class OriginPolicy
             PooledConnectionIdleTimeout = TimeSpan.FromSeconds(30),
             PooledConnectionLifetime = TimeSpan.FromMinutes(2),
             MaxConnectionsPerServer = 4,
+            MaxResponseDrainSize = 0,
             UseProxy = false,
             UseCookies = false,
             ConnectCallback = ConnectPublicAsync,
@@ -250,12 +251,14 @@ internal sealed class OriginVerifier : IDisposable
                 throw new PublisherFailure("ORIGIN_RANGE_INVALID");
             if (!ContentArtifactLimits.IsSupportedLength(range.Length.Value))
                 throw new PublisherFailure("ORIGIN_CONTENT_TOO_LARGE");
+            await ReadSingleProbeByteAsync(response.Content, timeout.Token);
             return Metadata(range.Length.Value, "", response);
         }
         if (response.StatusCode != HttpStatusCode.OK)
             throw StatusFailure(response.StatusCode);
         var rangeIgnoredLength = response.Content.Headers.ContentLength;
-        response.Dispose(); // Never consume an accidental full 200 response from a Range probe.
+        await ReadSingleProbeByteAsync(response.Content, timeout.Token);
+        response.Dispose(); // Close immediately after the single-byte sample.
         HttpResponseMessage headResponse;
         try { headResponse = await SendAsync(HttpMethod.Head, uri, null, timeout.Token); }
         catch (OperationCanceledException) when (!cancellationToken.IsCancellationRequested)
@@ -269,6 +272,19 @@ internal sealed class OriginVerifier : IDisposable
         if (!ContentArtifactLimits.IsSupportedLength(length.Value))
             throw new PublisherFailure("ORIGIN_CONTENT_TOO_LARGE");
         return Metadata(length.Value, "", head);
+    }
+
+    private static async Task ReadSingleProbeByteAsync(HttpContent content,
+        CancellationToken cancellationToken)
+    {
+        var sample = new byte[1];
+        try
+        {
+            await using var stream = await content.ReadAsStreamAsync(cancellationToken);
+            if (await stream.ReadAsync(sample.AsMemory(0, 1), cancellationToken) != 1)
+                throw new PublisherFailure("ORIGIN_BODY_EMPTY");
+        }
+        finally { CryptographicOperations.ZeroMemory(sample); }
     }
 
     private async Task<OriginMetadata> HashAsync(
