@@ -80,6 +80,7 @@ internal sealed class MonitorCoordinator : IDisposable
             var targets = await store.GetDueHealthTargetsAsync(850, ct);
             databaseStage = "PROBE_HEALTH";
             var results = await ProbeHealthAsync(targets, ct);
+            await store.WriteLinkAlertReportAsync(results, ct);
             if (results.Any(result => result.SecurityFailure))
             {
                 await store.RecordSecurityAbortAsync(cycleId, ct);
