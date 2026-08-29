@@ -6,7 +6,8 @@ internal sealed record MonitorOptions(
     string OriginKeyRingFile,
     string AllowedHostsFile,
     Uri GatewayKeyRingReadinessUri,
-    int MaximumConcurrency)
+    int MaximumConcurrency,
+    bool DirectMode)
 {
     public static MonitorOptions FromEnvironment()
     {
@@ -39,6 +40,10 @@ internal sealed record MonitorOptions(
             readinessUri.Query.Length != 0 || readinessUri.Fragment.Length != 0 ||
             readinessUri.UserInfo.Length != 0)
             throw new MonitorFailure("CONFIGURATION_INVALID");
+        var directModeText = Environment.GetEnvironmentVariable(
+            "SUITE_CONTENT_MONITOR_DIRECT_MODE")?.Trim();
+        if (directModeText is not ("0" or "1"))
+            throw new MonitorFailure("CONFIGURATION_INVALID");
         return new MonitorOptions(
             Required("SUITE_CONTENT_MONITOR_CONNECTION_FILE"),
             ProtectedPath("SUITE_CONTENT_MONITOR_CANDIDATE_KEYRING_FILE",
@@ -46,7 +51,8 @@ internal sealed record MonitorOptions(
             ProtectedPath("SUITE_CONTENT_MONITOR_ORIGIN_KEYRING_FILE",
                 "SUITE_CONTENT_MONITOR_ORIGIN_KEYRING_CREDENTIAL"),
             ProtectedPath("SUITE_CONTENT_MONITOR_ALLOWED_HOSTS_FILE",
-                "SUITE_CONTENT_MONITOR_ALLOWED_HOSTS_CREDENTIAL"), readinessUri, concurrency);
+                "SUITE_CONTENT_MONITOR_ALLOWED_HOSTS_CREDENTIAL"), readinessUri, concurrency,
+            directModeText == "1");
     }
 }
 
