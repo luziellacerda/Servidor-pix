@@ -125,13 +125,15 @@ internal sealed record PublisherOptions(
         };
         if (values.Keys.Any(key => !known.Contains(key))) throw new PublisherFailure("ARGUMENT_INVALID");
 
-        if (command is PublisherCommand.Validate or PublisherCommand.Probe or PublisherCommand.Publish)
+        if (command is PublisherCommand.Validate or PublisherCommand.Probe
+            or PublisherCommand.Publish or PublisherCommand.PublishDirect)
         {
             Require(options.CatalogPath, "CATALOG_PATH_REQUIRED");
             Require(options.VisualCatalogPath, "VISUAL_CATALOG_PATH_REQUIRED");
             Require(options.AllowedHostsPath, "ALLOWED_HOSTS_PATH_REQUIRED");
         }
-        if (command is PublisherCommand.Probe or PublisherCommand.Publish)
+        if (command is PublisherCommand.Probe or PublisherCommand.Publish
+            or PublisherCommand.PublishDirect)
         {
             Require(options.ExpectedInventorySha256, "EXPECTED_INVENTORY_DIGEST_REQUIRED");
             Require(options.ExpectedVisualCatalogSha256, "EXPECTED_VISUAL_DIGEST_REQUIRED");
