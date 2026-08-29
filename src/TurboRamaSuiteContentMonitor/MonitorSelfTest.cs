@@ -146,7 +146,7 @@ internal static class MonitorSelfTest
             throw new InvalidOperationException(
                 "Last-Modified-only origin bypassed periodic full validation");
         var sameLengthAndDateButDifferentBody = new OriginMetadata(
-            lastModifiedOnlyTarget.ExpectedContentLength, new string('3', 64),
+            lastModifiedOnlyTarget.ExpectedContentLength!.Value, new string('3', 64),
             "application/octet-stream", null, lastModifiedOnlyTarget.ExpectedLastModified);
         if (HealthPolicy.FullArtifactMatches(lastModifiedOnlyTarget,
                 sameLengthAndDateButDifferentBody))
