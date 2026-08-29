@@ -123,7 +123,7 @@ END $$;
 
 REVOKE ALL ON FUNCTION suite.publish_suite_content_catalog(char(64)) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION suite.publish_suite_content_catalog(char(64))
-  TO "turborama-suite-content-publisher","turborama-suite-content-monitor";
+  TO "turborama-suite-publisher","turborama-suite-content-monitor";
 
 INSERT INTO suite.schema_migrations(version) VALUES('015_suite_content_direct_metadata')
 ON CONFLICT(version) DO NOTHING;
