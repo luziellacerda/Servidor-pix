@@ -105,7 +105,7 @@ sealed class SuiteAdminBff : IDisposable
         string? itemPrefix, string? name, CancellationToken ct)
     {
         RequireContentProof(proof, "suite.content.read", false, false);
-        if (limit is < 1 or > 100 || !ValidCursor(cursor) || !ValidAvailability(availability) ||
+        if (limit is < 1 or > 1000 || !ValidCursor(cursor) || !ValidAvailability(availability) ||
             !ValidCode(resultCode, 64) || !ValidCode(jobState, 16) || !ValidItemPrefix(itemPrefix) ||
             name is { Length: > 100 } || name?.Any(char.IsControl) == true)
             throw new HttpRequestException("SUITE_CONTENT_QUERY_INVALID");

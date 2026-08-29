@@ -837,7 +837,7 @@ sealed class ContentQuery
     public static bool TryParse(IQueryCollection values, out ContentQuery? query)
     {
         query = null;
-        if (!int.TryParse(values["limit"].FirstOrDefault() ?? "100", out var limit) || limit is < 1 or > 100)
+        if (!int.TryParse(values["limit"].FirstOrDefault() ?? "100", out var limit) || limit is < 1 or > 1000)
             return false;
         var cursor = values["cursor"].FirstOrDefault();
         var after = cursor is null ? string.Empty : ContentCursor.Decode(cursor);
