@@ -93,7 +93,6 @@ location ~ "^/v1/suite-content/artifacts/[0-9a-f]{64}$" {
     proxy_set_header If-Range $http_if_range;
     proxy_set_header Cookie "";
     proxy_set_header Proxy "";
-    proxy_hide_header Location;
     proxy_hide_header Server;
     proxy_intercept_errors off;
     add_header X-Content-Type-Options nosniff always;

@@ -18,15 +18,46 @@ static class SuiteAdminPanel
 
     public static void Map(WebApplication app)
     {
+        app.MapGet("/admin/clientes/{licenseId}",async(string licenseId,HttpContext context,
+            IAntiforgery antiforgery,SuiteAdminBff bff,CancellationToken ct)=>
+        {
+            if(!Has(context,Read)||!ValidLicenseId(licenseId))return Results.Forbid();
+            var customer=LoadCustomerLicenses().FirstOrDefault(x=>
+                string.Equals(x.LicenseId,licenseId,StringComparison.OrdinalIgnoreCase));
+            if(customer is null)return Results.NotFound();
+            try{return Html(CustomerHistoryPage(customer,await bff.CustomerActivityAsync(licenseId,ct),
+                antiforgery.GetAndStoreTokens(context).RequestToken??"",context.Request.Query["ok"].ToString()));}
+            catch(HttpRequestException){return Html(Unavailable(),503);}
+        }).RequireAuthorization();
+        app.MapPost("/admin/clientes/actions/clear-games",async(HttpContext context,IAntiforgery antiforgery,
+            OnlineAdminConfiguration admin,SuiteAdminBff bff,CancellationToken ct)=>
+        {
+            if(!Has(context,Read))return Results.Forbid();
+            try
+            {
+                await antiforgery.ValidateRequestAsync(context);var form=await context.Request.ReadFormAsync(ct);
+                var id=Required(form,"licenseId");if(!ValidLicenseId(id)||
+                    !AdminPasswordHash.Verify(admin.PasswordHash,Required(form,"adminPassword")))throw new SecurityException();
+                await bff.ClearCustomerActivityAsync(id,context.User.Identity?.Name??"unknown",RequestId(),ct);
+                return Results.Redirect("/admin/clientes/"+Uri.EscapeDataString(id)+"?ok=HISTORICO_LIMPO");
+            }
+            catch(Exception ex)when(ex is SecurityException or AntiforgeryValidationException or HttpRequestException)
+            {return Results.Redirect("/admin?error=OPERATION_DENIED");}
+        }).RequireAuthorization();
+
         app.MapGet("/admin/suite", async (HttpContext context, IAntiforgery antiforgery,
             SuiteAdminBff bff, CancellationToken ct) =>
         {
             if (!Has(context, Read)) return Results.Forbid();
             try
             {
-                return Html(Page(await bff.StatusAsync(ExpectedLicense(), ct),
+                var selected = context.Request.Query["licenseId"].ToString().Trim();
+                var customers = LoadCustomerLicenses();
+                if (selected.Length == 0) return Html(LicenseSearch(customers));
+                if (!ValidLicenseId(selected)) throw new SecurityException();
+                return Html(Page(await bff.StatusAsync(selected, ct),
                     antiforgery.GetAndStoreTokens(context).RequestToken ?? "",
-                    context.Request.Query["error"].ToString()));
+                    context.Request.Query["error"].ToString(), customers));
             }
             catch (HttpRequestException) { return Html(Unavailable(), 503); }
         }).RequireAuthorization();
@@ -47,7 +78,7 @@ static class SuiteAdminPanel
                 var device = Required(form, "deviceId");
                 if (!Fixed(id, Required(form, "confirmLicenseId")) ||
                     !Fixed(device, Required(form, "confirmDeviceId")) ||
-                    !Fixed(id, ExpectedLicense())) throw new SecurityException();
+                    !ValidLicenseId(id)) throw new SecurityException();
                 var actor = context.User.Identity?.Name ?? "unknown";
                 if (!AdminPasswordHash.Verify(admin.PasswordHash, Required(form, "adminPassword")))
                 {
@@ -66,13 +97,41 @@ static class SuiteAdminPanel
                 var issued = await bff.IssueAsync(id, device, actor, RequestId(), ct);
                 context.Response.Headers.CacheControl = "no-store, no-cache, must-revalidate";
                 context.Response.Headers.Pragma = "no-cache";
-                return Html(Otp(issued));
+                return Html(Otp(issued,null,null));
             }
             catch (Exception ex) when (ex is SecurityException or AntiforgeryValidationException or
                 HttpRequestException)
             {
                 return Results.Redirect("/admin/suite?error=OPERATION_DENIED");
             }
+        }).RequireAuthorization();
+
+        app.MapPost("/admin/suite/actions/issue-first-claim",async(HttpContext context,
+            IAntiforgery antiforgery,OnlineAdminConfiguration admin,SuiteAdminBff bff,
+            SuiteIssueGuard guard,CancellationToken ct)=>
+        {
+            if(!Has(context,Issue))return Results.Forbid();
+            try
+            {
+                await antiforgery.ValidateRequestAsync(context);
+                var form=await context.Request.ReadFormAsync(ct);var id=Required(form,"licenseId");
+                if(!ValidLicenseId(id)||!Fixed(id,Required(form,"confirmLicenseId")))throw new SecurityException();
+                var actor=context.User.Identity?.Name??"unknown";
+                if(!AdminPasswordHash.Verify(admin.PasswordHash,Required(form,"adminPassword")))
+                    return Results.Redirect("/admin/suite?licenseId="+Uri.EscapeDataString(id)+"&error=OPERATION_DENIED");
+                var key=actor+'\0'+id+'\0'+(context.Connection.RemoteIpAddress?.ToString()??"unknown");
+                if(!guard.Allow(key))return Results.Redirect("/admin/suite?licenseId="+Uri.EscapeDataString(id)+"&error=RATE_LIMIT");
+                var customer=LoadCustomerLicenses().FirstOrDefault(item=>
+                    string.Equals(item.LicenseId,id,StringComparison.OrdinalIgnoreCase));
+                if(customer is null)throw new SecurityException();
+                var issued=await bff.IssueFirstClaimAsync(id,actor,RequestId(),ct);
+                context.Response.Headers.CacheControl="no-store, no-cache, must-revalidate";
+                context.Response.Headers.Pragma="no-cache";
+                return Html(Otp(new SuiteOtpResult("TURBORAMA_SUITE",issued.LicenseId,"",issued.Otp,issued.ExpiresAt),
+                    customer.Customer,customer.Email));
+            }
+            catch(Exception ex)when(ex is SecurityException or AntiforgeryValidationException or HttpRequestException)
+            {return Results.Redirect("/admin/suite?error=OPERATION_DENIED");}
         }).RequireAuthorization();
 
         app.MapGet("/admin/suite/export/audit.csv", async (HttpContext context,
@@ -275,6 +334,10 @@ static class SuiteAdminPanel
     private static bool Has(HttpContext context, string permission) =>
         context.User.HasClaim("permission", permission);
 
+    private static bool ValidLicenseId(string value) => value.Length is >= 8 and <= 64 &&
+        value.StartsWith("TS-", StringComparison.Ordinal) &&
+        value.Skip(3).All(character => char.IsAsciiLetterOrDigit(character) || character == '-');
+
     private static SuiteContentAdminProof ContentProof(HttpContext context, string claim) =>
         new(context.User.Identity?.Name ?? "unknown", ClientIpDigest(context), claim);
 
@@ -396,7 +459,8 @@ static class SuiteAdminPanel
         "<a class='button primary' href=/admin/suite/content>Conteúdo</a></nav></header>" +
         body + "</main></body></html>";
 
-    private static string Page(SuiteAdminStatus status, string token, string error)
+    private static string Page(SuiteAdminStatus status, string token, string error,
+        IReadOnlyList<SuiteCustomerLicense> customers)
     {
         var otp = status.OtpState switch
         {
@@ -405,7 +469,7 @@ static class SuiteAdminPanel
             "CONSUMED" => "CONSUMIDO",
             _ => "NÃO EMITIDO"
         };
-        var html = new StringBuilder("<section class=scope-banner><div><span class=eyebrow>")
+        var html = new StringBuilder("<section class=panel><form method=get action=/admin/suite class=grid-form><label>Localizar outra licença<input name=licenseId required autocomplete=off placeholder='TS-...'></label><button class=ghost>Carregar licença</button></form></section><section class=scope-banner><div><span class=eyebrow>")
             .Append(E(status.ProductId)).Append("</span><h2>Emissor de ativação</h2>")
             .Append("<p>Canal isolado por socket Unix. O código aparece uma única vez.</p></div>")
             .Append("<span class='pill on'>").Append(E(status.Status)).Append("</span></section>");
@@ -423,6 +487,9 @@ static class SuiteAdminPanel
             .Append("</strong></div><div><span>Dispositivos ativos</span><strong>")
             .Append(status.ActiveDevices).Append("</strong></div><div><span>Sessão ativa</span><strong>")
             .Append(E(status.SessionId ?? "Nenhuma")).Append("</strong></div></div>");
+        var commercial=customers.FirstOrDefault(item=>string.Equals(item.LicenseId,status.LicenseId,StringComparison.OrdinalIgnoreCase));
+        var canFirstClaim=commercial is not null&&commercial.FinancialState=="PAID"&&commercial.DeliveryState=="PROVISIONED"&&
+            commercial.EnrollmentState=="PENDING_ENROLLMENT"&&!commercial.ActivationConsumed&&commercial.ActiveDevices==0&&commercial.OtpState!="VALID";
         if (status.CanIssue)
             html.Append("<form method=post action=/admin/suite/actions/issue-otp class=grid-form>")
                 .Append(Csrf(token)).Append("<input type=hidden name=licenseId value='")
@@ -432,6 +499,13 @@ static class SuiteAdminPanel
                 .Append("<label>Confirme a máquina<input name=confirmDeviceId required autocomplete=off></label>")
                 .Append("<label>Confirme sua senha<input type=password name=adminPassword required autocomplete=new-password></label>")
                 .Append("<button class=primary>Emitir OTP de 15 minutos</button></form>");
+        else if(canFirstClaim)
+            html.Append("<form method=post action=/admin/suite/actions/issue-first-claim class=grid-form>")
+                .Append(Csrf(token)).Append("<input type=hidden name=licenseId value='").Append(E(status.LicenseId))
+                .Append("'><label>Confirme a licença<input name=confirmLicenseId required autocomplete=off></label>")
+                .Append("<label>Confirme sua senha<input type=password name=adminPassword required autocomplete=new-password></label>")
+                .Append("<button class=primary>Gerar OTP para primeira ativação</button></form>")
+                .Append("<p class=muted>A licença será vinculada somente ao computador que usar este OTP no programa.</p>");
         else
             html.Append("<div class='notice danger'>Emissão indisponível no estado atual. ")
                 .Append("A validação também é repetida atomicamente no servidor.</div>");
@@ -442,15 +516,115 @@ static class SuiteAdminPanel
             .Append("<th>Resultado</th><th>Detalhe</th><th>Ator</th><th>Expiração OTP</th></tr></thead><tbody>");
         foreach (var item in status.RecentEvents)
             html.Append("<tr><td>").Append(E(item.OccurredAt)).Append("</td><td>")
-                .Append(E(item.EventType)).Append("</td><td>").Append(E(item.Outcome))
-                .Append("</td><td>").Append(E(item.DetailCode)).Append("</td><td>")
+                .Append(E(Friendly(item.EventType))).Append("</td><td>").Append(E(Friendly(item.Outcome)))
+                .Append("</td><td>").Append(E(Friendly(item.DetailCode))).Append("</td><td>")
                 .Append(E(item.Actor)).Append("</td><td>").Append(E(item.OtpExpiresAt ?? ""))
                 .Append("</td></tr>");
         if (status.RecentEvents.Count == 0)
             html.Append("<tr><td colspan=6>Nenhum evento de OTP.</td></tr>");
-        html.Append("</tbody></table></div></section>");
+        html.Append("</tbody></table></div></section>").Append(CustomerLicenseList(customers));
         return Shell("TurboRama SUITE", html.ToString());
     }
+
+    private static string LicenseSearch(IReadOnlyList<SuiteCustomerLicense> customers) => Shell("TurboRama SUITE",
+        "<section class=scope-banner><div><span class=eyebrow>TURBORAMA_SUITE</span>" +
+        "<h2>Emissor de ativação</h2><p>Localize a licença que deseja administrar.</p></div>" +
+        "<span class='pill on'>ONLINE</span></section><section class=panel>" +
+        "<form method=get action=/admin/suite class=grid-form><label>Licença do cliente" +
+        "<input name=licenseId required autocomplete=off placeholder='TS-...'></label>" +
+        "<button class=primary>Carregar licença</button></form>" +
+        "<p class=muted>O estado de emissão será verificado somente após selecionar uma licença.</p>" +
+        "</section>" + CustomerLicenseList(customers));
+
+    private static IReadOnlyList<SuiteCustomerLicense> LoadCustomerLicenses()
+    {
+        const string path = "/var/lib/turborama-pix/suite-customers.json";
+        try
+        {
+            using var stream = File.OpenRead(path);
+            return JsonSerializer.Deserialize<List<SuiteCustomerLicense>>(stream,
+                new JsonSerializerOptions(JsonSerializerDefaults.Web) { MaxDepth = 8 }) ?? [];
+        }
+        catch (Exception exception) when (exception is IOException or UnauthorizedAccessException or JsonException)
+        { return []; }
+    }
+
+    internal static async Task<string> ActiveCustomerPanelAsync(SuiteAdminBff bff,CancellationToken ct)
+    {
+        var rows=new StringBuilder();var active=0;var online=0;long downloads=0;
+        foreach(var customer in LoadCustomerLicenses())
+        {
+            if(!customer.LicenseId.StartsWith("TS-",StringComparison.OrdinalIgnoreCase))continue;
+            SuiteCustomerActivity activity;
+            try{activity=await bff.CustomerActivityAsync(customer.LicenseId,ct);}
+            catch(HttpRequestException){continue;}
+            if(activity.Status!="ACTIVE"||!activity.Verified||activity.EnrollmentState!="BOUND"||activity.DeviceStatus!="ACTIVE")continue;
+            active++;if(activity.Online)online++;downloads+=activity.UniqueDownloads;
+            var last=activity.Online?"Conectado agora":activity.LastSessionAtUnixSeconds>0?"Última conexão "+When(activity.LastSessionAtUnixSeconds):"Sem conexão registrada";
+            rows.Append("<a class=customer-row href='/admin/clientes/").Append(Uri.EscapeDataString(customer.LicenseId))
+                .Append("'><span class='presence ").Append(activity.Online?"is-online":"is-offline").Append("'><i></i>")
+                .Append(activity.Online?"ONLINE":"OFFLINE").Append("</span><span><strong>").Append(E(customer.Customer))
+                .Append("</strong><small>").Append(E(customer.Email)).Append("</small></span><code>").Append(E(customer.LicenseId))
+                .Append("</code><span><strong>").Append(activity.UniqueDownloads).Append("</strong><small>jogos baixados</small></span><span><strong>")
+                .Append(E(activity.AgentVersion.Length==0?"Versão não informada":activity.AgentVersion)).Append("</strong><small>")
+                .Append(E(last)).Append("</small></span><b>Ver histórico →</b></a>");
+        }
+        if(active==0)rows.Append("<div class=empty-state>Nenhum cliente ativo, verificado e com máquina vinculada.</div>");
+        return new StringBuilder("<section class='panel active-customers' id=suite-clients><header><div><span class=eyebrow>CLIENTES SUITE</span><h2>Conexões do programa</h2><p class=muted>Somente clientes ativos, verificados e com computador autorizado.</p></div><div class=customer-totals><span><strong>")
+            .Append(online).Append('/').Append(active).Append("</strong> online</span><span><strong>").Append(downloads)
+            .Append("</strong> jogos baixados</span></div></header><div class=customer-list>").Append(rows).Append("</div></section>").ToString();
+    }
+
+    private static string CustomerHistoryPage(SuiteCustomerLicense customer,SuiteCustomerActivity activity,string token,string ok)
+    {
+        var html=new StringBuilder("<section class=scope-banner><div><span class=eyebrow>HISTÓRICO DO CLIENTE</span><h2>")
+            .Append(E(customer.Customer)).Append("</h2><p>").Append(E(customer.Email)).Append(" · ").Append(E(customer.LicenseId))
+            .Append("</p></div><span class='presence ").Append(activity.Online?"is-online":"is-offline").Append("'><i></i>")
+            .Append(activity.Online?"ONLINE":"OFFLINE").Append("</span></section><section class='summary customer-summary'><article><small>JOGOS BAIXADOS</small><strong>")
+            .Append(activity.UniqueDownloads).Append("</strong></article><article><small>TENTATIVAS</small><strong>").Append(activity.DownloadAttempts)
+            .Append("</strong></article><article><small>PROGRAMA</small><strong>").Append(E(activity.AgentVersion.Length==0?"—":activity.AgentVersion))
+            .Append("</strong></article><article><small>MÁQUINA</small><strong>").Append(E(activity.DeviceStatus))
+            .Append("</strong></article></section>");
+        if(ok=="HISTORICO_LIMPO")html.Append("<div class='notice success'>Registros de jogos removidos com segurança.</div>");
+        html.Append("<section class=panel><div class=section-title><div><span class=eyebrow>LINHA DO TEMPO</span><h2>Atividade registrada</h2></div><a class='button ghost' href=/admin#suite-clients>Voltar aos clientes</a></div><div class=timeline>");
+        foreach(var item in activity.Events)html.Append("<article><time>").Append(When(item.AtUnixSeconds)).Append("</time><span class=event-kind>")
+            .Append(E(Friendly(item.Kind))).Append("</span><div><strong>").Append(E(Friendly(item.Title))).Append("</strong><small>").Append(E(FriendlyDetail(item.Detail))).Append("</small></div></article>");
+        if(activity.Events.Count==0)html.Append("<div class=empty-state>Nenhuma atividade registrada.</div>");
+        html.Append("</div><details class='audit-cleanup game-cleanup'><summary>Limpar registros de jogos</summary><p class=cleanup-note>Remove somente downloads finalizados deste cliente. Licença, computador, sessões, compra e segurança permanecem intactos.</p>")
+            .Append("<form method=post action=/admin/clientes/actions/clear-games class=cleanup-form>")
+            .Append("<input type=hidden name=__RequestVerificationToken value='").Append(E(token)).Append("'>")
+            .Append("<input type=hidden name=licenseId value='").Append(E(customer.LicenseId)).Append("'>")
+            .Append("<label>Confirme sua senha<input type=password name=adminPassword required autocomplete=current-password></label>")
+            .Append("<button class=danger data-confirm='Confirma a exclusão permanente dos registros de jogos deste cliente?' data-busy='Limpando...'>Limpar registros de jogos</button></form></details></section>");
+        return Shell("Histórico · "+customer.Customer,html.ToString());
+    }
+
+    private static string CustomerLicenseList(IReadOnlyList<SuiteCustomerLicense> items)
+    {
+        var html = new StringBuilder("<section class='panel suite-customers'><span class=eyebrow>COMPRAS SUITE</span><h2>Clientes e liberações</h2><p class=muted>Compras pagas e licenças provisionadas. Clique para ver os dados internos.</p><div class='table-wrap suite-customer-list'><table class='audit-table suite-customer-table'><thead><tr><th>ID do cliente</th><th>Cliente</th><th>Licença gerada</th><th>Estado</th><th>Pedido</th><th>Detalhes</th></tr></thead><tbody>");
+        var modals = new StringBuilder();
+        foreach (var item in items)
+        {
+            var modal = "suite-purchase-" + item.PurchaseId.ToString(CultureInfo.InvariantCulture);
+            var hasLicense = item.LicenseId.StartsWith("TS-", StringComparison.OrdinalIgnoreCase);
+            var state = item.FinancialState == "SUSPENDED" || item.DeliveryState == "SUSPENDED" ? "BLOQUEADA" :
+                item.DeliveryState == "DEAD_LETTER" || item.OutboxStatus == "DEAD_LETTER" ? "ERRO DE PROVISIONAMENTO" :
+                !hasLicense || item.DeliveryState == "PENDING" ? "AGUARDANDO LIBERAÇÃO" :
+                !string.IsNullOrWhiteSpace(item.SessionId) ? "ONLINE" : item.ActiveDevices > 0 ? "ATIVADA" : item.OtpState == "VALID" ? "OTP VÁLIDO" : "PRONTA PARA ATIVAR";
+            var licenseLabel = hasLicense ? item.LicenseId : "Aguardando geração";
+            html.Append("<tr><td><strong>#").Append(item.CustomerId).Append("</strong></td><td><strong>").Append(E(item.Customer)).Append("</strong><small>").Append(E(item.Email)).Append("</small></td><td><code>").Append(E(licenseLabel)).Append("</code></td><td><span class='pill on'>").Append(E(state)).Append("</span></td><td>").Append(E(item.OrderRef)).Append("</td><td><button type=button class=ghost data-open-modal='").Append(modal).Append("'>Ver dados</button></td></tr>");
+            modals.Append("<dialog class='app-modal suite-detail-modal' id='").Append(modal).Append("'><div class=modal-card><div class=modal-head><div><span class=eyebrow>LICENÇA SUITE</span><h2>").Append(E(item.Customer)).Append("</h2></div><button type=button class=modal-close data-close-modal aria-label=Fechar>×</button></div><div class=detail-grid>").Append(Detail("ID do cliente","#"+item.CustomerId.ToString(CultureInfo.InvariantCulture)))
+                .Append(Detail("Licença",licenseLabel)).Append(Detail("Pedido",item.OrderRef)).Append(Detail("E-mail",item.Email)).Append(Detail("WhatsApp",item.Phone)).Append(Detail("Compra",item.PurchaseId.ToString(CultureInfo.InvariantCulture))).Append(Detail("Entrega",item.DeliveryState)).Append(Detail("Financeiro",item.FinancialState)).Append(Detail("Fila",item.OutboxStatus)).Append(Detail("Erro da fila",string.IsNullOrWhiteSpace(item.OutboxError)?"Nenhum":item.OutboxError)).Append(Detail("Matrícula",item.EnrollmentState)).Append(Detail("OTP",item.OtpState)).Append(Detail("Máquina vinculada",string.IsNullOrWhiteSpace(item.DeviceId)?"Nenhuma máquina vinculada":item.DeviceId)).Append(Detail("Estado da máquina",item.DeviceStatus)).Append(Detail("Fingerprint",string.IsNullOrWhiteSpace(item.HardwareFingerprint)?"Não disponível":item.HardwareFingerprint)).Append(Detail("Vínculo",string.IsNullOrWhiteSpace(item.BindingType)?"Não disponível":item.BindingType)).Append(Detail("Algoritmo",string.IsNullOrWhiteSpace(item.DeviceAlgorithm)?"Não disponível":item.DeviceAlgorithm)).Append(Detail("Máquina cadastrada em",string.IsNullOrWhiteSpace(item.DeviceCreatedAt)?"Ainda não cadastrada":item.DeviceCreatedAt)).Append(Detail("Última atividade da máquina",string.IsNullOrWhiteSpace(item.DeviceUpdatedAt)?"Sem atividade":item.DeviceUpdatedAt)).Append(Detail("Dispositivos ativos",item.ActiveDevices.ToString(CultureInfo.InvariantCulture))).Append(Detail("Sessão",item.SessionId??"Nenhuma")).Append(Detail("Catálogo",item.Entitlement)).Append(Detail("Atualização",item.UpdatedAt)).Append("</div><div class=activation-actions>");
+            if (hasLicense) modals.Append("<a class='button primary' href='/admin/suite?licenseId=").Append(Uri.EscapeDataString(item.LicenseId)).Append("'>Abrir licença</a>");
+            modals.Append("<button type=button class=ghost data-close-modal>Fechar</button></div></div></dialog>");
+        }
+        if (items.Count == 0) html.Append("<tr><td colspan=6>Nenhuma compra SUITE provisionada.</td></tr>");
+        return html.Append("</tbody></table></div></section>").Append(modals).ToString();
+    }
+
+    private static string Detail(string label,string value) => "<div><span>"+E(label)+"</span><strong>"+E(value)+"</strong></div>";
+
+    private sealed record SuiteCustomerLicense(string LicenseId,int CustomerId,string Customer,string Email,string Phone,string OrderRef,int PurchaseId,string DeliveryState,string FinancialState,string CreatedAt,string UpdatedAt,string Status,string EnrollmentState,bool ActivationConsumed,string OtpState,long ActiveDevices,string? SessionId,string Entitlement,string OutboxStatus,string OutboxError,string DeviceId,string HardwareFingerprint,string BindingType,string DeviceAlgorithm,string DeviceStatus,string DeviceCreatedAt,string DeviceUpdatedAt);
 
     private static string ContentPage(SuiteContentItemPage page, SuiteContentAuditPage audit,
         ContentPageQuery query, string token, string ok, string error, bool canReplace,
@@ -519,8 +693,8 @@ static class SuiteAdminPanel
             .Append("<thead><tr><th>Quando</th><th>Evento</th><th>Resultado</th><th>Detalhe</th><th>Jogo/item</th><th>Ator</th></tr></thead><tbody>");
         foreach (var entry in audit.Events)
             html.Append("<tr><td>").Append(E(entry.OccurredAt)).Append("</td><td>")
-                .Append(E(entry.EventType)).Append("</td><td>").Append(E(entry.Outcome))
-                .Append("</td><td>").Append(E(entry.DetailCode)).Append("</td><td><code>")
+                .Append(E(Friendly(entry.EventType))).Append("</td><td>").Append(E(Friendly(entry.Outcome)))
+                .Append("</td><td>").Append(E(Friendly(entry.DetailCode))).Append("</td><td><code>")
                 .Append(E(entry.ItemId ?? "—")).Append("</code></td><td>").Append(E(entry.Actor))
                 .Append("</td></tr>");
         if (audit.Events.Count == 0)
@@ -775,9 +949,10 @@ static class SuiteAdminPanel
         "<section class='panel empty-state'><h1>Administração de conteúdo indisponível</h1><p>" +
         E(code) + "</p><a class='button ghost' href=/admin/suite>Voltar à SUITE</a></section>");
 
-    private static string Otp(SuiteOtpResult result) => Shell("OTP SUITE",
+    private static string Otp(SuiteOtpResult result,string? customer,string? email) => Shell("OTP SUITE",
         "<section class=login data-one-time-url=/admin/suite/issued><div class=login-card>" +
         "<span class=eyebrow>USO ÚNICO / " + E(result.ProductId) + "</span><h1>OTP de ativação</h1>" +
+        (string.IsNullOrWhiteSpace(customer)?"":"<div class=detail-grid>"+Detail("Gerado para",customer)+Detail("E-mail",email??"")+Detail("Licença",result.LicenseId)+"</div>")+
         "<p>Não será mostrado novamente. Expira em " + E(Utc(result.ExpiresAt)) + ".</p>" +
         "<code class=activation id=activation-code>" + E(result.Otp) + "</code>" +
         "<div class=activation-actions><button type=button class=ghost data-copy-target='#activation-code'>" +
@@ -786,6 +961,46 @@ static class SuiteAdminPanel
 
     private static string Utc(DateTime? value) => value is null ? "" : value.Value.ToUniversalTime()
         .ToString("yyyy-MM-dd HH:mm:ss 'UTC'", CultureInfo.InvariantCulture);
+    private static string When(long value)=>value<=0?"Sem registro":DateTimeOffset.FromUnixTimeSeconds(value)
+        .ToLocalTime().ToString("dd/MM/yyyy HH:mm:ss",CultureInfo.GetCultureInfo("pt-BR"));
+    private static string Friendly(string value)=>value switch
+    {
+        "SESSAO"=>"Sessão","SEGURANCA"=>"Segurança","DOWNLOAD"=>"Download",
+        "ACTIVE"=>"Ativa","SUCCESS"=>"Concluído","FAILED"=>"Falhou","DENIED"=>"Recusado",
+        "COMPLETED"=>"Concluído","EXPIRED"=>"Expirado","REVOKED"=>"Revogado",
+        "SUITE_OTP_ISSUED"=>"Código de ativação emitido",
+        "SUITE_OTP_DENIED"=>"Emissão do código recusada",
+        "SUITE_DEVICE_TRANSFER_AUTHORIZED"=>"Troca de computador autorizada",
+        "SUITE_DEVICE_TRANSFER_COMPLETED"=>"Troca de computador concluída",
+        "SUITE_COMMERCE_PROVISIONED"=>"Licença criada após a compra",
+        "SUITE_COMMERCE_SUSPENDED"=>"Licença suspensa pelo pagamento",
+        "SUITE_DOWNLOAD_HISTORY_CLEARED"=>"Histórico de jogos limpo",
+        "SUITE_SESSION_OPEN"=>"Programa conectado",
+        "SUITE_SESSION_HEARTBEAT"=>"Conexão do programa renovada",
+        "FIRST_CLAIM_OTP_ISSUED"=>"Código de primeira ativação emitido",
+        "OTP_ISSUED"=>"Código de ativação emitido",
+        "OLD_DEVICE_REVOKED"=>"Computador anterior desvinculado",
+        "NEW_DEVICE_BOUND"=>"Novo computador vinculado",
+        "PURCHASE_PAID"=>"Compra paga","PURCHASE_SUSPENDED"=>"Compra suspensa",
+        "PROVISIONED"=>"Licença criada","PAID"=>"Pago","SUSPENDED"=>"Suspenso",
+        "CHECK_OK"=>"Link funcionando","CHECK_QUEUED"=>"Verificação agendada",
+        "CONTENT_CHECK_REQUESTED"=>"Verificação de link solicitada",
+        "CONTENT_CANDIDATE_PUBLISHED"=>"Nova origem publicada",
+        "CONTENT_CANDIDATE_REJECTED"=>"Nova origem recusada",
+        "CONTENT_CANDIDATE_VERIFIED"=>"Nova origem verificada",
+        _=>Humanize(value)
+    };
+    private static string FriendlyDetail(string value)
+    {
+        var parts=value.Split(" · ",StringSplitOptions.None);
+        return string.Join(" · ",parts.Select(Friendly));
+    }
+    private static string Humanize(string value)
+    {
+        if(value.Length==0)return "—";
+        var text=value.Replace("SUITE_","").Replace("CONTENT_","").Replace('_',' ').ToLowerInvariant();
+        return char.ToUpperInvariant(text[0])+text[1..];
+    }
     private static string Unavailable() => Shell("SUITE indisponível",
         "<section class='panel empty-state'><h1>Emissor SUITE indisponível</h1>" +
         "<p>Nenhuma emissão foi realizada.</p><a class='button ghost' href=/admin>Voltar ao PIX</a></section>");
@@ -804,7 +1019,7 @@ static class SuiteAdminPanel
 
     internal static bool HasCspSafeOneTimePageForTest()
     {
-        var page = Otp(new("TURBORAMA_SUITE", "TS-TEST", "device", "secret", DateTime.UtcNow));
+        var page = Otp(new("TURBORAMA_SUITE", "TS-TEST", "device", "secret", DateTime.UtcNow),null,null);
         return !page.Contains("<script>", StringComparison.OrdinalIgnoreCase) &&
             !page.Contains("onclick", StringComparison.OrdinalIgnoreCase) &&
             page.Contains("data-copy-target", StringComparison.Ordinal) &&
