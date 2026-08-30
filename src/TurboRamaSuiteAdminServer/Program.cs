@@ -183,7 +183,7 @@ static async Task<IResult> IssueOnce(IssueRequest request,NpgsqlDataSource db,st
           l.activation_verifier,l.activation_expires_at,e.device_id,e.binding_type,e.identity_policy,e.algorithm,
           e.public_key_spki,e.hardware_fingerprint,clock_timestamp()
         FROM suite.suite_licenses l JOIN suite.suite_license_enrollments e USING(license_id)
-        WHERE l.license_id=$1 AND l.product_id=$2 FOR UPDATE OF l,e
+        WHERE l.license_id=$1 AND l.product_id=$2 FOR UPDATE OF l
         """,conn,tx);
     read.Parameters.AddWithValue(request.LicenseId);read.Parameters.AddWithValue(product);await using var row=await read.ExecuteReaderAsync(ct);
     if(!await row.ReadAsync(ct)){await row.DisposeAsync();await Deny("LICENSE_NOT_FOUND");return Results.NotFound(new Error("LICENSE_NOT_FOUND"));}

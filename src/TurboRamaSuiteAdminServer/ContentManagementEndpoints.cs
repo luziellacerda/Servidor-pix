@@ -666,7 +666,7 @@ sealed class ContentCandidateProtector : IDisposable
     private static HashSet<string> ParseHosts(string text)
     {
         var hosts = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        foreach (var raw in text.Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries))
+        foreach (var raw in text.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries))
         {
             var value = raw.Trim();
             if (value.Length == 0 || value.StartsWith('#')) continue;
@@ -714,7 +714,7 @@ static class ContentAdminSecurity
         if (claimsText.Length > 1024)
             return ContentSecurityResult.Deny("CONTENT_AUTH_DENIED", actor, "CLAIM_DENIED", 403);
         var claims = claimsText
-            .Split([',', ' '], StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+            .Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
         if (claims.Length != 1 || !string.Equals(claims[0], requiredClaim, StringComparison.Ordinal))
             return ContentSecurityResult.Deny("CONTENT_AUTH_DENIED", actor, "CLAIM_DENIED", 403);
         var digest = context.Request.Headers["X-Suite-Client-Ip-Digest"].ToString();
