@@ -197,7 +197,10 @@ public sealed class PostgresSuiteStore : ISuiteStore
             enrollment.Parameters.AddWithValue(d.LicenseId); enrollment.Parameters.AddWithValue(d.DeviceId);
             enrollment.Parameters.AddWithValue(d.BindingType); enrollment.Parameters.AddWithValue(d.Algorithm);
             enrollment.Parameters.AddWithValue(d.PublicKeySpki); enrollment.Parameters.AddWithValue(d.HardwareFingerprint);
-            await enrollment.ExecuteNonQueryAsync(ct);
+            try { await enrollment.ExecuteNonQueryAsync(ct); }
+            catch (PostgresException ex) when (ex.SqlState == PostgresErrorCodes.UniqueViolation
+                && ex.ConstraintName == "suite_license_enrollments_device_id_key")
+            { throw new SuiteException(409, "DEVICE_ALREADY_BOUND", "This computer is already linked to another license.", ex); }
         }
         await using (var enrollmentCheck = new NpgsqlCommand("SELECT device_id,binding_type,identity_policy,algorithm,public_key_spki,hardware_fingerprint FROM suite.suite_license_enrollments WHERE license_id=$1 FOR UPDATE", conn, tx))
         {

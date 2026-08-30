@@ -14,6 +14,13 @@ sealed record SuiteAdminStatus(string LicenseId, string ProductId, string Status
 sealed record AuditResult(string Code);
 sealed record SuiteOtpResult(string ProductId, string LicenseId, string DeviceId, string Otp,
     DateTime ExpiresAt);
+sealed record SuiteFirstClaimOtpResult(string LicenseId,string Otp,DateTime ExpiresAt);
+sealed record SuiteCustomerActivityEvent(string Kind,long AtUnixSeconds,string Title,string Detail);
+sealed record SuiteCustomerActivity(string Status,bool Verified,string EnrollmentState,string DeviceId,
+    string DeviceStatus,string AgentVersion,long DeviceUpdatedAtUnixSeconds,bool Online,
+    long UniqueDownloads,long DownloadAttempts,long LastSessionAtUnixSeconds,
+    IReadOnlyList<SuiteCustomerActivityEvent> Events);
+sealed record SuiteCustomerActivityClearResult(int DeletedRecords);
 
 sealed record SuiteContentItem(string ItemId, string DisplayName, string Availability,
     int? ArtifactVersion, string? LastCheckedAt, string LastResultCode, string? JobState,
@@ -86,9 +93,16 @@ sealed class SuiteAdminBff : IDisposable
 
     public Task<SuiteAdminStatus> StatusAsync(string id, CancellationToken ct) =>
         Send<SuiteAdminStatus>(HttpMethod.Get, "status/" + Uri.EscapeDataString(id), null, ct);
+    public Task<SuiteCustomerActivity> CustomerActivityAsync(string id,CancellationToken ct)=>
+        Send<SuiteCustomerActivity>(HttpMethod.Get,"customer-activity/"+Uri.EscapeDataString(id),null,ct);
+    public Task<SuiteCustomerActivityClearResult> ClearCustomerActivityAsync(string id,string actor,string requestId,CancellationToken ct)=>
+        Send<SuiteCustomerActivityClearResult>(HttpMethod.Post,"customer-activity/clear",new{licenseId=id,actor,requestId},ct);
     public Task<SuiteOtpResult> IssueAsync(string id, string device, string actor, string requestId,
         CancellationToken ct) => Send<SuiteOtpResult>(HttpMethod.Post, "issue",
             new { licenseId = id, deviceId = device, ttlSeconds = 900, actor, requestId }, ct);
+    public Task<SuiteFirstClaimOtpResult> IssueFirstClaimAsync(string id,string actor,string requestId,
+        CancellationToken ct)=>Send<SuiteFirstClaimOtpResult>(HttpMethod.Post,"issue-first-claim",
+            new { licenseId=id,actor,requestId },ct);
     public Task<AuditResult> DenyAsync(string id, string device, string actor, string requestId,
         string detail, CancellationToken ct) => Send<AuditResult>(HttpMethod.Post, "deny",
             new { licenseId = id, deviceId = device, actor, requestId, detailCode = detail }, ct);

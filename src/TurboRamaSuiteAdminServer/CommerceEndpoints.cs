@@ -35,6 +35,20 @@ static class CommerceEndpoints
         app.MapPost("/commerce/deliveries/{purchase}/{item}/transfer",async(string purchase,string item,CommerceTransferRequest request,NpgsqlDataSource db,CancellationToken ct)=>{if(!enabled)return Results.NotFound();try{ValidateText(purchase,64);ValidateText(item,32);ValidateText(request.Actor,64);ValidateText(request.RequestId,128);ValidateReason(request.Reason);return Results.Json(await Transfer(purchase,item,request,db,ct));}catch(CommerceInvalid ex){return Results.BadRequest(new CommerceError(ex.Code));}catch(CommerceConflict ex){return Results.Conflict(new CommerceError(ex.Code));}});
     }
 
+    internal static async Task<CommerceOtpResult> IssueForAdmin(string licenseId,
+        CommerceIssueRequest request,NpgsqlDataSource db,string pepperFile,CancellationToken ct)
+    {
+        string purchase,item;
+        await using(var find=db.CreateCommand("SELECT source_purchase_id,source_item_key FROM suite.suite_license_deliveries WHERE source_system='TURBOBOX_V1' AND license_id=$1 AND product_id='TURBORAMA_SUITE'"))
+        {
+            find.Parameters.AddWithValue(licenseId);
+            await using var row=await find.ExecuteReaderAsync(ct);
+            if(!await row.ReadAsync(ct))throw new CommerceConflict("DELIVERY_NOT_READY");
+            purchase=row.GetString(0);item=row.GetString(1);
+        }
+        return await Issue(purchase,item,request,db,pepperFile,ct);
+    }
+
     static async Task<CommerceResult> Apply(CommerceEvent e,NpgsqlDataSource db,CancellationToken ct)
     {
         Validate(e);var calculated=Digest(Canonical(e));if(!Fixed(calculated,e.PayloadDigest))throw new CommerceConflict("PAYLOAD_DIGEST_MISMATCH");

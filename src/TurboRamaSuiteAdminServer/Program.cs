@@ -84,8 +84,92 @@ app.MapGet("/readiness/content", async (CancellationToken ct) =>
       service="turborama-suite-content-admin" },
       statusCode:ready?StatusCodes.Status200OK:StatusCodes.Status503ServiceUnavailable);
 });
+app.MapGet("/customer-activity/{licenseId}", async (string licenseId, NpgsqlDataSource db,
+    CancellationToken ct) =>
+{
+    ValidateId(licenseId);
+    await using var conn = await db.OpenConnectionAsync(ct);
+    await using var summary = new NpgsqlCommand("""
+        SELECT l.status,l.activation_consumed,l.enrollment_state,
+          coalesce(e.device_id,''),coalesce(d.status,''),coalesce((SELECT c.device_json->>'clientVersion'
+            FROM suite.suite_challenges c WHERE c.license_id=l.license_id AND c.device_json IS NOT NULL
+            ORDER BY c.created_at DESC LIMIT 1),''),
+          coalesce(extract(epoch from d.updated_at)::bigint,0),
+          EXISTS(SELECT 1 FROM suite.suite_sessions s WHERE s.license_id=l.license_id
+            AND s.status='ACTIVE' AND s.authorized_until>clock_timestamp()),
+          (SELECT count(DISTINCT g.item_id) FROM suite.suite_content_grants g
+            WHERE g.license_id=l.license_id AND g.state='COMPLETED'),
+          (SELECT count(*) FROM suite.suite_content_grants g
+            WHERE g.license_id=l.license_id AND g.state='COMPLETED'),
+          (SELECT max(extract(epoch from s.updated_at)::bigint) FROM suite.suite_sessions s
+            WHERE s.license_id=l.license_id)
+        FROM suite.suite_licenses l
+        LEFT JOIN suite.suite_license_enrollments e USING(license_id)
+        LEFT JOIN suite.suite_devices d ON d.license_id=l.license_id AND d.device_id=e.device_id
+        WHERE l.license_id=$1 AND l.product_id='TURBORAMA_SUITE'
+        """, conn);
+    summary.Parameters.AddWithValue(licenseId);
+    string status,enrollment,deviceId,deviceStatus,agentVersion;bool verified,online;
+    long deviceUpdated,uniqueDownloads,downloadAttempts,lastSession;
+    await using(var row=await summary.ExecuteReaderAsync(ct))
+    {
+        if(!await row.ReadAsync(ct))return Results.NotFound();
+        status=row.GetString(0);verified=row.GetBoolean(1);enrollment=row.GetString(2);
+        deviceId=row.GetString(3);deviceStatus=row.GetString(4);agentVersion=row.GetString(5);
+        deviceUpdated=row.GetInt64(6);online=row.GetBoolean(7);uniqueDownloads=row.GetInt64(8);
+        downloadAttempts=row.GetInt64(9);lastSession=row.IsDBNull(10)?0:row.GetInt64(10);
+    }
+    var events=new List<CustomerActivityEvent>();
+    await using var history=new NpgsqlCommand("""
+        SELECT kind,at_unix,title,detail FROM (
+          SELECT 'DOWNLOAD'::text kind,extract(epoch from coalesce(x.completed_at,x.created_at))::bigint at_unix,
+            coalesce(i.display_name,x.item_id::text) title,
+            (CASE x.state WHEN 'COMPLETED' THEN 'Download concluído' ELSE 'Última tentativa: '||x.state END||
+              ' · versão '||x.artifact_version::text)::text detail
+          FROM (
+            SELECT DISTINCT ON(g.item_id) g.* FROM suite.suite_content_grants g
+            WHERE g.license_id=$1
+            ORDER BY g.item_id,(g.state='COMPLETED') DESC,coalesce(g.completed_at,g.created_at) DESC
+          ) x LEFT JOIN suite.suite_content_items i
+            ON i.catalog_identity=x.catalog_identity AND i.item_id=x.item_id
+          UNION ALL
+          SELECT 'SESSAO',extract(epoch from s.updated_at)::bigint,'Sessão do programa',
+            (s.status||' · autorização até '||to_char(s.authorized_until AT TIME ZONE 'UTC','YYYY-MM-DD HH24:MI:SS')||' UTC')::text
+          FROM suite.suite_sessions s WHERE s.license_id=$1
+          UNION ALL
+          SELECT 'SEGURANCA',extract(epoch from a.occurred_at)::bigint,a.event_type,
+            (a.outcome||' · '||a.detail_code)::text
+          FROM suite.suite_audit_events a WHERE a.license_id=$1
+        ) h ORDER BY at_unix DESC LIMIT 200
+        """,conn);
+    history.Parameters.AddWithValue(licenseId);
+    await using var hr=await history.ExecuteReaderAsync(ct);
+    while(await hr.ReadAsync(ct))events.Add(new(hr.GetString(0),hr.GetInt64(1),hr.GetString(2),hr.GetString(3)));
+    return Results.Json(new CustomerActivity(status,verified,enrollment,deviceId,deviceStatus,
+        agentVersion,deviceUpdated,online,uniqueDownloads,downloadAttempts,lastSession,events));
+});
+app.MapPost("/customer-activity/clear",async(CustomerActivityClearRequest request,NpgsqlDataSource db,CancellationToken ct)=>
+{
+    ValidateId(request.LicenseId);ValidateText(request.Actor,64);ValidateText(request.RequestId,128);
+    await using var conn=await db.OpenConnectionAsync(ct);await using var tx=await conn.BeginTransactionAsync(ct);
+    await using var clear=new NpgsqlCommand("DELETE FROM suite.suite_content_grants WHERE license_id=$1 AND state IN('COMPLETED','FAILED','REVOKED','EXPIRED')",conn,tx);
+    clear.Parameters.AddWithValue(request.LicenseId);var deleted=await clear.ExecuteNonQueryAsync(ct);
+    await using var audit=new NpgsqlCommand("INSERT INTO suite.suite_audit_events(event_type,license_id,correlation_id,outcome,detail_code,admin_actor,request_id) VALUES('SUITE_DOWNLOAD_HISTORY_CLEARED',$1,$2,'SUCCESS',$3,$4,$2)",conn,tx);
+    audit.Parameters.AddWithValue(request.LicenseId);audit.Parameters.AddWithValue(request.RequestId);
+    audit.Parameters.AddWithValue("REMOVED_"+deleted.ToString(CultureInfo.InvariantCulture)+"_RECORDS");audit.Parameters.AddWithValue(request.Actor);
+    await audit.ExecuteNonQueryAsync(ct);await tx.CommitAsync(ct);
+    return Results.Json(new CustomerActivityClearResult(deleted));
+});
 CommerceEndpoints.Map(app, commerceEnabled, pepperFile);
 ContentManagementEndpoints.Map(app, contentManagement, contentManagementEnabled);
+app.MapPost("/issue-first-claim",async(CommerceAdminIssueRequest request,NpgsqlDataSource db,CancellationToken ct)=>
+{
+    ValidateId(request.LicenseId);ValidateText(request.Actor,64);ValidateText(request.RequestId,128);
+    if(!commerceEnabled)return Results.NotFound();
+    try{return Results.Json(await CommerceEndpoints.IssueForAdmin(request.LicenseId,
+        new CommerceIssueRequest(request.Actor,request.RequestId),db,pepperFile,ct));}
+    catch(CommerceConflict ex){return Results.Conflict(new Error(ex.Code));}
+});
 app.MapGet("/status/{licenseId}", async (string licenseId, NpgsqlDataSource db, CancellationToken ct) =>
 {
     ValidateId(licenseId);
@@ -223,6 +307,13 @@ static void ValidateId(string value){if(value.Length is <6 or >64||value.Any(c=>
 static void Hex(string value){if(value.Length!=64||value.Any(c=>!(c is >= '0' and <= '9' or >= 'a' and <= 'f')))throw new BadHttpRequestException("invalid",400);}
 static void ValidateText(string value,int max){if(value.Length is <1||value.Length>max||value.Any(char.IsControl))throw new BadHttpRequestException("invalid",400);}
 
+sealed record CustomerActivityEvent(string Kind,long AtUnixSeconds,string Title,string Detail);
+sealed record CustomerActivity(string Status,bool Verified,string EnrollmentState,string DeviceId,
+    string DeviceStatus,string AgentVersion,long DeviceUpdatedAtUnixSeconds,bool Online,
+    long UniqueDownloads,long DownloadAttempts,long LastSessionAtUnixSeconds,
+    IReadOnlyList<CustomerActivityEvent> Events);
+sealed record CustomerActivityClearRequest(string LicenseId,string Actor,string RequestId);
+sealed record CustomerActivityClearResult(int DeletedRecords);
 sealed class InternalToken
 {
     private readonly byte[] bytes;
@@ -261,6 +352,7 @@ sealed record IssueResponse(string ProductId,string LicenseId,string DeviceId,st
 sealed record Error(string Code);
 sealed record SuiteAuditItem(string OccurredAt,string EventType,string Outcome,string DetailCode,string Actor,string RequestId,string? OtpExpiresAt);
 sealed record SuiteStatus(string LicenseId,string ProductId,string Status,string LicenseTerm,DateTime? ExpiresAt,string IdentityPolicy,int MaximumActiveDevices,bool ActivationConsumed,bool OtpIssued,DateTime? OtpExpiresAt,string? DeviceId,string? BindingType,string? EnrollmentPolicy,string? Algorithm,string? HardwareFingerprint,long ActiveDevices,string? SessionId,string OtpState,bool CanIssue,IReadOnlyList<SuiteAuditItem> RecentEvents);
+sealed record CommerceAdminIssueRequest(string LicenseId,string Actor,string RequestId);
 public partial class Program;
 
 static class AdminSelfTest
