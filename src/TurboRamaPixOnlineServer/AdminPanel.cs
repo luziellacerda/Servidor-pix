@@ -331,6 +331,15 @@ static class AdminPanel
                 context.Request.Query["ok"].ToString(), context.Request.Query["error"].ToString(),customers));
         }).RequireAuthorization();
 
+        app.MapGet("/admin/fragments/suite-clients", async (HttpContext context,
+            SuiteAdminBff suiteBff, CancellationToken ct) =>
+        {
+            context.Response.Headers.CacheControl = "no-store, no-cache, must-revalidate";
+            context.Response.Headers.Pragma = "no-cache";
+            context.Response.Headers["X-Turborama-Fragment"] = "suite-clients";
+            return Html(await SuiteAdminPanel.ActiveCustomerPanelAsync(suiteBff, ct));
+        }).RequireAuthorization();
+
         app.MapGet("/admin/export/audit.csv", (OnlineStateRepository repository) =>
         {
             var bytes = Encoding.UTF8.GetPreamble().Concat(Encoding.UTF8.GetBytes(
@@ -1005,6 +1014,46 @@ body:has(.app-modal[open]){overflow:hidden}
   if (licenseStatus) licenseStatus.addEventListener("change", filterLicenses);
   filterLicenses();
 
+  const startSuiteClientsRefresh = () => {
+    if (!document.getElementById("suite-clients")) return;
+    let requestInFlight = false;
+    let stopped = false;
+    const refresh = async () => {
+      if (stopped || requestInFlight || document.hidden) return;
+      const current = document.getElementById("suite-clients");
+      if (!current) { stopped = true; return; }
+      requestInFlight = true;
+      try {
+        const response = await fetch("/admin/fragments/suite-clients", {
+          method: "GET",
+          credentials: "same-origin",
+          cache: "no-store",
+          redirect: "manual",
+          headers: { "Accept": "text/html", "X-Requested-With": "fetch" }
+        });
+        if (!response.ok || response.type === "opaqueredirect"
+            || response.headers.get("X-Turborama-Fragment") !== "suite-clients") return;
+        const parsed = new DOMParser().parseFromString(await response.text(), "text/html");
+        const replacement = parsed.getElementById("suite-clients");
+        const liveCurrent = document.getElementById("suite-clients");
+        if (replacement && liveCurrent) liveCurrent.replaceWith(replacement);
+      } catch (_) {
+        // Mantém o último estado visível; a próxima rodada tenta novamente.
+      } finally {
+        requestInFlight = false;
+      }
+    };
+    const timer = window.setInterval(refresh, 10000);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) refresh();
+    });
+    window.addEventListener("pagehide", () => {
+      stopped = true;
+      window.clearInterval(timer);
+    }, { once: true });
+  };
+  startSuiteClientsRefresh();
+
   const auditSearch = document.querySelector("#audit-search");
   const auditSeverity = document.querySelector("#audit-severity");
   const auditResult = document.querySelector("#audit-filter-result");
@@ -1060,4 +1109,11 @@ body:has(.app-modal[open]){overflow:hidden}
             && csv.Contains("\"valor;\"\"teste\"\"\"", StringComparison.Ordinal)
             && csv.EndsWith("\r\n", StringComparison.Ordinal);
     }
+
+    internal static bool HasAutomaticSuiteClientRefreshForSelfTest()
+        => AdminJavascript.Contains("/admin/fragments/suite-clients", StringComparison.Ordinal)
+            && AdminJavascript.Contains("window.setInterval(refresh, 10000)", StringComparison.Ordinal)
+            && AdminJavascript.Contains("document.hidden", StringComparison.Ordinal)
+            && AdminJavascript.Contains("X-Turborama-Fragment", StringComparison.Ordinal)
+            && AdminJavascript.Contains("liveCurrent.replaceWith(replacement)", StringComparison.Ordinal);
 }

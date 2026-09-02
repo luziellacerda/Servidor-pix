@@ -24,6 +24,8 @@ static class OnlineServerSelfTest
                 "painel profissional, filtros, estados ou separacao da configuracao local");
             Require(AdminPanel.HasSafeAuditCsvForSelfTest(),
                 "exportacao CSV segura da auditoria administrativa");
+            Require(AdminPanel.HasAutomaticSuiteClientRefreshForSelfTest(),
+                "atualizacao automatica isolada dos clientes Suite no painel");
             Require(!AdminPanel.IsHostAllowed("127.0.0.1", true, ""),
                 "painel abriu localmente sem hostname administrativo configurado");
             Require(!AdminPanel.IsHostAllowed("pix.lzgames.com.br", true, ""),
