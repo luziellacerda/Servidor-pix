@@ -5,8 +5,7 @@ After=turborama-suite-admin.service
 Type=oneshot
 User=lz-servidor
 Group=turborama-suite-bff
-Environment=SUITE_ADMIN_SOCKET=/run/turborama-suite-admin/admin.sock
-Environment=SUITE_ADMIN_TOKEN_FILE=/etc/turborama-suite/admin-token
+EnvironmentFile=/etc/turborama-suite-bff/admin.env
 ExecStart=/usr/bin/php /opt/turborama-suite/ops/turborama-suite-connection-whatsapp.php
 NoNewPrivileges=true
 PrivateTmp=true
