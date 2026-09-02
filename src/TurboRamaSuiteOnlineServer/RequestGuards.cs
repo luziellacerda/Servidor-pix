@@ -194,6 +194,14 @@ public sealed class SuiteRateLimiter
                 (license, device) = (value.Proof.LicenseId, value.Proof.DeviceId);
                 contentRequest = true;
                 return true;
+            case SuiteDeviceInventoryChallengeRequestV1 value when
+                value.Action == SuiteDeviceInventoryProtocol.Action:
+                (license, device) = (value.LicenseId, value.DeviceId);
+                return true;
+            case SuiteDeviceInventoryProofV1 value when
+                value.Action == SuiteDeviceInventoryProtocol.Action:
+                (license, device) = (value.LicenseId, value.DeviceId);
+                return true;
             default:
                 license = string.Empty;
                 device = string.Empty;
