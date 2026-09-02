@@ -796,7 +796,7 @@ static class AdminPanel
             .Append(E(css)).Append("\">").Append(Hidden("__RequestVerificationToken", token));
     private static string PageStart(string title, string pageClass = "")
         => "<!doctype html><html lang=pt-BR><head><meta charset=utf-8><meta name=viewport content=\"width=device-width,initial-scale=1\"><title>"
-            + E(title) + "</title><link rel=stylesheet href=/admin/assets/admin.css?v=r5-915><script defer src=/admin/assets/admin.js?v=r5-915></script></head><body><main class=\"shell " + E(pageClass) + "\">";
+            + E(title) + "</title><link rel=stylesheet href=/admin/assets/admin.css?v=r5-917><script defer src=/admin/assets/admin.js?v=r5-917></script></head><body><main class=\"shell " + E(pageClass) + "\">";
     private static string PageEnd() => "</main></body></html>";
 
     private const string Css = """
@@ -866,6 +866,21 @@ body:has(.app-modal[open]){overflow:hidden}
 @media(max-width:1050px){.health-filter{grid-template-columns:1fr 1fr 1fr}.health-filter button,.health-filter>.button{width:100%}}@media(max-width:680px){.health-dashboard{width:94vw}.health-filter{grid-template-columns:1fr}.health-summary{grid-template-columns:1fr 1fr}.health-results>.section-title{align-items:flex-start}.health-test form{position:fixed;inset:auto 3vw 20px;width:94vw}}
 .platform-row th{padding:5px 8px;background:#0d1621;border-top:1px solid #2b3a4e;border-bottom:1px solid #253247}.platform-toggle{width:100%;min-height:48px;padding:8px 10px;display:flex;align-items:center;justify-content:space-between;border:0;background:transparent;text-align:left;box-shadow:none}.platform-toggle:hover{background:rgba(65,216,255,.055);transform:none;box-shadow:none}.platform-toggle>span{display:grid;gap:2px}.platform-toggle b{color:var(--text);font-size:.76rem;letter-spacing:.025em}.platform-toggle small{color:var(--muted);font-size:.61rem;font-weight:650}.platform-toggle i{color:var(--cyan);font-style:normal;font-size:1rem;transition:transform .16s}.platform-toggle[aria-expanded=true] i{transform:rotate(180deg)}tr[data-platform-item][hidden]{display:none}
 .health-loading-overlay{position:fixed;z-index:100;inset:0;display:grid;place-items:center;background:rgba(4,8,13,.86);backdrop-filter:blur(7px)}.health-loading-overlay[hidden]{display:none}.health-loading-overlay>div{width:min(340px,88vw);padding:30px 24px;display:grid;justify-items:center;gap:9px;border:1px solid rgba(65,216,255,.3);border-radius:16px;background:#101925;box-shadow:0 30px 90px rgba(0,0,0,.65)}.health-loading-overlay i{width:38px;height:38px;border:3px solid rgba(65,216,255,.18);border-top-color:var(--cyan);border-radius:50%;animation:health-spin .7s linear infinite}.health-loading-overlay strong{margin-top:5px;font-size:1rem}.health-loading-overlay span{color:var(--muted);font-size:.72rem}
+/* Living-light layer: restrained edge pulse and a traveling highlight inside meters. */
+.dashboard-shell .summary article,.dashboard-shell .panel,.dashboard-shell .scope-banner,.dashboard-shell .operations,.dashboard-shell .command-center{animation:panel-edge-breathe 4.8s ease-in-out infinite}
+.dashboard-shell .summary article:nth-child(2n),.dashboard-shell .command-center{animation-delay:-2.4s}
+.dashboard-shell .sidebar,.dashboard-shell>.top{animation:chrome-edge-breathe 5.6s ease-in-out infinite}
+.dashboard-shell .bar{position:relative;overflow:hidden;box-shadow:inset 0 0 7px rgba(0,0,0,.72),0 0 6px rgba(65,216,255,.12)}
+.dashboard-shell .bar i{position:relative;overflow:hidden;animation:meter-breathe 2.8s ease-in-out infinite}
+.dashboard-shell .bar i:after{content:"";position:absolute;inset:-3px auto -3px -38%;width:32%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.82),transparent);filter:blur(1px);animation:meter-scan 2.9s linear infinite}
+.dashboard-shell .op-row:nth-child(3) .bar i:after{animation-delay:-.95s}.dashboard-shell .op-row:nth-child(4) .bar i:after{animation-delay:-1.9s}
+.dashboard-shell .live i,.dashboard-shell .status-dot,.dashboard-shell .side-status i{animation:status-breathe 1.9s ease-in-out infinite}
+@keyframes panel-edge-breathe{0%,100%{border-color:#253247;box-shadow:0 14px 38px rgba(0,0,0,.2),0 0 0 rgba(65,216,255,0)}50%{border-color:rgba(65,216,255,.5);box-shadow:0 14px 38px rgba(0,0,0,.22),0 0 15px rgba(65,216,255,.11),inset 0 0 12px rgba(65,216,255,.025)}}
+@keyframes chrome-edge-breathe{0%,100%{border-color:#202b3b}50%{border-color:rgba(65,216,255,.52);box-shadow:0 0 18px rgba(65,216,255,.08)}}
+@keyframes meter-breathe{0%,100%{filter:saturate(.9) brightness(.92);box-shadow:0 0 7px rgba(53,213,139,.25)}50%{filter:saturate(1.2) brightness(1.18);box-shadow:0 0 13px rgba(53,213,139,.55)}}
+@keyframes meter-scan{0%{left:-38%}100%{left:118%}}
+@keyframes status-breathe{0%,100%{opacity:.62;transform:scale(.9);box-shadow:0 0 5px currentColor}50%{opacity:1;transform:scale(1.12);box-shadow:0 0 14px currentColor}}
+@media(prefers-reduced-motion:reduce){.dashboard-shell .summary article,.dashboard-shell .panel,.dashboard-shell .scope-banner,.dashboard-shell .operations,.dashboard-shell .command-center,.dashboard-shell .sidebar,.dashboard-shell>.top,.dashboard-shell .bar i,.dashboard-shell .bar i:after,.dashboard-shell .live i,.dashboard-shell .status-dot,.dashboard-shell .side-status i{animation:none}}
 """;
 
     private const string CreateLicenseSubmitButton =
