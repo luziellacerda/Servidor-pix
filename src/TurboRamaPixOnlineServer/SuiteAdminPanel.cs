@@ -450,7 +450,7 @@ static class SuiteAdminPanel
         "<!doctype html><html lang=pt-BR><head><meta charset=utf-8>" +
         "<meta name=viewport content='width=device-width,initial-scale=1'><title>" + E(title) +
         "</title><link rel=stylesheet href=/admin/assets/admin.css>" +
-        "<script defer src=/admin/assets/admin.js></script></head><body><main class=shell>" +
+        "<script defer src=/admin/assets/admin.js?v=r5-915></script></head><body><main class=shell>" +
         "<header class=top><div><span class=eyebrow>LZ GAMES / TURBORAMA</span>" +
         "<h1>Central de licenças</h1></div><nav class=top-actions>" +
         "<a class='button ghost' href=/admin>PIX</a>" +
