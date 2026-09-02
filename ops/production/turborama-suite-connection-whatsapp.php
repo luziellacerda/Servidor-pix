@@ -1,10 +1,13 @@
 <?php
 declare(strict_types=1);
 require_once '/home/lz-servidor/HOSTINGER SITE DOCUMENTOS/sistema2026.lzgames.com.br/public_html/turbobox/notification-lib.php';
-$socket=getenv('TURBORAMA_SUITE_ADMIN_SOCKET')?:'/run/turborama-suite-admin/admin.sock';
-$tokenFile=getenv('TURBORAMA_SUITE_ADMIN_TOKEN_FILE')?:'';
+$socket=getenv('TURBORAMA_SUITE_ADMIN_SOCKET')?:getenv('SUITE_ADMIN_SOCKET')?:'/run/turborama-suite-admin/admin.sock';
+$tokenFile=getenv('TURBORAMA_SUITE_ADMIN_TOKEN_FILE')?:getenv('SUITE_ADMIN_TOKEN_FILE')?:'';
 $token=is_file($tokenFile)?trim((string)file_get_contents($tokenFile)):'';
-if($token===''||!is_file($socket)){fwrite(STDERR,"SUITE CONNECTION NOTICE: configuração indisponível\n");exit(2);}
+if($tokenFile===''){fwrite(STDERR,"SUITE CONNECTION NOTICE: variável de credencial indisponível\n");exit(2);}
+if(!is_readable($tokenFile)){fwrite(STDERR,"SUITE CONNECTION NOTICE: arquivo de credencial indisponível\n");exit(2);}
+if($token===''){fwrite(STDERR,"SUITE CONNECTION NOTICE: credencial vazia\n");exit(2);}
+if(!file_exists($socket)){fwrite(STDERR,"SUITE CONNECTION NOTICE: socket indisponível\n");exit(2);}
 function suite_call(string $socket,string $token,string $path,?array $body=null):array{
  $args=['/usr/bin/curl','--silent','--show-error','--unix-socket',$socket,'-H','X-Suite-Admin-Token: '.$token,'-H','Content-Type: application/json','-X','POST','http://localhost/'.$path,'-w',"\n%{http_code}"];
  if($body!==null){$args[]='--data-binary';$args[]=json_encode($body,JSON_THROW_ON_ERROR|JSON_UNESCAPED_SLASHES);}
