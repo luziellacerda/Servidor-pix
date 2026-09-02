@@ -796,7 +796,7 @@ static class AdminPanel
             .Append(E(css)).Append("\">").Append(Hidden("__RequestVerificationToken", token));
     private static string PageStart(string title, string pageClass = "")
         => "<!doctype html><html lang=pt-BR><head><meta charset=utf-8><meta name=viewport content=\"width=device-width,initial-scale=1\"><title>"
-            + E(title) + "</title><link rel=stylesheet href=/admin/assets/admin.css?v=r5-917><script defer src=/admin/assets/admin.js?v=r5-917></script></head><body><main class=\"shell " + E(pageClass) + "\">";
+            + E(title) + "</title><link rel=stylesheet href=/admin/assets/admin.css?v=r5-918><script defer src=/admin/assets/admin.js?v=r5-918></script></head><body><main class=\"shell " + E(pageClass) + "\">";
     private static string PageEnd() => "</main></body></html>";
 
     private const string Css = """
@@ -881,6 +881,14 @@ body:has(.app-modal[open]){overflow:hidden}
 @keyframes meter-scan{0%{left:-38%}100%{left:118%}}
 @keyframes status-breathe{0%,100%{opacity:.62;transform:scale(.9);box-shadow:0 0 5px currentColor}50%{opacity:1;transform:scale(1.12);box-shadow:0 0 14px currentColor}}
 @media(prefers-reduced-motion:reduce){.dashboard-shell .summary article,.dashboard-shell .panel,.dashboard-shell .scope-banner,.dashboard-shell .operations,.dashboard-shell .command-center,.dashboard-shell .sidebar,.dashboard-shell>.top,.dashboard-shell .bar i,.dashboard-shell .bar i:after,.dashboard-shell .live i,.dashboard-shell .status-dot,.dashboard-shell .side-status i{animation:none}}
+/* Layout organization only: no functional selectors, states or interaction rules. */
+.dashboard-shell{width:min(1320px,calc(100vw - 48px));padding-top:80px}.dashboard-shell>.top{padding-left:max(24px,calc((100vw - 1320px)/2));padding-right:max(24px,calc((100vw - 1320px)/2));gap:24px}.dashboard-shell>.top>div{min-width:150px}.compact-nav{gap:20px}.dashboard-shell>.top .top-actions{gap:7px}
+.dashboard-shell>.summary,.dashboard-shell>.front-grid,.dashboard-shell>.active-customers{margin-bottom:14px}.summary{border-radius:12px}.summary article{display:flex;min-width:0;min-height:82px;padding:13px 18px;flex-direction:column;justify-content:center}.summary strong{margin-top:0}.summary article>span:last-child{line-height:1.3}.metric-icon{top:13px;right:14px}
+.front-grid{grid-template-columns:minmax(0,1.7fr) minmax(300px,.8fr);gap:14px;margin-top:0}.operations,.command-center{height:100%;border-radius:12px}.operations>header,.command-center>header{height:50px}.operations>footer{height:38px}.op-row{height:45px}.command-center>button{height:57px}
+.active-customers{margin-top:0;border-radius:12px}.active-customers>header{align-items:center;padding:17px 20px;border-bottom:1px solid rgba(38,50,68,.78)}.active-customers>header>div:first-child{min-width:0}.active-customers h2{font-size:1rem}.active-customers p{color:var(--muted);font-size:.7rem}.customer-totals{flex:0 0 auto}.customer-totals span{min-width:88px;padding:7px 11px;text-align:center}.customer-row{grid-template-columns:82px minmax(170px,1.25fr) minmax(180px,1fr) 98px minmax(150px,1fr) 84px;gap:12px;min-height:62px;padding:11px 20px}.customer-row:nth-child(even){background:rgba(255,255,255,.012)}.customer-row:hover{background:rgba(65,216,255,.045)}
+@media(max-width:1080px){.dashboard-shell{width:94vw}.dashboard-shell>.top{padding-left:3vw;padding-right:3vw}.compact-nav{gap:13px}.front-grid{grid-template-columns:minmax(0,1.35fr) minmax(280px,.8fr)}.customer-row{grid-template-columns:76px minmax(150px,1.2fr) minmax(150px,1fr) 90px minmax(135px,1fr) 72px;gap:8px;padding-left:14px;padding-right:14px}}
+@media(max-width:820px){.dashboard-shell{padding-top:112px}.front-grid{grid-template-columns:1fr}.active-customers>header{align-items:flex-start;padding:14px;flex-direction:column}.customer-totals{width:100%}.customer-totals span{flex:1}.customer-row{grid-template-columns:76px minmax(0,1fr) auto;padding:11px 14px}.customer-row>*:nth-child(3),.customer-row>*:nth-child(5),.customer-row>*:nth-child(6){display:none}}
+@media(max-width:620px){.dashboard-shell{width:94vw}.summary article{min-height:72px;padding:11px 12px}.front-grid{gap:10px}.operations>header,.command-center>header{padding:0 12px}.op-row{padding:0 12px}.customer-totals{gap:6px}.customer-totals span{min-width:0;padding:6px 8px}.customer-row{grid-template-columns:68px minmax(0,1fr) auto;gap:8px}}
 """;
 
     private const string CreateLicenseSubmitButton =
