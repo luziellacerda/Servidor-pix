@@ -214,7 +214,7 @@ static class AdminPanel
                 context.Response.Headers["X-Frame-Options"] = "DENY";
                 context.Response.Headers["Referrer-Policy"] = "no-referrer";
                 context.Response.Headers["Content-Security-Policy"] =
-                    "default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'";
+                    "default-src 'none'; style-src 'self'; script-src 'self'; connect-src 'self'; img-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'";
                 context.Response.Headers["Permissions-Policy"] =
                     "camera=(), microphone=(), geolocation=(), payment=(), usb=()";
             }
@@ -256,9 +256,16 @@ static class AdminPanel
 
     public static void Map(WebApplication app, OnlineServerConfiguration serverConfiguration)
     {
-        app.MapGet("/admin/assets/admin.css", () => Results.Text(Css, "text/css; charset=utf-8"));
-        app.MapGet("/admin/assets/admin.js", () => Results.Text(AdminJavascript,
-            "text/javascript; charset=utf-8"));
+        app.MapGet("/admin/assets/admin.css", (HttpContext context) =>
+        {
+            context.Response.Headers.CacheControl = "no-store, no-cache, must-revalidate";
+            return Results.Text(Css, "text/css; charset=utf-8");
+        });
+        app.MapGet("/admin/assets/admin.js", (HttpContext context) =>
+        {
+            context.Response.Headers.CacheControl = "no-store, no-cache, must-revalidate";
+            return Results.Text(AdminJavascript, "text/javascript; charset=utf-8");
+        });
 
         app.MapGet("/admin/login", (HttpContext context, IAntiforgery antiforgery,
             OnlineAdminConfiguration configuration) =>
@@ -789,7 +796,7 @@ static class AdminPanel
             .Append(E(css)).Append("\">").Append(Hidden("__RequestVerificationToken", token));
     private static string PageStart(string title, string pageClass = "")
         => "<!doctype html><html lang=pt-BR><head><meta charset=utf-8><meta name=viewport content=\"width=device-width,initial-scale=1\"><title>"
-            + E(title) + "</title><link rel=stylesheet href=/admin/assets/admin.css><script defer src=/admin/assets/admin.js></script></head><body><main class=\"shell " + E(pageClass) + "\">";
+            + E(title) + "</title><link rel=stylesheet href=/admin/assets/admin.css?v=r5-915><script defer src=/admin/assets/admin.js?v=r5-915></script></head><body><main class=\"shell " + E(pageClass) + "\">";
     private static string PageEnd() => "</main></body></html>";
 
     private const string Css = """
