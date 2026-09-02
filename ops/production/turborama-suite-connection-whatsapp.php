@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
 require_once '/home/lz-servidor/HOSTINGER SITE DOCUMENTOS/sistema2026.lzgames.com.br/public_html/turbobox/notification-lib.php';
-$socket=getenv('SUITE_ADMIN_SOCKET')?:'/run/turborama-suite-admin/admin.sock';
-$tokenFile=getenv('SUITE_ADMIN_TOKEN_FILE')?:'/etc/turborama-suite/admin-token';
+$socket=getenv('TURBORAMA_SUITE_ADMIN_SOCKET')?:'/run/turborama-suite-admin/admin.sock';
+$tokenFile=getenv('TURBORAMA_SUITE_ADMIN_TOKEN_FILE')?:'';
 $token=is_file($tokenFile)?trim((string)file_get_contents($tokenFile)):'';
 if($token===''||!is_file($socket)){fwrite(STDERR,"SUITE CONNECTION NOTICE: configuração indisponível\n");exit(2);}
 function suite_call(string $socket,string $token,string $path,?array $body=null):array{
