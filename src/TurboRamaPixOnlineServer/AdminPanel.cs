@@ -1050,7 +1050,7 @@ body:has(.app-modal[open]){overflow:hidden}
         requestInFlight = false;
       }
     };
-    const timer = window.setInterval(refresh, 10000);
+    const timer = window.setInterval(refresh, 3000);
     document.addEventListener("visibilitychange", () => {
       if (!document.hidden) refresh();
     });
@@ -1119,7 +1119,7 @@ body:has(.app-modal[open]){overflow:hidden}
 
     internal static bool HasAutomaticSuiteClientRefreshForSelfTest()
         => AdminJavascript.Contains("/admin/fragments/suite-clients", StringComparison.Ordinal)
-            && AdminJavascript.Contains("window.setInterval(refresh, 10000)", StringComparison.Ordinal)
+            && AdminJavascript.Contains("window.setInterval(refresh, 3000)", StringComparison.Ordinal)
             && AdminJavascript.Contains("document.hidden", StringComparison.Ordinal)
             && AdminJavascript.Contains("X-Turborama-Fragment", StringComparison.Ordinal)
             && AdminJavascript.Contains("liveCurrent.replaceWith(replacement)", StringComparison.Ordinal);

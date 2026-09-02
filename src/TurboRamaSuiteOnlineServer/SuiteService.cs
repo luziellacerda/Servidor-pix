@@ -6,7 +6,7 @@ namespace TurboRamaSuiteOnlineServer;
 
 public sealed class SuiteService
 {
-    private const int ChallengeLifetime = 60, SessionLifetime = 180, HeartbeatAfter = 60;
+    private const int ChallengeLifetime = 60, SessionLifetime = 180, HeartbeatAfter = 5;
     private readonly ISuiteStore _store; private readonly IAssertionSigner _signer; private readonly TimeProvider _time; private readonly string _pepper;
     public SuiteService(ISuiteStore store, IAssertionSigner signer, TimeProvider time, string pepper) => (_store, _signer, _time, _pepper) = (store, signer, time, pepper);
     private long Now() => _time.GetUtcNow().ToUnixTimeSeconds();
