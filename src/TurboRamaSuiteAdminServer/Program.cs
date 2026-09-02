@@ -96,7 +96,8 @@ app.MapGet("/customer-activity/{licenseId}", async (string licenseId, NpgsqlData
             ORDER BY c.created_at DESC LIMIT 1),''),
           coalesce(extract(epoch from d.updated_at)::bigint,0),
           EXISTS(SELECT 1 FROM suite.suite_sessions s WHERE s.license_id=l.license_id
-            AND s.status='ACTIVE' AND s.authorized_until>clock_timestamp()),
+            AND s.status='ACTIVE' AND s.authorized_until>clock_timestamp()
+            AND s.last_server_time>=extract(epoch from clock_timestamp())::bigint-90),
           (SELECT count(DISTINCT g.item_id) FROM suite.suite_content_grants g
             WHERE g.license_id=l.license_id AND g.state='COMPLETED'),
           (SELECT count(*) FROM suite.suite_content_grants g
