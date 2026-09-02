@@ -13,6 +13,10 @@ var contentRequested = enabled && builder.Configuration.GetValue("Suite:Content:
 var connection = builder.Configuration.GetConnectionString("SuiteStore");
 var pepper = ReadProtected("Suite:ActivationPepper", "Suite:ActivationPepperFile");
 var signingPem = ReadProtected("Suite:OnlineAssertionPrivateKeyPem", "Suite:OnlineAssertionPrivateKeyPemFile");
+var inventoryEnabled = enabled && builder.Configuration.GetValue("Suite:Inventory:Enabled", false);
+var inventoryEncryptionKey = inventoryEnabled
+    ? ReadProtected("Suite:Inventory:EncryptionKey", "Suite:Inventory:EncryptionKeyFile")
+    : null;
 string? contentConnection = null;
 string? contentSigningPem = null;
 string? contentGrantPepper = null;
@@ -21,6 +25,8 @@ string? contentAssertionKeyId = null;
 var contentStartupStage = "not-started";
 if (enabled && (string.IsNullOrWhiteSpace(connection) || string.IsNullOrWhiteSpace(pepper) || string.IsNullOrWhiteSpace(signingPem)))
     throw new InvalidOperationException("Suite is enabled but protected dependencies are unavailable.");
+if (inventoryEnabled && string.IsNullOrWhiteSpace(inventoryEncryptionKey))
+    throw new InvalidOperationException("Suite inventory is enabled but its protected encryption key is unavailable.");
 var contentAvailable = contentRequested && ContentStartupIsolation.TryInitialize(() =>
 {
     contentStartupStage = "protected-inputs";
@@ -68,6 +74,11 @@ if (enabled)
     builder.Services.AddSingleton<ISuiteStore, PostgresSuiteStore>();
     builder.Services.AddSingleton<IAssertionSigner>(_ => { var rsa = RSA.Create(); rsa.ImportFromPem(signingPem); return new RsaAssertionSigner(rsa); });
     builder.Services.AddSingleton(sp => new SuiteService(sp.GetRequiredService<ISuiteStore>(), sp.GetRequiredService<IAssertionSigner>(), sp.GetRequiredService<TimeProvider>(), pepper!));
+    if (inventoryEnabled)
+    {
+        builder.Services.AddSingleton(new InventorySensitiveProtector(inventoryEncryptionKey!));
+        builder.Services.AddSingleton<DeviceInventoryService>();
+    }
     if (contentAvailable)
     {
         builder.Services.AddSingleton(_ => new PostgresContentStore(contentConnection!));
@@ -155,6 +166,15 @@ Map<ActivationChallengeRequest>("/v1/suite/activations/challenge", (s, r, c) => 
 Map<ActivationProof>("/v1/suite/activations/complete", (s, r, c) => s.CompleteActivationAsync(r, c));
 Map<ChallengeRequest>("/v1/suite/challenges", ChallengeAsync);
 Map<SessionProof>("/v1/suite/sessions", (s, r, c) => s.SessionAsync(r, c));
+if (inventoryEnabled)
+{
+    MapInventory<SuiteDeviceInventoryChallengeRequestV1>("/v1/suite/devices/inventory/challenge",
+        SuiteDeviceInventoryProtocol.SerializeChallengeRequest,
+        (s,r,id,c)=>s.ChallengeAsync(r,id,c));
+    MapInventory<SuiteDeviceInventoryProofV1>("/v1/suite/devices/inventory",
+        SuiteDeviceInventoryProtocol.SerializeProof,
+        (s,r,id,c)=>s.AcceptAsync(r,id,c));
+}
 MapContent<CatalogPageProof>("/v1/suite-content/catalog/current",
     (service, request, _, token) => service.CatalogAsync(request, token));
 MapContent<DownloadAuthorizationProof>("/v1/suite-content/downloads/authorize",
@@ -316,6 +336,30 @@ void MapContent<T>(
             return Results.Json(new ErrorResponse(1, "INTERNAL_ERROR",
                 "Request could not be completed."), StrictJson.Options, statusCode: 500);
         }
+    }).DisableAntiforgery();
+}
+
+void MapInventory<T>(string route, Func<T,byte[]> canonical,
+    Func<DeviceInventoryService,T,string,CancellationToken,Task<SignedAssertionEnvelope>> action) where T:class
+{
+    app.MapPost(route,async (HttpContext context)=>
+    {
+        try
+        {
+            using var memory=new MemoryStream(); await context.Request.Body.CopyToAsync(memory,context.RequestAborted);
+            var bytes=memory.ToArray(); var request=StrictJson.Parse<T>(bytes); var expected=canonical(request);
+            try { if(!bytes.AsSpan().SequenceEqual(expected))throw new SuiteException(400,"CONTRACT_NOT_CANONICAL","Request JSON is not canonical."); }
+            finally { CryptographicOperations.ZeroMemory(expected); }
+            var limiter=context.RequestServices.GetRequiredService<SuiteRateLimiter>();
+            if(!limiter.Allow(context.Connection.RemoteIpAddress?.ToString()??"unknown",route,request))return Results.Json(new ErrorResponse(1,"RATE_LIMITED","Too many requests."),StrictJson.Options,statusCode:429);
+            using var timeout=CancellationTokenSource.CreateLinkedTokenSource(context.RequestAborted);timeout.CancelAfter(TimeSpan.FromSeconds(10));
+            var correlation=context.Response.Headers["X-Correlation-ID"].ToString();
+            return Results.Json(await action(context.RequestServices.GetRequiredService<DeviceInventoryService>(),request,correlation,timeout.Token),StrictJson.Options,contentType:"application/json; charset=utf-8");
+        }
+        catch(SuiteException ex){return Results.Json(new ErrorResponse(1,ex.Code,ex.Message),StrictJson.Options,statusCode:ex.StatusCode);}
+        catch(OperationCanceledException) when(context.RequestAborted.IsCancellationRequested){return Results.StatusCode(499);}
+        catch(OperationCanceledException){return Results.Json(new ErrorResponse(1,"REQUEST_TIMEOUT","Request timed out."),StrictJson.Options,statusCode:504);}
+        catch(Exception){app.Logger.LogError("Suite inventory request failed. Correlation {CorrelationId}",context.Response.Headers["X-Correlation-ID"].ToString());return Results.Json(new ErrorResponse(1,"INTERNAL_ERROR","Request could not be completed."),StrictJson.Options,statusCode:500);}
     }).DisableAntiforgery();
 }
 

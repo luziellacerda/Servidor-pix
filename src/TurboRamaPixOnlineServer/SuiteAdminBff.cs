@@ -19,7 +19,12 @@ sealed record SuiteCustomerActivityEvent(string Kind,long AtUnixSeconds,string T
 sealed record SuiteCustomerActivity(string Status,bool Verified,string EnrollmentState,string DeviceId,
     string DeviceStatus,string AgentVersion,long DeviceUpdatedAtUnixSeconds,bool Online,
     long UniqueDownloads,long DownloadAttempts,long LastSessionAtUnixSeconds,
-    IReadOnlyList<SuiteCustomerActivityEvent> Events);
+    IReadOnlyList<SuiteCustomerActivityEvent> Events,SuiteCustomerMotherboard? Motherboard);
+sealed record SuiteCustomerMotherboard(string BaseboardManufacturer,string BaseboardProduct,string BaseboardVersion,
+    string BaseboardSerialMasked,string SystemManufacturer,string SystemModel,string SystemUuidMasked,
+    string BiosManufacturer,string BiosVersion,string OsName,string OsVersion,string Architecture,
+    string ClientVersion,long CollectedAtUnixSeconds,long ReceivedAtUnixSeconds,string ComparisonStatus,
+    string ComparisonConfidence,bool PendingReview);
 sealed record SuiteCustomerActivityClearResult(int DeletedRecords);
 
 sealed record SuiteContentItem(string ItemId, string DisplayName, string Availability,

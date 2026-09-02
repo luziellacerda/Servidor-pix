@@ -586,6 +586,20 @@ static class SuiteAdminPanel
             .Append("</strong></article><article><small>MÁQUINA</small><strong>").Append(E(activity.DeviceStatus))
             .Append("</strong></article></section>");
         if(ok=="HISTORICO_LIMPO")html.Append("<div class='notice success'>Registros de jogos removidos com segurança.</div>");
+        html.Append("<section class=panel><div class=section-title><div><span class=eyebrow>IDENTIDADE DA PLACA-MÃE</span><h2>Computador vinculado</h2></div></div>");
+        if(activity.Motherboard is null)html.Append("<div class=empty-state>Não informado por esta versão do programa.</div>");
+        else
+        {
+            var m=activity.Motherboard;html.Append("<div class=detail-grid>")
+              .Append(Detail("Placa",m.BaseboardManufacturer+" "+m.BaseboardProduct+" "+m.BaseboardVersion))
+              .Append(Detail("Serial",m.BaseboardSerialMasked)).Append(Detail("Sistema",m.SystemManufacturer+" "+m.SystemModel))
+              .Append(Detail("UUID",m.SystemUuidMasked)).Append(Detail("BIOS",m.BiosManufacturer+" "+m.BiosVersion))
+              .Append(Detail("Windows",m.OsName+" "+m.OsVersion+" · "+m.Architecture)).Append(Detail("Programa",m.ClientVersion))
+              .Append(Detail("Coletado",When(m.CollectedAtUnixSeconds))).Append(Detail("Recebido",When(m.ReceivedAtUnixSeconds)))
+              .Append(Detail("Comparação",Friendly(m.ComparisonStatus)+" · "+Friendly(m.ComparisonConfidence))).Append("</div>");
+            if(m.PendingReview)html.Append("<div class='notice warning'>Possível troca de placa-mãe aguardando revisão. A licença não foi alterada automaticamente.</div>");
+        }
+        html.Append("</section>");
         html.Append("<section class=panel><div class=section-title><div><span class=eyebrow>LINHA DO TEMPO</span><h2>Atividade registrada</h2></div><a class='button ghost' href=/admin#suite-clients>Voltar aos clientes</a></div><div class=timeline>");
         foreach(var item in activity.Events)html.Append("<article><time>").Append(When(item.AtUnixSeconds)).Append("</time><span class=event-kind>")
             .Append(E(Friendly(item.Kind))).Append("</span><div><strong>").Append(E(Friendly(item.Title))).Append("</strong><small>").Append(E(FriendlyDetail(item.Detail))).Append("</small></div></article>");
