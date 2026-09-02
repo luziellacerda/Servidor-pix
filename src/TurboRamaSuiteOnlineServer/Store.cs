@@ -45,7 +45,12 @@ public interface ISuiteStore
 public sealed class PostgresSuiteStore : ISuiteStore
 {
     private readonly NpgsqlDataSource _dataSource;
-    public PostgresSuiteStore(NpgsqlDataSource dataSource) => _dataSource = dataSource;
+    private readonly int _connectionNoticeCooldownHours;
+    public PostgresSuiteStore(NpgsqlDataSource dataSource)
+    {
+        _dataSource = dataSource;
+        _connectionNoticeCooldownHours = int.TryParse(Environment.GetEnvironmentVariable("SUITE_CONNECTION_NOTICE_COOLDOWN_HOURS"), out var hours) && hours is >=1 and <=168 ? hours : 12;
+    }
 
     public async Task<LicenseRecord?> FindLicenseAsync(string id, CancellationToken ct)
     {
@@ -257,7 +262,24 @@ public sealed class PostgresSuiteStore : ISuiteStore
        await using(var enrollment=new NpgsqlCommand("SELECT device_id FROM suite.suite_license_enrollments WHERE license_id=$1 FOR UPDATE",conn,tx)){enrollment.Parameters.AddWithValue(s.LicenseId);if((string?)(await enrollment.ExecuteScalarAsync(ct))!=s.DeviceId)throw new SuiteException(403,"DEVICE_DENIED","Device is not authorized.");}
        await using(var device=new NpgsqlCommand("SELECT status FROM suite.suite_devices WHERE license_id=$1 AND device_id=$2 FOR UPDATE",conn,tx)){device.Parameters.AddWithValue(s.LicenseId);device.Parameters.AddWithValue(s.DeviceId);if((string?)(await device.ExecuteScalarAsync(ct))!="ACTIVE")throw new SuiteException(403,"DEVICE_DENIED","Device is not authorized.");}
        var sql=action=="session.open"?"INSERT INTO suite.suite_sessions(license_id,device_id,session_id,status,authorized_until,last_server_time,revocation_generation) VALUES($1,$2,$3,'ACTIVE',to_timestamp($4),$5,$6) ON CONFLICT(license_id,device_id) DO UPDATE SET session_id=$3,status='ACTIVE',authorized_until=to_timestamp($4),last_server_time=GREATEST(suite.suite_sessions.last_server_time+1,$5),revocation_generation=$6,revoked_at=NULL,revocation_reason=NULL RETURNING license_id,device_id,session_id,status,extract(epoch from authorized_until)::bigint,last_server_time,revocation_generation":"UPDATE suite.suite_sessions SET authorized_until=to_timestamp($4),last_server_time=GREATEST(last_server_time+1,$5) WHERE license_id=$1 AND device_id=$2 AND session_id=$3 AND status='ACTIVE' AND revocation_generation=$6 RETURNING license_id,device_id,session_id,status,extract(epoch from authorized_until)::bigint,last_server_time,revocation_generation";
-       await using var cmd=new NpgsqlCommand(sql,conn,tx);cmd.Parameters.AddWithValue(s.LicenseId);cmd.Parameters.AddWithValue(s.DeviceId);cmd.Parameters.AddWithValue(s.SessionId);cmd.Parameters.AddWithValue(s.AuthorizedUntil);cmd.Parameters.AddWithValue(now);cmd.Parameters.AddWithValue(generation);await using var sr=await cmd.ExecuteReaderAsync(ct);if(!await sr.ReadAsync(ct))throw new SuiteException(409,"SESSION_INVALID","Session is not current.");var result=new SessionRecord(sr.GetString(0),sr.GetString(1),sr.GetString(2),sr.GetString(3),sr.GetInt64(4),sr.GetInt64(5),sr.GetInt64(6));await sr.DisposeAsync();await Consume(c,conn,tx,ct);await tx.CommitAsync(ct);return result;}
+       await using var cmd=new NpgsqlCommand(sql,conn,tx);cmd.Parameters.AddWithValue(s.LicenseId);cmd.Parameters.AddWithValue(s.DeviceId);cmd.Parameters.AddWithValue(s.SessionId);cmd.Parameters.AddWithValue(s.AuthorizedUntil);cmd.Parameters.AddWithValue(now);cmd.Parameters.AddWithValue(generation);await using var sr=await cmd.ExecuteReaderAsync(ct);if(!await sr.ReadAsync(ct))throw new SuiteException(409,"SESSION_INVALID","Session is not current.");var result=new SessionRecord(sr.GetString(0),sr.GetString(1),sr.GetString(2),sr.GetString(3),sr.GetInt64(4),sr.GetInt64(5),sr.GetInt64(6));await sr.DisposeAsync();
+       await using(var presence=new NpgsqlCommand("""
+        WITH prior AS(SELECT online_until,last_notified_at FROM suite.suite_device_presence WHERE license_id=$1 AND device_id=$2 FOR UPDATE),
+        upsert AS(INSERT INTO suite.suite_device_presence(license_id,device_id,state,online_until,last_transition_at,updated_at)
+          VALUES($1,$2,'ONLINE',to_timestamp($3),clock_timestamp(),clock_timestamp())
+          ON CONFLICT(license_id,device_id) DO UPDATE SET state='ONLINE',online_until=excluded.online_until,
+            last_transition_at=CASE WHEN suite.suite_device_presence.online_until IS NULL OR suite.suite_device_presence.online_until<=clock_timestamp() THEN clock_timestamp() ELSE suite.suite_device_presence.last_transition_at END,
+            updated_at=clock_timestamp()
+          RETURNING (SELECT online_until IS NULL OR online_until<=clock_timestamp() FROM prior) IS DISTINCT FROM false AS transitioned,
+            (SELECT last_notified_at FROM prior) AS last_notified),
+        queued AS(INSERT INTO suite.suite_connection_notification_outbox(event_id,event_key,event_type,license_id,device_id,connected_at)
+          SELECT $4,$5,'device.connected',$1,$2,clock_timestamp() FROM upsert
+          WHERE transitioned AND (last_notified IS NULL OR last_notified<clock_timestamp()-make_interval(hours=>$6))
+          ON CONFLICT(event_key) DO NOTHING RETURNING 1)
+        UPDATE suite.suite_device_presence SET last_notified_at=clock_timestamp()
+        WHERE license_id=$1 AND device_id=$2 AND EXISTS(SELECT 1 FROM queued)
+        """,conn,tx)){presence.Parameters.AddWithValue(s.LicenseId);presence.Parameters.AddWithValue(s.DeviceId);presence.Parameters.AddWithValue(s.AuthorizedUntil);presence.Parameters.AddWithValue(Guid.NewGuid());presence.Parameters.AddWithValue("device.connected:"+c.ChallengeId);presence.Parameters.AddWithValue(_connectionNoticeCooldownHours);await presence.ExecuteNonQueryAsync(ct);}
+       await Consume(c,conn,tx,ct);await tx.CommitAsync(ct);return result;}
     }
     private static async Task Consume(ChallengeRecord c, NpgsqlConnection connection, NpgsqlTransaction transaction, CancellationToken ct) { await using var cmd = new NpgsqlCommand("UPDATE suite.suite_challenges c SET consumed_at=clock_timestamp() FROM suite.suite_licenses l WHERE c.challenge_id=$1 AND c.action=$2 AND c.consumed_at IS NULL AND c.invalidated_at IS NULL AND c.expires_at>clock_timestamp() AND l.license_id=c.license_id AND l.revocation_generation=c.revocation_generation AND (c.action<>'device.activate' OR l.activation_generation=c.activation_generation)", connection, transaction); cmd.Parameters.AddWithValue(c.ChallengeId); cmd.Parameters.AddWithValue(c.Action); if (await cmd.ExecuteNonQueryAsync(ct) != 1) throw new SuiteException(409, "CHALLENGE_INVALID", "Challenge is invalid or expired."); }
     private static ChallengeRecord ReadChallenge(NpgsqlDataReader r) => new(r.GetString(0), r.GetString(1), r.GetString(2), r.GetString(3), r.GetString(4), r.GetString(5), r.GetString(6), r.GetString(7), r.GetInt64(8), r.IsDBNull(9) ? null : r.GetString(9), r.IsDBNull(10) ? null : r.GetString(10));

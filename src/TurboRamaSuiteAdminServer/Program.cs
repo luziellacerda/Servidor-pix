@@ -146,8 +146,21 @@ app.MapGet("/customer-activity/{licenseId}", async (string licenseId, NpgsqlData
     history.Parameters.AddWithValue(licenseId);
     await using var hr=await history.ExecuteReaderAsync(ct);
     while(await hr.ReadAsync(ct))events.Add(new(hr.GetString(0),hr.GetInt64(1),hr.GetString(2),hr.GetString(3)));
+    CustomerMotherboard? motherboard=null;
+    await using(var inventory=new NpgsqlCommand("""
+      SELECT baseboard_manufacturer,baseboard_product,baseboard_version,baseboard_serial_masked,
+       system_manufacturer,system_model,system_uuid_masked,bios_manufacturer,bios_version,os_name,
+       os_version,architecture,client_version,collected_at_unix_seconds,
+       extract(epoch from received_at)::bigint,comparison_status,comparison_confidence,
+       EXISTS(SELECT 1 FROM suite.suite_machine_change_reviews r WHERE r.license_id=i.license_id AND r.device_id=i.device_id AND r.status='PENDING')
+      FROM suite.suite_device_inventory i WHERE license_id=$1
+      """,conn))
+    {
+        inventory.Parameters.AddWithValue(licenseId);await using var ir=await inventory.ExecuteReaderAsync(ct);
+        if(await ir.ReadAsync(ct))motherboard=new(ir.GetString(0),ir.GetString(1),ir.GetString(2),ir.GetString(3),ir.GetString(4),ir.GetString(5),ir.GetString(6),ir.GetString(7),ir.GetString(8),ir.GetString(9),ir.GetString(10),ir.GetString(11),ir.GetString(12),ir.GetInt64(13),ir.GetInt64(14),ir.GetString(15),ir.GetString(16),ir.GetBoolean(17));
+    }
     return Results.Json(new CustomerActivity(status,verified,enrollment,deviceId,deviceStatus,
-        agentVersion,deviceUpdated,online,uniqueDownloads,downloadAttempts,lastSession,events));
+        agentVersion,deviceUpdated,online,uniqueDownloads,downloadAttempts,lastSession,events,motherboard));
 });
 app.MapPost("/customer-activity/clear",async(CustomerActivityClearRequest request,NpgsqlDataSource db,CancellationToken ct)=>
 {
@@ -160,6 +173,30 @@ app.MapPost("/customer-activity/clear",async(CustomerActivityClearRequest reques
     audit.Parameters.AddWithValue("REMOVED_"+deleted.ToString(CultureInfo.InvariantCulture)+"_RECORDS");audit.Parameters.AddWithValue(request.Actor);
     await audit.ExecuteNonQueryAsync(ct);await tx.CommitAsync(ct);
     return Results.Json(new CustomerActivityClearResult(deleted));
+});
+app.MapPost("/connection-notifications/lease",async(NpgsqlDataSource db,CancellationToken ct)=>
+{
+    await using var conn=await db.OpenConnectionAsync(ct);await using var tx=await conn.BeginTransactionAsync(ct);
+    await using var cmd=new NpgsqlCommand("""
+      WITH candidate AS(
+       SELECT o.event_id FROM suite.suite_connection_notification_outbox o
+       WHERE (o.status='PENDING' OR (o.status='LEASED' AND o.lease_until<clock_timestamp()))
+         AND o.next_attempt_at<=clock_timestamp() ORDER BY o.created_at LIMIT 1 FOR UPDATE SKIP LOCKED)
+      UPDATE suite.suite_connection_notification_outbox o SET status='LEASED',lease_until=clock_timestamp()+interval '60 seconds',attempts=attempts+1
+      FROM candidate c,suite.suite_license_deliveries d
+      WHERE o.event_id=c.event_id AND d.license_id=o.license_id
+      RETURNING o.event_id,o.license_id,d.source_purchase_id,o.connected_at,o.attempts
+      """,conn,tx);
+    await using var row=await cmd.ExecuteReaderAsync(ct);ConnectionNoticeLease? result=null;
+    if(await row.ReadAsync(ct))result=new(row.GetGuid(0),row.GetString(1),row.GetString(2),row.GetDateTime(3),row.GetInt32(4));
+    await row.DisposeAsync();await tx.CommitAsync(ct);return result is null?Results.NoContent():Results.Json(result);
+});
+app.MapPost("/connection-notifications/complete",async(ConnectionNoticeCompletion request,NpgsqlDataSource db,CancellationToken ct)=>
+{
+    if(request.Outcome is not("SENT" or "SKIPPED" or "RETRY" or "DEAD")||request.ErrorCode.Length>64)return Results.BadRequest(new Error("RESULT_INVALID"));
+    var status=request.Outcome=="RETRY"?"PENDING":request.Outcome;
+    await using var cmd=db.CreateCommand("UPDATE suite.suite_connection_notification_outbox SET status=$2,lease_until=NULL,next_attempt_at=CASE WHEN $2='PENDING' THEN clock_timestamp()+make_interval(secs=>least(3600,30*(1<<least(attempts,7)))) ELSE next_attempt_at END,last_error_code=NULLIF($3,''),completed_at=CASE WHEN $2 IN('SENT','SKIPPED','DEAD') THEN clock_timestamp() ELSE NULL END WHERE event_id=$1 AND status='LEASED'");
+    cmd.Parameters.AddWithValue(request.EventId);cmd.Parameters.AddWithValue(status);cmd.Parameters.AddWithValue(request.ErrorCode);return await cmd.ExecuteNonQueryAsync(ct)==1?Results.Json(new Error("UPDATED")):Results.Conflict(new Error("LEASE_INVALID"));
 });
 CommerceEndpoints.Map(app, commerceEnabled, pepperFile);
 ContentManagementEndpoints.Map(app, contentManagement, contentManagementEnabled);
@@ -312,9 +349,16 @@ sealed record CustomerActivityEvent(string Kind,long AtUnixSeconds,string Title,
 sealed record CustomerActivity(string Status,bool Verified,string EnrollmentState,string DeviceId,
     string DeviceStatus,string AgentVersion,long DeviceUpdatedAtUnixSeconds,bool Online,
     long UniqueDownloads,long DownloadAttempts,long LastSessionAtUnixSeconds,
-    IReadOnlyList<CustomerActivityEvent> Events);
+    IReadOnlyList<CustomerActivityEvent> Events,CustomerMotherboard? Motherboard);
+sealed record CustomerMotherboard(string BaseboardManufacturer,string BaseboardProduct,string BaseboardVersion,
+    string BaseboardSerialMasked,string SystemManufacturer,string SystemModel,string SystemUuidMasked,
+    string BiosManufacturer,string BiosVersion,string OsName,string OsVersion,string Architecture,
+    string ClientVersion,long CollectedAtUnixSeconds,long ReceivedAtUnixSeconds,string ComparisonStatus,
+    string ComparisonConfidence,bool PendingReview);
 sealed record CustomerActivityClearRequest(string LicenseId,string Actor,string RequestId);
 sealed record CustomerActivityClearResult(int DeletedRecords);
+sealed record ConnectionNoticeLease(Guid EventId,string LicenseId,string SourcePurchaseId,DateTime ConnectedAt,int Attempts);
+sealed record ConnectionNoticeCompletion(Guid EventId,string Outcome,string ErrorCode);
 sealed class InternalToken
 {
     private readonly byte[] bytes;

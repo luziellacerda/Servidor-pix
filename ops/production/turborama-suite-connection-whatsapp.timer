@@ -1,0 +1,9 @@
+[Unit]
+Description=Poll TurboRama SUITE connection notification outbox
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=15s
+AccuracySec=2s
+Persistent=true
+[Install]
+WantedBy=timers.target

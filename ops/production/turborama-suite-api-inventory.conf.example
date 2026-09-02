@@ -1,0 +1,10 @@
+# Install as a root-owned systemd drop-in. Never commit the credential value.
+[Service]
+Environment=Suite__Inventory__Enabled=true
+Environment=Suite__Inventory__EncryptionKeyFile=/run/credentials/turborama-suite-api.service/inventory-encryption-key
+Environment=SUITE_CONNECTION_NOTICE_COOLDOWN_HOURS=12
+LoadCredential=inventory-encryption-key:/etc/turborama-suite/inventory-encryption-key
+
+# The credential is canonical Base64 for exactly 32 random bytes. Rotation must
+# decrypt/re-encrypt existing serial/UUID values in one audited maintenance job;
+# do not replace the key while rows still use the old key.
