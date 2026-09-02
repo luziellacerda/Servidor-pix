@@ -20,11 +20,13 @@ Equal("ac3a2717355c268cb2150f06e04a0a708f7881f580a90a7cdfe903b88f5fe2df",Sha(Sui
 var inventoryHash=SuiteDeviceInventoryProtocol.InventoryHash(inventory);Equal("4282fabba3c01c0fd12c8ba51309c76a6db022b832039016d7df6e25fca9c4f5",inventoryHash,"R25 inventory hash");
 var inventorySession=new string('b',64);var inventoryChallengeId=new string('c',64);var inventoryNonce="AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8=";
 var inventoryRequest=new SuiteDeviceInventoryChallengeRequestV1(1,Protocol.ProductId,inventoryLicense,inventory.DeviceId,inventorySession,SuiteDeviceInventoryProtocol.Action,inventoryHash);
+Equal(true,new SuiteRateLimiter(TimeProvider.System).Allow("127.0.0.1","/v1/suite/devices/inventory/challenge",inventoryRequest),"R25 challenge rate classification");
 Equal("ecf8c37d6c468730a01a0ce68c274fef5d41ccbde0760a505a47bda7dfdcbacc",Sha(SuiteDeviceInventoryProtocol.CanonicalChallengeRequest(inventoryRequest)),"R25 challenge request");
 var inventoryChallenge=new ChallengeResponse(1,inventoryChallengeId,inventoryNonce,1_800_000_060);
 Equal("465f80c902e286a8af0a067c0ac8e24ae16c2bd4d1e95d1af72b3d2437798bfb",Sha(SuiteDeviceInventoryProtocol.BuildProofSigningMessage(inventoryChallenge,inventoryLicense,inventory.DeviceId,inventorySession,inventoryHash)),"R25 proof signing message");
 var syntheticSignature=Convert.ToBase64String(Enumerable.Range(0,256).Select(i=>(byte)i).ToArray());
 var inventoryProof=new SuiteDeviceInventoryProofV1(1,Protocol.ProductId,inventoryLicense,inventory.DeviceId,inventorySession,SuiteDeviceInventoryProtocol.Action,inventoryHash,inventoryChallengeId,syntheticSignature,inventory);
+Equal(true,new SuiteRateLimiter(TimeProvider.System).Allow("127.0.0.1","/v1/suite/devices/inventory",inventoryProof),"R25 proof rate classification");
 Equal("6e355cd41a463b9e8990864c687ca11e5bba103fba61831aaac8a808e62d292d",Sha(SuiteDeviceInventoryProtocol.CanonicalProof(inventoryProof)),"R25 canonical proof");
 var inventoryChallengeAssertion=new SuiteDeviceInventoryChallengeAssertionV1(1,SuiteDeviceInventoryProtocol.ChallengeAssertionKind,Protocol.ProductId,inventoryLicense,inventory.DeviceId,inventorySession,SuiteDeviceInventoryProtocol.Action,inventoryHash,inventoryChallengeId,inventoryNonce,SuiteDeviceInventoryProtocol.ChallengeStatus,1_800_000_000,1_800_000_060);
 Equal("beab807bddc94a88379a7862c528d5a58cdb9f97b355946a47d4d11f767615f2",Sha(SuiteDeviceInventoryProtocol.CanonicalChallengeAssertion(inventoryChallengeAssertion)),"R25 challenge assertion");
