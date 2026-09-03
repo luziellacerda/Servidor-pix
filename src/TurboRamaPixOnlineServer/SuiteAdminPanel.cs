@@ -590,7 +590,7 @@ static class SuiteAdminPanel
         if(activity.Motherboard is null)html.Append("<div class=empty-state>Não informado por esta versão do programa.</div>");
         else
         {
-            var m=activity.Motherboard;html.Append("<div class=detail-grid>")
+            var m=activity.Motherboard;html.Append("<div class='detail-grid motherboard-detail-grid'>")
               .Append(Detail("Placa",m.BaseboardManufacturer+" "+m.BaseboardProduct+" "+m.BaseboardVersion))
               .Append(Detail("Serial",m.BaseboardSerialMasked)).Append(Detail("Sistema",m.SystemManufacturer+" "+m.SystemModel))
               .Append(Detail("UUID",m.SystemUuidMasked)).Append(Detail("BIOS",m.BiosManufacturer+" "+m.BiosVersion))
@@ -610,6 +610,7 @@ static class SuiteAdminPanel
             .Append("<input type=hidden name=licenseId value='").Append(E(customer.LicenseId)).Append("'>")
             .Append("<label>Confirme sua senha<input type=password name=adminPassword required autocomplete=current-password></label>")
             .Append("<button class=danger data-confirm='Confirma a exclusão permanente dos registros de jogos deste cliente?' data-busy='Limpando...'>Limpar registros de jogos</button></form></details></section>");
+        html.Append("<style>.motherboard-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}.motherboard-detail-grid>div{min-width:0;padding:12px 14px;border:1px solid #213943;border-radius:10px;background:#0b151b}.motherboard-detail-grid span{display:block;margin-bottom:5px;color:#94aab2;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.motherboard-detail-grid strong{display:block;color:#f3f8f9;font-size:.9rem;line-height:1.35;overflow-wrap:anywhere}@media(max-width:620px){.motherboard-detail-grid{grid-template-columns:1fr}}</style>");
         return Shell("Histórico · "+customer.Customer,html.ToString());
     }
 
