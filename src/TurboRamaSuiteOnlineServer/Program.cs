@@ -67,6 +67,7 @@ var contentAvailable = contentRequested && ContentStartupIsolation.TryInitialize
 });
 
 builder.Services.AddSingleton(TimeProvider.System);
+builder.Services.AddHttpClient<TurboRamaWhatsAppNotifier>();
 builder.Services.AddSingleton<SuiteRateLimiter>();
 if (enabled)
 {
@@ -120,6 +121,16 @@ app.Use(async (context, next) =>
 });
 app.MapGet("/health", () => Results.Json(new { status = "ok", service = "turborama-suite-api" }));
 app.MapGet("/ready", () => enabled ? Results.Json(new { status = "ready" }) : Results.Json(new ErrorResponse(1, "SUITE_DISABLED", "Suite is disabled."), statusCode: 503));
+app.MapPost("/internal/turborama/whatsapp/connection", async (HttpContext context, TurboRamaWhatsAppNotifier notifier, CancellationToken ct) =>
+{
+    var expected = Environment.GetEnvironmentVariable("TURBORAMA_INTERNAL_TOKEN") ?? "";
+    var supplied = context.Request.Headers["X-TurboRama-Internal-Token"].ToString();
+    if (expected.Length == 0 || !CryptographicOperations.FixedTimeEquals(System.Text.Encoding.UTF8.GetBytes(expected), System.Text.Encoding.UTF8.GetBytes(supplied))) return Results.Unauthorized();
+    var body = await context.Request.ReadFromJsonAsync<TurboRamaConnectionNotice>(cancellationToken: ct);
+    if (body is null || string.IsNullOrWhiteSpace(body.LicenseId) || string.IsNullOrWhiteSpace(body.Phone)) return Results.BadRequest();
+    var sent = await notifier.NotifyConnectionAsync(body.Phone, body.LicenseId, body.DeviceId ?? "unknown", ct);
+    return Results.Json(new { accepted = sent }, statusCode: sent ? 202 : 503);
+});
 app.MapGet("/ready/content", async (HttpContext context) =>
 {
     if (!contentAvailable)
