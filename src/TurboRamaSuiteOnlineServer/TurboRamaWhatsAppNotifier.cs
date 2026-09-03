@@ -8,7 +8,7 @@ public sealed record TurboRamaConnectionNotice(string LicenseId, string Phone, s
 public sealed class TurboRamaWhatsAppNotifier
 {
     private readonly HttpClient _http;
-    private readonly string _endpoint = Environment.GetEnvironmentVariable("TURBORAMA_MENUIA_ENDPOINT")?.Trim() ?? "";
+    private readonly string _endpoint = (Environment.GetEnvironmentVariable("TURBORAMA_MENUIA_ENDPOINT")?.Trim() is { Length: > 0 } configured ? configured : "https://chatbot.menuia.com/api/create-message");
     private readonly string _appKey = Environment.GetEnvironmentVariable("TURBORAMA_MENUIA_APPKEY")?.Trim() ?? "";
     private readonly string _authKey = Environment.GetEnvironmentVariable("TURBORAMA_MENUIA_AUTHKEY")?.Trim() ?? "";
 
