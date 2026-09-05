@@ -1,0 +1,83 @@
+name: EmulationStation Suite - isolated server checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['codex/emulationstation-suite-*']
+  pull_request:
+    paths:
+      - '.github/workflows/emulationstation-suite.yml'
+      - 'src/TurboRamaSuiteOnlineServer/**'
+      - 'tests/TurboRamaSuiteEmulationStation.Tests/**'
+      - 'migrations/suite/022_suite_emulationstation_sessions.up.sql'
+      - 'docs/suite/EMULATIONSTATION-INTEGRATION.md'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: emulationstation-suite-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: es-ci-isolated-only
+          POSTGRES_DB: turborama_es_ci
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres -d turborama_es_ci"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Restore locked dependencies
+        run: |
+          dotnet restore tests/TurboRamaSuiteEmulationStation.Tests --locked-mode
+          dotnet restore tests/TurboRamaSuiteOnlineServer.Tests --locked-mode
+      - name: Build and run signed protocol regression checks
+        run: |
+          dotnet run --project tests/TurboRamaSuiteOnlineServer.Tests -c Release --no-restore
+          dotnet build tests/TurboRamaSuiteEmulationStation.Tests -c Release --no-restore
+      - name: Create isolated PostgreSQL schema and apply all reviewed migrations
+        env:
+          PGPASSWORD: es-ci-isolated-only
+          PGHOST: 127.0.0.1
+          PGUSER: postgres
+          PGDATABASE: turborama_es_ci
+        shell: bash
+        run: |
+          set -euo pipefail
+          psql --set=ON_ERROR_STOP=1 --command='CREATE ROLE "turborama-suite" LOGIN; CREATE ROLE "turborama-suite-admin" LOGIN;'
+          psql --set=ON_ERROR_STOP=1 --file=ops/production/prepare-suite-content-roles.sql
+          for migration in migrations/suite/*.up.sql; do
+            checksum=$(sha256sum "$migration" | cut -d ' ' -f 1)
+            psql --set=ON_ERROR_STOP=1 --set=migration_sha256="$checksum" --file="$migration"
+          done
+          test "$(psql -Atc "SELECT count(*) FROM suite.schema_migrations WHERE version='022_suite_emulationstation_sessions';")" = 1
+          test "$(psql -Atc "SELECT has_table_privilege('turborama-suite','suite.suite_es_challenges','SELECT,INSERT,UPDATE,DELETE');")" = t
+          test "$(psql -Atc "SELECT has_table_privilege('turborama-suite-content-api','suite.suite_es_sessions','INSERT,UPDATE');")" = f
+      - name: Exercise real PostgreSQL isolation and shared revocation
+        env:
+          SUITE_ES_TEST_CONNECTION: Host=127.0.0.1;Port=5432;Database=turborama_es_ci;Username=postgres;Password=es-ci-isolated-only
+        run: dotnet run --project tests/TurboRamaSuiteEmulationStation.Tests -c Release --no-build -- --require-postgres
+      - name: Publish review artifact with ES feature disabled
+        run: |
+          jq -e '.Suite.EmulationStation.Enabled == false' src/TurboRamaSuiteOnlineServer/appsettings.json
+          dotnet publish src/TurboRamaSuiteOnlineServer -c Release --no-restore --self-contained false -o dist/server
+          mkdir -p dist/migrations dist/docs
+          cp migrations/suite/022_suite_emulationstation_sessions.up.sql dist/migrations/
+          cp docs/suite/EMULATIONSTATION-INTEGRATION.md dist/docs/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: servidor-suite-emulationstation-review-${{ github.sha }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14

@@ -9,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.ConfigureKestrel(options => options.Limits.MaxRequestBodySize = Protocol.MaximumBodyBytes);
 builder.Services.Configure<ForwardedHeadersOptions>(SuiteTrustedProxyPolicy.Configure);
 var enabled = builder.Configuration.GetValue("Suite:Enabled", false);
+var emulationStationEnabled = enabled &&
+    builder.Configuration.GetValue("Suite:EmulationStation:Enabled", false);
 var contentRequested = enabled && builder.Configuration.GetValue("Suite:Content:Enabled", false);
 var connection = builder.Configuration.GetConnectionString("SuiteStore");
 var pepper = ReadProtected("Suite:ActivationPepper", "Suite:ActivationPepperFile");
@@ -75,6 +77,11 @@ if (enabled)
     builder.Services.AddSingleton<ISuiteStore, PostgresSuiteStore>();
     builder.Services.AddSingleton<IAssertionSigner>(_ => { var rsa = RSA.Create(); rsa.ImportFromPem(signingPem); return new RsaAssertionSigner(rsa); });
     builder.Services.AddSingleton(sp => new SuiteService(sp.GetRequiredService<ISuiteStore>(), sp.GetRequiredService<IAssertionSigner>(), sp.GetRequiredService<TimeProvider>(), pepper!));
+    if (emulationStationEnabled)
+    {
+        builder.Services.AddSingleton<IEmulationStationStore, PostgresEmulationStationStore>();
+        builder.Services.AddSingleton<EmulationStationService>();
+    }
     if (inventoryEnabled)
     {
         builder.Services.AddSingleton(new InventorySensitiveProtector(inventoryEncryptionKey!));
@@ -177,6 +184,7 @@ Map<ActivationChallengeRequest>("/v1/suite/activations/challenge", (s, r, c) => 
 Map<ActivationProof>("/v1/suite/activations/complete", (s, r, c) => s.CompleteActivationAsync(r, c));
 Map<ChallengeRequest>("/v1/suite/challenges", ChallengeAsync);
 Map<SessionProof>("/v1/suite/sessions", (s, r, c) => s.SessionAsync(r, c));
+app.MapEmulationStation(emulationStationEnabled);
 if (inventoryEnabled)
 {
     MapInventory<SuiteDeviceInventoryChallengeRequestV1>("/v1/suite/devices/inventory/challenge",
