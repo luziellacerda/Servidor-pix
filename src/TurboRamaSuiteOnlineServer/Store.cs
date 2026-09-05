@@ -285,7 +285,31 @@ public sealed class PostgresSuiteStore : ISuiteStore
         """,conn,tx)){presence.Parameters.AddWithValue(s.LicenseId);presence.Parameters.AddWithValue(s.DeviceId);presence.Parameters.AddWithValue(s.AuthorizedUntil);presence.Parameters.AddWithValue(Guid.NewGuid());presence.Parameters.AddWithValue("device.connected:"+c.ChallengeId);presence.Parameters.AddWithValue(_connectionNoticeCooldownHours);await presence.ExecuteNonQueryAsync(ct);}
        await tx.CommitAsync(ct);return result;}
     }
-    private static async Task Consume(ChallengeRecord c, NpgsqlConnection connection, NpgsqlTransaction transaction, CancellationToken ct) { await using var cmd = new NpgsqlCommand("UPDATE suite.suite_challenges c SET consumed_at=clock_timestamp() FROM suite.suite_licenses l WHERE c.challenge_id=$1 AND c.action=$2 AND c.consumed_at IS NULL AND c.invalidated_at IS NULL AND c.expires_at>clock_timestamp() AND l.license_id=c.license_id AND l.revocation_generation=c.revocation_generation AND (c.action<>'device.activate' OR l.activation_generation=c.activation_generation)", connection, transaction); cmd.Parameters.AddWithValue(c.ChallengeId); cmd.Parameters.AddWithValue(c.Action); if (await cmd.ExecuteNonQueryAsync(ct) != 1) throw new SuiteException(409, "CHALLENGE_INVALID", "Challenge is invalid or expired."); }
+    private static async Task Consume(ChallengeRecord c, NpgsqlConnection connection,
+        NpgsqlTransaction transaction, CancellationToken ct)
+    {
+        // Select and lock the exact primary-key row before applying lifecycle
+        // filters. Otherwise sparse/stale statistics can prefer the partial
+        // expiry index, acquiring SSI predicates over unrelated live challenges.
+        // The physical row locator is used only inside this one SQL statement.
+        await using var cmd = new NpgsqlCommand("""
+            WITH target AS MATERIALIZED (
+              SELECT ctid FROM suite.suite_challenges
+              WHERE challenge_id=$1::bpchar AND length($1)=64 FOR UPDATE
+            )
+            UPDATE suite.suite_challenges c SET consumed_at=clock_timestamp()
+            FROM target,suite.suite_licenses l
+            WHERE c.ctid=target.ctid AND c.action=$2
+              AND c.consumed_at IS NULL AND c.invalidated_at IS NULL
+              AND c.expires_at>clock_timestamp() AND l.license_id=c.license_id
+              AND l.revocation_generation=c.revocation_generation
+              AND (c.action<>'device.activate' OR l.activation_generation=c.activation_generation)
+            """, connection, transaction);
+        cmd.Parameters.AddWithValue(c.ChallengeId);
+        cmd.Parameters.AddWithValue(c.Action);
+        if (await cmd.ExecuteNonQueryAsync(ct) != 1)
+            throw new SuiteException(409, "CHALLENGE_INVALID", "Challenge is invalid or expired.");
+    }
     private static ChallengeRecord ReadChallenge(NpgsqlDataReader r) => new(r.GetString(0), r.GetString(1), r.GetString(2), r.GetString(3), r.GetString(4), r.GetString(5), r.GetString(6), r.GetString(7), r.GetInt64(8), r.IsDBNull(9) ? null : r.GetString(9), r.IsDBNull(10) ? null : r.GetString(10));
 }
 

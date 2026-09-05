@@ -128,8 +128,14 @@ máquinas sintéticas usam 2048 bits. Requisições passam por Kestrel e Postgre
 A primeira carga expôs varredura integral de desafios: parâmetros Npgsql `text`
 comparados com `char(64)` não usavam o índice primário. A migration 025 cria índices
 de expressão correspondentes, preservando bytes, política e transações existentes.
-EXPLAIN deve mostrar `ix_suite_*_challenges_text_lookup`. A carga também motivou
-as tentativas limitadas para contenção transitória. O cenário adicional de banco
+As consultas textuais usam `ix_suite_*_challenges_text_lookup`. O consumo Suite
+materializa e trava primeiro a linha pela chave primária (`bpchar`, 64 caracteres),
+depois aplica os filtros de consumo/expiração/geração à mesma linha. `EXPLAIN`
+mostra `suite_challenges_pkey` seguido de `Tid Scan`; o localizador físico não sai
+da instrução SQL. Isso impede a escolha do índice parcial de expiração para
+varrer desafios de outros clientes durante uma transação serializável. Os testes
+de corrida de ativação, desafio consumido/divergente e revogação permanecem.
+A carga também motivou tentativas limitadas para contenção transitória. O cenário adicional de banco
 recém-criado em dois núcleos mostrou que o pool de 32 conexões ainda gerava
 contenção SSI entre sessões. O padrão foi reduzido para oito; um limite explícito
 do operador continua respeitado. A relação entre concorrência, planos de consulta
