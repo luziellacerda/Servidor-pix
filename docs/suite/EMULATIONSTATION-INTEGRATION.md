@@ -44,7 +44,10 @@ para conflitos SSI/deadlock, dentro do timeout HTTP de dez segundos. Todas as
 verificações e o consumo único são refeitos a cada tentativa; não há concessão
 parcial. O atraso de cada repetição é limitado a 476 ms, com no máximo 4,522 s
 de espera somada; execução e espera continuam limitadas pelo timeout HTTP.
-A mudança no store Suite original limita-se a esse orçamento de tentativas.
+O store Suite original também consome o desafio antes das gravações de sessão,
+presença e outbox, seguindo a mesma ordem do store ES. Todas essas gravações
+permanecem na mesma transação: uma falha desfaz também o consumo. Isso reduz o
+trabalho e as dependências SSI acumuladas por tentativas abortadas.
 
 ## Painel existente e encerramento
 
