@@ -4,16 +4,30 @@ Solicitado pelo operador em 05/09/2026. Este documento orienta a execução no P
 Windows; a matriz de entrega continua no
 [handoff principal](HANDOFF-EMULATIONSTATION-ROTAS-COMPARTILHADAS-20260905.md#04-matriz-unica-de-execucao).
 
-**Retorno real do PC em 05/09/2026, aproximadamente 19:43 UTC−3:** o EXE 1.1.2
+**Atualização do servidor em 05/09/2026 às 20:02:29 UTC−3: correção implantada e
+verificada.** Somente a API Suite foi atualizada para `efaf1d3`, PID `311756`,
+DLL SHA-256 `e10bcf191c7b1c4b030427713b848a8e89af51517483d319b5979cd9ea7b07ef`.
+O teste público confirmou nova abertura `ACTIVE`, negação de heartbeat da sessão
+anterior, coexistência Suite/ES e isolamento de outra identidade. Admin/PIX,
+flags, credenciais e schema 025 foram preservados. [Relatório da execução](evidence/es-reopening-deployment-20260905.json).
+
+**Pode repetir agora com o mesmo EXE 1.1.2 já instalado e conferido.** Com a Suite
+fechada, entrar, sair normalmente, confirmar que ES/helper encerraram e reabrir
+imediatamente. Repetir os ciclos e depois conferir coexistência com a Suite.
+Não é necessário baixar outro pacote nem refazer a ativação. O resultado do PC
+após esta atualização ainda não foi recebido; a verificação sintética no servidor
+não substitui a chave CNG real deste Windows.
+
+**Retorno anterior do PC em 05/09/2026, aproximadamente 19:43 UTC−3:** o EXE 1.1.2
 foi baixado e o hash aprovado foi confirmado também em
 `D:\TURBOPCINSTALL\build\emulationstation\emulationstation.exe`. Havia uma
 instância do ES e seu helper filho; a tela voltou a informar sessão já existente.
-Portanto, o teste de reabertura **ainda não passou**. Não pedir outro download ou
+Naquele momento, o teste de reabertura **não passou**. Não pedir outro download ou
 nova ativação como solução. O usuário encaminhou a execução à tarefa no servidor:
 [ordem atual de implantação API-only e validação](HANDOFF-EMULATIONSTATION-ROTAS-COMPARTILHADAS-20260905.md).
 A tentativa de SSH do Windows foi encerrada antes de autenticar; nenhuma ação de
-produção foi executada por este PC. Manter o mesmo EXE para testar após o servidor
-confirmar a atualização.
+produção foi executada por este PC. Manter o mesmo EXE e repetir agora,
+com a atualização confirmada acima.
 
 ## Objetivo e estado do servidor
 
@@ -33,7 +47,7 @@ A CI anterior `33994292849` foi substituída por este último ajuste; seu
 cancelamento automático não é falha da compilação atual. A release geral não
 foi publicada: o pacote continua candidato até o teste real com o servidor atualizado.
 
-**Correção posterior, publicada no Git mas ainda não implantada (05/09/2026):** após o primeiro
+**Correção posterior, implantada às 20:02 UTC−3 (05/09/2026):** após o primeiro
 acesso, a reabertura imediata encontrou a sessão anterior ainda vigente. O usuário
 determinou seguir a Suite: nova abertura validada substitui somente a sessão ES
 da mesma licença/dispositivo, sem pedir encerramento no painel. O código publicado
@@ -45,10 +59,10 @@ isolamento. Não há nova ativação, ação `session.close` ou migration. O com
 painel Chromium e carga 500/1000 passaram. Artifact servidor `9977821782`,
 SHA-256 do arquivo completo
 `ab017ad8313fc0c50e702c4d6aa7ae7f8348276376a8ea850f04a19ac0c1cf86`.
-A implantação desta correção e o teste Windows real continuam pendentes. O servidor `34e31f2`
-e os hashes abaixo são o estado anterior confirmado,
-não evidência de implantação dessa correção. Não repetir download grande apenas
-para tentar mudar uma política que ainda está no servidor antigo.
+A implantação desta correção foi verificada; o retorno Windows continua pendente.
+O servidor `34e31f2` e os hashes históricos são o estado anterior confirmado,
+não evidência de implantação dessa correção. Manter o EXE já conferido
+para testar a política que agora está no servidor.
 
 **Registro anterior: servidor implantado e verificado em 05/09/2026 às 18:23:58
 (America/Maceio, UTC−3), com orientação de testar o cliente 1.1.1.**
@@ -68,8 +82,8 @@ significa que sua licença foi desativada.”** O código `ServerUnconfirmed` da
 1.1.1 cobre resposta/assinatura/contrato não confirmados; o texto não atesta
 revogação da licença. Na observação inicial, a API ainda executava o release
 anterior às rotas compartilhadas. A implantação inicial `34e31f2` foi confirmada
-naquele momento; isso não confirma a implantação posterior da correção `efaf1d3`.
-O retorno atual de sessão existente está registrado no início deste documento.
+naquele momento. A correção posterior `efaf1d3` tem sua própria verificação,
+registrada no início deste documento, seguida do teste Windows ainda pendente.
 
 CI histórica do servidor implantado: https://github.com/luziellacerda/Servidor-pix/actions/runs/33989933344
 
@@ -100,8 +114,8 @@ ZIP completo. O EXE foi baixado isoladamente em
 `C:\Users\Admin\Downloads\TurboRama-Suite-v1.1.2-Teste\emulationstation.exe` e
 seu hash foi conferido após salvar. O usuário copiou/executou a versão na pasta
 de instalação, onde o mesmo hash foi confirmado; a tarefa de download não
-executou nem substituiu a instalação. A release geral depende da resolução do
-teste de reabertura e da implantação verificada do servidor.
+executou nem substituiu a instalação. A implantação do servidor está verificada; a release geral ainda depende do
+resultado de reabertura no PC.
 
 O operador usava o 1.1.1, commit `ada4555`, hash do EXE
 `43dbd0402274d32da1dfd4ea6ffb60432b4d9fef07ccf9902ca9f498b4df33ee`.

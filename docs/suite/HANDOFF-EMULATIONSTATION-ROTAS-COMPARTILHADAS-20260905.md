@@ -2,7 +2,52 @@
 
 Data: 2026-09-05.
 
-## Prioridade atual — executar a correção de reabertura no servidor
+## Prioridade atual — validar no Windows a reabertura após atualizar a API
+
+**Resultado no servidor: implantado e verificado em 05/09/2026 às 20:02:29
+(America/Maceio, UTC−3).** A API Suite agora executa
+`efaf1d3cd3dfd2a807e9d5a0e7295328ff081c4a`, usando o artifact aprovado abaixo.
+O runtime anterior `34e31f2` foi confirmado antes da troca. Somente a API foi
+reiniciada; o backend administrativo e o PIX conservaram PID, binário e configuração.
+
+| Verificação efetiva | Resultado |
+| --- | --- |
+| Processo API | PID anterior `292260` → novo `311756`, ativo e saudável |
+| DLL carregado | `/opt/turborama-suite-r5-releases/es-reopen-efaf1d3-20260905/server/TurboRamaSuiteOnlineServer.dll` |
+| SHA-256 do DLL | `e10bcf191c7b1c4b030427713b848a8e89af51517483d319b5979cd9ea7b07ef` |
+| Admin / PIX | PIDs `292201` / `292305` preservados; hashes dos binários inalterados |
+| Schema / configuração | 001–025 preservado, zero migrations; mesmas flags, contas, WorkingDirectory, credenciais, autoridades, pepper, AES e retenção |
+| Saúde / proxy | `/health`, `/ready`, `/ready/content` aprovados; rotas em loopback/HTTPS verificadas; proxy preservado |
+| Nova abertura comprovada | Prova nova recebeu assertion ES assinada `ACTIVE`, substituindo apenas a sessão ES sintética anterior |
+| Sessão anterior / isolamento | Heartbeats com desafio anterior e novo receberam `SESSION_INVALID`; replay negado; Suite e cliente B continuaram ativos |
+| Admin / rede / limpeza | Revogação exata/idempotente, máscaras de rede e legado aprovados; duas identidades sintéticas e seus marcadores removidos, zero notificações, auditoria preservada |
+| Windows 1.1.2 | **Pendente o retorno após esta implantação**; repetir com o mesmo EXE já conferido |
+
+[Relatório novo de implantação e pós-verificação](evidence/es-reopening-deployment-20260905.json).
+O JSON histórico `evidence/es-deployment-20260905.json` permanece byte a byte
+inalterado. A sonda foi compilada com a pasta `server/` deste novo artifact;
+os 58 hashes internos foram conferidos. Não foi recompilado o servidor nem
+baixado outro cliente para compensar a política anterior.
+
+Plano executado: `ops/production/deploy-es-reopening-20260905.py`.
+Drop-in adicional, somente na API: `zzzzz-es-reopen-20260905.conf`.
+Backup protegido da configuração e rollback preparado (não foi necessário executá-lo):
+
+```bash
+pkexec /var/backups/turborama-suite/es-reopen-efaf1d3-20260905T230219Z/rollback-api.sh
+```
+
+Esse rollback verifica o alvo/hash do drop-in adicional, remove somente esse
+arquivo e restaura a API `34e31f2`; não reinicia admin/PIX. O plano histórico dos
+três serviços continua bloqueado e não foi reutilizado. A correção está
+verificada no servidor; o teste com a chave CNG do PC permanece separado.
+
+**Próximo teste:** no EXE 1.1.2 já instalado, manter a Suite fechada, entrar,
+sair normalmente, confirmar encerramento de ES/helper e reabrir imediatamente.
+Repetir ciclos, depois conferir coexistência com a Suite. O operador já recebeu
+essa solicitação; não foi recebido resultado pós-implantação até este registro.
+
+### Ordem recebida e evidência anterior à implantação
 
 **Encaminhamento solicitado pelo usuário em 05/09/2026, 19:48 UTC−3.** O usuário
 testou o EXE 1.1.2 correto e voltou a receber “Já existe uma sessão EmulationStation
@@ -22,13 +67,13 @@ Usar este mesmo handoff para execução e retorno; não criar outra cadeia de do
   helper filho. A tela novamente mostrou conflito de sessão. Isso não é evidência
   de segundo ES local, de necessidade de abrir a Suite ou de nova ativação.
 - O texto corresponde ao tratamento cliente de `ES_SESSION_CONFLICT`; conferir
-  no servidor a resposta e o processo que realmente a produziu. O último registro
-  confirmado de produção é `34e31f2`, que ainda tem a regra antiga de ocupação.
+  no servidor a resposta e o processo que realmente a produziu. Antes desta troca, o processo e o hash
+  confirmados eram `34e31f2`, com a regra antiga de ocupação.
 - Da tarefa Windows, SSH respondeu mas não houve confirmação de chave de host nem
   autenticação. A tentativa foi encerrada a pedido do usuário, que escolheu o
   encaminhamento para a tarefa do servidor. **Nenhuma implantação ocorreu daqui.**
 
-### Pacote aprovado a implantar — não recompilar por suposição
+### Pacote aprovado e efetivamente implantado
 
 | Identificação | Valor verificado |
 | --- | --- |
@@ -47,7 +92,7 @@ Os commits posteriores de documentação não são outro binário: conferir
 `SharedEmulationStation.cs`, dentro da API Suite. Admin, PIX, contratos comuns e
 migrations não mudaram; os projetos admin/PIX não carregam a DLL da API.
 
-### Execução mínima no host autorizado
+### Plano de execução no host autorizado — etapas 1 a 6 concluídas
 
 1. Atualizar a referência da branch sem sobrescrever trabalho local e confirmar
    acesso administrativo pelo mecanismo já usado no Linux. Identificar o estado
@@ -127,7 +172,7 @@ O arquivo conserva o mesmo caminho para manter uma unica referencia vigente.
 Publicar esta ordem nao significa que o codigo ja foi implementado ou implantado:
 esses resultados so podem ser declarados com as evidencias exigidas abaixo.
 
-**Atualização de produto em 05/09/2026 — correção no Git, não implantada:** o usuário
+**Atualização de produto em 05/09/2026 — correção implantada às 20:02 UTC−3:** o usuário
 determinou que a reabertura do ES funcione como a TurboRama Suite: validar de novo
 com o vínculo/chave existentes e substituir a sessão ES anterior do mesmo PC.
 Esta decisão substitui somente a exigência anterior de conflito/confirmar pelo
@@ -139,7 +184,7 @@ Servidor: `efaf1d3cd3dfd2a807e9d5a0e7295328ff081c4a`,
 Build/testes locais e **CI integral aprovada**: protocolo, HTTP/PostgreSQL,
 banco original Suite, painel Chromium e carga 500/1000. Artifact `9977821782`,
 SHA-256 `ab017ad8313fc0c50e702c4d6aa7ae7f8348276376a8ea850f04a19ac0c1cf86`.
-Implantação da correção e homologação Windows continuam pendentes.
+A implantação da correção está concluída; o retorno Windows após a troca continua pendente.
 Na carga desta CI houve 114000 respostas HTTP 200 e zero falhas de troca nas
 fases medidas. Isso é regressão em ambiente isolado, não SLA: com 1000 sessões,
 o soak mediu 240,82 req/s, p99 de 6589,568 ms e duração de 298,973 s. Não comprova
@@ -155,12 +200,11 @@ CNG/ativação na mesma conta Windows. **CI do cliente aprovada**, artifact
 `9feebb133fbf81ce9fe55e3bce7b4408ab7e1ca39958287fef62b106af7bbbab`.
 O passo de release foi omitido pelo gate manual, não por falha. Teste real
 continua pendente; detalhes e avisos no handoff do PC, sem novo documento paralelo.
-O smoke operacional já foi alinhado e compilado localmente, sem execução no host;
-o script de rollout antigo foi bloqueado por guarda antes de acessar produção,
-pois seus pins continuam em `34e31f2`. Preparar o próximo plano somente após a CI
-confirmar artifact/hashes e o operador conferir o baseline atual, conforme o
-[runbook existente](EMULATIONSTATION-INTEGRATION.md). A evidência JSON de
-implantação anterior permanece intacta, sem atribuir a ela testes novos.
+O smoke operacional atualizado foi compilado contra o artifact `efaf1d3` e passou
+no host pelo plano específico da API. O script de rollout antigo continua
+bloqueado, pois seus pins permanecem em `34e31f2`; não foi reutilizado. O
+[runbook existente](EMULATIONSTATION-INTEGRATION.md) e o novo relatório registram
+a execução; a evidência JSON anterior permanece intacta.
 
 ## 0. Ordem de trabalho integral, sem novos ciclos de handoff
 
@@ -235,7 +279,8 @@ explicitamente pendente; nao e sucesso nem motivo para abandonar outras frentes.
   Suite, PIX, outros clientes e confirmações administrativas por alvo exato não
   mudam. Não pedir ação no painel para fechar/reabrir normalmente, nem criar
   `session.close`. DPAPI não é autorização. A trava local de instância permanece.
-  Preservar o dedicado ES 1.0.1 conforme 4.5. Esta correção ainda não foi implantada.
+  Preservar o dedicado ES 1.0.1 conforme 4.5. Correção implantada em `efaf1d3`,
+  com retorno do PC ainda pendente.
 - **IP:** exclusivamente informativo, inclusive quando cruzado com outros dados.
   Nunca entra em bloqueio direto/indireto, revogacao, encerramento, impedimento de
   reconexao, fingerprint ou exigencia de nova ativacao. MAC tambem nao e prova
@@ -253,23 +298,26 @@ explicitamente pendente; nao e sucesso nem motivo para abandonar outras frentes.
 
 ### 0.4 Matriz unica de execucao
 
-Atualização em **05/09/2026 às 18:23:58 (America/Maceio, UTC−3)**: API Suite,
-backend administrativo e PIX/painel implantados e verificados no destino real.
-As migrations 022–025 estão aplicadas e a integração ES/rede está habilitada.
-A homologação com a chave CNG existente no PC Windows continua pendente; o
-operador já dispõe do 1.1.1 e recebeu a orientação de repetir a abertura.
+Atualização em **05/09/2026 às 20:02:29 (America/Maceio, UTC−3)**: API Suite
+atualizada para `efaf1d3` e reabertura verificada no endereço público. Admin/PIX
+permanecem no release `34e31f2`, sem reinício. Schema 025 e configuração preservados.
+O EXE 1.1.2 já instalado no PC deve ser usado para o retorno após esta implantação.
 
 | Frente | Estado verificado | Evidência |
 | --- | --- | --- |
-| Rotas/licenciamento compartilhado | Implementado, testado e implantado | Servidor `34e31f26b6a864a7aa5d701b94fe29ad166e86ac`; cliente `ada45558611bdd98ca0a5ed9053fdd97ff85a067`; cabeçalho estrito, quatro Kind, conflito assinado sem autorização, anti-replay e anti-downgrade |
-| Correção de reabertura como a Suite (decisão posterior) | Commit `efaf1d3`, **CI integral aprovada; não implantado** | CI `33994510188`, artifact `9977821782`; substituição validada, negação de heartbeat antigo, replay/CAS/A-B, banco e painel aprovados. Teste real de fechar/reabrir pendente; preservar o registro histórico de produção |
+| Rotas/licenciamento compartilhado | Implementado, testado e implantado | API `efaf1d3`; cliente 1.1.2 `187b726`; cabeçalho estrito, quatro Kind, nova abertura validada substitui somente ES anterior, anti-replay e separação dos contratos |
+| Correção de reabertura como a Suite | **API implantada e verificação real aprovada** | CI `33994510188`, artifact `9977821782`, novo PID `311756`; abertura `ACTIVE`, heartbeat antigo negado e isolamento comprovados. Retorno de fechar/reabrir no PC Windows ainda pendente |
 | Titularidade, painel e encerramento | Testes funcionais/Chromium aprovados; backend real verificado | Suite/ES aparecem separadamente; permissões/CSRF/step-up/CAS; revogação exata e idempotente, desafio pendente invalidado e nova prova de heartbeat negada; Suite e cliente B preservados |
 | MAC/IP | Implantado e verificado pelo proxy público | Relatórios assinados, AES-GCM com chave existente, IP observado na borda e mascarado no painel, X-Forwarded-For forjado ignorado; oito interfaces e retenção de 30 dias |
 | Capacidade | 500/1000 sessões medidas; variabilidade de CI registrada abaixo | 114000 HTTP 200 na segunda tentativa da CI e 114000 no ensaio local do mesmo código; primeira tentativa teve 1284 timeouts no soak. Não há SLA de 400 req/s nem homologação de carga no host público |
 | Cliente e distribuição | Candidato **1.1.2 aprovado na CI**; release geral pendente | Commit `187b726`, CI `33994557511`, artifact `9977794150`; contrato, encerramento, ponte nativa, preservação e pacote passaram. A CI anterior `33994292849` foi cancelada automaticamente pelo último ajuste. O 1.1.1 permanece como evidência histórica |
-| Servidor e homologação | **Servidor implantado; Windows real pendente** | Release `es-suite-34e31f2-20260905`, schema 025, três serviços saudáveis, provas reais em loopback/HTTPS e rollback exercitado; [execução no PC](HANDOFF-PC-PRODUCAO-ES-20260905.md) |
+| Servidor e homologação | **API `efaf1d3` implantada; Windows real pendente** | Release `es-reopen-efaf1d3-20260905`, schema 025, admin/PIX preservados; rollback específico da API preparado; [execução no PC](HANDOFF-PC-PRODUCAO-ES-20260905.md) |
 
-**Código e artefatos efetivos.** O commit servidor `34e31f2` incorpora os reparos
+**Registro histórico da implantação inicial `34e31f2`.** Os blocos seguintes
+conservam os artefatos, medições e ocorrências daquela implantação. Não são
+resultados novos do `efaf1d3`; o estado atual está na matriz e no relatório acima.
+
+**Código e artefatos da base preservada.** O commit servidor `34e31f2` incorpora os reparos
 de produção `bf4646e`, `050a95a` e `33130d9` da branch Suite/vendas: aviso WhatsApp
 na abertura, idempotência por sessão e resolução da compra pública. O consumo
 exato do desafio e a regressão que proíbe aviso por heartbeat foram preservados.
@@ -281,9 +329,9 @@ os binários de CI em um novo diretório, sem sobrescrever esse checkout.
 - [CI Windows 1.1.1 33989089244 — sucesso](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33989089244).
 - [Artifact servidor 9976783059](https://github.com/luziellacerda/Servidor-pix/actions/runs/33989933344/artifacts/9976783059), 2861977 bytes, ZIP SHA-256 `1a299b048ccf654ca673f2c0ba3e123e0b5587073476938b05aade3c98d769e1`.
 - Pacote servidor: API, admin, PIX/painel, migrations 001–025, documentação, evidências e 58 hashes internos conferidos. `COMMIT.txt` corresponde a `34e31f26b6a864a7aa5d701b94fe29ad166e86ac`. ES desabilitado por padrão no pacote e habilitado explicitamente no destino.
-- [Artifact Windows 9976171533](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33989089244/artifacts/9976171533), ZIP externo SHA-256 `6d690fe76d00bb7f5e432e002077abcb6028850f512e85efcd2edaeb4ec70246`. Os três arquivos internos, seus hashes e a instalação estão no [handoff solicitado para o PC](HANDOFF-PC-PRODUCAO-ES-20260905.md#pacote-exato-para-o-pc).
+- [Artifact Windows 9976171533](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33989089244/artifacts/9976171533), ZIP externo SHA-256 `6d690fe76d00bb7f5e432e002077abcb6028850f512e85efcd2edaeb4ec70246`. Os arquivos da versão 1.1.1 estão identificados no [handoff histórico de 18:23](https://github.com/luziellacerda/Servidor-pix/blob/58a648a3d0ee7c57acec57c60a4115c7e4028647/docs/suite/HANDOFF-PC-PRODUCAO-ES-20260905.md#pacote-exato-para-o-pc).
 
-**Carga do código implantado — CI, tentativa 2.** .NET 8.0.30, dois processadores
+**Carga histórica do código `34e31f2` — CI, tentativa 2.** .NET 8.0.30, dois processadores
 lógicos, API e gerador no mesmo processo, PostgreSQL real, NAT único, RSA máquina
 2048 e autoridade 3072 bits. As 500 e 1000 sessões abriram; a tabela conta as
 requisições das fases medidas, sem incluir as aberturas.
@@ -341,7 +389,7 @@ não atestam capacidade do destino. Os resultados históricos `cbdcda9`/cliente
 e nos arquivos históricos `outputs/es-evidencias-cbdcda9.zip`; foram substituídos
 pelos candidatos acima, sem reaproveitar suas medições como se fossem novas.
 
-**Implantação efetiva e preservação do ambiente.** A autenticação nativa `pkexec`
+**Implantação inicial `34e31f2` e preservação do ambiente (histórico).** A autenticação nativa `pkexec`
 superou o bloqueio inicial de privilégios. Backup PostgreSQL consistente, catálogo
 de restauração, configuração protegida e estado PIX foram conferidos antes de
 cada troca. As migrations 022–025 foram aplicadas uma vez, às 18:02:39 UTC−3;
@@ -396,11 +444,9 @@ ajustes alterou o pacote do servidor ou enfraqueceu o contrato de autorização.
 
 Backup final protegido, acessível somente no host por root:
 `/var/backups/turborama-suite/es-suite-34e31f2-20260905T212345Z`.
-Reversão operacional preparada:
-
-```bash
-pkexec /var/backups/turborama-suite/es-suite-34e31f2-20260905T212345Z/rollback.sh
-```
+Reversão histórica dos três componentes conservada no backup original.
+**Não usar esse rollback para a correção de reabertura.** O comando específico
+da API está no resultado atual, no início deste arquivo.
 
 A reversão remove somente os três drop-ins desta entrega, restaura os executáveis
 anteriores e conserva schema/auditoria. Não executar down migrations para reverter
@@ -409,16 +455,13 @@ binários. Scripts utilizados: `ops/production/deploy-es-suite-20260905.py` e
 [Registro verificável da implantação e pós-verificação](evidence/es-deployment-20260905.json).
 Backups, ambiente e chaves privadas não integram Git nem os artefatos exportáveis.
 
-**Pendência de Windows real.** A UI `LicenseAccessView.cs` e
-`AccessFailurePresentation.cs` foi publicada em `ada4555` e está incorporada ao
-candidato 1.1.1; o trabalho de interface foi preservado. O operador relatou
-“o servidor não retornou uma confirmação válida” antes da implantação. Esse
-texto indica resposta/assinatura/contrato não confirmados e não demonstra
-revogação de licença. Foi solicitada nova abertura do mesmo EXE/ativação, seguida
-de coexistência, heartbeat, revogação pelo painel, áudio/jogos/memória e rede.
-O [handoff para o PC](HANDOFF-PC-PRODUCAO-ES-20260905.md) foi solicitado expressamente
-pelo operador e publicado nesta mesma entrega. Homologação CNG/Windows e release
-geral permanecem pendentes até obter e avaliar o resultado real.
+**Histórico do PC antes desta correção.** A UI 1.1.1 e o primeiro erro de
+confirmação do servidor foram registrados na implantação inicial. O retorno
+posterior confirmou o EXE **1.1.2** correto e o aviso de sessão já existente;
+a API ainda era `34e31f2`. Agora a API `efaf1d3` está verificada e foi solicitada
+nova execução com esse mesmo EXE, conforme o [handoff para o PC](HANDOFF-PC-PRODUCAO-ES-20260905.md).
+Homologação de reabertura/CNG no Windows e release geral continuam pendentes do
+resultado real pós-implantação.
 
 ### 0.5 Responsabilidade pelo cliente e pela compilacao
 

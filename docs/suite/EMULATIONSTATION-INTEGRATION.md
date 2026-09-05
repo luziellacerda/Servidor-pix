@@ -1,23 +1,22 @@
-# EmulationStation Suite 1.1.0 — contrato, operação e validação
+# EmulationStation Suite — contrato v1, operação e validação
 
 A edição Suite reutiliza o TS e a chave CNG já ativados na mesma conta Windows.
 Suite e ES têm sessões e desafios independentes. Não há ativação adicional,
 chave nova, licença offline ou autorização por cache, MAC, IP ou cadastro comercial.
 A ordem e a matriz de execução ficam no [handoff vigente](HANDOFF-EMULATIONSTATION-ROTAS-COMPARTILHADAS-20260905.md).
 
-**Correção local de 05/09/2026, ainda não implantada:** por decisão expressa do
-usuário, reabrir o ES deve seguir a política da Suite: validar novamente e
-substituir somente a sessão ES anterior da mesma licença/dispositivo. O release
-de produção `34e31f2` ainda corresponde à política anterior de conflito; não
-atribuir a ele a correção descrita abaixo. Build/testes locais de contrato
-passaram; HTTP/PostgreSQL e homologação da reabertura real ainda estão pendentes.
+**Política de reabertura:** por decisão do usuário, o ES valida novamente e
+substitui somente sua sessão anterior na mesma licença/dispositivo, como a Suite.
+A API `efaf1d3` foi implantada e verificada em 05/09/2026 às 20:02 UTC−3;
+admin/PIX permanecem em `34e31f2`. O estado da homologação Windows e as evidências
+ficam na matriz vigente. O release anterior da API tinha a política de conflito.
 
 ## Rotas e assinatura
 
 | Cliente | Desafio | Prova | Cabeçalho |
 | --- | --- | --- | --- |
 | Suite existente | `/v1/suite/challenges` | `/v1/suite/sessions` | ausente |
-| ES 1.1.0 | mesmos caminhos Suite | mesmos caminhos Suite | exatamente `X-TurboRama-Client: EMULATIONSTATION` |
+| ES compartilhado 1.1.x | mesmos caminhos Suite | mesmos caminhos Suite | exatamente `X-TurboRama-Client: EMULATIONSTATION` |
 | ES dedicado 1.0.1 | `/v1/suite/emulationstation/challenges` | `/v1/suite/emulationstation/sessions` | ausente |
 
 Cabeçalho vazio, repetido, CSV, desconhecido, com outra capitalização no valor,
@@ -37,7 +36,7 @@ A migration 023 acrescenta `client_contract` aos desafios ES. O padrão
 nova pelo caminho dedicado. A escolha desse namespace não depende da política
 de ocupação; os quatro Kind ES e os contratos v1 continuam iguais.
 
-Na correção local, uma nova abertura compartilhada verifica prova CNG, vínculo,
+Uma nova abertura compartilhada verifica prova CNG, vínculo,
 licença, elegibilidade comercial e geração de revogação, consome seu desafio de
 uso único e substitui atomicamente a sessão ES da mesma licença/dispositivo.
 Responde com a assertion ES `ACTIVE` normal, sem nova ativação e sem exigir que
@@ -188,21 +187,22 @@ Não criar outra autoridade/chave CNG nem copiar material privado para o pacote.
 `ops/production/deploy-es-suite-20260905.py` continua fixado no artifact, SHA-256,
 commit, diretório de release, CI e baseline anteriores de `34e31f2`; a guarda de
 entrada agora bloqueia esse plano antes de acessar o host ou gravar relatórios.
-Não há novo artifact/hash de produção inventado neste checkout. Após a CI,
-o operador autorizado precisa conferir o novo `COMMIT.txt` e `SHA256SUMS.txt`,
-registrar artifact/CI/hashes efetivos na matriz e revisar conjuntamente os pins,
-binários/drop-ins atuais, backup e rollback do plano. Não basta alterar somente
-`COMMIT` nem remover a guarda para executar `--apply` com o ZIP antigo. Esta
-correção não acrescenta migration; preservar o schema 025 e a configuração atual.
+A implantação executada usou o plano independente
+`ops/production/deploy-es-reopening-20260905.py`, com artifact `9977821782`,
+commit `efaf1d3`, manifesto verificado e baseline real `34e31f2`. Preparou o
+release completo antes de reiniciar apenas a API, preservando os processos
+admin/PIX e as configurações. O rollback preparado remove somente o novo drop-in
+da API. Não basta alterar `COMMIT` ou remover a guarda do plano antigo. Esta
+correção não acrescenta migration; schema 025 e configuração foram preservados.
 
 O smoke em `ops/production/es-smoke/Program.cs` foi alinhado à nova reabertura:
 open válido substitui apenas o ES anterior; heartbeat antigo e replay falham;
 Suite, cliente B, anti-downgrade, revogação exata, rede e marcadores de zero
-notificação de cliente continuam verificados. Build local net8.0 passou sem
-executar `--production-smoke` nem `--tls-only`. Na implantação autorizada, compilar
-esse smoke com `ServerPackageDir` apontando para a pasta `server` do **mesmo novo
-artifact validado**, nunca para DLLs antigas; em seguida executar as verificações
-no host pelo fluxo revisado. O smoke atualizado reprova corretamente um servidor
+notificação de cliente continuam verificados. Foi compilado em net8.0 com
+`ServerPackageDir` apontando para a pasta `server` do **mesmo artifact validado**.
+A verificação TLS e o smoke completo passaram no host em 05/09/2026 às 20:02 UTC−3.
+O [novo relatório](https://github.com/luziellacerda/Servidor-pix/blob/codex/emulationstation-suite-v1-20260905/docs/suite/evidence/es-reopening-deployment-20260905.json) registra o resultado.
+O smoke atualizado reprova corretamente um servidor
 que ainda impõe conflito por ocupação, por isso não deve ser usado como prova de
 falha do release histórico durante um rollback. A evidência
 `docs/suite/evidence/es-deployment-20260905.json` permanece inalterada e identifica
@@ -215,7 +215,7 @@ de binários anteriores com o schema atualizado. Rollback restaura binários e
 configuração anteriores, desabilita as novas flags e conserva tabelas/índices e
 auditoria; não exige apagar dados novos ou reverter o schema em funcionamento.
 
-A implantação do servidor `34e31f2` foi concluída em 05/09/2026 às 18:23:58 UTC−3,
+A implantação inicial do servidor `34e31f2` foi concluída em 05/09/2026 às 18:23:58 UTC−3,
 com autenticação nativa do operador, schema 025 e os três componentes saudáveis.
 A verificação no endereço público confirmou as assinaturas, coexistência Suite/ES,
 rede mascarada e revogação exata; o proxy existente foi preservado. O bloqueio

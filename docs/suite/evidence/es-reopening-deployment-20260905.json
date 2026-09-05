@@ -1,0 +1,221 @@
+{
+  "deployment": {
+    "runtime_commit": "efaf1d3cd3dfd2a807e9d5a0e7295328ff081c4a",
+    "artifact_id": 9977821782,
+    "ci_run": 33994510188,
+    "artifact_sha256": "ab017ad8313fc0c50e702c4d6aa7ae7f8348276376a8ea850f04a19ac0c1cf86",
+    "release": "/opt/turborama-suite-r5-releases/es-reopen-efaf1d3-20260905",
+    "scope": "API only; no migrations; no admin/PIX restart",
+    "status": "deployed",
+    "stages": [
+      {
+        "stage": "baseline-authority-tls-and-schema-verified",
+        "utc": "2026-09-05T23:02:19.175640+00:00"
+      },
+      {
+        "stage": "api-release-backup-and-rollback-ready",
+        "utc": "2026-09-05T23:02:19.258473+00:00",
+        "manifest_files_verified": 58
+      },
+      {
+        "stage": "new-api-healthy-other-processes-unchanged",
+        "utc": "2026-09-05T23:02:21.574688+00:00"
+      },
+      {
+        "stage": "origin-and-public-routes-verified",
+        "utc": "2026-09-05T23:02:22.334115+00:00"
+      },
+      {
+        "stage": "api-only-deployment-and-reopening-verified",
+        "utc": "2026-09-05T23:02:29.551836+00:00",
+        "other_service_pids_unchanged": true,
+        "protected_configuration_unchanged": true,
+        "migrations_applied": 0
+      }
+    ],
+    "before_api": {
+      "MainPID": "292260",
+      "ExecMainStartTimestamp": "Sat 2026-09-05 18:23:47 -03",
+      "WorkingDirectory": "/opt/turborama-suite-r5-releases/r5-916-presence-15s-20260902/api",
+      "User": "turborama-suite",
+      "Group": "turborama-suite",
+      "Id": "turborama-suite-api.service",
+      "ActiveState": "active",
+      "DropInPaths": "/etc/systemd/system/turborama-suite-api.service.d/content.conf /etc/systemd/system/turborama-suite-api.service.d/release.conf /etc/systemd/system/turborama-suite-api.service.d/whatsapp.conf /etc/systemd/system/turborama-suite-api.service.d/zz-r25-inventory.conf /etc/systemd/system/turborama-suite-api.service.d/zzzz-es-suite-20260905.conf",
+      "binary": "/opt/turborama-suite-r5-releases/es-suite-34e31f2-20260905/server/TurboRamaSuiteOnlineServer.dll",
+      "binary_sha256": "8a8a90c9a623c155dabeeb3ba88ef0c983964bd603aa3b0240dd1df5fee4c568"
+    },
+    "unchanged_services": {
+      "turborama-suite-admin.service": {
+        "MainPID": "292201",
+        "ExecMainStartTimestamp": "Sat 2026-09-05 18:23:46 -03",
+        "WorkingDirectory": "/opt/turborama-suite-r5-releases/r25-2-admin-reader-fix-20260902/admin",
+        "User": "turborama-suite-admin",
+        "Group": "turborama-suite-bff",
+        "Id": "turborama-suite-admin.service",
+        "ActiveState": "active",
+        "DropInPaths": "/etc/systemd/system/turborama-suite-admin.service.d/activation-pepper.conf /etc/systemd/system/turborama-suite-admin.service.d/commerce-socket-acl.conf /etc/systemd/system/turborama-suite-admin.service.d/content.conf /etc/systemd/system/turborama-suite-admin.service.d/release.conf /etc/systemd/system/turborama-suite-admin.service.d/zz-pepper-runtime.conf /etc/systemd/system/turborama-suite-admin.service.d/zz-r25-inventory.conf /etc/systemd/system/turborama-suite-admin.service.d/zzz-r25-2-admin-reader-fix.conf /etc/systemd/system/turborama-suite-admin.service.d/zzzz-es-suite-20260905.conf",
+        "binary": "/opt/turborama-suite-r5-releases/es-suite-34e31f2-20260905/admin-backend/TurboRamaSuiteAdminServer.dll",
+        "binary_sha256": "fdb7f4914218676fe5bfee7dd4b131bf9f0333a74a68389571e9f37107dfb1d3"
+      },
+      "turborama-pix.service": {
+        "MainPID": "292305",
+        "ExecMainStartTimestamp": "Sat 2026-09-05 18:23:49 -03",
+        "WorkingDirectory": "/opt/turborama-suite-r5-releases/r25-1-inventory-whatsapp-20260902/pix",
+        "User": "turborama-pix",
+        "Group": "turborama-pix",
+        "Id": "turborama-pix.service",
+        "ActiveState": "active",
+        "DropInPaths": "/etc/systemd/system/turborama-pix.service.d/release.conf /etc/systemd/system/turborama-pix.service.d/zz-r25-inventory.conf /etc/systemd/system/turborama-pix.service.d/zzzz-es-suite-20260905.conf",
+        "binary": "/opt/turborama-suite-r5-releases/es-suite-34e31f2-20260905/pix-admin/TurboRamaPixOnlineServer.dll",
+        "binary_sha256": "f84f3d288f94acb95d957b78e47c71f2903ef1edf5fd840f85deb5a67c4e0b06"
+      }
+    },
+    "schema_versions": [
+      "001_suite_foundation",
+      "002_lifetime_single_active_device",
+      "003_admin_otp_audit",
+      "004_suite_commerce_lifecycle",
+      "005_suite_commerce_permissions",
+      "006_suite_readiness_permissions",
+      "007_suite_device_transfer_permissions",
+      "008_suite_transfer_runtime_permissions",
+      "009_suite_commerce_provision_permissions",
+      "010_suite_content_catalog",
+      "011_suite_content_publish_integrity",
+      "012_suite_content_permissions",
+      "013_suite_content_management",
+      "014_suite_content_retention",
+      "015_suite_content_direct_metadata",
+      "016_suite_content_catalog_902",
+      "017_suite_commerce_session_permissions",
+      "018_suite_transfer_enrollment_lock",
+      "019_suite_admin_customer_activity",
+      "020_suite_device_inventory_r25",
+      "021_suite_inventory_challenge_session_history",
+      "022_suite_emulationstation_sessions",
+      "023_suite_es_contract_scope",
+      "024_suite_session_management_network",
+      "025_suite_challenge_text_lookup"
+    ],
+    "backup": "/var/backups/turborama-suite/es-reopen-efaf1d3-20260905T230219Z",
+    "configuration_backup_sha256": "d94f149dac3f35fb779563545e452eb8b5da63bdee8dfd79a38f248aee860f46",
+    "rollback_command": "pkexec /var/backups/turborama-suite/es-reopen-efaf1d3-20260905T230219Z/rollback-api.sh",
+    "operator_source_sha256": "77f7ce9ae595620fdb6d8a63e6316aae99388ea97c7b6689975b1d6d1c91fefb",
+    "smoke_source_sha256": {
+      "ops/production/es-smoke/Program.cs": "e0144dc28c5d77ca59323b70b69aa2b5f83a1c9a8e3746aad2eaf3cd39c36060",
+      "ops/production/es-smoke/EsProductionSmoke.csproj": "8b9b3d6ec7f8fca3a39b63aeca2f38eea2f709d1daa86e668bee601339453024",
+      "tests/TurboRamaSuiteEmulationStation.Tests/SharedIntegrationChecks.cs": "82f08f619bb074b44da78ab57a522c05fd917eea524aeb06b8907ca467738b36"
+    },
+    "after_api": {
+      "MainPID": "311756",
+      "ExecMainStartTimestamp": "Sat 2026-09-05 20:02:19 -03",
+      "WorkingDirectory": "/opt/turborama-suite-r5-releases/r5-916-presence-15s-20260902/api",
+      "User": "turborama-suite",
+      "Group": "turborama-suite",
+      "Id": "turborama-suite-api.service",
+      "ActiveState": "active",
+      "DropInPaths": "/etc/systemd/system/turborama-suite-api.service.d/content.conf /etc/systemd/system/turborama-suite-api.service.d/release.conf /etc/systemd/system/turborama-suite-api.service.d/whatsapp.conf /etc/systemd/system/turborama-suite-api.service.d/zz-r25-inventory.conf /etc/systemd/system/turborama-suite-api.service.d/zzzz-es-suite-20260905.conf /etc/systemd/system/turborama-suite-api.service.d/zzzzz-es-reopen-20260905.conf",
+      "binary": "/opt/turborama-suite-r5-releases/es-reopen-efaf1d3-20260905/server/TurboRamaSuiteOnlineServer.dll",
+      "binary_sha256": "e10bcf191c7b1c4b030427713b848a8e89af51517483d319b5979cd9ea7b07ef"
+    },
+    "smoke": {
+      "status": "passed",
+      "timeUtc": "2026-09-05T23:02:29.4221188+00:00",
+      "checks": [
+        "approved-tls-pin",
+        "approved-online-authority",
+        "original-suite-and-shared-es-origin-public-coexistence",
+        "signed-reopen-stale-heartbeat-replay-and-downgrade-denial",
+        "network-challenge-result-signatures-and-replay",
+        "admin-rows-mask-post-controls-exact-revoke-idempotency-and-isolation",
+        "dedicated-legacy-es-and-original-suite",
+        "zero-synthetic-customer-notifications-with-explicit-skip-markers"
+      ],
+      "syntheticIdentitiesRemoved": 2,
+      "customerNotifications": 0,
+      "syntheticNotificationSkipMarkersRemoved": 2,
+      "securityAuditRetained": true,
+      "windowsCngHomologated": false
+    },
+    "windows_reopening": "pending-same-installed-1.1.2"
+  },
+  "artifactVerification": {
+    "commit": "efaf1d3cd3dfd2a807e9d5a0e7295328ff081c4a",
+    "artifact_id": 9977821782,
+    "ci_run": 33994510188,
+    "artifact_sha256": "ab017ad8313fc0c50e702c4d6aa7ae7f8348276376a8ea850f04a19ac0c1cf86",
+    "files_verified": 58,
+    "api_dll_sha256": "e10bcf191c7b1c4b030427713b848a8e89af51517483d319b5979cd9ea7b07ef",
+    "server_files": {
+      "server/Npgsql.dll": "0c3042974ae128bc31227dadfce24543078e978c7620b84e43a99669fa964811",
+      "server/TurboRamaSuiteOnlineServer": "269d879833d69e20b11eb9898f03d2fc8c2ed13cb2bff686c475193acbfbd720",
+      "server/TurboRamaSuiteOnlineServer.deps.json": "932f6b430177e2d81691adc2638a441665127b4e64fffda3a1275b44e858b9db",
+      "server/TurboRamaSuiteOnlineServer.dll": "e10bcf191c7b1c4b030427713b848a8e89af51517483d319b5979cd9ea7b07ef",
+      "server/TurboRamaSuiteOnlineServer.pdb": "89a5a0a272595a46e5e160e46178888e36f19acf15a46dc7849c25673ac896e6",
+      "server/TurboRamaSuiteOnlineServer.runtimeconfig.json": "d016785efd2ef8792ac1fc0be3d3639fa334b5b3abe4e14fbeee530300e803e3",
+      "server/TurboRamaSuiteOnlineServer.staticwebassets.endpoints.json": "c1686417e8d5c31bba969f12b6f3d2b35e6609adb5ca42f212261a3a02771aac",
+      "server/appsettings.Development.example.json": "4a8f3766dc7e47a865c0c98fecc2ea3b33ce88ab6bb250e93ba1fa13c9f87877",
+      "server/appsettings.json": "182d30095e9728dab21f312d0c5e4e5a54edd2d448eb433849c30585ca791836",
+      "server/web.config": "a466ce3c7b1c7e0a375b94bc5879b0cab5c32fcc09dbd2854721ba444968bd2c"
+    }
+  },
+  "postflight": {
+    "utc": "2026-09-05T23:04:05.163525+00:00",
+    "units": {
+      "turborama-suite-api.service": {
+        "MainPID": "311756",
+        "NRestarts": "0",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "turborama-suite-admin.service": {
+        "MainPID": "292201",
+        "NRestarts": "0",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "turborama-pix.service": {
+        "MainPID": "292305",
+        "NRestarts": "0",
+        "ActiveState": "active",
+        "SubState": "running"
+      }
+    },
+    "http": [
+      {
+        "url": "http://127.0.0.1:5190/health",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:5190/ready",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:5190/ready/content",
+        "status": 200
+      },
+      {
+        "url": "https://app.lzgames.com.br/v1/suite/challenges",
+        "status": 400,
+        "code": "CLIENT_SCOPE_INVALID"
+      }
+    ]
+  },
+  "windows": {
+    "version": "1.1.2",
+    "commit": "187b72686888580e75c5edcef52f5c031601cf5b",
+    "exeSha256": "9feebb133fbf81ce9fe55e3bce7b4408ab7e1ca39958287fef62b106af7bbbab",
+    "state": "pending-same-installed-exe-reopening-after-api-deployment"
+  },
+  "historicalEvidence": {
+    "file": "es-deployment-20260905.json",
+    "sha256": "8dd50aa445e7a531d538176aa940d989b0352345d0b8cb93e2081192ab462b0b",
+    "unchanged": true
+  },
+  "rollback": {
+    "scope": "only the added API drop-in; restores 34e31f2 API",
+    "prepared": true,
+    "executed": false
+  }
+}

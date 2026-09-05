@@ -19,9 +19,9 @@ before increasing production concurrency.
 - `CLIENT_SCOPE_INVALID` (400): cabeçalho ES inválido, repetido ou fora de rota/método.
 - `EMULATIONSTATION_DISABLED` (503): extensão desabilitada, sem fallback Suite.
 - `CONFLICT` na assertion ES assinada (HTTP 200) descreve a política anterior do
-  release implantado `34e31f2`: sessão anterior vigente, validade vazia e nenhuma
+  release anterior `34e31f2`: sessão anterior vigente, validade vazia e nenhuma
   autorização; cliente apresenta `ES_SESSION_CONFLICT` (409 local). A correção
-  local de 05/09/2026, ainda não implantada, passa a substituir a sessão ES por
+  `efaf1d3`, implantada em 05/09/2026, substitui a sessão ES por
   nova abertura validada, como a Suite, e não emite conflito por mera ocupação.
   Heartbeat do identificador anterior recebe `SESSION_INVALID`; o cliente continua
   obrigado a negar qualquer resposta sem autorização válida, inclusive do servidor antigo.
