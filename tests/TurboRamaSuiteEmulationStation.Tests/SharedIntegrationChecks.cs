@@ -19,6 +19,8 @@ internal static class SharedIntegrationChecks
             "The default licensing pool must reserve database capacity for other services.");
         Check(new NpgsqlConnectionStringBuilder(SuiteDatabasePoolPolicy.ApplyDefaults("Host=localhost;Maximum Pool Size=16")).MaxPoolSize==16,
             "Explicit operator connection budgets must be preserved.");
+        Check(new NpgsqlConnectionStringBuilder(SuiteDatabasePoolPolicy.ApplyDefaults("Host=localhost;Minimum Pool Size=40")).MaxPoolSize==40,
+            "Defaults must not invalidate an existing explicit minimum pool size.");
         await using var db = NpgsqlDataSource.Create(connection);
         using var online = RSA.Create(2048);
         using var signer = new RsaAssertionSigner(online);

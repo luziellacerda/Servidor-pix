@@ -15,7 +15,7 @@ public static class SuiteDatabasePoolPolicy
         var explicitMaximum=supplied.Keys.Cast<string>().Any(key=>
             key.Replace(" ","",StringComparison.Ordinal).Equals("MaxPoolSize",StringComparison.OrdinalIgnoreCase)||
             key.Replace(" ","",StringComparison.Ordinal).Equals("MaximumPoolSize",StringComparison.OrdinalIgnoreCase));
-        if(!explicitMaximum)settings.MaxPoolSize=DefaultMaximumConnections;
+        if(!explicitMaximum)settings.MaxPoolSize=Math.Max(DefaultMaximumConnections,settings.MinPoolSize);
         return settings.ConnectionString;
     }
 }
