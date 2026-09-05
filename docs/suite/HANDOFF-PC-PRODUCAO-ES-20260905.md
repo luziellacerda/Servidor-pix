@@ -9,20 +9,25 @@ Windows; a matriz de entrega continua no
 Validar o EmulationStation 1.1.1 no PC que já possui a Suite ativada, na mesma conta
 Windows, com as duas aplicações autorizadas simultaneamente e sessões separadas.
 
-**Estado provisório: aguardar a confirmação da implantação antes de abrir o novo
-cliente.** O servidor está passando pela validação final do commit
-`34e31f26b6a864a7aa5d701b94fe29ad166e86ac`, que incorpora também as correções de
-WhatsApp já utilizadas em produção. O artefato anterior `cbdcda9` foi substituído
-como candidato à implantação. O pacote Windows abaixo permanece válido.
+**Servidor implantado e verificado em 05/09/2026 às 18:23:58 (America/Maceio,
+UTC−3). Pode repetir agora a abertura do cliente 1.1.1 com a ativação existente.**
+API Suite, backend administrativo e PIX/painel executam o commit
+`34e31f26b6a864a7aa5d701b94fe29ad166e86ac`. Migrations 022–025 aplicadas; integração
+ES/rede habilitada. Provas reais de abertura, heartbeat, conflito, revogação
+isolada e coexistência passaram em loopback e no endereço público. Esses testes
+usaram identidades sintéticas; a chave CNG deste PC ainda precisa ser homologada.
+O pacote `cbdcda9` foi substituído. As correções WhatsApp já usadas em produção
+estão preservadas no commit implantado.
 
 Destino autorizado: `https://app.lzgames.com.br/`.
+[Abrir painel administrativo existente](https://painelpix.lzgames.com.br/admin).
 O operador relatou no PC a mensagem **“O servidor não retornou uma confirmação
 válida para o EmulationStation. A integração precisa ser verificada; isso não
 significa que sua licença foi desativada.”** O código `ServerUnconfirmed` da tela
 1.1.1 cobre resposta/assinatura/contrato não confirmados; o texto não atesta
 revogação da licença. Na observação inicial, a API ainda executava o release
-anterior às rotas compartilhadas. Repetir o teste após a implantação confirmada,
-sem refazer a ativação.
+anterior às rotas compartilhadas. A implantação agora está confirmada; repetir
+o teste sem refazer a ativação. A causa no PC só pode ser confirmada pelo retorno.
 
 CI final do servidor: https://github.com/luziellacerda/Servidor-pix/actions/runs/33989933344
 
@@ -52,7 +57,7 @@ O artifact completo tem aproximadamente 2,5 GB; a atualização interna tem
 depende do resultado no PC real.
 
 O operador já está usando o 1.1.1. Se o hash do EXE instalado coincidir com o
-acima, manter esse binário e passar aos testes após a confirmação do servidor.
+acima, manter esse binário e passar aos testes com o servidor já confirmado.
 A mensagem relatada está registrada neste handoff para repetir exatamente o caso.
 
 ## Execução no Windows

@@ -1,0 +1,211 @@
+{
+  "serverDeployment": {
+    "commit": "34e31f26b6a864a7aa5d701b94fe29ad166e86ac",
+    "artifact_sha256": "1a299b048ccf654ca673f2c0ba3e123e0b5587073476938b05aade3c98d769e1",
+    "release": "/opt/turborama-suite-r5-releases/es-suite-34e31f2-20260905",
+    "stages": [
+      {
+        "stage": "preconditions-passed",
+        "time_utc": "2026-09-05T21:23:45.650712+00:00",
+        "existing_inventory_decryptable": true,
+        "approved_authority_and_tls": true
+      },
+      {
+        "stage": "backup-and-rollback-ready",
+        "time_utc": "2026-09-05T21:23:46.128262+00:00",
+        "backup_verified": true
+      },
+      {
+        "stage": "reviewed-migration-preserved",
+        "time_utc": "2026-09-05T21:23:46.129560+00:00",
+        "version": "022_suite_emulationstation_sessions"
+      },
+      {
+        "stage": "reviewed-migration-preserved",
+        "time_utc": "2026-09-05T21:23:46.130645+00:00",
+        "version": "023_suite_es_contract_scope"
+      },
+      {
+        "stage": "reviewed-migration-preserved",
+        "time_utc": "2026-09-05T21:23:46.131476+00:00",
+        "version": "024_suite_session_management_network"
+      },
+      {
+        "stage": "reviewed-migration-preserved",
+        "time_utc": "2026-09-05T21:23:46.132481+00:00",
+        "version": "025_suite_challenge_text_lookup"
+      },
+      {
+        "stage": "component-healthy",
+        "time_utc": "2026-09-05T21:23:47.538093+00:00",
+        "unit": "turborama-suite-admin.service",
+        "binary_sha256": "fdb7f4914218676fe5bfee7dd4b131bf9f0333a74a68389571e9f37107dfb1d3"
+      },
+      {
+        "stage": "component-healthy",
+        "time_utc": "2026-09-05T21:23:49.276415+00:00",
+        "unit": "turborama-suite-api.service",
+        "binary_sha256": "8a8a90c9a623c155dabeeb3ba88ef0c983964bd603aa3b0240dd1df5fee4c568"
+      },
+      {
+        "stage": "component-healthy",
+        "time_utc": "2026-09-05T21:23:50.527686+00:00",
+        "unit": "turborama-pix.service",
+        "binary_sha256": "f84f3d288f94acb95d957b78e47c71f2903ef1edf5fd840f85deb5a67c4e0b06"
+      },
+      {
+        "stage": "origin-and-public-routes-verified",
+        "time_utc": "2026-09-05T21:23:51.756873+00:00",
+        "proxy_changed": false
+      },
+      {
+        "stage": "production-cryptographic-smoke-passed",
+        "time_utc": "2026-09-05T21:23:58.698872+00:00"
+      },
+      {
+        "stage": "deployment-complete",
+        "time_utc": "2026-09-05T21:23:58.732766+00:00",
+        "windows_homologation": "pending"
+      }
+    ],
+    "status": "deployed",
+    "ci_run": 33989933344,
+    "ci_attempt": 2,
+    "previous_attempt_backup": "/var/backups/turborama-suite/es-suite-34e31f2-20260905T210238Z",
+    "admin_url": "https://painelpix.lzgames.com.br/admin",
+    "backup": "/var/backups/turborama-suite/es-suite-34e31f2-20260905T212345Z",
+    "backup_sha256": {
+      "suite-before.dump": "702b8537a29d3a5a0b20b9e4e8bf61cfab74d01d95c30ad241737d8da13863db",
+      "configuration-and-pix-state.tar.gz": "7088f4020af8d623ca39b5989a59eb679bc544ab405bbbb9af051f1778b1fbdb"
+    },
+    "rollback_command": "pkexec /var/backups/turborama-suite/es-suite-34e31f2-20260905T212345Z/rollback.sh",
+    "migrations_applied": [],
+    "migrations_already_present": [
+      {
+        "version": "022_suite_emulationstation_sessions",
+        "sha256": "34fa107e92cfaba376507766c27376c9d5e195f622deb1488e1f919558099738"
+      },
+      {
+        "version": "023_suite_es_contract_scope",
+        "sha256": "a354db2a2715535a8a9f47d52b47213d0d08a248e1a81274e459a7c34e74a9a7"
+      },
+      {
+        "version": "024_suite_session_management_network",
+        "sha256": "dae7b4e5dda3d24c6cf5cf15454d4fa56ef5d6a4285e556a92120cf2ca740403"
+      },
+      {
+        "version": "025_suite_challenge_text_lookup",
+        "sha256": "6560a68a4d7046d820b413acc14ddab844c9c6bad6e89142606a4474a3dc65c9"
+      }
+    ],
+    "smoke": {
+      "status": "passed",
+      "timeUtc": "2026-09-05T21:23:58.6614206+00:00",
+      "checks": [
+        "approved-tls-pin",
+        "approved-online-authority",
+        "original-suite-and-shared-es-origin-public-coexistence",
+        "signed-conflict-replay-and-downgrade-denial",
+        "network-challenge-result-signatures-and-replay",
+        "admin-rows-mask-post-controls-exact-revoke-idempotency-and-isolation",
+        "dedicated-legacy-es-and-original-suite",
+        "zero-synthetic-customer-notifications-with-explicit-skip-markers"
+      ],
+      "syntheticIdentitiesRemoved": 2,
+      "customerNotifications": 0,
+      "syntheticNotificationSkipMarkersRemoved": 2,
+      "securityAuditRetained": true,
+      "windowsCngHomologated": false
+    }
+  },
+  "postflight": {
+    "observedUtc": "2026-09-05T21:28:23.371465+00:00",
+    "probes": [
+      {
+        "url": "http://127.0.0.1:5190/health",
+        "status": 200,
+        "finalUrl": "http://127.0.0.1:5190/health"
+      },
+      {
+        "url": "http://127.0.0.1:5190/ready",
+        "status": 200,
+        "finalUrl": "http://127.0.0.1:5190/ready"
+      },
+      {
+        "url": "http://127.0.0.1:5190/ready/content",
+        "status": 200,
+        "finalUrl": "http://127.0.0.1:5190/ready/content"
+      },
+      {
+        "url": "http://127.0.0.1:5187/v1/health",
+        "status": 200,
+        "finalUrl": "http://127.0.0.1:5187/v1/health"
+      },
+      {
+        "url": "https://painelpix.lzgames.com.br/admin",
+        "status": 200,
+        "finalUrl": "https://lzgames.cloudflareaccess.com/cdn-cgi/access/login/painelpix.lzgames.com.br",
+        "observation": "Cloudflare Access login boundary; no production browser administrator login performed."
+      },
+      {
+        "url": "https://app.lzgames.com.br/v1/suite/challenges",
+        "status": 400,
+        "code": "CLIENT_SCOPE_INVALID"
+      }
+    ]
+  },
+  "clientCandidate": {
+    "commit": "ada45558611bdd98ca0a5ed9053fdd97ff85a067",
+    "ci": 33989089244,
+    "artifact_id": 9976171533,
+    "artifact_sha256": "6d690fe76d00bb7f5e432e002077abcb6028850f512e85efcd2edaeb4ec70246",
+    "files": [
+      {
+        "name": "Turborama-ES-Suite-v1.1.1-Atualizacao.zip",
+        "bytes": 831995160,
+        "sha256": "b1621e3e467650a1d808ea09003025d97672a6fa7b76e61a59a5014fc674bc00"
+      },
+      {
+        "name": "TurboramaEmulationStation-Suite-v1.1.1-Windows-x64.zip",
+        "bytes": 997713221,
+        "sha256": "259be5f6545e49428ce6f6fb4465f5bc060c5ff24f97cb37102233d5c28d13da"
+      },
+      {
+        "name": "emulationstation.exe",
+        "bytes": 905448960,
+        "sha256": "43dbd0402274d32da1dfd4ea6ffb60432b4d9fef07ccf9902ca9f498b4df33ee"
+      }
+    ]
+  },
+  "operatorFileSha256": {
+    "ops/production/deploy-es-suite-20260905.py": "32b71d15471ddbc382e372a7d30411dbccc0ec2f1dee4dc5f256b8e8435f95c5",
+    "ops/production/es-smoke/Program.cs": "0410147c17713d9e295d0714f40f7bcb358f030360f817351d13fd16207664e4",
+    "ops/production/es-smoke/EsProductionSmoke.csproj": "8b9b3d6ec7f8fca3a39b63aeca2f38eea2f709d1daa86e668bee601339453024"
+  },
+  "limitations": [
+    "Windows CNG and coexistence on the actual user PC remain pending.",
+    "The internal privileged admin check does not replace a real browser password/CSRF test.",
+    "CI 33989933344 attempt 1 failed with 1284 request timeouts; attempt 2 and the independent local load passed without changing the server code.",
+    "No production load SLA was established."
+  ],
+  "priorRollouts": [
+    {
+      "attempt": 1,
+      "status": "rolled-back",
+      "backup": "/var/backups/turborama-suite/es-suite-34e31f2-20260905T210238Z",
+      "reason": "Default Python probe User-Agent received public HTTP 403."
+    },
+    {
+      "attempt": 2,
+      "status": "rolled-back",
+      "backup": "/var/backups/turborama-suite/es-suite-34e31f2-20260905T210705Z",
+      "reason": "Operator check incorrectly treated challenge issuance as session renewal."
+    },
+    {
+      "attempt": 3,
+      "status": "rolled-back",
+      "backup": "/var/backups/turborama-suite/es-suite-34e31f2-20260905T212004Z",
+      "reason": "Operator fixture queued two non-deliverable synthetic notifications; records removed and final fixture reserves exact SKIPPED event keys."
+    }
+  ]
+}

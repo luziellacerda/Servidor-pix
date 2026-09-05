@@ -103,119 +103,171 @@ explicitamente pendente; nao e sucesso nem motivo para abandonar outras frentes.
 
 ### 0.4 Matriz unica de execucao
 
-Atualização do executor em 2026-09-05: servidor, painel e cliente implementados;
-testes locais e CIs finais aprovados; candidatos do servidor e Windows baixados
-e hashes conferidos. Implantação e homologação no Windows real permanecem
-pendentes pelos bloqueios abaixo.
+Atualização em **05/09/2026 às 18:23:58 (America/Maceio, UTC−3)**: API Suite,
+backend administrativo e PIX/painel implantados e verificados no destino real.
+As migrations 022–025 estão aplicadas e a integração ES/rede está habilitada.
+A homologação com a chave CNG existente no PC Windows continua pendente; o
+operador já dispõe do 1.1.1 e recebeu a orientação de repetir a abertura.
 
 | Frente | Estado verificado | Evidência |
 | --- | --- | --- |
-| Rotas/licenciamento compartilhado | Implementado; HTTP/PostgreSQL e assinaturas passaram | Servidor `cbdcda97bab360c4c248da0959f53ff782edcacf`; cliente `18b464a34ab9fffe2f222776b248164e4a6f6159`; cabeçalho estrito, quatro Kind, conflito assinado sem autorização, anti-replay, Suite sem cabeçalho e legado dedicado |
-| Titularidade, painel e encerramento | Implementado no painel existente; testes funcionais e navegador aprovados | Papéis PostgreSQL restritos; token/claims/CSRF/step-up/CAS/replay/A-B; páginas HTTPS em Chromium a 1440×1000 e 390×844, filtros, paginação, confirmação preservada, XSS, rótulos Suite/ES e revogação do alvo exato |
-| MAC/IP no servidor e cliente | Implementado e testado | Contrato idêntico nos repositórios (SHA-256 `54855f4a2a4fc5573da6dc8f75f8ad1f4a5802ab1de797829a851182107890a9`); provas, AES-GCM/tamper, proxy não confiável ignorado, IPv6 encaminhado por proxy confiável, máscaras, limite de oito interfaces, retenção e relatório mascarado no painel |
-| Capacidade e isolamento | CI 500/1000: 114 mil requisições sem erros; local 1000: 100 mil sem erros | NAT único, duas aplicações por computador, abertura, heartbeat, rajada, reconexão e soak; consumo pelo desafio exato, pools padrão API 8/admin 8 e retries limitados ao timeout HTTP |
-| Cliente e artefatos GitHub | Candidatos cliente 1.1.0 e servidor gerados; hashes conferidos | [CI Windows 33982373836 — sucesso](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33982373836); [CI servidor 33987322471 — sucesso](https://github.com/luziellacerda/Servidor-pix/actions/runs/33987322471); [regressão geral servidor 33987322497 — sucesso](https://github.com/luziellacerda/Servidor-pix/actions/runs/33987322497) |
-| Implantação e homologação | Bloqueadas; nenhum componente implantado por esta execução | Serviço efetivo continua em `r25-7-whatsapp-session-open-20260903`; diretórios de release e drop-in systemd não graváveis; sudo exige senha; executor permitido sem namespace disponível; PC Windows com ativação existente não disponível |
+| Rotas/licenciamento compartilhado | Implementado, testado e implantado | Servidor `34e31f26b6a864a7aa5d701b94fe29ad166e86ac`; cliente `ada45558611bdd98ca0a5ed9053fdd97ff85a067`; cabeçalho estrito, quatro Kind, conflito assinado sem autorização, anti-replay e anti-downgrade |
+| Titularidade, painel e encerramento | Testes funcionais/Chromium aprovados; backend real verificado | Suite/ES aparecem separadamente; permissões/CSRF/step-up/CAS; revogação exata e idempotente, desafio pendente invalidado e nova prova de heartbeat negada; Suite e cliente B preservados |
+| MAC/IP | Implantado e verificado pelo proxy público | Relatórios assinados, AES-GCM com chave existente, IP observado na borda e mascarado no painel, X-Forwarded-For forjado ignorado; oito interfaces e retenção de 30 dias |
+| Capacidade | 500/1000 sessões medidas; variabilidade de CI registrada abaixo | 114000 HTTP 200 na segunda tentativa da CI e 114000 no ensaio local do mesmo código; primeira tentativa teve 1284 timeouts no soak. Não há SLA de 400 req/s nem homologação de carga no host público |
+| Cliente e distribuição | Candidato Windows **1.1.1** conferido; release geral pendente | Commit `ada4555`, CI `33989089244`, artifact `9976171533`; EXE e dois ZIPs com hashes verificados; interface publicada preservada |
+| Servidor e homologação | **Servidor implantado; Windows real pendente** | Release `es-suite-34e31f2-20260905`, schema 025, três serviços saudáveis, provas reais em loopback/HTTPS e rollback exercitado; [execução no PC](HANDOFF-PC-PRODUCAO-ES-20260905.md) |
 
-**Carga local final do código `cbdcda9`.** 1000 sessões, 500 computadores sintéticos
-com Suite+ES, gerador e API no mesmo processo limitado a dois núcleos, .NET 8.0.30,
-PostgreSQL 16 limitado a 2 CPUs/1 GiB, RSA máquina 2048 e autoridade 3072 bits.
-Todas as 1000 aberturas passaram; a tabela conta as requisições das fases medidas.
+**Código e artefatos efetivos.** O commit servidor `34e31f2` incorpora os reparos
+de produção `bf4646e`, `050a95a` e `33130d9` da branch Suite/vendas: aviso WhatsApp
+na abertura, idempotência por sessão e resolução da compra pública. O consumo
+exato do desafio e a regressão que proíbe aviso por heartbeat foram preservados.
+O checkout original de produção permanece no commit `33130d9`; a implantação usa
+os binários de CI em um novo diretório, sem sobrescrever esse checkout.
 
-| Fase | Requisições | Duração (s) | Req/s | p50 (ms) | p95 (ms) | p99 (ms) | Erros |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Contínua | 24000 | 65,912 | 364,120 | 2147,246 | 3150,360 | 3298,590 | 0 |
-| Rajada | 2000 | 5,488 | 364,460 | 2309,600 | 2754,604 | 2775,163 | 0 |
-| Reconexão | 2000 | 5,348 | 373,990 | 2299,942 | 2647,136 | 2665,212 | 0 |
-| Soak | 72000 | 199,217 | 361,420 | 2388,265 | 3275,417 | 3616,826 | 0 |
+- [CI ES servidor 33989933344, tentativa 2 — sucesso](https://github.com/luziellacerda/Servidor-pix/actions/runs/33989933344).
+- [Regressão geral servidor 33989933336 — sucesso](https://github.com/luziellacerda/Servidor-pix/actions/runs/33989933336).
+- [CI Windows 1.1.1 33989089244 — sucesso](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33989089244).
+- [Artifact servidor 9976783059](https://github.com/luziellacerda/Servidor-pix/actions/runs/33989933344/artifacts/9976783059), 2861977 bytes, ZIP SHA-256 `1a299b048ccf654ca673f2c0ba3e123e0b5587073476938b05aade3c98d769e1`.
+- Pacote servidor: API, admin, PIX/painel, migrations 001–025, documentação, evidências e 58 hashes internos conferidos. `COMMIT.txt` corresponde a `34e31f26b6a864a7aa5d701b94fe29ad166e86ac`. ES desabilitado por padrão no pacote e habilitado explicitamente no destino.
+- [Artifact Windows 9976171533](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33989089244/artifacts/9976171533), ZIP externo SHA-256 `6d690fe76d00bb7f5e432e002077abcb6028850f512e85efcd2edaeb4ec70246`. Os três arquivos internos, seus hashes e a instalação estão no [handoff solicitado para o PC](HANDOFF-PC-PRODUCAO-ES-20260905.md#pacote-exato-para-o-pc).
 
-Resultado: 100000 respostas HTTP 200 e zero falhas de troca. O soak solicitado de
-180 segundos completou em 199,217 segundos, com 361,420 req/s: esse ambiente de
-dois núcleos não sustentou a estimativa de 400 req/s incluindo o gerador. Não
-alteramos o heartbeat nem a janela de autorização para melhorar a medição.
-Pico do processo gerador+API: 203 MiB de working set e 275 MiB privados; até oito
-conexões PostgreSQL ativas e três esperas por lock nas amostras. As 78 amostras do
-container PostgreSQL, após a abertura até o fim do soak, registraram pico de
-229 MiB e 154,91% de uma CPU (quota de duas CPUs). Esses resultados não incluem
-internet, proxy público, TLS ou CNG do computador real e não homologam produção.
+**Carga do código implantado — CI, tentativa 2.** .NET 8.0.30, dois processadores
+lógicos, API e gerador no mesmo processo, PostgreSQL real, NAT único, RSA máquina
+2048 e autoridade 3072 bits. As 500 e 1000 sessões abriram; a tabela conta as
+requisições das fases medidas, sem incluir as aberturas.
 
-Microbenchmark separado, sequencial em um núcleo, .NET/OpenSSL Linux, 500 operações
-por tamanho e mensagens sintéticas de 1024 bytes: RSA-PSS-SHA256 2048 teve p50 de
-assinatura/verificação de 0,7931/0,0344 ms; RSA 3072, 2,8081/0,0903 ms. Não mede
-CNG Windows. JSONs completos, fontes do microbenchmark, planos e logs estão nas
-evidências locais em `outputs/`.
-
-**Falhas encontradas e corrigidas.** As primeiras cargas expuseram comparações
-`text`/`char(64)` sem índice adequado (migration 025), saturação do pool padrão de
-100 conexões e conflitos SSI em bancos novos. O consumo Suite agora materializa
-pela chave primária e atualiza somente a linha travada (`Tid Scan`), evitando
-leituras pelo índice parcial de expiração; permanece serializável e atômico.
-As tentativas são limitadas a doze, com jitter e timeout HTTP de dez segundos.
-O workflow agora usa `pipefail`: a CI `33985422910` havia ocultado uma falha de
-carga ao gravar o log, e depois falhou pela ausência do relatório ao empacotar.
-Essas execuções não são contadas como validação final.
-
-**CI final e pacote servidor.** A execução `33987322471`, no commit
-`cbdcda97bab360c4c248da0959f53ff782edcacf`, aprovou todos os passos: regressões
-Suite/PIX/admin, protocolo/HTTP/PostgreSQL, painel Chromium, carga e empacotamento.
-As 500 e depois 1000 sessões abriram sem erros. Medição do runner Linux de dois
-núcleos, .NET 8.0.30, com gerador e API no mesmo processo:
-
-| Sessões | Fase | Requisições | Duração (s) | Req/s | p50 (ms) | p95 (ms) | p99 (ms) | Erros |
+| Sessões | Fase | HTTP 200 | Duração (s) | Req/s | p50 (ms) | p95 (ms) | p99 (ms) | Erros |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 500 | Contínua | 12000 | 69,254 | 173,270 | 2453,126 | 3308,538 | 3371,577 | 0 |
-| 500 | Rajada | 1000 | 5,632 | 177,550 | 2317,439 | 2826,897 | 2853,334 | 0 |
-| 500 | Reconexão | 1000 | 5,616 | 178,070 | 1868,224 | 2503,120 | 2545,566 | 0 |
-| 1000 | Contínua | 24000 | 137,186 | 174,950 | 5218,747 | 6715,791 | 6873,143 | 0 |
-| 1000 | Rajada | 2000 | 11,426 | 175,040 | 4870,184 | 5855,786 | 5903,459 | 0 |
-| 1000 | Reconexão | 2000 | 11,480 | 174,210 | 4929,345 | 5994,715 | 6079,335 | 0 |
-| 1000 | Soak | 72000 | 410,047 | 175,590 | 5336,995 | 6789,084 | 6972,944 | 0 |
+| 500 | Contínua | 12000 | 60,031 | 199,9 | 19,658 | 428,19 | 545,506 | 0 |
+| 500 | Rajada | 1000 | 4,893 | 204,36 | 2120,971 | 2448,2 | 2636,056 | 0 |
+| 500 | Reconexão | 1000 | 4,765 | 209,88 | 2059,716 | 2428,261 | 2449,138 | 0 |
+| 1000 | Contínua | 24000 | 113,773 | 210,95 | 4252,705 | 5562,308 | 5720,176 | 0 |
+| 1000 | Rajada | 2000 | 9,669 | 206,85 | 2930,727 | 4184,866 | 4233,639 | 0 |
+| 1000 | Reconexão | 2000 | 9,49 | 210,75 | 3308,595 | 4364,249 | 4526,615 | 0 |
+| 1000 | Soak | 72000 | 343,524 | 209,59 | 4349,698 | 5613,176 | 5780,642 | 0 |
 
-Total: 114000 respostas HTTP 200 e zero falhas. O runner sustentou aproximadamente
-175,59 req/s no soak e não atingiu a estimativa de 400 req/s para 1000 sessões.
-O conjunto de 36 renovações por sessão levou 410,047 s; o intervalo configurado
-continua cinco segundos, mas a execução ficou limitada pelo ambiente. Pico do
-processo: 214 MiB de working set e 665 MiB privados. Esses resultados comprovam
-funcionamento sob a carga medida, não um SLA de 400 req/s nem homologação do host
-público. Os limites de aceite do destino ainda dependem da medição nesse destino.
+Total 114000 HTTP 200, zero falhas nesta tentativa. Soak: 209,59 req/s e 343,524 s
+para 36 renovações por sessão; não sustentou 400 req/s. Pico global do processo:
+220 MiB de working set e 536 MiB privados. O heartbeat continua em cinco segundos;
+a execução pode atrasar quando o gerador/API satura os dois núcleos.
 
-[Artefato servidor 9975812219](https://github.com/luziellacerda/Servidor-pix/actions/runs/33987322471/artifacts/9975812219):
-API Suite, backend administrativo, PIX/painel, migrations 001–025, documentação,
-relatórios JSON e capturas do navegador. `COMMIT.txt` corresponde ao commit acima;
-os 58 hashes internos foram conferidos. ES permanece desabilitado por padrão.
-O artefato do GitHub está configurado para expirar em 2026-09-19; a cópia local foi
-conservada em `outputs/servidor-suite-emulationstation-cbdcda9.zip`.
+**Falha preservada da primeira tentativa do mesmo commit.** O run `33989933344`,
+tentativa 1, aprovou os testes funcionais, navegador, carga 500 e as primeiras
+fases 1000, mas falhou no soak com **1284 HTTP 504 `REQUEST_TIMEOUT`** (644 na
+emissão do desafio e 640 na conclusão da sessão). O diagnóstico foi conservado
+no artifact `9976527531` e em `outputs/es-deployment/failed-34e31f2-diagnostics/`.
+A segunda tentativa e o ensaio independente abaixo passaram com o mesmo código.
+Não foi demonstrada uma causa única desses timeouts nem uma correção específica;
+a falha não foi apagada do aceite de capacidade. Timeout, heartbeat, assinaturas
+e critérios de falha não foram relaxados para obter aprovação.
 
-- ZIP servidor SHA-256: `4ae70941c274ac9e7e3219e1482de09226467a373c7cea43933a9fec65243329`.
-- Manifesto `SHA256SUMS.txt` SHA-256: `88f978e67ef031e6cc4e7d0e0145d55d438f58707272908f2c25f1536354bbeb`.
+**Carga local independente do mesmo código `34e31f2`.** Banco sintético
+`es_continuation_ci` em PostgreSQL 16 descartável, limitado a 2 CPUs/1 GiB;
+API/gerador fixados em dois núcleos. Não foi usada a base de produção para carga.
 
-**Artefatos Windows conferidos.** Commit `18b464a34ab9fffe2f222776b248164e4a6f6159`,
-versão 1.1.0; [artefato 9974239120](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33982373836/artifacts/9974239120),
-com EXE, ZIP portátil e ZIP de atualização. A release para uso depende da
-compatibilidade do destino; nenhum candidato foi publicado como homologado.
+| Sessões | Fase | HTTP 200 | Duração (s) | Req/s | p50 (ms) | p95 (ms) | p99 (ms) | Erros |
+| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 500 | Contínua | 12000 | 60,007 | 199,98 | 9,504 | 14,736 | 22,1 | 0 |
+| 500 | Rajada | 1000 | 3,01 | 332,18 | 1373,948 | 1521,939 | 1671,575 | 0 |
+| 500 | Reconexão | 1000 | 2,951 | 338,87 | 1297,826 | 1484,348 | 1500,818 | 0 |
+| 1000 | Contínua | 24000 | 65,5 | 366,41 | 1796,568 | 3181,613 | 3390,733 | 0 |
+| 1000 | Rajada | 2000 | 5,551 | 360,27 | 2368,481 | 2795,643 | 2810,645 | 0 |
+| 1000 | Reconexão | 2000 | 5,372 | 372,3 | 2357,755 | 2759,168 | 2791,863 | 0 |
+| 1000 | Soak | 72000 | 194,353 | 370,46 | 2324,911 | 3145,552 | 3481,332 | 0 |
 
-- EXE: `2737a8a9fcd1dc28b0c7a4b77064b615c907235da3b8e16520d54fc9d505c117`.
-- ZIP portátil: `22b79688fe0592dc7a811dda96975ac90e1eaa6f3aee08866d5330f7867330b6`.
-- ZIP de atualização: `0a8328f4161f3b4dcc244a276938056df7345c073bb8b0502737ce43ad564996`.
-- Arquivo do artefato GitHub: `9e05a08b08c30ae5e1a3de8e4cc64ea16907701a15baa7be4cf839d26e7c84be`.
+Total 114000 HTTP 200, zero falhas. Soak: 370,46 req/s em 194,353 s; pico do
+processo 201 MiB de working set/261 MiB privados, até oito conexões ativas e duas
+esperas por lock. O consumo ES permaneceu com busca pontual pelo índice
+`ix_suite_es_challenges_text_lookup`, confirmado por EXPLAIN. O consumo Suite
+permanece serializável, com seleção da chave primária seguida de atualização
+somente da linha selecionada. API/admin mantêm pool padrão 8 e respeitam limites
+explícitos. Container sintético parado e processos de carga encerrados.
 
-**Rollback e bloqueios restantes.** Migrations 001–025 foram aplicadas somente
-no PostgreSQL descartável. O binário/testes da base `da18086a4c130798ba67dee8a2a4ac05afcfbe3a`
-passou contra o schema 025, verificando compatibilidade com a base anterior;
-não foi executado rollback em produção. Fixtures encerradas e container de teste
-parado após as medições.
+As medições de carga não incluem internet, proxy público, TLS ou CNG Windows e
+não atestam capacidade do destino. Os resultados históricos `cbdcda9`/cliente
+1.1.0 continuam no [registro anterior da matriz](https://github.com/luziellacerda/Servidor-pix/blob/5c2bd059733248557022483149dc09b99a3e3c24/docs/suite/HANDOFF-EMULATIONSTATION-ROTAS-COMPARTILHADAS-20260905.md#04-matriz-unica-de-execucao)
+e nos arquivos históricos `outputs/es-evidencias-cbdcda9.zip`; foram substituídos
+pelos candidatos acima, sem reaproveitar suas medições como se fossem novas.
 
-A verificação final de permissões confirmou que `/opt/turborama-suite-r5-releases`
-e `/etc/systemd/system/turborama-suite-api.service.d` não são graváveis e
-`sudo -n /usr/bin/true` exige senha. A ação mínima pendente é implantar o pacote
-revisado por uma conta autorizada a atualizar esses caminhos e operar os serviços,
-aplicar somente as migrations faltantes, configurar flags/rotas e homologar com
-um PC Windows que já possua a chave CNG/TS Suite. A sonda pública sintética ainda
-retornou `JSON_INVALID` ao cabeçalho inválido, sem confirmar o dispatcher novo.
-As alterações de interface mencionadas fora do Git (`LicenseAccessView.cs`,
-`AccessFailurePresentation.cs`) não estavam disponíveis; o candidato preserva a
-base publicada e os testes de memória, áudio, ponte nativa, DPAPI, IPC e pacote.
-Não houve alteração de serviços, banco, flags ou binários de produção.
+**Implantação efetiva e preservação do ambiente.** A autenticação nativa `pkexec`
+superou o bloqueio inicial de privilégios. Backup PostgreSQL consistente, catálogo
+de restauração, configuração protegida e estado PIX foram conferidos antes de
+cada troca. As migrations 022–025 foram aplicadas uma vez, às 18:02:39 UTC−3;
+as retomadas conferiram seus hashes e conservaram o schema.
+
+Release `/opt/turborama-suite-r5-releases/es-suite-34e31f2-20260905`:
+
+| Serviço | SHA-256 do DLL efetivamente carregado |
+| --- | --- |
+| `turborama-suite-api.service` | `8a8a90c9a623c155dabeeb3ba88ef0c983964bd603aa3b0240dd1df5fee4c568` |
+| `turborama-suite-admin.service` | `fdb7f4914218676fe5bfee7dd4b131bf9f0333a74a68389571e9f37107dfb1d3` |
+| `turborama-pix.service` | `f84f3d288f94acb95d957b78e47c71f2903ef1edf5fd840f85deb5a67c4e0b06` |
+
+Drop-in de cada serviço: `zzzz-es-suite-20260905.conf`. Diretórios de trabalho,
+estado PIX, conteúdo, credenciais e demais configurações existentes preservados.
+Flags efetivas: `Suite__Enabled=true`, `Suite__EmulationStation__Enabled=true`,
+`Suite__Inventory__Enabled=true`, `Suite__NetworkInventory__Enabled=true` e retenção
+30 dias; a chave AES existente foi carregada por credencial systemd. Dois campos
+do inventário anterior foram decifrados com sucesso sem divulgar seu conteúdo.
+
+O nginx/cloudflared existente já encaminhava `/v1/suite/` e normalizava o IP da
+borda; nenhuma alteração de proxy foi necessária. Verificação em
+`https://app.lzgames.com.br/` e loopback: cabeçalho inválido recebe
+`CLIENT_SCOPE_INVALID`, Suite original e ES compartilhado/dedicado alcançam os
+contratos corretos, cabeçalho ES é recusado nas rotas de rede. O pin TLS e a
+chave pública online coincidem com o cliente 1.1.1 aprovado.
+
+A verificação criptográfica no destino criou somente duas identidades aleatórias
+de teste e confirmou abertura/heartbeat de Suite+ES, conflito assinado sem tempo
+de acesso, replay/downgrade negados, relatório de rede e máscaras no admin.
+O IP observado coincidiu com a borda e não com o X-Forwarded-For forjado.
+Revogação sem controles de POST foi negada; revogação exata retornou `REVOKED` e
+`ALREADY_REVOKED`, produziu uma auditoria e invalidou o desafio pendente. Uma nova
+prova assinada para renovar a sessão revogada recebeu `SESSION_INVALID`; Suite,
+ES do cliente B e legado dedicado continuaram funcionando. O teste interno BFF
+não substitui a digitação de senha/CSRF em navegador real. As duas identidades
+e seus marcadores `SKIPPED` foram removidos; nenhuma notificação de cliente foi
+enfileirada na verificação final. Auditoria de segurança conservada.
+
+**Retomadas e rollback.** Três trocas anteriores restauraram automaticamente os
+serviços antigos, saudáveis sobre o schema 025. A primeira encontrou bloqueio
+HTTP 403 do User-Agent padrão Python; a sonda passou com identificador próprio.
+A segunda tinha uma premissa incorreta: emissão de desafio não equivale a renovar
+sessão. A sonda foi corrigida para concluir a prova e verificar a negativa real.
+A terceira passou em toda a integração, mas detectou dois eventos de abertura
+sintéticos no outbox. Sem vínculo de entrega/compra, esses eventos não podiam ser
+arrendados pelo worker nem enviados; foram removidos. O preparo final reserva
+somente os dois event keys sintéticos como `SKIPPED`, que permanecem intocados.
+Os contadores fixos de notificação dos primeiros relatórios não servem como
+medição de outbox; o relatório final mede os registros reais. Nenhum desses
+ajustes alterou o pacote do servidor ou enfraqueceu o contrato de autorização.
+
+Backup final protegido, acessível somente no host por root:
+`/var/backups/turborama-suite/es-suite-34e31f2-20260905T212345Z`.
+Reversão operacional preparada:
+
+```bash
+pkexec /var/backups/turborama-suite/es-suite-34e31f2-20260905T212345Z/rollback.sh
+```
+
+A reversão remove somente os três drop-ins desta entrega, restaura os executáveis
+anteriores e conserva schema/auditoria. Não executar down migrations para reverter
+binários. Scripts utilizados: `ops/production/deploy-es-suite-20260905.py` e
+`ops/production/es-smoke/`; relatórios sanitizados em `outputs/es-deployment/`.
+[Registro verificável da implantação e pós-verificação](evidence/es-deployment-20260905.json).
+Backups, ambiente e chaves privadas não integram Git nem os artefatos exportáveis.
+
+**Pendência de Windows real.** A UI `LicenseAccessView.cs` e
+`AccessFailurePresentation.cs` foi publicada em `ada4555` e está incorporada ao
+candidato 1.1.1; o trabalho de interface foi preservado. O operador relatou
+“o servidor não retornou uma confirmação válida” antes da implantação. Esse
+texto indica resposta/assinatura/contrato não confirmados e não demonstra
+revogação de licença. Foi solicitada nova abertura do mesmo EXE/ativação, seguida
+de coexistência, heartbeat, revogação pelo painel, áudio/jogos/memória e rede.
+O [handoff para o PC](HANDOFF-PC-PRODUCAO-ES-20260905.md) foi solicitado expressamente
+pelo operador e publicado nesta mesma entrega. Homologação CNG/Windows e release
+geral permanecem pendentes até obter e avaliar o resultado real.
 
 ### 0.5 Responsabilidade pelo cliente e pela compilacao
 

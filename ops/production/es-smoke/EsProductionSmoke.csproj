@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <ServerPackageDir Condition="'$(ServerPackageDir)' == ''">../../../outputs/es-server-final/server</ServerPackageDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <Reference Include="TurboRamaSuiteOnlineServer"><HintPath>$(ServerPackageDir)/TurboRamaSuiteOnlineServer.dll</HintPath></Reference>
+    <Reference Include="Npgsql"><HintPath>$(ServerPackageDir)/Npgsql.dll</HintPath></Reference>
+    <Compile Include="../../../tests/TurboRamaSuiteEmulationStation.Tests/SharedIntegrationChecks.cs" Link="ProtocolChecks.cs" />
+  </ItemGroup>
+</Project>

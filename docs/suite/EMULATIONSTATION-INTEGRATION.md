@@ -156,7 +156,7 @@ internet, proxy público, TLS ou custo CNG real, nem comprova capacidade da prod
 
 O workflow servidor empacota API Suite, backend administrativo, servidor PIX/painel,
 migrations 001–025, documentação, evidências e `SHA256SUMS.txt`, associados ao commit.
-O cliente 1.1.0 gera EXE, ZIP portátil e ZIP de atualização exclusivos da edição
+O cliente 1.1.1 gera EXE, ZIP portátil e ZIP de atualização exclusivos da edição
 Suite. A CI conserva todos os testes existentes de contrato, DPAPI, IPC, extração,
 ponte nativa, tema, pacote e preservação de áudio/memória/jogos. Teste automatizado
 de preservação não substitui um PC Windows real de homologação.
@@ -176,8 +176,11 @@ de binários anteriores com o schema atualizado. Rollback restaura binários e
 configuração anteriores, desabilita as novas flags e conserva tabelas/índices e
 auditoria; não exige apagar dados novos ou reverter o schema em funcionamento.
 
-Somente publicar release de cliente para uso após verificar binários, migrations,
-flags e proxy do servidor de destino e coexistência em Windows. Enquanto esse
-acesso estiver indisponível, os artefatos permanecem candidatos de CI. O executor
-local identificado nesta entrega não tem sudo sem senha para os serviços, e o
-executor permitido `turborama-isolated-exec` aponta para namespace ausente.
+A implantação do servidor `34e31f2` foi concluída em 05/09/2026 às 18:23:58 UTC−3,
+com autenticação nativa do operador, schema 025 e os três componentes saudáveis.
+A verificação no endereço público confirmou as assinaturas, coexistência Suite/ES,
+rede mascarada e revogação exata; o proxy existente foi preservado. O bloqueio
+inicial de privilégios foi superado. Consultar a [matriz vigente](https://github.com/luziellacerda/Servidor-pix/blob/codex/emulationstation-suite-v1-20260905/docs/suite/HANDOFF-EMULATIONSTATION-ROTAS-COMPARTILHADAS-20260905.md#04-matriz-unica-de-execucao)
+para os hashes, backups, rollback exercitado e limites das medições de carga.
+A release geral do cliente permanece pendente da homologação CNG/Windows real,
+conforme o [handoff para o PC de produção](https://github.com/luziellacerda/Servidor-pix/blob/codex/emulationstation-suite-v1-20260905/docs/suite/HANDOFF-PC-PRODUCAO-ES-20260905.md).
