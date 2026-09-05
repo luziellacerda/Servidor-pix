@@ -59,6 +59,8 @@ try {
   assert.equal(await form.locator('[name=adminPassword]').inputValue(), fixture.password);
   await page.setViewportSize({ width: 390, height: 844 });
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Narrow layout must not overflow the page.');
+  assert(await form.evaluate(element => { const box=element.getBoundingClientRect();return box.left>=0&&box.right<=innerWidth; }),
+    'The session confirmation must fit the narrow viewport without horizontal scrolling.');
   await page.screenshot({ path: 'outputs/es-panel-narrow.png', fullPage: true });
   await form.locator('[name=confirmTarget]').check();
   await Promise.all([page.waitForURL(/ok=ES_SESSION_REVOKED/), form.locator('button').click()]);

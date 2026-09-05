@@ -893,6 +893,24 @@ body:has(.app-modal[open]){overflow:hidden}
 @media(max-width:1080px){.dashboard-shell{width:94vw}.dashboard-shell>.top{padding-left:3vw;padding-right:3vw}.compact-nav{gap:13px}.front-grid{grid-template-columns:minmax(0,1.35fr) minmax(280px,.8fr)}.customer-row{grid-template-columns:76px minmax(150px,1.2fr) minmax(150px,1fr) 90px minmax(135px,1fr) 72px;gap:8px;padding-left:14px;padding-right:14px}}
 @media(max-width:820px){.dashboard-shell{padding-top:112px}.front-grid{grid-template-columns:1fr}.active-customers>header{align-items:flex-start;padding:14px;flex-direction:column}.customer-totals{width:100%}.customer-totals span{flex:1}.customer-row{grid-template-columns:76px minmax(0,1fr) auto;padding:11px 14px}.customer-row>*:nth-child(3),.customer-row>*:nth-child(5),.customer-row>*:nth-child(6){display:none}}
 @media(max-width:620px){.dashboard-shell{width:94vw}.summary article{min-height:72px;padding:11px 12px}.front-grid{gap:10px}.operations>header,.command-center>header{padding:0 12px}.op-row{padding:0 12px}.customer-totals{gap:6px}.customer-totals span{min-width:0;padding:6px 8px}.customer-row{grid-template-columns:68px minmax(0,1fr) auto;gap:8px}}
+
+.suite-session-customers .customer-row{grid-template-columns:minmax(180px,1.4fr) minmax(110px,.6fr) minmax(220px,1.7fr) auto;gap:18px}
+.suite-session-customers .customer-row>*{display:block;min-width:0;overflow-wrap:anywhere}
+.suite-session-customers .customer-row>span>strong{display:block}
+.suite-session-customers .suite-session-search{display:flex;align-items:flex-end;gap:12px;padding:16px 20px}
+.suite-session-customers .suite-session-search label{flex:1;min-width:0}
+.suite-session-customers .suite-session-search button{margin:0}
+.suite-session-customers .suite-session-count{padding:0 20px 12px}
+.suite-session-customers .suite-session-pages{padding:16px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.suite-sessions .audit-table{table-layout:fixed;width:100%;min-width:0}
+.suite-sessions th:last-child{width:29%}
+.suite-sessions td{vertical-align:top;white-space:normal;overflow-wrap:anywhere}
+.suite-sessions td small{display:block}
+.suite-sessions details summary{white-space:normal;cursor:pointer}
+.suite-sessions details form{min-width:0}
+@media(max-width:900px){.suite-session-customers .customer-row{grid-template-columns:minmax(0,1fr) auto;gap:10px}.suite-session-customers .customer-row>*{display:block}.suite-session-customers .customer-row>:nth-child(3){grid-column:1/-1}.suite-session-customers .customer-row>:last-child{grid-column:1/-1}.suite-session-customers .suite-session-search{flex-wrap:wrap}}
+@media(max-width:760px){.suite-sessions .table-wrap{overflow:visible;border:0}.suite-sessions .audit-table,.suite-sessions tbody,.suite-sessions tr,.suite-sessions td{display:block;width:100%;min-width:0}.suite-sessions thead{display:none}.suite-sessions tbody tr{border:1px solid var(--line);border-radius:12px;margin:12px 0;padding:8px}.suite-sessions td{padding:8px;border:0}.suite-sessions td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.7rem;margin-bottom:4px}.suite-sessions td:last-child{width:100%}.suite-sessions details{max-width:100%}}
+
 """;
 
     private const string CreateLicenseSubmitButton =

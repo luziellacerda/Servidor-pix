@@ -86,8 +86,8 @@ static partial class SuiteAdminPanel
             html.Append("<div class=table-wrap><table class=audit-table><thead><tr><th>Aplicação / computador</th><th>Estado</th><th>Último contato</th><th>Validade</th><th>Gerenciar</th></tr></thead><tbody>");
             foreach(var row in sessions.Sessions)
             {
-                html.Append("<tr><td><strong>").Append(AppName(row.AppScope)).Append("</strong><small>").Append(E(Masked(row.DeviceId))).Append(" · sessão ").Append(E(Masked(row.SessionId)))
-                    .Append("</small></td><td>").Append(SessionState(row.State)).Append("</td><td>").Append(Contact(row.LastContactAtUnixSeconds)).Append("</td><td>").Append(Contact(row.AuthorizedUntilUnixSeconds)).Append("</td><td>");
+                html.Append("<tr><td data-label=Aplicação><strong>").Append(AppName(row.AppScope)).Append("</strong><small>").Append(E(Masked(row.DeviceId))).Append(" · sessão ").Append(E(Masked(row.SessionId)))
+                    .Append("</small></td><td data-label=Estado>").Append(SessionState(row.State)).Append("</td><td data-label='Último contato'>").Append(Contact(row.LastContactAtUnixSeconds)).Append("</td><td data-label=Validade>").Append(Contact(row.AuthorizedUntilUnixSeconds)).Append("</td><td data-label=Gerenciar>");
                 if(row.AppScope=="EMULATIONSTATION"&&row.State is "ONLINE" or "NO_RECENT_CONTACT"&&Has(context,SessionManagementPermissions.Revoke))
                 {
                     var target=new SessionTarget(context.User.Identity?.Name??"unknown",row.LicenseId,row.DeviceId,row.SessionId,RequestId(),DateTimeOffset.UtcNow.ToUnixTimeSeconds()+300);
@@ -127,13 +127,13 @@ static partial class SuiteAdminPanel
         var page=int.TryParse(context.Request.Query["suitePage"],out var p)?Math.Clamp(p,1,Math.Max(1,(all.Length+24)/25)):1;
         var customers=all.Skip((page-1)*25).Take(25).ToArray();
         var query=QueryString.Create(new Dictionary<string,string?> { ["suitePage"]=page.ToString(CultureInfo.InvariantCulture),["suiteSearch"]=filter }).ToUriComponent();
-        var html=new StringBuilder("<section class='panel active-customers' id=suite-clients data-query='").Append(E(query)).Append("'><header><div><span class=eyebrow>CLIENTES SUITE</span><h2>Conexões por aplicação</h2><p class=muted>Presença autenticada de Suite e EmulationStation. Compras e liberações permanecem no cadastro comercial.</p></div></header>")
-            .Append("<form method=get action=/admin><label>Buscar cliente<input name=suiteSearch maxlength=64 value='").Append(E(filter)).Append("'></label><button>Buscar</button></form>");
+        var html=new StringBuilder("<section class='panel active-customers suite-session-customers' id=suite-clients data-query='").Append(E(query)).Append("'><header><div><span class=eyebrow>CLIENTES SUITE</span><h2>Conexões por aplicação</h2><p class=muted>Presença autenticada de Suite e EmulationStation. Compras e liberações permanecem no cadastro comercial.</p></div></header>")
+            .Append("<form class=suite-session-search method=get action=/admin><label>Buscar cliente<input name=suiteSearch maxlength=64 value='").Append(E(filter)).Append("'></label><button>Buscar</button></form>");
         if(customers.Length==0)return html.Append("<div class=empty-state>Nenhum cliente encontrado.</div></section>").ToString();
         try
         {
             var data=await bff.SessionsAsync(customers.Select(c=>c.LicenseId).ToArray(),ContentProof(context,SessionManagementPermissions.Read),ct);
-            html.Append("<p>").Append(data.Sessions.Count(s=>s.State=="ONLINE")).Append(" sessões online nesta página · ").Append(all.Length).Append(" clientes no filtro</p><div class=customer-list>");
+            html.Append("<p class=suite-session-count>").Append(data.Sessions.Count(s=>s.State=="ONLINE")).Append(" sessões online nesta página · ").Append(all.Length).Append(" clientes no filtro</p><div class=customer-list>");
             foreach(var customer in customers)
             {
                 var rows=data.Sessions.Where(s=>s.LicenseId==customer.LicenseId).ToArray();
@@ -145,7 +145,7 @@ static partial class SuiteAdminPanel
             html.Append("</div>");
         }
         catch(HttpRequestException){html.Append("<div class=empty-state>Não foi possível consultar as sessões. A próxima atualização tentará novamente.</div>");}
-        html.Append("<nav aria-label='Páginas de clientes'>Página ").Append(page).Append(" de ").Append(Math.Max(1,(all.Length+24)/25));
+        html.Append("<nav class=suite-session-pages aria-label='Páginas de clientes'>Página ").Append(page).Append(" de ").Append(Math.Max(1,(all.Length+24)/25));
         foreach(var next in new[] {page-1,page+1})if(next>=1&&next<=(all.Length+24)/25)
             html.Append(" <a class='button ghost' href='/admin").Append(E(QueryString.Create(new Dictionary<string,string?> { ["suitePage"]=next.ToString(CultureInfo.InvariantCulture),["suiteSearch"]=filter }).ToUriComponent())).Append("#suite-clients'>").Append(next<page?"Anterior":"Próxima").Append("</a>");
         return html.Append("</nav></section>").ToString();
