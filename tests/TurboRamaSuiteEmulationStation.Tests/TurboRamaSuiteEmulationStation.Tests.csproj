@@ -9,5 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../../src/TurboRamaSuiteOnlineServer/TurboRamaSuiteOnlineServer.csproj" />
+    <ProjectReference Include="../../src/TurboRamaSuiteAdminServer/TurboRamaSuiteAdminServer.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="../../src/TurboRamaPixOnlineServer/TurboRamaPixOnlineServer.csproj" ReferenceOutputAssembly="false" />
   </ItemGroup>
 </Project>

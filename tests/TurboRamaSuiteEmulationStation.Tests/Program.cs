@@ -8,6 +8,18 @@ using Microsoft.Extensions.Logging;
 using Npgsql;
 using TurboRamaSuiteOnlineServer;
 
+if(args.Contains("--browser-fixtures",StringComparer.Ordinal))
+{
+    await BrowserFixtureHost.RunAsync(Environment.GetEnvironmentVariable("SUITE_ES_TEST_CONNECTION")??throw new InvalidOperationException("An isolated browser connection is required."));
+    return;
+}
+
+if(args.Contains("--load",StringComparer.Ordinal))
+{
+    await SessionLoadChecks.RunAsync(Environment.GetEnvironmentVariable("SUITE_ES_TEST_CONNECTION")??throw new InvalidOperationException("An isolated load connection is required."));
+    return;
+}
+
 using var machine = RSA.Create(2048);
 using var online = RSA.Create(2048);
 using var signer = new RsaAssertionSigner(online);
@@ -23,7 +35,12 @@ await RunContractChecks(identity, suite, es, suiteStore, esStore);
 await DisabledRoutes();
 var connection = Environment.GetEnvironmentVariable("SUITE_ES_TEST_CONNECTION");
 if (!string.IsNullOrWhiteSpace(connection))
+{
     await PostgresChecks(connection);
+    await SharedIntegrationChecks.RunAsync(connection);
+    await NetworkIntegrationChecks.RunAsync(connection);
+    await SessionAdminHttpChecks.RunAsync(connection);
+}
 else if (args.Contains("--require-postgres", StringComparer.Ordinal))
     throw new InvalidOperationException("SUITE_ES_TEST_CONNECTION is required for PostgreSQL checks.");
 else

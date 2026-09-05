@@ -144,8 +144,8 @@ app.MapGet("/customer-activity/{licenseId}", async (string licenseId, NpgsqlData
         ) h ORDER BY at_unix DESC LIMIT 200
         """,conn);
     history.Parameters.AddWithValue(licenseId);
-    await using var hr=await history.ExecuteReaderAsync(ct);
-    while(await hr.ReadAsync(ct))events.Add(new(hr.GetString(0),hr.GetInt64(1),hr.GetString(2),hr.GetString(3)));
+    await using(var hr=await history.ExecuteReaderAsync(ct))
+        while(await hr.ReadAsync(ct))events.Add(new(hr.GetString(0),hr.GetInt64(1),hr.GetString(2),hr.GetString(3)));
     CustomerMotherboard? motherboard=null;
     await using(var inventory=new NpgsqlCommand("""
       SELECT baseboard_manufacturer,baseboard_product,baseboard_version,baseboard_serial_masked,
@@ -200,6 +200,7 @@ app.MapPost("/connection-notifications/complete",async(ConnectionNoticeCompletio
 });
 CommerceEndpoints.Map(app, commerceEnabled, pepperFile);
 ContentManagementEndpoints.Map(app, contentManagement, contentManagementEnabled);
+SessionManagementEndpoints.Map(app);
 app.MapPost("/issue-first-claim",async(CommerceAdminIssueRequest request,NpgsqlDataSource db,CancellationToken ct)=>
 {
     ValidateId(request.LicenseId);ValidateText(request.Actor,64);ValidateText(request.RequestId,128);

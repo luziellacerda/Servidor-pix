@@ -307,6 +307,9 @@ static class AdminPanel
                 new Claim(ClaimTypes.Name, configuration.Username),
                 new Claim(ClaimTypes.Role, "Administrator"),
                 new Claim("permission", "suite.read"),
+                new Claim("permission", "suite.sessions.read"),
+                new Claim("permission", "suite.sessions.revoke"),
+                new Claim("permission", "suite.network.read"),
                 new Claim("permission", "suite.activation.issue"),
                 new Claim("permission", "suite.audit.export"),
                 new Claim("permission", "suite.content.read"),
@@ -333,7 +336,7 @@ static class AdminPanel
             OnlineStateRepository repository, SuiteAdminBff suiteBff, CancellationToken ct) =>
         {
             var token = antiforgery.GetAndStoreTokens(context).RequestToken ?? "";
-            var customers = await SuiteAdminPanel.ActiveCustomerPanelAsync(suiteBff, ct);
+            var customers = await SuiteAdminPanel.ActiveCustomerPanelAsync(context, suiteBff, ct);
             return Html(DashboardPage(repository.ReadAdminDashboard(), token,
                 context.Request.Query["ok"].ToString(), context.Request.Query["error"].ToString(),customers));
         }).RequireAuthorization();
@@ -343,8 +346,9 @@ static class AdminPanel
         {
             context.Response.Headers.CacheControl = "no-store, no-cache, must-revalidate";
             context.Response.Headers.Pragma = "no-cache";
+            if (!context.User.HasClaim("permission", "suite.sessions.read")) return Results.Forbid();
             context.Response.Headers["X-Turborama-Fragment"] = "suite-clients";
-            return Html(await SuiteAdminPanel.ActiveCustomerPanelAsync(suiteBff, ct));
+            return Html(await SuiteAdminPanel.ActiveCustomerPanelAsync(context, suiteBff, ct));
         }).RequireAuthorization();
 
         app.MapGet("/admin/export/audit.csv", (OnlineStateRepository repository) =>
@@ -1052,9 +1056,10 @@ body:has(.app-modal[open]){overflow:hidden}
       if (stopped || requestInFlight || document.hidden) return;
       const current = document.getElementById("suite-clients");
       if (!current) { stopped = true; return; }
+      if (current.contains(document.activeElement) || document.querySelector("dialog[open], .suite-sessions details[open]")) return;
       requestInFlight = true;
       try {
-        const response = await fetch("/admin/fragments/suite-clients", {
+        const response = await fetch("/admin/fragments/suite-clients" + (current.dataset.query || ""), {
           method: "GET",
           credentials: "same-origin",
           cache: "no-store",
@@ -1066,14 +1071,15 @@ body:has(.app-modal[open]){overflow:hidden}
         const parsed = new DOMParser().parseFromString(await response.text(), "text/html");
         const replacement = parsed.getElementById("suite-clients");
         const liveCurrent = document.getElementById("suite-clients");
-        if (replacement && liveCurrent) liveCurrent.replaceWith(replacement);
+        if (replacement && liveCurrent && !liveCurrent.contains(document.activeElement)
+            && !document.querySelector("dialog[open], .suite-sessions details[open]")) liveCurrent.replaceWith(replacement);
       } catch (_) {
         // Mantém o último estado visível; a próxima rodada tenta novamente.
       } finally {
         requestInFlight = false;
       }
     };
-    const timer = window.setInterval(refresh, 3000);
+    const timer = window.setInterval(refresh, 15000);
     document.addEventListener("visibilitychange", () => {
       if (!document.hidden) refresh();
     });
@@ -1142,7 +1148,7 @@ body:has(.app-modal[open]){overflow:hidden}
 
     internal static bool HasAutomaticSuiteClientRefreshForSelfTest()
         => AdminJavascript.Contains("/admin/fragments/suite-clients", StringComparison.Ordinal)
-            && AdminJavascript.Contains("window.setInterval(refresh, 3000)", StringComparison.Ordinal)
+            && AdminJavascript.Contains("window.setInterval(refresh, 15000)", StringComparison.Ordinal)
             && AdminJavascript.Contains("document.hidden", StringComparison.Ordinal)
             && AdminJavascript.Contains("X-Turborama-Fragment", StringComparison.Ordinal)
             && AdminJavascript.Contains("liveCurrent.replaceWith(replacement)", StringComparison.Ordinal);

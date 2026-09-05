@@ -8,4 +8,5 @@
     <AssemblyName>TurboRamaPixOnlineServer</AssemblyName>
     <RootNamespace>TurboRamaPixOnlineServer</RootNamespace>
   </PropertyGroup>
+  <ItemGroup><Compile Include="../TurboRamaSuiteOnlineServer/SessionAdminContracts.cs" Link="SessionAdminContracts.cs" /></ItemGroup>
 </Project>

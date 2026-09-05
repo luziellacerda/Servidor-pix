@@ -42,7 +42,7 @@ sealed record SuiteContentCheckAccepted(string State);
 sealed record SuiteContentAdminProof(string Actor, string IpDigest, string Claim,
     long? StepUpAt = null, long? VersionStepUpAt = null, string? VersionConfirmation = null);
 
-sealed class SuiteAdminBff : IDisposable
+sealed partial class SuiteAdminBff : IDisposable
 {
     private const int MaximumContentResponseBytes = 512 * 1024;
     private static readonly JsonSerializerOptions StrictContentJson = new(JsonSerializerDefaults.Web)
