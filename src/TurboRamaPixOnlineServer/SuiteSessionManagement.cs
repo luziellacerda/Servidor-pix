@@ -94,7 +94,7 @@ static partial class SuiteAdminPanel
                     var encoded=SessionProtector(context).Protect(JsonSerializer.Serialize(target));
                     html.Append("<details><summary>Encerrar sessão EmulationStation</summary><p>Confirme a licença ").Append(E(Masked(row.LicenseId))).Append(", computador ").Append(E(Masked(row.DeviceId))).Append(" e sessão ").Append(E(Masked(row.SessionId)))
                         .Append(".</p><form method=post action=/admin/clientes/actions/revoke-es-session>").Append(Csrf(csrf))
-                        .Append("<input type=hidden name=target value='").Append(E(encoded)).Append("'><label><input type=checkbox name=confirmTarget value=1 required>Confirmo esta sessão EmulationStation</label>")
+                        .Append("<input type=hidden name=target value='").Append(E(encoded)).Append("'><label class=session-target-confirmation><input type=checkbox name=confirmTarget value=1 required>Confirmo esta sessão EmulationStation</label>")
                         .Append("<label>Senha administrativa<input type=password name=adminPassword required autocomplete=current-password></label><button class=danger data-confirm='Encerrar a sessão EmulationStation selecionada?' data-busy='Encerrando...'>Encerrar sessão EmulationStation</button></form></details>");
                 }
                 else html.Append("—");

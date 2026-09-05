@@ -560,7 +560,7 @@ static partial class SuiteAdminPanel
         var html=new StringBuilder("<section class=scope-banner><div><span class=eyebrow>HISTÓRICO DO CLIENTE</span><h2>")
             .Append(E(customer.Customer)).Append("</h2><p>").Append(E(customer.Email)).Append(" · ").Append(E(customer.LicenseId))
             .Append("</p></div><span class='presence ").Append(activity.Online?"is-online":"is-offline").Append("'><i></i>")
-            .Append(activity.Online?"ONLINE":"OFFLINE").Append("</span></section><section class='summary customer-summary'><article><small>JOGOS BAIXADOS</small><strong>")
+            .Append(activity.Online?"SUITE ONLINE":"SUITE SEM CONTATO").Append("</span></section><section class='summary customer-summary'><article><small>JOGOS BAIXADOS</small><strong>")
             .Append(activity.UniqueDownloads).Append("</strong></article><article><small>TENTATIVAS</small><strong>").Append(activity.DownloadAttempts)
             .Append("</strong></article><article><small>PROGRAMA</small><strong>").Append(E(activity.AgentVersion.Length==0?"—":activity.AgentVersion))
             .Append("</strong></article><article><small>MÁQUINA</small><strong>").Append(E(activity.DeviceStatus))

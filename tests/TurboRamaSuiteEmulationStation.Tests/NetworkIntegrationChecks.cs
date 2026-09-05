@@ -65,6 +65,20 @@ internal static class NetworkIntegrationChecks
         await app.Services.GetRequiredService<NetworkInventoryService>().PurgeExpiredAsync(default);
         await using(var count=db.CreateCommand("SELECT count(*) FROM suite.suite_network_inventory WHERE license_id=$1")){count.Parameters.AddWithValue(a.License);Check((long)(await count.ExecuteScalarAsync())! ==0,"Expired telemetry must be deleted.");}
         await app.StopAsync();
+        await using(var trusted=CreateApp(connection,signer,true))
+        {
+            await trusted.StartAsync();
+            using var forwarded=new HttpClient {BaseAddress=new Uri(trusted.Urls.Single())};
+            forwarded.DefaultRequestHeaders.Add("X-Forwarded-For","2001:db8::42");
+            forwarded.DefaultRequestHeaders.Add("X-Forwarded-Proto","https");
+            await a.PublishNetworkAsync(forwarded,es);
+            await using var observed=db.CreateCommand("SELECT protected_payload,ip_masked FROM suite.suite_network_inventory WHERE license_id=$1");
+            observed.Parameters.AddWithValue(a.License);await using var row=await observed.ExecuteReaderAsync();
+            Check(await row.ReadAsync(),"Trusted proxy report must be stored.");
+            Check(row.GetString(1)=="2001:0db8:*:*"&&trusted.Services.GetRequiredService<InventorySensitiveProtector>().Unprotect((byte[])row[0]).Contains("2001:db8::42",StringComparison.Ordinal),
+                "A trusted loopback proxy with symmetric headers must preserve the observed IPv6 origin.");
+            await trusted.StopAsync();
+        }
         Console.WriteLine("NETWORK HTTP/POSTGRES PASSED: signatures, encryption/tamper, trusted IP, masking, replay, scope, payload limits, MAC change without revocation and retention.");
 
         async Task<NetworkInventoryProof> Sign(NetworkInventoryContext value)

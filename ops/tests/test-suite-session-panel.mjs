@@ -68,6 +68,8 @@ try {
   assert((await revokedRows.filter({ hasText: 'EmulationStation' }).innerText()).includes('Revogada'));
   assert((await revokedRows.filter({ hasText: 'TurboRama Suite' }).innerText()).includes('Online'), 'Revoking ES must preserve Suite.');
   await page.goto(`${fixture.url}/admin/clientes/${fixture.licenseB}`);
+  assert((await page.locator('.scope-banner').innerText()).includes('SUITE SEM CONTATO'),
+    'The legacy Suite presence badge must identify its app when only ES is online.');
   assert((await page.locator('.suite-sessions').innerText()).includes('Online'), 'Customer B must remain online.');
   assert.deepEqual(errors, [], 'Browser must not emit JavaScript errors.');
   const result = { result: 'passed', desktop: '1440x1000', narrow: '390x844', checks: ['real login', 'batch pagination', 'XSS encoding', 'Suite and ES rows', 'existing /admin/suite', 'focused filter', 'confirmation preservation', 'CSRF', 'protected target tamper', 'password step-up', 'explicit confirmation', 'exact ES revocation', 'Suite and B isolation'] };
