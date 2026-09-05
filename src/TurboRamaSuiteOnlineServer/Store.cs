@@ -278,11 +278,12 @@ public sealed class PostgresSuiteStore : ISuiteStore
             (SELECT last_notified_at FROM prior) AS last_notified),
         queued AS(INSERT INTO suite.suite_connection_notification_outbox(event_id,event_key,event_type,license_id,device_id,connected_at)
           SELECT $4,$5,'device.connected',$1,$2,clock_timestamp() FROM upsert
-          WHERE transitioned AND (last_notified IS NULL OR last_notified<clock_timestamp()-make_interval(hours=>$6))
+          WHERE $7='session.open' AND transitioned
+            AND (last_notified IS NULL OR last_notified<clock_timestamp()-make_interval(hours=>$6))
           ON CONFLICT(event_key) DO NOTHING RETURNING 1)
         UPDATE suite.suite_device_presence SET last_notified_at=clock_timestamp()
         WHERE license_id=$1 AND device_id=$2 AND EXISTS(SELECT 1 FROM queued)
-        """,conn,tx)){presence.Parameters.AddWithValue(s.LicenseId);presence.Parameters.AddWithValue(s.DeviceId);presence.Parameters.AddWithValue(s.AuthorizedUntil);presence.Parameters.AddWithValue(Guid.NewGuid());presence.Parameters.AddWithValue("device.connected:"+c.ChallengeId);presence.Parameters.AddWithValue(_connectionNoticeCooldownHours);await presence.ExecuteNonQueryAsync(ct);}
+        """,conn,tx)){presence.Parameters.AddWithValue(s.LicenseId);presence.Parameters.AddWithValue(s.DeviceId);presence.Parameters.AddWithValue(s.AuthorizedUntil);presence.Parameters.AddWithValue(Guid.NewGuid());presence.Parameters.AddWithValue("session.open:"+s.LicenseId+":"+s.SessionId);presence.Parameters.AddWithValue(_connectionNoticeCooldownHours);presence.Parameters.AddWithValue(action);await presence.ExecuteNonQueryAsync(ct);}
        await tx.CommitAsync(ct);return result;}
     }
     private static async Task Consume(ChallengeRecord c, NpgsqlConnection connection,

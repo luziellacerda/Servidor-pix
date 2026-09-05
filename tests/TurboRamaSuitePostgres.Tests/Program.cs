@@ -11,7 +11,8 @@ await OldVerifierDenied();
 await Retry("TS-PG-RETRY-40001","40001");
 await Retry("TS-PG-RETRY-40P01","40P01");
 await HeartbeatWithoutOpen();
-Console.WriteLine("SUITE POSTGRES TESTS: OK (service-level PostgreSQL race, emission versus completion single authorization, concurrent identical completion, divergent replay, stale verifier, 40001 and 40P01 retry)");
+await HeartbeatCreatesPresenceWithoutNotification();
+Console.WriteLine("SUITE POSTGRES TESTS: OK (service-level PostgreSQL race, emission versus completion single authorization, concurrent identical completion, divergent replay, stale verifier, 40001 and 40P01 retry, no implicit heartbeat opening, heartbeat presence without WhatsApp)");
 async Task ServiceConcurrentIdempotency()
 {
  const string id="TS-PG-SERVICE-RACE";using var machine=RSA.Create(2048);using var online=RSA.Create(2048);
@@ -29,6 +30,12 @@ async Task ServiceConcurrentIdempotency()
  if(calls[0].Result.Signature!=calls[1].Result.Signature)throw new InvalidOperationException("service PostgreSQL race diverged");
  await ExpectSuite(()=>service.CompleteActivationAsync(proof with { Signature=Convert.ToBase64String(RandomNumberGenerator.GetBytes(256)) },default),"REPLAY_DENIED");
 }
+async Task HeartbeatCreatesPresenceWithoutNotification()
+{
+ const string id="TS-PG-HEARTBEAT-NO-OPEN";await Cleanup(id);var device=new string('0',64);
+ string[] setupSql=["INSERT INTO suite.suite_licenses(license_id,product_id,status,activation_consumed,license_term,identity_policy,maximum_active_devices,enrollment_state) VALUES($1,'TURBORAMA_SUITE','ACTIVE',true,'LIFETIME','SOFTWARE_ONLY',1,'BOUND')","INSERT INTO suite.suite_license_enrollments(license_id,device_id,binding_type,identity_policy,algorithm,public_key_spki,hardware_fingerprint) VALUES($1,$2,'SOFTWARE_BOUND_ONLINE','SOFTWARE_ONLY','rsa-pss-sha256',repeat('A',344),repeat('8',64))","INSERT INTO suite.suite_devices(license_id,device_id,binding_type,public_key_spki,hardware_fingerprint,status,algorithm) VALUES($1,$2,'SOFTWARE_BOUND_ONLINE',repeat('A',344),repeat('8',64),'ACTIVE','rsa-pss-sha256')","INSERT INTO suite.suite_sessions(license_id,device_id,session_id,status,authorized_until,last_server_time,revocation_generation) VALUES($1,$2,repeat('c',64),'ACTIVE',clock_timestamp()+interval '3 minutes',extract(epoch from clock_timestamp())::bigint,0)","INSERT INTO suite.suite_challenges(challenge_id,product_id,license_id,device_id,session_id,action,context_hash,nonce,expires_at,revocation_generation) VALUES(repeat('b',64),'TURBORAMA_SUITE',$1,$2,repeat('c',64),'session.heartbeat',repeat('d',64),'nonce',clock_timestamp()+interval '5 minutes',0)"];foreach(var sql in setupSql){await using var setup=data.CreateCommand(sql);setup.Parameters.AddWithValue(id);if(sql.Contains("$2"))setup.Parameters.AddWithValue(device);await setup.ExecuteNonQueryAsync();}
+ var challenge=new ChallengeRecord(new string('b',64),Protocol.ProductId,id,device,new string('c',64),"session.heartbeat",new string('d',64),"nonce",DateTimeOffset.UtcNow.AddMinutes(5).ToUnixTimeSeconds(),null,null);_ = await store.CompleteSessionAsync(challenge,new(id,device,new string('c',64),"ACTIVE",DateTimeOffset.UtcNow.AddMinutes(3).ToUnixTimeSeconds(),DateTimeOffset.UtcNow.ToUnixTimeSeconds(),0),"session.heartbeat",DateTimeOffset.UtcNow.ToUnixTimeSeconds(),default);await using var check=data.CreateCommand("SELECT (SELECT count(*) FROM suite.suite_sessions WHERE license_id=$1),(SELECT count(*) FROM suite.suite_device_presence WHERE license_id=$1),(SELECT count(*) FROM suite.suite_connection_notification_outbox WHERE license_id=$1)");check.Parameters.AddWithValue(id);await using var row=await check.ExecuteReaderAsync();await row.ReadAsync();if(row.GetInt64(0)!=1||row.GetInt64(1)!=1||row.GetInt64(2)!=0)throw new InvalidOperationException("heartbeat changed notification semantics");
+}
 async Task HeartbeatWithoutOpen()
 {
  const string id="TS-PG-HEARTBEAT-NO-OPEN";await Cleanup(id);var device=new string('0',64);
@@ -39,6 +46,7 @@ async Task Cleanup(string id)
 {
  string[] statements=[
   "DELETE FROM suite.suite_activation_completions WHERE challenge_id IN (SELECT challenge_id FROM suite.suite_challenges WHERE license_id=$1)",
+  "DELETE FROM suite.suite_connection_notification_outbox WHERE license_id=$1", "DELETE FROM suite.suite_device_presence WHERE license_id=$1",
   "DELETE FROM suite.suite_sessions WHERE license_id=$1", "DELETE FROM suite.suite_devices WHERE license_id=$1",
   "DELETE FROM suite.suite_license_enrollments WHERE license_id=$1", "DELETE FROM suite.suite_challenges WHERE license_id=$1",
   "DELETE FROM suite.suite_audit_events WHERE license_id=$1", "DELETE FROM suite.suite_transfer_history WHERE license_id=$1",
