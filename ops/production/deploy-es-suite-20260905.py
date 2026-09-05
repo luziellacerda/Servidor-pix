@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 """Concrete deployment of the reviewed 34e31f2 artifact on the authorized host.
 
+Historical rollout only: the pinned artifact predates validated ES reopening.
+The entry-point guard blocks this old plan before host reads or report writes.
+Review the new CI artifact, pins and current-host baseline before updating it;
+this file is not a generic upgrade command.
+
 Run through native pkexec authentication. Private inputs stay on this host.
 Only additive migrations and three new systemd drop-ins are installed. Rollback
 removes those exact drop-ins and keeps the additive schema and security audit.
@@ -274,6 +279,11 @@ def main():
         raise
 
 if __name__=='__main__':
+    # Fail before main/report handling: --apply must not reinstall the historical
+    # conflict-policy artifact or overwrite its deployment evidence by accident.
+    if COMMIT=='34e31f26b6a864a7aa5d701b94fe29ad166e86ac':
+        print('DEPLOYMENT BLOCKED: this plan is pinned to historical 34e31f2, not the ES reopening correction. Review the new CI artifact, hashes and current-host baseline before preparing an authorized rollout.',file=sys.stderr,flush=True)
+        sys.exit(2)
     try: main()
     except BaseException as error:
         REPORT['error_type']=type(error).__name__;REPORT['error']=str(error)

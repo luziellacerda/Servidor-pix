@@ -62,13 +62,26 @@ try
     await Task.WhenAll(Exchange(external,online,a,suiteA,"SUITE",true),Exchange(external,online,a,esA,"SHARED",true),
         Exchange(origin,online,b,suiteB,"SUITE",true),Exchange(origin,online,b,esB,"SHARED",true));
     checks.Add("original-suite-and-shared-es-origin-public-coexistence");
-    var pending=await Proof(external,online,a,SyntheticClient.Hex(),"SHARED");
-    var conflict=Verify(await Submit(external,pending,"SHARED"),EmulationStationAssertionSigner.OpenKind);
-    Check(conflict.Status=="CONFLICT"&&conflict.AuthorizedUntilUnixSeconds==conflict.ServerTimeUnixSeconds,"Conflict must be signed and grant zero access.");
-    using(var replay=await Send(external,"/v1/suite/sessions",pending,"SHARED"))Check((int)replay.StatusCode==409,"Proof replay must be rejected.");
+    var oldEsA=esA;
+    var oldHeartbeat=await Proof(external,online,a,oldEsA,"SHARED",true);
+    var replacement=SyntheticClient.Hex();
+    var pending=await Proof(external,online,a,replacement,"SHARED");
+    var reopened=Verify(await Submit(external,pending,"SHARED"),EmulationStationAssertionSigner.OpenKind);
+    Check(reopened.Status=="ACTIVE"&&reopened.LicenseId==a.License&&reopened.DeviceId==a.Device&&
+        reopened.SessionId==replacement&&reopened.AuthorizedUntilUnixSeconds>reopened.ServerTimeUnixSeconds&&
+        reopened.HeartbeatAfterSeconds==5,"A fresh proven ES open must replace the previous session exactly as Suite does.");
+    using(var replay=await Send(external,"/v1/suite/sessions",pending,"SHARED"))
+        Check((int)replay.StatusCode==409&&(await replay.Content.ReadFromJsonAsync<ErrorResponse>())?.Code=="CHALLENGE_INVALID","Proof replay must be rejected.");
+    using(var refused=await Send(external,"/v1/suite/sessions",oldHeartbeat,"SHARED"))
+        Check((int)refused.StatusCode==409&&(await refused.Content.ReadFromJsonAsync<ErrorResponse>())?.Code=="SESSION_INVALID","A heartbeat issued before replacement must not renew the old ES session.");
+    var freshOldHeartbeat=await Proof(external,online,a,oldEsA,"SHARED",true);
+    using(var refused=await Send(external,"/v1/suite/sessions",freshOldHeartbeat,"SHARED"))
+        Check((int)refused.StatusCode==409&&(await refused.Content.ReadFromJsonAsync<ErrorResponse>())?.Code=="SESSION_INVALID","A fresh proof must not renew the replaced ES session.");
+    esA=replacement;
+    await Exchange(external,online,a,esA,"SHARED",true);
     var downgrade=await Proof(external,online,a,SyntheticClient.Hex(),"SHARED");
     using(var wrong=await Send(external,EmulationStationService.SessionRoute,downgrade,"DEDICATED"))Check((int)wrong.StatusCode==409,"A shared proof cannot downgrade to legacy replacement.");
-    checks.Add("signed-conflict-replay-and-downgrade-denial");
+    checks.Add("signed-reopen-stale-heartbeat-replay-and-downgrade-denial");
     await Network(a,esA);await Network(b,esB);checks.Add("network-challenge-result-signatures-and-replay");
     await Task.WhenAll(Exchange(external,online,a,suiteA,"SUITE",true),Exchange(external,online,a,esA,"SHARED",true),
         Exchange(origin,online,b,suiteB,"SUITE",true),Exchange(origin,online,b,esB,"SHARED",true));

@@ -49,14 +49,51 @@ internal static class SharedIntegrationChecks
             Exchange(http, online, b, suiteB, "SUITE", true),
             Exchange(http, online, b, esB, "SHARED", true));
 
+        var pendingOldHeartbeat = await Proof(http, online, a, esA, "SHARED", true);
         var candidate = SyntheticClient.Hex();
-        var conflictProof = await Proof(http, online, a, candidate, "SHARED");
-        var conflict = await Submit(http, conflictProof, "SHARED");
-        var denied = Verify(online, conflict, EmulationStationAssertionSigner.OpenKind);
-        Check(denied.Status == "CONFLICT" && denied.SessionId == candidate &&
-            denied.AuthorizedUntilUnixSeconds == denied.ServerTimeUnixSeconds,
-            "Conflict must be signed, bound to the requesting instance and grant no time.");
-        await ExpectError(http, conflictProof, "SHARED", "CHALLENGE_INVALID");
+        var reopenProof = await Proof(http, online, a, candidate, "SHARED");
+        // Merely asking for a fresh challenge must not disturb the current session.
+        await Exchange(http, online, a, esA, "SHARED", true);
+        var reopened = Verify(online, await Submit(http, reopenProof, "SHARED"),
+            EmulationStationAssertionSigner.OpenKind);
+        Check(reopened.Status == "ACTIVE" && reopened.SessionId == candidate &&
+            reopened.LicenseId == a.License && reopened.DeviceId == a.Device &&
+            reopened.AuthorizedUntilUnixSeconds > reopened.ServerTimeUnixSeconds &&
+            reopened.HeartbeatAfterSeconds == 5,
+            "A freshly validated open must replace the previous ES session exactly as Suite does.");
+        await ExpectError(http, reopenProof, "SHARED", "CHALLENGE_INVALID");
+        await ExpectError(http, pendingOldHeartbeat, "SHARED", "SESSION_INVALID");
+        await ExpectError(http, await Proof(http, online, a, esA, "SHARED", true),
+            "SHARED", "SESSION_INVALID");
+        esA = candidate;
+        await Exchange(http, online, a, esA, "SHARED", true);
+
+        // A failed attempt cannot replace either this ES session or another tenant.
+        var forged = await Proof(http, online, a, SyntheticClient.Hex(), "SHARED", signingKey: b.Key);
+        await ExpectError(http, forged, "SHARED", "PROOF_INVALID");
+        var badHardware = await Proof(http, online, a, SyntheticClient.Hex(), "SHARED",
+            fingerprint: SyntheticClient.Hex());
+        await ExpectError(http, badHardware, "SHARED", "PROOF_INVALID");
+        foreach (var (license, device) in new[] { (a.License, b.Device), (b.License, a.Device) })
+        {
+            using var wrongIdentity = await Send(http, EmulationStationScope.ChallengeRoute,
+                new ChallengeRequest(1, Protocol.ProductId, license, device, SyntheticClient.Hex(),
+                    "session.open", SyntheticClient.Hex()), "SHARED");
+            Check(wrongIdentity.StatusCode == HttpStatusCode.Forbidden &&
+                (await wrongIdentity.Content.ReadFromJsonAsync<ErrorResponse>())?.Code == "DEVICE_DENIED",
+                "A different device or license/device pairing must not obtain a replacement challenge.");
+        }
+        await Task.WhenAll(Exchange(http, online, a, suiteA, "SUITE", true),
+            Exchange(http, online, a, esA, "SHARED", true),
+            Exchange(http, online, b, suiteB, "SUITE", true),
+            Exchange(http, online, b, esB, "SHARED", true));
+
+        // Keep a direct regression reference for the unchanged original Suite policy.
+        var oldSuite = suiteA;
+        suiteA = SyntheticClient.Hex();
+        await Exchange(http, online, a, suiteA, "SUITE");
+        await ExpectError(http, await Proof(http, online, a, oldSuite, "SUITE", true),
+            "SUITE", "SESSION_INVALID");
         await Exchange(http, online, a, esA, "SHARED", true);
 
         var shared = await Proof(http, online, a, SyntheticClient.Hex(), "SHARED");
@@ -82,7 +119,7 @@ internal static class SharedIntegrationChecks
         await ExpectStatus(off, "/v1/suite/challenges", new[] { "EMULATIONSTATION" }, 503);
         await Exchange(off, online, b, suiteB, "SUITE", true);
         await disabled.StopAsync();
-        Console.WriteLine("SHARED ES HTTP/POSTGRES PASSED: strict header, four signed kinds, conflict, scope/replay, legacy, A/B, simultaneous heartbeat and disabled flag.");
+        Console.WriteLine("SHARED ES HTTP/POSTGRES PASSED: strict header, four signed kinds, validated replacement, stale heartbeat denial, rejected foreign proof/device, scope/replay, legacy, A/B, simultaneous heartbeat and disabled flag.");
     }
 
     internal static WebApplication CreateApp(string connection, IAssertionSigner signer, bool enabled, bool untrustedOrigin = false)
@@ -134,10 +171,10 @@ internal static class SharedIntegrationChecks
     }
 
     internal static async Task<SessionProof> Proof(HttpClient http, RSA online, SyntheticClient who,
-        string session, string scope, bool heartbeat = false)
+        string session, string scope, bool heartbeat = false, string? fingerprint = null, RSA? signingKey = null)
     {
         var context = new SessionContext(1, Protocol.ProductId, who.License, who.Device,
-            session, heartbeat ? "session.heartbeat" : "session.open", who.Fingerprint, "ES-Suite-1.1.0-test");
+            session, heartbeat ? "session.heartbeat" : "session.open", fingerprint ?? who.Fingerprint, "ES-Suite-1.1.0-test");
         var hash = Protocol.SessionContextHash(context);
         using var response = await Send(http, Route(scope, true), new ChallengeRequest(1, Protocol.ProductId,
             who.License, who.Device, session, context.Action, hash), scope);
@@ -153,7 +190,7 @@ internal static class SharedIntegrationChecks
         var bytes = Protocol.SigningMessage(new(1, challenge.ChallengeId, challenge.Nonce,
             challenge.ExpiresAtUnixSeconds), who.License, who.Device, session, context.Action, hash);
         return new(new(1, Protocol.ProductId, who.License, who.Device, session, context.Action,
-            hash, challenge.ChallengeId, Convert.ToBase64String(who.Key.SignData(bytes,
+            hash, challenge.ChallengeId, Convert.ToBase64String((signingKey ?? who.Key).SignData(bytes,
                 HashAlgorithmName.SHA256, RSASignaturePadding.Pss))), context);
     }
 

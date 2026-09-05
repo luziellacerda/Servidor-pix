@@ -49,41 +49,21 @@ public sealed class EmulationStationAssertionSigner(IAssertionSigner inner) : IA
 public interface ISharedEmulationStationStore : IEmulationStationStore;
 
 public sealed class PostgresSharedEmulationStationStore(NpgsqlDataSource data)
-    : PostgresEmulationStationStore(data, true), ISharedEmulationStationStore;
-
-// Raised only after proof validation, transactional eligibility checks and one-use
-// challenge consumption. It carries no identifier of the other active instance.
-public sealed class EmulationStationSessionConflict(long serverTime) : Exception
-{
-    public long ServerTime { get; } = serverTime;
-}
+    : PostgresEmulationStationStore(data, sharedContract: true), ISharedEmulationStationStore;
 
 public sealed class SharedEmulationStationService
 {
     private readonly EmulationStationService _sessions;
-    private readonly EmulationStationAssertionSigner _signer;
 
     public SharedEmulationStationService(ISharedEmulationStationStore store,
         IAssertionSigner signer, TimeProvider time)
     {
-        _signer = new(signer);
-        _sessions = new(store, _signer, time);
+        _sessions = new(store, new EmulationStationAssertionSigner(signer), time);
     }
 
     public Task<SignedAssertionEnvelope> ChallengeAsync(ChallengeRequest request, CancellationToken token) =>
         _sessions.ChallengeAsync(request, token);
 
-    public async Task<SignedAssertionEnvelope> SessionAsync(SessionProof request, CancellationToken token)
-    {
-        try { return await _sessions.SessionAsync(request, token); }
-        catch (EmulationStationSessionConflict conflict)
-        {
-            // A signed CONFLICT is an outcome of this request, never an access grant.
-            // Its authorization interval is empty; the existing ES session is untouched.
-            return _signer.Sign(new SessionAssertion(1, EmulationStationAssertionSigner.OpenKind,
-                Protocol.ProductId, request.Proof.LicenseId, request.Proof.DeviceId,
-                request.Proof.SessionId, "session.open", request.Proof.ContextHash,
-                request.Proof.ChallengeId, "CONFLICT", conflict.ServerTime, conflict.ServerTime, 5));
-        }
-    }
+    public Task<SignedAssertionEnvelope> SessionAsync(SessionProof request, CancellationToken token) =>
+        _sessions.SessionAsync(request, token);
 }

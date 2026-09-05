@@ -54,12 +54,21 @@ internal static class SessionAdminHttpChecks
         {replay.EnsureSuccessStatusCode();Check((await replay.Content.ReadFromJsonAsync<RevokeEsSessionResult>())!.Code=="ALREADY_REVOKED","Retry must return the original receipt.");}
         using(var stale=await admin.Post("sessions/revoke",target with {RequestId=Guid.NewGuid().ToString("N")},SessionManagementPermissions.Revoke,true,true))Check((int)stale.StatusCode==409,"Stale confirmation must not revoke a newer session.");
         await Exchange(api,online,a,replacement,"SHARED",true);
-        // Race a legacy replacement against an exact target confirmation. Either
+        // Race a validated shared-ES reopening against an exact old target confirmation. Either
         // lock order is permitted, but the subsequently created session survives.
         var next=SyntheticClient.Hex();var raceTarget=target with {TargetSessionId=replacement,ExpectedSessionId=replacement,RequestId=Guid.NewGuid().ToString("N")};
-        await Task.WhenAll(Exchange(api,online,a,next,"DEDICATED"),Task.Run(async()=>
+        await Task.WhenAll(Exchange(api,online,a,next,"SHARED"),Task.Run(async()=>
         {using var result=await admin.Post("sessions/revoke",raceTarget,SessionManagementPermissions.Revoke,true,true);Check(result.IsSuccessStatusCode||(int)result.StatusCode==409,"CAS race must be decided atomically.");}));
-        await Exchange(api,online,a,next,"DEDICATED",true);await Exchange(api,online,a,suite,"SUITE",true);await Exchange(api,online,b,other,"SHARED",true);
+        using(var stale=await admin.Post("sessions/revoke",raceTarget with {RequestId=Guid.NewGuid().ToString("N")},SessionManagementPermissions.Revoke,true,true))Check((int)stale.StatusCode==409,"An old confirmation must not revoke the replacement shared ES session.");
+        await Exchange(api,online,a,next,"SHARED",true);await Exchange(api,online,a,suite,"SUITE",true);await Exchange(api,online,b,other,"SHARED",true);
+        using(var refreshed=await admin.Post("sessions/query",query,SessionManagementPermissions.Read))
+        {
+            refreshed.EnsureSuccessStatusCode();var rows=(await refreshed.Content.ReadFromJsonAsync<ManagedSessions>())!.Sessions;
+            Check(rows.Length==2&&rows.Single(s=>s.AppScope=="EMULATIONSTATION") is {State:"ONLINE"} current&&
+                current.SessionId==next&&current.LastContactAtUnixSeconds>0&&
+                rows.Single(s=>s.AppScope=="SUITE").SessionId==suite,
+                "The real panel query must show the current reopened ES online without inheriting the old revocation.");
+        }
         using(var history=await admin.Get("customer-activity/"+a.License))history.EnsureSuccessStatusCode();
         await using(var grant=db.CreateCommand("SELECT has_column_privilege('turborama-suite-admin','suite.suite_network_inventory','protected_payload','SELECT'),has_column_privilege('turborama-suite-admin','suite.suite_network_inventory','ip_masked','SELECT')"))
         {await using var row=await grant.ExecuteReaderAsync();await row.ReadAsync();Check(!row.GetBoolean(0)&&row.GetBoolean(1),"Admin database role must read only masked network fields.");}

@@ -9,17 +9,16 @@ public class PostgresEmulationStationStore : IEmulationStationStore
 {
     private readonly NpgsqlDataSource _data;
     private readonly PostgresSuiteStore _identities;
-    private readonly bool _requireUnoccupied;
     private readonly string _clientContract;
 
     public PostgresEmulationStationStore(NpgsqlDataSource data) : this(data, false) { }
 
-    protected PostgresEmulationStationStore(NpgsqlDataSource data, bool requireUnoccupied)
+    protected PostgresEmulationStationStore(NpgsqlDataSource data, bool sharedContract)
     {
         _data = data;
         _identities = new PostgresSuiteStore(data);
-        _requireUnoccupied = requireUnoccupied;
-        _clientContract = requireUnoccupied ? "SHARED_V1" : "DEDICATED_V1";
+        // Reopening policy does not select the cryptographic challenge namespace.
+        _clientContract = sharedContract ? "SHARED_V1" : "DEDICATED_V1";
     }
 
     public Task<LicenseRecord?> FindLicenseAsync(string licenseId, CancellationToken token) =>
@@ -223,23 +222,9 @@ public class PostgresEmulationStationStore : IEmulationStationStore
                 throw new SuiteException(409, "CHALLENGE_INVALID", "Challenge is invalid or expired.");
         }
 
-        if (_requireUnoccupied && action == "session.open")
-        {
-            await using var current = new NpgsqlCommand("""
-                SELECT EXISTS(SELECT 1 FROM suite.suite_es_sessions
-                  WHERE license_id=$1 AND device_id=$2 AND status='ACTIVE'
-                    AND authorized_until>clock_timestamp() AND revocation_generation=$3)
-                """, connection, transaction);
-            current.Parameters.AddWithValue(session.LicenseId);
-            current.Parameters.AddWithValue(session.DeviceId);
-            current.Parameters.AddWithValue(generation);
-            if ((bool)(await current.ExecuteScalarAsync(token) ?? false))
-            {
-                await transaction.CommitAsync(token);
-                throw new EmulationStationSessionConflict(now);
-            }
-        }
-
+        // Match Suite: a freshly proven open atomically replaces only this
+        // license/device's ES session. A previous sessionId can no longer renew,
+        // including with a heartbeat challenge issued before this replacement.
         var sql = action == "session.open" ? """
             INSERT INTO suite.suite_es_sessions(license_id,device_id,session_id,status,
               authorized_until,last_server_time,revocation_generation)

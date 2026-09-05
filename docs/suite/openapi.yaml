@@ -69,9 +69,12 @@ paths:
           $ref: '#/components/responses/Error'
       parameters:
       - $ref: '#/components/parameters/EsClient'
-      description: Shared ES uses ES signed kinds. Signed status CONFLICT has authorizedUntil
-        equal to serverTime and grants no access. Dedicated 1.0.1 retains replacement
-        behavior.
+      description: Shared ES uses ES signed kinds. A freshly validated session.open
+        atomically replaces only the same license/device ES session, like original
+        Suite. The previous sessionId cannot heartbeat. Original Suite and dedicated
+        1.0.1 retain their behavior and challenge namespaces. This source correction
+        is not yet deployed; production 34e31f2 still returns a signed empty-window
+        CONFLICT when ES is occupied.
   /v1/suite/emulationstation/challenges:
     post:
       operationId: dedicatedEsChallenges

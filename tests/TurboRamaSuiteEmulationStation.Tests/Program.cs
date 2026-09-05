@@ -32,11 +32,13 @@ var suite = new SuiteService(suiteStore, signer, TimeProvider.System, string.Emp
 var es = new EmulationStationService(esStore, signer, TimeProvider.System);
 
 await RunContractChecks(identity, suite, es, suiteStore, esStore);
+await RunSharedReopenChecks();
 await DisabledRoutes();
 var connection = Environment.GetEnvironmentVariable("SUITE_ES_TEST_CONNECTION");
 if (!string.IsNullOrWhiteSpace(connection))
 {
     await PostgresChecks(connection);
+    await PostgresChecks(connection, sharedContract: true);
     await SharedIntegrationChecks.RunAsync(connection);
     await NetworkIntegrationChecks.RunAsync(connection);
     await SessionAdminHttpChecks.RunAsync(connection);
@@ -95,6 +97,52 @@ async Task RunContractChecks(Identity who, SuiteService original, EmulationStati
         who, Hex(), "session.heartbeat"), default), "SESSION_INVALID");
 }
 
+async Task RunSharedReopenChecks()
+{
+    var originalStore = new MemoryStore(identity);
+    var sharedStore = new MemoryStore(identity);
+    var original = new SuiteService(originalStore, signer, TimeProvider.System, string.Empty);
+    var shared = new SharedEmulationStationService(sharedStore, signer, TimeProvider.System);
+    var suiteSession = Hex(); var oldSession = Hex(); var newSession = Hex();
+    Verify(await original.SessionAsync(await Proof(original.ChallengeAsync, identity, suiteSession), default));
+    VerifyShared(await shared.SessionAsync(await Proof(shared.ChallengeAsync, identity, oldSession,
+        expectedKind: EmulationStationAssertionSigner.OpenChallengeKind), default),
+        EmulationStationAssertionSigner.OpenKind);
+    var pending = await Proof(shared.ChallengeAsync, identity, oldSession, "session.heartbeat",
+        EmulationStationAssertionSigner.HeartbeatChallengeKind);
+    var replacement = await Proof(shared.ChallengeAsync, identity, newSession,
+        expectedKind: EmulationStationAssertionSigner.OpenChallengeKind);
+    await Expect(() => original.SessionAsync(replacement, default), "CHALLENGE_INVALID");
+    VerifyShared(await shared.SessionAsync(replacement, default), EmulationStationAssertionSigner.OpenKind);
+    await Expect(() => shared.SessionAsync(replacement, default), "CHALLENGE_INVALID");
+    await Expect(() => shared.SessionAsync(pending, default), "SESSION_INVALID");
+    await Expect(async () => await shared.SessionAsync(await Proof(shared.ChallengeAsync,
+        identity, oldSession, "session.heartbeat"), default), "SESSION_INVALID");
+    var forged = await Proof(shared.ChallengeAsync, identity, Hex());
+    forged = forged with { Proof = forged.Proof with { Signature = Convert.ToBase64String(RandomNumberGenerator.GetBytes(256)) } };
+    await Expect(() => shared.SessionAsync(forged, default), "PROOF_INVALID");
+    await Expect(async () => await shared.SessionAsync(await Proof(shared.ChallengeAsync,
+        identity with { Fingerprint = new string('b', 64) }, Hex()), default), "PROOF_INVALID");
+    await Expect(() => shared.ChallengeAsync(new(1, Protocol.ProductId, identity.License,
+        Hex(), Hex(), "session.open", Hex()), default), "DEVICE_DENIED");
+    await Expect(() => shared.ChallengeAsync(new(1, Protocol.ProductId, identity.License,
+        identity.Device, Hex(), "session.close", Hex()), default), "ACTION_INVALID");
+    VerifyShared(await shared.SessionAsync(await Proof(shared.ChallengeAsync, identity, newSession,
+        "session.heartbeat", EmulationStationAssertionSigner.HeartbeatChallengeKind), default),
+        EmulationStationAssertionSigner.HeartbeatKind);
+    Verify(await original.SessionAsync(await Proof(original.ChallengeAsync, identity, suiteSession,
+        "session.heartbeat"), default));
+    Console.WriteLine("SHARED ES MEMORY CONTRACT PASSED: signed kinds, reopen, stale heartbeat, bad proof/device, replay and Suite isolation (not SQL validation).");
+}
+
+void VerifyShared(SignedAssertionEnvelope envelope, string expectedKind)
+{
+    Verify(envelope);
+    var assertion = StrictJson.Parse<SessionAssertion>(Convert.FromBase64String(envelope.Payload));
+    Check(envelope.Kind == expectedKind && assertion.Kind == expectedKind,
+        "Shared ES must retain its signed application kind after reopening.");
+}
+
 async Task DisabledRoutes()
 {
     var builder = WebApplication.CreateBuilder();
@@ -112,14 +160,16 @@ async Task DisabledRoutes()
     await app.StopAsync();
 }
 
-async Task PostgresChecks(string testConnection)
+async Task PostgresChecks(string testConnection, bool sharedContract = false)
 {
     await using var data = NpgsqlDataSource.Create(testConnection);
     var who = identity with { License = "TS-ES-CI-" + Guid.NewGuid().ToString("N") };
     var originalStore = new PostgresSuiteStore(data);
-    var companionStore = new PostgresEmulationStationStore(data);
+    IEmulationStationStore companionStore = sharedContract
+        ? new PostgresSharedEmulationStationStore(data) : new PostgresEmulationStationStore(data);
     var original = new SuiteService(originalStore, signer, TimeProvider.System, string.Empty);
-    var companion = new EmulationStationService(companionStore, signer, TimeProvider.System);
+    IAssertionSigner companionSigner = sharedContract ? new EmulationStationAssertionSigner(signer) : signer;
+    var companion = new EmulationStationService(companionStore, companionSigner, TimeProvider.System);
     await Execute("""
         INSERT INTO suite.suite_licenses(license_id,product_id,status,activation_consumed,
           license_term,identity_policy,maximum_active_devices,enrollment_state)
@@ -165,7 +215,7 @@ async Task PostgresChecks(string testConnection)
             who, Hex()), default), "LICENSE_DENIED");
         await Execute("UPDATE suite.suite_license_deliveries SET financial_state='PAID' WHERE license_id=$1", who.License);
         Verify(await companion.SessionAsync(await Proof(companion.ChallengeAsync, who, Hex()), default));
-        Console.WriteLine("ES POSTGRES CHECKS PASSED (concurrent coexistence, scope/replay, revocation, expired heartbeat, activation and commercial eligibility).");
+        Console.WriteLine($"ES POSTGRES CHECKS PASSED [{(sharedContract ? "SHARED_V1" : "DEDICATED_V1")}] (concurrent coexistence, scope/replay, revocation, expired heartbeat, activation and commercial eligibility).");
     }
     finally
     {
@@ -193,7 +243,8 @@ async Task PostgresChecks(string testConnection)
 }
 
 async Task<SessionProof> Proof(Func<ChallengeRequest, CancellationToken,
-    Task<SignedAssertionEnvelope>> issue, Identity who, string session, string action = "session.open")
+    Task<SignedAssertionEnvelope>> issue, Identity who, string session, string action = "session.open",
+    string? expectedKind = null)
 {
     var context = new SessionContext(1, Protocol.ProductId, who.License, who.Device,
         session, action, who.Fingerprint, "ES-Suite-1.0.0");
@@ -201,6 +252,15 @@ async Task<SessionProof> Proof(Func<ChallengeRequest, CancellationToken,
     var envelope = await issue(new(1, Protocol.ProductId, who.License, who.Device,
         session, action, hash), default);
     var challenge = StrictJson.Parse<OperationChallengeAssertion>(Convert.FromBase64String(envelope.Payload));
+    if (expectedKind is not null)
+    {
+        var payload = Convert.FromBase64String(envelope.Payload);
+        Check(envelope.Kind == expectedKind && challenge.Kind == expectedKind &&
+            payload.AsSpan().SequenceEqual(Protocol.CanonicalAssertion(challenge)) &&
+            online.VerifyData(Encoding.ASCII.GetBytes(Protocol.AssertionDomain(challenge)).Concat(payload).ToArray(),
+                Convert.FromBase64String(envelope.Signature), HashAlgorithmName.SHA256, RSASignaturePadding.Pss),
+            "Validate the signed shared challenge kind before using the machine key.");
+    }
     var proofBytes = Protocol.SigningMessage(new(1, challenge.ChallengeId, challenge.Nonce,
         challenge.ExpiresAtUnixSeconds), who.License, who.Device, session, action, hash);
     try
@@ -235,7 +295,7 @@ static string Hex() => Convert.ToHexString(RandomNumberGenerator.GetBytes(32)).T
 
 sealed record Identity(string License, string Device, string PublicKey, string Fingerprint);
 
-sealed class MemoryStore(Identity identity) : IEmulationStationStore
+sealed class MemoryStore(Identity identity) : ISharedEmulationStationStore
 {
     private readonly Dictionary<string, ChallengeRecord> _challenges = new(StringComparer.Ordinal);
     private SessionRecord? _session;

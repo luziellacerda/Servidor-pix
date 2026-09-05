@@ -5,6 +5,13 @@ Suite e ES têm sessões e desafios independentes. Não há ativação adicional
 chave nova, licença offline ou autorização por cache, MAC, IP ou cadastro comercial.
 A ordem e a matriz de execução ficam no [handoff vigente](HANDOFF-EMULATIONSTATION-ROTAS-COMPARTILHADAS-20260905.md).
 
+**Correção local de 05/09/2026, ainda não implantada:** por decisão expressa do
+usuário, reabrir o ES deve seguir a política da Suite: validar novamente e
+substituir somente a sessão ES anterior da mesma licença/dispositivo. O release
+de produção `34e31f2` ainda corresponde à política anterior de conflito; não
+atribuir a ele a correção descrita abaixo. Build/testes locais de contrato
+passaram; HTTP/PostgreSQL e homologação da reabertura real ainda estão pendentes.
+
 ## Rotas e assinatura
 
 | Cliente | Desafio | Prova | Cabeçalho |
@@ -27,15 +34,23 @@ Cabeçalho removido em qualquer etapa ou servidor antigo impede autorização.
 
 A migration 023 acrescenta `client_contract` aos desafios ES. O padrão
 `DEDICATED_V1` conserva os binários antigos; `SHARED_V1` impede consumir uma prova
-nova através da política de substituição do caminho dedicado.
+nova pelo caminho dedicado. A escolha desse namespace não depende da política
+de ocupação; os quatro Kind ES e os contratos v1 continuam iguais.
 
-Uma nova abertura compartilhada encontra conflito se já existir sessão ES ativa.
-Depois de verificar prova, vínculo, elegibilidade comercial e consumir o desafio
-em transação, responde HTTP 200 com assertion ES assinada, status `CONFLICT` e
-`authorizedUntilUnixSeconds == serverTimeUnixSeconds`: nenhuma janela de acesso.
-O cliente apresenta `ES_SESSION_CONFLICT` somente depois da validação criptográfica.
-A sessão existente continua. O legado dedicado 1.0.1 conserva sua substituição
-silenciosa; essa limitação não foi removida dos clientes já distribuídos.
+Na correção local, uma nova abertura compartilhada verifica prova CNG, vínculo,
+licença, elegibilidade comercial e geração de revogação, consome seu desafio de
+uso único e substitui atomicamente a sessão ES da mesma licença/dispositivo.
+Responde com a assertion ES `ACTIVE` normal, sem nova ativação e sem exigir que
+o operador encerre a sessão anterior no painel. Emitir apenas um desafio não
+substitui a sessão; uma prova inválida também não a substitui. O heartbeat exige
+o identificador da sessão vigente: o anterior não renova, inclusive com desafio
+emitido antes da troca. Confirmações administrativas antigas continuam presas
+ao alvo exato e não revogam a sessão nova. Suite e outros clientes são preservados.
+O dedicado 1.0.1 mantém sua política existente de substituição e seu namespace.
+Não há nova rota, ação `session.close`, migration ou alteração de TTL. Fechar o
+programa não exige uma chamada de encerramento; na próxima abertura há nova prova.
+O servidor não mata processos: a instância antiga perde renovação, e reage pelo
+heartbeat/prazo já concedido. A trava local de instância não deve ser removida.
 
 Heartbeat exige a mesma sessão ainda válida e renova por 180 segundos, com
 intervalo indicado de cinco segundos. Abertura/heartbeat mantêm transações
@@ -168,6 +183,30 @@ Para rede, exigir `Suite__Inventory__Enabled=true`, sua chave de inventário já
 protegida e `Suite__NetworkInventory__Enabled=true`; configurar
 `Suite__NetworkInventory__RetentionDays=30` conforme política do operador.
 Não criar outra autoridade/chave CNG nem copiar material privado para o pacote.
+
+**Não reutilizar o rollout histórico para esta correção.**
+`ops/production/deploy-es-suite-20260905.py` continua fixado no artifact, SHA-256,
+commit, diretório de release, CI e baseline anteriores de `34e31f2`; a guarda de
+entrada agora bloqueia esse plano antes de acessar o host ou gravar relatórios.
+Não há novo artifact/hash de produção inventado neste checkout. Após a CI,
+o operador autorizado precisa conferir o novo `COMMIT.txt` e `SHA256SUMS.txt`,
+registrar artifact/CI/hashes efetivos na matriz e revisar conjuntamente os pins,
+binários/drop-ins atuais, backup e rollback do plano. Não basta alterar somente
+`COMMIT` nem remover a guarda para executar `--apply` com o ZIP antigo. Esta
+correção não acrescenta migration; preservar o schema 025 e a configuração atual.
+
+O smoke em `ops/production/es-smoke/Program.cs` foi alinhado à nova reabertura:
+open válido substitui apenas o ES anterior; heartbeat antigo e replay falham;
+Suite, cliente B, anti-downgrade, revogação exata, rede e marcadores de zero
+notificação de cliente continuam verificados. Build local net8.0 passou sem
+executar `--production-smoke` nem `--tls-only`. Na implantação autorizada, compilar
+esse smoke com `ServerPackageDir` apontando para a pasta `server` do **mesmo novo
+artifact validado**, nunca para DLLs antigas; em seguida executar as verificações
+no host pelo fluxo revisado. O smoke atualizado reprova corretamente um servidor
+que ainda impõe conflito por ocupação, por isso não deve ser usado como prova de
+falha do release histórico durante um rollback. A evidência
+`docs/suite/evidence/es-deployment-20260905.json` permanece inalterada e identifica
+somente os arquivos e o comportamento realmente implantados em `34e31f2`.
 
 As migrations são aditivas e têm lock timeout de cinco segundos. A criação de
 índices tem statement timeout de 30 segundos; em tabela grande, planejar a janela

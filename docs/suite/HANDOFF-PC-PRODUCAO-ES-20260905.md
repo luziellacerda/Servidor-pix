@@ -6,11 +6,32 @@ Windows; a matriz de entrega continua no
 
 ## Objetivo e estado do servidor
 
-Validar o EmulationStation 1.1.1 no PC que já possui a Suite ativada, na mesma conta
-Windows, com as duas aplicações autorizadas simultaneamente e sessões separadas.
+Validar o EmulationStation no PC que já possui a Suite ativada, na mesma conta
+Windows, com sessões separadas. A Suite não precisa estar aberta; sua ativação
+e a chave CNG existentes continuam obrigatórias.
 
-**Servidor implantado e verificado em 05/09/2026 às 18:23:58 (America/Maceio,
-UTC−3). Pode repetir agora a abertura do cliente 1.1.1 com a ativação existente.**
+**Candidato atual do cliente: 1.1.2**, commit
+`efa3ae9e169f9c03f56b6f4eb0b773f8d856e215`,
+[compilação GitHub 33994292849](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33994292849).
+Os testes locais de contrato, encerramento, cancelamento e preservação passaram;
+a compilação completa e os hashes do novo pacote ainda precisam ser confirmados.
+Cancelar o login deve sair silenciosamente, sem pedir para abrir a Suite. O
+helper tem encerramento limitado e o ícone existente foi integrado. Não publicar
+como homologado nem substituir o EXE instalado antes de conferir o resultado.
+
+**Correção local posterior, ainda não implantada (05/09/2026):** após o primeiro
+acesso, a reabertura imediata encontrou a sessão anterior ainda vigente. O usuário
+determinou seguir a Suite: nova abertura validada substitui somente a sessão ES
+da mesma licença/dispositivo, sem pedir encerramento no painel. O código local
+retira a trava de ocupação preservando prova CNG, SHARED_V1, assinatura, TTL e
+isolamento. Não há nova ativação, ação `session.close` ou migration. Build/testes
+locais de contrato passaram; HTTP/PostgreSQL, CI e este teste real ainda estão
+pendentes. O servidor `34e31f2` e os hashes abaixo são o estado anterior confirmado,
+não evidência de implantação dessa correção. Não repetir download grande apenas
+para tentar mudar uma política que ainda está no servidor antigo.
+
+**Registro anterior: servidor implantado e verificado em 05/09/2026 às 18:23:58
+(America/Maceio, UTC−3), com orientação de testar o cliente 1.1.1.**
 API Suite, backend administrativo e PIX/painel executam o commit
 `34e31f26b6a864a7aa5d701b94fe29ad166e86ac`. Migrations 022–025 aplicadas; integração
 ES/rede habilitada. Provas reais de abertura, heartbeat, conflito, revogação
@@ -97,7 +118,7 @@ A mensagem relatada está registrada neste handoff para repetir exatamente o cas
 | Conferir `/admin`, cliente selecionado e `/admin/suite` no painel existente | As linhas indicam a aplicação correta; filtros, paginação, detalhes e confirmação continuam utilizáveis. |
 | Conferir telemetria de rede do ES | O painel autorizado recebe interfaces reais e IP mascarados após a coleta; não há alteração de fingerprint ou novo vínculo. |
 | Abrir e retornar de jogos, navegar pelo tema e reproduzir áudio | Jogos, áudio e navegação continuam funcionando; registrar memória antes e depois de ciclos de abertura/retorno. |
-| Conferir conflito entre instâncias ES, quando a interface permitir outra instância | A instância vigente permanece; a nova não recebe acesso por substituição silenciosa. Não remover uma trava local de instância para forçar o teste. |
+| Depois de confirmar a implantação da correção, fechar e reabrir ES imediatamente | Nova prova com a chave já ativada abre outra sessão sem esperar o TTL anterior nem usar o painel; a sessão antiga não renova. Suite e outro cliente permanecem autorizados. Não remover a trava local de instância para forçar o teste. No `34e31f2` anterior ainda é esperado conflito por ocupação. |
 | Encerrar somente a sessão ES de teste pelo painel | O administrador confirma o alvo e digita sua senha no próprio painel; somente o ES selecionado perde acesso. Suite e outras licenças permanecem funcionando. |
 | Reabrir ES após o encerramento confirmado | O mesmo vínculo e a mesma chave existente abrem uma nova sessão autorizada. |
 | Conferir ES 1.0.1 legado, se instalado para compatibilidade | Rotas dedicadas continuam disponíveis. O legado conserva sua política anterior de substituição de sessão ES. |

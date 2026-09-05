@@ -14,6 +14,28 @@ O arquivo conserva o mesmo caminho para manter uma unica referencia vigente.
 Publicar esta ordem nao significa que o codigo ja foi implementado ou implantado:
 esses resultados so podem ser declarados com as evidencias exigidas abaixo.
 
+**Atualização de produto em 05/09/2026 — correção local, não implantada:** o usuário
+determinou que a reabertura do ES funcione como a TurboRama Suite: validar de novo
+com o vínculo/chave existentes e substituir a sessão ES anterior do mesmo PC.
+Esta decisão substitui somente a exigência anterior de conflito/confirmar pelo
+painel a cada reabertura. A administração por alvo exato continua disponível.
+Não foi criada API `session.close`, nova ativação ou migration. O registro de
+implantação `34e31f2` abaixo permanece histórico: ainda descreve a trava anterior.
+Build e testes locais de contrato passaram; os novos testes HTTP/PostgreSQL,
+CI e homologação Windows da correção ainda precisam ser executados e registrados.
+O cliente correspondente é o candidato **1.1.2**, commit
+`efa3ae9e169f9c03f56b6f4eb0b773f8d856e215`, em
+[compilação 33994292849](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33994292849).
+Ele encerra o helper de forma limitada, cancela o login sem erro e mostra o
+ícone existente. Não depende de manter a Suite aberta, mas preserva sua chave
+CNG/ativação na mesma conta Windows. Resultado final, hashes e teste real pendentes.
+O smoke operacional já foi alinhado e compilado localmente, sem execução no host;
+o script de rollout antigo foi bloqueado por guarda antes de acessar produção,
+pois seus pins continuam em `34e31f2`. Preparar o próximo plano somente após a CI
+confirmar artifact/hashes e o operador conferir o baseline atual, conforme o
+[runbook existente](EMULATIONSTATION-INTEGRATION.md). A evidência JSON de
+implantação anterior permanece intacta, sem atribuir a ela testes novos.
+
 ## 0. Ordem de trabalho integral, sem novos ciclos de handoff
 
 ### 0.1 Como executar esta ordem
@@ -77,15 +99,17 @@ explicitamente pendente; nao e sucesso nem motivo para abandonar outras frentes.
   ES com confirmacao e permissao especifica. Nao precisa da chave privada do
   cliente. Autosservico do titular so usa um fluxo autenticado ja comprovado;
   nao liberar a operacao apenas com TS, IP, MAC ou dados do ledger.
-- **Concorrencia ES:** o cliente compartilhado deve receber conflito verificavel
-  quando houver uma sessao ES vigente, sem encerra-la silenciosamente. Implementar
-  confirmacao pelo caminho autorizado. Somente a mesma instancia ainda em uso
-  renova sua propria sessao, mantida em memoria, com prova CNG e validacao do
-  servidor; nao compartilhar sessao entre processos usando cache como atalho.
-  Cache de identificador DPAPI nao e autorizacao. Uma sessao expirada permite
-  nova abertura normal, nunca o reaproveitamento da sessao vencida. Preservar o cliente
-  dedicado ES 1.0.1 conforme 4.5, deixando clara a limitacao de substituicao desse
-  legado; nao afirmar que clientes antigos ja exigem a nova confirmacao.
+- **Reabertura ES, decisão revisada:** seguir a Suite original. Uma nova abertura
+  com prova CNG válida e todas as revalidações transacionais substitui somente a
+  sessão ES da mesma licença/dispositivo, mesmo se a anterior ainda estiver ativa.
+  O SessionId anterior não renova, nem com desafio de heartbeat já emitido; a
+  instância nova recebe sua própria sessão em memória, nunca a sessão do cache.
+  Desafio sem prova, chave/dispositivo incorretos, licença inelegível e replay não
+  substituem a sessão. Preservar SHARED_V1, quatro Kind, TTL, locks e geração;
+  Suite, PIX, outros clientes e confirmações administrativas por alvo exato não
+  mudam. Não pedir ação no painel para fechar/reabrir normalmente, nem criar
+  `session.close`. DPAPI não é autorização. A trava local de instância permanece.
+  Preservar o dedicado ES 1.0.1 conforme 4.5. Esta correção ainda não foi implantada.
 - **IP:** exclusivamente informativo, inclusive quando cruzado com outros dados.
   Nunca entra em bloqueio direto/indireto, revogacao, encerramento, impedimento de
   reconexao, fingerprint ou exigencia de nova ativacao. MAC tambem nao e prova
@@ -112,10 +136,11 @@ operador já dispõe do 1.1.1 e recebeu a orientação de repetir a abertura.
 | Frente | Estado verificado | Evidência |
 | --- | --- | --- |
 | Rotas/licenciamento compartilhado | Implementado, testado e implantado | Servidor `34e31f26b6a864a7aa5d701b94fe29ad166e86ac`; cliente `ada45558611bdd98ca0a5ed9053fdd97ff85a067`; cabeçalho estrito, quatro Kind, conflito assinado sem autorização, anti-replay e anti-downgrade |
+| Correção de reabertura como a Suite (decisão posterior) | Código local; **não implantado** | Gate de ocupação removido somente no adapter ES; SHARED_V1/assinaturas/revalidações preservados; testes locais ES e golden vectors Suite aprovados. HTTP/PostgreSQL, CI e teste real de fechar/reabrir pendentes; não confundir com a CI histórica acima |
 | Titularidade, painel e encerramento | Testes funcionais/Chromium aprovados; backend real verificado | Suite/ES aparecem separadamente; permissões/CSRF/step-up/CAS; revogação exata e idempotente, desafio pendente invalidado e nova prova de heartbeat negada; Suite e cliente B preservados |
 | MAC/IP | Implantado e verificado pelo proxy público | Relatórios assinados, AES-GCM com chave existente, IP observado na borda e mascarado no painel, X-Forwarded-For forjado ignorado; oito interfaces e retenção de 30 dias |
 | Capacidade | 500/1000 sessões medidas; variabilidade de CI registrada abaixo | 114000 HTTP 200 na segunda tentativa da CI e 114000 no ensaio local do mesmo código; primeira tentativa teve 1284 timeouts no soak. Não há SLA de 400 req/s nem homologação de carga no host público |
-| Cliente e distribuição | Candidato Windows **1.1.1** conferido; release geral pendente | Commit `ada4555`, CI `33989089244`, artifact `9976171533`; EXE e dois ZIPs com hashes verificados; interface publicada preservada |
+| Cliente e distribuição | Candidato **1.1.2** enviado à CI; release geral pendente | Commit `efa3ae9`, CI `33994292849`; testes locais de contrato, encerramento, ícone e preservação passaram. O 1.1.1 (`ada4555`, CI `33989089244`, artifact `9976171533`) permanece como evidência histórica, não como pacote com estas correções |
 | Servidor e homologação | **Servidor implantado; Windows real pendente** | Release `es-suite-34e31f2-20260905`, schema 025, três serviços saudáveis, provas reais em loopback/HTTPS e rollback exercitado; [execução no PC](HANDOFF-PC-PRODUCAO-ES-20260905.md) |
 
 **Código e artefatos efetivos.** O commit servidor `34e31f2` incorpora os reparos
@@ -545,11 +570,12 @@ nesse adapter. Nao remover essas rotas ao acrescentar as compartilhadas.
 
 Ambas as entradas ES, dedicada e compartilhada, podem usar a mesma persistencia
 ES: continua existindo uma sessao ES por licenca/equipamento. O caminho dedicado
-legado pode substituir a sessao ES anterior conforme seu contrato atual; o novo
-caminho compartilhado deve aplicar o conflito e a confirmacao da secao 0.3.
-Implementar essa politica explicitamente no adapter/store correto, com testes,
-sem um bypass controlado por campo arbitrario do cliente. Nenhum dos caminhos
-ES pode substituir a sessao Suite, que continua independente.
+legado conserva sua substituicao; o compartilhado passa a seguir a mesma politica
+de nova abertura validada da Suite conforme a decisao revisada da secao 0.3.
+Isso nao une os namespaces: desafios SHARED_V1 e DEDICATED_V1 continuam isolados.
+Implementar essa politica no adapter/store correto, sem campo arbitrario do
+cliente que dispense prova ou elegibilidade. Nenhum caminho ES pode substituir
+a sessao Suite, que continua independente.
 
 ## 5. Limites de alteracao no servidor
 
@@ -732,11 +758,12 @@ Encerrar uma sessao nao e suspender a licenca para sempre. Se o objetivo futuro
 for bloquear novas aberturas ou recuperar conta/dispositivo, usar a politica
 administrativa apropriada, separadamente e com confirmacao correspondente.
 
-A base atual permite que `session.open` substitua a sessao ES anterior. Implementar
-a experiencia de conflito/confirmacao para o cliente compartilhado conforme 0.3
-e testa-la junto do ES 1.0.1; nao alterar silenciosamente o fluxo normal da Suite
-nem eliminar a compatibilidade declarada na secao 4.5. Publicar as limitacoes
-reais do legado; nao prometer confirmacao obrigatoria em clientes antigos.
+A decisao revisada da secao 0.3 manda `session.open` validado substituir a sessao
+ES anterior, como a Suite. A confirmacao administrativa e uma operacao separada,
+nao requisito da reabertura normal. Testar a substituicao imediata e a recusa do
+heartbeat antigo junto do ES 1.0.1; nao alterar o fluxo normal da Suite nem a
+compatibilidade da secao 4.5. Uma confirmacao administrativa capturada antes da
+troca jamais pode revogar a nova sessao.
 
 Testes obrigatorios: titular autorizado, conta divergente, identificador TS
 sozinho, administrador sem claim, CSRF/step-up ausentes, prova trocada, replay,
