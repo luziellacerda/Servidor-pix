@@ -1,4 +1,4 @@
-# Handoff para o PC Windows de produção — EmulationStation Suite 1.1.1
+# Handoff para o PC Windows de produção — EmulationStation Suite 1.1.2
 
 Solicitado pelo operador em 05/09/2026. Este documento orienta a execução no PC
 Windows; a matriz de entrega continua no
@@ -11,22 +11,31 @@ Windows, com sessões separadas. A Suite não precisa estar aberta; sua ativaç�
 e a chave CNG existentes continuam obrigatórias.
 
 **Candidato atual do cliente: 1.1.2**, commit
-`efa3ae9e169f9c03f56b6f4eb0b773f8d856e215`,
-[compilação GitHub 33994292849](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33994292849).
-Os testes locais de contrato, encerramento, cancelamento e preservação passaram;
-a compilação completa e os hashes do novo pacote ainda precisam ser confirmados.
+`187b72686888580e75c5edcef52f5c031601cf5b`,
+[compilação GitHub 33994557511](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33994557511).
+**CI concluída com sucesso.** Testes de contrato, encerramento, cancelamento,
+preservação, build x64 e empacotamento passaram. Os hashes estão na seção abaixo.
 Cancelar o login deve sair silenciosamente, sem pedir para abrir a Suite. O
-helper tem encerramento limitado e o ícone existente foi integrado. Não publicar
-como homologado nem substituir o EXE instalado antes de conferir o resultado.
+helper tem encerramento limitado e o ícone existente foi integrado. A mensagem
+de perda de autorização durante o uso também não pede mais para abrir a Suite.
+A CI anterior `33994292849` foi substituída por este último ajuste; seu
+cancelamento automático não é falha da compilação atual. A release geral não
+foi publicada: o pacote continua candidato até o teste real com o servidor atualizado.
 
-**Correção local posterior, ainda não implantada (05/09/2026):** após o primeiro
+**Correção posterior, publicada no Git mas ainda não implantada (05/09/2026):** após o primeiro
 acesso, a reabertura imediata encontrou a sessão anterior ainda vigente. O usuário
 determinou seguir a Suite: nova abertura validada substitui somente a sessão ES
-da mesma licença/dispositivo, sem pedir encerramento no painel. O código local
+da mesma licença/dispositivo, sem pedir encerramento no painel. O código publicado
 retira a trava de ocupação preservando prova CNG, SHARED_V1, assinatura, TTL e
-isolamento. Não há nova ativação, ação `session.close` ou migration. Build/testes
-locais de contrato passaram; HTTP/PostgreSQL, CI e este teste real ainda estão
-pendentes. O servidor `34e31f2` e os hashes abaixo são o estado anterior confirmado,
+isolamento. Não há nova ativação, ação `session.close` ou migration. O commit é
+`efaf1d3cd3dfd2a807e9d5a0e7295328ff081c4a`,
+[CI da integração 33994510188](https://github.com/luziellacerda/Servidor-pix/actions/runs/33994510188).
+**CI concluída com sucesso:** protocolo, HTTP/PostgreSQL, banco original da Suite,
+painel Chromium e carga 500/1000 passaram. Artifact servidor `9977821782`,
+SHA-256 do arquivo completo
+`ab017ad8313fc0c50e702c4d6aa7ae7f8348276376a8ea850f04a19ac0c1cf86`.
+A implantação desta correção e o teste Windows real continuam pendentes. O servidor `34e31f2`
+e os hashes abaixo são o estado anterior confirmado,
 não evidência de implantação dessa correção. Não repetir download grande apenas
 para tentar mudar uma política que ainda está no servidor antigo.
 
@@ -50,36 +59,55 @@ revogação da licença. Na observação inicial, a API ainda executava o releas
 anterior às rotas compartilhadas. A implantação agora está confirmada; repetir
 o teste sem refazer a ativação. A causa no PC só pode ser confirmada pelo retorno.
 
-CI final do servidor: https://github.com/luziellacerda/Servidor-pix/actions/runs/33989933344
+CI histórica do servidor implantado: https://github.com/luziellacerda/Servidor-pix/actions/runs/33989933344
 
 ## Pacote exato para o PC
 
 - Repositório: https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama
 - Branch: `CLIENTE-SUITE-ATIVADO-v1.0.0-20260905`.
-- Commit: `ada45558611bdd98ca0a5ed9053fdd97ff85a067`.
-- Versão do cliente: **1.1.1**, edição Suite.
-- Build Windows aprovado: https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33989089244
-- Artifact: `es-suite-candidate-ada45558611bdd98ca0a5ed9053fdd97ff85a067`, ID `9976171533`.
-- Download autenticado: https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33989089244/artifacts/9976171533
+- Commit: `187b72686888580e75c5edcef52f5c031601cf5b`.
+- Versão do cliente: **1.1.2**, edição Suite.
+- Build Windows aprovado: https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33994557511
+- Artifact: `es-suite-candidate-187b72686888580e75c5edcef52f5c031601cf5b`, ID `9977794150`.
+- Download autenticado: https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33994557511/artifacts/9977794150
+- Artifact completo: `2535078185` bytes; SHA-256 informado pela API GitHub:
+  `e1511f51198a704623127b44fa9d2734b2092a1639df88f975bc74c79876c031`.
 
 O artifact contém o EXE, o pacote portátil e o pacote de atualização. Para uma
-instalação ES existente, usar `Turborama-ES-Suite-v1.1.1-Atualizacao.zip`; ele contém
+instalação ES existente, usar `Turborama-ES-Suite-v1.1.2-Atualizacao.zip`; ele contém
 somente `emulationstation.exe` e `LEIA-ME-SUITE.md`.
 
 | Arquivo | SHA-256 |
 | --- | --- |
-| `Turborama-ES-Suite-v1.1.1-Atualizacao.zip` | `b1621e3e467650a1d808ea09003025d97672a6fa7b76e61a59a5014fc674bc00` |
-| `emulationstation.exe` | `43dbd0402274d32da1dfd4ea6ffb60432b4d9fef07ccf9902ca9f498b4df33ee` |
-| `TurboramaEmulationStation-Suite-v1.1.1-Windows-x64.zip` | `259be5f6545e49428ce6f6fb4465f5bc060c5ff24f97cb37102233d5c28d13da` |
+| `emulationstation.exe` | `9feebb133fbf81ce9fe55e3bce7b4408ab7e1ca39958287fef62b106af7bbbab` |
+| `TurboramaEmulationStation-Suite-v1.1.2-Windows-x64.zip` | `98e93ab5a22027e3c939243b337cc1f18fedf66436559b80f8fee3c50feebf02` |
 
 Os hashes identificam os arquivos internos do artifact, depois de extraí-lo.
-O artifact completo tem aproximadamente 2,5 GB; a atualização interna tem
-831.995.160 bytes. O pacote é candidato para esta homologação. A release geral
-depende do resultado no PC real.
+O hash do ZIP de atualização não foi impresso na CI; não confundi-lo com o do
+ZIP completo. Conferir o EXE extraído pelo hash acima antes de executá-lo. Nenhum
+novo binário foi baixado, instalado ou executado no PC nesta verificação. A
+release geral depende do resultado no PC real e da implantação do servidor.
 
-O operador já está usando o 1.1.1. Se o hash do EXE instalado coincidir com o
-acima, manter esse binário e passar aos testes com o servidor já confirmado.
-A mensagem relatada está registrada neste handoff para repetir exatamente o caso.
+O operador usava o 1.1.1, commit `ada4555`, hash do EXE
+`43dbd0402274d32da1dfd4ea6ffb60432b4d9fef07ccf9902ca9f498b4df33ee`.
+Esse binário anterior não contém as correções de cancelamento/encerramento/ícone
+do 1.1.2. Preservá-lo como rollback, sem atribuir a ele os testes novos.
+
+### Avisos de compilação, sem ocultação
+
+A CI aprovada não é uma compilação sem warnings. O trecho enviado pelo operador
+contém 70 ocorrências em 22 posições de 6 arquivos, todos idênticos à base
+`5a356172013a620a1a0ecf151c00c9238ea21a24`. Inclui conversões numéricas em vetores,
+renderer/animação, índices de grade/lista e informações de espaço em disco.
+Esses avisos não demonstram regressão de RAM, som ou ativação. O log completo tem
+outros avisos; as 11 annotations visíveis no GitHub não representam seu total.
+Os warnings não foram desativados nem removidos com casts em massa.
+
+Análise pontual encontrou questões preexistentes para revisão separada: precedência
+do teste de flag em `external/id3v2lib/src/header.c:78`; aritmética signed/unsigned
+em `ImageGridComponent.h:258`; limite do formatter `FileSystemUtil.cpp:1539–1550`
+para volumes extremos. Não foram corrigidas nesta entrega nem atribuídas ao
+problema de ativação. Também permanece o aviso de atualização de Node das Actions.
 
 ## Execução no Windows
 
@@ -87,9 +115,10 @@ A mensagem relatada está registrada neste handoff para repetir exatamente o cas
    em que a Suite já funciona. Registrar versão e caminho do EXE anterior.
    Se houver código local de interface ainda não publicado, preservar esse
    trabalho; não sobrescrever o checkout para instalar o binário.
-2. Abrir a Suite normalmente e confirmar que a ativação existente funciona.
-   Manter a mesma conta Windows durante todo o teste. Usar o TS já ativado se o
-   cliente o solicitar; não gerar outro TS, outra ativação ou chave CNG.
+2. Usar a mesma conta Windows já ativada. A Suite pode permanecer fechada:
+   isso deve fazer parte do teste de independência do ES. Usar o TS já ativado
+   se solicitado; não gerar outro TS, outra ativação ou chave CNG. Abrir a Suite
+   em outro teste apenas para conferir coexistência, não como pré-requisito.
 3. Fechar o EmulationStation anterior. Copiar seu EXE e sua configuração para uma
    pasta de backup com data. Preservar ROMs, temas, jogos, áudio e dados da Suite.
    Não exportar a chave CNG nem copiar material de ativação para o relatório.
@@ -98,12 +127,12 @@ A mensagem relatada está registrada neste handoff para repetir exatamente o cas
    Exemplo em PowerShell, executado na pasta de download:
 
    ```powershell
-   Get-FileHash -Algorithm SHA256 -LiteralPath '.\Turborama-ES-Suite-v1.1.1-Atualizacao.zip'
-   Expand-Archive -LiteralPath '.\Turborama-ES-Suite-v1.1.1-Atualizacao.zip' -DestinationPath '.\ES-1.1.1-conferencia'
-   Get-FileHash -Algorithm SHA256 -LiteralPath '.\ES-1.1.1-conferencia\emulationstation.exe'
+   Expand-Archive -LiteralPath '.\Turborama-ES-Suite-v1.1.2-Atualizacao.zip' -DestinationPath '.\ES-1.1.2-conferencia'
+   Get-FileHash -Algorithm SHA256 -LiteralPath '.\ES-1.1.2-conferencia\emulationstation.exe'
    ```
 
-5. Com o servidor confirmado neste documento, abrir o novo EXE normalmente.
+5. Depois de confirmar a implantação do servidor `efaf1d3` ou posterior revisado,
+   abrir o novo EXE normalmente.
    Confirmar o acesso pelo vínculo existente. Indisponibilidade, conflito ou
    rejeição de contrato devem ser registrados; não contornar TLS, assinatura,
    expiração online ou exigência da chave já ativada.
@@ -113,7 +142,9 @@ A mensagem relatada está registrada neste handoff para repetir exatamente o cas
 
 | Teste | Resultado esperado |
 | --- | --- |
-| Abrir Suite e ES 1.1.1 na mesma conta Windows | Ambas permanecem autorizadas; a abertura do ES preserva a sessão Suite. |
+| Abrir ES 1.1.2 com a Suite fechada | A ativação CNG existente valida diretamente no servidor, sem pedir para executar a Suite. |
+| Cancelar o login pelo X ou Sair | Fecha sem mensagem secundária de ativação e sem helper órfão; ícone existente visível na janela. |
+| Abrir Suite e ES 1.1.2 na mesma conta Windows | Ambas permanecem autorizadas; a abertura do ES preserva a sessão Suite. |
 | Manter ambas abertas por pelo menos dois minutos | Heartbeats seguem funcionando; o painel mostra sessões separadas e contato recente. |
 | Conferir `/admin`, cliente selecionado e `/admin/suite` no painel existente | As linhas indicam a aplicação correta; filtros, paginação, detalhes e confirmação continuam utilizáveis. |
 | Conferir telemetria de rede do ES | O painel autorizado recebe interfaces reais e IP mascarados após a coleta; não há alteração de fingerprint ou novo vínculo. |

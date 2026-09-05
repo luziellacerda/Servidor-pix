@@ -14,21 +14,34 @@ O arquivo conserva o mesmo caminho para manter uma unica referencia vigente.
 Publicar esta ordem nao significa que o codigo ja foi implementado ou implantado:
 esses resultados so podem ser declarados com as evidencias exigidas abaixo.
 
-**Atualização de produto em 05/09/2026 — correção local, não implantada:** o usuário
+**Atualização de produto em 05/09/2026 — correção no Git, não implantada:** o usuário
 determinou que a reabertura do ES funcione como a TurboRama Suite: validar de novo
 com o vínculo/chave existentes e substituir a sessão ES anterior do mesmo PC.
 Esta decisão substitui somente a exigência anterior de conflito/confirmar pelo
 painel a cada reabertura. A administração por alvo exato continua disponível.
 Não foi criada API `session.close`, nova ativação ou migration. O registro de
 implantação `34e31f2` abaixo permanece histórico: ainda descreve a trava anterior.
-Build e testes locais de contrato passaram; os novos testes HTTP/PostgreSQL,
-CI e homologação Windows da correção ainda precisam ser executados e registrados.
+Servidor: `efaf1d3cd3dfd2a807e9d5a0e7295328ff081c4a`,
+[CI da integração 33994510188](https://github.com/luziellacerda/Servidor-pix/actions/runs/33994510188).
+Build/testes locais e **CI integral aprovada**: protocolo, HTTP/PostgreSQL,
+banco original Suite, painel Chromium e carga 500/1000. Artifact `9977821782`,
+SHA-256 `ab017ad8313fc0c50e702c4d6aa7ae7f8348276376a8ea850f04a19ac0c1cf86`.
+Implantação da correção e homologação Windows continuam pendentes.
+Na carga desta CI houve 114000 respostas HTTP 200 e zero falhas de troca nas
+fases medidas. Isso é regressão em ambiente isolado, não SLA: com 1000 sessões,
+o soak mediu 240,82 req/s, p99 de 6589,568 ms e duração de 298,973 s. Não comprova
+400 req/s no servidor real; a otimização/homologação de capacidade continua adiada
+conforme a decisão do usuário. Nenhum limiar ou teste foi relaxado nesta correção.
 O cliente correspondente é o candidato **1.1.2**, commit
-`efa3ae9e169f9c03f56b6f4eb0b773f8d856e215`, em
-[compilação 33994292849](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33994292849).
+`187b72686888580e75c5edcef52f5c031601cf5b`, em
+[compilação 33994557511](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33994557511).
 Ele encerra o helper de forma limitada, cancela o login sem erro e mostra o
 ícone existente. Não depende de manter a Suite aberta, mas preserva sua chave
-CNG/ativação na mesma conta Windows. Resultado final, hashes e teste real pendentes.
+CNG/ativação na mesma conta Windows. **CI do cliente aprovada**, artifact
+`9977794150`, SHA-256 do EXE
+`9feebb133fbf81ce9fe55e3bce7b4408ab7e1ca39958287fef62b106af7bbbab`.
+O passo de release foi omitido pelo gate manual, não por falha. Teste real
+continua pendente; detalhes e avisos no handoff do PC, sem novo documento paralelo.
 O smoke operacional já foi alinhado e compilado localmente, sem execução no host;
 o script de rollout antigo foi bloqueado por guarda antes de acessar produção,
 pois seus pins continuam em `34e31f2`. Preparar o próximo plano somente após a CI
@@ -136,11 +149,11 @@ operador já dispõe do 1.1.1 e recebeu a orientação de repetir a abertura.
 | Frente | Estado verificado | Evidência |
 | --- | --- | --- |
 | Rotas/licenciamento compartilhado | Implementado, testado e implantado | Servidor `34e31f26b6a864a7aa5d701b94fe29ad166e86ac`; cliente `ada45558611bdd98ca0a5ed9053fdd97ff85a067`; cabeçalho estrito, quatro Kind, conflito assinado sem autorização, anti-replay e anti-downgrade |
-| Correção de reabertura como a Suite (decisão posterior) | Código local; **não implantado** | Gate de ocupação removido somente no adapter ES; SHARED_V1/assinaturas/revalidações preservados; testes locais ES e golden vectors Suite aprovados. HTTP/PostgreSQL, CI e teste real de fechar/reabrir pendentes; não confundir com a CI histórica acima |
+| Correção de reabertura como a Suite (decisão posterior) | Commit `efaf1d3`, **CI integral aprovada; não implantado** | CI `33994510188`, artifact `9977821782`; substituição validada, negação de heartbeat antigo, replay/CAS/A-B, banco e painel aprovados. Teste real de fechar/reabrir pendente; preservar o registro histórico de produção |
 | Titularidade, painel e encerramento | Testes funcionais/Chromium aprovados; backend real verificado | Suite/ES aparecem separadamente; permissões/CSRF/step-up/CAS; revogação exata e idempotente, desafio pendente invalidado e nova prova de heartbeat negada; Suite e cliente B preservados |
 | MAC/IP | Implantado e verificado pelo proxy público | Relatórios assinados, AES-GCM com chave existente, IP observado na borda e mascarado no painel, X-Forwarded-For forjado ignorado; oito interfaces e retenção de 30 dias |
 | Capacidade | 500/1000 sessões medidas; variabilidade de CI registrada abaixo | 114000 HTTP 200 na segunda tentativa da CI e 114000 no ensaio local do mesmo código; primeira tentativa teve 1284 timeouts no soak. Não há SLA de 400 req/s nem homologação de carga no host público |
-| Cliente e distribuição | Candidato **1.1.2** enviado à CI; release geral pendente | Commit `efa3ae9`, CI `33994292849`; testes locais de contrato, encerramento, ícone e preservação passaram. O 1.1.1 (`ada4555`, CI `33989089244`, artifact `9976171533`) permanece como evidência histórica, não como pacote com estas correções |
+| Cliente e distribuição | Candidato **1.1.2 aprovado na CI**; release geral pendente | Commit `187b726`, CI `33994557511`, artifact `9977794150`; contrato, encerramento, ponte nativa, preservação e pacote passaram. A CI anterior `33994292849` foi cancelada automaticamente pelo último ajuste. O 1.1.1 permanece como evidência histórica |
 | Servidor e homologação | **Servidor implantado; Windows real pendente** | Release `es-suite-34e31f2-20260905`, schema 025, três serviços saudáveis, provas reais em loopback/HTTPS e rollback exercitado; [execução no PC](HANDOFF-PC-PRODUCAO-ES-20260905.md) |
 
 **Código e artefatos efetivos.** O commit servidor `34e31f2` incorpora os reparos
