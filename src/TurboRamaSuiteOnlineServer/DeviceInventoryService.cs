@@ -25,7 +25,7 @@ public sealed class InventorySensitiveProtector
     {
         if(value.Length<29||value[0]!=1) throw new SecurityException("Protected inventory value is invalid.");
         var plain=new byte[value.Length-29];
-        try { using var aes=new AesGcm(_key,16); aes.Decrypt(value.AsSpan(1,12),value.AsSpan(13,16),value.AsSpan(29),plain); return Encoding.UTF8.GetString(plain); }
+        try { using var aes=new AesGcm(_key,16); aes.Decrypt(value.AsSpan(1,12),value.AsSpan(29),value.AsSpan(13,16),plain); return Encoding.UTF8.GetString(plain); }
         finally { CryptographicOperations.ZeroMemory(plain); }
     }
     public static string Mask(string value) => value.Length==0 ? "Não informado" : value.Length<=4 ? new string('•',value.Length) : $"••••{value[^4..]}";

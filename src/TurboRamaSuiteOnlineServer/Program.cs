@@ -16,6 +16,7 @@ var connection = builder.Configuration.GetConnectionString("SuiteStore");
 var pepper = ReadProtected("Suite:ActivationPepper", "Suite:ActivationPepperFile");
 var signingPem = ReadProtected("Suite:OnlineAssertionPrivateKeyPem", "Suite:OnlineAssertionPrivateKeyPemFile");
 var inventoryEnabled = enabled && builder.Configuration.GetValue("Suite:Inventory:Enabled", false);
+var networkInventoryEnabled = inventoryEnabled && builder.Configuration.GetValue("Suite:NetworkInventory:Enabled", false);
 var inventoryEncryptionKey = inventoryEnabled
     ? ReadProtected("Suite:Inventory:EncryptionKey", "Suite:Inventory:EncryptionKeyFile")
     : null;
@@ -81,11 +82,20 @@ if (enabled)
     {
         builder.Services.AddSingleton<IEmulationStationStore, PostgresEmulationStationStore>();
         builder.Services.AddSingleton<EmulationStationService>();
+        builder.Services.AddSingleton<ISharedEmulationStationStore, PostgresSharedEmulationStationStore>();
+        builder.Services.AddSingleton<SharedEmulationStationService>();
     }
     if (inventoryEnabled)
     {
         builder.Services.AddSingleton(new InventorySensitiveProtector(inventoryEncryptionKey!));
         builder.Services.AddSingleton<DeviceInventoryService>();
+        if (networkInventoryEnabled)
+        {
+            builder.Services.AddSingleton(new NetworkInventoryOptions(
+                Math.Clamp(builder.Configuration.GetValue("Suite:NetworkInventory:RetentionDays", 30), 1, 365)));
+            builder.Services.AddSingleton<NetworkInventoryService>();
+            builder.Services.AddHostedService<NetworkInventoryRetentionWorker>();
+        }
     }
     if (contentAvailable)
     {
@@ -118,6 +128,7 @@ if (contentRequested && !contentAvailable)
         "Suite content startup validation failed at {Stage}; licensing v1 remains available and content is fail-closed.",
         contentStartupStage);
 app.UseForwardedHeaders();
+app.Use(EmulationStationScope.Guard);
 app.Use(async (context, next) =>
 {
     var correlation = context.Request.Headers["X-Correlation-ID"].ToString();
@@ -185,6 +196,7 @@ Map<ActivationProof>("/v1/suite/activations/complete", (s, r, c) => s.CompleteAc
 Map<ChallengeRequest>("/v1/suite/challenges", ChallengeAsync);
 Map<SessionProof>("/v1/suite/sessions", (s, r, c) => s.SessionAsync(r, c));
 app.MapEmulationStation(emulationStationEnabled);
+app.MapNetworkInventory(networkInventoryEnabled);
 if (inventoryEnabled)
 {
     MapInventory<SuiteDeviceInventoryChallengeRequestV1>("/v1/suite/devices/inventory/challenge",
@@ -270,38 +282,7 @@ static bool SamePublicKey(string firstPem, string secondPem)
 }
 
 void Map<T>(string route, Func<SuiteService, T, CancellationToken, Task<SignedAssertionEnvelope>> action) where T : class
-{
-    app.MapPost(route, async (HttpContext context) =>
-    {
-        if (!enabled) return Results.Json(new ErrorResponse(1, "SUITE_DISABLED", "Suite is disabled."), StrictJson.Options, statusCode: 503);
-        try
-        {
-            using var memory = new MemoryStream(); await context.Request.Body.CopyToAsync(memory, context.RequestAborted);
-            var request = StrictJson.Parse<T>(memory.ToArray());
-            var limiter = context.RequestServices.GetRequiredService<SuiteRateLimiter>();
-            if (!limiter.Allow(context.Connection.RemoteIpAddress?.ToString() ?? "unknown", route, request))
-                return Results.Json(new ErrorResponse(1, "RATE_LIMITED", "Too many requests."), StrictJson.Options, statusCode: 429);
-            using var timeout = CancellationTokenSource.CreateLinkedTokenSource(context.RequestAborted);
-            timeout.CancelAfter(TimeSpan.FromSeconds(10));
-            var response = await action(context.RequestServices.GetRequiredService<SuiteService>(), request, timeout.Token);
-            return Results.Json(response, StrictJson.Options, contentType: "application/json; charset=utf-8");
-        }
-        catch (SuiteException ex) { return Results.Json(new ErrorResponse(1, ex.Code, ex.Message), StrictJson.Options, statusCode: ex.StatusCode); }
-        catch (OperationCanceledException) when (context.RequestAborted.IsCancellationRequested) { return Results.StatusCode(499); }
-        catch (OperationCanceledException) { return Results.Json(new ErrorResponse(1, "REQUEST_TIMEOUT", "Request timed out."), StrictJson.Options, statusCode: 504); }
-        catch (Exception)
-        {
-            // This shared endpoint also carries content actions. Do not attach an
-            // exception that could contain private datastore/origin detail.
-            app.Logger.LogError(
-                "Suite request failed. Correlation {CorrelationId}",
-                context.Response.Headers["X-Correlation-ID"].ToString());
-            return Results.Json(new ErrorResponse(1, "INTERNAL_ERROR",
-                "Request could not be completed."), StrictJson.Options,
-                statusCode: 500);
-        }
-    }).DisableAntiforgery();
-}
+    => SuiteSessionEndpoints.Map(app, enabled, emulationStationEnabled, route, action);
 
 void MapContent<T>(
     string route,

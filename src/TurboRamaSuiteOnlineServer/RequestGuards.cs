@@ -2,6 +2,7 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using Microsoft.AspNetCore.HttpOverrides;
+using TurboRamaSuite.Network;
 
 namespace TurboRamaSuiteOnlineServer;
 
@@ -25,8 +26,11 @@ public sealed class SuiteRateLimiter
 {
     private const int CoreRequestsPerMinute = 30;
     private const int ContentRequestsPerMinute = 120;
-    private const int MaximumWindowsPerBucket = 4096;
-    public const int MaximumIdentitiesPerOriginPerBucket = 256;
+    private const int MaximumWindowsPerBucket = 8192;
+    // 500 computers x two applications x two HTTP routes need 2,000 windows
+    // behind a single legitimate NAT, plus room for inventory/content operations.
+    // These are bounded traffic budgets, never licensing/identity decisions.
+    public const int MaximumIdentitiesPerOriginPerBucket = 4096;
     public const int MaximumTrackedWindows = MaximumWindowsPerBucket * 4;
 
     private readonly TimeProvider _time;
@@ -168,6 +172,12 @@ public sealed class SuiteRateLimiter
         contentRequest = false;
         switch (request)
         {
+            case NetworkChallengeRequest value when value.Action == NetworkInventoryContract.Action && value.AppScope is "SUITE" or "EMULATIONSTATION":
+                (license, device) = (value.LicenseId, value.DeviceId);
+                return true;
+            case NetworkInventoryProof value when value.Context is not null && value.Context.Action == NetworkInventoryContract.Action && value.Context.AppScope is "SUITE" or "EMULATIONSTATION":
+                (license, device) = (value.Context.LicenseId, value.Context.DeviceId);
+                return true;
             case ActivationChallengeRequest value when value.Device is not null:
                 (license, device) = (value.LicenseId, value.Device.DeviceId);
                 return true;

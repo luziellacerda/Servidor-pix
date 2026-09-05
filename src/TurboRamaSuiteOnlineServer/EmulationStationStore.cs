@@ -5,15 +5,21 @@ using Npgsql;
 namespace TurboRamaSuiteOnlineServer;
 
 /// <summary>Only the two suite_es_* tables are written by this adapter.</summary>
-public sealed class PostgresEmulationStationStore : IEmulationStationStore
+public class PostgresEmulationStationStore : IEmulationStationStore
 {
     private readonly NpgsqlDataSource _data;
     private readonly PostgresSuiteStore _identities;
+    private readonly bool _requireUnoccupied;
+    private readonly string _clientContract;
 
-    public PostgresEmulationStationStore(NpgsqlDataSource data)
+    public PostgresEmulationStationStore(NpgsqlDataSource data) : this(data, false) { }
+
+    protected PostgresEmulationStationStore(NpgsqlDataSource data, bool requireUnoccupied)
     {
         _data = data;
         _identities = new PostgresSuiteStore(data);
+        _requireUnoccupied = requireUnoccupied;
+        _clientContract = requireUnoccupied ? "SHARED_V1" : "DEDICATED_V1";
     }
 
     public Task<LicenseRecord?> FindLicenseAsync(string licenseId, CancellationToken token) =>
@@ -77,8 +83,8 @@ public sealed class PostgresEmulationStationStore : IEmulationStationStore
         }
         await using var command = new NpgsqlCommand("""
             INSERT INTO suite.suite_es_challenges(challenge_id,product_id,license_id,
-              device_id,session_id,action,context_hash,nonce,expires_at,revocation_generation)
-            SELECT $1,$2,$3,$4,$5,$6,$7,$8,to_timestamp($9),l.revocation_generation
+              device_id,session_id,action,context_hash,nonce,expires_at,revocation_generation,client_contract)
+            SELECT $1,$2,$3,$4,$5,$6,$7,$8,to_timestamp($9),l.revocation_generation,$10
             FROM suite.suite_licenses l
               JOIN suite.suite_devices d ON d.license_id=l.license_id AND d.device_id=$4
               JOIN suite.suite_license_enrollments e ON e.license_id=l.license_id AND e.device_id=$4
@@ -86,6 +92,7 @@ public sealed class PostgresEmulationStationStore : IEmulationStationStore
               AND l.enrollment_state='BOUND' AND l.activation_consumed AND d.status='ACTIVE'
             """, connection, transaction);
         AddChallengeParameters(command, challenge);
+        command.Parameters.AddWithValue(_clientContract);
         if (await command.ExecuteNonQueryAsync(token) != 1)
             throw new SuiteException(403, "DEVICE_DENIED", "Device is not authorized.");
         await transaction.CommitAsync(token);
@@ -102,11 +109,12 @@ public sealed class PostgresEmulationStationStore : IEmulationStationStore
               JOIN suite.suite_licenses l ON l.license_id=c.license_id
             WHERE c.challenge_id=$1 AND c.action=$2 AND c.consumed_at IS NULL
               AND c.expires_at>to_timestamp($3) AND l.status='ACTIVE'
-              AND c.revocation_generation=l.revocation_generation
+              AND c.revocation_generation=l.revocation_generation AND c.client_contract=$4
             """);
         command.Parameters.AddWithValue(id);
         command.Parameters.AddWithValue(action);
         command.Parameters.AddWithValue(now);
+        command.Parameters.AddWithValue(_clientContract);
         await using var reader = await command.ExecuteReaderAsync(token);
         return await reader.ReadAsync(token)
             ? new(reader.GetString(0), reader.GetString(1), reader.GetString(2),
@@ -119,14 +127,15 @@ public sealed class PostgresEmulationStationStore : IEmulationStationStore
         SessionRecord session, string action, long now, CancellationToken token)
     {
         EmulationStationService.RequireSessionAction(action);
-        for (var attempt = 1; attempt <= 3; attempt++)
+        // Each bounded retry reruns all authorization, generation and CAS checks.
+        for (var attempt = 1; attempt <= 6; attempt++)
         {
             try { return await CompleteOnceAsync(challenge, session, action, now, token); }
             catch (PostgresException exception) when (
                 exception.SqlState is PostgresErrorCodes.SerializationFailure or
                     PostgresErrorCodes.DeadlockDetected)
             {
-                if (attempt == 3)
+                if (attempt == 6)
                     throw new SuiteException(409, "TRANSACTION_CONFLICT",
                         "The operation could not be completed safely.", exception);
                 await Task.Delay(RandomNumberGenerator.GetInt32(15, 75) * attempt, token);
@@ -198,7 +207,7 @@ public sealed class PostgresEmulationStationStore : IEmulationStationStore
             UPDATE suite.suite_es_challenges SET consumed_at=clock_timestamp()
             WHERE challenge_id=$1 AND license_id=$2 AND device_id=$3 AND session_id=$4
               AND action=$5 AND context_hash=$6 AND product_id=$7 AND revocation_generation=$8
-              AND consumed_at IS NULL AND expires_at>clock_timestamp()
+              AND consumed_at IS NULL AND expires_at>clock_timestamp() AND client_contract=$9
             """, connection, transaction))
         {
             consume.Parameters.AddWithValue(challenge.ChallengeId);
@@ -209,8 +218,26 @@ public sealed class PostgresEmulationStationStore : IEmulationStationStore
             consume.Parameters.AddWithValue(challenge.ContextHash);
             consume.Parameters.AddWithValue(Protocol.ProductId);
             consume.Parameters.AddWithValue(generation);
+            consume.Parameters.AddWithValue(_clientContract);
             if (await consume.ExecuteNonQueryAsync(token) != 1)
                 throw new SuiteException(409, "CHALLENGE_INVALID", "Challenge is invalid or expired.");
+        }
+
+        if (_requireUnoccupied && action == "session.open")
+        {
+            await using var current = new NpgsqlCommand("""
+                SELECT EXISTS(SELECT 1 FROM suite.suite_es_sessions
+                  WHERE license_id=$1 AND device_id=$2 AND status='ACTIVE'
+                    AND authorized_until>clock_timestamp() AND revocation_generation=$3)
+                """, connection, transaction);
+            current.Parameters.AddWithValue(session.LicenseId);
+            current.Parameters.AddWithValue(session.DeviceId);
+            current.Parameters.AddWithValue(generation);
+            if ((bool)(await current.ExecuteScalarAsync(token) ?? false))
+            {
+                await transaction.CommitAsync(token);
+                throw new EmulationStationSessionConflict(now);
+            }
         }
 
         var sql = action == "session.open" ? """
