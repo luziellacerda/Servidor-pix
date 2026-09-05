@@ -1,12 +1,161 @@
-# Handoff para a equipe do servidor: EmulationStation nas rotas Suite existentes
+# Ordem unica de execucao completa: EmulationStation integrado a Suite
 
 Data: 2026-09-05.
 
-**Status: proposta de contrato e roteiro para trabalho futuro.** Este documento
-nao implementa nem implanta as rotas compartilhadas. Nenhuma configuracao de
-producao, chave, licenca ou sessao foi alterada para produzir este handoff. A
-solicitacao desta etapa e publicar a orientacao no Git do servidor para a equipe
-responsavel preparar, revisar e executar a integracao posteriormente.
+**ORDEM VIGENTE: IMPLEMENTAR, TESTAR E CONCLUIR TODO O ESCOPO ABAIXO.** O usuario
+corrigiu expressamente a orientacao anterior: nao quer outra rodada apenas de
+leitura, proposta, recebimento ou handoff. O executor deve realizar o trabalho
+de engenharia e a entrega verificavel, nao somente responder que compreendeu.
+
+Esta revisao substitui a limitacao documental do commit `f1bb86a` e a sequencia
+de encaminhamento do retorno `db4a992`. Os dois registros permanecem no historico
+como evidencia do que foi feito, nao como instrucao para adiar a implementacao.
+O arquivo conserva o mesmo caminho para manter uma unica referencia vigente.
+Publicar esta ordem nao significa que o codigo ja foi implementado ou implantado:
+esses resultados so podem ser declarados com as evidencias exigidas abaixo.
+
+## 0. Ordem de trabalho integral, sem novos ciclos de handoff
+
+### 0.1 Como executar esta ordem
+
+1. Atualizar a branch ES indicada na secao 2, preservar alteracoes de outros
+   colaboradores e inspecionar o estado real dos dois repositorios e do ambiente
+   disponivel. Nao partir da `main` antiga nem sobrescrever a branch PIX.
+2. Implementar todas as frentes da secao 0.2 nesta mesma tarefa. Separar codigo,
+   commits e testes por responsabilidade para facilitar revisao, mas nao separar
+   o pedido em novas rodadas de autorizacao ou documentos de encaminhamento.
+3. Resolver os detalhes internos de DTOs adicionais, schema aditivo, permissoes,
+   limites e testes durante a implementacao. Registrar as decisoes concretas no
+   codigo e na documentacao tecnica existente; nao devolver somente uma lista
+   do que outra pessoa ainda precisaria definir.
+4. Executar verificacoes locais seguras e CI no GitHub, corrigir falhas e repetir
+   os testes afetados. Manter Suite e PIX originais funcionando. Nao marcar a
+   tarefa concluida apenas porque o dispatcher ou uma compilacao passaram.
+5. Produzir os artefatos finais separados, realizar a implantacao/homologacao no
+   destino quando o executor ja possuir acesso e autorizacao para esse ambiente,
+   e verificar os resultados reais. Nao inventar destino, credencial ou sucesso.
+6. Manter somente uma matriz de execucao neste arquivo e entregar um unico resumo
+   final com commits, testes, artefatos e estado de implantacao. Nao criar arquivos
+   sucessivos de HANDOFF/RETORNO para substituir trabalho de implementacao.
+
+As revisoes e os checkpoints tecnicos deste documento sao etapas internas desta
+ordem, nao solicitacoes para o usuario aprovar cada frente novamente. Uma falha
+de build/teste exige diagnostico e correcao, nao um novo pedido de handoff.
+
+Se houver bloqueio real de acesso, credencial, permissao, destino ou dependencia
+externa indispensavel, concluir primeiro o trabalho independente e informar de
+uma vez os bloqueios restantes, com a verificacao feita e a acao minima necessaria.
+Nao insistir em producao sem autoridade, enfraquecer autenticacao ou simular
+homologacao para atender a expressao "fazer tudo". Pendencia real deve permanecer
+explicitamente pendente; nao e sucesso nem motivo para abandonar outras frentes.
+
+### 0.2 Frentes obrigatorias da mesma entrega
+
+| Frente | Trabalho a executar, nao apenas documentar | Evidencia de conclusao |
+| --- | --- | --- |
+| Licenca e rotas compartilhadas | Implementar dispatcher estrito, adapter/store ES, signer com quatro Kind e validacao cliente antes de assinar; usar a ativacao Suite existente | Testes HTTP e criptograficos, PostgreSQL e cliente/servidor compativeis; Suite sem cabecalho e ES 1.0.1 preservados |
+| Titularidade e isolamento | Resolver identidade tecnica CNG/licenca/dispositivo e vinculo comercial confiavel; aplicar autorizacao por alvo e separar estado/caches/limites por cliente e aplicacao | Testes cruzados A/B e entre apps, sem acesso ou revogacao fora do escopo; nenhuma nova ativacao |
+| Painel de sessoes | Implementar listagem protegida e paginada de Suite e ES, estados, ultimo contato correto e dados mascarados | Duas aplicacoes simultaneas visiveis como linhas distintas, permissoes e XSS testados |
+| Encerrar sessao anterior | Implementar confirmacao e revogacao atomica da sessao ES selecionada com CAS, auditoria e controle de concorrencia | Alvo exato revogado; sessao nova, Suite, PIX e cliente B preservados; replay/CSRF/step-up testados |
+| MAC/IP complementares | Implementar contrato aditivo autenticado, persistencia protegida e coletor cliente limitado; IP observado pelo servidor e MAC declarado pelo cliente | Dados complementares disponiveis no painel autorizado, sem alterar inventario/fingerprint existentes; IP nao causa bloqueio nem por score |
+| Capacidade | Implementar limites e consultas adequados e executar carga com 500 e 1000 sessoes, NAT, rajada/reconexao e soak | Relatorio medido de latencias, erros, recursos e isolamento; limites efetivamente suportados declarados |
+| Cliente e distribuicao | Integrar contrato, tela de acesso existente, telemetria e tratamento de revogacao; compilar no GitHub e publicar artefatos da edicao Suite protegida | EXE/ZIP, versao, commit e SHA-256 identificados; regressao de audio/memoria/jogos e seguranca aprovada |
+| Servidor e homologacao | Empacotar, aplicar migrations aditivas necessarias e configurar/publicar no destino autorizado com rollback; verificar proxy e funcionamento conjunto | Commit/binario/migrations/flag/proxy efetivos registrados; testes conjuntos e verificacao de nao interferencia |
+
+### 0.3 Decisoes de produto ja tomadas para nao travar a execucao
+
+- **Acesso:** um unico identificador TS ja ativado; usar a chave CNG existente
+  da mesma conta Windows. Nao pedir novo codigo, recriar chave, transferir PC ou
+  alterar o ecossistema de ativacao. Nao fixar uma licenca real no codigo.
+- **Titularidade:** nao criar um novo sistema de contas humanas so para esta
+  entrega. Reutilizar autenticacao de titular se ela realmente existir e for
+  verificavel. Na ausencia dela, entregar o gerenciamento pelo administrador
+  autenticado no painel existente; mostrar o vinculo tecnico e o cadastro
+  comercial com rotulos honestos. Essa alternativa ja esta decidida e nao
+  justifica deixar painel/encerramento apenas no papel.
+- **Encerramento:** o botao administrativo atua por padrao em uma unica sessao
+  ES com confirmacao e permissao especifica. Nao precisa da chave privada do
+  cliente. Autosservico do titular so usa um fluxo autenticado ja comprovado;
+  nao liberar a operacao apenas com TS, IP, MAC ou dados do ledger.
+- **Concorrencia ES:** o cliente compartilhado deve receber conflito verificavel
+  quando houver uma sessao ES vigente, sem encerra-la silenciosamente. Implementar
+  confirmacao pelo caminho autorizado. Somente a mesma instancia ainda em uso
+  renova sua propria sessao, mantida em memoria, com prova CNG e validacao do
+  servidor; nao compartilhar sessao entre processos usando cache como atalho.
+  Cache de identificador DPAPI nao e autorizacao. Uma sessao expirada permite
+  nova abertura normal, nunca o reaproveitamento da sessao vencida. Preservar o cliente
+  dedicado ES 1.0.1 conforme 4.5, deixando clara a limitacao de substituicao desse
+  legado; nao afirmar que clientes antigos ja exigem a nova confirmacao.
+- **IP:** exclusivamente informativo, inclusive quando cruzado com outros dados.
+  Nunca entra em bloqueio direto/indireto, revogacao, encerramento, impedimento de
+  reconexao, fingerprint ou exigencia de nova ativacao. MAC tambem nao e prova
+  de pessoa e divergencia isolada nao autoriza essas medidas.
+- **Telemetria:** limitar a ate oito interfaces relevantes; coleta inicial e por
+  mudanca com debounce, nao a cada heartbeat. Definir e testar limites de payload,
+  retencao configuravel e protecao dos novos dados. Nao reduzir ou apagar o
+  inventario original para acomodar o complemento. Falha do coletor nao cancela
+  uma autorizacao valida.
+- **Custo e seguranca:** nao contratar servico, certificado ou recurso pago; usar
+  os ambientes e limites ja disponiveis. Nao desativar Defender, criar exclusoes
+  ou repetir comandos do InstallerHost que geraram alertas. Nao publicar chaves,
+  identificadores reais, tokens ou material privado de autoridade nos artefatos.
+  Preservar as autoridades publicas aprovadas que o cliente precisa verificar.
+
+### 0.4 Matriz unica de execucao
+
+O executor deve atualizar esta tabela com links/commits e resultados objetivos
+enquanto implementa. O estado inicial abaixo e honesto: esta revisao e a ordem
+de execucao, nao uma declaracao de funcionalidades ja entregues.
+
+| Frente | Estado no momento desta ordem | Evidencia a preencher pelo executor |
+| --- | --- | --- |
+| Rotas/licenciamento compartilhado | A executar | Commit e testes HTTP/assinatura/PostgreSQL |
+| Titularidade, painel e encerramento | A executar | Commit, autorizacao, CAS e testes A/B |
+| MAC/IP no servidor e cliente | A executar | Contrato/commit/testes, mascaramento e regra IP |
+| Capacidade e isolamento | A executar | Carga medida, limites e testes de nao interferencia |
+| Cliente e artefatos GitHub | A executar | Commit/run/release/EXE/ZIP/SHA-256 |
+| Implantacao e homologacao | A executar no destino autorizado | Binario/configuracao/migrations/proxy e evidencias reais |
+
+### 0.5 Responsabilidade pelo cliente e pela compilacao
+
+O mesmo executor deve conduzir servidor e cliente compativel ate a entrega,
+usando os repositorios autorizados abaixo. Delegacao tecnica e permitida, mas
+nao transfere ao usuario a obrigacao de escrever outro handoff para o cliente.
+
+- Servidor: `luziellacerda/Servidor-pix`, branch
+  `codex/emulationstation-suite-v1-20260905`.
+- Cliente: `luziellacerda/Backup-Instaladores-Compiladores-Turborama`, branch
+  `CLIENTE-SUITE-ATIVADO-v1.0.0-20260905`, pasta `TurboramaEmulationStation`.
+- Workflow servidor: `.github/workflows/emulationstation-suite.yml`, junto das
+  regressoes Suite/PIX existentes. Workflow Windows do cliente:
+  `.github/workflows/compilar-cliente-suite-windows.yml`.
+- Referencia da Suite, somente para preservar seu contrato:
+  `luziellacerda/TRUBORAMA-SUITE`, branch `codex/v2.0.2-music-cleanup-final`.
+
+Inspecionar o HEAD atual de cada branch e preservar os reparos acumulados.
+No cliente ha trabalho de interface ja preparado localmente em `LicenseForm.cs`,
+`LicenseAccessView.cs`, `AccessFailurePresentation.cs`, `Program.cs` e testes;
+nao assumir que tudo ja foi publicado no Git nem sobrescrever esse trabalho.
+Reaproveitar o que estiver disponivel e coordenar arquivos sobrepostos antes de
+integrar, sem restaurar uma base antiga ou remover melhorias de memoria/audio.
+
+Implementar o contrato compartilhado e a telemetria em `suite-licensing`,
+preservando a ponte nativa, helper embutido, verificacao de integridade, DPAPI,
+CNG existente, vida da sessao e retorno normal dos jogos. O novo complemento
+de inventario usa contrato/acao adicionais autenticados, nao o cabecalho ES em
+rotas Suite v1 fora das duas permitidas. Validar todos os novos bytes/provas
+entre cliente e servidor com fixtures sinteticas.
+
+Usar nova versao identificavel, tags e arquivos exclusivos da edicao Suite;
+nao substituir releases PIX ou do cliente sem servicos independente. Compilar
+no GitHub com o workflow proprio, sem exigir instalacao de compilador no PC do
+usuario. Preservar os testes `Test-SuiteClientPreservation.ps1`,
+`Test-SuiteNative.ps1`, `Test-SuitePackage.ps1` e `suite-licensing/Build.ps1`;
+acrescentar as regressoes do contrato novo. Publicar a release para uso somente
+apos confirmar compatibilidade do servidor de destino. Se esse destino ainda
+estiver bloqueado, entregar o artefato de CI como candidato, nao como release
+homologada. Acesso ausente ao repositorio/Windows de homologacao deve constar
+como bloqueio especifico; nao apresentar apenas o servidor como entrega total.
 
 ## 1. Resultado solicitado pelo usuario
 
@@ -20,7 +169,7 @@ confirma que a licenca continua vinculada e autorizada. A Suite e o EmulationSta
 precisam poder funcionar juntos. O servidor PIX, pagamentos, locadora e os
 demais fluxos existentes devem conservar seu comportamento.
 
-O objetivo desta proposta e transportar as requisicoes ES pelos dois caminhos
+O objetivo da implementacao e transportar as requisicoes ES pelos dois caminhos
 Suite que ja existem no acesso publico, preservando a separacao das sessoes no
 banco. **Compartilhar o caminho HTTP nao significa compartilhar a linha da
 sessao nem transformar um cabecalho em autorizacao.**
@@ -38,9 +187,9 @@ O handoff incorpora tambem os requisitos complementares solicitados depois:
 - acrescentar sinais de rede MAC/IP aos dados ja capturados, somente como apoio
   a analise de seguranca, preservando o inventario e a identidade existentes.
 
-Esses complementos sao requisitos para desenho e implementacao futuros, nao
-funcionalidades entregues por este documento. Devem ser desenvolvidos em etapas
-separadas do despacho HTTP para manter revisao, compatibilidade e rollback claros.
+Todos esses complementos pertencem a entrega obrigatoria da secao 0. Separar
+modulos e commits do dispatcher e uma pratica de engenharia, nao permissao para
+adiar painel, encerramento, capacidade ou telemetria para outro handoff.
 
 ## 2. Base conhecida e o que ja existe
 
@@ -67,8 +216,8 @@ Os testes dessa base passaram nos seguintes runs do GitHub:
 - [Extensao ES: migration e testes PostgreSQL](https://github.com/luziellacerda/Servidor-pix/actions/runs/33974034512).
 - [Validacao existente do servidor](https://github.com/luziellacerda/Servidor-pix/actions/runs/33974034488).
 
-Esses resultados correspondem a base acima. **Nao validam a proposta de rotas
-compartilhadas deste documento**, que ainda nao foi implementada. Tambem nao
+Esses resultados correspondem a base acima. **Nao validam a implementacao das
+rotas compartilhadas exigida por esta ordem**. Tambem nao
 comprovam qual binario ou configuracao esta implantado no servidor publico.
 
 Arquivos principais da base:
@@ -114,11 +263,11 @@ O comportamento publico pode ser modificado pelo proxy. A distincao exige
 comparacao com o listener local do servico, sem pressupor onde esta a falha.
 Verificacao TLS normal nao substitui o teste dos pins e assertions do cliente.
 
-## 4. Contrato proposto para as rotas compartilhadas
+## 4. Contrato obrigatorio para as rotas compartilhadas
 
 ### 4.1 Caminhos e cabecalho de despacho
 
-O futuro cliente ES enviara o mesmo corpo Suite v1 aos caminhos:
+Implementar no cliente ES o envio do mesmo corpo Suite v1 aos caminhos:
 
 ```text
 POST /v1/suite/challenges
@@ -131,7 +280,7 @@ A autorizacao continuara dependendo da prova RSA-PSS da chave cadastrada, da
 licenca, do dispositivo, do contexto, do desafio e das verificacoes transacionais.
 Conhecer o nome do cabecalho nao concede acesso.
 
-Regras propostas para o dispatcher:
+Regras obrigatorias para o dispatcher:
 
 | Cabecalho/caminho | Comportamento obrigatorio |
 | --- | --- |
@@ -148,9 +297,9 @@ espacos adicionais preservados pelo servidor ou variantes de capitalizacao.
 Duplicatas devem ser rejeitadas mesmo quando tiverem o mesmo valor. Uma unica
 linha contendo valores separados por virgula tambem deve ser rejeitada.
 
-Codigo de erro proposto para cabecalho/escopo invalido: HTTP 400,
+Codigo de erro para cabecalho/escopo invalido: HTTP 400,
 `CLIENT_SCOPE_INVALID`, com mensagem publica generica. Esse novo codigo deve
-ser documentado e coberto pelos testes quando a proposta for implementada.
+ser implementado, documentado e coberto pelos testes nesta entrega.
 
 ### 4.2 Produto, corpo e prova de maquina preservados
 
@@ -175,7 +324,7 @@ barra invertida e zero. Nao reserializar ou alterar os bytes canonicos existente
 O ES compartilhado deve receber Kind distintos dos da Suite original e dos
 endpoints ES dedicados da versao 1.0.1:
 
-| Resposta | Kind proposto |
+| Resposta | Kind obrigatorio |
 | --- | --- |
 | Desafio para `session.open` | `TURBORAMA_SUITE_ES_SESSION_OPEN_CHALLENGE` |
 | Desafio para `session.heartbeat` | `TURBORAMA_SUITE_ES_SESSION_HEARTBEAT_CHALLENGE` |
@@ -194,9 +343,9 @@ TurboRamaSuiteOnlineAssertion/session-open/v1\0
 TurboRamaSuiteOnlineAssertion/session-heartbeat/v1\0
 ```
 
-A separacao proposta decorre do Kind dentro do payload assinado, de sua
+A separacao decorre do Kind dentro do payload assinado, de sua
 validacao estrita pelo cliente e das tabelas isoladas de desafios/sessoes. Nao
-e uma proposta de rotacao de dominio, produto, chave ou autoridade.
+e autorizada rotacao de dominio, produto, chave ou autoridade por esta ordem.
 
 Implementacao minima sugerida: criar um wrapper de `IAssertionSigner`, usado
 exclusivamente pelo servico ES compartilhado. Ele reconhece as quatro respostas
@@ -210,7 +359,7 @@ preservada; os testes devem verificar a assinatura e ambos os Kind.
 
 ### 4.4 Falha segura com servidor antigo ou cabecalho removido
 
-O futuro cliente deve validar o Kind ES esperado **antes de assinar o desafio
+O cliente compartilhado deve validar o Kind ES esperado **antes de assinar o desafio
 ou enviar a prova de abertura/heartbeat**. Verificar apenas se a assinatura e
 valida para a autoridade Suite nao e suficiente.
 
@@ -241,20 +390,29 @@ Os endpoints dedicados `/v1/suite/emulationstation/challenges` e
 o novo cabecalho e com os Kind antigos. O signer original deve permanecer
 nesse adapter. Nao remover essas rotas ao acrescentar as compartilhadas.
 
-Ambas as entradas ES, dedicada e compartilhada, podem usar o mesmo store ES:
-continua existindo uma sessao ES por licenca/equipamento. Abrir duas instancias
-ES pode substituir a sessao ES anterior, conforme o contrato atual. Isso e
-diferente de substituir a sessao da Suite, que deve continuar independente.
+Ambas as entradas ES, dedicada e compartilhada, podem usar a mesma persistencia
+ES: continua existindo uma sessao ES por licenca/equipamento. O caminho dedicado
+legado pode substituir a sessao ES anterior conforme seu contrato atual; o novo
+caminho compartilhado deve aplicar o conflito e a confirmacao da secao 0.3.
+Implementar essa politica explicitamente no adapter/store correto, com testes,
+sem um bypass controlado por campo arbitrario do cliente. Nenhum dos caminhos
+ES pode substituir a sessao Suite, que continua independente.
 
 ## 5. Limites de alteracao no servidor
 
-Alteracoes esperadas na implementacao futura:
+Alteracoes obrigatorias no modulo de rotas compartilhadas:
 
 1. Parser estrito do cabecalho e decisao de despacho nas duas rotas existentes.
 2. Adapter/servico ES compartilhado usando o `IEmulationStationStore` existente.
 3. Wrapper de signer limitado aos quatro Kind ES novos.
 4. Rejeicao do cabecalho em endpoints de operacao fora desse contrato.
 5. Testes, documentacao do contrato e atualizacao do workflow de verificacao.
+
+Esta lista limita o modulo de despacho, nao o escopo total da ordem. Tambem
+implementar as alteracoes localizadas necessarias em painel/BFF/backend
+administrativo, persistencia, telemetria e cliente conforme 0.2 e 6.3–6.6.
+Migrations adicionais devem ser aditivas e revisadas; nao deixar essas frentes
+pendentes sob a justificativa de que o diff deve conter somente dispatcher.
 
 Manter `SuiteService.cs`, `Protocol.cs` e `Store.cs` originais sem mudancas de
 logica sempre que possivel. Nao alterar as constantes Kind globais para que
@@ -265,7 +423,9 @@ Para o despacho HTTP compartilhado, a migration 022 existente ja oferece as tabe
 Nao ha necessidade prevista de nova migration, nova tabela de licencas,
 duplicacao de cadastro, troca de produto, nova ativacao ou novo registro CNG.
 Se a implementacao revelar necessidade de schema adicional, registrar a razao
-e revisar o contrato antes de alterar o banco.
+e revisar o contrato e a migration dentro desta mesma execucao antes de alterar
+o banco. Nao exigir um novo documento do usuario para uma migration aditiva
+necessaria aos requisitos ja autorizados.
 
 Listagem por aplicacao, autorizacao de titular, encerramento direcionado e sinais
 de rede podem exigir views, campos ou tabelas adicionais. Nesse caso, comparar
@@ -284,8 +444,8 @@ Preservar expressamente:
 - isolamento transacional e anti-replay das tabelas ES.
 
 O painel Suite existente e hospedado em componentes `SuiteAdminPanel.cs` e
-`SuiteAdminBff.cs` dentro do projeto `TurboRamaPixOnlineServer`. Uma futura
-extensao da area administrativa Suite nesses componentes deve ser revisada como
+`SuiteAdminBff.cs` dentro do projeto `TurboRamaPixOnlineServer`. A extensao
+obrigatoria da area administrativa Suite nesses componentes deve ser revisada como
 alteracao localizada de painel/BFF, sem mudar logica de pagamento, contratos ou
 sessoes PIX. Nao confundir o nome do projeto hospedeiro com autorizacao para
 refatorar o ecossistema PIX ou substituir sua configuracao de producao.
@@ -306,7 +466,7 @@ clientes, identificadores de maquina ou credenciais de producao.
 - Cabecalho exato: desafios/resultados usam os quatro Kind ES novos e assinatura
   valida da mesma autoridade, no envelope e no payload.
 - Kind alterado depois da assinatura: rejeicao criptografica.
-- Kind Suite antigo apresentado ao futuro cliente compartilhado: rejeicao antes
+- Kind Suite antigo apresentado ao cliente compartilhado: rejeicao antes
   de chamar a assinatura da maquina ou enviar prova.
 - Cabecalho vazio, duplicado, CSV, variante de valor ou valor desconhecido:
   rejeicao sem queda para o caminho Suite.
@@ -363,9 +523,10 @@ Evidencia do modelo atual:
 
 Antes de liberar autosservico ao titular, identificar um vinculo confiavel,
 mantido no servidor, entre principal autenticado, conta comercial e licenca.
-Se esse fluxo de conta autenticada nao existir, registrar a lacuna e manter a
-operacao restrita ao administrador autorizado ou ao fluxo de recuperacao Suite
-ja aprovado. Nao inventar autenticacao de titular com base somente no ledger,
+Se esse fluxo de conta autenticada nao existir, registrar a lacuna e implementar
+nesta entrega a operacao restrita ao administrador autorizado, conforme 0.3.
+Reutilizar recuperacao Suite ja aprovada quando aplicavel, sem criar outra.
+Nao inventar autenticacao de titular com base somente no ledger,
 no identificador TS enviado, no Windows ou em sinais de rede.
 
 A opcao de interface sera **"Encerrar sessao anterior"**, com confirmacao
@@ -380,7 +541,8 @@ processo da API, PIX, loja Suite ou emulador, nao altera a licenca e nao migra
 chaves/dispositivos. A troca de PC continua sujeita a politica de transferencia
 Suite existente e a sua autorizacao especifica.
 
-Contrato adicional a ser congelado antes de implementar encerramento:
+Implementar o contrato adicional de encerramento abaixo. O executor define os
+nomes/DTOs/versao e testes concretos na mesma entrega, sem alterar o contrato v1:
 
 1. Autorizar o ator no servidor: titular autenticado com vinculo confiavel e
    prova CNG apropriada, ou administrador com permissao especifica e step-up.
@@ -417,10 +579,11 @@ Encerrar uma sessao nao e suspender a licenca para sempre. Se o objetivo futuro
 for bloquear novas aberturas ou recuperar conta/dispositivo, usar a politica
 administrativa apropriada, separadamente e com confirmacao correspondente.
 
-A base atual permite que `session.open` substitua a sessao ES anterior. A nova
-experiencia de conflito/confirmacao deve ter contrato proprio para o cliente
-compartilhado e ser testada com ES 1.0.1; nao alterar silenciosamente o fluxo
-normal da Suite nem eliminar a compatibilidade declarada na secao 4.5.
+A base atual permite que `session.open` substitua a sessao ES anterior. Implementar
+a experiencia de conflito/confirmacao para o cliente compartilhado conforme 0.3
+e testa-la junto do ES 1.0.1; nao alterar silenciosamente o fluxo normal da Suite
+nem eliminar a compatibilidade declarada na secao 4.5. Publicar as limitacoes
+reais do legado; nao prometer confirmacao obrigatoria em clientes antigos.
 
 Testes obrigatorios: titular autorizado, conta divergente, identificador TS
 sozinho, administrador sem claim, CSRF/step-up ausentes, prova trocada, replay,
@@ -429,6 +592,76 @@ heartbeat apos revogacao e manutencao das restricoes financeiras. Encerrar A
 nunca deve afetar a licenca, a sessao nova ou as sessoes de B.
 
 ### 6.4 Painel: qual programa tem uma sessao autorizada
+
+**Entrega obrigatoria nas paginas de gerenciamento existentes.** O usuario
+reforcou que ja existem sites/paginas para gerenciar esses dados e que as novas
+informacoes precisam aparecer neles. Nao criar outro site, outro login ou um
+dashboard separado. Nao considerar esta frente entregue somente com tabelas,
+endpoints, JSON, logs ou campos que a interface nunca consulta.
+
+Pontos de integracao verificados no codigo da base `db4a992`:
+
+| Pagina existente | Alteracao obrigatoria |
+| --- | --- |
+| `/admin`, bloco `#suite-clients` (CLIENTES SUITE / Conexoes do programa) | Mostrar presenca Suite e ES separadas, resumo por cliente/computador, estado e ultimo contato; manter acesso ao historico do cliente |
+| `/admin/fragments/suite-clients` | Atualizar o mesmo bloco com consulta autorizada e paginada/batch; nao listar todo o cadastro e consultar cada cliente separadamente a cada refresh |
+| `/admin/clientes/{licenseId}` (Historico do cliente) | Integrar sessoes por aplicacao e complemento de rede, detalhes mascarados/autorizados e botao de encerramento da sessao ES selecionada; preservar placa-mae, baseline, downloads e historico existentes |
+| `/admin/suite`, inclusive selecao por `licenseId` | Manter resumo, compras/liberacoes e links coerentes com as sessoes Suite/ES; nao confundir estado financeiro com presenca online |
+
+Arquivos a inspecionar e alterar de forma localizada:
+
+- `src/TurboRamaPixOnlineServer/AdminPanel.cs`: `/admin`, fragmento, navegacao e
+  atualizacao automatica do bloco de clientes Suite.
+- `src/TurboRamaPixOnlineServer/SuiteAdminPanel.cs`: `ActiveCustomerPanelAsync`,
+  `CustomerHistoryPage`, `Page` e `CustomerLicenseList`.
+- `src/TurboRamaPixOnlineServer/SuiteAdminBff.cs`: DTOs e chamadas administrativas.
+- `src/TurboRamaSuiteAdminServer/Program.cs`: dados administrativos, atualmente
+  incluindo `/customer-activity/{id}` e consultas de sessao Suite.
+
+O backend atual consulta sessoes Suite e a presenca antiga nao distingue ES;
+implementar o suporte real a ambas as aplicacoes, com DTO/consulta aditivos e
+autorizacao verificada no servidor. Nao somente trocar o texto "programa" no HTML.
+O `AgentVersion` atualmente exibido como programa nao comprova qual aplicacao
+possui sessao; `SessionId` nao vazio nao comprova que ela ainda esta online.
+
+Apresentar ao administrador autorizado, sem remover as informacoes atuais:
+
+- cliente/cadastro comercial e a natureza comprovada de seu vinculo, licenca
+  mascarada, computador/dispositivo vinculado e aplicacao fixa Suite ou ES;
+- estado da sessao, ultimo contato autenticado, validade/expiracao e identificador
+  mascarado da instancia selecionada;
+- IP observado pelo servidor e MACs informados pelo cliente, mascarados na
+  listagem, origem do dado e instante de coleta; detalhes adicionais somente
+  com permissao especifica e sem vazar valores em pagina/endpoint nao autorizado;
+- aviso claro **"IP apenas informativo: mudanca de rede nao bloqueia acesso"**;
+- estado "nao informado por esta versao" para clientes antigos/sem telemetria,
+  sem transformar ausencia de dados em falha de licenciamento;
+- acao **"Encerrar sessao EmulationStation"** na linha correta, confirmacao
+  identificando cliente/computador/aplicacao/alvo e resultado coerente apos
+  atualizar. Nao oferecer encerramento em massa por IP nem misturar com suspensao
+  comercial ou encerramento da sessao Suite.
+
+A listagem atual percorre os clientes e chama `CustomerActivityAsync` por linha,
+com refresh do fragmento a cada tres segundos. Corrigir esse N+1 para os dados
+desta entrega e limitar a frequencia/paginacao/carga conforme 6.5. Preservar
+selecao e foco durante refresh, inclusive quando uma confirmacao estiver aberta;
+nao permitir que uma linha atualizada troque silenciosamente o alvo confirmado.
+
+As rotas `/admin` e seu fragmento hoje exigem autenticacao geral; isso nao
+substitui as permissoes especificas de ler dados sensiveis e encerrar sessoes.
+Aplicar os controles tambem no fragmento, detalhes e endpoints, nao apenas
+ocultando botoes. Reutilizar a fronteira administrativa com ator/claims e
+CSRF/step-up descrita abaixo, sem presumir que token interno sozinho comprova
+titularidade. Manter navegacao, estilos, historico e controles existentes.
+
+Aceite visual e funcional nesta mesma execucao: testar as tres paginas e o
+fragmento com dois clientes sinteticos e Suite/ES simultaneos; verificar desktop
+e tela estreita, filtros, paginacao, contadores, dados ausentes, carregamento,
+erro de backend e permissao negada. Encerrar ES do cliente A deve atualizar
+somente o alvo; Suite de A e ambas as sessoes de B permanecem normais. Registrar
+evidencias com dados sinteticos/mascarados, nunca captura com licenca real,
+credencial ou rede real de cliente. Os valores precisam vir da API implementada,
+nao de mock permanente usado para simular uma entrega pronta.
 
 Apresentar uma listagem autorizada de sessoes, com rotulos definidos pelo
 servidor: **TurboRama Suite** e **EmulationStation**. `appScope` deve decorrer
@@ -580,11 +813,11 @@ centenas de clientes legitimos atras de NAT, sem negar esse uso apenas por
 compartilharem a origem. Qualquer mudanca operacional necessita revisao e
 testes proprios; este requisito nao autoriza desativar protecoes existentes.
 
-MAC da placa de rede nao atravessa uma requisicao HTTP pela internet. Para
-obte-lo, uma futura versao do cliente precisa informar explicitamente um sinal
-coletado localmente. Isso ainda nao existe como resultado deste handoff.
-Limitar a coleta a interfaces relevantes ativas/fisicas e um limite pequeno,
-por exemplo oito interfaces, validado no cliente e no servidor. Definir forma
+MAC da placa de rede nao atravessa uma requisicao HTTP pela internet. Implementar
+no cliente correspondente o envio explicito do sinal coletado localmente e no
+servidor sua validacao/persistencia/exibicao autorizada, todos nesta entrega.
+Limitar a coleta a interfaces relevantes ativas/fisicas e no maximo oito
+interfaces, validado no cliente e no servidor. Definir forma
 canonica do MAC, tipo de interface e marcadores de endereco administrado
 localmente/randomizado/virtual, com deduplicacao. Nao coletar inventario de
 processos, arquivos, nomes arbitrarios ou informacoes sem relacao com esse fim.
@@ -644,16 +877,19 @@ heartbeat de cliente autorizado continuam normais, sem revogacao, encerramento,
 negacao de reconexao ou bloqueio por score associado ao IP. Varias licencas
 validas no mesmo NAT devem continuar independentes e operantes.
 
-## 7. Roteiro operacional futuro — nao executado por este handoff
+## 7. Implantacao e homologacao integrantes da ordem
 
 A documentacao historica aponta `turborama-suite-api.service` e o listener Suite
 `127.0.0.1:5190`. Ela cita releases sob `/opt/turborama-suite-r5-releases/`. Isso
-e referencia para verificacao, nao prova do destino atual. Nao ha aqui credencial
-SSH, conexao de banco ou autorizacao para acessar o host de producao.
+e referencia para verificacao, nao prova do destino atual. Este arquivo nao
+contem credenciais. Usar somente o destino e o acesso operacional ja autorizados
+ao executor, conforme 0.1; nao deduzir permissao de um nome historico de unidade.
+Sem esse acesso, terminar codigo/CI/artefatos e registrar o bloqueio operacional
+exato. Nao encerrar antes apenas por haver uma etapa de implantacao restante.
 
 ### 7.1 Confirmar o processo e a diferenca entre origem e acesso publico
 
-Na futura etapa autorizada no host, consultar metadados da unidade sem imprimir
+No host autorizado, consultar metadados da unidade sem imprimir
 variaveis privadas ou arquivos de credenciais:
 
 ```bash
@@ -675,7 +911,7 @@ Comparar com o caminho publico aprovado. Se a origem reconhece a rota mas o
 publico devolve 404, investigar encaminhamento. Se a origem devolve 404, confirmar
 binario/processo/listener efetivos. Nao corrigir isso reativando a maquina.
 
-Para as rotas compartilhadas futuras, testar tambem a propagacao exata do
+Para as rotas compartilhadas implementadas, testar tambem a propagacao exata do
 cabecalho. Um servidor antigo pode devolver o mesmo erro de JSON para `{}` com
 ou sem cabecalho; esse teste sozinho nao prova suporte ao novo contrato. A prova
 de suporte exige testar os Kind novos com identidade sintetica no ambiente
@@ -683,11 +919,12 @@ apropriado ou com cliente autorizado na homologacao.
 
 ### 7.2 Preparar e habilitar a implementacao aprovada
 
-Somente apos o contrato ser implementado, revisado e aprovado:
+Executar apos implementar, revisar e aprovar os testes do contrato nesta mesma
+tarefa, e confirmar o destino e a autoridade operacional conforme 0.1:
 
 1. Identificar o commit/binario e a configuracao realmente carregados no host.
 2. Preservar o release anterior e a configuracao para rollback.
-3. Confirmar migrations 001–021. Se 022 ainda estiver ausente, aplicar somente
+3. Confirmar migrations 001–021. Se 022 ainda estiver ausente, aplicar
    `migrations/suite/022_suite_emulationstation_sessions.up.sql`, uma vez, na
    conexao Suite previamente confirmada. Exemplo de comando, sem credenciais:
 
@@ -695,6 +932,11 @@ Somente apos o contrato ser implementado, revisado e aprovado:
    psql --set=ON_ERROR_STOP=1 \
      --file=migrations/suite/022_suite_emulationstation_sessions.up.sql
    ```
+
+   Aplicar tambem, em ordem e uma unica vez, as migrations aditivas efetivamente
+   implementadas/testadas para sessoes administrativas e telemetria desta ordem.
+   Conferir checksums/grants e banco alvo; nao reaplicar migrations existentes,
+   executar down destrutivo ou tratar o exemplo da 022 como instalacao completa.
 
 4. Publicar o artefato revisado em novo diretorio de release e atualizar o
    apontamento apenas da unidade Suite, preservando os arquivos protegidos e as
@@ -718,12 +960,14 @@ Somente apos o contrato ser implementado, revisado e aprovado:
    negacoes previstas, suporte ao cliente antigo e funcionamento normal dos
    demais servicos. Health/ready sozinhos nao comprovam o contrato criptografico.
 
-As etapas de listagem, titularidade/encerramento e sinais de rede precisam de
-plano de publicacao separado conforme seus componentes efetivamente alterados
-(API, backend administrativo, painel/BFF e eventual coletor cliente). O roteiro
-de reiniciar somente a API nao instala por si uma funcionalidade nova no BFF.
-Confirmar previamente o escopo de cada implantacao e preservar o ecossistema
-existente; este documento nao autoriza paradas, conexoes ou mudancas de producao.
+Publicar tambem os componentes realmente alterados de listagem, encerramento e
+telemetria (backend administrativo, painel/BFF e cliente), com passos por
+componente dentro desta mesma execucao. O roteiro de reiniciar somente a API nao
+instala por si uma funcionalidade nova nas paginas de gerenciamento. Confirmar
+as unidades/alvos efetivos e a janela operacional autorizada antes de reiniciar
+o componente hospedeiro do painel; preservar os servicos PIX que ele hospeda.
+Revisoes por componente nao sao pedidos para gerar outra ordem ou outro handoff.
+Nao ampliar acesso/paradas alem do destino e escopo autorizados.
 
 Nao usar `ops/deploy-round12.sh` como instalador Suite: aquele script e do PIX e
 opera outra aplicacao. O workflow ES atual gera artefato de revisao e executa
@@ -736,26 +980,30 @@ apontamento da API Suite ao release anterior, preservando sua configuracao.
 Revalidar Suite e servicos existentes. A indisponibilidade ES deve ser apresentada
 como tal ao cliente, sem fallback para consumir a sessao original da Suite.
 
-A migration 022 pode permanecer instalada; nao e necessario apagar tabelas ou
-registros para voltar ao binario anterior. Nao executar down migrations
+A migration 022 e as demais migrations aditivas compativeis podem permanecer
+instaladas; nao e necessario apagar tabelas ou registros para voltar ao binario
+anterior. Testar essa compatibilidade antes da publicacao. Nao executar down migrations
 destrutivas como rotina de rollback. Nao restaurar chaves ou reativar licencas
 como forma de contornar uma falha de roteamento.
 
-## 8. Checkpoints para a equipe do servidor e para o frontend
+## 8. Criterios obrigatorios de conclusao conjunta
 
-Antes de publicar uma nova versao frontend que use as rotas compartilhadas,
-a equipe do servidor deve entregar:
+O executor responde pelo conjunto servidor, paginas e cliente. Os criterios
+abaixo pertencem a uma unica entrega; nao sao solicitacoes de novo handoff.
+Antes de anunciar a versao como homologada, apresentar evidencias de todos eles:
 
 1. **Contrato confirmado:** caminhos, cabecalho exato, quatro Kind, compatibilidade
    e comportamento de falha revisados com a equipe frontend.
-2. **Implementacao revisavel:** branch/commit e diff limitado ao dispatcher,
-   adapter/signer ES, testes e documentacao; demonstracao de que o caminho Suite
-   sem cabecalho, o PIX e as regras de licenca permaneceram preservados.
+2. **Implementacao revisavel:** commits de dispatcher, adapter/signer, persistencia,
+   autorizacao, painel/BFF, telemetria, cliente e testes, com limites claros por
+   modulo. Demonstrar que o caminho Suite sem cabecalho, o PIX, a identidade e
+   os reparos de audio/memoria/jogos do cliente permaneceram preservados.
 3. **CI aprovado:** testes de protocolo, HTTP, compatibilidade e PostgreSQL real
-   para o commit que sera publicado, incluindo servidor antigo/cabecalho removido.
+   para os commits finais, incluindo servidor antigo/cabecalho removido, todas
+   as novas frentes e compilacao Windows do cliente. CI historico nao conta.
 4. **Artefato identificado:** commit e SHA-256 do pacote/binario, configuracao
    padrao desabilitada e procedimento de rollback correspondente.
-5. **Destino confirmado:** processo/binario, listener, migration 022, flag e
+5. **Destino confirmado:** processo/binario, listener, migrations aplicaveis, flag e
    encaminhamento efetivos verificados no ambiente autorizado, sem divulgar
    credenciais nem dados privados.
 6. **Homologacao conjunta:** cliente compartilhado reconhece os Kind ES e abre
@@ -765,6 +1013,9 @@ a equipe do servidor deve entregar:
    confiavel ou operacao restrita a administrador; sessoes separadas por
    aplicacao, permissoes/CSRF/step-up verificados, encerramento com confirmacao
    e alvo exato, sem afetar sessoes novas, Suite, PIX ou outros clientes.
+   Validar as paginas existentes com dados sinteticos: informacoes visiveis,
+   filtros/paginacao, detalhes autorizados, confirmacao e estados de erro/vazio.
+   API pronta sem a informacao e a acao nas paginas nao satisfaz este criterio.
 8. **Escala medida:** testes de 500/1000 sessoes, NAT, rajada/soak, pool/locks e
    latencias registrados; isolamento entre clientes e limites aprovados para
    o host medido. Nao substituir evidencia por promessa de capacidade.
@@ -773,7 +1024,8 @@ a equipe do servidor deve entregar:
    alteracao de inventario, fingerprint, autoridade ou vinculo existentes.
    IP e estritamente informativo: nenhuma mudanca/valor/divergencia pode provocar
    bloqueio direto ou indireto, encerramento, negacao de reconexao ou reativacao.
-   Se a coleta depender de frontend novo, nao anuncia-la antes dessa entrega.
+   Entregar e validar o coletor no frontend novo; endpoint vazio ou campo
+   ficticio no painel nao e evidencia de coleta implementada.
 10. **Liberacao coordenada:** comunicar o commit/artefato do servidor validado e
    a disponibilidade do contrato. So entao liberar a versao frontend correspondente.
 
@@ -783,13 +1035,25 @@ identificador ja ativado e explicar indisponibilidade do servidor sem pedir nova
 ativacao. Este handoff nao autoriza enfraquecer essas verificacoes para que um
 cliente novo funcione contra um servidor antigo.
 
-## 9. Estado de entrega desta etapa
+## 9. Historico e formato de encerramento da execucao
 
-Foi criado somente este documento. O contrato compartilhado continua proposto,
-nao implementado nem implantado. Titularidade/encerramento, listagem por programa,
-capacidade multi-cliente e complemento MAC/IP tambem sao requisitos futuros
-documentados, nao funcionalidades executadas nesta etapa. Nenhum arquivo de runtime, teste, workflow,
-migration, autoridade ou configuracao foi alterado nesta etapa. Nao houve
-conexao SSH, leitura de chave privada, uso de licenca real ou operacao em
-producao. A equipe que executar a etapa seguinte deve registrar os checkpoints
-acima e distinguir testes sinteticos de homologacao real do ambiente autorizado.
+Historico: `f1bb86a` publicou somente a orientacao original; `db4a992` registrou
+somente sua leitura/retorno. Nenhum deles implementou as rotas compartilhadas,
+o novo painel, encerramento ou telemetria. Esta revisao corrige a ordem para
+execucao integral; nao altera retroativamente esses fatos nem comprova deploy.
+
+A execucao so pode ser declarada concluida apos preencher a matriz da secao 0.4
+e satisfazer a secao 8. O resumo final deve conter, em uma unica entrega:
+
+1. O que foi efetivamente implementado em servidor, paginas e cliente, com commits.
+2. Quais testes/CI passaram para esses commits, incluindo carga medida e limites.
+3. Links dos artefatos/releases separados, versoes e hashes SHA-256.
+4. Quais componentes foram realmente implantados, onde, e qual verificacao
+   confirmou funcionamento conjunto sem alterar Suite/PIX e outros clientes.
+5. Qualquer bloqueio externo ainda existente, com evidencia e acao minima para
+   resolve-lo. Distinguir "pronto para implantar" de "implantado e homologado".
+
+Nao produzir outro arquivo de recebimento como resultado final. Atualizar este
+documento e a documentacao tecnica dos componentes conforme o codigo entregue.
+Nao declarar completo um item apenas planejado, compilado sem teste aplicavel,
+simulado sem ambiente real, ou dependente de um cliente ainda nao implementado.

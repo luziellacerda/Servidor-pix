@@ -2,6 +2,12 @@
 
 Data: 2026-09-05.
 
+> **Registro historico, nao a ordem vigente.** Apos este retorno, o usuario
+> determinou executar todas as frentes em uma unica entrega, sem novos ciclos
+> documentais. Seguir a [ordem unica atualizada no documento original](HANDOFF-EMULATIONSTATION-ROTAS-COMPARTILHADAS-20260905.md),
+> especialmente as secoes 0 e 8. O restante deste arquivo preserva o relato do
+> que foi feito em `db4a992`; suas limitacoes documentais nao adiam a ordem atual.
+
 Repositório: `luziellacerda/Servidor-pix`.
 
 Branch: `codex/emulationstation-suite-v1-20260905`.
