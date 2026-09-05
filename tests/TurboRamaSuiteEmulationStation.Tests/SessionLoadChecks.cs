@@ -13,7 +13,7 @@ internal static class SessionLoadChecks
         var builder=new NpgsqlConnectionStringBuilder(connection);
         if(builder.Database is null||!(builder.Database.Contains("integration",StringComparison.Ordinal)||builder.Database.EndsWith("_ci",StringComparison.Ordinal)))
             throw new InvalidOperationException("Load checks require a disposable integration/CI database.");
-        await using var db=NpgsqlDataSource.Create(connection);
+        await using var db=NpgsqlDataSource.Create(new NpgsqlConnectionStringBuilder(connection){MaxPoolSize=4}.ConnectionString);
         using var online=RSA.Create(3072);using var signer=new RsaAssertionSigner(online);
         var reports=new List<object>();
         foreach(var count in Environment.GetEnvironmentVariable("SUITE_ES_LOAD_COUNTS")?.Split(',').Select(int.Parse).ToArray()??[500,1000])

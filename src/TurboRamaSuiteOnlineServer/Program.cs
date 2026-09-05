@@ -74,7 +74,7 @@ builder.Services.AddHttpClient<TurboRamaWhatsAppNotifier>();
 builder.Services.AddSingleton<SuiteRateLimiter>();
 if (enabled)
 {
-    builder.Services.AddSingleton(NpgsqlDataSource.Create(connection!));
+    builder.Services.AddSingleton(NpgsqlDataSource.Create(SuiteDatabasePoolPolicy.ApplyDefaults(connection!)));
     builder.Services.AddSingleton<ISuiteStore, PostgresSuiteStore>();
     builder.Services.AddSingleton<IAssertionSigner>(_ => { var rsa = RSA.Create(); rsa.ImportFromPem(signingPem); return new RsaAssertionSigner(rsa); });
     builder.Services.AddSingleton(sp => new SuiteService(sp.GetRequiredService<ISuiteStore>(), sp.GetRequiredService<IAssertionSigner>(), sp.GetRequiredService<TimeProvider>(), pepper!));

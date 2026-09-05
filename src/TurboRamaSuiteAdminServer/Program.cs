@@ -24,7 +24,12 @@ using var contentManagement = await ContentManagementBootstrap.TryLoadAsync(
     contentManagementEnabled, CancellationToken.None);
 if (File.Exists(socketPath)) File.Delete(socketPath);
 builder.WebHost.ConfigureKestrel(options => { options.Limits.MaxRequestBodySize = 16 * 1024; options.ListenUnixSocket(socketPath); });
-builder.Services.AddSingleton(NpgsqlDataSource.Create(connection));
+var adminDatabaseSettings=new NpgsqlConnectionStringBuilder(connection);
+var suppliedAdminDatabaseSettings=new System.Data.Common.DbConnectionStringBuilder{ConnectionString=connection};
+if(!suppliedAdminDatabaseSettings.Keys.Cast<string>().Any(key=>
+    key.Replace(" ","",StringComparison.Ordinal).Equals("MaxPoolSize",StringComparison.OrdinalIgnoreCase)||
+    key.Replace(" ","",StringComparison.Ordinal).Equals("MaximumPoolSize",StringComparison.OrdinalIgnoreCase)))adminDatabaseSettings.MaxPoolSize=8;
+builder.Services.AddSingleton(NpgsqlDataSource.Create(adminDatabaseSettings.ConnectionString));
 builder.Services.AddSingleton(token);
 var app = builder.Build();
 app.Lifetime.ApplicationStarted.Register(() => { if (!OperatingSystem.IsLinux()) throw new PlatformNotSupportedException(); File.SetUnixFileMode(socketPath,

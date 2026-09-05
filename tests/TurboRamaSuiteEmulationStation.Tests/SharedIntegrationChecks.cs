@@ -15,6 +15,10 @@ internal static class SharedIntegrationChecks
 {
     public static async Task RunAsync(string connection)
     {
+        Check(new NpgsqlConnectionStringBuilder(SuiteDatabasePoolPolicy.ApplyDefaults("Host=localhost;Database=synthetic")).MaxPoolSize==32,
+            "The default licensing pool must reserve database capacity for other services.");
+        Check(new NpgsqlConnectionStringBuilder(SuiteDatabasePoolPolicy.ApplyDefaults("Host=localhost;Maximum Pool Size=16")).MaxPoolSize==16,
+            "Explicit operator connection budgets must be preserved.");
         await using var db = NpgsqlDataSource.Create(connection);
         using var online = RSA.Create(2048);
         using var signer = new RsaAssertionSigner(online);
@@ -85,7 +89,7 @@ internal static class SharedIntegrationChecks
         builder.Logging.ClearProviders();
         builder.WebHost.UseUrls("http://127.0.0.1:0");
         builder.WebHost.ConfigureKestrel(o => o.Limits.MaxRequestBodySize = Protocol.MaximumBodyBytes);
-        builder.Services.AddSingleton<NpgsqlDataSource>(_=>NpgsqlDataSource.Create(new NpgsqlConnectionStringBuilder(connection)
+        builder.Services.AddSingleton<NpgsqlDataSource>(_=>NpgsqlDataSource.Create(new NpgsqlConnectionStringBuilder(SuiteDatabasePoolPolicy.ApplyDefaults(connection))
             {Options="-c role=turborama-suite"}.ConnectionString));
         builder.Services.AddSingleton(TimeProvider.System);
         builder.Services.AddSingleton(signer);
