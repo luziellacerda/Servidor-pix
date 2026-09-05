@@ -7,8 +7,11 @@ diagnostics. Stable codes: `SUITE_DISABLED`, `BODY_INVALID`, `JSON_INVALID`, `CO
 `PROOF_INVALID`, `REPLAY_DENIED`, `SESSION_INVALID`, `INTERNAL_ERROR`.
 
 The edge must preserve JSON, status, content type and body without redirect, HTML or compression.
-Heartbeat-aware throttling must be designed before production because the fixed client treats 4xx as
-authoritative denial.
+Core request budgets allow 30 requests/minute per origin, license, device, route and app;
+five-second heartbeats use separate challenge/proof windows. A NAT may track 4096 such
+windows in each bucket. Pool defaults reserve database capacity for other services.
+The fixed client treats 4xx as authoritative denial; consult the measured capacity report
+before increasing production concurrency.
 
 
 ## ES compartilhado e rede complementar 1.1.0

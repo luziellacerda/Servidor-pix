@@ -104,11 +104,11 @@ jobs:
           fixture_pid=$!
           trap 'kill "$fixture_pid" 2>/dev/null || true' EXIT
           for attempt in {1..100}; do
-            if rg -q BROWSER_FIXTURES_READY outputs/es-browser-host.log; then break; fi
+            if grep -q BROWSER_FIXTURES_READY outputs/es-browser-host.log; then break; fi
             if ! kill -0 "$fixture_pid" 2>/dev/null; then cat outputs/es-browser-host.log; exit 1; fi
             sleep 1
           done
-          rg -q BROWSER_FIXTURES_READY outputs/es-browser-host.log
+          grep -q BROWSER_FIXTURES_READY outputs/es-browser-host.log
           node ops/tests/test-suite-session-panel.mjs
           wait "$fixture_pid"
       - name: Measure 500 and 1000 real signed sessions behind one NAT
