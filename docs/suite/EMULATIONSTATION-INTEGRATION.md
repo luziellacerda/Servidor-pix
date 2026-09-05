@@ -1,155 +1,166 @@
-# EmulationStation com a ativacao do TurboRama Suite — servidor 1.0.0
+# EmulationStation Suite 1.1.0 — contrato, operação e validação
 
-Esta extensao permite que o EmulationStation sem servicos comerciais consulte a
-mesma licenca ja ativada no TurboRama Suite. O computador prova que possui a chave
-CNG que foi cadastrada na ativacao. O servidor continua sendo a autoridade sobre
-licenca, equipamento, suspensao, revogacao e transferencia.
+A edição Suite reutiliza o TS e a chave CNG já ativados na mesma conta Windows.
+Suite e ES têm sessões e desafios independentes. Não há ativação adicional,
+chave nova, licença offline ou autorização por cache, MAC, IP ou cadastro comercial.
+A ordem e a matriz de execução ficam no [handoff vigente](HANDOFF-EMULATIONSTATION-ROTAS-COMPARTILHADAS-20260905.md).
 
-Base deste trabalho: `codex/turborama-suite-vendas-producao-20260828`, commit
-`4ea972657355740485b3831970ef1fd21b186661`. Os arquivos do servidor Suite e suas
-migrations nessa revisao sao identicos aos da branch
-`codex/suite-whatsapp-session-open-20260903`, commit
-`fb3d304645b1c1657b23c45a599abfe5a1fdc2e7`.
+## Rotas e assinatura
 
-Branch da extensao: `codex/emulationstation-suite-v1-20260905`.
+| Cliente | Desafio | Prova | Cabeçalho |
+| --- | --- | --- | --- |
+| Suite existente | `/v1/suite/challenges` | `/v1/suite/sessions` | ausente |
+| ES 1.1.0 | mesmos caminhos Suite | mesmos caminhos Suite | exatamente `X-TurboRama-Client: EMULATIONSTATION` |
+| ES dedicado 1.0.1 | `/v1/suite/emulationstation/challenges` | `/v1/suite/emulationstation/sessions` | ausente |
 
-## Por que existe um caminho proprio
+Cabeçalho vazio, repetido, CSV, desconhecido, com outra capitalização no valor,
+em outro caminho ou método recebe 400 `CLIENT_SCOPE_INVALID`. O ES desabilitado
+recebe 503 `EMULATIONSTATION_DISABLED`, sem encaminhamento alternativo à Suite.
 
-O servidor original guarda uma sessao por `(license_id, device_id)` na tabela
-`suite.suite_sessions`. Uma nova abertura substitui o identificador da anterior.
-Se o EmulationStation usasse esse mesmo caminho, fecharia a autorizacao da loja
-Suite no proximo heartbeat. A nova extensao usa tabelas separadas para os seus
-desafios e sessoes. As duas aplicacoes podem executar ao mesmo tempo, com a mesma
-licenca e a mesma identidade, sem substituir suas sessoes mutuamente.
+O signer muda o Kind antes da assinatura, tanto no payload quanto no envelope:
+`TURBORAMA_SUITE_ES_SESSION_OPEN_CHALLENGE`,
+`TURBORAMA_SUITE_ES_SESSION_HEARTBEAT_CHALLENGE`,
+`TURBORAMA_SUITE_ES_SESSION_OPEN`, `TURBORAMA_SUITE_ES_SESSION_HEARTBEAT`.
+Os domínios originais Suite v1, produto, contextos e bytes da prova de máquina
+permanecem iguais. O cliente valida o Kind e a assinatura antes de usar CNG.
+Cabeçalho removido em qualquer etapa ou servidor antigo impede autorização.
 
-## Contrato que o EXE deve usar
+A migration 023 acrescenta `client_contract` aos desafios ES. O padrão
+`DEDICATED_V1` conserva os binários antigos; `SHARED_V1` impede consumir uma prova
+nova através da política de substituição do caminho dedicado.
 
-| Operacao | Caminho HTTP |
-| --- | --- |
-| Obter desafio de abertura ou heartbeat | `POST /v1/suite/emulationstation/challenges` |
-| Enviar prova e obter sessao assinada | `POST /v1/suite/emulationstation/sessions` |
+Uma nova abertura compartilhada encontra conflito se já existir sessão ES ativa.
+Depois de verificar prova, vínculo, elegibilidade comercial e consumir o desafio
+em transação, responde HTTP 200 com assertion ES assinada, status `CONFLICT` e
+`authorizedUntilUnixSeconds == serverTimeUnixSeconds`: nenhuma janela de acesso.
+O cliente apresenta `ES_SESSION_CONFLICT` somente depois da validação criptográfica.
+A sessão existente continua. O legado dedicado 1.0.1 conserva sua substituição
+silenciosa; essa limitação não foi removida dos clientes já distribuídos.
 
-As estruturas JSON continuam sendo `ChallengeRequest`, `SessionProof`,
-`SessionContext` e `SignedAssertionEnvelope` do protocolo Suite v1. O produto
-continua `TURBORAMA_SUITE`. Somente `session.open` e `session.heartbeat` sao aceitos.
-Os nomes dos envelopes assinados, a serializacao canonica, RSA-PSS-SHA256, os
-dominios de assinatura e a autoridade publica assinada permanecem os existentes.
-O cliente deve mudar os dois caminhos de sessao, validar a mesma autoridade/TLS e
-abrir a chave CNG existente do usuario Windows. Criar outra chave nao aproveita a
-ativacao anterior e nao deve ser um fallback do EmulationStation.
+Heartbeat exige a mesma sessão ainda válida e renova por 180 segundos, com
+intervalo indicado de cinco segundos. Abertura/heartbeat mantêm transações
+serializáveis, travas por licença/dispositivo e até seis tentativas com jitter
+para conflitos SSI/deadlock, dentro do timeout HTTP de dez segundos. Todas as
+verificações e o consumo único são refeitos a cada tentativa; não há concessão
+parcial. A mudança no store Suite original limita-se a esse orçamento de tentativas.
 
-O servidor nao possui uma rota publica que descubra o `LicenseId` pelo `DeviceId`.
-O identificador da licenca deve ser informado ao cliente ou lembrado localmente
-depois de uma validacao. Ele nao e o codigo de ativacao de uso unico. Esta extensao
-nao adiciona ativacao, exportacao de chave privada, codigo universal nem licenca
-offline. Dados reais de teste nunca devem ser gravados no repositorio, workflow,
-argumentos de compilacao ou artefatos.
+## Painel existente e encerramento
 
-## Codigo, do inicio da requisicao ate a autorizacao
+As páginas `/admin`, `/admin/fragments/suite-clients`, `/admin/clientes/{licenseId}`
+e `/admin/suite` exibem a sessão mais recente por aplicação, priorizando a vigente.
+Os estados são Online, Sem contato recente, Expirada e Revogada. A migration 024
+registra `last_contact_at` somente na abertura/renovação autenticada; timestamps
+históricos desconhecidos continuam nulos. Online significa contato nos últimos
+15 segundos, além de licença, dispositivo, vínculo e geração ainda válidos.
 
-1. `Program.cs` le `Suite:EmulationStation:Enabled`. O valor padrao e `false`, e a
-   extensao tambem exige que o servico Suite esteja habilitado. A configuracao
-   publicada continua desabilitada.
-2. `EmulationStationEndpoints` registra somente as duas rotas. Desabilitada, a
-   extensao responde HTTP 503 / `EMULATIONSTATION_DISABLED` antes de acessar banco
-   ou chaves. Habilitada, aplica JSON estrito, limite de corpo do Kestrel,
-   rate limiter existente e timeout de dez segundos. Erros nao incluem segredos.
-3. `EmulationStationService` recusa qualquer acao de ativacao, inventario,
-   catalogo ou download. Delega a validacao criptografica ao `SuiteService`
-   existente usando exclusivamente `IEmulationStationStore`.
-4. `PostgresEmulationStationStore` le licencas e equipamentos das tabelas Suite
-   existentes. Um desafio exige uma licenca vinculada, ativacao consumida e
-   equipamento ativo. Ele grava apenas `suite.suite_es_challenges`, incluindo a
-   geracao atual de revogacao. Desafios vencidos da mesma licenca sao removidos
-   durante a proxima emissao; ha um limite de 64 desafios por equipamento ainda
-   dentro do prazo. A assinatura do desafio usa a autoridade online existente.
-5. O EXE assina o desafio usando a chave privada CNG existente. O `SuiteService`
-   confere contexto, produto, licenca, equipamento, sessao, fingerprint, hash,
-   desafio, nonce e assinatura. O adapter procura o desafio somente na tabela ES.
-6. A conclusao ocorre em transacao serializavel. Ela bloqueia as linhas da licenca,
-   entrega comercial quando houver, vinculo e equipamento. Confere estado ativo,
-   licenca vitalicia para um equipamento, ativacao consumida e entrega elegivel.
-   A prova consome uma unica vez o desafio ES, com todos os campos e a geracao
-   de revogacao correspondentes, antes da alteracao da sessao ES na mesma transacao.
-7. `session.open` substitui somente a sessao ES daquele equipamento.
-   `session.heartbeat` renova somente a mesma sessao ES ainda ativa e nao vencida.
-   Repeticao, geracao antiga, sessao substituida ou expirada sao negadas. Falhas de
-   serializacao/deadlock recebem no maximo tres tentativas controladas.
-8. A resposta assinada preserva o prazo de 180 segundos e heartbeat sugerido de
-   cinco segundos do Suite. O EXE precisa verificar a assinatura e o prazo com
-   relogio monotonicamente limitado. Uma resposta local `ACTIVE` sem verificacao
-   criptografica nao e autorizacao. A falta de servidor na abertura deve negar
-   entrada; falha temporaria durante uso nao pode estender o prazo localmente.
+A listagem pagina 25 clientes e consulta até 50 linhas por lote, sem uma chamada
+HTTP por cliente. A API aceita até 50 licenças distintas, retorna no máximo 100
+linhas e usa timeout de cinco segundos. O polling ocorre a cada 15 segundos e
+preserva filtros focados, diálogos e confirmações abertas.
 
-Uma prova ES enviada para `/v1/suite/sessions` falha porque o identificador nao
-existe na tabela de desafios Suite. O inverso tambem falha. O acesso a catalogo
-exige a sessao na tabela original; a sessao ES nao concede esse acesso. A
-isolacao e feita pelas rotas, allowlist de acoes, tabelas e consumo transacional;
-os envelopes assinados nao foram transformados em tokens transferiveis de acesso.
+O login administrativo existente concede `suite.sessions.read`,
+`suite.sessions.revoke` e `suite.network.read`. Cookies emitidos antes da mudança
+precisam de novo login para receber essas permissões. Não há conta humana nova:
+vínculo CNG/licença é técnico e cadastro comercial não comprova login do titular.
 
-## Migracao e habilitacao operacional
+O botão ES exige permissão específica, antiforgery, checkbox de confirmação e
+senha administrativa recente. O alvo é protegido por Data Protection e vinculado
+a ator, licença, dispositivo, sessão, request ID e validade de cinco minutos.
+O BFF envia prova interna pelo socket existente. Token do socket sozinho não basta.
 
-O workflow gera um artefato para revisao. Ele **nao implanta, habilita, modifica
-variaveis de producao, emite licencas ou altera chaves**. O deploy e uma etapa
-operacional separada. Ate a extensao ser implantada e habilitada no servidor
-existente, o novo EXE deve recusar login com uma mensagem de indisponibilidade.
+A transação trava a licença e compara o identificador exato da sessão (CAS).
+Revoga somente essa linha ES, invalida os desafios pendentes daquela sessão e
+registra recibo idempotente e auditoria. Repetição usa o recibo; confirmação antiga
+não revoga sessão nova. A geração global, Suite, PIX e cliente B são preservados.
+Negações administrativas também geram auditoria sem endereços de rede crus.
 
-No ambiente de homologacao, com backup e acesso administrativo ao banco correto:
+## Rede complementar
 
-1. Confirme que as migrations Suite 001–021 ja foram aplicadas. Compare a revisao
-   efetivamente implantada; este documento nao prova qual commit esta em producao.
-2. Aplique apenas
-   `migrations/suite/022_suite_emulationstation_sessions.up.sql`, uma vez, usando
-   `psql --set=ON_ERROR_STOP=1 --file=...`. A migration adiciona duas tabelas e seus
-   indices, concede permissoes somente ao papel runtime `turborama-suite` e registra
-   a versao. Ela nao altera as tabelas de sessao/desafio Suite ou do PIX.
-3. Publique o servidor candidato conforme o procedimento operacional existente.
-   Mantenha as mesmas configuracoes protegidas, chave de assinatura e TLS. O novo
-   recurso nao requer uma nova chave nem permissao de administrador no EXE.
-4. No servico Suite de homologacao, configure
-   `Suite__EmulationStation__Enabled=true`, preservando `Suite__Enabled` e as
-   demais configuracoes. Recarregue apenas o servico Suite pelo procedimento
-   operacional estabelecido.
-5. Se o proxy publicar rotas individualmente, inclua os dois caminhos ES no mesmo
-   upstream Suite ja aprovado. Nao encaminhe esses caminhos ao processo PIX.
-6. Teste login com a licenca ativada e a mesma conta Windows, Suite e ES abertos
-   juntos, suspensao/revogacao, falta de rede, copia para outro PC e outro usuario
-   Windows. Confirme que os eventos e downloads da Suite continuam funcionando.
+O contrato adicional está em `NetworkInventoryContract.cs`, idêntico ao cliente.
+As rotas são `POST /v1/suite/network/challenges` e
+`POST /v1/suite/network/inventory`, sem o cabeçalho ES. A ação é
+`network.inventory.submit`, com escopo explícito `SUITE` ou `EMULATIONSTATION`.
+Contexto: versão, produto, licença, dispositivo, sessão, aplicação, ação,
+fingerprint existente, versão do cliente, instante de coleta e até oito interfaces.
+Cada interface contém MAC canônico, tipo Ethernet/Wi-Fi, marcador local e virtual.
 
-Rollback operacional: configure `Suite__EmulationStation__Enabled=false` e
-recarregue somente o servico Suite. O EXE ES perde a autorizacao conforme o
-heartbeat/prazo valido. A Suite e o PIX seguem os fluxos anteriores. As tabelas ES
-podem permanecer para auditoria; nao ha necessidade de apaga-las para retornar ao
-binario anterior. Uma remocao definitiva dessas tabelas e uma acao administrativa
-separada, com exportacao previa se necessario.
+O desafio vincula o hash SHA-256 do contexto e expira em 60 segundos. A prova é
+RSA-PSS-SHA256 usando `TurboRamaSuiteNetworkMachineProof/v1\0`; assertions usam
+`TurboRamaSuiteNetworkAssertion/challenge/v1\0` e `.../result/v1\0`.
+Kinds: `TURBORAMA_SUITE_NETWORK_CHALLENGE_V1` e
+`TURBORAMA_SUITE_NETWORK_RESULT_V1`. O resultado `ACCEPTED` não concede acesso.
+JSON é estrito e canônico, corpo máximo 8192 bytes, até oito desafios pendentes
+por licença/dispositivo/aplicação; coleta aceita até cinco minutos de atraso.
 
-O papel Suite usa as mesmas permissoes existentes para ler/bloquear licencas,
-vinculos, equipamentos e entregas. A migration 022 concede apenas as novas
-permissoes de escrita nas tabelas ES. A extensao nao publica inventario, presenca
-ou avisos WhatsApp e nao altera a logica dos servicos existentes.
+O IP vem da conexão após a política existente de proxy confiável: somente
+loopback, um salto e simetria dos cabeçalhos forwarded. `CF-Connecting-IP` e
+X-Forwarded-For de origem não confiável não definem o IP. O proxy de destino deve
+substituir cabeçalhos de origem, preservar o cabeçalho ES e encaminhar as duas
+rotas adicionais de rede. Nenhuma mudança de proxy real foi declarada sem prova.
 
-## Verificacao e limites
+MAC/IP crus ficam cifrados com AES-GCM pela chave protegida do inventário existente.
+O painel e seu papel PostgreSQL recebem somente máscaras. Retenção padrão de
+30 dias, configurável entre 1 e 365; limpeza por minuto em lotes de 500. Mantém-se
+apenas o relatório mais recente de cada licença/dispositivo/aplicação. A correção
+do decrypt AES-GCM respeita o formato existente nonce/tag/ciphertext e é coberta
+por teste de ida/volta e adulteração. O inventário original continua separado.
 
-`tests/TurboRamaSuiteEmulationStation.Tests` usa chaves RSA e identificadores
-estritamente sinteticos. Os testes verificam assinatura de resposta, uso do
-produto Suite, coexistencia de sessoes, troca de sessao somente no ES, rejeicao
-de prova entre caminhos, replay, acao proibida, catalogo, hardware/chave incorretos
-e rotas desabilitadas. Com `SUITE_ES_TEST_CONNECTION` e `--require-postgres`,
-executam o `PostgresSuiteStore` original e o novo adapter no PostgreSQL real,
-incluindo revogacao, geracao antiga apos suspender/retomar, dispositivo revogado,
-heartbeat expirado e ativacao obrigatoria.
+O coletor Windows usa interfaces físicas ativas, debounce mínimo de um minuto,
+coleta inicial e por mudança/sessão, fora do heartbeat. A prova usa a chave CNG
+existente. Falha do complemento não revoga, estende ou impede uma autorização.
+IP é exclusivamente informativo, inclusive em análises combinadas; MAC isolado
+não bloqueia, revoga, exige ativação nem altera fingerprint.
 
-Comandos de verificacao:
+## Carga reproduzível
 
-```text
-dotnet restore tests/TurboRamaSuiteEmulationStation.Tests --locked-mode
-dotnet run --project tests/TurboRamaSuiteEmulationStation.Tests -c Release
-dotnet run --project tests/TurboRamaSuiteEmulationStation.Tests -c Release -- --require-postgres
-```
+`tests/TurboRamaSuiteEmulationStation.Tests --load` cria 250 e 500 computadores
+sintéticos com Suite+ES, totalizando 500 e 1000 sessões em um NAT. Mede abertura,
+60 segundos de heartbeat a cada cinco segundos, rajada, retomada depois de
+20 segundos sem rede e soak de 180 segundos com 1000 sessões.
+A autoridade sintética RSA é 3072 bits, como a autoridade pública aprovada; as
+máquinas sintéticas usam 2048 bits. Requisições passam por Kestrel e PostgreSQL real.
 
-O ultimo comando exige uma conexao para banco de testes isolado, com migrations
-aplicadas. Nunca use a conexao de producao. O workflow
-`.github/workflows/emulationstation-suite.yml` cria PostgreSQL 16 descartavel,
-aplica migrations 001–022, executa os testes reais e os testes de protocolo Suite
-anteriores, e publica um artefato separado com o recurso desabilitado. Ele nao
-depende de compilador instalado no PC do cliente.
+A primeira carga expôs varredura integral de desafios: parâmetros Npgsql `text`
+comparados com `char(64)` não usavam o índice primário. A migration 025 cria índices
+de expressão correspondentes, preservando bytes, política e transações existentes.
+EXPLAIN deve mostrar `ix_suite_*_challenges_text_lookup`. A carga também motivou
+as tentativas limitadas para contenção transitória. Nenhuma falha inicial foi
+contabilizada como sucesso; consultar a matriz para o resultado final medido.
+
+O relatório JSON registra latência HTTP p50/p95/p99, erros, vazão, memória/CPU
+combinadas do gerador+API, conexões ativas, espera por lock e tamanho do rate limiter.
+O teste local usa PostgreSQL limitado a 2 CPUs/1 GiB. O pool padrão da API é
+32 conexões e o administrativo usa 8, reservando capacidade aos outros serviços;
+um Maximum Pool Size explícito na conexão do operador permanece respeitado.
+O gerador usa um pool independente de quatro conexões para fixtures/monitoramento. Não inclui latência de
+internet, proxy público, TLS ou custo CNG real, nem comprova capacidade da produção.
+
+## Pacote, configuração e rollback
+
+O workflow servidor empacota API Suite, backend administrativo, servidor PIX/painel,
+migrations 001–025, documentação, evidências e `SHA256SUMS.txt`, associados ao commit.
+O cliente 1.1.0 gera EXE, ZIP portátil e ZIP de atualização exclusivos da edição
+Suite. A CI conserva todos os testes existentes de contrato, DPAPI, IPC, extração,
+ponte nativa, tema, pacote e preservação de áudio/memória/jogos. Teste automatizado
+de preservação não substitui um PC Windows real de homologação.
+
+No destino já autorizado: registrar versão e configuração efetivas, preparar backup
+e rollback, aplicar apenas migrations ainda ausentes em ordem e habilitar
+`Suite__EmulationStation__Enabled=true`, mantendo `Suite__Enabled=true`.
+Para rede, exigir `Suite__Inventory__Enabled=true`, sua chave de inventário já
+protegida e `Suite__NetworkInventory__Enabled=true`; configurar
+`Suite__NetworkInventory__RetentionDays=30` conforme política do operador.
+Não criar outra autoridade/chave CNG nem copiar material privado para o pacote.
+
+As migrations são aditivas e têm lock timeout de cinco segundos. A criação de
+índices tem statement timeout de 30 segundos; em tabela grande, planejar a janela
+antes de aplicar, sem remover timeouts para forçar produção. Testar compatibilidade
+de binários anteriores com o schema atualizado. Rollback restaura binários e
+configuração anteriores, desabilita as novas flags e conserva tabelas/índices e
+auditoria; não exige apagar dados novos ou reverter o schema em funcionamento.
+
+Somente publicar release de cliente para uso após verificar binários, migrations,
+flags e proxy do servidor de destino e coexistência em Windows. Enquanto esse
+acesso estiver indisponível, os artefatos permanecem candidatos de CI. O executor
+local identificado nesta entrega não tem sudo sem senha para os serviços, e o
+executor permitido `turborama-isolated-exec` aponta para namespace ausente.

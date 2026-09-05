@@ -103,18 +103,25 @@ explicitamente pendente; nao e sucesso nem motivo para abandonar outras frentes.
 
 ### 0.4 Matriz unica de execucao
 
-O executor deve atualizar esta tabela com links/commits e resultados objetivos
-enquanto implementa. O estado inicial abaixo e honesto: esta revisao e a ordem
-de execucao, nao uma declaracao de funcionalidades ja entregues.
+Atualização do executor: implementação em andamento nesta mesma tarefa. Os
+resultados abaixo distinguem código, teste sintético e ambiente implantado.
 
-| Frente | Estado no momento desta ordem | Evidencia a preencher pelo executor |
+| Frente | Estado verificado | Evidência |
 | --- | --- | --- |
-| Rotas/licenciamento compartilhado | A executar | Commit e testes HTTP/assinatura/PostgreSQL |
-| Titularidade, painel e encerramento | A executar | Commit, autorizacao, CAS e testes A/B |
-| MAC/IP no servidor e cliente | A executar | Contrato/commit/testes, mascaramento e regra IP |
-| Capacidade e isolamento | A executar | Carga medida, limites e testes de nao interferencia |
-| Cliente e artefatos GitHub | A executar | Commit/run/release/EXE/ZIP/SHA-256 |
-| Implantacao e homologacao | A executar no destino autorizado | Binario/configuracao/migrations/proxy e evidencias reais |
+| Rotas/licenciamento compartilhado | Implementado; HTTP/PostgreSQL e assinaturas passaram | Servidor `3670a51`; cliente `18b464a`; testes `SharedIntegrationChecks` e `SharedContractVerifier`, cabeçalho estrito, quatro Kind, conflito assinado, anti-replay e legado |
+| Titularidade, painel e encerramento | Implementado e testado no painel existente | `6bdf1b2`; testes com papéis PostgreSQL restritos, token/claims/CSRF/step-up/CAS/replay/A-B; Chromium HTTPS 1440×1000 e 390×844, filtros, paginação, confirmação, XSS e isolamento |
+| MAC/IP no servidor e cliente | Implementado e testado | Contrato idêntico nos repositórios (SHA-256 `54855f4a2a4fc5573da6dc8f75f8ad1f4a5802ab1de797829a851182107890a9`), provas, AES-GCM/tamper, IP de proxy não confiável recusado, máscaras, limite de oito e retenção; relatório mascarado exibido no painel |
+| Capacidade e isolamento | Carga final em execução | Primeira medição expôs varredura de desafios e pool de 100 conexões. Corrigidos índices (025), retries limitados e pools padrão API 32/admin 8. 500 sessões em ritmo contínuo já passaram a 199,97 req/s, p99 17,828 ms; rajada/reconexão/1000/soak exigem a medição final após ajustes |
+| Cliente e artefatos GitHub | Candidato 1.1.0 gerado e hashes verificados | Commit `18b464a34ab9fffe2f222776b248164e4a6f6159`; [CI Windows 33982373836 — sucesso](https://github.com/luziellacerda/Backup-Instaladores-Compiladores-Turborama/actions/runs/33982373836), artefato `9974239120`, EXE/ZIP/atualização. Release de uso permanece condicionada à homologação |
+| Implantação e homologação | Pacote servidor/CI em preparação; destino ainda não homologado | Migrations 001–025 aplicadas apenas no PostgreSQL descartável. Serviço efetivo continua na release r25-7 de 20260903. Sudo de serviços exige senha e executor permitido falha por namespace ausente. Endpoint público ainda respondeu `JSON_INVALID` ao cabeçalho inválido sintético, em vez do novo `CLIENT_SCOPE_INVALID`. PC Windows real e alterações de interface fora do Git não estão disponíveis neste ambiente |
+
+Hashes dos artefatos Windows baixados e conferidos:
+
+- EXE: `2737a8a9fcd1dc28b0c7a4b77064b615c907235da3b8e16520d54fc9d505c117`.
+- ZIP portátil: `22b79688fe0592dc7a811dda96975ac90e1eaa6f3aee08866d5330f7867330b6`.
+- ZIP de atualização: `0a8328f4161f3b4dcc244a276938056df7345c073bb8b0502737ce43ad564996`.
+- Arquivo do artefato GitHub: `9e05a08b08c30ae5e1a3de8e4cc64ea16907701a15baa7be4cf839d26e7c84be`.
+
 
 ### 0.5 Responsabilidade pelo cliente e pela compilacao
 

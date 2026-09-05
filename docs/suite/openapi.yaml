@@ -1,24 +1,496 @@
 openapi: 3.1.0
-info: { title: TurboRama Suite Online Authority, version: 1.0.0-candidate }
-servers: [{ url: https://licensing.example.invalid }]
+info:
+  title: TurboRama Suite Online Authority
+  version: 1.1.0-candidate
+servers:
+- url: https://licensing.example.invalid
 paths:
   /v1/suite/activations/challenge:
-    post: { operationId: activationChallenge, requestBody: { required: true, content: { application/json: { schema: { $ref: '#/components/schemas/ActivationChallengeRequest' } } } }, responses: { '200': { $ref: '#/components/responses/Signed' }, '4XX': { $ref: '#/components/responses/Error' } } }
+    post:
+      operationId: activationChallenge
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivationChallengeRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/Signed'
+        4XX:
+          $ref: '#/components/responses/Error'
   /v1/suite/activations/complete:
-    post: { operationId: activationComplete, requestBody: { required: true, content: { application/json: { schema: { $ref: '#/components/schemas/ActivationProof' } } } }, responses: { '200': { $ref: '#/components/responses/Signed' }, '4XX': { $ref: '#/components/responses/Error' } } }
+    post:
+      operationId: activationComplete
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivationProof'
+      responses:
+        '200':
+          $ref: '#/components/responses/Signed'
+        4XX:
+          $ref: '#/components/responses/Error'
   /v1/suite/challenges:
-    post: { operationId: operationChallenge, requestBody: { required: true, content: { application/json: { schema: { $ref: '#/components/schemas/ChallengeRequest' } } } }, responses: { '200': { $ref: '#/components/responses/Signed' }, '4XX': { $ref: '#/components/responses/Error' } } }
+    post:
+      operationId: operationChallenge
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChallengeRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/Signed'
+        4XX:
+          $ref: '#/components/responses/Error'
+        '503':
+          $ref: '#/components/responses/Error'
+      parameters:
+      - $ref: '#/components/parameters/EsClient'
   /v1/suite/sessions:
-    post: { operationId: session, requestBody: { required: true, content: { application/json: { schema: { $ref: '#/components/schemas/SessionProof' } } } }, responses: { '200': { $ref: '#/components/responses/Signed' }, '4XX': { $ref: '#/components/responses/Error' } } }
+    post:
+      operationId: session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionProof'
+      responses:
+        '200':
+          $ref: '#/components/responses/Signed'
+        4XX:
+          $ref: '#/components/responses/Error'
+        '503':
+          $ref: '#/components/responses/Error'
+      parameters:
+      - $ref: '#/components/parameters/EsClient'
+      description: Shared ES uses ES signed kinds. Signed status CONFLICT has authorizedUntil
+        equal to serverTime and grants no access. Dedicated 1.0.1 retains replacement
+        behavior.
+  /v1/suite/emulationstation/challenges:
+    post:
+      operationId: dedicatedEsChallenges
+      description: Legacy ES 1.0.1. ES header forbidden; original Suite signed kinds.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChallengeRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/Signed'
+        4XX:
+          $ref: '#/components/responses/Error'
+        '503':
+          $ref: '#/components/responses/Error'
+  /v1/suite/emulationstation/sessions:
+    post:
+      operationId: dedicatedEsSessions
+      description: Legacy ES 1.0.1. ES header forbidden; original Suite signed kinds.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionProof'
+      responses:
+        '200':
+          $ref: '#/components/responses/Signed'
+        4XX:
+          $ref: '#/components/responses/Error'
+        '503':
+          $ref: '#/components/responses/Error'
+  /v1/suite/network/challenges:
+    post:
+      operationId: networkChallenges
+      description: Additional canonical signed contract, maximum 8192 bytes; no ES
+        header. Requires an active app-bound session and existing machine proof. IP
+        is observed by server and informational only. See EMULATIONSTATION-INTEGRATION.md
+        for signing domains and field order.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NetworkChallengeRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/Signed'
+        4XX:
+          $ref: '#/components/responses/Error'
+        '503':
+          $ref: '#/components/responses/Error'
+  /v1/suite/network/inventory:
+    post:
+      operationId: networkInventory
+      description: Additional canonical signed contract, maximum 8192 bytes; no ES
+        header. Requires an active app-bound session and existing machine proof. IP
+        is observed by server and informational only. See EMULATIONSTATION-INTEGRATION.md
+        for signing domains and field order.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NetworkProof'
+      responses:
+        '200':
+          $ref: '#/components/responses/Signed'
+        4XX:
+          $ref: '#/components/responses/Error'
+        '503':
+          $ref: '#/components/responses/Error'
 components:
   responses:
-    Signed: { description: Signed Suite assertion, content: { application/json: { schema: { $ref: '#/components/schemas/SignedEnvelope' } } } }
-    Error: { description: Sanitized error, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+    Signed:
+      description: Signed Suite assertion
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SignedEnvelope'
+    Error:
+      description: Sanitized error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    Device: { type: object, additionalProperties: false, required: [schemaVersion,deviceId,bindingType,algorithm,publicKeySpki,hardwareFingerprint,agentVersion], properties: { schemaVersion: { const: 1 }, deviceId: { type: string, pattern: '^[0-9a-f]{64}$' }, bindingType: { enum: [TPM_BOUND,SOFTWARE_BOUND_ONLINE] }, algorithm: { const: rsa-pss-sha256 }, publicKeySpki: { type: string }, hardwareFingerprint: { type: string, pattern: '^[0-9a-f]{64}$' }, agentVersion: { type: string } } }
-    ActivationChallengeRequest: { type: object, additionalProperties: false, required: [schemaVersion,productId,licenseId,activationCode,device], properties: { schemaVersion: { const: 1 }, productId: { const: TURBORAMA_SUITE }, licenseId: { type: string }, activationCode: { type: string }, device: { $ref: '#/components/schemas/Device' } } }
-    ActivationProof: { type: object, additionalProperties: false, required: [schemaVersion,productId,licenseId,challengeId,device,signature], properties: { schemaVersion: { const: 1 }, productId: { const: TURBORAMA_SUITE }, licenseId: { type: string }, challengeId: { type: string }, device: { $ref: '#/components/schemas/Device' }, signature: { type: string } } }
-    ChallengeRequest: { type: object, additionalProperties: false, required: [schemaVersion,productId,licenseId,deviceId,sessionId,action,contextHash], properties: { schemaVersion: { const: 1 }, productId: { const: TURBORAMA_SUITE }, licenseId: { type: string }, deviceId: { type: string }, sessionId: { type: string }, action: { enum: [session.open,session.heartbeat] }, contextHash: { type: string } } }
-    SessionProof: { type: object, additionalProperties: false, required: [proof,context], properties: { proof: { type: object }, context: { type: object } } }
-    SignedEnvelope: { type: object, additionalProperties: false, required: [schemaVersion,kind,algorithm,keyId,payload,signature], properties: { schemaVersion: { const: 1 }, kind: { type: string }, algorithm: { const: rsa-pss-sha256 }, keyId: { type: string }, payload: { type: string }, signature: { type: string } } }
-    Error: { type: object, additionalProperties: false, required: [schemaVersion,code,message], properties: { schemaVersion: { const: 1 }, code: { type: string }, message: { type: string } } }
+    Device:
+      type: object
+      additionalProperties: false
+      required:
+      - schemaVersion
+      - deviceId
+      - bindingType
+      - algorithm
+      - publicKeySpki
+      - hardwareFingerprint
+      - agentVersion
+      properties:
+        schemaVersion:
+          const: 1
+        deviceId:
+          type: string
+          pattern: ^[0-9a-f]{64}$
+        bindingType:
+          enum:
+          - TPM_BOUND
+          - SOFTWARE_BOUND_ONLINE
+        algorithm:
+          const: rsa-pss-sha256
+        publicKeySpki:
+          type: string
+        hardwareFingerprint:
+          type: string
+          pattern: ^[0-9a-f]{64}$
+        agentVersion:
+          type: string
+    ActivationChallengeRequest:
+      type: object
+      additionalProperties: false
+      required:
+      - schemaVersion
+      - productId
+      - licenseId
+      - activationCode
+      - device
+      properties:
+        schemaVersion:
+          const: 1
+        productId:
+          const: TURBORAMA_SUITE
+        licenseId:
+          type: string
+        activationCode:
+          type: string
+        device:
+          $ref: '#/components/schemas/Device'
+    ActivationProof:
+      type: object
+      additionalProperties: false
+      required:
+      - schemaVersion
+      - productId
+      - licenseId
+      - challengeId
+      - device
+      - signature
+      properties:
+        schemaVersion:
+          const: 1
+        productId:
+          const: TURBORAMA_SUITE
+        licenseId:
+          type: string
+        challengeId:
+          type: string
+        device:
+          $ref: '#/components/schemas/Device'
+        signature:
+          type: string
+    ChallengeRequest:
+      type: object
+      additionalProperties: false
+      required:
+      - schemaVersion
+      - productId
+      - licenseId
+      - deviceId
+      - sessionId
+      - action
+      - contextHash
+      properties:
+        schemaVersion:
+          const: 1
+        productId:
+          const: TURBORAMA_SUITE
+        licenseId:
+          type: string
+        deviceId:
+          type: string
+        sessionId:
+          type: string
+        action:
+          enum:
+          - session.open
+          - session.heartbeat
+        contextHash:
+          type: string
+    SessionProof:
+      type: object
+      additionalProperties: false
+      required:
+      - proof
+      - context
+      properties:
+        proof:
+          type: object
+        context:
+          type: object
+    SignedEnvelope:
+      type: object
+      additionalProperties: false
+      required:
+      - schemaVersion
+      - kind
+      - algorithm
+      - keyId
+      - payload
+      - signature
+      properties:
+        schemaVersion:
+          const: 1
+        kind:
+          type: string
+        algorithm:
+          const: rsa-pss-sha256
+        keyId:
+          type: string
+        payload:
+          type: string
+        signature:
+          type: string
+    Error:
+      type: object
+      additionalProperties: false
+      required:
+      - schemaVersion
+      - code
+      - message
+      properties:
+        schemaVersion:
+          const: 1
+        code:
+          type: string
+        message:
+          type: string
+    NetworkChallengeRequest:
+      type: object
+      additionalProperties: false
+      required:
+      - schemaVersion
+      - productId
+      - licenseId
+      - deviceId
+      - sessionId
+      - appScope
+      - action
+      - contextHash
+      properties:
+        schemaVersion: &id002
+          const: 1
+        productId: &id003
+          const: TURBORAMA_SUITE
+        licenseId: &id004
+          type: string
+          pattern: ^[A-Za-z0-9_-]{6,64}$
+        deviceId: &id001
+          type: string
+          pattern: ^[0-9a-f]{64}$
+        sessionId: *id001
+        appScope: &id005
+          enum:
+          - SUITE
+          - EMULATIONSTATION
+        action: &id006
+          const: network.inventory.submit
+        contextHash: *id001
+    NetworkInterface:
+      type: object
+      additionalProperties: false
+      required:
+      - mac
+      - interfaceType
+      - locallyAdministered
+      - virtual
+      properties:
+        mac:
+          type: string
+          pattern: ^([0-9A-F]{2}:){5}[0-9A-F]{2}$
+        interfaceType:
+          enum:
+          - ETHERNET
+          - WIRELESS
+        locallyAdministered:
+          type: boolean
+        virtual:
+          type: boolean
+    NetworkContext:
+      type: object
+      additionalProperties: false
+      required:
+      - schemaVersion
+      - productId
+      - licenseId
+      - deviceId
+      - sessionId
+      - appScope
+      - action
+      - hardwareFingerprint
+      - clientVersion
+      - collectedAtUnixSeconds
+      - interfaces
+      properties:
+        schemaVersion: *id002
+        productId: *id003
+        licenseId: *id004
+        deviceId: *id001
+        sessionId: *id001
+        appScope: *id005
+        action: *id006
+        hardwareFingerprint: *id001
+        clientVersion:
+          type: string
+          minLength: 1
+          maxLength: 64
+          pattern: ^[A-Za-z0-9._-]+$
+        collectedAtUnixSeconds:
+          type: integer
+          format: int64
+        interfaces:
+          type: array
+          maxItems: 8
+          items:
+            $ref: '#/components/schemas/NetworkInterface'
+    NetworkProof:
+      type: object
+      additionalProperties: false
+      required:
+      - context
+      - challengeId
+      - signature
+      properties:
+        context:
+          $ref: '#/components/schemas/NetworkContext'
+        challengeId: *id001
+        signature: &id007
+          type: string
+    NetworkMachineProof:
+      type: object
+      additionalProperties: false
+      required:
+      - schemaVersion
+      - productId
+      - licenseId
+      - deviceId
+      - sessionId
+      - appScope
+      - action
+      - contextHash
+      - challengeId
+      - nonce
+      - expiresAtUnixSeconds
+      properties:
+        schemaVersion: *id002
+        productId: *id003
+        licenseId: *id004
+        deviceId: *id001
+        sessionId: *id001
+        appScope: *id005
+        action: *id006
+        contextHash: *id001
+        challengeId: *id001
+        nonce: *id007
+        expiresAtUnixSeconds:
+          type: integer
+          format: int64
+    NetworkAssertion:
+      type: object
+      additionalProperties: false
+      required:
+      - schemaVersion
+      - productId
+      - licenseId
+      - deviceId
+      - sessionId
+      - appScope
+      - action
+      - kind
+      - contextHash
+      - challengeId
+      - nonce
+      - status
+      - serverTimeUnixSeconds
+      - expiresAtUnixSeconds
+      properties:
+        schemaVersion: *id002
+        productId: *id003
+        licenseId: *id004
+        deviceId: *id001
+        sessionId: *id001
+        appScope: *id005
+        action: *id006
+        kind:
+          enum:
+          - TURBORAMA_SUITE_NETWORK_CHALLENGE_V1
+          - TURBORAMA_SUITE_NETWORK_RESULT_V1
+        contextHash: *id001
+        challengeId: *id001
+        nonce: *id007
+        status:
+          enum:
+          - ISSUED
+          - ACCEPTED
+        serverTimeUnixSeconds:
+          type: integer
+          format: int64
+        expiresAtUnixSeconds:
+          type: integer
+          format: int64
+  parameters:
+    EsClient:
+      name: X-TurboRama-Client
+      in: header
+      required: false
+      schema:
+        type: string
+        const: EMULATIONSTATION
+      description: Present exactly once only on these two POST routes. Empty, duplicate,
+        CSV, unknown or off-route scope is refused. Omission preserves Suite. ES disabled
+        returns 503.

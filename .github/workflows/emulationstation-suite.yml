@@ -4,12 +4,24 @@ on:
   workflow_dispatch:
   push:
     branches: ['codex/emulationstation-suite-*']
+    paths:
+      - '.github/workflows/emulationstation-suite.yml'
+      - 'src/**'
+      - 'tests/**'
+      - 'migrations/suite/**'
+      - 'ops/tests/**'
+      - 'docs/suite/EMULATIONSTATION-INTEGRATION.md'
+      - 'docs/suite/openapi.yaml'
+      - 'docs/suite/ERROR-CATALOG.md'
   pull_request:
     paths:
       - '.github/workflows/emulationstation-suite.yml'
       - 'src/TurboRamaSuiteOnlineServer/**'
+      - 'src/TurboRamaSuiteAdminServer/**'
+      - 'src/TurboRamaPixOnlineServer/**'
       - 'tests/TurboRamaSuiteEmulationStation.Tests/**'
-      - 'migrations/suite/022_suite_emulationstation_sessions.up.sql'
+      - 'migrations/suite/**'
+      - 'ops/tests/**'
       - 'docs/suite/EMULATIONSTATION-INTEGRATION.md'
 
 permissions:
@@ -22,7 +34,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     services:
       postgres:
         image: postgres:16
@@ -42,10 +54,14 @@ jobs:
         run: |
           dotnet restore tests/TurboRamaSuiteEmulationStation.Tests --locked-mode
           dotnet restore tests/TurboRamaSuiteOnlineServer.Tests --locked-mode
+          dotnet restore tests/TurboRamaSuitePostgres.Tests --locked-mode
       - name: Build and run signed protocol regression checks
         run: |
           dotnet run --project tests/TurboRamaSuiteOnlineServer.Tests -c Release --no-restore
           dotnet build tests/TurboRamaSuiteEmulationStation.Tests -c Release --no-restore
+          dotnet run --project src/TurboRamaPixOnlineServer -c Release --no-build -- --self-test
+          dotnet run --project src/TurboRamaSuiteAdminServer -c Release --no-build -- --self-test
+          dotnet run --project src/TurboRamaSuiteAdminServer -c Release --no-build -- --content-self-test
       - name: Create isolated PostgreSQL schema and apply all reviewed migrations
         env:
           PGPASSWORD: es-ci-isolated-only
@@ -61,23 +77,70 @@ jobs:
             checksum=$(sha256sum "$migration" | cut -d ' ' -f 1)
             psql --set=ON_ERROR_STOP=1 --set=migration_sha256="$checksum" --file="$migration"
           done
+          psql --set=ON_ERROR_STOP=1 --file=ops/tests/prepare-es-fixture-grants.sql
+          test "$(psql -Atc "SELECT count(*) FROM suite.schema_migrations WHERE version IN('023_suite_es_contract_scope','024_suite_session_management_network','025_suite_challenge_text_lookup');")" = 3
           test "$(psql -Atc "SELECT count(*) FROM suite.schema_migrations WHERE version='022_suite_emulationstation_sessions';")" = 1
           test "$(psql -Atc "SELECT has_table_privilege('turborama-suite','suite.suite_es_challenges','SELECT,INSERT,UPDATE,DELETE');")" = t
           test "$(psql -Atc "SELECT has_table_privilege('turborama-suite-content-api','suite.suite_es_sessions','INSERT,UPDATE');")" = f
       - name: Exercise real PostgreSQL isolation and shared revocation
         env:
           SUITE_ES_TEST_CONNECTION: Host=127.0.0.1;Port=5432;Database=turborama_es_ci;Username=postgres;Password=es-ci-isolated-only
-        run: dotnet run --project tests/TurboRamaSuiteEmulationStation.Tests -c Release --no-build -- --require-postgres
+        run: |
+          mkdir -p outputs
+          dotnet run --project tests/TurboRamaSuiteEmulationStation.Tests -c Release --no-build -- --require-postgres | tee outputs/es-integration-ci.log
+      - name: Verify original Suite database behavior
+        env:
+          SUITE_TEST_CONNECTION: Host=127.0.0.1;Port=5432;Database=turborama_es_ci;Username=postgres;Password=es-ci-isolated-only
+        run: dotnet run --project tests/TurboRamaSuitePostgres.Tests -c Release --no-restore
+      - name: Test the existing HTTPS admin pages in Chromium
+        env:
+          SUITE_ES_TEST_CONNECTION: Host=127.0.0.1;Port=5432;Database=turborama_es_ci;Username=postgres;Password=es-ci-isolated-only
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --prefix outputs/es-browser-tools --no-audit --no-fund --save-exact playwright@1.55.0
+          node outputs/es-browser-tools/node_modules/playwright/cli.js install --with-deps chromium
+          dotnet run --project tests/TurboRamaSuiteEmulationStation.Tests -c Release --no-build -- --browser-fixtures > outputs/es-browser-host.log 2>&1 &
+          fixture_pid=$!
+          trap 'kill "$fixture_pid" 2>/dev/null || true' EXIT
+          for attempt in {1..100}; do
+            if rg -q BROWSER_FIXTURES_READY outputs/es-browser-host.log; then break; fi
+            if ! kill -0 "$fixture_pid" 2>/dev/null; then cat outputs/es-browser-host.log; exit 1; fi
+            sleep 1
+          done
+          rg -q BROWSER_FIXTURES_READY outputs/es-browser-host.log
+          node ops/tests/test-suite-session-panel.mjs
+          wait "$fixture_pid"
+      - name: Measure 500 and 1000 real signed sessions behind one NAT
+        env:
+          SUITE_ES_TEST_CONNECTION: Host=127.0.0.1;Port=5432;Database=turborama_es_ci;Username=postgres;Password=es-ci-isolated-only
+        run: dotnet run --project tests/TurboRamaSuiteEmulationStation.Tests -c Release --no-build -- --load | tee outputs/es-load-ci.log
       - name: Publish review artifact with ES feature disabled
         run: |
           jq -e '.Suite.EmulationStation.Enabled == false' src/TurboRamaSuiteOnlineServer/appsettings.json
           dotnet publish src/TurboRamaSuiteOnlineServer -c Release --no-restore --self-contained false -o dist/server
-          mkdir -p dist/migrations dist/docs
-          cp migrations/suite/022_suite_emulationstation_sessions.up.sql dist/migrations/
+          dotnet publish src/TurboRamaSuiteAdminServer -c Release --no-restore --self-contained false -o dist/admin-backend
+          dotnet publish src/TurboRamaPixOnlineServer -c Release --no-restore --self-contained false -o dist/pix-admin
+          mkdir -p dist/migrations dist/docs dist/evidence
+          cp migrations/suite/*.up.sql dist/migrations/
           cp docs/suite/EMULATIONSTATION-INTEGRATION.md dist/docs/
+          cp docs/suite/openapi.yaml docs/suite/ERROR-CATALOG.md dist/docs/
+          cp outputs/es-session-load.json outputs/es-panel-browser.json outputs/es-panel-desktop.png outputs/es-panel-narrow.png dist/evidence/
+          printf '%s\n' "$GITHUB_SHA" > dist/COMMIT.txt
+          (cd dist && find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
       - uses: actions/upload-artifact@v4
         with:
           name: servidor-suite-emulationstation-review-${{ github.sha }}
           path: dist/
           if-no-files-found: error
           retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: servidor-es-test-diagnostics-${{ github.sha }}
+          path: |
+            outputs/es-integration-ci.log
+            outputs/es-load-ci.log
+            outputs/es-browser-host.log
+            outputs/es-browser-fixtures/panel.log
+          retention-days: 7
