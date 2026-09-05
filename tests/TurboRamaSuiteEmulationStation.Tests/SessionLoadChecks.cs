@@ -92,6 +92,7 @@ internal static class SessionLoadChecks
         var output=Environment.GetEnvironmentVariable("SUITE_ES_LOAD_REPORT")??"outputs/es-session-load.json";
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(output))!);
         await File.WriteAllTextAsync(output,JsonSerializer.Serialize(new {runtime=Environment.Version.ToString(),logicalProcessors=Environment.ProcessorCount,
+            apiMaximumDatabaseConnections=new NpgsqlConnectionStringBuilder(SuiteDatabasePoolPolicy.ApplyDefaults(connection)).MaxPoolSize,
             machineRsaBits=2048,onlineRsaBits=3072,heartbeatSeconds=5,transport="Kestrel HTTP loopback; real PostgreSQL; one NAT; no public proxy/TLS",resourceScope="API and synthetic generator share this process; database measured separately",reports},new JsonSerializerOptions{WriteIndented=true}));
         Console.WriteLine("LOAD REPORT: "+output);
     }

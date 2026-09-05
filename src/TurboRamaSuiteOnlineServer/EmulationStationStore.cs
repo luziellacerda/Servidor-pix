@@ -128,17 +128,17 @@ public class PostgresEmulationStationStore : IEmulationStationStore
     {
         EmulationStationService.RequireSessionAction(action);
         // Each bounded retry reruns all authorization, generation and CAS checks.
-        for (var attempt = 1; attempt <= 6; attempt++)
+        for (var attempt = 1; attempt <= 12; attempt++)
         {
             try { return await CompleteOnceAsync(challenge, session, action, now, token); }
             catch (PostgresException exception) when (
                 exception.SqlState is PostgresErrorCodes.SerializationFailure or
                     PostgresErrorCodes.DeadlockDetected)
             {
-                if (attempt == 6)
+                if (attempt == 12)
                     throw new SuiteException(409, "TRANSACTION_CONFLICT",
                         "The operation could not be completed safely.", exception);
-                await Task.Delay(RandomNumberGenerator.GetInt32(15, 75) * attempt, token);
+                await Task.Delay(RandomNumberGenerator.GetInt32(40, 120) * Math.Min(attempt, 4), token);
             }
         }
         throw new SuiteException(409, "TRANSACTION_CONFLICT",

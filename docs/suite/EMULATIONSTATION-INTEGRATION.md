@@ -39,10 +39,12 @@ silenciosa; essa limitação não foi removida dos clientes já distribuídos.
 
 Heartbeat exige a mesma sessão ainda válida e renova por 180 segundos, com
 intervalo indicado de cinco segundos. Abertura/heartbeat mantêm transações
-serializáveis, travas por licença/dispositivo e até seis tentativas com jitter
+serializáveis, travas por licença/dispositivo e até doze tentativas com jitter
 para conflitos SSI/deadlock, dentro do timeout HTTP de dez segundos. Todas as
 verificações e o consumo único são refeitos a cada tentativa; não há concessão
-parcial. A mudança no store Suite original limita-se a esse orçamento de tentativas.
+parcial. O atraso de cada repetição é limitado a 476 ms, com no máximo 4,522 s
+de espera somada; execução e espera continuam limitadas pelo timeout HTTP.
+A mudança no store Suite original limita-se a esse orçamento de tentativas.
 
 ## Painel existente e encerramento
 
@@ -124,13 +126,19 @@ A primeira carga expôs varredura integral de desafios: parâmetros Npgsql `text
 comparados com `char(64)` não usavam o índice primário. A migration 025 cria índices
 de expressão correspondentes, preservando bytes, política e transações existentes.
 EXPLAIN deve mostrar `ix_suite_*_challenges_text_lookup`. A carga também motivou
-as tentativas limitadas para contenção transitória. Nenhuma falha inicial foi
-contabilizada como sucesso; consultar a matriz para o resultado final medido.
+as tentativas limitadas para contenção transitória. O cenário adicional de banco
+recém-criado em dois núcleos mostrou que o pool de 32 conexões ainda gerava
+contenção SSI entre sessões. O padrão foi reduzido para oito; um limite explícito
+do operador continua respeitado. A relação entre concorrência, planos de consulta
+e conflitos serializáveis consta na
+[documentação do PostgreSQL 16](https://www.postgresql.org/docs/16/transaction-iso.html#XACT-SERIALIZABLE).
+O workflow usa Bash com `pipefail`, inclusive ao gravar logs, para que falhas
+interrompam a CI. Consultar a matriz para os resultados medidos e falhas corrigidas.
 
 O relatório JSON registra latência HTTP p50/p95/p99, erros, vazão, memória/CPU
 combinadas do gerador+API, conexões ativas, espera por lock e tamanho do rate limiter.
 O teste local usa PostgreSQL limitado a 2 CPUs/1 GiB. O pool padrão da API é
-32 conexões e o administrativo usa 8, reservando capacidade aos outros serviços;
+8 conexões e o administrativo usa 8, reservando capacidade aos outros serviços;
 um Maximum Pool Size explícito na conexão do operador permanece respeitado.
 O gerador usa um pool independente de quatro conexões para fixtures/monitoramento. Não inclui latência de
 internet, proxy público, TLS ou custo CNG real, nem comprova capacidade da produção.

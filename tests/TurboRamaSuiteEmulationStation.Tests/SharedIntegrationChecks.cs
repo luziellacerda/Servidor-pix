@@ -15,7 +15,7 @@ internal static class SharedIntegrationChecks
 {
     public static async Task RunAsync(string connection)
     {
-        Check(new NpgsqlConnectionStringBuilder(SuiteDatabasePoolPolicy.ApplyDefaults("Host=localhost;Database=synthetic")).MaxPoolSize==32,
+        Check(new NpgsqlConnectionStringBuilder(SuiteDatabasePoolPolicy.ApplyDefaults("Host=localhost;Database=synthetic")).MaxPoolSize==8,
             "The default licensing pool must reserve database capacity for other services.");
         Check(new NpgsqlConnectionStringBuilder(SuiteDatabasePoolPolicy.ApplyDefaults("Host=localhost;Maximum Pool Size=16")).MaxPoolSize==16,
             "Explicit operator connection budgets must be preserved.");

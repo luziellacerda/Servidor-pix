@@ -35,6 +35,9 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 35
+    defaults:
+      run:
+        shell: bash
     services:
       postgres:
         image: postgres:16
@@ -87,7 +90,7 @@ jobs:
           SUITE_ES_TEST_CONNECTION: Host=127.0.0.1;Port=5432;Database=turborama_es_ci;Username=postgres;Password=es-ci-isolated-only
         run: |
           mkdir -p outputs
-          dotnet run --project tests/TurboRamaSuiteEmulationStation.Tests -c Release --no-build -- --require-postgres | tee outputs/es-integration-ci.log
+          dotnet run --project tests/TurboRamaSuiteEmulationStation.Tests -c Release --no-build -- --require-postgres 2>&1 | tee outputs/es-integration-ci.log
       - name: Verify original Suite database behavior
         env:
           SUITE_TEST_CONNECTION: Host=127.0.0.1;Port=5432;Database=turborama_es_ci;Username=postgres;Password=es-ci-isolated-only
@@ -114,7 +117,7 @@ jobs:
       - name: Measure 500 and 1000 real signed sessions behind one NAT
         env:
           SUITE_ES_TEST_CONNECTION: Host=127.0.0.1;Port=5432;Database=turborama_es_ci;Username=postgres;Password=es-ci-isolated-only
-        run: dotnet run --project tests/TurboRamaSuiteEmulationStation.Tests -c Release --no-build -- --load | tee outputs/es-load-ci.log
+        run: dotnet run --project tests/TurboRamaSuiteEmulationStation.Tests -c Release --no-build -- --load 2>&1 | tee outputs/es-load-ci.log
       - name: Publish review artifact with ES feature disabled
         run: |
           jq -e '.Suite.EmulationStation.Enabled == false' src/TurboRamaSuiteOnlineServer/appsettings.json
