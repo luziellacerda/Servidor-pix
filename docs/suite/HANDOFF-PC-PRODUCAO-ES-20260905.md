@@ -4,6 +4,17 @@ Solicitado pelo operador em 05/09/2026. Este documento orienta a execução no P
 Windows; a matriz de entrega continua no
 [handoff principal](HANDOFF-EMULATIONSTATION-ROTAS-COMPARTILHADAS-20260905.md#04-matriz-unica-de-execucao).
 
+**Retorno real do PC em 05/09/2026, aproximadamente 19:43 UTC−3:** o EXE 1.1.2
+foi baixado e o hash aprovado foi confirmado também em
+`D:\TURBOPCINSTALL\build\emulationstation\emulationstation.exe`. Havia uma
+instância do ES e seu helper filho; a tela voltou a informar sessão já existente.
+Portanto, o teste de reabertura **ainda não passou**. Não pedir outro download ou
+nova ativação como solução. O usuário encaminhou a execução à tarefa no servidor:
+[ordem atual de implantação API-only e validação](HANDOFF-EMULATIONSTATION-ROTAS-COMPARTILHADAS-20260905.md).
+A tentativa de SSH do Windows foi encerrada antes de autenticar; nenhuma ação de
+produção foi executada por este PC. Manter o mesmo EXE para testar após o servidor
+confirmar a atualização.
+
 ## Objetivo e estado do servidor
 
 Validar o EmulationStation no PC que já possui a Suite ativada, na mesma conta
@@ -41,7 +52,7 @@ para tentar mudar uma política que ainda está no servidor antigo.
 
 **Registro anterior: servidor implantado e verificado em 05/09/2026 às 18:23:58
 (America/Maceio, UTC−3), com orientação de testar o cliente 1.1.1.**
-API Suite, backend administrativo e PIX/painel executam o commit
+Naquela verificação, API Suite, backend administrativo e PIX/painel executavam o commit
 `34e31f26b6a864a7aa5d701b94fe29ad166e86ac`. Migrations 022–025 aplicadas; integração
 ES/rede habilitada. Provas reais de abertura, heartbeat, conflito, revogação
 isolada e coexistência passaram em loopback e no endereço público. Esses testes
@@ -56,8 +67,9 @@ válida para o EmulationStation. A integração precisa ser verificada; isso nã
 significa que sua licença foi desativada.”** O código `ServerUnconfirmed` da tela
 1.1.1 cobre resposta/assinatura/contrato não confirmados; o texto não atesta
 revogação da licença. Na observação inicial, a API ainda executava o release
-anterior às rotas compartilhadas. A implantação agora está confirmada; repetir
-o teste sem refazer a ativação. A causa no PC só pode ser confirmada pelo retorno.
+anterior às rotas compartilhadas. A implantação inicial `34e31f2` foi confirmada
+naquele momento; isso não confirma a implantação posterior da correção `efaf1d3`.
+O retorno atual de sessão existente está registrado no início deste documento.
 
 CI histórica do servidor implantado: https://github.com/luziellacerda/Servidor-pix/actions/runs/33989933344
 
@@ -84,9 +96,12 @@ somente `emulationstation.exe` e `LEIA-ME-SUITE.md`.
 
 Os hashes identificam os arquivos internos do artifact, depois de extraí-lo.
 O hash do ZIP de atualização não foi impresso na CI; não confundi-lo com o do
-ZIP completo. Conferir o EXE extraído pelo hash acima antes de executá-lo. Nenhum
-novo binário foi baixado, instalado ou executado no PC nesta verificação. A
-release geral depende do resultado no PC real e da implantação do servidor.
+ZIP completo. O EXE foi baixado isoladamente em
+`C:\Users\Admin\Downloads\TurboRama-Suite-v1.1.2-Teste\emulationstation.exe` e
+seu hash foi conferido após salvar. O usuário copiou/executou a versão na pasta
+de instalação, onde o mesmo hash foi confirmado; a tarefa de download não
+executou nem substituiu a instalação. A release geral depende da resolução do
+teste de reabertura e da implantação verificada do servidor.
 
 O operador usava o 1.1.1, commit `ada4555`, hash do EXE
 `43dbd0402274d32da1dfd4ea6ffb60432b4d9fef07ccf9902ca9f498b4df33ee`.

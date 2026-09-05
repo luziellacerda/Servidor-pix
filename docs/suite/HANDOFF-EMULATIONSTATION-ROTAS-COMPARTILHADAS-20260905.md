@@ -2,6 +2,119 @@
 
 Data: 2026-09-05.
 
+## Prioridade atual — executar a correção de reabertura no servidor
+
+**Encaminhamento solicitado pelo usuário em 05/09/2026, 19:48 UTC−3.** O usuário
+testou o EXE 1.1.2 correto e voltou a receber “Já existe uma sessão EmulationStation
+neste computador”. A ordem é concluir a correção no servidor, não entregar outro
+EXE, refazer ativação, limpar sessões de clientes ou responder apenas que a CI passou.
+Usar este mesmo handoff para execução e retorno; não criar outra cadeia de documentos.
+
+### Evidência do PC e limite desta entrega
+
+- EXE em uso: `D:\TURBOPCINSTALL\build\emulationstation\emulationstation.exe`;
+  905674752 bytes; SHA-256
+  `9feebb133fbf81ce9fe55e3bce7b4408ab7e1ca39958287fef62b106af7bbbab`.
+- Esse hash é o cliente 1.1.2, commit
+  `187b72686888580e75c5edcef52f5c031601cf5b`, CI `33994557511` aprovada. A cópia
+  baixada foi verificada e o mesmo hash foi confirmado na instalação utilizada.
+- Na observação de aproximadamente 19:43 UTC−3 havia uma instância do ES e seu
+  helper filho. A tela novamente mostrou conflito de sessão. Isso não é evidência
+  de segundo ES local, de necessidade de abrir a Suite ou de nova ativação.
+- O texto corresponde ao tratamento cliente de `ES_SESSION_CONFLICT`; conferir
+  no servidor a resposta e o processo que realmente a produziu. O último registro
+  confirmado de produção é `34e31f2`, que ainda tem a regra antiga de ocupação.
+- Da tarefa Windows, SSH respondeu mas não houve confirmação de chave de host nem
+  autenticação. A tentativa foi encerrada a pedido do usuário, que escolheu o
+  encaminhamento para a tarefa do servidor. **Nenhuma implantação ocorreu daqui.**
+
+### Pacote aprovado a implantar — não recompilar por suposição
+
+| Identificação | Valor verificado |
+| --- | --- |
+| Branch servidor | `codex/emulationstation-suite-v1-20260905` |
+| Commit de runtime | `efaf1d3cd3dfd2a807e9d5a0e7295328ff081c4a` |
+| CI da integração | [33994510188 — success](https://github.com/luziellacerda/Servidor-pix/actions/runs/33994510188) |
+| CI geral | [33994510175 — success](https://github.com/luziellacerda/Servidor-pix/actions/runs/33994510175) |
+| Artifact | [9977821782](https://github.com/luziellacerda/Servidor-pix/actions/runs/33994510188/artifacts/9977821782) |
+| Nome | `servidor-suite-emulationstation-review-efaf1d3cd3dfd2a807e9d5a0e7295328ff081c4a` |
+| Tamanho do arquivo do artifact | 2864186 bytes |
+| SHA-256 do artifact | `ab017ad8313fc0c50e702c4d6aa7ae7f8348276376a8ea850f04a19ac0c1cf86` |
+
+Os commits posteriores de documentação não são outro binário: conferir
+`COMMIT.txt` e cada entrada de `SHA256SUMS.txt` do pacote. A diferença de runtime
+`34e31f2 → efaf1d3` está somente em `EmulationStationStore.cs` e
+`SharedEmulationStation.cs`, dentro da API Suite. Admin, PIX, contratos comuns e
+migrations não mudaram; os projetos admin/PIX não carregam a DLL da API.
+
+### Execução mínima no host autorizado
+
+1. Atualizar a referência da branch sem sobrescrever trabalho local e confirmar
+   acesso administrativo pelo mecanismo já usado no Linux. Identificar o estado
+   **real**, não apenas o Git: unidade, PID, caminho do DLL carregado, hash,
+   `WorkingDirectory`, argumentos, drop-ins, saúde e schema 025. O baseline
+   histórico da API é
+   `/opt/turborama-suite-r5-releases/es-suite-34e31f2-20260905/server/TurboRamaSuiteOnlineServer.dll`,
+   SHA-256 `8a8a90c9a623c155dabeeb3ba88ef0c983964bd603aa3b0240dd1df5fee4c568`.
+   Se estiver diferente, revisar o delta e preservar quaisquer correções novas;
+   não impor esse baseline antigo ou rebaixar produção.
+2. Baixar e verificar o artifact aprovado no servidor. Preparar a pasta publicada
+   `server/` **completa** em um novo diretório de release, preservando a anterior;
+   não copiar só o DLL nem substituir dependências em uso. Conferir os hashes
+   antes da troca. Não aplicar migrations novas: esta correção não tem migration.
+3. Preparar backup protegido da configuração e rollback **somente da API** antes
+   do reinício. Preservar o drop-in atual `zzzz-es-suite-20260905.conf`; usar uma
+   alteração adicional e reversível de `ExecStart` da
+   `turborama-suite-api.service`, mantendo os argumentos necessários. Manter
+   `WorkingDirectory`, contas/permissões, credenciais systemd, autoridades,
+   pepper, AES, conexão PostgreSQL, inventários/rede e retenção existentes.
+   Preservar `Suite__Enabled` e `Suite__EmulationStation__Enabled` efetivos:
+   o pacote sai com ES desabilitado por padrão, sem autorizar desligá-lo no host.
+4. Trocar/reiniciar **apenas `turborama-suite-api.service`**. Não reiniciar nem
+   trocar `turborama-pix.service` ou `turborama-suite-admin.service` por esta
+   correção. A API também atende Suite e conteúdo: preparar a troca para reduzir
+   interrupção, sem prometer zero impacto. Não depender do TTL de 180 s como
+   garantia de que todo cliente tolerará o reinício.
+5. Verificar o novo PID/caminho/hash efetivo, `/health`, `/ready` e
+   `/ready/content`; conferir o encaminhamento público já existente. Se ainda
+   houver `CONFLICT`, identificar todos os destinos/processos realmente servidos
+   pelo proxy, incluindo instâncias antigas, antes de alterar novamente código.
+   Não mudar proxy, CNG, TLS ou assinaturas para contornar a negativa.
+6. Compilar/executar no host o smoke atualizado em `ops/production/es-smoke/`,
+   passando `ServerPackageDir` como caminho absoluto para a pasta `server/` do
+   **mesmo artifact `9977821782` validado**, não o diretório histórico padrão do
+   projeto. Usar fixtures sintéticas, limpeza limitada às fixtures e zero notificações reais.
+   Exigir nova abertura validada `ACTIVE`, negação de heartbeat da sessão antiga,
+   replay negado, isolamento Suite/ES/cliente B e revogação administrativa por alvo
+   exato. Não usar a premissa antiga de que toda segunda abertura deve dar conflito.
+7. Depois da verificação no host, solicitar o teste **com o mesmo EXE 1.1.2 já
+   instalado**: Suite fechada, entrar, sair normalmente, confirmar encerramento
+   de ES/helper, reabrir imediatamente e validar de novo. Repetir ciclos e testar
+   coexistência com Suite e outra identidade sintética. Não exigir apagar cache,
+   aguardar três minutos, encerrar pelo painel ou ativar a licença novamente.
+
+**Rollback correto:** desfazer somente a alteração adicional da API e restaurar
+seu alvo anterior confirmado; verificar saúde novamente. **Não executar** o
+rollback histórico `.../es-suite-34e31f2-20260905T212345Z/rollback.sh`: ele remove
+três drop-ins e volta os três serviços a versões anteriores a `34e31f2`.
+O script `ops/production/deploy-es-suite-20260905.py` também está fixado em um
+rollout antigo e bloqueado por guarda. Não basta retirar essa guarda ou trocar um
+hash: preparar/revisar o plano API-only de acordo com o baseline real.
+
+### Critério de conclusão e retorno no mesmo arquivo
+
+Registrar horário/fuso, commit/pacote/hashes, novo PID/caminho efetivo, resultado
+de saúde e smoke, rollback preparado e resultado do teste Windows de reabertura.
+Confirmar que PIX/admin não foram trocados e que flags/chaves/sessões de outros
+clientes foram preservadas. Não registrar TS completo, MAC/IP bruto, senhas,
+tokens, strings de conexão ou material privado. Manter a evidência JSON histórica
+intacta; não rebatizar o resultado antigo como implantação nova.
+
+Se faltar privilégio, artefato, baseline seguro ou teste no PC, identificar o
+bloqueio exato e a única ação necessária; **não declarar corrigido em produção**.
+O trabalho de capacidade/400 req/s e os warnings antigos do cliente continuam
+fora desta correção. Não modificar mais o cliente para compensar o backend antigo.
+
 **ORDEM VIGENTE: IMPLEMENTAR, TESTAR E CONCLUIR TODO O ESCOPO ABAIXO.** O usuario
 corrigiu expressamente a orientacao anterior: nao quer outra rodada apenas de
 leitura, proposta, recebimento ou handoff. O executor deve realizar o trabalho
