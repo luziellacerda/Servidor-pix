@@ -114,7 +114,7 @@ public sealed class ExtractionNotificationStore(NpgsqlDataSource db)
                category_id,completed_at,template_variant)
             SELECT $9,license_id,device_id,item_id,source_purchase_id,display_name,$10,to_timestamp($11),$12
             FROM suite.suite_extraction_notice_context WHERE
-            """ + ContextFilter + " AND public_key_spki=$13 ON CONFLICT(event_id) DO NOTHING",connection,tx);
+            """ + "\n" + ContextFilter + " AND public_key_spki=$13 ON CONFLICT(event_id) DO NOTHING",connection,tx);
         AddContext(insert,proof);
         insert.Parameters.AddWithValue(value.EventId); insert.Parameters.AddWithValue(value.CategoryId);
         insert.Parameters.AddWithValue(value.CompletedAtUnixSeconds);

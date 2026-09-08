@@ -10,6 +10,7 @@ on:
       - 'tests/**'
       - 'migrations/suite/**'
       - 'ops/tests/**'
+      - 'ops/production/turborama-suite-extraction-*'
       - 'docs/suite/EMULATIONSTATION-INTEGRATION.md'
       - 'docs/suite/openapi.yaml'
       - 'docs/suite/ERROR-CATALOG.md'
@@ -18,10 +19,16 @@ on:
       - '.github/workflows/emulationstation-suite.yml'
       - 'src/TurboRamaSuiteOnlineServer/**'
       - 'src/TurboRamaSuiteAdminServer/**'
+      - 'src/TurboRamaSuiteNotifications/**'
       - 'src/TurboRamaPixOnlineServer/**'
       - 'tests/TurboRamaSuiteEmulationStation.Tests/**'
+      - 'tests/TurboRamaSuiteNotifications.Tests/**'
+      - 'tests/TurboRamaSuiteExtraction.Postgres.Tests/**'
+      - 'tests/extraction-whatsapp-*.php'
+      - 'tests/notification-sql/**'
       - 'migrations/suite/**'
       - 'ops/tests/**'
+      - 'ops/production/turborama-suite-extraction-*'
       - 'docs/suite/EMULATIONSTATION-INTEGRATION.md'
 
 permissions:
@@ -59,6 +66,7 @@ jobs:
           dotnet restore tests/TurboRamaSuiteOnlineServer.Tests --locked-mode
           dotnet restore tests/TurboRamaSuiteNotifications.Tests --locked-mode
           dotnet restore tests/TurboRamaSuitePostgres.Tests --locked-mode
+          dotnet restore tests/TurboRamaSuiteExtraction.Postgres.Tests --locked-mode
       - name: Build and run signed protocol regression checks
         run: |
           dotnet run --project tests/TurboRamaSuiteNotifications.Tests -c Release --no-restore
@@ -71,6 +79,7 @@ jobs:
         run: |
           php -l ops/production/turborama-suite-extraction-whatsapp.php
           php tests/extraction-whatsapp-worker-test.php
+          php tests/extraction-whatsapp-sqlite-test.php
       - name: Exercise extraction outbox SQL used by the services
         run: |
           npm ci --prefix tests/notification-sql --no-audit --no-fund
@@ -98,6 +107,12 @@ jobs:
           test "$(psql -Atc "SELECT has_table_privilege('turborama-suite','suite.suite_extraction_notification_outbox','SELECT,INSERT');")" = t
           test "$(psql -Atc "SELECT has_table_privilege('turborama-suite-admin','suite.suite_extraction_notification_outbox','SELECT,UPDATE');")" = t
           test "$(psql -Atc "SELECT has_table_privilege('turborama-suite-content-api','suite.suite_es_sessions','INSERT,UPDATE');")" = f
+      - name: Exercise signed extraction events and authenticated Admin dispatch on PostgreSQL 16
+        env:
+          SUITE_EXTRACTION_TEST_CONNECTION: Host=127.0.0.1;Port=5432;Database=turborama_es_ci;Username=postgres;Password=es-ci-isolated-only
+        run: |
+          mkdir -p outputs
+          dotnet run --project tests/TurboRamaSuiteExtraction.Postgres.Tests -c Release --no-restore 2>&1 | tee outputs/extraction-integration-ci.log
       - name: Exercise real PostgreSQL isolation and shared revocation
         env:
           SUITE_ES_TEST_CONNECTION: Host=127.0.0.1;Port=5432;Database=turborama_es_ci;Username=postgres;Password=es-ci-isolated-only
@@ -137,11 +152,14 @@ jobs:
           dotnet publish src/TurboRamaSuiteOnlineServer -c Release --no-restore --self-contained false -o dist/server
           dotnet publish src/TurboRamaSuiteAdminServer -c Release --no-restore --self-contained false -o dist/admin-backend
           dotnet publish src/TurboRamaPixOnlineServer -c Release --no-restore --self-contained false -o dist/pix-admin
-          mkdir -p dist/migrations dist/docs dist/evidence
+          mkdir -p dist/migrations dist/docs dist/evidence dist/ops/production
           cp migrations/suite/*.up.sql dist/migrations/
+          cp ops/production/turborama-suite-extraction-whatsapp.* dist/ops/production/
+          cp docs/suite/HANDOFF-WHATSAPP-CONCLUSAO-DESCOMPACTACAO-20260908.md dist/docs/
           cp docs/suite/EMULATIONSTATION-INTEGRATION.md dist/docs/
           cp docs/suite/openapi.yaml docs/suite/ERROR-CATALOG.md dist/docs/
           cp outputs/es-session-load.json outputs/es-panel-browser.json outputs/es-panel-desktop.png outputs/es-panel-narrow.png dist/evidence/
+          cp outputs/extraction-integration-ci.log dist/evidence/
           printf '%s\n' "$GITHUB_SHA" > dist/COMMIT.txt
           (cd dist && find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
       - uses: actions/upload-artifact@v4
@@ -155,6 +173,7 @@ jobs:
         with:
           name: servidor-es-test-diagnostics-${{ github.sha }}
           path: |
+            outputs/extraction-integration-ci.log
             outputs/es-integration-ci.log
             outputs/es-load-ci.log
             outputs/es-browser-host.log

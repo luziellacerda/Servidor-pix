@@ -42,9 +42,12 @@ try {
   const migration = await readFile(new URL('migrations/suite/026_suite_extraction_notifications.up.sql',root),'utf8');
   await db.exec(migration);
   const api = await readFile(new URL('src/TurboRamaSuiteOnlineServer/ExtractionNotificationEndpoints.cs',root),'utf8');
-  const filter = api.match(/private const string ContextFilter = """([\s\S]*?)""";/)[1];
-  const insertParts = api.match(/var insert = new NpgsqlCommand\("""([\s\S]*?)""" \+ ContextFilter \+ "([^"]+)"/);
-  const insert = insertParts[1] + filter + insertParts[2];
+  // C# raw strings strip the opening/closing newline. Retaining those here
+  // previously concealed a missing separator between WHERE and license_id.
+  const filter = api.match(/private const string ContextFilter = """([\s\S]*?)""";/)[1].trim();
+  const insertParts = api.match(/var insert = new NpgsqlCommand\("""([\s\S]*?)""" \+ ("(?:[^"\\]|\\.)*") \+ ContextFilter \+ "([^"]+)"/);
+  assert.ok(insertParts, 'Review SQL assembly when the C# INSERT concatenation changes');
+  const insert = insertParts[1].trim() + JSON.parse(insertParts[2]) + filter + insertParts[3];
   const inputs = ['TS-SQL-TEST','d'.repeat(64),'e'.repeat(64),'a'.repeat(32),'a'.repeat(32),1,'b'.repeat(64),'c'.repeat(64)];
   const read = 'SELECT * FROM suite.suite_extraction_notice_context WHERE ' + filter;
   assert.equal((await db.query(read,inputs)).rows.length,1,'Direct mode NULL digest must accept authenticated artifact context');

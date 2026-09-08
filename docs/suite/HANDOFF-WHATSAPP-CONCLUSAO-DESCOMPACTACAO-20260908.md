@@ -205,3 +205,74 @@ GROUP BY last_error_code ORDER BY last_error_code;
 Pendências deliberadas: CI remota desta branch, PostgreSQL 16 do workflow, schema
 real de homologação, contrato da biblioteca instalada, carga concorrente da nova
 fila e entrega WhatsApp ponta a ponta.
+
+## Retorno Linux — qualificação de 08/09/2026
+
+Fonte recebida e lida integralmente: `099905a10da70e37ce08555b42b4e3c9044285e1`.
+O trabalho Linux segue em `codex/emulationstation-suite-extraction-linux-20260908`,
+partindo dessa versão. Este registro será atualizado ao concluir a qualificação.
+
+### Correção encontrada na execução nativa
+
+O primeiro evento válido, assinado por uma identidade sintética e processado com
+as permissões da API em PostgreSQL 16, retornava `503 NOTICE_UNAVAILABLE`.
+A causa era a concatenação do `INSERT`: a string C# terminava em `WHERE` e a
+constante seguinte começava com `license_id`, formando `WHERElicense_id`.
+O PostgreSQL rejeitava o comando com `42601`. Foi acrescentado um separador
+explícito. O teste PGlite anterior mantinha as quebras de linha externas da
+string C# e escondia esse defeito; sua extração também foi corrigida.
+
+O worker agora verifica o bloqueio de destinatários da biblioteca instalada
+antes de iniciar o despacho. A consulta mantém compra paga nas duas tabelas,
+usuário ativo e exatamente um proprietário. Não há mudança na política de
+bloqueio existente nem inclusão de destinatários no código.
+
+### Evidência local concluída
+
+- Backup completo do PostgreSQL em formato custom, com manifesto SHA-256;
+  restauração integral em PostgreSQL 16 isolado concluída sem erro.
+- Migration 026 livre na produção; aplicada somente na homologação, tanto em
+  banco vazio com 001–025 quanto na restauração do schema real.
+- View, permissões mínimas e plano da consulta revisados no schema restaurado.
+- Novo teste nativo usa duas identidades RSA, conta paga e ativa, grant concluído
+  e as roles da API/Admin. HTTP `202 ACCEPTED`, `200 ALREADY_ACCEPTED`, assinatura
+  inválida, sessão de outra conta, compra suspensa, dispositivo revogado e
+  sessão/evento vencidos: PASS.
+- 24 repetições concorrentes mantêm uma linha; 20 eventos distintos adicionais
+  e um evento da segunda conta completam 22 registros sem perdas: PASS.
+- Admin completo pelo socket autenticado: 30 requisições concorrentes obtêm
+  22 leases distintos; token antigo não confirma novo lease; despacho expirado
+  vira `UNCERTAIN`, sem reciclagem, e ACK tardio confirmado é aceito: PASS.
+- Regressões existentes Suite e ES em PostgreSQL 16: PASS.
+- PHP com fila falsa e SQLite PDO nativo: duas contas, isolamento, compra/conta,
+  telefone, bloqueio e proprietário ambíguo: PASS.
+- Contrato da biblioteca realmente instalada exercitado separadamente com
+  SQLite em memória, sem carregar provedor ou conectar à fila real: PASS.
+
+Os testes nativos acessam apenas bancos locais com nomes de CI permitidos.
+Os dados de clientes restaurados não são usados pelos aplicativos de teste.
+
+### Significado da fila instalada
+
+`tb_queue_whatsapp` aceita os quatro argumentos e o tipo novo. Retorna `true`
+quando insere em `notification_jobs` ou encontra o mesmo tipo, telefone e texto
+nos dez minutos anteriores. O processo existente `turbobox-notifications`
+entrega ao provedor e registra `sent`, identificador e horário quando há sucesso.
+
+A proteção `UNCERTAIN` da nova outbox cobre o trecho até a entrada na fila.
+O processador legado ainda repete erros/timeouts do provedor. Portanto não há
+comprovação de entrega nem garantia de envio externo único com base apenas em
+`QUEUED`; é necessário conciliar o resultado com o provedor antes de reenviar.
+
+### Situação de publicação neste ponto
+
+A CI recebida da fonte falhou na carga prolongada de 1.000 sessões: 80 respostas
+504 em 72.000 requisições na fase soak. O upload de diagnóstico também informou
+cota de armazenamento de artefatos excedida. A correção não reduz a carga nem
+relaxa limites ou critérios. A nova execução será registrada abaixo.
+
+Produção ainda não alterada neste ponto: API em
+`es-reopen-efaf1d3-20260905`, Admin em `es-suite-34e31f2-20260905`, migration 026
+não aplicada, timer novo não instalado. Nenhuma mensagem real foi disparada.
+As duas contas e os destinatários autorizados para o teste Windows/WhatsApp
+foram solicitados ao responsável; a confirmação continua pendente.
