@@ -306,8 +306,8 @@ Marcar concluído apenas quando todos estiverem verdadeiros:
 
 - [x] rota pública ativa e rejeitando corpo inválido com 400;
 - [x] evento real do 3DS identificado na outbox;
-- [ ] destinatário da Conta A autorizado e resolvido pelo servidor;
-- [ ] outbox da Conta A conciliada;
+- [x] destinatário da Conta A autorizado e resolvido pelo servidor;
+- [x] outbox da Conta A conciliada;
 - [ ] um único job da Conta A confirmado como `sent` pelo provedor;
 - [ ] recebimento real da Conta A confirmado;
 - [ ] deduplicação após reabertura confirmada;
@@ -386,113 +386,171 @@ marcadas. Se faltar segunda conta, confirmação do aparelho ou resultado do
 provedor, registrar `BLOQUEADO` com o item exato; não gerar novo handoff e não
 declarar o sistema finalizado.
 
-
 ## Retorno Linux — verificação de 08/09/2026
 
-**Resultado: BLOQUEADO — `AGUARDANDO_DESTINATARIO_AUTORIZADO`.**
+**Autorização geral registrada; 3DS processado uma vez, job 73 em `sent`.
+Resultado do aceite completo: BLOQUEADO, pelos itens de comprovação abaixo.**
 
-Leitura integral deste handoff e verificações independentes concluídas. O evento
-real do 3DS chegou ao servidor e tem um único proprietário elegível. A etapa 4
-exige que o proprietário confirme o destinatário antes do disparo; foi solicitada
-na conversa autorização para um único envio ao WhatsApp terminado em **3513**,
-sem resposta até o encerramento desta verificação. A oneshot não foi iniciada.
+O bloqueio anterior `AGUARDANDO_DESTINATARIO_AUTORIZADO`, registrado no commit
+`ed21880`, foi resolvido na conversa. O usuário autorizou o disparo e esclareceu
+que a autorização vale para todas as solicitações válidas recebidas. **Não pedir
+nova autorização por evento.** Permanecem as validações de compra paga, usuário
+ativo, proprietário único, telefone válido e política de bloqueio. A autorização
+operacional geral está registrada privadamente em `authorization-a.json`.
 
-O pedido geral para executar o handoff foi atendido nas etapas que independem
-dessa confirmação específica. Para prosseguir com envio, recibo, reabertura e
-Conta B, continuam necessários os dados e as confirmações descritos abaixo.
+Esta continuação executou a oneshot existente uma única vez para o 3DS. O timer
+continua parado enquanto faltam confirmação no aparelho, reabertura, segunda
+conta e demais critérios das etapas 7 e 8. Nenhuma confirmação de recebimento
+foi fornecida até o encerramento deste registro.
 
 ### Fonte e produção conferidas
 
 - Handoff recebido: `dfa08b937f9f2353446c0f58b2b0ab4ab750f406`, branch
-  `codex/fechamento-disparos-whatsapp-20260908`, sobre a base `17af26c`.
-- Commit operacional permanece `353ab1d729ad625a986c96f85f3afa4a306cc1dd`;
+  `codex/fechamento-disparos-whatsapp-20260908`; retorno anterior `ed21880`.
+  A consulta ao Git nesta continuação não encontrou outro commit nessa branch.
+- Commit operacional: `353ab1d729ad625a986c96f85f3afa4a306cc1dd`;
   release `/opt/turborama-suite-r5-releases/extraction-353ab1d-20260908`.
-- Os 27 arquivos do manifesto instalado conferem. SHA-256 de `SHA256SUMS`:
+- Os 27 arquivos do manifesto instalado conferem. Nome correto do manifesto:
+  `SHA256SUMS.txt`; SHA-256:
   `f822ee278de21b4d1b9704a3ea3bb5c660dc40efefca329da90b5226e265f285`.
-- API, Admin, PIX, gateway, Cloudflared e Nginx ativos. As invocações dos serviços
-  permaneceram iguais entre o início e o fim desta rodada.
-- Correção operacional da etapa 1: `turbobox-notifications.service` não está
-  instalado no systemd. O processador existente é **PM2 `turbobox-notifications`**,
-  executando `process-notifications.php`, estado `online`, PID 2729 e zero
-  reinicializações observadas. Nenhum serviço substituto foi criado.
-- Timer de aviso de conexão ativo e habilitado. Timer de extração inativo e
-  desabilitado; oneshot sem timestamp de início e sem execução nesta rodada.
-- Comparação final: 29 arquivos protegidos e biblioteca de notificações intactos;
+- API, Admin, PIX, gateway, Cloudflared e Nginx ativos, sem reinício nesta rodada.
+  Comparação após o disparo: 29 arquivos protegidos e biblioteca intactos;
   PIX, gateway, Cloudflared e Nginx preservam suas invocações anteriores.
+- Correção operacional da etapa 1: o processador existente é **PM2
+  `turbobox-notifications`**, executando `process-notifications.php`, estado
+  `online`, PID 2729, zero reinicializações. A unit systemd
+  `turbobox-notifications.service` não existe; nenhum substituto foi criado.
+- Timer de aviso de conexão permanece ativo/habilitado. Timer de extração
+  permanece inativo/desabilitado. API/Admin, worker, biblioteca e configurações
+  de produção foram preservados; ocorreram apenas as gravações normais do fluxo
+  autorizado em outbox e fila.
 
 ### Registro de execução e conciliação
 
 ```text
-Início/fim UTC−3: 08/09/2026 15:34:00 / 08/09/2026 15:43:34
+Primeira verificação UTC−3: 08/09/2026 15:34:00–15:43:34
+Continuação autorizada UTC−3: 08/09/2026 15:50:50–16:01:13
 Commit/release realmente ativos: 353ab1d / extraction-353ab1d-20260908
 API/Admin/PIX/gateway/Cloudflared: ativos, sem reinício nesta rodada
 Rota pública inválida (HTTP/código): 400 NOTICE_INVALID, TLS válido, sem redirecionamento
 Evento A: 29c1f7bc6e83; 3DS; categoria emulators
 Evento A concluído/recebido UTC−3: 08/09/2026 12:10:19 / 15:20:43
-Evento A estado inicial/final: PENDING / PENDING; attempts=0; sem erro
-Destinatário A: proprietário ***7, últimos 4: 3513; autorização PENDENTE
+Evento A estado inicial/final: PENDING / QUEUED; attempts=1; sem erro
+Evento A finished_at UTC−3: 08/09/2026 15:54:52.694419
+Destinatário A: proprietário ***7, últimos 4: 3513; AUTORIZADO
 Elegibilidade A: 1 proprietário; pedido e compra paid; usuário active
-Telefone A: normalização válida; destinatário não bloqueado; nome utilizável
-Job A: 0 registros correspondentes; sem sent, horário de envio ou ID do provedor
-Recebimento A confirmado por: ninguém; não houve disparo nesta rodada
-Deduplicação/reabertura A: teste real ainda não executado
-Evento B: não disponibilizado nesta rodada
-Destinatário B autorizado: não disponibilizado
-Job B: não há teste B executado para conciliar
+Telefone A: normalização válida; destinatário não bloqueado; cadastro preservado
+Oneshot A: exatamente 1 chamada de start; journal confirma início e conclusão com sucesso
+Oneshot A InvocationID: 0774e4f4c9144819bcb696509f422b79
+Job A: exatamente 1 registro, ID 73, sent, attempts=1, last_error vazio
+Job A criado/enviado UTC−3: 08/09/2026 15:54:52 / 15:54:58
+ID do provedor A: NULL no registro existente; resposta HTTP original não persistida
+Recebimento A confirmado por: pendente; solicitado ao usuário na conversa
+Deduplicação/reabertura A: 1 job nas consultas; reabertura real ainda não comprovada
+Evento B: não disponibilizado; o segundo evento observado pertence à MESMA Conta A
+Destinatário B autorizado: autorização geral vigente; segunda identidade não disponibilizada
+Job B: teste B não executado
 Recebimento B confirmado por: pendente
 Isolamento A/B: aceite real pendente
-Casos negativos: corpo {} rejeitado; demais casos reais pendentes, detalhados abaixo
+Casos negativos: corpo {} rejeitado, sem evento adicional; demais casos reais pendentes
 Timer antes/depois: disabled/inactive -> disabled/inactive
-Quatro ciclos: não iniciados; dependem do aceite A/B e da habilitação autorizada pelo fluxo
+Quatro ciclos: não iniciados; dependem do aceite A/B e da habilitação pelo fluxo previsto
 Verificação de 15 minutos: não iniciada; janela exigida após habilitação do timer
 Verificação de 1 hora: não iniciada; janela exigida após habilitação do timer
 Regressões dos serviços existentes: nenhuma observada nas verificações desta rodada
-Estados finais: PENDING=1; LEASED=0; DISPATCHING=0; QUEUED=0; SKIPPED=0; UNCERTAIN=0; DEAD=0
-Segredos/dados pessoais no Git: NÃO; apenas prefixo, ID mascarado e últimos quatro autorizados pelo modelo deste handoff
+Estados finais: PENDING=1; LEASED=0; DISPATCHING=0; QUEUED=1; SKIPPED=0; UNCERTAIN=0; DEAD=0
+Segredos/dados pessoais no Git: NÃO; somente os identificadores mascarados previstos no handoff
 Resultado final: BLOQUEADO
-Bloqueio: AGUARDANDO_DESTINATARIO_AUTORIZADO; posteriormente ainda faltam entrega/recibo A, reabertura A, Conta B paga/autorizada, negativos e observação contínua
-Reversão: não necessária; nenhuma alteração de produção nesta rodada
+Bloqueio atual: recibo no aparelho A, ID/conciliação externa, reabertura A, Conta B e demais critérios de aceite
+Bloqueio por autorização: RESOLVIDO; não solicitar confirmação por evento
+Reversão: não necessária
 ```
+
+Os horários de `notification_jobs` são UTC; foram convertidos para UTC−3 acima.
+O journal registra início às 15:54:52 e conclusão bem-sucedida da mesma invocação.
+Após a conclusão, `systemctl show` retornou timestamps vazios; a prova da execução
+usa o journal e a correlação com outbox/job, sem considerar somente o código de
+saída do comando.
+
+### Segundo evento recebido e seleção do disparo
+
+Antes do envio, foi encontrado também o evento `6dbeb98929e7`, categoria
+`ps-vita`, conteúdo `accel world vs sword art [PCSE01071].psvita`, recebido às
+**15:49:05 UTC−3**. O relacionamento de compra resolve o mesmo proprietário
+(`***7`) e WhatsApp final **3513**. Esse evento não satisfaz o teste de Conta B.
+
+A primeira conferência parou ao detectar duas linhas. A leitura do Admin
+confirmou `ORDER BY created_at LIMIT 1`, e o worker executa uma única obtenção
+por invocação. Revalidado o 3DS como primeiro elegível, foi executada uma única
+oneshot. Resultado conciliado: 3DS `QUEUED`, PS Vita `PENDING`, zero tentativas
+e zero jobs para o protocolo `TS-6DBEB98929E7`. Nenhuma edição manual de linha,
+lease ou telefone foi utilizada para selecionar o alvo.
+
+O PS Vita está coberto pela autorização geral. Seu processamento permanece
+pendente da conclusão da conciliação A prevista na etapa 5; não se deve reenviar
+o 3DS para tentar obter um identificador externo.
+
+### Limite encontrado na comprovação do provedor
+
+A biblioteca instalada marca sucesso quando recebe HTTP 2xx sem erro de cURL
+ou rejeição explícita. Ela captura somente `messageId` ou `id` no primeiro nível
+JSON; o processador grava esse retorno em `api_message_id`. No job 73, o resultado
+é `sent`, uma tentativa, erro vazio e **`api_message_id=NULL`**. O corpo original
+não é persistido por esse processador, portanto não pode ser reconstruído desta
+linha.
+
+A documentação oficial de [envio de texto da MenuIA](https://docs.menuia.com/api-reference/create-message/mensagemTexto)
+apresenta resposta de sucesso com `status` e `message`, sem um identificador.
+Isso é compatível com o ID ausente observado, mas não prova qual foi o corpo da
+resposta real. A documentação de [webhook de texto](https://docs.menuia.com/webhook-reference/events/texto)
+prevê `idMessagem`; não foi localizada evidência desse webhook para o protocolo
+nas pastas de logs existentes examinadas. Configuração de webhook e integração
+foram preservadas.
+
+A ausência de ID não foi tratada como motivo para reenviar. A confirmação no
+aparelho continua necessária. Recuperar um ID exigirá evidência já existente no
+provedor/webhook; alterar a biblioteca para ampliar o registro está fora dos
+limites desta rodada. O aceite com identificador externo permanece em aberto.
 
 ### Testes concluídos e limites do aceite
 
-As **15 verificações HTTP passaram**: saúde/prontidão/conteúdo da API, saúde do
-PIX e gateway, contratos de sessão e da rota de extração locais e públicos, e
-validação de desafios Suite/EmulationStation/escopo inválido. Pelo socket Admin,
+As **15 verificações HTTP passaram novamente após o disparo**: saúde/prontidão/
+conteúdo da API, saúde do PIX e gateway, contratos de sessão e extração locais e
+públicos, desafios Suite/EmulationStation/escopo inválido. Pelo socket Admin,
 `/health`, `/readiness` e `/readiness/content` responderam 200;
 `/extraction-notifications/begin-dispatch` com `{}` respondeu 400.
 
-Após os corpos inválidos, a outbox continua com uma única linha: o evento 3DS
-original. Não apareceu evento adicional nem job TurboBox correspondente. A
-consulta de jobs usa tipo `suite_extraction_completed`, proprietário resolvido
-no servidor e protocolo `TS-29C1F7BC6E83`.
+A outbox conserva os dois eventos reais; os corpos inválidos não criaram outro.
+O job A foi conciliado por tipo `suite_extraction_completed`, proprietário e
+protocolo `TS-29C1F7BC6E83`. A mensagem contém 3DS e o protocolo esperado; as
+checagens não encontraram IP, MAC, telefone completo, caminho local ou marcador
+de credencial. O texto integral permanece privado.
 
-Essas sondagens verificam disponibilidade e rejeição de entrada inválida.
 Login autenticado, heartbeat real, reabertura Windows com `ALREADY_ACCEPTED`,
 arquivo bruto sem extração, falha opcional preservando download e limpeza de
-`.turborama-downloads` não foram exercitados pelo cliente nesta rodada. Os testes
-sintéticos anteriores estão registrados no handoff-base; não houve simulação de
-falha do provedor real nem alteração de cadastro para testar casos negativos.
-Ausência/ambiguidade/bloqueio de destinatário como casos de teste e aceite real
-com duas contas continuam pendentes.
+`.turborama-downloads` ainda não foram exercitados pelo cliente nesta rodada.
+Os testes sintéticos anteriores permanecem no handoff-base. Não houve simulação
+de falha no provedor real nem alteração de cadastro para fabricar casos negativos.
+Ausência/ambiguidade/bloqueio de destinatário como testes e isolamento real com
+duas contas continuam pendentes.
 
 ### Evidência privada e ponto de retomada
 
 Diretório privado, permissão `0700`:
 `/home/lz-servidor/evidence/extraction-whatsapp-20260908/closeout-20260908T183400Z/`.
 
-Registros desta rodada: `round.json`, `units-before.json`, `units-after.json`,
-`processor-before.json`, `public-route.json`, `public-smoke.json`,
-`target-masked.json`, `dispatch-preconditions.json`, `outbox-after-masked.json`,
-`queue-after-masked.json`, `protection-after.json` e `closeout-result.json`.
-Identificadores integrais e auxiliares de conciliação permanecem exclusivamente
-nos arquivos privados locais, sem cópia para o Git.
+Além dos registros da primeira verificação, esta continuação produziu:
+`authorization-a.json`, `oneshot-a-invocation.json`,
+`oneshot-a-journal-masked.json`, `reconcile-a.json`, `event-owners-masked.json`,
+`message-a-validation.json`, `provider-id-diagnosis.json`,
+`public-smoke-after-dispatch.json` e `authorized-final-check.json`.
+Identificadores integrais e registros privados de conciliação não foram
+publicados no Git.
 
-Retomar na **etapa 4** quando chegar a autorização inequívoca para o destinatário
-A terminado em 3513. Revalidar alvo, proprietário, bloqueio, quantidade de eventos
-e ausência de job antes de iniciar a oneshot exatamente uma vez. Conciliar
-outbox, job e provedor; obter confirmação do aparelho. Depois executar reabertura
-A e extração real de uma Conta B paga, com autorização específica do destinatário
-B. O timer depende de todos os critérios anteriores e das janelas de observação
-previstas neste documento. Se o estado do evento já tiver mudado, seguir a tabela
-de conciliação da etapa 5 antes de qualquer tentativa.
+Retomar na **etapa 6**, com a autorização geral já concedida. Confirmar no aparelho
+uma única mensagem 3DS, conciliar eventual evidência externa e realizar a
+reabertura A solicitada na conversa. O usuário também foi orientado a realizar
+uma extração em segunda conta paga e informar conteúdo/horário. Revalidar o
+estado antes de qualquer próxima oneshot. Habilitar o timer existente somente
+após os critérios das etapas 7 e 8 e observar quatro ciclos, 15 minutos e 1 hora.
+Atualizar este mesmo retorno conforme chegarem as comprovações.
