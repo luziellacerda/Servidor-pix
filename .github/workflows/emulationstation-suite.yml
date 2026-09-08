@@ -103,6 +103,7 @@ jobs:
           test "$(psql -Atc "SELECT count(*) FROM suite.schema_migrations WHERE version IN('023_suite_es_contract_scope','024_suite_session_management_network','025_suite_challenge_text_lookup');")" = 3
           test "$(psql -Atc "SELECT count(*) FROM suite.schema_migrations WHERE version='022_suite_emulationstation_sessions';")" = 1
           test "$(psql -Atc "SELECT count(*) FROM suite.schema_migrations WHERE version='026_suite_extraction_notifications';")" = 1
+          test "$(psql -Atc "SELECT count(*) FROM suite.schema_migrations WHERE version='027_suite_download_notifications';")" = 1
           test "$(psql -Atc "SELECT has_table_privilege('turborama-suite','suite.suite_es_challenges','SELECT,INSERT,UPDATE,DELETE');")" = t
           test "$(psql -Atc "SELECT has_table_privilege('turborama-suite','suite.suite_extraction_notification_outbox','SELECT,INSERT');")" = t
           test "$(psql -Atc "SELECT has_table_privilege('turborama-suite-admin','suite.suite_extraction_notification_outbox','SELECT,UPDATE');")" = t

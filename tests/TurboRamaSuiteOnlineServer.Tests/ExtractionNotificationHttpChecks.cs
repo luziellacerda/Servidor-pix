@@ -13,6 +13,7 @@ internal static class ExtractionNotificationHttpChecks
         // Ephemeral loopback only; no real configuration, database, account,
         // credentials, provider or outbound Internet call is loaded.
         foreach (var enabled in new[] { false, true })
+        foreach (var route in new[] { ExtractionCompletionProtocol.Route, DownloadCompletionProtocol.Route })
         {
             var builder = WebApplication.CreateSlimBuilder();
             builder.Logging.ClearProviders();
@@ -20,18 +21,19 @@ internal static class ExtractionNotificationHttpChecks
             await using var app = builder.Build();
             app.Urls.Add("http://127.0.0.1:0");
             ExtractionNotificationEndpoints.Map(app, enabled);
+            DownloadNotificationEndpoints.Map(app, enabled);
             await app.StartAsync();
             try
             {
                 using var client = new HttpClient { BaseAddress = new Uri(app.Urls.Single()), Timeout = TimeSpan.FromSeconds(10) };
-                using var malformed = await client.PostAsync(ExtractionCompletionProtocol.Route,
+                using var malformed = await client.PostAsync(route,
                     new StringContent("{}", Encoding.UTF8, "application/json"));
                 Check(malformed.StatusCode == (enabled ? HttpStatusCode.BadRequest : HttpStatusCode.NotFound),
                     "Feature gate or malformed request handling failed.");
                 if (!enabled) continue;
                 foreach (var chunked in new[] { false, true })
                 {
-                    using var request = new HttpRequestMessage(HttpMethod.Post, ExtractionCompletionProtocol.Route)
+                    using var request = new HttpRequestMessage(HttpMethod.Post, route)
                     {
                         Content = new ByteArrayContent(new byte[ExtractionCompletionProtocol.MaximumBodyBytes + 1])
                     };
@@ -40,7 +42,7 @@ internal static class ExtractionNotificationHttpChecks
                     Check(response.StatusCode == HttpStatusCode.RequestEntityTooLarge,
                         "Oversized request was not rejected: chunked=" + chunked);
                 }
-                using var unexpected = await client.PostAsync(ExtractionCompletionProtocol.Route,
+                using var unexpected = await client.PostAsync(route,
                     new StringContent("{\"phone\":\"forbidden\"}", Encoding.UTF8, "application/json"));
                 Check(unexpected.StatusCode == HttpStatusCode.BadRequest, "Unknown field was accepted.");
             }

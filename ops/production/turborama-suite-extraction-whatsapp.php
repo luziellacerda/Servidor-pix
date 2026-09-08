@@ -20,6 +20,8 @@ function extraction_worker(callable $call, callable $customerForPurchase, callab
     if($status===204)return 0;
     if($status!==200||!is_array($job))return 2;
     $event=(string)($job['eventId']??'');$lease=(string)($job['leaseToken']??'');
+    $eventType=(string)($job['eventType']??'suite_extraction_completed');
+    if(!in_array($eventType,['suite_extraction_completed','suite_download_completed'],true))return 2;
     if(!preg_match('/^[a-f0-9]{64}$/D',$event)||!preg_match('/^[a-f0-9-]{36}$/D',$lease))return 2;
     $outcome='RETRY';$error='RECIPIENT_LOOKUP_FAILED';$dispatchStarted=false;
     try {
@@ -35,7 +37,7 @@ function extraction_worker(callable $call, callable $customerForPurchase, callab
                 ||!is_string($render['message']??null)||strlen($render['message'])>8192) {
                 $outcome='UNCERTAIN';$error='DISPATCH_NOT_CONFIRMED';
             } else {
-                $accepted=$queue((int)$customer['id'],'suite_extraction_completed',
+                $accepted=$queue((int)$customer['id'],$eventType,
                     (string)$customer['phone'],$render['message']);
                 $outcome=$accepted?'QUEUED':'UNCERTAIN';
                 $error=$accepted?'':'QUEUE_OUTCOME_UNKNOWN';

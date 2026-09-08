@@ -47,6 +47,7 @@ try
     api = builder.Build();
     api.Urls.Add("http://127.0.0.1:0");
     ExtractionNotificationEndpoints.Map(api, true);
+    DownloadNotificationEndpoints.Map(api, true);
     await api.StartAsync();
     using var client = new HttpClient(new SocketsHttpHandler { UseProxy = false, AllowAutoRedirect = false })
     { BaseAddress = new Uri(api.Urls.Single()), Timeout = TimeSpan.FromSeconds(15) };
@@ -78,6 +79,25 @@ try
     Check(accepted.All(x => x.Status == "ACCEPTED") && await Count() == 22,
         "Concurrent distinct events were lost or duplicated.");
     Console.WriteLine("PASS: PG16 runtime API role, real RSA proofs, paid/active context, cross-session isolation, expiry, HTTP ACKs and concurrent deduplication.");
+
+    var rawA = DownloadProof(fixtures[0], 0, new string('1', 32), DownloadCompletionProtocol.FileReady);
+    var newDownloadA = DownloadProof(fixtures[0], 0, new string('2', 32), DownloadCompletionProtocol.FileReady);
+    var rawB = DownloadProof(fixtures[1], 0, new string('3', 32), DownloadCompletionProtocol.FileReady);
+    var extractedA = DownloadProof(fixtures[0], 1, new string('4', 32), DownloadCompletionProtocol.Extracted);
+    await ExpectDownload(rawA, 202, "ACCEPTED");
+    await ExpectDownload(rawA, 200, "ALREADY_ACCEPTED");
+    var duplicateDownloads = await Task.WhenAll(Enumerable.Range(0, 24).Select(_ =>
+        new DownloadNotificationStore(apiDb).AcceptAsync(rawA, default)));
+    Check(duplicateDownloads.All(x => x.Status == "ALREADY_ACCEPTED") && await Count() == 23,
+        "Concurrent raw-download replay created duplicates.");
+    await ExpectDownload(rawB with { Signature = rawA.Signature }, 403);
+    await ExpectDownload(rawA with { SessionId = fixtures[1].Session }, 409);
+    await ExpectDownload(DownloadProof(fixtures[0], 0, rawA.Event.DownloadId, DownloadCompletionProtocol.Extracted), 409);
+    await ExpectDownload(newDownloadA, 202, "ACCEPTED");
+    await ExpectDownload(rawB, 202, "ACCEPTED");
+    await ExpectDownload(extractedA, 202, "ACCEPTED");
+    Check(await Count() == 26, "Distinct downloads of the same artifact were lost.");
+    Console.WriteLine("PASS: raw ISO and extracted download HTTP contracts, same-content distinct operations, immutable operation outcome and replay/account isolation.");
 
     var token = Hex();
     var tokenPath = Path.Combine(temp, "admin-token");
@@ -129,8 +149,22 @@ try
         return (JsonElement?)JsonDocument.Parse(await response.Content.ReadAsStringAsync()).RootElement.Clone();
     }));
     var jobs = leases.Where(x => x.HasValue).Select(x => x!.Value).ToArray();
-    Check(jobs.Length == 22 && jobs.Select(x => x.GetProperty("eventId").GetString()).Distinct().Count() == 22,
+    Check(jobs.Length == 26 && jobs.Select(x => x.GetProperty("eventId").GetString()).Distinct().Count() == 26,
         "Concurrent workers leased one event twice or lost an event.");
+    foreach (var expected in new[] { rawA, newDownloadA, rawB, extractedA })
+    {
+        var job = jobs.Single(x => x.GetProperty("eventId").GetString() == expected.Event.EventId);
+        Check(job.GetProperty("eventType").GetString() == "suite_download_completed", "Wrong queue event type.");
+        using var beginDownload = await bridge.PostAsJsonAsync("/extraction-notifications/begin-dispatch",
+            new { eventId = expected.Event.EventId, leaseToken = job.GetProperty("leaseToken").GetString(), customerName = "Pessoa Teste" });
+        Check(beginDownload.IsSuccessStatusCode, "Download begin-dispatch failed.");
+        var message = (await beginDownload.Content.ReadFromJsonAsync<JsonElement>()).GetProperty("message").GetString()!;
+        Check(message.Contains(expected.Event.CompletionKind == DownloadCompletionProtocol.FileReady
+            ? "*DOWNLOAD CONCLUÍDO*" : "*DOWNLOAD E DESCOMPACTAÇÃO CONCLUÍDOS*"), "Wrong completion message.");
+        using var completeDownload = await bridge.PostAsJsonAsync("/extraction-notifications/complete",
+            new { eventId = expected.Event.EventId, leaseToken = job.GetProperty("leaseToken").GetString(), outcome = "QUEUED", errorCode = "" });
+        Check(completeDownload.IsSuccessStatusCode, "Download queue acknowledgement failed.");
+    }
     var dispatch = jobs[0];
     var eventId = dispatch.GetProperty("eventId").GetString()!;
     var lease = dispatch.GetProperty("leaseToken").GetString()!;
@@ -172,6 +206,19 @@ try
         Check(staleAck.StatusCode == HttpStatusCode.Conflict, "Old worker acknowledged a new lease.");
     Console.WriteLine("PASS: real authenticated Admin socket, runtime role, 30 concurrent workers, lease fencing, UNCERTAIN boundary and late queue ACK; no provider or real recipient.");
 
+    async Task ExpectDownload(DownloadCompletionProof proof, int expected, string? ack = null)
+    {
+        using var result = await client.PostAsJsonAsync(DownloadCompletionProtocol.Route, proof, DownloadCompletionProtocol.JsonOptions);
+        if (result.StatusCode == HttpStatusCode.ServiceUnavailable)
+            await new DownloadNotificationStore(apiDb).AcceptAsync(proof, default);
+        Check((int)result.StatusCode == expected, "Download response: expected " + expected + ", received " + (int)result.StatusCode);
+        if (ack is not null)
+        {
+            var value = await result.Content.ReadFromJsonAsync<DownloadCompletionAck>(DownloadCompletionProtocol.JsonOptions);
+            Check(value?.Status == ack && value.EventId == proof.Event.EventId, "Wrong download acknowledgement.");
+        }
+    }
+
     async Task Expect(ExtractionCompletionProof proof, int expected, string? ack = null)
     {
         using var result = await client.PostAsJsonAsync(ExtractionCompletionProtocol.Route, proof, ExtractionCompletionProtocol.JsonOptions);
@@ -210,6 +257,15 @@ Fixture Identity(RSA key, string suffix)
     var bytes = key.ExportSubjectPublicKeyInfo();
     return new("TS-EXTRACTION-CI-" + suffix + "-" + Guid.NewGuid().ToString("N"),
         Convert.ToHexString(SHA256.HashData(bytes)).ToLowerInvariant(), Convert.ToBase64String(bytes), Hex(), key);
+}
+DownloadCompletionProof DownloadProof(Fixture who, int item, string operation, string kind)
+{
+    var now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+    var value = new DownloadCompletionEvent(1, "TURBORAMA_SUITE", "", who.License, who.Device,
+        operation, Item(item), Item(item), 1, catalog, new string('c', 64), "xbox-360", kind, now - 1);
+    value = value with { EventId = DownloadCompletionProtocol.EventId(value) };
+    return new(value, who.Session, now, Convert.ToBase64String(who.Key.SignData(
+        DownloadCompletionProtocol.SigningBytes(value, who.Session, now), HashAlgorithmName.SHA256, RSASignaturePadding.Pss)));
 }
 ExtractionCompletionProof Proof(Fixture who, int item, long? completed = null)
 {

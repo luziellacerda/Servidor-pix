@@ -32,12 +32,13 @@ internal static class ExtractionNotificationAdminEndpoints
                 UPDATE suite.suite_extraction_notification_outbox o
                 SET status='LEASED',lease_token=$1,lease_until=clock_timestamp()+interval '60 seconds',attempts=attempts+1
                 FROM candidate c WHERE o.event_id=c.event_id
-                RETURNING o.event_id,o.lease_token,o.source_purchase_id
+                RETURNING o.event_id,o.lease_token,o.source_purchase_id,
+                  CASE WHEN o.download_id IS NULL THEN 'suite_extraction_completed' ELSE 'suite_download_completed' END
                 """, connection, tx);
             command.Parameters.AddWithValue(Guid.NewGuid());
             ExtractionNoticeLease? result = null;
             await using (var reader = await command.ExecuteReaderAsync(ct))
-                if (await reader.ReadAsync(ct)) result = new(reader.GetString(0),reader.GetGuid(1),reader.GetString(2));
+                if (await reader.ReadAsync(ct)) result = new(reader.GetString(0),reader.GetGuid(1),reader.GetString(2),reader.GetString(3));
             await tx.CommitAsync(ct);
             return result is null ? Results.NoContent() : Results.Json(result);
         });
@@ -50,7 +51,7 @@ internal static class ExtractionNotificationAdminEndpoints
             await using var connection = await db.OpenConnectionAsync(ct);
             await using var tx = await connection.BeginTransactionAsync(ct);
             await using var read = new NpgsqlCommand("""
-                SELECT o.content_name,o.category_id,o.completed_at,o.template_variant
+                SELECT o.content_name,o.category_id,o.completed_at,o.template_variant,o.download_id,o.completion_kind
                 FROM suite.suite_extraction_notification_outbox o
                 WHERE o.event_id=$1 AND o.lease_token=$2 AND o.status='LEASED' AND o.lease_until>clock_timestamp()
                   AND EXISTS(SELECT 1 FROM suite.suite_licenses l JOIN suite.suite_devices d USING(license_id)
@@ -68,7 +69,9 @@ internal static class ExtractionNotificationAdminEndpoints
                 var data=new ExtractionCompletionMessageData(request.CustomerName,reader.GetString(0),
                     ExtractionCompletionProtocol.CategoryName(reader.GetString(1)),
                     new DateTimeOffset(reader.GetDateTime(2)),"TS-"+request.EventId[..12].ToUpperInvariant());
-                try { message=ExtractionCompletionMessage.Format(data,DateTimeOffset.UtcNow,reader.GetInt16(3)); }
+                try { message=reader.IsDBNull(4)
+                    ? ExtractionCompletionMessage.Format(data,DateTimeOffset.UtcNow,reader.GetInt16(3))
+                    : DownloadCompletionMessage.Format(data,DateTimeOffset.UtcNow,reader.GetInt16(3),reader.GetString(5)); }
                 catch (ArgumentException) { return Results.BadRequest(); }
             }
             await using var dispatch=new NpgsqlCommand("""
@@ -107,6 +110,6 @@ internal static class ExtractionNotificationAdminEndpoints
     }
     private static bool Valid(string? eventId,Guid token)=>ExtractionCompletionProtocol.IsHex(eventId,64)&&token!=Guid.Empty;
 }
-internal sealed record ExtractionNoticeLease(string EventId,Guid LeaseToken,string SourcePurchaseId);
+internal sealed record ExtractionNoticeLease(string EventId,Guid LeaseToken,string SourcePurchaseId,string EventType);
 internal sealed record ExtractionNoticeDispatch(string EventId,Guid LeaseToken,string CustomerName);
 internal sealed record ExtractionNoticeResult(string EventId,Guid LeaseToken,string Outcome,string ErrorCode);
