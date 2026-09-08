@@ -4,6 +4,8 @@ Data: 08/09/2026. Fuso de referência: UTC, com horário local UTC−3 quando in
 Repositório: `luziellacerda/Servidor-pix`.
 Estado desta entrega: diagnóstico externo e revisão de código/documentação; **nenhuma correção implantada no servidor**.
 
+**Continuidade posterior:** por novo pedido explícito do proprietário, o estado mais recente está no [handoff consolidado do início à recuperação e à entrada confirmada](HANDOFF-CONSOLIDADO-INCIDENTE-LICENCIAMENTO-E-RECUPERACAO-20260908.md). Preservar este arquivo como histórico; a falha IPv6 deixou de se reproduzir nos lotes posteriores e o usuário confirmou a entrada, sem causa-raiz da recuperação determinada.
+
 ## 1. Pedido do proprietário e objetivo da execução
 
 Após substituir a placa-mãe do servidor, desligá-lo e ligá-lo novamente, o proprietário informou que a TurboRama Suite passou a mostrar **“SERVIÇO DE LICENCIAMENTO TEMPORARIAMENTE INDISPONÍVEL”**. Há vários sistemas e muitos clientes consumindo a infraestrutura. A solução precisa tratar a causa e preservar tudo que já funciona; ajustar manualmente um PC não atende ao objetivo operacional.

@@ -4,6 +4,8 @@ Data: **08/09/2026**. Horários desta entrega em UTC e America/Fortaleza (UTC−
 Autor do levantamento: Codex no Windows do proprietário.
 Estado: **documentação de continuidade; nenhum reparo ou deploy executado nesta entrega**.
 
+**Atualização posterior solicitada pelo proprietário:** consultar o [handoff consolidado do início à recuperação e à entrada confirmada](HANDOFF-CONSOLIDADO-INCIDENTE-LICENCIAMENTO-E-RECUPERACAO-20260908.md). Ele incorpora o retorno Linux `862c0873`, a recuperação observada neste Windows às 10:00 e a confirmação “agora foi” após abrir o novo pacote de teste. As pendências e instruções abaixo são o recorte histórico desta retomada; novas atualizações devem ir ao consolidado.
+
 ## 1. Pedido e escopo desta retomada
 
 O proprietário esclareceu que não possui IP público fixo, que o acesso externo é publicado por túnel, que já atualizou o IP e que o IPv4 público atual é **`187.21.51.38`**. Em seguida, solicitou explicitamente um **novo handoff**.

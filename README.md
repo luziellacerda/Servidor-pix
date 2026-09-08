@@ -2,7 +2,9 @@
 
 Backend privado de licenciamento, prova criptográfica de máquina e administração remota do TurboRama. O servidor autoriza licenças e máquinas; preços, credencial Mercado Pago, PDV, QR Code, confirmação do pagamento e concessão de créditos permanecem no gabinete.
 
-Retomada de conectividade solicitada pelo proprietário em 08/09/2026: consultar o [novo handoff sobre túnel, IP público atualizado e aceite real da Suite](HANDOFF-RETOMADA-TUNEL-IP-PUBLICO-E-ACEITE-SUITE-20260908.md). Ele reúne as sondas Windows das 09:03, referencia o retorno Linux e o manual operacional mais recente, e deve receber o próximo retorno no próprio arquivo. Publicação documental não representa reparo ou deploy.
+Referência atual do incidente de acesso (08/09/2026): [handoff consolidado do início à recuperação e ao login confirmado pelo proprietário](HANDOFF-CONSOLIDADO-INCIDENTE-LICENCIAMENTO-E-RECUPERACAO-20260908.md). Inclui linha do tempo, retorno Linux, recuperação IPv4/IPv6 neste Windows, executável efetivamente aberto, diagnóstico/reparo condicional e aceite pendente dos downloads. A causa-raiz da intermitência não foi determinada; não houve patch de rede ou deploy comprovadamente responsável pela recuperação. Registrar a continuidade nesse consolidado.
+
+Histórico da retomada: [túnel, IP público e sondas Windows das 09:03](HANDOFF-RETOMADA-TUNEL-IP-PUBLICO-E-ACEITE-SUITE-20260908.md); o consolidado acima liga também o retorno Linux posterior. Publicação documental não representa reparo ou deploy.
 
 Histórico do incidente após troca da placa-mãe: [handoff original com evidências e critérios de preservação](HANDOFF-INCIDENTE-CONECTIVIDADE-POS-TROCA-PLACA-SERVIDOR-20260908.md). A retomada acima foi criada por novo pedido explícito do proprietário, sem apagar esse histórico; a main legada não deve ser implantada como se fosse toda a produção Suite/EmulationStation.
 
