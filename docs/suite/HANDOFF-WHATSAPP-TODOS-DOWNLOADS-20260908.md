@@ -505,3 +505,74 @@ acima, executar os casos reais ISO/arquivo direto/extração/retry/novo download
 duas contas e devolver neste documento commit e hash do EXE. Aguardar a emissão
 real pelo cliente; a autorização de disparo já existe e o servidor processa
 automaticamente os pedidos válidos recebidos.
+
+
+## Atualização — intervalo de 3 segundos e novas solicitações reais
+
+Em 08/09/2026, o proprietário pediu reduzir a espera de 15 para **3 segundos**.
+O ajuste entrou em produção às **19:04:54 UTC−3**, mantendo o mesmo timer/worker.
+Este intervalo prevalece sobre os 15 segundos descritos no histórico acima.
+
+O override permanente é:
+`/etc/systemd/system/turborama-suite-extraction-whatsapp.timer.d/zzzzzzzz-interval-3s-20260908.conf`.
+Ele limpa os agendamentos anteriores e define:
+
+```ini
+[Timer]
+OnBootSec=
+OnUnitInactiveSec=
+OnBootSec=3s
+OnUnitInactiveSec=3s
+AccuracySec=100ms
+RandomizedDelaySec=0
+```
+
+SHA-256 do override:
+`30384605adf3c81c8679b333fbd5da0f83bcf54c512c3bcef9a284545aa28ce7`.
+A unit original foi preservada, portanto consultar somente seu arquivo base ainda
+mostra 15s. O estado efetivo de `systemctl show` confirma somente os agendamentos
+3s, precisão 100ms, enabled/active. O exemplo versionado foi atualizado também.
+
+Verificação real às 19:05:35: **13 ciclos completos, zero falhas**, intervalos de
+início entre **3,072 e 3,190 segundos**. O pequeno acréscimo inclui execução do
+worker e agendamento. Não houve novo envio dos eventos antigos. API/PIX/gateway
+seguem health 200; nenhuma API, Admin, PIX, gateway, Nginx ou Cloudflared foi
+reiniciada para este ajuste. O timer de conexão continua com sua configuração.
+
+O ajuste reduz a espera para recolher a conclusão recebida. **Não é garantia de
+recebimento no WhatsApp em exatamente 3 segundos:** o processador compartilhado
+TurboBox continua com seu polling de fila e o provedor tem seu próprio tempo de
+resposta/entrega. Não alterar o horário de conclusão para simular essa meta.
+
+Uma primeira verificação do ajuste leu somente a última das duas linhas
+`TimersMonotonic` e fez rollback preventivo. Corrigida a leitura dos valores
+repetidos, a configuração foi reaplicada e os ciclos acima passaram. Nenhum
+serviço de aplicação precisou ser revertido ou reiniciado.
+
+Evidência privada: `evidence/all-download-notifications-20260908/timer-3s/`, com
+cópia da unit base, ação aplicada e `cycle-verification.json`. Para reverter só
+a velocidade, remover exclusivamente o override acima, executar daemon-reload
+e reiniciar o timer; o arquivo base restaura o intervalo anterior. A conferência
+privada antiga `deploy-control.py verify` compara o snapshot pré-ajuste e acusará
+este novo arquivo autorizado. Revisar essa diferença conhecida, sem tratar como
+mudança desconhecida nem apagar o override para satisfazer a comparação antiga.
+
+Também foram confirmadas novas conclusões reais recebidas pelo **protocolo novo**:
+
+| Conteúdo | Conclusão recebida (UTC−3) | Evento | Job e envio registrado |
+|---|---|---|---|
+| 3DS, emulador | 18:40:54 | `ddf306480bb9`, EXTRACTED | Job 85, sent 18:41:12 |
+| PS2, emulador | 18:59:43 | `3e7ab5a89c78`, EXTRACTED | Job 86, sent 19:00:06 |
+
+No PS2 houve um único job, uma tentativa e nenhum erro. A espera de 23 segundos
+ocorreu **antes** desta redução: 15s para entrar na fila e 8s para registrar o envio.
+Não houve disparo manual nessa consulta. Os eventos antigos 3DS/PSV continuam
+sem replay. O código/versão do EXE não foram reconferidos nesta solicitação;
+o recebimento autenticado mostra que o cliente já consegue emitir o contrato
+novo para extração. Ainda não foi observado um FILE_READY real nem confirmado
+recebimento no aparelho.
+
+A coleta automática de **1 hora também passou**, às 18:40:05, com o timer ainda
+em 15s: serviços saudáveis e um único job sent de cada protocolo legado. Evidência
+`checkpoint-1h.json` conferida. Esse resultado não substitui a verificação dos
+ciclos de 3s acima, realizada depois da mudança.

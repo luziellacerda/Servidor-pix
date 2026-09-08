@@ -1,8 +1,10 @@
 [Unit]
 Description=Process pending extraction completion notices
 [Timer]
-OnBootSec=30s
-OnUnitInactiveSec=15s
+OnBootSec=3s
+OnUnitInactiveSec=3s
+AccuracySec=100ms
+RandomizedDelaySec=0
 Unit=turborama-suite-extraction-whatsapp.service
 [Install]
 WantedBy=timers.target
