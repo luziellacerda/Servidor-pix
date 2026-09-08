@@ -304,8 +304,8 @@ considerado permanente após essas duas janelas sem regressão.
 
 Marcar concluído apenas quando todos estiverem verdadeiros:
 
-- [ ] rota pública ativa e rejeitando corpo inválido com 400;
-- [ ] evento real do 3DS identificado na outbox;
+- [x] rota pública ativa e rejeitando corpo inválido com 400;
+- [x] evento real do 3DS identificado na outbox;
 - [ ] destinatário da Conta A autorizado e resolvido pelo servidor;
 - [ ] outbox da Conta A conciliada;
 - [ ] um único job da Conta A confirmado como `sent` pelo provedor;
@@ -317,8 +317,8 @@ Marcar concluído apenas quando todos estiverem verdadeiros:
 - [ ] timer `enabled` e `active`;
 - [ ] quatro ciclos, 15 minutos e 1 hora sem regressão;
 - [ ] login, heartbeat, PIX, conteúdo, ES e aviso de conexão preservados;
-- [ ] nenhuma credencial, telefone completo ou dado pessoal publicado;
-- [ ] evidência privada e retorno resumido registrados.
+- [x] nenhuma credencial, telefone completo ou dado pessoal publicado;
+- [x] evidência privada e retorno resumido registrados.
 
 `ACCEPTED`, `ALREADY_ACCEPTED`, `QUEUED` ou HTTP 2xx isoladamente não satisfazem
 o aceite. A entrega exige `sent` no processador/provedor e confirmação do aparelho.
@@ -385,3 +385,114 @@ O resultado somente pode ser `APROVADO` com todas as caixas da seção de aceite
 marcadas. Se faltar segunda conta, confirmação do aparelho ou resultado do
 provedor, registrar `BLOQUEADO` com o item exato; não gerar novo handoff e não
 declarar o sistema finalizado.
+
+
+## Retorno Linux — verificação de 08/09/2026
+
+**Resultado: BLOQUEADO — `AGUARDANDO_DESTINATARIO_AUTORIZADO`.**
+
+Leitura integral deste handoff e verificações independentes concluídas. O evento
+real do 3DS chegou ao servidor e tem um único proprietário elegível. A etapa 4
+exige que o proprietário confirme o destinatário antes do disparo; foi solicitada
+na conversa autorização para um único envio ao WhatsApp terminado em **3513**,
+sem resposta até o encerramento desta verificação. A oneshot não foi iniciada.
+
+O pedido geral para executar o handoff foi atendido nas etapas que independem
+dessa confirmação específica. Para prosseguir com envio, recibo, reabertura e
+Conta B, continuam necessários os dados e as confirmações descritos abaixo.
+
+### Fonte e produção conferidas
+
+- Handoff recebido: `dfa08b937f9f2353446c0f58b2b0ab4ab750f406`, branch
+  `codex/fechamento-disparos-whatsapp-20260908`, sobre a base `17af26c`.
+- Commit operacional permanece `353ab1d729ad625a986c96f85f3afa4a306cc1dd`;
+  release `/opt/turborama-suite-r5-releases/extraction-353ab1d-20260908`.
+- Os 27 arquivos do manifesto instalado conferem. SHA-256 de `SHA256SUMS`:
+  `f822ee278de21b4d1b9704a3ea3bb5c660dc40efefca329da90b5226e265f285`.
+- API, Admin, PIX, gateway, Cloudflared e Nginx ativos. As invocações dos serviços
+  permaneceram iguais entre o início e o fim desta rodada.
+- Correção operacional da etapa 1: `turbobox-notifications.service` não está
+  instalado no systemd. O processador existente é **PM2 `turbobox-notifications`**,
+  executando `process-notifications.php`, estado `online`, PID 2729 e zero
+  reinicializações observadas. Nenhum serviço substituto foi criado.
+- Timer de aviso de conexão ativo e habilitado. Timer de extração inativo e
+  desabilitado; oneshot sem timestamp de início e sem execução nesta rodada.
+- Comparação final: 29 arquivos protegidos e biblioteca de notificações intactos;
+  PIX, gateway, Cloudflared e Nginx preservam suas invocações anteriores.
+
+### Registro de execução e conciliação
+
+```text
+Início/fim UTC−3: 08/09/2026 15:34:00 / 08/09/2026 15:43:34
+Commit/release realmente ativos: 353ab1d / extraction-353ab1d-20260908
+API/Admin/PIX/gateway/Cloudflared: ativos, sem reinício nesta rodada
+Rota pública inválida (HTTP/código): 400 NOTICE_INVALID, TLS válido, sem redirecionamento
+Evento A: 29c1f7bc6e83; 3DS; categoria emulators
+Evento A concluído/recebido UTC−3: 08/09/2026 12:10:19 / 15:20:43
+Evento A estado inicial/final: PENDING / PENDING; attempts=0; sem erro
+Destinatário A: proprietário ***7, últimos 4: 3513; autorização PENDENTE
+Elegibilidade A: 1 proprietário; pedido e compra paid; usuário active
+Telefone A: normalização válida; destinatário não bloqueado; nome utilizável
+Job A: 0 registros correspondentes; sem sent, horário de envio ou ID do provedor
+Recebimento A confirmado por: ninguém; não houve disparo nesta rodada
+Deduplicação/reabertura A: teste real ainda não executado
+Evento B: não disponibilizado nesta rodada
+Destinatário B autorizado: não disponibilizado
+Job B: não há teste B executado para conciliar
+Recebimento B confirmado por: pendente
+Isolamento A/B: aceite real pendente
+Casos negativos: corpo {} rejeitado; demais casos reais pendentes, detalhados abaixo
+Timer antes/depois: disabled/inactive -> disabled/inactive
+Quatro ciclos: não iniciados; dependem do aceite A/B e da habilitação autorizada pelo fluxo
+Verificação de 15 minutos: não iniciada; janela exigida após habilitação do timer
+Verificação de 1 hora: não iniciada; janela exigida após habilitação do timer
+Regressões dos serviços existentes: nenhuma observada nas verificações desta rodada
+Estados finais: PENDING=1; LEASED=0; DISPATCHING=0; QUEUED=0; SKIPPED=0; UNCERTAIN=0; DEAD=0
+Segredos/dados pessoais no Git: NÃO; apenas prefixo, ID mascarado e últimos quatro autorizados pelo modelo deste handoff
+Resultado final: BLOQUEADO
+Bloqueio: AGUARDANDO_DESTINATARIO_AUTORIZADO; posteriormente ainda faltam entrega/recibo A, reabertura A, Conta B paga/autorizada, negativos e observação contínua
+Reversão: não necessária; nenhuma alteração de produção nesta rodada
+```
+
+### Testes concluídos e limites do aceite
+
+As **15 verificações HTTP passaram**: saúde/prontidão/conteúdo da API, saúde do
+PIX e gateway, contratos de sessão e da rota de extração locais e públicos, e
+validação de desafios Suite/EmulationStation/escopo inválido. Pelo socket Admin,
+`/health`, `/readiness` e `/readiness/content` responderam 200;
+`/extraction-notifications/begin-dispatch` com `{}` respondeu 400.
+
+Após os corpos inválidos, a outbox continua com uma única linha: o evento 3DS
+original. Não apareceu evento adicional nem job TurboBox correspondente. A
+consulta de jobs usa tipo `suite_extraction_completed`, proprietário resolvido
+no servidor e protocolo `TS-29C1F7BC6E83`.
+
+Essas sondagens verificam disponibilidade e rejeição de entrada inválida.
+Login autenticado, heartbeat real, reabertura Windows com `ALREADY_ACCEPTED`,
+arquivo bruto sem extração, falha opcional preservando download e limpeza de
+`.turborama-downloads` não foram exercitados pelo cliente nesta rodada. Os testes
+sintéticos anteriores estão registrados no handoff-base; não houve simulação de
+falha do provedor real nem alteração de cadastro para testar casos negativos.
+Ausência/ambiguidade/bloqueio de destinatário como casos de teste e aceite real
+com duas contas continuam pendentes.
+
+### Evidência privada e ponto de retomada
+
+Diretório privado, permissão `0700`:
+`/home/lz-servidor/evidence/extraction-whatsapp-20260908/closeout-20260908T183400Z/`.
+
+Registros desta rodada: `round.json`, `units-before.json`, `units-after.json`,
+`processor-before.json`, `public-route.json`, `public-smoke.json`,
+`target-masked.json`, `dispatch-preconditions.json`, `outbox-after-masked.json`,
+`queue-after-masked.json`, `protection-after.json` e `closeout-result.json`.
+Identificadores integrais e auxiliares de conciliação permanecem exclusivamente
+nos arquivos privados locais, sem cópia para o Git.
+
+Retomar na **etapa 4** quando chegar a autorização inequívoca para o destinatário
+A terminado em 3513. Revalidar alvo, proprietário, bloqueio, quantidade de eventos
+e ausência de job antes de iniciar a oneshot exatamente uma vez. Conciliar
+outbox, job e provedor; obter confirmação do aparelho. Depois executar reabertura
+A e extração real de uma Conta B paga, com autorização específica do destinatário
+B. O timer depende de todos os critérios anteriores e das janelas de observação
+previstas neste documento. Se o estado do evento já tiver mudado, seguir a tabela
+de conciliação da etapa 5 antes de qualquer tentativa.
