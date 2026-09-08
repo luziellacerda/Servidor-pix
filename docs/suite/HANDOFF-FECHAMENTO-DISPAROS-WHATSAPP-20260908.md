@@ -5,6 +5,12 @@ Data: 08/09/2026 (UTC−3).
 Destino: operador do servidor Linux do TurboRama Suite.
 
 Natureza: **execução operacional e aceite ponta a ponta**.
+
+> **Escopo atualizado pelo proprietário em 08/09/2026:** os avisos devem cobrir
+> todos os downloads concluídos, incluindo arquivos sem descompactação.
+> A limitação anterior a extração foi substituída pelo
+> [handoff de todos os downloads](HANDOFF-WHATSAPP-TODOS-DOWNLOADS-20260908.md).
+> Este documento conserva o histórico e o diagnóstico da implantação anterior.
 Documento anterior: `HANDOFF-WHATSAPP-CONCLUSAO-DESCOMPACTACAO-20260908.md`.
 
 ## Objetivo final
@@ -533,6 +539,50 @@ Os testes sintéticos anteriores permanecem no handoff-base. Não houve simulaç
 de falha no provedor real nem alteração de cadastro para fabricar casos negativos.
 Ausência/ambiguidade/bloqueio de destinatário como testes e isolamento real com
 duas contas continuam pendentes.
+
+### Análise do download de Xbox — 08/09/2026 16:12 UTC−3
+
+O usuário informou download de jogo Xbox sem mensagem. A consulta da mesma
+conta identificou o acesso recente a **Halo 3 (Brazil)**, arquivo **`.iso`**, às
+**16:02:25 UTC−3**. O catálogo registra `visual_extract_policy=NONE` e
+`extract_policy=NONE`. Foi solicitado nome/horário e confirmação do estado
+exibido no programa; não houve resposta até este registro.
+
+Resultados confirmados no servidor:
+
+- zero eventos de Xbox ou Halo 3 na outbox e zero jobs correspondentes;
+- a outbox permanece com 3DS `QUEUED` e PS Vita `PENDING`;
+- desde 15:40, o único POST real de conclusão identificado nos logs foi PS Vita,
+  às 15:49:05, HTTP 202; os dois HTTP 400 às 15:57 são das sondagens registradas;
+- nenhum aviso de falha interna da rota foi encontrado nesse intervalo;
+- as categorias `xbox`, `xbox-360`, `xbox-one` e `xbox-series` são aceitas pelo
+  protocolo instalado; o contexto de notificação do Halo 3 está disponível;
+- API/Admin/túnel ativos, processador PM2 online e autorização geral vigente;
+- timer de extração ainda `disabled/inactive`, pelos critérios de aceite já
+  documentados. A autorização geral não habilitou automaticamente esse timer.
+
+O gatilho contratado no handoff-base é `Extracting → Completed`, após publicar
+os arquivos extraídos, disponibilizando `ABRIR PASTA ✓`. A etapa 7 deste handoff
+prevê explicitamente que arquivo bruto sem extração não gera esse aviso.
+Portanto, **Halo 3 mantido como ISO é compatível com o fluxo atual sem evento de
+extração**. O servidor confirmou a ausência de evento; a trajetória exata do
+cliente depende do estado/log do Windows, que não foi inspecionado nesta análise.
+`extract_policy=NONE`, sozinho, não demonstra o que o usuário fez no cliente.
+
+O grant `COMPLETED` às 16:02:25 registra o sucesso da autorização/redirecionamento
+DIRECT, pois `AuthorizeDirectAsync` finaliza o grant antes de devolver a URL.
+Esse horário não comprova o término físico do download no computador e não pode
+ser usado para fabricar um evento de conclusão.
+
+Habilitar o timer permitiria consumir avisos já recebidos, mas não criaria o
+aviso ausente de Halo 3. Para avisar também sobre downloads mantidos como ISO,
+será necessário definir e implementar esse gatilho no cliente, com confirmação
+real do término, e compatibilizar o contrato/texto da notificação. Não alterar a
+política do catálogo para forçar extração de ISO nem inserir evento artificial.
+Esta análise foi somente leitura, sem novo envio ou mudança de produção.
+
+Evidência privada: `/home/lz-servidor/evidence/extraction-whatsapp-20260908/xbox-analysis-20260908T190954Z`, com `api-extraction-requests.json`,
+`recent-downloads-masked.json`, `queue-masked.json` e `diagnosis.json`.
 
 ### Evidência privada e ponto de retomada
 
