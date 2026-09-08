@@ -77,35 +77,14 @@ jobs:
           psql --set=ON_ERROR_STOP=1 --command='CREATE ROLE "turborama-suite" LOGIN; CREATE ROLE "turborama-suite-admin" LOGIN;'
           psql --set=ON_ERROR_STOP=1 --file=ops/production/prepare-suite-content-roles.sql
           sha256sum --check --strict ops/production/suite-content-migrations.sha256
-          migrations=(
-            migrations/suite/001_suite_foundation.up.sql
-            migrations/suite/002_lifetime_single_active_device.up.sql
-            migrations/suite/003_admin_otp_audit.up.sql
-            migrations/suite/004_suite_commerce_lifecycle.up.sql
-            migrations/suite/005_suite_commerce_permissions.up.sql
-            migrations/suite/006_suite_readiness_permissions.up.sql
-            migrations/suite/007_suite_device_transfer_permissions.up.sql
-            migrations/suite/008_suite_transfer_runtime_permissions.up.sql
-            migrations/suite/009_suite_commerce_provision_permissions.up.sql
-            migrations/suite/010_suite_content_catalog.up.sql
-            migrations/suite/011_suite_content_publish_integrity.up.sql
-            migrations/suite/012_suite_content_permissions.up.sql
-            migrations/suite/013_suite_content_management.up.sql
-            migrations/suite/014_suite_content_retention.up.sql
-          )
-          for migration in "${migrations[@]}"; do
-            name=$(basename "$migration" .up.sql)
-            if [[ "$name" =~ ^01[0-4]_ ]]; then
-              expected=$(awk -v path="$migration" '$2 == path { print $1 }' \
-                ops/production/suite-content-migrations.sha256)
-              test "$expected" != ""
-              psql --set=ON_ERROR_STOP=1 --set=migration_sha256="$expected" --file="$migration"
-            else
-              psql --set=ON_ERROR_STOP=1 --file="$migration"
-            fi
+          # The current monitor/catalog expects 902 items (migration 016).
+          # Qualify the same forward schema as the API, retaining pinned hashes.
+          for migration in migrations/suite/*.up.sql; do
+            checksum=$(sha256sum "$migration" | cut -d ' ' -f 1)
+            psql --set=ON_ERROR_STOP=1 --set=migration_sha256="$checksum" --file="$migration"
           done
-          test "$(psql --tuples-only --no-align --command='SELECT count(*) FROM suite.schema_migrations;')" = 14
-          test "$(psql --tuples-only --no-align --command='SELECT count(*) FROM suite.schema_migration_checksums;')" = 5
+          test "$(psql --tuples-only --no-align --command='SELECT count(*) FROM suite.schema_migrations;')" = 26
+          test "$(psql --tuples-only --no-align --command="SELECT count(*) FROM suite.schema_migration_checksums WHERE version ~ '^01[0-6]_';")" = 7
       - name: Exercise monitor ownership and catalog races on PostgreSQL 16
         env:
           SUITE_TEST_CONNECTION: Host=127.0.0.1;Port=5432;Database=turborama_suite_ci;Username=postgres;Password=suite-ci-only

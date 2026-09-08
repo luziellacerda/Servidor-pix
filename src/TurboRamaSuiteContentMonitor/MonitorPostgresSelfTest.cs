@@ -90,9 +90,9 @@ internal static class MonitorPostgresSelfTest
               sha256,safe_file_name,file_extension,extract_policy,manifest_identity,
               descriptor_hash,content_type,status)
             VALUES
-              ($1,$7,1,'Postgres CAS A','NONE',$7,1,12,$8,'cas.zip','.zip','NONE',
+              ($1,$7,1,'Postgres CAS A','NONE',$7,1,NULL,NULL,'cas.zip','.zip','NONE',
                $1,$9,'application/octet-stream','READY'),
-              ($2,$7,1,'Postgres CAS B','NONE',$7,2,12,$8,'cas.zip','.zip','NONE',
+              ($2,$7,1,'Postgres CAS B','NONE',$7,2,NULL,NULL,'cas.zip','.zip','NONE',
                $2,$9,'application/octet-stream','READY');
             UPDATE suite.suite_content_snapshots SET status='PUBLISHED',
               published_at=clock_timestamp() WHERE catalog_identity IN ($1,$2);
@@ -108,7 +108,7 @@ internal static class MonitorPostgresSelfTest
             """, firstCatalog, secondCatalog, RandomHex(64), RandomHex(64), RandomHex(64),
             RandomHex(64), itemId, new string('a', 64), new string('b', 64));
 
-        var target = new HealthTarget(itemId, firstCatalog, 1, 12, new string('a', 64),
+        var target = new HealthTarget(itemId, firstCatalog, 1, null, null,
             ".zip", null, null, [], [], [], 1, 2, null, null, 1);
         await using (var publish = dataSource.CreateCommand("""
             UPDATE suite.suite_content_catalog_state SET active_catalog_identity=$1,
@@ -155,9 +155,9 @@ internal static class MonitorPostgresSelfTest
               sha256,safe_file_name,file_extension,extract_policy,manifest_identity,
               descriptor_hash,content_type,status)
             VALUES
-              ($1,$7,1,'Old origin','NONE',$7,7,12,$8,'same.zip','.zip','NONE',
+              ($1,$7,1,'Old origin','NONE',$7,7,NULL,NULL,'same.zip','.zip','NONE',
                $1,$9,'application/octet-stream','READY'),
-              ($2,$7,1,'Corrected mirror','NONE',$7,7,12,$8,'same.zip','.zip','NONE',
+              ($2,$7,1,'Corrected mirror','NONE',$7,7,NULL,NULL,'same.zip','.zip','NONE',
                $2,$9,'application/octet-stream','READY');
             UPDATE suite.suite_content_snapshots SET status='PUBLISHED',
               published_at=clock_timestamp() WHERE catalog_identity IN ($1,$2);
@@ -170,7 +170,7 @@ internal static class MonitorPostgresSelfTest
             """, firstCatalog, secondCatalog, RandomHex(64), RandomHex(64), RandomHex(64),
             RandomHex(64), itemId, new string('c', 64), new string('d', 64));
 
-        var target = new HealthTarget(itemId, firstCatalog, 7, 12, new string('c', 64),
+        var target = new HealthTarget(itemId, firstCatalog, 7, null, null,
             ".zip", null, null, [], [], [], 1, 2, null, null, 1);
         var promotions = await store.ApplyHealthResultsAsync(
             [new HealthProbeResult(target, false, false, false, "ORIGIN_REQUEST_FAILED")],

@@ -3,6 +3,18 @@ declare(strict_types=1);
 
 // Reuses the same supported queue and server-side customer lookup as the LOGIN
 // worker. No direct MenuIA call, invented recipient or client-supplied phone.
+function extraction_customer_for_purchase(PDO $db, string $purchase): ?array {
+    if ($purchase === '' || strlen($purchase) > 64) return null;
+    $query = $db->prepare("SELECT u.id,u.name,u.phone FROM payment_orders o JOIN purchases p ON p.id=o.purchase_id JOIN users u ON u.id=p.user_id WHERE o.public_id=? AND o.status='paid' AND p.status='paid' AND u.status='active' LIMIT 2");
+    $query->execute([$purchase]);
+    $rows = $query->fetchAll(PDO::FETCH_ASSOC);
+    if (count($rows) !== 1) return null;
+    $phone = tb_phone_e164((string)$rows[0]['phone']);
+    if (!$phone || (function_exists('tb_whatsapp_recipient_blocked') && tb_whatsapp_recipient_blocked($phone))) return null;
+    // Preserve the existing recipient policy before crossing the dispatch boundary.
+    return ['id' => (int)$rows[0]['id'], 'name' => (string)$rows[0]['name'], 'phone' => $phone];
+}
+
 function extraction_worker(callable $call, callable $customerForPurchase, callable $queue): int {
     [$status,$job]=$call('extraction-notifications/lease',[]);
     if($status===204)return 0;
@@ -62,12 +74,7 @@ try {
         return [$status,$raw===''?null:json_decode($raw,true,8,JSON_THROW_ON_ERROR)];
     };
     $lookup=static function(string $purchase):?array {
-        if($purchase===''||strlen($purchase)>64)return null;
-        $db=tb_db();
-        $q=$db->prepare("SELECT u.id,u.name,u.phone FROM payment_orders o JOIN purchases p ON p.id=o.purchase_id JOIN users u ON u.id=p.user_id WHERE o.public_id=? AND o.status='paid' AND p.status='paid' AND u.status='active' LIMIT 2");
-        $q->execute([$purchase]);$rows=$q->fetchAll(PDO::FETCH_ASSOC);
-        if(count($rows)!==1||!tb_phone_e164((string)$rows[0]['phone']))return null;
-        return $rows[0];
+        return extraction_customer_for_purchase(tb_db(), $purchase);
     };
     exit(extraction_worker($call,$lookup,static fn(int $id,string $type,string $phone,string $message):bool =>
         (bool)tb_queue_whatsapp($id,$type,$phone,$message)));
