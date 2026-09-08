@@ -2,6 +2,8 @@
 
 Backend privado de licenciamento, prova criptográfica de máquina e administração remota do TurboRama. O servidor autoriza licenças e máquinas; preços, credencial Mercado Pago, PDV, QR Code, confirmação do pagamento e concessão de créditos permanecem no gabinete.
 
+Para assumir a operação atual, consulte o [handoff completo das funções e da operação do servidor Pix/Suite](HANDOFF-FUNCOES-E-OPERACAO-SERVIDOR-PIX-SUITE-20260908.md): arquitetura, túnel/domínios/portas, runtime efetivo, licenciamento Suite/ES, comércio, painéis, download direto, bancos, timers, backup e diagnóstico. O documento também identifica os consumidores compartilhados e as diferenças entre referências históricas e produção.
+
 Incidente de conectividade após troca da placa-mãe do servidor (08/09/2026): consultar o [handoff único com evidências, diagnóstico e critérios de correção preservando os sistemas existentes](HANDOFF-INCIDENTE-CONECTIVIDADE-POS-TROCA-PLACA-SERVIDOR-20260908.md). O documento distingue a main legada das fontes Suite/EmulationStation e deve receber o retorno no mesmo arquivo; sua publicação não representa correção implantada.
 
 > Este repositório contém código comercial sensível e deve permanecer **privado**. Nunca coloque Access Token, Client Secret, chaves de cifragem, arquivo de estado ou dados de clientes no Git.
