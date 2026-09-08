@@ -2,7 +2,9 @@
 
 Backend privado de licenciamento, prova criptográfica de máquina e administração remota do TurboRama. O servidor autoriza licenças e máquinas; preços, credencial Mercado Pago, PDV, QR Code, confirmação do pagamento e concessão de créditos permanecem no gabinete.
 
-Incidente de conectividade após troca da placa-mãe do servidor (08/09/2026): consultar o [handoff único com evidências, diagnóstico e critérios de correção preservando os sistemas existentes](HANDOFF-INCIDENTE-CONECTIVIDADE-POS-TROCA-PLACA-SERVIDOR-20260908.md). O documento distingue a main legada das fontes Suite/EmulationStation e deve receber o retorno no mesmo arquivo; sua publicação não representa correção implantada.
+Retomada de conectividade solicitada pelo proprietário em 08/09/2026: consultar o [novo handoff sobre túnel, IP público atualizado e aceite real da Suite](HANDOFF-RETOMADA-TUNEL-IP-PUBLICO-E-ACEITE-SUITE-20260908.md). Ele reúne as sondas Windows das 09:03, referencia o retorno Linux e o manual operacional mais recente, e deve receber o próximo retorno no próprio arquivo. Publicação documental não representa reparo ou deploy.
+
+Histórico do incidente após troca da placa-mãe: [handoff original com evidências e critérios de preservação](HANDOFF-INCIDENTE-CONECTIVIDADE-POS-TROCA-PLACA-SERVIDOR-20260908.md). A retomada acima foi criada por novo pedido explícito do proprietário, sem apagar esse histórico; a main legada não deve ser implantada como se fosse toda a produção Suite/EmulationStation.
 
 > Este repositório contém código comercial sensível e deve permanecer **privado**. Nunca coloque Access Token, Client Secret, chaves de cifragem, arquivo de estado ou dados de clientes no Git.
 
