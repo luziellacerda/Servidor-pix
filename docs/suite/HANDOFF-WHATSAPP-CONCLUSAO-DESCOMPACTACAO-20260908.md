@@ -2,6 +2,11 @@
 
 Data: 08/09/2026. Destino: responsável pelo servidor Linux do TurboRama Suite.
 
+> **Retorno Linux de 08/09/2026:** API/Admin instalados, migration 026 aplicada e
+> rota pública ativa. Timer de extração instalado e parado. Entrega real de
+> WhatsApp depende das duas contas/destinatários autorizados. O estado atual e as
+> evidências estão em [Retorno Linux](#retorno-linux--estado-atual).
+
 ## Resultado esperado
 
 Quando o programa Windows concluir a extração, verificar/publicar os arquivos no
@@ -206,110 +211,221 @@ Pendências deliberadas: CI remota desta branch, PostgreSQL 16 do workflow, sche
 real de homologação, contrato da biblioteca instalada, carga concorrente da nova
 fila e entrega WhatsApp ponta a ponta.
 
-## Retorno Linux — qualificação de 08/09/2026
+## Retorno Linux — estado atual
 
-Fonte recebida e lida integralmente: `099905a10da70e37ce08555b42b4e3c9044285e1`.
-O trabalho Linux segue em `codex/emulationstation-suite-extraction-linux-20260908`,
-partindo dessa versão. Este registro será atualizado ao concluir a qualificação.
+Fonte lida integralmente: `099905a10da70e37ce08555b42b4e3c9044285e1`.
+Retorno no [PR #2](https://github.com/luziellacerda/Servidor-pix/pull/2), branch
+`codex/emulationstation-suite-extraction-linux-20260908`.
+A seção original acima registra o que foi recebido; esta seção informa o que
+foi executado e o que ainda precisa de validação externa.
 
-### Correção encontrada na execução nativa
+### O que está instalado
 
-O primeiro evento válido, assinado por uma identidade sintética e processado com
-as permissões da API em PostgreSQL 16, retornava `503 NOTICE_UNAVAILABLE`.
-A causa era a concatenação do `INSERT`: a string C# terminava em `WHERE` e a
-constante seguinte começava com `license_id`, formando `WHERElicense_id`.
-O PostgreSQL rejeitava o comando com `42601`. Foi acrescentado um separador
-explícito. O teste PGlite anterior mantinha as quebras de linha externas da
-string C# e escondia esse defeito; sua extração também foi corrigida.
+- Release completa: `/opt/turborama-suite-r5-releases/extraction-353ab1d-20260908`.
+- Commit operacional: `353ab1d729ad625a986c96f85f3afa4a306cc1dd`.
+- API e Admin incluem `TurboRamaSuiteNotifications.dll`, `.deps.json`, runtime
+  config e todas as dependências publicadas. Não foi substituída DLL avulsa.
+- API: `Suite__ExtractionNotifications__Enabled=true`.
+- Admin: `SUITE_EXTRACTION_NOTICES_ENABLED=1`.
+- Migration `026_suite_extraction_notifications`: aplicada, um marcador,
+  view/outbox/índices presentes e permissões das duas roles conferidas.
+- Timer `turborama-suite-extraction-whatsapp.timer`: instalado, **inativo e sem
+  habilitação automática**. O timer de aviso de conexão continua ativo.
+- Nenhuma mensagem real de extração foi enviada por esta intervenção. Na
+  conferência final a outbox de extração estava vazia.
 
-O worker agora verifica o bloqueio de destinatários da biblioteca instalada
-antes de iniciar o despacho. A consulta mantém compra paga nas duas tabelas,
-usuário ativo e exatamente um proprietário. Não há mudança na política de
-bloqueio existente nem inclusão de destinatários no código.
+A nova versão foi iniciada primeiro com as duas flags desligadas. Após verificar
+saúde, readiness, conteúdo e contratos Suite/ES existentes, foram habilitadas
+somente a recepção dos eventos e as operações Admin. O envio permanece pendente
+do teste com destinatários autorizados. Isso não é aceite ponta a ponta completo.
 
-### Evidência local concluída
+### Por que a notificação não funcionava
 
-- Backup completo do PostgreSQL em formato custom, com manifesto SHA-256;
-  restauração integral em PostgreSQL 16 isolado concluída sem erro.
-- Migration 026 livre na produção; aplicada somente na homologação, tanto em
-  banco vazio com 001–025 quanto na restauração do schema real.
-- View, permissões mínimas e plano da consulta revisados no schema restaurado.
-- Novo teste nativo usa duas identidades RSA, conta paga e ativa, grant concluído
-  e as roles da API/Admin. HTTP `202 ACCEPTED`, `200 ALREADY_ACCEPTED`, assinatura
-  inválida, sessão de outra conta, compra suspensa, dispositivo revogado e
-  sessão/evento vencidos: PASS.
-- 24 repetições concorrentes mantêm uma linha; 20 eventos distintos adicionais
-  e um evento da segunda conta completam 22 registros sem perdas: PASS.
-- Admin completo pelo socket autenticado: 30 requisições concorrentes obtêm
-  22 leases distintos; token antigo não confirma novo lease; despacho expirado
-  vira `UNCERTAIN`, sem reciclagem, e ACK tardio confirmado é aceito: PASS.
-- Regressões existentes Suite e ES em PostgreSQL 16: PASS.
-- PHP com fila falsa e SQLite PDO nativo: duas contas, isolamento, compra/conta,
-  telefone, bloqueio e proprietário ambíguo: PASS.
-- Contrato da biblioteca realmente instalada exercitado separadamente com
-  SQLite em memória, sem carregar provedor ou conectar à fila real: PASS.
+Havia dois problemas distintos:
 
-Os testes nativos acessam apenas bancos locais com nomes de CI permitidos.
-Os dados de clientes restaurados não são usados pelos aplicativos de teste.
+1. A versão instalada anteriormente não disponibilizava a integração nova:
+   `POST /v1/suite/notifications/extraction-completed` respondia 404, enquanto a
+   rota de sessões já era alcançável. Após a instalação e ativação, o mesmo POST
+   público com `{}` passou a responder 400. O caminho do túnel/proxy já atendia
+   ao prefixo; não foi necessário mudar DNS, IP ou porta.
+2. O teste nativo encontrou um defeito no código recebido: o `INSERT` concatenava
+   `WHERE` e `license_id` sem espaço, formando `WHERElicense_id`. Uma prova
+   válida resultava em `503 NOTICE_UNAVAILABLE`, com erro PostgreSQL `42601`.
+   Foi acrescentada uma quebra de linha explícita. O teste PGlite anterior
+   preservava quebras externas que o C# remove e escondia o erro; essa extração
+   também foi corrigida. O novo teste executa o C# real com PostgreSQL 16.
 
-### Significado da fila instalada
+Esses fatos explicam a indisponibilidade desta integração de extração. Não são
+prova de mudança de chave, banco, DNS ou porta causada pela troca da placa-mãe,
+nem explicam retroativamente todos os incidentes anteriores de licenciamento.
 
-`tb_queue_whatsapp` aceita os quatro argumentos e o tipo novo. Retorna `true`
-quando insere em `notification_jobs` ou encontra o mesmo tipo, telefone e texto
-nos dez minutos anteriores. O processo existente `turbobox-notifications`
-entrega ao provedor e registra `sent`, identificador e horário quando há sucesso.
+### Como o fluxo foi integrado
 
-A proteção `UNCERTAIN` da nova outbox cobre o trecho até a entrada na fila.
-O processador legado ainda repete erros/timeouts do provedor. Portanto não há
-comprovação de entrega nem garantia de envio externo único com base apenas em
-`QUEUED`; é necessário conciliar o resultado com o provedor antes de reenviar.
+```text
+Windows: Extracting → Completed / ABRIR PASTA ✓
+  → evento local DPAPI, fora do cache de download
+  → prova assinada enviada por HTTPS à API Suite
+  → validação de identidade, sessão, compra e grant COMPLETED
+  → outbox PostgreSQL, com identificação determinística do evento
+  → worker PHP obtém lease no socket Admin autenticado
+  → compra paga → proprietário ativo → telefone normalizado
+  → Admin persiste DISPATCHING e monta o texto
+  → tb_queue_whatsapp grava na fila TurboBox existente
+  → processo turbobox-notifications entrega ao provedor
+```
 
-### Situação de publicação neste ponto
+O worker foi ajustado para reconhecer a política de destinatários bloqueados da
+biblioteca instalada antes de iniciar o despacho. A consulta exige compra paga
+nas duas tabelas, usuário ativo e exatamente um proprietário. Não foi alterada
+a política de bloqueio e nenhum telefone foi incluído no Git.
 
-A CI recebida da fonte falhou na carga prolongada de 1.000 sessões: 80 respostas
-504 em 72.000 requisições na fase soak. O upload de diagnóstico também informou
-cota de armazenamento de artefatos excedida. A correção não reduz a carga nem
-relaxa limites ou critérios. A nova execução será registrada abaixo.
+O tipo novo é aceito por `tb_queue_whatsapp`, usando exatamente quatro argumentos.
+O retorno `true` significa inserção em `notification_jobs` ou detecção do mesmo
+tipo, telefone e texto nos dez minutos anteriores. Não significa entrega.
+O processo existente registra `sent`, identificador do provedor e horário quando
+recebe confirmação. A biblioteca original permaneceu com o mesmo SHA-256.
 
-Produção ainda não alterada neste ponto: API em
-`es-reopen-efaf1d3-20260905`, Admin em `es-suite-34e31f2-20260905`, migration 026
-não aplicada, timer novo não instalado. Nenhuma mensagem real foi disparada.
-As duas contas e os destinatários autorizados para o teste Windows/WhatsApp
-foram solicitados ao responsável; a confirmação continua pendente.
+A proteção `UNCERTAIN` da nova outbox cobre a fronteira até a fila. O processador
+legado ainda repete erros/timeouts do provedor. Portanto, após resultado externo
+ambíguo, consultar fila e provedor antes de reenviar; não há garantia demonstrada
+de entrega externa exatamente uma vez. O hash do arquivo no evento é uma
+afirmação assinada do cliente; em modo DIRECT o grant não contém hash autoritativo
+para o servidor conferir independentemente.
 
-### Carga local e revisão adicional do PR
+### Portas e serviços neste fluxo
 
-O PR de retorno é https://github.com/luziellacerda/Servidor-pix/pull/2.
-A carga local foi concluída em PostgreSQL 16 isolado, com API e gerador limitados
-a quatro CPUs: 500 e 1.000 sessões, abertura, heartbeat, rajada, interrupção e
-reconexão sem erros. No soak de 1.000 sessões foram 72.000 respostas HTTP 200 em
-180,3 segundos; p95 505 ms, p99 920 ms e máximo 1.297 ms. Esse ensaio usa HTTP
-loopback, sem túnel público/TLS nem clientes Windows reais, e não comprova
-capacidade do provedor WhatsApp. Não foram reduzidos os clientes ou relaxados
-os critérios de aprovação.
+| Componente | Acesso utilizado | Situação |
+|---|---|---|
+| Aplicativo Windows | HTTPS `app.lzgames.com.br:443` | Mesmo domínio e túnel |
+| API Suite | `127.0.0.1:5190` | Nova release; saúde/readiness 200 |
+| Admin Suite | Socket `/run/turborama-suite-admin/admin.sock` | Autenticado; sem porta pública nova |
+| PIX | `127.0.0.1:5187` | Mesmo processo; saúde 200 |
+| Gateway de conteúdo | `127.0.0.1:5191` | Mesmo processo; saúde 200 |
+| Dados da nova outbox | PostgreSQL 16 local, banco `postgres`, schema `suite` | Somente migration 026 adicionada |
+| Fila WhatsApp | SQLite TurboBox existente | Mesmo contrato e processador |
 
-O workflow adicional `suite-candidate`, acionado pelo PR, encontrou três
-espaços ausentes no gateway já existente (duas linhas). Foram corrigidos
-somente os espaços, e `dotnet format --verify-no-changes --no-restore` passou
-localmente. O gateway de produção não é alvo desta implantação.
+Não houve alteração de DNS, túnel, Nginx, certificados, senhas, chaves,
+identidades do cliente ou configurações anteriores. Foram comparados conteúdo,
+permissões e proprietários de 29 arquivos protegidos. PIX, gateway, Nginx e
+Cloudflared mantiveram os mesmos InvocationIDs. API/Admin tiveram reinício
+controlado e ficaram ativos, sem reinícios automáticos por falha.
 
-### CI do candidato 353ab1d concluída
+### Testes e limites das evidências
 
-https://github.com/luziellacerda/Servidor-pix/actions/runs/34258424808
-concluiu com sucesso todos os testes e a publicação local de `dist` no runner.
-O resultado geral ficou vermelho exclusivamente nos dois uploads por
-`Artifact storage quota has been hit`. Não foram removidos artefatos de outros
-trabalhos. A implantação usa a publicação local completa e seu manifesto;
-o GitHub não armazenou o pacote dessa execução.
+| Verificação | Resultado |
+|---|---|
+| Protocolo, RSA, JSON estrito, horários, dez textos e privacidade | PASS |
+| Rota desligada, JSON/campo inválido e limite de 16 KiB fixo/chunked | PASS |
+| Migration 001–026 em banco vazio PostgreSQL 16 | PASS |
+| Backup real restaurado em PG16 e migration 026 sobre o schema restaurado | PASS |
+| Roles, view e plano de consulta no schema restaurado | PASS |
+| Duas identidades sintéticas, provas válidas, compra/sessão/dispositivo e isolamento | PASS |
+| HTTP nativo `202 ACCEPTED`, repetição `200 ALREADY_ACCEPTED` | PASS |
+| 24 repetições concorrentes e 22 eventos distintos no total | PASS |
+| Admin real pelo socket; 30 consumidores, 22 leases distintos | PASS |
+| Lease antigo, retomada antes do despacho, UNCERTAIN e ACK tardio | PASS |
+| PHP com fila falsa, SQLite nativo, dono ausente/ambíguo e bloqueios | PASS |
+| Funções reais da biblioteca instalada com SQLite em memória, sem provedor | PASS |
+| Regressões Suite e ES em PostgreSQL 16 | PASS |
+| Unidades systemd e manifesto da release instalada | PASS |
+| Produção: 15 verificações de saúde/contratos com flags OFF e novamente ON | PASS |
+| Produção: Admin autenticado com health/readiness/conteúdo 200 | PASS |
+| Produção: POST público inválido da nova rota muda de 404 para 400 | PASS |
+| Windows real + duas contas + provedor/WhatsApp + reinício do aplicativo | PENDENTE |
 
-A carga remota não teve respostas 504: o soak terminou com 72.000 HTTP 200,
-p95 5.708 ms e máximo 6.890 ms. A etapa nominal de 180 segundos demorou 347
-segundos no runner, portanto esse resultado não comprova manter 400
-requisições/segundo nesse ambiente. O ensaio local usou pool explícito de 20
-conexões, enquanto a CI manteve o padrão de 8; os números não representam
-configurações equivalentes. Nenhum pool de produção foi alterado. A causa
-específica da variação da carga entre runners não foi demonstrada.
+Os testes de aplicativo usam somente bancos de CI com identidades sintéticas.
+Os dados de clientes do backup restaurado não foram usados por aplicativos ou
+workers de teste. O plano no schema restaurado usa o índice do catálogo e
+varreduras em tabelas pequenas; essa inspeção não é prova de capacidade em escala.
 
-O candidato operacional permanece vinculado ao commit
-`353ab1d729ad625a986c96f85f3afa4a306cc1dd`; a correção posterior de espaços no
-gateway não altera os fontes de API/Admin usados nessa publicação.
+A carga local passou com 500 e 1.000 sessões: 72.000 HTTP 200 no soak, duração
+180,3 s, p95 505 ms, p99 920 ms, máximo 1.297 ms. API e gerador compartilham um
+container limitado a quatro CPUs, com pool explícito de 20 conexões. É HTTP
+loopback, sem túnel/TLS público, Windows ou provedor WhatsApp.
+
+A [CI do candidato operacional](https://github.com/luziellacerda/Servidor-pix/actions/runs/34258424808)
+passou por todos os testes e pela compilação/publicação de `dist` no runner.
+Sua carga manteve o pool padrão de 8 conexões: 72.000 HTTP 200, p95 5.708 ms e
+máximo 6.890 ms. A etapa nominal de 180 s demorou 347 s; portanto não demonstra
+sustentar 400 requisições/s nesse ambiente. As configurações local e remota não
+são equivalentes. Nenhum pool de produção foi alterado.
+
+O resultado geral dessa CI ficou **vermelho exclusivamente nos uploads**, por
+`Artifact storage quota has been hit`. O pacote não foi armazenado no GitHub.
+A implantação usou publicação local completa, verificada por manifesto.
+Não foram apagados artefatos de outros trabalhos. A CI `validar-servidor` do
+mesmo commit também passou. A execução recebida em `099905a` tivera 80 respostas
+504 no soak; a causa específica dessa variação entre runners não foi comprovada.
+
+### Correções complementares de CI
+
+O workflow `suite-candidate`, acionado pelo PR, também precisava de atualização:
+três espaços ausentes no gateway foram corrigidos; seu schema de teste parava
+na migration 014, embora monitor e catálogo atuais exijam 902 itens (016).
+Além disso, fixtures antigas ainda gravavam tamanho/hash, proibidos no modo
+DIRECT desde a 015.
+
+O workflow agora aplica 001–026, mantendo a verificação dos hashes fixados das
+migrations de conteúdo. As fixtures de monitor, catálogo e grants usam NULL
+para tamanho/hash, e a verificação de contexto exige explicitamente esse
+contrato. Monitor nativo, matriz de permissões, quotas, retenção e rotação de
+sessão passaram em banco PG16 vazio separado. As regras do banco não foram
+relaxadas. Esses ajustes afetam a qualificação; monitor e gateway de produção
+não foram substituídos. As execuções complementares podem ser acompanhadas nos
+checks do PR #2.
+
+### Hashes, backup e retomada
+
+| Artefato instalado | SHA-256 |
+|---|---|
+| API `TurboRamaSuiteOnlineServer.dll` | `9ca5b96ace51bec8abe8d2efdf2b00e68dbfd70d9f1a77cd2e58b73d3588577b` |
+| Admin `TurboRamaSuiteAdminServer.dll` | `f8b616555887a5c20f8326ab148011fcdfcc346461e03d0ce3e574d4aaca3ae9` |
+| `SHA256SUMS.txt` da release | `f822ee278de21b4d1b9704a3ea3bb5c660dc40efefca329da90b5226e265f285` |
+| Migration 026 | `96512c3bc4631bd47290ce42ff50378b70d353f4febd924eda5ea26af3e3a7bf` |
+
+Evidência privada no servidor:
+`/home/lz-servidor/evidence/extraction-whatsapp-20260908/` (diretório 0700).
+Contém backup custom do PostgreSQL, restauração verificada, backup novo imediatamente
+antes da implantação, configurações protegidas, planos, logs e manifestos.
+Dumps, credenciais, conteúdo de env e dados pessoais não foram enviados ao Git.
+
+Arquivos principais: `production-final.json`, `production-migration-026.json`,
+`production-notification-state.json`, `ci-qualification.json`,
+`public-smoke-feature-off.json`, `public-smoke-feature-on.json`,
+`candidate-manifest.json` e `load/es-session-load.json`.
+Retomada local: `/home/lz-servidor/RETOMAR-REPARO-TURBORAMA-PIX-20260908.md`.
+
+### Reversão preparada
+
+Os drop-ins novos são `zzzzzz-extraction-20260908.conf` (release/flags OFF) e
+`zzzzzzz-extraction-enable-20260908.conf` (flags ON), nas pastas dos dois serviços.
+Os anteriores foram preservados, inclusive configuração e credencial do pepper.
+A reversão com verificações de conteúdo/caminhos está no arquivo privado
+`deploy-control.py`; executar como root no próprio servidor:
+
+```bash
+python3 /home/lz-servidor/evidence/extraction-whatsapp-20260908/deploy-control.py rollback
+```
+
+Ela para/desabilita somente o timer novo, remove somente os drop-ins novos
+conferidos e reinicia API/Admin nas releases anteriores completas:
+API `es-reopen-efaf1d3-20260905` e Admin `es-suite-34e31f2-20260905`.
+Mantém a release nova para evidência, a migration 026, a view, a tabela e eventos.
+Não executa DOWN, DROP, reset, exclusão de licença ou recriação de identidade.
+A rotina foi preparada; não foi provocado rollback em produção só para testá-la.
+
+### O que falta para o aceite completo
+
+1. Informar duas contas de teste e os destinatários WhatsApp autorizados; não
+   enviar senha, OTP ou chave. Essa informação foi solicitada e não recebida.
+2. No Windows, concluir extração nova com o pacote identificado na origem deste
+   handoff, confirmar 202/200 e a entrada correspondente na outbox.
+3. Conferir que o proprietário resolvido e os eventos pendentes pertencem ao
+   escopo autorizado antes de iniciar o novo timer. Acompanhar a mesma fila e
+   obter confirmação do provedor e do recebimento no WhatsApp.
+4. Repetir com a segunda conta, reabertura, falha simulada e mesmo artefato.
+   Só então concluir aceite e habilitar o timer para operação contínua.
+
+Não tratar o 400 da sondagem inválida, os testes sintéticos, `ACCEPTED` ou
+`QUEUED` como comprovação dessa entrega real. O estado atual é integração de
+servidor instalada e verificada, com despacho e aceite externo ainda pendentes.

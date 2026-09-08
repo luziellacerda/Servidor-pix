@@ -447,6 +447,7 @@ WHERE license_id='TS-CONTENT-RESUME-POS' AND nonce LIKE 'quota-%';
 
 -- Exercise the production invariant with one unavailable object.  A published
 -- catalog is complete at 902 IDs, but only READY rows have descriptors/origins.
+-- Migration 015 requires NULL size/digest for every direct-mode item/grant.
 INSERT INTO suite.suite_content_snapshots(
   catalog_identity,catalog_sequence,inventory_sha256,visual_catalog_sha256,
   item_count,ready_item_count,maintenance_item_count,status,
@@ -458,8 +459,8 @@ VALUES(repeat('c',64),(SELECT coalesce(max(catalog_sequence),0)+1
 INSERT INTO suite.suite_content_items(
   catalog_identity,item_id,display_order,display_name,visual_extract_policy,artifact_id,artifact_version,content_length,sha256,
   safe_file_name,file_extension,extract_policy,manifest_identity,descriptor_hash,content_type,status)
-SELECT repeat('c',64),md5(position::text),position,'Jogo '||position,'NONE',md5(position::text),1,position,
-  repeat('a',64),md5(position::text)||'.bin','.bin','NONE',repeat('c',64),repeat('b',64),
+SELECT repeat('c',64),md5(position::text),position,'Jogo '||position,'NONE',md5(position::text),1,NULL,
+  NULL,md5(position::text)||'.bin','.bin','NONE',repeat('c',64),repeat('b',64),
   'application/octet-stream','READY'
 FROM generate_series(1,901) AS generated(position);
 
@@ -475,7 +476,7 @@ BEGIN
       artifact_version,content_length,sha256,safe_file_name,file_extension,
       extract_policy,manifest_identity,descriptor_hash,content_type,status)
     VALUES(repeat('c',64),md5('policy-mismatch'),999,'Teste de política','NONE',md5('policy-mismatch'),
-      1,1,repeat('a',64),'policy.zip','.zip','EXTRACT_ARCHIVE',repeat('c',64),
+      1,NULL,NULL,'policy.zip','.zip','EXTRACT_ARCHIVE',repeat('c',64),
       repeat('b',64),'application/octet-stream','READY');
     RAISE EXCEPTION 'CONTENT_EXTRACT_POLICY_DIVERGENCE_ACCEPTED';
   EXCEPTION WHEN check_violation THEN
@@ -506,8 +507,8 @@ INSERT INTO suite.suite_content_items(
   catalog_identity,item_id,display_order,display_name,visual_extract_policy,
   artifact_id,artifact_version,content_length,sha256,safe_file_name,file_extension,
   extract_policy,manifest_identity,descriptor_hash,content_type,status)
-VALUES(repeat('f',64),md5('1'),1,'Jogo 1 versão 2','NONE',md5('1'),2,999,
-  repeat('9',64),md5('1')||'.bin','.bin','NONE',repeat('f',64),repeat('8',64),
+VALUES(repeat('f',64),md5('1'),1,'Jogo 1 versão 2','NONE',md5('1'),2,NULL,
+  NULL,md5('1')||'.bin','.bin','NONE',repeat('f',64),repeat('8',64),
   'application/octet-stream','READY');
 UPDATE suite.suite_content_snapshots SET status='PUBLISHED',published_at=clock_timestamp()
 WHERE catalog_identity=repeat('f',64);
@@ -520,10 +521,10 @@ DECLARE context record;
 BEGIN
   SELECT * INTO context FROM suite.get_suite_content_candidate_context(
     md5('1')::char(32),'MIRROR_REPLACEMENT');
-  IF context.base_catalog_identity<>repeat('c',64) OR
-     context.expected_artifact_version<>1 OR context.expected_content_length<>1 OR
-     context.expected_sha256<>repeat('a',64) OR
-     context.resolved_change_intent<>'MIRROR_REPLACEMENT' THEN
+  IF context.base_catalog_identity IS DISTINCT FROM repeat('c',64) OR
+     context.expected_artifact_version IS DISTINCT FROM 1 OR context.expected_content_length IS NOT NULL OR
+     context.expected_sha256 IS NOT NULL OR
+     context.resolved_change_intent IS DISTINCT FROM 'MIRROR_REPLACEMENT' THEN
     RAISE EXCEPTION 'CONTENT_ROLLBACK_MIRROR_BOUND_TO_HISTORICAL_VERSION';
   END IF;
 END $$;
@@ -568,31 +569,31 @@ INSERT INTO suite.suite_content_grants(
 VALUES
   (repeat('1',64),repeat('2',64),'TS-CONTENT-RESUME-POS',repeat('d',64),repeat('e',64),0,
    clock_timestamp()+interval '1 day',repeat('c',64),md5('1'),md5('1'),1,
-   repeat('c',64),repeat('b',64),0,1,repeat('a',64),'COMPLETED',
+   repeat('c',64),repeat('b',64),0,NULL,NULL,'COMPLETED',
    'retention-old-terminal',clock_timestamp()-interval '100 days',
    clock_timestamp()-interval '100 days'+interval '30 seconds',
    clock_timestamp()-interval '99 days',clock_timestamp()-interval '99 days',
    clock_timestamp()-interval '91 days',NULL),
   (repeat('3',64),repeat('4',64),'TS-CONTENT-RESUME-POS',repeat('d',64),repeat('e',64),0,
    clock_timestamp()+interval '1 day',repeat('c',64),md5('1'),md5('1'),1,
-   repeat('c',64),repeat('b',64),0,1,repeat('a',64),'ISSUED',
+   repeat('c',64),repeat('b',64),0,NULL,NULL,'ISSUED',
    'retention-expired-issued',clock_timestamp()-interval '2 days',
    clock_timestamp()-interval '2 days'+interval '30 seconds',NULL,NULL,NULL,NULL),
   (repeat('5',64),repeat('6',64),'TS-CONTENT-RESUME-POS',repeat('d',64),repeat('e',64),0,
    clock_timestamp()+interval '1 day',repeat('c',64),md5('1'),md5('1'),1,
-   repeat('c',64),repeat('b',64),0,1,repeat('a',64),'CLAIMED',
+   repeat('c',64),repeat('b',64),0,NULL,NULL,'CLAIMED',
    'retention-stale-claim',clock_timestamp()-interval '2 days',
    clock_timestamp()-interval '2 days'+interval '30 seconds',
    clock_timestamp()-interval '1 day',clock_timestamp()-interval '1 hour',NULL,NULL),
   (repeat('7',64),repeat('8',64),'TS-CONTENT-RESUME-POS',repeat('d',64),repeat('e',64),0,
    clock_timestamp()+interval '1 day',repeat('c',64),md5('1'),md5('1'),1,
-   repeat('c',64),repeat('b',64),0,1,repeat('a',64),'CLAIMED',
+   repeat('c',64),repeat('b',64),0,NULL,NULL,'CLAIMED',
    'retention-active-claim',clock_timestamp()-interval '1 hour',
    clock_timestamp()-interval '1 hour'+interval '30 seconds',
    clock_timestamp()-interval '59 minutes',clock_timestamp(),NULL,NULL),
   (repeat('9',64),repeat('0',64),'TS-CONTENT-RESUME-POS',repeat('d',64),repeat('e',64),0,
    clock_timestamp()+interval '1 day',repeat('c',64),md5('1'),md5('1'),1,
-   repeat('c',64),repeat('b',64),0,1,repeat('a',64),'COMPLETED',
+   repeat('c',64),repeat('b',64),0,NULL,NULL,'COMPLETED',
    'retention-recent-terminal',clock_timestamp()-interval '10 days',
    clock_timestamp()-interval '10 days'+interval '30 seconds',
    clock_timestamp()-interval '9 days',clock_timestamp()-interval '9 days',
@@ -612,7 +613,7 @@ SELECT
   md5('quota-token-'||position::text)||md5('quota-token-b-'||position::text),
   'TS-CONTENT-RESUME-POS',repeat('d',64),repeat('e',64),0,
   clock_timestamp()+interval '1 day',repeat('c',64),md5('1'),md5('1'),1,
-  repeat('c',64),repeat('b',64),0,1,repeat('a',64),'CLAIMED',
+  repeat('c',64),repeat('b',64),0,NULL,NULL,'CLAIMED',
   'quota-grant-'||position::text,clock_timestamp(),
   clock_timestamp()+interval '30 seconds',clock_timestamp(),clock_timestamp(),NULL,NULL
 FROM generate_series(1,13) AS position;
@@ -633,7 +634,7 @@ VALUES(
   md5('quota-token-14')||md5('quota-token-b-14'),
   'TS-CONTENT-RESUME-POS',repeat('d',64),repeat('e',64),0,
   clock_timestamp()+interval '1 day',repeat('c',64),md5('1'),md5('1'),1,
-  repeat('c',64),repeat('b',64),0,1,repeat('a',64),'CLAIMED',
+  repeat('c',64),repeat('b',64),0,NULL,NULL,'CLAIMED',
   'quota-grant-14',clock_timestamp(),clock_timestamp()+interval '30 seconds',
   clock_timestamp(),clock_timestamp(),NULL,NULL);
 
@@ -693,7 +694,7 @@ VALUES(
   md5('rotation-old-token')||md5('rotation-old-token-b'),
   'TS-CONTENT-RESUME-POS',repeat('d',64),repeat('e',64),0,
   clock_timestamp()+interval '1 day',repeat('c',64),md5('1'),md5('1'),1,
-  repeat('c',64),repeat('b',64),0,1,repeat('a',64),'ISSUED',
+  repeat('c',64),repeat('b',64),0,NULL,NULL,'ISSUED',
   'rotation-old-grant',clock_timestamp(),clock_timestamp()+interval '30 seconds',
   NULL,NULL,NULL,NULL);
 
@@ -750,7 +751,7 @@ VALUES(
   md5('rotation-new-token')||md5('rotation-new-token-b'),
   'TS-CONTENT-RESUME-POS',repeat('d',64),repeat('f',64),0,
   clock_timestamp()+interval '1 day',repeat('c',64),md5('1'),md5('1'),1,
-  repeat('c',64),repeat('b',64),0,1,repeat('a',64),'ISSUED',
+  repeat('c',64),repeat('b',64),0,NULL,NULL,'ISSUED',
   'rotation-new-grant',clock_timestamp(),clock_timestamp()+interval '30 seconds',
   NULL,NULL,NULL,NULL);
 
