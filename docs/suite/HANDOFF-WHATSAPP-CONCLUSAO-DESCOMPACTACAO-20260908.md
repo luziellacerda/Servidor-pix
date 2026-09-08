@@ -276,3 +276,40 @@ Produção ainda não alterada neste ponto: API em
 não aplicada, timer novo não instalado. Nenhuma mensagem real foi disparada.
 As duas contas e os destinatários autorizados para o teste Windows/WhatsApp
 foram solicitados ao responsável; a confirmação continua pendente.
+
+### Carga local e revisão adicional do PR
+
+O PR de retorno é https://github.com/luziellacerda/Servidor-pix/pull/2.
+A carga local foi concluída em PostgreSQL 16 isolado, com API e gerador limitados
+a quatro CPUs: 500 e 1.000 sessões, abertura, heartbeat, rajada, interrupção e
+reconexão sem erros. No soak de 1.000 sessões foram 72.000 respostas HTTP 200 em
+180,3 segundos; p95 505 ms, p99 920 ms e máximo 1.297 ms. Esse ensaio usa HTTP
+loopback, sem túnel público/TLS nem clientes Windows reais, e não comprova
+capacidade do provedor WhatsApp. Não foram reduzidos os clientes ou relaxados
+os critérios de aprovação.
+
+O workflow adicional `suite-candidate`, acionado pelo PR, encontrou três
+espaços ausentes no gateway já existente (duas linhas). Foram corrigidos
+somente os espaços, e `dotnet format --verify-no-changes --no-restore` passou
+localmente. O gateway de produção não é alvo desta implantação.
+
+### CI do candidato 353ab1d concluída
+
+https://github.com/luziellacerda/Servidor-pix/actions/runs/34258424808
+concluiu com sucesso todos os testes e a publicação local de `dist` no runner.
+O resultado geral ficou vermelho exclusivamente nos dois uploads por
+`Artifact storage quota has been hit`. Não foram removidos artefatos de outros
+trabalhos. A implantação usa a publicação local completa e seu manifesto;
+o GitHub não armazenou o pacote dessa execução.
+
+A carga remota não teve respostas 504: o soak terminou com 72.000 HTTP 200,
+p95 5.708 ms e máximo 6.890 ms. A etapa nominal de 180 segundos demorou 347
+segundos no runner, portanto esse resultado não comprova manter 400
+requisições/segundo nesse ambiente. O ensaio local usou pool explícito de 20
+conexões, enquanto a CI manteve o padrão de 8; os números não representam
+configurações equivalentes. Nenhum pool de produção foi alterado. A causa
+específica da variação da carga entre runners não foi demonstrada.
+
+O candidato operacional permanece vinculado ao commit
+`353ab1d729ad625a986c96f85f3afa4a306cc1dd`; a correção posterior de espaços no
+gateway não altera os fontes de API/Admin usados nessa publicação.

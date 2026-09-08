@@ -211,7 +211,7 @@ app.MapGet("/v1/suite-content/artifacts/{grantId}", async (
         var directUri = await context.RequestServices.GetRequiredService<ContentGatewayService>()
             .AuthorizeDirectAsync(context, grantId, context.RequestAborted);
         app.Logger.LogInformation("Authorized direct destination policy: scheme={Scheme} port={Port}",
-            directUri.Scheme,directUri.Port);
+            directUri.Scheme, directUri.Port);
         context.Response.StatusCode = StatusCodes.Status307TemporaryRedirect;
         context.Response.Headers.Location = directUri.AbsoluteUri;
         context.Response.Headers.CacheControl = "no-store";
@@ -280,7 +280,7 @@ string[] ReadAllowedHosts()
     if (!string.IsNullOrWhiteSpace(filePath))
     {
         var content = ContentProtectedSecret.ReadFile(filePath, 16 * 1024);
-        return content.Split(new[] {'\r', '\n'}, StringSplitOptions.TrimEntries |
+        return content.Split(new[] { '\r', '\n' }, StringSplitOptions.TrimEntries |
                                              StringSplitOptions.RemoveEmptyEntries)
             .Where(line => !line.StartsWith('#'))
             .ToArray();
