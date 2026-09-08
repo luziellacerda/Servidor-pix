@@ -140,6 +140,8 @@ app.Use(async (context, next) =>
 app.MapGet("/health", () => Results.Json(new { status = "ok", service = "turborama-suite-api" }));
 ExtractionNotificationEndpoints.Map(app,
     enabled && builder.Configuration.GetValue("Suite:ExtractionNotifications:Enabled", false));
+DownloadNotificationEndpoints.Map(app,
+    enabled && builder.Configuration.GetValue("Suite:ExtractionNotifications:Enabled", false));
 app.MapGet("/ready", () => enabled ? Results.Json(new { status = "ready" }) : Results.Json(new ErrorResponse(1, "SUITE_DISABLED", "Suite is disabled."), statusCode: 503));
 app.MapPost("/internal/turborama/whatsapp/connection", async (HttpContext context, TurboRamaWhatsAppNotifier notifier, CancellationToken ct) =>
 {

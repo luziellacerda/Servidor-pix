@@ -83,7 +83,7 @@ jobs:
             checksum=$(sha256sum "$migration" | cut -d ' ' -f 1)
             psql --set=ON_ERROR_STOP=1 --set=migration_sha256="$checksum" --file="$migration"
           done
-          test "$(psql --tuples-only --no-align --command='SELECT count(*) FROM suite.schema_migrations;')" = 26
+          test "$(psql --tuples-only --no-align --command='SELECT count(*) FROM suite.schema_migrations;')" = 27
           test "$(psql --tuples-only --no-align --command="SELECT count(*) FROM suite.schema_migration_checksums WHERE version ~ '^01[0-6]_';")" = 7
       - name: Exercise monitor ownership and catalog races on PostgreSQL 16
         env:

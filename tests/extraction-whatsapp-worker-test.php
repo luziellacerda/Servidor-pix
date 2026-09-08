@@ -3,12 +3,13 @@ declare(strict_types=1);
 define('TURBORAMA_EXTRACTION_WORKER_TEST',true);
 require __DIR__.'/../ops/production/turborama-suite-extraction-whatsapp.php';
 function check(bool $value,string $message):void {if(!$value)throw new RuntimeException($message);}
+foreach(['suite_extraction_completed','suite_download_completed'] as $eventType)
 foreach(['success','missing','lookup-error','begin-error','begin-lost','queue-false','queue-throws','ack-lost'] as $mode) {
     $queued=0;$completion=null;$calls=[];
     $event=str_repeat('a',64);$lease='11111111-2222-3333-4444-555555555555';
-    $call=static function(string $path,array $body)use($mode,$event,$lease,&$completion,&$calls):array {
+    $call=static function(string $path,array $body)use($mode,$event,$lease,$eventType,&$completion,&$calls):array {
         $calls[]=$path;
-        if(str_ends_with($path,'/lease'))return [200,['eventId'=>$event,'leaseToken'=>$lease,'sourcePurchaseId'=>'fixture-purchase']];
+        if(str_ends_with($path,'/lease'))return [200,['eventId'=>$event,'leaseToken'=>$lease,'sourcePurchaseId'=>'fixture-purchase','eventType'=>$eventType]];
         if(str_ends_with($path,'/begin-dispatch')) {
             if($mode==='begin-lost')throw new RuntimeException('simulated timeout');
             return $mode==='begin-error'?[503,null]:[200,['eventId'=>$event,'message'=>'MENSAGEM DE TESTE']];
@@ -22,9 +23,9 @@ foreach(['success','missing','lookup-error','begin-error','begin-lost','queue-fa
         if($mode==='lookup-error')throw new RuntimeException('simulated database failure');
         return $mode==='missing'?null:['id'=>42,'name'=>'Cliente Teste','phone'=>'FAKE-NO-NETWORK'];
     };
-    $queue=static function(int $id,string $type,string $phone,string $message)use($mode,&$queued):bool {
+    $queue=static function(int $id,string $type,string $phone,string $message)use($mode,$eventType,&$queued):bool {
         $queued++;
-        check($id===42&&$type==='suite_extraction_completed'&&$phone==='FAKE-NO-NETWORK'
+        check($id===42&&$type===$eventType&&$phone==='FAKE-NO-NETWORK'
             &&$message==='MENSAGEM DE TESTE','Existing queue contract changed.');
         if($mode==='queue-throws')throw new RuntimeException('ambiguous queue failure');
         return $mode!=='queue-false';

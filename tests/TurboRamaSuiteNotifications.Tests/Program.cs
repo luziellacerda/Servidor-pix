@@ -1,6 +1,7 @@
 using TurboRamaSuiteNotifications;
 
 CompletionProtocolChecks.Run();
+DownloadCompletionChecks.Run();
 
 var completed = new DateTimeOffset(2026, 9, 8, 9, 31, 45, TimeSpan.FromHours(-3));
 var data = new ExtractionCompletionMessageData("João Silva", "Conteúdo de teste",
