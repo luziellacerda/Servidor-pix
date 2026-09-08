@@ -39,8 +39,9 @@ try {
     INSERT INTO suite.suite_content_grants VALUES('TS-SQL-TEST',repeat('d',64),'COMPLETED',0,clock_timestamp(),repeat('b',64),repeat('a',32),repeat('a',32),1,repeat('b',64),NULL);
     INSERT INTO suite.suite_content_items VALUES(repeat('b',64),repeat('a',32),'Conteúdo autorizado de teste');
   `);
-  const migration = await readFile(new URL('migrations/suite/026_suite_extraction_notifications.up.sql',root),'utf8');
-  await db.exec(migration);
+  for (const name of ['026_suite_extraction_notifications','027_suite_download_notifications']) {
+    await db.exec(await readFile(new URL(`migrations/suite/${name}.up.sql`,root),'utf8'));
+  }
   const api = await readFile(new URL('src/TurboRamaSuiteOnlineServer/ExtractionNotificationEndpoints.cs',root),'utf8');
   // C# raw strings strip the opening/closing newline. Retaining those here
   // previously concealed a missing separator between WHERE and license_id.
@@ -95,6 +96,26 @@ try {
   assert.equal((await db.query(complete,[event,secondToken,'QUEUED','',['DISPATCHING','UNCERTAIN','QUEUED']])).affectedRows,1,'Late confirmed acknowledgement');
   await db.exec('RESET ROLE');
   assert.equal((await db.query('SELECT count(*)::int AS count FROM suite.suite_extraction_notification_outbox')).rows[0].count,1);
+  const downloads = await readFile(new URL('src/TurboRamaSuiteOnlineServer/DownloadNotificationEndpoints.cs',root),'utf8');
+  const downloadFilter = downloads.match(/private const string ContextFilter = """([\s\S]*?)""";/)[1].trim();
+  const downloadParts = downloads.match(/var insert = new NpgsqlCommand\("""([\s\S]*?)""" \+ ("(?:[^"\\]|\\.)*") \+ ContextFilter \+ "([^"]+)"/);
+  assert.ok(downloadParts, 'Review new download SQL assembly');
+  const downloadInsert = downloadParts[1].trim() + JSON.parse(downloadParts[2]) + downloadFilter + downloadParts[3];
+  const rawParams = [...inputs,'1'.repeat(64),'xbox',Math.floor(Date.now()/1000)-5,4,'fixture-public-key','1'.repeat(32),'FILE_READY'];
+  await db.exec('SET ROLE "turborama-suite"');
+  assert.equal((await db.query(downloadInsert,rawParams)).affectedRows,1);
+  assert.equal((await db.query(downloadInsert,rawParams)).affectedRows,0);
+  await assert.rejects(()=>db.query(downloadInsert,[...rawParams.slice(0,8),'2'.repeat(64),...rawParams.slice(9)]),/duplicate key/,'One immutable completion per download operation');
+  await db.exec('RESET ROLE');
+  await db.exec('SET ROLE "turborama-suite-admin"');
+  const rawLease = (await db.query(lease,[firstToken])).rows[0];
+  assert.equal(rawLease.event_id,'1'.repeat(64));
+  assert.equal(Object.values(rawLease).at(-1),'suite_download_completed');
+  const rawRender = (await db.query(render,['1'.repeat(64),firstToken])).rows[0];
+  assert.equal(rawRender.completion_kind,'FILE_READY');
+  assert.equal(rawRender.download_id,'1'.repeat(32));
+  await db.exec('RESET ROLE');
+  console.log('PASS: legacy and download migrations, actual INSERT and Admin SQL, operation uniqueness and raw-download lease/render.');
   console.log('PASS: actual migration/view/INSERT and worker SQL; direct-mode NULL hash, denied states, roles, deduplication and lease fencing.');
   console.log((await db.query('SELECT version()')).rows[0].version);
 } catch (error) {
