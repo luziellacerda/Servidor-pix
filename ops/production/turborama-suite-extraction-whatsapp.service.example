@@ -1,0 +1,17 @@
+[Unit]
+Description=Queue extraction completion messages through existing TurboBox WhatsApp
+After=turborama-suite-admin.service
+
+[Service]
+Type=oneshot
+User=lz-servidor
+Group=turborama-suite-bff
+EnvironmentFile=/etc/turborama-suite-bff/admin.env
+# Replace with the verified candidate release; do not overwrite the login worker.
+ExecStart=/usr/bin/php /opt/VERIFIED-EXTRACTION-NOTICES/ops/production/turborama-suite-extraction-whatsapp.php
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=false
+PrivateDevices=true
+ReadWritePaths="/home/lz-servidor/HOSTINGER SITE DOCUMENTOS/sistema2026.lzgames.com.br/public_html/turbobox/.data"

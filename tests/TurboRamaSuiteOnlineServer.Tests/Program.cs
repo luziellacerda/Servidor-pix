@@ -12,6 +12,8 @@ using TurboRamaSuiteContentGateway;
 using TurboRamaSuiteOnlineServer;
 using TurboRamaSuiteContentPublisher;
 
+await ExtractionNotificationHttpChecks.RunAsync();
+
 const string licenseId = "TR-000125";
 const string inventoryLicense="TS-INVENTORY-FIXTURE-00000001";
 var inventory=new SuiteMotherboardInventoryV1(1,inventoryLicense,new string('a',64),"e2b57c24e8e7ebf36d63e93f6f1021c3eb9990d95a8c50494fa6e2604749d283","Gigabyte Technology Co., Ltd.","B550M AORUS ELITE","x.x","SN-000001","Gigabyte Technology Co., Ltd.","B550M AORUS ELITE","03560230-040f-0585-c906-a80700080009","American Megatrends International, LLC.","FG","Microsoft Windows 10 Pro","10.0.19044.0","X64","2.0.0.0","CIM",1_800_000_000);

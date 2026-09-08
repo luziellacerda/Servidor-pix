@@ -8,5 +8,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql" Version="8.0.6" />
+    <ProjectReference Include="../TurboRamaSuiteNotifications/TurboRamaSuiteNotifications.csproj" />
   </ItemGroup>
 </Project>

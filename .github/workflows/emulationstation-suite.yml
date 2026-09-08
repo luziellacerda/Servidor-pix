@@ -57,14 +57,24 @@ jobs:
         run: |
           dotnet restore tests/TurboRamaSuiteEmulationStation.Tests --locked-mode
           dotnet restore tests/TurboRamaSuiteOnlineServer.Tests --locked-mode
+          dotnet restore tests/TurboRamaSuiteNotifications.Tests --locked-mode
           dotnet restore tests/TurboRamaSuitePostgres.Tests --locked-mode
       - name: Build and run signed protocol regression checks
         run: |
+          dotnet run --project tests/TurboRamaSuiteNotifications.Tests -c Release --no-restore
           dotnet run --project tests/TurboRamaSuiteOnlineServer.Tests -c Release --no-restore
           dotnet build tests/TurboRamaSuiteEmulationStation.Tests -c Release --no-restore
           dotnet run --project src/TurboRamaPixOnlineServer -c Release --no-build -- --self-test
           dotnet run --project src/TurboRamaSuiteAdminServer -c Release --no-build -- --self-test
           dotnet run --project src/TurboRamaSuiteAdminServer -c Release --no-build -- --content-self-test
+      - name: Verify extraction WhatsApp worker without network or real recipients
+        run: |
+          php -l ops/production/turborama-suite-extraction-whatsapp.php
+          php tests/extraction-whatsapp-worker-test.php
+      - name: Exercise extraction outbox SQL used by the services
+        run: |
+          npm ci --prefix tests/notification-sql --no-audit --no-fund
+          npm test --prefix tests/notification-sql
       - name: Create isolated PostgreSQL schema and apply all reviewed migrations
         env:
           PGPASSWORD: es-ci-isolated-only
@@ -83,7 +93,10 @@ jobs:
           psql --set=ON_ERROR_STOP=1 --file=ops/tests/prepare-es-fixture-grants.sql
           test "$(psql -Atc "SELECT count(*) FROM suite.schema_migrations WHERE version IN('023_suite_es_contract_scope','024_suite_session_management_network','025_suite_challenge_text_lookup');")" = 3
           test "$(psql -Atc "SELECT count(*) FROM suite.schema_migrations WHERE version='022_suite_emulationstation_sessions';")" = 1
+          test "$(psql -Atc "SELECT count(*) FROM suite.schema_migrations WHERE version='026_suite_extraction_notifications';")" = 1
           test "$(psql -Atc "SELECT has_table_privilege('turborama-suite','suite.suite_es_challenges','SELECT,INSERT,UPDATE,DELETE');")" = t
+          test "$(psql -Atc "SELECT has_table_privilege('turborama-suite','suite.suite_extraction_notification_outbox','SELECT,INSERT');")" = t
+          test "$(psql -Atc "SELECT has_table_privilege('turborama-suite-admin','suite.suite_extraction_notification_outbox','SELECT,UPDATE');")" = t
           test "$(psql -Atc "SELECT has_table_privilege('turborama-suite-content-api','suite.suite_es_sessions','INSERT,UPDATE');")" = f
       - name: Exercise real PostgreSQL isolation and shared revocation
         env:

@@ -206,6 +206,7 @@ app.MapPost("/connection-notifications/complete",async(ConnectionNoticeCompletio
 CommerceEndpoints.Map(app, commerceEnabled, pepperFile);
 ContentManagementEndpoints.Map(app, contentManagement, contentManagementEnabled);
 SessionManagementEndpoints.Map(app);
+ExtractionNotificationAdminEndpoints.Map(app);
 app.MapPost("/issue-first-claim",async(CommerceAdminIssueRequest request,NpgsqlDataSource db,CancellationToken ct)=>
 {
     ValidateId(request.LicenseId);ValidateText(request.Actor,64);ValidateText(request.RequestId,128);

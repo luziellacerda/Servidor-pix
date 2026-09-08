@@ -29,10 +29,14 @@
           "TurboRamaSuiteOnlineServer": "[1.0.0, )"
         }
       },
+      "turboramasuitenotifications": {
+        "type": "Project"
+      },
       "turboramasuiteonlineserver": {
         "type": "Project",
         "dependencies": {
-          "Npgsql": "[8.0.6, )"
+          "Npgsql": "[8.0.6, )",
+          "TurboRamaSuiteNotifications": "[1.0.0, )"
         }
       }
     }
