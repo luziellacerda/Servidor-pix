@@ -149,24 +149,87 @@ Preservar a reabertura ES e o cabeçalho exato `X-TurboRama-Client: EMULATIONSTA
 
 Nunca marcar como aprovado um teste não executado. Health 200, challenge GET 405, túnel conectado ou build aprovado não substituem o fluxo autenticado de ponta a ponta.
 
-## 8. Retorno do executor desta retomada — preencher neste arquivo
+## 8. Retorno do executor desta retomada
 
-| Item | Resultado / evidência sanitizada |
+Executor: Codex no servidor Linux `lz-servidor-A520M-S2H`. Nova conferência iniciada em **08/09/2026 às 12:49:59 UTC / 09:49:59 locais**; transporte medido às 12:52–12:53 UTC e correlação abaixo consultada até 12:57:56 UTC. Fonte recebida: commit `ce8d6443fed5df9060279ce6e95af8c4401cd876` deste handoff. A autorização operacional anterior do proprietário permanece válida; nesta retomada foram necessárias apenas leituras, sondas sem autenticação e atualização documental.
+
+**Resultado: o IPv6 voltou a responder na saída do Linux, e a sonda .NET padrão também alcançou a API. Não foi aplicada uma alteração de produção por este executor para produzir essa recuperação. O login real no Windows continua sem aceite nesta janela.** A causa e o instante exatos da recuperação não foram determinados; não atribuir o resultado à atualização de DNS sem evidência causal.
+
+### 8.1 IP informado, DNS e túnel efetivos
+
+Durante a retomada, o proprietário enviou a listagem DNS e a tela da réplica `lz-fix`. A leitura autenticada da API Cloudflare às 12:51:11 UTC confirmou:
+
+| Verificação | Resultado atual |
 | --- | --- |
-| Executor, host e janela UTC | Pendente |
-| WAN atual e configuração que o proprietário alterou | `187.21.51.38` informado; verificação administrativa, campo e horário pendentes |
-| DNS, ingress e conectores efetivos | Pendente nova leitura; manter baseline da seção 2 como histórico |
-| EXE real, versão/hash, janela e etapa da falha | Pendente |
-| Correlação cliente/Cloudflare/Nginx/API | Pendente; distinguir sondas de tentativa real |
-| IPv4/IPv6, controles e redes independentes | Lote Windows da seção 3 disponível; contraprovas novas pendentes |
-| Causa comprovada e camada | Pendente; não presumir IP público antigo, banco ou roteador como causa definitiva |
-| Mudança executada, autorização e consumidores afetados | Nenhuma nesta entrega documental; preencher eventual delta autorizado |
-| Backup, validação e rollback | Pendente se houver mudança |
-| Matriz de aceite da seção 7 | Pendente; listar cada resultado, não apenas “tudo OK” |
-| Arquivos/commits/releases resultantes e persistência | Publicação documental separada de eventual deploy; completar |
-| Estado final e ação indispensável restante | Incidente não encerrado; login real ainda não comprovado nesta retomada |
+| IP de saída IPv4 | `187.21.51.38`, confirmado no conector e por consulta HTTPS IPv4 à Cloudflare a partir do Linux. Isso mede a saída; a configuração WAN administrativa do roteador não foi inspecionada. |
+| Registro `db.lzgames.com.br` | A, `187.21.51.38`, somente DNS. `modified_on=2026-09-08T10:21:53.069412Z` (07:21:53 locais); metadado da última modificação do registro, sem identificar autor/campo anterior. |
+| Registro `app.lzgames.com.br` | CNAME proxied para `fe557774-52a2-42c6-9b13-56321562dd0f.cfargotunnel.com`; permanece associado ao túnel. |
+| PIX e painel | CNAMEs proxied para o mesmo túnel; destinos mantidos em loopback 5187. |
+| Zona inteira | 40 registros; comparação por ID de todos os campos dos registros com `dns-records-before.json`: **nenhuma diferença**. O baseline anterior já continha o A de `db` com o IP atual. |
+| Configuração remota | Versão 15, objeto igual ao baseline; dez hostnames, mesma ordem de ingress e fallback `http_status:404`. `app` continua em `http://127.0.0.1:80`. |
+| Conector `lz-fix` | Um, versão 2026.8.3/linux_amd64, quatro conexões, 2×gig09 e 2×gig11, sem reconexão pendente; abertas em 07/09 às 20:15:24–26 UTC, origem `187.21.51.38`. |
+| Outros túneis | `LZ-Tunel-Zerado-2026` e `ab-barbearia`: zero conexões; sem alteração nesta retomada. |
+| Rede do Linux | `enp6s0`, LAN `192.168.0.141`, endereço IPv6 global e rota padrão IPv6 por RA presentes. O nome antigo do hostname não é o modelo atual da placa. |
 
-Não incluir tokens Cloudflare, DSNs, headers Authorization/Cookie, OTPs, proofs, chaves, grants, URLs privadas, dumps de clientes ou configurações administrativas brutas. Evidências sensíveis ficam protegidas no servidor; o Git recebe somente resultados sanitizados.
+A listagem enviada esclarece os registros em uso; ainda não é uma trilha de auditoria da edição feita pelo proprietário. Não afirmar que ele alterou o ingress, nem que houve troca da WAN nesta janela. A Suite usa `app` e PostgreSQL local, portanto a atualização do A de `db` não muda seu destino de licenciamento. Nenhum registro A/AAAA foi trocado por esta execução, e a opção rejeitada com 9227 não foi reaplicada.
+
+### 8.2 Transporte recuperado e prontidão
+
+Novo lote Linux em **12:52:32–12:52:33 UTC / 09:52:32–09:52:33 locais**, com GET, TLS padrão, sem proxy/redirecionamento, connect timeout 4 s e total máximo 7 s. User-Agent das sondas curl: `LZ-Handoff-Retorno/20260908-0950`.
+
+| Destino / família | HTTP | Tempo total | Resultado |
+| --- | --- | --- | --- |
+| Suite automático | 405 | 0,343 s | Conectou por IPv6 à borda. |
+| Suite IPv4 | 405 | 0,342 s | Transporte disponível. |
+| Suite IPv6 | 405 | 0,288 s | Transporte disponível, diferente do timeout anterior. |
+| Google IPv4 / IPv6 | 200 / 200 | 0,519 / 0,521 s | Controles simultâneos responderam. |
+| Cloudflare IPv4 / IPv6 | 200 / 200 | 0,569 / 0,567 s | Controles simultâneos responderam. |
+| PIX público IPv4 | 200 | 0,295 s | JSON `ready:true`. |
+| PIX local | 200 | 0,002 s | JSON `ready:true`. |
+| Suite `/ready` local | 200 | <0,001 s | `status:ready`. |
+| Suite `/ready/content` local | 200 | 0,455 s | `status:ready`, 902 itens esperados, assertion validada. |
+| Gateway `/ready` local | 200 | 0,069 s | `status:ready`, 902 itens esperados. |
+
+Às **12:53:18–12:53:19 UTC**, a sonda existente `SuiteTlsCheck`, compilada para **.NET 8.0.30 no Linux**, usou `SocketsHttpHandler`, ConnectTimeout 10 s, timeout HTTP 20 s, sem proxy/cookies/redirecionamento, revogação online e validação do pin público atual. Tanto a variante padrão quanto a comparação IPv4 terminaram em aproximadamente **0,76 s**, com `TLS_POLICY_ERRORS=None`, `CURRENT_AUTHORITY_PIN_MATCH=True` e HTTP **400 `JSON_INVALID`** para POST `{}` em `/v1/suite/challenges`.
+
+A comparação IPv4 usou `DOTNET_SYSTEM_NET_DISABLEIPV6=1` apenas no processo da sonda; nenhum ambiente de serviço/cliente foi alterado. A sonda não abriu sessão nem ativou licença. O resultado comprova transporte e pin nessa execução Linux; não equivale ao EXE Windows .NET 10, nem ao login autenticado. Não foi registrada a família efetivamente escolhida pela variante .NET padrão.
+
+Nginx, PIX, API, admin e gateway continuam ativos, com os mesmos PIDs/InvocationIDs consultados. A API mantém InvocationID `07f9f1884c0846f99a9d3321bc7dba7d` e DLL `es-reopen-efaf1d3-20260905`, SHA-256 `e10bcf191c7b1c4b030427713b848a8e89af51517483d319b5979cd9ea7b07ef`, reconferido. Não houve restart/reload/deploy nesta execução.
+
+### 8.3 Correlação das sondas e limite da tentativa real
+
+O lote Windows da seção 3 chegou à origem:
+
+- Nginx registrou os dois GET `/v1/suite/challenges`, User-Agent curl, HTTP 405, às **09:03:04 locais**.
+- A API concluiu essas requisições às **12:03:04.244245 e 12:03:04.665749 UTC**, ambas HTTP 405.
+- O PIX concluiu GET `/v1/health` HTTP 200 às **12:03:09.311852 UTC**.
+- O lote novo deste executor gerou três GET Suite 405 às 12:52:32 UTC e dois POST `{}` 400 às 12:53:19 UTC. São sondas identificadas, mesmo quando a sonda .NET usa o User-Agent `TurboramaSuite/2.0`.
+
+Na consulta de requisições concluídas entre **12:00:00 e 12:57:56 UTC**, os registros Suite encontrados foram os dois GET Windows e essas cinco sondas locais. **Não apareceu nessa janela um fluxo autenticado de challenge/sessão/heartbeat/catalogo atribuível ao EXE real.** Esse recorte não exclui falha anterior ao HTTP ou requisição não registrada/concluída. A rota de artefatos possui logging restrito e não deve ser usada para inferir ausência universal de downloads.
+
+Foram solicitados ao proprietário o horário/mensagem de uma tentativa atual e a identificação da instância existente. A seção 6 descreve um pacote de teste com hash `577E5DDC...`; a instância efetivamente aberta ainda não foi identificada nesta retomada. Não substituir o EXE, iniciar outra instância ou reaproveitar a identificação da compilação anterior para preencher esse campo.
+
+### 8.4 Aceite, alterações e evidências
+
+| Frente da seção 7 | Resultado desta execução |
+| --- | --- |
+| Rede/túnel | DNS/ingress/conector e saída IPv4 conferidos; IPv4/IPv6 funcionais a partir do Linux com controles simultâneos. Nova contraprova Windows e operadora independente pendentes. |
+| Suite existente | Prontidão e transporte .NET sem autenticação aprovados; challenge válido, sessão, heartbeat e catálogo no EXE real pendentes. |
+| ES | Sem novo teste real de abrir/sair/reabrir ou coexistência; runtime preservado. |
+| PIX/portal/painéis | Saúde PIX local/pública aprovada; não houve novo login de painel, teste CSRF ou operação de gabinete. |
+| Conteúdo | Prontidão aprovada; catálogo assinado, autorização, download/retomada e extração no Windows pendentes. O gateway vigente autoriza e redireciona por HTTP 307; não armazena/retransmite os arquivos nem oferece digest oficial esperado dos bytes no modelo direto. |
+| Outros consumidores | Ingress de todos os hostnames comparado e preservado; não foram executadas transações funcionais dos demais sistemas. |
+| Persistência/reversão | Nenhum delta de produção, logo sem rollback novo a executar. Sem reboot ou teste de persistência realizado. |
+
+Arquivos alterados: esta seção, referências de continuidade no manual/incidente e README, conciliando o novo handoff da main com a branch documental existente. Branch `codex/repair-suite-connectivity-20260908`, [PR #1](https://github.com/luziellacerda/Servidor-pix/pull/1). O commit do retorno pode ser identificado pelo histórico deste arquivo; não corresponde a release/deploy.
+
+Evidências privadas em `/home/lz-servidor/evidence/reparo-suite-20260908/retorno-tunel-20260908-0950/`: DNS/configuração/conectores, comparação sanitizada, saída IPv4, medições curl, resultados .NET e correlação dos journals. Diretório 0700, arquivos privados 0600. Nenhum token, DSN, cabeçalho autenticado, chave, grant ou dado de cliente foi incluído no retorno publicado.
+
+### 8.5 Estado final e próximo passo indispensável
+
+**Transporte recuperado no Linux; incidente ainda aberto por falta de aceite real do Windows.** O próximo passo é uma tentativa pelo EXE existente, com horário, mensagem e instância identificados, seguida de correlação da mesma janela. Se a sessão funcionar e o catálogo falhar, tratar o estágio observado separadamente.
+
+Não prosseguir com uma mitigação de IPv6 baseada apenas nos timeouts antigos: a falha não se reproduziu neste lote. A inspeção do roteador/operadora passa a ser condicional a uma nova falha ou à investigação da causa da intermitência; não bloquear o teste do programa esperando acesso ao roteador. A recuperação observada não prova qual componente corrigiu o caminho nem garante estabilidade ou funcionamento em todas as redes.
 
 ## 9. Referências fixadas
 
