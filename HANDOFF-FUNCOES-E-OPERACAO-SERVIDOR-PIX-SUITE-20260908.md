@@ -6,6 +6,8 @@ Documento solicitado pelo proprietário para explicar o servidor e permitir cont
 
 O registro do problema de conexão continua no [handoff único do incidente](HANDOFF-INCIDENTE-CONECTIVIDADE-POS-TROCA-PLACA-SERVIDOR-20260908.md). Este manual de funções não substitui esse acompanhamento nem representa correção do incidente.
 
+**Atualização posterior:** o proprietário solicitou uma [retomada específica pelo túnel](HANDOFF-RETOMADA-TUNEL-IP-PUBLICO-E-ACEITE-SUITE-20260908.md), cujo retorno atual está na seção 8. A consulta das 09h52–09h53 encontrou IPv6 e transporte .NET novamente funcionais no Linux; permanece pendente o aceite real do programa Windows.
+
 ## 1. O que este servidor faz
 
 | Função | Quem utiliza | Responsabilidade do servidor |
@@ -481,6 +483,8 @@ Não restaurar snapshot do banco automaticamente por um 500 HTTP: isso pode elim
 ## 15. Estado do incidente de acesso em 08/09
 
 **Aberto; sem correção efetiva implantada nesta investigação.**
+
+Os itens abaixo descrevem o levantamento anterior das 07h–09h. Na retomada das 09h52–09h53, IPv6 para Suite/controles e a sonda .NET padrão voltaram a responder. DNS, túnel e runtime mantiveram o baseline, sem intervenção deste executor. Consultar a seção 8 do handoff de retomada para os resultados e a prioridade atual: validar o EXE existente antes de propor nova mudança de rede.
 
 - O programa usa `https://app.lzgames.com.br:443`; a API interna está na 5190.
 - IPv4 alcançou a API com certificado/pin atuais válidos. IPv6 falhou por timeout tanto em app quanto em Google/Cloudflare, no Linux e nas sondas Windows.

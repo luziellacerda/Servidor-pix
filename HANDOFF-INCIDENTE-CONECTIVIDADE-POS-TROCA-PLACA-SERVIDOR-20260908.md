@@ -4,6 +4,8 @@ Data: 08/09/2026. Fuso de referência: UTC, com horário local UTC−3 quando in
 Repositório: `luziellacerda/Servidor-pix`.
 Estado desta entrega: diagnóstico externo e revisão de código/documentação; **nenhuma correção implantada no servidor**.
 
+**Continuidade em 08/09, às 09h54 locais:** por pedido posterior do proprietário, o retorno atual está na seção 8 do [handoff de retomada pelo túnel](HANDOFF-RETOMADA-TUNEL-IP-PUBLICO-E-ACEITE-SUITE-20260908.md). Às 09h52–09h53, IPv4, IPv6 e a sonda .NET voltaram a responder no Linux, sem alteração aplicada por este executor. O login real no Windows ainda exige comprovação. As falhas e dependências registradas abaixo são o histórico anterior, não uma nova medição simultânea.
+
 ## 1. Pedido do proprietário e objetivo da execução
 
 Após substituir a placa-mãe do servidor, desligá-lo e ligá-lo novamente, o proprietário informou que a TurboRama Suite passou a mostrar **“SERVIÇO DE LICENCIAMENTO TEMPORARIAMENTE INDISPONÍVEL”**. Há vários sistemas e muitos clientes consumindo a infraestrutura. A solução precisa tratar a causa e preservar tudo que já funciona; ajustar manualmente um PC não atende ao objetivo operacional.
