@@ -1,0 +1,196 @@
+openapi: 3.0.3
+info:
+  title: TurboramaStation Android API candidate
+  version: 1.0.0-candidate
+  description: >-
+    Candidate contract compiled in the isolated server branch. It is disabled by
+    default and is not a production deployment. Catalog and download routes fail
+    closed until private Android content and gateway integration are complete.
+servers:
+  - url: https://example.invalid
+    description: Replace only after a separately approved staging deployment.
+paths:
+  /v1/station/activations/challenge:
+    post:
+      summary: Request a challenge for a one-use activation code.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivationChallengeRequest'
+      responses:
+        '200':
+          description: Signed activation challenge.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignedEnvelope'
+        '403':
+          description: Code or purchase is not eligible.
+  /v1/station/activations/complete:
+    post:
+      summary: Prove possession of the candidate Android Keystore key.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceEnvelope'
+      responses:
+        '200':
+          description: Signed license and device binding.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignedEnvelope'
+        '409':
+          description: Expired, consumed or mismatched challenge/device.
+  /v1/station/challenges:
+    post:
+      summary: Request a challenge for a fresh session.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionChallengeRequest'
+      responses:
+        '200':
+          description: Signed 60-second session challenge.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignedEnvelope'
+  /v1/station/sessions:
+    post:
+      summary: Open a 180-second session using a device-key proof.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceEnvelope'
+      responses:
+        '200':
+          description: Signed session with an in-memory-only bearer token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignedEnvelope'
+  /v1/station/me:
+    get:
+      summary: Obtain the trusted buyer display name for the active session.
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Signed profile; at most 80 display characters.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignedEnvelope'
+        '503':
+          description: Buyer projection is not linked yet.
+  /v1/station/catalog:
+    get:
+      summary: Reserved route; not available in this candidate.
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: platform
+          schema:
+            type: string
+        - in: query
+          name: cursor
+          schema:
+            type: string
+      responses:
+        '503':
+          description: Private Android catalog is not integrated.
+  /v1/station/downloads/authorize:
+    post:
+      summary: Reserved route; never returns a private URL in this candidate.
+      security:
+        - bearerAuth: []
+      responses:
+        '503':
+          description: Android gateway authorization is not integrated.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    SignedEnvelope:
+      type: object
+      required: [keyId, payload, signature]
+      additionalProperties: false
+      properties:
+        keyId:
+          type: string
+          description: Lowercase SHA-256 hex of the server public SPKI DER.
+        payload:
+          type: string
+          description: Unpadded Base64URL of the exact UTF-8 JSON bytes signed.
+        signature:
+          type: string
+          description: Unpadded Base64URL RSA-PSS SHA-256/MGF1-SHA-256/salt32.
+    DeviceEnvelope:
+      type: object
+      required: [payload, signature]
+      additionalProperties: false
+      properties:
+        payload:
+          type: string
+          description: Unpadded Base64URL of exact UTF-8 JSON bytes.
+        signature:
+          type: string
+          description: RSA-PSS SHA-256 proof by the 2048-bit Android device key.
+    Identity:
+      type: object
+      required: [schemaVersion, domain, productId, applicationId, deviceId,
+        clientVersion, deviceManufacturer, deviceModel, androidSdk]
+      properties:
+        schemaVersion:
+          type: integer
+          enum: [1]
+        domain:
+          type: string
+        productId:
+          type: string
+          enum: [TURBORAMA_STATION_ANDROID]
+        applicationId:
+          type: string
+          enum: [TURBORAMA_STATION_ANDROID]
+        deviceId:
+          type: string
+          description: Unpadded Base64URL SHA-256 of canonical public SPKI DER.
+        clientVersion:
+          type: string
+        deviceManufacturer:
+          type: string
+        deviceModel:
+          type: string
+        androidSdk:
+          type: integer
+    ActivationChallengeRequest:
+      allOf:
+        - $ref: '#/components/schemas/Identity'
+        - type: object
+          required: [activationCode, devicePublicKey]
+          properties:
+            activationCode:
+              type: string
+            devicePublicKey:
+              type: string
+              description: Unpadded Base64URL SPKI DER.
+    SessionChallengeRequest:
+      allOf:
+        - $ref: '#/components/schemas/Identity'
+        - type: object
+          required: [licenseId]
+          properties:
+            licenseId:
+              type: string

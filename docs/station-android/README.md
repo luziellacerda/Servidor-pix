@@ -4,6 +4,8 @@ Esta pasta é o ponto de partida para uma ferramenta ou pessoa que vá adicionar
 
 Leia nesta ordem: [regras de trabalho](AGENTS.md), [inventário observado](INVENTARIO-SERVIDOR.md) e [plano de implementação](PLANO-INTEGRACAO.md). O inventário é um retrato datado, não uma afirmação de que uma branch Git corresponde aos binários instalados. Para atualizar a parte observável sem modificar o servidor, execute `bash scripts/inventario-somente-leitura.sh` nesta pasta.
 
+O [retorno da implementação candidata](RETORNO-IMPLEMENTACAO-CANDIDATA-20260930.md) distingue o backend já testado em isolamento dos bloqueios para venda e implantação. O [OpenAPI candidato](openapi-candidato.yaml) documenta apenas o contrato parcial; catálogo/download ainda falham fechados.
+
 Para iniciar outra ferramenta neste projeto, informe este diretório como pasta de trabalho e peça: “Leia AGENTS.md, README.md, INVENTARIO-SERVIDOR.md e PLANO-INTEGRACAO.md; execute apenas o inventário de leitura; identifique as diferenças atuais antes de propor código. Preserve os serviços já ativos.”
 
 O [handoff original do Android](https://github.com/luziellacerda/TurboElden/blob/f7887438e41107e73ed32ddeaf634f998b708ded/docs/server/HANDOFF-TURBORAMASTATION-ANDROID-20260930.md) descreve a proposta de compra, ativação, sessão, painel e downloads. O [handoff operacional anterior da Suite](../../HANDOFF-TUTORIAL-COMPLETO-SERVIDOR-TURBORAMA-SUITE-20260903.md) explica o sistema existente. Ambos contêm observações históricas: confirme sempre o estado em execução antes de trabalhar.

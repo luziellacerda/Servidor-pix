@@ -11,10 +11,16 @@ builder.Services.Configure<ForwardedHeadersOptions>(SuiteTrustedProxyPolicy.Conf
 var enabled = builder.Configuration.GetValue("Suite:Enabled", false);
 var emulationStationEnabled = enabled &&
     builder.Configuration.GetValue("Suite:EmulationStation:Enabled", false);
+var stationEnabled = enabled &&
+    builder.Configuration.GetValue("Station:Enabled", false);
 var contentRequested = enabled && builder.Configuration.GetValue("Suite:Content:Enabled", false);
 var connection = builder.Configuration.GetConnectionString("SuiteStore");
 var pepper = ReadProtected("Suite:ActivationPepper", "Suite:ActivationPepperFile");
 var signingPem = ReadProtected("Suite:OnlineAssertionPrivateKeyPem", "Suite:OnlineAssertionPrivateKeyPemFile");
+var stationPepper = stationEnabled
+    ? ReadProtected("Station:ActivationPepper", "Station:ActivationPepperFile") : null;
+var stationSigningPem = stationEnabled
+    ? ReadProtected("Station:AssertionPrivateKeyPem", "Station:AssertionPrivateKeyPemFile") : null;
 var inventoryEnabled = enabled && builder.Configuration.GetValue("Suite:Inventory:Enabled", false);
 var networkInventoryEnabled = inventoryEnabled && builder.Configuration.GetValue("Suite:NetworkInventory:Enabled", false);
 var inventoryEncryptionKey = inventoryEnabled
@@ -28,6 +34,17 @@ string? contentAssertionKeyId = null;
 var contentStartupStage = "not-started";
 if (enabled && (string.IsNullOrWhiteSpace(connection) || string.IsNullOrWhiteSpace(pepper) || string.IsNullOrWhiteSpace(signingPem)))
     throw new InvalidOperationException("Suite is enabled but protected dependencies are unavailable.");
+if (stationEnabled)
+{
+    if (string.IsNullOrWhiteSpace(stationPepper) ||
+        string.IsNullOrWhiteSpace(stationSigningPem) ||
+        stationPepper == pepper || SamePublicKey(signingPem!, stationSigningPem))
+        throw new InvalidOperationException("Station keys must exist and be independent of Suite keys.");
+    var pepperBytes = Convert.FromBase64String(stationPepper);
+    if (pepperBytes.Length < 32)
+        throw new InvalidOperationException("Station activation pepper is too short.");
+    CryptographicOperations.ZeroMemory(pepperBytes);
+}
 if (inventoryEnabled && string.IsNullOrWhiteSpace(inventoryEncryptionKey))
     throw new InvalidOperationException("Suite inventory is enabled but its protected encryption key is unavailable.");
 var contentAvailable = contentRequested && ContentStartupIsolation.TryInitialize(() =>
@@ -78,6 +95,15 @@ if (enabled)
     builder.Services.AddSingleton<ISuiteStore, PostgresSuiteStore>();
     builder.Services.AddSingleton<IAssertionSigner>(_ => { var rsa = RSA.Create(); rsa.ImportFromPem(signingPem); return new RsaAssertionSigner(rsa); });
     builder.Services.AddSingleton(sp => new SuiteService(sp.GetRequiredService<ISuiteStore>(), sp.GetRequiredService<IAssertionSigner>(), sp.GetRequiredService<TimeProvider>(), pepper!));
+    if (stationEnabled)
+    {
+        builder.Services.AddSingleton<PostgresStationStore>();
+        builder.Services.AddSingleton(_ => new StationResponseSigner(stationSigningPem!));
+        builder.Services.AddSingleton(sp => new StationService(
+            sp.GetRequiredService<PostgresStationStore>(),
+            sp.GetRequiredService<StationResponseSigner>(),
+            stationPepper!));
+    }
     if (emulationStationEnabled)
     {
         builder.Services.AddSingleton<IEmulationStationStore, PostgresEmulationStationStore>();
@@ -200,6 +226,7 @@ Map<ActivationProof>("/v1/suite/activations/complete", (s, r, c) => s.CompleteAc
 Map<ChallengeRequest>("/v1/suite/challenges", ChallengeAsync);
 Map<SessionProof>("/v1/suite/sessions", (s, r, c) => s.SessionAsync(r, c));
 app.MapEmulationStation(emulationStationEnabled);
+app.MapStation(stationEnabled);
 app.MapNetworkInventory(networkInventoryEnabled);
 if (inventoryEnabled)
 {

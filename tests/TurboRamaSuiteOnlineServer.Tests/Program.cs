@@ -13,6 +13,9 @@ using TurboRamaSuiteOnlineServer;
 using TurboRamaSuiteContentPublisher;
 
 await ExtractionNotificationHttpChecks.RunAsync();
+StationProtocolChecks.Run();
+if (Environment.GetEnvironmentVariable("STATION_TEST_PG") is { Length: > 0 } stationConnection)
+    await StationPostgresChecks.RunAsync(stationConnection);
 
 const string licenseId = "TR-000125";
 const string inventoryLicense="TS-INVENTORY-FIXTURE-00000001";

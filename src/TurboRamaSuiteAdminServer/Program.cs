@@ -16,8 +16,12 @@ var builder = WebApplication.CreateBuilder(args);
 var socketPath = Required("SUITE_ADMIN_SOCKET");
 var token = InternalToken.Load(Required("SUITE_ADMIN_TOKEN_FILE"));
 var commerceEnabled = Environment.GetEnvironmentVariable("SUITE_COMMERCE_ENABLED") == "1";
+var stationCommerceEnabled = commerceEnabled &&
+    Environment.GetEnvironmentVariable("STATION_COMMERCE_ENABLED") == "1";
 var commerceToken = commerceEnabled ? InternalToken.Load(Required("SUITE_COMMERCE_TOKEN_FILE")) : null;
 var pepperFile = Required("SUITE_ADMIN_PEPPER_FILE");
+var stationPepperFile = stationCommerceEnabled
+    ? Required("STATION_ADMIN_PEPPER_FILE") : string.Empty;
 var connection = Required("SUITE_ADMIN_CONNECTION");
 var contentManagementEnabled = Environment.GetEnvironmentVariable("SUITE_CONTENT_ADMIN_ENABLED") == "1";
 using var contentManagement = await ContentManagementBootstrap.TryLoadAsync(
@@ -204,6 +208,8 @@ app.MapPost("/connection-notifications/complete",async(ConnectionNoticeCompletio
     cmd.Parameters.AddWithValue(request.EventId);cmd.Parameters.AddWithValue(status);cmd.Parameters.AddWithValue(request.ErrorCode);return await cmd.ExecuteNonQueryAsync(ct)==1?Results.Json(new Error("UPDATED")):Results.Conflict(new Error("LEASE_INVALID"));
 });
 CommerceEndpoints.Map(app, commerceEnabled, pepperFile);
+StationCommerceEndpoints.Map(app, stationCommerceEnabled, stationPepperFile);
+StationAdminEndpoints.Map(app, stationCommerceEnabled, stationPepperFile);
 ContentManagementEndpoints.Map(app, contentManagement, contentManagementEnabled);
 SessionManagementEndpoints.Map(app);
 ExtractionNotificationAdminEndpoints.Map(app);
