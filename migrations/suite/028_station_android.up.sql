@@ -89,6 +89,7 @@ CREATE TABLE suite.station_customer_projection (
 );
 
 GRANT USAGE ON SCHEMA suite TO "turborama-suite","turborama-suite-admin";
+GRANT SELECT ON suite.schema_migrations TO "turborama-suite";
 GRANT SELECT ON suite.suite_licenses,suite.suite_license_deliveries
   TO "turborama-suite";
 GRANT SELECT ON suite.station_devices,suite.station_challenges,suite.station_sessions,

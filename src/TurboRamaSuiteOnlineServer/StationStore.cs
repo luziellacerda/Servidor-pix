@@ -182,6 +182,12 @@ public sealed class PostgresStationStore(NpgsqlDataSource database)
             INSERT INTO suite.station_devices(license_id,device_id,public_key_spki,
               manufacturer,model,android_sdk,client_version,status)
             VALUES($1,$2,$3,$4,$5,$6,$7,'ACTIVE')
+            ON CONFLICT (license_id,device_id) DO UPDATE SET
+              public_key_spki=EXCLUDED.public_key_spki,
+              manufacturer=EXCLUDED.manufacturer,model=EXCLUDED.model,
+              android_sdk=EXCLUDED.android_sdk,client_version=EXCLUDED.client_version,
+              status='ACTIVE',updated_at=clock_timestamp()
+            WHERE suite.station_devices.status='REVOKED'
             """, connection, transaction))
         {
             insert.Parameters.AddWithValue(challenge.LicenseId);
@@ -191,7 +197,12 @@ public sealed class PostgresStationStore(NpgsqlDataSource database)
             insert.Parameters.AddWithValue(model);
             insert.Parameters.AddWithValue(sdk);
             insert.Parameters.AddWithValue(version);
-            try { await insert.ExecuteNonQueryAsync(cancellationToken); }
+            try
+            {
+                if (await insert.ExecuteNonQueryAsync(cancellationToken) != 1)
+                    throw new SuiteException(409, "STATION_DEVICE_ALREADY_BOUND",
+                        "Device is already bound.");
+            }
             catch (PostgresException exception) when (exception.SqlState ==
                 PostgresErrorCodes.UniqueViolation)
             {

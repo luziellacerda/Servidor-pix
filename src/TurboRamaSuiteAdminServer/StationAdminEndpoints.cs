@@ -32,7 +32,10 @@ internal static class StationAdminEndpoints
                            coalesce(v.client_version,''),
                            coalesce(s.session_id,''),
                            coalesce(extract(epoch from s.authorized_until)::bigint,0),
-                           coalesce(extract(epoch from s.last_contact_at)::bigint,0)
+                           coalesce(extract(epoch from s.last_contact_at)::bigint,0),
+                           (SELECT count(*) FROM suite.station_devices active
+                             WHERE active.license_id=l.license_id
+                               AND active.status='ACTIVE')
                     FROM suite.suite_licenses l
                     JOIN suite.suite_license_deliveries d ON d.license_id=l.license_id
                       AND d.product_id='TURBORAMA_STATION_ANDROID'
@@ -57,7 +60,50 @@ internal static class StationAdminEndpoints
                     row.IsDBNull(7) ? "" : row.GetString(7), row.GetString(8),
                     row.GetString(9), row.GetString(10), row.GetInt32(11),
                     row.GetString(12), row.GetString(13), row.GetInt64(14),
-                    row.GetInt64(15)));
+                    row.GetInt64(15), row.GetInt64(16)));
+            }
+            catch (Exception) { return Failure(503, "STATION_ADMIN_UNAVAILABLE"); }
+        });
+        app.MapGet("/station/licenses/{licenseId}/devices", async (string licenseId,
+            HttpContext context, NpgsqlDataSource database, CancellationToken token) =>
+        {
+            if (!enabled) return Results.NotFound();
+            var security = ContentAdminSecurity.Authorize(context, ReadClaim, false, false);
+            if (!security.Allowed) return Failure(403, "STATION_PERMISSION_DENIED");
+            if (!ValidId(licenseId) ||
+                !PageNumber(context.Request.Query["offset"].ToString(), 0, 1000000,
+                    out var offset) ||
+                !PageNumber(context.Request.Query["limit"].ToString(), 50, 100,
+                    out var limit) || limit < 1)
+                return Failure(400, "STATION_REQUEST_INVALID");
+            try
+            {
+                await using var exists = database.CreateCommand("""
+                    SELECT 1 FROM suite.suite_licenses
+                    WHERE license_id=$1 AND product_id='TURBORAMA_STATION_ANDROID'
+                    """);
+                exists.Parameters.AddWithValue(licenseId);
+                if (await exists.ExecuteScalarAsync(token) is null)
+                    return Failure(404, "STATION_NOT_FOUND");
+                await using var command = database.CreateCommand("""
+                    SELECT d.device_id,d.status,coalesce(d.manufacturer,''),
+                           coalesce(d.model,''),coalesce(d.android_sdk,0),
+                           coalesce(d.client_version,''),d.created_at,d.updated_at
+                    FROM suite.station_devices d
+                    WHERE d.license_id=$1
+                    ORDER BY d.created_at DESC,d.device_id DESC
+                    LIMIT $2 OFFSET $3
+                    """);
+                command.Parameters.AddWithValue(licenseId);
+                command.Parameters.AddWithValue(limit);
+                command.Parameters.AddWithValue(offset);
+                var devices = new List<StationAdminDevice>();
+                await using var row = await command.ExecuteReaderAsync(token);
+                while (await row.ReadAsync(token))
+                    devices.Add(new(row.GetString(0), row.GetString(1),
+                        row.GetString(2), row.GetString(3), row.GetInt32(4),
+                        row.GetString(5), row.GetDateTime(6), row.GetDateTime(7)));
+                return Results.Json(new { licenseId, offset, limit, devices });
             }
             catch (Exception) { return Failure(503, "STATION_ADMIN_UNAVAILABLE"); }
         });
@@ -82,7 +128,8 @@ internal static class StationAdminEndpoints
                 { return Failure(failure.Status, failure.Code); }
                 catch (Exception) { return Failure(503, "STATION_ADMIN_UNAVAILABLE"); }
             });
-        foreach (var action in new[] { "block", "unblock", "transfer", "revoke-session" })
+        foreach (var action in new[] { "block", "unblock", "transfer",
+            "revoke-session" })
             MapAction(app, enabled, action);
     }
 
@@ -287,6 +334,12 @@ internal static class StationAdminEndpoints
         value.All(c => c is >= '0' and <= '9' or >= 'a' and <= 'f');
     private static bool ValidRequestId(string? value) => value?.Length is >= 16 and <= 64 &&
         value.All(char.IsAsciiLetterOrDigit);
+    private static bool PageNumber(string value, int fallback, int maximum,
+        out int result)
+    {
+        if (value.Length == 0) { result = fallback; return true; }
+        return int.TryParse(value, out result) && result >= 0 && result <= maximum;
+    }
     private static IResult Failure(int status, string code) =>
         Results.Json(new { code }, statusCode: status);
 }
@@ -295,7 +348,11 @@ internal sealed record StationAdminStatus(string LicenseId,string Status,
     long RevocationGeneration,string EnrollmentState,string ProvisioningState,
     string FinancialState,string PurchaseId,string DisplayName,string DeviceId,
     string Manufacturer,string Model,int AndroidSdk,string ClientVersion,
-    string SessionId,long AuthorizedUntilUnixSeconds,long LastContactAtUnixSeconds);
+    string SessionId,long AuthorizedUntilUnixSeconds,long LastContactAtUnixSeconds,
+    long ActiveDeviceCount);
+internal sealed record StationAdminDevice(string DeviceId,string Status,
+    string Manufacturer,string Model,int AndroidSdk,string ClientVersion,
+    DateTime CreatedAt,DateTime UpdatedAt);
 internal sealed record StationAdminActionRequest(string RequestId,
     long ExpectedGeneration,string Reason,string? TargetSessionId);
 internal sealed record StationActionResult(string Code,string LicenseId,

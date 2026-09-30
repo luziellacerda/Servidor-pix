@@ -137,8 +137,53 @@ internal static class StationPostgresChecks
         }
         catch (SuiteException exception) when (exception.Code ==
             "STATION_SESSION_INVALID") { }
+        var replacementCode = StationProtocol.Encode(RandomNumberGenerator.GetBytes(32));
+        var replacementVerifier = ActivationCodes.Verify(pepper, replacementCode);
+        await using (var reset = database.CreateCommand("""
+            UPDATE suite.suite_licenses SET enrollment_state='PENDING_ENROLLMENT',
+              activation_consumed=false,activation_verifier=$2,
+              activation_expires_at=clock_timestamp()+interval '15 minutes',
+              activation_generation=activation_generation+1
+            WHERE license_id=$1
+            """))
+        {
+            reset.Parameters.AddWithValue(licenseId);
+            reset.Parameters.AddWithValue(replacementVerifier);
+            await reset.ExecuteNonQueryAsync();
+        }
+        await using (var oldDevice = database.CreateCommand("""
+            UPDATE suite.station_devices SET status='REVOKED'
+            WHERE license_id=$1 AND device_id=$2
+            """))
+        {
+            oldDevice.Parameters.AddWithValue(licenseId);
+            oldDevice.Parameters.AddWithValue(deviceId);
+            await oldDevice.ExecuteNonQueryAsync();
+        }
+        var replacementChallenge = Payload(await service.ActivationChallengeAsync(
+            activation with { ActivationCode = replacementCode }, CancellationToken.None));
+        var replacementProof = Signed(device, new
+        {
+            schemaVersion = 1, domain = StationProtocol.Prefix + "activate/v1",
+            productId = StationProtocol.Product, applicationId = StationProtocol.Application,
+            deviceId, clientVersion = "1", deviceManufacturer = "Synthetic",
+            deviceModel = "Fixture", androidSdk = 35,
+            activationCode = replacementCode, devicePublicKey = spki,
+            challengeId = replacementChallenge.GetProperty("challengeId").GetString(),
+            nonce = replacementChallenge.GetProperty("nonce").GetString()
+        });
+        await service.CompleteActivationAsync(replacementProof, CancellationToken.None);
+        await using (var rebound = database.CreateCommand("""
+            SELECT count(*) FROM suite.station_devices
+            WHERE license_id=$1 AND status='ACTIVE'
+            """))
+        {
+            rebound.Parameters.AddWithValue(licenseId);
+            if ((long)(await rebound.ExecuteScalarAsync() ?? 0L) != 1L)
+                throw new Exception("Station transfer did not restore the one-device limit.");
+        }
         await ConcurrentActivationAsync(database, service, pepper);
-        Console.WriteLine("STATION POSTGRES TESTS: OK (activation, concurrent limit, replay, session, buyer profile, revocation)");
+        Console.WriteLine("STATION POSTGRES TESTS: OK (activation, concurrent limit, replay, session, buyer profile, revocation, same-device transfer)");
     }
 
     private static async Task ConcurrentActivationAsync(NpgsqlDataSource database,

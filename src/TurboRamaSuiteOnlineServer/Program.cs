@@ -169,6 +169,32 @@ ExtractionNotificationEndpoints.Map(app,
 DownloadNotificationEndpoints.Map(app,
     enabled && builder.Configuration.GetValue("Suite:ExtractionNotifications:Enabled", false));
 app.MapGet("/ready", () => enabled ? Results.Json(new { status = "ready" }) : Results.Json(new ErrorResponse(1, "SUITE_DISABLED", "Suite is disabled."), statusCode: 503));
+app.MapGet("/ready/station", async (HttpContext context) =>
+{
+    if (!stationEnabled)
+        return Results.Json(new ErrorResponse(1, "STATION_DISABLED",
+            "Station is disabled."), statusCode: 503);
+    try
+    {
+        using var timeout = CancellationTokenSource.CreateLinkedTokenSource(
+            context.RequestAborted);
+        timeout.CancelAfter(TimeSpan.FromSeconds(5));
+        await using var command = context.RequestServices
+            .GetRequiredService<NpgsqlDataSource>().CreateCommand("""
+            SELECT EXISTS(SELECT 1 FROM suite.schema_migrations
+              WHERE version='028_station_android')
+            """);
+        var ready = (bool?)await command.ExecuteScalarAsync(timeout.Token) == true;
+        return ready ? Results.Json(new { status = "ready" }) :
+            Results.Json(new ErrorResponse(1, "STATION_NOT_READY",
+                "Station migration is missing."), statusCode: 503);
+    }
+    catch (Exception)
+    {
+        return Results.Json(new ErrorResponse(1, "STATION_NOT_READY",
+            "Station database is unavailable."), statusCode: 503);
+    }
+});
 app.MapPost("/internal/turborama/whatsapp/connection", async (HttpContext context, TurboRamaWhatsAppNotifier notifier, CancellationToken ct) =>
 {
     var expected = Environment.GetEnvironmentVariable("TURBORAMA_INTERNAL_TOKEN") ?? "";

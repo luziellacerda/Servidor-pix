@@ -22,7 +22,7 @@ O login Android instalado ainda usa decisão local e marcador no Keystore. O ser
 ## Ordem de execução
 
 1. **Fixar a linha de base.** Rodar o inventário de leitura, salvar hashes e caminhos efetivos dos quatro serviços, identificar as versões de fonte correspondentes e ler o ledger do banco por acesso autorizado. As releases atuais são diferentes entre si. Preservar as mudanças locais dos worktrees existentes.
-2. **Fechar decisões comerciais.** Registrar SKU, plano/preço, prazo, limite de aparelhos, canal de entrega do código, reemissão, transferência e o vínculo do cadastro comprador. Não converter vendas Windows em Android por suposição.
+2. **Fechar decisões comerciais.** Registrar SKU, plano/preço, prazo, limite por licença, canal de entrega do código, reemissão, transferência e o vínculo do cadastro comprador. A decisão atual é R$ 99,90, sem expiração, sem limite de compradores e com **um aparelho ativo por licença**. Não converter vendas Windows em Android por suposição.
 3. **Criar ambiente isolado.** Escolher a base de código que corresponde à produção real, criar branch/worktree próprios em `/mnt/DADOS`, usar banco e licenças sintéticas e manter os serviços atuais intactos. Validar espaço e dependências antes de compilar.
 4. **Publicar o contrato de desenvolvimento.** Escrever OpenAPI, erros, TTLs, paginação e vetores de assinatura/codificação. Fixar chave pública e `keyId` de teste sem embutir segredos no repositório ou APK.
 5. **Implementar backend aditivo.** Criar produto e sessão Android com migrations somente expansivas, constraints de produto/SKU explícitas, transações contra dupla ativação, índices e grants mínimos. A numeração da migration virá do ledger real, não do número máximo de um worktree.
@@ -42,8 +42,8 @@ As mudanças de comércio e implantação dependem das decisões do produto e da
 | Área | Verificação necessária |
 | --- | --- |
 | Sistemas atuais | PIX, Suite, ES, painel, gateway, site e notificações mantêm contratos e estados esperados |
-| Comercial | Compra idempotente; Android recebe licença própria; plano e limite seguem decisão registrada |
-| Ativação | Código único, expiração, prova RSA, um aparelho por licença conforme política; concorrência segura |
+| Comercial | Compra idempotente; Android recebe licença própria; R$ 99,90 sem expiração, sem limite de compradores e um aparelho ativo por licença |
+| Ativação | Código único, expiração e prova RSA; concorrência segura para um aparelho ativo por licença |
 | Sessão | Renovação, bloqueio, transferência e retorno de jogo sem duplicar login ou processo |
 | Painel | Comprador correto, ações de alvo exato, autorização administrativa e auditoria |
 | Conteúdo | Catálogo por produto; autorização por item; grant curto; download e extração rastreados |

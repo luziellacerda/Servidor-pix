@@ -60,26 +60,31 @@ app.Use(async (context, next) =>
 app.MapGet("/health", () => Results.Json(new { status = "ok", service = "turborama-suite-admin" }));
 app.MapGet("/readiness", async (NpgsqlDataSource db,CancellationToken ct) =>
 {
-    var schemaReady=false;long inconsistentDeliveries=-1;
+    var schemaReady=false;var stationSchemaReady=false;
+    long inconsistentDeliveries=-1;
     try
     {
         await using var cmd=db.CreateCommand("""
           SELECT EXISTS(SELECT 1 FROM suite.schema_migrations WHERE version='005_suite_commerce_permissions'),
+            EXISTS(SELECT 1 FROM suite.schema_migrations WHERE version='028_station_android'),
             (SELECT count(*) FROM suite.suite_license_deliveries
              WHERE (provisioning_state='PROVISIONED' AND license_id IS NULL)
                 OR (financial_state='PAID' AND provisioning_state<>'PROVISIONED'))
           """);
         await using var row=await cmd.ExecuteReaderAsync(ct);
-        if(await row.ReadAsync(ct)){schemaReady=row.GetBoolean(0);inconsistentDeliveries=row.GetInt64(1);}
+        if(await row.ReadAsync(ct)){schemaReady=row.GetBoolean(0);stationSchemaReady=row.GetBoolean(1);inconsistentDeliveries=row.GetInt64(2);}
     }
     catch { schemaReady=false;inconsistentDeliveries=-1; }
-    var ready=commerceEnabled&&schemaReady&&inconsistentDeliveries==0;
+    var ready=commerceEnabled&&schemaReady&&inconsistentDeliveries==0&&
+        (!stationCommerceEnabled||stationSchemaReady);
     var contentReady=!contentManagementEnabled||contentManagement is not null&&await contentManagement.IsReadyAsync(ct);
     return Results.Json(new
     {
         status=ready?(contentReady?"ready":"degraded"):"not_ready", service="turborama-suite-admin", commerce_enabled=commerceEnabled,
         content_management_enabled=contentManagementEnabled,
+        station_commerce_enabled=stationCommerceEnabled,
         checks=new { database=schemaReady?"ok":"unavailable",migration_005=schemaReady?"ok":"missing",
+          migration_028=!stationCommerceEnabled?"disabled":stationSchemaReady?"ok":"missing",
           migration_013=contentReady?"ok":"missing_or_unreachable",
           content_management=contentReady?"ok":"unavailable",
           delivery_consistency=inconsistentDeliveries==0?"ok":"blocked",inconsistent_deliveries=inconsistentDeliveries }

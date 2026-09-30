@@ -76,7 +76,16 @@ public static class StationEndpoints
             throw new SuiteException(413, "STATION_BODY_INVALID",
                 "Station request body is invalid.");
         using var memory = new MemoryStream();
-        await context.Request.Body.CopyToAsync(memory, token);
+        var chunk = new byte[4096];
+        while (true)
+        {
+            var read = await context.Request.Body.ReadAsync(chunk, token);
+            if (read == 0) break;
+            if (memory.Length + read > StationProtocol.MaximumBodyBytes)
+                throw new SuiteException(413, "STATION_BODY_INVALID",
+                    "Station request body is invalid.");
+            memory.Write(chunk, 0, read);
+        }
         if (memory.Length is 0 or > StationProtocol.MaximumBodyBytes)
             throw new SuiteException(413, "STATION_BODY_INVALID",
                 "Station request body is invalid.");
