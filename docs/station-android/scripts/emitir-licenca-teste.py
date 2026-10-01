@@ -47,8 +47,8 @@ def main():
     if len(pepper) < 32:
         raise SystemExit("pepper Station curto")
     existing = psql(
-        "SELECT coalesce(license_id,'') || '|' || "
-        "coalesce(to_char(activation_expires_at AT TIME ZONE 'UTC', "
+        "SELECT coalesce(l.license_id,'') || '|' || "
+        "coalesce(to_char(l.activation_expires_at AT TIME ZONE 'UTC', "
         "'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"'),'') "
         "FROM suite.suite_license_deliveries d "
         "JOIN suite.suite_licenses l ON l.license_id=d.license_id "
@@ -146,23 +146,14 @@ WHERE d.source_system='{SYSTEM}' AND d.source_purchase_id='{PURCHASE}'
   AND d.source_item_key='{ITEM}' AND d.product_id='{PRODUCT}';
 COMMIT;
 """
-    fd, path = tempfile.mkstemp(prefix="station-teste-", suffix=".sql")
-    try:
-        os.write(fd, sql.encode())
-        os.close(fd)
-        os.chmod(path, 0o600)
-        result = subprocess.run(
-            ["sudo", "-u", "postgres", "psql", "-d", DATABASE, "-v", "ON_ERROR_STOP=1",
-             "-t", "-A", "-f", path],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            check=False,
-        )
-    finally:
-        try:
-            os.remove(path)
-        except OSError:
-            pass
+    result = subprocess.run(
+        ["sudo", "-u", "postgres", "psql", "-d", DATABASE, "-v", "ON_ERROR_STOP=1",
+         "-t", "-A", "-f", "-"],
+        input=sql.encode(),
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
     if result.returncode != 0:
         raise SystemExit(result.stderr.decode("utf-8", "replace")[-800:])
     lines = [line.strip() for line in result.stdout.decode().splitlines() if line.startswith("OK|") or line.startswith("NAO_GRAVADO|")]
