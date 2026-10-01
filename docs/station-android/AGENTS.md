@@ -1,6 +1,6 @@
 # Instruções para integrar a TurboramaStation Android neste servidor
 
-Você está no servidor compartilhado `lz-servidor`. Sua tarefa é acrescentar uma licença e um cliente Android próprios, aproveitando comércio, PostgreSQL, autenticação, painel e conteúdo existentes. Leia `README.md`, `INVENTARIO-SERVIDOR.md` e `PLANO-INTEGRACAO.md` antes de propor alterações. Leia também o handoff Android vinculado no README. Execute `bash scripts/inventario-somente-leitura.sh` para obter o estado atual; o inventário datado pode envelhecer.
+Você está no servidor compartilhado `lz-servidor`. Sua tarefa agora é executar `EXECUTAR-5192-20261001.md` nesta pasta e preencher `RETORNO-EXECUCAO-5192-20261001.md`. Essa execução é a tarefa de implantação nomeada: só a unit nova da porta `5192`, a migration `028_station_android` se o ledger permitir, e o `location ^~ /v1/station/`. A unit e a DLL da porta `5190` permanecem. Não cole pepper, DSN nem chave privada no retorno. A SPKI pública entra no retorno.
 
 ## Limites do trabalho
 

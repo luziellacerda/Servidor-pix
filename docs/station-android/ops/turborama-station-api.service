@@ -1,0 +1,27 @@
+[Unit]
+Description=Turborama Station API isolada na porta 5192
+After=network.target
+
+[Service]
+User=turborama-suite
+Group=turborama-suite
+WorkingDirectory=/opt/turborama-station-20261001
+ExecStart=/usr/bin/dotnet /opt/turborama-station-20261001/TurboRamaSuiteOnlineServer.dll
+Environment=ASPNETCORE_URLS=http://127.0.0.1:5192
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_ENVIRONMENT=Production
+Environment=Suite__Enabled=true
+Environment=Suite__EmulationStation__Enabled=false
+Environment=Suite__Content__Enabled=false
+Environment=Suite__Inventory__Enabled=false
+Environment=Suite__NetworkInventory__Enabled=false
+Environment=Suite__ExtractionNotifications__Enabled=false
+Environment=Station__Enabled=true
+Environment=Station__ActivationPepperFile=/etc/turborama-suite/station-activation-pepper
+Environment=Station__AssertionPrivateKeyPemFile=/etc/turborama-suite/station-assertion.pem
+EnvironmentFile=-/etc/turborama-suite/station-5192.env
+Restart=on-failure
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

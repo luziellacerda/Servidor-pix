@@ -2,6 +2,8 @@
 
 Esta pasta é o ponto de partida para uma ferramenta ou pessoa que vá adicionar o produto TurboramaStation Android ao servidor. Ela explica o que foi observado em 30/09/2026, quais serviços já atendem clientes e como preparar a integração preservando PIX, Suite Windows, EmulationStation Windows, site e conteúdo. É um guia versionado de trabalho; não é um pacote de implantação.
 
+Tarefa atual: executar [EXECUTAR-5192-20261001.md](EXECUTAR-5192-20261001.md) e preencher [RETORNO-EXECUCAO-5192-20261001.md](RETORNO-EXECUCAO-5192-20261001.md).
+
 Leia nesta ordem: [regras de trabalho](AGENTS.md), [inventário observado](INVENTARIO-SERVIDOR.md) e [plano de implementação](PLANO-INTEGRACAO.md). O inventário é um retrato datado, não uma afirmação de que uma branch Git corresponde aos binários instalados. Para atualizar a parte observável sem modificar o servidor, execute `bash scripts/inventario-somente-leitura.sh` nesta pasta.
 
 O [retorno da implementação candidata](RETORNO-IMPLEMENTACAO-CANDIDATA-20260930.md) distingue o backend já testado em isolamento dos bloqueios para venda e implantação. O [OpenAPI candidato](openapi-candidato.yaml) documenta apenas o contrato parcial; catálogo/download ainda falham fechados.
