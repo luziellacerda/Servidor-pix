@@ -2,6 +2,8 @@
 
 Você está no servidor compartilhado `lz-servidor`. Sua tarefa é acrescentar uma licença e um cliente Android próprios, aproveitando comércio, PostgreSQL, autenticação, painel e conteúdo existentes. Leia `README.md`, `INVENTARIO-SERVIDOR.md` e `PLANO-INTEGRACAO.md` antes de propor alterações. Leia também o handoff Android vinculado no README. Execute `bash scripts/inventario-somente-leitura.sh` para obter o estado atual; o inventário datado pode envelhecer.
 
+O handoff do app em 01/10/2026 está em `HANDOFF-APP-PARA-SERVIDOR-STATION-20261001.md`. A seção 0 é o fio que o app preparado fala e confirma o contrato deste commit `93efbba`. As seções 2, 3, 6, 7, 8 e 9 desse arquivo são o candidato local anterior e não são pedido de implementação. Catálogo e download permanecem fechados. Esta leitura não liga a flag, não aplica SQL e não substitui binário.
+
 ## Limites do trabalho
 
 - PIX, Suite Windows, EmulationStation Windows, site, WhatsApp, gateway, painel, banco e serviços de outros projetos atendem usuários. Preserve seus fluxos, dados, endpoints, nomes, contratos criptográficos e configurações existentes. A integração Android deve ser aditiva e isolada por produto, aplicação, rota e feature flag.
