@@ -1,6 +1,6 @@
 # Instruções para integrar a TurboramaStation Android neste servidor
 
-Você está no servidor compartilhado `lz-servidor`. Sua tarefa agora é executar `EXECUTAR-5192-20261001.md` nesta pasta e preencher `RETORNO-EXECUCAO-5192-20261001.md`. Essa execução é a tarefa de implantação nomeada: só a unit nova da porta `5192`, a migration `028_station_android` se o ledger permitir, e o `location ^~ /v1/station/`. A unit e a DLL da porta `5190` permanecem. Não cole pepper, DSN nem chave privada no retorno. A SPKI pública entra no retorno.
+Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-LICENCA-TESTE-E-O-QUE-FALTA-20261001.md`. Execute o script dessa página, crie uma única licença de teste e preencha `RETORNO-LICENCA-TESTE-20261001.md` por completo. O código de teste entra só nesse retorno. Pepper, DSN, token admin e chave privada continuam de fora. Não substitua o admin da porta `5191` nem a API da `5190`.
 
 ## Limites do trabalho
 
