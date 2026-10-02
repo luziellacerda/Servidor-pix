@@ -33,12 +33,30 @@ public static class StationEndpoints
             if (!enabled) return Disabled();
             if (!limiter.Allow(context.Connection.RemoteIpAddress, "/v1/station/catalog"))
                 return Limited();
-            return await Handle(context, async (service, token) =>
+            return await Handle(context, (service, token) =>
+                service.CatalogAsync(Bearer(context), token));
+        });
+        app.MapGet("/v1/station/covers/{coverId}", async (HttpContext context, string coverId) =>
+        {
+            if (!enabled) return Disabled();
+            if (!limiter.Allow(context.Connection.RemoteIpAddress, "/v1/station/covers"))
+                return Limited();
+            try
             {
-                _ = await service.Session(Bearer(context), token);
-                throw new SuiteException(503, "STATION_CATALOG_NOT_READY",
-                    "Station catalog is not ready.");
-            });
+                using var timeout = CancellationTokenSource.CreateLinkedTokenSource(
+                    context.RequestAborted);
+                timeout.CancelAfter(TimeSpan.FromSeconds(10));
+                var cover = await context.RequestServices.GetRequiredService<StationService>()
+                    .CoverAsync(Bearer(context), coverId, timeout.Token);
+                context.Response.Headers.CacheControl = "no-store";
+                context.Response.Headers["X-Content-Type-Options"] = "nosniff";
+                return Results.File(cover.Bytes, cover.ContentType);
+            }
+            catch (SuiteException exception)
+            {
+                return Results.Json(new ErrorResponse(1, exception.Code, exception.Message),
+                    StrictJson.Options, statusCode: exception.StatusCode);
+            }
         });
         app.MapPost("/v1/station/downloads/authorize", async (HttpContext context) =>
         {
@@ -46,12 +64,41 @@ public static class StationEndpoints
             if (!limiter.Allow(context.Connection.RemoteIpAddress,
                     "/v1/station/downloads/authorize")) return Limited();
             return await Handle(context, async (service, token) =>
+                await service.AuthorizeDownloadAsync(
+                    await Read<StationDownloadRequest>(context, token),
+                    Bearer(context), token));
+        });
+        app.MapGet("/v1/station/artifacts/{grantId}", async (HttpContext context, string grantId) =>
+        {
+            if (!enabled) return Disabled();
+            if (!limiter.Allow(context.Connection.RemoteIpAddress, "/v1/station/artifacts"))
+                return Limited();
+            try
             {
-                _ = await service.Session(Bearer(context), token);
-                _ = await Read<StationDownloadRequest>(context, token);
-                throw new SuiteException(503, "STATION_DOWNLOAD_NOT_READY",
-                    "Station downloads are not ready.");
-            });
+                var header = context.Request.Headers.Authorization.ToString();
+                string? bearer = header.StartsWith("Bearer ", StringComparison.Ordinal) &&
+                    header.Length <= 128 ? header[7..] : null;
+                var path = await context.RequestServices.GetRequiredService<StationService>()
+                    .ConsumeArtifactPathAsync(grantId, bearer, context.RequestAborted);
+                context.Response.Headers.CacheControl = "no-store";
+                context.Response.Headers["X-Content-Type-Options"] = "nosniff";
+                context.Response.ContentType = "application/octet-stream";
+                await using var file = new FileStream(path, FileMode.Open, FileAccess.Read,
+                    FileShare.Read, 64 * 1024, FileOptions.Asynchronous | FileOptions.SequentialScan);
+                context.Response.ContentLength = file.Length;
+                context.Response.StatusCode = 200;
+                await file.CopyToAsync(context.Response.Body, context.RequestAborted);
+                return Results.Empty;
+            }
+            catch (SuiteException exception)
+            {
+                return Results.Json(new ErrorResponse(1, exception.Code, exception.Message),
+                    StrictJson.Options, statusCode: exception.StatusCode);
+            }
+            catch (OperationCanceledException) when (context.RequestAborted.IsCancellationRequested)
+            {
+                return Results.Empty;
+            }
         });
     }
 

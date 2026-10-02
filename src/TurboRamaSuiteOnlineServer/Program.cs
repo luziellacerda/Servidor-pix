@@ -97,12 +97,38 @@ if (enabled)
     builder.Services.AddSingleton(sp => new SuiteService(sp.GetRequiredService<ISuiteStore>(), sp.GetRequiredService<IAssertionSigner>(), sp.GetRequiredService<TimeProvider>(), pepper!));
     if (stationEnabled)
     {
+        StationLibrary? stationLibrary = null;
+        StationGrantCipher? stationGrants = null;
+        var libraryPath = builder.Configuration["Station:LibraryIndexFile"];
+        stationLibrary = StationLibrary.TryLoad(libraryPath);
+        var downloadKeyFile = builder.Configuration["Station:DownloadKeyFile"];
+        if (!string.IsNullOrWhiteSpace(downloadKeyFile) && File.Exists(downloadKeyFile))
+        {
+            var stationPepperFile = builder.Configuration["Station:ActivationPepperFile"];
+            var suitePepperFile = builder.Configuration["Suite:ActivationPepperFile"];
+            if (string.Equals(downloadKeyFile, stationPepperFile, StringComparison.Ordinal) ||
+                string.Equals(downloadKeyFile, suitePepperFile, StringComparison.Ordinal))
+                throw new InvalidOperationException(
+                    "Station download key must be a dedicated file.");
+            var suitePepperBytes = DecodeSecretBytes(pepper);
+            var stationPepperBytes = DecodeSecretBytes(stationPepper);
+            try
+            {
+                stationGrants = StationGrantCipher.Load(downloadKeyFile, suitePepperBytes,
+                    stationPepperBytes);
+            }
+            finally
+            {
+                CryptographicOperations.ZeroMemory(suitePepperBytes);
+                CryptographicOperations.ZeroMemory(stationPepperBytes);
+            }
+        }
         builder.Services.AddSingleton<PostgresStationStore>();
         builder.Services.AddSingleton(_ => new StationResponseSigner(stationSigningPem!));
         builder.Services.AddSingleton(sp => new StationService(
             sp.GetRequiredService<PostgresStationStore>(),
             sp.GetRequiredService<StationResponseSigner>(),
-            stationPepper!));
+            stationPepper!, stationLibrary, stationGrants));
     }
     if (emulationStationEnabled)
     {
@@ -288,6 +314,13 @@ string? ReadProtected(string valueKey, string fileKey)
     if (!string.IsNullOrWhiteSpace(direct)) return direct;
     var path = builder.Configuration[fileKey];
     return string.IsNullOrWhiteSpace(path) ? null : File.ReadAllText(path).Trim();
+}
+
+static byte[] DecodeSecretBytes(string? value)
+{
+    if (string.IsNullOrWhiteSpace(value)) return [];
+    try { return Convert.FromBase64String(value); }
+    catch (FormatException) { return System.Text.Encoding.UTF8.GetBytes(value); }
 }
 
 string? ReadContentProtected(

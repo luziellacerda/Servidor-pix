@@ -18,8 +18,10 @@ public sealed record StationDownloadRequest(int SchemaVersion, string Domain,
     string ItemId);
 
 public sealed class StationService(PostgresStationStore store,
-    StationResponseSigner signer, string activationPepper)
+    StationResponseSigner signer, string activationPepper,
+    StationLibrary? library = null, StationGrantCipher? grants = null)
 {
+    public const int DownloadGrantSeconds = 60;
     public async Task<object> ActivationChallengeAsync(
         StationActivationChallengeRequest request, CancellationToken token)
     {
@@ -169,6 +171,128 @@ public sealed class StationService(PostgresStationStore store,
                 ? session.DisplayName : session.DisplayName[..80],
             profileVersion = session.ProfileVersion.Value
         });
+    }
+
+    public async Task<object> CatalogAsync(string bearer, CancellationToken token)
+    {
+        var session = await Session(bearer, token);
+        if (library is null)
+            throw new SuiteException(503, "STATION_CATALOG_NOT_READY",
+                "Station catalog is not ready.");
+        return signer.Sign(new
+        {
+            schemaVersion = 1, domain = StationProtocol.Prefix + "catalog/v1",
+            productId = StationProtocol.Product, applicationId = StationProtocol.Application,
+            licenseId = session.LicenseId, deviceId = session.DeviceId,
+            sessionId = session.SessionId, revision = library.Revision,
+            items = library.Catalog.Select(item => new
+            {
+                itemId = item.ItemId, name = item.Name, platform = item.Platform,
+                revision = item.Revision, coverId = item.CoverId
+            })
+        });
+    }
+
+    public async Task<StationCoverBlob> CoverAsync(string bearer, string coverId,
+        CancellationToken token)
+    {
+        _ = await Session(bearer, token);
+        if (library is null)
+            throw new SuiteException(503, "STATION_CATALOG_NOT_READY",
+                "Station catalog is not ready.");
+        if (!StationProtocol.IsSafeLibraryId(coverId))
+            throw new SuiteException(404, "STATION_COVER_NOT_FOUND",
+                "Station cover is not found.");
+        return library.ReadCover(coverId) ??
+            throw new SuiteException(404, "STATION_COVER_NOT_FOUND",
+                "Station cover is not found.");
+    }
+
+    public async Task<object> AuthorizeDownloadAsync(StationDownloadRequest request,
+        string bearer, CancellationToken token)
+    {
+        var session = await Session(bearer, token);
+        StationProtocol.RequireIdentity(request.SchemaVersion, request.Domain,
+            "request-download", request.ProductId, request.ApplicationId,
+            request.DeviceId);
+        ValidateClient(request.ClientVersion, request.DeviceManufacturer,
+            request.DeviceModel, request.AndroidSdk);
+        if (!FixedEquals(request.DeviceId, session.DeviceId))
+            throw new SuiteException(403, "STATION_DEVICE_DENIED",
+                "Device is not authorized.");
+        if (library is null || grants is null)
+            throw new SuiteException(503, "STATION_DOWNLOAD_NOT_READY",
+                "Station downloads are not ready.");
+        if (!StationProtocol.IsSafeLibraryId(request.ItemId) ||
+            !library.TryResolve(request.ItemId, out var filePath, out _))
+            throw new SuiteException(404, "STATION_ITEM_NOT_FOUND",
+                "Station item is not found.");
+        var grantId = StationProtocol.Encode(RandomNumberGenerator.GetBytes(32));
+        var associated = session.LicenseId + "\n" + session.DeviceId + "\n" +
+            request.ItemId + "\n" + grantId;
+        var sealedPath = grants.Seal(associated, filePath);
+        await store.InsertGrantAsync(new StationGrantRecord(grantId, session.LicenseId,
+            session.DeviceId, request.ItemId, grants.KeyVersion, sealedPath.Nonce,
+            sealedPath.Ciphertext, sealedPath.Tag), DownloadGrantSeconds, token);
+        return signer.Sign(new
+        {
+            schemaVersion = 1, domain = StationProtocol.Prefix + "download-grant/v1",
+            productId = StationProtocol.Product, applicationId = StationProtocol.Application,
+            licenseId = session.LicenseId, deviceId = session.DeviceId,
+            sessionId = session.SessionId, itemId = request.ItemId, grantId,
+            expiresInSeconds = DownloadGrantSeconds
+        });
+    }
+
+    public async Task<string> ConsumeArtifactPathAsync(string grantId, string? bearer,
+        CancellationToken token)
+    {
+        if (!StationProtocol.IsCanonicalBase64Url(grantId, 32))
+            throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
+                "Station grant is not found.");
+        if (grants is null)
+            throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
+                "Station grant is not found.");
+        var peek = await store.PeekGrantAsync(grantId, token);
+        if (peek is null)
+            throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
+                "Station grant is not found.");
+        if (string.IsNullOrEmpty(bearer))
+            throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
+                "Station grant is not found.");
+        StationSession session;
+        try { session = await Session(bearer, token); }
+        catch (SuiteException)
+        {
+            throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
+                "Station grant is not found.");
+        }
+        if (!FixedEquals(session.LicenseId, peek.LicenseId) ||
+            !FixedEquals(session.DeviceId, peek.DeviceId))
+            throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
+                "Station grant is not found.");
+        var consumed = await store.ConsumeGrantAsync(grantId, session.LicenseId,
+            session.DeviceId, token);
+        if (consumed is null)
+            throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
+                "Station grant is not found.");
+        var associated = consumed.LicenseId + "\n" + consumed.DeviceId + "\n" +
+            consumed.ItemId + "\n" + consumed.GrantId;
+        try
+        {
+            var path = grants.Open(associated, consumed.Nonce, consumed.Ciphertext,
+                consumed.Tag);
+            if (!Path.IsPathRooted(path) || path.Contains("..", StringComparison.Ordinal) ||
+                !File.Exists(path))
+                throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
+                    "Station grant is not found.");
+            return path;
+        }
+        catch (CryptographicException)
+        {
+            throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
+                "Station grant is not found.");
+        }
     }
 
     public async Task<StationSession> Session(string bearer, CancellationToken token)

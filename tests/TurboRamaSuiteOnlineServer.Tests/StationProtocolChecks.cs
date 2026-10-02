@@ -50,5 +50,6 @@ internal static class StationProtocolChecks
             StationProtocol.Encode(server.ExportSubjectPublicKeyInfo()) !=
             signer.PublicKeySpkiBase64Url)
             throw new Exception("Station signed envelope mismatch.");
+        StationLibraryChecks.Run();
     }
 }

@@ -340,6 +340,61 @@ public sealed class PostgresStationStore(NpgsqlDataSource database)
                 row.IsDBNull(4) ? null : row.GetInt64(4)) : null;
     }
 
+    public async Task InsertGrantAsync(StationGrantRecord grant, int expiresInSeconds,
+        CancellationToken cancellationToken)
+    {
+        await using var command = database.CreateCommand("""
+            INSERT INTO suite.station_download_grants(grant_id,license_id,device_id,item_id,
+              key_version,nonce,ciphertext,tag,expires_at)
+            VALUES($1,$2,$3,$4,$5,$6,$7,$8,clock_timestamp()+make_interval(secs=>$9))
+            """);
+        command.Parameters.AddWithValue(grant.GrantId);
+        command.Parameters.AddWithValue(grant.LicenseId);
+        command.Parameters.AddWithValue(grant.DeviceId);
+        command.Parameters.AddWithValue(grant.ItemId);
+        command.Parameters.AddWithValue(grant.KeyVersion);
+        command.Parameters.AddWithValue(grant.Nonce);
+        command.Parameters.AddWithValue(grant.Ciphertext);
+        command.Parameters.AddWithValue(grant.Tag);
+        command.Parameters.AddWithValue(expiresInSeconds);
+        await command.ExecuteNonQueryAsync(cancellationToken);
+    }
+
+    public async Task<StationGrantRecord?> PeekGrantAsync(string grantId,
+        CancellationToken cancellationToken)
+    {
+        await using var command = database.CreateCommand("""
+            SELECT grant_id,license_id,device_id,item_id,key_version,nonce,ciphertext,tag
+            FROM suite.station_download_grants
+            WHERE grant_id=$1 AND consumed_at IS NULL AND expires_at>clock_timestamp()
+            """);
+        command.Parameters.AddWithValue(grantId);
+        await using var row = await command.ExecuteReaderAsync(cancellationToken);
+        return await row.ReadAsync(cancellationToken) ? ReadGrant(row) : null;
+    }
+
+    public async Task<StationGrantRecord?> ConsumeGrantAsync(string grantId,
+        string licenseId, string deviceId, CancellationToken cancellationToken)
+    {
+        await using var command = database.CreateCommand("""
+            UPDATE suite.station_download_grants
+            SET consumed_at=clock_timestamp()
+            WHERE grant_id=$1 AND license_id=$2 AND device_id=$3
+              AND consumed_at IS NULL AND expires_at>clock_timestamp()
+            RETURNING grant_id,license_id,device_id,item_id,key_version,nonce,ciphertext,tag
+            """);
+        command.Parameters.AddWithValue(grantId);
+        command.Parameters.AddWithValue(licenseId);
+        command.Parameters.AddWithValue(deviceId);
+        await using var row = await command.ExecuteReaderAsync(cancellationToken);
+        return await row.ReadAsync(cancellationToken) ? ReadGrant(row) : null;
+    }
+
+    private static StationGrantRecord ReadGrant(NpgsqlDataReader row) =>
+        new(row.GetString(0), row.GetString(1), row.GetString(2), row.GetString(3),
+            row.GetInt32(4), (byte[])row.GetValue(5), (byte[])row.GetValue(6),
+            (byte[])row.GetValue(7));
+
     private static void BindChallenge(NpgsqlCommand command, StationChallenge value)
     {
         command.Parameters.AddWithValue(value.ChallengeId);

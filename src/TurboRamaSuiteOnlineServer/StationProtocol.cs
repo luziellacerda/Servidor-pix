@@ -49,6 +49,11 @@ public static class StationProtocol
         catch (SuiteException) { return false; }
     }
 
+    public static bool IsSafeLibraryId(string value) =>
+        value.Length is >= 8 and <= 64 &&
+        value.All(c => char.IsAsciiLetterOrDigit(c) || c is '-' or '_') &&
+        !value.Contains("..", StringComparison.Ordinal);
+
     public static byte[] DeviceKey(string deviceId, string spkiText)
     {
         var spki = Decode(spkiText, 4096);
