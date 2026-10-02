@@ -13,7 +13,10 @@ Preencha depois das mudanças no APK. Não cole pepper, DSN, token, chave privad
 - senha não é pedida de novo com licença local válida: sim ou nao
 - `GET /v1/station/catalog` devolveu `catalog/v1`: sim ou nao
 - quantidade de itens na lista (sem nomes):
-- capas por `coverId` (bytes, sem URL): sim ou nao
+- capas por `coverId` (bytes, sem URL, teto 5 MiB): sim ou nao
+- gamelist sem `http`: sim ou nao
+- authorize/artifacts ausentes no log do login: sim ou nao
+- diff do APK só `classes8.dex` (fora META-INF): sim ou nao
 - authorize devolveu `grantId` sem URL: sim ou nao
 - artifacts entregou bytes sem `Location`: sim ou nao
 - segundo GET do mesmo grant: 404 sim ou nao

@@ -1,140 +1,115 @@
 # Handoff — aplicativo Turborama Station em produção
 
-Data: 02/10/2026. Destino: **APK / repositório do aplicativo Android**. Esta rodada **não mexe no servidor**. Catálogo, capas e download já estão abertos na `5192`.
+Data: 02/10/2026. Destino: **APK TESTE na máquina Windows**. Esta rodada **não mexe no servidor**. Catálogo, capas e download já estão abertos. Fecha o aplicativo numa implementação só.
 
-Base do servidor: `feat/station-library-grant-20261002` commit `b1159c9`. Binário da `5192`: `75c466c3f33d64d89229c70610f40b4bd781f5f8fece6f021259f7be8bcfa6d2`. `/ready/station` 200.
+Substitui o teto de capa de 2 MiB do `HANDOFF-APP-CATALOGO-STATION-20261002`: em produção a arte **revista** passa de 2 MiB. Use **5 MiB**.
 
-Telefone de referência: Samsung `RQCY30751WY`. Licença de teste `STA-D7AE45616B415B2C7550315C0392C5D8` (BOUND, um aparelho, nome `Teste Station`). Não emita senha. Não ative desta máquina. Não cole pepper, DSN, token, chave privada, device id, ponto de montagem nem URL de jogo.
+Base do servidor: `feat/station-library-grant-20261002` commit `b1159c9`. Binário da `5192`: `75c466c3f33d64d89229c70610f40b4bd781f5f8fece6f021259f7be8bcfa6d2`. `/ready/station` 200. Prova pública sem bearer: catálogo/capa 401, artifacts 404 sem `Location` (`sem-link-direto`).
 
-## 1. O que o servidor já faz (não refaça lá)
+Telefone: Samsung SM-A566E serial `RQCY30751WY`. Licença de teste `STA-D7AE45616B415B2C7550315C0392C5D8` (BOUND, um aparelho, nome `Teste Station`). Não emita senha. Não ative desta máquina. Não cole pepper, DSN, token, chave, device id, ponto de montagem nem URL de jogo.
 
-- Base pública: `https://app.lzgames.com.br/v1/station/`. Processo em `127.0.0.1:5192`. Borda Cloudflare, `cf-cache-status: DYNAMIC`, `cache-control: no-store`. Túnel `cloudflared` ativo.
-- Produto e aplicação: `TURBORAMA_STATION_ANDROID`. Prefixo dos domains: `TurboRamaStationAndroid/`.
-- keyId Station: `06b41b778041d81b5b86a115a031418e0c4b0b2bd24ec8b340e62eaa82fb5268`. Pin TLS SPKI SHA-256 de `app.lzgames.com.br`: `13f9dcbb7a9687c2f88ff73de5621cfab849d0ec02191dcdd1ee8a6275dacba7`.
-- Assinatura: RSA-PSS SHA-256, MGF1-SHA-256, salt 32, chave 2048. Envelope do servidor `{ keyId, payload, signature }` em Base64URL sem padding. Envelope do aparelho `{ payload, signature }`.
-- `deviceId` = Base64URL do SHA-256 da SPKI pública do Keystore. Copiar o APK não copia essa chave.
-- Desafio 60 s. Sessão 180 s. Sem heartbeat. Um aparelho ativo por licença.
-- Primeira senha da compra: 48 horas. Reemissão humana em TurboBox `/admin/station`: 30 minutos e mata a anterior. WhatsApp é do servidor. O app não envia WhatsApp.
-- `GET /me` com bearer devolve `profile/v1` com `displayName` (máx. 80) e `profileVersion`.
-- Índice de produção carregado: revisão 1, **1816** itens. Capas vêm da arte **revista** no host (o telefone só vê `coverId`). Teto de capa: 5 MiB.
-- Contagem por `platform`, sem nomes: `snes` 644, `snesbr` 191, `megadrive` 887, `megadrivebr` 94.
-- Sem sessão: catálogo, capas e `/me` → 401 `STATION_SESSION_INVALID`. Authorize com JSON válido sem bearer → 401. Artifacts sem concessão → 404 `STATION_GRANT_NOT_FOUND`, sem `Location`. `HEAD` artifacts → 405.
+Pin TLS, key id e SPKI continuam os de `StationConfig.java`. Não copie esses valores para outro arquivo.
 
-O telefone **nunca** vê caminho de disco, pasta `revista`, pasta `images` nem URL de arquivo.
+## 1. O que o servidor já entrega
 
-## 2. Contrato das rotas (produção)
+- Base `https://app.lzgames.com.br/v1/station/`. Produto `TURBORAMA_STATION_ANDROID`. Domains `TurboRamaStationAndroid/`.
+- Sessão 180 s, só memória. Desafio 60 s. Sem heartbeat. Um aparelho por licença. Keystore no telefone; copiar o APK não copia a chave.
+- `GET /catalog` com Bearer → envelope `catalog/v1`: `revision`, `items[]` com `itemId`, `name`, `platform`, `revision`, `coverId`. Sem pasta, sem URL. Hoje revisão 1, **1816** itens (`snes` 644, `snesbr` 191, `megadrive` 887, `megadrivebr` 94).
+- `GET /covers/{coverId}` com Bearer → bytes de imagem, até **5 MiB**, `cache-control: no-store`. Tipos: `image/png`, `image/jpeg`, `image/webp`, `image/gif`. A capa não libera o jogo.
+- `POST /downloads/authorize` com Bearer e `itemId` no JSON de identidade, domínio `request-download`. Resposta `download-grant/v1`: `grantId`, `expiresInSeconds=60`. Sem URL.
+- `GET /artifacts/{grantId}` com o mesmo Bearer → bytes `application/octet-stream`, um uso. Sem `Location`. 302/307 é falha. Segundo uso: 404 `STATION_GRANT_NOT_FOUND`.
+- Sem sessão: catálogo e capa 401. Artifacts inexistente 404 sem redirect.
+- `itemId` / `coverId`: 8–64 `[A-Za-z0-9_-]`, sem `..`. Hoje 64 hex.
 
-Host único: `https://app.lzgames.com.br`. Só `/v1/station/`. Sem `/v1/suite/`. Sem Sambox. Sem IP. Sem HTTP claro. Corpo JSON máximo 8 k. Sem cookie. Sem query de caminho.
+O leitor atual de `StationClient` recusa corpo acima de 8192 bytes e trata 503 como sucesso só em `/me`. **Não use esse leitor** para lista, capa ou jogo.
 
-Toda resposta 200 de negócio JSON vem no envelope assinado. Verifique `keyId`, depois o `payload` UTF-8 exato, depois RSA-PSS. `schemaVersion` = 1. `productId` e `applicationId` = `TURBORAMA_STATION_ANDROID`. Campos JSON em camelCase.
+## 2. O que o app faz nesta implementação
 
-| Rota | Auth | Pedido | Resposta | Status em produção |
-|---|---|---|---|---|
-| `POST /activations/challenge` | não | `…/request-activation-challenge/v1` | `…/activation-challenge/v1` | aberto |
-| `POST /activations/complete` | envelope PSS | `…/activate/v1` | `…/activated/v1` | aberto, uma vez por aparelho |
-| `POST /challenges` | não | `…/request-session-challenge/v1` | `…/session-challenge/v1` | aberto |
-| `POST /sessions` | envelope PSS | `…/open-session/v1` | `…/session/v1` (`accessToken`, 180 s) | aberto; bearer só na memória |
-| `GET /me` | Bearer | — | `…/profile/v1` | aberto |
-| `GET /catalog` | Bearer | — | `…/catalog/v1` | **aberto** |
-| `GET /covers/{coverId}` | Bearer | — | bytes (`image/png`, `image/jpeg`, `image/webp` ou `image/gif`), `cache-control: no-store` | **aberto**, até 5 MiB |
-| `POST /downloads/authorize` | Bearer + JSON | `…/request-download/v1` | `…/download-grant/v1` | **aberto** |
-| `GET /artifacts/{grantId}` | Bearer | — | bytes `application/octet-stream`, um uso, sem `Location` | **aberto**, timeout 900 s |
+Depois que a sessão abre, o app pede a lista e as capas que faltam. 503, rede ou assinatura inválida: biblioteca abre com a última lista salva. O login **não** espera o download do jogo.
 
-`itemId` e `coverId`: 8–64 caracteres `[A-Za-z0-9_-]`. Hoje são 64 hex. Não coloque `..` no identificador.
+O arquivo do jogo só é pedido quando a pessoa inicia um jogo cujo arquivo local ainda não existe. A resposta são os bytes, uma vez. O app grava o arquivo no celular e **não grava endereço**.
 
-Códigos de UI: `STATION_ACTIVATION_INVALID`, `STATION_CHALLENGE_INVALID`, `STATION_CHALLENGE_MISMATCH`, `STATION_DEVICE_DENIED`, `STATION_SESSION_INVALID`, `STATION_PROFILE_NOT_READY`, `STATION_CATALOG_NOT_READY`, `STATION_DOWNLOAD_NOT_READY`, `STATION_ITEM_NOT_FOUND`, `STATION_COVER_NOT_FOUND`, `STATION_GRANT_NOT_FOUND`, `STATION_RATE_LIMITED` (30 pedidos por IP por rota por minuto).
+## 3. Contrato no cliente
 
-## 3. Nome do consumidor
+`HttpURLConnection.setInstanceFollowRedirects(false)` em todas. Bearer só no cabeçalho. Não grave bearer em disco. Não escreva token, nome da pessoa nem caminho de servidor no log. Pode registrar status HTTP e quantidade de itens.
 
-1. Em toda abertura da biblioteca (ícone, volta ao app, depois do login): se o token de 180 s expirou, abra sessão; chame `GET /v1/station/me`.
-2. Título: `Bem-vindo, {displayName}` quando o nome vier. Sem nome: `Bem-vindo`. Aposente o texto fixo `BEM-VINDO DE VOLTA`.
-3. 200 `profile/v1`: grave `displayName` e `profileVersion` no armazenamento privado. Não grave o bearer.
-4. 503 `STATION_PROFILE_NOT_READY`: mantenha o último nome. Não zere.
-5. 401: recrie sessão e tente `/me` de novo. Sem licença local, volte à senha.
-6. Não peça senha se `station-license-id.txt` existe e a sessão abrir.
+Pedido com o mesmo JSON de identidade da sessão. Domínios novos (não mude os de ativação/sessão):
 
-## 4. Catálogo — agora é 200 `catalog/v1`
+- lista: `TurboRamaStationAndroid/catalog/v1`
+- pedido de jogo: `TurboRamaStationAndroid/request-download/v1`
+- permissão: `TurboRamaStationAndroid/download-grant/v1`
 
-Depois de `/me`, `GET /v1/station/catalog` com o mesmo bearer.
+JSON de authorize (camelCase): `schemaVersion`, `domain` (`…/request-download/v1`), `productId`, `applicationId`, `deviceId`, `clientVersion`, `deviceManufacturer`, `deviceModel`, `androidSdk`, `itemId`.
 
-Payload assinado (além da identidade):
+Limites:
 
-- `revision` — revisão do índice (hoje `1`)
-- `items[]` — `itemId`, `name`, `platform`, `revision`, `coverId`
+- Lista: até 2 MiB de envelope, timeout de leitura 60 s. 503 devolve vazio e **não apaga** a lista salva. Só substitui a lista com assinatura válida e domínio `catalog/v1`.
+- Capa: grave direto em arquivo, limite **5 MiB**, timeout 20 s. Tipo fora do contrato ou tamanho demais: apague o parcial.
+- Jogo: arquivo temporário e só troque o nome no fim. Exija `Content-Length` e confira os bytes. Timeout longo (até 900 s no nginx). Se vier `Location`, 3xx ou bearer ausente, apague o parcial. Grant só na memória; comece em 60 s.
 
-Não há URL, host de capa nem caminho.
+Não baixe as 1816 capas no login. Só as que faltam, chave `coverId` + revisão do item.
 
-`platform` nesta carga: `snes`, `snesbr`, `megadrive`, `megadrivebr`. Agrupe a UI por esses tokens. Jogo novo no servidor aparece no próximo login, sem atualizar o APK.
+## 4. Arquivos Java
 
-Comportamento:
+Fonte: `E:\ESTUDO APK\work\native-carousel\implementation\station-security-20261001\java\org\emulationstation\frontend\auth\`.
 
-1. 200: substitua a lista local se `revision` mudou. Persista a lista no armazenamento privado (sem URL).
-2. 503 `STATION_CATALOG_NOT_READY` ou rede: abra com a **última lista salva**. Não bloqueie a biblioteca.
-3. 401: nova sessão e tente de novo.
+- `StationProtocol.java`: acrescente os três domínios. Não mude ativação e sessão.
+- `StationProtocolPath.java`: acrescente catálogo, capa, authorize e artefato.
+- `StationClient.java`: métodos da lista, da capa, da permissão e do arquivo, com os limites da seção 3.
+- `StationAuth.java`: no `open` e no `pullName`, depois do perfil, atualize a lista. Falha nisso não muda o `callback`. `open` continua `ok`. `pullName` continua o nome salvo se a sessão falhar.
+- Classe nova `StationLibrary`: cache e download sob demanda.
 
-Não baixe as 1816 capas de uma vez. Capas só das que faltam, chave `itemId` + `revision` do item (ou `coverId` + revisão).
+Não edite o campo de senha (`LengthFilter` 128, hint `Digite sua senha`, `inputType` 0x81). Não mude `LoginActivity` além do que já chama `StationAuth`. Não copie `LoginActivity.smali` de outro dex. Nome na biblioteca continua de `no_backup/station-display-name.txt` pelo hook nativo. Não altere `libturbo_carousel.so`.
 
-## 5. Capas — `GET /covers/{coverId}`
+Pacote `org.turboramastation.frontend`. Classes Java em `org.emulationstation.frontend`.
 
-A arte que o XML chamava de imagens, no TurboStation, é a **revista**. O app pede só o `coverId` do catálogo.
+Título visível: `Bem-vindo, {displayName}`. Aposente `BEM-VINDO DE VOLTA`. 503 em `/me` não zera o último nome. Não peça senha se `station-license-id.txt` existe e a sessão abrir.
 
-1. `GET /v1/station/covers/{coverId}` com Bearer.
-2. 200: bytes da imagem, `Content-Type` de imagem, `cache-control: no-store`. Grave no cache privado do app. Não publique em galeria.
-3. 404 `STATION_COVER_NOT_FOUND`: placeholder. Não autorize download por causa da capa.
-4. Capa não autoriza o arquivo do jogo.
-5. Tamanho até 5 MiB. Não use WebView. Não siga redirect.
+## 5. Cache no celular
 
-## 6. Download — concessão de um uso
+Tudo em `context.getNoBackupFilesDir()`:
 
-1. `POST /v1/station/downloads/authorize` com Bearer e JSON:
+- `station-catalog.json`: só os itens verificados. Sem envelope, sem URL.
+- `station-covers/<coverId>.<ext>`: bytes da capa.
+- `station-games/<itemId>.part` e, no fim, `station-games/<itemId>`: bytes do jogo.
+- `station-items.tsv`: `itemId`, `platform`, `name`, caminho local relativo. Sem URL.
 
-```json
-{
-  "schemaVersion": 1,
-  "domain": "TurboRamaStationAndroid/request-download/v1",
-  "productId": "TURBORAMA_STATION_ANDROID",
-  "applicationId": "TURBORAMA_STATION_ANDROID",
-  "deviceId": "<deviceId deste aparelho>",
-  "clientVersion": "<versão do APK>",
-  "deviceManufacturer": "<fabricante>",
-  "deviceModel": "<modelo>",
-  "androidSdk": 33,
-  "itemId": "<itemId do catálogo>"
-}
-```
+Não apague ROM, save, gamelist ou capa em `/storage/emulated/0/EmulationStation`. Não dê `pm clear` e não desinstale.
 
-2. 200 `download-grant/v1`: `itemId`, `grantId`, `expiresInSeconds` (60). Sem URL. O `grantId` fica **só na memória**. Comece o download dentro desses 60 s.
-3. `GET /v1/station/artifacts/{grantId}` **uma vez**, com o mesmo Bearer, para arquivo temporário privado. `Content-Type: application/octet-stream`. Sem `Location`, sem 302, sem 307. Não siga redirect.
-4. Segundo GET, outro aparelho, grant vencido ou Bearer errado: 404 `STATION_GRANT_NOT_FOUND`. Isso invalida link clonado. Cloudflare não consome o uso; a `5192` consome.
-5. Proibido: guardar URL, gravar `grantId` em disco/log/crash, mandar grant no WhatsApp, copiar Location para a galeria, R2 público.
-6. APK copiado em outro telefone: Keystore diferente → sem sessão → sem grant → sem arquivo.
-7. Super Nintendo e Mega Drive são arquivos pequenos. A origem mede cerca de 30 Mbps de subida; um ROM de 4 MB leva cerca de 1 s por aparelho. Mostre progresso. Não abra vários artifacts em paralelo no mesmo aparelho.
+A lista visível continua a gamelist local. Para cada item do catálogo:
 
-## 7. Cloudflare e ataque
+- Ache o jogo local pelo `name` ou pelo nome do arquivo em `<path>`.
+- Se achar, e a imagem local for caminho relativo dentro de `EmulationStation`, substitua só os bytes dessa imagem pela capa nova. Não troque o `<path>` por endereço.
+- Se não achar, acrescente um `<game>` com `<name>`, imagem local e `<path>` `./station/<itemId>`. O arquivo real fica em `station-games/<itemId>`. O `<path>` não é URL.
+- Não apague jogo local que o catálogo não citou.
 
-- Fale só com `https://app.lzgames.com.br`. Pin SPKI. Recuse certificado que não bata.
-- Não use WebView para a API. A rota Station não pode ganhar JS Challenge / CAPTCHA / Access (quebra o APK nativo).
-- 429: espere; não martelar `activations/*`.
-- Sem cookie. Sem token Suite. Sem host de conteúdo Windows.
-- O app nunca mostra `artifacts/{grantId}` na UI.
+Na hora de jogar, o ponto que já abre o arquivo do `<path>` consulta `station-items.tsv`. Se o arquivo local não existir e houver `itemId`, baixa e só então abre. Não crie outra tela. Não chame authorize nem artefato no login, no `openCommercial` nem no `pullName`.
 
-## 8. O que não fazer
+## 6. Empacotar
 
-- Não altere 5190, 5191, 5192, PIX, Nginx, Cloudflare, WhatsApp, site, SPA `/admin`.
-- Não peça para o servidor “abrir” catálogo: já está aberto.
-- Não descubra disco por tamanho. Não peça ponto de montagem. Não misture Sambox.
-- Não desinstale o APK de teste só para limpar. Não troque o certificado de assinatura.
-- Não misture `TurboRamaSuite/` com Station.
-- Não imprima senha, bearer, nonce, grant, device id ou SPKI privada no retorno.
+O script `package_station_login.py` hoje recusa em `classes8.dex` as strings `/v1/station/catalog`, `/v1/station/downloads` e `/v1/station/artifacts`. Tire essa recusa. No lugar, recuse `miami`, `sambox`, `?e=` e `?s=`. A base `https://app.lzgames.com.br` continua obrigatória. Continuam obrigatórias: `stationLogin`, `openCommercial`, `TurboRamaStationAndroid/profile/v1`, `station-license-id.txt`.
 
-## 9. Ordem no APK
+Compile o Java para o dex da mesma forma da leva do nome. `apktool` grava `classes8`. O script enxerta só esse dex na cópia do APK grande. `zipalign -f -P 16 4`. Assine com o keystore de debug já usado, alinhamento preservado. Não use APK debuggable. Não troque `classes24`. O SHA-256 do Cemu estável `7ce3fab3d2d09c3bddfd002d0b9734e42aa5e27b102f36bb56e77b484e36562b` tem de continuar igual. Os três PUP de PS Vita da base são copiados, não acrescentados.
 
-1. Sessão em toda abertura + `GET /me` + título `Bem-vindo, {nome}`.
-2. Cache do perfil; 503 não zera o nome.
-3. `GET /catalog` → lista `catalog/v1`; 503 usa lista local.
-4. Capas por `coverId`, cache por revisão, sem baixar tudo no login.
-5. Authorize + artifacts de um uso, grant só na memória, arquivo só no armazenamento privado.
+Instale com `adb install -r --no-incremental` no Samsung `RQCY30751WY`. Não apague os dados. Campo vazio, com `station-license-id.txt` presente, entra na sessão Station. Outro texto continua na senha local. Não digite de novo o código de ativação já usado. Não emita outro código.
 
-## 10. Retorno
+## 7. Pronto quando
 
-Preencha `RETORNO-APP-PRODUCAO-STATION-20261002.md` no repositório do app (ou nesta branch se o trabalho do APK for registrado aqui) e faça push. Sem segredo, sem senha, sem device id, sem nome de jogo, sem URL.
+- Login vazio abre a biblioteca.
+- Boas-vindas `Bem-vindo, Teste Station`.
+- Hint da senha `Digite sua senha`.
+- Com sessão, o log mostra lista 200 e quantidade (sem nomes). 503/rede abre a lista salva.
+- Capas novas aparecem nos jogos que baterem pelo nome, sem URL na gamelist.
+- Jogo Station ausente no disco só baixa ao iniciar, por grant de um uso, sem `Location`.
+- `classes8` contém as quatro rotas e não contém `miami`, `sambox`, `?e=` nem `?s=`.
+- Nenhuma gamelist com `http`. Nenhum cache com URL.
+- Diff do APK, fora de `META-INF`, é só `classes8.dex`.
+- Authorize e artefato não aparecem no log do login.
+
+## 8. Fora desta leva
+
+Não reinicie `5192`, `5190`, `5191` nem PIX. Não baixe lista de outro host. Não misture HMAC Sambox com Station. Não altere motor de emulador, vídeo, Cemu, chave Wii U nem o app 1.0. Não ponha pepper, DSN, chave privada, token, device id nem ponto de montagem no APK nem no retorno.
+
+## 9. Retorno
+
+Preencha `RETORNO-APP-PRODUCAO-STATION-20261002.md` no repositório do app (ou nesta branch) e faça push. Sem segredo, sem senha, sem device id, sem nome de jogo, sem URL.
