@@ -2,7 +2,7 @@
 
 Esta pasta é o ponto de partida para uma ferramenta ou pessoa que vá adicionar o produto TurboramaStation Android ao servidor. Ela explica o que foi observado em 30/09/2026, quais serviços já atendem clientes e como preparar a integração preservando PIX, Suite Windows, EmulationStation Windows, site e conteúdo. É um guia versionado de trabalho; não é um pacote de implantação.
 
-Tarefa atual: [HANDOFF-LICENCA-TESTE-E-O-QUE-FALTA-20261001.md](HANDOFF-LICENCA-TESTE-E-O-QUE-FALTA-20261001.md). Preencha [RETORNO-LICENCA-TESTE-20261001.md](RETORNO-LICENCA-TESTE-20261001.md).
+Tarefa atual: [HANDOFF-APP-IMPLEMENTAR-STATION-20261002.md](HANDOFF-APP-IMPLEMENTAR-STATION-20261002.md) (APK). Preencha [RETORNO-APP-IMPLEMENTAR-STATION-20261002.md](RETORNO-APP-IMPLEMENTAR-STATION-20261002.md). A análise de segurança e Cloudflare do servidor está em [RETORNO-SEGURANCA-JOGOS-STATION-20261002.md](RETORNO-SEGURANCA-JOGOS-STATION-20261002.md).
 
 A porta `5192` já foi executada. O retorno dessa execução está em [RETORNO-EXECUCAO-5192-20261001.md](RETORNO-EXECUCAO-5192-20261001.md).
 

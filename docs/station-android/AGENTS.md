@@ -1,6 +1,6 @@
 # Instruções para integrar a TurboramaStation Android neste servidor
 
-Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-SEGURANCA-JOGOS-STATION-20261002.md`. Analise a segurança para o aplicativo não ser clonado e os jogos não saírem por link. Não implemente ainda. Não abra catálogo nem download. Não reinicie serviço. Grave o retorno em `RETORNO-SEGURANCA-JOGOS-STATION-20261002.md` e faça push na hora. Pepper, DSN, token admin, chave privada, ponto de montagem e URL de jogo continuam de fora.
+A tarefa atual é `HANDOFF-APP-IMPLEMENTAR-STATION-20261002.md`: implementar no **aplicativo Android** o nome do consumidor, a abertura da biblioteca sem senha repetida, o cache de catálogo/capas e o cliente de concessão de um uso. Não altere o servidor. Não abra catálogo nem download na `5192`. Não reinicie `5190`, `5192`, admin nem PIX. Grave o retorno em `RETORNO-APP-IMPLEMENTAR-STATION-20261002.md`. Pepper, DSN, token, chave privada, senha, device id, ponto de montagem e URL de jogo continuam de fora.
 
 ## Limites do trabalho
 
