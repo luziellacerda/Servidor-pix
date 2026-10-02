@@ -1,6 +1,6 @@
 # Instruções para integrar a TurboramaStation Android neste servidor
 
-Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-ROTAS-XML-STATION-20261002.md`. A lista completa dos jogos já está em `cruzamento-nomes-xml.tsv`: rota, plataforma, nome, arquivo, caminho relativo, xml, id e md5. O cruzamento futuro usa só essa lista contra os arquivos que estiverem no M.2. Se o índice do handoff anterior ainda não existir, crie-o antes, com as mesmas regras, e preencha também `RETORNO-INDICE-BIBLIOTECA-STATION-20261002.md`. Depois conte os itens por rota, sem repetir nome, sem caminho de disco e sem URL. Grave `RETORNO-ROTAS-XML-STATION-20261002.md` e faça push. Não renomeie pasta e não reinicie `5190`, `5191` nem PIX.
+Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-SEM-LINK-DIRETO-STATION-20261002.md`. O código da `5192` já entrega catálogo, capa e jogo sem URL direta. Não reescreva esse código. Não crie o índice. Confirme, sem sessão, que as rotas não devolvem URL nem `Location`. Grave `RETORNO-SEM-LINK-DIRETO-STATION-20261002.md` e faça push. Não reinicie `5192`, `5190`, `5191` nem PIX.
 
 ## Limites do trabalho
 
