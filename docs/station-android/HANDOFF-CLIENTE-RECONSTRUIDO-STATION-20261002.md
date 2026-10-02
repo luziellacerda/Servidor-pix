@@ -84,3 +84,13 @@ Não usar `/ready/station` 200 como prova de que catálogo, capa e jogo funciona
 - Continuação do aplicativo: `HANDOFF-RECONSTRUCAO-TURBOSTATIONS.md`.
 
 Foram concluídas 123 verificações locais e a geração do módulo Android. Ainda faltam a integração com a interface nativa, a instalação orientada pelos metadados confirmados e a verificação autenticada no aparelho. Este handoff não declara o APK como estável.
+
+## Retorno publicado do aplicativo
+
+A integração do login nos fontes foi publicada em TurboElden, commit `0840028854034b03e5a1d3f2a162d66225932a6b`, ramo `station-reconstrucao-20261002`.
+
+[Fontes, testes e documentação da integração](https://github.com/luziellacerda/TurboElden/tree/0840028854034b03e5a1d3f2a162d66225932a6b/versions/station-reconstruction-20261002).
+
+O layout de login atual passou a usar StationCoordinator para sessão, perfil e catálogo, com capas por itemId. A senha local foi retirada desses fontes. O controlador invalida a autorização quando o servidor nega a licença, reaproveita a licença salva e o cache verificável, e cancela consultas quando a tela de login fica escondida.
+
+A etapa passou em **142 verificações locais**, com compilação Android e geração de DEX. Os exemplos são testes sintéticos, não credenciais de produção. A ligação ao catálogo nativo, o instalador orientado pelo descritor e o APK completo continuam pendentes; nenhum APK desta reconstrução foi instalado ou promovido a estável. A proposta de metadados acima permanece aguardando confirmação/implementação do servidor.
