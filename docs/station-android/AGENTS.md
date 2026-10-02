@@ -1,6 +1,6 @@
 # Instruções para integrar a TurboramaStation Android neste servidor
 
-Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-IMPLEMENTAR-SEGURANCA-JOGOS-STATION-20261002.md`. Implemente o plano do retorno `1f9506a`. Catálogo e capas só abrem se a resposta não tiver caminho nem URL. Concessão Station é de um uso e a entrega é em bytes, sem redirect. Não toque em `5190`, `5191` nem PIX. Grave `RETORNO-IMPLEMENTAR-SEGURANCA-JOGOS-STATION-20261002.md` e faça push. Pepper, DSN, token, chave, ponto de montagem e URL de jogo ficam de fora.
+Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-INDICE-BIBLIOTECA-STATION-20261002.md`. O código de catálogo e concessão já está na `5192`. Falta o índice da biblioteca no M.2 de 500 GB. Crie esse arquivo no caminho já configurado, sem colocar caminho nem nome de jogo no Git ou no retorno. Reinicie só a `5192` se o arquivo for válido. Grave `RETORNO-INDICE-BIBLIOTECA-STATION-20261002.md` e faça push.
 
 ## Limites do trabalho
 
