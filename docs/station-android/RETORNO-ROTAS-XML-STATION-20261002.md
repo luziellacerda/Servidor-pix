@@ -1,0 +1,61 @@
+# Retorno — rotas XML da biblioteca Station
+
+Preencha e faça push. Sem pepper, DSN, token, chave, senha, device id, ponto de montagem, caminho, nome de jogo, nome de pasta fora da tabela ou URL.
+
+## Resultado
+
+- parou porque:
+- índice já existia: sim ou nao
+- quantidade de itens, sem nomes:
+- quantidade de rotas da tabela com pelo menos um item:
+- quantidade de itens com platform fora da tabela, sem nome da pasta:
+- rota=3ds itens=
+- rota=psx itens=
+- rota=switch itens=
+- rota=arcade itens=
+- rota=atari2600 itens=
+- rota=atari7800 itens=
+- rota=atomiswave itens=
+- rota=colecovision itens=
+- rota=cps1 itens=
+- rota=cps2 itens=
+- rota=cps3 itens=
+- rota=dreamcast itens=
+- rota=fds itens=
+- rota=gameandwatch itens=
+- rota=gamegear itens=
+- rota=gb itens=
+- rota=gba itens=
+- rota=gbc itens=
+- rota=jaguar itens=
+- rota=mame itens=
+- rota=mastersystem itens=
+- rota=megadrive itens=
+- rota=megadrivebr itens=
+- rota=model2 itens=
+- rota=n64 itens=
+- rota=n64br itens=
+- rota=nds itens=
+- rota=neogeo itens=
+- rota=neogeocd itens=
+- rota=nes itens=
+- rota=o2em itens=
+- rota=pcengine itens=
+- rota=pcenginecd itens=
+- rota=sega32x itens=
+- rota=snes itens=
+- rota=snesbr itens=
+- rota=sufami itens=
+- rota=supergrafx itens=
+- `5192` saudável: sim ou nao
+- hash do binário da `5192`:
+- `5192` reiniciada nesta rodada: sim ou nao
+- `5190` reiniciada: nao
+- `5191` reiniciada: nao
+- PIX reiniciado: nao
+- índice commitado no Git: nao
+- nome de jogo no Git ou no retorno: nao
+- senha emitida: nao
+- ativação feita desta máquina: nao
+- WhatsApp enviado: nao
+- painel Cloudflare editado: nao

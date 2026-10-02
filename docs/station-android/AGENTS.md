@@ -1,6 +1,6 @@
 # Instruções para integrar a TurboramaStation Android neste servidor
 
-Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-INDICE-BIBLIOTECA-STATION-20261002.md`. O código de catálogo e concessão já está na `5192`. Falta o índice da biblioteca no M.2 de 500 GB. Crie esse arquivo no caminho já configurado, sem colocar caminho nem nome de jogo no Git ou no retorno. Reinicie só a `5192` se o arquivo for válido. Grave `RETORNO-INDICE-BIBLIOTECA-STATION-20261002.md` e faça push.
+Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-ROTAS-XML-STATION-20261002.md`. Se o índice do handoff anterior ainda não existir, crie-o antes, com as mesmas regras, e preencha também `RETORNO-INDICE-BIBLIOTECA-STATION-20261002.md`. Depois conte os itens por rota da lista conhecida, sem nome de jogo, sem caminho e sem URL. Grave `RETORNO-ROTAS-XML-STATION-20261002.md` e faça push. Não renomeie pasta e não reinicie `5190`, `5191` nem PIX.
 
 ## Limites do trabalho
 
