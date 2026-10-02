@@ -5,7 +5,7 @@ Preencha e faça push nesta branch. Não cole pepper, DSN, token, chave privada,
 ## Medição
 
 - parou porque:
-- terceiro disco, diferente da raiz e de `/mnt/DADOS`: sim ou nao
+- M.2 de cerca de 500 GB, diferente da raiz e de `/mnt/DADOS`: sim ou nao
 - esse disco está montado: sim ou nao
 - algum HTTP público expõe esse disco: sim ou nao
 - se expõe, só o nome do server/location, sem alias e sem caminho:
@@ -20,7 +20,7 @@ Preencha e faça push nesta branch. Não cole pepper, DSN, token, chave privada,
 
 Não execute.
 
-- resolução de `ItemId` no terceiro HD:
+- resolução de `ItemId` no M.2 de 500 GB:
 - concessão curta, um uso, endereço cifrado até a entrega:
 - rotas que permanecem fechadas:
 - por que um APK copiado não baixa jogo:
