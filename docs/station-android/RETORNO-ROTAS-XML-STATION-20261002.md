@@ -4,52 +4,52 @@ Preencha e faça push. A lista completa já está em `cruzamento-nomes-xml.tsv`.
 
 ## Resultado
 
-- parou porque:
-- índice já existia: sim ou nao
-- quantidade de itens, sem nomes:
-- quantidade de rotas da tabela com pelo menos um item:
-- quantidade de itens com platform fora da tabela, sem nome da pasta:
-- rota=3ds itens=
-- rota=psx itens=
-- rota=switch itens=
-- rota=arcade itens=
-- rota=atari2600 itens=
-- rota=atari7800 itens=
-- rota=atomiswave itens=
-- rota=colecovision itens=
-- rota=cps1 itens=
-- rota=cps2 itens=
-- rota=cps3 itens=
-- rota=dreamcast itens=
-- rota=fds itens=
-- rota=gameandwatch itens=
-- rota=gamegear itens=
-- rota=gb itens=
-- rota=gba itens=
-- rota=gbc itens=
-- rota=jaguar itens=
-- rota=mame itens=
-- rota=mastersystem itens=
-- rota=megadrive itens=
-- rota=megadrivebr itens=
-- rota=model2 itens=
-- rota=n64 itens=
-- rota=n64br itens=
-- rota=nds itens=
-- rota=neogeo itens=
-- rota=neogeocd itens=
-- rota=nes itens=
-- rota=o2em itens=
-- rota=pcengine itens=
-- rota=pcenginecd itens=
-- rota=sega32x itens=
-- rota=snes itens=
-- rota=snesbr itens=
-- rota=sufami itens=
-- rota=supergrafx itens=
-- `5192` saudável: sim ou nao
-- hash do binário da `5192`:
-- `5192` reiniciada nesta rodada: sim ou nao
+- parou porque: indice-ausente
+- índice já existia: nao
+- quantidade de itens, sem nomes: 0
+- quantidade de rotas da tabela com pelo menos um item: 0
+- quantidade de itens com platform fora da tabela, sem nome da pasta: 0
+- rota=3ds itens=0
+- rota=psx itens=0
+- rota=switch itens=0
+- rota=arcade itens=0
+- rota=atari2600 itens=0
+- rota=atari7800 itens=0
+- rota=atomiswave itens=0
+- rota=colecovision itens=0
+- rota=cps1 itens=0
+- rota=cps2 itens=0
+- rota=cps3 itens=0
+- rota=dreamcast itens=0
+- rota=fds itens=0
+- rota=gameandwatch itens=0
+- rota=gamegear itens=0
+- rota=gb itens=0
+- rota=gba itens=0
+- rota=gbc itens=0
+- rota=jaguar itens=0
+- rota=mame itens=0
+- rota=mastersystem itens=0
+- rota=megadrive itens=0
+- rota=megadrivebr itens=0
+- rota=model2 itens=0
+- rota=n64 itens=0
+- rota=n64br itens=0
+- rota=nds itens=0
+- rota=neogeo itens=0
+- rota=neogeocd itens=0
+- rota=nes itens=0
+- rota=o2em itens=0
+- rota=pcengine itens=0
+- rota=pcenginecd itens=0
+- rota=sega32x itens=0
+- rota=snes itens=0
+- rota=snesbr itens=0
+- rota=sufami itens=0
+- rota=supergrafx itens=0
+- `5192` saudável: sim
+- hash do binário da `5192`: `386deb36a62beb5c111688e3bff1f46b77f196dc82702b9905d8bf0d393ef7d6`
+- `5192` reiniciada nesta rodada: nao
 - `5190` reiniciada: nao
 - `5191` reiniciada: nao
 - PIX reiniciado: nao
@@ -61,3 +61,7 @@ Preencha e faça push. A lista completa já está em `cruzamento-nomes-xml.tsv`.
 - ativação feita desta máquina: nao
 - WhatsApp enviado: nao
 - painel Cloudflare editado: nao
+
+## Observação
+
+O índice Station não existe neste host. Sem índice a contagem por rota não foi inventada a partir do XML: cada rota da tabela ficou em 0 itens no servidor. O cruzamento `rota`+`arquivo` contra o M.2 fica para quando houver arquivos. Sem sessão, `GET /v1/station/catalog` continua 401 `STATION_SESSION_INVALID`. PID da `5192` 223970. `5190` PID 2943, gateway `5191` PID 2948, PIX PID 2940.
