@@ -12,7 +12,7 @@ public sealed record StationCoverBlob(byte[] Bytes, string ContentType);
 public sealed class StationLibrary
 {
     public const int MaximumItems = 4096;
-    public const int MaximumCoverBytes = 2 * 1024 * 1024;
+    public const int MaximumCoverBytes = 5 * 1024 * 1024;
     public long Revision { get; }
     public IReadOnlyList<StationCatalogEntry> Catalog { get; }
 
@@ -122,8 +122,8 @@ public sealed class StationLibrary
             throw new InvalidOperationException("Station library index is invalid.");
         var value = field.GetString() ?? "";
         if (value.Length is 0 or > 1024 || !Path.IsPathRooted(value) ||
-            value.Contains("..", StringComparison.Ordinal) ||
-            value.Contains('\0') || value.Contains('\n'))
+            value.Contains('\0') || value.Contains('\n') ||
+            value.Split('/', '\\').Any(part => part == ".."))
             throw new InvalidOperationException("Station library index is invalid.");
         return value;
     }
