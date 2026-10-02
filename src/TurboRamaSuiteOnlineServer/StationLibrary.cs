@@ -288,13 +288,16 @@ public sealed class StationLibrary
             var count = 0;
             long expanded = 0;
             var launchFound = false;
+            var names = new HashSet<string>(StringComparer.Ordinal);
             foreach (var entry in archive.Entries)
             {
                 var name = entry.FullName;
                 var directory = name.EndsWith('/');
                 var segments = (directory ? name[..^1] : name).Split('/');
                 if (name.StartsWith('/') || name.Contains('\\') || name.Contains(':') ||
-                    segments.Any(part => part is "" or "." or ".."))
+                    segments.Any(part => part is "" or "." or "..") ||
+                    (entry.ExternalAttributes >> 16 & 0xF000) == 0xA000 ||
+                    !names.Add(name))
                     throw new InvalidDataException();
                 if (directory) continue;
                 count++;

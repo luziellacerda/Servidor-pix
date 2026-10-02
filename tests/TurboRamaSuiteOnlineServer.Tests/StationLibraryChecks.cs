@@ -111,6 +111,15 @@ internal static class StationLibraryChecks
             WriteZipIndex(zipHash, "disc/missing.cue");
             try { _ = StationLibrary.TryLoad(index); throw new Exception("Missing launch path was accepted."); }
             catch (InvalidOperationException error) when (error.Message == "Station ZIP metadata is invalid.") { }
+            using (var zip = ZipFile.Open(archivePath, ZipArchiveMode.Update))
+            {
+                using (var duplicate = zip.CreateEntry("disc/game.cue").Open()) duplicate.WriteByte(2);
+            }
+            var duplicateHash = Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(archivePath)))
+                .ToLowerInvariant();
+            WriteZipIndex(duplicateHash, "disc/game.cue");
+            try { _ = StationLibrary.TryLoad(index); throw new Exception("Duplicate ZIP member was accepted."); }
+            catch (InvalidOperationException error) when (error.Message == "Station ZIP metadata is invalid.") { }
             File.WriteAllText(index, JsonSerializer.Serialize(new
             {
                 revision = 5,
