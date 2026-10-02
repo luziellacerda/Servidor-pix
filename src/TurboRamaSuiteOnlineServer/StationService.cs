@@ -224,13 +224,22 @@ public sealed class StationService(PostgresStationStore store,
             throw new SuiteException(503, "STATION_DOWNLOAD_NOT_READY",
                 "Station downloads are not ready.");
         if (!StationProtocol.IsSafeLibraryId(request.ItemId) ||
-            !library.TryResolve(request.ItemId, out var filePath, out _))
+            !library.ContainsItem(request.ItemId))
             throw new SuiteException(404, "STATION_ITEM_NOT_FOUND",
                 "Station item is not found.");
+        if (!library.TryResolveArtifact(request.ItemId, out var artifact))
+            throw new SuiteException(503, "STATION_ARTIFACT_NOT_READY",
+                "Station artifact is not ready.");
         var grantId = StationProtocol.Encode(RandomNumberGenerator.GetBytes(32));
         var associated = session.LicenseId + "\n" + session.DeviceId + "\n" +
-            request.ItemId + "\n" + grantId;
-        var sealedPath = grants.Seal(associated, filePath);
+            session.SessionId + "\n" + request.ItemId + "\n" + grantId;
+        var grantBody = JsonSerializer.Serialize(new ArtifactGrant(
+            artifact.FilePath, artifact.Entry.Revision, artifact.Descriptor.Sha256,
+            artifact.Descriptor.SizeBytes, artifact.LastWriteUtcTicks), StrictJson.Options);
+        if (Encoding.UTF8.GetByteCount(grantBody) > 2048)
+            throw new SuiteException(503, "STATION_ARTIFACT_NOT_READY",
+                "Station artifact is not ready.");
+        var sealedPath = grants.Seal(associated, grantBody);
         await store.InsertGrantAsync(new StationGrantRecord(grantId, session.LicenseId,
             session.DeviceId, request.ItemId, grants.KeyVersion, sealedPath.Nonce,
             sealedPath.Ciphertext, sealedPath.Tag), DownloadGrantSeconds, token);
@@ -239,12 +248,13 @@ public sealed class StationService(PostgresStationStore store,
             schemaVersion = 1, domain = StationProtocol.Prefix + "download-grant/v1",
             productId = StationProtocol.Product, applicationId = StationProtocol.Application,
             licenseId = session.LicenseId, deviceId = session.DeviceId,
-            sessionId = session.SessionId, itemId = request.ItemId, grantId,
+            sessionId = session.SessionId, itemId = request.ItemId,
+            itemRevision = artifact.Entry.Revision, artifact = artifact.Descriptor, grantId,
             expiresInSeconds = DownloadGrantSeconds
         });
     }
 
-    public async Task<string> ConsumeArtifactPathAsync(string grantId, string? bearer,
+    public async Task<StationResolvedArtifact> ConsumeArtifactAsync(string grantId, string? bearer,
         CancellationToken token)
     {
         if (!StationProtocol.IsCanonicalBase64Url(grantId, 32))
@@ -277,23 +287,32 @@ public sealed class StationService(PostgresStationStore store,
             throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
                 "Station grant is not found.");
         var associated = consumed.LicenseId + "\n" + consumed.DeviceId + "\n" +
-            consumed.ItemId + "\n" + consumed.GrantId;
+            session.SessionId + "\n" + consumed.ItemId + "\n" + consumed.GrantId;
         try
         {
-            var path = grants.Open(associated, consumed.Nonce, consumed.Ciphertext,
+            var plaintext = grants.Open(associated, consumed.Nonce, consumed.Ciphertext,
                 consumed.Tag);
-            if (!Path.IsPathRooted(path) || path.Contains("..", StringComparison.Ordinal) ||
-                !File.Exists(path))
+            var bound = JsonSerializer.Deserialize<ArtifactGrant>(plaintext, StrictJson.Options);
+            if (bound is null || library is null ||
+                !library.TryResolveArtifact(consumed.ItemId, out var artifact) ||
+                artifact.FilePath != bound.FilePath ||
+                artifact.Entry.Revision != bound.ItemRevision ||
+                artifact.Descriptor.Sha256 != bound.Sha256 ||
+                artifact.Descriptor.SizeBytes != bound.SizeBytes ||
+                artifact.LastWriteUtcTicks != bound.LastWriteUtcTicks)
                 throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
                     "Station grant is not found.");
-            return path;
+            return artifact;
         }
-        catch (CryptographicException)
+        catch (Exception exception) when (exception is CryptographicException or JsonException)
         {
             throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
                 "Station grant is not found.");
         }
     }
+
+    private sealed record ArtifactGrant(string FilePath, long ItemRevision,
+        string Sha256, long SizeBytes, long LastWriteUtcTicks);
 
     public async Task<StationSession> Session(string bearer, CancellationToken token)
     {

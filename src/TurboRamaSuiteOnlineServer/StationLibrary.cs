@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using System.IO.Compression;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -9,18 +10,36 @@ public sealed record StationCatalogEntry(
 
 public sealed record StationCoverBlob(byte[] Bytes, string ContentType);
 
+public sealed record StationArtifactDescriptor(string FileName, long SizeBytes,
+    string Sha256, string Format, string LaunchPath, long ExpandedSizeBytes,
+    int FileCount);
+
+public sealed record StationResolvedArtifact(string FilePath, StationCatalogEntry Entry,
+    StationArtifactDescriptor Descriptor, long LastWriteUtcTicks)
+{
+    public bool MatchesFile()
+    {
+        var info = new FileInfo(FilePath);
+        return info.Exists && info.Length == Descriptor.SizeBytes &&
+            info.LastWriteTimeUtc.Ticks == LastWriteUtcTicks;
+    }
+}
+
 public sealed class StationLibrary
 {
     public const int MaximumItems = 4096;
     public const int MaximumCoverBytes = 5 * 1024 * 1024;
+    public const long MaximumArtifactBytes = 1L << 40;
+    public const long MaximumExpandedBytes = 4L << 40;
+    public const int MaximumArtifactFiles = 100_000;
     public long Revision { get; }
     public IReadOnlyList<StationCatalogEntry> Catalog { get; }
 
     private readonly Dictionary<string, Resolved> _items;
-    private readonly Dictionary<string, string> _covers;
+    private readonly Dictionary<string, (string Path, long Revision)> _covers;
 
     private StationLibrary(long revision, Dictionary<string, Resolved> items,
-        Dictionary<string, string> covers)
+        Dictionary<string, (string Path, long Revision)> covers)
     {
         Revision = revision;
         _items = items;
@@ -51,7 +70,7 @@ public sealed class StationLibrary
         if (itemsElement.GetArrayLength() > MaximumItems)
             throw new InvalidOperationException("Station library index is invalid.");
         var items = new Dictionary<string, Resolved>(StringComparer.Ordinal);
-        var covers = new Dictionary<string, string>(StringComparer.Ordinal);
+        var covers = new Dictionary<string, (string Path, long Revision)>(StringComparer.Ordinal);
         foreach (var row in itemsElement.EnumerateArray())
         {
             var itemId = RequireId(row, "itemId");
@@ -63,11 +82,35 @@ public sealed class StationLibrary
                 ? parsedItemRev : revision;
             var filePath = RequirePath(row, "filePath");
             var coverPath = RequirePath(row, "coverPath");
+            StationArtifactDescriptor? artifact = null;
+            long lastWriteUtcTicks = 0;
+            if (row.TryGetProperty("artifact", out var artifactElement))
+            {
+                artifact = ReadArtifact(artifactElement, filePath);
+                var info = new FileInfo(filePath);
+                if (!info.Exists || info.Length != artifact.SizeBytes)
+                    throw new InvalidOperationException("Station artifact index is stale.");
+                lastWriteUtcTicks = info.LastWriteTimeUtc.Ticks;
+                using var source = new FileStream(filePath, FileMode.Open, FileAccess.Read,
+                    FileShare.Read, 1024 * 1024, FileOptions.SequentialScan);
+                if (!MatchesFormat(source, artifact.Format))
+                    throw new InvalidOperationException("Station artifact format is invalid.");
+                if (artifact.Format == "zip") ValidateZip(source, artifact);
+                source.Position = 0;
+                var digest = Convert.ToHexString(SHA256.HashData(source)).ToLowerInvariant();
+                info.Refresh();
+                if (digest != artifact.Sha256 || info.Length != artifact.SizeBytes ||
+                    info.LastWriteTimeUtc.Ticks != lastWriteUtcTicks)
+                    throw new InvalidOperationException("Station artifact index is stale.");
+            }
             if (!items.TryAdd(itemId, new Resolved(
                     new StationCatalogEntry(itemId, name, platform, itemRevision, coverId),
-                    filePath)))
+                    filePath, artifact, lastWriteUtcTicks)))
                 throw new InvalidOperationException("Station library index is invalid.");
-            covers[coverId] = coverPath;
+            if (covers.TryGetValue(coverId, out var existing) &&
+                (existing.Path != coverPath || existing.Revision != itemRevision))
+                throw new InvalidOperationException("Station cover ID has conflicting revisions.");
+            covers[coverId] = (coverPath, itemRevision);
         }
         return new StationLibrary(revision, items, covers);
     }
@@ -85,18 +128,34 @@ public sealed class StationLibrary
         return false;
     }
 
+    public bool TryResolveArtifact(string itemId, out StationResolvedArtifact artifact)
+    {
+        if (_items.TryGetValue(itemId, out var resolved) && resolved.Artifact is not null)
+        {
+            artifact = new StationResolvedArtifact(resolved.FilePath, resolved.Entry,
+                resolved.Artifact, resolved.LastWriteUtcTicks);
+            return artifact.MatchesFile();
+        }
+        artifact = null!;
+        return false;
+    }
+
     public StationCoverBlob? ReadCover(string coverId)
     {
-        if (!_covers.TryGetValue(coverId, out var path) || !File.Exists(path))
+        if (!_covers.TryGetValue(coverId, out var cover) || !File.Exists(cover.Path))
             return null;
-        var info = new FileInfo(path);
+        var info = new FileInfo(cover.Path);
         if (!info.Exists || info.Length is < 1 or > MaximumCoverBytes)
             return null;
-        var bytes = File.ReadAllBytes(path);
-        return new StationCoverBlob(bytes, ContentType(path));
+        var bytes = File.ReadAllBytes(cover.Path);
+        if (bytes.Length != info.Length) return null;
+        var contentType = ContentType(cover.Path);
+        if (!MatchesCover(bytes, contentType)) return null;
+        return new StationCoverBlob(bytes, contentType);
     }
 
     public int ItemCount => _items.Count;
+    public bool ContainsItem(string itemId) => _items.ContainsKey(itemId);
 
     private static string RequireId(JsonElement row, string name)
     {
@@ -137,7 +196,125 @@ public sealed class StationLibrary
         _ => "application/octet-stream"
     };
 
-    private sealed record Resolved(StationCatalogEntry Entry, string FilePath);
+    private static bool MatchesCover(ReadOnlySpan<byte> bytes, string contentType) =>
+        contentType switch
+        {
+            "image/png" => bytes.Length >= 8 &&
+                bytes[..8].SequenceEqual(new byte[] { 137, 80, 78, 71, 13, 10, 26, 10 }),
+            "image/jpeg" => bytes.Length >= 3 && bytes[0] == 255 &&
+                bytes[1] == 216 && bytes[2] == 255,
+            "image/gif" => bytes.Length >= 6 &&
+                (bytes[..6].SequenceEqual("GIF87a"u8) ||
+                 bytes[..6].SequenceEqual("GIF89a"u8)),
+            "image/webp" => bytes.Length >= 12 &&
+                bytes[..4].SequenceEqual("RIFF"u8) &&
+                bytes.Slice(8, 4).SequenceEqual("WEBP"u8),
+            _ => false
+        };
+
+    private static StationArtifactDescriptor ReadArtifact(JsonElement row, string filePath)
+    {
+        if (row.ValueKind != JsonValueKind.Object)
+            throw new InvalidOperationException("Station artifact index is invalid.");
+        var fileName = RequireName(row, "fileName", 255);
+        var sha256 = RequireName(row, "sha256");
+        var format = RequireName(row, "format");
+        var launchPath = RequireName(row, "launchPath", 512);
+        var size = RequirePositiveLong(row, "sizeBytes");
+        var expanded = RequirePositiveLong(row, "expandedSizeBytes");
+        var count = RequirePositiveLong(row, "fileCount");
+        if (fileName != Path.GetFileName(filePath) || fileName is "." or ".." ||
+            fileName.Contains('/') || fileName.Contains('\\') || fileName.Contains(':') ||
+            sha256.Length != 64 || sha256.Any(c => !Uri.IsHexDigit(c) || char.IsUpper(c)) ||
+            format is not ("raw" or "zip" or "rar" or "7z") ||
+            (format == "zip" && !fileName.EndsWith(".zip", StringComparison.OrdinalIgnoreCase)) ||
+            (format == "rar" && !fileName.EndsWith(".rar", StringComparison.OrdinalIgnoreCase)) ||
+            (format == "7z" && !fileName.EndsWith(".7z", StringComparison.OrdinalIgnoreCase)) ||
+            (format == "raw" && Path.GetExtension(fileName).ToLowerInvariant() is
+                (".zip" or ".rar" or ".7z")) ||
+            launchPath.StartsWith('/') || launchPath.Contains('\\') ||
+            launchPath.Contains(':') || launchPath.Split('/').Any(part => part is "" or "." or "..") ||
+            size > MaximumArtifactBytes || expanded > MaximumExpandedBytes ||
+            count > MaximumArtifactFiles ||
+            (format == "raw" && (launchPath != fileName || expanded != size || count != 1)))
+            throw new InvalidOperationException("Station artifact index is invalid.");
+        return new StationArtifactDescriptor(fileName, size, sha256, format,
+            launchPath, expanded, checked((int)count));
+    }
+
+    private static long RequirePositiveLong(JsonElement row, string name)
+    {
+        if (!row.TryGetProperty(name, out var field) || !field.TryGetInt64(out var value) ||
+            value <= 0)
+            throw new InvalidOperationException("Station artifact index is invalid.");
+        return value;
+    }
+
+    private static string RequireName(JsonElement row, string name, int maximum)
+    {
+        if (!row.TryGetProperty(name, out var field) || field.ValueKind != JsonValueKind.String)
+            throw new InvalidOperationException("Station artifact index is invalid.");
+        var value = field.GetString() ?? "";
+        if (value.Length is 0 || value.Length > maximum || value.Any(char.IsControl))
+            throw new InvalidOperationException("Station artifact index is invalid.");
+        return value;
+    }
+
+    private static bool MatchesFormat(Stream source, string format)
+    {
+        Span<byte> header = stackalloc byte[8];
+        var length = source.Read(header);
+        source.Position = 0;
+        var zip = length >= 4 && header[..4].SequenceEqual("PK\x03\x04"u8);
+        var rar = length >= 7 && header[..6].SequenceEqual("Rar!\x1a\x07"u8) &&
+            (header[6] == 0 || (length >= 8 && header[6] == 1 && header[7] == 0));
+        var sevenZip = length >= 6 && header[..6].SequenceEqual(new byte[]
+            { 0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c });
+        return format switch
+        {
+            "zip" => zip,
+            "rar" => rar,
+            "7z" => sevenZip,
+            "raw" => !zip && !rar && !sevenZip,
+            _ => false
+        };
+    }
+
+    private static void ValidateZip(Stream source, StationArtifactDescriptor artifact)
+    {
+        try
+        {
+            using var archive = new ZipArchive(source, ZipArchiveMode.Read, leaveOpen: true);
+            var count = 0;
+            long expanded = 0;
+            var launchFound = false;
+            foreach (var entry in archive.Entries)
+            {
+                var name = entry.FullName;
+                var directory = name.EndsWith('/');
+                var segments = (directory ? name[..^1] : name).Split('/');
+                if (name.StartsWith('/') || name.Contains('\\') || name.Contains(':') ||
+                    segments.Any(part => part is "" or "." or ".."))
+                    throw new InvalidDataException();
+                if (directory) continue;
+                count++;
+                expanded = checked(expanded + entry.Length);
+                if (name == artifact.LaunchPath) launchFound = true;
+                if (count > MaximumArtifactFiles || expanded > MaximumExpandedBytes)
+                    throw new InvalidDataException();
+            }
+            if (!launchFound || count != artifact.FileCount ||
+                expanded != artifact.ExpandedSizeBytes)
+                throw new InvalidDataException();
+        }
+        catch (Exception exception) when (exception is InvalidDataException or OverflowException)
+        {
+            throw new InvalidOperationException("Station ZIP metadata is invalid.", exception);
+        }
+    }
+
+    private sealed record Resolved(StationCatalogEntry Entry, string FilePath,
+        StationArtifactDescriptor? Artifact, long LastWriteUtcTicks);
 }
 
 public sealed class StationGrantCipher : IDisposable

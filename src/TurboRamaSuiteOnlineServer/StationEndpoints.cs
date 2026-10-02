@@ -78,14 +78,18 @@ public static class StationEndpoints
                 var header = context.Request.Headers.Authorization.ToString();
                 string? bearer = header.StartsWith("Bearer ", StringComparison.Ordinal) &&
                     header.Length <= 128 ? header[7..] : null;
-                var path = await context.RequestServices.GetRequiredService<StationService>()
-                    .ConsumeArtifactPathAsync(grantId, bearer, context.RequestAborted);
+                var artifact = await context.RequestServices.GetRequiredService<StationService>()
+                    .ConsumeArtifactAsync(grantId, bearer, context.RequestAborted);
+                await using var file = new FileStream(artifact.FilePath, FileMode.Open,
+                    FileAccess.Read, FileShare.Read, 64 * 1024,
+                    FileOptions.Asynchronous | FileOptions.SequentialScan);
+                if (file.Length != artifact.Descriptor.SizeBytes || !artifact.MatchesFile())
+                    throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
+                        "Station grant is not found.");
                 context.Response.Headers.CacheControl = "no-store";
                 context.Response.Headers["X-Content-Type-Options"] = "nosniff";
                 context.Response.ContentType = "application/octet-stream";
-                await using var file = new FileStream(path, FileMode.Open, FileAccess.Read,
-                    FileShare.Read, 64 * 1024, FileOptions.Asynchronous | FileOptions.SequentialScan);
-                context.Response.ContentLength = file.Length;
+                context.Response.ContentLength = artifact.Descriptor.SizeBytes;
                 context.Response.StatusCode = 200;
                 await file.CopyToAsync(context.Response.Body, context.RequestAborted);
                 return Results.Empty;
@@ -94,6 +98,16 @@ public static class StationEndpoints
             {
                 return Results.Json(new ErrorResponse(1, exception.Code, exception.Message),
                     StrictJson.Options, statusCode: exception.StatusCode);
+            }
+            catch (IOException) when (!context.Response.HasStarted)
+            {
+                return Results.Json(new ErrorResponse(1, "STATION_GRANT_NOT_FOUND",
+                    "Station grant is not found."), StrictJson.Options, statusCode: 404);
+            }
+            catch (UnauthorizedAccessException) when (!context.Response.HasStarted)
+            {
+                return Results.Json(new ErrorResponse(1, "STATION_GRANT_NOT_FOUND",
+                    "Station grant is not found."), StrictJson.Options, statusCode: 404);
             }
             catch (OperationCanceledException) when (context.RequestAborted.IsCancellationRequested)
             {
