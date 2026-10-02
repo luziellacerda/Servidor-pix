@@ -1,6 +1,10 @@
 # Handoff — índice exato da biblioteca Station
 
-Data: 02/10/2026. Base: retorno `de83824` e código `bbd07fd` já em execução. Esta é a tarefa inteira do servidor. Não peça outro handoff para completar regra. O aplicativo Android não entra nesta rodada.
+Data: 02/10/2026. Branch `docs/indice-exato-station-20261002`. Este arquivo é a ordem inteira. Não espere texto colado de fora. Não peça outro handoff. Execute da seção 1 até a seção 6 e faça push do retorno.
+
+Crie o índice só se o disco de jogos tiver arquivo e capa que casem com `docs/station-android/cruzamento-nomes-xml.tsv`, pelas regras abaixo. Não invente item. Não grave caminho nem nome de jogo no Git ou no retorno. Se o arquivo for válido, reinicie só a `5192`. Preencha `RETORNO-INDICE-EXATO-STATION-20261002.md` e faça push. Não reinicie `5190`, `5191` nem PIX.
+
+Base observada: retorno `de83824` e código `bbd07fd` já em execução. O aplicativo Android não entra nesta rodada.
 
 ## 1. O que já está feito
 

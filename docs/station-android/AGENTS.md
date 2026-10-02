@@ -1,6 +1,6 @@
 # Instruções para integrar a TurboramaStation Android neste servidor
 
-Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-INDICE-EXATO-STATION-20261002.md`. O código da `5192` já está pronto. Crie o índice só se o disco de jogos tiver arquivo e capa que casem com `cruzamento-nomes-xml.tsv`, pelas regras desse handoff. Não invente item. Não grave caminho nem nome de jogo no Git ou no retorno. Reinicie só a `5192` se o arquivo for válido. Grave `RETORNO-INDICE-EXATO-STATION-20261002.md` e faça push. Não reinicie `5190`, `5191` nem PIX.
+Você está no servidor compartilhado `lz-servidor`. A ordem inteira está em `HANDOFF-INDICE-EXATO-STATION-20261002.md`, na branch `docs/indice-exato-station-20261002`. Não espere texto colado de fora. Execute esse arquivo até o fim, preencha `RETORNO-INDICE-EXATO-STATION-20261002.md` e faça push. Não reinicie `5190`, `5191` nem PIX.
 
 ## Limites do trabalho
 
