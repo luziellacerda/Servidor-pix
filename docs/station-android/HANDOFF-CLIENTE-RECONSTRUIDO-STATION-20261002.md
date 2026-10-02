@@ -1,4 +1,42 @@
-# Handoff do aplicativo para completar a instalação Station no servidor
+# Handoff do servidor para concluir a conexão do TurboStations Android
+
+## Destinatário e identificação exata
+
+Este pedido é para a equipe ou IA responsável pelo **backend Station no repositório Servidor-pix**. Implementar e comprovar as pendências do servidor descritas abaixo e devolver o contrato final para a equipe do aplicativo.
+
+| Identificação | Valor conferido |
+| --- | --- |
+| Repositório do servidor | https://github.com/luziellacerda/Servidor-pix |
+| Arquivo deste pedido | docs/station-android/HANDOFF-CLIENTE-RECONSTRUIDO-STATION-20261002.md |
+| Branch deste documento | docs/cliente-reconstruido-station-20261002 |
+| Aplicativo atendido | TurboStations Android TESTE |
+| Pacote Android | org.turboramastation.frontend |
+| productId e applicationId do protocolo | TURBORAMA_STATION_ANDROID, em ambos os campos |
+| Base HTTPS configurada no cliente | https://app.lzgames.com.br |
+| Prefixo das rotas | /v1/station/ |
+| Serviço descrito pelo handoff do servidor | turborama-station-api, loopback 127.0.0.1:5192; confirmar no ambiente antes de qualquer implantação |
+| Código do aplicativo analisado | TurboElden 0840028854034b03e5a1d3f2a162d66225932a6b, versions/station-reconstruction-20261002 |
+
+A entrega deste pedido é código/contrato/evidência do canal Station. O escopo exclui os outros produtos Turborama, Suite Windows, PIX, seus serviços e dados. As pastas E: citadas neste documento identificam o trabalho Windows do aplicativo; não são destinos de implantação Linux. Esta revisão é documental e não autoriza reiniciar ou implantar serviços.
+
+## Ordem de execução e responsáveis
+
+1. **Servidor — confirmar a base.** Ler AGENTS.md desta pasta e o HANDOFF-HUMANO-COMPLETO-STATION-20261002.md. Conferir código efetivo, índice carregado e versão em execução. Os commits abaixo são as referências já examinadas, não prova do estado atual do Linux. Registrar diferenças encontradas.
+2. **Servidor — confirmar a ativação e o perfil.** Devolver o formato real do código emitido ao comprador, o contrato dos desafios/sessões e o campo do nome em /me. Conferir a divergência específica de ativação registrada abaixo. Preservar as regras comerciais já estabelecidas.
+3. **Servidor — reparar e comprovar as capas.** Resolver coverId para o arquivo do índice carregado. Entregar resultado autenticado 200 e validar a regra de revisão/cache; a existência da rota não encerra esta tarefa.
+4. **Servidor — implementar ou confirmar o descritor do jogo.** Usar a seção de extensão proposta como requisitos a fechar. Devolver os nomes finais, tipos, limites, assinatura, erros e exemplos. Metadados devem corresponder exatamente aos bytes autorizados.
+5. **Servidor — comprovar o fluxo completo.** Executar os casos da seção de evidências e informar separadamente o resultado local/homologação e o resultado de produção, caso exista. Publicar o retorno no arquivo indicado ao final.
+6. **Aplicativo — depois do contrato confirmado.** Corrigir a validação de ativação, ligar o catálogo ao carrossel nativo, implementar o instalador, retirar os fluxos antigos do APK e verificar no aparelho. Essas tarefas continuam sendo responsabilidade da equipe Android.
+
+Se faltar um dado, registrar qual campo, arquivo ou evidência falta. Não preencher com valor inventado, extensão genérica, rota vazia ou exemplo tratado como configuração real.
+
+## Divergência de ativação que precisa constar no retorno
+
+O handoff humano do servidor descreve códigos com prefixo STA-. O cliente publicado em 0840028 chama token(code) em StationApi.activate, que exige Base64URL canônico de 32 bytes. Esses formatos não são equivalentes; um código STA- no formato documentado pode ser rejeitado pelo cliente antes da requisição.
+
+No servidor b1159c9, CompleteActivationAsync lê activationCode com RequireString e máximo de 256 caracteres; essa validação não exige o formato Base64URL usado pelo cliente. O retorno deve confirmar o formato emitido e as regras de espaços, maiúsculas e prefixo, usando exemplos sintéticos e indicando o código responsável. A correção correspondente é no cliente Android para obedecer ao contrato real; não alterar códigos já emitidos para acomodar a validação incorreta do cliente.
+
+As 142 verificações locais anteriores não comprovam a aceitação do código comercial STA-. Essa divergência permanece pendente nesta revisão documental.
 
 ## Objetivo e estado comprovado
 
@@ -6,7 +44,7 @@ Destinatário: manutenção do Servidor-pix. Objetivo: fechar os dados necessár
 
 O aplicativo possui agora um cliente independente escrito em Java e compilado para Android. Ele segue o código de `StationService.cs`, `StationEndpoints.cs` e `StationLibrary.cs` no commit `b1159c9`. O cliente ainda não foi integrado ao APK e não é uma versão liberada ao consumidor.
 
-O último fetch de todos os ramos confirmou `07b4cab` como auditoria de produção mais recente. Essa auditoria informa falhas 404 nas capas e não comprova uma transferência completa de jogo. Este documento não solicita alterar serviços de outros produtos nem reiniciar a API antes de validar as alterações.
+A leitura realizada na etapa anterior, em 02/10/2026, usou `07b4cab` como referência da auditoria de produção. Esta revisão documental não executou uma nova auditoria do ambiente. Essa auditoria informa falhas 404 nas capas e não comprova uma transferência completa de jogo. Este documento não solicita alterar serviços de outros produtos nem reiniciar a API antes de validar as alterações.
 
 ## Rotas existentes consumidas pelo cliente
 
@@ -83,7 +121,7 @@ Não usar `/ready/station` 200 como prova de que catálogo, capa e jogo funciona
 - Testes e hashes: `build\test-results.json` e `build\module-manifest.json`.
 - Continuação do aplicativo: `HANDOFF-RECONSTRUCAO-TURBOSTATIONS.md`.
 
-Foram concluídas 123 verificações locais e a geração do módulo Android. Ainda faltam a integração com a interface nativa, a instalação orientada pelos metadados confirmados e a verificação autenticada no aparelho. Este handoff não declara o APK como estável.
+Foram concluídas 142 verificações locais, incluindo a integração do login nos fontes, e a geração do módulo Android. Ainda faltam a integração com a interface nativa, a instalação orientada pelos metadados confirmados e a verificação autenticada no aparelho. Este handoff não declara o APK como estável.
 
 ## Retorno publicado do aplicativo
 
@@ -94,3 +132,31 @@ A integração do login nos fontes foi publicada em TurboElden, commit `08400288
 O layout de login atual passou a usar StationCoordinator para sessão, perfil e catálogo, com capas por itemId. A senha local foi retirada desses fontes. O controlador invalida a autorização quando o servidor nega a licença, reaproveita a licença salva e o cache verificável, e cancela consultas quando a tela de login fica escondida.
 
 A etapa passou em **142 verificações locais**, com compilação Android e geração de DEX. Os exemplos são testes sintéticos, não credenciais de produção. A ligação ao catálogo nativo, o instalador orientado pelo descritor e o APK completo continuam pendentes; nenhum APK desta reconstrução foi instalado ou promovido a estável. A proposta de metadados acima permanece aguardando confirmação/implementação do servidor.
+
+## Arquivo obrigatório de retorno do servidor
+
+Publicar no repositório Servidor-pix:
+
+docs/station-android/RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md
+
+Se esse arquivo já existir, atualizá-lo preservando evidências anteriores identificadas por data. Entregar à equipe Android o link com commit completo e informar a branch. O documento deve apontar explicitamente para este pedido e para o commit do cliente analisado.
+
+Preencher todos os itens abaixo com evidência ou com a pendência exata:
+
+| Item obrigatório | Conteúdo esperado |
+| --- | --- |
+| Revisões | Branch e SHA completo do código alterado, do contrato e dos testes; informar se houve implantação |
+| Ambiente | Data, ambiente testado, serviço efetivo e hash do artefato em execução; separar desenvolvimento de produção |
+| Ativação | Formato emitido ao comprador, normalização permitida, validação real e exemplo sintético |
+| Perfil | Nome exato do campo do comprador, assinatura e comportamento quando o perfil ainda não estiver pronto |
+| Contrato | Rotas, métodos, schemas e nomes finais dos campos; tipos, limites, códigos de erro e versão de assinatura |
+| Capas | Resultado autenticado 200 e 404, tamanho/MIME/hash de exemplo permitido, regra de revisão e invalidação do cache |
+| Catálogo | Revisão, total, valores exatos de platform e solução explícita caso exceda 4096 itens |
+| Artefatos | Descritores sanitizados de raw, arquivo com múltiplos membros e diretórios Wii U; launchPath de cada exemplo |
+| Transferência | Tamanho e SHA256 esperado/obtido; concessão usada, expirada, bloqueio e queda de conexão |
+| Compatibilidade | O que continua compatível e o que requer mudança no cliente; nenhum campo proposto deve ser apresentado como já consumido pelo APK |
+| Pendências | Responsável, arquivo/rota afetada e evidência faltante para cada ponto não concluído |
+
+Não anexar credenciais, tokens, códigos reais de ativação, dados pessoais, URLs privadas nem caminhos de armazenamento de produção. Exemplos devem ser sintéticos ou sanitizados.
+
+O resultado “servidor pronto” exige contrato confirmado e evidências dos fluxos acima. “Publicado no Git”, “compilou”, “health 200” e “ready 200” são estados distintos e devem ser identificados como tais. O APK integrado continuará pendente até a conclusão e a verificação da etapa Android.
