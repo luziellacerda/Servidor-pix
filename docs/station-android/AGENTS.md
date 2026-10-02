@@ -1,6 +1,6 @@
 # Instruções para integrar a TurboramaStation Android neste servidor
 
-Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-SENHA-STATION-48H-20261002.md`. Implemente o prazo de 48 horas na primeira senha Station e o de 30 minutos na reemissão humana. Não mexa no OTP de 15 minutos da Suite Windows. Não reinicie a `5190`, a `5191` nem o PIX. Não ative a licença. Não abra catálogo nem download. Depois que o código estiver no ar, emita uma senha de 48 horas só para `STA-D7AE45616B415B2C7550315C0392C5D8`, grave só em `RETORNO-SENHA-STATION-48H-20261002.md` e faça push na hora. Pepper, DSN, token admin e chave privada continuam de fora.
+Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-PERFIL-NOME-STATION-20261002.md`. Meça se o perfil `GET /v1/station/me` da licença `STA-D7AE45616B415B2C7550315C0392C5D8` devolve o nome. Se a projeção do comprador não deixar o nome sair, corrija só essa projeção. Não emita senha. Não ative. Não reinicie `5190`, `5192`, admin nem PIX. Não abra catálogo nem download. Grave o retorno em `RETORNO-PERFIL-NOME-STATION-20261002.md` e faça push na hora. Pepper, DSN, token admin e chave privada continuam de fora.
 
 ## Limites do trabalho
 
