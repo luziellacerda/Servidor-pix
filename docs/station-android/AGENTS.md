@@ -1,6 +1,6 @@
 # Instruções para integrar a TurboramaStation Android neste servidor
 
-Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-SEGURANCA-JOGOS-STATION-20261002.md`. Analise a segurança para o aplicativo não ser clonado e os jogos não saírem por link. Não implemente ainda. Não abra catálogo nem download. Não reinicie serviço. Grave o retorno em `RETORNO-SEGURANCA-JOGOS-STATION-20261002.md` e faça push na hora. Pepper, DSN, token admin, chave privada, ponto de montagem e URL de jogo continuam de fora.
+Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-IMPLEMENTAR-SEGURANCA-JOGOS-STATION-20261002.md`. Implemente o plano do retorno `1f9506a`. Catálogo e capas só abrem se a resposta não tiver caminho nem URL. Concessão Station é de um uso e a entrega é em bytes, sem redirect. Não toque em `5190`, `5191` nem PIX. Grave `RETORNO-IMPLEMENTAR-SEGURANCA-JOGOS-STATION-20261002.md` e faça push. Pepper, DSN, token, chave, ponto de montagem e URL de jogo ficam de fora.
 
 ## Limites do trabalho
 
