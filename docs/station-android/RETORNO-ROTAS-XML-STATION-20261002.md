@@ -1,6 +1,6 @@
 # Retorno — rotas XML da biblioteca Station
 
-Preencha e faça push. Sem pepper, DSN, token, chave, senha, device id, ponto de montagem, caminho, nome de jogo, nome de pasta fora da tabela ou URL.
+Preencha e faça push. A lista completa já está em `cruzamento-nomes-xml.tsv`. Não repita os nomes neste retorno. Sem pepper, DSN, token, chave, senha, device id, ponto de montagem, caminho de disco, nome de pasta fora da tabela ou URL.
 
 ## Resultado
 
@@ -54,7 +54,9 @@ Preencha e faça push. Sem pepper, DSN, token, chave, senha, device id, ponto de
 - `5191` reiniciada: nao
 - PIX reiniciado: nao
 - índice commitado no Git: nao
-- nome de jogo no Git ou no retorno: nao
+- lista usada: cruzamento-nomes-xml.tsv
+- retorno repetiu nome de jogo: nao
+- caminho de disco no retorno: nao
 - senha emitida: nao
 - ativação feita desta máquina: nao
 - WhatsApp enviado: nao

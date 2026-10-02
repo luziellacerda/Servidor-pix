@@ -1,6 +1,6 @@
 # Handoff — rotas XML da biblioteca Station
 
-Data: 02/10/2026. Base: `7219794` na branch `docs/indice-biblioteca-station-20261002`. O aplicativo não muda nesta rodada. As rotas abaixo já foram lidas nos XML locais. Esta rodada não troca rota, não renomeia pasta e não publica nome de jogo.
+Data: 02/10/2026. Base: `7219794` na branch `docs/indice-biblioteca-station-20261002`. O aplicativo não muda nesta rodada. A lista completa está em `docs/station-android/cruzamento-nomes-xml.tsv`. Esta rodada não troca rota e não renomeia pasta. O cruzamento futuro usa essa lista contra os arquivos que estiverem no M.2.
 
 ## 1. O que continua valendo
 
@@ -12,7 +12,18 @@ Se o índice válido já estiver carregado, não escreva outro por cima e não r
 
 ## 2. Rotas já medidas no Windows
 
-A lista local tem 36 XML e 12346 jogos. Duas rotas existem no mapa antigo e não têm XML local. O nome do jogo fica fora deste documento. A rota BR fica separada da rota principal.
+A lista completa tem 36 XML e 12346 jogos. Duas rotas existem no mapa antigo e não têm XML local. A rota BR fica separada da rota principal. O arquivo `cruzamento-nomes-xml.tsv` traz uma linha por jogo, com estas colunas:
+
+- `rota` — pasta da plataforma. É a rota que pode ser trocada numa rodada futura.
+- `plataforma` — nome do sistema na lista.
+- `nome` — título que o XML mostra.
+- `arquivo` — nome do arquivo do jogo, sem pasta. É a chave principal para cruzar com o arquivo posto no servidor.
+- `caminho` — caminho relativo dentro da rota. Na maior parte é igual a `arquivo`. Em 7 jogos há uma subpasta; nesses, cruze pelo `caminho`.
+- `xml` — arquivo de origem da lista.
+- `id` — identificador que o XML trouxe, quando existe. Há 5770 jogos com id diferente de zero.
+- `md5` — hash que o XML trouxe, quando existe. Há 3146 jogos com md5. Use só se `rota` + `arquivo` + `nome` não bastarem.
+
+Em 11124 jogos o `nome` é diferente do `arquivo`. Os dois ficam na linha. Há 110 nomes de arquivo repetidos dentro da mesma rota; nesses, a linha se distingue pelo `nome` e, quando existir, por `id` ou `md5`. A tabela não tem URL. Não busque outra lista para completar o cruzamento.
 
 | Rota | Jogos no XML local |
 |---|---|
@@ -59,7 +70,7 @@ Sete jogos têm uma subpasta no caminho relativo do XML. A rota deles continua s
 
 ## 3. O que fazer
 
-Não baixe lista antiga. Não grave URL. Não altere XML. Não renomeie pasta do M.2 para estas rotas. O cruzamento de nomes fica com o responsável, que ainda vai enviar os arquivos. `platform` no índice continua saindo da pasta já existente, cortada em 120, como no handoff anterior.
+Não baixe lista de outro host. Não grave URL. Não altere XML. Não renomeie pasta do M.2 nesta rodada. A lista que vale para o cruzamento é só `cruzamento-nomes-xml.tsv`. O cruzamento em si fica para depois: cada arquivo posto no M.2 entra pela `rota` e pelo `arquivo`; se o `caminho` tiver subpasta, entra pelo `caminho`. Não aplique esse cruzamento agora e não troque o `name` do índice pelo `nome` desta tabela. `platform` no índice continua saindo da pasta já existente, cortada em 120, como no handoff anterior.
 
 Depois do índice carregado, conte os itens por `platform`. No retorno, escreva só as rotas da tabela acima e a quantidade de cada uma. Se algum item usar `platform` fora dessa lista, escreva só a quantidade desses itens. Não escreva o nome dessa pasta.
 
@@ -88,7 +99,9 @@ Preencha `RETORNO-ROTAS-XML-STATION-20261002.md` e faça push. Se o índice foi 
 - `5192` reiniciada nesta rodada: sim ou nao
 - `5190`, `5191` e PIX reiniciados: nao
 - índice foi para o Git: nao
-- nome de jogo no Git ou no retorno: nao
+- lista completa usada no cruzamento: `cruzamento-nomes-xml.tsv`
+- retorno repetiu nome de jogo: nao
+- caminho de disco no retorno: nao
 - senha emitida: nao
 - ativação feita desta máquina: nao
 - WhatsApp enviado: nao
