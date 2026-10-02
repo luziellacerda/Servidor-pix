@@ -1,0 +1,70 @@
+# Retorno — índice exato da biblioteca Station
+
+Preencha e faça push. Sem pepper, DSN, token, chave, senha, device id, ponto de montagem, caminho, nome de jogo, nome de arquivo ou URL.
+
+## Resultado
+
+- parou porque:
+- disco da rodada anterior montado: sim ou nao
+- arquivos vistos no disco, só a quantidade:
+- linhas da tabela: 12346
+- itens gravados:
+- pulados sem capa:
+- pulados ambiguos:
+- pulados por arquivo repetido na mesma rota:
+- pulados por colisão de id:
+- truncado: sim ou nao
+- revision:
+- rota=3ds itens=
+- rota=psx itens=
+- rota=switch itens=
+- rota=arcade itens=
+- rota=atari2600 itens=
+- rota=atari7800 itens=
+- rota=atomiswave itens=
+- rota=colecovision itens=
+- rota=cps1 itens=
+- rota=cps2 itens=
+- rota=cps3 itens=
+- rota=dreamcast itens=
+- rota=fds itens=
+- rota=gameandwatch itens=
+- rota=gamegear itens=
+- rota=gb itens=
+- rota=gba itens=
+- rota=gbc itens=
+- rota=jaguar itens=
+- rota=mame itens=
+- rota=mastersystem itens=
+- rota=megadrive itens=
+- rota=megadrivebr itens=
+- rota=model2 itens=
+- rota=n64 itens=
+- rota=n64br itens=
+- rota=nds itens=
+- rota=neogeo itens=
+- rota=neogeocd itens=
+- rota=nes itens=
+- rota=o2em itens=
+- rota=pcengine itens=
+- rota=pcenginecd itens=
+- rota=sega32x itens=
+- rota=snes itens=
+- rota=snesbr itens=
+- rota=sufami itens=
+- rota=supergrafx itens=
+- `5192` saudável: sim ou nao
+- hash do binário da `5192`:
+- `5192` reiniciada: sim ou nao
+- índice removido porque a `5192` não subiu: sim ou nao
+- `5190` reiniciada: nao
+- `5191` reiniciada: nao
+- PIX reiniciado: nao
+- catálogo sem sessão: 401
+- artefato desconhecido sem `Location`: sim ou nao
+- índice commitado no Git: nao
+- nome de jogo ou caminho no retorno: nao
+- senha emitida: nao
+- ativação feita desta máquina: nao
+- WhatsApp enviado: nao
+- painel Cloudflare editado: nao
