@@ -1,6 +1,6 @@
 # Instruções para integrar a TurboramaStation Android neste servidor
 
-Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-APP-PRODUCAO-STATION-20261002.md`: implementar no **APK TESTE (máquina Windows)** lista, capa revista (teto 5 MiB) e jogo por bytes de um uso, sem URL. Neste servidor não altere código, índice, Nginx nem systemd. Não reinicie `5192`, `5190`, `5191` nem PIX. O retorno do APK é `RETORNO-APP-PRODUCAO-STATION-20261002.md`. Pepper, DSN, token, chave, senha, device id, ponto de montagem e URL de jogo ficam de fora.
+Você está no servidor compartilhado `lz-servidor`. O estado atual do servidor para o aplicativo está em `RETORNO-ESTADO-SERVIDOR-APP-STATION-20261002.md`. A implementação do APK TESTE continua na máquina Windows (`HANDOFF-APP-PRODUCAO-STATION-20261002.md`). Neste servidor não altere `5190`, `5191`, `5192` nem PIX só por ler este retorno. Pepper, DSN, token, chave, senha, device id, ponto de montagem e URL de jogo ficam de fora.
 
 ## Limites do trabalho
 
