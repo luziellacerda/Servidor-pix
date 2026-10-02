@@ -1,6 +1,6 @@
 # Instruções para integrar a TurboramaStation Android neste servidor
 
-Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-CONTINUAR-STATION-20261002.md`. A licença de teste já existe. Rode de novo o script dessa página só para emitir outro código na mesma licença, porque o anterior venceu. Preencha `RETORNO-CONTINUAR-STATION-20261002.md` e faça push na hora. Não crie segunda licença. Não ative a licença daí. O código novo entra só nesse retorno. Pepper, DSN, token admin e chave privada continuam de fora. Não substitua o admin da porta `5191` nem a API da `5190`.
+Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-IMPLEMENTAR-FALTAS-STATION-20261002.md`. Não emita outro código de ativação nesta rodada. O telefone não consegue mostrar o login sem apagar a biblioteca, e um código de 15 minutos venceria sem uso. Faça o backup da licença de teste, escreva o plano de rollback sem executá-lo, e preencha `RETORNO-IMPLEMENTAR-FALTAS-STATION-20261002.md`. Não crie segunda licença. Não ative. Não substitua o admin da porta `5191` nem a API da `5190`. Não abra catálogo nem download. Pepper, DSN, token admin e chave privada continuam de fora.
 
 ## Limites do trabalho
 
