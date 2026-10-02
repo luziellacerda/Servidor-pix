@@ -24,6 +24,7 @@ Um APK copiado não baixa jogo. O servidor não publica o HD de jogos.
 - A concessão é curta, de um uso, presa ao aparelho e ao item. O endereço de origem só existe na memória do processo que entrega o arquivo, no mesmo modelo do gateway de conteúdo. Não vai para log, Git, Nginx nem APK.
 - Se o terceiro HD não estiver montado, ou o `ItemId` não existir, a resposta é falha fechada. Não há atalho público.
 - Um aparelho ativo por licença. Outro telefone não herda a cópia do APK.
+- Depois da sessão Station válida, o aplicativo pede o catálogo e as capas. Um jogo novo no servidor aparece no próximo login, sem atualizar o APK. A capa é imagem, não é o arquivo do jogo. O login e a biblioteca abrem mesmo se o catálogo ainda responder 503: o aplicativo usa a última lista salva. Abrir o aplicativo não depende dessa chamada.
 
 ## 3. O que medir
 
@@ -44,6 +45,7 @@ Escreva o plano da rodada seguinte. Não o execute.
 - Quais rotas continuam 503 até um handoff posterior dizer para abrir.
 - Como um APK copiado falha: sem chave de aparelho, sem licença, sem concessão.
 - O que não muda: `5190`, `5191`, PIX, `/mnt/DADOS`, site, SPA `/admin`, WhatsApp, migration `028`, senha e a licença de teste.
+- Como o catálogo Station entrega lista e capas no login: corpo assinado, com revisão. Se a revisão mudou, o aplicativo baixa só as capas novas pela mesma sessão. Sem host de capa da linha Sambox, sem URL permanente e sem caminho do terceiro HD. A capa não autoriza o arquivo do jogo. O arquivo continua na concessão curta.
 
 Não implemente esse plano agora. Não compile, não troque DLL, não reinicie `5190`, `5192`, admin, gateway nem PIX. Não crie migration. Não abra catálogo nem download. Não envie WhatsApp. Não emita senha. Não ative.
 

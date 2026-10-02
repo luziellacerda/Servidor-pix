@@ -25,6 +25,7 @@ Não execute.
 - rotas que permanecem fechadas:
 - por que um APK copiado não baixa jogo:
 - o que permanece intocado:
+- lista e capas no login, sem atualizar o APK e sem URL permanente:
 
 ## Confirmação
 
