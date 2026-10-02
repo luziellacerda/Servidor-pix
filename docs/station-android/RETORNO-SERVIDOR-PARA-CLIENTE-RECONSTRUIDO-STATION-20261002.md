@@ -6,7 +6,7 @@ Data da apuração: 02/10/2026, aproximadamente 20h37 (America/Maceio).
 
 - Pedido atendido: [handoff do cliente reconstruído](https://github.com/luziellacerda/Servidor-pix/blob/7ac4fad9e0132db378f6e78e6494fedb08f614c3/docs/station-android/HANDOFF-CLIENTE-RECONSTRUIDO-STATION-20261002.md), branch `docs/cliente-reconstruido-station-20261002`, commit `7ac4fad9e0132db378f6e78e6494fedb08f614c3` do Servidor-pix.
 - Cliente examinado: TurboElden, commit `0840028854034b03e5a1d3f2a162d66225932a6b`, branch `station-reconstrucao-20261002`. A biblioteca Java ainda não foi integrada ao APK distribuível nem consome o descritor novo.
-- Código do servidor deste retorno: branch `feat/station-artifact-descriptor-20261002`, commit `96326aa0aeb164820cec26f8b5911fcdb47fc8ee`, derivado de `b1159c9`.
+- Código do servidor deste retorno: branch `feat/station-artifact-descriptor-20261002`, commits `96326aa0aeb164820cec26f8b5911fcdb47fc8ee` e `1bfb619c21becffe40aaa597e100fcb3719c2e72` (revisão final do código e testes), derivados de `b1159c9`.
 - **Estado: código e contrato publicados para desenvolvimento; produção e APK ainda não liberados.** Não houve publicação de binário, alteração de índice real, migration, restart, mudança de porta ou alteração dos serviços PIX/Suite/ES. Não há prova de download autenticado completo na 5192.
 
 ## O que roda no Linux, separado do código novo
@@ -77,7 +77,7 @@ Teste local de `StationLibrary.ReadCover`: PNG sintético válido de 1×1 pixel,
 
 | Requisito do pedido | Comprovado aqui | Falta, responsável |
 | --- | --- | --- |
-| Código do descritor e teste | Commit acima; `dotnet run --project tests/TurboRamaSuiteOnlineServer.Tests/TurboRamaSuiteOnlineServer.Tests.csproj` passou. Testes locais cobrem raw, ZIP com dois arquivos, hash divergente, `launchPath` ausente, revisão de capa conflitante e PNG. A ferramenta de preparo foi exercitada com raw, ZIP e 7z sintéticos. | Backend: revisão de código e validação de carga no índice real. |
+| Código do descritor e teste | Commits acima; `dotnet run --project tests/TurboRamaSuiteOnlineServer.Tests/TurboRamaSuiteOnlineServer.Tests.csproj` passou. Testes locais cobrem raw, ZIP com dois arquivos, membro ZIP duplicado, hash divergente, `launchPath` ausente, revisão de capa conflitante e PNG. A ferramenta de preparo foi exercitada com raw, ZIP e 7z sintéticos. | Backend: revisão de código e validação de carga no índice real. |
 | Catálogo autenticado: revisão, total, plataformas | Logs mostram três HTTP 200 de `/catalog`, sem corpo. | Operação/backend: sessão sintética e captura sanitizada de `revision`, quantidade e `platform` exatos da 5192. |
 | Capa válida 200 e ID inexistente 404 | Unidade local de capa acima; público sem Bearer responde 401. | Operação/backend: corrigir os 404 atuais e registrar 200 autenticado com MIME/tamanho/hash e 404 autenticado de ID inexistente. |
 | Autorização assinada e bytes completos | Código e testes locais do índice passaram; público sem sessão não prova o fluxo. | Backend: banco isolado ou homologação com licença/aparelho sintéticos; capturar `itemRevision`, descritor, assinatura, Content-Length e hash dos bytes transferidos. Produção: repetir somente depois da implantação validada. |
