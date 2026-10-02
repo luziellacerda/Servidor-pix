@@ -1,6 +1,6 @@
-# Handoff de retorno — auditoria de publicação do app Station
+# Handoff de retorno — servidor Station para publicação do app
 
-Data da medição: **02/10/2026, 18h49 (America/Maceió)**. Base documental: `docs/handoff-humano-station-20261002` em `c3061bd`. Este retorno responde se o servidor e o APK podem ser liberados a compradores. Consulte o [handoff humano](HANDOFF-HUMANO-COMPLETO-STATION-20261002.md) para o contrato de integração.
+Data da medição: **02/10/2026, 18h49 (America/Maceió)**. Base documental: `docs/handoff-humano-station-20261002` em `c3061bd`. Este é o retorno à solicitação do [handoff humano](HANDOFF-HUMANO-COMPLETO-STATION-20261002.md) e do [retorno do APK](RETORNO-APP-PRODUCAO-STATION-20261002.md): dizer o que o servidor entrega hoje, o que foi comprovado e o que ainda impede a publicação do aplicativo a compradores.
 
 ## Decisão
 
