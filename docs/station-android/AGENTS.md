@@ -1,6 +1,6 @@
 # Instruções para integrar a TurboramaStation Android neste servidor
 
-Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-SEM-LINK-DIRETO-STATION-20261002.md`. O código da `5192` já entrega catálogo, capa e jogo sem URL direta. Não reescreva esse código. Não crie o índice. Confirme, sem sessão, que as rotas não devolvem URL nem `Location`. Grave `RETORNO-SEM-LINK-DIRETO-STATION-20261002.md` e faça push. Não reinicie `5192`, `5190`, `5191` nem PIX.
+Você está no servidor compartilhado `lz-servidor`. A tarefa atual é `HANDOFF-APP-CATALOGO-STATION-20261002.md`. Ela é do aplicativo Android, na máquina de build. Neste servidor não há trabalho. Não altere código, índice, Nginx, Cloudflare nem systemd. Não reinicie `5192`, `5190`, `5191` nem PIX. Não preencha retorno e não faça push.
 
 ## Limites do trabalho
 
