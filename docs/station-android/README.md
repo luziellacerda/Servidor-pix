@@ -6,6 +6,8 @@ Tarefa atual: [HANDOFF-LICENCA-TESTE-E-O-QUE-FALTA-20261001.md](HANDOFF-LICENCA-
 
 A porta `5192` já foi executada. O retorno dessa execução está em [RETORNO-EXECUCAO-5192-20261001.md](RETORNO-EXECUCAO-5192-20261001.md).
 
+A [auditoria de publicação de 02/10/2026](HANDOFF-AUDITORIA-PRODUCAO-STATION-20261002.md) registra o estado atual do servidor e o que falta comprovar no APK antes de liberar a compradores.
+
 Leia nesta ordem: [regras de trabalho](AGENTS.md), [inventário observado](INVENTARIO-SERVIDOR.md) e [plano de implementação](PLANO-INTEGRACAO.md). O inventário é um retrato datado, não uma afirmação de que uma branch Git corresponde aos binários instalados. Para atualizar a parte observável sem modificar o servidor, execute `bash scripts/inventario-somente-leitura.sh` nesta pasta.
 
 O [retorno da implementação candidata](RETORNO-IMPLEMENTACAO-CANDIDATA-20260930.md) distingue o backend já testado em isolamento dos bloqueios para venda e implantação. O [OpenAPI candidato](openapi-candidato.yaml) documenta apenas o contrato parcial; catálogo/download ainda falham fechados.
