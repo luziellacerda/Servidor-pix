@@ -14,6 +14,7 @@ internal static class StationAdminEndpoints
 
     public static void Map(WebApplication app, bool enabled, string pepperFile)
     {
+        StationManagementEndpoints.Map(app, enabled);
         app.MapGet("/station/licenses/{licenseId}", async (string licenseId,
             HttpContext context, NpgsqlDataSource database, CancellationToken token) =>
         {
@@ -128,7 +129,7 @@ internal static class StationAdminEndpoints
                 { return Failure(failure.Status, failure.Code); }
                 catch (Exception) { return Failure(503, "STATION_ADMIN_UNAVAILABLE"); }
             });
-        foreach (var action in new[] { "block", "unblock", "transfer",
+        foreach (var action in new[] { "block", "unblock", "transfer", "cancel-code",
             "revoke-session" })
             MapAction(app, enabled, action);
     }
@@ -147,6 +148,7 @@ internal static class StationAdminEndpoints
                 if (request is null || !ValidId(licenseId) ||
                     !ValidRequestId(request.RequestId) ||
                     request.ExpectedGeneration < 0 || request.Reason is null ||
+                    request.ExpectedActivationGeneration < 0 ||
                     request.Reason.Length is < 10 or > 256 ||
                     request.Reason.Any(char.IsControl) ||
                     action == "revoke-session" &&
@@ -171,17 +173,19 @@ internal static class StationAdminEndpoints
         string licenseId, StationAdminActionRequest request, string actor,
         NpgsqlDataSource database, CancellationToken token)
     {
-        var digest = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(
-            string.Join('\n', action, licenseId,
+        var digestInput=string.Join('\n', action, licenseId,
                 request.ExpectedGeneration.ToString(System.Globalization.CultureInfo.InvariantCulture),
-                request.Reason, request.TargetSessionId ?? "", actor)))).ToLowerInvariant();
+                request.Reason, request.TargetSessionId ?? "", actor);
+        if(request.ExpectedActivationGeneration is not null)
+            digestInput+="\n"+request.ExpectedActivationGeneration.Value.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        var digest = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(digestInput))).ToLowerInvariant();
         await using var connection = await database.OpenConnectionAsync(token);
         await using var transaction = await connection.BeginTransactionAsync(
             IsolationLevel.Serializable, token);
-        long generation;
+        long generation;long activationGeneration;
         string status;
         await using (var license = new NpgsqlCommand("""
-            SELECT revocation_generation,status FROM suite.suite_licenses
+            SELECT revocation_generation,status,activation_generation FROM suite.suite_licenses
             WHERE license_id=$1 AND product_id='TURBORAMA_STATION_ANDROID'
             FOR UPDATE
             """, connection, transaction))
@@ -192,6 +196,7 @@ internal static class StationAdminEndpoints
                 throw new StationCommerceFailure(404, "STATION_NOT_FOUND");
             generation = row.GetInt64(0);
             status = row.GetString(1);
+            activationGeneration=row.GetInt64(2);
         }
         await using (var prior = new NpgsqlCommand("""
             SELECT request_digest,result_json::text FROM suite.suite_lifecycle_commands
@@ -211,7 +216,8 @@ internal static class StationAdminEndpoints
                 return priorResult;
             }
         }
-        if (generation != request.ExpectedGeneration)
+        if (generation != request.ExpectedGeneration || request.ExpectedActivationGeneration is not null &&
+            activationGeneration != request.ExpectedActivationGeneration)
             throw new StationCommerceFailure(409, "STATION_STATE_CHANGED");
         if (action == "revoke-session")
         {
@@ -226,19 +232,32 @@ internal static class StationAdminEndpoints
         }
         else
         {
-            if (action == "unblock")
+            if (action is "unblock" or "transfer")
             {
                 await using var paid = new NpgsqlCommand("""
                     SELECT 1 FROM suite.suite_license_deliveries
                     WHERE license_id=$1 AND product_id='TURBORAMA_STATION_ANDROID'
+                      AND source_product_sku='STATION_ANDROID_LIFETIME_1_DEVICE'
                       AND financial_state='PAID' AND provisioning_state='PROVISIONED'
                     """, connection, transaction);
                 paid.Parameters.AddWithValue(licenseId);
-                if (status != "SUSPENDED" || await paid.ExecuteScalarAsync(token) is null)
+                if (status != (action == "unblock" ? "SUSPENDED" : "ACTIVE") ||
+                    await paid.ExecuteScalarAsync(token) is null)
                     throw new StationCommerceFailure(409, "STATION_FINANCIAL_BLOCK");
             }
             else if (status != "ACTIVE")
                 throw new StationCommerceFailure(409, "STATION_STATE_CHANGED");
+            if (action == "cancel-code")
+            {
+                await using var pending = new NpgsqlCommand("""
+                    SELECT 1 FROM suite.suite_licenses WHERE license_id=$1
+                      AND enrollment_state='PENDING_ENROLLMENT'
+                      AND NOT activation_consumed AND activation_verifier IS NOT NULL
+                    """, connection, transaction);
+                pending.Parameters.AddWithValue(licenseId);
+                if (await pending.ExecuteScalarAsync(token) is null)
+                    throw new StationCommerceFailure(409, "STATION_STATE_CHANGED");
+            }
             await using (var update = new NpgsqlCommand("""
                 UPDATE suite.suite_licenses SET
                   status=$2,revocation_generation=revocation_generation+1,
@@ -254,8 +273,8 @@ internal static class StationAdminEndpoints
             {
                 update.Parameters.AddWithValue(licenseId);
                 update.Parameters.AddWithValue(action == "block" ? "SUSPENDED" : "ACTIVE");
-                update.Parameters.AddWithValue(action == "transfer" ? 1 : 0);
-                update.Parameters.AddWithValue(action == "transfer");
+                update.Parameters.AddWithValue(action is "transfer" or "cancel-code" ? 1 : 0);
+                update.Parameters.AddWithValue(action is "transfer" or "cancel-code");
                 await update.ExecuteNonQueryAsync(token);
             }
             await using (var sessions = new NpgsqlCommand("""
@@ -354,6 +373,6 @@ internal sealed record StationAdminDevice(string DeviceId,string Status,
     string Manufacturer,string Model,int AndroidSdk,string ClientVersion,
     DateTime CreatedAt,DateTime UpdatedAt);
 internal sealed record StationAdminActionRequest(string RequestId,
-    long ExpectedGeneration,string Reason,string? TargetSessionId);
+    long ExpectedGeneration,string Reason,string? TargetSessionId,long? ExpectedActivationGeneration=null);
 internal sealed record StationActionResult(string Code,string LicenseId,
     long RevocationGeneration);

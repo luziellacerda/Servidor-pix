@@ -18,6 +18,7 @@ var token = InternalToken.Load(Required("SUITE_ADMIN_TOKEN_FILE"));
 var commerceEnabled = Environment.GetEnvironmentVariable("SUITE_COMMERCE_ENABLED") == "1";
 var stationCommerceEnabled = commerceEnabled &&
     Environment.GetEnvironmentVariable("STATION_COMMERCE_ENABLED") == "1";
+var stationOnly = Environment.GetEnvironmentVariable("STATION_MANAGEMENT_ONLY") == "1";
 var commerceToken = commerceEnabled ? InternalToken.Load(Required("SUITE_COMMERCE_TOKEN_FILE")) : null;
 var pepperFile = Required("SUITE_ADMIN_PEPPER_FILE");
 var stationPepperFile = stationCommerceEnabled
@@ -40,6 +41,12 @@ app.Lifetime.ApplicationStarted.Register(() => { if (!OperatingSystem.IsLinux())
     UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.GroupRead | UnixFileMode.GroupWrite); });
 app.Use(async (context, next) =>
 {
+    if (stationOnly && !context.Request.Path.StartsWithSegments("/station") &&
+        context.Request.Path != "/health" && context.Request.Path != "/readiness")
+    {
+        context.Response.StatusCode = StatusCodes.Status404NotFound;
+        return;
+    }
     var commerceRequest = context.Request.Path.StartsWithSegments("/commerce");
     var authenticated = commerceRequest
         ? commerceEnabled && commerceToken!.Authenticates(context.Request.Headers["X-Suite-Commerce-Token"].ToString())
@@ -57,10 +64,10 @@ app.Use(async (context, next) =>
     context.Response.Headers.Pragma = "no-cache";
     await next();
 });
-app.MapGet("/health", () => Results.Json(new { status = "ok", service = "turborama-suite-admin" }));
+app.MapGet("/health", () => Results.Json(new { status = "ok", service = stationOnly ? "turborama-station-management" : "turborama-suite-admin" }));
 app.MapGet("/readiness", async (NpgsqlDataSource db,CancellationToken ct) =>
 {
-    var schemaReady=false;var stationSchemaReady=false;
+    var schemaReady=false;var stationSchemaReady=false;var managementReady=!stationOnly;
     long inconsistentDeliveries=-1;
     try
     {
@@ -68,23 +75,36 @@ app.MapGet("/readiness", async (NpgsqlDataSource db,CancellationToken ct) =>
           SELECT EXISTS(SELECT 1 FROM suite.schema_migrations WHERE version='005_suite_commerce_permissions'),
             EXISTS(SELECT 1 FROM suite.schema_migrations WHERE version='028_station_android'),
             (SELECT count(*) FROM suite.suite_license_deliveries
-             WHERE (provisioning_state='PROVISIONED' AND license_id IS NULL)
-                OR (financial_state='PAID' AND provisioning_state<>'PROVISIONED'))
+             WHERE (NOT $1 OR product_id='TURBORAMA_STATION_ANDROID')
+               AND ((provisioning_state='PROVISIONED' AND license_id IS NULL)
+                OR (financial_state='PAID' AND provisioning_state<>'PROVISIONED')))
           """);
+        cmd.Parameters.AddWithValue(stationOnly);
         await using var row=await cmd.ExecuteReaderAsync(ct);
         if(await row.ReadAsync(ct)){schemaReady=row.GetBoolean(0);stationSchemaReady=row.GetBoolean(1);inconsistentDeliveries=row.GetInt64(2);}
+        await row.CloseAsync();
+        if(stationOnly)
+        {
+            await using var management=db.CreateCommand("""
+                SELECT EXISTS(SELECT 1 FROM suite.schema_migrations WHERE version='030_station_management_audit')
+                  AND coalesce(has_table_privilege(current_user,to_regclass('suite.station_management_audit'),'SELECT'),false)
+                """);
+            managementReady=(bool)(await management.ExecuteScalarAsync(ct)??false);
+        }
     }
     catch { schemaReady=false;inconsistentDeliveries=-1; }
     var ready=commerceEnabled&&schemaReady&&inconsistentDeliveries==0&&
-        (!stationCommerceEnabled||stationSchemaReady);
+        (!stationCommerceEnabled||stationSchemaReady)&&managementReady;
     var contentReady=!contentManagementEnabled||contentManagement is not null&&await contentManagement.IsReadyAsync(ct);
     return Results.Json(new
     {
-        status=ready?(contentReady?"ready":"degraded"):"not_ready", service="turborama-suite-admin", commerce_enabled=commerceEnabled,
+        status=ready?(contentReady?"ready":"degraded"):"not_ready", service=stationOnly?"turborama-station-management":"turborama-suite-admin", commerce_enabled=commerceEnabled,
         content_management_enabled=contentManagementEnabled,
         station_commerce_enabled=stationCommerceEnabled,
+        station_management_only=stationOnly,
         checks=new { database=schemaReady?"ok":"unavailable",migration_005=schemaReady?"ok":"missing",
           migration_028=!stationCommerceEnabled?"disabled":stationSchemaReady?"ok":"missing",
+          migration_030=!stationOnly?"disabled":managementReady?"ok":"missing_or_unreadable",
           migration_013=contentReady?"ok":"missing_or_unreachable",
           content_management=contentReady?"ok":"unavailable",
           delivery_consistency=inconsistentDeliveries==0?"ok":"blocked",inconsistent_deliveries=inconsistentDeliveries }

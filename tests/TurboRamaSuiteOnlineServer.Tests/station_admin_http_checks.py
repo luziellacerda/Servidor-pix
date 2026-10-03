@@ -181,6 +181,10 @@ def run(base, folder, api_env, public_key, dll):
         assert_error(request(base, "GET", "/v1/station/me", bearer=current["accessToken"]), 401, "STATION_SESSION_INVALID")
         assert_error(action("unblock")[0], 409, "STATION_FINANCIAL_BLOCK")
         print("STATION ADMIN HTTP: OK (commerce/issue, permission/CSRF, idempotency, block/unblock, revoke, transfer/new device, financial suspension)")
+        if os.environ.get("STATION_HTTP_PANEL_CHECKS") == "1":
+            from station_panel_checks import run as panel_checks
+            panel_checks(base,folder,api_env,public_key,dll,env,internal)
+
     finally:
         process.terminate()
         try:
