@@ -1,8 +1,39 @@
 # Handoff técnico único: servidor, conexão e instalação do TurboStations Android
 
-Atualizado em 03/10/2026, 11h07 (America/Maceio). Preserva as evidências de 02/10/2026 identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
+Atualizado em 03/10/2026, 11h48 (America/Maceio). Preserva as evidências de 02/10/2026 identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
 
 **Decisão operacional:** ainda não liberar o APK como conectado e não implantar o código novo na 5192. Falta preparar o índice real, resolver as capas 404 de produção, repetir o fluxo autenticado na 5192 implantada e validar download/instalação no APK candidato já instalado. O fluxo HTTP candidato passou em banco temporário com itens sintéticos e, depois, com os 1.816 arquivos reais do volume acessível; isso ainda não comprova a 5192 de produção nem o download no aparelho.
+
+## Retorno ao pedido de fechamento do Android, commit `d953998`, em 03/10/2026
+
+Li integralmente `docs/server/HANDOFF-PEDIDO-FECHAMENTO-SERVIDOR-STATION-20261003.md` do TurboElden, commit `d953998`. Este retorno continua no documento único do servidor. **Entrega atual: candidata validada em isolamento, ainda não implantada na 5192.** O pedido exige índice conciliado, permissões da conta de serviço, migrations/backup, APK compatível e prova HTTPS real antes de declarar produção pronta.
+
+| Frente pedida | Implementado/conferido | Falta para produção |
+| --- | --- | --- |
+| Identificar 5192 | `turborama-station-api.service` ativo, PID 2388, `ExecStart` da release antiga, sem drop-ins; SHA256 da DLL efetiva `75c466c3f33d64d89229c70610f40b4bd781f5f8fece6f021259f7be8bcfa6d2`; `/ready/station` local 200. | Configuração protegida continua ilegível; revisão/IDs do índice e migration 029 no ledger real não foram lidos. O 200 da DLL antiga só confirma migration 028/banco, não capas ou downloads. |
+| Conteúdo | 1.816 jogos/capas/descritores SNES/Mega Drive já validados. `scripts/materializar-conteudo-station.py` copiou somente os arquivos escolhidos para árvore privada de release: 1.887.922.991 bytes de jogos, 1.039.395.104 bytes de capas, 3.632 hashes em `files.sha256`, manifesto SHA256 `6867471b46d8dbe1a774214b3ffb2cd6fae116651688c6ff0c3433c4af7722dd`. Índice reescrito SHA256 `cc2802f6f33c04deafc40b040c2ff6d04ed621f8c84e1072ec5c8ac26a9cbd52`; carregador e HTTP isolado passaram novamente. | Conciliar com índice efetivo para preservar IDs e outras plataformas; instalar árvore em local estável legível por `turborama-suite`. O diretório pai do HD está `root:root 0750` e o estágio privado está `0700/0600`, portanto a conta da 5192 não alcança esses arquivos hoje. |
+| Código/release | Commit de código `45fe4dfa71c0b15a6a805791a33b3b89f9e141c3`; DLL Release SHA256 `faa015c47df0ace9cd225517da3fb103b8522b2b353a24a9d3c1ed9070f52630`, pacote TAR SHA256 `4f102ee5566c5a72ec3292b6cf9aef7e40744a4c3d95cdd41ff95be10f33ddde`. O código novo exige migrations 028 **e 029** em `/ready/station`; o teste temporário confirmou 503 sem a 029 e 200 com ela. Suíte .NET e HTTP com a DLL publicada passaram em banco temporário. | Verificar ledger real, backups restauráveis e caminho/permissões finais antes da troca da unidade. Não executar o binário novo contra índice antigo sem `artifact`. |
+| Acesso/perfil/admin | HTTP isolado confirmou ativação, sessão, `/me` assinado com nome e grant; testes .NET cobrem provas, concorrência, revogação e transferência. `StationCommerceEndpoints` e `StationAdminEndpoints` do código candidato oferecem emissão, bloqueio, desbloqueio, transferência e revogação com escopo Station; projeto Admin compila em Release. | Conferir configuração/versão efetiva do helper 5194, fluxo comercial autorizado e respostas de produção com conta sintética. TTL de desafio/sessão/grant por relógio real e bloqueio administrativo ponta a ponta continuam sem prova nesta rodada. |
+| APK | Fonte Android do alias `megadrivebr` publicada separadamente no commit `5988343`; o APK instalado `43670211...` ainda mostra 996 itens e não contém esse ajuste. | Equipe Android integrar/assinar/instalar candidato compatível e provar capa, download, instalação, abertura, retorno e reconhecimento dos jogos anteriores. Nenhum APK foi alterado nesta tarefa. |
+
+**Inventário do HD indicado:** a raiz contém apenas `snes` e `megadrive` como plataformas; a busca completa encontrou zero arquivos `.json`. As 36 rotas e 12.346 nomes da tabela histórica não comprovam ROM/capa acessível das demais plataformas. A 5192 aponta para um arquivo privado configurado em `/etc/turborama-suite/station-5192.env`, inacessível à conta `lz-servidor`; `sudo -n` informa que precisa de senha. Para obter uma cópia sem expor o `.env`, um operador com acesso root pode executar a ferramenta de leitura abaixo. Ela extrai **somente** `Station__LibraryIndexFile`, grava a cópia com modo 0600 para `lz-servidor` e imprime apenas revisão, contagens e hash; não modifica a 5192:
+
+```text
+sudo python3 docs/station-android/scripts/exportar-indice-efetivo.py \
+  --output /home/lz-servidor/indice-station-5192-privado.json
+```
+
+Após essa cópia, conciliar com `scripts/conciliar-indices-station.py` usando o índice candidato materializado e `source-map.json`, escolher revisão superior à efetiva e validar o índice resultante pelo carregador real. A cópia e o índice mesclado ficam fora do Git. O operador precisa confirmar leitura de **cada** jogo/capa pela identidade `turborama-suite` no destino final, não só por `lz-servidor`; depois conferir a migration 029 no banco real, backup/retorno e compatibilidade do APK. O novo código só deve entrar na 5192 com esses dados concretos.
+
+| Plataforma do candidato | Itens/capas validados no estágio | Download HTTP isolado | Itens vistos no APK antigo | Exclusões conhecidas no HD |
+| --- | ---: | --- | ---: | --- |
+| `snes` | 644/644 | 1 jogo completo, SHA256 conferido | 176 | 0 ROM ausente |
+| `snesbr` | 191/191 | 1 jogo completo, SHA256 conferido | 28 | 0 ROM ausente |
+| `megadrive` | 887/887 | 1 jogo completo, SHA256 conferido | 693 | 0 ROM ausente |
+| `megadrivebr` | 94/94 | 1 jogo completo, SHA256 conferido | 0; alias ausente no APK instalado | 8 entradas XML sem ROM excluídas |
+| Outras plataformas | Sem acervo de arquivos/capas neste HD | Não testadas nesta rodada | 99 no APK antigo, distribuídos em cinco plataformas | Quantidade real indisponível sem índice/fontes |
+
+Os números do APK são observação anterior do telefone, com possibilidade de cache assinado; **nenhuma** contagem ou capa HTTP de produção foi verificada nesta rodada. O teste HTTP isolado usa licença/chaves sintéticas e amostra uma transferência por plataforma, não todas. Não declarar publicação ou sucesso no aparelho a partir dele.
 
 ## Atualização: homologação HTTP isolada em 03/10/2026
 
@@ -314,4 +345,4 @@ O commit `7d5df08` registra implementação e instalação de teste de parte dos
 
 Aceite final exige evidência separada de **desenvolvimento/homologação** e **produção** em cada linha. Atualizar esta tabela e os dados observados, sem criar outro handoff de retorno. Os nomes de jogos foram incluídos nas duas listas de comparação por pedido do mantenedor; não publicar tokens, códigos comerciais, dados do comprador, URLs privadas, caminhos do armazenamento ou chaves privadas.
 
-`/ready/station` 200 confirma apenas a prontidão atualmente implementada (incluindo migration 028); não verifica o índice inteiro, capas, chave de grants ou o fluxo de bytes. Não há evidência para declarar servidor ou APK prontos para produção agora. Este documento descreve a mudança necessária; não executa nem autoriza implantação ou restart.
+Na DLL antiga implantada, `/ready/station` 200 confirma apenas a migration 028/banco. Na candidata `45fe4df`, exige também a 029; nenhuma das duas sondas verifica o índice inteiro, capas, chave de grants ou fluxo de bytes. Não há evidência para declarar servidor ou APK prontos para produção agora. Este documento descreve a mudança necessária; não executa nem autoriza implantação ou restart.
