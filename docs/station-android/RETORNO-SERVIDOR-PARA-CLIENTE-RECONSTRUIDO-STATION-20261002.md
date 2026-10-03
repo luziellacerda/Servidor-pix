@@ -1,8 +1,44 @@
 # Handoff técnico único: servidor, conexão e instalação do TurboStations Android
 
-Atualizado em 03/10/2026, 15h25 (America/Maceio). Preserva as evidências de 02/10/2026 identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
+Atualizado em 03/10/2026, 16h47 (America/Maceio). Preserva as evidências anteriores identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
 
-**Estado operacional atual:** API Station atualizada em produção às 15h17 para `fd13c0d`, catálogo revisão **3 / 1.816 jogos**, capas e downloads conferidos por HTTPS. Os 996 IDs anteriores continuam resolvíveis; 255 duplicatas ficam fora da listagem. Migrations 028/029 já estavam aplicadas. Backup de arquivos e banco foi restaurado/conferido em ambiente temporário. O APK instalado f5b35419 não foi alterado: compilar a fonte Android 02c09dd e validar instalação/abertura no aparelho continuam pendentes. As seções datadas antes do rollout preservam a evidência histórica; a tabela operacional e a matriz de aceite ao final foram atualizadas.
+**Estado operacional atual:** API Station `fd13c0d`, catálogo revisão **3 / 1.816 jogos**, capas e downloads conferidos por HTTPS. O retorno Android `2834e3b` comprova APK novo **fa3bc844** instalado, com fonte 02c09dd e ponte JNI compiladas/testadas. A ativação403 foi diagnosticada: código consumido e licença vinculada à chave apagada na desinstalação. Às **16h47**, a mesma licença foi transferida oficialmente, a chave/sessões anteriores revogadas e um novo código entregue privadamente, válido até **17h17:36 de 03/10/2026**. A ativação pelo aparelho e o fluxo catálogo/capa/download/jogo ainda aguardam execução. Os estados anteriores de APK/produção abaixo são históricos; a matriz final foi atualizada.
+
+## Retorno ao app 2834e3b: ativação diagnosticada e transferência concluída — 03/10/2026, 16h47
+
+### APK recebido e causa comprovada da recusa
+
+Lido integralmente o [retorno de integração Android](https://github.com/luziellacerda/TurboElden/blob/2834e3b101ce4e957414bccd13154c8a70af2f01/docs/server/INTEGRACAO-APP-PRODUCAO-STATION-20261003.md) e suas evidências. O APK SHA256 **`fa3bc84425120803d7e90069be3c296a91dbe04146455063f12d9a6205bbf795`**, pacote `org.turboramastation.frontend`, foi instalado às16h17:03; o hash instalado foi conferido pela equipe Android. Fonte02c09dd, 302 verificações Java/API34, 28 da ponte JNI no Android e 7 da política de capas no Android. Essas provas vêm do retorno publicado; não houve build, instalação ou ADB neste Linux.
+
+O journal da Station confirma `POST /v1/station/activations/challenge`403 na janela das **16h19:13**; o app identifica a correlação **`1354b75f239f4fd7be8761df5efd7f8e`**. A consulta privada leu a licença exata do handoff de ativação, sem copiar código/identificação para o Git. Antes de qualquer escrita, constatou:
+
+- código anterior corresponde ao verificador armazenado, mas **`activation_consumed=true`**;
+- licença **ACTIVE/LIFETIME**, sem expiração, entrega **PAID/PROVISIONED**, um aparelho permitido;
+- estado **BOUND**, com uma chave ativa do Samsung SM-A566E cadastrada em01/10, anterior à desinstalação confirmada pelo mantenedor;
+- prazo do código ainda era válido na hora da tentativa; o bloqueio não foi expiração nem suspensão financeira.
+
+No código implantado, `FindActivationAsync` exige código não consumido e `PENDING_ENROLLMENT`; esses dois requisitos estavam violados e o serviço devolve **`STATION_ACTIVATION_INVALID`403**. O journal não contém o corpo/identidade da tentativa: a associação à correlação vem do retorno Android e a causa da inelegibilidade vem da consulta privada e do fonte efetivo. A reinstalação não recupera a chave apagada do Keystore; repetir o código antigo não resolve o vínculo.
+
+### Ação administrativa executada e provas
+
+O mantenedor autorizou executar a correção. Foi usado o procedimento oficial **`/station/licenses/{id}/actions/transfer`**, com geração esperada0, motivo, ator administrativo e recibo/auditoria. O código administrativo da branch foi publicado para uso pontual; DLL SHA256 **`dae8a97fe6453b965a52066f66a7475423af4bd30ad091c00c6794fd0ec93c7d`**. A execução ocorreu em processo temporário, **socket Unix privado**, usando o usuário/role PostgreSQL administrativo existente, após autenticação nativa do Linux. Acesso sem token e POST sem controle CSRF foram negados antes da ação. O processo/socket temporários foram encerrados/removidos; não foi instalado outro serviço nem atualizada a administração dos demais produtos.
+
+**Resultado às16h47:36:** mesma licença **ACTIVE/PENDING_ENROLLMENT**, geração de revogação1; dispositivo anterior **REVOKED**, nenhum dispositivo ou sessão anterior ativo. `STATION_TRANSFER` e recibo `STATION_ANDROID/TRANSFER/SUCCESS` foram conferidos no banco. Não foi criada outra licença, alterado o pagamento ou removida a verificação de prova/aparelho.
+
+O helper Station existente na5194 emitiu novo código de uso único pela ação administrativa **`issue-code`**, com auditoria. Geração de ativação7, código não consumido, validade30 minutos: **03/10/2026 17h17:36 America/Maceio / 20h17:36 UTC**. O segredo foi salvo em arquivo local privado0600, fora dos repositórios, e apresentado em janela privada do Linux ao mantenedor. **Nenhum código, token, identificador de licença/aparelho ou nome pessoal foi incluído neste retorno.**
+
+[Evidência sanitizada da recuperação](evidencia-recuperacao-ativacao-station-20261003.json): estado, hashes, controles, auditoria e limites. Snapshot privado dos registros afetados foi feito antes da transferência. As tentativas anteriores pararam no preflight sem transferir ou emitir código; seus registros privados foram preservados. O processo final executou a transferência uma vez.
+
+Conferência antes/depois: **outras licenças idênticas**, todos os dez PIDs de serviços acompanhados iguais, índice/hash/revisão de conteúdo inalterados. API Station continua fd13c0d; catálogo3/1816, migrations, Nginx e motores não foram alterados por esta recuperação.
+
+### Próxima ação do Android
+
+1. No APK **fa3bc844 já instalado**, preencher **o novo código recebido privadamente**, concluir desafio e prova com a chave atual do aparelho e conferir `/me`. Não usar código antigo nem identificação `STA-` como senha; não desinstalar ou limpar os dados.
+2. Capturar status/correlação das duas etapas de ativação, sessão, perfil e catálogo; conferir revisão3 e contagens644/191/887/94. O servidor agora permite matrícula; **não há prova de ativação desse APK após a transferência** neste Linux.
+3. Confirmar capa200/renderização/cache, autorização/GET com a mesma sessão, bytes/hash/recibo, cancelamento, abrir jogo e voltar. Registrar um raw e um ZIP. Preservar jogos/saves e assinatura.
+4. Se o prazo terminar antes do uso e a licença continuar pendente, fazer **reemissão administrativa da mesma licença** pelo canal privado; não criar segunda licença nem repetir a transferência. Se já estiver BOUND, retomar por licença/Keystore salvo.
+
+O fluxo administrativo foi concluído; o aceite no aparelho continua pendente. Não promover o APK a estável antes dessas provas.
 
 
 ## Produção corrigida e catálogo integral conciliado — 03/10/2026, 15h21
@@ -431,19 +467,19 @@ Teste local de `StationLibrary.ReadCover`: PNG sintético válido de 1×1 pixel,
 
 | Requisito | Comprovado | Trabalho restante |
 | --- | --- | --- |
-| Código / conciliação | DLL fd13c0d; suíte .NET; 13 casos de conciliação e 6 do exportador; HTTP da DLL empacotada com o índice real conciliado e IDs ocultos. | Build Android/NDK e validação da ponte. |
+| Código / conciliação | DLL fd13c0d; suíte .NET; 13 casos de conciliação e 6 do exportador; HTTP do índice conciliado. Retorno2834e3b comprova build Android/NDK, 302 checks Java, 28 JNI e 7 retry Android. | Fluxo autenticado e jogo no APK instalado. |
 | Catálogo / conteúdo | HTTPS assinado revisão 3/1.816; todos os nomes/ROMs/capas cruzados; 996 IDs antigos preservados; 4.142 arquivos/hash legíveis pela API. | Conferir seleção, quantidade e cache no aparelho. |
 | Capas / downloads | Cinco pares HTTPS200, 2 raw/3 ZIP, incluindo ID antigo; MIME/tamanho/SHA256 e grant de um uso conferidos; inexistente404 passou em isolamento. | Renderizar capas e completar download/instalação no APK. |
-| Sessão / erros | Ativação, sessão e perfil sintéticos passaram no HTTPS real; reuso de grants404 passou. Expiração por relógio real, revogação, outro aparelho/sessão e interrupção/reautorização passaram isolados. | Expiração/retomada e cancelamento na UI; painel/provedor administrativo real não foi revalidado. |
+| Sessão / erros | HTTPS sintético e cenários isolados aprovados; 403 de nova ativação diagnosticado, mesma licença transferida oficialmente e novo código privado emitido às16h47. | Ativar com a chave atual, conferir perfil/retomada/cancelamento no APK; painel/provedor comercial continuam sem prova integral. |
 | Operação / retorno | Migrations028/029 já existentes, chave32 bytes legível, backup completo restaurado em cluster temporário; retorno automático executado antes da correção de correlação. | Guardar artefatos/backups e incrementar revisão em futuras trocas de bytes. |
-| APK / emulador | APK f5b35419 tinha login salvo e 996 itens antes do rollout; fonte 02c09dd tem 302 verificações Java/7 C++. | Compilar/assinar, atualizar preservando dados e comprovar capa/download/instalação/abrir/voltar; legado residual permanece sem aceite. |
+| APK / emulador | APK fa3bc844 instalado e hash conferido pela equipe Android; assinatura, manifesto e motores preservados. Fonte02c09dd compilada. | Concluir nova ativação, catálogo3/1816, capa/download/instalação/abrir/voltar; legado residual permanece sem aceite. |
 
 ## Compatibilidade e ordem de liberação
 
 | Combinação | Resultado / ação |
 | --- | --- |
-| API fd13c0d/revisão 3 + APK instalado f5b35419 | Servidor entrega catálogo completo e descritor; obter catálogo fresco e testar instalação no aparelho. O APK não foi atualizado por esta operação. |
-| API fd13c0d + fonte Android02c09dd | Correções de fonte testadas no host; build/ponte/execução Android pendentes. |
+| API fd13c0d/revisão3 + APK instalado fa3bc844 | Correções compiladas e instalação comprovada em2834e3b. Mesma licença agora pendente de ativação com novo código privado; depois validar catálogo e instalação de jogo. |
+| API fd13c0d + fonte Android02c09dd | Build/ponte já comprovados pela equipe Android; fluxo de produção no aparelho aguarda ativação e provas de conteúdo. |
 | Cliente com catálogo/cache revisão1 | Atualizar e verificar resposta assinada revisão 3; não instalar usando descritor com revisão diferente. Licença e Keystore são preservados. |
 | Código novo + índice sem descritores | Autorizar item conhecido produz503 `STATION_ARTIFACT_NOT_READY`; combinação não usada em produção. |
 | Retorno à DLL antiga | Voltar também ao índice/configuração anteriores, pelo script limitado; não misturar DLL antiga com índice corrigido de compatibilidade. |
@@ -460,10 +496,10 @@ Teste local de `StationLibrary.ReadCover`: PNG sintético válido de 1×1 pixel,
 
 ### 2. Android: validar e concluir o APK candidato
 
-O runtime `629a55a8` e sua revisão documental `db68b613` registram o APK instalado f5b35419; a fonte corretiva `645e7c4` ainda aguarda build/instalação; a lista é o critério de aceite a comprovar, especialmente com catálogo completo e download real.
+O retorno `2834e3b` registra o APK instalado fa3bc844, com fonte02c09dd compilada, assinatura preservada e provas Android da ponte. A transferência/reemissão oficial das16h47 libera a matrícula da chave atual. A lista abaixo continua como critério de aceite do fluxo autenticado e download real; o APK f5b35419/runtime629a55a8 é histórico.
 
 1. **Android:** conferir no APK candidato a leitura **obrigatória** de `itemRevision` e todos os campos `artifact` do payload assinado, já implementada em `StationApi.Grant`. Comparar item/revisão com o catálogo da mesma sessão; exigir hash e tamanho esperados em `StationFiles`. Rejeitar descritor ausente, inválido ou formato não suportado. Preservar `StationConfig` (host, pin TLS, autoridade pública) e o alias do Keystore. Não trocar o código de ativação por `STA-`: esse prefixo identifica a licença, não a senha emitida.
-2. **Android/nativo:** validar os 94 jogos da categoria `megadrivebr`, cujo alias já está no APK f5b35419, e integrar a revisão final `02c09dd` e validar a ligação já feita de `StationCoordinator` ao carrossel/catalog service e às telas reais, preservando seleção, texturas, jogos instalados, saves e emuladores. Usar `platform` somente por mapeamento explícito, inclusive edições BR; plataforma desconhecida não vira pasta por aproximação. Usar `coverId`/revisão no cache, carregar somente capas visíveis e tratar 404/429 sem tempestade de pedidos. Concluir a retirada das chamadas antigas de catálogo, licença, telemetria e URLs de jogo do frontend anterior, sem atingir redes internas dos emuladores.
+2. **Android/nativo:** validar os 94 jogos da categoria `megadrivebr`, cujo alias já está no APK fa3bc844 com fonte `02c09dd`, e validar a ligação já feita de `StationCoordinator` ao carrossel/catalog service e às telas reais, preservando seleção, texturas, jogos instalados, saves e emuladores. Usar `platform` somente por mapeamento explícito, inclusive edições BR; plataforma desconhecida não vira pasta por aproximação. Usar `coverId`/revisão no cache, carregar somente capas visíveis e tratar 404/429 sem tempestade de pedidos. Concluir a retirada das chamadas antigas de catálogo, licença, telemetria e URLs de jogo do frontend anterior, sem atingir redes internas dos emuladores.
 3. **Android/instalador:** quando um jogo estiver ausente, autorizar uma vez, baixar sequencialmente para temporário privado com o **mesmo Bearer**, recusar 3xx/`Location` e Range, confrontar `Content-Length`, tamanho e SHA256, e só então processar `raw|zip|rar|7z`. Para compactados, limitar arquivos/tamanho extraído, rejeitar caminho absoluto, `..`, links e duplicatas, conferir `launchPath` e referências auxiliares como BIN/CUE. Usar publicação atômica e manifesto de arquivos: parcial, falha ou cancelamento nunca viram “instalado” nem substituem jogo/saves íntegros. Em queda após consumo, pedir outro grant; nunca repetir o GET consumido.
 4. **Android/build:** o APK candidato completo já foi instalado com atualização e assinatura preservada; confirmar que DEX e bibliotecas usam somente o cliente Station novo nas rotas comerciais. Preservar pacote, dados privados, emuladores e saves. Completar no aparelho: ativação quando necessária, retomada por licença salva, `/me`, catálogo fresco, capa 200, download, cancelar, abrir jogo, voltar, apagar somente arquivos do jogo e relançar offline conforme política definida. Registrar hash e versão do APK aceito antes de promover.
 
@@ -471,11 +507,11 @@ O runtime `629a55a8` e sua revisão documental `db68b613` registram o APK instal
 
 | Prova | Situação atual / limite |
 | --- | --- |
-| Autenticação/perfil | HTTPS200 de ativação/desafios/sessão/perfil, assinatura e identidades conferidas com licença sintética removida. TTL60/180 s e cenários de bloqueio/transferência passaram isolados; painel/provedor real não testado nesta implantação. |
+| Autenticação/perfil | HTTPS sintético e TTL/cenários isolados aprovados. Licença real exata diagnosticada: código consumido/BOUND. Transferência oficial, revogação anterior e reemissão auditadas; nova ativação/perfil do APK ainda pendentes. Painel/provedor não comprovados integralmente. |
 | Catálogo | HTTPS200, revisão 3, 1.816 itens, quatro plataformas exatas, assinatura/keyId/vínculo de sessão conferidos; TSV com 1.816 pares exatos e zero IDs faltantes. |
 | Capas | Cinco capas HTTPS200 com MIME e bytes/hash iguais ao índice, incluindo um `coverId` antigo. Todas as 2.071 capas da árvore privada tiveram leitura/hash sob UID 995. Negativa de capa inexistente passou isolada; cache/repetição visual aguardam APK. |
 | Autorização/bytes | Cinco grants assinados com revisão/descritor/identidades exatos; GET200, tamanho e SHA256 conferidos; 2 raw/3 ZIP. Cinco reutilizações404 comprovadas em produção. Expiração/outro aparelho/interrupção/novo grant passaram isolados. |
 | Operação | DLL/source/índice identificados; backup restaurável verificado; migrations existentes, leitura real do conteúdo, preservação dos demais serviços e retorno automático comprovados. |
-| APK/emulador | Fonte 02c09dd testada no host; APK f5b35419 permanece instalado no ambiente externo. Falta build/atualização, catálogo fresco3/1.816, capas, download, instalação, abrir e voltar; nenhum APK novo/aparelho foi operado neste Linux. |
+| APK/emulador | Retorno2834e3b comprova APK fa3bc844 instalado/hash, 302 Java, 28 JNI e 7 retry Android. Falta nova ativação e catálogo3/1816/capas/download/instalação/abrir/voltar. O aparelho/build foram operados pela equipe Android; Linux realizou a recuperação administrativa. |
 
 A API tem prova de conteúdo autenticado de produção além de `/ready/station`. O aceite completo do aplicativo continua condicionado à execução no aparelho. O corpo do handoff preserva evidências históricas com data; este estado operacional e a evidência JSON do rollout prevalecem sobre o recorte anterior. Segredos, identidades de compradores, URLs privadas e caminhos de mídia permanecem fora dos commits.
