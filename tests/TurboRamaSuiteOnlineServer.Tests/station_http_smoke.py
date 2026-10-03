@@ -16,6 +16,7 @@ import hmac
 import importlib.util
 import json
 import os
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import socket
 import subprocess
@@ -276,6 +277,14 @@ def main():
             assert cover[0] == 200 and cover[1]["Content-Type"] == "image/png" and cover[2] == PNG
             assert_error(request(base, "GET", "/v1/station/covers/cover-missing-01",
                                  bearer=token), 404, "STATION_COVER_NOT_FOUND")
+            assert_error(request(base, "GET", "/v1/station/covers/cover-synthetic-01"),
+                         401, "STATION_SESSION_INVALID")
+            with ThreadPoolExecutor(max_workers=4) as pool:
+                burst = list(pool.map(lambda _: request(base, "GET",
+                    "/v1/station/covers/cover-synthetic-01", bearer=token), range(48)))
+            assert len(burst) == 48 and all(response[0] == 200 and response[2] == PNG
+                and response[1]["Cache-Control"] == "no-store" for response in burst)
+            print("STATION COVER BURST: OK (48 authenticated covers, four concurrent requests, exact bytes, anonymous 401)")
             if extra is not None:
                 for platform in sorted({row["platform"] for row in extra["items"]
                                         if row.get("catalogVisible") is not False}):

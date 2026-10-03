@@ -1,4 +1,6 @@
 using System.Net;
+using System.Security.Cryptography;
+using System.Text;
 using TurboRamaSuiteOnlineServer;
 
 namespace TurboRamaSuiteOnlineServer;
@@ -47,7 +49,8 @@ public static class StationEndpoints
                     context.RequestAborted);
                 timeout.CancelAfter(TimeSpan.FromSeconds(10));
                 var cover = await context.RequestServices.GetRequiredService<StationService>()
-                    .CoverAsync(Bearer(context), coverId, timeout.Token);
+                    .CoverAsync(Bearer(context), coverId, timeout.Token,
+                        session => limiter.AllowCoverDevice(session.LicenseId, session.DeviceId));
                 context.Response.Headers.CacheControl = "no-store";
                 context.Response.Headers["X-Content-Type-Options"] = "nosniff";
                 return Results.File(cover.Bytes, cover.ContentType);
@@ -212,22 +215,44 @@ public static class StationEndpoints
         statusCode: 429);
 }
 
-internal sealed class StationRateLimiter
+public sealed class StationRateLimiter
 {
+    public const int CoverDeviceRequestsPerMinute = StationLibrary.MaximumItems;
+    public const int CoverOriginRequestsPerMinute = CoverDeviceRequestsPerMinute * 4;
     private readonly object _sync = new();
     private readonly Dictionary<string, (long Minute, int Count)> _windows = new();
+    private readonly TimeProvider _clock;
+
+    public StationRateLimiter(TimeProvider? clock = null) => _clock = clock ?? TimeProvider.System;
 
     public bool Allow(IPAddress? address, string route)
     {
         var origin = address?.ToString() ?? "unknown";
-        var minute = DateTimeOffset.UtcNow.ToUnixTimeSeconds() / 60;
         var key = origin + "\0" + route;
+        return AllowWindow(key, route == "/v1/station/covers" ? CoverOriginRequestsPerMinute : 30);
+    }
+
+    // Bound to the authenticated device rather than its temporary session or shared NAT.
+    public bool AllowCoverDevice(string licenseId, string deviceId)
+    {
+        if (licenseId.Length is < 6 or > 64 ||
+            licenseId.Any(c => !(char.IsAsciiLetterOrDigit(c) || c is '-' or '_')) ||
+            !StationProtocol.IsCanonicalBase64Url(deviceId, 32))
+            return false;
+        var identity = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(licenseId + "\n" + deviceId)));
+        return AllowWindow("cover-device\0" + identity, CoverDeviceRequestsPerMinute);
+    }
+
+    private bool AllowWindow(string key, int maximum)
+    {
+        var minute = _clock.GetUtcNow().ToUnixTimeSeconds() / 60;
         lock (_sync)
         {
             if (_windows.TryGetValue(key, out var window) && window.Minute == minute)
             {
+                if (window.Count >= maximum) return false;
                 _windows[key] = (minute, window.Count + 1);
-                return window.Count < 30;
+                return true;
             }
             if (_windows.Count >= 4096)
             {

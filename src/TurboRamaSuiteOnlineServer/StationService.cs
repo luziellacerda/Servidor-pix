@@ -194,9 +194,11 @@ public sealed class StationService(PostgresStationStore store,
     }
 
     public async Task<StationCoverBlob> CoverAsync(string bearer, string coverId,
-        CancellationToken token)
+        CancellationToken token, Func<StationSession, bool>? allowance = null)
     {
-        _ = await Session(bearer, token);
+        var session = await Session(bearer, token);
+        if (allowance is not null && !allowance(session))
+            throw new SuiteException(429, "STATION_RATE_LIMITED", "Too many requests.");
         if (library is null)
             throw new SuiteException(503, "STATION_CATALOG_NOT_READY",
                 "Station catalog is not ready.");
