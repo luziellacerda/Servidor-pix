@@ -1,0 +1,144 @@
+{
+  "observedAt": "2026-10-03T15:21:02-03:00",
+  "service": "turborama-station-api.service",
+  "pid": 88965,
+  "sourceRevision": "fd13c0d27eaab6a4dcf931a9cd64c3dcd7dd50c4",
+  "dllSha256": "f305ae3763cb77a53a27b2c168c8de290191b3a7e88e612850856b6f7be7e639",
+  "releaseTarSha256": "518443c9f7c5e10289d99dc22b5ed98e4e29d1c541c65102b796ade8072648d4",
+  "indexSha256": "5b460a6f9866e30a5a5b4dad24652c512b1187b3df01244e6af9308ae6b18342",
+  "applied": true,
+  "backupRestoreVerified": true,
+  "migrationApplied": false,
+  "existingMigrationsVerified": [
+    "028_station_android",
+    "029_station_download_grants"
+  ],
+  "originalIndex": {
+    "revision": 1,
+    "items": 996,
+    "sha256": "5b3f881479a388694b4b34e33e406770885d0203fa588e5c50ff40d5496fbdf8",
+    "platformCounts": {
+      "gamegear": 58,
+      "gb": 22,
+      "gba": 5,
+      "gbc": 7,
+      "megadrive": 693,
+      "sega32x": 7,
+      "snes": 176,
+      "snesbr": 28
+    },
+    "serviceUid": 995,
+    "gamePermissionDenied": 996,
+    "coverPermissionDenied": 996
+  },
+  "reconciliation": {
+    "preservedPublishedItemIds": 996,
+    "preservedPublishedCoverIds": 996,
+    "canonicalPublishedIds": 741,
+    "hiddenCompatibilityIds": 255,
+    "newPublishedGameIds": 1075,
+    "changedPlatformRecords": 357,
+    "changedNameRecords": 99,
+    "indexedRows": 2071,
+    "catalogRevision": 3,
+    "catalogItems": 1816,
+    "platformCounts": {
+      "megadrive": 887,
+      "megadrivebr": 94,
+      "snes": 644,
+      "snesbr": 191
+    },
+    "sourceGameCoverNameMatches": 1816,
+    "signedCatalogExactMatches": 1816,
+    "signedCatalogItemsMissingInIndex": 0
+  },
+  "serviceReadableVerifiedFiles": 4142,
+  "nginxStationCorrelationUpdated": true,
+  "nginxChangedLocations": [
+    "/v1/station/",
+    "/v1/station/artifacts/"
+  ],
+  "sharedServicesPreserved": true,
+  "syntheticLicensesRemoved": true,
+  "publicHttpsVerification": {
+    "catalogItems": 1816,
+    "catalogRevision": 3,
+    "verifiedCoverAndDownloadPairs": 5,
+    "sampleArtifactFormats": {
+      "raw": 2,
+      "zip": 3
+    },
+    "compatibilityIdVerified": true,
+    "signaturesAndIdentityVerified": true,
+    "correlationVerified": true,
+    "oneUseVerified": true,
+    "activationChallengeStatus": 200,
+    "activationCompleteStatus": 200,
+    "sessionChallengeStatus": 200,
+    "sessionStatus": 200,
+    "profileStatus": 200,
+    "catalogStatus": 200,
+    "coverStatuses": [
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "authorizeStatuses": [
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "artifactStatuses": [
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "repeatedArtifactStatuses": [
+      404,
+      404,
+      404,
+      404,
+      404
+    ]
+  },
+  "postChecks": {
+    "readyStatus": 200,
+    "publicCatalogWithoutBearerStatus": 401,
+    "publicCatalogWithoutBearerCode": "STATION_SESSION_INVALID",
+    "correlationEchoed": true
+  },
+  "tests": {
+    "reconcileCases": 13,
+    "privateExportCases": 6,
+    "dotnetRelease": "passed",
+    "packagedApiHttpWithReconciledIndex": "passed",
+    "temporaryReleaseLicenseVerifierAndCleanup": "passed"
+  },
+  "android": {
+    "correctedSourceRevision": "02c09dd36fcfa6c69ceb481f0934e84eef01e5ae",
+    "newApkBuilt": false,
+    "newApkInstalled": false,
+    "deviceFlowVerified": false,
+    "adbAvailable": false
+  },
+  "rollbackRehearsal": {
+    "firstPublicCheckFailedBecauseProxyReplacedCorrelation": true,
+    "originalServiceRestoredAutomatically": true
+  },
+  "dataFiles": {
+    "catalogo-conciliado-jogos-capas-downloads-20261003.tsv": {
+      "sha256": "bcd8bce18ac48f9eef4c506b071e559de1a3465d3e6892e9ff3538b7c1f9f39a"
+    },
+    "compatibilidade-ids-publicados-20261003.tsv": {
+      "sha256": "07736677fd290da1359be4d30057e2ccf004dc90e1286f58940588ce969c336d"
+    }
+  },
+  "publicCatalogExportSha256": "a725a1c2b3dcf98b9ccfb5b85c6909a054c6043dd29cef3cebd5648714e5d36f",
+  "stationNginxConfigSha256": "786b956bd00aa32d95ef422391458306cb46bd06f76a81a4b93e181d1bbd50cb"
+}

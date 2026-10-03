@@ -13,6 +13,7 @@ Never targets production.
 import base64
 import hashlib
 import hmac
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -314,6 +315,22 @@ def main():
                 assert response[0] == 200 and \
                     hashlib.sha256(response[2]).hexdigest() == row["artifact"]["sha256"]
                 print("STATION COMPATIBILITY IDS: OK (hidden from catalog, cover and download verified)")
+
+            if os.environ.get("STATION_HTTP_RELEASE_CHECKS") == "1":
+                helper_path = ROOT / "docs/station-android/scripts/verificar-http-release-station.py"
+                spec = importlib.util.spec_from_file_location("station_release_verification", helper_path)
+                helper = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(helper)
+                verification = helper.StationReleaseVerification(sql_value, station_pepper,
+                                                                  server_public, index)
+                try:
+                    verification.create()
+                    release_check = verification.check(base)
+                    assert release_check["catalogItems"] == len(visible_rows)
+                    assert release_check["verifiedCoverAndDownloadPairs"] >= 2
+                finally:
+                    assert verification.cleanup(), "synthetic release license was not removed"
+                print("STATION RELEASE VERIFIER: OK (temporary license, signatures, catalog, pairs, cleanup)")
 
             def authorize():
                 grant = signed_payload(request(base, "POST", "/v1/station/downloads/authorize",
