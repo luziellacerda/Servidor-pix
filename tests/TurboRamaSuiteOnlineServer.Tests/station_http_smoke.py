@@ -6,6 +6,7 @@ Set STATION_HTTP_EXTRA_INDEX to a private, readable candidate index to exercise 
 real items and covers in the same isolated API. Requires .NET, psql and cryptography.
 Set STATION_HTTP_API_DLL to exercise a previously published release DLL.
 Set STATION_HTTP_REAL_TTL=1 to verify 60/180-second expiry using the real clock.
+Set STATION_HTTP_ADMIN_DLL to add commerce/admin HTTP checks over a temporary Unix socket.
 Never targets production.
 """
 
@@ -417,6 +418,10 @@ def main():
                 retry = request(base, "GET", "/v1/station/artifacts/" + retry_id, bearer=token)
                 assert retry[0] == 200 and hashlib.sha256(retry[2]).hexdigest() == descriptor["sha256"]
                 print("STATION TTL: OK (real 60/180 seconds, fresh grant/session recovery)", flush=True)
+            admin_dll = os.environ.get("STATION_HTTP_ADMIN_DLL")
+            if admin_dll:
+                from station_admin_http_checks import run as admin_checks
+                admin_checks(base, folder, env, server_public, admin_dll)
             log.flush()
             traces = "\n".join(line for line in (folder / "api.log").read_text().splitlines()
                                if "Station trace operation=" in line)
