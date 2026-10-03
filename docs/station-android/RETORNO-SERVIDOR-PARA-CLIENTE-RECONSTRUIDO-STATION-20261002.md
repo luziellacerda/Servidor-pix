@@ -1,8 +1,8 @@
 # Handoff técnico único: servidor, conexão e instalação do TurboStations Android
 
-Atualizado em 03/10/2026, 08h48 (America/Maceio). Preserva as evidências de 02/10/2026 identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
+Atualizado em 03/10/2026, 10h38 (America/Maceio). Preserva as evidências de 02/10/2026 identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
 
-**Decisão operacional:** ainda não liberar o APK como conectado e não implantar o código novo na 5192. Falta preparar o índice real, resolver as capas 404 de produção, repetir o fluxo autenticado na 5192 implantada e integrar/instalar o APK. O fluxo HTTP candidato passou em banco temporário com dados sintéticos, conforme a atualização abaixo; isso não comprova o conteúdo real nem o APK.
+**Decisão operacional:** ainda não liberar o APK como conectado e não implantar o código novo na 5192. Falta preparar o índice real, resolver as capas 404 de produção, repetir o fluxo autenticado na 5192 implantada e validar download/instalação no APK candidato já instalado. O fluxo HTTP candidato passou em banco temporário com dados sintéticos, conforme a atualização abaixo; isso não comprova o conteúdo real nem o download no aparelho.
 
 ## Atualização: homologação HTTP isolada em 03/10/2026
 
@@ -16,10 +16,94 @@ Resultado: `STATION HTTP SMOKE: OK`. Foram verificados por HTTP ativação e ses
 
 Falha descoberta antes da correção: a implementação consumia o grant antes de conferir o vínculo criptográfico da sessão. A correção confere o vínculo e o descritor primeiro; a operação atômica de consumo continua imediatamente antes de servir o arquivo. É preciso revisar esse diff e repetir o teste na release candidata. O teste ainda não prova TTL real de 60/180 segundos por espera de relógio, nem restauração após queda de processo; a expiração do grant foi provocada no banco temporário. Testes de produção e aparelho continuam pendentes.
 
+## Atualização: nomes, jogos e capas por plataforma em 03/10/2026
+
+O Android publicou [nova evidência](https://github.com/luziellacerda/TurboElden/blob/7d5df08d922ef7c517979cf2263ff4bfe4be74ff/docs/server/HANDOFF-SERVIDOR-CATALOGO-INCOMPLETO-STATION-20261003.md) no commit `7d5df08d922ef7c517979cf2263ff4bfe4be74ff`: o APK de teste instalado abriu 996 itens. A contagem entregue ao renderer foi `megadrive=693`, `snes=176`, `snesbr=28`, `gamegear=58`, `gb=22`, `sega32x=7`, `gbc=7`, `gba=5`. Essas contagens repetem o catálogo de revisão 1 documentado em `ac869429eba3fd3dcc41f3bd9a55a08cd4985659`; o Android não capturou o HTTP individual da última leitura, portanto pode ter usado cache assinado. Não interpretar 176 como filtro visual do carrossel nem declarar que a 5192 publicou hoje os demais jogos.
+
+Por pedido do mantenedor, há **duas listas de nomes completas para as fontes acessíveis**, ordenadas por plataforma e nome, como arquivos de dados ligados a este mesmo handoff:
+
+| Lista | Conteúdo e origem | O que cada linha permite conferir |
+| --- | --- | --- |
+| [Jogos e capas do volume SNES/Mega Drive](catalogo-disco-snes-megadrive-20261003.tsv) | 1.824 entradas dos dois `gamelist.xml` principais no volume indicado pelo mantenedor; SHA256 do TSV `f116caecc7656dd6fef0f3f2f988793b1f2d4964bd507fc1007f4308b48e3c19`. | `platform`, posição no XML, coleção geral/PT-BR, nome, presença/tamanho/SHA256 da ROM, capa `<image>` com MIME/tamanho/dimensões/SHA256 e quantidade/hashes distintos dos candidatos de revista cujo nome base coincide **exatamente** com o da ROM. Sem caminhos nem URLs. |
+| [Lista histórica de referência por plataforma](catalogo-referencia-xml-por-plataforma-20261003.tsv) | 12.346 linhas, 36 rotas, extraídas somente das colunas `rota` e `nome` de `cruzamento-nomes-xml.tsv` no commit `1ac9dd8e9cf9913e2ea753ea3d5cb02736faef9a`; SHA256 do TSV `44d32027dcfe9a4021cf9fdbc1190aa772a53c1801aeac315f70d009de5aa63a`. | Todos os nomes da tabela histórica, com `sourceRow` para distinguir nomes repetidos. **Não comprova** arquivo, capa, `itemId` ou inclusão na API atual. |
+
+Totais da **referência histórica**, não da API nem do volume montado:
+
+| Rota | Linhas | Rota | Linhas |
+| --- | ---: | --- | ---: |
+| `3ds` | 260 | `megadrivebr` | 83 |
+| `arcade` | 721 | `model2` | 54 |
+| `atomiswave` | 27 | `n64` | 213 |
+| `colecovision` | 30 | `n64br` | 22 |
+| `cps1` | 22 | `nds` | 1693 |
+| `cps2` | 22 | `neogeo` | 140 |
+| `cps3` | 6 | `neogeocd` | 22 |
+| `dreamcast` | 686 | `nes` | 796 |
+| `fds` | 238 | `o2em` | 133 |
+| `gameandwatch` | 56 | `pcengine` | 62 |
+| `gamegear` | 313 | `pcenginecd` | 2 |
+| `gb` | 325 | `psx` | 448 |
+| `gba` | 1169 | `sega32x` | 36 |
+| `gbc` | 654 | `snes` | 785 |
+| `jaguar` | 58 | `snesbr` | 231 |
+| `mame` | 1730 | `sufami` | 13 |
+| `mastersystem` | 360 | `supergrafx` | 5 |
+| `megadrive` | 870 | `switch` | 61 |
+
+O cruzamento jogo/capa do volume foi reproduzido com `scripts/gerar-catalogo-midia.py` (Python/Pillow). Ele segue somente o `<path>` e `<image>` da mesma entrada XML e, para capas de `media/revista`, aceita somente igualdade exata do nome base; não aproxima títulos. Verificou decodificação da imagem, MIME reconhecido, dimensões positivas e 1 byte a 5 MiB. SHA256 identifica cada ROM e cada capa candidata sem expor o caminho. Se houver mais de uma capa com o mesmo nome base, a linha mantém todos os hashes, `revistaCandidateCount` e `revistaDistinctHashCount`; **não escolhe** uma delas silenciosamente.
+
+| Fonte do volume | Entradas XML | ROM presente | Capa `<image>` válida | Candidatos de revista por nome exato |
+| --- | ---: | ---: | ---: | --- |
+| SNES | 835 | 835 | 834; 1 entrada não declara imagem | 614 com 1 candidato; 197 com 2; 24 com 3. Todos os candidatos encontrados passaram nas verificações de imagem. |
+| Mega Drive | 989 | 981; 8 entradas apontam para arquivo ausente | 953; 28 não declaram imagem; 8 apontam para imagem ausente | 979 com 1 candidato; 2 com 2; 8 sem candidato. Todos os candidatos encontrados passaram nas verificações de imagem. |
+
+As 835 ROMs SNES existem e são referenciadas uma vez cada pelo XML principal. A coleção PT-BR é um **subconjunto** de 191 dessas 835, não mais 191 jogos a somar. Mega Drive tem 981 ROMs existentes e todas aparecem no XML; 94 estão na subcoleção PT-BR. Os 8 registros sem ROM não devem virar item baixável. O XML Mega Drive contém 87 nomes repetidos; `xmlEntry` e SHA256 diferenciam registros, mas nenhum deles é `itemId` Station. O volume montado contém apenas SNES e Mega Drive; as outras plataformas da tabela histórica não tiveram arquivo/capa verificado nesta rodada.
+
+Uma imagem `<image>` ausente no XML não significa ausência de toda capa: cada ROM existente deste volume tem ao menos um candidato válido de revista por nome exato. Isso ainda não define qual candidato foi escolhido pelo índice Station, especialmente nas 223 linhas ambíguas.
+
+Das 223 linhas com múltiplos arquivos de revista, 219 têm **um único hash de imagem** entre os candidatos; só 4 linhas SNES apresentam dois conteúdos diferentes. Mesmo quando os bytes são iguais, o índice precisa escolher um caminho único e estável para `coverId`/revisão.
+
+| Elo jogo → capa | Chave que deve unir os dados | Estado nesta atualização |
+| --- | --- | --- |
+| XML do volume → ROM e imagem | Mesma `xmlEntry`; `<path>` e `<image>` explícitos. | Conferido para 1.824 linhas, com presença, MIME, dimensões, tamanho e hashes no TSV do volume. |
+| ROM → capa de revista | Nome base **idêntico** de ROM e imagem, sem aproximação. | 1.593 linhas têm candidato único; 223 têm 2 ou 3 arquivos candidatos, dos quais só 4 diferem em bytes; 8 registros sem ROM/candidato. O TSV guarda todos os hashes candidatos e exige escolha explícita de arquivo. |
+| Índice Station → ROM e capa servidas | `itemId` → `filePath` e `coverId` → `coverPath`, com revisão. | Pendente: índice protegido não está legível para esta conta. Hash da capa redimensionada pode diferir do arquivo original do volume; exigir mapeamento explícito de proveniência. |
+| Resposta assinada → capa HTTP → APK | `itemId`, `coverId`, revisão do item e SHA256 dos bytes realmente entregues por `GET covers/{coverId}`. | Pendente em produção: falta export autenticado dos itens, 200 de capa válida e comparação do hash recebido com o arquivo selecionado no índice. |
+
+Comparação de escala, **sem presumir pares um a um**: o APK exibiu 176 `snes` + 28 `snesbr` = 204 itens, enquanto o volume tem 835 ROMs SNES; exibiu 693 `megadrive`, enquanto o volume tem 981 ROMs Mega Drive. A lista histórica tem 785 `snes` + 231 `snesbr` e 870 `megadrive` + 83 `megadrivebr`, mas vem de outra fonte e não deve ser somada à lista do volume. Nenhuma dessas diferenças, sozinha, identifica quais `itemId` faltam ou qual `coverId` cada jogo deve receber.
+
+### Como o APK deve ler e comparar o catálogo verdadeiro
+
+1. Abrir sessão Station e executar `GET https://app.lzgames.com.br/v1/station/catalog` com o Bearer vigente; não buscar listas antigas, CDN, nomes de arquivo ou diretórios para completar a tela. Registrar se a resposta veio da rede ou de `StationCatalogStore` (`Library.cached`). Cache assinado permite exibir o último catálogo, mas não prova a revisão atual da 5192.
+2. Usar `StationApi.catalogSnapshot`: conferir `keyId`, RSA-PSS/SHA256 do `payload` original, `schemaVersion=1`, domínio `TurboRamaStationAndroid/catalog/v1`, produto/aplicação e identidade de licença/aparelho/sessão. Só então chamar `StationCatalog.fromVerifiedPayload`. O limite atual é 12 MiB para envelope e 4096 `items`; `revision` global e `revision` de cada item são inteiros positivos.
+3. Para cada item assinado, usar **exatamente** `itemId`, `name`, `platform`, `revision` e `coverId`; agrupar pelo valor bruto de `platform`, antes do rótulo visual. `StationFrontend` deve publicar todas as linhas verificadas ao serviço nativo e informar contagem recebida, contagem publicada e `cached`. `StationPlatforms.resolve` precisa de mapeamento explícito para cada nova plataforma. Dos 36 identificadores da lista histórica, 18 não são reconhecidos literalmente pelo código atual: `arcade`, `atomiswave`, `dreamcast`, `mastersystem`, `megadrivebr`, `model2`, `n64`, `n64br`, `nds`, `neogeo`, `neogeocd`, `nes`, `o2em`, `pcengine`, `pcenginecd`, `psx`, `sufami`, `switch`. Há rótulos visuais parecidos, mas o valor recebido da API deve ter correspondência explícita; publicar essas rotas sem atualizar o APK interromperia a preparação.
+4. Para cada jogo visível, pedir `GET covers/{coverId}` na mesma sessão, conferir MIME e bytes e associar o cache a `coverId` + revisão do item. Se a capa retornar 404, mostrar placeholder e registrar esse `itemId`/`coverId` para correção do índice; não adivinhar uma imagem pelo nome. Um `coverId` compartilhado exige mesmo caminho e revisão no índice. Mudança de bytes exige nova revisão do item ou novo `coverId`.
+5. Exportar o envelope **privadamente** e validar com `scripts/exportar-catalogo-assinado.py`, usando a chave pública SPKI Station do cliente. O script exige o `keyId` público esperado e foi exercitado com assinatura sintética; sua saída contém somente `platform,itemId,name,itemRevision,coverId`, ordenados, mais revisão/contagens. Nunca publicar o envelope, Bearer ou identidades nele contidas. Cruzar com o índice efetivo por `itemId` e `coverId`; comparar SHA256 do arquivo de jogo com o volume **quando os bytes forem idênticos**. Para capa redimensionada, usar a proveniência explícita do índice e comparar o SHA256 da capa efetivamente servida por HTTP. Nomes iguais, sobretudo os repetidos de Mega Drive, não bastam para criar pares. Sem o índice protegido ou um export autenticado com mapeamento de capas, **o cruzamento servidor ↔ jogo ↔ capa ainda não está comprovado**.
+
+Exemplo de export depois de capturar a resposta autenticada **fora do Git** e salvar a SPKI pública DER obtida por decodificação Base64URL de `StationConfig.STATION_ASSERTION_SPKI_BASE64URL`; a ferramenta usa Python/cryptography, confere o `keyId` esperado, verifica a assinatura e cria a saída com modo 0600:
+
+```text
+python3 docs/station-android/scripts/exportar-catalogo-assinado.py \
+  --envelope RESPOSTA_PRIVADA.json --public-key STATION_PUBLICA.der \
+  --output CATALOGO_VERIFICADO.tsv
+```
+
+O mantenedor informou que disponibilizará uma cópia privada do índice efetivo. Quando ela chegar, usar `scripts/cruzar-indice-catalogo.py` (Python/Pillow) em diretório privado para exportar somente nomes, IDs, revisão, hashes, estado de leitura da capa, contagem de pares exatos por nome/hash e confronto por `itemId` com a resposta assinada. O script detecta `coverId` compartilhado com caminhos/revisões conflitantes e não copia `filePath`/`coverPath` para a saída; arquivo não legível permanece marcado como tal. Ainda será necessário conferir os bytes da capa HTTP contra o índice:
+
+```text
+python3 docs/station-android/scripts/cruzar-indice-catalogo.py \
+  --index INDICE_PRIVADO.json \
+  --disk-tsv docs/station-android/catalogo-disco-snes-megadrive-20261003.tsv \
+  --catalog-tsv CATALOGO_VERIFICADO.tsv \
+  --output CRUZAMENTO_PRIVADO.tsv
+```
+
+O contrato atual não pagina. A lista histórica de 12.346 excede 4096 itens; antes de publicar um catálogo desse porte, definir paginação versionada com revisão consistente e assinatura por página, atualizar o cliente e testar o carrossel. Para o subconjunto SNES/Mega Drive do volume, ainda faltam seleção de capa nas 223 linhas ambíguas, correção dos 8 registros Mega Drive sem ROM e validação do índice privado. Não alterar a 5192 nem prometer catálogo completo por copiar o XML para a API.
+
 ## Referências e decisão
 
 - Pedido atendido: [handoff do cliente reconstruído](https://github.com/luziellacerda/Servidor-pix/blob/7ac4fad9e0132db378f6e78e6494fedb08f614c3/docs/station-android/HANDOFF-CLIENTE-RECONSTRUIDO-STATION-20261002.md), branch `docs/cliente-reconstruido-station-20261002`, commit `7ac4fad9e0132db378f6e78e6494fedb08f614c3` do Servidor-pix.
-- Cliente examinado: TurboElden, commit de código `0840028854034b03e5a1d3f2a162d66225932a6b` e revisão documental mais recente `f48399bc24691afe2073fac55f279b452c01343b`, branch `station-reconstrucao-20261002`. A revisão nova não alterou Java. A biblioteca Java ainda não foi integrada ao APK distribuível nem consome o descritor novo.
+- Cliente examinado originalmente: TurboElden, commit de código `0840028854034b03e5a1d3f2a162d66225932a6b` e revisão documental `f48399bc24691afe2073fac55f279b452c01343b`, branch `station-reconstrucao-20261002`. **Atualização:** o commit `7d5df08d922ef7c517979cf2263ff4bfe4be74ff` registra APK candidato integrado e instalado, com leitura tipada de `artifact`/`itemRevision`, mas sem prova de capa 200 e download/instalação contra a 5192 de produção.
 - Código do servidor deste retorno: branch `feat/station-artifact-descriptor-20261002`, commits `96326aa0aeb164820cec26f8b5911fcdb47fc8ee`, `1bfb619c21becffe40aaa597e100fcb3719c2e72` e `de08858` (correção e homologação HTTP isolada), derivados de `b1159c9`.
 - **Estado: código e contrato publicados para desenvolvimento; produção e APK ainda não liberados.** Não houve publicação de binário, alteração de índice real, migration de produção, restart da 5192, mudança de porta ou alteração dos serviços PIX/Suite/ES. O download HTTP autenticado passou somente na API temporária; não há prova dele na 5192 de produção.
 
@@ -114,7 +198,7 @@ Exemplo **sintético** do conteúdo decodificado de `payload`, para mostrar os n
 }
 ```
 
-O cliente Java do commit `0840028` **ainda ignora `itemRevision` e `artifact`** em `StationApi.authorize`; seu `downloadToStaging` transporta bytes e não instala. A equipe Android deve acrescentar um modelo tipado do descritor, conferir limites e revisão contra o item do catálogo e recusar autorização antiga sem descritor. É um acréscimo ao payload da mesma rota e do mesmo domain; não criar endpoint ou link de jogo. `fileName` e `launchPath` são metadados assinados, jamais vindos da URL nem deduzidos da plataforma.
+Historicamente, o cliente Java do commit `0840028` ignorava `itemRevision` e `artifact`. No APK candidato documentado em `7d5df08`, `StationApi.authorize` lê o descritor tipado e compara a revisão com o catálogo; `StationFiles`/instalador foram integrados, mas o teste real de download na 5192 ainda falta. O instalador deve continuar recusando grant sem descritor. Os campos pertencem ao payload assinado da rota existente; não criar endpoint ou link de jogo. `fileName` e `launchPath` são metadados assinados, jamais vindos da URL nem deduzidos da plataforma.
 
 O `filePath` privado fica só no índice e no grant cifrado por AES-GCM; não aparece no catálogo, descritor ou cabeçalhos. O grant cifrado vincula caminho, revisão, hash, tamanho e data de modificação à licença, aparelho, **sessão**, item e grantId. O consumo é único. Ao consumir, o servidor compara o índice e a identidade do arquivo; mudança detectada nega com 404. O endpoint abre o arquivo antes do 200 e envia `application/octet-stream`, `Content-Length` exato, `Cache-Control: no-store`, sem URL, redirecionamento, `Content-Disposition` ou Range. Se a conexão cair depois do consumo, o cliente precisa pedir **nova autorização** e começar nova transferência; o grant anterior não é retomável.
 
@@ -157,7 +241,7 @@ Teste local de `StationLibrary.ReadCover`: PNG sintético válido de 1×1 pixel,
 | Autorização assinada e bytes completos | HTTP isolado: `itemRevision=3`, descritores raw/ZIP assinados com `keyId` verificado, `Content-Length`, bytes e SHA256 conferidos. | Produção: repetir somente depois da implantação validada e do índice real preparado. |
 | Reuso, expiração, bloqueio e outro aparelho | HTTP isolado: segundo GET 404, expiração forçada 404, revogação 404, outro aparelho 403, outra sessão 404 sem consumo e queda de conexão seguida de 404. | Backend/QA: testar TTL real e nova autorização após queda; produção: repetir com conta sintética após implantação. |
 | Índice/arquivos real e imutabilidade | O índice efetivo não ficou acessível à conta desta apuração. | Operação/backend: preparar descritores, validar todos os itens e capas, tempo/custo de leitura SHA256 na inicialização, permissões e imutabilidade durante 60 s. |
-| APK instalado e conexão ponta a ponta | Cliente Java do commit citado existe, mas não consome os campos novos no APK. | Android: integrar `artifact`/`itemRevision`, carrossel/capas, instalador seguro, empacotar e testar APK em aparelho. |
+| APK instalado e conexão ponta a ponta | APK candidato SHA256 `43670211fe6de01438c0352b44875c43336c052d431582032680fa2c9265517f` instalado em 03/10/2026; licença salva reutilizada, interface abriu e recebeu 996 itens. O cliente novo lê o descritor, mas não obteve capa 200 nem download real comprovado. | Android/backend: comparar catálogo fresco com cache, completar jogos/capas no servidor, provar download e instalação no aparelho, remover legado residual e promover só após aceite. |
 
 ## Compatibilidade e ordem de liberação
 
@@ -175,16 +259,18 @@ Teste local de `StationLibrary.ReadCover`: PNG sintético válido de 1×1 pixel,
 
 1. **Operação/backend:** com acesso autorizado ao arquivo `Station:LibraryIndexFile` efetivamente configurado, registrar somente revisão, contagem e histograma exato de `platform` em relatório sanitizado. Conferir `Station:Enabled`, `Station:DownloadKeyFile`, chave pública/`keyId` e migrations 028 e 029 no banco **sem copiar segredos**. O índice é privado e não entra no Git. Se houver mais de 4096 itens, planejar paginação/versão nova do catálogo antes de publicar os excedentes; não truncar silenciosamente.
 2. **Operação/backend:** diagnosticar os 48 retornos 404 de capa com um `coverId` **obtido do catálogo autenticado**, existência/permissão do `coverPath` correspondente, MIME real, tamanho e revisão. Corrigir índice/arquivos/permissões sem expor caminhos. Se o mesmo `coverId` for compartilhado, caminho e revisão precisam coincidir; ao mudar bytes, incrementar revisão do item ou emitir novo `coverId`.
-3. **Operação/backend:** preparar `artifact` para cada item a liberar com `preparar-indice-artefatos.py` e escolhas explícitas de `launchPath` para pacotes de múltiplos arquivos; validar em cópia privada antes de ativar. Conferir arquivos raw, BIN/CUE, RAR/7z e diretórios Wii U reais; registrar hashes e contagens agregadas, sem nomes de jogos ou caminhos no handoff. Garantir que os arquivos publicados não mudem durante 60 s de grant. A carga do código novo lê e verifica SHA256 de cada arquivo com descritor; medir tempo de inicialização e I/O antes do rollout.
+3. **Operação/backend:** preparar `artifact` para cada item a liberar com `preparar-indice-artefatos.py` e escolhas explícitas de `launchPath` para pacotes de múltiplos arquivos; validar em cópia privada antes de ativar. Conferir arquivos raw, BIN/CUE, RAR/7z e diretórios Wii U reais; registrar hashes e contagens agregadas sem caminhos privados no handoff. Garantir que os arquivos publicados não mudem durante 60 s de grant. A carga do código novo lê e verifica SHA256 de cada arquivo com descritor; medir tempo de inicialização e I/O antes do rollout.
 4. **Backend/QA:** o teste HTTP isolado do commit `de08858` cobriu assinatura, sessão, catálogo, capa válida/inválida, raw, ZIP múltiplo, grant de um uso, expiração forçada, revogação, outro aparelho, outra sessão e queda de conexão. Completar TTL real de sessão/grant, bloqueio comercial, nova autorização após queda e regressões com a release empacotada; registrar status, `code`, revisão, MIME, tamanho e SHA256 sem Bearer ou grant no documento.
 5. **Operação:** preparar release imutável do código que inclui `de08858`, registrar SHA256 do DLL candidato, backup restaurável de índice/configuração/banco afetado, migration necessária, alvo exato `turborama-station-api.service` e rollback para o DLL/índice anteriores. Validar os serviços compartilhados e esclarecer o estado do monitor de conteúdo antes da janela. Implantar somente em tarefa de mudança de produção autorizada e conferida; não tocar 5190, 5191, 5194, PIX ou outros produtos. Depois, repetir as provas autenticadas na 5192 pública via HTTPS, não apenas `/ready/station`.
 
-### 2. Android: integrar o cliente e instalar com segurança
+### 2. Android: validar e concluir o APK candidato
 
-1. **Android:** partir do código Java `0840028` (documento mais novo `f48399b`) e acrescentar a `StationApi.Grant` leitura **obrigatória** de `itemRevision` e todos os campos `artifact` do payload assinado. Comparar item/revisão com o catálogo da mesma sessão; exigir hash e tamanho esperados em `StationFiles`. Rejeitar descritor ausente, inválido ou formato não suportado. Preservar `StationConfig` (host, pin TLS, autoridade pública) e o alias do Keystore. Não trocar o código de ativação por `STA-`: esse prefixo identifica a licença, não a senha emitida.
-2. **Android/nativo:** ligar `StationCoordinator` ao carrossel/catalog service e às telas reais, preservando seleção, texturas, jogos instalados, saves e emuladores. Usar `platform` somente por mapeamento explícito, inclusive edições BR; plataforma desconhecida não vira pasta por aproximação. Usar `coverId`/revisão no cache, carregar somente capas visíveis e tratar 404/429 sem tempestade de pedidos. Remover do APK final as chamadas antigas de catálogo, licença, telemetria e URLs de jogo que pertenciam ao frontend antigo, sem atingir redes internas dos emuladores.
+O commit `7d5df08` registra implementação e instalação de teste de parte dos itens abaixo; a lista é o critério de aceite a comprovar, especialmente com catálogo completo e download real.
+
+1. **Android:** conferir no APK candidato a leitura **obrigatória** de `itemRevision` e todos os campos `artifact` do payload assinado, já implementada em `StationApi.Grant`. Comparar item/revisão com o catálogo da mesma sessão; exigir hash e tamanho esperados em `StationFiles`. Rejeitar descritor ausente, inválido ou formato não suportado. Preservar `StationConfig` (host, pin TLS, autoridade pública) e o alias do Keystore. Não trocar o código de ativação por `STA-`: esse prefixo identifica a licença, não a senha emitida.
+2. **Android/nativo:** validar a ligação já feita de `StationCoordinator` ao carrossel/catalog service e às telas reais, preservando seleção, texturas, jogos instalados, saves e emuladores. Usar `platform` somente por mapeamento explícito, inclusive edições BR; plataforma desconhecida não vira pasta por aproximação. Usar `coverId`/revisão no cache, carregar somente capas visíveis e tratar 404/429 sem tempestade de pedidos. Concluir a retirada das chamadas antigas de catálogo, licença, telemetria e URLs de jogo do frontend anterior, sem atingir redes internas dos emuladores.
 3. **Android/instalador:** quando um jogo estiver ausente, autorizar uma vez, baixar sequencialmente para temporário privado com o **mesmo Bearer**, recusar 3xx/`Location` e Range, confrontar `Content-Length`, tamanho e SHA256, e só então processar `raw|zip|rar|7z`. Para compactados, limitar arquivos/tamanho extraído, rejeitar caminho absoluto, `..`, links e duplicatas, conferir `launchPath` e referências auxiliares como BIN/CUE. Usar publicação atômica e manifesto de arquivos: parcial, falha ou cancelamento nunca viram “instalado” nem substituem jogo/saves íntegros. Em queda após consumo, pedir outro grant; nunca repetir o GET consumido.
-4. **Android/build:** substituir as classes antigas no APK completo; um AAR ou DEX isolado não é um APK pronto. Preservar pacote, assinatura, dados privados, emuladores e saves; inspecionar DEX/bibliotecas para garantir que só o cliente Station novo usa essas rotas. Testar com `adb install -r --no-incremental`, sem desinstalar/limpar dados, em aparelho de teste: ativação quando necessária, retomada por licença salva, `/me`, catálogo, capa, download, cancelar, abrir jogo, voltar, apagar somente arquivos do jogo e relançar offline conforme política definida. Registrar hash e versão do APK testado antes de promover.
+4. **Android/build:** o APK candidato completo já foi instalado com atualização e assinatura preservada; confirmar que DEX e bibliotecas usam somente o cliente Station novo nas rotas comerciais. Preservar pacote, dados privados, emuladores e saves. Completar no aparelho: ativação quando necessária, retomada por licença salva, `/me`, catálogo fresco, capa 200, download, cancelar, abrir jogo, voltar, apagar somente arquivos do jogo e relançar offline conforme política definida. Registrar hash e versão do APK aceito antes de promover.
 
 ### 3. Matriz mínima de provas para fechar este mesmo handoff
 
@@ -195,8 +281,8 @@ Teste local de `StationLibrary.ReadCover`: PNG sintético válido de 1×1 pixel,
 | Capas | `coverId` real 200, MIME decodificável e SHA256 conferido; ID inexistente 404; mudança de revisão invalida cache. | HTTP isolado 200/404 passou; produção tem 48 respostas 404 e nenhum 200 observado. |
 | Autorização | Payload `download-grant/v1` assinado inclui todos os campos da tabela; `itemRevision` coincide com catálogo; grant 60 s. | HTTP isolado validou assinatura, campos e revisão; duração real de 60 s e produção pendentes. |
 | Bytes e erros | GET único 200 com Content-Length e SHA256 iguais ao descritor; segundo GET, expirado, outro aparelho/sessão e bloqueio negados; queda exige novo grant. | HTTP isolado passou para raw/ZIP, reuso, expiração forçada, outra sessão, aparelho estranho, revogação e queda seguida de negação. Nova autorização depois da queda e produção pendentes. |
-| APK | APK completo assinado e instalado sem perda de dados, interface nativa ligada, instalação segura e jogo abre; hash/versão documentados. | Biblioteca AAR/DEX e 142 checks do cliente; APK integrado pendente. |
+| APK | APK completo assinado e instalado sem perda de dados, interface nativa ligada, instalação segura e jogo abre; hash/versão documentados. | Candidato `43670211...` instalado e carrossel com 996 itens; login por licença salva passou. Capa 200, download/instalação real, jogo aberto, cobertura completa do catálogo e remoção do legado ainda pendentes. |
 
-Aceite final exige evidência separada de **desenvolvimento/homologação** e **produção** em cada linha. Atualizar esta tabela e os dados observados, sem criar outro handoff de retorno. Não publicar tokens, códigos comerciais, dados do comprador, URLs privadas, caminhos do armazenamento, nomes de jogos ou chaves privadas.
+Aceite final exige evidência separada de **desenvolvimento/homologação** e **produção** em cada linha. Atualizar esta tabela e os dados observados, sem criar outro handoff de retorno. Os nomes de jogos foram incluídos nas duas listas de comparação por pedido do mantenedor; não publicar tokens, códigos comerciais, dados do comprador, URLs privadas, caminhos do armazenamento ou chaves privadas.
 
 `/ready/station` 200 confirma apenas a prontidão atualmente implementada (incluindo migration 028); não verifica o índice inteiro, capas, chave de grants ou o fluxo de bytes. Não há evidência para declarar servidor ou APK prontos para produção agora. Este documento descreve a mudança necessária; não executa nem autoriza implantação ou restart.
