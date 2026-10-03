@@ -1,6 +1,6 @@
 # Handoff técnico único: servidor, conexão e instalação do TurboStations Android
 
-Atualizado em 03/10/2026, 11h00 (America/Maceio). Preserva as evidências de 02/10/2026 identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
+Atualizado em 03/10/2026, 11h07 (America/Maceio). Preserva as evidências de 02/10/2026 identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
 
 **Decisão operacional:** ainda não liberar o APK como conectado e não implantar o código novo na 5192. Falta preparar o índice real, resolver as capas 404 de produção, repetir o fluxo autenticado na 5192 implantada e validar download/instalação no APK candidato já instalado. O fluxo HTTP candidato passou em banco temporário com itens sintéticos e, depois, com os 1.816 arquivos reais do volume acessível; isso ainda não comprova a 5192 de produção nem o download no aparelho.
 
@@ -88,6 +88,16 @@ python3 docs/station-android/scripts/preparar-catalogo-volume.py \
 ```
 
 **Não trocar o índice atual por esse arquivo isolado.** A 5192 possui itens de outras plataformas e IDs já entregues ao APK; substituir apagaria esses itens e poderia romper o vínculo de instalações/cache. A cópia privada do índice atual deve ser conciliada por caminho e SHA256 da ROM com `source-map.json`, preservando `itemId` já publicado, mantendo outras plataformas, escolhendo revisão superior à efetiva e regenerando descritores das entradas herdadas. A publicação só é válida se todos os itens resultantes tiverem ROM, capa e `artifact` legíveis, se o total couber no limite de 4096 e se o APK reconhecer **todos** os identificadores de `platform`. A revisão `2` acima é do candidato isolado, não da produção.
+
+A ferramenta [scripts/conciliar-indices-station.py](scripts/conciliar-indices-station.py) está pronta para a cópia privada do índice atual. Ela preserva o `itemId` publicado quando encontra a mesma ROM por caminho original exato ou SHA256 na mesma plataforma, mantém os itens das outras plataformas, acrescenta os jogos novos e usa revisão explicitamente superior às duas entradas. Se um jogo publicado não tiver correspondência única, a capa herdada estiver ilegível, faltar artefato nas outras plataformas, houver colisão de IDs ou o total ultrapassar 4096, falha sem criar o índice mesclado. `--launch-manifest` fornece a escolha privada de `launchPath` para pacotes herdados com vários arquivos. A saída tem modo 0600. Foi exercitada com base sintética contendo um ID antigo de SNES e um item Game Gear herdado: mesclou 1.817 jogos, preservou o ID antigo e `StationLibrary.TryLoad`/`TryResolveArtifact`/`ReadCover` passaram para todos os 1.817. **Ainda não foi executada sobre o índice efetivo.**
+
+```text
+python3 docs/station-android/scripts/conciliar-indices-station.py \
+  --base-index INDICE_EFETIVO_PRIVADO.json \
+  --candidate-index CANDIDATO_PRIVADO/index.json \
+  --source-map CANDIDATO_PRIVADO/source-map.json \
+  --revision REVISAO_SUPERIOR --output INDICE_MESCLADO_PRIVADO.json
+```
 
 Para esse candidato, o APK instalado ainda não reconhece a chave literal `megadrivebr` em `StationPlatforms.resolve`. O ajuste de fonte `names.put("megadrivebr", names.get("MegaDrive - BR"));` foi publicado na [branch isolada do Android](https://github.com/luziellacerda/TurboElden/commit/5988343), compilado com `javac`, mas **não** foi incorporado a APK nem testado no aparelho. `snes`, `snesbr` e `megadrive` já são reconhecidos. Antes de publicar `megadrivebr` na 5192, integrar esse commit ao cliente, gerar/instalar o APK candidato e validar os 94 itens. O app deve medir `items` recebidos, publicados, capas 200/404 e instalações por plataforma antes de declarar cobertura completa.
 
