@@ -119,7 +119,7 @@ def verify(db,sql,environment):
     if status not in (301,302,303) or location not in ('/login.php','/login','/admin/login'):raise ValueError('Station site did not require operator authentication')
     result['publicAdminRequiresLogin']=True
     for name in ('station-admin.css','station-admin.js'):
-        with opener.open(Request(SITE+'/'+name+'?v=20261003-1',headers=headers),timeout=15) as r:
+        with opener.open(Request(SITE+'/'+name+'?v=20261003-2',headers=headers),timeout=15) as r:
             if r.status!=200 or hashlib.sha256(r.read()).hexdigest()!=hashlib.sha256((ROOT/'ops/station-admin/site'/name).read_bytes()).hexdigest():
                 raise ValueError('public Station asset differs: '+name)
     result['publicAssetsHashVerified']=True

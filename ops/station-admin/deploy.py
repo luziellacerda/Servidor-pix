@@ -115,10 +115,17 @@ def rollback():
     for path in (DROPIN,UNIT,CONFIG):path.unlink(missing_ok=True)
     run(['systemctl','daemon-reload']);run(['systemctl','restart',HELPER])
     if saved.get('fpmReload'):run(['systemctl','kill','--kill-who=main','--signal=USR2','turbobox-php-fpm.service'])
-    with urlopen('http://127.0.0.1:5194/health',timeout=5) as r:
-        if r.status!=200:raise ValueError('original Station helper failed health')
+    until=time.monotonic()+20
+    while time.monotonic()<until:
+        try:
+            with urlopen('http://127.0.0.1:5194/health',timeout=2) as r:
+                if r.status==200:break
+        except Exception:pass
+        time.sleep(.2)
+    else:raise ValueError('original Station helper failed health')
+    write(BACKUP/'rollback.json',json.dumps({'rolledBack':True,'additiveSchemaPreserved':True})+'\n')
     print(json.dumps({'rolledBack':True,'additiveSchemaPreserved':True}),flush=True)
-def apply(package):
+def validate_package(package):
     manifest=json.loads((package/'manifest.json').read_text())
     revision=manifest['sourceRevision']
     if not re.fullmatch('[0-9a-f]{40}',revision) or run(['runuser','-u','lz-servidor','--','git','-C',str(ROOT),'rev-parse','HEAD']).strip()!=revision:
@@ -130,6 +137,37 @@ def apply(package):
         candidate=package/path
         if Path(path).is_absolute() or '..' in Path(path).parts or candidate.is_symlink() or digest(candidate)!=sha:raise ValueError('candidate hash differs')
     if set(p.name for p in (package/'site').iterdir())!=set(FILES):raise ValueError('site file allowlist differs')
+    return manifest
+def copy_release(package,target):
+    if target.exists():raise ValueError('immutable release already exists')
+    target.mkdir(mode=0o755);target.chmod(0o755)
+    shutil.copytree(package/'backend',target/'backend');shutil.copytree(package/'site',target/'site')
+    for name in ('station-issue-admin.py','030_station_management_audit.up.sql','manifest.json'):shutil.copy2(package/name,target/name)
+    for p in target.rglob('*'):os.chown(p,0,0);p.chmod(0o755 if p.is_dir() else 0o644)
+def resume(package):
+    manifest=validate_package(package);saved=json.loads((BACKUP/'state.json').read_text())
+    if not saved.get('databaseRestoreVerified') or not saved.get('migrationApplied'):
+        raise ValueError('a restored and migrated preparation is required')
+    if (BACKUP/'result.json').exists() and json.loads((BACKUP/'result.json').read_text()).get('applied'):
+        raise ValueError('publication already completed; do not repeat it')
+    if any(p.exists() for p in (UNIT,DROPIN,CONFIG)) or state(SERVICE)['pid']!=0:
+        raise ValueError('the previous application must be fully rolled back')
+    for name,meta in saved['site'].items():
+        target=SITE/name
+        if target.exists()!=meta['exists'] or target.exists() and digest(target)!=meta['sha256']:
+            raise ValueError('original Station page changed after rollback')
+    db,connection=db_identity()
+    checksum=sql(db,"SELECT script_sha256 FROM suite.schema_migration_checksums WHERE version='030_station_management_audit'").strip()
+    if checksum!=manifest['files']['030_station_management_audit.up.sql']:raise ValueError('installed Station migration checksum differs')
+    if any(state(u)!=s for u,s in saved['baseline'].items()) or digest(INDEX)!=INDEX_SHA:
+        raise ValueError('shared runtime changed after preparation')
+    saved.setdefault('initialPreparationRevision',saved['sourceRevision'])
+    saved['sourceRevision']=manifest['sourceRevision'];saved['newSite']={n:manifest['files']['site/'+n] for n in FILES}
+    target=Path('/opt/turborama-station-management-20261003-'+manifest['sourceRevision'][:7]);saved['release']=str(target)
+    copy_release(package,target)
+    publish_prepared(package,saved,db,connection)
+def apply(package):
+    manifest=validate_package(package);revision=manifest['sourceRevision']
     db,connection=db_identity()
     if any(state(u)['active']!='active' or state(u)['pid']<=0 for u in SHARED+(HELPER,)):
         raise ValueError('a required existing service is not healthy')
@@ -170,21 +208,23 @@ def apply(package):
     # Privately inspect opcode cache policy; never copy environment or passwords to output.
     fpm_paths=list(Path('/etc/php/8.3/turbobox-fpm').rglob('*.conf'))+[Path('/etc/php/8.3/fpm/php.ini')]
     saved['fpmReload']=any(re.search(r'(?m)^\s*(?:php_admin_(?:value|flag)\[)?opcache\.validate_timestamps\]?\s*=\s*(?:0|off|false)\s*$',p.read_text(),re.I) for p in fpm_paths if p.is_file())
-    target.mkdir(mode=0o755);target.chmod(0o755)
-    shutil.copytree(package/'backend',target/'backend');shutil.copytree(package/'site',target/'site')
-    shutil.copy2(package/'station-issue-admin.py',target/'station-issue-admin.py')
-    shutil.copy2(package/'030_station_management_audit.up.sql',target/'030_station_management_audit.up.sql')
-    shutil.copy2(package/'manifest.json',target/'manifest.json')
-    for p in target.rglob('*'):os.chown(p,0,0);p.chmod(0o755 if p.is_dir() else 0o644)
-    admin=pwd.getpwnam('turborama-suite-admin');helper=pwd.getpwnam('turborama-suite')
+    copy_release(package,target)
     migration=target/'030_station_management_audit.up.sql'
     run(['runuser','-u','postgres','--','psql','-X','-q','-h','/var/run/postgresql','-p','5432','-v','ON_ERROR_STOP=1',
          '-v','migration_sha256='+digest(migration),'-d',db,'-f',str(migration)])
     saved['migrationApplied']=True
-    write(TOKEN,base64.b64encode(os.urandom(32)).decode()+'\n',0o640,admin.pw_uid,helper.pw_gid)
+    publish_prepared(package,saved,db,connection)
+def publish_prepared(package,saved,db,connection):
+    target=Path(saved['release']);revision=saved['sourceRevision'];migration=target/'030_station_management_audit.up.sql'
+    admin=pwd.getpwnam('turborama-suite-admin');helper=pwd.getpwnam('turborama-suite')
+    if not TOKEN.exists():write(TOKEN,base64.b64encode(os.urandom(32)).decode()+'\n',0o640,admin.pw_uid,helper.pw_gid)
+    else:
+        if TOKEN.is_symlink() or TOKEN.stat().st_uid!=admin.pw_uid or TOKEN.stat().st_gid!=helper.pw_gid or TOKEN.stat().st_mode&0o777!=0o640:
+            raise ValueError('private management token permissions differ')
+    credential='/run/credentials/'+SERVICE+'/station-activation-pepper'
     config='\n'.join(['SUITE_ADMIN_SOCKET='+IPC,'SUITE_ADMIN_TOKEN_FILE='+str(TOKEN),'SUITE_COMMERCE_TOKEN_FILE='+str(TOKEN),
-      'SUITE_ADMIN_CONNECTION="'+connection+'"','SUITE_ADMIN_PEPPER_FILE=/etc/turborama-suite/station-activation-pepper',
-      'STATION_ADMIN_PEPPER_FILE=/etc/turborama-suite/station-activation-pepper','SUITE_COMMERCE_ENABLED=1',
+      'SUITE_ADMIN_CONNECTION="'+connection+'"','SUITE_ADMIN_PEPPER_FILE='+credential,
+      'STATION_ADMIN_PEPPER_FILE='+credential,'SUITE_COMMERCE_ENABLED=1',
       'STATION_COMMERCE_ENABLED=1','STATION_MANAGEMENT_ONLY=1','SUITE_CONTENT_ADMIN_ENABLED=0'])+'\n'
     write(CONFIG,config,0o640,0,helper.pw_gid)
     unit=f'''[Unit]
@@ -197,6 +237,7 @@ Group=turborama-suite
 SupplementaryGroups=turborama-suite-pepper
 WorkingDirectory={target}/backend
 EnvironmentFile={CONFIG}
+LoadCredential=station-activation-pepper:/etc/turborama-suite/station-activation-pepper
 ExecStart=/usr/bin/dotnet {target}/backend/TurboRamaSuiteAdminServer.dll
 RuntimeDirectory=turborama-station-management
 RuntimeDirectoryMode=0750
@@ -238,23 +279,27 @@ WantedBy=multi-user.target
         result={'applied':True,'sourceRevision':revision,'dllSha256':digest(target/'backend/TurboRamaSuiteAdminServer.dll'),
                 'siteSha256':saved['newSite'],'helperSha256':digest(target/'station-issue-admin.py'),
                 'migrationSha256':digest(migration),'databaseRestoreVerified':True,'migrationApplied':True,
+                'deploymentScriptSha256':digest(Path(__file__)),
                 'sharedPidsUnchanged':True,'contentIndexUnchanged':True,'fpmReload':saved['fpmReload'],
                 'management':state(SERVICE),'helper':state(HELPER),'productionChecks':tests}
         write(BACKUP/'result.json',json.dumps(result,indent=2)+'\n')
         public=Path('/home/lz-servidor/station-admin-panel-result-20261003.json')
         owner=pwd.getpwnam('lz-servidor');write(public,json.dumps(result,indent=2)+'\n',0o600,owner.pw_uid,owner.pw_gid)
         print(json.dumps({'stage':'published','site':'https://turbobox.lzgames.com.br/admin/station','verified':True}),flush=True)
-    except Exception:
+    except Exception as failure:
+        write(BACKUP/'failure.json',json.dumps({'errorType':type(failure).__name__,
+             'reason':str(failure) if isinstance(failure,ValueError) else 'private production verification failed'})+'\n')
         if activated:rollback()
         raise
 
 def main():
     p=argparse.ArgumentParser();m=p.add_mutually_exclusive_group(required=True)
-    m.add_argument('--package',type=Path);m.add_argument('--rollback',action='store_true');m.add_argument('--restore-backup',action='store_true')
+    m.add_argument('--package',type=Path);m.add_argument('--resume',type=Path);m.add_argument('--rollback',action='store_true');m.add_argument('--restore-backup',action='store_true')
     a=p.parse_args()
     if os.geteuid()!=0:raise ValueError('native Linux authorization is required')
     if a.restore_backup:restore_check()
     elif a.rollback:rollback()
+    elif a.resume:resume(a.resume.resolve())
     else:apply(a.package.resolve())
 if __name__=='__main__':
     try:main()

@@ -33,6 +33,7 @@ Se a liberação do aparelho concluir e a emissão falhar, a página informa o e
 - `site/`: cinco arquivos Station, incluindo a nova política; usa autenticação/CSRF/SQLite do site existente. Não publicar fixtures de teste.
 - `station-issue-admin.py`: mantém o helper loopback 5194 e seus contratos legados `/licenses`, `issue-code`30min e `issue-purchase`48h. Adiciona `/management/*` e encaminha ao backend privado.
 - `TurboRamaSuiteAdminServer`: instância dedicada `turborama-station-management.service`, usuário administrativo existente, socket Unix em `/run`. `STATION_MANAGEMENT_ONLY=1` limita a instância a `/station/*`, saúde e prontidão. Não substitui a unidade Suite administrativa.
+- A credencial Station é fornecida pela unidade com `LoadCredential`, sem mudar o arquivo/chave da API nem ampliar suas ACLs. A instância valida a leitura e o formato antes de abrir o socket.
 - Migration **030**: recibos de emissão sem código e uma view de auditoria restrita a licenças Station, com leitura apenas para o role administrativo. Não concede leitura da tabela geral de auditoria, nem da view ao role da API.
 - O código de ativação é gerado com 32 bytes aleatórios. PostgreSQL guarda apenas seu HMAC/verificador, gerações, prazo, motivo e auditoria. Não há leitura de códigos antigos. O envio opcional mantém o contrato privado de fila do site.
 - Senha do operador, CSRF, motivo, gerações esperadas, sessão alvo, limite de tentativas e identificador único são conferidos antes das alterações. A geração é reconferida dentro da transação. Não há repetição automática após falha.
@@ -46,6 +47,8 @@ Altera somente a seção Station do site, adiciona a nova unidade privada e um d
 O teste de produção cria uma licença/aparelhos sintéticos, verifica os fluxos pelo helper instalado e API HTTPS e remove seus registros com marcador de propriedade. Não modifica compradores reais, não faz login como um operador real e não envia WhatsApp. Hashes públicos de CSS/JS e redirecionamento do administrador anônimo também são conferidos. O navegador autenticado é testado numa cópia privada usando os mesmos arquivos e dados sintéticos.
 
 Retorno autorizado: autenticação nativa root e `python3 ops/station-admin/deploy.py --rollback`. Restaura apenas os arquivos Station e o helper anterior; encerra/remove a unidade/configuração própria. Preserva o schema aditivo, backup, segredo privado e release. Não restaura todo o banco sobre produção e não desfaz ações administrativas concluídas por operadores.
+
+Se a publicação retornar após preparar o banco, `--resume <pacote>` exige backup restaurado, checksum030 idêntico, página original restaurada e serviços/conteúdo preservados. Instala uma release nova sem repetir a migration nem substituir o backup. Recusa repetir uma publicação concluída.
 
 Backup privado: `/mnt/DADOS/station-admin-panel-backup-20261003`, modo0700; dump0600. Nunca versionar seu conteúdo. A evidência pública é sanitizada e fica no handoff técnico único do Station.
 

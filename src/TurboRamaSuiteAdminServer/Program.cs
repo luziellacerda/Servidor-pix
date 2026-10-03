@@ -23,6 +23,20 @@ var commerceToken = commerceEnabled ? InternalToken.Load(Required("SUITE_COMMERC
 var pepperFile = Required("SUITE_ADMIN_PEPPER_FILE");
 var stationPepperFile = stationCommerceEnabled
     ? Required("STATION_ADMIN_PEPPER_FILE") : string.Empty;
+if(stationOnly)
+{
+    if(!stationCommerceEnabled)throw new InvalidOperationException("Station management is disabled.");
+    try
+    {
+        var managementPepper=Convert.FromBase64String((await File.ReadAllTextAsync(stationPepperFile)).Trim());
+        try
+        {
+            if(managementPepper.Length<32)throw new InvalidOperationException();
+        }
+        finally{CryptographicOperations.ZeroMemory(managementPepper);}
+    }
+    catch{throw new InvalidOperationException("Station management credential unavailable.");}
+}
 var connection = Required("SUITE_ADMIN_CONNECTION");
 var contentManagementEnabled = Environment.GetEnvironmentVariable("SUITE_CONTENT_ADMIN_ENABLED") == "1";
 using var contentManagement = await ContentManagementBootstrap.TryLoadAsync(
