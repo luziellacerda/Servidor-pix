@@ -1,8 +1,65 @@
 # Handoff técnico único: servidor, conexão e instalação do TurboStations Android
 
-Atualizado em 03/10/2026, 19h05 (America/Maceio). Preserva as evidências anteriores identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
+Atualizado em 03/10/2026, 19h57 (America/Maceio). Preserva as evidências anteriores identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
 
-**Estado operacional atual:** API Station `fd13c0d`, catálogo revisão **4 / 1.816 jogos**, com **todas as capas da pasta `revista`**, corrigidas em produção às18h53. Nove capas e cinco downloads conferidos por HTTPS; 2.071 capas internas cruzadas por SHA256 com a imagem exata de `revista`. A administração de licenças e aparelhos está **publicada e verificada**, fonte `deda92c`, em **https://turbobox.lzgames.com.br/admin/station**. A mesma licença pode receber novo código, liberar reinstalação/troca de aparelho, cancelar código, bloquear/desbloquear ou reconectar o aplicativo pelo site. O retorno Android `2834e3b` comprova APK novo **fa3bc844** instalado, com fonte02c09dd e ponte JNI compiladas/testadas. A recuperação real às16h47 está registrada abaixo; aquele código tinha validade até17h17:36 e é histórico. **A ativação do APK após essa recuperação e o fluxo catálogo/capa/download/jogo ainda não têm prova recebida neste Linux.** A conferência visual das novas capas no aparelho também depende do Android receber catálogo4. Consulte o estado atual no painel e gere outro código somente quando necessário. Os recortes anteriores continuam identificados por data.
+**Estado operacional atual:** API Station **`4bb77ed2`**, publicada às19h48, aceita o carregamento rápido de **quatro capas simultâneas**. Catálogo revisão **4 / 1.816 jogos**, com **todas as capas originais da pasta `revista`**. A prova HTTPS entregou48 capas exatas em4,55s e nove downloads íntegros;2.071 capas internas continuam cruzadas com revista. Administração profissional de licenças/aparelhos **deda92c** publicada em **https://turbobox.lzgames.com.br/admin/station**. O retorno Android `2834e3b` comprova APK **fa3bc844** instalado, fonte02c09dd. **O novo fonte rápido é `1dc8c381`; precisa entrar na nova compilação/assinatura do APK no ambiente canônico E:.** Java e JNI novos foram compilados neste Linux, com os testes descritos abaixo; nenhum APK novo foi montado ou instalado aqui. A recuperação de licença às16h47 e seu código vencido às17h17 são históricos. O fluxo visual/jogo no aparelho após essas alterações ainda precisa de prova Android; consulte o painel e gere código somente quando necessário.
+
+## Quatro capas por vez e downloads contínuos — produção03/10/2026, 19h48
+
+### Diagnóstico: originais corretos, espera artificial no app
+
+As capas são **cópias byte a byte de `media/revista`**, sem recompilar, redimensionar ou trocar por `media/images`. Todas as1.816 públicas são **480×720**:1.815 JPEG e um PNG. Mediana131.522bytes, p95143.025bytes; o PNG de Mario Paint tem805.241bytes. As dimensões não são um erro identificado. O PNG naturalmente transfere mais bytes que os JPEGs.
+
+A medição autenticada anterior à otimização, feita neste Linux, deu mediana **5,10ms na API local** e **351,66ms pelo HTTPS público**, com hash de cada imagem conferido. Leitura quente do arquivo mediana0,09ms. O fonte Android anterior tinha **um trabalhador de imagens**, bloqueios globais durante a transferência e **intervalo fixo de2,1s** entre pedidos. Para48 capas sem cache, só esse espaçamento introduzia47×2,1=**98,7s**. Esse cálculo não é uma medição do telefone.
+
+### Implementação entregue para a nova compilação Android
+
+Fonte completo **[`1dc8c381e49e60ccbe0f84c97dcfe5be3e1d85f3`](https://github.com/luziellacerda/TurboElden/commit/1dc8c381e49e60ccbe0f84c97dcfe5be3e1d85f3)**, branch `feat/station-transfer-speed-20261003`, `clientVersion=1.0.8-station-speed-20261003.2`. A comparação com a integração2834e3b confirmou a mesma base de runtime antes destas mudanças. Esse commit pode ser aplicado à integração Android com `git cherry-pick 1dc8c381e49e60ccbe0f84c97dcfe5be3e1d85f3`.
+
+- **Quatro trabalhadores reais de capas**, alinhados ao limite de quatro da ponte nativa. Pedidos seguem as prioridades visíveis da tela; cada vaga é reutilizada após a conclusão, sem esperar um lote inteiro e sem temporizador fixo entre imagens.
+- Cache privado por **`coverId + items[].revision`**: acerto local imediato, uma transferência por capa/revisão mesmo com pedidos duplicados, validação e publicação atômica. Capas diferentes transferem em paralelo. O cache da revisão3 não atende uma capa4.
+- O coordenador captura sessão/item sob seu bloqueio e **libera o bloqueio antes de transferir a capa**. Capas não atrasam a autorização do jogo. O mesmo Bearer continua protegido entre autorização e GET de artefato até os cabeçalhos; o corpo do jogo segue junto das capas.
+- Resposta HTTP integralmente consumida permite reuso da conexão TLS pelo pool da plataforma. Corpo incompleto, erro de leitura ou cancelamento desconecta. Pin/certificado/hostname, proibição de redirect e conferência de tamanho/SHA256 continuam ativos. O efeito do reuso na rede do aparelho ainda deve ser medido.
+- Arquivo local com nome exato é conferido por tamanho/hash antes de percorrer outros candidatos; isso evita a varredura quando os bytes autorizados já estão presentes. SHA256 continua obrigatório.
+- Atualização de catálogo e saída da tela cancelam as capas pendentes; uma conclusão anterior não entra na nova publicação. A ponte limpa resultados e libera vagas antigas mesmo quando um download adia a troca do catálogo nativo. Licença, Keystore, dados, jogos/saves, renderer e motores são preservados.
+- `404` mantém a espera de repetição somente daquela capa; `429` suspende novos pedidos de rede por60s, sem bloquear uma thread nem impedir capas já em cache. **Essa espera só ocorre após erro; não há pausa normal entre capas.**
+
+**Build no ambiente E:** na raiz canônica `E:\ESTUDO APK\work\turbostations-reconstruction-20261002`, aplicar o commit acima e executar a receita existente: `prepare_test_dependency.py` → `run_tests.py` → `build_module.py`; `build_archive.py` → **`build_frontend.py`**; `prepare_dex_input.py` → `link_native_services.py` → `build_app_dex.py` → `package_apk.py`. **A nova compilação precisa incluir Java/DEX e a nova `libstation_frontend.so`**, porque há alterações dos dois lados. Usar a base APK/Keystore originais e atualizar sem desinstalar ou limpar dados. Registrar SHA256/assinatura/instalação do novo APK; o hashfa3bc844 identifica a versão anterior.
+
+**Provas de fonte:**329 verificações Java no host, incluindo27 novas de concorrência/cache/cancelamento/revisão/429/denegação tardia;7 da política C++ no host. Todas as classes Java compilaram para bytecodeJava8 contra AndroidAPI36. Frontend e fixture nativa compilaram **arm64/API26 com NDK27.1 e alinhamento16KiB**. O build canônico continua SDK34/NDKr28c conforme sua receita; o build Linux não substitui montagem/assinatura nem execução no aparelho. [Evidência Android](https://github.com/luziellacerda/TurboElden/blob/1dc8c381e49e60ccbe0f84c97dcfe5be3e1d85f3/versions/station-reconstruction-20261002/evidence/transfer-speed-validation-20261003.json).
+
+### Servidor publicado e limites efetivos
+
+API fonte **[`4bb77ed2b8fb01fe967b90dc18ec3fbd1ee5d58b`](https://github.com/luziellacerda/Servidor-pix/commit/4bb77ed2b8fb01fe967b90dc18ec3fbd1ee5d58b)**, DLL SHA256 **`b08f8313651a10de008d35545ff13569c5a360fb42ee792ad37f2647bd9d107e`**, PID168174. `ExecStart` efetivo: `/usr/bin/dotnet /opt/turborama-station-speed-20261003-4bb77ed2/TurboRamaSuiteOnlineServer.dll`. Índice4 permanece SHA256 **`c7ea6cbcf454c55422d06ac53c797e744ca06b83efc49fa03686e6e4fab4d97a`**; IDs, catálogo, capas e jogos não mudaram nesta otimização.
+
+Somente capas passaram a admitir **4.096pedidos/minuto por licença/aparelho autenticados**, com limite agregado de16.384/minuto por origem. Renovar sessão não reinicia o orçamento do aparelho; clientes atrás do mesmo NAT têm orçamento próprio. Assim o catálogo público inteiro cabe no orçamento de uma leitura rápida. Ativação, sessão, autorização de download e artefatos continuam nos limites anteriores de30pedidos/minuto por rota/origem. Esses limites contam pedidos, **não bytes por segundo**. Todo pedido de capa ainda consulta/valida a sessão no banco; capa sem Bearer recebe401. Nenhuma capa ou jogo ficou em cache público.
+
+### Medições reais e limite da conclusão
+
+| Prova | Resultado |
+| --- | --- |
+| Candidato isolado sob UID995 |48capas em80,41ms, quatro pedidos concorrentes; todas iguais aos arquivos revista |
+| Produção, HTTPS público a partir deste Linux | **48capas/6.458.397bytes em4.546,55ms**, quatro pedidos concorrentes,48respostas200 e bytes exatos |
+| Catálogo/perfil/grants assinados |1.816itens/revisão4; quatro plataformas e um ID oculto conferidos |
+| Jogos em cada verificação candidato/produção | **9downloads200 íntegros e9reusos404**: cinco pares do contrato mais os maiores artefatos das quatro plataformas |
+| Sem autenticação | Capa401; painel302 para login |
+| Saúde | Ready200; os12 PIDs compartilhados acompanhados permaneceram iguais/ativos |
+
+Download do jogo já é **streaming contínuo**, com leitura/gravação em blocos, sem espera programada nem teto de bytes/s no aplicativo/API. O Nginx efetivo não tem diretiva `limit_rate`/`limit_rate_after`; a rota de artefatos usa `proxy_buffering off` e `proxy_cache off`. Nesta tarefa nenhuma configuração de Nginx/Cloudflare/rede foi alterada.
+
+Os maiores arquivos testados tinham2,84–6,29MB. No candidato local foram15,6–31,0ms; a medição pública anterior variou21,9–28,1Mb/s. Na verificação depois do lote de capas variou7,6–22,9Mb/s; a conferência pública sem o lote de capas variou16,2–22,4Mb/s, com os mesmos hashes. **Não há prova de aumento da banda externa nem de velocidade no telefone.** A API local serviu os bytes rapidamente; a variação pública inclui TLS, túnel/Cloudflare, internet e cliente de teste. A fonte nova retira a espera de capas, libera o início dos downloads e permite reuso TLS; a velocidade real final também depende da rede, armazenamento e processamento do aparelho.
+
+Antes de afirmar o resultado visual, instalar o APK novo e conferir catálogo4 da rede, primeira carga de capas com até quatro pedidos em trânsito, scroll/cache/reabertura, download/cancelamento/hash/instalação, atualização de catálogo durante transferência, abrir jogo e voltar. A nova compilação foi autorizada pelo mantenedor. **Servidor publicado e fontes disponíveis; a montagem/assinatura/aparelho pertencem ao ambiente privado Android.**
+
+### Evidência, preservação e retorno desta API
+
+[Evidência sanitizada completa](evidencia-transferencia-station-20261003.json) contém antes/depois, tempos, hashes públicos e escopo das provas. O teste .NET preservou regressões Suite/ES; o HTTP com PostgreSQL temporário passou antes da publicação, tanto compilado da fonte quanto com a DLL empacotada. Verificou ativação, sessão, perfil/catálogo/grant,48capas em quatro conexões, raw/ZIP, interrupção/novo grant, uso único, outro aparelho/sessão, expiração, revogação, quatro plataformas e compatibilidade. Processos candidato e produção usaram licenças sintéticas descartáveis; **nenhuma licença real foi usada nem mensagem enviada**. Todos os registros sintéticos foram removidos.
+
+Só a API Station foi reiniciada. Os12 serviços acompanhados — PIX, Suite/API/admin, gateway, Nginx, Cloudflare, PostgreSQL, Redis, FPM principal/TurboBox, administração Station/helper — permaneceram nos mesmos PIDs. Não houve migration, troca de chave, alteração de licença de cliente, catálogo, ROM, imagem, site/painel ou rede.
+
+Backup privado root0700 **`/mnt/DADOS/station-speed-backup-20261003`**, contendo API anterior e configurações salvas; restauração temporária da API e manifesto de todos os arquivos conferidos antes da ativação. Release anterior fd13c0d e índice4 preservados. Acrescentado apenas `zz-station-speed-20261003.conf` para selecionar a nova API. O [script limitado](scripts/implantar-transferencia-station-20261003.py) confere commit limpo, manifesto/SHA256, identidade Linux, saúde e executa teste candidato antes de ativar.
+
+**Retorno somente desta otimização:** com autenticação nativa Linux/root, executar **`python3 docs/station-android/scripts/implantar-transferencia-station-20261003.py --rollback` na raiz da release de fonte4bb77ed2**. O script remove apenas seu override, reinicia somente Station e recupera fd13c0d **mantendo catálogo/capas revisão4**. Confere os artefatos/configurações antes de mudar e pode retornar mesmo se a API nova estiver parada. Esse retorno não foi acionado porque a implantação passou. Após retornar, o limite antigo de30capas/minuto volta; o app rápido precisa da API nova para evitar429. O retorno de capas/revisão5 descrito na seção histórica abaixo é uma operação diferente; não é necessário para desfazer esta API.
 
 ## Capas da pasta revista: causa e correção publicadas — 03/10/2026, 18h53; conferidas até19h05
 

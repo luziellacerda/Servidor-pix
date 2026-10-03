@@ -1,0 +1,1695 @@
+{
+  "production": {
+    "service": "turborama-station-api.service",
+    "sourceRevision": "4bb77ed2b8fb01fe967b90dc18ec3fbd1ee5d58b",
+    "applied": true,
+    "catalogRevision": 4,
+    "dllSha256": "b08f8313651a10de008d35545ff13569c5a360fb42ee792ad37f2647bd9d107e",
+    "backupRestoreVerified": true,
+    "candidateVerification": {
+      "transport": "api_loopback",
+      "probeLocation": "Linux server, not Android device",
+      "customerLicenseUsed": false,
+      "contractVerification": {
+        "catalogItems": 1816,
+        "catalogRevision": 4,
+        "platformCounts": {
+          "megadrive": 887,
+          "megadrivebr": 94,
+          "snes": 644,
+          "snesbr": 191
+        },
+        "verifiedCoverAndDownloadPairs": 5,
+        "compatibilityIdVerified": true,
+        "signaturesAndIdentityVerified": true,
+        "correlationVerified": true,
+        "oneUseVerified": true
+      },
+      "coverBurst": {
+        "requests": 48,
+        "concurrency": 4,
+        "statuses": [
+          200
+        ],
+        "totalMs": 80.411,
+        "bytes": 6458397,
+        "allIndexedBytesMatch": true
+      },
+      "largestPlatformDownloads": [
+        {
+          "platform": "megadrive",
+          "bytes": 4211397,
+          "sha256": "53e6a6c29c9dea5b2e0adbf737f788d253bc19dc2b33c4ee71b8c8ab8c5553f3",
+          "totalMs": 15.809,
+          "megabitsPerSecond": 2131.119
+        },
+        {
+          "platform": "megadrivebr",
+          "bytes": 2835416,
+          "sha256": "5673b7ede0dc35ecbf0085621102e20823a4877c08532111fafee55649bfa290",
+          "totalMs": 15.581,
+          "megabitsPerSecond": 1455.822
+        },
+        {
+          "platform": "snes",
+          "bytes": 4194304,
+          "sha256": "2277a2d8dddb01fe5cb0ae9a0fa225d42b3a11adccaeafa18e3c339b3794a32b",
+          "totalMs": 17.694,
+          "megabitsPerSecond": 1896.333
+        },
+        {
+          "platform": "snesbr",
+          "bytes": 6291456,
+          "sha256": "27427bbd1741684d1c82b69a6be71870892032300c3470448db6aa4744aca99f",
+          "totalMs": 30.967,
+          "megabitsPerSecond": 1625.319
+        }
+      ],
+      "anonymousCoverStatus": 401,
+      "samples": [
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 141607,
+          "totalMs": 22.595
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 28432,
+          "totalMs": 36.445
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 22.153
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 137829,
+          "totalMs": 6.3
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 35514,
+          "totalMs": 8.427
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 2.754
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 109111,
+          "totalMs": 5.913
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 262144,
+          "totalMs": 8.941
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 2.783
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 112450,
+          "totalMs": 6.119
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 524288,
+          "totalMs": 9.517
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 2.842
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 141607,
+          "totalMs": 5.817
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 28432,
+          "totalMs": 8.355
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 2.911
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 139695,
+          "totalMs": 7.533
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 139835,
+          "totalMs": 5.439
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 117775,
+          "totalMs": 13.737
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 143065,
+          "totalMs": 14.116
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 134106,
+          "totalMs": 13.98
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 139550,
+          "totalMs": 4.193
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 144611,
+          "totalMs": 5.494
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 133823,
+          "totalMs": 3.846
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 144536,
+          "totalMs": 4.973
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 123827,
+          "totalMs": 4.241
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 138976,
+          "totalMs": 3.913
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 128372,
+          "totalMs": 5.858
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 134097,
+          "totalMs": 4.354
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 134097,
+          "totalMs": 4.716
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 113938,
+          "totalMs": 4.477
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 141626,
+          "totalMs": 4.168
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 114639,
+          "totalMs": 5.781
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 136945,
+          "totalMs": 4.407
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 134754,
+          "totalMs": 4.244
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 139595,
+          "totalMs": 4.331
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 129514,
+          "totalMs": 4.008
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 134812,
+          "totalMs": 3.886
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 130075,
+          "totalMs": 6.253
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 134812,
+          "totalMs": 4.259
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 144539,
+          "totalMs": 3.274
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 135117,
+          "totalMs": 4.002
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 135117,
+          "totalMs": 4.037
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 128910,
+          "totalMs": 7.521
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 143991,
+          "totalMs": 3.975
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 114642,
+          "totalMs": 4.461
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 133437,
+          "totalMs": 4.639
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 137911,
+          "totalMs": 5.198
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 131258,
+          "totalMs": 3.744
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 140184,
+          "totalMs": 7.196
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 125213,
+          "totalMs": 4.557
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 126424,
+          "totalMs": 4.482
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 136490,
+          "totalMs": 6.202
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 138457,
+          "totalMs": 5.218
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 140113,
+          "totalMs": 4.508
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 144795,
+          "totalMs": 4.933
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 147043,
+          "totalMs": 8.429
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 137283,
+          "totalMs": 3.532
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 135911,
+          "totalMs": 3.809
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 136983,
+          "totalMs": 6.784
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 124113,
+          "totalMs": 6.056
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 130050,
+          "totalMs": 3.973
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 148131,
+          "totalMs": 4.005
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 135210,
+          "totalMs": 4.008
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 4211397,
+          "totalMs": 15.785
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 3.244
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 2835416,
+          "totalMs": 14.885
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 2.95
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 4194304,
+          "totalMs": 17.669
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 3.042
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 6291456,
+          "totalMs": 30.941
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 3.139
+        },
+        {
+          "operation": "cover",
+          "status": 401,
+          "bytes": 92,
+          "totalMs": 1.913
+        }
+      ],
+      "coverMedianMs": 4.557,
+      "artifactMedianMs": 14.885,
+      "syntheticRowsRemoved": true,
+      "syntheticDeliveryRowsRemaining": 0
+    },
+    "publicHttpsVerification": {
+      "transport": "public_https",
+      "probeLocation": "Linux server, not Android device",
+      "customerLicenseUsed": false,
+      "contractVerification": {
+        "catalogItems": 1816,
+        "catalogRevision": 4,
+        "platformCounts": {
+          "megadrive": 887,
+          "megadrivebr": 94,
+          "snes": 644,
+          "snesbr": 191
+        },
+        "verifiedCoverAndDownloadPairs": 5,
+        "compatibilityIdVerified": true,
+        "signaturesAndIdentityVerified": true,
+        "correlationVerified": true,
+        "oneUseVerified": true
+      },
+      "coverBurst": {
+        "requests": 48,
+        "concurrency": 4,
+        "statuses": [
+          200
+        ],
+        "totalMs": 4546.548,
+        "bytes": 6458397,
+        "allIndexedBytesMatch": true
+      },
+      "largestPlatformDownloads": [
+        {
+          "platform": "megadrive",
+          "bytes": 4211397,
+          "sha256": "53e6a6c29c9dea5b2e0adbf737f788d253bc19dc2b33c4ee71b8c8ab8c5553f3",
+          "totalMs": 1474.257,
+          "megabitsPerSecond": 22.853
+        },
+        {
+          "platform": "megadrivebr",
+          "bytes": 2835416,
+          "sha256": "5673b7ede0dc35ecbf0085621102e20823a4877c08532111fafee55649bfa290",
+          "totalMs": 1214.977,
+          "megabitsPerSecond": 18.67
+        },
+        {
+          "platform": "snes",
+          "bytes": 4194304,
+          "sha256": "2277a2d8dddb01fe5cb0ae9a0fa225d42b3a11adccaeafa18e3c339b3794a32b",
+          "totalMs": 4390.285,
+          "megabitsPerSecond": 7.643
+        },
+        {
+          "platform": "snesbr",
+          "bytes": 6291456,
+          "sha256": "27427bbd1741684d1c82b69a6be71870892032300c3470448db6aa4744aca99f",
+          "totalMs": 4248.938,
+          "megabitsPerSecond": 11.846
+        }
+      ],
+      "anonymousCoverStatus": 401,
+      "samples": [
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 141607,
+          "totalMs": 359.227
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 28432,
+          "totalMs": 273.407
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 267.297
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 137829,
+          "totalMs": 356.091
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 35514,
+          "totalMs": 258.95
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 223.296
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 109111,
+          "totalMs": 318.368
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 262144,
+          "totalMs": 565.577
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 247.477
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 112450,
+          "totalMs": 312.592
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 524288,
+          "totalMs": 439.785
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 202.083
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 141607,
+          "totalMs": 339.125
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 28432,
+          "totalMs": 245.889
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 238.431
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 117775,
+          "totalMs": 350.499
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 134106,
+          "totalMs": 413.138
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 139695,
+          "totalMs": 420.392
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 143065,
+          "totalMs": 423.522
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 139835,
+          "totalMs": 336.085
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 144611,
+          "totalMs": 347.551
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 133823,
+          "totalMs": 358.404
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 139550,
+          "totalMs": 371.87
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 144536,
+          "totalMs": 330.547
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 123827,
+          "totalMs": 303.559
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 128372,
+          "totalMs": 346.355
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 138976,
+          "totalMs": 342.461
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 134097,
+          "totalMs": 327.896
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 134097,
+          "totalMs": 342.905
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 113938,
+          "totalMs": 316.978
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 114639,
+          "totalMs": 323.866
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 141626,
+          "totalMs": 355.861
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 136945,
+          "totalMs": 361.408
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 134754,
+          "totalMs": 359.331
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 139595,
+          "totalMs": 359.231
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 130075,
+          "totalMs": 328.37
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 129514,
+          "totalMs": 307.879
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 134812,
+          "totalMs": 319.519
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 134812,
+          "totalMs": 333.518
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 144539,
+          "totalMs": 346.937
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 128910,
+          "totalMs": 330.569
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 135117,
+          "totalMs": 325.569
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 135117,
+          "totalMs": 338.706
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 143991,
+          "totalMs": 337.287
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 114642,
+          "totalMs": 313.891
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 137911,
+          "totalMs": 334.895
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 133437,
+          "totalMs": 354.406
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 140184,
+          "totalMs": 365.803
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 136490,
+          "totalMs": 352.817
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 125213,
+          "totalMs": 349.47
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 126424,
+          "totalMs": 309.703
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 147043,
+          "totalMs": 333.867
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 138457,
+          "totalMs": 339.711
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 144795,
+          "totalMs": 355.258
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 140113,
+          "totalMs": 356.424
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 136983,
+          "totalMs": 379.611
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 131258,
+          "totalMs": 1347.579
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 135911,
+          "totalMs": 364.004
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 137283,
+          "totalMs": 343.404
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 124113,
+          "totalMs": 310.62
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 130050,
+          "totalMs": 355.702
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 148131,
+          "totalMs": 353.765
+        },
+        {
+          "operation": "cover",
+          "status": 200,
+          "bytes": 135210,
+          "totalMs": 330.997
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 4211397,
+          "totalMs": 1474.231
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 224.869
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 2835416,
+          "totalMs": 1214.856
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 228.113
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 4194304,
+          "totalMs": 4390.225
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 227.447
+        },
+        {
+          "operation": "artifact",
+          "status": 200,
+          "bytes": 6291456,
+          "totalMs": 4248.846
+        },
+        {
+          "operation": "artifact",
+          "status": 404,
+          "bytes": 92,
+          "totalMs": 225.332
+        },
+        {
+          "operation": "cover",
+          "status": 401,
+          "bytes": 92,
+          "totalMs": 236.714
+        }
+      ],
+      "coverMedianMs": 343.404,
+      "artifactMedianMs": 565.577,
+      "syntheticRowsRemoved": true,
+      "syntheticDeliveryRowsRemaining": 0
+    },
+    "indexSha256": "c7ea6cbcf454c55422d06ac53c797e744ca06b83efc49fa03686e6e4fab4d97a",
+    "sharedServicesPreserved": true,
+    "schemaKeysMediaPreserved": true,
+    "completedAtUtc": "2026-10-03T22:48:07.612134+00:00",
+    "pid": 168174
+  },
+  "coverBaseline": {
+    "observedAtUtc": "2026-10-03T22:22:40.610881+00:00",
+    "catalogRevision": 4,
+    "probeLocation": "Linux server, not Android device",
+    "syntheticLicense": true,
+    "customerLicenseUsed": false,
+    "serviceChanged": false,
+    "samples": [
+      {
+        "transport": "public_https",
+        "category": "small_jpeg",
+        "trial": 1,
+        "name": "Wolfenstein 3-D",
+        "platform": "snes",
+        "status": 200,
+        "bytes": 94081,
+        "sha256": "a4c050e40405f8bc769ecc480f8b5600898233f6ebcbfa4893c531cebbaf11c3",
+        "exactIndexedBytes": true,
+        "dnsMs": 1.64,
+        "tcpReadyMs": 53.598,
+        "tlsReadyMs": 124.27,
+        "firstByteMs": 254.166,
+        "totalMs": 322.54,
+        "bodyTransferMs": 68.374,
+        "warmDiskReadMs": 0.065
+      },
+      {
+        "transport": "public_https",
+        "category": "median_jpeg",
+        "trial": 1,
+        "name": "NCAA Final Four Basketball",
+        "platform": "snes",
+        "status": 200,
+        "bytes": 131521,
+        "sha256": "b5f3e66395760561c6d4b958f9f716c7a0c1fb92c505c3f43c198564b29c5371",
+        "exactIndexedBytes": true,
+        "dnsMs": 1.631,
+        "tcpReadyMs": 47.833,
+        "tlsReadyMs": 109.877,
+        "firstByteMs": 240.177,
+        "totalMs": 320.168,
+        "bodyTransferMs": 79.991,
+        "warmDiskReadMs": 0.0914
+      },
+      {
+        "transport": "public_https",
+        "category": "largest_jpeg",
+        "trial": 1,
+        "name": "The Great Waldo Search",
+        "platform": "megadrive",
+        "status": 200,
+        "bytes": 152383,
+        "sha256": "e4bc35d6c6df6752f797b5982257b87d4f2999a4f5f7baee074a656e111deedb",
+        "exactIndexedBytes": true,
+        "dnsMs": 1.714,
+        "tcpReadyMs": 58.101,
+        "tlsReadyMs": 121.456,
+        "firstByteMs": 257.631,
+        "totalMs": 358.735,
+        "bodyTransferMs": 101.104,
+        "warmDiskReadMs": 0.0839
+      },
+      {
+        "transport": "public_https",
+        "category": "largest_png",
+        "trial": 1,
+        "name": "Mario Paint",
+        "platform": "snes",
+        "status": 200,
+        "bytes": 805241,
+        "sha256": "d8830e4e5acbb281747075d4c712eb7c27aaa2276aa1691ac281da2db8149de2",
+        "exactIndexedBytes": true,
+        "dnsMs": 1.536,
+        "tcpReadyMs": 52.869,
+        "tlsReadyMs": 119.594,
+        "firstByteMs": 249.151,
+        "totalMs": 482.917,
+        "bodyTransferMs": 233.766,
+        "warmDiskReadMs": 0.2373
+      },
+      {
+        "transport": "public_https",
+        "category": "small_jpeg",
+        "trial": 2,
+        "name": "Wolfenstein 3-D",
+        "platform": "snes",
+        "status": 200,
+        "bytes": 94081,
+        "sha256": "a4c050e40405f8bc769ecc480f8b5600898233f6ebcbfa4893c531cebbaf11c3",
+        "exactIndexedBytes": true,
+        "dnsMs": 1.441,
+        "tcpReadyMs": 56.45,
+        "tlsReadyMs": 122.628,
+        "firstByteMs": 252.959,
+        "totalMs": 329.804,
+        "bodyTransferMs": 76.845,
+        "warmDiskReadMs": 0.0833
+      },
+      {
+        "transport": "public_https",
+        "category": "median_jpeg",
+        "trial": 2,
+        "name": "NCAA Final Four Basketball",
+        "platform": "snes",
+        "status": 200,
+        "bytes": 131521,
+        "sha256": "b5f3e66395760561c6d4b958f9f716c7a0c1fb92c505c3f43c198564b29c5371",
+        "exactIndexedBytes": true,
+        "dnsMs": 1.909,
+        "tcpReadyMs": 44.189,
+        "tlsReadyMs": 109.639,
+        "firstByteMs": 237.68,
+        "totalMs": 344.594,
+        "bodyTransferMs": 106.914,
+        "warmDiskReadMs": 0.0886
+      },
+      {
+        "transport": "public_https",
+        "category": "largest_jpeg",
+        "trial": 2,
+        "name": "The Great Waldo Search",
+        "platform": "megadrive",
+        "status": 200,
+        "bytes": 152383,
+        "sha256": "e4bc35d6c6df6752f797b5982257b87d4f2999a4f5f7baee074a656e111deedb",
+        "exactIndexedBytes": true,
+        "dnsMs": 1.732,
+        "tcpReadyMs": 54.288,
+        "tlsReadyMs": 119.953,
+        "firstByteMs": 259.544,
+        "totalMs": 375.119,
+        "bodyTransferMs": 115.575,
+        "warmDiskReadMs": 0.0934
+      },
+      {
+        "transport": "public_https",
+        "category": "largest_png",
+        "trial": 2,
+        "name": "Mario Paint",
+        "platform": "snes",
+        "status": 200,
+        "bytes": 805241,
+        "sha256": "d8830e4e5acbb281747075d4c712eb7c27aaa2276aa1691ac281da2db8149de2",
+        "exactIndexedBytes": true,
+        "dnsMs": 1.87,
+        "tcpReadyMs": 57.212,
+        "tlsReadyMs": 122.486,
+        "firstByteMs": 255.637,
+        "totalMs": 545.848,
+        "bodyTransferMs": 290.211,
+        "warmDiskReadMs": 0.2155
+      },
+      {
+        "transport": "api_loopback",
+        "category": "small_jpeg",
+        "trial": 1,
+        "name": "Wolfenstein 3-D",
+        "platform": "snes",
+        "status": 200,
+        "bytes": 94081,
+        "sha256": "a4c050e40405f8bc769ecc480f8b5600898233f6ebcbfa4893c531cebbaf11c3",
+        "exactIndexedBytes": true,
+        "dnsMs": 0.033,
+        "tcpReadyMs": 0.199,
+        "tlsReadyMs": 0.0,
+        "firstByteMs": 4.936,
+        "totalMs": 5.335,
+        "bodyTransferMs": 0.399,
+        "warmDiskReadMs": 0.0793
+      },
+      {
+        "transport": "api_loopback",
+        "category": "median_jpeg",
+        "trial": 1,
+        "name": "NCAA Final Four Basketball",
+        "platform": "snes",
+        "status": 200,
+        "bytes": 131521,
+        "sha256": "b5f3e66395760561c6d4b958f9f716c7a0c1fb92c505c3f43c198564b29c5371",
+        "exactIndexedBytes": true,
+        "dnsMs": 0.03,
+        "tcpReadyMs": 0.167,
+        "tlsReadyMs": 0.0,
+        "firstByteMs": 4.498,
+        "totalMs": 4.845,
+        "bodyTransferMs": 0.347,
+        "warmDiskReadMs": 0.0902
+      },
+      {
+        "transport": "api_loopback",
+        "category": "largest_jpeg",
+        "trial": 1,
+        "name": "The Great Waldo Search",
+        "platform": "megadrive",
+        "status": 200,
+        "bytes": 152383,
+        "sha256": "e4bc35d6c6df6752f797b5982257b87d4f2999a4f5f7baee074a656e111deedb",
+        "exactIndexedBytes": true,
+        "dnsMs": 0.029,
+        "tcpReadyMs": 0.145,
+        "tlsReadyMs": 0.0,
+        "firstByteMs": 4.537,
+        "totalMs": 4.855,
+        "bodyTransferMs": 0.318,
+        "warmDiskReadMs": 0.0965
+      },
+      {
+        "transport": "api_loopback",
+        "category": "largest_png",
+        "trial": 1,
+        "name": "Mario Paint",
+        "platform": "snes",
+        "status": 200,
+        "bytes": 805241,
+        "sha256": "d8830e4e5acbb281747075d4c712eb7c27aaa2276aa1691ac281da2db8149de2",
+        "exactIndexedBytes": true,
+        "dnsMs": 0.029,
+        "tcpReadyMs": 0.16,
+        "tlsReadyMs": 0.0,
+        "firstByteMs": 6.56,
+        "totalMs": 7.67,
+        "bodyTransferMs": 1.11,
+        "warmDiskReadMs": 0.2149
+      }
+    ],
+    "summary": {
+      "public_https": {
+        "responses": 8,
+        "statuses": [
+          200
+        ],
+        "totalMedianMs": 351.6645,
+        "totalMinMs": 320.168,
+        "totalMaxMs": 545.848,
+        "firstByteMedianMs": 253.5625,
+        "warmDiskMedianMs": 0.09
+      },
+      "api_loopback": {
+        "responses": 4,
+        "statuses": [
+          200
+        ],
+        "totalMedianMs": 5.095000000000001,
+        "totalMinMs": 4.845,
+        "totalMaxMs": 7.67,
+        "firstByteMedianMs": 4.7364999999999995,
+        "warmDiskMedianMs": 0.09335
+      }
+    },
+    "syntheticRowsRemoved": true,
+    "syntheticDeliveryRowsRemaining": 0
+  },
+  "downloadsBefore": {
+    "transport": "public_https",
+    "probeLocation": "Linux server, not Android device",
+    "customerLicenseUsed": false,
+    "contractVerification": {
+      "catalogItems": 1816,
+      "catalogRevision": 4,
+      "platformCounts": {
+        "megadrive": 887,
+        "megadrivebr": 94,
+        "snes": 644,
+        "snesbr": 191
+      },
+      "verifiedCoverAndDownloadPairs": 5,
+      "compatibilityIdVerified": true,
+      "signaturesAndIdentityVerified": true,
+      "correlationVerified": true,
+      "oneUseVerified": true
+    },
+    "largestPlatformDownloads": [
+      {
+        "platform": "megadrive",
+        "bytes": 4211397,
+        "sha256": "53e6a6c29c9dea5b2e0adbf737f788d253bc19dc2b33c4ee71b8c8ab8c5553f3",
+        "totalMs": 1197.366,
+        "megabitsPerSecond": 28.138
+      },
+      {
+        "platform": "megadrivebr",
+        "bytes": 2835416,
+        "sha256": "5673b7ede0dc35ecbf0085621102e20823a4877c08532111fafee55649bfa290",
+        "totalMs": 1036.182,
+        "megabitsPerSecond": 21.891
+      },
+      {
+        "platform": "snes",
+        "bytes": 4194304,
+        "sha256": "2277a2d8dddb01fe5cb0ae9a0fa225d42b3a11adccaeafa18e3c339b3794a32b",
+        "totalMs": 1472.978,
+        "megabitsPerSecond": 22.78
+      },
+      {
+        "platform": "snesbr",
+        "bytes": 6291456,
+        "sha256": "27427bbd1741684d1c82b69a6be71870892032300c3470448db6aa4744aca99f",
+        "totalMs": 2237.205,
+        "megabitsPerSecond": 22.498
+      }
+    ],
+    "anonymousCoverStatus": 401,
+    "samples": [
+      {
+        "operation": "cover",
+        "status": 200,
+        "bytes": 141607,
+        "totalMs": 350.791
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 28432,
+        "totalMs": 258.733
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 254.519
+      },
+      {
+        "operation": "cover",
+        "status": 200,
+        "bytes": 137829,
+        "totalMs": 349.529
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 35514,
+        "totalMs": 255.218
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 227.851
+      },
+      {
+        "operation": "cover",
+        "status": 200,
+        "bytes": 109111,
+        "totalMs": 308.423
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 262144,
+        "totalMs": 371.705
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 230.475
+      },
+      {
+        "operation": "cover",
+        "status": 200,
+        "bytes": 112450,
+        "totalMs": 325.698
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 524288,
+        "totalMs": 532.432
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 230.126
+      },
+      {
+        "operation": "cover",
+        "status": 200,
+        "bytes": 141607,
+        "totalMs": 341.569
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 28432,
+        "totalMs": 244.776
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 243.428
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 4211397,
+        "totalMs": 1197.34
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 230.568
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 2835416,
+        "totalMs": 1035.318
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 232.927
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 4194304,
+        "totalMs": 1472.926
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 241.109
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 6291456,
+        "totalMs": 2237.152
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 233.311
+      },
+      {
+        "operation": "cover",
+        "status": 401,
+        "bytes": 92,
+        "totalMs": 242.04
+      }
+    ],
+    "coverMedianMs": 341.569,
+    "artifactMedianMs": 532.432,
+    "syntheticRowsRemoved": true,
+    "syntheticDeliveryRowsRemaining": 0
+  },
+  "scope": "Linux HTTP and source tests; no new signed APK or Android device validation",
+  "images": {
+    "source": "original media/revista, byte-for-byte",
+    "dimensions": "480x720",
+    "publicCovers": 1816,
+    "jpeg": 1815,
+    "png": 1,
+    "medianBytes": 131521.5,
+    "p95Bytes": 143025,
+    "maximumBytes": 805241
+  },
+  "nginx": {
+    "bandwidthLimitDirectivesFound": 0,
+    "artifactProxyBuffering": "off",
+    "proxyCache": "off",
+    "configurationChanged": false
+  },
+  "androidSourceRevision": "1dc8c381e49e60ccbe0f84c97dcfe5be3e1d85f3",
+  "androidClientVersion": "1.0.8-station-speed-20261003.2",
+  "android": {
+    "javaHostChecks": 329,
+    "nativePolicyHostChecks": 7,
+    "javaAndroidSourceCompilation": "API36, Java8",
+    "nativeAndroidSourceCompilation": "arm64 API26 NDK27.1, 16 KiB pages",
+    "apkBuilt": false,
+    "installed": false,
+    "deviceTestsExecuted": false
+  },
+  "downloadsAfterWithoutCoverBurst": {
+    "transport": "public_https",
+    "probeLocation": "Linux server, not Android device",
+    "customerLicenseUsed": false,
+    "contractVerification": {
+      "catalogItems": 1816,
+      "catalogRevision": 4,
+      "platformCounts": {
+        "megadrive": 887,
+        "megadrivebr": 94,
+        "snes": 644,
+        "snesbr": 191
+      },
+      "verifiedCoverAndDownloadPairs": 5,
+      "compatibilityIdVerified": true,
+      "signaturesAndIdentityVerified": true,
+      "correlationVerified": true,
+      "oneUseVerified": true
+    },
+    "largestPlatformDownloads": [
+      {
+        "platform": "megadrive",
+        "bytes": 4211397,
+        "sha256": "53e6a6c29c9dea5b2e0adbf737f788d253bc19dc2b33c4ee71b8c8ab8c5553f3",
+        "totalMs": 2084.726,
+        "megabitsPerSecond": 16.161
+      },
+      {
+        "platform": "megadrivebr",
+        "bytes": 2835416,
+        "sha256": "5673b7ede0dc35ecbf0085621102e20823a4877c08532111fafee55649bfa290",
+        "totalMs": 1230.62,
+        "megabitsPerSecond": 18.432
+      },
+      {
+        "platform": "snes",
+        "bytes": 4194304,
+        "sha256": "2277a2d8dddb01fe5cb0ae9a0fa225d42b3a11adccaeafa18e3c339b3794a32b",
+        "totalMs": 1497.394,
+        "megabitsPerSecond": 22.409
+      },
+      {
+        "platform": "snesbr",
+        "bytes": 6291456,
+        "sha256": "27427bbd1741684d1c82b69a6be71870892032300c3470448db6aa4744aca99f",
+        "totalMs": 2284.329,
+        "megabitsPerSecond": 22.033
+      }
+    ],
+    "anonymousCoverStatus": 401,
+    "samples": [
+      {
+        "operation": "cover",
+        "status": 200,
+        "bytes": 141607,
+        "totalMs": 336.084
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 28432,
+        "totalMs": 265.195
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 237.035
+      },
+      {
+        "operation": "cover",
+        "status": 200,
+        "bytes": 137829,
+        "totalMs": 354.415
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 35514,
+        "totalMs": 270.352
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 232.491
+      },
+      {
+        "operation": "cover",
+        "status": 200,
+        "bytes": 109111,
+        "totalMs": 333.816
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 262144,
+        "totalMs": 390.747
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 246.618
+      },
+      {
+        "operation": "cover",
+        "status": 200,
+        "bytes": 112450,
+        "totalMs": 326.284
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 524288,
+        "totalMs": 534.833
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 235.168
+      },
+      {
+        "operation": "cover",
+        "status": 200,
+        "bytes": 141607,
+        "totalMs": 339.153
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 28432,
+        "totalMs": 254.819
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 244.274
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 4211397,
+        "totalMs": 2084.7
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 244.692
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 2835416,
+        "totalMs": 1229.814
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 226.978
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 4194304,
+        "totalMs": 1497.341
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 236.202
+      },
+      {
+        "operation": "artifact",
+        "status": 200,
+        "bytes": 6291456,
+        "totalMs": 2284.276
+      },
+      {
+        "operation": "artifact",
+        "status": 404,
+        "bytes": 92,
+        "totalMs": 223.064
+      },
+      {
+        "operation": "cover",
+        "status": 401,
+        "bytes": 92,
+        "totalMs": 253.406
+      }
+    ],
+    "coverMedianMs": 336.084,
+    "artifactMedianMs": 534.833,
+    "syntheticRowsRemoved": true,
+    "syntheticDeliveryRowsRemaining": 0
+  }
+}
