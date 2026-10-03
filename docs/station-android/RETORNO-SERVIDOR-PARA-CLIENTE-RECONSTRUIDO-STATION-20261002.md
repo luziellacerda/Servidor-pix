@@ -1,6 +1,6 @@
 # Handoff técnico único: servidor, conexão e instalação do TurboStations Android
 
-Atualizado em 03/10/2026, 11h48 (America/Maceio). Preserva as evidências de 02/10/2026 identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
+Atualizado em 03/10/2026, 11h57 (America/Maceio). Preserva as evidências de 02/10/2026 identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
 
 **Decisão operacional:** ainda não liberar o APK como conectado e não implantar o código novo na 5192. Falta preparar o índice real, resolver as capas 404 de produção, repetir o fluxo autenticado na 5192 implantada e validar download/instalação no APK candidato já instalado. O fluxo HTTP candidato passou em banco temporário com itens sintéticos e, depois, com os 1.816 arquivos reais do volume acessível; isso ainda não comprova a 5192 de produção nem o download no aparelho.
 
