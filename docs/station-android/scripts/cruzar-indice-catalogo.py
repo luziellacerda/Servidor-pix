@@ -25,9 +25,13 @@ EXTENSION_MIME = {".png": "image/png", ".jpg": "image/jpeg",
                   ".jpeg": "image/jpeg", ".webp": "image/webp",
                   ".gif": "image/gif"}
 FIELDS = ["platform", "itemId", "name", "itemRevision", "coverId",
-          "catalogMatch", "artifactSha256", "indexGameReadable", "indexCoverStatus", "indexCoverMime",
+          "catalogMatch", "artifactFileName", "artifactFormat", "artifactSizeBytes",
+          "artifactSha256", "artifactLaunchPath", "artifactExpandedSizeBytes",
+          "artifactFileCount", "indexGameReadable", "indexCoverStatus", "indexCoverMime",
           "indexCoverSizeBytes", "indexCoverSha256", "diskExactNameCandidates",
-          "diskExactHashCandidates", "diskCoverHashCandidates"]
+          "diskExactHashCandidates", "diskCoverHashCandidates", "sourcePlatform",
+          "sourceCollection", "sourceXmlEntry", "sourceGameSha256", "sourceNameMatch", "sourceRomMatch",
+          "sourceCoverMatch"]
 
 
 def unique_pairs(pairs):
@@ -93,12 +97,35 @@ def catalog_rows(path):
     return by_id
 
 
+def source_rows(path):
+    if path is None:
+        return None
+    source_map = json.loads(path.read_text(encoding="utf-8"),
+                            object_pairs_hook=unique_pairs)
+    if not isinstance(source_map, dict) or not isinstance(source_map.get("items"), list):
+        raise ValueError("invalid source map")
+    by_id = {}
+    for row in source_map["items"]:
+        if not isinstance(row, dict) or not isinstance(row.get("itemId"), str) or \
+                not ID.fullmatch(row["itemId"]) or row["itemId"] in by_id or \
+                not isinstance(row.get("sourcePlatform"), str) or \
+                type(row.get("xmlEntry")) is not int or row["xmlEntry"] < 1 or \
+                not isinstance(row.get("collection"), str) or \
+                not isinstance(row.get("sourceGameSha256"), str) or \
+                not HASH.fullmatch(row["sourceGameSha256"]):
+            raise ValueError("invalid source map item")
+        by_id[row["itemId"]] = row
+    return by_id
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--index", type=Path, required=True)
     parser.add_argument("--disk-tsv", type=Path)
     parser.add_argument("--catalog-tsv", type=Path,
                         help="private output from exportar-catalogo-assinado.py")
+    parser.add_argument("--source-map", type=Path,
+                        help="private candidate source map, to verify exact XML entry")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     if args.output.resolve() == args.index.resolve():
@@ -112,8 +139,12 @@ def main():
     if type(revision) is not int or revision < 1 or not isinstance(items, list) or \
             len(items) > 4096:
         parser.error("invalid Station index revision or item count")
-    _, by_name, by_hash = disk_rows(args.disk_tsv)
+    disk, by_name, by_hash = disk_rows(args.disk_tsv)
+    by_entry = {(row["platform"], row["xmlEntry"]): row for row in disk}
+    if len(by_entry) != len(disk):
+        parser.error("duplicate disk XML entry")
     signed_catalog = catalog_rows(args.catalog_tsv)
+    sources = source_rows(args.source_map)
     cover_ids = {}
     item_ids = set()
     output = []
@@ -170,16 +201,46 @@ def main():
             game_readable = True
         except OSError:
             game_readable = False
+        source_row = sources.get(item_id) if sources is not None else None
+        if sources is not None and source_row is None:
+            parser.error("source map is missing item " + item_id)
+        source_disk = by_entry.get((source_row["sourcePlatform"],
+                                    str(source_row["xmlEntry"]))) if source_row else None
+        if source_row and source_disk is None:
+            parser.error("source XML entry is missing for item " + item_id)
+        source_rom_match = "" if source_row is None else (
+            "yes" if source_disk["gamePresent"] == "yes" and
+            source_disk["gameSha256"] == source_row["sourceGameSha256"] else "no")
+        source_name_match = "" if source_row is None else (
+            "yes" if name == source_disk["name"] else "no")
+        source_cover_match = "" if source_row is None else (
+            "yes" if cover[3] and (cover[3] == source_disk["xmlCoverSha256"] or
+            cover[3] in source_disk["revistaCandidateSha256"].split(";")) else "no")
         output.append({"platform": platform, "itemId": item_id, "name": name,
             "itemRevision": item_revision, "coverId": cover_id,
             "catalogMatch": catalog_match,
+            "artifactFileName": artifact.get("fileName", "") if isinstance(artifact, dict) else "",
+            "artifactFormat": artifact.get("format", "") if isinstance(artifact, dict) else "",
+            "artifactSizeBytes": artifact.get("sizeBytes", "") if isinstance(artifact, dict) else "",
             "artifactSha256": artifact_hash,
+            "artifactLaunchPath": artifact.get("launchPath", "") if isinstance(artifact, dict) else "",
+            "artifactExpandedSizeBytes": artifact.get("expandedSizeBytes", "") if isinstance(artifact, dict) else "",
+            "artifactFileCount": artifact.get("fileCount", "") if isinstance(artifact, dict) else "",
             "indexGameReadable": "yes" if game_readable else "no",
             "indexCoverStatus": cover[0], "indexCoverMime": cover[1],
             "indexCoverSizeBytes": cover[2], "indexCoverSha256": cover[3],
             "diskExactNameCandidates": len(name_matches),
             "diskExactHashCandidates": len(hash_matches),
-            "diskCoverHashCandidates": cover_matches})
+            "diskCoverHashCandidates": cover_matches,
+            "sourcePlatform": source_row["sourcePlatform"] if source_row else "",
+            "sourceCollection": source_row["collection"] if source_row else "",
+            "sourceXmlEntry": source_row["xmlEntry"] if source_row else "",
+            "sourceGameSha256": source_row["sourceGameSha256"] if source_row else "",
+            "sourceNameMatch": source_name_match,
+            "sourceRomMatch": source_rom_match,
+            "sourceCoverMatch": source_cover_match})
+    if sources is not None and len(sources) != len(output):
+        parser.error("source map has items missing from index")
     output.sort(key=lambda row: (row["platform"], row["name"].casefold(),
                                   row["itemId"]))
     fd = os.open(args.output, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
@@ -200,6 +261,12 @@ def main():
         "platformCounts": dict(sorted(Counter(row["platform"] for row in output).items())),
         "coverStatusCounts": dict(sorted(Counter(row["indexCoverStatus"]
                                           for row in output).items())),
+        "sourceRomMatchCounts": dict(sorted(Counter(row["sourceRomMatch"]
+                                          for row in output).items())) if sources is not None else None,
+        "sourceNameMatchCounts": dict(sorted(Counter(row["sourceNameMatch"]
+                                          for row in output).items())) if sources is not None else None,
+        "sourceCoverMatchCounts": dict(sorted(Counter(row["sourceCoverMatch"]
+                                          for row in output).items())) if sources is not None else None,
         "sharedCoverIds": len(output) - len(cover_ids)}, ensure_ascii=False,
         sort_keys=True))
 
