@@ -1,8 +1,63 @@
 # Handoff técnico único: servidor, conexão e instalação do TurboStations Android
 
-Atualizado em 03/10/2026, 18h20 (America/Maceio). Preserva as evidências anteriores identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
+Atualizado em 03/10/2026, 19h05 (America/Maceio). Preserva as evidências anteriores identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
 
-**Estado operacional atual:** API Station `fd13c0d`, catálogo revisão **3 / 1.816 jogos**, capas e downloads conferidos por HTTPS. A administração de licenças e aparelhos está **publicada e verificada**, fonte `deda92c`, em **https://turbobox.lzgames.com.br/admin/station**. A mesma licença pode receber novo código, liberar reinstalação/troca de aparelho, cancelar código, bloquear/desbloquear ou reconectar o aplicativo pelo site. O retorno Android `2834e3b` comprova APK novo **fa3bc844** instalado, com fonte02c09dd e ponte JNI compiladas/testadas. A recuperação real às16h47 está registrada abaixo; aquele código tinha validade até17h17:36 e é histórico. **A ativação do APK após essa recuperação e o fluxo catálogo/capa/download/jogo ainda não têm prova recebida neste Linux.** Consulte o estado atual no painel e gere outro código somente quando necessário. Os recortes anteriores continuam identificados por data.
+**Estado operacional atual:** API Station `fd13c0d`, catálogo revisão **4 / 1.816 jogos**, com **todas as capas da pasta `revista`**, corrigidas em produção às18h53. Nove capas e cinco downloads conferidos por HTTPS; 2.071 capas internas cruzadas por SHA256 com a imagem exata de `revista`. A administração de licenças e aparelhos está **publicada e verificada**, fonte `deda92c`, em **https://turbobox.lzgames.com.br/admin/station**. A mesma licença pode receber novo código, liberar reinstalação/troca de aparelho, cancelar código, bloquear/desbloquear ou reconectar o aplicativo pelo site. O retorno Android `2834e3b` comprova APK novo **fa3bc844** instalado, com fonte02c09dd e ponte JNI compiladas/testadas. A recuperação real às16h47 está registrada abaixo; aquele código tinha validade até17h17:36 e é histórico. **A ativação do APK após essa recuperação e o fluxo catálogo/capa/download/jogo ainda não têm prova recebida neste Linux.** A conferência visual das novas capas no aparelho também depende do Android receber catálogo4. Consulte o estado atual no painel e gere outro código somente quando necessário. Os recortes anteriores continuam identificados por data.
+
+## Capas da pasta revista: causa e correção publicadas — 03/10/2026, 18h53; conferidas até19h05
+
+### Por que o app recebia outras imagens
+
+O preparador anterior selecionava primeiro a tag **`<image>` do `gamelist.xml`**, normalmente apontando para `media/images`; só procurava `media/revista` quando essa imagem faltava. O relatório privado confirma **1.783 capas selecionadas pelo XML e apenas33 pela alternativa revista**. A API copiava e servia corretamente os bytes escolhidos pelo índice, mas aquela escolha não atendia à fonte pedida pelo mantenedor.
+
+O verificador anterior também aceitava `sourceCoverMatch=yes` quando a capa coincidia **com a imagem XML ou qualquer candidata revista**. Portanto a conferência anterior provava uma imagem ligada ao jogo, sem exigir a imagem de revista. Essa condição foi corrigida com `sourceRevistaMatch`, hash da revista selecionada e o modo obrigatório `--require-revista`.
+
+O índice efetivo revisão3 foi exportado privadamente e comparado com a preparação: **2.071/2.071 capas tinham bytes idênticos**. Entre os1.816 jogos visíveis, 33 já coincidiam com revista, 1.779 eram diferentes e quatro tinham variantes em subpastas; depois de escolher a variante pela pasta do ROM, os quatro também eram diferentes. **A prova pública anterior à mudança serviu nove capas200: todas iguais ao índice antigo, nenhuma igual à revista selecionada.** Isso comprova a seleção errada no servidor.
+
+### Seleção implementada e resultado completo
+
+A origem obrigatória agora é **`media/revista` da mesma plataforma**, com nome de arquivo igual ao ROM sem a extensão. A ordem é: mesma subpasta relativa do ROM; raiz de revista se não existe nessa subpasta; cópias em outras subpastas somente quando todas têm o mesmo SHA256. Conteúdos diferentes na pasta escolhida, imagem inválida, ausência ou escape por link impedem publicar. O nome exibido do jogo não é usado para aproximação. A imagem XML permanece apenas como referência no inventário.
+
+| Caso com versões diferentes | Revista selecionada |
+| --- | --- |
+| Mario Paint | Raiz, correspondente ao ROM na raiz |
+| Tom and Jerry | Raiz, correspondente ao ROM na raiz |
+| Rockman & Forte | Subpasta PT-BR correspondente ao ROM |
+| Top Gear 3000 (PT-BR) | Subpasta PT-BR correspondente ao ROM |
+
+As2.071 entradas usam2.070 escolhas por pasta exata e uma pela raiz — EarthBound BR, sem revista na subpasta. **Todas as1.816 capas públicas são480×720 e coincidem byte a byte com a revista selecionada.** Foram substituídas **1.783 capas visíveis +252 de compatibilidade =2.035**; 36 já eram iguais. Mantidos todos os2.071 `itemId`/`coverId`, inclusive os996 publicados originalmente, nomes, plataformas,255 linhas ocultas e **todos os descritores/hashes dos ROMs**. As contagens continuam SNES644, SNESBR191, Mega Drive887 e Mega DriveBR94.
+
+Ferramentas: [seleção por origem](scripts/station_revista.py), [correção mantendo IDs/ROMs](scripts/corrigir-capas-revista.py), [inventário](scripts/gerar-catalogo-midia.py), [conferência obrigatória](scripts/cruzar-indice-catalogo.py). O preparador de novos catálogos também usa revista como fonte obrigatória. **15 testes de regressão** verificam XML diferente, subpasta BR, ambiguidade, ausência, imagem inválida, links, alteração após inventário, preservação de IDs/ROMs/linhas ocultas e revisão crescente no retorno; os13 casos de conciliação também passaram.
+
+### Como o Android deve consumir a correção
+
+1. Com a licença/Keystore preservados, obter sessão válida e fazer **`GET https://app.lzgames.com.br/v1/station/catalog` com Bearer**. Validar o envelope assinado e os vínculos; o payload atual tem `revision=4`,1.816 itens e **`items[].revision=4`**. Usar os IDs dessa resposta.
+2. Executar a atualização de catálogo no fluxo real: **`StationFrontend.refresh()` → `StationCoordinator.refresh()`**, e publicar/aplicar o novo catálogo no carrossel. No fonte02c09dd, apenas retornar do segundo plano chama `reconcile()`, que republica o catálogo em memória; esse evento sozinho não comprova consulta nova. O login/refresh do coordenador consulta a rede; cache de catálogo é alternativa apenas ao503 específico de catálogo não pronto.
+3. Para cada capa visível, chamar **`GET /v1/station/covers/{coverId}` com o Bearer da sessão**. Receber bytes JPEG/PNG conforme `Content-Type`, sem redirect; validar e guardar em cache privado por **`coverId + revisão do item`**. `StationCoverStore` já usa `coverId-4.img`; `ExistingCoverCache` só importa uma capa cuja revisão seja exatamente4. Não existe `coverRevision` separado nem hash de capa no payload HTTP do catálogo; os hashes deste TSV são a referência de QA.
+4. A aplicação do catálogo fresco deve substituir as referências de capa/textura anteriores. O fonte nativo examinado recria os itens e limpa a fila/repetição de capas ao aplicar o catálogo. Conferir visualmente no APK que uma capa da revisão3 não continua ligada ao item4. Não limpar os dados, remover licença/Keystore, reinstalar ou apagar jogos/saves para trocar capas.
+5. Downloads continuam pelas mesmas rotas de autorização/artefato. Conferir **`itemRevision=4`**, o mesmo item/sessão e o descritor assinado; os hashes/bytes dos jogos são os anteriores. Se a autorização acusar revisão diferente de um catálogo3 em memória, atualizar o catálogo antes de solicitar outro download. O grant continua de uso único.
+
+**QA do aparelho:** registrar catálogo4 recebido da rede, IDs e revisões; abrir as quatro variantes da tabela e uma capa por plataforma; comparar com `indexCoverSha256`/`sourceRevistaSha256` do TSV. Confirmar seleção/renderização e cache após reiniciar a sessão. **Nenhum APK foi alterado neste Linux; a prova atual é servidor/HTTPS, não renderização no aparelho.**
+
+### Arquivos atuais para comparar e implementar
+
+- **[Catálogo completo vigente](catalogo-conciliado-jogos-capas-downloads-20261003.tsv)**:1.816 linhas revisão4, nomes/IDs/plataformas, capa/MIME/tamanho/hash, todos os campos do download e proveniência. Todas com `catalogMatch=exact`, `sourceRevistaMatch=yes` e hashes de capa iguais à revista selecionada. SHA256 **`3542803f0887a3595bfcae6f2c1bd5e860b5ab81df32f308c2f3ac1fbd071f12`**.
+- **[Auditoria de todas as capas](auditoria-capas-revista-20261003.tsv)**:2.071 linhas, públicas e ocultas, hash anterior/atual, escolha de revista e indicação de substituição. SHA256 **`5a51318baa4fdcbf75e13c7220471ee92719191199b2b27a81a430aecd29de39`**.
+- **[Compatibilidade dos996 IDs](compatibilidade-ids-publicados-20261003.tsv)**:identidades preservadas, revisão4, hash de capa e conferência revista. SHA256 **`8ce7c0cf3c0388af1b82a606c13371129b305fbef29ea6d84be481d9702fedef`**.
+- **[Inventário do HD](catalogo-disco-snes-megadrive-20261003.tsv)**:1.824 entradas XML;1.816 com ROM e seleção revista resolvida, oito sem ROM excluídas. Distingue imagem XML, variantes revista e **hash da revista escolhida**. SHA256 **`8a55d82bca04216b1c78bce2c55ea906eda6e2c9768dc5da49aa8277920f4696`**.
+- **[Evidência sanitizada antes/depois](evidencia-capas-revista-station-20261003.json)**:amostras HTTP/hash, verificação integral, implantação, preservação e limites do APK. As listas acima foram atualizadas no mesmo caminho; hashes de revisão3 nas seções datadas anteriores identificam aquelas versões históricas.
+
+### Implantação e retorno
+
+Preparação/publicação executada a partir de **[`48124888f0b20dd6029e27dffbb4fdee408d2e61`](https://github.com/luziellacerda/Servidor-pix/commit/48124888f0b20dd6029e27dffbb4fdee408d2e61)**. API continua **fd13c0d**, DLL SHA256 **f305ae3763cb77a53a27b2c168c8de290191b3a7e88e612850856b6f7be7e639**. Apenas a Station foi reiniciada para carregar o novo índice; PID **154043**, início18h52:56, publicação/prova concluída18h53:16. Índice efetivo revisão4 SHA256 **`c7ea6cbcf454c55422d06ac53c797e744ca06b83efc49fa03686e6e4fab4d97a`**.
+
+Nova release privada somente de conteúdo, propriedade root/grupo do serviço, diretórios750/arquivos640; API sem escrita. **4.142 arquivos foram abertos e hasheados sob UID995**. Processo candidato em HTTP loopback e produção em HTTPS passaram: catálogo4 completo, nove capas exatas de revista, cinco downloads íntegros — quatro plataformas e um ID oculto,2raw/3ZIP — e cinco reusos negados404. A conferência final compara2.071 capas com revista e1.816 linhas com a resposta assinada; nenhum ID faltante. Todas as licenças/sessões/grants sintéticos foram removidos; nenhum cliente real foi usado no teste.
+
+**Preservados:** os12 PIDs acompanhados de PIX/Suite/admin compartilhado/gateway/Nginx/Cloudflare/PostgreSQL/Redis/administração Station/helper/FPM principal/FPM TurboBox; binários, painel publicado, schema, chaves, rotas, portas e HD original. Nginx não precisou de recarga. A release revisão3 e seu índice permanecem intactos.
+
+Backup privado **`/mnt/DADOS/station-revista-backup-20261003-rev4`**, root0700; o índice salvo foi restaurado em diretório temporário e seu hash conferido. A operação só acrescentou os arquivos próprios `station-covers-revista-20261003-rev4.env` e `zz-station-rev4-covers-20261003.conf`, selecionando o novo índice. Não houve migration nem restauração do banco.
+
+Procedimento de retorno no [script limitado](scripts/implantar-capas-revista-20261003.py), com autenticação nativa Linux: **`python3 scripts/implantar-capas-revista-20261003.py --rollback`**, executado a partir desta pasta. O procedimento restaura **os bytes/IDs/ROMs da revisão3 com catálogo/itens revisão5**, para preservar a regra Android que recusa diminuição de revisão. Confere os artefatos/configurações próprios, mantém as releases e acrescenta índice/override de retorno; só reinicia a API Station. Essa política possui teste de regressão; **o retorno não foi acionado em produção nesta correção concluída com sucesso**. Não repetir `--apply` sobre a publicação pronta nem usar o rollout antigo fd13c0d para desfazer apenas capas.
 
 ## Administração de licenças e aparelhos publicada — 03/10/2026, 18h15; conferida até18h20
 
@@ -109,6 +164,8 @@ O mesmo cruzamento revelou 255 IDs extras para arquivos já representados, 357 r
 Os 8 registros XML sem ROM ficam excluídos. A lista histórica de 12.346 nomes/36 rotas continua como referência, sem comprovar novas mídias. O catálogo v1 não foi truncado: 1.816 públicos e 2.071 internos cabem no limite de 4.096.
 
 ### Listas completas para implementar e comparar no APK
+
+Este bloco descreve a publicação revisão3 das15h21. Os arquivos nos mesmos caminhos foram atualizados para revisão4; seus hashes e as capas de revista vigentes estão na seção inicial.
 
 - **[Catálogo conciliado: nomes, IDs, capas e downloads](catalogo-conciliado-jogos-capas-downloads-20261003.tsv)** — 1.816 linhas, ordenadas por plataforma/nome. Inclui revisão, IDs, todos os campos do descritor, hashes da ROM/capa, MIME/tamanho, proveniência XML e tags de diagnóstico. Todas as linhas têm `catalogMatch=exact`, `sourceNameMatch=yes`, `sourceRomMatch=yes`, `sourceCoverMatch=yes`; zero IDs da resposta HTTPS faltantes. SHA256 **`bcd8bce18ac48f9eef4c506b071e559de1a3465d3e6892e9ff3538b7c1f9f39a`**.
 - **[Compatibilidade dos 996 IDs publicados](compatibilidade-ids-publicados-20261003.tsv)** — nome/plataforma anteriores e corrigidos, revisão 3, `coverId` preservado, visibilidade, ID canônico, hashes e tags. Usar para compreender seleção/cache anteriores; a lista vigente vem de `/catalog`. SHA256 **`07736677fd290da1359be4d30057e2ccf004dc90e1286f58940588ce969c336d`**.
@@ -354,13 +411,13 @@ python3 docs/station-android/scripts/conciliar-indices-station.py \
 
 O retorno Android `629a55a8` confirma que o APK instalado `f5b35419` já incorporou o alias `megadrivebr` publicado em `5988343`; esse bloqueio de fonte foi resolvido. O teste sintético assinado de 1.816 itens não comprova catálogo publicado nem os 94 jogos BR no aparelho. A revisão corretiva `645e7c4` acrescenta seis aliases de pastas já verificadas e isolamento com aviso de plataformas desconhecidas; ainda precisa de build e teste Android. O app deve medir `items` recebidos, publicados, capas 200/404 e instalações por plataforma antes de declarar cobertura completa.
 
-### Como o APK deve ler e comparar o catálogo verdadeiro (aplicável à revisão 3)
+### Como o APK deve ler e comparar o catálogo verdadeiro (revisão4 vigente)
 
 1. Abrir sessão Station e executar `GET https://app.lzgames.com.br/v1/station/catalog` com o Bearer vigente; não buscar listas antigas, CDN, nomes de arquivo ou diretórios para completar a tela. Registrar se a resposta veio da rede ou de `StationCatalogStore` (`Library.cached`). Cache assinado permite exibir o último catálogo, mas não prova a revisão atual da 5192.
 2. Usar `StationApi.catalogSnapshot`: conferir `keyId`, RSA-PSS/SHA256 do `payload` original, `schemaVersion=1`, domínio `TurboRamaStationAndroid/catalog/v1`, produto/aplicação e identidade de licença/aparelho/sessão. Só então chamar `StationCatalog.fromVerifiedPayload`. O limite atual é 12 MiB para envelope e 4096 `items`; `revision` global e `revision` de cada item são inteiros positivos.
 3. Para cada item assinado, usar **exatamente** `itemId`, `name`, `platform`, `revision` e `coverId`; agrupar pelo valor bruto de `platform`, antes do rótulo visual. `StationFrontend` deve publicar todas as linhas verificadas ao serviço nativo e informar contagem recebida, contagem publicada e `cached`. `StationPlatforms.resolve` precisa de mapeamento explícito para cada nova plataforma. No fonte 02c09dd, as quatro plataformas HTTP atuais têm mapeamento explícito. Dos 36 identificadores históricos, somente `model2` e `sufami` continuam sem mapa confirmado; os demais aliases foram acrescentados sobre pastas verificadas. Uma plataforma desconhecida deve ser contabilizada/avisada sem interromper os jogos conhecidos, conforme APP-03. A referência histórica não autoriza publicar jogos sem arquivos.
 4. Para cada jogo visível, pedir `GET covers/{coverId}` na mesma sessão, conferir MIME e bytes e associar o cache a `coverId` + revisão do item. Se a capa retornar 404, mostrar placeholder e registrar esse `itemId`/`coverId` para correção do índice; não adivinhar uma imagem pelo nome. Um `coverId` compartilhado exige mesmo caminho e revisão no índice. Mudança de bytes exige nova revisão do item ou novo `coverId`.
-5. Exportar o envelope **privadamente** e validar com `scripts/exportar-catalogo-assinado.py`, usando a chave pública SPKI Station do cliente. O script exige o `keyId` público esperado e foi exercitado com assinatura sintética; sua saída contém somente `platform,itemId,name,itemRevision,coverId`, ordenados, mais revisão/contagens. Nunca publicar o envelope, Bearer ou identidades nele contidas. Cruzar com o índice efetivo por `itemId` e `coverId`; comparar SHA256 do arquivo de jogo com o volume **quando os bytes forem idênticos**. Para capa redimensionada, usar a proveniência explícita do índice e comparar o SHA256 da capa efetivamente servida por HTTP. Nomes iguais, sobretudo os repetidos de Mega Drive, não bastam para criar pares. O rollout obteve o índice e o catálogo autenticado: as 1.816 linhas têm cruzamento exato. Para futuras atualizações, manter esses mesmos vínculos e provas.
+5. Exportar o envelope **privadamente** e validar com `scripts/exportar-catalogo-assinado.py`, usando a chave pública SPKI Station do cliente. O script exige o `keyId` público esperado; sua saída contém somente `platform,itemId,name,itemRevision,coverId`, ordenados, mais revisão/contagens. Nunca publicar o envelope, Bearer ou identidades nele contidas. Cruzar com o índice efetivo por `itemId` e `coverId`; comparar SHA256 do arquivo de jogo com o volume **quando os bytes forem idênticos**. As capas atuais são copiadas de revista sem conversão: exigir `indexCoverSha256=sourceRevistaSha256`, além da comparação HTTP, com o mapa da entrada XML exata e `--require-revista`. Nomes iguais, sobretudo os repetidos de Mega Drive, não bastam para criar pares. As1.816 linhas da revisão4 têm cruzamento exato; todas as2.071 capas internas coincidem com a revista selecionada. Para futuras atualizações, manter esses mesmos vínculos e provas.
 
 Exemplo de export depois de capturar a resposta autenticada **fora do Git** e salvar a SPKI pública DER obtida por decodificação Base64URL de `StationConfig.STATION_ASSERTION_SPKI_BASE64URL`; a ferramenta usa Python/cryptography, confere o `keyId` esperado, verifica a assinatura e cria a saída com modo 0600:
 
@@ -377,6 +434,7 @@ python3 docs/station-android/scripts/cruzar-indice-catalogo.py \
   --index INDICE_PRIVADO.json \
   --disk-tsv docs/station-android/catalogo-disco-snes-megadrive-20261003.tsv \
   --catalog-tsv CATALOGO_VERIFICADO.tsv \
+  --source-map MAPA_ORIGEM_PRIVADO.json --require-revista \
   --output CRUZAMENTO_PRIVADO.tsv
 ```
 
@@ -387,7 +445,7 @@ O contrato atual não pagina. A lista histórica de 12.346 excede 4096 itens; an
 - Pedido atendido: [handoff do cliente reconstruído](https://github.com/luziellacerda/Servidor-pix/blob/7ac4fad9e0132db378f6e78e6494fedb08f614c3/docs/station-android/HANDOFF-CLIENTE-RECONSTRUIDO-STATION-20261002.md), branch `docs/cliente-reconstruido-station-20261002`, commit `7ac4fad9e0132db378f6e78e6494fedb08f614c3` do Servidor-pix.
 - Cliente examinado originalmente: TurboElden, commit de código `0840028854034b03e5a1d3f2a162d66225932a6b` e revisão documental `f48399bc24691afe2073fac55f279b452c01343b`, branch `station-reconstrucao-20261002`. **Atualização:** o commit `7d5df08d922ef7c517979cf2263ff4bfe4be74ff` registra APK candidato integrado e instalado, com leitura tipada de `artifact`/`itemRevision`, mas sem prova de capa 200 e download/instalação contra a 5192 de produção.
 - Código do servidor deste retorno: branch `feat/station-artifact-descriptor-20261002`, commits `96326aa0aeb164820cec26f8b5911fcdb47fc8ee`, `1bfb619c21becffe40aaa597e100fcb3719c2e72` e `de08858` (correção e homologação HTTP isolada), derivados de `b1159c9`.
-- **Estado atual: API fd13c0d e catálogo revisão 3 implantados, com prova HTTPS autenticada.** O rollout reiniciou a 5192 e recarregou o Nginx após corrigir duas linhas Station; migrations/chaves/portas e processos principais dos demais serviços foram preservados. O APK completo ainda exige build/validação no aparelho.
+- **Estado atual: API fd13c0d e catálogo revisão 4 implantados, com prova HTTPS autenticada.** O rollout de capas reiniciou apenas a5192 para carregar o índice4; os12 serviços acompanhados, binários, migrations, chaves, portas e Nginx foram preservados. O APK instalado ainda exige a conferência visual do catálogo fresco e o fluxo de jogo no aparelho.
 
 ## Rede e limites do aplicativo
 
@@ -395,19 +453,19 @@ O telefone usa somente `https://app.lzgames.com.br/v1/station/*` na porta 443: C
 
 O cliente usa `productId=applicationId=TURBORAMA_STATION_ANDROID`, pacote `org.turboramastation.frontend`, `schemaVersion=1`, domains `TurboRamaStationAndroid/<ação>/v1` e `deviceId` Base64URL do SHA256 da chave pública SPKI RSA-2048 do Android Keystore. Respostas assinadas usam `{keyId,payload,signature}`; `payload` são bytes JSON UTF-8 em Base64URL sem padding, assinatura RSA-PSS/SHA256 sobre esses bytes. O `keyId` público configurado no cliente é `06b41b778041d81b5b86a115a031418e0c4b0b2bd24ec8b340e62eaa82fb5268`; confirmado nas respostas autenticadas do rollout. O pin TLS SPKI SHA256 configurado no cliente é `13f9dcbb7a9687c2f88ff73de5621cfab849d0ec02191dcdd1ee8a6275dacba7` e **foi confirmado novamente no endpoint público em 03/10/2026**. Não duplicar essas constantes em outra classe Android.
 
-## Estado efetivo no Linux — 03/10/2026, 15h21
+## Estado efetivo no Linux — 03/10/2026, 18h53; conferência final19h05
 
 | Verificação | Resultado observado |
 | --- | --- |
-| Serviço | `turborama-station-api.service`, ativo, PID 88965; drop-in `zz-station-rev3-20261003.conf`. |
+| Serviço | `turborama-station-api.service`, ativo, PID 154043; drop-ins próprios revisão3 e `zz-station-rev4-covers-20261003.conf`. |
 | Comando / diretório | `/usr/bin/dotnet /opt/turborama-station-20261003-fd13c0d/TurboRamaSuiteOnlineServer.dll`; WorkingDirectory da mesma release. |
 | DLL / origem | SHA256 `f305ae3763cb77a53a27b2c168c8de290191b3a7e88e612850856b6f7be7e639`; metadado `fd13c0d27eaab6a4dcf931a9cd64c3dcd7dd50c4`. |
-| Índice / catálogo | SHA256 `5b460a6f9866e30a5a5b4dad24652c512b1187b3df01244e6af9308ae6b18342`; revisão 3; 2.071 entradas privadas, 1.816 jogos públicos; histograma confirmado em HTTPS. |
+| Índice / catálogo | SHA256 `c7ea6cbcf454c55422d06ac53c797e744ca06b83efc49fa03686e6e4fab4d97a`; revisão 4; 2.071 entradas privadas, 1.816 jogos públicos; histograma confirmado em HTTPS. |
 | Conteúdo | 4.142 arquivos/hash abertos pela identidade real UID 995; leitura sem escrita da API. |
-| HTTP autenticado | Nove rotas passaram; catálogo integral e cinco pares capa/download com assinatura, MIME, tamanho e hash; reuso dos cinco grants 404. |
+| HTTP autenticado | Nove rotas passaram; catálogo integral, nove capas iguais à revista e cinco downloads com assinatura/tamanho/hash; reuso dos cinco grants404. |
 | Sondas adicionais | `/ready/station` local 200; catálogo público sem Bearer 401 `STATION_SESSION_INVALID`; correlação ecoada. |
 | Rede | Loopback 5192 preservado; APK usa somente HTTPS443 `app.lzgames.com.br/v1/station/*`. |
-| Serviços compartilhados | PIX/Suite/gateway/helper/Nginx/túnel/PostgreSQL/Redis ativos, mesmos PIDs principais; somente API Station reiniciada e Nginx recarregado. |
+| Serviços compartilhados | Os12 serviços acompanhados continuam ativos e com os mesmos PIDs; somente API Station reiniciada, sem reload de Nginx. |
 
 O PID 2388, DLL 75c466c3, ausência de drop-ins e o catálogo 996/revisão 1 descrevem o estado anterior. O binário/índice antigos continuam disponíveis para rollback. O monitor de conteúdo não foi alterado; seu último estado conferido foi inactive/dead com Result=success. Nenhuma credencial ou caminho privado de mídia foi publicado.
 
@@ -508,26 +566,26 @@ Nenhuma dessas linhas configura plataforma ou arquivo real de produção. O inst
 
 O código novo mantém `coverId` → `coverPath` do índice, confere tamanho de 1 byte a 5 MiB e assinatura PNG/JPEG/WebP/GIF compatível com o MIME. IDs de capa compartilhados só são aceitos se caminho **e revisão do item** forem iguais; ambiguidade falha na carga do índice. A revisão de capa continua sendo a revisão do item, pois não há `coverRevision` separado. Ao trocar bytes, publicar nova revisão do item ou novo `coverId`; o cache local do APK usa ID e revisão. A resposta HTTP usa `no-store`, e ID inexistente gera 404 depois da autenticação.
 
-Teste local de `StationLibrary.ReadCover`: PNG sintético válido de 1×1 pixel, 70 bytes, `image/png`, SHA256 `c2153f77e11087fcb078ae38527fa83bef29791e3700e30cc87fec4405a66d0f`. Isso **não é uma resposta HTTP autenticada 200**. O recorte inicial tinha 48 respostas 404; às 12h24 foram observadas 83 no período descrito acima, sem capa 200. A causa precisa ser identificada no índice efetivamente carregado, permissões/arquivos e IDs pedidos pelo APK, sem expor caminhos privados. O 404 autenticado de ID inexistente também precisa ser registrado com uma sessão sintética válida.
+As primeiras provas com PNG sintético de1×1 e os recortes de48/83 respostas404 são históricos. Às15h21, a publicação fd13c0d corrigiu a leitura dos arquivos sob UID995. Às18h53, a revisão4 passou a servir a revista selecionada:2.071 capas cruzadas integralmente, nove amostras HTTPS200 iguais à revista e cinco downloads íntegros. A seção inicial registra a causa da seleção anterior e as instruções de cache; a renderização no aparelho continua pendente de prova.
 
 ## Evidências e pendências para liberar o APK
 
 | Requisito | Comprovado | Trabalho restante |
 | --- | --- | --- |
 | Código / conciliação | DLL fd13c0d; suíte .NET; 13 casos de conciliação e 6 do exportador; HTTP do índice conciliado. Retorno2834e3b comprova build Android/NDK, 302 checks Java, 28 JNI e 7 retry Android. | Fluxo autenticado e jogo no APK instalado. |
-| Catálogo / conteúdo | HTTPS assinado revisão 3/1.816; todos os nomes/ROMs/capas cruzados; 996 IDs antigos preservados; 4.142 arquivos/hash legíveis pela API. | Conferir seleção, quantidade e cache no aparelho. |
-| Capas / downloads | Cinco pares HTTPS200, 2 raw/3 ZIP, incluindo ID antigo; MIME/tamanho/SHA256 e grant de um uso conferidos; inexistente404 passou em isolamento. | Renderizar capas e completar download/instalação no APK. |
+| Catálogo / conteúdo | HTTPS assinado revisão 4/1.816; todos os nomes/ROMs/capas cruzados; 996 IDs antigos preservados; 4.142 arquivos/hash legíveis pela API. | Conferir seleção, quantidade e cache no aparelho. |
+| Capas / downloads | Nove capas HTTPS200 iguais à revista; cinco downloads,2raw/3ZIP, incluindo ID antigo; MIME/tamanho/SHA256 e grant de um uso conferidos; inexistente404 passou em isolamento. | Renderizar capas e completar download/instalação no APK. |
 | Sessão / erros | HTTPS sintético e cenários isolados aprovados; recuperação real16h47 registrada. Painel publicado18h15: mesma licença ativada com três chaves sintéticas, antigas negadas, bloqueio/desbloqueio/reconexão auditados. | Ativação/perfil/retomada/cancelamento no APK real; pagamento real pelo provedor. |
 | Operação / retorno | Migrations028/029 existentes e030 administrativa aplicada; backups restaurados em cluster temporário, retorno da publicação administrativa executado, demais serviços preservados. | Guardar artefatos/backups e incrementar revisão em futuras trocas de bytes. |
-| APK / emulador | APK fa3bc844 instalado e hash conferido pela equipe Android; assinatura, manifesto e motores preservados. Fonte02c09dd compilada. | Concluir nova ativação, catálogo3/1816, capa/download/instalação/abrir/voltar; legado residual permanece sem aceite. |
+| APK / emulador | APK fa3bc844 instalado e hash conferido pela equipe Android; assinatura, manifesto e motores preservados. Fonte02c09dd compilada. | Concluir nova ativação, catálogo4/1816, capa/download/instalação/abrir/voltar; legado residual permanece sem aceite. |
 
 ## Compatibilidade e ordem de liberação
 
 | Combinação | Resultado / ação |
 | --- | --- |
-| API fd13c0d/revisão3 + APK instalado fa3bc844 | Correções compiladas e instalação comprovada em2834e3b. Conferir a licença no painel; para reinstalação/troca ou código vencido, usar a ação correspondente. Validar ativação, catálogo e instalação no aparelho. |
+| API fd13c0d/revisão4 + APK instalado fa3bc844 | Correções compiladas e instalação comprovada em2834e3b. Conferir a licença no painel; para reinstalação/troca ou código vencido, usar a ação correspondente. Validar ativação, catálogo e instalação no aparelho. |
 | API fd13c0d + fonte Android02c09dd | Build/ponte já comprovados pela equipe Android; fluxo de produção no aparelho aguarda ativação e provas de conteúdo. |
-| Cliente com catálogo/cache revisão1 | Atualizar e verificar resposta assinada revisão 3; não instalar usando descritor com revisão diferente. Licença e Keystore são preservados. |
+| Cliente com catálogo/cache revisão1 ou3 | Atualizar e verificar resposta assinada revisão 4; não instalar usando descritor com revisão diferente. Licença e Keystore são preservados. |
 | Código novo + índice sem descritores | Autorizar item conhecido produz503 `STATION_ARTIFACT_NOT_READY`; combinação não usada em produção. |
 | Retorno à DLL antiga | Voltar também ao índice/configuração anteriores, pelo script limitado; não misturar DLL antiga com índice corrigido de compatibilidade. |
 
@@ -535,11 +593,11 @@ Teste local de `StationLibrary.ReadCover`: PNG sintético válido de 1×1 pixel,
 
 ### 1. Backend e operação: concluído para catálogo/capas/downloads
 
-1. Índice efetivo exportado, conciliação por origem comprovada, IDs e capas anteriores preservados; plataformas/nomes corrigidos e duplicatas ocultas.
+1. Índice efetivo exportado, conciliação por origem comprovada, IDs/ROMs preservados; plataformas/nomes corrigidos e duplicatas ocultas. Revista é agora a origem obrigatória das capas;2.035 imagens anteriores foram substituídas com revisão4.
 2. Todos os descritores e capas preparados; conteúdo copiado para release privada estável, somente leitura pelo serviço; 4.142 hashes conferidos como UID 995.
 3. Ledger028/029 e chave de grants conferidos sem publicar valores; nenhuma migration/chave alterada. Backup de arquivos e dump do banco conferido/restaurado em ambiente temporário.
 4. Release fd13c0d aplicada somente à Station; duas linhas de correlação corrigidas no snippet Station com `nginx -t`/reload. Serviços compartilhados permaneceram ativos com os mesmos PIDs principais.
-5. Nove rotas de produção verificadas com licença/aparelho sintéticos, catálogo assinado completo, cinco pares de capa/download e negação de reuso; dados de teste removidos. Próximo aceite pertence ao APK e à operação administrativa real, conforme tabela.
+5. Nove rotas de produção verificadas com licença/aparelho sintéticos, catálogo assinado completo, nove capas de revista, cinco downloads e negação de reuso; dados de teste removidos. Próximo aceite pertence ao APK e à operação administrativa real, conforme tabela.
 
 ### 2. Android: validar e concluir o APK candidato
 
@@ -555,10 +613,10 @@ O retorno `2834e3b` registra o APK instalado fa3bc844, com fonte02c09dd compilad
 | Prova | Situação atual / limite |
 | --- | --- |
 | Autenticação/perfil | HTTPS sintético e TTL/cenários isolados aprovados. Recuperação real16h47 auditada. Painel deda92c publicado18h15 com códigos30min/48h, três chaves na mesma licença, transferência/reinstalação/revogação/bloqueio/desbloqueio/reconexão e perfil HTTPS comprovados. Nova ativação/perfil do APK e pagamento real pelo provedor continuam sem prova. |
-| Catálogo | HTTPS200, revisão 3, 1.816 itens, quatro plataformas exatas, assinatura/keyId/vínculo de sessão conferidos; TSV com 1.816 pares exatos e zero IDs faltantes. |
-| Capas | Cinco capas HTTPS200 com MIME e bytes/hash iguais ao índice, incluindo um `coverId` antigo. Todas as 2.071 capas da árvore privada tiveram leitura/hash sob UID 995. Negativa de capa inexistente passou isolada; cache/repetição visual aguardam APK. |
+| Catálogo | HTTPS200, revisão 4, 1.816 itens, quatro plataformas exatas, assinatura/keyId/vínculo de sessão conferidos; TSV com 1.816 pares exatos e zero IDs faltantes. |
+| Capas | Nove capas HTTPS200 com MIME e bytes/hash iguais à revista selecionada, incluindo um `coverId` antigo e os quatro casos de variantes. Todas as2.071 capas tiveram leitura/hash sob UID995 e conferência revista. Negativa de capa inexistente passou isolada; cache/repetição visual aguardam APK. |
 | Autorização/bytes | Cinco grants assinados com revisão/descritor/identidades exatos; GET200, tamanho e SHA256 conferidos; 2 raw/3 ZIP. Cinco reutilizações404 comprovadas em produção. Expiração/outro aparelho/interrupção/novo grant passaram isolados. |
-| Operação | API fd13c0d/índice3 preservados; administração deda92c publicada, migration030 aplicada e isolada por produto; backups restaurados, retorno executado e PIDs dos demais serviços preservados. |
-| APK/emulador | Retorno2834e3b comprova APK fa3bc844 instalado/hash, 302 Java, 28 JNI e 7 retry Android. Falta nova ativação e catálogo3/1816/capas/download/instalação/abrir/voltar. O aparelho/build foram operados pela equipe Android; Linux realizou a recuperação administrativa. |
+| Operação | API fd13c0d/índice4 preservados; administração deda92c publicada, migration030 aplicada e isolada por produto; backups restaurados, retorno executado e PIDs dos demais serviços preservados. |
+| APK/emulador | Retorno2834e3b comprova APK fa3bc844 instalado/hash, 302 Java, 28 JNI e 7 retry Android. Falta nova ativação e catálogo4/1816/capas/download/instalação/abrir/voltar. O aparelho/build foram operados pela equipe Android; Linux realizou a recuperação administrativa. |
 
 A API tem prova de conteúdo autenticado de produção além de `/ready/station`. O aceite completo do aplicativo continua condicionado à execução no aparelho. O corpo do handoff preserva evidências históricas com data; este estado operacional e a evidência JSON do rollout prevalecem sobre o recorte anterior. Segredos, identidades de compradores, URLs privadas e caminhos de mídia permanecem fora dos commits.

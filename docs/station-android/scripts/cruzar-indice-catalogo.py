@@ -224,6 +224,8 @@ def main():
             "yes" if cover[3] and (cover[3] == source_disk["xmlCoverSha256"] or
             cover[3] in source_disk["revistaCandidateSha256"].split(";")) else "no")
         selected_revista_hash = source_disk.get("revistaSelectedSha256", "") if source_disk else ""
+        if not HASH.fullmatch(selected_revista_hash):
+            selected_revista_hash = ""
         source_revista_match = "not_supplied" if not selected_revista_hash else (
             "yes" if cover[3] == selected_revista_hash and
             source_disk.get("revistaSelectionStatus") == "ok" else "no")

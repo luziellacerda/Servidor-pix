@@ -99,6 +99,8 @@ def verify(index, values, phase, catalog_output=None, base="https://app.lzgames.
         report.update(phase=phase, coverSamples=samples, verifiedHttpsCovers=len(samples),
                       coversMatchingRevista=sum(r["matchesRevista"] for r in samples),
                       customerLicenseUsed=False)
+        if not base.startswith("https://"):
+            report["verifiedHttpCovers"] = report.pop("verifiedHttpsCovers")
     finally:
         if not check.cleanup():
             raise ValueError("synthetic Station verification rows remain")

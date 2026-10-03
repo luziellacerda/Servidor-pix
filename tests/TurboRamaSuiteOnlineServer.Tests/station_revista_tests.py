@@ -172,6 +172,17 @@ class RevistaTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "source map differs"):
             load("corrigir-capas-revista.py").correct(index, sources, disk, self.volume, 4)
 
+    def test_return_keeps_cover_bytes_ids_roms_and_increases_cache_revision(self):
+        index, _, _ = self.correction_fixture()
+        previous = copy.deepcopy(index)
+        restored = load("implantar-capas-revista-20261003.py").return_index(index)
+        self.assertEqual(index, previous)
+        self.assertEqual(restored["revision"], 5)
+        self.assertTrue(all(row["revision"] == 5 for row in restored["items"]))
+        for old, new in zip(previous["items"], restored["items"]):
+            self.assertEqual({k:v for k,v in old.items() if k != "revision"},
+                             {k:v for k,v in new.items() if k != "revision"})
+
     def test_strict_crosscheck_rejects_xml_match_and_accepts_selected_revista(self):
         index, sources, _ = self.correction_fixture()
         disk_script = load("gerar-catalogo-midia.py")

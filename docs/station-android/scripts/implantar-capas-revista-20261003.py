@@ -3,7 +3,8 @@
 
 Requires authorized root access and a committed source revision. Adds one
 Station index override; preserves binaries, keys, database schema and proxies.
-Keeps revision 3 immutable and returns to it if any required check fails.
+Keeps revision 3 immutable and restores its content with revision 5 if a check fails.
+The higher return revision preserves the Android catalog/cache monotonicity rule.
 """
 
 import argparse
@@ -31,6 +32,12 @@ DROPIN = Path("/etc/systemd/system/turborama-station-api.service.d/zz-station-re
 ENV = Path("/etc/turborama-suite/station-covers-revista-20261003-rev4.env")
 ENV_TEXT = "Station__LibraryIndexFile=" + str(TARGET / "index.json") + "\n"
 DROPIN_TEXT = "[Service]\nEnvironmentFile=" + str(ENV) + "\n"
+RETURN_ROOT = TARGET.parent / "rollback"
+RETURN_INDEX = RETURN_ROOT / "index.json"
+RETURN_ENV = Path("/etc/turborama-suite/station-rev5-return-covers-20261003.env")
+RETURN_DROPIN = Path("/etc/systemd/system/turborama-station-api.service.d/zz-station-rev5-return-covers-20261003.conf")
+RETURN_ENV_TEXT = "Station__LibraryIndexFile=" + str(RETURN_INDEX) + "\n"
+RETURN_DROPIN_TEXT = "[Service]\nEnvironmentFile=" + str(RETURN_ENV) + "\n"
 OLD_INDEX_SHA = "5b460a6f9866e30a5a5b4dad24652c512b1187b3df01244e6af9308ae6b18342"
 SOURCE_INDEX_SHA = "aaaaf153eae64fec5a8f233aa49030b76a6eb91a00f9193c8685b4c2c378c407"
 MANIFEST_SHA = "0609af11942b510903771c2e7d63ea50eadd412608d1adb5ffc3588cccbcd1d3"
@@ -65,29 +72,54 @@ def identities(index):
             for r in index["items"]}
 
 
+def return_index(previous):
+    restored = json.loads(json.dumps(previous))
+    revision = max([4, previous["revision"]] +
+                   [r.get("revision", previous["revision"]) for r in previous["items"]]) + 1
+    restored["revision"] = revision
+    for row in restored["items"]:
+        row["revision"] = revision
+    return restored
+
+
 def rollback():
     state = json.loads((BACKUP / "state.json").read_text())
     if operations.digest(Path(state["previousIndex"])) != OLD_INDEX_SHA or \
             operations.digest(BACKUP / "index-rev3.json") != OLD_INDEX_SHA or \
             operations.digest(http.DLL) != operations.DLL_SHA:
         raise ValueError("rollback index or API binary changed")
-    current, _ = operations.runtime()
-    if current["Station__LibraryIndexFile"] not in {state["previousIndex"], str(TARGET / "index.json")}:
+    current, ids = operations.runtime()
+    if current["Station__LibraryIndexFile"] not in {
+            state["previousIndex"], str(TARGET / "index.json"), str(RETURN_INDEX)}:
         raise ValueError("effective Station index changed after this rollout")
-    # Only remove this rollout's exact overrides, never another operator's edits.
+    # Check every existing override before writing anything. The return is a new
+    # index/override; revision 4 and every prior file remain available unchanged.
     for path, text in ((DROPIN, DROPIN_TEXT), (ENV, ENV_TEXT)):
         if path.exists():
             if path.is_symlink() or path.read_text() != text:
                 raise ValueError("rollback override was changed by another operation")
-    for path in (DROPIN, ENV):
-        path.unlink(missing_ok=True)
+    restored = return_index(json.loads((BACKUP / "index-rev3.json").read_text()))
+    expected = json.dumps(restored, ensure_ascii=False, separators=(",", ":")) + "\n"
+    for path, text in ((RETURN_INDEX, expected), (RETURN_ENV, RETURN_ENV_TEXT),
+                       (RETURN_DROPIN, RETURN_DROPIN_TEXT)):
+        if path.exists() and (path.is_symlink() or path.read_text() != text):
+            raise ValueError("return artifact or override was changed by another operation")
+    RETURN_ROOT.mkdir(mode=0o750, exist_ok=True)
+    os.chown(RETURN_ROOT, 0, ids["Gid"][1])
+    for path, text in ((RETURN_INDEX, expected), (RETURN_ENV, RETURN_ENV_TEXT),
+                       (RETURN_DROPIN, RETURN_DROPIN_TEXT)):
+        if not path.exists():
+            operations.private_text(path, text)
+    os.chown(RETURN_INDEX, 0, ids["Gid"][1])
+    RETURN_INDEX.chmod(0o640)
+    RETURN_DROPIN.chmod(0o644)
     operations.run(["systemctl", "daemon-reload"])
     operations.run(["systemctl", "restart", SERVICE])
     operations.ready("http://127.0.0.1:5192")
     values, _ = operations.runtime()
-    if values["Station__LibraryIndexFile"] != state["previousIndex"] or \
-            operations.digest(Path(values["Station__LibraryIndexFile"])) != OLD_INDEX_SHA:
-        raise ValueError("revision 3 did not return after rollback")
+    if values["Station__LibraryIndexFile"] != str(RETURN_INDEX) or \
+            RETURN_INDEX.read_text() != expected:
+        raise ValueError("previous content did not return with the higher revision")
 
 
 def apply(source_revision):
@@ -110,7 +142,7 @@ def apply(source_revision):
                 operations.digest(SOURCE / "files.sha256") != MANIFEST_SHA or \
                 operations.digest(http.AUDIT) != http.AUDIT_SHA:
             raise ValueError("runtime or prepared content differs from reviewed artifacts")
-        for path in (TARGET.parent, BACKUP, DROPIN, ENV, RESULT, EXPORT):
+        for path in (TARGET.parent, BACKUP, DROPIN, ENV, RETURN_ENV, RETURN_DROPIN, RESULT, EXPORT):
             if path.exists() or path.is_symlink():
                 raise ValueError("rollout target already exists")
         before = json.loads(BEFORE.read_text())
@@ -252,6 +284,7 @@ print('verified')
         if activated:
             rollback()
             report["rolledBack"] = True
+            report["returnRevision"] = 5
         if BACKUP.exists():
             write_json(BACKUP / "result.json", report)
         http.save_report(RESULT, report)
@@ -280,7 +313,7 @@ def main():
         apply(args.source_revision)
     else:
         rollback()
-        print(json.dumps({"rolledBack": True, "revision": 3, "previousContentReleasePreserved": True}))
+        print(json.dumps({"rolledBack": True, "revision": 5, "previousContentReleasePreserved": True}))
 
 
 if __name__ == "__main__":

@@ -102,7 +102,7 @@ def collect(root, platform, cache):
                 platform_root, game_path, magazine)
             revista_status = "ok"
         except ValueError:
-            revista_status, revista_rule, revista_hash = "unresolved", "", ""
+            revista_status, revista_rule, revista_hash = "unresolved", "-", "-"
         result.append({
             "platform": platform, "xmlEntry": ordinal,
             "collection": "pt-br" if collection_folder in Path(relative_game).parts
