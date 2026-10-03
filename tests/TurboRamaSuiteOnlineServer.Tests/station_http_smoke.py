@@ -5,6 +5,7 @@ Run from the repository root: pg_virtualenv python3 tests/TurboRamaSuiteOnlineSe
 Set STATION_HTTP_EXTRA_INDEX to a private, readable candidate index to exercise its
 real items and covers in the same isolated API. Requires .NET, psql and cryptography.
 Set STATION_HTTP_API_DLL to exercise a previously published release DLL.
+Set STATION_HTTP_REAL_TTL=1 to verify 60/180-second expiry using the real clock.
 Never targets production.
 """
 
@@ -89,6 +90,11 @@ def proof(key, payload):
     signature = key.sign(data, padding.PSS(mgf=padding.MGF1(hashes.SHA256()),
                                            salt_length=hashes.SHA256().digest_size), hashes.SHA256())
     return {"payload": b64(data), "signature": b64(signature)}
+
+
+def wait_until(deadline):
+    while (remaining := deadline - time.monotonic()) > 0:
+        time.sleep(min(1, remaining))
 
 
 def main():
@@ -234,13 +240,16 @@ def main():
                     devicePublicKey=b64(spki), challengeId=activation["challengeId"],
                     nonce=activation["nonce"]))), server_public, "activated")
             assert activated["licenseId"] == license_id
-            challenge = signed_payload(request(base, "POST", "/v1/station/challenges",
-                dict(identity, domain=PREFIX + "request-session-challenge/v1",
-                     licenseId=license_id)), server_public, "session-challenge")
-            session = signed_payload(request(base, "POST", "/v1/station/sessions",
-                proof(device, dict(identity, domain=PREFIX + "open-session/v1",
-                    licenseId=license_id, challengeId=challenge["challengeId"],
-                    nonce=challenge["nonce"]))), server_public, "session")
+            def open_session():
+                challenge = signed_payload(request(base, "POST", "/v1/station/challenges",
+                    dict(identity, domain=PREFIX + "request-session-challenge/v1",
+                         licenseId=license_id)), server_public, "session-challenge")
+                return signed_payload(request(base, "POST", "/v1/station/sessions",
+                    proof(device, dict(identity, domain=PREFIX + "open-session/v1",
+                        licenseId=license_id, challengeId=challenge["challengeId"],
+                        nonce=challenge["nonce"]))), server_public, "session")
+
+            session = open_session()
             token = session["accessToken"]
             sql("INSERT INTO suite.station_customer_projection(license_id,source_system,"
                 "source_purchase_id,source_item_key,customer_ref,display_name) VALUES('" +
@@ -309,15 +318,14 @@ def main():
                 assert partial.status == 200 and partial.read(1) == game[:1]
             assert_error(request(base, "GET", "/v1/station/artifacts/" + grant_id,
                                  bearer=token), 404, "STATION_GRANT_NOT_FOUND")
+            retry_id = authorize()
+            assert retry_id != grant_id
+            retry = request(base, "GET", "/v1/station/artifacts/" + retry_id, bearer=token)
+            assert retry[0] == 200 and len(retry[2]) == len(game) and \
+                hashlib.sha256(retry[2]).hexdigest() == descriptor["sha256"]
 
             grant_id = authorize()
-            next_challenge = signed_payload(request(base, "POST", "/v1/station/challenges",
-                dict(identity, domain=PREFIX + "request-session-challenge/v1",
-                     licenseId=license_id)), server_public, "session-challenge")
-            next_session = signed_payload(request(base, "POST", "/v1/station/sessions",
-                proof(device, dict(identity, domain=PREFIX + "open-session/v1",
-                    licenseId=license_id, challengeId=next_challenge["challengeId"],
-                    nonce=next_challenge["nonce"]))), server_public, "session")
+            next_session = open_session()
             assert next_session["sessionId"] != session["sessionId"]
             assert_error(request(base, "GET", "/v1/station/artifacts/" + grant_id,
                                  bearer=next_session["accessToken"]), 404, "STATION_GRANT_NOT_FOUND")
@@ -344,8 +352,69 @@ def main():
                 "WHERE license_id='" + license_id + "'")
             assert_error(request(base, "GET", "/v1/station/artifacts/" + grant_id,
                                  bearer=token), 404, "STATION_GRANT_NOT_FOUND")
+            if os.environ.get("STATION_HTTP_REAL_TTL") == "1":
+                session = open_session()
+                token = session["accessToken"]
+                session_started = time.monotonic()
+                assert session["expiresInSeconds"] == 180
+                ttl_grant = authorize()
+                pending = signed_payload(request(base, "POST", "/v1/station/challenges",
+                    dict(identity, domain=PREFIX + "request-session-challenge/v1",
+                         licenseId=license_id)), server_public, "session-challenge")
+                assert pending["expiresInSeconds"] == 60
+                ttl_code = b64(os.urandom(32))
+                ttl_license = "STA-" + os.urandom(16).hex().upper()
+                ttl_verifier = hmac.digest(station_pepper, ttl_code.encode(), "sha256").hex()
+                sql("INSERT INTO suite.suite_licenses(license_id,product_id,status,"
+                    "activation_verifier,activation_expires_at,activation_consumed,license_term,"
+                    "expires_at,identity_policy,maximum_active_devices,provisioning_origin,"
+                    "enrollment_state,claim_mode) VALUES('" + ttl_license + "','" + PRODUCT +
+                    "','ACTIVE','" + ttl_verifier + "',clock_timestamp()+interval '15 minutes',"
+                    "false,'LIFETIME',NULL,'SOFTWARE_ONLY',1,'COMMERCE','PENDING_ENROLLMENT','FIRST_CLAIM')")
+                sql("INSERT INTO suite.suite_license_deliveries(source_system,source_purchase_id,"
+                    "source_item_key,source_product_sku,product_id,license_id,provisioning_state,"
+                    "financial_state,last_source_version) VALUES('STATION_HTTP_TEST','synthetic-ttl',"
+                    "'synthetic','STATION_ANDROID_LIFETIME_1_DEVICE','" + PRODUCT + "','" +
+                    ttl_license + "','PROVISIONED','PAID',1)")
+                pending_activation = signed_payload(request(base, "POST",
+                    "/v1/station/activations/challenge",
+                    dict(identity, domain=PREFIX + "request-activation-challenge/v1",
+                         activationCode=ttl_code, devicePublicKey=b64(spki))),
+                    server_public, "activation-challenge")
+                assert pending_activation["expiresInSeconds"] == 60
+                print("STATION TTL: waiting for activation/session challenges and grant to expire", flush=True)
+                wait_until(time.monotonic() + 62)
+                assert_error(request(base, "POST", "/v1/station/activations/complete",
+                    proof(device, dict(identity, domain=PREFIX + "activate/v1",
+                        activationCode=ttl_code, devicePublicKey=b64(spki),
+                        challengeId=pending_activation["challengeId"],
+                        nonce=pending_activation["nonce"]))), 409, "STATION_CHALLENGE_INVALID")
+                assert_error(request(base, "POST", "/v1/station/sessions",
+                    proof(device, dict(identity, domain=PREFIX + "open-session/v1",
+                        licenseId=license_id, challengeId=pending["challengeId"],
+                        nonce=pending["nonce"]))), 409, "STATION_CHALLENGE_INVALID")
+                assert_error(request(base, "GET", "/v1/station/artifacts/" + ttl_grant,
+                                     bearer=token), 404, "STATION_GRANT_NOT_FOUND")
+                assert request(base, "GET", "/v1/station/me", bearer=token)[0] == 200
+                retry_id = authorize()
+                retry = request(base, "GET", "/v1/station/artifacts/" + retry_id, bearer=token)
+                assert retry[0] == 200 and hashlib.sha256(retry[2]).hexdigest() == descriptor["sha256"]
+                print("STATION TTL: 60-second expiry passed; waiting for 180-second session", flush=True)
+                wait_until(session_started + 182)
+                assert_error(request(base, "GET", "/v1/station/me", bearer=token),
+                             401, "STATION_SESSION_INVALID")
+                assert_error(request(base, "POST", "/v1/station/downloads/authorize",
+                    dict(identity, domain=PREFIX + "request-download/v1",
+                         itemId="item-synthetic-01"), token), 401, "STATION_SESSION_INVALID")
+                session = open_session()
+                token = session["accessToken"]
+                assert request(base, "GET", "/v1/station/me", bearer=token)[0] == 200
+                retry_id = authorize()
+                retry = request(base, "GET", "/v1/station/artifacts/" + retry_id, bearer=token)
+                assert retry[0] == 200 and hashlib.sha256(retry[2]).hexdigest() == descriptor["sha256"]
+                print("STATION TTL: OK (real 60/180 seconds, fresh grant/session recovery)", flush=True)
             print("STATION HTTP SMOKE: OK (activation, session, signed profile/catalog/grant, "
-                  "cover 200/404, raw and ZIP bytes/hash, one use, interrupted transfer, other session/device, "
+                  "cover 200/404, raw and ZIP bytes/hash, one use, interrupted transfer and new grant, other session/device, "
                   "expiry, revocation, extra platforms=" +
                   str(len({row["platform"] for row in extra["items"]}) if extra else 0) + ")")
         finally:
