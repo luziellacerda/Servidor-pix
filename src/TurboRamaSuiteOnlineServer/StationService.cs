@@ -281,25 +281,24 @@ public sealed class StationService(PostgresStationStore store,
             !FixedEquals(session.DeviceId, peek.DeviceId))
             throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
                 "Station grant is not found.");
-        var consumed = await store.ConsumeGrantAsync(grantId, session.LicenseId,
-            session.DeviceId, token);
-        if (consumed is null)
-            throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
-                "Station grant is not found.");
-        var associated = consumed.LicenseId + "\n" + consumed.DeviceId + "\n" +
-            session.SessionId + "\n" + consumed.ItemId + "\n" + consumed.GrantId;
+        var associated = peek.LicenseId + "\n" + peek.DeviceId + "\n" +
+            session.SessionId + "\n" + peek.ItemId + "\n" + peek.GrantId;
         try
         {
-            var plaintext = grants.Open(associated, consumed.Nonce, consumed.Ciphertext,
-                consumed.Tag);
+            var plaintext = grants.Open(associated, peek.Nonce, peek.Ciphertext,
+                peek.Tag);
             var bound = JsonSerializer.Deserialize<ArtifactGrant>(plaintext, StrictJson.Options);
             if (bound is null || library is null ||
-                !library.TryResolveArtifact(consumed.ItemId, out var artifact) ||
+                !library.TryResolveArtifact(peek.ItemId, out var artifact) ||
                 artifact.FilePath != bound.FilePath ||
                 artifact.Entry.Revision != bound.ItemRevision ||
                 artifact.Descriptor.Sha256 != bound.Sha256 ||
                 artifact.Descriptor.SizeBytes != bound.SizeBytes ||
                 artifact.LastWriteUtcTicks != bound.LastWriteUtcTicks)
+                throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
+                    "Station grant is not found.");
+            if (await store.ConsumeGrantAsync(grantId, session.LicenseId,
+                    session.DeviceId, token) is null)
                 throw new SuiteException(404, "STATION_GRANT_NOT_FOUND",
                     "Station grant is not found.");
             return artifact;
