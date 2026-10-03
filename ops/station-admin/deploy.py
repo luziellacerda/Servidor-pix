@@ -123,9 +123,12 @@ def apply(package):
     revision=manifest['sourceRevision']
     if not re.fullmatch('[0-9a-f]{40}',revision) or run(['runuser','-u','lz-servidor','--','git','-C',str(ROOT),'rev-parse','HEAD']).strip()!=revision:
         raise ValueError('source revision differs from the prepared artifact')
+    if any(p.is_symlink() for p in package.rglob('*')):raise ValueError('candidate contains a symbolic link')
+    actual_files={p.relative_to(package).as_posix() for p in package.rglob('*') if p.is_file() and p.name!='manifest.json'}
+    if actual_files!=set(manifest['files']):raise ValueError('candidate file manifest differs')
     for path,sha in manifest['files'].items():
         candidate=package/path
-        if '..' in Path(path).parts or candidate.is_symlink() or digest(candidate)!=sha:raise ValueError('candidate hash differs')
+        if Path(path).is_absolute() or '..' in Path(path).parts or candidate.is_symlink() or digest(candidate)!=sha:raise ValueError('candidate hash differs')
     if set(p.name for p in (package/'site').iterdir())!=set(FILES):raise ValueError('site file allowlist differs')
     db,connection=db_identity()
     if any(state(u)['active']!='active' or state(u)['pid']<=0 for u in SHARED+(HELPER,)):
@@ -167,7 +170,8 @@ def apply(package):
     # Privately inspect opcode cache policy; never copy environment or passwords to output.
     fpm_paths=list(Path('/etc/php/8.3/turbobox-fpm').rglob('*.conf'))+[Path('/etc/php/8.3/fpm/php.ini')]
     saved['fpmReload']=any(re.search(r'(?m)^\s*(?:php_admin_(?:value|flag)\[)?opcache\.validate_timestamps\]?\s*=\s*(?:0|off|false)\s*$',p.read_text(),re.I) for p in fpm_paths if p.is_file())
-    target.mkdir(mode=0o755);shutil.copytree(package/'backend',target/'backend');shutil.copytree(package/'site',target/'site')
+    target.mkdir(mode=0o755);target.chmod(0o755)
+    shutil.copytree(package/'backend',target/'backend');shutil.copytree(package/'site',target/'site')
     shutil.copy2(package/'station-issue-admin.py',target/'station-issue-admin.py')
     shutil.copy2(package/'030_station_management_audit.up.sql',target/'030_station_management_audit.up.sql')
     shutil.copy2(package/'manifest.json',target/'manifest.json')
