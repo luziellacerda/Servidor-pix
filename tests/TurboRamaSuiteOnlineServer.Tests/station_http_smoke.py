@@ -4,6 +4,7 @@
 Run from the repository root: pg_virtualenv python3 tests/TurboRamaSuiteOnlineServer.Tests/station_http_smoke.py
 Set STATION_HTTP_EXTRA_INDEX to a private, readable candidate index to exercise its
 real items and covers in the same isolated API. Requires .NET, psql and cryptography.
+Set STATION_HTTP_API_DLL to exercise a previously published release DLL.
 Never targets production.
 """
 
@@ -193,9 +194,14 @@ def main():
                     os.environ["PGPORT"] + ";Database=postgres;Username=turborama-suite;"
                     "Password=fixture-only-password"})
         log = (folder / "api.log").open("wb")
-        api = subprocess.Popen(["dotnet", "run", "--project",
-                                "src/TurboRamaSuiteOnlineServer/TurboRamaSuiteOnlineServer.csproj",
-                                "--no-launch-profile", "--", "--urls", base],
+        candidate_dll = os.environ.get("STATION_HTTP_API_DLL")
+        if candidate_dll and not Path(candidate_dll).is_file():
+            raise ValueError("STATION_HTTP_API_DLL is unavailable")
+        api_command = (["dotnet", candidate_dll, "--urls", base] if candidate_dll else
+                       ["dotnet", "run", "--project",
+                        "src/TurboRamaSuiteOnlineServer/TurboRamaSuiteOnlineServer.csproj",
+                        "--no-launch-profile", "--", "--urls", base])
+        api = subprocess.Popen(api_command,
                                cwd=ROOT, env=env, stdout=log, stderr=subprocess.STDOUT)
         try:
             for _ in range(120):
@@ -209,6 +215,12 @@ def main():
                 time.sleep(0.25)
             else:
                 raise RuntimeError("Candidate API readiness timed out")
+
+            sql("DELETE FROM suite.schema_migrations WHERE version='029_station_download_grants'")
+            assert_error(request(base, "GET", "/ready/station"), 503,
+                         "STATION_NOT_READY")
+            sql("INSERT INTO suite.schema_migrations(version) VALUES('029_station_download_grants')")
+            assert request(base, "GET", "/ready/station")[0] == 200
 
             identity = {"schemaVersion": 1, "productId": PRODUCT, "applicationId": PRODUCT,
                         "deviceId": device_id, "clientVersion": "test", "deviceManufacturer":

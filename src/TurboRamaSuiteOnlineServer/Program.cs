@@ -209,6 +209,8 @@ app.MapGet("/ready/station", async (HttpContext context) =>
             .GetRequiredService<NpgsqlDataSource>().CreateCommand("""
             SELECT EXISTS(SELECT 1 FROM suite.schema_migrations
               WHERE version='028_station_android')
+              AND EXISTS(SELECT 1 FROM suite.schema_migrations
+              WHERE version='029_station_download_grants')
             """);
         var ready = (bool?)await command.ExecuteScalarAsync(timeout.Token) == true;
         return ready ? Results.Json(new { status = "ready" }) :
