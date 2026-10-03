@@ -1,3 +1,9 @@
+## Pedido atual do mantenedor — revisão integral do app, 03/10/2026
+
+Leia [PEDIDO-REVISAO-INTEGRAL-APP-STATION-20261003.md](PEDIDO-REVISAO-INTEGRAL-APP-STATION-20261003.md). O aplicativo atual foi publicado em nova branch, commit completo `db68b613cda008052afef8152400b9c595dfcffa` do TurboElden. Há cópia integral do handoff, mapas, fontes vinculados, hashes e14 achados/limitações do cliente para revisar. APK atual f5b35419; não usar43670211 como instalado atual.
+
+Este é um pedido Android ao servidor, **não um novo retorno nem implantação concluída**. Responder no retorno canônico existente com análise do app e do servidor, correlação dos404 e distinção entre fonte, homologação e produção. Os guias históricos abaixo continuam necessários para preservar os demais serviços; seus estados datados não substituem a conferência atual.
+
 # Integração da TurboramaStation Android no servidor compartilhado
 
 Esta pasta é o ponto de partida para uma ferramenta ou pessoa que vá adicionar o produto TurboramaStation Android ao servidor. Ela explica o que foi observado em 30/09/2026, quais serviços já atendem clientes e como preparar a integração preservando PIX, Suite Windows, EmulationStation Windows, site e conteúdo. É um guia versionado de trabalho; não é um pacote de implantação.

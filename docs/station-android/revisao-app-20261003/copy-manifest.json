@@ -1,0 +1,30 @@
+{
+  "appRepository": "https://github.com/luziellacerda/TurboElden",
+  "appReviewCommit": "db68b613cda008052afef8152400b9c595dfcffa",
+  "runtimeCommit": "629a55a8cf48722460007944cf0bb737e9f8fb75",
+  "serverBaseCommit": "64912e1f2294b99967fc638d842f505cff7f629c",
+  "scope": "Documentation copy; only relative Markdown links are rewritten to the exact app commit. No runtime changes.",
+  "files": [
+    {
+      "appPath": "docs/server/HANDOFF-REVISAO-INTEGRAL-APP-STATION-20261003.md",
+      "serverPath": "docs/station-android/revisao-app-20261003/HANDOFF-REVISAO-INTEGRAL-APP-STATION-20261003.md",
+      "sourceGitBlobSha256": "32743a8a1a14021884bdbe1199a80202a4570d8bade948960c49fcb05c6f09b3",
+      "copySha256": "19d902c2f0788f7743b3d02caae32f71b33cd05489a91a767181938e08348595",
+      "sourceLink": "https://github.com/luziellacerda/TurboElden/blob/db68b613cda008052afef8152400b9c595dfcffa/docs/server/HANDOFF-REVISAO-INTEGRAL-APP-STATION-20261003.md"
+    },
+    {
+      "appPath": "docs/server/revisao-app-20261003/APPENDICE-MAPA-E-INTEGRIDADE.md",
+      "serverPath": "docs/station-android/revisao-app-20261003/APPENDICE-MAPA-E-INTEGRIDADE.md",
+      "sourceGitBlobSha256": "bbd205df522cfef239acf31625853829efa616a238738c98c3fdb8596d9fde51",
+      "copySha256": "2ef061bf11ee7310938b4f8c11c0bed5be61be25ebab7a8fe7f2365c6c4c4d77",
+      "sourceLink": "https://github.com/luziellacerda/TurboElden/blob/db68b613cda008052afef8152400b9c595dfcffa/docs/server/revisao-app-20261003/APPENDICE-MAPA-E-INTEGRIDADE.md"
+    },
+    {
+      "appPath": "docs/server/revisao-app-20261003/source-review-manifest.json",
+      "serverPath": "docs/station-android/revisao-app-20261003/source-review-manifest.json",
+      "sourceGitBlobSha256": "0673929cb2019db21bee67634a273655080120e2f4146a31d9e07946f6955542",
+      "copySha256": "0673929cb2019db21bee67634a273655080120e2f4146a31d9e07946f6955542",
+      "sourceLink": "https://github.com/luziellacerda/TurboElden/blob/db68b613cda008052afef8152400b9c595dfcffa/docs/server/revisao-app-20261003/source-review-manifest.json"
+    }
+  ]
+}

@@ -1,0 +1,1827 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-03",
+  "sourceRepository": "https://github.com/luziellacerda/TurboElden",
+  "sourceCommit": "629a55a8cf48722460007944cf0bb737e9f8fb75",
+  "branchForReview": "revisao-integracao-station-servidor-20261003",
+  "scope": "Read-only inventory and evidence cross-check; no test execution or runtime changes",
+  "inventoryScope": "Every tracked src/**, tests/** and root *.py under versions/station-reconstruction-20261002 at sourceCommit; excludes private APKs and third-party tools/binaries",
+  "inventoryCounts": {
+    "build-or-prepare-script": 12,
+    "source": 28,
+    "test": 11
+  },
+  "inventoryTotal": 51,
+  "workingTreeMismatchCount": 16,
+  "files": [
+    {
+      "path": "versions/station-reconstruction-20261002/build_app_dex.py",
+      "gitBlobOid": "006b6521fa63cd8cd3594676b5fc882cb1dc61a5",
+      "category": "build-or-prepare-script",
+      "sha256": "67518b98005f3b06119f70435e65824a8a49f57f4d65cbf936828024eaf34063",
+      "bytes": 4805,
+      "lineCount": 80,
+      "workingTreeSha256": "5b50a82c6c14cf98d23908935d00e32784c0ee0c589aeeb18fbdff1ae4485d83",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/build_app_dex.py",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/build_archive.py",
+      "gitBlobOid": "9b5b6e00ffe579147355451372aab6f812c3ec90",
+      "category": "build-or-prepare-script",
+      "sha256": "bb5bb58d24e01f2a85f8b24757f602d4d64064d8a31f7dbe31b23d36722b5c13",
+      "bytes": 3661,
+      "lineCount": 38,
+      "workingTreeSha256": "bb5bb58d24e01f2a85f8b24757f602d4d64064d8a31f7dbe31b23d36722b5c13",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/build_archive.py",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/build_frontend.py",
+      "gitBlobOid": "ffd837fb99cc9eca7ef1f669e387abb7dfb59b32",
+      "category": "build-or-prepare-script",
+      "sha256": "cde087b4a1eb9e5fa7f1c01cedd41387b4190a30f14302ea2c45bd032de4b213",
+      "bytes": 1000,
+      "lineCount": 12,
+      "workingTreeSha256": "b4d562a6b87ee4d82136711b4efce93936a0714555497774003d5718479dba86",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/build_frontend.py",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/build_module.py",
+      "gitBlobOid": "a563c62d95775057e4f1d16ef7a661e4119d2de7",
+      "category": "build-or-prepare-script",
+      "sha256": "c58a49bbafdaf9d5923d24b1d69c9c6c6863ac207c080d7719b0189a729441e8",
+      "bytes": 2099,
+      "lineCount": 22,
+      "workingTreeSha256": "9529f01604231917ec897b330bb34e15463989f44b87b53576921ac9ebd0dbd9",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/build_module.py",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/link_native_services.py",
+      "gitBlobOid": "f90f05dbd934a1d2b495fec3bd1b9427b2b9e1e6",
+      "category": "build-or-prepare-script",
+      "sha256": "87917e4535467a12326e02c705e79af0b0a96a298ab94ac165cd17a84a741425",
+      "bytes": 8488,
+      "lineCount": 138,
+      "workingTreeSha256": "f2ca871beedb8cdf9c89bd9602fa856e4081626e8c82e031f923e6215e174413",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/link_native_services.py",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/package_apk.py",
+      "gitBlobOid": "f3d54c81affb7f417952aefab55212a8a64e9d7b",
+      "category": "build-or-prepare-script",
+      "sha256": "e171fa3f4f691b1560235a6cc4349b96ef88fd2b9180252a9321204889994a1b",
+      "bytes": 6355,
+      "lineCount": 81,
+      "workingTreeSha256": "e010642b6fccca841e97d4d5f7f6930cd2b5965eb0bf3b6ba92f014af7f000cb",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/package_apk.py",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/prepare_archive_device_test.py",
+      "gitBlobOid": "2668cdd08bb1e44bfd8667070788f21d2c16d9eb",
+      "category": "build-or-prepare-script",
+      "sha256": "c8481737bf6ac412e2e7af0a89ff12ef45b3fe322aaa47ff92f22c1e49b1ef99",
+      "bytes": 2371,
+      "lineCount": 27,
+      "workingTreeSha256": "c8481737bf6ac412e2e7af0a89ff12ef45b3fe322aaa47ff92f22c1e49b1ef99",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/prepare_archive_device_test.py",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/prepare_dex_input.py",
+      "gitBlobOid": "a23ac174eff040825bbe84e67c7be134b691bc0d",
+      "category": "build-or-prepare-script",
+      "sha256": "27c79501f82acba8b9912d8152f73d91e79fa66a1ebb0dc6b2278cd21dff8f2f",
+      "bytes": 1370,
+      "lineCount": 19,
+      "workingTreeSha256": "75a1c3ea4481bcda20d368839c88e65296d56450b7e819d0756f6b50d7b04b47",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/prepare_dex_input.py",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/prepare_frontend_device_test.py",
+      "gitBlobOid": "49119908c848e9db92d53c808d220a666b06ab28",
+      "category": "build-or-prepare-script",
+      "sha256": "7324a52789671a80e1845e7b87e156cefc79833de26dd9cc705cf6ad00fc9bc4",
+      "bytes": 1712,
+      "lineCount": 18,
+      "workingTreeSha256": "647535bbebe8215105e4f7a55dbcccf9dbd6c684e8d7a508bc0b5735ed950ddc",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/prepare_frontend_device_test.py",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/prepare_root_device_test.py",
+      "gitBlobOid": "7fa71a035956736c3977c3cd346c3f31bbda657e",
+      "category": "build-or-prepare-script",
+      "sha256": "0bb67e31df302cd998861a8f3c54aea39a2d8f654bcc251133c271a6360181a8",
+      "bytes": 1051,
+      "lineCount": 13,
+      "workingTreeSha256": "4cceff7ed9eaf0d696b75ef73fe5044c9684ea38de0c76d7127bd7dc9b5c654e",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/prepare_root_device_test.py",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/prepare_test_dependency.py",
+      "gitBlobOid": "123d88bcccfdae14bb410bc16e74db70f953183a",
+      "category": "build-or-prepare-script",
+      "sha256": "35059aa8766d8a2837f78f40a670ef797487a11d2dc8aec2acb0ae06203c004f",
+      "bytes": 839,
+      "lineCount": 13,
+      "workingTreeSha256": "44fec1cfb60d87943fcad9aa9a14bd653b8b980e4250547369460705082fe9eb",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/prepare_test_dependency.py",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/run_tests.py",
+      "gitBlobOid": "6b04264ec3a1028fd6b0feadc52216ea40d16f43",
+      "category": "build-or-prepare-script",
+      "sha256": "b747f61e9cffc7bc1592fdd32c3aa256953b4be518104c1fa38deb8b58eda99c",
+      "bytes": 2217,
+      "lineCount": 24,
+      "workingTreeSha256": "470cff39aac96d35f9b9aaf0d563041079f8c20ea65ea5a3ae6aeb8d5657bd11",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/run_tests.py",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/DownloadService.java",
+      "gitBlobOid": "82f66717cf6a9f0bb7b224218c1d6e57a29bde60",
+      "category": "source",
+      "sha256": "49b2994e4a213e861cfcef5ce0e353789f7f88928fec5f8b7e3b8ceb6f594c5f",
+      "bytes": 3678,
+      "lineCount": 53,
+      "workingTreeSha256": "49b2994e4a213e861cfcef5ce0e353789f7f88928fec5f8b7e3b8ceb6f594c5f",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/DownloadService.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/auth/LoginActivity.java",
+      "gitBlobOid": "e5caab9a9ce08f4a8adcbd28d840e7c204eabd33",
+      "category": "source",
+      "sha256": "f515a3bd3846bce66aacb14a0c34a2a90251a292ec3b7701f6cdcbda33ab7557",
+      "bytes": 21053,
+      "lineCount": 471,
+      "workingTreeSha256": "f515a3bd3846bce66aacb14a0c34a2a90251a292ec3b7701f6cdcbda33ab7557",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/auth/LoginActivity.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/auth/StationLogin.java",
+      "gitBlobOid": "bc2ccc3abefd3ab927222816c3587eb66faa84fa",
+      "category": "source",
+      "sha256": "191549ba86fed13573b27258c867ece3a536f99573330d9f75889522774ae4ce",
+      "bytes": 4738,
+      "lineCount": 72,
+      "workingTreeSha256": "191549ba86fed13573b27258c867ece3a536f99573330d9f75889522774ae4ce",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/auth/StationLogin.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/ExistingCoverCache.java",
+      "gitBlobOid": "5a953e4edbdae7655ba50d470998e363c6ac52ab",
+      "category": "source",
+      "sha256": "41796c41b27efc4e9a53d20b7ed606e37d7b4d168cb7638059cf368e8d533d28",
+      "bytes": 2239,
+      "lineCount": 44,
+      "workingTreeSha256": "41796c41b27efc4e9a53d20b7ed606e37d7b4d168cb7638059cf368e8d533d28",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/ExistingCoverCache.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationAndroid.java",
+      "gitBlobOid": "e7e817e17299d4e45e3dd53aa445e5762f5ff8ad",
+      "category": "source",
+      "sha256": "e8ec2fa01b2672bfe611a6129b8be189b568c9e7aa4123de5bf22b9690d671ce",
+      "bytes": 3945,
+      "lineCount": 68,
+      "workingTreeSha256": "e8ec2fa01b2672bfe611a6129b8be189b568c9e7aa4123de5bf22b9690d671ce",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationAndroid.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationApi.java",
+      "gitBlobOid": "212c302f3b73220aa34825d01a31532bf0a0c882",
+      "category": "source",
+      "sha256": "8aab9ec0800d9e2499f57eba96b5c323e762f89f52d776a09005a31c18c11df1",
+      "bytes": 18278,
+      "lineCount": 290,
+      "workingTreeSha256": "8aab9ec0800d9e2499f57eba96b5c323e762f89f52d776a09005a31c18c11df1",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationApi.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationArchive.java",
+      "gitBlobOid": "ad3e512d6d124b6603435efbd16b6311dae57ac1",
+      "category": "source",
+      "sha256": "107669c6885725d99b430e7340c550466eed24a2842d43b51526c673a9d51b86",
+      "bytes": 683,
+      "lineCount": 12,
+      "workingTreeSha256": "107669c6885725d99b430e7340c550466eed24a2842d43b51526c673a9d51b86",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationArchive.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationArtifact.java",
+      "gitBlobOid": "fd1a02915438f8b3546a20c90cbff277ee47d8c5",
+      "category": "source",
+      "sha256": "fe6eee3c4dfaaf66ac68eb0096b6ff0dc7792fa377dadf5898b5ea06e803bac9",
+      "bytes": 3253,
+      "lineCount": 54,
+      "workingTreeSha256": "fe6eee3c4dfaaf66ac68eb0096b6ff0dc7792fa377dadf5898b5ea06e803bac9",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationArtifact.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCatalog.java",
+      "gitBlobOid": "75e233cee7be8d012874c95e70c7e2be39541289",
+      "category": "source",
+      "sha256": "827faed485e12b16583d3d2cc243a43318674b72b9a8c449000eef61f9106cff",
+      "bytes": 4832,
+      "lineCount": 111,
+      "workingTreeSha256": "827faed485e12b16583d3d2cc243a43318674b72b9a8c449000eef61f9106cff",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCatalog.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCatalogStore.java",
+      "gitBlobOid": "fc57bb425a07a03295ba3df0833d55ec3403ba98",
+      "category": "source",
+      "sha256": "9d4d119f54fe28be65f90efc65f2f7d81062089eaa5e5cebf6f186c10e3c8de6",
+      "bytes": 2175,
+      "lineCount": 38,
+      "workingTreeSha256": "9d4d119f54fe28be65f90efc65f2f7d81062089eaa5e5cebf6f186c10e3c8de6",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCatalogStore.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationConfig.java",
+      "gitBlobOid": "6e4b52a48268979b2191f0ca99ab1acc199fde40",
+      "category": "source",
+      "sha256": "baef1b9c96358715980f9e172b9ca2fbf13acf141c13253298d7b0b12ceed6cc",
+      "bytes": 1817,
+      "lineCount": 28,
+      "workingTreeSha256": "baef1b9c96358715980f9e172b9ca2fbf13acf141c13253298d7b0b12ceed6cc",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationConfig.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCoordinator.java",
+      "gitBlobOid": "4452247503106c641dbaa9ed1efb36de2594b4c3",
+      "category": "source",
+      "sha256": "efd1877eaef409a255508d1d5b2d8eb957ab39f13badca2ef9defee06cf1a258",
+      "bytes": 6641,
+      "lineCount": 116,
+      "workingTreeSha256": "efd1877eaef409a255508d1d5b2d8eb957ab39f13badca2ef9defee06cf1a258",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCoordinator.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCoverStore.java",
+      "gitBlobOid": "05bf544a68f071c8364736a003e63e059c8ae5ef",
+      "category": "source",
+      "sha256": "fd15ef8bb328d8bc35be1bbdc28bf1a3dc7f30eaea65a17263efec586aefc205",
+      "bytes": 5502,
+      "lineCount": 94,
+      "workingTreeSha256": "fd15ef8bb328d8bc35be1bbdc28bf1a3dc7f30eaea65a17263efec586aefc205",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCoverStore.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCrypto.java",
+      "gitBlobOid": "2510dc6134c4fa6c815621882cd60bb374968f47",
+      "category": "source",
+      "sha256": "8a60e9fd96dbfa3d8098b9e913e2ea8141ef13b76bf6cae264b47f841dd302d7",
+      "bytes": 1942,
+      "lineCount": 45,
+      "workingTreeSha256": "8a60e9fd96dbfa3d8098b9e913e2ea8141ef13b76bf6cae264b47f841dd302d7",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCrypto.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationDiagnostics.java",
+      "gitBlobOid": "7b459e990be5b5ae5d219940381d5319f7753fb7",
+      "category": "source",
+      "sha256": "b989c57c9b795d43aa961a371f13dfa01871c51af3e707091db4f700f93acb1d",
+      "bytes": 2183,
+      "lineCount": 37,
+      "workingTreeSha256": "b989c57c9b795d43aa961a371f13dfa01871c51af3e707091db4f700f93acb1d",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationDiagnostics.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationDownloads.java",
+      "gitBlobOid": "4d237ae46971c9432c728389aa572350b71abff4",
+      "category": "source",
+      "sha256": "84d885a5bca8286d2e4cb96b1d3edc413806e0432f026150ce4087362d329097",
+      "bytes": 6394,
+      "lineCount": 84,
+      "workingTreeSha256": "84d885a5bca8286d2e4cb96b1d3edc413806e0432f026150ce4087362d329097",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationDownloads.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationExistingArtifact.java",
+      "gitBlobOid": "bd584de0a1156b7a2587337cc3ed56a7595e199d",
+      "category": "source",
+      "sha256": "13cf0fd8b08fd83ddfa813c86d792b60034c48a9b405efc4f593b03199c6016c",
+      "bytes": 2153,
+      "lineCount": 38,
+      "workingTreeSha256": "13cf0fd8b08fd83ddfa813c86d792b60034c48a9b405efc4f593b03199c6016c",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationExistingArtifact.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationFiles.java",
+      "gitBlobOid": "0225f13178c103443f9cd766cd0d778c71e1fd0a",
+      "category": "source",
+      "sha256": "c0da9cf2e54702d8c4f0c8f6ef09300ce35194a0d182f6b5cf2175e1bbd54f7b",
+      "bytes": 7148,
+      "lineCount": 144,
+      "workingTreeSha256": "c0da9cf2e54702d8c4f0c8f6ef09300ce35194a0d182f6b5cf2175e1bbd54f7b",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationFiles.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationFrontend.java",
+      "gitBlobOid": "1de3507e8f5cf23b8310106a503696739b0187b1",
+      "category": "source",
+      "sha256": "40efb17ccc01b568640163b1c5cf15b90299412bb860d0f0e892a1d4af979400",
+      "bytes": 7708,
+      "lineCount": 94,
+      "workingTreeSha256": "40efb17ccc01b568640163b1c5cf15b90299412bb860d0f0e892a1d4af979400",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationFrontend.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationHttp.java",
+      "gitBlobOid": "7a30c7a3dbabf526c6eebe4b9e44f9bb8827223b",
+      "category": "source",
+      "sha256": "adc643c944bab0006dcdb9b9419030418662dbe4897751ed8ab943f335c3f940",
+      "bytes": 6682,
+      "lineCount": 113,
+      "workingTreeSha256": "adc643c944bab0006dcdb9b9419030418662dbe4897751ed8ab943f335c3f940",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationHttp.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationInstaller.java",
+      "gitBlobOid": "e91a9ca4bd049671ca0d30c02fb48ac7b8944782",
+      "category": "source",
+      "sha256": "8e2531a55390ad2ffb54d8c34da2c0675945778a2eee644b31f131c33b14aa2b",
+      "bytes": 16450,
+      "lineCount": 214,
+      "workingTreeSha256": "8e2531a55390ad2ffb54d8c34da2c0675945778a2eee644b31f131c33b14aa2b",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationInstaller.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java",
+      "gitBlobOid": "451bcb92fadb74dba5e4eade422ba3868757c950",
+      "category": "source",
+      "sha256": "2268bcbae3551ee9e6749f5f76e5f47a9d84ad1e1bbd8142dda7ca865782ee7f",
+      "bytes": 5730,
+      "lineCount": 100,
+      "workingTreeSha256": "2268bcbae3551ee9e6749f5f76e5f47a9d84ad1e1bbd8142dda7ca865782ee7f",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationProtocol.java",
+      "gitBlobOid": "05f2244c007dc217aac605b5d514fca0d43d34d5",
+      "category": "source",
+      "sha256": "e9298f033dff87bdca458e73d1ec7e084688acb5b750db2dfbf98b1fd7243114",
+      "bytes": 6018,
+      "lineCount": 129,
+      "workingTreeSha256": "e9298f033dff87bdca458e73d1ec7e084688acb5b750db2dfbf98b1fd7243114",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationProtocol.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationSessions.java",
+      "gitBlobOid": "37d9b5468dd43c06db230f5c45642b7a7de0a583",
+      "category": "source",
+      "sha256": "ca26978f91e992a20ec69f31c489c2a50d8a892ceec857902c201a78400ead5a",
+      "bytes": 1999,
+      "lineCount": 38,
+      "workingTreeSha256": "ca26978f91e992a20ec69f31c489c2a50d8a892ceec857902c201a78400ead5a",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationSessions.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/native/service-bindings.json",
+      "gitBlobOid": "6ac793a992ff4ac8530579b939f7b4c4d1ba62bf",
+      "category": "source",
+      "sha256": "1584efb0a524fa07cc1a12ea58c8f8e2d5460f575f3d628bc3125af78dec471e",
+      "bytes": 671,
+      "lineCount": 20,
+      "workingTreeSha256": "cf81aa4e4b358ca08eeaa3863fa4f646fb34e29117bf458c2021b64027cd9cd4",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/native/service-bindings.json",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/native/station_archive.c",
+      "gitBlobOid": "87b10aab8c5a77b159178ad73523beb4bb488211",
+      "category": "source",
+      "sha256": "cf09c44a8ee03a6f1dccf479953f7b2b6b8a9771b8953c5f841fa75163ef8e1c",
+      "bytes": 4009,
+      "lineCount": 64,
+      "workingTreeSha256": "cf09c44a8ee03a6f1dccf479953f7b2b6b8a9771b8953c5f841fa75163ef8e1c",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/native/station_archive.c",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/native/station_catalog_abi.hpp",
+      "gitBlobOid": "02afd2e097831171f040c13482e861d3057cf634",
+      "category": "source",
+      "sha256": "9f990c41f65bab83672df01fceb18051c9f57abbb965630d6f35bd53558b7f21",
+      "bytes": 1556,
+      "lineCount": 37,
+      "workingTreeSha256": "16c65f6c7bba9eecec4c914490bd552978735be3d2da3c732d5f5c8486639824",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/native/station_catalog_abi.hpp",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/src/native/station_frontend.cpp",
+      "gitBlobOid": "8ef356e7bc8d95467946be351aaaedd7b10a9dcc",
+      "category": "source",
+      "sha256": "bf63f63962f97d576139b86b51b5c403b008d49cc698265a84917af405ae4d66",
+      "bytes": 22767,
+      "lineCount": 295,
+      "workingTreeSha256": "9e90e1ea18c5a8aa6203162d4a1569304bca2608e87ada0fe16e36d7a7d2eaf5",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/native/station_frontend.cpp",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/tests/StationApiTest.java",
+      "gitBlobOid": "2cb6add2b4b6f2774e25e3b34835a30b17e0fdd1",
+      "category": "test",
+      "sha256": "ac856fe2ce39b1d790dabfb4c2140630ac8a88ebf57d5d8d067ea58cc0102c19",
+      "bytes": 12700,
+      "lineCount": 151,
+      "workingTreeSha256": "ac856fe2ce39b1d790dabfb4c2140630ac8a88ebf57d5d8d067ea58cc0102c19",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/tests/StationApiTest.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/tests/StationArchiveDeviceTest.java",
+      "gitBlobOid": "a4fbcd042266f22c84d0c3deadd6ffba1579cd40",
+      "category": "test",
+      "sha256": "ac5ba7a08f14dade9aebb7039ee8c4b46c75314b187e21551a40d1a484aa9e5d",
+      "bytes": 2114,
+      "lineCount": 32,
+      "workingTreeSha256": "ac5ba7a08f14dade9aebb7039ee8c4b46c75314b187e21551a40d1a484aa9e5d",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/tests/StationArchiveDeviceTest.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/tests/StationClosureTest.java",
+      "gitBlobOid": "1d2ccd32443f35efd5d0bdbe8db9a769368466a3",
+      "category": "test",
+      "sha256": "52065abfe726cff024921287ac0d82dac3bb7185a5a28437457f24e9d3c1fd8e",
+      "bytes": 7907,
+      "lineCount": 89,
+      "workingTreeSha256": "52065abfe726cff024921287ac0d82dac3bb7185a5a28437457f24e9d3c1fd8e",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/tests/StationClosureTest.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/tests/StationCoordinatorTest.java",
+      "gitBlobOid": "d522753f2bd8dc05daebb71b3e36bde8916d5537",
+      "category": "test",
+      "sha256": "726d8da8dc1a420514f6a75f765b4f0d5c224e5f71a1943bc99a1c9f8b1f7c59",
+      "bytes": 3724,
+      "lineCount": 47,
+      "workingTreeSha256": "726d8da8dc1a420514f6a75f765b4f0d5c224e5f71a1943bc99a1c9f8b1f7c59",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/tests/StationCoordinatorTest.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/tests/StationFilesTest.java",
+      "gitBlobOid": "d70ebe5bcbb92b4e9be1d9b1733628fb2864d0f3",
+      "category": "test",
+      "sha256": "1765450d3747511a6904a20581993ce2615179398817d15262f458a80d1f6e57",
+      "bytes": 2793,
+      "lineCount": 38,
+      "workingTreeSha256": "1765450d3747511a6904a20581993ce2615179398817d15262f458a80d1f6e57",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/tests/StationFilesTest.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/tests/StationFrontendDeviceTest.java",
+      "gitBlobOid": "24d3edf64e70507e232ef591bfdced50bdefee6f",
+      "category": "test",
+      "sha256": "9fe2f9beb35f2e642e66099ac9a028dc3276eff8fbfb6a888cef3d080b52a123",
+      "bytes": 363,
+      "lineCount": 6,
+      "workingTreeSha256": "9fe2f9beb35f2e642e66099ac9a028dc3276eff8fbfb6a888cef3d080b52a123",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/tests/StationFrontendDeviceTest.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/tests/StationInstallerTest.java",
+      "gitBlobOid": "3ab56bcc76daeb884bb99cdbd22d57bcb77aec9c",
+      "category": "test",
+      "sha256": "52470dd28859a1d4667ea1a3d82cb3b6dbc3f93f863ca90977ed2fbecb9bea36",
+      "bytes": 9020,
+      "lineCount": 105,
+      "workingTreeSha256": "52470dd28859a1d4667ea1a3d82cb3b6dbc3f93f863ca90977ed2fbecb9bea36",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/tests/StationInstallerTest.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/tests/StationStorageTest.java",
+      "gitBlobOid": "f1747ea0541047ec35733be3fc3762f5c7dc52be",
+      "category": "test",
+      "sha256": "32fe61fcee830ef3d4a5174393ce27669891c0e7ef85792353b7c1092107aa8b",
+      "bytes": 6715,
+      "lineCount": 75,
+      "workingTreeSha256": "32fe61fcee830ef3d4a5174393ce27669891c0e7ef85792353b7c1092107aa8b",
+      "workingTreeMatchesCommit": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/tests/StationStorageTest.java",
+      "workingTreeDifference": "none"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/tests/device/StationRootDeviceTest.java",
+      "gitBlobOid": "feba79a70bc59db3ed11803b92c4b489168da1b1",
+      "category": "test",
+      "sha256": "a42a463fb98a1187246b3990c445d44fb4c9366dce18a0a39ce2a6659e5fcf88",
+      "bytes": 1256,
+      "lineCount": 19,
+      "workingTreeSha256": "36f9fcf5597980814c4ac589117101000fcd1df36be0dbc068632da07f5d5ae4",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/tests/device/StationRootDeviceTest.java",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/tests/native_link_smoke.cpp",
+      "gitBlobOid": "26532c47ce48158171788e695fd68212fb956984",
+      "category": "test",
+      "sha256": "61dff6851c176a3bb11d3517e53a75a0c7bb21b51010fcc75e74025841508cc2",
+      "bytes": 1446,
+      "lineCount": 26,
+      "workingTreeSha256": "004870eb333372110ec647862fcb67a713f7ca134dd093c2bb3f91da643a7311",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/tests/native_link_smoke.cpp",
+      "workingTreeDifference": "line-endings-only"
+    },
+    {
+      "path": "versions/station-reconstruction-20261002/tests/station_frontend_test.cpp",
+      "gitBlobOid": "605a72c30928c6a5ad326dee4b55181a4a3487c1",
+      "category": "test",
+      "sha256": "29ce7d0bbe3965ede17d2b6200743a709cbf09e9eb0874f4335b6f9e113a91c1",
+      "bytes": 4416,
+      "lineCount": 39,
+      "workingTreeSha256": "eebefef18614d84435f1ee0b56e42e21c46d3636af698f0f11f3f209938ff4c4",
+      "workingTreeMatchesCommit": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/tests/station_frontend_test.cpp",
+      "workingTreeDifference": "line-endings-only"
+    }
+  ],
+  "platformMappingCount": 72,
+  "platformMappings": [
+    {
+      "input": "3ds",
+      "label": "3ds",
+      "folder": "3ds",
+      "aliasOf": null,
+      "sourceLine": 15,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L15"
+    },
+    {
+      "input": "Arcade",
+      "label": "Arcade",
+      "folder": "arcade",
+      "aliasOf": null,
+      "sourceLine": 16,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L16"
+    },
+    {
+      "input": "Atomiswave",
+      "label": "Atomiswave",
+      "folder": "atomiswave",
+      "aliasOf": null,
+      "sourceLine": 17,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L17"
+    },
+    {
+      "input": "Dreamcast",
+      "label": "Dreamcast",
+      "folder": "dreamcast",
+      "aliasOf": null,
+      "sourceLine": 18,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L18"
+    },
+    {
+      "input": "GameCube",
+      "label": "GameCube",
+      "folder": "gamecube",
+      "aliasOf": null,
+      "sourceLine": 19,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L19"
+    },
+    {
+      "input": "Gameboy",
+      "label": "Gameboy",
+      "folder": "gameboy",
+      "aliasOf": null,
+      "sourceLine": 20,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L20"
+    },
+    {
+      "input": "Gameboy Color",
+      "label": "Gameboy Color",
+      "folder": "gameboy-color",
+      "aliasOf": null,
+      "sourceLine": 21,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L21"
+    },
+    {
+      "input": "Gba",
+      "label": "Gba",
+      "folder": "gba",
+      "aliasOf": null,
+      "sourceLine": 22,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L22"
+    },
+    {
+      "input": "Master System ",
+      "label": "Master System ",
+      "folder": "master-system",
+      "aliasOf": null,
+      "sourceLine": 23,
+      "inputTrailingSpace": true,
+      "labelTrailingSpace": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L23"
+    },
+    {
+      "input": "MegaDrive",
+      "label": "MegaDrive",
+      "folder": "megadrive",
+      "aliasOf": null,
+      "sourceLine": 24,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L24"
+    },
+    {
+      "input": "MegaDrive - BR",
+      "label": "MegaDrive - BR",
+      "folder": "megadrive--br",
+      "aliasOf": null,
+      "sourceLine": 25,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L25"
+    },
+    {
+      "input": "Neo Geo",
+      "label": "Neo Geo",
+      "folder": "neo-geo",
+      "aliasOf": null,
+      "sourceLine": 26,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L26"
+    },
+    {
+      "input": "Neo Geo CD",
+      "label": "Neo Geo CD",
+      "folder": "neo-geo-cd",
+      "aliasOf": null,
+      "sourceLine": 27,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L27"
+    },
+    {
+      "input": "Nintendinho",
+      "label": "Nintendinho",
+      "folder": "nintendinho",
+      "aliasOf": null,
+      "sourceLine": 28,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L28"
+    },
+    {
+      "input": "Nintendo 64",
+      "label": "Nintendo 64",
+      "folder": "nintendo-64",
+      "aliasOf": null,
+      "sourceLine": 29,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L29"
+    },
+    {
+      "input": "Nintendo 64 - BR",
+      "label": "Nintendo 64 - BR",
+      "folder": "nintendo-64--br",
+      "aliasOf": null,
+      "sourceLine": 30,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L30"
+    },
+    {
+      "input": "Nintendo DS",
+      "label": "Nintendo DS",
+      "folder": "nintendo-ds",
+      "aliasOf": null,
+      "sourceLine": 31,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L31"
+    },
+    {
+      "input": "Odyssey 2",
+      "label": "Odyssey 2",
+      "folder": "odyssey-2",
+      "aliasOf": null,
+      "sourceLine": 32,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L32"
+    },
+    {
+      "input": "PSP",
+      "label": "PSP",
+      "folder": "psp",
+      "aliasOf": null,
+      "sourceLine": 33,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L33"
+    },
+    {
+      "input": "Pc Engine",
+      "label": "Pc Engine",
+      "folder": "pc-engine",
+      "aliasOf": null,
+      "sourceLine": 34,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L34"
+    },
+    {
+      "input": "Pc Engine cd",
+      "label": "Pc Engine cd",
+      "folder": "pc-engine-cd",
+      "aliasOf": null,
+      "sourceLine": 35,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L35"
+    },
+    {
+      "input": "Playstation 1",
+      "label": "Playstation 1",
+      "folder": "psx",
+      "aliasOf": null,
+      "sourceLine": 36,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L36"
+    },
+    {
+      "input": "Playstation 2",
+      "label": "Playstation 2",
+      "folder": "ps2",
+      "aliasOf": null,
+      "sourceLine": 37,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L37"
+    },
+    {
+      "input": "Playstation 2 - BR",
+      "label": "Playstation 2 - BR",
+      "folder": "ps2br",
+      "aliasOf": null,
+      "sourceLine": 38,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L38"
+    },
+    {
+      "input": "Psp - BR",
+      "label": "Psp - BR",
+      "folder": "psp",
+      "aliasOf": null,
+      "sourceLine": 39,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L39"
+    },
+    {
+      "input": "Psvita",
+      "label": "Psvita",
+      "folder": "psvita",
+      "aliasOf": null,
+      "sourceLine": 40,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L40"
+    },
+    {
+      "input": "Super Nintendo",
+      "label": "Super Nintendo",
+      "folder": "super-nintendo",
+      "aliasOf": null,
+      "sourceLine": 41,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L41"
+    },
+    {
+      "input": "Super Nintendo - BR",
+      "label": "Super Nintendo - BR",
+      "folder": "super-nintendo--br",
+      "aliasOf": null,
+      "sourceLine": 42,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L42"
+    },
+    {
+      "input": "Switch",
+      "label": "Switch",
+      "folder": "switch",
+      "aliasOf": null,
+      "sourceLine": 43,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L43"
+    },
+    {
+      "input": "atari2600",
+      "label": "atari2600",
+      "folder": "atari2600",
+      "aliasOf": null,
+      "sourceLine": 44,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L44"
+    },
+    {
+      "input": "atari7800",
+      "label": "atari7800",
+      "folder": "atari7800",
+      "aliasOf": null,
+      "sourceLine": 45,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L45"
+    },
+    {
+      "input": "colecovision",
+      "label": "colecovision",
+      "folder": "colecovision",
+      "aliasOf": null,
+      "sourceLine": 46,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L46"
+    },
+    {
+      "input": "cps1",
+      "label": "cps1",
+      "folder": "cps1",
+      "aliasOf": null,
+      "sourceLine": 47,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L47"
+    },
+    {
+      "input": "cps2",
+      "label": "cps2",
+      "folder": "cps2",
+      "aliasOf": null,
+      "sourceLine": 48,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L48"
+    },
+    {
+      "input": "cps3",
+      "label": "cps3",
+      "folder": "cps3",
+      "aliasOf": null,
+      "sourceLine": 49,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L49"
+    },
+    {
+      "input": "fbneo",
+      "label": "fbneo",
+      "folder": "fbneo",
+      "aliasOf": null,
+      "sourceLine": 50,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L50"
+    },
+    {
+      "input": "fds",
+      "label": "fds",
+      "folder": "fds",
+      "aliasOf": null,
+      "sourceLine": 51,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L51"
+    },
+    {
+      "input": "gameandwatch",
+      "label": "gameandwatch",
+      "folder": "gameandwatch",
+      "aliasOf": null,
+      "sourceLine": 52,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L52"
+    },
+    {
+      "input": "gamegear",
+      "label": "gamegear",
+      "folder": "gamegear",
+      "aliasOf": null,
+      "sourceLine": 53,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L53"
+    },
+    {
+      "input": "jaguar",
+      "label": "jaguar",
+      "folder": "jaguar",
+      "aliasOf": null,
+      "sourceLine": 54,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L54"
+    },
+    {
+      "input": "mame",
+      "label": "mame",
+      "folder": "mame",
+      "aliasOf": null,
+      "sourceLine": 55,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L55"
+    },
+    {
+      "input": "naomi",
+      "label": "naomi",
+      "folder": "naomi",
+      "aliasOf": null,
+      "sourceLine": 56,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L56"
+    },
+    {
+      "input": "naomi2",
+      "label": "naomi2",
+      "folder": "naomi2",
+      "aliasOf": null,
+      "sourceLine": 57,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L57"
+    },
+    {
+      "input": "saturn",
+      "label": "saturn",
+      "folder": "saturn",
+      "aliasOf": null,
+      "sourceLine": 58,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L58"
+    },
+    {
+      "input": "sega32x",
+      "label": "sega32x",
+      "folder": "sega32x",
+      "aliasOf": null,
+      "sourceLine": 59,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L59"
+    },
+    {
+      "input": "supergrafx",
+      "label": "supergrafx",
+      "folder": "supergrafx",
+      "aliasOf": null,
+      "sourceLine": 60,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L60"
+    },
+    {
+      "input": "wii",
+      "label": "wii",
+      "folder": "wii",
+      "aliasOf": null,
+      "sourceLine": 61,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L61"
+    },
+    {
+      "input": "wiiu",
+      "label": "wiiu",
+      "folder": "wiiu",
+      "aliasOf": null,
+      "sourceLine": 62,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L62"
+    },
+    {
+      "input": "xbox",
+      "label": "xbox",
+      "folder": "xbox",
+      "aliasOf": null,
+      "sourceLine": 63,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L63"
+    },
+    {
+      "input": "xbox360",
+      "label": "xbox360",
+      "folder": "xbox360",
+      "aliasOf": null,
+      "sourceLine": 64,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L64"
+    },
+    {
+      "input": "megadrive",
+      "label": "MegaDrive",
+      "folder": "megadrive",
+      "aliasOf": "MegaDrive",
+      "sourceLine": 65,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L65"
+    },
+    {
+      "input": "snes",
+      "label": "Super Nintendo",
+      "folder": "super-nintendo",
+      "aliasOf": "Super Nintendo",
+      "sourceLine": 66,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L66"
+    },
+    {
+      "input": "snesbr",
+      "label": "Super Nintendo - BR",
+      "folder": "super-nintendo--br",
+      "aliasOf": "Super Nintendo - BR",
+      "sourceLine": 67,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L67"
+    },
+    {
+      "input": "gb",
+      "label": "Gameboy",
+      "folder": "gameboy",
+      "aliasOf": "Gameboy",
+      "sourceLine": 68,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L68"
+    },
+    {
+      "input": "gbc",
+      "label": "Gameboy Color",
+      "folder": "gameboy-color",
+      "aliasOf": "Gameboy Color",
+      "sourceLine": 69,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L69"
+    },
+    {
+      "input": "gba",
+      "label": "Gba",
+      "folder": "gba",
+      "aliasOf": "Gba",
+      "sourceLine": 70,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L70"
+    },
+    {
+      "input": "megadrivebr",
+      "label": "MegaDrive - BR",
+      "folder": "megadrive--br",
+      "aliasOf": "MegaDrive - BR",
+      "sourceLine": 72,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L72"
+    },
+    {
+      "input": "arcade",
+      "label": "Arcade",
+      "folder": "arcade",
+      "aliasOf": "Arcade",
+      "sourceLine": 73,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L73"
+    },
+    {
+      "input": "atomiswave",
+      "label": "Atomiswave",
+      "folder": "atomiswave",
+      "aliasOf": "Atomiswave",
+      "sourceLine": 74,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L74"
+    },
+    {
+      "input": "dreamcast",
+      "label": "Dreamcast",
+      "folder": "dreamcast",
+      "aliasOf": "Dreamcast",
+      "sourceLine": 75,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L75"
+    },
+    {
+      "input": "mastersystem",
+      "label": "Master System ",
+      "folder": "master-system",
+      "aliasOf": "Master System ",
+      "sourceLine": 76,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": true,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L76"
+    },
+    {
+      "input": "n64",
+      "label": "Nintendo 64",
+      "folder": "nintendo-64",
+      "aliasOf": "Nintendo 64",
+      "sourceLine": 77,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L77"
+    },
+    {
+      "input": "n64br",
+      "label": "Nintendo 64 - BR",
+      "folder": "nintendo-64--br",
+      "aliasOf": "Nintendo 64 - BR",
+      "sourceLine": 78,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L78"
+    },
+    {
+      "input": "nds",
+      "label": "Nintendo DS",
+      "folder": "nintendo-ds",
+      "aliasOf": "Nintendo DS",
+      "sourceLine": 79,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L79"
+    },
+    {
+      "input": "neogeo",
+      "label": "Neo Geo",
+      "folder": "neo-geo",
+      "aliasOf": "Neo Geo",
+      "sourceLine": 80,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L80"
+    },
+    {
+      "input": "neogeocd",
+      "label": "Neo Geo CD",
+      "folder": "neo-geo-cd",
+      "aliasOf": "Neo Geo CD",
+      "sourceLine": 81,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L81"
+    },
+    {
+      "input": "nes",
+      "label": "Nintendinho",
+      "folder": "nintendinho",
+      "aliasOf": "Nintendinho",
+      "sourceLine": 82,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L82"
+    },
+    {
+      "input": "o2em",
+      "label": "Odyssey 2",
+      "folder": "odyssey-2",
+      "aliasOf": "Odyssey 2",
+      "sourceLine": 83,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L83"
+    },
+    {
+      "input": "pcengine",
+      "label": "Pc Engine",
+      "folder": "pc-engine",
+      "aliasOf": "Pc Engine",
+      "sourceLine": 84,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L84"
+    },
+    {
+      "input": "pcenginecd",
+      "label": "Pc Engine cd",
+      "folder": "pc-engine-cd",
+      "aliasOf": "Pc Engine cd",
+      "sourceLine": 85,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L85"
+    },
+    {
+      "input": "psx",
+      "label": "Playstation 1",
+      "folder": "psx",
+      "aliasOf": "Playstation 1",
+      "sourceLine": 86,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L86"
+    },
+    {
+      "input": "switch",
+      "label": "Switch",
+      "folder": "switch",
+      "aliasOf": "Switch",
+      "sourceLine": 87,
+      "inputTrailingSpace": false,
+      "labelTrailingSpace": false,
+      "sourceUrl": "https://github.com/luziellacerda/TurboElden/blob/629a55a8cf48722460007944cf0bb737e9f8fb75/versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java#L87"
+    }
+  ],
+  "nativeBindings": {
+    "sourceSha256": "a1ae357dc29caac52d47386a71a0a9a685ecffb9c01d536f5af50b5ba658cda8",
+    "outputSha256": "62ad07ba8e62e3227d488f9075eb15167c2e95b721c43e480e2535b4319467f6",
+    "originalSymbolsPreserved": 4409,
+    "replacements": [
+      {
+        "entry": "0x18f790",
+        "bytesRemoved": 3316,
+        "oldSha256": "02767e365b72a502db3c335d13a9574e2d44c3422fb3b5263a72260130cbe284",
+        "replacement": "StationCatalog_refresh"
+      },
+      {
+        "entry": "0x192b48",
+        "bytesRemoved": 52,
+        "oldSha256": "c2f6955c7e6d70a2a755cbbc617afc3e88f19ae186e3d833aa00f2c60f813786",
+        "replacement": "StationCatalog_update"
+      },
+      {
+        "entry": "0x192b7c",
+        "bytesRemoved": 916,
+        "oldSha256": "5506c54b914d2ca5152fd0d7070c70103d2f6fad4c986e853edc215429eb6156",
+        "replacement": "StationCatalog_update"
+      },
+      {
+        "entry": "0x192f10",
+        "bytesRemoved": 3564,
+        "oldSha256": "ac64c4bab79ef3b48a6a24e070c505fbbd5bdb9be9a99a80c5dc3e74d6028a1d",
+        "replacement": "StationCatalog_update"
+      },
+      {
+        "entry": "0x193cfc",
+        "bytesRemoved": 932,
+        "oldSha256": "83852408cac45c2deb4dc7e62136159b3bb563fad5d1b0589d218a7a00a91f87",
+        "replacement": "StationCatalog_update"
+      },
+      {
+        "entry": "0x194924",
+        "bytesRemoved": 316,
+        "oldSha256": "647845a4f6579907b5eb000694434ea07595d4f76849bce2855e565523e5aafa",
+        "replacement": "StationCatalog_applyPending"
+      },
+      {
+        "entry": "0x194a60",
+        "bytesRemoved": 2588,
+        "oldSha256": "9c2e58e6d5c5138807f99e654887526e65cf214a3bea5b487d1e014e997141eb",
+        "replacement": "StationCatalog_refreshInstalled"
+      },
+      {
+        "entry": "0x195c28",
+        "bytesRemoved": 760,
+        "oldSha256": "ac0d0e940b40553edc7bcc508e7f69c1637bd7e1ee816396f9c19cd87405b607",
+        "replacement": "StationCatalog_update"
+      },
+      {
+        "entry": "0x196020",
+        "bytesRemoved": 400,
+        "oldSha256": "f1e136276b5432220a55a7a8be91265bf40e8abc81a4a89e8e257609a323c64b",
+        "replacement": "StationCatalog_prioritize"
+      },
+      {
+        "entry": "0x1961ec",
+        "bytesRemoved": 1672,
+        "oldSha256": "c502bf9e603570cb3120e3a1e6416142aea5138ec62f4742e90a6a3f32a68b33",
+        "replacement": "StationCatalog_start"
+      },
+      {
+        "entry": "0x196a2c",
+        "bytesRemoved": 148,
+        "oldSha256": "3bf0e8231f70ac6be6c9848216888b26b403ee39be0709a89c394fc39b8fbb4a",
+        "replacement": "StationCatalog_cancel"
+      },
+      {
+        "entry": "0x196ac0",
+        "bytesRemoved": 160,
+        "oldSha256": "7089dff844d39b49a539688f00fee38db27f47963c19334fe40696063931798c",
+        "replacement": "StationCatalog_active"
+      },
+      {
+        "entry": "0x196c40",
+        "bytesRemoved": 148,
+        "oldSha256": "17772ffef79c2b8704b15198e7a31c8b0ebc7faf59e9043bdb5d95a7bdcb743d",
+        "replacement": "StationCatalog_progress"
+      },
+      {
+        "entry": "0x196cd4",
+        "bytesRemoved": 1928,
+        "oldSha256": "77a2cf6603f8d756e3d0792086ab1eae8dd0f9c59b005556dddafd61faff1d4f",
+        "replacement": "StationCatalog_uninstall"
+      },
+      {
+        "entry": "0x1a2524",
+        "bytesRemoved": 1568,
+        "oldSha256": "2ab525b515bcd2d12e58e14dc9e8496668102ab97a23800b3d732d0f2bb34880",
+        "replacement": "StationLicense_sync"
+      },
+      {
+        "entry": "0x1a2b44",
+        "bytesRemoved": 12,
+        "oldSha256": "8dcc2d4a7273e5478b28691e40a9780d554c6716b8637f9139bbb2e68029019f",
+        "replacement": "StationLicense_enter"
+      },
+      {
+        "entry": "0x1a2b50",
+        "bytesRemoved": 1528,
+        "oldSha256": "19c32527923c8067d3660fc56b054c5bb935beb4eb53a385ce0f40be50f21343",
+        "replacement": "StationLicense_enter"
+      },
+      {
+        "entry": "0x1a3148",
+        "bytesRemoved": 8,
+        "oldSha256": "279c8662900db67fe95a2283396e38463a24a230285879fc36600774605a4ac2",
+        "replacement": "StationLicense_enter"
+      },
+      {
+        "entry": "0x1a3150",
+        "bytesRemoved": 256,
+        "oldSha256": "831ca7dfbaf34ea5afcb1ddf1a960e7714dce5ff6c93972dc596e571ece04b76",
+        "replacement": "StationLicense_enter"
+      },
+      {
+        "entry": "0x1a34b8",
+        "bytesRemoved": 4540,
+        "oldSha256": "81c0830bb7d9da76c80be60e67f3be9c577a6f5623ce9d2acd5daf908acdc27a",
+        "replacement": "StationLicense_sync"
+      },
+      {
+        "entry": "0x1a4674",
+        "bytesRemoved": 740,
+        "oldSha256": "e384e354b10d4605e6376c4c9045857e2ffb67b1e316119827aac08a7ad4b2dc",
+        "replacement": "StationLicense_sync"
+      },
+      {
+        "entry": "0x1a4ef0",
+        "bytesRemoved": 820,
+        "oldSha256": "455e6626d29d2957e478aba2e215e813a39bbe12d69c231bfe70935bb102c236",
+        "replacement": "StationLicense_sync"
+      },
+      {
+        "entry": "0x1a7f4c",
+        "bytesRemoved": 456,
+        "oldSha256": "bd2162cd3d21c8b3ba57ed6bf3accc3d9c4405297fde9fb115ab52a1ba325aa4",
+        "replacement": "StationStats_init"
+      },
+      {
+        "entry": "0x1af374",
+        "bytesRemoved": 1852,
+        "oldSha256": "848731e2ae34d4f41287faf673eedfc41fd7455e278736a4426b267ef501ac18",
+        "replacement": "StationStats_update"
+      },
+      {
+        "entry": "0x1ab780",
+        "bytesRemoved": 88,
+        "oldSha256": "ebc392010b3495c667b16a53e3fb741c2f5f1ce836f7c8e260dc303997adc815",
+        "replacement": "StationStats_background"
+      },
+      {
+        "entry": "0x1aeb50",
+        "bytesRemoved": 828,
+        "oldSha256": "751cc15ed32624250d06e5851cce04c5c2bf17e5cb63acebbfc2a6fc8d1b8e55",
+        "replacement": "StationStats_start"
+      },
+      {
+        "entry": "0x1aad58",
+        "bytesRemoved": 1944,
+        "oldSha256": "eb0812994699bc9d55c054b8e1133b098a1de4bfc1d1d3a43c8d238d676e0216",
+        "replacement": "StationStats_end"
+      },
+      {
+        "entry": "0x1aa850",
+        "bytesRemoved": 1288,
+        "oldSha256": "69dc31695bca3bf493fcf876884c5b72a2cd1adb92935d5d705c7b9fa7102a71",
+        "replacement": "StationStats_shutdown"
+      },
+      {
+        "entry": "0x1ab4f0",
+        "bytesRemoved": 196,
+        "oldSha256": "3b02ab22debca84881809e0d3234a6552ed8e0e6ca00fc6c9da2a49ade8bf58f",
+        "replacement": "StationStats_event"
+      },
+      {
+        "entry": "0x18e4c4",
+        "bytesRemoved": 1592,
+        "oldSha256": "3e8aee835ade39b46c79a795f2333ea44a005c4a6869f889301e333f7304fd3f",
+        "replacement": "StationCore_request"
+      },
+      {
+        "entry": "0x18eafc",
+        "bytesRemoved": 676,
+        "oldSha256": "3888c4139e139630a70c7e037f46b2bd8c5f79944c2dc531f77824cbcf458f8d",
+        "replacement": "StationCore_request"
+      },
+      {
+        "entry": "0x2292e0",
+        "bytesRemoved": 336,
+        "oldSha256": "091b88fd4f21e63bf8dbfe6e7cec3790706852aeca3f5a138b131a2065ffbeaf",
+        "replacement": "StationLoading_draw"
+      }
+    ],
+    "apkIntegrated": false,
+    "legacyRemovalComplete": false
+  },
+  "nativeBindingSourceCount": 32,
+  "nativeBindingSourceMismatches": [],
+  "testEvidenceVerification": {
+    "evidencePath": "versions/station-reconstruction-20261002/evidence/test-results.json",
+    "sourceHashCount": 24,
+    "publishedMismatchCount": 0,
+    "workingTreeMismatchCount": 0,
+    "javaSourcesMissingFromTestHashList": [],
+    "results": [
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/DownloadService.java",
+        "recordedSha256": "49b2994e4a213e861cfcef5ce0e353789f7f88928fec5f8b7e3b8ceb6f594c5f",
+        "publishedSha256": "49b2994e4a213e861cfcef5ce0e353789f7f88928fec5f8b7e3b8ceb6f594c5f",
+        "matches": true,
+        "workingTreeSha256": "49b2994e4a213e861cfcef5ce0e353789f7f88928fec5f8b7e3b8ceb6f594c5f",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/auth/LoginActivity.java",
+        "recordedSha256": "f515a3bd3846bce66aacb14a0c34a2a90251a292ec3b7701f6cdcbda33ab7557",
+        "publishedSha256": "f515a3bd3846bce66aacb14a0c34a2a90251a292ec3b7701f6cdcbda33ab7557",
+        "matches": true,
+        "workingTreeSha256": "f515a3bd3846bce66aacb14a0c34a2a90251a292ec3b7701f6cdcbda33ab7557",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/auth/StationLogin.java",
+        "recordedSha256": "191549ba86fed13573b27258c867ece3a536f99573330d9f75889522774ae4ce",
+        "publishedSha256": "191549ba86fed13573b27258c867ece3a536f99573330d9f75889522774ae4ce",
+        "matches": true,
+        "workingTreeSha256": "191549ba86fed13573b27258c867ece3a536f99573330d9f75889522774ae4ce",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/ExistingCoverCache.java",
+        "recordedSha256": "41796c41b27efc4e9a53d20b7ed606e37d7b4d168cb7638059cf368e8d533d28",
+        "publishedSha256": "41796c41b27efc4e9a53d20b7ed606e37d7b4d168cb7638059cf368e8d533d28",
+        "matches": true,
+        "workingTreeSha256": "41796c41b27efc4e9a53d20b7ed606e37d7b4d168cb7638059cf368e8d533d28",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationAndroid.java",
+        "recordedSha256": "e8ec2fa01b2672bfe611a6129b8be189b568c9e7aa4123de5bf22b9690d671ce",
+        "publishedSha256": "e8ec2fa01b2672bfe611a6129b8be189b568c9e7aa4123de5bf22b9690d671ce",
+        "matches": true,
+        "workingTreeSha256": "e8ec2fa01b2672bfe611a6129b8be189b568c9e7aa4123de5bf22b9690d671ce",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationApi.java",
+        "recordedSha256": "8aab9ec0800d9e2499f57eba96b5c323e762f89f52d776a09005a31c18c11df1",
+        "publishedSha256": "8aab9ec0800d9e2499f57eba96b5c323e762f89f52d776a09005a31c18c11df1",
+        "matches": true,
+        "workingTreeSha256": "8aab9ec0800d9e2499f57eba96b5c323e762f89f52d776a09005a31c18c11df1",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationArchive.java",
+        "recordedSha256": "107669c6885725d99b430e7340c550466eed24a2842d43b51526c673a9d51b86",
+        "publishedSha256": "107669c6885725d99b430e7340c550466eed24a2842d43b51526c673a9d51b86",
+        "matches": true,
+        "workingTreeSha256": "107669c6885725d99b430e7340c550466eed24a2842d43b51526c673a9d51b86",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationArtifact.java",
+        "recordedSha256": "fe6eee3c4dfaaf66ac68eb0096b6ff0dc7792fa377dadf5898b5ea06e803bac9",
+        "publishedSha256": "fe6eee3c4dfaaf66ac68eb0096b6ff0dc7792fa377dadf5898b5ea06e803bac9",
+        "matches": true,
+        "workingTreeSha256": "fe6eee3c4dfaaf66ac68eb0096b6ff0dc7792fa377dadf5898b5ea06e803bac9",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCatalog.java",
+        "recordedSha256": "827faed485e12b16583d3d2cc243a43318674b72b9a8c449000eef61f9106cff",
+        "publishedSha256": "827faed485e12b16583d3d2cc243a43318674b72b9a8c449000eef61f9106cff",
+        "matches": true,
+        "workingTreeSha256": "827faed485e12b16583d3d2cc243a43318674b72b9a8c449000eef61f9106cff",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCatalogStore.java",
+        "recordedSha256": "9d4d119f54fe28be65f90efc65f2f7d81062089eaa5e5cebf6f186c10e3c8de6",
+        "publishedSha256": "9d4d119f54fe28be65f90efc65f2f7d81062089eaa5e5cebf6f186c10e3c8de6",
+        "matches": true,
+        "workingTreeSha256": "9d4d119f54fe28be65f90efc65f2f7d81062089eaa5e5cebf6f186c10e3c8de6",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationConfig.java",
+        "recordedSha256": "baef1b9c96358715980f9e172b9ca2fbf13acf141c13253298d7b0b12ceed6cc",
+        "publishedSha256": "baef1b9c96358715980f9e172b9ca2fbf13acf141c13253298d7b0b12ceed6cc",
+        "matches": true,
+        "workingTreeSha256": "baef1b9c96358715980f9e172b9ca2fbf13acf141c13253298d7b0b12ceed6cc",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCoordinator.java",
+        "recordedSha256": "efd1877eaef409a255508d1d5b2d8eb957ab39f13badca2ef9defee06cf1a258",
+        "publishedSha256": "efd1877eaef409a255508d1d5b2d8eb957ab39f13badca2ef9defee06cf1a258",
+        "matches": true,
+        "workingTreeSha256": "efd1877eaef409a255508d1d5b2d8eb957ab39f13badca2ef9defee06cf1a258",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCoverStore.java",
+        "recordedSha256": "fd15ef8bb328d8bc35be1bbdc28bf1a3dc7f30eaea65a17263efec586aefc205",
+        "publishedSha256": "fd15ef8bb328d8bc35be1bbdc28bf1a3dc7f30eaea65a17263efec586aefc205",
+        "matches": true,
+        "workingTreeSha256": "fd15ef8bb328d8bc35be1bbdc28bf1a3dc7f30eaea65a17263efec586aefc205",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationCrypto.java",
+        "recordedSha256": "8a60e9fd96dbfa3d8098b9e913e2ea8141ef13b76bf6cae264b47f841dd302d7",
+        "publishedSha256": "8a60e9fd96dbfa3d8098b9e913e2ea8141ef13b76bf6cae264b47f841dd302d7",
+        "matches": true,
+        "workingTreeSha256": "8a60e9fd96dbfa3d8098b9e913e2ea8141ef13b76bf6cae264b47f841dd302d7",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationDiagnostics.java",
+        "recordedSha256": "b989c57c9b795d43aa961a371f13dfa01871c51af3e707091db4f700f93acb1d",
+        "publishedSha256": "b989c57c9b795d43aa961a371f13dfa01871c51af3e707091db4f700f93acb1d",
+        "matches": true,
+        "workingTreeSha256": "b989c57c9b795d43aa961a371f13dfa01871c51af3e707091db4f700f93acb1d",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationDownloads.java",
+        "recordedSha256": "84d885a5bca8286d2e4cb96b1d3edc413806e0432f026150ce4087362d329097",
+        "publishedSha256": "84d885a5bca8286d2e4cb96b1d3edc413806e0432f026150ce4087362d329097",
+        "matches": true,
+        "workingTreeSha256": "84d885a5bca8286d2e4cb96b1d3edc413806e0432f026150ce4087362d329097",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationExistingArtifact.java",
+        "recordedSha256": "13cf0fd8b08fd83ddfa813c86d792b60034c48a9b405efc4f593b03199c6016c",
+        "publishedSha256": "13cf0fd8b08fd83ddfa813c86d792b60034c48a9b405efc4f593b03199c6016c",
+        "matches": true,
+        "workingTreeSha256": "13cf0fd8b08fd83ddfa813c86d792b60034c48a9b405efc4f593b03199c6016c",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationFiles.java",
+        "recordedSha256": "c0da9cf2e54702d8c4f0c8f6ef09300ce35194a0d182f6b5cf2175e1bbd54f7b",
+        "publishedSha256": "c0da9cf2e54702d8c4f0c8f6ef09300ce35194a0d182f6b5cf2175e1bbd54f7b",
+        "matches": true,
+        "workingTreeSha256": "c0da9cf2e54702d8c4f0c8f6ef09300ce35194a0d182f6b5cf2175e1bbd54f7b",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationFrontend.java",
+        "recordedSha256": "40efb17ccc01b568640163b1c5cf15b90299412bb860d0f0e892a1d4af979400",
+        "publishedSha256": "40efb17ccc01b568640163b1c5cf15b90299412bb860d0f0e892a1d4af979400",
+        "matches": true,
+        "workingTreeSha256": "40efb17ccc01b568640163b1c5cf15b90299412bb860d0f0e892a1d4af979400",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationHttp.java",
+        "recordedSha256": "adc643c944bab0006dcdb9b9419030418662dbe4897751ed8ab943f335c3f940",
+        "publishedSha256": "adc643c944bab0006dcdb9b9419030418662dbe4897751ed8ab943f335c3f940",
+        "matches": true,
+        "workingTreeSha256": "adc643c944bab0006dcdb9b9419030418662dbe4897751ed8ab943f335c3f940",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationInstaller.java",
+        "recordedSha256": "8e2531a55390ad2ffb54d8c34da2c0675945778a2eee644b31f131c33b14aa2b",
+        "publishedSha256": "8e2531a55390ad2ffb54d8c34da2c0675945778a2eee644b31f131c33b14aa2b",
+        "matches": true,
+        "workingTreeSha256": "8e2531a55390ad2ffb54d8c34da2c0675945778a2eee644b31f131c33b14aa2b",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationPlatforms.java",
+        "recordedSha256": "2268bcbae3551ee9e6749f5f76e5f47a9d84ad1e1bbd8142dda7ca865782ee7f",
+        "publishedSha256": "2268bcbae3551ee9e6749f5f76e5f47a9d84ad1e1bbd8142dda7ca865782ee7f",
+        "matches": true,
+        "workingTreeSha256": "2268bcbae3551ee9e6749f5f76e5f47a9d84ad1e1bbd8142dda7ca865782ee7f",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationProtocol.java",
+        "recordedSha256": "e9298f033dff87bdca458e73d1ec7e084688acb5b750db2dfbf98b1fd7243114",
+        "publishedSha256": "e9298f033dff87bdca458e73d1ec7e084688acb5b750db2dfbf98b1fd7243114",
+        "matches": true,
+        "workingTreeSha256": "e9298f033dff87bdca458e73d1ec7e084688acb5b750db2dfbf98b1fd7243114",
+        "workingTreeMatchesRecorded": true
+      },
+      {
+        "path": "versions/station-reconstruction-20261002/src/java/org/emulationstation/frontend/station/StationSessions.java",
+        "recordedSha256": "ca26978f91e992a20ec69f31c489c2a50d8a892ceec857902c201a78400ead5a",
+        "publishedSha256": "ca26978f91e992a20ec69f31c489c2a50d8a892ceec857902c201a78400ead5a",
+        "matches": true,
+        "workingTreeSha256": "ca26978f91e992a20ec69f31c489c2a50d8a892ceec857902c201a78400ead5a",
+        "workingTreeMatchesRecorded": true
+      }
+    ],
+    "testsExecutedDuringThisReview": false
+  },
+  "buildStageEvidence": {
+    "frontendManifest": {
+      "library": "E:\\ESTUDO APK\\work\\turbostations-reconstruction-20261002\\build\\native\\arm64-v8a\\libstation_frontend.so",
+      "sha256": "437d0a0a48038b7419148606a176482a458b6a43824eb5a50c232dd7f1c64864",
+      "size": 2964776,
+      "apkIntegrated": false
+    },
+    "nativeManifestApkIntegrated": false,
+    "explanation": "apkIntegrated=false is written at standalone library/link stage; final package/install evidence is separate. Historical manifests were not edited."
+  },
+  "finalPackageEvidence": {
+    "reportSource": "versions/station-reconstruction-20261002/evidence/apk-report.json",
+    "closureSource": "versions/station-reconstruction-20261002/evidence/closure-validation.json",
+    "apkSha256Recorded": "f5b35419fcff4188b8e86690045371892c77933e7f8edfc07bce1d5bd25d418a",
+    "installedSha256Recorded": "f5b35419fcff4188b8e86690045371892c77933e7f8edfc07bce1d5bd25d418a",
+    "hashesAgree": true,
+    "deviceInstalled": true,
+    "preservedEntryCount": 10803,
+    "manifestUnchanged": true,
+    "fullAuthenticatedFlowVerified": false,
+    "legacyNativeRemovalComplete": false
+  },
+  "localApkEntryReadback": {
+    "artifact": "E:\\ESTUDO APK\\work\\turbostations-reconstruction-20261002\\build\\apk\\TurboStations-Station-CANDIDATO-20261003.apk",
+    "available": true,
+    "entries": [
+      {
+        "entry": "classes5.dex",
+        "sha256": "f206133216aac88b93c322729f639a23dafaee2bee33df14fc0894290279653a",
+        "bytes": 40432
+      },
+      {
+        "entry": "classes6.dex",
+        "sha256": "f19dd92662fd066611c0e9feefd5c814bc06110f27fda50c2b3a63565965ba95",
+        "bytes": 96044
+      },
+      {
+        "entry": "classes8.dex",
+        "sha256": "1f099e70e5d5220e46fa92d6ac8743f26bd70c63f2ebc99f4316db970cad90a5",
+        "bytes": 11664
+      },
+      {
+        "entry": "classes28.dex",
+        "sha256": "2a32c899e9a3f6177c4106ba4919af2b6f5376ef7e4fda82a2cb81883a37f4b1",
+        "bytes": 116544
+      },
+      {
+        "entry": "lib/arm64-v8a/libmain.so",
+        "sha256": "62ad07ba8e62e3227d488f9075eb15167c2e95b721c43e480e2535b4319467f6",
+        "bytes": 4588272
+      },
+      {
+        "entry": "lib/arm64-v8a/libstation_frontend.so",
+        "sha256": "437d0a0a48038b7419148606a176482a458b6a43824eb5a50c232dd7f1c64864",
+        "bytes": 2964776
+      },
+      {
+        "entry": "lib/arm64-v8a/libstation_archive.so",
+        "sha256": "9b6576b07b3e44dc48e5ec478cfb8db16852aa1aca0a7895cb567e7b57ff8c7a",
+        "bytes": 1732864
+      }
+    ],
+    "frontendMatchesStageManifest": true,
+    "libmainMatchesNativeLinkManifest": true,
+    "wholeApkRehashedDuringReview": false,
+    "note": "Only named ZIP entries were read. Full APK/device hash remains previously recorded evidence; no installation or execution performed."
+  },
+  "workingTreeLineEndingOnlyCount": 16,
+  "workingTreeContentMismatchCount": 0
+}
