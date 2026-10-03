@@ -2,8 +2,8 @@
 """Inventory game/cover pairs from SNES and Mega Drive gamelist.xml files.
 
 This is a disk reference, not the authenticated Station catalog. It exports no
-private paths. Magazine covers are paired only by an exact ROM/cover stem match;
-multiple matches remain ambiguous and require an explicit choice in the index.
+private paths. Magazine covers use an exact ROM stem and folder match. The selected
+hash is exported separately from XML images and other revista variants.
 """
 
 import argparse
@@ -15,6 +15,8 @@ from xml.etree import ElementTree
 
 from PIL import Image
 
+from station_revista import select_revista_cover
+
 
 IMAGE_MIME = {"PNG": "image/png", "JPEG": "image/jpeg",
               "WEBP": "image/webp", "GIF": "image/gif"}
@@ -24,7 +26,8 @@ FIELDS = ["platform", "xmlEntry", "collection", "name", "gamePresent",
           "gameSizeBytes", "gameSha256", "xmlCoverStatus", "xmlCoverMime",
           "xmlCoverSizeBytes", "xmlCoverWidth", "xmlCoverHeight", "xmlCoverSha256",
           "revistaCandidateCount", "revistaValidCount", "revistaDistinctHashCount",
-          "revistaCandidateSha256"]
+          "revistaCandidateSha256", "revistaSelectionStatus",
+          "revistaSelectionRule", "revistaSelectedSha256"]
 
 
 def sha256(path):
@@ -94,6 +97,12 @@ def collect(root, platform, cache):
         candidates = magazine[game_path.stem]
         inspected = [image_info(candidate, cache) for candidate in candidates]
         valid_hashes = [info[5] for info in inspected if info[0] == "ok"]
+        try:
+            _, revista_rule, revista_hash = select_revista_cover(
+                platform_root, game_path, magazine)
+            revista_status = "ok"
+        except ValueError:
+            revista_status, revista_rule, revista_hash = "unresolved", "", ""
         result.append({
             "platform": platform, "xmlEntry": ordinal,
             "collection": "pt-br" if collection_folder in Path(relative_game).parts
@@ -107,7 +116,10 @@ def collect(root, platform, cache):
             "revistaCandidateCount": len(candidates),
             "revistaValidCount": sum(info[0] == "ok" for info in inspected),
             "revistaDistinctHashCount": len(set(valid_hashes)),
-            "revistaCandidateSha256": ";".join(sorted(valid_hashes)) or "-"
+            "revistaCandidateSha256": ";".join(sorted(valid_hashes)) or "-",
+            "revistaSelectionStatus": revista_status,
+            "revistaSelectionRule": revista_rule,
+            "revistaSelectedSha256": revista_hash
         })
     return result
 

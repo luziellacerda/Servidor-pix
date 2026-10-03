@@ -17,18 +17,12 @@ import sys
 from xml.etree import ElementTree
 import zipfile
 
-from PIL import Image
+from station_revista import EXTENSION_MIME, select_revista_cover
 
 
 PLATFORMS = ("snes", "megadrive")
 ROM_MEMBERS = {"snes": {".sfc", ".smc", ".swc", ".fig"},
                "megadrive": {".bin", ".md", ".gen", ".smd"}}
-IMAGE_MIME = {"PNG": "image/png", "JPEG": "image/jpeg",
-              "WEBP": "image/webp", "GIF": "image/gif"}
-EXTENSION_MIME = {".png": "image/png", ".jpg": "image/jpeg",
-                  ".jpeg": "image/jpeg", ".webp": "image/webp",
-                  ".gif": "image/gif"}
-
 
 def digest(path):
     hashed = hashlib.sha256()
@@ -47,40 +41,9 @@ def checked_path(root, relative):
     return path
 
 
-def image_hash(path):
-    if not path.is_file() or not 1 <= path.stat().st_size <= 5 * 1024 * 1024:
-        return None
-    try:
-        with Image.open(path) as image:
-            mime = IMAGE_MIME.get(image.format)
-            width, height = image.size
-            image.verify()
-        if width < 1 or height < 1 or EXTENSION_MIME.get(path.suffix.lower()) != mime:
-            return None
-        return digest(path)
-    except (OSError, ValueError, SyntaxError):
-        return None
-
-
 def select_cover(root, game, rom, magazine, expected):
-    declared = game.findtext("image")
-    if declared:
-        candidate = checked_path(root, declared)
-        cover_hash = image_hash(candidate)
-        if cover_hash:
-            if cover_hash != expected["xmlCoverSha256"]:
-                raise ValueError("XML cover changed since disk inventory")
-            return candidate, "xml"
-    options = []
-    for candidate in magazine[rom.stem]:
-        cover_hash = image_hash(candidate)
-        if cover_hash:
-            options.append((candidate, cover_hash))
-    if not options or len({value for _, value in options}) != 1:
-        raise ValueError("cover fallback missing or has different image contents")
-    if options[0][1] not in expected["revistaCandidateSha256"].split(";"):
-        raise ValueError("cover fallback changed since disk inventory")
-    return sorted(options, key=lambda pair: str(pair[0]))[0][0], "revista"
+    candidate, _, _ = select_revista_cover(root, rom, magazine, expected)
+    return candidate, "revista"
 
 
 def curated_zip(source, target, platform):

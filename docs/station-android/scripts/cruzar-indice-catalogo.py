@@ -31,7 +31,8 @@ FIELDS = ["platform", "itemId", "name", "itemRevision", "coverId",
           "indexCoverSizeBytes", "indexCoverSha256", "diskExactNameCandidates",
           "diskExactHashCandidates", "diskCoverHashCandidates", "sourcePlatform",
           "sourceCollection", "sourceXmlEntry", "sourceGameSha256", "sourceNameMatch", "sourceRomMatch",
-          "sourceCoverMatch", "diagnosticItemTag", "diagnosticCoverTag"]
+          "sourceCoverMatch", "sourceXmlCoverMatch", "sourceRevistaMatch",
+          "sourceRevistaSha256", "sourceRevistaRule", "diagnosticItemTag", "diagnosticCoverTag"]
 
 
 def unique_pairs(pairs):
@@ -126,8 +127,12 @@ def main():
                         help="private output from exportar-catalogo-assinado.py")
     parser.add_argument("--source-map", type=Path,
                         help="private candidate source map, to verify exact XML entry")
+    parser.add_argument("--require-revista", action="store_true",
+                        help="fail unless every cover matches the selected revista image")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
+    if args.require_revista and (not args.source_map or not args.disk_tsv):
+        parser.error("revista verification requires source map and disk snapshot")
     if args.output.resolve() == args.index.resolve():
         parser.error("output must differ from the private index")
     if args.catalog_tsv and args.output.resolve() == args.catalog_tsv.resolve():
@@ -218,6 +223,12 @@ def main():
         source_cover_match = "" if source_row is None else (
             "yes" if cover[3] and (cover[3] == source_disk["xmlCoverSha256"] or
             cover[3] in source_disk["revistaCandidateSha256"].split(";")) else "no")
+        selected_revista_hash = source_disk.get("revistaSelectedSha256", "") if source_disk else ""
+        source_revista_match = "not_supplied" if not selected_revista_hash else (
+            "yes" if cover[3] == selected_revista_hash and
+            source_disk.get("revistaSelectionStatus") == "ok" else "no")
+        if args.require_revista and source_revista_match != "yes":
+            parser.error("indexed cover differs from selected revista for item " + item_id)
         output.append({"platform": platform, "itemId": item_id, "name": name,
             "itemRevision": item_revision, "coverId": cover_id,
             "catalogVisible": "no" if row.get("catalogVisible") is False else "yes",
@@ -242,6 +253,11 @@ def main():
             "sourceNameMatch": source_name_match,
             "sourceRomMatch": source_rom_match,
             "sourceCoverMatch": source_cover_match,
+            "sourceXmlCoverMatch": "" if source_disk is None else (
+                "yes" if cover[3] and cover[3] == source_disk["xmlCoverSha256"] else "no"),
+            "sourceRevistaMatch": source_revista_match,
+            "sourceRevistaSha256": selected_revista_hash,
+            "sourceRevistaRule": source_disk.get("revistaSelectionRule", "") if source_disk else "",
             "diagnosticItemTag": hashlib.sha256(item_id.encode("utf-8")).hexdigest(),
             "diagnosticCoverTag": hashlib.sha256(cover_id.encode("utf-8")).hexdigest()})
     if sources is not None and len(sources) != len(output):
@@ -272,6 +288,8 @@ def main():
                                           for row in output).items())) if sources is not None else None,
         "sourceCoverMatchCounts": dict(sorted(Counter(row["sourceCoverMatch"]
                                           for row in output).items())) if sources is not None else None,
+        "sourceRevistaMatchCounts": dict(sorted(Counter(row["sourceRevistaMatch"]
+                                          for row in output).items())),
         "sharedCoverIds": len(output) - len(cover_ids)}, ensure_ascii=False,
         sort_keys=True))
 
