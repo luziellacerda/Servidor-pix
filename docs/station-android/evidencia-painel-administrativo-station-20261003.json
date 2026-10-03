@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-03T18:23:10.220158-03:00",
+  "publishedEvidenceAt": "2026-10-03T18:15:21.004483-03:00",
+  "adminUrl": "https://turbobox.lzgames.com.br/admin/station",
+  "deployment": {
+    "applied": true,
+    "sourceRevision": "deda92ca3c575f6f367053e9c8cbd6226128b879",
+    "dllSha256": "15b5a2c94562f8a915c1cb46d7c2b4e3246febdc438473992931b93f88684260",
+    "siteSha256": {
+      "station-admin.php": "7ad34b75e89a12ac4d6107218a86522e9e69425556de3e5716581762100a5a18",
+      "station-admin-policy.php": "cda55c20a8c61dc906e2923dcb4df57616c2543eb715d7c18d5a2178c18d99ae",
+      "station-admin.css": "e3dd869427a1f4fa02ebe7dcda2b6c568da61bf8a4c45369e448d56059e3cbbd",
+      "station-admin.js": "83f0b6902fd736ff149805bb35a2672b5ddbd18e42100c68e352961ee848f3b4",
+      "station-lib.php": "4e9bcb79e88b536896fbb7b3593362c95ef962d00dee7e880fbbd870e22af5db"
+    },
+    "helperSha256": "32f03a3a34e8be106fd91bd1b85dcdc5f45ff55cb719c4d93ab1932125b6c01b",
+    "migrationSha256": "631b6737b19804a26a5e5bc4fb95a62070ad72d2b7bd0fe70c71009d57636e6d",
+    "databaseRestoreVerified": true,
+    "migrationApplied": true,
+    "deploymentScriptSha256": "6d67a485b0aae60eb45a3e1d209af7b2e7da7dd3d7e7c4bec1863372cf10342a",
+    "sharedPidsUnchanged": true,
+    "contentIndexUnchanged": true,
+    "fpmReload": false,
+    "management": {
+      "pid": 140743,
+      "active": "active"
+    },
+    "helper": {
+      "pid": 140751,
+      "active": "active"
+    },
+    "productionChecks": {
+      "customerNotificationsSent": false,
+      "realCustomerWrites": false,
+      "syntheticManagementActions": true,
+      "sameLicenseAcrossThreeKeys": true,
+      "code30m": true,
+      "purchase48h": true,
+      "codeCancelDenied": true,
+      "repeatedRequestDenied": true,
+      "oldDeviceDenied": true,
+      "oldSessionDenied": true,
+      "blockUnblockVerified": true,
+      "reinstallationVerified": true,
+      "reconnectVerified": true,
+      "historyVerified": true,
+      "syntheticRowsRemoved": true,
+      "publicAdminRequiresLogin": true,
+      "publicAssetsHashVerified": true
+    }
+  },
+  "validation": {
+    "finalPublishedDllHttpTemporaryDatabase": "passed",
+    "adminSelfTest": "passed",
+    "contentAdminSelfTest": "passed",
+    "browser": {
+      "desktopWidth": 1440,
+      "mobileWidth": 390,
+      "viewportOverflow": false,
+      "mobileSupportButtonVisible": true,
+      "adminPasswordRejected": true,
+      "csrfRejected": true,
+      "pendingTransferHidden": true,
+      "codeAppearsOnce": true,
+      "codeStorage": false,
+      "whatsappOptIn": true,
+      "browserExceptions": 0,
+      "credentialsIncluded": false
+    }
+  },
+  "runtimeScope": {
+    "managementReadyStatus": 200,
+    "nonStationRouteStatus": 404,
+    "stationOnly": true,
+    "adminGeneralAuditReadPreexisting": true,
+    "migrationGrantsGeneralAuditRead": false,
+    "apiManagementAuditRead": false,
+    "apiCodeReceiptsRead": false,
+    "stationAuditHasNoOtherProduct": true,
+    "syntheticDeliveryRowsRemoved": true
+  },
+  "preservedApi": {
+    "sourceRevision": "fd13c0d27eaab6a4dcf931a9cd64c3dcd7dd50c4",
+    "mainPid": 88965,
+    "dllSha256": "f305ae3763cb77a53a27b2c168c8de290191b3a7e88e612850856b6f7be7e639",
+    "indexSha256": "5b460a6f9866e30a5a5b4dad24652c512b1187b3df01244e6af9308ae6b18342",
+    "revision": 3,
+    "visibleItems": 1816
+  },
+  "deploymentRecovery": {
+    "initialPreparationSourceRevision": "287753a745151bd6ef5db97b54e405194017230c",
+    "initialFailure": "management identity could not read the original protected activation credential",
+    "originalPageAndHelperRestored": true,
+    "syntheticRowsRemoved": true,
+    "resolvedWithSystemdLoadCredential": true,
+    "migration030NotReapplied": true
+  },
+  "limits": {
+    "realOperatorLoginInProduction": false,
+    "authenticatedBrowserUsedPrivateCopyWithSyntheticData": true,
+    "realPaymentProviderProven": false,
+    "apkAuthenticatedAfterRecoveryProven": false,
+    "credentialsOrCustomerIdentifiersIncluded": false
+  }
+}

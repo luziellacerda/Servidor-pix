@@ -1,8 +1,55 @@
 # Handoff técnico único: servidor, conexão e instalação do TurboStations Android
 
-Atualizado em 03/10/2026, 16h47 (America/Maceio). Preserva as evidências anteriores identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
+Atualizado em 03/10/2026, 18h20 (America/Maceio). Preserva as evidências anteriores identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.
 
-**Estado operacional atual:** API Station `fd13c0d`, catálogo revisão **3 / 1.816 jogos**, capas e downloads conferidos por HTTPS. O retorno Android `2834e3b` comprova APK novo **fa3bc844** instalado, com fonte 02c09dd e ponte JNI compiladas/testadas. A ativação403 foi diagnosticada: código consumido e licença vinculada à chave apagada na desinstalação. Às **16h47**, a mesma licença foi transferida oficialmente, a chave/sessões anteriores revogadas e um novo código entregue privadamente, válido até **17h17:36 de 03/10/2026**. A ativação pelo aparelho e o fluxo catálogo/capa/download/jogo ainda aguardam execução. Os estados anteriores de APK/produção abaixo são históricos; a matriz final foi atualizada.
+**Estado operacional atual:** API Station `fd13c0d`, catálogo revisão **3 / 1.816 jogos**, capas e downloads conferidos por HTTPS. A administração de licenças e aparelhos está **publicada e verificada**, fonte `deda92c`, em **https://turbobox.lzgames.com.br/admin/station**. A mesma licença pode receber novo código, liberar reinstalação/troca de aparelho, cancelar código, bloquear/desbloquear ou reconectar o aplicativo pelo site. O retorno Android `2834e3b` comprova APK novo **fa3bc844** instalado, com fonte02c09dd e ponte JNI compiladas/testadas. A recuperação real às16h47 está registrada abaixo; aquele código tinha validade até17h17:36 e é histórico. **A ativação do APK após essa recuperação e o fluxo catálogo/capa/download/jogo ainda não têm prova recebida neste Linux.** Consulte o estado atual no painel e gere outro código somente quando necessário. Os recortes anteriores continuam identificados por data.
+
+## Administração de licenças e aparelhos publicada — 03/10/2026, 18h15; conferida até18h20
+
+### Uso por quem atende o cliente
+
+Abra **[Administração › Station](https://turbobox.lzgames.com.br/admin/station)** com sua conta administrativa do site. Busque o nome, o pedido ou a licença e clique em **Abrir atendimento**. O painel mostra situação, aparelho, último contato e histórico, com busca/filtros e paginação de20 clientes. Em celular, usa cartões com o botão de atendimento visível. Antes de alterar, mostra o efeito, pede motivo e **senha administrativa do site**. Não pede senha Linux/sudo ao operador.
+
+| Situação | Ação disponível | Efeito |
+| --- | --- | --- |
+| Primeiro acesso, código vencido ou perdido, substituir o código | **Gerar novo código** | Código novo de30 minutos, uso único; invalida o anterior. |
+| Reinstalou/desinstalou o aplicativo | **Cliente reinstalou o aplicativo** | Revoga a instalação anterior e gera código para reativar a mesma licença. |
+| Comprou outro celular | **Trocar de celular** | Revoga o aparelho/sessões anteriores e gera código para o novo. Continua um aparelho por licença. |
+| Apenas remover a autorização anterior | **Liberar outra ativação** | Deixa a licença pendente, sem gerar código. Emita quando o cliente estiver pronto. |
+| Código entregue indevidamente | **Cancelar código emitido** | Invalida o código sem emitir outro. |
+| Aparelho perdido/roubado ou necessidade de suspensão | **Bloquear acesso** | Suspende novas sessões e encerra as existentes. |
+| Bloqueio resolvido, pagamento confirmado | **Desbloquear acesso** | Restaura a licença, preservando o vínculo do aparelho. |
+| Renovar a sessão com a chave já salva no app | **Reconectar aplicativo** | Encerra a sessão; o mesmo aparelho pode abrir outra. |
+
+As ações seguem o estado atual: licença já ativada precisa da liberação de reinstalação/troca; licença pendente permite emissão/cancelamento. Pagamento/entrega não confirmados não são liberados por este painel. O desbloqueio preserva a chave vinculada; quando houve reinstalação, faça a liberação depois. O painel não cria uma segunda licença/venda e não apaga jogos/saves no telefone. Desinstalar/limpar o app por conta própria pode apagar seus dados locais.
+
+O código aparece após a confirmação, pode ser copiado e desaparece ao fechar/sair/atualizar. **Não existe consulta do código antigo.** Entregue-o por canal privado; se vencer enquanto a licença continuar pendente, emita outro. A opção WhatsApp começa desmarcada; quando solicitada, a página informa inclusão na fila existente, sem afirmar entrega. Abrir cadastro não envia mensagem.
+
+Se a transferência concluir e a emissão falhar, o painel informa a conclusão parcial e orienta atualizar o cadastro e usar **Gerar novo código**. Se a resposta se perder ou houver conflito, confira o histórico antes de repetir. O identificador da operação e as gerações esperadas impedem reemissão/revogação silenciosa por repetição ou cadastro desatualizado.
+
+**APK:** o campo de login recebe o novo código, não o ID `STA-`. O app cria e prova sua chave no desafio/complete; o painel gerencia a autorização dessa chave, sem extrair a chave privada do Android. Depois de ativado, deve usar licença/Keystore salvos para abrir sessão, consultar `/me` e obter catálogo/capas/downloads com o mesmo Bearer, como o contrato abaixo. Não desinstalar para testar a reconexão.
+
+### Fonte, implantação e escopo
+
+- Fonte do painel/backend/helper: **[`deda92ca3c575f6f367053e9c8cbd6226128b879`](https://github.com/luziellacerda/Servidor-pix/commit/deda92ca3c575f6f367053e9c8cbd6226128b879)**. [Guia e publicação](../../ops/station-admin/README.md). Cinco arquivos Station do site foram publicados; autenticação, banco SQLite, router e demais páginas existentes foram preservados.
+- Nova unidade **`turborama-station-management.service`**, PID140743, socket Unix privado, UID994. DLL em `/opt/turborama-station-management-20261003-deda92c/backend`, SHA256 **`15b5a2c94562f8a915c1cb46d7c2b4e3246febdc438473992931b93f88684260`**. `STATION_MANAGEMENT_ONLY=1`: rotas de outros produtos retornam404, mesmo com credencial interna válida. Prontidão200 conferida.
+- Helper existente **`turborama-station-issue-admin.service`**, loopback5194, PID140751, passou a encaminhar gestão ao socket privado. SHA256 **`32f03a3a34e8be106fd91bd1b85dcdc5f45ff55cb719c4d93ab1932125b6c01b`**. Mantém `/licenses`, reemissão humana30min e emissão comercial48h. A unidade compartilhada Suite administrativa não foi substituída/reiniciada.
+- Migration aditiva **030**, SHA256 **`631b6737b19804a26a5e5bc4fb95a62070ad72d2b7bd0fe70c71009d57636e6d`**: recibos de emissão sem código e view de histórico filtrada por produto Station. Concede leitura da view apenas ao role administrativo, sem conceder acesso à tabela geral. A produção já possuía leitura geral de auditoria no role administrativo; a migration não altera esse privilégio existente. Conferência real: role da API sem leitura da view e dos recibos; nenhum outro produto na view.
+- Credencial de ativação entregue à nova unidade com **`LoadCredential`**, sem mudar chave/ACL da API. O backend valida leitura/formato antes de abrir o socket. Senha/CSRF, motivo, gerações, sessão alvo, rate limit e identificador da solicitação são conferidos; as alterações possuem transação, recibo e auditoria. PostgreSQL guarda verificador/HMAC, prazo e metadados, não o código recuperável; envio opcional preserva a fila privada existente.
+
+### Provas e retorno
+
+[Evidência sanitizada do painel](evidencia-painel-administrativo-station-20261003.json). A DLL final foi exercitada com PostgreSQL temporário, roles reais, helper, PHP protegido e Chrome desktop1440/mobile390. Passaram senha incorreta/CSRF negados, ações por estado, código sem armazenamento em `localStorage`/`sessionStorage`, código ocultado ao fechar, exibição do efeito, ausência de erro JavaScript e WhatsApp opt-in. Autotestes administrativos e de conteúdo também passaram. Não se publicou fixture de login.
+
+**Produção:** licença sintética verificada pelo helper instalado e API **HTTPS real**. Geração/cancelamento, contrato30min/48h, transferência, reinstalação, bloqueio/desbloqueio/reconexão e histórico passaram. Foram ativadas **três chaves distintas na mesma licença**, com provas/assinaturas, recusa de chave e sessão anteriores e recusa de pedido repetido. Perfil200 conferido após nova ativação. Dados sintéticos de licença/aparelhos/desafios/sessões/auditoria/recibos foram removidos com marcador de propriedade. Nenhum comprador real alterado e nenhum WhatsApp enviado. Administrador anônimo redireciona ao login; CSS/JS públicos `v=20261003-2` coincidem em hash com os arquivos instalados.
+
+O navegador autenticado foi testado em cópia privada com os mesmos arquivos. Não foi feita impersonação/login como um administrador real em produção. A integração de pagamento real do provedor e o aceite completo do APK ainda dependem de provas próprias; o teste de emissão48h usou entrega sintética.
+
+**Backup/retorno:** dump completo0600 e arquivos originais em `/mnt/DADOS/station-admin-panel-backup-20261003`, diretório0700. Dump restaurado em PostgreSQL temporário antes da alteração. A primeira tentativa parou porque o usuário administrativo não lia o pepper original; acionou retorno da página/helper, preservou o schema aditivo e removeu seus testes. A correção com `LoadCredential` foi compilada/testada e publicada usando a preparação conferida, sem reaplicar030. O retorno agora também espera a saúde do helper anterior após reiniciar.
+
+Retorno autorizado por autenticação nativa Linux: `python3 ops/station-admin/deploy.py --rollback`. Restaura os cinco arquivos Station e o helper anterior, encerra/remove a unidade/configuração própria. Preserva migrations aditivas, release, backup e ações já concluídas; não sobrescreve o banco inteiro nem revoga ações reais de operadores.
+
+**Preservação comprovada:** os dez PIDs acompanhados de API Station/PIX/Suite/admin compartilhado/gateway/Nginx/Cloudflare/PostgreSQL/Redis/FPM permaneceram iguais; apenas o helper Station foi reiniciado e a nova unidade adicionada. FPM não precisou de recarga. API5192 continua PID88965/DLL **f305ae37**, índice SHA256 **5b460a6f**, revisão3/1816. APK, conteúdo, chaves da API, Nginx, portas públicas e serviços dos outros produtos não foram alterados pelo painel.
 
 ## Retorno ao app 2834e3b: ativação diagnosticada e transferência concluída — 03/10/2026, 16h47
 
@@ -470,15 +517,15 @@ Teste local de `StationLibrary.ReadCover`: PNG sintético válido de 1×1 pixel,
 | Código / conciliação | DLL fd13c0d; suíte .NET; 13 casos de conciliação e 6 do exportador; HTTP do índice conciliado. Retorno2834e3b comprova build Android/NDK, 302 checks Java, 28 JNI e 7 retry Android. | Fluxo autenticado e jogo no APK instalado. |
 | Catálogo / conteúdo | HTTPS assinado revisão 3/1.816; todos os nomes/ROMs/capas cruzados; 996 IDs antigos preservados; 4.142 arquivos/hash legíveis pela API. | Conferir seleção, quantidade e cache no aparelho. |
 | Capas / downloads | Cinco pares HTTPS200, 2 raw/3 ZIP, incluindo ID antigo; MIME/tamanho/SHA256 e grant de um uso conferidos; inexistente404 passou em isolamento. | Renderizar capas e completar download/instalação no APK. |
-| Sessão / erros | HTTPS sintético e cenários isolados aprovados; 403 de nova ativação diagnosticado, mesma licença transferida oficialmente e novo código privado emitido às16h47. | Ativar com a chave atual, conferir perfil/retomada/cancelamento no APK; painel/provedor comercial continuam sem prova integral. |
-| Operação / retorno | Migrations028/029 já existentes, chave32 bytes legível, backup completo restaurado em cluster temporário; retorno automático executado antes da correção de correlação. | Guardar artefatos/backups e incrementar revisão em futuras trocas de bytes. |
+| Sessão / erros | HTTPS sintético e cenários isolados aprovados; recuperação real16h47 registrada. Painel publicado18h15: mesma licença ativada com três chaves sintéticas, antigas negadas, bloqueio/desbloqueio/reconexão auditados. | Ativação/perfil/retomada/cancelamento no APK real; pagamento real pelo provedor. |
+| Operação / retorno | Migrations028/029 existentes e030 administrativa aplicada; backups restaurados em cluster temporário, retorno da publicação administrativa executado, demais serviços preservados. | Guardar artefatos/backups e incrementar revisão em futuras trocas de bytes. |
 | APK / emulador | APK fa3bc844 instalado e hash conferido pela equipe Android; assinatura, manifesto e motores preservados. Fonte02c09dd compilada. | Concluir nova ativação, catálogo3/1816, capa/download/instalação/abrir/voltar; legado residual permanece sem aceite. |
 
 ## Compatibilidade e ordem de liberação
 
 | Combinação | Resultado / ação |
 | --- | --- |
-| API fd13c0d/revisão3 + APK instalado fa3bc844 | Correções compiladas e instalação comprovada em2834e3b. Mesma licença agora pendente de ativação com novo código privado; depois validar catálogo e instalação de jogo. |
+| API fd13c0d/revisão3 + APK instalado fa3bc844 | Correções compiladas e instalação comprovada em2834e3b. Conferir a licença no painel; para reinstalação/troca ou código vencido, usar a ação correspondente. Validar ativação, catálogo e instalação no aparelho. |
 | API fd13c0d + fonte Android02c09dd | Build/ponte já comprovados pela equipe Android; fluxo de produção no aparelho aguarda ativação e provas de conteúdo. |
 | Cliente com catálogo/cache revisão1 | Atualizar e verificar resposta assinada revisão 3; não instalar usando descritor com revisão diferente. Licença e Keystore são preservados. |
 | Código novo + índice sem descritores | Autorizar item conhecido produz503 `STATION_ARTIFACT_NOT_READY`; combinação não usada em produção. |
@@ -507,11 +554,11 @@ O retorno `2834e3b` registra o APK instalado fa3bc844, com fonte02c09dd compilad
 
 | Prova | Situação atual / limite |
 | --- | --- |
-| Autenticação/perfil | HTTPS sintético e TTL/cenários isolados aprovados. Licença real exata diagnosticada: código consumido/BOUND. Transferência oficial, revogação anterior e reemissão auditadas; nova ativação/perfil do APK ainda pendentes. Painel/provedor não comprovados integralmente. |
+| Autenticação/perfil | HTTPS sintético e TTL/cenários isolados aprovados. Recuperação real16h47 auditada. Painel deda92c publicado18h15 com códigos30min/48h, três chaves na mesma licença, transferência/reinstalação/revogação/bloqueio/desbloqueio/reconexão e perfil HTTPS comprovados. Nova ativação/perfil do APK e pagamento real pelo provedor continuam sem prova. |
 | Catálogo | HTTPS200, revisão 3, 1.816 itens, quatro plataformas exatas, assinatura/keyId/vínculo de sessão conferidos; TSV com 1.816 pares exatos e zero IDs faltantes. |
 | Capas | Cinco capas HTTPS200 com MIME e bytes/hash iguais ao índice, incluindo um `coverId` antigo. Todas as 2.071 capas da árvore privada tiveram leitura/hash sob UID 995. Negativa de capa inexistente passou isolada; cache/repetição visual aguardam APK. |
 | Autorização/bytes | Cinco grants assinados com revisão/descritor/identidades exatos; GET200, tamanho e SHA256 conferidos; 2 raw/3 ZIP. Cinco reutilizações404 comprovadas em produção. Expiração/outro aparelho/interrupção/novo grant passaram isolados. |
-| Operação | DLL/source/índice identificados; backup restaurável verificado; migrations existentes, leitura real do conteúdo, preservação dos demais serviços e retorno automático comprovados. |
+| Operação | API fd13c0d/índice3 preservados; administração deda92c publicada, migration030 aplicada e isolada por produto; backups restaurados, retorno executado e PIDs dos demais serviços preservados. |
 | APK/emulador | Retorno2834e3b comprova APK fa3bc844 instalado/hash, 302 Java, 28 JNI e 7 retry Android. Falta nova ativação e catálogo3/1816/capas/download/instalação/abrir/voltar. O aparelho/build foram operados pela equipe Android; Linux realizou a recuperação administrativa. |
 
 A API tem prova de conteúdo autenticado de produção além de `/ready/station`. O aceite completo do aplicativo continua condicionado à execução no aparelho. O corpo do handoff preserva evidências históricas com data; este estado operacional e a evidência JSON do rollout prevalecem sobre o recorte anterior. Segredos, identidades de compradores, URLs privadas e caminhos de mídia permanecem fora dos commits.
