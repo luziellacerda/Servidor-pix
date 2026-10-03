@@ -27,7 +27,7 @@ public static class StationEndpoints
                 return Limited();
             return await Handle(context, (service, token) =>
                 service.ProfileAsync(Bearer(context), token));
-        });
+        }).TraceStation("profile");
         app.MapGet("/v1/station/catalog", async (HttpContext context) =>
         {
             if (!enabled) return Disabled();
@@ -35,7 +35,7 @@ public static class StationEndpoints
                 return Limited();
             return await Handle(context, (service, token) =>
                 service.CatalogAsync(Bearer(context), token));
-        });
+        }).TraceStation("catalog");
         app.MapGet("/v1/station/covers/{coverId}", async (HttpContext context, string coverId) =>
         {
             if (!enabled) return Disabled();
@@ -57,17 +57,19 @@ public static class StationEndpoints
                 return Results.Json(new ErrorResponse(1, exception.Code, exception.Message),
                     StrictJson.Options, statusCode: exception.StatusCode);
             }
-        });
+        }).TraceStation("cover");
         app.MapPost("/v1/station/downloads/authorize", async (HttpContext context) =>
         {
             if (!enabled) return Disabled();
             if (!limiter.Allow(context.Connection.RemoteIpAddress,
                     "/v1/station/downloads/authorize")) return Limited();
             return await Handle(context, async (service, token) =>
-                await service.AuthorizeDownloadAsync(
-                    await Read<StationDownloadRequest>(context, token),
-                    Bearer(context), token));
-        });
+            {
+                var request = await Read<StationDownloadRequest>(context, token);
+                StationRequestDiagnostics.SelectedItem(context, request.ItemId);
+                return await service.AuthorizeDownloadAsync(request, Bearer(context), token);
+            });
+        }).TraceStation("authorize");
         app.MapGet("/v1/station/artifacts/{grantId}", async (HttpContext context, string grantId) =>
         {
             if (!enabled) return Disabled();
@@ -80,6 +82,7 @@ public static class StationEndpoints
                     header.Length <= 128 ? header[7..] : null;
                 var artifact = await context.RequestServices.GetRequiredService<StationService>()
                     .ConsumeArtifactAsync(grantId, bearer, context.RequestAborted);
+                StationRequestDiagnostics.SelectedItem(context, artifact.Entry.ItemId);
                 await using var file = new FileStream(artifact.FilePath, FileMode.Open,
                     FileAccess.Read, FileShare.Read, 64 * 1024,
                     FileOptions.Asynchronous | FileOptions.SequentialScan);
@@ -113,7 +116,7 @@ public static class StationEndpoints
             {
                 return Results.Empty;
             }
-        });
+        }).TraceStation("artifact");
     }
 
     private static void Post<T>(WebApplication app, bool enabled,

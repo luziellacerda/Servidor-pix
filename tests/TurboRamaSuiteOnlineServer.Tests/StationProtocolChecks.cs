@@ -7,6 +7,11 @@ internal static class StationProtocolChecks
 {
     public static void Run()
     {
+        var expectedTag = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes("item_12345"))).ToLowerInvariant();
+        if (StationRequestDiagnostics.IdentityTag("item_12345") != expectedTag ||
+            StationRequestDiagnostics.IdentityTag(null) != "" ||
+            StationRequestDiagnostics.IdentityTag("../../secret") != "")
+            throw new Exception("Station diagnostic identity tag mismatch.");
         using var device = RSA.Create(2048);
         var spki = device.ExportSubjectPublicKeyInfo();
         var deviceId = StationProtocol.Encode(SHA256.HashData(spki));

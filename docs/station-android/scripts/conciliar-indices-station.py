@@ -18,6 +18,8 @@ import sys
 
 
 TARGET = {"snes", "snesbr", "megadrive", "megadrivebr"}
+FAMILY = {"snes": "snes", "snesbr": "snes", "megadrive": "megadrive",
+          "megadrivebr": "megadrive"}
 ID = re.compile(r"[A-Za-z0-9_-]{8,64}\Z")
 HASH = re.compile(r"[0-9a-f]{64}\Z")
 
@@ -66,6 +68,9 @@ def items(index, label):
                 not ID.fullmatch(row["itemId"]) or row["itemId"] in found or \
                 not isinstance(row.get("platform"), str):
             raise ValueError(label + " has invalid or duplicate itemId")
+        revision = row.get("revision", index["revision"])
+        if type(revision) is not int or revision < 1:
+            raise ValueError(label + " has invalid item revision")
         found.add(row["itemId"])
     return index["items"]
 
@@ -86,9 +91,15 @@ def source_lookup(source_map, candidate):
                 or not isinstance(path, str) or not Path(path).is_absolute() or \
                 not isinstance(digest, str) or not HASH.fullmatch(digest):
             raise ValueError("invalid source map identity")
+        if FAMILY.get(by_id[item_id]["platform"]) != platform:
+            raise ValueError("source map platform differs from candidate console")
         seen.add(item_id)
-        by_path[str(Path(path).resolve())].append(item_id)
-        by_hash[(by_id[item_id]["platform"], digest)].append(item_id)
+        for source in {str(Path(path).resolve()), str(Path(by_id[item_id]["filePath"]).resolve())}:
+            by_path[source].append(item_id)
+        # Curated archives can differ from their original source archive. Both
+        # identities are verified during preparation and belong to the same item.
+        for source_hash in {digest, by_id[item_id]["artifact"]["sha256"]}:
+            by_hash[(platform, source_hash)].append(item_id)
     return by_id, by_path, by_hash
 
 
@@ -125,18 +136,33 @@ def main():
     base, candidate, mapping = load(args.base_index), load(args.candidate_index), \
         load(args.source_map)
     base_items, candidate_items = items(base, "base"), items(candidate, "candidate")
-    if args.revision <= max(base["revision"], candidate["revision"]):
-        parser.error("merged revision must exceed both input revisions")
-    by_id, by_path, by_hash = source_lookup(mapping, candidate_items)
+    maximum_revision = max([base["revision"], candidate["revision"]] +
+        [row.get("revision", base["revision"]) for row in base_items] +
+        [row.get("revision", candidate["revision"]) for row in candidate_items])
+    if args.revision <= maximum_revision:
+        parser.error("merged revision must exceed all catalog and item revisions")
     manifest = load(args.launch_manifest) if args.launch_manifest else {}
     if not isinstance(manifest, dict):
         parser.error("launch manifest must be an object")
     describe = module_function("preparar-indice-artefatos.py", "describe")
     cover_status = module_function("cruzar-indice-catalogo.py", "index_cover")
+    for row in candidate_items:
+        item_id = row["itemId"]
+        if row["platform"] not in TARGET or not isinstance(row.get("artifact"), dict):
+            raise ValueError("candidate is not prepared: " + item_id)
+        for key in ("filePath", "coverPath"):
+            if not isinstance(row.get(key), str) or not Path(row[key]).is_absolute():
+                raise ValueError("candidate has invalid paths: " + item_id)
+        if cover_status(Path(row["coverPath"]))[0] != "ok":
+            raise ValueError("candidate cover unavailable: " + item_id)
+        if describe(row, row["artifact"].get("launchPath")) != row["artifact"]:
+            raise ValueError("candidate artifact metadata is stale: " + item_id)
+    by_id, by_path, by_hash = source_lookup(mapping, candidate_items)
     output = []
     matched = set()
     preserved = 0
     inherited = 0
+    platform_changes = Counter()
     for original in base_items:
         row = dict(original)
         item_id = row["itemId"]
@@ -146,10 +172,11 @@ def main():
             raise ValueError("base item " + item_id + " has invalid paths")
         if row["platform"] in TARGET:
             matches = by_path.get(str(Path(file_path).resolve()), [])
-            matches = [key for key in matches if by_id[key]["platform"] == row["platform"]]
+            matches = [key for key in matches if
+                       FAMILY[by_id[key]["platform"]] == FAMILY[row["platform"]]]
             if not matches:
                 try:
-                    matches = by_hash.get((row["platform"], sha256(Path(file_path))), [])
+                    matches = by_hash.get((FAMILY[row["platform"]], sha256(Path(file_path))), [])
                 except OSError:
                     matches = []
             if len(matches) != 1 or matches[0] in matched:
@@ -159,6 +186,8 @@ def main():
             replacement = dict(by_id[key])
             replacement["itemId"] = item_id
             replacement["revision"] = args.revision
+            if row["platform"] != replacement["platform"]:
+                platform_changes[row["platform"] + " -> " + replacement["platform"]] += 1
             if Path(cover_path).resolve() == Path(replacement["coverPath"]).resolve():
                 replacement["coverId"] = row["coverId"]
             output.append(replacement)
@@ -168,11 +197,17 @@ def main():
                 raise ValueError("inherited game unavailable: " + item_id)
             if cover_status(Path(cover_path))[0] != "ok":
                 raise ValueError("inherited cover unavailable: " + item_id)
-            if not isinstance(row.get("artifact"), dict):
-                try:
-                    row["artifact"] = describe(row, manifest.get(item_id))
-                except (OSError, ValueError, KeyError) as error:
-                    raise ValueError("inherited artifact not ready: " + item_id) from error
+            try:
+                prior = row.get("artifact")
+                launch = manifest.get(item_id) or (prior.get("launchPath")
+                    if isinstance(prior, dict) else None)
+                prepared = describe(row, launch)
+                if isinstance(prior, dict) and prior != prepared:
+                    raise ValueError("inherited artifact metadata is stale")
+                row["artifact"] = prepared
+                row.setdefault("revision", base["revision"])
+            except (OSError, ValueError, KeyError) as error:
+                raise ValueError("inherited artifact not ready: " + item_id) from error
             output.append(row)
             inherited += 1
     for candidate_row in candidate_items:
@@ -197,6 +232,7 @@ def main():
               "preservedPublishedTargetIds": preserved,
               "newTargetItems": len(candidate_items) - preserved,
               "inheritedOtherPlatforms": inherited,
+              "platformChangesWithPreservedId": dict(sorted(platform_changes.items())),
               "platformCounts": dict(sorted(Counter(row["platform"] for row in output).items())),
               "indexSha256": sha256(args.output)}
     print(json.dumps(report, ensure_ascii=False, sort_keys=True))

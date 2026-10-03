@@ -31,7 +31,7 @@ FIELDS = ["platform", "itemId", "name", "itemRevision", "coverId",
           "indexCoverSizeBytes", "indexCoverSha256", "diskExactNameCandidates",
           "diskExactHashCandidates", "diskCoverHashCandidates", "sourcePlatform",
           "sourceCollection", "sourceXmlEntry", "sourceGameSha256", "sourceNameMatch", "sourceRomMatch",
-          "sourceCoverMatch"]
+          "sourceCoverMatch", "diagnosticItemTag", "diagnosticCoverTag"]
 
 
 def unique_pairs(pairs):
@@ -238,7 +238,9 @@ def main():
             "sourceGameSha256": source_row["sourceGameSha256"] if source_row else "",
             "sourceNameMatch": source_name_match,
             "sourceRomMatch": source_rom_match,
-            "sourceCoverMatch": source_cover_match})
+            "sourceCoverMatch": source_cover_match,
+            "diagnosticItemTag": hashlib.sha256(item_id.encode("utf-8")).hexdigest(),
+            "diagnosticCoverTag": hashlib.sha256(cover_id.encode("utf-8")).hexdigest()})
     if sources is not None and len(sources) != len(output):
         parser.error("source map has items missing from index")
     output.sort(key=lambda row: (row["platform"], row["name"].casefold(),

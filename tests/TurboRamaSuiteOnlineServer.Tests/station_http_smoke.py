@@ -20,6 +20,7 @@ import subprocess
 import tempfile
 import time
 import zipfile
+import uuid
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
@@ -49,7 +50,8 @@ def sql_value(statement):
 
 
 def request(base, method, route, body=None, bearer=None):
-    headers = {"Accept": "application/json"}
+    correlation = uuid.uuid4().hex
+    headers = {"Accept": "application/json", "X-Correlation-ID": correlation}
     if bearer:
         headers["Authorization"] = "Bearer " + bearer
     if body is not None:
@@ -58,8 +60,10 @@ def request(base, method, route, body=None, bearer=None):
     req = Request(base + route, data=body, headers=headers, method=method)
     try:
         with urlopen(req, timeout=10) as response:
+            assert response.headers.get("X-Correlation-ID") == correlation
             return response.status, dict(response.headers), response.read()
     except HTTPError as error:
+        assert error.headers.get("X-Correlation-ID") == correlation
         return error.code, dict(error.headers), error.read()
 
 
@@ -413,6 +417,16 @@ def main():
                 retry = request(base, "GET", "/v1/station/artifacts/" + retry_id, bearer=token)
                 assert retry[0] == 200 and hashlib.sha256(retry[2]).hexdigest() == descriptor["sha256"]
                 print("STATION TTL: OK (real 60/180 seconds, fresh grant/session recovery)", flush=True)
+            log.flush()
+            traces = "\n".join(line for line in (folder / "api.log").read_text().splitlines()
+                               if "Station trace operation=" in line)
+            assert "operation=cover status=200" in traces and "operation=cover status=404" in traces
+            assert "operation=authorize status=200" in traces
+            assert "itemTag=" + hashlib.sha256(b"item-synthetic-01").hexdigest() in traces
+            assert "coverTag=" + hashlib.sha256(b"cover-synthetic-01").hexdigest() in traces
+            assert all(secret not in traces for secret in (license_id, token, code,
+                str(folder), "item-synthetic-01", "cover-synthetic-01"))
+            print("STATION CORRELATION: OK (header echoed; SHA256 item/cover tags; no credentials or paths)")
             print("STATION HTTP SMOKE: OK (activation, session, signed profile/catalog/grant, "
                   "cover 200/404, raw and ZIP bytes/hash, one use, interrupted transfer and new grant, other session/device, "
                   "expiry, revocation, extra platforms=" +
