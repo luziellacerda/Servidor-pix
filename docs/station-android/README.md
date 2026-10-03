@@ -4,7 +4,9 @@ Esta pasta é o ponto de partida para uma ferramenta ou pessoa que vá adicionar
 
 Leia nesta ordem: [regras de trabalho](AGENTS.md), [inventário observado](INVENTARIO-SERVIDOR.md) e [plano de implementação](PLANO-INTEGRACAO.md). O inventário é um retrato datado, não uma afirmação de que uma branch Git corresponde aos binários instalados. Para atualizar a parte observável sem modificar o servidor, execute `bash scripts/inventario-somente-leitura.sh` nesta pasta.
 
-O [retorno da implementação candidata](RETORNO-IMPLEMENTACAO-CANDIDATA-20260930.md) distingue o backend já testado em isolamento dos bloqueios para venda e implantação. O [OpenAPI candidato](openapi-candidato.yaml) documenta apenas o contrato parcial; catálogo/download ainda falham fechados.
+O [handoff técnico atualizado de catálogo, capas e downloads](RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md) é o ponto de comparação atual com o APK e inclui as listas por plataforma, o índice candidato do volume e os bloqueios de produção.
+
+O [retorno histórico da implementação candidata](RETORNO-IMPLEMENTACAO-CANDIDATA-20260930.md) registra o estado de 30/09. O [OpenAPI candidato](openapi-candidato.yaml) também é histórico e parcial; use o handoff técnico atualizado acima para o contrato de catálogo, capas e downloads testado em isolamento. A release nova ainda não foi implantada na 5192.
 
 Para iniciar outra ferramenta neste projeto, informe este diretório como pasta de trabalho e peça: “Leia AGENTS.md, README.md, INVENTARIO-SERVIDOR.md e PLANO-INTEGRACAO.md; execute apenas o inventário de leitura; identifique as diferenças atuais antes de propor código. Preserve os serviços já ativos.”
 

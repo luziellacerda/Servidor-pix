@@ -2,7 +2,9 @@
 """Exercise the candidate Station HTTP API with an ephemeral PostgreSQL cluster.
 
 Run from the repository root: pg_virtualenv python3 tests/TurboRamaSuiteOnlineServer.Tests/station_http_smoke.py
-Requires the local .NET SDK, psql and Python cryptography. Never targets production.
+Set STATION_HTTP_EXTRA_INDEX to a private, readable candidate index to exercise its
+real items and covers in the same isolated API. Requires .NET, psql and cryptography.
+Never targets production.
 """
 
 import base64
@@ -154,6 +156,12 @@ def main():
                  "revision": 3, "coverId": "cover-synthetic-02",
                  "filePath": str(folder / "item.zip"), "coverPath": str(folder / "cover.png"),
                  "artifact": zip_descriptor}]}
+        extra_path = os.environ.get("STATION_HTTP_EXTRA_INDEX")
+        extra = json.loads(Path(extra_path).read_text(encoding="utf-8")) if extra_path else None
+        if extra is not None:
+            if not isinstance(extra.get("items"), list):
+                raise ValueError("invalid extra Station index")
+            index["items"].extend(extra["items"])
         (folder / "index.json").write_text(json.dumps(index))
 
         def secret(name, value):
@@ -231,12 +239,34 @@ def main():
             assert profile["displayName"] == "Synthetic Buyer"
             catalog = signed_payload(request(base, "GET", "/v1/station/catalog", bearer=token),
                                      server_public, "catalog")
-            assert catalog["revision"] == 3 and len(catalog["items"]) == 2
+            assert catalog["revision"] == 3 and len(catalog["items"]) == len(index["items"])
             assert "filePath" not in json.dumps(catalog)
             cover = request(base, "GET", "/v1/station/covers/cover-synthetic-01", bearer=token)
             assert cover[0] == 200 and cover[1]["Content-Type"] == "image/png" and cover[2] == PNG
             assert_error(request(base, "GET", "/v1/station/covers/cover-missing-01",
                                  bearer=token), 404, "STATION_COVER_NOT_FOUND")
+            if extra is not None:
+                for platform in sorted({row["platform"] for row in extra["items"]}):
+                    row = min((row for row in extra["items"] if row["platform"] == platform),
+                              key=lambda row: row["artifact"]["sizeBytes"])
+                    published = next(item for item in catalog["items"]
+                                     if item["itemId"] == row["itemId"])
+                    assert published["name"] == row["name"] and \
+                        published["coverId"] == row["coverId"]
+                    image = request(base, "GET", "/v1/station/covers/" + row["coverId"],
+                                    bearer=token)
+                    assert image[0] == 200 and image[2] == Path(row["coverPath"]).read_bytes()
+                    real_grant = signed_payload(request(base, "POST",
+                        "/v1/station/downloads/authorize",
+                        dict(identity, domain=PREFIX + "request-download/v1",
+                             itemId=row["itemId"]), token), server_public, "download-grant")
+                    assert real_grant["itemRevision"] == row["revision"] and \
+                        real_grant["artifact"] == row["artifact"]
+                    transfer = request(base, "GET", "/v1/station/artifacts/" +
+                                       real_grant["grantId"], bearer=token)
+                    assert transfer[0] == 200 and \
+                        int(transfer[1]["Content-Length"]) == row["artifact"]["sizeBytes"] and \
+                        hashlib.sha256(transfer[2]).hexdigest() == row["artifact"]["sha256"]
 
             def authorize():
                 grant = signed_payload(request(base, "POST", "/v1/station/downloads/authorize",
@@ -304,7 +334,8 @@ def main():
                                  bearer=token), 404, "STATION_GRANT_NOT_FOUND")
             print("STATION HTTP SMOKE: OK (activation, session, signed profile/catalog/grant, "
                   "cover 200/404, raw and ZIP bytes/hash, one use, interrupted transfer, other session/device, "
-                  "expiry, revocation)")
+                  "expiry, revocation, extra platforms=" +
+                  str(len({row["platform"] for row in extra["items"]}) if extra else 0) + ")")
         finally:
             api.terminate()
             try:
