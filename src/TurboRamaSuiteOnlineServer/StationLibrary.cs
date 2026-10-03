@@ -44,7 +44,8 @@ public sealed class StationLibrary
         Revision = revision;
         _items = items;
         _covers = covers;
-        Catalog = items.Values.Select(item => item.Entry).ToArray();
+        Catalog = items.Values.Where(item => item.CatalogVisible)
+            .Select(item => item.Entry).ToArray();
     }
 
     public static StationLibrary? TryLoad(string? path)
@@ -82,6 +83,13 @@ public sealed class StationLibrary
                 ? parsedItemRev : revision;
             var filePath = RequirePath(row, "filePath");
             var coverPath = RequirePath(row, "coverPath");
+            var catalogVisible = true;
+            if (row.TryGetProperty("catalogVisible", out var visibility))
+            {
+                if (visibility.ValueKind is not (JsonValueKind.True or JsonValueKind.False))
+                    throw new InvalidOperationException("Station catalog visibility is invalid.");
+                catalogVisible = visibility.GetBoolean();
+            }
             StationArtifactDescriptor? artifact = null;
             long lastWriteUtcTicks = 0;
             if (row.TryGetProperty("artifact", out var artifactElement))
@@ -105,7 +113,7 @@ public sealed class StationLibrary
             }
             if (!items.TryAdd(itemId, new Resolved(
                     new StationCatalogEntry(itemId, name, platform, itemRevision, coverId),
-                    filePath, artifact, lastWriteUtcTicks)))
+                    filePath, artifact, lastWriteUtcTicks, catalogVisible)))
                 throw new InvalidOperationException("Station library index is invalid.");
             if (covers.TryGetValue(coverId, out var existing) &&
                 (existing.Path != coverPath || existing.Revision != itemRevision))
@@ -154,7 +162,8 @@ public sealed class StationLibrary
         return new StationCoverBlob(bytes, contentType);
     }
 
-    public int ItemCount => _items.Count;
+    public int ItemCount => Catalog.Count;
+    public int CompatibilityItemCount => _items.Count - Catalog.Count;
     public bool ContainsItem(string itemId) => _items.ContainsKey(itemId);
 
     private static string RequireId(JsonElement row, string name)
@@ -317,7 +326,7 @@ public sealed class StationLibrary
     }
 
     private sealed record Resolved(StationCatalogEntry Entry, string FilePath,
-        StationArtifactDescriptor? Artifact, long LastWriteUtcTicks);
+        StationArtifactDescriptor? Artifact, long LastWriteUtcTicks, bool CatalogVisible);
 }
 
 public sealed class StationGrantCipher : IDisposable

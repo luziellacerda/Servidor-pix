@@ -46,7 +46,7 @@ def main():
     target = args.output
     owner = pwd.getpwnam("lz-servidor")
     if not target.is_absolute() or target.parent.is_symlink() or \
-            target.parent.resolve() != owner.pw_dir or target.exists():
+            target.parent.resolve() != Path(owner.pw_dir).resolve() or target.exists():
         parser.error("choose a new filename directly under the lz-servidor home")
     source = configured_index()
     if not source.is_file() or source.resolve() == target.resolve():

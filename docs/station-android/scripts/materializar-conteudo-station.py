@@ -88,6 +88,7 @@ def main():
     checksums = []
     total_game = total_cover = 0
     platforms = Counter()
+    visible_platforms = Counter()
     for row in items:
         item_id, cover_id = row["itemId"], row["coverId"]
         if not isinstance(item_id, str) or not isinstance(cover_id, str) or \
@@ -111,6 +112,8 @@ def main():
         checksums.append((cover_info[3], cover_target.relative_to(target).as_posix()))
         copied.append(dict(row, filePath=str(game_target), coverPath=str(cover_target)))
         platforms[row["platform"]] += 1
+        if row.get("catalogVisible") is not False:
+            visible_platforms[row["platform"]] += 1
     index_path = target / "index.json"
     private_json(index_path, {"revision": source_index["revision"], "items": copied})
     manifest_path = target / "files.sha256"
@@ -121,7 +124,10 @@ def main():
         manifest.flush()
         os.fsync(manifest.fileno())
     report = {"revision": source_index["revision"], "items": len(copied),
-              "platformCounts": dict(sorted(platforms.items())),
+              "catalogItems": sum(visible_platforms.values()),
+              "compatibilityItems": len(copied) - sum(visible_platforms.values()),
+              "platformCounts": dict(sorted(visible_platforms.items())),
+              "indexedPlatformCounts": dict(sorted(platforms.items())),
               "gameBytes": total_game, "coverBytes": total_cover,
               "indexSha256": sha256(index_path),
               "filesManifestSha256": sha256(manifest_path)}

@@ -25,7 +25,7 @@ EXTENSION_MIME = {".png": "image/png", ".jpg": "image/jpeg",
                   ".jpeg": "image/jpeg", ".webp": "image/webp",
                   ".gif": "image/gif"}
 FIELDS = ["platform", "itemId", "name", "itemRevision", "coverId",
-          "catalogMatch", "artifactFileName", "artifactFormat", "artifactSizeBytes",
+          "catalogVisible", "catalogMatch", "artifactFileName", "artifactFormat", "artifactSizeBytes",
           "artifactSha256", "artifactLaunchPath", "artifactExpandedSizeBytes",
           "artifactFileCount", "indexGameReadable", "indexCoverStatus", "indexCoverMime",
           "indexCoverSizeBytes", "indexCoverSha256", "diskExactNameCandidates",
@@ -178,6 +178,8 @@ def main():
         cover = index_cover(Path(cover_path))
         if signed_catalog is None:
             catalog_match = "not_supplied"
+        elif row.get("catalogVisible") is False and item_id not in signed_catalog:
+            catalog_match = "compatibility_hidden"
         else:
             signed = signed_catalog.get(item_id)
             catalog_match = "missing_in_catalog" if signed is None else (
@@ -218,6 +220,7 @@ def main():
             cover[3] in source_disk["revistaCandidateSha256"].split(";")) else "no")
         output.append({"platform": platform, "itemId": item_id, "name": name,
             "itemRevision": item_revision, "coverId": cover_id,
+            "catalogVisible": "no" if row.get("catalogVisible") is False else "yes",
             "catalogMatch": catalog_match,
             "artifactFileName": artifact.get("fileName", "") if isinstance(artifact, dict) else "",
             "artifactFormat": artifact.get("format", "") if isinstance(artifact, dict) else "",

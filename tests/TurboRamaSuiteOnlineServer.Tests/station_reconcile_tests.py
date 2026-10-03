@@ -36,16 +36,19 @@ class ReconciliationTest(unittest.TestCase):
         self.mapping = dict(items=[dict(itemId="candidate_01", sourcePlatform="megadrive",
             sourcePath=str(self.game), sourceGameSha256=self.hash)])
 
-    def reconcile(self, revision=3):
+    def reconcile(self, revision=3, repair=False):
         for name, data in (("base", self.base), ("candidate", self.candidate),
                            ("mapping", self.mapping)):
             (self.folder / (name + ".json")).write_text(json.dumps(data))
         output = self.folder / "merged.json"
-        run = subprocess.run(["python3", str(SCRIPT), "--base-index",
+        command = ["python3", str(SCRIPT), "--base-index",
             str(self.folder / "base.json"), "--candidate-index",
             str(self.folder / "candidate.json"), "--source-map",
             str(self.folder / "mapping.json"), "--revision", str(revision),
-            "--output", str(output)], capture_output=True, text=True)
+            "--output", str(output)]
+        if repair:
+            command.append("--repair-platforms-from-source-path")
+        run = subprocess.run(command, capture_output=True, text=True)
         return run, output
 
     def test_exact_source_preserves_id_when_classified_as_br(self):
@@ -72,6 +75,41 @@ class ReconciliationTest(unittest.TestCase):
         run, output = self.reconcile()
         self.assertNotEqual(run.returncode, 0)
         self.assertFalse(output.exists())
+
+    def test_explicit_repair_corrects_console_only_with_exact_source_path(self):
+        self.base_item["platform"] = "gamegear"
+        run, output = self.reconcile(repair=True)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        row = json.loads(output.read_text())["items"][0]
+        self.assertEqual(row["itemId"], "published_01")
+        self.assertEqual(row["platform"], "megadrivebr")
+        self.assertEqual(row["coverId"], self.base_item["coverId"])
+
+    def test_explicit_repair_still_rejects_cross_console_hash_fallback(self):
+        moved = self.folder / "moved.bin"
+        moved.write_bytes(self.game.read_bytes())
+        self.base_item.update(platform="snes", filePath=str(moved))
+        run, output = self.reconcile(repair=True)
+        self.assertNotEqual(run.returncode, 0)
+        self.assertFalse(output.exists())
+
+    def test_duplicate_ids_resolve_but_only_correct_canonical_game_is_visible(self):
+        alias = dict(self.base_item, itemId="published_alias", platform="gb",
+                     coverId="cover_alias_01")
+        self.base_item["platform"] = "megadrivebr"
+        self.base["items"] = [alias, self.base_item]
+        run, output = self.reconcile(repair=True)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        rows = {r["itemId"]:r for r in json.loads(output.read_text())["items"]}
+        self.assertEqual(set(rows), {"published_alias", "published_01"})
+        self.assertFalse(rows["published_alias"]["catalogVisible"])
+        self.assertNotIn("catalogVisible", rows["published_01"])
+        self.assertEqual(rows["published_alias"]["artifact"], rows["published_01"]["artifact"])
+        report = json.loads(run.stdout)
+        self.assertEqual(report["catalogItems"], 1)
+        self.assertEqual(report["hiddenCompatibilityItems"], 1)
+        self.assertEqual(report["preservedPublishedMappedIds"], 2)
+        self.assertEqual(report["newTargetItems"], 0)
 
     def test_ambiguous_same_console_hash_is_rejected(self):
         second = copy.deepcopy(self.item)

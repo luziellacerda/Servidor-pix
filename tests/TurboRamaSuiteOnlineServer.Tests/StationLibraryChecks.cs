@@ -1,6 +1,7 @@
 using System.Security.Cryptography;
 using System.IO.Compression;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using TurboRamaSuiteOnlineServer;
 
 internal static class StationLibraryChecks
@@ -74,6 +75,28 @@ internal static class StationLibraryChecks
                 throw new Exception("Station cover mismatch.");
             if (StationLibrary.TryLoad(Path.Combine(root, "missing.json")) is not null)
                 throw new Exception("Missing library index must stay unloaded.");
+
+            var compatibleIndex = JsonNode.Parse(File.ReadAllText(index))!;
+            var compatibleRow = compatibleIndex["items"]![0]!.DeepClone();
+            compatibleRow["itemId"] = "published-alias-01";
+            compatibleRow["coverId"] = "published-cover-01";
+            compatibleRow["catalogVisible"] = false;
+            compatibleIndex["items"]!.AsArray().Add(compatibleRow);
+            File.WriteAllText(index, compatibleIndex.ToJsonString());
+            var compatibleLibrary = StationLibrary.TryLoad(index)!;
+            if (compatibleLibrary.ItemCount != 1 ||
+                compatibleLibrary.CompatibilityItemCount != 1 ||
+                compatibleLibrary.Catalog.Any(item => item.ItemId == "published-alias-01") ||
+                !compatibleLibrary.ContainsItem("published-alias-01") ||
+                !compatibleLibrary.TryResolveArtifact("published-alias-01", out var alias) ||
+                alias.Entry.ItemId != "published-alias-01" || alias.Entry.Platform != "PS2" ||
+                compatibleLibrary.ReadCover("published-cover-01") is null)
+                throw new Exception("Compatibility ID was lost or published twice.");
+            compatibleRow["catalogVisible"] = "false";
+            File.WriteAllText(index, compatibleIndex.ToJsonString());
+            try { _ = StationLibrary.TryLoad(index); throw new Exception("Invalid visibility was accepted."); }
+            catch (InvalidOperationException error) when
+                (error.Message == "Station catalog visibility is invalid.") { }
 
             var archivePath = Path.Combine(root, "multi.zip");
             using (var zip = ZipFile.Open(archivePath, ZipArchiveMode.Create))

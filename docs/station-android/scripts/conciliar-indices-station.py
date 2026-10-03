@@ -123,6 +123,9 @@ def main():
     parser.add_argument("--source-map", type=Path, required=True)
     parser.add_argument("--launch-manifest", type=Path,
                         help="private itemId to launchPath JSON for inherited archives")
+    parser.add_argument("--repair-platforms-from-source-path", action="store_true",
+                        help="repair mislabeled platforms only with an exact verified source path; "
+                             "retain duplicate published IDs as hidden compatibility entries")
     parser.add_argument("--revision", type=int, required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
@@ -158,9 +161,44 @@ def main():
         if describe(row, row["artifact"].get("launchPath")) != row["artifact"]:
             raise ValueError("candidate artifact metadata is stale: " + item_id)
     by_id, by_path, by_hash = source_lookup(mapping, candidate_items)
+    published_matches = {}
+    groups = defaultdict(list)
+    for original in base_items:
+        if original["platform"] not in TARGET and not args.repair_platforms_from_source_path:
+            continue
+        file_path = original.get("filePath")
+        if not isinstance(file_path, str) or not Path(file_path).is_absolute():
+            raise ValueError("base item has invalid path: " + original["itemId"])
+        matches = by_path.get(str(Path(file_path).resolve()), [])
+        if not args.repair_platforms_from_source_path:
+            matches = [key for key in matches if
+                       FAMILY[by_id[key]["platform"]] == FAMILY[original["platform"]]]
+        if not matches and original["platform"] in TARGET:
+            try:
+                matches = by_hash.get((FAMILY[original["platform"]],
+                                      sha256(Path(file_path))), [])
+            except OSError:
+                matches = []
+        if not matches and original["platform"] not in TARGET:
+            continue  # Real other platforms keep the existing preparation rules.
+        if len(matches) != 1:
+            raise ValueError("published item has no unique ROM match: " + original["itemId"])
+        key = matches[0]
+        published_matches[original["itemId"]] = key
+        groups[key].append(original)
+    canonical_ids = {}
+    for key, originals in groups.items():
+        if len(originals) > 1 and not args.repair_platforms_from_source_path:
+            raise ValueError("published items share a ROM; explicit repair is required")
+        actual = by_id[key]
+        canonical_ids[key] = min(originals, key=lambda row: (
+            row.get("catalogVisible") is False,
+            row["platform"] != actual["platform"], row.get("name") != actual["name"],
+            row["itemId"]))["itemId"]
     output = []
     matched = set()
     preserved = 0
+    mapped_preserved = 0
     inherited = 0
     platform_changes = Counter()
     for original in base_items:
@@ -170,28 +208,23 @@ def main():
         if not isinstance(file_path, str) or not Path(file_path).is_absolute() or \
                 not isinstance(cover_path, str) or not Path(cover_path).is_absolute():
             raise ValueError("base item " + item_id + " has invalid paths")
-        if row["platform"] in TARGET:
-            matches = by_path.get(str(Path(file_path).resolve()), [])
-            matches = [key for key in matches if
-                       FAMILY[by_id[key]["platform"]] == FAMILY[row["platform"]]]
-            if not matches:
-                try:
-                    matches = by_hash.get((FAMILY[row["platform"]], sha256(Path(file_path))), [])
-                except OSError:
-                    matches = []
-            if len(matches) != 1 or matches[0] in matched:
-                raise ValueError("published item has no unique ROM match: " + item_id)
-            key = matches[0]
+        if item_id in published_matches:
+            key = published_matches[item_id]
             matched.add(key)
             replacement = dict(by_id[key])
             replacement["itemId"] = item_id
             replacement["revision"] = args.revision
             if row["platform"] != replacement["platform"]:
                 platform_changes[row["platform"] + " -> " + replacement["platform"]] += 1
-            if Path(cover_path).resolve() == Path(replacement["coverPath"]).resolve():
+            if args.repair_platforms_from_source_path or \
+                    Path(cover_path).resolve() == Path(replacement["coverPath"]).resolve():
                 replacement["coverId"] = row["coverId"]
+            if canonical_ids[key] != item_id:
+                replacement["catalogVisible"] = False
             output.append(replacement)
-            preserved += 1
+            mapped_preserved += 1
+            if row["platform"] in TARGET:
+                preserved += 1
         else:
             if not Path(file_path).is_file():
                 raise ValueError("inherited game unavailable: " + item_id)
@@ -229,11 +262,16 @@ def main():
     result = {"revision": args.revision, "items": output}
     private_json(args.output, result)
     report = {"revision": args.revision, "total": len(output),
+              "catalogItems": sum(row.get("catalogVisible") is not False for row in output),
+              "hiddenCompatibilityItems": sum(row.get("catalogVisible") is False for row in output),
               "preservedPublishedTargetIds": preserved,
-              "newTargetItems": len(candidate_items) - preserved,
+              "preservedPublishedMappedIds": mapped_preserved,
+              "distinctMatchedSourceGames": len(matched),
+              "newTargetItems": len(candidate_items) - len(matched),
               "inheritedOtherPlatforms": inherited,
               "platformChangesWithPreservedId": dict(sorted(platform_changes.items())),
-              "platformCounts": dict(sorted(Counter(row["platform"] for row in output).items())),
+              "platformCounts": dict(sorted(Counter(row["platform"] for row in output
+                  if row.get("catalogVisible") is not False).items())),
               "indexSha256": sha256(args.output)}
     print(json.dumps(report, ensure_ascii=False, sort_keys=True))
 

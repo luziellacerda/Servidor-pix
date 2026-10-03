@@ -265,15 +265,21 @@ def main():
             assert profile["displayName"] == "Synthetic Buyer"
             catalog = signed_payload(request(base, "GET", "/v1/station/catalog", bearer=token),
                                      server_public, "catalog")
-            assert catalog["revision"] == 3 and len(catalog["items"]) == len(index["items"])
+            visible_rows = [row for row in index["items"] if row.get("catalogVisible") is not False]
+            compatibility_rows = [row for row in index["items"] if row.get("catalogVisible") is False]
+            assert catalog["revision"] == 3 and len(catalog["items"]) == len(visible_rows)
+            assert {row["itemId"] for row in catalog["items"]} == \
+                {row["itemId"] for row in visible_rows}
             assert "filePath" not in json.dumps(catalog)
             cover = request(base, "GET", "/v1/station/covers/cover-synthetic-01", bearer=token)
             assert cover[0] == 200 and cover[1]["Content-Type"] == "image/png" and cover[2] == PNG
             assert_error(request(base, "GET", "/v1/station/covers/cover-missing-01",
                                  bearer=token), 404, "STATION_COVER_NOT_FOUND")
             if extra is not None:
-                for platform in sorted({row["platform"] for row in extra["items"]}):
-                    row = min((row for row in extra["items"] if row["platform"] == platform),
+                for platform in sorted({row["platform"] for row in extra["items"]
+                                        if row.get("catalogVisible") is not False}):
+                    row = min((row for row in extra["items"] if row["platform"] == platform
+                               and row.get("catalogVisible") is not False),
                               key=lambda row: row["artifact"]["sizeBytes"])
                     published = next(item for item in catalog["items"]
                                      if item["itemId"] == row["itemId"])
@@ -293,6 +299,21 @@ def main():
                     assert transfer[0] == 200 and \
                         int(transfer[1]["Content-Length"]) == row["artifact"]["sizeBytes"] and \
                         hashlib.sha256(transfer[2]).hexdigest() == row["artifact"]["sha256"]
+
+            if compatibility_rows:
+                row = min(compatibility_rows, key=lambda row: row["artifact"]["sizeBytes"])
+                image = request(base, "GET", "/v1/station/covers/" + row["coverId"], bearer=token)
+                assert image[0] == 200 and image[2] == Path(row["coverPath"]).read_bytes()
+                old_id_grant = signed_payload(request(base, "POST", "/v1/station/downloads/authorize",
+                    dict(identity, domain=PREFIX + "request-download/v1", itemId=row["itemId"]),
+                    token), server_public, "download-grant")
+                assert old_id_grant["itemId"] == row["itemId"] and \
+                    old_id_grant["artifact"] == row["artifact"]
+                response = request(base, "GET", "/v1/station/artifacts/" + old_id_grant["grantId"],
+                                   bearer=token)
+                assert response[0] == 200 and \
+                    hashlib.sha256(response[2]).hexdigest() == row["artifact"]["sha256"]
+                print("STATION COMPATIBILITY IDS: OK (hidden from catalog, cover and download verified)")
 
             def authorize():
                 grant = signed_payload(request(base, "POST", "/v1/station/downloads/authorize",
