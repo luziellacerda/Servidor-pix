@@ -9,7 +9,7 @@ import uuid
 
 
 def run(base, root, index, pepper, server_public, execute_sql, primary_identity,
-        primary_session, request, signed_payload):
+        primary_session, request, signed_payload, exclusive=True):
     helper_path = root / "docs/station-android/scripts/verificar-http-release-station.py"
     spec = importlib.util.spec_from_file_location("station_online_fixture", helper_path)
     helper = importlib.util.module_from_spec(spec)
@@ -66,7 +66,8 @@ def run(base, root, index, pepper, server_public, execute_sql, primary_identity,
         b = lambda body: online(guest.identity, guest_session, body)
         first = a(command("enter", nickname="Synthetic host"))
         second = b(command("enter", nickname="Synthetic guest"))
-        check(first["selfId"] != second["selfId"] and second["totalPeers"] == 2,
+        check(first["selfId"] != second["selfId"] and
+              (second["totalPeers"] == 2 if exclusive else second["totalPeers"] >= 2),
               "two independently activated licensed identities")
         check(primary_session["licenseId"] not in json.dumps(second["peers"]) and
               primary_identity["deviceId"] not in json.dumps(second["peers"]), "public peer privacy")
@@ -121,10 +122,15 @@ def run(base, root, index, pepper, server_public, execute_sql, primary_identity,
                   "database revocation rechecked after long poll")
             check(room["connectionPassword"] not in response[2].decode(), "no secret after revocation")
         remaining = a(command("heartbeat"))
-        check(remaining["room"] is None and remaining["totalPeers"] == 1,
+        check(remaining["room"] is None and
+              (remaining["totalPeers"] == 1 if exclusive else
+               all(peer["peerId"] != second["selfId"] for peer in remaining["peers"])),
               "revoked guest and departed room removed")
         a(command("offline"))
     finally:
         check(guest.cleanup(), "synthetic guest cleanup")
-    print(json.dumps({"passed": True, "checks": checks,
-                      "scope": "Online HTTP with two real synthetic activations/sessions, isolated PostgreSQL; no production or P2P game"}))
+    result = {"passed": True, "checks": checks, "twoSyntheticLicenses": True,
+              "scope": "isolated PostgreSQL" if exclusive else "authorized synthetic production probe",
+              "p2pGameVerified": False}
+    print(json.dumps(result))
+    return result
