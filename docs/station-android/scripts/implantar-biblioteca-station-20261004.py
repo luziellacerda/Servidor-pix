@@ -96,7 +96,7 @@ def apply(revision):
         index=json.loads((CONTENT/'index.json').read_text());old=json.loads(index_file.read_text());new_ids={r['itemId']:r for r in index['items']}
         for row in old['items']:
             actual=new_ids[row['itemId']]
-            if any(actual[k]!=row[k] for k in ['itemId','coverId','revision','platform','name','artifact','filePath','coverPath','catalogVisible']):
+            if any(actual.get(k,True if k=='catalogVisible' else None)!=row.get(k,True if k=='catalogVisible' else None) for k in ['itemId','coverId','revision','platform','name','artifact','filePath','coverPath','catalogVisible']):
                 raise ValueError('existing game, cover or descriptor changed')
         if len(index['items'])!=2227 or sum(r.get('catalogVisible',True) for r in index['items'])!=1972:
             raise ValueError('reviewed catalog counts differ')
