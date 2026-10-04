@@ -1,5 +1,6 @@
 """Bounded authenticated room checks using disposable synthetic licenses only."""
 import base64
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -41,6 +42,9 @@ def verify(index, values, base):
         signature = base64.urlsafe_b64decode(envelope['signature'] + '===')
         public.verify(signature, payload, padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=32), hashes.SHA256())
         data = json.loads(payload)
+        spki = public.public_bytes(serialization.Encoding.DER, serialization.PublicFormat.SubjectPublicKeyInfo)
+        if envelope['keyId'] != hashlib.sha256(spki).hexdigest():
+            raise ValueError('online assertion key ID changed')
         if data['domain'] != helper.PREFIX + domain + '/v1' or data['productId'] != helper.PRODUCT or \
                 data['applicationId'] != helper.PRODUCT or data['schemaVersion'] != 1:
             raise ValueError('online authority context changed')

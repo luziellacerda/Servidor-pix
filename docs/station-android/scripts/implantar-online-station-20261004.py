@@ -66,6 +66,19 @@ def saved_report(value):
     owner = pwd.getpwnam('lz-servidor'); os.chown(RESULT, owner.pw_uid, owner.pw_gid)
 
 
+def replace_text(path, value):
+    if path.is_symlink() or not path.is_file(): raise ValueError('proxy is not a regular file')
+    fd, name = tempfile.mkstemp(prefix='.station-online-', dir=path.parent)
+    temporary = Path(name)
+    try:
+        with os.fdopen(fd, 'w', encoding='utf-8') as destination:
+            destination.write(value); destination.flush(); os.fsync(destination.fileno())
+            os.fchmod(destination.fileno(), 0o644)
+        os.replace(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
 def rollback():
     state = json.loads((BACKUP / 'state.json').read_text())
     expected = Path(state['target']) / DLL
@@ -89,7 +102,7 @@ def rollback():
         if DROPIN.is_symlink() or DROPIN.read_text() != state['override']:
             raise ValueError('Station online override was changed by another operation')
         DROPIN.unlink()
-    ops.private_text(PROXY,(BACKUP/'previous-proxy.conf').read_text());PROXY.chmod(0o644)
+    replace_text(PROXY,(BACKUP/'previous-proxy.conf').read_text())
     ONLINE_PROXY.unlink(missing_ok=True)
     ops.run(['nginx','-t']);ops.run(['systemctl','reload','nginx.service'])
     ops.run(['systemctl', 'daemon-reload'])
@@ -101,7 +114,7 @@ def rollback():
         raise ValueError('rollback changed revision 4 content')
 
 
-def apply(revision):
+def apply(revision, resume=False):
     if not re.fullmatch('[0-9a-f]{40}', revision): raise ValueError('full source revision required')
     candidate = Path('/mnt/DADOS/station-api-online-candidate-20261004-' + ARTIFACT_REVISION[:7])
     target = Path('/opt/turborama-station-online-20261004-' + ARTIFACT_REVISION[:7])
@@ -118,7 +131,7 @@ def apply(revision):
                 ops.digest(index_path) != INDEX_SHA or ids['Uid'][1] != 995:
             raise ValueError('Station API/content/service identity changed')
         if ops.digest(PROXY) != PROXY_SHA: raise ValueError('Station proxy changed before review')
-        for path in [BACKUP, DROPIN, target, RESULT, ONLINE_PROXY]:
+        for path in ([DROPIN, RESULT] if resume else [BACKUP, DROPIN, target, RESULT, ONLINE_PROXY]):
             if path.exists() or path.is_symlink(): raise ValueError('deployment target already exists')
         metadata = json.loads((candidate / 'release.json').read_text())
         manifest = files(candidate)
@@ -137,18 +150,20 @@ def apply(revision):
         proxy_candidate = ROOT / 'docs/station-android/ops/nginx-v1-station-online.conf'
         proxy_original = PROXY.read_text()
         proxy_replacement = PROXY_INCLUDE + proxy_original
-        BACKUP.mkdir(mode=0o700)
-        shutil.copytree(OLD, BACKUP / 'previous-api')
+        if not resume:
+            BACKUP.mkdir(mode=0o700)
+            shutil.copytree(OLD, BACKUP / 'previous-api')
         previous = files(OLD)
-        shutil.copyfile(PROXY, BACKUP / 'previous-proxy.conf')
+        if not resume: shutil.copyfile(PROXY, BACKUP / 'previous-proxy.conf')
         if ops.digest(BACKUP / 'previous-proxy.conf') != PROXY_SHA: raise ValueError('proxy backup differs')
         configurations = {}
         for name in ['FragmentPath', 'DropInPaths']:
             for configured in ops.run(['systemctl', 'show', SERVICE, '-p', name, '--value']).strip().split():
                 path = Path(configured)
                 destination = BACKUP / 'configuration' / path.relative_to('/')
-                destination.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
-                shutil.copyfile(path, destination); destination.chmod(0o600)
+                if not resume:
+                    destination.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
+                    shutil.copyfile(path, destination); destination.chmod(0o600)
                 configurations[str(path)] = ops.digest(path)
                 if ops.digest(destination) != configurations[str(path)]: raise ValueError('configuration backup differs')
         with tempfile.TemporaryDirectory(dir=BACKUP, prefix='restore-') as restored:
@@ -159,10 +174,17 @@ def apply(revision):
                      baseline=baseline, previousApiManifest=previous, configurationFiles=configurations,
                      proxyOriginalSha256=PROXY_SHA, proxyReplacement=proxy_replacement,
                      onlineProxySha256=ops.digest(proxy_candidate))
-        ops.private_text(BACKUP / 'state.json', json.dumps(state, indent=2) + '\n')
+        if resume:
+            saved = json.loads((BACKUP / 'state.json').read_text())
+            for field in ['target','override','dllSha256','originalIndex','indexSha256','baseline',
+                          'previousApiManifest','configurationFiles','proxyOriginalSha256',
+                          'proxyReplacement','onlineProxySha256']:
+                if saved[field] != state[field]: raise ValueError('prepared rollout state changed')
+        else:
+            ops.private_text(BACKUP / 'state.json', json.dumps(state, indent=2) + '\n')
         report['backupRestoreVerified'] = True
         stage = 'materialize_candidate'
-        shutil.copytree(candidate, target)
+        if not resume: shutil.copytree(candidate, target)
         for path in [target, *target.rglob('*')]:
             if path.is_symlink(): raise ValueError('installed candidate contains a link')
             os.chown(path, 0, ids['Gid'][1]); path.chmod(0o750 if path.is_dir() else 0o640)
@@ -181,7 +203,8 @@ def apply(revision):
         shadow['Station__Online__EngineRegistryFile'] = str(registry)
         for name in ['INVOCATION_ID', 'NOTIFY_SOCKET', 'LISTEN_FDS', 'LISTEN_PID', 'LISTEN_FDNAMES', 'JOURNAL_STREAM']:
             shadow.pop(name, None)
-        with (BACKUP / 'candidate.log').open('xb') as log:
+        log_suffix = '-resume-' + revision[:8] if resume else ''
+        with (BACKUP / ('candidate' + log_suffix + '.log')).open('xb') as log:
             os.fchmod(log.fileno(), 0o600)
             process = subprocess.Popen(['/usr/bin/dotnet', str(target / DLL), '--urls', base],
                 env=shadow, cwd=target, stdout=log, stderr=log, user=ids['Uid'][1],
@@ -202,7 +225,7 @@ def apply(revision):
                 try: process.wait(timeout=15)
                 except subprocess.TimeoutExpired: process.kill(); process.wait()
         shadow['Station__Online__Enabled'] = 'true'
-        with (BACKUP / 'candidate-enabled.log').open('xb') as log:
+        with (BACKUP / ('candidate-enabled' + log_suffix + '.log')).open('xb') as log:
             os.fchmod(log.fileno(),0o600)
             process=subprocess.Popen(['/usr/bin/dotnet',str(target/DLL),'--urls',base],env=shadow,cwd=target,stdout=log,stderr=log,user=ids['Uid'][1],group=ids['Gid'][1],extra_groups=ids['Groups'])
             try:
@@ -218,8 +241,12 @@ def apply(revision):
                 any(ops.state(unit) != status for unit,status in baseline.items()):
             raise ValueError('production changed before activation')
         activated = True
-        shutil.copyfile(proxy_candidate,ONLINE_PROXY);ONLINE_PROXY.chmod(0o644)
-        ops.private_text(PROXY,proxy_replacement);PROXY.chmod(0o644)
+        if ONLINE_PROXY.exists():
+            if ONLINE_PROXY.is_symlink() or ops.digest(ONLINE_PROXY)!=state['onlineProxySha256']:
+                raise ValueError('prepared online proxy differs')
+        else:
+            shutil.copyfile(proxy_candidate,ONLINE_PROXY);ONLINE_PROXY.chmod(0o644)
+        replace_text(PROXY,proxy_replacement)
         ops.run(['nginx','-t']);ops.run(['systemctl','reload','nginx.service'])
         ops.private_text(DROPIN, override); DROPIN.chmod(0o644)
         ops.run(['systemctl', 'daemon-reload']); ops.run(['systemctl', 'restart', SERVICE])
@@ -256,13 +283,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
     modes.add_argument('--apply', action='store_true'); modes.add_argument('--rollback', action='store_true')
+    modes.add_argument('--resume', action='store_true')
     parser.add_argument('--source-revision')
     args = parser.parse_args()
     if os.geteuid() != 0: parser.error('authorized root access required')
     ops = module('implantar-station-20261003.py'); transfer = module('verificar-online-station.py')
-    if args.apply:
+    if args.apply or args.resume:
         if not args.source_revision: parser.error('--source-revision required')
-        apply(args.source_revision)
+        apply(args.source_revision, args.resume)
     else:
         rollback(); print(json.dumps({'rolledBack':True,'catalogRevision':4,'coversPreserved':True}))
 
