@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-04T14:03:10.892949+00:00",
+  "apkSha256": "827723436ac618d3b1745a873813c7781ff10e043abc6033de416c01d774703d",
+  "installedByUpdate": true,
+  "dataCleared": false,
+  "nativeOnlineButtonObserved": true,
+  "nativeOnlineButtonOpenedRooms": true,
+  "roomControlsObserved": [
+    "nickname",
+    "create-disabled-until-service",
+    "reconnect",
+    "back",
+    "players",
+    "rooms",
+    "chat"
+  ],
+  "serverStatus": 404,
+  "serverCorrelation": "060358fe191f4bd0af58b6ada9d45d75",
+  "message": "O serviço de salas ainda não está disponível neste servidor.",
+  "returnedToGameListWithoutLogin": true,
+  "stayOnRestored": 0,
+  "temporaryUiXmlRemoved": true,
+  "roomCreationVerified": false,
+  "chatDeliveryVerified": false,
+  "twoDeviceGameVerified": false,
+  "serverDeploymentBy": "operator, as requested by user",
+  "otherObservations": [
+    "Platform cells remain blue in R7, as already observed in R4; video display not fixed/verified.",
+    "SNES list shows covers, console photo and purple border. Selected Battletoads is one of the known synopsis gaps.",
+    "SNES header displayed installed count 0; inventory not audited in this room-entry check; no game files changed."
+  ]
+}

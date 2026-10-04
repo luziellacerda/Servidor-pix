@@ -1,0 +1,22 @@
+{
+  "timeUtc": "2026-10-04T13:56:46.404994+00:00",
+  "observations": [
+    {
+      "path": "https://app.lzgames.com.br/v1/station/online/command",
+      "status": 404,
+      "contentType": "",
+      "code": null,
+      "authenticated": false,
+      "bodyLogged": false
+    },
+    {
+      "path": "https://app.lzgames.com.br/v1/station/online/events",
+      "status": 404,
+      "contentType": "",
+      "code": null,
+      "authenticated": false,
+      "bodyLogged": false
+    }
+  ],
+  "readinessVerified": false
+}
