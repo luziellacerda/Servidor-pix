@@ -16,7 +16,7 @@ def load(path, name):
     return value
 
 
-def verify(index, values, base):
+def verify(index, values, base, metadata_check=False):
     root = Path(__file__).resolve().parents[3]
     scripts = Path(__file__).parent
     ops = load(scripts / 'implantar-station-20261003.py', 'online_ops')
@@ -52,6 +52,18 @@ def verify(index, values, base):
     try:
         primary.create()
         contract = primary.check(base)
+        if metadata_check:
+            response = primary.request(base, 'GET', '/v1/station/catalog?metadata=1', bearer=primary.session['accessToken'])
+            data = primary.signed(response, 'catalog')
+            visible = {r['itemId']:r for r in index['items'] if r.get('catalogVisible',True)}
+            if data['revision'] != index['revision'] or len(data['items']) != len(visible): raise ValueError('metadata catalog differs')
+            for item in data['items']:
+                row=visible[item['itemId']]
+                if item.get('metadata') != row.get('metadata'): raise ValueError('signed metadata differs from index')
+            if 'filePath' in json.dumps(data) or 'coverPath' in json.dumps(data):raise ValueError('private path exposed')
+            contract['signedMetadataVerified']=True
+            contract['synopses']=sum(bool(x.get('metadata',{}).get('description')) for x in visible.values())
+            contract['metadataEnvelopeBytes']=len(response[2])
         report = checks.run(base, root, index, pepper, public, primary.execute_sql,
             primary.identity, primary.session, primary.request, signed, exclusive=False)
         report['existingStationContract'] = contract

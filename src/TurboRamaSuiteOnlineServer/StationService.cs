@@ -19,7 +19,8 @@ public sealed record StationDownloadRequest(int SchemaVersion, string Domain,
 
 public sealed class StationService(PostgresStationStore store,
     StationResponseSigner signer, string activationPepper,
-    StationLibrary? library = null, StationGrantCipher? grants = null)
+    StationLibrary? initialLibrary = null, StationGrantCipher? grants = null,
+    StationLibraryMonitor? libraryMonitor = null)
 {
     public const int DownloadGrantSeconds = 60;
     public async Task<object> ActivationChallengeAsync(
@@ -173,9 +174,10 @@ public sealed class StationService(PostgresStationStore store,
         });
     }
 
-    public async Task<object> CatalogAsync(string bearer, CancellationToken token)
+    public async Task<object> CatalogAsync(string bearer, CancellationToken token, bool includeMetadata = false)
     {
         var session = await Session(bearer, token);
+        var library = libraryMonitor?.Current ?? initialLibrary;
         if (library is null)
             throw new SuiteException(503, "STATION_CATALOG_NOT_READY",
                 "Station catalog is not ready.");
@@ -185,7 +187,11 @@ public sealed class StationService(PostgresStationStore store,
             productId = StationProtocol.Product, applicationId = StationProtocol.Application,
             licenseId = session.LicenseId, deviceId = session.DeviceId,
             sessionId = session.SessionId, revision = library.Revision,
-            items = library.Catalog.Select(item => new
+            items = library.Catalog.Select(item => includeMetadata ? (object)new
+            {
+                itemId = item.ItemId, name = item.Name, platform = item.Platform,
+                revision = item.Revision, coverId = item.CoverId, metadata = item.Metadata
+            } : new
             {
                 itemId = item.ItemId, name = item.Name, platform = item.Platform,
                 revision = item.Revision, coverId = item.CoverId
@@ -199,6 +205,7 @@ public sealed class StationService(PostgresStationStore store,
         var session = await Session(bearer, token);
         if (allowance is not null && !allowance(session))
             throw new SuiteException(429, "STATION_RATE_LIMITED", "Too many requests.");
+        var library = libraryMonitor?.Current ?? initialLibrary;
         if (library is null)
             throw new SuiteException(503, "STATION_CATALOG_NOT_READY",
                 "Station catalog is not ready.");
@@ -222,6 +229,7 @@ public sealed class StationService(PostgresStationStore store,
         if (!FixedEquals(request.DeviceId, session.DeviceId))
             throw new SuiteException(403, "STATION_DEVICE_DENIED",
                 "Device is not authorized.");
+        var library = libraryMonitor?.Current ?? initialLibrary;
         if (library is null || grants is null)
             throw new SuiteException(503, "STATION_DOWNLOAD_NOT_READY",
                 "Station downloads are not ready.");
@@ -290,8 +298,12 @@ public sealed class StationService(PostgresStationStore store,
             var plaintext = grants.Open(associated, peek.Nonce, peek.Ciphertext,
                 peek.Tag);
             var bound = JsonSerializer.Deserialize<ArtifactGrant>(plaintext, StrictJson.Options);
-            if (bound is null || library is null ||
-                !library.TryResolveArtifact(peek.ItemId, out var artifact) ||
+            var library = libraryMonitor?.Current ?? initialLibrary;
+            StationResolvedArtifact artifact = null!;
+            var resolved = bound is not null && (libraryMonitor is not null
+                ? libraryMonitor.TryResolveGrant(peek.ItemId, bound.FilePath, bound.ItemRevision, out artifact)
+                : library is not null && library.TryResolveArtifact(peek.ItemId, out artifact));
+            if (bound is null || !resolved ||
                 artifact.FilePath != bound.FilePath ||
                 artifact.Entry.Revision != bound.ItemRevision ||
                 artifact.Descriptor.Sha256 != bound.Sha256 ||

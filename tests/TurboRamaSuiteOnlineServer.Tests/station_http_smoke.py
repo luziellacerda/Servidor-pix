@@ -280,6 +280,12 @@ def main():
             assert {row["itemId"] for row in catalog["items"]} == \
                 {row["itemId"] for row in visible_rows}
             assert "filePath" not in json.dumps(catalog)
+            metadata_catalog = signed_payload(request(base, "GET", "/v1/station/catalog?metadata=1", bearer=token),server_public,"catalog")
+            assert metadata_catalog["revision"] == catalog["revision"]
+            assert len(metadata_catalog["items"]) == len(visible_rows)
+            assert all("metadata" not in row for row in catalog["items"])
+            assert all("metadata" in row for row in metadata_catalog["items"])
+            assert "filePath" not in json.dumps(metadata_catalog) and "coverPath" not in json.dumps(metadata_catalog)
             if online_checks:
                 from station_online_http_checks import run as check_online
                 check_online(base, ROOT, index, station_pepper, server_public, sql_value,

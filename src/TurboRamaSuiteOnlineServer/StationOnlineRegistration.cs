@@ -5,7 +5,7 @@ namespace TurboRamaSuiteOnlineServer;
 
 public static class StationOnlineRegistration
 {
-    public static void AddStationOnline(this WebApplicationBuilder builder,StationLibrary? library)
+    public static void AddStationOnline(this WebApplicationBuilder builder,StationLibrary? library, StationLibraryMonitor? monitor = null)
     {
         if(!builder.Configuration.GetValue("Station:Online:Enabled",false))return;
         if(library is null)throw new InvalidOperationException("Online requires the Station library.");
@@ -16,8 +16,11 @@ public static class StationOnlineRegistration
         if(engines is null || engines.Length is <1 or >32 || engines.Any(e=>string.IsNullOrEmpty(e.Id)||e.Id.Length>64||string.IsNullOrEmpty(e.Platform)))
             throw new InvalidOperationException("Invalid online engine registry.");
         // Index metadata only: never open a ROM merely to enter a room.
-        var platforms=library.Catalog.ToDictionary(e=>e.ItemId,e=>Normalize(e.Platform));
-        builder.Services.AddSingleton(new StationOnline(engines,id=>platforms.GetValueOrDefault(id)));
+        builder.Services.AddSingleton(new StationOnline(engines, id =>
+        {
+            var item = (monitor?.Current ?? library).Catalog.FirstOrDefault(e => e.ItemId == id);
+            return item is null ? null : Normalize(item.Platform);
+        }));
         builder.Services.AddSingleton<IStationOnlineAccess,StationOnlineAccess>();
     }
     private static string Normalize(string value)=>value.ToLowerInvariant() switch {

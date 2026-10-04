@@ -101,6 +101,13 @@ if (enabled)
         StationGrantCipher? stationGrants = null;
         var libraryPath = builder.Configuration["Station:LibraryIndexFile"];
         stationLibrary = StationLibrary.TryLoad(libraryPath);
+        StationLibraryMonitor? stationMonitor = null;
+        if (stationLibrary is not null && builder.Configuration.GetValue("Station:LibraryAutoReload", false))
+        {
+            stationMonitor = new StationLibraryMonitor(libraryPath!, stationLibrary);
+            builder.Services.AddSingleton(stationMonitor);
+            builder.Services.AddHostedService(sp => sp.GetRequiredService<StationLibraryMonitor>());
+        }
         var downloadKeyFile = builder.Configuration["Station:DownloadKeyFile"];
         if (!string.IsNullOrWhiteSpace(downloadKeyFile) && File.Exists(downloadKeyFile))
         {
@@ -123,13 +130,13 @@ if (enabled)
                 CryptographicOperations.ZeroMemory(stationPepperBytes);
             }
         }
-        builder.AddStationOnline(stationLibrary);
+        builder.AddStationOnline(stationLibrary, stationMonitor);
         builder.Services.AddSingleton<PostgresStationStore>();
         builder.Services.AddSingleton(_ => new StationResponseSigner(stationSigningPem!));
         builder.Services.AddSingleton(sp => new StationService(
             sp.GetRequiredService<PostgresStationStore>(),
             sp.GetRequiredService<StationResponseSigner>(),
-            stationPepper!, stationLibrary, stationGrants));
+            stationPepper!, stationLibrary, stationGrants, stationMonitor));
     }
     if (emulationStationEnabled)
     {

@@ -6,7 +6,11 @@ using System.Text.Json.Serialization;
 namespace TurboRamaSuiteOnlineServer;
 
 public sealed record StationCatalogEntry(
-    string ItemId, string Name, string Platform, long Revision, string CoverId);
+    string ItemId, string Name, string Platform, long Revision, string CoverId,
+    StationItemMetadata? Metadata = null);
+
+public sealed record StationItemMetadata(string Description, string Developer,
+    string Publisher, string Genre, string Players, string ReleaseDate);
 
 public sealed record StationCoverBlob(byte[] Bytes, string ContentType);
 
@@ -48,7 +52,7 @@ public sealed class StationLibrary
             .Select(item => item.Entry).ToArray();
     }
 
-    public static StationLibrary? TryLoad(string? path)
+    public static StationLibrary? TryLoad(string? path, StationLibrary? previous = null)
     {
         if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
             return null;
@@ -99,6 +103,11 @@ public sealed class StationLibrary
                 if (!info.Exists || info.Length != artifact.SizeBytes)
                     throw new InvalidOperationException("Station artifact index is stale.");
                 lastWriteUtcTicks = info.LastWriteTimeUtc.Ticks;
+                var reused = previous is not null && previous._items.TryGetValue(itemId, out var old) &&
+                    old.FilePath == filePath && old.Artifact == artifact &&
+                    old.LastWriteUtcTicks == lastWriteUtcTicks;
+                if (!reused)
+                {
                 using var source = new FileStream(filePath, FileMode.Open, FileAccess.Read,
                     FileShare.Read, 1024 * 1024, FileOptions.SequentialScan);
                 if (!MatchesFormat(source, artifact.Format))
@@ -110,9 +119,10 @@ public sealed class StationLibrary
                 if (digest != artifact.Sha256 || info.Length != artifact.SizeBytes ||
                     info.LastWriteTimeUtc.Ticks != lastWriteUtcTicks)
                     throw new InvalidOperationException("Station artifact index is stale.");
+                }
             }
             if (!items.TryAdd(itemId, new Resolved(
-                    new StationCatalogEntry(itemId, name, platform, itemRevision, coverId),
+                    new StationCatalogEntry(itemId, name, platform, itemRevision, coverId, ReadMetadata(row)),
                     filePath, artifact, lastWriteUtcTicks, catalogVisible)))
                 throw new InvalidOperationException("Station library index is invalid.");
             if (covers.TryGetValue(coverId, out var existing) &&
@@ -165,6 +175,28 @@ public sealed class StationLibrary
     public int ItemCount => Catalog.Count;
     public int CompatibilityItemCount => _items.Count - Catalog.Count;
     public bool ContainsItem(string itemId) => _items.ContainsKey(itemId);
+
+    private static StationItemMetadata? ReadMetadata(JsonElement row)
+    {
+        if (!row.TryGetProperty("metadata", out var value)) return null;
+        if (value.ValueKind != JsonValueKind.Object ||
+            System.Text.Encoding.UTF8.GetByteCount(value.GetRawText()) > 8192)
+            throw new InvalidOperationException("Station metadata is invalid.");
+        string Read(string key, int limit)
+        {
+            if (!value.TryGetProperty(key, out var field)) return "";
+            if (field.ValueKind != JsonValueKind.String) throw new InvalidOperationException("Station metadata is invalid.");
+            var text = field.GetString() ?? "";
+            if (text.Length > limit || text.Any(c => char.IsControl(c) && c != '\n' && c != '\t'))
+                throw new InvalidOperationException("Station metadata is invalid.");
+            return text;
+        }
+        var metadata = new StationItemMetadata(Read("description", 2000), Read("developer", 80),
+            Read("publisher", 80), Read("genre", 80), Read("players", 40), Read("releaseDate", 40));
+        if (JsonSerializer.SerializeToUtf8Bytes(metadata, StrictJson.Options).Length > 8192)
+            throw new InvalidOperationException("Station metadata is invalid.");
+        return metadata;
+    }
 
     private static string RequireId(JsonElement row, string name)
     {
