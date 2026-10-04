@@ -1,6 +1,6 @@
 ## Atualização 04/10: N64 e catálogo automático publicados
 
-Leia [o retorno atual](RETORNO-SERVIDOR-N64-BIBLIOTECA-20261004.md) e [o guia de pastas/metadados](BIBLIOTECA-AUTOMATICA-STATION-20261004.md). API77d8d54, catálogo7/1.973visíveis/157N64,1.957sinopses. O retorno canônico continua no arquivo de02/10, atualizado no início; os blocos antigos são históricos.
+Leia [o retorno atual](RETORNO-SERVIDOR-N64-BIBLIOTECA-20261004.md) e [o guia de pastas/metadados](BIBLIOTECA-AUTOMATICA-STATION-20261004.md). API `931030b`, catálogo **8 / 1.973 jogos / 157 N64**, 1.957 sinopses e 313 jogos em subpastas R9. O retorno canônico continua no arquivo de02/10, atualizado no início; os blocos antigos são históricos.
 
 # Integração da TurboramaStation Android no servidor compartilhado
 
@@ -8,7 +8,7 @@ Esta pasta é o ponto de partida para uma ferramenta ou pessoa que vá adicionar
 
 Leia nesta ordem: [regras de trabalho](AGENTS.md), [inventário observado](INVENTARIO-SERVIDOR.md) e [plano de implementação](PLANO-INTEGRACAO.md). O inventário é um retrato datado, não uma afirmação de que uma branch Git corresponde aos binários instalados. Para atualizar a parte observável sem modificar o servidor, execute `bash scripts/inventario-somente-leitura.sh` nesta pasta.
 
-O [handoff técnico único de catálogo, capas e downloads](RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md) é o ponto de comparação atual com o APK. Em04/10/2026 a API77d1dfb está publicada com catálogo **revisão4/1.816 jogos**, capas da pasta revista cruzadas integralmente, downloads verificados por HTTPS e administração Station publicada no site e salas online habilitadas; [retorno do módulo online](RETORNO-SERVIDOR-ONLINE-STATION-20261004.md). O documento contém listas por plataforma, hashes, instruções para atualizar catálogo/cache e as provas ainda necessárias no aparelho.
+O [handoff técnico único de catálogo, capas e downloads](RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md) é o ponto de comparação atual com o APK. Em 04/10/2026 a API `931030b` está publicada com catálogo **revisão 8 / 1.973 jogos**, N64, subpastas, importação automática, capas exatas da revista e downloads verificados por HTTPS. Administração Station e salas online estão publicadas; [retorno do módulo online](RETORNO-SERVIDOR-ONLINE-STATION-20261004.md). O documento contém listas por plataforma, hashes, instruções para atualizar catálogo/cache e as provas ainda necessárias no aparelho.
 
 O [retorno histórico da implementação candidata](RETORNO-IMPLEMENTACAO-CANDIDATA-20260930.md) registra o estado de30/09. O [OpenAPI candidato](openapi-candidato.yaml) também é histórico e parcial; use o handoff técnico atualizado acima para o contrato efetivamente publicado e conferido em produção. Os levantamentos abaixo descrevem30/09 e não substituem esse estado atual.
 
