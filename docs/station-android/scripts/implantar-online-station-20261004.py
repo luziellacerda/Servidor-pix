@@ -26,7 +26,7 @@ OLD = Path('/opt/turborama-station-speed-20261003-4bb77ed2')
 OLD_DLL_SHA = 'b08f8313651a10de008d35545ff13569c5a360fb42ee792ad37f2647bd9d107e'
 INDEX_SHA = 'c7ea6cbcf454c55422d06ac53c797e744ca06b83efc49fa03686e6e4fab4d97a'
 BACKUP = Path('/mnt/DADOS/station-online-backup-20261004')
-DROPIN = Path('/etc/systemd/system/turborama-station-api.service.d/zz-station-online-20261004.conf')
+DROPIN = Path('/etc/systemd/system/turborama-station-api.service.d/zzzz-station-online-20261004.conf')
 RESULT = Path('/home/lz-servidor/station-online-rollout-result-20261004.json')
 DLL = 'TurboRamaSuiteOnlineServer.dll'
 ARTIFACT_REVISION = '77d1dfb50a9982b01d8d649db477e6268dc7a5fb'
@@ -77,6 +77,16 @@ def replace_text(path, value):
         os.replace(temporary, path)
     finally:
         temporary.unlink(missing_ok=True)
+
+
+def preserve_failure(path):
+    if not path.exists(): return
+    report = json.loads(path.read_text())
+    if report.get('applied') is not False or report.get('rolledBack') is not True:
+        raise ValueError('prior result is not a completed rollback')
+    previous = path.with_name(path.stem + '-failed-' + ops.digest(path)[:12] + path.suffix)
+    if previous.exists(): raise ValueError('failure archive already exists')
+    path.rename(previous)
 
 
 def rollback():
@@ -131,7 +141,7 @@ def apply(revision, resume=False):
                 ops.digest(index_path) != INDEX_SHA or ids['Uid'][1] != 995:
             raise ValueError('Station API/content/service identity changed')
         if ops.digest(PROXY) != PROXY_SHA: raise ValueError('Station proxy changed before review')
-        for path in ([DROPIN, RESULT] if resume else [BACKUP, DROPIN, target, RESULT, ONLINE_PROXY]):
+        for path in ([DROPIN] if resume else [BACKUP, DROPIN, target, RESULT, ONLINE_PROXY]):
             if path.exists() or path.is_symlink(): raise ValueError('deployment target already exists')
         metadata = json.loads((candidate / 'release.json').read_text())
         manifest = files(candidate)
@@ -180,6 +190,8 @@ def apply(revision, resume=False):
                           'previousApiManifest','configurationFiles','proxyOriginalSha256',
                           'proxyReplacement','onlineProxySha256']:
                 if saved[field] != state[field]: raise ValueError('prepared rollout state changed')
+            preserve_failure(RESULT)
+            preserve_failure(BACKUP / 'result.json')
         else:
             ops.private_text(BACKUP / 'state.json', json.dumps(state, indent=2) + '\n')
         report['backupRestoreVerified'] = True
@@ -249,7 +261,10 @@ def apply(revision, resume=False):
         replace_text(PROXY,proxy_replacement)
         ops.run(['nginx','-t']);ops.run(['systemctl','reload','nginx.service'])
         ops.private_text(DROPIN, override); DROPIN.chmod(0o644)
-        ops.run(['systemctl', 'daemon-reload']); ops.run(['systemctl', 'restart', SERVICE])
+        ops.run(['systemctl', 'daemon-reload'])
+        configured = ops.run(['systemctl','show',SERVICE,'-p','ExecStart','--value'])
+        if str(target / DLL) not in configured: raise ValueError('new override does not select candidate')
+        ops.run(['systemctl', 'restart', SERVICE])
         ops.ready('http://127.0.0.1:5192')
         running, _ = ops.runtime()
         if command_path() != target / DLL or ops.digest(command_path()) != metadata['dllSha256'] or \
@@ -268,8 +283,10 @@ def apply(revision, resume=False):
         report.update(failedStage=stage, errorType=type(error).__name__)
         if activated:
             rollback(); report['rolledBack'] = True
-        if BACKUP.exists(): ops.private_text(BACKUP / 'result.json', json.dumps(report, indent=2) + '\n')
-        if not RESULT.exists(): saved_report(report)
+        if BACKUP.exists():
+            failure = BACKUP / ('failure-' + datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%f') + '.json')
+            ops.private_text(failure, json.dumps(report, indent=2) + '\n')
+        if not RESULT.exists() and report.get('rolledBack'): saved_report(report)
         print(json.dumps({k:v for k,v in report.items() if k not in {'candidateVerification','publicHttpsVerification'}}), flush=True)
         raise SystemExit(1)
     ops.private_text(BACKUP / 'result.json', json.dumps(report, indent=2) + '\n')
@@ -280,6 +297,7 @@ def apply(revision, resume=False):
 def main():
     global ops, transfer
     os.umask(0o077); sys.dont_write_bytecode = True
+    os.environ['GIT_OPTIONAL_LOCKS'] = '0'
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group(required=True)
     modes.add_argument('--apply', action='store_true'); modes.add_argument('--rollback', action='store_true')
