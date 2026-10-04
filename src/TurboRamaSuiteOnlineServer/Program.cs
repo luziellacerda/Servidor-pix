@@ -123,6 +123,7 @@ if (enabled)
                 CryptographicOperations.ZeroMemory(stationPepperBytes);
             }
         }
+        builder.AddStationOnline(stationLibrary);
         builder.Services.AddSingleton<PostgresStationStore>();
         builder.Services.AddSingleton(_ => new StationResponseSigner(stationSigningPem!));
         builder.Services.AddSingleton(sp => new StationService(
@@ -281,6 +282,7 @@ Map<ChallengeRequest>("/v1/suite/challenges", ChallengeAsync);
 Map<SessionProof>("/v1/suite/sessions", (s, r, c) => s.SessionAsync(r, c));
 app.MapEmulationStation(emulationStationEnabled);
 app.MapStation(stationEnabled);
+app.MapStationOnline(stationEnabled && builder.Configuration.GetValue("Station:Online:Enabled", false));
 app.MapNetworkInventory(networkInventoryEnabled);
 if (inventoryEnabled)
 {

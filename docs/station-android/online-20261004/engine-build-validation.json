@@ -1,0 +1,38 @@
+{
+  "androidExecuted": false,
+  "peerPlayValidated": false,
+  "elf": [
+    {
+      "file": "libstation_bsnes.so",
+      "sha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+      "bytes": 1791504,
+      "minimumLoadAlignment": 16384,
+      "architecture": "AArch64",
+      "requiredExportsPresent": true
+    },
+    {
+      "file": "libstation_clownmdemu.so",
+      "sha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "bytes": 926416,
+      "minimumLoadAlignment": 16384,
+      "architecture": "AArch64",
+      "requiredExportsPresent": true
+    },
+    {
+      "file": "libstation_geolith.so",
+      "sha256": "68ebde3e475d0e86f99bda278cadb85dc7fb32dc560072be017ad257dfd2eb0c",
+      "bytes": 907512,
+      "minimumLoadAlignment": 16384,
+      "architecture": "AArch64",
+      "requiredExportsPresent": true
+    },
+    {
+      "file": "libstation_retroarch.so",
+      "sha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+      "bytes": 10666280,
+      "minimumLoadAlignment": 16384,
+      "architecture": "AArch64",
+      "requiredExportsPresent": true
+    }
+  ]
+}

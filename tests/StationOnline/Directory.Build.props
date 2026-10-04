@@ -1,0 +1,6 @@
+<Project>
+ <PropertyGroup Condition="'$(MSBuildProjectName)' == 'StationOnline.Tests' or '$(MSBuildProjectName)' == 'HttpTests'">
+  <BaseIntermediateOutputPath>obj/$(MSBuildProjectName)/</BaseIntermediateOutputPath>
+  <OutputPath>bin/$(MSBuildProjectName)/$(Configuration)/</OutputPath>
+ </PropertyGroup>
+</Project>
