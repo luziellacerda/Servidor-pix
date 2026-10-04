@@ -90,6 +90,11 @@ def apply(revision):
         release=json.loads((candidate/'release.json').read_text());expected=manifest(candidate);expected.pop('release.json')
         if release['sourceRevision']!=revision or release['files']!=expected: raise ValueError('candidate hash manifest differs')
         target=Path('/opt/turborama-station-library-20261004-'+revision[:7])
+        if BACKUP.exists():
+            prior=json.loads((BACKUP/'failure.json').read_text())
+            if prior.get('applied') is not False or prior.get('rolledBack') is not True:raise ValueError('previous rollback was not completed')
+            archived=BACKUP.with_name(BACKUP.name+'-failed-'+prior['sourceRevision'][:7])
+            BACKUP.rename(archived)
         if target.exists() or BACKUP.exists() or any(p.exists() for p in [DROPIN,SCAN_SERVICE,SCAN_TIMER]): raise ValueError('rollout target already exists')
         baseline={unit:ops.state(unit) for unit in online.SHARED}
         if any('ActiveState=active' not in state for state in baseline.values()): raise ValueError('shared service is unhealthy')
@@ -103,7 +108,7 @@ def apply(revision):
         index_sha=ops.digest(CONTENT/'index.json')
         baseline_files={str(p):ops.digest(p) for p in Path('/etc/systemd/system/'+SERVICE+'.d').glob('*.conf')}
         for p in [Path('/etc/nginx/snippets/turborama-station.locations.conf'),Path('/etc/nginx/snippets/turborama-station-online.locations.conf')]:baseline_files[str(p)]=ops.digest(p)
-        override='[Service]\nWorkingDirectory='+str(target)+'\nExecStart=\nExecStart=/usr/bin/dotnet '+str(target/DLL)+'\nEnvironment=Station__LibraryIndexFile='+str(CONTENT/'index.json')+'\nEnvironment=Station__LibraryAutoReload=true\n'
+        override='[Service]\nWorkingDirectory='+str(target)+'\nExecStart=\nExecStart=/usr/bin/dotnet '+str(target/DLL)+'\nEnvironmentFile='+str(target/'station-library.env')+'\n'
         scan_service='[Unit]\nDescription=TurboStation automatic ROM and revista catalog\nAfter=local-fs.target\n[Service]\nType=oneshot\nUser=root\nGroup=root\nUMask=0077\nExecStart=/usr/bin/python3 '+str(target/'library-tools/atualizar-biblioteca-station.py')+' --config '+str(CONFIG)+'\nTimeoutStartSec=20min\nNice=10\nIOSchedulingClass=best-effort\nIOSchedulingPriority=7\nNoNewPrivileges=true\nProtectSystem=strict\nProtectHome=true\nPrivateTmp=true\nReadWritePaths='+str(CONTENT)+'\n'
         scan_timer='[Unit]\nDescription=Check TurboStation game folders each minute\n[Timer]\nOnBootSec=1min\nOnUnitInactiveSec=1min\nAccuracySec=5s\nUnit='+SCAN+'.service\n[Install]\nWantedBy=timers.target\n'
         stage='backup_restore';BACKUP.mkdir(mode=0o700)
@@ -148,7 +153,7 @@ def apply(revision):
         if str(target/DLL) not in ops.run(['systemctl','show',SERVICE,'-p','ExecStart','--value']):raise ValueError('Station override order differs')
         ops.run(['systemctl','restart',SERVICE]);ops.ready('http://127.0.0.1:5192')
         running,_=ops.runtime()
-        if online.command_path()!=target/DLL or running.get('Station__LibraryAutoReload')!='true':raise ValueError('wrong API enabled')
+        if online.command_path()!=target/DLL or running.get('Station__LibraryAutoReload')!='true' or running.get('Station__LibraryIndexFile')!=str(CONTENT/'index.json'):raise ValueError('wrong API enabled')
         stage='public_https';report['publicVerification']=verification.verify(index,running,'https://app.lzgames.com.br',metadata_check=True)
         ops.run(['systemctl','enable','--now',SCAN+'.timer']);ops.run(['systemctl','start',SCAN+'.service'],timeout=180)
         if ops.digest(CONTENT/'index.json')!=index_sha:raise ValueError('unchanged rescan republished the index')
@@ -160,6 +165,9 @@ def apply(revision):
                       autoReload=True,timerActive=True,execStart=str(target/DLL),p2pGameVerified=False)
     except Exception as error:
         report.update(stage=stage,errorType=type(error).__name__)
+        import traceback
+        diagnostic=BACKUP/'failure-diagnostic.txt' if BACKUP.exists() else RESULT.with_suffix('.diagnostic.txt')
+        diagnostic.write_text(traceback.format_exc());diagnostic.chmod(0o600)
         if activated:
             try:rollback();report['rolledBack']=True
             except Exception as rollback_error:report['rollbackErrorType']=type(rollback_error).__name__
