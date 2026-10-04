@@ -1,0 +1,74 @@
+{
+  "codeCommit": "308fda4124439110a34db9beba689c6f96535b39",
+  "runtime": ".NET 8 ASP.NET Core, framework-dependent portable DLL",
+  "linuxExecuted": false,
+  "deployed": false,
+  "smokeTests": [
+    {
+      "path": "/health",
+      "status": 200,
+      "code": null
+    },
+    {
+      "path": "/v1/station/online/command",
+      "status": 503,
+      "code": "STATION_ONLINE_DISABLED"
+    },
+    {
+      "path": "/v1/station/online/events",
+      "status": 503,
+      "code": "STATION_ONLINE_DISABLED"
+    }
+  ],
+  "files": {
+    "appsettings.Development.example.json": {
+      "sha256": "83fb5999b1c992c933c235219b82b26fbb1837e12872d36cf8c45e77f46d50a6",
+      "bytes": 672
+    },
+    "appsettings.json": {
+      "sha256": "be9020351aebef82c11098492e9d3ca3871f7ccec46dc2c6eb86729bfb1b30c4",
+      "bytes": 714
+    },
+    "Npgsql.dll": {
+      "sha256": "0c3042974ae128bc31227dadfce24543078e978c7620b84e43a99669fa964811",
+      "bytes": 1406976
+    },
+    "TurboRamaSuiteNotifications.dll": {
+      "sha256": "852714ec40985f81331822d1fd72e5e9a66fb993801996748a02a8f0b70a1f22",
+      "bytes": 42496
+    },
+    "TurboRamaSuiteNotifications.pdb": {
+      "sha256": "3ef495fafdc9a0529bfb9927e878f2b0175af77405775e9853202bc61036e884",
+      "bytes": 16608
+    },
+    "TurboRamaSuiteOnlineServer.deps.json": {
+      "sha256": "a3438dc2e3c0ed7e8d38a2213eeadad03f0022821ed2d7f91c5b8e32977bef4e",
+      "bytes": 2591
+    },
+    "TurboRamaSuiteOnlineServer.dll": {
+      "sha256": "3f55002aa639253689e6421e14fc0f273cb9acec0bf7109b19aa7879974b3656",
+      "bytes": 720384
+    },
+    "TurboRamaSuiteOnlineServer.pdb": {
+      "sha256": "cde2073a1476817cb4cbeefe723046a91926de96c0aed52b632d9dd77fa2701f",
+      "bytes": 136616
+    },
+    "TurboRamaSuiteOnlineServer.runtimeconfig.json": {
+      "sha256": "a9af57db55e6df5de551cd6ccc9d607872d87470124c3141916079f4f00b7f76",
+      "bytes": 536
+    },
+    "TurboRamaSuiteOnlineServer.staticwebassets.endpoints.json": {
+      "sha256": "c1686417e8d5c31bba969f12b6f3d2b35e6609adb5ca42f212261a3a02771aac",
+      "bytes": 53
+    },
+    "web.config": {
+      "sha256": "cb2a75b316f7b64c1df908a97bce3e222d926a2161fc0c1d230b8de7c713da8f",
+      "bytes": 512
+    }
+  },
+  "archive": {
+    "path": "E:\\StationNetplayWork\\server\\StationOnline-308fda41-homologacao.zip",
+    "sha256": "dc81111b87d6661c63661aa1038ed329a47ae69f104de2ffef9f0701e6985892",
+    "bytes": 812400
+  }
+}
