@@ -132,3 +132,9 @@ Publicar **RETORNO-SERVIDOR-ONLINE-STATION-20261004.md**, citando este pedido e 
 7. ONL-07: disponibilidade HTTPS real das rotas com flag habilitada, sem publicar tokens/senha/IP de usuário. Partida P2P será homologada em dois aparelhos separadamente.
 
 **Impedimentos atuais:** Linux/serviço novo ainda não implantados, USB ausente e segundo aparelho não disponibilizado, Neo Geo sem fluxo .neo/BIOS verificado, CPS/MAME/FBNeo não integrados ao motor direto. Não mascarar com lista de jogadores simulada, abertura de motor diferente ou botão que declare conexão sem tráfego real.
+
+## Referências exatas publicadas
+
+- App: **dd6aff172761f40c9b8eea2d3e2c1c34a0c79034** — [fontes e README completos](https://github.com/luziellacerda/TurboElden/tree/dd6aff172761f40c9b8eea2d3e2c1c34a0c79034/versions/station-online-20261004). Foram conferidos os hashes dos 211 arquivos publicados.
+- Código do servidor: **308fda4124439110a34db9beba689c6f96535b39**, branch `feat/station-online-direct-20261004`. Este acréscimo é documental; não muda código/API/APK nem implanta serviço.
+- Executar a revisão sobre essas referências, não sobre uma branch antiga, o R6 superado ou o APK estável de recuperação.
