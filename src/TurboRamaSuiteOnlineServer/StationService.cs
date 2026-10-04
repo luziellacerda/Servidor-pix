@@ -188,7 +188,7 @@ public sealed class StationService(PostgresStationStore store,
             items = library.Catalog.Select(item => new
             {
                 itemId = item.ItemId, name = item.Name, platform = item.Platform,
-                revision = item.Revision, coverId = item.CoverId
+                revision = item.Revision, coverId = item.CoverId, folderPath = item.FolderPath
             })
         });
     }

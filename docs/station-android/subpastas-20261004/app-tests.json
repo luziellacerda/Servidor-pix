@@ -1,0 +1,11 @@
+{
+  "nativeTests": [
+    "PASS 36 native collection checks; platform isolation, nesting, root, leaf, prefix and 4096 entries",
+    "PASS 429 native navigation checks; original IDs/indices, All, direct, nested, Back, flat catalogs and 200 refresh cycles",
+    "PASS index generation: 2 nested folders, original untouched, IDs/covers/revisions/descriptors preserved, repeat unchanged, output/roots/unknown platform rejected"
+  ],
+  "uiSourceChecks": 6,
+  "deviceVisualVerified": false,
+  "api34Build": "passed separately",
+  "noProductionAccess": true
+}

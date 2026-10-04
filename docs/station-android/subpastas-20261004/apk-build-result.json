@@ -1,0 +1,40 @@
+{
+  "builtAt": "2026-10-04T14:58:54.489423+00:00",
+  "baseApk": "G:\\BAKUP SISTEMA APP 03-10-2026\\apks-candidatos-visuais\\TurboStations-Online-Candidato-R7-20261004.apk",
+  "baseSha256": "827723436ac618d3b1745a873813c7781ff10e043abc6033de416c01d774703d",
+  "scope": [
+    "uniform native game action buttons",
+    "animated green sheen",
+    "room hero, vector symbols and adaptive columns",
+    "native folder navigation",
+    "optional signed folderPath metadata"
+  ],
+  "nativeGameButtonVertices": 286,
+  "nativeExtraThreads": 0,
+  "nativeExtraTextures": 0,
+  "roomContinuousAnimationsMax": 2,
+  "heroLightingFps": 15.625,
+  "folderServerDeploymentRequired": true,
+  "roomAnimationOnlyVisibleEnabledFocused": true,
+  "routesChanged": false,
+  "authChanged": false,
+  "offlineEnginesChanged": false,
+  "serverDeployed": false,
+  "installed": false,
+  "deviceVisualVerified": false,
+  "stable": false,
+  "apk": "E:\\ESTUDO APK\\work\\station-netplay-20261004\\TurboStations-Salas-Subpastas-R9-20261004.apk",
+  "sha256": "b5c98ea40b915f738e29ef2b2e7168fcdf2d327aa64c862596dff15b5620fdf1",
+  "bytes": 1982754504,
+  "changed": [
+    "classes28.dex",
+    "classes35.dex",
+    "lib/arm64-v8a/libstation_frontend.so",
+    "lib/arm64-v8a/libturbo_carousel.so"
+  ],
+  "added": [
+    "assets/station-ui-r9/BUILD-NOTICE.json"
+  ],
+  "preservedEntries": 11098,
+  "fullPayloadIntegrityPassed": true
+}

@@ -6,7 +6,10 @@ using System.Text.Json.Serialization;
 namespace TurboRamaSuiteOnlineServer;
 
 public sealed record StationCatalogEntry(
-    string ItemId, string Name, string Platform, long Revision, string CoverId);
+    string ItemId, string Name, string Platform, long Revision, string CoverId)
+{
+    public IReadOnlyList<string> FolderPath { get; init; } = Array.Empty<string>();
+}
 
 public sealed record StationCoverBlob(byte[] Bytes, string ContentType);
 
@@ -112,7 +115,7 @@ public sealed class StationLibrary
                     throw new InvalidOperationException("Station artifact index is stale.");
             }
             if (!items.TryAdd(itemId, new Resolved(
-                    new StationCatalogEntry(itemId, name, platform, itemRevision, coverId),
+                    new StationCatalogEntry(itemId, name, platform, itemRevision, coverId) { FolderPath = ReadFolderPath(row) },
                     filePath, artifact, lastWriteUtcTicks, catalogVisible)))
                 throw new InvalidOperationException("Station library index is invalid.");
             if (covers.TryGetValue(coverId, out var existing) &&
@@ -165,6 +168,30 @@ public sealed class StationLibrary
     public int ItemCount => Catalog.Count;
     public int CompatibilityItemCount => _items.Count - Catalog.Count;
     public bool ContainsItem(string itemId) => _items.ContainsKey(itemId);
+
+    // Signed presentation metadata only; never a download or filesystem destination.
+    private static IReadOnlyList<string> ReadFolderPath(JsonElement row)
+    {
+        if (!row.TryGetProperty("folderPath", out var value)) return Array.Empty<string>();
+        if (value.ValueKind != JsonValueKind.Array || value.GetArrayLength() > 8)
+            throw new InvalidOperationException("Station folder path is invalid.");
+        var result = new List<string>();
+        foreach (var segment in value.EnumerateArray())
+        {
+            if (segment.ValueKind != JsonValueKind.String)
+                throw new InvalidOperationException("Station folder name is invalid.");
+            var name = segment.GetString()!;
+            if (name.Length is 0 or > 80 || name.Trim().Length == 0 || name is "." or ".." ||
+                name.Contains('/') || name.Contains('\\') || name.Any(char.IsControl))
+                throw new InvalidOperationException("Station folder name is invalid.");
+            for (var i = 0; i < name.Length; i++)
+                if (char.IsSurrogate(name[i]) && (i + 1 >= name.Length ||
+                    !char.IsSurrogatePair(name[i], name[++i])))
+                    throw new InvalidOperationException("Station folder name is invalid.");
+            result.Add(name);
+        }
+        return result.AsReadOnly();
+    }
 
     private static string RequireId(JsonElement row, string name)
     {
