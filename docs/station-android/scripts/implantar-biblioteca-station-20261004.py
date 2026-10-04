@@ -32,6 +32,7 @@ def module(file):
 
 ops=module('implantar-station-20261003')
 online=module('implantar-online-station-20261004')
+online.ops=ops
 verification=module('verificar-online-station')
 
 def manifest(directory):
@@ -80,6 +81,11 @@ def apply(revision):
         values,ids=ops.runtime();index_file=Path(values['Station__LibraryIndexFile'])
         if online.command_path()!=OLD/DLL or ops.digest(OLD/DLL)!=OLD_SHA or ops.digest(index_file)!=OLD_INDEX_SHA:
             raise ValueError('live Station differs from reviewed baseline')
+        if RESULT.exists():
+            prior=json.loads(RESULT.read_text())
+            if prior.get('applied') is not False:raise ValueError('previous successful rollout cannot be repeated')
+            archive=RESULT.with_name(RESULT.stem+'-failed-'+ops.digest(RESULT)[:12]+'.json')
+            RESULT.rename(archive)
         candidate=Path('/mnt/DADOS/station-api-library-candidate-20261004-'+revision[:7])
         release=json.loads((candidate/'release.json').read_text());expected=manifest(candidate);expected.pop('release.json')
         if release['sourceRevision']!=revision or release['files']!=expected: raise ValueError('candidate hash manifest differs')
@@ -168,6 +174,7 @@ if __name__=='__main__':
     group.add_argument('--apply',metavar='FULL_COMMIT');group.add_argument('--rollback',action='store_true');group.add_argument('--restore-database',action='store_true')
     args=parser.parse_args()
     if os.geteuid()!=0:raise SystemExit('Native Linux administrator authentication required')
+    os.umask(0o077)
     os.environ['GIT_OPTIONAL_LOCKS']='0'
     if args.restore_database:restore_database()
     elif args.rollback:rollback()
