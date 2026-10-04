@@ -2,8 +2,7 @@
   "schemaVersion": 1,
   "applicationCommit": "dd6aff172761f40c9b8eea2d3e2c1c34a0c79034",
   "apkR7Sha256": "827723436ac618d3b1745a873813c7781ff10e043abc6033de416c01d774703d",
-  "apkInstalled": false,
-  "lastInstalledApkR4Sha256": "17e9b87bf268c2349874d1767d5ab315862eb09fb2705f9b79a7e307c0c63c77",
+  "apkInstalled": true,
   "initialDomainChecks": 39,
   "initialHttpChecks": 37,
   "reviewedDomainChecks": 41,
@@ -115,5 +114,7 @@
     "correlationEcho": true
   },
   "productionCustomerLicenseUsed": false,
-  "p2pGameVerified": false
+  "p2pGameVerified": false,
+  "latestApplicationEvidenceCommit": "0cdc1f3e4b8473fdbbd3d1b207b60e157b19baf6",
+  "applicationEvidenceBeforeServerDeployment": true
 }
