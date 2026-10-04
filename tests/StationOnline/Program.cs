@@ -71,6 +71,9 @@ var renamed=J(hub.Command(a,C("enter") with{Nickname="New name"}));
 Check(renamed.GetProperty("peers")[0].GetProperty("nickname").GetString()=="New name","foreground presence allows nickname update in rooms");
 F("STATION_ONLINE_PAGE_INVALID",()=>hub.Events(a,"old",0,99,CancellationToken.None).GetAwaiter().GetResult());
 var sample=J(hub.Command(a,C("heartbeat")));using var cancel=new CancellationTokenSource();
+var invalidPage=hub.Events(a,sample.GetProperty("instance").GetString(),sample.GetProperty("revision").GetInt64(),41,CancellationToken.None);
+Check(invalidPage.IsFaulted,"invalid page rejected before reserving or waiting in the device poll");
+F("STATION_ONLINE_PAGE_INVALID",()=>invalidPage.GetAwaiter().GetResult());
 var waiting=hub.Events(a,sample.GetProperty("instance").GetString(),sample.GetProperty("revision").GetInt64(),0,cancel.Token);cancel.Cancel();
 try{await waiting;throw new Exception("cancellation ignored");}catch(OperationCanceledException){checks++;}
 var offline=C("offline");hub.Command(a,offline);Check(J(hub.Command(a,offline)).GetProperty("offline").GetBoolean(),"offline retry idempotent");

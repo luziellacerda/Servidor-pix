@@ -76,6 +76,11 @@ public static class StationOnlineEndpoints
         using var stream=new MemoryStream();var buffer=new byte[2048];int count;
         while((count=await context.Request.Body.ReadAsync(buffer,cancel))>0)
         {if(stream.Length+count>8192)throw new OnlineFailure(413,"STATION_ONLINE_BODY_TOO_LARGE");stream.Write(buffer,0,count);}
-        return JsonSerializer.Deserialize<T>(stream.ToArray(),StrictJson.Options)??throw new OnlineFailure(400,"STATION_ONLINE_BODY_INVALID");
+        using var document=JsonDocument.Parse(stream.ToArray(),new JsonDocumentOptions { MaxDepth=16 });
+        if(document.RootElement.ValueKind!=JsonValueKind.Object)throw new JsonException("Object required.");
+        var names=new HashSet<string>(StringComparer.Ordinal);
+        foreach(var property in document.RootElement.EnumerateObject())
+            if(!names.Add(property.Name))throw new JsonException("Duplicate member.");
+        return document.RootElement.Deserialize<T>(StrictJson.Options)??throw new OnlineFailure(400,"STATION_ONLINE_BODY_INVALID");
     }
 }

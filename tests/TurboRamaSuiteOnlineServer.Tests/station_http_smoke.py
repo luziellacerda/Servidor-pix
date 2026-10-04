@@ -206,6 +206,13 @@ def main():
                     "ConnectionStrings__SuiteStore": "Host=127.0.0.1;Port=" +
                     os.environ["PGPORT"] + ";Database=postgres;Username=turborama-suite;"
                     "Password=fixture-only-password"})
+        online_checks = os.environ.get("STATION_HTTP_ONLINE_CHECKS") == "1"
+        env["Station__Online__Enabled"] = "true" if online_checks else "false"
+        if online_checks:
+            registry = ROOT / "docs/station-android/online-20261004/engine-registry-candidate.json"
+            registry_copy = folder / "online-engines.json"
+            registry_copy.write_bytes(registry.read_bytes())
+            env["Station__Online__EngineRegistryFile"] = str(registry_copy)
         log = (folder / "api.log").open("wb")
         candidate_dll = os.environ.get("STATION_HTTP_API_DLL")
         if candidate_dll and not Path(candidate_dll).is_file():
@@ -273,6 +280,14 @@ def main():
             assert {row["itemId"] for row in catalog["items"]} == \
                 {row["itemId"] for row in visible_rows}
             assert "filePath" not in json.dumps(catalog)
+            if online_checks:
+                from station_online_http_checks import run as check_online
+                check_online(base, ROOT, index, station_pepper, server_public, sql_value,
+                             identity, session, request, signed_payload)
+            elif os.environ.get("STATION_HTTP_ONLINE_CHECKS") == "0":
+                for route in ("command", "events"):
+                    assert_error(request(base, "POST", "/v1/station/online/" + route, {}),
+                                 503, "STATION_ONLINE_DISABLED")
             cover = request(base, "GET", "/v1/station/covers/cover-synthetic-01", bearer=token)
             assert cover[0] == 200 and cover[1]["Content-Type"] == "image/png" and cover[2] == PNG
             assert_error(request(base, "GET", "/v1/station/covers/cover-missing-01",

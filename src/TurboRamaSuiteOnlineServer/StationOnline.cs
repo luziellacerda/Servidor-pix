@@ -254,6 +254,7 @@ public sealed class StationOnline
     }
     public async Task<object> Events(OnlineIdentity identity, string? clientInstance,long after,int page,CancellationToken token)
     {
+        Require(page>=0 && page<=40,400,"STATION_ONLINE_PAGE_INVALID");
         Task wait;
         lock(gate)
         {

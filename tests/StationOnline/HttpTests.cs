@@ -43,6 +43,18 @@ JsonElement Payload(JsonElement envelope,string requestId,string license)
 string Id()=>Guid.NewGuid().ToString();
 Check((await Post("command",new {action="enter",requestId=Id(),nickname="Test A"},null)).Status==401,"missing auth rejected");
 Check((await Post("command",new {action="enter",requestId=Id(),nickname="Test A"},"invalid")).Status==401,"malformed auth rejected");
+foreach(var route in new[]{"command","events"})
+{
+ string body=route=="command"
+  ? "{\"action\":\"enter\",\"action\":\"offline\",\"requestId\":\""+Id()+"\",\"nickname\":\"Test A\"}"
+  : "{\"requestId\":\""+Id()+"\",\"revision\":0,\"page\":0,\"page\":40}";
+ using var duplicate=new HttpRequestMessage(HttpMethod.Post,"/v1/station/online/"+route)
+  { Content=new StringContent(body,Encoding.UTF8,"application/json") };
+ duplicate.Headers.Authorization=new AuthenticationHeaderValue("Bearer",access.A);
+ using var rejected=await http.SendAsync(duplicate);
+ Check(rejected.StatusCode==HttpStatusCode.BadRequest,"duplicate JSON member rejected for "+route);
+ Check(rejected.Headers.CacheControl?.NoStore==true,"duplicate member error is private");
+}
 var command=new {action="enter",requestId=Id(),nickname="Test A"};
 var first=await Post("command",command,access.A);Check(first.Status==200,"authenticated enter");
 var snapshot=Payload(first.Body,command.requestId,"license-A");
