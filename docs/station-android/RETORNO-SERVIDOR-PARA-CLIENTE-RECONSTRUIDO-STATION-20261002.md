@@ -1,3 +1,15 @@
+# Atualização vigente — salas online publicadas em04/10/2026,11h29
+
+**API atual77d1dfb**, DLL SHA256 `ff6362852635d4d18a01e85e46c89ad5cc2a7dad75d3b99793a124733beb6509`, serviço Station/PID321167. Presença, salas de dois jogadores, convites e chat habilitados nas duas rotas POST `/v1/station/online/command` e `/v1/station/online/events`, HTTPS200 com sessões sintéticas assinadas; anônimo401. **92 verificações candidato +92 HTTPS**, reinício em processos candidatos, flag desligada503 e registro de motores SNES/Mega coincidente com o APK. Proxy exato30s, backup restaurado/hash conferido;12 PIDs compartilhados preservados; nenhuma migration/chave/cliente real alterado. Catálogo **4/1.816**, revista, descritores e jogos iguais à publicação anterior.
+
+Leia o [retorno ONL-01 a ONL-07](RETORNO-SERVIDOR-ONLINE-STATION-20261004.md), pedido [APP→servidor](HANDOFF-APP-PARA-SERVIDOR-ONLINE-20261004.md) e [evidência](online-20261004/evidencia-publicacao-linux.json). Artefato `/opt/turborama-station-online-20261004-77d1dfb`, override `zzzz-station-online-20261004.conf`, registro SHA256 `901c8f52eaadfc8d3ad41ed5cc2c30bcaeb5ea893550d0feab5729bbb4055a6a`. Backup `/mnt/DADOS/station-online-backup-20261004`; retorno específico no script `scripts/implantar-online-station-20261004.py --rollback`, com guardas do estado atual. Não usar o rollback speed anterior para desfazer esta implantação.
+
+**Retorno Android novo lido:** commitdd6aff172761f40c9b8eea2d3e2c1c34a0c79034; R4 `17e9b87b` instalado, catálogo1.816/8 jogos locais, capas/cache/quatro workers e sinopses observados. R7 `82772343` compilado/assinado, não instalado. A fonte anterior1dc8c381 e o APKfa3bc844 nos blocos03/10 abaixo são históricos. **Partida real entre dois aparelhos ainda não comprovada**; o servidor social publicado não constitui essa prova. R7 preserva carregamento de quatro capas sem pausa normal. Nenhum APK foi instalado neste Linux.
+
+Pedido posterior autorizado: mover N64 para a raiz do mesmo HD e reconhecer jogos/capas/metadados automaticamente por pasta; execução segue depois da publicação deste retorno. N64 ainda não consta desta fotografia. **As seções abaixo registram datas e estados anteriores.**
+
+---
+
 # Handoff técnico único: servidor, conexão e instalação do TurboStations Android
 
 Atualizado em 03/10/2026, 19h57 (America/Maceio). Preserva as evidências anteriores identificadas abaixo. **Manter as próximas atualizações neste arquivo**, com data e prova; a equipe Android precisa de um único retorno para concluir o APK.

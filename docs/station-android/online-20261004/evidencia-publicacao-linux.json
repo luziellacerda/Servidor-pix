@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "applicationCommit": "dd6aff172761f40c9b8eea2d3e2c1c34a0c79034",
+  "apkR7Sha256": "827723436ac618d3b1745a873813c7781ff10e043abc6033de416c01d774703d",
+  "apkInstalled": false,
+  "lastInstalledApkR4Sha256": "17e9b87bf268c2349874d1767d5ab315862eb09fb2705f9b79a7e307c0c63c77",
+  "initialDomainChecks": 39,
+  "initialHttpChecks": 37,
+  "reviewedDomainChecks": 41,
+  "reviewedHttpChecks": 41,
+  "isolatedPostgresChecks": 92,
+  "packagedDllEnabledAndDisabledChecksPassed": true,
+  "suiteUnitRegressionPassed": true,
+  "esMemoryContractRegressionPassed": true,
+  "esPostgresRegressionRun": false,
+  "candidateProxySyntaxPassed": true,
+  "registryMatchesAppAssets": true,
+  "rollout": {
+    "service": "turborama-station-api.service",
+    "toolRevision": "977989396f0bbb9a4f64d17eaae2e7619cc9a2aa",
+    "sourceRevision": "77d1dfb50a9982b01d8d649db477e6268dc7a5fb",
+    "applied": true,
+    "catalogRevision": 4,
+    "dllSha256": "ff6362852635d4d18a01e85e46c89ad5cc2a7dad75d3b99793a124733beb6509",
+    "backupRestoreVerified": true,
+    "registryReadByServiceVerified": true,
+    "engineRegistrySha256": "901c8f52eaadfc8d3ad41ed5cc2c30bcaeb5ea893550d0feab5729bbb4055a6a",
+    "disabledVerification": true,
+    "candidateVerification": {
+      "passed": true,
+      "checks": 92,
+      "twoSyntheticLicenses": true,
+      "scope": "authorized synthetic production probe",
+      "p2pGameVerified": false,
+      "existingStationContract": {
+        "catalogItems": 1816,
+        "catalogRevision": 4,
+        "platformCounts": {
+          "megadrive": 887,
+          "megadrivebr": 94,
+          "snes": 644,
+          "snesbr": 191
+        },
+        "verifiedCoverAndDownloadPairs": 5,
+        "compatibilityIdVerified": true,
+        "signaturesAndIdentityVerified": true,
+        "correlationVerified": true,
+        "oneUseVerified": true
+      },
+      "transport": "api_loopback",
+      "syntheticRowsRemoved": true
+    },
+    "publicHttpsVerification": {
+      "passed": true,
+      "checks": 92,
+      "twoSyntheticLicenses": true,
+      "scope": "authorized synthetic production probe",
+      "p2pGameVerified": false,
+      "existingStationContract": {
+        "catalogItems": 1816,
+        "catalogRevision": 4,
+        "platformCounts": {
+          "megadrive": 887,
+          "megadrivebr": 94,
+          "snes": 644,
+          "snesbr": 191
+        },
+        "verifiedCoverAndDownloadPairs": 5,
+        "compatibilityIdVerified": true,
+        "signaturesAndIdentityVerified": true,
+        "correlationVerified": true,
+        "oneUseVerified": true
+      },
+      "transport": "public_https",
+      "syntheticRowsRemoved": true
+    },
+    "indexSha256": "c7ea6cbcf454c55422d06ac53c797e744ca06b83efc49fa03686e6e4fab4d97a",
+    "sharedServicesPreserved": true,
+    "schemaKeysMediaPreserved": true,
+    "completedAtUtc": "2026-10-04T14:29:13.267813+00:00",
+    "pid": 321167
+  },
+  "restart": {
+    "passed": true,
+    "privateLoopbackCandidate": true,
+    "productionApiRestartedForTest": false,
+    "instanceChanged": true,
+    "roomsAndPresenceDiscarded": true,
+    "existingDbSessionStillValid": true,
+    "oldCursorReturnsNewInstance": true,
+    "p2pGameVerified": false,
+    "syntheticRowsRemoved": true,
+    "processInstances": 2,
+    "processRestarted": true
+  },
+  "finalInventory": {
+    "dllSha256": "ff6362852635d4d18a01e85e46c89ad5cc2a7dad75d3b99793a124733beb6509",
+    "indexSha256": "c7ea6cbcf454c55422d06ac53c797e744ca06b83efc49fa03686e6e4fab4d97a",
+    "uid": 995,
+    "registrySha256": "901c8f52eaadfc8d3ad41ed5cc2c30bcaeb5ea893550d0feab5729bbb4055a6a",
+    "onlineEnabled": "true",
+    "syntheticDeliveryRowsRemaining": 0,
+    "migrations": [
+      "028_station_android",
+      "029_station_download_grants",
+      "030_station_management_audit"
+    ]
+  },
+  "anonymousHttps": {
+    "command": 401,
+    "events": 401,
+    "code": "STATION_SESSION_INVALID",
+    "noStore": true,
+    "nosniff": true,
+    "correlationEcho": true
+  },
+  "productionCustomerLicenseUsed": false,
+  "p2pGameVerified": false
+}
