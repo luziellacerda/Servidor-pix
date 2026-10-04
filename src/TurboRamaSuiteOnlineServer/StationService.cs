@@ -190,11 +190,11 @@ public sealed class StationService(PostgresStationStore store,
             items = library.Catalog.Select(item => includeMetadata ? (object)new
             {
                 itemId = item.ItemId, name = item.Name, platform = item.Platform,
-                revision = item.Revision, coverId = item.CoverId, metadata = item.Metadata
+                revision = item.Revision, coverId = item.CoverId, metadata = item.Metadata, folderPath = item.FolderPath
             } : new
             {
                 itemId = item.ItemId, name = item.Name, platform = item.Platform,
-                revision = item.Revision, coverId = item.CoverId
+                revision = item.Revision, coverId = item.CoverId, folderPath = item.FolderPath
             })
         });
     }

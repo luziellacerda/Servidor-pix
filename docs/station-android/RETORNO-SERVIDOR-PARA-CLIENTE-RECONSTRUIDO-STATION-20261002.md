@@ -1,4 +1,18 @@
-# Atualização vigente — salas online publicadas em04/10/2026,11h29
+# Atualização vigente — N64 e biblioteca automática publicados, 04/10/2026
+
+**API77d8d54**, DLL `14500ad850f41f6d361a8c29dd3a64ddd9b9642ad55133d14f814cbb0288e207`, PID337611/UID995. Catálogo **7 / 1.973 jogos visíveis**: SNES644, SNESBR191, Mega887, MegaBR94, **N64157** (156ZIPs+1ROM alternativa).255IDs ocultos preservados;2.228internos;996IDs originais preservados. Índice7 SHA `a9aaaf115604cf80f659348e5ef38b5ca7d153f552bf549a6e70398fe1bedb90`. **1.957sinopses**,16edições sem fonte listadas para complemento manual.
+
+N64 movido de `megadrive/n64` para a raiz do HD,828arquivos preservados. Revistas exatas originais1024×1536 intactas; capas compiladas480×720.157capas conferidasHTTPS/quatro requisições simultâneas em13,85s/24,4MB; originais430MB. ROMs/descritores/hash/bytes e sessões/concessões de uso único conferidos. Timer de pastas por minuto e APIreload10s: passagem6→7 real sem reiniciar a API, online preservado. Nenhuma migration/chave/cliente real alterada;12PIDs compartilhados iguais; zero licenças sintéticas remanescentes.
+
+Leia o [retorno N64 e contrato completo para o cliente](RETORNO-SERVIDOR-N64-BIBLIOTECA-20261004.md), [catálogo completo cruzado](biblioteca-20261004/catalogo-completo.tsv), [guia para acrescentar jogos e sinopses sem programar](BIBLIOTECA-AUTOMATICA-STATION-20261004.md) e [estado efetivo](biblioteca-20261004/evidencia-estado-final.json). O handoff online foi concluído primeiro; seu retorno abaixo agora é histórico da API77d1dfb.
+
+Cliente novo: fontec47cf15 sobreR8/ebd1199, [overlay e builder](https://github.com/luziellacerda/TurboElden/tree/df6921a439375403d14be437cc049fb529f402de/versions/station-library-autodiscovery-20261004),404checksJava e JNI/DEX compilados. Lê `catalog?metadata=1`, conserva cache/leases, consulta novas revisões emforeground e publica sinopse por ID. **Não há APK novo assinado/instalado no Linux**; R7 é o último instalado comprovado. R7/R8 já reconhecem N64 com Atualizar; consulta automática/sinopses do servidor precisam dessa atualização inicial de fontes. Gameplay N64/partida2aparelhos continuam pendentes.
+
+Backup/retorno atual: `/mnt/DADOS/station-library-auto-backup-20261004`; script **implantar-biblioteca-station-20261004.py --rollback**. Devolve somente a API online anterior/catálogo4, sem mover/apagarN64. Scripts anteriores foram superados. Não repetir a implantação.
+
+---
+
+# Histórico — salas online publicadas em04/10/2026,11h29
 
 **API atual77d1dfb**, DLL SHA256 `ff6362852635d4d18a01e85e46c89ad5cc2a7dad75d3b99793a124733beb6509`, serviço Station/PID321167. Presença, salas de dois jogadores, convites e chat habilitados nas duas rotas POST `/v1/station/online/command` e `/v1/station/online/events`, HTTPS200 com sessões sintéticas assinadas; anônimo401. **92 verificações candidato +92 HTTPS**, reinício em processos candidatos, flag desligada503 e registro de motores SNES/Mega coincidente com o APK. Proxy exato30s, backup restaurado/hash conferido;12 PIDs compartilhados preservados; nenhuma migration/chave/cliente real alterado. Catálogo **4/1.816**, revista, descritores e jogos iguais à publicação anterior.
 

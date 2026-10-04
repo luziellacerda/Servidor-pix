@@ -1,0 +1,19 @@
+{
+  "revision": 7,
+  "items": 2228,
+  "visible": 1973,
+  "compatibility": 255,
+  "platformCounts": {
+    "megadrive": 887,
+    "megadrivebr": 94,
+    "snes": 644,
+    "snesbr": 191,
+    "n64": 157
+  },
+  "synopses": 1957,
+  "metadataMissing": 16,
+  "n64RomAndRevistaPairsVerified": 157,
+  "n64OriginalPngBytes": 430043688,
+  "n64CompiledCoverBytes": 24418430,
+  "allCovers480x720": true
+}

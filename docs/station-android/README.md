@@ -1,3 +1,7 @@
+## Atualização 04/10: N64 e catálogo automático publicados
+
+Leia [o retorno atual](RETORNO-SERVIDOR-N64-BIBLIOTECA-20261004.md) e [o guia de pastas/metadados](BIBLIOTECA-AUTOMATICA-STATION-20261004.md). API77d8d54, catálogo7/1.973visíveis/157N64,1.957sinopses. O retorno canônico continua no arquivo de02/10, atualizado no início; os blocos antigos são históricos.
+
 # Integração da TurboramaStation Android no servidor compartilhado
 
 Esta pasta é o ponto de partida para uma ferramenta ou pessoa que vá adicionar o produto TurboramaStation Android ao servidor. Ela explica o que foi observado em 30/09/2026, quais serviços já atendem clientes e como preparar a integração preservando PIX, Suite Windows, EmulationStation Windows, site e conteúdo. É um guia versionado de trabalho; não é um pacote de implantação.

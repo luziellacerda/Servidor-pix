@@ -15,14 +15,14 @@ try
     var index=Path.Combine(directory,"index.json");
     void Write(long revision, long itemRevision, string description) => File.WriteAllText(index,JsonSerializer.Serialize(new {
         revision,items=new[]{new{itemId="station_synthetic",name="Synthetic",platform="n64",revision=itemRevision,
-        coverId="cover_synthetic",filePath=game,coverPath=cover,metadata=new{description},artifact=new{
+        coverId="cover_synthetic",folderPath=new[]{"Selecionados","Traduções"},filePath=game,coverPath=cover,metadata=new{description},artifact=new{
         fileName="Synthetic.z64",sizeBytes=8,sha256=Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(game))).ToLowerInvariant(),
         format="raw",launchPath="Synthetic.z64",expandedSizeBytes=8,fileCount=1}}}},StrictJson.Options));
     int checks=0;
     void Check(bool condition) {checks++;if(!condition)throw new Exception("Station automatic catalog check failed");}
     Write(4,4,"Before");var initial=StationLibrary.TryLoad(index)!;
     using var monitor=new StationLibraryMonitor(index,initial);Check(!monitor.Reload());
-    Write(5,4,"Server synopsis");Check(monitor.Reload());Check(monitor.Current.Revision==5);
+    Write(5,4,"Server synopsis");Check(monitor.Reload());Check(monitor.Current.Revision==5);Check(monitor.Current.Catalog[0].FolderPath.SequenceEqual(new[]{"Selecionados","Traduções"}));
     Check(monitor.Current.Catalog[0].Metadata?.Description=="Server synopsis");
     Check(monitor.Current.Catalog[0].Revision==4);
     Write(6,5,"Changed edition");Check(monitor.Reload());
@@ -32,6 +32,15 @@ try
     Write(5,5,"Rollback forbidden");try{monitor.Reload();throw new Exception("Older index accepted");}catch(InvalidOperationException){}
     Check(monitor.Current.Revision==6);
     File.WriteAllBytes(game,[1,2,3]);Check(!monitor.TryResolveGrant("station_synthetic",game,4,out _));
+    File.WriteAllBytes(game,[0x80,0x37,0x12,0x40,1,2,3,4]);
+    var folderCases=new object?[]{null,"wrong",new[]{".."},new[]{"."},new[]{"a/b"},new[]{"a\\b"},new[]{" "},new[]{"control\n"},new[]{new string('x',81)},Enumerable.Repeat("level",9).ToArray(),new object[]{42}};
+    foreach(var invalid in folderCases){
+        Write(8,5,"Folders");
+        var tree=System.Text.Json.Nodes.JsonNode.Parse(File.ReadAllText(index))!;
+        tree["items"]![0]!["folderPath"]=JsonSerializer.SerializeToNode(invalid);
+        File.WriteAllText(index,tree.ToJsonString());
+        try{StationLibrary.TryLoad(index);throw new Exception("Invalid folder accepted");}catch(InvalidOperationException){Check(true);}
+    }
     Console.WriteLine($"PASS {checks} Station snapshot, metadata, active grant and last-good checks");
 }
 finally {Directory.Delete(directory,true);}

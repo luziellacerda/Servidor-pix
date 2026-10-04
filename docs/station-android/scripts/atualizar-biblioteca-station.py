@@ -176,6 +176,9 @@ def publish(config, bootstrap=False):
                     if p.is_file() and p.suffix.lower() in {'.jpg', '.jpeg', '.png', '.webp', '.gif'}:
                         magazine[p.stem].append(p)
             for rom in safe_roms(folder.resolve(), set(spec['extensions'])):
+                folder_path = list(rom.relative_to(folder).parent.parts)
+                if len(folder_path)>8 or any(not n.strip() or n in {'.','..'} or len(n.encode('utf-16-le'))//2>80 or any(ord(c)<32 or c in '/\\' for c in n) for n in folder_path):
+                    report['pending'].append({'platform':platform,'rom':rom.relative_to(folder).as_posix(),'reason':'invalid_folder_path'});continue
                 key = str(rom.resolve()); existing = state['sources'].get(key)
                 relative = rom.relative_to(folder).as_posix()
                 game = games.get(key)
@@ -191,6 +194,7 @@ def publish(config, bootstrap=False):
                 if seeded or unchanged:
                     for item_id in existing['ids']:
                         row = rows[item_id]
+                        row['folderPath'] = folder_path
                         new_metadata = metadata(game, override)
                         seed = metadata_seed.get(item_id)
                         if not new_metadata['description'] and seed and seed['platform'] == row['platform'] and seed['name'] == row['name']:
@@ -235,7 +239,7 @@ def publish(config, bootstrap=False):
                                        revision=(old['revision']+1) if old else previous['revision']+1,
                                        coverId=old['coverId'] if old else 'cover_'+token, filePath=str(target),
                                        coverPath=str(cover_target), artifact=descriptor, catalogVisible=old.get('catalogVisible', True) if old else True,
-                                       metadata=metadata(game, override))
+                                       metadata=metadata(game, override), folderPath=folder_path)
                             rows[item_id] = row
                             report['updated' if old else 'added'] += 1
                         state['sources'][key] = {'ids': ids, 'fingerprint': fingerprint}

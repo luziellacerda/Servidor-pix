@@ -1,0 +1,109 @@
+{
+  "deployment": {
+    "applied": true,
+    "service": "turborama-station-api.service",
+    "sourceRevision": "77d8d5427941e2b0fc2a9f6a32e84aa71cc1fb7e",
+    "utc": "2026-10-04T15:27:53.086463+00:00",
+    "backupRestoreVerified": true,
+    "candidateVerification": {
+      "passed": true,
+      "checks": 92,
+      "twoSyntheticLicenses": true,
+      "scope": "authorized synthetic production probe",
+      "p2pGameVerified": false,
+      "existingStationContract": {
+        "catalogItems": 1972,
+        "catalogRevision": 6,
+        "platformCounts": {
+          "megadrive": 887,
+          "megadrivebr": 94,
+          "n64": 156,
+          "snes": 644,
+          "snesbr": 191
+        },
+        "verifiedCoverAndDownloadPairs": 6,
+        "compatibilityIdVerified": true,
+        "signaturesAndIdentityVerified": true,
+        "correlationVerified": true,
+        "oneUseVerified": true,
+        "signedMetadataVerified": true,
+        "synopses": 1957,
+        "metadataEnvelopeBytes": 2834022
+      },
+      "transport": "api_loopback",
+      "syntheticRowsRemoved": true
+    },
+    "publicVerification": {
+      "passed": true,
+      "checks": 92,
+      "twoSyntheticLicenses": true,
+      "scope": "authorized synthetic production probe",
+      "p2pGameVerified": false,
+      "existingStationContract": {
+        "catalogItems": 1972,
+        "catalogRevision": 6,
+        "platformCounts": {
+          "megadrive": 887,
+          "megadrivebr": 94,
+          "n64": 156,
+          "snes": 644,
+          "snesbr": 191
+        },
+        "verifiedCoverAndDownloadPairs": 6,
+        "compatibilityIdVerified": true,
+        "signaturesAndIdentityVerified": true,
+        "correlationVerified": true,
+        "oneUseVerified": true,
+        "signedMetadataVerified": true,
+        "synopses": 1957,
+        "metadataEnvelopeBytes": 2834022
+      },
+      "transport": "public_https",
+      "syntheticRowsRemoved": true
+    },
+    "rolledBack": false,
+    "catalogRevision": 6,
+    "visibleGames": 1972,
+    "n64Games": 156,
+    "dllSha256": "14500ad850f41f6d361a8c29dd3a64ddd9b9642ad55133d14f814cbb0288e207",
+    "indexSha256": "04fe20442db0283fe878f10efbfc65bba6e1b9f596bb7bb20de175a7c3460997",
+    "sharedServicesUnchanged": true,
+    "unchangedScanVerified": true,
+    "autoReload": true,
+    "timerActive": true,
+    "execStart": "/opt/turborama-station-library-20261004-77d8d54/TurboRamaSuiteOnlineServer.dll",
+    "p2pGameVerified": false
+  },
+  "currentCatalog": {
+    "contract": {
+      "catalogItems": 1973,
+      "catalogRevision": 7,
+      "platformCounts": {
+        "megadrive": 887,
+        "megadrivebr": 94,
+        "n64": 157,
+        "snes": 644,
+        "snesbr": 191
+      },
+      "verifiedCoverAndDownloadPairs": 6,
+      "compatibilityIdVerified": true,
+      "signaturesAndIdentityVerified": true,
+      "correlationVerified": true,
+      "oneUseVerified": true
+    },
+    "metadataVerified": true,
+    "covers": {
+      "verified": 157,
+      "workers": 4,
+      "elapsedMs": 13845.47,
+      "bytes": 24418430,
+      "originalRevistaPngBytes": 430043688
+    },
+    "alternativeRawDownloadVerified": true,
+    "revision": 7,
+    "visible": 1973,
+    "n64": 157,
+    "synopses": 1957,
+    "syntheticRowsRemoved": true
+  }
+}

@@ -170,7 +170,7 @@ class StationReleaseVerification:
         expected = {r["itemId"]:{k:r.get(k,self.index["revision"]) for k in
             ("itemId","name","platform","revision","coverId")} for r in self.index["items"]
             if r.get("catalogVisible") is not False}
-        published = {r["itemId"]:r for r in catalog["items"]}
+        published = {r["itemId"]:{k:r[k] for k in ("itemId","name","platform","revision","coverId")} for r in catalog["items"]}
         if published != expected or len(published) != len(catalog["items"]) or \
                 catalog["revision"] != self.index["revision"] or \
                 catalog["sessionId"] != session["sessionId"] or "filePath" in json.dumps(catalog):

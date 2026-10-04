@@ -59,6 +59,7 @@ def verify(index, values, base, metadata_check=False):
             if data['revision'] != index['revision'] or len(data['items']) != len(visible): raise ValueError('metadata catalog differs')
             for item in data['items']:
                 row=visible[item['itemId']]
+                if item.get('folderPath') != row.get('folderPath',[]): raise ValueError('signed folder metadata differs')
                 if item.get('metadata') != row.get('metadata'): raise ValueError('signed metadata differs from index')
             if 'filePath' in json.dumps(data) or 'coverPath' in json.dumps(data):raise ValueError('private path exposed')
             contract['signedMetadataVerified']=True

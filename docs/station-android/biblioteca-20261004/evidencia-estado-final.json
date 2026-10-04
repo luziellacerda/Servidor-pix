@@ -1,0 +1,17 @@
+{
+  "service": "turborama-station-api.service",
+  "pid": 337611,
+  "uid": 995,
+  "gid": 981,
+  "apiDllSha256": "14500ad850f41f6d361a8c29dd3a64ddd9b9642ad55133d14f814cbb0288e207",
+  "indexSha256": "a9aaaf115604cf80f659348e5ef38b5ca7d153f552bf549a6e70398fe1bedb90",
+  "catalogRevision": 7,
+  "autoReload": true,
+  "onlineEnabled": true,
+  "sharedServicesUnchanged": true,
+  "configurationPreserved": true,
+  "timerActive": true,
+  "serviceStartedAt": "Sun 2026-10-04 12:28:18 -03",
+  "indexPublishedAt": 1791127988.066281,
+  "syntheticLicenses": "0"
+}
