@@ -117,7 +117,16 @@ def main():
             gt = command(guest,'relay-ticket',roomId=room)['room']['relay']['ticket']
             return ht, gt
         stage = 'signed_rooms'
+        def renew(client):
+            challenge=client.signed(client.request(BASE,'POST','/v1/station/challenges',dict(
+                client.identity,domain=helper.PREFIX+'request-session-challenge/v1',licenseId=client.license_id)),'session-challenge')
+            session=client.signed(client.request(BASE,'POST','/v1/station/sessions',client.proof(dict(
+                client.identity,domain=helper.PREFIX+'open-session/v1',licenseId=client.license_id,
+                challengeId=challenge['challengeId'],nonce=challenge['nonce']))),'session')
+            client.token=session['accessToken'];client.session=session['sessionId']
         with ThreadPoolExecutor(max_workers=16) as pool:
+            list(pool.map(renew,clients))
+            report['realSignedSessionRenewalsFromSameOrigin']=len(clients)
             tickets = list(pool.map(prepare,range(PAIR_COUNT)))
         stage = 'public_load'
 

@@ -158,7 +158,7 @@ def apply(revision):
             raise ValueError('Inspected catalog differs')
         unchanged = {str(path): ops.digest(path) for path in DROPIN.parent.glob('*.conf')}
         unchanged['/etc/nginx/snippets/turborama-station.locations.conf'] = ops.digest(Path('/etc/nginx/snippets/turborama-station.locations.conf'))
-        override = '[Service]\nWorkingDirectory=' + str(target) + '\nExecStart=\nExecStart=/usr/bin/dotnet ' + str(target / DLL) + '\nEnvironment=Station__LibraryVerifyContentOnLoad=false\nEnvironment=Station__Online__RelayMaxRooms=512\nEnvironment=Station__Online__RelayEnabled='
+        override = '[Service]\nWorkingDirectory=' + str(target) + '\nExecStart=\nExecStart=/usr/bin/dotnet ' + str(target / DLL) + '\nEnvironment=Station__LibraryVerifyContentOnLoad=false\nEnvironment=Station__OriginRequestsPerMinute=2048\nEnvironment=Station__MaximumRateWindows=32768\nEnvironment=Station__Online__RelayMaxRooms=512\nEnvironment=Station__Online__RelayEnabled='
         relay_proxy = (ROOT / 'ops/nginx-v1-station-relay.conf').read_text()
         state = dict(target=str(target), oldFiles=files(OLD), unchangedConfigurations=unchanged, shared=shared,
             disabledOverride=override + 'false\n', enabledOverride=override + 'true\n', relayProxy=relay_proxy,
@@ -193,6 +193,8 @@ def apply(revision):
         shadow = dict(values)
         shadow['Station__Online__RelayMaxRooms'] = '512'
         shadow['Station__LibraryVerifyContentOnLoad'] = 'false'
+        shadow['Station__OriginRequestsPerMinute'] = '2048'
+        shadow['Station__MaximumRateWindows'] = '32768'
         for key in ('INVOCATION_ID', 'NOTIFY_SOCKET', 'LISTEN_FDS', 'LISTEN_PID', 'LISTEN_FDNAMES', 'JOURNAL_STREAM'):
             shadow.pop(key, None)
         for enabled in (False, True):
@@ -252,6 +254,7 @@ def apply(revision):
             indexRevision=14, indexSha256=INDEX_SHA, engineRegistrySha256=REGISTRY_SHA,
             onlineEnabled=True, relayEnabled=True, relayMaximumRooms=512, relayMaximumConnections=1024,
             libraryVerifyContentOnLoad=False,
+            originRequestsPerMinute=2048,maximumRateWindows=32768,
             migrationsApplied=0, customerNotificationsSent=False,
             originalLicenseChanged=False, sharedServicesPreserved=True, indexKeysScannerMediaPreserved=True,
             pid=int(ops.run(['systemctl', 'show', SERVICE, '-p', 'MainPID', '--value']).strip()),

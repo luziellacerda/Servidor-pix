@@ -42,6 +42,11 @@ internal static class StationTransferRateChecks
             if (concurrent.AllowCoverDevice(license, device)) Interlocked.Increment(ref allowed);
         });
         Check(allowed == StationRateLimiter.CoverDeviceRequestsPerMinute, "parallel requests cannot overrun device budget");
+        var sharedNetwork=new StationRateLimiter(clock,2048,32768);
+        for(int i=0;i<2048;i++)Check(sharedNetwork.Allow(origin,"/v1/station/sessions"),"licensed session capacity behind shared NAT");
+        Check(!sharedNetwork.Allow(origin,"/v1/station/sessions"),"configured origin budget remains bounded");
+        for(int i=0;i<8192;i++)Check(sharedNetwork.Allow(IPAddress.Parse("198.18."+(i/256)+"."+(i%256)),"/v1/station/catalog"),"many independently tracked origins");
+        Check(!sharedNetwork.AllowCoverDevice("bad",device),"larger origin budget does not accept malformed identity");
         Console.WriteLine("STATION TRANSFER RATE: OK (full catalog, NAT isolation, concurrent bound, original auth/download limits)");
     }
 

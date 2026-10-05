@@ -9,7 +9,9 @@ public static class StationEndpoints
 {
     public static void MapStation(this WebApplication app, bool enabled)
     {
-        var limiter = new StationRateLimiter();
+        var limiter = new StationRateLimiter(originRequestsPerMinute:
+            app.Configuration.GetValue("Station:OriginRequestsPerMinute",30),
+            maximumWindows:app.Configuration.GetValue("Station:MaximumRateWindows",4096));
         Post<StationActivationChallengeRequest>(app, enabled, limiter,
             "/v1/station/activations/challenge",
             (service, request, token) => service.ActivationChallengeAsync(request, token));
@@ -222,14 +224,24 @@ public sealed class StationRateLimiter
     private readonly object _sync = new();
     private readonly Dictionary<string, (long Minute, int Count)> _windows = new();
     private readonly TimeProvider _clock;
+    private readonly int originMaximum;
+    private readonly int maximumWindows;
 
-    public StationRateLimiter(TimeProvider? clock = null) => _clock = clock ?? TimeProvider.System;
+    public StationRateLimiter(TimeProvider? clock = null, int originRequestsPerMinute = 30,
+        int maximumWindows = 4096)
+    {
+        _clock = clock ?? TimeProvider.System;
+        originMaximum = originRequestsPerMinute is >=30 and <=65536
+            ? originRequestsPerMinute : throw new ArgumentOutOfRangeException(nameof(originRequestsPerMinute));
+        this.maximumWindows = maximumWindows is >=4096 and <=131072
+            ? maximumWindows : throw new ArgumentOutOfRangeException(nameof(maximumWindows));
+    }
 
     public bool Allow(IPAddress? address, string route)
     {
         var origin = address?.ToString() ?? "unknown";
         var key = origin + "\0" + route;
-        return AllowWindow(key, route == "/v1/station/covers" ? CoverOriginRequestsPerMinute : 30);
+        return AllowWindow(key, route == "/v1/station/covers" ? CoverOriginRequestsPerMinute : originMaximum);
     }
 
     // Bound to the authenticated device rather than its temporary session or shared NAT.
@@ -254,11 +266,11 @@ public sealed class StationRateLimiter
                 _windows[key] = (minute, window.Count + 1);
                 return true;
             }
-            if (_windows.Count >= 4096)
+            if (_windows.Count >= maximumWindows)
             {
                 foreach (var stale in _windows.Where(pair => pair.Value.Minute != minute)
                              .Select(pair => pair.Key).ToArray()) _windows.Remove(stale);
-                if (_windows.Count >= 4096) return false;
+                if (_windows.Count >= maximumWindows) return false;
             }
             _windows[key] = (minute, 1);
             return true;
