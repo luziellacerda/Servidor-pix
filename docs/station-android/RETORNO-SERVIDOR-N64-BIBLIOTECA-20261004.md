@@ -1,3 +1,5 @@
+> Recibo histórico de04/10. Estado vigente e retorno específico em [RETORNO-SERVIDOR-NEOGEO-VELOCIDADE-20261005.md](RETORNO-SERVIDOR-NEOGEO-VELOCIDADE-20261005.md); catálogo9/2.162/189NeoGeo. R9 instalado confirmado posteriormente; R11 compilado, USB pendente. Não executar os rollbacks antigos deste recibo sobre a publicação05/10.
+
 # SERVIDOR → APP: N64, capas e biblioteca automática — 04/10/2026
 
 O handoff online de 04/10 foi concluído primeiro. O [retorno ONL-01 a ONL-07](RETORNO-SERVIDOR-ONLINE-STATION-20261004.md) registra a publicação das salas. A entrega atual preserva esse módulo e acrescenta N64, descoberta por pasta, sinopses e subpastas R9. As alterações do catálogo passam a ser carregadas sem reiniciar a API.

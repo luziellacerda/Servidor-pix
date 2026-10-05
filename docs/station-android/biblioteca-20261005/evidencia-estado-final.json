@@ -1,0 +1,12 @@
+{
+  "apiPidPreserved": true,
+  "apiPid": 347227,
+  "apiDllSha256": "0b3f5da385216d216fb55220789f55c40b8eb304b7b1a4759cc154b1aa3f3ab0",
+  "indexSha256": "c5cc7944ce4ad224f85e2f4218c4c91915ac6dd2bda530368554822969d86492",
+  "catalogRevision": 9,
+  "sharedServicesUnchanged": true,
+  "timerActive": true,
+  "autoReload": true,
+  "onlineEnabled": true,
+  "syntheticLicensesRemaining": 0
+}

@@ -1,12 +1,12 @@
 # Biblioteca automática TurboStation
 
-SNES, Mega Drive e Nintendo 64 usam o mesmo importador no HD de jogos. A pasta `n64` foi movida de `megadrive/n64` para a raiz, ao lado de `snes` e `megadrive`, preservando os 828 arquivos.
+SNES, Mega Drive, Nintendo 64 e Neo Geo usam o mesmo importador no HD de jogos. A pasta `n64` foi movida de `megadrive/n64` para a raiz, ao lado de `snes` e `megadrive`, preservando os 828 arquivos.
 
-Produção de 04/10/2026: API `931030b`, catálogo **8 / 1.973 jogos**, 157 N64, 1.957 sinopses e 313 jogos com subpastas. [Retorno completo e evidências](RETORNO-SERVIDOR-N64-BIBLIOTECA-20261004.md).
+Produção de05/10/2026: API `931030b` mantida, scanner `cb49214`, catálogo **9 / 2.162 jogos**,189Neo Geo,157 N64,2.119 sinopses e374 jogos com subpastas. Neo Geo foi movido de SNES para a raiz,826 arquivos intactos. [Retorno completo e evidências](RETORNO-SERVIDOR-NEOGEO-VELOCIDADE-20261005.md).
 
 ## Acrescentar um jogo
 
-1. Copie a ROM ou ZIP para a pasta da plataforma. N64 aceita `.z64/.n64/.v64/.rom`; SNES `.sfc/.smc/.swc/.fig`; Mega `.bin/.md/.gen/.smd`. ZIP precisa conter uma única ROM jogável desses formatos.
+1. Copie a ROM ou ZIP para a pasta da plataforma. N64 aceita `.z64/.n64/.v64/.rom`; SNES `.sfc/.smc/.swc/.fig`; Mega `.bin/.md/.gen/.smd`. Nessas três plataformas, ZIP precisa conter uma única ROM jogável desses formatos. **Neo Geo aceita o ZIP fechado do jogo**, mantendo `neogeo.zip` íntegro na raiz da plataforma; o pacote entrega ambos e abre o ZIP do jogo, sem extrair chips. A BIOS não aparece como jogo.
 2. Coloque a capa em `media/revista`, com **o mesmo nome do arquivo do jogo sem a extensão**.
 3. Se houver dados, acrescente uma entrada em `gamelist.xml` usando o caminho exato. XML é opcional para descobrir o arquivo.
 4. Aguarde a cópia terminar. O importador verifica cada minuto e exige duas observações estáveis. A API lê o índice a cada 10 segundos. O cliente atualizado consulta a cada minuto em primeiro plano, autorizado e sem download ativo.
@@ -22,7 +22,7 @@ n64/media/revista/Aventura/Jogo.png
 
 Esse jogo recebe `folderPath: ["Aventura"]`. Uma estrutura com `Aventura/Selecionados` gera dois segmentos. A hierarquia deriva dos jogos disponíveis, por plataforma. `folderPath` organiza a tela e não determina a pasta de instalação do Android.
 
-Sem revista, o jogo recebe uma imagem identificada como **CAPA PENDENTE**. Acrescentar depois a revista correta substitui essa imagem automaticamente. Capas ambíguas/inválidas e arquivos sem ROM única ficam no relatório de pendências. Os jogos já publicados continuam disponíveis. As revistas N64 são reduzidas para 480×720/JPEG qualidade 90, sem cortar a arte; os originais permanecem intactos.
+Sem revista, o jogo recebe uma imagem identificada como **CAPA PENDENTE**. Acrescentar depois a revista correta substitui essa imagem automaticamente. Capas ambíguas/inválidas e arquivos sem ROM única ficam no relatório de pendências. Os jogos já publicados continuam disponíveis. As revistas N64 e Neo Geo são reduzidas para480×720/JPEG qualidade90, sem cortar a arte; os originais permanecem intactos. ZIP Neo Geo com CRC inválido fica pendente. O importador só recompõe BIOS quando existe companion válido com o mesmo nome/tamanho/CRC do membro; o original é preservado. Art of Fighting 2/aof2.zip continua pendente por chip gráfico corrompido, sem cópia válida local.
 
 ## Sinopse e outros dados
 
@@ -77,7 +77,11 @@ Cada item conserva `itemId`, `name`, `platform`, `revision` e `coverId`. `folder
 
 Metadata/pastas novas alteram a revisão do catálogo, preservando revisão individual, recibos e cache. ROM/capa nova aumenta a revisão do item. Uma revisão de catálogo igual não deve reiniciar a fila de capas. Cache usa coverId/revisão; quatro vagas são reutilizadas imediatamente após cada imagem terminar. Downloads mantêm tamanho/SHA e o descritor launchPath real.
 
-N64 já é mapeado para `Nintendo 64`, pasta `nintendo-64`, motor `mupen64plus_next_gles3`. R8 instalado pode obter os 157 jogos com Atualizar. Consulta automática, sinopses do servidor e navegação R9 precisam da [integração de fontes publicada](https://github.com/luziellacerda/TurboElden/tree/ba669c27418341c7f232a644317881779ddd3bf3/versions/station-library-autodiscovery-20261004), seguida de assinatura/instalação no ambiente canônico. Esses passos ainda não ocorreram no Linux.
+N64 já é mapeado para `Nintendo 64`, pasta `nintendo-64`, motor `mupen64plus_next_gles3`; Neo Geo também já tem mapeamento/motor no app. R9 é o último instalado comprovado; R10/R11 contêm consulta automática e sinopses, mas R11 ainda aguarda USB/instalação. A fonte [c8e240a](https://github.com/luziellacerda/TurboElden/tree/c8e240a2c886122e79ca2105c0a719a9217ed7dc/versions/station-neogeo-rate-20261005) acrescenta somente MB/s sobreR11. Não repetir o overlay antigo N64 sobre as fontesR10/R11. Nenhum APK foi assinado/instalado neste Linux; execução dos novos jogos no aparelho ainda precisa de prova.
+
+## Velocidade de todos os jogos
+
+Todas as plataformas publicadas usam a mesma rota de artefatos, sem limite artificial de MB/s por jogo. O download usa a banda disponível entre servidor e aparelho. O contador em passos de 1 MB mostra bytes acumulados, não a taxa. A fonte nova do app mostra MB/s real durante a transferência; precisa entrar no próximo APK. [Medições e evidências](RETORNO-SERVIDOR-NEOGEO-VELOCIDADE-20261005.md).
 
 ## Operação e retorno
 
@@ -85,14 +89,14 @@ Timer: `turborama-station-library-scan.timer`. Serviço: `turborama-station-libr
 
 Conteúdos ficam em objetos imutáveis por SHA256. O índice é substituído atomicamente; a API mantém o último válido se uma atualização falhar. Concessões abertas ficam ligadas ao arquivo/revisão anteriores durante sua validade.
 
-O importador preserva jogos publicados quando a origem desaparece, inclusive ao desmontar o HD. As ROMs, capas originais e saves permanecem intactos. Um ZIP com arquivos auxiliares só é curado quando contém uma ROM única; esses arquivos extras não são instalados. A ROM alternativa de Ocarina of Time tem bytes diferentes do ZIP, ID próprio e revista exata; a extensão `.rom` foi acrescentada em dados e entrou automaticamente no catálogo.
+O importador preserva jogos publicados quando a origem desaparece, inclusive ao desmontar o HD. As ROMs, capas originais e saves permanecem intactos. Nos modos de ROM única SNES/Mega/N64, um ZIP com arquivos auxiliares só é curado quando contém uma ROM única; esses arquivos extras não são instalados. Neo Geo usa o modo separado `arcade-set`, mantendo ZIP fechado e BIOS no pacote externo, com `fileCount=2` e `launchPath=<jogo>.zip`. A ROM alternativa de Ocarina of Time tem bytes diferentes do ZIP, ID próprio e revista exata; a extensão `.rom` foi acrescentada em dados e entrou automaticamente no catálogo.
 
-Backup vigente: `/mnt/DADOS/station-folders-backup-20261004`. Retorno específico, quando necessário:
+Backup vigente: `/mnt/DADOS/station-neogeo-backup-20261005`, com índice8/estado/configuração/unidade próprios anteriores restaurados porSHA. Retorno específico, quando necessário:
 
 ```text
-python3 docs/station-android/scripts/implantar-pastas-station-20261004.py --rollback
+python3 docs/station-android/scripts/implantar-neogeo-station-20261005.py --rollback
 ```
 
-Restaura somente os overrides próprios da API/importação à release 77d8d54, preservando N64, automação, online e conteúdo. A release anterior ignora folderPath. As guardas dos implantadores anteriores recusam a release atual. A publicação já foi concluída.
+Restaura somente o scanner/configuração/estado próprios anteriores e republica o conteúdo anterior com revisão crescente9→10, mantendo API, HD e novos arquivos intactos. Recusa sobrescrever índice que já tenha avançado com outros jogos. Os rollbacks de04/10 são históricos e não servem para desfazer esta publicação. Não repetir --apply após sucesso.
 
-[Lista das 16 sinopses sem fonte](biblioteca-20261004/metadados-pendentes.tsv). A execução dos novos jogos no telefone e a partida entre dois aparelhos ainda precisam de prova. N64 online não foi habilitado; registro social permanece SNES/Mega.
+[Lista atual das43sinopses sem fonte](biblioteca-20261005/metadados-pendentes.tsv). Art of Fighting 2 está pendente por ZIP corrompido; substituir a origem por cópia válida permitirá importação automática. Execução dos novos jogos no telefone e partida entre dois aparelhos ainda precisam de prova. N64/Neo Geo online não foram habilitados; registro social permanece SNES/Mega.

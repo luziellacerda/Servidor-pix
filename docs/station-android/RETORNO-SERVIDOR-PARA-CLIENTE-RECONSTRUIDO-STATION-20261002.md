@@ -1,4 +1,18 @@
-# Atualização vigente — N64, biblioteca automática e pastas R9 publicados, 04/10/2026
+# Atualização vigente — Neo Geo, catálogo cruzado e velocidade, 05/10/2026
+
+**Catálogo 9 / 2.162 jogos**, incluindo **189 Neo Geo** e 157 N64, com 255 IDs ocultos preservados. Há2.119 sinopses,43 sem fonte e374 jogos em subpastas. Neo Geo movido de SNES para a raiz do HD,826 arquivos preservados. Capas exatas da revista480×720; pacotes instalam ZIP fechado e BIOS ao lado. Alpha Mission II recebeu somente a BIOS exata no pacote de entrega; **Art of Fighting 2 aguarda ZIP íntegro**, pois o chip056-c7.c7 está corrompido.
+
+**API 931030b/PID 347227 mantida, sem reinício**; DLL0b3f5da385216d216fb55220789f55c40b8eb304b7b1a4759cc154b1aa3f3ab0. Scanner próprio selado na fonte cb4921431144228360a95193eeeac485cc3addc2. Índice9 SHAc5cc7944ce4ad224f85e2f4218c4c91915ac6dd2bda530368554822969d86492. Autoimport por minuto/reload10s/online ativos,12serviços compartilhados preservados,zero licenças sintéticas.189capas HTTPS verificadas com4workers,ZIP+BIOS/metadata/folderPath/grants passaram.
+
+O usuário esclareceu que o contador avança de1 MB em 1 MB; esse contador não mede MB/s. Arquivo real autorizado mediu **316,35MB/s API local /259,99MB/s Nginx /até4,37MB/s HTTPS público**; controle de upload3,77MB/s ou4,34agregados com2conexões. Todos os jogos de todas as plataformas publicadas usam a mesma rota, sem restrição artificial de MB/s. Sem limitador de bytes/s encontrado. Não houve mudança global em Nginx/rede/Cloudflare. A velocidade do telefone continua sem medição.
+
+**Cliente publicado c8e240a2c886122e79ca2105c0a719a9217ed7dc**, preservando os novos commitsR10/R11 do retorno6ef86c4: [delta de três arquivos, builder e instruções](https://github.com/luziellacerda/TurboElden/tree/c8e240a2c886122e79ca2105c0a719a9217ed7dc/versions/station-neogeo-rate-20261005). Mostra percentual e MB/s real durante Baixando;9checksC++ de taxa e5Java de ZIP/BIOS passaram,JNI compilada e sintaxe do rendererR11 conferida com imagens somente de teste. **R9 é o último instalado comprovado; R11 está compilado/assinado, USB pendente.** O ajuste de tela já voltou a0. O próximo APK deve incorporar somente este delta sobreR11, JNI/carousel juntos, preservando DEXR10/salas, assinatura original e dados; nenhum novo APK foi assinado/instalado no Linux.
+
+Leia o [retorno completo](RETORNO-SERVIDOR-NEOGEO-VELOCIDADE-20261005.md), [catálogo2.162](biblioteca-20261005/catalogo-completo.tsv), [189NeoGeo](biblioteca-20261005/neogeo-jogos-capas-downloads.tsv), [43pendências](biblioteca-20261005/metadados-pendentes.tsv), [guia de pasta/sinopse](BIBLIOTECA-AUTOMATICA-STATION-20261004.md) e [prova final](biblioteca-20261005/evidencia-estado-final.json). Backup vigente `/mnt/DADOS/station-neogeo-backup-20261005`; retorno `scripts/implantar-neogeo-station-20261005.py --rollback`, índice monotonicamente maior9→10, API sem reinício, guardas recusam publicação posterior. **Rollbacks de04/10 abaixo são históricos.** Gameplay Neo Geo, visualR11/velocidade no aparelho e partida entre dois aparelhos ainda precisam de prova.
+
+---
+
+# Histórico — N64, biblioteca automática e pastas R9 publicados, 04/10/2026
 
 **API `931030b`**, DLL `0b3f5da385216d216fb55220789f55c40b8eb304b7b1a4759cc154b1aa3f3ab0`, PID 347227/UID 995. Catálogo **8 / 1.973 jogos visíveis**: SNES 644, SNES BR 191, Mega 887, Mega BR 94, **N64 157**. Preservados 255 IDs ocultos e os 996 IDs originais; 2.228 entradas internas. Índice SHA `f56cf70267251ade518ae111be88627db83d592436b7fb3bf522c119e8fefb8c`. Há **1.957 sinopses** e 16 edições sem fonte. `folderPath` publicado nos dois contratos, com 313 jogos em subpastas.
 

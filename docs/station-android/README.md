@@ -1,4 +1,8 @@
-## Atualização 04/10: N64 e catálogo automático publicados
+## Atualização 05/10: Neo Geo e catálogo completo publicados
+
+Leia [o retorno vigente](RETORNO-SERVIDOR-NEOGEO-VELOCIDADE-20261005.md), [catálogo cruzado](biblioteca-20261005/catalogo-completo.tsv) e [guia de importação](BIBLIOTECA-AUTOMATICA-STATION-20261004.md). Catálogo **9 / 2.162 jogos /189NeoGeo /157N64**,2.119sinopses,43sem fonte e374jogos em subpastas. API931030b mantida; scannercb49214 publicado. TaxaHTTPS até4,37MB/s medida no Linux, sem cap local de1MB/s; o contador não mede velocidade. ClienteR11 conciliado com a fonte MB/s [c8e240a](https://github.com/luziellacerda/TurboElden/tree/c8e240a2c886122e79ca2105c0a719a9217ed7dc/versions/station-neogeo-rate-20261005); R9 instalado e R11 compilado/USBpendente segundo retorno. Não executar rollbacks históricos de04/10 sobre este estado; usar retorno próprio05/10.
+
+## Histórico 04/10: N64 e catálogo automático publicados
 
 Leia [o retorno atual](RETORNO-SERVIDOR-N64-BIBLIOTECA-20261004.md) e [o guia de pastas/metadados](BIBLIOTECA-AUTOMATICA-STATION-20261004.md). API `931030b`, catálogo **8 / 1.973 jogos / 157 N64**, 1.957 sinopses e 313 jogos em subpastas R9. O retorno canônico continua no arquivo de02/10, atualizado no início; os blocos antigos são históricos.
 
@@ -8,7 +12,7 @@ Esta pasta é o ponto de partida para uma ferramenta ou pessoa que vá adicionar
 
 Leia nesta ordem: [regras de trabalho](AGENTS.md), [inventário observado](INVENTARIO-SERVIDOR.md) e [plano de implementação](PLANO-INTEGRACAO.md). O inventário é um retrato datado, não uma afirmação de que uma branch Git corresponde aos binários instalados. Para atualizar a parte observável sem modificar o servidor, execute `bash scripts/inventario-somente-leitura.sh` nesta pasta.
 
-O [handoff técnico único de catálogo, capas e downloads](RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md) é o ponto de comparação atual com o APK. Em 04/10/2026 a API `931030b` está publicada com catálogo **revisão 8 / 1.973 jogos**, N64, subpastas, importação automática, capas exatas da revista e downloads verificados por HTTPS. Administração Station e salas online estão publicadas; [retorno do módulo online](RETORNO-SERVIDOR-ONLINE-STATION-20261004.md). O documento contém listas por plataforma, hashes, instruções para atualizar catálogo/cache e as provas ainda necessárias no aparelho.
+O [handoff técnico único de catálogo, capas e downloads](RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md) é o ponto de comparação atual com o APK. Em 05/10/2026 a API `931030b` continua publicada, sem reinício nesta rodada, com catálogo **revisão9 / 2.162 jogos**, incluindo189NeoGeo e157N64, subpastas, importação automática, capas exatas da revista e downloads verificados por HTTPS. Administração Station e salas online estão publicadas; [retorno do módulo online](RETORNO-SERVIDOR-ONLINE-STATION-20261004.md). O documento contém listas por plataforma, hashes, instruções para atualizar catálogo/cache e as provas ainda necessárias no aparelho.
 
 O [retorno histórico da implementação candidata](RETORNO-IMPLEMENTACAO-CANDIDATA-20260930.md) registra o estado de30/09. O [OpenAPI candidato](openapi-candidato.yaml) também é histórico e parcial; use o handoff técnico atualizado acima para o contrato efetivamente publicado e conferido em produção. Os levantamentos abaixo descrevem30/09 e não substituem esse estado atual.
 

@@ -1,0 +1,70 @@
+{
+  "catalogRevision": 8,
+  "networkLinkMbps": 100,
+  "measurements": [
+    {
+      "route": "api",
+      "bytes": 65243904,
+      "elapsedSeconds": 0.2062,
+      "ttfbMs": 7.37,
+      "MBps": 316.351,
+      "Mbps": 2530.81,
+      "sha256Verified": true
+    },
+    {
+      "route": "nginx",
+      "bytes": 65243904,
+      "elapsedSeconds": 0.251,
+      "ttfbMs": 6.39,
+      "MBps": 259.986,
+      "Mbps": 2079.88,
+      "sha256Verified": true
+    },
+    {
+      "route": "public_https",
+      "bytes": 65243904,
+      "elapsedSeconds": 17.3434,
+      "ttfbMs": 246.51,
+      "MBps": 3.762,
+      "Mbps": 30.1,
+      "sha256Verified": true
+    },
+    {
+      "route": "public_https",
+      "bytes": 65243904,
+      "elapsedSeconds": 14.9412,
+      "ttfbMs": 235.54,
+      "MBps": 4.367,
+      "Mbps": 34.93,
+      "sha256Verified": true
+    }
+  ],
+  "artifactBytes": 65243904,
+  "diskHashReadMBps": 306.33,
+  "syntheticRowsRemoved": true,
+  "uploadControl": {
+    "measurement": "200 16777216 4.448818 3771162",
+    "exitCode": 0,
+    "bytes": 16777216,
+    "source": "https://github.com/cloudflare/speedtest/blob/main/README.md"
+  },
+  "uploadParallel": {
+    "connections": 2,
+    "bytes": 33554432,
+    "elapsedSeconds": 7.725,
+    "aggregateMBps": 4.344,
+    "measurements": [
+      {
+        "measurement": "200 16777216 4.383558 3827305",
+        "exitCode": 0
+      },
+      {
+        "measurement": "200 16777216 7.689360 2181874",
+        "exitCode": 0
+      }
+    ]
+  },
+  "phoneMeasured": false,
+  "artificialByteRateLimitFound": false,
+  "configurationChanged": false
+}

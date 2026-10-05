@@ -1,0 +1,39 @@
+{
+  "revision": 9,
+  "visible": 2162,
+  "compatibility": 255,
+  "internal": 2417,
+  "platformCounts": {
+    "megadrive": 887,
+    "megadrivebr": 94,
+    "snes": 644,
+    "snesbr": 191,
+    "n64": 157,
+    "neogeo": 189
+  },
+  "synopses": 2119,
+  "metadataMissing": 43,
+  "gamesWithFolders": 374,
+  "neoGeoSetsValidated": 189,
+  "intactOriginalGameZips": 188,
+  "exactBiosRepairs": [
+    {
+      "game": "alpham2.zip",
+      "members": [
+        "uni-bios_1_2.rom"
+      ],
+      "originalPreserved": true,
+      "otherGameChipsUnchanged": true
+    }
+  ],
+  "biosNotListedAsGame": true,
+  "allCovers480x720": true,
+  "pendingGame": {
+    "filename": "aof2.zip",
+    "folder": "# 0 - ART OF FIGTHERS COLEÇÃO #",
+    "member": "056-c7.c7",
+    "sizeBytes": 2097152,
+    "expectedCrc32": "3f36df57",
+    "reason": "CRC mismatch; no valid local copy"
+  }
+}

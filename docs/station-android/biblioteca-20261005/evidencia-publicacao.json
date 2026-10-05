@@ -1,0 +1,56 @@
+{
+  "applied": true,
+  "sourceRevision": "cb4921431144228360a95193eeeac485cc3addc2",
+  "apiRestarted": false,
+  "backupRestoreVerified": true,
+  "pendingNeoGeo": [
+    {
+      "platform": "neogeo",
+      "rom": "# 0 - ART OF FIGTHERS COLEÇÃO #/aof2.zip",
+      "reason": "ValueError"
+    }
+  ],
+  "realServiceIdentityValidated": true,
+  "scannerManifest": {
+    "atualizar-biblioteca-station.py": "cac208243fc8be868046f8fa332d6de4fc8108dc73e5e97e3124fabc021bd1f3",
+    "station_revista.py": "680f1541115234508f55691691eb3f23574dad70194970bbd69322205c93a65e",
+    "preparar-indice-artefatos.py": "050b450ffa5fed2a6d840c47e20b14f64d5676ed300743fe7d59a0e2fa641ad7"
+  },
+  "publicVerification": {
+    "contract": {
+      "catalogItems": 2162,
+      "catalogRevision": 9,
+      "platformCounts": {
+        "megadrive": 887,
+        "megadrivebr": 94,
+        "n64": 157,
+        "neogeo": 189,
+        "snes": 644,
+        "snesbr": 191
+      },
+      "verifiedCoverAndDownloadPairs": 7,
+      "compatibilityIdVerified": true,
+      "signaturesAndIdentityVerified": true,
+      "correlationVerified": true,
+      "oneUseVerified": true
+    },
+    "metadataAndFoldersVerified": true,
+    "covers": {
+      "verified": 189,
+      "workers": 4,
+      "bytes": 32008248,
+      "elapsedMs": 19342.65
+    },
+    "closedZipAndBiosDownloadVerified": true
+  },
+  "catalogRevision": 9,
+  "visible": 2162,
+  "neogeo": 189,
+  "existingIdsAndArtifactsPreserved": true,
+  "apiPidPreserved": true,
+  "sharedServicesUnchanged": true,
+  "timerActive": true,
+  "indexSha256": "c5cc7944ce4ad224f85e2f4218c4c91915ac6dd2bda530368554822969d86492",
+  "synopses": 2119,
+  "syntheticRowsRemoved": true
+}
