@@ -111,5 +111,21 @@ class DiscoveryTests(unittest.TestCase):
             with self.assertRaises(ValueError):discovery.arcade_companions(root,{'companions':['missing.zip']})
             with self.assertRaises(ValueError):discovery.prepare_arcade_artifact(rom,target,[rom])
 
+    def test_corrupt_bios_repaired_from_exact_companion_without_changing_original(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp);rom=root/'game.zip';bios=root/'neogeo.zip';target=root/'delivery.zip'
+            with zipfile.ZipFile(bios,'w') as z:z.writestr('bios.bin',b'GOOD_BIOS_BYTES')
+            with zipfile.ZipFile(rom,'w',zipfile.ZIP_STORED) as z:
+                z.writestr('bios.bin',b'GOOD_BIOS_BYTES');z.writestr('chip.bin',b'UNCHANGED_GAME_CHIP')
+            corrupt=rom.read_bytes().replace(b'GOOD_BIOS_BYTES',b'BAD__BIOS_BYTES');rom.write_bytes(corrupt)
+            discovery.prepare_arcade_artifact(rom,target,[bios])
+            import io
+            with zipfile.ZipFile(target) as package:
+                self.assertEqual(package.read('neogeo.zip'),bios.read_bytes())
+                with zipfile.ZipFile(io.BytesIO(package.read('game.zip'))) as game:
+                    self.assertIsNone(game.testzip());self.assertEqual(game.read('bios.bin'),b'GOOD_BIOS_BYTES')
+                    self.assertEqual(game.read('chip.bin'),b'UNCHANGED_GAME_CHIP')
+            self.assertEqual(rom.read_bytes(),corrupt)
+
 
 if __name__ == '__main__': unittest.main()

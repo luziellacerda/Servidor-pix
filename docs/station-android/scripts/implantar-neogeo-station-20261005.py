@@ -25,7 +25,10 @@ sys.dont_write_bytecode = True
 sys.path.insert(0,str(SCRIPTS))
 ops=module('implantar-station-20261003');library=module('atualizar-biblioteca-station');helper=module('verificar-http-release-station')
 def result(data):
- ops.replace_config(RESULT,json.dumps(data,indent=2,ensure_ascii=False)+'\n');os.chown(RESULT,1000,1000);RESULT.chmod(0o600)
+ text=json.dumps(data,indent=2,ensure_ascii=False)+'\n'
+ if RESULT.exists():ops.replace_config(RESULT,text)
+ else:ops.private_text(RESULT,text)
+ os.chown(RESULT,1000,1000);RESULT.chmod(0o600)
 def validate_api():
  pid=ops.run(['systemctl','show',SERVICE,'-p','MainPID','--value']).strip()
  assert str(API).encode() in Path('/proc/'+pid+'/cmdline').read_bytes() and ops.digest(API)==API_SHA,'API release changed'
@@ -125,12 +128,14 @@ def apply(revision):
   before={r['itemId']:r for r in original['items']};after={r['itemId']:r for r in index['items']}
   assert all(after[k]==v for k,v in before.items()),'existing game changed'
   additions=[r for r in index['items'] if r['itemId'] not in before]
-  assert len(additions)==190 and all(r['platform']=='neogeo' for r in additions) and import_report['placeholderCovers']==0
-  assert not any(r['platform']=='neogeo' for r in import_report['pending']),'Neo Geo pending'
-  assert len(index['items'])==len(original['items'])+190
+  assert len(additions)==189 and all(r['platform']=='neogeo' for r in additions) and import_report['placeholderCovers']==0
+  neo_pending=[r for r in import_report['pending'] if r['platform']=='neogeo']
+  assert len(neo_pending)==1 and neo_pending[0]['rom']=='# 0 - ART OF FIGTHERS COLEÇÃO #/aof2.zip','unreviewed pending set'
+  report['pendingNeoGeo']=neo_pending
+  assert len(index['items'])==len(original['items'])+189
   checker=Path('/mnt/DADOS/station-neogeo-check-20261005/StationLibraryAuto.Tests.dll')
   validation=subprocess.run(['/usr/bin/dotnet',str(checker),str(CONTENT/'index.json')],user=ids['Uid'][1],group=gid,extra_groups=ids['Groups'],capture_output=True,text=True,timeout=180)
-  assert validation.returncode==0 and 'VALIDATED revision=9 visible=2163 compatibility=255' in validation.stdout,'real UID parser validation failed'
+  assert validation.returncode==0 and 'VALIDATED revision=9 visible=2162 compatibility=255' in validation.stdout,'real UID parser validation failed'
   report['realServiceIdentityValidated']=True
   target=Path('/opt/turborama-station-library-neogeo-20261005-'+revision[:7]);target.mkdir(mode=0o750);os.chown(target,0,gid)
   manifest={}
@@ -152,7 +157,7 @@ def apply(revision):
   # Signed local polling waits for checksum validation, then HTTPS proves publication.
   report['publicVerification']=verify_public(index,values)
   assert validate_api()==pid and {u:ops.state(u) for u in SHARED}==baseline,'process changed'
-  report.update(applied=True,catalogRevision=index['revision'],visible=2163,neogeo=190,existingIdsAndArtifactsPreserved=True,
+  report.update(applied=True,catalogRevision=index['revision'],visible=2162,neogeo=189,existingIdsAndArtifactsPreserved=True,
                 apiPidPreserved=True,sharedServicesUnchanged=True,timerActive=True,indexSha256=ops.digest(HOME/'index.json'),
                 synopses=sum(bool(r.get('metadata',{}).get('description')) for r in index['items'] if r.get('catalogVisible',True)),
                 syntheticRowsRemoved=True)

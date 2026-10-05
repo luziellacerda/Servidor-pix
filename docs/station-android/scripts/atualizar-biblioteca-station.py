@@ -157,20 +157,49 @@ def prepare_arcade_artifact(source, temporary, companions):
     files = [source, *companions]
     if source.suffix.lower() != '.zip' or len({p.name.casefold() for p in files}) != len(files):
         raise ValueError('arcade game requires a unique ZIP filename')
-    for file in files:
+    repairs = {}
+    donors = {}
+    for file in [*companions, source]:
         members = module.archive_members(file, 'zip')
         if not members or len(members) > module.MAX_FILES or sum(size for _, size in members) > module.MAX_EXPANDED:
             raise ValueError('arcade ZIP exceeds supported limits')
         if len({name.casefold() for name, _ in members}) != len(members):
             raise ValueError('duplicate arcade ROM member')
         with zipfile.ZipFile(file) as archive:
-            if any(row.flag_bits & 1 for row in archive.infolist()) or archive.testzip() is not None:
-                raise ValueError('arcade ZIP encrypted or CRC failed')
+            if any(row.flag_bits & 1 for row in archive.infolist()):
+                raise ValueError('arcade ZIP encrypted')
+            for entry in archive.infolist():
+                identity = (entry.filename.casefold(), entry.file_size, entry.CRC)
+                try:
+                    with archive.open(entry) as stream:
+                        while stream.read(1024 * 1024):
+                            pass  # Reading to EOF verifies the declared CRC.
+                except zipfile.BadZipFile as error:
+                    if file != source or identity not in donors:
+                        raise ValueError('arcade ROM member CRC failed') from error
+                    donor_path, donor_name = donors[identity]
+                    with zipfile.ZipFile(donor_path) as donor:
+                        repairs[entry.filename] = donor.read(donor_name)
+                if file != source:
+                    donors[identity] = (file, entry.filename)
+    payload = source
+    if repairs:
+        # Restore only an exact filename/size/CRC found in a validated companion.
+        # Keep the source archive untouched; all other chip bytes stay unchanged.
+        payload = temporary.with_name('.repaired-' + source.name)
+        import copy
+        with zipfile.ZipFile(source) as archive, zipfile.ZipFile(payload, 'w') as rebuilt:
+            for entry in archive.infolist():
+                if entry.filename in repairs:
+                    rebuilt.writestr(copy.copy(entry), repairs[entry.filename])
+                else:
+                    with archive.open(entry) as src, rebuilt.open(copy.copy(entry), 'w', force_zip64=True) as dest:
+                        shutil.copyfileobj(src, dest, 1024 * 1024)
     # Already compressed emulator sets stay byte-identical, including all chip ROMs.
     # Fixed headers make unchanged input reproducible; no second decompression in app.
     with zipfile.ZipFile(temporary, 'w', zipfile.ZIP_STORED) as package:
-        for file in files:
-            info = zipfile.ZipInfo(file.name, (1980, 1, 1, 0, 0, 0))
+        for file, name in [(payload, source.name), *((p, p.name) for p in companions)]:
+            info = zipfile.ZipInfo(name, (1980, 1, 1, 0, 0, 0))
             info.external_attr = 0o100644 << 16
             with file.open('rb') as src, package.open(info, 'w', force_zip64=True) as dest:
                 shutil.copyfileobj(src, dest, 1024 * 1024)
