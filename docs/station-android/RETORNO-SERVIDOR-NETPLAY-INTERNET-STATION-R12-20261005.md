@@ -40,7 +40,20 @@ API931030b e referências de 04/10 são históricas. Catálogo, IDs, mídias, ch
 
 Suporte: [Administração Station](https://turbobox.lzgames.com.br/admin/station), buscar nome/ID acima. **Gerar novo código** reemite por 30 minutos e invalida o anterior. Troca de telefone/reinstalação usa a transferência/liberação dessa licença específica; bloqueio/liberação pelas ações auditadas. Atualizações preservam dados e identidade.
 
-## Aplicativo recebido e roteiro dos dois telefones
+## Retorno do app atualizado na conciliação final — R30
+
+Commit `b4a980632ac75d837863aa2b558d6bc7655d6648`, recebido antes do push final. **R30 instalado por atualização em05/10 às18h39, hash do telefone conferido**, dados preservados:
+
+```text
+G:\BAKUP SISTEMA APP 03-10-2026\apks-candidatos-visuais\TurboStations-Voltar-Salas-R30-20261005.apk
+SHA256 1768b7df440dcdf99efbd2e8ff93181eae06edaab5bb9be85e073afeb639027b
+```
+
+BaseR27 + classes35R29B `45675ff1` + carrosselR30 `142ebfa9`. Corrige largura doVoltar, arquivo não baixado, persistência doerro e requisitos para Iniciar. R28cancelado ficou fora. EvidênciaAndroid conferiu Voltar/retorno às plataformas, criação real de salaBattletoads, Pronto e Iniciar desabilitado com apenas um participante. Ajuste temporário de tela restaurado; sem limpeza de dados, promoçãoestável geral ou partida de dois telefones.
+
+**Usar R30 ou sucessora comprovada em ambos os aparelhos** no roteiro abaixo. Contrato/túnelWSS/motores existentes preservados; nenhuma rota nova exigida peloapp. Delta de downloads11be7f3/6f012a7 permanece separado. Os dadosR27 abaixo registram a instalação anterior, não oAPK atual.
+
+## Histórico R27 e roteiro dos dois telefones
 
 Retorno `4fd2231045142a3269c479f75fa8a0e8388cc403`: **R27 instalado** em 05/10 às 18h02, hash integral do telefone conferido:
 
@@ -51,7 +64,7 @@ SHA256 c1191ce1d531b1ec9171d6d4c2f57541349339e64e8941a33788c4067d616bd6
 
 R27 preserva carrossel/LED/layout R26 e túnel WSS R12; acrescenta lista compacta, perfil, convites e códigoTS1. Só classes35 mudou/13.083 entradas preservadas. Tela bloqueou após instalação: visual/sessão nessa revisão e gameplay de dois aparelhos ainda precisam de prova. Delta de downloads11be7f3/6f012a7 e ponteCD são entregas separadas, ainda fora do APK27. NenhumAPK foi instalado neste Linux.
 
-1. Usar R27 ou sucessora comprovada nos dois telefones, certificado original e atualização com dados. Cada aparelho usa sua licença; o POCO recebe a licença acima.
+1. Usar R30 ou sucessora comprovada nos dois telefones, certificado original e atualização com dados. Cada aparelho usa sua licença; o POCO recebe a licença acima.
 2. Baixar a mesma edição de um jogo SNES/Mega. Exemplo real: **Super Mario Kart**, `snes`, item `station_c163bc17b96efcad31302280d44fb819`, revisão4, jogadores1–2. Preparar a mesma ROM/core/runtime/opções pelo app.
 3. Abrir **Jogar online → Reconectar** depois desta publicação. Criar sala para dois jogadores.
 4. Convidado entra pelo convite ou copia/cola **Código da sala** R27. TS1 é localizador público `instance/roomId/itemId`; entrada permanece autenticada. Reinício muda `instance`, exigindo sala/código novos.

@@ -303,11 +303,15 @@
     "twoAndroidGameplayVerified": false
   },
   "app": {
-    "sourceReturn": "4fd2231045142a3269c479f75fa8a0e8388cc403",
-    "revision": "R27",
-    "installedSHA256": "c1191ce1d531b1ec9171d6d4c2f57541349339e64e8941a33788c4067d616bd6",
+    "sourceReturn": "b4a980632ac75d837863aa2b558d6bc7655d6648",
+    "revision": "R30",
+    "installedSHA256": "1768b7df440dcdf99efbd2e8ff93181eae06edaab5bb9be85e073afeb639027b",
     "installationVerifiedByAppReturn": true,
-    "androidVisualVerified": false
+    "androidBackButtonVisualVerified": true,
+    "roomCreateAndReadyVerified": true,
+    "twoDeviceGameplayVerified": false,
+    "screenSettingRestored": true,
+    "downloadsDeltaIncluded": false
   },
   "retainedOperatorLicense": {
     "sourceSystem": "STATION_OPERATOR_TEST",
@@ -316,5 +320,12 @@
     "notificationsSent": false,
     "codeIncluded": false
   },
-  "scope": "Temporary synthetic accounts; real activation code/tickets/tokens/keys/DSN/personal buyer data excluded."
+  "scope": "Temporary synthetic accounts; real activation code/tickets/tokens/keys/DSN/personal buyer data excluded.",
+  "previousApp": {
+    "sourceReturn": "4fd2231045142a3269c479f75fa8a0e8388cc403",
+    "revision": "R27",
+    "installedSHA256": "c1191ce1d531b1ec9171d6d4c2f57541349339e64e8941a33788c4067d616bd6",
+    "installationVerifiedByAppReturn": true,
+    "androidVisualVerified": false
+  }
 }
