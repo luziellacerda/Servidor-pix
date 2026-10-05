@@ -137,6 +137,46 @@ def prepare_artifact(source, temporary, extensions, explicit=None):
     return source, module.describe({'filePath': str(source)}, None)
 
 
+def arcade_companions(folder, spec):
+    module = load_module('preparar-indice-artefatos')
+    result = []
+    for name in spec.get('companions', []):
+        module.safe_member(name)
+        path = folder / name
+        if path.is_symlink() or not path.resolve().is_relative_to(folder.resolve()) or not path.is_file():
+            raise ValueError('arcade companion unavailable or unsafe')
+        result.append(path)
+    if len({p.name.casefold() for p in result}) != len(result):
+        raise ValueError('duplicate arcade companion filename')
+    return result
+
+
+def prepare_arcade_artifact(source, temporary, companions):
+    """Install intact emulator ZIPs through the existing one-level ZIP contract."""
+    module = load_module('preparar-indice-artefatos')
+    files = [source, *companions]
+    if source.suffix.lower() != '.zip' or len({p.name.casefold() for p in files}) != len(files):
+        raise ValueError('arcade game requires a unique ZIP filename')
+    for file in files:
+        members = module.archive_members(file, 'zip')
+        if not members or len(members) > module.MAX_FILES or sum(size for _, size in members) > module.MAX_EXPANDED:
+            raise ValueError('arcade ZIP exceeds supported limits')
+        if len({name.casefold() for name, _ in members}) != len(members):
+            raise ValueError('duplicate arcade ROM member')
+        with zipfile.ZipFile(file) as archive:
+            if any(row.flag_bits & 1 for row in archive.infolist()) or archive.testzip() is not None:
+                raise ValueError('arcade ZIP encrypted or CRC failed')
+    # Already compressed emulator sets stay byte-identical, including all chip ROMs.
+    # Fixed headers make unchanged input reproducible; no second decompression in app.
+    with zipfile.ZipFile(temporary, 'w', zipfile.ZIP_STORED) as package:
+        for file in files:
+            info = zipfile.ZipInfo(file.name, (1980, 1, 1, 0, 0, 0))
+            info.external_attr = 0o100644 << 16
+            with file.open('rb') as src, package.open(info, 'w', force_zip64=True) as dest:
+                shutil.copyfileobj(src, dest, 1024 * 1024)
+    return temporary, module.describe({'filePath': str(temporary)}, source.name)
+
+
 def publish(config, bootstrap=False):
     root = Path(config['volumeRoot']).resolve()
     if not root.is_dir() or root.is_symlink() or root.stat().st_dev != config['volumeDevice']:
@@ -169,6 +209,11 @@ def publish(config, bootstrap=False):
             if folder.is_symlink() or not folder.resolve().is_relative_to(root): raise ValueError('platform folder is unsafe')
             games, missing = xml_games(folder)
             report['missingXmlRoms'] += missing
+            mode = spec.get('artifactMode', 'single-rom')
+            if mode not in {'single-rom', 'arcade-set'}:
+                raise ValueError('unknown platform artifact mode')
+            companions = arcade_companions(folder, spec) if mode == 'arcade-set' else []
+            companion_stamp = [[p.relative_to(folder).as_posix(), stamp(p)] for p in companions]
             magazine = defaultdict(list)
             revista = folder / 'media' / 'revista'
             if revista.exists():
@@ -176,6 +221,8 @@ def publish(config, bootstrap=False):
                     if p.is_file() and p.suffix.lower() in {'.jpg', '.jpeg', '.png', '.webp', '.gif'}:
                         magazine[p.stem].append(p)
             for rom in safe_roms(folder.resolve(), set(spec['extensions'])):
+                if rom in companions:
+                    continue  # BIOS/support archives are dependencies, never listed as games.
                 folder_path = list(rom.relative_to(folder).parent.parts)
                 if len(folder_path)>8 or any(not n.strip() or n in {'.','..'} or len(n.encode('utf-16-le'))//2>80 or any(ord(c)<32 or c in '/\\' for c in n) for n in folder_path):
                     report['pending'].append({'platform':platform,'rom':rom.relative_to(folder).as_posix(),'reason':'invalid_folder_path'});continue
@@ -189,6 +236,8 @@ def publish(config, bootstrap=False):
                 candidates = magazine.get(rom.stem, [])
                 cover_stamp = [[str(p.relative_to(folder)), stamp(p)] for p in sorted(candidates)]
                 fingerprint = [stamp_rom, cover_stamp]
+                if mode == 'arcade-set':
+                    fingerprint.append([mode, companion_stamp])
                 unchanged = existing and existing['fingerprint'] == fingerprint
                 seeded = existing and existing['fingerprint'] is None
                 if seeded or unchanged:
@@ -213,7 +262,10 @@ def publish(config, bootstrap=False):
                     if candidates: source_cover, _, _ = select_revista_cover(folder, rom, magazine)
                     with tempfile.TemporaryDirectory(prefix='.build-', dir=home) as tmp:
                         tmp = Path(tmp)
-                        game_source, descriptor = prepare_artifact(rom, tmp / rom.name, set(spec['extensions']), override.get('launchPath'))
+                        if mode == 'arcade-set':
+                            game_source, descriptor = prepare_arcade_artifact(rom, tmp / rom.name, companions)
+                        else:
+                            game_source, descriptor = prepare_artifact(rom, tmp / rom.name, set(spec['extensions']), override.get('launchPath'))
                         cover_tmp = tmp / 'cover.jpg'; compile_cover(source_cover, cover_tmp)
                         game_dir = home / 'games' / descriptor['sha256']; game_dir.mkdir(mode=0o750, parents=True, exist_ok=True)
                         target = game_dir / descriptor['fileName']
@@ -230,6 +282,8 @@ def publish(config, bootstrap=False):
                             if gid is not None: os.chown(p, -1, gid)
                         if stamp(rom) != stamp_rom or [[str(p.relative_to(folder)), stamp(p)] for p in sorted(candidates)] != cover_stamp:
                             raise ValueError('source changed while compiling')
+                        if [[p.relative_to(folder).as_posix(), stamp(p)] for p in companions] != companion_stamp:
+                            raise ValueError('arcade companion changed while compiling')
                         name = text(override.get('name', game.findtext('name', '') if game is not None else ''), 120) or text(rom.stem, 120)
                         ids = existing['ids'] if existing else ['station_' + hashlib.sha256((actual_platform+':'+relative).encode()).hexdigest()[:32]]
                         for item_id in ids:
