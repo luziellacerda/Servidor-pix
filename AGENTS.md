@@ -1,6 +1,8 @@
-# Entrada do segundo jogador — correção preparada — 05/10/2026
+# Segundo jogador — correção conciliada com R34 — 05/10/2026
 
-Leia docs/station-android/RETORNO-SEGUNDO-JOGADOR-SALAS-STATION-20261005.md. R30 oculta outras salas quando há sala própria e o perfil do anfitrião não oferece Entrar. Pronto não executa join. Fonteapp b282b04:3classes,146fontes compiladas/138verificações; DEXef8a2d99 pronto, APK ainda não atualizado. Servidor e4e557a inalterado. Uso imediato: POCO Sair da sala → Código TS1 da sala do primeiro → Entrar → dois nomes → doisProntos → hostIniciar. Preservar R30/assinatura/dados, não reenviarR27. Não afirmar gameplay/latência resolvidos sem aparelho.
+Leia docs/station-android/RETORNO-SEGUNDO-JOGADOR-SALAS-STATION-20261005.md. Pronto confirma a sala atual; a entrada precisa ocorrer primeiro. Fonte app f7f0561: três classes alteradas sobre a fonte exata R34,147 entradas Java/dependências compiladas,144 preservadas e213 verificações aprovadas. DEX39864bd1 pronto; montagem e instalação do APK desta correção pendentes. O retorno a8898a0 confirma R34/SHA513dd470 instalado no Samsung; a versão do POCO ainda não foi conferida. Mantidos recuperação de abertura, Voltar/manifesto e design R33. Servidor e4e557a inalterado. Uso imediato: POCO Sair da sala → CódigoTS1 do primeiro telefone → Entrar → dois nomes juntos → ambos Pronto → anfitrião Iniciar. Preservar dados/assinatura/saves e conciliar sucessoras antes de montar; DEX inicial R30 foi substituído. Gameplay em dupla e latência externa baixa continuam pendentes.
+
+## Histórico anterior — consultar o retorno R34 acima
 
 ## Retorno final recebido — appR30
 

@@ -1,13 +1,19 @@
 {
-  "r30JavaFiles": 146,
+  "sourceBase": "R34",
+  "baseAppReturn": "a8898a0",
+  "r34JavaFiles": 147,
   "changed": {
     "netplay-src": [
-      "org/emulationstation/frontend/netplay/StationRoomsActivity.java",
       "org/emulationstation/frontend/netplay/StationPlayerModel.java",
-      "org/emulationstation/frontend/netplay/StationPlayerSheet.java"
+      "org/emulationstation/frontend/netplay/StationPlayerSheet.java",
+      "org/emulationstation/frontend/netplay/StationRoomsActivity.java"
     ],
     "dependency-src": []
   },
-  "untouchedFiles": 143,
-  "nativePayloadChanged": false
+  "untouchedFiles": 144,
+  "nativePayloadChanged": false,
+  "r34LaunchPolicyPreserved": true,
+  "r34RuntimeLoggingPreserved": true,
+  "r34BackCallbackAndManifestPreserved": true,
+  "r33NativeDesignPreserved": true
 }
