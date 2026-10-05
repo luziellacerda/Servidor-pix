@@ -1,0 +1,13 @@
+{
+  "r30JavaFiles": 146,
+  "changed": {
+    "netplay-src": [
+      "org/emulationstation/frontend/netplay/StationRoomsActivity.java",
+      "org/emulationstation/frontend/netplay/StationPlayerModel.java",
+      "org/emulationstation/frontend/netplay/StationPlayerSheet.java"
+    ],
+    "dependency-src": []
+  },
+  "untouchedFiles": 143,
+  "nativePayloadChanged": false
+}

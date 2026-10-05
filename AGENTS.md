@@ -1,3 +1,7 @@
+# Entrada do segundo jogador — correção preparada — 05/10/2026
+
+Leia docs/station-android/RETORNO-SEGUNDO-JOGADOR-SALAS-STATION-20261005.md. R30 oculta outras salas quando há sala própria e o perfil do anfitrião não oferece Entrar. Pronto não executa join. Fonteapp b282b04:3classes,146fontes compiladas/138verificações; DEXef8a2d99 pronto, APK ainda não atualizado. Servidor e4e557a inalterado. Uso imediato: POCO Sair da sala → Código TS1 da sala do primeiro → Entrar → dois nomes → doisProntos → hostIniciar. Preservar R30/assinatura/dados, não reenviarR27. Não afirmar gameplay/latência resolvidos sem aparelho.
+
 ## Retorno final recebido — appR30
 
 Retorno b4a9806 confirma R30 instalado/hash1768b7df em05/10 às18h39, Voltar/criação de sala/Pronto verificados em um aparelho. Usar R30 ou sucessora noPOCO, preservando dados/assinatura/saves; R27 abaixo é histórico. Downloads11be7f3/6f012a7 permanecem fora; doisaparelhos/gameplay e latência externa baixa continuam pendentes.

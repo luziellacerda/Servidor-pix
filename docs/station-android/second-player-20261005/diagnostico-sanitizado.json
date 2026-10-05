@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-05",
+  "userReported": [
+    "Somente o primeiro nome aparece na sala do primeiro telefone",
+    "Sala visível no segundo, sem botão Entrar",
+    "Segundo toca Estou pronto mas não se reúne à sala do primeiro"
+  ],
+  "confirmedInR30Source": [
+    "Perfil de anfitrião não oferece Entrar",
+    "Com sala própria o painel oculta a lista de outras salas",
+    "ready confirma a sala atual e não executa join"
+  ],
+  "interpretation": "Two separate solo rooms are consistent with the report; no authenticated device snapshot or screenshot was captured in this Linux session.",
+  "windowUtc": [
+    "2026-10-05T22:35:00Z",
+    "2026-10-05T22:52:00Z"
+  ],
+  "httpStatuses": {
+    "command:200": 61,
+    "events:499": 12,
+    "events:200": 78,
+    "events:409": 3
+  },
+  "relayUpgrades": [
+    {
+      "finishedUtc": "2026-10-05T22:47:58.104969+00:00",
+      "status": 101,
+      "durationMs": 8002.4013
+    },
+    {
+      "finishedUtc": "2026-10-05T22:50:53.536637+00:00",
+      "status": 101,
+      "durationMs": 60001.1609
+    }
+  ],
+  "limitsOfLogs": "Bodies and player identities are not logged. Status and body length alone do not establish the action or which phone made it. The two public upgrades appeared separately, without relay payload growth.",
+  "backend": {
+    "source": "e4e557a985ac5bead24885149c8650a5bb2dfae8",
+    "pid": 660598,
+    "readiness": {
+      "maximumRooms": 512,
+      "maximumConnections": 1024,
+      "activeRooms": 0,
+      "activeConnections": 0,
+      "forwardedBytes": 43592958
+    },
+    "changed": false
+  },
+  "testResults": {
+    "newPlayerModel": 20,
+    "existingLobbyRegression": 107,
+    "isolatedTwoSoloRooms": 11
+  },
+  "actualTwoAndroidMembershipVerified": false,
+  "androidGameplayVerified": false,
+  "apkUpdated": false,
+  "compiledAppSource": "b282b04cf0cad81dc720ed4a41bfa70c9bcad63a",
+  "dexSha256": "ef8a2d99202c438cf867bd7907aba06f67a3c08a3256bc44599d32a925866ed5"
+}
