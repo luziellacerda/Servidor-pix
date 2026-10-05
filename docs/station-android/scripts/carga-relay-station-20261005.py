@@ -7,6 +7,7 @@ retained POCO/customer license is used. Tokens exist only in process memory.
 Run after the bounded relay rollout with its venv, native root and --run.
 """
 import asyncio
+import argparse
 import base64
 from concurrent.futures import ThreadPoolExecutor
 import hashlib
@@ -20,6 +21,7 @@ import subprocess
 import sys
 import time
 import uuid
+import threading
 from cryptography import x509
 from cryptography.hazmat.primitives import serialization
 from websockets.asyncio.client import connect
@@ -39,7 +41,13 @@ def load(name):
 
 
 def main():
-    if os.geteuid() != 0 or sys.argv[1:] != ['--run'] or RESULT.exists():
+    global PAIR_COUNT
+    parser=argparse.ArgumentParser();parser.add_argument('--run',action='store_true',required=True)
+    parser.add_argument('--python-client',action='store_true')
+    parser.add_argument('--pairs',type=int,choices=(1,128),default=128)
+    parser.add_argument('--transport',choices=('public','api','proxy'),default='public');args=parser.parse_args()
+    PAIR_COUNT=args.pairs
+    if os.geteuid() != 0 or RESULT.exists():
         raise ValueError('Native root, --run and absent result required')
     ops = load('implantar-station-20261003.py')
     helper = load('verificar-http-release-station.py')
@@ -59,7 +67,7 @@ def main():
     created = []
     streams = []
     signed_commands = 0
-    report = dict(passed=False,players=PAIR_COUNT*2,rooms=PAIR_COUNT,scope='Production HTTPS/WSS with temporary prebound synthetic accounts; enrollment and Android gameplay excluded')
+    report = dict(passed=False,players=PAIR_COUNT*2,rooms=PAIR_COUNT,measuredTransport=args.transport,scope='Production service with temporary prebound synthetic accounts; enrollment and Android gameplay excluded')
     baseline = {unit: ops.state(unit) for unit in ops.SHARED}
     fingerprint_query = "SELECT md5(coalesce(string_agg(to_jsonb(l)::text,E'\\n' ORDER BY license_id),'')) FROM suite.suite_licenses l WHERE NOT EXISTS(SELECT 1 FROM suite.suite_license_deliveries d WHERE d.license_id=l.license_id AND d.source_system='STATION_RELAY_LOAD_TEST');"
     fingerprint = sql(fingerprint_query)
@@ -213,7 +221,39 @@ def main():
                 roundTripP50Ms=quantile(.50),roundTripP95Ms=quantile(.95),roundTripP99Ms=quantile(.99),
                 droppedOrCorruptPackets=0,stationReadyDuringLoad=healthy,apiMemoryBefore=memory_before,apiPeakMemory=peak_memory)
 
-        report.update(asyncio.run(exercise()))
+        def exercise_csharp():
+            program=ROOT/'tests/StationRelayPublicLoad/bin/Release/net8.0/StationRelayPublicLoad.dll'
+            if not program.is_file():raise ValueError('Build the public CSharp client first')
+            stop=threading.Event();peak=memory_before;healthy=True
+            def monitor():
+                nonlocal peak,healthy
+                while not stop.is_set():
+                    peak=max(peak,rss())
+                    try:ops.ready('http://127.0.0.1:5192')
+                    except Exception:healthy=False
+                    stop.wait(2)
+            worker=threading.Thread(target=monitor);worker.start()
+            process=subprocess.Popen(['/usr/bin/dotnet',str(program)],stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+            try:
+                address={'public':BASE.replace('https:','wss:'),'api':'ws://127.0.0.1:5192','proxy':'ws://127.0.0.1'}[args.transport]
+                process.stdin.write(json.dumps({'Url':address+'/v1/station/online/relay','Tickets':tickets})+'\n');process.stdin.flush()
+                first=json.loads(process.stdout.readline())
+                if first.get('stage')!='connected' or first.get('connections')!=PAIR_COUNT*2:
+                    raise ValueError('Public CSharp client failed to connect')
+                with ThreadPoolExecutor(max_workers=16) as pool:list(pool.map(lambda client:command(client,'heartbeat'),clients))
+                process.stdin.write('run\n');process.stdin.flush()
+                output,_=process.communicate(timeout=90)
+                result=json.loads(output)
+                if process.returncode or not result.get('passed'):raise ValueError('Public CSharp data exchange failed')
+                if args.transport!='public':result['loopbackConnections']=result.pop('publicConnections')
+                result.update(stationReadyDuringLoad=healthy,apiMemoryBefore=memory_before,apiPeakMemory=peak,
+                    publicTlsPinVerified=args.transport=='public')
+                return result
+            finally:
+                if process.poll() is None:process.kill();process.wait()
+                stop.set();worker.join(timeout=5)
+        report.update(asyncio.run(exercise()) if args.python_client else exercise_csharp())
         report['passed']=True
     except Exception as error:
         report.update(failedStage=stage,errorType=type(error).__name__)

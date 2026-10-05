@@ -1,3 +1,13 @@
+# Estado vigente — POCO, relay e capacidade — 05/10/2026
+
+Leia [o retorno R12/POCO](RETORNO-SERVIDOR-NETPLAY-INTERNET-STATION-R12-20261005.md). API `e4e557a`, DLL `7ecb6c8d`, PID660598; relay privado publicado no mesmo domínio, 512 salas/1.024 conexões configuradas. Passaram 256 conexões reais, 256 renovações e 512 conexões TLS isoladas, com zero resíduos. **Latência externa alta permanece aberta:** p95 público2.291,82ms versus API0,83ms/Nginxlocal1,07ms. Gameplay de doisAndroid e partidas responsivas para centenas precisam de homologação.
+
+Licença própria POCO vitalícia/um aparelho criada e auditada; código apenas no arquivo privado do operador, ativação até07/10 às17h11Maceió. Retornoapp4fd2231 confirma R27 instalado/hashc1191ce1: preservar assinatura, dados, saves, R26visual e R27salas. Catálogo14/2.212visíveis/50CD, importação, capas e downloads sem capMB/s preservados. LimpezaWS, coldboot, handshake e conflitos entre renovações foram corrigidos. Delta11be7f3/6f012a7 continua fora doAPK27.
+
+Os blocos seguintes são históricos e não identificam aAPI ou instalação atual.
+
+---
+
 # Atualização05/10: downloads CHD diretos e ZIP sem CRC
 
 Leia [o retorno de downloads](RETORNO-DOWNLOADS-SEM-VERIFICACOES-20261005.md). Fonte/DEX/ponte nativa preparados e testados; ainda precisa entrar em APK assinado/instalado sobreR20ou sucessora conciliada. Remove segunda cópia RAW/conferências redundantes, CRC de ZIP e GET do catálogo inteiro antes de cada sessão nova de download. 821 verificações Java/18suítes +14JNI reais Linux passaram. Módulos prontos e guard de base estão no retorno.
