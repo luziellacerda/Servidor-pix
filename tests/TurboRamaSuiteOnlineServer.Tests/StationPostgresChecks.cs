@@ -183,6 +183,8 @@ internal static class StationPostgresChecks
                 throw new Exception("Station transfer did not restore the one-device limit.");
         }
         await ConcurrentActivationAsync(database, service, pepper);
+        if(Environment.GetEnvironmentVariable("STATION_SESSION_LOAD_TEST")=="1")
+            await StationSessionConcurrencyChecks.RunAsync(database,apiDatabase,service);
         Console.WriteLine("STATION POSTGRES TESTS: OK (activation, concurrent limit, replay, session, buyer profile, revocation, same-device transfer)");
     }
 

@@ -14,6 +14,7 @@ import importlib.util
 import json
 import os
 from pathlib import Path
+import re
 import struct
 import subprocess
 import sys
@@ -116,17 +117,24 @@ def main():
             command(host,'host-listening',roomId=room)
             gt = command(guest,'relay-ticket',roomId=room)['room']['relay']['ticket']
             return ht, gt
-        stage = 'signed_rooms'
+        stage = 'signed_session_renewals'
+        def signed_renewal(client,response,kind):
+            if response[0] != 200:
+                code=json.loads(response[2]).get('code','UNKNOWN')
+                if not isinstance(code,str) or not re.fullmatch(r'[A-Z_]{1,64}',code):code='UNKNOWN'
+                raise ValueError('Synthetic session renewal '+kind+' status '+str(response[0])+' '+code)
+            return client.signed(response,kind)
         def renew(client):
-            challenge=client.signed(client.request(BASE,'POST','/v1/station/challenges',dict(
+            challenge=signed_renewal(client,client.request(BASE,'POST','/v1/station/challenges',dict(
                 client.identity,domain=helper.PREFIX+'request-session-challenge/v1',licenseId=client.license_id)),'session-challenge')
-            session=client.signed(client.request(BASE,'POST','/v1/station/sessions',client.proof(dict(
+            session=signed_renewal(client,client.request(BASE,'POST','/v1/station/sessions',client.proof(dict(
                 client.identity,domain=helper.PREFIX+'open-session/v1',licenseId=client.license_id,
                 challengeId=challenge['challengeId'],nonce=challenge['nonce']))),'session')
             client.token=session['accessToken'];client.session=session['sessionId']
         with ThreadPoolExecutor(max_workers=16) as pool:
             list(pool.map(renew,clients))
             report['realSignedSessionRenewalsFromSameOrigin']=len(clients)
+            stage = 'signed_rooms'
             tickets = list(pool.map(prepare,range(PAIR_COUNT)))
         stage = 'public_load'
 

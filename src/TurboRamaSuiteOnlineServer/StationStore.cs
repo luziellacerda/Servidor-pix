@@ -250,8 +250,13 @@ public sealed class PostgresStationStore(NpgsqlDataSource database)
         CancellationToken cancellationToken)
     {
         await using var connection = await database.OpenConnectionAsync(cancellationToken);
+        // The authoritative license row below is locked through commit. That
+        // serializes renewal/revocation for this owner; the conditional challenge
+        // update preserves single use and the locked transaction replaces sessions.
+        // Serializable predicate locks also conflicted across unrelated licenses
+        // during concurrent renewals, despite the existing bounded retries.
         await using var transaction = await connection.BeginTransactionAsync(
-            IsolationLevel.Serializable, cancellationToken);
+            IsolationLevel.ReadCommitted, cancellationToken);
         await using (var valid = new NpgsqlCommand($"""
             SELECT l.license_id FROM suite.suite_licenses l
             JOIN suite.station_devices d ON d.license_id=l.license_id
