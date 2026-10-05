@@ -4,7 +4,7 @@
 
 API931030b/PID347227 mantida. Scanner9cff9b3, índice14 SHA07ad4c3fda41a19c23745436c4c45c97a70b2c7688eff788612fe22743823a92. Oito pares de capa/download HTTPS, contrato assinado/metadados/pastas/usoúnico e50capas com4workers passaram. Autoimport por minuto/reload10s; sem limite artificial de MB/s.
 
-**Novo retorno R18 instalado incorporado**, APK a29151da; preserva filesystem/rompath MAME, navegaçãoR17, offline/downloadR16, N64 e salas. [DeltaCD140f43a](https://github.com/luziellacerda/TurboElden/tree/140f43a7ef92a56d70b2fa7ff5ea6be85c5e8ae1/versions/station-neogeocd-20261005) acrescenta montagemCDZ/importaçãoBIOS, DEXcompilado e25checks; ainda sem APKnovo/instalaçãoCD. Não repetir overlayR11/R15 nem reintroduzir hash do corpo removido noR16.
+**Novo retorno R18 instalado incorporado**, APK a29151da; preserva filesystem/rompath MAME, navegaçãoR17, offline/downloadR16, N64 e salas. [DeltaCD5dea14c](https://github.com/luziellacerda/TurboElden/tree/5dea14c8b361ec6f0a8fb6c8a1ac92720d27542a/versions/station-neogeocd-20261005) acrescenta montagemCDZ/importaçãoBIOS, DEXcompilado e25checks; ainda sem APKnovo/instalaçãoCD. Não repetir overlayR11/R15 nem reintroduzir hash do corpo removido noR16.
 
 [Retorno completo](RETORNO-SERVIDOR-NEOGEOCD-20261005.md), [catálogo completo](biblioteca-neogeocd-20261005/README.md), [50CD cruzados](biblioteca-neogeocd-20261005/neogeocd-jogos-capas-downloads.tsv), [guia de manutenção](BIBLIOTECA-AUTOMATICA-STATION-20261004.md). Backup vigente`/mnt/DADOS/station-neogeocd-backup-20261005`; rollback específico monotônico14→15, recusa descartar imports posteriores. As instruções de rollback/R11/R15 nos blocos abaixo são históricas.
 

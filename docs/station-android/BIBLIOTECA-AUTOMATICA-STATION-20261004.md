@@ -77,7 +77,7 @@ Cada item conserva `itemId`, `name`, `platform`, `revision` e `coverId`. `folder
 
 Metadata/pastas novas alteram a revisão do catálogo, preservando revisão individual, recibos e cache. ROM/capa nova aumenta a revisão do item. Uma revisão de catálogo igual não deve reiniciar a fila de capas. Cache usa coverId/revisão; quatro vagas são reutilizadas imediatamente após cada imagem terminar. Downloads conservam tamanho/SHA esperado no descritor assinado e launchPath real; R16 não calcula SHA do corpo dos jogos.
 
-O cliente R18 instalado já mapeia N64, Neo Geo e `neogeocd` → **Neo Geo CD**, pasta `neo-geo-cd`. Preserva consulta automática/metadados, navegação R17 e desempenho/offline R16. [Retorno cliente/CD](https://github.com/luziellacerda/TurboElden/tree/140f43a7ef92a56d70b2fa7ff5ea6be85c5e8ae1/versions/station-neogeocd-20261005) prepara a correção do lançamento CD/importação BIOS sobre R18; Java/DEX compilado, APK ainda pendente. O novo catálogo/download CD está em produção. Não retroceder para R15/R11 ou executar seus empacotadores antigos.
+O cliente R18 instalado já mapeia N64, Neo Geo e `neogeocd` → **Neo Geo CD**, pasta `neo-geo-cd`. Preserva consulta automática/metadados, navegação R17 e desempenho/offline R16. [Retorno cliente/CD](https://github.com/luziellacerda/TurboElden/tree/5dea14c8b361ec6f0a8fb6c8a1ac92720d27542a/versions/station-neogeocd-20261005) prepara a correção do lançamento CD/importação BIOS sobre R18; Java/DEX compilado, APK ainda pendente. O novo catálogo/download CD está em produção. Não retroceder para R15/R11 ou executar seus empacotadores antigos.
 
 ## BIOS Neo Geo CD
 

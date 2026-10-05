@@ -36,7 +36,7 @@ Quando houver firmware válido, a observação estável muda o fingerprint e rec
 
 **Retorno novo do aplicativo incorporado:** [`9547071`](https://github.com/luziellacerda/TurboElden/tree/954707196be089969b723e16f68cccaa0c48dea2) comprova R18 instalada, APK `a29151da312830d826f6ea71ebb61cb8a39fe1c21786f719e26a61568b29b1c4`, com modo filesystem e rompath do MAME, navegaçãoR17, desempenho/offlineR16 e N64 completo. SVC Plus/controles receberam prova na R18; NeoCD ainda não recebeu prova no telefone.
 
-A [ponte NeoCD e receitas](https://github.com/luziellacerda/TurboElden/tree/140f43a7ef92a56d70b2fa7ff5ea6be85c5e8ae1/versions/station-neogeocd-20261005), commit **140f43a7ef92a56d70b2fa7ff5ea6be85c5e8ae1**, foi conciliada com todos os novos commits do retorno, compilada em Java/DEX e testada. Mantém o bootstrap R18 exatamente igual. Inclui seletor Android **IMPORTAR BIOS**, identificação exata e armazenamento privado, preparação do driver ao lado do disco, e abertura com:
+A [ponte NeoCD e receitas](https://github.com/luziellacerda/TurboElden/tree/5dea14c8b361ec6f0a8fb6c8a1ac92720d27542a/versions/station-neogeocd-20261005), commit **5dea14c8b361ec6f0a8fb6c8a1ac92720d27542a**, foi conciliada com todos os novos commits do retorno, compilada em Java/DEX e testada. Mantém o bootstrap R18 exatamente igual. Inclui seletor Android **IMPORTAR BIOS**, identificação exata e armazenamento privado, preparação do driver ao lado do disco, e abertura com:
 
 ```text
 ACTION_VIEW → neocdz.zip
