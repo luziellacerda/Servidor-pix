@@ -1,0 +1,29 @@
+{
+  "contract": {
+    "catalogItems": 2212,
+    "catalogRevision": 14,
+    "platformCounts": {
+      "megadrive": 887,
+      "megadrivebr": 94,
+      "n64": 157,
+      "neogeo": 189,
+      "neogeocd": 50,
+      "snes": 644,
+      "snesbr": 191
+    },
+    "verifiedCoverAndDownloadPairs": 8,
+    "compatibilityIdVerified": true,
+    "signaturesAndIdentityVerified": true,
+    "correlationVerified": true,
+    "oneUseVerified": true
+  },
+  "metadataAndFoldersVerified": true,
+  "covers": {
+    "verified": 50,
+    "workers": 4,
+    "bytes": 9239550,
+    "elapsedMs": 5449.87
+  },
+  "chdDownloadVerified": true,
+  "biosAvailable": false
+}

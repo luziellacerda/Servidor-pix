@@ -1,0 +1,27 @@
+{
+  "apiPidPreserved": true,
+  "apiPid": 347227,
+  "apiDllSha256": "0b3f5da385216d216fb55220789f55c40b8eb304b7b1a4759cc154b1aa3f3ab0",
+  "scannerSourceRevision": "9cff9b333b5e0fcaec6d8a12f75b61519d8c7018",
+  "scannerManifest": {
+    "atualizar-biblioteca-station.py": "e4c3786b11719eb379478db09e2fe45f28c9eb1f54c03a73e1ea723c14c79d24",
+    "station_revista.py": "680f1541115234508f55691691eb3f23574dad70194970bbd69322205c93a65e",
+    "station_disc.py": "849b246f9d4623e3167b1e471d931da7049a9a3642e5028a84e785b9efc609cc",
+    "preparar-indice-artefatos.py": "050b450ffa5fed2a6d840c47e20b14f64d5676ed300743fe7d59a0e2fa641ad7",
+    "tools/bin/chdman": "c6c2240e8308428ddb0000ec035f475e91cbe8c576fc5f07d053edf72a3669e1",
+    "tools/lib/libutf8proc.so.3": "622b6ae8a8f2d9edc3d9017aa0e858e8f4113f691ecacca71a1216d8ca44bdd5",
+    "chd-validation.json": "34ecc6a207f82e440eb295ad991b2dbda91278b8ab750e41710fcd620e9ab861"
+  },
+  "indexSha256": "07ad4c3fda41a19c23745436c4c45c97a70b2c7688eff788612fe22743823a92",
+  "catalogRevision": 14,
+  "sharedServicesUnchanged": true,
+  "timerActive": true,
+  "autoReload": true,
+  "onlineEnabled": true,
+  "syntheticLicensesRemaining": 0,
+  "visibleGames": 2212,
+  "allPriorRowsPreserved": true,
+  "cdBiosAvailable": false,
+  "gameplayVerifiedOnAndroid": false,
+  "onlineEnabledConfigurationKey": "Station__Online__Enabled"
+}

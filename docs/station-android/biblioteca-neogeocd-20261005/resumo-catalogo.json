@@ -1,0 +1,27 @@
+{
+  "revision": 14,
+  "visible": 2212,
+  "compatibility": 255,
+  "internal": 2467,
+  "platformCounts": {
+    "megadrive": 887,
+    "megadrivebr": 94,
+    "n64": 157,
+    "neogeo": 189,
+    "neogeocd": 50,
+    "snes": 644,
+    "snesbr": 191
+  },
+  "synopses": 2169,
+  "metadataMissing": 43,
+  "gamesWithFolders": 374,
+  "neoGeoCdCHDsValidated": 50,
+  "neoGeoCdExactRevistaCovers": 50,
+  "neoGeoCdSynopses": 50,
+  "originalChdBytesPreserved": true,
+  "deliveryExtension": ".chd",
+  "biosAvailable": false,
+  "otherPlatformEvidenceReused": "catalog9 exports; every previous index row equal",
+  "biosNotListedAsGame": true,
+  "allCovers480x720": true
+}
