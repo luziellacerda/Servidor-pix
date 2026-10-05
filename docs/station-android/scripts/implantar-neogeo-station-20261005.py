@@ -47,6 +47,15 @@ def verify_public(index,values):
  db=ops.database_name(values)
  class Client(helper.StationReleaseVerification):
   session=None
+  def request(self,base,method,route,payload=None,bearer=None):
+   if method=='GET' and route=='/v1/station/catalog' and bearer:
+    deadline=time.monotonic()+90
+    while True:
+     response=super().request('http://127.0.0.1:5192',method,route,bearer=bearer)
+     if self.signed(response,'catalog')['revision']==index['revision']:break
+     if time.monotonic()>=deadline:raise TimeoutError('live catalog reload timed out')
+     time.sleep(1)
+   return super().request(base,method,route,payload,bearer)
   def signed(self,response,domain):
    payload=super().signed(response,domain)
    if domain=='session':self.session=payload
@@ -140,8 +149,7 @@ def apply(revision):
   ops.run(['systemctl','daemon-reload']);ops.run(['systemctl','start',SCAN],timeout=180)
   assert json.loads((HOME/'report.json').read_text())['changed'] is False,'unchanged scan changed catalog'
   ops.run(['systemctl','start',TIMER])
-  # The monitor reads every 10 seconds; wait using bounded polling of signed data.
-  time.sleep(11)
+  # Signed local polling waits for checksum validation, then HTTPS proves publication.
   report['publicVerification']=verify_public(index,values)
   assert validate_api()==pid and {u:ops.state(u) for u in SHARED}==baseline,'process changed'
   report.update(applied=True,catalogRevision=index['revision'],visible=2163,neogeo=190,existingIdsAndArtifactsPreserved=True,
