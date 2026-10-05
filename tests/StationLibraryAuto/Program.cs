@@ -41,6 +41,24 @@ try
         File.WriteAllText(index,tree.ToJsonString());
         try{StationLibrary.TryLoad(index);throw new Exception("Invalid folder accepted");}catch(InvalidOperationException){Check(true);}
     }
+    Write(9,6,"Verified by importer");
+    using(var locked=new FileStream(game,FileMode.Open,FileAccess.Read,FileShare.None))
+    {
+        try{StationLibrary.TryLoad(index);throw new Exception("Strict load did not open the body");}
+        catch(IOException){Check(true);}
+        var trusted=StationLibrary.TryLoad(index,verifyContent:false)!;
+        Check(trusted.ItemCount==1);
+        using var imported=new StationLibraryMonitor(index,trusted,verifyContent:false);
+        var tree=System.Text.Json.Nodes.JsonNode.Parse(File.ReadAllText(index))!;
+        tree["revision"]=10;tree["items"]![0]!["metadata"]!["description"]="Imported metadata updated";
+        File.WriteAllText(index,tree.ToJsonString());
+        Check(imported.Reload());Check(imported.Current.Revision==10);
+        Check(imported.Current.Catalog[0].Metadata?.Description=="Imported metadata updated");
+    }
+    var importedFile=StationLibrary.TryLoad(index,verifyContent:false)!;
+    File.WriteAllBytes(game,[1,2,3]);Check(!importedFile.TryResolveArtifact("station_synthetic",out _));
+    try{StationLibrary.TryLoad(index,verifyContent:false);throw new Exception("Stale file size accepted");}
+    catch(InvalidOperationException){Check(true);}
     Console.WriteLine($"PASS {checks} Station snapshot, metadata, active grant and last-good checks");
 }
 finally {Directory.Delete(directory,true);}

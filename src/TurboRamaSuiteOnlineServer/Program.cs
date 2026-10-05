@@ -100,11 +100,12 @@ if (enabled)
         StationLibrary? stationLibrary = null;
         StationGrantCipher? stationGrants = null;
         var libraryPath = builder.Configuration["Station:LibraryIndexFile"];
-        stationLibrary = StationLibrary.TryLoad(libraryPath);
+        var verifyLibraryContent = builder.Configuration.GetValue("Station:LibraryVerifyContentOnLoad", true);
+        stationLibrary = StationLibrary.TryLoad(libraryPath, verifyContent:verifyLibraryContent);
         StationLibraryMonitor? stationMonitor = null;
         if (stationLibrary is not null && builder.Configuration.GetValue("Station:LibraryAutoReload", false))
         {
-            stationMonitor = new StationLibraryMonitor(libraryPath!, stationLibrary);
+            stationMonitor = new StationLibraryMonitor(libraryPath!, stationLibrary, verifyLibraryContent);
             builder.Services.AddSingleton(stationMonitor);
             builder.Services.AddHostedService(sp => sp.GetRequiredService<StationLibraryMonitor>());
         }

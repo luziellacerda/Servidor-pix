@@ -1,7 +1,7 @@
 namespace TurboRamaSuiteOnlineServer;
 
 // Atomically exchange validated immutable snapshots; a bad write keeps the last good one.
-public sealed class StationLibraryMonitor(string path, StationLibrary initial) : BackgroundService
+public sealed class StationLibraryMonitor(string path, StationLibrary initial, bool verifyContent = true) : BackgroundService
 {
     private StationLibrary current = initial;
     private readonly object gate = new();
@@ -18,7 +18,7 @@ public sealed class StationLibraryMonitor(string path, StationLibrary initial) :
         var nextStamp = FileStamp(path);
         if (nextStamp == stamp) return false;
         var before = Current;
-        var next = StationLibrary.TryLoad(path, before);
+        var next = StationLibrary.TryLoad(path, before, verifyContent);
         if (next is null || next.Revision <= before.Revision || FileStamp(path) != nextStamp)
             throw new InvalidOperationException("Station catalog revision did not advance atomically.");
         lock (gate)

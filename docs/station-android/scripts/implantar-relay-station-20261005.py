@@ -17,6 +17,7 @@ import shutil
 import socket
 import subprocess
 import tempfile
+import time
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
@@ -157,7 +158,7 @@ def apply(revision):
             raise ValueError('Inspected catalog differs')
         unchanged = {str(path): ops.digest(path) for path in DROPIN.parent.glob('*.conf')}
         unchanged['/etc/nginx/snippets/turborama-station.locations.conf'] = ops.digest(Path('/etc/nginx/snippets/turborama-station.locations.conf'))
-        override = '[Service]\nWorkingDirectory=' + str(target) + '\nExecStart=\nExecStart=/usr/bin/dotnet ' + str(target / DLL) + '\nEnvironment=Station__Online__RelayMaxRooms=512\nEnvironment=Station__Online__RelayEnabled='
+        override = '[Service]\nWorkingDirectory=' + str(target) + '\nExecStart=\nExecStart=/usr/bin/dotnet ' + str(target / DLL) + '\nEnvironment=Station__LibraryVerifyContentOnLoad=false\nEnvironment=Station__Online__RelayMaxRooms=512\nEnvironment=Station__Online__RelayEnabled='
         relay_proxy = (ROOT / 'ops/nginx-v1-station-relay.conf').read_text()
         state = dict(target=str(target), oldFiles=files(OLD), unchangedConfigurations=unchanged, shared=shared,
             disabledOverride=override + 'false\n', enabledOverride=override + 'true\n', relayProxy=relay_proxy,
@@ -191,6 +192,7 @@ def apply(revision):
         stage = 'shadow_candidate'
         shadow = dict(values)
         shadow['Station__Online__RelayMaxRooms'] = '512'
+        shadow['Station__LibraryVerifyContentOnLoad'] = 'false'
         for key in ('INVOCATION_ID', 'NOTIFY_SOCKET', 'LISTEN_FDS', 'LISTEN_PID', 'LISTEN_FDNAMES', 'JOURNAL_STREAM'):
             shadow.pop(key, None)
         for enabled in (False, True):
@@ -204,7 +206,9 @@ def apply(revision):
                 process = subprocess.Popen(['/usr/bin/dotnet', str(target / DLL), '--urls', base], cwd=target,
                     env=shadow, stdout=log, stderr=log, user=ids['Uid'][1], group=ids['Gid'][1], extra_groups=ids['Groups'])
                 try:
+                    started = time.monotonic()
                     ops.ready(base, process)
+                    report['candidateStartupSeconds' + str(enabled)] = time.monotonic() - started
                     report['candidateRelay' + str(enabled)] = relay_check.verify(index, shadow, base, enabled)
                 finally:
                     process.terminate()
@@ -247,6 +251,7 @@ def apply(revision):
         report.update(applied=True, dllSha256=metadata['dllSha256'], execStart=str(target / DLL),
             indexRevision=14, indexSha256=INDEX_SHA, engineRegistrySha256=REGISTRY_SHA,
             onlineEnabled=True, relayEnabled=True, relayMaximumRooms=512, relayMaximumConnections=1024,
+            libraryVerifyContentOnLoad=False,
             migrationsApplied=0, customerNotificationsSent=False,
             originalLicenseChanged=False, sharedServicesPreserved=True, indexKeysScannerMediaPreserved=True,
             pid=int(ops.run(['systemctl', 'show', SERVICE, '-p', 'MainPID', '--value']).strip()),

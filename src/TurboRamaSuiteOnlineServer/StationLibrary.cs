@@ -55,7 +55,8 @@ public sealed class StationLibrary
             .Select(item => item.Entry).ToArray();
     }
 
-    public static StationLibrary? TryLoad(string? path, StationLibrary? previous = null)
+    public static StationLibrary? TryLoad(string? path, StationLibrary? previous = null,
+        bool verifyContent = true)
     {
         if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
             return null;
@@ -109,7 +110,11 @@ public sealed class StationLibrary
                 var reused = previous is not null && previous._items.TryGetValue(itemId, out var old) &&
                     old.FilePath == filePath && old.Artifact == artifact &&
                     old.LastWriteUtcTicks == lastWriteUtcTicks;
-                if (!reused)
+                // The root-owned automatic importer already verifies and hashes
+                // content before publishing its index. Its API can skip a second
+                // full body pass at startup/reload; schema, file stat and grant
+                // bindings are still checked. Other callers keep strict defaults.
+                if (!reused && verifyContent)
                 {
                 using var source = new FileStream(filePath, FileMode.Open, FileAccess.Read,
                     FileShare.Read, 1024 * 1024, FileOptions.SequentialScan);
