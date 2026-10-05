@@ -17,6 +17,9 @@ API_SHA='0b3f5da385216d216fb55220789f55c40b8eb304b7b1a4759cc154b1aa3f3ab0'
 INDEX_SHA='c5cc7944ce4ad224f85e2f4218c4c91915ac6dd2bda530368554822969d86492'
 RETRY_INDEX_SHA='a322bf9ff87a0bff94f078659bbef715a129eba5281c60968119659b64c01880'
 PREPARED_INDEX_SHA='c9cdc4e47b3acb0922c31eff19b2558eea3b8572f8e81c85c972aacc8dfeaeb9'
+RETRY_STATES={
+ 11:('cc91685ad074d27ff6c3a06c2ebe10854d0b03f9',RETRY_INDEX_SHA,PREPARED_INDEX_SHA),
+ 13:('8e1104925a7833a1c4fdadca4a2be810f745ffcb','10584feeff77b48fc73a7da0ba4165511703786903e4023331f00d765b0dcd26','7fc804710a7851c484b6bdaa2931b054b03ad3ab9e895b6559391d3029500275')}
 CHECK=Path('/mnt/DADOS/station-neogeocd-check-20261005')
 RECEIPT_SHA='34ecc6a207f82e440eb295ad991b2dbda91278b8ab750e41710fcd620e9ab861'
 TOOLS={'bin/chdman':'c6c2240e8308428ddb0000ec035f475e91cbe8c576fc5f07d053edf72a3669e1',
@@ -70,7 +73,7 @@ def verify_public(index,values):
      time.sleep(4)
    response=super().request(base,method,route,payload,bearer)
    if route.startswith('/v1/station/artifacts/') and response[0]==200 and response[2].startswith(b'MComprHD'):
-    assert '.chd' in response[1].get('Content-Disposition','').lower()
+    assert response[2][8:16]==bytes.fromhex('0000007c00000005')
     self.chdVerified=True
    return response
   def signed(self,response,domain):
@@ -106,13 +109,16 @@ def apply(revision,reuse=False):
   assert subprocess.check_output(git+['rev-parse','HEAD'],cwd=ROOT,env=env,text=True).strip()==revision
   assert not subprocess.check_output(git+['status','--porcelain'],cwd=ROOT,env=env,text=True).strip(),'clean exact source required'
   pid=validate_api();values,ids=ops.runtime();gid=ids['Gid'][1]
-  expected_sha=RETRY_INDEX_SHA if reuse else INDEX_SHA
+  current_revision=json.loads((HOME/'index.json').read_text())['revision']
+  retry_state=RETRY_STATES.get(current_revision) if reuse else None
+  assert not reuse or retry_state,'unreviewed retry state'
+  expected_sha=retry_state[1] if reuse else INDEX_SHA
   assert values['Station__LibraryIndexFile']==str(HOME/'index.json') and ops.digest(HOME/'index.json')==expected_sha
   if reuse:
-   prior=json.loads(RESULT.read_text());assert prior['rolledBack'] and prior['rollbackCatalogRevision']==11 and prior['realServiceIdentityValidated']
-   assert prior['sourceRevision']=='cc91685ad074d27ff6c3a06c2ebe10854d0b03f9' and ops.digest(CONTENT/'index.json')==PREPARED_INDEX_SHA
-   archive=BACKUP.with_name(BACKUP.name+'-failed-cc91685');assert not archive.exists();BACKUP.rename(archive)
-   result_archive=RESULT.with_name(RESULT.stem+'-failed-cc91685.json');assert not result_archive.exists();RESULT.rename(result_archive)
+   prior=json.loads(RESULT.read_text());assert prior['rolledBack'] and prior['rollbackCatalogRevision']==current_revision and prior['realServiceIdentityValidated']
+   assert prior['sourceRevision']==retry_state[0] and ops.digest(CONTENT/'index.json')==retry_state[2]
+   archive=BACKUP.with_name(BACKUP.name+'-failed-'+prior['sourceRevision'][:7]);assert not archive.exists();BACKUP.rename(archive)
+   result_archive=RESULT.with_name(RESULT.stem+'-failed-'+prior['sourceRevision'][:7]+'.json');assert not result_archive.exists();RESULT.rename(result_archive)
   else:
    assert not BACKUP.exists() and not CONTENT.exists() and not RESULT.exists(),'already prepared'
   baseline={u:ops.state(u) for u in SHARED}
@@ -221,7 +227,7 @@ def rollback():
  state.update(rolledBack=True,rollbackCatalogRevision=rev);result(state)
  print('Own scanner/configuration restored; catalog revision '+str(rev)+'; API remained running.')
 if __name__=='__main__':
- parser=argparse.ArgumentParser();action=parser.add_mutually_exclusive_group(required=True);action.add_argument('--apply',action='store_true');action.add_argument('--rollback',action='store_true');parser.add_argument('--source-revision');parser.add_argument('--reuse-prepared',action='store_true',help='Only the guarded cc91685 revision11 rollback and exact prepared snapshot')
+ parser=argparse.ArgumentParser();action=parser.add_mutually_exclusive_group(required=True);action.add_argument('--apply',action='store_true');action.add_argument('--rollback',action='store_true');parser.add_argument('--source-revision');parser.add_argument('--reuse-prepared',action='store_true',help='Only the explicitly reviewed revision11/13 rollback and exact prepared snapshot')
  args=parser.parse_args()
  if args.apply:apply(args.source_revision,args.reuse_prepared)
  else:rollback()
