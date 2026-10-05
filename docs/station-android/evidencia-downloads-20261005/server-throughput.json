@@ -1,0 +1,208 @@
+{
+  "catalogRevision": 14,
+  "networkLinkMbps": 100,
+  "measurements": [
+    {
+      "route": "api",
+      "platform": "neogeo",
+      "name": "The King of Fighters 2003 (The King of Fighters 2003 bootleg)",
+      "format": "zip",
+      "bytes": 87479934,
+      "authorizeMs": 7.67,
+      "headerMs": 6.06,
+      "first256KiBMs": 6.34,
+      "elapsedSeconds": 0.288,
+      "MBps": 303.748,
+      "Mbps": 2429.98,
+      "sha256VerifiedByProbeOnly": true,
+      "windows": []
+    },
+    {
+      "route": "nginx",
+      "platform": "neogeo",
+      "name": "The King of Fighters 2003 (The King of Fighters 2003 bootleg)",
+      "format": "zip",
+      "bytes": 87479934,
+      "authorizeMs": 7.4,
+      "headerMs": 6.17,
+      "first256KiBMs": 7.5,
+      "elapsedSeconds": 0.3099,
+      "MBps": 282.242,
+      "Mbps": 2257.94,
+      "sha256VerifiedByProbeOnly": true,
+      "windows": []
+    },
+    {
+      "route": "public_https",
+      "platform": "neogeo",
+      "name": "The King of Fighters 2003 (The King of Fighters 2003 bootleg)",
+      "format": "zip",
+      "bytes": 87479934,
+      "authorizeMs": 6.82,
+      "headerMs": 239.15,
+      "first256KiBMs": 466.17,
+      "elapsedSeconds": 21.8703,
+      "MBps": 4.0,
+      "Mbps": 32.0,
+      "sha256VerifiedByProbeOnly": true,
+      "windows": [
+        {
+          "throughMB": 39.846,
+          "seconds": 10.0805,
+          "MBps": 3.953
+        },
+        {
+          "throughMB": 82.051,
+          "seconds": 10.0518,
+          "MBps": 4.199
+        }
+      ]
+    },
+    {
+      "route": "api",
+      "platform": "neogeocd",
+      "name": "Metal Slug",
+      "format": "raw",
+      "bytes": 431225741,
+      "authorizeMs": 10.71,
+      "headerMs": 7.18,
+      "first256KiBMs": 7.49,
+      "elapsedSeconds": 1.3851,
+      "MBps": 311.329,
+      "Mbps": 2490.63,
+      "sha256VerifiedByProbeOnly": true,
+      "windows": []
+    },
+    {
+      "route": "nginx",
+      "platform": "neogeocd",
+      "name": "Metal Slug",
+      "format": "raw",
+      "bytes": 431225741,
+      "authorizeMs": 16.37,
+      "headerMs": 6.49,
+      "first256KiBMs": 7.79,
+      "elapsedSeconds": 1.3855,
+      "MBps": 311.232,
+      "Mbps": 2489.85,
+      "sha256VerifiedByProbeOnly": true,
+      "windows": []
+    },
+    {
+      "route": "public_https",
+      "platform": "neogeocd",
+      "name": "Metal Slug",
+      "format": "raw",
+      "bytes": 431225741,
+      "authorizeMs": 8.23,
+      "headerMs": 239.67,
+      "first256KiBMs": 369.53,
+      "elapsedSeconds": 133.7035,
+      "MBps": 3.225,
+      "Mbps": 25.8,
+      "sha256VerifiedByProbeOnly": true,
+      "windows": [
+        {
+          "throughMB": 26.214,
+          "seconds": 10.3887,
+          "MBps": 2.523
+        },
+        {
+          "throughMB": 35.389,
+          "seconds": 10.0461,
+          "MBps": 0.913
+        },
+        {
+          "throughMB": 76.546,
+          "seconds": 10.0206,
+          "MBps": 4.107
+        },
+        {
+          "throughMB": 114.819,
+          "seconds": 10.0376,
+          "MBps": 3.813
+        },
+        {
+          "throughMB": 140.509,
+          "seconds": 10.0085,
+          "MBps": 2.567
+        },
+        {
+          "throughMB": 176.423,
+          "seconds": 10.0318,
+          "MBps": 3.58
+        },
+        {
+          "throughMB": 211.55,
+          "seconds": 10.0596,
+          "MBps": 3.492
+        },
+        {
+          "throughMB": 252.969,
+          "seconds": 10.0123,
+          "MBps": 4.137
+        },
+        {
+          "throughMB": 274.989,
+          "seconds": 10.0495,
+          "MBps": 2.191
+        },
+        {
+          "throughMB": 308.543,
+          "seconds": 10.0689,
+          "MBps": 3.332
+        },
+        {
+          "throughMB": 347.341,
+          "seconds": 10.0242,
+          "MBps": 3.87
+        },
+        {
+          "throughMB": 391.643,
+          "seconds": 10.0098,
+          "MBps": 4.426
+        },
+        {
+          "throughMB": 425.198,
+          "seconds": 10.0765,
+          "MBps": 3.33
+        }
+      ]
+    }
+  ],
+  "phoneMeasured": false,
+  "startedAtUtc": "2026-10-05T18:48:54.772723+00:00",
+  "statesBefore": {
+    "turborama-station-api.service": "MainPID=347227\nActiveState=active",
+    "nginx.service": "MainPID=3172\nActiveState=active",
+    "cloudflared.service": "MainPID=5085\nActiveState=active",
+    "turborama-suite-api.service": "MainPID=3052\nActiveState=active",
+    "turborama-pix.service": "MainPID=3048\nActiveState=active"
+  },
+  "interfaceBefore": {
+    "rx_bytes": 2808523393,
+    "tx_bytes": 3340919339,
+    "rx_errors": 0,
+    "tx_errors": 0,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  "fileMetadataChecks": "size and mtime per authorization/GET; body hash only at index load",
+  "syntheticRowsRemoved": true,
+  "interfaceAfter": {
+    "rx_bytes": 3380717117,
+    "tx_bytes": 3922061558,
+    "rx_errors": 0,
+    "tx_errors": 0,
+    "rx_dropped": 0,
+    "tx_dropped": 0
+  },
+  "statesAfter": {
+    "turborama-station-api.service": "MainPID=347227\nActiveState=active",
+    "nginx.service": "MainPID=3172\nActiveState=active",
+    "cloudflared.service": "MainPID=5085\nActiveState=active",
+    "turborama-suite-api.service": "MainPID=3052\nActiveState=active",
+    "turborama-pix.service": "MainPID=3048\nActiveState=active"
+  },
+  "sharedPidsUnchanged": true
+}

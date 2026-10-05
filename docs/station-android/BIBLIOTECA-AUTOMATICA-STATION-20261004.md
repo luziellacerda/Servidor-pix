@@ -1,3 +1,7 @@
+# Atualização05/10 — download/preparação
+
+A fila nova usa o CHD recebido diretamente, sem copiá-lo inteiro novamente, e extrai ZIP sem conferir CRC. Também começa a autorização usando o catálogo já salvo. Fonte e módulos estão preparados; falta o APK atualizado no aparelho. O servidor mantém os50CD e a descoberta automática. Detalhes e medição: [retorno de downloads](RETORNO-DOWNLOADS-SEM-VERIFICACOES-20261005.md).
+
 # Biblioteca automática TurboStation
 
 SNES, Mega Drive, Nintendo 64, Neo Geo e Neo Geo CD usam o mesmo importador no HD de jogos. A pasta `n64` foi movida de `megadrive/n64` para a raiz, ao lado de `snes` e `megadrive`, preservando os 828 arquivos.

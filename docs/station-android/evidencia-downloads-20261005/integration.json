@@ -1,0 +1,32 @@
+{
+  "baseInstalledApk": "R20",
+  "baseApkSha256": "64eae3ab4dd253e25ee826dd23bf02c947e5cbd1db70e6b07f759d988d465904",
+  "preparedNotInstalled": true,
+  "changedPackageEntries": [
+    "classes28.dex",
+    "lib/arm64-v8a/libstation_archive.so"
+  ],
+  "files": {
+    "java/org/emulationstation/frontend/station/StationApi.java": {
+      "baseSha256": "fc4773ccb30fe08eb033dde4f69b677539ddce2fe1699d0bb5087df2779b22ef",
+      "sha256": "fe5bda97a95fcd0914520de255547d18086faef81a7eef47ea6c0b31f912f89c"
+    },
+    "java/org/emulationstation/frontend/station/StationDownloads.java": {
+      "baseSha256": "ba4bb235dc64c7319486fc44fc7496d6de00f6d9eeadae1d5a26c789c6871d4c",
+      "sha256": "6e0ed4d98a827fdebf90c1685bf981a13d0cff6626146ceac93b4eea52a6142c"
+    },
+    "java/org/emulationstation/frontend/station/StationInstaller.java": {
+      "baseSha256": "1b61d8764dfbfdaeab817cc2e81b7f160b773c30fb4771f19f34d963e84d2559",
+      "sha256": "6585121ec3fe67558de29791d492f3f3752a8f9b468714ebc53371b195f7b866"
+    },
+    "java/org/emulationstation/frontend/station/StationCoordinator.java": {
+      "baseSha256": "5375f83eedbb14c14b8ae547a1304b508448e3eb173d467f418a64cfacf75e24",
+      "sha256": "756925ec60df600616eb494c637d334d9fb71f04121bd598b11c963624748e50"
+    },
+    "native/station_archive.c": {
+      "baseSha256": "cf09c44a8ee03a6f1dccf479953f7b2b6b8a9771b8953c5f841fa75163ef8e1c",
+      "sha256": "ecf711b4c283df9fa9b6e424cb4245afe271c5d431c754d089ef6f859ece2a7d"
+    }
+  },
+  "archiveElfLoadAlignment": 16384
+}

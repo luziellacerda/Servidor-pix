@@ -1,3 +1,11 @@
+# Atualização05/10: downloads CHD diretos e ZIP sem CRC
+
+Leia [o retorno de downloads](RETORNO-DOWNLOADS-SEM-VERIFICACOES-20261005.md). Fonte/DEX/ponte nativa preparados e testados; ainda precisa entrar em APK assinado/instalado sobreR20ou sucessora conciliada. Remove segunda cópia RAW/conferências redundantes, CRC de ZIP e GET do catálogo inteiro antes de cada sessão nova de download. 821 verificações Java/18suítes +14JNI reais Linux passaram. Módulos prontos e guard de base estão no retorno.
+
+Produção mantém catálogo14/2212visíveis/255compat/50CD, API931030b/PID347227; sem deploy ou restart. Medição completa Metal Slug431,226MB: API311,329MB/s; Nginx311,232MB/s; HTTPS3,225MB/s/133,7035s. Caminho externo variável, separado da preparação local; aparelho ainda sem medição nova. Teste sintético limpo. A fonte APKvigente recebida éR20, nãoR18; preservar ajuste visual posterior de consoles apenas na sinopse e ponteCD separada.
+
+## Retorno anterior da biblioteca CD
+
 # Atualização vigente — Neo Geo CD publicado, catálogo14 — 05/10/2026
 
 **2.212 jogos / 50 Neo Geo CD / 50 capas revista / 50 sinopses CD**, 255 IDs ocultos e todos os registros anteriores preservados. Pasta `neogeo/neogeocd` mantida. Originais`.img` são CHDv5 íntegros; entrega`.chd` tem bytes idênticos, sem recompressão. BIOS CD ausente; catálogo/downloads funcionam, abertura exige firmware.

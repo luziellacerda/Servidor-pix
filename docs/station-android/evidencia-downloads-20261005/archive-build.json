@@ -1,0 +1,22 @@
+{
+  "packages": [
+    {
+      "name": "xz",
+      "version": "5.8.3",
+      "url": "https://github.com/tukaani-project/xz/releases/download/v5.8.3/xz-5.8.3.tar.gz",
+      "sha256": "3d3a1b973af218114f4f889bbaa2f4c037deaae0c8e815eec381c3d546b974a0"
+    },
+    {
+      "name": "libarchive",
+      "version": "3.8.9",
+      "url": "https://github.com/libarchive/libarchive/releases/download/v3.8.9/libarchive-3.8.9.tar.gz",
+      "sha256": "f5a6539059cf5e597dbeda37bfa4874b1e8dea063c8d93bf85a2b44af90a5bd4"
+    }
+  ],
+  "sha256": "3edbb4bd08af6ae4585b53c3243c56921f2bedac475298612bf88f042e62c54c",
+  "bytes": 1759680,
+  "sourceSha256": "ecf711b4c283df9fa9b6e424cb4245afe271c5d431c754d089ef6f859ece2a7d",
+  "target": "Android arm64 API26; 16KiB max page size",
+  "zipBodyCRC32Enabled": false,
+  "apkSignedOrInstalled": false
+}

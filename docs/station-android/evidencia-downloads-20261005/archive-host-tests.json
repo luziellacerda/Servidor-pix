@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "policy": "original",
+      "output": "PASS 6 real JNI ZIP checks; policy=original"
+    },
+    {
+      "policy": "skip",
+      "output": "PASS 8 real JNI ZIP checks; policy=skip"
+    }
+  ],
+  "hostDecoder": "Ubuntu libarchive.so.13.7.2",
+  "androidExecution": false
+}
