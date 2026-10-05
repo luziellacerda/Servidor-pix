@@ -9,7 +9,7 @@ Destinatário: operador do **Servidor-pix**. Este é código e pedido de publica
 - APK novo: `E:\ESTUDO APK\work\station-netplay-20261004\TurboStations-Netplay-Internet-R12-20261005.apk`. Hash, tamanho, certificado e comparação integral em `evidence/build-result.json` no app.
 - Fonte/build canônicos: `E:\ESTUDO APK\work\station-netplay-20261004\internet-r12`. App Java também promovido para `netplay\src`, com backup anterior em `internet-r12\before-netplay-src`. Novas dependências estão em `internet-r12\dependency-src`.
 - Servidor completo compilado isoladamente em `internet-r12\server-full`. Nenhuma alteração foi implantada em Linux. Checkout do clone do servidor preservado; a nova branch contém quatro arquivos de produção e documentação/testes aditivos.
-- R9 é o último instalado comprovado. O aparelho voltou à USB nas plataformas (84% de bateria, ~12 GiB livres), mas desconectou durante a instalação R12; ADB devolveu falha e a conferência seguinte não encontrou dispositivo. Estado do pacote após a tentativa e hash no aparelho ainda precisam ser conferidos. Não foi alterada a configuração de tela. R10/R11/R12 não foram validados em Android nesta rodada. R11 foi arquivado em G: com SHA256 integral antes de remover a cópia idêntica de E:. Tag estável preservada.
+- R12 instalado por atualização após reconexão USB; SHA256 integral do base.apk conferido. Após desbloquear, ESActivity/carrossel com oito plataformas observado, sem nova tela de login. USB caiu novamente ao entrar na plataforma; salas e partida seguem sem prova nesta revisão. Nenhuma configuração de tela foi alterada. R11 arquivado em G: com hash verificado; tag estável preservada.
 
 ## Desenho implementado
 
@@ -91,10 +91,14 @@ Referências primárias: [protocolo RetroArch](https://docs.libretro.com/develop
 
 Publicar **RETORNO-SERVIDOR-NETPLAY-INTERNET-STATION-R12-20261005.md** respondendo: commit/DLL efetivos e hashes; flags; instância/serviço/upstream/proxy efetivos (sem segredos); confirmação de contratos/catálogo preservados; resultados dos testes HTTPS/WSS; capacidade/limites/telemetria; decisão de publicação ou impedimento comprovado; prova de dois aparelhos/redes quando disponível. Distinguir teste local, homologação, produção e aparelho. Não chamar este próprio handoff de retorno nem preencher dados não medidos.
 
-## Artefato exato desta entrega
+## Artefato e conciliação finais
 
-APK SHA256 `7684c6eee87985d8259becca9a22a9f4c7e3203f7c097df37da6998975596514`, 1.982.967.774 bytes. Somente `classes35.dex` alterado, três arquivos de licença/proveniência adicionados e 11.102 entradas preservadas. Certificado original e alinhamento16KiB conferidos.
+APK SHA256 `7684c6eee87985d8259becca9a22a9f4c7e3203f7c097df37da6998975596514`, 1.982.967.774 bytes. Somente classes35.dex alterado, três arquivos de licença/proveniência adicionados e 11.102 entradas preservadas. Certificado original e alinhamento16KiB conferidos.
 
-## Fontes imutáveis do aplicativo para esta publicação
+Retorno remoto c8e240a (Neo Geo offline e taxa MB/s) foi lido e preservado na conciliação Git. Seu delta de taxa ainda NÃO integra este APK; próxima montagem precisa preservar classes35 R12, sem voltar ao DEX R11. Neo Geo online permanece bloqueado por .neo/BIOS.
 
-App commit **823787e9938029d64ffb0f4b0c7e69834066936c**, branch `feat/station-capas-visuais-netplay-20261003`. [Handoff e mapas](https://github.com/luziellacerda/TurboElden/blob/823787e9938029d64ffb0f4b0c7e69834066936c/versions/station-internet-r12-20261005/README.md), [fontes Java](https://github.com/luziellacerda/TurboElden/blob/823787e9938029d64ffb0f4b0c7e69834066936c/versions/station-internet-r12-20261005/netplay-src), [dependências e licenças](https://github.com/luziellacerda/TurboElden/blob/823787e9938029d64ffb0f4b0c7e69834066936c/versions/station-internet-r12-20261005/dependencies), [recibo do APK](https://github.com/luziellacerda/TurboElden/blob/823787e9938029d64ffb0f4b0c7e69834066936c/versions/station-internet-r12-20261005/evidence/build-result.json), [testes](https://github.com/luziellacerda/TurboElden/blob/823787e9938029d64ffb0f4b0c7e69834066936c/versions/station-internet-r12-20261005/run_station_relay_tests.py). Esta branch adiciona quatro arquivos de produção ao servidor e documentação/testes. Não foi implantada. Estado atualizado de instalação no telefone deve ser lido no próximo recibo do app; não presumir instalação a partir do APK compilado.
+Servidor-pix: branch `feat/station-netplay-internet-r12-20261005`, implementação inicial commit `0037a0f5bf20734bac25cd2497158b06bed0bc58`. Nenhuma implantação Linux foi executada. O operador aplicará o handoff `docs/station-android/HANDOFF-APP-SERVIDOR-NETPLAY-INTERNET-R12-20261005.md`.
+
+## App publicado e estado no aparelho
+
+App commit **3a5a29dc93648e467d631ba2b02e8522111eee0c**, branch `feat/station-capas-visuais-netplay-20261003`. [Fonte, handoff e evidências](https://github.com/luziellacerda/TurboElden/tree/3a5a29dc93648e467d631ba2b02e8522111eee0c/versions/station-internet-r12-20261005). Instalação R12 e hash no telefone confirmados; carrossel abriu. USB caiu durante a continuação da verificação. Sem partida entre dois aparelhos, sem implantação Linux. Retorno Neo Geo/taxa c8e240a preservado no Git; delta MB/s ainda não empacotado.
