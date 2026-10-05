@@ -1,19 +1,19 @@
 {
   "base": "4e623bcbeaed3ee03d8a1767f66319e67659463d",
-  "appCommit": "823787e9938029d64ffb0f4b0c7e69834066936c",
+  "appCommit": "3a5a29dc93648e467d631ba2b02e8522111eee0c",
   "files": {
     "src/TurboRamaSuiteOnlineServer/StationOnline.cs": "cb61c3504e60a252f5ca803e06d660bf10ab6b5f06d37ee2ed38b7f8f0c66352",
     "src/TurboRamaSuiteOnlineServer/StationOnlineEndpoints.cs": "c0cecd0f14d6c361fd2ad8c94f9b6baf89f30e7c70df69e84a5251b68ac412c8",
     "src/TurboRamaSuiteOnlineServer/StationOnlineRegistration.cs": "bddc7cfb8b010c1ac0ca062b30239446c4dde04d4344942d4d87bd0bbbd93ea7",
     "src/TurboRamaSuiteOnlineServer/StationRelay.cs": "2009e94fe795cd18638f16de506abc2b85ae0a10aeb1cc69ac7965f5a6f08866",
-    "docs/station-android/HANDOFF-APP-SERVIDOR-NETPLAY-INTERNET-R12-20261005.md": "eff8d6074b0c43c257ce8e9cf498ffbfb21f3ee3659c7277bcc6563ba8bac69d",
+    "docs/station-android/HANDOFF-APP-SERVIDOR-NETPLAY-INTERNET-R12-20261005.md": "cf6669a8ce210dd62167322b17ca4714bb6ba24e89c0e2e4844aeda681aa3042",
     "docs/station-android/relay-r12-tests/Program.cs": "1e9268a5be812243a3e46708db83b06dbe27466abc157f6a4a6a03b86cb3ea2d",
     "docs/station-android/relay-r12-tests/HttpTests.cs": "3b3bb7e5efe4da5a69f13a7bbf5d0ff67af3ba81e01ae04d4dcd6bc4f53c7de6",
     "docs/station-android/relay-r12-tests/RelayIntegrationTests.cs": "cf39b84466ff3bb7e7d355a02ec8dd2b68185043cc67d4dba0687d15a17beb4b",
     "docs/station-android/relay-r12-tests/RelayBridgeTests.java": "75baa335bb55ac05b1ca3158e19ef1156ef8a7205dc2912c799ee5d093b5cc2f",
-    "docs/station-android/relay-r12-tests/Regression.csproj": "4cbaddd7afc87edad43cd47c5186523970c0a8d980d65ae31e39adcb847398ce",
-    "docs/station-android/relay-r12-tests/Http.csproj": "ab1360914d4953248feded67a2292d511cb920268c6152e2a3152ba755d80146",
-    "docs/station-android/relay-r12-tests/Integration.csproj": "69387f4e551dd19eb0aad6b493366e83971a8045790252ea78fb0a2f465222c3",
+    "docs/station-android/relay-r12-tests/Regression.csproj": "05b993d67b52923aef18c921b6c26cd56594e8eeee3c78b299e834cc5d9aa515",
+    "docs/station-android/relay-r12-tests/Http.csproj": "7ed3fe7d289bbedbdd5844ca0df1f94577d2faaf8c66386e2634402feea6b850",
+    "docs/station-android/relay-r12-tests/Integration.csproj": "f10eb68afc016a8126c896ceea3d226421fb9b77d2e88187168af42c11a1d532",
     "docs/station-android/relay-r12-tests/README.md": "b0dcc8c672e4117bc6e32ff3a4076f3c99e154bba3e94869edbbbca3d8333a7e"
   },
   "deployed": false
