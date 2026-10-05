@@ -13,7 +13,7 @@ public sealed record OnlineCommand(string Action, string RequestId, string? Nick
     string? RoomId = null, string? PeerId = null, string? ItemId = null,
     string? EngineId = null, string? ContentSha256 = null, string? OptionsSha256 = null,
     string? CoreSha256 = null, string? RuntimeSha256 = null,
-    string? Address = null, int Port = 0, string? Text = null, bool Value = false, int Page = 0);
+    string? Address = null, int Port = 0, string? Text = null, bool Value = false, int Page = 0, string? Transport = null);
 public sealed class OnlineFailure(int status, string code) : Exception(code)
 { public int Status { get; } = status; public string Code { get; } = code; }
 
@@ -40,6 +40,7 @@ public sealed class StationOnline
         public readonly string Password = Convert.ToHexString(RandomNumberGenerator.GetBytes(32)).ToLowerInvariant();
         public string? Address;
         public int Port;
+        public string Transport = "direct";
         public long Generation = 1;
         public long StartingAt;
         public readonly List<string> Members = [host];
@@ -47,6 +48,11 @@ public sealed class StationOnline
         public readonly Queue<object> Messages = [];
     }
     private sealed record Invite(string Id, string From, string To, string Room, long Expires);
+    public sealed record RelayLease(string RoomId,string PeerId,long Generation,bool Host);
+    private sealed record RelayGrant(string Token,RelayLease Lease,long Expires);
+    private readonly Dictionary<string,RelayGrant> relayGrants = [];
+    private readonly HashSet<string> usedRelayPeers = [];
+    private readonly bool relayEnabled;
     private readonly object gate = new();
     private readonly Dictionary<string, Peer> peers = [];
     private readonly Dictionary<OnlineIdentity, string> identities = [];
@@ -60,8 +66,9 @@ public sealed class StationOnline
     private long revision;
     private TaskCompletionSource pulse = NewPulse();
     public StationOnline(IEnumerable<OnlineEngine> engines, Func<string, string?> platformForItem,
-        Func<long>? clock = null)
+        Func<long>? clock = null, bool relayEnabled = false)
     {
+        this.relayEnabled=relayEnabled;
         this.engines = engines.ToDictionary(x => x.Id);
         foreach (var e in this.engines.Values) { Hash(e.CoreSha256); Hash(e.RuntimeSha256); }
         this.platformForItem = platformForItem;
@@ -82,8 +89,9 @@ public sealed class StationOnline
     private void Sweep()
     {
         long now = clock();
+        foreach(var key in relayGrants.Where(x=>x.Value.Expires<=now).Select(x=>x.Key).ToArray())relayGrants.Remove(key);
         foreach (var p in peers.Values.Where(p => now - p.Seen >= 60000).ToArray()) Remove(p);
-        foreach (var r in rooms.Values.Where(r=>r.State=="starting" && now-r.StartingAt>=30000).ToArray())
+        foreach (var r in rooms.Values.Where(r=>r.State=="starting" && now-r.StartingAt>=(r.Transport=="relay-wss-v1"?90000:30000)).ToArray())
             if(peers.TryGetValue(r.Host,out var host))Leave(host);
         foreach (var i in invites.Values.Where(i => i.Expires <= now).ToArray()) { invites.Remove(i.Id); Changed(); }
     }
@@ -102,6 +110,7 @@ public sealed class StationOnline
             if (room.Host == p.Id || room.State != "waiting")
             {
                 rooms.Remove(room.Id);
+                foreach(var member in room.Members){relayGrants.Remove(member);usedRelayPeers.Remove(member);}
                 foreach (var member in room.Members) if (peers.TryGetValue(member, out var other)) other.Room = null;
                 foreach (var i in invites.Values.Where(i => i.Room == room.Id).ToArray()) invites.Remove(i.Id);
             }
@@ -129,6 +138,7 @@ public sealed class StationOnline
         Room? selected = p.Room is not null ? rooms.GetValueOrDefault(p.Room) : null;
         return new {
             schemaVersion = 1, instance, revision, selfId = p.Id, heartbeatSeconds = 20, expiresAfterSeconds = 60,
+            transports=relayEnabled?new[]{"direct","relay-wss-v1"}:new[]{"direct"},
             page, totalPeers = visible.Length, totalRooms=rooms.Count,
             nextPage = (page+1)*100 < Math.Max(visible.Length,rooms.Count) ? page+1 : (int?)null,
             peers = visible.Skip(page*100).Take(100).Select(x => new { peerId=x.Id, nickname=x.Nickname, status=x.Room is null ? "online" : "in-room" }).ToArray(),
@@ -140,7 +150,9 @@ public sealed class StationOnline
                 runtimeSha256=selected.Engine.RuntimeSha256,hostId=selected.Host,state=selected.State,generation=selected.Generation,
                 connectionPassword=selected.Password,
                 members=selected.Members.ToArray(),ready=selected.Ready.ToArray(),messages=selected.Messages.ToArray(),
-                directEndpoint=selected.State is "starting" or "connecting" ? new { address=selected.Address,port=selected.Port } : null },
+                transport=selected.Transport,
+                relay=selected.Transport=="relay-wss-v1"&&relayGrants.TryGetValue(p.Id,out var grant)?new {path="/v1/station/online/relay",protocol="station-relay.v1",ticket=grant.Token,expiresInSeconds=Math.Max(0,(grant.Expires-clock())/1000)}:null,
+                directEndpoint=selected.Transport=="direct"&&selected.State is "starting" or "connecting" ? new { address=selected.Address,port=selected.Port } : null },
             engines = engines.Values.Select(e => new { engineId=e.Id,platform=e.Platform,coreSha256=e.CoreSha256,runtimeSha256=e.RuntimeSha256 }).ToArray()
         };
     }
@@ -202,18 +214,33 @@ public sealed class StationOnline
                 {
                     var r=Member(p,cmd.RoomId);Require(r.Host==p.Id,403,"STATION_ONLINE_HOST_REQUIRED");
                     Require(r.State=="waiting" && r.Members.Count==2 && r.Ready.Count==2,409,"STATION_ONLINE_NOT_READY");
+                    if(cmd.Transport=="relay-wss-v1"){
+                        Require(relayEnabled,503,"STATION_ONLINE_RELAY_DISABLED");r.Transport="relay-wss-v1";
+                    }else{
+                        Require(cmd.Transport is null or "direct",400,"STATION_ONLINE_TRANSPORT_INVALID");
                     Require(IPAddress.TryParse(cmd.Address,out var ip) && !IPAddress.IsLoopback(ip) &&
                         !ip.Equals(IPAddress.Any) && !ip.Equals(IPAddress.IPv6Any) && !ip.IsIPv6Multicast &&
                         (ip.AddressFamily!=System.Net.Sockets.AddressFamily.InterNetwork || ip.GetAddressBytes()[0]<224) &&
                         cmd.Port is >=1024 and <=65535,
                         400,"STATION_ONLINE_ENDPOINT_INVALID");
-                    r.Address=ip!.ToString();r.Port=cmd.Port;r.State="starting";r.StartingAt=clock();r.Generation++;Changed();break;
+                    r.Address=ip!.ToString();r.Port=cmd.Port;
+                    }
+                    r.State="starting";r.StartingAt=clock();r.Generation++;Changed();break;
                 }
                 case "host-listening":
                 {
                     var r=Member(p,cmd.RoomId);Require(r.Host==p.Id,403,"STATION_ONLINE_HOST_REQUIRED");
                     Require(r.State is "starting" or "connecting",409,"STATION_ONLINE_NOT_READY");
-                    if(r.State=="starting"){r.State="connecting";r.Generation++;Changed();}break;
+                    if(r.State=="starting"){r.State="connecting";if(r.Transport=="direct")r.Generation++;Changed();}break;
+                }
+                case "relay-ticket":
+                {
+                    var r=Member(p,cmd.RoomId);
+                    Require(relayEnabled&&r.Transport=="relay-wss-v1",503,"STATION_ONLINE_RELAY_DISABLED");
+                    Require(r.State is "starting" or "connecting",409,"STATION_ONLINE_NOT_READY");
+                    Require(!usedRelayPeers.Contains(p.Id),409,"STATION_ONLINE_RELAY_ALREADY_ATTACHED");
+                    string ticket=Convert.ToBase64String(RandomNumberGenerator.GetBytes(32)).TrimEnd('=').Replace('+','-').Replace('/','_');
+                    relayGrants[p.Id]=new RelayGrant(ticket,new RelayLease(r.Id,p.Id,r.Generation,r.Host==p.Id),clock()+60000);break;
                 }
                 case "invite":
                 {
@@ -252,6 +279,20 @@ public sealed class StationOnline
             return result;
         }
     }
+    public RelayLease TakeRelayTicket(string token)
+    {
+        lock(gate){
+            Sweep();Require(relayEnabled,503,"STATION_ONLINE_RELAY_DISABLED");
+            Require(Regex.IsMatch(token,"\\A[A-Za-z0-9_-]{43}\\z"),401,"STATION_ONLINE_RELAY_TICKET_INVALID");
+            var grant=relayGrants.Values.FirstOrDefault(g=>CryptographicOperations.FixedTimeEquals(System.Text.Encoding.ASCII.GetBytes(g.Token),System.Text.Encoding.ASCII.GetBytes(token)));
+            Require(grant is not null && grant.Expires>clock() && RelayCurrentLocked(grant.Lease),401,"STATION_ONLINE_RELAY_TICKET_INVALID");
+            relayGrants.Remove(grant!.Lease.PeerId);Require(usedRelayPeers.Add(grant.Lease.PeerId),409,"STATION_ONLINE_RELAY_ALREADY_ATTACHED");
+            return grant.Lease;
+        }
+    }
+    private bool RelayCurrentLocked(RelayLease lease)=>rooms.TryGetValue(lease.RoomId,out var room)&&room.Transport=="relay-wss-v1"&&room.Generation==lease.Generation&&room.Members.Contains(lease.PeerId)&&peers.TryGetValue(lease.PeerId,out var peer)&&clock()-peer.Seen<60000;
+    public bool RelayCurrent(RelayLease lease){lock(gate){Sweep();return RelayCurrentLocked(lease);}}
+    public void CloseRelay(RelayLease lease){lock(gate){if(RelayCurrentLocked(lease)&&peers.TryGetValue(lease.PeerId,out var peer))Leave(peer);}}
     public async Task<object> Events(OnlineIdentity identity, string? clientInstance,long after,int page,CancellationToken token)
     {
         Require(page>=0 && page<=40,400,"STATION_ONLINE_PAGE_INVALID");

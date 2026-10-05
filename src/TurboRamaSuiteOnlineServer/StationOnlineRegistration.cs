@@ -20,7 +20,8 @@ public static class StationOnlineRegistration
         {
             var item = (monitor?.Current ?? library).Catalog.FirstOrDefault(e => e.ItemId == id);
             return item is null ? null : Normalize(item.Platform);
-        }));
+        },relayEnabled:builder.Configuration.GetValue("Station:Online:RelayEnabled",false)));
+        builder.Services.AddSingleton<StationRelay>();
         builder.Services.AddSingleton<IStationOnlineAccess,StationOnlineAccess>();
     }
     private static string Normalize(string value)=>value.ToLowerInvariant() switch {

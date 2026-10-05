@@ -20,6 +20,23 @@ public static class StationOnlineEndpoints
     public sealed record EventsRequest(string RequestId, string? Instance, long Revision, int Page);
     public static void MapStationOnline(this WebApplication app, bool enabled)
     {
+        app.UseWebSockets(new WebSocketOptions {KeepAliveInterval=TimeSpan.FromSeconds(20)});
+        app.MapGet("/v1/station/online/relay",async (HttpContext context)=>{
+            context.Response.Headers.CacheControl="no-store";
+            if(!enabled||!app.Configuration.GetValue("Station:Online:RelayEnabled",false)){await Error(503,"STATION_ONLINE_RELAY_DISABLED").ExecuteAsync(context);return;}
+            if(!context.WebSockets.IsWebSocketRequest||context.Request.QueryString.HasValue||!context.WebSockets.WebSocketRequestedProtocols.Contains("station-relay.v1")){await Error(400,"STATION_ONLINE_RELAY_UPGRADE_REQUIRED").ExecuteAsync(context);return;}
+            try{
+                var header=context.Request.Headers.Authorization.ToString();
+                if(!header.StartsWith("StationRelay ",StringComparison.Ordinal)||header.Length!=56)throw new OnlineFailure(401,"STATION_ONLINE_RELAY_TICKET_INVALID");
+                var hub=context.RequestServices.GetRequiredService<StationOnline>();var relay=context.RequestServices.GetRequiredService<StationRelay>();
+                var lease=hub.TakeRelayTicket(header[13..]);
+                try{
+                    using var socket=await context.WebSockets.AcceptWebSocketAsync("station-relay.v1");
+                    await relay.Attach(lease,socket,context.RequestAborted);
+                }finally{hub.CloseRelay(lease);}
+            }catch(OnlineFailure e){if(!context.Response.HasStarted)await Error(e.Status,e.Code).ExecuteAsync(context);}
+            catch(OperationCanceledException){}catch(System.Net.WebSockets.WebSocketException){}
+        });
         app.MapPost("/v1/station/online/command", async (HttpContext context) => {
             var result=await Handle(context,enabled,async (hub,identity,cancel) => {
                 var cmd=await Read<OnlineCommand>(context,cancel);
