@@ -31,8 +31,8 @@ public static class StationOnlineEndpoints
         });
         app.MapGet("/v1/station/online/relay",async (HttpContext context)=>{
             context.Response.Headers.CacheControl="no-store";
-            if(!enabled||!app.Configuration.GetValue("Station:Online:RelayEnabled",false)){await Error(503,"STATION_ONLINE_RELAY_DISABLED").ExecuteAsync(context);return;}
-            if(!context.WebSockets.IsWebSocketRequest||context.Request.QueryString.HasValue||!context.WebSockets.WebSocketRequestedProtocols.Contains("station-relay.v1")){await Error(400,"STATION_ONLINE_RELAY_UPGRADE_REQUIRED").ExecuteAsync(context);return;}
+            if(!enabled||!app.Configuration.GetValue("Station:Online:RelayEnabled",false)){await RelayError(context,503,"STATION_ONLINE_RELAY_DISABLED");return;}
+            if(!context.WebSockets.IsWebSocketRequest||context.Request.QueryString.HasValue||!context.WebSockets.WebSocketRequestedProtocols.Contains("station-relay.v1")){await RelayError(context,400,"STATION_ONLINE_RELAY_UPGRADE_REQUIRED");return;}
             try{
                 var header=context.Request.Headers.Authorization.ToString();
                 if(!header.StartsWith("StationRelay ",StringComparison.Ordinal)||header.Length!=56)throw new OnlineFailure(401,"STATION_ONLINE_RELAY_TICKET_INVALID");
@@ -42,7 +42,7 @@ public static class StationOnlineEndpoints
                     using var socket=await context.WebSockets.AcceptWebSocketAsync("station-relay.v1");
                     await relay.Attach(lease,socket,context.RequestAborted);
                 }finally{hub.CloseRelay(lease);}
-            }catch(OnlineFailure e){if(!context.Response.HasStarted)await Error(e.Status,e.Code).ExecuteAsync(context);}
+            }catch(OnlineFailure e){if(!context.Response.HasStarted)await RelayError(context,e.Status,e.Code);}
             catch(OperationCanceledException){}catch(System.Net.WebSockets.WebSocketException){}
         });
         app.MapPost("/v1/station/online/command", async (HttpContext context) => {
@@ -95,6 +95,17 @@ public static class StationOnlineEndpoints
         catch(OperationCanceledException) when(!context.RequestAborted.IsCancellationRequested){return Error(504,"STATION_ONLINE_TIMEOUT");}
     }
     private static IResult Error(int status,string code)=>Results.Json(new {schemaVersion=1,code,message=code},StrictJson.Options,statusCode:status);
+    private static async Task RelayError(HttpContext context,int status,string code)
+    {
+        // Failed upgrades are finite HTTP responses. Frame the complete JSON
+        // explicitly so intermediary WebSocket proxies need not stream a
+        // chunked denial before deciding whether an upgrade succeeded.
+        var bytes=JsonSerializer.SerializeToUtf8Bytes(new {schemaVersion=1,code,message=code},StrictJson.Options);
+        context.Response.StatusCode=status;
+        context.Response.ContentType="application/json; charset=utf-8";
+        context.Response.ContentLength=bytes.Length;
+        await context.Response.Body.WriteAsync(bytes,context.RequestAborted);
+    }
     private static async Task<T> Read<T>(HttpContext context,CancellationToken cancel)
     {
         if(context.Request.ContentLength is >8192)throw new OnlineFailure(413,"STATION_ONLINE_BODY_TOO_LARGE");

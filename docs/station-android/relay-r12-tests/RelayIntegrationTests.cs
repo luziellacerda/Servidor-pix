@@ -57,6 +57,9 @@ await Rejected(new string('z',43));
 using(var httpHandler=new HttpClientHandler{ServerCertificateCustomValidationCallback=(_,c,_,_)=>c?.Thumbprint==cert.Thumbprint})
 using(var http=new HttpClient(httpHandler)){
  using var response=await http.GetAsync(origin+"/v1/station/online/relay");Check((int)response.StatusCode==400,"ordinary HTTP cannot open relay");
+ var body=await response.Content.ReadAsByteArrayAsync();
+ Check(response.Content.Headers.ContentLength==body.Length,"failed handshake has a bounded framed HTTP body");
+ Check(JsonSerializer.Deserialize<JsonElement>(body).GetProperty("code").GetString()=="STATION_ONLINE_RELAY_UPGRADE_REQUIRED","failed handshake retains protocol error");
 }
 app.Configuration["Station:Online:RelayEnabled"]="false";await Rejected(host);app.Configuration["Station:Online:RelayEnabled"]="true";
 

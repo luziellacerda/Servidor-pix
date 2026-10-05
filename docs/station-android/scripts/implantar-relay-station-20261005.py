@@ -118,7 +118,16 @@ def rollback(revision):
     ops.run(['systemctl', 'reload', 'nginx.service'])
     ops.run(['systemctl', 'daemon-reload'])
     ops.run(['systemctl', 'restart', SERVICE])
-    ops.ready('http://127.0.0.1:5192')
+    # The historical release hashes every game at cold boot. Give that
+    # inspected binary additional bounded startup time when returning to it.
+    for attempt in range(3):
+        try:
+            ops.ready('http://127.0.0.1:5192')
+            break
+        except TimeoutError:
+            if attempt == 2:
+                raise
+            print('Original Station API is still loading its library', flush=True)
     if current() != OLD / DLL:
         raise ValueError('Original Station API did not return')
     print('Original Station API restored; POCO license and library retained', flush=True)
@@ -268,8 +277,11 @@ def apply(revision):
         if isinstance(error, ValueError):
             report['safeReason'] = str(error)
         if activated:
-            rollback(revision)
-            report['rolledBack'] = True
+            try:
+                rollback(revision)
+                report['rolledBack'] = True
+            except Exception as rollback_error:
+                report.update(rolledBack=False,rollbackErrorType=type(rollback_error).__name__)
         private_report(RESULT.with_name(RESULT.stem + '-failed-' + revision[:7] + '.json'), report)
         print(json.dumps(report, ensure_ascii=False, indent=2), flush=True)
         raise SystemExit(1)
