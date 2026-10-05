@@ -21,6 +21,14 @@ public static class StationOnlineEndpoints
     public static void MapStationOnline(this WebApplication app, bool enabled)
     {
         app.UseWebSockets(new WebSocketOptions {KeepAliveInterval=TimeSpan.FromSeconds(20)});
+        // Aggregate operator telemetry only, outside the public /v1 route.
+        app.MapGet("/ready/station/online",(HttpContext context)=>{
+            if(context.Connection.RemoteIpAddress is not {} address || !System.Net.IPAddress.IsLoopback(address))
+                return Results.NotFound();
+            context.Response.Headers.CacheControl="no-store";
+            if(!enabled)return Results.StatusCode(503);
+            return Results.Json(context.RequestServices.GetRequiredService<StationRelay>().Snapshot());
+        });
         app.MapGet("/v1/station/online/relay",async (HttpContext context)=>{
             context.Response.Headers.CacheControl="no-store";
             if(!enabled||!app.Configuration.GetValue("Station:Online:RelayEnabled",false)){await Error(503,"STATION_ONLINE_RELAY_DISABLED").ExecuteAsync(context);return;}
