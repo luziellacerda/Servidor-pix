@@ -19,6 +19,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 from PIL import Image, ImageOps, ImageDraw
 from station_revista import select_revista_cover
+from station_disc import DiscPending, prepare_disc_artifact, support_sources, bios_status
 
 
 def load_module(name):
@@ -69,9 +70,11 @@ def metadata(game=None, override=None):
     return result
 
 
-def safe_roms(root, extensions):
+def safe_roms(root, extensions, excluded=()):
+    excluded = {Path(p).resolve() for p in excluded}
     for directory, dirs, files in os.walk(root, followlinks=False):
         dirs[:] = sorted(d for d in dirs if d not in {'media', 'bios', '.station', '.git'} and
+                          (Path(directory) / d).resolve() not in excluded and
                           not (Path(directory) / d).is_symlink())
         for name in sorted(files):
             path = Path(directory) / name
@@ -239,19 +242,27 @@ def publish(config, bootstrap=False):
             games, missing = xml_games(folder)
             report['missingXmlRoms'] += missing
             mode = spec.get('artifactMode', 'single-rom')
-            if mode not in {'single-rom', 'arcade-set'}:
+            if mode not in {'single-rom', 'arcade-set', 'chd-disc'}:
                 raise ValueError('unknown platform artifact mode')
-            companions = arcade_companions(folder, spec) if mode == 'arcade-set' else []
-            companion_stamp = [[p.relative_to(folder).as_posix(), stamp(p)] for p in companions]
+            companions = (arcade_companions(folder, spec) if mode == 'arcade-set' else
+                          support_sources(folder, root, spec) if mode == 'chd-disc' else [])
+            companion_base = root if mode == 'chd-disc' else folder
+            companion_stamp = [[p.relative_to(companion_base).as_posix(), stamp(p)] for p in companions]
+            if mode == 'chd-disc':
+                report.setdefault('runtimeRequirements', {})[platform] = bios_status(companions)
+            nested_platforms = [root / other.get('folder', name) for name, other in config['platforms'].items()
+                                if name != platform and (root / other.get('folder', name)).resolve().is_relative_to(folder.resolve())]
             magazine = defaultdict(list)
             revista = folder / 'media' / 'revista'
             if revista.exists():
                 for p in revista.rglob('*'):
                     if p.is_file() and p.suffix.lower() in {'.jpg', '.jpeg', '.png', '.webp', '.gif'}:
                         magazine[p.stem].append(p)
-            for rom in safe_roms(folder.resolve(), set(spec['extensions'])):
+            for rom in safe_roms(folder.resolve(), set(spec['extensions']), nested_platforms):
                 if rom in companions:
                     continue  # BIOS/support archives are dependencies, never listed as games.
+                if mode == 'chd-disc' and rom.suffix.lower() not in spec['extensions']:
+                    continue  # Firmware ZIPs are support, not discs.
                 folder_path = list(rom.relative_to(folder).parent.parts)
                 if len(folder_path)>8 or any(not n.strip() or n in {'.','..'} or len(n.encode('utf-16-le'))//2>80 or any(ord(c)<32 or c in '/\\' for c in n) for n in folder_path):
                     report['pending'].append({'platform':platform,'rom':rom.relative_to(folder).as_posix(),'reason':'invalid_folder_path'});continue
@@ -265,7 +276,7 @@ def publish(config, bootstrap=False):
                 candidates = magazine.get(rom.stem, [])
                 cover_stamp = [[str(p.relative_to(folder)), stamp(p)] for p in sorted(candidates)]
                 fingerprint = [stamp_rom, cover_stamp]
-                if mode == 'arcade-set':
+                if mode in {'arcade-set', 'chd-disc'}:
                     fingerprint.append([mode, companion_stamp])
                 unchanged = existing and existing['fingerprint'] == fingerprint
                 seeded = existing and existing['fingerprint'] is None
@@ -293,6 +304,9 @@ def publish(config, bootstrap=False):
                         tmp = Path(tmp)
                         if mode == 'arcade-set':
                             game_source, descriptor = prepare_arcade_artifact(rom, tmp / rom.name, companions)
+                        elif mode == 'chd-disc':
+                            game_source, descriptor = prepare_disc_artifact(rom, tmp / (rom.stem+'.zip'), companions,
+                                                                           spec, load_module('preparar-indice-artefatos').describe)
                         else:
                             game_source, descriptor = prepare_artifact(rom, tmp / rom.name, set(spec['extensions']), override.get('launchPath'))
                         cover_tmp = tmp / 'cover.jpg'; compile_cover(source_cover, cover_tmp)
@@ -311,7 +325,7 @@ def publish(config, bootstrap=False):
                             if gid is not None: os.chown(p, -1, gid)
                         if stamp(rom) != stamp_rom or [[str(p.relative_to(folder)), stamp(p)] for p in sorted(candidates)] != cover_stamp:
                             raise ValueError('source changed while compiling')
-                        if [[p.relative_to(folder).as_posix(), stamp(p)] for p in companions] != companion_stamp:
+                        if [[p.relative_to(companion_base).as_posix(), stamp(p)] for p in companions] != companion_stamp:
                             raise ValueError('arcade companion changed while compiling')
                         name = text(override.get('name', game.findtext('name', '') if game is not None else ''), 120) or text(rom.stem, 120)
                         ids = existing['ids'] if existing else ['station_' + hashlib.sha256((actual_platform+':'+relative).encode()).hexdigest()[:32]]
@@ -329,7 +343,8 @@ def publish(config, bootstrap=False):
                         report['placeholderCovers'] += source_cover is None
                         report['metadataMissing'] += not row['metadata']['description']
                 except (ValueError, OSError, zipfile.BadZipFile, ET.ParseError) as error:
-                    report['pending'].append({'platform': platform, 'rom': relative, 'reason': type(error).__name__})
+                    reason = str(error) if isinstance(error, DiscPending) else type(error).__name__
+                    report['pending'].append({'platform': platform, 'rom': relative, 'reason': reason})
         for row in rows.values():
             seed = metadata_seed.get(row['itemId'])
             if seed and seed['platform'] == row['platform'] and seed['name'] == row['name'] and not row.get('metadata', {}).get('description'):
