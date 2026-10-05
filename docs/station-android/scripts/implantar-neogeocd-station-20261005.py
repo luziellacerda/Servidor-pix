@@ -15,6 +15,8 @@ RESULT=Path('/home/lz-servidor/station-neogeocd-rollout-result-20261005.json')
 API=Path('/opt/turborama-station-folders-20261004-931030b/TurboRamaSuiteOnlineServer.dll')
 API_SHA='0b3f5da385216d216fb55220789f55c40b8eb304b7b1a4759cc154b1aa3f3ab0'
 INDEX_SHA='c5cc7944ce4ad224f85e2f4218c4c91915ac6dd2bda530368554822969d86492'
+RETRY_INDEX_SHA='a322bf9ff87a0bff94f078659bbef715a129eba5281c60968119659b64c01880'
+PREPARED_INDEX_SHA='c9cdc4e47b3acb0922c31eff19b2558eea3b8572f8e81c85c972aacc8dfeaeb9'
 CHECK=Path('/mnt/DADOS/station-neogeocd-check-20261005')
 RECEIPT_SHA='34ecc6a207f82e440eb295ad991b2dbda91278b8ab750e41710fcd620e9ab861'
 TOOLS={'bin/chdman':'c6c2240e8308428ddb0000ec035f475e91cbe8c576fc5f07d053edf72a3669e1',
@@ -60,9 +62,12 @@ def verify_public(index,values):
     deadline=time.monotonic()+180
     while True:
      response=super().request('http://127.0.0.1:5192',method,route,bearer=bearer)
+     if response[0]==429:
+      if time.monotonic()>=deadline:raise TimeoutError('catalog polling was rate limited')
+      time.sleep(min(60,max(4,int(response[1].get('Retry-After','60')))));continue
      if self.signed(response,'catalog')['revision']==index['revision']:break
      if time.monotonic()>=deadline:raise TimeoutError('live catalog reload timed out')
-     time.sleep(1)
+     time.sleep(4)
    response=super().request(base,method,route,payload,bearer)
    if route.startswith('/v1/station/artifacts/') and response[0]==200 and response[2].startswith(b'MComprHD'):
     assert '.chd' in response[1].get('Content-Disposition','').lower()
@@ -91,7 +96,7 @@ def verify_public(index,values):
   return dict(contract=contract,metadataAndFoldersVerified=True,covers=covers,chdDownloadVerified=True,biosAvailable=False)
  finally:
   assert client.cleanup(),'Synthetic ownership cleanup failed'
-def apply(revision):
+def apply(revision,reuse=False):
  report={'applied':False,'sourceRevision':revision,'apiRestarted':False}
  published=False;timer_stopped=False
  try:
@@ -101,13 +106,20 @@ def apply(revision):
   assert subprocess.check_output(git+['rev-parse','HEAD'],cwd=ROOT,env=env,text=True).strip()==revision
   assert not subprocess.check_output(git+['status','--porcelain'],cwd=ROOT,env=env,text=True).strip(),'clean exact source required'
   pid=validate_api();values,ids=ops.runtime();gid=ids['Gid'][1]
-  assert values['Station__LibraryIndexFile']==str(HOME/'index.json') and ops.digest(HOME/'index.json')==INDEX_SHA
-  assert not BACKUP.exists() and not CONTENT.exists() and not RESULT.exists(),'already prepared'
+  expected_sha=RETRY_INDEX_SHA if reuse else INDEX_SHA
+  assert values['Station__LibraryIndexFile']==str(HOME/'index.json') and ops.digest(HOME/'index.json')==expected_sha
+  if reuse:
+   prior=json.loads(RESULT.read_text());assert prior['rolledBack'] and prior['rollbackCatalogRevision']==11 and prior['realServiceIdentityValidated']
+   assert prior['sourceRevision']=='cc91685ad074d27ff6c3a06c2ebe10854d0b03f9' and ops.digest(CONTENT/'index.json')==PREPARED_INDEX_SHA
+   archive=BACKUP.with_name(BACKUP.name+'-failed-cc91685');assert not archive.exists();BACKUP.rename(archive)
+   result_archive=RESULT.with_name(RESULT.stem+'-failed-cc91685.json');assert not result_archive.exists();RESULT.rename(result_archive)
+  else:
+   assert not BACKUP.exists() and not CONTENT.exists() and not RESULT.exists(),'already prepared'
   baseline={u:ops.state(u) for u in SHARED}
   assert all('ActiveState=active' in s for s in baseline.values()),'shared service unhealthy'
   scanner=UNIT.read_text();assert '/opt/turborama-station-library-neogeo-20261005-cb49214/' in scanner
   ops.run(['systemctl','stop',TIMER]);timer_stopped=True;ops.run(['systemctl','stop',SCAN])
-  assert ops.digest(HOME/'index.json')==INDEX_SHA,'catalog advanced while stopping timer'
+  assert ops.digest(HOME/'index.json')==expected_sha,'catalog advanced while stopping timer'
   BACKUP.mkdir(mode=0o700)
   files={'index.json':HOME/'index.json','library-state.json':HOME/'state.json','config.json':CONFIG,'scan.service':UNIT}
   modes={}
@@ -116,7 +128,7 @@ def apply(revision):
   restored=BACKUP/'restored';restored.mkdir(mode=0o700)
   for name,path in files.items():
    shutil.copyfile(BACKUP/name,restored/name);assert ops.digest(restored/name)==ops.digest(path)
-  meta=dict(gid=gid,modes=modes,apiPid=pid,shared=baseline,oldIndexSha256=INDEX_SHA)
+  meta=dict(gid=gid,modes=modes,apiPid=pid,shared=baseline,oldIndexSha256=expected_sha)
   ops.private_text(BACKUP/'backup.json',json.dumps(meta))
   report['backupRestoreVerified']=True
   original=json.loads((BACKUP/'index.json').read_text());config=json.loads(CONFIG.read_text())
@@ -145,12 +157,16 @@ def apply(revision):
   report['scannerManifest']=manifest
   config['platforms']['neogeocd']={'folder':'neogeo/neogeocd','extensions':['.img','.chd'],
    'artifactMode':'chd-disc','biosDonors':['neogeo/neogeo.zip'],'chdVerifier':str(target/'tools/bin/chdman')}
-  CONTENT.mkdir(mode=0o750);os.chown(CONTENT,0,gid)
-  for name in ['index.json','state.json']:
-   library.atomic_json(CONTENT/name,json.loads((HOME/name).read_text()),gid)
+  if not reuse:
+   CONTENT.mkdir(mode=0o750);os.chown(CONTENT,0,gid)
+   for name in ['index.json','state.json']:
+    library.atomic_json(CONTENT/name,json.loads((HOME/name).read_text()),gid)
   preview=json.loads(json.dumps(dict(config,outputDirectory=str(CONTENT))))
   preview['platforms']['neogeocd']['_reviewedChdSha256']=reviewed
   import_report=library.publish(preview,bootstrap=True);index=json.loads((CONTENT/'index.json').read_text())
+  if reuse:
+   assert not import_report['changed'],'prepared sources changed'
+   index['revision']=original['revision']+1;library.atomic_json(CONTENT/'index.json',index,gid)
   before={r['itemId']:r for r in original['items']};after={r['itemId']:r for r in index['items']}
   assert all(after[k]==v for k,v in before.items()),'existing game changed'
   additions=[r for r in index['items'] if r['itemId'] not in before]
@@ -163,8 +179,10 @@ def apply(revision):
   report['runtimeRequirements']=import_report['runtimeRequirements']
   assert len(index['items'])==len(original['items'])+50
   checker=Path('/mnt/DADOS/station-neogeo-check-20261005/StationLibraryAuto.Tests.dll')
-  validation=subprocess.run(['/usr/bin/dotnet',str(checker),str(CONTENT/'index.json')],user=ids['Uid'][1],group=gid,extra_groups=ids['Groups'],capture_output=True,text=True,timeout=240)
-  assert validation.returncode==0 and 'VALIDATED revision=10 visible=2212 compatibility=255' in validation.stdout,'real UID parser validation failed'
+  if not reuse:
+   validation=subprocess.run(['/usr/bin/dotnet',str(checker),str(CONTENT/'index.json')],user=ids['Uid'][1],group=gid,extra_groups=ids['Groups'],capture_output=True,text=True,timeout=240)
+   assert validation.returncode==0 and 'VALIDATED revision=10 visible=2212 compatibility=255' in validation.stdout,'real UID parser validation failed'
+  else:report['preparedServiceIdentityValidationReused']=True
   report['realServiceIdentityValidated']=True
   config_text=json.dumps(config,ensure_ascii=False,separators=(',',':'))+'\n'
   ops.replace_config(CONFIG,config_text);CONFIG.chmod(modes['config.json'])
@@ -203,7 +221,7 @@ def rollback():
  state.update(rolledBack=True,rollbackCatalogRevision=rev);result(state)
  print('Own scanner/configuration restored; catalog revision '+str(rev)+'; API remained running.')
 if __name__=='__main__':
- parser=argparse.ArgumentParser();action=parser.add_mutually_exclusive_group(required=True);action.add_argument('--apply',action='store_true');action.add_argument('--rollback',action='store_true');parser.add_argument('--source-revision')
+ parser=argparse.ArgumentParser();action=parser.add_mutually_exclusive_group(required=True);action.add_argument('--apply',action='store_true');action.add_argument('--rollback',action='store_true');parser.add_argument('--source-revision');parser.add_argument('--reuse-prepared',action='store_true',help='Only the guarded cc91685 revision11 rollback and exact prepared snapshot')
  args=parser.parse_args()
- if args.apply:apply(args.source_revision)
+ if args.apply:apply(args.source_revision,args.reuse_prepared)
  else:rollback()
