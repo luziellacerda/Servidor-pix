@@ -7,6 +7,7 @@ real items and covers in the same isolated API. Requires .NET, psql and cryptogr
 Set STATION_HTTP_API_DLL to exercise a previously published release DLL.
 Set STATION_HTTP_REAL_TTL=1 to verify 60/180-second expiry using the real clock.
 Set STATION_HTTP_ADMIN_DLL to add commerce/admin HTTP checks over a temporary Unix socket.
+Set STATION_HTTP_SOCIAL_CHECKS=1 (with ONLINE_CHECKS=1) for R41; =0 checks flag-off compatibility.
 Never targets production.
 """
 
@@ -208,6 +209,11 @@ def main():
                     "Password=fixture-only-password"})
         online_checks = os.environ.get("STATION_HTTP_ONLINE_CHECKS") == "1"
         env["Station__Online__Enabled"] = "true" if online_checks else "false"
+        social_checks = os.environ.get("STATION_HTTP_SOCIAL_CHECKS")
+        env["Station__Online__SocialEnabled"] = "true" if social_checks == "1" else "false"
+        if social_checks in ("0", "1"):
+            env["Station__Online__RelayEnabled"] = "true"
+            env["Station__OriginRequestsPerMinute"] = "2048"
         if online_checks:
             registry = ROOT / "docs/station-android/online-20261004/engine-registry-candidate.json"
             registry_copy = folder / "online-engines.json"
@@ -290,6 +296,17 @@ def main():
                 from station_online_http_checks import run as check_online
                 check_online(base, ROOT, index, station_pepper, server_public, sql_value,
                              identity, session, request, signed_payload)
+                if social_checks in ("0", "1"):
+                    social_spec = importlib.util.spec_from_file_location("station_social_checks",
+                        ROOT / "docs/station-android/scripts/verificar-comunidade-station-r41.py")
+                    social = importlib.util.module_from_spec(social_spec)
+                    social_spec.loader.exec_module(social)
+                    # Relay starts remain available in both feature states.
+                    # This smoke uses synthetic HTTP state; actual WSS is checked in rollout.
+                    result = social.verify_credentials(index, sql_value, station_pepper,
+                        server_public, base, social_checks == "1")
+                    print("STATION R41 HTTP: " + json.dumps({k: v for k, v in result.items()
+                        if k not in ("snapshotExcerpts", "httpEvidence")}))
             elif os.environ.get("STATION_HTTP_ONLINE_CHECKS") == "0":
                 for route in ("command", "events"):
                     assert_error(request(base, "POST", "/v1/station/online/" + route, {}),

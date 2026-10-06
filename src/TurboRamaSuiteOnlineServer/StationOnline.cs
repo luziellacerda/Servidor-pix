@@ -1,6 +1,7 @@
 using System.Net;
 using System.Security.Cryptography;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
 namespace TurboRamaSuiteOnlineServer.Online;
@@ -48,7 +49,11 @@ public sealed class StationOnline
         public readonly HashSet<string> Ready = [];
         public readonly Queue<object> Messages = [];
     }
-    private sealed record DirectMessage(string messageId,string fromPeerId,string toPeerId,string nickname,string text,DateTimeOffset utc);
+    private sealed record DirectMessage(string messageId,string fromPeerId,string toPeerId,string nickname,string text,DateTimeOffset utc)
+    {
+        // Cache the default encoder's actual cost once, when accepting a message.
+        [JsonIgnore] public int EncodedBytes { get; init; }
+    }
     private sealed record JoinRequest(string Id,string From,string Room,long Expires);
     private readonly Dictionary<string,JoinRequest> joinRequests = [];
     private readonly bool socialEnabled;
@@ -139,6 +144,17 @@ public sealed class StationOnline
         long now = clock(); while (p.Actions.TryPeek(out var t) && now - t >= 10000) p.Actions.Dequeue();
         Require(p.Actions.Count < 30, 429, "STATION_ONLINE_RATE_LIMITED"); p.Actions.Enqueue(now);
     }
+    private static DirectMessage[] DirectHistory(Peer p)
+    {
+        // Android accepts a 512 KiB signed envelope, shared with room history,
+        // a full page, engines and invitations. Unicode escaping can cost six
+        // bytes per character. Keep the newest complete messages within 64 KiB.
+        var history=p.DirectMessages.ToArray();
+        int start=history.Length,bytes=2;
+        while(start>0 && bytes+history[start-1].EncodedBytes+1<=65536)
+        { bytes+=history[--start].EncodedBytes+1; }
+        return history[start..];
+    }
     private object View(Peer p, int page)
     {
         Require(page >= 0 && page <= 40, 400, "STATION_ONLINE_PAGE_INVALID");
@@ -148,7 +164,7 @@ public sealed class StationOnline
             schemaVersion = 1, instance, revision, selfId = p.Id, heartbeatSeconds = 20, expiresAfterSeconds = 60,
             transports=relayEnabled?new[]{"direct","relay-wss-v1"}:new[]{"direct"},
             socialCapabilities=socialEnabled?new[]{"direct-chat-v1","join-request-v1"}:Array.Empty<string>(),
-            directMessages=socialEnabled?p.DirectMessages.ToArray():Array.Empty<DirectMessage>(),
+            directMessages=socialEnabled?DirectHistory(p):Array.Empty<DirectMessage>(),
             joinRequests=socialEnabled?joinRequests.Values.Where(x=>rooms.TryGetValue(x.Room,out var target)&&target.Host==p.Id)
                 .Select(x=>new{requestId=x.Id,fromPeerId=x.From,roomId=x.Room,itemId=rooms[x.Room].Item}).ToArray():[],
             sentJoinRequests=socialEnabled?joinRequests.Values.Where(x=>x.From==p.Id).Select(x=>new{requestId=x.Id,roomId=x.Room}).ToArray():[],
@@ -279,6 +295,7 @@ public sealed class StationOnline
                     var other=peers[cmd.PeerId!];Require(!Blocked(p,other),403,"STATION_ONLINE_BLOCKED");
                     string text=Text(cmd.Text,500);Require(clock()-p.LastChat>=1000,429,"STATION_ONLINE_CHAT_LIMIT");p.LastChat=clock();
                     var message=new DirectMessage(Id(),p.Id,other.Id,p.Nickname,text,DateTimeOffset.UtcNow);
+                    message=message with { EncodedBytes=JsonSerializer.SerializeToUtf8Bytes(message).Length };
                     p.DirectMessages.Enqueue(message);other.DirectMessages.Enqueue(message);
                     while(p.DirectMessages.Count>32)p.DirectMessages.Dequeue();while(other.DirectMessages.Count>32)other.DirectMessages.Dequeue();
                     Changed();break;
