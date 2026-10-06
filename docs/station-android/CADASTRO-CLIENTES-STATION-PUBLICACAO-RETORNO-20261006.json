@@ -1,0 +1,30 @@
+{
+  "verifiedAt": "2026-10-06T18:53:43.470563+00:00",
+  "implementationSource": "fe4b6317d15394397a452cd78d47ac95d0747378",
+  "serverReturn": "a15751fc538214f395f194caf7e783dbf0c593b1",
+  "appReturn": "dea4caa66da4c7752886aeaf181e955c6b04f2c5",
+  "serverRefsAtVerification": {
+    "feat/station-artifact-descriptor-20261002": "a15751fc538214f395f194caf7e783dbf0c593b1",
+    "feat/station-community-r41-20261006": "a15751fc538214f395f194caf7e783dbf0c593b1",
+    "feat/station-netplay-internet-r12-20261005": "a15751fc538214f395f194caf7e783dbf0c593b1",
+    "feat/station-online-direct-20261004": "a15751fc538214f395f194caf7e783dbf0c593b1",
+    "fix/station-codes-panel-20261006": "a15751fc538214f395f194caf7e783dbf0c593b1",
+    "fix/station-customer-provision-20261006": "a15751fc538214f395f194caf7e783dbf0c593b1"
+  },
+  "appRefsAtVerification": {
+    "feat/station-capas-visuais-netplay-20261003": "dea4caa66da4c7752886aeaf181e955c6b04f2c5",
+    "fix/station-codes-panel-return-20261006": "dea4caa66da4c7752886aeaf181e955c6b04f2c5",
+    "fix/station-customer-provision-return-20261006": "dea4caa66da4c7752886aeaf181e955c6b04f2c5"
+  },
+  "identicalHandoffCopies": {
+    "RETORNO-CADASTRO-CLIENTES-STATION-20261006.md": "dc8d515647f813e77dd37d5c6d0e15cde3cba6cfce601baac66d3d4066b624c3",
+    "CADASTRO-CLIENTES-STATION-PRODUCAO-20261006.json": "ccf88a51cf2e372aa69de7fa528c2caaa0608d739d757585a330dffba6f0765f",
+    "RETORNO-PAINEL-CODIGOS-STATION-20261006.md": "c46f15c9fc7399f0b447760d9efee077e00430d5349443206ab19e10fdf94ac5"
+  },
+  "frozenAppTreeSha256": "efe74cb08b78c04df308140f47a674e6a2e98ec2ae15a7a694f105ad048b22a1",
+  "r41RuntimeAndSourcePreserved": true,
+  "apkRebuilt": false,
+  "twoPhysicalAndroidGameplayVerified": false,
+  "sourceWorktreeClean": true,
+  "appWorktreeClean": true
+}
