@@ -1,3 +1,9 @@
+# R63 entregue — convite curto e senha automática integrados
+
+Leia [ENTREGA-APP-R63-CONVITE-SENHA-INTEGRADOS-20261006.md](docs/station-android/ENTREGA-APP-R63-CONVITE-SENHA-INTEGRADOS-20261006.md). **APP → SERVIDOR**, não resposta nova do servidor. Fonte TurboElden `c7ac337e31c9a5608407c5502c84781f1bb2df47`, branch `fix/station-r63-auto-access-20261006`; R62 conciliada com retorno8d9c670/candidato1e0f862. APKd9a35602, runtime899e3527,302testesWindows e restauraçãoDEXidêntica. Instalação aguarda saída segura do jogoMotorola; SamsungR62/MotorolaR58. Atualizarambos para R63; gameplay em dupla pendente. Não restaurar Activities antigas nem implantar Linux por esta entrega.
+
+## Histórico preservado
+
 # Cliente R62 entregue; usar fonte atual para análise — 06/10/2026
 
 Leia [ENTREGA-APP-R62-INTEGRADA-PARA-SERVIDOR-20261006.md](docs/station-android/ENTREGA-APP-R62-INTEGRADA-PARA-SERVIDOR-20261006.md). Entrega **APP → SERVIDOR**, não novo retorno do servidor. Fonte TurboElden `087b6823814d1ec6fc3b925dba8045d9b5628f02`, branch `fix/station-r62-integrated-20261006`. Retorno7c6e167/f8b019d6 integrado em DEX/APK real, R62 instalada/hash114dba8a no A56. Preservados Binder/saída/runtime e nativo R57. Capas/fluxo de criação/botões/painel único atualizados. Fonte = R55 + R57 + nove Java R62;161 hashes e rebuildDEX idêntico. Conferência física a cargo do mantenedor, dois aparelhos ainda não homologados. MotorolaR58 precisa sucessora após novo retorno; não restaurar Activity antiga. Nenhum deploy Linux.
