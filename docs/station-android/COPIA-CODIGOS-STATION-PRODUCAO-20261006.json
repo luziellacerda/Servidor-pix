@@ -1,0 +1,95 @@
+{
+  "status": "published",
+  "sourceRevision": "247bb0a33bbb800228d1bf1c9fba6ff88469c000",
+  "publishedAt": "2026-10-06T20:59:30.889217+00:00",
+  "checks": {
+    "publicJavascriptHashVerified": true,
+    "authenticatedStationPage": true,
+    "copyGuidanceVisible": true
+  },
+  "servicesRestarted": 0,
+  "licensesChanged": 0,
+  "apiSha256": "d181bf97d5b39a334e95144267d6ece3f11d4e659a314d7d16cd2746e1999e13",
+  "files": {
+    "station-admin.php": {
+      "before": "50f566da9f5b2a414e43537d0feee00640f9af9bca1d6a9623f32799e6bed852",
+      "after": "4b5bdd9179ba956070d9838c30e81c16af3055fd24ab80cef35e139b675ef9e2",
+      "mode": 436
+    },
+    "station-admin.js": {
+      "before": "5b2377364a379a2608cafcf9f3ee524cf269648aec2715e3bddb334a08324a5c",
+      "after": "6493e94bb9ea77c0d49e3ce03d013a2dcfe95637ebfb8932de086975a1240c8b",
+      "mode": 436
+    }
+  },
+  "unchanged": {
+    "station-registration.php": "f88456d0b4c4f44b4336972379c85bb1b01d8ed419964f8fe02eef4ad27581e6",
+    "station-admin-policy.php": "15831229201243cf302e3b7b2b8ac3348c7fef4a3481da7b25053ab558981678",
+    "station-admin.css": "4c9feb32a9bcb1bc01888ba0268fb7e60c0086853b97fc387f45352189962f33",
+    "station-lib.php": "4e9bcb79e88b536896fbb7b3593362c95ef962d00dee7e880fbbd870e22af5db",
+    "lib.php": "5d2d57a27f51e7446be9ebe0824d3fb54c29436b2f6dfde415b89f9c9159c1eb",
+    "router.php": "d9adea94c8c251e6ac7169534fa9076165ca59a7e366d1606d9c313e84e193c8",
+    "auth.php": "044df211e4f8b2e17e7764bcc9ea886fafca850c82d3091eead71297aab01342",
+    "panel.php": "e9f4534cc1e2bb2ff91b8777188f61304bf9a3e27fdd245893e709207ea1a874",
+    "notification-lib.php": "b3c130ea3dd14c4740e66ee0d9d7f0ad3f39160185747b449379e884cd88a144"
+  },
+  "services": {
+    "turborama-station-api.service": {
+      "pid": 875574,
+      "active": "active"
+    },
+    "turborama-station-management.service": {
+      "pid": 910766,
+      "active": "active"
+    },
+    "turborama-station-issue-admin.service": {
+      "pid": 910776,
+      "active": "active"
+    },
+    "turborama-pix.service": {
+      "pid": 3048,
+      "active": "active"
+    },
+    "turborama-suite-api.service": {
+      "pid": 3052,
+      "active": "active"
+    },
+    "turborama-suite-admin.service": {
+      "pid": 2764,
+      "active": "active"
+    },
+    "turborama-suite-content-gateway.service": {
+      "pid": 3053,
+      "active": "active"
+    },
+    "nginx.service": {
+      "pid": 3172,
+      "active": "active"
+    },
+    "cloudflared.service": {
+      "pid": 5085,
+      "active": "active"
+    },
+    "turbobox-php-fpm.service": {
+      "pid": 2385,
+      "active": "active"
+    }
+  },
+  "backupRestoredVerified": true,
+  "schemaVersion": 1,
+  "scope": "Somente station-admin.php e station-admin.js",
+  "tests": {
+    "realChromeClipboardCases": 5,
+    "phpLint": true,
+    "javascriptSyntax": true,
+    "restorationVerified": true
+  },
+  "androidApkChanged": false,
+  "realGamePlayVerified": false,
+  "activation": {
+    "userReportedEnteredBeforePublication": true,
+    "verifiedActiveBound": true,
+    "apiChallengeSessionProfileCatalog200": true,
+    "exactOriginalFailureCauseProven": false
+  }
+}

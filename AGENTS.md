@@ -1,3 +1,9 @@
+# Copiar código Station corrigido e publicado — 06/10/2026
+
+Leia docs/station-android/RETORNO-COPIA-CODIGOS-STATION-20261006.md e COPIA-CODIGOS-STATION-PRODUCAO-20261006.json. Fonte247bb0a publicada17h59Maceió: clipboardmoderno→fallbackreal no diálogo→aviso explícito se negado;5casosChrome e HTTPS/hashes/restauração passaram. SóPHP+JS do site; nenhum serviço/backend/licença real reiniciado/alterado, sem APKnovo. Usuário entrou antes da publicação; ACTIVE/BOUND/perfil/catálogo200confirmados, causa exata dos403anteriores não provada. APIa2bb176/PID875574/catalogo14/2212 preservados. Battletoads:2membros/2Pronto/start200/ticket200/WSShost, porém semhost-listening observado; diagnóstico/capturaUSB e delta do túnel no retornoapp d71b542. Não forçar connecting nem afirmar gameplaycorrigido. Preservar fonteR41/assinatura/licença/saves.
+
+## Histórico anterior
+
 # Cadastro de clientes Station publicado — 06/10/2026
 
 Leia docs/station-android/RETORNO-CADASTRO-CLIENTES-STATION-20261006.md. Fontefe4b631 publicada às15h45Maceió: Códigos Station → Novo cliente e código, cliente novo/existente, venda paga/cortesia/teste e licença adicional para dois aparelhos. Código30min/uso único; confirmação com senha administrativa. PostgreSQL/SQLite restaurados, testes isolados e dois acessos sintéticos independentes na API pública passaram, limpeza confirmada, zero mensagens/compras. ManagementPID910766/helperPID910776; APIa2bb176/PID875574/catálogo14/2212 e APKR41 preservados. Sem migrationPG; tabelaSQLite aditiva station_registrations. Nova página cadastra; orientação antiga somente de busca/Vendas foi substituída. Usar retorno específico da sucessora; gameplay físico/POCO/latência continuam no retornoR41.
