@@ -1,0 +1,186 @@
+--- /dev/null
++++ b/netplay-src/org/emulationstation/frontend/netplay/StationHostConnector.java
+@@ -0,0 +1,45 @@
++package org.emulationstation.frontend.netplay;
++
++import java.io.IOException;
++import java.io.InterruptedIOException;
++import java.net.InetAddress;
++import java.net.InetSocketAddress;
++import java.net.Socket;
++import java.util.concurrent.Semaphore;
++import java.util.concurrent.TimeUnit;
++import java.util.function.BooleanSupplier;
++import java.util.function.Consumer;
++
++/** Keep the first successful connection as the game stream; no disposable probe. */
++final class StationHostConnector {
++    static Socket connect(int port, long deadline, BooleanSupplier cancelled,
++                          Consumer<Socket> pending, Semaphore nativeHint)
++            throws IOException, InterruptedException {
++        InetSocketAddress address = new InetSocketAddress(InetAddress.getByName("127.0.0.1"), port);
++        while (System.nanoTime() < deadline) {
++            if (cancelled.getAsBoolean() || Thread.currentThread().isInterrupted())
++                throw new InterruptedIOException("Host connection cancelled");
++            Socket candidate = new Socket();
++            boolean retained = false;
++            pending.accept(candidate);
++            try {
++                long remaining = deadline - System.nanoTime();
++                if (remaining <= 0) break;
++                candidate.connect(address, (int)Math.max(1, Math.min(250,
++                        TimeUnit.NANOSECONDS.toMillis(remaining))));
++                if (cancelled.getAsBoolean()) throw new InterruptedIOException("Host connection cancelled");
++                candidate.setTcpNoDelay(true);
++                retained = true;
++                return candidate;
++            } catch (IOException unavailable) {
++                if (cancelled.getAsBoolean() || Thread.currentThread().isInterrupted())
++                    throw new InterruptedIOException("Host connection cancelled");
++            } finally {
++                if (!retained) candidate.close();
++            }
++            long pause = Math.min(TimeUnit.MILLISECONDS.toNanos(50), deadline - System.nanoTime());
++            if (pause > 0) nativeHint.tryAcquire(pause, TimeUnit.NANOSECONDS);
++        }
++        throw new IOException("Native listener unavailable");
++    }
++}
+--- a/netplay-src/org/emulationstation/frontend/netplay/StationRelayTunnel.java
++++ b/netplay-src/org/emulationstation/frontend/netplay/StationRelayTunnel.java
+@@ -14,10 +14,12 @@
+ 
+ /** TCP stream bridge: both phones initiate WSS to the same Station authority. */
+ final class StationRelayTunnel implements Closeable {
+- interface Listener {void failed();}
++ enum Failure {NATIVE_LISTENER, RELAY, LOCAL_STREAM, PROTOCOL}
++ interface Listener {void failed();default void failed(Failure reason){failed();}default void ready(){}}
+  private final boolean host;private final int hostPort;private final Listener listener;
+  private final ExecutorService io=Executors.newSingleThreadExecutor(r->{Thread t=new Thread(r,"Station-relay-local");t.setDaemon(true);return t;});
+- private final CountDownLatch nativeListening=new CountDownLatch(1),localConnected=new CountDownLatch(1);
++ private final Semaphore nativeHint=new Semaphore(0);
++ private final CountDownLatch localConnected=new CountDownLatch(1);
+  private final AtomicBoolean closed=new AtomicBoolean();
+  private final ServerSocket accept;private volatile Socket local;private final WebSocketClient remote;
+  StationRelayTunnel(URI uri,String ticket,boolean host,int hostPort,SSLSocketFactory tls,Listener listener)throws Exception {
+@@ -27,45 +29,49 @@
+   Draft_6455 draft=new Draft_6455(Collections.emptyList(),Collections.singletonList(new Protocol("station-relay.v1")),65536);
+   remote=new WebSocketClient(uri,draft,Collections.singletonMap("Authorization","StationRelay "+ticket),10000){
+    @Override protected void onSetSSLParameters(SSLParameters p){p.setEndpointIdentificationAlgorithm("HTTPS");}
+-   @Override public void onOpen(ServerHandshake h){if(!"station-relay.v1".equals(h.getFieldValue("Sec-WebSocket-Protocol")))fail();}
+-   @Override public void onMessage(String ignored){fail();}
++   @Override public void onOpen(ServerHandshake h){if(!"station-relay.v1".equals(h.getFieldValue("Sec-WebSocket-Protocol")))fail(Failure.PROTOCOL);}
++   @Override public void onMessage(String ignored){fail(Failure.PROTOCOL);}
+    @Override public void onMessage(ByteBuffer data){
+     try{
+      if(data.remaining()>32768||!localConnected.await(60,TimeUnit.SECONDS)||closed.get())throw new IOException("Local endpoint unavailable");
+      byte[] bytes=new byte[data.remaining()];data.get(bytes);local.getOutputStream().write(bytes);
+-    }catch(Exception e){fail();}
++    }catch(Exception e){fail(Failure.LOCAL_STREAM);}
+    }
+-   @Override public void onClose(int code,String reason,boolean peer){fail();}
+-   @Override public void onError(Exception error){fail();}
++   @Override public void onClose(int code,String reason,boolean peer){fail(Failure.RELAY);}
++   @Override public void onError(Exception error){fail(Failure.RELAY);}
+   };
+   remote.setSocketFactory(tls);remote.setTcpNoDelay(true);remote.setConnectionLostTimeout(20);remote.setDaemon(true);
+  }
+- int localPort(){return host?hostPort:accept.getLocalPort();}
+- void listening(){nativeListening.countDown();}
++ int localPort(){return host?hostPort:accept.getLocalPort();}
++ boolean available(){Socket current=local;return !closed.get()&&current!=null&&current.isConnected()&&!current.isClosed()&&remote.isOpen();}
++ void listening(){nativeHint.release();}
+  void start(){io.execute(()->{
+-  try{
++  Failure phase=host?Failure.NATIVE_LISTENER:Failure.LOCAL_STREAM;
++  try{
+    remote.connect();
+-   if(host){if(!nativeListening.await(60,TimeUnit.SECONDS))throw new IOException("Native listener unavailable");Socket s=new Socket();local=s;s.connect(new InetSocketAddress("127.0.0.1",hostPort),10000);}
++   if(host)local=StationHostConnector.connect(hostPort,System.nanoTime()+TimeUnit.SECONDS.toNanos(45),closed::get,s->local=s,nativeHint);
+    else local=accept.accept();
+    if(closed.get()){local.close();return;}
+    local.setTcpNoDelay(true);localConnected.countDown();
+-   long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(15);
++   phase=Failure.RELAY;long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(15);
+    while(!remote.isOpen()&&!closed.get()){if(remote.isClosed()||System.nanoTime()>deadline)throw new IOException("Relay unavailable");Thread.sleep(5);}
+-   byte[] bytes=new byte[16384];InputStream input=local.getInputStream();int count;
++   if(closed.get())return;
++   listener.ready();phase=Failure.LOCAL_STREAM;
++   byte[] bytes=new byte[16384];InputStream input=local.getInputStream();int count;
+    while(!closed.get()&&(count=input.read(bytes))>=0){
+     if(count==0)continue;
+     // Only backpressure waits; regular input packets are forwarded immediately.
+     while(!closed.get()&&queuedBytes()>262144)Thread.sleep(2);
+     if(closed.get())break;remote.send(Arrays.copyOf(bytes,count));
+    }
+-   fail();
+-  }catch(Exception e){if(e instanceof InterruptedException)Thread.currentThread().interrupt();fail();}
++   fail(Failure.LOCAL_STREAM);
++  }catch(Exception e){if(e instanceof InterruptedException)Thread.currentThread().interrupt();fail(phase);}
+  });}
+  private long queuedBytes(){long n=0;for(ByteBuffer b:((org.emulationstation.frontend.relay.ws.WebSocketImpl)remote.getConnection()).outQueue)n+=b.remaining();return n;}
+- private void fail(){if(closeOnce())listener.failed();}
++ private void fail(Failure reason){if(closeOnce())listener.failed(reason);}
+  private boolean closeOnce(){
+   if(!closed.compareAndSet(false,true))return false;
+-  nativeListening.countDown();localConnected.countDown();
++  nativeHint.release();localConnected.countDown();
+   try{if(accept!=null)accept.close();}catch(IOException ignored){}
+   try{if(local!=null)local.close();}catch(IOException ignored){}
+   remote.closeConnection(1000,"");io.shutdownNow();return true;
+--- a/netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java
++++ b/netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java
+@@ -16,29 +16,45 @@
+ public final class StationRetroActivity extends NativeActivity {
+     private StationRelayTunnel relay;private boolean relayPaused;
+     private Object backRegistration;private AlertDialog exitDialog;
+-    private String roomId,engine;private ResultReceiver sessionEvents;private boolean host;private volatile boolean listening,visible;
++    private String roomId,engine,pendingNotice;private ResultReceiver sessionEvents;private boolean host;private volatile boolean listening,visible;
+     @Override public void onCreate(Bundle state){
+         try{
+             sessionEvents=StationSessionChannel.read(getIntent().getExtras(),StationGameSession.EXTRA);
+             if(sessionEvents==null)throw new IllegalStateException("Session owner unavailable");
+             JSONObject launch=StationRetroLaunch.consume(this,getIntent().getStringExtra("station.launch"));roomId=launch.getString("roomId");engine=launch.getString("engine");host="host".equals(launch.getString("role"));
+             if(launch.has("relayTicket")){
+-                relay=new StationRelayTunnel(StationRelayTls.endpoint(),launch.getString("relayTicket"),host,launch.getInt("port"),StationRelayTls.create(),()->runOnUiThread(()->{if(visible&&!isFinishing())notice("A conexão da partida foi encerrada. Saia para voltar às salas e iniciar uma nova partida.");}));
++                relay=new StationRelayTunnel(StationRelayTls.endpoint(),launch.getString("relayTicket"),host,launch.getInt("port"),StationRelayTls.create(),new StationRelayTunnel.Listener(){
++                    @Override public void ready(){runOnUiThread(()->{
++                        if(sessionFinished||relayPaused||isFinishing()||isDestroyed()||relay==null||!relay.available())return;
++                        android.util.Log.i("StationRooms","game stage=local-stream-ready role="+(host?"host":"client"));
++                        listening=true;if(host&&visible&&sessionEvents!=null)sessionEvents.send(3,null);
++                    });}
++                    @Override public void failed(){failed(StationRelayTunnel.Failure.RELAY);}
++                    @Override public void failed(StationRelayTunnel.Failure reason){runOnUiThread(()->{
++                        listening=false;if(sessionFinished||isFinishing()||isDestroyed())return;
++                        android.util.Log.w("StationRooms","game stage=relay-failed reason="+reason.name()+" role="+(host?"host":"client"));
++                        pendingNotice=reason==StationRelayTunnel.Failure.NATIVE_LISTENER?
++                            "O motor do jogo não abriu a conexão online neste aparelho. Volte às salas para tentar novamente. A outra pessoa ainda não entrou na partida.":
++                            "A conexão da partida foi encerrada. Saia para voltar às salas e iniciar uma nova partida.";
++                        if(visible)notice(pendingNotice);
++                    });}
++                });
+                 launch.put("address","127.0.0.1").put("port",relay.localPort());relay.start();
+             }
+             Intent i=getIntent();i.putExtra("ROM",launch.getString("rom"));i.putExtra("LIBRETRO",launch.getString("core"));i.putExtra("CONFIGFILE",launch.getString("config"));i.putExtra("USED","false");i.putExtra("APK",getApplicationInfo().sourceDir);i.putExtra("DATADIR",getFilesDir().toString());i.putExtra("SDCARD",getFilesDir().toString());i.putExtra("EXTERNAL",getFilesDir().toString());
+             i.putExtra("STATION_NETPLAY_ROLE",launch.getString("role"));i.putExtra("STATION_NETPLAY_ADDRESS",launch.getString("address"));i.putExtra("STATION_NETPLAY_PORT",String.valueOf(launch.getInt("port")));
+-        }catch(Exception error){if(relay!=null)relay.close();super.onCreate(state);Toast.makeText(this,"Não foi possível preparar a partida. Volte à sala e tente novamente.",Toast.LENGTH_LONG).show();finish();return;}
+-        super.onCreate(state);if(Build.VERSION.SDK_INT>=33)backRegistration=Back33.register(this);getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);getWindow().getDecorView().setSystemUiVisibility(5894);
++        }catch(Exception error){android.util.Log.e("StationRooms","game stage=launch-failed type="+error.getClass().getSimpleName());if(relay!=null)relay.close();super.onCreate(state);Toast.makeText(this,"Não foi possível preparar a partida. Volte à sala e tente novamente.",Toast.LENGTH_LONG).show();finish();return;}
++        try{super.onCreate(state);}catch(RuntimeException|LinkageError error){android.util.Log.e("StationRooms","game stage=native-start-failed type="+error.getClass().getSimpleName());if(relay!=null)relay.close();Toast.makeText(this,"O motor do jogo não iniciou. Volte às salas para tentar novamente.",Toast.LENGTH_LONG).show();finish();return;}
++        if(Build.VERSION.SDK_INT>=33)backRegistration=Back33.register(this);getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);getWindow().getDecorView().setSystemUiVisibility(5894);
+     }
+-    @Override protected void onStart(){super.onStart();visible=true;if(relayPaused){notice("A partida online foi encerrada ao sair do aplicativo. Volte às salas para jogar novamente.");}if(sessionEvents!=null){Bundle data=new Bundle();data.putParcelable("reply",StationSessionChannel.transport(new ResultReceiver(new Handler(Looper.getMainLooper())){@Override protected void onReceiveResult(int code,Bundle value){if(visible&&code==100&&value!=null)notice(value.getString("message","Confira a conexão da sala."));}}));sessionEvents.send(1,data);if(host&&listening)sessionEvents.send(3,null);}}
+-    public void onNetplayListening(){android.util.Log.i("StationRooms","game stage=native-listening role="+(host?"host":"client"));listening=true;if(relay!=null)relay.listening();if(host&&visible&&sessionEvents!=null)sessionEvents.send(3,null);}
++    @Override protected void onStart(){super.onStart();if(sessionFinished)return;visible=true;if(relayPaused){notice("A partida online foi encerrada ao sair do aplicativo. Volte às salas para jogar novamente.");}if(pendingNotice!=null)notice(pendingNotice);if(sessionEvents!=null){Bundle data=new Bundle();data.putParcelable("reply",StationSessionChannel.transport(new ResultReceiver(new Handler(Looper.getMainLooper())){@Override protected void onReceiveResult(int code,Bundle value){if(visible&&code==100&&value!=null)notice(value.getString("message","Confira a conexão da sala."));}}));sessionEvents.send(1,data);if(host&&listening&&(relay==null||relay.available()))sessionEvents.send(3,null);}}
++    public void onNetplayListening(){android.util.Log.i("StationRooms","game stage=native-listening role="+(host?"host":"client"));if(relay!=null){relay.listening();return;}if(sessionFinished)return;listening=true;if(host&&visible&&sessionEvents!=null)sessionEvents.send(3,null);}
+     @Override protected void onStop(){visible=false;if(relay!=null){relayPaused=true;relay.close();}if(sessionEvents!=null)sessionEvents.send(2,null);super.onStop();}
+     private boolean notified;private void notice(String text){if(!notified&&!isFinishing()){notified=true;new AlertDialog.Builder(this).setTitle("LZ GAMES • Conexão").setMessage(text).setPositiveButton("Entendi",null).show();}}
+     public void onRetroArchExit(){StationRetroLaunch.clearSecret(this,roomId);runOnUiThread(this::finish);}
+-    private boolean sessionFinished;
++    private volatile boolean sessionFinished;
+     private void closeSession(){
+-        if(sessionFinished)return;sessionFinished=true;visible=false;
++        if(sessionFinished)return;sessionFinished=true;visible=false;listening=false;
+         if(relay!=null)relay.close();
+         if(sessionEvents!=null)sessionEvents.send(4,null);
+         StationRetroLaunch.clearSecret(this,roomId);

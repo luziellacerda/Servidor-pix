@@ -1,16 +1,16 @@
 # SERVIDOR → APP: R55 analisada e prontidão conciliada
 
-Data: 06/10/2026. Resposta ao pedido publicado no Servidor-pix `5722e50b19a19202bc01051277efb5fb7d712b89`.
+Data: 06/10/2026. Resposta ao pedido publicado no Servidor-pix `5722e50b19a19202bc01051277efb5fb7d712b89`, considerando também o adendo R57 `26318e25f37684fa9c1003ca55530aaf9bf53bd6`.
 
-**Fonte atual recebida:** TurboElden `9d3d45f048aa44bb2ee9c41f567e985901628daa`. **Implementação conciliada:** `8e62ed2e40c360ba9c325ed04ccec4f3ae54aaa1`, em [station-relay-readiness-r55-20261006](https://github.com/luziellacerda/TurboElden/tree/8e62ed2e40c360ba9c325ed04ccec4f3ae54aaa1/versions/station-relay-readiness-r55-20261006).
+**Base funcional recebida:** TurboElden `9d3d45f048aa44bb2ee9c41f567e985901628daa`. **Sucessora atual considerada:** `8980cd422d63068299b5e9946c120f81a9c94f29`, composição R55 + overlay visual R57. **Implementação conciliada:** `f8b019d6c7f3314aebfdc1afd62f4a505154935a`, em [station-relay-readiness-r57-20261006](https://github.com/luziellacerda/TurboElden/tree/f8b019d6c7f3314aebfdc1afd62f4a505154935a/versions/station-relay-readiness-r57-20261006).
 
-Resultado: delta implementado sobre R55, preservando o canal e a saída R54; 39 verificações de transporte e 255 de regras de salas passaram. 157 fontes Java compilaram em Java8/API34, somente **api-check-only**. **Sem alteração de servidor necessária para este delta. Não há novo DEX/APK compilado ou instalado nesta entrega Linux; gameplay físico continua pendente.**
+Resultado: delta implementado sobre a fonte online R55 e visual R57, preservando o canal/saída R54 e o layout atual; 39 verificações de transporte e 255 de regras de salas passaram. 158 fontes Java compilaram em Java8/API34, somente **api-check-only**. **Sem alteração de servidor necessária para este delta. Não há novo DEX/APK compilado ou instalado nesta entrega Linux; gameplay físico continua pendente.**
 
 ## R55-01 — Base e arquivos conferidos
 
-A R41 foi abandonada como base de integração atual. O snapshot R55 recebido permanece intacto. Conferidos tamanho/SHA-256 dos **346 arquivos** do manifesto; os 156 fontes Java de salas/dependências correspondem à exportação. Foram lidos handoff, estado, receitas, manifestos de dependências, comparação integral R41→R55, inventário dos módulos APK, erro/resultado Android R54 e os componentes de sessão, sala, lançamento, API, segurança e saída.
+A R41 foi abandonada como base de integração atual. Os snapshots R55 e R57 recebidos permanecem intactos. O overlay R57 tem14 arquivos conferidos por tamanho/SHA; a composição dos157 fontes Java atuais coincide integralmente com o recibo de compilação de produção. Conferidos tamanho/SHA-256 dos **346 arquivos** do manifesto; os 156 fontes Java de salas/dependências correspondem à exportação. Foram lidos handoff, estado, receitas, manifestos de dependências, comparação integral R41→R55, inventário dos módulos APK, erro/resultado Android R54 e os componentes de sessão, sala, lançamento, API, segurança e saída.
 
-APK de referência recebido: `4c8de4f899af291becdf22c0b551df5e03a813f7ecf536fb360436a5d24d7b39`, 2.093.278.660 bytes, instalado no **Motorola Edge 30** segundo o recibo. DEX35: `dfb7cd00e64a1cd9dd801f36573f8a737d80d7289acf654f9054b765dce7d414`; DEX28: `14fb0ecb30b6aaf0bd4321dc07e94926546280470515fa7bbec89c714cb5c154`. Este Linux não recebeu esses binários integrais nem refez seus hashes. A versão do Samsung/POCO/outro participante não pode ser inferida.
+APK atual de referência recebido: **R57**, `e6159fa3564f0b30c1415b062f42e08e47ea625832e1b2640375b3e8b2b55566`, 2.093.276.800 bytes, instalado no **Motorola Edge 30** segundo o recibo. DEX35: `cf3a92bce2927c0561c64783ae0030c6e5dc90fa81264564d977974a746c74fd`; DEX28: `14fb0ecb30b6aaf0bd4321dc07e94926546280470515fa7bbec89c714cb5c154`. Este Linux não recebeu esses binários integrais nem refez seus hashes. A versão do Samsung/POCO/outro participante não pode ser inferida.
 
 Hashes dos arquivos **recebidos**, antes do delta:
 
@@ -23,7 +23,7 @@ Hashes dos arquivos **recebidos**, antes do delta:
 | `StationLaunchPolicy.java` | `283b5d5f1da0b9660d45ce730efc9205a649a6046df4cda33421fcf67a5419c4` |
 | `StationExitPanel.java` | `a443148b772163c7ef99c2fb66d19027cc80ec4ffdf973a17d250e510d2e4058` |
 
-`app-r55-analysis-20261006/received-inputs.json` contém os demais arquivos lidos. `source-preservation.json` lista os **154 fontes Java preservados**, os dois alterados e o novo conector. O [diff aplicável sobre R55](https://github.com/luziellacerda/TurboElden/blob/8e62ed2e40c360ba9c325ed04ccec4f3ae54aaa1/versions/station-relay-readiness-r55-20261006/R55.patch) foi aplicado em uma cópia privada da fonte exata; todos os 157 arquivos resultantes coincidiram com o overlay testado. Bytes do Git também foram conferidos contra o manifesto, incluindo terminações de linha.
+`app-r57-analysis-20261006/received-inputs.json` contém os demais arquivos lidos, incluindo o adendo/overlay R57. `source-preservation.json` lista os **155 fontes Java preservados**, os dois alterados e o novo conector. O [diff aplicável sobre R55](https://github.com/luziellacerda/TurboElden/blob/f8b019d6c7f3314aebfdc1afd62f4a505154935a/versions/station-relay-readiness-r57-20261006/R57.patch) foi aplicado em uma cópia privada da fonte exata; todos os 158 arquivos resultantes coincidiram com o overlay testado. Bytes do Git também foram conferidos contra o manifesto, incluindo terminações de linha.
 
 ## R55-02 — Binder nos dois sentidos
 
@@ -35,7 +35,7 @@ Os **454 checks Android** de Parcel/callback são prova recebida do build R54. N
 
 ## R55-03 — TCP, WSS, evento3 e confirmação
 
-Arquivos entregues: `StationHostConnector.java` novo; `StationRelayTunnel.java` e `StationRetroActivity.java` conciliados. O restante vem da R55 atual.
+Arquivos entregues: `StationHostConnector.java` novo; `StationRelayTunnel.java` e `StationRetroActivity.java` conciliados. O restante vem da composição R55 + R57 atual.
 
 Sequência:
 
@@ -52,14 +52,14 @@ O TCP/WSS estabelecido comprova a etapa de transporte. Não comprova sozinho que
 
 ## R55-04 — Convidado e compatibilidade
 
-`StationLaunchPolicy`, `StationRoomStartState`, `StationOnlineGame`, `StationRetroLaunch`, `StationRoomsActivity` e modelos de sala/entrada foram preservados.
+`StationLaunchPolicy`, `StationRoomStartState`, `StationOnlineGame`, `StationRetroLaunch`, `StationRoomsActivity` R57 e modelos de sala/entrada foram preservados. `StationCreateGameCard`, a Activity com bitmap compartilhado, a barra fina e a faixa INSTALADO atuais permanecem; o empacotador conserva o carrossel R57 diretamente do APK base.
 
 - Anfitrião elegível em `starting` ou `connecting`; convidado só em `connecting`.
 - Dois membros distintos, ambos Pronto, anfitrião autorizado e transporte disponível continuam necessários.
 - O jogo da sala, `contentSha256`, `engineId`, `coreSha256`, `runtimeSha256` e `optionsSha256` continuam conferidos. O delta não troca motor, ROM ou opções.
 - SNES online mantém bsnes-mercury; Mega online mantém ClownMDEmu; runtime recebido `22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905`. Neo Geo permanece `launchReady=false` no manifesto atual.
 
-Foram executados os quatro testes Java atuais:107 de lobby/códigos/revisão,20 de entrada,15 de elegibilidade/geração e113 de comunidade. Isso mantém as regras e evita lançar o convidado para contornar falta de prontidão.
+Foram executados os quatro testes Java funcionais, cujos componentes são idênticos na sucessora visual:107 de lobby/códigos/revisão,20 de entrada,15 de elegibilidade/geração e113 de comunidade. Isso mantém as regras e evita lançar o convidado para contornar falta de prontidão.
 
 ## R55-05 — Saída, rede e retorno
 
@@ -116,24 +116,24 @@ Nenhum serviço foi reiniciado/implantado, nenhuma migration ou licença real al
 
 | Evidência nova neste Linux | Resultado e limite |
 | --- | --- |
-| Fonte recebida | 346arquivos por tamanho/SHA; snapshot intacto |
-| Conciliação | 154Java preservados,2alterados,1novo; patch aplicado à fonte exata |
-| TCP/TLS/relay | 39checks passaram,12.583.029bytes por direção,50inputs ordenados; endpoints TCP sintéticos |
-| Regras de salas/comunidade | 255checks Java atuais passaram |
-| JavaAndroid | 157fontes Java8/API34 compiladas; classpath derivado, api-check-only; sem DEX |
-| Empacotamento | Sintaxe e recusas de reciboR41/api-check-only verificadas; pacote assinado completo ainda não executado |
+| Fonte recebida | 346arquivos R55 +14 do overlay R57 por tamanho/SHA;157Java atuais conferidos contra produção; snapshots intactos |
+| Conciliação atual | 155Java preservados,2alterados,1novo; patch aplicado à composição R57 exata |
+| TCP/TLS/relay | 39checks passaram no delta funcional, cujos bytes permanecem idênticos na composição R57;12.583.029bytes por direção,50inputs ordenados; endpoints sintéticos |
+| Regras de salas/comunidade | 255checks passaram; componentes testados inalterados no overlay visual; sem repetição por mudança de layout |
+| JavaAndroid | 158fontes Java8/API34 compiladas; classpath derivado, api-check-only; sem DEX |
+| Empacotamento | Sintaxe e recusas de recibosR41/R55/api-check-only verificadas; pacote assinado completo ainda não executado |
 | BinderAndroid | 454checks recebidos da R54; código preservado, não repetidos aqui |
 | Baseline semJNI | Evidência isolada anterior, componente R55 idêntico por hash; não é captura Android nova |
 
-As provas estão também no [diretório de evidências do delta](https://github.com/luziellacerda/TurboElden/tree/8e62ed2e40c360ba9c325ed04ccec4f3ae54aaa1/versions/station-relay-readiness-r55-20261006/evidence). Recursos e fontes nativas externos não foram inventados ou substituídos. O delta compila o módulo de salas; não recompila o carrossel ou os motores.
+As provas estão também no [diretório de evidências do delta](https://github.com/luziellacerda/TurboElden/tree/f8b019d6c7f3314aebfdc1afd62f4a505154935a/versions/station-relay-readiness-r57-20261006/evidence). Recursos e fontes nativas externos não foram inventados ou substituídos. O candidato anterior8e62ed2/R55 foi preservado como histórico. Usar agora f8b019d6 e as receitas R57: elas restauram a base R55 e aplicam o overlay Java R57 antes do delta, recusando recibos antigos. O delta compila o módulo de salas; não recompila o carrossel ou os motores.
 
 ### Próxima ação no PC do APK
 
 1. Capturar versão instalada de ambos e logs privados da falha atual antes de substituir o APK.
-2. Buscar a implementação `8e62ed2e40c360ba9c325ed04ccec4f3ae54aaa1` e o retorno publicado nesta branch. Executar **as novas receitas R55** no [README do delta](https://github.com/luziellacerda/TurboElden/blob/8e62ed2e40c360ba9c325ed04ccec4f3ae54aaa1/versions/station-relay-readiness-r55-20261006/README.md).
-3. `build_candidate.py` usa as dependências originais pelos hashes exatos e um workspace novo; `package_candidate.py` aceita somente o APK R55 integral e substitui apenasDEX35. Chave original/senhas permanecem privadas no PC. Conferir certificado original, alinhamento16KiB e todas as demais entradas do pacote; emitir reciboSHA do candidato.
+2. Buscar a implementação `f8b019d6c7f3314aebfdc1afd62f4a505154935a` e o retorno publicado nesta branch. Executar **as novas receitas para a composição R57** no [README do delta](https://github.com/luziellacerda/TurboElden/blob/f8b019d6c7f3314aebfdc1afd62f4a505154935a/versions/station-relay-readiness-r57-20261006/README.md).
+3. `build_candidate.py` usa as dependências originais pelos hashes exatos e um workspace novo; `package_candidate.py` aceita somente o APK R57 integral e substitui apenasDEX35. Chave original/senhas permanecem privadas no PC. Conferir certificado original, alinhamento16KiB e todas as demais entradas do pacote; emitir reciboSHA do candidato.
 4. Atualizar os dois aparelhos preservando dados/assinatura, sem desinstalar/limpar; conferir SHA instalado por aparelho e canalParcel.
 5. Testar sala nova/Battletoads/ambosPronto/Iniciar, confirmação e launch do convidado, bytes reais e controle dos dois jogadores. Depois testar Voltar/menu nativo/configurações/rede/segundo plano/retorno ao catálogo.
-6. Publicar retorno com etapas e hashes, distinguindo instalação, controles/gameplay e saída. Nenhuma R56 foi declarada compilada por esta entrega.
+6. Publicar retorno com etapas e hashes, distinguindo instalação, controles/gameplay e saída. Esta entrega Linux não gerou nem instalou outro APK sucessor da R57.
 
 Continuam dependentes de dois celulares: gameplay físico, saída online completa, versão do segundo aparelho e latência externa. Controles próprios no online e aquecimento medido também continuam pendentes; o delta não resolve esses itens por uma configuração de servidor. Não promover estabilidade geral com base nos testes isolados.

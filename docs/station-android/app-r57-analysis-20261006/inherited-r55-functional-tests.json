@@ -1,0 +1,9 @@
+{
+  "inputImplementation": "8e62ed2e40c360ba9c325ed04ccec4f3ae54aaa1",
+  "tcpTlsRelayChecks": 39,
+  "roomPolicyChecks": 255,
+  "unchangedTestedComponentsVerifiedBySHA256": true,
+  "rerunForVisualOnlyOverlay": false,
+  "androidExecuted": false,
+  "twoDeviceGameplayVerified": false
+}

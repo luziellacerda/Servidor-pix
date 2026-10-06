@@ -1,3 +1,13 @@
+# Retorno R55 concluído considerando a sucessora R57 — 06/10/2026
+
+Leia `RETORNO-ANALISE-APP-R55-STATION-20261006.md`. Base funcional recebida9d3d45f, adendo visual8980cd4; implementação atualf8b019d6 em `versions/station-relay-readiness-r57-20261006` do app. Preservados canal Binder/saída R54 e layout R57: Criar sala, barra fina, capas e faixa INSTALADO. Os snapshots recebidos permanecem intactos.
+
+Composição dos157 Java atuais coincide com o recibo de produção. O delta conserva155 arquivos, altera dois e adiciona um;158 fontes compilaram Java8/API34 em api-check-only. Provas39TCP/TLS/relay e255salas se aplicam aos mesmos componentes, sem repetição por layout. Patch e recusas R41/R55/api-check-only passaram. Não há novo DEX/APK compilado ou instalado, nem gameplay físico comprovado.
+
+Sem alteração de servidor necessária para este delta. APIa2bb176/PID875574, management910766 e helper910776 preservados. No PC usar as novas receitas R57 e o APKbase e6159fa3/certificadooriginal, conferindo todos os outros módulos. Não usar o empacotador R41 ou R55 sobre a sucessora. Testar dois aparelhos, confirmação, inputs, saída e retorno; controles online próprios, latência externa e aquecimento medido continuam pendentes.
+
+## Histórico anterior
+
 # Adendo do app: R57 visual instalada, revisão funcional R55 mantida
 
 Leia [ATUALIZACAO-VISUAL-APP-R57-PARA-REVISAO-20261006.md](ATUALIZACAO-VISUAL-APP-R57-PARA-REVISAO-20261006.md). Fonte atual: TurboElden `8980cd422d63068299b5e9946c120f81a9c94f29`, snapshot R55 + overlay R57. Layout de Criar sala e barra preta compactados; faixa INSTALADO e capas preservadas. Canal Binder/fechamento/runtime/protocolo permanecem R55. Ao responder R55-01 a R55-08, considerar o overlay R57 se alterar `StationRoomsActivity`. Candidato de prontidão d1b535c não integrado; não declarar gameplay corrigido nem implantar por esta leitura.

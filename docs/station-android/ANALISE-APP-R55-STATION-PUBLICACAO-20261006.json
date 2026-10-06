@@ -1,34 +1,26 @@
 {
-  "createdAt": "2026-10-06T22:13:16.037950+00:00",
-  "appInputCommit": "9d3d45f048aa44bb2ee9c41f567e985901628daa",
-  "serverInputCommit": "5722e50b19a19202bc01051277efb5fb7d712b89",
-  "appImplementationCommit": "8e62ed2e40c360ba9c325ed04ccec4f3ae54aaa1",
-  "serverReturnCommit": "2fba03bfb85e865e5d155b394f54a9747269e5b2",
-  "appReturnCommit": "717b211e7ef1b5ff2ebd185969c951dbdc09437a",
-  "tcpTlsRelayChecks": 39,
-  "roomPolicyChecks": 255,
-  "sourcePreservedJava": 154,
+  "createdAt": "2026-10-06T22:20:45.737876+00:00",
+  "appFunctionalInputCommit": "9d3d45f048aa44bb2ee9c41f567e985901628daa",
+  "appVisualInputCommit": "8980cd422d63068299b5e9946c120f81a9c94f29",
+  "serverInputCommit": "26318e25f37684fa9c1003ca55530aaf9bf53bd6",
+  "appImplementationCommit": "f8b019d6c7f3314aebfdc1afd62f4a505154935a",
+  "previousR55ImplementationCommit": "8e62ed2e40c360ba9c325ed04ccec4f3ae54aaa1",
+  "sourceBase": "R57",
+  "functionalBase": "R55",
+  "originalJavaSources": 157,
+  "sourcePreservedJava": 155,
   "sourceChangedJava": 2,
   "sourceAddedJava": 1,
-  "java8API34Sources": 157,
+  "java8API34Sources": 158,
+  "inheritedUnchangedFunctionalChecks": 294,
+  "tcpTlsRelayChecks": 39,
+  "roomPolicyChecks": 255,
+  "newFunctionalChecksRerunForVisualOnlyOverlay": false,
   "apiCheckOnly": true,
   "dexBuilt": false,
   "apkBuilt": false,
   "installed": false,
   "twoDeviceGameplayVerified": false,
   "serverChangeRequired": false,
-  "productionModified": false,
-  "sourceBase": "R55",
-  "targetBranches": {
-    "app": [
-      "fix/station-r55-reconciliation-20261006",
-      "feat/station-capas-visuais-netplay-20261003",
-      "review/station-r55-server-20261006"
-    ],
-    "server": [
-      "fix/station-r55-reconciliation-20261006",
-      "feat/station-artifact-descriptor-20261002",
-      "docs/station-app-r55-review-20261006"
-    ]
-  }
+  "productionModified": false
 }
