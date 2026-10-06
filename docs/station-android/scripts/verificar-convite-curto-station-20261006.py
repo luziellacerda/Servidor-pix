@@ -104,9 +104,9 @@ def verify_credentials(index, execute_sql, pepper, public, base, enabled=True, r
         for client in clients:
             authenticate(client)
         host, guest, outsider = clients
-        h = command(host, 'enter', nickname='Short-code synthetic host')
-        g = command(guest, 'enter', nickname='Short-code synthetic guest')
-        c = command(outsider, 'enter', nickname='Short-code synthetic outsider')
+        h = command(host, 'enter', nickname='Invite test host')
+        g = command(guest, 'enter', nickname='Invite test guest')
+        c = command(outsider, 'enter', nickname='Invite test outsider')
         hid, gid = h['selfId'], g['selfId']
         check(len({hid, gid, c['selfId']}) == 3, 'independent authenticated peers')
         for state in (h, g, c):
@@ -146,7 +146,7 @@ def verify_credentials(index, execute_sql, pepper, public, base, enabled=True, r
             message = received['directMessages'][0]
             check(set(message) == {'messageId', 'fromPeerId', 'toPeerId', 'nickname', 'text', 'utc'} and
                   message['fromPeerId'] == hid and message['toPeerId'] == gid and
-                  message['nickname'] == 'Short-code synthetic host' and message['text'] == dm['text'],
+                  message['nickname'] == 'Invite test host' and message['text'] == dm['text'],
                   'server-assigned author, target and text')
             excerpts['privateConversation'] = excerpt(received)
             check(not command(outsider, 'heartbeat')['directMessages'], 'third peer cannot read direct message')
