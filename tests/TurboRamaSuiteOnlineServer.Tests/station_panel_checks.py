@@ -118,9 +118,15 @@ def run(base,folder,api_env,public_key,dll,admin_env,internal):
         matched=call('GET','/management/licenses?q='+license_id+'&limit=1');assert matched[0]==200 and matched[1]['total']==1
         assert call('GET','/management/licenses?q='+license_id+'&limit=1&offset=1')[1]['licenses']==[]
         assert call('GET','/management/licenses?limit=101')[0]==400
+        from station_registration_checks import run as registrations
+        registrations(base,public_key,call,internal)
         for i in range(23):create('Cliente de demonstração '+str(i+1).zfill(2))
         browser_id=create('Atendimento de demonstração')
         browser_checks(private,bridge,bridge_token,browser_id,license_id,process)
+        from station_registration_checks import activate as activate_registration
+        for item in json.loads((private/'registration-secrets.json').read_text()):
+            activate_registration(base,public_key,item['licenseId'],item['code'],item['name'])
+        (private/'registration-secrets.json').unlink()
         print('STATION PANEL: OK (private scope, code replay/stale checks, cancellation, purchase48h, same-license recovery, old-key/session denial, block/unblock/reconnect, history, pagination, PHP/browser gates)')
     finally:
         for p in reversed(processes):
@@ -145,6 +151,7 @@ def browser_checks(private,bridge,token_file,license_id,bound_license_id,process
     (site/'fixture-router.php').write_text("""<?php
 +if(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH)==='/fixture-login'){
 +require __DIR__.'/lib.php';$db=tb_db();$db->prepare(\"INSERT OR IGNORE INTO users(id,name,email,password_hash,role,status) VALUES(1,'Fixture admin','fixture@example.invalid',?,'admin','active')\")->execute([password_hash('fixture-password',PASSWORD_DEFAULT)]);
++$db->prepare(\"INSERT OR IGNORE INTO users(id,name,email,password_hash,role,status) VALUES(2,'Existing fixture customer','existing@example.invalid',?,'customer','active'),(3,'Archived fixture customer','archived@example.invalid',?,'customer','archived')\")->execute([password_hash('fixture-password',PASSWORD_DEFAULT),password_hash('fixture-password',PASSWORD_DEFAULT)]);
 +tb_session();$_SESSION['user']=['id'=>1,'role'=>'admin','name'=>'Fixture admin','email'=>'fixture@example.invalid'];$_SESSION['auth_version']=1;
 +header('Location: /admin/station');exit;}return require __DIR__.'/router.php';
 +""".replace('\n+','\n'))
@@ -160,12 +167,19 @@ def browser_checks(private,bridge,token_file,license_id,bound_license_id,process
     process(['google-chrome','--headless=new','--no-sandbox','--disable-dev-shm-usage','--disable-gpu',
       '--remote-debugging-address=127.0.0.1','--remote-debugging-port='+str(chrome_port),'--user-data-dir='+str(profile),'about:blank'],os.environ.copy(),'chrome.log')
     command=['node',str(ROOT/'tests/TurboRamaSuiteOnlineServer.Tests/station_panel_browser.mjs'),str(chrome_port),url,license_id,str(private),bound_license_id]
-    result=subprocess.run(command,capture_output=True,text=True,timeout=90)
+    result=subprocess.run(command,capture_output=True,text=True,timeout=120)
     artifacts=Path(os.environ.get('STATION_PANEL_ARTIFACTS','/mnt/DADOS/station-admin-panel-validation-20261003'))
     artifacts.mkdir(mode=0o700,parents=True,exist_ok=True)
     for name in ['php.log','admin.log','bridge.log','chrome.log','station-panel-desktop.png','station-panel-mobile.png','station-panel-support.png',
-                 'station-dashboard-desktop.png','station-dashboard-mobile.png','browser-validation.json']:
+                 'station-dashboard-desktop.png','station-dashboard-mobile.png','station-registration-mobile.png','browser-validation.json']:
         source=private/name
         if source.exists():shutil.copy2(source,artifacts/name)
     if result.returncode:raise RuntimeError('Station browser checks failed: '+result.stdout[-1200:]+result.stderr[-1200:])
+    import sqlite3
+    with sqlite3.connect(site/'.data/turbobox.sqlite') as database:
+        assert database.execute("SELECT count(*) FROM users WHERE email='new-station@example.invalid'").fetchone()[0]==1
+        assert database.execute("SELECT count(*) FROM station_registrations WHERE state='COMPLETED'").fetchone()[0]==3
+        assert database.execute('SELECT count(*) FROM notification_jobs').fetchone()[0]==0
+        assert database.execute('SELECT count(*) FROM purchases').fetchone()[0]==0
+        assert database.execute('PRAGMA foreign_key_check').fetchall()==[]
     print(result.stdout.strip())

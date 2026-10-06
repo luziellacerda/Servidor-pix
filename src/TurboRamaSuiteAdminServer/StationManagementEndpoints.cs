@@ -10,6 +10,10 @@ internal static class StationManagementEndpoints
           WHERE x.license_id=l.license_id AND x.product_id='TURBORAMA_STATION_ANDROID'
           ORDER BY x.last_source_version DESC LIMIT 1) d ON true
         LEFT JOIN suite.station_customer_projection p ON p.license_id=l.license_id
+        LEFT JOIN suite.suite_commerce_inbox registration ON registration.source_system='STATION_ADMIN_V1'
+          AND registration.source_system=d.source_system AND registration.source_purchase_id=d.source_purchase_id
+          AND registration.source_item_key=d.source_item_key AND registration.source_version=1
+          AND registration.source_product_sku='STATION_ANDROID_LIFETIME_1_DEVICE'
         LEFT JOIN LATERAL (SELECT * FROM suite.station_devices x
           WHERE x.license_id=l.license_id AND x.status='ACTIVE'
           ORDER BY x.updated_at DESC LIMIT 1) v ON true
@@ -25,6 +29,7 @@ internal static class StationManagementEndpoints
             AND l.activation_expires_at>clock_timestamp(),
           'codeIssued',l.activation_verifier IS NOT NULL,'activationExpiresAt',l.activation_expires_at,
           'displayName',coalesce(p.display_name,''),'customerRef',coalesce(p.customer_ref,''),
+          'grantKind',coalesce(registration.result_json->>'grantKind','sale'),
           'financialState',coalesce(d.financial_state,'MISSING'),
           'provisioningState',coalesce(d.provisioning_state,'MISSING'),
           'sourcePurchaseId',coalesce(d.source_purchase_id,''),'sourceItemKey',coalesce(d.source_item_key,''),
@@ -36,12 +41,14 @@ internal static class StationManagementEndpoints
           'deviceUpdatedAt',v.updated_at,'sessionId',coalesce(s.session_id,''),
           'sessionAuthorizedUntil',s.authorized_until,'lastContactAt',s.last_contact_at,
           'sessionLive',s.authorized_until>clock_timestamp(),
-          'isTest',coalesce(p.customer_ref,'')='teste-station')::text
+          'isTest',coalesce(p.customer_ref,'')='teste-station'
+            OR coalesce(registration.result_json->>'grantKind','')='test')::text
         """ + "\n";
 
     public static void Map(WebApplication app, bool enabled)
     {
         StationCodeManagement.Map(app,enabled);
+        StationRegistrationEndpoints.Map(app,enabled);
         app.MapGet("/station/licenses", async (HttpContext context,
             NpgsqlDataSource database, CancellationToken token) =>
         {
@@ -116,10 +123,12 @@ internal static class StationManagementEndpoints
                 await using(var events=database.CreateCommand("""
                     SELECT json_build_object('event',a.event_type,'outcome',a.outcome,
                       'detail',a.detail_code,'actor',coalesce(a.admin_actor,''),
-                      'createdAt',a.occurred_at,'reason',coalesce(nullif(a.reason,''),c.reason,''))::text
+                      'createdAt',a.occurred_at,'reason',coalesce(nullif(a.reason,''),c.reason,registration.result_json->>'reason',''))::text
                     FROM suite.station_management_audit a
                     LEFT JOIN suite.suite_lifecycle_commands c ON c.license_id=a.license_id
                       AND c.request_id=a.request_id AND c.scope='STATION_ANDROID'
+                    LEFT JOIN suite.suite_commerce_inbox registration ON registration.source_system='STATION_ADMIN_V1'
+                      AND registration.source_event_id=a.request_id AND registration.result_json->>'licenseId'=a.license_id
                     WHERE a.license_id=$1 ORDER BY a.occurred_at DESC,a.event_id DESC LIMIT 50
                     """))
                 {

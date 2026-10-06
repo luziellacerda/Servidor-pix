@@ -1,0 +1,55 @@
+import fs from 'node:fs';
+
+export async function run(evaluate,wait,check,send,screenshot,site,folder) {
+  await send('Page.navigate',{url:site+'/admin/station'});
+  await wait("document.querySelector('[data-register-customer]') && document.readyState==='complete'");
+  const open=async()=>{await evaluate("document.querySelector('[data-register-customer]').click()");await wait("document.getElementById('station-registration').open");};
+  const set=async fields=>evaluate(`(()=>{const f=document.getElementById('station-registration-form');const d=${JSON.stringify(fields)};for(const [k,v] of Object.entries(d)){if(k==='customer_mode'){f.querySelector('[name=customer_mode][value="'+v+'"]').checked=true;f.querySelector('[name=customer_mode][value="'+v+'"]').dispatchEvent(new Event('change',{bubbles:true}));}else if(['confirm_grant','allow_additional'].includes(k))f.elements[k].checked=v;else{f.elements[k].value=v;if(k==='grant_kind')f.elements[k].dispatchEvent(new Event('change',{bubbles:true}));}}})()`);
+  const submit=()=>evaluate("document.getElementById('station-registration-submit').click()");
+  const close=async()=>{await evaluate("document.querySelector('#station-registration [data-close]').click()");};
+  const post=async fields=>evaluate(`(async()=>{const d=new FormData(document.getElementById('station-registration-form'));for(const [k,v] of Object.entries(${JSON.stringify(fields)}))d.set(k,v);const r=await fetch('/admin/station?format=json',{method:'POST',body:d});return {status:r.status,data:r.headers.get('Content-Type')?.includes('application/json')?await r.json():null};})()`);
+  const secrets=[];
+  const take=async name=>{
+    await wait("document.getElementById('station-issued').open && document.getElementById('station-code').textContent.length===43");
+    const code=await evaluate("document.getElementById('station-code').textContent");
+    check(await evaluate("document.getElementById('station-code-delivery').textContent.includes('Nenhuma mensagem foi enviada')"),'registration sent a message');
+    await evaluate("document.documentElement.dataset.registrationNavigation='pending';document.querySelector('#station-issued [data-close]').click()");
+    await wait(`!document.documentElement.dataset.registrationNavigation && !document.getElementById('station-issued').open && [...document.querySelectorAll('tbody tr')].some(r=>r.querySelector('strong')?.textContent===${JSON.stringify(name)})`);
+    const licenseId=await evaluate(`[...document.querySelectorAll('tbody tr')].find(r=>r.querySelector('strong')?.textContent===${JSON.stringify(name)}).querySelector('[data-support]').dataset.support`);
+    secrets.push({name,licenseId,code});return licenseId;
+  };
+  await open();
+  check(await evaluate("document.getElementById('station-registration-form').elements.customer_name.required && document.getElementById('station-registration-form').elements.customer_id.disabled"),'new customer fields not usable');
+  await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
+  check(await evaluate("(()=>{const d=document.getElementById('station-registration');return d.scrollWidth<=d.clientWidth&&document.documentElement.scrollWidth<=innerWidth})()"),'registration overflows mobile');
+  await screenshot('station-registration-mobile.png');
+  await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1100,deviceScaleFactor:1,mobile:false});
+  await set({customer_name:'New Station fixture',customer_email:'new-station@example.invalid',grant_kind:'courtesy',confirm_grant:true,password:'wrong-password'});
+  await submit();
+  await wait("document.getElementById('station-registration-error').textContent.includes('Senha administrativa incorreta') && !document.getElementById('station-registration-submit').disabled");
+  check(await evaluate("document.getElementById('station-code').textContent===''") ,'wrong registration password exposed a code');
+  const original=await evaluate("Object.fromEntries(new FormData(document.getElementById('station-registration-form')))");original.password='fixture-password';
+  await set({password:'fixture-password'});await submit();
+  const newLicense=await take('New Station fixture');
+  const replay=await post(original);
+  check(replay.status===409 && replay.data.licenseId===newLicense && !replay.data.issued,'registration replay created another code or customer');
+  await open();
+  await set({customer_mode:'existing',customer_id:'2',grant_kind:'test',confirm_grant:true,password:'fixture-password'});
+  check(await evaluate("!document.querySelector('#station-registration-form option[value=\"1\"]') && !document.querySelector('#station-registration-form option[value=\"3\"]')"),'admin/archived account available for registration');
+  check((await post({confirm_grant:''})).status===400,'grant does not require explicit confirmation');
+  check((await post({customer_id:'1'})).status===400,'admin account received a customer license');
+  check((await post({customer_id:'3'})).status===400,'archived customer received a license');
+  await submit();const existingLicense=await take('Existing fixture customer');
+  await open();await set({customer_mode:'existing',customer_id:'2',grant_kind:'courtesy',confirm_grant:true,password:'fixture-password'});await submit();
+  await wait("document.getElementById('station-registration-error').textContent.includes('já tem uma licença Station') && !document.getElementById('station-registration-submit').disabled");
+  check(await evaluate("!document.getElementById('station-registration-support').classList.contains('station-hidden') && !document.getElementById('station-issued').open"),'duplicate did not offer existing support');
+  await close();
+  await open();await set({customer_mode:'existing',customer_id:'2',grant_kind:'paid',allow_additional:true,confirm_grant:true,password:'fixture-password'});await submit();
+  const additional=await take('Existing fixture customer');check(additional!==existingLicense,'second phone reused the first license');
+  await open();await set({customer_name:'Duplicate email fixture',customer_email:'new-station@example.invalid',grant_kind:'courtesy',confirm_grant:true,password:'fixture-password'});await submit();
+  await wait("document.getElementById('station-registration-error').textContent.includes('e-mail já está cadastrado') && !document.getElementById('station-registration-submit').disabled");
+  await close();
+  check(await evaluate("document.getElementById('station-registration-form').elements.password.value==='' && localStorage.length===0 && sessionStorage.length===0"),'registration retained a password or code');
+  fs.writeFileSync(folder+'/registration-secrets.json',JSON.stringify(secrets),{mode:0o600});
+  return {newCustomerAndCode:true,existingCustomerAndCode:true,courtesyZeroPrice:true,paidPriceConfirmed:true,testMarked:true,additionalPhoneConsent:true,duplicatePrevented:true,replayNoCode:true,adminAndArchivedRejected:true,wrongPasswordRejected:true,duplicateEmailRejected:true,mobileNoOverflow:true,noMessages:true,codeStored:false};
+}

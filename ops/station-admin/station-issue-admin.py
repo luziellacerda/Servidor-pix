@@ -7,7 +7,9 @@ rotates the verifier so a still-valid previous code stops working.
 
 Binds 127.0.0.1 only. Reads the Station pepper and Suite store DSN from files
 injected by systemd. Never logs pepper, DSN, token, or activation codes.
-Does not activate a device. Does not create a second license.
+Does not activate a device. Private management registration creates a Station
+license only after explicit administrator authorization; existing code actions
+keep the same license.
 A reissue always rotates the verifier so the previous code stops working.
 """
 from __future__ import annotations
@@ -94,6 +96,24 @@ def management_request(method: str, path: str, body: dict | None = None,
         raise
     except Exception:
         raise ManagementFailure(503, 'STATION_MANAGEMENT_UNAVAILABLE') from None
+
+
+def register_customer(body: dict) -> tuple[int, dict]:
+    actor, request_id = body.get('actor'), body.get('requestId')
+    reason, step_up, digest = body.get('reason'), body.get('stepUpAt'), body.get('clientIpDigest')
+    if (not isinstance(actor, str) or not ACTOR_RE.fullmatch(actor) or
+        not isinstance(request_id, str) or not re.fullmatch(r'[a-f0-9]{32}', request_id) or
+        not isinstance(reason, str) or not 10 <= len(reason) <= 200 or any(ord(c) < 32 for c in reason) or
+        type(step_up) is not int or abs(time.time() - step_up) > 300 or
+        not isinstance(digest, str) or not HEX64_RE.fullmatch(digest) or body.get('csrfVerified') is not True or
+        not isinstance(body.get('customerRef'), str) or not re.fullmatch(r'TBX-USER-[1-9][0-9]{0,11}', body['customerRef']) or
+        not isinstance(body.get('displayName'), str) or not 1 <= len(body['displayName']) <= 256 or
+        body.get('grantKind') not in ('paid', 'courtesy', 'test') or type(body.get('allowAdditional')) is not bool):
+        raise ManagementFailure(400, 'STATION_REGISTRATION_INVALID')
+    if not rate_ok(actor, 'registration', 20):
+        raise ManagementFailure(429, 'STATION_RATE_LIMITED')
+    payload = {key: body[key] for key in ('requestId', 'customerRef', 'displayName', 'grantKind', 'reason', 'allowAdditional')}
+    return management_request('POST', '/station/registrations', payload, actor, body, 'station.licenses.manage')
 
 
 def management_action(license_id: str, action: str, body: dict) -> tuple[int, dict]:
@@ -516,6 +536,23 @@ class Handler(BaseHTTPRequestHandler):
         if not self._auth():
             return
         path = urlparse(self.path).path
+        if path == '/management/registrations':
+            try:
+                length = int(self.headers.get('Content-Length', '0'))
+                if not 2 <= length <= 8192:
+                    raise ManagementFailure(400, 'STATION_REGISTRATION_INVALID')
+                body = json.loads(self.rfile.read(length))
+                if not isinstance(body, dict):
+                    raise ManagementFailure(400, 'STATION_REGISTRATION_INVALID')
+                status, result = register_customer(body)
+                self._send(status, result)
+            except ManagementFailure as e:
+                self._send(e.status, {'code': e.code})
+            except (ValueError, TypeError):
+                self._send(400, {'code': 'STATION_REGISTRATION_INVALID'})
+            except Exception:
+                self._send(503, {'code': 'STATION_ADMIN_UNAVAILABLE'})
+            return
         managed = re.fullmatch(r'/management/licenses/(STA-[A-Z0-9_-]{6,64})/(issue-code|reinstall|new-device|transfer|block|unblock|cancel-code|revoke-session)', path)
         if managed:
             try:

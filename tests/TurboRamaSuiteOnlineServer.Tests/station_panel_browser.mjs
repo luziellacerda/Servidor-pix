@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {run as registrationChecks} from './station_registration_browser.mjs';
 const [port,site,license,folder,boundLicense]=process.argv.slice(2);
 const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 let targets;
@@ -75,7 +76,9 @@ check(await evaluate("(()=>{const r=document.querySelector('#inicio .page-headin
 await screenshot('station-dashboard-mobile.png');
 await evaluate("document.querySelector('#inicio .page-heading a[href=\"/admin/station\"]').click()");
 await wait("document.querySelector('[data-find-client]')");
+const registration=await registrationChecks(evaluate,wait,check,send,screenshot,site,folder);
 check(errors.length===0,'browser script exception');
 const evidence={desktopWidth:1440,mobileWidth:390,viewportOverflow:false,mobileSupportButtonVisible:true,mobileCodeButtonVisible:true,dashboardCodeShortcutVisible:true,dashboardNavigationWorks:true,searchShortcutFocused:true,directCodeConfirmed:true,directCodeFreshSupport:true,boundDeviceShortcutConfirmed:true,cancelledDeviceChangePreserved:true,adminPasswordRejected:true,csrfRejected:true,pendingTransferHidden:true,codeAppearsOnce:true,codeStorage:false,whatsappOptIn:true,browserExceptions:errors.length,credentialsIncluded:false};
+evidence.registration=registration;
 fs.writeFileSync(folder+'/browser-validation.json',JSON.stringify(evidence,null,2)+'\n');
 socket.close();console.log('STATION BROWSER: OK (desktop/mobile, code/search/device shortcuts, fresh support, cancelled replacement, action effects, admin password, CSRF, code visibility, no browser storage, WhatsApp opt-in)');
