@@ -1,14 +1,8 @@
-# R55 analisada; prontidão conciliada — 06/10/2026
+# Adendo do app: R57 visual instalada, revisão funcional R55 mantida
 
-Leia `RETORNO-ANALISE-APP-R55-STATION-20261006.md`. Fonte atual do app:9d3d45f; implementação conciliada:8e62ed2; retorno do servidor:2fba03b; cópia no app:717b211. O delta sobre R55 preserva StationSessionChannel nos dois sentidos, proprietário e saída idempotente R54, StationExitPanel e HUD atuais.
+Leia [ATUALIZACAO-VISUAL-APP-R57-PARA-REVISAO-20261006.md](ATUALIZACAO-VISUAL-APP-R57-PARA-REVISAO-20261006.md). Fonte atual: TurboElden `8980cd422d63068299b5e9946c120f81a9c94f29`, snapshot R55 + overlay R57. Layout de Criar sala e barra preta compactados; faixa INSTALADO e capas preservadas. Canal Binder/fechamento/runtime/protocolo permanecem R55. Ao responder R55-01 a R55-08, considerar o overlay R57 se alterar `StationRoomsActivity`. Candidato de prontidão d1b535c não integrado; não declarar gameplay corrigido nem implantar por esta leitura.
 
-346 arquivos conferidos; 154 fontes Java preservados, dois alterados e um novo. Passaram 39 verificações TCP/TLS/relay e 255 das regras de salas. 157 fontes Java8/API34 compilaram somente em api-check-only. Não há novo DEX/APK compilado ou instalado, nem gameplay físico comprovado.
-
-Sem alteração de servidor necessária para este delta. API a2bb176/PID875574, management910766 e helper910776 mantidos. O hash da DLL foi herdado da publicação protegida às20:59Z; não houve nova leitura root nesta revisão. Produção apenas inspecionada.
-
-No PC usar as receitas novas sobre o APK R55/hash4c8de4f8, com certificado e dependências originais; conservar todos os demais módulos e dados. Não aplicar empacotamento R41. Conferir ambas as versões, logs/geração/etapas, gameplay, saída e retorno. Controles online próprios, aquecimento medido e latência externa continuam pendentes.
-
-## Histórico anterior
+## Pedido anterior e histórico preservados
 
 # Novo pedido: analisar o APP R55 atual — 06/10/2026
 
