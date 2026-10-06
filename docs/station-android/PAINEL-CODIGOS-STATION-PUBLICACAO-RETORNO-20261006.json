@@ -1,0 +1,25 @@
+{
+  "publishedAtUtc": "2026-10-06T17:12:59.545408+00:00",
+  "webUiSourceRevision": "17e564a23b275659707b33c2100d40487151fbde",
+  "serverReturnRevision": "2bbc5d1fa6b975586fb651e6ca5b3302c18217c2",
+  "appReturnRevision": "3dbfdd0c0142b32f947faa158fbd499030dcae29",
+  "serverBranches": [
+    "feat/station-community-r41-20261006",
+    "feat/station-artifact-descriptor-20261002",
+    "feat/station-online-direct-20261004",
+    "feat/station-netplay-internet-r12-20261005",
+    "fix/station-codes-panel-20261006"
+  ],
+  "appBranches": [
+    "feat/station-capas-visuais-netplay-20261003",
+    "fix/station-codes-panel-return-20261006"
+  ],
+  "returnSha256": "fd10ba45800fe8933d30eca567622650cbea86bb5f4c6e60d820514a27849949",
+  "evidenceSha256": "d3f7f906b5f3b339400aa3a5483c551aea32ebf48f08c9d33f230c3afe8baa7c",
+  "byteIdenticalReturnAndEvidence": true,
+  "apiSourceRevision": "a2bb176530fd4d2dfa740da7e934fd84d097404e",
+  "apiUnchanged": true,
+  "appFrozenTreeHash": "efe74cb08b78c04df308140f47a674e6a2e98ec2ae15a7a694f105ad048b22a1",
+  "appFrozenArtifactsUnchanged": true,
+  "realActivationCodeIssuedByThisUpdate": false
+}
