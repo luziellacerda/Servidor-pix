@@ -1,3 +1,9 @@
+# Comunidade R41 publicada — 06/10/2026
+
+Leia RETORNO-COMUNIDADE-STATION-R41-20261006.md. API a2bb176530fd4d2dfa740da7e934fd84d097404e, DLL d181bf97d5b39a334e95144267d6ece3f11d4e659a314d7d16cd2746e1999e13, PID875574; SocialEnabled=true, conversas privadas/pedidos de entrada verificados por três licenças sintéticas no domínio público, 186 checks e WSS com pin. Catálogo14/2212, relay512/1024 e licenças/chaves/outros serviços preservados. Histórico privado até32 e64KiB na resposta. Backup restaurado, nenhuma migration. Retorno Android 5e40f7e confirma R41 instalada no Samsung, hashb6b19321 e dados preservados. POCO, gameplay em dupla, Pessoas/Voltar/correspondência Boogerman–Battletoads e latência externa continuam pendentes. Preservar APK R41; nunca retomar delta R34 sobre essa fonte. Scripts históricos recusam sucessoras; usar retorno/rollback R41.
+
+## Histórico anterior — os blocos abaixo não identificam a publicação atual
+
 # Inventário do servidor para integração Android
 
 Levantamento somente de leitura de 30/09/2026, aproximadamente 18h45, fuso America/Maceio. Este documento registra o que foi observado no Linux e o que continua sem confirmação. Use o script de inventário e confira novamente antes de qualquer alteração.

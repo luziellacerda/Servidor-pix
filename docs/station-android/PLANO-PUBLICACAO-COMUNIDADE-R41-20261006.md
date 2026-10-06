@@ -1,6 +1,6 @@
 # Publicação Station comunidade R41 — 06/10/2026
 
-Pedido atual: ler e executar o handoff R41. Entrada do app: `cfa5ac2666d950fc1f8d9b58ec3e0a0c046a36e9`, recibo `a0dfb54`; delta do servidor publicado em `32b12bc5654b28f6dc73b9f5c2de2ef6a64bb616`, sobre `be2ba1f9c4d822c4c5d9731af375498d869184b2`. Este plano prepara a implantação; a prova de execução será registrada no retorno após a publicação.
+Pedido atual: ler e executar o handoff R41. Entrada do app: `cfa5ac2666d950fc1f8d9b58ec3e0a0c046a36e9`, recibo `a0dfb54`; delta do servidor publicado em `32b12bc5654b28f6dc73b9f5c2de2ef6a64bb616`, sobre `be2ba1f9c4d822c4c5d9731af375498d869184b2`. Implantação concluída; a prova está em RETORNO-COMUNIDADE-STATION-R41-20261006.md. A fonte da API publicada é a2bb176530fd4d2dfa740da7e934fd84d097404e.
 
 ## Alvo observado
 
@@ -38,4 +38,4 @@ Salas/mensagens são efêmeras e são perdidas no reinício da API. O script rec
 
 `--disable-social REVISAO_COMPLETA` mantém a release nova e salas/convites/relay anteriores, desligando a extensão social. `--rollback REVISAO_COMPLETA` remove somente o drop-in desta publicação e retorna à API `e4e557a`; ambos conferem a versão efetiva e recusam uma sucessora. Falha após ativação provoca tentativa automática desse retorno. Backup e configs são privados; não restaurar o dump sobre o banco vivo para desfazer uma mudança sem migration.
 
-APK R41 candidato: SHA256 `b6b19321ec529945870dc919c3de5f0eba75aa54330d3672227b8e632302b28d`. Não instalado segundo o handoff; R39 é a última instalação comprovada. Instalação R41 com assinatura original, preservação dos dados e gameplay real em dois aparelhos continuam no retorno para o operador do app. Não instalar delta R34 sobre R41. Não há autorização para envio externo de WhatsApp/MenuIA.
+APK R41 candidato: SHA256 `b6b19321ec529945870dc919c3de5f0eba75aa54330d3672227b8e632302b28d`. O recibo posterior 5e40f7e0f09942aeb9c9f8caf57e8a3697973495 confirma R41 instalada no Samsung por atualização, com hash integral e dados preservados. Versão do POCO, navegação completa e gameplay real em dois aparelhos continuam pendentes no retorno para o operador do app. Não instalar delta R34 sobre R41. Não há autorização para envio externo de WhatsApp/MenuIA.

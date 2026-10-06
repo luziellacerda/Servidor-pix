@@ -1,0 +1,531 @@
+{
+  "applied": true,
+  "service": "turborama-station-api.service",
+  "sourceRevision": "a2bb176530fd4d2dfa740da7e934fd84d097404e",
+  "relayBefore": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 43592958
+  },
+  "backupRestoreVerified": true,
+  "dllSha256": "d181bf97d5b39a334e95144267d6ece3f11d4e659a314d7d16cd2746e1999e13",
+  "execStart": "/opt/turborama-station-community-r41-20261006-a2bb176/TurboRamaSuiteOnlineServer.dll",
+  "socialEnabled": true,
+  "onlineEnabled": true,
+  "relayEnabled": true,
+  "relayMaximumRooms": 512,
+  "relayMaximumConnections": 1024,
+  "directHistoryMaximumMessages": 32,
+  "directHistoryMaximumBytes": 65536,
+  "indexRevision": 14,
+  "indexSha256": "07ad4c3fda41a19c23745436c4c45c97a70b2c7688eff788612fe22743823a92",
+  "engineRegistrySha256": "901c8f52eaadfc8d3ad41ed5cc2c30bcaeb5ea893550d0feab5729bbb4055a6a",
+  "migrationsApplied": 0,
+  "customerLicenseRowsPreserved": true,
+  "pocoLicenseChanged": false,
+  "sharedServicesPreserved": true,
+  "proxyKeysScannerMediaPreserved": true,
+  "customerNotificationsSent": false,
+  "androidApkInstalledByThisRollout": false,
+  "androidGameplay": false,
+  "relayAfter": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 131078
+  },
+  "pid": 875574,
+  "completedAtUtc": "2026-10-06T16:01:38.111203+00:00",
+  "inputHandoffs": {
+    "server": "32b12bc5654b28f6dc73b9f5c2de2ef6a64bb616",
+    "appBuild": "cfa5ac2666d950fc1f8d9b58ec3e0a0c046a36e9",
+    "appInstallation": "5e40f7e0f09942aeb9c9f8caf57e8a3697973495"
+  },
+  "sourceFileSha256": {
+    "src/TurboRamaSuiteOnlineServer/StationOnline.cs": "9b81b4c9ea817fb71876fc23bb868610c24d9d0c51d42eb5f8061c121d467f10",
+    "src/TurboRamaSuiteOnlineServer/StationOnlineRegistration.cs": "98485475345729907ff5f52d15d84cca0b46f1245d2cf9e0293fe9b54e7b82df"
+  },
+  "isolatedTests": {
+    "socialCoreChecks": 34,
+    "onlineCoreChecks": 41,
+    "onlineHttpRoutesChecks": 41,
+    "onlineWithPostgreSqlChecks": 92,
+    "socialFlagOffChecks": 93,
+    "socialFlagOnChecks": 171,
+    "fullApiBuildWarnings": 0,
+    "fullApiBuildErrors": 0,
+    "maxHistoryPageEnvelopeBytesObserved": 486212,
+    "androidMaxEnvelopeBytes": 524288,
+    "packagedDllHttpSmokePassed": true
+  },
+  "candidateSocialFalse": {
+    "passed": true,
+    "checks": 93,
+    "socialEnabled": false,
+    "threeIndependentLicenses": true,
+    "signedSessionRequestBinding": true,
+    "actualApprovedJoinRelayBytesEachDirection": 0,
+    "publicTlsPinVerified": false,
+    "syntheticRowsRemoved": true,
+    "pocoActivationConsumedByProbe": false,
+    "androidGameplay": false
+  },
+  "candidateSocialTrue": {
+    "passed": true,
+    "checks": 171,
+    "socialEnabled": true,
+    "threeIndependentLicenses": true,
+    "signedSessionRequestBinding": true,
+    "actualApprovedJoinRelayBytesEachDirection": 0,
+    "publicTlsPinVerified": false,
+    "syntheticRowsRemoved": true,
+    "pocoActivationConsumedByProbe": false,
+    "androidGameplay": false
+  },
+  "publishedDisabled": {
+    "passed": true,
+    "checks": 93,
+    "socialEnabled": false,
+    "threeIndependentLicenses": true,
+    "signedSessionRequestBinding": true,
+    "actualApprovedJoinRelayBytesEachDirection": 0,
+    "publicTlsPinVerified": false,
+    "syntheticRowsRemoved": true,
+    "pocoActivationConsumedByProbe": false,
+    "androidGameplay": false
+  },
+  "candidateRelayRegression": {
+    "passed": true,
+    "checks": 2554,
+    "transport": "loopback_ws",
+    "relayEnabled": true,
+    "catalogRevision": 14,
+    "catalogItems": 2212,
+    "platformCounts": {
+      "megadrive": 887,
+      "megadrivebr": 94,
+      "snes": 644,
+      "snesbr": 191,
+      "n64": 157,
+      "neogeo": 189,
+      "neogeocd": 50
+    },
+    "exactCatalogMetadata": true,
+    "simultaneousCovers": 4,
+    "boundedDownloadBytes": 262144,
+    "bytesEachDirection": 2097269,
+    "orderedInputPackets": 20,
+    "signedSessionRequestBinding": true,
+    "publicTlsPinVerified": false,
+    "ownRoomsClosed": true,
+    "syntheticRowsRemoved": true,
+    "pocoActivationConsumedByProbe": false,
+    "androidGameplay": false
+  },
+  "publicVerification": {
+    "passed": true,
+    "checks": 186,
+    "socialEnabled": true,
+    "threeIndependentLicenses": true,
+    "signedSessionRequestBinding": true,
+    "actualApprovedJoinRelayBytesEachDirection": 65539,
+    "publicTlsPinVerified": true,
+    "snapshotExcerpts": {
+      "privateConversation": {
+        "schemaVersion": 1,
+        "socialCapabilities": [
+          "direct-chat-v1",
+          "join-request-v1"
+        ],
+        "directMessages": [
+          {
+            "messageId": "df7ae8829fb26521bd2c15a6b8594bdd",
+            "fromPeerId": "ecb72d3bb4bd95b8060469a065ef67eb",
+            "toPeerId": "8f1fcbcd96a8fe97fa27c495376a3564",
+            "nickname": "R41 synthetic host",
+            "text": "Olá! Teste privado R41 — duas licenças.",
+            "utc": "2026-10-06T16:01:21.2105507+00:00"
+          }
+        ],
+        "joinRequests": [],
+        "sentJoinRequests": []
+      },
+      "hostPendingRequest": {
+        "schemaVersion": 1,
+        "socialCapabilities": [
+          "direct-chat-v1",
+          "join-request-v1"
+        ],
+        "directMessages": [
+          {
+            "messageId": "df7ae8829fb26521bd2c15a6b8594bdd",
+            "fromPeerId": "ecb72d3bb4bd95b8060469a065ef67eb",
+            "toPeerId": "8f1fcbcd96a8fe97fa27c495376a3564",
+            "nickname": "R41 synthetic host",
+            "text": "Olá! Teste privado R41 — duas licenças.",
+            "utc": "2026-10-06T16:01:21.2105507+00:00"
+          }
+        ],
+        "joinRequests": [
+          {
+            "requestId": "f1134f56fa9e8ff01776b9153e5d3641",
+            "fromPeerId": "8f1fcbcd96a8fe97fa27c495376a3564",
+            "roomId": "7b854f893e1fb59a26858597f90fc916",
+            "itemId": "826da6daebe9edbebffb3721f83abf12"
+          }
+        ],
+        "sentJoinRequests": []
+      },
+      "guestSentRequest": {
+        "schemaVersion": 1,
+        "socialCapabilities": [
+          "direct-chat-v1",
+          "join-request-v1"
+        ],
+        "directMessages": [
+          {
+            "messageId": "df7ae8829fb26521bd2c15a6b8594bdd",
+            "fromPeerId": "ecb72d3bb4bd95b8060469a065ef67eb",
+            "toPeerId": "8f1fcbcd96a8fe97fa27c495376a3564",
+            "nickname": "R41 synthetic host",
+            "text": "Olá! Teste privado R41 — duas licenças.",
+            "utc": "2026-10-06T16:01:21.2105507+00:00"
+          }
+        ],
+        "joinRequests": [],
+        "sentJoinRequests": [
+          {
+            "requestId": "f1134f56fa9e8ff01776b9153e5d3641",
+            "roomId": "7b854f893e1fb59a26858597f90fc916"
+          }
+        ]
+      }
+    },
+    "httpEvidence": [
+      {
+        "action": "enter",
+        "status": 200,
+        "requestId": "bfcf3a5a-d797-4795-b58a-341e126fdc4b",
+        "correlationId": "6a074c5b910b4bf5919cb261a6ec87e0"
+      },
+      {
+        "action": "enter",
+        "status": 200,
+        "requestId": "e7463ba5-99d6-4b5d-8e6d-69271d88ebbb",
+        "correlationId": "fe96d701f76d4454a79cf8e703beac09"
+      },
+      {
+        "action": "enter",
+        "status": 200,
+        "requestId": "a1f6b2fd-cf06-4f97-b78d-c13412fe184d",
+        "correlationId": "7c9e13ac357141199c02e0a2a8f9aed1"
+      },
+      {
+        "action": "heartbeat",
+        "status": 401,
+        "requestId": "c3715d3e-d82b-4e85-8264-4e17069d779f",
+        "correlationId": "d6803c6efded4667a9c571c259c8a1f3"
+      },
+      {
+        "action": "create",
+        "status": 200,
+        "requestId": "b12fccf9-b6aa-4102-b58f-388915781fee",
+        "correlationId": "098ca9ec656842668657595635f50639"
+      },
+      {
+        "action": "create",
+        "status": 200,
+        "requestId": "afd62b72-da87-4cc5-81d2-9282ccae3fe9",
+        "correlationId": "8723c33dc1c84a5fae625fd8f815d5b9"
+      },
+      {
+        "action": "direct-chat",
+        "status": 200,
+        "requestId": "54d2ca14-8a5b-4d24-a33c-2d643a918833",
+        "correlationId": "a256c2b3d31c417892e09a348ecc6879"
+      },
+      {
+        "action": "heartbeat",
+        "status": 200,
+        "requestId": "be73a910-572b-41fb-b19a-e99b01a87e8b",
+        "correlationId": "710b2d69e8354851bb231d6dc7ce651f"
+      },
+      {
+        "action": "heartbeat",
+        "status": 200,
+        "requestId": "4c089b2e-8f8d-4528-8f08-fd909e0a6aeb",
+        "correlationId": "e43084b0356244fe913a47f49a6512ec"
+      },
+      {
+        "action": "direct-chat",
+        "status": 200,
+        "requestId": "54d2ca14-8a5b-4d24-a33c-2d643a918833",
+        "correlationId": "0d97dbb63d754104a7bdf99f4f829885"
+      },
+      {
+        "action": "heartbeat",
+        "status": 200,
+        "requestId": "9fdaae36-1ab1-4153-a944-02fba980e639",
+        "correlationId": "7b1d2d42228e45bcb9caba1cf38dfc97"
+      },
+      {
+        "action": "direct-chat",
+        "status": 409,
+        "requestId": "54d2ca14-8a5b-4d24-a33c-2d643a918833",
+        "correlationId": "79fe39165fcd43848b63a6180084885f"
+      },
+      {
+        "action": "direct-chat",
+        "status": 404,
+        "requestId": "d0dec113-e12e-40a6-b154-ca21bf33913c",
+        "correlationId": "bf3079c492a4430ca218e2df5d199e0c"
+      },
+      {
+        "action": "direct-chat",
+        "status": 400,
+        "requestId": "c8990d7b-df70-45b5-940a-b30284835e9a",
+        "correlationId": "0e63b618d18a4a7b8785f89497ede73c"
+      },
+      {
+        "action": "direct-chat",
+        "status": 400,
+        "requestId": "b3991c71-baec-4b7f-9934-82cc0fea9049",
+        "correlationId": "5c3c77b6f29d44e9ab480ad16c50d105"
+      },
+      {
+        "action": "request-join",
+        "status": 200,
+        "requestId": "2c086401-891d-49c1-a99d-fa12b06ba598",
+        "correlationId": "40760a5631a747718eb26a8311dc90ed"
+      },
+      {
+        "action": "heartbeat",
+        "status": 200,
+        "requestId": "c3943840-c658-426d-8b67-d3211821f5ae",
+        "correlationId": "3054b560b59441408416710db4c680a2"
+      },
+      {
+        "action": "dismiss-request",
+        "status": 404,
+        "requestId": "dacf5829-8d88-4e8b-b638-6bd685720718",
+        "correlationId": "66551bcd60454cc7802d06906250fd28"
+      },
+      {
+        "action": "dismiss-request",
+        "status": 200,
+        "requestId": "7b67793d-a523-4f90-857a-a7960f46730e",
+        "correlationId": "6fcd3fa482f742928fbc7276210d08ab"
+      },
+      {
+        "action": "heartbeat",
+        "status": 200,
+        "requestId": "3d19a241-ce0a-4a11-9086-703bc669d5ba",
+        "correlationId": "5bdf566d16bb4820b844c664f2e8ea27"
+      },
+      {
+        "action": "request-join",
+        "status": 200,
+        "requestId": "105a3585-0432-4b57-8293-e288c74e79db",
+        "correlationId": "dd9a6816cf8b4bcd9c08cc26c1a13aba"
+      },
+      {
+        "action": "heartbeat",
+        "status": 200,
+        "requestId": "b6d5e960-5455-4dd1-94f3-e467753c91fe",
+        "correlationId": "39690b17afbb475fab0b5858c990ff23"
+      },
+      {
+        "action": "heartbeat",
+        "status": 200,
+        "requestId": "c4225e97-3f96-428c-a12b-86dbebafe75c",
+        "correlationId": "d8bc15656f3041618821824db07319e8"
+      },
+      {
+        "action": "request-join",
+        "status": 409,
+        "requestId": "de6500b4-3511-4dce-aeee-d42546769a01",
+        "correlationId": "6a22ae6fa92e4728a825b5bae0fb5c6e"
+      },
+      {
+        "action": "accept-request",
+        "status": 404,
+        "requestId": "4f362dc1-89a1-4d42-b88a-0f7ec1c26b33",
+        "correlationId": "4234a0ecf7aa4f63bb715b019300074f"
+      },
+      {
+        "action": "accept-request",
+        "status": 200,
+        "requestId": "9092871e-7db0-486c-9127-1f89a2569472",
+        "correlationId": "83e082bae2f142e68810d8b812a07473"
+      },
+      {
+        "action": "heartbeat",
+        "status": 200,
+        "requestId": "3977abdf-3b38-47cd-8997-60509b969bd5",
+        "correlationId": "058a513aae7a47909a46920aaae1e5b8"
+      },
+      {
+        "action": "join",
+        "status": 409,
+        "requestId": "1ca38c2c-a35e-4dc3-8c09-917f75f2bf3f",
+        "correlationId": "1903127ca4594650b72b26587c75a8f9"
+      },
+      {
+        "action": "leave",
+        "status": 200,
+        "requestId": "23551585-38be-46eb-ba49-501fd44fe977",
+        "correlationId": "6ca76e6652944021a3952d6e066350b9"
+      },
+      {
+        "action": "join",
+        "status": 409,
+        "requestId": "4e4cc1f7-6aa3-4271-9e3a-b22b07e9eea4",
+        "correlationId": "fb6ed87abb464e138aada910488ca413"
+      },
+      {
+        "action": "join",
+        "status": 200,
+        "requestId": "1fceea88-2805-4f4b-ae84-7a51a8d2d182",
+        "correlationId": "a4eb212aa7b447e7a226b510dce5b15b"
+      },
+      {
+        "action": "ready",
+        "status": 200,
+        "requestId": "ea7814da-deac-4989-b62f-ad24ec546fd0",
+        "correlationId": "c88916eaefc44c2f8b80e25a84a070e4"
+      },
+      {
+        "action": "ready",
+        "status": 200,
+        "requestId": "7e8509df-4c0d-45d2-a7e3-45d14eaac61a",
+        "correlationId": "7e4ba182ec8341ad8498650b9b52e4f0"
+      },
+      {
+        "action": "start",
+        "status": 403,
+        "requestId": "67f32cc5-ddf1-40b9-98ee-7f97f46f7398",
+        "correlationId": "058c8813f879447e9ed1aea5421e0583"
+      },
+      {
+        "action": "start",
+        "status": 200,
+        "requestId": "6dc648dc-a2e7-4eea-aba5-cd7d2c28841c",
+        "correlationId": "b924101ff0ce4e6e9a471ac69eea69c8"
+      },
+      {
+        "action": "relay-ticket",
+        "status": 200,
+        "requestId": "47f5bda7-d323-46bd-8ba1-eed3cb73afa6",
+        "correlationId": "e4b1fe64a44c403ba33020910b1e73a0"
+      },
+      {
+        "action": "host-listening",
+        "status": 200,
+        "requestId": "2c23f0e1-1782-4e27-971f-0b258d0ea037",
+        "correlationId": "3905a2825fee4f3cb058d826284d7d46"
+      },
+      {
+        "action": "relay-ticket",
+        "status": 200,
+        "requestId": "564feacb-aa4d-484f-8670-b4dcf00a963c",
+        "correlationId": "0c0dceb3a27b4c83a69f3a81d008547b"
+      },
+      {
+        "action": "leave",
+        "status": 200,
+        "requestId": "b78a6477-59fa-4b9c-bdfc-dfaaf07c890a",
+        "correlationId": "ed361e0cce8d43e78238bb9e96a2aef8"
+      },
+      {
+        "action": "heartbeat",
+        "status": 200,
+        "requestId": "48dce8e7-3f0d-40bc-9d6e-0449b2c17c87",
+        "correlationId": "205a360ff59948bfbab8140697ecaabe"
+      },
+      {
+        "action": "block",
+        "status": 200,
+        "requestId": "67b4c0b6-6880-4a56-addd-db4b80544b12",
+        "correlationId": "dff33d2482914b4c9b5190d0139d4bb0"
+      },
+      {
+        "action": "heartbeat",
+        "status": 200,
+        "requestId": "b233a9e9-47a3-4915-ac6e-5f12fe665d72",
+        "correlationId": "9422e408a83a45bba66d6ef7c6da7ce5"
+      },
+      {
+        "action": "heartbeat",
+        "status": 200,
+        "requestId": "41750063-d892-462b-8f82-f54982276ca6",
+        "correlationId": "fc0c4f5a2cca4fb0a930377c4ce45645"
+      },
+      {
+        "action": "direct-chat",
+        "status": 403,
+        "requestId": "d59fde3f-efe0-418e-88c9-db293a0ff57e",
+        "correlationId": "88891c76f62c4a738ab0a7c0de3f8b56"
+      },
+      {
+        "action": "heartbeat",
+        "status": 200,
+        "requestId": "9738f165-7f42-4863-8e2a-183bcc56032e",
+        "correlationId": "e7aaa869e02a4073bdfece742f9d1569"
+      },
+      {
+        "action": "events",
+        "status": 200,
+        "requestId": "b5b60d33-4734-4118-bd0a-6195048f3152",
+        "correlationId": "324194f18989466fb797ac79f2b5eb2b"
+      },
+      {
+        "action": "offline",
+        "status": 200,
+        "requestId": "c7b7a2b0-7116-493d-be6c-e5bff834ebbd",
+        "correlationId": "87474a0c7a31486e88c6f7204c807bf1"
+      },
+      {
+        "action": "enter",
+        "status": 200,
+        "requestId": "5c720a10-b5a3-4908-95c6-e211051de79d",
+        "correlationId": "660c06dfaf9341da8aecf649488b47fd"
+      },
+      {
+        "action": "offline",
+        "status": 200,
+        "requestId": "a74b0b69-881c-4cbb-ae04-f4145211f2b7",
+        "correlationId": "04185c3863fc49c9b6afeb6bdf9dd78b"
+      },
+      {
+        "action": "offline",
+        "status": 200,
+        "requestId": "9e755ac6-3e45-4e4a-bc61-66ca3a3b816e",
+        "correlationId": "7d6953df32354418a159b0221caa379e"
+      },
+      {
+        "action": "offline",
+        "status": 200,
+        "requestId": "394b1518-3b49-4044-9ee8-00c9c61093f0",
+        "correlationId": "d83a787f99ea47a784192459743257ee"
+      }
+    ],
+    "syntheticRowsRemoved": true,
+    "pocoActivationConsumedByProbe": false,
+    "androidGameplay": false,
+    "snapshotExcerptNote": "Fields copied after real RSA-PSS signature and request/session/identity validation. Excerpts are not complete signed envelopes; auth/room secrets are omitted."
+  },
+  "androidState": {
+    "samsungInstalledR41": true,
+    "installedApkSha256": "b6b19321ec529945870dc919c3de5f0eba75aa54330d3672227b8e632302b28d",
+    "source": "5e40f7e0f09942aeb9c9f8caf57e8a3697973495",
+    "pocoVersionVerified": false,
+    "twoAndroidGameplayVerified": false,
+    "peoplePanelVerified": false,
+    "returnButtonVerified": false,
+    "selectionCorrespondenceVerified": false,
+    "historicalExternalLatencyResolved": false
+  }
+}

@@ -1,3 +1,9 @@
+# Comunidade R41 publicada — 06/10/2026
+
+Leia RETORNO-COMUNIDADE-STATION-R41-20261006.md. API a2bb176530fd4d2dfa740da7e934fd84d097404e, DLL d181bf97d5b39a334e95144267d6ece3f11d4e659a314d7d16cd2746e1999e13, PID875574; SocialEnabled=true, conversas privadas/pedidos de entrada verificados por três licenças sintéticas no domínio público, 186 checks e WSS com pin. Catálogo14/2212, relay512/1024 e licenças/chaves/outros serviços preservados. Histórico privado até32 e64KiB na resposta. Backup restaurado, nenhuma migration. Retorno Android 5e40f7e confirma R41 instalada no Samsung, hashb6b19321 e dados preservados. POCO, gameplay em dupla, Pessoas/Voltar/correspondência Boogerman–Battletoads e latência externa continuam pendentes. Preservar APK R41; nunca retomar delta R34 sobre essa fonte. Scripts históricos recusam sucessoras; usar retorno/rollback R41.
+
+## Histórico anterior — os blocos abaixo não identificam a publicação atual
+
 # Plano de implementação da TurboramaStation Android no servidor
 
 Objetivo: acrescentar ao comércio existente um produto Android próprio, com ativação individual, vínculo de aparelho, sessão, painel, catálogo e downloads, preservando o comportamento de PIX, Suite Windows, EmulationStation Windows, site e conteúdo. Este é um plano técnico; nenhum endpoint Android, migration ou mudança de produção foi aplicado por este documento.
