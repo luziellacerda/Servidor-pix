@@ -181,9 +181,33 @@
       byId('station-registration-submit').textContent='Cadastrar e gerar código';
     }
   });
+  const copyWithoutClipboardApi = code => {
+    // The temporary field must be inside the open dialog; the rest of the page is inert.
+    const field=document.createElement('textarea'), previous=document.activeElement;
+    field.value=code;field.readOnly=true;field.setAttribute('aria-hidden','true');
+    field.style.cssText='position:fixed;left:0;top:0;width:1px;height:1px;opacity:0;';
+    byId('station-issued').append(field);
+    try {
+      field.focus({preventScroll:true});field.select();field.setSelectionRange(0,code.length);
+      return document.execCommand('copy');
+    } catch {return false;}
+    finally {field.remove();previous?.focus({preventScroll:true});}
+  };
   byId('station-copy-code').addEventListener('click', async () => {
-    try {await navigator.clipboard.writeText(byId('station-code').textContent);byId('station-copy-code').textContent='Código copiado';}
-    catch {const range=document.createRange();range.selectNodeContents(byId('station-code'));const selection=getSelection();selection.removeAllRanges();selection.addRange(range);byId('station-copy-code').textContent='Código selecionado — copie manualmente';}
+    const button=byId('station-copy-code'), node=byId('station-code'), code=node.textContent;
+    if(!/^[A-Za-z0-9_-]{43}$/.test(code)) {button.textContent='Não há código para copiar';return;}
+    button.disabled=true;let copied=false;
+    try {
+      try {await navigator.clipboard.writeText(code);copied=true;}
+      catch {if(node.textContent===code)copied=copyWithoutClipboardApi(code);}
+      if(node.textContent!==code)return;
+      if(copied)button.textContent='Código copiado';
+      else {
+        const range=document.createRange();range.selectNodeContents(node);
+        const selection=getSelection();selection.removeAllRanges();selection.addRange(range);
+        button.textContent='Não foi copiado — copie o texto selecionado';
+      }
+    } finally {button.disabled=false;}
   });
   addEventListener('pagehide', () => {clearCode();form.elements.password.value='';registrationForm.elements.password.value='';selected=null;});
   addEventListener('pageshow', event => {if(event.persisted)location.reload();});
