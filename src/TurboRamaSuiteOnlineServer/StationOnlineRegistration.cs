@@ -20,7 +20,7 @@ public static class StationOnlineRegistration
         {
             var item = (monitor?.Current ?? library).Catalog.FirstOrDefault(e => e.ItemId == id);
             return item is null ? null : Normalize(item.Platform);
-        },relayEnabled:builder.Configuration.GetValue("Station:Online:RelayEnabled",false)));
+        },relayEnabled:builder.Configuration.GetValue("Station:Online:RelayEnabled",false),socialEnabled:builder.Configuration.GetValue("Station:Online:SocialEnabled",false)));
         builder.Services.AddSingleton(sp=>new StationRelay(sp.GetRequiredService<StationOnline>(),
             builder.Configuration.GetValue("Station:Online:RelayMaxRooms",128)));
         builder.Services.AddSingleton<IStationOnlineAccess,StationOnlineAccess>();

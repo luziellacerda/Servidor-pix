@@ -30,6 +30,7 @@ public sealed class StationOnline
         public readonly Dictionary<string, string> Receipts = [];
         public readonly Queue<string> ReceiptOrder = [];
         public readonly Queue<long> Actions = [];
+        public readonly Queue<DirectMessage> DirectMessages = [];
     }
     private sealed class Room(string id, string host, string item, OnlineEngine engine,
         string content, string options)
@@ -47,6 +48,10 @@ public sealed class StationOnline
         public readonly HashSet<string> Ready = [];
         public readonly Queue<object> Messages = [];
     }
+    private sealed record DirectMessage(string messageId,string fromPeerId,string toPeerId,string nickname,string text,DateTimeOffset utc);
+    private sealed record JoinRequest(string Id,string From,string Room,long Expires);
+    private readonly Dictionary<string,JoinRequest> joinRequests = [];
+    private readonly bool socialEnabled;
     private sealed record Invite(string Id, string From, string To, string Room, long Expires);
     public sealed record RelayLease(string RoomId,string PeerId,long Generation,bool Host);
     private sealed record RelayGrant(string Token,RelayLease Lease,long Expires);
@@ -66,9 +71,9 @@ public sealed class StationOnline
     private long revision;
     private TaskCompletionSource pulse = NewPulse();
     public StationOnline(IEnumerable<OnlineEngine> engines, Func<string, string?> platformForItem,
-        Func<long>? clock = null, bool relayEnabled = false)
+        Func<long>? clock = null, bool relayEnabled = false, bool socialEnabled = false)
     {
-        this.relayEnabled=relayEnabled;
+        this.relayEnabled=relayEnabled;this.socialEnabled=socialEnabled;
         this.engines = engines.ToDictionary(x => x.Id);
         foreach (var e in this.engines.Values) { Hash(e.CoreSha256); Hash(e.RuntimeSha256); }
         this.platformForItem = platformForItem;
@@ -89,6 +94,7 @@ public sealed class StationOnline
     private void Sweep()
     {
         long now = clock();
+        foreach(var request in joinRequests.Values.Where(x=>x.Expires<=now).ToArray()){joinRequests.Remove(request.Id);Changed();}
         foreach(var key in relayGrants.Where(x=>x.Value.Expires<=now).Select(x=>x.Key).ToArray())relayGrants.Remove(key);
         foreach (var p in peers.Values.Where(p => now - p.Seen >= 60000).ToArray()) Remove(p);
         foreach (var r in rooms.Values.Where(r=>r.State=="starting" && now-r.StartingAt>=(r.Transport=="relay-wss-v1"?90000:30000)).ToArray())
@@ -110,6 +116,7 @@ public sealed class StationOnline
             if (room.Host == p.Id || room.State != "waiting")
             {
                 rooms.Remove(room.Id);
+                foreach(var request in joinRequests.Values.Where(x=>x.Room==room.Id).ToArray())joinRequests.Remove(request.Id);
                 foreach(var member in room.Members){relayGrants.Remove(member);usedRelayPeers.Remove(member);}
                 foreach (var member in room.Members) if (peers.TryGetValue(member, out var other)) other.Room = null;
                 foreach (var i in invites.Values.Where(i => i.Room == room.Id).ToArray()) invites.Remove(i.Id);
@@ -121,6 +128,7 @@ public sealed class StationOnline
     private void Remove(Peer p)
     {
         Leave(p); peers.Remove(p.Id); identities.Remove(p.Identity);
+        foreach(var request in joinRequests.Values.Where(x=>x.From==p.Id).ToArray())joinRequests.Remove(request.Id);
         foreach (var i in invites.Values.Where(i => i.From == p.Id || i.To == p.Id).ToArray()) invites.Remove(i.Id);
         Changed();
     }
@@ -139,6 +147,11 @@ public sealed class StationOnline
         return new {
             schemaVersion = 1, instance, revision, selfId = p.Id, heartbeatSeconds = 20, expiresAfterSeconds = 60,
             transports=relayEnabled?new[]{"direct","relay-wss-v1"}:new[]{"direct"},
+            socialCapabilities=socialEnabled?new[]{"direct-chat-v1","join-request-v1"}:Array.Empty<string>(),
+            directMessages=socialEnabled?p.DirectMessages.ToArray():Array.Empty<DirectMessage>(),
+            joinRequests=socialEnabled?joinRequests.Values.Where(x=>rooms.TryGetValue(x.Room,out var target)&&target.Host==p.Id)
+                .Select(x=>new{requestId=x.Id,fromPeerId=x.From,roomId=x.Room,itemId=rooms[x.Room].Item}).ToArray():[],
+            sentJoinRequests=socialEnabled?joinRequests.Values.Where(x=>x.From==p.Id).Select(x=>new{requestId=x.Id,roomId=x.Room}).ToArray():[],
             page, totalPeers = visible.Length, totalRooms=rooms.Count,
             nextPage = (page+1)*100 < Math.Max(visible.Length,rooms.Count) ? page+1 : (int?)null,
             peers = visible.Skip(page*100).Take(100).Select(x => new { peerId=x.Id, nickname=x.Nickname, status=x.Room is null ? "online" : "in-room" }).ToArray(),
@@ -203,7 +216,10 @@ public sealed class StationOnline
                     Require(Hash(cmd.ContentSha256)==r.Content && Hash(cmd.OptionsSha256)==r.Options &&
                         Hash(cmd.CoreSha256)==r.Engine.CoreSha256 && Hash(cmd.RuntimeSha256)==r.Engine.RuntimeSha256,
                         409,"STATION_ONLINE_BUILD_MISMATCH");
-                    r.Members.Add(p.Id);r.Ready.Clear();r.Generation++;p.Room=r.Id;Changed();break;
+                    r.Members.Add(p.Id);r.Ready.Clear();r.Generation++;p.Room=r.Id;
+                    foreach(var request in joinRequests.Values.Where(x=>x.From==p.Id).ToArray())joinRequests.Remove(request.Id);
+                    foreach(var invite in invites.Values.Where(x=>x.To==p.Id&&x.Room==r.Id).ToArray())invites.Remove(invite.Id);
+                    Changed();break;
                 }
                 case "ready":
                 {
@@ -256,6 +272,44 @@ public sealed class StationOnline
                     Require(cmd.Text is not null && invites.TryGetValue(cmd.Text,out var invite) && invite.To==p.Id,404,"STATION_ONLINE_INVITE_NOT_FOUND");
                     invites.Remove(cmd.Text!);Changed();break;
                 }
+                case "direct-chat":
+                {
+                    Require(socialEnabled,503,"STATION_ONLINE_SOCIAL_DISABLED");
+                    Require(cmd.PeerId is not null && peers.ContainsKey(cmd.PeerId) && cmd.PeerId!=p.Id,404,"STATION_ONLINE_PEER_NOT_FOUND");
+                    var other=peers[cmd.PeerId!];Require(!Blocked(p,other),403,"STATION_ONLINE_BLOCKED");
+                    string text=Text(cmd.Text,500);Require(clock()-p.LastChat>=1000,429,"STATION_ONLINE_CHAT_LIMIT");p.LastChat=clock();
+                    var message=new DirectMessage(Id(),p.Id,other.Id,p.Nickname,text,DateTimeOffset.UtcNow);
+                    p.DirectMessages.Enqueue(message);other.DirectMessages.Enqueue(message);
+                    while(p.DirectMessages.Count>32)p.DirectMessages.Dequeue();while(other.DirectMessages.Count>32)other.DirectMessages.Dequeue();
+                    Changed();break;
+                }
+                case "request-join":
+                {
+                    Require(socialEnabled,503,"STATION_ONLINE_SOCIAL_DISABLED");
+                    Require(cmd.RoomId is not null && rooms.ContainsKey(cmd.RoomId),404,"STATION_ONLINE_ROOM_NOT_FOUND");
+                    var target=rooms[cmd.RoomId!];Require(target.Host!=p.Id && target.State=="waiting" && target.Members.Count<2,409,"STATION_ONLINE_ROOM_FULL");
+                    Require(!Blocked(p,peers[target.Host]),403,"STATION_ONLINE_BLOCKED");
+                    Require(!joinRequests.Values.Any(x=>x.From==p.Id&&x.Room==target.Id),409,"STATION_ONLINE_REQUEST_EXISTS");
+                    Require(joinRequests.Values.Count(x=>x.From==p.Id)<5 && joinRequests.Values.Count(x=>x.Room==target.Id)<20,429,"STATION_ONLINE_INVITE_LIMIT");
+                    var request=new JoinRequest(Id(),p.Id,target.Id,clock()+60000);joinRequests.Add(request.Id,request);Changed();break;
+                }
+                case "accept-request":
+                case "dismiss-request":
+                {
+                    Require(socialEnabled,503,"STATION_ONLINE_SOCIAL_DISABLED");
+                    Require(cmd.Text is not null && joinRequests.ContainsKey(cmd.Text),404,"STATION_ONLINE_JOIN_REQUEST_NOT_FOUND");
+                    var request=joinRequests[cmd.Text!];var target=Member(p,request.Room);Require(target.Host==p.Id,403,"STATION_ONLINE_HOST_REQUIRED");
+                    if(cmd.Action=="accept-request"){
+                        Require(target.State=="waiting"&&target.Members.Count<2,409,"STATION_ONLINE_ROOM_FULL");
+                        Require(peers.ContainsKey(request.From),404,"STATION_ONLINE_PEER_NOT_FOUND");
+                        Require(!Blocked(p,peers[request.From]),403,"STATION_ONLINE_BLOCKED");
+                        if(!invites.Values.Any(x=>x.From==p.Id&&x.To==request.From&&x.Room==target.Id)){
+                            Require(invites.Values.Count(x=>x.From==p.Id)<10 && invites.Values.Count(x=>x.To==request.From)<20,429,"STATION_ONLINE_INVITE_LIMIT");
+                            var invite=new Invite(Id(),p.Id,request.From,target.Id,clock()+60000);invites.Add(invite.Id,invite);
+                        }
+                    }
+                    joinRequests.Remove(request.Id);Changed();break;
+                }
                 case "chat":
                 {
                     var r=Member(p,cmd.RoomId);string text=Text(cmd.Text,500);
@@ -268,6 +322,11 @@ public sealed class StationOnline
                     Require(cmd.PeerId is not null && peers.ContainsKey(cmd.PeerId) && cmd.PeerId!=p.Id,404,"STATION_ONLINE_PEER_NOT_FOUND");
                     Require(p.Blocks.Count<128,409,"STATION_ONLINE_BLOCK_LIMIT");
                     p.Blocks.Add(cmd.PeerId!);
+                    foreach(var request in joinRequests.Values.Where(x=>rooms.TryGetValue(x.Room,out var target)&&((x.From==p.Id&&target.Host==cmd.PeerId)||(x.From==cmd.PeerId&&target.Host==p.Id))).ToArray())joinRequests.Remove(request.Id);
+                    foreach(var participant in new[]{p,peers[cmd.PeerId!]}){
+                        var kept=participant.DirectMessages.Where(x=>!((x.fromPeerId==p.Id&&x.toPeerId==cmd.PeerId)||(x.fromPeerId==cmd.PeerId&&x.toPeerId==p.Id))).ToArray();
+                        participant.DirectMessages.Clear();foreach(var message in kept)participant.DirectMessages.Enqueue(message);
+                    }
                     if(p.Room is not null && peers[cmd.PeerId!].Room==p.Room)Leave(p);
                     foreach(var i in invites.Values.Where(i=>(i.From==p.Id&&i.To==cmd.PeerId)||(i.To==p.Id&&i.From==cmd.PeerId)).ToArray())invites.Remove(i.Id);
                     Changed();break;

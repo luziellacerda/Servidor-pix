@@ -1,0 +1,44 @@
+{
+  "serverBaseCommit": "be2ba1f9c4d822c4c5d9731af375498d869184b2",
+  "appCommit": "cfa5ac2666d950fc1f8d9b58ec3e0a0c046a36e9",
+  "appBranch": "feat/station-capas-visuais-netplay-20261003",
+  "apk": {
+    "createdAt": "2026-10-06T15:22:47.897943+00:00",
+    "base": "G:\\BAKUP SISTEMA APP 03-10-2026\\apks-candidatos-visuais\\TurboStations-Ceu-Robo-R40-20261006.apk",
+    "baseSHA256": "da803b3eb7c0fb24b272795449c5527d752f71e8809d132cae3300071a3c5678",
+    "apk": "G:\\BAKUP SISTEMA APP 03-10-2026\\apks-candidatos-visuais\\TurboStations-Comunidade-R41-20261006.apk",
+    "sha256": "b6b19321ec529945870dc919c3de5f0eba75aa54330d3672227b8e632302b28d",
+    "bytes": 2086191517,
+    "certificateSHA256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+    "changed": [
+      "classes35.dex"
+    ],
+    "preservedEntries": 13179,
+    "addedAssets": {},
+    "roomsDexSHA256": "42c1fc51402e6e464e97ad0561f2ffca4bdb5908189932f545a2e625e4333ad1",
+    "allPackageEntriesVerified": true,
+    "alignment16KiB": true,
+    "downloadImplementationUnchanged": true,
+    "rawTransferDeltaIncluded": false,
+    "netplayIdentityHashPreserved": true,
+    "installed": false,
+    "stable": false,
+    "serverDeployed": false,
+    "socialServerFlag": "Station:Online:SocialEnabled",
+    "twoDeviceGameplayVerified": false
+  },
+  "checks": {
+    "java": 255,
+    "server": 64
+  },
+  "sourceHashes": {
+    "src/TurboRamaSuiteOnlineServer/StationOnline.cs": "476eaee22c4e0870f221aa4f7870bf1f47f25848d621d0f6a11c992e3a2a9449",
+    "src/TurboRamaSuiteOnlineServer/StationOnlineRegistration.cs": "6fa41b5b46d5081350f6e293861e0037c20789394773b32b676302535e614249",
+    "docs/station-android/HANDOFF-APP-PARA-SERVIDOR-COMUNIDADE-R41-20261006.md": "4d19b3bce600f018d809304becebb37fb1e215adf8b1269f9647b5a6c6c17737",
+    "tests/StationOnlineSocial/SocialTests.cs": "e00d569294d6858851455e1b98394f8018e795b8aee8ba57a794b1d63b0e1d59",
+    "tests/StationOnlineSocial/StationOnlineSocial.Tests.csproj": "3b19f344c859979df55254462b246401f63d8ce98346f9c2ac819f51cae877bc"
+  },
+  "serverDeployed": false,
+  "externalMessagesSent": false,
+  "deviceTested": false
+}
