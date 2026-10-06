@@ -14,7 +14,8 @@ public sealed record OnlineCommand(string Action, string RequestId, string? Nick
     string? RoomId = null, string? PeerId = null, string? ItemId = null,
     string? EngineId = null, string? ContentSha256 = null, string? OptionsSha256 = null,
     string? CoreSha256 = null, string? RuntimeSha256 = null,
-    string? Address = null, int Port = 0, string? Text = null, bool Value = false, int Page = 0, string? Transport = null);
+    string? Address = null, int Port = 0, string? Text = null, bool Value = false, int Page = 0, string? Transport = null,
+    string? InviteCode = null);
 public sealed class OnlineFailure(int status, string code) : Exception(code)
 { public int Status { get; } = status; public string Code { get; } = code; }
 
@@ -34,10 +35,11 @@ public sealed class StationOnline
         public readonly Queue<DirectMessage> DirectMessages = [];
     }
     private sealed class Room(string id, string host, string item, OnlineEngine engine,
-        string content, string options)
+        string content, string options, string inviteCode)
     {
         public string Id = id, Host = host, Item = item, Content = content, Options = options;
         public OnlineEngine Engine = engine;
+        public readonly string InviteCode = inviteCode;
         public string State = "waiting";
         public readonly string Password = Convert.ToHexString(RandomNumberGenerator.GetBytes(32)).ToLowerInvariant();
         public string? Address;
@@ -67,6 +69,7 @@ public sealed class StationOnline
     private readonly Dictionary<string, Peer> peers = [];
     private readonly Dictionary<OnlineIdentity, string> identities = [];
     private readonly Dictionary<string, Room> rooms = [];
+    private readonly Dictionary<string, string> roomCodes = [];
     private readonly Dictionary<string, Invite> invites = [];
     private readonly HashSet<OnlineIdentity> polls = [];
     private readonly Dictionary<string, OnlineEngine> engines;
@@ -86,6 +89,28 @@ public sealed class StationOnline
     }
     private static TaskCompletionSource NewPulse() => new(TaskCreationOptions.RunContinuationsAsynchronously);
     private static string Id() => Convert.ToHexString(RandomNumberGenerator.GetBytes(16)).ToLowerInvariant();
+    private string NewRoomCode()
+    {
+        const string alphabet = "23456789ABCDEFGHJKLMNPQRSTUVWXYZ";
+        for (int attempt = 0; attempt < 128; attempt++)
+        {
+            var code = new string(Enumerable.Range(0, 8).Select(_ => alphabet[RandomNumberGenerator.GetInt32(alphabet.Length)]).ToArray());
+            if (!roomCodes.ContainsKey(code)) return code;
+        }
+        throw new OnlineFailure(503, "STATION_ONLINE_FULL");
+    }
+    private Room ResolveCode(Peer p, string? input)
+    {
+        Require(input is not null && input.Length <= 16, 400, "STATION_ONLINE_CODE_INVALID");
+        string code = input!.Trim().ToUpperInvariant();
+        if (code.Length == 9 && code[4] == '-') code = code.Remove(4, 1);
+        Require(Regex.IsMatch(code, "\\A[23456789ABCDEFGHJKLMNPQRSTUVWXYZ]{8}\\z"), 400, "STATION_ONLINE_CODE_INVALID");
+        Require(roomCodes.TryGetValue(code, out var id) && rooms.ContainsKey(id), 404, "STATION_ONLINE_CODE_NOT_FOUND");
+        var room = rooms[id!];
+        Require(!Blocked(p, peers[room.Host]), 403, "STATION_ONLINE_BLOCKED");
+        Require(room.State == "waiting" && room.Members.Count < 2, 409, "STATION_ONLINE_ROOM_FULL");
+        return room;
+    }
     private static void Require(bool ok, int status, string code) { if (!ok) throw new OnlineFailure(status, code); }
     private static string Hash(string? value)
     { Require(value is not null && Regex.IsMatch(value, "\\A[0-9a-f]{64}\\z"), 400, "STATION_ONLINE_HASH_INVALID"); return value!; }
@@ -121,6 +146,7 @@ public sealed class StationOnline
             if (room.Host == p.Id || room.State != "waiting")
             {
                 rooms.Remove(room.Id);
+                roomCodes.Remove(room.InviteCode);
                 foreach(var request in joinRequests.Values.Where(x=>x.Room==room.Id).ToArray())joinRequests.Remove(request.Id);
                 foreach(var member in room.Members){relayGrants.Remove(member);usedRelayPeers.Remove(member);}
                 foreach (var member in room.Members) if (peers.TryGetValue(member, out var other)) other.Room = null;
@@ -155,7 +181,7 @@ public sealed class StationOnline
         { bytes+=history[--start].EncodedBytes+1; }
         return history[start..];
     }
-    private object View(Peer p, int page)
+    private object View(Peer p, int page, Room? resolved = null)
     {
         Require(page >= 0 && page <= 40, 400, "STATION_ONLINE_PAGE_INVALID");
         var visible = peers.Values.Where(x => !Blocked(p,x)).OrderBy(x => x.Id, StringComparer.Ordinal).ToArray();
@@ -163,6 +189,8 @@ public sealed class StationOnline
         return new {
             schemaVersion = 1, instance, revision, selfId = p.Id, heartbeatSeconds = 20, expiresAfterSeconds = 60,
             transports=relayEnabled?new[]{"direct","relay-wss-v1"}:new[]{"direct"},
+            roomCapabilities=new[]{"short-invite-v1"},
+            resolvedRoom=resolved is null ? null : new { roomId=resolved.Id,itemId=resolved.Item,engineId=resolved.Engine.Id,hostId=resolved.Host },
             socialCapabilities=socialEnabled?new[]{"direct-chat-v1","join-request-v1"}:Array.Empty<string>(),
             directMessages=socialEnabled?DirectHistory(p):Array.Empty<DirectMessage>(),
             joinRequests=socialEnabled?joinRequests.Values.Where(x=>rooms.TryGetValue(x.Room,out var target)&&target.Host==p.Id)
@@ -177,7 +205,7 @@ public sealed class StationOnline
             room = selected is null ? null : new { roomId=selected.Id,itemId=selected.Item,engineId=selected.Engine.Id,
                 contentSha256=selected.Content,optionsSha256=selected.Options,coreSha256=selected.Engine.CoreSha256,
                 runtimeSha256=selected.Engine.RuntimeSha256,hostId=selected.Host,state=selected.State,generation=selected.Generation,
-                connectionPassword=selected.Password,
+                connectionPassword=selected.Password,inviteCode=selected.InviteCode,
                 members=selected.Members.ToArray(),ready=selected.Ready.ToArray(),messages=selected.Messages.ToArray(),
                 transport=selected.Transport,
                 relay=selected.Transport=="relay-wss-v1"&&relayGrants.TryGetValue(p.Id,out var grant)?new {path="/v1/station/online/relay",protocol="station-relay.v1",ticket=grant.Token,expiresInSeconds=Math.Max(0,(grant.Expires-clock())/1000)}:null,
@@ -204,12 +232,14 @@ public sealed class StationOnline
             var p=Get(identity);p.Seen=clock();
             string requestJson=Convert.ToHexString(SHA256.HashData(JsonSerializer.SerializeToUtf8Bytes(cmd)));
             if (p.Receipts.TryGetValue(cmd.RequestId,out var receipt))
-            { Require(receipt==requestJson,409,"STATION_ONLINE_REQUEST_REUSED"); return View(p,cmd.Page); }
+            { Require(receipt==requestJson,409,"STATION_ONLINE_REQUEST_REUSED"); return View(p,cmd.Page,cmd.Action=="resolve-code"?ResolveCode(p,cmd.InviteCode):null); }
             Rate(p);
+            Room? resolved = null;
             switch (cmd.Action)
             {
                 case "enter": {var nickname=Text(cmd.Nickname,24);if(p.Nickname!=nickname){p.Nickname=nickname;Changed();}break;}
                 case "heartbeat": break;
+                case "resolve-code": resolved = ResolveCode(p,cmd.InviteCode); break;
                 case "leave": Leave(p); break;
                 case "offline": Remove(p); return new { schemaVersion=1,instance,revision,offline=true };
                 case "create":
@@ -220,8 +250,8 @@ public sealed class StationOnline
                     var engine=engines[cmd.EngineId!];
                     Require(cmd.ItemId is not null && platformForItem(cmd.ItemId)==engine.Platform,404,"STATION_ONLINE_ITEM_UNAVAILABLE");
                     Require(Hash(cmd.CoreSha256)==engine.CoreSha256 && Hash(cmd.RuntimeSha256)==engine.RuntimeSha256,409,"STATION_ONLINE_BUILD_MISMATCH");
-                    var room=new Room(Id(),p.Id,cmd.ItemId!,engine,Hash(cmd.ContentSha256),Hash(cmd.OptionsSha256));
-                    rooms[room.Id]=room;p.Room=room.Id;Changed();break;
+                    var room=new Room(Id(),p.Id,cmd.ItemId!,engine,Hash(cmd.ContentSha256),Hash(cmd.OptionsSha256),NewRoomCode());
+                    rooms[room.Id]=room;roomCodes.Add(room.InviteCode,room.Id);p.Room=room.Id;Changed();break;
                 }
                 case "join":
                 {
@@ -350,7 +380,7 @@ public sealed class StationOnline
                 }
                 default: throw new OnlineFailure(400,"STATION_ONLINE_ACTION_INVALID");
             }
-            var result=View(p,cmd.Page);p.Receipts[cmd.RequestId]=requestJson;p.ReceiptOrder.Enqueue(cmd.RequestId);
+            var result=View(p,cmd.Page,resolved);p.Receipts[cmd.RequestId]=requestJson;p.ReceiptOrder.Enqueue(cmd.RequestId);
             while(p.ReceiptOrder.Count>64)p.Receipts.Remove(p.ReceiptOrder.Dequeue());
             return result;
         }

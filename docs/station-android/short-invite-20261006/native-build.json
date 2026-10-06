@@ -1,0 +1,51 @@
+{
+  "createdAt": "2026-10-06T22:57:38.507158+00:00",
+  "compiled": true,
+  "upstreamCommit": "69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576",
+  "upstreamArchiveSHA256": "cecf1e3f5446724f748124d097bb9c5169c6f599404d33a8447d88fd197d17fe",
+  "ndkRevision": "28.2.13676358",
+  "runtimeSHA256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+  "runtimeBytes": 10666496,
+  "architecture": "AArch64",
+  "minimumLoadAlignment": 16384,
+  "nativeActivityExportPresent": true,
+  "minAPI": 26,
+  "command": [
+    "/mnt/DADOS/station-auto-room-access-check-20261006/native-tools/android-ndk-r28c/ndk-build",
+    "NDK_PROJECT_PATH=/mnt/DADOS/station-auto-room-access-check-20261006/native-source/RetroArch-69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576/pkg/android/phoenix-common",
+    "APP_BUILD_SCRIPT=/mnt/DADOS/station-auto-room-access-check-20261006/native-source/RetroArch-69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576/pkg/android/phoenix-common/jni/Android.mk",
+    "NDK_APPLICATION_MK=/mnt/DADOS/station-auto-room-access-check-20261006/native-source/RetroArch-69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576/pkg/android/phoenix-common/jni/Application.mk",
+    "NDK_OUT=/mnt/DADOS/station-auto-room-access-check-20261006/native-build-r3/obj",
+    "NDK_LIBS_OUT=/mnt/DADOS/station-auto-room-access-check-20261006/native-build-r3/lib",
+    "APP_ABI=arm64-v8a",
+    "TARGET_ABIS=arm64-v8a",
+    "APP_PLATFORM=android-26",
+    "NDK_NO_GL_HEADER_VER=26",
+    "APP_CPPFLAGS=-std=c++17",
+    "APP_SUPPORT_FLEXIBLE_PAGE_SIZES=true",
+    "HAVE_VULKAN=0",
+    "HAVE_CHEEVOS=0",
+    "HAVE_SAF=0",
+    "GIT_VERSION=",
+    "-j4"
+  ],
+  "warningsObserved": 28,
+  "patches": {
+    "retroarch-station-all.patch": "45a5da0970b3a150b2652b3a7ee38ce798617d5778e94f26a9dd81c3826864ec",
+    "retroarch-station-auto-password.patch": "62254789975d892b2717e65b5f0232656befd347ed43232987c6ca2f2beabff2"
+  },
+  "nativeSources": {
+    "network/netplay/netplay_frontend.c": "3d7dd5d2aeba2424907ea32ec2fb2c846eaccebe2bcd539b8e9694cefc4958a6",
+    "frontend/drivers/platform_unix.c": "842a10824f4e5dc92307ac12d91662bb584c04e91db47a7b25a0da37ffc451cc"
+  },
+  "apkBuilt": false,
+  "installed": false,
+  "androidExecuted": false,
+  "twoDeviceGameplayVerified": false,
+  "featureFlags": {
+    "HAVE_VULKAN": false,
+    "HAVE_CHEEVOS": false,
+    "HAVE_SAF": false
+  },
+  "originalStationFeatureFlagsPreserved": true
+}

@@ -1,0 +1,14 @@
+{
+  "createdAt": "2026-10-06T22:57:26.840717+00:00",
+  "passed": true,
+  "results": {
+    "StationRoomCodes": 318,
+    "StationOnline": 41,
+    "StationOnlineSocial": 34,
+    "StationOnlineHttp": 53
+  },
+  "sourceSHA256": "51887e8948a9b23e580beb52a2154af1b34ce99d9bee6575a75b72a36b53d953",
+  "scope": "In-process rooms and isolated Kestrel production routes/signing with synthetic authentication; no production database or Android gameplay",
+  "productionModified": false,
+  "androidExecuted": false
+}

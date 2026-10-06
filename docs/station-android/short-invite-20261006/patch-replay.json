@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scope": "Patch over R57 + readiness, six Java overlay files including inherited transport/exit; normalized line endings only",
+  "changedFeatureJavaFiles": 3,
+  "inheritedReadinessJavaFiles": 3,
+  "sourceFilesTotal": 158,
+  "apkBuilt": false
+}

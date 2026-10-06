@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "profile": "api-only",
+      "rejected": true,
+      "message": "A real DEX build is required; api-check-only cannot produce an APK",
+      "noAPKOrKeyRead": true,
+      "noOutputCreated": true
+    },
+    {
+      "profile": "old-source",
+      "rejected": true,
+      "message": "This packager accepts only the reconciled R57 source",
+      "noAPKOrKeyRead": true,
+      "noOutputCreated": true
+    }
+  ]
+}
