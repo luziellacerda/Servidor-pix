@@ -1,3 +1,7 @@
+# Cadastro de clientes publicado —06/10/2026
+
+[Operação e implementação do cadastro](REGISTRATION.md). A página Station agora oferece **Novo cliente e código**, cliente novo/existente, venda/cortesia/teste e licença adicional para outro celular. Administraçãofe4b631 e retorno em `docs/station-android/RETORNO-CADASTRO-CLIENTES-STATION-20261006.md`. Use o publicador/rollback específico `deploy-registration.py`; a implantação03/10 abaixo é histórica.
+
 # Administração do Station pelo site
 
 Alvo: `https://turbobox.lzgames.com.br/admin/station`, dentro da administração existente.

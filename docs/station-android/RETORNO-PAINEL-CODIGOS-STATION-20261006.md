@@ -1,3 +1,5 @@
+> Sucessora publicada às15h45Maceió: [Cadastro de clientes e liberação Station](RETORNO-CADASTRO-CLIENTES-STATION-20261006.md). A nova página cadastra cliente novo/existente e cria licença/código. A orientação abaixo de procurar somente licenças/Vendas e seus PIDs/rollback é histórica; não aplicar esse rollback sobre a sucessora.
+
 # Códigos do Turborama Station disponíveis no painel — 06/10/2026
 
 ## Produção conferida

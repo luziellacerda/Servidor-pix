@@ -1,3 +1,9 @@
+# Cadastro de clientes Station publicado — 06/10/2026
+
+Leia RETORNO-CADASTRO-CLIENTES-STATION-20261006.md. Fontefe4b631 publicada às15h45Maceió: Códigos Station → Novo cliente e código, cliente novo/existente, venda paga/cortesia/teste e licença adicional para dois aparelhos. Código30min/uso único; confirmação com senha administrativa. PostgreSQL/SQLite restaurados, testes isolados e dois acessos sintéticos independentes na API pública passaram, limpeza confirmada, zero mensagens/compras. ManagementPID910766/helperPID910776; APIa2bb176/PID875574/catálogo14/2212 e APKR41 preservados. Sem migrationPG; tabelaSQLite aditiva station_registrations. Nova página cadastra; orientação antiga somente de busca/Vendas foi substituída. Usar retorno específico da sucessora; gameplay físico/POCO/latência continuam no retornoR41.
+
+## Histórico anterior — consultar o cadastro publicado acima
+
 # Estado de produção — comunidade R41 e painel Station — 06/10/2026
 
 Leia [comunidade R41](RETORNO-COMUNIDADE-STATION-R41-20261006.md) e [códigos no painel](RETORNO-PAINEL-CODIGOS-STATION-20261006.md). APIa2bb176/DLLd181bf97/PID875574, SocialEnabled=true; SamsungR41 instalado segundo recibo5e40f7e. Catálogo14/2212 e relay512/1024 preservados. Site17e564a com Códigos Station/Gerar código/Trocar celular publicado e conferido; não exige novoAPK. Código30min/uso único/um aparelho por licença. Gameplay em dupla, POCO e latência externa continuam pendentes. Os estados de API/APK nos blocos abaixo são históricos.

@@ -1,0 +1,134 @@
+{
+  "published": true,
+  "sourceRevision": "fe4b6317d15394397a452cd78d47ac95d0747378",
+  "release": "/opt/turborama-station-management-20261006-fe4b631",
+  "backup": "/mnt/DADOS/station-registration-backup-20261006-fe4b631",
+  "appliedAt": "2026-10-06T18:45:54.845226+00:00",
+  "dllSha256": "4a1d1cbd040fc5e0621b7caa04d5bb507d4163e287b2b6d216f1d3079d802e74",
+  "helperSha256": "d4024a03881477c5a47ad430373d787450502fd34c76fff068c7cc447c5b6f10",
+  "siteSha256": {
+    "station-admin.php": "50f566da9f5b2a414e43537d0feee00640f9af9bca1d6a9623f32799e6bed852",
+    "station-admin.css": "4c9feb32a9bcb1bc01888ba0268fb7e60c0086853b97fc387f45352189962f33",
+    "station-admin.js": "5b2377364a379a2608cafcf9f3ee524cf269648aec2715e3bddb334a08324a5c",
+    "station-registration.php": "f88456d0b4c4f44b4336972379c85bb1b01d8ed419964f8fe02eef4ad27581e6"
+  },
+  "backupRestoreVerified": true,
+  "sqliteAdditiveTable": "station_registrations",
+  "postgresqlMigrations": 0,
+  "apiUnchanged": true,
+  "apiDllSha256": "d181bf97d5b39a334e95144267d6ece3f11d4e659a314d7d16cd2746e1999e13",
+  "api": {
+    "pid": 875574,
+    "active": "active"
+  },
+  "sharedPidsUnchanged": true,
+  "existingUsersAndLicensesUnchanged": true,
+  "contentIndexUnchanged": true,
+  "management": {
+    "pid": 910766,
+    "active": "active"
+  },
+  "helper": {
+    "pid": 910776,
+    "active": "active"
+  },
+  "productionChecks": {
+    "protectedPage": true,
+    "publicAssetsHashVerified": true,
+    "wrongPasswordNoCustomer": true,
+    "newCustomerAndCode": true,
+    "existingCustomerAndAdditionalLicense": true,
+    "duplicateAndReplayRejected": true,
+    "signedActivationAndProfile": true,
+    "twoIndependentDeviceSessions": true,
+    "notificationsQueued": 0,
+    "websitePurchasesCreated": 0,
+    "signingKeyPreserved": true,
+    "syntheticLicenses": 2,
+    "syntheticCleanupVerified": true
+  },
+  "isolatedValidation": {
+    "passed": true,
+    "logSha256": "1acfb7a2fdb8c32c99f3b3cfebd13eede82b2567ee8c59877fe34aa5fd31b33c",
+    "candidateDllSha256": "4a1d1cbd040fc5e0621b7caa04d5bb507d4163e287b2b6d216f1d3079d802e74",
+    "browser": {
+      "desktopWidth": 1440,
+      "mobileWidth": 390,
+      "viewportOverflow": false,
+      "mobileSupportButtonVisible": true,
+      "mobileCodeButtonVisible": true,
+      "dashboardCodeShortcutVisible": true,
+      "dashboardNavigationWorks": true,
+      "searchShortcutFocused": true,
+      "directCodeConfirmed": true,
+      "directCodeFreshSupport": true,
+      "boundDeviceShortcutConfirmed": true,
+      "cancelledDeviceChangePreserved": true,
+      "adminPasswordRejected": true,
+      "csrfRejected": true,
+      "pendingTransferHidden": true,
+      "codeAppearsOnce": true,
+      "codeStorage": false,
+      "whatsappOptIn": true,
+      "browserExceptions": 0,
+      "credentialsIncluded": false,
+      "registration": {
+        "newCustomerAndCode": true,
+        "existingCustomerAndCode": true,
+        "courtesyZeroPrice": true,
+        "paidPriceConfirmed": true,
+        "testMarked": true,
+        "additionalPhoneConsent": true,
+        "duplicatePrevented": true,
+        "replayNoCode": true,
+        "adminAndArchivedRejected": true,
+        "wrongPasswordRejected": true,
+        "duplicateEmailRejected": true,
+        "mobileNoOverflow": true,
+        "noMessages": true,
+        "codeStored": false
+      }
+    },
+    "rollbackSuccessorGuardPassed": true
+  },
+  "artifactManifest": {
+    "version": 1,
+    "sourceRevision": "fe4b6317d15394397a452cd78d47ac95d0747378",
+    "targetSite": "/home/lz-servidor/releases/turbobox/coupons-v1-20260902",
+    "beforeSite": {
+      "station-admin.php": "e8a1ae3cbd58ef0b7cf7d3e2b460ae9e81ee16219a9d71f3cf54233d686f3eb3",
+      "station-admin.js": "d72191007e97d17026f76ca81509d0f6ef704181637d44ad95f0b1316db168e8",
+      "station-admin.css": "d35fc8a2d989a25d0c15c7e5a6667a0281677969c343e313a10fb2fd665c30a9",
+      "station-registration.php": null
+    },
+    "files": {
+      "deploy.py": "6d67a485b0aae60eb45a3e1d209af7b2e7da7dd3d7e7c4bec1863372cf10342a",
+      "registration-production-checks.py": "073971211ae2c4f4fc48bbbe5b0d574b0a7e0472f7da04382c03dd692adb73f4",
+      "station-issue-admin.py": "d4024a03881477c5a47ad430373d787450502fd34c76fff068c7cc447c5b6f10",
+      "deploy-registration.py": "5ef645ad5545cc53f91f3f88899da9280139a42a70def63f8139af7155440c3a",
+      "backend/TurboRamaSuiteNotifications.pdb": "03017383f3d46245b78e76a0a27d882d4edc550874031765492e962d6e6f360c",
+      "backend/Npgsql.dll": "0c3042974ae128bc31227dadfce24543078e978c7620b84e43a99669fa964811",
+      "backend/packages.lock.json": "546eecd169bce1076fa07e499131f37f4577eda74ecffe2cd7061872e44bdd34",
+      "backend/TurboRamaSuiteNotifications.dll": "79582b53803cff89ec31b05bac10ee37de9e28e13ab79d724a2f19ef06163e9d",
+      "backend/TurboRamaSuiteAdminServer.pdb": "875d69b7ce0c7483627784d008ac719e0a0ddf4dec544dddeb78b23bddce708c",
+      "backend/TurboRamaSuiteAdminServer.dll": "4a1d1cbd040fc5e0621b7caa04d5bb507d4163e287b2b6d216f1d3079d802e74",
+      "backend/web.config": "7f0526bcce8650d77d17a81e679d7f96f0daa5e8ff4e9571472d676e2c153094",
+      "backend/TurboRamaSuiteAdminServer.runtimeconfig.json": "4351dd23692b878de26903bbf54de76dfa20dd13d0600ee1cfa3b005592bb4cd",
+      "backend/TurboRamaSuiteAdminServer.deps.json": "0fc2f41b430bd7d797e06a6aeb13f03c2463e9dbe659996d8c8155e03a349ca0",
+      "backend/TurboRamaSuiteAdminServer": "ef966d96137cd8cbb68c2ac9c9679423115b5e6b41e705942e954344715a2007",
+      "site/station-admin.js": "5b2377364a379a2608cafcf9f3ee524cf269648aec2715e3bddb334a08324a5c",
+      "site/station-admin.php": "50f566da9f5b2a414e43537d0feee00640f9af9bca1d6a9623f32799e6bed852",
+      "site/station-admin.css": "4c9feb32a9bcb1bc01888ba0268fb7e60c0086853b97fc387f45352189962f33",
+      "site/station-registration.php": "f88456d0b4c4f44b4336972379c85bb1b01d8ed419964f8fe02eef4ad27581e6"
+    }
+  },
+  "app": {
+    "sourceReceipt": "3dbfdd0c0142b32f947faa158fbd499030dcae29",
+    "installedReceipt": "5e40f7e0f09942aeb9c9f8caf57e8a3697973495",
+    "installedApkSha256": "b6b19321ec529945870dc919c3de5f0eba75aa54330d3672227b8e632302b28d",
+    "apkChanged": false,
+    "r41SourceAndRuntimeChanged": false,
+    "requiresAppRecompile": false,
+    "twoPhysicalAndroidGameplayVerified": false
+  }
+}
