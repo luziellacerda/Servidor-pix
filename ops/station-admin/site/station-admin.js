@@ -57,6 +57,22 @@
     byId('station-action-error').classList.add('station-hidden');
     byId('station-confirm').showModal();
   };
+  document.querySelectorAll('[data-find-client]').forEach(link => link.addEventListener('click', event => {
+    event.preventDefault();
+    byId('station-clients').scrollIntoView({block:'start'});
+    byId('station-client-search').focus({preventScroll:true});
+  }));
+  document.querySelectorAll('[data-access-license]').forEach(button => button.addEventListener('click', async () => {
+    if (busy) return;
+    const id=button.dataset.accessLicense, action=button.dataset.accessAction;
+    await showSupport(id);
+    if (!support.open || selected?.licenseId!==id) return;
+    if (!selected.allowedActions.includes(action)) {
+      notice('A situação da licença mudou. Confira as ações disponíveis no atendimento.', true);
+      return;
+    }
+    chooseAction(action);
+  }));
   document.querySelectorAll('[data-support]').forEach(button => button.addEventListener('click', () => showSupport(button.dataset.support)));
   document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => {if (!busy) byId(button.dataset.close).close();}));
   document.querySelectorAll('dialog').forEach(dialog => dialog.addEventListener('cancel', event => {if (busy) event.preventDefault();}));

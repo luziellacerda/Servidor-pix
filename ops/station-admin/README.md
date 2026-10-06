@@ -5,15 +5,15 @@ A página exige a conta administrativa do site. Não usa senha sudo.
 
 ## Atendimento para o operador
 
-1. Entre na administração e abra **Station**.
+1. Entre na administração e abra **Códigos Station** no menu, ou **Gerar código do app Station** na visão geral.
 2. Busque pelo nome do cliente, número do pedido ou identificação da licença.
-3. Clique em **Abrir atendimento**. Confira a situação, o aparelho e o histórico.
-4. Escolha a ação abaixo, confira seu efeito, registre o motivo e confirme com sua senha administrativa.
+3. Para ativação inicial/código vencido, clique em **Gerar código** na linha do cliente. Para um aparelho já ativado, **Trocar celular** gera o código de substituição. **Abrir atendimento** continua oferecendo reinstalação, bloqueio, desbloqueio e histórico.
+4. Confira a licença e o efeito da ação, registre o motivo e confirme com sua senha administrativa do site.
 5. Quando houver código, copie e entregue por canal privado. Ele vale **30 minutos**, é de uso único e desaparece da página ao fechar ou atualizar.
 
 | Situação | Ação no painel | Resultado |
 | --- | --- | --- |
-| Primeiro acesso, código vencido, perdido ou necessário substituir | Gerar novo código | Emite outro código; o anterior deixa de funcionar. |
+| Primeiro acesso, código vencido, perdido ou necessário substituir | Gerar código de acesso | Emite outro código; o anterior deixa de funcionar. |
 | Desinstalou/reinstalou o aplicativo | Cliente reinstalou o aplicativo | Revoga a instalação anterior e gera o novo código na mesma licença. |
 | Celular novo | Trocar de celular | Revoga o aparelho anterior e gera o código para o novo. Um aparelho por licença. |
 | Precisa apenas remover o vínculo anterior | Liberar outra ativação | Revoga o aparelho e as sessões. Gere o código quando o cliente estiver pronto. |
@@ -22,15 +22,15 @@ A página exige a conta administrativa do site. Não usa senha sudo.
 | Bloqueio resolvido, pagamento confirmado | Desbloquear acesso | Restaura a licença, preservando o aparelho autorizado. |
 | App precisa renovar sua sessão com a chave já salva | Reconectar aplicativo | Revoga a sessão; o mesmo aparelho pode abrir outra. |
 
-As ações disponíveis seguem o estado atual. Pagamento/entrega comercial pendentes não podem ser liberados pelo painel. A troca/reinstalação não cria licença ou venda. O servidor não apaga os arquivos locais de jogos/saves; reinstalar ou limpar o app por conta própria pode apagar seus dados locais.
+As ações disponíveis seguem o estado atual, reconferido antes de abrir a confirmação e novamente antes da operação. O botão do cabeçalho leva à busca do cliente; abrir a página não emite código. Cada licença permite um celular: para dois aparelhos simultâneos, use duas licenças. Uma licença nova vem do cadastro comercial do Station; confira a compra em Vendas e a confirmação em Pagamentos se o cliente não aparece. Pagamento/entrega comercial pendentes não podem ser liberados pelo painel. A troca/reinstalação não cria licença ou venda. O servidor não apaga os arquivos locais de jogos/saves; reinstalar ou limpar o app por conta própria pode apagar seus dados locais.
 
 WhatsApp é opcional e desmarcado inicialmente. Marcar a opção coloca a mensagem na fila existente; a página informa fila, sem afirmar entrega. Não há envio automático por abrir o cadastro. Os testes não enviam mensagens.
 
-Se a liberação do aparelho concluir e a emissão falhar, a página informa o estado parcial. Atualize o cadastro e use **Gerar novo código**. Se a resposta se perder ou aparecer conflito, confira o histórico antes de repetir. Um pedido duplicado não gera outro código nem revoga um novo vínculo.
+Se a liberação do aparelho concluir e a emissão falhar, a página informa o estado parcial. Atualize o cadastro e use **Gerar código de acesso**. Se a resposta se perder ou aparecer conflito, confira o histórico antes de repetir. Um pedido duplicado não gera outro código nem revoga um novo vínculo.
 
 ## Fonte e isolamento
 
-- `site/`: cinco arquivos Station, incluindo a nova política; usa autenticação/CSRF/SQLite do site existente. Não publicar fixtures de teste.
+- `site/`: página, política, JavaScript, estilos e biblioteca Station; usa autenticação/CSRF/SQLite do site existente. `station-access-link.css` estiliza apenas o atalho Station na visão geral. Não publicar fixtures de teste.
 - `station-issue-admin.py`: mantém o helper loopback 5194 e seus contratos legados `/licenses`, `issue-code`30min e `issue-purchase`48h. Adiciona `/management/*` e encaminha ao backend privado.
 - `TurboRamaSuiteAdminServer`: instância dedicada `turborama-station-management.service`, usuário administrativo existente, socket Unix em `/run`. `STATION_MANAGEMENT_ONLY=1` limita a instância a `/station/*`, saúde e prontidão. Não substitui a unidade Suite administrativa.
 - A credencial Station é fornecida pela unidade com `LoadCredential`, sem mudar o arquivo/chave da API nem ampliar suas ACLs. A instância valida a leitura e o formato antes de abrir o socket.
@@ -39,6 +39,14 @@ Se a liberação do aparelho concluir e a emissão falhar, a página informa o e
 - Senha do operador, CSRF, motivo, gerações esperadas, sessão alvo, limite de tentativas e identificador único são conferidos antes das alterações. A geração é reconferida dentro da transação. Não há repetição automática após falha.
 
 ## Publicação e retorno
+
+### Ajuste de acesso aos códigos — 06/10/2026
+
+`python3 ops/station-admin/deploy-codes-panel.py` confere os hashes e a sintaxe sem publicar. Depois de testar e commitar a fonte, `--apply` atualiza quatro arquivos Station, adiciona um CSS do atalho e aplica substituições exatas em quatro templates de navegação. O manifesto é `codes-panel-20261006.json`; qualquer arquivo divergente interrompe a publicação. As cópias preservam proprietário, grupo e permissões. O backup privado contém os originais e `state.json`; uma falha restaura apenas os arquivos deste ajuste. Não altera banco, backend, serviço, senha ou licença, nem envia WhatsApp.
+
+Retorno deste ajuste: `python3 ops/station-admin/deploy-codes-panel.py --rollback /home/lz-servidor/station-codes-panel-backup-20261006-...`. O script confere todos os hashes antes de restaurar, recusa sobrepor uma edição posterior e remove apenas o CSS novo criado por esta publicação. Use o caminho exato registrado no resultado privado.
+
+### Publicação inicial do módulo — 03/10/2026
 
 `deploy.py --package <diretório>` exige autenticação nativa root. O pacote contém backend publicado, cinco arquivos de site, helper, migration e manifesto de hashes ligado ao commit. Antes de alterar produção, cria backup privado e restaura o dump em PostgreSQL temporário. Os destinos precisam estar ausentes; não execute novamente para emitir códigos ou substituir estado.
 

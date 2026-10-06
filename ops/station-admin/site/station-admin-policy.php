@@ -31,7 +31,7 @@ function tb_station_actions(array $r): array {
 }
 function tb_station_action_info(): array {
     return [
-        'issue-code'=>['Gerar novo código','O novo código vale 30 minutos e só pode ser usado uma vez. O código anterior deixa de funcionar imediatamente.','Novo código de ativação solicitado pelo cliente.'],
+        'issue-code'=>['Gerar código de acesso','O novo código vale 30 minutos e só pode ser usado uma vez. O código anterior deixa de funcionar imediatamente.','Novo código de ativação solicitado pelo cliente.'],
         'reinstall'=>['Cliente reinstalou o aplicativo','Libera o vínculo da instalação anterior, encerra suas sessões e gera um código de 30 minutos para ativar novamente. Jogos e saves não são apagados por esta ação.','Cliente reinstalou o aplicativo no mesmo aparelho.'],
         'new-device'=>['Trocar de celular','O aparelho anterior perde o acesso. Um código de 30 minutos será gerado para ativar o novo celular. Continua permitido um aparelho por licença.','Cliente solicitou a troca do aparelho autorizado.'],
         'transfer'=>['Liberar outra ativação','Remove a autorização do aparelho anterior e encerra suas sessões. A licença fica pronta para receber um novo código. Esta ação não gera o código.','Liberação de novo vínculo de aparelho solicitada pelo cliente.'],
@@ -49,7 +49,7 @@ function tb_station_failure(string $code): string {
         'STATION_DELIVERY_NOT_ELIGIBLE','STATION_FINANCIAL_BLOCK'=>'O pagamento ou a liberação comercial ainda não está confirmado. Confira a venda antes de liberar o acesso.',
         'STATION_NOT_FOUND'=>'Licença não encontrada. Atualize a lista.',
         'STATION_RATE_LIMITED'=>'Muitas tentativas neste atendimento. Aguarde alguns minutos.',
-        'STATION_RECOVERY_CODE_PENDING'=>'O aparelho anterior já foi liberado, mas o código ainda não foi entregue. Atualize o cadastro e use “Gerar novo código” para concluir.',
+        'STATION_RECOVERY_CODE_PENDING'=>'O aparelho anterior já foi liberado, mas o código ainda não foi entregue. Atualize o cadastro e use “Gerar código de acesso” para concluir.',
         default=>'A operação não pôde ser confirmada. Atualize o cadastro e confira o histórico antes de tentar de novo.',
     };
 }

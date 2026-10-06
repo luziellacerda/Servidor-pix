@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "targetSite": "/home/lz-servidor/releases/turbobox/coupons-v1-20260902",
+  "ui": {
+    "station-admin.php": {
+      "beforeSha256": "7ad34b75e89a12ac4d6107218a86522e9e69425556de3e5716581762100a5a18",
+      "afterSha256": "e8a1ae3cbd58ef0b7cf7d3e2b460ae9e81ee16219a9d71f3cf54233d686f3eb3"
+    },
+    "station-admin-policy.php": {
+      "beforeSha256": "cda55c20a8c61dc906e2923dcb4df57616c2543eb715d7c18d5a2178c18d99ae",
+      "afterSha256": "15831229201243cf302e3b7b2b8ac3348c7fef4a3481da7b25053ab558981678"
+    },
+    "station-admin.js": {
+      "beforeSha256": "83f0b6902fd736ff149805bb35a2672b5ddbd18e42100c68e352961ee848f3b4",
+      "afterSha256": "d72191007e97d17026f76ca81509d0f6ef704181637d44ad95f0b1316db168e8"
+    },
+    "station-admin.css": {
+      "beforeSha256": "e3dd869427a1f4fa02ebe7dcda2b6c568da61bf8a4c45369e448d56059e3cbbd",
+      "afterSha256": "d35fc8a2d989a25d0c15c7e5a6667a0281677969c343e313a10fb2fd665c30a9"
+    },
+    "station-access-link.css": {
+      "beforeSha256": null,
+      "afterSha256": "0cbc29cb9e3bc0460a73e43bcd1cfbcf4d52e72640baba1bb3c5dbc1d7e658f9"
+    }
+  },
+  "navigation": {
+    "panel.php": {
+      "beforeSha256": "6f9bd7e9a13aa4d4aaee4cac8b85f4fd59d372469d56348c1e67c75a9c2fe6c5",
+      "afterSha256": "e9f4534cc1e2bb2ff91b8777188f61304bf9a3e27fdd245893e709207ea1a874",
+      "replacements": [
+        {
+          "before": "<a href=\"/admin/station\"><i>▣</i> Station</a>",
+          "after": "<a href=\"/admin/station\"><i>▣</i> Códigos Station</a>"
+        },
+        {
+          "before": "<div class=\"page-heading\"><div><small>VISÃO GERAL</small><h2>Dashboard</h2></div><span class=\"live-status\"><i></i> Sistema online</span></div>",
+          "after": "<div class=\"page-heading\"><div><small>VISÃO GERAL</small><h2>Dashboard</h2></div><div class=\"station-dashboard-actions\"><a class=\"station-access-shortcut\" href=\"/admin/station\">Gerar código do app Station</a><span class=\"live-status\"><i></i> Sistema online</span></div></div>"
+        },
+        {
+          "before": "<link rel=\"stylesheet\" href=\"/admin-clean.css?v=9\">",
+          "after": "<link rel=\"stylesheet\" href=\"/admin-clean.css?v=9\"><link rel=\"stylesheet\" href=\"/station-access-link.css?v=20261006-1\">"
+        }
+      ]
+    },
+    "admin-product-edit.php": {
+      "beforeSha256": "ef762f5b3ee90286989e8a0284a3c2b45f2187551af0a4b68bef654356417344",
+      "afterSha256": "a9f35f9448c5be797cad029dee208ae20e5b3345f65dd679fd0118c21b92be8b",
+      "replacements": [
+        {
+          "before": "<a href=\"/admin/station\">Station</a>",
+          "after": "<a href=\"/admin/station\">Códigos Station</a>"
+        }
+      ]
+    },
+    "admin-customer.php": {
+      "beforeSha256": "b70a96fe14f5f6efb5ff5af1bef86306902d9380b01a70fb02668128e26ea700",
+      "afterSha256": "200c1b7d0d7b945b415fa7a9b2aa12739aaae5da5684be58522ab9a8bb9b7725",
+      "replacements": [
+        {
+          "before": "<a href=\"/admin/station\">Station</a>",
+          "after": "<a href=\"/admin/station\">Códigos Station</a>"
+        }
+      ]
+    },
+    "admin-payments.php": {
+      "beforeSha256": "01ea955523b55eea8a5bd524a8df56693fb30accb8cd104f3e8380f4b058606f",
+      "afterSha256": "4703d0198c3020aaec43317e3054d73b097beb2eb658295c2e984b766c71c0e6",
+      "replacements": [
+        {
+          "before": "<a href=\"/admin/station\">Station</a>",
+          "after": "<a href=\"/admin/station\">Códigos Station</a>"
+        }
+      ]
+    }
+  }
+}

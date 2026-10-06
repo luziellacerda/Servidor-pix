@@ -1,0 +1,6 @@
+.panel-admin #inicio .page-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.panel-admin #inicio .station-dashboard-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.panel-admin #inicio .station-access-shortcut{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 16px;border:1px solid #173b2b;border-radius:10px;background:#173b2b;color:#fff;text-decoration:none;font:600 12px/1.5 system-ui,sans-serif}
+.panel-admin #inicio .station-access-shortcut:hover{background:#0f2c1f}
+.panel-admin #inicio .station-access-shortcut:focus-visible{outline:3px solid #85c9a2;outline-offset:3px}
+@media(max-width:800px){.panel-admin #inicio .page-heading{align-items:flex-start;flex-direction:column}.panel-admin #inicio .station-dashboard-actions{width:100%}.panel-admin #inicio .station-access-shortcut{width:100%}}
