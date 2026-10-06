@@ -188,6 +188,7 @@ def verify_credentials(index, execute_sql, pepper, public, base, enabled=True, r
                 ticket = command(client, 'relay-ticket', roomId=rid)['room']['relay']['ticket']
                 stream = relay.connect(uri, subprotocols=['station-relay.v1'],
                     additional_headers={'Authorization': 'StationRelay ' + ticket}, compression=None,
+                    user_agent_header='Dalvik/2.1.0 Station operator community check',
                     proxy=None, open_timeout=15, close_timeout=2, max_size=65536, max_queue=8)
                 sockets.append(stream)
                 if base.startswith('https:'):
@@ -221,6 +222,14 @@ def verify_credentials(index, execute_sql, pepper, public, base, enabled=True, r
             relay_bytes = len(payload)
         command(host, 'leave')
         check(command(guest, 'heartbeat')['room'] is None, 'host exit releases second player')
+        if relay_probe:
+            for stream in (hs, gs):
+                try:
+                    stream.recv(timeout=6)
+                except relay.ConnectionClosed:
+                    check(True, 'room exit closes public socket')
+                else:
+                    raise ValueError('Station R41 relay survived room exit')
         if enabled:
             command(guest, 'block', peerId=hid)
             check(not command(host, 'heartbeat')['directMessages'] and
