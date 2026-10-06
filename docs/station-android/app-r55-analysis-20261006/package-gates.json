@@ -1,0 +1,9 @@
+{
+  "createdAt": "2026-10-06T22:04:00.157096+00:00",
+  "passed": true,
+  "apiOnlyRejectedBeforePackaging": true,
+  "apkCreated": false,
+  "secretsRead": false,
+  "syntaxCheckedRecipes": 4,
+  "r41ReceiptRejectedBeforePackaging": true
+}

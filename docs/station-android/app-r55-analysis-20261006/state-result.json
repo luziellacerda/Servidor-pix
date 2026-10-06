@@ -1,0 +1,26 @@
+{
+  "createdAt": "2026-10-06T22:01:47.083325+00:00",
+  "passed": true,
+  "sourceBase": "R55",
+  "results": {
+    "StationCompactLobbyTest": "PASS 107 executable checks: compact player model, real room codes, stale presence, invite policy and snapshot ordering",
+    "StationJoinPlayerTest": "PASS 20 checks: guest entry, two solo rooms, shared membership and unavailable destinations",
+    "StationLaunchPolicyTest": "PASS 15: host/guest launch eligibility and generation identity",
+    "StationSocialTest": "PASS 113 social client checks"
+  },
+  "jsonJarSHA256": "3ea61b2a06e31edf1c91134fe9106b0ebb16628be169f3db75bc7a2b06b45796",
+  "sourceFiles": {
+    "netplay-src/org/emulationstation/frontend/netplay/StationLaunchPolicy.java": "283b5d5f1da0b9660d45ce730efc9205a649a6046df4cda33421fcf67a5419c4",
+    "netplay-src/org/emulationstation/frontend/netplay/StationRoomStartState.java": "d76709fce8ddd5a35675e86f022a08317bd82d41e2c0b62808a374a01575604b",
+    "netplay-src/org/emulationstation/frontend/netplay/StationPlayerModel.java": "ca4052eba8bc52c24abeada070b3d23f3ecca79956db1b068bd6d527b6e52ba8",
+    "netplay-src/org/emulationstation/frontend/netplay/StationInvitationCode.java": "1149eab6e7c4d59e9327cb3075dfefbf26c1aabeab84849b5ae0ca4d869b19b5",
+    "netplay-src/org/emulationstation/frontend/netplay/StationSocial.java": "c0a8b36cf544cfb5b6bbb1c0a2becfb617f282f57992b3f99f859cf40e254be2",
+    "netplay-src/org/emulationstation/frontend/netplay/StationRoomState.java": "3569a17e3b3134b0388d5a3231dad9f269461fa5b35566fd5195be21018ac5f9",
+    "tests/java/StationCompactLobbyTest.java": "49649bf8fc8db1c3e6fd804b5144de9bf3db4707eb7435eb58abc5ab90c1ab61",
+    "tests/java/StationJoinPlayerTest.java": "cac2fd8204369e69cad72cd2398b90ac3a091e393943cfef42aa288b873016a1",
+    "tests/java/StationLaunchPolicyTest.java": "2460d0f51c1d395addf785ba3b1d0e165ee097284562ac5eb4e76c2e62d40479",
+    "tests/java/StationSocialTest.java": "3f11d12691892ed705b14b8c94533bc9c6355c73a66d05a1a8961d2a453a7a7a"
+  },
+  "androidExecuted": false,
+  "productionModified": false
+}

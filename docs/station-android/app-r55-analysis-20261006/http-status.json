@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-10-06T22:04:56.998190+00:00",
+  "since": "2026-10-06T21:20:00Z",
+  "journalReadable": true,
+  "requests": [
+    {
+      "route": "/v1/station/artifacts/{grant}",
+      "status": 200,
+      "count": 2
+    },
+    {
+      "route": "/v1/station/catalog",
+      "status": 200,
+      "count": 28
+    },
+    {
+      "route": "/v1/station/challenges",
+      "status": 200,
+      "count": 16
+    },
+    {
+      "route": "/v1/station/covers/{coverId}",
+      "status": 200,
+      "count": 213
+    },
+    {
+      "route": "/v1/station/downloads/authorize",
+      "status": 200,
+      "count": 2
+    },
+    {
+      "route": "/v1/station/me",
+      "status": 200,
+      "count": 26
+    },
+    {
+      "route": "/v1/station/online/command",
+      "status": 200,
+      "count": 119
+    },
+    {
+      "route": "/v1/station/online/events",
+      "status": 200,
+      "count": 217
+    },
+    {
+      "route": "/v1/station/online/events",
+      "status": 499,
+      "count": 9
+    },
+    {
+      "route": "/v1/station/sessions",
+      "status": 200,
+      "count": 15
+    }
+  ],
+  "scope": "Only fixed route templates and aggregate status counts; dynamic paths, bodies, identities and credentials removed",
+  "doesNotProveAndroidGameplay": true
+}

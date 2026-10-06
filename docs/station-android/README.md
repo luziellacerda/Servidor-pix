@@ -1,3 +1,9 @@
+# R55 analisada; prontidão conciliada — 06/10/2026
+
+Leia `RETORNO-ANALISE-APP-R55-STATION-20261006.md`. Fonte atual do app9d3d45f; delta conciliado8e62ed2 sobre R55, mantendo StationSessionChannel nos dois sentidos, proprietário/saídaR54 e HUD.346fontes verificadas,154Java preservados/2alterados/1novo;39TCP/TLS/relay e255salas passaram;157Java/API34 compilaram somenteapi-check-only. Não há DEX/APKnovo/instalação/gameplayfísico comprovado. Sem alteração de servidor necessária para este delta; APIa2bb176/PID875574/management910766/helper910776 mantidos. DLLhash herdado da publicação protegida20:59Z, não relido root nesta revisão. Produção sóinspecionada. NoPC usar novas receitasR55, APKbase4c8de4f8/certificadooriginal, conservar todos os outros módulos/dados; nunca aplicar empacotamentoR41. Conferir ambasversões, logs/geração/etapas/gameplay/saída. Controlesonline próprios/aquecimento/latência externa continuam pendentes.
+
+## Histórico anterior
+
 # Novo pedido: analisar o APP R55 atual — 06/10/2026
 
 Leia [PEDIDO-ANALISE-APP-R55-STATION-20261006.md](PEDIDO-ANALISE-APP-R55-STATION-20261006.md). **APP → SERVIDOR, pedido do mantenedor; não é retorno nem implantação.** A fonte atual do app foi publicada em TurboElden, branch `review/station-r55-server-20261006`, commit `9d3d45f048aa44bb2ee9c41f567e985901628daa`. APK R55 instalado/hash4c8de4f8; R41 abaixo é histórico. Conciliar o candidato de prontidão d1b535c com `StationSessionChannel`, fechamento idempotente e HUD da R54/R55. Não copiar a Activity da R41 nem executar seu empacotamento sobre R55. Responder R55-01 a R55-08 em `RETORNO-ANALISE-APP-R55-STATION-20261006.md`, citando a fonte exata. Gameplay em dupla, retorno online completo e controles próprios continuam pendentes; não implantar por consequência da leitura.

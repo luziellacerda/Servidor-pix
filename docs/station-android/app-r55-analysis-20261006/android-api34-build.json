@@ -1,0 +1,22 @@
+{
+  "createdAt": "2026-10-06T22:00:25.481598+00:00",
+  "compiled": true,
+  "sourceBase": "R55",
+  "baseCommit": "9d3d45f048aa44bb2ee9c41f567e985901628daa",
+  "sourceFiles": 157,
+  "delta": {
+    "netplay-src/org/emulationstation/frontend/netplay/StationRelayTunnel.java": "b4a781eb21760e1f1adc9527bae18d5a9ffa7b5047039cd033e978cd0f25277d",
+    "netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java": "ca7a75d758f9951d4c4dbfe8391f4ec86179a3c011ec98fb838afe9f7781227c",
+    "netplay-src/org/emulationstation/frontend/netplay/StationHostConnector.java": "c909aea87a8e6c4631002a565a8e4b8b720ffcc1f964dcb8796c4bc155002032"
+  },
+  "inputs": {
+    "androidJar": "6cea1df3efb77103ac3e2beb9bf4718964b0e0869ab16d39d29d5cbae1c147ad",
+    "stationJar": "c643277c7aae497331d1bffb2522aac088092b1fb57be4a4f2d9656a5420dca3"
+  },
+  "apiCheckOnly": true,
+  "java8API34": true,
+  "minAPI": 26,
+  "apkBuilt": false,
+  "installed": false,
+  "twoDeviceGameplayVerified": false
+}

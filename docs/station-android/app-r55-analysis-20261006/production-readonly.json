@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-06T22:03:33.860053+00:00",
+  "appInputCommit": "9d3d45f048aa44bb2ee9c41f567e985901628daa",
+  "serverInputCommit": "5722e50b19a19202bc01051277efb5fb7d712b89",
+  "services": {
+    "turborama-station-api.service": {
+      "MainPID": "875574",
+      "ExecStart": "{ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-station-community-r41-20261006-a2bb176/TurboRamaSuiteOnlineServer.dll ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "turborama-station-management.service": {
+      "MainPID": "910766",
+      "ExecStart": "{ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-station-management-20261006-fe4b631/backend/TurboRamaSuiteAdminServer.dll ; ignore_errors=no ; start_time=[Tue 2026-10-06 15:45:39 -03] ; stop_time=[n/a] ; pid=910766 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "turborama-station-issue-admin.service": {
+      "MainPID": "910776",
+      "ExecStart": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /opt/turborama-station-management-20261006-fe4b631/station-issue-admin.py ; ignore_errors=no ; start_time=[Tue 2026-10-06 15:45:40 -03] ; stop_time=[n/a] ; pid=910776 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    }
+  },
+  "relay": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 131078
+  },
+  "serverSourceMatchesPublishedA2bb176": true,
+  "sourceHashes": {
+    "StationOnline.cs": "9b81b4c9ea817fb71876fc23bb868610c24d9d0c51d42eb5f8061c121d467f10",
+    "StationOnlineEndpoints.cs": "044fbf673da9d86203484d8b47d2999813dc191613d04c9a4b75e0ce460decb8",
+    "StationRelay.cs": "110f28f5ec8e40bc59cf2a622eef6ba409fcaea07c065c6c6684745b0b78c10b",
+    "StationOnlineRegistration.cs": "98485475345729907ff5f52d15d84cca0b46f1245d2cf9e0293fe9b54e7b82df"
+  },
+  "liveDLLHashRecomputed": false,
+  "productionModified": false,
+  "lastVerifiedLiveDLLSHA256": "d181bf97d5b39a334e95144267d6ece3f11d4e659a314d7d16cd2746e1999e13",
+  "lastDLLVerificationEvidence": "Servidor-pix 0820fd0, COPIA-CODIGOS-STATION-PRODUCAO-20261006.json (guarded root publication at 20:59:30Z); no fresh root read in this review"
+}
