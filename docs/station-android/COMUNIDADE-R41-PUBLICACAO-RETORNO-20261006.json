@@ -1,0 +1,25 @@
+{
+  "publishedAtUtc": "2026-10-06T16:12:11.968178+00:00",
+  "apiSourceRevision": "a2bb176530fd4d2dfa740da7e934fd84d097404e",
+  "serverReturnRevision": "30e362b81c35f84fb6d583a92e267f5e57ad6c86",
+  "appReturnRevision": "0449f455e721971ae91e76708cf85083b09f74a5",
+  "appInstalledReceiptRevision": "5e40f7e0f09942aeb9c9f8caf57e8a3697973495",
+  "serverDeployed": true,
+  "socialEnabled": true,
+  "serverReturnPath": "docs/station-android/RETORNO-COMUNIDADE-STATION-R41-20261006.md",
+  "appReturnPath": "docs/server/RETORNO-COMUNIDADE-STATION-R41-20261006.md",
+  "appBranch": "feat/station-capas-visuais-netplay-20261003",
+  "serverBranches": [
+    "feat/station-community-r41-20261006",
+    "feat/station-artifact-descriptor-20261002",
+    "feat/station-online-direct-20261004",
+    "feat/station-netplay-internet-r12-20261005"
+  ],
+  "androidFrozenSourcesPreserved": true,
+  "twoAndroidGameplayVerified": false,
+  "externalLatencyResolved": false,
+  "returnSha256": "efdeaa2c030133ffb66f24c20c745f15cec2d4981c7349458822e4307f013c1c",
+  "evidenceSha256": "1725219ad8417faecc938970f308c895bcb2814ab8e56a96a2e0311f3ea38cd0",
+  "appFrozenTreeHash": "efe74cb08b78c04df308140f47a674e6a2e98ec2ae15a7a694f105ad048b22a1",
+  "appFrozenTreeHashMethod": "sha256 of git ls-tree -r HEAD for R41 netplay-src, dependency-src, server, recipes and station-runtime; identical before/after return."
+}
