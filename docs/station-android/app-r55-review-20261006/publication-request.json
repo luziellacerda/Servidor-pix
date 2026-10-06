@@ -1,0 +1,19 @@
+{
+  "direction": "APP_TO_SERVER_REVIEW_REQUEST",
+  "appCommit": "9d3d45f048aa44bb2ee9c41f567e985901628daa",
+  "appBranch": "review/station-r55-server-20261006",
+  "serverReplyReadCommit": "b56eea5991ea8eb1bea3231ae26b8d043cf622f1",
+  "serverCandidateIntegrated": false,
+  "appSnapshotURL": "https://github.com/luziellacerda/TurboElden/blob/9d3d45f048aa44bb2ee9c41f567e985901628daa/versions/station-current-r55-20261006/README.md",
+  "apkSHA256": "4c8de4f899af291becdf22c0b551df5e03a813f7ecf536fb360436a5d24d7b39",
+  "expectedReply": "docs/station-android/RETORNO-ANALISE-APP-R55-STATION-20261006.md",
+  "copiedFiles": {
+    "android-probe-result.log": "3d963559d3151c8fe22f4e1c5ec4ecb82849aa0a2eca00439f1c1e45c6c5912b",
+    "APK-DELTA-R41-R55.json": "53cdc9e6cb5c19b4fb8a3751f72fbbd43d6a4106a5d2ae69bf10e87590d84220",
+    "APK-MODULES-R55.json": "41880d58e0f76cc93daea8aaec681de670673ee9086eb68affc25fb8e58c1744",
+    "EXTERNAL-BUILD-INPUTS.json": "bd904596539f05291a96f88c0a38b96b6e0fd89782a3e5af898a1c46f8570968",
+    "preservation.json": "2a69f9a07df5b6b983e8161a59ecc99cde0ad58a7e710d8a8a3018c902ef6610",
+    "SOURCE-MANIFEST.json": "a106b5b5676acd1f8d6e2eaf7833b3cebd2bae7d48a85c96391ac06749620ca9",
+    "STATUS.json": "8b75cc6a9301a706b3e5737860629085297b0f728f850f758319063bfe9bc67a"
+  }
+}

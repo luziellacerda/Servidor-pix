@@ -1,3 +1,9 @@
+# Novo pedido: analisar o APP R55 atual — 06/10/2026
+
+Leia [PEDIDO-ANALISE-APP-R55-STATION-20261006.md](docs/station-android/PEDIDO-ANALISE-APP-R55-STATION-20261006.md). **APP → SERVIDOR, pedido do mantenedor; não é retorno nem implantação.** A fonte atual do app foi publicada em TurboElden, branch `review/station-r55-server-20261006`, commit `9d3d45f048aa44bb2ee9c41f567e985901628daa`. APK R55 instalado/hash4c8de4f8; R41 abaixo é histórico. Conciliar o candidato de prontidão d1b535c com `StationSessionChannel`, fechamento idempotente e HUD da R54/R55. Não copiar a Activity da R41 nem executar seu empacotamento sobre R55. Responder R55-01 a R55-08 em `RETORNO-ANALISE-APP-R55-STATION-20261006.md`, citando a fonte exata. Gameplay em dupla, retorno online completo e controles próprios continuam pendentes; não implantar por consequência da leitura.
+
+## Histórico anterior — referências R41 abaixo não identificam o APK atual
+
 # Battletoads: prontidão do anfitrião — retorno para o app — 06/10/2026
 
 Leia docs/station-android/RETORNO-BATTLETOADS-CONEXAO-HOST-STATION-20261006.md e BATTLETOADS-PRONTIDAO-HOST-PUBLICACAO-20261006.json. Produção observada: dois membros e ambos Pronto, start/ticket200, WSS do anfitrião; sem host-listening observado/sem novos bytes, convidado em starting. App publicou delta sobre R41, source d1b535c, três fontes Java: TCP real retido + WSS aberto antes de confirmar prontidão; o aviso JNI acelera a espera. 39 verificações TCP/TLS/relay passaram, 12,58 MB por direção; 150 fontes compilaram Java8/API34 em api-check-only. APK novo/instalação/gameplay e causa específica do motor/JNI/Binder ainda pendentes; captura USB antes de atualizar no PC de produção. API a2bb176/PID875574 e runtime/snapshot R41 preservados. Não forçar connecting nem declarar partida corrigida. Clipboard 247bb0a já publicado no site, retorno0820fd0; usuário entrou antes. Preservar licença/saves/assinatura e seguir receitas do candidato na branch do app.

@@ -1,0 +1,15 @@
+{
+  "changed": [
+    "netplay-src\\org\\emulationstation\\frontend\\netplay\\StationGameSession.java",
+    "netplay-src\\org\\emulationstation\\frontend\\netplay\\StationRetroActivity.java"
+  ],
+  "added": [
+    "StationSessionChannel.java"
+  ],
+  "allOtherJavaSourcesByteIdentical": true,
+  "offlineLaunchersUnchanged": true,
+  "netplayEnginesOptionsRuntimeIdentityUnchanged": true,
+  "serverUnchanged": true,
+  "twoDeviceMatchTested": false,
+  "isolatedAndroidParcelChecks": 454
+}

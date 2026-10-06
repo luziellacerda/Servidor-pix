@@ -1,0 +1,147 @@
+{
+  "r41SHA256": "b6b19321ec529945870dc919c3de5f0eba75aa54330d3672227b8e632302b28d",
+  "r55SHA256": "4c8de4f899af291becdf22c0b551df5e03a813f7ecf536fb360436a5d24d7b39",
+  "changed": {
+    "META-INF/ANDROIDD.RSA": {
+      "r41": {
+        "bytes": 1167,
+        "sha256": "e84ba05cfa08705c4efba5ba0e14d83520b946ab37876d720b93f969952da2f4"
+      },
+      "r55": {
+        "bytes": 1167,
+        "sha256": "c9dc2d31e60580f5223a77569958075b74d083a05d196a6b4532b12e0aca8ffc"
+      }
+    },
+    "META-INF/ANDROIDD.SF": {
+      "r41": {
+        "bytes": 1571584,
+        "sha256": "338644eea07befe690b8e10b99f94521f0085014e3fd21a13a0122f7a3d6abb1"
+      },
+      "r55": {
+        "bytes": 1573091,
+        "sha256": "debf34f2d80dfbe9b3a00cbaa20bf3f7ecc6d18cad745aee172f37c501fc3f45"
+      }
+    },
+    "META-INF/MANIFEST.MF": {
+      "r41": {
+        "bytes": 1571457,
+        "sha256": "4587cbb9384965389f8bcdd0ab284651f30c1acce13b884161228bbea629dc7e"
+      },
+      "r55": {
+        "bytes": 1572964,
+        "sha256": "a96b2a414dfe397886180bb75d8031a5c12ab3f16376d020d0de262e2f621f67"
+      }
+    },
+    "classes28.dex": {
+      "r41": {
+        "bytes": 153144,
+        "sha256": "ba3bf581a02a32484b4bed4de64cb78ae9e790b9ffe4030f93012703d8578c21"
+      },
+      "r55": {
+        "bytes": 154488,
+        "sha256": "14fb0ecb30b6aaf0bd4321dc07e94926546280470515fa7bbec89c714cb5c154"
+      }
+    },
+    "classes35.dex": {
+      "r41": {
+        "bytes": 347308,
+        "sha256": "42c1fc51402e6e464e97ad0561f2ffca4bdb5908189932f545a2e625e4333ad1"
+      },
+      "r55": {
+        "bytes": 367116,
+        "sha256": "dfb7cd00e64a1cd9dd801f36573f8a737d80d7289acf654f9054b765dce7d414"
+      }
+    },
+    "lib/arm64-v8a/libmdemu_station.so": {
+      "r41": {
+        "bytes": 6752768,
+        "sha256": "23810c5ec69b09e62b1081c982755c55f537e57c048ed4dbd002e23aa8adcd5a"
+      },
+      "r55": {
+        "bytes": 6755552,
+        "sha256": "889d18461fc14e765813d7ef197ecfc922786df8f1f961dd82443dd88aecd124"
+      }
+    },
+    "lib/arm64-v8a/libsnes9x_explus.so": {
+      "r41": {
+        "bytes": 3800128,
+        "sha256": "fc4f62d4cc3584a8c1a05bc365aadf6b4ff8acd6401240ed08eac86ba844f813"
+      },
+      "r55": {
+        "bytes": 3802928,
+        "sha256": "3adeeabe25117265cdd10138fc9631c58da7deda533ff0272a89d7e64bb77956"
+      }
+    },
+    "lib/arm64-v8a/libturbo_carousel.so": {
+      "r41": {
+        "bytes": 124105776,
+        "sha256": "d7839c709ab4e241a74355fcfa49dbb222328b0e61eb198ed74892cca38d788b"
+      },
+      "r55": {
+        "bytes": 129534992,
+        "sha256": "e275f4f1a8ea21bb1113547aa29582a90c3c60fce2cbf3d05698f8f3f7a59c46"
+      }
+    }
+  },
+  "added": {
+    "assets/station-ui-r42/LICENSE.html": {
+      "bytes": 248427,
+      "sha256": "cd3bfe93634f45b1e2ecf0637dc0f43ce683d6e4e582f9c82648fe0fc2106a8e"
+    },
+    "assets/station-ui-r42/NOTICE.txt": {
+      "bytes": 567,
+      "sha256": "fc5c7adef8230af6b86003a42ea2f7a09a661e54bf9efc5eb541e93c18db2232"
+    },
+    "assets/station-ui-r42/dialog.gif": {
+      "bytes": 123004,
+      "sha256": "2fd5568494ce4aeb905e1eef320fec0b3a465c1e8bcc24af7cbfb0964cb9c866"
+    },
+    "assets/station-ui-r42/dialog.webp": {
+      "bytes": 28728,
+      "sha256": "7e770f6dc595d13495ccfd93603452020baa1c2948764cad67859af9664b34b7"
+    },
+    "assets/station-ui-r42/online-robot.gif": {
+      "bytes": 675715,
+      "sha256": "36dd0e072cdd2d67b21621d550e645d141b378425276469118e5a9a8c857989f"
+    },
+    "assets/station-ui-r42/online-robot.webp": {
+      "bytes": 487418,
+      "sha256": "32e576f6f0f284436c591a11f516e484d73d1aa93b1eedf34052b3a8a43936d1"
+    },
+    "assets/station-ui-r43/LICENSE.html": {
+      "bytes": 248427,
+      "sha256": "cd3bfe93634f45b1e2ecf0637dc0f43ce683d6e4e582f9c82648fe0fc2106a8e"
+    },
+    "assets/station-ui-r43/NOTICE.txt": {
+      "bytes": 346,
+      "sha256": "ff71ed6820a4e7d3effa15268838bde8f7b07e891f60cbf2e45b33cbf24021d8"
+    },
+    "assets/station-ui-r43/game-metadata.json": {
+      "bytes": 113574,
+      "sha256": "52531657ec2fe23bb8f77f8ee94ddfffec35084b228aaebe668d1c935f4d1afa"
+    },
+    "assets/station-ui-r43/star-rating-good.lottie": {
+      "bytes": 2215,
+      "sha256": "657410a67d56cd7902755efa9faf9878d813c67d3b4e0abcd59d661e1a26ad71"
+    },
+    "assets/station-ui-r43/stars.gif": {
+      "bytes": 69966,
+      "sha256": "860aed4fcd6435fd75bb37c945dc6dbd0810ad33288ac4c9a7c2d710568098ee"
+    },
+    "assets/station-ui-r43/stars.webp": {
+      "bytes": 26238,
+      "sha256": "f2d516fd4ef2e8bb912d95a9c21dcf37ca5ced57163c7c45bcbb4302faedbba0"
+    },
+    "assets/station-ui-r45/space-nebula.png": {
+      "bytes": 138026,
+      "sha256": "a1fd9a0a9e7ace6b9620019abc3c0b44aa6e641d51a6be79d6b661cfdcfc05a3"
+    },
+    "assets/station-ui-r46b/rating-atlas.png": {
+      "bytes": 248293,
+      "sha256": "dd5a42f21c8fc37748a5942ebc5c90cd057a4a8900b47bcacaef3f0243768165"
+    }
+  },
+  "removed": {},
+  "unchangedEntries": 13175,
+  "method": "SHA-256 of all uncompressed ZIP entries; signing block independently identified by whole APK SHA-256"
+}

@@ -1,3 +1,9 @@
+# Novo pedido: analisar o APP R55 atual — 06/10/2026
+
+Leia [PEDIDO-ANALISE-APP-R55-STATION-20261006.md](docs/station-android/PEDIDO-ANALISE-APP-R55-STATION-20261006.md). **APP → SERVIDOR, pedido do mantenedor; não é retorno nem implantação.** A fonte atual do app foi publicada em TurboElden, branch `review/station-r55-server-20261006`, commit `9d3d45f048aa44bb2ee9c41f567e985901628daa`. APK R55 instalado/hash4c8de4f8; R41 abaixo é histórico. Conciliar o candidato de prontidão d1b535c com `StationSessionChannel`, fechamento idempotente e HUD da R54/R55. Não copiar a Activity da R41 nem executar seu empacotamento sobre R55. Responder R55-01 a R55-08 em `RETORNO-ANALISE-APP-R55-STATION-20261006.md`, citando a fonte exata. Gameplay em dupla, retorno online completo e controles próprios continuam pendentes; não implantar por consequência da leitura.
+
+## Histórico anterior — referências R41 abaixo não identificam o APK atual
+
 # Servidor PIX on-line do TurboRama
 
 Backend privado de licenciamento, prova criptográfica de máquina e administração remota do TurboRama. O servidor autoriza licenças e máquinas; preços, credencial Mercado Pago, PDV, QR Code, confirmação do pagamento e concessão de créditos permanecem no gabinete.

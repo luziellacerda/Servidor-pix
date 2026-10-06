@@ -1,0 +1,104 @@
+{
+  "E:\\ESTUDO APK\\work\\station-ribbon-anchor-r55-20261006\\native\\lottie_gear3_data.h": {
+    "reason": "Generated media/metadata input; omitted from code review export",
+    "exists": true,
+    "sha256": "30835b92c137c25fba4d95fb9f027b66df055f5fe3edb50399de3d489e1bd4f3",
+    "bytes": 40294
+  },
+  "E:\\ESTUDO APK\\work\\station-ribbon-anchor-r55-20261006\\native\\station_game_details.h": {
+    "reason": "Generated media/metadata input; omitted from code review export",
+    "exists": true,
+    "sha256": "cc1ffb53c9b970d4ab4a45653d87204b31feebed5b32cf27e3f8cc2008fdb89b",
+    "bytes": 119085
+  },
+  "E:\\ESTUDO APK\\work\\station-ribbon-anchor-r55-20261006\\native\\station_game_infos.h": {
+    "reason": "Generated media/metadata input; omitted from code review export",
+    "exists": true,
+    "sha256": "537f8ade06f24549f1f176708add5d5aebdfa1f550fd99d72a45140152653191",
+    "bytes": 1822312
+  },
+  "E:\\ESTUDO APK\\work\\station-ribbon-anchor-r55-20261006\\native\\system_infos.h": {
+    "reason": "Generated media/metadata input; omitted from code review export",
+    "exists": true,
+    "sha256": "96327b84b58981343a0eadfe1817504f9dcf561b550334dd400b28fc97021e68",
+    "bytes": 46895
+  },
+  "E:\\ESTUDO APK\\work\\station-gradient-loop-r45-20261006\\native\\station_future_metadata.h": {
+    "reason": "Generated media/metadata dependency; retained externally",
+    "exists": true,
+    "sha256": "84b6b0157e2541f810cbebcc77e2837e49a4a0cacedd55780c53fe91368a490a",
+    "bytes": 5634816
+  },
+  "E:\\ESTUDO APK\\work\\station-gradient-loop-r45-20261006\\native\\console_assets.h": {
+    "reason": "Generated media/metadata dependency; retained externally",
+    "exists": true,
+    "sha256": "ce75cda3a6adebe55bfeb61a4318e69e812cb68ae633703c6e8a8ba4236047fc",
+    "bytes": 19514869
+  },
+  "E:\\ESTUDO APK\\work\\station-download-performance-20261005\\frontend-native\\video720_posters.o": {
+    "reason": "Precompiled media object used by the original native link",
+    "exists": true,
+    "sha256": "c078dd3f4d3230f247d48b2f38ad39d97f8944bbc63ffe05ee7869d9acab8f9e",
+    "bytes": 50806360
+  },
+  "E:\\ESTUDO APK\\work\\station-neogeo-collection-videos-r22-20261005\\neogeo_previews.o": {
+    "reason": "Precompiled media object used by the original native link",
+    "exists": true,
+    "sha256": "dd2bf68c6bb4fdecc066b3fd6c941abb10b9576c85bee03ef655a9faea13c2d4",
+    "bytes": 3111088
+  },
+  "G:\\BAKUP SISTEMA APP 03-10-2026\\compilados-r42-20261006\\lottie_frames.o": {
+    "reason": "Precompiled media object used by the original native link",
+    "exists": true,
+    "sha256": "8d3d7db56dc1e66b80cc472f397e1b505ec28d32eb7326940ebbb39384593464",
+    "bytes": 20194920
+  },
+  "G:\\BAKUP SISTEMA APP 03-10-2026\\compilados-r51-20261006\\installed_art.o": {
+    "reason": "Precompiled media object used by the original native link",
+    "exists": true,
+    "sha256": "ac082ca0ea8658c8ab86142de9f3a171c1b91bf7c8f1943db4bf2243a71bfef6",
+    "bytes": 1598752
+  },
+  "E:\\ESTUDO APK\\work\\station-download-performance-20261005\\client\\build-final\\station-client.jar": {
+    "reason": "Classpath used for the current rooms DEX compilation",
+    "exists": true,
+    "sha256": "e41854977e9c2dab786f431449c95afb759e80c653e02cbc990434f74a2c39a2",
+    "bytes": 152419
+  },
+  "E:\\ESTUDO APK\\work\\station-download-performance-20261005\\frontend-native\\systems.h": {
+    "reason": "Embedded private images",
+    "exists": true,
+    "sha256": "8093bc915dce80d445a5cff868226e5db9f67207935f22cf9cd39bc7ada0c31f",
+    "bytes": 89083169
+  },
+  "E:\\ESTUDO APK\\work\\station-download-performance-20261005\\frontend-native\\game_infos.h": {
+    "reason": "Generated metadata",
+    "exists": true,
+    "sha256": "e48f3d25d08a09797825b89992f693400a2d02219c86ae54bffa4552078858e5",
+    "bytes": 5621270
+  },
+  "E:\\ESTUDO APK\\work\\station-online-return-r54-20261006\\evidence\\BUILD-NOTICE.json": {
+    "reason": "Historical R12 receipt inherited by the build; not current R55 status",
+    "exists": true,
+    "sha256": "4442b5f3df1ef1bae944ac9906891643d4ac1717f245756353adbc4aea56959b",
+    "bytes": 740
+  },
+  "E:\\ESTUDO APK\\work\\station-video-login-r53-20261006\\package_r53.py": {
+    "reason": "Private signing recipe; not published",
+    "exists": true,
+    "sha256": "b1f354a4a93dff35938716ebb05361de5b8fff24f1e3e571f956921bb9ce2df8",
+    "bytes": 6331
+  },
+  "E:\\ESTUDO APK\\work\\station-online-return-r54-20261006\\package_r54.py": {
+    "reason": "Private signing recipe; not published",
+    "exists": true,
+    "sha256": "e52af0e884ed1adf3cb1eea8f8627678be8c99c47380eaf73caa22e8771b1f7d",
+    "bytes": 6347
+  },
+  "E:\\ESTUDO APK\\work\\station-ribbon-anchor-r55-20261006\\package_r55.py": {
+    "reason": "Private signing recipe; not published",
+    "exists": true,
+    "sha256": "f57bcc3235bcf76922e6eec7a4bf5dea2a826f3772c2377659560cfb26da66cc",
+    "bytes": 6321
+  }
+}
