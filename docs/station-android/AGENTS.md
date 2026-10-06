@@ -1,3 +1,9 @@
+# Cliente R62 entregue; usar fonte atual para análise — 06/10/2026
+
+Leia [ENTREGA-APP-R62-INTEGRADA-PARA-SERVIDOR-20261006.md](ENTREGA-APP-R62-INTEGRADA-PARA-SERVIDOR-20261006.md). Entrega **APP → SERVIDOR**, não novo retorno do servidor. Fonte TurboElden `087b6823814d1ec6fc3b925dba8045d9b5628f02`, branch `fix/station-r62-integrated-20261006`. Retorno7c6e167/f8b019d6 integrado em DEX/APK real, R62 instalada/hash114dba8a no A56. Preservados Binder/saída/runtime e nativo R57. Capas/fluxo de criação/botões/painel único atualizados. Fonte = R55 + R57 + nove Java R62;161 hashes e rebuildDEX idêntico. Conferência física a cargo do mantenedor, dois aparelhos ainda não homologados. MotorolaR58 precisa sucessora após novo retorno; não restaurar Activity antiga. Nenhum deploy Linux.
+
+## Histórico preservado
+
 # Retorno R55 concluído considerando a sucessora R57 — 06/10/2026
 
 Leia `RETORNO-ANALISE-APP-R55-STATION-20261006.md`. Base funcional recebida9d3d45f, adendo visual8980cd4; implementação atualf8b019d6 em `versions/station-relay-readiness-r57-20261006` do app. Preservados canal Binder/saída R54 e layout R57: Criar sala, barra fina, capas e faixa INSTALADO. Os snapshots recebidos permanecem intactos.
