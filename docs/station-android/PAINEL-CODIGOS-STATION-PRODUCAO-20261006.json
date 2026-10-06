@@ -1,0 +1,146 @@
+{
+  "published": true,
+  "publishedAtUtc": "2026-10-06T17:04:50.459664+00:00",
+  "verifiedAtUtc": "2026-10-06T17:07:15.176678+00:00",
+  "webUiSourceRevision": "17e564a23b275659707b33c2100d40487151fbde",
+  "panelUrl": "https://turbobox.lzgames.com.br/admin/station",
+  "menuLabel": "Códigos Station",
+  "dashboardShortcut": "Gerar código do app Station",
+  "fileCount": 9,
+  "manifestSha256": "49ca4c7d1fd9dd3e635766e6cfc0cc21cfd734eb8c4fb25ce9cc7a04614e5987",
+  "manifestPath": "ops/station-admin/codes-panel-20261006.json",
+  "publicAssets": {
+    "station-admin.css": {
+      "http": 200,
+      "sha256": "d35fc8a2d989a25d0c15c7e5a6667a0281677969c343e313a10fb2fd665c30a9",
+      "sourceMatches": true
+    },
+    "station-admin.js": {
+      "http": 200,
+      "sha256": "d72191007e97d17026f76ca81509d0f6ef704181637d44ad95f0b1316db168e8",
+      "sourceMatches": true
+    },
+    "station-access-link.css": {
+      "http": 200,
+      "sha256": "0cbc29cb9e3bc0460a73e43bcd1cfbcf4d52e72640baba1bb3c5dbc1d7e658f9",
+      "sourceMatches": true
+    }
+  },
+  "authenticatedPages": {
+    "/admin": {
+      "http": 200,
+      "stationLinks": [
+        [
+          "/admin/station",
+          "▣ Códigos Station"
+        ],
+        [
+          "/admin/station",
+          "Gerar código do app Station"
+        ]
+      ],
+      "newNavigationVisible": true
+    },
+    "/admin/station": {
+      "http": 200,
+      "stationLinks": [
+        [
+          "/admin/station",
+          "Códigos Station"
+        ],
+        [
+          "/admin/station",
+          "Limpar"
+        ]
+      ],
+      "newNavigationVisible": true
+    }
+  },
+  "browserValidationScope": "Station page desktop/mobile and dashboard shortcut; synthetic isolated data.",
+  "browserValidation": {
+    "desktopWidth": 1440,
+    "mobileWidth": 390,
+    "viewportOverflow": false,
+    "mobileSupportButtonVisible": true,
+    "mobileCodeButtonVisible": true,
+    "dashboardCodeShortcutVisible": true,
+    "dashboardNavigationWorks": true,
+    "searchShortcutFocused": true,
+    "directCodeConfirmed": true,
+    "directCodeFreshSupport": true,
+    "boundDeviceShortcutConfirmed": true,
+    "cancelledDeviceChangePreserved": true,
+    "adminPasswordRejected": true,
+    "csrfRejected": true,
+    "pendingTransferHidden": true,
+    "codeAppearsOnce": true,
+    "codeStorage": false,
+    "whatsappOptIn": true,
+    "browserExceptions": 0,
+    "credentialsIncluded": false
+  },
+  "rollbackValidation": {
+    "restoredInIsolatedCopy": true,
+    "filesChecked": 9,
+    "newStylesheetRemoved": true,
+    "laterEditRejectedBeforeRollback": true,
+    "productionTouched": false
+  },
+  "backupOriginalHashesVerified": true,
+  "serviceRestarts": 0,
+  "services": {
+    "turborama-station-api.service": {
+      "active": true,
+      "pid": 875574,
+      "unchanged": true
+    },
+    "turborama-station-management.service": {
+      "active": true,
+      "pid": 140743,
+      "unchanged": true
+    },
+    "turborama-station-issue-admin.service": {
+      "active": true,
+      "pid": 140751,
+      "unchanged": true
+    },
+    "turborama-pix.service": {
+      "active": true,
+      "pid": 3048,
+      "unchanged": true
+    },
+    "turborama-suite-api.service": {
+      "active": true,
+      "pid": 3052,
+      "unchanged": true
+    },
+    "turborama-suite-admin.service": {
+      "active": true,
+      "pid": 2764,
+      "unchanged": true
+    },
+    "turborama-suite-content-gateway.service": {
+      "active": true,
+      "pid": 3053,
+      "unchanged": true
+    }
+  },
+  "schemaChanges": 0,
+  "stationLicenseMutations": 0,
+  "whatsappMessagesSent": 0,
+  "productionExistingLicenseActions": {
+    "directIssueCode": 0,
+    "deviceReplacement": 2
+  },
+  "verificationSessionLoggedOut": true,
+  "codeTtlMinutes": 30,
+  "devicesPerLicense": 1,
+  "apiSourceRevision": "a2bb176530fd4d2dfa740da7e934fd84d097404e",
+  "apiDllSha256": "d181bf97d5b39a334e95144267d6ece3f11d4e659a314d7d16cd2746e1999e13",
+  "androidInstalledReceiptRevision": "5e40f7e0f09942aeb9c9f8caf57e8a3697973495",
+  "androidRebuildRequired": false,
+  "androidChanged": false,
+  "twoAndroidGameplayVerifiedByThisUpdate": false,
+  "androidFrozenTreeHash": "efe74cb08b78c04df308140f47a674e6a2e98ec2ae15a7a694f105ad048b22a1",
+  "androidFrozenTreeHashMethod": "sha256 of git ls-tree -r HEAD -- versions/station-community-r41-20261006/{netplay-src,dependency-src,server,recipes} station-runtime"
+}

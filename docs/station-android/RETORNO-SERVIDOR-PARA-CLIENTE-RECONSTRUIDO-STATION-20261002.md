@@ -1,3 +1,7 @@
+# Estado de produção — comunidade R41 e painel Station — 06/10/2026
+
+Leia [comunidade R41](RETORNO-COMUNIDADE-STATION-R41-20261006.md) e [códigos no painel](RETORNO-PAINEL-CODIGOS-STATION-20261006.md). APIa2bb176/DLLd181bf97/PID875574, SocialEnabled=true; SamsungR41 instalado segundo recibo5e40f7e. Catálogo14/2212 e relay512/1024 preservados. Site17e564a com Códigos Station/Gerar código/Trocar celular publicado e conferido; não exige novoAPK. Código30min/uso único/um aparelho por licença. Gameplay em dupla, POCO e latência externa continuam pendentes. Os estados de API/APK nos blocos abaixo são históricos.
+
 # Segundo jogador — correção conciliada com R34 — 05/10/2026
 
 Leia RETORNO-SEGUNDO-JOGADOR-SALAS-STATION-20261005.md. Pronto confirma a sala atual; a entrada precisa ocorrer primeiro. Fonte app f7f0561: três classes alteradas sobre a fonte exata R34,147 entradas Java/dependências compiladas,144 preservadas e213 verificações aprovadas. DEX39864bd1 pronto; montagem e instalação do APK desta correção pendentes. O retorno a8898a0 confirma R34/SHA513dd470 instalado no Samsung; a versão do POCO ainda não foi conferida. Mantidos recuperação de abertura, Voltar/manifesto e design R33. Servidor e4e557a inalterado. Uso imediato: POCO Sair da sala → CódigoTS1 do primeiro telefone → Entrar → dois nomes juntos → ambos Pronto → anfitrião Iniciar. Preservar dados/assinatura/saves e conciliar sucessoras antes de montar; DEX inicial R30 foi substituído. Gameplay em dupla e latência externa baixa continuam pendentes.
