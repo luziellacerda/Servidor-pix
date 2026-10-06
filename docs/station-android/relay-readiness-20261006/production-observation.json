@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-06T21:02:53Z",
+  "game": {
+    "platform": "snes",
+    "name": "Battletoads in Battlemaniacs (USA)"
+  },
+  "room": {
+    "members": 2,
+    "ready": 2,
+    "state": "starting",
+    "generation": 3,
+    "transport": "relay-wss-v1"
+  },
+  "responses": {
+    "start": 200,
+    "hostRelayTicket": 200,
+    "guestSnapshot": 200,
+    "webSocketUpgrade": 101
+  },
+  "hostListeningObserved": false,
+  "relayConnectionDurationMilliseconds": 60001.8673,
+  "newForwardedBytes": 0,
+  "temporaryObserverSeconds": 600,
+  "commandsObserved": {
+    "heartbeat": 33,
+    "events": 109,
+    "enter": 12,
+    "create": 3,
+    "request-join": 3,
+    "accept-request": 3,
+    "join": 1,
+    "ready": 7,
+    "start": 1,
+    "relay-ticket": 1,
+    "dismiss-invite": 1,
+    "leave": 1
+  },
+  "rawPacketFileWritten": false,
+  "secretsLogged": false,
+  "observerStopped": true,
+  "exactNativeCauseProven": false,
+  "productionApiChanged": false,
+  "apiSourceRevision": "a2bb176530fd4d2dfa740da7e934fd84d097404e",
+  "apiDllSha256": "d181bf97d5b39a334e95144267d6ece3f11d4e659a314d7d16cd2746e1999e13",
+  "apiPid": 875574
+}

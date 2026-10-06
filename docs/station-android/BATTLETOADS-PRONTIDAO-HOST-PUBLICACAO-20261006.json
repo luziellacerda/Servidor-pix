@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "publishedAt": "2026-10-06T21:26:51.602124+00:00",
+  "appRepository": "luziellacerda/TurboElden",
+  "appSourceRevision": "d1b535cc35c926172182c47686b6b44333a529de",
+  "implementationCommit": "30e7770",
+  "branches": [
+    "fix/station-relay-ready-return-20261006",
+    "feat/station-capas-visuais-netplay-20261003",
+    "fix/station-customer-provision-return-20261006",
+    "fix/station-codes-panel-return-20261006"
+  ],
+  "sourceDelta": "versions/station-relay-readiness-20261006",
+  "apiSourceRevision": "a2bb176530fd4d2dfa740da7e934fd84d097404e",
+  "clipboardProductionSourceRevision": "247bb0a33bbb800228d1bf1c9fba6ff88469c000",
+  "clipboardReturnRevision": "0820fd0",
+  "isolatedChecks": 39,
+  "javaApi34Compiled": true,
+  "apiCheckOnly": true,
+  "apkBuilt": false,
+  "phoneInstalled": false,
+  "twoAndroidGameplayVerified": false,
+  "exactPhysicalNativeCauseProven": false,
+  "currentServerRelaySourceUnchanged": true,
+  "temporaryObserverStopped": true
+}

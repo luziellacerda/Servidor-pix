@@ -1,0 +1,14 @@
+{
+  "r41FrozenSourceUnchanged": true,
+  "currentServerRelaySourceMatchesLiveA2bb176": true,
+  "apiOnlyBuildRejectedBeforeApkMutation": true,
+  "artifactNewApkBuilt": false,
+  "newDexBuilt": false,
+  "phoneInstalled": false,
+  "twoAndroidGameplayVerified": false,
+  "serverFiles": {
+    "src/TurboRamaSuiteOnlineServer/StationOnline.cs": "9b81b4c9ea817fb71876fc23bb868610c24d9d0c51d42eb5f8061c121d467f10",
+    "src/TurboRamaSuiteOnlineServer/StationRelay.cs": "110f28f5ec8e40bc59cf2a622eef6ba409fcaea07c065c6c6684745b0b78c10b",
+    "src/TurboRamaSuiteOnlineServer/StationOnlineEndpoints.cs": "044fbf673da9d86203484d8b47d2999813dc191613d04c9a4b75e0ce460decb8"
+  }
+}

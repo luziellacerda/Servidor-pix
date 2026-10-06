@@ -1,3 +1,9 @@
+# Battletoads: prontidão do anfitrião — retorno para o app — 06/10/2026
+
+Leia docs/station-android/RETORNO-BATTLETOADS-CONEXAO-HOST-STATION-20261006.md e BATTLETOADS-PRONTIDAO-HOST-PUBLICACAO-20261006.json. Produção observada: dois membros e ambos Pronto, start/ticket200, WSS do anfitrião; sem host-listening observado/sem novos bytes, convidado em starting. App publicou delta sobre R41, source d1b535c, três fontes Java: TCP real retido + WSS aberto antes de confirmar prontidão; o aviso JNI acelera a espera. 39 verificações TCP/TLS/relay passaram, 12,58 MB por direção; 150 fontes compilaram Java8/API34 em api-check-only. APK novo/instalação/gameplay e causa específica do motor/JNI/Binder ainda pendentes; captura USB antes de atualizar no PC de produção. API a2bb176/PID875574 e runtime/snapshot R41 preservados. Não forçar connecting nem declarar partida corrigida. Clipboard 247bb0a já publicado no site, retorno0820fd0; usuário entrou antes. Preservar licença/saves/assinatura e seguir receitas do candidato na branch do app.
+
+## Histórico anterior
+
 # Copiar código Station corrigido e publicado — 06/10/2026
 
 Leia docs/station-android/RETORNO-COPIA-CODIGOS-STATION-20261006.md e COPIA-CODIGOS-STATION-PRODUCAO-20261006.json. Fonte247bb0a publicada17h59Maceió: clipboardmoderno→fallbackreal no diálogo→aviso explícito se negado;5casosChrome e HTTPS/hashes/restauração passaram. SóPHP+JS do site; nenhum serviço/backend/licença real reiniciado/alterado, sem APKnovo. Usuário entrou antes da publicação; ACTIVE/BOUND/perfil/catálogo200confirmados, causa exata dos403anteriores não provada. APIa2bb176/PID875574/catalogo14/2212 preservados. Battletoads:2membros/2Pronto/start200/ticket200/WSShost, porém semhost-listening observado; diagnóstico/capturaUSB e delta do túnel no retornoapp d71b542. Não forçar connecting nem afirmar gameplaycorrigido. Preservar fonteR41/assinatura/licença/saves.

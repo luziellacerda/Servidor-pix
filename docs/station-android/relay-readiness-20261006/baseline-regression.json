@@ -1,0 +1,11 @@
+{
+  "sourceBase": "Frozen R41",
+  "nativeCallbackDelivered": false,
+  "realTlsRelayFixture": true,
+  "passed": false,
+  "expectedFailure": true,
+  "failure": "SocketTimeoutException: Accept timed out",
+  "candidatePassedSameTransportWithoutJni": true,
+  "productionModified": false,
+  "androidExecuted": false
+}
