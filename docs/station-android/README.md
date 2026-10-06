@@ -1,3 +1,11 @@
+# Convites curtos e palavra passe automática — 06/10/2026
+
+Leia `docs/station-android/RETORNO-CONVITE-CURTO-SENHA-AUTOMATICA-STATION-20261006.md`. APIa3e83d96/DLL5fff55c1/PID970425 publicada20h04Maceió. Convite8caracteres, resolução autenticada/assinada sem senha ou entrada implícita; quatro motores no registro, dois originais e dois -autopass1. Runtime899e3527 arm64/API26/16KiB compilado, cores/opções/controles preservados. Backup restaurado, provas sombra/HTTPS/relay e limpeza passaram; catálogo14/2212, licenças, chaves, serviços e mídias preservados. Sem migration/mensagens.
+
+App1e0f862 em versions/station-auto-room-access-r57-20261006 inclui R55+visualR57+prontidãof8. Senha privada usada automaticamente só no cliente Android tipado, NICK antes de PASSWORD e verificador original preservado. 318códigos,278salas/convitesJVM,66nativo,39TCP/TLS/relay,158JavaAPI34 passaram. APK/DEX novo, assinatura/instalação e gameplay físico pendentes no PC; usar receitas novas sobre APKR57/e6159fa3/cert7b16 e atualizar ambos. Não executar receitas R41/R55 nem declarar o diálogo do APK antigo corrigido pelo servidor.
+
+## Histórico anterior
+
 # Retorno R55 concluído considerando a sucessora R57 — 06/10/2026
 
 Leia `RETORNO-ANALISE-APP-R55-STATION-20261006.md`. Base funcional recebida9d3d45f, adendo visual8980cd4; implementação atualf8b019d6 em `versions/station-relay-readiness-r57-20261006` do app. Preservados canal Binder/saída R54 e layout R57: Criar sala, barra fina, capas e faixa INSTALADO. Os snapshots recebidos permanecem intactos.

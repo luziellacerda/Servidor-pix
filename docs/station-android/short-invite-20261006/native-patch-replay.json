@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "patchedFilesCompared": 6,
+  "sourceArchiveSHA256": "cecf1e3f5446724f748124d097bb9c5169c6f599404d33a8447d88fd197d17fe",
+  "scope": "Exact Git-apply replay used by the portable runtime recipe; patched source equality with compiled runtime"
+}

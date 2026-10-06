@@ -1,0 +1,66 @@
+{
+  "applied": true,
+  "service": "turborama-station-api.service",
+  "sourceRevision": "a3e83d96b8025cde058e267eaa74e4505f654b15",
+  "dllSha256": "5fff55c11a7e85d97d0ba155ea0387584dbeea207a82be294bda958655bf5331",
+  "socialEnabled": true,
+  "onlineEnabled": true,
+  "relayEnabled": true,
+  "relayMaximumRooms": 512,
+  "relayMaximumConnections": 1024,
+  "indexRevision": 14,
+  "engineRegistrySha256": "a4412aa8139b865d62b1dc42cb4b08f7fc656b3a7efca6237df7854d2ef888cc",
+  "shortInvitationsEnabled": true,
+  "automaticPasswordRuntimeRegistered": true,
+  "migrationsApplied": 0,
+  "backupRestoreVerified": true,
+  "customerLicenseRowsPreserved": true,
+  "pocoLicenseChanged": false,
+  "sharedServicesPreserved": true,
+  "proxyKeysScannerMediaPreserved": true,
+  "customerNotificationsSent": false,
+  "androidApkInstalledByThisRollout": false,
+  "androidGameplay": false,
+  "relayBefore": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 131334
+  },
+  "relayAfter": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 131078
+  },
+  "pid": 970425,
+  "completedAtUtc": "2026-10-06T23:04:33.456806+00:00",
+  "candidateSocialTrue": {
+    "passed": true,
+    "checks": 183,
+    "actualApprovedJoinRelayBytesEachDirection": 0,
+    "publicTlsPinVerified": false,
+    "syntheticRowsRemoved": true,
+    "androidGameplay": false
+  },
+  "candidateRelayRegression": {
+    "passed": true,
+    "checks": 2554,
+    "publicTlsPinVerified": false,
+    "syntheticRowsRemoved": true,
+    "androidGameplay": false
+  },
+  "publicVerification": {
+    "passed": true,
+    "checks": 198,
+    "actualApprovedJoinRelayBytesEachDirection": 65539,
+    "publicTlsPinVerified": true,
+    "syntheticRowsRemoved": true,
+    "androidGameplay": false
+  },
+  "appImplementationCommit": "1e0f86241851d6c9c17c379ed23fd238637bbcbd",
+  "runtimeSHA256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+  "twoAndroidGameplayVerified": false
+}
