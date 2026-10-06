@@ -18,6 +18,7 @@ LOGIN=Path('/home/lz-servidor/turbobox-admin-reset-20261006-122727/credenciais.j
 UNITS=('turborama-station-api.service','turborama-station-management.service','turborama-station-issue-admin.service','turborama-pix.service','turborama-suite-api.service','turborama-suite-admin.service','turborama-suite-content-gateway.service','nginx.service','cloudflared.service','turbobox-php-fpm.service')
 
 def run(args):
+ if os.geteuid()==0 and args[0]=='git':args=['runuser','-u','lz-servidor','--',*args]
  r=subprocess.run(args,capture_output=True,text=True,timeout=15)
  if r.returncode:raise RuntimeError('Bounded command failed')
  return r.stdout.strip()
@@ -25,6 +26,7 @@ def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def private(p,value):
  fd=os.open(p,os.O_WRONLY|os.O_CREAT|os.O_TRUNC,0o600)
  with os.fdopen(fd,'w') as f:json.dump(value,f,indent=2);f.write('\n')
+ if os.geteuid()==0 and p==RESULT:os.chown(p,1000,1000)
 def services():
  result={}
  for unit in UNITS:
@@ -34,8 +36,10 @@ def services():
  return result
 def replace(target,data,mode):
  if target.is_symlink():raise ValueError('File links are not allowed')
+ owner=target.stat()
  fd,name=tempfile.mkstemp(prefix='.station-copy-',dir=target.parent)
  try:
+  if os.geteuid()==0:os.fchown(fd,owner.st_uid,owner.st_gid)
   os.fchmod(fd,mode)
   with os.fdopen(fd,'wb') as f:f.write(data);f.flush();os.fsync(f.fileno())
   os.replace(name,target)
@@ -98,7 +102,7 @@ def apply(package):
   saved['unchanged'][name]=sha(SITE/name)
  for name in NAMES:
   target=SITE/name;s=target.stat()
-  if target.is_symlink() or s.st_uid!=os.getuid() or s.st_gid!=os.getgid() or sha(target)!=manifest['before'][name]:raise ValueError('Current UI or ownership differs')
+  if target.is_symlink() or s.st_uid!=1000 or s.st_gid!=1000 or sha(target)!=manifest['before'][name]:raise ValueError('Current UI or ownership differs')
   saved['files'][name]={'before':sha(target),'after':manifest['files']['site/'+name],'mode':stat.S_IMODE(s.st_mode)}
  guard(saved);BACKUP.mkdir(mode=0o700)
  for name,meta in saved['files'].items():
