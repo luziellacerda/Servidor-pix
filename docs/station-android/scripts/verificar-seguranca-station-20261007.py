@@ -27,7 +27,8 @@ def verify(index,values,base,execute_sql=None):
             raise ValueError('Station security HTTP gate failed')
         checks+=1;return response
     def call(method,path,body=None,credential=None,proof=None):
-        correlation=uuid.uuid4().hex;headers={'X-Correlation-ID':correlation,'Accept':'application/json'}
+        correlation=uuid.uuid4().hex;headers={'X-Correlation-ID':correlation,'Accept':'application/json',
+            'User-Agent':'Dalvik/2.1.0 (Linux; U; Android 13; Station Release Verification)'}
         if credential:headers['Authorization']='Bearer '+credential
         if proof:headers['X-Station-Request-Proof']=proof
         encoded=json.dumps(body,separators=(',',':')).encode() if body is not None else None
@@ -35,7 +36,10 @@ def verify(index,values,base,execute_sql=None):
         try:response=client.opener.open(Request(base+path,encoded,headers,method=method),timeout=20)
         except HTTPError as error:response=error
         with response:
-            if response.url!=base+path or response.headers.get('X-Correlation-ID')!=correlation:raise ValueError('Redirect/correlation changed')
+            if response.url!=base+path or response.headers.get('X-Correlation-ID')!=correlation:
+                raise ValueError('Redirect/correlation changed: '+method+' '+path+' HTTP '+str(response.code)+
+                    ' cache='+response.headers.get('CF-Cache-Status','none')+
+                    ' correlation='+('present' if response.headers.get('X-Correlation-ID') else 'absent'))
             maximum=(16 if path.startswith('/v1/station/catalog') else 2)*1024*1024
             data=response.read(maximum+1)
             if len(data)>maximum:raise ValueError('Bounded security response exceeded limit')
