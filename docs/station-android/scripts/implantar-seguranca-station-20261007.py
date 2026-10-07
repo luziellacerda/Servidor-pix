@@ -259,13 +259,17 @@ def apply(revision):
         settings.update({k:v for k,v in values.items() if k.startswith(('DOTNET_','COMPlus_')) or k in
             ('ASPNETCORE_ENVIRONMENT','LANG','LC_ALL','TZ')})
         settings['ASPNETCORE_URLS']='http://127.0.0.1:5192'
+        settings['DOTNET_DbgEnableMiniDump']='0'
         settings.update(Suite__Enabled='false',Station__IsolatedDatabase='true',Station__Security__RequireVerifiedApp='false',
             Station__DatabaseConnectionFile=protected('database-connection','Host=127.0.0.1;Database='+db+';Username='+IDENTITY+';Password='+password+';ApplicationName=turborama-station-api'),
             Station__ActivationPepperFile=protected('activation-pepper',read('Station__ActivationPepper','Station__ActivationPepperFile')),
             Station__AssertionPrivateKeyPemFile=protected('assertion.pem',read('Station__AssertionPrivateKeyPem','Station__AssertionPrivateKeyPemFile')),
             Station__Isolation__SuitePepperSha256=hashlib.sha256(base64.b64decode(pepper,validate=True)).hexdigest(),
             Station__Isolation__SuiteAssertionKeyId=hashlib.sha256(suite_public).hexdigest())
-        download=KEYS/'download.key';download.write_bytes(Path(values['Station__DownloadKeyFile']).read_bytes());download.chmod(0o640);os.chown(download,0,user.pw_gid)
+        download=KEYS/'download.key';download.write_bytes(Path(values['Station__DownloadKeyFile']).read_bytes())
+        # StationGrantCipher correctly rejects group-readable symmetric keys.
+        # The file remains immutable inside the service's read-only /etc mount.
+        download.chmod(0o600);os.chown(download,user.pw_uid,user.pw_gid)
         settings['Station__DownloadKeyFile']=str(download)
         settings['Station__Online__EngineRegistryFile']=str(target/'online-engine-registry.json')
         # Preserve explicit production pool sizes without retaining Suite credentials.

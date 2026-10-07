@@ -58,6 +58,7 @@ def sandbox_properties(target,identity,roots):
         'ProtectKernelLogs':'yes','ProtectControlGroups':'yes','ProtectClock':'yes','ProtectHostname':'yes',
         'ProtectProc':'invisible','RestrictSUIDSGID':'yes','RestrictNamespaces':'yes',
         'RestrictRealtime':'yes','LockPersonality':'yes','RemoveIPC':'yes','UMask':'0077',
+        'LimitCORE':'0','CoredumpFilter':'0x0',
         'CapabilityBoundingSet':'','AmbientCapabilities':'',
         'RestrictAddressFamilies':'AF_UNIX AF_INET AF_INET6 AF_NETLINK',
         'TemporaryFileSystem':'/mnt:ro /media:ro /opt:ro',
