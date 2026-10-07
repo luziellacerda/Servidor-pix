@@ -1,0 +1,31 @@
+{
+  "startedUTC": "2026-10-07T21:21:14.415975+00:00",
+  "completedUTC": "2026-10-07T21:22:46.254299+00:00",
+  "model": "SM-A566E",
+  "package": "org.turboramastation.frontend",
+  "apkSHA256": "556170c32b6dd25fb5084693826d854adf736b4a1df156fd9229a8458b025018",
+  "deviceAPK_SHA256": "556170c32b6dd25fb5084693826d854adf736b4a1df156fd9229a8458b025018",
+  "previousAPK_SHA256": "c12ee4e2928a629be4a2cc6dc9201fc7c5722e21a1fa8385d21da7a7dc69a32e",
+  "apkBytes": 2122893402,
+  "installSuccess": true,
+  "uidPreserved": true,
+  "originalInstallTimestampPreserved": true,
+  "uninstalled": false,
+  "dataCleared": false,
+  "deviceSettingsChanged": false,
+  "activeEmulatorBeforeInstall": false,
+  "launchVerified": false,
+  "directStreaming": true,
+  "extraAPKCopiedToPhone": false,
+  "installCommand": [
+    "install",
+    "--streaming",
+    "--no-incremental",
+    "-r",
+    "--user",
+    "0"
+  ],
+  "securityHandshakeVerified": false,
+  "twoDeviceGameplayVerified": false,
+  "thermalSavingsMeasured": false
+}

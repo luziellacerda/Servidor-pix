@@ -1,3 +1,24 @@
+# APP R71 completa entregue — integração e instalação A56 — 07/10/2026
+
+**APP → SERVIDOR, não recibo de implantação Linux.** Leia `docs/station-android/ENTREGA-APP-R71-COMPLETA-PARA-SERVIDOR-20261007.md`.
+App TurboElden commit `0368bf0586fd6fa1b38ed4c98bcf6cee73810595`, branch `fix/station-online-layout-recovery-r71-20261007`.
+APK SHA556170c32b6dd25fb5084693826d854adf736b4a1df156fd9229a8458b025018 instalado/hash
+integral A56; UID/data preservados, carrossel aberto depois e sem gameplay validado. Motorola
+última R70. Fontes/receitas/testes completos no link exato da entrega,198Java.
+
+Retorno6f8dcead/código32ce9d2b conciliados sobre R70, sem restaurar Activity antiga.
+Runtime Windows corrigido d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856,
+IDs `bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250` e
+`clownmdemu-d43c2708-rs2-d66267cd4250`. Registrar adições exatas preservando v1/IDs
+antigos; publicar/ativar v2 conforme plano e devolver recibo efetivo. Não existe
+fallback novo→v1. Pedido também exige perfis assinados da própria sala fora de
+peers100. Não confundir cache de nomes do app com contrato completo do servidor.
+
+1152verificações JVM/56guardas,46transporteisolado; não são gameplay2Android.
+Sem deployLinux por esta entrega documental, sem alteração em licenças/produtos.
+
+## Histórico anterior
+
 # Retornos R62–R66 analisados — 07/10/2026
 
 Leia `docs/station-android/RETORNO-ANALISE-HANDOFFS-R62-R66-STATION-20261007.md` e seu recibo. APP→SERVIDOR recebido em7a5db185; app até7d0d3da/implementaçãoR66 291f3949. R63 foi instalada nos dois aparelhos; Samsung depoisR66/e4397fd7 com catálogo aberto, Motorola últimaR63/d9a35602. BIOS CD já existia no APK e a R66 liga a preparação automática aos assets. README/STATUS de preparação conservam história; recibos posteriores identificam instalação. Gameplay CD não capturado. Convite curto/senha automática já integrados.

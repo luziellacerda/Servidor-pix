@@ -1,3 +1,24 @@
+# APP R71 completa entregue — integração e instalação A56 — 07/10/2026
+
+**APP → SERVIDOR, não recibo de implantação Linux.** Leia `docs/station-android/ENTREGA-APP-R71-COMPLETA-PARA-SERVIDOR-20261007.md`.
+App TurboElden commit `0368bf0586fd6fa1b38ed4c98bcf6cee73810595`, branch `fix/station-online-layout-recovery-r71-20261007`.
+APK SHA556170c32b6dd25fb5084693826d854adf736b4a1df156fd9229a8458b025018 instalado/hash
+integral A56; UID/data preservados, carrossel aberto depois e sem gameplay validado. Motorola
+última R70. Fontes/receitas/testes completos no link exato da entrega,198Java.
+
+Retorno6f8dcead/código32ce9d2b conciliados sobre R70, sem restaurar Activity antiga.
+Runtime Windows corrigido d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856,
+IDs `bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250` e
+`clownmdemu-d43c2708-rs2-d66267cd4250`. Registrar adições exatas preservando v1/IDs
+antigos; publicar/ativar v2 conforme plano e devolver recibo efetivo. Não existe
+fallback novo→v1. Pedido também exige perfis assinados da própria sala fora de
+peers100. Não confundir cache de nomes do app com contrato completo do servidor.
+
+1152verificações JVM/56guardas,46transporteisolado; não são gameplay2Android.
+Sem deployLinux por esta entrega documental, sem alteração em licenças/produtos.
+
+## Histórico anterior
+
 # Retomada online candidata entregue após R67/R68 — 07/10/2026
 
 Leia `docs/station-android/RETORNO-IMPLEMENTACAO-RETOMADA-ONLINE-STATION-20261007.md`. Servidor funcional 32ce9d2b30bb23deef17899e10fc285f38ea81ab na branch fix/station-online-recovery-r67-20261007; Android/runtime4d30401a80658dd56666ef10f48d9556b3fdd9e9 na fix/station-online-recovery-after-r67-20261007, pai R68c2a1a6d. Protocolo station-stream.v2 opt-in, sessão lógica retida, offsets/ACK/replay limitado, credencial protegida nova e pausa JNI confirmada/barreira dos dois. Preserva v1, registro antigo, proof/Keystore/licenças e outros serviços.79checks v2,32vetores Java,46TLS/TCP/1.620.000bytes,195Java/DEX e novo runtime b1b9beef; regressões e relayv1 isolado passaram. Feature false por padrão; sem migration.

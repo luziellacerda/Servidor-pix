@@ -1,0 +1,136 @@
+{
+  "appCommit": "0368bf0586fd6fa1b38ed4c98bcf6cee73810595",
+  "serverParent": "6f8dcead3af84ed1c8323f6e241900bf2f36a938",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 19331,
+      "sha256": "61ced409aa0fe72a526fce51065004570ea09bae5cbe775a0027051ce7b85ff9"
+    },
+    {
+      "path": "docs/station-android/AGENTS.md",
+      "bytes": 20365,
+      "sha256": "937d20989d9e138a29cea1c6558ea8f3590f3176db38e6d0eec273213d3fd28d"
+    },
+    {
+      "path": "docs/station-android/ENTREGA-APP-R71-COMPLETA-PARA-SERVIDOR-20261007.md",
+      "bytes": 14106,
+      "sha256": "3b01534f649f2c882b6566f1693c31aa4a230e8ec93ef87478c7841411bbea42"
+    },
+    {
+      "path": "docs/station-android/README.md",
+      "bytes": 17756,
+      "sha256": "910ec5d7962186baabd334bb63c9e9490d6e20d795ec8727f3c73cedb70dd7a9"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/JAVA-OVERLAY-MANIFEST.json",
+      "bytes": 2975,
+      "sha256": "414caf5e6334fb592e8ccf97064e4e0feb3c0b59b25035cabbf0b4c5d28d4c0c"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/NATIVE-CAROUSEL-MANIFEST.json",
+      "bytes": 913,
+      "sha256": "82fff23df292d6e1c92d61099826194d18af2ce2fc7cf3a1af44ad8fcccd79f4"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/NAVIGATION-AUDIT.md",
+      "bytes": 3106,
+      "sha256": "c49c6dea639c0e150c66ce086a95a062944d716715063280eb3b35447d9b39f7"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/SOURCE-FILES.json",
+      "bytes": 28459,
+      "sha256": "f728aa5b12190e1bd793129994dad9ab9014b150b4e1cda1f0173f5e0cd2814f"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/STATUS.json",
+      "bytes": 2659,
+      "sha256": "998b2ebb8e72ba89b76bc9acac0861a81bbcb75080a3b07a67c9f73a45528c05"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/activity-resource-audit.json",
+      "bytes": 8682,
+      "sha256": "7668e777f3088feb9610936d48c7e9d60125b7a5ef93737fd72393560320b253"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/android-followup-samsung-r71.json",
+      "bytes": 624,
+      "sha256": "d9ded63c4541031029ea87ca0b77c58690adab0d3e99a0abcf3d61801df88eaa"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/carousel-build-r71.json",
+      "bytes": 11476,
+      "sha256": "e54569413e7a176719bbdb0523bc640a683208bf9662acad8436fab701e4dc1a"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/device-task-observation.json",
+      "bytes": 1100,
+      "sha256": "e4fcbb6ee4934ad63e946fcec0cee974e2762e8dbafdd514bce2fab07d476f75"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/engines.json",
+      "bytes": 2144,
+      "sha256": "034e02d866a5b5849ce093ed1b71748c3237b1c9ba93660aef1a70e7891bc6ac"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/installation-samsung-r71-20261007.json",
+      "bytes": 1033,
+      "sha256": "4ee904233432e73fbd2f03e352216815a1f93fc83d68de6963e084aeff7e837c"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/java-dex-build.json",
+      "bytes": 73617,
+      "sha256": "fcd1ec990a7f8ed5f0154561f03c672d4eb185748b4ca91ceca4a591ca62f505"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/local-tests.json",
+      "bytes": 57291,
+      "sha256": "7cddf41aa16cf1844e4bef15d6f59a61e4823ee4d95b5b2cf00f507741d1cb81"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/manifest-patch.json",
+      "bytes": 602,
+      "sha256": "66873c44e79b626a38abc63409260ed7c7201a6f3452e56d61d38a7959bd52e5"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/native-build-r71.json",
+      "bytes": 3214,
+      "sha256": "c6c5edd83cce8709b84fbc245e0769d0c5d2f3f2349f73d462fbdff525376445"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/native-recovery-source-diff.json",
+      "bytes": 1243,
+      "sha256": "4f16ce280003f0b4b8b886405cba332aa22a6967b5b7ab1bb90b33ee2bff4018"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/native-tests-prebuild.json",
+      "bytes": 3151,
+      "sha256": "80f0c170d09a6796868a15892273086035ae36acec1b161048ece27379cda2c2"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/package.json",
+      "bytes": 12708,
+      "sha256": "970cc81c3050c991c369035c42a90116ddaa777f043b0f93552b0d4a0d1eded2"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/recovery-harness-portability.json",
+      "bytes": 4001,
+      "sha256": "2f20006751d9473304058d73ab4031672fb8339b0b0268f8ff472268c40a3495"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/recovery-interop.json",
+      "bytes": 33582,
+      "sha256": "22534c0c1f21641cab719c93eea7476e9fd9ddb6a94b76e7f05ea141814480c0"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/server-engine-registry-additions.json",
+      "bytes": 627,
+      "sha256": "24385de0a3d3c492a5b9543512b3d535a3fdf7ed8192f2be37549fe80ae682a4"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r71-20261007/evidence/server-source-origin.json",
+      "bytes": 17494,
+      "sha256": "9f35272acc002eccbeb563c1567f120a5e40865e19f4f14da3659c4910f0984f"
+    }
+  ]
+}

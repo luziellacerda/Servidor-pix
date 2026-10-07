@@ -1,0 +1,49 @@
+{
+  "createdAt": "2026-10-07T20:52:23.556881+00:00",
+  "work": "E:\\R71host",
+  "nativeOverlayManifestSHA256": "25dbe0e0e68d4348e23bfe034ff82284f95b50743973b464ea6c0a9694383eac",
+  "originalManifestSHA256": "6a4c528ab4e270fffb29a8ff78f1735bc5c9b5d9ab010e1f21c08700161b3f55",
+  "originSHA256": "2f8a9baa651c9fa1c31988aba2fd0aa8e0c262d2e10bea1e8b8016930ff531b7",
+  "wrapperSHA256": "ea0bcf1d2f7d81712fceb96c65ec8dcc5c0d27acd613ed91f86f76b6d2004799",
+  "originalBuilderSHA256": "7d594d76e21cabda3375eb0f9f1295e903765d1a3d2ee798afb4e95d931e964a",
+  "gitConfiguration": {
+    "core.autocrlf": false,
+    "core.eol": "lf",
+    "scope": "child process only"
+  },
+  "sourceArchiveSHA256": "cecf1e3f5446724f748124d097bb9c5169c6f599404d33a8447d88fd197d17fe",
+  "nativeInputs": {
+    "ORIGIN.json": "2f8a9baa651c9fa1c31988aba2fd0aa8e0c262d2e10bea1e8b8016930ff531b7",
+    "engine-patches\\retroarch-station-all.patch": "45a5da0970b3a150b2652b3a7ee38ce798617d5778e94f26a9dd81c3826864ec",
+    "engine-patches\\retroarch-station-auto-password.patch": "62254789975d892b2717e65b5f0232656befd347ed43232987c6ca2f2beabff2",
+    "engine-patches\\retroarch-station-recovery.patch": "dfa54bc1c8524b036ffaefa49f89278c77a815b138bc2f4b69d153e60270c0a2",
+    "native\\base-files.json": "7cc9069962704e78cf627885e688c140662d807986f9c0c94ba0aafb7560631c",
+    "native\\RECOVERY-SOURCE-MANIFEST.json": "25dbe0e0e68d4348e23bfe034ff82284f95b50743973b464ea6c0a9694383eac",
+    "native\\station_recovery.h": "40cb8f2a75cd31cc530b41e853cce31524dd32ddc82a95313a328f358383108a",
+    "recipes\\build_native_runtime.py": "7d594d76e21cabda3375eb0f9f1295e903765d1a3d2ee798afb4e95d931e964a",
+    "recipes\\patch_native.py": "7117bfcf668c40b65e3c904f15e2ca95e32ffb60166c7b4f27da49d52245434a",
+    "tests\\native_recovery_test.c": "b15734a014e6cbade770b71b8195126320722804d1bfcb32d81b51982dc6c4e4",
+    "tests\\recovery_stall_policy.c": "d789c830fef694e9a7cd663c32b2532fd44a1d4d48f1d76b476d9c6b52593489"
+  },
+  "tests": {
+    "passed": true,
+    "originalStateChecks": 13,
+    "stallPolicyChecks": 112,
+    "baselineFails": true,
+    "baselineFailure": "FAIL unexpected recovery for native stall enum=3 enabled=1",
+    "outputs": {
+      "originalStateChecks": "PASS 13 native control assertions; host test, not Android emulation",
+      "baseline": "FAIL unexpected recovery for native stall enum=3 enabled=1",
+      "candidate": "PASS 112 native stall policy checks; upstream enum and compiled hook, not Android gameplay"
+    },
+    "upstreamEnumFileSHA256": "1f57454b738475c41a5d142d8e761b103d0e6c35d6bb5495f747311a6ccd6922",
+    "testSourceSHA256": "d789c830fef694e9a7cd663c32b2532fd44a1d4d48f1d76b476d9c6b52593489",
+    "originalTestSourceSHA256": "b15734a014e6cbade770b71b8195126320722804d1bfcb32d81b51982dc6c4e4",
+    "mutexBackend": "Windows SRWLOCK compatibility header, host test only",
+    "compiler": "C:\\Program Files\\LLVM\\bin\\clang.exe",
+    "compilerSHA256": "986af49c2d1eefeac324f724ff54597753d1053927fa5d58a37a457f578e1cf8",
+    "androidExecuted": false,
+    "twoDeviceGameplayVerified": false
+  },
+  "runtimeSHA256": null
+}

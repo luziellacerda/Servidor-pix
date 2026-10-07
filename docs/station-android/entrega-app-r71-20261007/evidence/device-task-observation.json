@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-07",
+  "deviceFamily": "Samsung A56",
+  "installedAPKHashReadDirectly": "c12ee4e2928a629be4a2cc6dc9201fc7c5722e21a1fa8385d21da7a7dc69a32e",
+  "baseline": "R70",
+  "appTaskRoots": [
+    {"component": "org.emulationstation.frontend.ESActivity", "launchMode": "singleInstance", "activityCount": 1},
+    {"component": "org.emulationstation.frontend.netplay.StationRoomsActivity", "launchMode": "standard", "activityCount": 1}
+  ],
+  "sameTaskAffinity": true,
+  "differentTasks": true,
+  "sameMainProcess": true,
+  "onlineProcessAlsoCachedWithoutActivity": true,
+  "screenAsleepAtCapture": true,
+  "bothActivitiesStoppedAtCapture": true,
+  "simultaneousVisibleRenderingProven": false,
+  "duplicateFrontendActivityProven": false,
+  "noActivityStoppedByAudit": true,
+  "noDataChanged": true,
+  "rawDumpsPrivateOnly": true,
+  "notes": "The ActivityManager retained a focused Rooms record, but both Activities were STOPPED and not visible while the screen slept. Two retained tasks do not establish simultaneous CPU/GPU rendering. No old CPU snapshot is used as a current measurement."
+}

@@ -1,0 +1,101 @@
+{
+  "createdAt": "2026-10-07T21:07:21.500386+00:00",
+  "scope": "Read-only source and APK-module audit of R70 and the integrated R71 candidate. No device interaction, application changes, emulator changes or performance tests.",
+  "r70APK_SHA256": "c12ee4e2928a629be4a2cc6dc9201fc7c5722e21a1fa8385d21da7a7dc69a32e",
+  "r71CandidateBeforeMediaAdditionSHA256": "a135650c1ded7b6ea3bd119a2db9cb030842babd29b020c29770fb3341802864",
+  "moduleIdentityChecks": [
+    {
+      "entry": "classes5.dex",
+      "sha256": "1e53eea4678f6c95c0c4b36be6f279d5aa8b0bfba25e78c749e940d32df11d25",
+      "method": "Direct SHA256 of R70 ZIP entry equals the prepared reconstruction build/apk/classes.dex bytes and the R55 module inventory.",
+      "preparedSmali": "classes5.dex/smali/org/emulationstation/frontend/ESActivity.smali",
+      "preparedSmaliSHA256": "b28ce48251848184ce8c19e25830ad6bc6e1cdc40bc70cd135fddefd463c106a",
+      "pointers": ["onResume:3842 -> StationFrontend.setForeground(true)", "onPause:3869 -> StationFrontend.setForeground(false), then SDLActivity.onPause"]
+    },
+    {
+      "entry": "classes6.dex",
+      "sha256": "f19dd92662fd066611c0e9feefd5c814bc06110f27fda50c2b3a63565965ba95",
+      "method": "Direct SHA256 of R70 ZIP entry equals the prepared reconstruction build/apk/classes.dex bytes and the R55 module inventory.",
+      "preparedSmali": "classes6.dex/smali/org/libsdl/app/SDLActivity.smali",
+      "preparedSmaliSHA256": "ba8023df8f9d7bff74be26f7bbef90c01b91b5feeb0332ec646634e3eb3ece85",
+      "pointers": ["onPause:3849 -> pauseNativeThread outside multiwindow", "onStop:3981 -> pauseNativeThread for multiwindow", "handleNativeState:964 -> nativePause"]
+    },
+    {
+      "entry": "classes9.dex",
+      "sha256": "f3c381f0a008ab0a803d0cc27adf644bbf43a59a8886317c24c9498de754f9df",
+      "method": "Direct SHA256 of R70 ZIP entry equals the frozen 2026-09-30 platform release component and R55 inventory. Source files match that release manifest byte for byte.",
+      "manifest": "versions/estavel-2026-09-30-plataformas-emuladores/MANIFESTO-ESTAVEL.json",
+      "sources": {
+        "SystemCardVideo720.java": "34a271b02471103fd08bd5879a109d59436c9bbb881945dcdd7e6246eeda084d",
+        "MenuRetroMusic.java": "1fd73ec3f482e791ffa03610a7c159c10629a4bc43c53e92b5853edd64c97616"
+      },
+      "sourceDirectory": "versions/estavel-2026-09-30-plataformas-emuladores/snapshot/implementation/system-videos/java/org/emulationstation/frontend"
+    }
+  ],
+  "verifiedJavaSourceHashes": {
+    "StationFrontend.java": "f9219d5ef4158cae16ce6d046e441b2b08e396826dc709a6adfd7ffa0d5d3af9",
+    "StationPresence.java": "8596e75611ad81eb4b7c7af1cee6a37842b7d848075939bd720a8f411e944bc1",
+    "StationRoomsActivity.java": "3d4dc1bca1d9c71df0ff9b46967752645a373ef2d93fb95d2ab8f06977d90597",
+    "StationRoomArtwork.java": "3fd146633671ad30baf722fb2904f72376458c27cffa28ad0411eed436891c4c",
+    "StationHyperspaceView.java": "3fb9f02acb37798f09587f03f760ba22360404ac7c8b4254d10e0f6151da59cf",
+    "StationGameRatingView.java": "84d16361a5fa51cceb4046663f1bd3ef3641a64080a8850e0b80b34adc8e39d8",
+    "StationActionButton.java": "70cc50af4b03be49c2dce056ef3bcdb6de02ce694f285d46c13e12b0ac055c4e",
+    "StationRecoveryTunnel.java": "6c24b233f0d319e01a4ff1294f23a9a705434f4f1c92ba6b7f8fa3ed5bd60304",
+    "StationGameSession.java": "4ab2aab97fc3b15127213edb4242bcbf349b7b5879cba354e2c5abfb14f918f7"
+  },
+  "sourceComposition": "R71 recipes/build_candidate.py verified_sources(): exact R67 baseline plus declared R71 Java overlay, 196 sources at audit time.",
+  "resourceBehavior": [
+    {
+      "component": "Menu video",
+      "pointers": ["SystemCardVideo720.java:61-64 lifecycle callbacks", "SystemCardVideo720.java:203-221 stop/release", "native_system_video720.h:128-147 retirement", "r53_video_policy.h:59 decide"],
+      "finding": "ESActivity pause/stop/destroy, or another Activity resume, invalidates sessions. Surface and SurfaceTexture are released synchronously; MediaPlayer release runs on its worker. The idle watchdog is removed. Native policy selects one live decoder despite four slot containers. Hidden menu frames may remain as bounded GPU previews; they are not active players."
+    },
+    {
+      "component": "Menu music",
+      "pointers": ["MenuRetroMusic.java:53-59 lifecycle callbacks", "MenuRetroMusic.java:149-152 stopPlayback", "MenuRetroMusic.java:163 watchdog"],
+      "finding": "Pause/stop/other Activity suspends playback, releases the player, abandons audio focus and removes the watchdog. Its HandlerThread can remain idle."
+    },
+    {
+      "component": "Catalog and native GUI",
+      "pointers": ["ESActivity.smali:onPause", "SDLActivity.smali:pauseNativeThread/handleNativeState", "StationFrontend.java:80 stopCatalogPoll", "StationFrontend.java:149 setForeground", "StationCoverQueue.java:44 setForeground", "native_lottie_gear.h:drawSettingsLottieHook"],
+      "finding": "The verified ES lifecycle forwards visibility to StationFrontend and SDL. Automatic catalog refresh and cover requests are cancelled while hidden. Native menu animations are driven by draw calls rather than independent timers. Explicit user downloads can continue through their existing service. No emulator loop was changed or measured."
+    },
+    {
+      "component": "Rooms Activity",
+      "pointers": ["StationRoomsActivity.java:163-164 resume/pause", "StationRoomsActivity.java:200-203 start/stop/destroy", "StationRoomArtwork.java:32-37 stop/close", "StationHyperspaceView.java:38-46 eligible/sync", "StationGameRatingView.java:33-38 visible/motion", "StationActionButton.java:144-163 motion lifecycle"],
+      "finding": "Activity stop cancels polling, requests and artwork; destruction closes executors and bitmap cache. Hyperspace/rating animations require resumed state, attachment, visibility and focus. Button motion remains limited to ABRIR/VOLTAR labels and stops on loss of focus/visibility. Cached view assets can remain while a stopped Activity stays in the back stack."
+    },
+    {
+      "component": "Online session retention",
+      "pointers": ["StationRetroActivity.java:77 onStop", "StationRecoveryTunnel.java:59 visible", "StationGameSession.java:28-30 events1/2", "StationGameSession.java:55 sync", "StationRecoveryTunnel.java:125 close"],
+      "finding": "v2 intentionally pauses the native game and closes remote transport while retaining session membership. A 20-second authority heartbeat remains; explicit human exit closes membership. These semantics must be preserved by navigation fixes. A cached process without an Activity is not proof of ongoing emulation."
+    }
+  ],
+  "separateOptimizationFindings": [
+    {
+      "id": "RECOVERY-HIDDEN-TICK",
+      "scope": "R71 v2 only; cannot explain the reported R70 navigation behavior",
+      "pointers": ["StationRecoveryTunnel.java:48", "StationRecoveryTunnel.java:61", "StationRecoveryTunnel.java:86-103"],
+      "finding": "The 250ms scheduled tick remains active after visible(false); pump calls nativeStatus before rejecting a null remote. This causes bounded periodic worker/JNI work while hidden, although the game is paused.",
+      "action": "Documented only. No timer, heartbeat or recovery change authorized in this audit."
+    },
+    {
+      "id": "HIDDEN-LOBBY-PANELS",
+      "scope": "Panels inside the same visible R71 Rooms Activity",
+      "pointers": ["StationRoomsActivity.java:315-354 paint", "StationRoomsActivity.java:153-154 roomCoverCard", "StationRoomsActivity.java:517-523 roomLayout"],
+      "finding": "paint reconstructs room/player views and can request room cover art even when their panels are GONE. Activity-level cancellation still works. This is avoidable hidden-panel work, not proof of two actively rendering Activities.",
+      "action": "Documented only; navigation correction must not disturb authoritative room polling."
+    }
+  ],
+  "navigationContext": {
+    "source": "Current root-agent ActivityManager audit, separate from this source audit",
+    "reportedObservation": "ESActivity paused and hidden in one task, StationRoomsActivity resumed as root in another task; ESActivity singleInstance contributes to the separate-task behavior.",
+    "noProcessKilled": true,
+    "navigationImplementationReview": "Pending the separate navigation agent's proposed change."
+  },
+  "limitations": [
+    "This audit proves source/module identity and explicit lifecycle behavior, not actual CPU/GPU consumption on the current phone.",
+    "Older private CPU snapshots were not used as evidence of current activity.",
+    "No Android tests, gameplay tests, device interaction, build, installation or runtime modifications were performed."
+  ]
+}

@@ -1,0 +1,635 @@
+{
+  "scope": "R71 source, immutable incoming recovery snapshot and sanitized evidence; excludes this inventory itself",
+  "files": [
+    {
+      "path": "docs/server/recovery-r67-20261007/CONTRATO.md",
+      "bytes": 14955,
+      "sha256": "8fa89e7a1bb6a1ffa6df831039ac29924553483c0e5b7d9e3c366fc6ece10cd8"
+    },
+    {
+      "path": "docs/server/recovery-r67-20261007/MANIFESTO.json",
+      "bytes": 1355,
+      "sha256": "a5e4ac4db5edb1797f281e43a43c2442b5fab124a7bdfbeb82a04b0d83d563c8"
+    },
+    {
+      "path": "docs/server/recovery-r67-20261007/configuration.example.json",
+      "bytes": 143,
+      "sha256": "49fdb1f14b7e0d0af24508564d6cbb85686089f9bd9d362c91dfd80ebfe5ab43"
+    },
+    {
+      "path": "docs/server/recovery-r67-20261007/contract-vectors.json",
+      "bytes": 6444,
+      "sha256": "b7efac34a5b04f78560c1749270a56fad640d8de5924c5f4e4abf62662dc0779"
+    },
+    {
+      "path": "docs/server/recovery-r67-20261007/engines.json",
+      "bytes": 2144,
+      "sha256": "5d4842eb6c18d2f5b5ea115afe9ba9d6045c2e6927a78a8c67c11cc977d55579"
+    },
+    {
+      "path": "docs/server/recovery-r67-20261007/interop.json",
+      "bytes": 1052,
+      "sha256": "c19c5023363e28262d99a6641dd602d432327bc013d290636b2895abb126ab22"
+    },
+    {
+      "path": "docs/server/recovery-r67-20261007/java-build.json",
+      "bytes": 30911,
+      "sha256": "b86c973afb27ee248c065cd99dcfb34fca0a65c02094e7abf5761cc9058ce42b"
+    },
+    {
+      "path": "docs/server/recovery-r67-20261007/legacy-relay-load.json",
+      "bytes": 804,
+      "sha256": "f3a6b802d63055dbfd61dd95ffa5f6134d6df23db0d4d2cd8ac921e35c2f3b38"
+    },
+    {
+      "path": "docs/server/recovery-r67-20261007/native-build.json",
+      "bytes": 1683,
+      "sha256": "a9d3531880d11b790a148d27c239a2f14eba218c9494645ada14d5a0a332381e"
+    },
+    {
+      "path": "docs/server/recovery-r67-20261007/openapi.json",
+      "bytes": 18946,
+      "sha256": "c89a32757d09c355303f5676c920a775b046361a6820f0bcf29405c74ac989c9"
+    },
+    {
+      "path": "docs/server/recovery-r67-20261007/production-observation.json",
+      "bytes": 1416,
+      "sha256": "9af0fe65615c207f10909a52af3f7c1a3581c54c26d618fe0448786af7c8233b"
+    },
+    {
+      "path": "docs/server/recovery-r67-20261007/server-engine-registry-additions.json",
+      "bytes": 627,
+      "sha256": "f2d2592e26a0f7516b349d20938cb000b70bfde784e5ed7c8ce8432497951b12"
+    },
+    {
+      "path": "docs/server/recovery-r67-20261007/server-tests.json",
+      "bytes": 3463,
+      "sha256": "4db693cedf6a74bcb19b0c79d49fe4653f80293a3b8a64d925467db6ae19928b"
+    },
+    {
+      "path": "docs/server/recovery-r67-20261007/source-receipt.json",
+      "bytes": 639,
+      "sha256": "c7aa27d425c761bf2a06603485dc6b063a6629743a52f0642a7289328e518866"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/HANDOFF-APP-R71-PARA-SERVIDOR-20261007.md",
+      "bytes": 11077,
+      "sha256": "7cb48d693b51615f55507dc7043bdb51932da761a4944b4bdd6c5c975ef22946"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/JAVA-OVERLAY-MANIFEST.json",
+      "bytes": 2975,
+      "sha256": "414caf5e6334fb592e8ccf97064e4e0feb3c0b59b25035cabbf0b4c5d28d4c0c"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/NATIVE-CAROUSEL-MANIFEST.json",
+      "bytes": 913,
+      "sha256": "82fff23df292d6e1c92d61099826194d18af2ce2fc7cf3a1af44ad8fcccd79f4"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/NAVIGATION-AUDIT.md",
+      "bytes": 3106,
+      "sha256": "c49c6dea639c0e150c66ce086a95a062944d716715063280eb3b35447d9b39f7"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/README.md",
+      "bytes": 9807,
+      "sha256": "289dfe27492573b87de061e99b6c91cad42859d9c8b8e033767fdb725bdb8264"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/STATUS.json",
+      "bytes": 2659,
+      "sha256": "998b2ebb8e72ba89b76bc9acac0861a81bbcb75080a3b07a67c9f73a45528c05"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/activity-resource-audit.json",
+      "bytes": 8682,
+      "sha256": "7668e777f3088feb9610936d48c7e9d60125b7a5ef93737fd72393560320b253"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/android-followup-samsung-r71.json",
+      "bytes": 624,
+      "sha256": "d9ded63c4541031029ea87ca0b77c58690adab0d3e99a0abcf3d61801df88eaa"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/carousel-build-r71.json",
+      "bytes": 11476,
+      "sha256": "e54569413e7a176719bbdb0523bc640a683208bf9662acad8436fab701e4dc1a"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/device-task-observation.json",
+      "bytes": 1100,
+      "sha256": "e4fcbb6ee4934ad63e946fcec0cee974e2762e8dbafdd514bce2fab07d476f75"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/engines.json",
+      "bytes": 2144,
+      "sha256": "034e02d866a5b5849ce093ed1b71748c3237b1c9ba93660aef1a70e7891bc6ac"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/installation-samsung-r71-20261007.json",
+      "bytes": 1033,
+      "sha256": "4ee904233432e73fbd2f03e352216815a1f93fc83d68de6963e084aeff7e837c"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/java-dex-build.json",
+      "bytes": 73617,
+      "sha256": "fcd1ec990a7f8ed5f0154561f03c672d4eb185748b4ca91ceca4a591ca62f505"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/local-tests.json",
+      "bytes": 57291,
+      "sha256": "7cddf41aa16cf1844e4bef15d6f59a61e4823ee4d95b5b2cf00f507741d1cb81"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/manifest-patch.json",
+      "bytes": 602,
+      "sha256": "66873c44e79b626a38abc63409260ed7c7201a6f3452e56d61d38a7959bd52e5"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/native-build-r71.json",
+      "bytes": 3214,
+      "sha256": "c6c5edd83cce8709b84fbc245e0769d0c5d2f3f2349f73d462fbdff525376445"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/native-recovery-source-diff.json",
+      "bytes": 1243,
+      "sha256": "4f16ce280003f0b4b8b886405cba332aa22a6967b5b7ab1bb90b33ee2bff4018"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/native-tests-prebuild.json",
+      "bytes": 3151,
+      "sha256": "80f0c170d09a6796868a15892273086035ae36acec1b161048ece27379cda2c2"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/package.json",
+      "bytes": 12708,
+      "sha256": "970cc81c3050c991c369035c42a90116ddaa777f043b0f93552b0d4a0d1eded2"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/recovery-harness-portability.json",
+      "bytes": 4001,
+      "sha256": "2f20006751d9473304058d73ab4031672fb8339b0b0268f8ff472268c40a3495"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/recovery-interop.json",
+      "bytes": 33582,
+      "sha256": "22534c0c1f21641cab719c93eea7476e9fd9ddb6a94b76e7f05ea141814480c0"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/server-engine-registry-additions.json",
+      "bytes": 627,
+      "sha256": "24385de0a3d3c492a5b9543512b3d535a3fdf7ed8192f2be37549fe80ae682a4"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/server-source-origin.json",
+      "bytes": 17494,
+      "sha256": "9f35272acc002eccbeb563c1567f120a5e40865e19f4f14da3659c4910f0984f"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/ui-before-recovery-source-hash.json",
+      "bytes": 171,
+      "sha256": "9f960ad6fb51dcee38693ab8f1d4a9b3ddb566d5402b0545e0ae3e323571be35"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/evidence/ui-tests-before-recovery.json",
+      "bytes": 50512,
+      "sha256": "8e4e2c83a46af3e8cb80918a99e1bb7e824b629514d811db7e4950259667aff7"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/client/src/java/org/emulationstation/frontend/auth/LoginActivity.java",
+      "bytes": 25538,
+      "sha256": "71072d9f6a0621a9eeb04d9784dd27eb2f05e78c5da18d95254e0be13c86d57c"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/client/src/java/org/emulationstation/frontend/auth/StationTaskNavigation.java",
+      "bytes": 4804,
+      "sha256": "0fd4745792931f0b1b80d57b4e6d4d37b70aed477cfb732de59553ad01077703"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/client/src/java/org/emulationstation/frontend/auth/StationTaskPolicy.java",
+      "bytes": 2839,
+      "sha256": "2771621dadf0a384be2140e182a36b1b781d6e073ad3d4f0e6fc097c94dad551"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationActionButton.java",
+      "bytes": 9726,
+      "sha256": "70cc50af4b03be49c2dce056ef3bcdb6de02ce694f285d46c13e12b0ac055c4e"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationGameSession.java",
+      "bytes": 8253,
+      "sha256": "930efc9b5c3592be7cde0701df68f5a7008772b716c099d14123a321c7db41d7"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationLaunchPolicy.java",
+      "bytes": 804,
+      "sha256": "e58cc823ce19930650b4ba3a7028b975ea622ce2082f3e3ca657ef9dbd3fff13"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationNetplayActivity.java",
+      "bytes": 7674,
+      "sha256": "e6d93b5e1c159432f538f277b0d28813b91764ac5ce1145f14dbc872309dedbb"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationOnlineClient.java",
+      "bytes": 6497,
+      "sha256": "1b7fa9b3b7510c92dc932bcf11d1a63beaf91b7a44f8f9419028bbec9b333ff4"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationOnlineGame.java",
+      "bytes": 7698,
+      "sha256": "fc87237f8cfea7466f68167beb821de636ee3fd32c2bea16ae92d0370cbf4658"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationPlayerSheet.java",
+      "bytes": 6597,
+      "sha256": "08bb4356c0bef34803cadc44188b9492f39620dcad238621b0d96695ff85996b"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationPresence.java",
+      "bytes": 7500,
+      "sha256": "b1392fd9c9b40f1defbeb1b94bcc20db141ac9a6a5d6cd6fa106f202087b963d"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryTunnel.java",
+      "bytes": 14608,
+      "sha256": "6c24b233f0d319e01a4ff1294f23a9a705434f4f1c92ba6b7f8fa3ed5bd60304"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryWire.java",
+      "bytes": 3159,
+      "sha256": "cb7e83ee84c1297c91c23bc24c47f7eb34204ce8ffda933f71d4b27bbc418a20"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java",
+      "bytes": 17002,
+      "sha256": "fd3c65fbdf928125e77ec3211bddc4ffedf9d3feb085a0ad743b1ec9d2a4a50e"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationRetroLaunch.java",
+      "bytes": 8148,
+      "sha256": "f516caced6b744e74aa673661fe993f0c5cf74dd5c92ab593c167f1266ba196c"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationRoomRoster.java",
+      "bytes": 5933,
+      "sha256": "d004f7210966e32abdaa4865d17fddf35b5128234f2c300d5cfd8c6145778d1b"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationRoomStartState.java",
+      "bytes": 1775,
+      "sha256": "2e69c893e3ddb012acfc53d59f2cb92887ffec938cc2bae4c2935b92e9192c29"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java",
+      "bytes": 75218,
+      "sha256": "9467134cff1faec8a168de5a6a1254e97a2f7b9cb943ceee10f0e22146e5a5b0"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/java/netplay-src/org/emulationstation/frontend/netplay/StationSocialIcon.java",
+      "bytes": 5081,
+      "sha256": "19ff1286d4f021df60b29075c9db848d68183f76312430b2ef5b1a8b97b2c44c"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/manifest/frontend-task-policy.json",
+      "bytes": 528,
+      "sha256": "7ea43736327b25a0714efe5d55590a9ca1a1557c531a46a97194ffce8cb4daba"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-carousel/collection_video_policy.h",
+      "bytes": 2721,
+      "sha256": "10daa6b42d46d7bc1f099e705d9fa258af8c1a43a0ef6a0a7d4071cacbfe64f9"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-carousel/native_system_video720.h",
+      "bytes": 15834,
+      "sha256": "901d01341f3c316e02ca5b07cc278f5bc0864cff9ba39da7ce52030888261cc6"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-carousel/video720_posters.h",
+      "bytes": 7940,
+      "sha256": "1b2474f0b6793368d28c7826ac1aa83537760ac85b7445f4d142cc861a42529f"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-recovery/ORIGIN.json",
+      "bytes": 1732,
+      "sha256": "2f8a9baa651c9fa1c31988aba2fd0aa8e0c262d2e10bea1e8b8016930ff531b7"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-recovery/engine-patches/retroarch-station-all.patch",
+      "bytes": 6887,
+      "sha256": "45a5da0970b3a150b2652b3a7ee38ce798617d5778e94f26a9dd81c3826864ec"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-recovery/engine-patches/retroarch-station-auto-password.patch",
+      "bytes": 4984,
+      "sha256": "62254789975d892b2717e65b5f0232656befd347ed43232987c6ca2f2beabff2"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-recovery/engine-patches/retroarch-station-recovery.patch",
+      "bytes": 7191,
+      "sha256": "dfa54bc1c8524b036ffaefa49f89278c77a815b138bc2f4b69d153e60270c0a2"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-recovery/native/RECOVERY-SOURCE-MANIFEST.json",
+      "bytes": 762,
+      "sha256": "25dbe0e0e68d4348e23bfe034ff82284f95b50743973b464ea6c0a9694383eac"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-recovery/native/base-files.json",
+      "bytes": 300,
+      "sha256": "7cc9069962704e78cf627885e688c140662d807986f9c0c94ba0aafb7560631c"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-recovery/native/station_recovery.h",
+      "bytes": 3241,
+      "sha256": "40cb8f2a75cd31cc530b41e853cce31524dd32ddc82a95313a328f358383108a"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-recovery/recipes/build_native_runtime.py",
+      "bytes": 5011,
+      "sha256": "7d594d76e21cabda3375eb0f9f1295e903765d1a3d2ee798afb4e95d931e964a"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-recovery/recipes/patch_native.py",
+      "bytes": 5114,
+      "sha256": "7117bfcf668c40b65e3c904f15e2ca95e32ffb60166c7b4f27da49d52245434a"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-recovery/tests/native_recovery_test.c",
+      "bytes": 1526,
+      "sha256": "b15734a014e6cbade770b71b8195126320722804d1bfcb32d81b51982dc6c4e4"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/native-recovery/tests/recovery_stall_policy.c",
+      "bytes": 1770,
+      "sha256": "d789c830fef694e9a7cd663c32b2532fd44a1d4d48f1d76b476d9c6b52593489"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/recipes/build_candidate.py",
+      "bytes": 13269,
+      "sha256": "641bcce8754ad9e79a44e57a23cf8f1ad27a894b209f67949be9f284565b27f0"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/recipes/build_carousel_r71.py",
+      "bytes": 10408,
+      "sha256": "0e6f280b9b3ff0e84ef9344bce6ee95303273f7e61396729b96fa7344ef5fe0c"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/recipes/build_native_r71.py",
+      "bytes": 8192,
+      "sha256": "ea0bcf1d2f7d81712fceb96c65ec8dcc5c0d27acd613ed91f86f76b6d2004799"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/recipes/install_verified.py",
+      "bytes": 4067,
+      "sha256": "a439fd0174207c7a9f73c1b43666d741ab292463a613d0df43c8256858a6de39"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/recipes/navigation_source_guards.py",
+      "bytes": 4481,
+      "sha256": "fbec160f94a375850ce51f0e4bd19c4404c234967ae0d0a538ae20de4b30e8ca"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/recipes/package_r71.py",
+      "bytes": 47313,
+      "sha256": "b1b1dfeff0cb1787078481126e8232fa45619d59c9a3fb05ab372ce5c3f76956"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/recipes/patch_navigation_manifest.py",
+      "bytes": 4671,
+      "sha256": "86be68b02bf053bbb2ca0ee6c7c057f557b8e34190c2c1b1ac54e40ba17de3a0"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/recipes/run_tests.py",
+      "bytes": 30950,
+      "sha256": "a2d590216b90e841ba69ef0aca112334905b64dc698256b042f0a8cd1feb7fcd"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/tests/StationGameSessionLifecycleTest.java",
+      "bytes": 5480,
+      "sha256": "25a6d84f89283f4bd12cc3ee54e3f8f46cf2d7d946d1f15ef00b2210039a636b"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/tests/StationRecoveryStateWireTest.java",
+      "bytes": 7595,
+      "sha256": "1fcffc9122e79bddc893a5dd132e06298c1f23283b382c4e15b10d81996e618e"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/tests/StationRecoveryVectorsHostTest.java",
+      "bytes": 698,
+      "sha256": "a5a4c79cf3f79ca82ee0431fecdbfdeb404534568f9cbb172a65cc4d230cdecd"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/tests/StationRoomRosterTest.java",
+      "bytes": 13373,
+      "sha256": "d748a3cb40f966a89690a10820e0e53906cb89fc5532d5486d3c6dc76eb15b78"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/tests/StationRoomStartProtocolTest.java",
+      "bytes": 4768,
+      "sha256": "45cb4f40df706c11ec1f019daa69956db3dfee05039c93534d74460054c87325"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/tests/StationTaskNavigationTest.java",
+      "bytes": 3250,
+      "sha256": "c8698770726ec714b64535b17c3b1c9b25c3676ba790b8ecacd8c78e22495b49"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/tests/collection_all_video.cpp",
+      "bytes": 2628,
+      "sha256": "28852d5399ab7d25cf66366493c9b4b5c210d419e528a10fcac66a355d9fc0ed"
+    },
+    {
+      "path": "versions/station-online-layout-r71-20261007/tests/run_recovery_transport.py",
+      "bytes": 15077,
+      "sha256": "8e74a0f4b6863dbc2eb6918688c34ee6594a2573e5cb87ae1bf3d354fcf0b2e4"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/.gitignore",
+      "bytes": 39,
+      "sha256": "6cc4029ea717636f81ed582c91c83f0d4e4707f8d8e2ed36dfad630b77234d9d"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/JAVA-SOURCE-MANIFEST.json",
+      "bytes": 60449,
+      "sha256": "12a260c9900f9bcdfb964743e820747a9cd39b0ae71e609e1de6a2e8428024bb"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/NATIVE-SOURCE-NOTICE.md",
+      "bytes": 865,
+      "sha256": "6480c89c8a75096bb4021d1fd243f90fc8bffe271417cfb10b0fca49af21b056"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/README.md",
+      "bytes": 7063,
+      "sha256": "940c326abd7225c90cbc805e35935a2013089edf3e706c246fcc1d52c16328a3"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/STATUS.json",
+      "bytes": 459,
+      "sha256": "f208f620514829eb7306bb64a4a9fe8f850a553077f0fb2800ac3692265b0021"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/engine-patches/retroarch-station-all.patch",
+      "bytes": 6887,
+      "sha256": "45a5da0970b3a150b2652b3a7ee38ce798617d5778e94f26a9dd81c3826864ec"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/engine-patches/retroarch-station-auto-password.patch",
+      "bytes": 4984,
+      "sha256": "62254789975d892b2717e65b5f0232656befd347ed43232987c6ca2f2beabff2"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/engine-patches/retroarch-station-recovery.patch",
+      "bytes": 7183,
+      "sha256": "34469bb6fb9f6ce4272983e01c36fd1f0f1673c32f367c24eb0c5a3723f4a66a"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/evidence/engines.json",
+      "bytes": 2144,
+      "sha256": "5d4842eb6c18d2f5b5ea115afe9ba9d6045c2e6927a78a8c67c11cc977d55579"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/evidence/interop.json",
+      "bytes": 1052,
+      "sha256": "c19c5023363e28262d99a6641dd602d432327bc013d290636b2895abb126ab22"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/evidence/java-build.json",
+      "bytes": 30911,
+      "sha256": "b86c973afb27ee248c065cd99dcfb34fca0a65c02094e7abf5761cc9058ce42b"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/evidence/native-build.json",
+      "bytes": 1683,
+      "sha256": "a9d3531880d11b790a148d27c239a2f14eba218c9494645ada14d5a0a332381e"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/evidence/server-engine-registry-additions.json",
+      "bytes": 627,
+      "sha256": "f2d2592e26a0f7516b349d20938cb000b70bfde784e5ed7c8ce8432497951b12"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/native/RECOVERY-SOURCE-MANIFEST.json",
+      "bytes": 751,
+      "sha256": "6a4c528ab4e270fffb29a8ff78f1735bc5c9b5d9ab010e1f21c08700161b3f55"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/native/base-files.json",
+      "bytes": 300,
+      "sha256": "7cc9069962704e78cf627885e688c140662d807986f9c0c94ba0aafb7560631c"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/native/station_recovery.h",
+      "bytes": 3241,
+      "sha256": "40cb8f2a75cd31cc530b41e853cce31524dd32ddc82a95313a328f358383108a"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationGameSession.java",
+      "bytes": 7446,
+      "sha256": "4ab2aab97fc3b15127213edb4242bcbf349b7b5879cba354e2c5abfb14f918f7"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationLaunchPolicy.java",
+      "bytes": 804,
+      "sha256": "e58cc823ce19930650b4ba3a7028b975ea622ce2082f3e3ca657ef9dbd3fff13"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationOnlineClient.java",
+      "bytes": 6497,
+      "sha256": "1b7fa9b3b7510c92dc932bcf11d1a63beaf91b7a44f8f9419028bbec9b333ff4"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationOnlineGame.java",
+      "bytes": 7698,
+      "sha256": "fc87237f8cfea7466f68167beb821de636ee3fd32c2bea16ae92d0370cbf4658"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryTunnel.java",
+      "bytes": 14608,
+      "sha256": "6c24b233f0d319e01a4ff1294f23a9a705434f4f1c92ba6b7f8fa3ed5bd60304"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryWire.java",
+      "bytes": 3159,
+      "sha256": "cb7e83ee84c1297c91c23bc24c47f7eb34204ce8ffda933f71d4b27bbc418a20"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java",
+      "bytes": 17002,
+      "sha256": "fd3c65fbdf928125e77ec3211bddc4ffedf9d3feb085a0ad743b1ec9d2a4a50e"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationRetroLaunch.java",
+      "bytes": 8148,
+      "sha256": "f516caced6b744e74aa673661fe993f0c5cf74dd5c92ab593c167f1266ba196c"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java",
+      "bytes": 70049,
+      "sha256": "0f36f5a3109eaac45055e7a472801fd8fea2d147b85219bd7003980278a35a85"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/recipes/build_java.py",
+      "bytes": 4191,
+      "sha256": "3553077e1a0775f9790fbc3caac2b1def462811e628461b178908b01e839a695"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/recipes/build_native_runtime.py",
+      "bytes": 5011,
+      "sha256": "7d594d76e21cabda3375eb0f9f1295e903765d1a3d2ee798afb4e95d931e964a"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/recipes/generate_engines.py",
+      "bytes": 2235,
+      "sha256": "c9288d51f010c0e91fdeee7680e63358307d54dee6b12eafa43d1df74b4e9bc4"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/recipes/package_recovery.py",
+      "bytes": 8438,
+      "sha256": "dfa427761f9e383d24ecc794a86dddcaa73018969ee3bfb2ae423ba5e06490da"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/recipes/patch_native.py",
+      "bytes": 5106,
+      "sha256": "343c6f0513c3bbefc171da1a91142de7a902c0bd195f130ae1d14ec27602bd81"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/recipes/run_transport_tests.py",
+      "bytes": 3366,
+      "sha256": "6ae5bac17d92a75e5e96d9cb144d6972afcb1d5970c13c50d556817a44513cfa"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/recipes/source_composition.py",
+      "bytes": 1112,
+      "sha256": "af7294fd49befea2332ce2a2afc63fb2a54f2a306f6bf43d00465c58aaa97fe3"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/tests/StationRecoveryProofTest.java",
+      "bytes": 1042,
+      "sha256": "72635eeaa487016c7d6d09c4a377bbe8699c6705de89932aacb75c38f565e926"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/tests/StationRecoveryTransportTest.java",
+      "bytes": 12958,
+      "sha256": "a860a4d2e5a62a85a05a855537892cafc56f23a02fdb3b3a274ad07d572d01d8"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/tests/StationRecoveryVectorsTest.java",
+      "bytes": 2418,
+      "sha256": "c8ce6b8173cb5ea3a02843792ba35cb840745c2290b8256803e04e79c93bba84"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/tests/contract-vectors.json",
+      "bytes": 6444,
+      "sha256": "b7efac34a5b04f78560c1749270a56fad640d8de5924c5f4e4abf62662dc0779"
+    },
+    {
+      "path": "versions/station-online-recovery-r67-20261007/tests/native_recovery_test.c",
+      "bytes": 1526,
+      "sha256": "b15734a014e6cbade770b71b8195126320722804d1bfcb32d81b51982dc6c4e4"
+    }
+  ]
+}

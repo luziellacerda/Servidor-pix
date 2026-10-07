@@ -1,0 +1,18 @@
+{
+  "baseSHA256": "1ce56b447f6f7afa1b7fbeab7a31bc0bc5d14bf823a6b14eab58be6b37624d6a",
+  "resultSHA256": "cc00ab597882646285b963cf28c7bbc25088092268450d610e35d83a7e6444c4",
+  "bytes": 61604,
+  "component": "org.emulationstation.frontend.ESActivity",
+  "attribute": "android:launchMode",
+  "before": "singleInstance",
+  "after": "singleTask",
+  "beforeValue": 3,
+  "afterValue": 2,
+  "dataOffset": 34584,
+  "changedByteOffsets": [
+    34584
+  ],
+  "semanticChanges": 1,
+  "allOtherManifestBytesPreserved": true,
+  "patchRecipeSHA256": "86be68b02bf053bbb2ca0ee6c7c057f557b8e34190c2c1b1ac54e40ba17de3a0"
+}

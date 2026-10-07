@@ -1,0 +1,13 @@
+{
+  "observedUTC": "2026-10-07T21:32:12.081562+00:00",
+  "package": "org.turboramastation.frontend",
+  "activity": "org.emulationstation.frontend.ESActivity",
+  "state": "RESUMED",
+  "catalogOpened": true,
+  "roomBackVerified": false,
+  "twoDeviceGameplayVerified": false,
+  "securityHandshakeVerified": false,
+  "userClarification": "Maintainer attributed the reported Back symptom to the old installation/state that was open, and said it stopped. No R72 modification made.",
+  "appCrashDemonstrated": false,
+  "method": "Read-only ActivityManager plus app-filtered logs; no inputs or device setting change"
+}

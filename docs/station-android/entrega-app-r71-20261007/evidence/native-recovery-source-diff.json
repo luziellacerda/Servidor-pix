@@ -1,0 +1,26 @@
+{
+  "originalBuild": "E:\\R71n2\\RetroArch-69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576",
+  "candidateBuild": "E:\\R71fixed\\RetroArch-69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576",
+  "changedFiles": [
+    "network/netplay/netplay_frontend.c"
+  ],
+  "exactSinglePredicateReplacement": true,
+  "sources": {
+    "frontend/drivers/platform_unix.c": {
+      "originalSHA256": "8a9b6c48585a15e0db8fc8c63939338dddcc52493f65240b6a1c5051602f9f32",
+      "candidateSHA256": "8a9b6c48585a15e0db8fc8c63939338dddcc52493f65240b6a1c5051602f9f32"
+    },
+    "frontend/drivers/station_recovery.h": {
+      "originalSHA256": "40cb8f2a75cd31cc530b41e853cce31524dd32ddc82a95313a328f358383108a",
+      "candidateSHA256": "40cb8f2a75cd31cc530b41e853cce31524dd32ddc82a95313a328f358383108a"
+    },
+    "network/netplay/netplay_frontend.c": {
+      "originalSHA256": "29f6d1c3c5bc0a67ce0c2227a28ef4dc9f126f50a2a83db5811e0d89701d0e66",
+      "candidateSHA256": "e221e40605aecce5f168fd68ab9f06fda1eb8297a97ba6c1aff3a6e660fa8d22"
+    },
+    "runloop.c": {
+      "originalSHA256": "90690f1b50710fe23cf58141542856ce252674429f0b9d792553b2547d458945",
+      "candidateSHA256": "90690f1b50710fe23cf58141542856ce252674429f0b9d792553b2547d458945"
+    }
+  }
+}

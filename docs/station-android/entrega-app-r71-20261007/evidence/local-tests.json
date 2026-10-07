@@ -1,0 +1,746 @@
+{
+  "utc": "2026-10-07T21:18:49.084892+00:00",
+  "startedAt": "2026-10-07T21:18:41.058387+00:00",
+  "success": true,
+  "scope": "Host JVM: synthetic authority, roster, v1/v2 start policy, recovery wire/rings, public RSA vectors and legacy loopback TCP; no production requests or Android execution",
+  "productionSourceCount": 198,
+  "testSourceCount": 19,
+  "sourceCount": 217,
+  "testClassCount": 16,
+  "testClasses": [
+    "org.emulationstation.frontend.netplay.StationCompactLobbyTest",
+    "org.emulationstation.frontend.netplay.StationHostConnectorTest",
+    "org.emulationstation.frontend.netplay.StationJoinPlayerTest",
+    "org.emulationstation.frontend.netplay.StationLaunchPolicyTest",
+    "org.emulationstation.frontend.netplay.StationRoomCreationTest",
+    "org.emulationstation.frontend.netplay.StationShortInvitationTest",
+    "org.emulationstation.frontend.netplay.StationSocialTest",
+    "org.emulationstation.frontend.netplay.StationRelayDiagnosticsTest",
+    "org.emulationstation.frontend.station.StationOnlineApiTest",
+    "org.emulationstation.frontend.station.StationSecurityNegotiationTest",
+    "org.emulationstation.frontend.netplay.StationTaskNavigationTest",
+    "org.emulationstation.frontend.netplay.StationGameSessionLifecycleTest",
+    "org.emulationstation.frontend.netplay.StationRoomRosterTest",
+    "org.emulationstation.frontend.netplay.StationRoomStartProtocolTest",
+    "org.emulationstation.frontend.netplay.StationRecoveryStateWireTest",
+    "org.emulationstation.frontend.netplay.StationRecoveryVectorsHostTest"
+  ],
+  "baselineCountedChecks": 449,
+  "relayDiagnosticsPassed": true,
+  "rosterTestIncluded": true,
+  "rosterChecks": 73,
+  "rosterPassed": true,
+  "countedChecks": 1152,
+  "additionalTestResults": [
+    {
+      "class": "org.emulationstation.frontend.netplay.StationTaskNavigationTest",
+      "checks": 148,
+      "passed": true
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationGameSessionLifecycleTest",
+      "checks": 174,
+      "passed": true
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationRoomRosterTest",
+      "checks": 73,
+      "passed": true
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationRoomStartProtocolTest",
+      "checks": 107,
+      "passed": true
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationRecoveryStateWireTest",
+      "checks": 169,
+      "passed": true
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationRecoveryVectorsHostTest",
+      "checks": 32,
+      "passed": true
+    }
+  ],
+  "recoveryPublicVectorsPassed": true,
+  "recoveryFixtureSHA256": "b7efac34a5b04f78560c1749270a56fad640d8de5924c5f4e4abf62662dc0779",
+  "recoveryTestIdentities": {
+    "JAVA-SOURCE-MANIFEST.json": "12a260c9900f9bcdfb964743e820747a9cd39b0ae71e609e1de6a2e8428024bb",
+    "tests/StationRecoveryVectorsTest.java": "c8ce6b8173cb5ea3a02843792ba35cb840745c2290b8256803e04e79c93bba84",
+    "tests/StationRecoveryProofTest.java": "72635eeaa487016c7d6d09c4a377bbe8699c6705de89932aacb75c38f565e926",
+    "tests/contract-vectors.json": "b7efac34a5b04f78560c1749270a56fad640d8de5924c5f4e4abf62662dc0779"
+  },
+  "recoverySourceCommit": "4d30401a80658dd56666ef10f48d9556b3fdd9e9",
+  "recoveryTransportInteropExecuted": false,
+  "testResults": [
+    {
+      "class": "org.emulationstation.frontend.netplay.StationCompactLobbyTest",
+      "expectedChecks": 107,
+      "passed": true,
+      "output": "PASS 107 executable checks: compact player model, real room codes, stale presence, invite policy and snapshot ordering"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationHostConnectorTest",
+      "expectedChecks": 10,
+      "passed": true,
+      "output": "{\"passed\":true,\"checks\":10,\"scope\":\"Real loopback TCP: late listener without JNI, retained stream, false native hint, deadline and cancellation\"}"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationJoinPlayerTest",
+      "expectedChecks": 20,
+      "passed": true,
+      "output": "PASS 20 checks: guest entry, two solo rooms, shared membership and unavailable destinations"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationLaunchPolicyTest",
+      "expectedChecks": 15,
+      "passed": true,
+      "output": "PASS 15: host/guest launch eligibility and generation identity"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationRoomCreationTest",
+      "expectedChecks": 14,
+      "passed": true,
+      "output": "PASS 14 room creation acknowledgment checks"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationShortInvitationTest",
+      "expectedChecks": 23,
+      "passed": true,
+      "output": "PASS 23 checks: short invitations, manual input, authenticated resolution and TS1 compatibility"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationSocialTest",
+      "expectedChecks": 113,
+      "passed": true,
+      "output": "PASS 113 social client checks"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationRelayDiagnosticsTest",
+      "expectedChecks": null,
+      "passed": true,
+      "output": "PASS: relay close diagnostics, pong observation, unchanged timeout, idempotence, credential privacy; no production traffic"
+    },
+    {
+      "class": "org.emulationstation.frontend.station.StationOnlineApiTest",
+      "expectedChecks": 27,
+      "passed": true,
+      "output": "PASS 27 online transport checks: signatures, owner, request ID, limits and disabled service"
+    },
+    {
+      "class": "org.emulationstation.frontend.station.StationSecurityNegotiationTest",
+      "expectedChecks": 120,
+      "passed": true,
+      "output": "PASS 120 security negotiation checks; synthetic authority, no disk writes or production traffic"
+    }
+  ],
+  "integrationGuards": [
+    {
+      "check": "core-source:StationOnlineClient",
+      "passed": true,
+      "baselineSHA256": "1b7fa9b3b7510c92dc932bcf11d1a63beaf91b7a44f8f9419028bbec9b333ff4",
+      "actualSHA256": "1b7fa9b3b7510c92dc932bcf11d1a63beaf91b7a44f8f9419028bbec9b333ff4",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "core-source:StationOnlineGame",
+      "passed": true,
+      "baselineSHA256": "fc87237f8cfea7466f68167beb821de636ee3fd32c2bea16ae92d0370cbf4658",
+      "actualSHA256": "fc87237f8cfea7466f68167beb821de636ee3fd32c2bea16ae92d0370cbf4658",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "core-source:StationLaunchPolicy",
+      "passed": true,
+      "baselineSHA256": "e58cc823ce19930650b4ba3a7028b975ea622ce2082f3e3ca657ef9dbd3fff13",
+      "actualSHA256": "e58cc823ce19930650b4ba3a7028b975ea622ce2082f3e3ca657ef9dbd3fff13",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "core-source:StationRoomCreation",
+      "passed": true,
+      "baselineSHA256": "104b87d5717839fd56c93327d7f108b44406e0e86768ffed5922f0877e1b4578",
+      "actualSHA256": "104b87d5717839fd56c93327d7f108b44406e0e86768ffed5922f0877e1b4578",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "core-source:StationRoomState",
+      "passed": true,
+      "baselineSHA256": "3569a17e3b3134b0388d5a3231dad9f269461fa5b35566fd5195be21018ac5f9",
+      "actualSHA256": "3569a17e3b3134b0388d5a3231dad9f269461fa5b35566fd5195be21018ac5f9",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "core-source:StationSessionChannel",
+      "passed": true,
+      "baselineSHA256": "678037ceb5f34245c2a5a816727e0c3f81c10d9b6703fecb8a0041267b137ac8",
+      "actualSHA256": "678037ceb5f34245c2a5a816727e0c3f81c10d9b6703fecb8a0041267b137ac8",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "core-source:StationRetroLaunch",
+      "passed": true,
+      "baselineSHA256": "f516caced6b744e74aa673661fe993f0c5cf74dd5c92ab593c167f1266ba196c",
+      "actualSHA256": "f516caced6b744e74aa673661fe993f0c5cf74dd5c92ab593c167f1266ba196c",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "core-source:StationRetroActivity",
+      "passed": true,
+      "baselineSHA256": "fd3c65fbdf928125e77ec3211bddc4ffedf9d3feb085a0ad743b1ec9d2a4a50e",
+      "actualSHA256": "fd3c65fbdf928125e77ec3211bddc4ffedf9d3feb085a0ad743b1ec9d2a4a50e",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "core-source:StationGameSession",
+      "passed": true,
+      "baselineSHA256": "4ab2aab97fc3b15127213edb4242bcbf349b7b5879cba354e2c5abfb14f918f7",
+      "actualSHA256": "930efc9b5c3592be7cde0701df68f5a7008772b716c099d14123a321c7db41d7",
+      "prescribedNavigationChange": true
+    },
+    {
+      "check": "core-source:StationHostConnector",
+      "passed": true,
+      "baselineSHA256": "c909aea87a8e6c4631002a565a8e4b8b720ffcc1f964dcb8796c4bc155002032",
+      "actualSHA256": "c909aea87a8e6c4631002a565a8e4b8b720ffcc1f964dcb8796c4bc155002032",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "core-source:StationRelayTunnel",
+      "passed": true,
+      "baselineSHA256": "9845e639b93223188dd0b3b6f4389ce80c72f9397380e52a30f4b1f4ca9f2104",
+      "actualSHA256": "9845e639b93223188dd0b3b6f4389ce80c72f9397380e52a30f4b1f4ca9f2104",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "core-source:StationRelayTls",
+      "passed": true,
+      "baselineSHA256": "6e899eee7227bf5f53a4496eac0029726f3fd0c76024f24c6d3288a22e201341",
+      "actualSHA256": "6e899eee7227bf5f53a4496eac0029726f3fd0c76024f24c6d3288a22e201341",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "core-source:StationPresence",
+      "passed": true,
+      "baselineSHA256": "8596e75611ad81eb4b7c7af1cee6a37842b7d848075939bd720a8f411e944bc1",
+      "actualSHA256": "b1392fd9c9b40f1defbeb1b94bcc20db141ac9a6a5d6cd6fa106f202087b963d",
+      "prescribedNavigationChange": true
+    },
+    {
+      "check": "core-source:StationInvitationCode",
+      "passed": true,
+      "baselineSHA256": "611c98d7c8c6428dbed0d271e8ccdb9a0cf4f8e54c215ff17386dfa604b8aa0f",
+      "actualSHA256": "611c98d7c8c6428dbed0d271e8ccdb9a0cf4f8e54c215ff17386dfa604b8aa0f",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "core-source:StationRecoveryTunnel",
+      "passed": true,
+      "baselineSHA256": "6c24b233f0d319e01a4ff1294f23a9a705434f4f1c92ba6b7f8fa3ed5bd60304",
+      "actualSHA256": "6c24b233f0d319e01a4ff1294f23a9a705434f4f1c92ba6b7f8fa3ed5bd60304",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "core-source:StationRecoveryWire",
+      "passed": true,
+      "baselineSHA256": "cb7e83ee84c1297c91c23bc24c47f7eb34204ce8ffda933f71d4b27bbc418a20",
+      "actualSHA256": "cb7e83ee84c1297c91c23bc24c47f7eb34204ce8ffda933f71d4b27bbc418a20",
+      "prescribedNavigationChange": false
+    },
+    {
+      "check": "start-authority-and-readiness-preserved-with-selected-transport",
+      "passed": true
+    },
+    {
+      "check": "critical-method:onCreate",
+      "passed": true,
+      "baselineOverloads": 1,
+      "actualOverloads": 1,
+      "baselineTokenSHA256": "ac1c459187e2fddd7c65d862989c14aeca6701d81fb54da76b7d581950cea63d",
+      "actualTokenSHA256": "9eea1a1ea6d58a1f7e7232d1e89b69400bf9e70041997d134fb06cfd2a65ab30"
+    },
+    {
+      "check": "critical-method:onSaveInstanceState",
+      "passed": true,
+      "baselineOverloads": 1,
+      "actualOverloads": 1,
+      "baselineTokenSHA256": "2f8eb149a0d51e0c8263cecc7d8d0df2a72639c72c7dac602ddcd29ef3762a2a",
+      "actualTokenSHA256": "2f8eb149a0d51e0c8263cecc7d8d0df2a72639c72c7dac602ddcd29ef3762a2a"
+    },
+    {
+      "check": "critical-method:onStart",
+      "passed": true,
+      "baselineOverloads": 1,
+      "actualOverloads": 1,
+      "baselineTokenSHA256": "716c89194342dabd6fd522d80a2f145985b93628110f370b0159638a7aa4d0e0",
+      "actualTokenSHA256": "3bd000086875b58eb15fd0e50fda5550c417548512329d02f48558ced7f4531a"
+    },
+    {
+      "check": "critical-method:onStop",
+      "passed": true,
+      "baselineOverloads": 1,
+      "actualOverloads": 1,
+      "baselineTokenSHA256": "5a8a40781aae7508d0416c18b9d10f7f9857e62163ba206b7aad065b70767fe9",
+      "actualTokenSHA256": "5a8a40781aae7508d0416c18b9d10f7f9857e62163ba206b7aad065b70767fe9"
+    },
+    {
+      "check": "critical-method:onDestroy",
+      "passed": true,
+      "baselineOverloads": 1,
+      "actualOverloads": 1,
+      "baselineTokenSHA256": "5812c55d579a539a18cc7bffff221ae623dbfd28f2368bf3c05120e39c9acd65",
+      "actualTokenSHA256": "5812c55d579a539a18cc7bffff221ae623dbfd28f2368bf3c05120e39c9acd65"
+    },
+    {
+      "check": "critical-method:cancelAll",
+      "passed": true,
+      "baselineOverloads": 1,
+      "actualOverloads": 1,
+      "baselineTokenSHA256": "efb21846c547f7829b0217a55bb99359b0f49f9e4e8f9c5252e265198c5bede8",
+      "actualTokenSHA256": "efb21846c547f7829b0217a55bb99359b0f49f9e4e8f9c5252e265198c5bede8"
+    },
+    {
+      "check": "critical-method:launch",
+      "passed": true,
+      "baselineOverloads": 1,
+      "actualOverloads": 1,
+      "baselineTokenSHA256": "540375f2b3e56242440ab724631c1ec279aba6531f8bf8e82f30b62b25c9a347",
+      "actualTokenSHA256": "540375f2b3e56242440ab724631c1ec279aba6531f8bf8e82f30b62b25c9a347"
+    },
+    {
+      "check": "critical-method:launchFailure",
+      "passed": true,
+      "baselineOverloads": 1,
+      "actualOverloads": 1,
+      "baselineTokenSHA256": "f613d10001bffec30214beacad89062e5ad87b879334d870cfeb9a76a1866567",
+      "actualTokenSHA256": "f613d10001bffec30214beacad89062e5ad87b879334d870cfeb9a76a1866567"
+    },
+    {
+      "check": "critical-method:exitRooms",
+      "passed": true,
+      "baselineOverloads": 1,
+      "actualOverloads": 1,
+      "baselineTokenSHA256": "c3b67fb08e45ec227657f4f7dbd1807173d482d440683bdcb57602536b62e6e9",
+      "actualTokenSHA256": "c3b67fb08e45ec227657f4f7dbd1807173d482d440683bdcb57602536b62e6e9"
+    },
+    {
+      "check": "critical-method:command",
+      "passed": true,
+      "baselineOverloads": 1,
+      "actualOverloads": 1,
+      "baselineTokenSHA256": "1243440c7029b6b783be002da311b1325483d531c5a2a8426270cb5ea723b637",
+      "actualTokenSHA256": "1243440c7029b6b783be002da311b1325483d531c5a2a8426270cb5ea723b637"
+    },
+    {
+      "check": "critical-method:joinConfirmed",
+      "passed": true,
+      "baselineOverloads": 1,
+      "actualOverloads": 1,
+      "baselineTokenSHA256": "01bcd30544211a098c23c3a246efe375fe9511364b94c0bc14094614f767cdfa",
+      "actualTokenSHA256": "01bcd30544211a098c23c3a246efe375fe9511364b94c0bc14094614f767cdfa"
+    },
+    {
+      "check": "critical-method:createRoom",
+      "passed": true,
+      "baselineOverloads": 1,
+      "actualOverloads": 1,
+      "baselineTokenSHA256": "e18dd9161e393fdaf021ba577ce959777dee28e27f4e8b0d8aa049c0b2ce745c",
+      "actualTokenSHA256": "e18dd9161e393fdaf021ba577ce959777dee28e27f4e8b0d8aa049c0b2ce745c"
+    },
+    {
+      "check": "critical-method:action",
+      "passed": true,
+      "baselineOverloads": 2,
+      "actualOverloads": 2,
+      "baselineTokenSHA256": "80d7231950f934ac28428a1b0f30d7cd41f47fca45c15fa1702997924320d911",
+      "actualTokenSHA256": "80d7231950f934ac28428a1b0f30d7cd41f47fca45c15fa1702997924320d911"
+    },
+    {
+      "check": "critical-method:joinCode",
+      "passed": true,
+      "baselineOverloads": 1,
+      "actualOverloads": 1,
+      "baselineTokenSHA256": "b3c3f0eef99fe5de4819438707564d7d341b1e285a1c7a3387858ae22e5dac47",
+      "actualTokenSHA256": "b3c3f0eef99fe5de4819438707564d7d341b1e285a1c7a3387858ae22e5dac47"
+    },
+    {
+      "check": "prescribed-roster-integration:deliver",
+      "passed": true,
+      "baselineTokenSHA256": "3a17d3dea7813610331f5174be49855850576e06bce410574b6bb1057ff57ea0",
+      "expectedTokenSHA256": "c45f6ffb43ec7c6dbaac85293195a9c13891a469057d0d10089c9585590092bf",
+      "actualTokenSHA256": "c45f6ffb43ec7c6dbaac85293195a9c13891a469057d0d10089c9585590092bf"
+    },
+    {
+      "check": "prescribed-roster-integration:connect",
+      "passed": true,
+      "baselineTokenSHA256": "2d733dd3cbabed0de5f41c55b48e52d4c62021de84fb3612157df83092610952",
+      "expectedTokenSHA256": "69fdb170d046669cd996371906d2d27df9300551aa1162b481c2ae469760c8f5",
+      "actualTokenSHA256": "69fdb170d046669cd996371906d2d27df9300551aa1162b481c2ae469760c8f5"
+    },
+    {
+      "check": "all-other-activity-client-call-payloads",
+      "passed": true,
+      "baselineCount": 18,
+      "actualCount": 18,
+      "baselineTokenSHA256": "6af3fee7fcdcf5b169a7991dbe1ce0107563703b1a5eb6f49c00d11d3df61d20",
+      "actualTokenSHA256": "6af3fee7fcdcf5b169a7991dbe1ce0107563703b1a5eb6f49c00d11d3df61d20"
+    },
+    {
+      "check": "start-schema-transport-and-single-snapshot-room",
+      "passed": true,
+      "baselineTokenSHA256": "9a81b2961e0fc8fa48c7302125d460b1bbd0d9a68c850042e3bb52d023e5866b",
+      "actualTokenSHA256": "a4813792d04ed5b175d42df12fb3668ef7752b5ff0de31a6f7933506e9f54ca1"
+    },
+    {
+      "check": "start-rechecks-authority-readiness-and-confirmed-room-before-send",
+      "passed": true,
+      "expectedTokenSHA256": "60f247034d8acdce209f57706c0d06b7330f425f1ddf583469bb786fce3d25f0",
+      "actualTokenSHA256": "b90318e18b89a33f47ba9784c982935f2043232c47ee19fbb888fac48b98f7e1"
+    },
+    {
+      "check": "confirmation-bound-to-instance-room-and-game",
+      "passed": true
+    },
+    {
+      "check": "ready-command-preserved",
+      "passed": true
+    },
+    {
+      "check": "signed-membership-roster-binding",
+      "passed": true
+    },
+    {
+      "check": "participant-name-binding",
+      "passed": true
+    },
+    {
+      "check": "nickname-resolved-by-id",
+      "passed": true
+    },
+    {
+      "check": "snapshot-observation",
+      "passed": true
+    },
+    {
+      "check": "connection-resets-roster",
+      "passed": true
+    },
+    {
+      "check": "confirmation-roster-binding",
+      "passed": true
+    },
+    {
+      "check": "confirmation-captures-room-binding",
+      "passed": true
+    },
+    {
+      "check": "confirmation-dismisses-after-room-or-game-change",
+      "passed": true
+    },
+    {
+      "check": "confirmation-checks-selected-transport",
+      "passed": true
+    },
+    {
+      "check": "recovery-launch-policy-kept",
+      "passed": true
+    },
+    {
+      "check": "recovery-return-reports-lost-native-state",
+      "passed": true
+    },
+    {
+      "check": "recovery-ticket-carries-metadata-and-generation",
+      "passed": true
+    },
+    {
+      "check": "recovery-binder-retains-room-metadata",
+      "passed": true
+    },
+    {
+      "check": "manifest-exact-one-typed-attribute",
+      "passed": true
+    },
+    {
+      "check": "local-game-resume-whitelist-exists-in-R70-manifest",
+      "passed": true
+    },
+    {
+      "check": "navigation-never-removes-tasks-or-kills-processes",
+      "passed": true
+    },
+    {
+      "check": "incoming-peer-keeps-draft-recipient-binding",
+      "passed": true
+    },
+    {
+      "check": "incoming-item-keeps-room-and-refreshes-card",
+      "passed": true
+    }
+  ],
+  "integrationGuardCount": 56,
+  "compilation": {
+    "release": 17,
+    "classesInMemory": 328,
+    "memoryBytes": 1176089
+  },
+  "sourceBinding": {
+    "verifiedComposition": true,
+    "mode": "production-dex",
+    "sameSourcesAsProductionDex": true,
+    "overlayManifestSHA256": "414caf5e6334fb592e8ccf97064e4e0feb3c0b59b25035cabbf0b4c5d28d4c0c",
+    "productionSourceMapSHA256": "5c0beba7de8f58b3f5ea28f1c42482c3cdf6f137be311942df3ac9da21d479ce",
+    "sourceMapHashEncoding": "UTF-8 JSON sorted keys, separators comma/colon, no final newline",
+    "sourceHashes": {
+      "client/src/java/org/emulationstation/frontend/AssetInstaller.java": "d3539b66cbc434e819b59d1fa614f3eb47c8b7c3d8b51c92284bc6dacbe0ccee",
+      "client/src/java/org/emulationstation/frontend/DownloadService.java": "49b2994e4a213e861cfcef5ce0e353789f7f88928fec5f8b7e3b8ceb6f594c5f",
+      "client/src/java/org/emulationstation/frontend/auth/LoginActivity.java": "71072d9f6a0621a9eeb04d9784dd27eb2f05e78c5da18d95254e0be13c86d57c",
+      "client/src/java/org/emulationstation/frontend/auth/StationLogin.java": "4bcca2a762584312222f8dfd9b3b36c06a5ea552c2eca42ec25642940d8eb187",
+      "client/src/java/org/emulationstation/frontend/auth/StationTaskNavigation.java": "0fd4745792931f0b1b80d57b4e6d4d37b70aed477cfb732de59553ad01077703",
+      "client/src/java/org/emulationstation/frontend/auth/StationTaskPolicy.java": "2771621dadf0a384be2140e182a36b1b781d6e073ad3d4f0e6fc097c94dad551",
+      "client/src/java/org/emulationstation/frontend/station/ExistingCoverCache.java": "41796c41b27efc4e9a53d20b7ed606e37d7b4d168cb7638059cf368e8d533d28",
+      "client/src/java/org/emulationstation/frontend/station/StationAndroid.java": "2ccba05c9db2bc7df151d32f4f888abd2e2a2ee5a3566bb126a2ce93bb4dc5d0",
+      "client/src/java/org/emulationstation/frontend/station/StationApi.java": "a4e1eaa4a847fce42e9440fe730b76ba5c5be033542e300f52090d1f03f5d01e",
+      "client/src/java/org/emulationstation/frontend/station/StationArchive.java": "107669c6885725d99b430e7340c550466eed24a2842d43b51526c673a9d51b86",
+      "client/src/java/org/emulationstation/frontend/station/StationArtifact.java": "fe6eee3c4dfaaf66ac68eb0096b6ff0dc7792fa377dadf5898b5ea06e803bac9",
+      "client/src/java/org/emulationstation/frontend/station/StationBundledFiles.java": "74292e8dcfe8318d8697a2c81446ab23cd66ff2c815bf98632849b34cc39e67e",
+      "client/src/java/org/emulationstation/frontend/station/StationCatalog.java": "1a5f2eb81e48857d8ff8e4c3e67a6eede8358bf494c4351770205613fd56b572",
+      "client/src/java/org/emulationstation/frontend/station/StationCatalogPoll.java": "ca03baafce7af515d907eaa5b3e40ae7efff0efb3a50b4f1f571bcaba03e844b",
+      "client/src/java/org/emulationstation/frontend/station/StationCatalogStore.java": "9a8b823c9a5473e950225e8067365fa7f4a602c3821cbe1722980e61c3f2968e",
+      "client/src/java/org/emulationstation/frontend/station/StationConfig.java": "8c430cdf7b6cf2ee03f1ad3dca50ff18bc32a6b26ddfa1fe70397db81fe03cb1",
+      "client/src/java/org/emulationstation/frontend/station/StationCoordinator.java": "5375f83eedbb14c14b8ae547a1304b508448e3eb173d467f418a64cfacf75e24",
+      "client/src/java/org/emulationstation/frontend/station/StationCoverQueue.java": "1696e03d4afa310d5a80eaf728728ab0d71cc55879bf07ada82939f69c0fee48",
+      "client/src/java/org/emulationstation/frontend/station/StationCoverStore.java": "ca76e0de5589091cdef2ffad6e2b55005ff5e95bfc222a15b5dace1964014b26",
+      "client/src/java/org/emulationstation/frontend/station/StationCrypto.java": "b6d57060b23c953ec513098e49c337e8e648588623b4fd3359d4f91c99db9586",
+      "client/src/java/org/emulationstation/frontend/station/StationDiagnostics.java": "4ab4bc93edf1444094f0be982cbbe8218bbe1a18e46f3d2fab7c2f434a41934f",
+      "client/src/java/org/emulationstation/frontend/station/StationDownloads.java": "ba4bb235dc64c7319486fc44fc7496d6de00f6d9eeadae1d5a26c789c6871d4c",
+      "client/src/java/org/emulationstation/frontend/station/StationExistingArtifact.java": "d01b4806e70a637c093c1d55a10b4e7230b3bce729aa94638a94fe82530d931f",
+      "client/src/java/org/emulationstation/frontend/station/StationFiles.java": "40e594049e15ee4fbd2746087d4dc5de46766f4c043f009783eaadcf1e46fdcd",
+      "client/src/java/org/emulationstation/frontend/station/StationFrontend.java": "f9219d5ef4158cae16ce6d046e441b2b08e396826dc709a6adfd7ffa0d5d3af9",
+      "client/src/java/org/emulationstation/frontend/station/StationHttp.java": "b9f6dbf330663d55aa772c682dbdb13dd5a24736f99613b6a9d146484ebdb815",
+      "client/src/java/org/emulationstation/frontend/station/StationInstaller.java": "1b61d8764dfbfdaeab817cc2e81b7f160b773c30fb4771f19f34d963e84d2559",
+      "client/src/java/org/emulationstation/frontend/station/StationPlatforms.java": "c1466f6de9ff707d2cf22f136c06e286f2a9242aa6a68cd2f5badeeaa9bd7757",
+      "client/src/java/org/emulationstation/frontend/station/StationProtocol.java": "43bdf2b6f948eab1fd386741d88b2b57e65c37b63eb608eca9e156b128052c51",
+      "client/src/java/org/emulationstation/frontend/station/StationPublication.java": "d6972d792c18e377cfda161d156b3e3cb279f36a3f420e5b53a72cb86316799e",
+      "client/src/java/org/emulationstation/frontend/station/StationRequestProof.java": "40ba9734251969e4c1b3042e332f12e471b14f0bd5232e7444342428a3d9a5d9",
+      "client/src/java/org/emulationstation/frontend/station/StationRetryAfter.java": "7ea5fb4e3267249ac5b6cc1165ede174c152286f7aceb7632a35510fa5f1be57",
+      "client/src/java/org/emulationstation/frontend/station/StationSessions.java": "dbd8810253b74d9a5c00493115292a175d963a40a113e3113246eb3386178ec2",
+      "client/src/java/org/emulationstation/frontend/station/StationStorage.java": "3979ac629fe3778c609fd7bca20c3d72c9b89df920d1454a637ec24f575cfc9d",
+      "dependency-src/org/emulationstation/frontend/relay/log/ILoggerFactory.java": "ab0bb52f4cf43e3a5fa27d00213755872578e7faee3e0c64839b80261bb70670",
+      "dependency-src/org/emulationstation/frontend/relay/log/IMarkerFactory.java": "b117ebd1bb1cb96f9c10126a1d9333c080cb8ab712bad44ce8df777ea3e0ef91",
+      "dependency-src/org/emulationstation/frontend/relay/log/Logger.java": "3260945ee26d761430c30b356dc3426a7685bf42c6e0683b4c071f0ba733b17f",
+      "dependency-src/org/emulationstation/frontend/relay/log/LoggerFactory.java": "fa196dd87db2ffdb16dbad229c2206af6fa04fce4e3bfeb1f4ff10eeac276618",
+      "dependency-src/org/emulationstation/frontend/relay/log/LoggerFactoryFriend.java": "7c03986dbf69b843ffef03d75f52626168050f62e128033c846ad0fea1543ecd",
+      "dependency-src/org/emulationstation/frontend/relay/log/MDC.java": "1a21ecf457230b77e148a6262b84b599cf8069583c6a96b6522735c073003dd0",
+      "dependency-src/org/emulationstation/frontend/relay/log/Marker.java": "2f786e0c523a27f0f7cc170e4c7563cdd5a5fd213d38dd0aa112cee5858d225c",
+      "dependency-src/org/emulationstation/frontend/relay/log/MarkerFactory.java": "47cc0e35c53a2f2a92a4315a3b52af7957e782e587eaa71e460f918fe4a90a3f",
+      "dependency-src/org/emulationstation/frontend/relay/log/event/DefaultLoggingEvent.java": "95801e024aafc8ce0dc93672b839eba56c5cd30b42f92ec1d7af8cb3da1a2925",
+      "dependency-src/org/emulationstation/frontend/relay/log/event/EventConstants.java": "092f4b29eeb6d6d1ed43e67111dbe94f6dff9c42273cf879167312d9b067a331",
+      "dependency-src/org/emulationstation/frontend/relay/log/event/EventRecordingLogger.java": "e5af50242eaed3d021b9e11de196094b890547205973afba31ec35e121d24d14",
+      "dependency-src/org/emulationstation/frontend/relay/log/event/KeyValuePair.java": "9e49c4990f2d926e0b309df9d34f5cacd3a1aadc7524cb5c4d8827a33fa3cce6",
+      "dependency-src/org/emulationstation/frontend/relay/log/event/Level.java": "71a2931e069faf3bd7f3a6da2a1ea48c64be96bd4af87c138995bcd15e45c03a",
+      "dependency-src/org/emulationstation/frontend/relay/log/event/LoggingEvent.java": "36f4b1427e7472a2ae9821346fd946f0d8f645497885f7761e51b23b21543780",
+      "dependency-src/org/emulationstation/frontend/relay/log/event/SubstituteLoggingEvent.java": "dc52015fdfd175fa15cc137a24037e5791cdd7008c69af9befbdbaec557b7f48",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/AbstractLogger.java": "2d1071378e0e2cf5314898c2ff4e9d00a1f644e16f3e5d0ab66b9e216de6c7aa",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/BasicMDCAdapter.java": "1f7c073ecc7df8905ca56362f6fe8e9f4df114192b609b550dcc508c0ba47823",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/BasicMarker.java": "98744c8a47b722d01db353581ae24d684301ec3e357abf0407e77b7927bcdc9c",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/BasicMarkerFactory.java": "ab5dcd8c3c343d7d8c0c9471d86bc334aaf906311c6c9d01ec6692e903e735f4",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/CheckReturnValue.java": "ce7ac3af2b6db642e67ace0b92eca0fc5b2be6d0f8f610843c719fe5558cebdf",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/FormattingTuple.java": "e2871e8b25e52508fb01880fe6e783e2e84e46faffdf09eadebcceb88c564101",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/LegacyAbstractLogger.java": "444bd61ad6540631364e228bb20a9d0c1b21c9591bc9c5a392d3fb8c5e8f69c3",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/MarkerIgnoringBase.java": "85e756f52685605020d1ab40965e651d8b705e9ff4d4a63af8ee96359ba299c9",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/MessageFormatter.java": "42ba80b2b7709cf4ae363fe8717c2ae4d4aaa8ceb680a1c4c554579deaa216e0",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/NOPLogger.java": "295c11c53b8fc37bd3d79d2e24ba3160a40bc7bef38de8291cefc99a0638d376",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/NOPLoggerFactory.java": "202266e72ed6c3ab853c9508c625cb3bebee97b4d0fd16a49f85a21aa9765cde",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/NOPMDCAdapter.java": "face675ee80a476f59bb01f9f464ba66cdf6c198c8faa3fc5025edf80d601986",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/NOP_FallbackServiceProvider.java": "5cf653995692d533390d28378a596f05dfcd67a72b8acc2217f154b9e1c51c5a",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/NamedLoggerBase.java": "5ec8420816f56f6d6beaaa8995b24fbea445e623f3e3622543af89a0bdbf200b",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/NormalizedParameters.java": "3fc1a44ce409d0c28961b574d3f1ff744d4bac2d4feb99dc570d51b7803556d9",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/Reporter.java": "105e4aebc7e584cfbd9338066ceffe55533ea6f1db2c565f87f27b8da9086e2f",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/SubstituteLogger.java": "57504b2d3b085767ea30a2185d5ec69b783502a92c9668e6492703719483ca3a",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/SubstituteLoggerFactory.java": "7b3261816790f528985e86dc1f34cc24f0ab8fbe5f05eb17d795a429da7c045b",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/SubstituteServiceProvider.java": "3a69416d6bd17c445a399cb75c315cbd47fa4b73d7b6d2ec7e37804738035b23",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/ThreadLocalMapOfStacks.java": "9d1b56a7a87aaf524d8b84536f8d19d3c35c85b6da2c89415db1e396a1f9121b",
+      "dependency-src/org/emulationstation/frontend/relay/log/helpers/Util.java": "fd3dea9b59d1a947216e9c5a71332342219f3c865adeff6339217488b9fd5cfd",
+      "dependency-src/org/emulationstation/frontend/relay/log/spi/CallerBoundaryAware.java": "6c4670c67fcae4654cbe0840a18e7ae64474c76815fdc021fe3b23d957807901",
+      "dependency-src/org/emulationstation/frontend/relay/log/spi/DefaultLoggingEventBuilder.java": "36b6bd4afbd40c362ff2425b483b2a5916ee6d425fc802ef6b7631bdc8e9db51",
+      "dependency-src/org/emulationstation/frontend/relay/log/spi/LocationAwareLogger.java": "6dc67d5ba05816b496afe72566fb58184e9cd224e1bf55f907d6c32c0bb3d891",
+      "dependency-src/org/emulationstation/frontend/relay/log/spi/LoggerFactoryBinder.java": "6772d6bf13a3ee0d07075c664f309b37c79914bd8406ff829cdb27a046422285",
+      "dependency-src/org/emulationstation/frontend/relay/log/spi/LoggingEventAware.java": "3f01e6c131368e5af698c385d3e28fa74c96624e17b435b857dcbffa19b7ffbd",
+      "dependency-src/org/emulationstation/frontend/relay/log/spi/LoggingEventBuilder.java": "be7aab88213bf95f3296b3f5ad5602264d7d278ce6a31abb37d470264fdfc81a",
+      "dependency-src/org/emulationstation/frontend/relay/log/spi/MDCAdapter.java": "6acf6b2804791f32b49199c833ed3ceda8b3ae8f2fd2689126121f17c4fd145f",
+      "dependency-src/org/emulationstation/frontend/relay/log/spi/MarkerFactoryBinder.java": "ac3fbba575e912d745cc43ada0effd20de42159b47ee22ba1d8f8b1241258bc0",
+      "dependency-src/org/emulationstation/frontend/relay/log/spi/NOPLoggingEventBuilder.java": "9768d7e4823e6a54d9cd791ad48b698ed008730724542e00588483020f598c2b",
+      "dependency-src/org/emulationstation/frontend/relay/log/spi/SLF4JServiceProvider.java": "494bc93fc7f053d0992bfba59574944c543066e3258e50b60bc8a5fc0262bd49",
+      "dependency-src/org/emulationstation/frontend/relay/ws/AbstractWebSocket.java": "66585af4e4ad90bdadf3451c719dc8cb586792b731d41736568572977ec58ef5",
+      "dependency-src/org/emulationstation/frontend/relay/ws/AbstractWrappedByteChannel.java": "0037c56793bc8c5a50760422a3d275bc1cad8bde9699a2e704d8f6dc0f9fdcb3",
+      "dependency-src/org/emulationstation/frontend/relay/ws/SSLSocketChannel.java": "1675dc60aec80de1e90bd8805d481fffb9faeeaada5f3b3135d233e000c30314",
+      "dependency-src/org/emulationstation/frontend/relay/ws/SSLSocketChannel2.java": "763bce757f3a88ceb2da838801413bebe2ec428dfcff19d250118b4716da3724",
+      "dependency-src/org/emulationstation/frontend/relay/ws/SocketChannelIOHelper.java": "b623f316471565df650e9122ee9df6afcb48d1e8ffc75b543a165b99e0db37c2",
+      "dependency-src/org/emulationstation/frontend/relay/ws/WebSocket.java": "472a0056be48f09412cfb1884171cb7bab58ebb5e3466497e0dd271ca120bea2",
+      "dependency-src/org/emulationstation/frontend/relay/ws/WebSocketAdapter.java": "02c2c4592d0c3229d45d4bf59b01d398d3e78d30ee2fc3024ed4132f333de18b",
+      "dependency-src/org/emulationstation/frontend/relay/ws/WebSocketFactory.java": "7fbe149158c87c4aa57fde6c58fa672f2ac737b8ad276d69c87ea01fdd011cef",
+      "dependency-src/org/emulationstation/frontend/relay/ws/WebSocketImpl.java": "eeb1f51152e7f99b07afafa3a5499407d76047267c117cd2d0b7fd5c3facaeac",
+      "dependency-src/org/emulationstation/frontend/relay/ws/WebSocketListener.java": "dbed53bf089cef30fa0ea77467c4477f648380861813d7320950a67960145185",
+      "dependency-src/org/emulationstation/frontend/relay/ws/WebSocketServerFactory.java": "ae2074e5016c48ec009e3e02ce48eabbe18cf58ab4d8af81ff5f22563bbaca0f",
+      "dependency-src/org/emulationstation/frontend/relay/ws/WrappedByteChannel.java": "bccd03ac637dd46006e09068722c64bb8b5c6977f53510f289e42297ef6db3e4",
+      "dependency-src/org/emulationstation/frontend/relay/ws/client/DnsResolver.java": "be024a65b8102336e00e07fbbbe07207ca77bed2f391ad3fa7b52d3bc76439ce",
+      "dependency-src/org/emulationstation/frontend/relay/ws/client/WebSocketClient.java": "46d4e3d2b75c50a2a8067206c9cef8425404b82ae02b30626badad33f2c2dbc6",
+      "dependency-src/org/emulationstation/frontend/relay/ws/client/package-info.java": "e6eb138ea6a4823752540f46cabe2afde7ba5c32783dccdb3b1c7e1086776ff1",
+      "dependency-src/org/emulationstation/frontend/relay/ws/drafts/Draft.java": "163e962b1accdf9b35d18355adb128871a8340b59e56f016a0a656bd27da71e2",
+      "dependency-src/org/emulationstation/frontend/relay/ws/drafts/Draft_6455.java": "0197d66ad70b85a836d25f51fb46be5613bfdfd9a6d6660814358930cd4bd817",
+      "dependency-src/org/emulationstation/frontend/relay/ws/drafts/package-info.java": "d707a48ef0eaba78736680ce7c1ccd6eb31956d3474f15e9601cbc58c7a3bba4",
+      "dependency-src/org/emulationstation/frontend/relay/ws/enums/CloseHandshakeType.java": "59884bd60287636507d00f319cc3ac7daffaae28780e3f5898dbb3d9bbeab9c8",
+      "dependency-src/org/emulationstation/frontend/relay/ws/enums/HandshakeState.java": "ae60ce0f03a6bf499498ad96382ba9c00a7645f2c23138e72cc19452042585bc",
+      "dependency-src/org/emulationstation/frontend/relay/ws/enums/Opcode.java": "1615e6dd67f03d9205b191528ed3e25e973e4ae6d8f9aa3af7f3206eb85f125c",
+      "dependency-src/org/emulationstation/frontend/relay/ws/enums/ReadyState.java": "412999c9839d9217e877767812d967f2168fe17e3fb1b3515114e862d358fb6d",
+      "dependency-src/org/emulationstation/frontend/relay/ws/enums/Role.java": "962c180cae257db3736588fc21054f054c06f9090917fd28203c5302e29582db",
+      "dependency-src/org/emulationstation/frontend/relay/ws/enums/package-info.java": "235f3fa12b48d8a6e1f32ab1fb6e2cb99d034df39683b60f7783c91d362499db",
+      "dependency-src/org/emulationstation/frontend/relay/ws/exceptions/IncompleteException.java": "c3765c5261a7cbff4bf2e0f23f03a2efa1880f75e7ba305efe69b60b8eb70d77",
+      "dependency-src/org/emulationstation/frontend/relay/ws/exceptions/IncompleteHandshakeException.java": "c72d64535b7409caede1745e0e72f9ea48e4a3bbb6955ce91fd4e91e0587dfa6",
+      "dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidDataException.java": "7bb664e132af04e320f60ce8f8a6c39c6d8172c3d59715578487a44c8a755bf5",
+      "dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidEncodingException.java": "5c23102e779218c2f255d128943be49215e6fedfd76fed48aaafd34eb2e28e34",
+      "dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidFrameException.java": "b15a160c29fd9720c448837394b7a4a44b19fa6bac0e485f25e849e7feb4ecaf",
+      "dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidHandshakeException.java": "8ceee2f64343c7b89b40c1d75313fe56d14733721675081d3944af3cd8f01e51",
+      "dependency-src/org/emulationstation/frontend/relay/ws/exceptions/LimitExceededException.java": "30473c6a7c8b9e0f6ab82350d788b45d59af3367360d514e8545a2daf1ace5c8",
+      "dependency-src/org/emulationstation/frontend/relay/ws/exceptions/NotSendableException.java": "1240d7e0061d3f110dac3be83da2bee4c261da89864c6d48eefba1db483c8058",
+      "dependency-src/org/emulationstation/frontend/relay/ws/exceptions/WebsocketNotConnectedException.java": "cdb759017cce67c99ae9265916d4453c1efe3a092605c7cbd5c23cecee0a12ca",
+      "dependency-src/org/emulationstation/frontend/relay/ws/exceptions/WrappedIOException.java": "ff198c13075649f0811eb86ff2621cb310d16d56eefb168937d8cce588498c3a",
+      "dependency-src/org/emulationstation/frontend/relay/ws/exceptions/package-info.java": "7607ce0dee88234fb2db2eafc8a0ad3447c24f15315f2909d024777828ae15ef",
+      "dependency-src/org/emulationstation/frontend/relay/ws/extensions/CompressionExtension.java": "4c9105ac1a11fa8061adada1e2fbbcb5437056ec31f509156b1e4fc951bee2f1",
+      "dependency-src/org/emulationstation/frontend/relay/ws/extensions/DefaultExtension.java": "12eb9ce24d5bd7e22e72b1568086f721270330dd19a416a613ee1d6ad992c171",
+      "dependency-src/org/emulationstation/frontend/relay/ws/extensions/ExtensionRequestData.java": "4154be72a8374f5f6b764c4ab6e6fb10ac611ed099ed767ee5cde550e1c856cf",
+      "dependency-src/org/emulationstation/frontend/relay/ws/extensions/IExtension.java": "6f3dfa7a6a6b5e30413d119ec9eb2845a825af8f5775c51a9f2be629ccfb1813",
+      "dependency-src/org/emulationstation/frontend/relay/ws/extensions/package-info.java": "572e8742551e1744dbf1a0f7456ddf9081634fb26ca0dc4e4d8455d04d874c67",
+      "dependency-src/org/emulationstation/frontend/relay/ws/extensions/permessage_deflate/PerMessageDeflateExtension.java": "d5a2a373b99a115ab2eb374ba865c54785469733316d4eb7fd57c57487ddcd75",
+      "dependency-src/org/emulationstation/frontend/relay/ws/framing/BinaryFrame.java": "2311a98f870be98afa0e6bf09b970ab58abee53bde1bebb04e9196ad685cf9f0",
+      "dependency-src/org/emulationstation/frontend/relay/ws/framing/CloseFrame.java": "dbbeae482e141035a015d0d113a2280dcf455a4f5075ef971349af13d40aad2b",
+      "dependency-src/org/emulationstation/frontend/relay/ws/framing/ContinuousFrame.java": "8ca7a10fd568da830351a2ad3eb30b9db783db8b6cd68d5c4449dbabb5428cb5",
+      "dependency-src/org/emulationstation/frontend/relay/ws/framing/ControlFrame.java": "5611f08bf26559fc5b4cab58f17006e675c2ad56c6484dbcd3efd52e3d280ae0",
+      "dependency-src/org/emulationstation/frontend/relay/ws/framing/DataFrame.java": "ee2e0aa8f02045c0300e86fedbd7c2390b7e48653c02cf1441b93ef84ae61ebd",
+      "dependency-src/org/emulationstation/frontend/relay/ws/framing/Framedata.java": "af38393fc88c0e5dd59c50b889ac2e8de134b2ed5e80c4a9987c46f6537bec80",
+      "dependency-src/org/emulationstation/frontend/relay/ws/framing/FramedataImpl1.java": "990a639a7d2180cd4d960aa277c95f3fddb7c5eeb927e9a6881b60bb3368c41c",
+      "dependency-src/org/emulationstation/frontend/relay/ws/framing/PingFrame.java": "10652b5c92ca962f7e65d7cd50f7b7c47dcb8667adcdeadeeec176bf48b03b3b",
+      "dependency-src/org/emulationstation/frontend/relay/ws/framing/PongFrame.java": "961b25419f996fa0e86341af27985b732150c8f5b7db9583cd1b74b11506a25a",
+      "dependency-src/org/emulationstation/frontend/relay/ws/framing/TextFrame.java": "98deee54f1eeb955e6bd88ccfb0aabc12493cf74684ec5df851bab0ade7e9943",
+      "dependency-src/org/emulationstation/frontend/relay/ws/framing/package-info.java": "415b83e44d9aae2057a1711e190f2900ced106e7a4e59e08d6a70de4fc7d0be5",
+      "dependency-src/org/emulationstation/frontend/relay/ws/handshake/ClientHandshake.java": "a36a37b2078f543dc1acbc1ad12118812bdd457013b2b65ef8d7b5b25e3d306f",
+      "dependency-src/org/emulationstation/frontend/relay/ws/handshake/ClientHandshakeBuilder.java": "e3bd28b41043aaadc4ecce61064da149af97bd597f5a65196fbb3c9219bb7042",
+      "dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakeBuilder.java": "f7ec4a3073c0ec22451283d6d2377099a7d3dd337e711e0414fa05d41bd65887",
+      "dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakeImpl1Client.java": "3d32c3509eb158009ae181fffcc0ca654632b9f259a519561da15c593eacda4e",
+      "dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakeImpl1Server.java": "89529286cfc97c0014277aaf7d79e1fb0ab7f20adea75d9315d67dd8500e529a",
+      "dependency-src/org/emulationstation/frontend/relay/ws/handshake/Handshakedata.java": "4a4565a9b9fa40a1a6d7266217b2b024f427cffcbf485baad64d328d3aa71c9e",
+      "dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakedataImpl1.java": "b54306cc2dac9479e43f0657df1c86ffcbd44d48dad966a58da9cdf1efebb1c1",
+      "dependency-src/org/emulationstation/frontend/relay/ws/handshake/ServerHandshake.java": "d2c43a8669afaa39aca969c199875817e4e7f5a534e385e540607af2cd5129c6",
+      "dependency-src/org/emulationstation/frontend/relay/ws/handshake/ServerHandshakeBuilder.java": "576b117ca7418d42dea670d399049092dce92948053bcee92ca0ea5178c4a1a6",
+      "dependency-src/org/emulationstation/frontend/relay/ws/handshake/package-info.java": "66d021e6df318310f89428f8b5ed0ac3bd873c333a5423776920186548b69072",
+      "dependency-src/org/emulationstation/frontend/relay/ws/interfaces/ISSLChannel.java": "28eba50431a901a00d70e208eb80fe725f32df6ebaac8edf6df3a9bf147f5eb9",
+      "dependency-src/org/emulationstation/frontend/relay/ws/interfaces/package-info.java": "ac800af5c90dec9eb645224453ee3f609bdce7ccc882a90f83271c90e2a3470f",
+      "dependency-src/org/emulationstation/frontend/relay/ws/protocols/IProtocol.java": "986bc81466a806a5168a7508471f9c1f4fb8eef3179b2823379ae456ac321879",
+      "dependency-src/org/emulationstation/frontend/relay/ws/protocols/Protocol.java": "632977dbcee22a27903759ccae2a164f045b9ff6dc10ae7ca61daea404079727",
+      "dependency-src/org/emulationstation/frontend/relay/ws/protocols/package-info.java": "1b44adeb71125073b4d6953565a7cbe4846163903189f9877fbf6fb02c31111e",
+      "dependency-src/org/emulationstation/frontend/relay/ws/server/CustomSSLWebSocketServerFactory.java": "bd9eee4432c8674a7b9c41173b9011c516d6ec7556037fb0f15236aa52998ba5",
+      "dependency-src/org/emulationstation/frontend/relay/ws/server/DefaultSSLWebSocketServerFactory.java": "459a88e7416f35607f7d0f2b5d2f7bc7e385b65249322edb6cd94e6c9c64d439",
+      "dependency-src/org/emulationstation/frontend/relay/ws/server/DefaultWebSocketServerFactory.java": "9195bb24756f85aba5d66c0ab95c5bb13d7557abc8597743ace501a07b6ec8e5",
+      "dependency-src/org/emulationstation/frontend/relay/ws/server/SSLParametersWebSocketServerFactory.java": "90d97968529ed0b68ec5a39f4c580e55c49f04323252006b890053a5c00fa0b3",
+      "dependency-src/org/emulationstation/frontend/relay/ws/server/WebSocketServer.java": "bec37425509d8b058af37c3b2532575b9e18abeea13b6997704a475111a96d19",
+      "dependency-src/org/emulationstation/frontend/relay/ws/server/package-info.java": "605c088e6297b5634d8390d8184396f3ca2eaa5850d9b267df5f25385604fa06",
+      "dependency-src/org/emulationstation/frontend/relay/ws/util/Base64.java": "1fbed083d1291a9a77c5d4f9333ef671728fc63f359e94aec6246ec65ab97448",
+      "dependency-src/org/emulationstation/frontend/relay/ws/util/ByteBufferUtils.java": "72eb3957ce6a5a871c8cdb0c5560b761f2d117b403ac5fdaa4c1ddae1e31a6f7",
+      "dependency-src/org/emulationstation/frontend/relay/ws/util/Charsetfunctions.java": "af2bf03f1b2e4c8749dff928f886d6203d2310efcbee38f52a62baedec669131",
+      "dependency-src/org/emulationstation/frontend/relay/ws/util/NamedThreadFactory.java": "e4252112109f26144a6f32c48a3a49e9d927871cba8b1e9ec8b4518de3a08f17",
+      "dependency-src/org/emulationstation/frontend/relay/ws/util/package-info.java": "f2d6e97908ae604ebfd9ad495847d91d942fc9a7e41cc03442e0e381981fc12e",
+      "netplay-src/org/emulationstation/frontend/netplay/NetplayPaths.java": "e1cfc916a17eaaabadbcd821c2483469b99e0057944e2f2118fad064187e6a67",
+      "netplay-src/org/emulationstation/frontend/netplay/NetplayUi.java": "f205101af034b89aa257c61347af9f942fce1603478c6fabb24597c91d6037cd",
+      "netplay-src/org/emulationstation/frontend/netplay/StationActionButton.java": "70cc50af4b03be49c2dce056ef3bcdb6de02ce694f285d46c13e12b0ac055c4e",
+      "netplay-src/org/emulationstation/frontend/netplay/StationCreateGameCard.java": "ccdd4e971da51331181cb017ccc11682b0cfdaee13252eb85344586b251431fd",
+      "netplay-src/org/emulationstation/frontend/netplay/StationDolphinNetplayActivity.java": "f947b5f72a35184c3eafb2ad551f39ce5ded40a1949a3a536d685b2660461b8e",
+      "netplay-src/org/emulationstation/frontend/netplay/StationExitPanel.java": "a443148b772163c7ef99c2fb66d19027cc80ec4ffdf973a17d250e510d2e4058",
+      "netplay-src/org/emulationstation/frontend/netplay/StationFlowPanel.java": "219153461d015c13557051e6ca0a59895ccf799a004665d2c38394f74f7c1794",
+      "netplay-src/org/emulationstation/frontend/netplay/StationGameRatingView.java": "84d16361a5fa51cceb4046663f1bd3ef3641a64080a8850e0b80b34adc8e39d8",
+      "netplay-src/org/emulationstation/frontend/netplay/StationGameSession.java": "930efc9b5c3592be7cde0701df68f5a7008772b716c099d14123a321c7db41d7",
+      "netplay-src/org/emulationstation/frontend/netplay/StationHeaderMetadata.java": "8b7fa4a64e8788233958f37c73171d2d7c99764ee9343cd3993ea3c7941bfe77",
+      "netplay-src/org/emulationstation/frontend/netplay/StationHostConnector.java": "c909aea87a8e6c4631002a565a8e4b8b720ffcc1f964dcb8796c4bc155002032",
+      "netplay-src/org/emulationstation/frontend/netplay/StationHyperspaceState.java": "4b4728d3233b81cfc5ce296bb3c51afc72bdac345ab7f01c4c496e0705e55502",
+      "netplay-src/org/emulationstation/frontend/netplay/StationHyperspaceView.java": "3fb9f02acb37798f09587f03f760ba22360404ac7c8b4254d10e0f6151da59cf",
+      "netplay-src/org/emulationstation/frontend/netplay/StationInvitationCode.java": "611c98d7c8c6428dbed0d271e8ccdb9a0cf4f8e54c215ff17386dfa604b8aa0f",
+      "netplay-src/org/emulationstation/frontend/netplay/StationLaunchPolicy.java": "e58cc823ce19930650b4ba3a7028b975ea622ce2082f3e3ca657ef9dbd3fff13",
+      "netplay-src/org/emulationstation/frontend/netplay/StationLobbySurface.java": "b2320101df0889e59fd4832f83596d8e8d448f688d33e82f5236167722df50db",
+      "netplay-src/org/emulationstation/frontend/netplay/StationLottieIllustration.java": "188fe550f5329837379e8b5ba1a5ecdfe5a261235eff82187e4ad14ac02fd026",
+      "netplay-src/org/emulationstation/frontend/netplay/StationNetplayActivity.java": "e6d93b5e1c159432f538f277b0d28813b91764ac5ce1145f14dbc872309dedbb",
+      "netplay-src/org/emulationstation/frontend/netplay/StationOnlineClient.java": "1b7fa9b3b7510c92dc932bcf11d1a63beaf91b7a44f8f9419028bbec9b333ff4",
+      "netplay-src/org/emulationstation/frontend/netplay/StationOnlineGame.java": "fc87237f8cfea7466f68167beb821de636ee3fd32c2bea16ae92d0370cbf4658",
+      "netplay-src/org/emulationstation/frontend/netplay/StationPlayerModel.java": "ca4052eba8bc52c24abeada070b3d23f3ecca79956db1b068bd6d527b6e52ba8",
+      "netplay-src/org/emulationstation/frontend/netplay/StationPlayerSheet.java": "08bb4356c0bef34803cadc44188b9492f39620dcad238621b0d96695ff85996b",
+      "netplay-src/org/emulationstation/frontend/netplay/StationPresence.java": "b1392fd9c9b40f1defbeb1b94bcc20db141ac9a6a5d6cd6fa106f202087b963d",
+      "netplay-src/org/emulationstation/frontend/netplay/StationProcess.java": "d024190147ae5cb66abc0932c7bcaf282586bbbe060093c7d72722103b83fa73",
+      "netplay-src/org/emulationstation/frontend/netplay/StationRecoveryTunnel.java": "6c24b233f0d319e01a4ff1294f23a9a705434f4f1c92ba6b7f8fa3ed5bd60304",
+      "netplay-src/org/emulationstation/frontend/netplay/StationRecoveryWire.java": "cb7e83ee84c1297c91c23bc24c47f7eb34204ce8ffda933f71d4b27bbc418a20",
+      "netplay-src/org/emulationstation/frontend/netplay/StationRelayTls.java": "6e899eee7227bf5f53a4496eac0029726f3fd0c76024f24c6d3288a22e201341",
+      "netplay-src/org/emulationstation/frontend/netplay/StationRelayTunnel.java": "9845e639b93223188dd0b3b6f4389ce80c72f9397380e52a30f4b1f4ca9f2104",
+      "netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java": "fd3c65fbdf928125e77ec3211bddc4ffedf9d3feb085a0ad743b1ec9d2a4a50e",
+      "netplay-src/org/emulationstation/frontend/netplay/StationRetroLaunch.java": "f516caced6b744e74aa673661fe993f0c5cf74dd5c92ab593c167f1266ba196c",
+      "netplay-src/org/emulationstation/frontend/netplay/StationRoomArtwork.java": "3fd146633671ad30baf722fb2904f72376458c27cffa28ad0411eed436891c4c",
+      "netplay-src/org/emulationstation/frontend/netplay/StationRoomCreation.java": "104b87d5717839fd56c93327d7f108b44406e0e86768ffed5922f0877e1b4578",
+      "netplay-src/org/emulationstation/frontend/netplay/StationRoomFeedback.java": "7a90edf37c15d3059a9160e05404d41058500b926f9843940bb516b189a4c701",
+      "netplay-src/org/emulationstation/frontend/netplay/StationRoomRoster.java": "d004f7210966e32abdaa4865d17fddf35b5128234f2c300d5cfd8c6145778d1b",
+      "netplay-src/org/emulationstation/frontend/netplay/StationRoomStartState.java": "2e69c893e3ddb012acfc53d59f2cb92887ffec938cc2bae4c2935b92e9192c29",
+      "netplay-src/org/emulationstation/frontend/netplay/StationRoomState.java": "3569a17e3b3134b0388d5a3231dad9f269461fa5b35566fd5195be21018ac5f9",
+      "netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java": "9467134cff1faec8a168de5a6a1254e97a2f7b9cb943ceee10f0e22146e5a5b0",
+      "netplay-src/org/emulationstation/frontend/netplay/StationSessionChannel.java": "678037ceb5f34245c2a5a816727e0c3f81c10d9b6703fecb8a0041267b137ac8",
+      "netplay-src/org/emulationstation/frontend/netplay/StationSocial.java": "c0a8b36cf544cfb5b6bbb1c0a2becfb617f282f57992b3f99f859cf40e254be2",
+      "netplay-src/org/emulationstation/frontend/netplay/StationSocialIcon.java": "19ff1286d4f021df60b29075c9db848d68183f76312430b2ef5b1a8b97b2c44c"
+    },
+    "sourceInputsUnchangedDuringTests": true,
+    "javaDexBuildReceiptSHA256": "fcd1ec990a7f8ed5f0154561f03c672d4eb185748b4ca91ceca4a591ca62f505",
+    "clientDexSHA256": "1a04582a02804ecbe4b075dd487118a171b0b0f305dbb8884015bbede09b25d7",
+    "roomsDexSHA256": "a90056f54ae31d82c67462329fa5d877677ebf2fc031edc95d9b53f6ebc933e2"
+  },
+  "testSourceHashes": {
+    "versions/station-auto-access-r63-20261006/tests/StationCompactLobbyTest.java": "49649bf8fc8db1c3e6fd804b5144de9bf3db4707eb7435eb58abc5ab90c1ab61",
+    "versions/station-auto-access-r63-20261006/tests/StationHostConnectorTest.java": "314179ce0e2f88b634403338c813bc4cd3104e26f086fbd6c8d2dfb2f9553874",
+    "versions/station-auto-access-r63-20261006/tests/StationJoinPlayerTest.java": "cac2fd8204369e69cad72cd2398b90ac3a091e393943cfef42aa288b873016a1",
+    "versions/station-auto-access-r63-20261006/tests/StationLaunchPolicyTest.java": "2460d0f51c1d395addf785ba3b1d0e165ee097284562ac5eb4e76c2e62d40479",
+    "versions/station-auto-access-r63-20261006/tests/StationRoomCreationTest.java": "7f3b87bfbfb1c0828dbacafb09f15fb7065a39e60d69c9fe02e26f967b1ccbbb",
+    "versions/station-auto-access-r63-20261006/tests/StationShortInvitationTest.java": "06c1d38f30f10826dbd7fde724d4dceeebd23fc0bb11331a142d2222aefa03f5",
+    "versions/station-auto-access-r63-20261006/tests/StationSocialTest.java": "3f11d12691892ed705b14b8c94533bc9c6355c73a66d05a1a8961d2a453a7a7a",
+    "versions/station-online-controls-r64-20261007/tests/StationRelayDiagnosticsTest.java": "70fa2a4e803558069f9a41dec4191ff3c3e84f73d9cc9e36b0b99f8f9fb8f448",
+    "versions/station-current-r55-20261006/client/tests/StationOnlineApiTest.java": "e5ba0327c5796f43b4bba42b019c6b835a6cdb5bc58d8227544a7eb5f62c3e1c",
+    "versions/station-collection-videos-r67-20261007/tests/StationSecurityNegotiationTest.java": "18ccd99bbe810e7592dba7c9a36e682f52ac42c4c73c7fc27856f2f1a6b116dd",
+    "versions/station-current-r55-20261006/client/tests/StationApiTest.java": "bf300060b21f8ab9cb5dbadfc3cb4003e9cb234fa2ced05b9a7e683fb4d642f2",
+    "versions/station-online-layout-r71-20261007/tests/StationTaskNavigationTest.java": "c8698770726ec714b64535b17c3b1c9b25c3676ba790b8ecacd8c78e22495b49",
+    "versions/station-online-layout-r71-20261007/tests/StationGameSessionLifecycleTest.java": "25a6d84f89283f4bd12cc3ee54e3f8f46cf2d7d946d1f15ef00b2210039a636b",
+    "versions/station-online-layout-r71-20261007/tests/StationRoomRosterTest.java": "d748a3cb40f966a89690a10820e0e53906cb89fc5532d5486d3c6dc76eb15b78",
+    "versions/station-online-layout-r71-20261007/tests/StationRoomStartProtocolTest.java": "45cb4f40df706c11ec1f019daa69956db3dfee05039c93534d74460054c87325",
+    "versions/station-online-layout-r71-20261007/tests/StationRecoveryStateWireTest.java": "1fcffc9122e79bddc893a5dd132e06298c1f23283b382c4e15b10d81996e618e",
+    "versions/station-online-layout-r71-20261007/tests/StationRecoveryVectorsHostTest.java": "a5a4c79cf3f79ca82ee0431fecdbfdeb404534568f9cbb172a65cc4d230cdecd",
+    "versions/station-online-recovery-r67-20261007/tests/StationRecoveryVectorsTest.java": "c8ce6b8173cb5ea3a02843792ba35cb840745c2290b8256803e04e79c93bba84",
+    "versions/station-online-recovery-r67-20261007/tests/StationRecoveryProofTest.java": "72635eeaa487016c7d6d09c4a377bbe8699c6705de89932aacb75c38f565e926"
+  },
+  "r67TestIdentities": {
+    "recipes/run_local_tests.py": "8cd5f5ecfb42a42aed1599d1781754500612dc5ca84ae8d291fd1a2d68de9186",
+    "evidence/local-tests-final.json": "10498a1bd77fa4b5b183506d0d2f5cf529dc61989981600fd5d3f7da6d72a2b7",
+    "tests/MemoryCompile.java": "3d0a10bcc0f775c034b9215d0df329b8d9f754ca12222e928b21a04641135ccd",
+    "evidence/java-memory-tests.json": "991694e9cc8d78579408877058db0d8bbfd4acefa40552a97548026b4fb7167e"
+  },
+  "recipeSHA256": "a2d590216b90e841ba69ef0aca112334905b64dc698256b042f0a8cd1feb7fcd",
+  "compositionRecipeSHA256": "641bcce8754ad9e79a44e57a23cf8f1ad27a894b209f67949be9f284565b27f0",
+  "memoryCompilerSHA256": "3d0a10bcc0f775c034b9215d0df329b8d9f754ca12222e928b21a04641135ccd",
+  "inputs": {
+    "androidJar": "6cea1df3efb77103ac3e2beb9bf4718964b0e0869ab16d39d29d5cbae1c147ad",
+    "jsonJar": "3ea61b2a06e31edf1c91134fe9106b0ebb16628be169f3db75bc7a2b06b45796"
+  },
+  "javaRuntime": "Eclipse Adoptium JDK 17.0.20.101-hotspot",
+  "javaExecutableSHA256": "1977f302375adbb920d41dac65c7e22eb9c2ed8e1e8d6258964154ff16f14406",
+  "stdout": "success=true sources=217 classes=328 memoryBytes=1176089\nPASS 107 executable checks: compact player model, real room codes, stale presence, invite policy and snapshot ordering\n{\"passed\":true,\"checks\":10,\"scope\":\"Real loopback TCP: late listener without JNI, retained stream, false native hint, deadline and cancellation\"}\nPASS 20 checks: guest entry, two solo rooms, shared membership and unavailable destinations\nPASS 15: host/guest launch eligibility and generation identity\nPASS 14 room creation acknowledgment checks\nPASS 23 checks: short invitations, manual input, authenticated resolution and TS1 compatibility\nPASS 113 social client checks\nPASS: relay close diagnostics, pong observation, unchanged timeout, idempotence, credential privacy; no production traffic\nPASS 27 online transport checks: signatures, owner, request ID, limits and disabled service\nPASS 120 security negotiation checks; synthetic authority, no disk writes or production traffic\nStationRoomRosterTest: 73 checks passed\nStationGameSessionLifecycleTest: 174 checks passed\nStationRoomRosterTest: 73 checks passed\nStationRoomStartProtocolTest: 107 checks passed\nStationRecoveryStateWireTest: 169 checks passed\nStationRecoveryVectorsHostTest: 32 checks passed",
+  "rawDiagnosticsKeptOnlyInPrivateWorkspace": true,
+  "returnCode": 0,
+  "diskClassFiles": false,
+  "dexBuilt": false,
+  "apkBuilt": false,
+  "installed": false,
+  "androidExecuted": false,
+  "visualAppearanceVerified": false,
+  "productionModified": false
+}

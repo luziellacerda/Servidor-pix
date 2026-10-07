@@ -1,0 +1,322 @@
+{
+  "createdAt": "2026-10-07T20:47:38.758050+00:00",
+  "appRepository": "https://github.com/luziellacerda/TurboElden",
+  "appBranch": "fix/station-online-recovery-after-r67-20261007",
+  "functionalCodeCommit": "4d30401a80658dd56666ef10f48d9556b3fdd9e9",
+  "deliveryCommit": "65dd0aa05330ace8df0a91a89c895a3aab6428f8",
+  "observedRemoteHead": "0455f002ff17fa9e85e66635130fabab59c7264d",
+  "observedHeadIsDocumentationOnly": true,
+  "verification": "Every copied file verified against Git blob and SHA-256; original LF bytes retained",
+  "files": {
+    "docs/server/recovery-r67-20261007/CONTRATO.md": {
+      "gitPath": "docs/server/recovery-r67-20261007/CONTRATO.md",
+      "gitBlob": "82fa39f308b8fd5053bfe4375aa263144fea94e5",
+      "sha256": "8fa89e7a1bb6a1ffa6df831039ac29924553483c0e5b7d9e3c366fc6ece10cd8",
+      "bytes": 14955
+    },
+    "docs/server/recovery-r67-20261007/MANIFESTO.json": {
+      "gitPath": "docs/server/recovery-r67-20261007/MANIFESTO.json",
+      "gitBlob": "759b01f89bc1a4d195f0dcdbdc564d39b14f4729",
+      "sha256": "a5e4ac4db5edb1797f281e43a43c2442b5fab124a7bdfbeb82a04b0d83d563c8",
+      "bytes": 1355
+    },
+    "docs/server/recovery-r67-20261007/configuration.example.json": {
+      "gitPath": "docs/server/recovery-r67-20261007/configuration.example.json",
+      "gitBlob": "f76c9fd9eaecd21aa95d81770a7b9c249318493f",
+      "sha256": "49fdb1f14b7e0d0af24508564d6cbb85686089f9bd9d362c91dfd80ebfe5ab43",
+      "bytes": 143
+    },
+    "docs/server/recovery-r67-20261007/contract-vectors.json": {
+      "gitPath": "docs/server/recovery-r67-20261007/contract-vectors.json",
+      "gitBlob": "fb6a39a6278bc85ea62220f86f5c7d5ebaa5d7cc",
+      "sha256": "b7efac34a5b04f78560c1749270a56fad640d8de5924c5f4e4abf62662dc0779",
+      "bytes": 6444
+    },
+    "docs/server/recovery-r67-20261007/engines.json": {
+      "gitPath": "docs/server/recovery-r67-20261007/engines.json",
+      "gitBlob": "ad5c6db289d755636da47b02bc3e8cd94baa7944",
+      "sha256": "5d4842eb6c18d2f5b5ea115afe9ba9d6045c2e6927a78a8c67c11cc977d55579",
+      "bytes": 2144
+    },
+    "docs/server/recovery-r67-20261007/interop.json": {
+      "gitPath": "docs/server/recovery-r67-20261007/interop.json",
+      "gitBlob": "2fb7ee8ae2a5a3182fcbf2f90cad18a4735f736f",
+      "sha256": "c19c5023363e28262d99a6641dd602d432327bc013d290636b2895abb126ab22",
+      "bytes": 1052
+    },
+    "docs/server/recovery-r67-20261007/java-build.json": {
+      "gitPath": "docs/server/recovery-r67-20261007/java-build.json",
+      "gitBlob": "aecd2131e8bc5d0618c17dd87d1ecc3dd0657ad6",
+      "sha256": "b86c973afb27ee248c065cd99dcfb34fca0a65c02094e7abf5761cc9058ce42b",
+      "bytes": 30911
+    },
+    "docs/server/recovery-r67-20261007/legacy-relay-load.json": {
+      "gitPath": "docs/server/recovery-r67-20261007/legacy-relay-load.json",
+      "gitBlob": "834618ecfd6cfd0f42c62985b7514c1ddc3bfde5",
+      "sha256": "f3a6b802d63055dbfd61dd95ffa5f6134d6df23db0d4d2cd8ac921e35c2f3b38",
+      "bytes": 804
+    },
+    "docs/server/recovery-r67-20261007/native-build.json": {
+      "gitPath": "docs/server/recovery-r67-20261007/native-build.json",
+      "gitBlob": "f1df9c421a1c2cec871777eeba5850f7bf02fd9e",
+      "sha256": "a9d3531880d11b790a148d27c239a2f14eba218c9494645ada14d5a0a332381e",
+      "bytes": 1683
+    },
+    "docs/server/recovery-r67-20261007/openapi.json": {
+      "gitPath": "docs/server/recovery-r67-20261007/openapi.json",
+      "gitBlob": "590a1f6ea949ea45fa3a696566abdd870ce2d599",
+      "sha256": "c89a32757d09c355303f5676c920a775b046361a6820f0bcf29405c74ac989c9",
+      "bytes": 18946
+    },
+    "docs/server/recovery-r67-20261007/production-observation.json": {
+      "gitPath": "docs/server/recovery-r67-20261007/production-observation.json",
+      "gitBlob": "fdef3cbec7c91e3b927ae872c8d8855967bab14e",
+      "sha256": "9af0fe65615c207f10909a52af3f7c1a3581c54c26d618fe0448786af7c8233b",
+      "bytes": 1416
+    },
+    "docs/server/recovery-r67-20261007/server-engine-registry-additions.json": {
+      "gitPath": "docs/server/recovery-r67-20261007/server-engine-registry-additions.json",
+      "gitBlob": "8bec7b3cc0d4cf427902c9a3fcad8ab4d4f35b24",
+      "sha256": "f2d2592e26a0f7516b349d20938cb000b70bfde784e5ed7c8ce8432497951b12",
+      "bytes": 627
+    },
+    "docs/server/recovery-r67-20261007/server-tests.json": {
+      "gitPath": "docs/server/recovery-r67-20261007/server-tests.json",
+      "gitBlob": "94f57bb161455134136b974d6e644dce001250c2",
+      "sha256": "4db693cedf6a74bcb19b0c79d49fe4653f80293a3b8a64d925467db6ae19928b",
+      "bytes": 3463
+    },
+    "docs/server/recovery-r67-20261007/source-receipt.json": {
+      "gitPath": "docs/server/recovery-r67-20261007/source-receipt.json",
+      "gitBlob": "4f17adc3800db582ac8dbc07961ae647ca16f5dd",
+      "sha256": "c7aa27d425c761bf2a06603485dc6b063a6629743a52f0642a7289328e518866",
+      "bytes": 639
+    },
+    "snapshot/.gitignore": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/.gitignore",
+      "gitBlob": "4ab7c26046da2c707037784307fb0dba28957d7f",
+      "sha256": "6cc4029ea717636f81ed582c91c83f0d4e4707f8d8e2ed36dfad630b77234d9d",
+      "bytes": 39
+    },
+    "snapshot/JAVA-SOURCE-MANIFEST.json": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/JAVA-SOURCE-MANIFEST.json",
+      "gitBlob": "09052628033438375a823456e7075bf5911b75ca",
+      "sha256": "12a260c9900f9bcdfb964743e820747a9cd39b0ae71e609e1de6a2e8428024bb",
+      "bytes": 60449
+    },
+    "snapshot/NATIVE-SOURCE-NOTICE.md": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/NATIVE-SOURCE-NOTICE.md",
+      "gitBlob": "0249fb7824e2f7bb77b90fbd6501cb4d7cf63373",
+      "sha256": "6480c89c8a75096bb4021d1fd243f90fc8bffe271417cfb10b0fca49af21b056",
+      "bytes": 865
+    },
+    "snapshot/README.md": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/README.md",
+      "gitBlob": "f2f5d25c335d0f43c5afb42740caac98f204bbbf",
+      "sha256": "940c326abd7225c90cbc805e35935a2013089edf3e706c246fcc1d52c16328a3",
+      "bytes": 7063
+    },
+    "snapshot/STATUS.json": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/STATUS.json",
+      "gitBlob": "7af44648ca1e0ff7e5179c00beef0c420ee07f94",
+      "sha256": "f208f620514829eb7306bb64a4a9fe8f850a553077f0fb2800ac3692265b0021",
+      "bytes": 459
+    },
+    "snapshot/engine-patches/retroarch-station-all.patch": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/engine-patches/retroarch-station-all.patch",
+      "gitBlob": "329599664862c67f90f10d6c3ac672596ec03375",
+      "sha256": "45a5da0970b3a150b2652b3a7ee38ce798617d5778e94f26a9dd81c3826864ec",
+      "bytes": 6887
+    },
+    "snapshot/engine-patches/retroarch-station-auto-password.patch": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/engine-patches/retroarch-station-auto-password.patch",
+      "gitBlob": "502348e6024f5e332b61b5a55631df18c66ba636",
+      "sha256": "62254789975d892b2717e65b5f0232656befd347ed43232987c6ca2f2beabff2",
+      "bytes": 4984
+    },
+    "snapshot/engine-patches/retroarch-station-recovery.patch": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/engine-patches/retroarch-station-recovery.patch",
+      "gitBlob": "db9d69d0ba08735adec34223a51596c9d1527f7b",
+      "sha256": "34469bb6fb9f6ce4272983e01c36fd1f0f1673c32f367c24eb0c5a3723f4a66a",
+      "bytes": 7183
+    },
+    "snapshot/evidence/engines.json": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/evidence/engines.json",
+      "gitBlob": "ad5c6db289d755636da47b02bc3e8cd94baa7944",
+      "sha256": "5d4842eb6c18d2f5b5ea115afe9ba9d6045c2e6927a78a8c67c11cc977d55579",
+      "bytes": 2144
+    },
+    "snapshot/evidence/interop.json": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/evidence/interop.json",
+      "gitBlob": "2fb7ee8ae2a5a3182fcbf2f90cad18a4735f736f",
+      "sha256": "c19c5023363e28262d99a6641dd602d432327bc013d290636b2895abb126ab22",
+      "bytes": 1052
+    },
+    "snapshot/evidence/java-build.json": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/evidence/java-build.json",
+      "gitBlob": "aecd2131e8bc5d0618c17dd87d1ecc3dd0657ad6",
+      "sha256": "b86c973afb27ee248c065cd99dcfb34fca0a65c02094e7abf5761cc9058ce42b",
+      "bytes": 30911
+    },
+    "snapshot/evidence/native-build.json": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/evidence/native-build.json",
+      "gitBlob": "f1df9c421a1c2cec871777eeba5850f7bf02fd9e",
+      "sha256": "a9d3531880d11b790a148d27c239a2f14eba218c9494645ada14d5a0a332381e",
+      "bytes": 1683
+    },
+    "snapshot/evidence/server-engine-registry-additions.json": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/evidence/server-engine-registry-additions.json",
+      "gitBlob": "8bec7b3cc0d4cf427902c9a3fcad8ab4d4f35b24",
+      "sha256": "f2d2592e26a0f7516b349d20938cb000b70bfde784e5ed7c8ce8432497951b12",
+      "bytes": 627
+    },
+    "snapshot/native/RECOVERY-SOURCE-MANIFEST.json": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/native/RECOVERY-SOURCE-MANIFEST.json",
+      "gitBlob": "2fe4a87edbb41804cee24d10106afcbdbaecd99a",
+      "sha256": "6a4c528ab4e270fffb29a8ff78f1735bc5c9b5d9ab010e1f21c08700161b3f55",
+      "bytes": 751
+    },
+    "snapshot/native/base-files.json": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/native/base-files.json",
+      "gitBlob": "3673800083586c66028c1110fdede971dc16e746",
+      "sha256": "7cc9069962704e78cf627885e688c140662d807986f9c0c94ba0aafb7560631c",
+      "bytes": 300
+    },
+    "snapshot/native/station_recovery.h": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/native/station_recovery.h",
+      "gitBlob": "b2456bf3fd4a5b539fd3a496c30db68cd8922ead",
+      "sha256": "40cb8f2a75cd31cc530b41e853cce31524dd32ddc82a95313a328f358383108a",
+      "bytes": 3241
+    },
+    "snapshot/netplay-src/org/emulationstation/frontend/netplay/StationGameSession.java": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationGameSession.java",
+      "gitBlob": "e4130fa31266a0a400787148db4b332f48b50081",
+      "sha256": "4ab2aab97fc3b15127213edb4242bcbf349b7b5879cba354e2c5abfb14f918f7",
+      "bytes": 7446
+    },
+    "snapshot/netplay-src/org/emulationstation/frontend/netplay/StationLaunchPolicy.java": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationLaunchPolicy.java",
+      "gitBlob": "1baabb5314c05864894d970662b19a372cd4dbfa",
+      "sha256": "e58cc823ce19930650b4ba3a7028b975ea622ce2082f3e3ca657ef9dbd3fff13",
+      "bytes": 804
+    },
+    "snapshot/netplay-src/org/emulationstation/frontend/netplay/StationOnlineClient.java": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationOnlineClient.java",
+      "gitBlob": "c6d52d6c69d2d985f894838a0232dd5e7b21f67f",
+      "sha256": "1b7fa9b3b7510c92dc932bcf11d1a63beaf91b7a44f8f9419028bbec9b333ff4",
+      "bytes": 6497
+    },
+    "snapshot/netplay-src/org/emulationstation/frontend/netplay/StationOnlineGame.java": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationOnlineGame.java",
+      "gitBlob": "c9372db820e2f4f1c03c7b4600f15fb06aeece8e",
+      "sha256": "fc87237f8cfea7466f68167beb821de636ee3fd32c2bea16ae92d0370cbf4658",
+      "bytes": 7698
+    },
+    "snapshot/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryTunnel.java": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryTunnel.java",
+      "gitBlob": "aa8b23769e4a80d2e005db4c11bfc136938b66dd",
+      "sha256": "6c24b233f0d319e01a4ff1294f23a9a705434f4f1c92ba6b7f8fa3ed5bd60304",
+      "bytes": 14608
+    },
+    "snapshot/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryWire.java": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryWire.java",
+      "gitBlob": "bdc8911acc1e79f86268f68a247177adb4712fd6",
+      "sha256": "cb7e83ee84c1297c91c23bc24c47f7eb34204ce8ffda933f71d4b27bbc418a20",
+      "bytes": 3159
+    },
+    "snapshot/netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java",
+      "gitBlob": "ca767582059c883baa2339396f7f14888942b4c1",
+      "sha256": "fd3c65fbdf928125e77ec3211bddc4ffedf9d3feb085a0ad743b1ec9d2a4a50e",
+      "bytes": 17002
+    },
+    "snapshot/netplay-src/org/emulationstation/frontend/netplay/StationRetroLaunch.java": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationRetroLaunch.java",
+      "gitBlob": "a72901fce010ac38e36b64d0a5ef6e614390bea1",
+      "sha256": "f516caced6b744e74aa673661fe993f0c5cf74dd5c92ab593c167f1266ba196c",
+      "bytes": 8148
+    },
+    "snapshot/netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java",
+      "gitBlob": "db58457c5a1140b14512af1817f5c2c7e72aacd1",
+      "sha256": "0f36f5a3109eaac45055e7a472801fd8fea2d147b85219bd7003980278a35a85",
+      "bytes": 70049
+    },
+    "snapshot/recipes/build_java.py": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/recipes/build_java.py",
+      "gitBlob": "645c142056d9447ebe5b0a5d72beefbd12bcb69d",
+      "sha256": "3553077e1a0775f9790fbc3caac2b1def462811e628461b178908b01e839a695",
+      "bytes": 4191
+    },
+    "snapshot/recipes/build_native_runtime.py": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/recipes/build_native_runtime.py",
+      "gitBlob": "d0e688f8672cc0d6335045cc449dc6ed89502043",
+      "sha256": "7d594d76e21cabda3375eb0f9f1295e903765d1a3d2ee798afb4e95d931e964a",
+      "bytes": 5011
+    },
+    "snapshot/recipes/generate_engines.py": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/recipes/generate_engines.py",
+      "gitBlob": "3755dc934b65eef5f4221a570f21d06c0c34c46d",
+      "sha256": "c9288d51f010c0e91fdeee7680e63358307d54dee6b12eafa43d1df74b4e9bc4",
+      "bytes": 2235
+    },
+    "snapshot/recipes/package_recovery.py": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/recipes/package_recovery.py",
+      "gitBlob": "370ef4a7e934d444bc0331834943a2316aa5fd45",
+      "sha256": "dfa427761f9e383d24ecc794a86dddcaa73018969ee3bfb2ae423ba5e06490da",
+      "bytes": 8438
+    },
+    "snapshot/recipes/patch_native.py": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/recipes/patch_native.py",
+      "gitBlob": "c6defa8ba6802800916ac04dcdc406f2cbb2a0c4",
+      "sha256": "343c6f0513c3bbefc171da1a91142de7a902c0bd195f130ae1d14ec27602bd81",
+      "bytes": 5106
+    },
+    "snapshot/recipes/run_transport_tests.py": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/recipes/run_transport_tests.py",
+      "gitBlob": "cfdd2d88288c90eacf9ba6e6ab759cf4654ba8c4",
+      "sha256": "6ae5bac17d92a75e5e96d9cb144d6972afcb1d5970c13c50d556817a44513cfa",
+      "bytes": 3366
+    },
+    "snapshot/recipes/source_composition.py": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/recipes/source_composition.py",
+      "gitBlob": "79d4fd9b20ac4e7072c76dede2a809859244bcbd",
+      "sha256": "af7294fd49befea2332ce2a2afc63fb2a54f2a306f6bf43d00465c58aaa97fe3",
+      "bytes": 1112
+    },
+    "snapshot/tests/StationRecoveryProofTest.java": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/tests/StationRecoveryProofTest.java",
+      "gitBlob": "d04fcd2bdbbffc715a3f4325ad7054b2a34c683f",
+      "sha256": "72635eeaa487016c7d6d09c4a377bbe8699c6705de89932aacb75c38f565e926",
+      "bytes": 1042
+    },
+    "snapshot/tests/StationRecoveryTransportTest.java": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/tests/StationRecoveryTransportTest.java",
+      "gitBlob": "a72cc17004c3f40927b4aa90c2b5a618243c67bb",
+      "sha256": "a860a4d2e5a62a85a05a855537892cafc56f23a02fdb3b3a274ad07d572d01d8",
+      "bytes": 12958
+    },
+    "snapshot/tests/StationRecoveryVectorsTest.java": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/tests/StationRecoveryVectorsTest.java",
+      "gitBlob": "842dfcc1be150933c21a3c9c2c5e60983004ea83",
+      "sha256": "c8ce6b8173cb5ea3a02843792ba35cb840745c2290b8256803e04e79c93bba84",
+      "bytes": 2418
+    },
+    "snapshot/tests/contract-vectors.json": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/tests/contract-vectors.json",
+      "gitBlob": "fb6a39a6278bc85ea62220f86f5c7d5ebaa5d7cc",
+      "sha256": "b7efac34a5b04f78560c1749270a56fad640d8de5924c5f4e4abf62662dc0779",
+      "bytes": 6444
+    },
+    "snapshot/tests/native_recovery_test.c": {
+      "gitPath": "versions/station-online-recovery-r67-20261007/tests/native_recovery_test.c",
+      "gitBlob": "79879cdd51c1adee89fe190ae21360e46bf2e02a",
+      "sha256": "b15734a014e6cbade770b71b8195126320722804d1bfcb32d81b51982dc6c4e4",
+      "bytes": 1526
+    }
+  },
+  "r71RecoveryJavaCopied": 8,
+  "r71RoomsActivityMerge": "Owned by main task; excluded from copy",
+  "productionDeployed": false,
+  "candidateInstalled": false
+}

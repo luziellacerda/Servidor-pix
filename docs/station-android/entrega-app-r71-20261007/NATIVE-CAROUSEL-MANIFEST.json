@@ -1,0 +1,26 @@
+{
+  "base": "R70",
+  "baseNativeSHA256": "ce963fe991e78f3e3af1fcab7109d7f1163d2296dd97c39f550bf8fc2509bd42",
+  "files": {
+    "native-carousel/collection_video_policy.h": "10daa6b42d46d7bc1f099e705d9fa258af8c1a43a0ef6a0a7d4071cacbfe64f9",
+    "native-carousel/native_system_video720.h": "901d01341f3c316e02ca5b07cc278f5bc0864cff9ba39da7ce52030888261cc6",
+    "native-carousel/video720_posters.h": "1b2474f0b6793368d28c7826ac1aa83537760ac85b7445f4d142cc861a42529f"
+  },
+  "route": {
+    "folderKind": 2,
+    "platformAliases": [
+      "Super Nintendo",
+      "snes"
+    ],
+    "excludedAliases": [
+      "Super Nintendo - BR",
+      "snesbr"
+    ],
+    "asset": "turbo-system-videos/720-collection-snes-all.mp4",
+    "symbol": "station_collection_r71_snes_all"
+  },
+  "menuTargetFPS": 30,
+  "concurrentDecoders": 1,
+  "frameMetadataSlots": 58,
+  "allGamesCornerPolicy": "unchanged R70"
+}
