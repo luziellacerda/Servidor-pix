@@ -1,0 +1,15 @@
+{
+  "publishedUTC": "2026-10-07T20:39:13.301093+00:00",
+  "serverBranch": "fix/station-online-recovery-r67-20261007",
+  "serverHandoffCommit": "51b817505d5582ac39f9d43042ee3322b42feafd",
+  "serverCodeCommit": "32ce9d2b30bb23deef17899e10fc285f38ea81ab",
+  "appBranch": "fix/station-online-recovery-after-r67-20261007",
+  "appDeliveryCommit": "65dd0aa05330ace8df0a91a89c895a3aab6428f8",
+  "appFunctionalCodeCommit": "4d30401a80658dd56666ef10f48d9556b3fdd9e9",
+  "returnSHA256": "f385ac93369871ee648773cd1acc3eb7acac198d8a20152a43000cfcabe669ea",
+  "gitPushConfirmed": true,
+  "productionDeployed": false,
+  "candidateAPKPackaged": false,
+  "installed": false,
+  "twoDeviceGameplayVerified": false
+}
