@@ -5,7 +5,7 @@ Keeps current Station keys, commercial licenses, media, runtimes and clients.
 Never changes other product identities, keys, firewall rules or SSH access.
 Run with native polkit authentication and the established operator Python venv.
 """
-import argparse,base64,hashlib,hmac,importlib.util,json,os,pwd,re,secrets,shutil,socket,subprocess,time
+import argparse,base64,hashlib,hmac,importlib.util,json,os,pwd,re,secrets,shutil,socket,subprocess,sys,time
 from datetime import datetime,timezone
 from pathlib import Path
 from urllib.error import HTTPError
@@ -93,6 +93,24 @@ def groups():
     user=pwd.getpwnam(IDENTITY)
     if user.pw_uid==0 or user.pw_shell!='/usr/sbin/nologin':raise ValueError('Dedicated identity differs')
     return user
+def discard_shadow_crashes():
+    # Apport can retain memory from our failed pre-publication shadow. Match
+    # only this task's exact API command; never remove another program's crash.
+    sys.path.insert(0,'/usr/lib/python3/dist-packages')
+    from problem_report import ProblemReport
+    removed=0
+    for path in Path('/var/crash').glob('*dotnet*.crash'):
+        if path.is_symlink() or not path.is_file():continue
+        entry=ProblemReport()
+        with path.open('rb') as stream:entry.load(stream,binary=False,key_filter=['ExecutablePath','ProcCmdline'])
+        if not entry.get('ExecutablePath','').endswith('/dotnet') or not re.search(
+            r' /opt/turborama-station-security-20261007-[0-9a-f]{7}/TurboRamaSuiteOnlineServer\.dll(?: |$)',entry.get('ProcCmdline','')):
+            continue
+        path.unlink();removed+=1
+        for suffix in ['.upload','.uploaded']:
+            marker=path.with_suffix(suffix)
+            if marker.is_file() and not marker.is_symlink():marker.unlink()
+    return removed
 def pool_settings(connection):
     values={};entries=[]
     for name,value in re.findall(r'(?:^|;)\s*((?:Max(?:imum)?|Min(?:imum)?)\s*Pool\s*Size)\s*=\s*([0-9]+)',connection,re.I):
@@ -220,6 +238,7 @@ def apply(revision):
         config=snapshot_configs();config[str(hba)]=ops.digest(hba)
         state=dict(database=db,target=str(target),oldFiles=files(OLD),shared=shared,configuration=config,changedConfiguration={},
             hba=str(hba),realLicenseSha256=real_licenses(db),saved={})
+        result['discardedPrivateShadowCrashReports']=discard_shadow_crashes()
         stage='backup_restore';backup.mkdir(mode=0o700);(backup/'configuration').mkdir(mode=0o700)
         shutil.copytree(OLD,backup/'api')
         for i,name in enumerate(config):
