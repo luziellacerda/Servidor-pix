@@ -1,5 +1,9 @@
 # Segurança Station — correção de 07/10/2026
 
+## Adendo: fonte Android sucessora recebida
+
+R63 foi instalada nos dois aparelhos e o Samsung recebeu R66/e4397fd7. Leia [a análise R62–R66](RETORNO-ANALISE-HANDOFFS-R62-R66-STATION-20261007.md). O backend desta publicação continua da07355; o novo APK protegido permanece pendente, mas precisa partir da R66 e preservar seu DEX30, salas/capas R62 e controles/diagnóstico R64. As receitas e referências R57 abaixo descrevem o candidato anterior; não executar esse empacotador como atualização da R66. A retomada online continua sem implementação.
+
 ## Estado desta revisão
 
 Publicada em **07/10/2026 às12h38Maceió (15h38UTC)**. Fonte de implantação **da073551428c4b1320a3abebc257b3c3c933b3ca**, implementação C#882a009, DLL **83c8d2b3da68c85da7402165a7fa915fa7a084125511ec2df5541ec36ecaf682**, PID **1147382**, usuário/grupo **turborama-station-api**. [Recibo agregado sem credenciais](SEGURANCA-STATION-PRODUCAO-20261007.json).

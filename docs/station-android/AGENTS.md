@@ -1,3 +1,13 @@
+# Retornos R62–R66 analisados — 07/10/2026
+
+Leia `docs/station-android/RETORNO-ANALISE-HANDOFFS-R62-R66-STATION-20261007.md` e seu recibo. APP→SERVIDOR recebido em7a5db185; app até7d0d3da/implementaçãoR66 291f3949. R63 foi instalada nos dois aparelhos; Samsung depoisR66/e4397fd7 com catálogo aberto, Motorola últimaR63/d9a35602. BIOS CD já existia no APK e a R66 liga a preparação automática aos assets. README/STATUS de preparação conservam história; recibos posteriores identificam instalação. Gameplay CD não capturado. Convite curto/senha automática já integrados.
+
+Queda12:24:07UTC correlacionada: duas conexões abortadas pelo servidor,142s após início, antes do aviso do app; renovação200 às12:23:46. Gatilho inicial/heartbeat individual não provados. v1 ainda cancela ambos/Leave e não permite retomada; Q01–Q08 continuam exigindo implementação coordenada. Inventário das tabelas centrais de189ZIPs originais cruzado com TSV14/IDs/capas; bytes dos chips/pacotes ativos não verificados. NG-01–NG-07 seguem com essas limitações.
+
+API da07355/PID1147382/isolamento preservados. ProteçãoAndroid213cfce derivaR57: conciliar comR62/R63/R64/R65/R66 antes de novo build; não executar empacotadorR57 sobre a sucessora. Preservar DEX30R66, salas/capas, controles/diagnóstico, runtime899e, alias/licença/saves/assinatura. RequireVerifiedApp=false. Análise/documentação apenas, sem nova implantação.
+
+## Histórico da publicação de segurança
+
 # Segurança Station publicada — 07/10/2026
 
 Leia `docs/station-android/RETORNO-SEGURANCA-STATION-20261007.md` e seu recibo. APIda07355/DLL83c8d2b3/PID1147382; usuário e papel próprios, visões Station, arquivos/mídias somente para leitura, outros segredos inacessíveis, rotas Station só pelo túnel local. Backup/restauração,4921arquivos,198checksHTTPS+15segurança e2554relay passaram. Catálogo14/2212, licenças/chaves/quatro motores/outros serviços preservados. Origemdireta404; firewall/SSH/Cloudflare intactos. Migrations031/032 aditivas. Chave simétrica com acesso apenas ao proprietário preservada; gestão validada no socket privado,5187/health sem token404intencional.
