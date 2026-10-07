@@ -64,6 +64,23 @@ def sql_stdin(db,text):
     result=subprocess.run(['runuser','-u','postgres','--','psql','-X','-q','-v','ON_ERROR_STOP=1','--dbname',db],
         input=text,text=True,capture_output=True,timeout=60)
     if result.returncode:raise ValueError('Protected database operation failed')
+def scalar(db,statement):return ops.sql(db,statement).strip()
+def database_scope(db):
+    attributes=scalar(db,"SELECT concat_ws(':',rolsuper::int,rolcreatedb::int,rolcreaterole::int,rolinherit::int,rolbypassrls::int) "
+        "FROM pg_roles WHERE rolname='turborama-station-api'")
+    if attributes!='0:0:0:0:0':raise ValueError('Dedicated database role has excess privileges')
+    forbidden=['suite.suite_licenses','suite.suite_devices','suite.suite_license_deliveries',
+        'suite.station_sessions','suite.station_devices','suite.station_customer_projection']
+    names=','.join("'"+name+"'" for name in forbidden)
+    if scalar(db,"SELECT count(*) FROM unnest(ARRAY["+names+"]) AS t(name) "
+        "WHERE has_table_privilege('turborama-station-api',name,'SELECT,INSERT,UPDATE,DELETE')")!='0':
+        raise ValueError('Dedicated database role can reach a raw shared table')
+    if scalar(db,"SELECT has_schema_privilege('turborama-station-api','station_api','CREATE')")!='f':
+        raise ValueError('Dedicated database role can create objects')
+    if scalar(db,'BEGIN; SET LOCAL ROLE "turborama-station-api"; SELECT count(*) FROM station_api.suite_licenses '
+        "WHERE product_id<>'TURBORAMA_STATION_ANDROID'; ROLLBACK;")!='0':
+        raise ValueError('Dedicated view exposed another product')
+    return dict(rawSharedTablesDenied=len(forbidden),administrativePrivilegesDenied=True,otherProductRowsHidden=True)
 def scram(password):
     salt=secrets.token_bytes(16);derived=hashlib.pbkdf2_hmac('sha256',password.encode(),salt,4096)
     stored=hashlib.sha256(hmac.digest(derived,b'Client Key','sha256')).digest();server=hmac.digest(derived,b'Server Key','sha256')
@@ -151,7 +168,7 @@ def rollback(revision,automatic=False):
     ops.sql(state['database'],'SELECT pg_reload_conf()')
     if state.get('aclBackup'):
         ops.run(['/usr/bin/setfacl','--restore='+str(backup/'media.acl')],timeout=60)
-    if ops.sql(state['database'],"SELECT count(*) FROM pg_roles WHERE rolname='turborama-station-api'")=='1':
+    if scalar(state['database'],"SELECT count(*) FROM pg_roles WHERE rolname='turborama-station-api'")=='1':
         sql_stdin(state['database'],'ALTER ROLE "turborama-station-api" NOLOGIN;')
     ops.run(['systemctl','daemon-reload']);ops.run(['systemctl','restart',SERVICE]);ops.ready('http://127.0.0.1:5192')
     if online.command_path()!=OLD/DLL:raise ValueError('Original Station did not return')
@@ -192,7 +209,7 @@ def apply(revision):
                 if row.get(field) and not any(Path(row[field]).is_relative_to(root) for root in MEDIA):raise ValueError('Unplanned media root')
         result['relayBefore']=idle();shared={u:ops.state(u) for u in SHARED}
         if any('ActiveState=active' not in v for v in shared.values()):raise ValueError('Shared service unhealthy')
-        hba=Path(ops.sql(db,'SHOW hba_file'))
+        hba=Path(scalar(db,'SHOW hba_file'))
         if hba.parent!=Path('/etc/postgresql/16/main') or hba.is_symlink():raise ValueError('Unexpected local PostgreSQL configuration')
         config=snapshot_configs();config[str(hba)]=ops.digest(hba)
         state=dict(database=db,target=str(target),oldFiles=files(OLD),shared=shared,configuration=config,changedConfiguration={},
@@ -216,11 +233,12 @@ def apply(revision):
         previous_return=any(p.is_file() and p.stat().st_uid==0 for p in Path('/mnt/DADOS').glob('station-security-backup-20261007-*/rollback-complete'))
         for number in ['031_station_api_isolation','032_station_request_proof']:
             migration=ROOT/'migrations/suite'/(number+'.up.sql')
-            exists=ops.sql(db,"SELECT count(*) FROM suite.schema_migrations WHERE version='"+number+"'")!='0'
+            exists=scalar(db,"SELECT count(*) FROM suite.schema_migrations WHERE version='"+number+"'")!='0'
             if exists and not previous_return:raise ValueError('Migration already exists outside a proven rollback')
             if not exists:ops.run(['runuser','-u','postgres','--','psql','-X','-q','-v','ON_ERROR_STOP=1','--dbname',db,'-f',str(migration)],timeout=70)
         password=secrets.token_hex(32)
         sql_stdin(db,'ALTER ROLE "turborama-station-api" LOGIN CONNECTION LIMIT '+str(connection_limit)+' PASSWORD \''+scram(password)+"';")
+        result['databaseScope']=database_scope(db)
         KEYS.mkdir(mode=0o750);os.chown(KEYS,0,user.pw_gid)
         def protected(name,data):
             p=KEYS/name;ops.private_text(p,data);os.chown(p,0,user.pw_gid);p.chmod(0o640);return str(p)
@@ -254,7 +272,7 @@ def apply(revision):
         ops.replace_config(hba,hba_new)
         state['changedConfiguration'][str(hba)]=ops.digest(hba)
         ops.replace_config(backup/'state.json',json.dumps(state))
-        if ops.sql(db,"SELECT count(*) FROM pg_hba_file_rules WHERE error IS NOT NULL")!='0':raise ValueError('Dedicated HBA rule is invalid')
+        if scalar(db,"SELECT count(*) FROM pg_hba_file_rules WHERE error IS NOT NULL")!='0':raise ValueError('Dedicated HBA rule is invalid')
         ops.sql(db,'SELECT pg_reload_conf()')
         env_text='\n'.join(k+'='+json.dumps(v) for k,v in sorted(settings.items()))+'\n'
         env_file=Path(protected('station.env',env_text))
