@@ -385,7 +385,8 @@ def apply(revision):
         result['publicSecurity']=load('verificar-seguranca-station-20261007.py').verify(index,verify,'https://app.lzgames.com.br')
         origin_addresses=json.loads(ops.run(['ip','-j','-4','addr','show']))
         address=next(item['local'] for nic in origin_addresses for item in nic.get('addr_info',[]) if item.get('scope')=='global')
-        request=Request('http://'+address+'/v1/station/catalog',headers={'Host':'app.lzgames.com.br','CF-Connecting-IP':'127.0.0.1'})
+        request=Request('http://'+address+'/v1/station/catalog',headers={'Host':'app.lzgames.com.br','CF-Connecting-IP':'127.0.0.1',
+            'User-Agent':'Dalvik/2.1.0 (Linux; U; Android 13; Station Release Verification)'})
         try:
             with build_opener(ProxyHandler({})).open(request,timeout=10) as reply:status=reply.status
         except HTTPError as reply:status=reply.code
