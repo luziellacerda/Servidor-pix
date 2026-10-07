@@ -63,7 +63,10 @@ def real_licenses(db):
 def sql_stdin(db,text):
     result=subprocess.run(['runuser','-u','postgres','--','psql','-X','-q','-v','ON_ERROR_STOP=1','--dbname',db],
         input=text,text=True,capture_output=True,timeout=60)
-    if result.returncode:raise ValueError('Protected database operation failed')
+    if result.returncode:
+        failure=RESULT.with_name('erro-banco-'+datetime.now(timezone.utc).strftime('%H%M%S%f')+'.json')
+        report(dict(stderr=result.stderr[-12000:]),failure)
+        raise ValueError('Protected database operation failed; diagnostic saved privately')
 def scalar(db,statement):return ops.sql(db,statement).strip()
 def database_scope(db):
     attributes=scalar(db,"SELECT concat_ws(':',rolsuper::int,rolcreatedb::int,rolcreaterole::int,rolinherit::int,rolbypassrls::int) "
@@ -158,6 +161,7 @@ def rollback(revision,automatic=False):
     backup,_,target=paths(revision);state=json.loads((backup/'state.json').read_text())
     if online.command_path() not in (OLD/DLL,target/DLL):raise ValueError('Station release was superseded')
     idle();unchanged(state,configuration=False)
+    restart_required=DROPIN.exists() or online.command_path()==target/DLL
     DROPIN.unlink(missing_ok=True)
     for name in [*PROXY,SAMBA,Path(state['hba'])]:
         source=backup/'configuration'/state['saved'][str(name)]
@@ -170,7 +174,9 @@ def rollback(revision,automatic=False):
         ops.run(['/usr/bin/setfacl','--restore='+str(backup/'media.acl')],timeout=60)
     if scalar(state['database'],"SELECT count(*) FROM pg_roles WHERE rolname='turborama-station-api'")=='1':
         sql_stdin(state['database'],'ALTER ROLE "turborama-station-api" NOLOGIN;')
-    ops.run(['systemctl','daemon-reload']);ops.run(['systemctl','restart',SERVICE]);ops.ready('http://127.0.0.1:5192')
+    if restart_required:
+        ops.run(['systemctl','daemon-reload']);ops.run(['systemctl','restart',SERVICE])
+    ops.ready('http://127.0.0.1:5192')
     if online.command_path()!=OLD/DLL:raise ValueError('Original Station did not return')
     unchanged(state)
     # These are only copies created by this rollout; original Station secrets remain.
@@ -235,7 +241,7 @@ def apply(revision):
             migration=ROOT/'migrations/suite'/(number+'.up.sql')
             exists=scalar(db,"SELECT count(*) FROM suite.schema_migrations WHERE version='"+number+"'")!='0'
             if exists and not previous_return:raise ValueError('Migration already exists outside a proven rollback')
-            if not exists:ops.run(['runuser','-u','postgres','--','psql','-X','-q','-v','ON_ERROR_STOP=1','--dbname',db,'-f',str(migration)],timeout=70)
+            if not exists:sql_stdin(db,migration.read_text())
         password=secrets.token_hex(32)
         sql_stdin(db,'ALTER ROLE "turborama-station-api" LOGIN CONNECTION LIMIT '+str(connection_limit)+' PASSWORD \''+scram(password)+"';")
         result['databaseScope']=database_scope(db)
