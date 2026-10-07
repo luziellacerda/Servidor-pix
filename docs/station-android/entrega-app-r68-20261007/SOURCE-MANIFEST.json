@@ -1,0 +1,12 @@
+{
+  "evidence/installation-samsung.json": "9848e6a416504bd1d541f924a42ed2c77cea84199aa4c4e428dd9ac677ca0277",
+  "evidence/native-build.json": "9cb591c1957342dc31281f95011a58973264f2c570ac942ec198f593b841b079",
+  "evidence/package.json": "f0c6a76d1171ce7f25b6be2982059781969d056cacdd3db71009ac0cd49bc0ea",
+  "native/collection_corner_policy.h": "5b2141acdb52902f45fc66565d689045fa580f2f16aa80249f89d4a8a07d4194",
+  "native/native_formation.h": "85427c57690daff2208c2332817f566901a9beffca927160e1beab4c6444fbb0",
+  "README.md": "d07f5bb2b88db6b82a27ef4d4a83553cf8620d55d0b02fd46e742ecf0c544321",
+  "recipes/build_native.py": "3c5a323aff712a7f149a70efb4441ec6508f6d8a257fbe92eda3cbc572dbdca1",
+  "recipes/package_r68.py": "7312dda4ab500a60d6300fead29abc2e2e7c80e6c64d183a260dbe22c9a12f59",
+  "STATUS.json": "8ef3f7d8b96fdab492a791a283451b7dd403d6c50b2f0846c80cda21666d782d",
+  "tests/collection_corners.cpp": "8255f5823beec61760d7eae3f84d02b0bb15f0f7078fb2e41004539460439cf5"
+}

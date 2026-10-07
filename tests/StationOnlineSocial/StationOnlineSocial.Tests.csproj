@@ -9,6 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="../../src/TurboRamaSuiteOnlineServer/StationOnline.cs" />
+    <Compile Include="../../src/TurboRamaSuiteOnlineServer/StationSessionSecurity.cs" />
     <Compile Include="SocialTests.cs" />
   </ItemGroup>
 </Project>

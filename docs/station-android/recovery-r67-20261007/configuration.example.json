@@ -1,0 +1,9 @@
+{
+  "Station": {
+    "Online": {
+      "RecoveryEnabled": false,
+      "RecoveryMaxRooms": 64,
+      "RecoveryWindowBytes": 262144
+    }
+  }
+}

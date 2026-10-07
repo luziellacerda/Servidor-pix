@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "scope": "Synthetic public test vectors; no valid production credential or private key",
+  "publicKeySpkiBase64Url": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu6ppT4ZI5iFtflRx5Zr-6zB_kOvXzis_vjh5tFIbO99lFVaeDjNUbqbISxbOPX_Xngi3d5cXJw9NQ77_2KwcP-CN1ot4Mps3xNunvOlco39HKgnAGgQ1Jz4vansnIm5Uk4xxBGjUeOvajzfzifpDWhRH3LhGeJfVNXjlwEXz4sFyGw2dHw569V6y2NATxsYH6kSZt0mcSSLDQ1TlDBaltOqWq60xtExmuno9y2eJOTuh3D8hkhl5bLkaWjC-prlbmo8vKbzZWKA0Kn1pE6fhhHAOu68QfEx1K_X--keBvCc7Lz8nkckhqOwBaBqRePPO3CkcPoiLaRUDdhRs8ZdXcQIDAQAB",
+  "requestProof": [
+    {
+      "method": "POST",
+      "target": "/v1/station/online/command",
+      "bodyBase64Url": "eyJhY3Rpb24iOiJoZWFydGJlYXQiLCJyZXF1ZXN0SWQiOiIwMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMDAwMDAwMDEifQ",
+      "syntheticCredential": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "timestamp": 1791399600,
+      "nonce": "AAECAwQFBgcICQoLDA0ODw",
+      "canonicalUTF8": "TurboRamaStationAndroid/request/v1\nPOST\n/v1/station/online/command\ne53ce08ac803b8d94c0e4337a0e6436d974033e474e97fd3d2de8443fd4d5583\nea866a757e4c38babfa8127cbe9a409d3e1f93a00ff1488ff735fcf917afffd0\n1791399600\nAAECAwQFBgcICQoLDA0ODw\n",
+      "canonicalSHA256": "65bfe3e2a3c704d88c1fce430b9242f2f3c5f15e828362f421f12dffcfb95d45",
+      "signatureBase64Url": "VmEPSXYvkC2HO9n-zjBildQifugRSrRkykX3W_SDAXrQwLyRqJrg130vpBE6xGzk1m-6UI9DKpV_p58M9aa1tnbuNmegI_qfuAJ_9BUjkXWbVxQ8u_0sZmRpo0pPHvt9XDZp6m677UCDzxWwXz7RtzoYoU7YYWvpAwHExhL8JRzzeMFVcutZp3uic33LYvX1seKl3qp_mh-NJ4Le6LeGxD64PEezcsFREoLFH3VeeRLtfGe92No97g1m5iBhvsps-FYvlRr16SB5jh6GUoLyMhBb8BBTovsP9gqFwO6YDlBiAdZYEsj0m1GRLIhDxQdpgugv3qc3jZ7KMrg0WjH-8Q"
+    },
+    {
+      "method": "POST",
+      "target": "/v1/station/online/command",
+      "bodyBase64Url": "eyJhY3Rpb24iOiJyZXN1bWUtcmVsYXkiLCJyZXF1ZXN0SWQiOiIwMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMDAwMDAwMDIiLCJyb29tSWQiOiJzeW50aGV0aWMtcm9vbSIsImdlbmVyYXRpb24iOjIsInJlY292ZXJ5UHJvdG9jb2wiOiJzdGF0aW9uLXN0cmVhbS52MiIsImVuZ2luZUlkIjoic3ludGhldGljLXJ1bnRpbWUiLCJjb250ZW50U2hhMjU2IjoiYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYSIsIm9wdGlvbnNTaGEyNTYiOiJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiIiwiY29yZVNoYTI1NiI6ImNjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2MiLCJydW50aW1lU2hhMjU2IjoiZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZCJ9",
+      "syntheticCredential": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "timestamp": 1791399600,
+      "nonce": "AAECAwQFBgcICQoLDA0ODw",
+      "canonicalUTF8": "TurboRamaStationAndroid/request/v1\nPOST\n/v1/station/online/command\n3bf3415e436ea579d0478ef8a7daaa99750947fcb8b9e5ecf91c209ec0033d48\nea866a757e4c38babfa8127cbe9a409d3e1f93a00ff1488ff735fcf917afffd0\n1791399600\nAAECAwQFBgcICQoLDA0ODw\n",
+      "canonicalSHA256": "0d8b7768d8c261faf3513d7e06da6d24bcbe268866a92c91023da93ec10a4d79",
+      "signatureBase64Url": "auTcbZiVF_GvHHnXFgry_li41LwvDhfxDmEftaHYhGnmcd6tW1unXMezSMqWhmW07VLPl2rzxZFelEOp603Z2ljimjS0KEsbT1hc8_zB2T2Hx21ubGU9Ehjl4AJ6V7aLH3EVBamfcz_qkYxj6sqlLpx8RFxOAR16hoPfOSjqMpKILBrLyPBNPOnYDViXC4NCherPresKGAA4pblwBb6kwXgxqpqkBjEqnlF1Il3L7YL_ZSPZoiK923piZbsFvxHUfCGX1mIjklEzuqYp_OtYrmxlEJYfh_XA8WJXz0uDiSskiBzVrv9xCpc40_rBLjS3xdR2R713XSM9psXQFthMSg"
+    },
+    {
+      "method": "GET",
+      "target": "/v1/station/online/relay",
+      "bodyBase64Url": "",
+      "syntheticCredential": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+      "timestamp": 1791399600,
+      "nonce": "AAECAwQFBgcICQoLDA0ODw",
+      "canonicalUTF8": "TurboRamaStationAndroid/request/v1\nGET\n/v1/station/online/relay\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\nea866a757e4c38babfa8127cbe9a409d3e1f93a00ff1488ff735fcf917afffd0\n1791399600\nAAECAwQFBgcICQoLDA0ODw\n",
+      "canonicalSHA256": "b941ea7afad6403e724d3fdbf787ab3cdd14264144a89fd8375482d325acb268",
+      "signatureBase64Url": "HD6naRkrNqTWbsk7ldfjnf4l21MayF7fkvvsFHF0nWMmuw8RBMBwe7UvNuNp3mA95FEDGxI7cfJVI1FTJ_Y09V6mQynJ7fZ3nfQWS2f4RMAujG9n0FHr5JSavBWg_xjfw3fx3WUQZOVisIYTRDShhXRdI_gNtE7RRN_N4ehYjUj9DZNsQ82E9BbxXiJGJHQHmseSZg6pZV85HygLAKxu_UAha4snjymsGtdHrRp9vYhOHa_gza7_ybaD7-h323PesRDkdTkfJilx81iGFYyPFV-ViYvu-VzitzgTYSM0stON8iVdDMLYj-bMTOwKdO8RCN5nswCh8vddaIU7I0OByg"
+    }
+  ],
+  "wire": [
+    {
+      "type": 1,
+      "offset": 42,
+      "value": 0,
+      "payloadHex": "",
+      "frameHex": "5453523201000000000000000000002a0000000000000000"
+    },
+    {
+      "type": 2,
+      "offset": 42,
+      "value": 0,
+      "payloadHex": "",
+      "frameHex": "5453523202000000000000000000002a0000000000000000"
+    },
+    {
+      "type": 3,
+      "offset": 42,
+      "value": 0,
+      "payloadHex": "010203feff",
+      "frameHex": "5453523203000000000000000000002a0000000000000000010203feff"
+    },
+    {
+      "type": 4,
+      "offset": 42,
+      "value": 0,
+      "payloadHex": "",
+      "frameHex": "5453523204000000000000000000002a0000000000000000"
+    },
+    {
+      "type": 5,
+      "offset": 42,
+      "value": 0,
+      "payloadHex": "",
+      "frameHex": "5453523205000000000000000000002a0000000000000000"
+    },
+    {
+      "type": 6,
+      "offset": 42,
+      "value": 2,
+      "payloadHex": "",
+      "frameHex": "5453523206000000000000000000002a0000000000000002"
+    },
+    {
+      "type": 7,
+      "offset": 42,
+      "value": 0,
+      "payloadHex": "",
+      "frameHex": "5453523207000000000000000000002a0000000000000000"
+    },
+    {
+      "type": 8,
+      "offset": 42,
+      "value": 0,
+      "payloadHex": "",
+      "frameHex": "5453523208000000000000000000002a0000000000000000"
+    },
+    {
+      "type": 9,
+      "offset": 42,
+      "value": 0,
+      "payloadHex": "",
+      "frameHex": "5453523209000000000000000000002a0000000000000000"
+    },
+    {
+      "type": 10,
+      "offset": 42,
+      "value": 0,
+      "payloadHex": "",
+      "frameHex": "545352320a000000000000000000002a0000000000000000"
+    },
+    {
+      "type": 11,
+      "offset": 42,
+      "value": 0,
+      "payloadHex": "",
+      "frameHex": "545352320b000000000000000000002a0000000000000000"
+    },
+    {
+      "type": 12,
+      "offset": 42,
+      "value": 0,
+      "payloadHex": "",
+      "frameHex": "545352320c000000000000000000002a0000000000000000"
+    },
+    {
+      "type": 13,
+      "offset": 42,
+      "value": 0,
+      "payloadHex": "",
+      "frameHex": "545352320d000000000000000000002a0000000000000000"
+    }
+  ]
+}

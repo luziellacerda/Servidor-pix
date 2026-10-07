@@ -9,13 +9,16 @@ namespace TurboRamaSuiteOnlineServer.Online;
 // Ephemeral, single-instance rooms. Authoritative authentication is injected by StationEndpoints.
 // This component never handles activation secrets, ROM bytes, payment data or public relays.
 public sealed record OnlineIdentity(string LicenseId, string DeviceId);
-public sealed record OnlineEngine(string Id, string Platform, string CoreSha256, string RuntimeSha256);
+public sealed record StationOnlineTrace(DateTimeOffset Utc,string RequestId,string? Correlation,
+    long Generation,string Role,string Action,string ProofMode,long HostAgeMs,long ClientAgeMs,double ElapsedMs);
+public sealed record OnlineEngine(string Id, string Platform, string CoreSha256, string RuntimeSha256,
+    string? RecoveryProtocol = null);
 public sealed record OnlineCommand(string Action, string RequestId, string? Nickname = null,
     string? RoomId = null, string? PeerId = null, string? ItemId = null,
     string? EngineId = null, string? ContentSha256 = null, string? OptionsSha256 = null,
     string? CoreSha256 = null, string? RuntimeSha256 = null,
     string? Address = null, int Port = 0, string? Text = null, bool Value = false, int Page = 0, string? Transport = null,
-    string? InviteCode = null);
+    string? InviteCode = null, string? RecoveryProtocol = null, long Generation = 0);
 public sealed class OnlineFailure(int status, string code) : Exception(code)
 { public int Status { get; } = status; public string Code { get; } = code; }
 
@@ -26,7 +29,7 @@ public sealed class StationOnline
         public string Id = id, Nickname = nickname;
         public OnlineIdentity Identity = identity;
         public long Seen = seen, LastChat = long.MinValue / 2;
-        public string? Room;
+        public string? Room, RecoveryProtocol;
         public readonly HashSet<string> Blocks = [];
         // Retain request fingerprints, never 64 full snapshots per player or old room secrets.
         public readonly Dictionary<string, string> Receipts = [];
@@ -47,6 +50,11 @@ public sealed class StationOnline
         public string Transport = "direct";
         public long Generation = 1;
         public long StartingAt;
+        public string? RecoveryProtocol;
+        public string RecoveryPhase="waiting-reconnect";
+        public bool RecoveryStarted;
+        public bool HostListening;
+        public readonly string Correlation = Id();
         public readonly List<string> Members = [host];
         public readonly HashSet<string> Ready = [];
         public readonly Queue<object> Messages = [];
@@ -61,11 +69,18 @@ public sealed class StationOnline
     private readonly bool socialEnabled;
     private sealed record Invite(string Id, string From, string To, string Room, long Expires);
     public sealed record RelayLease(string RoomId,string PeerId,long Generation,bool Host,
-        string ProofMode = "none", string? ProofKeySpki = null);
+        string ProofMode = "none", string? ProofKeySpki = null,
+        string Protocol = "station-relay.v1", string? AttachmentId = null,
+        OnlineIdentity? Identity = null, string? Correlation = null);
     private sealed record RelayGrant(string Token,RelayLease Lease,long Expires);
     private readonly Dictionary<string,RelayGrant> relayGrants = [];
     private readonly HashSet<string> usedRelayPeers = [];
+    private readonly Dictionary<string, string> recoveryAttachments = [];
     private readonly bool relayEnabled;
+    private readonly bool recoveryEnabled;
+    private readonly int recoveryMaximumRooms;
+    private readonly int recoveryWindowBytes;
+    private readonly Action<StationOnlineTrace>? trace;
     private readonly object gate = new();
     private readonly Dictionary<string, Peer> peers = [];
     private readonly Dictionary<OnlineIdentity, string> identities = [];
@@ -80,9 +95,17 @@ public sealed class StationOnline
     private long revision;
     private TaskCompletionSource pulse = NewPulse();
     public StationOnline(IEnumerable<OnlineEngine> engines, Func<string, string?> platformForItem,
-        Func<long>? clock = null, bool relayEnabled = false, bool socialEnabled = false)
+        Func<long>? clock = null, bool relayEnabled = false, bool socialEnabled = false,
+        bool recoveryEnabled = false, int recoveryMaximumRooms = 64,int recoveryWindowBytes=262144,
+        Action<StationOnlineTrace>? trace=null)
     {
         this.relayEnabled=relayEnabled;this.socialEnabled=socialEnabled;
+        this.recoveryEnabled=recoveryEnabled&&relayEnabled;
+        Require(recoveryMaximumRooms is >=1 and <=512,400,"STATION_RECOVERY_CONFIG_INVALID");
+        this.recoveryMaximumRooms=recoveryMaximumRooms;
+        Require(recoveryWindowBytes is >=32768 and <=1048576,400,"STATION_RECOVERY_CONFIG_INVALID");
+        this.recoveryWindowBytes=recoveryWindowBytes;
+        this.trace=trace;
         this.engines = engines.ToDictionary(x => x.Id);
         foreach (var e in this.engines.Values) { Hash(e.CoreSha256); Hash(e.RuntimeSha256); }
         this.platformForItem = platformForItem;
@@ -127,8 +150,19 @@ public sealed class StationOnline
         long now = clock();
         foreach(var request in joinRequests.Values.Where(x=>x.Expires<=now).ToArray()){joinRequests.Remove(request.Id);Changed();}
         foreach(var key in relayGrants.Where(x=>x.Value.Expires<=now).Select(x=>x.Key).ToArray())relayGrants.Remove(key);
-        foreach (var p in peers.Values.Where(p => now - p.Seen >= 60000).ToArray()) Remove(p);
-        foreach (var r in rooms.Values.Where(r=>r.State=="starting" && now-r.StartingAt>=(r.Transport=="relay-wss-v1"?90000:30000)).ToArray())
+        foreach (var p in peers.Values.Where(p => now - p.Seen >= 60000).ToArray())
+        {
+            // Social presence expires; authenticated membership of a v2 match does not.
+            if(p.Room is not null && rooms.TryGetValue(p.Room,out var retained) && retained.Transport=="relay-wss-v2")
+            {
+                // Never turn a terminal state back into a recoverable room; initial launch still
+                // needs starting/connecting until both native streams complete the first barrier.
+                if(retained.RecoveryStarted&&retained.State is not "waiting-reconnect" and not "unrecoverable")
+                {retained.State="waiting-reconnect";retained.RecoveryPhase="waiting-reconnect";Changed();}
+            }
+            else Remove(p);
+        }
+        foreach (var r in rooms.Values.Where(r=>r.Transport!="relay-wss-v2" && r.State=="starting" && now-r.StartingAt>=(r.Transport=="relay-wss-v1"?90000:30000)).ToArray())
             if(peers.TryGetValue(r.Host,out var host))Leave(host);
         foreach (var i in invites.Values.Where(i => i.Expires <= now).ToArray()) { invites.Remove(i.Id); Changed(); }
     }
@@ -149,7 +183,7 @@ public sealed class StationOnline
                 rooms.Remove(room.Id);
                 roomCodes.Remove(room.InviteCode);
                 foreach(var request in joinRequests.Values.Where(x=>x.Room==room.Id).ToArray())joinRequests.Remove(request.Id);
-                foreach(var member in room.Members){relayGrants.Remove(member);usedRelayPeers.Remove(member);}
+                foreach(var member in room.Members){relayGrants.Remove(member);usedRelayPeers.Remove(member);recoveryAttachments.Remove(member);}
                 foreach (var member in room.Members) if (peers.TryGetValue(member, out var other)) other.Room = null;
                 foreach (var i in invites.Values.Where(i => i.Room == room.Id).ToArray()) invites.Remove(i.Id);
             }
@@ -185,11 +219,12 @@ public sealed class StationOnline
     private object View(Peer p, int page, Room? resolved = null)
     {
         Require(page >= 0 && page <= 40, 400, "STATION_ONLINE_PAGE_INVALID");
-        var visible = peers.Values.Where(x => !Blocked(p,x)).OrderBy(x => x.Id, StringComparer.Ordinal).ToArray();
+        var visible = peers.Values.Where(x => clock()-x.Seen<60000 && !Blocked(p,x)).OrderBy(x => x.Id, StringComparer.Ordinal).ToArray();
         Room? selected = p.Room is not null ? rooms.GetValueOrDefault(p.Room) : null;
         return new {
             schemaVersion = 1, instance, revision, selfId = p.Id, heartbeatSeconds = 20, expiresAfterSeconds = 60,
-            transports=relayEnabled?new[]{"direct","relay-wss-v1"}:new[]{"direct"},
+            transports=recoveryEnabled?new[]{"direct","relay-wss-v1","relay-wss-v2"}:relayEnabled?new[]{"direct","relay-wss-v1"}:new[]{"direct"},
+            recoveryCapabilities=recoveryEnabled?new[]{"station-stream.v2"}:Array.Empty<string>(),
             roomCapabilities=new[]{"short-invite-v1"},
             resolvedRoom=resolved is null ? null : new { roomId=resolved.Id,itemId=resolved.Item,engineId=resolved.Engine.Id,hostId=resolved.Host },
             socialCapabilities=socialEnabled?new[]{"direct-chat-v1","join-request-v1"}:Array.Empty<string>(),
@@ -209,13 +244,15 @@ public sealed class StationOnline
                 connectionPassword=selected.Password,inviteCode=selected.InviteCode,
                 members=selected.Members.ToArray(),ready=selected.Ready.ToArray(),messages=selected.Messages.ToArray(),
                 transport=selected.Transport,
-                relay=selected.Transport=="relay-wss-v1"&&relayGrants.TryGetValue(p.Id,out var grant)?new {path="/v1/station/online/relay",protocol="station-relay.v1",ticket=grant.Token,expiresInSeconds=Math.Max(0,(grant.Expires-clock())/1000)}:null,
+                recoveryProtocol=selected.RecoveryProtocol,recoveryState=selected.RecoveryPhase,recoveryStarted=selected.RecoveryStarted,hostListening=selected.HostListening,relayCorrelation=selected.Correlation,
+                relay=selected.Transport is "relay-wss-v1" or "relay-wss-v2"&&relayGrants.TryGetValue(p.Id,out var grant)?new {path="/v1/station/online/relay",protocol=grant.Lease.Protocol,ticket=grant.Token,windowBytes=selected.Transport=="relay-wss-v2"?recoveryWindowBytes:0,expiresInSeconds=Math.Max(0,(grant.Expires-clock())/1000)}:null,
                 directEndpoint=selected.Transport=="direct"&&selected.State is "starting" or "connecting" ? new { address=selected.Address,port=selected.Port } : null },
-            engines = engines.Values.Select(e => new { engineId=e.Id,platform=e.Platform,coreSha256=e.CoreSha256,runtimeSha256=e.RuntimeSha256 }).ToArray()
+            engines = engines.Values.Select(e => new { engineId=e.Id,platform=e.Platform,coreSha256=e.CoreSha256,runtimeSha256=e.RuntimeSha256,recoveryProtocol=e.RecoveryProtocol }).ToArray()
         };
     }
     public object Command(OnlineIdentity identity, OnlineCommand cmd, StationSessionSecurity? security = null)
     {
+        long commandStart=System.Diagnostics.Stopwatch.GetTimestamp();
         Require(!string.IsNullOrWhiteSpace(identity.LicenseId) && !string.IsNullOrWhiteSpace(identity.DeviceId),401,"STATION_SESSION_INVALID");
         Require(Guid.TryParseExact(cmd.RequestId,"D",out _),400,"STATION_ONLINE_REQUEST_INVALID");
         Require(cmd.Page>=0 && cmd.Page<=40,400,"STATION_ONLINE_PAGE_INVALID");
@@ -235,6 +272,15 @@ public sealed class StationOnline
             if (p.Receipts.TryGetValue(cmd.RequestId,out var receipt))
             { Require(receipt==requestJson,409,"STATION_ONLINE_REQUEST_REUSED"); return View(p,cmd.Page,cmd.Action=="resolve-code"?ResolveCode(p,cmd.InviteCode):null); }
             Rate(p);
+            var before=p.Room is not null?rooms.GetValueOrDefault(p.Room):null;
+            var age=before is not null?RelayPresence(new(before.Id,p.Id,before.Generation,before.Host==p.Id)):(-1L,-1L);
+            void Trace(){
+                if(trace is null)return;
+                var current=p.Room is not null?rooms.GetValueOrDefault(p.Room):before;
+                trace(new(DateTimeOffset.UtcNow,cmd.RequestId,current?.Correlation,current?.Generation??0,
+                    current is null?"none":current.Host==p.Id?"host":"client",cmd.Action,security?.Mode??"none",age.Item1,age.Item2,
+                    System.Diagnostics.Stopwatch.GetElapsedTime(commandStart).TotalMilliseconds));
+            }
             Room? resolved = null;
             switch (cmd.Action)
             {
@@ -242,7 +288,7 @@ public sealed class StationOnline
                 case "heartbeat": break;
                 case "resolve-code": resolved = ResolveCode(p,cmd.InviteCode); break;
                 case "leave": Leave(p); break;
-                case "offline": Remove(p); return new { schemaVersion=1,instance,revision,offline=true };
+                case "offline": Trace();Remove(p); return new { schemaVersion=1,instance,revision,offline=true };
                 case "create":
                 {
                     Require(p.Room is null,409,"STATION_ONLINE_ALREADY_IN_ROOM");
@@ -252,6 +298,9 @@ public sealed class StationOnline
                     Require(cmd.ItemId is not null && platformForItem(cmd.ItemId)==engine.Platform,404,"STATION_ONLINE_ITEM_UNAVAILABLE");
                     Require(Hash(cmd.CoreSha256)==engine.CoreSha256 && Hash(cmd.RuntimeSha256)==engine.RuntimeSha256,409,"STATION_ONLINE_BUILD_MISMATCH");
                     var room=new Room(Id(),p.Id,cmd.ItemId!,engine,Hash(cmd.ContentSha256),Hash(cmd.OptionsSha256),NewRoomCode());
+                    Require(cmd.RecoveryProtocol is null or "station-stream.v2",400,"STATION_RECOVERY_PROTOCOL_INVALID");
+                    if(cmd.RecoveryProtocol is not null)Require(recoveryEnabled&&engine.RecoveryProtocol==cmd.RecoveryProtocol,409,"STATION_RECOVERY_BUILD_REQUIRED");
+                    p.RecoveryProtocol=cmd.RecoveryProtocol;room.RecoveryProtocol=cmd.RecoveryProtocol;
                     rooms[room.Id]=room;roomCodes.Add(room.InviteCode,room.Id);p.Room=room.Id;Changed();break;
                 }
                 case "join":
@@ -263,6 +312,7 @@ public sealed class StationOnline
                     Require(Hash(cmd.ContentSha256)==r.Content && Hash(cmd.OptionsSha256)==r.Options &&
                         Hash(cmd.CoreSha256)==r.Engine.CoreSha256 && Hash(cmd.RuntimeSha256)==r.Engine.RuntimeSha256,
                         409,"STATION_ONLINE_BUILD_MISMATCH");
+                    Require(cmd.RecoveryProtocol==r.RecoveryProtocol,409,"STATION_RECOVERY_BUILD_REQUIRED");p.RecoveryProtocol=cmd.RecoveryProtocol;
                     r.Members.Add(p.Id);r.Ready.Clear();r.Generation++;p.Room=r.Id;
                     foreach(var request in joinRequests.Values.Where(x=>x.From==p.Id).ToArray())joinRequests.Remove(request.Id);
                     foreach(var invite in invites.Values.Where(x=>x.To==p.Id&&x.Room==r.Id).ToArray())invites.Remove(invite.Id);
@@ -277,7 +327,14 @@ public sealed class StationOnline
                 {
                     var r=Member(p,cmd.RoomId);Require(r.Host==p.Id,403,"STATION_ONLINE_HOST_REQUIRED");
                     Require(r.State=="waiting" && r.Members.Count==2 && r.Ready.Count==2,409,"STATION_ONLINE_NOT_READY");
-                    if(cmd.Transport=="relay-wss-v1"){
+                    if(cmd.Transport=="relay-wss-v2"){
+                        Require(recoveryEnabled,503,"STATION_RECOVERY_DISABLED");
+                        Require(r.RecoveryProtocol=="station-stream.v2" && r.Engine.RecoveryProtocol==r.RecoveryProtocol &&
+                            r.Members.All(member=>peers[member].RecoveryProtocol==r.RecoveryProtocol),409,"STATION_RECOVERY_BUILD_REQUIRED");
+                        Require(rooms.Values.Count(x=>x.Transport=="relay-wss-v2")<recoveryMaximumRooms,503,"STATION_RECOVERY_FULL");
+                        r.Transport="relay-wss-v2";
+                    }else if(cmd.Transport=="relay-wss-v1"){
+                        Require(r.RecoveryProtocol is null,409,"STATION_RECOVERY_BUILD_REQUIRED");
                         Require(relayEnabled,503,"STATION_ONLINE_RELAY_DISABLED");r.Transport="relay-wss-v1";
                     }else{
                         Require(cmd.Transport is null or "direct",400,"STATION_ONLINE_TRANSPORT_INVALID");
@@ -293,18 +350,34 @@ public sealed class StationOnline
                 case "host-listening":
                 {
                     var r=Member(p,cmd.RoomId);Require(r.Host==p.Id,403,"STATION_ONLINE_HOST_REQUIRED");
-                    Require(r.State is "starting" or "connecting",409,"STATION_ONLINE_NOT_READY");
+                    Require(r.State is "starting" or "connecting" || r.Transport=="relay-wss-v2",409,"STATION_ONLINE_NOT_READY");
+                    r.HostListening=true;
                     if(r.State=="starting"){r.State="connecting";if(r.Transport=="direct")r.Generation++;Changed();}break;
                 }
-                case "relay-ticket":
+                case "recovery-failed":
                 {
                     var r=Member(p,cmd.RoomId);
-                    Require(relayEnabled&&r.Transport=="relay-wss-v1",503,"STATION_ONLINE_RELAY_DISABLED");
-                    Require(r.State is "starting" or "connecting",409,"STATION_ONLINE_NOT_READY");
+                    Require(r.Transport=="relay-wss-v2"&&cmd.Generation==r.Generation,409,"STATION_RECOVERY_GENERATION_MISMATCH");
+                    r.State="unrecoverable";r.RecoveryPhase="unrecoverable";Changed();break;
+                }
+                case "relay-ticket":
+                case "resume-relay":
+                {
+                    var r=Member(p,cmd.RoomId);
+                    bool recoverable=r.Transport=="relay-wss-v2";
+                    Require(relayEnabled&&(r.Transport=="relay-wss-v1"||recoverable&&recoveryEnabled),503,"STATION_ONLINE_RELAY_DISABLED");
+                    if(recoverable){
+                        Require(r.State!="unrecoverable",409,"STATION_RECOVERY_UNRECOVERABLE");
+                        Require(security is not null&&security.Mode!="none"&&security.PublicKeySpki is not null,401,"STATION_REQUEST_PROOF_REQUIRED");
+                        Require(cmd.Generation==r.Generation&&cmd.RecoveryProtocol==r.RecoveryProtocol,409,"STATION_RECOVERY_GENERATION_MISMATCH");
+                        Require(cmd.EngineId==r.Engine.Id&&Hash(cmd.ContentSha256)==r.Content&&Hash(cmd.OptionsSha256)==r.Options&&
+                            Hash(cmd.CoreSha256)==r.Engine.CoreSha256&&Hash(cmd.RuntimeSha256)==r.Engine.RuntimeSha256,409,"STATION_ONLINE_BUILD_MISMATCH");
+                    }else Require(cmd.Action=="relay-ticket"&&r.State is "starting" or "connecting",409,"STATION_ONLINE_NOT_READY");
                     Require(!usedRelayPeers.Contains(p.Id),409,"STATION_ONLINE_RELAY_ALREADY_ATTACHED");
                     string ticket=Convert.ToBase64String(RandomNumberGenerator.GetBytes(32)).TrimEnd('=').Replace('+','-').Replace('/','_');
                     relayGrants[p.Id]=new RelayGrant(ticket,new RelayLease(r.Id,p.Id,r.Generation,r.Host==p.Id,
-                        security?.Mode ?? "none", security?.PublicKeySpki),clock()+60000);break;
+                        security?.Mode ?? "none", security?.PublicKeySpki,
+                        recoverable?"station-stream.v2":"station-relay.v1",recoverable?Id():null,p.Identity,r.Correlation),clock()+60000);break;
                 }
                 case "invite":
                 {
@@ -382,7 +455,7 @@ public sealed class StationOnline
                 }
                 default: throw new OnlineFailure(400,"STATION_ONLINE_ACTION_INVALID");
             }
-            var result=View(p,cmd.Page,resolved);p.Receipts[cmd.RequestId]=requestJson;p.ReceiptOrder.Enqueue(cmd.RequestId);
+            Trace();var result=View(p,cmd.Page,resolved);p.Receipts[cmd.RequestId]=requestJson;p.ReceiptOrder.Enqueue(cmd.RequestId);
             while(p.ReceiptOrder.Count>64)p.Receipts.Remove(p.ReceiptOrder.Dequeue());
             return result;
         }
@@ -393,19 +466,42 @@ public sealed class StationOnline
             Sweep();Require(relayEnabled,503,"STATION_ONLINE_RELAY_DISABLED");
             Require(Regex.IsMatch(token,"\\A[A-Za-z0-9_-]{43}\\z"),401,"STATION_ONLINE_RELAY_TICKET_INVALID");
             var grant=relayGrants.Values.FirstOrDefault(g=>CryptographicOperations.FixedTimeEquals(System.Text.Encoding.ASCII.GetBytes(g.Token),System.Text.Encoding.ASCII.GetBytes(token)));
-            Require(grant is not null && grant.Expires>clock() && RelayCurrentLocked(grant.Lease),401,"STATION_ONLINE_RELAY_TICKET_INVALID");
+            Require(grant is not null && grant.Expires>clock() && RelayCurrentLocked(grant.Lease,issued:true),401,"STATION_ONLINE_RELAY_TICKET_INVALID");
             if(grant!.Lease.ProofMode!="none")
             {
                 Require(validateProof is not null,401,"STATION_REQUEST_PROOF_REQUIRED");
                 validateProof!(grant.Lease);
             }
             relayGrants.Remove(grant!.Lease.PeerId);Require(usedRelayPeers.Add(grant.Lease.PeerId),409,"STATION_ONLINE_RELAY_ALREADY_ATTACHED");
+            if(grant.Lease.Protocol=="station-stream.v2")recoveryAttachments[grant.Lease.PeerId]=grant.Lease.AttachmentId!;
             return grant.Lease;
         }
     }
-    private bool RelayCurrentLocked(RelayLease lease)=>rooms.TryGetValue(lease.RoomId,out var room)&&room.Transport=="relay-wss-v1"&&room.Generation==lease.Generation&&room.Members.Contains(lease.PeerId)&&peers.TryGetValue(lease.PeerId,out var peer)&&clock()-peer.Seen<60000;
+    private bool RelayCurrentLocked(RelayLease lease,bool issued=false)=>rooms.TryGetValue(lease.RoomId,out var room)&&
+        room.Transport==(lease.Protocol=="station-stream.v2"?"relay-wss-v2":"relay-wss-v1")&&room.Generation==lease.Generation&&
+        (lease.Protocol!="station-stream.v2"||room.State!="unrecoverable")&&
+        room.Members.Contains(lease.PeerId)&&peers.TryGetValue(lease.PeerId,out var peer)&&
+        (lease.Protocol=="station-stream.v2"?issued?!usedRelayPeers.Contains(lease.PeerId):recoveryAttachments.GetValueOrDefault(lease.PeerId)==lease.AttachmentId:clock()-peer.Seen<60000);
     public bool RelayCurrent(RelayLease lease){lock(gate){Sweep();return RelayCurrentLocked(lease);}}
-    public void CloseRelay(RelayLease lease){lock(gate){if(RelayCurrentLocked(lease)&&peers.TryGetValue(lease.PeerId,out var peer))Leave(peer);}}
+    public void CloseRelay(RelayLease lease){lock(gate){
+        if(lease.Protocol=="station-stream.v2"){
+            if(recoveryAttachments.GetValueOrDefault(lease.PeerId)!=lease.AttachmentId)return;
+            recoveryAttachments.Remove(lease.PeerId);usedRelayPeers.Remove(lease.PeerId);
+            if(rooms.TryGetValue(lease.RoomId,out var room)&&room.Generation==lease.Generation&&room.State!="unrecoverable"){
+                room.RecoveryPhase="waiting-reconnect";if(room.RecoveryStarted)room.State="waiting-reconnect";Changed();}
+        }else if(RelayCurrentLocked(lease)&&peers.TryGetValue(lease.PeerId,out var peer))Leave(peer);
+    }}
+    public bool RecoveryRoomCurrent(string id,long generation){lock(gate)return rooms.TryGetValue(id,out var room)&&room.Transport=="relay-wss-v2"&&room.Generation==generation;}
+    public void RecoveryState(RelayLease lease,string state){lock(gate){if(RelayCurrentLocked(lease)&&rooms.TryGetValue(lease.RoomId,out var room)&&room.RecoveryPhase!=state){
+        room.RecoveryPhase=state;
+        if(state=="playing")room.RecoveryStarted=true;
+        if(room.RecoveryStarted||state=="unrecoverable")room.State=state;
+        Changed();}}}
+    public (long HostAgeMs,long ClientAgeMs) RelayPresence(RelayLease lease){lock(gate){
+        if(!rooms.TryGetValue(lease.RoomId,out var room))return(-1,-1);
+        long Age(string member)=>peers.TryGetValue(member,out var peer)?Math.Max(0,clock()-peer.Seen):-1;
+        return(Age(room.Host),room.Members.Where(x=>x!=room.Host).Select(Age).DefaultIfEmpty(-1).First());
+    }}
     public async Task<object> Events(OnlineIdentity identity, string? clientInstance,long after,int page,CancellationToken token)
     {
         Require(page>=0 && page<=40,400,"STATION_ONLINE_PAGE_INVALID");

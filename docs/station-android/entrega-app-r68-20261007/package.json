@@ -1,0 +1,23 @@
+{
+  "createdUTC": "2026-10-07T19:30:10.243512+00:00",
+  "apk": "G:\\BAKUP SISTEMA APP 03-10-2026\\apks-candidatos-visuais\\TurboStations-Premium-R68-20261007.apk",
+  "sha256": "72ce7c2cbb3d7cf14ad122b0b98e42a41563114bbbc5c925caedbdee49ff66c3",
+  "bytes": 2110287488,
+  "baseSHA256": "d746cc02b602162b19509cd44ad7cf751e320de3b52199e7d48e86e9e897228f",
+  "certificateSHA256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "changed": [
+    "lib/arm64-v8a/libturbo_carousel.so"
+  ],
+  "preservedEntries": 13221,
+  "allPackageEntriesVerified": true,
+  "alignment16KiB": true,
+  "allDexPreserved": true,
+  "all55VideosPreserved": true,
+  "allEmulatorsPreserved": true,
+  "allCollectionsSquareCorners": true,
+  "mainPlatformsUnchanged": true,
+  "individualGameCoversUnchanged": true,
+  "menu30FpsPreserved": true,
+  "securityR67Preserved": true,
+  "installed": false
+}

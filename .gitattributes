@@ -5,3 +5,6 @@
 *.ps1 text eol=lf
 *.yml text eol=lf
 *.yaml text eol=lf
+
+# Preserve inbound R68 receipts byte for byte.
+docs/station-android/entrega-app-r68-20261007/** -text

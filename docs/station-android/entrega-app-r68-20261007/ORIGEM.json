@@ -1,0 +1,14 @@
+{
+  "repository": "TurboElden",
+  "branch": "fix/station-collection-corners-r68-20261007",
+  "commit": "c2a1a6d130552b4470b2be3f49db0d1ab72c37b5",
+  "originalDirectory": "versions/station-collection-corners-r68-20261007",
+  "files": {
+    "README.md": "d07f5bb2b88db6b82a27ef4d4a83553cf8620d55d0b02fd46e742ecf0c544321",
+    "package.json": "f0c6a76d1171ce7f25b6be2982059781969d056cacdd3db71009ac0cd49bc0ea",
+    "SOURCE-MANIFEST.json": "5aaabdf402aac7a948584953e1088734d9e9c3dbdb224dcceb89e70085268bf8",
+    "installation-samsung.json": "9848e6a416504bd1d541f924a42ed2c77cea84199aa4c4e428dd9ac677ca0277",
+    "STATUS.json": "8ef3f7d8b96fdab492a791a283451b7dd403d6c50b2f0846c80cda21666d782d"
+  },
+  "scope": "Inbound installed visual successor only; no Linux deployment"
+}

@@ -6,12 +6,20 @@ namespace TurboRamaSuiteOnlineServer;
 public interface IStationOnlineAccess
 {
     Task<StationSession?> Authenticate(string bearer,CancellationToken token);
+    Task<bool> AuthorizeRelay(StationOnline.RelayLease lease,CancellationToken token)=>Task.FromResult(false);
     object Sign(object payload);
 }
 public sealed class StationOnlineAccess(PostgresStationStore store,StationResponseSigner signer) : IStationOnlineAccess
 {
     public Task<StationSession?> Authenticate(string bearer,CancellationToken token)=>store.FindSessionAsync(bearer,token);
     public object Sign(object payload)=>signer.Sign(payload);
+    public async Task<bool> AuthorizeRelay(StationOnline.RelayLease lease,CancellationToken token)
+    {
+        if(lease.Identity is not {} identity)return false;
+        var device=await store.FindDeviceAsync(identity.LicenseId,identity.DeviceId,token);
+        return device is not null&&(!device.RequestProofRequired||lease.ProofMode!="none")&&
+            (!device.VerifiedAppRequired||lease.ProofMode=="ec-p256-v1");
+    }
 }
 
 // Additive Station-only routes. Disabled unless the operator enables Station:Online:Enabled.
@@ -27,12 +35,15 @@ public static class StationOnlineEndpoints
                 return Results.NotFound();
             context.Response.Headers.CacheControl="no-store";
             if(!enabled)return Results.StatusCode(503);
-            return Results.Json(context.RequestServices.GetRequiredService<StationRelay>().Snapshot());
+            var legacy=context.RequestServices.GetRequiredService<StationRelay>().Snapshot();
+            if(!app.Configuration.GetValue("Station:Online:RecoveryEnabled",false))return Results.Json(legacy);
+            return Results.Json(new{legacy,recovery=context.RequestServices.GetRequiredService<StationRecoveryRelay>().Snapshot()});
         });
         app.MapGet("/v1/station/online/relay",async (HttpContext context)=>{
             context.Response.Headers.CacheControl="no-store";
             if(!enabled||!app.Configuration.GetValue("Station:Online:RelayEnabled",false)){await RelayError(context,503,"STATION_ONLINE_RELAY_DISABLED");return;}
-            if(!context.WebSockets.IsWebSocketRequest||context.Request.QueryString.HasValue||!context.WebSockets.WebSocketRequestedProtocols.Contains("station-relay.v1")){await RelayError(context,400,"STATION_ONLINE_RELAY_UPGRADE_REQUIRED");return;}
+            if(!context.WebSockets.IsWebSocketRequest||context.Request.QueryString.HasValue||
+                !context.WebSockets.WebSocketRequestedProtocols.Any(x=>x is "station-relay.v1" or "station-stream.v2")){await RelayError(context,400,"STATION_ONLINE_RELAY_UPGRADE_REQUIRED");return;}
             try{
                 var header=context.Request.Headers.Authorization.ToString();
                 if(!header.StartsWith("StationRelay ",StringComparison.Ordinal)||header.Length!=56)throw new OnlineFailure(401,"STATION_ONLINE_RELAY_TICKET_INVALID");
@@ -42,8 +53,17 @@ public static class StationOnlineEndpoints
                         context.Request.Headers[StationRequestProof.Header].ToString(), value.ProofMode,
                         value.ProofKeySpki!, header[13..], "GET", "/v1/station/online/relay", []));
                 try{
-                    using var socket=await context.WebSockets.AcceptWebSocketAsync("station-relay.v1");
-                    await relay.Attach(lease,socket,context.RequestAborted);
+                    if(!context.WebSockets.WebSocketRequestedProtocols.Contains(lease.Protocol))throw new OnlineFailure(409,"STATION_RECOVERY_PROTOCOL_MISMATCH");
+                    if(lease.Protocol=="station-stream.v2"){
+                        if(!app.Configuration.GetValue("Station:Online:RecoveryEnabled",false))throw new OnlineFailure(503,"STATION_RECOVERY_DISABLED");
+                        var recovery=context.RequestServices.GetRequiredService<StationRecoveryRelay>();
+                        if(!await context.RequestServices.GetRequiredService<IStationOnlineAccess>().AuthorizeRelay(lease,context.RequestAborted))throw new OnlineFailure(401,"STATION_SESSION_INVALID");
+                        using var socket=await context.WebSockets.AcceptWebSocketAsync("station-stream.v2");
+                        await recovery.Attach(lease,socket,context.RequestAborted);
+                    }else{
+                        using var socket=await context.WebSockets.AcceptWebSocketAsync("station-relay.v1");
+                        await relay.Attach(lease,socket,context.RequestAborted);
+                    }
                 }finally{hub.CloseRelay(lease);}
             }catch(OnlineFailure e){if(!context.Response.HasStarted)await RelayError(context,e.Status,e.Code);}
             catch(SuiteException e){if(!context.Response.HasStarted)await RelayError(context,e.StatusCode,e.Code);}

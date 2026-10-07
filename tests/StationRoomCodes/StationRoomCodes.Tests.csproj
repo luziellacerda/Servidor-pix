@@ -4,5 +4,5 @@
     <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors><EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
-  <ItemGroup><Compile Include="../../src/TurboRamaSuiteOnlineServer/StationOnline.cs"/><Compile Include="Program.cs"/></ItemGroup>
+  <ItemGroup><Compile Include="../../src/TurboRamaSuiteOnlineServer/StationOnline.cs"/><Compile Include="../../src/TurboRamaSuiteOnlineServer/StationSessionSecurity.cs"/><Compile Include="Program.cs"/></ItemGroup>
 </Project>

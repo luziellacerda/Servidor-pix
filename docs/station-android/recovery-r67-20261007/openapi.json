@@ -1,0 +1,765 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Station recovery candidate after R67",
+    "version": "station-stream.v2-candidate-20261007",
+    "description": "Not deployed. Existing online/v1 signed REST envelopes and routes are retained; station-stream.v2 is an opt-in WSS protocol."
+  },
+  "paths": {
+    "/v1/station/online/command": {
+      "post": {
+        "operationId": "stationOnlineCommand",
+        "security": [
+          {
+            "bearerSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-Station-Request-Proof",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Required for protected sessions and all v2 recovery credentials"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Command"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SignedEnvelope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignedEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/station/online/events": {
+      "post": {
+        "operationId": "stationOnlineEvents",
+        "security": [
+          {
+            "bearerSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-Station-Request-Proof",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Required for protected sessions and all v2 recovery credentials"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Events"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SignedEnvelope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignedEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/station/online/relay": {
+      "get": {
+        "operationId": "stationOnlineRelay",
+        "description": "No query string. Ticket+fresh request proof verified before one-use consumption; exact negotiated subprotocol. After HTTP101 the TSR2 binary framing applies. Ticket-only alternative is exclusively for legacy v1 sessions that have not adopted request proof; v2 requires both.",
+        "security": [
+          {
+            "relayTicket": [],
+            "requestProof": []
+          },
+          {
+            "relayTicket": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Sec-WebSocket-Protocol",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "station-relay.v1",
+                "station-stream.v2"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "101": {
+            "description": "WebSocket upgrade"
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Command": {
+        "type": "object",
+        "required": [
+          "action",
+          "requestId"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "nickname": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "roomId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "peerId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "itemId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "engineId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "contentSha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "optionsSha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "coreSha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "runtimeSha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "address": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "text": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "transport": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "inviteCode": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "recoveryProtocol": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "enter",
+              "heartbeat",
+              "resolve-code",
+              "leave",
+              "offline",
+              "create",
+              "join",
+              "ready",
+              "start",
+              "host-listening",
+              "recovery-failed",
+              "relay-ticket",
+              "resume-relay",
+              "invite",
+              "dismiss-invite",
+              "direct-chat",
+              "request-join",
+              "accept-request",
+              "dismiss-request",
+              "chat",
+              "block"
+            ]
+          },
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "generation": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 40
+          },
+          "port": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535
+          },
+          "value": {
+            "type": "boolean"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "action": {
+                  "const": "create"
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "then": {
+              "required": [
+                "itemId",
+                "engineId",
+                "contentSha256",
+                "optionsSha256",
+                "coreSha256",
+                "runtimeSha256"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "action": {
+                  "const": "join"
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "then": {
+              "required": [
+                "roomId",
+                "contentSha256",
+                "optionsSha256",
+                "coreSha256",
+                "runtimeSha256"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "action": {
+                  "const": "start"
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "then": {
+              "required": [
+                "roomId",
+                "transport"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "action": {
+                  "const": "resume-relay"
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "then": {
+              "required": [
+                "roomId",
+                "generation",
+                "recoveryProtocol",
+                "engineId",
+                "contentSha256",
+                "optionsSha256",
+                "coreSha256",
+                "runtimeSha256"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "action": {
+                  "const": "recovery-failed"
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "then": {
+              "required": [
+                "roomId",
+                "generation"
+              ]
+            }
+          }
+        ]
+      },
+      "Events": {
+        "type": "object",
+        "required": [
+          "requestId",
+          "revision",
+          "page"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "instance": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 40
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "code": {
+            "type": "string",
+            "pattern": "^STATION_[A-Z0-9_]+$"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "SignedEnvelope": {
+        "type": "object",
+        "required": [
+          "keyId",
+          "payload",
+          "signature"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "payload": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "signature": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+$"
+          }
+        }
+      },
+      "RecoveryRoomFields": {
+        "type": "object",
+        "required": [
+          "roomId",
+          "generation",
+          "transport",
+          "recoveryProtocol",
+          "recoveryState",
+          "recoveryStarted",
+          "hostListening",
+          "relayCorrelation"
+        ],
+        "properties": {
+          "roomId": {
+            "type": "string"
+          },
+          "generation": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "transport": {
+            "const": "relay-wss-v2"
+          },
+          "recoveryProtocol": {
+            "const": "station-stream.v2"
+          },
+          "recoveryState": {
+            "type": "string",
+            "enum": [
+              "waiting-reconnect",
+              "synchronizing",
+              "playing",
+              "unrecoverable"
+            ]
+          },
+          "recoveryStarted": {
+            "type": "boolean"
+          },
+          "hostListening": {
+            "type": "boolean"
+          },
+          "relayCorrelation": {
+            "type": "string"
+          },
+          "relay": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "path": {
+                "const": "/v1/station/online/relay"
+              },
+              "protocol": {
+                "const": "station-stream.v2"
+              },
+              "ticket": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]{43}$"
+              },
+              "windowBytes": {
+                "type": "integer",
+                "minimum": 32768,
+                "maximum": 1048576
+              },
+              "expiresInSeconds": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 60
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerSession": {
+        "type": "http",
+        "scheme": "bearer"
+      },
+      "relayTicket": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization",
+        "description": "StationRelay followed by one-use 43-character private ticket"
+      },
+      "requestProof": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Station-Request-Proof",
+        "description": "v1.timestamp.nonce.signature; unchanged request/v1 canonical bytes"
+      }
+    }
+  }
+}

@@ -4,11 +4,6 @@ using System.Text;
 
 namespace TurboRamaSuiteOnlineServer;
 
-public sealed record StationSessionSecurity(string Mode, string? PublicKeySpki)
-{
-    public static readonly StationSessionSecurity Legacy = new("none", null);
-}
-
 // Proofs cover the credential, request target and small control body. They do
 // not hash ROMs, inspect downloaded files or sign game traffic frames.
 public sealed class StationRequestProof(TimeProvider clock, int maximumNonces = 262144)

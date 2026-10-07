@@ -16,14 +16,28 @@ public static class StationOnlineRegistration
         if(engines is null || engines.Length is <1 or >32 || engines.Any(e=>string.IsNullOrEmpty(e.Id)||e.Id.Length>64||string.IsNullOrEmpty(e.Platform)))
             throw new InvalidOperationException("Invalid online engine registry.");
         // Index metadata only: never open a ROM merely to enter a room.
-        builder.Services.AddSingleton(new StationOnline(engines, id =>
+        bool recoveryEnabled=builder.Configuration.GetValue("Station:Online:RecoveryEnabled",false);
+        int recoveryRooms=builder.Configuration.GetValue("Station:Online:RecoveryMaxRooms",64);
+        int recoveryWindow=builder.Configuration.GetValue("Station:Online:RecoveryWindowBytes",262144);
+        if(recoveryRooms is <1 or >512||recoveryWindow is <32768 or >1048576 ||
+            (long)recoveryRooms*recoveryWindow*2>128L*1024*1024||engines.Any(e=>e.RecoveryProtocol is not null and not "station-stream.v2"))
+            throw new InvalidOperationException("Invalid or excessive recovery bounds.");
+        builder.Services.AddSingleton(sp=>new StationOnline(engines, id =>
         {
             var item = (monitor?.Current ?? library).Catalog.FirstOrDefault(e => e.ItemId == id);
             return item is null ? null : Normalize(item.Platform);
-        },relayEnabled:builder.Configuration.GetValue("Station:Online:RelayEnabled",false),socialEnabled:builder.Configuration.GetValue("Station:Online:SocialEnabled",false)));
+        },relayEnabled:builder.Configuration.GetValue("Station:Online:RelayEnabled",false),socialEnabled:builder.Configuration.GetValue("Station:Online:SocialEnabled",false),
+            recoveryEnabled:recoveryEnabled,recoveryMaximumRooms:recoveryRooms,recoveryWindowBytes:recoveryWindow,
+            trace:eventValue=>sp.GetRequiredService<ILogger<StationOnline>>().LogInformation("Station online control utc={Utc} requestId={RequestId} correlation={Correlation} generation={Generation} role={Role} action={Action} proofMode={ProofMode} hostHeartbeatAgeMs={HostAge} clientHeartbeatAgeMs={ClientAge} commandElapsedMs={ElapsedMs}",
+                eventValue.Utc,eventValue.RequestId,eventValue.Correlation,eventValue.Generation,eventValue.Role,eventValue.Action,eventValue.ProofMode,eventValue.HostAgeMs,eventValue.ClientAgeMs,eventValue.ElapsedMs)));
         builder.Services.AddSingleton(sp=>new StationRelay(sp.GetRequiredService<StationOnline>(),
-            builder.Configuration.GetValue("Station:Online:RelayMaxRooms",128)));
+            builder.Configuration.GetValue("Station:Online:RelayMaxRooms",128),sp.GetRequiredService<ILogger<StationRelay>>()));
         builder.Services.AddSingleton<IStationOnlineAccess,StationOnlineAccess>();
+        if(recoveryEnabled){
+            builder.Services.AddSingleton(sp=>new StationRecoveryRelay(sp.GetRequiredService<StationOnline>(),
+                sp.GetRequiredService<IStationOnlineAccess>(),sp.GetRequiredService<ILogger<StationRecoveryRelay>>(),recoveryRooms,recoveryWindow));
+            builder.Services.AddHostedService(sp=>sp.GetRequiredService<StationRecoveryRelay>());
+        }
     }
     private static string Normalize(string value)=>value.ToLowerInvariant() switch {
         "snesbr" or "super nintendo" or "super nintendo - br"=>"snes",

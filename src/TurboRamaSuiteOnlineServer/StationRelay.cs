@@ -4,7 +4,7 @@ using TurboRamaSuiteOnlineServer.Online;
 namespace TurboRamaSuiteOnlineServer;
 
 // Only pairs authenticated members of one Station room. Never connects to arbitrary addresses.
-public sealed class StationRelay(StationOnline hub, int maximumRooms = 128)
+public sealed class StationRelay(StationOnline hub, int maximumRooms = 128,ILogger<StationRelay>? logger=null)
 {
     public int MaximumRooms { get; } = maximumRooms is >= 1 and <= 2048
         ? maximumRooms : throw new ArgumentOutOfRangeException(nameof(maximumRooms));
@@ -16,6 +16,8 @@ public sealed class StationRelay(StationOnline hub, int maximumRooms = 128)
         public readonly TaskCompletionSource Ready=new(TaskCreationOptions.RunContinuationsAsynchronously);
         public readonly CancellationTokenSource Stop=new();
         public int Users;
+        public int FirstEnd;
+        public long HostBytes,ClientBytes;
     }
     private readonly object gate=new();private readonly Dictionary<string,Pair> pairs=[];
     public int ActiveRooms {get{lock(gate)return pairs.Count;}}
@@ -38,7 +40,14 @@ public sealed class StationRelay(StationOnline hub, int maximumRooms = 128)
             if(pair.Host!=null&&pair.Client!=null)pair.Ready.TrySetResult();
         }
         using var cancel=CancellationTokenSource.CreateLinkedTokenSource(aborted,pair.Stop.Token);
-        Task watch=Watch(lease,cancel);
+        string cause="PEER_CLOSE";string exceptionType="none";int? closeCode=null;
+        void First(string category){
+            if(Interlocked.CompareExchange(ref pair.FirstEnd,1,0)!=0)return;
+            var ages=hub.RelayPresence(lease);
+            logger?.LogInformation("Station relay event=first-end utc={Utc} correlation={Correlation} generation={Generation} role={Role} cause={Cause} closeCode={CloseCode} exceptionType={ExceptionType} hostHeartbeatAgeMs={HostAge} clientHeartbeatAgeMs={ClientAge} hostBytes={HostBytes} clientBytes={ClientBytes}",
+                DateTimeOffset.UtcNow,lease.Correlation,lease.Generation,lease.Host?"host":"client",category,closeCode,exceptionType,ages.HostAgeMs,ages.ClientAgeMs,Interlocked.Read(ref pair.HostBytes),Interlocked.Read(ref pair.ClientBytes));
+        }
+        Task watch=Watch(lease,cancel,First);
         try{
             await pair.Ready.Task.WaitAsync(TimeSpan.FromSeconds(60),cancel.Token);
             var destination=lease.Host?pair.Client!:pair.Host!;
@@ -46,17 +55,27 @@ public sealed class StationRelay(StationOnline hub, int maximumRooms = 128)
             byte[] buffer=new byte[32768];long window=Environment.TickCount64;long bytes=0;
             while(!cancel.IsCancellationRequested){
                 var read=await socket.ReceiveAsync(buffer.AsMemory(),cancel.Token);
-                if(read.MessageType==WebSocketMessageType.Close)break;
-                if(read.MessageType!=WebSocketMessageType.Binary)throw new IOException("Binary relay required");
+                if(read.MessageType==WebSocketMessageType.Close){closeCode=(int?)socket.CloseStatus;First("PEER_CLOSE");break;}
+                if(read.MessageType!=WebSocketMessageType.Binary){First("BINARY_REQUIRED");throw new IOException("Binary relay required");}
                 long now=Environment.TickCount64;if(now-window>=1000){window=now;bytes=0;}
                 bytes+=read.Count;if(bytes>8*1024*1024){await Task.Delay((int)Math.Max(1,1000-(now-window)),cancel.Token);window=Environment.TickCount64;bytes=read.Count;}
                 // Await the peer write; no unbounded queue or user-controlled destination.
                 await destination.SendAsync(buffer.AsMemory(0,read.Count),WebSocketMessageType.Binary,read.EndOfMessage,cancel.Token);
                 Interlocked.Add(ref forwardedBytes,read.Count);
+                if(lease.Host)Interlocked.Add(ref pair.HostBytes,read.Count);else Interlocked.Add(ref pair.ClientBytes,read.Count);
             }
         }
-        catch(Exception e)when(e is OperationCanceledException or TimeoutException or WebSocketException or IOException or ObjectDisposedException){}
+        catch(Exception e)when(e is OperationCanceledException or TimeoutException or WebSocketException or IOException or ObjectDisposedException){
+            exceptionType=e.GetType().Name;cause=e is TimeoutException?"PAIR_WAIT_TIMEOUT":e is OperationCanceledException?
+                aborted.IsCancellationRequested?"REQUEST_ABORT":pair.Stop.IsCancellationRequested?"PAIR_CANCEL":!hub.RelayCurrent(lease)?"LEASE_INVALIDATED":"LOCAL_CANCEL":"TRANSPORT_EXCEPTION";
+            First(cause);
+        }
         finally{
+            var ages=hub.RelayPresence(lease);
+            First(cause);
+            logger?.LogInformation("Station relay event={Event} correlation={Correlation} generation={Generation} role={Role} cause={Cause} closeCode={CloseCode} exceptionType={ExceptionType} hostHeartbeatAgeMs={HostAge} clientHeartbeatAgeMs={ClientAge} hostBytes={HostBytes} clientBytes={ClientBytes}",
+                "pair-consequence",lease.Correlation,lease.Generation,lease.Host?"host":"client",cause,closeCode,exceptionType,
+                ages.HostAgeMs,ages.ClientAgeMs,Interlocked.Read(ref pair.HostBytes),Interlocked.Read(ref pair.ClientBytes));
             try{
                 // Abort can refer to the peer's already disposed HttpContext.
                 // Keep cancellation/IO outside the dictionary lock and always
@@ -74,9 +93,9 @@ public sealed class StationRelay(StationOnline hub, int maximumRooms = 128)
         try{socket?.Abort();}
         catch(ObjectDisposedException){}
     }
-    private async Task Watch(StationOnline.RelayLease lease,CancellationTokenSource stop)
+    private async Task Watch(StationOnline.RelayLease lease,CancellationTokenSource stop,Action<string> first)
     {
-        try{while(!stop.IsCancellationRequested){if(!hub.RelayCurrent(lease)){stop.Cancel();return;}await Task.Delay(2000,stop.Token);}}
+        try{while(!stop.IsCancellationRequested){if(!hub.RelayCurrent(lease)){first("LEASE_INVALIDATED");stop.Cancel();return;}await Task.Delay(2000,stop.Token);}}
         catch(OperationCanceledException){}
     }
 }

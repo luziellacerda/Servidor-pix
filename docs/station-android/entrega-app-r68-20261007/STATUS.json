@@ -1,0 +1,18 @@
+{
+  "version": "R68",
+  "allCollectionsSquareCorners": true,
+  "compiled": true,
+  "packaged": true,
+  "installed": true,
+  "installationInProgress": false,
+  "visualDeviceChecked": true,
+  "apkSHA256": "72ce7c2cbb3d7cf14ad122b0b98e42a41563114bbbc5c925caedbdee49ff66c3",
+  "changed": [
+    "lib/arm64-v8a/libturbo_carousel.so"
+  ],
+  "cornerChecks": 24,
+  "wiringChecks": 3,
+  "onlineRecoveryImplemented": false,
+  "visualDeviceScope": "SNES collection screen only; all-system scope covered by shared policy tests",
+  "dataPreserved": true
+}
