@@ -1,0 +1,82 @@
+{
+  "client/src/java/org/emulationstation/frontend/station/StationAndroid.java": {
+    "originCommit": "250a3e51a2876175155d148235af1fc402b84d08",
+    "originPath": "versions/station-security-r57-20261007/client/src/java/org/emulationstation/frontend/station/StationAndroid.java",
+    "sha256": "2ccba05c9db2bc7df151d32f4f888abd2e2a2ee5a3566bb126a2ce93bb4dc5d0",
+    "method": "unchanged"
+  },
+  "client/src/java/org/emulationstation/frontend/station/StationApi.java": {
+    "originCommit": "250a3e51a2876175155d148235af1fc402b84d08",
+    "originPath": "versions/station-security-r57-20261007/client/src/java/org/emulationstation/frontend/station/StationApi.java",
+    "sha256": "a4e1eaa4a847fce42e9440fe730b76ba5c5be033542e300f52090d1f03f5d01e",
+    "method": "unchanged"
+  },
+  "client/src/java/org/emulationstation/frontend/station/StationCrypto.java": {
+    "originCommit": "250a3e51a2876175155d148235af1fc402b84d08",
+    "originPath": "versions/station-security-r57-20261007/client/src/java/org/emulationstation/frontend/station/StationCrypto.java",
+    "sha256": "b6d57060b23c953ec513098e49c337e8e648588623b4fd3359d4f91c99db9586",
+    "method": "unchanged"
+  },
+  "client/src/java/org/emulationstation/frontend/station/StationHttp.java": {
+    "originCommit": "250a3e51a2876175155d148235af1fc402b84d08",
+    "originPath": "versions/station-security-r57-20261007/client/src/java/org/emulationstation/frontend/station/StationHttp.java",
+    "sha256": "b9f6dbf330663d55aa772c682dbdb13dd5a24736f99613b6a9d146484ebdb815",
+    "method": "unchanged"
+  },
+  "client/src/java/org/emulationstation/frontend/station/StationRequestProof.java": {
+    "originCommit": "250a3e51a2876175155d148235af1fc402b84d08",
+    "originPath": "versions/station-security-r57-20261007/client/src/java/org/emulationstation/frontend/station/StationRequestProof.java",
+    "sha256": "40ba9734251969e4c1b3042e332f12e471b14f0bd5232e7444342428a3d9a5d9",
+    "method": "unchanged"
+  },
+  "recipes/dex_gates.py": {
+    "originCommit": "250a3e51a2876175155d148235af1fc402b84d08",
+    "originPath": "versions/station-security-r57-20261007/recipes/dex_gates.py",
+    "sha256": "3dee834410b422761a197a37669730a010dcf1e5dd194b0b74a7a58308cb6fa6",
+    "method": "unchanged"
+  },
+  "tests/StationSecurityHttpTest.java": {
+    "originCommit": "250a3e51a2876175155d148235af1fc402b84d08",
+    "originPath": "versions/station-security-r57-20261007/tests/StationSecurityHttpTest.java",
+    "sha256": "a722cf09443bb3317378bcc017cc446a73a73d79ce0f99cb052dc7e582005169",
+    "method": "unchanged"
+  },
+  "netplay-src/org/emulationstation/frontend/netplay/StationOnlineClient.java": {
+    "basePath": "versions/station-auto-access-r63-20261006/netplay-src/org/emulationstation/frontend/netplay/StationOnlineClient.java",
+    "baseSHA256": "eae95608a453d33aecd003d271fc07d2d501919f30bd2a4bad4aedf550147229",
+    "securityCommit": "250a3e51a2876175155d148235af1fc402b84d08",
+    "sha256": "b81ffd4e751d3c1f068d8bd3bca51929ef6cfe450081f89aee2a5c34b8f02677",
+    "method": "semantic merge on current source; controls, HUD, diagnostics preserved"
+  },
+  "netplay-src/org/emulationstation/frontend/netplay/StationRetroLaunch.java": {
+    "basePath": "versions/station-online-controls-r64-20261007/netplay-src/org/emulationstation/frontend/netplay/StationRetroLaunch.java",
+    "baseSHA256": "0eb05213d14b84765423549f979325fca5a8d23cadd98266be596d4c7eda49f9",
+    "securityCommit": "250a3e51a2876175155d148235af1fc402b84d08",
+    "sha256": "90653dc0e2b890e301d2c6ceab9311a9ee141fbe03f524929b943c34d9156f7a",
+    "method": "semantic merge on current source; controls, HUD, diagnostics preserved"
+  },
+  "netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java": {
+    "basePath": "versions/station-online-controls-r64-20261007/netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java",
+    "baseSHA256": "7499371f04c2bd1c61242a7e0600427abe7eb2419d0ee7ab5b6f1e38263b96ea",
+    "securityCommit": "250a3e51a2876175155d148235af1fc402b84d08",
+    "sha256": "ee57d1f11b3179e222151164d54401a2aca2793d7a5caf6c1ac9ba729e1b71ab",
+    "method": "semantic merge on current source; controls, HUD, diagnostics preserved"
+  },
+  "netplay-src/org/emulationstation/frontend/netplay/StationRelayTunnel.java": {
+    "basePath": "versions/station-online-controls-r64-20261007/netplay-src/org/emulationstation/frontend/netplay/StationRelayTunnel.java",
+    "baseSHA256": "9914b5a140675ac19adc27a240a84e0bb0fd2d7957087da1a404b2db9c6b52d1",
+    "securityCommit": "250a3e51a2876175155d148235af1fc402b84d08",
+    "sha256": "9845e639b93223188dd0b3b6f4389ce80c72f9397380e52a30f4b1f4ca9f2104",
+    "method": "semantic merge on current source; controls, HUD, diagnostics preserved"
+  },
+  "netplay-src/org/emulationstation/frontend/netplay/StationActionButton.java": {
+    "method": "R66 composition with 34ms foreground animation cadence; wall-clock animation duration and detach/visibility lifecycle preserved",
+    "sha256": "f5444ed9db64a25519dce585a898066ee01ce341061345f62a63446d77e963bc",
+    "purpose": "menu power test; unrelated to request proof"
+  },
+  "netplay-src/org/emulationstation/frontend/netplay/StationGameRatingView.java": {
+    "method": "R66 composition with 34ms foreground animation cadence; wall-clock animation duration and detach/visibility lifecycle preserved",
+    "sha256": "84d16361a5fa51cceb4046663f1bd3ef3641a64080a8850e0b80b34adc8e39d8",
+    "purpose": "menu power test; unrelated to request proof"
+  }
+}

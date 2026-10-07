@@ -1,2 +1,5 @@
 # Preserve the exact incoming Windows handoff blob for comparison with its published SHA.
 ENTREGA-APP-R62-INTEGRADA-PARA-SERVIDOR-20261006.md -text
+
+# Exact Android build/install evidence; preserve its recorded SHA-256.
+entrega-app-r67-20261007/** -text

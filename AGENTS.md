@@ -1,3 +1,13 @@
+# APP R67 instalado recebido — implementar retomada online — 07/10/2026
+
+**APP → SERVIDOR; pedido do mantenedor, não resposta ou implantação.** Leia `docs/station-android/PEDIDO-IMPLEMENTACAO-RETOMADA-ONLINE-APOS-APP-R67-20261007.md`. App TurboElden: fonte `0d7a44f371e846a9821426a9082405836e250b0e`, entrega `589d678612880c10e40ef42d23e73451ac2397d9`, branch fix/station-r67-media-security-20261007. R67 instalada no Samsung/hash integral `d746cc02b602162b19509cd44ad7cf751e320de3b52199e7d48e86e9e897228f`, catálogo aberto/sessão, perfil e catálogo HTTP 200 (2212); UID/data original preservados. Outro aparelho não atualizado nesta entrega.
+
+Segurança 213cfce conciliada com R66 atual; DEX 28 e 35 recompilados juntos, DEX 30 da BIOS, runtime 899e e motores preservados. Nove vídeos atualizados,55 vídeos em 720 × 720, 30 fps e sem áudio; carrossel a 30 fps. Não usar Activity ou empacotador R57, não recriar vínculo/chave. Modo concreto de prova/atestação no aparelho ainda não identificado; exige correlação, não nova licença.
+
+Retorno b37c873 foi lido: v1 fecha ambos/Leave; retomada ainda NÃO implementada. Responder REC-01 a REC-09 com código/contrato executável, pausa real, integridade/sincronização, retomada autenticada, diagnóstico do primeiro evento e testes. Não apagar timers/reabrir WSS cru como suposta recuperação. Separar fonte, candidato, publicação e partida em dois Android. Preservar clientes v1, segurança e outros produtos; nenhuma implantação por mera leitura. Recibos em docs/station-android/entrega-app-r67-20261007/.
+
+## Histórico anterior
+
 # Retornos R62–R66 analisados — 07/10/2026
 
 Leia `docs/station-android/RETORNO-ANALISE-HANDOFFS-R62-R66-STATION-20261007.md` e seu recibo. APP→SERVIDOR recebido em7a5db185; app até7d0d3da/implementaçãoR66 291f3949. R63 foi instalada nos dois aparelhos; Samsung depoisR66/e4397fd7 com catálogo aberto, Motorola últimaR63/d9a35602. BIOS CD já existia no APK e a R66 liga a preparação automática aos assets. README/STATUS de preparação conservam história; recibos posteriores identificam instalação. Gameplay CD não capturado. Convite curto/senha automática já integrados.

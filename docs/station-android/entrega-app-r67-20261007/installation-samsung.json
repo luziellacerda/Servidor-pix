@@ -1,0 +1,167 @@
+{
+  "startedUTC": "2026-10-07T18:34:16.774033+00:00",
+  "completedUTC": "2026-10-07T18:35:51.173063+00:00",
+  "model": "SM-A566E",
+  "package": "org.turboramastation.frontend",
+  "apkSHA256": "d746cc02b602162b19509cd44ad7cf751e320de3b52199e7d48e86e9e897228f",
+  "deviceAPK_SHA256": "d746cc02b602162b19509cd44ad7cf751e320de3b52199e7d48e86e9e897228f",
+  "previousAPK_SHA256": "e4397fd743c410ea060f17446706d9475b5568caad379e1a6df37672c60398d1",
+  "apkBytes": 2110287552,
+  "installSuccess": true,
+  "uidPreserved": true,
+  "originalInstallTimestampPreserved": true,
+  "uninstalled": false,
+  "dataCleared": false,
+  "deviceSettingsChanged": false,
+  "activeEmulatorBeforeInstall": false,
+  "launchVerified": true,
+  "securityHandshakeVerified": false,
+  "twoDeviceGameplayVerified": false,
+  "thermalSavingsMeasured": false,
+  "foregroundActivity": "org.emulationstation.frontend.ESActivity",
+  "authenticatedSession200": true,
+  "profile200": true,
+  "catalogNetwork200": true,
+  "menu30FpsTargetObserved": true,
+  "fatalExceptionsCurrentProcess": 0,
+  "postLaunchEvents": [
+    {
+      "event": "CATALOG_CACHE",
+      "status": 0,
+      "count": 2212
+    },
+    {
+      "event": "SESSION",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "SESSION",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "UNSUPPORTED_PLATFORM",
+      "status": 0,
+      "count": 0
+    },
+    {
+      "event": "CATALOG_PUBLISHED",
+      "status": 503,
+      "count": 2212
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "PROFILE",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "CATALOG",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "CATALOG_NETWORK",
+      "status": 200,
+      "count": 2212
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "PROFILE",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "CATALOG",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "CATALOG_NETWORK",
+      "status": 200,
+      "count": 2212
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "event": "REQUEST_FAILED",
+      "status": 200,
+      "count": 0
+    }
+  ],
+  "observedUTC": "2026-10-07T18:37:41.429407+00:00",
+  "proofModeNotRecorded": true,
+  "settingsUnmodified": true
+}

@@ -1,0 +1,25 @@
+{
+  "direction": "APP_TO_SERVER",
+  "requestPath": "docs/station-android/PEDIDO-IMPLEMENTACAO-RETOMADA-ONLINE-APOS-APP-R67-20261007.md",
+  "requestSha256": "3834581cb915749b6e3585bb6f0db2247aa88d710a66021ab9c66844bbf04e6c",
+  "appRepository": "luziellacerda/TurboElden",
+  "appBranch": "fix/station-r67-media-security-20261007",
+  "appSourceCommit": "0d7a44f371e846a9821426a9082405836e250b0e",
+  "appDocumentationCommit": "589d678612880c10e40ef42d23e73451ac2397d9",
+  "appSnapshot": "versions/station-collection-videos-r67-20261007",
+  "baseServerReturn": "b37c873b70bf361388b3a18fd58eed3b5452565a",
+  "apkSHA256": "d746cc02b602162b19509cd44ad7cf751e320de3b52199e7d48e86e9e897228f",
+  "installedBeforeRequest": true,
+  "device": "Samsung A56",
+  "linuxChanged": false,
+  "recoveryImplemented": false,
+  "evidence": {
+    "installation-samsung.json": "19461657b680f90e95cd18bd3dca07ae57552d25e1bf8a1994228e3dd1f48bdf",
+    "java-dex-build.json": "ca8078d098eaacff7e1a36637dd454975827ce9cad6c2da633d34e0af5559d02",
+    "local-tests-final.json": "10498a1bd77fa4b5b183506d0d2f5cf529dc61989981600fd5d3f7da6d72a2b7",
+    "native-media-build.json": "4d9b4f6a4a8c7945dee0edad00bff37d433032e5d1abcab02001624a7bab93ac",
+    "package.json": "d6aa8b98c8666e9695e2df6b80c001a4d98145593bbbc21f03aaafbca469f1f4",
+    "security-merge-provenance.json": "73e30f00998d7803916f044e120eb599ccb4f2128e913887e7d26440c437313f"
+  },
+  "createdUTC": "2026-10-07T18:47:10.709272+00:00"
+}

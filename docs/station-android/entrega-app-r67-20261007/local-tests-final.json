@@ -1,0 +1,133 @@
+{
+  "utc": "2026-10-07T18:42:04.438555+00:00",
+  "startedAt": "2026-10-07T18:41:57.227009+00:00",
+  "success": true,
+  "scope": "Host JVM: synthetic authority and loopback TCP; no production requests or Android execution",
+  "productionSourceCount": 193,
+  "testSourceCount": 11,
+  "sourceCount": 204,
+  "testClassCount": 10,
+  "countedChecks": 449,
+  "relayDiagnosticsPassed": true,
+  "testClasses": [
+    "org.emulationstation.frontend.netplay.StationCompactLobbyTest",
+    "org.emulationstation.frontend.netplay.StationHostConnectorTest",
+    "org.emulationstation.frontend.netplay.StationJoinPlayerTest",
+    "org.emulationstation.frontend.netplay.StationLaunchPolicyTest",
+    "org.emulationstation.frontend.netplay.StationRoomCreationTest",
+    "org.emulationstation.frontend.netplay.StationShortInvitationTest",
+    "org.emulationstation.frontend.netplay.StationSocialTest",
+    "org.emulationstation.frontend.netplay.StationRelayDiagnosticsTest",
+    "org.emulationstation.frontend.station.StationOnlineApiTest",
+    "org.emulationstation.frontend.station.StationSecurityNegotiationTest"
+  ],
+  "testResults": [
+    {
+      "class": "org.emulationstation.frontend.netplay.StationCompactLobbyTest",
+      "expectedChecks": 107,
+      "passed": true,
+      "output": "PASS 107 executable checks: compact player model, real room codes, stale presence, invite policy and snapshot ordering"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationHostConnectorTest",
+      "expectedChecks": 10,
+      "passed": true,
+      "output": "{\"passed\":true,\"checks\":10,\"scope\":\"Real loopback TCP: late listener without JNI, retained stream, false native hint, deadline and cancellation\"}"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationJoinPlayerTest",
+      "expectedChecks": 20,
+      "passed": true,
+      "output": "PASS 20 checks: guest entry, two solo rooms, shared membership and unavailable destinations"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationLaunchPolicyTest",
+      "expectedChecks": 15,
+      "passed": true,
+      "output": "PASS 15: host/guest launch eligibility and generation identity"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationRoomCreationTest",
+      "expectedChecks": 14,
+      "passed": true,
+      "output": "PASS 14 room creation acknowledgment checks"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationShortInvitationTest",
+      "expectedChecks": 23,
+      "passed": true,
+      "output": "PASS 23 checks: short invitations, manual input, authenticated resolution and TS1 compatibility"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationSocialTest",
+      "expectedChecks": 113,
+      "passed": true,
+      "output": "PASS 113 social client checks"
+    },
+    {
+      "class": "org.emulationstation.frontend.netplay.StationRelayDiagnosticsTest",
+      "expectedChecks": null,
+      "passed": true,
+      "output": "PASS: relay close diagnostics, pong observation, unchanged timeout, idempotence, credential privacy; no production traffic"
+    },
+    {
+      "class": "org.emulationstation.frontend.station.StationOnlineApiTest",
+      "expectedChecks": 27,
+      "passed": true,
+      "output": "PASS 27 online transport checks: signatures, owner, request ID, limits and disabled service"
+    },
+    {
+      "class": "org.emulationstation.frontend.station.StationSecurityNegotiationTest",
+      "expectedChecks": 120,
+      "passed": true,
+      "output": "PASS 120 security negotiation checks; synthetic authority, no disk writes or production traffic"
+    }
+  ],
+  "compilation": {
+    "release": 17,
+    "classesInMemory": 307,
+    "memoryBytes": 1063011
+  },
+  "sourceBinding": {
+    "verifiedComposition": true,
+    "sameSourcesAsProductionDex": true,
+    "javaSourceManifestSHA256": "d3053920cca98bca0bda6cb77c7115a3c53489efa2e358880d5a1790830920ce",
+    "javaDexBuildReceiptSHA256": "ca8078d098eaacff7e1a36637dd454975827ce9cad6c2da633d34e0af5559d02",
+    "productionSourceMapSHA256": "b0c011387d29efdd5c237dc3d7c0daee2a88908e42c07658f13a3237719583cc",
+    "sourceMapHashEncoding": "UTF-8 JSON sorted keys, separators comma/colon, no final newline",
+    "clientDexSHA256": "4e912015b3daac63cf48f4621ee0022448e917927a41990e9bd22e96feecb810",
+    "roomsDexSHA256": "b3a6e8c3fe7ba30665a2c7058216f51c1ec7e39025e30de502c96466f89904bb"
+  },
+  "testSourceHashes": {
+    "versions/station-auto-access-r63-20261006/tests/StationCompactLobbyTest.java": "49649bf8fc8db1c3e6fd804b5144de9bf3db4707eb7435eb58abc5ab90c1ab61",
+    "versions/station-auto-access-r63-20261006/tests/StationHostConnectorTest.java": "314179ce0e2f88b634403338c813bc4cd3104e26f086fbd6c8d2dfb2f9553874",
+    "versions/station-auto-access-r63-20261006/tests/StationJoinPlayerTest.java": "cac2fd8204369e69cad72cd2398b90ac3a091e393943cfef42aa288b873016a1",
+    "versions/station-auto-access-r63-20261006/tests/StationLaunchPolicyTest.java": "2460d0f51c1d395addf785ba3b1d0e165ee097284562ac5eb4e76c2e62d40479",
+    "versions/station-auto-access-r63-20261006/tests/StationRoomCreationTest.java": "7f3b87bfbfb1c0828dbacafb09f15fb7065a39e60d69c9fe02e26f967b1ccbbb",
+    "versions/station-auto-access-r63-20261006/tests/StationShortInvitationTest.java": "06c1d38f30f10826dbd7fde724d4dceeebd23fc0bb11331a142d2222aefa03f5",
+    "versions/station-auto-access-r63-20261006/tests/StationSocialTest.java": "3f11d12691892ed705b14b8c94533bc9c6355c73a66d05a1a8961d2a453a7a7a",
+    "versions/station-online-controls-r64-20261007/tests/StationRelayDiagnosticsTest.java": "70fa2a4e803558069f9a41dec4191ff3c3e84f73d9cc9e36b0b99f8f9fb8f448",
+    "versions/station-current-r55-20261006/client/tests/StationOnlineApiTest.java": "e5ba0327c5796f43b4bba42b019c6b835a6cdb5bc58d8227544a7eb5f62c3e1c",
+    "versions/station-collection-videos-r67-20261007/tests/StationSecurityNegotiationTest.java": "18ccd99bbe810e7592dba7c9a36e682f52ac42c4c73c7fc27856f2f1a6b116dd",
+    "versions/station-current-r55-20261006/client/tests/StationApiTest.java": "bf300060b21f8ab9cb5dbadfc3cb4003e9cb234fa2ced05b9a7e683fb4d642f2"
+  },
+  "recipeSHA256": "8cd5f5ecfb42a42aed1599d1781754500612dc5ca84ae8d291fd1a2d68de9186",
+  "compositionRecipeSHA256": "adbf438a0edd56c29221d253cb4cb571ac7b327ceb3ca1a431eb394a05548fcc",
+  "memoryCompilerSHA256": "3d0a10bcc0f775c034b9215d0df329b8d9f754ca12222e928b21a04641135ccd",
+  "originalTestReceiptSHA256": "991694e9cc8d78579408877058db0d8bbfd4acefa40552a97548026b4fb7167e",
+  "inputs": {
+    "androidJar": "6cea1df3efb77103ac3e2beb9bf4718964b0e0869ab16d39d29d5cbae1c147ad",
+    "jsonJar": "3ea61b2a06e31edf1c91134fe9106b0ebb16628be169f3db75bc7a2b06b45796"
+  },
+  "javaRuntime": "Eclipse Adoptium JDK 17.0.20.101-hotspot",
+  "javaExecutableSHA256": "1977f302375adbb920d41dac65c7e22eb9c2ed8e1e8d6258964154ff16f14406",
+  "stdout": "<repository>\\versions\\station-current-r55-20261006\\dependency-src\\org\\emulationstation\\frontend\\relay\\log\\LoggerFactory.java:137: warning: [removal] java.lang.SecurityManager in java.lang has been deprecated and marked for removal\n        SecurityManager securityManager = System.getSecurityManager();\n        ^\n<repository>\\versions\\station-current-r55-20261006\\dependency-src\\org\\emulationstation\\frontend\\relay\\log\\LoggerFactory.java:137: warning: [removal] getSecurityManager() in java.lang.System has been deprecated and marked for removal\n        SecurityManager securityManager = System.getSecurityManager();\n                                                ^\n<repository>\\versions\\station-current-r55-20261006\\dependency-src\\org\\emulationstation\\frontend\\relay\\log\\LoggerFactory.java:142: warning: [removal] java.security.AccessController in java.security has been deprecated and marked for removal\n            serviceLoader = AccessController.doPrivileged(action);\n                            ^\n<repository>\\versions\\station-current-r55-20261006\\dependency-src\\org\\emulationstation\\frontend\\relay\\log\\helpers\\MarkerIgnoringBase.java:39: warning: [dep-ann] deprecated item is not annotated with @Deprecated\npublic abstract class MarkerIgnoringBase extends NamedLoggerBase implements Logger {\n                ^\n<repository>\\versions\\station-current-r55-20261006\\dependency-src\\org\\emulationstation\\frontend\\relay\\log\\helpers\\Util.java:64: warning: [removal] java.lang.SecurityManager in java.lang has been deprecated and marked for removal\n    private static final class ClassContextSecurityManager extends SecurityManager {\n                                                                   ^\n<repository>\\versions\\station-current-r55-20261006\\dependency-src\\org\\emulationstation\\frontend\\relay\\log\\helpers\\Util.java:127: warning: [dep-ann] deprecated item is not annotated with @Deprecated\n    static final public void report(String msg, Throwable t) {\n                             ^\n<repository>\\versions\\station-current-r55-20261006\\dependency-src\\org\\emulationstation\\frontend\\relay\\log\\helpers\\Util.java:140: warning: [dep-ann] deprecated item is not annotated with @Deprecated\n    static final public void report(String msg) {\n                             ^\n<repository>\\versions\\station-current-r55-20261006\\dependency-src\\org\\emulationstation\\frontend\\relay\\log\\spi\\LoggerFactoryBinder.java:36: warning: [dep-ann] deprecated item is not annotated with @Deprecated\npublic interface LoggerFactoryBinder {\n       ^\n<repository>\\versions\\station-current-r55-20261006\\dependency-src\\org\\emulationstation\\frontend\\relay\\log\\spi\\MarkerFactoryBinder.java:36: warning: [dep-ann] deprecated item is not annotated with @Deprecated\npublic interface MarkerFactoryBinder {\n       ^\nNote: Some input files use or override a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\nsuccess=true sources=204 classes=307 memoryBytes=1063011\nPASS 107 executable checks: compact player model, real room codes, stale presence, invite policy and snapshot ordering\n{\"passed\":true,\"checks\":10,\"scope\":\"Real loopback TCP: late listener without JNI, retained stream, false native hint, deadline and cancellation\"}\nPASS 20 checks: guest entry, two solo rooms, shared membership and unavailable destinations\nPASS 15: host/guest launch eligibility and generation identity\nPASS 14 room creation acknowledgment checks\nPASS 23 checks: short invitations, manual input, authenticated resolution and TS1 compatibility\nPASS 113 social client checks\nPASS: relay close diagnostics, pong observation, unchanged timeout, idempotence, credential privacy; no production traffic\nPASS 27 online transport checks: signatures, owner, request ID, limits and disabled service\nPASS 120 security negotiation checks; synthetic authority, no disk writes or production traffic\n",
+  "stderr": "SLF4J(W): No SLF4J providers were found.\nSLF4J(W): Defaulting to no-operation (NOP) logger implementation\nSLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.\n",
+  "returnCode": 0,
+  "diskClassFiles": false,
+  "dexBuilt": false,
+  "apkBuilt": false,
+  "installed": false,
+  "androidExecuted": false,
+  "productionModified": false
+}
