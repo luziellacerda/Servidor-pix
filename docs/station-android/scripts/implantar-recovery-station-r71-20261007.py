@@ -173,9 +173,11 @@ def qualify(revision):
     CHECK.mkdir(mode=0o700,exist_ok=True)
     # Root-only logs never become part of the public receipt.
     ops.private_text(logfile,'')
+    shadow_env=logfile.with_suffix('.env')
+    ops.private_text(shadow_env,ENV.read_text()+'\n'+text)
     arguments=['systemd-run','--quiet','--collect','--unit',unit]
     for k,v in sandbox_properties(target,IDENTITY,security.MEDIA).items():arguments+=['--property',k+'='+v]
-    arguments+=['--property','EnvironmentFile='+str(ENV)+' '+str(overlay),
+    arguments+=['--property','EnvironmentFile='+str(shadow_env),
         '--property','WorkingDirectory='+str(target),'--property','StandardOutput=append:'+str(logfile),
         '--property','StandardError=append:'+str(logfile),'/usr/bin/dotnet',str(target/DLL),'--urls',base]
     print(json.dumps(dict(stage='isolated_shadow',sourceRevision=revision)),flush=True)
@@ -190,6 +192,7 @@ def qualify(revision):
         stopped=subprocess.run(['systemctl','stop',unit],capture_output=True,timeout=30)
         if stopped.returncode and ops.run(['systemctl','show',unit,'-p','MainPID','--value']).strip() not in ('','0'):
             raise ValueError('Temporary shadow did not stop')
+        shadow_env.unlink()
     unchanged(state);security.idle()
     result=dict(passed=True,stage='qualified_shadow',sourceRevision=revision,dllSha256=meta['dllSha256'],
         registrySha256=registry_hash,target=str(target),overlaySha256=ops.digest(overlay),proof=proof,
