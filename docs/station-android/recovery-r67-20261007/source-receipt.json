@@ -1,0 +1,13 @@
+{
+  "serverSourceCommit": "32ce9d2b30bb23deef17899e10fc285f38ea81ab",
+  "androidSourceCommit": "4d30401a80658dd56666ef10f48d9556b3fdd9e9",
+  "inboundAppR68": "c2a1a6d130552b4470b2be3f49db0d1ab72c37b5",
+  "serverCandidateBranch": "fix/station-online-recovery-r67-20261007",
+  "appCandidateBranch": "fix/station-online-recovery-after-r67-20261007",
+  "returnDocument": "RETORNO-IMPLEMENTACAO-RETOMADA-ONLINE-STATION-20261007.md",
+  "returnSHA256": "f385ac93369871ee648773cd1acc3eb7acac198d8a20152a43000cfcabe669ea",
+  "productionDeployed": false,
+  "candidateAPKPackaged": false,
+  "installed": false,
+  "twoDeviceGameplayVerified": false
+}

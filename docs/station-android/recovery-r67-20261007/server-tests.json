@@ -1,0 +1,74 @@
+{
+  "utc": "2026-10-07T20:34:33.713216+00:00",
+  "sourceCommit": "32ce9d2b30bb23deef17899e10fc285f38ea81ab",
+  "tests": [
+    {
+      "project": "tests/StationRecovery/StationRecovery.Tests.csproj",
+      "passed": true,
+      "result": [
+        "{\"passed\":true,\"checks\":79,\"scope\":\"Production v2 ledger/state/negotiation with synthetic identities; not Android gameplay\"}"
+      ],
+      "logSHA256": "56d1fc8c4bef9c0d8d276b8a3de55ba9fb4b0558d79e2a8ce3e1d102faed5fb1"
+    },
+    {
+      "project": "tests/StationOnline/StationOnline.Tests.csproj",
+      "passed": true,
+      "result": [
+        "{\"passed\":true,\"checks\":41,\"scope\":\"Synthetic in-process room and chat tests; no production service or Android game used\"}"
+      ],
+      "logSHA256": "16ea8faf0065de59063a49512a9285f7b3b719b25eade6792a844c486aa77502"
+    },
+    {
+      "project": "tests/StationOnlineSocial/StationOnlineSocial.Tests.csproj",
+      "passed": true,
+      "result": [
+        "PASS 34 server social checks; maximum fixture payload 365105 bytes, envelope 487596 bytes"
+      ],
+      "logSHA256": "6c32999414018131e79379aa04c663f8b8a7697b90f951b6859a17f7ec39c282"
+    },
+    {
+      "project": "tests/StationRoomCodes/StationRoomCodes.Tests.csproj",
+      "passed": true,
+      "result": [
+        "{\"passed\":true,\"checks\":318,\"syntheticRooms\":256,\"productionTouched\":false,\"androidGameplay\":false}"
+      ],
+      "logSHA256": "bd05921fe2f1ec9b97699053b7e5138e41c26d4729864b6a45fa781a3d85c7d3"
+    },
+    {
+      "project": "tests/StationTwoSoloRooms/StationTwoSoloRooms.csproj",
+      "passed": true,
+      "result": [
+        "{\"passed\":true,\"checks\":11,\"scope\":\"Isolated production room logic; no PostgreSQL, real licenses or Android gameplay\"}"
+      ],
+      "logSHA256": "69a30cb6eda5b032079082de65dfe892b1b308586c8767ac372a7146772460dd"
+    },
+    {
+      "project": "tests/TurboRamaSuiteOnlineServer.Tests/TurboRamaSuiteOnlineServer.Tests.csproj",
+      "passed": true,
+      "result": [
+        "PASS: extraction HTTP feature gate, invalid JSON, forbidden field and fixed/chunked size limits (loopback, no database or provider).",
+        "STATION SECURITY: request ownership, replay/target/body/token binding, EC/RSA, cache capacity and certified APK/boot/root/revocation gates passed.",
+        "STATION TRANSFER RATE: OK (full catalog, NAT isolation, concurrent bound, original auth/download limits)",
+        "SUITE TESTS: OK (golden vectors, strict JSON, cross-product, restart/shared store, idempotency, replay, concurrent heartbeat)"
+      ],
+      "logSHA256": "971eea1193934e20da112dcd04feae2efc68cf4f12a6aa9a6b017ac6572a1703"
+    },
+    {
+      "project": "tests/StationOnline/HttpTests.csproj",
+      "passed": true,
+      "result": [
+        "{\"passed\":true,\"checks\":53,\"scope\":\"Loopback Kestrel with production routes and signer, synthetic authentication; no production database or Android\"}"
+      ],
+      "logSHA256": "5ced512836f7b840738b7f92d3a9da17e8a0756d96e14e5b6c7b5052dfeaa817"
+    }
+  ],
+  "candidateDLLSHA256": "0c0c0b48bc60dc321ef8026fc2a03e9e992993b6b80f5a8d768851d09d3ace7b",
+  "candidateDLLBytes": 856064,
+  "candidatePublishedLocally": true,
+  "productionDeployed": false,
+  "productionTouched": false,
+  "androidGameplay": false,
+  "legacyRegressionSourceCommit": "eef43cd613fb086927f5f0fd6828ef6997c95c3b",
+  "finalRecoveryChecksAtCandidateSource": 79,
+  "finalInteropChecksAtCandidateSource": 46
+}

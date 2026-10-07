@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-07T20:32:12.750757+00:00",
+  "vectors": {
+    "passed": true,
+    "checks": 32,
+    "scope": "Public Python/.NET/Java binary and RSA-PSS vectors, no Android execution"
+  },
+  "transport": {
+    "checks": 46,
+    "scope": "Actual Java/.NET TLS WSS and preserved TCP; synthetic native pause, not gameplay",
+    "passed": true,
+    "tcpBytesVerified": 1620000
+  },
+  "clientJarSHA256": "258449792bb574e4b250e20517ed834ab5f8d60197ec80da9113be9624a9cc7c",
+  "roomsJarSHA256": "ca639c07c57f471ee6a064f3bc39ebbbc4579913c3d1792b5de3c135288650e4",
+  "clientDexSHA256": "4e912015b3daac63cf48f4621ee0022448e917927a41990e9bd22e96feecb810",
+  "roomsDexSHA256": "f9520da87cb83d265ff9560c54c3dc672b6ce953316cfde6a02b2abf8e7f9e56",
+  "sourceCount": 195,
+  "productionTouched": false,
+  "privateFixtureRemoved": true,
+  "twoDeviceGameplayVerified": false,
+  "serverSourceCommit": "32ce9d2b30bb23deef17899e10fc285f38ea81ab",
+  "appFunctionalSourceCommit": "4d30401a80658dd56666ef10f48d9556b3fdd9e9",
+  "additionalReadinessCompatibilityCheck": true
+}

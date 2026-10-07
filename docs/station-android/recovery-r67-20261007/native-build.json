@@ -1,0 +1,33 @@
+{
+  "createdAt": "2026-10-07T19:28:15.248207+00:00",
+  "compiled": true,
+  "upstreamCommit": "69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576",
+  "upstreamArchiveSHA256": "cecf1e3f5446724f748124d097bb9c5169c6f599404d33a8447d88fd197d17fe",
+  "ndkRevision": "28.2.13676358",
+  "runtimeSHA256": "b1b9beeffd19dccaf5475dc58659763ab858563036ba13b075fe58c7adcf0edd",
+  "runtimeBytes": 10668472,
+  "minimumLoadAlignment": 16384,
+  "architecture": "AArch64",
+  "nativeActivityExportPresent": true,
+  "minAPI": 26,
+  "patches": {
+    "retroarch-station-all.patch": "45a5da0970b3a150b2652b3a7ee38ce798617d5778e94f26a9dd81c3826864ec",
+    "retroarch-station-auto-password.patch": "62254789975d892b2717e65b5f0232656befd347ed43232987c6ca2f2beabff2"
+  },
+  "recoveryProtocol": "station-stream.v2",
+  "maximumWaitSeconds": null,
+  "androidExecuted": false,
+  "apkBuilt": false,
+  "installed": false,
+  "twoDeviceGameplayVerified": false,
+  "recoveryJNIExportsPresent": true,
+  "recoveryInputs": {
+    "native/station_recovery.h": "40cb8f2a75cd31cc530b41e853cce31524dd32ddc82a95313a328f358383108a",
+    "native/base-files.json": "7cc9069962704e78cf627885e688c140662d807986f9c0c94ba0aafb7560631c",
+    "recipes/patch_native.py": "343c6f0513c3bbefc171da1a91142de7a902c0bd195f130ae1d14ec27602bd81",
+    "engine-patches/retroarch-station-all.patch": "45a5da0970b3a150b2652b3a7ee38ce798617d5778e94f26a9dd81c3826864ec",
+    "engine-patches/retroarch-station-auto-password.patch": "62254789975d892b2717e65b5f0232656befd347ed43232987c6ca2f2beabff2",
+    "engine-patches/retroarch-station-recovery.patch": "34469bb6fb9f6ce4272983e01c36fd1f0f1673c32f367c24eb0c5a3723f4a66a"
+  },
+  "postBuildManifestReviewed": true
+}

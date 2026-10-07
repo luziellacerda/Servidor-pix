@@ -4,6 +4,8 @@ Fonte executável: `StationOnline.cs`, `StationOnlineEndpoints.cs`, `StationReco
 
 ## 1. Rotas e negociação
 
+Authority real do app: `https://app.lzgames.com.br`; WSS `wss://app.lzgames.com.br/v1/station/online/relay`. `turbobox.lzgames.com.br` é o site/painel: testar a API nesse host retornou404 nesta leitura; a rota correta do app retornou401 JSON sem sessão, como esperado. Não substituir a authority/pin nem usar o site como base da API.
+
 Mantidas as rotas `POST /v1/station/online/command`, `POST /v1/station/online/events`, `GET /v1/station/online/relay`. Não existe rota `/v2` criada por esta entrega. REST mantém envelope RSA-PSS `keyId/payload/signature` e payload de domínio `TurboRamaStationAndroid/online/v1`; identidade, sessão e `requestId` continuam vinculados à resposta. O Android valida assinatura, domínio, identificação e requisição antes de usar o snapshot.
 
 `RecoveryEnabled=false` é o padrão. Quando habilitado, o snapshot anuncia `recoveryCapabilities:["station-stream.v2"]` e transporte `relay-wss-v2`. A engine aprovada precisa declarar `recoveryProtocol:"station-stream.v2"`, além dos hashes exatos de core e runtime. `create` e `join` enviam esse protocolo; os dois membros, quatro hashes e engine precisam concordar. `start` solicita `transport:"relay-wss-v2"`. Clientes antigos continuam com `relay-wss-v1`/`station-relay.v1` e os IDs antigos preservados no registro. Uma sala de versões/motores diferentes é recusada; o runtime novo não se identifica como 899e.
@@ -115,7 +117,7 @@ Watch físico do servidor a cada10s: autorização de licença/aparelho com praz
 
 Padrão64 salas,256KiB/direção:32MiB de rings no servidor; mais objetos/transportes. Cada Android mantém dois rings do mesmo tamanho. Configuração aceita1–512 salas,32KiB–1MiB/direção e agregado≤128MiB; outras combinações falham na inicialização. Ex.:256 salas×256KiB×2=128MiB. Isso é teto de buffers, **não memória total medida nem garantia de capacidade/latência no Android ou túnel público**.
 
-Sala em espera retém slot indefinidamente enquanto o processo existir; não é despejada por idade. Capacidade cheia rejeita novos ingressos; nunca expulsa automaticamente uma partida em espera para abrir vaga. Limpeza de salas encerradas é periódica15s; liberação física acompanha encerramento. Metadados do hub também têm limites globais anteriores. Não há gravação persistente: reinício do servidor ou perda do processo nativo destrói continuidade e exige nova partida, com explicação e saída humana. Não chama isso de recuperação persistida.
+Sala em espera retém slot indefinidamente enquanto o processo existir; não é despejada por idade. Capacidade cheia rejeita novos ingressos; nunca expulsa automaticamente uma partida em espera para abrir vaga. Limpeza de salas encerradas é periódica15s; liberação física acompanha encerramento. Metadados do hub também têm limites globais anteriores. O startup inicial do TCP do anfitrião tem45s para encontrar o motor local; falha informa estado nativo indisponível, não Leave por rede. Depois de estabelecido, esse TCP é conservado sem prazo de perda de internet. Não há gravação persistente: reinício do servidor ou perda do processo nativo destrói continuidade e exige nova partida, com explicação e saída humana. Não chama isso de recuperação persistida.
 
 ## 6. Erros e diagnóstico
 

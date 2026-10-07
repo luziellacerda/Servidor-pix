@@ -1,3 +1,13 @@
+# Retomada online candidata entregue após R67/R68 — 07/10/2026
+
+Leia `docs/station-android/RETORNO-IMPLEMENTACAO-RETOMADA-ONLINE-STATION-20261007.md`. Servidor funcional 32ce9d2b30bb23deef17899e10fc285f38ea81ab na branch fix/station-online-recovery-r67-20261007; Android/runtime4d30401a80658dd56666ef10f48d9556b3fdd9e9 na fix/station-online-recovery-after-r67-20261007, pai R68c2a1a6d. Protocolo station-stream.v2 opt-in, sessão lógica retida, offsets/ACK/replay limitado, credencial protegida nova e pausa JNI confirmada/barreira dos dois. Preserva v1, registro antigo, proof/Keystore/licenças e outros serviços.79checks v2,32vetores Java,46TLS/TCP/1.620.000bytes,195Java/DEX e novo runtime b1b9beef; regressões e relayv1 isolado passaram. Feature false por padrão; sem migration.
+
+R68 visual agora instalada no Samsung/APK72ce7c2c; recibos recebidos, apenas carousel60b944cb mudou. Nova montagem exige R68 e preserva cantos retos,55vídeos/DEX30BIOS/controles. Não usar base/empacotador R57/R67 para rebaixar. DEX28 novo idêntico4e912015; DEX35f9520da8, runtime/API26/16KiB e engines novos; Linux candidatos privados em /mnt/DADOS/station-recovery-r67-check-20261007. Fonte/contrato/testes são candidato, **não API implantada/APK montado/instalado/gameplay**. JNI/cores reais, matriz física/consumo/capacidadev2 e causa antiga ainda pendentes; processo reiniciado não recupera RAM.
+
+Produção continua turborama-station-api/PID1147382/da07355; DLL antiga protegida, sem rehash nesta leitura, nenhum restart/configuração/proxy/banco/ROM/chave real alterado. API correta https://app.lzgames.com.br (401JSON sem sessão); turbobox é painel (GET/v1 nele404 esperado). NG-01–07 permanecem separados; BIOSR66 preservada. Publicar/qualificar de forma coordenada com artefatos exatos e devolver recibos antes de declarar estabilidade física.
+
+## Histórico anterior
+
 # Retornos R62–R66 analisados — 07/10/2026
 
 Leia `docs/station-android/RETORNO-ANALISE-HANDOFFS-R62-R66-STATION-20261007.md` e seu recibo. APP→SERVIDOR recebido em7a5db185; app até7d0d3da/implementaçãoR66 291f3949. R63 foi instalada nos dois aparelhos; Samsung depoisR66/e4397fd7 com catálogo aberto, Motorola últimaR63/d9a35602. BIOS CD já existia no APK e a R66 liga a preparação automática aos assets. README/STATUS de preparação conservam história; recibos posteriores identificam instalação. Gameplay CD não capturado. Convite curto/senha automática já integrados.

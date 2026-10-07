@@ -1,0 +1,19 @@
+{
+  "serverSourceCommit": "32ce9d2b30bb23deef17899e10fc285f38ea81ab",
+  "files": {
+    "CONTRATO.md": "8fa89e7a1bb6a1ffa6df831039ac29924553483c0e5b7d9e3c366fc6ece10cd8",
+    "configuration.example.json": "49fdb1f14b7e0d0af24508564d6cbb85686089f9bd9d362c91dfd80ebfe5ab43",
+    "contract-vectors.json": "b7efac34a5b04f78560c1749270a56fad640d8de5924c5f4e4abf62662dc0779",
+    "engines.json": "5d4842eb6c18d2f5b5ea115afe9ba9d6045c2e6927a78a8c67c11cc977d55579",
+    "interop.json": "c19c5023363e28262d99a6641dd602d432327bc013d290636b2895abb126ab22",
+    "java-build.json": "b86c973afb27ee248c065cd99dcfb34fca0a65c02094e7abf5761cc9058ce42b",
+    "legacy-relay-load.json": "f3a6b802d63055dbfd61dd95ffa5f6134d6df23db0d4d2cd8ac921e35c2f3b38",
+    "native-build.json": "a9d3531880d11b790a148d27c239a2f14eba218c9494645ada14d5a0a332381e",
+    "openapi.json": "c89a32757d09c355303f5676c920a775b046361a6820f0bcf29405c74ac989c9",
+    "production-observation.json": "9af0fe65615c207f10909a52af3f7c1a3581c54c26d618fe0448786af7c8233b",
+    "server-engine-registry-additions.json": "f2d2592e26a0f7516b349d20938cb000b70bfde784e5ed7c8ce8432497951b12",
+    "server-tests.json": "4db693cedf6a74bcb19b0c79d49fe4653f80293a3b8a64d925467db6ae19928b",
+    "source-receipt.json": "c7aa27d425c761bf2a06603485dc6b063a6629743a52f0642a7289328e518866"
+  },
+  "productionDeployed": false
+}

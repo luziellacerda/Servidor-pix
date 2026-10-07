@@ -761,5 +761,11 @@
         "description": "v1.timestamp.nonce.signature; unchanged request/v1 canonical bytes"
       }
     }
-  }
+  },
+  "servers": [
+    {
+      "url": "https://app.lzgames.com.br",
+      "description": "Original Android API authority; candidate protocol requires coordinated activation"
+    }
+  ]
 }
