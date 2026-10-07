@@ -1,0 +1,134 @@
+{
+  "applied": true,
+  "sourceRevision": "da073551428c4b1320a3abebc257b3c3c933b3ca",
+  "completedAtUtc": "2026-10-07T15:38:05.437688+00:00",
+  "dllSha256": "83c8d2b3da68c85da7402165a7fa915fa7a084125511ec2df5541ec36ecaf682",
+  "pid": 1147382,
+  "dedicatedLinuxIdentity": true,
+  "dedicatedProductDatabaseViews": true,
+  "stationSecretsPreserved": true,
+  "readonlyMediaAndFutureImports": true,
+  "stationOnlyOriginGuard": true,
+  "anonymousObsoleteShareDisabled": true,
+  "directOriginStatus": 404,
+  "requestProofNegotiation": true,
+  "requireVerifiedApp": false,
+  "hardwarePhoneVerified": false,
+  "legacyApkPreserved": true,
+  "androidApkInstalled": false,
+  "androidGameplay": false,
+  "firewallChanged": false,
+  "sshChanged": false,
+  "otherProductsPreserved": true,
+  "realLicensesPreserved": true,
+  "indexSha256": "07ad4c3fda41a19c23745436c4c45c97a70b2c7688eff788612fe22743823a92",
+  "indexRevision": 14,
+  "visibleItems": 2212,
+  "registrySha256": "a4412aa8139b865d62b1dc42cb4b08f7fc656b3a7efca6237df7854d2ef888cc",
+  "backupRestoreVerified": true,
+  "discardedPrivateShadowCrashReports": 0,
+  "relayBefore": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 0
+  },
+  "relayAfter": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 131078
+  },
+  "databaseScope": {
+    "rawSharedTablesDenied": 6,
+    "administrativePrivilegesDenied": true,
+    "otherProductRowsHidden": true
+  },
+  "shadowFilesystem": {
+    "mediaFilesReadable": 4921,
+    "protectedPathsDenied": 4,
+    "readOnlyMounts": true
+  },
+  "managementBefore": {
+    "passed": true,
+    "authenticatedPrivateSocket": true,
+    "status": 200
+  },
+  "managementAfter": {
+    "passed": true,
+    "authenticatedPrivateSocket": true,
+    "status": 200
+  },
+  "shadowSecurity": {
+    "passed": true,
+    "checks": 15,
+    "copiedTokenDenied": true,
+    "requestReplayDenied": true,
+    "changedPathDenied": true,
+    "signedDowngradeDenied": true,
+    "completeCatalogPreserved": true,
+    "fourConcurrentProtectedCovers": true,
+    "hardwarePhoneVerified": false,
+    "strictPolicyEnforced": false
+  },
+  "publicSecurity": {
+    "passed": true,
+    "checks": 15,
+    "copiedTokenDenied": true,
+    "requestReplayDenied": true,
+    "changedPathDenied": true,
+    "signedDowngradeDenied": true,
+    "completeCatalogPreserved": true,
+    "fourConcurrentProtectedCovers": true,
+    "hardwarePhoneVerified": false,
+    "strictPolicyEnforced": false
+  },
+  "shadowSocial": {
+    "passed": true,
+    "checks": 197,
+    "socialEnabled": true,
+    "threeIndependentLicenses": true,
+    "actualApprovedJoinRelayBytesEachDirection": 65539,
+    "publicTlsPinVerified": false,
+    "syntheticRowsRemoved": true,
+    "androidGameplay": false
+  },
+  "publicSocial": {
+    "passed": true,
+    "checks": 198,
+    "socialEnabled": true,
+    "threeIndependentLicenses": true,
+    "actualApprovedJoinRelayBytesEachDirection": 65539,
+    "publicTlsPinVerified": true,
+    "syntheticRowsRemoved": true,
+    "androidGameplay": false
+  },
+  "shadowRelay": {
+    "passed": true,
+    "checks": 2554,
+    "transport": "loopback_ws",
+    "catalogRevision": 14,
+    "catalogItems": 2212,
+    "platformCounts": {
+      "megadrive": 887,
+      "megadrivebr": 94,
+      "snes": 644,
+      "snesbr": 191,
+      "n64": 157,
+      "neogeo": 189,
+      "neogeocd": 50
+    },
+    "exactCatalogMetadata": true,
+    "simultaneousCovers": 4,
+    "boundedDownloadBytes": 262144,
+    "bytesEachDirection": 2097269,
+    "orderedInputPackets": 20,
+    "publicTlsPinVerified": false,
+    "ownRoomsClosed": true,
+    "syntheticRowsRemoved": true,
+    "androidGameplay": false
+  },
+  "appImplementationCommit": "213cfce61f5b537e9056ee598e9bd436b32f5ecd"
+}

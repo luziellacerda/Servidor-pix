@@ -1,3 +1,11 @@
+# Segurança Station publicada — 07/10/2026
+
+Leia `docs/station-android/RETORNO-SEGURANCA-STATION-20261007.md` e seu recibo. APIda07355/DLL83c8d2b3/PID1147382; usuário e papel próprios, visões Station, arquivos/mídias somente para leitura, outros segredos inacessíveis, rotas Station só pelo túnel local. Backup/restauração,4921arquivos,198checksHTTPS+15segurança e2554relay passaram. Catálogo14/2212, licenças/chaves/quatro motores/outros serviços preservados. Origemdireta404; firewall/SSH/Cloudflare intactos. Migrations031/032 aditivas. Chave simétrica com acesso apenas ao proprietário preservada; gestão validada no socket privado,5187/health sem token404intencional.
+
+App213cfce em versions/station-security-r57-20261007: prova por pedido/ticket, atestação opcional, R55+visualR57+prontidão+senha automática preservados;190Java8/API34 compilaram. NovoDEX28+35/APK/assinatura/instalação/hardware/gameplay pendentes no PC. RequireVerifiedApp=false preserva clientes antigos; não declarar acesso exclusivo ao APK nem segurança absoluta. Usar receitas novas sobreAPKR57/e6159fa3/cert7b16; atualizar ambos sem limpar dados. Retorno guardado exato da07355; scripts antigos recusam/ não abrangem a nova identidade.
+
+## Histórico anterior
+
 # Convites curtos e palavra passe automática — 06/10/2026
 
 Leia `docs/station-android/RETORNO-CONVITE-CURTO-SENHA-AUTOMATICA-STATION-20261006.md`. APIa3e83d96/DLL5fff55c1/PID970425 publicada20h04Maceió. Convite8caracteres, resolução autenticada/assinada sem senha ou entrada implícita; quatro motores no registro, dois originais e dois -autopass1. Runtime899e3527 arm64/API26/16KiB compilado, cores/opções/controles preservados. Backup restaurado, provas sombra/HTTPS/relay e limpeza passaram; catálogo14/2212, licenças, chaves, serviços e mídias preservados. Sem migration/mensagens.
