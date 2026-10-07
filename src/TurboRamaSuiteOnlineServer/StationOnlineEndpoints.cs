@@ -37,7 +37,11 @@ public static class StationOnlineEndpoints
             if(!enabled)return Results.StatusCode(503);
             var legacy=context.RequestServices.GetRequiredService<StationRelay>().Snapshot();
             if(!app.Configuration.GetValue("Station:Online:RecoveryEnabled",false))return Results.Json(legacy);
-            return Results.Json(new{legacy,recovery=context.RequestServices.GetRequiredService<StationRecoveryRelay>().Snapshot()});
+            // Keep operator consumers of legacy readiness fields working when v2 is enabled.
+            var snapshot=JsonSerializer.SerializeToElement(legacy).EnumerateObject()
+                .ToDictionary(property=>property.Name,property=>property.Value);
+            snapshot["recovery"]=JsonSerializer.SerializeToElement(context.RequestServices.GetRequiredService<StationRecoveryRelay>().Snapshot());
+            return Results.Json(snapshot);
         });
         app.MapGet("/v1/station/online/relay",async (HttpContext context)=>{
             context.Response.Headers.CacheControl="no-store";
