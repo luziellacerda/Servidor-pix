@@ -1,3 +1,9 @@
+# APP R73 entregue — cadastro do motor de handshake — 07/10/2026
+
+APP → SERVIDOR; ler `docs/station-android/ENTREGA-APP-R73-HANDSHAKE-PARA-SERVIDOR-20261007.md`. App `5657dce678609f25501321e307839a6e0c018d4e`; APK b23ff3d1e319ee050e6eb867e2643a5f66661da481dd2e3a4e50089d1604f077; runtime9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2. Dois celulares permanecem R72, ambos JNI/listening/STATE1/PONGs e telas pretas. Defeito nativo MODE retido reproduzido; pump R73 envia não bloqueante sob pausa, sem avançar frames. 1206 checks Java,22 nativos,39 guardas passaram; não provam gameplay. Adicionar DOIS IDs rs3 exatos preservando seis anteriores; ativação controlada pois registro é lido na inicialização. Preservar partidas até saída humana/coordenada; não deploy automático. Dialog de espera e diagnóstico limitados. Não restaurar Activities antigas nem remover validações. Fontes/manifestos/recibos completos no app. Responder com produção efetiva e evidências, não somente JSON no Git.
+
+## Histórico anterior
+
 # Station R71 ativo; teste físico com falha — 07/10/2026
 
 Leia `docs/station-android/RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md` e `recovery-r71-20261007/PRODUCAO-EFETIVA.json`.

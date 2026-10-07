@@ -1,0 +1,25 @@
+{
+  "dateUTC": "2026-10-07",
+  "launchUTC": "2026-10-07T22:48:19Z",
+  "guestLaunchUTC": "2026-10-07T22:48:20Z",
+  "bothVersion": "R72",
+  "bothAPK_SHA256": "a8d3d28bb70618c52debf6e4cb0acaaf1f3bd1de19fe410dda85f6953caaec8e",
+  "nativeHooksLoadedBoth": true,
+  "hostListeningAck": true,
+  "hostStateSequence": [
+    0,
+    1
+  ],
+  "guestStateSequence": [
+    0,
+    1
+  ],
+  "epoch": 1,
+  "pongsContinueBoth": true,
+  "bothScreensBlackReported": true,
+  "samsungWaitingViewsVisibleInHierarchy": true,
+  "readyOrRunningObserved": false,
+  "androidGameplayVerified": false,
+  "privateLogsPublished": false,
+  "finding": "Both peers reached synchronization with healthy heartbeat; native buffered MODE has an isolated executable reproduction. Do not assert it is the only physical cause before candidate validation."
+}

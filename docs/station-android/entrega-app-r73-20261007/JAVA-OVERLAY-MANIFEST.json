@@ -1,0 +1,7 @@
+{
+  "base": "R72",
+  "files": {
+    "netplay-src/org/emulationstation/frontend/netplay/StationRecoveryTunnel.java": "8af5ceb585498512ff9ff4e1409a46ee2ed9dca9ee66bcb0c43bc11fa7817896",
+    "netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java": "d047c504cca6974abf1ddbcdded1d39f68942ea25c9b19b32a5bf2dbb9a290d6"
+  }
+}

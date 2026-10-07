@@ -1,0 +1,106 @@
+{
+  "appCommit": "5657dce678609f25501321e307839a6e0c018d4e",
+  "serverParent": "c1e44a1225a101478ceb29f4e624885331872c0d",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 21742,
+      "sha256": "e864e13287df4c90c731794a616a434dcefeebbd2d70fb8ed35ffb4d9c8dee39"
+    },
+    {
+      "path": "docs/station-android/AGENTS.md",
+      "bytes": 22776,
+      "sha256": "65b236e59c2510e73a85ffc20d18342b0a535ab8abfc57e39cc44afb0667b97c"
+    },
+    {
+      "path": "docs/station-android/ENTREGA-APP-R73-HANDSHAKE-PARA-SERVIDOR-20261007.md",
+      "bytes": 11062,
+      "sha256": "67efaccea2fe1805fc4cd015fc16cbd57cae11cf8478d5e272fbc1dbb41d47f1"
+    },
+    {
+      "path": "docs/station-android/README.md",
+      "bytes": 20167,
+      "sha256": "62ab5017c64ef149e572fc51fc4f875dce3cfff0d370cb4596525e3e6cb13a4b"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/JAVA-OVERLAY-MANIFEST.json",
+      "bytes": 347,
+      "sha256": "b6efecdbbf58636e8b8f0e94497b9efee6dfda513a88121661c469d564b4fba4"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/SOURCE-FILES.json",
+      "bytes": 4999,
+      "sha256": "c39509df34fc52dadc840fad1ff41520313b8595f3e8293208115cf56ebfcaf3"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/STATUS.json",
+      "bytes": 643,
+      "sha256": "c16e4d2e4f31921a0fc90231c0611e90ca24d1d1b2ab25b1522b9698cbb5202f"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/evidence/engine-manifest.json",
+      "bytes": 2200,
+      "sha256": "ab47fa69aedc7c5969cb30bb65e027b3b9c1b4282609f8b54fa3e1fd6769b7a7"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/evidence/engine-registry.json",
+      "bytes": 1127,
+      "sha256": "1cad66f78f63286078621ecd7691f3aab2a420fc570598ea9d046bb6f5391574"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/evidence/java-dex-build.json",
+      "bytes": 73594,
+      "sha256": "f5f728c3bd06be6a5c00157402ef9711406fe65bd6a959d9a61f860f84a64f35"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/evidence/local-tests.json",
+      "bytes": 41892,
+      "sha256": "197cb198fd58c2f88c984c673fc9fefcdd7dd1291fabb4da383d4bf1e497f1e3"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/evidence/native-build.json",
+      "bytes": 4621,
+      "sha256": "2b4e8b0c2e04943f67e67ff014e218416b255f884094c2f591b9ab9cc7e5f7ca"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/evidence/native-source.json",
+      "bytes": 2785,
+      "sha256": "a20d00413734498ec15ab3ab7f6ef20aeec4cb74e5482a69a22ab6b615abc536"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/evidence/package.json",
+      "bytes": 2962,
+      "sha256": "85ccd5450ba27b7a4dd38be52e6d348063ec01dcadd9d8970b563a7c63fec619"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/evidence/physical-r72-both-black.json",
+      "bytes": 840,
+      "sha256": "427c92fcec9bd39115823f88ab43f10f5e05815b10c35911393bf719ddc42e03"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/evidence/server-engine-registry-additions.json",
+      "bytes": 643,
+      "sha256": "a3066af1ac72e1c93e919aecef61c3a954fe1a0d29dd5a77fa6073ffb9753e0b"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/native/recovery-handshake-r73.patch",
+      "bytes": 1050,
+      "sha256": "5195edd49b32b961f8d0d5ff4eb4ae43e06bd240d94c96ff81cbeae3d6b40e6a"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/tests/NATIVE-FINDINGS.md",
+      "bytes": 6272,
+      "sha256": "9d3a2dc789a9549f8985c0e4d849e3084c86345944fc2a8d93425ec60514fb48"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/tests/recovery-flush-probe.json",
+      "bytes": 1810,
+      "sha256": "08ad04f8fb05207b0e149c3bc30d17b04c7bea509ec10252eadf64b2f694ca0f"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r73-20261007/tests/transport_audit.md",
+      "bytes": 6540,
+      "sha256": "fee81871072d165c74906b5fb7212cfd2dee8ff8cd58e464eea87bde8ada4766"
+    }
+  ]
+}

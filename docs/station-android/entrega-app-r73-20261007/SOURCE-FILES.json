@@ -1,0 +1,149 @@
+{
+  "files": [
+    {
+      "path": "evidence/engine-manifest.json",
+      "bytes": 2200,
+      "sha256": "ab47fa69aedc7c5969cb30bb65e027b3b9c1b4282609f8b54fa3e1fd6769b7a7"
+    },
+    {
+      "path": "evidence/engine-registry.json",
+      "bytes": 1127,
+      "sha256": "1cad66f78f63286078621ecd7691f3aab2a420fc570598ea9d046bb6f5391574"
+    },
+    {
+      "path": "evidence/java-dex-build.json",
+      "bytes": 73594,
+      "sha256": "f5f728c3bd06be6a5c00157402ef9711406fe65bd6a959d9a61f860f84a64f35"
+    },
+    {
+      "path": "evidence/local-tests.json",
+      "bytes": 41892,
+      "sha256": "197cb198fd58c2f88c984c673fc9fefcdd7dd1291fabb4da383d4bf1e497f1e3"
+    },
+    {
+      "path": "evidence/native-build.json",
+      "bytes": 4621,
+      "sha256": "2b4e8b0c2e04943f67e67ff014e218416b255f884094c2f591b9ab9cc7e5f7ca"
+    },
+    {
+      "path": "evidence/native-source.json",
+      "bytes": 2785,
+      "sha256": "a20d00413734498ec15ab3ab7f6ef20aeec4cb74e5482a69a22ab6b615abc536"
+    },
+    {
+      "path": "evidence/package.json",
+      "bytes": 2962,
+      "sha256": "85ccd5450ba27b7a4dd38be52e6d348063ec01dcadd9d8970b563a7c63fec619"
+    },
+    {
+      "path": "evidence/physical-r72-both-black.json",
+      "bytes": 840,
+      "sha256": "427c92fcec9bd39115823f88ab43f10f5e05815b10c35911393bf719ddc42e03"
+    },
+    {
+      "path": "evidence/server-engine-registry-additions.json",
+      "bytes": 643,
+      "sha256": "a3066af1ac72e1c93e919aecef61c3a954fe1a0d29dd5a77fa6073ffb9753e0b"
+    },
+    {
+      "path": "HANDOFF-APP-R73-PARA-SERVIDOR-20261007.md",
+      "bytes": 9688,
+      "sha256": "71c32c9a152de99a4457e2983ca6c8f87b03d29ee66c66fd4a6becc5c0df207d"
+    },
+    {
+      "path": "java/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryTunnel.java",
+      "bytes": 16381,
+      "sha256": "8af5ceb585498512ff9ff4e1409a46ee2ed9dca9ee66bcb0c43bc11fa7817896"
+    },
+    {
+      "path": "java/netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java",
+      "bytes": 18849,
+      "sha256": "d047c504cca6974abf1ddbcdded1d39f68942ea25c9b19b32a5bf2dbb9a290d6"
+    },
+    {
+      "path": "JAVA-OVERLAY-MANIFEST.json",
+      "bytes": 347,
+      "sha256": "b6efecdbbf58636e8b8f0e94497b9efee6dfda513a88121661c469d564b4fba4"
+    },
+    {
+      "path": "native/recovery-handshake-r73.patch",
+      "bytes": 1050,
+      "sha256": "5195edd49b32b961f8d0d5ff4eb4ae43e06bd240d94c96ff81cbeae3d6b40e6a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 976,
+      "sha256": "e9ab2a928c6529bc4c31a098f20f40759dc5adbbc42f6e68837b5c066ed33f2b"
+    },
+    {
+      "path": "recipes/build_candidate.py",
+      "bytes": 11755,
+      "sha256": "36288c984ed852cacd98ce0776cf52923ca61c6a77a0c5128ebe18ebef83d914"
+    },
+    {
+      "path": "recipes/build_native_r73.py",
+      "bytes": 11296,
+      "sha256": "81407acd328152353a307b00e8cee4a9d35b71b2ce9cefebeb9966105a25a55b"
+    },
+    {
+      "path": "recipes/package_r73.py",
+      "bytes": 9097,
+      "sha256": "62146d704600dfdb400586e8cd2f94fb7d16fc85ba7fda1f28ec2fa862be0e24"
+    },
+    {
+      "path": "recipes/prepare_engine_registry.py",
+      "bytes": 2530,
+      "sha256": "5ef742816d6297c8a9e2965ca8b6e2b26ccfef95bcca7a4678ff22db3ee717f0"
+    },
+    {
+      "path": "recipes/publish_server_handoff.py",
+      "bytes": 7195,
+      "sha256": "953d5bb5aa9f6e5636174dff3c1f79d956879b94f72006437e4deb7e09675845"
+    },
+    {
+      "path": "recipes/run_tests.py",
+      "bytes": 4978,
+      "sha256": "df576daf2985090242b48cb6df0cbb49d9752c71e3d7d4596f5e5e420cd1d9c2"
+    },
+    {
+      "path": "STATUS.json",
+      "bytes": 643,
+      "sha256": "c16e4d2e4f31921a0fc90231c0611e90ca24d1d1b2ab25b1522b9698cbb5202f"
+    },
+    {
+      "path": "tests/NATIVE-FINDINGS.md",
+      "bytes": 6272,
+      "sha256": "9d3a2dc789a9549f8985c0e4d849e3084c86345944fc2a8d93425ec60514fb48"
+    },
+    {
+      "path": "tests/recovery-flush-probe.json",
+      "bytes": 1810,
+      "sha256": "08ad04f8fb05207b0e149c3bc30d17b04c7bea509ec10252eadf64b2f694ca0f"
+    },
+    {
+      "path": "tests/recovery_flush_probe.py",
+      "bytes": 11861,
+      "sha256": "0b0a960dae80aafd2c1702169ee0c287b41959005a25433c5d47ed55eeb72d46"
+    },
+    {
+      "path": "tests/recovery_poll_candidate.h",
+      "bytes": 986,
+      "sha256": "270d96213ef2ffd0ae4f30d8116680104d64ca502330f28911e90b6b53a80f7b"
+    },
+    {
+      "path": "tests/transport_audit.md",
+      "bytes": 6540,
+      "sha256": "fee81871072d165c74906b5fb7212cfd2dee8ff8cd58e464eea87bde8ada4766"
+    },
+    {
+      "path": "tests/wait_DiagnosticsTest.java",
+      "bytes": 3030,
+      "sha256": "551778b877c86a712526e4814ee8c602b96607af8e4bd4680237ac554758b8d6"
+    },
+    {
+      "path": "tests/wait_panel_source_test.py",
+      "bytes": 4090,
+      "sha256": "43f4766722f72689fbd0b49c93e12da4ce0c5aa9d30df7e63c3ac296cc65ec17"
+    }
+  ]
+}

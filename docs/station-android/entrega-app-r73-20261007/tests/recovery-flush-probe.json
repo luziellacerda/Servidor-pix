@@ -1,0 +1,33 @@
+{
+  "nativeSourceSHA256": "e221e40605aecce5f168fd68ab9f06fda1eb8297a97ba6c1aff3a6e660fa8d22",
+  "nativePrivateSHA256": "1f57454b738475c41a5d142d8e761b103d0e6c35d6bb5495f747311a6ccd6922",
+  "testRecipeSHA256": "0b0a960dae80aafd2c1702169ee0c287b41959005a25433c5d47ed55eeb72d46",
+  "extractedFunctionHashes": {
+    "buf_used": "9a0d5d42613062d93233a26bc22fd991a66d4dc7819ef003e786640a7ed84f83",
+    "buf_remaining": "872fdb469b2b6cfa0e65d5fcab893edaa60b91ad333d14b2b6e2fdc13c613b08",
+    "netplay_send": "22009f2635ac73019949f90987481dc67a5304b0549216fba89d7c3709595686",
+    "netplay_send_flush": "53cb2b61d727aa031f5b7068dc05462fdc33aed90f2135af23ed0b8b77934154",
+    "netplay_send_raw_cmd": "bd9d6be813c26214ff8af939054fc48ebfc183d4b34048729dec1154e043f3b3",
+    "station_netplay_recovery_poll": "f060036537bc6f98400ed74243f485573301710dbdc03f8ee66c64783f23a9ee"
+  },
+  "candidatePumpSHA256": "d3a42419124dda592fea217088ed4e4687bf63718f657299ac8d73ad9fa41e12",
+  "results": {
+    "baseline": {
+      "expectedExitCode": 2,
+      "exitCode": 2,
+      "output": "FAIL check 1: MODE remains buffered while recovery waits; normal post_frame is never called",
+      "harnessSHA256": "523069184d59f6c6a7d6b285c4fb95d8a21ded0c97c4d7e3a1e1c22773ef79a7"
+    },
+    "candidate": {
+      "expectedExitCode": 0,
+      "exitCode": 0,
+      "output": "PASS 22 checks; actual upstream buffering/pump, model handshake, no Android/gameplay",
+      "harnessSHA256": "94dbd03c4ed9867de1f956e645e8a2a1f13bcf92f87c2b9b07854ebfe5bbad58"
+    }
+  },
+  "checks": 22,
+  "scope": "upstream ring-buffer, command enqueue and recovery pump; modeled handshake producer/transport; no ROM, Android or real multiplayer",
+  "baselineFails": true,
+  "candidatePasses": true,
+  "productionNativeModified": false
+}

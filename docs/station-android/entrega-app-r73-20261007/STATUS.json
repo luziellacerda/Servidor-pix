@@ -1,0 +1,20 @@
+{
+  "version": "R73",
+  "branch": "fix/station-r73-recovery-handshake-20261007",
+  "base": "R72",
+  "apkSHA256": "b23ff3d1e319ee050e6eb867e2643a5f66661da481dd2e3a4e50089d1604f077",
+  "runtimeSHA256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+  "packaged": true,
+  "javaExecutableChecks": 1206,
+  "nativeRegressionChecks": 22,
+  "sourceLifecycleGuards": 39,
+  "serverActivationVerified": false,
+  "serverRegistryAdditionsRequired": true,
+  "installed": false,
+  "currentDevices": {
+    "Samsung A56": "R72",
+    "Motorola Edge30": "R72"
+  },
+  "androidGameplayVerified": false,
+  "stable": false
+}

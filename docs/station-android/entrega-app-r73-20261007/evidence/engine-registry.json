@@ -1,0 +1,24 @@
+{
+  "runtime": "E:\\R73fixed\\libstation_retroarch.so",
+  "runtimeSHA256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+  "manifest": "E:\\ESTUDO APK\\work\\station-recovery-handshake-r73-20261007-build\\assets\\station-online\\engines.json",
+  "manifestSHA256": "ab47fa69aedc7c5969cb30bb65e027b3b9c1b4282609f8b54fa3e1fd6769b7a7",
+  "registryAdditions": [
+    {
+      "id": "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+      "platform": "snes",
+      "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+      "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+      "recoveryProtocol": "station-stream.v2"
+    },
+    {
+      "id": "clownmdemu-d43c2708-rs3-9af2778898e4",
+      "platform": "megadrive",
+      "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+      "recoveryProtocol": "station-stream.v2"
+    }
+  ],
+  "neogeoLaunchReady": false,
+  "serverActivationVerified": false
+}
