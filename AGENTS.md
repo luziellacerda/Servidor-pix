@@ -1,3 +1,9 @@
+# Auditoria adicional Neo Geo cartucho/CD — R65 — 07/10/2026
+
+Leia [PEDIDO-AUDITORIA-NEOGEO-CARTUCHO-CD-R65-20261007.md](docs/station-android/PEDIDO-AUDITORIA-NEOGEO-CARTUCHO-CD-R65-20261007.md). APP → SERVIDOR, pedido de auditoria, sem implantação. Fonte app `e99f6fa705f4629085c426ffb7cf02b4fc624239`, branch `fix/station-neogeo-cd-r65-20261007`; R65 APK1858459b compilado/reproduzido, não instalado. CD tinha helper ausente no APK anterior, agora integrado. TSV14:189cartuchos/50CD,13nomes sem registro MAME0289 (seis KOF) e dois itens de outro hardware; conferir produção real e membros/CRC antes de mapear. KOF98 padrão registrado chegou ao motor, imagem corrompida em captura curta; causa ainda não comprovada/USB ausente. Responder NG-01–NG-07, preservando IDs/licenças/saves e demais serviços. O pedido Q01–Q08 de retomada online abaixo continua aberto e independente. Não declarar todos os jogos corrigidos ou R65 instalada.
+
+## Histórico e pedido de retomada preservados
+
 # Pedido atual: aguardar a conexão e retomar a partida — 07/10/2026
 
 Leia [PEDIDO-QUEDA-RETOMADA-PARTIDA-STATION-20261007.md](docs/station-android/PEDIDO-QUEDA-RETOMADA-PARTIDA-STATION-20261007.md). **APP → SERVIDOR, pedido novo; não é retorno nem implantação.** Fonte app R64 `8812bacf8154f25fd7739f95a2db0729f36e4c72`: controles online adaptados e diagnóstico, compilados/reproduzidos, ainda não instalados. R63 joga online segundo o mantenedor, depois houve queda observada às12:24:07Z; causa exata não comprovada. Implementar sessão recuperável/espera sem encerramento por timeout, loading Aguardando conexão e retomada sincronizada. Responder Q01–Q08 e matriz de perdas com contrato, fontes/runtime e compatibilidade; não sugerir apenas reconectar o WebSocket ou apagar os timers. Preservar autenticação, dados, Binder, saída e todos os outros produtos.
