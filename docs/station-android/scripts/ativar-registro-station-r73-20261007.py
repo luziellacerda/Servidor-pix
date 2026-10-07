@@ -14,6 +14,7 @@ from pathlib import Path
 import pwd
 import re
 import socket
+import shlex
 import subprocess
 import sys
 import time
@@ -92,6 +93,30 @@ def effective(registry_sha):
     return values
 
 
+def environment_fingerprint(values):
+    # systemd changes INVOCATION_ID/JOURNAL_STREAM/SYSTEMD_EXEC_PID on restart.
+    # Verify every explicit original environment setting against the unchanged
+    # files; never confuse those invocation markers with product configuration.
+    expected = {}
+    for path in (ENV, OVERLAY):
+        for line in path.read_text().splitlines():
+            if not line.strip() or line.lstrip().startswith('#'):
+                continue
+            name, separator, raw = line.partition('=')
+            if not separator or not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', name):
+                raise ValueError('Unexpected reviewed environment file format')
+            parts = shlex.split(raw, posix=True)
+            if len(parts) > 1:
+                raise ValueError('Unexpected multiword environment setting')
+            expected[name] = parts[0] if parts else ''
+    if any(values.get(name) != value for name, value in expected.items()):
+        raise ValueError('Effective explicit environment setting changed')
+    scoped = lambda name: name.startswith(('Station__', 'Suite__', 'ConnectionStrings__'))
+    if {k for k in values if scoped(k)} != {k for k in expected if scoped(k)}:
+        raise ValueError('Unexpected application environment setting')
+    return hashlib.sha256(json.dumps(expected, sort_keys=True).encode()).hexdigest()
+
+
 def capture():
     values = effective(OLD_SHA)
     if ops.digest(ADDITIONS) != ADDITIONS_SHA:
@@ -108,7 +133,7 @@ def capture():
     files = security.files(TARGET)
     state = dict(utc=now(), database=db, oldEngines=old, additions=new,
                  oldRegistrySha256=OLD_SHA, releaseFiles=files,
-                 environmentSha256=hashlib.sha256(json.dumps(values, sort_keys=True).encode()).hexdigest(),
+                 environmentSha256=environment_fingerprint(values),environmentFingerprintKind='explicit-verified-files-v1',
                  configuration=security.snapshot_configs(), keys={str(p): ops.digest(p) for p in ENV.parent.iterdir() if p.is_file()},
                  shared={u: ops.state(u) for u in security.SHARED}, realLicenseSha256=security.real_licenses(db),
                  ledgerSha256=hashlib.sha256(security.scalar(db, 'SELECT version FROM suite.schema_migrations ORDER BY version').encode()).hexdigest(),
@@ -118,7 +143,8 @@ def capture():
 
 def unchanged(state, registry_sha):
     values = effective(registry_sha)
-    if hashlib.sha256(json.dumps(values, sort_keys=True).encode()).hexdigest() != state['environmentSha256']:
+    fingerprint = environment_fingerprint(values)
+    if state.get('environmentFingerprintKind') == 'explicit-verified-files-v1' and fingerprint != state['environmentSha256']:
         raise ValueError('Effective environment changed')
     files = security.files(TARGET)
     expected = dict(state['releaseFiles'], **{'online-engine-registry.json': registry_sha})
@@ -265,6 +291,55 @@ def rollback(backup):
     return result
 
 
+def complete_activation(backup, revision):
+    # Complete proofs after the first activation's checker rejected systemd's
+    # new invocation markers. No second reload, binary or configuration change.
+    if backup.parent != Path('/mnt/DADOS') or not re.fullmatch(r'station-r73-registry-backup-20261007-[0-9]{12}',backup.name) or backup.is_symlink():
+        raise ValueError('Unexpected activation backup')
+    state = json.loads((backup/'state.json').read_text())
+    if state.get('operatorSourceRevision') != '8e1136663609b49dba7e9dc059c3ef3c453070ee' or state.get('target') != str(TARGET):
+        raise ValueError('Only the reviewed first R73 activation can be completed')
+    git=['git','-c','safe.directory='+str(ROOT)]
+    if not re.fullmatch('[0-9a-f]{40}',revision) or ops.run(git+['rev-parse','HEAD'],cwd=ROOT).strip()!=revision:
+        raise ValueError('Exact completion revision required')
+    if ops.digest(backup/'old-engine-registry.json')!=OLD_SHA or ops.digest(ADDITIONS)!=ADDITIONS_SHA:
+        raise ValueError('Activation backup/additions differ')
+    if json.loads(REGISTRY.read_text()) != json.loads((backup/'old-engine-registry.json').read_text())+json.loads(ADDITIONS.read_text()):
+        raise ValueError('Effective R73 registry is not exact six plus two')
+    values=unchanged(state,state['newRegistrySha256'])
+    pid=int(ops.run(['systemctl','show',SERVICE,'-p','MainPID','--value']))
+    state.setdefault('firstInvocationEnvironmentSha256',state['environmentSha256'])
+    state.update(environmentSha256=environment_fingerprint(values),environmentFingerprintKind='explicit-verified-files-v1')
+    ops.replace_config(backup/'state.json',json.dumps(state,indent=2)+'\n')
+    print(json.dumps(dict(stage='complete_public_proofs',pid=pid,secondRestart=False)),flush=True)
+    proof=load('verificar-registro-station-r73.py').verify(json.loads(security.INDEX.read_text()),values,
+        'https://app.lzgames.com.br',lambda sql:ops.sql(state['database'],sql),state['additions'],[e['id'] for e in state['oldEngines']])
+    unchanged(state,state['newRegistrySha256'])
+    after=r71.idle_recovery()
+    if int(ops.run(['systemctl','show',SERVICE,'-p','MainPID','--value']))!=pid:
+        raise ValueError('Station process changed during completion')
+    timestamp=ops.run(['systemctl','show',SERVICE,'-p','ActiveEnterTimestamp','--value'],env=dict(os.environ,TZ='UTC')).strip()
+    reload_utc=datetime.strptime(timestamp,'%a %Y-%m-%d %H:%M:%S UTC').replace(tzinfo=timezone.utc).isoformat()
+    candidates=list(CHECK.glob('qualified-*.json'))
+    qualified=json.loads(max(candidates,key=lambda p:p.stat().st_mtime).read_text())
+    if qualified['registrySha256']!=state['newRegistrySha256'] or qualified['proof']['checks']!=185:
+        raise ValueError('Original isolated qualification receipt differs')
+    result=dict(applied=True,utc=now(),reloadUtc=reload_utc,operatorSourceRevision=state['operatorSourceRevision'],
+        verificationOperatorRevision=revision,appSourceRevision=APP_COMMIT,deployedDllSourceRevision='ab192bf1585e30f303d041f13b36a1f9c96d2caa',
+        dllPath=str(DLL),dllSha256=DLL_SHA,registryPath=str(REGISTRY),registrySha256=state['newRegistrySha256'],
+        engineIds=[e['id'] for e in state['oldEngines']+state['additions']],engines=state['oldEngines']+state['additions'],
+        pid=pid,backup=str(backup),qualified=qualified,publicProof=proof,readyAfter=after,
+        onlyEffectiveRegistryChanged=True,originalSixPreserved=True,dllChanged=False,environmentChanged=False,
+        environmentFingerprintKind=state['environmentFingerprintKind'],firstCheckerInvocationMarkerMismatch=True,
+        completionRequiredSecondRestart=False,sandboxChanged=False,databaseSchemaChanged=False,keysChanged=False,
+        realLicensesChanged=False,otherProductsChanged=False,nginxChanged=False,cloudflareChanged=False,
+        requireVerifiedApp=False,androidGameplayVerified=False,indexRevision=14,visibleItems=2212,indexSha256=security.INDEX_SHA,
+        closedTerminalTrial=dict(startUtc='2026-10-07T22:48:19.238974+00:00',terminalUtc='2026-10-07T23:06:51.790772+00:00',
+            humanExitAcknowledged=True,connections=0,pendingBytes=0))
+    record=report('active',result)
+    print(json.dumps(dict(applied=True,pid=pid,engineCount=8,registrySha256=state['newRegistrySha256'],publicChecks=proof['checks'],record=record)),flush=True)
+
+
 def activate(revision):
     git = ['git', '-c', 'safe.directory=' + str(ROOT)]
     if not re.fullmatch('[0-9a-f]{40}', revision) or ops.run(git + ['rev-parse', 'HEAD'], cwd=ROOT).strip() != revision:
@@ -347,6 +422,8 @@ def main():
     parser.add_argument('--preflight',action='store_true')
     parser.add_argument('--apply')
     parser.add_argument('--rollback',type=Path)
+    parser.add_argument('--complete-activation',type=Path)
+    parser.add_argument('--operator-revision')
     parser.add_argument('--closed-trial-start-utc',help='Exact terminal trial already explicitly ended by the maintainer')
     args=parser.parse_args()
     if os.geteuid()!=0 or os.environ.get('PKEXEC_UID')!='1000':
@@ -361,6 +438,8 @@ def main():
             activate(args.apply)
         elif args.rollback:
             print(json.dumps(rollback(args.rollback)),flush=True)
+        elif args.complete_activation:
+            complete_activation(args.complete_activation,args.operator_revision)
         else:
             raise ValueError('Registry action required')
     except Exception as error:
