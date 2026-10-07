@@ -5,7 +5,7 @@ Keeps current Station keys, commercial licenses, media, runtimes and clients.
 Never changes other product identities, keys, firewall rules or SSH access.
 Run with native polkit authentication and the established operator Python venv.
 """
-import argparse,base64,hashlib,hmac,importlib.util,json,os,pwd,re,secrets,shutil,socket,subprocess,sys,time
+import argparse,base64,hashlib,hmac,http.client,importlib.util,json,os,pwd,re,secrets,shutil,socket,subprocess,sys,time
 from datetime import datetime,timezone
 from pathlib import Path
 from urllib.error import HTTPError
@@ -55,6 +55,24 @@ def idle():
     result=telemetry()
     if result['activeRooms'] or result['activeConnections']:raise ValueError('Active relay game; rollout deferred')
     return result
+def management_health():
+    # Management intentionally hides health from unauthenticated TCP requests.
+    # Use its existing private socket/token, entirely within this root checker.
+    pid=int(ops.run(['systemctl','show','turborama-station-management.service','-p','MainPID','--value']))
+    env=dict(entry.decode().split('=',1) for entry in Path('/proc/'+str(pid)+'/environ').read_bytes().split(b'\0') if b'=' in entry)
+    path=env['SUITE_ADMIN_SOCKET'];credential=Path(env['SUITE_ADMIN_TOKEN_FILE']).read_text().strip()
+    if not path.startswith('/run/') or not 16<=len(credential)<=4096:raise ValueError('Protected management identity differs')
+    class LocalAdmin(http.client.HTTPConnection):
+        def connect(self):
+            self.sock=socket.socket(socket.AF_UNIX,socket.SOCK_STREAM);self.sock.settimeout(5);self.sock.connect(path)
+    connection=LocalAdmin('localhost',timeout=5)
+    try:
+        connection.request('GET','/health',headers={'X-Suite-Admin-Token':credential})
+        response=connection.getresponse();body=response.read(4097)
+        if response.status!=200 or len(body)>4096 or json.loads(body).get('service')!='turborama-station-management':
+            raise ValueError('Protected management health differs')
+    finally:connection.close()
+    return dict(passed=True,authenticatedPrivateSocket=True,status=200)
 def real_licenses(db):
     data=ops.sql(db,"SELECT row_to_json(l)::text FROM suite.suite_licenses l WHERE product_id='TURBORAMA_STATION_ANDROID' "
         "AND NOT EXISTS(SELECT 1 FROM suite.suite_license_deliveries d WHERE d.license_id=l.license_id "
@@ -233,6 +251,7 @@ def apply(revision):
                 if row.get(field) and not any(Path(row[field]).is_relative_to(root) for root in MEDIA):raise ValueError('Unplanned media root')
         result['relayBefore']=idle();shared={u:ops.state(u) for u in SHARED}
         if any('ActiveState=active' not in v for v in shared.values()):raise ValueError('Shared service unhealthy')
+        result['managementBefore']=management_health()
         hba=Path(scalar(db,'SHOW hba_file'))
         if hba.parent!=Path('/etc/postgresql/16/main') or hba.is_symlink():raise ValueError('Unexpected local PostgreSQL configuration')
         config=snapshot_configs();config[str(hba)]=ops.digest(hba)
@@ -393,7 +412,8 @@ def apply(revision):
         if status!=404:raise ValueError('Direct origin bypass was not blocked')
         unchanged(state,configuration=False)
         if real_licenses(db)!=state['realLicenseSha256']:raise ValueError('Real commercial license changed')
-        for port in [5187,5190,5191]:
+        result['managementAfter']=management_health()
+        for port in [5190,5191]:
             with urlopen('http://127.0.0.1:'+str(port)+'/health',timeout=5) as reply:
                 if reply.status!=200:raise ValueError('Other product health changed')
         result.update(applied=True,completedAtUtc=datetime.now(timezone.utc).isoformat(),backup=str(backup),
@@ -408,6 +428,7 @@ def apply(revision):
     except Exception as error:
         result.update(failedStage=stage,errorType=type(error).__name__)
         if isinstance(error,ValueError):result['reason']=str(error)
+        if isinstance(error,HTTPError):result.update(httpStatus=error.code,httpEndpoint=error.url)
         if changed:
             try:rollback(revision,True);result['rolledBack']=True
             except Exception as failure:result['rollbackErrorType']=type(failure).__name__
