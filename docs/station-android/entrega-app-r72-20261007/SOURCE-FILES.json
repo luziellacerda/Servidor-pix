@@ -1,0 +1,129 @@
+{
+  "files": [
+    {
+      "path": "evidence/both-device-entry-r72.json",
+      "bytes": 339,
+      "sha256": "1dec96fef4a5298ab6141acc3b2e6d3f6ee0e745539d45de1dea9756be38f657"
+    },
+    {
+      "path": "evidence/installation-motorola-r72-20261007.json",
+      "bytes": 1041,
+      "sha256": "320928995578c39281878135a66a29b2df2ec415b567498cb4b52acc72301845"
+    },
+    {
+      "path": "evidence/installation-samsung-r72-20261007.json",
+      "bytes": 1033,
+      "sha256": "891f7ca413d5f51b41e1e15cda2d18f89c987cc06ddde86a8b615225aa908b74"
+    },
+    {
+      "path": "evidence/java-dex-build.json",
+      "bytes": 73603,
+      "sha256": "a91334aeb89322374c6dcdb1b996d09ae52df6ce025f342c2896d34cb30cb0c4"
+    },
+    {
+      "path": "evidence/lineage.json",
+      "bytes": 714,
+      "sha256": "8afdfa14bedb1478efdb2ba8cce6a06fc6dba91a4b89f6fa547559a53d300408"
+    },
+    {
+      "path": "evidence/local-tests.json",
+      "bytes": 41597,
+      "sha256": "b735b083242e06e97644b61ed8454e6a118857ec6ed3507800fca266abfb21ee"
+    },
+    {
+      "path": "evidence/package.json",
+      "bytes": 2656,
+      "sha256": "1c3e9ae5ee8ac3fdfcffd99d9579147d1c66f8499cf18c3333694c40eeda8b09"
+    },
+    {
+      "path": "evidence/physical-attempt-mixed-r72-r71.json",
+      "bytes": 1553,
+      "sha256": "180d83957c1eef0fd563c1788d9e7fe9dcec827fea7b3b05bac03a40ab14a5f6"
+    },
+    {
+      "path": "HANDOFF-APP-R72-PARA-SERVIDOR-20261007.md",
+      "bytes": 8546,
+      "sha256": "fb7dd0530c44f6d9b489edc6596d77e1a71388301438ce3889788cf1f6597896"
+    },
+    {
+      "path": "java/netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java",
+      "bytes": 17285,
+      "sha256": "2c160af62ca00098a0a01a3eee266e8148bdc29d88e24de567468c2cc2e65fd8"
+    },
+    {
+      "path": "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomRoster.java",
+      "bytes": 8099,
+      "sha256": "b58018dd72d1117bdbe558f08479ff563abd593acc51df31ef35cb7efb681bc4"
+    },
+    {
+      "path": "JAVA-OVERLAY-MANIFEST.json",
+      "bytes": 343,
+      "sha256": "891cb1210656238cd5518647d53c52f455d0ae96f071e75072769e6b522731ef"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3697,
+      "sha256": "2d82a0d53c5d0d7ed9d300699d1c50ef67bbf5cff140e60ed70ad3a327c74d87"
+    },
+    {
+      "path": "recipes/build_candidate.py",
+      "bytes": 11933,
+      "sha256": "3687ab8d033eb739f5edf04b7641fbf11ab5f439709626c3b70af179f6e4c6c4"
+    },
+    {
+      "path": "recipes/install_verified.py",
+      "bytes": 4220,
+      "sha256": "94c3aba0aea902a072a590b45b10b8b88965989e968bde8832b1ede45453b35c"
+    },
+    {
+      "path": "recipes/package_r72.py",
+      "bytes": 7258,
+      "sha256": "f7d88be2e3fd8c9c6fba3d020c4e3dda34558d62d6cd8b7f78f3d80cc442b28c"
+    },
+    {
+      "path": "recipes/run_tests.py",
+      "bytes": 4677,
+      "sha256": "167f26bf2e082dcd4db254a99fe5b09dc76026e4f331576bf5d446803c3f80c5"
+    },
+    {
+      "path": "server/ANALISE-POS-IMPLANTACAO.json",
+      "bytes": 4922,
+      "sha256": "52f644dc8ac5f817bea878c949f40826ced376bd2c8f768555f489338c72e380"
+    },
+    {
+      "path": "server/CONTRATO-SERVIDOR.md",
+      "bytes": 4333,
+      "sha256": "1e1ea3b09390d603f1bfc731c3ad5b479eae1d327320ac8452f57976e07710d5"
+    },
+    {
+      "path": "server/openapi.json",
+      "bytes": 20126,
+      "sha256": "2a9b62ecaddb720a97eaa1f85cb1d46ef3cd903895c76dbbbead8f34b77855db"
+    },
+    {
+      "path": "server/ORIGIN.json",
+      "bytes": 1056,
+      "sha256": "a977e122730325f7f4ef19aa3b6d478413e99b881e6a1c145fb88890cebd3b9f"
+    },
+    {
+      "path": "server/preparar-jni-registration-r71.py",
+      "bytes": 1548,
+      "sha256": "4e1a14cd8c68966b79c09a59ff8d6b4cea7cabf628d2a78bc0ef1b479e577c46"
+    },
+    {
+      "path": "server/PRODUCAO-EFETIVA.json",
+      "bytes": 3083,
+      "sha256": "262406c630b242915d4673c0a88e7b4d48cbcdaf67fa17a66ffa4e573c7d70ac"
+    },
+    {
+      "path": "STATUS.json",
+      "bytes": 917,
+      "sha256": "d0299b1bcd524176db92b49101102951ed41dfc67718f88192fbb5c4c40e55bd"
+    },
+    {
+      "path": "tests/StationOwnRoomProfilesTest.java",
+      "bytes": 5833,
+      "sha256": "b2c516d6cb4dd7b5861e90a797dd1a53f3afa0b22408f2ab9e2692fcad9d0d9a"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "appCommit": "ca5126ed339463d8a5ae7cf79e1afe47ecb2c653",
+  "serverParent": "c1e44a1225a101478ceb29f4e624885331872c0d",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 21498,
+      "sha256": "332f1b20279885684d53f10abbbc750a83a9571aacb867a50e17114f1ba72a99"
+    },
+    {
+      "path": "docs/station-android/AGENTS.md",
+      "bytes": 22532,
+      "sha256": "57a4e6f8cf34884b228d6767a48bddfb47d2f69a0cccb6a0c54540d054edf0d1"
+    },
+    {
+      "path": "docs/station-android/ENTREGA-APP-R72-PARA-SERVIDOR-20261007.md",
+      "bytes": 9424,
+      "sha256": "276e6ef39574c85c4d34925e1dd2a97898a79382d3deaf24ef9a3de938e424c1"
+    },
+    {
+      "path": "docs/station-android/README.md",
+      "bytes": 19923,
+      "sha256": "2aded1cef404eec58252d1264acc969ea0e3c31004860a89e42b6ab4aa222207"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r72-20261007/JAVA-OVERLAY-MANIFEST.json",
+      "bytes": 343,
+      "sha256": "891cb1210656238cd5518647d53c52f455d0ae96f071e75072769e6b522731ef"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r72-20261007/SOURCE-FILES.json",
+      "bytes": 4336,
+      "sha256": "c7a4cf4350334558ca6179a281cbc876e40192a6d4c1bb96957f641b2bad65d5"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r72-20261007/STATUS.json",
+      "bytes": 917,
+      "sha256": "d0299b1bcd524176db92b49101102951ed41dfc67718f88192fbb5c4c40e55bd"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r72-20261007/evidence/both-device-entry-r72.json",
+      "bytes": 339,
+      "sha256": "1dec96fef4a5298ab6141acc3b2e6d3f6ee0e745539d45de1dea9756be38f657"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r72-20261007/evidence/installation-motorola-r72-20261007.json",
+      "bytes": 1041,
+      "sha256": "320928995578c39281878135a66a29b2df2ec415b567498cb4b52acc72301845"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r72-20261007/evidence/installation-samsung-r72-20261007.json",
+      "bytes": 1033,
+      "sha256": "891f7ca413d5f51b41e1e15cda2d18f89c987cc06ddde86a8b615225aa908b74"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r72-20261007/evidence/java-dex-build.json",
+      "bytes": 73603,
+      "sha256": "a91334aeb89322374c6dcdb1b996d09ae52df6ce025f342c2896d34cb30cb0c4"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r72-20261007/evidence/lineage.json",
+      "bytes": 714,
+      "sha256": "8afdfa14bedb1478efdb2ba8cce6a06fc6dba91a4b89f6fa547559a53d300408"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r72-20261007/evidence/local-tests.json",
+      "bytes": 41597,
+      "sha256": "b735b083242e06e97644b61ed8454e6a118857ec6ed3507800fca266abfb21ee"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r72-20261007/evidence/package.json",
+      "bytes": 2656,
+      "sha256": "1c3e9ae5ee8ac3fdfcffd99d9579147d1c66f8499cf18c3333694c40eeda8b09"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r72-20261007/evidence/physical-attempt-mixed-r72-r71.json",
+      "bytes": 1553,
+      "sha256": "180d83957c1eef0fd563c1788d9e7fe9dcec827fea7b3b05bac03a40ab14a5f6"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "version": "R72",
+  "branch": "fix/station-r72-native-registration-profiles-20261007",
+  "baseAppCommit": "f64f685d9e88697c7980bfd4e0663df142b9334c",
+  "serverReturnCommit": "c1e44a1225a101478ceb29f4e624885331872c0d",
+  "apkSHA256": "a8d3d28bb70618c52debf6e4cb0acaaf1f3bd1de19fe410dda85f6953caaec8e",
+  "localChecksPassed": 1181,
+  "packaged": true,
+  "samsungInstalled": true,
+  "samsungInstalledHashVerified": true,
+  "samsungScreenLockedAfterInstall": true,
+  "motorolaLatestVerifiedVersion": "R72",
+  "motorolaR72Installed": true,
+  "serverRecoveryPublishedPerReceipt": true,
+  "linuxDeployedByThisDelivery": false,
+  "nativeHookFailureConfirmedOnPhone": false,
+  "twoDeviceGameplayVerified": false,
+  "stable": false,
+  "motorolaInstalledHashVerified": true,
+  "nativeHooksLoadedOnSamsung": true,
+  "hostListeningAcknowledgedOnSamsung": true,
+  "mixedVersionAttemptStillBlack": true
+}

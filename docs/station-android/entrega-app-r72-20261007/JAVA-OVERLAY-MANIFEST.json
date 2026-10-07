@@ -1,0 +1,7 @@
+{
+  "base": "R71",
+  "files": {
+    "netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java": "2c160af62ca00098a0a01a3eee266e8148bdc29d88e24de567468c2cc2e65fd8",
+    "netplay-src/org/emulationstation/frontend/netplay/StationRoomRoster.java": "b58018dd72d1117bdbe558f08479ff563abd593acc51df31ef35cb7efb681bc4"
+  }
+}

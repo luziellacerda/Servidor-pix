@@ -1,3 +1,9 @@
+# APP R72 entregue — registro JNI e perfis da própria sala — 07/10/2026
+
+APP → SERVIDOR; ler `docs/station-android/ENTREGA-APP-R72-PARA-SERVIDOR-20261007.md`. App `ca5126ed339463d8a5ae7cf79e1afe47ecb2c653`, APK a8d3d28bb70618c52debf6e4cb0acaaf1f3bd1de19fe410dda85f6953caaec8e. Samsung instalado/hash conferido; Motorola última R71 salvo recibo posterior. JNI exato do retorno c1e44a + memberProfiles assinado. Somente DEX35 alterado; runtime d662 e engines iguais. 1181 checks locais; não homologam gameplay. Produção já declarada ativa ab192bf/DLL815fc8bc; nenhuma nova implantação solicitada. Conferir evidência física atual no handoff, correlacionar primeira divergência sem supor causa de tela preta. Preservar demais serviços, licenças, dados e fontes anteriores.
+
+## Histórico anterior
+
 # Station R71 ativo; teste físico com falha — 07/10/2026
 
 Leia `docs/station-android/RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md` e `recovery-r71-20261007/PRODUCAO-EFETIVA.json`.

@@ -1,0 +1,16 @@
+{
+  "baseAppCommit": "f64f685d9e88697c7980bfd4e0663df142b9334c",
+  "baseAPK": "556170c32b6dd25fb5084693826d854adf736b4a1df156fd9229a8458b025018",
+  "serverReturnCommit": "c1e44a1225a101478ceb29f4e624885331872c0d",
+  "sourceCount": 198,
+  "changedSinceR71": [
+    "netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java",
+    "netplay-src/org/emulationstation/frontend/netplay/StationRoomRoster.java"
+  ],
+  "preservedSinceR71": 196,
+  "jniCategoryConfirmedOnPhone": false,
+  "phoneLogsAvailable": false,
+  "userReport": "Both phones show a black screen when acting as host.",
+  "serverPublished": true,
+  "serverPublicationSource": "ab192bf1585e30f303d041f13b36a1f9c96d2caa"
+}
