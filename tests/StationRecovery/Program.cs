@@ -98,4 +98,25 @@ hub.RecoveryState(terminalLease,"unrecoverable");hub.CloseRelay(terminalLease);n
 Check(Command(host,new("heartbeat",id())).GetProperty("room").GetProperty("state").GetString()=="unrecoverable","social expiry cannot make terminal state recoverable");
 Reject(()=>Command(host,Ticket("resume-relay")),"STATION_RECOVERY_UNRECOVERABLE");
 hub.Revoke(guest);Check(Command(host,new("heartbeat",id())).GetProperty("room").ValueKind==JsonValueKind.Null,"revocation still ends authorized membership");
+// Own-room names must remain authoritative even when neither member is in the social page.
+var paged=new StationOnline([new("legacy-names","snes",hash,hash)],_=>"snes",()=>0L,relayEnabled:true);
+JsonElement PageCommand(OnlineIdentity who,OnlineCommand cmd)=>JsonSerializer.SerializeToElement(paged.Command(who,cmd));
+OnlineIdentity namesHost=new("synthetic-names-host","device-names-host"),namesGuest=new("synthetic-names-guest","device-names-guest");
+var hostView=PageCommand(namesHost,new("enter",id(),Nickname:"Synthetic host"));
+var guestView=PageCommand(namesGuest,new("enter",id(),Nickname:"Synthetic guest"));
+for(int i=0;i<105;i++)PageCommand(new("synthetic-page-"+i,"device-page-"+i),new("enter",id(),Nickname:"Synthetic peer "+i));
+var namesRoom=PageCommand(namesHost,new("create",id(),ItemId:"synthetic",EngineId:"legacy-names",ContentSha256:hash,OptionsSha256:hash,CoreSha256:hash,RuntimeSha256:hash)).GetProperty("room");
+string namesRid=namesRoom.GetProperty("roomId").GetString()!;
+PageCommand(namesGuest,new("join",id(),RoomId:namesRid,ContentSha256:hash,OptionsSha256:hash,CoreSha256:hash,RuntimeSha256:hash));
+PageCommand(namesGuest,new("ready",id(),RoomId:namesRid,Value:true));
+foreach(var who in new[]{namesHost,namesGuest}){
+    var view=PageCommand(who,new("heartbeat",id(),Page:40));
+    Check(view.GetProperty("peers").GetArrayLength()==0,"members absent from selected social page");
+    Check(view.GetProperty("roomCapabilities").EnumerateArray().Any(x=>x.GetString()=="own-room-member-profiles-v1"),"own-room profile capability");
+    var own=view.GetProperty("room");var profiles=own.GetProperty("memberProfiles").EnumerateArray().ToArray();
+    Check(profiles.Length==2&&profiles.Select(x=>x.GetProperty("peerId").GetString()).SequenceEqual(own.GetProperty("members").EnumerateArray().Select(x=>x.GetString())),"profile IDs match complete membership");
+    Check(profiles.Single(x=>x.GetProperty("peerId").GetString()==hostView.GetProperty("selfId").GetString()).GetProperty("nickname").GetString()=="Synthetic host","host name independent of social page");
+    Check(profiles.Single(x=>x.GetProperty("peerId").GetString()==guestView.GetProperty("selfId").GetString()).GetProperty("nickname").GetString()=="Synthetic guest","guest name independent of social page");
+    Check(own.GetProperty("ready").GetArrayLength()==1,"profile extension preserves ready IDs");
+}
 Console.WriteLine(JsonSerializer.Serialize(new{passed=true,checks,scope="Production v2 ledger/state/negotiation with synthetic identities; not Android gameplay"}));
