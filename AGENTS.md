@@ -1,3 +1,9 @@
+# R63 instalada nos dois aparelhos — recibo Android07/10/2026
+
+Leia [RECIBO-APP-R63-DOIS-APARELHOS-20261007.md](docs/station-android/RECIBO-APP-R63-DOIS-APARELHOS-20261007.md). APP → SERVIDOR. Samsung A56 e Motorola Edge30 atualizados, mesmo APKd9a35602 conferido integralmente; LoginActivity voltou ao catálogo sem nova licença. Fonte/documentação `8613d88d4f553e72e5fedcd1d3ea470010301734`. Falta de espaço Samsung resolvida; textos anteriores são históricos. Gameplay em dupla permanece pendente, conferências físicas a cargo do mantenedor. Criar sala nova com dois aplicativos R63; sem novo deploy Linux.
+
+## Histórico preservado
+
 # R63 entregue — convite curto e senha automática integrados
 
 Leia [ENTREGA-APP-R63-CONVITE-SENHA-INTEGRADOS-20261006.md](docs/station-android/ENTREGA-APP-R63-CONVITE-SENHA-INTEGRADOS-20261006.md). **APP → SERVIDOR**, não resposta nova do servidor. Fonte TurboElden `c7ac337e31c9a5608407c5502c84781f1bb2df47`, branch `fix/station-r63-auto-access-20261006`; R62 conciliada com retorno8d9c670/candidato1e0f862. APKd9a35602, runtime899e3527,302testesWindows e restauraçãoDEXidêntica. Instalação aguarda saída segura do jogoMotorola; SamsungR62/MotorolaR58. Atualizarambos para R63; gameplay em dupla pendente. Não restaurar Activities antigas nem implantar Linux por esta entrega.

@@ -1,3 +1,9 @@
+# R63 instalada nos dois aparelhos — recibo Android07/10/2026
+
+Leia [RECIBO-APP-R63-DOIS-APARELHOS-20261007.md](RECIBO-APP-R63-DOIS-APARELHOS-20261007.md). APP → SERVIDOR. Samsung A56 e Motorola Edge30 atualizados, mesmo APKd9a35602 conferido integralmente; LoginActivity voltou ao catálogo sem nova licença. Fonte/documentação `8613d88d4f553e72e5fedcd1d3ea470010301734`. Falta de espaço Samsung resolvida; textos anteriores são históricos. Gameplay em dupla permanece pendente, conferências físicas a cargo do mantenedor. Criar sala nova com dois aplicativos R63; sem novo deploy Linux.
+
+## Histórico preservado
+
 # Entrega Android R63 ao Servidor-pix — 06/10/2026
 
 **Direção: APP → SERVIDOR.** A resposta8d9c670 e a implementação1e0f862 foram integradas no APK sucessor da R62. Esta entrega não exige nova implantação Linux. Analise o app exato abaixo; não retome R41/R55/R57 isoladas.
