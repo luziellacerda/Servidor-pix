@@ -8,15 +8,18 @@ using TurboRamaSuiteOnlineServer;
 var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.ConfigureKestrel(options => options.Limits.MaxRequestBodySize = Protocol.MaximumBodyBytes);
 builder.Services.Configure<ForwardedHeadersOptions>(SuiteTrustedProxyPolicy.Configure);
-var enabled = builder.Configuration.GetValue("Suite:Enabled", false);
+var stationIsolated=builder.Configuration.GetValue("Station:IsolatedDatabase",false);
+var enabled = !stationIsolated && builder.Configuration.GetValue("Suite:Enabled", false);
 var emulationStationEnabled = enabled &&
     builder.Configuration.GetValue("Suite:EmulationStation:Enabled", false);
-var stationEnabled = enabled &&
+var stationEnabled = (enabled || stationIsolated) &&
     builder.Configuration.GetValue("Station:Enabled", false);
 var contentRequested = enabled && builder.Configuration.GetValue("Suite:Content:Enabled", false);
-var connection = builder.Configuration.GetConnectionString("SuiteStore");
-var pepper = ReadProtected("Suite:ActivationPepper", "Suite:ActivationPepperFile");
-var signingPem = ReadProtected("Suite:OnlineAssertionPrivateKeyPem", "Suite:OnlineAssertionPrivateKeyPemFile");
+var connection = stationIsolated ? StationIsolation.Connection(builder.Configuration["Station:DatabaseConnectionFile"]
+    ?? throw new InvalidOperationException("Station database credential file is required."))
+    : builder.Configuration.GetConnectionString("SuiteStore");
+var pepper = stationIsolated ? null : ReadProtected("Suite:ActivationPepper", "Suite:ActivationPepperFile");
+var signingPem = stationIsolated ? null : ReadProtected("Suite:OnlineAssertionPrivateKeyPem", "Suite:OnlineAssertionPrivateKeyPemFile");
 var stationPepper = stationEnabled
     ? ReadProtected("Station:ActivationPepper", "Station:ActivationPepperFile") : null;
 var stationSigningPem = stationEnabled
@@ -38,12 +41,14 @@ if (stationEnabled)
 {
     if (string.IsNullOrWhiteSpace(stationPepper) ||
         string.IsNullOrWhiteSpace(stationSigningPem) ||
-        stationPepper == pepper || SamePublicKey(signingPem!, stationSigningPem))
+        !stationIsolated && (stationPepper == pepper || SamePublicKey(signingPem!, stationSigningPem)))
         throw new InvalidOperationException("Station keys must exist and be independent of Suite keys.");
     var pepperBytes = Convert.FromBase64String(stationPepper);
     if (pepperBytes.Length < 32)
         throw new InvalidOperationException("Station activation pepper is too short.");
     CryptographicOperations.ZeroMemory(pepperBytes);
+    if(stationIsolated)StationIsolation.IndependentSecrets(builder.Configuration,stationPepper,
+        stationSigningPem,builder.Configuration["Station:DownloadKeyFile"]);
 }
 if (inventoryEnabled && string.IsNullOrWhiteSpace(inventoryEncryptionKey))
     throw new InvalidOperationException("Suite inventory is enabled but its protected encryption key is unavailable.");
@@ -89,14 +94,27 @@ var contentAvailable = contentRequested && ContentStartupIsolation.TryInitialize
 builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddHttpClient<TurboRamaWhatsAppNotifier>();
 builder.Services.AddSingleton<SuiteRateLimiter>();
-if (enabled)
+if (enabled || stationEnabled)
 {
     builder.Services.AddSingleton(NpgsqlDataSource.Create(SuiteDatabasePoolPolicy.ApplyDefaults(connection!)));
+    if(enabled)
+    {
     builder.Services.AddSingleton<ISuiteStore, PostgresSuiteStore>();
     builder.Services.AddSingleton<IAssertionSigner>(_ => { var rsa = RSA.Create(); rsa.ImportFromPem(signingPem); return new RsaAssertionSigner(rsa); });
     builder.Services.AddSingleton(sp => new SuiteService(sp.GetRequiredService<ISuiteStore>(), sp.GetRequiredService<IAssertionSigner>(), sp.GetRequiredService<TimeProvider>(), pepper!));
+    }
     if (stationEnabled)
     {
+        builder.Services.AddHttpContextAccessor();
+        builder.Services.AddSingleton<StationRequestProof>();
+        builder.Services.AddSingleton(sp => new StationAttestationStatus(new HttpClient(
+            new SocketsHttpHandler { AllowAutoRedirect = false, PooledConnectionLifetime = TimeSpan.FromMinutes(5) }),
+            sp.GetRequiredService<TimeProvider>()));
+        builder.Services.AddSingleton<IStationAttestationStatus>(sp => sp.GetRequiredService<StationAttestationStatus>());
+        builder.Services.AddHostedService(sp => sp.GetRequiredService<StationAttestationStatus>());
+        builder.Services.AddSingleton<StationAttestation>();
+        builder.Services.AddSingleton(sp => new StationSecurityPolicy(sp.GetRequiredService<StationAttestation>(),
+            builder.Configuration.GetValue("Station:Security:RequireVerifiedApp", false)));
         StationLibrary? stationLibrary = null;
         StationGrantCipher? stationGrants = null;
         var libraryPath = builder.Configuration["Station:LibraryIndexFile"];
@@ -132,12 +150,13 @@ if (enabled)
             }
         }
         builder.AddStationOnline(stationLibrary, stationMonitor);
-        builder.Services.AddSingleton<PostgresStationStore>();
+        builder.Services.AddSingleton(sp=>new PostgresStationStore(sp.GetRequiredService<NpgsqlDataSource>(),stationIsolated));
         builder.Services.AddSingleton(_ => new StationResponseSigner(stationSigningPem!));
         builder.Services.AddSingleton(sp => new StationService(
             sp.GetRequiredService<PostgresStationStore>(),
             sp.GetRequiredService<StationResponseSigner>(),
-            stationPepper!, stationLibrary, stationGrants, stationMonitor));
+            stationPepper!, stationLibrary, stationGrants, stationMonitor,
+            sp.GetRequiredService<StationSecurityPolicy>(), sp.GetRequiredService<IHttpContextAccessor>()));
     }
     if (emulationStationEnabled)
     {
@@ -198,12 +217,13 @@ app.Use(async (context, next) =>
     context.Response.Headers.CacheControl = "no-store";
     await next();
 });
+if (stationEnabled) app.Use(StationRequestProof.Guard);
 app.MapGet("/health", () => Results.Json(new { status = "ok", service = "turborama-suite-api" }));
 ExtractionNotificationEndpoints.Map(app,
     enabled && builder.Configuration.GetValue("Suite:ExtractionNotifications:Enabled", false));
 DownloadNotificationEndpoints.Map(app,
     enabled && builder.Configuration.GetValue("Suite:ExtractionNotifications:Enabled", false));
-app.MapGet("/ready", () => enabled ? Results.Json(new { status = "ready" }) : Results.Json(new ErrorResponse(1, "SUITE_DISABLED", "Suite is disabled."), statusCode: 503));
+app.MapGet("/ready", () => enabled || stationEnabled ? Results.Json(new { status = "ready" }) : Results.Json(new ErrorResponse(1, "SUITE_DISABLED", "Suite is disabled."), statusCode: 503));
 app.MapGet("/ready/station", async (HttpContext context) =>
 {
     if (!stationEnabled)
@@ -214,12 +234,15 @@ app.MapGet("/ready/station", async (HttpContext context) =>
         using var timeout = CancellationTokenSource.CreateLinkedTokenSource(
             context.RequestAborted);
         timeout.CancelAfter(TimeSpan.FromSeconds(5));
+        var migrationSchema = stationIsolated ? "station_api" : "suite";
         await using var command = context.RequestServices
-            .GetRequiredService<NpgsqlDataSource>().CreateCommand("""
-            SELECT EXISTS(SELECT 1 FROM suite.schema_migrations
+            .GetRequiredService<NpgsqlDataSource>().CreateCommand($"""
+            SELECT EXISTS(SELECT 1 FROM {migrationSchema}.schema_migrations
               WHERE version='028_station_android')
-              AND EXISTS(SELECT 1 FROM suite.schema_migrations
+              AND EXISTS(SELECT 1 FROM {migrationSchema}.schema_migrations
               WHERE version='029_station_download_grants')
+              AND EXISTS(SELECT 1 FROM {migrationSchema}.schema_migrations
+              WHERE version='032_station_request_proof')
             """);
         var ready = (bool?)await command.ExecuteScalarAsync(timeout.Token) == true;
         return ready ? Results.Json(new { status = "ready" }) :

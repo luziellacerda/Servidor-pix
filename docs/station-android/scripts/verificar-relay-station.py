@@ -117,7 +117,10 @@ def verify(index, values, base, enabled=True):
         check(catalog['revision'] == index['revision'] and set(published) == set(expected), 'complete catalog and revision')
         check(len(catalog['items']) == len(expected), 'no duplicate catalog items')
         for key, row in expected.items():
-            check(all(published[key].get(field) == row.get(field) for field in ('name', 'platform', 'coverId', 'metadata'))
+            expected_metadata = row.get('metadata') or dict.fromkeys(
+                ('description','developer','publisher','genre','players','releaseDate'),'')
+            check(all(published[key].get(field) == row.get(field) for field in ('name', 'platform', 'coverId'))
+                  and published[key].get('metadata') == expected_metadata
                   and published[key].get('folderPath', []) == row.get('folderPath', []), 'catalog metadata and folders')
         check('filePath' not in json.dumps(catalog) and 'coverPath' not in json.dumps(catalog), 'private paths absent')
         sample = min((row for row in visible if row['platform'] == 'snes'), key=lambda row: row['artifact']['sizeBytes'])

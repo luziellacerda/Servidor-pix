@@ -141,7 +141,8 @@ public static class StationEndpoints
     private static async Task<T> Read<T>(HttpContext context,
         CancellationToken token) where T : class
     {
-        if (context.Request.ContentLength is > StationProtocol.MaximumBodyBytes)
+        var maximum = typeof(T) == typeof(StationDeviceEnvelope) ? 64 * 1024 : StationProtocol.MaximumBodyBytes;
+        if (context.Request.ContentLength > maximum)
             throw new SuiteException(413, "STATION_BODY_INVALID",
                 "Station request body is invalid.");
         using var memory = new MemoryStream();
@@ -150,15 +151,28 @@ public static class StationEndpoints
         {
             var read = await context.Request.Body.ReadAsync(chunk, token);
             if (read == 0) break;
-            if (memory.Length + read > StationProtocol.MaximumBodyBytes)
+            if (memory.Length + read > maximum)
                 throw new SuiteException(413, "STATION_BODY_INVALID",
                     "Station request body is invalid.");
             memory.Write(chunk, 0, read);
         }
-        if (memory.Length is 0 or > StationProtocol.MaximumBodyBytes)
+        if (memory.Length == 0 || memory.Length > maximum)
             throw new SuiteException(413, "STATION_BODY_INVALID",
                 "Station request body is invalid.");
-        return StrictJson.Parse<T>(memory.ToArray());
+        if (typeof(T) != typeof(StationDeviceEnvelope)) return StrictJson.Parse<T>(memory.ToArray());
+        // Station-only optional fields; Suite's required-member contract is unchanged.
+        try
+        {
+            using var json = System.Text.Json.JsonDocument.Parse(memory.ToArray(),
+                new System.Text.Json.JsonDocumentOptions { MaxDepth = 16 });
+            StationProtocol.RejectDuplicates(json.RootElement);
+            var envelope = System.Text.Json.JsonSerializer.Deserialize<StationDeviceEnvelope>(
+                json.RootElement, StrictJson.Options);
+            if (envelope?.Payload is null || envelope.Signature is null) throw new System.Text.Json.JsonException();
+            return (T)(object)envelope;
+        }
+        catch (System.Text.Json.JsonException ex)
+        { throw new SuiteException(400, "JSON_INVALID", "Request JSON is invalid.", ex); }
     }
 
     private static async Task<IResult> Handle(HttpContext context,

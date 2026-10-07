@@ -8,6 +8,7 @@ Set STATION_HTTP_API_DLL to exercise a previously published release DLL.
 Set STATION_HTTP_REAL_TTL=1 to verify 60/180-second expiry using the real clock.
 Set STATION_HTTP_ADMIN_DLL to add commerce/admin HTTP checks over a temporary Unix socket.
 Set STATION_HTTP_SOCIAL_CHECKS=1 (with ONLINE_CHECKS=1) for R41; =0 checks flag-off compatibility.
+Set STATION_HTTP_ISOLATED=1 to use only the dedicated Station database role and secrets.
 Never targets production.
 """
 
@@ -207,6 +208,30 @@ def main():
                     "ConnectionStrings__SuiteStore": "Host=127.0.0.1;Port=" +
                     os.environ["PGPORT"] + ";Database=postgres;Username=turborama-suite;"
                     "Password=fixture-only-password"})
+        admin_env = env.copy()
+        if os.environ.get("STATION_HTTP_ISOLATED") == "1":
+            sql('ALTER ROLE "turborama-station-api" LOGIN PASSWORD \'fixture-only-station-password\'')
+            dsn = env.pop("ConnectionStrings__SuiteStore").replace(
+                "Username=turborama-suite;Password=fixture-only-password",
+                "Username=turborama-station-api;Password=fixture-only-station-password")
+            env.update({"Suite__Enabled": "false", "Station__IsolatedDatabase": "true",
+                "Station__DatabaseConnectionFile": secret("station-database", dsn.encode()),
+                "Station__Isolation__SuitePepperSha256": hashlib.sha256(suite_pepper).hexdigest(),
+                "Station__Isolation__SuiteAssertionKeyId": hashlib.sha256(suite.public_key().public_bytes(
+                    serialization.Encoding.DER, serialization.PublicFormat.SubjectPublicKeyInfo)).hexdigest()})
+            del env["Suite__ActivationPepperFile"]
+            del env["Suite__OnlineAssertionPrivateKeyPemFile"]
+            isolated_env = os.environ.copy()
+            isolated_env.update(PGUSER="turborama-station-api", PGPASSWORD="fixture-only-station-password")
+            for denied in ["SELECT * FROM suite.suite_licenses", "SELECT * FROM suite.suite_devices",
+                           "SELECT * FROM suite.suite_license_deliveries",
+                           "INSERT INTO station_api.suite_licenses(license_id) VALUES('UNAUTHORIZED')",
+                           "CREATE TABLE station_api.unauthorized(id int)",
+                           "ALTER ROLE \"turborama-suite\" SUPERUSER"]:
+                result = subprocess.run(["psql", "-X", "-v", "ON_ERROR_STOP=1", "-qc", denied],
+                    env=isolated_env, capture_output=True, text=True)
+                assert result.returncode != 0 and "permission denied" in result.stderr, denied
+            print("Dedicated Station role: 6 forbidden database operations denied")
         online_checks = os.environ.get("STATION_HTTP_ONLINE_CHECKS") == "1"
         env["Station__Online__Enabled"] = "true" if online_checks else "false"
         social_checks = os.environ.get("STATION_HTTP_SOCIAL_CHECKS")
@@ -292,6 +317,16 @@ def main():
             assert all("metadata" not in row for row in catalog["items"])
             assert all("metadata" in row for row in metadata_catalog["items"])
             assert "filePath" not in json.dumps(metadata_catalog) and "coverPath" not in json.dumps(metadata_catalog)
+            if os.environ.get("STATION_HTTP_SECURITY_CHECKS") == "1":
+                from station_security_http_checks import run as security_checks
+                security_checks(base, folder, env, server_public, api_command)
+            if os.environ.get("STATION_HTTP_ROLLOUT_CHECKS") == "1":
+                rollout_spec = importlib.util.spec_from_file_location("station_rollout_security",
+                    ROOT / "docs/station-android/scripts/verificar-seguranca-station-20261007.py")
+                rollout = importlib.util.module_from_spec(rollout_spec);rollout_spec.loader.exec_module(rollout)
+                result = rollout.verify(index, env, base, sql_value)
+                assert result["passed"] and result["copiedTokenDenied"] and result["requestReplayDenied"]
+                print("STATION ROLLOUT SECURITY GATES: " + json.dumps(result))
             if online_checks:
                 from station_online_http_checks import run as check_online
                 check_online(base, ROOT, index, station_pepper, server_public, sql_value,
@@ -506,7 +541,7 @@ def main():
             admin_dll = os.environ.get("STATION_HTTP_ADMIN_DLL")
             if admin_dll:
                 from station_admin_http_checks import run as admin_checks
-                admin_checks(base, folder, env, server_public, admin_dll)
+                admin_checks(base, folder, admin_env, server_public, admin_dll)
             log.flush()
             traces = "\n".join(line for line in (folder / "api.log").read_text().splitlines()
                                if "Station trace operation=" in line)

@@ -37,18 +37,24 @@ public static class StationOnlineEndpoints
                 var header=context.Request.Headers.Authorization.ToString();
                 if(!header.StartsWith("StationRelay ",StringComparison.Ordinal)||header.Length!=56)throw new OnlineFailure(401,"STATION_ONLINE_RELAY_TICKET_INVALID");
                 var hub=context.RequestServices.GetRequiredService<StationOnline>();var relay=context.RequestServices.GetRequiredService<StationRelay>();
-                var lease=hub.TakeRelayTicket(header[13..]);
+                var lease=hub.TakeRelayTicket(header[13..], value =>
+                    context.RequestServices.GetRequiredService<StationRequestProof>().Verify(
+                        context.Request.Headers[StationRequestProof.Header].ToString(), value.ProofMode,
+                        value.ProofKeySpki!, header[13..], "GET", "/v1/station/online/relay", []));
                 try{
                     using var socket=await context.WebSockets.AcceptWebSocketAsync("station-relay.v1");
                     await relay.Attach(lease,socket,context.RequestAborted);
                 }finally{hub.CloseRelay(lease);}
             }catch(OnlineFailure e){if(!context.Response.HasStarted)await RelayError(context,e.Status,e.Code);}
+            catch(SuiteException e){if(!context.Response.HasStarted)await RelayError(context,e.StatusCode,e.Code);}
             catch(OperationCanceledException){}catch(System.Net.WebSockets.WebSocketException){}
         });
         app.MapPost("/v1/station/online/command", async (HttpContext context) => {
             var result=await Handle(context,enabled,async (hub,identity,cancel) => {
                 var cmd=await Read<OnlineCommand>(context,cancel);
-                return (cmd.RequestId,hub.Command(identity,cmd));
+                var security = context.Items[typeof(StationSession)] is ValueTuple<string, StationSession> cached
+                    ? new StationSessionSecurity(cached.Item2.ProofMode, cached.Item2.ProofKeySpki) : null;
+                return (cmd.RequestId,hub.Command(identity,cmd,security));
             });await result.ExecuteAsync(context);
         }).DisableAntiforgery();
         app.MapPost("/v1/station/online/events", async (HttpContext context) => {
@@ -75,7 +81,8 @@ public static class StationOnlineEndpoints
             string bearer=header[7..];
             if(!StationProtocol.IsCanonicalBase64Url(bearer,32))return Error(401,"STATION_SESSION_INVALID");
             var access=context.RequestServices.GetRequiredService<IStationOnlineAccess>();
-            var session=await access.Authenticate(bearer,timeout.Token);
+            var session=context.Items[typeof(StationSession)] is ValueTuple<string, StationSession> cached && cached.Item1==bearer
+                ? cached.Item2 : await access.Authenticate(bearer,timeout.Token);
             if(session is null)return Error(401,"STATION_SESSION_INVALID");
             var identity=new OnlineIdentity(session.LicenseId,session.DeviceId);
             var hub=context.RequestServices.GetRequiredService<StationOnline>();

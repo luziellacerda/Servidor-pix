@@ -20,7 +20,8 @@ public sealed record StationDownloadRequest(int SchemaVersion, string Domain,
 public sealed class StationService(PostgresStationStore store,
     StationResponseSigner signer, string activationPepper,
     StationLibrary? initialLibrary = null, StationGrantCipher? grants = null,
-    StationLibraryMonitor? libraryMonitor = null)
+    StationLibraryMonitor? libraryMonitor = null, StationSecurityPolicy? securityPolicy = null,
+    IHttpContextAccessor? httpContext = null)
 {
     public const int DownloadGrantSeconds = 60;
     public async Task<object> ActivationChallengeAsync(
@@ -45,7 +46,8 @@ public sealed class StationService(PostgresStationStore store,
             schemaVersion = 1, domain = StationProtocol.Prefix + "activation-challenge/v1",
             productId = StationProtocol.Product, applicationId = StationProtocol.Application,
             deviceId = request.DeviceId, challengeId = challenge.ChallengeId,
-            nonce = challenge.Nonce, expiresInSeconds = 60
+            nonce = challenge.Nonce, expiresInSeconds = 60,
+            security = SecurityCapabilities(request.DeviceId)
         });
     }
 
@@ -79,8 +81,9 @@ public sealed class StationService(PostgresStationStore store,
             var model = StationProtocol.RequireString(root, "deviceModel", 100);
             var sdk = StationProtocol.RequireInt(root, "androidSdk", 1, 1000);
             ValidateClient(version, manufacturer, model, sdk);
+            var security = Negotiate(envelope, root, challenge.DeviceId, challenge.PublicKeySpki!);
             var licenseId = await store.ActivateAsync(challenge, verifier, manufacturer,
-                model, sdk, version, token);
+                model, sdk, version, token, security);
             return signer.Sign(new
             {
                 schemaVersion = 1, domain = StationProtocol.Prefix + "activated/v1",
@@ -114,7 +117,7 @@ public sealed class StationService(PostgresStationStore store,
             productId = StationProtocol.Product, applicationId = StationProtocol.Application,
             licenseId = device.LicenseId, deviceId = device.DeviceId,
             challengeId = challenge.ChallengeId, nonce = challenge.Nonce,
-            expiresInSeconds = 60
+            expiresInSeconds = 60, security = SecurityCapabilities(device.DeviceId)
         });
     }
 
@@ -143,16 +146,20 @@ public sealed class StationService(PostgresStationStore store,
             StationProtocol.RequireString(root, "deviceManufacturer", 100),
             StationProtocol.RequireString(root, "deviceModel", 100),
             StationProtocol.RequireInt(root, "androidSdk", 1, 1000));
+        var security = Negotiate(envelope, root, device.DeviceId, device.PublicKeySpki,
+            device.VerifiedAppRequired);
         var sessionId = Convert.ToHexString(RandomNumberGenerator.GetBytes(32)).ToLowerInvariant();
         var accessToken = StationProtocol.Encode(RandomNumberGenerator.GetBytes(32));
-        await store.OpenSessionAsync(challenge, accessToken, sessionId, token);
+        await store.OpenSessionAsync(challenge, accessToken, sessionId, token, security);
         return signer.Sign(new
         {
             schemaVersion = 1, domain = StationProtocol.Prefix + "session/v1",
             productId = StationProtocol.Product, applicationId = StationProtocol.Application,
             licenseId = challenge.LicenseId, deviceId = challenge.DeviceId,
             challengeId = challenge.ChallengeId, nonce = challenge.Nonce,
-            sessionId, accessToken, expiresInSeconds = 180
+            sessionId, accessToken, expiresInSeconds = 180,
+            requestProof = security.Mode, verifiedApp = security.Mode == "ec-p256-v1",
+            serverTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
         });
     }
 
@@ -190,7 +197,9 @@ public sealed class StationService(PostgresStationStore store,
             items = library.Catalog.Select(item => includeMetadata ? (object)new
             {
                 itemId = item.ItemId, name = item.Name, platform = item.Platform,
-                revision = item.Revision, coverId = item.CoverId, metadata = item.Metadata, folderPath = item.FolderPath
+                revision = item.Revision, coverId = item.CoverId,
+                metadata = item.Metadata ?? new StationItemMetadata("", "", "", "", "", ""),
+                folderPath = item.FolderPath
             } : new
             {
                 itemId = item.ItemId, name = item.Name, platform = item.Platform,
@@ -332,9 +341,31 @@ public sealed class StationService(PostgresStationStore store,
         if (!StationProtocol.IsCanonicalBase64Url(bearer, 32))
             throw new SuiteException(401, "STATION_SESSION_INVALID",
                 "Station session is invalid.");
+        if (httpContext?.HttpContext?.Items[typeof(StationSession)] is ValueTuple<string, StationSession> cached &&
+            cached.Item1 == bearer) return cached.Item2;
         return await store.FindSessionAsync(bearer, token) ??
             throw new SuiteException(401, "STATION_SESSION_INVALID",
                 "Station session is invalid.");
+    }
+
+    private object SecurityCapabilities(string deviceId) => new
+    {
+        requestProofVersion = securityPolicy is null ? 0 : 1,
+        keyAttestation = securityPolicy is not null,
+        requireVerifiedApp = securityPolicy?.RequireVerifiedApp == true,
+        keyAttestationChallenge = StationProtocol.Encode(StationAttestation.Challenge(deviceId, signer.KeyId)),
+        serverTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
+    };
+    private StationSessionSecurity Negotiate(StationDeviceEnvelope envelope, JsonElement root,
+        string deviceId, string spki, bool previouslyVerified = false)
+    {
+        if (securityPolicy is null)
+        {
+            if (root.TryGetProperty("requestProof", out _)) throw new SuiteException(503,
+                "STATION_SECURITY_UNAVAILABLE", "Station security update is unavailable.");
+            return StationSessionSecurity.Legacy;
+        }
+        return securityPolicy.Negotiate(envelope, root, deviceId, spki, signer.KeyId, previouslyVerified);
     }
 
     private string Verifier(string code)

@@ -7,6 +7,8 @@
     <InvariantGlobalization>false</InvariantGlobalization>
   </PropertyGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Security/android-attestation-roots.pem" />
+    <InternalsVisibleTo Include="TurboRamaSuiteOnlineServer.Tests" />
     <PackageReference Include="Npgsql" Version="8.0.6" />
     <ProjectReference Include="../TurboRamaSuiteNotifications/TurboRamaSuiteNotifications.csproj" />
   </ItemGroup>

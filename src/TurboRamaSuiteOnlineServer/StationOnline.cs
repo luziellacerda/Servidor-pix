@@ -60,7 +60,8 @@ public sealed class StationOnline
     private readonly Dictionary<string,JoinRequest> joinRequests = [];
     private readonly bool socialEnabled;
     private sealed record Invite(string Id, string From, string To, string Room, long Expires);
-    public sealed record RelayLease(string RoomId,string PeerId,long Generation,bool Host);
+    public sealed record RelayLease(string RoomId,string PeerId,long Generation,bool Host,
+        string ProofMode = "none", string? ProofKeySpki = null);
     private sealed record RelayGrant(string Token,RelayLease Lease,long Expires);
     private readonly Dictionary<string,RelayGrant> relayGrants = [];
     private readonly HashSet<string> usedRelayPeers = [];
@@ -213,7 +214,7 @@ public sealed class StationOnline
             engines = engines.Values.Select(e => new { engineId=e.Id,platform=e.Platform,coreSha256=e.CoreSha256,runtimeSha256=e.RuntimeSha256 }).ToArray()
         };
     }
-    public object Command(OnlineIdentity identity, OnlineCommand cmd)
+    public object Command(OnlineIdentity identity, OnlineCommand cmd, StationSessionSecurity? security = null)
     {
         Require(!string.IsNullOrWhiteSpace(identity.LicenseId) && !string.IsNullOrWhiteSpace(identity.DeviceId),401,"STATION_SESSION_INVALID");
         Require(Guid.TryParseExact(cmd.RequestId,"D",out _),400,"STATION_ONLINE_REQUEST_INVALID");
@@ -302,7 +303,8 @@ public sealed class StationOnline
                     Require(r.State is "starting" or "connecting",409,"STATION_ONLINE_NOT_READY");
                     Require(!usedRelayPeers.Contains(p.Id),409,"STATION_ONLINE_RELAY_ALREADY_ATTACHED");
                     string ticket=Convert.ToBase64String(RandomNumberGenerator.GetBytes(32)).TrimEnd('=').Replace('+','-').Replace('/','_');
-                    relayGrants[p.Id]=new RelayGrant(ticket,new RelayLease(r.Id,p.Id,r.Generation,r.Host==p.Id),clock()+60000);break;
+                    relayGrants[p.Id]=new RelayGrant(ticket,new RelayLease(r.Id,p.Id,r.Generation,r.Host==p.Id,
+                        security?.Mode ?? "none", security?.PublicKeySpki),clock()+60000);break;
                 }
                 case "invite":
                 {
@@ -385,13 +387,18 @@ public sealed class StationOnline
             return result;
         }
     }
-    public RelayLease TakeRelayTicket(string token)
+    public RelayLease TakeRelayTicket(string token, Action<RelayLease>? validateProof = null)
     {
         lock(gate){
             Sweep();Require(relayEnabled,503,"STATION_ONLINE_RELAY_DISABLED");
             Require(Regex.IsMatch(token,"\\A[A-Za-z0-9_-]{43}\\z"),401,"STATION_ONLINE_RELAY_TICKET_INVALID");
             var grant=relayGrants.Values.FirstOrDefault(g=>CryptographicOperations.FixedTimeEquals(System.Text.Encoding.ASCII.GetBytes(g.Token),System.Text.Encoding.ASCII.GetBytes(token)));
             Require(grant is not null && grant.Expires>clock() && RelayCurrentLocked(grant.Lease),401,"STATION_ONLINE_RELAY_TICKET_INVALID");
+            if(grant!.Lease.ProofMode!="none")
+            {
+                Require(validateProof is not null,401,"STATION_REQUEST_PROOF_REQUIRED");
+                validateProof!(grant.Lease);
+            }
             relayGrants.Remove(grant!.Lease.PeerId);Require(usedRelayPeers.Add(grant.Lease.PeerId),409,"STATION_ONLINE_RELAY_ALREADY_ATTACHED");
             return grant.Lease;
         }

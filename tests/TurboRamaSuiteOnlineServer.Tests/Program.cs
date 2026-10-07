@@ -14,6 +14,7 @@ using TurboRamaSuiteContentPublisher;
 
 await ExtractionNotificationHttpChecks.RunAsync();
 StationProtocolChecks.Run();
+StationSecurityChecks.Run();
 StationTransferRateChecks.Run();
 if (Environment.GetEnvironmentVariable("STATION_TEST_PG") is { Length: > 0 } stationConnection)
     await StationPostgresChecks.RunAsync(stationConnection);

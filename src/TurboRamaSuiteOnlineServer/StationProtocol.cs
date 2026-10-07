@@ -152,7 +152,8 @@ public static class StationProtocol
     }
 }
 
-public sealed record StationDeviceEnvelope(string Payload, string Signature);
+public sealed record StationDeviceEnvelope(string Payload, string Signature,
+    string[]? AttestationChain = null, string? KeySignature = null);
 
 public sealed class StationResponseSigner : IDisposable
 {
