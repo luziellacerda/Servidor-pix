@@ -1,0 +1,193 @@
+{
+  "utc": "2026-10-07T22:07:44.611024+00:00",
+  "sinceUtc": "2026-10-07 21:59:54 UTC",
+  "pid": 1230693,
+  "activeDllSha256": "815fc8bc99a9d16247488a1797d2726b928eb3e592fd8a19700371e8d57c3243",
+  "readOnly": true,
+  "roomsBefore": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    }
+  },
+  "roomsAfter": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    }
+  },
+  "stationMemory": {
+    "VmRSS": "228196 kB",
+    "Threads": "48"
+  },
+  "machineMemory": {
+    "MemTotal": "49160092 kB",
+    "MemAvailable": "40722296 kB"
+  },
+  "oneSecondSample": {
+    "stationCpuPercentOfOneCore": 1.0,
+    "machineIdlePercent": 95.61
+  },
+  "journalMessages": 1104,
+  "commandActions": {
+    "enter": 3,
+    "create": 1,
+    "request-join": 1,
+    "accept-request": 1,
+    "join": 1,
+    "ready": 2,
+    "heartbeat": 20,
+    "start": 1,
+    "relay-ticket": 1,
+    "recovery-failed": 1
+  },
+  "commandRoles": {
+    "none": 3,
+    "host": 7,
+    "client": 22
+  },
+  "proofModes": {
+    "ec-p256-v1": 32
+  },
+  "commandServerTime": {
+    "count": 32,
+    "p50Ms": 0.12505,
+    "p95Ms": 0.5572,
+    "maximumMs": 0.9194
+  },
+  "commandSequence": [
+    {
+      "generation": "1",
+      "role": "host",
+      "action": "create",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "-1",
+      "clientHeartbeatAgeMs": "-1",
+      "commandElapsedMs": "0.4158",
+      "utc": "2026-10-07T22:00:34.032365+00:00"
+    },
+    {
+      "generation": "0",
+      "role": "none",
+      "action": "request-join",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "-1",
+      "clientHeartbeatAgeMs": "-1",
+      "commandElapsedMs": "0.8469",
+      "utc": "2026-10-07T22:00:44.310001+00:00"
+    },
+    {
+      "generation": "1",
+      "role": "host",
+      "action": "accept-request",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "0",
+      "clientHeartbeatAgeMs": "-1",
+      "commandElapsedMs": "0.9194",
+      "utc": "2026-10-07T22:00:46.409570+00:00"
+    },
+    {
+      "generation": "2",
+      "role": "client",
+      "action": "join",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "-1",
+      "clientHeartbeatAgeMs": "-1",
+      "commandElapsedMs": "0.5572",
+      "utc": "2026-10-07T22:00:49.262351+00:00"
+    },
+    {
+      "generation": "2",
+      "role": "host",
+      "action": "ready",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "0",
+      "clientHeartbeatAgeMs": "3865",
+      "commandElapsedMs": "0.1062",
+      "utc": "2026-10-07T22:00:53.127286+00:00"
+    },
+    {
+      "generation": "2",
+      "role": "client",
+      "action": "ready",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "1212",
+      "clientHeartbeatAgeMs": "0",
+      "commandElapsedMs": "0.1672",
+      "utc": "2026-10-07T22:00:54.338652+00:00"
+    },
+    {
+      "generation": "3",
+      "role": "host",
+      "action": "start",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "0",
+      "clientHeartbeatAgeMs": "4673",
+      "commandElapsedMs": "0.2056",
+      "utc": "2026-10-07T22:00:59.011683+00:00"
+    },
+    {
+      "generation": "3",
+      "role": "host",
+      "action": "relay-ticket",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "0",
+      "clientHeartbeatAgeMs": "4860",
+      "commandElapsedMs": "0.1709",
+      "utc": "2026-10-07T22:00:59.198827+00:00"
+    },
+    {
+      "generation": "3",
+      "role": "host",
+      "action": "recovery-failed",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "0",
+      "clientHeartbeatAgeMs": "708",
+      "commandElapsedMs": "0.2149",
+      "utc": "2026-10-07T22:00:59.991078+00:00"
+    }
+  ],
+  "relayHttpResponses": [
+    {
+      "status": 401,
+      "elapsedMs": 0.6455,
+      "utc": "2026-10-07T22:00:59.992762+00:00"
+    }
+  ],
+  "errorCodes": {},
+  "firstTransportEnds": [],
+  "nativeEmulatorFramesMeasured": false,
+  "endToEndNetworkLatencyMeasured": false,
+  "physicalReport": {
+    "game": "Battletoads",
+    "host": "Samsung",
+    "hostScreen": "completely-black",
+    "guest": "Motorola",
+    "guestScreen": "waiting-to-enter",
+    "bothR71UserConfirmed": true,
+    "gameplayVerified": false
+  },
+  "phoneInstallationReceiptSource": "TurboElden f64f685d9e88697c7980bfd4e0663df142b9334c"
+}

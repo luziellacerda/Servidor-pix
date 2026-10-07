@@ -1,3 +1,142 @@
+# R71 publicada no Station; análise do teste físico — 07/10/2026
+
+**SERVIDOR → APP. Atualização Linux executada e verificada às 18:59:53 de Maceió
+(21:59:53 UTC). O teste físico posterior falhou; não declarar gameplay homologado.**
+Este bloco atualiza o handoff único. O histórico abaixo conserva os estados
+anteriores, sem identificar a produção atual.
+
+## Resultado solicitado na entrega R71
+
+| Pedido | Resultado verificável |
+| --- | --- |
+| Revisar pausa nativa e callback terminal6 | Revisados na composição `c0d36af6`/entrega `0368bf05`; o predicado corrigido usa `NETPLAY_STALL_RUNNING_FAST`, com 112 verificações recebidas. O evento6 cancela heartbeat/worker; evento4 humano continua idempotente. |
+| Publicar v2 e os motores Windows exatos | **Ativo** em `turborama-station-api.service`, fonte `ab192bf1585e30f303d041f13b36a1f9c96d2caa`. Seis motores: quatro antigos preservados e os dois rs2 da entrega R71. |
+| Devolver recibo efetivo e capacidades assinadas | DLL `815fc8bc99a9d16247488a1797d2726b928eb3e592fd8a19700371e8d57c3243`, PID observado `1230693`, registro SHA `310fefece80c336840882d0c91235b765d59f160246df947393802ea0211d289`. `RecoveryEnabled=true`, `station-stream.v2` e `relay-wss-v2` confirmados em respostas autenticadas e assinadas. |
+| Nomes completos dos membros da própria sala | `room.memberProfiles` com `peerId` e `nickname`, capacidade `own-room-member-profiles-v1`; completo fora da paginação social. `members` e `ready` continuam sendo autoridade. Esquema, exemplo e teste com 105 usuários sintéticos/página40 entregues. |
+
+API Android: **https://app.lzgames.com.br**. WSS: `/v1/station/online/relay`.
+`turbobox.lzgames.com.br` continua sendo o painel. Os novos motores são
+`bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250` e
+`clownmdemu-d43c2708-rs2-d66267cd4250`, com runtime Windows
+`d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856`.
+O motor geolith não foi liberado. Não usar hash de ELF Linux para identificar o
+runtime Windows nem tentar parear o novo motor com uma sala v1.
+
+[Recibo de produção](recovery-r71-20261007/PRODUCAO-EFETIVA.json),
+[contrato e nomes da sala](recovery-r71-20261007/CONTRATO-SERVIDOR.md),
+[esquema](recovery-r71-20261007/openapi.json) e
+[análise posterior](recovery-r71-20261007/ANALISE-POS-IMPLANTACAO.json).
+
+## Verificações da publicação
+
+- 91 verificações de estado/recuperação/nomes e 34 de compatibilidade social;
+  testes principais de segurança, transferências e protocolos passaram.
+- 177 verificações na instância isolada e 181 pela autoridade pública HTTPS/WSS:
+  motores exatos, assinatura, prova antirreplay, tickets de uso único, bytes v2,
+  renovação de sessão/retomada, compatibilidade v1, catálogo, capa e download real.
+  Duas licenças sintéticas por execução, removidas com verificação de propriedade.
+  Pausa nativa foi simulada nessa prova de servidor.
+- Backup PostgreSQL restaurado e conferido em cluster temporário. Não houve
+  restauração nem migration no banco de produção. Rollback específico preparado
+  para retirar somente o override R71 e retornar à release anterior, sem descartar
+  dados de clientes; caminhos privados estão no checkpoint do operador.
+- Índice14/2212 jogos, IDs, capas, ROMs, chaves/licenças reais e outros produtos
+  preservados. Nginx, Cloudflare, firewall, SSH e Samba sem alteração nesta entrega.
+  A única troca de serviço foi do Station, após confirmar ausência de partidas.
+- Isolamento do usuário/papel Station e montagens de leitura conferidos no
+  processo real. Nenhuma varredura de integridade ou nova limitação de velocidade
+  foi acrescentada ao download.
+
+Limites iniciais: **64 salas v2/128 participantes**, janela de256KiB por direção,
+32MiB máximos em anéis retidos; v1 mantém512salas/1024conexões configuradas.
+Esses limites não comprovam capacidade real de centenas de partidas simultâneas.
+Estado v2 em RAM não sobrevive à morte do processo do servidor ou motor.
+
+## Teste físico posterior: falha de inicialização
+
+O recibo novo `TurboElden f64f685d9e88697c7980bfd4e0663df142b9334c` foi recebido:
+Samsung e Motorola têm o mesmo APK R71 completo/SHA
+`556170c32b6dd25fb5084693826d854adf736b4a1df156fd9229a8458b025018`.
+O Motorola foi instalado às21:37:39UTC, preservando UID/dados. Não usar a
+referência histórica a MotorolaR70 como estado atual.
+
+O mantenedor corrigiu o primeiro relato de ingresso: **Samsung anfitrião fica
+completamente preto; Motorola permanece aguardando entrar** em Battletoads.
+Sala/dupla foram aceitas, mas não houve partida v2 confirmada. Registros Linux:
+
+| UTC 07/10/2026 | Evento observado |
+| --- | --- |
+| 22:00:34.032 | Anfitrião cria sala. |
+| 22:00:49.262 | Convidado ingressa. |
+| 22:00:53.127 / 54.339 | Ambos marcam Pronto. |
+| 22:00:59.012 | Anfitrião inicia, geração3. |
+| 22:00:59.199 | Ticket do anfitrião emitido; prova EC-P256 aceita no comando. |
+| 22:00:59.991 | App do anfitrião envia `recovery-failed`, tornando a sala terminal. |
+| 22:00:59.993 | Upgrade WSS finaliza401 em0,6455ms. Nenhum stream v2 foi admitido. |
+
+A emissão de `recovery-failed` antecede a finalização401 em aproximadamente
+1,7ms. A fonte mostra que esse comando invalida tickets da sala terminal. Isso
+favorece interpretar401 como consequência da falha inicial do app; o corpo do
+401 e a categoria Android não foram capturados, portanto não declarar senha,
+licença, prova ou rede inválida como primeira causa.
+Não houve `host-listening` nem ticket do convidado nessa tentativa. O convidado
+espera porque o anfitrião não conclui a preparação. O servidor não executou
+quadros da emulação nem admitiu bytes desse jogo.
+
+Os comandos passaram com máximo0,9194ms no servidor. A amostra posterior tinha
+95,61%CPU global ociosa, cerca de38,8GiB disponíveis e Station com223MiB RSS.
+Não há evidência de pressão de memória/CPU nessa falha; esses números não medem
+latência fim a fim, renderização ou execução nativa dos telefones.
+
+## Captura necessária no PC que produz o APK
+
+O mantenedor conectará **o Samsung anfitrião por USB ao computador de produção
+Android**, não a um servidor escolhido apenas pelo nome. Fixar o serial correto,
+conferir SHA instalado e guardar logs privados de `StationRooms`,
+`StationRecovery`, `StationRelay`, `AndroidRuntime` e `libc` no intervalo do teste.
+Não apagar logs/dados, desinstalar, reiniciar emulador ativo ou trocar licença.
+Devolver somente recibo sanitizado com categoria terminal, exceção, horário,
+versão e a primeira operação JNI que falhou. Não publicar tokens, tickets,
+chaves, arquivos de lançamento/configuração ou capturas pessoais.
+
+Prioridade: procurar `game stage=recovery-unrecoverable category=...`,
+`game stage=native-start-failed` e `game stage=launch-failed` antes da resposta401.
+Correlacionar com os horários acima. Nova tentativa deve usar sala nova depois
+da saída humana; não reabrir transporte sobre sala `unrecoverable`.
+
+## Omissão encontrada no código JNI; candidato limitado
+
+A Activity R71 declara três métodos JNI e marca `nativeLoaded=true` depois de
+`NativeActivity.onCreate`, mas não chama `System.loadLibrary` para associar
+`libstation_retroarch.so` ao carregador Java. A presença dos três símbolos no ELF
+não comprova que a VM consiga resolver a chamada. O [NativeActivity no AOSP](https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/core/jni/android_app_NativeActivity.cpp)
+abre a biblioteca e sua entrada nativa; o [ART](https://android.googlesource.com/platform/art/+/refs/heads/main/runtime/jni/java_vm_ext.cc)
+resolve JNI nas bibliotecas registradas para o carregador da classe.
+
+Isso sustenta a hipótese `NATIVE_HOOK`/`UnsatisfiedLinkError`, compatível com uma
+falha imediata anterior ao stream. **Ainda não confirma essa categoria no
+Samsung**. Preparador guardado em
+`recovery-r71-20261007/preparar-jni-registration-r71.py`: aceita somente a Activity
+R71/SHA `fd3c65fbdf928125e77ec3211bddc4ffedf9d3feb085a0ad743b1ec9d2a4a50e`,
+acrescenta o registro Java da mesma biblioteca após `super.onCreate` e antes de
+`nativeLoaded=true`, confere os métodos de leitura e registra o tipo de falha.
+Candidato SHA `2c160af62ca00098a0a01a3eee266e8148bdc29d88e24de567468c2cc2e65fd8`.
+Compilou Java8/API34 junto às interfaces R71 de transporte. Não é APK/DEX novo
+montado ou instalado e não comprova execução JNI em Android.
+
+Após confirmar a categoria no telefone, incorporar o delta em composição
+sucessora sobre **R71 completa**, mantendo198fontes e os demais arquivos. Não
+alterar o snapshot selado nem remover guardas do empacotador para fazê-lo aceitar
+outra fonte. Recompilar o módulo de salas/DEX35; preservar DEX28/R71, runtime/core
+Windows d662/IDs, assinatura/certificado original, menu58vídeos30fps, controles,
+BIOS, UID/licença/saves. A alteração Java não exige novo runtime ou registro de
+motor se esses bytes permanecerem idênticos. Validar pacote completo, instalar
+sem limpar dados e devolver hashes/recibos antes de novo teste da dupla.
+
+---
+
+# Histórico anterior
+
 # Cadastro de clientes Station publicado — 06/10/2026
 
 Leia RETORNO-CADASTRO-CLIENTES-STATION-20261006.md. Fontefe4b631 publicada às15h45Maceió: Códigos Station → Novo cliente e código, cliente novo/existente, venda paga/cortesia/teste e licença adicional para dois aparelhos. Código30min/uso único; confirmação com senha administrativa. PostgreSQL/SQLite restaurados, testes isolados e dois acessos sintéticos independentes na API pública passaram, limpeza confirmada, zero mensagens/compras. ManagementPID910766/helperPID910776; APIa2bb176/PID875574/catálogo14/2212 e APKR41 preservados. Sem migrationPG; tabelaSQLite aditiva station_registrations. Nova página cadastra; orientação antiga somente de busca/Vendas foi substituída. Usar retorno específico da sucessora; gameplay físico/POCO/latência continuam no retornoR41.

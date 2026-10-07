@@ -27,7 +27,7 @@ Aplica-se o protocolo de bytes/offsets/ACK, HELLO, pausa nativa e barreira dos
 dois descrito em `../recovery-r67-20261007/CONTRATO.md`.
 O snapshot autenticado e assinado anuncia `station-stream.v2` em
 `recoveryCapabilities`, `relay-wss-v2` em `transports` e os motores exatos.
-Pedidos e tickets continuam exigindo prova RSA-PSS do dispositivo, nonce fresco
+Pedidos e tickets continuam exigindo prova RSA-PSS ou EC-P256 negociada na sessão, nonce fresco
 e vinculação à sessão/sala/geração. `resume-relay` usa sessão protegida válida e
 ticket novo de uso único; não envia `leave` por mera queda física do WSS.
 

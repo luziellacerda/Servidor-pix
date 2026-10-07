@@ -1,3 +1,20 @@
+# Station R71 ativo; teste físico com falha — 07/10/2026
+
+Leia `docs/station-android/RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md` e `recovery-r71-20261007/PRODUCAO-EFETIVA.json`.
+API fonteab192bf1585e30f303d041f13b36a1f9c96d2caa/DLL815fc8bc/PID1230693 ativa às21:59:53UTC;
+v2=true/64salas/256KiB por direção,32MiB rings; seis engines exatas, quatro antigas preservadas.
+177checks sombra/181públicos,91estado/34social, backup restaurado isoladamente, catálogo14/2212,
+nomes próprios assinados independentes da página, chaves/licenças/isolamento/outros produtos preservados.
+Somente Station reiniciado; proxy/Cloudflare/firewall/banco de produção sem mudanças.
+App novo recibof64f685 confirma R71 completa/SHA556170c3 nos dois Android. Teste após publicação:
+Samsung anfitrião preto e Motorola aguardando. Start/ticketaceitos; recovery-failed22:00:59.991UTC
+antecede upgrade40122:00:59.993, sem stream/host-listening. Categoria Android exige log USB no PCAPK.
+Hipótese JNI: NativeActivity abre ELF sem registro no carregadorJava; preparador limitado e compiladoAPI34
+no recibo, nãoAPK/instalação/categoria confirmada. Não reduzir segurança, forçar estadoPlaying ou atribuir
+401 à licença sem causa. Não declarar gameplay homologado. Histórico abaixo refere-se a releases anteriores.
+
+## Histórico anterior
+
 # APP R71 completa entregue — integração e instalação A56 — 07/10/2026
 
 **APP → SERVIDOR, não recibo de implantação Linux.** Leia `docs/station-android/ENTREGA-APP-R71-COMPLETA-PARA-SERVIDOR-20261007.md`.
