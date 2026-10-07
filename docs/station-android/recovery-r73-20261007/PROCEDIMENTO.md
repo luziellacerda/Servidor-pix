@@ -71,3 +71,15 @@ Registrar primeira imagem/áudio, controles, nomes, saída e recuperação de re
 separadamente. `event=wait-diagnostic` do app informa epoch/state/nativeStatus e
 offsets; o backend atual não registra cada quadro PAUSED/READY/STATE. Nenhum PONG,
 HTTP200 ou ensaio sintético comprova a liberação nativa da primeira imagem.
+
+## Conferência final da primeira ativação
+
+O registro foi recarregado às23:13:54UTC, PID1252837. O primeiro guard comparou também marcadores de invocação systemd e recusou a prova após a recarga; `507fc7d` passa a verificar cada variável explícita contra os arquivos originais inalterados. `--complete-activation` é limitado ao backup/ação8e11366 e concluiu190checks públicos no mesmoPID, sem segundo reinício. SHA final266de762, oito engines. O recibo98ab8aa posterior confirma R73 instalada nos dois. Os arquivos de prova final e instalação têm precedência sobre descrições de preparação.
+
+## Resultado físico posterior
+
+Mantenedor confirmou ambos R73 jogando Battletoads, Samsung host/Motorola guest,
+seguido de queda23:23:10.719UTC por AUTH_HEARTBEAT_MISSING do guest. Retomada
+física ainda pendente. Segunda abertura23:32:26UTC sem host-listening/anexo v2
+até23:33:29, relato posterior dos dois pretos. Diagnóstico e pedido de captura
+no retorno único e DIAGNOSTICO-TESTE-FISICO.json. Nenhuma recarga por diagnóstico.

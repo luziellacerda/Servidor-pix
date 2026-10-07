@@ -1,0 +1,347 @@
+{
+  "applied": true,
+  "utc": "2026-10-07T23:18:10.059035+00:00",
+  "reloadUtc": "2026-10-07T23:13:54+00:00",
+  "operatorSourceRevision": "8e1136663609b49dba7e9dc059c3ef3c453070ee",
+  "verificationOperatorRevision": "507fc7dfc0a9109e95fc94f0bc4a7b251cab21f5",
+  "appSourceRevision": "5657dce678609f25501321e307839a6e0c018d4e",
+  "deployedDllSourceRevision": "ab192bf1585e30f303d041f13b36a1f9c96d2caa",
+  "dllPath": "/opt/turborama-station-recovery-r71-20261007-ab192bf/TurboRamaSuiteOnlineServer.dll",
+  "dllSha256": "815fc8bc99a9d16247488a1797d2726b928eb3e592fd8a19700371e8d57c3243",
+  "registryPath": "/opt/turborama-station-recovery-r71-20261007-ab192bf/online-engine-registry.json",
+  "registrySha256": "266de76251a036d77db162b7cdeefaa5d7ad3093efed5455c69f3d8257ac9ed2",
+  "engineIds": [
+    "bsnes-mercury-performance-79d7f9de",
+    "clownmdemu-d43c2708",
+    "bsnes-mercury-performance-79d7f9de-autopass1",
+    "clownmdemu-d43c2708-autopass1",
+    "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+    "clownmdemu-d43c2708-rs2-d66267cd4250",
+    "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+    "clownmdemu-d43c2708-rs3-9af2778898e4"
+  ],
+  "engines": [
+    {
+      "id": "bsnes-mercury-performance-79d7f9de",
+      "platform": "snes",
+      "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+      "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905"
+    },
+    {
+      "id": "clownmdemu-d43c2708",
+      "platform": "megadrive",
+      "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905"
+    },
+    {
+      "id": "bsnes-mercury-performance-79d7f9de-autopass1",
+      "platform": "snes",
+      "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+      "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef"
+    },
+    {
+      "id": "clownmdemu-d43c2708-autopass1",
+      "platform": "megadrive",
+      "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef"
+    },
+    {
+      "id": "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+      "platform": "snes",
+      "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+      "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+      "recoveryProtocol": "station-stream.v2"
+    },
+    {
+      "id": "clownmdemu-d43c2708-rs2-d66267cd4250",
+      "platform": "megadrive",
+      "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+      "recoveryProtocol": "station-stream.v2"
+    },
+    {
+      "id": "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+      "platform": "snes",
+      "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+      "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+      "recoveryProtocol": "station-stream.v2"
+    },
+    {
+      "id": "clownmdemu-d43c2708-rs3-9af2778898e4",
+      "platform": "megadrive",
+      "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+      "recoveryProtocol": "station-stream.v2"
+    }
+  ],
+  "pid": 1252837,
+  "backup": "/mnt/DADOS/station-r73-registry-backup-20261007-231348829758",
+  "qualified": {
+    "passed": true,
+    "registryPath": "/mnt/DADOS/station-r73-qualified-registry-20261007/online-engine-registry-r73.json",
+    "registrySha256": "266de76251a036d77db162b7cdeefaa5d7ad3093efed5455c69f3d8257ac9ed2",
+    "proof": {
+      "passed": true,
+      "checks": 185,
+      "syntheticLicenses": 2,
+      "signedWindowsR73Engines": true,
+      "signedEngineIds": [
+        "bsnes-mercury-performance-79d7f9de",
+        "bsnes-mercury-performance-79d7f9de-autopass1",
+        "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+        "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+        "clownmdemu-d43c2708",
+        "clownmdemu-d43c2708-autopass1",
+        "clownmdemu-d43c2708-rs2-d66267cd4250",
+        "clownmdemu-d43c2708-rs3-9af2778898e4"
+      ],
+      "signedEngines": [
+        {
+          "engineId": "bsnes-mercury-performance-79d7f9de",
+          "platform": "snes",
+          "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+          "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+          "recoveryProtocol": null
+        },
+        {
+          "engineId": "clownmdemu-d43c2708",
+          "platform": "megadrive",
+          "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+          "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+          "recoveryProtocol": null
+        },
+        {
+          "engineId": "bsnes-mercury-performance-79d7f9de-autopass1",
+          "platform": "snes",
+          "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+          "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+          "recoveryProtocol": null
+        },
+        {
+          "engineId": "clownmdemu-d43c2708-autopass1",
+          "platform": "megadrive",
+          "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+          "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+          "recoveryProtocol": null
+        },
+        {
+          "engineId": "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+          "platform": "snes",
+          "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+          "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+          "recoveryProtocol": "station-stream.v2"
+        },
+        {
+          "engineId": "clownmdemu-d43c2708-rs2-d66267cd4250",
+          "platform": "megadrive",
+          "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+          "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+          "recoveryProtocol": "station-stream.v2"
+        },
+        {
+          "engineId": "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+          "platform": "snes",
+          "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+          "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+          "recoveryProtocol": "station-stream.v2"
+        },
+        {
+          "engineId": "clownmdemu-d43c2708-rs3-9af2778898e4",
+          "platform": "megadrive",
+          "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+          "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+          "recoveryProtocol": "station-stream.v2"
+        }
+      ],
+      "signedTransports": [
+        "direct",
+        "relay-wss-v1",
+        "relay-wss-v2"
+      ],
+      "signedRecoveryCapabilities": [
+        "station-stream.v2"
+      ],
+      "signedRoomCapabilities": [
+        "short-invite-v1",
+        "own-room-member-profiles-v1"
+      ],
+      "legacyEngineIdsPreserved": true,
+      "exactForwardedBytes": 256,
+      "protectedV2Public": false,
+      "protectedResume": true,
+      "oneUseTickets": true,
+      "proofReplayDenied": true,
+      "ownRoomProfilesSigned": true,
+      "legacyV1": true,
+      "catalogCoverDownloadAuthorizationPreserved": true,
+      "gameDownloadVerified": true,
+      "androidGameplay": false,
+      "nativePauseSimulated": true
+    },
+    "ready": {
+      "maximumRooms": 512,
+      "maximumConnections": 1024,
+      "activeRooms": 0,
+      "activeConnections": 0,
+      "forwardedBytes": 0,
+      "recovery": {
+        "protocol": "station-stream.v2",
+        "maximumRooms": 64,
+        "windowBytes": 262144,
+        "retainedRooms": 0,
+        "activeConnections": 0,
+        "pendingBytes": 0,
+        "maximumRetainedBytes": 33554432,
+        "persistent": false
+      }
+    },
+    "oldSixPreserved": true,
+    "productionChanged": false,
+    "utc": "2026-10-07T23:13:43.393182+00:00"
+  },
+  "publicProof": {
+    "passed": true,
+    "checks": 190,
+    "syntheticLicenses": 2,
+    "signedWindowsR73Engines": true,
+    "signedEngineIds": [
+      "bsnes-mercury-performance-79d7f9de",
+      "bsnes-mercury-performance-79d7f9de-autopass1",
+      "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+      "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+      "clownmdemu-d43c2708",
+      "clownmdemu-d43c2708-autopass1",
+      "clownmdemu-d43c2708-rs2-d66267cd4250",
+      "clownmdemu-d43c2708-rs3-9af2778898e4"
+    ],
+    "signedEngines": [
+      {
+        "engineId": "bsnes-mercury-performance-79d7f9de",
+        "platform": "snes",
+        "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+        "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+        "recoveryProtocol": null
+      },
+      {
+        "engineId": "clownmdemu-d43c2708",
+        "platform": "megadrive",
+        "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+        "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+        "recoveryProtocol": null
+      },
+      {
+        "engineId": "bsnes-mercury-performance-79d7f9de-autopass1",
+        "platform": "snes",
+        "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+        "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+        "recoveryProtocol": null
+      },
+      {
+        "engineId": "clownmdemu-d43c2708-autopass1",
+        "platform": "megadrive",
+        "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+        "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+        "recoveryProtocol": null
+      },
+      {
+        "engineId": "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+        "platform": "snes",
+        "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+        "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+        "recoveryProtocol": "station-stream.v2"
+      },
+      {
+        "engineId": "clownmdemu-d43c2708-rs2-d66267cd4250",
+        "platform": "megadrive",
+        "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+        "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+        "recoveryProtocol": "station-stream.v2"
+      },
+      {
+        "engineId": "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+        "platform": "snes",
+        "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+        "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+        "recoveryProtocol": "station-stream.v2"
+      },
+      {
+        "engineId": "clownmdemu-d43c2708-rs3-9af2778898e4",
+        "platform": "megadrive",
+        "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+        "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+        "recoveryProtocol": "station-stream.v2"
+      }
+    ],
+    "signedTransports": [
+      "direct",
+      "relay-wss-v1",
+      "relay-wss-v2"
+    ],
+    "signedRecoveryCapabilities": [
+      "station-stream.v2"
+    ],
+    "signedRoomCapabilities": [
+      "short-invite-v1",
+      "own-room-member-profiles-v1"
+    ],
+    "legacyEngineIdsPreserved": true,
+    "exactForwardedBytes": 256,
+    "protectedV2Public": true,
+    "protectedResume": true,
+    "oneUseTickets": true,
+    "proofReplayDenied": true,
+    "ownRoomProfilesSigned": true,
+    "legacyV1": true,
+    "catalogCoverDownloadAuthorizationPreserved": true,
+    "gameDownloadVerified": true,
+    "androidGameplay": false,
+    "nativePauseSimulated": true
+  },
+  "readyAfter": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    }
+  },
+  "onlyEffectiveRegistryChanged": true,
+  "originalSixPreserved": true,
+  "dllChanged": false,
+  "environmentChanged": false,
+  "environmentFingerprintKind": "explicit-verified-files-v1",
+  "firstCheckerInvocationMarkerMismatch": true,
+  "completionRequiredSecondRestart": false,
+  "sandboxChanged": false,
+  "databaseSchemaChanged": false,
+  "keysChanged": false,
+  "realLicensesChanged": false,
+  "otherProductsChanged": false,
+  "nginxChanged": false,
+  "cloudflareChanged": false,
+  "requireVerifiedApp": false,
+  "androidGameplayVerified": false,
+  "indexRevision": 14,
+  "visibleItems": 2212,
+  "indexSha256": "07ad4c3fda41a19c23745436c4c45c97a70b2c7688eff788612fe22743823a92",
+  "closedTerminalTrial": {
+    "startUtc": "2026-10-07T22:48:19.238974+00:00",
+    "terminalUtc": "2026-10-07T23:06:51.790772+00:00",
+    "humanExitAcknowledged": true,
+    "connections": 0,
+    "pendingBytes": 0
+  },
+  "physicalTrialDiagnosis": "DIAGNOSTICO-TESTE-FISICO.json",
+  "manuallyReportedBothPlayingThenDropped": true,
+  "physicalRecoveryVerified": false,
+  "stableGameplayVerified": false
+}

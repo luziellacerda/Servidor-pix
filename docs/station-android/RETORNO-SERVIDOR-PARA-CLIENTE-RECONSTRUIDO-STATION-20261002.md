@@ -1,3 +1,209 @@
+# R73: engines cadastradas e produção verificada — 07/10/2026
+
+**Retorno SERVIDOR → APP. Cadastro ativo e R73 instalada nos dois. O mantenedor confirmou ambos jogando Battletoads, seguido de queda. Retomada física e estabilidade continuam pendentes.**
+Pedido executado: `1b26b34cd0f205afaf70b4f9ebf2391da7853537`, fonte do app
+`5657dce678609f25501321e307839a6e0c018d4e`; instalação posterior recebida em
+`98ab8aa69dd73342cf1610ec31ef574c03fd8c1f`.
+
+## Produção efetiva
+
+- Serviço: `turborama-station-api.service`; PID **1252837**.
+- Recarga efetiva: **07/10/2026 23:13:54 UTC / 20:13:54 Maceió**.
+- Verificação HTTPS/WSS concluída: **23:18:10 UTC / 20:18:10 Maceió**.
+- DLL mantida em `/opt/turborama-station-recovery-r71-20261007-ab192bf/TurboRamaSuiteOnlineServer.dll`.
+- Fonte da DLL: `ab192bf1585e30f303d041f13b36a1f9c96d2caa`;
+  SHA256 `815fc8bc99a9d16247488a1797d2726b928eb3e592fd8a19700371e8d57c3243`.
+- Registro alterado: `/opt/turborama-station-recovery-r71-20261007-ab192bf/online-engine-registry.json`;
+  SHA256 **`266de76251a036d77db162b7cdeefaa5d7ad3093efed5455c69f3d8257ac9ed2`**.
+- Procedimento de cadastro: `8e1136663609b49dba7e9dc059c3ef3c453070ee`;
+  verificador corrigido: `507fc7dfc0a9109e95fc94f0bc4a7b251cab21f5`.
+  Estes commits são o procedimento do operador; a DLL continua `ab192bf`.
+- Registro completo, contrato da operação e recibos: `recovery-r73-20261007/REGISTRO-EFETIVO.json`,
+  `PRODUCAO-EFETIVA.json`, `PROCEDIMENTO.md` e `ANALISE-R72-PARA-R73.json`.
+
+### Adições exatas e compatibilidade
+
+| Plataforma | Engine nova | Runtime SHA256 |
+|---|---|---|
+| snes | `bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4` | `9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2` |
+| megadrive | `clownmdemu-d43c2708-rs3-9af2778898e4` | `9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2` |
+
+Os hashes de core são os exatos da entrega: SNES `cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b`,
+Mega `109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69`.
+As seis engines antigas continuam com todos os campos preservados; o snapshot assinado contém exatamente oito.
+Geolith `launchReady=false` permanece sem cadastro para jogar online.
+
+`station-stream.v2`, `relay-wss-v2` e `own-room-member-profiles-v1` estão ativos.
+V2: 64 salas, 128 participantes, 256 KiB por direção, até32 MiB de rings em RAM.
+V1: 512 salas/1024 conexões. A sessão em RAM não sobrevive à morte/reinício do processo.
+Não houve mudança do contrato TSR2, máquina de estados, envelopes, chaves, licenças reais,
+`RequireVerifiedApp=false`, ambientes, sandbox, schema, catálogo14/2212, proxy, Cloudflare ou outro produto.
+
+## Provas e procedimento observado
+
+Passaram **185 verificações na instância isolada e190 por HTTPS/WSS real**:
+
+- Lista assinada com oito IDs e todos os campos, seis anteriores intactos e duas adições Windows exatas.
+- Capacidades/transports assinados, room.memberProfiles completo fora da página social.
+- Sessão com prova por pedido, replay recusado, ticket único e WSS sem prova recusado.
+- V2, bytes/offsets/ACK/barreira/retomada autenticada sem duplicação, e v1 preservado.
+- Catálogo completo, capa exata e download real com tamanho/hash correspondentes.
+- Licenças sintéticas identificadas/limpas; licenças reais, arquivos/configurações e PIDs dos demais serviços conferidos.
+
+Essas provas simulam a pausa/prontidão nativa. Não executam ROM/Android nem comprovam gameplay.
+As1206 verificações Java,22 nativas e39 guardas da entrega foram recebidas e vinculadas às fontes;
+não foram reexecutadas no Linux nesta ativação de registro.
+
+O mantenedor confirmou encerrar a tentativa nos dois celulares. Antes da recarga havia zero conexões,
+zero bytes pendentes e somente a sala R72 terminal conhecida, iniciada22:48:19.238974UTC e marcada
+`recovery-failed`23:06:51.790772UTC. Sua correlação foi conferida privadamente. Não foi interrompida
+partida em andamento nem descartada outra sessão recuperável. A retenção existente conserva salas
+terminais; sua lógica não foi alterada por este cadastro.
+
+O primeiro verificador comparou também marcadores de invocação do systemd, que mudam no reinício,
+e recusou a prova depois da recarga. A checagem foi corrigida para comparar cada configuração
+explícita com os arquivos originais intactos. As provas finais foram concluídas no mesmo PID,
+**sem segundo reinício** e sem modificar a configuração. O incidente fica registrado no recibo.
+
+## Correlação R72 e o que conferir na R73
+
+R72/R72 às22:48:19UTC: start, tickets host/guest e host-listening aceitos com EC-P256;
+ambos com JNI carregado e STATE0→1 conforme recibo do PC. No transporte foram aceitos e entregues
+380 bytes do host e224 do convidado, zero pendência no backend; isso não significa primeiro frame.
+Às22:50:31.246UTC o stream do convidado terminou por `AUTH_HEARTBEAT_MISSING`, com69316ms desde
+o último heartbeat autenticado dele; o host tinha9394ms. O término posterior não demonstra a causa
+inicial da tela preta. Conferir continuidade de `game stage=session-heartbeat` nos dois na R73,
+separadamente dos PONGs do WebSocket. Amostra da API: p95 comando0,1691ms, máximo0,5117ms,
+CPU ociosa98,17% e aproximadamente38,6GiB disponíveis; não comprova latência externa ou frames.
+
+O teste nativo recebido reproduz MODE retido durante a pausa e R73 acrescenta flush não bloqueante,
+sem post-frame/retro_run. Essa correção já está no ELF Windows registrado acima. O cadastro não
+substitui a instalação desse ELF/APK nos dois celulares.
+
+### Teste físico R73: início aceito, queda e nova tentativa
+
+Papéis confirmados pelo mantenedor: **Samsung anfitrião, Motorola convidado**.
+A primeira sala iniciou às **23:19:37.985493 UTC / 20:19:37 Maceió**.
+Tickets dos dois e `host-listening` foram aceitos; às23:22:23 havia duas conexões
+v2, tráfego bidirecional e 260–300 bytes pendentes. O mantenedor confirmou os
+dois jogando e pequeno atraso entre as telas. Este relato confirma o início
+físico; não quantifica atraso nem homologa recuperação ou estabilidade.
+
+Primeiro desligamento: **23:23:10.719 UTC / 20:23:10 Maceió**, papel `client`,
+causa **`AUTH_HEARTBEAT_MISSING`**. O Motorola estava há **68387 ms** sem
+heartbeat autenticado; o Samsung há8825 ms. Foram aceitos503802 bytes e
+entregues503542, com260 pendentes. O backend conservou a sala e a conexão do
+anfitrião. `state=0` foi registrado depois de desanexar o convidado; não significa
+que a primeira partida nunca chegou a jogar.
+
+No intervalo observado até23:26:12, houve45 comandos200, cinco sessões200,
+cinco challenges200 e nenhum401/403/429/5xx. Houve quatro499 de long-poll
+cancelado durante a abertura. Renovações200 às23:21:41 e23:22:21 não estão
+associadas individualmente aos aparelhos neste relatório. Portanto, a causa
+Android anterior à falta de heartbeat ainda não está demonstrada. Não atribuir
+essa queda a senha/licença, expiração da sessão ou saturação por suposição.
+
+Durante o jogo, Station usava aproximadamente264 MiB, 15% de um núcleo em uma
+amostra de um segundo; máquina97% ociosa e38,7 GiB disponíveis. Comandos internos
+p95=0,1756 ms. Essas amostras não medem latência da internet nem sincronismo das
+telas, mas não mostram saturação do servidor nesse intervalo.
+
+Às23:32:08.943018 o anfitrião enviou `leave`; o `REQUEST_ABORT` às23:32:08.120
+acompanha essa saída posterior, não é a primeira causa da queda. Nova sala
+iniciada às **23:32:26.495095 UTC**: ticket do host aceito; até23:33:29 não foi
+observado `host-listening` nem anexo v2. O mantenedor relatou anfitrião preto e
+convidado aguardando conexão; depois informou ambos com tela preta. Investigar separadamente a segunda abertura;
+não aplicar a causa de presença da primeira partida a este início sem stream.
+Não houve reinício ou mudança de produção durante estes diagnósticos.
+
+Evidências saneadas: `recovery-r73-20261007/DIAGNOSTICO-TESTE-FISICO.json`,
+`ANALISE-PARTIDA-EM-ANDAMENTO.json`, `ANALISE-QUEDA-PRIMEIRA-PARTIDA.json`,
+`HTTP-QUEDA-PRIMEIRA-PARTIDA.json`, `ANALISE-SEGUNDA-TENTATIVA.json` e
+`LINHA-TEMPO-PRESENCA-PRIMEIRA-PARTIDA.json`. A linha de presença confirmou
+último heartbeat do convidado às23:22:02.334574UTC, ausência de `resume-relay`
+na primeira sala e heartbeat do host até a saída humana23:32:08.675561UTC.
+A prontidão neste recibo posterior descreve o estado de23:36:07, não o estado
+histórico daquela sala; nesse momento havia zero anexos v2.
+
+### Ação imediata no PC de produção do APK
+
+**O mantenedor vai conectar o Motorola por USB e pode sair da sala para repetir
+o teste. Capturar a espera antes da saída quando o aparelho estiver conectado;
+não pedir nova licença, desinstalar ou limpar dados para diagnóstico.**
+
+Capturar por serial fixado, com horários UTC:
+
+- Primeira partida:23:21:30–23:24:30, especialmente último heartbeat do guest
+  aproximadamente23:22:02.332 e desligamento23:23:10.719.
+- Motorola: `StationRooms` (`game stage=session-heartbeat`, `session-sync`),
+  `StationRecovery` (`transport-wait`, `socket-close`, `socket-error`,
+  `wait-diagnostic`, epoch/state/nativeStatus/offsets), primeiro erro e stack saneado.
+- Estado dos processos principal e do emulador, PID/estado cached/frozen, morte,
+  eventos de ActivityManager/Binder e fila do worker quando heartbeat/retomada
+  deixam de responder. Obter dumps limitados e logs privados; publicar somente
+  resumo e categorias sem token, licença, serial ou caminhos pessoais.
+- Segunda tentativa: Samsung desde23:32:26; carregamento JNI/native runtime,
+  callback de prontidão/TCP local, primeiro erro e estado nativo. O server ainda
+  não observou host-listening/WSS nessa abertura. Capturar os dois quando possível.
+
+Fontes exatas conferidas contra `evidence/java-dex-build.json` R73:
+`StationGameSession.java` SHA930efc9b, `StationOnlineClient.java` SHA1b7fa9b3,
+`StationSessions.java` SHAdbd88102, `StationApi.java` SHAa4e1eaa4,
+`StationHttp.java` SHAb9f6dbf3 e `StationSessionChannel.java` SHA678037ce.
+Hashes completos no diagnóstico. Nenhuma Activity antiga foi restaurada.
+
+`StationGameSession` mantém a autoridade e o heartbeat no processo principal,
+com worker único a cada20 segundos, também usado pelo pedido de novo ticket.
+A R73 mantém heartbeat v2 em background. A Activity envia `host-listening`
+somente no papel host; a hipótese de que o guest o envia foi descartada pela fonte.
+`StationSessions` aguarda leases antes de renovar; HTTP usa10 s de conexão e30 s
+de leitura. Conferir bloqueio de worker/lease, erro de prova/renovação, suspensão
+do processo e entrega Binder **como hipóteses**, comparando o primeiro evento
+real antes de alterar a arquitetura.
+
+Se a captura provar suspensão da autoridade principal ou renovação bloqueada,
+preparar sucessora sobre R73 com ciclo de vida de sessão consistente com o jogo
+visível e retomada autenticada, mantendo assinatura/licença/Keystore/menus/BIOS/
+controles. Não remover o heartbeat autenticado de60 s do servidor nem substituir
+por PONG: são mecanismos diferentes. Testar sessão além de duas renovações e
+perda/retorno de rede, além de saída humana e nova abertura. Devolver fonte,
+hashes e recibo físico antes de declarar recuperação homologada.
+
+### Roteiro físico restante
+
+1. **R73 já instalada nos dois**, conforme `98ab8aa`: Samsung concluído23:11:17UTC,
+   Motorola23:12:57UTC, APK integral
+   `b23ff3d1e319ee050e6eb867e2643a5f66661da481dd2e3a4e50089d1604f077`,
+   UID/data original e dados preservados, transferência direta. Os recibos recebidos constam
+   de `recovery-r73-20261007/INSTALACAO-APP-RECEBIDA.json` e `evidence/installation-*.json`.
+   A instalação ocorreu antes da confirmação do registro; o servidor está agora comprovado.
+   A assinatura continua `7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825`.
+   Estes APKs já iniciaram uma partida; a queda e a abertura seguinte estão descritas acima.
+2. Criar sala nova Battletoads: Samsung host/Motorola guest; depois inverter.
+   R72 e R73 têm engineIds diferentes e não devem ser usados juntos nesse teste.
+3. Capturar por serial fixado StationRooms/StationRecovery: tickets sem mostrar valores,
+   host-listening, `event=wait-diagnostic`, epoch/state/nativeStatus/offsets, PAUSED/READY e STATE1→2.
+   O backend atual registra comandos/término/contadores, não cada quadro de controle.
+4. Conferir imagem/áudio, comandos de ambos, nomes por peerId e saída humana para plataformas.
+   Fazer perda/retomada de rede como ensaio separado. Publicar recibo saneado com horário exato;
+   PONG ou200 não são prova de sucesso físico.
+
+API: **https://app.lzgames.com.br**. Relay WSS: `/v1/station/online/relay`.
+`turbobox.lzgames.com.br` é painel; seus404 de `/v1` não descrevem esta API.
+
+## Backup e retorno
+
+Backup exato do registro anterior: `/mnt/DADOS/station-r73-registry-backup-20261007-231348829758`.
+Recibo privado: `/mnt/DADOS/station-r73-registry-check-20261007/active-231810059369.json`.
+Retorno guardado somente em janela sem sessões: `pkexec` com Python do operador,
+`scripts/ativar-registro-station-r73-20261007.py --rollback <backup>`.
+Restaura seis engines anteriores e recarrega apenas Station; não restaura banco nem aceita release/configuração sucessora.
+Não reaplicar `--apply` sobre esta produção: o registro anterior de seis engines é uma pré-condição.
+
+---
+
+## Histórico anterior
+
 # R71 publicada no Station; análise do teste físico — 07/10/2026
 
 **SERVIDOR → APP. Atualização Linux executada e verificada às 18:59:53 de Maceió

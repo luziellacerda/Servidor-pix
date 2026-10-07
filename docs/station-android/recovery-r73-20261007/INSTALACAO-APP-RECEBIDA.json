@@ -1,0 +1,30 @@
+{
+  "appReceiptCommit": "98ab8aa69dd73342cf1610ec31ef574c03fd8c1f",
+  "devices": [
+    {
+      "device": "samsung",
+      "version": "R73",
+      "completedUTC": "2026-10-07T23:11:17.052946+00:00",
+      "apkSHA256": "b23ff3d1e319ee050e6eb867e2643a5f66661da481dd2e3a4e50089d1604f077",
+      "uidPreserved": true,
+      "dataCleared": false,
+      "sourcePath": "versions/station-recovery-handshake-r73-20261007/evidence/installation-samsung-r73.json",
+      "sourceCommit": "98ab8aa69dd73342cf1610ec31ef574c03fd8c1f",
+      "sha256": "e7362329f7040de7e2af56122e2a91f91c259746836d540887f27cbb3f44ceab"
+    },
+    {
+      "device": "motorola",
+      "version": "R73",
+      "completedUTC": "2026-10-07T23:12:57.489564+00:00",
+      "apkSHA256": "b23ff3d1e319ee050e6eb867e2643a5f66661da481dd2e3a4e50089d1604f077",
+      "uidPreserved": true,
+      "dataCleared": false,
+      "sourcePath": "versions/station-recovery-handshake-r73-20261007/evidence/installation-motorola-r73.json",
+      "sourceCommit": "98ab8aa69dd73342cf1610ec31ef574c03fd8c1f",
+      "sha256": "e00910bb8ffac7d881ac26a3ad5ff747256be32d8ce304e7350ee2bdc28c622d"
+    }
+  ],
+  "receivedInstallEvidence": true,
+  "installedByThisLinux": false,
+  "androidGameplayVerified": false
+}

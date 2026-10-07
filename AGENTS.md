@@ -1,3 +1,22 @@
+# R73 ativa; partida iniciou e caiu; segunda abertura com tela preta — 07/10/2026
+
+Leia `docs/station-android/RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md` e `docs/station-android/recovery-r73-20261007/DIAGNOSTICO-TESTE-FISICO.json`.
+Registro SHA266de762/PID1252837 ativo desde23:13:54UTC; oito engines, seis antigas preservadas e duas rs3/runtime9af2778898e4. DLL ab192bf/815fc8bc mantida.185 verificações isoladas e190 HTTPS/WSS passaram; não são homologação física.
+R73 instalada nos dois conforme recibo98ab8aa/APKb23ff3d1. Mantenedor confirmou Battletoads jogando, Samsung anfitrião/Motorola convidado, pequeno atraso não medido. Queda às23:23:10.719UTC: convidado AUTH_HEARTBEAT_MISSING,68387ms sem heartbeat dele,8825ms do anfitrião; sala preservada. Nenhum401/403/429/5xx observado no intervalo. Processo/API sem saturação observada. Causa Android anterior ainda não identificada; não remover timers/proof nem trocar licença.
+Saída humana23:32:08; segunda sala iniciada23:32:26.495UTC: ticket host200, sem host-listening ou anexo v2 até23:33:29. Mantenedor primeiro relatou host preto/guest esperando, depois ambos pretos. Capturar esta abertura separadamente, além da perda de heartbeat da partida anterior. Motorola será conectado por USB AO PC DE PRODUÇÃO DO APK; capturar StationRooms/StationRecovery, primeiro erro, IPC/worker/lease e estados dos processos. Fontes do cliente conferidas com hashes exatos do recibo R73. Nenhuma nova alteração de serviço por diagnóstico. Não interromper sala retida nem reiniciar o processo com sessões; recuperação em RAM.
+Cadastro solicitado concluído. Início físico relatado; retomada e estabilidade NÃO homologadas. Não executar scripts históricos sobre o registro novo; demais produtos/ambientes/licenças/menus/BIOS/assinatura/dados preservados.
+
+## Histórico anterior
+
+# R73 cadastrada e verificada em produção — 07/10/2026
+
+Leia `docs/station-android/RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md` e `recovery-r73-20261007/PRODUCAO-EFETIVA.json`.
+Registro efetivo266de762/PID1252837 recarregado23:13:54UTC;8engines,6anteriores intactas e2rs3/9af2778898e4 exatas. DLL permaneceab192bf/815fc8bc. 185checks isolados e190HTTPS/WSS passaram, catálogo/capa/download/v1/v2/proof/nomes e limpeza sintética. Contrato/ambientes/chaves/licenças/schema/proxy/Cloudflare/outros produtos preservados; zero sessões ao concluir.
+Mantenedor encerrou tentativaR72 conhecida: terminal e zero anexos/bytes, correlação conferida antes da recarga. Não interromper jogos nem descartar outras sessões. Guardas/backup/rollback nos scripts. Comparação de marcadores de invocação systemd corrigida, prova completada no mesmoPID sem segundo reinício.
+App R73 fonte5657dce/APKb23ff3d1/runtime9af27789 já instalada nos dois segundo recibo98ab8aa: Samsung23:11:17UTC/Motorola23:12:57UTC, UID/data original e dados preservados. PCAPK deve conferir sala nova e ambos papéis. Capturarwait-diagnostic/STATE1→2/imagem/áudio/controles/nomes/saída/retomada separadamente. GuestR72 perdeu heartbeat autenticado às22:50:31UTC apesar dePONGs; correlacionar isso comR73. Não declarar gameplay homologado nem reaplicar scripts históricos contra registro novo.
+
+## Histórico anterior
+
 # APP R73 entregue — cadastro do motor de handshake — 07/10/2026
 
 APP → SERVIDOR; ler `docs/station-android/ENTREGA-APP-R73-HANDSHAKE-PARA-SERVIDOR-20261007.md`. App `5657dce678609f25501321e307839a6e0c018d4e`; APK b23ff3d1e319ee050e6eb867e2643a5f66661da481dd2e3a4e50089d1604f077; runtime9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2. Dois celulares permanecem R72, ambos JNI/listening/STATE1/PONGs e telas pretas. Defeito nativo MODE retido reproduzido; pump R73 envia não bloqueante sob pausa, sem avançar frames. 1206 checks Java,22 nativos,39 guardas passaram; não provam gameplay. Adicionar DOIS IDs rs3 exatos preservando seis anteriores; ativação controlada pois registro é lido na inicialização. Preservar partidas até saída humana/coordenada; não deploy automático. Dialog de espera e diagnóstico limitados. Não restaurar Activities antigas nem remover validações. Fontes/manifestos/recibos completos no app. Responder com produção efetiva e evidências, não somente JSON no Git.

@@ -1,0 +1,352 @@
+{
+  "utc": "2026-10-07T23:33:28.936334+00:00",
+  "sinceUtc": "2026-10-07 23:32:00 UTC",
+  "pid": 1252837,
+  "activeDllSha256": "815fc8bc99a9d16247488a1797d2726b928eb3e592fd8a19700371e8d57c3243",
+  "readOnly": true,
+  "roomsBefore": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    }
+  },
+  "roomsAfter": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    }
+  },
+  "stationMemory": {
+    "VmRSS": "284740 kB",
+    "Threads": "76"
+  },
+  "machineMemory": {
+    "MemTotal": "49160092 kB",
+    "MemAvailable": "40657340 kB"
+  },
+  "oneSecondSample": {
+    "stationCpuPercentOfOneCore": 1.0,
+    "machineIdlePercent": 98.06
+  },
+  "journalMessages": 470,
+  "commandActions": {
+    "heartbeat": 5,
+    "leave": 1,
+    "enter": 2,
+    "create": 1,
+    "request-join": 1,
+    "accept-request": 1,
+    "join": 1,
+    "ready": 2,
+    "start": 1,
+    "relay-ticket": 1
+  },
+  "commandRoles": {
+    "host": 7,
+    "none": 4,
+    "client": 5
+  },
+  "proofModes": {
+    "ec-p256-v1": 16
+  },
+  "commandServerTime": {
+    "count": 16,
+    "p50Ms": 0.13829999999999998,
+    "p95Ms": 0.3896,
+    "maximumMs": 0.6006
+  },
+  "commandSequence": [
+    {
+      "generation": "3",
+      "role": "host",
+      "action": "leave",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "0",
+      "clientHeartbeatAgeMs": "606609",
+      "commandElapsedMs": "0.0803",
+      "utc": "2026-10-07T23:32:08.943018+00:00"
+    },
+    {
+      "generation": "1",
+      "role": "host",
+      "action": "create",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "-1",
+      "clientHeartbeatAgeMs": "-1",
+      "commandElapsedMs": "0.3896",
+      "utc": "2026-10-07T23:32:15.259603+00:00"
+    },
+    {
+      "generation": "0",
+      "role": "none",
+      "action": "request-join",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "-1",
+      "clientHeartbeatAgeMs": "-1",
+      "commandElapsedMs": "0.165",
+      "utc": "2026-10-07T23:32:16.911578+00:00"
+    },
+    {
+      "generation": "1",
+      "role": "host",
+      "action": "accept-request",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "0",
+      "clientHeartbeatAgeMs": "-1",
+      "commandElapsedMs": "0.1325",
+      "utc": "2026-10-07T23:32:17.930275+00:00"
+    },
+    {
+      "generation": "2",
+      "role": "client",
+      "action": "join",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "-1",
+      "clientHeartbeatAgeMs": "-1",
+      "commandElapsedMs": "0.1031",
+      "utc": "2026-10-07T23:32:20.507201+00:00"
+    },
+    {
+      "generation": "2",
+      "role": "host",
+      "action": "ready",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "0",
+      "clientHeartbeatAgeMs": "1351",
+      "commandElapsedMs": "0.1415",
+      "utc": "2026-10-07T23:32:21.858017+00:00"
+    },
+    {
+      "generation": "2",
+      "role": "client",
+      "action": "ready",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "2327",
+      "clientHeartbeatAgeMs": "0",
+      "commandElapsedMs": "0.1351",
+      "utc": "2026-10-07T23:32:24.184526+00:00"
+    },
+    {
+      "generation": "3",
+      "role": "host",
+      "action": "start",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "1",
+      "clientHeartbeatAgeMs": "2310",
+      "commandElapsedMs": "0.6006",
+      "utc": "2026-10-07T23:32:26.495095+00:00"
+    },
+    {
+      "generation": "3",
+      "role": "host",
+      "action": "relay-ticket",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "0",
+      "clientHeartbeatAgeMs": "2499",
+      "commandElapsedMs": "0.1597",
+      "utc": "2026-10-07T23:32:26.683604+00:00"
+    }
+  ],
+  "relayHttpResponses": [
+    {
+      "status": 101,
+      "elapsedMs": 748777.7343,
+      "utc": "2026-10-07T23:32:08.121252+00:00"
+    }
+  ],
+  "errorCodes": {},
+  "firstTransportEnds": [
+    {
+      "utcMs": "1791415928120",
+      "generation": "3",
+      "streamEpoch": "3",
+      "role": "host",
+      "cause": "REQUEST_ABORT",
+      "closeCode": "(null)",
+      "exceptionType": "OperationCanceledException",
+      "hostHeartbeatAgeMs": "16505",
+      "clientHeartbeatAgeMs": "605786",
+      "acceptedBytes": "503942",
+      "deliveredBytes": "503662",
+      "pendingBytes": "280",
+      "state": "0",
+      "hostAcceptedBytes": "252934",
+      "hostDeliveredBytes": "252654",
+      "clientAcceptedBytes": "251008",
+      "clientDeliveredBytes": "251008"
+    }
+  ],
+  "nativeEmulatorFramesMeasured": false,
+  "endToEndNetworkLatencyMeasured": false,
+  "timelineTruncated": false,
+  "httpStatusCounts": [
+    {
+      "path": "/v1/station/challenges",
+      "status": 200,
+      "count": 1
+    },
+    {
+      "path": "/v1/station/online/command",
+      "status": 200,
+      "count": 16
+    },
+    {
+      "path": "/v1/station/online/events",
+      "status": 200,
+      "count": 22
+    },
+    {
+      "path": "/v1/station/sessions",
+      "status": 200,
+      "count": 1
+    }
+  ],
+  "sessionAndFailedRequests": [
+    {
+      "utc": "2026-10-07T23:32:14.309896+00:00",
+      "method": "POST",
+      "path": "/v1/station/challenges",
+      "status": 200,
+      "elapsedMs": 8.635
+    },
+    {
+      "utc": "2026-10-07T23:32:14.620209+00:00",
+      "method": "POST",
+      "path": "/v1/station/sessions",
+      "status": 200,
+      "elapsedMs": 26.7569
+    }
+  ],
+  "sessionRenewalOwnerIdentified": false,
+  "androidFirstCauseIdentified": false,
+  "selectedTrialCount": 1,
+  "selectedTrialCommandTimeline": [
+    {
+      "utc": "2026-10-07T23:32:15.259603+00:00",
+      "generation": "1",
+      "role": "host",
+      "action": "create",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "-1",
+      "clientHeartbeatAgeMs": "-1",
+      "commandElapsedMs": "0.3896"
+    },
+    {
+      "utc": "2026-10-07T23:32:17.930275+00:00",
+      "generation": "1",
+      "role": "host",
+      "action": "accept-request",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "0",
+      "clientHeartbeatAgeMs": "-1",
+      "commandElapsedMs": "0.1325"
+    },
+    {
+      "utc": "2026-10-07T23:32:20.507201+00:00",
+      "generation": "2",
+      "role": "client",
+      "action": "join",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "-1",
+      "clientHeartbeatAgeMs": "-1",
+      "commandElapsedMs": "0.1031"
+    },
+    {
+      "utc": "2026-10-07T23:32:21.858017+00:00",
+      "generation": "2",
+      "role": "host",
+      "action": "ready",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "0",
+      "clientHeartbeatAgeMs": "1351",
+      "commandElapsedMs": "0.1415"
+    },
+    {
+      "utc": "2026-10-07T23:32:24.184526+00:00",
+      "generation": "2",
+      "role": "client",
+      "action": "ready",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "2327",
+      "clientHeartbeatAgeMs": "0",
+      "commandElapsedMs": "0.1351"
+    },
+    {
+      "utc": "2026-10-07T23:32:26.495095+00:00",
+      "generation": "3",
+      "role": "host",
+      "action": "start",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "1",
+      "clientHeartbeatAgeMs": "2310",
+      "commandElapsedMs": "0.6006"
+    },
+    {
+      "utc": "2026-10-07T23:32:26.683604+00:00",
+      "generation": "3",
+      "role": "host",
+      "action": "relay-ticket",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "0",
+      "clientHeartbeatAgeMs": "2499",
+      "commandElapsedMs": "0.1597"
+    },
+    {
+      "utc": "2026-10-07T23:32:36.980525+00:00",
+      "generation": "3",
+      "role": "client",
+      "action": "heartbeat",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "10297",
+      "clientHeartbeatAgeMs": "0",
+      "commandElapsedMs": "0.0702"
+    },
+    {
+      "utc": "2026-10-07T23:32:57.841112+00:00",
+      "generation": "3",
+      "role": "client",
+      "action": "heartbeat",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "31157",
+      "clientHeartbeatAgeMs": "0",
+      "commandElapsedMs": "0.1477"
+    },
+    {
+      "utc": "2026-10-07T23:33:18.478581+00:00",
+      "generation": "3",
+      "role": "client",
+      "action": "heartbeat",
+      "proofMode": "ec-p256-v1",
+      "hostHeartbeatAgeMs": "51795",
+      "clientHeartbeatAgeMs": "1",
+      "commandElapsedMs": "0.1484"
+    }
+  ],
+  "selectedTrialLastHeartbeatUtc": {
+    "client": "2026-10-07T23:33:18.478581+00:00"
+  },
+  "selectedTrialStartUtc": "2026-10-07T23:32:26.495095+00:00",
+  "interpretation": "No v2 attachment or host-listening observed for the second trial. The REQUEST_ABORT event belongs to the first trial human exit."
+}
