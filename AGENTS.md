@@ -1,3 +1,9 @@
+# Correção APP R66: BIOS CD já incluída e agora usada automaticamente
+
+Leia [ADENDO-BIOS-CD-JA-INCLUIDA-APP-R66-20261007.md](docs/station-android/ADENDO-BIOS-CD-JA-INCLUIDA-APP-R66-20261007.md). APP → SERVIDOR. Fonte `291f3949760c0d77030e4872520efc3e1c8f928b`, R66 APK e4397fd7 instalada/hash conferido no A56; outro telefone não atualizado. Os três assets de BIOS JÁ estavam no APK R65 e telefone. Faltava ao lançador R65 ler essa origem; R66 corrige no código, sem firmware novo ou cópia manual no telefone.66 testes locais/reproduçãoDEX idêntica; gameplayCD pendente porque a tela bloqueou. Não pedir entrega adicional de firmware ao servidor como solução deste defeito. Auditoria NG-01–NG-07 permanece para CHDs/conjuntos/KOF/classificação, e Q01–Q08 de retomada online permanece separada. Não restaurar Activities anteriores sem conciliar essa correção. Sem implantação Linux.
+
+## Histórico preservado
+
 # Auditoria adicional Neo Geo cartucho/CD — R65 — 07/10/2026
 
 Leia [PEDIDO-AUDITORIA-NEOGEO-CARTUCHO-CD-R65-20261007.md](docs/station-android/PEDIDO-AUDITORIA-NEOGEO-CARTUCHO-CD-R65-20261007.md). APP → SERVIDOR, pedido de auditoria, sem implantação. Fonte app `e99f6fa705f4629085c426ffb7cf02b4fc624239`, branch `fix/station-neogeo-cd-r65-20261007`; R65 APK1858459b compilado/reproduzido, não instalado. CD tinha helper ausente no APK anterior, agora integrado. TSV14:189cartuchos/50CD,13nomes sem registro MAME0289 (seis KOF) e dois itens de outro hardware; conferir produção real e membros/CRC antes de mapear. KOF98 padrão registrado chegou ao motor, imagem corrompida em captura curta; causa ainda não comprovada/USB ausente. Responder NG-01–NG-07, preservando IDs/licenças/saves e demais serviços. O pedido Q01–Q08 de retomada online abaixo continua aberto e independente. Não declarar todos os jogos corrigidos ou R65 instalada.
