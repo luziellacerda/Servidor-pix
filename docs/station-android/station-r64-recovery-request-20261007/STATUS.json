@@ -1,0 +1,15 @@
+{
+  "revision": "R64",
+  "base": "R63",
+  "apkSHA256": "e2bb778319e03d878ac5de3749f06af1b5e7bbffd06b8232402d2d2f610ba868",
+  "apkPath": "G:\\BAKUP SISTEMA APP 03-10-2026\\apks-candidatos-visuais\\TurboStations-Premium-R64-20261007.apk",
+  "installed": false,
+  "stable": false,
+  "userReportedR63OnlineWorking": true,
+  "r63DropObserved": true,
+  "dropCauseProven": false,
+  "serverRecoveryRequired": true,
+  "runtimeChanged": false,
+  "controlsVisuallyAdapted": true,
+  "androidControlsVerified": false
+}

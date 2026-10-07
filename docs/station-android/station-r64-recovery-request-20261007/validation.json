@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-07T12:36:15.102215+00:00",
+  "layouts": {
+    "snes": {
+      "completeBindings": true,
+      "allImagesExist": true,
+      "hitboxesInsideViewport": true,
+      "menuAndUnsafeShortcutsAbsent": true
+    },
+    "megadrive": {
+      "completeBindings": true,
+      "allImagesExist": true,
+      "hitboxesInsideViewport": true,
+      "menuAndUnsafeShortcutsAbsent": true
+    }
+  },
+  "sourceCount": 161,
+  "preservedJava": 157,
+  "changedJava": [
+    "netplay-src/org/emulationstation/frontend/netplay/StationGameSession.java",
+    "netplay-src/org/emulationstation/frontend/netplay/StationRelayTunnel.java",
+    "netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java",
+    "netplay-src/org/emulationstation/frontend/netplay/StationRetroLaunch.java"
+  ],
+  "netplayEngineIdentityPreserved": true,
+  "allTimeoutsPreserved": true,
+  "dropCauseProven": false,
+  "androidVisualVerified": false
+}

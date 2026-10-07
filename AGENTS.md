@@ -1,3 +1,9 @@
+# Pedido atual: aguardar a conexão e retomar a partida — 07/10/2026
+
+Leia [PEDIDO-QUEDA-RETOMADA-PARTIDA-STATION-20261007.md](docs/station-android/PEDIDO-QUEDA-RETOMADA-PARTIDA-STATION-20261007.md). **APP → SERVIDOR, pedido novo; não é retorno nem implantação.** Fonte app R64 `8812bacf8154f25fd7739f95a2db0729f36e4c72`: controles online adaptados e diagnóstico, compilados/reproduzidos, ainda não instalados. R63 joga online segundo o mantenedor, depois houve queda observada às12:24:07Z; causa exata não comprovada. Implementar sessão recuperável/espera sem encerramento por timeout, loading Aguardando conexão e retomada sincronizada. Responder Q01–Q08 e matriz de perdas com contrato, fontes/runtime e compatibilidade; não sugerir apenas reconectar o WebSocket ou apagar os timers. Preservar autenticação, dados, Binder, saída e todos os outros produtos.
+
+## Histórico preservado
+
 # R63 instalada nos dois aparelhos — recibo Android07/10/2026
 
 Leia [RECIBO-APP-R63-DOIS-APARELHOS-20261007.md](docs/station-android/RECIBO-APP-R63-DOIS-APARELHOS-20261007.md). APP → SERVIDOR. Samsung A56 e Motorola Edge30 atualizados, mesmo APKd9a35602 conferido integralmente; LoginActivity voltou ao catálogo sem nova licença. Fonte/documentação `8613d88d4f553e72e5fedcd1d3ea470010301734`. Falta de espaço Samsung resolvida; textos anteriores são históricos. Gameplay em dupla permanece pendente, conferências físicas a cargo do mantenedor. Criar sala nova com dois aplicativos R63; sem novo deploy Linux.

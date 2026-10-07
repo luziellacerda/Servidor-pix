@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-07T12:34:58.406587+00:00",
+  "results": {
+    "StationCompactLobbyTest": "PASS 107 executable checks: compact player model, real room codes, stale presence, invite policy and snapshot ordering",
+    "StationHostConnectorTest": "{\"passed\":true,\"checks\":10,\"scope\":\"Real loopback TCP: late listener without JNI, retained stream, false native hint, deadline and cancellation\"}",
+    "StationJoinPlayerTest": "PASS 20 checks: guest entry, two solo rooms, shared membership and unavailable destinations",
+    "StationLaunchPolicyTest": "PASS 15: host/guest launch eligibility and generation identity",
+    "StationRelayDiagnosticsTest": "PASS: relay close diagnostics, pong observation, unchanged timeout, idempotence, credential privacy; no production traffic",
+    "StationRoomCreationTest": "PASS 14 room creation acknowledgment checks",
+    "StationShortInvitationTest": "PASS 23 checks: short invitations, manual input, authenticated resolution and TS1 compatibility",
+    "StationSocialTest": "PASS 113 social client checks"
+  },
+  "androidExecuted": false,
+  "productionModified": false
+}

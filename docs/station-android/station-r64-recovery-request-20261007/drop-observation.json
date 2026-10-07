@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-07",
+  "localTimezone": "America/Fortaleza (UTC-03)",
+  "appVersion": "R63",
+  "installedAPK": "d9a35602ddc1141617df70d4b2b1f202d8646c538d4508f5fb3e53ef6b7abc4c",
+  "userReportedOnlineWorks": true,
+  "userReportedButtonsRespond": true,
+  "userRequestedNormalModeControlAppearance": true,
+  "timeline": [
+    {
+      "localTime": "10-07 09:21:45.366",
+      "event": "game stage=native-listening role=host"
+    },
+    {
+      "localTime": "10-07 09:21:45.408",
+      "event": "game stage=local-stream-ready role=host"
+    },
+    {
+      "localTime": "10-07 09:21:45.549",
+      "event": "game stage=host-listening-ack"
+    },
+    {
+      "localTime": "10-07 09:24:07.422",
+      "event": "game stage=relay-failed reason=RELAY role=host"
+    }
+  ],
+  "nativeStackOverflowWarningCount": 55,
+  "firstNativeWarningTime": "10-07 09:22:40.137",
+  "lastNativeWarningTime": "10-07 09:23:30.443",
+  "exactCloseTriggerKnown": false,
+  "rawLogsPublished": false,
+  "appStillResumedAtCapture": true,
+  "serverCodeInspected": "a3e83d96b8025cde058e267eaa74e4505f654b15",
+  "productionLogsRead": false
+}
