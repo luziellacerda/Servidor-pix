@@ -36,8 +36,9 @@ def verify(index,values,base,execute_sql=None):
         except HTTPError as error:response=error
         with response:
             if response.url!=base+path or response.headers.get('X-Correlation-ID')!=correlation:raise ValueError('Redirect/correlation changed')
-            data=response.read(2*1024*1024+1)
-            if len(data)>2*1024*1024:raise ValueError('Bounded security response exceeded limit')
+            maximum=(16 if path.startswith('/v1/station/catalog') else 2)*1024*1024
+            data=response.read(maximum+1)
+            if len(data)>maximum:raise ValueError('Bounded security response exceeded limit')
             return response.code,response.headers,data
     def signed(response,domain):return client.signed(expect(response,200),domain)
     def proof(credential,method,path,body=None,nonce=None):
