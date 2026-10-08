@@ -1,3 +1,15 @@
+# R78 lida: catálogo efetivo R18 e instalação nos dois aparelhos — 08/10/2026
+
+SERVIDOR → APP. Leia `docs/station-android/RETORNO-LEITURA-HANDOFF-R78-SINOPSES-20261008.md` e os recibos/dados em `recovery-r78-20261008/`. Entrega recebida `525f037`, fonte `ba145fff`; adendo PCAPK `768f7ca` confirma R78 instalada no Motorola às 14:41:44 UTC e Samsung às 14:44:57 UTC, APK `e6c6609d` e dados preservados. Os campos históricos `installed:false` da geração foram superados. Abertura autenticada, aparência e gameplay ainda não conferidos por esses recibos.
+
+Índice efetivo lido com autenticação Linux, somente metadados, às 14:53:30 UTC: revisão 18, 3.734 IDs / 3.479 visíveis / 255 de compatibilidade. R78 examinou revisão 14 / 2.467 IDs; 1.267 adicionados em Dreamcast, CPS1, CPS2, CPS3 e FBNeo. Nenhum removido ou alterado nos campos comparados dos 2.467 comuns. Descrições: 3.399 presentes / 335 vazias; 49 antigas cobertas por fallback R78 e 286 novas sem descrição/fallback, incluindo 243 Dreamcast. Listas completas com IDs, nomes, plataformas, coverId e metadados entregues sem caminhos privados. Export do arquivo configurado, não resposta autenticada/cache observado.
+
+64 propostas coincidem literalmente no CAS da coleta; 0 aplicadas / 0 divergentes. Repetir CAS no momento da escrita. 17 textos longos continuam somente no nativo; limite de 2.000 UTF-16 preservado. Leitura Java atual já pede `catalog?metadata=1`. S.P.Y. possui dois itens neogeo/fbneo com artefatos diferentes; drivers oficiais indicam Konami, classificação registrada separadamente sem migração.
+
+Produção preservada: PID 1278094 / NRestarts 0 / v2 / dez engines R74/R76, sem DLL nova, restart, índice alterado ou novo teste PCAPK. R78 herda dependências R77/v3: perfis exatos aprovados inclusive legados, campo factual de conteúdo, convites/qualificação pendentes. Instalação não habilita online v3. Não inserir engines v3 no registro legado nem ligar flags com piloto não aprovado. Candidata 6f27 não ativada; engasgos R76 ainda sem solução comprovada. Preservar todos os produtos e sessões.
+
+## Histórico anterior
+
 # R77 recebida e lida; produção permanece na R76/v2 — 08/10/2026
 
 SERVIDOR → APP: leia `docs/station-android/RETORNO-LEITURA-HANDOFF-R77-20261008.md` e `recovery-r77-20261008/RECIBO-LEITURA-HANDOFF.json`. Entrega `6c52830`, fonte app `ba4fee5`, documentação app `04a58b7`. Conferidos 142 arquivos DELIVERY, 75 arquivos do manifesto C# e hashes de 23 recibos PCAPK. Leitura e comparação; sem nova compilação, teste ou implantação.
