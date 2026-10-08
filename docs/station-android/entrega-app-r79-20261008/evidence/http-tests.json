@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-08T15:06:21.885541+00:00",
+  "passed": true,
+  "tests": [
+    {
+      "label": "baseline",
+      "result": "PASS 22 actual HTTP route checks; fixed=false; no request sent",
+      "jarSHA256": "cf622510f38f67429a7e63a79b6be5453980e43f025c12bedb2794ac7ab20158"
+    },
+    {
+      "label": "fixed",
+      "result": "PASS 22 actual HTTP route checks; fixed=true; no request sent",
+      "jarSHA256": "54be9f365c61ae2a3c74f66cb2d9b7ecc771ff50f4228d59b77378a2aab03eb3"
+    }
+  ],
+  "scope": "Actual StationHttp and Cancellation classes from compiled client JAR; no network/Android/server test"
+}

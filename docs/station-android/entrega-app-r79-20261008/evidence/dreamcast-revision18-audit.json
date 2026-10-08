@@ -1,0 +1,516 @@
+{
+  "serverReturn": "af58034595614098ea4df4d959e50947670c080f",
+  "catalogRevision": 18,
+  "catalogSource": "configured server index metadata; not authenticated live response",
+  "dreamcastRecords": 243,
+  "exactTitleDescriptionFallbackMatches": 142,
+  "unmatched": [
+    {
+      "itemId": "station_d200672b6feada42ed7102b5e6d034e2",
+      "platform": "dreamcast",
+      "name": "AeroWings 2 - Airstrike"
+    },
+    {
+      "itemId": "station_a42bf0ff59174a89706c28e19d4b283c",
+      "platform": "dreamcast",
+      "name": "Airforce Delta"
+    },
+    {
+      "itemId": "station_04ecfb322300cdefa2344784bb8b41be",
+      "platform": "dreamcast",
+      "name": "Alone in the Dark - The New Nightmare (Disco 1 de 2)"
+    },
+    {
+      "itemId": "station_1b4aeb7b677b8406e6810f443b22155a",
+      "platform": "dreamcast",
+      "name": "Alone in the Dark - The New Nightmare (Disco 2 de 2)"
+    },
+    {
+      "itemId": "station_dd7497f63bd28edf2a83912dd8b79153",
+      "platform": "dreamcast",
+      "name": "Buzz Lightyear of Star Command"
+    },
+    {
+      "itemId": "station_bff918776f3da95ac81eb98bdf024f1e",
+      "platform": "dreamcast",
+      "name": "Capcom vs. SNK"
+    },
+    {
+      "itemId": "station_c0b4bc1c83241d09396716dd502bd6ae",
+      "platform": "dreamcast",
+      "name": "ChuChu Rocket!"
+    },
+    {
+      "itemId": "station_ed136a9394c2037d484c8f2a151a45b7",
+      "platform": "dreamcast",
+      "name": "Coaster Works"
+    },
+    {
+      "itemId": "station_2d59f12eef6f69e3f1ef193123964691",
+      "platform": "dreamcast",
+      "name": "Conflict Zone - Modern War Strategy"
+    },
+    {
+      "itemId": "station_e64d6154cb52871b946e2b88e578da05",
+      "platform": "dreamcast",
+      "name": "D2 (Disco 1 de 4)"
+    },
+    {
+      "itemId": "station_77a73fb9d8b7e6e1babaa3869f81b492",
+      "platform": "dreamcast",
+      "name": "D2 (Disco 2 de 4)"
+    },
+    {
+      "itemId": "station_ab4dde393bfbe5fec768d06c68d8a22f",
+      "platform": "dreamcast",
+      "name": "D2 (Disco 3 de 4)"
+    },
+    {
+      "itemId": "station_70f4c12ef657696e9c59673d24ef15c4",
+      "platform": "dreamcast",
+      "name": "D2 (Disco 4 de 4)"
+    },
+    {
+      "itemId": "station_7c83a91e5a7d52ebbe397c997239df45",
+      "platform": "dreamcast",
+      "name": "Deep Fighter (Disco 1 de 2)"
+    },
+    {
+      "itemId": "station_8cdc73fcbe8f2c91533612099ded04ec",
+      "platform": "dreamcast",
+      "name": "Deep Fighter (Disco 2 de 2)"
+    },
+    {
+      "itemId": "station_0953492c4c6576065efa98380dba2e52",
+      "platform": "dreamcast",
+      "name": "Donald Duck - Goin' Quackers"
+    },
+    {
+      "itemId": "station_dedeb5d5406c24cd1bfb02343a0b0395",
+      "platform": "dreamcast",
+      "name": "DragonRiders - Chronicles of Pern"
+    },
+    {
+      "itemId": "station_21c3071c3a57a83e67ccc1646164d931",
+      "platform": "dreamcast",
+      "name": "Ducati World - Racing Challenge"
+    },
+    {
+      "itemId": "station_bdc6f2ee9158d13d4e436f299c439d5f",
+      "platform": "dreamcast",
+      "name": "Dynamite Cop!"
+    },
+    {
+      "itemId": "station_b45d526c6d27387e5b19af50e964e7eb",
+      "platform": "dreamcast",
+      "name": "ESPN International Track & Field"
+    },
+    {
+      "itemId": "station_bc75414425bee9e137946fd0daae844f",
+      "platform": "dreamcast",
+      "name": "Elemental Gimmick Gear"
+    },
+    {
+      "itemId": "station_d66ed697f043f62d82128a29a6d1be76",
+      "platform": "dreamcast",
+      "name": "Evolution - The World of Sacred Device"
+    },
+    {
+      "itemId": "station_0cfe2f28401d51af318820706bfd5eca",
+      "platform": "dreamcast",
+      "name": "Evolution 2 - Far Off Promise"
+    },
+    {
+      "itemId": "station_452aa79c93d3770e753cb1aea22ecf25",
+      "platform": "dreamcast",
+      "name": "Expendable"
+    },
+    {
+      "itemId": "station_33d132308c7bd9eec951462443b6abc4",
+      "platform": "dreamcast",
+      "name": "Fatal Fury - Mark of the Wolves"
+    },
+    {
+      "itemId": "station_cba35363deb597f8f95306a8f26cb008",
+      "platform": "dreamcast",
+      "name": "Fighting Force 2 (Versão 1)"
+    },
+    {
+      "itemId": "station_295b59ba6eea68400c2035c7bed5c7a3",
+      "platform": "dreamcast",
+      "name": "Fighting Force 2 (Versão 2)"
+    },
+    {
+      "itemId": "station_a16868e55b0029bcd14cf33ec73ae3d6",
+      "platform": "dreamcast",
+      "name": "GigaWing 2"
+    },
+    {
+      "itemId": "station_3af20913f84c1ad9633675e8ff367db4",
+      "platform": "dreamcast",
+      "name": "GigaWing"
+    },
+    {
+      "itemId": "station_2dedf2839146d34730c4e6a1bfda04ff",
+      "platform": "dreamcast",
+      "name": "Grandia II"
+    },
+    {
+      "itemId": "station_5cb2b9feeab6623cc3fb637464ca59e0",
+      "platform": "dreamcast",
+      "name": "Industrial Spy - Operation Espionage"
+    },
+    {
+      "itemId": "station_a554e55007d010b0cfd8c7b459419f1d",
+      "platform": "dreamcast",
+      "name": "Jet Grind Radio"
+    },
+    {
+      "itemId": "station_ccac76b40703cce95397ac0a50398df4",
+      "platform": "dreamcast",
+      "name": "King of Fighters Evolution, The"
+    },
+    {
+      "itemId": "station_c752932ef3acc84d6a01e6a44ca0d4aa",
+      "platform": "dreamcast",
+      "name": "Last Blade 2, The - Heart of the Samurai"
+    },
+    {
+      "itemId": "station_3ce57356d2c3c7f6738bddcbfb632c36",
+      "platform": "dreamcast",
+      "name": "Looney Tunes Space Race"
+    },
+    {
+      "itemId": "station_230924a63b3a42c13c0498005015eac0",
+      "platform": "dreamcast",
+      "name": "MTV Sports - Skateboarding Featuring Andy Macdonald"
+    },
+    {
+      "itemId": "station_017d4ad0c35b9e0537519cbae94bbfd4",
+      "platform": "dreamcast",
+      "name": "Marvel vs. Capcom 2"
+    },
+    {
+      "itemId": "station_19000979c1ca293fe87b39cbf1261df9",
+      "platform": "dreamcast",
+      "name": "Monaco Grand Prix"
+    },
+    {
+      "itemId": "station_260d6bef2e8b1fbc37291df14da0fa81",
+      "platform": "dreamcast",
+      "name": "Mr Driller"
+    },
+    {
+      "itemId": "station_638a548059c37d3d2e3259f2afd55e55",
+      "platform": "dreamcast",
+      "name": "NFL 2K (Versão 1)"
+    },
+    {
+      "itemId": "station_2566875b68d223bcec73a5984b85b32d",
+      "platform": "dreamcast",
+      "name": "NFL 2K (Versão 2)"
+    },
+    {
+      "itemId": "station_a66342b859420441b5ef8eaa57827ba7",
+      "platform": "dreamcast",
+      "name": "NFL 2K (Versão 3)"
+    },
+    {
+      "itemId": "station_507f12c624c9507f41e1b772413ce21f",
+      "platform": "dreamcast",
+      "name": "NFL 2K (Versão 4)"
+    },
+    {
+      "itemId": "station_33d706b26f2fca7ed46a303365fba64e",
+      "platform": "dreamcast",
+      "name": "Next Tetris, The - On-line Edition"
+    },
+    {
+      "itemId": "station_a13fd153caeaa066b77aa66ad6d4ec06",
+      "platform": "dreamcast",
+      "name": "Nightmare Creatures II"
+    },
+    {
+      "itemId": "station_6b90c57070bf3754d9827c1e1631f0e9",
+      "platform": "dreamcast",
+      "name": "POD - Speedzone (Versão 2)"
+    },
+    {
+      "itemId": "station_80db7b3d26f3d7baea291c99079d3984",
+      "platform": "dreamcast",
+      "name": "PenPen TriIcelon"
+    },
+    {
+      "itemId": "station_3de779fc30ecef8cd9ba9983bc5c442a",
+      "platform": "dreamcast",
+      "name": "Phantasy Star Online Ver. 2"
+    },
+    {
+      "itemId": "station_366e8048e48996eb8cafe8af72e1da33",
+      "platform": "dreamcast",
+      "name": "Project Justice"
+    },
+    {
+      "itemId": "station_662faa15e8c2dd5f535b2500282f416e",
+      "platform": "dreamcast",
+      "name": "Quake III Arena"
+    },
+    {
+      "itemId": "station_b196cbb9aede47637a2f9e10c364445b",
+      "platform": "dreamcast",
+      "name": "Railroad Tycoon II - Gold Edition"
+    },
+    {
+      "itemId": "station_1dbf87198a2f3782127b09c7796cc70b",
+      "platform": "dreamcast",
+      "name": "Rayman 2 - The Great Escape"
+    },
+    {
+      "itemId": "station_dcdcc159757adac735f13adc78295121",
+      "platform": "dreamcast",
+      "name": "Razor Freestyle Scooter"
+    },
+    {
+      "itemId": "station_7adb7ec83582d31b8ff1444dbcbe88eb",
+      "platform": "dreamcast",
+      "name": "Ready 2 Rumble Boxing (Versão 1)"
+    },
+    {
+      "itemId": "station_0c51dbadb7889354c5c8d1bda7f09e3b",
+      "platform": "dreamcast",
+      "name": "Ready 2 Rumble Boxing (Versão 2)"
+    },
+    {
+      "itemId": "station_831dad3abeace4fe1e42245c3175c04e",
+      "platform": "dreamcast",
+      "name": "Ready 2 Rumble Boxing (Versão 3)"
+    },
+    {
+      "itemId": "station_8e1757391f8e75bec508538e6b562224",
+      "platform": "dreamcast",
+      "name": "Record of Lodoss War"
+    },
+    {
+      "itemId": "station_0289a0b3953d87cd8e21968d53db7ed7",
+      "platform": "dreamcast",
+      "name": "Reel Fishing - Wild"
+    },
+    {
+      "itemId": "station_7f4cc48d1231d923ce5cdaffb7a37377",
+      "platform": "dreamcast",
+      "name": "Resident Evil - Code Veronica (Disco 1 de 2)"
+    },
+    {
+      "itemId": "station_60ef7b56bb6f80cd872b0d0a308ceda3",
+      "platform": "dreamcast",
+      "name": "Resident Evil - Code Veronica (Disco 2 de 2)"
+    },
+    {
+      "itemId": "station_cb4eb07055677be03620ae1a139eb634",
+      "platform": "dreamcast",
+      "name": "Resident Evil 2 (Disco 1 de 2)"
+    },
+    {
+      "itemId": "station_dc13c5680ad58a48188fa5173c0dd476",
+      "platform": "dreamcast",
+      "name": "Resident Evil 2 (Disco 2 de 2)"
+    },
+    {
+      "itemId": "station_b77346021ad26cdcff82b52b1b522382",
+      "platform": "dreamcast",
+      "name": "Ring, The - Terror's Realm"
+    },
+    {
+      "itemId": "station_ec9a44d272e103292be41c72723bdaee",
+      "platform": "dreamcast",
+      "name": "Rippin' Riders Snowboarding"
+    },
+    {
+      "itemId": "station_a00a2ad28a305798f6958ea5d24eaeae",
+      "platform": "dreamcast",
+      "name": "Shenmue (Disco 1 de 4)"
+    },
+    {
+      "itemId": "station_2a7b991c444781d0a8c7d2896d5828fe",
+      "platform": "dreamcast",
+      "name": "Shenmue (Disco 2 de 4)"
+    },
+    {
+      "itemId": "station_d8e0b511fdf1fe09fbd5cbbce0763682",
+      "platform": "dreamcast",
+      "name": "Shenmue (Disco 3 de 4)"
+    },
+    {
+      "itemId": "station_ae879fb139c155e29f0fcac79ffeec7c",
+      "platform": "dreamcast",
+      "name": "Shenmue (Disco 4 de 4)"
+    },
+    {
+      "itemId": "station_78b7c695e5d8c5ae8b0419fded758cad",
+      "platform": "dreamcast",
+      "name": "Skies of Arcadia (Disco 1 de 2)"
+    },
+    {
+      "itemId": "station_5903f2e5c538beb82117c37ea50fcb33",
+      "platform": "dreamcast",
+      "name": "Skies of Arcadia (Disco 2 de 2)"
+    },
+    {
+      "itemId": "station_14dd1839d4487040394e195ad6ca422c",
+      "platform": "dreamcast",
+      "name": "Soul Calibur (Versão 1)"
+    },
+    {
+      "itemId": "station_792e43445bed0faa5a01b1590b457b41",
+      "platform": "dreamcast",
+      "name": "Soul Calibur (Versão 2)"
+    },
+    {
+      "itemId": "station_8733156f40d4d906e09309118d13c213",
+      "platform": "dreamcast",
+      "name": "Speed Devils - Online Racing"
+    },
+    {
+      "itemId": "station_e7e4a95c5a4dc19e88252ba442a6da0c",
+      "platform": "dreamcast",
+      "name": "Star Wars - Episode I - Jedi Power Battles"
+    },
+    {
+      "itemId": "station_6f7a4e2edc98cc56706d5e86215f7933",
+      "platform": "dreamcast",
+      "name": "Star Wars - Episode I - Racer"
+    },
+    {
+      "itemId": "station_95303351a29aa598e39c49f879695a9a",
+      "platform": "dreamcast",
+      "name": "Street Fighter Alpha 3"
+    },
+    {
+      "itemId": "station_9393a16709fc3357c06c68f479309ae4",
+      "platform": "dreamcast",
+      "name": "Street Fighter III - 3rd Strike"
+    },
+    {
+      "itemId": "station_2f7821c22769a1da65c254912811bcd0",
+      "platform": "dreamcast",
+      "name": "Street Fighter III - Double Impact"
+    },
+    {
+      "itemId": "station_d9df73e4b0f75bf27ce7d70d3793ec90",
+      "platform": "dreamcast",
+      "name": "Stupid Invaders (Disco 1 de 2)"
+    },
+    {
+      "itemId": "station_aebd413245a839716a307d674e7bd216",
+      "platform": "dreamcast",
+      "name": "Stupid Invaders (Disco 2 de 2)"
+    },
+    {
+      "itemId": "station_a2a904a622ce3495c4d4283f8376927c",
+      "platform": "dreamcast",
+      "name": "Suzuki ALSTARE Extreme Racing"
+    },
+    {
+      "itemId": "station_f9ddd8ec9bb91513b25cfad02d78f791",
+      "platform": "dreamcast",
+      "name": "Sword of the Berserk - Guts' Rage"
+    },
+    {
+      "itemId": "station_dc32b8aa0106947e064debc9b7be355d",
+      "platform": "dreamcast",
+      "name": "Tee Off"
+    },
+    {
+      "itemId": "station_65e5a7f87f18300cd8ff10a79195f8cb",
+      "platform": "dreamcast",
+      "name": "Test Drive Le Mans"
+    },
+    {
+      "itemId": "station_386e1fcc4580721e8ee2ccb2442821e8",
+      "platform": "dreamcast",
+      "name": "Test Drive V-Rally"
+    },
+    {
+      "itemId": "station_4f9c064f3b8d84de14442a58f716ab7b",
+      "platform": "dreamcast",
+      "name": "TimeStalkers"
+    },
+    {
+      "itemId": "station_19474164e353d34cdfca86f40e101678",
+      "platform": "dreamcast",
+      "name": "Tom Clancy's Rainbow Six - Rogue Spear"
+    },
+    {
+      "itemId": "station_3cb78e3be8fe2c8f9f7eaf9045547e41",
+      "platform": "dreamcast",
+      "name": "Tom Clancy's Rainbow Six"
+    },
+    {
+      "itemId": "station_64b6c739fd188f9636b91cbf2ea9b9f3",
+      "platform": "dreamcast",
+      "name": "Tomb Raider - The Last Revelation"
+    },
+    {
+      "itemId": "station_67e4ee7d44474a871dbbd8433621edb6",
+      "platform": "dreamcast",
+      "name": "Tomb Raider Chronicles"
+    },
+    {
+      "itemId": "station_59a2e7e306dd4c9b1c0833b6c9afa5d4",
+      "platform": "dreamcast",
+      "name": "Toy Commander (Versão 1)"
+    },
+    {
+      "itemId": "station_002d1d405d347930a438061befe8ef02",
+      "platform": "dreamcast",
+      "name": "Toy Commander (Versão 2)"
+    },
+    {
+      "itemId": "station_ee64f9362c695e19ef8816b777db97f5",
+      "platform": "dreamcast",
+      "name": "TrickStyle (Versão 1)"
+    },
+    {
+      "itemId": "station_2806e3c4feb570f4c2b4a24eeb8d7381",
+      "platform": "dreamcast",
+      "name": "TrickStyle (Versão 2)"
+    },
+    {
+      "itemId": "station_a46cc5224458d79995ca07e43c77a9cd",
+      "platform": "dreamcast",
+      "name": "Typing of the Dead, The"
+    },
+    {
+      "itemId": "station_071dbe9ffd4c61dcf033fc1b6f66bf15",
+      "platform": "dreamcast",
+      "name": "Vigilante 8 - 2nd Offense"
+    },
+    {
+      "itemId": "station_37cd106cf1ef78a09b3055aeaed1a9fe",
+      "platform": "dreamcast",
+      "name": "Virtua Athlete 2000"
+    },
+    {
+      "itemId": "station_2b3d5545daacecfb3311b0abb16f8a49",
+      "platform": "dreamcast",
+      "name": "Virtua Striker 2"
+    },
+    {
+      "itemId": "station_05102e1dc7ad0d7dc12702b1bf3556cf",
+      "platform": "dreamcast",
+      "name": "Who Wants to Beat Up a Millionaire"
+    },
+    {
+      "itemId": "station_e368aad668218529a012923729870732",
+      "platform": "dreamcast",
+      "name": "World Series Baseball 2K1 (Versão 1)"
+    },
+    {
+      "itemId": "station_4e2397f60df5d4a685a9e2accba450bd",
+      "platform": "dreamcast",
+      "name": "World Series Baseball 2K1 (Versão 2)"
+    }
+  ],
+  "physicalAllGamesVerified": false,
+  "usedToApprovePlayerCounts": false
+}

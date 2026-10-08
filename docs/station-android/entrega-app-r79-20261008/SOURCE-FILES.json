@@ -1,0 +1,33 @@
+{
+  "files": {
+    "data/dreamcast-descriptions.json": "10b9f8ac6eb1d456ae9a2251cc5427d3cd2aa8e32cc44d5c514354ce5cc10aeb",
+    "evidence/bootstrap-tests.json": "a76a3339614d113ec61f383f0f38380136290d5920006a6ecebdb601d15f7160",
+    "evidence/carousel-build.json": "89cecba20cb07634b53956d71f0ebd21a6407608fd61d9cedaaab210c8269daa",
+    "evidence/dreamcast-revision18-audit.json": "eee49e1739a612585267513c8ff8807d2f674e2d7424d8ebdc4ba04be545d68e",
+    "evidence/dreamcast-source.json": "166ff557318efe9a5bd38523500b732830852cd5e9e00557f8a673f9a2f20eff",
+    "evidence/http-tests.json": "f13bb469c8565bd9354a51086f89d2d7df96409ae3af26194f3419c43533a300",
+    "evidence/installation-motorola-r79.json": "65ace72d129649f620a2dd17d3ca7f1ae872a4bc2f55976aec1ee46cd81a50e9",
+    "evidence/java-dex-build.json": "6b7cf5b7be6b7b5af6b393aaa897058d970ef4d6e9e1e91006a16c4fe582a476",
+    "evidence/package.json": "e7a8b3fe256eebeddd0e1eb99b5d6e94a2d7c96a181afdd5554e0d6035e37792",
+    "evidence/physical-check.json": "2054ab0ce1b7a7f1768616a437f5b6eae2aed14ef996debb63ca23cb0dde7faf",
+    "HANDOFF-APP-R79-PARA-SERVIDOR-20261008.md": "2b26143ea3c7831745038d45f9d4fd76f45a8020607417bdd64d9bd1f236802a",
+    "java/client/src/java/org/emulationstation/frontend/station/StationHttp.java": "04a98a3c8964aa530514bef74bbf9d958f2ace788d882d1c2c6d1528a8d42c59",
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java": "ca9f1aff0ff0a53ad4e528b37d1f2349e110378d8210bff234417f112816f358",
+    "native/native_info.h": "d11f4a3898beccc64f4c4d80bdafeab5a983aa21c9fb51b0a3f61d8182a4fdff",
+    "native/station_dreamcast_descriptions.h": "a83bd2796223c436fe09fc0ad8bb2906309db7b97b3e1f8e237bcdb97c54e6b0",
+    "README.md": "77c57518f615b312a9bda510cfcfe555e5d2f4d5c24cf1f2108be9abe6e46c55",
+    "recipes/build_carousel.py": "0a791fd407df55dcea36df0e9ee4ce1d27761c7dd7ccfc59d3856f4ea889b9e2",
+    "recipes/build_java.py": "ba96fc0a4f4a09a74444ce9e07bc716b3282660c122668fab45ce4ec2e9d44ef",
+    "recipes/install_verified.py": "5b3b61a6ee50282a15742566394e1808f9a8b221fdb063387462662c8d58890e",
+    "recipes/package_candidate.py": "af1dfbaabbc555055ee22c2fdf30c7872de622692f4a47dd1bd01e6431d55129",
+    "recipes/prepare_build.py": "45518eff606667d2e4f1be1fa2e8dc516ae555c9437b86d8f5a78a8dec1cf749",
+    "recipes/prepare_sources.py": "7b4141a08ae5b442e540e17db2ea06adf3a0e6c69dbfd8e423abfa0643ef6c08",
+    "recipes/publish_server_handoff.py": "2e65ef2c4289d748f648e9d1dc2c310c24e80966edd1bd6b0ff3ffe9c7c2bfad",
+    "recipes/test_bootstrap.py": "2ccac949b7f9152452daae1a7ec680c890b9c98fa6c145391fff7f7a698eb4a0",
+    "recipes/test_http.py": "d69cd72ba929c2870aa2ee25ffe50284d5ca7a4fb24099ad66a22a78cf423c9a",
+    "SOURCE-MANIFEST.json": "7db21c177b74593d064f7ddc8826cf6f7306631e0b7eb23a94faa9665da11e5d",
+    "STATUS.json": "d09d8f299ad1029d976088165b257970e9d1e6756f121aff9b6cce2596d2fc93",
+    "tests/dreamcast.cpp": "bacc1e71709884059c74a22015d8bac5698e1ce4a62701521ebc07b19c41454a",
+    "tests/HttpRouteProbe.java": "39cc14c1f55caf45ebff929f9db7f587424c9b23810af2bdeb85e0ab5131e321"
+  }
+}

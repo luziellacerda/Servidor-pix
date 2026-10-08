@@ -1,0 +1,18 @@
+{
+  "source": "E:\\ESTUDO APK\\work\\native-carousel\\implementation\\metadata-sources\\catalog-xml\\11-dreamcast.xml",
+  "sourceSHA256": "1e41f673c07477a20fbf333da04ecd44db7dfd3c45550d2cc1d385e075c71cfa",
+  "sourceRecords": 686,
+  "sourceWithoutDescription": 168,
+  "unambiguousTitles": 461,
+  "conflictingTitles": [
+    "conflict zone",
+    "record of lodoss war",
+    "shenmue",
+    "shenmue ii",
+    "the typing of the dead"
+  ],
+  "observedPhoneCount": 243,
+  "liveCatalogEnumerated": false,
+  "all243Covered": false,
+  "scope": "Description only; no fuzzy match, no region/punctuation removal, no capacity or rating claims"
+}

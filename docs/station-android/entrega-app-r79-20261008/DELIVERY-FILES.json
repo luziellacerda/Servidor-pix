@@ -1,0 +1,165 @@
+{
+  "appCommit": "b377db3981c96374fbe5591700db91dfbe297994",
+  "serverParent": "525f03735cbec194e942c91417d38a4d799c8910",
+  "latestRealServerReturn": "af58034595614098ea4df4d959e50947670c080f",
+  "docsOnly": true,
+  "linuxDeployed": false,
+  "apkUploaded": false,
+  "files": [
+    {
+      "path": "docs/station-android/ENTREGA-APP-R79-SALAS-DREAMCAST-20261008.md",
+      "bytes": 6349,
+      "sha256": "d29c810caff80b07d642d767636782e2134267c7ee1c7c24370e5d449d543a5b"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/HANDOFF-APP-R79-PARA-SERVIDOR-20261008.md",
+      "bytes": 5673,
+      "sha256": "2b26143ea3c7831745038d45f9d4fd76f45a8020607417bdd64d9bd1f236802a"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/README.md",
+      "bytes": 4640,
+      "sha256": "77c57518f615b312a9bda510cfcfe555e5d2f4d5c24cf1f2108be9abe6e46c55"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/SOURCE-FILES.json",
+      "bytes": 3124,
+      "sha256": "1e3a8220798c674a6287049142772e318a36f520fcd809cdc4def8153fb04c91"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/SOURCE-MANIFEST.json",
+      "bytes": 32453,
+      "sha256": "7db21c177b74593d064f7ddc8826cf6f7306631e0b7eb23a94faa9665da11e5d"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/STATUS.json",
+      "bytes": 533,
+      "sha256": "d09d8f299ad1029d976088165b257970e9d1e6756f121aff9b6cce2596d2fc93"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/data/dreamcast-descriptions.json",
+      "bytes": 320285,
+      "sha256": "10b9f8ac6eb1d456ae9a2251cc5427d3cd2aa8e32cc44d5c514354ce5cc10aeb"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/evidence/bootstrap-tests.json",
+      "bytes": 412,
+      "sha256": "a76a3339614d113ec61f383f0f38380136290d5920006a6ecebdb601d15f7160"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/evidence/carousel-build.json",
+      "bytes": 9729,
+      "sha256": "89cecba20cb07634b53956d71f0ebd21a6407608fd61d9cedaaab210c8269daa"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/evidence/dreamcast-revision18-audit.json",
+      "bytes": 15660,
+      "sha256": "eee49e1739a612585267513c8ff8807d2f674e2d7424d8ebdc4ba04be545d68e"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/evidence/dreamcast-source.json",
+      "bytes": 632,
+      "sha256": "166ff557318efe9a5bd38523500b732830852cd5e9e00557f8a673f9a2f20eff"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/evidence/http-tests.json",
+      "bytes": 627,
+      "sha256": "f13bb469c8565bd9354a51086f89d2d7df96409ae3af26194f3419c43533a300"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/evidence/installation-motorola-r79.json",
+      "bytes": 1476,
+      "sha256": "65ace72d129649f620a2dd17d3ca7f1ae872a4bc2f55976aec1ee46cd81a50e9"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/evidence/java-dex-build.json",
+      "bytes": 34063,
+      "sha256": "6b7cf5b7be6b7b5af6b393aaa897058d970ef4d6e9e1e91006a16c4fe582a476"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/evidence/package.json",
+      "bytes": 8639,
+      "sha256": "e7a8b3fe256eebeddd0e1eb99b5d6e94a2d7c96a181afdd5554e0d6035e37792"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/evidence/physical-check.json",
+      "bytes": 867,
+      "sha256": "2054ab0ce1b7a7f1768616a437f5b6eae2aed14ef996debb63ca23cb0dde7faf"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/java/client/src/java/org/emulationstation/frontend/station/StationHttp.java",
+      "bytes": 9588,
+      "sha256": "04a98a3c8964aa530514bef74bbf9d958f2ace788d882d1c2c6d1528a8d42c59"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/java/netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java",
+      "bytes": 89336,
+      "sha256": "ca9f1aff0ff0a53ad4e528b37d1f2349e110378d8210bff234417f112816f358"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/native/native_info.h",
+      "bytes": 21611,
+      "sha256": "d11f4a3898beccc64f4c4d80bdafeab5a983aa21c9fb51b0a3f61d8182a4fdff"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/native/station_dreamcast_descriptions.h",
+      "bytes": 298577,
+      "sha256": "a83bd2796223c436fe09fc0ad8bb2906309db7b97b3e1f8e237bcdb97c54e6b0"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/recipes/build_carousel.py",
+      "bytes": 3229,
+      "sha256": "0a791fd407df55dcea36df0e9ee4ce1d27761c7dd7ccfc59d3856f4ea889b9e2"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/recipes/build_java.py",
+      "bytes": 5897,
+      "sha256": "ba96fc0a4f4a09a74444ce9e07bc716b3282660c122668fab45ce4ec2e9d44ef"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/recipes/install_verified.py",
+      "bytes": 6817,
+      "sha256": "5b3b61a6ee50282a15742566394e1808f9a8b221fdb063387462662c8d58890e"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/recipes/package_candidate.py",
+      "bytes": 7122,
+      "sha256": "af1dfbaabbc555055ee22c2fdf30c7872de622692f4a47dd1bd01e6431d55129"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/recipes/prepare_build.py",
+      "bytes": 1642,
+      "sha256": "45518eff606667d2e4f1be1fa2e8dc516ae555c9437b86d8f5a78a8dec1cf749"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/recipes/prepare_sources.py",
+      "bytes": 10557,
+      "sha256": "7b4141a08ae5b442e540e17db2ea06adf3a0e6c69dbfd8e423abfa0643ef6c08"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/recipes/publish_server_handoff.py",
+      "bytes": 7168,
+      "sha256": "2e65ef2c4289d748f648e9d1dc2c310c24e80966edd1bd6b0ff3ffe9c7c2bfad"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/recipes/test_bootstrap.py",
+      "bytes": 4772,
+      "sha256": "2ccac949b7f9152452daae1a7ec680c890b9c98fa6c145391fff7f7a698eb4a0"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/recipes/test_http.py",
+      "bytes": 1462,
+      "sha256": "d69cd72ba929c2870aa2ee25ffe50284d5ca7a4fb24099ad66a22a78cf423c9a"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/tests/HttpRouteProbe.java",
+      "bytes": 1745,
+      "sha256": "39cc14c1f55caf45ebff929f9db7f587424c9b23810af2bdeb85e0ab5131e321"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r79-20261008/tests/dreamcast.cpp",
+      "bytes": 1797,
+      "sha256": "bacc1e71709884059c74a22015d8bac5698e1ce4a62701521ebc07b19c41454a"
+    }
+  ]
+}

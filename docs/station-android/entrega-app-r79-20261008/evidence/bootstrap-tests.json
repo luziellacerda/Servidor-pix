@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "sourceSHA256": "ca9f1aff0ff0a53ad4e528b37d1f2349e110378d8210bff234417f112816f358",
+  "actualMethodSHA256": "5a1068be97493fac2debb6aeadd0bcb90c8865740f2458abd0ce23c5de794c52",
+  "result": "PASS 29 discovery lifecycle checks; controlled API/UI fixtures",
+  "staticGuards": 5,
+  "scope": "Actual discovery method, controlled API/UI callbacks. Not Android/HTTP/gameplay validation."
+}

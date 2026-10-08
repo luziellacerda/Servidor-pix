@@ -1,0 +1,16 @@
+{
+  "version": "R79",
+  "base": "R78",
+  "compiled": true,
+  "installedMotorola": true,
+  "installedSamsung": false,
+  "serverDeployed": false,
+  "newRoomsRequireServerProfilesIncludingTwoPlayers": true,
+  "dreamcastReferenceTitles": 461,
+  "dreamcastObservedGames": 243,
+  "dreamcastCurrentCatalogEnumerated": true,
+  "dreamcastCompleteCoverageClaimed": false,
+  "latestRealServerReturn": "af58034595614098ea4df4d959e50947670c080f",
+  "dreamcastRevision18FallbackMatches": 142,
+  "dreamcastRevision18Missing": 101
+}
