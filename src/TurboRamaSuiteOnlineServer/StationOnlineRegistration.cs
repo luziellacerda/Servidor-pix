@@ -24,7 +24,8 @@ public static class StationOnlineRegistration
             throw new InvalidOperationException("Invalid or excessive recovery bounds.");
         bool multiplayerEnabled=builder.Configuration.GetValue("Station:Online:MultiplayerEnabled",false);
         bool legacyGate=builder.Configuration.GetValue("Station:Online:MultiplayerLegacyCapacityGate",false);
-        if(multiplayerEnabled&&!legacyGate)throw new InvalidOperationException("Multiplayer requires the authoritative legacy capacity gate.");
+        // v3 always checks its exact approved profiles. The optional legacy gate
+        // can be rolled out separately without blocking existing v1/v2 clients.
         if(multiplayerEnabled&&!recoveryEnabled)throw new InvalidOperationException("Multiplayer requires recovery to be enabled.");
         if(multiplayerEnabled||legacyGate){
             string? profilePath=builder.Configuration["Station:Online:MultiplayerProfileRegistryFile"];

@@ -106,8 +106,14 @@ def verify(index, values, base, sql, identities=True, multiplayer='disabled'):
                 else:
                     value = signed(response, 'online')['snapshot']
                     check(value['multiplayerVersion'] == 3 and value['capability'] == 'station-multiplayer.v3', 'v3 capability version')
-                    check(bool(value['profiles']) == (item_id in expected) and not any(p['approved'] for p in value['profiles']), 'visible real profiles unapproved; compatibility alias not admitted')
-                    capabilities.append(dict(itemId=item_id, status=200, multiplayerVersion=3, capability=value['capability'], approvedProfiles=0, profiles=value['profiles']))
+                    check(bool(value['profiles']) == (item_id in expected), 'compatibility alias not admitted')
+                    if multiplayer == 'enabled':
+                        active = json.loads(Path(values['Station__Online__MultiplayerProfileRegistryFile']).read_text())
+                        check(value['profiles'] == [p for p in active if p['itemId'] == item_id and item_id in expected], 'exact active profiles signed')
+                        check(all(p['approved'] for p in value['profiles']), 'profiles released by operator')
+                    else:
+                        check(not any(p['approved'] for p in value['profiles']), 'unapproved profiles stay unapproved')
+                    capabilities.append(dict(itemId=item_id, status=200, multiplayerVersion=3, capability=value['capability'], approvedProfiles=sum(bool(p['approved']) for p in value['profiles']), profiles=value['profiles']))
             if multiplayer == 'unapproved':
                 row = next(r for r in index['items'] if r['itemId'] == pilot_ids[0])
                 engine = next(e for e in json.loads(Path(values['Station__Online__EngineRegistryFile']).read_text()) if e['id'].endswith('rs4-804b2acfea4c') and e['platform'] == 'snes')

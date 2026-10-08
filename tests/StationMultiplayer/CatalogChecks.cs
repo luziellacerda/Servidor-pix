@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using TurboRamaSuiteOnlineServer;
+using TurboRamaSuiteOnlineServer.Online;
 
 internal static class CatalogChecks
 {
@@ -57,6 +58,50 @@ internal static class CatalogChecks
             }
             document["revision"]=3;document["items"]![0]!.AsObject().Remove("contentSha256");Save();
             check(monitor.Reload()&&monitor.Current.Revision==3&&monitor.Current.Catalog.Single().ContentSha256 is null,"later catalog can withdraw an identity without inventing one");
+            document["items"]![0]!["contentSha256"]=payloadHash;Save();
+            var enginesPath=Path.Combine(directory,"engines.json");
+            var profilesPath=Path.Combine(directory,"profiles.json");
+            var engine=new OnlineEngine("synthetic-engine","snes",new string('c',64),new string('d',64),"station-stream.v2");
+            var profile=new StationMultiplayerProfile(entry.ItemId,payloadHash,"snes",engine.Id,engine.CoreSha256,engine.RuntimeSha256,
+                "synthetic-approved-mode",new string('e',64),4,true,"snes-port2-multitap-v1","battle",[2,3,4]);
+            File.WriteAllText(enginesPath,Wire(new[]{engine}));File.WriteAllText(profilesPath,Wire(new[]{profile}));
+            foreach(bool gated in new[]{false,true}){
+                var builder=WebApplication.CreateBuilder();builder.Logging.ClearProviders();
+                builder.Configuration["Station:Online:Enabled"]="true";
+                builder.Configuration["Station:Online:EngineRegistryFile"]=enginesPath;
+                builder.Configuration["Station:Online:RecoveryEnabled"]="true";
+                builder.Configuration["Station:Online:RelayEnabled"]="true";
+                builder.Configuration["Station:Online:MultiplayerEnabled"]="true";
+                builder.Configuration["Station:Online:MultiplayerLegacyCapacityGate"]=gated.ToString();
+                builder.Configuration["Station:Online:MultiplayerProfileRegistryFile"]=profilesPath;
+                builder.AddStationOnline(StationLibrary.TryLoad(index,verifyContent:false)!);
+                using var services=builder.Services.BuildServiceProvider();
+                var legacy=services.GetRequiredService<StationOnline>();
+                var person=new OnlineIdentity("synthetic-registration","synthetic-registration");
+                legacy.Command(person,new("enter",Guid.NewGuid().ToString(),Nickname:"Registration"));
+                var create=new OnlineCommand("create",Guid.NewGuid().ToString(),ItemId:entry.ItemId,EngineId:engine.Id,
+                    ContentSha256:payloadHash,OptionsSha256:new string('f',64),CoreSha256:engine.CoreSha256,RuntimeSha256:engine.RuntimeSha256,RecoveryProtocol:"station-stream.v2");
+                if(gated){
+                    bool denied=false;
+                    try{legacy.Command(person,create);}catch(OnlineFailure e){denied=e.Code=="STATION_MULTIPLAYER_PROFILE_REQUIRED";}
+                    check(denied,"explicit legacy gate still rejects unqualified legacy mode");
+                }else{
+                    var created=JsonSerializer.SerializeToElement(legacy.Command(person,create),StrictJson.Options);
+                    check(created.GetProperty("room").ValueKind==JsonValueKind.Object,"enabling v3 without gate preserves legacy admission");
+                    legacy.Command(person,new("leave",Guid.NewGuid().ToString()));
+                }
+                var multi=services.GetRequiredService<StationMultiplayer>();
+                var command=new StationMultiplayerCommand("create",Guid.NewGuid().ToString(),ItemId:profile.ItemId,ContentSha256:profile.ContentSha256,
+                    EngineId:profile.EngineId,CoreSha256:profile.CoreSha256,RuntimeSha256:profile.RuntimeSha256,ProfileId:profile.ProfileId,ProfileSha256:profile.ProfileSha256,Capacity:4);
+                var security=new StationSessionSecurity("rsa-pss-v1","synthetic-key-only");
+                bool wrongProfileDenied=false;
+                try{multi.Command(person,command with{ProfileSha256=new string('f',64)},security);}catch(OnlineFailure e){wrongProfileDenied=e.Code=="STATION_MULTIPLAYER_PROFILE_UNAPPROVED";}
+                check(wrongProfileDenied,"optional legacy gate does not weaken exact v3 profile admission");
+                check(JsonSerializer.SerializeToElement(multi.Command(person,command,security),StrictJson.Options).GetProperty("room").GetProperty("capacity").GetInt32()==4,"actual registration admits approved v3 mode");
+                check(JsonSerializer.SerializeToElement(multi.Snapshot(),StrictJson.Options).GetProperty("activeRooms").GetInt32()==1,"operator telemetry sees v3 rooms before a restart");
+                multi.Command(person,command with{Action="leave",RequestId=Guid.NewGuid().ToString(),RoomId=JsonSerializer.SerializeToElement(multi.Command(person,command,security),StrictJson.Options).GetProperty("room").GetProperty("roomId").GetString(),Generation=1},security);
+                check(JsonSerializer.SerializeToElement(multi.Snapshot(),StrictJson.Options).GetProperty("activeRooms").GetInt32()==0,"operator telemetry clears ended v3 room");
+            }
             File.Delete(game);
             check(JsonSerializer.SerializeToElement(current.PublicValue(true),StrictJson.Options).GetProperty("contentSha256").GetString()==payloadHash,"catalog serialization performs no ROM read");
         } finally {Directory.Delete(directory,true);}

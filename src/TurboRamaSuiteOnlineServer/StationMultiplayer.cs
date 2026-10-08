@@ -194,6 +194,9 @@ public sealed class StationMultiplayer
     // while AdmissionGate is held. Network loss never invokes this membership change.
     public void ApplyBlock(OnlineIdentity identity,string otherPeerId){lock(gate){if(peers.TryGetValue(identity,out var peer)&&peer.Room is {} id&&rooms.TryGetValue(id,out var room)&&room.Members.Any(m=>m.Peer.Id==otherPeerId)){Leave(peer,room);revision++;}}}
     public bool HasRoom(OnlineIdentity identity){lock(gate)return peers.TryGetValue(identity,out var p)&&p.Room is not null;}
+    public object Snapshot(){lock(gate)return new{protocol=Protocol,activeRooms=rooms.Count,activeConnections=attachments.Count,
+        approvedProfiles=profiles.Values.Count(p=>p.Approved&&CatalogMatches(p)),profileCount=profiles.Count,
+        retainedBytes=budget.UsedBytes,maximumRetainedBytes=budget.MaximumBytes};}
     private object? GrantView(Peer peer,string? linkId){var grant=grants.Values.FirstOrDefault(g=>g.Lease.OwnerPeerId==peer.Id&&g.Lease.LinkId==linkId);return grant is null?null:TicketView(Find(grant.Lease.RoomId),grant);}
     private object TicketView(Room room,Grant g)=>new{path=RelayPath,protocol=Protocol,ticket=g.Token,expiresInSeconds=Math.Max(0,(g.Expires-clock())/1000),linkId=g.Lease.LinkId,ownerSlot=g.Lease.OwnerSlot,hostSide=g.Lease.HostSide,windowBytes=WindowBytes,epoch=room.Stream!.Snapshot().Epoch};
     private object View(Peer peer,string? item,object? ticket,IReadOnlySet<string>? blocked)

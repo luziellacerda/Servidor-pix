@@ -42,6 +42,8 @@ public static class StationOnlineEndpoints
             var snapshot=JsonSerializer.SerializeToElement(legacy).EnumerateObject()
                 .ToDictionary(property=>property.Name,property=>property.Value);
             snapshot["recovery"]=JsonSerializer.SerializeToElement(context.RequestServices.GetRequiredService<StationRecoveryRelay>().Snapshot());
+            if(app.Configuration.GetValue("Station:Online:MultiplayerEnabled",false))
+                snapshot["multiplayer"]=JsonSerializer.SerializeToElement(context.RequestServices.GetRequiredService<StationMultiplayer>().Snapshot());
             return Results.Json(snapshot);
         });
         // Operator-only bounded metadata. Public hostnames and forwarded requests are rejected.
