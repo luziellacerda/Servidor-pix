@@ -97,7 +97,7 @@ def verify(index, values, base, sql):
         raise ValueError('R81 v3 receive deadline')
 
     def socket(client, room, link, action='ticket'):
-        ticket = command(client, action, room=room, linkId=link)['ticket']['ticket']
+        ticket = command(client, action, profile=room, room=room, linkId=link)['ticket']['ticket']
         headers = {'Authorization': 'StationRelay '+ticket, 'X-Station-Request-Proof': proof(client, ticket, 'GET', relay)}
         ws = adapter.connect(base.replace('https:', 'wss:').replace('http:', 'ws:')+relay,
             subprotocols=['station-stream.v3'], additional_headers=headers, compression=None, proxy=None,
