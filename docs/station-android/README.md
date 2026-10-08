@@ -1,3 +1,9 @@
+# Retorno R79: produção na revisão 19
+
+[Implementação, leitura correta do catálogo e estado da candidata online](RETORNO-IMPLEMENTACAO-R79-SINOPSES-E-MULTIPLAYER-20261008.md). **206 sinopses aplicadas**, índice persistente e catálogo assinado conferidos. [Catálogo completo e recibos](recovery-r79-20261008/). Fonte candidata v3 b472d8a compilada/testada, preservando observabilidade; DLL/flags/perfis/importador candidatos não ativados. Produção segue v2, com R76 preservada e R79 ainda dependente de integração/qualificação de perfis. Restam 144 sinopses.
+
+## Histórico anterior
+
 # R78 lida: catálogo efetivo R18 e instalação nos dois aparelhos — 08/10/2026
 
 SERVIDOR → APP. Leia `docs/station-android/RETORNO-LEITURA-HANDOFF-R78-SINOPSES-20261008.md` e os recibos/dados em `recovery-r78-20261008/`. Entrega recebida `525f037`, fonte `ba145fff`; adendo PCAPK `768f7ca` confirma R78 instalada no Motorola às 14:41:44 UTC e Samsung às 14:44:57 UTC, APK `e6c6609d` e dados preservados. Os campos históricos `installed:false` da geração foram superados. Abertura autenticada, aparência e gameplay ainda não conferidos por esses recibos.

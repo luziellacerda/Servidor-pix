@@ -1,0 +1,19 @@
+{
+  "utc": "2026-10-08T18:21:17.831833+00:00",
+  "passed": true,
+  "service": "turborama-station-api.service",
+  "pid": 1278094,
+  "base": "https://app.lzgames.com.br",
+  "revision": 19,
+  "signedVisibleItems": 3479,
+  "allVisibleMetadataMatched": true,
+  "appliedDescriptionsVisible": 200,
+  "appliedCompatibilityDescriptionsNotInCatalog": 6,
+  "metadataOptInVerified": true,
+  "serverSignatureVerified": true,
+  "requestProof": "rsa-pss-v1",
+  "gameBytesRead": false,
+  "roomsCreated": false,
+  "androidCacheObserved": false,
+  "syntheticFixtureRemoved": true
+}

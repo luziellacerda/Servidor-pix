@@ -1,0 +1,147 @@
+{
+  "utc": "2026-10-08T18:38:17.748469+00:00",
+  "sourceCommit": "b472d8a653e065cccb00dfb15dbea3d56c03db98",
+  "status": "integrated-compiled-tested-candidate-not-deployed",
+  "dllSha256": "9878ae9caea55bb6834745caa3a60140616d3e0a5f2ea71055fe9e9df813fe51",
+  "sdk": "8.0.131",
+  "runtime": "8.0.31",
+  "activeDllReplaced": false,
+  "profileRegistryChanged": false,
+  "activeImporterReplaced": false,
+  "newMultiplayerFlagsEnabled": false,
+  "approvedRealGameProfiles": 0,
+  "physicalAndroidGameplayQualified": false,
+  "publicV3Qualification": false,
+  "legacyNoLoggingTlsDivergenceStillUnresolved": true,
+  "tests": [
+    {
+      "command": "dotnet run --project tests/StationMultiplayer/StationMultiplayer.Tests.csproj -c Release",
+      "passed": true,
+      "checks": 288,
+      "scope": "synthetic hub/streams/content binding/catalog signer/budget/retirement"
+    },
+    {
+      "command": "dotnet run --project tests/StationMultiplayer/StationMultiplayer.Http.Tests.csproj -c Release",
+      "passed": true,
+      "checks": 152,
+      "scope": "loopback TLS, 4 synthetic users/6 WS links, signed HTTP/proofs/reconnect/chat"
+    },
+    {
+      "command": "dotnet run --project tests/StationRecovery/StationRecovery.Tests.csproj -c Release",
+      "passed": true,
+      "checks": 91,
+      "observationChecks": 589,
+      "scope": "v2 state/vectors plus preserved bounded observations"
+    },
+    {
+      "command": "dotnet run --project tests/StationOnline/StationOnline.Tests.csproj -c Release",
+      "passed": true,
+      "checks": 41,
+      "scope": "legacy/social synthetic hub"
+    },
+    {
+      "command": "dotnet run --project tests/StationOnline/HttpTests.csproj -c Release",
+      "passed": true,
+      "checks": 53,
+      "scope": "legacy/social loopback HTTP"
+    },
+    {
+      "command": "env -u STATION_TEST_PG dotnet run --project tests/TurboRamaSuiteOnlineServer.Tests/TurboRamaSuiteOnlineServer.Tests.csproj -c Release",
+      "passed": true,
+      "scope": "existing extraction, auth/proofs, transfer/NAT, golden vectors, cross-product and shared-store/concurrency regressions; Postgres integration not run"
+    },
+    {
+      "command": "python3 -B tests/TurboRamaSuiteOnlineServer.Tests/station_synopsis_update_tests.py",
+      "passed": true,
+      "tests": 9
+    },
+    {
+      "command": "python3 -B tests/TurboRamaSuiteOnlineServer.Tests/station_content_identity_tests.py",
+      "passed": true,
+      "tests": 4
+    },
+    {
+      "command": "python3 -B tests/TurboRamaSuiteOnlineServer.Tests/station_library_discovery_tests.py",
+      "passed": true,
+      "tests": 5
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "docs/station-android/scripts/aplicar-sinopses-revisadas.py",
+      "sha256": "42e4f37e066b09f861510d997fa9c35af6f27b8a7c138d4d0a2e6b430cfa78e9"
+    },
+    {
+      "path": "docs/station-android/scripts/atualizar-biblioteca-station.py",
+      "sha256": "fdce74d82478b5a6688bcb67baad55193580aad139603c1d02b379610c868b05"
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationLibrary.cs",
+      "sha256": "9752e84191be73a425087579e9c7ca8198539a5078ff62f2ed2679294120603d"
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayer.cs",
+      "sha256": "ac9554bf4c4d3b10977b55af469d0a0d7fda030b6d7be4903f007927081f2b66"
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayerEndpoints.cs",
+      "sha256": "55ce091c978629ebc90d627e3099321bd9ecc8b497eba1611ab2616323376c6c"
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayerStream.cs",
+      "sha256": "bd4b6709bf5955611322cca007b3ba6befbdfad2a4b6c075608546679eddbf5e"
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationOnline.cs",
+      "sha256": "c2ec6327d46e01ae28316e91f18de48b3468f1daec75c738a58b3a7912ec43a2"
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationOnlineEndpoints.cs",
+      "sha256": "454f4a90ab05680b55d521796b8f35725974d7a0514e534a39cae60ba7277bcd"
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationOnlineRegistration.cs",
+      "sha256": "7b95c5235bc511cad8ec3b5efef1b8b72146b9532828e2f9e57b5773356d691f"
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationRecoveryRelay.cs",
+      "sha256": "460202d68854ea231f4c7783f4665c4894bb4abb98013b2d675fa1ec739b62d3"
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationService.cs",
+      "sha256": "258c71f4b86241210727ad37cf3cc6fa46969934dbd9710177af92d5fa8d8942"
+    },
+    {
+      "path": "tests/StationMultiplayer/CatalogChecks.cs",
+      "sha256": "82a3aa15e455c6b0917b9aae5ba1c61e8a0c5b59bb32d48ffc129d666e1b1869"
+    },
+    {
+      "path": "tests/StationMultiplayer/Checks.cs",
+      "sha256": "5fa3ab5caa157f436de2a0c0e0326c5b14108953471c0058ebcc5194a8aae46e"
+    },
+    {
+      "path": "tests/StationMultiplayer/Directory.Build.props",
+      "sha256": "7f08da0973696dbe2caed32c163845866eacf951a7389d8ed3f035e0908d2c92"
+    },
+    {
+      "path": "tests/StationMultiplayer/HttpChecks.cs",
+      "sha256": "4074c388c1112ec1ad944e655e950957e59c218ad6fe04fd8ad2fd5917ae9025"
+    },
+    {
+      "path": "tests/StationMultiplayer/StationMultiplayer.Http.Tests.csproj",
+      "sha256": "86916d5282ada6366d7afae7faefdfb7b4f10c1101e48771217b0b044f200107"
+    },
+    {
+      "path": "tests/StationMultiplayer/StationMultiplayer.Tests.csproj",
+      "sha256": "73149dbd2c6ce25a034d3e86f1fd03b1b8bf1c28c49ebedeff5888c9341354c6"
+    },
+    {
+      "path": "tests/TurboRamaSuiteOnlineServer.Tests/station_content_identity_tests.py",
+      "sha256": "de05159c7cc19a70be3a723daf0d13ce035fdb56e5c65a281efd627ca56d487f"
+    },
+    {
+      "path": "tests/TurboRamaSuiteOnlineServer.Tests/station_synopsis_update_tests.py",
+      "sha256": "2c03e80d9a4629d68316096644fc7f4c52752557a0b480dc6d0d3ef34f1f155b"
+    }
+  ]
+}

@@ -1,3 +1,15 @@
+# R79: sinopses aplicadas; candidata online conciliada — 08/10/2026
+
+SERVIDOR → APP. Leia `docs/station-android/RETORNO-IMPLEMENTACAO-R79-SINOPSES-E-MULTIPLAYER-20261008.md` e `recovery-r79-20261008/`. Entrega706f47f/fonteb377db conciliada sobre retornoaf58034; canais atuais do PCAPK em c73e087: R76 stable-2p e R79 test-4p, backup consolidado em G:. Motorola R79/Samsung R78; nenhum telefone alterado por esta rodada Linux.
+
+206 sinopses APLICADAS com autenticação Linux às18:04:18UTC: revisão19,3734IDs/3479visíveis/255compatibilidade,3590descrições presentes/144vazias. CAS literal+backup+scan.lock+overrides persistentes. Nova leitura18:14:45 e catálogo autenticado/assinado no domínio público18:21:17 confirmaram revisão19/todos3479metadados;200alteraçõesvisíveis+6compatibilidade. Fixture removida,sem sala/download. IDs,revisõesdosjogos,capas,artefatos,demaismetadadospreservados. API deve ser lida com catalog?metadata=1 e coverId por item; cacheAndroid não observado. Catálogo completo3734 e listas206/144 entregues sem caminhos privados. LacunasDreamcast101/CPS1 7/CPS2 5/CPS3 3/FBNeo28;17textoslongos nativos preservados.
+
+Fonte candidata b472d8a/DLL9878ae9c: v3 integrado em src, contentSha256 opcional validado/assinado e confronto com hash do catálogo atual; importador candidato preserva vínculo offline qualificado. Observabilidade6f preservada,primeiracausa/Closeescritorúnico/diagnósticoslimitados e testes existentes.288checks v3/catálogo;152TLSloopback;91+589v2/observabilidade;41+53legado;9+4+5Python e regressões gerais passaram. Não são gameplay físico/WAN. Divergência TLS v2 sem logging ainda pendente; nova provaTLSv3 não a resolve.
+
+Produção continua DLLab192bf/PID1278094/NRestarts0/v2/dezenginesR74/R76; sem rehashprivilegiada nova, restart,novoimportador,flags ou perfis ativos. ZERO perfis reais aprovados; pilotoapproved:false. Ligar v3 exige gatelegado e perfis exatosstandard2para novas salasv2; arquivo atual bloquearia R76. R79 continua dependendo da ativação inclusive2pessoas. contentSha256 ainda não publicado pelo processo ativo; convitesv3/migração/qualificação/implantação pendentes. Não alegar solução dos engasgos nem quatro homologados. Nenhum prompt Linux,testeouação root pendente ao concluir.
+
+## Histórico anterior
+
 # R78 lida: catálogo efetivo R18 e instalação nos dois aparelhos — 08/10/2026
 
 SERVIDOR → APP. Leia `docs/station-android/RETORNO-LEITURA-HANDOFF-R78-SINOPSES-20261008.md` e os recibos/dados em `recovery-r78-20261008/`. Entrega recebida `525f037`, fonte `ba145fff`; adendo PCAPK `768f7ca` confirma R78 instalada no Motorola às 14:41:44 UTC e Samsung às 14:44:57 UTC, APK `e6c6609d` e dados preservados. Os campos históricos `installed:false` da geração foram superados. Abertura autenticada, aparência e gameplay ainda não conferidos por esses recibos.

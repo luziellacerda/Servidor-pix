@@ -1,0 +1,111 @@
+{
+  "utc": "2026-10-08T18:42:28.322484+00:00",
+  "direction": "SERVER_TO_APP",
+  "receivedServerCommit": "706f47ff06659feb777d3c4c999b645cb5c3a1ff",
+  "appExecutableSourceCommit": "b377db3981c96374fbe5591700db91dfbe297994",
+  "appDeliveryOrganizationCommit": "c73e087b28a59f05bf70029dd8936658a28610dd",
+  "candidateSourceCommit": "b472d8a653e065cccb00dfb15dbea3d56c03db98",
+  "deliveryHashChecks": 31,
+  "appSourceHashChecks": 29,
+  "production": {
+    "MainPID": "1278094",
+    "NRestarts": "0",
+    "ActiveState": "active"
+  },
+  "onlineReadiness": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    }
+  },
+  "appliedDescriptions": 206,
+  "catalogRevision": 19,
+  "remainingEmptyDescriptions": 144,
+  "activeReleaseSource": "ab192bf1585e30f303d041f13b36a1f9c96d2caa",
+  "activeDllSha256FromPriorReceipt": "815fc8bc99a9d16247488a1797d2726b928eb3e592fd8a19700371e8d57c3243",
+  "activeDllRehashedThisTurn": false,
+  "activeReleaseChanged": false,
+  "approvedRealGameProfiles": 0,
+  "realLicensesChanged": false,
+  "phonesChanged": false,
+  "physicalGameplayQualified": false,
+  "nativeAuthenticationPending": false,
+  "files": [
+    {
+      "path": "docs/station-android/recovery-r79-20261008/RECIBO-APLICACAO-REV19.json",
+      "sha256": "e0a0d2ea530c5dd12e677cddf3cc21604b6a8bd85392dab380ec3f3b255e2716",
+      "sizeBytes": 11247
+    },
+    {
+      "path": "docs/station-android/recovery-r79-20261008/CATALOGO-REV19.json",
+      "sha256": "ad2e4e65c6145fe077cca2f7577b5abb317dc7ccb941a781037fd1907e7ee0f2",
+      "sizeBytes": 5400811
+    },
+    {
+      "path": "docs/station-android/recovery-r79-20261008/CONTENT-IDENTITY-EXEMPLO.json",
+      "sha256": "dab7c3093d826ad0d2c17cb7a8586be6099c5a10bba3193aaf1b5a95e43cbf52",
+      "sizeBytes": 394
+    },
+    {
+      "path": "docs/station-android/recovery-r79-20261008/QUALIFICACAO-CANDIDATA.json",
+      "sha256": "fbf83a608542b89a7726e769caea2b575886a61fd3d59c634dec7e21856447dc",
+      "sizeBytes": 5822
+    },
+    {
+      "path": "docs/station-android/recovery-r79-20261008/CONTRATO-CANDIDATO-V3.json",
+      "sha256": "f3cf52584ceffc401f20955b688b70b832ee826a1454ab2a00db1efe4d3d1fc9",
+      "sizeBytes": 7851
+    },
+    {
+      "path": "docs/station-android/recovery-r79-20261008/SINOPSES-AUSENTES-REV19.json",
+      "sha256": "ab47a4269f6cd59076df5b8746b50bbaccf0eee866658c7d2b3a0cde437b5c52",
+      "sizeBytes": 121468
+    },
+    {
+      "path": "docs/station-android/recovery-r79-20261008/RECIBO-CATALOGO-ASSINADO-REV19.json",
+      "sha256": "d58326d6fe724c7a2c918d3737b24f7a2de6d3c94281f4f05c6b7c3e7c98c551",
+      "sizeBytes": 564
+    },
+    {
+      "path": "docs/station-android/recovery-r79-20261008/SINOPSES-APLICADAS-REV19.json",
+      "sha256": "615772ecef0cbaad2dae775e06a51741d3965562fe352a08c695bd22a65481f4",
+      "sizeBytes": 247538
+    },
+    {
+      "path": "docs/station-android/RETORNO-IMPLEMENTACAO-R79-SINOPSES-E-MULTIPLAYER-20261008.md",
+      "sha256": "c98e7c05623877e3e0a52d415172e5fe223bce005ea89969cd47292d05ca3c8a",
+      "sizeBytes": 9369
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "6b3338f9da0c9eead01409895d8d6564967357b5658ed3894588148d93a1cea7",
+      "sizeBytes": 37776
+    },
+    {
+      "path": "docs/station-android/AGENTS.md",
+      "sha256": "692d9bdaa708edd816a37a1e613beaec380c5f9421a5717d2c1425604fe44477",
+      "sizeBytes": 38810
+    },
+    {
+      "path": "docs/station-android/README.md",
+      "sha256": "b3337a1eb28e7950a63b6b1ebba1b68b5cacf510feb2da1e79eaa406938b73ff",
+      "sizeBytes": 33445
+    },
+    {
+      "path": "tests/StationMultiplayer/README.md",
+      "sha256": "90868caf644967cb48bb61297d53d715153a0c5e110e2e02586b13169232286e",
+      "sizeBytes": 1013
+    }
+  ]
+}

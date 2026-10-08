@@ -1,0 +1,3757 @@
+{
+  "revision": 19,
+  "count": 144,
+  "byPlatform": {
+    "dreamcast": 101,
+    "cps1": 7,
+    "cps2": 5,
+    "cps3": 3,
+    "fbneo": 28
+  },
+  "items": [
+    {
+      "itemId": "station_d200672b6feada42ed7102b5e6d034e2",
+      "name": "AeroWings 2 - Airstrike",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_d200672b6feada42ed7102b5e6d034e2",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "AeroWings 2 - Airstrike v1.001 (2000)(Crave)(NTSC)(US)[!].chd",
+        "sizeBytes": 662937643,
+        "sha256": "23bd2c49db9a7433d0862150fe4b738cb8e61894a55b1630a97603723d3b359c",
+        "format": "raw",
+        "launchPath": "AeroWings 2 - Airstrike v1.001 (2000)(Crave)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 662937643,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_a42bf0ff59174a89706c28e19d4b283c",
+      "name": "Airforce Delta",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_a42bf0ff59174a89706c28e19d4b283c",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Airforce Delta v1.000 (1999)(Konami)(NTSC)(US)[!][1S T-9501NAF].chd",
+        "sizeBytes": 667142405,
+        "sha256": "d113a3538fa2b1b46038ed1730182e7378d701d9893a659e92a9f4b87d666d0b",
+        "format": "raw",
+        "launchPath": "Airforce Delta v1.000 (1999)(Konami)(NTSC)(US)[!][1S T-9501NAF].chd",
+        "expandedSizeBytes": 667142405,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_04ecfb322300cdefa2344784bb8b41be",
+      "name": "Alone in the Dark - The New Nightmare (Disco 1 de 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_04ecfb322300cdefa2344784bb8b41be",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Alone in the Dark - The New Nightmare v1.000 (2001)(Infogrames)(NTSC)(US)(Disc 1 of 2)[!].chd",
+        "sizeBytes": 814420960,
+        "sha256": "51d36b6eaae6897794dc8ab5d9873acc873a77490786afe057954f47a1acf47e",
+        "format": "raw",
+        "launchPath": "Alone in the Dark - The New Nightmare v1.000 (2001)(Infogrames)(NTSC)(US)(Disc 1 of 2)[!].chd",
+        "expandedSizeBytes": 814420960,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_1b4aeb7b677b8406e6810f443b22155a",
+      "name": "Alone in the Dark - The New Nightmare (Disco 2 de 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_1b4aeb7b677b8406e6810f443b22155a",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Alone in the Dark - The New Nightmare v1.000 (2001)(Infogrames)(NTSC)(US)(Disc 2 of 2)[!].chd",
+        "sizeBytes": 898679344,
+        "sha256": "4acabd739e4d1a7d4a445b8cd4b96fe854a7389b509da24c533b9626d5323109",
+        "format": "raw",
+        "launchPath": "Alone in the Dark - The New Nightmare v1.000 (2001)(Infogrames)(NTSC)(US)(Disc 2 of 2)[!].chd",
+        "expandedSizeBytes": 898679344,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_dd7497f63bd28edf2a83912dd8b79153",
+      "name": "Buzz Lightyear of Star Command",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_dd7497f63bd28edf2a83912dd8b79153",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Buzz Lightyear of Star Command v1.000 (2000)(Activision)(NTSC)(US)[!].chd",
+        "sizeBytes": 532633425,
+        "sha256": "9a56bb9160e89f1a1f4420ede454e311dc87ff38b2d9e69f4246ec0ac2cd742a",
+        "format": "raw",
+        "launchPath": "Buzz Lightyear of Star Command v1.000 (2000)(Activision)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 532633425,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_bff918776f3da95ac81eb98bdf024f1e",
+      "name": "Capcom vs. SNK",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_bff918776f3da95ac81eb98bdf024f1e",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Capcom vs. SNK v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "sizeBytes": 837237744,
+        "sha256": "366a82fda976e115b57781bd675bf113cad2f0545c0eb49bafaeae61c6e9fb04",
+        "format": "raw",
+        "launchPath": "Capcom vs. SNK v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 837237744,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_c0b4bc1c83241d09396716dd502bd6ae",
+      "name": "ChuChu Rocket!",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_c0b4bc1c83241d09396716dd502bd6ae",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "ChuChu Rocket! v1.007 (2000)(Sega)(NTSC)(US)(en-ja)[!].chd",
+        "sizeBytes": 226857720,
+        "sha256": "9c74b18b48bc359b46779de52d797f7b5f45725dd498ebe606a39591e33d574b",
+        "format": "raw",
+        "launchPath": "ChuChu Rocket! v1.007 (2000)(Sega)(NTSC)(US)(en-ja)[!].chd",
+        "expandedSizeBytes": 226857720,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_ed136a9394c2037d484c8f2a151a45b7",
+      "name": "Coaster Works",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_ed136a9394c2037d484c8f2a151a45b7",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Coaster Works v1.002 (2001)(XICAT Interactive)(NTSC)(US)[!].chd",
+        "sizeBytes": 73696770,
+        "sha256": "1013948f22950fd01cda24c721d3f92d4dec162c229232d4700e93b77a869126",
+        "format": "raw",
+        "launchPath": "Coaster Works v1.002 (2001)(XICAT Interactive)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 73696770,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_2d59f12eef6f69e3f1ef193123964691",
+      "name": "Conflict Zone - Modern War Strategy",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_2d59f12eef6f69e3f1ef193123964691",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Conflict Zone - Modern War Strategy v1.002 (2001)(Ubi Soft)(NTSC)(US)[!].chd",
+        "sizeBytes": 390891026,
+        "sha256": "05c75114d2f112d08263082e49fa169578dd23d98af9465d968274f698929077",
+        "format": "raw",
+        "launchPath": "Conflict Zone - Modern War Strategy v1.002 (2001)(Ubi Soft)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 390891026,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_e64d6154cb52871b946e2b88e578da05",
+      "name": "D2 (Disco 1 de 4)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_e64d6154cb52871b946e2b88e578da05",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "D2 v1.000 (2000)(Sega)(NTSC)(US)(Disc 1 of 4)[!].chd",
+        "sizeBytes": 600119778,
+        "sha256": "007a4285266f1f154f1c6351808b0f9a9aacdd6bc963b562d5d48c574db79cd4",
+        "format": "raw",
+        "launchPath": "D2 v1.000 (2000)(Sega)(NTSC)(US)(Disc 1 of 4)[!].chd",
+        "expandedSizeBytes": 600119778,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_77a73fb9d8b7e6e1babaa3869f81b492",
+      "name": "D2 (Disco 2 de 4)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_77a73fb9d8b7e6e1babaa3869f81b492",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "D2 v1.000 (2000)(Sega)(NTSC)(US)(Disc 2 of 4)[!].chd",
+        "sizeBytes": 609449501,
+        "sha256": "fcd378fbfe3028bb631bd5f2d6d8eed99da6d34551f9132e4a546b07e16ecaab",
+        "format": "raw",
+        "launchPath": "D2 v1.000 (2000)(Sega)(NTSC)(US)(Disc 2 of 4)[!].chd",
+        "expandedSizeBytes": 609449501,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_ab4dde393bfbe5fec768d06c68d8a22f",
+      "name": "D2 (Disco 3 de 4)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_ab4dde393bfbe5fec768d06c68d8a22f",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "D2 v1.000 (2000)(Sega)(NTSC)(US)(Disc 3 of 4)[!].chd",
+        "sizeBytes": 662288071,
+        "sha256": "4b319ff12d29f2352fd5af90779498a1eda3e33fd3ab11761f387b369c04802d",
+        "format": "raw",
+        "launchPath": "D2 v1.000 (2000)(Sega)(NTSC)(US)(Disc 3 of 4)[!].chd",
+        "expandedSizeBytes": 662288071,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_70f4c12ef657696e9c59673d24ef15c4",
+      "name": "D2 (Disco 4 de 4)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_70f4c12ef657696e9c59673d24ef15c4",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "D2 v1.000 (2000)(Sega)(NTSC)(US)(Disc 4 of 4)[!].chd",
+        "sizeBytes": 729432849,
+        "sha256": "ec817d5fa9b1ddedc77a642bdec4a4b84eeb089c45e97744f3bf033099c7fc64",
+        "format": "raw",
+        "launchPath": "D2 v1.000 (2000)(Sega)(NTSC)(US)(Disc 4 of 4)[!].chd",
+        "expandedSizeBytes": 729432849,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_7c83a91e5a7d52ebbe397c997239df45",
+      "name": "Deep Fighter (Disco 1 de 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_7c83a91e5a7d52ebbe397c997239df45",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Deep Fighter v1.002 (2000)(Ubi Soft)(NTSC)(US)(Disc 1 of 2)[!].chd",
+        "sizeBytes": 334612233,
+        "sha256": "b1856076f0b86f172ab78e304c03c1b5992be54807ae16d87f08e0cd9b818ba6",
+        "format": "raw",
+        "launchPath": "Deep Fighter v1.002 (2000)(Ubi Soft)(NTSC)(US)(Disc 1 of 2)[!].chd",
+        "expandedSizeBytes": 334612233,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_8cdc73fcbe8f2c91533612099ded04ec",
+      "name": "Deep Fighter (Disco 2 de 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_8cdc73fcbe8f2c91533612099ded04ec",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Deep Fighter v1.002 (2000)(Ubi Soft)(NTSC)(US)(Disc 2 of 2)[!].chd",
+        "sizeBytes": 372156719,
+        "sha256": "cf52cf6e21b6aa2f2f2684c50f9c8c01ddc315685904825f981e00d93b127715",
+        "format": "raw",
+        "launchPath": "Deep Fighter v1.002 (2000)(Ubi Soft)(NTSC)(US)(Disc 2 of 2)[!].chd",
+        "expandedSizeBytes": 372156719,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_0953492c4c6576065efa98380dba2e52",
+      "name": "Donald Duck - Goin' Quackers",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_0953492c4c6576065efa98380dba2e52",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Donald Duck - Goin' Quackers v1.001 (2000)(Ubi Soft)(NTSC)(US)(M5)[!].chd",
+        "sizeBytes": 569588340,
+        "sha256": "736b99450213e40fca1d80ca6e5e9a4969885bdf015bdbad68f9913c4b73e345",
+        "format": "raw",
+        "launchPath": "Donald Duck - Goin' Quackers v1.001 (2000)(Ubi Soft)(NTSC)(US)(M5)[!].chd",
+        "expandedSizeBytes": 569588340,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_dedeb5d5406c24cd1bfb02343a0b0395",
+      "name": "DragonRiders - Chronicles of Pern",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_dedeb5d5406c24cd1bfb02343a0b0395",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "DragonRiders - Chronicles of Pern v1.002 (2001)(Ubi Soft)(NTSC)(US)[!].chd",
+        "sizeBytes": 511275934,
+        "sha256": "172d774aa52964ac3116d49b17f7c6bdd717a05c0b8cb67c211fd584cd0d865c",
+        "format": "raw",
+        "launchPath": "DragonRiders - Chronicles of Pern v1.002 (2001)(Ubi Soft)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 511275934,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_21c3071c3a57a83e67ccc1646164d931",
+      "name": "Ducati World - Racing Challenge",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_21c3071c3a57a83e67ccc1646164d931",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Ducati World - Racing Challenge v1.000 (2001)(Acclaim)(NTSC)(US)[!].chd",
+        "sizeBytes": 438981052,
+        "sha256": "2a14b9041335e83a31f01745662c054b80b7c3be9c9d292aaba720fbaa261518",
+        "format": "raw",
+        "launchPath": "Ducati World - Racing Challenge v1.000 (2001)(Acclaim)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 438981052,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_bdc6f2ee9158d13d4e436f299c439d5f",
+      "name": "Dynamite Cop!",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_bdc6f2ee9158d13d4e436f299c439d5f",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Dynamite Cop! v1.005 (1999)(Sega)(NTSC)(US)[!].chd",
+        "sizeBytes": 216551134,
+        "sha256": "0da39e9be3e1cb28b2976572abe2d39722efa9ec4fb1d8bd3807c9e2e1771ed5",
+        "format": "raw",
+        "launchPath": "Dynamite Cop! v1.005 (1999)(Sega)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 216551134,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_b45d526c6d27387e5b19af50e964e7eb",
+      "name": "ESPN International Track & Field",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_b45d526c6d27387e5b19af50e964e7eb",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "ESPN International Track & Field v1.001 (2000)(Konami)(NTSC)(US)[!].chd",
+        "sizeBytes": 117323053,
+        "sha256": "9e3f4264d33bfa8ab8f028d7a91925adc700c150cfcbfd1dc45d3ac1e4dd1f68",
+        "format": "raw",
+        "launchPath": "ESPN International Track & Field v1.001 (2000)(Konami)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 117323053,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_bc75414425bee9e137946fd0daae844f",
+      "name": "Elemental Gimmick Gear",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_bc75414425bee9e137946fd0daae844f",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Elemental Gimmick Gear v1.001 (1999)(Vatical)(NTSC)(US)[!].chd",
+        "sizeBytes": 461215180,
+        "sha256": "5b20e8a3f2f35ac7054840744163f757017d835627765322ab3a9b3be92dc743",
+        "format": "raw",
+        "launchPath": "Elemental Gimmick Gear v1.001 (1999)(Vatical)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 461215180,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_d66ed697f043f62d82128a29a6d1be76",
+      "name": "Evolution - The World of Sacred Device",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_d66ed697f043f62d82128a29a6d1be76",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Evolution - The World of Sacred Device v1.290 (1999)(Ubi Soft)(NTSC)(US)[!].chd",
+        "sizeBytes": 420656858,
+        "sha256": "cbc80d772abcfe85d1a3a395ca30d62ee7890e980c06c4febe8f595e9e784662",
+        "format": "raw",
+        "launchPath": "Evolution - The World of Sacred Device v1.290 (1999)(Ubi Soft)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 420656858,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_0cfe2f28401d51af318820706bfd5eca",
+      "name": "Evolution 2 - Far Off Promise",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_0cfe2f28401d51af318820706bfd5eca",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Evolution 2 - Far Off Promise v1.000 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+        "sizeBytes": 463722161,
+        "sha256": "02056f2268f19437b3b29d0b4e74edd9267b01e29cdfb0a94ff61bd2f874fbfa",
+        "format": "raw",
+        "launchPath": "Evolution 2 - Far Off Promise v1.000 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 463722161,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_452aa79c93d3770e753cb1aea22ecf25",
+      "name": "Expendable",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_452aa79c93d3770e753cb1aea22ecf25",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Expendable v1.000 (1999)(Infogrames)(NTSC)(US)(M5)[!].chd",
+        "sizeBytes": 553225594,
+        "sha256": "a771d23631c9f723657bc0abc80961a7567c45d8321965890c5f7878616fd5ff",
+        "format": "raw",
+        "launchPath": "Expendable v1.000 (1999)(Infogrames)(NTSC)(US)(M5)[!].chd",
+        "expandedSizeBytes": 553225594,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_33d132308c7bd9eec951462443b6abc4",
+      "name": "Fatal Fury - Mark of the Wolves",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_33d132308c7bd9eec951462443b6abc4",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Fatal Fury - Mark of the Wolves v0.800 (2001)(Agetec)(NTSC)(US)[!].chd",
+        "sizeBytes": 400941166,
+        "sha256": "cc8f95bcd294f326d2af8cb47f484308c65e1031865f7f26e9cc82e86fcb651f",
+        "format": "raw",
+        "launchPath": "Fatal Fury - Mark of the Wolves v0.800 (2001)(Agetec)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 400941166,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_cba35363deb597f8f95306a8f26cb008",
+      "name": "Fighting Force 2 (Versão 1)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_cba35363deb597f8f95306a8f26cb008",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Fighting Force 2 v1.000 (1999)(EIDOS)(NTSC)(US)[!][5S T-36801N].chd",
+        "sizeBytes": 258479088,
+        "sha256": "6ce4990119a34442703eb3b4ec71963f1eff48c0da40a81941cf05d4d4316151",
+        "format": "raw",
+        "launchPath": "Fighting Force 2 v1.000 (1999)(EIDOS)(NTSC)(US)[!][5S T-36801N].chd",
+        "expandedSizeBytes": 258479088,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_295b59ba6eea68400c2035c7bed5c7a3",
+      "name": "Fighting Force 2 (Versão 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_295b59ba6eea68400c2035c7bed5c7a3",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Fighting Force 2 v1.000 (1999)(EIDOS)(NTSC)(US)[!][9S T-36801N].chd",
+        "sizeBytes": 258478078,
+        "sha256": "45ade850e983911756f162cb72c4c5de0f3f9e213a8aeb26e9aef23c52edd399",
+        "format": "raw",
+        "launchPath": "Fighting Force 2 v1.000 (1999)(EIDOS)(NTSC)(US)[!][9S T-36801N].chd",
+        "expandedSizeBytes": 258478078,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_a16868e55b0029bcd14cf33ec73ae3d6",
+      "name": "GigaWing 2",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_a16868e55b0029bcd14cf33ec73ae3d6",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "GigaWing 2 v1.000 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "sizeBytes": 284963174,
+        "sha256": "100bf5d7ad42542876455540ba4d763eabd4816e73e77dc042c9304e108df8bc",
+        "format": "raw",
+        "launchPath": "GigaWing 2 v1.000 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 284963174,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_3af20913f84c1ad9633675e8ff367db4",
+      "name": "GigaWing",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_3af20913f84c1ad9633675e8ff367db4",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "GigaWing v1.000 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "sizeBytes": 247166152,
+        "sha256": "650ba7a6abdc9f89071dfd9abe5972f86a6eb5aac61758217246b60f3bb7bb0d",
+        "format": "raw",
+        "launchPath": "GigaWing v1.000 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 247166152,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_2dedf2839146d34730c4e6a1bfda04ff",
+      "name": "Grandia II",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_2dedf2839146d34730c4e6a1bfda04ff",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Grandia II v1.001 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+        "sizeBytes": 868315370,
+        "sha256": "292f6081797740f9013e29ab82ccebea93993b52dcfe5a4a98029782ea63adec",
+        "format": "raw",
+        "launchPath": "Grandia II v1.001 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 868315370,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_5cb2b9feeab6623cc3fb637464ca59e0",
+      "name": "Industrial Spy - Operation Espionage",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_5cb2b9feeab6623cc3fb637464ca59e0",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Industrial Spy - Operation Espionage v1.001 (2000)(UFO)(NTSC)(US)[!].chd",
+        "sizeBytes": 82608996,
+        "sha256": "2263889bf9c4539f9f5bcc00c6ad16d8613ef6aa040d6b6e2be8499e66c07b6b",
+        "format": "raw",
+        "launchPath": "Industrial Spy - Operation Espionage v1.001 (2000)(UFO)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 82608996,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_a554e55007d010b0cfd8c7b459419f1d",
+      "name": "Jet Grind Radio",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_a554e55007d010b0cfd8c7b459419f1d",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Jet Grind Radio v1.005 (2000)(Sega)(NTSC)(US)[!].chd",
+        "sizeBytes": 652892730,
+        "sha256": "e58895d6ff880c7abfd69d1e0d458c3fef3707e468de3164b2e55df2f43d237a",
+        "format": "raw",
+        "launchPath": "Jet Grind Radio v1.005 (2000)(Sega)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 652892730,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_ccac76b40703cce95397ac0a50398df4",
+      "name": "King of Fighters Evolution, The",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_ccac76b40703cce95397ac0a50398df4",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "King of Fighters Evolution, The v1.000 (2000)(Agetec)(NTSC)(US)(M4)[!].chd",
+        "sizeBytes": 212174872,
+        "sha256": "152700a6bf09416c1673f09fa1314f72696496bc8876d5e24462924470e72b71",
+        "format": "raw",
+        "launchPath": "King of Fighters Evolution, The v1.000 (2000)(Agetec)(NTSC)(US)(M4)[!].chd",
+        "expandedSizeBytes": 212174872,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_c752932ef3acc84d6a01e6a44ca0d4aa",
+      "name": "Last Blade 2, The - Heart of the Samurai",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_c752932ef3acc84d6a01e6a44ca0d4aa",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Last Blade 2, The - Heart of the Samurai v1.002 (2001)(Agetec)(NTSC)(US)[!].chd",
+        "sizeBytes": 240126655,
+        "sha256": "4e562d8aeca40edc45146ad835583759d47025a2fb447693015db6e4c57f4b97",
+        "format": "raw",
+        "launchPath": "Last Blade 2, The - Heart of the Samurai v1.002 (2001)(Agetec)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 240126655,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_3ce57356d2c3c7f6738bddcbfb632c36",
+      "name": "Looney Tunes Space Race",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_3ce57356d2c3c7f6738bddcbfb632c36",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Looney Tunes Space Race v1.000 (2000)(Infogrames)(NTSC)(US)(M3)[!].chd",
+        "sizeBytes": 478543919,
+        "sha256": "35de50d5d79ec575237dde86c307c45e41ed6a391eb3357425b2096ed7662f4b",
+        "format": "raw",
+        "launchPath": "Looney Tunes Space Race v1.000 (2000)(Infogrames)(NTSC)(US)(M3)[!].chd",
+        "expandedSizeBytes": 478543919,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_230924a63b3a42c13c0498005015eac0",
+      "name": "MTV Sports - Skateboarding Featuring Andy Macdonald",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_230924a63b3a42c13c0498005015eac0",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "MTV Sports - Skateboarding Featuring Andy Macdonald v1.002 (2000)(THQ)(NTSC)(US)[!].chd",
+        "sizeBytes": 235561880,
+        "sha256": "355747f61a4c2fc1d625d98d65b99c179f7f030a27faddb16bf3a4b7da9cc470",
+        "format": "raw",
+        "launchPath": "MTV Sports - Skateboarding Featuring Andy Macdonald v1.002 (2000)(THQ)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 235561880,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_017d4ad0c35b9e0537519cbae94bbfd4",
+      "name": "Marvel vs. Capcom 2",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_017d4ad0c35b9e0537519cbae94bbfd4",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Marvel vs. Capcom 2 v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "sizeBytes": 152961899,
+        "sha256": "373f4372d1f8d97cc88c5f85afb2a599e7f7942f4947de051ac5fb8ef70cd01b",
+        "format": "raw",
+        "launchPath": "Marvel vs. Capcom 2 v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 152961899,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_19000979c1ca293fe87b39cbf1261df9",
+      "name": "Monaco Grand Prix",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_19000979c1ca293fe87b39cbf1261df9",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Monaco Grand Prix v1.215 (1999)(Ubi Soft)(NTSC)(US)[!].chd",
+        "sizeBytes": 633946061,
+        "sha256": "19488905a65534c43faebdffd334f5ead447908b7be0cd458c7b2b4205ca3044",
+        "format": "raw",
+        "launchPath": "Monaco Grand Prix v1.215 (1999)(Ubi Soft)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 633946061,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_260d6bef2e8b1fbc37291df14da0fa81",
+      "name": "Mr Driller",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_260d6bef2e8b1fbc37291df14da0fa81",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Mr Driller v1.001 (2000)(Namco)(NTSC)(US)[!].chd",
+        "sizeBytes": 357075598,
+        "sha256": "4f431dd92746e339d3221ba16d3d413d5ee72df7afe57631c0d95e100338be38",
+        "format": "raw",
+        "launchPath": "Mr Driller v1.001 (2000)(Namco)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 357075598,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_638a548059c37d3d2e3259f2afd55e55",
+      "name": "NFL 2K (Versão 1)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_638a548059c37d3d2e3259f2afd55e55",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "NFL 2K v1.007 (1999)(Sega)(NTSC)(US)[!][10S 51003].chd",
+        "sizeBytes": 635821239,
+        "sha256": "540ec5222df8f3b229db405355cd7018b0524e94bb0563d5a2f068158cf2bc79",
+        "format": "raw",
+        "launchPath": "NFL 2K v1.007 (1999)(Sega)(NTSC)(US)[!][10S 51003].chd",
+        "expandedSizeBytes": 635821239,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_2566875b68d223bcec73a5984b85b32d",
+      "name": "NFL 2K (Versão 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_2566875b68d223bcec73a5984b85b32d",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "NFL 2K v1.007 (1999)(Sega)(NTSC)(US)[!][13S 51003].chd",
+        "sizeBytes": 635820805,
+        "sha256": "e1f7542b8c816ad652bfbe8d6c9d3a20104e474ab344e93a7f3af0a06c6217a3",
+        "format": "raw",
+        "launchPath": "NFL 2K v1.007 (1999)(Sega)(NTSC)(US)[!][13S 51003].chd",
+        "expandedSizeBytes": 635820805,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_a66342b859420441b5ef8eaa57827ba7",
+      "name": "NFL 2K (Versão 3)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_a66342b859420441b5ef8eaa57827ba7",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "NFL 2K v1.007 (1999)(Sega)(NTSC)(US)[!][610-7895-0444 MT B08, MT B13].chd",
+        "sizeBytes": 635820741,
+        "sha256": "afa47a1eacaa00cfcfbf714ca5b6d81e691c1f81fce77d51260096e2cb7907a1",
+        "format": "raw",
+        "launchPath": "NFL 2K v1.007 (1999)(Sega)(NTSC)(US)[!][610-7895-0444 MT B08, MT B13].chd",
+        "expandedSizeBytes": 635820741,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_507f12c624c9507f41e1b772413ce21f",
+      "name": "NFL 2K (Versão 4)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_507f12c624c9507f41e1b772413ce21f",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "NFL 2K v1.007 (1999)(Sega)(NTSC)(US)[!][9S 51003].chd",
+        "sizeBytes": 635820474,
+        "sha256": "f470fc848f551a8609350ecd4c45714aab65221b243a24a0337ac995fd1af492",
+        "format": "raw",
+        "launchPath": "NFL 2K v1.007 (1999)(Sega)(NTSC)(US)[!][9S 51003].chd",
+        "expandedSizeBytes": 635820474,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_33d706b26f2fca7ed46a303365fba64e",
+      "name": "Next Tetris, The - On-line Edition",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_33d706b26f2fca7ed46a303365fba64e",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Next Tetris, The - On-line Edition v1.100 (2000)(Crave)(NTSC)(US)[!].chd",
+        "sizeBytes": 281596585,
+        "sha256": "bb4ec1f073d458001893eb617e29a40fe482ac4c2551806bd363d3adcb1b9f9a",
+        "format": "raw",
+        "launchPath": "Next Tetris, The - On-line Edition v1.100 (2000)(Crave)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 281596585,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_a13fd153caeaa066b77aa66ad6d4ec06",
+      "name": "Nightmare Creatures II",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_a13fd153caeaa066b77aa66ad6d4ec06",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Nightmare Creatures II v1.000 (2000)(Konami)(NTSC)(US)[!].chd",
+        "sizeBytes": 369945825,
+        "sha256": "a67f897b7a33e2ad6dfa09e9d503e4d686d8d4c3400c03cbcc695140c2e4c5ec",
+        "format": "raw",
+        "launchPath": "Nightmare Creatures II v1.000 (2000)(Konami)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 369945825,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_6b90c57070bf3754d9827c1e1631f0e9",
+      "name": "POD - Speedzone (Versão 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_6b90c57070bf3754d9827c1e1631f0e9",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "POD - Speedzone v1.002 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+        "sizeBytes": 276401179,
+        "sha256": "5330804b10020da3a58bc137697ae28787b6d4715a739ee17636152da551dab9",
+        "format": "raw",
+        "launchPath": "POD - Speedzone v1.002 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 276401179,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_80db7b3d26f3d7baea291c99079d3984",
+      "name": "PenPen TriIcelon",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_80db7b3d26f3d7baea291c99079d3984",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "PenPen TriIcelon v1.020 (1999)(Infogrames)(NTSC)(US)[!].chd",
+        "sizeBytes": 672855764,
+        "sha256": "3bd21368a0f4d6af4cd062d8d4aeec1326535d1563ec643292ac137678ec630a",
+        "format": "raw",
+        "launchPath": "PenPen TriIcelon v1.020 (1999)(Infogrames)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 672855764,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_3de779fc30ecef8cd9ba9983bc5c442a",
+      "name": "Phantasy Star Online Ver. 2",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_3de779fc30ecef8cd9ba9983bc5c442a",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Phantasy Star Online Ver. 2 v1.004 (2001)(Sega)(NTSC)(US)(M5)[!][2S 51193][req. serial].chd",
+        "sizeBytes": 638109102,
+        "sha256": "1834ed3b1e8948ec44df062a3bdbd4e708e576ea0e5ba22c5d16693e47b5cc9f",
+        "format": "raw",
+        "launchPath": "Phantasy Star Online Ver. 2 v1.004 (2001)(Sega)(NTSC)(US)(M5)[!][2S 51193][req. serial].chd",
+        "expandedSizeBytes": 638109102,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_366e8048e48996eb8cafe8af72e1da33",
+      "name": "Project Justice",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_366e8048e48996eb8cafe8af72e1da33",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Project Justice v1.001 (2001)(Capcom)(NTSC)(US)[!].chd",
+        "sizeBytes": 859887937,
+        "sha256": "30ab3df6907a147d059ed28c93b75cff51a755d1c87545f24ce6c01443271842",
+        "format": "raw",
+        "launchPath": "Project Justice v1.001 (2001)(Capcom)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 859887937,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_662faa15e8c2dd5f535b2500282f416e",
+      "name": "Quake III Arena",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_662faa15e8c2dd5f535b2500282f416e",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Quake III Arena v0.800 (2000)(Sega)(NTSC)(US)[!].chd",
+        "sizeBytes": 461873935,
+        "sha256": "6b4e87661625a28c9e59cd18ca3b9f206fda5af25e7b7021aaf6eb744854450a",
+        "format": "raw",
+        "launchPath": "Quake III Arena v0.800 (2000)(Sega)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 461873935,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_b196cbb9aede47637a2f9e10c364445b",
+      "name": "Railroad Tycoon II - Gold Edition",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_b196cbb9aede47637a2f9e10c364445b",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Railroad Tycoon II - Gold Edition v1.004 (2000)(GOD)(NTSC)(US)[!].chd",
+        "sizeBytes": 376377003,
+        "sha256": "479fda82fb526b4ca33f191b2c99190fc77a8747543b170b9cc6ca12b4faa798",
+        "format": "raw",
+        "launchPath": "Railroad Tycoon II - Gold Edition v1.004 (2000)(GOD)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 376377003,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_1dbf87198a2f3782127b09c7796cc70b",
+      "name": "Rayman 2 - The Great Escape",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_1dbf87198a2f3782127b09c7796cc70b",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Rayman 2 - The Great Escape v1.003 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+        "sizeBytes": 661153185,
+        "sha256": "05ac19c8fd153b0dae2decf2780aabf99b5ad09da4e2b16379e06c512a605fd0",
+        "format": "raw",
+        "launchPath": "Rayman 2 - The Great Escape v1.003 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 661153185,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_dcdcc159757adac735f13adc78295121",
+      "name": "Razor Freestyle Scooter",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_dcdcc159757adac735f13adc78295121",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Razor Freestyle Scooter v1.000 (2001)(Crave)(NTSC)(US)[!].chd",
+        "sizeBytes": 409315404,
+        "sha256": "a5e666415e2c921541a1af41c181404de08361e804e67ab4454beafe8f77ee29",
+        "format": "raw",
+        "launchPath": "Razor Freestyle Scooter v1.000 (2001)(Crave)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 409315404,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_7adb7ec83582d31b8ff1444dbcbe88eb",
+      "name": "Ready 2 Rumble Boxing (Versão 1)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_7adb7ec83582d31b8ff1444dbcbe88eb",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Ready 2 Rumble Boxing v1.000 (1999)(Midway)(NTSC)(US)[!][2S T-9704NGD].chd",
+        "sizeBytes": 376394160,
+        "sha256": "7b5c36497581aae1b6b0b224e654f13f05ef6b295a0b47d53f0fe2819f9fefd6",
+        "format": "raw",
+        "launchPath": "Ready 2 Rumble Boxing v1.000 (1999)(Midway)(NTSC)(US)[!][2S T-9704NGD].chd",
+        "expandedSizeBytes": 376394160,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_0c51dbadb7889354c5c8d1bda7f09e3b",
+      "name": "Ready 2 Rumble Boxing (Versão 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_0c51dbadb7889354c5c8d1bda7f09e3b",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Ready 2 Rumble Boxing v1.000 (1999)(Midway)(NTSC)(US)[!][8S T-9704NGD].chd",
+        "sizeBytes": 376403301,
+        "sha256": "ed10091c90f3290d335fe3ded58324eecc144750d5b700afb004b7e2c16f4d27",
+        "format": "raw",
+        "launchPath": "Ready 2 Rumble Boxing v1.000 (1999)(Midway)(NTSC)(US)[!][8S T-9704NGD].chd",
+        "expandedSizeBytes": 376403301,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_831dad3abeace4fe1e42245c3175c04e",
+      "name": "Ready 2 Rumble Boxing (Versão 3)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_831dad3abeace4fe1e42245c3175c04e",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Ready 2 Rumble Boxing v1.000 (1999)(Midway)(NTSC)(US)[!][9I043B T-9704N].chd",
+        "sizeBytes": 376401952,
+        "sha256": "2a52a8b2894b23382ee83e20aef865d216f36bc0c7c484f89647f3daf7774cb1",
+        "format": "raw",
+        "launchPath": "Ready 2 Rumble Boxing v1.000 (1999)(Midway)(NTSC)(US)[!][9I043B T-9704N].chd",
+        "expandedSizeBytes": 376401952,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_8e1757391f8e75bec508538e6b562224",
+      "name": "Record of Lodoss War",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_8e1757391f8e75bec508538e6b562224",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Record of Lodoss War v1.001 (2001)(Crave)(NTSC)(US)[!].chd",
+        "sizeBytes": 463562253,
+        "sha256": "eacb3c64d7c86dec20c24cfdb76d2c675473084d7a481208e00163be8c552f97",
+        "format": "raw",
+        "launchPath": "Record of Lodoss War v1.001 (2001)(Crave)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 463562253,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_0289a0b3953d87cd8e21968d53db7ed7",
+      "name": "Reel Fishing - Wild",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_0289a0b3953d87cd8e21968d53db7ed7",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Reel Fishing - Wild v1.001 (2001)(Natsume - Victor)(NTSC)(US)[!].chd",
+        "sizeBytes": 420485169,
+        "sha256": "c7965930d2c369e891e6b44fead95564bb7710c1e7e096c805e93c3f755219fd",
+        "format": "raw",
+        "launchPath": "Reel Fishing - Wild v1.001 (2001)(Natsume - Victor)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 420485169,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_7f4cc48d1231d923ce5cdaffb7a37377",
+      "name": "Resident Evil - Code Veronica (Disco 1 de 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_7f4cc48d1231d923ce5cdaffb7a37377",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Resident Evil - Code Veronica v1.000 (2000)(Capcom)(NTSC)(US)(Disc 1 of 2)[!].chd",
+        "sizeBytes": 591310785,
+        "sha256": "ca99cfb59c62e2687eb962a2dac26223a509ebe1d1d190bb5496391959c7d9fd",
+        "format": "raw",
+        "launchPath": "Resident Evil - Code Veronica v1.000 (2000)(Capcom)(NTSC)(US)(Disc 1 of 2)[!].chd",
+        "expandedSizeBytes": 591310785,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_60ef7b56bb6f80cd872b0d0a308ceda3",
+      "name": "Resident Evil - Code Veronica (Disco 2 de 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_60ef7b56bb6f80cd872b0d0a308ceda3",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Resident Evil - Code Veronica v1.000 (2000)(Capcom)(NTSC)(US)(Disc 2 of 2)[!].chd",
+        "sizeBytes": 642711069,
+        "sha256": "96f65ca3baf63ad707c04fb09de4658b0ed8674b62bf9cb91b4407d4152c9bf6",
+        "format": "raw",
+        "launchPath": "Resident Evil - Code Veronica v1.000 (2000)(Capcom)(NTSC)(US)(Disc 2 of 2)[!].chd",
+        "expandedSizeBytes": 642711069,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_cb4eb07055677be03620ae1a139eb634",
+      "name": "Resident Evil 2 (Disco 1 de 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_cb4eb07055677be03620ae1a139eb634",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Resident Evil 2 v1.001 (2000)(Capcom)(NTSC)(US)(Disc 1 of 2)[!][Leon].chd",
+        "sizeBytes": 749545877,
+        "sha256": "17f75a1f39dbd567572cd9008fa00c073622e4380e2070256a2b752086c861e6",
+        "format": "raw",
+        "launchPath": "Resident Evil 2 v1.001 (2000)(Capcom)(NTSC)(US)(Disc 1 of 2)[!][Leon].chd",
+        "expandedSizeBytes": 749545877,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_dc13c5680ad58a48188fa5173c0dd476",
+      "name": "Resident Evil 2 (Disco 2 de 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_dc13c5680ad58a48188fa5173c0dd476",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Resident Evil 2 v1.001 (2000)(Capcom)(NTSC)(US)(Disc 2 of 2)[!][Claire].chd",
+        "sizeBytes": 751029682,
+        "sha256": "53906c947ff375099a14f17f5f726ecd737c05c17766ac37c488b55fecb66b1a",
+        "format": "raw",
+        "launchPath": "Resident Evil 2 v1.001 (2000)(Capcom)(NTSC)(US)(Disc 2 of 2)[!][Claire].chd",
+        "expandedSizeBytes": 751029682,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_b77346021ad26cdcff82b52b1b522382",
+      "name": "Ring, The - Terror's Realm",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_b77346021ad26cdcff82b52b1b522382",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Ring, The - Terror's Realm v1.002 (2000)(Infogrames)(NTSC)(US)[!].chd",
+        "sizeBytes": 502449253,
+        "sha256": "d017bf1ba92441a318dec20c21bfcbb7174b827431b119cdcb8bb7a0e2c5cc01",
+        "format": "raw",
+        "launchPath": "Ring, The - Terror's Realm v1.002 (2000)(Infogrames)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 502449253,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_ec9a44d272e103292be41c72723bdaee",
+      "name": "Rippin' Riders Snowboarding",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_ec9a44d272e103292be41c72723bdaee",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Rippin' Riders Snowboarding v1.001 (1999)(Sega)(NTSC)(US)[!].chd",
+        "sizeBytes": 478514239,
+        "sha256": "91b39ee5fb6f8692d383ac4af67eb74bac994fd24e23b4c2f87b0f8f4e39bc2e",
+        "format": "raw",
+        "launchPath": "Rippin' Riders Snowboarding v1.001 (1999)(Sega)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 478514239,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_a00a2ad28a305798f6958ea5d24eaeae",
+      "name": "Shenmue (Disco 1 de 4)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_a00a2ad28a305798f6958ea5d24eaeae",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Shenmue v1.003 (2000)(Sega)(NTSC)(US)(Disc 1 of 4)[!][1S 51059-1S].chd",
+        "sizeBytes": 415330902,
+        "sha256": "52666cb50cd1da9618c4fd00e6a0fa8f46f5a43ed5c8781054ce542dd5204a96",
+        "format": "raw",
+        "launchPath": "Shenmue v1.003 (2000)(Sega)(NTSC)(US)(Disc 1 of 4)[!][1S 51059-1S].chd",
+        "expandedSizeBytes": 415330902,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_2a7b991c444781d0a8c7d2896d5828fe",
+      "name": "Shenmue (Disco 2 de 4)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_2a7b991c444781d0a8c7d2896d5828fe",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Shenmue v1.003 (2000)(Sega)(NTSC)(US)(Disc 2 of 4)[!].chd",
+        "sizeBytes": 370254074,
+        "sha256": "b4df964346b9df23ac7f9ebdc68219f8d8eec8aedacf0c16eed4b4d2727b02c8",
+        "format": "raw",
+        "launchPath": "Shenmue v1.003 (2000)(Sega)(NTSC)(US)(Disc 2 of 4)[!].chd",
+        "expandedSizeBytes": 370254074,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_d8e0b511fdf1fe09fbd5cbbce0763682",
+      "name": "Shenmue (Disco 3 de 4)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_d8e0b511fdf1fe09fbd5cbbce0763682",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Shenmue v1.003 (2000)(Sega)(NTSC)(US)(Disc 3 of 4)[!][2S 51059-3S].chd",
+        "sizeBytes": 434368267,
+        "sha256": "e7dff41e670d13331758f3edcfe0bf0fb3541230ec164fefea0fc1cab8c9faf0",
+        "format": "raw",
+        "launchPath": "Shenmue v1.003 (2000)(Sega)(NTSC)(US)(Disc 3 of 4)[!][2S 51059-3S].chd",
+        "expandedSizeBytes": 434368267,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_ae879fb139c155e29f0fcac79ffeec7c",
+      "name": "Shenmue (Disco 4 de 4)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_ae879fb139c155e29f0fcac79ffeec7c",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Shenmue v1.003 (2000)(Sega)(NTSC)(US)(Disc 4 of 4)[!][Passport v1.004].chd",
+        "sizeBytes": 562831180,
+        "sha256": "1d5dcfe95b1cace4c3faf3a5f01914dd134240018230fa153d827ab56a675fd5",
+        "format": "raw",
+        "launchPath": "Shenmue v1.003 (2000)(Sega)(NTSC)(US)(Disc 4 of 4)[!][Passport v1.004].chd",
+        "expandedSizeBytes": 562831180,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_78b7c695e5d8c5ae8b0419fded758cad",
+      "name": "Skies of Arcadia (Disco 1 de 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_78b7c695e5d8c5ae8b0419fded758cad",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Skies of Arcadia v1.002 (2000)(Sega)(NTSC)(US)(Disc 1 of 2)[!].chd",
+        "sizeBytes": 523608988,
+        "sha256": "272b261b65433a4ac02e3408bfec9b40d51f1decf7c982a6f2478f90969e60f6",
+        "format": "raw",
+        "launchPath": "Skies of Arcadia v1.002 (2000)(Sega)(NTSC)(US)(Disc 1 of 2)[!].chd",
+        "expandedSizeBytes": 523608988,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_5903f2e5c538beb82117c37ea50fcb33",
+      "name": "Skies of Arcadia (Disco 2 de 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_5903f2e5c538beb82117c37ea50fcb33",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Skies of Arcadia v1.002 (2000)(Sega)(NTSC)(US)(Disc 2 of 2)[!].chd",
+        "sizeBytes": 542072206,
+        "sha256": "7208250a9097337bcc7935f3f3e8edf70b1a9eddf03f49f3c3a26c6cd1e403b6",
+        "format": "raw",
+        "launchPath": "Skies of Arcadia v1.002 (2000)(Sega)(NTSC)(US)(Disc 2 of 2)[!].chd",
+        "expandedSizeBytes": 542072206,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_14dd1839d4487040394e195ad6ca422c",
+      "name": "Soul Calibur (Versão 1)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_14dd1839d4487040394e195ad6ca422c",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Soul Calibur v1.000 (1999)(Namco)(NTSC)(US)[!][1S T-1401N].chd",
+        "sizeBytes": 621117267,
+        "sha256": "56a98f6582274417ecaf3b7c41d673ab373252bd6e27017ce04d8b47e5abbf94",
+        "format": "raw",
+        "launchPath": "Soul Calibur v1.000 (1999)(Namco)(NTSC)(US)[!][1S T-1401N].chd",
+        "expandedSizeBytes": 621117267,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_792e43445bed0faa5a01b1590b457b41",
+      "name": "Soul Calibur (Versão 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_792e43445bed0faa5a01b1590b457b41",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Soul Calibur v1.000 (1999)(Namco)(NTSC)(US)[!][4S T-1401N].chd",
+        "sizeBytes": 621117326,
+        "sha256": "33e20a84888dbf6d5c46f15bd4959058dd43bdcbe21738568e9c82b6fc00b92a",
+        "format": "raw",
+        "launchPath": "Soul Calibur v1.000 (1999)(Namco)(NTSC)(US)[!][4S T-1401N].chd",
+        "expandedSizeBytes": 621117326,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_8733156f40d4d906e09309118d13c213",
+      "name": "Speed Devils - Online Racing",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_8733156f40d4d906e09309118d13c213",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Speed Devils - Online Racing v1.002 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+        "sizeBytes": 413258343,
+        "sha256": "7bd97fbc24526b08d34f57f52c103ebe7ea58e22f3caccc9f6ba3fbf912c167c",
+        "format": "raw",
+        "launchPath": "Speed Devils - Online Racing v1.002 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 413258343,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_e7e4a95c5a4dc19e88252ba442a6da0c",
+      "name": "Star Wars - Episode I - Jedi Power Battles",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_e7e4a95c5a4dc19e88252ba442a6da0c",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Star Wars - Episode I - Jedi Power Battles v1.004 (2000)(Lucas Arts)(NTSC)(US)[!].chd",
+        "sizeBytes": 391846773,
+        "sha256": "5db333f5ec8f36e71c5dd2cf91e573b1a50423f688ee16e2b4348f3111e7577b",
+        "format": "raw",
+        "launchPath": "Star Wars - Episode I - Jedi Power Battles v1.004 (2000)(Lucas Arts)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 391846773,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_6f7a4e2edc98cc56706d5e86215f7933",
+      "name": "Star Wars - Episode I - Racer",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_6f7a4e2edc98cc56706d5e86215f7933",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Star Wars - Episode I - Racer v1.001 (2000)(Lucas Arts)(NTSC)(US)[!].chd",
+        "sizeBytes": 288654668,
+        "sha256": "500cfe7e693b5371fed723306e334895dec7a3e7e22bc83507978fc738fd2b40",
+        "format": "raw",
+        "launchPath": "Star Wars - Episode I - Racer v1.001 (2000)(Lucas Arts)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 288654668,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_95303351a29aa598e39c49f879695a9a",
+      "name": "Street Fighter Alpha 3",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_95303351a29aa598e39c49f879695a9a",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Street Fighter Alpha 3 v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "sizeBytes": 541993859,
+        "sha256": "9e9e1c7ef605ae5ffd1143174eb40fd0a44aed98fd4791b02738da75d324ac0a",
+        "format": "raw",
+        "launchPath": "Street Fighter Alpha 3 v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 541993859,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_9393a16709fc3357c06c68f479309ae4",
+      "name": "Street Fighter III - 3rd Strike",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_9393a16709fc3357c06c68f479309ae4",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Street Fighter III - 3rd Strike v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "sizeBytes": 288826230,
+        "sha256": "54121ba2615e4d33528cff175566260578e94396d88822fc7f98a9acf164d3b5",
+        "format": "raw",
+        "launchPath": "Street Fighter III - 3rd Strike v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 288826230,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_2f7821c22769a1da65c254912811bcd0",
+      "name": "Street Fighter III - Double Impact",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_2f7821c22769a1da65c254912811bcd0",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Street Fighter III - Double Impact v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "sizeBytes": 212451250,
+        "sha256": "e117e030a55aa7db07a1903483c8ece09d373bf54a611d74895134e0d7881f82",
+        "format": "raw",
+        "launchPath": "Street Fighter III - Double Impact v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 212451250,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_d9df73e4b0f75bf27ce7d70d3793ec90",
+      "name": "Stupid Invaders (Disco 1 de 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_d9df73e4b0f75bf27ce7d70d3793ec90",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Stupid Invaders v1.001 (2001)(Ubi Soft)(NTSC)(US)(Disc 1 of 2)[!].chd",
+        "sizeBytes": 903784205,
+        "sha256": "3e54c7a8d0a4324c841f31b5af42bc53e785650e71424b4d6f82f2a0a385db52",
+        "format": "raw",
+        "launchPath": "Stupid Invaders v1.001 (2001)(Ubi Soft)(NTSC)(US)(Disc 1 of 2)[!].chd",
+        "expandedSizeBytes": 903784205,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_aebd413245a839716a307d674e7bd216",
+      "name": "Stupid Invaders (Disco 2 de 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_aebd413245a839716a307d674e7bd216",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Stupid Invaders v1.001 (2001)(Ubi Soft)(NTSC)(US)(Disc 2 of 2)[!].chd",
+        "sizeBytes": 894690693,
+        "sha256": "0d691bff61a21f44c1ce1b09046751ced1959d20366458481c2733413ec8ed1b",
+        "format": "raw",
+        "launchPath": "Stupid Invaders v1.001 (2001)(Ubi Soft)(NTSC)(US)(Disc 2 of 2)[!].chd",
+        "expandedSizeBytes": 894690693,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_a2a904a622ce3495c4d4283f8376927c",
+      "name": "Suzuki ALSTARE Extreme Racing",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_a2a904a622ce3495c4d4283f8376927c",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Suzuki ALSTARE Extreme Racing v1.000 (1999)(Ubi Soft)(NTSC)(US)[!].chd",
+        "sizeBytes": 308898629,
+        "sha256": "ae2f20d21c7228ac15b056ff1ff870ae05140a394ea6378489c1692704140ae7",
+        "format": "raw",
+        "launchPath": "Suzuki ALSTARE Extreme Racing v1.000 (1999)(Ubi Soft)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 308898629,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_f9ddd8ec9bb91513b25cfad02d78f791",
+      "name": "Sword of the Berserk - Guts' Rage",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_f9ddd8ec9bb91513b25cfad02d78f791",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Sword of the Berserk - Guts' Rage v1.000 (2000)(EIDOS)(NTSC)(US)[!].chd",
+        "sizeBytes": 533365713,
+        "sha256": "164cbfc8224d9e7ac211f21c212db73e999618438f605015bd0805b5abceaaec",
+        "format": "raw",
+        "launchPath": "Sword of the Berserk - Guts' Rage v1.000 (2000)(EIDOS)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 533365713,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_dc32b8aa0106947e064debc9b7be355d",
+      "name": "Tee Off",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_dc32b8aa0106947e064debc9b7be355d",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Tee Off v1.001 (1999)(Acclaim)(NTSC)(US)[!][3S T-8108N].chd",
+        "sizeBytes": 365940054,
+        "sha256": "0d684a0daacb62da86892a4b848df0cf27f902f7c9c36b06aa50055cb907db8e",
+        "format": "raw",
+        "launchPath": "Tee Off v1.001 (1999)(Acclaim)(NTSC)(US)[!][3S T-8108N].chd",
+        "expandedSizeBytes": 365940054,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_65e5a7f87f18300cd8ff10a79195f8cb",
+      "name": "Test Drive Le Mans",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_65e5a7f87f18300cd8ff10a79195f8cb",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Test Drive Le Mans v1.000 (2000)(Infogrames)(NTSC)(US)(M3)[!].chd",
+        "sizeBytes": 243253088,
+        "sha256": "5b9b4a3d6e47235888e280ac5d547c629bbca35d111222f1f073dfeedb19d71b",
+        "format": "raw",
+        "launchPath": "Test Drive Le Mans v1.000 (2000)(Infogrames)(NTSC)(US)(M3)[!].chd",
+        "expandedSizeBytes": 243253088,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_386e1fcc4580721e8ee2ccb2442821e8",
+      "name": "Test Drive V-Rally",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_386e1fcc4580721e8ee2ccb2442821e8",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Test Drive V-Rally v1.001 (2000)(Infogrames)(NTSC)(US)(M3)[!].chd",
+        "sizeBytes": 680349226,
+        "sha256": "afd22ff328842d0a5127025b2b0c06b2ca3f6ad61b018c4b921be37baf9380f5",
+        "format": "raw",
+        "launchPath": "Test Drive V-Rally v1.001 (2000)(Infogrames)(NTSC)(US)(M3)[!].chd",
+        "expandedSizeBytes": 680349226,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_4f9c064f3b8d84de14442a58f716ab7b",
+      "name": "TimeStalkers",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_4f9c064f3b8d84de14442a58f716ab7b",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "TimeStalkers v1.002 (2000)(Sega)(NTSC)(US)[!].chd",
+        "sizeBytes": 171394953,
+        "sha256": "18154612ae63c28bb1ae38213565e083008a9800d3da265ff2b2eef4618f8d73",
+        "format": "raw",
+        "launchPath": "TimeStalkers v1.002 (2000)(Sega)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 171394953,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_19474164e353d34cdfca86f40e101678",
+      "name": "Tom Clancy's Rainbow Six - Rogue Spear",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_19474164e353d34cdfca86f40e101678",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Tom Clancy's Rainbow Six - Rogue Spear v1.002 (2000)(Majesco - Red Storm)(NTSC)(US)[!].chd",
+        "sizeBytes": 468695808,
+        "sha256": "9ab4dbec55a892461e302ee9fcacd4cc1d27679047054496e9a942b6a03bd3b6",
+        "format": "raw",
+        "launchPath": "Tom Clancy's Rainbow Six - Rogue Spear v1.002 (2000)(Majesco - Red Storm)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 468695808,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_3cb78e3be8fe2c8f9f7eaf9045547e41",
+      "name": "Tom Clancy's Rainbow Six",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_3cb78e3be8fe2c8f9f7eaf9045547e41",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Tom Clancy's Rainbow Six v1.004 (2000)(Majesco - Red Storm)(NTSC)(US)[!].chd",
+        "sizeBytes": 357670044,
+        "sha256": "cf6b93400872df425d9b5b034598c7120786296654ec3bea5a15437e7ed3db3c",
+        "format": "raw",
+        "launchPath": "Tom Clancy's Rainbow Six v1.004 (2000)(Majesco - Red Storm)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 357670044,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_64b6c739fd188f9636b91cbf2ea9b9f3",
+      "name": "Tomb Raider - The Last Revelation",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_64b6c739fd188f9636b91cbf2ea9b9f3",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Tomb Raider - The Last Revelation v1.001 (2000)(EIDOS)(NTSC)(US)[!].chd",
+        "sizeBytes": 691155025,
+        "sha256": "5831f017d1e0238a3b9304f7ee3d33b152d2790a8dde8e8109a832a4ef66a8dc",
+        "format": "raw",
+        "launchPath": "Tomb Raider - The Last Revelation v1.001 (2000)(EIDOS)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 691155025,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_67e4ee7d44474a871dbbd8433621edb6",
+      "name": "Tomb Raider Chronicles",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_67e4ee7d44474a871dbbd8433621edb6",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Tomb Raider Chronicles v1.000 (2000)(EIDOS)(NTSC)(US)[!].chd",
+        "sizeBytes": 488945585,
+        "sha256": "4b0e50e7e6a9b181b9425ad9258b25b5b32117dba8e3aa8624c40aa7b99ec91e",
+        "format": "raw",
+        "launchPath": "Tomb Raider Chronicles v1.000 (2000)(EIDOS)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 488945585,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_59a2e7e306dd4c9b1c0833b6c9afa5d4",
+      "name": "Toy Commander (Versão 1)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_59a2e7e306dd4c9b1c0833b6c9afa5d4",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Toy Commander v1.022 (1999)(Sega)(NTSC)(US)(M4)[!][11S 51020].chd",
+        "sizeBytes": 563146172,
+        "sha256": "b8bf5073bee72b745f0bdef635bc942061fba3c204b92acb90b686826e4ec37b",
+        "format": "raw",
+        "launchPath": "Toy Commander v1.022 (1999)(Sega)(NTSC)(US)(M4)[!][11S 51020].chd",
+        "expandedSizeBytes": 563146172,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_002d1d405d347930a438061befe8ef02",
+      "name": "Toy Commander (Versão 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_002d1d405d347930a438061befe8ef02",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Toy Commander v1.022 (1999)(Sega)(NTSC)(US)(M4)[!][12S 51020].chd",
+        "sizeBytes": 563146560,
+        "sha256": "3afae8daed553762c1d027d531ddac9a81db7c03fb5744fe9331a45f8993826a",
+        "format": "raw",
+        "launchPath": "Toy Commander v1.022 (1999)(Sega)(NTSC)(US)(M4)[!][12S 51020].chd",
+        "expandedSizeBytes": 563146560,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_ee64f9362c695e19ef8816b777db97f5",
+      "name": "TrickStyle (Versão 1)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_ee64f9362c695e19ef8816b777db97f5",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "TrickStyle v1.000 (1999)(Acclaim)(NTSC)(US)[!][2S T-8102N].chd",
+        "sizeBytes": 286195305,
+        "sha256": "2af259d71ca23262c71e0878184cb8c2f110082f05ac1c21714403becf435a8a",
+        "format": "raw",
+        "launchPath": "TrickStyle v1.000 (1999)(Acclaim)(NTSC)(US)[!][2S T-8102N].chd",
+        "expandedSizeBytes": 286195305,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_2806e3c4feb570f4c2b4a24eeb8d7381",
+      "name": "TrickStyle (Versão 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_2806e3c4feb570f4c2b4a24eeb8d7381",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "TrickStyle v1.000 (1999)(Acclaim)(NTSC)(US)[!][3S T-8102N].chd",
+        "sizeBytes": 286194592,
+        "sha256": "975632505db4b22229e976433c2cd16e6403422efa542e3fd9e779eca3c4a1f4",
+        "format": "raw",
+        "launchPath": "TrickStyle v1.000 (1999)(Acclaim)(NTSC)(US)[!][3S T-8102N].chd",
+        "expandedSizeBytes": 286194592,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_a46cc5224458d79995ca07e43c77a9cd",
+      "name": "Typing of the Dead, The",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_a46cc5224458d79995ca07e43c77a9cd",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Typing of the Dead, The v1.004 (2000)(Sega)(NTSC)(US)[!][req. keyboard].chd",
+        "sizeBytes": 957085123,
+        "sha256": "c1684788149356f26a6073bf2ad731711a2799dbeaa93dd56eb45e6dbdf67cf7",
+        "format": "raw",
+        "launchPath": "Typing of the Dead, The v1.004 (2000)(Sega)(NTSC)(US)[!][req. keyboard].chd",
+        "expandedSizeBytes": 957085123,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_071dbe9ffd4c61dcf033fc1b6f66bf15",
+      "name": "Vigilante 8 - 2nd Offense",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_071dbe9ffd4c61dcf033fc1b6f66bf15",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Vigilante 8 - 2nd Offense v1.000 (1999)(Activision)(NTSC)(US)[!].chd",
+        "sizeBytes": 521650923,
+        "sha256": "dfe1d0c7ab99a7598d329a4a320d3d26f0ceeb5082c7d6f40ed0f5ca62509b77",
+        "format": "raw",
+        "launchPath": "Vigilante 8 - 2nd Offense v1.000 (1999)(Activision)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 521650923,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_37cd106cf1ef78a09b3055aeaed1a9fe",
+      "name": "Virtua Athlete 2000",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_37cd106cf1ef78a09b3055aeaed1a9fe",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Virtua Athlete 2000 v1.002 (2000)(Agetec)(NTSC)(US)[!].chd",
+        "sizeBytes": 50527674,
+        "sha256": "5fb869be2bbc957fae8b76a299ecf0394ccd2943b7608d4eeb15d540ab5fc8d6",
+        "format": "raw",
+        "launchPath": "Virtua Athlete 2000 v1.002 (2000)(Agetec)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 50527674,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_2b3d5545daacecfb3311b0abb16f8a49",
+      "name": "Virtua Striker 2",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_2b3d5545daacecfb3311b0abb16f8a49",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Virtua Striker 2 v1.002 (1999)(Sega)(NTSC)(US)(M5)[!].chd",
+        "sizeBytes": 93668377,
+        "sha256": "91b1ba3e28571610b9e0c22d4d753fbd9bd759d214b4f5b1ab95e38f487dce18",
+        "format": "raw",
+        "launchPath": "Virtua Striker 2 v1.002 (1999)(Sega)(NTSC)(US)(M5)[!].chd",
+        "expandedSizeBytes": 93668377,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_05102e1dc7ad0d7dc12702b1bf3556cf",
+      "name": "Who Wants to Beat Up a Millionaire",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_05102e1dc7ad0d7dc12702b1bf3556cf",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Who Wants to Beat Up a Millionaire v1.004 (2000)(Simon & Schuster)(NTSC)(US)[!].chd",
+        "sizeBytes": 155970727,
+        "sha256": "695de155c9a23901bec73db01f8d7e9fe27be5b48698a3d869b5c1c8c09540ae",
+        "format": "raw",
+        "launchPath": "Who Wants to Beat Up a Millionaire v1.004 (2000)(Simon & Schuster)(NTSC)(US)[!].chd",
+        "expandedSizeBytes": 155970727,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_e368aad668218529a012923729870732",
+      "name": "World Series Baseball 2K1 (Versão 1)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_e368aad668218529a012923729870732",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "World Series Baseball 2K1 v1.000 (2000)(Sega)(NTSC)(US)[!][3S 51055].chd",
+        "sizeBytes": 259365957,
+        "sha256": "674a5a0c76723a4a6be6a863428235a17bcfd84bfda40ba0660908cfcfdbc6a4",
+        "format": "raw",
+        "launchPath": "World Series Baseball 2K1 v1.000 (2000)(Sega)(NTSC)(US)[!][3S 51055].chd",
+        "expandedSizeBytes": 259365957,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_4e2397f60df5d4a685a9e2accba450bd",
+      "name": "World Series Baseball 2K1 (Versão 2)",
+      "platform": "dreamcast",
+      "revision": 15,
+      "coverId": "cover_4e2397f60df5d4a685a9e2accba450bd",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "World Series Baseball 2K1 v1.000 (2000)(Sega)(NTSC)(US)[!][5S 51055].chd",
+        "sizeBytes": 259366142,
+        "sha256": "145d03ab272e04942d97e9cd24b51b7b7d1dcdc1c607fd4d5d4d3ed9e363ace7",
+        "format": "raw",
+        "launchPath": "World Series Baseball 2K1 v1.000 (2000)(Sega)(NTSC)(US)[!][5S 51055].chd",
+        "expandedSizeBytes": 259366142,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_7e4887bc3e6edba81a11f5a65fe279f8",
+      "name": "1941 - Counter Attack (World)",
+      "platform": "cps1",
+      "revision": 18,
+      "coverId": "cover_7e4887bc3e6edba81a11f5a65fe279f8",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "1941.zip",
+        "sizeBytes": 1420423,
+        "sha256": "b14c77eb91428847ba418eb6697e876f1c84deea78149b30b688b67466c2bb86",
+        "format": "zip",
+        "launchPath": "1941.zip",
+        "expandedSizeBytes": 1420289,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_1da4a68c9c4efb41fca2b16204597eae",
+      "name": "Captain Commando (World)",
+      "platform": "cps1",
+      "revision": 18,
+      "coverId": "cover_1da4a68c9c4efb41fca2b16204597eae",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "captcomm.zip",
+        "sizeBytes": 2542260,
+        "sha256": "dbba91f97008c39592a111ae826ed63df43daf45e616608c80cf13a6ba0458df",
+        "format": "zip",
+        "launchPath": "captcomm.zip",
+        "expandedSizeBytes": 2542118,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_da663d24f1b21233d607f0365ee1863a",
+      "name": "Cadillacs and Dinosaurs (World)",
+      "platform": "cps1",
+      "revision": 18,
+      "coverId": "cover_da663d24f1b21233d607f0365ee1863a",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "dino.zip",
+        "sizeBytes": 4116232,
+        "sha256": "1c0ef82c37a861495212672c9e70ceb7a508545a0c5ae956021bd677dc7c5f3e",
+        "format": "zip",
+        "launchPath": "dino.zip",
+        "expandedSizeBytes": 4116098,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_208552a62612beae0fdbc4f0aec35ad3",
+      "name": "Final Fight (World)",
+      "platform": "cps1",
+      "revision": 18,
+      "coverId": "cover_208552a62612beae0fdbc4f0aec35ad3",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "ffight.zip",
+        "sizeBytes": 1429754,
+        "sha256": "fde2d8e3e0c6daccd4cdad2164ced1b10365277a1a7c54a6963911b4f126faef",
+        "format": "zip",
+        "launchPath": "ffight.zip",
+        "expandedSizeBytes": 1429616,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_6161e4442e0384b0b3f33e2697711cca",
+      "name": "The Punisher (World)",
+      "platform": "cps1",
+      "revision": 18,
+      "coverId": "cover_6161e4442e0384b0b3f33e2697711cca",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "punisher.zip",
+        "sizeBytes": 4042772,
+        "sha256": "86e4df987ce30ce76be426ad2208250fc95bb241e1850b09d0f98fc59ecf6bc7",
+        "format": "zip",
+        "launchPath": "punisher.zip",
+        "expandedSizeBytes": 4042630,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_d5c2b72c57da35806add96453ac90db2",
+      "name": "Street Fighter II - The World Warrior (World 910214)",
+      "platform": "cps1",
+      "revision": 18,
+      "coverId": "cover_d5c2b72c57da35806add96453ac90db2",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "sf2.zip",
+        "sizeBytes": 3551951,
+        "sha256": "6dee042c879fcc468736fff530a63da5245c24dca7a53646d34983ace55b7d20",
+        "format": "zip",
+        "launchPath": "sf2.zip",
+        "expandedSizeBytes": 3551819,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_a57978ebadf3561cb59587dac426d2b5",
+      "name": "Strider (US)",
+      "platform": "cps1",
+      "revision": 18,
+      "coverId": "cover_a57978ebadf3561cb59587dac426d2b5",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "strider.zip",
+        "sizeBytes": 2100317,
+        "sha256": "e4c91577d03aeee95c2c78601dc4c30f48dc90ebf57fc10ad19b8dd8a15f9a76",
+        "format": "zip",
+        "launchPath": "strider.zip",
+        "expandedSizeBytes": 2100177,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_a87384b87359586c74cc54b4f2a60630",
+      "name": "1944: The Loop Master (US 000620)",
+      "platform": "cps2",
+      "revision": 18,
+      "coverId": "cover_a87384b87359586c74cc54b4f2a60630",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "1944.zip",
+        "sizeBytes": 15451593,
+        "sha256": "ade0be24e07ddf297f4a996ba3077229ab533c82fd02a1c38e077a977f209b6f",
+        "format": "zip",
+        "launchPath": "1944.zip",
+        "expandedSizeBytes": 15451343,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_52eb232b0c0d67812d971f5890e48492",
+      "name": "Marvel Super Heroes Vs. Street Fighter (US 970827)",
+      "platform": "cps2",
+      "revision": 18,
+      "coverId": "cover_52eb232b0c0d67812d971f5890e48492",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "mshvsf.zip",
+        "sizeBytes": 23128165,
+        "sha256": "9c233f4dca92e672721ecbdfe9db842f4a54517f55f796e0c3fcbec020f383b7",
+        "format": "zip",
+        "launchPath": "mshvsf.zip",
+        "expandedSizeBytes": 23127911,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_6f55b112c27ea96b2df69cf7e205d2d8",
+      "name": "Street Fighter Alpha 2 (US 960306)",
+      "platform": "cps2",
+      "revision": 18,
+      "coverId": "cover_6f55b112c27ea96b2df69cf7e205d2d8",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "sfa2.zip",
+        "sizeBytes": 13692143,
+        "sha256": "a73e6cd83f6726474021278d21763a86ebab283440ea83e159d39f6fa7049ca1",
+        "format": "zip",
+        "launchPath": "sfa2.zip",
+        "expandedSizeBytes": 13691893,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_8188cff444a707ff9ac7799177b259df",
+      "name": "Street Fighter Alpha 3 (USA 980904)",
+      "platform": "cps2",
+      "revision": 18,
+      "coverId": "cover_8188cff444a707ff9ac7799177b259df",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "sfa3u.zip",
+        "sizeBytes": 23352852,
+        "sha256": "5b707139b606f458a189f25ec64bddc64b1ddbba8a819d20c6aa49c273a1e3cf",
+        "format": "zip",
+        "launchPath": "sfa3u.zip",
+        "expandedSizeBytes": 23352600,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_4dd5e7224167e84dbdef3a6dc0a595ec",
+      "name": "Super Street Fighter 2 Turbo (World 940223)",
+      "platform": "cps2",
+      "revision": 18,
+      "coverId": "cover_4dd5e7224167e84dbdef3a6dc0a595ec",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "ssf2t.zip",
+        "sizeBytes": 11895852,
+        "sha256": "c69d5066f394c68e9f9727e57f726df67d4cbdb5f9838bc26ad28db6bf2682be",
+        "format": "zip",
+        "launchPath": "ssf2t.zip",
+        "expandedSizeBytes": 11895600,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_84b036f254e56c789545be5991604a46",
+      "name": "JoJo's Bizarre Adventure: Heritage for the Future / JoJo no Kimyou na Bouken: Mirai e no Isan (Euro 990927)",
+      "platform": "cps3",
+      "revision": 18,
+      "coverId": "cover_84b036f254e56c789545be5991604a46",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "jojoba.zip",
+        "sizeBytes": 54257024,
+        "sha256": "62b201c865b07044b12299d8b57f40c9a408446048f384dff814e769ff600604",
+        "format": "zip",
+        "launchPath": "jojoba.zip",
+        "expandedSizeBytes": 54256886,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_60b0c94a28de6bd4ab958ad7178078fb",
+      "name": "Street Fighter III 2nd Impact: Giant Attack (USA 970930)",
+      "platform": "cps3",
+      "revision": 18,
+      "coverId": "cover_60b0c94a28de6bd4ab958ad7178078fb",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "sfiii2.zip",
+        "sizeBytes": 43777336,
+        "sha256": "2b5b4c34e530a4a3126c4be7be1852caa2beae49a94b9d5cf594d3b249d8e543",
+        "format": "zip",
+        "launchPath": "sfiii2.zip",
+        "expandedSizeBytes": 43777198,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_814ca9c544a65f3f85f2ac6e6f993973",
+      "name": "Street Fighter III 3rd Strike: Fight for the Future (Euro 990608)",
+      "platform": "cps3",
+      "revision": 18,
+      "coverId": "cover_814ca9c544a65f3f85f2ac6e6f993973",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "sfiii3.zip",
+        "sizeBytes": 70592293,
+        "sha256": "decd3b2deb51283a27857634d15d7f61fa28b4a18d9d8bc771b7f8622388077d",
+        "format": "zip",
+        "launchPath": "sfiii3.zip",
+        "expandedSizeBytes": 70592155,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_43f3753dd92598f1841cdfd3ec273886",
+      "name": "1945k III",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_43f3753dd92598f1841cdfd3ec273886",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "1945kiii.zip",
+        "sizeBytes": 2749403,
+        "sha256": "d8a189419595c2b7dc454b1b27e751f926ba2e7f995576312c63231eeb8d9d1e",
+        "format": "zip",
+        "launchPath": "1945kiii.zip",
+        "expandedSizeBytes": 2749145,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_9122a13f5464bc686a0413c7aa47ee88",
+      "name": "Asterix (World ver. EAD)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_9122a13f5464bc686a0413c7aa47ee88",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "asterix.zip",
+        "sizeBytes": 3672398,
+        "sha256": "77e1a7a32f22901d1d0d969639a2d30e30b87f69e13891a406c66834c7c82f7c",
+        "format": "zip",
+        "launchPath": "asterix.zip",
+        "expandedSizeBytes": 3672142,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_9d1c9f01e3e37f23b103f819cbb61dc1",
+      "name": "Tetris (set 1)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_9d1c9f01e3e37f23b103f819cbb61dc1",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "atetris.zip",
+        "sizeBytes": 56817,
+        "sha256": "a5437c78e71de7bffdb12610318c0458e87f6d4cfe909471e77b87fba06e336b",
+        "format": "zip",
+        "launchPath": "atetris.zip",
+        "expandedSizeBytes": 56561,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_38c62a70c14ad43612b790380df4f4b3",
+      "name": "Batman",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_38c62a70c14ad43612b790380df4f4b3",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "batman.zip",
+        "sizeBytes": 1623300,
+        "sha256": "409bd19d45ed40e1432baab1b8e52b7efe40f66bfaf0f2cd5195814f0a743326",
+        "format": "zip",
+        "launchPath": "batman.zip",
+        "expandedSizeBytes": 1623046,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_9d9708d49c8ff8f996c0abbc9499223b",
+      "name": "Donkey Kong (US)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_9d9708d49c8ff8f996c0abbc9499223b",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "dkong.zip",
+        "sizeBytes": 25649,
+        "sha256": "95aba0dfafab5b3e525def993914a8335d8a77439c8dc45c527c10bf713acdcc",
+        "format": "zip",
+        "launchPath": "dkong.zip",
+        "expandedSizeBytes": 25397,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_dc70679260ae154bc341a1f1b89f8fee",
+      "name": "Demon Front (ver. 102)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_dc70679260ae154bc341a1f1b89f8fee",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "dmnfrnt.zip",
+        "sizeBytes": 25094275,
+        "sha256": "f590df9d3efa084328360bfe2860e09b42e52af066a235a87948df5533c4b8ff",
+        "format": "zip",
+        "launchPath": "dmnfrnt.zip",
+        "expandedSizeBytes": 25094019,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_b60e44691a1af9bca9853039b5ff9e36",
+      "name": "Drift Out (Japan)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_b60e44691a1af9bca9853039b5ff9e36",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "driftout.zip",
+        "sizeBytes": 1030297,
+        "sha256": "f8e3ce8e6f95d00773a3a9eda6788e6904e8fd3f1ff9ed5c1b540a4f10205966",
+        "format": "zip",
+        "launchPath": "driftout.zip",
+        "expandedSizeBytes": 1030039,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_7bf27372f3049962eaf62b12765d10b3",
+      "name": "EspGaluda",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_7bf27372f3049962eaf62b12765d10b3",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "espgal.zip",
+        "sizeBytes": 18194510,
+        "sha256": "3d1c5b878f0733df04697f77bc29840072ca7cbdb350ef1f921ea85df80abef7",
+        "format": "zip",
+        "launchPath": "espgal.zip",
+        "expandedSizeBytes": 18194256,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_ce7b8129d80dd6fe53bbae57cc470e43",
+      "name": "Grid Seeker: Project Stormhammer (World)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_ce7b8129d80dd6fe53bbae57cc470e43",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "gseeker.zip",
+        "sizeBytes": 5216845,
+        "sha256": "f5f830d5cef14675ae4ea16fd026bbcbe707c630913015fc1abeeb8d2919370b",
+        "format": "zip",
+        "launchPath": "gseeker.zip",
+        "expandedSizeBytes": 5216589,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_4d7ade70930164d851c435ad54894c7d",
+      "name": "Gun Bird (Japan)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_4d7ade70930164d851c435ad54894c7d",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "gunbird.zip",
+        "sizeBytes": 4542404,
+        "sha256": "899237d8fd434ffa41ae24e9f8ad7a5d565430662964f830b2b75e8eb7ad5c09",
+        "format": "zip",
+        "launchPath": "gunbird.zip",
+        "expandedSizeBytes": 4542148,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_8757f3c62d1922bce861b4de5f28f9a2",
+      "name": "Knights of Valour / Sangoku Senki (ver. 117)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_8757f3c62d1922bce861b4de5f28f9a2",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "kov.zip",
+        "sizeBytes": 23228031,
+        "sha256": "4cfa199e7108f309d3ade12d9dc11f35b0e8111492d2abfa6b5ce265ff3176f1",
+        "format": "zip",
+        "launchPath": "kov.zip",
+        "expandedSizeBytes": 23227783,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_9ed93c461c331375768d380231ed1a28",
+      "name": "Knights of Valour: Luan Shi Quan Huang Te Bie Ban / Sangoku Senki: Luan Shi Quan Huang Te Bie Ban (V112CN, China)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_9ed93c461c331375768d380231ed1a28",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "kovlsqho.zip",
+        "sizeBytes": 40899379,
+        "sha256": "a2ad3a4bb603682d698346aa8fbd98aa87d8c4d699b3203d3eff29ad543edffe",
+        "format": "zip",
+        "launchPath": "kovlsqho.zip",
+        "expandedSizeBytes": 40899121,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_5e9d350bedf3f38c71fe9ab09aa22998",
+      "name": "Knights of Valour Plus / Sangoku Senki Plus (ver. 119)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_5e9d350bedf3f38c71fe9ab09aa22998",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "kovplus.zip",
+        "sizeBytes": 23241010,
+        "sha256": "64e6960b3ee2a5ac11e0a761ad5339a5f1278303b40d77d884efbeb84e7edb26",
+        "format": "zip",
+        "launchPath": "kovplus.zip",
+        "expandedSizeBytes": 23240754,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_5a99bd9b70aeffc8be7ea37761d0ff34",
+      "name": "Knights of Valour Superheroes / Sangoku Senki Superheroes (ver. 322)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_5a99bd9b70aeffc8be7ea37761d0ff34",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "kovsh.zip",
+        "sizeBytes": 22370283,
+        "sha256": "fa7c065a14cdbbe71dc98d1ef052bae3bc11e55538197ad4457a52f6da62f7d2",
+        "format": "zip",
+        "launchPath": "kovsh.zip",
+        "expandedSizeBytes": 22370031,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_2325ba192ed158e7a7a28d81e153c678",
+      "name": "Martial Masters (ver. 104, 102, 102US)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_2325ba192ed158e7a7a28d81e153c678",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "martmast.zip",
+        "sizeBytes": 30718521,
+        "sha256": "81e7f9b5dfb8f903104549b361a54b80da86468f0c51db71a4a203a75b989a8d",
+        "format": "zip",
+        "launchPath": "martmast.zip",
+        "expandedSizeBytes": 30718263,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_43e41d521df4b03822a07e83c2ac0b05",
+      "name": "Raiden 2",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_43e41d521df4b03822a07e83c2ac0b05",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "raiden2.zip",
+        "sizeBytes": 10657817,
+        "sha256": "9f53ecf29e614825d8a78f48d317b390979352f31aaf3d3f10bf9db94e964a25",
+        "format": "zip",
+        "launchPath": "raiden2.zip",
+        "expandedSizeBytes": 10657561,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_f633da416caadcb8de1ca9e3d4ecc904",
+      "name": "Rolling Crush (version 1.07.E - 1999/02/11, Trust license)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_f633da416caadcb8de1ca9e3d4ecc904",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "SemiCom",
+        "publisher": "SemiCom",
+        "genre": "Quebra-cabeças-Quebra-cabeças / Lançar",
+        "players": "1-2",
+        "releaseDate": "19990101T000000"
+      },
+      "artifact": {
+        "fileName": "rolcrush.zip",
+        "sizeBytes": 2278653,
+        "sha256": "ba498c9292c3d4fbafd71b7583052b3e77e8ded66fd37a897674410dc4ac5b19",
+        "format": "zip",
+        "launchPath": "rolcrush.zip",
+        "expandedSizeBytes": 2278395,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_718e7a9dea679b1e7b5f9cf46eef76b1",
+      "name": "Street Fighter Alpha 3 (USA 980904)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_718e7a9dea679b1e7b5f9cf46eef76b1",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "sfa3u.zip",
+        "sizeBytes": 23352852,
+        "sha256": "5b707139b606f458a189f25ec64bddc64b1ddbba8a819d20c6aa49c273a1e3cf",
+        "format": "zip",
+        "launchPath": "sfa3u.zip",
+        "expandedSizeBytes": 23352600,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_e9334dd7d112c8b083b133aa555849ef",
+      "name": "Shadow Force (US Version 2)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_e9334dd7d112c8b083b133aa555849ef",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "shadfrce.zip",
+        "sizeBytes": 5264367,
+        "sha256": "99755bfc9f521ac0f4e484228654fdcbbb2dea35df4e8996aff7b7d005b571a2",
+        "format": "zip",
+        "launchPath": "shadfrce.zip",
+        "expandedSizeBytes": 5264109,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_c6c6ce14d5dd6deb0fdc991000025a63",
+      "name": "Super Space Invaders '91 (World)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_c6c6ce14d5dd6deb0fdc991000025a63",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "ssi.zip",
+        "sizeBytes": 603251,
+        "sha256": "5d1b17a867422ff12c8fc47bf2e5ad5bf61354230906aadcd1c6dbfe72dc19eb",
+        "format": "zip",
+        "launchPath": "ssi.zip",
+        "expandedSizeBytes": 603003,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_53fa1762c364a5d9cdee8a4d145f99c7",
+      "name": "Tank Force (US)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_53fa1762c364a5d9cdee8a4d145f99c7",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "tankfrce.zip",
+        "sizeBytes": 681785,
+        "sha256": "e4a4ef2d133ab224c932751a3f88e2300644b27c6fd4da7d46b2a92e95f4278a",
+        "format": "zip",
+        "launchPath": "tankfrce.zip",
+        "expandedSizeBytes": 681527,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_4b0adfba219bd08a3dd5a70397d81bce",
+      "name": "Twin Cobra II (Ver 2.1O 1995/11/30)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_4b0adfba219bd08a3dd5a70397d81bce",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "tcobra2.zip",
+        "sizeBytes": 6561876,
+        "sha256": "321d9e42cd704854b4254e302aac77205424df197af6f4d76137db02587a64ce",
+        "format": "zip",
+        "launchPath": "tcobra2.zip",
+        "expandedSizeBytes": 6561620,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_80583c3f80a1c88bcb97181ac6c486bf",
+      "name": "Thunder Dragon",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_80583c3f80a1c88bcb97181ac6c486bf",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "tdragon.zip",
+        "sizeBytes": 1274842,
+        "sha256": "2d11302cd62fd79b10db13cd155387655aa05b8813b55c8a3fa7630859cca63d",
+        "format": "zip",
+        "launchPath": "tdragon.zip",
+        "expandedSizeBytes": 1274586,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_b33f8e87ad6b4846ad79b5074a5f453c",
+      "name": "Tiger Heli (set 1)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_b33f8e87ad6b4846ad79b5074a5f453c",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "tigerh.zip",
+        "sizeBytes": 100258,
+        "sha256": "50440befd21df0d62d00a66f08e34527488444c7f5e27fd6c1dc7140cd2a2e66",
+        "format": "zip",
+        "launchPath": "tigerh.zip",
+        "expandedSizeBytes": 100004,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_97949f02512a6796b20356a2c6eeee99",
+      "name": "Toki (set 1)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_97949f02512a6796b20356a2c6eeee99",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "toki.zip",
+        "sizeBytes": 1061181,
+        "sha256": "1bd33a932b52f407d9edbd91dde4d70d5776b465fde2bdbfc38e30440a47189b",
+        "format": "zip",
+        "launchPath": "toki.zip",
+        "expandedSizeBytes": 1060931,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_eb33d25e7e57c67802ff111da522419a",
+      "name": "Ultimate Mortal Kombat 3 (rev 1.2)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_eb33d25e7e57c67802ff111da522419a",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "umk3.zip",
+        "sizeBytes": 22111980,
+        "sha256": "84a4ca835e1df6e6ca61d9ea40b94c979f8b1ed9d21bda3d08dd37514821fb8b",
+        "format": "zip",
+        "launchPath": "umk3.zip",
+        "expandedSizeBytes": 22111730,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_df0b1a853d0e930424d5b7d485c33f1e",
+      "name": "Vendetta (World, 2 Players, ver. W)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_df0b1a853d0e930424d5b7d485c33f1e",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "vendetta2pw.zip",
+        "sizeBytes": 2811703,
+        "sha256": "8b31c96c5b76f61c9a986ded3cfb4320c26b795919717b2e9b719f1aaa0ddf1e",
+        "format": "zip",
+        "launchPath": "vendetta2pw.zip",
+        "expandedSizeBytes": 2811439,
+        "fileCount": 2
+      }
+    },
+    {
+      "itemId": "station_19fa16b7aea0ce4499f354eb9fcd7597",
+      "name": "Violent Storm (Europe ver EAB)",
+      "platform": "fbneo",
+      "revision": 18,
+      "coverId": "cover_19fa16b7aea0ce4499f354eb9fcd7597",
+      "catalogVisible": true,
+      "folderPath": [],
+      "metadata": {
+        "description": "",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "viostorm.zip",
+        "sizeBytes": 8549673,
+        "sha256": "13d11a11cad9421f844bf607bc7311e3a3d0b4463c875705cf948f55d0d03499",
+        "format": "zip",
+        "launchPath": "viostorm.zip",
+        "expandedSizeBytes": 8549415,
+        "fileCount": 2
+      }
+    }
+  ]
+}
