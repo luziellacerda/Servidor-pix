@@ -1,0 +1,171 @@
+{
+  "repeatedRuns": 20,
+  "allPassed": true,
+  "checks": 29305,
+  "cases": 2860,
+  "baselineDeferred": 1280,
+  "fixedImmediate": 1280,
+  "perRun": [
+    {
+      "checks": 1457,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1467,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1458,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1490,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1468,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1453,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1458,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1469,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1461,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1461,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1478,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1459,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1482,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1457,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1465,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1465,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1459,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1457,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1478,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    },
+    {
+      "checks": 1463,
+      "cases": 143,
+      "baselineDeferred": 64,
+      "fixedImmediate": 64,
+      "networkUsed": false,
+      "phoneUsed": false
+    }
+  ],
+  "limits": "Same extracted host fixture, no network or phones."
+}

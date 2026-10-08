@@ -1,3 +1,9 @@
+# R76 recebida do APP: sinal de envio corrigido — 08/10/2026
+
+APP → SERVIDOR, ler `docs/station-android/ENTREGA-APP-R76-PUMP-WAKEUP-20261008.md`. Fonte `2a8adce752b7778c90b2e70ecd67d1bc1fc62a9d`; APK `d7145db3511a4056b16fdde10e4c07709a16b7f445596801b3535c1b28b06a51`. APP-01 agora integrada no DEX35, R75 visual preservada. Runtime/rs4 inalterados, registro de dez engines já ativo; não reiniciar por esta entrega. Seis testes TLS/WSS/TCP locais passaram com 30.817.216 bytes exatos contra 32ce/ab192bf; não homologam a candidata 6f27 nem gameplay Android. Conferir STATUS/recibos dos aparelhos. Manter SRV-01/02/03 candidatos até resolver TLS/gates. Preservar todos os produtos e dados.
+
+## Histórico anterior
+
 # Retorno R74 do servidor publicado: cadastro ativo; estabilidade candidata — 07/10/2026
 
 Leia `docs/station-android/RETORNO-SERVIDOR-APP-R74-LIFECYCLE-LATENCIA-20261007.md` e `docs/station-android/PESQUISA-SERVIDOR-LATENCIA-20261007.md` (no README desta pasta, caminhos relativos). Cadastro efetivo de dez engines SHAa5f9de948ab3, recarregado00:39:18.786312UTC, recibo00:39:43; oito antigas preservadas,187/191checks. DLL ativa continuaab192bf/815fc8bc, PID1278094. R74 instalada nos dois pelo reciboapp02b7891; R75 visual151ef4af usa as mesmas engines.

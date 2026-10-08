@@ -1,0 +1,89 @@
+{
+  "utc": "2026-10-08T11:21:13.382502+00:00",
+  "success": true,
+  "executions": [
+    {
+      "receipt": "evidence/recovery-interop-32ce9d2-logging.json",
+      "sha256": "9a47fd3d9addef911a41028065afc9c07ef22e6cfc655015373033b4a0bce151",
+      "serverCommit": "32ce9d2b30bb23deef17899e10fc285f38ea81ab",
+      "logging": true,
+      "stress": false,
+      "vectorChecks": 32,
+      "transportChecks": 46,
+      "tcpBytesVerified": 1620000,
+      "roomsJarSHA256": "36651c16fea810d1bfc8a0f72703e46f6eae258d3313ec1ea98bfb1106e68806",
+      "roomsDexSHA256": "c03ea2f4aa30c5e32654c575115583f72815b9701c16791c4f94c6ade753f2ff"
+    },
+    {
+      "receipt": "evidence/recovery-interop-32ce9d2-quiet.json",
+      "sha256": "cb4ff04c8e28eba10b17f16d106c6e3ec11bc7c27176ea460fc544f4e32ae304",
+      "serverCommit": "32ce9d2b30bb23deef17899e10fc285f38ea81ab",
+      "logging": false,
+      "stress": false,
+      "vectorChecks": 32,
+      "transportChecks": 46,
+      "tcpBytesVerified": 1620000,
+      "roomsJarSHA256": "36651c16fea810d1bfc8a0f72703e46f6eae258d3313ec1ea98bfb1106e68806",
+      "roomsDexSHA256": "c03ea2f4aa30c5e32654c575115583f72815b9701c16791c4f94c6ade753f2ff"
+    },
+    {
+      "receipt": "evidence/recovery-interop-ab192bf-logging.json",
+      "sha256": "d6a3acbc58185cd9a1b6479c69d5ab49c37635e7da167e18820d462f2edd1547",
+      "serverCommit": "ab192bf1585e30f303d041f13b36a1f9c96d2caa",
+      "logging": true,
+      "stress": false,
+      "vectorChecks": 32,
+      "transportChecks": 46,
+      "tcpBytesVerified": 1620000,
+      "roomsJarSHA256": "36651c16fea810d1bfc8a0f72703e46f6eae258d3313ec1ea98bfb1106e68806",
+      "roomsDexSHA256": "c03ea2f4aa30c5e32654c575115583f72815b9701c16791c4f94c6ade753f2ff"
+    },
+    {
+      "receipt": "evidence/recovery-interop-ab192bf-quiet.json",
+      "sha256": "e232d72ef7f6695efacb9dd4e60ac29c54034fd7b22703c1248d81905ad9ff0f",
+      "serverCommit": "ab192bf1585e30f303d041f13b36a1f9c96d2caa",
+      "logging": false,
+      "stress": false,
+      "vectorChecks": 32,
+      "transportChecks": 46,
+      "tcpBytesVerified": 1620000,
+      "roomsJarSHA256": "36651c16fea810d1bfc8a0f72703e46f6eae258d3313ec1ea98bfb1106e68806",
+      "roomsDexSHA256": "c03ea2f4aa30c5e32654c575115583f72815b9701c16791c4f94c6ade753f2ff"
+    },
+    {
+      "receipt": "evidence/recovery-interop-stress-ab192bf-logging.json",
+      "sha256": "87dd22b921a94627dbbd6a2fbde45b7e45f9ad09e6cd6a49c0153a346626cb88",
+      "serverCommit": "ab192bf1585e30f303d041f13b36a1f9c96d2caa",
+      "logging": true,
+      "stress": true,
+      "vectorChecks": 32,
+      "transportChecks": 72,
+      "tcpBytesVerified": 12168608,
+      "roomsJarSHA256": "36651c16fea810d1bfc8a0f72703e46f6eae258d3313ec1ea98bfb1106e68806",
+      "roomsDexSHA256": "c03ea2f4aa30c5e32654c575115583f72815b9701c16791c4f94c6ade753f2ff"
+    },
+    {
+      "receipt": "evidence/recovery-interop-stress-ab192bf-quiet.json",
+      "sha256": "71fff10826abb020bf8442b7d0cbba1a64b67fd6a6cad8b2247e19947892e90c",
+      "serverCommit": "ab192bf1585e30f303d041f13b36a1f9c96d2caa",
+      "logging": false,
+      "stress": true,
+      "vectorChecks": 32,
+      "transportChecks": 72,
+      "tcpBytesVerified": 12168608,
+      "roomsJarSHA256": "36651c16fea810d1bfc8a0f72703e46f6eae258d3313ec1ea98bfb1106e68806",
+      "roomsDexSHA256": "c03ea2f4aa30c5e32654c575115583f72815b9701c16791c4f94c6ade753f2ff"
+    }
+  ],
+  "executionCount": 6,
+  "repeatedVectorChecks": 192,
+  "repeatedTransportChecks": 328,
+  "tcpBytesVerifiedAcrossExecutions": 30817216,
+  "uniqueOriginalChecks": 46,
+  "additionalStressChecks": 26,
+  "privateFixturesRemoved": true,
+  "productionRequests": false,
+  "androidExecuted": false,
+  "nativePauseSynthetic": true,
+  "gameplayVerified": false
+}

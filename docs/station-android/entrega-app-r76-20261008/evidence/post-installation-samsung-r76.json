@@ -1,0 +1,11 @@
+{
+  "version": "R76",
+  "checkedUTC": "2026-10-08T11:30:01.949379+00:00",
+  "device": "Samsung A56",
+  "resumedActivity": "org.turboramastation.frontend/org.emulationstation.frontend.ESActivity",
+  "method": "adb dumpsys activity activities after official entry request",
+  "entryForegroundVerified": true,
+  "authenticationProtocolVerified": false,
+  "twoDeviceGameplayVerified": false,
+  "phoneOperatedForGameplay": false
+}

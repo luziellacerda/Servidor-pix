@@ -1,0 +1,161 @@
+{
+  "appCommit": "2a8adce752b7778c90b2e70ecd67d1bc1fc62a9d",
+  "serverParent": "ed9ca9fdcc16f3b9f86792d43ed01d5812a9f1d8",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 30124,
+      "sha256": "509d95449aa3fe7781854ee6519fa3a0cd73d26f2b20b6127b03fc7d525d0559"
+    },
+    {
+      "path": "docs/station-android/AGENTS.md",
+      "bytes": 31158,
+      "sha256": "e52869a20613b689ebffd2af85ec612c8133baa7c97e3d939fa5ec903695fbd2"
+    },
+    {
+      "path": "docs/station-android/ENTREGA-APP-R76-PUMP-WAKEUP-20261008.md",
+      "bytes": 10838,
+      "sha256": "814807c4882c9b6364e6bf22e594987e069c9b539e80c971aab07bc6d7f18436"
+    },
+    {
+      "path": "docs/station-android/README.md",
+      "bytes": 27509,
+      "sha256": "3990a328563aad07e032392c7006f551ee447ed6bb47174d00a50c6327b21480"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/JAVA-OVERLAY-MANIFEST.json",
+      "bytes": 428,
+      "sha256": "54e939fd3b604b4995b4c6e2dd855414e1fd85ebba7cbdd4894326e9d08db037"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/SOURCE-FILES.json",
+      "bytes": 4380,
+      "sha256": "bd58fdd518845414c5f633d8a9d7b917953f78eca9454c2668b556fbd4acddaf"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/STATUS.json",
+      "bytes": 1191,
+      "sha256": "e1bb03b5c0902be9af6125bb06c6d6ca312291af628b47790d5af9e07bd4dbcf"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/baseline-java-build.json",
+      "bytes": 32517,
+      "sha256": "9e6c882c23420ff3d113fe63c039c88b4c037888c88c7320c6d33785b69230a1"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/installation-samsung-r76.json",
+      "bytes": 1099,
+      "sha256": "b55739dce95fd0cbfe3a55e6e426fa9cde1ec71cf1d1a33ee13a53295fe9c796"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/java-dex-build.json",
+      "bytes": 32693,
+      "sha256": "cfa78219e26edf237d1671f0937aa5d2dcd3651270a76c8beff43d6c342886cf"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/local-tests.json",
+      "bytes": 42265,
+      "sha256": "8d7bc044ad5ad3bc413218126c0ff9fae3b809b9ffd9c8006ee6b1fd3089b0f1"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/package-gates.json",
+      "bytes": 3590,
+      "sha256": "c32f6054918129fe84facd476462d26d094ab66e1799792fc4bdc8fb284101c8"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/package.json",
+      "bytes": 8879,
+      "sha256": "48a0e11e173dc24482499557a0e3e4e3783fadad6720f0e827cd44d3cf018dfc"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/post-installation-samsung-r76.json",
+      "bytes": 437,
+      "sha256": "6409240240e6f74a6e639f7fc87c1a647280776ffd27c0a89bd0751938100a6d"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/pump-repeat-tests.json",
+      "bytes": 3711,
+      "sha256": "99c1331718edc5f3b0bd11ecfb9d390810958d410701f6378fafaef7bc40cea9"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/pump-tests.json",
+      "bytes": 1653,
+      "sha256": "ffb875a8268e3727fe5d0cc34c689bf646aba17fdd47d330b05595821c525c06"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/recovery-harness-portability-32ce9d2-logging.json",
+      "bytes": 4001,
+      "sha256": "804db18beaab0cac6be6d7b4602612f496a3ca5d7b7354990cccf538b7ca1682"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/recovery-harness-portability-32ce9d2-quiet.json",
+      "bytes": 2904,
+      "sha256": "6fcdf68a8702c7711a743f9a82b0e9983f63b6a75e9a71cf2e21e97b5a7b8742"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/recovery-harness-portability-ab192bf-logging.json",
+      "bytes": 4001,
+      "sha256": "ed8b0c22f6d655e6e17a3b47117a32b52c3f3af53b09aab7d269f6a83fd2ea35"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/recovery-harness-portability-ab192bf-quiet.json",
+      "bytes": 2904,
+      "sha256": "661018820984183ed7513ce3c562769066eaa1aa7b662510ac3eb109877d6b2a"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/recovery-harness-portability-stress-ab192bf-logging.json",
+      "bytes": 4001,
+      "sha256": "4cfe48757d065ae76176df3c281bcbc82d4767288650ae61a88588ad16633282"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/recovery-harness-portability-stress-ab192bf-quiet.json",
+      "bytes": 2904,
+      "sha256": "6fa74bf8e1b1312c34e9024d3d4025a64fff8d757c58959131d224d5d0b092da"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/recovery-interop-32ce9d2-logging.json",
+      "bytes": 41938,
+      "sha256": "9a47fd3d9addef911a41028065afc9c07ef22e6cfc655015373033b4a0bce151"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/recovery-interop-32ce9d2-quiet.json",
+      "bytes": 41939,
+      "sha256": "cb4ff04c8e28eba10b17f16d106c6e3ec11bc7c27176ea460fc544f4e32ae304"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/recovery-interop-ab192bf-logging.json",
+      "bytes": 41997,
+      "sha256": "d6a3acbc58185cd9a1b6479c69d5ab49c37635e7da167e18820d462f2edd1547"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/recovery-interop-ab192bf-quiet.json",
+      "bytes": 41998,
+      "sha256": "e232d72ef7f6695efacb9dd4e60ac29c54034fd7b22703c1248d81905ad9ff0f"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/recovery-interop-stress-ab192bf-logging.json",
+      "bytes": 42113,
+      "sha256": "87dd22b921a94627dbbd6a2fbde45b7e45f9ad09e6cd6a49c0153a346626cb88"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/recovery-interop-stress-ab192bf-quiet.json",
+      "bytes": 42114,
+      "sha256": "71fff10826abb020bf8442b7d0cbba1a64b67fd6a6cad8b2247e19947892e90c"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/session-tests.json",
+      "bytes": 14744,
+      "sha256": "65b32154d30e81af5d0cf16a0f5aa13f8227409760a3d96650ef3ba4c2e022af"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/evidence/transport-matrix.json",
+      "bytes": 3835,
+      "sha256": "d15a767962ae46d50b935feca7e76012b8fe96eecf8f6696294569d9d843be01"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r76-20261008/java/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryTunnel.java",
+      "bytes": 17049,
+      "sha256": "442c50840a280d4a5605e32a06873fa14a879285a959a6f2a0b5231e2204ede9"
+    }
+  ]
+}

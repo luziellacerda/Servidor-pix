@@ -1,0 +1,51 @@
+{
+  "reviewed": true,
+  "utc": "2026-10-08T11:20:56.602513+00:00",
+  "buildReceiptSHA256": "cfa78219e26edf237d1671f0937aa5d2dcd3651270a76c8beff43d6c342886cf",
+  "reviewedSourceSHA256": "442c50840a280d4a5605e32a06873fa14a879285a959a6f2a0b5231e2204ede9",
+  "receipts": [
+    {
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-pump-wakeup-r76-20261008\\evidence\\recovery-interop-32ce9d2-logging.json",
+      "sha256": "9a47fd3d9addef911a41028065afc9c07ef22e6cfc655015373033b4a0bce151"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-pump-wakeup-r76-20261008\\evidence\\recovery-interop-32ce9d2-quiet.json",
+      "sha256": "cb4ff04c8e28eba10b17f16d106c6e3ec11bc7c27176ea460fc544f4e32ae304"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-pump-wakeup-r76-20261008\\evidence\\recovery-interop-ab192bf-logging.json",
+      "sha256": "d6a3acbc58185cd9a1b6479c69d5ab49c37635e7da167e18820d462f2edd1547"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-pump-wakeup-r76-20261008\\evidence\\recovery-interop-ab192bf-quiet.json",
+      "sha256": "e232d72ef7f6695efacb9dd4e60ac29c54034fd7b22703c1248d81905ad9ff0f"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-pump-wakeup-r76-20261008\\evidence\\recovery-interop-stress-ab192bf-logging.json",
+      "sha256": "87dd22b921a94627dbbd6a2fbde45b7e45f9ad09e6cd6a49c0153a346626cb88"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-pump-wakeup-r76-20261008\\evidence\\recovery-interop-stress-ab192bf-quiet.json",
+      "sha256": "71fff10826abb020bf8442b7d0cbba1a64b67fd6a6cad8b2247e19947892e90c"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-pump-wakeup-r76-20261008\\evidence\\pump-tests.json",
+      "sha256": "ffb875a8268e3727fe5d0cc34c689bf646aba17fdd47d330b05595821c525c06"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-pump-wakeup-r76-20261008\\evidence\\pump-repeat-tests.json",
+      "sha256": "99c1331718edc5f3b0bd11ecfb9d390810958d410701f6378fafaef7bc40cea9"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-pump-wakeup-r76-20261008\\evidence\\local-tests.json",
+      "sha256": "8d7bc044ad5ad3bc413218126c0ff9fae3b809b9ffd9c8006ee6b1fd3089b0f1"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-pump-wakeup-r76-20261008\\evidence\\session-tests.json",
+      "sha256": "65b32154d30e81af5d0cf16a0f5aa13f8227409760a3d96650ef3ba4c2e022af"
+    }
+  ],
+  "independentCodeReview": "No blocker found; protocol limits and single-writer preserved",
+  "androidGameplayVerified": false,
+  "productionServerChanged": false
+}
