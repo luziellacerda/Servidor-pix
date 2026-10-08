@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-08T19:13:45.659194+00:00",
+  "passed": true,
+  "baselineBugReproduced": true,
+  "metrics": {
+    "checks": 154,
+    "passed": true
+  },
+  "baselineSources": {
+    "StationMultiplayerProfile.java": "2a57f0c49bcb7466d8bb67196c6a3fb6317746f45d0ebcf8ec915b54680dec80",
+    "StationGamePlayerInfo.java": "c19d32ba97d98e3638130ec5a26c8a7a4c537661960340a575a50b5a14d44fb8"
+  },
+  "correctedSources": {
+    "StationMultiplayerProfile.java": "25dbd4d5a87e0f6558ee5189583db44c75e76d1ebcb9810ddf0f4e1c890f9409",
+    "StationGamePlayerInfo.java": "c19d32ba97d98e3638130ec5a26c8a7a4c537661960340a575a50b5a14d44fb8"
+  },
+  "testSHA256": "9ae35d56dc55cc59426e048625fa16aa569761804b137fd459e160a0dd81e65d",
+  "recipeSHA256": "629d76086450f106c4efa5f5fbd054ebb061c186992c81e1020a8755fd4fd82c",
+  "jsonJarSHA256": "3ea61b2a06e31edf1c91134fe9106b0ebb16628be169f3db75bc7a2b06b45796",
+  "limits": [
+    "Synthetic contract fixtures do not qualify any real game",
+    "No Android, gameplay, network, server or phone touched"
+  ]
+}

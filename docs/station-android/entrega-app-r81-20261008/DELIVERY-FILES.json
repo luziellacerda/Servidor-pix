@@ -1,0 +1,98 @@
+{
+  "appCommit": "ad07c24dcded0f17933e19f45b7ffaafbce314a0",
+  "serverParent": "a4fd0d73a7eaaf43fafbae1c42e9b83580985433",
+  "linuxDeployed": false,
+  "apkUploaded": false,
+  "files": [
+    {
+      "path": "docs/station-android/FECHAMENTO-APP-R81-ATIVACAO-20261008.md",
+      "sha256": "a758d86763f69a481d679a45096851ef02200082c264e6adca4073b296a07680",
+      "bytes": 6998
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/FECHAMENTO-SERVIDOR-R81-20261008.md",
+      "sha256": "5b08fa806cb8d9d6ede4695b3e04a1c0bab1e1a6b59977c656988b1e6feba9ab",
+      "bytes": 6334
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/JAVA-SOURCE-MANIFEST.json",
+      "sha256": "d8cf76af83ae96a1c270df92703a8af36360547e3c940ad8ecb9e183195888fe",
+      "bytes": 32644
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/README.md",
+      "sha256": "6baef00288e360e4ecec33073a63bdb7a2a32909070e5f6c35cec053b2241048",
+      "bytes": 3833
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/STATUS.json",
+      "sha256": "ff5a90a74e21fef81c7d45325c6dd23901aec4e7f89d26d011d910c89189f67b",
+      "bytes": 933
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/activation/controller-profiles.json",
+      "sha256": "4e5f9566c32159184cfd8aa96651ec8776c7af68cf5a6595df356f424a76da39",
+      "bytes": 5325
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/activation/engines-r76.json",
+      "sha256": "1f1ef00c6ef9811d1236f0d4cca66f7d161fe2e62646307a4df240061cc867b4",
+      "bytes": 2554
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/activation/engines-r81.json",
+      "sha256": "950e215d26dd1da84436c72f15f1114cdd3c9a53a47caeb8d396a734230981d7",
+      "bytes": 2558
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/activation/pilot-items-revision19.json",
+      "sha256": "298833b1028464f43e736f88c37c60a6db8d7a421e922cbc36e063ace773dfa3",
+      "bytes": 3879
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/evidence/consolidation.json",
+      "sha256": "994e50da86698d3a48d9944179dca25bda5ba9e910a50e8651f5ce48a5fa162e",
+      "bytes": 188115
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/evidence/java-build.json",
+      "sha256": "3b27c19021247d18baa8218a8433b1d23d4fda20b8f10e33fb28924a1b80abc6",
+      "bytes": 33771
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/evidence/package.json",
+      "sha256": "5ed33b2c017b7440c1dfefda2d59c0332800743cacfe53798e99c578a2bdd263",
+      "bytes": 9010
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/evidence/profile-classification-tests.json",
+      "sha256": "0be041e5135c5efe065bfdc702247656babb2d0b04cf6621c15da67ec984c66f",
+      "bytes": 1053
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/evidence/readiness-tests.json",
+      "sha256": "6029409c638cc6d356a0e0885d03cba43f7f12ecd36374ece205f2119c343312",
+      "bytes": 676
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/server-tools/README.md",
+      "sha256": "e915a017e1a08d6dd6715c67fa14f30a85219b2ce4729197a144d0e1c94495dd",
+      "bytes": 9184
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/server-tools/TEST-RESULT.json",
+      "sha256": "a48f9ac34c0c280695580cef5ebd942b87c052e876bb1474005cb0fdf03164d4",
+      "bytes": 2105
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/server-tools/prepare_content_identity_registry.py",
+      "sha256": "31bc0be3c062371773bfb9a4c51b270a67c6dea091c6d648757bdbecfb74a2b6",
+      "bytes": 13384
+    },
+    {
+      "path": "docs/station-android/entrega-app-r81-20261008/server-tools/tests/test_content_identity_registry.py",
+      "sha256": "db41a0ab90b34fba56610dcbe16ec8793429a90a0262c8a65e3a3b990982a44d",
+      "bytes": 15935
+    }
+  ]
+}

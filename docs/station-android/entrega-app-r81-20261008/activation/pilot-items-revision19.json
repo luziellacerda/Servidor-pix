@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "revision": 19,
+  "catalogExportSHA256": "ad2e4e65c6145fe077cca2f7577b5abb317dc7ccb941a781037fd1907e7ee0f2",
+  "requiresCurrentServerDescriptorComparison": true,
+  "profilesApproved": false,
+  "items": [
+    {
+      "itemId": "826da6daebe9edbebffb3721f83abf12",
+      "name": "Battletoads in Battlemaniacs (USA)",
+      "platform": "snes",
+      "revision": 4,
+      "coverId": "368fe2edb8f4f709c0fd5bf40405aef2",
+      "folderPath": [],
+      "metadata": {
+        "description": "Rash e Pimple entram no mundo virtual Gamescape para resgatar Zitz e Michiko. Silas Volkmire e a Dark Queen querem transformar o mundo real em seu domínio. Os heróis precisam enfrentar inimigos e obstáculos em uma aventura que exige golpes poderosos e reflexos rápidos.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Battletoads in Battlemaniacs (USA).zip",
+        "sizeBytes": 670452,
+        "sha256": "cd3a1292fdb5953ca414dd6a74ac0aa1886b2d132fce4c804e79d5e25ea029f6",
+        "format": "zip",
+        "launchPath": "Battletoads in Battlemaniacs (ESP) (NTSC).smc",
+        "expandedSizeBytes": 1048576,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "ac79b8fc351cb0811a7e9b51a099ba9c",
+      "name": "Battletoads in Battlemaniacs (USA)",
+      "platform": "snes",
+      "revision": 4,
+      "coverId": "a29186512c4f710ab733ba4131f590d0",
+      "catalogVisible": false,
+      "folderPath": [],
+      "metadata": {
+        "description": "Rash e Pimple entram no mundo virtual Gamescape para resgatar Zitz e Michiko. Silas Volkmire e a Dark Queen querem transformar o mundo real em seu domínio. Os heróis precisam enfrentar inimigos e obstáculos em uma aventura que exige golpes poderosos e reflexos rápidos.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "artifact": {
+        "fileName": "Battletoads in Battlemaniacs (USA).zip",
+        "sizeBytes": 670452,
+        "sha256": "cd3a1292fdb5953ca414dd6a74ac0aa1886b2d132fce4c804e79d5e25ea029f6",
+        "format": "zip",
+        "launchPath": "Battletoads in Battlemaniacs (ESP) (NTSC).smc",
+        "expandedSizeBytes": 1048576,
+        "fileCount": 1
+      }
+    },
+    {
+      "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+      "name": "Super Bomberman 2",
+      "platform": "snes",
+      "revision": 4,
+      "coverId": "cover_df50d575815ab105084a79d68e0c8fb3",
+      "folderPath": [
+        "## BOMBER MAN ##"
+      ],
+      "metadata": {
+        "description": "A história de Super Bomberman 2 se passa depois de Super Bomberman, quando os Dastardly Bombers, resolvem atacar o planeta Bomber, inclusive a Cidade da Paz, cidade em que vive os protagonistas White Bomberman e Black Bomberman, para realizar tal feito, eles capturam White Bomberman e o aprisionam em um calabouço na nave de Magnet Bomber e White Bomber não tem seu amigo para ajuda-lo. Entretanto, White Bomberman escapa do calabouço e agora, na nave de Magnet Bomber, ele deve passar por uma frota de inimigos para derrotar Magnet Bomber e os outros Dastardly Bombers.",
+        "developer": "Hudson Soft",
+        "publisher": "Hudson Soft",
+        "genre": "Ação / Labirinto,Ação",
+        "players": "1-4",
+        "releaseDate": "19940907T000000"
+      },
+      "artifact": {
+        "fileName": "Super Bomberman 2 (USA).sfc",
+        "sizeBytes": 1048576,
+        "sha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+        "format": "raw",
+        "launchPath": "Super Bomberman 2 (USA).sfc",
+        "expandedSizeBytes": 1048576,
+        "fileCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,3985 @@
+{
+  "version": "R81",
+  "utc": "2026-10-08T19:22:01.769717+00:00",
+  "phase": "complete",
+  "backupDirectory": "G:\\BAKUP SISTEMA APP 03-10-2026\\ATUAL-2P-E-TESTE-4P-20261008\\test-up-to-4-players-r81",
+  "apk": "G:\\BAKUP SISTEMA APP 03-10-2026\\ATUAL-2P-E-TESTE-4P-20261008\\test-up-to-4-players-r81\\TurboStations-Premium-R81-20261008.apk",
+  "apkSHA256": "85fac8f51daa3a370eabb14d98832f75c2f30ff81422c549538ee715627032c6",
+  "apkBytes": 2123655964,
+  "javaSourceCount": 209,
+  "clientDexSHA256": "e7207a89517b168cc476e30a823bed3a1b6ad57339e1042f08a4660184543d63",
+  "roomsDexSHA256": "c6c71abd5a913e0dfacee5f563d7a401043cda49e395b914f2b37c7909f93ed3",
+  "carouselSHA256": "b77f5c06effe7750f526ef06b8515c7eb4954437495f65e4d5bec25c1bd36808",
+  "totalVideos": 59,
+  "verifiedFiles": {
+    "carousel-command.json": {
+      "sha256": "bd922ef16b0379a2b36df2d1bd0129a759536d530c1a19473da7af4ea7383dd5",
+      "bytes": 1518
+    },
+    "carousel-inputs/d0/collection_corner_policy.h": {
+      "sha256": "624b18a0a79ba7adfb4956ae3d5949bb432521182639e2da415b3d62ebfe2701",
+      "bytes": 630
+    },
+    "carousel-inputs/d0/collection_editorial.h": {
+      "sha256": "e8f9de1b9128ed4e9d17e6e5b9e8db2dfa5e4a306d110aa83777114645fbe166",
+      "bytes": 12552
+    },
+    "carousel-inputs/d0/collection_presentation.h": {
+      "sha256": "fd6e3af8310481f72b7bd3c4618b56c84ead1f77e50f3b3057194716e902d82e",
+      "bytes": 4173
+    },
+    "carousel-inputs/d0/collection_video_policy.h": {
+      "sha256": "5ca0f4f114037e605b698067b34d01cb6f0aef2ba4c3d223117801d8a71a693b",
+      "bytes": 2736
+    },
+    "carousel-inputs/d0/installed_art_asset.h": {
+      "sha256": "068fd7e1ecbe2f9971917381cfa60ef72c85bed68a13b9df6995870a36ab4177",
+      "bytes": 170
+    },
+    "carousel-inputs/d0/installed_art_r48.h": {
+      "sha256": "ccc58c7196850819a7a331e4ed3dd7ea7f761f4f9686652f4f24b2891a1b64b0",
+      "bytes": 3373
+    },
+    "carousel-inputs/d0/lottie_gear3_data.h": {
+      "sha256": "30835b92c137c25fba4d95fb9f027b66df055f5fe3edb50399de3d489e1bd4f3",
+      "bytes": 40294
+    },
+    "carousel-inputs/d0/magazine_shader.h": {
+      "sha256": "309ff6c7ea0270b02108622b5b1c20cfc96bff446b89f5bd8e76c4b76dbdb037",
+      "bytes": 16935
+    },
+    "carousel-inputs/d0/native_carousel.cpp": {
+      "sha256": "ae1255f4b19824e7838ddca76a2fa946863dd2289e9580d23d460e2b285ef8ca",
+      "bytes": 29807
+    },
+    "carousel-inputs/d0/native_console.h": {
+      "sha256": "ea38ab513788ae0bd5207b17648894214e4e84a15d4fcd12e4451bd891bce79d",
+      "bytes": 4651
+    },
+    "carousel-inputs/d0/native_folders.h": {
+      "sha256": "71fa0864f7833c1e2cf29eac8c7a0bf97ff15115625fd55789819a69d23b1944",
+      "bytes": 12794
+    },
+    "carousel-inputs/d0/native_formation.h": {
+      "sha256": "d6aa878ecc5d41198e45f4d216884dabec4b55264368574bbfc8145b8bc27326",
+      "bytes": 10569
+    },
+    "carousel-inputs/d0/native_game_actions.h": {
+      "sha256": "06946a2f881eac066d10d3b5d088e4897c0bf276142f663cde6715125bfe77d6",
+      "bytes": 6224
+    },
+    "carousel-inputs/d0/native_info.h": {
+      "sha256": "d11f4a3898beccc64f4c4d80bdafeab5a983aa21c9fb51b0a3f61d8182a4fdff",
+      "bytes": 21611
+    },
+    "carousel-inputs/d0/native_installed_tag.h": {
+      "sha256": "e2f279f76d837591533c942b9fa63c3cbd2b28a5d8d238922c6cd907157ee085",
+      "bytes": 965
+    },
+    "carousel-inputs/d0/native_lottie_gear.h": {
+      "sha256": "8c3b1c2ed3954a676682b3aa8bd09465cffb6b8632c30b56c6183778e9f0ea26",
+      "bytes": 1547
+    },
+    "carousel-inputs/d0/native_magazine.h": {
+      "sha256": "50fe001ac12bc592d672ac5c3889395d20aa65dfd6143082af84502a163e9fd8",
+      "bytes": 4557
+    },
+    "carousel-inputs/d0/native_menu_power.h": {
+      "sha256": "720451c726b3e7edd1398dee7bced41732e84ba091cc8cacbdd76fcbcdebe889",
+      "bytes": 1666
+    },
+    "carousel-inputs/d0/native_n64.h": {
+      "sha256": "a3562d758dd63fd7c9e839e5dd46c67f890a29da1dc73002816c5b0e87cc2ce3",
+      "bytes": 4189
+    },
+    "carousel-inputs/d0/native_netplay.h": {
+      "sha256": "9256ee49353462015fb7171c1e98b759469dea147b6812068f59021ce38996f3",
+      "bytes": 4119
+    },
+    "carousel-inputs/d0/native_online_robot.h": {
+      "sha256": "d95f553b3d7ccea2b8cfc935ca03e93d86ea65af997970d708f96715e1cd3f39",
+      "bytes": 783
+    },
+    "carousel-inputs/d0/native_players_evidence.h": {
+      "sha256": "6fdc2bd1b21c3078d00c23a74bb357fe5dab64cd5f8223b7cf774ebadcee7d6d",
+      "bytes": 2243
+    },
+    "carousel-inputs/d0/native_profile_name.h": {
+      "sha256": "d5a465e6297332f0d3c8524082192b2bcac8e44efb51d3fc5e65257341851acb",
+      "bytes": 4457
+    },
+    "carousel-inputs/d0/native_search_download.h": {
+      "sha256": "225341cb4204a67a7a848f5c499afe0f01359d45c3ac3c93466e883edd6c585c",
+      "bytes": 14434
+    },
+    "carousel-inputs/d0/native_search_state.h": {
+      "sha256": "b602d20be19eb0827c85eb552c1bf963d3fea4149b32b4dceef28d5103376b43",
+      "bytes": 2769
+    },
+    "carousel-inputs/d0/native_settings.h": {
+      "sha256": "1d70ee6836e3438187e6a0c9c001230a9fe41365778e392a620dc2994c04119f",
+      "bytes": 8074
+    },
+    "carousel-inputs/d0/native_skin.h": {
+      "sha256": "dfccab127868dfb8f342eaaf8e865d76e6c2c3ad24c50fd2aae5290d92b77ba5",
+      "bytes": 14446
+    },
+    "carousel-inputs/d0/native_space.h": {
+      "sha256": "b48b498b244e1acef981d5191eefeeb4252c2b287e2f5a7c9acfe11d59d2da05",
+      "bytes": 1518
+    },
+    "carousel-inputs/d0/native_space3d.h": {
+      "sha256": "f547260331ccc7fbeb3a070a1042734c82695ab6ec3484717be72c4c24e64b4d",
+      "bytes": 13440
+    },
+    "carousel-inputs/d0/native_system_video720.h": {
+      "sha256": "901d01341f3c316e02ca5b07cc278f5bc0864cff9ba39da7ce52030888261cc6",
+      "bytes": 15834
+    },
+    "carousel-inputs/d0/native_theme_preferences.h": {
+      "sha256": "0962ee380632e372bcc5fe876eeb21d472cdf59544840ab92a4bd39b514ee9cc",
+      "bytes": 2880
+    },
+    "carousel-inputs/d0/native_theme_switch.h": {
+      "sha256": "4652860f638352183c7459c157d870d47ac6c21f71e718907e92683e34d9bab5",
+      "bytes": 4770
+    },
+    "carousel-inputs/d0/neogeo_led_profile.h": {
+      "sha256": "10c50d4bf6a34ca04d94db9532d89c241383186d9780436a60d62e3651ae0a0d",
+      "bytes": 321
+    },
+    "carousel-inputs/d0/premium-magazine-led-android.glsl": {
+      "sha256": "a7736d47a3d77584b336b4c5421c5e7d697618b1c3a40ed8d71677ea239b63be",
+      "bytes": 16874
+    },
+    "carousel-inputs/d0/r53_video_policy.h": {
+      "sha256": "cb0be1e3c5bf15822a63ab4284d26d0dbe26df8bf4a7105f9fa5984a4d6d48cb",
+      "bytes": 3212
+    },
+    "carousel-inputs/d0/station_bottom_action_layout.h": {
+      "sha256": "4640a92382279ac94725502a81dd1fa338d1d595e2d35bdf781ad88f84acb079",
+      "bytes": 2608
+    },
+    "carousel-inputs/d0/station_catalog_player_label.h": {
+      "sha256": "53e8398df4d728c735a629604d9cd072d9448fe72374021a7e52a55f7ce5184d",
+      "bytes": 1075
+    },
+    "carousel-inputs/d0/station_chatbot_state.h": {
+      "sha256": "2594ec1b4b08ede6b7ac9174b005134328e6d91b9e13aafa7c13be811e92d13d",
+      "bytes": 324
+    },
+    "carousel-inputs/d0/station_collection_editorial_aliases.h": {
+      "sha256": "579ee024fab3f893e188b4aa9f44bfb9696f01dd64f5b8ee32fe96e640fd507d",
+      "bytes": 1084
+    },
+    "carousel-inputs/d0/station_collection_settings_layout.h": {
+      "sha256": "52a0a13ae63b63f505c8976a9d12079dc24686570621e94b105cb614bf10249e",
+      "bytes": 573
+    },
+    "carousel-inputs/d0/station_compact_topbar.h": {
+      "sha256": "d4fed4687cc9d92422b476d94aa9ea28e7a6cb8ebd1753e1ec2eea0bf175564a",
+      "bytes": 236
+    },
+    "carousel-inputs/d0/station_console_fit.h": {
+      "sha256": "4f9ddf8a57667e02bdb0d47d022348e7d3f3ad84db6731aba86dad26c2c11cdd",
+      "bytes": 1307
+    },
+    "carousel-inputs/d0/station_console_keys.h": {
+      "sha256": "b35124361715daca32b7f6d2c3dfc5ed62b1f9b75d8df7dcbecd1601fac4e86e",
+      "bytes": 1123
+    },
+    "carousel-inputs/d0/station_dreamcast_descriptions.h": {
+      "sha256": "a83bd2796223c436fe09fc0ad8bb2906309db7b97b3e1f8e237bcdb97c54e6b0",
+      "bytes": 298577
+    },
+    "carousel-inputs/d0/station_game_details.h": {
+      "sha256": "cc1ffb53c9b970d4ab4a45653d87204b31feebed5b32cf27e3f8cc2008fdb89b",
+      "bytes": 119085
+    },
+    "carousel-inputs/d0/station_game_infos.h": {
+      "sha256": "faf4b4e456b5158cb7fe77b15e5613076bf34d5b5c09d27ecd59730edaee83b7",
+      "bytes": 2236459
+    },
+    "carousel-inputs/d0/station_game_meta_row.h": {
+      "sha256": "246add209698156967863b639ee8d43fd099786ac9f2887fabece0e4a5b16531",
+      "bytes": 1458
+    },
+    "carousel-inputs/d0/station_game_panel_layout.h": {
+      "sha256": "073690b9b6690587c6c4bf3bb040d3f21506c2202b706722f14e3e1f7423d25a",
+      "bytes": 1626
+    },
+    "carousel-inputs/d0/station_header_layout.h": {
+      "sha256": "2a733cdb36f0611a1096652c0347ddf6112a4e60c5af1e83a793f37db0e6ccaf",
+      "bytes": 403
+    },
+    "carousel-inputs/d0/station_info_layout.h": {
+      "sha256": "7f84f451085cbfebd6cd3ca40cdefe8ac01dacfa6a9e17e94e311f61ec38db8a",
+      "bytes": 1087
+    },
+    "carousel-inputs/d0/station_installed_ribbon.h": {
+      "sha256": "4aaa2391b92a22abc5ce61de79315b99867898c24fc89a4790b949e5390530ec",
+      "bytes": 6778
+    },
+    "carousel-inputs/d0/station_lottie_assets.h": {
+      "sha256": "345c54fc4feac7bc972025dd477f839fe240941b22177ee4c4ab284d6f8bcd55",
+      "bytes": 6297
+    },
+    "carousel-inputs/d0/station_lottie_decode.h": {
+      "sha256": "1cd3a405500510abf253fa0fb56ce3800e2b141f6e0c55f2d1908d5c5e847e11",
+      "bytes": 410
+    },
+    "carousel-inputs/d0/station_lottie_once.h": {
+      "sha256": "030819a9eaf2df1cd54369a721f3b25bb77c7f8f66d46ee68a683a5b2c87e24a",
+      "bytes": 311
+    },
+    "carousel-inputs/d0/station_menu_frame_policy.h": {
+      "sha256": "3389f6d0f339d96e705f295dec7b5721b67244febc0af874c4d9960b0277ec45",
+      "bytes": 330
+    },
+    "carousel-inputs/d0/station_metadata_lookup.h": {
+      "sha256": "5f3e194195ce0e40c6406d246912791ea7be28fcbf846c5f7128d19d4f399ce5",
+      "bytes": 4282
+    },
+    "carousel-inputs/d0/station_online_robot_state.h": {
+      "sha256": "2de1a0c66945153d08a74614f785a9b36ce5282b8def4a474ff517811e2d787f",
+      "bytes": 931
+    },
+    "carousel-inputs/d0/station_platform_button_label.h": {
+      "sha256": "a2f4df197431db187a6a31f0dc66661f8303b25138b47555861f376e9c41b78a",
+      "bytes": 2327
+    },
+    "carousel-inputs/d0/station_players_label.h": {
+      "sha256": "6600a270bbc5ab1a26ac26bd8dd9a4e5b21b9f531e2f7ff6a45ec34e7c4a16c9",
+      "bytes": 996
+    },
+    "carousel-inputs/d0/station_profile_bridge.h": {
+      "sha256": "093212f9266d9c8c648268123a2099b946fdc6dac61b64cedf1b18a1f55a4447",
+      "bytes": 750
+    },
+    "carousel-inputs/d0/station_rating_animation.h": {
+      "sha256": "6672a894cbcaa7011550ef7fa0f6839a9b06d589654b512bc4c85390892ebc6e",
+      "bytes": 211
+    },
+    "carousel-inputs/d0/station_ribbon_placement.h": {
+      "sha256": "6a9327f32045a259eba80996e2ce81d6f30507df99cc2490538e972d436582cb",
+      "bytes": 575
+    },
+    "carousel-inputs/d0/station_root_label.h": {
+      "sha256": "f2a51f9073017ed273352119c55c8081021875365e9da8cea428fb2e02c2064f",
+      "bytes": 351
+    },
+    "carousel-inputs/d0/station_search_actions.h": {
+      "sha256": "50a2d4aecd162efc97377cd63013c7aae0a936413900a7378659dc8e60a2fe52",
+      "bytes": 1129
+    },
+    "carousel-inputs/d0/station_synopsis_scroll.h": {
+      "sha256": "f3d4de5ed22053324cff231eb1568ccc4be761603d3d30603b22689e1e2bb6ea",
+      "bytes": 4608
+    },
+    "carousel-inputs/d0/station_synopsis_selection.h": {
+      "sha256": "0f6221d4d31ab6f5340fd74225dbfaba5025c62eb0fee05f9c0b98b4d8ca25ff",
+      "bytes": 3799
+    },
+    "carousel-inputs/d0/station_theme_palette.h": {
+      "sha256": "8a156447f7c8a8497acbfb863bd6898b10c2a7403a83f3b9afcd4fa15f6bd058",
+      "bytes": 636
+    },
+    "carousel-inputs/d0/station_theme_switch_state.h": {
+      "sha256": "fb6faf66318a769d7d6b730f8bdb16065400a3677210c4899eb70d238aa2a87e",
+      "bytes": 1247
+    },
+    "carousel-inputs/d0/system_infos.h": {
+      "sha256": "96327b84b58981343a0eadfe1817504f9dcf561b550334dd400b28fc97021e68",
+      "bytes": 46895
+    },
+    "carousel-inputs/d0/video720_posters.h": {
+      "sha256": "1b2474f0b6793368d28c7826ac1aa83537760ac85b7445f4d142cc861a42529f",
+      "bytes": 7940
+    },
+    "carousel-inputs/d1/game_infos.h": {
+      "sha256": "e48f3d25d08a09797825b89992f693400a2d02219c86ae54bffa4552078858e5",
+      "bytes": 5621270
+    },
+    "carousel-inputs/d1/laser_assets.h": {
+      "sha256": "ebc9b18b0add4ae0fec1f4dd97547c32c0a1544fca930451efcd81b5a3d5e9ac",
+      "bytes": 7227
+    },
+    "carousel-inputs/d1/libc.so": {
+      "sha256": "dea519a54d30dc7578a0eb7dbad73723962ae1f8d20581c26367b1f03413f0b7",
+      "bytes": 3136
+    },
+    "carousel-inputs/d1/libdl.so": {
+      "sha256": "780b2e782fbf0565dd66d1007b8bd8f98850c4f1c9af8f32d5e18777e02eb411",
+      "bytes": 2328
+    },
+    "carousel-inputs/d1/liblog.so": {
+      "sha256": "2ec409a7993144864bab4fee2f180c866668ffa8f4b022004918c1650bafd0fe",
+      "bytes": 2168
+    },
+    "carousel-inputs/d1/local_game_covers.h": {
+      "sha256": "a600c8a0ca8901f409050048b95fdab43fcea531d1cf103966f6bc63f9843641",
+      "bytes": 8493
+    },
+    "carousel-inputs/d1/native_action_motion.h": {
+      "sha256": "f601bb306f07ef30797abee7006dc13ee40958540f654f6ccda6fba2befb2c00",
+      "bytes": 3179
+    },
+    "carousel-inputs/d1/native_catalog_identity.h": {
+      "sha256": "191a47278a386ef476983d90ff17586d5e12c09293520ac5707162d65557a329",
+      "bytes": 489
+    },
+    "carousel-inputs/d1/native_classic.h": {
+      "sha256": "2fc3cfcffe53b29a405dc82040e5ab0b08a0c53bed95a7e165aedaa8cdfd64c8",
+      "bytes": 7488
+    },
+    "carousel-inputs/d1/native_dolphin.h": {
+      "sha256": "82d85a24e5f7190f8dd16d59dd87f6eb47df9d2fcf770a83095fc82360bc7628",
+      "bytes": 3696
+    },
+    "carousel-inputs/d1/native_flight.h": {
+      "sha256": "59637b5bbc68454272d6cddd8563415d9a52b0d096c586d33895e8860bff8216",
+      "bytes": 4886
+    },
+    "carousel-inputs/d1/native_flycast.h": {
+      "sha256": "569f61003ccf242d25e2bfa8af23fde594e440af888ea6c3307ec29a2903b095",
+      "bytes": 4290
+    },
+    "carousel-inputs/d1/native_laser.h": {
+      "sha256": "40c89eeb59a35da36f06696e17a710c3447652c5bc0025a1fcd282617989e37a",
+      "bytes": 7671
+    },
+    "carousel-inputs/d1/native_loading_progress.h": {
+      "sha256": "b3533a13563e0c8ebb9f075060e943475390c2ec5f1e3013cce1bfc47bb7b9b2",
+      "bytes": 3094
+    },
+    "carousel-inputs/d1/native_mame.h": {
+      "sha256": "4742d0e56916d423015336bc9a5aabc82c7a962e1264783da38ca8d3465da5d5",
+      "bytes": 6636
+    },
+    "carousel-inputs/d1/native_mega.h": {
+      "sha256": "045fb8c4c73a479b60c2d6e33697f86d66e80eb055aec92f460081c59853b6a2",
+      "bytes": 4318
+    },
+    "carousel-inputs/d1/native_pause_menu.h": {
+      "sha256": "7c4af4aee2b55539d02deb39580333fc717bc1d5b6abda5631a673125823af0f",
+      "bytes": 4695
+    },
+    "carousel-inputs/d1/native_pcecd.h": {
+      "sha256": "0118d6a75101f096b3ef7f80b7b8d219b895b6e3632f2d72a063344dd95ecb43",
+      "bytes": 2968
+    },
+    "carousel-inputs/d1/native_policy.h": {
+      "sha256": "8b38c67d1aa8cbdd95d52608b1d38c7b67a56ecd42d5848d92c58524caa743b2",
+      "bytes": 770
+    },
+    "carousel-inputs/d1/native_ps2.h": {
+      "sha256": "53b7b2adc2290c7630da247c2069df620b521ac9b17715451efadda9a0185955",
+      "bytes": 3379
+    },
+    "carousel-inputs/d1/native_psp.h": {
+      "sha256": "4ca41843178043b4f5270810f76c702c2a7bd253a7aa2af76fc88e75918c0180",
+      "bytes": 3413
+    },
+    "carousel-inputs/d1/native_psvita.h": {
+      "sha256": "e4c1b1536f20cae05a3cab35c5b3c96a32011c706bab96ceae72ce38d85ca4fc",
+      "bytes": 4030
+    },
+    "carousel-inputs/d1/native_retro_music.h": {
+      "sha256": "26b6ab36f60b9dbc2971e01f066f4c92abc3b97fe759f84a07eeb2d9594281a9",
+      "bytes": 3417
+    },
+    "carousel-inputs/d1/native_saturn.h": {
+      "sha256": "b4e59d7b686f5fe4307a82e39e29da749c59a0061524a2b9c1943da9cad83110",
+      "bytes": 4174
+    },
+    "carousel-inputs/d1/native_snes.h": {
+      "sha256": "676bba7465610a8a31a2d11c939f6dd7011712dc2848ec6cd4e993ce2586e63a",
+      "bytes": 3235
+    },
+    "carousel-inputs/d1/native_system_video.h": {
+      "sha256": "e41c3f52c30ef8833db89816bd59a7838c200036ffd7de6c6ccf8de4ca6f79c0",
+      "bytes": 2746
+    },
+    "carousel-inputs/d1/native_wiiu.h": {
+      "sha256": "8f29bb65d6d7b819515198701b562a2e74e2ed45f0d2fdb846ad91dab7b879b6",
+      "bytes": 3935
+    },
+    "carousel-inputs/d1/native_xbox360.h": {
+      "sha256": "86c616b15d93d1b1dd21646f232e401f0ca3bb5c7106c60f707806d8cb80a707",
+      "bytes": 4087
+    },
+    "carousel-inputs/d1/native_xboxclassic.h": {
+      "sha256": "b399595be7665b0d2c479a22416210de9c18babd4566a144a2d47e100f97d3b8",
+      "bytes": 4281
+    },
+    "carousel-inputs/d1/relocations.h": {
+      "sha256": "60f13ed591beeaf1ade34ddf5b6331af7855ea99cc23a43950d18dd7c530e08e",
+      "bytes": 214402
+    },
+    "carousel-inputs/d1/space3d_shaders.h": {
+      "sha256": "10441f4afd3b188a1fd439c1c6e7604cbabbc002ecb837c367e7de501f232681",
+      "bytes": 25392
+    },
+    "carousel-inputs/d1/station_game_lookup.h": {
+      "sha256": "1bf2f2a7d2ba116a2b3ba3012e3d7c686fbca53fbd75a0be6bb8c74e8bf14195",
+      "bytes": 509
+    },
+    "carousel-inputs/d1/system_video720_assets.h": {
+      "sha256": "2d0e351bed93dd3f26548f6b92157f232b81a3df9586cd65c0900f1ce1df3cf5",
+      "bytes": 2484
+    },
+    "carousel-inputs/d1/systems.h": {
+      "sha256": "8093bc915dce80d445a5cff868226e5db9f67207935f22cf9cd39bc7ada0c31f",
+      "bytes": 89083169
+    },
+    "carousel-inputs/d1/video720_policy.h": {
+      "sha256": "b0eb9792eb3c52eda1811b259eafef4311d98b3deceecd5d1b2a741e0c8adc7e",
+      "bytes": 401
+    },
+    "carousel-inputs/d1/video720_posters.o": {
+      "sha256": "c078dd3f4d3230f247d48b2f38ad39d97f8944bbc63ffe05ee7869d9acab8f9e",
+      "bytes": 50806360
+    },
+    "carousel-inputs/d2/console_assets.h": {
+      "sha256": "ce75cda3a6adebe55bfeb61a4318e69e812cb68ae633703c6e8a8ba4236047fc",
+      "bytes": 19514869
+    },
+    "carousel-inputs/d2/station_future_metadata.h": {
+      "sha256": "84b6b0157e2541f810cbebcc77e2837e49a4a0cacedd55780c53fe91368a490a",
+      "bytes": 5634816
+    },
+    "carousel-inputs/d3/collection_previews.o": {
+      "sha256": "11bc120225e031409b11839575986ff90f26b01a838b1aded119ab22112edf03",
+      "bytes": 9332264
+    },
+    "carousel-inputs/d4/lottie_frames.o": {
+      "sha256": "8d3d7db56dc1e66b80cc472f397e1b505ec28d32eb7326940ebbb39384593464",
+      "bytes": 20194920
+    },
+    "carousel-inputs/d5/installed_art.o": {
+      "sha256": "ac082ca0ea8658c8ab86142de9f3a171c1b91bf7c8f1943db4bf2243a71bfef6",
+      "bytes": 1598752
+    },
+    "carousel-inputs/d6/collection_previews.o": {
+      "sha256": "b206e092549a0c17adcb0ce3deb41fa443ec7019154ab05b31c15771fca809ac",
+      "bytes": 3111080
+    },
+    "carousel-inputs/d7/collection_previews.o": {
+      "sha256": "5ceb51cb97e8dc39d3a838c70286fc21bdb55b979e2f8f5a76fe3f8eb3d6ce1d",
+      "bytes": 2074216
+    },
+    "carousel-inputs/d8/collection_previews.o": {
+      "sha256": "dbe54d993453a37197317d23c11fb438ccb792d21edf82906abb2a73f1027937",
+      "bytes": 1037352
+    },
+    "compiled/classes28.dex": {
+      "sha256": "e7207a89517b168cc476e30a823bed3a1b6ad57339e1042f08a4660184543d63",
+      "bytes": 176708
+    },
+    "compiled/classes35.dex": {
+      "sha256": "c6c71abd5a913e0dfacee5f563d7a401043cda49e395b914f2b37c7909f93ed3",
+      "bytes": 515988
+    },
+    "compiled/libturbo_carousel.so": {
+      "sha256": "b77f5c06effe7750f526ef06b8515c7eb4954437495f65e4d5bec25c1bd36808",
+      "bytes": 142658344
+    },
+    "java/client/src/java/org/emulationstation/frontend/AssetInstaller.java": {
+      "sha256": "d3539b66cbc434e819b59d1fa614f3eb47c8b7c3d8b51c92284bc6dacbe0ccee",
+      "bytes": 2434
+    },
+    "java/client/src/java/org/emulationstation/frontend/auth/LoginActivity.java": {
+      "sha256": "71072d9f6a0621a9eeb04d9784dd27eb2f05e78c5da18d95254e0be13c86d57c",
+      "bytes": 25538
+    },
+    "java/client/src/java/org/emulationstation/frontend/auth/StationLogin.java": {
+      "sha256": "4bcca2a762584312222f8dfd9b3b36c06a5ea552c2eca42ec25642940d8eb187",
+      "bytes": 4812
+    },
+    "java/client/src/java/org/emulationstation/frontend/auth/StationTaskNavigation.java": {
+      "sha256": "0fd4745792931f0b1b80d57b4e6d4d37b70aed477cfb732de59553ad01077703",
+      "bytes": 4804
+    },
+    "java/client/src/java/org/emulationstation/frontend/auth/StationTaskPolicy.java": {
+      "sha256": "2771621dadf0a384be2140e182a36b1b781d6e073ad3d4f0e6fc097c94dad551",
+      "bytes": 2839
+    },
+    "java/client/src/java/org/emulationstation/frontend/DownloadService.java": {
+      "sha256": "49b2994e4a213e861cfcef5ce0e353789f7f88928fec5f8b7e3b8ceb6f594c5f",
+      "bytes": 3678
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/ExistingCoverCache.java": {
+      "sha256": "41796c41b27efc4e9a53d20b7ed606e37d7b4d168cb7638059cf368e8d533d28",
+      "bytes": 2239
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationAndroid.java": {
+      "sha256": "2ccba05c9db2bc7df151d32f4f888abd2e2a2ee5a3566bb126a2ce93bb4dc5d0",
+      "bytes": 5300
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationApi.java": {
+      "sha256": "439069cbea44ad7dff2549fa1ccacf42b56564b713a08bf2395d26a9cb9e343e",
+      "bytes": 29560
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationArchive.java": {
+      "sha256": "107669c6885725d99b430e7340c550466eed24a2842d43b51526c673a9d51b86",
+      "bytes": 683
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationArtifact.java": {
+      "sha256": "fe6eee3c4dfaaf66ac68eb0096b6ff0dc7792fa377dadf5898b5ea06e803bac9",
+      "bytes": 3253
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationBundledFiles.java": {
+      "sha256": "74292e8dcfe8318d8697a2c81446ab23cd66ff2c815bf98632849b34cc39e67e",
+      "bytes": 2442
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalog.java": {
+      "sha256": "f18224fece1ba81f72969e9d6280d2093c89ffa230c74216abdd5de1615c82a2",
+      "bytes": 8685
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalogPlayerEvidence.java": {
+      "sha256": "828af47362433d9270fc4b3e3636365dd8ced2f2a65b3ab4f6734d6fb878ccaf",
+      "bytes": 8041
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalogPlayerEvidenceLoader.java": {
+      "sha256": "e7f291d3f85e402a0cd1c8acc1115854358e449f3bd458e1c088120b8174cbc0",
+      "bytes": 4284
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalogPoll.java": {
+      "sha256": "ca03baafce7af515d907eaa5b3e40ae7efff0efb3a50b4f1f571bcaba03e844b",
+      "bytes": 1089
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalogStore.java": {
+      "sha256": "9a8b823c9a5473e950225e8067365fa7f4a602c3821cbe1722980e61c3f2968e",
+      "bytes": 3778
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationConfig.java": {
+      "sha256": "8c430cdf7b6cf2ee03f1ad3dca50ff18bc32a6b26ddfa1fe70397db81fe03cb1",
+      "bytes": 1862
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCoordinator.java": {
+      "sha256": "5375f83eedbb14c14b8ae547a1304b508448e3eb173d467f418a64cfacf75e24",
+      "bytes": 10619
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCoverQueue.java": {
+      "sha256": "1696e03d4afa310d5a80eaf728728ab0d71cc55879bf07ada82939f69c0fee48",
+      "bytes": 4208
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCoverStore.java": {
+      "sha256": "ca76e0de5589091cdef2ffad6e2b55005ff5e95bfc222a15b5dace1964014b26",
+      "bytes": 7660
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCrypto.java": {
+      "sha256": "b6d57060b23c953ec513098e49c337e8e648588623b4fd3359d4f91c99db9586",
+      "bytes": 6557
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationDiagnostics.java": {
+      "sha256": "4ab4bc93edf1444094f0be982cbbe8218bbe1a18e46f3d2fab7c2f434a41934f",
+      "bytes": 4025
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationDownloads.java": {
+      "sha256": "ba4bb235dc64c7319486fc44fc7496d6de00f6d9eeadae1d5a26c789c6871d4c",
+      "bytes": 7650
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationExistingArtifact.java": {
+      "sha256": "d01b4806e70a637c093c1d55a10b4e7230b3bce729aa94638a94fe82530d931f",
+      "bytes": 748
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationFiles.java": {
+      "sha256": "40e594049e15ee4fbd2746087d4dc5de46766f4c043f009783eaadcf1e46fdcd",
+      "bytes": 8291
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationFrontend.java": {
+      "sha256": "131e723806b8ddb7048a0a182733961fd2498a405103575319fd73cdfe946622",
+      "bytes": 13635
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationHttp.java": {
+      "sha256": "04a98a3c8964aa530514bef74bbf9d958f2ace788d882d1c2c6d1528a8d42c59",
+      "bytes": 9588
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationInstaller.java": {
+      "sha256": "1b61d8764dfbfdaeab817cc2e81b7f160b773c30fb4771f19f34d963e84d2559",
+      "bytes": 15875
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationPlatforms.java": {
+      "sha256": "c1466f6de9ff707d2cf22f136c06e286f2a9242aa6a68cd2f5badeeaa9bd7757",
+      "bytes": 6038
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationProtocol.java": {
+      "sha256": "43bdf2b6f948eab1fd386741d88b2b57e65c37b63eb608eca9e156b128052c51",
+      "bytes": 6018
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationPublication.java": {
+      "sha256": "d6972d792c18e377cfda161d156b3e3cb279f36a3f420e5b53a72cb86316799e",
+      "bytes": 1695
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationRequestProof.java": {
+      "sha256": "40ba9734251969e4c1b3042e332f12e471b14f0bd5232e7444342428a3d9a5d9",
+      "bytes": 1542
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationRetryAfter.java": {
+      "sha256": "7ea5fb4e3267249ac5b6cc1165ede174c152286f7aceb7632a35510fa5f1be57",
+      "bytes": 918
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationSessions.java": {
+      "sha256": "dbd8810253b74d9a5c00493115292a175d963a40a113e3113246eb3386178ec2",
+      "bytes": 3170
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationStorage.java": {
+      "sha256": "3979ac629fe3778c609fd7bca20c3d72c9b89df920d1454a637ec24f575cfc9d",
+      "bytes": 3660
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/DefaultLoggingEvent.java": {
+      "sha256": "95801e024aafc8ce0dc93672b839eba56c5cd30b42f92ec1d7af8cb3da1a2925",
+      "bytes": 2975
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/EventConstants.java": {
+      "sha256": "092f4b29eeb6d6d1ed43e67111dbe94f6dff9c42273cf879167312d9b067a331",
+      "bytes": 578
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/EventRecordingLogger.java": {
+      "sha256": "e5af50242eaed3d021b9e11de196094b890547205973afba31ec35e121d24d14",
+      "bytes": 2438
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/KeyValuePair.java": {
+      "sha256": "9e49c4990f2d926e0b309df9d34f5cacd3a1aadc7524cb5c4d8827a33fa3cce6",
+      "bytes": 790
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/Level.java": {
+      "sha256": "71a2931e069faf3bd7f3a6da2a1ea48c64be96bd4af87c138995bcd15e45c03a",
+      "bytes": 1561
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/LoggingEvent.java": {
+      "sha256": "36f4b1427e7472a2ae9821346fd946f0d8f645497885f7761e51b23b21543780",
+      "bytes": 1039
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/SubstituteLoggingEvent.java": {
+      "sha256": "dc52015fdfd175fa15cc137a24037e5791cdd7008c69af9befbdbaec557b7f48",
+      "bytes": 2397
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/AbstractLogger.java": {
+      "sha256": "2d1071378e0e2cf5314898c2ff4e9d00a1f644e16f3e5d0ab66b9e216de6c7aa",
+      "bytes": 13802
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/BasicMarker.java": {
+      "sha256": "98744c8a47b722d01db353581ae24d684301ec3e357abf0407e77b7927bcdc9c",
+      "bytes": 4990
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/BasicMarkerFactory.java": {
+      "sha256": "ab5dcd8c3c343d7d8c0c9471d86bc334aaf906311c6c9d01ec6692e903e735f4",
+      "bytes": 3486
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/BasicMDCAdapter.java": {
+      "sha256": "1f7c073ecc7df8905ca56362f6fe8e9f4df114192b609b550dcc508c0ba47823",
+      "bytes": 5493
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/CheckReturnValue.java": {
+      "sha256": "ce7ac3af2b6db642e67ace0b92eca0fc5b2be6d0f8f610843c719fe5558cebdf",
+      "bytes": 1163
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/FormattingTuple.java": {
+      "sha256": "e2871e8b25e52508fb01880fe6e783e2e84e46faffdf09eadebcceb88c564101",
+      "bytes": 2065
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/LegacyAbstractLogger.java": {
+      "sha256": "444bd61ad6540631364e228bb20a9d0c1b21c9591bc9c5a392d3fb8c5e8f69c3",
+      "bytes": 945
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/MarkerIgnoringBase.java": {
+      "sha256": "85e756f52685605020d1ab40965e651d8b705e9ff4d4a63af8ee96359ba299c9",
+      "bytes": 4960
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/MessageFormatter.java": {
+      "sha256": "42ba80b2b7709cf4ae363fe8717c2ae4d4aaa8ceb680a1c4c554579deaa216e0",
+      "bytes": 15407
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NamedLoggerBase.java": {
+      "sha256": "5ec8420816f56f6d6beaaa8995b24fbea445e623f3e3622543af89a0bdbf200b",
+      "bytes": 2699
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NOP_FallbackServiceProvider.java": {
+      "sha256": "5cf653995692d533390d28378a596f05dfcd67a72b8acc2217f154b9e1c51c5a",
+      "bytes": 1403
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NOPLogger.java": {
+      "sha256": "295c11c53b8fc37bd3d79d2e24ba3160a40bc7bef38de8291cefc99a0638d376",
+      "bytes": 10481
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NOPLoggerFactory.java": {
+      "sha256": "202266e72ed6c3ab853c9508c625cb3bebee97b4d0fd16a49f85a21aa9765cde",
+      "bytes": 1771
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NOPMDCAdapter.java": {
+      "sha256": "face675ee80a476f59bb01f9f464ba66cdf6c198c8faa3fc5025edf80d601986",
+      "bytes": 2370
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NormalizedParameters.java": {
+      "sha256": "3fc1a44ce409d0c28961b574d3f1ff744d4bac2d4feb99dc570d51b7803556d9",
+      "bytes": 3605
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/Reporter.java": {
+      "sha256": "105e4aebc7e584cfbd9338066ceffe55533ea6f1db2c565f87f27b8da9086e2f",
+      "bytes": 5683
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/SubstituteLogger.java": {
+      "sha256": "57504b2d3b085767ea30a2185d5ec69b783502a92c9668e6492703719483ca3a",
+      "bytes": 13493
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/SubstituteLoggerFactory.java": {
+      "sha256": "7b3261816790f528985e86dc1f34cc24f0ab8fbe5f05eb17d795a429da7c045b",
+      "bytes": 2842
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/SubstituteServiceProvider.java": {
+      "sha256": "3a69416d6bd17c445a399cb75c315cbd47fa4b73d7b6d2ec7e37804738035b23",
+      "bytes": 1182
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/ThreadLocalMapOfStacks.java": {
+      "sha256": "9d1b56a7a87aaf524d8b84536f8d19d3c35c85b6da2c89415db1e396a1f9121b",
+      "bytes": 2244
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/Util.java": {
+      "sha256": "fd3dea9b59d1a947216e9c5a71332342219f3c865adeff6339217488b9fd5cfd",
+      "bytes": 5041
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/ILoggerFactory.java": {
+      "sha256": "ab0bb52f4cf43e3a5fa27d00213755872578e7faee3e0c64839b80261bb70670",
+      "bytes": 2360
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/IMarkerFactory.java": {
+      "sha256": "b117ebd1bb1cb96f9c10126a1d9333c080cb8ab712bad44ce8df777ea3e0ef91",
+      "bytes": 2842
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/Logger.java": {
+      "sha256": "3260945ee26d761430c30b356dc3426a7685bf42c6e0683b4c071f0ba733b17f",
+      "bytes": 31588
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/LoggerFactory.java": {
+      "sha256": "fa196dd87db2ffdb16dbad229c2206af6fa04fce4e3bfeb1f4ff10eeac276618",
+      "bytes": 21452
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/LoggerFactoryFriend.java": {
+      "sha256": "7c03986dbf69b843ffef03d75f52626168050f62e128033c846ad0fea1543ecd",
+      "bytes": 1999
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/Marker.java": {
+      "sha256": "2f786e0c523a27f0f7cc170e4c7563cdd5a5fd213d38dd0aa112cee5858d225c",
+      "bytes": 4930
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/MarkerFactory.java": {
+      "sha256": "47cc0e35c53a2f2a92a4315a3b52af7957e782e587eaa71e460f918fe4a90a3f",
+      "bytes": 3449
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/MDC.java": {
+      "sha256": "1a21ecf457230b77e148a6262b84b599cf8069583c6a96b6522735c073003dd0",
+      "bytes": 11059
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/CallerBoundaryAware.java": {
+      "sha256": "6c4670c67fcae4654cbe0840a18e7ae64474c76815fdc021fe3b23d957807901",
+      "bytes": 789
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/DefaultLoggingEventBuilder.java": {
+      "sha256": "36b6bd4afbd40c362ff2425b483b2a5916ee6d425fc802ef6b7631bdc8e9db51",
+      "bytes": 8788
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/LocationAwareLogger.java": {
+      "sha256": "6dc67d5ba05816b496afe72566fb58184e9cd224e1bf55f907d6c32c0bb3d891",
+      "bytes": 2928
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/LoggerFactoryBinder.java": {
+      "sha256": "6772d6bf13a3ee0d07075c664f309b37c79914bd8406ff829cdb27a046422285",
+      "bytes": 2530
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/LoggingEventAware.java": {
+      "sha256": "3f01e6c131368e5af698c385d3e28fa74c96624e17b435b857dcbffa19b7ffbd",
+      "bytes": 899
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/LoggingEventBuilder.java": {
+      "sha256": "be7aab88213bf95f3296b3f5ad5602264d7d278ce6a31abb37d470264fdfc81a",
+      "bytes": 5865
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/MarkerFactoryBinder.java": {
+      "sha256": "ac3fbba575e912d745cc43ada0effd20de42159b47ee22ba1d8f8b1241258bc0",
+      "bytes": 2522
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/MDCAdapter.java": {
+      "sha256": "6acf6b2804791f32b49199c833ed3ceda8b3ae8f2fd2689126121f17c4fd145f",
+      "bytes": 4434
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/NOPLoggingEventBuilder.java": {
+      "sha256": "9768d7e4823e6a54d9cd791ad48b698ed008730724542e00588483020f598c2b",
+      "bytes": 2417
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/SLF4JServiceProvider.java": {
+      "sha256": "494bc93fc7f053d0992bfba59574944c543066e3258e50b60bc8a5fc0262bd49",
+      "bytes": 1785
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/AbstractWebSocket.java": {
+      "sha256": "66585af4e4ad90bdadf3451c719dc8cb586792b731d41736568572977ec58ef5",
+      "bytes": 11072
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/AbstractWrappedByteChannel.java": {
+      "sha256": "0037c56793bc8c5a50760422a3d275bc1cad8bde9699a2e704d8f6dc0f9fdcb3",
+      "bytes": 3044
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/client/DnsResolver.java": {
+      "sha256": "be024a65b8102336e00e07fbbbe07207ca77bed2f391ad3fa7b52d3bc76439ce",
+      "bytes": 1889
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/client/package-info.java": {
+      "sha256": "e6eb138ea6a4823752540f46cabe2afde7ba5c32783dccdb3b1c7e1086776ff1",
+      "bytes": 1301
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/client/WebSocketClient.java": {
+      "sha256": "46d4e3d2b75c50a2a8067206c9cef8425404b82ae02b30626badad33f2c2dbc6",
+      "bytes": 30212
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/drafts/Draft.java": {
+      "sha256": "163e962b1accdf9b35d18355adb128871a8340b59e56f016a0a656bd27da71e2",
+      "bytes": 13397
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/drafts/Draft_6455.java": {
+      "sha256": "0197d66ad70b85a836d25f51fb46be5613bfdfd9a6d6660814358930cd4bd817",
+      "bytes": 43178
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/drafts/package-info.java": {
+      "sha256": "d707a48ef0eaba78736680ce7c1ccd6eb31956d3474f15e9601cbc58c7a3bba4",
+      "bytes": 1302
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/CloseHandshakeType.java": {
+      "sha256": "59884bd60287636507d00f319cc3ac7daffaae28780e3f5898dbb3d9bbeab9c8",
+      "bytes": 187
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/HandshakeState.java": {
+      "sha256": "ae60ce0f03a6bf499498ad96382ba9c00a7645f2c23138e72cc19452042585bc",
+      "bytes": 291
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/Opcode.java": {
+      "sha256": "1615e6dd67f03d9205b191528ed3e25e973e4ae6d8f9aa3af7f3206eb85f125c",
+      "bytes": 202
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/package-info.java": {
+      "sha256": "235f3fa12b48d8a6e1f32ab1fb6e2cb99d034df39683b60f7783c91d362499db",
+      "bytes": 1253
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/ReadyState.java": {
+      "sha256": "412999c9839d9217e877767812d967f2168fe17e3fb1b3515114e862d358fb6d",
+      "bytes": 189
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/Role.java": {
+      "sha256": "962c180cae257db3736588fc21054f054c06f9090917fd28203c5302e29582db",
+      "bytes": 158
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/IncompleteException.java": {
+      "sha256": "c3765c5261a7cbff4bf2e0f23f03a2efa1880f75e7ba305efe69b60b8eb70d77",
+      "bytes": 1897
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/IncompleteHandshakeException.java": {
+      "sha256": "c72d64535b7409caede1745e0e72f9ea48e4a3bbb6955ce91fd4e91e0587dfa6",
+      "bytes": 2118
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidDataException.java": {
+      "sha256": "7bb664e132af04e320f60ce8f8a6c39c6d8172c3d59715578487a44c8a755bf5",
+      "bytes": 2771
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidEncodingException.java": {
+      "sha256": "5c23102e779218c2f255d128943be49215e6fedfd76fed48aaafd34eb2e28e34",
+      "bytes": 952
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidFrameException.java": {
+      "sha256": "b15a160c29fd9720c448837394b7a4a44b19fa6bac0e485f25e849e7feb4ecaf",
+      "bytes": 2618
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidHandshakeException.java": {
+      "sha256": "8ceee2f64343c7b89b40c1d75313fe56d14733721675081d3944af3cd8f01e51",
+      "bytes": 2659
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/LimitExceededException.java": {
+      "sha256": "30473c6a7c8b9e0f6ab82350d788b45d59af3367360d514e8545a2daf1ace5c8",
+      "bytes": 2833
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/NotSendableException.java": {
+      "sha256": "1240d7e0061d3f110dac3be83da2bee4c261da89864c6d48eefba1db483c8058",
+      "bytes": 2005
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/package-info.java": {
+      "sha256": "7607ce0dee88234fb2db2eafc8a0ad3447c24f15315f2909d024777828ae15ef",
+      "bytes": 1322
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/WebsocketNotConnectedException.java": {
+      "sha256": "cdb759017cce67c99ae9265916d4453c1efe3a092605c7cbd5c23cecee0a12ca",
+      "bytes": 1475
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/WrappedIOException.java": {
+      "sha256": "ff198c13075649f0811eb86ff2621cb310d16d56eefb168937d8cce588498c3a",
+      "bytes": 2331
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/CompressionExtension.java": {
+      "sha256": "4c9105ac1a11fa8061adada1e2fbbcb5437056ec31f509156b1e4fc951bee2f1",
+      "bytes": 2436
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/DefaultExtension.java": {
+      "sha256": "12eb9ce24d5bd7e22e72b1568086f721270330dd19a416a613ee1d6ad992c171",
+      "bytes": 3063
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/ExtensionRequestData.java": {
+      "sha256": "4154be72a8374f5f6b764c4ab6e6fb10ac611ed099ed767ee5cde550e1c856cf",
+      "bytes": 1566
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/IExtension.java": {
+      "sha256": "6f3dfa7a6a6b5e30413d119ec9eb2845a825af8f5775c51a9f2be629ccfb1813",
+      "bytes": 5545
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/package-info.java": {
+      "sha256": "572e8742551e1744dbf1a0f7456ddf9081634fb26ca0dc4e4d8455d04d874c67",
+      "bytes": 1342
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/permessage_deflate/PerMessageDeflateExtension.java": {
+      "sha256": "d5a2a373b99a115ab2eb374ba865c54785469733316d4eb7fd57c57487ddcd75",
+      "bytes": 14064
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/BinaryFrame.java": {
+      "sha256": "2311a98f870be98afa0e6bf09b970ab58abee53bde1bebb04e9196ad685cf9f0",
+      "bytes": 1493
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/CloseFrame.java": {
+      "sha256": "dbbeae482e141035a015d0d113a2280dcf455a4f5075ef971349af13d40aad2b",
+      "bytes": 11444
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/ContinuousFrame.java": {
+      "sha256": "8ca7a10fd568da830351a2ad3eb30b9db783db8b6cd68d5c4449dbabb5428cb5",
+      "bytes": 1513
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/ControlFrame.java": {
+      "sha256": "5611f08bf26559fc5b4cab58f17006e675c2ad56c6484dbcd3efd52e3d280ae0",
+      "bytes": 2205
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/DataFrame.java": {
+      "sha256": "ee2e0aa8f02045c0300e86fedbd7c2390b7e48653c02cf1441b93ef84ae61ebd",
+      "bytes": 1713
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/Framedata.java": {
+      "sha256": "af38393fc88c0e5dd59c50b889ac2e8de134b2ed5e80c4a9987c46f6537bec80",
+      "bytes": 2766
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/FramedataImpl1.java": {
+      "sha256": "990a639a7d2180cd4d960aa277c95f3fddb7c5eeb927e9a6881b60bb3368c41c",
+      "bytes": 7564
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/package-info.java": {
+      "sha256": "415b83e44d9aae2057a1711e190f2900ced106e7a4e59e08d6a70de4fc7d0be5",
+      "bytes": 1321
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/PingFrame.java": {
+      "sha256": "10652b5c92ca962f7e65d7cd50f7b7c47dcb8667adcdeadeeec176bf48b03b3b",
+      "bytes": 1486
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/PongFrame.java": {
+      "sha256": "961b25419f996fa0e86341af27985b732150c8f5b7db9583cd1b74b11506a25a",
+      "bytes": 1777
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/TextFrame.java": {
+      "sha256": "98deee54f1eeb955e6bd88ccfb0aabc12493cf74684ec5df851bab0ade7e9943",
+      "bytes": 1889
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/ClientHandshake.java": {
+      "sha256": "a36a37b2078f543dc1acbc1ad12118812bdd457013b2b65ef8d7b5b25e3d306f",
+      "bytes": 1501
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/ClientHandshakeBuilder.java": {
+      "sha256": "e3bd28b41043aaadc4ecce61064da149af97bd597f5a65196fbb3c9219bb7042",
+      "bytes": 1540
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakeBuilder.java": {
+      "sha256": "f7ec4a3073c0ec22451283d6d2377099a7d3dd337e711e0414fa05d41bd65887",
+      "bytes": 1642
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/Handshakedata.java": {
+      "sha256": "4a4565a9b9fa40a1a6d7266217b2b024f427cffcbf485baad64d328d3aa71c9e",
+      "bytes": 1967
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakedataImpl1.java": {
+      "sha256": "b54306cc2dac9479e43f0657df1c86ffcbd44d48dad966a58da9cdf1efebb1c1",
+      "bytes": 2382
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakeImpl1Client.java": {
+      "sha256": "3d32c3509eb158009ae181fffcc0ca654632b9f259a519561da15c593eacda4e",
+      "bytes": 1811
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakeImpl1Server.java": {
+      "sha256": "89529286cfc97c0014277aaf7d79e1fb0ab7f20adea75d9315d67dd8500e529a",
+      "bytes": 1882
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/package-info.java": {
+      "sha256": "66d021e6df318310f89428f8b5ed0ac3bd873c333a5423776920186548b69072",
+      "bytes": 1328
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/ServerHandshake.java": {
+      "sha256": "d2c43a8669afaa39aca969c199875817e4e7f5a534e385e540607af2cd5129c6",
+      "bytes": 1544
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/ServerHandshakeBuilder.java": {
+      "sha256": "576b117ca7418d42dea670d399049092dce92948053bcee92ca0ea5178c4a1a6",
+      "bytes": 1640
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/interfaces/ISSLChannel.java": {
+      "sha256": "28eba50431a901a00d70e208eb80fe725f32df6ebaac8edf6df3a9bf147f5eb9",
+      "bytes": 1547
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/interfaces/package-info.java": {
+      "sha256": "ac800af5c90dec9eb645224453ee3f609bdce7ccc882a90f83271c90e2a3470f",
+      "bytes": 1252
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/protocols/IProtocol.java": {
+      "sha256": "986bc81466a806a5168a7508471f9c1f4fb8eef3179b2823379ae456ac321879",
+      "bytes": 2695
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/protocols/package-info.java": {
+      "sha256": "1b44adeb71125073b4d6953565a7cbe4846163903189f9877fbf6fb02c31111e",
+      "bytes": 1339
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/protocols/Protocol.java": {
+      "sha256": "632977dbcee22a27903759ccae2a164f045b9ff6dc10ae7ca61daea404079727",
+      "bytes": 2978
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/CustomSSLWebSocketServerFactory.java": {
+      "sha256": "bd9eee4432c8674a7b9c41173b9011c516d6ec7556037fb0f15236aa52998ba5",
+      "bytes": 4047
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/DefaultSSLWebSocketServerFactory.java": {
+      "sha256": "459a88e7416f35607f7d0f2b5d2f7bc7e385b65249322edb6cd94e6c9c64d439",
+      "bytes": 3555
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/DefaultWebSocketServerFactory.java": {
+      "sha256": "9195bb24756f85aba5d66c0ab95c5bb13d7557abc8597743ace501a07b6ec8e5",
+      "bytes": 2098
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/package-info.java": {
+      "sha256": "605c088e6297b5634d8390d8184396f3ca2eaa5850d9b267df5f25385604fa06",
+      "bytes": 1301
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/SSLParametersWebSocketServerFactory.java": {
+      "sha256": "90d97968529ed0b68ec5a39f4c580e55c49f04323252006b890053a5c00fa0b3",
+      "bytes": 3181
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/WebSocketServer.java": {
+      "sha256": "bec37425509d8b058af37c3b2532575b9e18abeea13b6997704a475111a96d19",
+      "bytes": 39314
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/SocketChannelIOHelper.java": {
+      "sha256": "b623f316471565df650e9122ee9df6afcb48d1e8ffc75b543a165b99e0db37c2",
+      "bytes": 3916
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/SSLSocketChannel.java": {
+      "sha256": "1675dc60aec80de1e90bd8805d481fffb9faeeaada5f3b3135d233e000c30314",
+      "bytes": 21153
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/SSLSocketChannel2.java": {
+      "sha256": "763bce757f3a88ceb2da838801413bebe2ec428dfcff19d250118b4716da3724",
+      "bytes": 15861
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/Base64.java": {
+      "sha256": "1fbed083d1291a9a77c5d4f9333ef671728fc63f359e94aec6246ec65ab97448",
+      "bytes": 46891
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/ByteBufferUtils.java": {
+      "sha256": "72eb3957ce6a5a871c8cdb0c5560b761f2d117b403ac5fdaa4c1ddae1e31a6f7",
+      "bytes": 2248
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/Charsetfunctions.java": {
+      "sha256": "af2bf03f1b2e4c8749dff928f886d6203d2310efcbee38f52a62baedec669131",
+      "bytes": 5726
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/NamedThreadFactory.java": {
+      "sha256": "e4252112109f26144a6f32c48a3a49e9d927871cba8b1e9ec8b4518de3a08f17",
+      "bytes": 2092
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/package-info.java": {
+      "sha256": "f2d6e97908ae604ebfd9ad495847d91d942fc9a7e41cc03442e0e381981fc12e",
+      "bytes": 1262
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocket.java": {
+      "sha256": "472a0056be48f09412cfb1884171cb7bab58ebb5e3466497e0dd271ca120bea2",
+      "bytes": 7852
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketAdapter.java": {
+      "sha256": "02c2c4592d0c3229d45d4bf59b01d398d3e78d30ee2fc3024ed4132f333de18b",
+      "bytes": 4386
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketFactory.java": {
+      "sha256": "7fbe149158c87c4aa57fde6c58fa672f2ac737b8ad276d69c87ea01fdd011cef",
+      "bytes": 1892
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketImpl.java": {
+      "sha256": "eeb1f51152e7f99b07afafa3a5499407d76047267c117cd2d0b7fd5c3facaeac",
+      "bytes": 30624
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketListener.java": {
+      "sha256": "dbed53bf089cef30fa0ea77467c4477f648380861813d7320950a67960145185",
+      "bytes": 8873
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketServerFactory.java": {
+      "sha256": "ae2074e5016c48ec009e3e02ce48eabbe18cf58ab4d8af81ff5f22563bbaca0f",
+      "bytes": 2348
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WrappedByteChannel.java": {
+      "sha256": "bccd03ac637dd46006e09068722c64bb8b5c6977f53510f289e42297ef6db3e4",
+      "bytes": 2657
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/NetplayPaths.java": {
+      "sha256": "e1cfc916a17eaaabadbcd821c2483469b99e0057944e2f2118fad064187e6a67",
+      "bytes": 4817
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/NetplayUi.java": {
+      "sha256": "f205101af034b89aa257c61347af9f942fce1603478c6fabb24597c91d6037cd",
+      "bytes": 2264
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationActionButton.java": {
+      "sha256": "70cc50af4b03be49c2dce056ef3bcdb6de02ce694f285d46c13e12b0ac055c4e",
+      "bytes": 9726
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationCreateGameCard.java": {
+      "sha256": "ccdd4e971da51331181cb017ccc11682b0cfdaee13252eb85344586b251431fd",
+      "bytes": 3929
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationDolphinNetplayActivity.java": {
+      "sha256": "f947b5f72a35184c3eafb2ad551f39ce5ded40a1949a3a536d685b2660461b8e",
+      "bytes": 5007
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationExitPanel.java": {
+      "sha256": "a443148b772163c7ef99c2fb66d19027cc80ec4ffdf973a17d250e510d2e4058",
+      "bytes": 4002
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationFlowPanel.java": {
+      "sha256": "219153461d015c13557051e6ca0a59895ccf799a004665d2c38394f74f7c1794",
+      "bytes": 2509
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationGamePlayerInfo.java": {
+      "sha256": "c19d32ba97d98e3638130ec5a26c8a7a4c537661960340a575a50b5a14d44fb8",
+      "bytes": 8893
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationGameRatingView.java": {
+      "sha256": "84d16361a5fa51cceb4046663f1bd3ef3641a64080a8850e0b80b34adc8e39d8",
+      "bytes": 4643
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationGameSession.java": {
+      "sha256": "0f4032baae452d5203adf2f845c1e9830c8e1132b99dfffa7ec0b4b758f37017",
+      "bytes": 16352
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationHeaderMetadata.java": {
+      "sha256": "8b7fa4a64e8788233958f37c73171d2d7c99764ee9343cd3993ea3c7941bfe77",
+      "bytes": 1011
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationHostConnector.java": {
+      "sha256": "c909aea87a8e6c4631002a565a8e4b8b720ffcc1f964dcb8796c4bc155002032",
+      "bytes": 2176
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationHyperspaceState.java": {
+      "sha256": "4b4728d3233b81cfc5ce296bb3c51afc72bdac345ab7f01c4c496e0705e55502",
+      "bytes": 853
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationHyperspaceView.java": {
+      "sha256": "3fb9f02acb37798f09587f03f760ba22360404ac7c8b4254d10e0f6151da59cf",
+      "bytes": 4468
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationInvitationCode.java": {
+      "sha256": "611c98d7c8c6428dbed0d271e8ccdb9a0cf4f8e54c215ff17386dfa604b8aa0f",
+      "bytes": 2214
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationLaunchPolicy.java": {
+      "sha256": "462a154bfdc5308432d7fffe2c5378ddec35398622158276f76bf0b20a441754",
+      "bytes": 1149
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationLobbySurface.java": {
+      "sha256": "b2320101df0889e59fd4832f83596d8e8d448f688d33e82f5236167722df50db",
+      "bytes": 4867
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationLottieIllustration.java": {
+      "sha256": "188fe550f5329837379e8b5ba1a5ecdfe5a261235eff82187e4ad14ac02fd026",
+      "bytes": 4483
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationMultiplayerProfile.java": {
+      "sha256": "25dbd4d5a87e0f6558ee5189583db44c75e76d1ebcb9810ddf0f4e1c890f9409",
+      "bytes": 8432
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationMultiplayerSession.java": {
+      "sha256": "e019e6699e5a5a5c5f2ec63e6d334fa6bcaad7c5e5672a001480294f8ff5a4dc",
+      "bytes": 6110
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationMultiplayerTunnel.java": {
+      "sha256": "c117815045ad93c6736d4618cf71c3e4226faace620054acecfd64e7eb393961",
+      "bytes": 18821
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationMultiplayerWire.java": {
+      "sha256": "318e6daa0f0ce483c9c7458ee33f918085ad4f1d9c1f2e4319895b3df7dba3c0",
+      "bytes": 3174
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationNetplayActivity.java": {
+      "sha256": "e6d93b5e1c159432f538f277b0d28813b91764ac5ce1145f14dbc872309dedbb",
+      "bytes": 7674
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationOnlineClient.java": {
+      "sha256": "edc7b27d292d94acfa832268bc59f301626a2a8e832ea76edab4752a7ec5b206",
+      "bytes": 16020
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationOnlineGame.java": {
+      "sha256": "1f93bd915f8f28f7c92a7d243af7a2a7f5669ece2afdbfa27046ef9088a3baec",
+      "bytes": 11490
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationPlayerModel.java": {
+      "sha256": "8adf63d868f72560ad5bf122be94c71581c396710e5d8d699bc8f4497f32b688",
+      "bytes": 6324
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationPlayerSheet.java": {
+      "sha256": "fdb1ff266df5059cd87589712064d2894ed00230b40d02ac9bc8fe1de146610a",
+      "bytes": 6616
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationPresence.java": {
+      "sha256": "1328f2353c6bde0d6ffde7d861511eda15af861f01dc471d7de16bc813ded83c",
+      "bytes": 9636
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationProcess.java": {
+      "sha256": "d024190147ae5cb66abc0932c7bcaf282586bbbe060093c7d72722103b83fa73",
+      "bytes": 670
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryTunnel.java": {
+      "sha256": "442c50840a280d4a5605e32a06873fa14a879285a959a6f2a0b5231e2204ede9",
+      "bytes": 17049
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryWire.java": {
+      "sha256": "cb7e83ee84c1297c91c23bc24c47f7eb34204ce8ffda933f71d4b27bbc418a20",
+      "bytes": 3159
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRelayTls.java": {
+      "sha256": "423e8c5aa19c27596e69ff837749d1a2e3dbc8d06497cd74b54125af54c61abe",
+      "bytes": 2459
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRelayTunnel.java": {
+      "sha256": "9845e639b93223188dd0b3b6f4389ce80c72f9397380e52a30f4b1f4ca9f2104",
+      "bytes": 7027
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java": {
+      "sha256": "7e41fc82bbb030c6ae13871abd4e509912659448183763874cf04e3b1ef950ba",
+      "bytes": 24312
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRetroLaunch.java": {
+      "sha256": "8b7b587c9a1c53f1a57fd53f1d733d43719658efccc48cc1597d6862acfc0992",
+      "bytes": 9436
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomArtwork.java": {
+      "sha256": "3fd146633671ad30baf722fb2904f72376458c27cffa28ad0411eed436891c4c",
+      "bytes": 4224
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomCreation.java": {
+      "sha256": "104b87d5717839fd56c93327d7f108b44406e0e86768ffed5922f0877e1b4578",
+      "bytes": 837
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomFeedback.java": {
+      "sha256": "7a90edf37c15d3059a9160e05404d41058500b926f9843940bb516b189a4c701",
+      "bytes": 1029
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomLeaveIntent.java": {
+      "sha256": "28f776b5f3130fcd0910f3a9b4b649b93fc0a3ece5466f229a4d703c982d99fc",
+      "bytes": 2414
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomRoster.java": {
+      "sha256": "96092704f62532b337570b32c9c996618a5193552b9519b1b5e42e82218b0c4a",
+      "bytes": 9107
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java": {
+      "sha256": "9e9f634135a9085690220b5cc0716c45a6a46c6ce0c87bde1b2c91fc7900251e",
+      "bytes": 90014
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomStartState.java": {
+      "sha256": "2a883a22b5cec0a10fcf8b523d79bd518a956ab9195efe0a398a6fc8cf24b82c",
+      "bytes": 3274
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomState.java": {
+      "sha256": "3569a17e3b3134b0388d5a3231dad9f269461fa5b35566fd5195be21018ac5f9",
+      "bytes": 936
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionChannel.java": {
+      "sha256": "678037ceb5f34245c2a5a816727e0c3f81c10d9b6703fecb8a0041267b137ac8",
+      "bytes": 1388
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionLink.java": {
+      "sha256": "2cdf6807d6d96e6265f8719a40ea75b3b81680d2b033dd985181c2094e89eb1c",
+      "bytes": 4149
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionRegistry.java": {
+      "sha256": "53834181e95328483d498348e51269c325851451bea4bbab3cb135689a705ba5",
+      "bytes": 1207
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionService.java": {
+      "sha256": "fb8857ab4b0bbd9507764c9a6e1b4a48eccddd25a7bff36ad406cd9a800b641a",
+      "bytes": 3397
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSocial.java": {
+      "sha256": "c0a8b36cf544cfb5b6bbb1c0a2becfb617f282f57992b3f99f859cf40e254be2",
+      "bytes": 1383
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSocialIcon.java": {
+      "sha256": "19ff1286d4f021df60b29075c9db848d68183f76312430b2ef5b1a8b97b2c44c",
+      "bytes": 5081
+    },
+    "java-build-receipt.json": {
+      "sha256": "3b27c19021247d18baa8218a8433b1d23d4fda20b8f10e33fb28924a1b80abc6",
+      "bytes": 33771
+    },
+    "JAVA-SOURCE-MANIFEST.json": {
+      "sha256": "d8cf76af83ae96a1c270df92703a8af36360547e3c940ad8ecb9e183195888fe",
+      "bytes": 32644
+    },
+    "TurboStations-Premium-R81-20261008.apk": {
+      "sha256": "85fac8f51daa3a370eabb14d98832f75c2f30ff81422c549538ee715627032c6",
+      "bytes": 2123655964
+    }
+  },
+  "verifiedFileCount": 330,
+  "stableChannelUnchanged": true,
+  "stableFilesVerified": 317,
+  "archivedEffectsUnchanged": true,
+  "archivedEffectFiles": {
+    "Dreamcast-LED-estilo-TURBORAMA-R80.zip": {
+      "sha256": "27246765cf6e8a50808f430d7e303c1e1f3e0d2ca23539aceee905fed417b57d",
+      "bytes": 143756050
+    }
+  },
+  "protectedEntries": {
+    "AndroidManifest.xml": "3a821dccd8a9853acd345f106614ec955bbf66b681b7690f907348569e8bef0d",
+    "lib/arm64-v8a/libturbo_carousel.so": "b77f5c06effe7750f526ef06b8515c7eb4954437495f65e4d5bec25c1bd36808",
+    "lib/arm64-v8a/libstation_bsnes.so": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "lib/arm64-v8a/libstation_clownmdemu.so": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+    "lib/arm64-v8a/libstation_retroarch.so": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "assets/station-online/engines.json": "bba5045facf7641bd70cdf53f5cd01536d66e631018fa521d1c20d0732581af2"
+  },
+  "previousChannel": {
+    "version": "R79",
+    "directory": "test-up-to-4-players-r79",
+    "branch": "fix/station-room-bootstrap-r79-20261008",
+    "sourceCommit": "b377db3981c96374fbe5591700db91dfbe297994",
+    "apk": "TurboStations-Premium-R79-20261008.apk",
+    "apkSHA256": "c2aeee4443dedc2862b29dde1f972574bc25464d6993abf01f34d43531558f0a",
+    "javaSourceCount": 209,
+    "protocol": "station-stream.v3",
+    "status": "experimental; server activation and exact per-game approved profiles required including two-player rooms",
+    "fourPhoneGameplayQualified": false
+  },
+  "recipeSHA256": "3493e45bb1a26468031be65f16aea763acaaf0e7a8ce49e76d79905c452e4725",
+  "packageReceiptSHA256": "5ed33b2c017b7440c1dfefda2d59c0332800743cacfe53798e99c578a2bdd263",
+  "newChannelCompleteBeforeCleanup": true,
+  "removed": [
+    "G:\\BAKUP SISTEMA APP 03-10-2026\\ATUAL-2P-E-TESTE-4P-20261008\\test-up-to-4-players-r79",
+    "E:\\ESTUDO APK\\work\\station-online-readiness-r81-20261008\\package\\TurboStations-Premium-R81-20261008.apk"
+  ],
+  "installed": false,
+  "compiledDuringConsolidation": false,
+  "serverChanged": false,
+  "serverV3ActivationStillRequired": true,
+  "exactApprovedGameProfilesStillRequired": true,
+  "backupCompleteIndexAndGitBundlePending": true,
+  "previousVerifiedFiles": {
+    "carousel-command.json": {
+      "sha256": "e4fa44f738e1aea919739fc0b867949a5bceacf53838ca0ed627a983c0aa7b3c",
+      "bytes": 1557
+    },
+    "carousel-inputs/d0/collection_corner_policy.h": {
+      "sha256": "624b18a0a79ba7adfb4956ae3d5949bb432521182639e2da415b3d62ebfe2701",
+      "bytes": 630
+    },
+    "carousel-inputs/d0/collection_editorial.h": {
+      "sha256": "e8f9de1b9128ed4e9d17e6e5b9e8db2dfa5e4a306d110aa83777114645fbe166",
+      "bytes": 12552
+    },
+    "carousel-inputs/d0/collection_presentation.h": {
+      "sha256": "fd6e3af8310481f72b7bd3c4618b56c84ead1f77e50f3b3057194716e902d82e",
+      "bytes": 4173
+    },
+    "carousel-inputs/d0/collection_video_policy.h": {
+      "sha256": "5ca0f4f114037e605b698067b34d01cb6f0aef2ba4c3d223117801d8a71a693b",
+      "bytes": 2736
+    },
+    "carousel-inputs/d0/installed_art_asset.h": {
+      "sha256": "068fd7e1ecbe2f9971917381cfa60ef72c85bed68a13b9df6995870a36ab4177",
+      "bytes": 170
+    },
+    "carousel-inputs/d0/installed_art_r48.h": {
+      "sha256": "ccc58c7196850819a7a331e4ed3dd7ea7f761f4f9686652f4f24b2891a1b64b0",
+      "bytes": 3373
+    },
+    "carousel-inputs/d0/lottie_gear3_data.h": {
+      "sha256": "30835b92c137c25fba4d95fb9f027b66df055f5fe3edb50399de3d489e1bd4f3",
+      "bytes": 40294
+    },
+    "carousel-inputs/d0/magazine_shader.h": {
+      "sha256": "309ff6c7ea0270b02108622b5b1c20cfc96bff446b89f5bd8e76c4b76dbdb037",
+      "bytes": 16935
+    },
+    "carousel-inputs/d0/native_carousel.cpp": {
+      "sha256": "ae1255f4b19824e7838ddca76a2fa946863dd2289e9580d23d460e2b285ef8ca",
+      "bytes": 29807
+    },
+    "carousel-inputs/d0/native_console.h": {
+      "sha256": "ea38ab513788ae0bd5207b17648894214e4e84a15d4fcd12e4451bd891bce79d",
+      "bytes": 4651
+    },
+    "carousel-inputs/d0/native_folders.h": {
+      "sha256": "71fa0864f7833c1e2cf29eac8c7a0bf97ff15115625fd55789819a69d23b1944",
+      "bytes": 12794
+    },
+    "carousel-inputs/d0/native_formation.h": {
+      "sha256": "d6aa878ecc5d41198e45f4d216884dabec4b55264368574bbfc8145b8bc27326",
+      "bytes": 10569
+    },
+    "carousel-inputs/d0/native_game_actions.h": {
+      "sha256": "06946a2f881eac066d10d3b5d088e4897c0bf276142f663cde6715125bfe77d6",
+      "bytes": 6224
+    },
+    "carousel-inputs/d0/native_info.h": {
+      "sha256": "d11f4a3898beccc64f4c4d80bdafeab5a983aa21c9fb51b0a3f61d8182a4fdff",
+      "bytes": 21611
+    },
+    "carousel-inputs/d0/native_installed_tag.h": {
+      "sha256": "e2f279f76d837591533c942b9fa63c3cbd2b28a5d8d238922c6cd907157ee085",
+      "bytes": 965
+    },
+    "carousel-inputs/d0/native_lottie_gear.h": {
+      "sha256": "8c3b1c2ed3954a676682b3aa8bd09465cffb6b8632c30b56c6183778e9f0ea26",
+      "bytes": 1547
+    },
+    "carousel-inputs/d0/native_magazine.h": {
+      "sha256": "50fe001ac12bc592d672ac5c3889395d20aa65dfd6143082af84502a163e9fd8",
+      "bytes": 4557
+    },
+    "carousel-inputs/d0/native_menu_power.h": {
+      "sha256": "720451c726b3e7edd1398dee7bced41732e84ba091cc8cacbdd76fcbcdebe889",
+      "bytes": 1666
+    },
+    "carousel-inputs/d0/native_n64.h": {
+      "sha256": "a3562d758dd63fd7c9e839e5dd46c67f890a29da1dc73002816c5b0e87cc2ce3",
+      "bytes": 4189
+    },
+    "carousel-inputs/d0/native_netplay.h": {
+      "sha256": "9256ee49353462015fb7171c1e98b759469dea147b6812068f59021ce38996f3",
+      "bytes": 4119
+    },
+    "carousel-inputs/d0/native_online_robot.h": {
+      "sha256": "d95f553b3d7ccea2b8cfc935ca03e93d86ea65af997970d708f96715e1cd3f39",
+      "bytes": 783
+    },
+    "carousel-inputs/d0/native_players_evidence.h": {
+      "sha256": "6fdc2bd1b21c3078d00c23a74bb357fe5dab64cd5f8223b7cf774ebadcee7d6d",
+      "bytes": 2243
+    },
+    "carousel-inputs/d0/native_profile_name.h": {
+      "sha256": "d5a465e6297332f0d3c8524082192b2bcac8e44efb51d3fc5e65257341851acb",
+      "bytes": 4457
+    },
+    "carousel-inputs/d0/native_search_download.h": {
+      "sha256": "225341cb4204a67a7a848f5c499afe0f01359d45c3ac3c93466e883edd6c585c",
+      "bytes": 14434
+    },
+    "carousel-inputs/d0/native_search_state.h": {
+      "sha256": "b602d20be19eb0827c85eb552c1bf963d3fea4149b32b4dceef28d5103376b43",
+      "bytes": 2769
+    },
+    "carousel-inputs/d0/native_settings.h": {
+      "sha256": "1d70ee6836e3438187e6a0c9c001230a9fe41365778e392a620dc2994c04119f",
+      "bytes": 8074
+    },
+    "carousel-inputs/d0/native_skin.h": {
+      "sha256": "dfccab127868dfb8f342eaaf8e865d76e6c2c3ad24c50fd2aae5290d92b77ba5",
+      "bytes": 14446
+    },
+    "carousel-inputs/d0/native_space.h": {
+      "sha256": "b48b498b244e1acef981d5191eefeeb4252c2b287e2f5a7c9acfe11d59d2da05",
+      "bytes": 1518
+    },
+    "carousel-inputs/d0/native_space3d.h": {
+      "sha256": "f547260331ccc7fbeb3a070a1042734c82695ab6ec3484717be72c4c24e64b4d",
+      "bytes": 13440
+    },
+    "carousel-inputs/d0/native_system_video720.h": {
+      "sha256": "901d01341f3c316e02ca5b07cc278f5bc0864cff9ba39da7ce52030888261cc6",
+      "bytes": 15834
+    },
+    "carousel-inputs/d0/native_theme_preferences.h": {
+      "sha256": "0962ee380632e372bcc5fe876eeb21d472cdf59544840ab92a4bd39b514ee9cc",
+      "bytes": 2880
+    },
+    "carousel-inputs/d0/native_theme_switch.h": {
+      "sha256": "4652860f638352183c7459c157d870d47ac6c21f71e718907e92683e34d9bab5",
+      "bytes": 4770
+    },
+    "carousel-inputs/d0/neogeo_led_profile.h": {
+      "sha256": "10c50d4bf6a34ca04d94db9532d89c241383186d9780436a60d62e3651ae0a0d",
+      "bytes": 321
+    },
+    "carousel-inputs/d0/premium-magazine-led-android.glsl": {
+      "sha256": "a7736d47a3d77584b336b4c5421c5e7d697618b1c3a40ed8d71677ea239b63be",
+      "bytes": 16874
+    },
+    "carousel-inputs/d0/r53_video_policy.h": {
+      "sha256": "cb0be1e3c5bf15822a63ab4284d26d0dbe26df8bf4a7105f9fa5984a4d6d48cb",
+      "bytes": 3212
+    },
+    "carousel-inputs/d0/station_bottom_action_layout.h": {
+      "sha256": "4640a92382279ac94725502a81dd1fa338d1d595e2d35bdf781ad88f84acb079",
+      "bytes": 2608
+    },
+    "carousel-inputs/d0/station_catalog_player_label.h": {
+      "sha256": "53e8398df4d728c735a629604d9cd072d9448fe72374021a7e52a55f7ce5184d",
+      "bytes": 1075
+    },
+    "carousel-inputs/d0/station_chatbot_state.h": {
+      "sha256": "2594ec1b4b08ede6b7ac9174b005134328e6d91b9e13aafa7c13be811e92d13d",
+      "bytes": 324
+    },
+    "carousel-inputs/d0/station_collection_editorial_aliases.h": {
+      "sha256": "579ee024fab3f893e188b4aa9f44bfb9696f01dd64f5b8ee32fe96e640fd507d",
+      "bytes": 1084
+    },
+    "carousel-inputs/d0/station_collection_settings_layout.h": {
+      "sha256": "52a0a13ae63b63f505c8976a9d12079dc24686570621e94b105cb614bf10249e",
+      "bytes": 573
+    },
+    "carousel-inputs/d0/station_compact_topbar.h": {
+      "sha256": "d4fed4687cc9d92422b476d94aa9ea28e7a6cb8ebd1753e1ec2eea0bf175564a",
+      "bytes": 236
+    },
+    "carousel-inputs/d0/station_console_fit.h": {
+      "sha256": "4f9ddf8a57667e02bdb0d47d022348e7d3f3ad84db6731aba86dad26c2c11cdd",
+      "bytes": 1307
+    },
+    "carousel-inputs/d0/station_console_keys.h": {
+      "sha256": "b35124361715daca32b7f6d2c3dfc5ed62b1f9b75d8df7dcbecd1601fac4e86e",
+      "bytes": 1123
+    },
+    "carousel-inputs/d0/station_dreamcast_descriptions.h": {
+      "sha256": "a83bd2796223c436fe09fc0ad8bb2906309db7b97b3e1f8e237bcdb97c54e6b0",
+      "bytes": 298577
+    },
+    "carousel-inputs/d0/station_game_details.h": {
+      "sha256": "cc1ffb53c9b970d4ab4a45653d87204b31feebed5b32cf27e3f8cc2008fdb89b",
+      "bytes": 119085
+    },
+    "carousel-inputs/d0/station_game_infos.h": {
+      "sha256": "faf4b4e456b5158cb7fe77b15e5613076bf34d5b5c09d27ecd59730edaee83b7",
+      "bytes": 2236459
+    },
+    "carousel-inputs/d0/station_game_meta_row.h": {
+      "sha256": "246add209698156967863b639ee8d43fd099786ac9f2887fabece0e4a5b16531",
+      "bytes": 1458
+    },
+    "carousel-inputs/d0/station_game_panel_layout.h": {
+      "sha256": "073690b9b6690587c6c4bf3bb040d3f21506c2202b706722f14e3e1f7423d25a",
+      "bytes": 1626
+    },
+    "carousel-inputs/d0/station_header_layout.h": {
+      "sha256": "2a733cdb36f0611a1096652c0347ddf6112a4e60c5af1e83a793f37db0e6ccaf",
+      "bytes": 403
+    },
+    "carousel-inputs/d0/station_info_layout.h": {
+      "sha256": "7f84f451085cbfebd6cd3ca40cdefe8ac01dacfa6a9e17e94e311f61ec38db8a",
+      "bytes": 1087
+    },
+    "carousel-inputs/d0/station_installed_ribbon.h": {
+      "sha256": "4aaa2391b92a22abc5ce61de79315b99867898c24fc89a4790b949e5390530ec",
+      "bytes": 6778
+    },
+    "carousel-inputs/d0/station_lottie_assets.h": {
+      "sha256": "345c54fc4feac7bc972025dd477f839fe240941b22177ee4c4ab284d6f8bcd55",
+      "bytes": 6297
+    },
+    "carousel-inputs/d0/station_lottie_decode.h": {
+      "sha256": "1cd3a405500510abf253fa0fb56ce3800e2b141f6e0c55f2d1908d5c5e847e11",
+      "bytes": 410
+    },
+    "carousel-inputs/d0/station_lottie_once.h": {
+      "sha256": "030819a9eaf2df1cd54369a721f3b25bb77c7f8f66d46ee68a683a5b2c87e24a",
+      "bytes": 311
+    },
+    "carousel-inputs/d0/station_menu_frame_policy.h": {
+      "sha256": "3389f6d0f339d96e705f295dec7b5721b67244febc0af874c4d9960b0277ec45",
+      "bytes": 330
+    },
+    "carousel-inputs/d0/station_metadata_lookup.h": {
+      "sha256": "5f3e194195ce0e40c6406d246912791ea7be28fcbf846c5f7128d19d4f399ce5",
+      "bytes": 4282
+    },
+    "carousel-inputs/d0/station_online_robot_state.h": {
+      "sha256": "2de1a0c66945153d08a74614f785a9b36ce5282b8def4a474ff517811e2d787f",
+      "bytes": 931
+    },
+    "carousel-inputs/d0/station_platform_button_label.h": {
+      "sha256": "a2f4df197431db187a6a31f0dc66661f8303b25138b47555861f376e9c41b78a",
+      "bytes": 2327
+    },
+    "carousel-inputs/d0/station_players_label.h": {
+      "sha256": "6600a270bbc5ab1a26ac26bd8dd9a4e5b21b9f531e2f7ff6a45ec34e7c4a16c9",
+      "bytes": 996
+    },
+    "carousel-inputs/d0/station_profile_bridge.h": {
+      "sha256": "093212f9266d9c8c648268123a2099b946fdc6dac61b64cedf1b18a1f55a4447",
+      "bytes": 750
+    },
+    "carousel-inputs/d0/station_rating_animation.h": {
+      "sha256": "6672a894cbcaa7011550ef7fa0f6839a9b06d589654b512bc4c85390892ebc6e",
+      "bytes": 211
+    },
+    "carousel-inputs/d0/station_ribbon_placement.h": {
+      "sha256": "6a9327f32045a259eba80996e2ce81d6f30507df99cc2490538e972d436582cb",
+      "bytes": 575
+    },
+    "carousel-inputs/d0/station_root_label.h": {
+      "sha256": "f2a51f9073017ed273352119c55c8081021875365e9da8cea428fb2e02c2064f",
+      "bytes": 351
+    },
+    "carousel-inputs/d0/station_search_actions.h": {
+      "sha256": "50a2d4aecd162efc97377cd63013c7aae0a936413900a7378659dc8e60a2fe52",
+      "bytes": 1129
+    },
+    "carousel-inputs/d0/station_synopsis_scroll.h": {
+      "sha256": "f3d4de5ed22053324cff231eb1568ccc4be761603d3d30603b22689e1e2bb6ea",
+      "bytes": 4608
+    },
+    "carousel-inputs/d0/station_synopsis_selection.h": {
+      "sha256": "0f6221d4d31ab6f5340fd74225dbfaba5025c62eb0fee05f9c0b98b4d8ca25ff",
+      "bytes": 3799
+    },
+    "carousel-inputs/d0/station_theme_palette.h": {
+      "sha256": "8a156447f7c8a8497acbfb863bd6898b10c2a7403a83f3b9afcd4fa15f6bd058",
+      "bytes": 636
+    },
+    "carousel-inputs/d0/station_theme_switch_state.h": {
+      "sha256": "fb6faf66318a769d7d6b730f8bdb16065400a3677210c4899eb70d238aa2a87e",
+      "bytes": 1247
+    },
+    "carousel-inputs/d0/system_infos.h": {
+      "sha256": "96327b84b58981343a0eadfe1817504f9dcf561b550334dd400b28fc97021e68",
+      "bytes": 46895
+    },
+    "carousel-inputs/d0/video720_posters.h": {
+      "sha256": "1b2474f0b6793368d28c7826ac1aa83537760ac85b7445f4d142cc861a42529f",
+      "bytes": 7940
+    },
+    "carousel-inputs/d1/game_infos.h": {
+      "sha256": "e48f3d25d08a09797825b89992f693400a2d02219c86ae54bffa4552078858e5",
+      "bytes": 5621270
+    },
+    "carousel-inputs/d1/laser_assets.h": {
+      "sha256": "ebc9b18b0add4ae0fec1f4dd97547c32c0a1544fca930451efcd81b5a3d5e9ac",
+      "bytes": 7227
+    },
+    "carousel-inputs/d1/libc.so": {
+      "sha256": "dea519a54d30dc7578a0eb7dbad73723962ae1f8d20581c26367b1f03413f0b7",
+      "bytes": 3136
+    },
+    "carousel-inputs/d1/libdl.so": {
+      "sha256": "780b2e782fbf0565dd66d1007b8bd8f98850c4f1c9af8f32d5e18777e02eb411",
+      "bytes": 2328
+    },
+    "carousel-inputs/d1/liblog.so": {
+      "sha256": "2ec409a7993144864bab4fee2f180c866668ffa8f4b022004918c1650bafd0fe",
+      "bytes": 2168
+    },
+    "carousel-inputs/d1/local_game_covers.h": {
+      "sha256": "a600c8a0ca8901f409050048b95fdab43fcea531d1cf103966f6bc63f9843641",
+      "bytes": 8493
+    },
+    "carousel-inputs/d1/native_action_motion.h": {
+      "sha256": "f601bb306f07ef30797abee7006dc13ee40958540f654f6ccda6fba2befb2c00",
+      "bytes": 3179
+    },
+    "carousel-inputs/d1/native_catalog_identity.h": {
+      "sha256": "191a47278a386ef476983d90ff17586d5e12c09293520ac5707162d65557a329",
+      "bytes": 489
+    },
+    "carousel-inputs/d1/native_classic.h": {
+      "sha256": "2fc3cfcffe53b29a405dc82040e5ab0b08a0c53bed95a7e165aedaa8cdfd64c8",
+      "bytes": 7488
+    },
+    "carousel-inputs/d1/native_dolphin.h": {
+      "sha256": "82d85a24e5f7190f8dd16d59dd87f6eb47df9d2fcf770a83095fc82360bc7628",
+      "bytes": 3696
+    },
+    "carousel-inputs/d1/native_flight.h": {
+      "sha256": "59637b5bbc68454272d6cddd8563415d9a52b0d096c586d33895e8860bff8216",
+      "bytes": 4886
+    },
+    "carousel-inputs/d1/native_flycast.h": {
+      "sha256": "569f61003ccf242d25e2bfa8af23fde594e440af888ea6c3307ec29a2903b095",
+      "bytes": 4290
+    },
+    "carousel-inputs/d1/native_laser.h": {
+      "sha256": "40c89eeb59a35da36f06696e17a710c3447652c5bc0025a1fcd282617989e37a",
+      "bytes": 7671
+    },
+    "carousel-inputs/d1/native_loading_progress.h": {
+      "sha256": "b3533a13563e0c8ebb9f075060e943475390c2ec5f1e3013cce1bfc47bb7b9b2",
+      "bytes": 3094
+    },
+    "carousel-inputs/d1/native_mame.h": {
+      "sha256": "4742d0e56916d423015336bc9a5aabc82c7a962e1264783da38ca8d3465da5d5",
+      "bytes": 6636
+    },
+    "carousel-inputs/d1/native_mega.h": {
+      "sha256": "045fb8c4c73a479b60c2d6e33697f86d66e80eb055aec92f460081c59853b6a2",
+      "bytes": 4318
+    },
+    "carousel-inputs/d1/native_pause_menu.h": {
+      "sha256": "7c4af4aee2b55539d02deb39580333fc717bc1d5b6abda5631a673125823af0f",
+      "bytes": 4695
+    },
+    "carousel-inputs/d1/native_pcecd.h": {
+      "sha256": "0118d6a75101f096b3ef7f80b7b8d219b895b6e3632f2d72a063344dd95ecb43",
+      "bytes": 2968
+    },
+    "carousel-inputs/d1/native_policy.h": {
+      "sha256": "8b38c67d1aa8cbdd95d52608b1d38c7b67a56ecd42d5848d92c58524caa743b2",
+      "bytes": 770
+    },
+    "carousel-inputs/d1/native_ps2.h": {
+      "sha256": "53b7b2adc2290c7630da247c2069df620b521ac9b17715451efadda9a0185955",
+      "bytes": 3379
+    },
+    "carousel-inputs/d1/native_psp.h": {
+      "sha256": "4ca41843178043b4f5270810f76c702c2a7bd253a7aa2af76fc88e75918c0180",
+      "bytes": 3413
+    },
+    "carousel-inputs/d1/native_psvita.h": {
+      "sha256": "e4c1b1536f20cae05a3cab35c5b3c96a32011c706bab96ceae72ce38d85ca4fc",
+      "bytes": 4030
+    },
+    "carousel-inputs/d1/native_retro_music.h": {
+      "sha256": "26b6ab36f60b9dbc2971e01f066f4c92abc3b97fe759f84a07eeb2d9594281a9",
+      "bytes": 3417
+    },
+    "carousel-inputs/d1/native_saturn.h": {
+      "sha256": "b4e59d7b686f5fe4307a82e39e29da749c59a0061524a2b9c1943da9cad83110",
+      "bytes": 4174
+    },
+    "carousel-inputs/d1/native_snes.h": {
+      "sha256": "676bba7465610a8a31a2d11c939f6dd7011712dc2848ec6cd4e993ce2586e63a",
+      "bytes": 3235
+    },
+    "carousel-inputs/d1/native_system_video.h": {
+      "sha256": "e41c3f52c30ef8833db89816bd59a7838c200036ffd7de6c6ccf8de4ca6f79c0",
+      "bytes": 2746
+    },
+    "carousel-inputs/d1/native_wiiu.h": {
+      "sha256": "8f29bb65d6d7b819515198701b562a2e74e2ed45f0d2fdb846ad91dab7b879b6",
+      "bytes": 3935
+    },
+    "carousel-inputs/d1/native_xbox360.h": {
+      "sha256": "86c616b15d93d1b1dd21646f232e401f0ca3bb5c7106c60f707806d8cb80a707",
+      "bytes": 4087
+    },
+    "carousel-inputs/d1/native_xboxclassic.h": {
+      "sha256": "b399595be7665b0d2c479a22416210de9c18babd4566a144a2d47e100f97d3b8",
+      "bytes": 4281
+    },
+    "carousel-inputs/d1/relocations.h": {
+      "sha256": "60f13ed591beeaf1ade34ddf5b6331af7855ea99cc23a43950d18dd7c530e08e",
+      "bytes": 214402
+    },
+    "carousel-inputs/d1/space3d_shaders.h": {
+      "sha256": "10441f4afd3b188a1fd439c1c6e7604cbabbc002ecb837c367e7de501f232681",
+      "bytes": 25392
+    },
+    "carousel-inputs/d1/station_game_lookup.h": {
+      "sha256": "1bf2f2a7d2ba116a2b3ba3012e3d7c686fbca53fbd75a0be6bb8c74e8bf14195",
+      "bytes": 509
+    },
+    "carousel-inputs/d1/system_video720_assets.h": {
+      "sha256": "2d0e351bed93dd3f26548f6b92157f232b81a3df9586cd65c0900f1ce1df3cf5",
+      "bytes": 2484
+    },
+    "carousel-inputs/d1/systems.h": {
+      "sha256": "8093bc915dce80d445a5cff868226e5db9f67207935f22cf9cd39bc7ada0c31f",
+      "bytes": 89083169
+    },
+    "carousel-inputs/d1/video720_policy.h": {
+      "sha256": "b0eb9792eb3c52eda1811b259eafef4311d98b3deceecd5d1b2a741e0c8adc7e",
+      "bytes": 401
+    },
+    "carousel-inputs/d1/video720_posters.o": {
+      "sha256": "c078dd3f4d3230f247d48b2f38ad39d97f8944bbc63ffe05ee7869d9acab8f9e",
+      "bytes": 50806360
+    },
+    "carousel-inputs/d2/console_assets.h": {
+      "sha256": "ce75cda3a6adebe55bfeb61a4318e69e812cb68ae633703c6e8a8ba4236047fc",
+      "bytes": 19514869
+    },
+    "carousel-inputs/d2/station_future_metadata.h": {
+      "sha256": "84b6b0157e2541f810cbebcc77e2837e49a4a0cacedd55780c53fe91368a490a",
+      "bytes": 5634816
+    },
+    "carousel-inputs/d3/collection_previews.o": {
+      "sha256": "11bc120225e031409b11839575986ff90f26b01a838b1aded119ab22112edf03",
+      "bytes": 9332264
+    },
+    "carousel-inputs/d4/lottie_frames.o": {
+      "sha256": "8d3d7db56dc1e66b80cc472f397e1b505ec28d32eb7326940ebbb39384593464",
+      "bytes": 20194920
+    },
+    "carousel-inputs/d5/installed_art.o": {
+      "sha256": "ac082ca0ea8658c8ab86142de9f3a171c1b91bf7c8f1943db4bf2243a71bfef6",
+      "bytes": 1598752
+    },
+    "carousel-inputs/d6/collection_previews.o": {
+      "sha256": "b206e092549a0c17adcb0ce3deb41fa443ec7019154ab05b31c15771fca809ac",
+      "bytes": 3111080
+    },
+    "carousel-inputs/d7/collection_previews.o": {
+      "sha256": "5ceb51cb97e8dc39d3a838c70286fc21bdb55b979e2f8f5a76fe3f8eb3d6ce1d",
+      "bytes": 2074216
+    },
+    "carousel-inputs/d8/collection_previews.o": {
+      "sha256": "dbe54d993453a37197317d23c11fb438ccb792d21edf82906abb2a73f1027937",
+      "bytes": 1037352
+    },
+    "compiled/classes28.dex": {
+      "sha256": "e7207a89517b168cc476e30a823bed3a1b6ad57339e1042f08a4660184543d63",
+      "bytes": 176708
+    },
+    "compiled/classes35.dex": {
+      "sha256": "ed7fe3c352de9f9032dd6581f356ae405570d510915aca138a82a82f5e8f3615",
+      "bytes": 515760
+    },
+    "compiled/libturbo_carousel.so": {
+      "sha256": "b77f5c06effe7750f526ef06b8515c7eb4954437495f65e4d5bec25c1bd36808",
+      "bytes": 142658344
+    },
+    "java/client/src/java/org/emulationstation/frontend/AssetInstaller.java": {
+      "sha256": "d3539b66cbc434e819b59d1fa614f3eb47c8b7c3d8b51c92284bc6dacbe0ccee",
+      "bytes": 2434
+    },
+    "java/client/src/java/org/emulationstation/frontend/auth/LoginActivity.java": {
+      "sha256": "71072d9f6a0621a9eeb04d9784dd27eb2f05e78c5da18d95254e0be13c86d57c",
+      "bytes": 25538
+    },
+    "java/client/src/java/org/emulationstation/frontend/auth/StationLogin.java": {
+      "sha256": "4bcca2a762584312222f8dfd9b3b36c06a5ea552c2eca42ec25642940d8eb187",
+      "bytes": 4812
+    },
+    "java/client/src/java/org/emulationstation/frontend/auth/StationTaskNavigation.java": {
+      "sha256": "0fd4745792931f0b1b80d57b4e6d4d37b70aed477cfb732de59553ad01077703",
+      "bytes": 4804
+    },
+    "java/client/src/java/org/emulationstation/frontend/auth/StationTaskPolicy.java": {
+      "sha256": "2771621dadf0a384be2140e182a36b1b781d6e073ad3d4f0e6fc097c94dad551",
+      "bytes": 2839
+    },
+    "java/client/src/java/org/emulationstation/frontend/DownloadService.java": {
+      "sha256": "49b2994e4a213e861cfcef5ce0e353789f7f88928fec5f8b7e3b8ceb6f594c5f",
+      "bytes": 3678
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/ExistingCoverCache.java": {
+      "sha256": "41796c41b27efc4e9a53d20b7ed606e37d7b4d168cb7638059cf368e8d533d28",
+      "bytes": 2239
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationAndroid.java": {
+      "sha256": "2ccba05c9db2bc7df151d32f4f888abd2e2a2ee5a3566bb126a2ce93bb4dc5d0",
+      "bytes": 5300
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationApi.java": {
+      "sha256": "439069cbea44ad7dff2549fa1ccacf42b56564b713a08bf2395d26a9cb9e343e",
+      "bytes": 29560
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationArchive.java": {
+      "sha256": "107669c6885725d99b430e7340c550466eed24a2842d43b51526c673a9d51b86",
+      "bytes": 683
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationArtifact.java": {
+      "sha256": "fe6eee3c4dfaaf66ac68eb0096b6ff0dc7792fa377dadf5898b5ea06e803bac9",
+      "bytes": 3253
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationBundledFiles.java": {
+      "sha256": "74292e8dcfe8318d8697a2c81446ab23cd66ff2c815bf98632849b34cc39e67e",
+      "bytes": 2442
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalog.java": {
+      "sha256": "f18224fece1ba81f72969e9d6280d2093c89ffa230c74216abdd5de1615c82a2",
+      "bytes": 8685
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalogPlayerEvidence.java": {
+      "sha256": "828af47362433d9270fc4b3e3636365dd8ced2f2a65b3ab4f6734d6fb878ccaf",
+      "bytes": 8041
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalogPlayerEvidenceLoader.java": {
+      "sha256": "e7f291d3f85e402a0cd1c8acc1115854358e449f3bd458e1c088120b8174cbc0",
+      "bytes": 4284
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalogPoll.java": {
+      "sha256": "ca03baafce7af515d907eaa5b3e40ae7efff0efb3a50b4f1f571bcaba03e844b",
+      "bytes": 1089
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalogStore.java": {
+      "sha256": "9a8b823c9a5473e950225e8067365fa7f4a602c3821cbe1722980e61c3f2968e",
+      "bytes": 3778
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationConfig.java": {
+      "sha256": "8c430cdf7b6cf2ee03f1ad3dca50ff18bc32a6b26ddfa1fe70397db81fe03cb1",
+      "bytes": 1862
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCoordinator.java": {
+      "sha256": "5375f83eedbb14c14b8ae547a1304b508448e3eb173d467f418a64cfacf75e24",
+      "bytes": 10619
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCoverQueue.java": {
+      "sha256": "1696e03d4afa310d5a80eaf728728ab0d71cc55879bf07ada82939f69c0fee48",
+      "bytes": 4208
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCoverStore.java": {
+      "sha256": "ca76e0de5589091cdef2ffad6e2b55005ff5e95bfc222a15b5dace1964014b26",
+      "bytes": 7660
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCrypto.java": {
+      "sha256": "b6d57060b23c953ec513098e49c337e8e648588623b4fd3359d4f91c99db9586",
+      "bytes": 6557
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationDiagnostics.java": {
+      "sha256": "4ab4bc93edf1444094f0be982cbbe8218bbe1a18e46f3d2fab7c2f434a41934f",
+      "bytes": 4025
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationDownloads.java": {
+      "sha256": "ba4bb235dc64c7319486fc44fc7496d6de00f6d9eeadae1d5a26c789c6871d4c",
+      "bytes": 7650
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationExistingArtifact.java": {
+      "sha256": "d01b4806e70a637c093c1d55a10b4e7230b3bce729aa94638a94fe82530d931f",
+      "bytes": 748
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationFiles.java": {
+      "sha256": "40e594049e15ee4fbd2746087d4dc5de46766f4c043f009783eaadcf1e46fdcd",
+      "bytes": 8291
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationFrontend.java": {
+      "sha256": "131e723806b8ddb7048a0a182733961fd2498a405103575319fd73cdfe946622",
+      "bytes": 13635
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationHttp.java": {
+      "sha256": "04a98a3c8964aa530514bef74bbf9d958f2ace788d882d1c2c6d1528a8d42c59",
+      "bytes": 9588
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationInstaller.java": {
+      "sha256": "1b61d8764dfbfdaeab817cc2e81b7f160b773c30fb4771f19f34d963e84d2559",
+      "bytes": 15875
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationPlatforms.java": {
+      "sha256": "c1466f6de9ff707d2cf22f136c06e286f2a9242aa6a68cd2f5badeeaa9bd7757",
+      "bytes": 6038
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationProtocol.java": {
+      "sha256": "43bdf2b6f948eab1fd386741d88b2b57e65c37b63eb608eca9e156b128052c51",
+      "bytes": 6018
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationPublication.java": {
+      "sha256": "d6972d792c18e377cfda161d156b3e3cb279f36a3f420e5b53a72cb86316799e",
+      "bytes": 1695
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationRequestProof.java": {
+      "sha256": "40ba9734251969e4c1b3042e332f12e471b14f0bd5232e7444342428a3d9a5d9",
+      "bytes": 1542
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationRetryAfter.java": {
+      "sha256": "7ea5fb4e3267249ac5b6cc1165ede174c152286f7aceb7632a35510fa5f1be57",
+      "bytes": 918
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationSessions.java": {
+      "sha256": "dbd8810253b74d9a5c00493115292a175d963a40a113e3113246eb3386178ec2",
+      "bytes": 3170
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationStorage.java": {
+      "sha256": "3979ac629fe3778c609fd7bca20c3d72c9b89df920d1454a637ec24f575cfc9d",
+      "bytes": 3660
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/DefaultLoggingEvent.java": {
+      "sha256": "95801e024aafc8ce0dc93672b839eba56c5cd30b42f92ec1d7af8cb3da1a2925",
+      "bytes": 2975
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/EventConstants.java": {
+      "sha256": "092f4b29eeb6d6d1ed43e67111dbe94f6dff9c42273cf879167312d9b067a331",
+      "bytes": 578
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/EventRecordingLogger.java": {
+      "sha256": "e5af50242eaed3d021b9e11de196094b890547205973afba31ec35e121d24d14",
+      "bytes": 2438
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/KeyValuePair.java": {
+      "sha256": "9e49c4990f2d926e0b309df9d34f5cacd3a1aadc7524cb5c4d8827a33fa3cce6",
+      "bytes": 790
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/Level.java": {
+      "sha256": "71a2931e069faf3bd7f3a6da2a1ea48c64be96bd4af87c138995bcd15e45c03a",
+      "bytes": 1561
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/LoggingEvent.java": {
+      "sha256": "36f4b1427e7472a2ae9821346fd946f0d8f645497885f7761e51b23b21543780",
+      "bytes": 1039
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/SubstituteLoggingEvent.java": {
+      "sha256": "dc52015fdfd175fa15cc137a24037e5791cdd7008c69af9befbdbaec557b7f48",
+      "bytes": 2397
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/AbstractLogger.java": {
+      "sha256": "2d1071378e0e2cf5314898c2ff4e9d00a1f644e16f3e5d0ab66b9e216de6c7aa",
+      "bytes": 13802
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/BasicMarker.java": {
+      "sha256": "98744c8a47b722d01db353581ae24d684301ec3e357abf0407e77b7927bcdc9c",
+      "bytes": 4990
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/BasicMarkerFactory.java": {
+      "sha256": "ab5dcd8c3c343d7d8c0c9471d86bc334aaf906311c6c9d01ec6692e903e735f4",
+      "bytes": 3486
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/BasicMDCAdapter.java": {
+      "sha256": "1f7c073ecc7df8905ca56362f6fe8e9f4df114192b609b550dcc508c0ba47823",
+      "bytes": 5493
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/CheckReturnValue.java": {
+      "sha256": "ce7ac3af2b6db642e67ace0b92eca0fc5b2be6d0f8f610843c719fe5558cebdf",
+      "bytes": 1163
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/FormattingTuple.java": {
+      "sha256": "e2871e8b25e52508fb01880fe6e783e2e84e46faffdf09eadebcceb88c564101",
+      "bytes": 2065
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/LegacyAbstractLogger.java": {
+      "sha256": "444bd61ad6540631364e228bb20a9d0c1b21c9591bc9c5a392d3fb8c5e8f69c3",
+      "bytes": 945
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/MarkerIgnoringBase.java": {
+      "sha256": "85e756f52685605020d1ab40965e651d8b705e9ff4d4a63af8ee96359ba299c9",
+      "bytes": 4960
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/MessageFormatter.java": {
+      "sha256": "42ba80b2b7709cf4ae363fe8717c2ae4d4aaa8ceb680a1c4c554579deaa216e0",
+      "bytes": 15407
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NamedLoggerBase.java": {
+      "sha256": "5ec8420816f56f6d6beaaa8995b24fbea445e623f3e3622543af89a0bdbf200b",
+      "bytes": 2699
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NOP_FallbackServiceProvider.java": {
+      "sha256": "5cf653995692d533390d28378a596f05dfcd67a72b8acc2217f154b9e1c51c5a",
+      "bytes": 1403
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NOPLogger.java": {
+      "sha256": "295c11c53b8fc37bd3d79d2e24ba3160a40bc7bef38de8291cefc99a0638d376",
+      "bytes": 10481
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NOPLoggerFactory.java": {
+      "sha256": "202266e72ed6c3ab853c9508c625cb3bebee97b4d0fd16a49f85a21aa9765cde",
+      "bytes": 1771
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NOPMDCAdapter.java": {
+      "sha256": "face675ee80a476f59bb01f9f464ba66cdf6c198c8faa3fc5025edf80d601986",
+      "bytes": 2370
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NormalizedParameters.java": {
+      "sha256": "3fc1a44ce409d0c28961b574d3f1ff744d4bac2d4feb99dc570d51b7803556d9",
+      "bytes": 3605
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/Reporter.java": {
+      "sha256": "105e4aebc7e584cfbd9338066ceffe55533ea6f1db2c565f87f27b8da9086e2f",
+      "bytes": 5683
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/SubstituteLogger.java": {
+      "sha256": "57504b2d3b085767ea30a2185d5ec69b783502a92c9668e6492703719483ca3a",
+      "bytes": 13493
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/SubstituteLoggerFactory.java": {
+      "sha256": "7b3261816790f528985e86dc1f34cc24f0ab8fbe5f05eb17d795a429da7c045b",
+      "bytes": 2842
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/SubstituteServiceProvider.java": {
+      "sha256": "3a69416d6bd17c445a399cb75c315cbd47fa4b73d7b6d2ec7e37804738035b23",
+      "bytes": 1182
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/ThreadLocalMapOfStacks.java": {
+      "sha256": "9d1b56a7a87aaf524d8b84536f8d19d3c35c85b6da2c89415db1e396a1f9121b",
+      "bytes": 2244
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/Util.java": {
+      "sha256": "fd3dea9b59d1a947216e9c5a71332342219f3c865adeff6339217488b9fd5cfd",
+      "bytes": 5041
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/ILoggerFactory.java": {
+      "sha256": "ab0bb52f4cf43e3a5fa27d00213755872578e7faee3e0c64839b80261bb70670",
+      "bytes": 2360
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/IMarkerFactory.java": {
+      "sha256": "b117ebd1bb1cb96f9c10126a1d9333c080cb8ab712bad44ce8df777ea3e0ef91",
+      "bytes": 2842
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/Logger.java": {
+      "sha256": "3260945ee26d761430c30b356dc3426a7685bf42c6e0683b4c071f0ba733b17f",
+      "bytes": 31588
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/LoggerFactory.java": {
+      "sha256": "fa196dd87db2ffdb16dbad229c2206af6fa04fce4e3bfeb1f4ff10eeac276618",
+      "bytes": 21452
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/LoggerFactoryFriend.java": {
+      "sha256": "7c03986dbf69b843ffef03d75f52626168050f62e128033c846ad0fea1543ecd",
+      "bytes": 1999
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/Marker.java": {
+      "sha256": "2f786e0c523a27f0f7cc170e4c7563cdd5a5fd213d38dd0aa112cee5858d225c",
+      "bytes": 4930
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/MarkerFactory.java": {
+      "sha256": "47cc0e35c53a2f2a92a4315a3b52af7957e782e587eaa71e460f918fe4a90a3f",
+      "bytes": 3449
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/MDC.java": {
+      "sha256": "1a21ecf457230b77e148a6262b84b599cf8069583c6a96b6522735c073003dd0",
+      "bytes": 11059
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/CallerBoundaryAware.java": {
+      "sha256": "6c4670c67fcae4654cbe0840a18e7ae64474c76815fdc021fe3b23d957807901",
+      "bytes": 789
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/DefaultLoggingEventBuilder.java": {
+      "sha256": "36b6bd4afbd40c362ff2425b483b2a5916ee6d425fc802ef6b7631bdc8e9db51",
+      "bytes": 8788
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/LocationAwareLogger.java": {
+      "sha256": "6dc67d5ba05816b496afe72566fb58184e9cd224e1bf55f907d6c32c0bb3d891",
+      "bytes": 2928
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/LoggerFactoryBinder.java": {
+      "sha256": "6772d6bf13a3ee0d07075c664f309b37c79914bd8406ff829cdb27a046422285",
+      "bytes": 2530
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/LoggingEventAware.java": {
+      "sha256": "3f01e6c131368e5af698c385d3e28fa74c96624e17b435b857dcbffa19b7ffbd",
+      "bytes": 899
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/LoggingEventBuilder.java": {
+      "sha256": "be7aab88213bf95f3296b3f5ad5602264d7d278ce6a31abb37d470264fdfc81a",
+      "bytes": 5865
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/MarkerFactoryBinder.java": {
+      "sha256": "ac3fbba575e912d745cc43ada0effd20de42159b47ee22ba1d8f8b1241258bc0",
+      "bytes": 2522
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/MDCAdapter.java": {
+      "sha256": "6acf6b2804791f32b49199c833ed3ceda8b3ae8f2fd2689126121f17c4fd145f",
+      "bytes": 4434
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/NOPLoggingEventBuilder.java": {
+      "sha256": "9768d7e4823e6a54d9cd791ad48b698ed008730724542e00588483020f598c2b",
+      "bytes": 2417
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/SLF4JServiceProvider.java": {
+      "sha256": "494bc93fc7f053d0992bfba59574944c543066e3258e50b60bc8a5fc0262bd49",
+      "bytes": 1785
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/AbstractWebSocket.java": {
+      "sha256": "66585af4e4ad90bdadf3451c719dc8cb586792b731d41736568572977ec58ef5",
+      "bytes": 11072
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/AbstractWrappedByteChannel.java": {
+      "sha256": "0037c56793bc8c5a50760422a3d275bc1cad8bde9699a2e704d8f6dc0f9fdcb3",
+      "bytes": 3044
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/client/DnsResolver.java": {
+      "sha256": "be024a65b8102336e00e07fbbbe07207ca77bed2f391ad3fa7b52d3bc76439ce",
+      "bytes": 1889
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/client/package-info.java": {
+      "sha256": "e6eb138ea6a4823752540f46cabe2afde7ba5c32783dccdb3b1c7e1086776ff1",
+      "bytes": 1301
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/client/WebSocketClient.java": {
+      "sha256": "46d4e3d2b75c50a2a8067206c9cef8425404b82ae02b30626badad33f2c2dbc6",
+      "bytes": 30212
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/drafts/Draft.java": {
+      "sha256": "163e962b1accdf9b35d18355adb128871a8340b59e56f016a0a656bd27da71e2",
+      "bytes": 13397
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/drafts/Draft_6455.java": {
+      "sha256": "0197d66ad70b85a836d25f51fb46be5613bfdfd9a6d6660814358930cd4bd817",
+      "bytes": 43178
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/drafts/package-info.java": {
+      "sha256": "d707a48ef0eaba78736680ce7c1ccd6eb31956d3474f15e9601cbc58c7a3bba4",
+      "bytes": 1302
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/CloseHandshakeType.java": {
+      "sha256": "59884bd60287636507d00f319cc3ac7daffaae28780e3f5898dbb3d9bbeab9c8",
+      "bytes": 187
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/HandshakeState.java": {
+      "sha256": "ae60ce0f03a6bf499498ad96382ba9c00a7645f2c23138e72cc19452042585bc",
+      "bytes": 291
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/Opcode.java": {
+      "sha256": "1615e6dd67f03d9205b191528ed3e25e973e4ae6d8f9aa3af7f3206eb85f125c",
+      "bytes": 202
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/package-info.java": {
+      "sha256": "235f3fa12b48d8a6e1f32ab1fb6e2cb99d034df39683b60f7783c91d362499db",
+      "bytes": 1253
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/ReadyState.java": {
+      "sha256": "412999c9839d9217e877767812d967f2168fe17e3fb1b3515114e862d358fb6d",
+      "bytes": 189
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/Role.java": {
+      "sha256": "962c180cae257db3736588fc21054f054c06f9090917fd28203c5302e29582db",
+      "bytes": 158
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/IncompleteException.java": {
+      "sha256": "c3765c5261a7cbff4bf2e0f23f03a2efa1880f75e7ba305efe69b60b8eb70d77",
+      "bytes": 1897
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/IncompleteHandshakeException.java": {
+      "sha256": "c72d64535b7409caede1745e0e72f9ea48e4a3bbb6955ce91fd4e91e0587dfa6",
+      "bytes": 2118
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidDataException.java": {
+      "sha256": "7bb664e132af04e320f60ce8f8a6c39c6d8172c3d59715578487a44c8a755bf5",
+      "bytes": 2771
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidEncodingException.java": {
+      "sha256": "5c23102e779218c2f255d128943be49215e6fedfd76fed48aaafd34eb2e28e34",
+      "bytes": 952
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidFrameException.java": {
+      "sha256": "b15a160c29fd9720c448837394b7a4a44b19fa6bac0e485f25e849e7feb4ecaf",
+      "bytes": 2618
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidHandshakeException.java": {
+      "sha256": "8ceee2f64343c7b89b40c1d75313fe56d14733721675081d3944af3cd8f01e51",
+      "bytes": 2659
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/LimitExceededException.java": {
+      "sha256": "30473c6a7c8b9e0f6ab82350d788b45d59af3367360d514e8545a2daf1ace5c8",
+      "bytes": 2833
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/NotSendableException.java": {
+      "sha256": "1240d7e0061d3f110dac3be83da2bee4c261da89864c6d48eefba1db483c8058",
+      "bytes": 2005
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/package-info.java": {
+      "sha256": "7607ce0dee88234fb2db2eafc8a0ad3447c24f15315f2909d024777828ae15ef",
+      "bytes": 1322
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/WebsocketNotConnectedException.java": {
+      "sha256": "cdb759017cce67c99ae9265916d4453c1efe3a092605c7cbd5c23cecee0a12ca",
+      "bytes": 1475
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/WrappedIOException.java": {
+      "sha256": "ff198c13075649f0811eb86ff2621cb310d16d56eefb168937d8cce588498c3a",
+      "bytes": 2331
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/CompressionExtension.java": {
+      "sha256": "4c9105ac1a11fa8061adada1e2fbbcb5437056ec31f509156b1e4fc951bee2f1",
+      "bytes": 2436
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/DefaultExtension.java": {
+      "sha256": "12eb9ce24d5bd7e22e72b1568086f721270330dd19a416a613ee1d6ad992c171",
+      "bytes": 3063
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/ExtensionRequestData.java": {
+      "sha256": "4154be72a8374f5f6b764c4ab6e6fb10ac611ed099ed767ee5cde550e1c856cf",
+      "bytes": 1566
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/IExtension.java": {
+      "sha256": "6f3dfa7a6a6b5e30413d119ec9eb2845a825af8f5775c51a9f2be629ccfb1813",
+      "bytes": 5545
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/package-info.java": {
+      "sha256": "572e8742551e1744dbf1a0f7456ddf9081634fb26ca0dc4e4d8455d04d874c67",
+      "bytes": 1342
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/permessage_deflate/PerMessageDeflateExtension.java": {
+      "sha256": "d5a2a373b99a115ab2eb374ba865c54785469733316d4eb7fd57c57487ddcd75",
+      "bytes": 14064
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/BinaryFrame.java": {
+      "sha256": "2311a98f870be98afa0e6bf09b970ab58abee53bde1bebb04e9196ad685cf9f0",
+      "bytes": 1493
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/CloseFrame.java": {
+      "sha256": "dbbeae482e141035a015d0d113a2280dcf455a4f5075ef971349af13d40aad2b",
+      "bytes": 11444
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/ContinuousFrame.java": {
+      "sha256": "8ca7a10fd568da830351a2ad3eb30b9db783db8b6cd68d5c4449dbabb5428cb5",
+      "bytes": 1513
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/ControlFrame.java": {
+      "sha256": "5611f08bf26559fc5b4cab58f17006e675c2ad56c6484dbcd3efd52e3d280ae0",
+      "bytes": 2205
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/DataFrame.java": {
+      "sha256": "ee2e0aa8f02045c0300e86fedbd7c2390b7e48653c02cf1441b93ef84ae61ebd",
+      "bytes": 1713
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/Framedata.java": {
+      "sha256": "af38393fc88c0e5dd59c50b889ac2e8de134b2ed5e80c4a9987c46f6537bec80",
+      "bytes": 2766
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/FramedataImpl1.java": {
+      "sha256": "990a639a7d2180cd4d960aa277c95f3fddb7c5eeb927e9a6881b60bb3368c41c",
+      "bytes": 7564
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/package-info.java": {
+      "sha256": "415b83e44d9aae2057a1711e190f2900ced106e7a4e59e08d6a70de4fc7d0be5",
+      "bytes": 1321
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/PingFrame.java": {
+      "sha256": "10652b5c92ca962f7e65d7cd50f7b7c47dcb8667adcdeadeeec176bf48b03b3b",
+      "bytes": 1486
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/PongFrame.java": {
+      "sha256": "961b25419f996fa0e86341af27985b732150c8f5b7db9583cd1b74b11506a25a",
+      "bytes": 1777
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/TextFrame.java": {
+      "sha256": "98deee54f1eeb955e6bd88ccfb0aabc12493cf74684ec5df851bab0ade7e9943",
+      "bytes": 1889
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/ClientHandshake.java": {
+      "sha256": "a36a37b2078f543dc1acbc1ad12118812bdd457013b2b65ef8d7b5b25e3d306f",
+      "bytes": 1501
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/ClientHandshakeBuilder.java": {
+      "sha256": "e3bd28b41043aaadc4ecce61064da149af97bd597f5a65196fbb3c9219bb7042",
+      "bytes": 1540
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakeBuilder.java": {
+      "sha256": "f7ec4a3073c0ec22451283d6d2377099a7d3dd337e711e0414fa05d41bd65887",
+      "bytes": 1642
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/Handshakedata.java": {
+      "sha256": "4a4565a9b9fa40a1a6d7266217b2b024f427cffcbf485baad64d328d3aa71c9e",
+      "bytes": 1967
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakedataImpl1.java": {
+      "sha256": "b54306cc2dac9479e43f0657df1c86ffcbd44d48dad966a58da9cdf1efebb1c1",
+      "bytes": 2382
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakeImpl1Client.java": {
+      "sha256": "3d32c3509eb158009ae181fffcc0ca654632b9f259a519561da15c593eacda4e",
+      "bytes": 1811
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakeImpl1Server.java": {
+      "sha256": "89529286cfc97c0014277aaf7d79e1fb0ab7f20adea75d9315d67dd8500e529a",
+      "bytes": 1882
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/package-info.java": {
+      "sha256": "66d021e6df318310f89428f8b5ed0ac3bd873c333a5423776920186548b69072",
+      "bytes": 1328
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/ServerHandshake.java": {
+      "sha256": "d2c43a8669afaa39aca969c199875817e4e7f5a534e385e540607af2cd5129c6",
+      "bytes": 1544
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/ServerHandshakeBuilder.java": {
+      "sha256": "576b117ca7418d42dea670d399049092dce92948053bcee92ca0ea5178c4a1a6",
+      "bytes": 1640
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/interfaces/ISSLChannel.java": {
+      "sha256": "28eba50431a901a00d70e208eb80fe725f32df6ebaac8edf6df3a9bf147f5eb9",
+      "bytes": 1547
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/interfaces/package-info.java": {
+      "sha256": "ac800af5c90dec9eb645224453ee3f609bdce7ccc882a90f83271c90e2a3470f",
+      "bytes": 1252
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/protocols/IProtocol.java": {
+      "sha256": "986bc81466a806a5168a7508471f9c1f4fb8eef3179b2823379ae456ac321879",
+      "bytes": 2695
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/protocols/package-info.java": {
+      "sha256": "1b44adeb71125073b4d6953565a7cbe4846163903189f9877fbf6fb02c31111e",
+      "bytes": 1339
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/protocols/Protocol.java": {
+      "sha256": "632977dbcee22a27903759ccae2a164f045b9ff6dc10ae7ca61daea404079727",
+      "bytes": 2978
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/CustomSSLWebSocketServerFactory.java": {
+      "sha256": "bd9eee4432c8674a7b9c41173b9011c516d6ec7556037fb0f15236aa52998ba5",
+      "bytes": 4047
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/DefaultSSLWebSocketServerFactory.java": {
+      "sha256": "459a88e7416f35607f7d0f2b5d2f7bc7e385b65249322edb6cd94e6c9c64d439",
+      "bytes": 3555
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/DefaultWebSocketServerFactory.java": {
+      "sha256": "9195bb24756f85aba5d66c0ab95c5bb13d7557abc8597743ace501a07b6ec8e5",
+      "bytes": 2098
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/package-info.java": {
+      "sha256": "605c088e6297b5634d8390d8184396f3ca2eaa5850d9b267df5f25385604fa06",
+      "bytes": 1301
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/SSLParametersWebSocketServerFactory.java": {
+      "sha256": "90d97968529ed0b68ec5a39f4c580e55c49f04323252006b890053a5c00fa0b3",
+      "bytes": 3181
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/WebSocketServer.java": {
+      "sha256": "bec37425509d8b058af37c3b2532575b9e18abeea13b6997704a475111a96d19",
+      "bytes": 39314
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/SocketChannelIOHelper.java": {
+      "sha256": "b623f316471565df650e9122ee9df6afcb48d1e8ffc75b543a165b99e0db37c2",
+      "bytes": 3916
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/SSLSocketChannel.java": {
+      "sha256": "1675dc60aec80de1e90bd8805d481fffb9faeeaada5f3b3135d233e000c30314",
+      "bytes": 21153
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/SSLSocketChannel2.java": {
+      "sha256": "763bce757f3a88ceb2da838801413bebe2ec428dfcff19d250118b4716da3724",
+      "bytes": 15861
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/Base64.java": {
+      "sha256": "1fbed083d1291a9a77c5d4f9333ef671728fc63f359e94aec6246ec65ab97448",
+      "bytes": 46891
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/ByteBufferUtils.java": {
+      "sha256": "72eb3957ce6a5a871c8cdb0c5560b761f2d117b403ac5fdaa4c1ddae1e31a6f7",
+      "bytes": 2248
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/Charsetfunctions.java": {
+      "sha256": "af2bf03f1b2e4c8749dff928f886d6203d2310efcbee38f52a62baedec669131",
+      "bytes": 5726
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/NamedThreadFactory.java": {
+      "sha256": "e4252112109f26144a6f32c48a3a49e9d927871cba8b1e9ec8b4518de3a08f17",
+      "bytes": 2092
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/package-info.java": {
+      "sha256": "f2d6e97908ae604ebfd9ad495847d91d942fc9a7e41cc03442e0e381981fc12e",
+      "bytes": 1262
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocket.java": {
+      "sha256": "472a0056be48f09412cfb1884171cb7bab58ebb5e3466497e0dd271ca120bea2",
+      "bytes": 7852
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketAdapter.java": {
+      "sha256": "02c2c4592d0c3229d45d4bf59b01d398d3e78d30ee2fc3024ed4132f333de18b",
+      "bytes": 4386
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketFactory.java": {
+      "sha256": "7fbe149158c87c4aa57fde6c58fa672f2ac737b8ad276d69c87ea01fdd011cef",
+      "bytes": 1892
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketImpl.java": {
+      "sha256": "eeb1f51152e7f99b07afafa3a5499407d76047267c117cd2d0b7fd5c3facaeac",
+      "bytes": 30624
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketListener.java": {
+      "sha256": "dbed53bf089cef30fa0ea77467c4477f648380861813d7320950a67960145185",
+      "bytes": 8873
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketServerFactory.java": {
+      "sha256": "ae2074e5016c48ec009e3e02ce48eabbe18cf58ab4d8af81ff5f22563bbaca0f",
+      "bytes": 2348
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WrappedByteChannel.java": {
+      "sha256": "bccd03ac637dd46006e09068722c64bb8b5c6977f53510f289e42297ef6db3e4",
+      "bytes": 2657
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/NetplayPaths.java": {
+      "sha256": "e1cfc916a17eaaabadbcd821c2483469b99e0057944e2f2118fad064187e6a67",
+      "bytes": 4817
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/NetplayUi.java": {
+      "sha256": "f205101af034b89aa257c61347af9f942fce1603478c6fabb24597c91d6037cd",
+      "bytes": 2264
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationActionButton.java": {
+      "sha256": "70cc50af4b03be49c2dce056ef3bcdb6de02ce694f285d46c13e12b0ac055c4e",
+      "bytes": 9726
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationCreateGameCard.java": {
+      "sha256": "ccdd4e971da51331181cb017ccc11682b0cfdaee13252eb85344586b251431fd",
+      "bytes": 3929
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationDolphinNetplayActivity.java": {
+      "sha256": "f947b5f72a35184c3eafb2ad551f39ce5ded40a1949a3a536d685b2660461b8e",
+      "bytes": 5007
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationExitPanel.java": {
+      "sha256": "a443148b772163c7ef99c2fb66d19027cc80ec4ffdf973a17d250e510d2e4058",
+      "bytes": 4002
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationFlowPanel.java": {
+      "sha256": "219153461d015c13557051e6ca0a59895ccf799a004665d2c38394f74f7c1794",
+      "bytes": 2509
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationGamePlayerInfo.java": {
+      "sha256": "c19d32ba97d98e3638130ec5a26c8a7a4c537661960340a575a50b5a14d44fb8",
+      "bytes": 8893
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationGameRatingView.java": {
+      "sha256": "84d16361a5fa51cceb4046663f1bd3ef3641a64080a8850e0b80b34adc8e39d8",
+      "bytes": 4643
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationGameSession.java": {
+      "sha256": "0f4032baae452d5203adf2f845c1e9830c8e1132b99dfffa7ec0b4b758f37017",
+      "bytes": 16352
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationHeaderMetadata.java": {
+      "sha256": "8b7fa4a64e8788233958f37c73171d2d7c99764ee9343cd3993ea3c7941bfe77",
+      "bytes": 1011
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationHostConnector.java": {
+      "sha256": "c909aea87a8e6c4631002a565a8e4b8b720ffcc1f964dcb8796c4bc155002032",
+      "bytes": 2176
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationHyperspaceState.java": {
+      "sha256": "4b4728d3233b81cfc5ce296bb3c51afc72bdac345ab7f01c4c496e0705e55502",
+      "bytes": 853
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationHyperspaceView.java": {
+      "sha256": "3fb9f02acb37798f09587f03f760ba22360404ac7c8b4254d10e0f6151da59cf",
+      "bytes": 4468
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationInvitationCode.java": {
+      "sha256": "611c98d7c8c6428dbed0d271e8ccdb9a0cf4f8e54c215ff17386dfa604b8aa0f",
+      "bytes": 2214
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationLaunchPolicy.java": {
+      "sha256": "462a154bfdc5308432d7fffe2c5378ddec35398622158276f76bf0b20a441754",
+      "bytes": 1149
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationLobbySurface.java": {
+      "sha256": "b2320101df0889e59fd4832f83596d8e8d448f688d33e82f5236167722df50db",
+      "bytes": 4867
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationLottieIllustration.java": {
+      "sha256": "188fe550f5329837379e8b5ba1a5ecdfe5a261235eff82187e4ad14ac02fd026",
+      "bytes": 4483
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationMultiplayerProfile.java": {
+      "sha256": "2a57f0c49bcb7466d8bb67196c6a3fb6317746f45d0ebcf8ec915b54680dec80",
+      "bytes": 8009
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationMultiplayerSession.java": {
+      "sha256": "e019e6699e5a5a5c5f2ec63e6d334fa6bcaad7c5e5672a001480294f8ff5a4dc",
+      "bytes": 6110
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationMultiplayerTunnel.java": {
+      "sha256": "c117815045ad93c6736d4618cf71c3e4226faace620054acecfd64e7eb393961",
+      "bytes": 18821
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationMultiplayerWire.java": {
+      "sha256": "318e6daa0f0ce483c9c7458ee33f918085ad4f1d9c1f2e4319895b3df7dba3c0",
+      "bytes": 3174
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationNetplayActivity.java": {
+      "sha256": "e6d93b5e1c159432f538f277b0d28813b91764ac5ce1145f14dbc872309dedbb",
+      "bytes": 7674
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationOnlineClient.java": {
+      "sha256": "1fbdce87d1834091dcafc1b2b7eb3a81d77161ddff58194e34bc73c4c152c1c0",
+      "bytes": 15865
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationOnlineGame.java": {
+      "sha256": "f31b96913ce5a41690aad8072f0473fa6729f626baef371554b34cee369022ad",
+      "bytes": 10967
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationPlayerModel.java": {
+      "sha256": "8adf63d868f72560ad5bf122be94c71581c396710e5d8d699bc8f4497f32b688",
+      "bytes": 6324
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationPlayerSheet.java": {
+      "sha256": "fdb1ff266df5059cd87589712064d2894ed00230b40d02ac9bc8fe1de146610a",
+      "bytes": 6616
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationPresence.java": {
+      "sha256": "1328f2353c6bde0d6ffde7d861511eda15af861f01dc471d7de16bc813ded83c",
+      "bytes": 9636
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationProcess.java": {
+      "sha256": "d024190147ae5cb66abc0932c7bcaf282586bbbe060093c7d72722103b83fa73",
+      "bytes": 670
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryTunnel.java": {
+      "sha256": "442c50840a280d4a5605e32a06873fa14a879285a959a6f2a0b5231e2204ede9",
+      "bytes": 17049
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryWire.java": {
+      "sha256": "cb7e83ee84c1297c91c23bc24c47f7eb34204ce8ffda933f71d4b27bbc418a20",
+      "bytes": 3159
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRelayTls.java": {
+      "sha256": "423e8c5aa19c27596e69ff837749d1a2e3dbc8d06497cd74b54125af54c61abe",
+      "bytes": 2459
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRelayTunnel.java": {
+      "sha256": "9845e639b93223188dd0b3b6f4389ce80c72f9397380e52a30f4b1f4ca9f2104",
+      "bytes": 7027
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java": {
+      "sha256": "7e41fc82bbb030c6ae13871abd4e509912659448183763874cf04e3b1ef950ba",
+      "bytes": 24312
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRetroLaunch.java": {
+      "sha256": "8b7b587c9a1c53f1a57fd53f1d733d43719658efccc48cc1597d6862acfc0992",
+      "bytes": 9436
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomArtwork.java": {
+      "sha256": "3fd146633671ad30baf722fb2904f72376458c27cffa28ad0411eed436891c4c",
+      "bytes": 4224
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomCreation.java": {
+      "sha256": "104b87d5717839fd56c93327d7f108b44406e0e86768ffed5922f0877e1b4578",
+      "bytes": 837
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomFeedback.java": {
+      "sha256": "7a90edf37c15d3059a9160e05404d41058500b926f9843940bb516b189a4c701",
+      "bytes": 1029
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomLeaveIntent.java": {
+      "sha256": "28f776b5f3130fcd0910f3a9b4b649b93fc0a3ece5466f229a4d703c982d99fc",
+      "bytes": 2414
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomRoster.java": {
+      "sha256": "96092704f62532b337570b32c9c996618a5193552b9519b1b5e42e82218b0c4a",
+      "bytes": 9107
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java": {
+      "sha256": "ca9f1aff0ff0a53ad4e528b37d1f2349e110378d8210bff234417f112816f358",
+      "bytes": 89336
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomStartState.java": {
+      "sha256": "2a883a22b5cec0a10fcf8b523d79bd518a956ab9195efe0a398a6fc8cf24b82c",
+      "bytes": 3274
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomState.java": {
+      "sha256": "3569a17e3b3134b0388d5a3231dad9f269461fa5b35566fd5195be21018ac5f9",
+      "bytes": 936
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionChannel.java": {
+      "sha256": "678037ceb5f34245c2a5a816727e0c3f81c10d9b6703fecb8a0041267b137ac8",
+      "bytes": 1388
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionLink.java": {
+      "sha256": "2cdf6807d6d96e6265f8719a40ea75b3b81680d2b033dd985181c2094e89eb1c",
+      "bytes": 4149
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionRegistry.java": {
+      "sha256": "53834181e95328483d498348e51269c325851451bea4bbab3cb135689a705ba5",
+      "bytes": 1207
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionService.java": {
+      "sha256": "fb8857ab4b0bbd9507764c9a6e1b4a48eccddd25a7bff36ad406cd9a800b641a",
+      "bytes": 3397
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSocial.java": {
+      "sha256": "c0a8b36cf544cfb5b6bbb1c0a2becfb617f282f57992b3f99f859cf40e254be2",
+      "bytes": 1383
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSocialIcon.java": {
+      "sha256": "19ff1286d4f021df60b29075c9db848d68183f76312430b2ef5b1a8b97b2c44c",
+      "bytes": 5081
+    },
+    "java-build-receipt.json": {
+      "sha256": "6b7cf5b7be6b7b5af6b393aaa897058d970ef4d6e9e1e91006a16c4fe582a476",
+      "bytes": 34063
+    },
+    "JAVA-SOURCE-MANIFEST.json": {
+      "sha256": "2b0866ff5f9ea217f76a8bebeecb81d449ceb927f1391e8889e78a926b6e461f",
+      "bytes": 32722
+    },
+    "TurboStations-Premium-R79-20261008.apk": {
+      "sha256": "c2aeee4443dedc2862b29dde1f972574bc25464d6993abf01f34d43531558f0a",
+      "bytes": 2123656192
+    }
+  },
+  "stableVerifiedFiles": {
+    "carousel-command.json": {
+      "sha256": "87ac9cfef58393d57a7a1afeb4a022d0090cac677ba5fedd7f47327fdeac2e1d",
+      "bytes": 1513
+    },
+    "carousel-inputs/d0/collection_corner_policy.h": {
+      "sha256": "624b18a0a79ba7adfb4956ae3d5949bb432521182639e2da415b3d62ebfe2701",
+      "bytes": 630
+    },
+    "carousel-inputs/d0/collection_editorial.h": {
+      "sha256": "e8f9de1b9128ed4e9d17e6e5b9e8db2dfa5e4a306d110aa83777114645fbe166",
+      "bytes": 12552
+    },
+    "carousel-inputs/d0/collection_presentation.h": {
+      "sha256": "dec291e81f6dedafbc2a034e62834af29b44ed55554e766dd418bdde10d1a9e8",
+      "bytes": 4070
+    },
+    "carousel-inputs/d0/collection_video_policy.h": {
+      "sha256": "5ca0f4f114037e605b698067b34d01cb6f0aef2ba4c3d223117801d8a71a693b",
+      "bytes": 2736
+    },
+    "carousel-inputs/d0/installed_art_asset.h": {
+      "sha256": "068fd7e1ecbe2f9971917381cfa60ef72c85bed68a13b9df6995870a36ab4177",
+      "bytes": 170
+    },
+    "carousel-inputs/d0/installed_art_r48.h": {
+      "sha256": "ccc58c7196850819a7a331e4ed3dd7ea7f761f4f9686652f4f24b2891a1b64b0",
+      "bytes": 3373
+    },
+    "carousel-inputs/d0/lottie_gear3_data.h": {
+      "sha256": "30835b92c137c25fba4d95fb9f027b66df055f5fe3edb50399de3d489e1bd4f3",
+      "bytes": 40294
+    },
+    "carousel-inputs/d0/magazine_shader.h": {
+      "sha256": "309ff6c7ea0270b02108622b5b1c20cfc96bff446b89f5bd8e76c4b76dbdb037",
+      "bytes": 16935
+    },
+    "carousel-inputs/d0/native_carousel.cpp": {
+      "sha256": "ae1255f4b19824e7838ddca76a2fa946863dd2289e9580d23d460e2b285ef8ca",
+      "bytes": 29807
+    },
+    "carousel-inputs/d0/native_console.h": {
+      "sha256": "ea38ab513788ae0bd5207b17648894214e4e84a15d4fcd12e4451bd891bce79d",
+      "bytes": 4651
+    },
+    "carousel-inputs/d0/native_folders.h": {
+      "sha256": "71fa0864f7833c1e2cf29eac8c7a0bf97ff15115625fd55789819a69d23b1944",
+      "bytes": 12794
+    },
+    "carousel-inputs/d0/native_formation.h": {
+      "sha256": "d6aa878ecc5d41198e45f4d216884dabec4b55264368574bbfc8145b8bc27326",
+      "bytes": 10569
+    },
+    "carousel-inputs/d0/native_game_actions.h": {
+      "sha256": "06946a2f881eac066d10d3b5d088e4897c0bf276142f663cde6715125bfe77d6",
+      "bytes": 6224
+    },
+    "carousel-inputs/d0/native_info.h": {
+      "sha256": "415ba5efad249d273a5fa388a746d4597cbe9006fc56e47da0d04e58752e6e1f",
+      "bytes": 21665
+    },
+    "carousel-inputs/d0/native_installed_tag.h": {
+      "sha256": "e2f279f76d837591533c942b9fa63c3cbd2b28a5d8d238922c6cd907157ee085",
+      "bytes": 965
+    },
+    "carousel-inputs/d0/native_lottie_gear.h": {
+      "sha256": "8c3b1c2ed3954a676682b3aa8bd09465cffb6b8632c30b56c6183778e9f0ea26",
+      "bytes": 1547
+    },
+    "carousel-inputs/d0/native_magazine.h": {
+      "sha256": "50fe001ac12bc592d672ac5c3889395d20aa65dfd6143082af84502a163e9fd8",
+      "bytes": 4557
+    },
+    "carousel-inputs/d0/native_menu_power.h": {
+      "sha256": "720451c726b3e7edd1398dee7bced41732e84ba091cc8cacbdd76fcbcdebe889",
+      "bytes": 1666
+    },
+    "carousel-inputs/d0/native_n64.h": {
+      "sha256": "a3562d758dd63fd7c9e839e5dd46c67f890a29da1dc73002816c5b0e87cc2ce3",
+      "bytes": 4189
+    },
+    "carousel-inputs/d0/native_netplay.h": {
+      "sha256": "9256ee49353462015fb7171c1e98b759469dea147b6812068f59021ce38996f3",
+      "bytes": 4119
+    },
+    "carousel-inputs/d0/native_online_robot.h": {
+      "sha256": "d95f553b3d7ccea2b8cfc935ca03e93d86ea65af997970d708f96715e1cd3f39",
+      "bytes": 783
+    },
+    "carousel-inputs/d0/native_profile_name.h": {
+      "sha256": "d5a465e6297332f0d3c8524082192b2bcac8e44efb51d3fc5e65257341851acb",
+      "bytes": 4457
+    },
+    "carousel-inputs/d0/native_search_download.h": {
+      "sha256": "225341cb4204a67a7a848f5c499afe0f01359d45c3ac3c93466e883edd6c585c",
+      "bytes": 14434
+    },
+    "carousel-inputs/d0/native_search_state.h": {
+      "sha256": "b602d20be19eb0827c85eb552c1bf963d3fea4149b32b4dceef28d5103376b43",
+      "bytes": 2769
+    },
+    "carousel-inputs/d0/native_settings.h": {
+      "sha256": "1d70ee6836e3438187e6a0c9c001230a9fe41365778e392a620dc2994c04119f",
+      "bytes": 8074
+    },
+    "carousel-inputs/d0/native_skin.h": {
+      "sha256": "dfccab127868dfb8f342eaaf8e865d76e6c2c3ad24c50fd2aae5290d92b77ba5",
+      "bytes": 14446
+    },
+    "carousel-inputs/d0/native_space.h": {
+      "sha256": "b48b498b244e1acef981d5191eefeeb4252c2b287e2f5a7c9acfe11d59d2da05",
+      "bytes": 1518
+    },
+    "carousel-inputs/d0/native_space3d.h": {
+      "sha256": "f547260331ccc7fbeb3a070a1042734c82695ab6ec3484717be72c4c24e64b4d",
+      "bytes": 13440
+    },
+    "carousel-inputs/d0/native_system_video720.h": {
+      "sha256": "901d01341f3c316e02ca5b07cc278f5bc0864cff9ba39da7ce52030888261cc6",
+      "bytes": 15834
+    },
+    "carousel-inputs/d0/native_theme_preferences.h": {
+      "sha256": "0962ee380632e372bcc5fe876eeb21d472cdf59544840ab92a4bd39b514ee9cc",
+      "bytes": 2880
+    },
+    "carousel-inputs/d0/native_theme_switch.h": {
+      "sha256": "4652860f638352183c7459c157d870d47ac6c21f71e718907e92683e34d9bab5",
+      "bytes": 4770
+    },
+    "carousel-inputs/d0/neogeo_led_profile.h": {
+      "sha256": "10c50d4bf6a34ca04d94db9532d89c241383186d9780436a60d62e3651ae0a0d",
+      "bytes": 321
+    },
+    "carousel-inputs/d0/premium-magazine-led-android.glsl": {
+      "sha256": "a7736d47a3d77584b336b4c5421c5e7d697618b1c3a40ed8d71677ea239b63be",
+      "bytes": 16874
+    },
+    "carousel-inputs/d0/r53_video_policy.h": {
+      "sha256": "cb0be1e3c5bf15822a63ab4284d26d0dbe26df8bf4a7105f9fa5984a4d6d48cb",
+      "bytes": 3212
+    },
+    "carousel-inputs/d0/station_bottom_action_layout.h": {
+      "sha256": "4640a92382279ac94725502a81dd1fa338d1d595e2d35bdf781ad88f84acb079",
+      "bytes": 2608
+    },
+    "carousel-inputs/d0/station_chatbot_state.h": {
+      "sha256": "2594ec1b4b08ede6b7ac9174b005134328e6d91b9e13aafa7c13be811e92d13d",
+      "bytes": 324
+    },
+    "carousel-inputs/d0/station_collection_settings_layout.h": {
+      "sha256": "52a0a13ae63b63f505c8976a9d12079dc24686570621e94b105cb614bf10249e",
+      "bytes": 573
+    },
+    "carousel-inputs/d0/station_compact_topbar.h": {
+      "sha256": "d4fed4687cc9d92422b476d94aa9ea28e7a6cb8ebd1753e1ec2eea0bf175564a",
+      "bytes": 236
+    },
+    "carousel-inputs/d0/station_console_fit.h": {
+      "sha256": "4f9ddf8a57667e02bdb0d47d022348e7d3f3ad84db6731aba86dad26c2c11cdd",
+      "bytes": 1307
+    },
+    "carousel-inputs/d0/station_console_keys.h": {
+      "sha256": "b35124361715daca32b7f6d2c3dfc5ed62b1f9b75d8df7dcbecd1601fac4e86e",
+      "bytes": 1123
+    },
+    "carousel-inputs/d0/station_game_details.h": {
+      "sha256": "cc1ffb53c9b970d4ab4a45653d87204b31feebed5b32cf27e3f8cc2008fdb89b",
+      "bytes": 119085
+    },
+    "carousel-inputs/d0/station_game_infos.h": {
+      "sha256": "537f8ade06f24549f1f176708add5d5aebdfa1f550fd99d72a45140152653191",
+      "bytes": 1822312
+    },
+    "carousel-inputs/d0/station_game_meta_row.h": {
+      "sha256": "246add209698156967863b639ee8d43fd099786ac9f2887fabece0e4a5b16531",
+      "bytes": 1458
+    },
+    "carousel-inputs/d0/station_game_panel_layout.h": {
+      "sha256": "073690b9b6690587c6c4bf3bb040d3f21506c2202b706722f14e3e1f7423d25a",
+      "bytes": 1626
+    },
+    "carousel-inputs/d0/station_header_layout.h": {
+      "sha256": "2a733cdb36f0611a1096652c0347ddf6112a4e60c5af1e83a793f37db0e6ccaf",
+      "bytes": 403
+    },
+    "carousel-inputs/d0/station_info_layout.h": {
+      "sha256": "7f84f451085cbfebd6cd3ca40cdefe8ac01dacfa6a9e17e94e311f61ec38db8a",
+      "bytes": 1087
+    },
+    "carousel-inputs/d0/station_installed_ribbon.h": {
+      "sha256": "4aaa2391b92a22abc5ce61de79315b99867898c24fc89a4790b949e5390530ec",
+      "bytes": 6778
+    },
+    "carousel-inputs/d0/station_lottie_assets.h": {
+      "sha256": "345c54fc4feac7bc972025dd477f839fe240941b22177ee4c4ab284d6f8bcd55",
+      "bytes": 6297
+    },
+    "carousel-inputs/d0/station_lottie_decode.h": {
+      "sha256": "1cd3a405500510abf253fa0fb56ce3800e2b141f6e0c55f2d1908d5c5e847e11",
+      "bytes": 410
+    },
+    "carousel-inputs/d0/station_lottie_once.h": {
+      "sha256": "030819a9eaf2df1cd54369a721f3b25bb77c7f8f66d46ee68a683a5b2c87e24a",
+      "bytes": 311
+    },
+    "carousel-inputs/d0/station_menu_frame_policy.h": {
+      "sha256": "3389f6d0f339d96e705f295dec7b5721b67244febc0af874c4d9960b0277ec45",
+      "bytes": 330
+    },
+    "carousel-inputs/d0/station_metadata_lookup.h": {
+      "sha256": "5f3e194195ce0e40c6406d246912791ea7be28fcbf846c5f7128d19d4f399ce5",
+      "bytes": 4282
+    },
+    "carousel-inputs/d0/station_online_robot_state.h": {
+      "sha256": "2de1a0c66945153d08a74614f785a9b36ce5282b8def4a474ff517811e2d787f",
+      "bytes": 931
+    },
+    "carousel-inputs/d0/station_platform_button_label.h": {
+      "sha256": "a2f4df197431db187a6a31f0dc66661f8303b25138b47555861f376e9c41b78a",
+      "bytes": 2327
+    },
+    "carousel-inputs/d0/station_players_label.h": {
+      "sha256": "6600a270bbc5ab1a26ac26bd8dd9a4e5b21b9f531e2f7ff6a45ec34e7c4a16c9",
+      "bytes": 996
+    },
+    "carousel-inputs/d0/station_profile_bridge.h": {
+      "sha256": "093212f9266d9c8c648268123a2099b946fdc6dac61b64cedf1b18a1f55a4447",
+      "bytes": 750
+    },
+    "carousel-inputs/d0/station_rating_animation.h": {
+      "sha256": "6672a894cbcaa7011550ef7fa0f6839a9b06d589654b512bc4c85390892ebc6e",
+      "bytes": 211
+    },
+    "carousel-inputs/d0/station_ribbon_placement.h": {
+      "sha256": "6a9327f32045a259eba80996e2ce81d6f30507df99cc2490538e972d436582cb",
+      "bytes": 575
+    },
+    "carousel-inputs/d0/station_root_label.h": {
+      "sha256": "f2a51f9073017ed273352119c55c8081021875365e9da8cea428fb2e02c2064f",
+      "bytes": 351
+    },
+    "carousel-inputs/d0/station_search_actions.h": {
+      "sha256": "50a2d4aecd162efc97377cd63013c7aae0a936413900a7378659dc8e60a2fe52",
+      "bytes": 1129
+    },
+    "carousel-inputs/d0/station_synopsis_scroll.h": {
+      "sha256": "f3d4de5ed22053324cff231eb1568ccc4be761603d3d30603b22689e1e2bb6ea",
+      "bytes": 4608
+    },
+    "carousel-inputs/d0/station_theme_palette.h": {
+      "sha256": "8a156447f7c8a8497acbfb863bd6898b10c2a7403a83f3b9afcd4fa15f6bd058",
+      "bytes": 636
+    },
+    "carousel-inputs/d0/station_theme_switch_state.h": {
+      "sha256": "fb6faf66318a769d7d6b730f8bdb16065400a3677210c4899eb70d238aa2a87e",
+      "bytes": 1247
+    },
+    "carousel-inputs/d0/system_infos.h": {
+      "sha256": "96327b84b58981343a0eadfe1817504f9dcf561b550334dd400b28fc97021e68",
+      "bytes": 46895
+    },
+    "carousel-inputs/d0/video720_posters.h": {
+      "sha256": "1b2474f0b6793368d28c7826ac1aa83537760ac85b7445f4d142cc861a42529f",
+      "bytes": 7940
+    },
+    "carousel-inputs/d1/game_infos.h": {
+      "sha256": "e48f3d25d08a09797825b89992f693400a2d02219c86ae54bffa4552078858e5",
+      "bytes": 5621270
+    },
+    "carousel-inputs/d1/laser_assets.h": {
+      "sha256": "ebc9b18b0add4ae0fec1f4dd97547c32c0a1544fca930451efcd81b5a3d5e9ac",
+      "bytes": 7227
+    },
+    "carousel-inputs/d1/libc.so": {
+      "sha256": "dea519a54d30dc7578a0eb7dbad73723962ae1f8d20581c26367b1f03413f0b7",
+      "bytes": 3136
+    },
+    "carousel-inputs/d1/libdl.so": {
+      "sha256": "780b2e782fbf0565dd66d1007b8bd8f98850c4f1c9af8f32d5e18777e02eb411",
+      "bytes": 2328
+    },
+    "carousel-inputs/d1/liblog.so": {
+      "sha256": "2ec409a7993144864bab4fee2f180c866668ffa8f4b022004918c1650bafd0fe",
+      "bytes": 2168
+    },
+    "carousel-inputs/d1/local_game_covers.h": {
+      "sha256": "a600c8a0ca8901f409050048b95fdab43fcea531d1cf103966f6bc63f9843641",
+      "bytes": 8493
+    },
+    "carousel-inputs/d1/native_action_motion.h": {
+      "sha256": "f601bb306f07ef30797abee7006dc13ee40958540f654f6ccda6fba2befb2c00",
+      "bytes": 3179
+    },
+    "carousel-inputs/d1/native_catalog_identity.h": {
+      "sha256": "191a47278a386ef476983d90ff17586d5e12c09293520ac5707162d65557a329",
+      "bytes": 489
+    },
+    "carousel-inputs/d1/native_classic.h": {
+      "sha256": "2fc3cfcffe53b29a405dc82040e5ab0b08a0c53bed95a7e165aedaa8cdfd64c8",
+      "bytes": 7488
+    },
+    "carousel-inputs/d1/native_dolphin.h": {
+      "sha256": "82d85a24e5f7190f8dd16d59dd87f6eb47df9d2fcf770a83095fc82360bc7628",
+      "bytes": 3696
+    },
+    "carousel-inputs/d1/native_flight.h": {
+      "sha256": "59637b5bbc68454272d6cddd8563415d9a52b0d096c586d33895e8860bff8216",
+      "bytes": 4886
+    },
+    "carousel-inputs/d1/native_flycast.h": {
+      "sha256": "569f61003ccf242d25e2bfa8af23fde594e440af888ea6c3307ec29a2903b095",
+      "bytes": 4290
+    },
+    "carousel-inputs/d1/native_laser.h": {
+      "sha256": "40c89eeb59a35da36f06696e17a710c3447652c5bc0025a1fcd282617989e37a",
+      "bytes": 7671
+    },
+    "carousel-inputs/d1/native_loading_progress.h": {
+      "sha256": "b3533a13563e0c8ebb9f075060e943475390c2ec5f1e3013cce1bfc47bb7b9b2",
+      "bytes": 3094
+    },
+    "carousel-inputs/d1/native_mame.h": {
+      "sha256": "4742d0e56916d423015336bc9a5aabc82c7a962e1264783da38ca8d3465da5d5",
+      "bytes": 6636
+    },
+    "carousel-inputs/d1/native_mega.h": {
+      "sha256": "045fb8c4c73a479b60c2d6e33697f86d66e80eb055aec92f460081c59853b6a2",
+      "bytes": 4318
+    },
+    "carousel-inputs/d1/native_pause_menu.h": {
+      "sha256": "7c4af4aee2b55539d02deb39580333fc717bc1d5b6abda5631a673125823af0f",
+      "bytes": 4695
+    },
+    "carousel-inputs/d1/native_pcecd.h": {
+      "sha256": "0118d6a75101f096b3ef7f80b7b8d219b895b6e3632f2d72a063344dd95ecb43",
+      "bytes": 2968
+    },
+    "carousel-inputs/d1/native_policy.h": {
+      "sha256": "8b38c67d1aa8cbdd95d52608b1d38c7b67a56ecd42d5848d92c58524caa743b2",
+      "bytes": 770
+    },
+    "carousel-inputs/d1/native_ps2.h": {
+      "sha256": "53b7b2adc2290c7630da247c2069df620b521ac9b17715451efadda9a0185955",
+      "bytes": 3379
+    },
+    "carousel-inputs/d1/native_psp.h": {
+      "sha256": "4ca41843178043b4f5270810f76c702c2a7bd253a7aa2af76fc88e75918c0180",
+      "bytes": 3413
+    },
+    "carousel-inputs/d1/native_psvita.h": {
+      "sha256": "e4c1b1536f20cae05a3cab35c5b3c96a32011c706bab96ceae72ce38d85ca4fc",
+      "bytes": 4030
+    },
+    "carousel-inputs/d1/native_retro_music.h": {
+      "sha256": "26b6ab36f60b9dbc2971e01f066f4c92abc3b97fe759f84a07eeb2d9594281a9",
+      "bytes": 3417
+    },
+    "carousel-inputs/d1/native_saturn.h": {
+      "sha256": "b4e59d7b686f5fe4307a82e39e29da749c59a0061524a2b9c1943da9cad83110",
+      "bytes": 4174
+    },
+    "carousel-inputs/d1/native_snes.h": {
+      "sha256": "676bba7465610a8a31a2d11c939f6dd7011712dc2848ec6cd4e993ce2586e63a",
+      "bytes": 3235
+    },
+    "carousel-inputs/d1/native_system_video.h": {
+      "sha256": "e41c3f52c30ef8833db89816bd59a7838c200036ffd7de6c6ccf8de4ca6f79c0",
+      "bytes": 2746
+    },
+    "carousel-inputs/d1/native_wiiu.h": {
+      "sha256": "8f29bb65d6d7b819515198701b562a2e74e2ed45f0d2fdb846ad91dab7b879b6",
+      "bytes": 3935
+    },
+    "carousel-inputs/d1/native_xbox360.h": {
+      "sha256": "86c616b15d93d1b1dd21646f232e401f0ca3bb5c7106c60f707806d8cb80a707",
+      "bytes": 4087
+    },
+    "carousel-inputs/d1/native_xboxclassic.h": {
+      "sha256": "b399595be7665b0d2c479a22416210de9c18babd4566a144a2d47e100f97d3b8",
+      "bytes": 4281
+    },
+    "carousel-inputs/d1/relocations.h": {
+      "sha256": "60f13ed591beeaf1ade34ddf5b6331af7855ea99cc23a43950d18dd7c530e08e",
+      "bytes": 214402
+    },
+    "carousel-inputs/d1/space3d_shaders.h": {
+      "sha256": "10441f4afd3b188a1fd439c1c6e7604cbabbc002ecb837c367e7de501f232681",
+      "bytes": 25392
+    },
+    "carousel-inputs/d1/station_game_lookup.h": {
+      "sha256": "1bf2f2a7d2ba116a2b3ba3012e3d7c686fbca53fbd75a0be6bb8c74e8bf14195",
+      "bytes": 509
+    },
+    "carousel-inputs/d1/system_video720_assets.h": {
+      "sha256": "2d0e351bed93dd3f26548f6b92157f232b81a3df9586cd65c0900f1ce1df3cf5",
+      "bytes": 2484
+    },
+    "carousel-inputs/d1/systems.h": {
+      "sha256": "8093bc915dce80d445a5cff868226e5db9f67207935f22cf9cd39bc7ada0c31f",
+      "bytes": 89083169
+    },
+    "carousel-inputs/d1/video720_policy.h": {
+      "sha256": "b0eb9792eb3c52eda1811b259eafef4311d98b3deceecd5d1b2a741e0c8adc7e",
+      "bytes": 401
+    },
+    "carousel-inputs/d1/video720_posters.o": {
+      "sha256": "c078dd3f4d3230f247d48b2f38ad39d97f8944bbc63ffe05ee7869d9acab8f9e",
+      "bytes": 50806360
+    },
+    "carousel-inputs/d2/console_assets.h": {
+      "sha256": "ce75cda3a6adebe55bfeb61a4318e69e812cb68ae633703c6e8a8ba4236047fc",
+      "bytes": 19514869
+    },
+    "carousel-inputs/d2/station_future_metadata.h": {
+      "sha256": "84b6b0157e2541f810cbebcc77e2837e49a4a0cacedd55780c53fe91368a490a",
+      "bytes": 5634816
+    },
+    "carousel-inputs/d3/collection_previews.o": {
+      "sha256": "11bc120225e031409b11839575986ff90f26b01a838b1aded119ab22112edf03",
+      "bytes": 9332264
+    },
+    "carousel-inputs/d4/lottie_frames.o": {
+      "sha256": "8d3d7db56dc1e66b80cc472f397e1b505ec28d32eb7326940ebbb39384593464",
+      "bytes": 20194920
+    },
+    "carousel-inputs/d5/installed_art.o": {
+      "sha256": "ac082ca0ea8658c8ab86142de9f3a171c1b91bf7c8f1943db4bf2243a71bfef6",
+      "bytes": 1598752
+    },
+    "carousel-inputs/d6/collection_previews.o": {
+      "sha256": "b206e092549a0c17adcb0ce3deb41fa443ec7019154ab05b31c15771fca809ac",
+      "bytes": 3111080
+    },
+    "carousel-inputs/d7/collection_previews.o": {
+      "sha256": "5ceb51cb97e8dc39d3a838c70286fc21bdb55b979e2f8f5a76fe3f8eb3d6ce1d",
+      "bytes": 2074216
+    },
+    "carousel-inputs/d8/collection_previews.o": {
+      "sha256": "dbe54d993453a37197317d23c11fb438ccb792d21edf82906abb2a73f1027937",
+      "bytes": 1037352
+    },
+    "compiled/classes28.dex": {
+      "sha256": "1a04582a02804ecbe4b075dd487118a171b0b0f305dbb8884015bbede09b25d7",
+      "bytes": 167916
+    },
+    "compiled/classes35.dex": {
+      "sha256": "c03ea2f4aa30c5e32654c575115583f72815b9701c16791c4f94c6ade753f2ff",
+      "bytes": 449976
+    },
+    "compiled/libturbo_carousel.so": {
+      "sha256": "3c2e22bc94f3432280e2b08c2f26ab33508cd1278ee9bd750b48d45c35105a8b",
+      "bytes": 141978864
+    },
+    "java/client/src/java/org/emulationstation/frontend/AssetInstaller.java": {
+      "sha256": "d3539b66cbc434e819b59d1fa614f3eb47c8b7c3d8b51c92284bc6dacbe0ccee",
+      "bytes": 2434
+    },
+    "java/client/src/java/org/emulationstation/frontend/auth/LoginActivity.java": {
+      "sha256": "71072d9f6a0621a9eeb04d9784dd27eb2f05e78c5da18d95254e0be13c86d57c",
+      "bytes": 25538
+    },
+    "java/client/src/java/org/emulationstation/frontend/auth/StationLogin.java": {
+      "sha256": "4bcca2a762584312222f8dfd9b3b36c06a5ea552c2eca42ec25642940d8eb187",
+      "bytes": 4812
+    },
+    "java/client/src/java/org/emulationstation/frontend/auth/StationTaskNavigation.java": {
+      "sha256": "0fd4745792931f0b1b80d57b4e6d4d37b70aed477cfb732de59553ad01077703",
+      "bytes": 4804
+    },
+    "java/client/src/java/org/emulationstation/frontend/auth/StationTaskPolicy.java": {
+      "sha256": "2771621dadf0a384be2140e182a36b1b781d6e073ad3d4f0e6fc097c94dad551",
+      "bytes": 2839
+    },
+    "java/client/src/java/org/emulationstation/frontend/DownloadService.java": {
+      "sha256": "49b2994e4a213e861cfcef5ce0e353789f7f88928fec5f8b7e3b8ceb6f594c5f",
+      "bytes": 3678
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/ExistingCoverCache.java": {
+      "sha256": "41796c41b27efc4e9a53d20b7ed606e37d7b4d168cb7638059cf368e8d533d28",
+      "bytes": 2239
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationAndroid.java": {
+      "sha256": "2ccba05c9db2bc7df151d32f4f888abd2e2a2ee5a3566bb126a2ce93bb4dc5d0",
+      "bytes": 5300
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationApi.java": {
+      "sha256": "a4e1eaa4a847fce42e9440fe730b76ba5c5be033542e300f52090d1f03f5d01e",
+      "bytes": 28285
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationArchive.java": {
+      "sha256": "107669c6885725d99b430e7340c550466eed24a2842d43b51526c673a9d51b86",
+      "bytes": 683
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationArtifact.java": {
+      "sha256": "fe6eee3c4dfaaf66ac68eb0096b6ff0dc7792fa377dadf5898b5ea06e803bac9",
+      "bytes": 3253
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationBundledFiles.java": {
+      "sha256": "74292e8dcfe8318d8697a2c81446ab23cd66ff2c815bf98632849b34cc39e67e",
+      "bytes": 2442
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalog.java": {
+      "sha256": "1a5f2eb81e48857d8ff8e4c3e67a6eede8358bf494c4351770205613fd56b572",
+      "bytes": 8223
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalogPoll.java": {
+      "sha256": "ca03baafce7af515d907eaa5b3e40ae7efff0efb3a50b4f1f571bcaba03e844b",
+      "bytes": 1089
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalogStore.java": {
+      "sha256": "9a8b823c9a5473e950225e8067365fa7f4a602c3821cbe1722980e61c3f2968e",
+      "bytes": 3778
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationConfig.java": {
+      "sha256": "8c430cdf7b6cf2ee03f1ad3dca50ff18bc32a6b26ddfa1fe70397db81fe03cb1",
+      "bytes": 1862
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCoordinator.java": {
+      "sha256": "5375f83eedbb14c14b8ae547a1304b508448e3eb173d467f418a64cfacf75e24",
+      "bytes": 10619
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCoverQueue.java": {
+      "sha256": "1696e03d4afa310d5a80eaf728728ab0d71cc55879bf07ada82939f69c0fee48",
+      "bytes": 4208
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCoverStore.java": {
+      "sha256": "ca76e0de5589091cdef2ffad6e2b55005ff5e95bfc222a15b5dace1964014b26",
+      "bytes": 7660
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationCrypto.java": {
+      "sha256": "b6d57060b23c953ec513098e49c337e8e648588623b4fd3359d4f91c99db9586",
+      "bytes": 6557
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationDiagnostics.java": {
+      "sha256": "4ab4bc93edf1444094f0be982cbbe8218bbe1a18e46f3d2fab7c2f434a41934f",
+      "bytes": 4025
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationDownloads.java": {
+      "sha256": "ba4bb235dc64c7319486fc44fc7496d6de00f6d9eeadae1d5a26c789c6871d4c",
+      "bytes": 7650
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationExistingArtifact.java": {
+      "sha256": "d01b4806e70a637c093c1d55a10b4e7230b3bce729aa94638a94fe82530d931f",
+      "bytes": 748
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationFiles.java": {
+      "sha256": "40e594049e15ee4fbd2746087d4dc5de46766f4c043f009783eaadcf1e46fdcd",
+      "bytes": 8291
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationFrontend.java": {
+      "sha256": "f9219d5ef4158cae16ce6d046e441b2b08e396826dc709a6adfd7ffa0d5d3af9",
+      "bytes": 13390
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationHttp.java": {
+      "sha256": "b9f6dbf330663d55aa772c682dbdb13dd5a24736f99613b6a9d146484ebdb815",
+      "bytes": 9460
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationInstaller.java": {
+      "sha256": "1b61d8764dfbfdaeab817cc2e81b7f160b773c30fb4771f19f34d963e84d2559",
+      "bytes": 15875
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationPlatforms.java": {
+      "sha256": "c1466f6de9ff707d2cf22f136c06e286f2a9242aa6a68cd2f5badeeaa9bd7757",
+      "bytes": 6038
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationProtocol.java": {
+      "sha256": "43bdf2b6f948eab1fd386741d88b2b57e65c37b63eb608eca9e156b128052c51",
+      "bytes": 6018
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationPublication.java": {
+      "sha256": "d6972d792c18e377cfda161d156b3e3cb279f36a3f420e5b53a72cb86316799e",
+      "bytes": 1695
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationRequestProof.java": {
+      "sha256": "40ba9734251969e4c1b3042e332f12e471b14f0bd5232e7444342428a3d9a5d9",
+      "bytes": 1542
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationRetryAfter.java": {
+      "sha256": "7ea5fb4e3267249ac5b6cc1165ede174c152286f7aceb7632a35510fa5f1be57",
+      "bytes": 918
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationSessions.java": {
+      "sha256": "dbd8810253b74d9a5c00493115292a175d963a40a113e3113246eb3386178ec2",
+      "bytes": 3170
+    },
+    "java/client/src/java/org/emulationstation/frontend/station/StationStorage.java": {
+      "sha256": "3979ac629fe3778c609fd7bca20c3d72c9b89df920d1454a637ec24f575cfc9d",
+      "bytes": 3660
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/DefaultLoggingEvent.java": {
+      "sha256": "95801e024aafc8ce0dc93672b839eba56c5cd30b42f92ec1d7af8cb3da1a2925",
+      "bytes": 2975
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/EventConstants.java": {
+      "sha256": "092f4b29eeb6d6d1ed43e67111dbe94f6dff9c42273cf879167312d9b067a331",
+      "bytes": 578
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/EventRecordingLogger.java": {
+      "sha256": "e5af50242eaed3d021b9e11de196094b890547205973afba31ec35e121d24d14",
+      "bytes": 2438
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/KeyValuePair.java": {
+      "sha256": "9e49c4990f2d926e0b309df9d34f5cacd3a1aadc7524cb5c4d8827a33fa3cce6",
+      "bytes": 790
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/Level.java": {
+      "sha256": "71a2931e069faf3bd7f3a6da2a1ea48c64be96bd4af87c138995bcd15e45c03a",
+      "bytes": 1561
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/LoggingEvent.java": {
+      "sha256": "36f4b1427e7472a2ae9821346fd946f0d8f645497885f7761e51b23b21543780",
+      "bytes": 1039
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/event/SubstituteLoggingEvent.java": {
+      "sha256": "dc52015fdfd175fa15cc137a24037e5791cdd7008c69af9befbdbaec557b7f48",
+      "bytes": 2397
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/AbstractLogger.java": {
+      "sha256": "2d1071378e0e2cf5314898c2ff4e9d00a1f644e16f3e5d0ab66b9e216de6c7aa",
+      "bytes": 13802
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/BasicMarker.java": {
+      "sha256": "98744c8a47b722d01db353581ae24d684301ec3e357abf0407e77b7927bcdc9c",
+      "bytes": 4990
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/BasicMarkerFactory.java": {
+      "sha256": "ab5dcd8c3c343d7d8c0c9471d86bc334aaf906311c6c9d01ec6692e903e735f4",
+      "bytes": 3486
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/BasicMDCAdapter.java": {
+      "sha256": "1f7c073ecc7df8905ca56362f6fe8e9f4df114192b609b550dcc508c0ba47823",
+      "bytes": 5493
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/CheckReturnValue.java": {
+      "sha256": "ce7ac3af2b6db642e67ace0b92eca0fc5b2be6d0f8f610843c719fe5558cebdf",
+      "bytes": 1163
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/FormattingTuple.java": {
+      "sha256": "e2871e8b25e52508fb01880fe6e783e2e84e46faffdf09eadebcceb88c564101",
+      "bytes": 2065
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/LegacyAbstractLogger.java": {
+      "sha256": "444bd61ad6540631364e228bb20a9d0c1b21c9591bc9c5a392d3fb8c5e8f69c3",
+      "bytes": 945
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/MarkerIgnoringBase.java": {
+      "sha256": "85e756f52685605020d1ab40965e651d8b705e9ff4d4a63af8ee96359ba299c9",
+      "bytes": 4960
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/MessageFormatter.java": {
+      "sha256": "42ba80b2b7709cf4ae363fe8717c2ae4d4aaa8ceb680a1c4c554579deaa216e0",
+      "bytes": 15407
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NamedLoggerBase.java": {
+      "sha256": "5ec8420816f56f6d6beaaa8995b24fbea445e623f3e3622543af89a0bdbf200b",
+      "bytes": 2699
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NOP_FallbackServiceProvider.java": {
+      "sha256": "5cf653995692d533390d28378a596f05dfcd67a72b8acc2217f154b9e1c51c5a",
+      "bytes": 1403
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NOPLogger.java": {
+      "sha256": "295c11c53b8fc37bd3d79d2e24ba3160a40bc7bef38de8291cefc99a0638d376",
+      "bytes": 10481
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NOPLoggerFactory.java": {
+      "sha256": "202266e72ed6c3ab853c9508c625cb3bebee97b4d0fd16a49f85a21aa9765cde",
+      "bytes": 1771
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NOPMDCAdapter.java": {
+      "sha256": "face675ee80a476f59bb01f9f464ba66cdf6c198c8faa3fc5025edf80d601986",
+      "bytes": 2370
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/NormalizedParameters.java": {
+      "sha256": "3fc1a44ce409d0c28961b574d3f1ff744d4bac2d4feb99dc570d51b7803556d9",
+      "bytes": 3605
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/Reporter.java": {
+      "sha256": "105e4aebc7e584cfbd9338066ceffe55533ea6f1db2c565f87f27b8da9086e2f",
+      "bytes": 5683
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/SubstituteLogger.java": {
+      "sha256": "57504b2d3b085767ea30a2185d5ec69b783502a92c9668e6492703719483ca3a",
+      "bytes": 13493
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/SubstituteLoggerFactory.java": {
+      "sha256": "7b3261816790f528985e86dc1f34cc24f0ab8fbe5f05eb17d795a429da7c045b",
+      "bytes": 2842
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/SubstituteServiceProvider.java": {
+      "sha256": "3a69416d6bd17c445a399cb75c315cbd47fa4b73d7b6d2ec7e37804738035b23",
+      "bytes": 1182
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/ThreadLocalMapOfStacks.java": {
+      "sha256": "9d1b56a7a87aaf524d8b84536f8d19d3c35c85b6da2c89415db1e396a1f9121b",
+      "bytes": 2244
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/helpers/Util.java": {
+      "sha256": "fd3dea9b59d1a947216e9c5a71332342219f3c865adeff6339217488b9fd5cfd",
+      "bytes": 5041
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/ILoggerFactory.java": {
+      "sha256": "ab0bb52f4cf43e3a5fa27d00213755872578e7faee3e0c64839b80261bb70670",
+      "bytes": 2360
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/IMarkerFactory.java": {
+      "sha256": "b117ebd1bb1cb96f9c10126a1d9333c080cb8ab712bad44ce8df777ea3e0ef91",
+      "bytes": 2842
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/Logger.java": {
+      "sha256": "3260945ee26d761430c30b356dc3426a7685bf42c6e0683b4c071f0ba733b17f",
+      "bytes": 31588
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/LoggerFactory.java": {
+      "sha256": "fa196dd87db2ffdb16dbad229c2206af6fa04fce4e3bfeb1f4ff10eeac276618",
+      "bytes": 21452
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/LoggerFactoryFriend.java": {
+      "sha256": "7c03986dbf69b843ffef03d75f52626168050f62e128033c846ad0fea1543ecd",
+      "bytes": 1999
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/Marker.java": {
+      "sha256": "2f786e0c523a27f0f7cc170e4c7563cdd5a5fd213d38dd0aa112cee5858d225c",
+      "bytes": 4930
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/MarkerFactory.java": {
+      "sha256": "47cc0e35c53a2f2a92a4315a3b52af7957e782e587eaa71e460f918fe4a90a3f",
+      "bytes": 3449
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/MDC.java": {
+      "sha256": "1a21ecf457230b77e148a6262b84b599cf8069583c6a96b6522735c073003dd0",
+      "bytes": 11059
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/CallerBoundaryAware.java": {
+      "sha256": "6c4670c67fcae4654cbe0840a18e7ae64474c76815fdc021fe3b23d957807901",
+      "bytes": 789
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/DefaultLoggingEventBuilder.java": {
+      "sha256": "36b6bd4afbd40c362ff2425b483b2a5916ee6d425fc802ef6b7631bdc8e9db51",
+      "bytes": 8788
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/LocationAwareLogger.java": {
+      "sha256": "6dc67d5ba05816b496afe72566fb58184e9cd224e1bf55f907d6c32c0bb3d891",
+      "bytes": 2928
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/LoggerFactoryBinder.java": {
+      "sha256": "6772d6bf13a3ee0d07075c664f309b37c79914bd8406ff829cdb27a046422285",
+      "bytes": 2530
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/LoggingEventAware.java": {
+      "sha256": "3f01e6c131368e5af698c385d3e28fa74c96624e17b435b857dcbffa19b7ffbd",
+      "bytes": 899
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/LoggingEventBuilder.java": {
+      "sha256": "be7aab88213bf95f3296b3f5ad5602264d7d278ce6a31abb37d470264fdfc81a",
+      "bytes": 5865
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/MarkerFactoryBinder.java": {
+      "sha256": "ac3fbba575e912d745cc43ada0effd20de42159b47ee22ba1d8f8b1241258bc0",
+      "bytes": 2522
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/MDCAdapter.java": {
+      "sha256": "6acf6b2804791f32b49199c833ed3ceda8b3ae8f2fd2689126121f17c4fd145f",
+      "bytes": 4434
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/NOPLoggingEventBuilder.java": {
+      "sha256": "9768d7e4823e6a54d9cd791ad48b698ed008730724542e00588483020f598c2b",
+      "bytes": 2417
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/log/spi/SLF4JServiceProvider.java": {
+      "sha256": "494bc93fc7f053d0992bfba59574944c543066e3258e50b60bc8a5fc0262bd49",
+      "bytes": 1785
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/AbstractWebSocket.java": {
+      "sha256": "66585af4e4ad90bdadf3451c719dc8cb586792b731d41736568572977ec58ef5",
+      "bytes": 11072
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/AbstractWrappedByteChannel.java": {
+      "sha256": "0037c56793bc8c5a50760422a3d275bc1cad8bde9699a2e704d8f6dc0f9fdcb3",
+      "bytes": 3044
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/client/DnsResolver.java": {
+      "sha256": "be024a65b8102336e00e07fbbbe07207ca77bed2f391ad3fa7b52d3bc76439ce",
+      "bytes": 1889
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/client/package-info.java": {
+      "sha256": "e6eb138ea6a4823752540f46cabe2afde7ba5c32783dccdb3b1c7e1086776ff1",
+      "bytes": 1301
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/client/WebSocketClient.java": {
+      "sha256": "46d4e3d2b75c50a2a8067206c9cef8425404b82ae02b30626badad33f2c2dbc6",
+      "bytes": 30212
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/drafts/Draft.java": {
+      "sha256": "163e962b1accdf9b35d18355adb128871a8340b59e56f016a0a656bd27da71e2",
+      "bytes": 13397
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/drafts/Draft_6455.java": {
+      "sha256": "0197d66ad70b85a836d25f51fb46be5613bfdfd9a6d6660814358930cd4bd817",
+      "bytes": 43178
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/drafts/package-info.java": {
+      "sha256": "d707a48ef0eaba78736680ce7c1ccd6eb31956d3474f15e9601cbc58c7a3bba4",
+      "bytes": 1302
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/CloseHandshakeType.java": {
+      "sha256": "59884bd60287636507d00f319cc3ac7daffaae28780e3f5898dbb3d9bbeab9c8",
+      "bytes": 187
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/HandshakeState.java": {
+      "sha256": "ae60ce0f03a6bf499498ad96382ba9c00a7645f2c23138e72cc19452042585bc",
+      "bytes": 291
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/Opcode.java": {
+      "sha256": "1615e6dd67f03d9205b191528ed3e25e973e4ae6d8f9aa3af7f3206eb85f125c",
+      "bytes": 202
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/package-info.java": {
+      "sha256": "235f3fa12b48d8a6e1f32ab1fb6e2cb99d034df39683b60f7783c91d362499db",
+      "bytes": 1253
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/ReadyState.java": {
+      "sha256": "412999c9839d9217e877767812d967f2168fe17e3fb1b3515114e862d358fb6d",
+      "bytes": 189
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/enums/Role.java": {
+      "sha256": "962c180cae257db3736588fc21054f054c06f9090917fd28203c5302e29582db",
+      "bytes": 158
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/IncompleteException.java": {
+      "sha256": "c3765c5261a7cbff4bf2e0f23f03a2efa1880f75e7ba305efe69b60b8eb70d77",
+      "bytes": 1897
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/IncompleteHandshakeException.java": {
+      "sha256": "c72d64535b7409caede1745e0e72f9ea48e4a3bbb6955ce91fd4e91e0587dfa6",
+      "bytes": 2118
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidDataException.java": {
+      "sha256": "7bb664e132af04e320f60ce8f8a6c39c6d8172c3d59715578487a44c8a755bf5",
+      "bytes": 2771
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidEncodingException.java": {
+      "sha256": "5c23102e779218c2f255d128943be49215e6fedfd76fed48aaafd34eb2e28e34",
+      "bytes": 952
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidFrameException.java": {
+      "sha256": "b15a160c29fd9720c448837394b7a4a44b19fa6bac0e485f25e849e7feb4ecaf",
+      "bytes": 2618
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/InvalidHandshakeException.java": {
+      "sha256": "8ceee2f64343c7b89b40c1d75313fe56d14733721675081d3944af3cd8f01e51",
+      "bytes": 2659
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/LimitExceededException.java": {
+      "sha256": "30473c6a7c8b9e0f6ab82350d788b45d59af3367360d514e8545a2daf1ace5c8",
+      "bytes": 2833
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/NotSendableException.java": {
+      "sha256": "1240d7e0061d3f110dac3be83da2bee4c261da89864c6d48eefba1db483c8058",
+      "bytes": 2005
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/package-info.java": {
+      "sha256": "7607ce0dee88234fb2db2eafc8a0ad3447c24f15315f2909d024777828ae15ef",
+      "bytes": 1322
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/WebsocketNotConnectedException.java": {
+      "sha256": "cdb759017cce67c99ae9265916d4453c1efe3a092605c7cbd5c23cecee0a12ca",
+      "bytes": 1475
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/exceptions/WrappedIOException.java": {
+      "sha256": "ff198c13075649f0811eb86ff2621cb310d16d56eefb168937d8cce588498c3a",
+      "bytes": 2331
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/CompressionExtension.java": {
+      "sha256": "4c9105ac1a11fa8061adada1e2fbbcb5437056ec31f509156b1e4fc951bee2f1",
+      "bytes": 2436
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/DefaultExtension.java": {
+      "sha256": "12eb9ce24d5bd7e22e72b1568086f721270330dd19a416a613ee1d6ad992c171",
+      "bytes": 3063
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/ExtensionRequestData.java": {
+      "sha256": "4154be72a8374f5f6b764c4ab6e6fb10ac611ed099ed767ee5cde550e1c856cf",
+      "bytes": 1566
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/IExtension.java": {
+      "sha256": "6f3dfa7a6a6b5e30413d119ec9eb2845a825af8f5775c51a9f2be629ccfb1813",
+      "bytes": 5545
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/package-info.java": {
+      "sha256": "572e8742551e1744dbf1a0f7456ddf9081634fb26ca0dc4e4d8455d04d874c67",
+      "bytes": 1342
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/extensions/permessage_deflate/PerMessageDeflateExtension.java": {
+      "sha256": "d5a2a373b99a115ab2eb374ba865c54785469733316d4eb7fd57c57487ddcd75",
+      "bytes": 14064
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/BinaryFrame.java": {
+      "sha256": "2311a98f870be98afa0e6bf09b970ab58abee53bde1bebb04e9196ad685cf9f0",
+      "bytes": 1493
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/CloseFrame.java": {
+      "sha256": "dbbeae482e141035a015d0d113a2280dcf455a4f5075ef971349af13d40aad2b",
+      "bytes": 11444
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/ContinuousFrame.java": {
+      "sha256": "8ca7a10fd568da830351a2ad3eb30b9db783db8b6cd68d5c4449dbabb5428cb5",
+      "bytes": 1513
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/ControlFrame.java": {
+      "sha256": "5611f08bf26559fc5b4cab58f17006e675c2ad56c6484dbcd3efd52e3d280ae0",
+      "bytes": 2205
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/DataFrame.java": {
+      "sha256": "ee2e0aa8f02045c0300e86fedbd7c2390b7e48653c02cf1441b93ef84ae61ebd",
+      "bytes": 1713
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/Framedata.java": {
+      "sha256": "af38393fc88c0e5dd59c50b889ac2e8de134b2ed5e80c4a9987c46f6537bec80",
+      "bytes": 2766
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/FramedataImpl1.java": {
+      "sha256": "990a639a7d2180cd4d960aa277c95f3fddb7c5eeb927e9a6881b60bb3368c41c",
+      "bytes": 7564
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/package-info.java": {
+      "sha256": "415b83e44d9aae2057a1711e190f2900ced106e7a4e59e08d6a70de4fc7d0be5",
+      "bytes": 1321
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/PingFrame.java": {
+      "sha256": "10652b5c92ca962f7e65d7cd50f7b7c47dcb8667adcdeadeeec176bf48b03b3b",
+      "bytes": 1486
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/PongFrame.java": {
+      "sha256": "961b25419f996fa0e86341af27985b732150c8f5b7db9583cd1b74b11506a25a",
+      "bytes": 1777
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/framing/TextFrame.java": {
+      "sha256": "98deee54f1eeb955e6bd88ccfb0aabc12493cf74684ec5df851bab0ade7e9943",
+      "bytes": 1889
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/ClientHandshake.java": {
+      "sha256": "a36a37b2078f543dc1acbc1ad12118812bdd457013b2b65ef8d7b5b25e3d306f",
+      "bytes": 1501
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/ClientHandshakeBuilder.java": {
+      "sha256": "e3bd28b41043aaadc4ecce61064da149af97bd597f5a65196fbb3c9219bb7042",
+      "bytes": 1540
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakeBuilder.java": {
+      "sha256": "f7ec4a3073c0ec22451283d6d2377099a7d3dd337e711e0414fa05d41bd65887",
+      "bytes": 1642
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/Handshakedata.java": {
+      "sha256": "4a4565a9b9fa40a1a6d7266217b2b024f427cffcbf485baad64d328d3aa71c9e",
+      "bytes": 1967
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakedataImpl1.java": {
+      "sha256": "b54306cc2dac9479e43f0657df1c86ffcbd44d48dad966a58da9cdf1efebb1c1",
+      "bytes": 2382
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakeImpl1Client.java": {
+      "sha256": "3d32c3509eb158009ae181fffcc0ca654632b9f259a519561da15c593eacda4e",
+      "bytes": 1811
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/HandshakeImpl1Server.java": {
+      "sha256": "89529286cfc97c0014277aaf7d79e1fb0ab7f20adea75d9315d67dd8500e529a",
+      "bytes": 1882
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/package-info.java": {
+      "sha256": "66d021e6df318310f89428f8b5ed0ac3bd873c333a5423776920186548b69072",
+      "bytes": 1328
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/ServerHandshake.java": {
+      "sha256": "d2c43a8669afaa39aca969c199875817e4e7f5a534e385e540607af2cd5129c6",
+      "bytes": 1544
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/handshake/ServerHandshakeBuilder.java": {
+      "sha256": "576b117ca7418d42dea670d399049092dce92948053bcee92ca0ea5178c4a1a6",
+      "bytes": 1640
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/interfaces/ISSLChannel.java": {
+      "sha256": "28eba50431a901a00d70e208eb80fe725f32df6ebaac8edf6df3a9bf147f5eb9",
+      "bytes": 1547
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/interfaces/package-info.java": {
+      "sha256": "ac800af5c90dec9eb645224453ee3f609bdce7ccc882a90f83271c90e2a3470f",
+      "bytes": 1252
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/protocols/IProtocol.java": {
+      "sha256": "986bc81466a806a5168a7508471f9c1f4fb8eef3179b2823379ae456ac321879",
+      "bytes": 2695
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/protocols/package-info.java": {
+      "sha256": "1b44adeb71125073b4d6953565a7cbe4846163903189f9877fbf6fb02c31111e",
+      "bytes": 1339
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/protocols/Protocol.java": {
+      "sha256": "632977dbcee22a27903759ccae2a164f045b9ff6dc10ae7ca61daea404079727",
+      "bytes": 2978
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/CustomSSLWebSocketServerFactory.java": {
+      "sha256": "bd9eee4432c8674a7b9c41173b9011c516d6ec7556037fb0f15236aa52998ba5",
+      "bytes": 4047
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/DefaultSSLWebSocketServerFactory.java": {
+      "sha256": "459a88e7416f35607f7d0f2b5d2f7bc7e385b65249322edb6cd94e6c9c64d439",
+      "bytes": 3555
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/DefaultWebSocketServerFactory.java": {
+      "sha256": "9195bb24756f85aba5d66c0ab95c5bb13d7557abc8597743ace501a07b6ec8e5",
+      "bytes": 2098
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/package-info.java": {
+      "sha256": "605c088e6297b5634d8390d8184396f3ca2eaa5850d9b267df5f25385604fa06",
+      "bytes": 1301
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/SSLParametersWebSocketServerFactory.java": {
+      "sha256": "90d97968529ed0b68ec5a39f4c580e55c49f04323252006b890053a5c00fa0b3",
+      "bytes": 3181
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/server/WebSocketServer.java": {
+      "sha256": "bec37425509d8b058af37c3b2532575b9e18abeea13b6997704a475111a96d19",
+      "bytes": 39314
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/SocketChannelIOHelper.java": {
+      "sha256": "b623f316471565df650e9122ee9df6afcb48d1e8ffc75b543a165b99e0db37c2",
+      "bytes": 3916
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/SSLSocketChannel.java": {
+      "sha256": "1675dc60aec80de1e90bd8805d481fffb9faeeaada5f3b3135d233e000c30314",
+      "bytes": 21153
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/SSLSocketChannel2.java": {
+      "sha256": "763bce757f3a88ceb2da838801413bebe2ec428dfcff19d250118b4716da3724",
+      "bytes": 15861
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/Base64.java": {
+      "sha256": "1fbed083d1291a9a77c5d4f9333ef671728fc63f359e94aec6246ec65ab97448",
+      "bytes": 46891
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/ByteBufferUtils.java": {
+      "sha256": "72eb3957ce6a5a871c8cdb0c5560b761f2d117b403ac5fdaa4c1ddae1e31a6f7",
+      "bytes": 2248
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/Charsetfunctions.java": {
+      "sha256": "af2bf03f1b2e4c8749dff928f886d6203d2310efcbee38f52a62baedec669131",
+      "bytes": 5726
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/NamedThreadFactory.java": {
+      "sha256": "e4252112109f26144a6f32c48a3a49e9d927871cba8b1e9ec8b4518de3a08f17",
+      "bytes": 2092
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/util/package-info.java": {
+      "sha256": "f2d6e97908ae604ebfd9ad495847d91d942fc9a7e41cc03442e0e381981fc12e",
+      "bytes": 1262
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocket.java": {
+      "sha256": "472a0056be48f09412cfb1884171cb7bab58ebb5e3466497e0dd271ca120bea2",
+      "bytes": 7852
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketAdapter.java": {
+      "sha256": "02c2c4592d0c3229d45d4bf59b01d398d3e78d30ee2fc3024ed4132f333de18b",
+      "bytes": 4386
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketFactory.java": {
+      "sha256": "7fbe149158c87c4aa57fde6c58fa672f2ac737b8ad276d69c87ea01fdd011cef",
+      "bytes": 1892
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketImpl.java": {
+      "sha256": "eeb1f51152e7f99b07afafa3a5499407d76047267c117cd2d0b7fd5c3facaeac",
+      "bytes": 30624
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketListener.java": {
+      "sha256": "dbed53bf089cef30fa0ea77467c4477f648380861813d7320950a67960145185",
+      "bytes": 8873
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketServerFactory.java": {
+      "sha256": "ae2074e5016c48ec009e3e02ce48eabbe18cf58ab4d8af81ff5f22563bbaca0f",
+      "bytes": 2348
+    },
+    "java/dependency-src/org/emulationstation/frontend/relay/ws/WrappedByteChannel.java": {
+      "sha256": "bccd03ac637dd46006e09068722c64bb8b5c6977f53510f289e42297ef6db3e4",
+      "bytes": 2657
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/NetplayPaths.java": {
+      "sha256": "e1cfc916a17eaaabadbcd821c2483469b99e0057944e2f2118fad064187e6a67",
+      "bytes": 4817
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/NetplayUi.java": {
+      "sha256": "f205101af034b89aa257c61347af9f942fce1603478c6fabb24597c91d6037cd",
+      "bytes": 2264
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationActionButton.java": {
+      "sha256": "70cc50af4b03be49c2dce056ef3bcdb6de02ce694f285d46c13e12b0ac055c4e",
+      "bytes": 9726
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationCreateGameCard.java": {
+      "sha256": "ccdd4e971da51331181cb017ccc11682b0cfdaee13252eb85344586b251431fd",
+      "bytes": 3929
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationDolphinNetplayActivity.java": {
+      "sha256": "f947b5f72a35184c3eafb2ad551f39ce5ded40a1949a3a536d685b2660461b8e",
+      "bytes": 5007
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationExitPanel.java": {
+      "sha256": "a443148b772163c7ef99c2fb66d19027cc80ec4ffdf973a17d250e510d2e4058",
+      "bytes": 4002
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationFlowPanel.java": {
+      "sha256": "219153461d015c13557051e6ca0a59895ccf799a004665d2c38394f74f7c1794",
+      "bytes": 2509
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationGameRatingView.java": {
+      "sha256": "84d16361a5fa51cceb4046663f1bd3ef3641a64080a8850e0b80b34adc8e39d8",
+      "bytes": 4643
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationGameSession.java": {
+      "sha256": "b910af1422b358f929b3d39a787bd036f13fdd99326e80b605628823c5d7d412",
+      "bytes": 12978
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationHeaderMetadata.java": {
+      "sha256": "8b7fa4a64e8788233958f37c73171d2d7c99764ee9343cd3993ea3c7941bfe77",
+      "bytes": 1011
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationHostConnector.java": {
+      "sha256": "c909aea87a8e6c4631002a565a8e4b8b720ffcc1f964dcb8796c4bc155002032",
+      "bytes": 2176
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationHyperspaceState.java": {
+      "sha256": "4b4728d3233b81cfc5ce296bb3c51afc72bdac345ab7f01c4c496e0705e55502",
+      "bytes": 853
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationHyperspaceView.java": {
+      "sha256": "3fb9f02acb37798f09587f03f760ba22360404ac7c8b4254d10e0f6151da59cf",
+      "bytes": 4468
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationInvitationCode.java": {
+      "sha256": "611c98d7c8c6428dbed0d271e8ccdb9a0cf4f8e54c215ff17386dfa604b8aa0f",
+      "bytes": 2214
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationLaunchPolicy.java": {
+      "sha256": "e58cc823ce19930650b4ba3a7028b975ea622ce2082f3e3ca657ef9dbd3fff13",
+      "bytes": 804
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationLobbySurface.java": {
+      "sha256": "b2320101df0889e59fd4832f83596d8e8d448f688d33e82f5236167722df50db",
+      "bytes": 4867
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationLottieIllustration.java": {
+      "sha256": "188fe550f5329837379e8b5ba1a5ecdfe5a261235eff82187e4ad14ac02fd026",
+      "bytes": 4483
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationNetplayActivity.java": {
+      "sha256": "e6d93b5e1c159432f538f277b0d28813b91764ac5ce1145f14dbc872309dedbb",
+      "bytes": 7674
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationOnlineClient.java": {
+      "sha256": "1b7fa9b3b7510c92dc932bcf11d1a63beaf91b7a44f8f9419028bbec9b333ff4",
+      "bytes": 6497
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationOnlineGame.java": {
+      "sha256": "fc87237f8cfea7466f68167beb821de636ee3fd32c2bea16ae92d0370cbf4658",
+      "bytes": 7698
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationPlayerModel.java": {
+      "sha256": "ca4052eba8bc52c24abeada070b3d23f3ecca79956db1b068bd6d527b6e52ba8",
+      "bytes": 5746
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationPlayerSheet.java": {
+      "sha256": "08bb4356c0bef34803cadc44188b9492f39620dcad238621b0d96695ff85996b",
+      "bytes": 6597
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationPresence.java": {
+      "sha256": "b1392fd9c9b40f1defbeb1b94bcc20db141ac9a6a5d6cd6fa106f202087b963d",
+      "bytes": 7500
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationProcess.java": {
+      "sha256": "d024190147ae5cb66abc0932c7bcaf282586bbbe060093c7d72722103b83fa73",
+      "bytes": 670
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryTunnel.java": {
+      "sha256": "442c50840a280d4a5605e32a06873fa14a879285a959a6f2a0b5231e2204ede9",
+      "bytes": 17049
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryWire.java": {
+      "sha256": "cb7e83ee84c1297c91c23bc24c47f7eb34204ce8ffda933f71d4b27bbc418a20",
+      "bytes": 3159
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRelayTls.java": {
+      "sha256": "6e899eee7227bf5f53a4496eac0029726f3fd0c76024f24c6d3288a22e201341",
+      "bytes": 2275
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRelayTunnel.java": {
+      "sha256": "9845e639b93223188dd0b3b6f4389ce80c72f9397380e52a30f4b1f4ca9f2104",
+      "bytes": 7027
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java": {
+      "sha256": "d2040c953db35042b4c3094129c0877609649da219f7d811cb49eb6efeadb728",
+      "bytes": 20720
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRetroLaunch.java": {
+      "sha256": "f516caced6b744e74aa673661fe993f0c5cf74dd5c92ab593c167f1266ba196c",
+      "bytes": 8148
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomArtwork.java": {
+      "sha256": "3fd146633671ad30baf722fb2904f72376458c27cffa28ad0411eed436891c4c",
+      "bytes": 4224
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomCreation.java": {
+      "sha256": "104b87d5717839fd56c93327d7f108b44406e0e86768ffed5922f0877e1b4578",
+      "bytes": 837
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomFeedback.java": {
+      "sha256": "7a90edf37c15d3059a9160e05404d41058500b926f9843940bb516b189a4c701",
+      "bytes": 1029
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomRoster.java": {
+      "sha256": "b58018dd72d1117bdbe558f08479ff563abd593acc51df31ef35cb7efb681bc4",
+      "bytes": 8099
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java": {
+      "sha256": "74abbfa763fad7f3cc4a1a3cb33df52c61f554c64b619b35bf9bf49b367997be",
+      "bytes": 76325
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomStartState.java": {
+      "sha256": "2e69c893e3ddb012acfc53d59f2cb92887ffec938cc2bae4c2935b92e9192c29",
+      "bytes": 1775
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomState.java": {
+      "sha256": "3569a17e3b3134b0388d5a3231dad9f269461fa5b35566fd5195be21018ac5f9",
+      "bytes": 936
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionChannel.java": {
+      "sha256": "678037ceb5f34245c2a5a816727e0c3f81c10d9b6703fecb8a0041267b137ac8",
+      "bytes": 1388
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionLink.java": {
+      "sha256": "2cdf6807d6d96e6265f8719a40ea75b3b81680d2b033dd985181c2094e89eb1c",
+      "bytes": 4149
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionRegistry.java": {
+      "sha256": "53834181e95328483d498348e51269c325851451bea4bbab3cb135689a705ba5",
+      "bytes": 1207
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionService.java": {
+      "sha256": "fb8857ab4b0bbd9507764c9a6e1b4a48eccddd25a7bff36ad406cd9a800b641a",
+      "bytes": 3397
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSocial.java": {
+      "sha256": "c0a8b36cf544cfb5b6bbb1c0a2becfb617f282f57992b3f99f859cf40e254be2",
+      "bytes": 1383
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSocialIcon.java": {
+      "sha256": "19ff1286d4f021df60b29075c9db848d68183f76312430b2ef5b1a8b97b2c44c",
+      "bytes": 5081
+    },
+    "java-build-receipt.json": {
+      "sha256": "cfa78219e26edf237d1671f0937aa5d2dcd3651270a76c8beff43d6c342886cf",
+      "bytes": 32693
+    },
+    "JAVA-SOURCE-MANIFEST.json": {
+      "sha256": "ac0bee4f409f0b69b8fbf944b036c868dab7a73f872f45327c5ab552b3e64d60",
+      "bytes": 31457
+    },
+    "TurboStations-Premium-R76-20261008.apk": {
+      "sha256": "d7145db3511a4056b16fdde10e4c07709a16b7f445596801b3535c1b28b06a51",
+      "bytes": 2122907380
+    }
+  },
+  "preservedPolicyHashes": {
+    "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\release-channels\\PENDING-VISUAL.json": "4cdc2f890c74030f26447cbc56336f3ef1ec76fc57bf4a0f5b7723e1090e77b8",
+    "G:\\BAKUP SISTEMA APP 03-10-2026\\ATUAL-2P-E-TESTE-4P-20261008\\release-channels\\PENDING-VISUAL.json": "4cdc2f890c74030f26447cbc56336f3ef1ec76fc57bf4a0f5b7723e1090e77b8"
+  },
+  "cleanupPending": false,
+  "backupApkCount": 2,
+  "activeInstallerCount": 2,
+  "passed": true,
+  "canonicalApkCount": 2,
+  "canonicalApks": [
+    "G:\\BAKUP SISTEMA APP 03-10-2026\\ATUAL-2P-E-TESTE-4P-20261008\\stable-2-players-r76\\TurboStations-Premium-R76-20261008.apk",
+    "G:\\BAKUP SISTEMA APP 03-10-2026\\ATUAL-2P-E-TESTE-4P-20261008\\test-up-to-4-players-r81\\TurboStations-Premium-R81-20261008.apk"
+  ],
+  "buildInputsManifestSHA256": "a6b53ae77807147606c1690fa5336cd7af0c08f7cf3e352be3f4b5164e78a473"
+}

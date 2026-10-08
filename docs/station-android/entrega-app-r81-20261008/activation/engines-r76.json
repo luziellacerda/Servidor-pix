@@ -1,0 +1,61 @@
+{
+  "apkSHA256": "d7145db3511a4056b16fdde10e4c07709a16b7f445596801b3535c1b28b06a51",
+  "assetSHA256": "d43d6af1581691fbf88d6a15f87bea66761ef2f4d8952857028c6541b908e985",
+  "assetPath": "assets/station-online/engines.json",
+  "manifest": {
+    "schemaVersion": 1,
+    "androidPeerPlayValidated": false,
+    "engines": [
+      {
+        "engineId": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+        "platform": "snes",
+        "library": "libstation_bsnes.so",
+        "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+        "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+        "extensions": [
+          "sfc",
+          "smc"
+        ],
+        "overlay": "station-local/snes.cfg",
+        "options": "bsnes_violate_accuracy = \"disabled\"\nbsnes_chip_hle = \"LLE\"\nbsnes_superfx_overclock = \"100%\"\nbsnes_region = \"auto\"\nbsnes_aspect_ratio = \"auto\"\nbsnes_crop_overscan = \"disabled\"\nbsnes_gamma_ramp = \"disabled\"\n",
+        "launchReady": true,
+        "license": "GPL-3.0-or-later",
+        "sourceDirectory": "libretro--bsnes-mercury-79d7f9de218b",
+        "recoveryProtocol": "station-stream.v2"
+      },
+      {
+        "engineId": "clownmdemu-d43c2708-rs4-804b2acfea4c",
+        "platform": "megadrive",
+        "library": "libstation_clownmdemu.so",
+        "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+        "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+        "extensions": [
+          "bin",
+          "md",
+          "gen"
+        ],
+        "overlay": "station-local/megadrive.cfg",
+        "options": "",
+        "launchReady": true,
+        "license": "AGPL-3.0-or-later",
+        "sourceDirectory": "Clownacy--clownmdemu-libretro-d43c2708b0a3",
+        "recoveryProtocol": "station-stream.v2"
+      },
+      {
+        "engineId": "geolith-19402493-rs4-804b2acfea4c",
+        "platform": "neogeo",
+        "library": "libstation_geolith.so",
+        "coreSha256": "68ebde3e475d0e86f99bda278cadb85dc7fb32dc560072be017ad257dfd2eb0c",
+        "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+        "extensions": [
+          "neo"
+        ],
+        "overlay": "gamepads/flat/neogeo.cfg",
+        "options": "",
+        "launchReady": false,
+        "license": "BSD-3-Clause",
+        "sourceDirectory": "libretro--geolith-libretro-194024931935"
+      }
+    ]
+  }
+}

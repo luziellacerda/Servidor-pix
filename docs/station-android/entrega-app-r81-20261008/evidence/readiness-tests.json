@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "results": {
+    "errors": "PASS 43 exact error/consultation checks",
+    "discovery": "PASS 36 discovery lifecycle checks; controlled API/UI fixtures",
+    "staticGuards": 8
+  },
+  "sourceHashes": {
+    "StationOnlineClient.java": "edc7b27d292d94acfa832268bc59f301626a2a8e832ea76edab4752a7ec5b206",
+    "StationOnlineGame.java": "1f93bd915f8f28f7c92a7d243af7a2a7f5669ece2afdbfa27046ef9088a3baec",
+    "StationRoomsActivity.java": "9e9f634135a9085690220b5cc0716c45a6a46c6ce0c87bde1b2c91fc7900251e"
+  },
+  "scope": "Actual extracted Java methods with controlled API/UI and static integration guards; not signed HTTP, Android or gameplay."
+}
