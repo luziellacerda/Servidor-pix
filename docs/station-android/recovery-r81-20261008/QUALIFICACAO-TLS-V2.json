@@ -1,0 +1,125 @@
+{
+  "sealedCandidateDllSha256": "9878ae9caea55bb6834745caa3a60140616d3e0a5f2ea71055fe9e9df813fe51",
+  "productionFeature": {
+    "client": "websockets.asyncio",
+    "passed": true,
+    "loggingEnabled": false,
+    "testSocketDecoration": false,
+    "harnessSocketFeatureReplaced": false,
+    "iterations": 3,
+    "results": [
+      {
+        "passed": true,
+        "checks": 47,
+        "exactForwardedBytes": 2176,
+        "normalClose": true,
+        "firstCauseBeforeDetach": true,
+        "authorizedResume": true,
+        "resumedPlaying": true
+      },
+      {
+        "passed": true,
+        "checks": 47,
+        "exactForwardedBytes": 2176,
+        "normalClose": true,
+        "firstCauseBeforeDetach": true,
+        "authorizedResume": true,
+        "resumedPlaying": true
+      },
+      {
+        "passed": true,
+        "checks": 49,
+        "exactForwardedBytes": 2176,
+        "normalClose": true,
+        "firstCauseBeforeDetach": true,
+        "authorizedResume": true,
+        "resumedPlaying": true
+      }
+    ],
+    "syntheticOnly": true,
+    "productionChanged": false,
+    "androidGameplayQualified": false
+  },
+  "decoratedFixtureControl": {
+    "client": "websockets.asyncio",
+    "passed": true,
+    "loggingEnabled": false,
+    "testSocketDecoration": true,
+    "harnessSocketFeatureReplaced": true,
+    "iterations": 3,
+    "results": [
+      {
+        "passed": true,
+        "checks": 48,
+        "exactForwardedBytes": 2176,
+        "normalClose": true,
+        "firstCauseBeforeDetach": true,
+        "authorizedResume": true,
+        "resumedPlaying": true
+      },
+      {
+        "passed": true,
+        "checks": 49,
+        "exactForwardedBytes": 2176,
+        "normalClose": true,
+        "firstCauseBeforeDetach": true,
+        "authorizedResume": true,
+        "resumedPlaying": true
+      },
+      {
+        "passed": true,
+        "checks": 48,
+        "exactForwardedBytes": 2176,
+        "normalClose": true,
+        "firstCauseBeforeDetach": true,
+        "authorizedResume": true,
+        "resumedPlaying": true
+      }
+    ],
+    "syntheticOnly": true,
+    "productionChanged": false,
+    "androidGameplayQualified": false
+  },
+  "syncClientControl": {
+    "passed": false,
+    "loggingEnabled": false,
+    "testSocketDecoration": false,
+    "productionSocketFeatureReplaced": false,
+    "iterations": 3,
+    "results": [
+      {
+        "passed": false,
+        "checks": 1,
+        "phase": "host-upgrade",
+        "errorType": "TimeoutError",
+        "detailsSuppressed": true
+      },
+      {
+        "passed": false,
+        "checks": 4,
+        "phase": "client-upgrade",
+        "errorType": "TimeoutError",
+        "detailsSuppressed": true
+      },
+      {
+        "passed": true,
+        "checks": 48,
+        "exactForwardedBytes": 2176,
+        "normalClose": true,
+        "firstCauseBeforeDetach": true,
+        "authorizedResume": true,
+        "resumedPlaying": true
+      }
+    ],
+    "syntheticOnly": true,
+    "productionChanged": false,
+    "androidGameplayQualified": false
+  },
+  "exactCauseProven": false,
+  "serverLoggingChanged": false,
+  "physicalAndroidGameplayQualified": false,
+  "conclusion": "Independent asynchronous TLS client passes with and without the historical test socket decoration; synchronous Python control remains intermittent. This does not prove a production CLR cause or a WAN gameplay fix.",
+  "syncClientControlBuildDllSha256": "74e933cce1a18143ca72a2e92222b604e57d2374af14181e57193b6421c9addf",
+  "syncClientControlSourceCommit": "2cd3571919f54126f2bfe9576864a8d8329b9db3",
+  "syncClientControlReviewedServerSourceFilesMatched": 19
+}

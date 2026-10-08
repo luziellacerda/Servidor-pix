@@ -1,3 +1,11 @@
+# R81: base do servidor publicada, aprovação de controles pendente
+
+[Retorno da execução do handoff2cd3571](RETORNO-EXECUCAO-HANDOFF-R81-20261008.md) · [Catálogo completo e evidências](recovery-r81-20261008/).
+
+Importador e identidades reais persistentes aplicados na revisão20; DLL b472d8a/9878ae9c ativa, PID1518810. Catálogo autenticado/assinado,1.816 identidades visíveis, capas/downloads, salas v2/v1 e reconexão conferidos. Dez engines e segurança existentes preservadas. Zero perfis reais aprovados; v3/gate desligados. A R81 ainda depende de aprovação inclusive para duas pessoas; produção v3 retorna503/STATION_MULTIPLAYER_DISABLED. O retorno entrega vínculos e passos objetivos ao PCAPK; não é declaração de quatro aparelhos homologados ou engasgos resolvidos.
+
+## Histórico anterior
+
 # Retorno R79: produção na revisão 19
 
 [Implementação, leitura correta do catálogo e estado da candidata online](RETORNO-IMPLEMENTACAO-R79-SINOPSES-E-MULTIPLAYER-20261008.md). **206 sinopses aplicadas**, índice persistente e catálogo assinado conferidos. [Catálogo completo e recibos](recovery-r79-20261008/). Fonte candidata v3 b472d8a compilada/testada, preservando observabilidade; DLL/flags/perfis/importador candidatos não ativados. Produção segue v2, com R76 preservada e R79 ainda dependente de integração/qualificação de perfis. Restam 144 sinopses.

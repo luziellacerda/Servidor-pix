@@ -1,0 +1,18 @@
+{
+  "receivedCommit": "2cd3571919f54126f2bfe9576864a8d8329b9db3",
+  "payloadFilesVerified": 18,
+  "javaSourcesVerified": 209,
+  "candidateSourceFilesVerified": 19,
+  "controllerHashesVerified": 7,
+  "controllerCanonicalKeyOrder": [
+    "schemaVersion",
+    "controllerProfile",
+    "devices",
+    "coreOptions"
+  ],
+  "identityToolTestsPassed": 19,
+  "importerIdentityTestsPassed": 4,
+  "apkSource": "759d7ab4d479bbb9dca0426ad286ca1b4f0ce1e0",
+  "apkSha256": "85fac8f51daa3a370eabb14d98832f75c2f30ff81422c549538ee715627032c6",
+  "physicalGameQualification": false
+}

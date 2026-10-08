@@ -1,0 +1,3415 @@
+{
+  "applied": true,
+  "utc": "2026-10-08T20:22:39.593284+00:00",
+  "reloadUtc": "2026-10-08T20:22:03.632830+00:00",
+  "pid": 1518810,
+  "sourceCommit": "b472d8a653e065cccb00dfb15dbea3d56c03db98",
+  "dllSha256": "9878ae9caea55bb6834745caa3a60140616d3e0a5f2ea71055fe9e9df813fe51",
+  "catalogRevision": 20,
+  "indexSha256": "b3d44224a0264f3a14104f031d417492017b1d7756d7256607a51833c243348c",
+  "engineRegistrySha256": "a5f9de948ab3fcf15b2657061d540dcbbafda98e1dd7a68137e617b58a894843",
+  "legacyEngineCount": 10,
+  "approvedRealGameProfiles": 0,
+  "multiplayerEnabled": false,
+  "multiplayerLegacyCapacityGate": false,
+  "publicProof": {
+    "catalog": {
+      "passed": true,
+      "checks": 27852,
+      "catalogRevision": 20,
+      "visibleItems": 3479,
+      "contentIdentityFields": 1816,
+      "metadataOptInVerified": true,
+      "allMetadataMatched": true,
+      "requestAndResponseSignaturesVerified": true,
+      "capabilities": [
+        {
+          "itemId": "826da6daebe9edbebffb3721f83abf12",
+          "status": 503,
+          "code": "STATION_MULTIPLAYER_DISABLED",
+          "signedProfileApproved": false
+        },
+        {
+          "itemId": "ac79b8fc351cb0811a7e9b51a099ba9c",
+          "status": 503,
+          "code": "STATION_MULTIPLAYER_DISABLED",
+          "signedProfileApproved": false
+        },
+        {
+          "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+          "status": 503,
+          "code": "STATION_MULTIPLAYER_DISABLED",
+          "signedProfileApproved": false
+        }
+      ],
+      "public": true,
+      "physicalGameplayQualified": false,
+      "ownedSyntheticFixtureRemoved": true
+    },
+    "online": {
+      "passed": true,
+      "checks": 306,
+      "syntheticLicenses": 2,
+      "signedWindowsR74Engines": true,
+      "signedEngineIds": [
+        "bsnes-mercury-performance-79d7f9de",
+        "bsnes-mercury-performance-79d7f9de-autopass1",
+        "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+        "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+        "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+        "clownmdemu-d43c2708",
+        "clownmdemu-d43c2708-autopass1",
+        "clownmdemu-d43c2708-rs2-d66267cd4250",
+        "clownmdemu-d43c2708-rs3-9af2778898e4",
+        "clownmdemu-d43c2708-rs4-804b2acfea4c"
+      ],
+      "signedEngines": [
+        {
+          "engineId": "bsnes-mercury-performance-79d7f9de",
+          "platform": "snes",
+          "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+          "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+          "recoveryProtocol": null
+        },
+        {
+          "engineId": "clownmdemu-d43c2708",
+          "platform": "megadrive",
+          "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+          "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+          "recoveryProtocol": null
+        },
+        {
+          "engineId": "bsnes-mercury-performance-79d7f9de-autopass1",
+          "platform": "snes",
+          "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+          "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+          "recoveryProtocol": null
+        },
+        {
+          "engineId": "clownmdemu-d43c2708-autopass1",
+          "platform": "megadrive",
+          "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+          "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+          "recoveryProtocol": null
+        },
+        {
+          "engineId": "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+          "platform": "snes",
+          "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+          "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+          "recoveryProtocol": "station-stream.v2"
+        },
+        {
+          "engineId": "clownmdemu-d43c2708-rs2-d66267cd4250",
+          "platform": "megadrive",
+          "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+          "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+          "recoveryProtocol": "station-stream.v2"
+        },
+        {
+          "engineId": "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+          "platform": "snes",
+          "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+          "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+          "recoveryProtocol": "station-stream.v2"
+        },
+        {
+          "engineId": "clownmdemu-d43c2708-rs3-9af2778898e4",
+          "platform": "megadrive",
+          "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+          "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+          "recoveryProtocol": "station-stream.v2"
+        },
+        {
+          "engineId": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+          "platform": "snes",
+          "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+          "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+          "recoveryProtocol": "station-stream.v2"
+        },
+        {
+          "engineId": "clownmdemu-d43c2708-rs4-804b2acfea4c",
+          "platform": "megadrive",
+          "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+          "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+          "recoveryProtocol": "station-stream.v2"
+        }
+      ],
+      "signedTransports": [
+        "direct",
+        "relay-wss-v1",
+        "relay-wss-v2"
+      ],
+      "signedRecoveryCapabilities": [
+        "station-stream.v2"
+      ],
+      "signedRoomCapabilities": [
+        "short-invite-v1",
+        "own-room-member-profiles-v1"
+      ],
+      "legacyEngineIdsPreserved": true,
+      "exactForwardedBytes": 82688,
+      "protectedV2Public": true,
+      "protectedResume": true,
+      "oneUseTickets": true,
+      "proofReplayDenied": true,
+      "ownRoomProfilesSigned": true,
+      "legacyV1": true,
+      "catalogCoverDownloadAuthorizationPreserved": true,
+      "gameDownloadVerified": true,
+      "androidGameplay": false,
+      "nativePauseSimulated": true,
+      "latencySamples": [
+        {
+          "role": "host",
+          "kind": "DATA",
+          "bytes": 64,
+          "receiveMs": 112.005368
+        },
+        {
+          "role": "host",
+          "kind": "DATA",
+          "bytes": 64,
+          "receiveMs": 101.323159
+        },
+        {
+          "role": "host",
+          "kind": "DATA",
+          "bytes": 64,
+          "receiveMs": 98.571034
+        },
+        {
+          "role": "host",
+          "kind": "DATA",
+          "bytes": 64,
+          "receiveMs": 109.268578
+        },
+        {
+          "role": "host",
+          "kind": "DATA",
+          "bytes": 2048,
+          "receiveMs": 107.223527
+        },
+        {
+          "role": "host",
+          "kind": "DATA",
+          "bytes": 2048,
+          "receiveMs": 111.653752
+        },
+        {
+          "role": "host",
+          "kind": "DATA",
+          "bytes": 2048,
+          "receiveMs": 113.019499
+        },
+        {
+          "role": "host",
+          "kind": "DATA",
+          "bytes": 2048,
+          "receiveMs": 103.747106
+        },
+        {
+          "role": "host",
+          "kind": "DATA",
+          "bytes": 8192,
+          "receiveMs": 112.375243
+        },
+        {
+          "role": "host",
+          "kind": "DATA",
+          "bytes": 8192,
+          "receiveMs": 118.536383
+        },
+        {
+          "role": "host",
+          "kind": "DATA",
+          "bytes": 8192,
+          "receiveMs": 107.806817
+        },
+        {
+          "role": "host",
+          "kind": "DATA",
+          "bytes": 8192,
+          "receiveMs": 116.680581
+        },
+        {
+          "role": "host",
+          "kind": "PONG",
+          "bytes": 0,
+          "roundTripMs": 100.991197
+        },
+        {
+          "role": "host",
+          "kind": "PONG",
+          "bytes": 0,
+          "roundTripMs": 100.10132
+        },
+        {
+          "role": "host",
+          "kind": "PONG",
+          "bytes": 0,
+          "roundTripMs": 95.558936
+        },
+        {
+          "role": "host",
+          "kind": "PONG",
+          "bytes": 0,
+          "roundTripMs": 91.011005
+        },
+        {
+          "role": "host",
+          "kind": "PONG",
+          "bytes": 0,
+          "roundTripMs": 101.618212
+        },
+        {
+          "role": "host",
+          "kind": "PONG",
+          "bytes": 0,
+          "roundTripMs": 100.162814
+        },
+        {
+          "role": "client",
+          "kind": "DATA",
+          "bytes": 64,
+          "receiveMs": 94.816325
+        },
+        {
+          "role": "client",
+          "kind": "DATA",
+          "bytes": 64,
+          "receiveMs": 101.531104
+        },
+        {
+          "role": "client",
+          "kind": "DATA",
+          "bytes": 64,
+          "receiveMs": 105.674071
+        },
+        {
+          "role": "client",
+          "kind": "DATA",
+          "bytes": 64,
+          "receiveMs": 101.131284
+        },
+        {
+          "role": "client",
+          "kind": "DATA",
+          "bytes": 2048,
+          "receiveMs": 102.349586
+        },
+        {
+          "role": "client",
+          "kind": "DATA",
+          "bytes": 2048,
+          "receiveMs": 105.63673
+        },
+        {
+          "role": "client",
+          "kind": "DATA",
+          "bytes": 2048,
+          "receiveMs": 106.167245
+        },
+        {
+          "role": "client",
+          "kind": "DATA",
+          "bytes": 2048,
+          "receiveMs": 101.764879
+        },
+        {
+          "role": "client",
+          "kind": "DATA",
+          "bytes": 8192,
+          "receiveMs": 112.879584
+        },
+        {
+          "role": "client",
+          "kind": "DATA",
+          "bytes": 8192,
+          "receiveMs": 112.630143
+        },
+        {
+          "role": "client",
+          "kind": "DATA",
+          "bytes": 8192,
+          "receiveMs": 109.665924
+        },
+        {
+          "role": "client",
+          "kind": "DATA",
+          "bytes": 8192,
+          "receiveMs": 118.884026
+        },
+        {
+          "role": "client",
+          "kind": "PONG",
+          "bytes": 0,
+          "roundTripMs": 140.849173
+        },
+        {
+          "role": "client",
+          "kind": "PONG",
+          "bytes": 0,
+          "roundTripMs": 96.040642
+        },
+        {
+          "role": "client",
+          "kind": "PONG",
+          "bytes": 0,
+          "roundTripMs": 90.921155
+        },
+        {
+          "role": "client",
+          "kind": "PONG",
+          "bytes": 0,
+          "roundTripMs": 106.305123
+        },
+        {
+          "role": "client",
+          "kind": "PONG",
+          "bytes": 0,
+          "roundTripMs": 146.470096
+        },
+        {
+          "role": "client",
+          "kind": "PONG",
+          "bytes": 0,
+          "roundTripMs": 99.718166
+        }
+      ],
+      "observations": {
+        "version": 1,
+        "utc": "2026-10-08T20:22:30.5263814+00:00",
+        "monotonicFrequency": 1000000000,
+        "enabled": true,
+        "persistent": false,
+        "active": [
+          {
+            "reference": "e53be96f1e10",
+            "generation": 3,
+            "stream": {
+              "enabled": true,
+              "epoch": 2,
+              "state": 2,
+              "hostAccepted": 41344,
+              "hostDelivered": 41344,
+              "clientAccepted": 41280,
+              "clientDelivered": 41280,
+              "hostPending": 0,
+              "clientPending": 0,
+              "availableHostWriterBytes": 0,
+              "availableClientWriterBytes": 0,
+              "pendingHostPong": false,
+              "pendingClientPong": false,
+              "discardedObservations": 0,
+              "connectionObservationLimit": 8,
+              "terminationLimit": 8,
+              "discardedTerminations": 0,
+              "terminations": [
+                {
+                  "utcMs": 1791490941303,
+                  "firstObservedMonotonicTicks": 463681914164330,
+                  "firstCapturedMonotonicTicks": 463681916082152,
+                  "role": "client",
+                  "cause": "PEER_CLOSE",
+                  "closeCode": 1000,
+                  "exceptionType": "none",
+                  "epochAtFirstCause": 1,
+                  "stateAtFirstCause": 2,
+                  "acceptedAtFirstCause": 128,
+                  "deliveredAtFirstCause": 128,
+                  "pendingAtFirstCause": 0,
+                  "hostAcceptedAtFirstCause": 64,
+                  "hostDeliveredAtFirstCause": 64,
+                  "clientAcceptedAtFirstCause": 64,
+                  "clientDeliveredAtFirstCause": 64,
+                  "epochAfterDetach": 2,
+                  "stateAfterDetach": 0,
+                  "gracefulClose": true,
+                  "closeReplyDeadlineMs": 2000,
+                  "elapsedFirstCauseToDetachMs": 12.4783
+                }
+              ],
+              "transitions": {
+                "capacity": 128,
+                "discardedEvents": 0,
+                "receivedTypeCounts": [
+                  0,
+                  3,
+                  0,
+                  27,
+                  27,
+                  0,
+                  0,
+                  4,
+                  4,
+                  12,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "events": [
+                  {
+                    "utc": "2026-10-08T20:22:20.7778911+00:00",
+                    "monotonicTicks": 463681388556407,
+                    "cause": "Paused7",
+                    "role": "client",
+                    "beforeEpoch": 1,
+                    "afterEpoch": 1,
+                    "beforeState": 0,
+                    "afterState": 1
+                  },
+                  {
+                    "utc": "2026-10-08T20:22:20.7790378+00:00",
+                    "monotonicTicks": 463681389703259,
+                    "cause": "Ready8",
+                    "role": "client",
+                    "beforeEpoch": 1,
+                    "afterEpoch": 1,
+                    "beforeState": 1,
+                    "afterState": 2
+                  },
+                  {
+                    "utc": "2026-10-08T20:22:21.3101898+00:00",
+                    "monotonicTicks": 463681920855197,
+                    "cause": "Detach",
+                    "role": "client",
+                    "beforeEpoch": 1,
+                    "afterEpoch": 2,
+                    "beforeState": 2,
+                    "afterState": 0
+                  },
+                  {
+                    "utc": "2026-10-08T20:22:23.428629+00:00",
+                    "monotonicTicks": 463684039294250,
+                    "cause": "Paused7",
+                    "role": "client",
+                    "beforeEpoch": 2,
+                    "afterEpoch": 2,
+                    "beforeState": 0,
+                    "afterState": 1
+                  },
+                  {
+                    "utc": "2026-10-08T20:22:23.4286745+00:00",
+                    "monotonicTicks": 463684039339708,
+                    "cause": "Ready8",
+                    "role": "client",
+                    "beforeEpoch": 2,
+                    "afterEpoch": 2,
+                    "beforeState": 1,
+                    "afterState": 2
+                  }
+                ]
+              },
+              "connections": [
+                {
+                  "reference": "2d2300047f79",
+                  "role": "host",
+                  "phases": {
+                    "DATA_1_1024": {
+                      "ReceiveToLock": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.005085,
+                        "p95UpperBoundMs": 0.005085,
+                        "p99UpperBoundMs": 0.005085,
+                        "maximumMs": 0.005085,
+                        "meanMs": 0.004234
+                      },
+                      "ReceiveLockHeld": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.01,
+                        "p95UpperBoundMs": 2.588931,
+                        "p99UpperBoundMs": 2.588931,
+                        "maximumMs": 2.588931,
+                        "meanMs": 0.43938516666666666
+                      },
+                      "SelectionLockWait": {
+                        "count": 5,
+                        "p50UpperBoundMs": 0.000514,
+                        "p95UpperBoundMs": 0.000514,
+                        "p99UpperBoundMs": 0.000514,
+                        "maximumMs": 0.000514,
+                        "meanMs": 0.00038960000000000004
+                      },
+                      "SelectionLockHeld": {
+                        "count": 5,
+                        "p50UpperBoundMs": 0.024276,
+                        "p95UpperBoundMs": 0.024276,
+                        "p99UpperBoundMs": 0.024276,
+                        "maximumMs": 0.024276,
+                        "meanMs": 0.0131964
+                      },
+                      "ReceiveToSelectionSampled": {
+                        "count": 2,
+                        "p50UpperBoundMs": 0.112665,
+                        "p95UpperBoundMs": 0.112665,
+                        "p99UpperBoundMs": 0.112665,
+                        "maximumMs": 0.112665,
+                        "meanMs": 0.110574
+                      },
+                      "ReceiveToSendStartSampled": {
+                        "count": 2,
+                        "p50UpperBoundMs": 0.125238,
+                        "p95UpperBoundMs": 0.125238,
+                        "p99UpperBoundMs": 0.125238,
+                        "maximumMs": 0.125238,
+                        "meanMs": 0.120109
+                      },
+                      "SelectionToSendStart": {
+                        "count": 5,
+                        "p50UpperBoundMs": 0.01,
+                        "p95UpperBoundMs": 0.016755,
+                        "p99UpperBoundMs": 0.016755,
+                        "maximumMs": 0.016755,
+                        "meanMs": 0.004907
+                      },
+                      "SendAsyncAwait": {
+                        "count": 5,
+                        "p50UpperBoundMs": 0.024332,
+                        "p95UpperBoundMs": 0.024332,
+                        "p99UpperBoundMs": 0.024332,
+                        "maximumMs": 0.024332,
+                        "meanMs": 0.014352400000000001
+                      }
+                    },
+                    "DATA_1025_4096": {
+                      "ReceiveToLock": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.01,
+                        "p95UpperBoundMs": 0.031766,
+                        "p99UpperBoundMs": 0.031766,
+                        "maximumMs": 0.031766,
+                        "meanMs": 0.01266975
+                      },
+                      "ReceiveLockHeld": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.139938,
+                        "p95UpperBoundMs": 0.139938,
+                        "p99UpperBoundMs": 0.139938,
+                        "maximumMs": 0.139938,
+                        "meanMs": 0.12226525
+                      },
+                      "SelectionLockWait": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.000561,
+                        "p95UpperBoundMs": 0.000561,
+                        "p99UpperBoundMs": 0.000561,
+                        "maximumMs": 0.000561,
+                        "meanMs": 0.000522
+                      },
+                      "SelectionLockHeld": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.149918,
+                        "p95UpperBoundMs": 0.149918,
+                        "p99UpperBoundMs": 0.149918,
+                        "maximumMs": 0.149918,
+                        "meanMs": 0.127914
+                      },
+                      "ReceiveToSelectionSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveToSendStartSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionToSendStart": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.01,
+                        "p95UpperBoundMs": 0.010394,
+                        "p99UpperBoundMs": 0.010394,
+                        "maximumMs": 0.010394,
+                        "meanMs": 0.009992
+                      },
+                      "SendAsyncAwait": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.014754,
+                        "p95UpperBoundMs": 0.014754,
+                        "p99UpperBoundMs": 0.014754,
+                        "maximumMs": 0.014754,
+                        "meanMs": 0.01439425
+                      }
+                    },
+                    "DATA_4097_16384": {
+                      "ReceiveToLock": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.05,
+                        "p95UpperBoundMs": 0.072937,
+                        "p99UpperBoundMs": 0.072937,
+                        "maximumMs": 0.072937,
+                        "meanMs": 0.044314
+                      },
+                      "ReceiveLockHeld": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.5,
+                        "p95UpperBoundMs": 1.658219,
+                        "p99UpperBoundMs": 1.658219,
+                        "maximumMs": 1.658219,
+                        "meanMs": 0.6222425
+                      },
+                      "SelectionLockWait": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.000601,
+                        "p95UpperBoundMs": 0.000601,
+                        "p99UpperBoundMs": 0.000601,
+                        "maximumMs": 0.000601,
+                        "meanMs": 0.00054125
+                      },
+                      "SelectionLockHeld": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.323022,
+                        "p95UpperBoundMs": 0.323022,
+                        "p99UpperBoundMs": 0.323022,
+                        "maximumMs": 0.323022,
+                        "meanMs": 0.3004885
+                      },
+                      "ReceiveToSelectionSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveToSendStartSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionToSendStart": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.025,
+                        "p95UpperBoundMs": 0.0786,
+                        "p99UpperBoundMs": 0.0786,
+                        "maximumMs": 0.0786,
+                        "meanMs": 0.03693975
+                      },
+                      "SendAsyncAwait": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.0247,
+                        "p95UpperBoundMs": 0.0247,
+                        "p99UpperBoundMs": 0.0247,
+                        "maximumMs": 0.0247,
+                        "meanMs": 0.0236485
+                      }
+                    },
+                    "PONG": {
+                      "ReceiveToLock": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.003799,
+                        "p95UpperBoundMs": 0.003799,
+                        "p99UpperBoundMs": 0.003799,
+                        "maximumMs": 0.003799,
+                        "meanMs": 0.0035625
+                      },
+                      "ReceiveLockHeld": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.01,
+                        "p95UpperBoundMs": 0.188163,
+                        "p99UpperBoundMs": 0.188163,
+                        "maximumMs": 0.188163,
+                        "meanMs": 0.0334515
+                      },
+                      "SelectionLockWait": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.000341,
+                        "p95UpperBoundMs": 0.000341,
+                        "p99UpperBoundMs": 0.000341,
+                        "maximumMs": 0.000341,
+                        "meanMs": 0.00014883333333333334
+                      },
+                      "SelectionLockHeld": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.009111,
+                        "p95UpperBoundMs": 0.009111,
+                        "p99UpperBoundMs": 0.009111,
+                        "maximumMs": 0.009111,
+                        "meanMs": 0.002136166666666667
+                      },
+                      "ReceiveToSelectionSampled": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.05,
+                        "p95UpperBoundMs": 0.246336,
+                        "p99UpperBoundMs": 0.246336,
+                        "maximumMs": 0.246336,
+                        "meanMs": 0.0756455
+                      },
+                      "ReceiveToSendStartSampled": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.05,
+                        "p95UpperBoundMs": 0.249847,
+                        "p99UpperBoundMs": 0.249847,
+                        "maximumMs": 0.249847,
+                        "meanMs": 0.07941066666666667
+                      },
+                      "SelectionToSendStart": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.005145,
+                        "p95UpperBoundMs": 0.005145,
+                        "p99UpperBoundMs": 0.005145,
+                        "maximumMs": 0.005145,
+                        "meanMs": 0.0037651666666666667
+                      },
+                      "SendAsyncAwait": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.025,
+                        "p95UpperBoundMs": 0.029778,
+                        "p99UpperBoundMs": 0.029778,
+                        "maximumMs": 0.029778,
+                        "meanMs": 0.02342116666666667
+                      }
+                    }
+                  },
+                  "dataSamplingStride": 16,
+                  "dataSampleCapacity": 256,
+                  "acceptedDataFrames": 14,
+                  "retainedDataSamples": 0,
+                  "discardedDataSamples": 0,
+                  "matchedSelections": 8,
+                  "oldestSampledPendingByteAgeMs": null,
+                  "consecutiveControlsWhileDataQueued": 0,
+                  "maximumConsecutiveControlsWhileDataQueued": 0,
+                  "publishStateCall": {
+                    "count": 38,
+                    "p50UpperBoundMs": 0.01,
+                    "p95UpperBoundMs": 0.025,
+                    "p99UpperBoundMs": 0.887496,
+                    "maximumMs": 0.887496,
+                    "meanMs": 0.03277378947368421
+                  },
+                  "writerInFlightFrames": 0,
+                  "completedSendAttempts": 52,
+                  "failedSendAttempts": 0
+                },
+                {
+                  "reference": "57ebbc6e4c9d",
+                  "role": "client",
+                  "phases": {
+                    "DATA_1_1024": {
+                      "ReceiveToLock": {
+                        "count": 1,
+                        "p50UpperBoundMs": 0.004213,
+                        "p95UpperBoundMs": 0.004213,
+                        "p99UpperBoundMs": 0.004213,
+                        "maximumMs": 0.004213,
+                        "meanMs": 0.004213
+                      },
+                      "ReceiveLockHeld": {
+                        "count": 1,
+                        "p50UpperBoundMs": 0.009595,
+                        "p95UpperBoundMs": 0.009595,
+                        "p99UpperBoundMs": 0.009595,
+                        "maximumMs": 0.009595,
+                        "meanMs": 0.009595
+                      },
+                      "SelectionLockWait": {
+                        "count": 1,
+                        "p50UpperBoundMs": 0.000584,
+                        "p95UpperBoundMs": 0.000584,
+                        "p99UpperBoundMs": 0.000584,
+                        "maximumMs": 0.000584,
+                        "meanMs": 0.000584
+                      },
+                      "SelectionLockHeld": {
+                        "count": 1,
+                        "p50UpperBoundMs": 1.85122,
+                        "p95UpperBoundMs": 1.85122,
+                        "p99UpperBoundMs": 1.85122,
+                        "maximumMs": 1.85122,
+                        "meanMs": 1.85122
+                      },
+                      "ReceiveToSelectionSampled": {
+                        "count": 1,
+                        "p50UpperBoundMs": 4.556655,
+                        "p95UpperBoundMs": 4.556655,
+                        "p99UpperBoundMs": 4.556655,
+                        "maximumMs": 4.556655,
+                        "meanMs": 4.556655
+                      },
+                      "ReceiveToSendStartSampled": {
+                        "count": 1,
+                        "p50UpperBoundMs": 4.578879,
+                        "p95UpperBoundMs": 4.578879,
+                        "p99UpperBoundMs": 4.578879,
+                        "maximumMs": 4.578879,
+                        "meanMs": 4.578879
+                      },
+                      "SelectionToSendStart": {
+                        "count": 1,
+                        "p50UpperBoundMs": 0.022224,
+                        "p95UpperBoundMs": 0.022224,
+                        "p99UpperBoundMs": 0.022224,
+                        "maximumMs": 0.022224,
+                        "meanMs": 0.022224
+                      },
+                      "SendAsyncAwait": {
+                        "count": 1,
+                        "p50UpperBoundMs": 0.04808,
+                        "p95UpperBoundMs": 0.04808,
+                        "p99UpperBoundMs": 0.04808,
+                        "maximumMs": 0.04808,
+                        "meanMs": 0.04808
+                      }
+                    },
+                    "DATA_1025_4096": {
+                      "ReceiveToLock": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveLockHeld": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionLockWait": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionLockHeld": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveToSelectionSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveToSendStartSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionToSendStart": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SendAsyncAwait": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      }
+                    },
+                    "DATA_4097_16384": {
+                      "ReceiveToLock": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveLockHeld": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionLockWait": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionLockHeld": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveToSelectionSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveToSendStartSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionToSendStart": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SendAsyncAwait": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      }
+                    },
+                    "PONG": {
+                      "ReceiveToLock": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveLockHeld": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionLockWait": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionLockHeld": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveToSelectionSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveToSendStartSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionToSendStart": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SendAsyncAwait": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      }
+                    }
+                  },
+                  "dataSamplingStride": 16,
+                  "dataSampleCapacity": 256,
+                  "acceptedDataFrames": 1,
+                  "retainedDataSamples": 0,
+                  "discardedDataSamples": 0,
+                  "matchedSelections": 1,
+                  "oldestSampledPendingByteAgeMs": null,
+                  "consecutiveControlsWhileDataQueued": 0,
+                  "maximumConsecutiveControlsWhileDataQueued": 0,
+                  "publishStateCall": {
+                    "count": 5,
+                    "p50UpperBoundMs": 0.025,
+                    "p95UpperBoundMs": 0.038585,
+                    "p99UpperBoundMs": 0.038585,
+                    "maximumMs": 0.038585,
+                    "meanMs": 0.0170798
+                  },
+                  "writerInFlightFrames": 0,
+                  "completedSendAttempts": 6,
+                  "failedSendAttempts": 0
+                },
+                {
+                  "reference": "fd7ea6272415",
+                  "role": "client",
+                  "phases": {
+                    "DATA_1_1024": {
+                      "ReceiveToLock": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.004687,
+                        "p95UpperBoundMs": 0.004687,
+                        "p99UpperBoundMs": 0.004687,
+                        "maximumMs": 0.004687,
+                        "meanMs": 0.0042305
+                      },
+                      "ReceiveLockHeld": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.01,
+                        "p95UpperBoundMs": 0.011506,
+                        "p99UpperBoundMs": 0.011506,
+                        "maximumMs": 0.011506,
+                        "meanMs": 0.00999525
+                      },
+                      "SelectionLockWait": {
+                        "count": 5,
+                        "p50UpperBoundMs": 0.001931,
+                        "p95UpperBoundMs": 0.001931,
+                        "p99UpperBoundMs": 0.001931,
+                        "maximumMs": 0.001931,
+                        "meanMs": 0.0008834
+                      },
+                      "SelectionLockHeld": {
+                        "count": 5,
+                        "p50UpperBoundMs": 0.017678,
+                        "p95UpperBoundMs": 0.017678,
+                        "p99UpperBoundMs": 0.017678,
+                        "maximumMs": 0.017678,
+                        "meanMs": 0.0129808
+                      },
+                      "ReceiveToSelectionSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveToSendStartSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionToSendStart": {
+                        "count": 5,
+                        "p50UpperBoundMs": 0.008994,
+                        "p95UpperBoundMs": 0.008994,
+                        "p99UpperBoundMs": 0.008994,
+                        "maximumMs": 0.008994,
+                        "meanMs": 0.0055412000000000005
+                      },
+                      "SendAsyncAwait": {
+                        "count": 5,
+                        "p50UpperBoundMs": 0.043466,
+                        "p95UpperBoundMs": 0.043466,
+                        "p99UpperBoundMs": 0.043466,
+                        "maximumMs": 0.043466,
+                        "meanMs": 0.0318514
+                      }
+                    },
+                    "DATA_1025_4096": {
+                      "ReceiveToLock": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.01,
+                        "p95UpperBoundMs": 0.03784,
+                        "p99UpperBoundMs": 0.03784,
+                        "maximumMs": 0.03784,
+                        "meanMs": 0.01306025
+                      },
+                      "ReceiveLockHeld": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.130202,
+                        "p95UpperBoundMs": 0.130202,
+                        "p99UpperBoundMs": 0.130202,
+                        "maximumMs": 0.130202,
+                        "meanMs": 0.117013
+                      },
+                      "SelectionLockWait": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.000585,
+                        "p95UpperBoundMs": 0.000585,
+                        "p99UpperBoundMs": 0.000585,
+                        "maximumMs": 0.000585,
+                        "meanMs": 0.00051525
+                      },
+                      "SelectionLockHeld": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.130841,
+                        "p95UpperBoundMs": 0.130841,
+                        "p99UpperBoundMs": 0.130841,
+                        "maximumMs": 0.130841,
+                        "meanMs": 0.1163165
+                      },
+                      "ReceiveToSelectionSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveToSendStartSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionToSendStart": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.025,
+                        "p95UpperBoundMs": 0.055027,
+                        "p99UpperBoundMs": 0.055027,
+                        "maximumMs": 0.055027,
+                        "meanMs": 0.024036
+                      },
+                      "SendAsyncAwait": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.025,
+                        "p95UpperBoundMs": 0.077655,
+                        "p99UpperBoundMs": 0.077655,
+                        "maximumMs": 0.077655,
+                        "meanMs": 0.0353435
+                      }
+                    },
+                    "DATA_4097_16384": {
+                      "ReceiveToLock": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.043042,
+                        "p95UpperBoundMs": 0.043042,
+                        "p99UpperBoundMs": 0.043042,
+                        "maximumMs": 0.043042,
+                        "meanMs": 0.03232825
+                      },
+                      "ReceiveLockHeld": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.295018,
+                        "p95UpperBoundMs": 0.295018,
+                        "p99UpperBoundMs": 0.295018,
+                        "maximumMs": 0.295018,
+                        "meanMs": 0.2747655
+                      },
+                      "SelectionLockWait": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.000531,
+                        "p95UpperBoundMs": 0.000531,
+                        "p99UpperBoundMs": 0.000531,
+                        "maximumMs": 0.000531,
+                        "meanMs": 0.00037325
+                      },
+                      "SelectionLockHeld": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.5,
+                        "p95UpperBoundMs": 1.622785,
+                        "p99UpperBoundMs": 1.622785,
+                        "maximumMs": 1.622785,
+                        "meanMs": 0.6281825
+                      },
+                      "ReceiveToSelectionSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "ReceiveToSendStartSampled": {
+                        "count": 0,
+                        "p50UpperBoundMs": null,
+                        "p95UpperBoundMs": null,
+                        "p99UpperBoundMs": null,
+                        "maximumMs": 0,
+                        "meanMs": null
+                      },
+                      "SelectionToSendStart": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.025,
+                        "p95UpperBoundMs": 0.027944,
+                        "p99UpperBoundMs": 0.027944,
+                        "maximumMs": 0.027944,
+                        "meanMs": 0.02529775
+                      },
+                      "SendAsyncAwait": {
+                        "count": 4,
+                        "p50UpperBoundMs": 0.05,
+                        "p95UpperBoundMs": 0.088063,
+                        "p99UpperBoundMs": 0.088063,
+                        "maximumMs": 0.088063,
+                        "meanMs": 0.05058225
+                      }
+                    },
+                    "PONG": {
+                      "ReceiveToLock": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.001263,
+                        "p95UpperBoundMs": 0.001263,
+                        "p99UpperBoundMs": 0.001263,
+                        "maximumMs": 0.001263,
+                        "meanMs": 0.0008914999999999999
+                      },
+                      "ReceiveLockHeld": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.001844,
+                        "p95UpperBoundMs": 0.001844,
+                        "p99UpperBoundMs": 0.001844,
+                        "maximumMs": 0.001844,
+                        "meanMs": 0.0012783333333333334
+                      },
+                      "SelectionLockWait": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.000401,
+                        "p95UpperBoundMs": 0.000401,
+                        "p99UpperBoundMs": 0.000401,
+                        "maximumMs": 0.000401,
+                        "meanMs": 0.0002805
+                      },
+                      "SelectionLockHeld": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.000565,
+                        "p95UpperBoundMs": 0.000565,
+                        "p99UpperBoundMs": 0.000565,
+                        "maximumMs": 0.000565,
+                        "meanMs": 0.0005231666666666667
+                      },
+                      "ReceiveToSelectionSampled": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.05,
+                        "p95UpperBoundMs": 0.070783,
+                        "p99UpperBoundMs": 0.070783,
+                        "maximumMs": 0.070783,
+                        "meanMs": 0.041212
+                      },
+                      "ReceiveToSendStartSampled": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.05,
+                        "p95UpperBoundMs": 0.07256,
+                        "p99UpperBoundMs": 0.07256,
+                        "maximumMs": 0.07256,
+                        "meanMs": 0.04277483333333334
+                      },
+                      "SelectionToSendStart": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.001777,
+                        "p95UpperBoundMs": 0.001777,
+                        "p99UpperBoundMs": 0.001777,
+                        "maximumMs": 0.001777,
+                        "meanMs": 0.0015628333333333334
+                      },
+                      "SendAsyncAwait": {
+                        "count": 6,
+                        "p50UpperBoundMs": 0.01,
+                        "p95UpperBoundMs": 0.012278,
+                        "p99UpperBoundMs": 0.012278,
+                        "maximumMs": 0.012278,
+                        "meanMs": 0.010501166666666666
+                      }
+                    }
+                  },
+                  "dataSamplingStride": 16,
+                  "dataSampleCapacity": 256,
+                  "acceptedDataFrames": 12,
+                  "retainedDataSamples": 0,
+                  "discardedDataSamples": 0,
+                  "matchedSelections": 6,
+                  "oldestSampledPendingByteAgeMs": null,
+                  "consecutiveControlsWhileDataQueued": 0,
+                  "maximumConsecutiveControlsWhileDataQueued": 0,
+                  "publishStateCall": {
+                    "count": 34,
+                    "p50UpperBoundMs": 0.01,
+                    "p95UpperBoundMs": 0.031946,
+                    "p99UpperBoundMs": 0.031946,
+                    "maximumMs": 0.031946,
+                    "meanMs": 0.009811823529411765
+                  },
+                  "writerInFlightFrames": 0,
+                  "completedSendAttempts": 46,
+                  "failedSendAttempts": 0
+                }
+              ]
+            }
+          }
+        ],
+        "completedRoomLimit": 8,
+        "discardedCompletedObservations": 0,
+        "completed": [],
+        "recentTerminationLimit": 16,
+        "discardedRecentTerminations": 0,
+        "recentTerminations": [
+          {
+            "reference": "e53be96f1e10",
+            "generation": 3,
+            "termination": {
+              "utcMs": 1791490941303,
+              "firstObservedMonotonicTicks": 463681914164330,
+              "firstCapturedMonotonicTicks": 463681916082152,
+              "role": "client",
+              "cause": "PEER_CLOSE",
+              "closeCode": 1000,
+              "exceptionType": "none",
+              "epochAtFirstCause": 1,
+              "stateAtFirstCause": 2,
+              "acceptedAtFirstCause": 128,
+              "deliveredAtFirstCause": 128,
+              "pendingAtFirstCause": 0,
+              "hostAcceptedAtFirstCause": 64,
+              "hostDeliveredAtFirstCause": 64,
+              "clientAcceptedAtFirstCause": 64,
+              "clientDeliveredAtFirstCause": 64,
+              "epochAfterDetach": 2,
+              "stateAfterDetach": 0,
+              "gracefulClose": true,
+              "closeReplyDeadlineMs": 2000,
+              "elapsedFirstCauseToDetachMs": 12.4783
+            }
+          }
+        ],
+        "runtime": {
+          "threadPoolThreads": 7,
+          "threadPoolPendingWorkItems": 0,
+          "threadPoolCompletedWorkItems": 2067,
+          "availableWorkers": 32766,
+          "availableIo": 1000,
+          "managedHeapBytes": 259251000,
+          "allocatedBytes": 259073472,
+          "collectionCounts": [
+            0,
+            0,
+            0
+          ],
+          "gcPauseTimePercentage": 0,
+          "lastGcPauseMs": [
+            0,
+            0
+          ],
+          "gcHeapBytes": 0,
+          "gcFragmentedBytes": 0,
+          "processWorkingSetBytes": 343724032,
+          "processCpuMs": 8570
+        }
+      },
+      "latencyScope": "Synthetic two clients on this server; not phone RTT or core FPS"
+    }
+  },
+  "sandbox": {
+    "mediaFilesReadable": 25,
+    "protectedPathsDenied": 4,
+    "readOnlyMounts": true
+  },
+  "ready": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 0,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    }
+  },
+  "idleAfter": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    }
+  },
+  "idleBefore": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    }
+  },
+  "qualification": {
+    "old": {
+      "passed": true,
+      "dllSha256": "815fc8bc99a9d16247488a1797d2726b928eb3e592fd8a19700371e8d57c3243",
+      "ready": {
+        "maximumRooms": 512,
+        "maximumConnections": 1024,
+        "activeRooms": 0,
+        "activeConnections": 0,
+        "forwardedBytes": 0,
+        "recovery": {
+          "protocol": "station-stream.v2",
+          "maximumRooms": 64,
+          "windowBytes": 262144,
+          "retainedRooms": 0,
+          "activeConnections": 0,
+          "pendingBytes": 0,
+          "maximumRetainedBytes": 33554432,
+          "persistent": false
+        }
+      },
+      "sandbox": null,
+      "proof": {
+        "catalog": {
+          "passed": true,
+          "checks": 27846,
+          "catalogRevision": 20,
+          "visibleItems": 3479,
+          "contentIdentityFields": 0,
+          "metadataOptInVerified": true,
+          "allMetadataMatched": true,
+          "requestAndResponseSignaturesVerified": true,
+          "capabilities": [],
+          "public": false,
+          "physicalGameplayQualified": false,
+          "ownedSyntheticFixtureRemoved": true
+        },
+        "online": {
+          "passed": true,
+          "checks": 187,
+          "syntheticLicenses": 2,
+          "signedWindowsR74Engines": true,
+          "signedEngineIds": [
+            "bsnes-mercury-performance-79d7f9de",
+            "bsnes-mercury-performance-79d7f9de-autopass1",
+            "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+            "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+            "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+            "clownmdemu-d43c2708",
+            "clownmdemu-d43c2708-autopass1",
+            "clownmdemu-d43c2708-rs2-d66267cd4250",
+            "clownmdemu-d43c2708-rs3-9af2778898e4",
+            "clownmdemu-d43c2708-rs4-804b2acfea4c"
+          ],
+          "signedEngines": [
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "clownmdemu-d43c2708",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-autopass1",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-autopass1",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs2-d66267cd4250",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs3-9af2778898e4",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs4-804b2acfea4c",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+              "recoveryProtocol": "station-stream.v2"
+            }
+          ],
+          "signedTransports": [
+            "direct",
+            "relay-wss-v1",
+            "relay-wss-v2"
+          ],
+          "signedRecoveryCapabilities": [
+            "station-stream.v2"
+          ],
+          "signedRoomCapabilities": [
+            "short-invite-v1",
+            "own-room-member-profiles-v1"
+          ],
+          "legacyEngineIdsPreserved": true,
+          "exactForwardedBytes": 256,
+          "protectedV2Public": false,
+          "protectedResume": true,
+          "oneUseTickets": true,
+          "proofReplayDenied": true,
+          "ownRoomProfilesSigned": true,
+          "legacyV1": true,
+          "catalogCoverDownloadAuthorizationPreserved": true,
+          "gameDownloadVerified": true,
+          "androidGameplay": false,
+          "nativePauseSimulated": true,
+          "latencySamples": [],
+          "observations": null,
+          "latencyScope": "Synthetic two clients on this server; not phone RTT or core FPS"
+        }
+      },
+      "globalGateEnabledInShadow": false
+    },
+    "new": {
+      "passed": true,
+      "dllSha256": "9878ae9caea55bb6834745caa3a60140616d3e0a5f2ea71055fe9e9df813fe51",
+      "ready": {
+        "maximumRooms": 512,
+        "maximumConnections": 1024,
+        "activeRooms": 0,
+        "activeConnections": 0,
+        "forwardedBytes": 0,
+        "recovery": {
+          "protocol": "station-stream.v2",
+          "maximumRooms": 64,
+          "windowBytes": 262144,
+          "retainedRooms": 0,
+          "activeConnections": 0,
+          "pendingBytes": 0,
+          "maximumRetainedBytes": 33554432,
+          "persistent": false
+        }
+      },
+      "sandbox": {
+        "mediaFilesReadable": 25,
+        "protectedPathsDenied": 4,
+        "readOnlyMounts": true
+      },
+      "proof": {
+        "catalog": {
+          "passed": true,
+          "checks": 27852,
+          "catalogRevision": 20,
+          "visibleItems": 3479,
+          "contentIdentityFields": 1816,
+          "metadataOptInVerified": true,
+          "allMetadataMatched": true,
+          "requestAndResponseSignaturesVerified": true,
+          "capabilities": [
+            {
+              "itemId": "826da6daebe9edbebffb3721f83abf12",
+              "status": 503,
+              "code": "STATION_MULTIPLAYER_DISABLED",
+              "signedProfileApproved": false
+            },
+            {
+              "itemId": "ac79b8fc351cb0811a7e9b51a099ba9c",
+              "status": 503,
+              "code": "STATION_MULTIPLAYER_DISABLED",
+              "signedProfileApproved": false
+            },
+            {
+              "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+              "status": 503,
+              "code": "STATION_MULTIPLAYER_DISABLED",
+              "signedProfileApproved": false
+            }
+          ],
+          "public": false,
+          "physicalGameplayQualified": false,
+          "ownedSyntheticFixtureRemoved": true
+        },
+        "online": {
+          "passed": true,
+          "checks": 303,
+          "syntheticLicenses": 2,
+          "signedWindowsR74Engines": true,
+          "signedEngineIds": [
+            "bsnes-mercury-performance-79d7f9de",
+            "bsnes-mercury-performance-79d7f9de-autopass1",
+            "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+            "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+            "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+            "clownmdemu-d43c2708",
+            "clownmdemu-d43c2708-autopass1",
+            "clownmdemu-d43c2708-rs2-d66267cd4250",
+            "clownmdemu-d43c2708-rs3-9af2778898e4",
+            "clownmdemu-d43c2708-rs4-804b2acfea4c"
+          ],
+          "signedEngines": [
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "clownmdemu-d43c2708",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-autopass1",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-autopass1",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs2-d66267cd4250",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs3-9af2778898e4",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs4-804b2acfea4c",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+              "recoveryProtocol": "station-stream.v2"
+            }
+          ],
+          "signedTransports": [
+            "direct",
+            "relay-wss-v1",
+            "relay-wss-v2"
+          ],
+          "signedRecoveryCapabilities": [
+            "station-stream.v2"
+          ],
+          "signedRoomCapabilities": [
+            "short-invite-v1",
+            "own-room-member-profiles-v1"
+          ],
+          "legacyEngineIdsPreserved": true,
+          "exactForwardedBytes": 82688,
+          "protectedV2Public": false,
+          "protectedResume": true,
+          "oneUseTickets": true,
+          "proofReplayDenied": true,
+          "ownRoomProfilesSigned": true,
+          "legacyV1": true,
+          "catalogCoverDownloadAuthorizationPreserved": true,
+          "gameDownloadVerified": true,
+          "androidGameplay": false,
+          "nativePauseSimulated": true,
+          "latencySamples": [
+            {
+              "role": "host",
+              "kind": "DATA",
+              "bytes": 64,
+              "receiveMs": 0.958673
+            },
+            {
+              "role": "host",
+              "kind": "DATA",
+              "bytes": 64,
+              "receiveMs": 0.76463
+            },
+            {
+              "role": "host",
+              "kind": "DATA",
+              "bytes": 64,
+              "receiveMs": 0.687202
+            },
+            {
+              "role": "host",
+              "kind": "DATA",
+              "bytes": 64,
+              "receiveMs": 0.668876
+            },
+            {
+              "role": "host",
+              "kind": "DATA",
+              "bytes": 2048,
+              "receiveMs": 1.06214
+            },
+            {
+              "role": "host",
+              "kind": "DATA",
+              "bytes": 2048,
+              "receiveMs": 1.203639
+            },
+            {
+              "role": "host",
+              "kind": "DATA",
+              "bytes": 2048,
+              "receiveMs": 1.182921
+            },
+            {
+              "role": "host",
+              "kind": "DATA",
+              "bytes": 2048,
+              "receiveMs": 1.34613
+            },
+            {
+              "role": "host",
+              "kind": "DATA",
+              "bytes": 8192,
+              "receiveMs": 5.419201
+            },
+            {
+              "role": "host",
+              "kind": "DATA",
+              "bytes": 8192,
+              "receiveMs": 1.886097
+            },
+            {
+              "role": "host",
+              "kind": "DATA",
+              "bytes": 8192,
+              "receiveMs": 1.788633
+            },
+            {
+              "role": "host",
+              "kind": "DATA",
+              "bytes": 8192,
+              "receiveMs": 1.880898
+            },
+            {
+              "role": "host",
+              "kind": "PONG",
+              "bytes": 0,
+              "roundTripMs": 0.957937
+            },
+            {
+              "role": "host",
+              "kind": "PONG",
+              "bytes": 0,
+              "roundTripMs": 0.779939
+            },
+            {
+              "role": "host",
+              "kind": "PONG",
+              "bytes": 0,
+              "roundTripMs": 0.869718
+            },
+            {
+              "role": "host",
+              "kind": "PONG",
+              "bytes": 0,
+              "roundTripMs": 0.701783
+            },
+            {
+              "role": "host",
+              "kind": "PONG",
+              "bytes": 0,
+              "roundTripMs": 0.73567
+            },
+            {
+              "role": "host",
+              "kind": "PONG",
+              "bytes": 0,
+              "roundTripMs": 0.806857
+            },
+            {
+              "role": "client",
+              "kind": "DATA",
+              "bytes": 64,
+              "receiveMs": 1.120014
+            },
+            {
+              "role": "client",
+              "kind": "DATA",
+              "bytes": 64,
+              "receiveMs": 0.905036
+            },
+            {
+              "role": "client",
+              "kind": "DATA",
+              "bytes": 64,
+              "receiveMs": 0.794542
+            },
+            {
+              "role": "client",
+              "kind": "DATA",
+              "bytes": 64,
+              "receiveMs": 0.681596
+            },
+            {
+              "role": "client",
+              "kind": "DATA",
+              "bytes": 2048,
+              "receiveMs": 1.135716
+            },
+            {
+              "role": "client",
+              "kind": "DATA",
+              "bytes": 2048,
+              "receiveMs": 1.127193
+            },
+            {
+              "role": "client",
+              "kind": "DATA",
+              "bytes": 2048,
+              "receiveMs": 1.05445
+            },
+            {
+              "role": "client",
+              "kind": "DATA",
+              "bytes": 2048,
+              "receiveMs": 0.999636
+            },
+            {
+              "role": "client",
+              "kind": "DATA",
+              "bytes": 8192,
+              "receiveMs": 1.681002
+            },
+            {
+              "role": "client",
+              "kind": "DATA",
+              "bytes": 8192,
+              "receiveMs": 1.671083
+            },
+            {
+              "role": "client",
+              "kind": "DATA",
+              "bytes": 8192,
+              "receiveMs": 1.719976
+            },
+            {
+              "role": "client",
+              "kind": "DATA",
+              "bytes": 8192,
+              "receiveMs": 1.777688
+            },
+            {
+              "role": "client",
+              "kind": "PONG",
+              "bytes": 0,
+              "roundTripMs": 0.801856
+            },
+            {
+              "role": "client",
+              "kind": "PONG",
+              "bytes": 0,
+              "roundTripMs": 0.839004
+            },
+            {
+              "role": "client",
+              "kind": "PONG",
+              "bytes": 0,
+              "roundTripMs": 0.834985
+            },
+            {
+              "role": "client",
+              "kind": "PONG",
+              "bytes": 0,
+              "roundTripMs": 0.806336
+            },
+            {
+              "role": "client",
+              "kind": "PONG",
+              "bytes": 0,
+              "roundTripMs": 0.764123
+            },
+            {
+              "role": "client",
+              "kind": "PONG",
+              "bytes": 0,
+              "roundTripMs": 0.723272
+            }
+          ],
+          "observations": {
+            "version": 1,
+            "utc": "2026-10-08T20:21:46.966012+00:00",
+            "monotonicFrequency": 1000000000,
+            "enabled": true,
+            "persistent": false,
+            "active": [
+              {
+                "reference": "c939057b9d83",
+                "generation": 3,
+                "stream": {
+                  "enabled": true,
+                  "epoch": 2,
+                  "state": 2,
+                  "hostAccepted": 41344,
+                  "hostDelivered": 41344,
+                  "clientAccepted": 41280,
+                  "clientDelivered": 41280,
+                  "hostPending": 0,
+                  "clientPending": 0,
+                  "availableHostWriterBytes": 0,
+                  "availableClientWriterBytes": 0,
+                  "pendingHostPong": false,
+                  "pendingClientPong": false,
+                  "discardedObservations": 0,
+                  "connectionObservationLimit": 8,
+                  "terminationLimit": 8,
+                  "discardedTerminations": 0,
+                  "terminations": [
+                    {
+                      "utcMs": 1791490906253,
+                      "firstObservedMonotonicTicks": 463646863694677,
+                      "firstCapturedMonotonicTicks": 463646865650801,
+                      "role": "client",
+                      "cause": "PEER_CLOSE",
+                      "closeCode": 1000,
+                      "exceptionType": "none",
+                      "epochAtFirstCause": 1,
+                      "stateAtFirstCause": 2,
+                      "acceptedAtFirstCause": 128,
+                      "deliveredAtFirstCause": 128,
+                      "pendingAtFirstCause": 0,
+                      "hostAcceptedAtFirstCause": 64,
+                      "hostDeliveredAtFirstCause": 64,
+                      "clientAcceptedAtFirstCause": 64,
+                      "clientDeliveredAtFirstCause": 64,
+                      "epochAfterDetach": 2,
+                      "stateAfterDetach": 0,
+                      "gracefulClose": true,
+                      "closeReplyDeadlineMs": 2000,
+                      "elapsedFirstCauseToDetachMs": 11.2973
+                    }
+                  ],
+                  "transitions": {
+                    "capacity": 128,
+                    "discardedEvents": 0,
+                    "receivedTypeCounts": [
+                      0,
+                      3,
+                      0,
+                      27,
+                      27,
+                      0,
+                      0,
+                      4,
+                      4,
+                      12,
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "events": [
+                      {
+                        "utc": "2026-10-08T20:21:46.240236+00:00",
+                        "monotonicTicks": 463646850901387,
+                        "cause": "Paused7",
+                        "role": "client",
+                        "beforeEpoch": 1,
+                        "afterEpoch": 1,
+                        "beforeState": 0,
+                        "afterState": 1
+                      },
+                      {
+                        "utc": "2026-10-08T20:21:46.2412658+00:00",
+                        "monotonicTicks": 463646851931263,
+                        "cause": "Ready8",
+                        "role": "host",
+                        "beforeEpoch": 1,
+                        "afterEpoch": 1,
+                        "beforeState": 1,
+                        "afterState": 2
+                      },
+                      {
+                        "utc": "2026-10-08T20:21:46.2600466+00:00",
+                        "monotonicTicks": 463646870712190,
+                        "cause": "Detach",
+                        "role": "client",
+                        "beforeEpoch": 1,
+                        "afterEpoch": 2,
+                        "beforeState": 2,
+                        "afterState": 0
+                      },
+                      {
+                        "utc": "2026-10-08T20:21:46.8503089+00:00",
+                        "monotonicTicks": 463647460974088,
+                        "cause": "Paused7",
+                        "role": "client",
+                        "beforeEpoch": 2,
+                        "afterEpoch": 2,
+                        "beforeState": 0,
+                        "afterState": 1
+                      },
+                      {
+                        "utc": "2026-10-08T20:21:46.851046+00:00",
+                        "monotonicTicks": 463647461711378,
+                        "cause": "Ready8",
+                        "role": "client",
+                        "beforeEpoch": 2,
+                        "afterEpoch": 2,
+                        "beforeState": 1,
+                        "afterState": 2
+                      }
+                    ]
+                  },
+                  "connections": [
+                    {
+                      "reference": "3b21d6b7d368",
+                      "role": "host",
+                      "phases": {
+                        "DATA_1_1024": {
+                          "ReceiveToLock": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.007448,
+                            "p95UpperBoundMs": 0.007448,
+                            "p99UpperBoundMs": 0.007448,
+                            "maximumMs": 0.007448,
+                            "meanMs": 0.004628666666666667
+                          },
+                          "ReceiveLockHeld": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.025,
+                            "p95UpperBoundMs": 2.335251,
+                            "p99UpperBoundMs": 2.335251,
+                            "maximumMs": 2.335251,
+                            "meanMs": 0.40085683333333333
+                          },
+                          "SelectionLockWait": {
+                            "count": 5,
+                            "p50UpperBoundMs": 0.000745,
+                            "p95UpperBoundMs": 0.000745,
+                            "p99UpperBoundMs": 0.000745,
+                            "maximumMs": 0.000745,
+                            "meanMs": 0.000556
+                          },
+                          "SelectionLockHeld": {
+                            "count": 5,
+                            "p50UpperBoundMs": 0.016199,
+                            "p95UpperBoundMs": 0.016199,
+                            "p99UpperBoundMs": 0.016199,
+                            "maximumMs": 0.016199,
+                            "meanMs": 0.012798399999999998
+                          },
+                          "ReceiveToSelectionSampled": {
+                            "count": 2,
+                            "p50UpperBoundMs": 0.1,
+                            "p95UpperBoundMs": 0.108062,
+                            "p99UpperBoundMs": 0.108062,
+                            "maximumMs": 0.108062,
+                            "meanMs": 0.087755
+                          },
+                          "ReceiveToSendStartSampled": {
+                            "count": 2,
+                            "p50UpperBoundMs": 0.1,
+                            "p95UpperBoundMs": 0.113603,
+                            "p99UpperBoundMs": 0.113603,
+                            "maximumMs": 0.113603,
+                            "meanMs": 0.0934305
+                          },
+                          "SelectionToSendStart": {
+                            "count": 5,
+                            "p50UpperBoundMs": 0.00581,
+                            "p95UpperBoundMs": 0.00581,
+                            "p99UpperBoundMs": 0.00581,
+                            "maximumMs": 0.00581,
+                            "meanMs": 0.0050146
+                          },
+                          "SendAsyncAwait": {
+                            "count": 5,
+                            "p50UpperBoundMs": 0.05,
+                            "p95UpperBoundMs": 0.057863,
+                            "p99UpperBoundMs": 0.057863,
+                            "maximumMs": 0.057863,
+                            "meanMs": 0.0352588
+                          }
+                        },
+                        "DATA_1025_4096": {
+                          "ReceiveToLock": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.01,
+                            "p95UpperBoundMs": 0.037188,
+                            "p99UpperBoundMs": 0.037188,
+                            "maximumMs": 0.037188,
+                            "meanMs": 0.020709
+                          },
+                          "ReceiveLockHeld": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.195489,
+                            "p95UpperBoundMs": 0.195489,
+                            "p99UpperBoundMs": 0.195489,
+                            "maximumMs": 0.195489,
+                            "meanMs": 0.17557175
+                          },
+                          "SelectionLockWait": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.000745,
+                            "p95UpperBoundMs": 0.000745,
+                            "p99UpperBoundMs": 0.000745,
+                            "maximumMs": 0.000745,
+                            "meanMs": 0.000573
+                          },
+                          "SelectionLockHeld": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.196982,
+                            "p95UpperBoundMs": 0.196982,
+                            "p99UpperBoundMs": 0.196982,
+                            "maximumMs": 0.196982,
+                            "meanMs": 0.15790275
+                          },
+                          "ReceiveToSelectionSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveToSendStartSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionToSendStart": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.025,
+                            "p95UpperBoundMs": 0.02626,
+                            "p99UpperBoundMs": 0.02626,
+                            "maximumMs": 0.02626,
+                            "meanMs": 0.0178655
+                          },
+                          "SendAsyncAwait": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.047592,
+                            "p95UpperBoundMs": 0.047592,
+                            "p99UpperBoundMs": 0.047592,
+                            "maximumMs": 0.047592,
+                            "meanMs": 0.03790775
+                          }
+                        },
+                        "DATA_4097_16384": {
+                          "ReceiveToLock": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.05,
+                            "p95UpperBoundMs": 0.07724,
+                            "p99UpperBoundMs": 0.07724,
+                            "maximumMs": 0.07724,
+                            "meanMs": 0.05529875
+                          },
+                          "ReceiveLockHeld": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.5,
+                            "p95UpperBoundMs": 1.570765,
+                            "p99UpperBoundMs": 1.570765,
+                            "maximumMs": 1.570765,
+                            "meanMs": 0.6355795
+                          },
+                          "SelectionLockWait": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.000722,
+                            "p95UpperBoundMs": 0.000722,
+                            "p99UpperBoundMs": 0.000722,
+                            "maximumMs": 0.000722,
+                            "meanMs": 0.00068925
+                          },
+                          "SelectionLockHeld": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.316256,
+                            "p95UpperBoundMs": 0.316256,
+                            "p99UpperBoundMs": 0.316256,
+                            "maximumMs": 0.316256,
+                            "meanMs": 0.3014005
+                          },
+                          "ReceiveToSelectionSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveToSendStartSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionToSendStart": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.026578,
+                            "p95UpperBoundMs": 0.026578,
+                            "p99UpperBoundMs": 0.026578,
+                            "maximumMs": 0.026578,
+                            "meanMs": 0.0252215
+                          },
+                          "SendAsyncAwait": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.044098,
+                            "p95UpperBoundMs": 0.044098,
+                            "p99UpperBoundMs": 0.044098,
+                            "maximumMs": 0.044098,
+                            "meanMs": 0.03947475
+                          }
+                        },
+                        "PONG": {
+                          "ReceiveToLock": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.005112,
+                            "p95UpperBoundMs": 0.005112,
+                            "p99UpperBoundMs": 0.005112,
+                            "maximumMs": 0.005112,
+                            "meanMs": 0.0044415
+                          },
+                          "ReceiveLockHeld": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.01,
+                            "p95UpperBoundMs": 0.204186,
+                            "p99UpperBoundMs": 0.204186,
+                            "maximumMs": 0.204186,
+                            "meanMs": 0.037704999999999995
+                          },
+                          "SelectionLockWait": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.000695,
+                            "p95UpperBoundMs": 0.000695,
+                            "p99UpperBoundMs": 0.000695,
+                            "maximumMs": 0.000695,
+                            "meanMs": 0.0006606666666666666
+                          },
+                          "SelectionLockHeld": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.001878,
+                            "p95UpperBoundMs": 0.001878,
+                            "p99UpperBoundMs": 0.001878,
+                            "maximumMs": 0.001878,
+                            "meanMs": 0.0018048333333333334
+                          },
+                          "ReceiveToSelectionSampled": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.1,
+                            "p95UpperBoundMs": 0.289288,
+                            "p99UpperBoundMs": 0.289288,
+                            "maximumMs": 0.289288,
+                            "meanMs": 0.104051
+                          },
+                          "ReceiveToSendStartSampled": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.1,
+                            "p95UpperBoundMs": 0.29466,
+                            "p99UpperBoundMs": 0.29466,
+                            "maximumMs": 0.29466,
+                            "meanMs": 0.10918749999999999
+                          },
+                          "SelectionToSendStart": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.005372,
+                            "p95UpperBoundMs": 0.005372,
+                            "p99UpperBoundMs": 0.005372,
+                            "maximumMs": 0.005372,
+                            "meanMs": 0.0051365
+                          },
+                          "SendAsyncAwait": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.041556,
+                            "p95UpperBoundMs": 0.041556,
+                            "p99UpperBoundMs": 0.041556,
+                            "maximumMs": 0.041556,
+                            "meanMs": 0.03047
+                          }
+                        }
+                      },
+                      "dataSamplingStride": 16,
+                      "dataSampleCapacity": 256,
+                      "acceptedDataFrames": 14,
+                      "retainedDataSamples": 0,
+                      "discardedDataSamples": 0,
+                      "matchedSelections": 8,
+                      "oldestSampledPendingByteAgeMs": null,
+                      "consecutiveControlsWhileDataQueued": 0,
+                      "maximumConsecutiveControlsWhileDataQueued": 0,
+                      "publishStateCall": {
+                        "count": 38,
+                        "p50UpperBoundMs": 0.01,
+                        "p95UpperBoundMs": 0.025,
+                        "p99UpperBoundMs": 0.830425,
+                        "maximumMs": 0.830425,
+                        "meanMs": 0.031431842105263154
+                      },
+                      "writerInFlightFrames": 0,
+                      "completedSendAttempts": 53,
+                      "failedSendAttempts": 0
+                    },
+                    {
+                      "reference": "39bb2e6560a1",
+                      "role": "client",
+                      "phases": {
+                        "DATA_1_1024": {
+                          "ReceiveToLock": {
+                            "count": 1,
+                            "p50UpperBoundMs": 0.003461,
+                            "p95UpperBoundMs": 0.003461,
+                            "p99UpperBoundMs": 0.003461,
+                            "maximumMs": 0.003461,
+                            "meanMs": 0.003461
+                          },
+                          "ReceiveLockHeld": {
+                            "count": 1,
+                            "p50UpperBoundMs": 0.008263,
+                            "p95UpperBoundMs": 0.008263,
+                            "p99UpperBoundMs": 0.008263,
+                            "maximumMs": 0.008263,
+                            "meanMs": 0.008263
+                          },
+                          "SelectionLockWait": {
+                            "count": 1,
+                            "p50UpperBoundMs": 0.000718,
+                            "p95UpperBoundMs": 0.000718,
+                            "p99UpperBoundMs": 0.000718,
+                            "maximumMs": 0.000718,
+                            "meanMs": 0.000718
+                          },
+                          "SelectionLockHeld": {
+                            "count": 1,
+                            "p50UpperBoundMs": 1.813012,
+                            "p95UpperBoundMs": 1.813012,
+                            "p99UpperBoundMs": 1.813012,
+                            "maximumMs": 1.813012,
+                            "meanMs": 1.813012
+                          },
+                          "ReceiveToSelectionSampled": {
+                            "count": 1,
+                            "p50UpperBoundMs": 4.277114,
+                            "p95UpperBoundMs": 4.277114,
+                            "p99UpperBoundMs": 4.277114,
+                            "maximumMs": 4.277114,
+                            "meanMs": 4.277114
+                          },
+                          "ReceiveToSendStartSampled": {
+                            "count": 1,
+                            "p50UpperBoundMs": 4.298507,
+                            "p95UpperBoundMs": 4.298507,
+                            "p99UpperBoundMs": 4.298507,
+                            "maximumMs": 4.298507,
+                            "meanMs": 4.298507
+                          },
+                          "SelectionToSendStart": {
+                            "count": 1,
+                            "p50UpperBoundMs": 0.021393,
+                            "p95UpperBoundMs": 0.021393,
+                            "p99UpperBoundMs": 0.021393,
+                            "maximumMs": 0.021393,
+                            "meanMs": 0.021393
+                          },
+                          "SendAsyncAwait": {
+                            "count": 1,
+                            "p50UpperBoundMs": 0.042457,
+                            "p95UpperBoundMs": 0.042457,
+                            "p99UpperBoundMs": 0.042457,
+                            "maximumMs": 0.042457,
+                            "meanMs": 0.042457
+                          }
+                        },
+                        "DATA_1025_4096": {
+                          "ReceiveToLock": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveLockHeld": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionLockWait": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionLockHeld": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveToSelectionSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveToSendStartSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionToSendStart": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SendAsyncAwait": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          }
+                        },
+                        "DATA_4097_16384": {
+                          "ReceiveToLock": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveLockHeld": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionLockWait": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionLockHeld": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveToSelectionSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveToSendStartSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionToSendStart": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SendAsyncAwait": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          }
+                        },
+                        "PONG": {
+                          "ReceiveToLock": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveLockHeld": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionLockWait": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionLockHeld": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveToSelectionSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveToSendStartSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionToSendStart": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SendAsyncAwait": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          }
+                        }
+                      },
+                      "dataSamplingStride": 16,
+                      "dataSampleCapacity": 256,
+                      "acceptedDataFrames": 1,
+                      "retainedDataSamples": 0,
+                      "discardedDataSamples": 0,
+                      "matchedSelections": 1,
+                      "oldestSampledPendingByteAgeMs": null,
+                      "consecutiveControlsWhileDataQueued": 0,
+                      "maximumConsecutiveControlsWhileDataQueued": 0,
+                      "publishStateCall": {
+                        "count": 5,
+                        "p50UpperBoundMs": 0.01,
+                        "p95UpperBoundMs": 0.011152,
+                        "p99UpperBoundMs": 0.011152,
+                        "maximumMs": 0.011152,
+                        "meanMs": 0.008377800000000001
+                      },
+                      "writerInFlightFrames": 0,
+                      "completedSendAttempts": 6,
+                      "failedSendAttempts": 0
+                    },
+                    {
+                      "reference": "303cc6779c10",
+                      "role": "client",
+                      "phases": {
+                        "DATA_1_1024": {
+                          "ReceiveToLock": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.00565,
+                            "p95UpperBoundMs": 0.00565,
+                            "p99UpperBoundMs": 0.00565,
+                            "maximumMs": 0.00565,
+                            "meanMs": 0.0054575
+                          },
+                          "ReceiveLockHeld": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.015726,
+                            "p95UpperBoundMs": 0.015726,
+                            "p99UpperBoundMs": 0.015726,
+                            "maximumMs": 0.015726,
+                            "meanMs": 0.014743
+                          },
+                          "SelectionLockWait": {
+                            "count": 5,
+                            "p50UpperBoundMs": 0.000588,
+                            "p95UpperBoundMs": 0.000588,
+                            "p99UpperBoundMs": 0.000588,
+                            "maximumMs": 0.000588,
+                            "meanMs": 0.0004324
+                          },
+                          "SelectionLockHeld": {
+                            "count": 5,
+                            "p50UpperBoundMs": 0.025,
+                            "p95UpperBoundMs": 0.039892,
+                            "p99UpperBoundMs": 0.039892,
+                            "maximumMs": 0.039892,
+                            "meanMs": 0.0177404
+                          },
+                          "ReceiveToSelectionSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveToSendStartSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionToSendStart": {
+                            "count": 5,
+                            "p50UpperBoundMs": 0.01,
+                            "p95UpperBoundMs": 0.0161,
+                            "p99UpperBoundMs": 0.0161,
+                            "maximumMs": 0.0161,
+                            "meanMs": 0.006676799999999999
+                          },
+                          "SendAsyncAwait": {
+                            "count": 5,
+                            "p50UpperBoundMs": 0.034563,
+                            "p95UpperBoundMs": 0.034563,
+                            "p99UpperBoundMs": 0.034563,
+                            "maximumMs": 0.034563,
+                            "meanMs": 0.029899
+                          }
+                        },
+                        "DATA_1025_4096": {
+                          "ReceiveToLock": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.004791,
+                            "p95UpperBoundMs": 0.004791,
+                            "p99UpperBoundMs": 0.004791,
+                            "maximumMs": 0.004791,
+                            "meanMs": 0.00444925
+                          },
+                          "ReceiveLockHeld": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.190871,
+                            "p95UpperBoundMs": 0.190871,
+                            "p99UpperBoundMs": 0.190871,
+                            "maximumMs": 0.190871,
+                            "meanMs": 0.15130975
+                          },
+                          "SelectionLockWait": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.000674,
+                            "p95UpperBoundMs": 0.000674,
+                            "p99UpperBoundMs": 0.000674,
+                            "maximumMs": 0.000674,
+                            "meanMs": 0.00050025
+                          },
+                          "SelectionLockHeld": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.25,
+                            "p95UpperBoundMs": 0.26703,
+                            "p99UpperBoundMs": 0.26703,
+                            "maximumMs": 0.26703,
+                            "meanMs": 0.20987325
+                          },
+                          "ReceiveToSelectionSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveToSendStartSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionToSendStart": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.018112,
+                            "p95UpperBoundMs": 0.018112,
+                            "p99UpperBoundMs": 0.018112,
+                            "maximumMs": 0.018112,
+                            "meanMs": 0.01417
+                          },
+                          "SendAsyncAwait": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.048569,
+                            "p95UpperBoundMs": 0.048569,
+                            "p99UpperBoundMs": 0.048569,
+                            "maximumMs": 0.048569,
+                            "meanMs": 0.0378855
+                          }
+                        },
+                        "DATA_4097_16384": {
+                          "ReceiveToLock": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.05,
+                            "p95UpperBoundMs": 0.053029,
+                            "p99UpperBoundMs": 0.053029,
+                            "maximumMs": 0.053029,
+                            "meanMs": 0.034799
+                          },
+                          "ReceiveLockHeld": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.299137,
+                            "p95UpperBoundMs": 0.299137,
+                            "p99UpperBoundMs": 0.299137,
+                            "maximumMs": 0.299137,
+                            "meanMs": 0.28240625
+                          },
+                          "SelectionLockWait": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.000678,
+                            "p95UpperBoundMs": 0.000678,
+                            "p99UpperBoundMs": 0.000678,
+                            "maximumMs": 0.000678,
+                            "meanMs": 0.000617
+                          },
+                          "SelectionLockHeld": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.5,
+                            "p95UpperBoundMs": 1.41593,
+                            "p99UpperBoundMs": 1.41593,
+                            "maximumMs": 1.41593,
+                            "meanMs": 0.579758
+                          },
+                          "ReceiveToSelectionSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "ReceiveToSendStartSampled": {
+                            "count": 0,
+                            "p50UpperBoundMs": null,
+                            "p95UpperBoundMs": null,
+                            "p99UpperBoundMs": null,
+                            "maximumMs": 0,
+                            "meanMs": null
+                          },
+                          "SelectionToSendStart": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.05,
+                            "p95UpperBoundMs": 0.058016,
+                            "p99UpperBoundMs": 0.058016,
+                            "maximumMs": 0.058016,
+                            "meanMs": 0.042567
+                          },
+                          "SendAsyncAwait": {
+                            "count": 4,
+                            "p50UpperBoundMs": 0.05,
+                            "p95UpperBoundMs": 0.058458,
+                            "p99UpperBoundMs": 0.058458,
+                            "maximumMs": 0.058458,
+                            "meanMs": 0.04189625
+                          }
+                        },
+                        "PONG": {
+                          "ReceiveToLock": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.003495,
+                            "p95UpperBoundMs": 0.003495,
+                            "p99UpperBoundMs": 0.003495,
+                            "maximumMs": 0.003495,
+                            "meanMs": 0.0032686666666666667
+                          },
+                          "ReceiveLockHeld": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.003458,
+                            "p95UpperBoundMs": 0.003458,
+                            "p99UpperBoundMs": 0.003458,
+                            "maximumMs": 0.003458,
+                            "meanMs": 0.003054166666666667
+                          },
+                          "SelectionLockWait": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.00017,
+                            "p95UpperBoundMs": 0.00017,
+                            "p99UpperBoundMs": 0.00017,
+                            "maximumMs": 0.00017,
+                            "meanMs": 0.00014450000000000002
+                          },
+                          "SelectionLockHeld": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.001374,
+                            "p95UpperBoundMs": 0.001374,
+                            "p99UpperBoundMs": 0.001374,
+                            "maximumMs": 0.001374,
+                            "meanMs": 0.0012921666666666667
+                          },
+                          "ReceiveToSelectionSampled": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.066046,
+                            "p95UpperBoundMs": 0.066046,
+                            "p99UpperBoundMs": 0.066046,
+                            "maximumMs": 0.066046,
+                            "meanMs": 0.051083333333333335
+                          },
+                          "ReceiveToSendStartSampled": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.070847,
+                            "p95UpperBoundMs": 0.070847,
+                            "p99UpperBoundMs": 0.070847,
+                            "maximumMs": 0.070847,
+                            "meanMs": 0.05565416666666667
+                          },
+                          "SelectionToSendStart": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.004841,
+                            "p95UpperBoundMs": 0.004841,
+                            "p99UpperBoundMs": 0.004841,
+                            "maximumMs": 0.004841,
+                            "meanMs": 0.004570833333333334
+                          },
+                          "SendAsyncAwait": {
+                            "count": 6,
+                            "p50UpperBoundMs": 0.028188,
+                            "p95UpperBoundMs": 0.028188,
+                            "p99UpperBoundMs": 0.028188,
+                            "maximumMs": 0.028188,
+                            "meanMs": 0.026786833333333333
+                          }
+                        }
+                      },
+                      "dataSamplingStride": 16,
+                      "dataSampleCapacity": 256,
+                      "acceptedDataFrames": 12,
+                      "retainedDataSamples": 0,
+                      "discardedDataSamples": 0,
+                      "matchedSelections": 6,
+                      "oldestSampledPendingByteAgeMs": null,
+                      "consecutiveControlsWhileDataQueued": 0,
+                      "maximumConsecutiveControlsWhileDataQueued": 0,
+                      "publishStateCall": {
+                        "count": 34,
+                        "p50UpperBoundMs": 0.01,
+                        "p95UpperBoundMs": 0.022274,
+                        "p99UpperBoundMs": 0.022274,
+                        "maximumMs": 0.022274,
+                        "meanMs": 0.009350617647058823
+                      },
+                      "writerInFlightFrames": 0,
+                      "completedSendAttempts": 47,
+                      "failedSendAttempts": 0
+                    }
+                  ]
+                }
+              }
+            ],
+            "completedRoomLimit": 8,
+            "discardedCompletedObservations": 0,
+            "completed": [],
+            "recentTerminationLimit": 16,
+            "discardedRecentTerminations": 0,
+            "recentTerminations": [
+              {
+                "reference": "c939057b9d83",
+                "generation": 3,
+                "termination": {
+                  "utcMs": 1791490906253,
+                  "firstObservedMonotonicTicks": 463646863694677,
+                  "firstCapturedMonotonicTicks": 463646865650801,
+                  "role": "client",
+                  "cause": "PEER_CLOSE",
+                  "closeCode": 1000,
+                  "exceptionType": "none",
+                  "epochAtFirstCause": 1,
+                  "stateAtFirstCause": 2,
+                  "acceptedAtFirstCause": 128,
+                  "deliveredAtFirstCause": 128,
+                  "pendingAtFirstCause": 0,
+                  "hostAcceptedAtFirstCause": 64,
+                  "hostDeliveredAtFirstCause": 64,
+                  "clientAcceptedAtFirstCause": 64,
+                  "clientDeliveredAtFirstCause": 64,
+                  "epochAfterDetach": 2,
+                  "stateAfterDetach": 0,
+                  "gracefulClose": true,
+                  "closeReplyDeadlineMs": 2000,
+                  "elapsedFirstCauseToDetachMs": 11.2973
+                }
+              }
+            ],
+            "runtime": {
+              "threadPoolThreads": 7,
+              "threadPoolPendingWorkItems": 0,
+              "threadPoolCompletedWorkItems": 1682,
+              "availableWorkers": 32766,
+              "availableIo": 1000,
+              "managedHeapBytes": 250207392,
+              "allocatedBytes": 250031616,
+              "collectionCounts": [
+                0,
+                0,
+                0
+              ],
+              "gcPauseTimePercentage": 0,
+              "lastGcPauseMs": [
+                0,
+                0
+              ],
+              "gcHeapBytes": 0,
+              "gcFragmentedBytes": 0,
+              "processWorkingSetBytes": 330694656,
+              "processCpuMs": 5610
+            }
+          },
+          "latencyScope": "Synthetic two clients on this server; not phone RTT or core FPS"
+        }
+      },
+      "globalGateEnabledInShadow": false
+    },
+    "unapproved-gate": {
+      "passed": true,
+      "dllSha256": "9878ae9caea55bb6834745caa3a60140616d3e0a5f2ea71055fe9e9df813fe51",
+      "ready": {
+        "maximumRooms": 512,
+        "maximumConnections": 1024,
+        "activeRooms": 0,
+        "activeConnections": 0,
+        "forwardedBytes": 0,
+        "recovery": {
+          "protocol": "station-stream.v2",
+          "maximumRooms": 64,
+          "windowBytes": 262144,
+          "retainedRooms": 0,
+          "activeConnections": 0,
+          "pendingBytes": 0,
+          "maximumRetainedBytes": 33554432,
+          "persistent": false
+        }
+      },
+      "sandbox": {
+        "mediaFilesReadable": 25,
+        "protectedPathsDenied": 4,
+        "readOnlyMounts": true
+      },
+      "proof": {
+        "catalog": {
+          "passed": true,
+          "checks": 27860,
+          "catalogRevision": 20,
+          "visibleItems": 3479,
+          "contentIdentityFields": 1816,
+          "metadataOptInVerified": true,
+          "allMetadataMatched": true,
+          "requestAndResponseSignaturesVerified": true,
+          "capabilities": [
+            {
+              "itemId": "826da6daebe9edbebffb3721f83abf12",
+              "status": 200,
+              "multiplayerVersion": 3,
+              "capability": "station-multiplayer.v3",
+              "approvedProfiles": 0,
+              "profiles": [
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+                  "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+                  "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+                  "profileId": "standard-2p-v1",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": false,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "pending-controller-qualification",
+                  "allowedPlayerCounts": [
+                    2
+                  ]
+                },
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": false,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "two-player",
+                  "allowedPlayerCounts": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "itemId": "ac79b8fc351cb0811a7e9b51a099ba9c",
+              "status": 200,
+              "multiplayerVersion": 3,
+              "capability": "station-multiplayer.v3",
+              "approvedProfiles": 0,
+              "profiles": []
+            },
+            {
+              "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+              "status": 200,
+              "multiplayerVersion": 3,
+              "capability": "station-multiplayer.v3",
+              "approvedProfiles": 0,
+              "profiles": [
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+                  "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+                  "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+                  "profileId": "standard-2p-v1",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": false,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "pending-controller-qualification",
+                  "allowedPlayerCounts": [
+                    2
+                  ]
+                },
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-sbomberman2-usa-battle-single-r77",
+                  "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+                  "maximumPlayers": 4,
+                  "approved": false,
+                  "controllerProfile": "snes-multitap-port2-v1",
+                  "mode": "battle-single",
+                  "allowedPlayerCounts": [
+                    2,
+                    3,
+                    4
+                  ]
+                }
+              ]
+            }
+          ],
+          "public": false,
+          "physicalGameplayQualified": false,
+          "ownedSyntheticFixtureRemoved": true
+        }
+      },
+      "globalGateEnabledInShadow": true
+    },
+    "rollback-old": {
+      "passed": true,
+      "dllSha256": "815fc8bc99a9d16247488a1797d2726b928eb3e592fd8a19700371e8d57c3243",
+      "ready": {
+        "maximumRooms": 512,
+        "maximumConnections": 1024,
+        "activeRooms": 0,
+        "activeConnections": 0,
+        "forwardedBytes": 0,
+        "recovery": {
+          "protocol": "station-stream.v2",
+          "maximumRooms": 64,
+          "windowBytes": 262144,
+          "retainedRooms": 0,
+          "activeConnections": 0,
+          "pendingBytes": 0,
+          "maximumRetainedBytes": 33554432,
+          "persistent": false
+        }
+      },
+      "sandbox": null,
+      "proof": {
+        "catalog": {
+          "passed": true,
+          "checks": 27846,
+          "catalogRevision": 20,
+          "visibleItems": 3479,
+          "contentIdentityFields": 0,
+          "metadataOptInVerified": true,
+          "allMetadataMatched": true,
+          "requestAndResponseSignaturesVerified": true,
+          "capabilities": [],
+          "public": false,
+          "physicalGameplayQualified": false,
+          "ownedSyntheticFixtureRemoved": true
+        },
+        "online": {
+          "passed": true,
+          "checks": 187,
+          "syntheticLicenses": 2,
+          "signedWindowsR74Engines": true,
+          "signedEngineIds": [
+            "bsnes-mercury-performance-79d7f9de",
+            "bsnes-mercury-performance-79d7f9de-autopass1",
+            "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+            "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+            "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+            "clownmdemu-d43c2708",
+            "clownmdemu-d43c2708-autopass1",
+            "clownmdemu-d43c2708-rs2-d66267cd4250",
+            "clownmdemu-d43c2708-rs3-9af2778898e4",
+            "clownmdemu-d43c2708-rs4-804b2acfea4c"
+          ],
+          "signedEngines": [
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "clownmdemu-d43c2708",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-autopass1",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-autopass1",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs2-d66267cd4250",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs3-9af2778898e4",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs4-804b2acfea4c",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+              "recoveryProtocol": "station-stream.v2"
+            }
+          ],
+          "signedTransports": [
+            "direct",
+            "relay-wss-v1",
+            "relay-wss-v2"
+          ],
+          "signedRecoveryCapabilities": [
+            "station-stream.v2"
+          ],
+          "signedRoomCapabilities": [
+            "short-invite-v1",
+            "own-room-member-profiles-v1"
+          ],
+          "legacyEngineIdsPreserved": true,
+          "exactForwardedBytes": 256,
+          "protectedV2Public": false,
+          "protectedResume": true,
+          "oneUseTickets": true,
+          "proofReplayDenied": true,
+          "ownRoomProfilesSigned": true,
+          "legacyV1": true,
+          "catalogCoverDownloadAuthorizationPreserved": true,
+          "gameDownloadVerified": true,
+          "androidGameplay": false,
+          "nativePauseSimulated": true,
+          "latencySamples": [],
+          "observations": null,
+          "latencyScope": "Synthetic two clients on this server; not phone RTT or core FPS"
+        }
+      },
+      "globalGateEnabledInShadow": false
+    }
+  },
+  "originalReleasePreserved": true,
+  "originalKeysPreserved": true,
+  "realLicensesPreserved": true,
+  "databaseSchemaChanged": false,
+  "otherProductsChanged": false,
+  "firewallChanged": false,
+  "cloudflareChanged": false,
+  "rollbackVerifiedWithOldShadow": true,
+  "dropinSha256": "eefc42f10f258ce193c9cf6ae40d4f5101b256552e4aa6221ef43650086e6317",
+  "physicalAndroidGameplayQualified": false,
+  "v3ActivationComplete": false
+}

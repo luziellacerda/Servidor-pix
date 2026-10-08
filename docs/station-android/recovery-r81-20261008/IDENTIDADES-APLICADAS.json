@@ -1,0 +1,21 @@
+{
+  "applied": true,
+  "utc": "2026-10-08T19:50:57.160219+00:00",
+  "revision": 20,
+  "items": 3734,
+  "visible": 3479,
+  "identities": 2071,
+  "identitiesVisible": 1816,
+  "indexSha256": "b3d44224a0264f3a14104f031d417492017b1d7756d7256607a51833c243348c",
+  "registrySha256": "3ac983815a88c5bc0a434aa9c2b67e6ee2114b8f061547198a0ca7815af9e364",
+  "scannerSha256": "fdce74d82478b5a6688bcb67baad55193580aad139603c1d02b379610c868b05",
+  "sameScheduledImporter": true,
+  "twoScansIdentical": true,
+  "nonIdentityFieldsPreserved": true,
+  "itemRevisionsPreserved": true,
+  "stationPid": 1278094,
+  "stationRestarted": false,
+  "legacyTenEnginesPreserved": true,
+  "realGameBytesModified": false,
+  "approvedProfiles": 0
+}

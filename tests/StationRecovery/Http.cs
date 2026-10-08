@@ -11,7 +11,11 @@ using Microsoft.AspNetCore.Http.Features;
 using TurboRamaSuiteOnlineServer;
 using TurboRamaSuiteOnlineServer.Online;
 
-if(args.Length!=1||!Path.IsPathFullyQualified(args[0])||File.Exists(args[0]))throw new ArgumentException("New absolute fixture path required");
+if(args.Length is <1 or >2||!Path.IsPathFullyQualified(args[0])||File.Exists(args[0])||
+    args.Length==2&&args[1]!="--without-test-socket-decoration")throw new ArgumentException("New absolute fixture path and optional qualification mode required");
+// The production pipeline never substitutes IHttpWebSocketFeature. Preserve the
+// original decorated lab/drop fixture, and qualify that actual pipeline separately.
+bool decorateTestSockets=args.Length==1;
 using var rsa=RSA.Create(2048);var certificateRequest=new CertificateRequest("CN=StationRecoveryLab",rsa,HashAlgorithmName.SHA256,RSASignaturePadding.Pkcs1);
 var names=new SubjectAlternativeNameBuilder();names.AddIpAddress(IPAddress.Loopback);certificateRequest.CertificateExtensions.Add(names.Build());
 certificateRequest.CertificateExtensions.Add(new X509BasicConstraintsExtension(false,false,0,true));
@@ -45,7 +49,7 @@ app.Use(async(context,next)=>{
         catch(SuiteException error){context.Response.StatusCode=error.StatusCode;await context.Response.WriteAsJsonAsync(new{code=error.Code});return;}
         context.Items[typeof(StationSession)]=(user.Token,user.Session);
     }
-    if(context.WebSockets.IsWebSocketRequest&&context.Features.Get<IHttpWebSocketFeature>() is {} original)
+    if(decorateTestSockets&&context.WebSockets.IsWebSocketRequest&&context.Features.Get<IHttpWebSocketFeature>() is {} original)
         context.Features.Set<IHttpWebSocketFeature>(new TrackingSockets(original,access,context.Request.Headers.Authorization.ToString()));
     await next(context);
 });

@@ -1,3 +1,17 @@
+# Station R81: base publicada; controles ainda pendentes — 08/10/2026
+
+SERVIDOR → APP. Leia `docs/station-android/RETORNO-EXECUCAO-HANDOFF-R81-20261008.md` e `recovery-r81-20261008/`. Executado o handoff `2cd3571`: importador ativo e agendado substituído, 2.071 identidades reais qualificadas, duas varreduras idênticas. Índice20: 3.734 IDs, 3.479 visíveis, 255 compatíveis. IDs, sinopses, metadados, capas, artefatos e revisões individuais conservados.
+
+DLL `b472d8a`/`9878ae9c` publicada às 20:22:03 UTC; recibo20:22:39, PID1518810, NRestarts0. Catálogo assinado publica 1.816 identidades visíveis nas duas consultas. Sombras antiga/nova/retorno e HTTPS-WSS passaram: 306 checks online públicos e 27.852 de catálogo, v2/v1, Close1000, primeira causa antes de Detach, retomada, provas/tickets e capa/download. Zero sessões na troca e resíduos no fim. Antiga release e rollback preservados.
+
+TLS sem logging passou com o cliente assíncrono e a candidata selada, com e sem a decoração do fixture. O controle síncrono continua intermitente; causa exata não comprovada. Não declarar engasgos resolvidos, gameplay/WAN homologados ou mudar logging/tuning/túnel por hipótese.
+
+Zero perfis reais aprovados. Preparados 2.071 rascunhos R76 e três pilotos R81, todos approved:false. MultiplayerEnabled e MultiplayerLegacyCapacityGate continuam false, preservando a admissão R76 com as mesmas dez engines. A sombra com gate ligado recusou R76: HTTP409/STATION_MULTIPLAYER_PROFILE_REQUIRED. Produção v3 retorna HTTP503/STATION_MULTIPLAYER_DISABLED, inclusive para duas pessoas na R81. Faltam controles, perfis e continuidade qualificados antes de ativar. Pacote já contém os hashes/vínculos e passos de teste; não pedir documentos técnicos ao mantenedor.
+
+PC atual471321ca: Motorola R81 instalado/hash85fac8f5, Samsung último R78. Canais R76 estável/R81 teste; R80 Dreamcast LED arquivado, sem integração automática. Nenhum APK/telefone alterado no Linux. Preservadas chaves/licenças/esquema/sandbox e processos dos demais produtos. Operadores históricos não são receita para sucessora. Nenhum prompt Linux ou operador pendente ao concluir esta implantação.
+
+## Histórico anterior
+
 # R79: sinopses aplicadas; candidata online conciliada — 08/10/2026
 
 SERVIDOR → APP. Leia `docs/station-android/RETORNO-IMPLEMENTACAO-R79-SINOPSES-E-MULTIPLAYER-20261008.md` e `recovery-r79-20261008/`. Entrega706f47f/fonteb377db conciliada sobre retornoaf58034; canais atuais do PCAPK em c73e087: R76 stable-2p e R79 test-4p, backup consolidado em G:. Motorola R79/Samsung R78; nenhum telefone alterado por esta rodada Linux.

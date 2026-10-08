@@ -1,0 +1,55 @@
+[
+  {
+    "itemId": "826da6daebe9edbebffb3721f83abf12",
+    "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+    "maximumPlayers": 2,
+    "approved": false,
+    "controllerProfile": "standard-2p-v1",
+    "mode": "two-player",
+    "allowedPlayerCounts": [
+      2
+    ]
+  },
+  {
+    "itemId": "ac79b8fc351cb0811a7e9b51a099ba9c",
+    "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+    "maximumPlayers": 2,
+    "approved": false,
+    "controllerProfile": "standard-2p-v1",
+    "mode": "two-player",
+    "allowedPlayerCounts": [
+      2
+    ]
+  },
+  {
+    "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+    "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-sbomberman2-usa-battle-single-r77",
+    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+    "maximumPlayers": 4,
+    "approved": false,
+    "controllerProfile": "snes-multitap-port2-v1",
+    "mode": "battle-single",
+    "allowedPlayerCounts": [
+      2,
+      3,
+      4
+    ]
+  }
+]
