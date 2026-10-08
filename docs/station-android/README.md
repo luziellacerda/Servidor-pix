@@ -1,3 +1,23 @@
+# R74 cadastrada; correções de estabilidade em qualificação — 07/10/2026
+
+Registro R74 realmente ativo desde 2026-10-08T00:39:43.055059Z: dez engines/SHAa5f9de948ab3, DLL originalab192bf/815fc8bc, PID1278094. Recibo privado em /mnt/DADOS/station-r74-registry-check-20261007/active-003943055059.json;187checks isolados/191HTTPS-WSS. App02b7891 confirma R74 instalada nos dois com hashe56896f28b16. Teste00:41:31–00:44:31 manteve heartbeats e entregou385806bytes antes da saída; não é homologação prolongada.
+
+Pesquisa7ad4fb05 recebida. SRV-01/02/03 e instrumentação estão em fonte candidataac88e2d, ainda sem novo deploy. Preservar sessões em RAM e todos os demais produtos/dados/segurança. Não abrir portas/remover Cloudflare por hipótese. Histórico abaixo conserva pedidos e estados anteriores.
+
+## Pedido de pesquisa recebido
+
+# Pesquisa de estabilidade R74 recebida do APP — 07/10/2026
+
+Ler `docs/station-android/PEDIDO-ESTABILIDADE-R74-PESQUISA-20261007.md`. Fonte app `f3f2cc9d63fe4261921b07754d3f1255b5e31484`. Pedido ao operador, não retorno nem deploy.
+Corrigir/coletar SRV-01 (epoch da primeira causa), SRV-02 (handshake Close)
+e SRV-03 (latência real DATA/PONG/filas); cruzar APP-01 e EXP-01.
+R74 instalada nos dois aparelhos; mantenedor relatou melhora, sem homologação
+prolongada. R75 visual candidata mantém runtime/DEX/engines R74, não pede novo
+cadastro de motor. Preservar todos os produtos, sessões, dados e segurança.
+Coordenar qualquer reinício pois a recuperação reside em RAM.
+
+## Histórico anterior
+
 # R74 entregue pelo APP — lifecycle, ANR e latência — 07/10/2026
 
 APP → SERVIDOR; ler `docs/station-android/ENTREGA-APP-R74-LIFECYCLE-LATENCIA-20261007.md`. Fonte `557014b4ff5ec5c3c0162847d922c0587f68b0e9`; APK `e56896f28b16645653bfd28311cd0a8a9a5458e6d443849916a4dede6dc7fafe`; runtime `804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516`. Candidata local, não instalada/homologada. Os dois aparelhos ainda R73. Cadastro R73 já confirmado815ceaca, oito registros. Solicita duas adições rs4 preservando todas as existentes e retorno técnico sobre latência/queda/NeedSync13 da janela23:49:45–23:53:18UTC. Não reiniciar com sessões retidas nem executar implantação por esta publicação documental. RTT122/359ms não equivale ao tempo interno Command0,1756ms. Provas separadas: autoridade principal congelada na primeira queda; ANR de entrada durante recuperação na partida seguinte; flag antiga após catch-up reproduzida localmente. Não atribuir todos os sintomas a um único culpado. Preservar outros produtos, contratos, assinatura, licença, cores, controles, dados e segurança.

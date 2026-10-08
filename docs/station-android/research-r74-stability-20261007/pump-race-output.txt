@@ -1,0 +1,3 @@
+baselineTrace=writer observed no frame after releasing gate -> producer appended and requested pump while pending=true -> writer leaves no-frame branch -> next external tick/event invokes pump -> send DATA
+candidateTrace=writer observed no frame after releasing gate -> producer appended and requested pump while pending=true -> writer leaves no-frame branch -> send DATA
+{"checks":1764,"controlledRaces":128,"baselineDeferredUntilNextSignal":64,"baselineBytesPreserved":64,"candidateSentWithoutNextTick":64,"networkUsed":false,"phoneUsed":false}

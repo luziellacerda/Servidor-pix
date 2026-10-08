@@ -1,0 +1,113 @@
+package org.emulationstation.frontend.netplay;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.*;
+
+/* Isolated scheduling probe. The pump method and TSR2 buffers are extracted from
+ * the pinned production source. Remote, listener and socket queue are models;
+ * no Android, server, network, APK or runtime is invoked or modified. */
+abstract class PumpProbeBase implements AutoCloseable {
+    final Object gate=new Object();
+    final ExecutorService writes=Executors.newSingleThreadExecutor();
+    final AtomicBoolean closed=new AtomicBoolean(),pumpPending=new AtomicBoolean();
+    final AtomicBoolean pumpRequested=new AtomicBoolean(); // candidate only
+    final StationRecoveryWire.Bytes tx=new StationRecoveryWire.Bytes(32768);
+    final StationRecoveryWire.Bytes rx=new StationRecoveryWire.Bytes(32768);
+    final Listener listener=new Listener();
+    Remote remote=new Remote();
+    boolean terminal=false,welcome=true,foreground=true;
+    long state=2,epoch=1,ackSent=0,pauseSent=-1,cursor=0,accepted=0,readySent=-1;
+    final long started=System.nanoTime();
+    long pingSent=started;
+    volatile Throwable failure;
+    volatile CountDownLatch emptyObserved,releaseEmpty;
+    final AtomicBoolean holdEmptyOnce=new AtomicBoolean();
+    final List<String> trace=Collections.synchronizedList(new ArrayList<>());
+    final CountDownLatch sent=new CountDownLatch(1);
+    abstract void signal();
+    abstract void produce(byte[] bytes) throws Exception;
+    static final class Listener {long nativeStatus(){return 0;}}
+    final class Remote {
+        final List<StationRecoveryWire> frames=Collections.synchronizedList(new ArrayList<>());
+        boolean isOpen(){return true;}
+        void send(byte[] bytes)throws IOException {
+            frames.add(StationRecoveryWire.decode(ByteBuffer.wrap(bytes)));
+            trace.add("send DATA");sent.countDown();
+        }
+    }
+    static long queued(Remote ignored){return 0;}
+    void fatal(String category){failure=new AssertionError(category);terminal=true;}
+    void lost(Remote ignored){failure=new AssertionError("unexpected modeled transport loss");}
+    void probeNoFrame()throws InterruptedException {
+        if(holdEmptyOnce.compareAndSet(true,false)) {
+            trace.add("writer observed no frame after releasing gate");
+            emptyObserved.countDown();
+            if(!releaseEmpty.await(5,TimeUnit.SECONDS))throw new AssertionError("probe latch timeout");
+            trace.add("writer leaves no-frame branch");
+        }
+    }
+    void armEmpty(){emptyObserved=new CountDownLatch(1);releaseEmpty=new CountDownLatch(1);holdEmptyOnce.set(true);}
+    void barrier()throws Exception {writes.submit(()->{}).get(5,TimeUnit.SECONDS);}
+    @Override public void close()throws Exception {closed.set(true);if(releaseEmpty!=null)releaseEmpty.countDown();writes.shutdownNow();if(!writes.awaitTermination(5,TimeUnit.SECONDS))throw new AssertionError("executor did not stop");}
+}
+
+// BEGIN GENERATED CLASSES: exact extracted method, plus stated probe hook.
+@GENERATED_CLASSES@
+// END GENERATED CLASSES
+
+public final class PumpRaceProbe {
+    static int checks,races,retained,baselineWaited,candidateImmediate;
+    static final byte[] PAYLOAD=new byte[]{0x03,0x17,0x42,0x7f,0,0x5a};
+    static void require(boolean condition,String what){checks++;if(!condition)throw new AssertionError(what);}
+    static void await(CountDownLatch latch,String what)throws Exception {require(latch.await(5,TimeUnit.SECONDS),what);}
+    static void verifyData(PumpProbeBase p)throws Exception {
+        p.barrier();require(p.failure==null,"modeled transport remains healthy");
+        require(p.remote.frames.size()==1,"exactly one frame");
+        StationRecoveryWire f=p.remote.frames.get(0);
+        require(f.type==3&&f.offset==0&&f.value==0,"real TSR2 DATA header/offset");
+        require(Arrays.equals(f.data,PAYLOAD),"real TSR2 DATA bytes");
+        synchronized(p.gate){require(p.cursor==PAYLOAD.length&&p.tx.next==PAYLOAD.length,"send cursor exact");require(p.tx.delivered==0,"no fabricated server ACK");require(Arrays.equals(p.tx.read(0),PAYLOAD),"unacknowledged bytes preserved");}
+    }
+    static void race(boolean candidate,int iteration)throws Exception {
+        try(PumpProbeBase p=candidate?new CandidatePump():new BaselinePump()) {
+            p.armEmpty();p.signal();await(p.emptyObserved,"writer reached empty decision");
+            require(p.pumpPending.get(),"writer still owns pending gate");
+            p.produce(PAYLOAD);p.trace.add("producer appended and requested pump while pending=true");
+            require(p.remote.frames.isEmpty(),"worker held at controlled point");
+            synchronized(p.gate){require(p.tx.next==PAYLOAD.length&&p.cursor==0,"producer published retained bytes");}
+            p.releaseEmpty.countDown();
+            if(candidate){await(p.sent,"candidate schedules concurrent request without periodic tick");candidateImmediate++;}
+            else {
+                p.barrier();require(!p.pumpPending.get(),"baseline task completed and released flag");
+                require(p.remote.frames.isEmpty(),"baseline sent nothing despite available data");
+                synchronized(p.gate){require(Arrays.equals(p.tx.read(0),PAYLOAD),"baseline did not lose bytes");retained++;}
+                baselineWaited++;
+                p.trace.add("next external tick/event invokes pump");p.signal();await(p.sent,"baseline rescued by next signal");
+            }
+            verifyData(p);races++;
+            if(iteration==0)System.out.println((candidate?"candidate":"baseline")+"Trace="+String.join(" -> ",p.trace));
+        }
+    }
+    static void beforeSelection(boolean candidate)throws Exception {
+        try(PumpProbeBase p=candidate?new CandidatePump():new BaselinePump()) {
+            CountDownLatch occupied=new CountDownLatch(1),release=new CountDownLatch(1);
+            p.writes.execute(()->{occupied.countDown();try{release.await();}catch(InterruptedException e){Thread.currentThread().interrupt();}});
+            await(occupied,"probe executor barrier");p.signal();p.produce(PAYLOAD);release.countDown();
+            await(p.sent,"producer before selection sends normally");verifyData(p);
+        }
+    }
+    static void afterCompletion(boolean candidate)throws Exception {
+        try(PumpProbeBase p=candidate?new CandidatePump():new BaselinePump()) {
+            p.signal();p.barrier();require(!p.pumpPending.get(),"idle writer completed");
+            p.produce(PAYLOAD);await(p.sent,"producer after completion sends normally");verifyData(p);
+        }
+    }
+    public static void main(String[] args)throws Exception {
+        for(int i=0;i<64;i++){race(false,i);race(true,i);}
+        beforeSelection(false);beforeSelection(true);afterCompletion(false);afterCompletion(true);
+        System.out.println("{\"checks\":"+checks+",\"controlledRaces\":"+races+",\"baselineDeferredUntilNextSignal\":"+baselineWaited+",\"baselineBytesPreserved\":"+retained+",\"candidateSentWithoutNextTick\":"+candidateImmediate+",\"networkUsed\":false,\"phoneUsed\":false}");
+    }
+}
