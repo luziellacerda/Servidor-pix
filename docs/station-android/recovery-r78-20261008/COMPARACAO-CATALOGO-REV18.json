@@ -1,0 +1,306 @@
+{
+  "sourceUtc": "2026-10-08T14:53:30.950696+00:00",
+  "configuredIndexRevision": 18,
+  "indexFileSha256": "c237c97658c8e8bb9b14fb9954d4c10885717eecd2685a3ad066addc14e4879f",
+  "servicePid": 1278094,
+  "authenticatedApiResponse": false,
+  "sourceKind": "metadata-read-of-running-process-configured-index-file",
+  "phoneCacheObserved": false,
+  "productionChanged": false,
+  "baselineRevision": 14,
+  "baselineIds": 2467,
+  "currentIds": 3734,
+  "currentVisibleIds": 3479,
+  "currentCompatibilityIds": 255,
+  "addedIds": 1267,
+  "removedIds": [],
+  "commonIdsCompared": 2467,
+  "commonComparedFields": [
+    "name",
+    "platform",
+    "catalogVisible",
+    "itemRevision",
+    "artifactSha256",
+    "artifactFileName",
+    "artifactLaunchPath",
+    "publishedServerDescription"
+  ],
+  "commonChangedIds": [],
+  "currentDescriptionClassification": {
+    "prose_present_not_fact_checked": 3399,
+    "empty": 335
+  },
+  "currentDescriptionsOverUtf16Limit": [],
+  "missingSynopsisIds": 335,
+  "missingVisibleIds": 329,
+  "missingCompatibilityIds": 6,
+  "addedIdsWithoutSynopsis": 286,
+  "oldIdsWithoutServerSynopsisCoveredByR78": 49,
+  "synopsisPresenceDoesNotVerifyFacts": true,
+  "proposalCasCounts": {
+    "preconditions_match": 64
+  },
+  "proposalDescriptionsWouldFillCurrentlyEmpty": 49,
+  "proposalsApplied": 0,
+  "platforms": {
+    "megadrive": {
+      "total": 1133,
+      "compatibility": 246,
+      "prose_present_not_fact_checked": 1126,
+      "visible": 887,
+      "empty": 7,
+      "missingSynopsis": 7
+    },
+    "snes": {
+      "total": 653,
+      "compatibility": 9,
+      "empty": 10,
+      "missingSynopsis": 10,
+      "visible": 644,
+      "prose_present_not_fact_checked": 643
+    },
+    "megadrivebr": {
+      "total": 94,
+      "visible": 94,
+      "prose_present_not_fact_checked": 93,
+      "empty": 1,
+      "missingSynopsis": 1
+    },
+    "snesbr": {
+      "total": 191,
+      "visible": 191,
+      "prose_present_not_fact_checked": 191
+    },
+    "n64": {
+      "total": 157,
+      "visible": 157,
+      "prose_present_not_fact_checked": 153,
+      "empty": 4,
+      "missingSynopsis": 4
+    },
+    "neogeo": {
+      "total": 189,
+      "visible": 189,
+      "prose_present_not_fact_checked": 162,
+      "empty": 27,
+      "missingSynopsis": 27
+    },
+    "neogeocd": {
+      "total": 50,
+      "visible": 50,
+      "prose_present_not_fact_checked": 50
+    },
+    "dreamcast": {
+      "total": 243,
+      "visible": 243,
+      "empty": 243,
+      "addedSinceRevision14": 243,
+      "missingSynopsis": 243,
+      "addedMissingSynopsis": 243
+    },
+    "cps1": {
+      "total": 36,
+      "visible": 36,
+      "empty": 7,
+      "addedSinceRevision14": 36,
+      "missingSynopsis": 7,
+      "addedMissingSynopsis": 7,
+      "prose_present_not_fact_checked": 29
+    },
+    "cps2": {
+      "total": 64,
+      "visible": 64,
+      "empty": 5,
+      "addedSinceRevision14": 64,
+      "missingSynopsis": 5,
+      "addedMissingSynopsis": 5,
+      "prose_present_not_fact_checked": 59
+    },
+    "cps3": {
+      "total": 11,
+      "visible": 11,
+      "prose_present_not_fact_checked": 8,
+      "addedSinceRevision14": 11,
+      "empty": 3,
+      "missingSynopsis": 3,
+      "addedMissingSynopsis": 3
+    },
+    "fbneo": {
+      "total": 913,
+      "visible": 913,
+      "prose_present_not_fact_checked": 885,
+      "addedSinceRevision14": 913,
+      "empty": 28,
+      "missingSynopsis": 28,
+      "addedMissingSynopsis": 28
+    }
+  },
+  "nativeOnlyDescriptionsExcluded": [
+    {
+      "itemId": "1d0691cdd1d7dd3a93b65b4e6f0e5ea0",
+      "platform": "megadrivebr",
+      "utf16CodeUnits": 2674,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "3d7d96f56f62798a5a2f7b7e42d8d84f",
+      "platform": "megadrive",
+      "utf16CodeUnits": 4084,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "6d0746cce348a46f4f0d8526f88ead1a",
+      "platform": "megadrive",
+      "utf16CodeUnits": 2553,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "6f186923353518cefdd6021e04b6f9d8",
+      "platform": "megadrive",
+      "utf16CodeUnits": 4084,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "72027d15661dbf6e92579f680e130fec",
+      "platform": "megadrive",
+      "utf16CodeUnits": 2193,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "9d321d4526ad5a13e8611eb120edcf7e",
+      "platform": "megadrivebr",
+      "utf16CodeUnits": 2059,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "b2c1346f86c6bc546521849213a81bc2",
+      "platform": "megadrivebr",
+      "utf16CodeUnits": 2244,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "bd2fe6ed6336e7a0e2c5beb63f067571",
+      "platform": "megadrive",
+      "utf16CodeUnits": 2553,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "d41e2ad3b117d4b3f87423e66e78d43e",
+      "platform": "megadrive",
+      "utf16CodeUnits": 2015,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "dd8008ac2711bf45b7c1b9e7acb87108",
+      "platform": "megadrive",
+      "utf16CodeUnits": 2553,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "station_4843ee331fa993223e5965ab04e5d959",
+      "platform": "megadrive",
+      "utf16CodeUnits": 2332,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "station_5f4271f2f978885a6d92b05526e39e20",
+      "platform": "megadrive",
+      "utf16CodeUnits": 2059,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "station_74520183364eb14de15809a309566df3",
+      "platform": "megadrive",
+      "utf16CodeUnits": 2158,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "station_aac7d41b1f2d1df32ad0f01bf53f4dfe",
+      "platform": "n64",
+      "utf16CodeUnits": 2428,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "station_d155fc7c0bb3cc0731d92bdf3d2818f4",
+      "platform": "megadrive",
+      "utf16CodeUnits": 2641,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "station_d31127c26c8a3f19ff0cd00d3219f57e",
+      "platform": "megadrive",
+      "utf16CodeUnits": 2530,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    },
+    {
+      "itemId": "station_d76056731c5453282794e2cb2f2ab159",
+      "platform": "megadrive",
+      "utf16CodeUnits": 2195,
+      "sourcePreconditionsStillMatch": true,
+      "serverUpdateAllowed": false
+    }
+  ],
+  "spyClassificationReview": {
+    "items": [
+      {
+        "itemId": "station_f9b5624a8652bfaccf2e3c338510d29b",
+        "platform": "neogeo",
+        "name": "S.P.Y. - Special Project Y (World ver. N)",
+        "itemRevision": 9,
+        "catalogVisible": true,
+        "coverId": "cover_f9b5624a8652bfaccf2e3c338510d29b",
+        "artifact": {
+          "fileName": "spy.zip",
+          "sizeBytes": 2423381,
+          "sha256": "51a2c1a3f8d1102f13cf5e3777712b7ada1ec22a6e254b5626686508bda38b14",
+          "format": "zip",
+          "launchPath": "spy.zip",
+          "expandedSizeBytes": 2423133,
+          "fileCount": 2
+        }
+      },
+      {
+        "itemId": "station_9b092804dfa0e60e1fe866d9472459b0",
+        "platform": "fbneo",
+        "name": "S.P.Y. - Special Project Y (World ver. N)",
+        "itemRevision": 18,
+        "catalogVisible": true,
+        "coverId": "cover_9b092804dfa0e60e1fe866d9472459b0",
+        "artifact": {
+          "fileName": "spy.zip",
+          "sizeBytes": 1009851,
+          "sha256": "5230360749d6f9d677007f86516cbda4d69d0d44b880edac843e5d27cc2c2a8f",
+          "format": "zip",
+          "launchPath": "spy.zip",
+          "expandedSizeBytes": 1009603,
+          "fileCount": 2
+        }
+      }
+    ],
+    "currentPlatformChanged": false,
+    "sameNamedItemsAreNotInterchangeable": true,
+    "romContentExamined": false,
+    "sources": [
+      "https://github.com/finalburnneo/FBNeo/blob/master/src/burn/drv/konami/d_spy.cpp",
+      "https://github.com/mamedev/mame/blob/master/src/mame/konami/spy.cpp"
+    ],
+    "sourceObservation": "Official drivers identify spy as Konami/GX857, not Neo Geo hardware.",
+    "followup": "Check original archive identity and current client dispatch before any platform migration."
+  }
+}

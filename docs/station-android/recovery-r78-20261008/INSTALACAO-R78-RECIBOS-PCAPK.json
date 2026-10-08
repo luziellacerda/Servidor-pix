@@ -1,0 +1,91 @@
+{
+  "sourceAppCommit": "768f7ca42fe62d67e93f4c8fcf762bf9e7eb4fce",
+  "receiptReceivedViaGit": true,
+  "phoneApkRehashedByLinux": false,
+  "installationPerformedByThisReview": false,
+  "records": [
+    {
+      "sourcePath": "versions/station-synopses-r78-20261008/INSTALLATION.json",
+      "sourceSha256": "b2e3999c254616587e538b8c137d2559c48e1ee286c207bf2c755f01a13cabcc",
+      "receipt": {
+        "version": "R78",
+        "recordedUTC": "2026-10-08T14:46:34.052562+00:00",
+        "state": "installed-on-two-devices-at-explicit-user-request",
+        "apkSHA256": "e6c6609df32bf419954083297eadbafa75f13328a1516594cc010044b2eb62a5",
+        "dataCleared": false,
+        "deviceSettingsChanged": false,
+        "extraAPKCopiedToPhone": false,
+        "physicalDisplayVerified": false,
+        "gameplayVerified": false,
+        "serverActivationVerified": false,
+        "serverChanged": false,
+        "inheritedR77OnlineQualificationStillRequired": true,
+        "sourceFreezeFilesUnchanged": true
+      }
+    },
+    {
+      "sourcePath": "versions/station-synopses-r78-20261008/evidence/installation-motorola-r78.json",
+      "sourceSha256": "82da2c8d467de406278947e5bcee2343273bc2ea4b4c9920ddead36c80c5a835",
+      "receipt": {
+        "version": "R78",
+        "deviceLabel": "motorola",
+        "model": "motorola edge 30",
+        "package": "org.turboramastation.frontend",
+        "startedUTC": "2026-10-08T14:40:28.295791+00:00",
+        "completedUTC": "2026-10-08T14:41:44.187424+00:00",
+        "apkSHA256": "e6c6609df32bf419954083297eadbafa75f13328a1516594cc010044b2eb62a5",
+        "deviceAPK_SHA256": "e6c6609df32bf419954083297eadbafa75f13328a1516594cc010044b2eb62a5",
+        "installPerformed": true,
+        "installSuccess": true,
+        "uidPreserved": true,
+        "originalInstallTimestampPreserved": true,
+        "dataDirectoryPreserved": true,
+        "uninstalled": false,
+        "dataCleared": false,
+        "deviceSettingsChanged": false,
+        "activeEmulatorBeforeInstall": false,
+        "extraAPKCopiedToPhone": false,
+        "officialEntryRequested": true,
+        "launchVerified": false,
+        "authenticatedEntryVerified": false,
+        "physicalDisplayVerified": false,
+        "serverRegistryActivationVerified": false,
+        "twoDeviceGameplayVerified": false,
+        "serverChanged": false,
+        "inheritedR77OnlineQualificationStillRequired": true
+      }
+    },
+    {
+      "sourcePath": "versions/station-synopses-r78-20261008/evidence/installation-samsung-r78.json",
+      "sourceSha256": "1c2c3b924860fad0cfe1f456a55c61664a8835295f1f4762388d12f451da4023",
+      "receipt": {
+        "version": "R78",
+        "deviceLabel": "samsung",
+        "model": "SM-A566E",
+        "package": "org.turboramastation.frontend",
+        "startedUTC": "2026-10-08T14:43:13.009315+00:00",
+        "completedUTC": "2026-10-08T14:44:57.449046+00:00",
+        "apkSHA256": "e6c6609df32bf419954083297eadbafa75f13328a1516594cc010044b2eb62a5",
+        "deviceAPK_SHA256": "e6c6609df32bf419954083297eadbafa75f13328a1516594cc010044b2eb62a5",
+        "installPerformed": true,
+        "installSuccess": true,
+        "uidPreserved": true,
+        "originalInstallTimestampPreserved": true,
+        "dataDirectoryPreserved": true,
+        "uninstalled": false,
+        "dataCleared": false,
+        "deviceSettingsChanged": false,
+        "activeEmulatorBeforeInstall": false,
+        "extraAPKCopiedToPhone": false,
+        "officialEntryRequested": true,
+        "launchVerified": false,
+        "authenticatedEntryVerified": false,
+        "physicalDisplayVerified": false,
+        "serverRegistryActivationVerified": false,
+        "twoDeviceGameplayVerified": false,
+        "serverChanged": false,
+        "inheritedR77OnlineQualificationStillRequired": true
+      }
+    }
+  ]
+}
