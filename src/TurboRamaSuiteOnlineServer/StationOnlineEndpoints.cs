@@ -29,6 +29,7 @@ public static class StationOnlineEndpoints
     public static void MapStationOnline(this WebApplication app, bool enabled)
     {
         app.UseWebSockets(new WebSocketOptions {KeepAliveInterval=TimeSpan.FromSeconds(20)});
+        app.MapStationMultiplayer(enabled&&app.Configuration.GetValue("Station:Online:MultiplayerEnabled",false));
         // Aggregate operator telemetry only, outside the public /v1 route.
         app.MapGet("/ready/station/online",(HttpContext context)=>{
             if(context.Connection.RemoteIpAddress is not {} address || !System.Net.IPAddress.IsLoopback(address))
@@ -91,7 +92,14 @@ public static class StationOnlineEndpoints
                 var cmd=await Read<OnlineCommand>(context,cancel);
                 var security = context.Items[typeof(StationSession)] is ValueTuple<string, StationSession> cached
                     ? new StationSessionSecurity(cached.Item2.ProofMode, cached.Item2.ProofKeySpki) : null;
-                return (cmd.RequestId,hub.Command(identity,cmd,security));
+                var multiplayer=context.RequestServices.GetService<StationMultiplayer>();
+                if(multiplayer is null)return (cmd.RequestId,hub.Command(identity,cmd,security));
+                lock(multiplayer.AdmissionGate){
+                    if(cmd.Action is "create" or "join" && multiplayer.HasRoom(identity))throw new OnlineFailure(409,"STATION_MULTIPLAYER_ALREADY_IN_ROOM");
+                    var snapshot=hub.Command(identity,cmd,security);
+                    if(cmd.Action=="block"&&cmd.PeerId is {} blocked)multiplayer.ApplyBlock(identity,blocked);
+                    return (cmd.RequestId,snapshot);
+                }
             });await result.ExecuteAsync(context);
         }).DisableAntiforgery();
         app.MapPost("/v1/station/online/events", async (HttpContext context) => {

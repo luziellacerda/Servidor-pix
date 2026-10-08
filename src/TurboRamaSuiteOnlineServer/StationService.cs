@@ -194,17 +194,7 @@ public sealed class StationService(PostgresStationStore store,
             productId = StationProtocol.Product, applicationId = StationProtocol.Application,
             licenseId = session.LicenseId, deviceId = session.DeviceId,
             sessionId = session.SessionId, revision = library.Revision,
-            items = library.Catalog.Select(item => includeMetadata ? (object)new
-            {
-                itemId = item.ItemId, name = item.Name, platform = item.Platform,
-                revision = item.Revision, coverId = item.CoverId,
-                metadata = item.Metadata ?? new StationItemMetadata("", "", "", "", "", ""),
-                folderPath = item.FolderPath
-            } : new
-            {
-                itemId = item.ItemId, name = item.Name, platform = item.Platform,
-                revision = item.Revision, coverId = item.CoverId, folderPath = item.FolderPath
-            })
+            items = library.Catalog.Select(item => item.PublicValue(includeMetadata))
         });
     }
 

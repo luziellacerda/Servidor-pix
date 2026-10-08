@@ -68,7 +68,7 @@ public sealed class StationStreamWindow(int capacity)
     }
 }
 
-public sealed class StationStreamSession(int windowBytes,bool observe=false)
+public sealed class StationStreamSession(int windowBytes,bool observe=false,Action? retired=null)
 {
     public sealed record Counters(long Epoch,long State,long Pending,long Accepted,long Delivered,int Connections,
         long HostAccepted,long HostDelivered,long ClientAccepted,long ClientDelivered);
@@ -88,6 +88,9 @@ public sealed class StationStreamSession(int windowBytes,bool observe=false)
     private readonly long[] maximumSent=new long[2];
     private TaskCompletionSource pulse=NewPulse();
     private long epoch=1,state=Waiting;
+    private bool retirementRequested,released;
+    public void RetireRoom(){lock(gate)retirementRequested=true;End();}
+    private void Retire(){if(retirementRequested&&!released&&connections.All(c=>c is null)){released=true;retired?.Invoke();}}
     private readonly StationRecoveryTransitions? transitions=observe?new():null;
     private readonly List<StationRecoveryConnectionObservation> observations=[];
     private long discardedObservations;
@@ -108,11 +111,11 @@ public sealed class StationStreamSession(int windowBytes,bool observe=false)
     {
         lock(gate){int side=Side(host);if(connections[side]!=c)return;long beforeEpoch=epoch,beforeState=state;connections[side]=null;
             if(state!=Unrecoverable){state=Waiting;epoch++;foreach(var peer in connections)if(peer is not null){peer.Paused=false;peer.Ready=false;}}
-            transitions?.Add("Detach",host,beforeEpoch,epoch,beforeState,state);Changed();}
+            transitions?.Add("Detach",host,beforeEpoch,epoch,beforeState,state);Retire();Changed();}
     }
     public void End()
     {
-        Connection?[] copy;lock(gate){long beforeEpoch=epoch,beforeState=state;state=Unrecoverable;epoch++;copy=connections.ToArray();transitions?.Add("End",null,beforeEpoch,epoch,beforeState,state);Changed();}
+        Connection?[] copy;lock(gate){long beforeEpoch=epoch,beforeState=state;state=Unrecoverable;epoch++;copy=connections.ToArray();transitions?.Add("End",null,beforeEpoch,epoch,beforeState,state);Retire();Changed();}
         foreach(var c in copy)if(c is not null)try{c.Stop.Cancel();}catch(ObjectDisposedException){}
     }
     public long CurrentState {get{lock(gate)return state;}}
@@ -213,7 +216,7 @@ public sealed class StationStreamSession(int windowBytes,bool observe=false)
 // Waiting rooms occupy a bounded slot indefinitely; admission fails honestly when slots fill.
 // No room eviction for age. Process/native-process restart cannot restore this in-memory stream.
 public sealed class StationRecoveryRelay(StationOnline hub,IStationOnlineAccess access,
-    ILogger<StationRecoveryRelay> logger,int maximumRooms=64,int windowBytes=262144,bool observe=true):BackgroundService
+    ILogger<StationRecoveryRelay> logger,int maximumRooms=64,int windowBytes=262144,bool observe=true,StationReplayBudget? sharedBudget=null):BackgroundService
 {
     private sealed record Match(StationOnline.RelayLease Lease,StationStreamSession Stream)
     {public string Reference {get;}=Guid.NewGuid().ToString("N")[..12];}
@@ -246,8 +249,11 @@ public sealed class StationRecoveryRelay(StationOnline hub,IStationOnlineAccess 
     {
         Match match;lock(gate){
             if(!matches.TryGetValue(lease.RoomId,out match!)){
-                if(matches.Count>=maximumRooms)throw new OnlineFailure(503,"STATION_RECOVERY_FULL");
-                matches.Add(lease.RoomId,match=new(lease,new StationStreamSession(windowBytes,observe)));
+                string allocation="v2:"+lease.RoomId;
+                if(matches.Count>=maximumRooms||sharedBudget?.TryReserve(allocation,2L*windowBytes)==false)
+                    throw new OnlineFailure(503,"STATION_RECOVERY_FULL");
+                try{matches.Add(lease.RoomId,match=new(lease,new StationStreamSession(windowBytes,observe,()=>sharedBudget?.Release(allocation))));}
+                catch{sharedBudget?.Release(allocation);throw;}
             }
             if(match.Lease.Generation!=lease.Generation)throw new OnlineFailure(409,"STATION_RECOVERY_GENERATION_MISMATCH");
         }
@@ -346,13 +352,13 @@ public sealed class StationRecoveryRelay(StationOnline hub,IStationOnlineAccess 
         try{while(!stoppingToken.IsCancellationRequested){await Task.Delay(15000,stoppingToken);Prune();}}
         catch(OperationCanceledException){}
         Match[] retained;lock(gate){retained=matches.Values.ToArray();matches.Clear();}
-        foreach(var match in retained)match.Stream.End();
+        foreach(var match in retained)match.Stream.RetireRoom();
     }
     public void Prune()
     {
         Match[] copy;lock(gate)copy=matches.Values.ToArray();
         foreach(var match in copy)if(!hub.RecoveryRoomCurrent(match.Lease.RoomId,match.Lease.Generation)){
-            match.Stream.End();var captured=observe?new {reference=match.Reference,generation=match.Lease.Generation,completedUtc=DateTimeOffset.UtcNow,stream=match.Stream.Diagnostics()}:null;
+            match.Stream.RetireRoom();var captured=observe?new {reference=match.Reference,generation=match.Lease.Generation,completedUtc=DateTimeOffset.UtcNow,stream=match.Stream.Diagnostics()}:null;
             lock(gate)if(matches.GetValueOrDefault(match.Lease.RoomId)==match){matches.Remove(match.Lease.RoomId);
                 if(captured is not null){if(completedObservations.Count==8){completedObservations.Dequeue();discardedCompletedObservations++;}completedObservations.Enqueue(captured);}}
         }

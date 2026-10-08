@@ -10,6 +10,27 @@ public sealed record StationCatalogEntry(
     StationItemMetadata? Metadata = null)
 {
     public IReadOnlyList<string> FolderPath { get; init; } = Array.Empty<string>();
+
+    // SHA of the exact launch payload, supplied by the offline publisher.
+    // It is independent of an archive/container descriptor and never computed on a request.
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public string? ContentSha256 { get; init; }
+
+    public object PublicValue(bool includeMetadata)
+    {
+        var result = new Dictionary<string, object?>
+        {
+            ["itemId"] = ItemId, ["name"] = Name, ["platform"] = Platform,
+            ["revision"] = Revision, ["coverId"] = CoverId
+        };
+        if (includeMetadata)
+            result["metadata"] = Metadata ?? new StationItemMetadata("", "", "", "", "", "");
+        result["folderPath"] = FolderPath;
+        // Preserve the old wire shape for unqualified items; do not invent a hash.
+        if (ContentSha256 is not null)
+            result["contentSha256"] = ContentSha256;
+        return result;
+    }
 }
 
 public sealed record StationItemMetadata(string Description, string Developer,
@@ -89,6 +110,7 @@ public sealed class StationLibrary
             var itemRevision = row.TryGetProperty("revision", out var itemRev) &&
                 itemRev.TryGetInt64(out var parsedItemRev) && parsedItemRev > 0
                 ? parsedItemRev : revision;
+            var contentSha256 = ReadContentSha256(row);
             var filePath = RequirePath(row, "filePath");
             var coverPath = RequirePath(row, "coverPath");
             var catalogVisible = true;
@@ -130,7 +152,8 @@ public sealed class StationLibrary
                 }
             }
             if (!items.TryAdd(itemId, new Resolved(
-                    new StationCatalogEntry(itemId, name, platform, itemRevision, coverId, ReadMetadata(row)) { FolderPath = ReadFolderPath(row) },
+                    new StationCatalogEntry(itemId, name, platform, itemRevision, coverId, ReadMetadata(row))
+                    { FolderPath = ReadFolderPath(row), ContentSha256 = contentSha256 },
                     filePath, artifact, lastWriteUtcTicks, catalogVisible)))
                 throw new InvalidOperationException("Station library index is invalid.");
             if (covers.TryGetValue(coverId, out var existing) &&
@@ -183,6 +206,18 @@ public sealed class StationLibrary
     public int ItemCount => Catalog.Count;
     public int CompatibilityItemCount => _items.Count - Catalog.Count;
     public bool ContainsItem(string itemId) => _items.ContainsKey(itemId);
+
+    private static string? ReadContentSha256(JsonElement row)
+    {
+        if (!row.TryGetProperty("contentSha256", out var value)) return null;
+        if (value.ValueKind != JsonValueKind.String)
+            throw new InvalidOperationException("Station content identity is invalid.");
+        var text = value.GetString();
+        if (text is not { Length: 64 } ||
+            text.Any(character => character is not (>= '0' and <= '9' or >= 'a' and <= 'f')))
+            throw new InvalidOperationException("Station content identity is invalid.");
+        return text;
+    }
 
     private static StationItemMetadata? ReadMetadata(JsonElement row)
     {

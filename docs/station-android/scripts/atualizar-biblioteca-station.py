@@ -209,6 +209,51 @@ def prepare_arcade_artifact(source, temporary, companions):
     return temporary, module.describe({'filePath': str(temporary)}, source.name)
 
 
+def content_identities(path):
+    """Load identities qualified offline; never infer the payload SHA from its ZIP."""
+    if path is None:
+        return {}
+    source = Path(path)
+    if not source.is_absolute() or source.is_symlink() or not source.is_file() or source.stat().st_size > 16 * 1024 * 1024:
+        raise ValueError('invalid content identity registry')
+    def unique(pairs):
+        value = {}
+        for key, entry in pairs:
+            if key in value: raise ValueError('duplicate content identity member')
+            value[key] = entry
+        return value
+    document = json.loads(source.read_bytes(), object_pairs_hook=unique)
+    if not isinstance(document, dict) or set(document) != {'schemaVersion', 'entries'} or type(document['schemaVersion']) is not int or document['schemaVersion'] != 1:
+        raise ValueError('invalid content identity schema')
+    entries = document['entries']
+    if not isinstance(entries, list) or len(entries) > 4096:
+        raise ValueError('invalid content identity count')
+    keys = {'itemId', 'platform', 'artifactSha256', 'launchPath', 'expandedSizeBytes', 'fileCount', 'contentSha256'}
+    def hash_value(value):
+        return isinstance(value, str) and len(value) == 64 and all(c in '0123456789abcdef' for c in value)
+    result = {}
+    for entry in entries:
+        if not isinstance(entry, dict) or set(entry) != keys or not hash_value(entry['artifactSha256']) or not hash_value(entry['contentSha256']):
+            raise ValueError('invalid content identity entry')
+        if any(not isinstance(entry[key], str) or not entry[key] or len(entry[key]) > limit or any(ord(c) < 32 for c in entry[key]) for key, limit in [('itemId', 256), ('platform', 64), ('launchPath', 4096)]):
+            raise ValueError('invalid content identity binding')
+        if type(entry['expandedSizeBytes']) is not int or not 0 < entry['expandedSizeBytes'] <= 4 * (1 << 40) or type(entry['fileCount']) is not int or not 0 < entry['fileCount'] <= 100000:
+            raise ValueError('invalid content identity bounds')
+        if entry['itemId'] in result: raise ValueError('duplicate content item identity')
+        result[entry['itemId']] = entry
+    return result
+
+
+def bind_content_identities(items, identities):
+    for row in items:
+        # Unknown or replaced payloads have no public hash; existing metadata is preserved.
+        row.pop('contentSha256', None)
+        entry = identities.get(row['itemId'])
+        artifact = row.get('artifact', {})
+        if entry and entry['platform'] == row['platform'] and entry['artifactSha256'] == artifact.get('sha256') and all(entry[key] == artifact.get(key) for key in ('launchPath', 'expandedSizeBytes', 'fileCount')):
+            row['contentSha256'] = entry['contentSha256']
+
+
 def publish(config, bootstrap=False):
     root = Path(config['volumeRoot']).resolve()
     if not root.is_dir() or root.is_symlink() or root.stat().st_dev != config['volumeDevice']:
@@ -221,6 +266,7 @@ def publish(config, bootstrap=False):
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         index_path, state_path = home / 'index.json', home / 'state.json'
         previous = json.loads((index_path if index_path.exists() else Path(config['baseIndex'])).read_text())
+        identities = content_identities(config.get('contentIdentityRegistry'))
         rows = {row['itemId']: row for row in previous['items']}
         state = json.loads(state_path.read_text()) if state_path.exists() else {'sources': {}, 'observations': {}}
         if not state['sources']:
@@ -351,6 +397,7 @@ def publish(config, bootstrap=False):
                 row['metadata'] = dict(row.get('metadata', metadata()), description=metadata(override={'description':seed['description']})['description'])
         if len(rows) > 4096: raise ValueError('Station library capacity exceeded')
         items = list(rows.values())
+        bind_content_identities(items, identities)
         changed = original != json.dumps(items, sort_keys=True)
         result = dict(previous, revision=previous['revision']+1 if changed else previous['revision'], items=items)
         report['metadataMissing'] = sum(not r.get('metadata', {}).get('description') for r in items if r.get('catalogVisible', True))

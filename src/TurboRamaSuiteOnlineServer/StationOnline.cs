@@ -82,6 +82,13 @@ public sealed class StationOnline
     private readonly int recoveryWindowBytes;
     private readonly Action<StationOnlineTrace>? trace;
     private readonly object gate = new();
+    private readonly Func<string,string,string,string,string,bool>? legacyAdmission;
+    private readonly Func<OnlineIdentity,bool>? externalMembership;
+    public bool HasMembership(OnlineIdentity identity){lock(gate)return identities.TryGetValue(identity,out var id)&&peers.TryGetValue(id,out var p)&&p.Room is not null;}
+    public (string Id,string Nickname) MultiplayerIdentity(OnlineIdentity identity){lock(gate){var p=Get(identity);p.Seen=clock();return(p.Id,p.Nickname);}}
+    // Copy under the social lock; never call the social authority from inside the v3 lock.
+    public IReadOnlySet<string> MultiplayerBlockedPeers(OnlineIdentity identity){lock(gate){var p=Get(identity);return peers.Values.Where(other=>other.Id!=p.Id&&Blocked(p,other)).Select(other=>other.Id).ToHashSet(StringComparer.Ordinal);}}
+    private void Classified(Room room){Require(legacyAdmission is null||legacyAdmission(room.Item,room.Content,room.Engine.Id,room.Engine.CoreSha256,room.Engine.RuntimeSha256),409,"STATION_MULTIPLAYER_PROFILE_REQUIRED");}
     private readonly Dictionary<string, Peer> peers = [];
     private readonly Dictionary<OnlineIdentity, string> identities = [];
     private readonly Dictionary<string, Room> rooms = [];
@@ -97,7 +104,7 @@ public sealed class StationOnline
     public StationOnline(IEnumerable<OnlineEngine> engines, Func<string, string?> platformForItem,
         Func<long>? clock = null, bool relayEnabled = false, bool socialEnabled = false,
         bool recoveryEnabled = false, int recoveryMaximumRooms = 64,int recoveryWindowBytes=262144,
-        Action<StationOnlineTrace>? trace=null)
+        Action<StationOnlineTrace>? trace=null,Func<string,string,string,string,string,bool>? legacyAdmission=null,Func<OnlineIdentity,bool>? externalMembership=null)
     {
         this.relayEnabled=relayEnabled;this.socialEnabled=socialEnabled;
         this.recoveryEnabled=recoveryEnabled&&relayEnabled;
@@ -105,7 +112,7 @@ public sealed class StationOnline
         this.recoveryMaximumRooms=recoveryMaximumRooms;
         Require(recoveryWindowBytes is >=32768 and <=1048576,400,"STATION_RECOVERY_CONFIG_INVALID");
         this.recoveryWindowBytes=recoveryWindowBytes;
-        this.trace=trace;
+        this.trace=trace;this.legacyAdmission=legacyAdmission;this.externalMembership=externalMembership;
         this.engines = engines.ToDictionary(x => x.Id);
         foreach (var e in this.engines.Values) { Hash(e.CoreSha256); Hash(e.RuntimeSha256); }
         this.platformForItem = platformForItem;
@@ -152,6 +159,7 @@ public sealed class StationOnline
         foreach(var key in relayGrants.Where(x=>x.Value.Expires<=now).Select(x=>x.Key).ToArray())relayGrants.Remove(key);
         foreach (var p in peers.Values.Where(p => now - p.Seen >= 60000).ToArray())
         {
+            if(externalMembership?.Invoke(p.Identity)==true)continue; // Keep the authoritative public identity of a retained v3 room.
             // Social presence expires; authenticated membership of a v2 match does not.
             if(p.Room is not null && rooms.TryGetValue(p.Room,out var retained) && retained.Transport=="relay-wss-v2")
             {
@@ -289,7 +297,7 @@ public sealed class StationOnline
                 case "heartbeat": break;
                 case "resolve-code": resolved = ResolveCode(p,cmd.InviteCode); break;
                 case "leave": Leave(p); break;
-                case "offline": Trace();Remove(p); return new { schemaVersion=1,instance,revision,offline=true };
+                case "offline": Trace();if(externalMembership?.Invoke(p.Identity)==true)return View(p,cmd.Page);Remove(p); return new { schemaVersion=1,instance,revision,offline=true };
                 case "create":
                 {
                     Require(p.Room is null,409,"STATION_ONLINE_ALREADY_IN_ROOM");
@@ -299,6 +307,7 @@ public sealed class StationOnline
                     Require(cmd.ItemId is not null && platformForItem(cmd.ItemId)==engine.Platform,404,"STATION_ONLINE_ITEM_UNAVAILABLE");
                     Require(Hash(cmd.CoreSha256)==engine.CoreSha256 && Hash(cmd.RuntimeSha256)==engine.RuntimeSha256,409,"STATION_ONLINE_BUILD_MISMATCH");
                     var room=new Room(Id(),p.Id,cmd.ItemId!,engine,Hash(cmd.ContentSha256),Hash(cmd.OptionsSha256),NewRoomCode());
+                    Classified(room);
                     Require(cmd.RecoveryProtocol is null or "station-stream.v2",400,"STATION_RECOVERY_PROTOCOL_INVALID");
                     if(cmd.RecoveryProtocol is not null)Require(recoveryEnabled&&engine.RecoveryProtocol==cmd.RecoveryProtocol,409,"STATION_RECOVERY_BUILD_REQUIRED");
                     p.RecoveryProtocol=cmd.RecoveryProtocol;room.RecoveryProtocol=cmd.RecoveryProtocol;
@@ -309,6 +318,7 @@ public sealed class StationOnline
                     Require(p.Room is null,409,"STATION_ONLINE_ALREADY_IN_ROOM");
                     Require(cmd.RoomId is not null && rooms.ContainsKey(cmd.RoomId),404,"STATION_ONLINE_ROOM_NOT_FOUND");
                     var r=rooms[cmd.RoomId!];Require(r.State=="waiting" && r.Members.Count<2,409,"STATION_ONLINE_ROOM_FULL");
+                    Classified(r);
                     Require(!Blocked(p,peers[r.Host]),403,"STATION_ONLINE_BLOCKED");
                     Require(Hash(cmd.ContentSha256)==r.Content && Hash(cmd.OptionsSha256)==r.Options &&
                         Hash(cmd.CoreSha256)==r.Engine.CoreSha256 && Hash(cmd.RuntimeSha256)==r.Engine.RuntimeSha256,
@@ -328,6 +338,7 @@ public sealed class StationOnline
                 {
                     var r=Member(p,cmd.RoomId);Require(r.Host==p.Id,403,"STATION_ONLINE_HOST_REQUIRED");
                     Require(r.State=="waiting" && r.Members.Count==2 && r.Ready.Count==2,409,"STATION_ONLINE_NOT_READY");
+                    Classified(r);
                     if(cmd.Transport=="relay-wss-v2"){
                         Require(recoveryEnabled,503,"STATION_RECOVERY_DISABLED");
                         Require(r.RecoveryProtocol=="station-stream.v2" && r.Engine.RecoveryProtocol==r.RecoveryProtocol &&
