@@ -1,0 +1,245 @@
+{
+  "appCommit": "ba145fff4bcf2c905ac6eb62916d7e854ec31b09",
+  "serverParent": "ae77b9cca7fc881771bdb809a308e40bafaad1c5",
+  "latestRealServerReturn": "ae77b9cca7fc881771bdb809a308e40bafaad1c5",
+  "docsOnly": true,
+  "linuxDeployed": false,
+  "apkUploaded": false,
+  "files": [
+    {
+      "path": "docs/station-android/ENTREGA-APP-R78-SINOPSES-20261008.md",
+      "bytes": 6548,
+      "sha256": "3cc0374ccd0cc214fd0a9c1e430854caba81a80f386cdefc0c6c350808cabd76"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/BUILD-RESULT.md",
+      "bytes": 1774,
+      "sha256": "ff14aeddcea3f726bca60f3906d731e626b10f5a5ba693a903201e1a42c2ef2e"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/HANDOFF-APP-R78-PARA-SERVIDOR-20261008.md",
+      "bytes": 5644,
+      "sha256": "cb6ce549f4aedb0f6b12cd63f83c3eefb883fea2f83a0b247e3ce57b6e9e0ddb"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/OVERLAY-MANIFEST.json",
+      "bytes": 1267,
+      "sha256": "5140d2145927d8e614ca182f5498fd56c7379de4a04c1bf27e317067779a5968"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/README.md",
+      "bytes": 5039,
+      "sha256": "b461dad17c927d3b0028888bb5c8a8cb2024fa403faeed029d4ec4a481f6b17b"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/SOURCE-FILES.json",
+      "bytes": 7751,
+      "sha256": "e71d0dc14035925fac2a7f43f1dd55c58e2609fd303e1f977043877ea148c375"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/STATUS.json",
+      "bytes": 3152,
+      "sha256": "22a9f9110ef67e50f30cf5d1b33f6b6a198c5724dcaf409ee83f346069d78ac1"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/catalog/README.md",
+      "bytes": 9624,
+      "sha256": "9f6d7639d97ff9c07d545171964fae4e0a8d1b87b19fca1a19f05e367e4a1485"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/catalog/audit_existing_synopses.py",
+      "bytes": 19055,
+      "sha256": "c4e00329c9251312990c99bec0a1075d9d7aec45b5735df3fb4bd6ac8f09ba12"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/catalog/build_server_synopsis_candidates.py",
+      "bytes": 5399,
+      "sha256": "1295312be1d09184954923a4c897b45d4a2ea4ff249447478312133e35f5b3f8"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/catalog/build_synopses.py",
+      "bytes": 16586,
+      "sha256": "8c4fdd10520e5c1691a138b5f5aacf95cd053022dfa37e6c7e4e63ba39a7414d"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/catalog/check_synopsis_structure.py",
+      "bytes": 13703,
+      "sha256": "6d3b51093f3b1445e47a05f92f122a0722df03f06b67841b76fd1574f1a3e0fd"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/catalog/collect_prefix_restorations.py",
+      "bytes": 4234,
+      "sha256": "f748b18436390b101d16c9c7850e664d495776f6fab2c037af11fc0ee3ea7b9f"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/catalog/coverage.json",
+      "bytes": 55288,
+      "sha256": "91a17cbdd914d7e3f96dae17a3db5f9f8498a29f6fed83c6e347d36a90294af0"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/catalog/duplicate-text-groups.json",
+      "bytes": 135916,
+      "sha256": "13d6288e69b60286bf5e71a4f36d5d0b625d887a71d44c937b0f59ae7a562d39"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/catalog/existing-synopses-audit.json",
+      "bytes": 9135351,
+      "sha256": "43d6a8cf4b93294e82bdca6109631096dda9f3dcbd8caeb39c8c819882d3f827"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/catalog/short-descriptions-review.json",
+      "bytes": 6417,
+      "sha256": "30bc96f32f0d23ab28cd559a1b824dd75aba56755b4dda6528a7b9a31523d132"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/data/editorial-synopses.json",
+      "bytes": 42254,
+      "sha256": "770aa5e88c8b2d1362d4c654a9e6e3b14ef85780f7fb6da3add937659f44f458"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/data/exact-alias-bindings.json",
+      "bytes": 6542,
+      "sha256": "265345794322db3ce8ec46d26c02c81a3567135102fbcf17b96b8343ec7113cb"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/data/exact-prefix-restorations.json",
+      "bytes": 70488,
+      "sha256": "e5cfd76f558cbeed39cd80dcc886ddf071f4dbfb5808bf3a38ba880a940e0e10"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/data/exact-server-overrides.json",
+      "bytes": 79694,
+      "sha256": "cc247911d31fb873f12018efd4fc91a99a5fd1e4d8ac8cdac141f2359899b658"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/data/native-only-descriptions.json",
+      "bytes": 11611,
+      "sha256": "e6b0316241b7829a901df2076e6238633dbba4d516d7c536311392247f982f47"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/data/server-synopsis-candidates.json",
+      "bytes": 182727,
+      "sha256": "90a07df6d5b769ebe86a98c4be8e16a8fe70b246b52b970df49a07ec5d968925"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/data/synopses-complete.json",
+      "bytes": 5161255,
+      "sha256": "f1721efbe5f48d5049b4e7ab24a8fe122b9ca989ccca58bc1d86aee26489e3e3"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/docs/ANALISE-EXIBICAO.md",
+      "bytes": 11038,
+      "sha256": "db1533614f3b075d9fba5cb958ca8e872bab51475bef7872b2f76ce9fabe556c"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/docs/server/RECIBO-LEITURA-HANDOFF-R77-20261008.json",
+      "bytes": 1700,
+      "sha256": "1478a0228f6454db62cbbc17f4e587315acbb46d96ad4e04a48ade086c21048f"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/docs/server/RETORNO-LEITURA-HANDOFF-R77-20261008.md",
+      "bytes": 5527,
+      "sha256": "d0a648ce3460c80f655e86e663bbacda17542bafb21dc6e53f2de21585cbd0dc"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/evidence/carousel-build.json",
+      "bytes": 65254,
+      "sha256": "572519be433d38b49100d28118809fa10ab9e4d21cf7ac244b7fff343939e5e2"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/evidence/package.json",
+      "bytes": 8597,
+      "sha256": "c822b85420ed2cd3515e180a471b6bef01aae1df452671239273e20c814dd214"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/evidence/prefix-restorations.json",
+      "bytes": 508,
+      "sha256": "8b9c5c5b2e292ad83fd5d49a26c5f9ef1844ff1de1fea3ff9b828e8e1ed54886"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/evidence/server-synopsis-candidates-receipt.json",
+      "bytes": 950,
+      "sha256": "0056c78b33928baaf0963c37d1195d73d23affd5a3cda372a60db771f585cc34"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/evidence/storage-decision.json",
+      "bytes": 433,
+      "sha256": "80a96c017814fbccc31f92c599d85b50324084dc3af326f7521cdfff7a7e8076"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/evidence/synopses-generation.json",
+      "bytes": 3698,
+      "sha256": "2d884179826f13f46f6c87edacbc5b3d991721c9cad8a2b2cbae61276adbddff"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/evidence/synopses-structure.json",
+      "bytes": 3500,
+      "sha256": "b2401c4bae36baeb4e21b60b211a22d0c436061f24a820ae9a01e0dd707b24ec"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/evidence/synopsis-overlay.json",
+      "bytes": 866,
+      "sha256": "56c3f2a831eff0eed263e7bab8942bed154f36db42fb2ee617c4348645937a2e"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/native/collection_presentation.h",
+      "bytes": 4173,
+      "sha256": "fd6e3af8310481f72b7bd3c4618b56c84ead1f77e50f3b3057194716e902d82e"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/native/native_info.h",
+      "bytes": 21749,
+      "sha256": "d55e30f7e1932d336d8760ea26fa2fcaae5f17fd29b94249bd0f3a7721180ea2"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/native/station_collection_editorial_aliases.h",
+      "bytes": 1084,
+      "sha256": "579ee024fab3f893e188b4aa9f44bfb9696f01dd64f5b8ee32fe96e640fd507d"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/native/station_game_infos.h",
+      "bytes": 2236459,
+      "sha256": "faf4b4e456b5158cb7fe77b15e5613076bf34d5b5c09d27ecd59730edaee83b7"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/native/station_synopsis_selection.h",
+      "bytes": 3799,
+      "sha256": "0f6221d4d31ab6f5340fd74225dbfaba5025c62eb0fee05f9c0b98b4d8ca25ff"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/recipes/build_carousel.py",
+      "bytes": 13296,
+      "sha256": "c8ab7053807aaba5b794dc87a4496c53983e1c6aa7a9d5fed736404bf15cff3f"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/recipes/finalize_docs.py",
+      "bytes": 5169,
+      "sha256": "c59cde2df65e4697300e7bc0b3eeafde65766590e5ca5ba2009c433669cab415"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/recipes/package_candidate.py",
+      "bytes": 10405,
+      "sha256": "a855417be922ee06bcb6deb5b4ee445e2d863987fd17299ef5a58af2a8b16096"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/recipes/prepare_synopsis_overlay.py",
+      "bytes": 3690,
+      "sha256": "c53609634cd459c2d4a91faf7120e66da986e6f26f3fe54199377617966d1b7f"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/recipes/publish_server_handoff.py",
+      "bytes": 7401,
+      "sha256": "cfa77565ba7097ae866f3147ea342c8ec40e69164dff38208a8c0af38199211d"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/tests/collection_editorial.cpp",
+      "bytes": 2378,
+      "sha256": "3e814a8ea606d97a1e8820271b3171ded81d68552f1982dc986b27f6fa537e2f"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r78-20261008/tests/synopsis_selection.cpp",
+      "bytes": 6360,
+      "sha256": "c6a039357e234bb77d5f7422b359fa8f7ecf25580eeb875fde43b48b0830558d"
+    }
+  ]
+}

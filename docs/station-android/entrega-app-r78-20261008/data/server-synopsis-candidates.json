@@ -1,0 +1,2942 @@
+{
+  "schemaVersion": 1,
+  "purpose": "operator-review-only-not-an-existing-API-request",
+  "sourceCatalogRevision": 14,
+  "descriptionLimitUtf16CodeUnits": 2000,
+  "applyPolicy": "Operator must require every precondition including literal previousDescription; mismatch rejects that item.",
+  "changesJavaContract": false,
+  "applied": false,
+  "proposals": [
+    {
+      "precondition": {
+        "itemId": "1e4d341cdfe848ce28f4649e1c2856e5",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "5e8f7fdb658985d03a4e40b40a5963de88c2248899fcdb25be2dd64db6047a85",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Baseball player Frank Thomas licensed one of the first baseball games to use motion-captured 3D graphics and multiple camera angles. 28 stadia have been rendered in 3D, and each has its own visible and significant differences. There are 6 distinct game modes, allowing for single exhibition matches as well as full seasons on the playoffs. There is also a Home Run Derby mode, allowing the player to pelt the ball out of the ground for points. You can choose pitchers and batters, based on their statistics and form. Bowling options are set to define the delivery, with fastballs and curveballs as well as more precise setting of pace and height. Fielding is optional - it's best to leave this to the computer at first You can always alter the infield and outfield depth and shift.",
+      "proposedDescriptionSha256": "8192ac4385c2b67130044f055e79c3025fdf86937fb4de2a44da36427da084f7",
+      "utf16CodeUnits": 781,
+      "name": "Frank Thomas Big Hurt Baseball",
+      "catalogVisible": false,
+      "sourceKind": "exact-artifact-descriptor-alias",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "server/compatibility-own-description",
+        "catalogSource": {
+          "sourceId": "server/compatibilidade-ids.tsv",
+          "line": 252
+        },
+        "existingProvenance": null,
+        "binding": {
+          "sourceItemId": "04de9a95cd4715235e87ce10c94cef85",
+          "sourceName": "Frank Thomas Big Hurt Baseball",
+          "sourceItemRevision": 4,
+          "descriptionSha256": "8192ac4385c2b67130044f055e79c3025fdf86937fb4de2a44da36427da084f7",
+          "sourceKind": "server-catalog",
+          "identity": "same-exact-published-artifact-and-launch-descriptor",
+          "descriptor": {
+            "platform": "snes",
+            "artifactSha256": "5e8f7fdb658985d03a4e40b40a5963de88c2248899fcdb25be2dd64db6047a85",
+            "artifactSizeBytes": 1980387,
+            "artifactLaunchPath": "Frank Thomas' Big Hurt Baseball (U) [!].smc",
+            "artifactExpandedSizeBytes": 3145728,
+            "artifactFileCount": 1
+          },
+          "automaticallyApplied": false,
+          "gameFactsVerified": false,
+          "promotedForDescriptionOnly": true,
+          "originalAliasDescriptionWasEmpty": true,
+          "implementationDecision": "reviewed-exact-descriptor-binding-for-requested-synopsis-correction",
+          "onlineAuthorizationChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "233fcab3a55317536be7001984690ca2",
+        "platform": "megadrive",
+        "itemRevision": 4,
+        "artifactSha256": "792e5f13cc849babeee0b94b2f7f7f215d9e0b234aaad6939cb33e216f323d43",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Neste terceiro episódio os maiores lutadores dos arcades estão de volta para conter, de uma vez por todas, a última investida de Shao Kahn sobre a Terra. Chutes, socos, cotoveladas, cabeçadas, voadoras e muito, muito sangue. A pancadaria vai rolar solta deixando você com o coração na mão... de preferência o do seu adversário!! Seja bem vindo ao mundo de Mortal Kombat 3!!! Mais um combate mortal com 14 Lutadores, incluindo 7 novos personagens, 2 novos chefões e 7 lutador escondido. Seis novos \"Códigos Secretos\" que aumentam a força e habilidade dos lutadores contra seus inimigos. E, uma coisa é certa, eles vão precisar!! Mais Fatalities, Animalities, Friendships, Babalities e Movimentos Secretos que nas duas primeiras versões.",
+      "proposedDescriptionSha256": "4ecac7e228a7a810c31d3dad5fcd56851cc9022dd7b6e54162ee760d1b5049f5",
+      "utf16CodeUnits": 735,
+      "name": "Ultimate Mortal Kombat 3 (USA)",
+      "catalogVisible": false,
+      "sourceKind": "exact-artifact-descriptor-alias",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "server/compatibility-own-description",
+        "catalogSource": {
+          "sourceId": "server/compatibilidade-ids.tsv",
+          "line": 228
+        },
+        "existingProvenance": null,
+        "binding": {
+          "sourceItemId": "714f46fd69f37faaf2169f8e78428fb7",
+          "sourceName": "Ultimate Mortal Kombat 3 (USA)",
+          "sourceItemRevision": 4,
+          "descriptionSha256": "4ecac7e228a7a810c31d3dad5fcd56851cc9022dd7b6e54162ee760d1b5049f5",
+          "sourceKind": "server-catalog",
+          "identity": "same-exact-published-artifact-and-launch-descriptor",
+          "descriptor": {
+            "platform": "megadrive",
+            "artifactSha256": "792e5f13cc849babeee0b94b2f7f7f215d9e0b234aaad6939cb33e216f323d43",
+            "artifactSizeBytes": 3325557,
+            "artifactLaunchPath": "Ultimate Mortal Kombat 3 (USA).md",
+            "artifactExpandedSizeBytes": 4194304,
+            "artifactFileCount": 1
+          },
+          "automaticallyApplied": false,
+          "gameFactsVerified": false,
+          "promotedForDescriptionOnly": true,
+          "originalAliasDescriptionWasEmpty": true,
+          "implementationDecision": "reviewed-exact-descriptor-binding-for-requested-synopsis-correction",
+          "onlineAuthorizationChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "4e4e0836f0f71230040f0ba3988ccc20",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "08b739c4a2d888b5486a17ddd7daa02ca17c2d2a62dfe5c6c9883fcecfa46f73",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Combatentes de diferentes épocas voltam a se reunir em um torneio de luta. Escolha seu herói e enfrente adversários com estilos e golpes próprios. Além dos ataques especiais, o sistema permite devolver projéteis e reverter arremessos quando o movimento é executado no momento certo.",
+      "proposedDescriptionSha256": "df7c7696f2e0a777a1c10d4e2e923ab9b39a3773a88cd7928dc6a81930830b1f",
+      "utf16CodeUnits": 282,
+      "name": "World Heroes 2",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 2008
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "local-xml",
+              "sourceSha256": "733b6ef4c642d171ca71edf23f6426bb4e2720899888740c6660aa826a90e3cc",
+              "sourceOrdinal": 758,
+              "sourceFile": "metadata-sources/catalog-xml/34-snes.xml",
+              "identity": "exact ROM stem and platform; editorial selection resolves alternate wording"
+            }
+          ],
+          "identityNotes": "Catalog item ID, platform and full name reviewed explicitly; no fuzzy runtime association."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "7f710e7c34917478c1f2d14e94121191",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "f03bc941e1657010e34e3dff8bb67da5d19d75bc92c5acd5fa30594ab4012398",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Um ateliê criativo com Mario: desenhe, pinte, produza pequenas animações e componha músicas combinando sons. As ferramentas são operadas com o mouse do Super Nintendo. Além de montar suas próprias criações, você pode praticar a pontaria no minijogo de espantar insetos.",
+      "proposedDescriptionSha256": "4c2f7e3a34442b20783a7acc71dfd197efcafeb298c647927fdb182f9b287c4a",
+      "utf16CodeUnits": 269,
+      "name": "Mario Paint",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1616
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.nintendo.com/es-mx/whatsnew/mario-paint-llega-a-brochazos-al-catalogo-de-super-nes/",
+              "accessed": "2026-10-05"
+            },
+            {
+              "kind": "local-xml",
+              "sourceSha256": "733b6ef4c642d171ca71edf23f6426bb4e2720899888740c6660aa826a90e3cc",
+              "sourceOrdinal": 352,
+              "sourceFile": "metadata-sources/catalog-xml/34-snes.xml",
+              "identity": "exact ROM stem and platform; editorial selection resolves alternate wording"
+            }
+          ],
+          "identityNotes": "Catalog item ID, platform and full name reviewed explicitly; no fuzzy runtime association."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "826da6daebe9edbebffb3721f83abf12",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "cd3a1292fdb5953ca414dd6a74ac0aa1886b2d132fce4c804e79d5e25ea029f6",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Rash e Pimple entram no mundo virtual Gamescape para resgatar Zitz e Michiko. Silas Volkmire e a Dark Queen querem transformar o mundo real em seu domínio. Os heróis precisam enfrentar inimigos e obstáculos em uma aventura que exige golpes poderosos e reflexos rápidos.",
+      "proposedDescriptionSha256": "ce86f4a32b83d8d36ddc34f3d777a58fae38c9b39907e958701bbbb2648c4faf",
+      "utf16CodeUnits": 269,
+      "name": "Battletoads in Battlemaniacs (USA)",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1413
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf",
+              "accessed": "2026-10-05"
+            },
+            {
+              "kind": "local-xml",
+              "sourceSha256": "733b6ef4c642d171ca71edf23f6426bb4e2720899888740c6660aa826a90e3cc",
+              "sourceOrdinal": 78,
+              "sourceFile": "metadata-sources/catalog-xml/34-snes.xml",
+              "identity": "exact ROM stem and platform; editorial selection resolves alternate wording"
+            }
+          ],
+          "identityNotes": "Catalog item ID, platform and full name reviewed explicitly; no fuzzy runtime association."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "8b8a572b46496081397eb48a968c4845",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "bd764a7125f42290536fea03100d39bdf2c1693beab39f6f3823fabd65e0f681",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Lutadores conhecidos e novos desafiantes disputam combates intensos um contra um. Ryu, Ken, Sakura e outros personagens contam com golpes próprios, contra-ataques Alpha Counter e combinações personalizadas. Aprenda o ritmo de cada adversário para transformar uma abertura em uma sequência de ataques.",
+      "proposedDescriptionSha256": "aa1e8843f415620936be3e07eec6e37a846d4bcdafe05aec7dae10e2defd7232",
+      "utf16CodeUnits": 300,
+      "name": "Street Fighter Alpha 2",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1806
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.nintendo.com/it-it/Giochi/Super-Nintendo/Street-Fighter-Alpha-2-922320.html",
+              "accessed": "2026-10-05"
+            },
+            {
+              "kind": "local-xml",
+              "sourceSha256": "733b6ef4c642d171ca71edf23f6426bb4e2720899888740c6660aa826a90e3cc",
+              "sourceOrdinal": 581,
+              "sourceFile": "metadata-sources/catalog-xml/34-snes.xml",
+              "identity": "exact ROM stem and platform; editorial selection resolves alternate wording"
+            }
+          ],
+          "identityNotes": "Catalog item ID, platform and full name reviewed explicitly; no fuzzy runtime association."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "a358c6c18f9b7d48cf5aaf1825f4d9e4",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "9b491d0e7ff73f931708c75ad056989100d7f59f7908257f90dd0531a0340877",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Guerreiros de diferentes origens se enfrentam em duelos de armas enquanto Amakusa ameaça mergulhar o mundo na escuridão. Escolha seu lutador e combine ataques, defesa e movimentos especiais. Controlar a distância e encontrar o momento certo para golpear fazem parte de cada combate.",
+      "proposedDescriptionSha256": "dc58216e803592e7dd4b4e01aa9b516d15a0b37f7a285cab184fc0cfd3fc4705",
+      "utf16CodeUnits": 282,
+      "name": "Samurai Shodown",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1770
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "local-xml",
+              "sourceSha256": "733b6ef4c642d171ca71edf23f6426bb4e2720899888740c6660aa826a90e3cc",
+              "sourceOrdinal": 525,
+              "sourceFile": "metadata-sources/catalog-xml/34-snes.xml",
+              "identity": "exact ROM stem and platform; editorial selection resolves alternate wording"
+            }
+          ],
+          "identityNotes": "Catalog item ID, platform and full name reviewed explicitly; no fuzzy runtime association."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "ab9773189dbfc1571ca0d56adb13ff32",
+        "platform": "megadrive",
+        "itemRevision": 4,
+        "artifactSha256": "39cd650d9225785e9c93d3beb8ba95334eb16077ab930cbfe5f75d9999991576",
+        "previousDescription": "Old Towers",
+        "previousDescriptionSha256": "996eac531574afd827e4230f767d23950832e366b329510b2b62bdacc2037d0b"
+      },
+      "proposedDescription": "Pequenos exploradores entram em torres cheias de armadilhas e inimigos. Para avançar, é preciso observar os caminhos, reagir no momento certo e combinar habilidade com raciocínio. Old Towers é um jogo independente de ação e quebra-cabeça criado para Mega Drive e Genesis.",
+      "proposedDescriptionSha256": "a8ce4828eb4e17350c466ae867eb91840a38f0f52bd9bb63779c3a5dda5fd4ac",
+      "utf16CodeUnits": 271,
+      "name": "Old-Towers",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 478
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://retrosouls.itch.io/old-towers",
+              "accessed": "2026-10-05"
+            }
+          ],
+          "identityNotes": "The server value is exactly Old Towers, a title without a synopsis. Override is permitted only for this exact ID and exact server text; revised server prose keeps priority.",
+          "replaceServerDescriptionExact": "Old Towers"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "ac79b8fc351cb0811a7e9b51a099ba9c",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "cd3a1292fdb5953ca414dd6a74ac0aa1886b2d132fce4c804e79d5e25ea029f6",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Rash e Pimple entram no mundo virtual Gamescape para resgatar Zitz e Michiko. Silas Volkmire e a Dark Queen querem transformar o mundo real em seu domínio. Os heróis precisam enfrentar inimigos e obstáculos em uma aventura que exige golpes poderosos e reflexos rápidos.",
+      "proposedDescriptionSha256": "ce86f4a32b83d8d36ddc34f3d777a58fae38c9b39907e958701bbbb2648c4faf",
+      "utf16CodeUnits": 269,
+      "name": "Battletoads in Battlemaniacs (USA)",
+      "catalogVisible": false,
+      "sourceKind": "exact-artifact-descriptor-alias",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "server/compatibility-own-description",
+        "catalogSource": {
+          "sourceId": "server/compatibilidade-ids.tsv",
+          "line": 248
+        },
+        "existingProvenance": null,
+        "binding": {
+          "sourceItemId": "826da6daebe9edbebffb3721f83abf12",
+          "sourceName": "Battletoads in Battlemaniacs (USA)",
+          "sourceItemRevision": 4,
+          "descriptionSha256": "ce86f4a32b83d8d36ddc34f3d777a58fae38c9b39907e958701bbbb2648c4faf",
+          "sourceKind": "editorial",
+          "identity": "same-exact-published-artifact-and-launch-descriptor",
+          "descriptor": {
+            "platform": "snes",
+            "artifactSha256": "cd3a1292fdb5953ca414dd6a74ac0aa1886b2d132fce4c804e79d5e25ea029f6",
+            "artifactSizeBytes": 670452,
+            "artifactLaunchPath": "Battletoads in Battlemaniacs (ESP) (NTSC).smc",
+            "artifactExpandedSizeBytes": 1048576,
+            "artifactFileCount": 1
+          },
+          "automaticallyApplied": false,
+          "gameFactsVerified": false,
+          "promotedForDescriptionOnly": true,
+          "originalAliasDescriptionWasEmpty": true,
+          "implementationDecision": "reviewed-exact-descriptor-binding-for-requested-synopsis-correction",
+          "onlineAuthorizationChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "b3709ddcfafa9de79fca62886906f213",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "5f5a18de052d931fb6d9d08ef3e1a4745f7453ffa2ed2a7f115d55241dd952c5",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Uma inteligência artificial tomou o controle dos robôs de uma grande corporação. Um ciborgue precisa entrar no complexo e vencer seus guardiões para alcançar o centro da ameaça. Os confrontos acontecem um contra um, exigindo atenção aos ataques e às defesas de cada máquina.",
+      "proposedDescriptionSha256": "0f5f8d889c0bcc1453f9ec0dd03dd5cfd9679d488c910ceacf0a21dfa61761de",
+      "utf16CodeUnits": 274,
+      "name": "Rise of the Robots",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1753
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "local-xml",
+              "sourceSha256": "733b6ef4c642d171ca71edf23f6426bb4e2720899888740c6660aa826a90e3cc",
+              "sourceOrdinal": 509,
+              "sourceFile": "metadata-sources/catalog-xml/34-snes.xml",
+              "identity": "exact ROM stem and platform; editorial selection resolves alternate wording"
+            }
+          ],
+          "identityNotes": "Catalog item ID, platform and full name reviewed explicitly; no fuzzy runtime association."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "c7c7b5780bc10427af69cf042bc9ebdd",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "8ba72e666ccdf534790ec4f2a1d6d0ecf42a3ddb30b293b0e1e81366c01fe1ee",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "WWF Wrestlemania: The Arcade Game merges the personalities and action of the popular WWF TV show characters with a Mortal Kombat-style fighting game. This title features digitized graphics of 8 WWF superstars: Doink, Razor Ramon, Bret \"Hit Man\" Hart, Shawn Michaels, The Undertaker, Yokozuna, Bam Bam Bigelow, and Lex Luger. Although it is a wrestling title, this game is structured a lot like a one-on-one fighter. It is very fast-paced, and features crazy special moves. Also, each match is divided into a series of rounds, much like a fighting game. Instead of each round ending in a KO, each round simply ends when you force the other wrestler(s) to fall by reducing their energy meter. Game modes include single player arcade mode, tournament mode, and vs mode for 1-on-1 multiplayer.",
+      "proposedDescriptionSha256": "09187feb5dfd67b650172f1d61a5cefc88e44372266a48465659e188c5783f51",
+      "utf16CodeUnits": 789,
+      "name": "WWF WrestleMania - The Arcade Game",
+      "catalogVisible": false,
+      "sourceKind": "exact-artifact-descriptor-alias",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "server/compatibility-own-description",
+        "catalogSource": {
+          "sourceId": "server/compatibilidade-ids.tsv",
+          "line": 256
+        },
+        "existingProvenance": null,
+        "binding": {
+          "sourceItemId": "6c1d370746d1def9a3364e6c760501b0",
+          "sourceName": "WWF WrestleMania - The Arcade Game",
+          "sourceItemRevision": 4,
+          "descriptionSha256": "09187feb5dfd67b650172f1d61a5cefc88e44372266a48465659e188c5783f51",
+          "sourceKind": "server-catalog",
+          "identity": "same-exact-published-artifact-and-launch-descriptor",
+          "descriptor": {
+            "platform": "snes",
+            "artifactSha256": "8ba72e666ccdf534790ec4f2a1d6d0ecf42a3ddb30b293b0e1e81366c01fe1ee",
+            "artifactSizeBytes": 2528466,
+            "artifactLaunchPath": "WWF WrestleMania - The Arcade Game (U) [!].smc",
+            "artifactExpandedSizeBytes": 3145728,
+            "artifactFileCount": 1
+          },
+          "automaticallyApplied": false,
+          "gameFactsVerified": false,
+          "promotedForDescriptionOnly": true,
+          "originalAliasDescriptionWasEmpty": true,
+          "implementationDecision": "reviewed-exact-descriptor-binding-for-requested-synopsis-correction",
+          "onlineAuthorizationChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "de85a88485d206651fa0bfde244cfc82",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "e695d2d15fca36a63c76799207f06d12c5c79121c3ac7a11293d38161423fcfe",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Fatal Fury Special é uma versão melhorada do lutador um-a-um da SNK, Fatal Fury 2. É uma conversão do jogo de arcade de 1993 com o mesmo nome. O objetivo ainda é vencer o torneio derrotando todos os outros lutadores, incluindo o chefe final Wolfgang Krauser. Fatal Fury Special apresenta uma seleção bastante grande de lutadores que inclui: 1. Os oito lutadores regulares de Fatal Fury 2: Terry Bogard, Andy Bogard, Joe Higashi, Kim Kaphwan, Jubei Yamada, Cheng Sinzan, Mai Shiranui e Big Bear. Os quatro chefes de Fatal Fury 2: Billy Kane, Axel Hawk, Lawrence Blood and Wolfgang Krauser (desta vez, eles são todos imediatamente jogáveis). Três personagens retornando do primeiro Fatal Fury: Duck King, Tung Fu Rue e Geese Howard (o chefe final de Fatal Fury).",
+      "proposedDescriptionSha256": "875b230f9a55b79ea336847b543c660fad87fe19a4cae74a2ec992134c71d84a",
+      "utf16CodeUnits": 760,
+      "name": "Fatal Fury Special",
+      "catalogVisible": false,
+      "sourceKind": "exact-artifact-descriptor-alias",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "server/compatibility-own-description",
+        "catalogSource": {
+          "sourceId": "server/compatibilidade-ids.tsv",
+          "line": 249
+        },
+        "existingProvenance": null,
+        "binding": {
+          "sourceItemId": "5092f2b508e4476924e033353f0d5292",
+          "sourceName": "Fatal Fury Special",
+          "sourceItemRevision": 4,
+          "descriptionSha256": "875b230f9a55b79ea336847b543c660fad87fe19a4cae74a2ec992134c71d84a",
+          "sourceKind": "server-catalog",
+          "identity": "same-exact-published-artifact-and-launch-descriptor",
+          "descriptor": {
+            "platform": "snes",
+            "artifactSha256": "e695d2d15fca36a63c76799207f06d12c5c79121c3ac7a11293d38161423fcfe",
+            "artifactSizeBytes": 3042582,
+            "artifactLaunchPath": "Fatal Fury Special (U).smc",
+            "artifactExpandedSizeBytes": 4194304,
+            "artifactFileCount": 1
+          },
+          "automaticallyApplied": false,
+          "gameFactsVerified": false,
+          "promotedForDescriptionOnly": true,
+          "originalAliasDescriptionWasEmpty": true,
+          "implementationDecision": "reviewed-exact-descriptor-binding-for-requested-synopsis-correction",
+          "onlineAuthorizationChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "eeecd9dd7b6acf96d7cabfe174676fb7",
+        "platform": "megadrive",
+        "itemRevision": 4,
+        "artifactSha256": "adfea2968551b5301e4bff11e9a90db2b66ffa6b257ad76d4cda0779f4cd4981",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Baseado no popular RPG de mesa e jogo de cartas, Doom Troopers: Mutant Chronicles lança você como um destemido comando que foi contratado para salvar o mundo de uma força invasora de mutantes. Jogue como Mitch Hunter ou Max Steiner ao embarcar na missão mais importante da sua vida - a completa aniquilação da Legião Negra. Vá fundo através de oito fases detalhadas cheias de todos os tipos de mutantes malignos e perigosos, enquanto você descarrega com uma barragem de armas de alta potência que estão prontamente disponíveis. Se a pressão for um pouco demais para você aguentar sozinho, recrute um amigo e tente eliminar a Legião Negra. O mundo está em grave perigo e somente os Doom Troopers podem consertar as coisas.",
+      "proposedDescriptionSha256": "837610361994457d558e8c9b4edb666723cbe298383cc177c107d92d6ffb89d7",
+      "utf16CodeUnits": 721,
+      "name": "Doom Troopers (USA)",
+      "catalogVisible": false,
+      "sourceKind": "exact-artifact-descriptor-alias",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "server/compatibility-own-description",
+        "catalogSource": {
+          "sourceId": "server/compatibilidade-ids.tsv",
+          "line": 54
+        },
+        "existingProvenance": null,
+        "binding": {
+          "sourceItemId": "e307e854203a98bb3174a6e885786edc",
+          "sourceName": "Doom Troopers (USA)",
+          "sourceItemRevision": 4,
+          "descriptionSha256": "837610361994457d558e8c9b4edb666723cbe298383cc177c107d92d6ffb89d7",
+          "sourceKind": "server-catalog",
+          "identity": "same-exact-published-artifact-and-launch-descriptor",
+          "descriptor": {
+            "platform": "megadrive",
+            "artifactSha256": "adfea2968551b5301e4bff11e9a90db2b66ffa6b257ad76d4cda0779f4cd4981",
+            "artifactSizeBytes": 1302182,
+            "artifactLaunchPath": "Doom Troopers (USA).md",
+            "artifactExpandedSizeBytes": 2097152,
+            "artifactFileCount": 1
+          },
+          "automaticallyApplied": false,
+          "gameFactsVerified": false,
+          "promotedForDescriptionOnly": true,
+          "originalAliasDescriptionWasEmpty": true,
+          "implementationDecision": "reviewed-exact-descriptor-binding-for-requested-synopsis-correction",
+          "onlineAuthorizationChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_047e71b0b50a7e6f34c79366be16d907",
+        "platform": "n64",
+        "itemRevision": 5,
+        "artifactSha256": "61906d020aedb656779111a822f3b6a682bbf7c745b0ac4885da49419bdfeb57",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Troque as batalhas pela câmera e explore uma ilha habitada por Pokémon. Procure boas poses, descubra comportamentos e escolha o momento de fotografar. Ao final do percurso, apresente suas melhores imagens ao Professor Carvalho, que avalia aspectos como enquadramento e a presença dos Pokémon.",
+      "proposedDescriptionSha256": "13c47972a4571752cc4932ee088449bcb15fab954d8d4dc8b0635bb789f085d9",
+      "utf16CodeUnits": 292,
+      "name": "Pocket Monster Snap",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1076
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.nintendo.com/us/whatsnew/nintendo-switch-online-expansion-pack-pokemon-snap-is-now-available/",
+              "accessed": "2026-10-05"
+            }
+          ],
+          "identityNotes": "Catalog Japanese name and Pokemon Snap.zip identify the Nintendo 64 photo adventure, not New Pokemon Snap."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_0dd493f5d57b88be9e29e42d82c572fc",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "a46777b6f7dc37ecd4b919b3bf8e8f437adca493f55059256fc3e2facc37e67e",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Aggressors of Dark Kombat é outro jogo de luta de rua mano-a-mano da biblioteca interminável de jogos de luta do Neo-Geo.\n\nEle coloca 8 lutadores de diferentes estilos e forças um contra o outro em um torneio para ver quem é o mais casca grossa das ruas de Tóquio. Seu objetivo, como de costume, é acabar com a barra de vida de seu oponente dentro do limite de tempo, usando seus ataques básicos e movimentos especiais, evitando seus movimentos e ataques.\n\nAggressors of Dark Kombat é único pois combina vários elementos tradicionais dos beat 'em ups horizontais, o que significa que os personagens podem se mover livremente em um espaço isométrico em vez de ficarem restritos a um único plano de movimento. Armas e itens jogáveis geralmente são jogados na arena pelas multidões e você pode pegá-los e usá-los para causar dano adicional. Além disso, as partidas são apenas de 1 rodada, com uma barra de saúde de várias camadas estendida que permite rodadas mais longas do que o normal.",
+      "proposedDescriptionSha256": "800d6218378068de504684469646bd3b528bc5e54b50649bce4eadc224c89594",
+      "utf16CodeUnits": 985,
+      "name": "Aggressors of Dark Kombat / Tsuukai GANGAN Koushinkyoku (ADM-008 ~ ADH-008)",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1144
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 6,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./aodk.zip",
+          "sourceName": "Aggressors of Dark Kombat",
+          "sourceDescription": "Aggressors of Dark Kombat é outro jogo de luta de rua mano-a-mano da biblioteca interminável de jogos de luta do Neo-Geo.\n\nEle coloca 8 lutadores de diferentes estilos e forças um contra o outro em um torneio para ver quem é o mais casca grossa das ruas de Tóquio. Seu objetivo, como de costume, é acabar com a barra de vida de seu oponente dentro do limite de tempo, usando seus ataques básicos e movimentos especiais, evitando seus movimentos e ataques.\n\nAggressors of Dark Kombat é único pois combina vários elementos tradicionais dos beat 'em ups horizontais, o que significa que os personagens podem se mover livremente em um espaço isométrico em vez de ficarem restritos a um único plano de movimento. Armas e itens jogáveis geralmente são jogados na arena pelas multidões e você pode pegá-los e usá-los para causar dano adicional. Além disso, as partidas são apenas de 1 rodada, com uma barra de saúde de várias camadas estendida que permite rodadas mais longas do que o normal.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_13cfd4570309970e2f93c6263e698c72",
+        "platform": "megadrive",
+        "itemRevision": 4,
+        "artifactSha256": "6cdbe5dac1a334776044d7e39bb306e591c0ad88471d71c2430c0127af1d0d15",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Uma noiva e sua futura sogra enfrentam palhaços criminosos para resgatar o noivo sequestrado. Neste jogo de ação com visão de cima, é preciso desviar dos ataques, enfrentar inimigos e usar armas inusitadas. A aventura combina tiroteios, humor e cooperação entre as protagonistas.",
+      "proposedDescriptionSha256": "c9cd0c7e37d949116480b7d19c4df8069e610e1c56cc3d6b7a410811fd650693",
+      "utf16CodeUnits": 279,
+      "name": "Lethal-wedding",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 369
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://presskit.megacatstudios.com/sheet.php?p=Lethal_Wedding",
+              "accessed": "2026-10-05"
+            },
+            {
+              "kind": "web",
+              "url": "https://megacatstudios.itch.io/lethal-wedding-demo",
+              "accessed": "2026-10-05"
+            }
+          ],
+          "identityNotes": "Synopsis covers the documented premise; catalog does not identify whether its file is a demo or final release, so no release/completion claim."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_14fa36fae203715141ce612aecd8b858",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "6dff0b017fc35d244273c4a33db5bd3df11622186d46313f4e5da38eeb5413c3",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "O enredo de Art of Fighting tem lugar em 1978. Ryo Sakazaki e Robert Garcia partem para encontrar a irmã de Ryo, Yuri, que foi sequestrada por Mr. Big. Mr. Big levou Yuri para atrair Takuma Sakazaki, pai de Ryo e criador do Karatê Kyokugen, e também porque Ryo se recusou a trabalhar para Big. Depois que Ryo e Robert derrotam Mr. Big, eles enfrentam o enigmático Mr. Karate. A história de Art of Fighting termina com uma reviravolta; Yuri está prestes a revelar a verdadeira identidade do Mr. Karate como sendo seu pai Takuma.",
+      "proposedDescriptionSha256": "1c2d4c663d45bae164125beb2d2a71a06bedbe9ad67422a8f41846b5d527b570",
+      "utf16CodeUnits": 527,
+      "name": "Art of Fighting / Ryuuko no Ken",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1147
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 130,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 0 - ART OF FIGTHERS COLEÇÃO #/aof.zip",
+          "sourceName": "Art of Fighting",
+          "sourceDescription": "O enredo de Art of Fighting tem lugar em 1978. Ryo Sakazaki e Robert Garcia partem para encontrar a irmã de Ryo, Yuri, que foi sequestrada por Mr. Big. Mr. Big levou Yuri para atrair Takuma Sakazaki, pai de Ryo e criador do Karatê Kyokugen, e também porque Ryo se recusou a trabalhar para Big. Depois que Ryo e Robert derrotam Mr. Big, eles enfrentam o enigmático Mr. Karate. A história de Art of Fighting termina com uma reviravolta; Yuri está prestes a revelar a verdadeira identidade do Mr. Karate como sendo seu pai Takuma.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_1756dea47704806fc1ccb9663705b2a2",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "f36c09618f4ca799227eaaf71b15df8f1ee6d8998d015a309776a887170bd505",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "O segundo \"dream match\" sem trama da série King of Fighters, este jogo apresenta 39 personagens normais e 5 personagens secretos, alguns dos quais não aparecem desde o KOF98.\n\nO sistema de jogabilidade também mudou. O sistema de atacantes e as equipes de quatro personagens encontradas nos últimos três lançamentos de KOF foram totalmente removidos. Em seu lugar estão as equipes de três personagens da velha guarda e o sistema \"Advance\" do The King of Fighters '97 e The King of Fighters '98.",
+      "proposedDescriptionSha256": "3f2da8e1803a8b6f76657fbb4a2e53324bd68240673d3a30c3d5ab27f6b9995e",
+      "utf16CodeUnits": 493,
+      "name": "Kof 2002",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1191
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 161,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 3 - THE KING OF FIGTHERS COLEÇÃO #/kof2002.zip",
+          "sourceName": "The King of Fighters 2002",
+          "sourceDescription": "O segundo \"dream match\" sem trama da série King of Fighters, este jogo apresenta 39 personagens normais e 5 personagens secretos, alguns dos quais não aparecem desde o KOF98.\n\nO sistema de jogabilidade também mudou. O sistema de atacantes e as equipes de quatro personagens encontradas nos últimos três lançamentos de KOF foram totalmente removidos. Em seu lugar estão as equipes de três personagens da velha guarda e o sistema \"Advance\" do The King of Fighters '97 e The King of Fighters '98.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_17a3465fd61fc657396afb3996d7b94f",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "38af04bf814bb8f2940afda9188844fcf11303dc9700b7540f628991b7efbb15",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Uma das lendárias séries de jogos de luta da SNK faz seu retorno! Em Samurai Shodown II, você pode assumir o papel de um dos 15 guerreiros ao lutar pela terra para derrotar o malvado Mizuki! Corte, chute e fatie seus oponentes ao meio ... faça o que for necessário ... viva pela espada e morra por sua lâmina.",
+      "proposedDescriptionSha256": "3d24532602b391cbd965c1f0c78605b79c7e8df4aa769d3f245ba901622e53d2",
+      "utf16CodeUnits": 309,
+      "name": "Samurai Shodown II / Shin Samurai Spirits - Haohmaru jigokuhen",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1258
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 144,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 2 - SAMURAI SHODOWN COLEÇÃO #/samsho2.zip",
+          "sourceName": "Samurai Shodown II",
+          "sourceDescription": "Uma das lendárias séries de jogos de luta da SNK faz seu retorno! Em Samurai Shodown II, você pode assumir o papel de um dos 15 guerreiros ao lutar pela terra para derrotar o malvado Mizuki! Corte, chute e fatie seus oponentes ao meio ... faça o que for necessário ... viva pela espada e morra por sua lâmina.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_18d5c103cae9d7a2499fe2a6e15f2657",
+        "platform": "megadrive",
+        "itemRevision": 4,
+        "artifactSha256": "b4619ddcefe044e46c40f34c7aaeafbce05a244ac9757fd3717e69aa6a0d729f",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Organize as joias que caem e forme sequências de três da mesma cor na horizontal, vertical ou diagonal. As combinações e reações em cadeia ajudam a pressionar o adversário, elevando o campo dele. O desafio mistura raciocínio rápido, planejamento e disputas de quebra-cabeça.",
+      "proposedDescriptionSha256": "b69e2a006d8847c5b37d99cadae91b4f44e0a08aebcfc2547aa78b2fdee9a2c0",
+      "utf16CodeUnits": 274,
+      "name": "Columns III (USA)",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 151
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://vc.sega.jp/vc_columns3/",
+              "accessed": "2026-10-05"
+            }
+          ],
+          "identityNotes": "Catalog item ID, platform and full name reviewed explicitly; no fuzzy runtime association."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_2033d977eb7b41b3c66ffdf389f82b39",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "9ff57e06b83f728457afb1ce6c57323560bd739adecfdcd2b84ff0de583421eb",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Você e / ou um amigo devem escolher um dos três personagens para jogar, cada um com velocidades diferentes nas quais controlam suas naves. Em seguida, selecione três armas para usar na frente e na traseira da nave. Durante o jogo, você deve viajar para todos os planetas do sistema solar e derrotar as várias naves inimigas e o chefe perto do fim do planeta. Suas armas podem ser atualizadas durante a batalha, e você também pode coletar HyperBombs se quiser causar dano máximo. Contém uma trilha sonora agradável que remete ao início da década de 1990, a música \"rave\".",
+      "proposedDescriptionSha256": "5db1ea0ffc0cfcc92a1e333e78d716c9aa755ffaef845e963a91aaf2ba277047",
+      "utf16CodeUnits": 570,
+      "name": "Zed Blade / Operation Ragnarok",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1327
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 127,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./zedblade.zip",
+          "sourceName": "Operation Ragnarok",
+          "sourceDescription": "Você e / ou um amigo devem escolher um dos três personagens para jogar, cada um com velocidades diferentes nas quais controlam suas naves. Em seguida, selecione três armas para usar na frente e na traseira da nave. Durante o jogo, você deve viajar para todos os planetas do sistema solar e derrotar as várias naves inimigas e o chefe perto do fim do planeta. Suas armas podem ser atualizadas durante a batalha, e você também pode coletar HyperBombs se quiser causar dano máximo. Contém uma trilha sonora agradável que remete ao início da década de 1990, a música \"rave\".",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_23c83c0af84a554b338c8eac2876cd8c",
+        "platform": "n64",
+        "itemRevision": 7,
+        "artifactSha256": "6a1e9187341b7ab5604627987e5de5f9c0e044fb0f31bba89e44ec4f8236120e",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Link deixa a floresta para enfrentar a ameaça de Ganondorf em Hyrule. A jornada envolve explorar templos, resolver enigmas e usar a ocarina para atravessar o tempo. Esta entrada é identificada no catálogo como uma ROM alternativa de Ocarina of Time; a sinopse descreve a aventura original.",
+      "proposedDescriptionSha256": "2d854a3b187a5a2a787e48532ef900f9b195293c7c0f2d190add5418ce0e6f9d",
+      "utf16CodeUnits": 289,
+      "name": "The Legend of Zelda: Ocarina of Time (ROM alternativa)",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1112
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.nintendo.com/en-gb/Games/Nintendo-64/The-Legend-of-Zelda-Ocarina-of-Time-269536.html",
+              "accessed": "2026-10-05"
+            }
+          ],
+          "identityNotes": "Catalog explicitly calls this a ROM alternative; no unverified patch, translation or special content is claimed."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_254ac9902b054411aa51b79e365fe1ef",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "fd5a3dcad082a124d5438871a393260c3fcc5d58c0d7ee4f16b66797d9d5026b",
+        "previousDescription": "Um bom jogo de quebra-cabeça que é bastante semelhante ao Super Puzzle Fighter, mas não atinge o mesmo nível de qualidade!",
+        "previousDescriptionSha256": "a59fe5c813e984cf7d101214a49da7a5055867577840c3f982edf591503bc959"
+      },
+      "proposedDescription": "Organize as duplas de peças coloridas que caem no tabuleiro e conecte blocos da mesma cor. Você escolhe quando ativar a reação em cadeia, transformando uma peça em detonador para desfazer o conjunto e enviar obstáculos ao adversário. Montar ramificações maiores fortalece o ataque, mas também ocupa espaço antes da explosão.",
+      "proposedDescriptionSha256": "32153fb0680ffa8fa7b2651eb7ddefbf6296f1885520d8db8e1f195118e2201b",
+      "utf16CodeUnits": 324,
+      "name": "Pochi and Nyaa",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1230
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_254ac9902b054411aa51b79e365fe1ef",
+          "platform": "neogeo",
+          "name": "Pochi and Nyaa",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "a59fe5c813e984cf7d101214a49da7a5055867577840c3f982edf591503bc959",
+          "replaceDescriptionExact": "Um bom jogo de quebra-cabeça que é bastante semelhante ao Super Puzzle Fighter, mas não atinge o mesmo nível de qualidade!",
+          "descriptionSha256": "32153fb0680ffa8fa7b2651eb7ddefbf6296f1885520d8db8e1f195118e2201b",
+          "descriptionCharacters": 324,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://ascii.jp/elem/000/000/332/332655/",
+              "title": "Apresentação de Pochi and Nyaa por Taito e Compile",
+              "accessed": "2026-10-08",
+              "sourceType": "firsthand-publisher-presentation-report",
+              "sourceEvidence": "A cobertura presencial do anúncio explica duplas de peças, cores conectadas, ramificações, detonador acionado pelo jogador e obstáculos enviados ao oponente."
+            },
+            {
+              "kind": "web",
+              "url": "https://puyonexus.com/wiki/Pochi_and_Nyaa",
+              "title": "Pochi and Nyaa: regras da edição Neo Geo",
+              "accessed": "2026-10-08",
+              "sourceType": "secondary-version-corroboration",
+              "sourceEvidence": "A referência dedicada ao jogo corrobora essas mecânicas na edição Neo Geo, distinguindo-a das versões Naomi e PS2."
+            }
+          ],
+          "sourcesURLs": [
+            "https://ascii.jp/elem/000/000/332/332655/",
+            "https://puyonexus.com/wiki/Pochi_and_Nyaa"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "A cobertura presencial do anúncio explica duplas de peças, cores conectadas, ramificações, detonador acionado pelo jogador e obstáculos enviados ao oponente.",
+            "A referência dedicada ao jogo corrobora essas mecânicas na edição Neo Geo, distinguindo-a das versões Naomi e PS2."
+          ],
+          "identityNotes": "O anúncio primário é anterior à edição MVS. A redação usa somente as mecânicas comuns corroboradas para Neo Geo; omite dimensões do tabuleiro e personagens/modos adicionais de outras versões. Remove a comparação opinativa antiga.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_2835401116d999f5e4c294813b80b594",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "87ec0b9462fa66d979a027a88d60972f9ab73ce28b842ca6f8f28244d9cc78eb",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Metal Slug, originalmente lançado no Neo Geo, é um side-scrolling shoot'em'up. O jogador(es) assume o papel de um soldado (ou dois) e luta contra um gigantesco exército. Cada nível consiste em correr para frente e explodir tudo o que se move, enquanto coleta power-ups ao longo do caminho (há também uma grande variedade de armas no jogo). No final de cada nível, o jogador enfrenta um chefe gigantesco.",
+      "proposedDescriptionSha256": "adaa61782007b92d9ce4b2a25f2e2b7cdc7afe3900418a866fd483a2e69fc2d2",
+      "utf16CodeUnits": 403,
+      "name": "Metal Slug - Super Vehicle-001",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1202
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 135,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 1 - METAL SLUG COLEÇÃO #/mslug.zip",
+          "sourceName": "Metal Slug - Super Vehicle-001",
+          "sourceDescription": "Metal Slug, originalmente lançado no Neo Geo, é um side-scrolling shoot'em'up. O jogador(es) assume o papel de um soldado (ou dois) e luta contra um gigantesco exército. Cada nível consiste em correr para frente e explodir tudo o que se move, enquanto coleta power-ups ao longo do caminho (há também uma grande variedade de armas no jogo). No final de cada nível, o jogador enfrenta um chefe gigantesco.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_2933aae1b70aedbb947959d0cf94d4b9",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "4b8bd66054c93a51e5bb7f915656cf43d5f3de5533a0c3df4945943f0ddebb02",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Samurai Shodown V Special, conhecido como Samurai Spirits Zero Special no Japão, é o nono jogo da série de jogos de luta Samurai Shodown, desenvolvida pela SNK. Este jogo é uma versão atualizada do jogo titulado como Samurai Shodown V, e é o último jogo oficial desenvolvido para a plataforma Neo Geo.\n\nAo contrário de Samurai Shodown V, a história desta versão atualizada teve um pequeno papel no jogo através de somente falas dos personagens de vitória. Há um pequeno diálogo que se encontra exclusivo à versão japonesa, onde era executado quando o personagem do jogador executava o seu zetsumei ougi. A versão em inglês simplesmente usa suas falas de vitória normais, dependendo de quantos pontos de vida restavam.",
+      "proposedDescriptionSha256": "930923b9fe76ce4b7644f435c9de2b1448d59e5e32c037a8e9c3e116fbd1f38d",
+      "utf16CodeUnits": 717,
+      "name": "Samurai Shodown V Special / Samurai Spirits Zero Special (set 1)",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1263
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 142,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 2 - SAMURAI SHODOWN COLEÇÃO #/samsh5sp.zip",
+          "sourceName": "Samurai Shodown V Special",
+          "sourceDescription": "Samurai Shodown V Special, conhecido como Samurai Spirits Zero Special no Japão, é o nono jogo da série de jogos de luta Samurai Shodown, desenvolvida pela SNK. Este jogo é uma versão atualizada do jogo titulado como Samurai Shodown V, e é o último jogo oficial desenvolvido para a plataforma Neo Geo.\n\nAo contrário de Samurai Shodown V, a história desta versão atualizada teve um pequeno papel no jogo através de somente falas dos personagens de vitória. Há um pequeno diálogo que se encontra exclusivo à versão japonesa, onde era executado quando o personagem do jogador executava o seu zetsumei ougi. A versão em inglês simplesmente usa suas falas de vitória normais, dependendo de quantos pontos de vida restavam.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_320ff39a7a8b49e96da6105cef9330e9",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "172200c28246dd5877bc1f980190cf9084df0a1683dc23b5ef68e622fd934204",
+        "previousDescription": "Shougi no Tatsujin foi lançado em setembro de 1995 no Japão.\nO título deste jogo foi traduzido do japonês como 'Mestre de Shougi'.\nO 'Shougi' é um jogo de xadrez japonês.",
+        "previousDescriptionSha256": "c0b9e9fd3edecdda4bf6cc3438e64293b37319d899d97d71da135dd54e01e9a0"
+      },
+      "proposedDescription": "Leve o raciocínio do shogi ao tabuleiro do Neo Geo. Além da modalidade tradicional do xadrez japonês, o jogo oferece hasami shogi, uma variação simplificada. Guias para iniciantes e ajustes de desvantagem por peças permitem preparar o desafio conforme a experiência de quem está jogando.",
+      "proposedDescriptionSha256": "a48ba7b513d063ccf6bd7d7795f4f314b317abcda345c798c10ca59ba0e67e67",
+      "utf16CodeUnits": 287,
+      "name": "Syougi No Tatsujin - Master of Syougi",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1281
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_320ff39a7a8b49e96da6105cef9330e9",
+          "platform": "neogeo",
+          "name": "Syougi No Tatsujin - Master of Syougi",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "c0b9e9fd3edecdda4bf6cc3438e64293b37319d899d97d71da135dd54e01e9a0",
+          "replaceDescriptionExact": "Shougi no Tatsujin foi lançado em setembro de 1995 no Japão.\nO título deste jogo foi traduzido do japonês como 'Mestre de Shougi'.\nO 'Shougi' é um jogo de xadrez japonês.",
+          "descriptionSha256": "a48ba7b513d063ccf6bd7d7795f4f314b317abcda345c798c10ca59ba0e67e67",
+          "descriptionCharacters": 287,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.hamster.co.jp/en/release/7057/",
+              "title": "ACA NEOGEO Master of Syougi: apresentação oficial",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-publisher",
+              "sourceEvidence": "A editora descreve explicitamente o original SNK de 1995, shogi tradicional, hasami shogi, guias para iniciantes e ajustes de handicap."
+            }
+          ],
+          "sourcesURLs": [
+            "https://www.hamster.co.jp/en/release/7057/"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "A editora descreve explicitamente o original SNK de 1995, shogi tradicional, hasami shogi, guias para iniciantes e ajustes de handicap."
+          ],
+          "identityNotes": "Foram usadas apenas características atribuídas ao jogo original de 1995. Recursos de plataforma ou serviços da reedição ACA de 2026 não foram atribuídos ao catálogo.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_37517edbe9669dbacaabce303c5a550e",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "e9a5383b9575e9660815275efbbda9b71ea54deccee30e871e1472b9ba3c3dd5",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "A família Castella de Metro City começou a arruinar a pacata cidade de Osaka com o violento grupo japonês \"Heiwa-gumi\". Para parar a luta, os detetives da polícia de Metro enviaram dois personagens perigosos, Duke e Billy, para o Japão. Com o apoio do famoso detetive japonês Ryu, eles decidiram invadir a fortaleza do inimigo. Violência impiedosa nas luzes de neon de Osaka. Haverá um fim para esta guerra?\n\nBurning Fight é um jogo de briga de rua lateral semelhante a Final Fight. Como Duke, Billy ou Ryu, você deve lutar em vários locais em Osaka. No início do jogo, você só pode usar seus punhos para lidar com gangues, mas quebrando coisas como cabines telefônicas e placas de rua ao longo do caminho, você pode obter novas armas e mais saúde. No final de cada local, você terá que derrotar um chefe para continuar a missão.",
+      "proposedDescriptionSha256": "d9138d9b2b02a90c13205f1a9b21f9d951b8085fab5b2f3baed0099dad488e3a",
+      "utf16CodeUnits": 829,
+      "name": "Burning Fight",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1159
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 16,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./burningf.zip",
+          "sourceName": "Burning Fight",
+          "sourceDescription": "A família Castella de Metro City começou a arruinar a pacata cidade de Osaka com o violento grupo japonês \"Heiwa-gumi\". Para parar a luta, os detetives da polícia de Metro enviaram dois personagens perigosos, Duke e Billy, para o Japão. Com o apoio do famoso detetive japonês Ryu, eles decidiram invadir a fortaleza do inimigo. Violência impiedosa nas luzes de neon de Osaka. Haverá um fim para esta guerra?\n\nBurning Fight é um jogo de briga de rua lateral semelhante a Final Fight. Como Duke, Billy ou Ryu, você deve lutar em vários locais em Osaka. No início do jogo, você só pode usar seus punhos para lidar com gangues, mas quebrando coisas como cabines telefônicas e placas de rua ao longo do caminho, você pode obter novas armas e mais saúde. No final de cada local, você terá que derrotar um chefe para continuar a missão.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_385088de5796e169c8328b6b02ef5f62",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "9b90d1709906ebb558652182718339d5c04c9e9fe0056a417c38fc14c74a914c",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Shock Troopers 2nd Squad oferece mais uma vez uma série de níveis nos quais você deve, sozinho ou em pares, derrotar os planos sinistros do ditador local. Desta vez, a equipe de comando deve intervir em Billberk, uma nação ameaçada por um misterioso conglomerado que produz armas de destruição em massa, o D.I.C.",
+      "proposedDescriptionSha256": "f71699d747e74b36a096d536220d225494e8ef95d00c276c4c9a38c750eb9fb0",
+      "utf16CodeUnits": 312,
+      "name": "Shock Troopers - 2nd Squad",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1269
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 96,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./shocktr2.zip",
+          "sourceName": "Shock Troopers : 2nd Squad",
+          "sourceDescription": "Shock Troopers 2nd Squad oferece mais uma vez uma série de níveis nos quais você deve, sozinho ou em pares, derrotar os planos sinistros do ditador local. Desta vez, a equipe de comando deve intervir em Billberk, uma nação ameaçada por um misterioso conglomerado que produz armas de destruição em massa, o D.I.C.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_425a7590749cd4cfcf0e7d4bb66e61a6",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "a680ab862dc22a847bddd587de6a2ec7d4f96d04ea5e32dbdf3ce07d41d2ec80",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "O 5º episódio da mais famosa série de tiro dos arcades traz a jogabilidade clássica inalterada, uma nova arma, 6 novos veículos, bem como 2 novos soldados para o panteão. A introdução mais notável da série é o Sistema Metalish, dando ao jogador uma nova possibilidade de ganhar mais pontos: depois de pegar certos emblemas em forma de escudo, uma barra de cronômetro será exibida na parte superior da tela. Durante esse tempo, você deve atirar rapidamente no maior número de inimigos possível e, dependendo da sua atuação, você receberá um bônus correspondente a um distintivo que será adicionado à sua pontuação após completá-lo. Quando você morre, o bônus desaparece.",
+      "proposedDescriptionSha256": "5149c4288098c8d034f96af80c73db082f488555c35a56e4b174623e222cac25",
+      "utf16CodeUnits": 669,
+      "name": "Metal Slug 4 (set 1)",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1207
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 139,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 1 - METAL SLUG COLEÇÃO #/mslug4.zip",
+          "sourceName": "Metal Slug 4",
+          "sourceDescription": "O 5º episódio da mais famosa série de tiro dos arcades traz a jogabilidade clássica inalterada, uma nova arma, 6 novos veículos, bem como 2 novos soldados para o panteão. A introdução mais notável da série é o Sistema Metalish, dando ao jogador uma nova possibilidade de ganhar mais pontos: depois de pegar certos emblemas em forma de escudo, uma barra de cronômetro será exibida na parte superior da tela. Durante esse tempo, você deve atirar rapidamente no maior número de inimigos possível e, dependendo da sua atuação, você receberá um bônus correspondente a um distintivo que será adicionado à sua pontuação após completá-lo. Quando você morre, o bônus desaparece.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_4edf8e2a65d21b8485a9869f7ad77749",
+        "platform": "n64",
+        "itemRevision": 5,
+        "artifactSha256": "78c0533cf73b868cc557abc6091ee794f3877397bc50db97a029c575029ef1dc",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Este ROM hack de Ocarina of Time apresenta uma aventura própria, situada muito depois de uma era em que Ganon governou Hyrule. Um jovem aventureiro e uma fada partem em busca de riqueza e do poder deixado por ele. A jornada traz novos cenários, desafios e uma história diferente da obra original.",
+      "proposedDescriptionSha256": "fe39eaa7f72b25c4570e3e8662c259c1f78a4a515651fe0125adf359871e63d9",
+      "utf16CodeUnits": 296,
+      "name": "The Legend of Zelda: Sands of Time",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1113
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://romhackplaza.org/romhacks/the-legend-of-zelda-sands-of-time-nintendo-64",
+              "accessed": "2026-10-05"
+            },
+            {
+              "kind": "web",
+              "url": "https://retroachievements.org/forums/topic/28846",
+              "accessed": "2026-10-05"
+            }
+          ],
+          "identityNotes": "The published catalog and original N64 XML name Sands of Time while archive basename says Ocarina of Time. Synopsis describes the named hack; the installed ROM version/hash was not inspected, so patch version and compatibility are not claimed."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_564829edc1c31c1ff9e296f892c09771",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "a57eaef5407a5efc873dfb73af80b2fa8dc566b09e19bcdf53ae5d45347e0064",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "A quinta edição da mais famosa série de tiro dos arcades traz muitas mudanças: desta vez, você não enfrentará o exército de Morden como nos jogos anteriores, mas um novo grupo de inimigos que compõe o já mencionado Exército Ptolemaico. Mais conteúdo neste título incluem 3 armas e 2 veículos de jogos passados foram reincorporados, assim como 3 novos veículos. A adição mais importante é um movimento deslizante: pressionar o botão B ao fazer o agachamento fará seu personagem deslizar por um curto período de tempo no solo. Você não será capaz de lançar granadas, mas sua arma pode ser disparada normalmente.",
+      "proposedDescriptionSha256": "2a51624b9598ec48d9986cd3c121063337e4031ea890099a8e74522aff86352c",
+      "utf16CodeUnits": 609,
+      "name": "Metal Slug 5 (set 1)",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1209
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 140,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 1 - METAL SLUG COLEÇÃO #/mslug5.zip",
+          "sourceName": "Metal Slug 5",
+          "sourceDescription": "A quinta edição da mais famosa série de tiro dos arcades traz muitas mudanças: desta vez, você não enfrentará o exército de Morden como nos jogos anteriores, mas um novo grupo de inimigos que compõe o já mencionado Exército Ptolemaico. Mais conteúdo neste título incluem 3 armas e 2 veículos de jogos passados foram reincorporados, assim como 3 novos veículos. A adição mais importante é um movimento deslizante: pressionar o botão B ao fazer o agachamento fará seu personagem deslizar por um curto período de tempo no solo. Você não será capaz de lançar granadas, mas sua arma pode ser disparada normalmente.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_5bb088e618e29e191d9d16108d4ac5f1",
+        "platform": "n64",
+        "itemRevision": 5,
+        "artifactSha256": "0c19ed9c9e9f241b53b20397031a11860a83e52d69e0674c0c0010f2b7c31705",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Cornell retorna à sua aldeia e encontra destruição: sua irmã Ada foi levada por forças malignas. Capaz de liberar um poder de homem-lobo, ele segue o rastro dos sequestradores até os domínios de Drácula. Esta aventura combina exploração, plataformas e combates em cenários tridimensionais.",
+      "proposedDescriptionSha256": "2e70251ac63c5ce09804047087b4ff464fc4b59569cd959aada04910f3f420ae",
+      "utf16CodeUnits": 289,
+      "name": "Akumajou Dracula Mokushiroku Gaiden: Legend of Cornell",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 987
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.konami.com/games/castlevania/us/en-us/page/history_1999_n64_gaiden",
+              "accessed": "2026-10-05"
+            }
+          ],
+          "identityNotes": "Published Japanese title and catalog archive Castlevania - Legacy of Darkness identify Cornell adventure; no region-specific content is invented."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_5ce296cb062c6e82764381cb6bbd5ab9",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "f0b326f0d0733f5f836c8077c7ff29b347e524cc785c92de72a55dd1131f5c56",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Mais um ano, outro KOF. As adições este ano vêm na forma de gráficos e sons ligeiramente melhorados, novos movimentos e um novo modo de jogo. A jogabilidade é muito mais orientada pelo enredo, já que você tem chefes intermediários que podem mudar dependendo de qual time você selecionar. Além disso, existem vários finais especiais que são mostrados apenas quando certas combinações \"Edit Team\" são selecionadas. Novos personagens incluem o New Face Team, o Fatal Fury Outlaw Team (com a estréia em KOF de \"Blue\" Mary Ryan e Ryuji Yamazaki, e o retorno de Billy Kane), e o aluno de Kyo, Shingo Yabuki. No total, The King of Fighters '97 tem 29 personagens diferentes.",
+      "proposedDescriptionSha256": "d9b0a2eee31fba5ed8f33e4424372f71a9cc80c4e8d5f4e0298e256b06a34491",
+      "utf16CodeUnits": 667,
+      "name": "Kof'97 (set 1)",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1192
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 168,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 3 - THE KING OF FIGTHERS COLEÇÃO #/kof97.zip",
+          "sourceName": "The King of Fighters '97",
+          "sourceDescription": "Mais um ano, outro KOF. As adições este ano vêm na forma de gráficos e sons ligeiramente melhorados, novos movimentos e um novo modo de jogo. A jogabilidade é muito mais orientada pelo enredo, já que você tem chefes intermediários que podem mudar dependendo de qual time você selecionar. Além disso, existem vários finais especiais que são mostrados apenas quando certas combinações \"Edit Team\" são selecionadas. Novos personagens incluem o New Face Team, o Fatal Fury Outlaw Team (com a estréia em KOF de \"Blue\" Mary Ryan e Ryuji Yamazaki, e o retorno de Billy Kane), e o aluno de Kyo, Shingo Yabuki. No total, The King of Fighters '97 tem 29 personagens diferentes.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_5f5fa2403a86b9b3744696fa262f004e",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "cefcaa11f5cf782c197121e65afe7cc71cbb376cb280bc7adc352b50d39cb944",
+        "previousDescription": "Metal Slug 6 é um hack de \"Metal Slug 3\". O verdadeiro Metal Slug 6 foi lançado para o sistema arcade Atomiswave.",
+        "previousDescriptionSha256": "b34deaca25b7d42f88bebff46bcefcf54b099696e83143dce00418169ff22fdf"
+      },
+      "proposedDescription": "Versão modificada de Metal Slug 3 para Neo Geo, apresentada neste catálogo com o nome Metal Slug 6. Sua base é a ação de correr, saltar e atirar entre soldados, criaturas e veículos de combate. Trata-se de uma variante do terceiro jogo; o Metal Slug 6 oficial é outro título, desenvolvido para a placa Atomiswave.",
+      "proposedDescriptionSha256": "d3c66bb37db75950882f137b52f9be6343a18fb1ba2c426b818f459fc4fd237a",
+      "utf16CodeUnits": 313,
+      "name": "Metal Slug 6 (bootleg)",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1210
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_5f5fa2403a86b9b3744696fa262f004e",
+          "platform": "neogeo",
+          "name": "Metal Slug 6 (bootleg)",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "b34deaca25b7d42f88bebff46bcefcf54b099696e83143dce00418169ff22fdf",
+          "replaceDescriptionExact": "Metal Slug 6 é um hack de \"Metal Slug 3\". O verdadeiro Metal Slug 6 foi lançado para o sistema arcade Atomiswave.",
+          "descriptionSha256": "d3c66bb37db75950882f137b52f9be6343a18fb1ba2c426b818f459fc4fd237a",
+          "descriptionCharacters": 313,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.snk-corp.co.jp/us/games/acaneogeo/metalslug3/",
+              "title": "Metal Slug 3: página oficial SNK",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-publisher",
+              "sourceEvidence": "A SNK descreve a base como jogo de ação, com personagens, armamento e veículos Slug."
+            },
+            {
+              "kind": "web",
+              "url": "https://www.snk-corp.co.jp/us/anniversary/metalslug30th/history/",
+              "title": "História oficial de Metal Slug",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-publisher",
+              "sourceEvidence": "A cronologia oficial identifica Metal Slug 6 como lançamento para Atomiswave em fevereiro de 2006."
+            }
+          ],
+          "sourcesURLs": [
+            "https://www.snk-corp.co.jp/us/games/acaneogeo/metalslug3/",
+            "https://www.snk-corp.co.jp/us/anniversary/metalslug30th/history/"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "A SNK descreve a base como jogo de ação, com personagens, armamento e veículos Slug.",
+            "A cronologia oficial identifica Metal Slug 6 como lançamento para Atomiswave em fevereiro de 2006."
+          ],
+          "identityNotes": "A identificação como modificação de Metal Slug 3 provém do nome e da descrição já fornecidos em R37, não de uma perícia da ROM. Não atribui Ralf, Clark ou sistemas exclusivos do Metal Slug 6 oficial ao bootleg; não afirma quais modificações específicas estão presentes.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_6e520177c566a5e151520a8f23812786",
+        "platform": "megadrive",
+        "itemRevision": 4,
+        "artifactSha256": "a79a7702d730e0229d0f1bb0ae716b6c53659e45788d641440939981575a6622",
+        "previousDescription": "Jogo cancelado baseado no filme de mesmo nome.",
+        "previousDescriptionSha256": "82d48a5a85226c916b060f60b7021552e48d7ee7a11c3761b222a837d27e0753"
+      },
+      "proposedDescription": "Adaptação de ação do filme Congo, ambientada na expedição que se aventura pela selva africana e pela cidade de Zinj. O projeto para os consoles de 16 bits acompanha Amy e os integrantes da missão, mas acabou cancelado antes do lançamento comercial original.",
+      "proposedDescriptionSha256": "cd4d81164a21ce4990138b2292a783ece36e72492e5cfea40eed4148e87f91c0",
+      "utf16CodeUnits": 257,
+      "name": "Congo",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 154
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_6e520177c566a5e151520a8f23812786",
+          "platform": "megadrive",
+          "name": "Congo",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "82d48a5a85226c916b060f60b7021552e48d7ee7a11c3761b222a837d27e0753",
+          "replaceDescriptionExact": "Jogo cancelado baseado no filme de mesmo nome.",
+          "descriptionSha256": "cd4d81164a21ce4990138b2292a783ece36e72492e5cfea40eed4148e87f91c0",
+          "descriptionCharacters": 257,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.nesworld.com/index.php?page=snes-unreleased-congo",
+              "title": "Congo: relato de desenvolvimento de Greg Hedger",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-developer-account",
+              "sourceEvidence": "O programador relata o desenvolvimento para SNES e Genesis, os personagens Amy e Karen, a expedição e Zinj, e o cancelamento após a entrega do projeto."
+            }
+          ],
+          "sourcesURLs": [
+            "https://www.nesworld.com/index.php?page=snes-unreleased-congo"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "O programador relata o desenvolvimento para SNES e Genesis, os personagens Amy e Karen, a expedição e Zinj, e o cancelamento após a entrega do projeto."
+          ],
+          "identityNotes": "Texto comum ao projeto de 16 bits. Não identifica o estágio de desenvolvimento do protótipo do catálogo, nem promete que todas as fases da versão final estejam presentes.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_711850d2931f52ac0726c0cce1b60e46",
+        "platform": "megadrive",
+        "itemRevision": 4,
+        "artifactSha256": "0b3f6f6ddb2374466a795181308d8d34191c3cb69bbb6d3bf4e056d70348f35c",
+        "previousDescription": "Mega Games é uma compilação de três volumes de jogos da Sega comercializados na Europa. Este volume 2 contém:nn1. Golden Axe nn2. Streets of Rage nn3. The Revenge of Shinobi",
+        "previousDescriptionSha256": "69923cf866e99d31b74913cc297775c5753ec46c09b68fb8a0b7c74da98b7de7"
+      },
+      "proposedDescription": "Três aventuras da Sega reunidas em um cartucho: Golden Axe, Streets of Rage e The Revenge of Shinobi. Enfrente os guerreiros de Death Adder com armas e magia, combata criminosos pelas ruas da cidade e assuma o papel de um ninja em fases de ação e plataforma. Cada título conserva seu próprio estilo de combate.",
+      "proposedDescriptionSha256": "3f50416bb3be820657324b9f6996d136763b243552bffecef5b2733664557557",
+      "utf16CodeUnits": 310,
+      "name": "Mega Games 2",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 403
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_711850d2931f52ac0726c0cce1b60e46",
+          "platform": "megadrive",
+          "name": "Mega Games 2",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "69923cf866e99d31b74913cc297775c5753ec46c09b68fb8a0b7c74da98b7de7",
+          "replaceDescriptionExact": "Mega Games é uma compilação de três volumes de jogos da Sega comercializados na Europa. Este volume 2 contém:nn1. Golden Axe nn2. Streets of Rage nn3. The Revenge of Shinobi",
+          "descriptionSha256": "3f50416bb3be820657324b9f6996d136763b243552bffecef5b2733664557557",
+          "descriptionCharacters": 310,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.segaretro.org/Mega_Games_2",
+              "title": "Mega Games 2: identificação e digitalizações da embalagem",
+              "accessed": "2026-10-08",
+              "sourceType": "secondary-catalog-with-packaging-scans",
+              "sourceEvidence": "Os três títulos também constam da descrição R37 fornecida pelo catálogo; a página reúne as digitalizações da compilação."
+            },
+            {
+              "kind": "web",
+              "url": "https://manuals.sega.com/genesismini/pdf/GOLDEN_AXE.pdf",
+              "title": "Golden Axe: manual oficial Sega",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-publisher-manual",
+              "sourceEvidence": "O manual descreve os guerreiros, suas armas e magia, e a luta contra Death Adder."
+            },
+            {
+              "kind": "web",
+              "url": "https://shop.sega.com/products/streets-of-rage-character-blue-t-shirt",
+              "title": "Streets of Rage: página oficial Sega",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-publisher",
+              "sourceEvidence": "A descrição da Sega identifica Adam, Axel e Blaze combatendo os criminosos da cidade."
+            },
+            {
+              "kind": "web",
+              "url": "https://www.esrb.org/ratings/26943/the-revenge-of-shinobi/",
+              "title": "The Revenge of Shinobi: descrição da ESRB",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-ratings-authority",
+              "sourceEvidence": "A descrição da entidade classificadora identifica ninja, ambientes de plataforma, shurikens e magia."
+            }
+          ],
+          "sourcesURLs": [
+            "https://www.segaretro.org/Mega_Games_2",
+            "https://manuals.sega.com/genesismini/pdf/GOLDEN_AXE.pdf",
+            "https://shop.sega.com/products/streets-of-rage-character-blue-t-shirt",
+            "https://www.esrb.org/ratings/26943/the-revenge-of-shinobi/"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "Os três títulos também constam da descrição R37 fornecida pelo catálogo; a página reúne as digitalizações da compilação.",
+            "O manual descreve os guerreiros, suas armas e magia, e a luta contra Death Adder.",
+            "A descrição da Sega identifica Adam, Axel e Blaze combatendo os criminosos da cidade.",
+            "A descrição da entidade classificadora identifica ninja, ambientes de plataforma, shurikens e magia."
+          ],
+          "identityNotes": "Compilação identificada pelo nome e pelos três títulos do texto fornecido. A sinopse não atribui o modo cooperativo de um jogo aos demais, nem altera metadados de capacidade.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_759d5d8bed21547d5e3fe8c303bdadf7",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "4fca66cc5b554170a1cca2bf3e964cc559b82a207bdc0b7e64bac28f927635a8",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Esta entrada é uma variante não oficial (bootleg). A sinopse a seguir apresenta o jogo base; as alterações específicas desta variante não foram documentadas.\n\nSVC Chaos: SNK vs Capcom para Neo Geo é um jogo de luta com os guerreiros das duas famosas séries Street Fighter e King of Fighters. O jogo oferece um modo arcade onde se segue a história de seu herói, assim como os modos versus, challenge  e survival.",
+      "proposedDescriptionSha256": "a543c264756b728265bf3d2b6b0d2ea4bdbb6143cd46826eb6973c91ac0af45e",
+      "utf16CodeUnits": 411,
+      "name": "SNK vs. Capcom - SVC Chaos Plus (bootleg set 2)",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1251
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 185,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 5 - HACKS #/svcplusa.zip",
+          "sourceName": "SVC Chaos - SNK Vs. Capcom (bootleg)",
+          "sourceDescription": "SVC Chaos: SNK vs Capcom para Neo Geo é um jogo de luta com os guerreiros das duas famosas séries Street Fighter e King of Fighters. O jogo oferece um modo arcade onde se segue a história de seu herói, assim como os modos versus, challenge  e survival.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]",
+          "variantDisclosure": "Published catalog identifies bootleg; no patch-specific behavior claimed."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_790327404870a6f35c9f4adab34b66dd",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "ee1a030f30f3ab06361921447b3fcf84c987dd13d76e62964e44720e0ec82c56",
+        "previousDescription": "Mega-Lo-Mania é uma simulação de Deus como nenhuma outra. É um tumulto galopante quando homens de todas as esferas da vida histórica lutam entre si para controlar um planeta.",
+        "previousDescriptionSha256": "925646dfd9c961f9cb7428dfe99840b0c628968baa601bd30d0eba75aa3be20c"
+      },
+      "proposedDescription": "Escolha um dos quatro candidatos a deus e conduza seu povo na disputa pelo domínio de um planeta. Distribua a população entre pesquisa, produção e combate, desenvolvendo armas e defesas que atravessam diferentes épocas. A conquista das ilhas depende de administrar recursos e decidir quando expandir ou proteger seus territórios.",
+      "proposedDescriptionSha256": "e1eaee5cad7372b5509ca8d06e40b01635d938a373b594bedf477ba1ba3023c8",
+      "utf16CodeUnits": 329,
+      "name": "Mega-Lo-Mania",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1634
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_790327404870a6f35c9f4adab34b66dd",
+          "platform": "snes",
+          "name": "Mega-Lo-Mania",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "925646dfd9c961f9cb7428dfe99840b0c628968baa601bd30d0eba75aa3be20c",
+          "replaceDescriptionExact": "Mega-Lo-Mania é uma simulação de Deus como nenhuma outra. É um tumulto galopante quando homens de todas as esferas da vida histórica lutam entre si para controlar um planeta.",
+          "descriptionSha256": "e1eaee5cad7372b5509ca8d06e40b01635d938a373b594bedf477ba1ba3023c8",
+          "descriptionCharacters": 329,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.abandonwaredos.com/docawd.php?idg=1891&sf=megalomania_manual.txt&sg=Mega+lo+Mania&st=manual",
+              "title": "Mega lo Mania: manual original transcrito",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-manual-transcription",
+              "sourceEvidence": "A introdução e as seções de jogo explicam quatro líderes, controle de pessoas, tecnologias de armas/defesa, ilhas, pesquisa, fabricação e exércitos."
+            }
+          ],
+          "sourcesURLs": [
+            "https://www.abandonwaredos.com/docawd.php?idg=1891&sf=megalomania_manual.txt&sg=Mega+lo+Mania&st=manual"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "A introdução e as seções de jogo explicam quatro líderes, controle de pessoas, tecnologias de armas/defesa, ilhas, pesquisa, fabricação e exércitos."
+          ],
+          "identityNotes": "A fonte transcreve o manual original para computadores. Apenas premissa e gestão compartilhadas com a adaptação SNES foram usadas; comandos de teclado/mouse, voz, quantidade de ilhas e sistema de gravação não foram transferidos.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_79ad81b885f85b3f3948eeef9531c054",
+        "platform": "megadrive",
+        "itemRevision": 4,
+        "artifactSha256": "0ec4a904636d8b0e29e9ac1e078dbf362d871efc8d3e680a0e5849644883fb7f",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Gire e posicione as peças que caem para completar linhas horizontais sem deixar espaços vazios. As linhas completas desaparecem e abrem espaço para continuar. Antecipar o próximo encaixe e evitar que a pilha alcance o topo são os principais desafios deste quebra-cabeça.",
+      "proposedDescriptionSha256": "c39167f69e425fd8db8f3d3bb00e1b4e875579fab5493f5e71bcac1b7fecc945",
+      "utf16CodeUnits": 270,
+      "name": "Tetris",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 722
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://tetris.com/about",
+              "accessed": "2026-10-05"
+            }
+          ],
+          "identityNotes": "Only classic Tetris rules are described. Catalog does not identify which Mega Drive edition; no release year, developer, game modes or Mini-2019 claim."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_7a95e83b68b446b1213426498f51b51e",
+        "platform": "megadrive",
+        "itemRevision": 4,
+        "artifactSha256": "e0455b63a636b9f716073f4233a1b92bc00f0b418dab37cdac69f9012f6a3b66",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Os Battletoads se unem aos irmãos Billy e Jimmy Lee para enfrentar a aliança da Dark Queen com os Shadow Warriors. Escolha um dos heróis e atravesse uma aventura de ação que combina brigas, obstáculos e confrontos contra chefes, sozinho ou em dupla.",
+      "proposedDescriptionSha256": "64676c95650b72aa059b801915e118d6738dddf0d527fe208ff9bd251e9fdc98",
+      "utf16CodeUnits": 249,
+      "name": "Battletoads-Double Dragon (USA)",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 71
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://en.wikipedia.org/wiki/Battletoads/Double_Dragon",
+              "accessed": "2026-10-05"
+            }
+          ],
+          "identityNotes": "Catalog item ID, platform and full name reviewed explicitly; no fuzzy runtime association."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_7ea6f5bf4adbb94ef30ebeebb1790ef3",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "91a37e7257dc9f440e967fa4d2b3251c66f4360e5cdcd13fb3f552789a4a9dda",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Neo Bomberman em Neo Geo é um jogo de ação no qual você joga como um dos 12 personagens oferecidos. O objetivo do jogo é detonar uma bomba perto de seu oponente para reduzi-lo a cinzas. Dois modos estão disponíveis: um modo normal compreendendo 5 ambientes diferentes e um modo de batalha permitindo que 4 jogadores competam simultaneamente com 2 consoles conectados",
+      "proposedDescriptionSha256": "166da09072b8f9944da15d3d08c2ac6eb5d53ad279bcf34cd255a2052ec5bdd5",
+      "utf16CodeUnits": 366,
+      "name": "Neo Bomberman",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1215
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 62,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./neobombe.zip",
+          "sourceName": "Neo Bomberman",
+          "sourceDescription": "Neo Bomberman em Neo Geo é um jogo de ação no qual você joga como um dos 12 personagens oferecidos. O objetivo do jogo é detonar uma bomba perto de seu oponente para reduzi-lo a cinzas. Dois modos estão disponíveis: um modo normal compreendendo 5 ambientes diferentes e um modo de batalha permitindo que 4 jogadores competam simultaneamente com 2 consoles conectados",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_816d4d1177838c587c3483e274079943",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "490938815467ac123c94803276f5aa32ee39f1c5fad94f95bf6c21551ff7e5ef",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Sete anos após o quarto jogo da série, Samurai Shodown retorna. No período de tempo do jogo, este se passa antes do primeiro jogo, daí o título japonês Samurai Spirits Zero. Acontece em 1786 de Janeiro até o final do verão. O jogo é, portanto, considerado uma prequela para a série.\n\nA jogabilidade geral foi ligeiramente alterada. É um pouco mais rápido e o sistema Slash / Bust foi removido. Cada personagem agora tem apenas uma versão, ou o modo Bust é simplesmente substituído por um novo personagem de configuração muito semelhante. Barras de combinação, esquivas e \"fatalities\" também desapareceram. Os movimentos básicos foram modelados após os primeiros jogos da série. Eles consistem em três tipos de barras, um único chute e várias manobras de esquiva semelhantes a Samurai Shodown II.\n\nExistem 24 personagens, um elenco familiar com alguns novos rostos. Ao contrário dos jogos anteriores, não é possível matar o seu adversário.",
+      "proposedDescriptionSha256": "feccb50bd15f7f5bb07cb8aebf80106591054612734070ac1102fd2392c8caff",
+      "utf16CodeUnits": 938,
+      "name": "Samurai Shodown V / Samurai Spirits Zero (set 1)",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1261
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 147,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 2 - SAMURAI SHODOWN COLEÇÃO #/samsho5.zip",
+          "sourceName": "Samurai Shodown V (NGM-2700)",
+          "sourceDescription": "Sete anos após o quarto jogo da série, Samurai Shodown retorna. No período de tempo do jogo, este se passa antes do primeiro jogo, daí o título japonês Samurai Spirits Zero. Acontece em 1786 de Janeiro até o final do verão. O jogo é, portanto, considerado uma prequela para a série.\n\nA jogabilidade geral foi ligeiramente alterada. É um pouco mais rápido e o sistema Slash / Bust foi removido. Cada personagem agora tem apenas uma versão, ou o modo Bust é simplesmente substituído por um novo personagem de configuração muito semelhante. Barras de combinação, esquivas e \"fatalities\" também desapareceram. Os movimentos básicos foram modelados após os primeiros jogos da série. Eles consistem em três tipos de barras, um único chute e várias manobras de esquiva semelhantes a Samurai Shodown II.\n\nExistem 24 personagens, um elenco familiar com alguns novos rostos. Ao contrário dos jogos anteriores, não é possível matar o seu adversário.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_82be488369296f0a02e78608415efee4",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "9674cc269d89a52d1719a487b44acf004fb777cbd58d76b19a2cd25749728215",
+        "previousDescription": "Este jogo é baseado no live action/animação Cool World de 1992. Você joga como Frank Harris e tenta impedir Holli Would de entrar mundo real.",
+        "previousDescriptionSha256": "d35e770802212adfaa8c9acc0b29ca5671959ff49ed1b0905c678f5b16cac3bf"
+      },
+      "proposedDescription": "O desenhista Jack Deebs atravessa a fronteira para um mundo onde os desenhos ganham vida. Holli Would quer usar o Golden Spike of Power para alcançar o mundo real, colocando as duas dimensões em risco. Explore os cenários, reúna objetos e capture Doodles com uma caneta para impedir seu plano.",
+      "proposedDescriptionSha256": "c8731c5f216bc413d2e4e632867b5696104b98444c49f64837bea86e6d8dd8d7",
+      "utf16CodeUnits": 293,
+      "name": "Cool World",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1464
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_82be488369296f0a02e78608415efee4",
+          "platform": "snes",
+          "name": "Cool World",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "d35e770802212adfaa8c9acc0b29ca5671959ff49ed1b0905c678f5b16cac3bf",
+          "replaceDescriptionExact": "Este jogo é baseado no live action/animação Cool World de 1992. Você joga como Frank Harris e tenta impedir Holli Would de entrar mundo real.",
+          "descriptionSha256": "c8731c5f216bc413d2e4e632867b5696104b98444c49f64837bea86e6d8dd8d7",
+          "descriptionCharacters": 293,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://manuals.plus/nintendo/cool-world-snes-video-game-manual",
+              "title": "Cool World: manual original Ocean para SNES",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-game-manual-transcription",
+              "sourceEvidence": "A seção narrativa identifica Jack Deebs como personagem controlado; as instruções explicam Holli, Golden Spike, exploração, objetos e captura de Doodles com caneta."
+            }
+          ],
+          "sourcesURLs": [
+            "https://manuals.plus/nintendo/cool-world-snes-video-game-manual"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "A seção narrativa identifica Jack Deebs como personagem controlado; as instruções explicam Holli, Golden Spike, exploração, objetos e captura de Doodles com caneta."
+          ],
+          "identityNotes": "Correção factual específica de plataforma: o texto antigo citava Frank Harris, personagem da versão NES. O manual SNES identifica Jack Deebs. Não foram mescladas as duas versões.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_86610244479f39d8e2daac13d317e458",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "3aa13bef982496b8af014be9d24ce69b5abefc543a46b426bf65b19b91ce1b19",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Neo Turf Masters é um jogo de golfe que oferece jogos em três países diferentes. Você pode jogar nos EUA, na Alemanha e no Japão. Há 18 buracos por curso, assim como na vida real, que totaliza 54 buracos. O jogo apresenta um modo versus para dois jogadores e três modos para um jogador. Você pode escolher entre seis personagens diferentes, cada um com seus próprios pontos fracos e fortes. Como muitos outros jogos de golfe, você usa um tipo de jogo de clique preciso, onde você clica em um mapa aéreo no qual deseja bater na bola e ajusta o taco, o slice e a força. No modo Versus, você pode ganhar \"super clubes\" que só podem ser usados uma vez. Estes também podem ser trocados entre amigos.",
+      "proposedDescriptionSha256": "634a83112b3bb17376abf4ff10cffc9ac64a9d0c49fe17ae82bc3245d6c3a3b8",
+      "utf16CodeUnits": 694,
+      "name": "Neo Turf Masters / Big Tournament Golf",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1220
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 117,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./turfmast.zip",
+          "sourceName": "Neo Turf Masters",
+          "sourceDescription": "Neo Turf Masters é um jogo de golfe que oferece jogos em três países diferentes. Você pode jogar nos EUA, na Alemanha e no Japão. Há 18 buracos por curso, assim como na vida real, que totaliza 54 buracos. O jogo apresenta um modo versus para dois jogadores e três modos para um jogador. Você pode escolher entre seis personagens diferentes, cada um com seus próprios pontos fracos e fortes. Como muitos outros jogos de golfe, você usa um tipo de jogo de clique preciso, onde você clica em um mapa aéreo no qual deseja bater na bola e ajusta o taco, o slice e a força. No modo Versus, você pode ganhar \"super clubes\" que só podem ser usados uma vez. Estes também podem ser trocados entre amigos.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_918690e09cc4b21f4cd6a233eb72185c",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "a3f06aba1279367d4dc93334c0008d6a58e9ff52901dcb739af148e5fa7c1a54",
+        "previousDescription": "Barbie: Vacation Adventure é um jogo de aventura que leva a Barbie em excursões educacionais pelos Estados Unidos da América.",
+        "previousDescriptionSha256": "77927850175c51e0ce328656566644851b32667e50c546a09cbfee8ab46b8b32"
+      },
+      "proposedDescription": "Acompanhe Barbie em uma viagem de férias pelos Estados Unidos, com atividades diferentes em cada parada. A aventura reúne minijogos como vôlei e equitação, além de desafios de uma feira, incluindo capturar um porquinho. Os passeios alternam exploração e pequenas tarefas em vez de uma única competição esportiva.",
+      "proposedDescriptionSha256": "6f41a04ebe575dd050ae2c5f99f1f145d9ff2d4c40b6370bac468623153543d8",
+      "utf16CodeUnits": 312,
+      "name": "Barbie Vacation Adventure",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1402
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_918690e09cc4b21f4cd6a233eb72185c",
+          "platform": "snes",
+          "name": "Barbie Vacation Adventure",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "77927850175c51e0ce328656566644851b32667e50c546a09cbfee8ab46b8b32",
+          "replaceDescriptionExact": "Barbie: Vacation Adventure é um jogo de aventura que leva a Barbie em excursões educacionais pelos Estados Unidos da América.",
+          "descriptionSha256": "6f41a04ebe575dd050ae2c5f99f1f145d9ff2d4c40b6370bac468623153543d8",
+          "descriptionCharacters": 312,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.timeextension.com/news/2026/06/its-always-disappointing-when-a-game-youve-been-working-on-doesnt-come-out",
+              "title": "Barbie Vacation Adventure: entrevista com Chun Wah Kong",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-team-member-interview",
+              "sourceEvidence": "O responsável pelos testes da Software Creations recorda minijogos, vôlei em 2D, equitação e captura de um porco na feira."
+            }
+          ],
+          "sourcesURLs": [
+            "https://www.timeextension.com/news/2026/06/its-always-disappointing-when-a-game-youve-been-working-on-doesnt-come-out"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "O responsável pelos testes da Software Creations recorda minijogos, vôlei em 2D, equitação e captura de um porco na feira."
+          ],
+          "identityNotes": "A viagem pelos EUA já integra o texto R37. A entrevista trata do projeto original SNES/Mega Drive. A descrição não atribui recursos da compilação Barbie Rewind de 2026 ao protótipo do catálogo.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_9378e16ec68ead0b6986f91c51420bdf",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "b0e48fb31b74b054a9ca239d7f909b5bbbe407c1990c64c502d309c36ebf4a28",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Na terceira parte da série Metal Slug, o General Morden está de volta e ele planeja estabelecer uma nova ordem mundial. Você guia um dos heróis: Marco, Tarma, Eri ou Fio enquanto eles abrem caminho através de níveis laterais com um tema único, repleto de incontáveis inimigos e chefes difíceis. Você tem que libertar os reféns e você pode montar veículos bizarros, como camelos, elefantes, tanques e robôs.",
+      "proposedDescriptionSha256": "3397094a0093e39a754a2cdf76c31d2e225e3574ccd6ce87ffdf81b0f642599e",
+      "utf16CodeUnits": 406,
+      "name": "Metal Slug 3 (set 1)",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1204
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 137,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 1 - METAL SLUG COLEÇÃO #/mslug3.zip",
+          "sourceName": "Metal Slug 3",
+          "sourceDescription": "Na terceira parte da série Metal Slug, o General Morden está de volta e ele planeja estabelecer uma nova ordem mundial. Você guia um dos heróis: Marco, Tarma, Eri ou Fio enquanto eles abrem caminho através de níveis laterais com um tema único, repleto de incontáveis inimigos e chefes difíceis. Você tem que libertar os reféns e você pode montar veículos bizarros, como camelos, elefantes, tanques e robôs.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_961567c3e579c78d6064906d0187f1f7",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "cde5dc3a65371a0fdf94191aa6c367e288807ccb42ec3c1fd45544f3ec6ab5ea",
+        "previousDescription": "Viewpoint on Neo Geo é um jogo de tiro 3D isométrico composto por seis níveis. O título é conhecido por ser extremamente difícil. Você vai aceitar o desafio?",
+        "previousDescriptionSha256": "1018f6b098af24ecd7448404361913cc7964da5316602c832a3537bc35ed86c6"
+      },
+      "proposedDescription": "Pilote uma nave por cenários vistos em perspectiva diagonal, desviando de inimigos, projéteis e armadilhas. Alterne os tiros rápidos com um disparo mais forte, carregado ao segurar o botão de ataque. Bombas especiais e equipamentos de apoio ampliam o poder de fogo e ajudam a abrir caminho entre os ataques.",
+      "proposedDescriptionSha256": "30517608ad86eefa8120350bb44674f7cdccff40aa0f59efdd07ee497459c2d8",
+      "utf16CodeUnits": 307,
+      "name": "Viewpoint",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1316
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_961567c3e579c78d6064906d0187f1f7",
+          "platform": "neogeo",
+          "name": "Viewpoint",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "1018f6b098af24ecd7448404361913cc7964da5316602c832a3537bc35ed86c6",
+          "replaceDescriptionExact": "Viewpoint on Neo Geo é um jogo de tiro 3D isométrico composto por seis níveis. O título é conhecido por ser extremamente difícil. Você vai aceitar o desafio?",
+          "descriptionSha256": "30517608ad86eefa8120350bb44674f7cdccff40aa0f59efdd07ee497459c2d8",
+          "descriptionCharacters": 307,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.gamesdatabase.org/Media/SYSTEM/SNK_Neo_Geo_AES/manual/Formated/Viewpoint_-_1992_-_SNK.pdf",
+              "title": "Viewpoint: manual original japonês do Neo Geo AES",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-manual-scan",
+              "sourceEvidence": "Leitura visual das páginas impressas 2, 4, 5, 8 e 9: perspectiva diagonal, tiros normais, disparo carregado, bombas e opções de apoio."
+            }
+          ],
+          "sourcesURLs": [
+            "https://www.gamesdatabase.org/Media/SYSTEM/SNK_Neo_Geo_AES/manual/Formated/Viewpoint_-_1992_-_SNK.pdf"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "Leitura visual das páginas impressas 2, 4, 5, 8 e 9: perspectiva diagonal, tiros normais, disparo carregado, bombas e opções de apoio."
+          ],
+          "identityNotes": "Manual AES do mesmo jogo de Neo Geo. Descrição restrita à jogabilidade comum; não afirma cooperação simultânea, configurações ocultas ou opções de outros ports. PDF consultado somente como fonte, não incorporado ao aplicativo.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_96370d9b27425afa2c331f51097a376d",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "f3d89989d7fdb761c2f7d3bd0580f8332b7e0133c172f1da0fa0c934e2764e71",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Metal Slug X é uma versão alternativa do Metal Slug 2. Diferente do primeiro jogo da franquia, Metal Slug X permite que você escolha os personagens Marco, Tarma, Eri e Fio.\nO General Morden derrotado por Marco e Tarma resolve se aliar a alienígenas que vem do espaço e a sua contínua ambição de conquistar o mundo.\nDurante as missões deve-se libertar os prisioneiros, estes oferecem armas e equipamentos que podem ser usados no combate.\nSão 6 missões até o final onde os alienígenas prendem Morden e o Exército se une para destruir os alienígenas e libertar o general.",
+      "proposedDescriptionSha256": "f1a88d4060dfceab5d26109c7c7c11a03a77180f8e0504754eb88f965c56c4fe",
+      "utf16CodeUnits": 568,
+      "name": "Metal Slug X - Super Vehicle-001",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1211
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 141,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 1 - METAL SLUG COLEÇÃO #/mslugx.zip",
+          "sourceName": "Metal Slug X - Super Vehicle-001",
+          "sourceDescription": "Metal Slug X é uma versão alternativa do Metal Slug 2. Diferente do primeiro jogo da franquia, Metal Slug X permite que você escolha os personagens Marco, Tarma, Eri e Fio.\nO General Morden derrotado por Marco e Tarma resolve se aliar a alienígenas que vem do espaço e a sua contínua ambição de conquistar o mundo.\nDurante as missões deve-se libertar os prisioneiros, estes oferecem armas e equipamentos que podem ser usados no combate.\nSão 6 missões até o final onde os alienígenas prendem Morden e o Exército se une para destruir os alienígenas e libertar o general.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_9cc0c3e6a7ebd4bbb502fd55f9a0a012",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "dc3b088a162aa82afb273661d7edf57942293f3eb0879c6a875beb1b7e387748",
+        "previousDescription": "Battle Flip Shot é um jogo arcade que mistura elementos de Pong com o design de personagens japoneses.",
+        "previousDescriptionSha256": "c44ce8ba19e0febd30dff4153a4f6bbd749d6612503511a4ccf9dc34b82af8b0"
+      },
+      "proposedDescription": "Use o escudo para devolver a bola e destruir os alvos do adversário enquanto protege os seis alvos atrás do seu personagem. A bola ricocheteia nas paredes da arena, exigindo posicionamento e reação para defender e atacar. Cinco competidores com poderes especiais dão estilos diferentes a este duelo inspirado em Pong.",
+      "proposedDescriptionSha256": "9454ae168df7e34be9b7a4cee8d370b1d1a7cc7557e58135dfe70968680d3694",
+      "utf16CodeUnits": 317,
+      "name": "Battle Flip Shot",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1154
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_9cc0c3e6a7ebd4bbb502fd55f9a0a012",
+          "platform": "neogeo",
+          "name": "Battle Flip Shot",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "c44ce8ba19e0febd30dff4153a4f6bbd749d6612503511a4ccf9dc34b82af8b0",
+          "replaceDescriptionExact": "Battle Flip Shot é um jogo arcade que mistura elementos de Pong com o design de personagens japoneses.",
+          "descriptionSha256": "9454ae168df7e34be9b7a4cee8d370b1d1a7cc7557e58135dfe70968680d3694",
+          "descriptionCharacters": 317,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.pixelheart.eu/en/produit/battle-flip-shot-neo-geo-aes-us/",
+              "title": "Battle Flip Shot: descrição da editora PixelHeart",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-publisher",
+              "sourceEvidence": "A licenciada de Visco descreve o duelo, seis alvos por lado, escudos, ricochetes e cinco personagens com poderes especiais."
+            }
+          ],
+          "sourcesURLs": [
+            "https://www.pixelheart.eu/en/produit/battle-flip-shot-neo-geo-aes-us/"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "A licenciada de Visco descreve o duelo, seis alvos por lado, escudos, ricochetes e cinco personagens com poderes especiais."
+          ],
+          "identityNotes": "Usa as regras do jogo original descritas pela editora da reedição. Nenhum detalhe de embalagem, tiragem, data da reedição ou endosso da SNK foi transferido à sinopse.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_a2a5233c6060008f7e9fc7652ed324a3",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "67b5aa316d129b7b76c7bd287d0ba0612733acbd46c3fe6cf2d57d44ea6876f1",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "O pesadelo lunar da sangrenta guerra espacial de 200 anos pensava-se ter acabado no ALPHA MISSION \"original\". Mas agora, com o advento de armas tecnicamente mais sofisticadas, o malvado \"Fulvar\" e sua \"Aliança Sete Estrelas\" voltaram a destruir todos os planetas que estão no caminho do alvo final ... Terra! Agora no ano de 2525! Sua missão como piloto do novo caça SYD-FX é usar todas as armas à sua disposição para livrar a galáxia de uma vez por todas do mal que agora domina e ameaça a Terra. Portanto, prepare-se, prenda a respiração e prepare-se para gráficos inacreditáveis e som estéreo que o levarão para o profundo, escuro espaço interior. Esteja preparado ... você pode nunca mais voltar!",
+      "proposedDescriptionSha256": "cb4ae4b02472607fe57edfcf12a332b6c2a5af7c4ff4d652b2afdb24b499e2e2",
+      "utf16CodeUnits": 700,
+      "name": "Alpha Mission II / ASO II - Last Guardian",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1145
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 4,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./alpham2.zip",
+          "sourceName": "Alpha Mission II",
+          "sourceDescription": "O pesadelo lunar da sangrenta guerra espacial de 200 anos pensava-se ter acabado no ALPHA MISSION \"original\". Mas agora, com o advento de armas tecnicamente mais sofisticadas, o malvado \"Fulvar\" e sua \"Aliança Sete Estrelas\" voltaram a destruir todos os planetas que estão no caminho do alvo final ... Terra! Agora no ano de 2525! Sua missão como piloto do novo caça SYD-FX é usar todas as armas à sua disposição para livrar a galáxia de uma vez por todas do mal que agora domina e ameaça a Terra. Portanto, prepare-se, prenda a respiração e prepare-se para gráficos inacreditáveis e som estéreo que o levarão para o profundo, escuro espaço interior. Esteja preparado ... você pode nunca mais voltar!",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_a68e8a753492a413b851c02ff50b5538",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "5e886b33cd5c2f48267022e7723b9cf5db5c9c03fa90744f13a18882b6148551",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Sengoku em Neo Geo é um beat'em tudo definido na terra do sol nascente. A história começa quando um shogun negro ameaça invadir o mundo e levanta um exército de espíritos de samurai para escravizar a humanidade. O jogador incorpora dois heróis que são adeptos das artes marciais e possuem poderes divinos. Ataque o exército de demônios e tente entrar em sua fortaleza.",
+      "proposedDescriptionSha256": "b80d54d455cbb2054406ded8534aa17469dad273fa0a6313a8b19ff3a8232deb",
+      "utf16CodeUnits": 368,
+      "name": "Sengoku / Sengoku Denshou",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1265
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 93,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./sengoku.zip",
+          "sourceName": "Sengoku",
+          "sourceDescription": "Sengoku em Neo Geo é um beat'em tudo definido na terra do sol nascente. A história começa quando um shogun negro ameaça invadir o mundo e levanta um exército de espíritos de samurai para escravizar a humanidade. O jogador incorpora dois heróis que são adeptos das artes marciais e possuem poderes divinos. Ataque o exército de demônios e tente entrar em sua fortaleza.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_b2ba4f4928eb081162b08b40c578cfc1",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "c4df60691cfc9cd2de02efe1b00df7413cdf2a167ae583068ba50f06f11e7e64",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Experimentos genéticos deram terrivelmente errados e transformaram toda a população de uma cidade em mutantes. Em Mutation Nation on Neo Geo, você joga como um dos dois bravos companheiros encarregados de trazer ordem a esta vila amaldiçoada.",
+      "proposedDescriptionSha256": "046191cb3891676205f30e0d0d9a7c8fd4aa442462a0d4d07ffcf52d6a9bfdce",
+      "utf16CodeUnits": 242,
+      "name": "Mutation Nation",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1213
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 58,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./mutnat.zip",
+          "sourceName": "Mutation Nation",
+          "sourceDescription": "Experimentos genéticos deram terrivelmente errados e transformaram toda a população de uma cidade em mutantes. Em Mutation Nation on Neo Geo, você joga como um dos dois bravos companheiros encarregados de trazer ordem a esta vila amaldiçoada.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_b452db5c0342cc2661455417cb496c4d",
+        "platform": "megadrive",
+        "itemRevision": 4,
+        "artifactSha256": "a9157ccf74385deb9ff1e798b3cdad5663f9d11c128c99265ac680a28555ed61",
+        "previousDescription": "O terceiro jogo da série de beisebol Hardball. Esta revisão apresenta o locutor Al Michaels que oferece comentários em execução enquanto você joga.",
+        "previousDescriptionSha256": "4dcfddedade8e1f3efc3b258f081f9436ace867a3d3456f829831b508d8357a1"
+      },
+      "proposedDescription": "Entre em campo em uma simulação de beisebol com comentários de Al Michaels. Controle os arremessos, procure o momento certo para rebater e avance pelas bases enquanto organiza a defesa. A disputa combina as jogadas no gramado com decisões sobre jogadores e equipes, acompanhando o ritmo de uma partida de beisebol.",
+      "proposedDescriptionSha256": "bc383d085c443e78f0ed8ecb077ecb26b576acaa9d50a49ed1f593ce99126cac",
+      "utf16CodeUnits": 314,
+      "name": "HardBall III",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 295
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_b452db5c0342cc2661455417cb496c4d",
+          "platform": "megadrive",
+          "name": "HardBall III",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "4dcfddedade8e1f3efc3b258f081f9436ace867a3d3456f829831b508d8357a1",
+          "replaceDescriptionExact": "O terceiro jogo da série de beisebol Hardball. Esta revisão apresenta o locutor Al Michaels que oferece comentários em execução enquanto você joga.",
+          "descriptionSha256": "bc383d085c443e78f0ed8ecb077ecb26b576acaa9d50a49ed1f593ce99126cac",
+          "descriptionCharacters": 314,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://gamefaqs.gamespot.com/genesis/586227-al-michaels-announces-hardball-iii/data",
+              "title": "Al Michaels Announces HardBall III: descrição de embalagem preservada",
+              "accessed": "2026-10-08",
+              "sourceType": "publisher-blurb-transcribed-by-archive",
+              "sourceEvidence": "A transcrição da descrição comercial menciona Al Michaels, arremessos, rebatidas, roubos de base, defesa e edição de jogadores/equipes."
+            }
+          ],
+          "sourcesURLs": [
+            "https://gamefaqs.gamespot.com/genesis/586227-al-michaels-announces-hardball-iii/data"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "A transcrição da descrição comercial menciona Al Michaels, arremessos, rebatidas, roubos de base, defesa e edição de jogadores/equipes."
+          ],
+          "identityNotes": "Aplicado ao título Mega Drive/Genesis. Não foram transferidas promessas específicas do DOS, como VGA, nem afirmadas licenças de equipes ou número de estádios. A fonte é transcrição de embalagem, não manual integral conferido.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_bac08457e912b7fa55cde5cd373e93c8",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "8eaf1779660118008c90f9c386259ff110b816a2b2f33337e273a9aec9f0ce06",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Como Marco, Eri, Tarma ou Fio, você deve derrotar o malvado General Morden e seus capangas. Para fazer isso, você deve derrotar vários inimigos que ficam no seu caminho. Ao longo do jogo, você pode coletar novas armas, incluindo Heavy Machine Gun, Shot Gun, Rocket Launcher, Flame Shot, Laser Shot, Flame Bottles, and Armor Piercer. Também espalhados por todo o jogo, você pode andar em quatro veículos diferentes (conhecidos como Slugs), como o Metal Slug, Slug Flyer, SlugNoid e Camel Slug. Ao usar esses veículos, você pode causar uma destruição impressionante contra o exército maligno de Morden. Outros itens, como energia, munição extra e comida (coma demais e seu jogador ganhará peso) também são encontrados durante o jogo.",
+      "proposedDescriptionSha256": "74397a1cfa9b389dc3dee87b7ec0e10c928c91185eab1382a085e28bf936ed65",
+      "utf16CodeUnits": 731,
+      "name": "Metal Slug 2 - Super Vehicle-001/II",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1203
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 136,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 1 - METAL SLUG COLEÇÃO #/mslug2.zip",
+          "sourceName": "Metal Slug 2 - Super Vehicle-001/II",
+          "sourceDescription": "Como Marco, Eri, Tarma ou Fio, você deve derrotar o malvado General Morden e seus capangas. Para fazer isso, você deve derrotar vários inimigos que ficam no seu caminho. Ao longo do jogo, você pode coletar novas armas, incluindo Heavy Machine Gun, Shot Gun, Rocket Launcher, Flame Shot, Laser Shot, Flame Bottles, and Armor Piercer. Também espalhados por todo o jogo, você pode andar em quatro veículos diferentes (conhecidos como Slugs), como o Metal Slug, Slug Flyer, SlugNoid e Camel Slug. Ao usar esses veículos, você pode causar uma destruição impressionante contra o exército maligno de Morden. Outros itens, como energia, munição extra e comida (coma demais e seu jogador ganhará peso) também são encontrados durante o jogo.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_c76970f8fa3c0b2c0c0a848c0e6292c9",
+        "platform": "megadrive",
+        "itemRevision": 4,
+        "artifactSha256": "7aee8fdc545a8c4ac805f0a0e499b6fc5af9322308577c04e59f4e0edc019355",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Sonic e Tails chegam a uma ilha flutuante onde a fortaleza Death Egg caiu. Enquanto enfrentam os planos de Robotnik, encontram Knuckles, que acredita que eles ameaçam a ilha. Corra por caminhos alternativos, reúna anéis e use escudos especiais para superar armadilhas e chefes.",
+      "proposedDescriptionSha256": "d21385f3572052935c51b264649fddfd4d9195393abedac036b7e6393eedf162",
+      "utf16CodeUnits": 277,
+      "name": "Sonic The Hedgehog 3 (USA)",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 628
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://vc.sega.jp/vc_sonic3/",
+              "accessed": "2026-10-05"
+            }
+          ],
+          "identityNotes": "Catalog item ID, platform and full name reviewed explicitly; no fuzzy runtime association."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_c96eb36d50d91bec90025c4a1f6e1cc9",
+        "platform": "snes",
+        "itemRevision": 4,
+        "artifactSha256": "dbfd93e36a86379e5e5ae9231752e6905180f55226273589b110382df3cf35f3",
+        "previousDescription": "Hack de Super Mario Kart.  Todos os 8 sprites de controle foram substituídos por lutadores de Street Fighter II.  Faixas novas e modificadas.",
+        "previousDescriptionSha256": "979753bd3f8413b93806626b85139c720c573848b11323487135ddd881fcf7d9"
+      },
+      "proposedDescription": "Os karts de Super Mario Kart recebem os lutadores de Street Fighter II nesta modificação criada por The Real Phoenix e Ten Shu. Os oito pilotos originais são substituídos, e as corridas percorrem circuitos novos ou alterados. O encontro das duas séries muda personagens e pistas dentro da estrutura do jogo de corrida do SNES.",
+      "proposedDescriptionSha256": "42d6f79ec74d460bebef31913a2de9981b4eb8940ed01ac071051135a0173636",
+      "utf16CodeUnits": 326,
+      "name": "Hyper Street Kart",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1551
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_c96eb36d50d91bec90025c4a1f6e1cc9",
+          "platform": "snes",
+          "name": "Hyper Street Kart",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "979753bd3f8413b93806626b85139c720c573848b11323487135ddd881fcf7d9",
+          "replaceDescriptionExact": "Hack de Super Mario Kart.  Todos os 8 sprites de controle foram substituídos por lutadores de Street Fighter II.  Faixas novas e modificadas.",
+          "descriptionSha256": "42d6f79ec74d460bebef31913a2de9981b4eb8940ed01ac071051135a0173636",
+          "descriptionCharacters": 326,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://retrohackers.net/hack-details.php?id=3129",
+              "title": "Hyper Street Kart: ficha e descrição dos autores preservadas",
+              "accessed": "2026-10-08",
+              "sourceType": "author-description-mirror",
+              "sourceEvidence": "A descrição atribuída a The Real Phoenix e Ten Shu especifica substituição dos oito pilotos por lutadores de Street Fighter II e pistas novas/modificadas."
+            }
+          ],
+          "sourcesURLs": [
+            "https://retrohackers.net/hack-details.php?id=3129"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "A descrição atribuída a The Real Phoenix e Ten Shu especifica substituição dos oito pilotos por lutadores de Street Fighter II e pistas novas/modificadas."
+          ],
+          "identityNotes": "Não é uma sinopse do Super Mario Kart sem modificações. A versão exata do hack não foi identificada; a redação limita-se às mudanças comuns declaradas pelos autores e já presentes no texto R37, sem prometer música nova ou versão 1.1/1.7.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_d4401dcd2599530ca4e155413d6548fe",
+        "platform": "megadrivebr",
+        "itemRevision": 4,
+        "artifactSha256": "13ac02ef88c508565e1e0bced173670d9528eb77a68c365a4ca848502cf619d7",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Nesta entrada da coleção BR, Sonic explora cenários em perspectiva isométrica para libertar os pássaros Flickies aprisionados por Robotnik. Encontre os inimigos, resgate os animais e conduza-os à saída, reunindo anéis e enfrentando os perigos de cada área. A descrição apresenta a aventura do jogo original.",
+      "proposedDescriptionSha256": "daa3f7bc06c109faf4a9e7aa19871a63f960aabfc7dee19e805bbc02b17d1e63",
+      "utf16CodeUnits": 307,
+      "name": "Sonic Hedgehog 3D Blast (BR)",
+      "catalogVisible": true,
+      "sourceKind": "r37-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/editorial",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 944
+        },
+        "existingProvenance": {
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "reviewDate": "2026-10-05",
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.sega.jp/genesismini2/assets/manual/pdf/US_Sonic-3D-Blast.pdf",
+              "accessed": "2026-10-05"
+            }
+          ],
+          "identityNotes": "BR is the published catalog variant. Specific translation authors, patch changes or version are not verified and are not attributed."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_d51c8fc1f2806c0971088483fea165b6",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "fc59a767c48a17037f757a6cfa001f1c3866553e769afc5ed63696a777104412",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "O King of Fighters '98 faz uma pausa na saga Orochi e, em vez disso, é apresentado como um \"Dream Match\" (semelhante ao Mortal Kombat Trilogy, mas sem o componente história). A maioria dos personagens dos últimos quatro anos retorna, fornecendo ao jogador uma lista muito grande contendo 38 psersonagens. Muitos dos personagens foram alterados na tentativa de equilibrar o jogo, independentemente da escolha do lutador pelo jogador. Rugal Bernstein é fornecido como um personagem não-secreto pela primeira vez no KOF '98, e vários personagens regulares ocultam versões \"alternativas\" que também podem ser usadas no jogo.",
+      "proposedDescriptionSha256": "049737e39643614182e82945a2f4725004a8898159279e715fd6b9b7f07ed519",
+      "utf16CodeUnits": 620,
+      "name": "Kof'98 (set 1)",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1193
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 171,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 3 - THE KING OF FIGTHERS COLEÇÃO #/kof98.zip",
+          "sourceName": "The King of Fighters '98 - The Slugfest (NGM-2420)",
+          "sourceDescription": "O King of Fighters '98 faz uma pausa na saga Orochi e, em vez disso, é apresentado como um \"Dream Match\" (semelhante ao Mortal Kombat Trilogy, mas sem o componente história). A maioria dos personagens dos últimos quatro anos retorna, fornecendo ao jogador uma lista muito grande contendo 38 psersonagens. Muitos dos personagens foram alterados na tentativa de equilibrar o jogo, independentemente da escolha do lutador pelo jogador. Rugal Bernstein é fornecido como um personagem não-secreto pela primeira vez no KOF '98, e vários personagens regulares ocultam versões \"alternativas\" que também podem ser usadas no jogo.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_dc9dfc91ed41204892f6bba49a70fd50",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "1f704fe1918012da09f37775b1613c868fa315fff2579df2d61fcbd78f9ff0b3",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Esta era uma história antiga, quando as pessoas ainda acreditavam em bruxaria.\n\nLá vivia um coveiro em uma aldeia muito pequena em uma região remota. Ele viveu uma vida tranquila e solitária em um canto do cemitério. Ele se manteve longe das pessoas da aldeia devido à sua aparência muito feia. Um dia, ele percebeu que as sepulturas foram saqueadas e alguns cadáveres foram roubados. Ele não queria que as pessoas da aldeia descobrissem, então ele decidiu eliminar os ladrões por si mesmo. Assim, ele patrulhava o cemitério todas as noites.\n\nExistem cinco fases com cinco níveis cada, e cada uma delas tem você jogando bolas de fogo em ghouls, fantasmas, goblins e zumbis. Quando você continua jogando bolas de fogo nesses inimigos, eles se incendeiam em uma bola de fogo gigante, que você pode atirar em outros inimigos para matá-los, e obter o tesouro restante antes de passar para o próximo nível. No final do quinto nível, um chefe deve ser derrotado para continuar o jogo.",
+      "proposedDescriptionSha256": "6779fd7a32f06f04c9c3684ef56fec0bd6ff90755087ca481257089207d440a9",
+      "utf16CodeUnits": 978,
+      "name": "Nightmare in the Dark",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1222
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 69,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./nitd.zip",
+          "sourceName": "Nightmare in the Dark",
+          "sourceDescription": "Esta era uma história antiga, quando as pessoas ainda acreditavam em bruxaria.\n\nLá vivia um coveiro em uma aldeia muito pequena em uma região remota. Ele viveu uma vida tranquila e solitária em um canto do cemitério. Ele se manteve longe das pessoas da aldeia devido à sua aparência muito feia. Um dia, ele percebeu que as sepulturas foram saqueadas e alguns cadáveres foram roubados. Ele não queria que as pessoas da aldeia descobrissem, então ele decidiu eliminar os ladrões por si mesmo. Assim, ele patrulhava o cemitério todas as noites.\n\nExistem cinco fases com cinco níveis cada, e cada uma delas tem você jogando bolas de fogo em ghouls, fantasmas, goblins e zumbis. Quando você continua jogando bolas de fogo nesses inimigos, eles se incendeiam em uma bola de fogo gigante, que você pode atirar em outros inimigos para matá-los, e obter o tesouro restante antes de passar para o próximo nível. No final do quinto nível, um chefe deve ser derrotado para continuar o jogo.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_e0419a0c773d40410db79ebf4623f1b5",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "15ca30356000f03faa32f05078d73ddf88126bd16a5ce20f19202288c76f7722",
+        "previousDescription": "Um shooting de rolagem vertical cômico estrelado por um tomate mutante que soca o inimigo e pode se transformar em outros personagens esquisitos.",
+        "previousDescriptionSha256": "b7b828bccb3a2f7ee26fe0f1a18338112701270f7f8fb3b98a28b0d4ffdd6525"
+      },
+      "proposedDescription": "Um tomate mutante assume a missão de enfrentar os Eggplant Aliens neste jogo de tiro com rolagem vertical. Captain Tomaday avança pelos cenários atacando os inimigos com seus punhos e pode mudar de forma para adquirir novos poderes. As transformações e o protagonista incomum dão um tom de comédia à ação.",
+      "proposedDescriptionSha256": "ee9d1bae8cbb7e7c31aacb3283908a7e039329154bc0f84ec0ac2a91bbab4c1a",
+      "utf16CodeUnits": 305,
+      "name": "Captain Tomaday",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1160
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_e0419a0c773d40410db79ebf4623f1b5",
+          "platform": "neogeo",
+          "name": "Captain Tomaday",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "b7b828bccb3a2f7ee26fe0f1a18338112701270f7f8fb3b98a28b0d4ffdd6525",
+          "replaceDescriptionExact": "Um shooting de rolagem vertical cômico estrelado por um tomate mutante que soca o inimigo e pode se transformar em outros personagens esquisitos.",
+          "descriptionSha256": "ee9d1bae8cbb7e7c31aacb3283908a7e039329154bc0f84ec0ac2a91bbab4c1a",
+          "descriptionCharacters": 305,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://www.pixelheart.eu/fr/produit/captain-tomaday-neo-geo-aes-us-2/",
+              "title": "Captain Tomaday: descrição da editora PixelHeart",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-publisher",
+              "sourceEvidence": "A editora confirma tomate mutante, Eggplant Aliens, rolagem vertical e transformações que concedem novos poderes."
+            }
+          ],
+          "sourcesURLs": [
+            "https://www.pixelheart.eu/fr/produit/captain-tomaday-neo-geo-aes-us-2/"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "A editora confirma tomate mutante, Eggplant Aliens, rolagem vertical e transformações que concedem novos poderes."
+          ],
+          "identityNotes": "A mecânica de socar e o tom cômico já constam do texto fornecido em R37; a fonte primária confirma a missão e as transformações. Não afirma quantidade de formas, fases ou atributos da reedição.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_ec1a6bcc80b430d64fa592d4822ab897",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "f04ac5ac34415a231ce6ff3df04c2248a4e5a0ec4fc2f1c8384218bd60669c7a",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "O terceiro jogo da série Sengoku beat'em up, Sengoku 3 volta a colocá-lo a si e a um amigo contra as forças não-mortas de Nobunaga, mas desta vez pode escolher livremente entre um grupo de personagens diferentes, cada um com as suas próprias armas e capacidades, e escolher onde no mundo quer atacar. \nO jogo incorpora um sistema de combate mais complexo, semelhante ao de um jogo de combate um contra um, oferecendo aos jogadores diferentes botões de ataque, movimentos especiais baseados em entradas direccionais, combos e até uma super barra usada para desencadear super movimentos devastadores. Não se pode trocar de armas ou transformar em outras personagens como nos jogos anteriores, mas pode-se adquirir diferentes armas à distância para ataques adicionais, bem como desbloquear certos chefes para aumentar o número de personagens disponíveis.",
+      "proposedDescriptionSha256": "64bd403a9f94ec58ff25e40dadc3c14143624508719b9a04512529220d85f1ef",
+      "utf16CodeUnits": 851,
+      "name": "Sengoku 3 / Sengoku Densho 2001",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1267
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 95,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./sengoku3.zip",
+          "sourceName": "Sengoku 3",
+          "sourceDescription": "O terceiro jogo da série Sengoku beat'em up, Sengoku 3 volta a colocá-lo a si e a um amigo contra as forças não-mortas de Nobunaga, mas desta vez pode escolher livremente entre um grupo de personagens diferentes, cada um com as suas próprias armas e capacidades, e escolher onde no mundo quer atacar. \nO jogo incorpora um sistema de combate mais complexo, semelhante ao de um jogo de combate um contra um, oferecendo aos jogadores diferentes botões de ataque, movimentos especiais baseados em entradas direccionais, combos e até uma super barra usada para desencadear super movimentos devastadores. Não se pode trocar de armas ou transformar em outras personagens como nos jogos anteriores, mas pode-se adquirir diferentes armas à distância para ataques adicionais, bem como desbloquear certos chefes para aumentar o número de personagens disponíveis.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]"
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_ed2bf0bfae84e0d02a0eefbb8c0991fe",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "4a472c65308f2b022f2b1d1702ac57c1c301eb6ced8ac8aaf1312168aca05b69",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Esta entrada é uma variante não oficial (bootleg). A sinopse a seguir apresenta o jogo base; as alterações específicas desta variante não foram documentadas.\n\nMais um ano, outro KOF. As adições este ano vêm na forma de gráficos e sons ligeiramente melhorados, novos movimentos e um novo modo de jogo. A jogabilidade é muito mais orientada pelo enredo, já que você tem chefes intermediários que podem mudar dependendo de qual time você selecionar. Além disso, existem vários finais especiais que são mostrados apenas quando certas combinações \"Edit Team\" são selecionadas. Novos personagens incluem o New Face Team, o Fatal Fury Outlaw Team (com a estréia em KOF de \"Blue\" Mary Ryan e Ryuji Yamazaki, e o retorno de Billy Kane), e o aluno de Kyo, Shingo Yabuki. No total, The King of Fighters '97 tem 29 personagens diferentes.",
+      "proposedDescriptionSha256": "a468fbd9c3aa97333bd76688b3377b6a687c3d88d8637409ded491dc24b08e6b",
+      "utf16CodeUnits": 826,
+      "name": "The King of Fighters '97 Plus (bootleg)",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1291
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 169,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 3 - THE KING OF FIGTHERS COLEÇÃO #/kof97pls.zip",
+          "sourceName": "The King of Fighters '97 (bootleg)",
+          "sourceDescription": "Mais um ano, outro KOF. As adições este ano vêm na forma de gráficos e sons ligeiramente melhorados, novos movimentos e um novo modo de jogo. A jogabilidade é muito mais orientada pelo enredo, já que você tem chefes intermediários que podem mudar dependendo de qual time você selecionar. Além disso, existem vários finais especiais que são mostrados apenas quando certas combinações \"Edit Team\" são selecionadas. Novos personagens incluem o New Face Team, o Fatal Fury Outlaw Team (com a estréia em KOF de \"Blue\" Mary Ryan e Ryuji Yamazaki, e o retorno de Billy Kane), e o aluno de Kyo, Shingo Yabuki. No total, The King of Fighters '97 tem 29 personagens diferentes.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]",
+          "variantDisclosure": "Published catalog identifies bootleg; no patch-specific behavior claimed."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_f9b5624a8652bfaccf2e3c338510d29b",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "51a2c1a3f8d1102f13cf5e3777712b7ada1ec22a6e254b5626686508bda38b14",
+        "previousDescription": "After using your spy-savvy jetpack to land on the secret island, you must stop the evil mastermind from executing his world-dominating plans!",
+        "previousDescriptionSha256": "ccac3a6e8528ef12a58e94f5eef0f898848478065720496cbdd5a6c0045d84e8"
+      },
+      "proposedDescription": "Um agente equipado com mochila a jato chega a uma ilha secreta para impedir um plano de dominação mundial. A missão combina ação de espionagem com confrontos contra os homens que protegem a base: use socos, chutes e tiros para avançar pelos perigos e alcançar o responsável pela operação.",
+      "proposedDescriptionSha256": "a705b338ae29fc6cf92ac45f166d5e2b6e148f771aa54318f727e830f53ae6b9",
+      "utf16CodeUnits": 288,
+      "name": "S.P.Y. - Special Project Y (World ver. N)",
+      "catalogVisible": true,
+      "sourceKind": "r78-original-editorial",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/server-catalog",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1250
+        },
+        "existingProvenance": {
+          "commit": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+          "path": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv",
+          "catalogSha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+          "field": "description",
+          "preservedVerbatim": true
+        },
+        "editorial": {
+          "itemId": "station_f9b5624a8652bfaccf2e3c338510d29b",
+          "platform": "neogeo",
+          "name": "S.P.Y. - Special Project Y (World ver. N)",
+          "language": "pt-BR",
+          "method": "original-editorial-summary",
+          "status": "revised",
+          "apply": true,
+          "replacesDescriptionSha256": "ccac3a6e8528ef12a58e94f5eef0f898848478065720496cbdd5a6c0045d84e8",
+          "replaceDescriptionExact": "After using your spy-savvy jetpack to land on the secret island, you must stop the evil mastermind from executing his world-dominating plans!",
+          "descriptionSha256": "a705b338ae29fc6cf92ac45f166d5e2b6e148f771aa54318f727e830f53ae6b9",
+          "descriptionCharacters": 288,
+          "sources": [
+            {
+              "kind": "web",
+              "url": "https://manuals.plus/m/2049277bf467b567ead2897f0f53884ded3aea111041534d35fe3ce3d6a92a07",
+              "title": "S.P.Y.: manual de operação original Konami",
+              "accessed": "2026-10-08",
+              "sourceType": "primary-operator-manual-transcription",
+              "sourceEvidence": "A transcrição do manual identifica o título da Konami e os comandos PUNCH/KICK e KICK/SHOOT."
+            }
+          ],
+          "sourcesURLs": [
+            "https://manuals.plus/m/2049277bf467b567ead2897f0f53884ded3aea111041534d35fe3ce3d6a92a07"
+          ],
+          "accessed": "2026-10-08",
+          "sourceEvidence": [
+            "A transcrição do manual identifica o título da Konami e os comandos PUNCH/KICK e KICK/SHOOT."
+          ],
+          "identityNotes": "A ilha, o jetpack e o plano mundial vêm da sinopse em inglês fornecida em R37, aqui reescrita em português. O manual identifica um arcade Konami; a classificação atual neogeo parece incorreta e é registrada para revisão, sem alterar plataforma ou motor neste trabalho.",
+          "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+          "multiplayerCapacityChanged": false,
+          "catalogIdentityChanged": false
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    },
+    {
+      "precondition": {
+        "itemId": "station_fd15a6f06bf33793b0d652a0bed98dbe",
+        "platform": "neogeo",
+        "itemRevision": 9,
+        "artifactSha256": "646a427824711903472035d812f34e4a9142947ad8038316f916d94f86f72188",
+        "previousDescription": "",
+        "previousDescriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "proposedDescription": "Esta entrada é uma variante não oficial (bootleg). A sinopse a seguir apresenta o jogo base; as alterações específicas desta variante não foram documentadas.\n\nO segundo \"dream match\" sem trama da série King of Fighters, este jogo apresenta 39 personagens normais e 5 personagens secretos, alguns dos quais não aparecem desde o KOF98.\n\nO sistema de jogabilidade também mudou. O sistema de atacantes e as equipes de quatro personagens encontradas nos últimos três lançamentos de KOF foram totalmente removidos. Em seu lugar estão as equipes de três personagens da velha guarda e o sistema \"Advance\" do The King of Fighters '97 e The King of Fighters '98.",
+      "proposedDescriptionSha256": "d5abbb08c5dc61709b4ddd1184bf422fd51870e3cfe57b76ef8913640c5a4dc0",
+      "utf16CodeUnits": 652,
+      "name": "The King of Fighters 2002 Magic Plus II (bootleg)",
+      "catalogVisible": true,
+      "sourceKind": "r37-exact-xml",
+      "provenance": {
+        "auditSource": "existing-synopses-audit.json",
+        "selectionOrigin": "r37/exact-xml",
+        "catalogSource": {
+          "sourceId": "server/catalogo-completo.tsv",
+          "line": 1305
+        },
+        "existingProvenance": {
+          "sourceSha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463",
+          "sourceOrdinal": 150,
+          "sourcePlatform": "neogeo",
+          "sourceRelativePath": "./# 3 - THE KING OF FIGTHERS COLEÇÃO #/kf2k2mp2.zip",
+          "sourceName": "The King of Fighters 2002 (bootleg)",
+          "sourceDescription": "O segundo \"dream match\" sem trama da série King of Fighters, este jogo apresenta 39 personagens normais e 5 personagens secretos, alguns dos quais não aparecem desde o KOF98.\n\nO sistema de jogabilidade também mudou. O sistema de atacantes e as equipes de quatro personagens encontradas nos últimos três lançamentos de KOF foram totalmente removidos. Em seu lugar estão as equipes de três personagens da velha guarda e o sistema \"Advance\" do The King of Fighters '97 e The King of Fighters '98.",
+          "identity": "station_ + sha256(platform + colon + normalized relative POSIX path)[:32]",
+          "variantDisclosure": "Published catalog identifies bootleg; no patch-specific behavior claimed."
+        }
+      },
+      "applied": false,
+      "changesOnlineAuthorization": false
+    }
+  ]
+}

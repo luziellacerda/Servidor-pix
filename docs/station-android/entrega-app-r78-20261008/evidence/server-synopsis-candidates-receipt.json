@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-08T14:11:31.665236+00:00",
+  "catalogIds": 2467,
+  "unchangedIds": 2386,
+  "serverProposalIds": 64,
+  "nativeOnlyIds": 17,
+  "auditSHA256": "43d6a8cf4b93294e82bdca6109631096dda9f3dcbd8caeb39c8c819882d3f827",
+  "completedDataSHA256": "f1721efbe5f48d5049b4e7ab24a8fe122b9ca989ccca58bc1d86aee26489e3e3",
+  "proposalsSHA256": "90a07df6d5b769ebe86a98c4be8e16a8fe70b246b52b970df49a07ec5d968925",
+  "recipeSHA256": "1295312be1d09184954923a4c897b45d4a2ea4ff249447478312133e35f5b3f8",
+  "serverChanged": false,
+  "javaChanged": false,
+  "testsExecuted": false,
+  "limits": [
+    "These are document proposals, not calls to an invented server route.",
+    "The operator must compare every identity and the full prior text before updating.",
+    "Texts over 2000 UTF-16 units remain native-only; the Java contract is preserved.",
+    "Description availability does not authorize players, profiles or game content."
+  ]
+}

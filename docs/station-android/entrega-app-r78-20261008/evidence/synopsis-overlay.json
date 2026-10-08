@@ -1,0 +1,17 @@
+{
+  "native_info.h": {
+    "baseSHA256": "ca2699815af30fbfc38c17040a6fcf67717e8110f727c92d979bd71a7256d2f6",
+    "overlaySHA256": "d55e30f7e1932d336d8760ea26fa2fcaae5f17fd29b94249bd0f3a7721180ea2"
+  },
+  "collection_presentation.h": {
+    "baseSHA256": "dec291e81f6dedafbc2a034e62834af29b44ed55554e766dd418bdde10d1a9e8",
+    "overlaySHA256": "fd6e3af8310481f72b7bd3c4618b56c84ead1f77e50f3b3057194716e902d82e"
+  },
+  "station_synopsis_selection.h": {
+    "overlaySHA256": "0f6221d4d31ab6f5340fd74225dbfaba5025c62eb0fee05f9c0b98b4d8ca25ff"
+  },
+  "station_collection_editorial_aliases.h": {
+    "overlaySHA256": "579ee024fab3f893e188b4aa9f44bfb9696f01dd64f5b8ee32fe96e640fd507d"
+  },
+  "scope": "Selection and exact editorial-path aliases only. Layout, scroll, videos, catalogue IDs, controls and netplay unchanged. No APK or native library built."
+}

@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-08",
+  "userDecision": "Manter o APK pronto em E: por enquanto",
+  "approvedRetentionInBuildWorkspace": true,
+  "artifactPath": "E:\\ESTUDO APK\\work\\station-synopses-r78-20261008\\package-01\\TurboStations-Premium-R78-20261008.apk",
+  "artifactSHA256": "e6c6609df32bf419954083297eadbafa75f13328a1516594cc010044b2eb62a5",
+  "olderApksDeleted": false,
+  "extraArtifactCopyCreated": false,
+  "installed": false
+}

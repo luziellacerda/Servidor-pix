@@ -1,0 +1,67 @@
+{
+  "version": "R78",
+  "utc": "2026-10-08T14:19:36.932163+00:00",
+  "state": "compiled-signed-candidate-not-installed",
+  "baseAppCommit": "04a58b77a4d4761e047cfef7ee7f8837a869e342",
+  "baseApkSHA256": "14450f3aa52ca2c795b50afba7e5a75c5bd4f71aa0007d2c43c6542051bdb737",
+  "apkSHA256": "e6c6609df32bf419954083297eadbafa75f13328a1516594cc010044b2eb62a5",
+  "apkBytes": 2123356860,
+  "temporaryApk": "E:\\ESTUDO APK\\work\\station-synopses-r78-20261008\\package-01\\TurboStations-Premium-R78-20261008.apk",
+  "finalApk": null,
+  "certificateSHA256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "userApprovedApkRetentionInE": true,
+  "carouselSHA256": "f13c09dcd74aa21aabaf5d966324975de555840f7e6d754bf1aa79d29f50f16a",
+  "changedNativeSources": [
+    "collection_presentation.h",
+    "native_info.h",
+    "station_game_infos.h"
+  ],
+  "addedNativeSources": [
+    "station_collection_editorial_aliases.h",
+    "station_synopsis_selection.h"
+  ],
+  "packageEntriesPreserved": 13225,
+  "videosPreserved": 59,
+  "changes": [
+    "lib/arm64-v8a/libturbo_carousel.so"
+  ],
+  "catalogIds": 2467,
+  "visibleIds": 2212,
+  "compatibilityIds": 255,
+  "missingSynopses": 0,
+  "recoveredAliases": 6,
+  "restoredLongSynopses": 17,
+  "originalEditorialUpdates": 14,
+  "editorialPendingPreserved": 5,
+  "serverSynopsisCandidates": 64,
+  "serverNativeOnlyLongTexts": 17,
+  "descriptionLimitUtf16": 2000,
+  "synopsisDataSHA256": "f1721efbe5f48d5049b4e7ab24a8fe122b9ca989ccca58bc1d86aee26489e3e3",
+  "headerSHA256": "faf4b4e456b5158cb7fe77b15e5613076bf34d5b5c09d27ecd59730edaee83b7",
+  "localTests": {
+    "selection": "PASS 37076 synopsis checks; 3 baseline insufficient-text wins reproduced; 2467 exact IDs; 81 exact replacements including 17 paged",
+    "editorial": "PASS 70 editorial path checks; 5 exact aliases; no catalog renames",
+    "scroll": "140 checks; 0 failures",
+    "player-label": "PASS 95 native player label checks",
+    "corners": "PASS 66 corner-policy checks; all-games rounded, actual collections square",
+    "decoder": "PASS: 199592 checks; 36288 pool/capacity/asset combinations; no Android/device access.",
+    "navigation": "PASS 3584 native navigation checks; original IDs/indices, All, direct, nested, Back, flat catalogs and 200 refresh cycles",
+    "routes": "PASS 3444 all-games routes, poster identities, retained-frame count and corner checks"
+  },
+  "installed": false,
+  "physicalDisplayVerified": false,
+  "serverDeployed": false,
+  "existingInstalledVersion": "R76",
+  "allHistoricalFactsVerified": false,
+  "liveCatalogRead": false,
+  "runtimeDexEnginesChangedFromR77": false,
+  "newEngineRegistrationForSynopsisChangeRequired": false,
+  "inheritedR77ProductionQualificationStillRequired": true,
+  "latestRealServerReturn": "ae77b9cca7fc881771bdb809a308e40bafaad1c5",
+  "pending": [
+    "Physical display verification",
+    "Operator comparison against the current live catalogue",
+    "Five short synopses retain prior text pending stronger documentation",
+    "R77 protocol/profile and multiplayer qualification remains separate"
+  ]
+}

@@ -1,0 +1,704 @@
+[
+  {
+    "itemId": "station_6e520177c566a5e151520a8f23812786",
+    "platform": "megadrive",
+    "name": "Congo",
+    "description": "Adaptação de ação do filme Congo, ambientada na expedição que se aventura pela selva africana e pela cidade de Zinj. O projeto para os consoles de 16 bits acompanha Amy e os integrantes da missão, mas acabou cancelado antes do lançamento comercial original.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "82d48a5a85226c916b060f60b7021552e48d7ee7a11c3761b222a837d27e0753",
+    "replaceDescriptionExact": "Jogo cancelado baseado no filme de mesmo nome.",
+    "descriptionSha256": "cd4d81164a21ce4990138b2292a783ece36e72492e5cfea40eed4148e87f91c0",
+    "descriptionCharacters": 257,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://www.nesworld.com/index.php?page=snes-unreleased-congo",
+        "title": "Congo: relato de desenvolvimento de Greg Hedger",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-developer-account",
+        "sourceEvidence": "O programador relata o desenvolvimento para SNES e Genesis, os personagens Amy e Karen, a expedição e Zinj, e o cancelamento após a entrega do projeto."
+      }
+    ],
+    "sourcesURLs": [
+      "https://www.nesworld.com/index.php?page=snes-unreleased-congo"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "O programador relata o desenvolvimento para SNES e Genesis, os personagens Amy e Karen, a expedição e Zinj, e o cancelamento após a entrega do projeto."
+    ],
+    "identityNotes": "Texto comum ao projeto de 16 bits. Não identifica o estágio de desenvolvimento do protótipo do catálogo, nem promete que todas as fases da versão final estejam presentes.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_711850d2931f52ac0726c0cce1b60e46",
+    "platform": "megadrive",
+    "name": "Mega Games 2",
+    "description": "Três aventuras da Sega reunidas em um cartucho: Golden Axe, Streets of Rage e The Revenge of Shinobi. Enfrente os guerreiros de Death Adder com armas e magia, combata criminosos pelas ruas da cidade e assuma o papel de um ninja em fases de ação e plataforma. Cada título conserva seu próprio estilo de combate.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "69923cf866e99d31b74913cc297775c5753ec46c09b68fb8a0b7c74da98b7de7",
+    "replaceDescriptionExact": "Mega Games é uma compilação de três volumes de jogos da Sega comercializados na Europa. Este volume 2 contém:nn1. Golden Axe nn2. Streets of Rage nn3. The Revenge of Shinobi",
+    "descriptionSha256": "3f50416bb3be820657324b9f6996d136763b243552bffecef5b2733664557557",
+    "descriptionCharacters": 310,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://www.segaretro.org/Mega_Games_2",
+        "title": "Mega Games 2: identificação e digitalizações da embalagem",
+        "accessed": "2026-10-08",
+        "sourceType": "secondary-catalog-with-packaging-scans",
+        "sourceEvidence": "Os três títulos também constam da descrição R37 fornecida pelo catálogo; a página reúne as digitalizações da compilação."
+      },
+      {
+        "kind": "web",
+        "url": "https://manuals.sega.com/genesismini/pdf/GOLDEN_AXE.pdf",
+        "title": "Golden Axe: manual oficial Sega",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-publisher-manual",
+        "sourceEvidence": "O manual descreve os guerreiros, suas armas e magia, e a luta contra Death Adder."
+      },
+      {
+        "kind": "web",
+        "url": "https://shop.sega.com/products/streets-of-rage-character-blue-t-shirt",
+        "title": "Streets of Rage: página oficial Sega",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-publisher",
+        "sourceEvidence": "A descrição da Sega identifica Adam, Axel e Blaze combatendo os criminosos da cidade."
+      },
+      {
+        "kind": "web",
+        "url": "https://www.esrb.org/ratings/26943/the-revenge-of-shinobi/",
+        "title": "The Revenge of Shinobi: descrição da ESRB",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-ratings-authority",
+        "sourceEvidence": "A descrição da entidade classificadora identifica ninja, ambientes de plataforma, shurikens e magia."
+      }
+    ],
+    "sourcesURLs": [
+      "https://www.segaretro.org/Mega_Games_2",
+      "https://manuals.sega.com/genesismini/pdf/GOLDEN_AXE.pdf",
+      "https://shop.sega.com/products/streets-of-rage-character-blue-t-shirt",
+      "https://www.esrb.org/ratings/26943/the-revenge-of-shinobi/"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "Os três títulos também constam da descrição R37 fornecida pelo catálogo; a página reúne as digitalizações da compilação.",
+      "O manual descreve os guerreiros, suas armas e magia, e a luta contra Death Adder.",
+      "A descrição da Sega identifica Adam, Axel e Blaze combatendo os criminosos da cidade.",
+      "A descrição da entidade classificadora identifica ninja, ambientes de plataforma, shurikens e magia."
+    ],
+    "identityNotes": "Compilação identificada pelo nome e pelos três títulos do texto fornecido. A sinopse não atribui o modo cooperativo de um jogo aos demais, nem altera metadados de capacidade.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_b452db5c0342cc2661455417cb496c4d",
+    "platform": "megadrive",
+    "name": "HardBall III",
+    "description": "Entre em campo em uma simulação de beisebol com comentários de Al Michaels. Controle os arremessos, procure o momento certo para rebater e avance pelas bases enquanto organiza a defesa. A disputa combina as jogadas no gramado com decisões sobre jogadores e equipes, acompanhando o ritmo de uma partida de beisebol.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "4dcfddedade8e1f3efc3b258f081f9436ace867a3d3456f829831b508d8357a1",
+    "replaceDescriptionExact": "O terceiro jogo da série de beisebol Hardball. Esta revisão apresenta o locutor Al Michaels que oferece comentários em execução enquanto você joga.",
+    "descriptionSha256": "bc383d085c443e78f0ed8ecb077ecb26b576acaa9d50a49ed1f593ce99126cac",
+    "descriptionCharacters": 314,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://gamefaqs.gamespot.com/genesis/586227-al-michaels-announces-hardball-iii/data",
+        "title": "Al Michaels Announces HardBall III: descrição de embalagem preservada",
+        "accessed": "2026-10-08",
+        "sourceType": "publisher-blurb-transcribed-by-archive",
+        "sourceEvidence": "A transcrição da descrição comercial menciona Al Michaels, arremessos, rebatidas, roubos de base, defesa e edição de jogadores/equipes."
+      }
+    ],
+    "sourcesURLs": [
+      "https://gamefaqs.gamespot.com/genesis/586227-al-michaels-announces-hardball-iii/data"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "A transcrição da descrição comercial menciona Al Michaels, arremessos, rebatidas, roubos de base, defesa e edição de jogadores/equipes."
+    ],
+    "identityNotes": "Aplicado ao título Mega Drive/Genesis. Não foram transferidas promessas específicas do DOS, como VGA, nem afirmadas licenças de equipes ou número de estádios. A fonte é transcrição de embalagem, não manual integral conferido.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_ecd7ac5ff2501d2b90493e87b16217ed",
+    "platform": "megadrive",
+    "name": "Chao Ji Poker",
+    "description": "Chao Ji Poker é um jogo não licenciado de poker para o Sega Mega Drive.",
+    "language": "pt-BR",
+    "method": "preserve-provided-description",
+    "status": "pending-primary-source",
+    "apply": false,
+    "replacesDescriptionSha256": "dd7b36a2395743773b02e95c1f8944464f3a820540093a6467cf6c9ace9ec790",
+    "replaceDescriptionExact": "Chao Ji Poker é um jogo não licenciado de poker para o Sega Mega Drive.",
+    "descriptionSha256": "dd7b36a2395743773b02e95c1f8944464f3a820540093a6467cf6c9ace9ec790",
+    "descriptionCharacters": 71,
+    "sources": [],
+    "sourcesURLs": [],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [],
+    "identityNotes": "Não foi localizada documentação do autor/editor que descreva as regras e a variante exatas. Preservado o texto fornecido; não foram inventados modos, apostas ou quantidade de jogadores.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_254ac9902b054411aa51b79e365fe1ef",
+    "platform": "neogeo",
+    "name": "Pochi and Nyaa",
+    "description": "Organize as duplas de peças coloridas que caem no tabuleiro e conecte blocos da mesma cor. Você escolhe quando ativar a reação em cadeia, transformando uma peça em detonador para desfazer o conjunto e enviar obstáculos ao adversário. Montar ramificações maiores fortalece o ataque, mas também ocupa espaço antes da explosão.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "a59fe5c813e984cf7d101214a49da7a5055867577840c3f982edf591503bc959",
+    "replaceDescriptionExact": "Um bom jogo de quebra-cabeça que é bastante semelhante ao Super Puzzle Fighter, mas não atinge o mesmo nível de qualidade!",
+    "descriptionSha256": "32153fb0680ffa8fa7b2651eb7ddefbf6296f1885520d8db8e1f195118e2201b",
+    "descriptionCharacters": 324,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://ascii.jp/elem/000/000/332/332655/",
+        "title": "Apresentação de Pochi and Nyaa por Taito e Compile",
+        "accessed": "2026-10-08",
+        "sourceType": "firsthand-publisher-presentation-report",
+        "sourceEvidence": "A cobertura presencial do anúncio explica duplas de peças, cores conectadas, ramificações, detonador acionado pelo jogador e obstáculos enviados ao oponente."
+      },
+      {
+        "kind": "web",
+        "url": "https://puyonexus.com/wiki/Pochi_and_Nyaa",
+        "title": "Pochi and Nyaa: regras da edição Neo Geo",
+        "accessed": "2026-10-08",
+        "sourceType": "secondary-version-corroboration",
+        "sourceEvidence": "A referência dedicada ao jogo corrobora essas mecânicas na edição Neo Geo, distinguindo-a das versões Naomi e PS2."
+      }
+    ],
+    "sourcesURLs": [
+      "https://ascii.jp/elem/000/000/332/332655/",
+      "https://puyonexus.com/wiki/Pochi_and_Nyaa"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "A cobertura presencial do anúncio explica duplas de peças, cores conectadas, ramificações, detonador acionado pelo jogador e obstáculos enviados ao oponente.",
+      "A referência dedicada ao jogo corrobora essas mecânicas na edição Neo Geo, distinguindo-a das versões Naomi e PS2."
+    ],
+    "identityNotes": "O anúncio primário é anterior à edição MVS. A redação usa somente as mecânicas comuns corroboradas para Neo Geo; omite dimensões do tabuleiro e personagens/modos adicionais de outras versões. Remove a comparação opinativa antiga.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_2751182b2f9347a5c2d764d81eb99005",
+    "platform": "neogeo",
+    "name": "Neo No Panepon",
+    "description": "Este é um clone homebrew de Tetris.",
+    "language": "pt-BR",
+    "method": "preserve-provided-description",
+    "status": "pending-primary-source",
+    "apply": false,
+    "replacesDescriptionSha256": "904910050dc8b8faeb239c7671f6944898995914f90ac2725cf1c1acc600fa2c",
+    "replaceDescriptionExact": "Este é um clone homebrew de Tetris.",
+    "descriptionSha256": "904910050dc8b8faeb239c7671f6944898995914f90ac2725cf1c1acc600fa2c",
+    "descriptionCharacters": 35,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://www.ajworld.net/neogeodev/homebrew.html",
+        "title": "Inventário de homebrews Neo Geo",
+        "accessed": "2026-10-08",
+        "sourceType": "secondary-development-inventory",
+        "sourceEvidence": "Lista Neo no Panepon e uma atualização chamada Neo Puzzle League; não descreve regras verificáveis da versão selecionada."
+      }
+    ],
+    "sourcesURLs": [
+      "https://www.ajworld.net/neogeodev/homebrew.html"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "Lista Neo no Panepon e uma atualização chamada Neo Puzzle League; não descreve regras verificáveis da versão selecionada."
+    ],
+    "identityNotes": "As referências de desenvolvimento confirmam somente a existência e autoria. A comparação antiga com Tetris não foi confirmada; não se converteu a semelhança do nome em uma descrição de Panel de Pon.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_320ff39a7a8b49e96da6105cef9330e9",
+    "platform": "neogeo",
+    "name": "Syougi No Tatsujin - Master of Syougi",
+    "description": "Leve o raciocínio do shogi ao tabuleiro do Neo Geo. Além da modalidade tradicional do xadrez japonês, o jogo oferece hasami shogi, uma variação simplificada. Guias para iniciantes e ajustes de desvantagem por peças permitem preparar o desafio conforme a experiência de quem está jogando.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "c0b9e9fd3edecdda4bf6cc3438e64293b37319d899d97d71da135dd54e01e9a0",
+    "replaceDescriptionExact": "Shougi no Tatsujin foi lançado em setembro de 1995 no Japão.\nO título deste jogo foi traduzido do japonês como 'Mestre de Shougi'.\nO 'Shougi' é um jogo de xadrez japonês.",
+    "descriptionSha256": "a48ba7b513d063ccf6bd7d7795f4f314b317abcda345c798c10ca59ba0e67e67",
+    "descriptionCharacters": 287,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://www.hamster.co.jp/en/release/7057/",
+        "title": "ACA NEOGEO Master of Syougi: apresentação oficial",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-publisher",
+        "sourceEvidence": "A editora descreve explicitamente o original SNK de 1995, shogi tradicional, hasami shogi, guias para iniciantes e ajustes de handicap."
+      }
+    ],
+    "sourcesURLs": [
+      "https://www.hamster.co.jp/en/release/7057/"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "A editora descreve explicitamente o original SNK de 1995, shogi tradicional, hasami shogi, guias para iniciantes e ajustes de handicap."
+    ],
+    "identityNotes": "Foram usadas apenas características atribuídas ao jogo original de 1995. Recursos de plataforma ou serviços da reedição ACA de 2026 não foram atribuídos ao catálogo.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_5f5fa2403a86b9b3744696fa262f004e",
+    "platform": "neogeo",
+    "name": "Metal Slug 6 (bootleg)",
+    "description": "Versão modificada de Metal Slug 3 para Neo Geo, apresentada neste catálogo com o nome Metal Slug 6. Sua base é a ação de correr, saltar e atirar entre soldados, criaturas e veículos de combate. Trata-se de uma variante do terceiro jogo; o Metal Slug 6 oficial é outro título, desenvolvido para a placa Atomiswave.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "b34deaca25b7d42f88bebff46bcefcf54b099696e83143dce00418169ff22fdf",
+    "replaceDescriptionExact": "Metal Slug 6 é um hack de \"Metal Slug 3\". O verdadeiro Metal Slug 6 foi lançado para o sistema arcade Atomiswave.",
+    "descriptionSha256": "d3c66bb37db75950882f137b52f9be6343a18fb1ba2c426b818f459fc4fd237a",
+    "descriptionCharacters": 313,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://www.snk-corp.co.jp/us/games/acaneogeo/metalslug3/",
+        "title": "Metal Slug 3: página oficial SNK",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-publisher",
+        "sourceEvidence": "A SNK descreve a base como jogo de ação, com personagens, armamento e veículos Slug."
+      },
+      {
+        "kind": "web",
+        "url": "https://www.snk-corp.co.jp/us/anniversary/metalslug30th/history/",
+        "title": "História oficial de Metal Slug",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-publisher",
+        "sourceEvidence": "A cronologia oficial identifica Metal Slug 6 como lançamento para Atomiswave em fevereiro de 2006."
+      }
+    ],
+    "sourcesURLs": [
+      "https://www.snk-corp.co.jp/us/games/acaneogeo/metalslug3/",
+      "https://www.snk-corp.co.jp/us/anniversary/metalslug30th/history/"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "A SNK descreve a base como jogo de ação, com personagens, armamento e veículos Slug.",
+      "A cronologia oficial identifica Metal Slug 6 como lançamento para Atomiswave em fevereiro de 2006."
+    ],
+    "identityNotes": "A identificação como modificação de Metal Slug 3 provém do nome e da descrição já fornecidos em R37, não de uma perícia da ROM. Não atribui Ralf, Clark ou sistemas exclusivos do Metal Slug 6 oficial ao bootleg; não afirma quais modificações específicas estão presentes.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_95f6dc7a1556e8a6ce63d07510d59c88",
+    "platform": "neogeo",
+    "name": "Neo Pong",
+    "description": "Clone de Pong bastante bem-sucedido: Neo Pong! Neo Pong é simplesmente a primeira ROM de domínio público do Neo Geo.",
+    "language": "pt-BR",
+    "method": "preserve-provided-description",
+    "status": "pending-primary-source",
+    "apply": false,
+    "replacesDescriptionSha256": "75eb2f71cf600432fff0e54a080d82bf7728e22759751ca966b4576c138f5bbb",
+    "replaceDescriptionExact": "Clone de Pong bastante bem-sucedido: Neo Pong! Neo Pong é simplesmente a primeira ROM de domínio público do Neo Geo.",
+    "descriptionSha256": "75eb2f71cf600432fff0e54a080d82bf7728e22759751ca966b4576c138f5bbb",
+    "descriptionCharacters": 116,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://www.ajworld.net/neogeodev/homebrew.html",
+        "title": "Inventário de homebrews Neo Geo",
+        "accessed": "2026-10-08",
+        "sourceType": "secondary-development-inventory",
+        "sourceEvidence": "Lista Neo Pong, NeoDev Corporation e 2002; não sustenta a afirmação de domínio público do texto existente."
+      }
+    ],
+    "sourcesURLs": [
+      "https://www.ajworld.net/neogeodev/homebrew.html"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "Lista Neo Pong, NeoDev Corporation e 2002; não sustenta a afirmação de domínio público do texto existente."
+    ],
+    "identityNotes": "Não foi encontrada documentação original suficiente para descrever variantes/modos. A alegação antiga de primeira ROM em domínio público não foi verificada e não deve ser interpretada como concessão de licença; texto preservado conforme escopo desta revisão.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_961567c3e579c78d6064906d0187f1f7",
+    "platform": "neogeo",
+    "name": "Viewpoint",
+    "description": "Pilote uma nave por cenários vistos em perspectiva diagonal, desviando de inimigos, projéteis e armadilhas. Alterne os tiros rápidos com um disparo mais forte, carregado ao segurar o botão de ataque. Bombas especiais e equipamentos de apoio ampliam o poder de fogo e ajudam a abrir caminho entre os ataques.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "1018f6b098af24ecd7448404361913cc7964da5316602c832a3537bc35ed86c6",
+    "replaceDescriptionExact": "Viewpoint on Neo Geo é um jogo de tiro 3D isométrico composto por seis níveis. O título é conhecido por ser extremamente difícil. Você vai aceitar o desafio?",
+    "descriptionSha256": "30517608ad86eefa8120350bb44674f7cdccff40aa0f59efdd07ee497459c2d8",
+    "descriptionCharacters": 307,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://www.gamesdatabase.org/Media/SYSTEM/SNK_Neo_Geo_AES/manual/Formated/Viewpoint_-_1992_-_SNK.pdf",
+        "title": "Viewpoint: manual original japonês do Neo Geo AES",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-manual-scan",
+        "sourceEvidence": "Leitura visual das páginas impressas 2, 4, 5, 8 e 9: perspectiva diagonal, tiros normais, disparo carregado, bombas e opções de apoio."
+      }
+    ],
+    "sourcesURLs": [
+      "https://www.gamesdatabase.org/Media/SYSTEM/SNK_Neo_Geo_AES/manual/Formated/Viewpoint_-_1992_-_SNK.pdf"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "Leitura visual das páginas impressas 2, 4, 5, 8 e 9: perspectiva diagonal, tiros normais, disparo carregado, bombas e opções de apoio."
+    ],
+    "identityNotes": "Manual AES do mesmo jogo de Neo Geo. Descrição restrita à jogabilidade comum; não afirma cooperação simultânea, configurações ocultas ou opções de outros ports. PDF consultado somente como fonte, não incorporado ao aplicativo.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_9cc0c3e6a7ebd4bbb502fd55f9a0a012",
+    "platform": "neogeo",
+    "name": "Battle Flip Shot",
+    "description": "Use o escudo para devolver a bola e destruir os alvos do adversário enquanto protege os seis alvos atrás do seu personagem. A bola ricocheteia nas paredes da arena, exigindo posicionamento e reação para defender e atacar. Cinco competidores com poderes especiais dão estilos diferentes a este duelo inspirado em Pong.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "c44ce8ba19e0febd30dff4153a4f6bbd749d6612503511a4ccf9dc34b82af8b0",
+    "replaceDescriptionExact": "Battle Flip Shot é um jogo arcade que mistura elementos de Pong com o design de personagens japoneses.",
+    "descriptionSha256": "9454ae168df7e34be9b7a4cee8d370b1d1a7cc7557e58135dfe70968680d3694",
+    "descriptionCharacters": 317,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://www.pixelheart.eu/en/produit/battle-flip-shot-neo-geo-aes-us/",
+        "title": "Battle Flip Shot: descrição da editora PixelHeart",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-publisher",
+        "sourceEvidence": "A licenciada de Visco descreve o duelo, seis alvos por lado, escudos, ricochetes e cinco personagens com poderes especiais."
+      }
+    ],
+    "sourcesURLs": [
+      "https://www.pixelheart.eu/en/produit/battle-flip-shot-neo-geo-aes-us/"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "A licenciada de Visco descreve o duelo, seis alvos por lado, escudos, ricochetes e cinco personagens com poderes especiais."
+    ],
+    "identityNotes": "Usa as regras do jogo original descritas pela editora da reedição. Nenhum detalhe de embalagem, tiragem, data da reedição ou endosso da SNK foi transferido à sinopse.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_b4b077f8c626983c78ba574b10a59e7d",
+    "platform": "neogeo",
+    "name": "Jonas Indiana and the Lost Temple of RA",
+    "description": "Jonas Indiana And The Lost Temple Of Ra é um jogo de plataforma homebrew feito por Blastar em 2005",
+    "language": "pt-BR",
+    "method": "preserve-provided-description",
+    "status": "pending-primary-source",
+    "apply": false,
+    "replacesDescriptionSha256": "2532f4d20d68a5295ba695618c721fbe9f0c06989273addde3207d031296aa16",
+    "replaceDescriptionExact": "Jonas Indiana And The Lost Temple Of Ra é um jogo de plataforma homebrew feito por Blastar em 2005",
+    "descriptionSha256": "2532f4d20d68a5295ba695618c721fbe9f0c06989273addde3207d031296aa16",
+    "descriptionCharacters": 98,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://www.ajworld.net/neogeodev/homebrew.html",
+        "title": "Inventário de homebrews Neo Geo",
+        "accessed": "2026-10-08",
+        "sourceType": "secondary-development-inventory",
+        "sourceEvidence": "Lista Jonas Indiana and the Lost Temple of Ra, Blastar e 2005; não documenta suas regras."
+      }
+    ],
+    "sourcesURLs": [
+      "https://www.ajworld.net/neogeodev/homebrew.html"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "Lista Jonas Indiana and the Lost Temple of Ra, Blastar e 2005; não documenta suas regras."
+    ],
+    "identityNotes": "Encontrada identificação do homebrew de Blastar, mas não documentação primária suficiente sobre enredo, itens, inimigos e objetivos. Texto curto preservado sem acrescentar fatos de descrições sem origem.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_c9c046814f0cf92cad7c7eb82289540c",
+    "platform": "neogeo",
+    "name": "Bakatonosama Mahjong Manyuuki (MOM-002 ~ MOH-002)",
+    "description": "Bakatonosama Mahjong Manyuki é um jogo de Mahjong para Neo-Geo. Foi desenvolvido pela empresa Monolith em 1991 e distribuído pela SNK",
+    "language": "pt-BR",
+    "method": "preserve-provided-description",
+    "status": "pending-primary-source",
+    "apply": false,
+    "replacesDescriptionSha256": "4c0d1a357f23ed4ed9ea619329322b4c24ae672c695a9ff7b518b765eac47ee3",
+    "replaceDescriptionExact": "Bakatonosama Mahjong Manyuki é um jogo de Mahjong para Neo-Geo. Foi desenvolvido pela empresa Monolith em 1991 e distribuído pela SNK",
+    "descriptionSha256": "4c0d1a357f23ed4ed9ea619329322b4c24ae672c695a9ff7b518b765eac47ee3",
+    "descriptionCharacters": 133,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://neogeomuseum.snk-corp.co.jp/english/catalogue/index.php",
+        "title": "Neo Geo Museum: catálogo oficial SNK",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-publisher",
+        "sourceEvidence": "Catálogo histórico de títulos; usado somente para identificação, não como comprovação de regras detalhadas."
+      }
+    ],
+    "sourcesURLs": [
+      "https://neogeomuseum.snk-corp.co.jp/english/catalogue/index.php"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "Catálogo histórico de títulos; usado somente para identificação, não como comprovação de regras detalhadas."
+    ],
+    "identityNotes": "O catálogo oficial confirma identidade e gênero, mas não foi localizada explicação primária suficiente das regras e do modo específico. Preservado o texto sem preencher espaço com uma descrição genérica de mahjong.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_e0419a0c773d40410db79ebf4623f1b5",
+    "platform": "neogeo",
+    "name": "Captain Tomaday",
+    "description": "Um tomate mutante assume a missão de enfrentar os Eggplant Aliens neste jogo de tiro com rolagem vertical. Captain Tomaday avança pelos cenários atacando os inimigos com seus punhos e pode mudar de forma para adquirir novos poderes. As transformações e o protagonista incomum dão um tom de comédia à ação.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "b7b828bccb3a2f7ee26fe0f1a18338112701270f7f8fb3b98a28b0d4ffdd6525",
+    "replaceDescriptionExact": "Um shooting de rolagem vertical cômico estrelado por um tomate mutante que soca o inimigo e pode se transformar em outros personagens esquisitos.",
+    "descriptionSha256": "ee9d1bae8cbb7e7c31aacb3283908a7e039329154bc0f84ec0ac2a91bbab4c1a",
+    "descriptionCharacters": 305,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://www.pixelheart.eu/fr/produit/captain-tomaday-neo-geo-aes-us-2/",
+        "title": "Captain Tomaday: descrição da editora PixelHeart",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-publisher",
+        "sourceEvidence": "A editora confirma tomate mutante, Eggplant Aliens, rolagem vertical e transformações que concedem novos poderes."
+      }
+    ],
+    "sourcesURLs": [
+      "https://www.pixelheart.eu/fr/produit/captain-tomaday-neo-geo-aes-us-2/"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "A editora confirma tomate mutante, Eggplant Aliens, rolagem vertical e transformações que concedem novos poderes."
+    ],
+    "identityNotes": "A mecânica de socar e o tom cômico já constam do texto fornecido em R37; a fonte primária confirma a missão e as transformações. Não afirma quantidade de formas, fases ou atributos da reedição.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_f9b5624a8652bfaccf2e3c338510d29b",
+    "platform": "neogeo",
+    "name": "S.P.Y. - Special Project Y (World ver. N)",
+    "description": "Um agente equipado com mochila a jato chega a uma ilha secreta para impedir um plano de dominação mundial. A missão combina ação de espionagem com confrontos contra os homens que protegem a base: use socos, chutes e tiros para avançar pelos perigos e alcançar o responsável pela operação.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "ccac3a6e8528ef12a58e94f5eef0f898848478065720496cbdd5a6c0045d84e8",
+    "replaceDescriptionExact": "After using your spy-savvy jetpack to land on the secret island, you must stop the evil mastermind from executing his world-dominating plans!",
+    "descriptionSha256": "a705b338ae29fc6cf92ac45f166d5e2b6e148f771aa54318f727e830f53ae6b9",
+    "descriptionCharacters": 288,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://manuals.plus/m/2049277bf467b567ead2897f0f53884ded3aea111041534d35fe3ce3d6a92a07",
+        "title": "S.P.Y.: manual de operação original Konami",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-operator-manual-transcription",
+        "sourceEvidence": "A transcrição do manual identifica o título da Konami e os comandos PUNCH/KICK e KICK/SHOOT."
+      }
+    ],
+    "sourcesURLs": [
+      "https://manuals.plus/m/2049277bf467b567ead2897f0f53884ded3aea111041534d35fe3ce3d6a92a07"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "A transcrição do manual identifica o título da Konami e os comandos PUNCH/KICK e KICK/SHOOT."
+    ],
+    "identityNotes": "A ilha, o jetpack e o plano mundial vêm da sinopse em inglês fornecida em R37, aqui reescrita em português. O manual identifica um arcade Konami; a classificação atual neogeo parece incorreta e é registrada para revisão, sem alterar plataforma ou motor neste trabalho.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_790327404870a6f35c9f4adab34b66dd",
+    "platform": "snes",
+    "name": "Mega-Lo-Mania",
+    "description": "Escolha um dos quatro candidatos a deus e conduza seu povo na disputa pelo domínio de um planeta. Distribua a população entre pesquisa, produção e combate, desenvolvendo armas e defesas que atravessam diferentes épocas. A conquista das ilhas depende de administrar recursos e decidir quando expandir ou proteger seus territórios.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "925646dfd9c961f9cb7428dfe99840b0c628968baa601bd30d0eba75aa3be20c",
+    "replaceDescriptionExact": "Mega-Lo-Mania é uma simulação de Deus como nenhuma outra. É um tumulto galopante quando homens de todas as esferas da vida histórica lutam entre si para controlar um planeta.",
+    "descriptionSha256": "e1eaee5cad7372b5509ca8d06e40b01635d938a373b594bedf477ba1ba3023c8",
+    "descriptionCharacters": 329,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://www.abandonwaredos.com/docawd.php?idg=1891&sf=megalomania_manual.txt&sg=Mega+lo+Mania&st=manual",
+        "title": "Mega lo Mania: manual original transcrito",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-manual-transcription",
+        "sourceEvidence": "A introdução e as seções de jogo explicam quatro líderes, controle de pessoas, tecnologias de armas/defesa, ilhas, pesquisa, fabricação e exércitos."
+      }
+    ],
+    "sourcesURLs": [
+      "https://www.abandonwaredos.com/docawd.php?idg=1891&sf=megalomania_manual.txt&sg=Mega+lo+Mania&st=manual"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "A introdução e as seções de jogo explicam quatro líderes, controle de pessoas, tecnologias de armas/defesa, ilhas, pesquisa, fabricação e exércitos."
+    ],
+    "identityNotes": "A fonte transcreve o manual original para computadores. Apenas premissa e gestão compartilhadas com a adaptação SNES foram usadas; comandos de teclado/mouse, voz, quantidade de ilhas e sistema de gravação não foram transferidos.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_82be488369296f0a02e78608415efee4",
+    "platform": "snes",
+    "name": "Cool World",
+    "description": "O desenhista Jack Deebs atravessa a fronteira para um mundo onde os desenhos ganham vida. Holli Would quer usar o Golden Spike of Power para alcançar o mundo real, colocando as duas dimensões em risco. Explore os cenários, reúna objetos e capture Doodles com uma caneta para impedir seu plano.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "d35e770802212adfaa8c9acc0b29ca5671959ff49ed1b0905c678f5b16cac3bf",
+    "replaceDescriptionExact": "Este jogo é baseado no live action/animação Cool World de 1992. Você joga como Frank Harris e tenta impedir Holli Would de entrar mundo real.",
+    "descriptionSha256": "c8731c5f216bc413d2e4e632867b5696104b98444c49f64837bea86e6d8dd8d7",
+    "descriptionCharacters": 293,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://manuals.plus/nintendo/cool-world-snes-video-game-manual",
+        "title": "Cool World: manual original Ocean para SNES",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-game-manual-transcription",
+        "sourceEvidence": "A seção narrativa identifica Jack Deebs como personagem controlado; as instruções explicam Holli, Golden Spike, exploração, objetos e captura de Doodles com caneta."
+      }
+    ],
+    "sourcesURLs": [
+      "https://manuals.plus/nintendo/cool-world-snes-video-game-manual"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "A seção narrativa identifica Jack Deebs como personagem controlado; as instruções explicam Holli, Golden Spike, exploração, objetos e captura de Doodles com caneta."
+    ],
+    "identityNotes": "Correção factual específica de plataforma: o texto antigo citava Frank Harris, personagem da versão NES. O manual SNES identifica Jack Deebs. Não foram mescladas as duas versões.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_918690e09cc4b21f4cd6a233eb72185c",
+    "platform": "snes",
+    "name": "Barbie Vacation Adventure",
+    "description": "Acompanhe Barbie em uma viagem de férias pelos Estados Unidos, com atividades diferentes em cada parada. A aventura reúne minijogos como vôlei e equitação, além de desafios de uma feira, incluindo capturar um porquinho. Os passeios alternam exploração e pequenas tarefas em vez de uma única competição esportiva.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "77927850175c51e0ce328656566644851b32667e50c546a09cbfee8ab46b8b32",
+    "replaceDescriptionExact": "Barbie: Vacation Adventure é um jogo de aventura que leva a Barbie em excursões educacionais pelos Estados Unidos da América.",
+    "descriptionSha256": "6f41a04ebe575dd050ae2c5f99f1f145d9ff2d4c40b6370bac468623153543d8",
+    "descriptionCharacters": 312,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://www.timeextension.com/news/2026/06/its-always-disappointing-when-a-game-youve-been-working-on-doesnt-come-out",
+        "title": "Barbie Vacation Adventure: entrevista com Chun Wah Kong",
+        "accessed": "2026-10-08",
+        "sourceType": "primary-team-member-interview",
+        "sourceEvidence": "O responsável pelos testes da Software Creations recorda minijogos, vôlei em 2D, equitação e captura de um porco na feira."
+      }
+    ],
+    "sourcesURLs": [
+      "https://www.timeextension.com/news/2026/06/its-always-disappointing-when-a-game-youve-been-working-on-doesnt-come-out"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "O responsável pelos testes da Software Creations recorda minijogos, vôlei em 2D, equitação e captura de um porco na feira."
+    ],
+    "identityNotes": "A viagem pelos EUA já integra o texto R37. A entrevista trata do projeto original SNES/Mega Drive. A descrição não atribui recursos da compilação Barbie Rewind de 2026 ao protótipo do catálogo.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  },
+  {
+    "itemId": "station_c96eb36d50d91bec90025c4a1f6e1cc9",
+    "platform": "snes",
+    "name": "Hyper Street Kart",
+    "description": "Os karts de Super Mario Kart recebem os lutadores de Street Fighter II nesta modificação criada por The Real Phoenix e Ten Shu. Os oito pilotos originais são substituídos, e as corridas percorrem circuitos novos ou alterados. O encontro das duas séries muda personagens e pistas dentro da estrutura do jogo de corrida do SNES.",
+    "language": "pt-BR",
+    "method": "original-editorial-summary",
+    "status": "revised",
+    "apply": true,
+    "replacesDescriptionSha256": "979753bd3f8413b93806626b85139c720c573848b11323487135ddd881fcf7d9",
+    "replaceDescriptionExact": "Hack de Super Mario Kart.  Todos os 8 sprites de controle foram substituídos por lutadores de Street Fighter II.  Faixas novas e modificadas.",
+    "descriptionSha256": "42d6f79ec74d460bebef31913a2de9981b4eb8940ed01ac071051135a0173636",
+    "descriptionCharacters": 326,
+    "sources": [
+      {
+        "kind": "web",
+        "url": "https://retrohackers.net/hack-details.php?id=3129",
+        "title": "Hyper Street Kart: ficha e descrição dos autores preservadas",
+        "accessed": "2026-10-08",
+        "sourceType": "author-description-mirror",
+        "sourceEvidence": "A descrição atribuída a The Real Phoenix e Ten Shu especifica substituição dos oito pilotos por lutadores de Street Fighter II e pistas novas/modificadas."
+      }
+    ],
+    "sourcesURLs": [
+      "https://retrohackers.net/hack-details.php?id=3129"
+    ],
+    "accessed": "2026-10-08",
+    "sourceEvidence": [
+      "A descrição atribuída a The Real Phoenix e Ten Shu especifica substituição dos oito pilotos por lutadores de Street Fighter II e pistas novas/modificadas."
+    ],
+    "identityNotes": "Não é uma sinopse do Super Mario Kart sem modificações. A versão exata do hack não foi identificada; a redação limita-se às mudanças comuns declaradas pelos autores e já presentes no texto R37, sem prometer música nova ou versão 1.1/1.7.",
+    "verificationScope": "general-game-synopsis-not-runtime-compatibility",
+    "multiplayerCapacityChanged": false,
+    "catalogIdentityChanged": false
+  }
+]

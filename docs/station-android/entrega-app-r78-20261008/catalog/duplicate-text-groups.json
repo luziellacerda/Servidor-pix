@@ -1,0 +1,5027 @@
+[
+  {
+    "descriptionSha256": "4e4f67b21ffa328b54743c572d1c321d56a50ffd3762281e675d79d51ca050a9",
+    "itemIds": [
+      "008835579979d4d36eb395ab7434b735",
+      "2ad7e4a11f777c95c46c91508631e594",
+      "c828ec275a586750b53ea6f7a06e7ff3"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Top Gear 2"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "957c005ed54eb0283827e66456f184da71582d6234d87f7e463df4bd229512ab",
+    "itemIds": [
+      "020cd9dba68e4e9d2a5823de82e37ff1",
+      "113a5dacf2b98c423b3dd4213db7a658"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "George Foreman's KO Boxing"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "f74ee49e5235838e8793fda489ad74e5d4e8971f1344021934ea86adc0ceef08",
+    "itemIds": [
+      "028a0f566892ed618606f5dc49aead57",
+      "abb25359da4e59d8c120d5a1f1b53bcb"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Shadow Dancer : The Secret of Shinobi"
+      ],
+      [
+        "megadrivebr",
+        "Shadow Dancer : The Secret of Shinobi"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "b3ac4b1f91cecb02420c649d20d29c926a6df87ae6a46ab8402efce237ec7460",
+    "itemIds": [
+      "02ca98122e4b2d01f652a6bf078069b7",
+      "a17643e3b516e4a13d59fe9fa02c06da"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Batman Returns"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "f25aab1c579378dc7d39094a8b0d5c0e69ba8cf08a88454ca5aba015c7e42175",
+    "itemIds": [
+      "02dc99c306eff608b991f72376f27ba7",
+      "c812502f5714c3496a6c86537aebacfa"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Liberty or Death"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "3753841815f893843cce0b22dfd0baadae0233095256e3ef683e00d2f0ed225c",
+    "itemIds": [
+      "031acb6a0706aa75984bf0c784fb51d2",
+      "4f398f795a2f58b6b4efaf5e1c1dadc4"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Aero the Acro-Bat 2"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "766819d6810918ae5c6ac8d6e94449d48d06c26d40e63b89bad9d341f9ef8852",
+    "itemIds": [
+      "0324c85d28a857a544d2227c91f69a4e",
+      "10657a3dfafcc8de69dbe4f8b961afbf",
+      "49c091658c9bfcc8c035cdde07a7d426",
+      "926c8de9783a9a55f507b0ae36116518"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Primal Rage"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "8d48b8382d7d34ee03c8883af3712f1679db7de295ba7e033663a9059c09da22",
+    "itemIds": [
+      "0411fb6b93ec3dbfb124b2a47866a7f5",
+      "07de3397ac0c474567fa419cf378c375"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Tick"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "13500074baa3df0abfe4f0a551f80980616bf6faa98240677eaa20c968c4b2b6",
+    "itemIds": [
+      "042f3acb0129c4bf71536fad74e281a3",
+      "station_59ae286b13544f4dd19135a359fd3b7b",
+      "60194d417a9c6a4b3cdd433ffef91706"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Bare Knuckle III"
+      ],
+      [
+        "megadrive",
+        "Streets of Rage 3"
+      ],
+      [
+        "megadrivebr",
+        "Streets of Rage 3"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "f0e1db7011ecd59598c67a2db369f10c1ac883bca3644b0424f2fd3d8f789d8a",
+    "itemIds": [
+      "053322c547d69c2a9012199ba7bfb74f",
+      "219e71ed9bf84e900d1a6e3ea8300dd5",
+      "f33d839dc1bf20d412be360ee362e6cc",
+      "592459c76314b4b22316a703d8fe379f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Zool : Ninja of the 'Nth' Dimension"
+      ],
+      [
+        "megadrivebr",
+        "Zool : Ninja of the 'Nth' Dimension"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "824c038a92ce3bce8da36fdd16b7eaef613092cbeaaed7fc8043f270020e769d",
+    "itemIds": [
+      "06872ae8fdee88ca5fea9e7742417b09",
+      "73bf86ccec6e224956a88d1c7c831f9f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Pro Quarterback"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "7c2b7597c3dc711adaf5e4e47a3a48403aef2214159d68a378888bd864aa5849",
+    "itemIds": [
+      "0727f0cc5c87a86e61482a8b8cbd691f",
+      "7f2a67ef91e2411a8e30a9e701ff7602"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Death and Return of Superman"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "6455256f8b0fa2c1c704d63500d4f0fde38d962cd6757c2fb7f615c9ead90710",
+    "itemIds": [
+      "076d68e35226cb7cee6cb4541da24728",
+      "b1a7a38c80cc419736ab53334c6480bf"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Mighty Morphin Power Rangers : The Movie"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "22c594b716be224e0db3427ae6a65136431b588ed9bce0c6f8cc0b4848892fbf",
+    "itemIds": [
+      "077947aedf498a84795ffbf7366d4140",
+      "1b3481a1c42a0562d1902508ece8d163",
+      "1d0e8ac1b67acbdc4612aa0b0a73988d",
+      "7471ffb4565e530ef5ae2c0dabcbb9ae"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Prince of Persia"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "def72aa3788bef6bdbdde052e5fddff0e11748db8e4258f0738ae00999eed934",
+    "itemIds": [
+      "0877c10bd2151b318cb6a71512df5d32",
+      "56bbe2078e6528247b9691569c543544"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Pagemaster"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "b10b17204bd5a5ca3383e8b7658a0c23d5d43ab59c054cb5c683c23634360a57",
+    "itemIds": [
+      "08a23ee81579cde08d6e1c3ad794121b",
+      "364c68609d52ac56ebe5e4d1d619b72a",
+      "3cdbc29f329663abf259d8a48b21b6f7"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Jungle Book"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "8abf8c3bfcd2746335621a47015f4305662fea43d5c7d77abbdd74b30a1abe6f",
+    "itemIds": [
+      "08ef2c0d9fd79f724afb77d785f58378",
+      "795aacf9ae9fbf04be4eda72d446e8b5",
+      "c08c071b235d203ae2f744aac002a8e2",
+      "e0cd8bba4e9069a27ab8f4992fcfd779"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Mortal Kombat III"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "2d7f4d1ad94a28670f7c4bf5d799cea17cd2e96529fecb44fc6967ce1c5cb599",
+    "itemIds": [
+      "093616837ef72c2844ce3282ad5cfba2",
+      "a3774af4d5b90fd5a4086f01e72903fc"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Outlander"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "dde9bc9b676e4a0dac74d0d5226b08634fafa6f790dae8151f1a527df4693546",
+    "itemIds": [
+      "096b62c840e4ca77a918677029fcb098",
+      "8df1b41c2a7af9aacc337533014c43aa",
+      "85ee5b37452f11f7f4800abe0af0fe3a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Road Rash"
+      ],
+      [
+        "megadrivebr",
+        "Road Rash"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "d06c4d8b3357cd2e6ddebb34aa49acc1414d34ffb84e0cd56a8557448cdb1d99",
+    "itemIds": [
+      "09ba28cd1c37ce2807408508d8ae1465",
+      "f353eee4f0d99a1e7f8bdba205efe995"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Ecco the Dolphin"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "30ad963d24ea4dc803404136e0a9e6973d7e9ed517e85b544407a0b82dd2ff4c",
+    "itemIds": [
+      "0a75ee82f0f5c36bca9f70ea46ba4221",
+      "faaaf5db5861cb4b4664ac32d43c322f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Romance of the Three Kingdoms II"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "2f0f4e8ee8b27c805c3b78acab3e317a434ed37e3d46895b5dc80997d7f4566c",
+    "itemIds": [
+      "0b6049dcfaa770c11eb7d9c5493e753a",
+      "fc256aa86e855689d05e157ee985a098"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Chuck Rock II : Son of Chuck"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "3610c398ce6b27232b0b7f70773159c1b20ae65984a3d4abeadec4cafd3b170c",
+    "itemIds": [
+      "0b94c55b275ddd622ab2161e5337f315",
+      "497107b79f4ad43ce9186f969ceb7055",
+      "8044d5b22742b4034c4e1f91186364d0",
+      "d70648c14ae004255a56c0c96e242b39",
+      "30fa85bcffa4e926cd2eb5cbb842c3f9"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Aladdin"
+      ],
+      [
+        "megadrivebr",
+        "Aladdin"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "235ca510a08ab073609862df5d54b579eff7ce78e2491aab8e53612fe09072ae",
+    "itemIds": [
+      "10410c94ab33e7ef35bddb90b40e39ab",
+      "22f67cc1b899e1b495fc67f64e49534f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Wonder Boy in Monster World"
+      ],
+      [
+        "megadrivebr",
+        "Wonder Boy in Monster World"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "817b72f9eda210d1b4bc2982fcecc1ebab1099d17e8606654d93645e89320380",
+    "itemIds": [
+      "106d0fe77c4aeeb5424a5b22f89f0fa7",
+      "12f1d1d4a64d01353a83696f116961b6",
+      "b74d7ba88710d4988bb1ca5975a79be7"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Animaniacs"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "6a75f60d2a9e33a764040e5dd3313e89de161d81d41cd558b51050886a9bf6fc",
+    "itemIds": [
+      "121cb3f3dc1a6260f66450a0befbadad",
+      "4c361f44b11f9819517150af60016a5b"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Sparkster"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "65fef969b3aaf8ebcaa2ad62ed5ada8df78a2f1c618f99748c7a1c2c043b1052",
+    "itemIds": [
+      "12ad7ff50ed0febed555b09cb14406b3",
+      "370e04ade13be1ee475c7575a43587b2",
+      "634e7d83a20d694ffb1418c5d6837969",
+      "ff0efd6fcb6d7a363a1652a3a008d3f5"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Hook"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "025b0b96990e1e9ecc28b6415be9b5836b429d77923d1064abfc6fc8c86ab82f",
+    "itemIds": [
+      "13b7038e5eb8879ebd6f8b885578f5e3",
+      "870cc750e04ed4c65e36aa9036f8ec20"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Aerobiz Supersonic"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "6235d6d411fded13b68a482acb235bc8577f2747520c825ce7c4b58ca887bb8b",
+    "itemIds": [
+      "13bfbf08c5862865c379e7ab20d4152c",
+      "cd6611584bc35f69de692ca45ad48889"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Gods"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "b6fabec2467a9204ed2ae2b1600159b26113ef57a86db16fbac53ea21d638abb",
+    "itemIds": [
+      "150f6f7d771d97bd8c86075900c06582",
+      "e5cb6d27ab43b728ae9bc2559428eb86"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "PGA Tour 96"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "b48ec2f67bac2ac39951cb58ba6af55dcdd08962b2b98adbac5fb9399f0c079a",
+    "itemIds": [
+      "159d5a8e11f56071991f4ebd82790602",
+      "4fcee954753770f883db7835a5b4613c"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Aaahh!!! Real Monsters"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "515b414b54dc1425d4341bff4243d4bd0750de3889a304324d42dcb0f5e47eb7",
+    "itemIds": [
+      "172c94d10c9539c3c70f3ff289717f95",
+      "8e003d70587fa3ce42fa7bfdbe730f92"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Punisher"
+      ],
+      [
+        "megadrivebr",
+        "The Punisher"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "7d646c135132e50bf27220f4cc0f95f6c879ed9e8a56188317b404459e08755f",
+    "itemIds": [
+      "18556e4244059ec2d1148b658cdb4199",
+      "27b9d5bed11dbf9d0bff7c46b296d4bf",
+      "5452a8e6ab7806b15a6d99fefadc583d"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Soldiers of Fortune"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "e4e99d9b64447504167b7050136cdfe089a5cbdd540771cf8b1cd12b25f86772",
+    "itemIds": [
+      "18db49e0f705455fcc761e8e9c4d900d",
+      "1a2b10b2f04de1de53d741af94529b93"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "X-Men"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "368c9eca5fd1a7fe4d8d79fad9debbe9b329ae3188be71690b791e0813413759",
+    "itemIds": [
+      "18df5ab676609ce7ea1af944429ee9af",
+      "c603336223986b3ecb1df243eaff68bf"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Brutal : Paws of Fury"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "3c561f2990ceb8c6871847e9fe8d915eaa6f17db4c51ece0c01838f48c56d5ae",
+    "itemIds": [
+      "1988bf001cf65e13dd9b20788a5cb232",
+      "74dd4465af1b223ae390859349c01704"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Phantasy Star IV"
+      ],
+      [
+        "megadrivebr",
+        "Phantasy Star IV"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "ad02e57df9ad7917048fc7a3f3521dcaf92e787dd5e706eb5d082c9143109acf",
+    "itemIds": [
+      "1a5881da3a469d3f69b51c9027b322a8",
+      "6e882c915be40163c886f628cb9dbf96"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Boxing Legends of the Ring"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "f441a7442f8219ae0fcc68c4f9fadb50f754b7526021a06f1e84a95c0751c5c6",
+    "itemIds": [
+      "1aa7d446d8f0211af441db4304912075",
+      "70c73b115a7b7979899944ea68e0dc8e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Beavis and Butt-Head"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "3c1f4c06d566026dd92c4b48da455a82515a288933e6b2ed9826a3d697187fe8",
+    "itemIds": [
+      "1affc12b5b4d0b86e801e442ef3c3990",
+      "71f7612082b14a8dde65c903981a035c"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Pac-Mania"
+      ],
+      [
+        "megadrivebr",
+        "Pac-Mania"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "ce5dcae4c804368989b5608540416eda8c0beeb49575c8ad19f3e77e475e66b0",
+    "itemIds": [
+      "1bc78b8ac911e4e3fd6738081718b7fe",
+      "d83efd1aea52d71177fa172bf6d1657b"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "NBA Hang Time"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "147f5238f8627825178c5f814f93f01123abacf7b08eda64a3b9d8168607be02",
+    "itemIds": [
+      "1d738d1cd59ff79f34b5acec06d08512",
+      "9b37cc95977397ca9a4a5c8cd39aacf9"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "NCAA Final Four Basketball"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "93663f21c12314ed9a06aa0571886ddb0fdda1aff8584b4519a01e04c011a99c",
+    "itemIds": [
+      "1d969bc4b279c81953c042e519b2984d",
+      "b32421d08b53474afdd886e38dbf2993",
+      "dd1a71f6ce9ecf1f8714bef06b1586df"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Pitfall : The Mayan Adventure"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "44209cab697b1580ad301b1a398b65292161c0030dc4a76838e1efda59648b32",
+    "itemIds": [
+      "1e089bf00655f03ee4327cd595043e09",
+      "9cfe4d42dc0c8bf4d0d1a462740e1588"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Gemfire"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "78f9b5acb311769c0e2805eceb94a1f802a7fa63aec35d6d189fda87f6d62b81",
+    "itemIds": [
+      "1e3f6e09121a48e742142316b1f4bd15",
+      "c3607609331a6ec544db95a3ecc2c4cb"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "X-Men 2 : Clone Wars"
+      ],
+      [
+        "megadrivebr",
+        "X-Men 2 - Clone Wars (BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "ada4b79be81ea5ca93b0ad9481119b265d9da018106b352c40c1ee9587668a1a",
+    "itemIds": [
+      "1e9e9c58cebb27f9727426db5eea6949",
+      "7895f4f98d3b39d13b6aed3d7672556d"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Head-On Soccer"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "236c708b861b653c32138d7903ca5aa6af8b47b758b5d0441aa77826f9e86902",
+    "itemIds": [
+      "1eba1a683437b27f686d0cdeb6a4dbc7",
+      "dc8eda7b4dbd93325530816d036662ed"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Super Battleship"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "efa3e9f3ffe601e5fff216ba481370f20a70fb44c2f4da6ac503fc5937e175fd",
+    "itemIds": [
+      "1ede0cf12fa207e427a9a03c0521bad0",
+      "333e5ffc8c4e7d60520671dc8ec88891"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "King of the Monsters 2"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "85c7c59664024c9757cdb3ff80f9662d7a8ca94975dda2ec7c7666a653120f50",
+    "itemIds": [
+      "1f078cdb61eab2965e35a6766445a352",
+      "950fc8757c342b43918cc48d0f9ed786"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "College Slam"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "74ccf536666e979cf3d902d87b1c6e9bf4da5f5df02dab956186532c99f48065",
+    "itemIds": [
+      "1f143a301eeb1dce0a4d89a22aeb7985",
+      "32e863289aa9843a392cb81332d7bbcb"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Roger Clemens' MVP Baseball"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "7a85a21a9fa69fa01d7ae34d0b8cd9445c620d621026890c200f16b4c4612bb0",
+    "itemIds": [
+      "1fc3be6db4e9b28df7d441a3c1ab1e68",
+      "664e9138efc94c9f0a2e95083ac2ef1e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "MUSHA : Metallic Uniframe Super Hybrid Armor"
+      ],
+      [
+        "megadrivebr",
+        "MUSHA : Metallic Uniframe Super Hybrid Armor"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "63626dc358c2bc148d71f2e48e27e01b012ff493f4654820fe71ece9cd1dab03",
+    "itemIds": [
+      "201b89d11e8755b5ee559e895213dcc9",
+      "bc0be21dbd3c3c75000a8a4491844d2b"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Tecmo Super Baseball"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "4e8e0b7f8e0fdd3bd2de8b13527b983c524297dc60f8c0b264086325318d6031",
+    "itemIds": [
+      "20c58694f1c7b578c402ee99dbea95bf",
+      "cc045186b2b2e8e612d93d35a51b072a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Judge Dredd"
+      ],
+      [
+        "megadrivebr",
+        "Judge Dredd"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "1ebb133c76f60413233e46a43f005bfe209fe35c54cf51ebcb5396d631986bf9",
+    "itemIds": [
+      "21776d9c49b718273577a113743e0960",
+      "cd8f81fa3bdf96c82ede4964716cefa9",
+      "bcc27cbe1c7c6a5b455f7cae2320df90"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Terminator"
+      ],
+      [
+        "megadrivebr",
+        "The Terminator"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "f54ce822198e0297ece876588a750c7455fdd65951c41200a8831d3c4c6f91ad",
+    "itemIds": [
+      "21c159185eb9984c883e36d87a9413b8",
+      "f783181b2cf40b59edb5b718bfbc4a54"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "ESPN Baseball Tonight"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "12d96cedb0aecec43684c99129b6229c710160de56ee155124e6352295ac41d3",
+    "itemIds": [
+      "22022cdfec79427bf58bf4edd0eb67f2",
+      "2e30bba5ec9fd979c924c8d4dec8dfab"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Humans"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "5404be7bf7aade29ecb7dfa19997209fafa81f2edba5e3e38006b473ed90ce2e",
+    "itemIds": [
+      "221dda382a413b55a953391529d53591",
+      "2832de42111e18f557eed74e1d27448e",
+      "319742c14c94633c27e115aebef2414b",
+      "ee405cee8d4fc832842489b643fc1144"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Marble Madness"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "32b5cf6cb05f692b64b85c6bcefca4cf8f25a7685c13ed85c5fc85bd7fc23443",
+    "itemIds": [
+      "2285c64a086a8bb85bc58b049bf47a2f",
+      "4244e60bad8c3c6bf7877b47549d04ab",
+      "7846779351863ac5f447d897939e9a87"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Zoop"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "7bc91f5bc01c59e3b4664a97b9f4c76a06f2dd5fef4eee5a20ce50a4aeba16c9",
+    "itemIds": [
+      "240959c463aa974ba098407591f642d4",
+      "6ec421651279f1ad676c8979bec9f91d"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "TaleSpin"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "d2f843985727b137ba69a1fe046601c0aac423c1ac9848e2aa818ce4aa6d90f6",
+    "itemIds": [
+      "24ea0526b23d2cb45b86491d35518e65",
+      "518f8b2b86ec00ae8ae4a54e28f6b252",
+      "67e11fd2b70667e576f2c8080f095b6e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Jeopardy!"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "7dd8db87754cf7c0302e0abaa27e724610869c10a048e11c2810ca1d2d3088b4",
+    "itemIds": [
+      "2556415952828eedeee93a5fc618f7df",
+      "8fde23cd957d39b269cea60266c235d5"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Jeopardy! : Sports Edition"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "217ce5e7b3164fad9cf83af40b0f41fd47306e4bc0c28e5af3ac78d98379d314",
+    "itemIds": [
+      "2560a903ee600763b4c42e383f62a95b",
+      "5953c8d6d96c7642abf66946113ffc90",
+      "5e1f42513e2ba1f49b35d76e16908bf2",
+      "6f839cd9d0b4e5ad9b8c7d87cb0b512e",
+      "be6f7893d23ba22df4ada1b61e3ba117"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Cool Spot"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "efbb96fec7939a4ade9044cba4d5889cb2bd7ebabf4c30a7aa635afd786c890f",
+    "itemIds": [
+      "26beb6061054a7895a8ecc7da8bdcd27",
+      "9ccebc5a053a99f2e7908cddf09e9db0"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Mr. Nutz"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "0cb758cf938fb393aaa3c3cb314e06352b3c5322f14c47e733a4a7455b8117cd",
+    "itemIds": [
+      "27b38b7023fa2e7e660ae8c600881ae9",
+      "7c1b051ac2d283f60bf3708c059dd1e2"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Stargate"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "a5178880a04d4f94d20388bafc1506d3a5c2f44ba82d4d9173282dae5f040bb6",
+    "itemIds": [
+      "280ee4e0ea14ba28fa2145260fdabfbf",
+      "569029bcb961e356ac6f391f20b1bb70"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Tecmo Super Bowl II : Special Edition"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "29cfdff1a5df3b6dd59df10368d8fa366f1fe734e90f001f4bf609c9ec091810",
+    "itemIds": [
+      "282faca77e5015d97e7ff8a6a3c78769",
+      "4b2cb00d3cb372ffa42bc5f531f954ac",
+      "e028186ddf82a48f112b57c89683491f",
+      "42093d12d2ba03c2c7bdd10b10ad2e52"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Paperboy"
+      ],
+      [
+        "megadrivebr",
+        "Paperboy"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "751c5941a91fa77e544a7bf63c3cb3a213982bad436052657e585c2e5ccfa359",
+    "itemIds": [
+      "283b31ef53f49d4f916be0b22f11ce4b",
+      "f5fad9b8820ae85b9f6026bc95faea31"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Chester Cheetah : Wild Wild Quest"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "ba880368568c3302e89a77497e6eb088f100837570513936947e38bb7ddc2b31",
+    "itemIds": [
+      "28b5886fd9301c3b1a938de1315fbb52",
+      "bbad3a800d093891a305e6183314c3d5"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Shining Force II"
+      ],
+      [
+        "megadrivebr",
+        "Shining Force II"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "a6de9e90343366120c9e51387fb9d63411458c5d52c3d83623853cf1e44503b8",
+    "itemIds": [
+      "2d8a2d158f103c4d0343ae636093f141",
+      "25f58946d0dd7ca194de9ff5fcba1482"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Valis"
+      ],
+      [
+        "megadrivebr",
+        "Valis"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "d0faef87fbc5c1106c30c946ba2a6d224341fa53a4ad6d6a7f1510f6fd699119",
+    "itemIds": [
+      "2dacbb2a6b62ffbb08c6d0d3f0ab78bf",
+      "726a0ce892d003b9a02cfb278b716faf",
+      "b8bed5fb0672154b31d8634ee17042b6",
+      "fe4a758d663bd719a8381dc15bc3f060"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Flashback : The Quest for Identity"
+      ],
+      [
+        "megadrivebr",
+        "Flashback : The Quest for Identity"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "30d8cc9929f7caf8bfa5f799ed84677a0a99e2238fd26bcf888d8c0f3c28cf22",
+    "itemIds": [
+      "2dcfe1c8d927064781fa7f9172d0b714",
+      "883242fd6ad24716e13731331f9c2d79"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Predator 2"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "96e0d8d75b676622ba49c9897555cc2da7611a7fcb1be6d544f5da2f4939542f",
+    "itemIds": [
+      "2dda8aab6b01b1ba4701083386d83188",
+      "7e183b8ab6fbf4e63c0c8e7d986967e5"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "No Escape"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "fff9036953f895ac9e56584835f7f60f53c7966b47f4091cdef1fadf6b68f3b3",
+    "itemIds": [
+      "2e9e256c18ebefbe19dc581f524a46b4",
+      "392058685415f396465cf54d81cdaf5a",
+      "47266bef4e15d07a9cae9de9539d0612",
+      "cbd83be3e89456758ad7c165907abd12"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Lost Vikings"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "9d1e62fa198e4989ec96943a2ac09e86d42f487b1a346bbac5b34f393de7663f",
+    "itemIds": [
+      "2f0d7dbb32094ef22c47e4b431c9dca8",
+      "7b0cc5f27e0af4903ca0fc34ba195e72",
+      "9ddceb9cec649764365874a8ad523846"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Klax"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "5fe02a304cd024d274f34961522afe2c532f85c65ea44f4a59a9c61d6ff69ea0",
+    "itemIds": [
+      "2fe2130785580a670be2c771545b3f9e",
+      "4b6dce7c56006a6a7dd6e8262ce4197d"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "VR Troopers"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "f29ec37ba6f9485d078d32b0bd7fee86779db48521551deb4d66a6e5103a782b",
+    "itemIds": [
+      "3016967f01e533cb3967dbd685099ce9",
+      "d0ca9720f5f2bef36163a44dda160b9f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Berenstain Bears' Camping Adventure"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "61746b6902923ef152b830dc65d8aa9f39f0422308e87dfc34609023e861260d",
+    "itemIds": [
+      "308a8b3cf184dbcfe5bc6c4d363843a6",
+      "c0053fdf3c126ef9a0db48266a21325f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Aerobiz"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "3921547ee6ec06200b2976629ca756ffb280f8697f955421f6bb306649a5b3f8",
+    "itemIds": [
+      "30abafe60bcda76ab1b9d0c8e4f2c815",
+      "94a00b62eb5ec807ef06492686c2aa1a",
+      "a38a910739cc8d45dcfa1718c98c4ab1",
+      "efac3e518b629bf30027ee50d71107cb"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Captain America and the Avengers"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "fb40ec62bb46056e08d8104b10d94e1db401828c1a1cbe0267e11fac9d1c66e8",
+    "itemIds": [
+      "316f1d65c4b1d3fc796eec4e78e68e77",
+      "8fbfe9bd1e97d7e090fe71130973586e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Barbie Super Model"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "61739ece47b1d7f7519c85c2980c7d1d10dacfce713432c1dbaa1224b0a79f18",
+    "itemIds": [
+      "3204b8915e13a54b5026bfc52a257173",
+      "34f00291c8b71cd12a6cccc5ba43f393"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Lethal Enforcers"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "b25865d1589944d469edf41d97b8e4c32075d536688d98f8878eb1a313b02ebb",
+    "itemIds": [
+      "32d28910611cde495228673b98e00dd8",
+      "80abb47a522aede1657534c8f5e4d9ce"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "WWF Raw"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "195a5b60997f825fd4729522a0ec5ee623b655abcec3269acd013f750defe68e",
+    "itemIds": [
+      "32dd9c65b76705183e1a83a12f737934",
+      "ba06f0fe96380d9edc497f9e34f95401",
+      "dc6c17f80a6631a03d0f7f8e305029ba"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "MLBPA Baseball"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "238e41fef71d8d1c7662cc5cb8b53bdf58c36304d06d4967c06eac740feba58b",
+    "itemIds": [
+      "337a93f22af875193739e814859699e3",
+      "3cf29eb7712520908439269b29120262"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Pac-Attack"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "90589acffec47e922c79b72ea80353a9106be54ebe98fffa54fe359d4fb3c2b5",
+    "itemIds": [
+      "353b5d8735db736153d79571a366bdd3",
+      "d01a49676adf25de74b58a64cd6970c6"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Strider"
+      ],
+      [
+        "megadrivebr",
+        "Strider"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "4d624a0be8144e7d6568b176ce8b92c069a043e8c800d3cb28e00f8b592ec4f0",
+    "itemIds": [
+      "35756e20173613d9c3456ce1fff2aeaa",
+      "fa4966e3c2861a3a569d6d1fda034cc2"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Cal Ripken Jr. Baseball"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "175a2ed644e91f60d55b6c944133272e88565bdbb2e879073d5dafe1f408706a",
+    "itemIds": [
+      "36a2d3b6f1f550889e3544688db450ab",
+      "846b833b79a2a10ee3d339d1d77a4300"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Wolfchild"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "945ae08688050819e837f17e97a9b9da68ce4e8d23975e32cea8e91f9c1d96ce",
+    "itemIds": [
+      "36b736682d7a047e9f8e5523e167eb14",
+      "3c02fbb5b2e24c4fc3302fc7379fd5cf",
+      "9cc9e153d5145130f34d31676ccc7c1f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Frogger"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "41ef82ca4b10e446b54e6ff61955629a65273e65580b861579e423d16d5c01de",
+    "itemIds": [
+      "37607c8c98b550e519ad72799989c6e0",
+      "bc63ed738de8712269ff6c7f57e128bf"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "World Series Baseball '95"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "4cf55f0322ee83673be6a7b0af683ca0cb8cd878f961810aa2835cb239936a58",
+    "itemIds": [
+      "37e3bc4613d1810f8237fef61bb475f6",
+      "4aa1db5cdcb5e6b73b9b8bbc472c54b9",
+      "bfe855910ed34a0cbb1aa31602dbd42e",
+      "f72ab303f31bb07d9acb408eceb4b8a7"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Dragon : The Bruce Lee Story"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "b5684030c7e4440ef8ca5ffc0bb9ebc74f7ecfa7c2317c466281bb840228c2cf",
+    "itemIds": [
+      "382c064164b67659f5307880654b47db",
+      "ad93bdad39e0cdfbfc1410f7b060e9ee"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Operation Europe : Path to Victory 1939-45"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "ffe1fe856d88f73441e630913325d96d39e871824c95b3328c2186aa5b01cad5",
+    "itemIds": [
+      "389dbaf565bfed46ed600c31700e447b",
+      "f5dfd13b32b620406711cc12d88bb026"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Troy Aikman NFL Football"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "172152d79fa608b63773179a0bfc6ff74ee48e34a4bac500edc6b9cbccfb4c1c",
+    "itemIds": [
+      "392dee7a2ed489f72a56b29df2f42f00",
+      "a0625a9b838d2d2da9caf7e47bf00ca3",
+      "c83ab3ce9c1a4a6665923853913ee997"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Bram Stoker's Dracula"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "8246bf8bf70a5db34e58902dc44942bcadff63beff92ce906635707a6c66a043",
+    "itemIds": [
+      "3ccf0ac2be4878f222b6488b4a78ab53",
+      "5a4ac89886b223e677cc2606f859310d",
+      "ef912a6c7ed3b3571ddf88b1c1c9680f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Best of the Best : Championship Karate"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "1e7ce4c516215786bf8d3bb46eaf4407bda849e4de7da568b7db6816a6e7b41d",
+    "itemIds": [
+      "3d7d96f56f62798a5a2f7b7e42d8d84f",
+      "6f186923353518cefdd6021e04b6f9d8"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "New Horizons"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "5d80ac650f907e6826cef4b8f30bb2ebdd21cb3fcf437670542b47841a5c6306",
+    "itemIds": [
+      "3e60d964c545f5f676a9d6994a20bd36",
+      "cb528627a80a7a96ac80f895f646f205"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "El. Viento"
+      ],
+      [
+        "megadrivebr",
+        "El. Viento"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "2cc4e4bfb80f7d3cfcef2bddf336092539b64d0453d01089d963a68d52adf6b7",
+    "itemIds": [
+      "3f1f33542f2752f25fae9095d70178f5",
+      "4cf11e81ce6e0dc657b7567b62acaf6a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Wayne's World"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "f3665616a9052c891491b96714d33867674cbe439342b24fff5be7de63758639",
+    "itemIds": [
+      "3f581e6c2ef3e4abf06f2e8d4c421c1a",
+      "4150662584f93bd88e592dd988409d0e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Spiritual Warfare"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "02aab5f84c767f090640321a5bba4812b4afa3a4b414702a7a8da3d178f8dbe5",
+    "itemIds": [
+      "3fee4e98298e739657cc4b92bf37db0d",
+      "4a6f58fa24b8b1630aa978910edac528",
+      "8c9e32ae74a09c8ffc9bf8b5d9398879",
+      "e315a6af3cfb766e2768bdeedf002e67"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Monopoly"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "feacc5d06e5811c7af76a42450ccb0fbae889e419e1118aa75d116ab0ed033ae",
+    "itemIds": [
+      "40d46f679c1b997e1c7e6efce0a4243e",
+      "eea907eefd2e8c285f7130c8b6f9475a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Foreman for Real"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "b9f53ab6d61d47a94f6c9c1471e9d2ba9e7e14664f354b50c0cf6c7421b6c5e5",
+    "itemIds": [
+      "411834bcdbc1592775514db5d952ac15",
+      "3fcd0d6836bc1577589dc8445a69e68b"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Phantasy Star III : Generations of Doom"
+      ],
+      [
+        "megadrivebr",
+        "Phantasy Star III : Generations of Doom"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "4d584b37748006dfc0f43ba078adf4b98de7e0141c15e7553ea71ad2b31714be",
+    "itemIds": [
+      "41286dbc8c7ad7e5cd6f18ce2fb5eee4",
+      "9f46c7f4b6aaea4357162b2eb7fcfb8c"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "SeaQuest DSV"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "b1d27e291e44923f153c92730c691647069c040fc073bc131cd183f7f9bc1a50",
+    "itemIds": [
+      "41e2a60d322faf7905f91a7ec624123a",
+      "c334daed46c5504b1f007849ed267c0e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Tecmo Super Bowl III : Final Edition"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "436348008b2c95b779477127bbe73c9f9f8e88be0fcb7dc860ca8dc7ab3ce534",
+    "itemIds": [
+      "41fb7f7b587646ae90c03eaad44db3e5",
+      "85c67fa654bb0a0dd8cb7aeeefd980c8"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Madden NFL 98"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "9038facb16ba54b18427f365cab940d53404b7d87d59dd087dba6f30dc525663",
+    "itemIds": [
+      "41fc1ca0553e99f6d0037c3574f305f7",
+      "a855ec23f9681fafd616330ef6575923"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "TNN Bass Tournament of Champions"
+      ],
+      [
+        "megadrive",
+        "TNN Outdoors Bass Tournament '96"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "20eae428a60725b8f534b79bafa7e59ca2c0f6b455d8f0d7f6d782f5aa65e25b",
+    "itemIds": [
+      "424d4054bc4bcf5169f766940f5f478c",
+      "63be8105386a7ed0748e91bf29a8ef73"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Star Trek, Deep Space Nine : Crossroads of Time"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "ffed67bbff93c611692c40b36bd937f32242d11f081a43aff0b968cab34747b8",
+    "itemIds": [
+      "4288b357f0d410fafcc403c15f1e3e0c",
+      "d21e045429ffae1337071a85a4e7ae04"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Nigel Mansell's World Championship Racing"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "09dbdaaecc474fa89038942c97a5a8794a0e1d6a5d991b5ee2212503f1b37455",
+    "itemIds": [
+      "42ea4e455cf536e0531eb8434cd49a27",
+      "b74bf6dfcea5daa24cf2cefc03668ed5",
+      "d81e9237f8bb1a2bd93b14654539f9a5"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "3 Ninjas Kick Back"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "021728316c681433de6d3bfe65070deb71a227ce5191756882859c6a8be9e682",
+    "itemIds": [
+      "42fea930d19e904195dbbfb2815e4bf9",
+      "d0cb8ab5d5525cbcbc2014cf41be1eba",
+      "station_275086f0370563ac5f252b1c297978d4"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Super Street Fighter II"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "aaece483c249370283743b953c1261b3463e176bc7a9b36ad2ef97ac6b54d994",
+    "itemIds": [
+      "4442ac9ed021b7c72e82afe296f8cfa3",
+      "fbb627f8b97ab013da8a43cc7763639a",
+      "8afb0882368c8a5801f5244846485503"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Joe & Mac"
+      ],
+      [
+        "megadrivebr",
+        "Joe & Mac"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "c8b0760d8fceee136b17c6ce7034bc103d252cebff746e80692b6d833826bb32",
+    "itemIds": [
+      "44db95105435f0f65f47d9a0c6ecb26e",
+      "8a8fc912bfcbaa4762675734aacac9c8",
+      "1c0063c12f87c93d6d0987bfcb03f620"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Castle of Illusion Starring Mickey Mouse"
+      ],
+      [
+        "megadrivebr",
+        "Castle of Illusion Estrelando Mickey Mouse"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "a5f03ea69fdb4277c55e122ed2b07ff7cc19b43be472446f07e3ef44fa85b712",
+    "itemIds": [
+      "4542f29811eb0a4cccb041ac0c33825a",
+      "4daf9214024468f0f117408ddc0e873c",
+      "01a6d89b37714dd4ca3bb57574c3b78c"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Greendog : The Beached Surfer Dude!"
+      ],
+      [
+        "megadrivebr",
+        "Greendog : The Beached Surfer Dude!"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "2c31a5dad4ee4dc77acd06e1c61f4255db4c1c62d91532e6adad18183f631058",
+    "itemIds": [
+      "46fac61dd6c224f817067714d1115b2f",
+      "ca5018938807cfc346b2449018568d97",
+      "cd01e20ada94f1f5ece57bd7e7b4ca70"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Jurassic Park"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "58dd4d18c9450b70031285bbaccee77666249dd2aeaea3d70f2ff078891d3312",
+    "itemIds": [
+      "475e121930c876fd42fe6ecdfacd3ba8",
+      "f2ce295b8c69f801c07f5a3a2c5f1bcd"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Batman Forever"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "828b8378869200a1d5090c9b2e4b43dcbf951f7a09048a4b35f81fe60114f426",
+    "itemIds": [
+      "4b2ac085997d973dd564e4ce3d1acf1b",
+      "9f74ed15ff0c036b637bbbafcbe8085d"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Populous"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "426aef4bfc542661cd593da2f0347eddce3a5189d3d8b8c166df487277d48c3d",
+    "itemIds": [
+      "4b8256969161035094c6a13a492cc32d",
+      "ac04f57076c65137bfd3dfc3b342bcd2"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "World Heroes"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "8701db1907d8048cf69d32358b23c7876d06c387d22c94803f54fd060b5b8a5e",
+    "itemIds": [
+      "4c44b86103014cbf7bc018046f8f98c7",
+      "a1d4cf5c690f06107d1055331e732d2d",
+      "d0da996bad07f44f2ee01eb87f8e3107"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Side Pocket"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "c7127fe3a98c5f551d595b1f91bd3f612da7fb1522a13c600a7f754c2e9de68d",
+    "itemIds": [
+      "4ca5557f8d94ff205a2d7eb61676ce0f",
+      "c35217d8e5b40f2c384b38e47a424f4a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Phantom 2040"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "70caa25c1de6edac9bafe949f68b7a7f058a9f11037e720f73e09ffd4f9d731e",
+    "itemIds": [
+      "4d14a1faf7ad91ca4d968f1cf45e8865",
+      "c7964c4bb6111b7625153d6f6a10f3b0"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Landstalker"
+      ],
+      [
+        "megadrivebr",
+        "Landstalker"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "019ed480e2b029a1b380315bb75e6d41b9b6ebf8992adcd3e42cff819d29a38a",
+    "itemIds": [
+      "4d42385f90c3ce59a8996abf6b18c410",
+      "c5692cdebdb394ff58e3123e2ff7ad42"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Romance of the Three Kingdoms III : Dragon of Destiny"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "bab9e35c6d74606bfa7a5b7854b593dc20631de2717f1bc39f3ca25198cf7a4f",
+    "itemIds": [
+      "4d8b857388146c61e1090b32a39e13c9",
+      "79e6007fd0afd775e41a885f476c2ff4"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Radical Rex"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "aa6e4a12f41019cfb4c0b7ebf2a56b1f0c7a5ccca549dc5c168e25e04a548a32",
+    "itemIds": [
+      "4dc8dedf84322514d8a72f8ffe45199d",
+      "aa468957cdb62c83fa3d694f5b43bdef",
+      "f2ab0de2d65fe635a4276005c38a1b53"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Rampart"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "22cfe3a0902471ae4a4fa355f630c139f6bfe72d26aa068b93d2f95bf3e31a10",
+    "itemIds": [
+      "4f04965d59c4158f167876a75884154a",
+      "2f5a52fc1495eb7536c4a09e3dccadb4"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Phelios"
+      ],
+      [
+        "megadrivebr",
+        "Phelios"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "883a5310433189814f83ba4ba5036cb61cd0b6c58ab131bcc55efd101cf69914",
+    "itemIds": [
+      "4f166f5faed6f3358ec424823075e5f3",
+      "9c8bf9a2b61b55e8060210dd86d0d2c9"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Chuck Rock"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "07b3e887cb3138f578b243ec22c1e9c27addbefc6194e4ad8f2c09b7d8d6b659",
+    "itemIds": [
+      "4ffb1824d37c7febaba4aeb7d47ad6b2",
+      "960d8e9607db199095478647ca11a356"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Dynamite Headdy"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "edfc7b3e68e6c399fd31cc91c644d440edd5d7a5fb79d955c4ea0c37410cf6f6",
+    "itemIds": [
+      "508607dda82a1846f63ab96dd5abd746",
+      "7d4c07c4ee20bc5861a5af6eea114478"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Garfield : Caught in the Act"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "f1b65fd085c1a832bf7405de01b40d5a04f677f49937d395090c766b90759017",
+    "itemIds": [
+      "50d7a1cdfbd14ae70327b6237eaa32ae",
+      "5b3c3d99528c13d382c61b2ccc4c62c5"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "King of the Monsters"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "8909c3370734eb8cfad32af5a225afd5fa4fff41bfbd91346afa01782638ba69",
+    "itemIds": [
+      "5220fd66913c5844a3bb991796b829ad",
+      "8fcdb314876337aad6409c07f3ce5bc9"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Hurricanes"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "5028d54c93b18514ec9641b11e0057bb4fcc1368ce88f09c765ad956f89ef877",
+    "itemIds": [
+      "534eff97990d202b33ee854eb75cc588",
+      "80562d073a720e646e4d1e16c4a31992"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Pinocchio"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "be2d34dd8df85be2224f86f9ae506c023db1aa099e6da1b670e4b58d7aa1ce52",
+    "itemIds": [
+      "53a2244c2ffa057f15060858aae419cf",
+      "bf6f4d4a2c942bc17064e6d2c39f55ef"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Kawasaki Superbike Challenge"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "472aee8a68c38beeaa6ce33da0ed7313388c7e914764450861ef2f50f0c4b72d",
+    "itemIds": [
+      "5447386411b6f0bee58c9eef1544f714",
+      "8e90bc98ed5043441b4b6572c2b04f30",
+      "station_e6b583b66f0ad0a393cfa4a73e45ee39"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "NBA Jam"
+      ],
+      [
+        "megadrive",
+        "NBA Jam : Tournament Edition"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "5041a3ad6f795984ba70ba78a8f4f727c71ff15fc6d24ba7c128447effdf9887",
+    "itemIds": [
+      "56660cdc71d54fcb66ea0a3fdd4608ef",
+      "a108fe8e6a838ee9cfb1d15ad765d7c4",
+      "d043923373f0a33d9e4a03158d3580e1",
+      "ed88c434cc7638ff421a3f345481ea46"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Earthworm Jim 2"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "75dffcf896f340c09cfed062266a9112bfce27c3ff11223fbbd58a8b4adcf3e2",
+    "itemIds": [
+      "56c01c3d8ae1beaff4849510713d3d6f",
+      "f9a711b4f29799b813ebc727c60a508c"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Aero the Acro-Bat"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "687fb772acf2afa877794d4ed075981de43a34ab44d8bcf16ee350938abbbc41",
+    "itemIds": [
+      "5845610446b6fb14d40dcb8298d524af",
+      "5d2adbb09098502e25a761323b1d0fb9"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Great Waldo Search"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "a52d282eb09e8b55fd29075d6578cb42c70cfa4c59736d5213816af50029d260",
+    "itemIds": [
+      "58c486bd1f7f4ecabd86a812f054b6f9",
+      "5ebbee2d8c107f8af9b7cf578c89d655",
+      "78b8b68c67a8b0565cab5c2914930717",
+      "9d951aa1f49c71064ff9a0bb93307780"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Cliffhanger"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "55c88911c705047b17ef47c208673daa1c6ae45b1a1d181469f8a85cb58bd407",
+    "itemIds": [
+      "58cbab1de4dfb8b2fb342296d5349f67",
+      "f350493bdd879767cb7e98b9321308bf"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Super High Impact"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "908b737c40d8266be19231abcc2e28f80614b5504eb491285315df41f1e22518",
+    "itemIds": [
+      "5908003f7c7b9da73c036498fa7fdda4",
+      "9cd6266bac6821f1161b774bee31fea7",
+      "d8f1e7ba02eed7e368e0a2a59740c40a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Worms"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "c23697aa0c7a0e6a3b87c86d7a0b80a7c97b2e064eea97e7f2c04e4ab2acf6d0",
+    "itemIds": [
+      "59681f05ad164b67496034cc43811f4c",
+      "be08dc5dae13d18ebf292c4ea9fb1648"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Tecmo Super NBA Basketball"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "344ad878b29f3164e00d89850193fb0f63b5cb64545e7bd0ff42e3b45c1c0ef6",
+    "itemIds": [
+      "599661d84997d3ea1fb2195f1c56cbf0",
+      "a9c0e2f5dbdff314887118a04710d450"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Incredible Hulk"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "eca256805c0ceb7274405920b4960005d5b1541d11209095a164ba8076b8fae1",
+    "itemIds": [
+      "5a5c264d45e598540e6bb07050f114ac",
+      "a516760e23854bfbe83ece8f058a00a3",
+      "f5d50f05441662be6a6b66b6a36da503"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Great Circus Mystery Starring Mickey & Minnie"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "85d1d870aaf6a578c887f3f9bfcb65328e85c0b4d4e1b47a6ae8889f4e58348e",
+    "itemIds": [
+      "5c2829c8e131f94ee7a7b983bff66933",
+      "5cf96af81aaf131eb256c439240b1df4"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "NCAA Football"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "1ec61890e9ea48a21e1aa6d4fc1294cbb1b4b0d301e38b2a944b1227c5aa8542",
+    "itemIds": [
+      "5cee826b4471f158d55d81fce14ecd26",
+      "88e36b1316b3652517592273d8281d11",
+      "913a53de45928e5e6e1a9fa68071872d"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Sunset Riders"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "7dbec30db376c253e5d5baa720bc3736045b338492ab30fc1e3a820072071fb7",
+    "itemIds": [
+      "5d0f941ae4240a43fcb0b699983444ec",
+      "ad6f677311ca7a9d6b083df373d30a15",
+      "efb6455183ea28991ba74efa77ba5887"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Earthworm Jim"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "b68595c8f083b77533b6c6189d8c197979b856184e68d915e31862fae488c526",
+    "itemIds": [
+      "5dd4c76a35bbd7421bc46506d0ca82ea",
+      "026f61545d3332a36081d122be8d57f7"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Beyond Oasis"
+      ],
+      [
+        "megadrivebr",
+        "Beyond Oasis"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "549e9dab43ce68c8050cf00968f24815c281611d4fde39bcd003f6b972234df4",
+    "itemIds": [
+      "60db28367deae67e5d9c9c4ea15ef4ac",
+      "cd78e3920d62273c7889284405f27fe2"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Art of Fighting"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "1a37eddc4b05882885e4437cae4c8234bdde2b94ff18294ca15dd3c11f40c691",
+    "itemIds": [
+      "61e5663182b13de403c72f7bd0182d9a",
+      "671acd1ca106523a2ebc9848779d0708",
+      "805411ff744823f1fa16d3d132b8d073"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Mickey's Ultimate Challenge"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "f1b071961b196d5ff1c6d9dbdb9ec6a086f5e242351d69be7642cb66a88c5bd5",
+    "itemIds": [
+      "6265186b4033a5c867d50e678f767128",
+      "6f44714fa6f72f568f98a27b7a80a508"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Clue"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "bd031aaf8623db9b27accbeaa98f99e102981800c46349971e4b2aa8c0d846d0",
+    "itemIds": [
+      "62ec706d459047b197488d6622961bc2",
+      "de445eb4ac8d86c5c0b14e25725e8e26"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Jeopardy! : Deluxe Edition"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "7dfac60af8d6b3b172e65b3deb4ba57007c1ac116597c09914aba97dca4f2b3f",
+    "itemIds": [
+      "659f029b92d4a4a464600f8fd9f0d764",
+      "ee5fd459c8a40d19b25a0a6258207466"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "True Lies"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "97e59db3edd33e5ca8e21f3975cb46123a98f188dc352b01c1f6f66dc9638733",
+    "itemIds": [
+      "65ac6c30e723e5f9ed24837d8618065c",
+      "3dd0b40cb9f9470a5cd8c35a9cefe419"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Streets of Rage 2"
+      ],
+      [
+        "megadrivebr",
+        "Streets of Rage 2"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "e6852976ce28e2c6c2f5d57844621bd85fbc3c2611e7e698408e4f098c163694",
+    "itemIds": [
+      "6650b59f07d5a7687b8108cb328813e2",
+      "788f4df7049bc1ac5dbfbad495278b8e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Warsong"
+      ],
+      [
+        "megadrivebr",
+        "Warsong"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "22dbf51d85ca8a4d2f431a9ff901875944ea63089d9745ff901a6265bb658e95",
+    "itemIds": [
+      "66eb97697486601ef5813d0bdaee8117",
+      "8a284e7ee43ff0072e2604b0218267da",
+      "a3c084d44c49d1d4c4152248dbf77756"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Mickey Mania : The Timeless Adventures of Mickey Mouse"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "8a5b428443fa32fb585fec799cefe611cbdf6ddbc5c158c642a91fca586d53b3",
+    "itemIds": [
+      "66f71ee4bf97e4923aebde425fd6a065",
+      "0531c4d773c1a12e469d1e096daf659f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Sagaia"
+      ],
+      [
+        "megadrivebr",
+        "Sagaia"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "a95b794e0bdf337f79032367226fe5afc843ab65bafbc2a4e669d401e5a5e1a8",
+    "itemIds": [
+      "671e7c317411a259466314551d949812",
+      "fb87b8988db6419b1ae0a24306695818"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "McDonald's Treasure Land Adventure"
+      ],
+      [
+        "megadrivebr",
+        "McDonald's Treasure Land Adventure"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "dcc75d4140b8a744445950dcd82c881003ccfe3ea645db14b0d36896ce88d4de",
+    "itemIds": [
+      "677f57e9a817b71955fac74d60af9a35",
+      "9af79c6647db10519ec098101ddf8680"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Pac-Man 2 : The New Adventures"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "eba22a7656435706cdf5724ff66cf7290d262f836cb2581151074543868583a3",
+    "itemIds": [
+      "681de039bf7a1b1dbf251a02aba22a36",
+      "feaa09419879eff1c56364b990e9b53c"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Shadowrun"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "9a9041c72ecda22e4b1b9982f53ff9727e53cd1173516a8f5f1aad88dd0887ce",
+    "itemIds": [
+      "693af366d57e9dbfae87a54a5cf0c1da",
+      "c6092329bb2b67f0fd62f52ff6df66af"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Toy Story"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "40ba4a51b3301770f3dd189f07556e9cd21af8802491a67a3de9e225f30530af",
+    "itemIds": [
+      "69c44fb290f5fdf08e6175d810622d0a",
+      "711947c59670042180e75f3242a4c9b6",
+      "b09ef3c705956007f53487b72b667ac4"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Home Alone"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "888d30d95b8913e64087860e28f5ef8567adc9614129dee7fb57434a670087d1",
+    "itemIds": [
+      "6b3d15815e61552ec5d140b4985c0bea",
+      "c9fee135899c846d78a677d1ce0354e5"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Light Crusader"
+      ],
+      [
+        "megadrivebr",
+        "Light Crusader"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "6922fc28b2d5b0d6c28b06825f06f28f234ecabb8b79f23d004501cbde7de5cb",
+    "itemIds": [
+      "6b7b4c947131d38cf053bd95ed082328",
+      "ec2030c38342d58c56150be99aa544d4"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Ariel the Little Mermaid"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "cfd8cede53ca898583a6e77aa727b212d558ec9b9a9dfa76602ac544edc521d4",
+    "itemIds": [
+      "6c1cc810ae247854cccd485d327d6d1b",
+      "e5b883a27ad7dac842855bdd072c3e36"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "ESPN Sunday Night NFL"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "95dc6e15fbd57cf3332c04a4d0999c481780bd4220bfb820862350abfbccd09c",
+    "itemIds": [
+      "6c6a3622656870fca249890b33deb382",
+      "b604f20ab118e697646bd94dea59700d",
+      "26259325aa95b2f18ea53016401ec347"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "RoboCop versus The Terminator"
+      ],
+      [
+        "megadrivebr",
+        "Robocop vs Terminator (BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "15e56e1ba552ee96198f2dac379a8de9f6d85fabec63e13e1c7d4f9316cc0354",
+    "itemIds": [
+      "6d0746cce348a46f4f0d8526f88ead1a",
+      "bd2fe6ed6336e7a0e2c5beb63f067571",
+      "dd8008ac2711bf45b7c1b9e7acb87108"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Championship Pool"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "a7368c9d8d6ed6a1f61987fde267f914472ecdebd935c54c6312d0a8fd275544",
+    "itemIds": [
+      "71ab6a01fcab4c5a9cbfa440111e7d16",
+      "173a38ce8f9556ff56fb3b433e0ed32f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Bio Hazard Battle"
+      ],
+      [
+        "megadrivebr",
+        "Bio Hazard Battle"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "7d471e6ab3584047ad171addec0bdf7ae22c13b20cb63e59ebc322e730e145de",
+    "itemIds": [
+      "721d384f19abd1405b45e470c5faeb47",
+      "7edd10985af3cdc79d442fd177b24fd5",
+      "c5ea6aa1df2d84ff505007a2b34dee43"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Wheel of Fortune"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "5d306ecc055e159b191f575754a87beb22095d499bb19ebb77412defa9008e87",
+    "itemIds": [
+      "72238247c010527fb884308b9395c3a9",
+      "aa80098f341aba5ed29a56be5caaaacf"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Addams Family"
+      ],
+      [
+        "megadrivebr",
+        "The Addams Family"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "14d952e502b0d4b146a450bc51d2a23942345281b9184d1f1c56c6fc26459fa1",
+    "itemIds": [
+      "7237636667d44a87f4a442036c22d026",
+      "ea7b99b6280275d78c29a31dc76cc9ee"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Kick Off 3 : European Challenge"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "26729e9a684c43f0760dee6fa2543ba38c2d59802fb141c865d489169c0efe61",
+    "itemIds": [
+      "75490e9a52a7c85314e2982cecca8759",
+      "a1a1bc5837ac47f447e5306b274426b4"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Race Drivin'"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "71e4febd02b925aadd3936fab2f4b362fcbafbf647c558e129fc8432992a5c68",
+    "itemIds": [
+      "782d30b02f0c4de5a04ce3cd6337b76f",
+      "dab4304eef6514f52fade1d90e2afeeb",
+      "161beab3bab9b68db1456dd91c94b9a4"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Adventures of Batman & Robin"
+      ],
+      [
+        "megadrivebr",
+        "The Adventures of Batman & Robin"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "31eb997f7e85e5fbd18c1e542b1ac6d8d10eb71800f01398360ae63496a237b6",
+    "itemIds": [
+      "7bb3ccdf1c02f34d476d814001d94a99",
+      "8730798904209096db9ca87e8f074969"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Caesars Palace"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "368e6c0d75469e017920d651cd874e1b9209fef114d60d92010315343527b9f1",
+    "itemIds": [
+      "7d7ecb75d02516b653d68fe55793e7cf",
+      "b51583deb4f78cd32fe24da835b2c602",
+      "afd66c953e057c1aa00a22f6b999eb5a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Chakan"
+      ],
+      [
+        "megadrivebr",
+        "Chakan"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "5f903089f619d4dfeafa99c82a13cb160c50d33a521dea4f64ef1e2ccd0e71d7",
+    "itemIds": [
+      "7ec7f8d49f9c6ef77394cb3793eab95b",
+      "c3ab0c7825a0cbecd7dbc5186ecfc308"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Mary Shelley's Frankenstein"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "4f1e1929326c712e0559092749c9e2323943c87344840900edc52b44b6faa597",
+    "itemIds": [
+      "7f79d541de7cbe7f0f796488a632edf3",
+      "aecdf8118ceed7ade15bd9e743d004ba"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Jammit"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "5c72754d3029d1898296323dcb4eeac165eba27afb6b4ef3afe437d207b2e799",
+    "itemIds": [
+      "7f9ecba47ab0cfec71077dd2623877a2",
+      "c4d9ff632901e4e3a6574be098124fc5"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Home Alone 2 : Lost in New York"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "64b6f9fb84bb33d468c368c9ea8af9aacad95f6f20424a8729660d7d9337cbb1",
+    "itemIds": [
+      "8094c974e51c345ffa8b3f4e40bb3c56",
+      "e5a1798b030808663fac977538035196"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Teenage Mutant Ninja Turtles : Tournament Fighters"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "f7bb0f154b29127defcf004e1f84ae72e50611671b8741764c472c23b517f0cc",
+    "itemIds": [
+      "81716f81b9bf890f8b49313e06c43817",
+      "a04a18167d06ad03608d6065f0076f6a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Vectorman 2"
+      ],
+      [
+        "megadrivebr",
+        "Vectorman 2"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "9d2d742564d4819834df19af343edaf4d38172fbdaee7edc9cd4e02faa0241dd",
+    "itemIds": [
+      "81d54fa277d92672a9c03d65b07a96a1",
+      "740428ae857cbd4d0af05a73347d7b8f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Shining in the Darkness"
+      ],
+      [
+        "megadrivebr",
+        "Shining in the Darkness"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "c1ed39dfaba7521a0d89a8460a3a68d7dce8bad1011229b85825c2caa27c767b",
+    "itemIds": [
+      "82561fbdd804c9377fcfa3b23e8e0c13",
+      "bc782aae04aac3a8c42c851e51ca3e98"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Astérix and the Great Rescue"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "2a944f2cb54143f5c7d8de4fabd350c0408e9bd1fc01bb75cffff023b5f64352",
+    "itemIds": [
+      "848c938e9693d7b4e8c6bc4a1e240d3d",
+      "8a93a23c70fef538443606b4b2e2592e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "David Crane's Amazing Tennis"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "6360a06c7b9edf7190f3f5c2a643cb95aead9dfe940ad1c10713f6f433dd6b85",
+    "itemIds": [
+      "8568f3c18ff797e97d8892e9aed508b4",
+      "cb99f4d2778d06eea7cbada3a55b59b7"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Adventures of Rocky and Bullwinkle and Friends"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "c7d652930e4480d16c6d119f658fec7182aff1819070880d59e9e09538e748c5",
+    "itemIds": [
+      "859753a49a1feabc79b3e2ec148c0038",
+      "bd88c83c70beaf128a5b14c2058be902"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "T2 : The Arcade Game"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "5e346007d669c89a1a71f31265c92cc1b6d202e7673bb62d51b36df08ae07bba",
+    "itemIds": [
+      "8906b895793caa814857f6750187c885",
+      "93db858564468762c21959f382126461"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Urban Strike"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "084bfde0b5a73297cdef2d53fe4ac2d44173804518800ebf44b9c73a4b7396ac",
+    "itemIds": [
+      "897fddaf18ec264609bdc0002f2cb230",
+      "97baab83534ead2643fa7fa7ca1cd703"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Uncharted Waters"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "0fff338056366aeb13a0b5fc81eebdf48d12759110409c2098594e0474004fe2",
+    "itemIds": [
+      "8a7bb54d9e204de2ad1f7ea7fb8ed98b",
+      "a0b74fa9b19cebd28e5b8c6608eeaadd",
+      "b90251ce215220c3c31ff035182b2216",
+      "de2f68cbe21bcf72e4ad69649be80b94"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Rock n' Roll Racing"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "f9a994ede03686ee033cf547853273a098bcf775556046a9fb1404a8b1fcd224",
+    "itemIds": [
+      "8b2e64fb96a1b632adf02f37dd9d4ce7",
+      "f68abfcf94052c9f232b1ad14f3beeea"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "American Gladiators"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "77ab3a0a34822c0491d0d6320f15c40cab825a6472db55a677b5da45d8a2e906",
+    "itemIds": [
+      "8c63dcbfd5d7ed6e8a98a54621274ffd",
+      "9011251e1fb1bfe00aefa7efd60c6a1f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Brett Hull Hockey '95"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "a58aa5c8250c6e3b9d0aa338f17eef1662d33c2edd3fa3ff16b651db94daea89",
+    "itemIds": [
+      "8c6745bc85c2027dea16e6bafdb5ace4",
+      "f6ac3b5758a05aca44bb5a3b23143370"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Zombies Ate My Neighbors"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "cf268c563cac8ef9adb8c1e8a2652bc515fb18502ab06e98bf078ee76d7a426c",
+    "itemIds": [
+      "8db2b7b4a1cda461f3141deffa0e7e1c",
+      "bfe88615e64a4b2536300348070b3a47"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Shinobi III : Return of the Ninja Master"
+      ],
+      [
+        "megadrivebr",
+        "Shinobi III : Return of the Ninja Master"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "2c73a04e6b1d5e9b76337493149e2b2973563f099ef664c891df7b99185c62ad",
+    "itemIds": [
+      "8e2a114eb3f7d50f1319079ee455c4b3",
+      "96bc62646f9dc6262b3d5de6bd58fab6"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Mighty Morphin Power Rangers"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "b139d93b04bd5048687066cc8867a044df7d7e98ccfe13e3e78dc37dac94ecdd",
+    "itemIds": [
+      "8f621b0207f36f4f00b33b1e26dcd6f9",
+      "d81d18146d69b48941b9cc9ad5aa041a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Toxic Crusaders"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "2e5b59269f97cf2df26ce34685fa82e874964252b82681cd5e47e7c0065d8225",
+    "itemIds": [
+      "9174cbba1ba0602df312a1d49dc05ac8",
+      "f1c1e4e0785a313be10d364478ae8800"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "NBA Live 98"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "0164a6d2fa8c00ff48001628ce08e6242e985885d1be86acef32773231cdb671",
+    "itemIds": [
+      "94ef943e65c070fd4e5dd405ff774039",
+      "0e0599330a8900d6a4cb20d7e637e117"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Battletoads"
+      ],
+      [
+        "megadrivebr",
+        "Battletoads"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "75f8ee779910bc56566a25a358c15cc0541a8a4451e5f15e90fadbf6f49bc015",
+    "itemIds": [
+      "971af78feb44aa642eb6642ac417ec52",
+      "c051bfc2da1bc41b4a81db578e7b3255"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Streets of Rage"
+      ],
+      [
+        "megadrivebr",
+        "Streets of Rage"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "0618dfbed2c5e72a74711f7fae404e0575d5717f1e198c27249b7e2fd28ced1d",
+    "itemIds": [
+      "9b13da6314a81b6463be4dec03b5806d",
+      "d37dfe0fe1b4b60606eda93babed3ac2",
+      "da0a94053db6a9cb08be969fafc1e6af"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Paperboy 2"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "335befc9a0824e2443700f0c3c2bb4d296c4f417c8e58c7d939fc2334482a4fe",
+    "itemIds": [
+      "9ba9a48b7441de3bc127e3fa51ab743c",
+      "a571f22b30d93c4c23bab8b487538a9d",
+      "c2955a285f2dbf39f60d968e9022187e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Flintstones"
+      ],
+      [
+        "megadrivebr",
+        "The Flintstones"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "2f749be7e1bd2ed459d2d74e61852218b3654913b6c1279554eb360c631d7cd9",
+    "itemIds": [
+      "9c95915b41c1d68012959a2f8641a82b",
+      "bdddd945349697182fc997e7d848e378"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Valis III"
+      ],
+      [
+        "megadrivebr",
+        "Valis III"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "b8606fb323c4088171dca10c246cdb1c9ddcda8c897bed6837eded477a02794f",
+    "itemIds": [
+      "9e0cb5a30424d8390e6ac7e69c2088da",
+      "d210792abaf0b08c6eeccd9b49c01685"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "F1 : World Championship Edition"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "e5cbbf19b061b933d584cbd66bb20d8ac0fc7161136966b0e911b49eca0e9c42",
+    "itemIds": [
+      "9e2b7030c2965ff6218939111ebd38ff",
+      "fd38d6e9b6a51a7e465067d2d316e4ac"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Lemmings 2 : The Tribes"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "c9834dffef32c3289795e43dbf14e4380154213412aa748732733a0fc62473cc",
+    "itemIds": [
+      "9f7ef74a2b1fdc53482273dfe5159af5",
+      "b228541b1caf340045e53d79fb7ee8ef"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Toys"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "aafed09fff009737be98e99896f1e7efc27266e1bccf842849270cd15e17c9d9",
+    "itemIds": [
+      "a29058655d280d564fc72c8af7b0383b",
+      "e3bba3b81967883abd8e3725e17e015e",
+      "eddd493743707d78f71151bafc94b078"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Andre Agassi Tennis"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "74e953466b2f59f18ce858283a9473fde5d5d8a0aa626e6f38042fd16cd97743",
+    "itemIds": [
+      "a3898ac63cb559fc853d4fd2e59b1da1",
+      "caf0adbd1500b93126536c41e7020bda"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Shanghai II : Dragon's Eye"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "b72b7e2e0bf80761338d12f0e4c6d3bdd65331e24ba50f83c0b0ddcb0484c57d",
+    "itemIds": [
+      "a3b3d620f511eba0c5998866c2b92780",
+      "adaf62b8d2e91ed9c8c201c7dfce8fc7"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Last Action Hero"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "54b448b2250ef9598622970419442ca971dd77778e18824be3a704c618551d2e",
+    "itemIds": [
+      "b1de932331f5a544c166f816ebcb8133",
+      "43bb2a4d46e38c91f20e7cf0c638e83a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Taz-Mania"
+      ],
+      [
+        "megadrivebr",
+        "Taz-Mania"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "a4cc17acaa035bf9343356eea9b73481957fea2a5d1ed62554f1e9715b64e185",
+    "itemIds": [
+      "b505e5da7615552ea64e9fd2efdcaea8",
+      "526f9df27b0f6f74ea599c842c8edd3b"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Pocahontas"
+      ],
+      [
+        "megadrivebr",
+        "Pocahontas"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "fe5b8972a6f688514cd78899a6ed453714cb9b49f278f2cd942265c1699a03ec",
+    "itemIds": [
+      "b5967233b9cbf079305f6fc1c494c4f0",
+      "be4b5adf1e47fa79f71380f6cf86b11f",
+      "fa5ca6eec9b132b3dc93585eb3692327"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "NFL Quarterback Club"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "4bf3d0be37fb2abbd3c56383fbb9f64a705fe49039553519f321a1c0e6713b7d",
+    "itemIds": [
+      "b8abd078c3b5257222d8d172fd04f335",
+      "c159d1c3bc103222f0dbf530ac8acbbd",
+      "d8ffc2d35a43976aa9ac589131e3798e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Family Feud"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "1db036f5a40f8a162f1db8d7aeea78aebafbe6fedaca07f3aa9c6fe07006b9bb",
+    "itemIds": [
+      "b945db7e9cb37e628beaf5b5ab9ba1bb",
+      "d5351b54b8053b47ed89471b1ffa8c83"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Toughman Contest"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "fa1fcf56bd1539144cdd046d78bb276e56280999dc2cdad816eab8210af268e0",
+    "itemIds": [
+      "b9a4bd763c593e5aa5a34fffd5d0f39f",
+      "be743825e7671def957783365ffd09a9"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Mortal Kombat II"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "b9dc36807d4f9749bf6576ec6cbffa58066b00a99021d0fcbf29b1c200630ef8",
+    "itemIds": [
+      "ba36a715d829093d95d77518ed025817",
+      "3fed07f7bee38a9b96e5409340fa24fc"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Simpsons : Bart's Nightmare"
+      ],
+      [
+        "megadrivebr",
+        "The Simpsons : Bart's Nightmare"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "16a088b973700ec117875ba9bebf5283ea014cb7945bcdfe78546e6f7f8ebf44",
+    "itemIds": [
+      "ba3a35a359dca6ff13e35cca698816af",
+      "d65bc81d1ac47b977830e5231398bc75"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Zero the Kamikaze Squirrel"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "1b55b57a9a9605bb22c7b7e06ecae28204235f16766c59ea5ee954c44caf5bf0",
+    "itemIds": [
+      "be8ca60f978b8b7a93b6415b9a0faa56",
+      "c249ee848b59b020502e66445acaf284",
+      "f0216d31b7642bf78d522f1b2bec4763"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "ESPN National Hockey Night"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "6d965d4561f6d27621b6774565c4d6ca1c2f38c3e6adf8cffe01d922425d9395",
+    "itemIds": [
+      "cb075ce4e6dd53a67de85de212b688f7",
+      "f3dd2bfe1c8a94f09cc6b4025c35aa34"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Nobunaga's Ambition"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "075f400940921d7cd9b0741c4f1f3ddb7b2ef3c5099d402c79efd5fdcd764594",
+    "itemIds": [
+      "d2fe7fe4ae508c87597317fb61c81dd4",
+      "f8d608616bd4436d1795e57dafcf32a8"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Cannon Fodder"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "12507628e16fc5c3ddb45f6900b320b16fd7e2b0c50fbec86e603e82dfa0d748",
+    "itemIds": [
+      "d9a23115b848ce36b1aa4de1b90990b3",
+      "de326903dc784ea26e5ea74909357a45",
+      "fee176383d588db59c1ad27a9edcda98",
+      "522bd520aae573c043e8786f80d9bb2d"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Scooby-Doo Mystery"
+      ],
+      [
+        "megadrivebr",
+        "Scooby-Doo Mystery"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "9c847ae9759327b7498fb5216d3977c45a7466ca61e922234d16358e6ac503d2",
+    "itemIds": [
+      "dbfcb04c93ff7b53fd2d6c8f14408234",
+      "e1ad6055485152bef917ecb213b39aef"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Genghis Khan II : Clan of the Gray Wolf"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "d5405652129c4677389b3f0efcace91c19ab1ad7a42397d14cd541d932e63166",
+    "itemIds": [
+      "dddb9f11e0821e3c66e5c53087c6a362",
+      "eb92063644c3dfa7004ccee2de45861a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Math Blaster : Episode 1"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "b786a9e23728eb05db196a7a61271b2078ceb9b22e928a06a20a20bab38c3dc4",
+    "itemIds": [
+      "de7be4288571af9e3179ec03b4b4dd16",
+      "e2e279072aa35140ff5e4b6432f1f990"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Fatal Fury"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "e6b1453661b703dd87d1a10d278596c59fbdcde7203a5216728c2c224f0b0831",
+    "itemIds": [
+      "e20a5c42c16a533fda06e6f9df985008",
+      "de8b92fcf886fd36a4bd1232b19de7a3"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Syd of Valis"
+      ],
+      [
+        "megadrivebr",
+        "Syd of Valis"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "00926ba2fc77f38beee1930cffe3378bafd876a27ea3da7e1506a93c4677a3c5",
+    "itemIds": [
+      "e3fbe762a341cb0a8381cad17c22d1e1",
+      "b85361dec6d63a775f337f6a8f2f6313"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "After Burner II"
+      ],
+      [
+        "megadrivebr",
+        "After Burner II"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "291633283c2138bef2a9aa88452fd258a0bf559386a5c448026e229a1be47c0c",
+    "itemIds": [
+      "e4d1b17a3cf9f789c4bedecab748994e",
+      "235860fc4924f8672c2b2447a25fea1f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Mega Man : The Wily Wars"
+      ],
+      [
+        "megadrivebr",
+        "Mega Man : The Wily Wars"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "0ba6f5dd70b9e05a1689b119b7b1bdceed9454ce2643211a4b17077f30e6117f",
+    "itemIds": [
+      "e9f47e0c2fbe2bb9878c78ad9a4324f1",
+      "676fc1162c043fa7e7d348acf72acbc1"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Captain Planet and the Planeteers"
+      ],
+      [
+        "megadrivebr",
+        "Captain Planet and the Planeteers"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "9c0db1c2b1496bdd3cbc46e70e0b49d3cf3a1577c7926421f4e5b8788142819e",
+    "itemIds": [
+      "f6b9904383a4167674503adf2a52dda7",
+      "4da59ec2919badfceba96705d5be6d44"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Splatterhouse 3"
+      ],
+      [
+        "megadrivebr",
+        "Splatterhouse 3"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "ac706105b3c11ed2ea69ffca1cd4e74ee7ae3877bbf198b887e01706d7b4058a",
+    "itemIds": [
+      "station_00a9867063d0376b9a6e34b5d36416a3",
+      "36c816fe37209dc88e094a431e9818c2"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "FIFA Soccer 97"
+      ],
+      [
+        "megadrivebr",
+        "FIFA Soccer 97"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "37e5c856a37b1582b9384c2ad997073d261d1c465edcda3e5dac0e5b034b884b",
+    "itemIds": [
+      "station_03c87180338e6f3dc7beaa3304c23e6a",
+      "39f29be4fd185a40ec1dbd72aa2498db"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Where in the World is Carmen Sandiego?"
+      ],
+      [
+        "megadrivebr",
+        "Where in the World is Carmen Sandiego?"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "d18bfa9c6ac1e696e5b9aa50097b7dff0f77d85e45099c9b98360c5c5fdfb016",
+    "itemIds": [
+      "station_0566ce724c506fc88595852871afd2a2",
+      "00adcc121b254c196d2fd2783bb29e3e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Mystic Defender"
+      ],
+      [
+        "megadrivebr",
+        "Mystic Defense"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "7336fd698625a68fb1b5738b3f45feac55c24400cb383bf8a9a09b1b605717ec",
+    "itemIds": [
+      "station_074f4bef55a2c8746ca094ba3880702b",
+      "aba6d835751fc30a0e11ff686bae318f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Where in Time is Carmen Sandiego?"
+      ],
+      [
+        "megadrivebr",
+        "Where in Time is Carmen Sandiego?"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "0d8ced6c17d22eb42cf0b744d5e2006c9ac38760548047094939a07ceda1e0b8",
+    "itemIds": [
+      "station_109ce202b7146b6a0d8ab000ff52bbf5",
+      "2d6156d392b0845f5c72b8c0700ac1ce"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Super Monaco GP"
+      ],
+      [
+        "megadrivebr",
+        "Super Monaco GP"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "015c478cb19ec4507d5890442e5c0751f9b530a19e1b7ab62c69f5d3d4ca5057",
+    "itemIds": [
+      "station_1e1e2eee3bc83710cf0d7e353eb95078",
+      "83429e90120a42e5c6c2a9d0f79b8dd0"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Monster World IV"
+      ],
+      [
+        "megadrivebr",
+        "Monster World IV"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "219bcce7f09dcf83f84a7a8791cc66c993a386807cdf1ffa343f82521dcb4118",
+    "itemIds": [
+      "station_2764e9ceaa1568d246be5b7651a8beba",
+      "ab924484ee6010d7c67db36c86a35d0b"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Shove It! ...The Warehouse Game"
+      ],
+      [
+        "megadrivebr",
+        "Shove It! ...The Warehouse Game"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "c0f5bee30a96692c0d4f9041651b5e4b227fc7c300a5f5ed84442fad945324d3",
+    "itemIds": [
+      "station_2c633e8ebae637dad48b183328b9c0e4",
+      "dbc27f7116484845e90e9b1e05dc3a6d"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Spider-Man & Venom : Maximum Carnage"
+      ],
+      [
+        "megadrivebr",
+        "Spider-Man & Venom : Maximum Carnage"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "9fb659c03b9d9ac5c04d572de1b78b27f60c4c88d644d93f73d61f9e8e375701",
+    "itemIds": [
+      "station_2c8eeaa44e95d38806239dccd2bb68a1",
+      "station_6a5befb12218a8ab60c124ad30f2b6bd"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Domine o território"
+      ],
+      [
+        "megadrivebr",
+        "Domine o território"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "c89dbadfeb3a10799038578843c5a47effc25bb5e88beade260f84c6b7e7b528",
+    "itemIds": [
+      "station_2cd2683c9b279486af77fcf7fc45794e",
+      "station_fded9ca30e8b042e59f33ffeede3c98d"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Brian Lara Cricket 96"
+      ],
+      [
+        "megadrive",
+        "Shane Warne Cricket"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "2b0ee21b52d06b84ea4e3b56f53fdceee382da71636c256ed135c3352a9d9b9e",
+    "itemIds": [
+      "station_32da953802c477c80e28482a774d9bd6",
+      "station_2c38a43d5468d3cc60095a62bc798f6f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Water Margin : The Tales of Clouds and Winds"
+      ],
+      [
+        "megadrivebr",
+        "Water Margin : The Tales of Clouds and Winds"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "bab6fbf3e3afd4941e97a38c7a55668dd66589f065b8dd71beb532ac7b43284f",
+    "itemIds": [
+      "station_3812e33f3cb2f477d401f98f08361504",
+      "43f403d88c30467123f5bd61d1eb6161"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Alien 3"
+      ],
+      [
+        "megadrivebr",
+        "Alien 3"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "7fc350cfb5adf79d7d77c8a5e849a5338f72afcd969daa861aac76a1b785ccf5",
+    "itemIds": [
+      "station_3dcbb7f6688aeb40d53120e72953abf9",
+      "20f5027264def207bc91423249c1cc8c"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Pirates of Dark Water"
+      ],
+      [
+        "megadrivebr",
+        "The Pirates of Dark Water"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "2b0499b88191634feb45555511fe1963c44199d4a6b7cc48e27a4478d5edde1a",
+    "itemIds": [
+      "station_43b9c4d89c32e981279394d64256f94b",
+      "277ec69e02b9efd370e7956702883f5b"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Body Count"
+      ],
+      [
+        "megadrivebr",
+        "Body Count"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "d2f048a52a4e2d441c7fbd1cd212b7c1915b8915fa86c663fe7682599c1bd7e4",
+    "itemIds": [
+      "station_4d4aa5ddca34b768897ae3587eb5f624",
+      "eb9af1b298a8144a2253a4ef3a784853"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Sonic The Hedgehog"
+      ],
+      [
+        "megadrivebr",
+        "Sonic The Hedgehog"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "d1cb781a5b6ed88e1cb5661a67b648fec032a662b5ed7b241a95a42d7d87d58d",
+    "itemIds": [
+      "station_5718d91315180e29508e75025440267f",
+      "14dbc80148657ef09659b627b4ba779b"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Simpsons : Bart vs. the Space Mutants"
+      ],
+      [
+        "megadrivebr",
+        "The Simpsons : Bart vs. the Space Mutants"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "f356ee373596aa958c891b2b20b773b2aa6d716f64187bfb526a604a78c94423",
+    "itemIds": [
+      "station_5916d759d42bf2077298252b65bd395a",
+      "fdf58053d0533006c20892156c1bf4ae"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Phantasy Star II"
+      ],
+      [
+        "megadrivebr",
+        "Phantasy Star II"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "5cb879a7eb791c5998af7933a82b1d3d6320cf64fb3f513b4635fce5ea7caebb",
+    "itemIds": [
+      "station_5f4271f2f978885a6d92b05526e39e20",
+      "9d321d4526ad5a13e8611eb120edcf7e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Ayrton Senna's Super Monaco GP II"
+      ],
+      [
+        "megadrivebr",
+        "Ayrton Senna's Super Monaco GP II"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "c6265cfb46d034b0245ed0cca78352deb9e1cfe12bf082209bd9b6a8cbb789bb",
+    "itemIds": [
+      "station_80512f82af5d3e20d8a3d90017fe8593",
+      "e616acccfd11bc254576eb308213fb03",
+      "station_fa973500f04ff642813d7237e54c7124"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Tintin in Tibet"
+      ],
+      [
+        "megadrivebr",
+        "Tintin in Tibet"
+      ],
+      [
+        "snes",
+        "Tintin in Tibet"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "82b72f0dce5b4dc5c35340f5612ed67ca890d1a4fb8cb7761f7566de2f1876c2",
+    "itemIds": [
+      "station_855d123b8da7a95c3b071fe0d40ac618",
+      "f5d56427306935520b5ac513b98ce493"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "The Revenge of Shinobi"
+      ],
+      [
+        "megadrivebr",
+        "The Super Shinobi"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "baa30ee71986cf31e2ba3bbd364cd912a4c88d8e1c539e698bbe2ce00bae56a0",
+    "itemIds": [
+      "station_8ced2cd94c2e90e79aabfbf7300cd1c0",
+      "782fdb3973bb930452913f49c2bb6df0"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Ristar"
+      ],
+      [
+        "megadrivebr",
+        "Ristar"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "3a8811a5626419c542ad20083d0a0f5dfc231af9f3a7d60aea34cf5866bae1d7",
+    "itemIds": [
+      "station_8dc32681ffc48dcc7dbbb3588a87cbe4",
+      "35ad6c09a866e83cab5a4bdcab060e5e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Michael Jackson's Moonwalker"
+      ],
+      [
+        "megadrivebr",
+        "Michael Jackson's Moonwalker"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "19e0a43f63aa8ba837253ae0e36111ac907b765b69919de4edb72ea2730c190a",
+    "itemIds": [
+      "station_9122ae17f86e43034bfcc82e6e043bbb",
+      "c76edd6c3dd76efa51e3048e55d298a4"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Pit-Fighter"
+      ],
+      [
+        "megadrivebr",
+        "Pit-Fighter"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "fcfddb737a82e9f953355b1d8873a23617fad27f2908f6bc3e2f09102688bb77",
+    "itemIds": [
+      "station_91ec55bee6d8160ce9530843834399f3",
+      "0190de3b25ccde28cff7bf21e51bdd68"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Mortal Kombat"
+      ],
+      [
+        "megadrivebr",
+        "Mortal Kombat"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "0b22461722acd89164d697de66c4df30fe30b2752a60d88a9620ae3827d3678e",
+    "itemIds": [
+      "station_934631d9d974e03e65281ef0d2e2935a",
+      "5677748ae5ea67d34998d62541682918"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "ToeJam & Earl"
+      ],
+      [
+        "megadrivebr",
+        "ToeJam & Earl"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "5072a74eb320b28f4709f1be79db0e3cdd1493dbb86a7f3f26c24acb1a869b55",
+    "itemIds": [
+      "station_9be74b9d06a741ea641904b6b0f51edc",
+      "9228119bdab5158b1623c975e021ab71"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Toki : Going Ape Spit"
+      ],
+      [
+        "megadrivebr",
+        "JuJu Densetsu"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "7c71b686d55b41216b8dc951ef9b76df328c82c7bb772978e20cfdd7eb24bc24",
+    "itemIds": [
+      "station_9fb93887c5038516bac4f22700a9b1b3",
+      "fdffce7a13df465cf149e4b9057dd64f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Yu Yu Hakusho : Makyou Toitsusen"
+      ],
+      [
+        "megadrivebr",
+        "Yu Yu Hakusho : Makyou Toitsusen"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "2c992151a3b7f156528da10a4babd64db507dfd77e4366eb5ce089c0dc43f9f6",
+    "itemIds": [
+      "station_a8507c6fed5b11f90f97feb4f3025a5e",
+      "6eb8312459823d9ee90c53257d9700d3"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Nightmare Circus"
+      ],
+      [
+        "megadrivebr",
+        "Nightmare Circus"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "2a2580bde1bc21820c757e8171cc3208d8f480a7c475e019f55de7fd984ac721",
+    "itemIds": [
+      "station_b29f967dc57522b9d5ae9ff378479406",
+      "651c28ec3e1b56abdc74b17ce3f4f458"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Pulseman"
+      ],
+      [
+        "megadrivebr",
+        "Pulseman"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "6a331d27e4cf0e5c258dd0d6931eec364f4a06c5dab5fa4a0d606290e4418b67",
+    "itemIds": [
+      "station_cd4c1bfd60fb7479784ebc6d7089b752",
+      "adedcac6976b763b7661faa35d6bbf80"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Truxton"
+      ],
+      [
+        "megadrivebr",
+        "Truxton"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "204328a7692d6e3a07097904f60d8abf1d8e545e158a7405a6f62088df1e14ca",
+    "itemIds": [
+      "station_e7c39029e8b05013af2724310ccc7206",
+      "station_2500198032b56e221afd604167d216b9"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Férias Frustradas do Pica-Pau"
+      ],
+      [
+        "megadrivebr",
+        "Férias Frustradas do Pica-Pau"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "53053bb5563dd42b5a14159c44de1c3bff45855d9e4d4cf496b53b91935b753e",
+    "itemIds": [
+      "station_f850d710d0f80593a27c00c5d018e80e",
+      "032b88c1947d157ce8f0cf947ed3dc95"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "Golden Axe"
+      ],
+      [
+        "megadrivebr",
+        "Golden Axe"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "2cfb97596282bc734291bd7c8b923f58587c25485fe7d21e9e19a094037cf3de",
+    "itemIds": [
+      "station_fcb3f46610a91bc615c95356d23836b5",
+      "e74a0730430d25e663d44a26d8f3ef90"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "megadrive",
+        "FIFA International Soccer"
+      ],
+      [
+        "megadrivebr",
+        "FIFA International Soccer"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "b1e54fa7df0e034beef1a405caca9bc53151b8f33a0cfafd21a11816bb67c6e9",
+    "itemIds": [
+      "station_76560374a7506f47c484845a810cd42d",
+      "station_b740ae6b66c6274c4b5b3e250c4928f9"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "n64",
+        "Extreme-G"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "39cfc9b97f1e3fa9d6c959137146eefc87c4f511696ab6c954b9044b46271839",
+    "itemIds": [
+      "station_0433aad9a337e2fe918ea87d956ff24a",
+      "station_051081a989100420bb6e1f6b52fb48ce"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "World Heroes 2"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "f5e8fb661fc37ffc6f206bec177bb5ba3abf444dc18ee9dc44b763ce5d0ec0da",
+    "itemIds": [
+      "station_11d457f2a46c4d69ec14bb9e4ab317f7",
+      "station_8bd305ad40b61e5c6479233983e0022d"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Rage of the Dragons"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "049737e39643614182e82945a2f4725004a8898159279e715fd6b9b7f07ed519",
+    "itemIds": [
+      "station_151c80e51cad5d129c34537dd24a84c4",
+      "station_d51c8fc1f2806c0971088483fea165b6"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Kof'98 (set 1)"
+      ],
+      [
+        "neogeo",
+        "The King of Fighters '98 - The Slugfest"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "3f2da8e1803a8b6f76657fbb4a2e53324bd68240673d3a30c3d5ab27f6b9995e",
+    "itemIds": [
+      "station_1756dea47704806fc1ccb9663705b2a2",
+      "station_2e7771c5f3709d2510361047def7428a",
+      "station_4268c7a8859ca45ec2ce00cc6e00f4f8",
+      "station_4fc31665bdc2a5fe5a103e316fedbb30",
+      "station_9d5ce0071264b049ea4eab5edd01fdff",
+      "station_a12c2c5d65abd277759f1c15a3d2c853",
+      "station_b605b882df68a10885899c04a57f7a32",
+      "station_e3d4dc335a3903aa8a37cd083d58a6b6",
+      "station_f1135f4328364c26955acd3ea24a6b26"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Kof 2002"
+      ],
+      [
+        "neogeo",
+        "The King of Fighters 2002"
+      ],
+      [
+        "neogeo",
+        "The King of Fighters 2002 (The King of Fighters 2002 bootleg)"
+      ],
+      [
+        "neogeo",
+        "The King of Fighters 2002 (bootleg)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "b6793c5b4e11e326c5e3b99e549d80e5072f77a38fd60bb10edf26823455d4a4",
+    "itemIds": [
+      "station_1ceb13d829acc9dc93cbf3ddf7e031cc",
+      "station_514b3674038099d73d8b24554bf70218"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "World Heroes 2 Jet"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "40db03dd19826791737aedff1aa3dcdbdd7c8eb8cdcc1e302060922244fef92d",
+    "itemIds": [
+      "station_2433f9ecf66b9679738eb1772bbf1d37",
+      "station_7a97980cd15d143d46e5c8730615e38a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Kizuna Encounter - Super Tag Battle"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "930923b9fe76ce4b7644f435c9de2b1448d59e5e32c037a8e9c3e116fbd1f38d",
+    "itemIds": [
+      "station_2933aae1b70aedbb947959d0cf94d4b9",
+      "station_6541b33b02c758dfba643b5c5b80b3b0"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Samurai Shodown V Special"
+      ],
+      [
+        "neogeo",
+        "Samurai Shodown V Special / Samurai Spirits Zero Special (set 1)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "d9b0a2eee31fba5ed8f33e4424372f71a9cc80c4e8d5f4e0298e256b06a34491",
+    "itemIds": [
+      "station_2978a448f38b1c1f9f2829a54235beec",
+      "station_4cdfa696a60adcab3405f7a7b01bac46",
+      "station_5ce296cb062c6e82764381cb6bbd5ab9",
+      "station_83ff2bf58a8da13e150455f151cb2bc0"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Kof'97 (set 1)"
+      ],
+      [
+        "neogeo",
+        "The King of Fighters '97"
+      ],
+      [
+        "neogeo",
+        "The King of Fighters '97 (bootleg)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "6084dc4a109f047e5eedfef5ee150256579ddc0ac74bfdf515003d1451860dbd",
+    "itemIds": [
+      "station_2e810ddc61a99b80402f54fcd8ab19bf",
+      "station_81f7b39458c1bdcc726d7222d3041e0c",
+      "station_85d7db67db29e8821fb0a6ea20a4d5de",
+      "station_b0b0cde0003fc7d56ef942b9f365fec6",
+      "station_bfd8cdbce34fc22645c7611c49ca5b0d"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "SVC Chaos - SNK Vs. Capcom"
+      ],
+      [
+        "neogeo",
+        "SVC Chaos - SNK Vs. Capcom (bootleg)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "1aa0b889a8369b110d654d07428ac82c9c05a578739d112bd285cfd0b1a50301",
+    "itemIds": [
+      "station_2f6fc504bb2c7a81447cf345d5b38b7f",
+      "station_d0a0dd5b9e37c258fb3192efdcb4a639"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Matrimelee"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "f71699d747e74b36a096d536220d225494e8ef95d00c276c4c9a38c750eb9fb0",
+    "itemIds": [
+      "station_385088de5796e169c8328b6b02ef5f62",
+      "station_ef1968384558f3a7b43c4d0a09e2da0f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Shock Troopers - 2nd Squad"
+      ],
+      [
+        "neogeo",
+        "Shock Troopers : 2nd Squad (bootleg)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "ced4f66d871bdbc858a168008558175237caaba426f1ac8e5e3c6f23f59a9c83",
+    "itemIds": [
+      "station_3dc9e087a5bc7a0c186a9e73d3b15db9",
+      "station_662f6847dafa9ad8ca5679f4ee900b48"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "The King of Fighters 2001"
+      ],
+      [
+        "neogeo",
+        "The King of Fighters 2001 (The King of Fighters 2001 bootleg)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "5149c4288098c8d034f96af80c73db082f488555c35a56e4b174623e222cac25",
+    "itemIds": [
+      "station_425a7590749cd4cfcf0e7d4bb66e61a6",
+      "station_f4ce859f24ccd5fd7c89d56aa592c566",
+      "station_ffd80d181b95e28f08580a06661b3e55"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Metal Slug 4 (bootleg)"
+      ],
+      [
+        "neogeo",
+        "Metal Slug 4 (set 1)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "2a51624b9598ec48d9986cd3c121063337e4031ea890099a8e74522aff86352c",
+    "itemIds": [
+      "station_564829edc1c31c1ff9e296f892c09771",
+      "station_df2bcd7c3c7350a42811a0ca3f385fc9"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Metal Slug 5 (bootleg)"
+      ],
+      [
+        "neogeo",
+        "Metal Slug 5 (set 1)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "7ed3de00e2f2a5475764a5d1a95baf50eb0689f6f5a83ae4b326ef6b9c213786",
+    "itemIds": [
+      "station_58556a31c77c4728cf5bfa1bc0a0a446",
+      "station_72041315ee96780bf77a436b81627415"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Waku Waku 7"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "1d20d87729b7f4bdacd26f8699b32f60b087f26bf64ca38e7e009dfba4415bad",
+    "itemIds": [
+      "station_59e250cf5df37dde9622d2497092fd98",
+      "station_71ca2836361718e8805aaedee0de3130"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Bang Bang Busters (2010 NCI release)"
+      ],
+      [
+        "neogeocd",
+        "Bang² Busters"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "ea7db2330c7f64debb86b4119a69fea260511df582505ed9626793afffc9b04d",
+    "itemIds": [
+      "station_673c3e7fb17176ef5fcc1bf565e6f9b4",
+      "station_c51a7a347437d01ad23a325cb6d35198"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "World Heroes Perfect"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "027044492badfce41d12f164a743a751fe16c6b9d38d20c05aa241ee3a380f3c",
+    "itemIds": [
+      "station_6bb45aec070df4aa41e3e4caec7ebf14",
+      "station_a41d0112a7739a83181d31548dd01c7d"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "The King of Fighters '96"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "65120d0288b8e85e52b74fb92856aba30f5167cd9187d31179126b0a594c6ede",
+    "itemIds": [
+      "station_6fddc40d843dc9cde2901b80a16ea59b",
+      "station_e383d552d04e930f7875d0ca44dae30a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Garou: Mark of the Wolves"
+      ],
+      [
+        "neogeo",
+        "Garou: Mark of the Wolves (Prototype)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "10772bcf8300f99ef5971150110fc63c1e844f0bea20ac6a2c6a119cd255afd2",
+    "itemIds": [
+      "station_7517a8571f966cf1b6738a2744d47b13",
+      "station_7bbdc7564088c22b9d67408c42b177bd"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "World Heroes"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "cb4ae4b02472607fe57edfcf12a332b6c2a5af7c4ff4d652b2afdb24b499e2e2",
+    "itemIds": [
+      "station_a2a5233c6060008f7e9fc7652ed324a3",
+      "station_8e0d1abf3940d985eb79b5bc237844b7"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "Alpha Mission II / ASO II - Last Guardian"
+      ],
+      [
+        "neogeocd",
+        "Alpha Mission II"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "6b0065d0462af5d2c328e464975e14aaa31ca0a1d28a26f51e7e3b1f1362ea0a",
+    "itemIds": [
+      "station_a553966a2709ab29bdc0bbd021fdc111",
+      "station_ab7010aeea49f830f512af5bd7658bd2",
+      "station_e7e63e5fd55b7cec1884c2d7d16d54f0"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeo",
+        "The King of Fighters 2003"
+      ],
+      [
+        "neogeo",
+        "The King of Fighters 2003 (The King of Fighters 2003 bootleg)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "8836127c32d242a1010e37051ee123df2bf8102444d2ed223ca24de657306091",
+    "itemIds": [
+      "station_805f042024823d1ccc643e386f797c1f",
+      "station_b2fc554b7a95ef9e00dc10db9fad42c5"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "neogeocd",
+        "The King of Fighters '96"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": false
+  },
+  {
+    "descriptionSha256": "f07a14355f97055d1481355637e83ba8bb49f8ee82bbf57951e95da6495a35d9",
+    "itemIds": [
+      "077a3c0b5b565b2a39008e5f36564464",
+      "2d5ccdcba6554b1c5927f7d728fe4631",
+      "station_45de4c6d1a13b72e7d10aeca045f37ec"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Super Mario World 2 : Yoshi's Island"
+      ],
+      [
+        "snesbr",
+        "Super Mario World 2 : Yoshi's Island (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "f923b564f405f50cdd9475bd61390bca380d60b20e1f6992ad40d07c3b38e98d",
+    "itemIds": [
+      "2c59bd5f83c03dad8a1c171e40547e1a",
+      "d5156a9ac3ee2e85bd9ba68fa037086f",
+      "station_6afe9a2a90a3db86929269d4a7a3c459"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Final Fight 2"
+      ],
+      [
+        "snesbr",
+        "Final Fight 2 (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "ad3c40a5fa1e21fcb64a2ab6527ae8d2cd84a93a0ca85e913bd8da4333e329e7",
+    "itemIds": [
+      "31feb4cae74e98ed7f4462338f40287f",
+      "ea2c145672f92e2692f1bfa4c991c3b2",
+      "station_14505b31b37987fe75e74deaabb66fa0"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Final Fight"
+      ],
+      [
+        "snesbr",
+        "Final Fight (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "6559301f5d3481cbeb5bb22dfd8358ae4803605ac22fc294bbf3d27f57c781f8",
+    "itemIds": [
+      "3373808b1ccbb353d189d58d7397c724",
+      "352be7597989526657f6958b0fa99cdf",
+      "station_53d75a5f5df65a47647ae522938ca962"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Mega Man X"
+      ],
+      [
+        "snesbr",
+        "Mega Man X (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "238f518f8d27930b8b26ede81de693bc701061595e1f8680551c6b58ec637bc8",
+    "itemIds": [
+      "6187038ca0e7c9f5b98d101e8afbf402",
+      "station_27ce749dc5e29f26cd96ecd1ba2e5849"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Contra III : The Alien Wars"
+      ],
+      [
+        "snesbr",
+        "Contra III : The Alien Wars (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "4da14ecfdbb43fe2f29dea09b20c1964874d66e19b3a51a82c568cff683d3029",
+    "itemIds": [
+      "65e80a325319043a87e3b39670cc8abe",
+      "e0b99fe9831381644ff68ae0b367e612",
+      "station_4aa730112ed8c30cb6dd276f27d8c698"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Super Mario RPG : Legend of the Seven Stars"
+      ],
+      [
+        "snesbr",
+        "Super Mario RPG : Legend of the Seven Stars (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "7bffde4ad89c06f953b74c3b435147833074f37e7b7a207fc1c0265a58851fbf",
+    "itemIds": [
+      "station_15a4ce6bca5b5788418d84911fa7b4c4",
+      "station_a395d576c758cc46be01310d9f05bb5f"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Mega Man 7"
+      ],
+      [
+        "snesbr",
+        "Mega Man 7 (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "61f41d3b22ac9dc9c2437eb51f0236eaf2315e42ae3f8d0afafaaa0851a59bd8",
+    "itemIds": [
+      "station_170b44b60c2f439935db17eadc68dfb8",
+      "station_bf7aac1c07e3062c27596eb68dc64941"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "International Superstar Soccer"
+      ],
+      [
+        "snesbr",
+        "Ronaldinho Soccer 97 (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "88479fc27172757ec65ad18efe877bc09370d931507d94107a8bf6b939058235",
+    "itemIds": [
+      "station_287e44014db1154666dc14b910a09067",
+      "station_6dd191758a32801dccc18422d75cf54e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Elite Soccer"
+      ],
+      [
+        "snes",
+        "World Cup Striker"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "f4fd202610e76cb8ca58456b27abda54aae41d07b7aa15bfa510ec9bbb585c3c",
+    "itemIds": [
+      "station_2a63fd7f73a81f82f8f68cecc0f92bf8",
+      "station_a14181869cf6762779a0e99a59f91147"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Strike Gunner S.T.G"
+      ],
+      [
+        "snesbr",
+        "Strike Gunner S.T.G (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "ff9977adac534f87694db8cca11168852b468bf13bdc2763b480d4f774eb002f",
+    "itemIds": [
+      "station_2cb6832b8866bfffed3b689d3f3b75d3",
+      "station_173f5ff5fdbf42d2cfade33fd39d90c4"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Mega Man X3"
+      ],
+      [
+        "snesbr",
+        "Mega Man X3 (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "8223e5d88812f35ab594c160d3aeaeb1d4870f8baf034c5807b041c0fb68511f",
+    "itemIds": [
+      "station_439b7d1192238f86e320086816e900dd",
+      "station_ef6952956279c1d2633479bdf071fbb1"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Oh No! More Zombies Ate My Neighbors"
+      ],
+      [
+        "snes",
+        "Zombies Ate My Neighbors"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "2e67bf5e452c411b60e22c57fa51342afba8b45c7b10867f70b1ecaaa73a91bb",
+    "itemIds": [
+      "station_4689c279daa8f628f30202033dea0259",
+      "station_d64396389988b8d25354b670c764ccd5"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "J.R.R. Tolkien's The Lord of the Rings : Volume 1"
+      ],
+      [
+        "snesbr",
+        "J.R.R. Tolkien's The Lord of the Rings : Volume 1 (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "b1cd03a64175bef0edf41663a36a20d7fd314c8bb43494c1b65b0b52f431d35a",
+    "itemIds": [
+      "station_50dd73491eab386b50fb5310aecc6bc3",
+      "station_b8d0130354e6bc11f695093c8692c163"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "The Mask"
+      ],
+      [
+        "snesbr",
+        "The Mask (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "01f4938d4d9154052fe169122e9d726e4e45b7668f83730ee1313b3506f2d4e7",
+    "itemIds": [
+      "station_518dadce584baf4359203b5ff3904f65",
+      "station_daa7535d0c3fd7464897ce6110443648"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Boxing Legends of the Ring"
+      ],
+      [
+        "snes",
+        "Chavez II"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "471fcf3ff6359d4c4c7e4b0a9b00a0bd6dafa8466cdc738649d0ed8fb8fee67b",
+    "itemIds": [
+      "station_60e165dc61cbbf78f11aacc0160e9ef1",
+      "station_f30b551bf11bfa0f7fc7c0c3ec556fe7"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Chavez"
+      ],
+      [
+        "snes",
+        "Riddick Bowe Boxing"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "991aafd4da2bbf2bfa1dd47cd8e47414e0d6d383cb2b98fc101f4f4c1ac7260b",
+    "itemIds": [
+      "station_696cc13719d5c89263b8685b6eaf60bf",
+      "station_ac06c36d530a36a8e2e1360a520d8bf8"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Donkey Kong Country 3 : Dixie Kong's Double Trouble!"
+      ],
+      [
+        "snesbr",
+        "Donkey Kong Country 3 : Dixie Kong's Double Trouble! (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "c01857d3eaf466e62543e52854e425c0a3621e90d7b50e12445e01f3124b5073",
+    "itemIds": [
+      "station_7950304a432ad601a0fa8c14c694a255",
+      "station_40078034f6e0a3df307d045844dd3b42"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Donkey Kong Country 2 : Diddy's Kong Quest"
+      ],
+      [
+        "snesbr",
+        "Donkey Kong Country 2 : Diddy's Kong Quest (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "dcd7cd64909dfae6e0aa709db7ac33bae9bbb179c58278549b15437e10220134",
+    "itemIds": [
+      "station_8291624b6be1d090a71e464fccb3cdf5",
+      "station_95f9c8fefe00761ffae22ceeddf60d37"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Teenage Mutant Ninja Turtles IV : Turtles in Time"
+      ],
+      [
+        "snesbr",
+        "Teenage Mutant Ninja Turtles IV : Turtles in Time (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "8cc6d254031fb3c2171639d4a83a2de4a7d56462d5bbf579861785ee76a971a7",
+    "itemIds": [
+      "station_8d8b34875c8172f3ae8fac54bc6e7373",
+      "station_6bf73243d776d01ec3d0fcd9d7760559"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Mega Man X2"
+      ],
+      [
+        "snesbr",
+        "Mega Man X2 (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "89ec0b604b9762e74794987d8af826f2909920cdf02e01773976622d4307889e",
+    "itemIds": [
+      "station_921bc37a5c9c0b06f44b8e6e3c844592",
+      "station_2194ee0db8c533439d70258107269348"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Super Mario World"
+      ],
+      [
+        "snesbr",
+        "Super Mario World (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "8d49bd4b82f0a500aa96682e434f9aa65c6c2b4415c47d0c2510df6c2206b9d8",
+    "itemIds": [
+      "station_922308205c517b2a002379c31e46a039",
+      "station_fc922d4f39d18aefbac1c83550b79cbc"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Space Megaforce"
+      ],
+      [
+        "snesbr",
+        "Super Aleste"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "2c016fd1b71fa0fe20fdb2ba46aba6ecb88a39d0db3dfa1823b910ccd15b84ce",
+    "itemIds": [
+      "station_9cbc25855dd07703ce32314b93256e59",
+      "station_f47042f40f6d22764a815e1ea2358eed"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Top Gear 2"
+      ],
+      [
+        "snesbr",
+        "Top Gear 2 (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "550df83bc224255b4f92e6c9c3cebc3d221a412f3fe119a0ec7c9a02518e98c3",
+    "itemIds": [
+      "station_9eea71d4c7cb24fcc1f27a4ec30e9bf5",
+      "station_503f425ff89d724ca91d44016af24d39"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "FIFA : Road to World Cup 98"
+      ],
+      [
+        "snesbr",
+        "FIFA - Road to World Cup 98"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "df1168ad6379ceab4c886baffdbb60742996f3779fcd6ae05c3a5cc028cf46c0",
+    "itemIds": [
+      "station_b0a50897ab5c3663dbabd624b7469572",
+      "station_53bf1a7b190641b0c73448367a6b6557"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Top Gear 3000"
+      ],
+      [
+        "snesbr",
+        "Top Gear 3000 (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "c05aec42204beaaa842dec3a6e4d29a7fb8485c945fbcbe434ef5a324beda6b8",
+    "itemIds": [
+      "station_b43c350473878c3a9047bbae345dc2e2",
+      "station_51dfd13ccc0392ae1eae76b4992b425e"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "King of Dragons"
+      ],
+      [
+        "snesbr",
+        "King of Dragons (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "8564495d983fe13abba17ce71b60a932acd1354defd6f5d015dd8762a7205626",
+    "itemIds": [
+      "station_b4ae8e3324d1e50e61581410a6186361",
+      "station_669b323ab54de25fa45513999c6e754b"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "The Death and Return of Superman"
+      ],
+      [
+        "snesbr",
+        "The Death and Return of Superman (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "e03fe30ce78714d2741100b378a4871a8cadf61da4ca349e6c17b938a88c1698",
+    "itemIds": [
+      "station_b99a74ccbadd8ed80b45b330615c8191",
+      "station_7fbdad2753d5bf37ad9e3820eb89a241"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Tom and Jerry"
+      ],
+      [
+        "snesbr",
+        "Tom and Jerry (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "a88febeb850ae0dc73a714c05d205041633530a07cf26e0e5d73207477d80dc3",
+    "itemIds": [
+      "station_bb6b805026e069eb14f49ded378b054e",
+      "station_d82d425ae207ac60faf666f99d198b56"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Venom & Spider-Man : Separation Anxiety"
+      ],
+      [
+        "snesbr",
+        "Venom & Spider-Man : Separation Anxiety (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "62efd33cc270fc6fca43a2ebbebf2b65ac80df71cd2d64b338f0922100f6cd03",
+    "itemIds": [
+      "station_bcf30aeee3b25a70cb70559514325070",
+      "station_0660ab5167e0d0a166ca6dc62551d8e3"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Donkey Kong Country"
+      ],
+      [
+        "snesbr",
+        "Donkey Kong Country (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "ee0f11733b6970c7c9415832f2e987b768dadf8a5aad373f5fc47356457a80b3",
+    "itemIds": [
+      "station_c55e3715709f4cf8771c9eef9a7a5c36",
+      "station_13c9ed1b26e76dcf36fbcbbcd5396880",
+      "station_389449a77af4b587da285574af2b5c49",
+      "station_6d1dc0763f96a5e9f6029415b913c17e",
+      "station_d691c335592fd48aa4fa1f2b148a0465"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "International Superstar Soccer Deluxe"
+      ],
+      [
+        "snesbr",
+        "Futebol Brasileiro '96"
+      ],
+      [
+        "snesbr",
+        "Futebol Brasileiro 2007"
+      ],
+      [
+        "snesbr",
+        "Futebol Brasileiro 2008"
+      ],
+      [
+        "snesbr",
+        "Ronaldinho Futebol Brasileiro 2011"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "f2d03871158d8bf52683c525f3e27849f12b0689b4e28f8ba44c0c005acd2f35",
+    "itemIds": [
+      "station_cdf19d395b8672f1d68cf2c737c93f04",
+      "station_4fb3bd07035dcd4746412a0707a10fc2"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Spider-Man & X-Men : Arcade's Revenge"
+      ],
+      [
+        "snesbr",
+        "Spider-Man & X-Men : Arcade's Revenge (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "a9dbec061ac474ecbb59544f81a1534f4c94ee5c02352d2e71b4476f6088d4ed",
+    "itemIds": [
+      "station_df50d575815ab105084a79d68e0c8fb3",
+      "station_80b7594ba22922d87fb43d720ba8be5a"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Super Bomberman 2"
+      ],
+      [
+        "snesbr",
+        "Super Bomberman 2 (PT-BR)"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  },
+  {
+    "descriptionSha256": "9150700402853c2a5546b3f89c646f76e8d2fe83426462f02edaed56fce9aa7e",
+    "itemIds": [
+      "station_e84003806659ec9edfa5eab370b83df8",
+      "station_e6595e652484a4cf0d687f0214a76779"
+    ],
+    "distinctPlatformTitles": [
+      [
+        "snes",
+        "Rival Turf!"
+      ],
+      [
+        "snesbr",
+        "Rushing Beat"
+      ]
+    ],
+    "requiresReviewNotAutomaticallyPlaceholder": true
+  }
+]

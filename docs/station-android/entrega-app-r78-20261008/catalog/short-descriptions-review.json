@@ -1,0 +1,135 @@
+[
+  {
+    "itemId": "station_6e520177c566a5e151520a8f23812786",
+    "platform": "megadrive",
+    "name": "Congo",
+    "selectedDescription": "Jogo cancelado baseado no filme de mesmo nome.",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_711850d2931f52ac0726c0cce1b60e46",
+    "platform": "megadrive",
+    "name": "Mega Games 2",
+    "selectedDescription": "Mega Games é uma compilação de três volumes de jogos da Sega comercializados na Europa. Este volume 2 contém:nn1. Golden Axe nn2. Streets of Rage nn3. The Revenge of Shinobi",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_b452db5c0342cc2661455417cb496c4d",
+    "platform": "megadrive",
+    "name": "HardBall III",
+    "selectedDescription": "O terceiro jogo da série de beisebol Hardball. Esta revisão apresenta o locutor Al Michaels que oferece comentários em execução enquanto você joga.",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_ecd7ac5ff2501d2b90493e87b16217ed",
+    "platform": "megadrive",
+    "name": "Chao Ji Poker",
+    "selectedDescription": "Chao Ji Poker é um jogo não licenciado de poker para o Sega Mega Drive.",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_254ac9902b054411aa51b79e365fe1ef",
+    "platform": "neogeo",
+    "name": "Pochi and Nyaa",
+    "selectedDescription": "Um bom jogo de quebra-cabeça que é bastante semelhante ao Super Puzzle Fighter, mas não atinge o mesmo nível de qualidade!",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_2751182b2f9347a5c2d764d81eb99005",
+    "platform": "neogeo",
+    "name": "Neo No Panepon",
+    "selectedDescription": "Este é um clone homebrew de Tetris.",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_320ff39a7a8b49e96da6105cef9330e9",
+    "platform": "neogeo",
+    "name": "Syougi No Tatsujin - Master of Syougi",
+    "selectedDescription": "Shougi no Tatsujin foi lançado em setembro de 1995 no Japão.\nO título deste jogo foi traduzido do japonês como 'Mestre de Shougi'.\nO 'Shougi' é um jogo de xadrez japonês.",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_5f5fa2403a86b9b3744696fa262f004e",
+    "platform": "neogeo",
+    "name": "Metal Slug 6 (bootleg)",
+    "selectedDescription": "Metal Slug 6 é um hack de \"Metal Slug 3\". O verdadeiro Metal Slug 6 foi lançado para o sistema arcade Atomiswave.",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_95f6dc7a1556e8a6ce63d07510d59c88",
+    "platform": "neogeo",
+    "name": "Neo Pong",
+    "selectedDescription": "Clone de Pong bastante bem-sucedido: Neo Pong! Neo Pong é simplesmente a primeira ROM de domínio público do Neo Geo.",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_961567c3e579c78d6064906d0187f1f7",
+    "platform": "neogeo",
+    "name": "Viewpoint",
+    "selectedDescription": "Viewpoint on Neo Geo é um jogo de tiro 3D isométrico composto por seis níveis. O título é conhecido por ser extremamente difícil. Você vai aceitar o desafio?",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_9cc0c3e6a7ebd4bbb502fd55f9a0a012",
+    "platform": "neogeo",
+    "name": "Battle Flip Shot",
+    "selectedDescription": "Battle Flip Shot é um jogo arcade que mistura elementos de Pong com o design de personagens japoneses.",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_b4b077f8c626983c78ba574b10a59e7d",
+    "platform": "neogeo",
+    "name": "Jonas Indiana and the Lost Temple of RA",
+    "selectedDescription": "Jonas Indiana And The Lost Temple Of Ra é um jogo de plataforma homebrew feito por Blastar em 2005",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_c9c046814f0cf92cad7c7eb82289540c",
+    "platform": "neogeo",
+    "name": "Bakatonosama Mahjong Manyuuki (MOM-002 ~ MOH-002)",
+    "selectedDescription": "Bakatonosama Mahjong Manyuki é um jogo de Mahjong para Neo-Geo. Foi desenvolvido pela empresa Monolith em 1991 e distribuído pela SNK",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_e0419a0c773d40410db79ebf4623f1b5",
+    "platform": "neogeo",
+    "name": "Captain Tomaday",
+    "selectedDescription": "Um shooting de rolagem vertical cômico estrelado por um tomate mutante que soca o inimigo e pode se transformar em outros personagens esquisitos.",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_f9b5624a8652bfaccf2e3c338510d29b",
+    "platform": "neogeo",
+    "name": "S.P.Y. - Special Project Y (World ver. N)",
+    "selectedDescription": "After using your spy-savvy jetpack to land on the secret island, you must stop the evil mastermind from executing his world-dominating plans!",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_790327404870a6f35c9f4adab34b66dd",
+    "platform": "snes",
+    "name": "Mega-Lo-Mania",
+    "selectedDescription": "Mega-Lo-Mania é uma simulação de Deus como nenhuma outra. É um tumulto galopante quando homens de todas as esferas da vida histórica lutam entre si para controlar um planeta.",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_82be488369296f0a02e78608415efee4",
+    "platform": "snes",
+    "name": "Cool World",
+    "selectedDescription": "Este jogo é baseado no live action/animação Cool World de 1992. Você joga como Frank Harris e tenta impedir Holli Would de entrar mundo real.",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_918690e09cc4b21f4cd6a233eb72185c",
+    "platform": "snes",
+    "name": "Barbie Vacation Adventure",
+    "selectedDescription": "Barbie: Vacation Adventure é um jogo de aventura que leva a Barbie em excursões educacionais pelos Estados Unidos da América.",
+    "selectionOrigin": "r37/server-catalog"
+  },
+  {
+    "itemId": "station_c96eb36d50d91bec90025c4a1f6e1cc9",
+    "platform": "snes",
+    "name": "Hyper Street Kart",
+    "selectedDescription": "Hack de Super Mario Kart.  Todos os 8 sprites de controle foram substituídos por lutadores de Street Fighter II.  Faixas novas e modificadas.",
+    "selectionOrigin": "r37/server-catalog"
+  }
+]

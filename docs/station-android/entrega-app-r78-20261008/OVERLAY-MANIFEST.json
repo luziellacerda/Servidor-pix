@@ -1,0 +1,18 @@
+{
+  "base": "R77",
+  "baseNativeSHA256": "98e951b2aad45d63ebe563de95d7a9299339928e54ce082915a147a992ab0302",
+  "scope": "Selection and exact editorial-path aliases only. Layout, scroll, videos, catalogue IDs, controls and netplay unchanged. No APK or native library built.",
+  "sources": {
+    "collection_presentation.h": "fd6e3af8310481f72b7bd3c4618b56c84ead1f77e50f3b3057194716e902d82e",
+    "native_info.h": "d55e30f7e1932d336d8760ea26fa2fcaae5f17fd29b94249bd0f3a7721180ea2",
+    "station_collection_editorial_aliases.h": "579ee024fab3f893e188b4aa9f44bfb9696f01dd64f5b8ee32fe96e640fd507d",
+    "station_game_infos.h": "faf4b4e456b5158cb7fe77b15e5613076bf34d5b5c09d27ecd59730edaee83b7",
+    "station_synopsis_selection.h": "0f6221d4d31ab6f5340fd74225dbfaba5025c62eb0fee05f9c0b98b4d8ca25ff"
+  },
+  "dataSources": {
+    "data/synopses-complete.json": "f1721efbe5f48d5049b4e7ab24a8fe122b9ca989ccca58bc1d86aee26489e3e3",
+    "catalog/existing-synopses-audit.json": "43d6a8cf4b93294e82bdca6109631096dda9f3dcbd8caeb39c8c819882d3f827",
+    "data/exact-server-overrides.json": "cc247911d31fb873f12018efd4fc91a99a5fd1e4d8ac8cdac141f2359899b658",
+    "data/editorial-synopses.json": "770aa5e88c8b2d1362d4c654a9e6e3b14ef85780f7fb6da3add937659f44f458"
+  }
+}

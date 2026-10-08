@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-08T14:08:02.769142+00:00",
+  "restoredIds": 17,
+  "oldCharactersEach": 2000,
+  "maximumNewCharacters": 4084,
+  "unresolved": [],
+  "auditSHA256": "43d6a8cf4b93294e82bdca6109631096dda9f3dcbd8caeb39c8c819882d3f827",
+  "outputSHA256": "e5cfd76f558cbeed39cd80dcc886ddf071f4dbfb5808bf3a38ba880a940e0e10",
+  "recipeSHA256": "f748b18436390b101d16c9c7850e664d495776f6fab2c037af11fc0ee3ea7b9f",
+  "romRead": false,
+  "webUsed": false,
+  "testsExecuted": false,
+  "compiled": false
+}

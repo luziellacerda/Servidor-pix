@@ -1,0 +1,1593 @@
+{
+  "utc": "2026-10-08T14:05:25.654820+00:00",
+  "catalogIds": 2467,
+  "visibleIds": 2212,
+  "qualityCounts": {
+    "prose-present-not-fact-checked": 2461,
+    "empty": 6
+  },
+  "visibleQualityCounts": {
+    "prose-present-not-fact-checked": 2212
+  },
+  "selectionOrigins": {
+    "r37/server-catalog": 2168,
+    "server/compatibility-own-description": 255,
+    "r37/editorial": 17,
+    "r37/exact-xml": 27
+  },
+  "platforms": {
+    "megadrive": {
+      "ids": 1133,
+      "visibleIds": 887,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 1131,
+        "empty": 2
+      },
+      "sources": {
+        "r37/server-catalog": 881,
+        "server/compatibility-own-description": 246,
+        "r37/editorial": 6
+      },
+      "exactFileLocalCandidates": 1132
+    },
+    "megadrivebr": {
+      "ids": 94,
+      "visibleIds": 94,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 94
+      },
+      "sources": {
+        "r37/server-catalog": 93,
+        "r37/editorial": 1
+      },
+      "exactFileLocalCandidates": 93
+    },
+    "n64": {
+      "ids": 157,
+      "visibleIds": 157,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 157
+      },
+      "sources": {
+        "r37/server-catalog": 153,
+        "r37/editorial": 4
+      },
+      "exactFileLocalCandidates": 156
+    },
+    "neogeo": {
+      "ids": 189,
+      "visibleIds": 189,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 189
+      },
+      "sources": {
+        "r37/server-catalog": 162,
+        "r37/exact-xml": 27
+      },
+      "exactFileLocalCandidates": 189
+    },
+    "neogeocd": {
+      "ids": 50,
+      "visibleIds": 50,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 50
+      },
+      "sources": {
+        "r37/server-catalog": 50
+      },
+      "exactFileLocalCandidates": 0
+    },
+    "snes": {
+      "ids": 653,
+      "visibleIds": 644,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 649,
+        "empty": 4
+      },
+      "sources": {
+        "r37/server-catalog": 638,
+        "server/compatibility-own-description": 9,
+        "r37/editorial": 6
+      },
+      "exactFileLocalCandidates": 651
+    },
+    "snesbr": {
+      "ids": 191,
+      "visibleIds": 191,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 191
+      },
+      "sources": {
+        "r37/server-catalog": 191
+      },
+      "exactFileLocalCandidates": 191
+    }
+  },
+  "shortUnder180Ids": 19,
+  "variantReviewIds": 412,
+  "missingItems": [
+    {
+      "itemId": "233fcab3a55317536be7001984690ca2",
+      "platform": "megadrive",
+      "name": "Ultimate Mortal Kombat 3 (USA)",
+      "catalogVisible": false,
+      "artifactFileName": "Ultimate Mortal Kombat 3 (USA).zip",
+      "artifactLaunchPath": "Ultimate Mortal Kombat 3 (USA).md",
+      "quality": "empty",
+      "localCandidates": [
+        {
+          "sourceId": "retrobat/megadrive/gamelist.xml",
+          "ordinal": 985,
+          "path": "Ultimate Mortal Kombat 3 (USA).zip",
+          "name": "Ultimate Mortal Kombat 3 (USA)",
+          "quality": "empty",
+          "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "provider": "",
+          "providerId": "",
+          "declaredMD5": null,
+          "declaredCRC32": null,
+          "matchMethod": "exact-platform-full-artifact-filename-candidate",
+          "sameTextAsSelected": true
+        }
+      ],
+      "exactDescriptorAliasCandidates": [
+        {
+          "sourceItemId": "714f46fd69f37faaf2169f8e78428fb7",
+          "sourceName": "Ultimate Mortal Kombat 3 (USA)",
+          "sourceItemRevision": 4,
+          "descriptionSha256": "4ecac7e228a7a810c31d3dad5fcd56851cc9022dd7b6e54162ee760d1b5049f5",
+          "sourceKind": "server-catalog",
+          "identity": "same-exact-published-artifact-and-launch-descriptor",
+          "descriptor": {
+            "platform": "megadrive",
+            "artifactSha256": "792e5f13cc849babeee0b94b2f7f7f215d9e0b234aaad6939cb33e216f323d43",
+            "artifactSizeBytes": 3325557,
+            "artifactLaunchPath": "Ultimate Mortal Kombat 3 (USA).md",
+            "artifactExpandedSizeBytes": 4194304,
+            "artifactFileCount": 1
+          },
+          "automaticallyApplied": false,
+          "gameFactsVerified": false
+        }
+      ]
+    },
+    {
+      "itemId": "eeecd9dd7b6acf96d7cabfe174676fb7",
+      "platform": "megadrive",
+      "name": "Doom Troopers (USA)",
+      "catalogVisible": false,
+      "artifactFileName": "Doom Troopers (USA).zip",
+      "artifactLaunchPath": "Doom Troopers (USA).md",
+      "quality": "empty",
+      "localCandidates": [
+        {
+          "sourceId": "retrobat/megadrive/gamelist.xml",
+          "ordinal": 983,
+          "path": "Doom Troopers (USA).zip",
+          "name": "Doom Troopers (USA)",
+          "quality": "empty",
+          "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "provider": "",
+          "providerId": "",
+          "declaredMD5": null,
+          "declaredCRC32": null,
+          "matchMethod": "exact-platform-full-artifact-filename-candidate",
+          "sameTextAsSelected": true
+        }
+      ],
+      "exactDescriptorAliasCandidates": [
+        {
+          "sourceItemId": "e307e854203a98bb3174a6e885786edc",
+          "sourceName": "Doom Troopers (USA)",
+          "sourceItemRevision": 4,
+          "descriptionSha256": "837610361994457d558e8c9b4edb666723cbe298383cc177c107d92d6ffb89d7",
+          "sourceKind": "server-catalog",
+          "identity": "same-exact-published-artifact-and-launch-descriptor",
+          "descriptor": {
+            "platform": "megadrive",
+            "artifactSha256": "adfea2968551b5301e4bff11e9a90db2b66ffa6b257ad76d4cda0779f4cd4981",
+            "artifactSizeBytes": 1302182,
+            "artifactLaunchPath": "Doom Troopers (USA).md",
+            "artifactExpandedSizeBytes": 2097152,
+            "artifactFileCount": 1
+          },
+          "automaticallyApplied": false,
+          "gameFactsVerified": false
+        }
+      ]
+    },
+    {
+      "itemId": "1e4d341cdfe848ce28f4649e1c2856e5",
+      "platform": "snes",
+      "name": "Frank Thomas Big Hurt Baseball",
+      "catalogVisible": false,
+      "artifactFileName": "Frank Thomas Big Hurt Baseball (USA).zip",
+      "artifactLaunchPath": "Frank Thomas' Big Hurt Baseball (U) [!].smc",
+      "quality": "empty",
+      "localCandidates": [
+        {
+          "sourceId": "retrobat/snes/gamelist.xml",
+          "ordinal": 793,
+          "path": "Frank Thomas Big Hurt Baseball (USA).zip",
+          "name": "Frank Thomas Big Hurt Baseball",
+          "quality": "empty",
+          "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "provider": "",
+          "providerId": "",
+          "declaredMD5": null,
+          "declaredCRC32": null,
+          "matchMethod": "exact-platform-full-artifact-filename-candidate",
+          "sameTextAsSelected": true
+        }
+      ],
+      "exactDescriptorAliasCandidates": [
+        {
+          "sourceItemId": "04de9a95cd4715235e87ce10c94cef85",
+          "sourceName": "Frank Thomas Big Hurt Baseball",
+          "sourceItemRevision": 4,
+          "descriptionSha256": "8192ac4385c2b67130044f055e79c3025fdf86937fb4de2a44da36427da084f7",
+          "sourceKind": "server-catalog",
+          "identity": "same-exact-published-artifact-and-launch-descriptor",
+          "descriptor": {
+            "platform": "snes",
+            "artifactSha256": "5e8f7fdb658985d03a4e40b40a5963de88c2248899fcdb25be2dd64db6047a85",
+            "artifactSizeBytes": 1980387,
+            "artifactLaunchPath": "Frank Thomas' Big Hurt Baseball (U) [!].smc",
+            "artifactExpandedSizeBytes": 3145728,
+            "artifactFileCount": 1
+          },
+          "automaticallyApplied": false,
+          "gameFactsVerified": false
+        }
+      ]
+    },
+    {
+      "itemId": "ac79b8fc351cb0811a7e9b51a099ba9c",
+      "platform": "snes",
+      "name": "Battletoads in Battlemaniacs (USA)",
+      "catalogVisible": false,
+      "artifactFileName": "Battletoads in Battlemaniacs (USA).zip",
+      "artifactLaunchPath": "Battletoads in Battlemaniacs (ESP) (NTSC).smc",
+      "quality": "empty",
+      "localCandidates": [
+        {
+          "sourceId": "retrobat/snes/gamelist.xml",
+          "ordinal": 835,
+          "path": "Battletoads in Battlemaniacs (USA).zip",
+          "name": "Battletoads in Battlemaniacs (USA)",
+          "quality": "empty",
+          "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "provider": "",
+          "providerId": "",
+          "declaredMD5": null,
+          "declaredCRC32": null,
+          "matchMethod": "exact-platform-full-artifact-filename-candidate",
+          "sameTextAsSelected": true
+        }
+      ],
+      "exactDescriptorAliasCandidates": [
+        {
+          "sourceItemId": "826da6daebe9edbebffb3721f83abf12",
+          "sourceName": "Battletoads in Battlemaniacs (USA)",
+          "sourceItemRevision": 4,
+          "descriptionSha256": "ce86f4a32b83d8d36ddc34f3d777a58fae38c9b39907e958701bbbb2648c4faf",
+          "sourceKind": "editorial",
+          "identity": "same-exact-published-artifact-and-launch-descriptor",
+          "descriptor": {
+            "platform": "snes",
+            "artifactSha256": "cd3a1292fdb5953ca414dd6a74ac0aa1886b2d132fce4c804e79d5e25ea029f6",
+            "artifactSizeBytes": 670452,
+            "artifactLaunchPath": "Battletoads in Battlemaniacs (ESP) (NTSC).smc",
+            "artifactExpandedSizeBytes": 1048576,
+            "artifactFileCount": 1
+          },
+          "automaticallyApplied": false,
+          "gameFactsVerified": false
+        }
+      ]
+    },
+    {
+      "itemId": "c7c7b5780bc10427af69cf042bc9ebdd",
+      "platform": "snes",
+      "name": "WWF WrestleMania - The Arcade Game",
+      "catalogVisible": false,
+      "artifactFileName": "station_2f8c511515543b55ffe29794b8bfd69e.zip",
+      "artifactLaunchPath": "WWF WrestleMania - The Arcade Game (U) [!].smc",
+      "quality": "empty",
+      "localCandidates": [],
+      "exactDescriptorAliasCandidates": [
+        {
+          "sourceItemId": "6c1d370746d1def9a3364e6c760501b0",
+          "sourceName": "WWF WrestleMania - The Arcade Game",
+          "sourceItemRevision": 4,
+          "descriptionSha256": "09187feb5dfd67b650172f1d61a5cefc88e44372266a48465659e188c5783f51",
+          "sourceKind": "server-catalog",
+          "identity": "same-exact-published-artifact-and-launch-descriptor",
+          "descriptor": {
+            "platform": "snes",
+            "artifactSha256": "8ba72e666ccdf534790ec4f2a1d6d0ecf42a3ddb30b293b0e1e81366c01fe1ee",
+            "artifactSizeBytes": 2528466,
+            "artifactLaunchPath": "WWF WrestleMania - The Arcade Game (U) [!].smc",
+            "artifactExpandedSizeBytes": 3145728,
+            "artifactFileCount": 1
+          },
+          "automaticallyApplied": false,
+          "gameFactsVerified": false
+        }
+      ]
+    },
+    {
+      "itemId": "de85a88485d206651fa0bfde244cfc82",
+      "platform": "snes",
+      "name": "Fatal Fury Special",
+      "catalogVisible": false,
+      "artifactFileName": "Fatal Fury Special (USA).zip",
+      "artifactLaunchPath": "Fatal Fury Special (U).smc",
+      "quality": "empty",
+      "localCandidates": [
+        {
+          "sourceId": "retrobat/snes/gamelist.xml",
+          "ordinal": 791,
+          "path": "Fatal Fury Special (USA).zip",
+          "name": "Fatal Fury Special",
+          "quality": "empty",
+          "descriptionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "provider": "",
+          "providerId": "",
+          "declaredMD5": null,
+          "declaredCRC32": null,
+          "matchMethod": "exact-platform-full-artifact-filename-candidate",
+          "sameTextAsSelected": true
+        }
+      ],
+      "exactDescriptorAliasCandidates": [
+        {
+          "sourceItemId": "5092f2b508e4476924e033353f0d5292",
+          "sourceName": "Fatal Fury Special",
+          "sourceItemRevision": 4,
+          "descriptionSha256": "875b230f9a55b79ea336847b543c660fad87fe19a4cae74a2ec992134c71d84a",
+          "sourceKind": "server-catalog",
+          "identity": "same-exact-published-artifact-and-launch-descriptor",
+          "descriptor": {
+            "platform": "snes",
+            "artifactSha256": "e695d2d15fca36a63c76799207f06d12c5c79121c3ac7a11293d38161423fcfe",
+            "artifactSizeBytes": 3042582,
+            "artifactLaunchPath": "Fatal Fury Special (U).smc",
+            "artifactExpandedSizeBytes": 4194304,
+            "artifactFileCount": 1
+          },
+          "automaticallyApplied": false,
+          "gameFactsVerified": false
+        }
+      ]
+    }
+  ],
+  "shortDescriptions": [
+    {
+      "itemId": "station_6e520177c566a5e151520a8f23812786",
+      "platform": "megadrive",
+      "name": "Congo",
+      "selectedDescription": "Jogo cancelado baseado no filme de mesmo nome.",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_711850d2931f52ac0726c0cce1b60e46",
+      "platform": "megadrive",
+      "name": "Mega Games 2",
+      "selectedDescription": "Mega Games é uma compilação de três volumes de jogos da Sega comercializados na Europa. Este volume 2 contém:nn1. Golden Axe nn2. Streets of Rage nn3. The Revenge of Shinobi",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_b452db5c0342cc2661455417cb496c4d",
+      "platform": "megadrive",
+      "name": "HardBall III",
+      "selectedDescription": "O terceiro jogo da série de beisebol Hardball. Esta revisão apresenta o locutor Al Michaels que oferece comentários em execução enquanto você joga.",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_ecd7ac5ff2501d2b90493e87b16217ed",
+      "platform": "megadrive",
+      "name": "Chao Ji Poker",
+      "selectedDescription": "Chao Ji Poker é um jogo não licenciado de poker para o Sega Mega Drive.",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_254ac9902b054411aa51b79e365fe1ef",
+      "platform": "neogeo",
+      "name": "Pochi and Nyaa",
+      "selectedDescription": "Um bom jogo de quebra-cabeça que é bastante semelhante ao Super Puzzle Fighter, mas não atinge o mesmo nível de qualidade!",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_2751182b2f9347a5c2d764d81eb99005",
+      "platform": "neogeo",
+      "name": "Neo No Panepon",
+      "selectedDescription": "Este é um clone homebrew de Tetris.",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_320ff39a7a8b49e96da6105cef9330e9",
+      "platform": "neogeo",
+      "name": "Syougi No Tatsujin - Master of Syougi",
+      "selectedDescription": "Shougi no Tatsujin foi lançado em setembro de 1995 no Japão.\nO título deste jogo foi traduzido do japonês como 'Mestre de Shougi'.\nO 'Shougi' é um jogo de xadrez japonês.",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_5f5fa2403a86b9b3744696fa262f004e",
+      "platform": "neogeo",
+      "name": "Metal Slug 6 (bootleg)",
+      "selectedDescription": "Metal Slug 6 é um hack de \"Metal Slug 3\". O verdadeiro Metal Slug 6 foi lançado para o sistema arcade Atomiswave.",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_95f6dc7a1556e8a6ce63d07510d59c88",
+      "platform": "neogeo",
+      "name": "Neo Pong",
+      "selectedDescription": "Clone de Pong bastante bem-sucedido: Neo Pong! Neo Pong é simplesmente a primeira ROM de domínio público do Neo Geo.",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_961567c3e579c78d6064906d0187f1f7",
+      "platform": "neogeo",
+      "name": "Viewpoint",
+      "selectedDescription": "Viewpoint on Neo Geo é um jogo de tiro 3D isométrico composto por seis níveis. O título é conhecido por ser extremamente difícil. Você vai aceitar o desafio?",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_9cc0c3e6a7ebd4bbb502fd55f9a0a012",
+      "platform": "neogeo",
+      "name": "Battle Flip Shot",
+      "selectedDescription": "Battle Flip Shot é um jogo arcade que mistura elementos de Pong com o design de personagens japoneses.",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_b4b077f8c626983c78ba574b10a59e7d",
+      "platform": "neogeo",
+      "name": "Jonas Indiana and the Lost Temple of RA",
+      "selectedDescription": "Jonas Indiana And The Lost Temple Of Ra é um jogo de plataforma homebrew feito por Blastar em 2005",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_c9c046814f0cf92cad7c7eb82289540c",
+      "platform": "neogeo",
+      "name": "Bakatonosama Mahjong Manyuuki (MOM-002 ~ MOH-002)",
+      "selectedDescription": "Bakatonosama Mahjong Manyuki é um jogo de Mahjong para Neo-Geo. Foi desenvolvido pela empresa Monolith em 1991 e distribuído pela SNK",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_e0419a0c773d40410db79ebf4623f1b5",
+      "platform": "neogeo",
+      "name": "Captain Tomaday",
+      "selectedDescription": "Um shooting de rolagem vertical cômico estrelado por um tomate mutante que soca o inimigo e pode se transformar em outros personagens esquisitos.",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_f9b5624a8652bfaccf2e3c338510d29b",
+      "platform": "neogeo",
+      "name": "S.P.Y. - Special Project Y (World ver. N)",
+      "selectedDescription": "After using your spy-savvy jetpack to land on the secret island, you must stop the evil mastermind from executing his world-dominating plans!",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_790327404870a6f35c9f4adab34b66dd",
+      "platform": "snes",
+      "name": "Mega-Lo-Mania",
+      "selectedDescription": "Mega-Lo-Mania é uma simulação de Deus como nenhuma outra. É um tumulto galopante quando homens de todas as esferas da vida histórica lutam entre si para controlar um planeta.",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_82be488369296f0a02e78608415efee4",
+      "platform": "snes",
+      "name": "Cool World",
+      "selectedDescription": "Este jogo é baseado no live action/animação Cool World de 1992. Você joga como Frank Harris e tenta impedir Holli Would de entrar mundo real.",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_918690e09cc4b21f4cd6a233eb72185c",
+      "platform": "snes",
+      "name": "Barbie Vacation Adventure",
+      "selectedDescription": "Barbie: Vacation Adventure é um jogo de aventura que leva a Barbie em excursões educacionais pelos Estados Unidos da América.",
+      "selectionOrigin": "r37/server-catalog"
+    },
+    {
+      "itemId": "station_c96eb36d50d91bec90025c4a1f6e1cc9",
+      "platform": "snes",
+      "name": "Hyper Street Kart",
+      "selectedDescription": "Hack de Super Mario Kart.  Todos os 8 sprites de controle foram substituídos por lutadores de Street Fighter II.  Faixas novas e modificadas.",
+      "selectionOrigin": "r37/server-catalog"
+    }
+  ],
+  "missingWithOneExactDescriptorAlias": 6,
+  "r39XmlFiles": 72,
+  "r39MetadataRecords": 72033,
+  "r39SynopsisFields": 0,
+  "r39Stats": [
+    {
+      "platform": "3do",
+      "records": 386,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/3do.xml"
+    },
+    {
+      "platform": "3ds",
+      "records": 1707,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/3ds.xml"
+    },
+    {
+      "platform": "amigacd32",
+      "records": 406,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/amigacd32.xml"
+    },
+    {
+      "platform": "arcade",
+      "records": 7180,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/arcade.xml"
+    },
+    {
+      "platform": "arcadia",
+      "records": 62,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/arcadia.xml"
+    },
+    {
+      "platform": "astrocade",
+      "records": 51,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/astrocade.xml"
+    },
+    {
+      "platform": "atari2600",
+      "records": 1298,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/atari2600.xml"
+    },
+    {
+      "platform": "atari5200",
+      "records": 148,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/atari5200.xml"
+    },
+    {
+      "platform": "atari7800",
+      "records": 163,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/atari7800.xml"
+    },
+    {
+      "platform": "atomiswave",
+      "records": 34,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/atomiswave.xml"
+    },
+    {
+      "platform": "cdi",
+      "records": 283,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/cdi.xml"
+    },
+    {
+      "platform": "channelf",
+      "records": 46,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/channelf.xml"
+    },
+    {
+      "platform": "colecovision",
+      "records": 552,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/colecovision.xml"
+    },
+    {
+      "platform": "dreamcast",
+      "records": 911,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/dreamcast.xml"
+    },
+    {
+      "platform": "fds",
+      "records": 270,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/fds.xml"
+    },
+    {
+      "platform": "gameandwatch",
+      "records": 317,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/gameandwatch.xml"
+    },
+    {
+      "platform": "gamecom",
+      "records": 23,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/gamecom.xml"
+    },
+    {
+      "platform": "gamecube",
+      "records": 811,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/gamecube.xml"
+    },
+    {
+      "platform": "gamegear",
+      "records": 412,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/gamegear.xml"
+    },
+    {
+      "platform": "gb",
+      "records": 1605,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/gb.xml"
+    },
+    {
+      "platform": "gba",
+      "records": 2367,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/gba.xml"
+    },
+    {
+      "platform": "gbc",
+      "records": 1567,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/gbc.xml"
+    },
+    {
+      "platform": "intellivision",
+      "records": 180,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/intellivision.xml"
+    },
+    {
+      "platform": "jaguar",
+      "records": 128,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/jaguar.xml"
+    },
+    {
+      "platform": "jaguarcd",
+      "records": 46,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/jaguarcd.xml"
+    },
+    {
+      "platform": "loopy",
+      "records": 10,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/loopy.xml"
+    },
+    {
+      "platform": "lynx",
+      "records": 162,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/lynx.xml"
+    },
+    {
+      "platform": "mastersystem",
+      "records": 555,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/mastersystem.xml"
+    },
+    {
+      "platform": "megadrive",
+      "records": 2128,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/megadrive.xml"
+    },
+    {
+      "platform": "model2",
+      "records": 35,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/model2.xml"
+    },
+    {
+      "platform": "model3",
+      "records": 29,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/model3.xml"
+    },
+    {
+      "platform": "n64",
+      "records": 800,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/n64.xml"
+    },
+    {
+      "platform": "n64dd",
+      "records": 13,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/n64dd.xml"
+    },
+    {
+      "platform": "naomi",
+      "records": 154,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/naomi.xml"
+    },
+    {
+      "platform": "naomi2",
+      "records": 21,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/naomi2.xml"
+    },
+    {
+      "platform": "nds",
+      "records": 4576,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/nds.xml"
+    },
+    {
+      "platform": "neogeo",
+      "records": 180,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/neogeo.xml"
+    },
+    {
+      "platform": "neogeocd",
+      "records": 112,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/neogeocd.xml"
+    },
+    {
+      "platform": "nes",
+      "records": 3843,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/nes.xml"
+    },
+    {
+      "platform": "ngage",
+      "records": 74,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/ngage.xml"
+    },
+    {
+      "platform": "ngp",
+      "records": 10,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/ngp.xml"
+    },
+    {
+      "platform": "ngpc",
+      "records": 84,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/ngpc.xml"
+    },
+    {
+      "platform": "odyssey2",
+      "records": 96,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/odyssey2.xml"
+    },
+    {
+      "platform": "pcengine",
+      "records": 343,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/pcengine.xml"
+    },
+    {
+      "platform": "pcenginecd",
+      "records": 446,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/pcenginecd.xml"
+    },
+    {
+      "platform": "pcfx",
+      "records": 73,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/pcfx.xml"
+    },
+    {
+      "platform": "pico",
+      "records": 262,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/pico.xml"
+    },
+    {
+      "platform": "pokemonmini",
+      "records": 42,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/pokemonmini.xml"
+    },
+    {
+      "platform": "ps2",
+      "records": 4783,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/ps2.xml"
+    },
+    {
+      "platform": "ps3",
+      "records": 2606,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/ps3.xml"
+    },
+    {
+      "platform": "psp",
+      "records": 2041,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/psp.xml"
+    },
+    {
+      "platform": "psvita",
+      "records": 1190,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/psvita.xml"
+    },
+    {
+      "platform": "psx",
+      "records": 4649,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/psx.xml"
+    },
+    {
+      "platform": "pv1000",
+      "records": 13,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/pv1000.xml"
+    },
+    {
+      "platform": "saturn",
+      "records": 1194,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/saturn.xml"
+    },
+    {
+      "platform": "scv",
+      "records": 29,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/scv.xml"
+    },
+    {
+      "platform": "sega32x",
+      "records": 63,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/sega32x.xml"
+    },
+    {
+      "platform": "segacd",
+      "records": 232,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/segacd.xml"
+    },
+    {
+      "platform": "sg1000",
+      "records": 112,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/sg1000.xml"
+    },
+    {
+      "platform": "snes",
+      "records": 2959,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/snes.xml"
+    },
+    {
+      "platform": "supergrafx",
+      "records": 5,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/supergrafx.xml"
+    },
+    {
+      "platform": "supervision",
+      "records": 79,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/supervision.xml"
+    },
+    {
+      "platform": "switch",
+      "records": 6609,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/switch.xml"
+    },
+    {
+      "platform": "vectrex",
+      "records": 103,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/vectrex.xml"
+    },
+    {
+      "platform": "videopacplus",
+      "records": 86,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/videopacplus.xml"
+    },
+    {
+      "platform": "virtualboy",
+      "records": 75,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/virtualboy.xml"
+    },
+    {
+      "platform": "wii",
+      "records": 2297,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/wii.xml"
+    },
+    {
+      "platform": "wiiu",
+      "records": 819,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/wiiu.xml"
+    },
+    {
+      "platform": "wonderswan",
+      "records": 113,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/wonderswan.xml"
+    },
+    {
+      "platform": "wonderswancolor",
+      "records": 97,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/wonderswancolor.xml"
+    },
+    {
+      "platform": "xbox",
+      "records": 1143,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/xbox.xml"
+    },
+    {
+      "platform": "xbox360",
+      "records": 5735,
+      "synopsisFieldsPresent": {},
+      "sourceId": "r39/metadata-xml/xbox360.xml"
+    }
+  ],
+  "localXmlStats": [
+    {
+      "sourceId": "retrobat/snes/## 1 -PT-BR ##/gamelist.xml",
+      "records": 231,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 230,
+        "empty": 1
+      }
+    },
+    {
+      "sourceId": "retrobat/snes/## BOMBER MAN ##/gamelist.xml",
+      "records": 5,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 5
+      }
+    },
+    {
+      "sourceId": "retrobat/snes/## DONKEY KONG ##/gamelist.xml",
+      "records": 3,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 3
+      }
+    },
+    {
+      "sourceId": "retrobat/snes/## FINAL FIGHT ##/gamelist.xml",
+      "records": 3,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 3
+      }
+    },
+    {
+      "sourceId": "retrobat/snes/## MEGA MAN ##/gamelist.xml",
+      "records": 7,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 7
+      }
+    },
+    {
+      "sourceId": "retrobat/snes/## SUPER MARIO ##/gamelist.xml",
+      "records": 16,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 15,
+        "empty": 1
+      }
+    },
+    {
+      "sourceId": "retrobat/snes/## TOP GEAR ##/gamelist.xml",
+      "records": 3,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 3
+      }
+    },
+    {
+      "sourceId": "retrobat/snes/gamelist.xml",
+      "records": 835,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 809,
+        "empty": 26
+      }
+    },
+    {
+      "sourceId": "retrobat/megadrive/gamelist.xml",
+      "records": 989,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 973,
+        "empty": 15,
+        "title-only": 1
+      }
+    },
+    {
+      "sourceId": "retrobat/n64/gamelist.xml",
+      "records": 213,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 210,
+        "empty": 3
+      }
+    },
+    {
+      "sourceId": "retrobat/neogeo/gamelist.xml",
+      "records": 191,
+      "qualityCounts": {
+        "prose-present-not-fact-checked": 191
+      }
+    }
+  ],
+  "localCandidateIds": 2412,
+  "duplicateTextGroups": 311,
+  "duplicateTextGroupsAcrossDifferentPlatformTitles": 134,
+  "editorialEntries": 17,
+  "editorialWebUrls": [
+    "https://en.wikipedia.org/wiki/Battletoads/Double_Dragon",
+    "https://megacatstudios.itch.io/lethal-wedding-demo",
+    "https://presskit.megacatstudios.com/sheet.php?p=Lethal_Wedding",
+    "https://retroachievements.org/forums/topic/28846",
+    "https://retrosouls.itch.io/old-towers",
+    "https://romhackplaza.org/romhacks/the-legend-of-zelda-sands-of-time-nintendo-64",
+    "https://tetris.com/about",
+    "https://vc.sega.jp/vc_columns3/",
+    "https://vc.sega.jp/vc_sonic3/",
+    "https://www.konami.com/games/castlevania/us/en-us/page/history_1999_n64_gaiden",
+    "https://www.nintendo.com/en-gb/Games/Nintendo-64/The-Legend-of-Zelda-Ocarina-of-Time-269536.html",
+    "https://www.nintendo.com/es-mx/whatsnew/mario-paint-llega-a-brochazos-al-catalogo-de-super-nes/",
+    "https://www.nintendo.com/it-it/Giochi/Super-Nintendo/Street-Fighter-Alpha-2-922320.html",
+    "https://www.nintendo.com/us/whatsnew/nintendo-switch-online-expansion-pack-pokemon-snap-is-now-available/",
+    "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf",
+    "https://www.sega.jp/genesismini2/assets/manual/pdf/US_Sonic-3D-Blast.pdf"
+  ],
+  "sources": [
+    {
+      "sourceId": "r77/catalog-inventory.json",
+      "kind": "frozen-catalog-inventory",
+      "bytes": 2911896,
+      "sha256": "5095eed365f94a6f2acf076cfa5d9abd6871499a8d459e285af1ca65fd805703"
+    },
+    {
+      "sourceId": "r37/synopses-complete.json",
+      "kind": "exact-id-existing-descriptions",
+      "bytes": 4842515,
+      "sha256": "74fea17341097e47ec30fb543bb6b67d4a3d44d2fc1ca6a82b5989fff3d06010"
+    },
+    {
+      "sourceId": "r37/synopses-editorial.json",
+      "kind": "existing-editorial-provenance",
+      "bytes": 16884,
+      "sha256": "10dd914cf2708a60e036e1926f8d144c4a0fcac72dbc63f53e9f81ccdc54f3ba"
+    },
+    {
+      "sourceId": "server/catalogo-completo.tsv",
+      "kind": "published-catalog-description",
+      "bytes": 2654010,
+      "sha256": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+      "commit": "bee3dcd5c2c0c0a228805957fe89b9a6023e8402",
+      "repositoryPath": "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv"
+    },
+    {
+      "sourceId": "server/compatibilidade-ids.tsv",
+      "kind": "published-catalog-description",
+      "bytes": 301990,
+      "sha256": "1773f431c00b59cb0920e1f335e14f5cc88968401015cd0d238a5d795d222a51",
+      "commit": "bee3dcd5c2c0c0a228805957fe89b9a6023e8402",
+      "repositoryPath": "docs/station-android/biblioteca-neogeocd-20261005/compatibilidade-ids.tsv"
+    },
+    {
+      "sourceId": "r39/metadata-xml/3do.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 139666,
+      "sha256": "1c5a35631aeb0dc744599eea7989e9a8ed314d299eeeb886643e88b8583bc3d1"
+    },
+    {
+      "sourceId": "r39/metadata-xml/3ds.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 578038,
+      "sha256": "756acebcc9c99a992d0276fc6113afbc3af42b925c1f128997359a2210cfa84a"
+    },
+    {
+      "sourceId": "r39/metadata-xml/amigacd32.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 136266,
+      "sha256": "bd513dea7f7a97025e8d4a36ae14148483e2a9ca0dfc9e836749667a6350eef5"
+    },
+    {
+      "sourceId": "r39/metadata-xml/arcade.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 2414346,
+      "sha256": "40424d69c65e3096a844981df07b7fb541694e5f4847b535ad0a34d26922a20f"
+    },
+    {
+      "sourceId": "r39/metadata-xml/arcadia.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 22455,
+      "sha256": "bf17e4d5ec3c4dd422ac24ccddf344967353474bc187a6d703bf5cda77ccf896"
+    },
+    {
+      "sourceId": "r39/metadata-xml/astrocade.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 18844,
+      "sha256": "1c2ef88fc83d9668a33e4a642a532833e9c4ca74d2705b793c90bffe112e14c6"
+    },
+    {
+      "sourceId": "r39/metadata-xml/atari2600.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 442833,
+      "sha256": "f88268645be931fcaef63330defb1b1d6c4a875ef2496a2f9af992fd564ebd5f"
+    },
+    {
+      "sourceId": "r39/metadata-xml/atari5200.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 53548,
+      "sha256": "5af12ac017e90933afbffd9fbe981aa305905e2d01ff8162a5a909a63503b4af"
+    },
+    {
+      "sourceId": "r39/metadata-xml/atari7800.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 56642,
+      "sha256": "9334698c79c76f8a77b5695291ff638423eee4439070ad34e4ed59aa8b6edd41"
+    },
+    {
+      "sourceId": "r39/metadata-xml/atomiswave.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 12477,
+      "sha256": "dd669c4be0bb920c5327402f40857fee943ec83841809087cec903b3b559f02a"
+    },
+    {
+      "sourceId": "r39/metadata-xml/cdi.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 94638,
+      "sha256": "081aeaa03c8b8216fafb7fccd419b6e8a06d2b20c9fce79a25b5092ede0dfffc"
+    },
+    {
+      "sourceId": "r39/metadata-xml/channelf.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 17327,
+      "sha256": "a2ddbbda557418b52d76ed14306af97dbea6220f6bd8682a0f47c6e156d0af37"
+    },
+    {
+      "sourceId": "r39/metadata-xml/colecovision.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 189932,
+      "sha256": "c4b86f2a8d0f766537ed9a60af5589fa175517fae719a4a3879a9eb9a39bdceb"
+    },
+    {
+      "sourceId": "r39/metadata-xml/dreamcast.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 328098,
+      "sha256": "60321e5dd4b5d95f1af3796505d4159718f235376d41076ebdc9d1f2bacf3e71"
+    },
+    {
+      "sourceId": "r39/metadata-xml/fds.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 100814,
+      "sha256": "e6f306041fb16cd045bb34eb95fb40fe1e8aef95de7a11f5d40260f7dd25071b"
+    },
+    {
+      "sourceId": "r39/metadata-xml/gameandwatch.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 116596,
+      "sha256": "c1a3fd618c9a086750efd3bc0d543e21c2fa466203156de2d860f25e668fef3c"
+    },
+    {
+      "sourceId": "r39/metadata-xml/gamecom.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 8584,
+      "sha256": "0f160facbdcca72485ee4a938fca5e357eb3677c3d9ad60ec58b814c33965f7a"
+    },
+    {
+      "sourceId": "r39/metadata-xml/gamecube.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 297405,
+      "sha256": "4766981d9c476edf7292349d3504abbcaedfd8a88df29baada152aebcc84506e"
+    },
+    {
+      "sourceId": "r39/metadata-xml/gamegear.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 152181,
+      "sha256": "c79b6922cb6c403269f6cfccd9ec4e4c6706aba7d9ac1f9011bdee90942aefbf"
+    },
+    {
+      "sourceId": "r39/metadata-xml/gb.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 566728,
+      "sha256": "1b965ce99e9e6c79cd4edc06f302491af28f1ead9c6df374bd09353f432e7cd8"
+    },
+    {
+      "sourceId": "r39/metadata-xml/gba.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 849854,
+      "sha256": "f0fccf4f16c6ef93cefc4539e0b129e61a61117ddba15e64894cd5f6f2a8c7ac"
+    },
+    {
+      "sourceId": "r39/metadata-xml/gbc.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 541865,
+      "sha256": "bb479ff58f722b1fdd5f683c1156e4eef7e9a113f39c35dccade3d8b331c5308"
+    },
+    {
+      "sourceId": "r39/metadata-xml/intellivision.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 65388,
+      "sha256": "7a7ff2e565cbfd9f137b62e361d1448de1c25b18719e16a0aa5db38644792ffd"
+    },
+    {
+      "sourceId": "r39/metadata-xml/jaguar.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 45732,
+      "sha256": "40b5f68c50017340306e79ff5b76dc7ff420d84811b26d064e6a564cbf54156c"
+    },
+    {
+      "sourceId": "r39/metadata-xml/jaguarcd.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 16228,
+      "sha256": "35c5b4cde3e6bac6d7eac82c32c6ac3e98fc7c47c8c934cf851ba49e77823115"
+    },
+    {
+      "sourceId": "r39/metadata-xml/loopy.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 3740,
+      "sha256": "8fc48045427baf86b4718d485a3370d7f8c1226e2edeb5fa2c29e4d8181f5dee"
+    },
+    {
+      "sourceId": "r39/metadata-xml/lynx.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 55549,
+      "sha256": "13c778e55ed7c52129bed7552ffc2515557f905fad04dab9e0521cc0412fb3b8"
+    },
+    {
+      "sourceId": "r39/metadata-xml/mastersystem.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 197973,
+      "sha256": "7ef8a9f51bb0642ee8cd855e964c9b9a2f669d97e0eaf3f53962dd1fccfcf785"
+    },
+    {
+      "sourceId": "r39/metadata-xml/megadrive.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 742975,
+      "sha256": "0fa2b0804d511c1442628dfb2f18fa714c99301ded44b548434c8a91e2e379e4"
+    },
+    {
+      "sourceId": "r39/metadata-xml/model2.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 12889,
+      "sha256": "2ba50463fd73438f6a2ffb9dca65c9271ce72dbf1c937fa1ac162882ef823a01"
+    },
+    {
+      "sourceId": "r39/metadata-xml/model3.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 10826,
+      "sha256": "95ecff9b5057e0e61f98545afdb870a436840363a2a71586d18adaffd21ec4ed"
+    },
+    {
+      "sourceId": "r39/metadata-xml/n64.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 283984,
+      "sha256": "774c7d4dfc043b3a7c677edc477da9b30c7b9f47a6a11f1668d397936d8e15e2"
+    },
+    {
+      "sourceId": "r39/metadata-xml/n64dd.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 5028,
+      "sha256": "b07725c0f24280988ed5a3ee7032149c4e346bcc0875c43fcb058a3ab21b8dd0"
+    },
+    {
+      "sourceId": "r39/metadata-xml/naomi.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 57166,
+      "sha256": "fa2ad56471a3a7c4e32dce65ef764d9339189b6729b6b199026f6bdcccec3f22"
+    },
+    {
+      "sourceId": "r39/metadata-xml/naomi2.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 7955,
+      "sha256": "882164290c927d554cfe3a077ca9cd16e5611cc02a294b94bf926c4182941b7f"
+    },
+    {
+      "sourceId": "r39/metadata-xml/nds.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 1617440,
+      "sha256": "dd7a41033219846dc3ac31a3b6d8932e57b40e610a7a34ca4bf6f833805a50e9"
+    },
+    {
+      "sourceId": "r39/metadata-xml/neogeo.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 65997,
+      "sha256": "58a1fad89a1d4d9412a2a5e92ef469db693460d18fc66c849178931190ce74d6"
+    },
+    {
+      "sourceId": "r39/metadata-xml/neogeocd.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 39948,
+      "sha256": "2c503202879caf1c577d30cca2445e47f3c1c05d8cc76face041d728db5ce37d"
+    },
+    {
+      "sourceId": "r39/metadata-xml/nes.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 1360833,
+      "sha256": "19efabae67871aabe8d2a7dd708a8235f7728daee4cf671357d14f93148dd1d9"
+    },
+    {
+      "sourceId": "r39/metadata-xml/ngage.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 26777,
+      "sha256": "67ee1f457e5093247f01297be4ea0d250a70358081fa40924a6cb8044a0f6818"
+    },
+    {
+      "sourceId": "r39/metadata-xml/ngp.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 3984,
+      "sha256": "3f42f1119b6a5359ca4a9658cc259c4467db051c430a5c81539dd5d2e90020f0"
+    },
+    {
+      "sourceId": "r39/metadata-xml/ngpc.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 31127,
+      "sha256": "eb12894614449e8fc18f552e7478a5432ffb3bc50b1ed5c6f06b08d263c5bb62"
+    },
+    {
+      "sourceId": "r39/metadata-xml/odyssey2.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 34549,
+      "sha256": "6b409a489f4578cae4710d113b1bb6e49305e5bedf52141f18b358fe7ce84641"
+    },
+    {
+      "sourceId": "r39/metadata-xml/pcengine.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 126014,
+      "sha256": "2b0559ca0cf566819bf1c983abc76cb3d2d9bbcd4f0837d8d665af6de4b397e8"
+    },
+    {
+      "sourceId": "r39/metadata-xml/pcenginecd.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 163543,
+      "sha256": "c86e41a335ccb69ee301dc159c80010136700a4ed7338a9876a6325599bb87b7"
+    },
+    {
+      "sourceId": "r39/metadata-xml/pcfx.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 27172,
+      "sha256": "7a9beaa5c36474292c98cbf9e60dfd450d998cb027a6e494842b7b9843523d2d"
+    },
+    {
+      "sourceId": "r39/metadata-xml/pico.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 92454,
+      "sha256": "6cc024e2435c7ccab7be0029054f6434917b540241096991d2d19aa1012b81d0"
+    },
+    {
+      "sourceId": "r39/metadata-xml/pokemonmini.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 15458,
+      "sha256": "5e7b34f8e857494dffe62413450fc531b2087733ae8001663e5aa44d53d42301"
+    },
+    {
+      "sourceId": "r39/metadata-xml/ps2.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 1674810,
+      "sha256": "245a4886d2471b11593e1660bab4d22a6dfb60b9c663e0d182fd02310d2f6794"
+    },
+    {
+      "sourceId": "r39/metadata-xml/ps3.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 897300,
+      "sha256": "355b9ebfd483ea4b12fa7525dfd170b824667ab4ae55b5a7460b56d63550036b"
+    },
+    {
+      "sourceId": "r39/metadata-xml/psp.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 747458,
+      "sha256": "2362ca0cd7e8801d5b14ef8874889b0fa3145031464da17da0375528126a8bf2"
+    },
+    {
+      "sourceId": "r39/metadata-xml/psvita.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 395650,
+      "sha256": "370f935581758319c87b42e1ecd0a22e1a1e843d3352d9fae821df7ebbe531b4"
+    },
+    {
+      "sourceId": "r39/metadata-xml/psx.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 1712095,
+      "sha256": "c2c5dc305950efb764fe393d4a5748ee3e55c4edccaa5996c8fac80a16d01d04"
+    },
+    {
+      "sourceId": "r39/metadata-xml/pv1000.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 4861,
+      "sha256": "cca4e4bd1a4b73173fefd7b70daaa388fc567be56f857303b75cd7c630f0b8fc"
+    },
+    {
+      "sourceId": "r39/metadata-xml/saturn.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 445772,
+      "sha256": "b5e7fa651f96118df6711982933685d9fee5f23422e1802847203af031a416c1"
+    },
+    {
+      "sourceId": "r39/metadata-xml/scv.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 10754,
+      "sha256": "61aa626078fbd97c8bf35250e045c492519931d81fad8c8bb8cae61ba75e97b3"
+    },
+    {
+      "sourceId": "r39/metadata-xml/sega32x.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 22812,
+      "sha256": "a465f92982f20d8eed696ab9e4c3e0a1b664e9872ccd3a015a1ce8c3638e701a"
+    },
+    {
+      "sourceId": "r39/metadata-xml/segacd.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 85944,
+      "sha256": "92e61ae95115831395766b3be20ea05e8f830eb053415670aecbad89ea5a3b7a"
+    },
+    {
+      "sourceId": "r39/metadata-xml/sg1000.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 40229,
+      "sha256": "c80e3077854528f30d9e4e42086e354469cb005d5693bb0fd7825fc5b244f4d7"
+    },
+    {
+      "sourceId": "r39/metadata-xml/snes.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 1074098,
+      "sha256": "93290cc4a8a729f150e6f0d069191f43497ae2aa9e2f53a838bfeb0c1c80b283"
+    },
+    {
+      "sourceId": "r39/metadata-xml/supergrafx.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 2021,
+      "sha256": "962d108ee0b7b678ce65b88de64008a149739e1eb545d33cb282ead5ccc9d6ea"
+    },
+    {
+      "sourceId": "r39/metadata-xml/supervision.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 27996,
+      "sha256": "003843db186a460283f0250427aecff0a5793f485e8b092b034b7a1fec062f81"
+    },
+    {
+      "sourceId": "r39/metadata-xml/switch.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 2222142,
+      "sha256": "fdcb40c2f56b9a8f18e255ceda72583ce28304f801518c1ebc1e036bffceceed"
+    },
+    {
+      "sourceId": "r39/metadata-xml/vectrex.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 35832,
+      "sha256": "659d77c749408a63a7ab6a92230e9ebddb3f862359add5e4d43925ae45eba42d"
+    },
+    {
+      "sourceId": "r39/metadata-xml/videopacplus.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 29036,
+      "sha256": "f3a58f1318a57df8ecf07d383657c935b5c1400b39494b83de3896c5cdfab8e5"
+    },
+    {
+      "sourceId": "r39/metadata-xml/virtualboy.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 27376,
+      "sha256": "eb99531a6cb3286c30295c91656b4d34706e6eac793bff6203e59f1e3ac12e6c"
+    },
+    {
+      "sourceId": "r39/metadata-xml/wii.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 840959,
+      "sha256": "7754a5036aca1f07879f588a9fa6add65fb547dcb258961f6717bc2c39e3b40e"
+    },
+    {
+      "sourceId": "r39/metadata-xml/wiiu.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 294267,
+      "sha256": "329c66c7c77299b281cca15bf642306dcb759d56b378862086cff3b3ec197b81"
+    },
+    {
+      "sourceId": "r39/metadata-xml/wonderswan.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 42654,
+      "sha256": "1a30c4ba268e7f41cc80fe492157aefd11171197a52df41c121bb9614318bb8c"
+    },
+    {
+      "sourceId": "r39/metadata-xml/wonderswancolor.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 36524,
+      "sha256": "b2d8d3ed713224bc3886f836765a12ea59c251e63e7ea30ca806d1b5f7478118"
+    },
+    {
+      "sourceId": "r39/metadata-xml/xbox.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 415875,
+      "sha256": "2ab079654e6de6f562fa2f04505263d764bfacd022f4b14bd61da4ddb78eabd2"
+    },
+    {
+      "sourceId": "r39/metadata-xml/xbox360.xml",
+      "kind": "legacy-players-rating-metadata",
+      "bytes": 1727022,
+      "sha256": "78d653a6f29999212b879d64c0e23066850699cea869b2a7f806dfc8e369a985"
+    },
+    {
+      "sourceId": "retrobat/snes/## 1 -PT-BR ##/gamelist.xml",
+      "kind": "current-local-gamelist",
+      "bytes": 333619,
+      "sha256": "545423dfdd2ae57a8f8b000a111e9cf3ac12564682cd7b44ad1dd635b4b435d8"
+    },
+    {
+      "sourceId": "retrobat/snes/## BOMBER MAN ##/gamelist.xml",
+      "kind": "current-local-gamelist",
+      "bytes": 6250,
+      "sha256": "cfa2d9c078a6ab900dc500654d00193d7834ebc3fddc818235d665d525deaf0f"
+    },
+    {
+      "sourceId": "retrobat/snes/## DONKEY KONG ##/gamelist.xml",
+      "kind": "current-local-gamelist",
+      "bytes": 4321,
+      "sha256": "021de2b6c0cb8b001b08c8c99ba814e6f762641da950d7f687773908a3659013"
+    },
+    {
+      "sourceId": "retrobat/snes/## FINAL FIGHT ##/gamelist.xml",
+      "kind": "current-local-gamelist",
+      "bytes": 4918,
+      "sha256": "6bebbc9892785d81170d59431880445e4ddaa50204fca09a3948ab19c78d7184"
+    },
+    {
+      "sourceId": "retrobat/snes/## MEGA MAN ##/gamelist.xml",
+      "kind": "current-local-gamelist",
+      "bytes": 10706,
+      "sha256": "b4e81897f3db7332b29288b7365c8f6ef376ef07c0bcf947ffb608a132aedf47"
+    },
+    {
+      "sourceId": "retrobat/snes/## SUPER MARIO ##/gamelist.xml",
+      "kind": "current-local-gamelist",
+      "bytes": 23081,
+      "sha256": "df54134e6099667b7289b52855f13035c5dc01cad3a23c33bacdd23220be1ed4"
+    },
+    {
+      "sourceId": "retrobat/snes/## TOP GEAR ##/gamelist.xml",
+      "kind": "current-local-gamelist",
+      "bytes": 5076,
+      "sha256": "374cfa6e09b143d2dd2b02fa0d09a2d17f33c289125c39fb3161dcf0276c4f42"
+    },
+    {
+      "sourceId": "retrobat/snes/gamelist.xml",
+      "kind": "current-local-gamelist",
+      "bytes": 1121951,
+      "sha256": "f459dfd5b5960e13bf1d989b6d107e29759d6d8da15e9d0d1efbc3525b583ee1"
+    },
+    {
+      "sourceId": "retrobat/megadrive/gamelist.xml",
+      "kind": "current-local-gamelist",
+      "bytes": 1448371,
+      "sha256": "7e3a7dcedb814114d465b6e9c3f0b0e2119b7de8656def37857afa4969e817c9"
+    },
+    {
+      "sourceId": "retrobat/n64/gamelist.xml",
+      "kind": "current-local-gamelist",
+      "bytes": 283723,
+      "sha256": "ed9e30df64ab33e0bf13105bf44b1c50098b6e12c9f3675aeaa2b4c911bf7ea1"
+    },
+    {
+      "sourceId": "retrobat/neogeo/gamelist.xml",
+      "kind": "current-local-gamelist",
+      "bytes": 209177,
+      "sha256": "555672bfb311bcef62a5f5409e81a199b37e32eb082f2b04c5a1619bbcbe5463"
+    }
+  ],
+  "outputSHA256": "43d6a8cf4b93294e82bdca6109631096dda9f3dcbd8caeb39c8c819882d3f827",
+  "recipeSHA256": "c4e00329c9251312990c99bec0a1075d9d7aec45b5735df3fb4bd6ac8f09ba12",
+  "romRead": false,
+  "webResearchPerformed": false,
+  "testsExecuted": false,
+  "appChanged": false,
+  "allFactsVerified": false,
+  "limits": [
+    "Prose present is a structural finding, not individual factual validation.",
+    "Existing exact catalog-ID descriptions are retained as evidence, including own legacy-ID descriptions.",
+    "Local XML matches preserve full filename, platform and edition; candidates never automatically fill another ID.",
+    "Same prose in aliases/ports is recorded, not labelled fabricated solely because it repeats.",
+    "No legacy BR/base-title inheritance, fuzzy matching, ROM content reading or online approval."
+  ]
+}
