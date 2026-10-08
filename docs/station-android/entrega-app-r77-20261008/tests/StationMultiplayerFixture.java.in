@@ -1,0 +1,37 @@
+package org.emulationstation.frontend.netplay;
+import java.net.URI;
+import java.io.IOException;
+import java.util.*;
+import javax.net.ssl.SSLSocketFactory;
+
+final class StationOnlineGame {
+    static final class Unavailable extends IOException {Unavailable(String text){super(text);}}
+    static String hex(byte[] bytes){StringBuilder out=new StringBuilder();for(byte b:bytes)out.append(String.format("%02x",b&255));return out.toString();}
+}
+final class StationRelayTls {
+    static URI multiplayerEndpoint(){return URI.create("wss://fixture.invalid/v1/station/online/multiplayer/relay");}
+    static SSLSocketFactory create(){return (SSLSocketFactory)SSLSocketFactory.getDefault();}
+}
+/** The ONLY replacement of a production class: no actual sockets are opened by this fixture. */
+final class StationMultiplayerTunnel implements AutoCloseable {
+    interface Listener {
+        default void trace(String text){} void ticket();void ready();void state(boolean waiting,boolean sync);
+        void nativeControl(long epoch,boolean pause,boolean visible);long nativeStatus();boolean nativeStalled();void unrecoverable(String category);
+    }
+    interface SocketBinding {boolean bind(int source);void release(int source);}
+    static final List<StationMultiplayerTunnel> instances=new ArrayList<>();
+    final Listener listener;final boolean host;final int port;boolean available=true,closed,started;int provides,unavailables,listening;String lastTicket;SocketBinding binding;
+    StationMultiplayerTunnel(URI uri,String ticket,String proof,int window,boolean host,int port,SSLSocketFactory tls,Listener listener){this.host=host;this.port=port;this.listener=listener;lastTicket=ticket;instances.add(this);}
+    static void reset(){instances.clear();}
+    void socketBinding(SocketBinding value){binding=value;}
+    int localPort(){return port;}
+    boolean available(){return available&&!closed;}
+    void start(){started=true;}
+    void listening(){listening++;}
+    void visible(boolean shown){listener.nativeControl(0,true,shown);if(!shown)listener.state(true,false);}
+    void provide(String ticket,String proof,int window){provides++;lastTicket=ticket;}
+    void reject(){listener.unrecoverable("AUTHORITY");}
+    void unavailable(){unavailables++;}
+    public void close(){closed=true;}
+    void epoch(long value,boolean playing){listener.nativeControl(value,!playing,true);listener.state(!playing,!playing);}
+}

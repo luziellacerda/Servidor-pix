@@ -1,0 +1,37 @@
+{
+  "utc": "2026-10-08T13:21:16.117484+00:00",
+  "passed": true,
+  "sources": {
+    "java\\netplay-src\\org\\emulationstation\\frontend\\netplay\\StationMultiplayerProfile.java": "2a57f0c49bcb7466d8bb67196c6a3fb6317746f45d0ebcf8ec915b54680dec80",
+    "java\\netplay-src\\org\\emulationstation\\frontend\\netplay\\StationMultiplayerWire.java": "318e6daa0f0ce483c9c7458ee33f918085ad4f1d9c1f2e4319895b3df7dba3c0",
+    "java\\netplay-src\\org\\emulationstation\\frontend\\netplay\\StationMultiplayerSession.java": "e019e6699e5a5a5c5f2ec63e6d334fa6bcaad7c5e5672a001480294f8ff5a4dc",
+    "java\\netplay-src\\org\\emulationstation\\frontend\\netplay\\StationRoomStartState.java": "2a883a22b5cec0a10fcf8b523d79bd518a956ab9195efe0a398a6fc8cf24b82c",
+    "tests/StationMultiplayerContractTest.java.in": "f172dc013693b0ee9e67d8f7f74e1a9c52c420edb7beffdb85b80736af2048a9",
+    "tests/StationMultiplayerFixture.java.in": "4ba8d3a0cb126b4a49dc7d310f27afcd16ab60263d3cd9d44ee55ba5532c4171"
+  },
+  "recipeSHA256": "a71b17c1f0cd38ea6bfccc6e459bf58e66627fa65a043b6e2c1a9aa8a230958a",
+  "jsonJarSHA256": "3ea61b2a06e31edf1c91134fe9106b0ebb16628be169f3db75bc7a2b06b45796",
+  "javaSHA256": "1977f302375adbb920d41dac65c7e22eb9c2ed8e1e8d6258964154ff16f14406",
+  "metrics": {
+    "wire": 609,
+    "checks": 1612,
+    "coordinator": 288,
+    "profiles": 677,
+    "start": 38
+  },
+  "realCode": [
+    "StationMultiplayerProfile.java",
+    "StationMultiplayerWire.java",
+    "StationMultiplayerSession.java",
+    "StationRoomStartState.java"
+  ],
+  "models": [
+    "StationMultiplayerTunnel lifecycle/availability/callbacks and socket binding",
+    "TLS factory and OnlineGame error/hash utility"
+  ],
+  "limitations": [
+    "No Android, network, native core or physical gameplay in this suite",
+    "Transport coordinator callbacks use a controlled fake tunnel; transport mutex safety requires separate real-tunnel tests",
+    "No invented profile is an approval of any catalog game"
+  ]
+}

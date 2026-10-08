@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "SHA-256 of UTF-8 compact JSON; exact key order shown in canonical; no BOM/newline",
+  "canonical": "{\"schemaVersion\":1,\"controllerProfile\":\"snes-multitap-port2-v1\",\"devices\":[1,257,1,1,1],\"coreOptions\":\"bsnes_violate_accuracy = \\\"disabled\\\"\\nbsnes_chip_hle = \\\"LLE\\\"\\nbsnes_superfx_overclock = \\\"100%\\\"\\nbsnes_region = \\\"auto\\\"\\nbsnes_aspect_ratio = \\\"auto\\\"\\nbsnes_crop_overscan = \\\"disabled\\\"\\nbsnes_gamma_ramp = \\\"disabled\\\"\\n\"}",
+  "sha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+  "gameIdentityBoundSeparatelyBySignedProfile": true,
+  "approved": false
+}

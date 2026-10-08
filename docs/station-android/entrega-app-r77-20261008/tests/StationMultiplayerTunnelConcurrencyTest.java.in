@@ -1,0 +1,47 @@
+package org.emulationstation.frontend.netplay;
+import java.net.*;import javax.net.ssl.*;import java.nio.*;import java.lang.reflect.*;import java.util.*;import java.util.concurrent.*;
+import org.emulationstation.frontend.relay.ws.client.WebSocketClient;
+final class StationMultiplayerTunnelConcurrencyTest {
+ static int checks,failures,callbacksUnderGate,staleFatals;static List<String> errors=new ArrayList<>();
+ static void check(boolean value,String label){checks++;if(!value){failures++;errors.add(label);}}
+ static Object get(Object obj,String name)throws Exception{Field f=obj.getClass().getDeclaredField(name);f.setAccessible(true);return f.get(obj);}
+ static void put(Object obj,String name,Object value)throws Exception{Field f=obj.getClass().getDeclaredField(name);f.setAccessible(true);f.set(obj,value);}
+ static void call(Object obj,String name)throws Exception{Method m=obj.getClass().getDeclaredMethod(name);m.setAccessible(true);m.invoke(obj);}
+ static final class Observer implements StationMultiplayerTunnel.Listener {
+  Object gate;volatile int fatal,under;volatile long status;CountDownLatch done=new CountDownLatch(1);
+  public void ticket(){}public void ready(){}public void state(boolean a,boolean b){if(Thread.holdsLock(gate))under++;}
+  public void nativeControl(long epoch,boolean pause,boolean visible){if(Thread.holdsLock(gate))under++;}
+  public long nativeStatus(){return status;}public boolean nativeStalled(){return false;}
+  public void unrecoverable(String value){fatal++;if(Thread.holdsLock(gate))under++;done.countDown();}
+ }
+ static StationMultiplayerTunnel tunnel(Observer listener)throws Exception{
+  StationMultiplayerTunnel t=new StationMultiplayerTunnel(URI.create("wss://fixture.invalid/v1/station/online/multiplayer/relay"),"T".repeat(43),"v1.1234567890."+"P".repeat(22)+".proof",262144,true,55435,(SSLSocketFactory)SSLSocketFactory.getDefault(),listener);listener.gate=get(t,"gate");return t;
+ }
+ public static void main(String[] args)throws Exception{
+  for(int n=0;n<16;n++){
+   Observer o=new Observer();try(StationMultiplayerTunnel t=tunnel(o)){put(t,"welcome",true);o.status=4;call(t,"pump");check(o.done.await(2,TimeUnit.SECONDS),"fatal callback completed");check(o.under==0,"native fatal callback must release gate");callbacksUnderGate+=o.under;}
+  }
+  for(int kind=0;kind<4;kind++)for(int n=0;n<8;n++){
+   Observer o=new Observer();try(StationMultiplayerTunnel t=tunnel(o)){
+    WebSocketClient old=(WebSocketClient)get(t,"remote");t.provide("N".repeat(43),"v1.1234567890."+"P".repeat(22)+".proof",262144);Object fresh=get(t,"remote");
+    switch(kind){case 0:old.onOpen(name->"wrong");break;case 1:old.onMessage("unexpected");break;case 2:old.onMessage(ByteBuffer.wrap(new byte[]{1}));break;case 3:old.onMessage(ByteBuffer.wrap(new StationMultiplayerWire(6,3,3).encode()));break;}
+    check(o.fatal==0,"obsolete Remote cannot terminate new session kind="+kind);check(get(t,"remote")==fresh,"new Remote retained kind="+kind);staleFatals+=o.fatal;
+   }
+  }
+  for(int kind=0;kind<3;kind++){
+   Observer o=new Observer();try(StationMultiplayerTunnel t=tunnel(o)){WebSocketClient active=(WebSocketClient)get(t,"remote");if(kind==0)active.onMessage("wrong");else if(kind==1)active.onOpen(name->"wrong");else active.onMessage(ByteBuffer.wrap(new byte[]{0}));check(o.fatal==1,"active protocol validation preserved");}
+  }
+  for(int n=0;n<8;n++){
+   Observer observer=new Observer();try(StationMultiplayerTunnel subject=tunnel(observer)){
+    observer.status=3;put(subject,"welcome",true);WebSocketClient current=(WebSocketClient)get(subject,"remote");call(subject,"pump");((ExecutorService)get(subject,"writes")).submit(()->{}).get(2,TimeUnit.SECONDS);
+    check(current.sent.size()>=3,"foreground then barrier frames produced");check(StationMultiplayerWire.decode(ByteBuffer.wrap(current.sent.get(0))).type==12,"FOREGROUND precedes PAUSED and READY");
+    call(subject,"pump");((ExecutorService)get(subject,"writes")).submit(()->{}).get(2,TimeUnit.SECONDS);int foreground=0;for(byte[] bytes:current.sent)if(StationMultiplayerWire.decode(ByteBuffer.wrap(bytes)).type==12)foreground++;check(foreground==1,"one FOREGROUND per authenticated Remote");
+    subject.visible(false);subject.provide("N".repeat(43),"v1.1234567890."+"P".repeat(22)+".proof",262144);check(get(subject,"remote")==null,"late credential does not attach while hidden");
+    current.onMessage(ByteBuffer.wrap(new StationMultiplayerWire(2,0,0).encode()));check(get(subject,"remote")==null&&observer.fatal==0,"late welcome during background ignored");
+    subject.visible(true);subject.provide("R".repeat(43),"v1.1234567890."+"P".repeat(22)+".proof",262144);WebSocketClient resumed=(WebSocketClient)get(subject,"remote");put(subject,"welcome",true);call(subject,"pump");((ExecutorService)get(subject,"writes")).submit(()->{}).get(2,TimeUnit.SECONDS);check(StationMultiplayerWire.decode(ByteBuffer.wrap(resumed.sent.get(0))).type==12,"new attachment clears retained suspension");
+   }
+  }
+  Observer o=new Observer();StationMultiplayerTunnel t=tunnel(o);WebSocketClient old=(WebSocketClient)get(t,"remote");t.close();old.onMessage("late");check(o.fatal==0,"close ignores late frame");
+  System.out.println("{\"checks\":"+checks+",\"failures\":"+failures+",\"callbacksUnderGate\":"+callbacksUnderGate+",\"obsoleteRemoteFatals\":"+staleFatals+"}");
+ }
+}

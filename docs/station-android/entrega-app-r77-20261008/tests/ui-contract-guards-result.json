@@ -1,0 +1,49 @@
+{
+  "utc": "2026-10-08T13:27:50.732113+00:00",
+  "passed": true,
+  "metrics": {
+    "checks": 87,
+    "passed": true,
+    "actualExtractedMethods": 11
+  },
+  "sourceHashes": {
+    "StationRoomsActivity.java": "2303619414a0ab4bc8f46460a858acc1fa97c9ae0f65f8192deecfcba708c71c",
+    "StationGamePlayerInfo.java": "c19d32ba97d98e3638130ec5a26c8a7a4c537661960340a575a50b5a14d44fb8",
+    "StationRoomStartState.java": "2a883a22b5cec0a10fcf8b523d79bd518a956ab9195efe0a398a6fc8cf24b82c",
+    "StationMultiplayerProfile.java": "2a57f0c49bcb7466d8bb67196c6a3fb6317746f45d0ebcf8ec915b54680dec80"
+  },
+  "recipeSHA256": "db50c1995abd8a8091f8cbaea851a1c14a708ceac52a80680162625ec35896e4",
+  "jsonJarSHA256": "3ea61b2a06e31edf1c91134fe9106b0ebb16628be169f3db75bc7a2b06b45796",
+  "harnessSHA256": "9322a42356eb9cc6ec4de2975c4af5c4da2594a2b6006baaa3b1365d696199f3",
+  "extractedMethods": {
+    "private static StationGamePlayerInfo profileInfo(": "52ee31fd75275c882bf107052239c69072639228482bc9cc4c462aa170dbecee",
+    "private static StationGamePlayerInfo roomGameInfo(": "1cbe70cc3cf02965211d8aa5b46ec13b0cf798fca4dd952d46e67f8644dfc7f5",
+    "private static StationGamePlayerInfo.RoomInfo roomInfo(": "355338a9b65a60730cba30cc88e67b985b1b7ac63bb844fb75c2e4df36c3910b",
+    "private String roomExplanation(": "75ffb62f3d5b27d436ab217f343865cafcfbf6ceb94ccbb912eb9c067aae6323",
+    "private void join(": "d705a2c2edbd7034eba81929c52f25ddc6e373841f9651f509feaec174dcce57",
+    "private void joinConfirmed(": "4bd8bfda5bc71da0894735b3905b88ed25c60df86fe0072adc67d5466a76ca36",
+    "private void command(": "6be79c07d32f2849dcef7fb3eb982764b5abc42cf02841204d650276027018a1",
+    "private static boolean contains(": "0720a119bf59dc0953d07553f09dcebe8adf0fa2389e1544e94c640b9b1cef92",
+    "private static JSONObject findRoom(": "33ddec460650ab3352b648411ea95ae527de644f8e74cf2fcb2c3865ffbcf11c",
+    "private static String roomConfirmationKey(": "b0f0591bc95fb03a36938690db2d7c2776c3763c32ad680c8b591f287e077ac2",
+    "private void startDialog(": "dd8fbd734c1ef6a071f3979b092e9daa7d08cf91aefd345b7fd2cfe4d1756fe7"
+  },
+  "compactHeaderExcerptSHA256": "c3f358d5c94ed7fddb4e634768acbb61b0f2c4e932ea28d9ae77c9855dce7bc5",
+  "roomAvailabilityExcerptSHA256": "4fd32bb3f7e22fe181b3a3a7229e9a842a40ca57ca527c822aa4d58108b1fcf3",
+  "actualFullClasses": [
+    "StationGamePlayerInfo",
+    "StationRoomStartState",
+    "StationMultiplayerProfile"
+  ],
+  "stubs": [
+    "Android layout/dialog callbacks",
+    "HTTP responses and deferred action executor",
+    "OnlineGame IO preparation (actual profile verification retained)",
+    "solo room/member lookup"
+  ],
+  "limitations": [
+    "No Android view rendering or lifecycle verification",
+    "No real HTTP authentication, server, native gameplay or approval of fixture profiles",
+    "Methods and lambdas extracted verbatim; complete Activity is compiled in separate APK build"
+  ]
+}

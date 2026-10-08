@@ -1,0 +1,139 @@
+{
+  "reviewed": true,
+  "version": "R77",
+  "utc": "2026-10-08T13:34:23.032523+00:00",
+  "inputManifestSHA256": "7edef355772b1319f893cdc939c1c57ab728a125914f75b73880a6d492a45651",
+  "javaBuildReceiptSHA256": "5f44b29a13c42e711051d82111f017cd5f6905fc263a330fd0e03e27517ca0b6",
+  "runtimeSHA256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+  "snesCoreSHA256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+  "carouselSHA256": "98e951b2aad45d63ebe563de95d7a9299339928e54ce082915a147a992ab0302",
+  "sourceManifestSHA256": "d224fb7139a01aa167cf0cc09cb34a18b139a4edebdd83003abc1eb1b08dd5cc",
+  "preparationRecipeSHA256": "54d054ed4bd1388330136ff7910793f6bf898bc868bfa796d4b76940b6568c9f",
+  "receiptCount": 23,
+  "receipts": [
+    {
+      "kind": "java-contract",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\tests\\evidence\\java-contract.json",
+      "sha256": "d7d81afbaa32b1cfae20ebf00c9df29501e8aa5fcdc5a896744416216018ba88"
+    },
+    {
+      "kind": "java-concurrency",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\tests\\evidence\\tunnel-concurrency.json",
+      "sha256": "9bb273fe5aebd89a89c449920490e659e9af70ef6981ee4b1cca197131f41c29"
+    },
+    {
+      "kind": "java-snapshot",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\tests\\evidence\\snapshot-merge.json",
+      "sha256": "93e6515f4a21f8b10323227fec43fca8855aed0f73e2dca627dfe52313da622d"
+    },
+    {
+      "kind": "java-ui",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\tests\\ui-contract-guards-result.json",
+      "sha256": "b032a243143632d032af1051ad0ec876772e669d0109e3224c857ea789c63b3f"
+    },
+    {
+      "kind": "java-player-info",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\tests\\player-info-result.json",
+      "sha256": "53b488018e042873aa43e0451bce083ec4dd0ffa4dd86a76ab99885c1e20b5a8"
+    },
+    {
+      "kind": "java-player-evidence",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\tests\\catalog-evidence-result.json",
+      "sha256": "bad26488d72bf9a641d9ad1a5928ebbe12083c9ee57dce23e0aece47f18af305"
+    },
+    {
+      "kind": "java-human-departure",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\evidence\\presence-departure.json",
+      "sha256": "f46a1db506d277f62ee059e27489cef3569ad4981e60a6005b7264d907aac49e"
+    },
+    {
+      "kind": "server-candidate",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\server\\evidence\\candidate-checks.json",
+      "sha256": "961685f9b6d4292965b6ff5b25b3cbe1d72efcf4cb4fbaa5a6425cd9e23bcf04"
+    },
+    {
+      "kind": "java-server-tls-04",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\tests\\evidence\\transport-java-dotnet-04.json",
+      "sha256": "cb09945ff2de5cbc3940c0f24f8f66e5c5f532ec36fd14a91b2362a703e58add"
+    },
+    {
+      "kind": "java-server-tls-05",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\tests\\evidence\\transport-java-dotnet-05.json",
+      "sha256": "38fc2eb9bea0c0026ca1125274565a83fb722d1a03726576cf97940f60992777"
+    },
+    {
+      "kind": "native-runtime",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\native\\build-result.json",
+      "sha256": "5f15aa889d87c2aed855e6f3589f74cb68d4ade48884a93baf12ab2886cb4555"
+    },
+    {
+      "kind": "native-runtime-tests",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\native\\tests\\native-result.json",
+      "sha256": "65d9641e56f98910562dbcde7637c310ddb4add3f62c9570961382211ee60657"
+    },
+    {
+      "kind": "native-baseline-comparison",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\native\\baseline-comparison.json",
+      "sha256": "e630f63b7dc30e2644aa38557e9f39ace2975831a5f5908e19438873771a187a"
+    },
+    {
+      "kind": "native-snes",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\core-snes\\evidence\\candidate-build.json",
+      "sha256": "8fb7df15a2ac0d4d847b88b63c2ed62bf3e0e246da335bfc6b7bd12580a59de3"
+    },
+    {
+      "kind": "native-snes-source",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\core-snes\\evidence\\source.json",
+      "sha256": "b9b3df2e234da3b20420175d4c23857797fbae9567c51d18708e9dc5600aeef4"
+    },
+    {
+      "kind": "native-snes-mapping",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\core-snes\\evidence\\mapping-tests.json",
+      "sha256": "34ea244c45033b645fb33607b094d2bc600cff603a0eefb209c1807c7b64bffc"
+    },
+    {
+      "kind": "native-snes-baseline",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\core-snes\\evidence\\baseline-build.json",
+      "sha256": "baffff0a2e1f26b4e85816d84f987a30678ec6e7f5ef45bcf51be05248e0057a"
+    },
+    {
+      "kind": "carousel",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\carousel\\build-result.json",
+      "sha256": "05a393b69d1b55a12453cf406f8844ae5fcba8210e0b43ec701fe115218edc59"
+    },
+    {
+      "kind": "catalog",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\catalog\\catalog-tests.json",
+      "sha256": "50db05a3e2ddbe73b6893d8c3dc1432efa8b186e69afabc439df27eb904d724a"
+    },
+    {
+      "kind": "catalog-metadata",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\catalog\\metadata-tests.json",
+      "sha256": "de0a9b8d3801773aaa4bfa4bfdb47e9d929d9fdd7636c99745ff3cc5e50a2c48"
+    },
+    {
+      "kind": "catalog-metadata-coverage",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\catalog\\metadata-coverage.json",
+      "sha256": "082f7bfa6f80627cb72f81e44f2d19263247e763bb80ad927b9544fa27fe63f8"
+    },
+    {
+      "kind": "catalog-display-binding",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\catalog\\DISPLAY-SOURCE-MANIFEST.json",
+      "sha256": "62bac6408f63cd703af9c41d90a35b7bd7336f2bf53cc0a92c89669d05d4d566"
+    },
+    {
+      "kind": "catalog-java-binding",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\catalog\\java-binding.json",
+      "sha256": "c638f6d4b988c26e215774670e07c8d86bf705fbce9570cb576d3e89fee4abba"
+    }
+  ],
+  "verifiedFileCount": 462,
+  "reviewedScope": "Frozen candidate source/artifact/receipt identity only; no Android gameplay or production approval.",
+  "limitations": [
+    "Transport cross-tests compile the final Session/Tunnel/Wire directly and use unchanged R76 WebSocket/proof dependencies; they do not execute the complete Android API or UI.",
+    "Native tests use real extracted code with synthetic core/socket boundaries; no ROM or physical multiplayer qualification.",
+    "Native baseline differs only in the documented 20-byte GNU build-id; whole-file identity is not claimed.",
+    "All researched catalogue profiles remain unapproved; display evidence asset is empty.",
+    "No APK signing, phone installation, Git publication or server deployment is performed by this preparation."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-08T13:06:36.470952+00:00",
+  "passed": true,
+  "metrics": {
+    "checks": 188,
+    "passed": true
+  },
+  "sourceSHA256": "c19d32ba97d98e3638130ec5a26c8a7a4c537661960340a575a50b5a14d44fb8",
+  "testSHA256": "b23d8a4311e7004621f532e412767b3b6d62bbbcb50bdc0f59df0be57f218be8",
+  "recipeSHA256": "acf4ddb3ee0fd84b03d617b8441a11e274588f6958249cdda78675f54558e984",
+  "scope": "Actual pure Java presentation helper. No catalog/network/Android/gameplay qualification or authorization grants."
+}

@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+ <PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><TreatWarningsAsErrors>true</TreatWarningsAsErrors><EnableDefaultCompileItems>false</EnableDefaultCompileItems></PropertyGroup>
+ <ItemGroup><Compile Include="Program.cs"/><ProjectReference Include="../../src/TurboRamaSuiteOnlineServer/TurboRamaSuiteOnlineServer.csproj"/><None Include="../../docs/station-android/recovery-r67-20261007/contract-vectors.json" Link="contract-vectors.json" CopyToOutputDirectory="PreserveNewest"/></ItemGroup>
+</Project>

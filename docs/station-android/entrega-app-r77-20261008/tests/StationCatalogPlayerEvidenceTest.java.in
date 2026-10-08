@@ -1,0 +1,86 @@
+package org.emulationstation.frontend.station;
+import java.nio.charset.StandardCharsets;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public final class StationCatalogPlayerEvidenceTest {
+    static int checks;
+    static final String ID="station_exact_content_game",SHA=new String(new char[64]).replace('\0','a');
+    static void yes(boolean value){checks++;if(!value)throw new AssertionError("Check "+checks);}
+    static StationCatalogPlayerEvidence.Mode mode(String id,String style,int...counts){return new StationCatalogPlayerEvidence.Mode(id,style,counts,new String[]{"original-manual-page-8"});}
+    static StationCatalogPlayerEvidence.Evidence evidence(StationCatalogPlayerEvidence.Mode...modes){return new StationCatalogPlayerEvidence.Evidence(ID,4,SHA,StationCatalogPlayerEvidence.VERIFIED,modes);}
+    static StationCatalogPlayerEvidence.Result result(StationCatalogPlayerEvidence.Evidence e){return StationCatalogPlayerEvidence.evaluate(ID,4,SHA,e);}
+    static void pending(StationCatalogPlayerEvidence.Result r){yes(!r.confirmed);yes("—".equals(r.compact));yes(r.detail.contains("confirmar"));}
+    static String label(String id){return new String(StationCatalogPlayerEvidence.labelFor(id),StandardCharsets.UTF_8);}
+    static StationCatalogPlayerEvidence.CatalogBinding binding(String id,long revision,String digest){return new StationCatalogPlayerEvidence.CatalogBinding(id,revision,digest);}
+    static void publish(Map<String,StationCatalogPlayerEvidence.Result> values,StationCatalogPlayerEvidence.CatalogBinding...bindings){StationCatalogPlayerEvidence.publish(bindings,values);}
+    static int historySize()throws Exception {java.lang.reflect.Field field=StationCatalogPlayerEvidence.class.getDeclaredField("history");field.setAccessible(true);return ((Map<?,?>)field.get(null)).size();}
+    public static void main(String[]args)throws Exception{
+        pending(StationCatalogPlayerEvidence.pending());pending(result(null));
+        StationCatalogPlayerEvidence.Evidence good=evidence(mode("normal","single-player",1),mode("battle-single","simultaneous",2,3,4));
+        StationCatalogPlayerEvidence.Result four=result(good);yes(four.confirmed);yes(four.compact.equals("4 sim."));yes(four.detail.contains("2, 3 ou 4"));yes(four.detail.contains("Individual"));
+        pending(StationCatalogPlayerEvidence.evaluate(ID,5,SHA,good));pending(StationCatalogPlayerEvidence.evaluate(ID+"x",4,SHA,good));
+        pending(StationCatalogPlayerEvidence.evaluate(ID,4,SHA.replace('a','b'),good));pending(StationCatalogPlayerEvidence.evaluate(ID,4,"",good));
+        pending(StationCatalogPlayerEvidence.evaluate(ID,4,SHA.toUpperCase(),good));
+        pending(result(new StationCatalogPlayerEvidence.Evidence(ID,4,SHA,"research-only-not-verified-exact-content",new StationCatalogPlayerEvidence.Mode[]{mode("battle","simultaneous",4)})));
+        pending(result(evidence()));pending(result(evidence((StationCatalogPlayerEvidence.Mode)null)));
+        pending(result(evidence(mode("battle","unknown",4))));pending(result(evidence(mode("battle","single-player",1,2))));
+        pending(result(evidence(mode("battle","simultaneous",0,4))));pending(result(evidence(mode("battle","simultaneous",4,4))));
+        pending(result(evidence(mode("battle","simultaneous",4,2))));pending(result(evidence(mode("battle","simultaneous",17))));
+        pending(result(evidence(mode("battle","simultaneous",1))));pending(result(evidence(mode("battle","simultaneous",2),mode("battle","alternating",2))));
+        pending(result(evidence(new StationCatalogPlayerEvidence.Mode("battle","simultaneous",new int[]{4},new String[0]))));
+        pending(result(evidence(new StationCatalogPlayerEvidence.Mode("battle","simultaneous",new int[]{4},new String[]{""}))));
+        pending(result(evidence(mode("bad\nmode","simultaneous",4))));
+        yes(result(evidence(mode("normal","single-player",1))).compact.equals("1"));
+        for(int maximum=2;maximum<=16;maximum++) {
+            int[] counts=new int[maximum-1];for(int i=0;i<counts.length;i++)counts[i]=i+2;
+            StationCatalogPlayerEvidence.Result simultaneous=result(evidence(mode("battle","simultaneous",counts)));
+            yes(simultaneous.confirmed);yes(simultaneous.compact.equals(maximum+" sim."));
+            StationCatalogPlayerEvidence.Result alternating=result(evidence(mode("match","alternating",counts)));
+            yes(alternating.confirmed);yes(alternating.compact.equals(maximum+" alt."));
+        }
+        StationCatalogPlayerEvidence.Result gaps=result(evidence(mode("mode","simultaneous",2,4)));yes(gaps.detail.contains("2 ou 4"));yes(!gaps.detail.contains("3"));
+        StationCatalogPlayerEvidence.Result mixed=result(evidence(mode("sim","simultaneous",2),mode("alt","alternating",8)));yes(mixed.compact.equals("2 sim."));yes(mixed.detail.contains("8 jogadores"));
+        int[] mutable={2,4};String[] sources={"original-manual"};StationCatalogPlayerEvidence.Mode mode=new StationCatalogPlayerEvidence.Mode("battle","simultaneous",mutable,sources);mutable[1]=16;sources[0]="";
+        StationCatalogPlayerEvidence.Mode[] modes={mode};StationCatalogPlayerEvidence.Evidence safe=evidence(modes);modes[0]=null;yes(result(safe).compact.equals("4 sim."));
+        Map<String,StationCatalogPlayerEvidence.Result> map=new LinkedHashMap<>();map.put(ID,four);map.put("station_pending_game",StationCatalogPlayerEvidence.pending());publish(map,binding(ID,4,SHA),binding("station_pending_game",1,""));map.clear();
+        yes(label(ID).equals("4 sim."));yes(label("station_pending_game").equals("—"));yes(label("unknown").equals("—"));yes(label(null).equals("—"));
+        byte[] altered=StationCatalogPlayerEvidence.labelFor(ID);altered[0]='9';yes(label(ID).equals("4 sim."));
+        byte[] dash=StationCatalogPlayerEvidence.labelFor("unknown");dash[0]='x';yes(label("unknown").equals("—"));
+        StationCatalogPlayerEvidence.publish(null,null);yes(label(ID).equals("—"));
+        map.put(ID,four);publish(map,binding(ID,4,SHA));yes(label(ID).equals("4 sim."));
+        // A result cannot be attributed to another ID or signed binding even if a caller mixes maps.
+        map.put("station_different_game",four);publish(map,binding("station_different_game",4,SHA));yes(label("station_different_game").equals("—"));
+        publish(map,binding(ID,4,SHA));yes(label(ID).equals("4 sim."));
+        // A changed revision is permanently suppressed, including rollbacks and remove/reinsert.
+        publish(map,binding(ID,5,SHA));yes(label(ID).equals("—"));
+        publish(map);yes(label(ID).equals("—"));publish(map,binding(ID,4,SHA));yes(label(ID).equals("—"));
+        StationCatalogPlayerEvidence.Result current=StationCatalogPlayerEvidence.evaluate(ID,5,SHA,new StationCatalogPlayerEvidence.Evidence(ID,5,SHA,StationCatalogPlayerEvidence.VERIFIED,new StationCatalogPlayerEvidence.Mode[]{mode("battle","simultaneous",4)}));
+        map.put(ID,current);publish(map,binding(ID,5,SHA));yes(label(ID).equals("—"));
+        String fresh="station_fresh_game";StationCatalogPlayerEvidence.Result freshResult=StationCatalogPlayerEvidence.evaluate(fresh,1,SHA,new StationCatalogPlayerEvidence.Evidence(fresh,1,SHA,StationCatalogPlayerEvidence.VERIFIED,new StationCatalogPlayerEvidence.Mode[]{mode("battle","simultaneous",4)}));
+        map.clear();map.put(fresh,freshResult);publish(map,binding(fresh,1,SHA));yes(label(fresh).equals("4 sim."));
+        publish(map,binding(fresh,1,SHA.replace('a','b')));yes(label(fresh).equals("—"));publish(map,binding(fresh,1,SHA));yes(label(fresh).equals("—"));
+        String previouslyUnknown="station_unknown_before";map.clear();publish(map,binding(previouslyUnknown,1,""));
+        map.put(previouslyUnknown,StationCatalogPlayerEvidence.evaluate(previouslyUnknown,1,SHA,new StationCatalogPlayerEvidence.Evidence(previouslyUnknown,1,SHA,StationCatalogPlayerEvidence.VERIFIED,new StationCatalogPlayerEvidence.Mode[]{mode("battle","simultaneous",4)})));
+        publish(map,binding(previouslyUnknown,1,SHA));yes(label(previouslyUnknown).equals("—"));
+        int retained=historySize();publish(map,binding("bad",1,SHA));yes(historySize()==retained);
+        publish(map,binding("station_invalid_rev",0,SHA));yes(historySize()==retained);
+        publish(map,binding("station_invalid_hash",1,"ABC"));yes(historySize()==retained);
+        publish(map,binding("station_duplicate_id",1,SHA),binding("station_duplicate_id",1,SHA));yes(historySize()==retained);
+        publish(map,(StationCatalogPlayerEvidence.CatalogBinding)null);yes(historySize()==retained);
+        StationCatalogPlayerEvidence.CatalogBinding[] tooLarge=new StationCatalogPlayerEvidence.CatalogBinding[4097];StationCatalogPlayerEvidence.publish(tooLarge,map);yes(historySize()==retained);
+        // Atomic publication remains bounded and readable while two writers alternate valid snapshots.
+        final String concurrent="station_concurrent_game";
+        final Map<String,StationCatalogPlayerEvidence.Result> concurrentMap=new LinkedHashMap<>();concurrentMap.put(concurrent,StationCatalogPlayerEvidence.evaluate(concurrent,1,SHA,new StationCatalogPlayerEvidence.Evidence(concurrent,1,SHA,StationCatalogPlayerEvidence.VERIFIED,new StationCatalogPlayerEvidence.Mode[]{mode("battle","simultaneous",4)})));
+        final java.util.concurrent.atomic.AtomicBoolean failed=new java.util.concurrent.atomic.AtomicBoolean();
+        Runnable writer=()->{for(int i=0;i<1000;i++){publish(concurrentMap,binding(concurrent,1,SHA));String actual=label(concurrent);if(!actual.equals("4 sim.")&&!actual.equals("—"))failed.set(true);publish(concurrentMap);}};
+        Thread a=new Thread(writer),b=new Thread(writer);a.start();b.start();a.join();b.join();yes(!failed.get());
+        publish(concurrentMap,binding(concurrent,1,SHA));yes(label(concurrent).equals("4 sim."));
+        int remaining=StationCatalogPlayerEvidence.MAX_HISTORY-historySize(),number=0;
+        while(remaining>0){int n=Math.min(4096,remaining);StationCatalogPlayerEvidence.CatalogBinding[] batch=new StationCatalogPlayerEvidence.CatalogBinding[n];for(int i=0;i<n;i++)batch[i]=binding("station_history_"+(number++),1,"");StationCatalogPlayerEvidence.publish(batch,new LinkedHashMap<String,StationCatalogPlayerEvidence.Result>());remaining-=n;yes(historySize()<=StationCatalogPlayerEvidence.MAX_HISTORY);}
+        yes(historySize()==40000);publish(concurrentMap,binding(concurrent,1,SHA));yes(label(concurrent).equals("4 sim."));
+        publish(concurrentMap,binding("station_history_overflow",1,""));yes(historySize()==40000);yes(label(concurrent).equals("—"));
+        publish(concurrentMap,binding(concurrent,1,SHA));yes(label(concurrent).equals("—"));yes(historySize()==40000);
+        System.out.println("{\"checks\":"+checks+",\"concurrentPublications\":4000,\"concurrentReads\":2000,\"historyLimit\":40000,\"passed\":true}");
+    }
+}

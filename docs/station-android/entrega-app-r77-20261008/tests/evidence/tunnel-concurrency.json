@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-08T13:21:15.774348+00:00",
+  "sources": {
+    "StationMultiplayerTunnel.java": "c117815045ad93c6736d4618cf71c3e4226faace620054acecfd64e7eb393961",
+    "StationMultiplayerWire.java": "318e6daa0f0ce483c9c7458ee33f918085ad4f1d9c1f2e4319895b3df7dba3c0"
+  },
+  "templateSHA256": "f9ae036a83ae20841ad51e26cbcfeb787f9dff1247a2848fc39fefd8568bf685",
+  "recipeSHA256": "f63753f8197ce74e3508039c58c8efa8cce844d10af0f731dbbd396835d3d4e4",
+  "metrics": {
+    "checks": 148,
+    "failures": 0,
+    "callbacksUnderGate": 0,
+    "obsoleteRemoteFatals": 0
+  },
+  "passed": true,
+  "realCode": [
+    "Complete StationMultiplayerTunnel and StationMultiplayerWire without edits"
+  ],
+  "models": [
+    "WebSocket library IO/TLS boundary is stubbed; Remote callbacks and concurrent pump execute unchanged"
+  ],
+  "limits": [
+    "No real sockets, Android, C# or gameplay",
+    "Detects callbacks owning gate via Thread.holdsLock; does not deliberately leave deadlocked processes"
+  ]
+}

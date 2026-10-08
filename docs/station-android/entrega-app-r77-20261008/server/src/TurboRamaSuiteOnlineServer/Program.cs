@@ -1,0 +1,496 @@
+using System.Diagnostics;
+using System.Security.Cryptography;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.HttpOverrides;
+using Npgsql;
+using TurboRamaSuiteOnlineServer;
+
+var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.ConfigureKestrel(options => options.Limits.MaxRequestBodySize = Protocol.MaximumBodyBytes);
+builder.Services.Configure<ForwardedHeadersOptions>(SuiteTrustedProxyPolicy.Configure);
+var stationIsolated=builder.Configuration.GetValue("Station:IsolatedDatabase",false);
+var enabled = !stationIsolated && builder.Configuration.GetValue("Suite:Enabled", false);
+var emulationStationEnabled = enabled &&
+    builder.Configuration.GetValue("Suite:EmulationStation:Enabled", false);
+var stationEnabled = (enabled || stationIsolated) &&
+    builder.Configuration.GetValue("Station:Enabled", false);
+var contentRequested = enabled && builder.Configuration.GetValue("Suite:Content:Enabled", false);
+var connection = stationIsolated ? StationIsolation.Connection(builder.Configuration["Station:DatabaseConnectionFile"]
+    ?? throw new InvalidOperationException("Station database credential file is required."))
+    : builder.Configuration.GetConnectionString("SuiteStore");
+var pepper = stationIsolated ? null : ReadProtected("Suite:ActivationPepper", "Suite:ActivationPepperFile");
+var signingPem = stationIsolated ? null : ReadProtected("Suite:OnlineAssertionPrivateKeyPem", "Suite:OnlineAssertionPrivateKeyPemFile");
+var stationPepper = stationEnabled
+    ? ReadProtected("Station:ActivationPepper", "Station:ActivationPepperFile") : null;
+var stationSigningPem = stationEnabled
+    ? ReadProtected("Station:AssertionPrivateKeyPem", "Station:AssertionPrivateKeyPemFile") : null;
+var inventoryEnabled = enabled && builder.Configuration.GetValue("Suite:Inventory:Enabled", false);
+var networkInventoryEnabled = inventoryEnabled && builder.Configuration.GetValue("Suite:NetworkInventory:Enabled", false);
+var inventoryEncryptionKey = inventoryEnabled
+    ? ReadProtected("Suite:Inventory:EncryptionKey", "Suite:Inventory:EncryptionKeyFile")
+    : null;
+string? contentConnection = null;
+string? contentSigningPem = null;
+string? contentGrantPepper = null;
+Uri? gatewayPepperProofUri = null;
+string? contentAssertionKeyId = null;
+var contentStartupStage = "not-started";
+if (enabled && (string.IsNullOrWhiteSpace(connection) || string.IsNullOrWhiteSpace(pepper) || string.IsNullOrWhiteSpace(signingPem)))
+    throw new InvalidOperationException("Suite is enabled but protected dependencies are unavailable.");
+if (stationEnabled)
+{
+    if (string.IsNullOrWhiteSpace(stationPepper) ||
+        string.IsNullOrWhiteSpace(stationSigningPem) ||
+        !stationIsolated && (stationPepper == pepper || SamePublicKey(signingPem!, stationSigningPem)))
+        throw new InvalidOperationException("Station keys must exist and be independent of Suite keys.");
+    var pepperBytes = Convert.FromBase64String(stationPepper);
+    if (pepperBytes.Length < 32)
+        throw new InvalidOperationException("Station activation pepper is too short.");
+    CryptographicOperations.ZeroMemory(pepperBytes);
+    if(stationIsolated)StationIsolation.IndependentSecrets(builder.Configuration,stationPepper,
+        stationSigningPem,builder.Configuration["Station:DownloadKeyFile"]);
+}
+if (inventoryEnabled && string.IsNullOrWhiteSpace(inventoryEncryptionKey))
+    throw new InvalidOperationException("Suite inventory is enabled but its protected encryption key is unavailable.");
+var contentAvailable = contentRequested && ContentStartupIsolation.TryInitialize(() =>
+{
+    contentStartupStage = "protected-inputs";
+    contentConnection = ReadContentProtected("ConnectionStrings:SuiteContentApiStore",
+        "ConnectionStrings:SuiteContentApiStoreFile", 4096);
+    contentSigningPem = ReadContentProtected("Suite:ContentAssertionPrivateKeyPem",
+        "Suite:ContentAssertionPrivateKeyPemFile", 32 * 1024);
+    contentGrantPepper = ReadContentProtected("Suite:ContentGrantTokenPepper",
+        "Suite:ContentGrantTokenPepperFile", 1024, "content-grant-token-pepper");
+    var gatewayPepperProofUriText =
+        builder.Configuration["Suite:Content:GatewayGrantPepperProofUri"];
+    if (string.IsNullOrWhiteSpace(contentConnection) ||
+        string.IsNullOrWhiteSpace(contentSigningPem) ||
+        string.IsNullOrWhiteSpace(contentGrantPepper) ||
+        string.IsNullOrWhiteSpace(gatewayPepperProofUriText) ||
+        !Uri.TryCreate(gatewayPepperProofUriText, UriKind.Absolute,
+            out var parsedProofUri))
+        throw new InvalidOperationException("Content dependencies are unavailable.");
+    contentStartupStage = "connection-role";
+    contentConnection = ContentConnectionPolicy.RequireRole(contentConnection,
+        "turborama-suite-content-api");
+    gatewayPepperProofUri = ContentGatewayPepperVerifier.RequireLoopbackProofUri(
+        parsedProofUri);
+    contentStartupStage = "assertion-key";
+    using var validationRsa = RSA.Create();
+    validationRsa.ImportFromPem(contentSigningPem);
+    using var validationSigner = new RsaContentAssertionSigner(validationRsa);
+    contentAssertionKeyId = validationSigner.KeyId;
+    ContentAssertionKeyPolicy.RequireExpectedKeyId(contentAssertionKeyId,
+        builder.Configuration["Suite:ContentAssertionExpectedKeyId"],
+        builder.Environment.IsProduction());
+    contentStartupStage = "pepper";
+    using var validationHasher = new ContentGrantTokenHasher(contentGrantPepper);
+    if (SamePublicKey(signingPem!, contentSigningPem))
+        throw new InvalidOperationException(
+            "Suite online and content assertion keys must be independent.");
+    contentStartupStage = "complete";
+});
+
+builder.Services.AddSingleton(TimeProvider.System);
+builder.Services.AddHttpClient<TurboRamaWhatsAppNotifier>();
+builder.Services.AddSingleton<SuiteRateLimiter>();
+if (enabled || stationEnabled)
+{
+    builder.Services.AddSingleton(NpgsqlDataSource.Create(SuiteDatabasePoolPolicy.ApplyDefaults(connection!)));
+    if(enabled)
+    {
+    builder.Services.AddSingleton<ISuiteStore, PostgresSuiteStore>();
+    builder.Services.AddSingleton<IAssertionSigner>(_ => { var rsa = RSA.Create(); rsa.ImportFromPem(signingPem); return new RsaAssertionSigner(rsa); });
+    builder.Services.AddSingleton(sp => new SuiteService(sp.GetRequiredService<ISuiteStore>(), sp.GetRequiredService<IAssertionSigner>(), sp.GetRequiredService<TimeProvider>(), pepper!));
+    }
+    if (stationEnabled)
+    {
+        builder.Services.AddHttpContextAccessor();
+        builder.Services.AddSingleton<StationRequestProof>();
+        builder.Services.AddSingleton(sp => new StationAttestationStatus(new HttpClient(
+            new SocketsHttpHandler { AllowAutoRedirect = false, PooledConnectionLifetime = TimeSpan.FromMinutes(5) }),
+            sp.GetRequiredService<TimeProvider>()));
+        builder.Services.AddSingleton<IStationAttestationStatus>(sp => sp.GetRequiredService<StationAttestationStatus>());
+        builder.Services.AddHostedService(sp => sp.GetRequiredService<StationAttestationStatus>());
+        builder.Services.AddSingleton<StationAttestation>();
+        builder.Services.AddSingleton(sp => new StationSecurityPolicy(sp.GetRequiredService<StationAttestation>(),
+            builder.Configuration.GetValue("Station:Security:RequireVerifiedApp", false)));
+        StationLibrary? stationLibrary = null;
+        StationGrantCipher? stationGrants = null;
+        var libraryPath = builder.Configuration["Station:LibraryIndexFile"];
+        var verifyLibraryContent = builder.Configuration.GetValue("Station:LibraryVerifyContentOnLoad", true);
+        stationLibrary = StationLibrary.TryLoad(libraryPath, verifyContent:verifyLibraryContent);
+        StationLibraryMonitor? stationMonitor = null;
+        if (stationLibrary is not null && builder.Configuration.GetValue("Station:LibraryAutoReload", false))
+        {
+            stationMonitor = new StationLibraryMonitor(libraryPath!, stationLibrary, verifyLibraryContent);
+            builder.Services.AddSingleton(stationMonitor);
+            builder.Services.AddHostedService(sp => sp.GetRequiredService<StationLibraryMonitor>());
+        }
+        var downloadKeyFile = builder.Configuration["Station:DownloadKeyFile"];
+        if (!string.IsNullOrWhiteSpace(downloadKeyFile) && File.Exists(downloadKeyFile))
+        {
+            var stationPepperFile = builder.Configuration["Station:ActivationPepperFile"];
+            var suitePepperFile = builder.Configuration["Suite:ActivationPepperFile"];
+            if (string.Equals(downloadKeyFile, stationPepperFile, StringComparison.Ordinal) ||
+                string.Equals(downloadKeyFile, suitePepperFile, StringComparison.Ordinal))
+                throw new InvalidOperationException(
+                    "Station download key must be a dedicated file.");
+            var suitePepperBytes = DecodeSecretBytes(pepper);
+            var stationPepperBytes = DecodeSecretBytes(stationPepper);
+            try
+            {
+                stationGrants = StationGrantCipher.Load(downloadKeyFile, suitePepperBytes,
+                    stationPepperBytes);
+            }
+            finally
+            {
+                CryptographicOperations.ZeroMemory(suitePepperBytes);
+                CryptographicOperations.ZeroMemory(stationPepperBytes);
+            }
+        }
+        builder.AddStationOnline(stationLibrary, stationMonitor);
+        builder.Services.AddSingleton(sp=>new PostgresStationStore(sp.GetRequiredService<NpgsqlDataSource>(),stationIsolated));
+        builder.Services.AddSingleton(_ => new StationResponseSigner(stationSigningPem!));
+        builder.Services.AddSingleton(sp => new StationService(
+            sp.GetRequiredService<PostgresStationStore>(),
+            sp.GetRequiredService<StationResponseSigner>(),
+            stationPepper!, stationLibrary, stationGrants, stationMonitor,
+            sp.GetRequiredService<StationSecurityPolicy>(), sp.GetRequiredService<IHttpContextAccessor>()));
+    }
+    if (emulationStationEnabled)
+    {
+        builder.Services.AddSingleton<IEmulationStationStore, PostgresEmulationStationStore>();
+        builder.Services.AddSingleton<EmulationStationService>();
+        builder.Services.AddSingleton<ISharedEmulationStationStore, PostgresSharedEmulationStationStore>();
+        builder.Services.AddSingleton<SharedEmulationStationService>();
+    }
+    if (inventoryEnabled)
+    {
+        builder.Services.AddSingleton(new InventorySensitiveProtector(inventoryEncryptionKey!));
+        builder.Services.AddSingleton<DeviceInventoryService>();
+        if (networkInventoryEnabled)
+        {
+            builder.Services.AddSingleton(new NetworkInventoryOptions(
+                Math.Clamp(builder.Configuration.GetValue("Suite:NetworkInventory:RetentionDays", 30), 1, 365)));
+            builder.Services.AddSingleton<NetworkInventoryService>();
+            builder.Services.AddHostedService<NetworkInventoryRetentionWorker>();
+        }
+    }
+    if (contentAvailable)
+    {
+        builder.Services.AddSingleton(_ => new PostgresContentStore(contentConnection!));
+        builder.Services.AddSingleton<IContentControlStore>(sp =>
+            sp.GetRequiredService<PostgresContentStore>());
+        builder.Services.AddSingleton<IContentAssertionSigner>(_ =>
+        {
+            var rsa = RSA.Create();
+            rsa.ImportFromPem(contentSigningPem);
+            return new RsaContentAssertionSigner(rsa);
+        });
+        builder.Services.AddSingleton(_ => new ContentGrantTokenHasher(contentGrantPepper!));
+        builder.Services.AddSingleton<IContentGatewayPepperVerifier>(sp =>
+            new ContentGatewayPepperVerifier(gatewayPepperProofUri!,
+                sp.GetRequiredService<ContentGrantTokenHasher>(),
+                sp.GetRequiredService<TimeProvider>()));
+        builder.Services.AddSingleton(sp => new ContentService(
+            sp.GetRequiredService<ISuiteStore>(),
+            sp.GetRequiredService<IContentControlStore>(),
+            sp.GetRequiredService<IContentAssertionSigner>(),
+            sp.GetRequiredService<ContentGrantTokenHasher>(),
+            sp.GetRequiredService<IContentGatewayPepperVerifier>(),
+            sp.GetRequiredService<TimeProvider>()));
+    }
+}
+var app = builder.Build();
+if (contentRequested && !contentAvailable)
+    app.Logger.LogError(
+        "Suite content startup validation failed at {Stage}; licensing v1 remains available and content is fail-closed.",
+        contentStartupStage);
+app.UseForwardedHeaders();
+app.Use(EmulationStationScope.Guard);
+app.Use(async (context, next) =>
+{
+    var correlation = context.Request.Headers["X-Correlation-ID"].ToString();
+    if (correlation.Length is < 8 or > 64 || correlation.Any(c => !(char.IsAsciiLetterOrDigit(c) || c is '-' or '_'))) correlation = ActivityTraceId.CreateRandom().ToString();
+    context.Response.Headers["X-Correlation-ID"] = correlation;
+    context.Response.Headers.CacheControl = "no-store";
+    await next();
+});
+if (stationEnabled) app.Use(StationRequestProof.Guard);
+app.MapGet("/health", () => Results.Json(new { status = "ok", service = "turborama-suite-api" }));
+ExtractionNotificationEndpoints.Map(app,
+    enabled && builder.Configuration.GetValue("Suite:ExtractionNotifications:Enabled", false));
+DownloadNotificationEndpoints.Map(app,
+    enabled && builder.Configuration.GetValue("Suite:ExtractionNotifications:Enabled", false));
+app.MapGet("/ready", () => enabled || stationEnabled ? Results.Json(new { status = "ready" }) : Results.Json(new ErrorResponse(1, "SUITE_DISABLED", "Suite is disabled."), statusCode: 503));
+app.MapGet("/ready/station", async (HttpContext context) =>
+{
+    if (!stationEnabled)
+        return Results.Json(new ErrorResponse(1, "STATION_DISABLED",
+            "Station is disabled."), statusCode: 503);
+    try
+    {
+        using var timeout = CancellationTokenSource.CreateLinkedTokenSource(
+            context.RequestAborted);
+        timeout.CancelAfter(TimeSpan.FromSeconds(5));
+        var migrationSchema = stationIsolated ? "station_api" : "suite";
+        await using var command = context.RequestServices
+            .GetRequiredService<NpgsqlDataSource>().CreateCommand($"""
+            SELECT EXISTS(SELECT 1 FROM {migrationSchema}.schema_migrations
+              WHERE version='028_station_android')
+              AND EXISTS(SELECT 1 FROM {migrationSchema}.schema_migrations
+              WHERE version='029_station_download_grants')
+              AND EXISTS(SELECT 1 FROM {migrationSchema}.schema_migrations
+              WHERE version='032_station_request_proof')
+            """);
+        var ready = (bool?)await command.ExecuteScalarAsync(timeout.Token) == true;
+        return ready ? Results.Json(new { status = "ready" }) :
+            Results.Json(new ErrorResponse(1, "STATION_NOT_READY",
+                "Station migration is missing."), statusCode: 503);
+    }
+    catch (Exception)
+    {
+        return Results.Json(new ErrorResponse(1, "STATION_NOT_READY",
+            "Station database is unavailable."), statusCode: 503);
+    }
+});
+app.MapPost("/internal/turborama/whatsapp/connection", async (HttpContext context, TurboRamaWhatsAppNotifier notifier, CancellationToken ct) =>
+{
+    var expected = Environment.GetEnvironmentVariable("TURBORAMA_INTERNAL_TOKEN") ?? "";
+    var supplied = context.Request.Headers["X-TurboRama-Internal-Token"].ToString();
+    if (expected.Length == 0 || !CryptographicOperations.FixedTimeEquals(System.Text.Encoding.UTF8.GetBytes(expected), System.Text.Encoding.UTF8.GetBytes(supplied))) return Results.Unauthorized();
+    var body = await context.Request.ReadFromJsonAsync<TurboRamaConnectionNotice>(cancellationToken: ct);
+    if (body is null || string.IsNullOrWhiteSpace(body.LicenseId) || string.IsNullOrWhiteSpace(body.Phone)) return Results.BadRequest();
+    var sent = await notifier.NotifyConnectionAsync(body.Phone, body.LicenseId, body.DeviceId ?? "unknown", ct);
+    return Results.Json(new { accepted = sent }, statusCode: sent ? 202 : 503);
+});
+app.MapGet("/ready/content", async (HttpContext context) =>
+{
+    if (!contentAvailable)
+        return ContentUnavailable();
+    try
+    {
+        using var timeout = CancellationTokenSource.CreateLinkedTokenSource(
+            context.RequestAborted);
+        timeout.CancelAfter(TimeSpan.FromSeconds(5));
+        await context.RequestServices.GetRequiredService<IContentGatewayPepperVerifier>()
+            .RequireMatchingAsync(timeout.Token);
+        var ready = await context.RequestServices.GetRequiredService<IContentControlStore>()
+            .IsProductionCatalogReadyAsync(timeout.Token);
+        return ready
+            ? Results.Json(new
+            {
+                status = "ready",
+                expectedItemCount = ContentProtocol.ExpectedProductionItemCount,
+                contentAssertionKeyValidated = true,
+                contentAssertionKeyId
+            }, StrictJson.Options)
+            : Results.Json(new ErrorResponse(1, "CONTENT_NOT_READY",
+                "The production content catalog is not ready."), StrictJson.Options,
+                statusCode: 503);
+    }
+    catch (OperationCanceledException)
+    {
+        return Results.Json(new ErrorResponse(1, "CONTENT_NOT_READY",
+            "The production content catalog is not ready."), StrictJson.Options,
+            statusCode: 503);
+    }
+    catch (Exception)
+    {
+        // Content datastore/proof failures are logged without exception text or secret paths.
+        app.Logger.LogError(
+            "Suite content readiness failed. Correlation {CorrelationId}",
+            context.Response.Headers["X-Correlation-ID"].ToString());
+        return Results.Json(new ErrorResponse(1, "CONTENT_NOT_READY",
+            "The production content catalog is not ready."), StrictJson.Options,
+            statusCode: 503);
+    }
+});
+Map<ActivationChallengeRequest>("/v1/suite/activations/challenge", (s, r, c) => s.ActivationChallengeAsync(r, c));
+Map<ActivationProof>("/v1/suite/activations/complete", (s, r, c) => s.CompleteActivationAsync(r, c));
+Map<ChallengeRequest>("/v1/suite/challenges", ChallengeAsync);
+Map<SessionProof>("/v1/suite/sessions", (s, r, c) => s.SessionAsync(r, c));
+app.MapEmulationStation(emulationStationEnabled);
+app.MapStation(stationEnabled);
+app.MapStationOnline(stationEnabled && builder.Configuration.GetValue("Station:Online:Enabled", false));
+app.MapNetworkInventory(networkInventoryEnabled);
+if (inventoryEnabled)
+{
+    MapInventory<SuiteDeviceInventoryChallengeRequestV1>("/v1/suite/devices/inventory/challenge",
+        SuiteDeviceInventoryProtocol.SerializeChallengeRequest,
+        (s,r,id,c)=>s.ChallengeAsync(r,id,c));
+    MapInventory<SuiteDeviceInventoryProofV1>("/v1/suite/devices/inventory",
+        SuiteDeviceInventoryProtocol.SerializeProof,
+        (s,r,id,c)=>s.AcceptAsync(r,id,c));
+}
+MapContent<CatalogPageProof>("/v1/suite-content/catalog/current",
+    (service, request, _, token) => service.CatalogAsync(request, token));
+MapContent<DownloadAuthorizationProof>("/v1/suite-content/downloads/authorize",
+    (service, request, correlationId, token) =>
+        service.AuthorizeDownloadAsync(request, correlationId, token));
+app.Run();
+
+Task<SignedAssertionEnvelope> ChallengeAsync(
+    SuiteService service,
+    ChallengeRequest request,
+    CancellationToken cancellationToken)
+{
+    if (!contentAvailable && ContentProtocol.IsContentAction(request.Action))
+        throw new SuiteException(503,
+            contentRequested ? "CONTENT_NOT_READY" : "CONTENT_DISABLED",
+            contentRequested ? "Content access is not ready." : "Content access is disabled.");
+    return service.ChallengeAsync(request, cancellationToken);
+}
+
+string? ReadProtected(string valueKey, string fileKey)
+{
+    var direct = builder.Configuration[valueKey];
+    if (!string.IsNullOrWhiteSpace(direct)) return direct;
+    var path = builder.Configuration[fileKey];
+    return string.IsNullOrWhiteSpace(path) ? null : File.ReadAllText(path).Trim();
+}
+
+static byte[] DecodeSecretBytes(string? value)
+{
+    if (string.IsNullOrWhiteSpace(value)) return [];
+    try { return Convert.FromBase64String(value); }
+    catch (FormatException) { return System.Text.Encoding.UTF8.GetBytes(value); }
+}
+
+string? ReadContentProtected(
+    string valueKey,
+    string fileKey,
+    long maximumBytes,
+    string? systemdCredentialName = null)
+{
+    var direct = builder.Configuration[valueKey];
+    if (!string.IsNullOrWhiteSpace(direct))
+    {
+        if (!builder.Environment.IsDevelopment())
+            throw new InvalidOperationException(
+                "Direct content secrets are allowed only in Development.");
+        return direct.Trim();
+    }
+    var path = builder.Configuration[fileKey];
+    if (string.IsNullOrWhiteSpace(path) && systemdCredentialName is not null)
+    {
+        var credentialDirectory = Environment.GetEnvironmentVariable(
+            "CREDENTIALS_DIRECTORY");
+        if (!string.IsNullOrWhiteSpace(credentialDirectory) &&
+            Path.IsPathFullyQualified(credentialDirectory))
+            path = Path.Combine(credentialDirectory, systemdCredentialName);
+    }
+    return string.IsNullOrWhiteSpace(path)
+        ? null
+        : ContentProtectedSecret.ReadFile(path, maximumBytes);
+}
+
+static bool SamePublicKey(string firstPem, string secondPem)
+{
+    using var first = RSA.Create();
+    using var second = RSA.Create();
+    first.ImportFromPem(firstPem);
+    second.ImportFromPem(secondPem);
+    var firstSpki = first.ExportSubjectPublicKeyInfo();
+    var secondSpki = second.ExportSubjectPublicKeyInfo();
+    try
+    {
+        return firstSpki.Length == secondSpki.Length &&
+               CryptographicOperations.FixedTimeEquals(firstSpki, secondSpki);
+    }
+    finally
+    {
+        CryptographicOperations.ZeroMemory(firstSpki);
+        CryptographicOperations.ZeroMemory(secondSpki);
+    }
+}
+
+void Map<T>(string route, Func<SuiteService, T, CancellationToken, Task<SignedAssertionEnvelope>> action) where T : class
+    => SuiteSessionEndpoints.Map(app, enabled, emulationStationEnabled, route, action);
+
+void MapContent<T>(
+    string route,
+    Func<ContentService, T, string, CancellationToken, Task<SignedAssertionEnvelope>> action)
+    where T : class
+{
+    app.MapPost(route, async (HttpContext context) =>
+    {
+        if (!contentAvailable)
+            return ContentUnavailable();
+        try
+        {
+            using var memory = new MemoryStream();
+            await context.Request.Body.CopyToAsync(memory, context.RequestAborted);
+            var request = StrictJson.Parse<T>(memory.ToArray());
+            var limiter = context.RequestServices.GetRequiredService<SuiteRateLimiter>();
+            if (!limiter.Allow(context.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+                    route, request))
+                return Results.Json(new ErrorResponse(1, "RATE_LIMITED",
+                    "Too many requests."), StrictJson.Options, statusCode: 429);
+            using var timeout = CancellationTokenSource.CreateLinkedTokenSource(
+                context.RequestAborted);
+            timeout.CancelAfter(TimeSpan.FromSeconds(10));
+            var correlationId = context.Response.Headers["X-Correlation-ID"].ToString();
+            var response = await action(
+                context.RequestServices.GetRequiredService<ContentService>(), request,
+                correlationId, timeout.Token);
+            return Results.Json(response, StrictJson.Options,
+                contentType: "application/json; charset=utf-8");
+        }
+        catch (SuiteException ex)
+        {
+            return Results.Json(new ErrorResponse(1, ex.Code, ex.Message),
+                StrictJson.Options, statusCode: ex.StatusCode);
+        }
+        catch (OperationCanceledException) when (context.RequestAborted.IsCancellationRequested)
+        {
+            return Results.StatusCode(499);
+        }
+        catch (OperationCanceledException)
+        {
+            return Results.Json(new ErrorResponse(1, "REQUEST_TIMEOUT",
+                "Request timed out."), StrictJson.Options, statusCode: 504);
+        }
+        catch (Exception)
+        {
+            // Content failures may carry database/private-origin detail; keep the log sanitized.
+            app.Logger.LogError(
+                "Suite content request failed. Correlation {CorrelationId}",
+                context.Response.Headers["X-Correlation-ID"].ToString());
+            return Results.Json(new ErrorResponse(1, "INTERNAL_ERROR",
+                "Request could not be completed."), StrictJson.Options, statusCode: 500);
+        }
+    }).DisableAntiforgery();
+}
+
+void MapInventory<T>(string route, Func<T,byte[]> canonical,
+    Func<DeviceInventoryService,T,string,CancellationToken,Task<SignedAssertionEnvelope>> action) where T:class
+{
+    app.MapPost(route,async (HttpContext context)=>
+    {
+        try
+        {
+            using var memory=new MemoryStream(); await context.Request.Body.CopyToAsync(memory,context.RequestAborted);
+            var bytes=memory.ToArray(); var request=StrictJson.Parse<T>(bytes); var expected=canonical(request);
+            try { if(!bytes.AsSpan().SequenceEqual(expected))throw new SuiteException(400,"CONTRACT_NOT_CANONICAL","Request JSON is not canonical."); }
+            finally { CryptographicOperations.ZeroMemory(expected); }
+            var limiter=context.RequestServices.GetRequiredService<SuiteRateLimiter>();
+            if(!limiter.Allow(context.Connection.RemoteIpAddress?.ToString()??"unknown",route,request))return Results.Json(new ErrorResponse(1,"RATE_LIMITED","Too many requests."),StrictJson.Options,statusCode:429);
+            using var timeout=CancellationTokenSource.CreateLinkedTokenSource(context.RequestAborted);timeout.CancelAfter(TimeSpan.FromSeconds(10));
+            var correlation=context.Response.Headers["X-Correlation-ID"].ToString();
+            return Results.Json(await action(context.RequestServices.GetRequiredService<DeviceInventoryService>(),request,correlation,timeout.Token),StrictJson.Options,contentType:"application/json; charset=utf-8");
+        }
+        catch(SuiteException ex){return Results.Json(new ErrorResponse(1,ex.Code,ex.Message),StrictJson.Options,statusCode:ex.StatusCode);}
+        catch(OperationCanceledException) when(context.RequestAborted.IsCancellationRequested){return Results.StatusCode(499);}
+        catch(OperationCanceledException){return Results.Json(new ErrorResponse(1,"REQUEST_TIMEOUT","Request timed out."),StrictJson.Options,statusCode:504);}
+        catch(Exception){app.Logger.LogError("Suite inventory request failed. Correlation {CorrelationId}",context.Response.Headers["X-Correlation-ID"].ToString());return Results.Json(new ErrorResponse(1,"INTERNAL_ERROR","Request could not be completed."),StrictJson.Options,statusCode:500);}
+    }).DisableAntiforgery();
+}
+
+IResult ContentUnavailable() => Results.Json(new ErrorResponse(1,
+        contentRequested ? "CONTENT_NOT_READY" : "CONTENT_DISABLED",
+        contentRequested ? "Content access is not ready." : "Content access is disabled."),
+    StrictJson.Options, statusCode: 503);
+
+public partial class Program;

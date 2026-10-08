@@ -1,0 +1,10 @@
+{
+  "StationCatalog.java": {
+    "baseSHA256": "1a5f2eb81e48857d8ff8e4c3e67a6eede8358bf494c4351770205613fd56b572",
+    "sha256": "f18224fece1ba81f72969e9d6280d2093c89ffa230c74216abdd5de1615c82a2"
+  },
+  "StationFrontend.java": {
+    "baseSHA256": "f9219d5ef4158cae16ce6d046e441b2b08e396826dc709a6adfd7ffa0d5d3af9",
+    "sha256": "131e723806b8ddb7048a0a182733961fd2498a405103575319fd73cdfe946622"
+  }
+}

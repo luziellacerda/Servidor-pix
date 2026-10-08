@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-08T13:06:35.776993+00:00",
+  "passed": true,
+  "metrics": {
+    "checks": 141,
+    "passed": true
+  },
+  "sourceSHA256": "f3208d7440ef3159cb27ab0b52288b7d602d5619366c0a4fc403c604d2285650",
+  "testSHA256": "d34db707eaf4194cd3a3c21938b14ea53b878f80b02f69ff2b806c8d09da054d",
+  "recipeSHA256": "2d6dbf92be2915e86f9ac6d10acbaf4d6a277047c5aa523f22002e0ee5aab591",
+  "scope": "Actual pure Java display evidence helper. No source claims or game-content qualification."
+}

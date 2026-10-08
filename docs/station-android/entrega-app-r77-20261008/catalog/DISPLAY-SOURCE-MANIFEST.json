@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "scope": "Exact-content player display binding only; online approvals remain separate",
+  "historyLimit": 40000,
+  "recordsApproved": 0,
+  "sources": {
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalog.java": "f18224fece1ba81f72969e9d6280d2093c89ffa230c74216abdd5de1615c82a2",
+    "java/client/src/java/org/emulationstation/frontend/station/StationFrontend.java": "131e723806b8ddb7048a0a182733961fd2498a405103575319fd73cdfe946622",
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalogPlayerEvidence.java": "828af47362433d9270fc4b3e3636365dd8ced2f2a65b3ab4f6734d6fb878ccaf",
+    "java/client/src/java/org/emulationstation/frontend/station/StationCatalogPlayerEvidenceLoader.java": "e7f291d3f85e402a0cd1c8acc1115854358e449f3bd458e1c088120b8174cbc0",
+    "assets/station-catalog/player-evidence-v1.json": "d0210c6211aa7ebfe77ce2973b3297e5b7d1c028c8f1d23d613ab21892716acb",
+    "recipes/refine_catalog_java.py": "5ae15b234dac728d4e3d908282eb9754bfa988cb83f65fd5f9aa6bb6b4a81b46",
+    "tests/StationCatalogPlayerEvidenceTest.java.in": "3694d7547dd8ec2d275b78c0e8bd458dd438365d136aafaec89622291d25a7db",
+    "tests/run_catalog_evidence_tests.py": "2d6dbf92be2915e86f9ac6d10acbaf4d6a277047c5aa523f22002e0ee5aab591"
+  }
+}

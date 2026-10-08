@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": 227,
+  "scope": "pure exact human-departure identity and acknowledgement; no Android/network gameplay",
+  "utc": "2026-10-08T13:28:40.482065+00:00",
+  "sourceHashes": {
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomLeaveIntent.java": "28f776b5f3130fcd0910f3a9b4b649b93fc0a3ece5466f229a4d703c982d99fc",
+    "tests/StationRoomLeaveIntentTest.java": "49da714b3a58a5e2af9ab430fd60cc3aaad5c41f14b88d3f02b0aff359e4590b",
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java": "2303619414a0ab4bc8f46460a858acc1fa97c9ae0f65f8192deecfcba708c71c",
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationPresence.java": "1328f2353c6bde0d6ffde7d861511eda15af861f01dc471d7de16bc813ded83c"
+  },
+  "apkBuilt": false,
+  "installed": false
+}

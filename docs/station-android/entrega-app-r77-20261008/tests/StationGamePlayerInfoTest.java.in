@@ -1,0 +1,59 @@
+package org.emulationstation.frontend.netplay;
+import java.util.*;
+
+public final class StationGamePlayerInfoTest {
+    private static int checks;
+    private static void check(boolean ok,String message){checks++;if(!ok)throw new AssertionError(message);}
+    private static StationGamePlayerInfo profile(int[] counts,String mode){return StationGamePlayerInfo.fromVerifiedProfile(true,counts[counts.length-1],counts,mode,"snes-multitap-port2-v1");}
+    private static StationGamePlayerInfo.Participant person(int slot){return new StationGamePlayerInfo.Participant(slot,"peer"+slot,"Pessoa "+slot,slot%2==0,slot==1);}
+    private static void pending(StationGamePlayerInfo info){check(!info.onlineApproved,"pending not approved");check(!info.permits(2)&&!info.permits(3)&&!info.permits(4),"pending no seats");check(info.capacityLabel.equals("Jogadores online a confirmar"),"no guessed default");}
+    public static void main(String[] args){
+        pending(StationGamePlayerInfo.pending());
+        pending(StationGamePlayerInfo.fromVerifiedProfile(false,4,new int[]{2,3,4},"simultaneous","snes-multitap-port2-v1"));
+        for(int[] counts:new int[][]{{},{1},{3,2},{2,2},{2,5},{2}})
+            pending(StationGamePlayerInfo.fromVerifiedProfile(true,4,counts,"simultaneous","snes-multitap-port2-v1"));
+        pending(StationGamePlayerInfo.fromVerifiedProfile(true,8,new int[]{2,4,8},"simultaneous","megadrive-sega-teamplayer-v1"));
+        pending(StationGamePlayerInfo.fromVerifiedProfile(true,4,new int[]{2,4},"simultaneous","standard-2p-v1"));
+        pending(StationGamePlayerInfo.fromVerifiedProfile(true,2,new int[]{2},"simultaneous","future-controller"));
+        StationGamePlayerInfo single=StationGamePlayerInfo.fromVerifiedProfile(true,1,new int[0],"single-player","standard-1p-v1");
+        check(single.singlePlayerConfirmed&&!single.onlineApproved,"single player classification");check(single.capacityLabel.equals("1 jogador"),"single player label");
+        check(!single.forRoom(2,true,new StationGamePlayerInfo.Participant[]{person(1)}).confirmed,"single player never has seats");
+        StationGamePlayerInfo exact=profile(new int[]{2,4},"simultaneous");
+        check(exact.capacityLabel.equals("Online: 2 ou 4 jogadores"),"noncontiguous counts exact");check(!exact.permits(3),"three not inferred");
+        check(exact.modeLabel.equals("Simultâneo")&&exact.modeConfirmed,"confirmed simultaneous");
+        int[] input={2,3,4};StationGamePlayerInfo copied=profile(input,"alternating");input[0]=4;
+        int[] output=copied.allowedPlayerCounts();output[0]=4;check(copied.permits(2),"both arrays defensively copied");
+        check(copied.capacityLabel.equals("Online: 2, 3 ou 4 jogadores"),"all approved counts shown");
+        check(copied.modeLabel.equals("Alternado")&&copied.participationLabel.equals("Um jogador por vez"),"confirmed alternating");
+        for(String controller:new String[]{"standard-2p-v1","snes-multitap-port2-v1","megadrive-sega-teamplayer-v1","megadrive-ea-4way-v1"}){
+            StationGamePlayerInfo info=StationGamePlayerInfo.fromVerifiedProfile(true,2,new int[]{2},null,controller);
+            check(info.onlineApproved&&!info.modeConfirmed,"controller does not infer simultaneous");check(info.participationLabel.contains("a confirmar"),"unknown mode honest");check(!info.controlsLabel.contains("-v1"),"human control label");
+        }
+        check(profile(new int[]{4},"battle-single").modeLabel.equals("Batalha individual"),"battle single");
+        check(profile(new int[]{4},"battle-team").modeLabel.equals("Batalha em equipes"),"battle team");
+        for(String mode:new String[]{"battle-single","battle-team"})check(profile(new int[]{4},mode).participationLabel.equals("Todos jogam ao mesmo tempo"),"confirmed battle participation");
+        check(!profile(new int[]{2},"cooperative").modeConfirmed,"unmapped mode not guessed");
+        for(int capacity=2;capacity<=4;capacity++)for(int present=1;present<=capacity;present++){
+            StationGamePlayerInfo.Participant[] people=new StationGamePlayerInfo.Participant[present];for(int i=0;i<present;i++)people[i]=person(present-i);
+            StationGamePlayerInfo.RoomInfo room=copied.forRoom(capacity,true,people);
+            check(room.confirmed&&room.present==present&&room.capacity==capacity,"real count");check(room.vacancies==capacity-present,"vacancies from capacity");
+            check(room.acceptingPlayers==(present<capacity),"waiting occupancy");check(room.positions.size()==capacity,"all seats shown while waiting");
+            for(int i=0;i<capacity;i++){StationGamePlayerInfo.Position pos=room.positions.get(i);check(pos.slot==i+1&&pos.label.equals("P"+(i+1)),"signed slot order");check(pos.occupied==(i<present),"no invented participant");}
+            if(present>=2){StationGamePlayerInfo.RoomInfo frozen=copied.forRoom(capacity,false,people);check(frozen.confirmed&&!frozen.acceptingPlayers&&frozen.vacancies==0,"frozen roster no open seats");check(frozen.positions.size()==present&&!frozen.occupancyLabel.contains("vaga"),"unused original capacity not offered");}
+        }
+        check(!exact.forRoom(3,true,new StationGamePlayerInfo.Participant[]{person(1)}).confirmed,"unapproved capacity");
+        check(!exact.forRoom(4,false,new StationGamePlayerInfo.Participant[]{person(1),person(2),person(3)}).confirmed,"unapproved frozen count");
+        List<StationGamePlayerInfo.Participant[]> bad=Arrays.asList(null,new StationGamePlayerInfo.Participant[0],
+                new StationGamePlayerInfo.Participant[]{person(2)},new StationGamePlayerInfo.Participant[]{person(1),person(1)},
+                new StationGamePlayerInfo.Participant[]{person(1),new StationGamePlayerInfo.Participant(2,"peer1","x",false,false)},
+                new StationGamePlayerInfo.Participant[]{person(1),new StationGamePlayerInfo.Participant(2,"peer2","x",false,true)},
+                new StationGamePlayerInfo.Participant[]{person(1),person(5)},new StationGamePlayerInfo.Participant[]{person(1),null});
+        for(StationGamePlayerInfo.Participant[] people:bad){StationGamePlayerInfo.RoomInfo r=copied.forRoom(4,true,people);check(!r.confirmed&&!r.acceptingPlayers,"invalid roster fail closed");check(r.present==-1&&r.vacancies==-1&&r.positions.isEmpty(),"invalid counts are unknown, not zero");}
+        StationGamePlayerInfo.RoomInfo noName=copied.forRoom(4,true,new StationGamePlayerInfo.Participant[]{new StationGamePlayerInfo.Participant(1,"one"," \n ",false,true)});
+        check(noName.positions.get(0).name.equals("Nome não disponível"),"no guessed name");check(noName.positions.get(1).name.equals("Vaga livre"),"free seat label");
+        check(noName.positionsLabel.equals("P1 · P2 · P3 · P4"),"position labels");
+        try{noName.positions.clear();throw new AssertionError("mutable positions");}catch(UnsupportedOperationException expected){checks++;}
+        check(!StationGamePlayerInfo.pending().forRoom(4,true,new StationGamePlayerInfo.Participant[]{person(1)}).confirmed,"pending never derives four seats");
+        System.out.println("{\"checks\":"+checks+",\"passed\":true}");
+    }
+}

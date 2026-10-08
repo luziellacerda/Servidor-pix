@@ -1,0 +1,352 @@
+{
+  "utc": "2026-10-08T12:55:54.823521+00:00",
+  "upstream": "https://github.com/libretro/libretro-database",
+  "commit": "fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90",
+  "license": "CC-BY-SA-4.0 (repository); source headers retained for inherited dataset provenance",
+  "files": [
+    {
+      "platform": "documentation",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/README.md",
+      "status": "downloaded",
+      "sha256": "37baaa8ccadd6f092f610c790ae1456c78510c2b88d010dadb1f1a6598b4a453",
+      "bytes": 27841
+    },
+    {
+      "platform": "license",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/LICENSE",
+      "status": "downloaded",
+      "sha256": "23ee78c8bae49cf08ea2f0c84945c66b987ebe4520881fb51b3dad4fb43d07c2",
+      "bytes": 20137
+    },
+    {
+      "platform": "snes",
+      "path": "metadat/no-intro/Nintendo - Super Nintendo Entertainment System.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/no-intro/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System.dat",
+      "status": "downloaded",
+      "sha256": "175c69cc8b50dc60c84828ad570e581a7c03602518776540733636235aa0ff8a",
+      "bytes": 987445
+    },
+    {
+      "platform": "snes",
+      "path": "metadat/developer/Nintendo - Super Nintendo Entertainment System.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/developer/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System.dat",
+      "status": "downloaded",
+      "sha256": "d62b92756bc4b1dda0ca9a0a3572f9df00a9126b4d9b4b4f5c1becb77dafb85c",
+      "bytes": 393949
+    },
+    {
+      "platform": "snes",
+      "path": "metadat/publisher/Nintendo - Super Nintendo Entertainment System.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/publisher/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System.dat",
+      "status": "downloaded",
+      "sha256": "4a67c64944d7091903b7afc8f4982cd4d1e69ced383fe954da42409e5108380f",
+      "bytes": 387791
+    },
+    {
+      "platform": "snes",
+      "path": "metadat/genre/Nintendo - Super Nintendo Entertainment System.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/genre/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System.dat",
+      "status": "downloaded",
+      "sha256": "92f0ed22dfecf2bb8338f5680dd0b5556c70e6a63ab9fe36285d8c945649f67e",
+      "bytes": 370035
+    },
+    {
+      "platform": "snes",
+      "path": "metadat/releaseyear/Nintendo - Super Nintendo Entertainment System.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/releaseyear/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System.dat",
+      "status": "downloaded",
+      "sha256": "a38acd1af1d9f2aa9ebe9efaa74d2335fdb40aefff8512c9fd1dedf8577d3998",
+      "bytes": 322971
+    },
+    {
+      "platform": "snes",
+      "path": "metadat/releasemonth/Nintendo - Super Nintendo Entertainment System.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/releasemonth/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System.dat",
+      "status": "downloaded",
+      "sha256": "2edae3e42b511004090e20dbace9e64eead1ed3b89ffd406c416f01f93976941",
+      "bytes": 295052
+    },
+    {
+      "platform": "snes",
+      "path": "metadat/maxusers/Nintendo - Super Nintendo Entertainment System.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/maxusers/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System.dat",
+      "status": "downloaded",
+      "sha256": "7d0aaea14f67fd34b9d70e5b7b70c5a4c87a20e63d5e358b130ed773ee5fb68d",
+      "bytes": 326491
+    },
+    {
+      "platform": "snes",
+      "path": "metadat/franchise/Nintendo - Super Nintendo Entertainment System.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/franchise/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System.dat",
+      "status": "downloaded",
+      "sha256": "9198d72ee426c7a2168c55114eba28d4bde6aebec6e6529651ce90a61221a0e5",
+      "bytes": 134311
+    },
+    {
+      "platform": "snes",
+      "path": "metadat/esrb/Nintendo - Super Nintendo Entertainment System.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/esrb/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System.dat",
+      "status": "downloaded",
+      "sha256": "b9d92c83115325ef0c631ad53ac785c73f0e4427b147e25772b969a4f0dc1e65",
+      "bytes": 107619
+    },
+    {
+      "platform": "megadrive",
+      "path": "metadat/no-intro/Sega - Mega Drive - Genesis.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/no-intro/Sega%20-%20Mega%20Drive%20-%20Genesis.dat",
+      "status": "downloaded",
+      "sha256": "d858f1ddffbc82eda9d7295fb790d1e87d156dc10385a02a2c343c01cafde349",
+      "bytes": 913828
+    },
+    {
+      "platform": "megadrive",
+      "path": "metadat/developer/Sega - Mega Drive - Genesis.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/developer/Sega%20-%20Mega%20Drive%20-%20Genesis.dat",
+      "status": "downloaded",
+      "sha256": "6f3c2f811b34b073890918d510de5dc8f95b2e4b806a873f7830a06f839d2794",
+      "bytes": 272871
+    },
+    {
+      "platform": "megadrive",
+      "path": "metadat/publisher/Sega - Mega Drive - Genesis.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/publisher/Sega%20-%20Mega%20Drive%20-%20Genesis.dat",
+      "status": "downloaded",
+      "sha256": "1d9e03c6aab9e6bf53dd0f0af0365494782371feca7a5e4d97338f3d8f741b0d",
+      "bytes": 267665
+    },
+    {
+      "platform": "megadrive",
+      "path": "metadat/genre/Sega - Mega Drive - Genesis.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/genre/Sega%20-%20Mega%20Drive%20-%20Genesis.dat",
+      "status": "downloaded",
+      "sha256": "efcba66ce8ee19d2049f6c61df3430f2d636d1a4aed8b43f821c2f90eb74ba6e",
+      "bytes": 258365
+    },
+    {
+      "platform": "megadrive",
+      "path": "metadat/releaseyear/Sega - Mega Drive - Genesis.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/releaseyear/Sega%20-%20Mega%20Drive%20-%20Genesis.dat",
+      "status": "downloaded",
+      "sha256": "2f8b2a9c58eb2b75e48b09192f3526dcd79c70444810ae3c0f61dd7cbf70ec70",
+      "bytes": 175858
+    },
+    {
+      "platform": "megadrive",
+      "path": "metadat/releasemonth/Sega - Mega Drive - Genesis.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/releasemonth/Sega%20-%20Mega%20Drive%20-%20Genesis.dat",
+      "status": "downloaded",
+      "sha256": "551338f94afd8044e383f6799669a395cde87b68905838509ab54b2f9830fc33",
+      "bytes": 86410
+    },
+    {
+      "platform": "megadrive",
+      "path": "metadat/maxusers/Sega - Mega Drive - Genesis.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/maxusers/Sega%20-%20Mega%20Drive%20-%20Genesis.dat",
+      "status": "downloaded",
+      "sha256": "85e66cb7eabb7c507df68124eaddb49ba1f2a8ad2e8572ad2cc634347e3c92c0",
+      "bytes": 232076
+    },
+    {
+      "platform": "megadrive",
+      "path": "metadat/franchise/Sega - Mega Drive - Genesis.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/franchise/Sega%20-%20Mega%20Drive%20-%20Genesis.dat",
+      "status": "downloaded",
+      "sha256": "07278b29afa7900b6d2d1cc3d44f354f0c2e67fb36e6796c48200b7c682e7d14",
+      "bytes": 92528
+    },
+    {
+      "platform": "megadrive",
+      "path": "metadat/esrb/Sega - Mega Drive - Genesis.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/esrb/Sega%20-%20Mega%20Drive%20-%20Genesis.dat",
+      "status": "downloaded",
+      "sha256": "db702120eee175797097feae8fc122b55ea51e611d3ca74fef8996cea3687849",
+      "bytes": 77257
+    },
+    {
+      "platform": "n64",
+      "path": "metadat/no-intro/Nintendo - Nintendo 64.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/no-intro/Nintendo%20-%20Nintendo%2064.dat",
+      "status": "downloaded",
+      "sha256": "eb20ef6164e86eee57b049a5f45bac21cb36a40e5edab26c44db19e4ec47ac8b",
+      "bytes": 369835
+    },
+    {
+      "platform": "n64",
+      "path": "metadat/developer/Nintendo - Nintendo 64.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/developer/Nintendo%20-%20Nintendo%2064.dat",
+      "status": "downloaded",
+      "sha256": "32d483bfc326abf62fb923052979f49a1f409eeab3aff8dd31e2d74da2b1eb3f",
+      "bytes": 212862
+    },
+    {
+      "platform": "n64",
+      "path": "metadat/publisher/Nintendo - Nintendo 64.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/publisher/Nintendo%20-%20Nintendo%2064.dat",
+      "status": "downloaded",
+      "sha256": "661b2b337fa0576667b9e85177827883a129c61448e6d71c8c5ee606560511e8",
+      "bytes": 207506
+    },
+    {
+      "platform": "n64",
+      "path": "metadat/genre/Nintendo - Nintendo 64.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/genre/Nintendo%20-%20Nintendo%2064.dat",
+      "status": "downloaded",
+      "sha256": "ed12f13a9fbc8d4debe449fccc92b6a64803873b0461fdd3caef2780013af143",
+      "bytes": 196745
+    },
+    {
+      "platform": "n64",
+      "path": "metadat/releaseyear/Nintendo - Nintendo 64.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/releaseyear/Nintendo%20-%20Nintendo%2064.dat",
+      "status": "downloaded",
+      "sha256": "20b37b55fbfd9a382118dbebb3570885e1521920dad056bc7d8a93623e124ecf",
+      "bytes": 182568
+    },
+    {
+      "platform": "n64",
+      "path": "metadat/releasemonth/Nintendo - Nintendo 64.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/releasemonth/Nintendo%20-%20Nintendo%2064.dat",
+      "status": "downloaded",
+      "sha256": "ab25753b22349e81e4f80c6caca1112a47bfb66ccf691ad39412ad683413559f",
+      "bytes": 174175
+    },
+    {
+      "platform": "n64",
+      "path": "metadat/maxusers/Nintendo - Nintendo 64.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/maxusers/Nintendo%20-%20Nintendo%2064.dat",
+      "status": "downloaded",
+      "sha256": "83d0988576e45e1a8e532bfce80d9f66e274f7e7ce9783b095d505c454097c34",
+      "bytes": 179305
+    },
+    {
+      "platform": "n64",
+      "path": "metadat/franchise/Nintendo - Nintendo 64.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/franchise/Nintendo%20-%20Nintendo%2064.dat",
+      "status": "downloaded",
+      "sha256": "b176c5de9e77500f79192ed6f613ee5a905b8e2a94fd76b6bc5eaecdb51acb11",
+      "bytes": 73722
+    },
+    {
+      "platform": "n64",
+      "path": "metadat/esrb/Nintendo - Nintendo 64.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/esrb/Nintendo%20-%20Nintendo%2064.dat",
+      "status": "downloaded",
+      "sha256": "5f271ecdb010563d4e746614d562968e010d1c7fae8dbf9d34d6ad67011170e7",
+      "bytes": 170
+    },
+    {
+      "platform": "neogeo",
+      "path": "dat/SNK - Neo Geo.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/dat/SNK%20-%20Neo%20Geo.dat",
+      "status": "downloaded",
+      "sha256": "decb4e4a55231168a98dbc793f447bd5968ce61af245bb330175f2b2e3437390",
+      "bytes": 54402
+    },
+    {
+      "platform": "neogeo",
+      "path": "metadat/developer/SNK - Neo Geo.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/developer/SNK%20-%20Neo%20Geo.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeo",
+      "path": "metadat/publisher/SNK - Neo Geo.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/publisher/SNK%20-%20Neo%20Geo.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeo",
+      "path": "metadat/genre/SNK - Neo Geo.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/genre/SNK%20-%20Neo%20Geo.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeo",
+      "path": "metadat/releaseyear/SNK - Neo Geo.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/releaseyear/SNK%20-%20Neo%20Geo.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeo",
+      "path": "metadat/releasemonth/SNK - Neo Geo.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/releasemonth/SNK%20-%20Neo%20Geo.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeo",
+      "path": "metadat/maxusers/SNK - Neo Geo.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/maxusers/SNK%20-%20Neo%20Geo.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeo",
+      "path": "metadat/franchise/SNK - Neo Geo.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/franchise/SNK%20-%20Neo%20Geo.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeo",
+      "path": "metadat/esrb/SNK - Neo Geo.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/esrb/SNK%20-%20Neo%20Geo.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeocd",
+      "path": "metadat/redump/SNK - Neo Geo CD.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/redump/SNK%20-%20Neo%20Geo%20CD.dat",
+      "status": "downloaded",
+      "sha256": "362da7833466504e28b2555003a8bc6d6ec0de01f5d9dfe49d6d9f0c3c3b142c",
+      "bytes": 45113
+    },
+    {
+      "platform": "neogeocd",
+      "path": "metadat/developer/SNK - Neo Geo CD.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/developer/SNK%20-%20Neo%20Geo%20CD.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeocd",
+      "path": "metadat/publisher/SNK - Neo Geo CD.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/publisher/SNK%20-%20Neo%20Geo%20CD.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeocd",
+      "path": "metadat/genre/SNK - Neo Geo CD.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/genre/SNK%20-%20Neo%20Geo%20CD.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeocd",
+      "path": "metadat/releaseyear/SNK - Neo Geo CD.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/releaseyear/SNK%20-%20Neo%20Geo%20CD.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeocd",
+      "path": "metadat/releasemonth/SNK - Neo Geo CD.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/releasemonth/SNK%20-%20Neo%20Geo%20CD.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeocd",
+      "path": "metadat/maxusers/SNK - Neo Geo CD.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/maxusers/SNK%20-%20Neo%20Geo%20CD.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeocd",
+      "path": "metadat/franchise/SNK - Neo Geo CD.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/franchise/SNK%20-%20Neo%20Geo%20CD.dat",
+      "status": "not-published-at-pinned-revision"
+    },
+    {
+      "platform": "neogeocd",
+      "path": "metadat/esrb/SNK - Neo Geo CD.dat",
+      "url": "https://raw.githubusercontent.com/libretro/libretro-database/fbeefcb46c2e1b20a7e2945f34a694a41b2d6f90/metadat/esrb/SNK%20-%20Neo%20Geo%20CD.dat",
+      "status": "not-published-at-pinned-revision"
+    }
+  ]
+}

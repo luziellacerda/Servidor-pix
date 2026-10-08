@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": 73525,
+  "referencedEntries": 23054,
+  "ids": 2467,
+  "visibleIds": 2212,
+  "metadataSHA256": "ab5d4fa1de9cc169bbbdb50f2ee3efd0607ea5a738236093a61e804b551eac0d",
+  "recipeSHA256": "b80e7aeb9efc33e2060c0f5079b9b2fc3c6648501f20556e638c3211b7c98c45",
+  "builderSHA256": "0bb342eb72dc0cd3a9fa041acae59d7c499b6e1ef5e9f09e3b6e8ff149c7b174",
+  "scope": "parser, hashes, provenance, full inventory coverage and fail-closed assertions; no factual/ROM/gameplay validation"
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Research candidates only; never a server authorization registry",
+  "reviewedOn": "2026-10-08",
+  "sources": [
+    {
+      "id": "libretro-super-bomberman-2-multitap",
+      "kind": "official-emulator-documentation",
+      "url": "https://docs.libretro.com/guides/netplay-multiple-controllers/",
+      "claim": "Super Bomberman 2 is the four-controller SNES example; second physical port uses Multitap.",
+      "limit": "Example uses two computers with two controllers each; no evidence of four TurboStations phones."
+    },
+    {
+      "id": "hudson-super-bomberman-2-manual",
+      "kind": "original-publisher-manual-third-party-archive",
+      "url": "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf",
+      "locator": "Playing a Battle Game, printed pages 8-9",
+      "claim": "Battle mode permits human/computer/off assignments for four players and requires Multitap for three or four humans; Normal Game is solo.",
+      "limit": "Manual does not identify the catalog ROM hash or qualify hacks/translations."
+    },
+    {
+      "id": "tradewest-battlemaniacs-manual",
+      "kind": "original-publisher-manual-third-party-archive",
+      "url": "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf",
+      "locator": "Controlling the Action, printed page 6",
+      "claim": "Two simultaneous-player modes A/B differ in whether partners can hit each other.",
+      "limit": "Does not identify the ESP/NTSC file inside the catalog USA ZIP or the BR variant."
+    },
+    {
+      "id": "nintendo-secret-of-mana-manual",
+      "kind": "official-publisher-manual",
+      "url": "https://www.nintendo.com/es-es/games/oms/snes-classic/manuals/secret-of-mana/manual.pdf",
+      "locator": "Section 12, Allies and Multiplayer, PDF page 15",
+      "claim": "Up to three simultaneous players, after the corresponding allies have joined the party.",
+      "limit": "Does not qualify the translated/headered snesbr artifact."
+    },
+    {
+      "id": "clownmdemu-multitap-release",
+      "kind": "official-emulator-release-notes",
+      "url": "https://github.com/Clownacy/clownmdemu-frontend/releases/tag/v1.6.7",
+      "claim": "Multitap emulation names Mega Bomberman as a game usable with more than two players and lists Sega Team Player and EA 4 Way Play.",
+      "limit": "Not enough to bind exact game mode, adapter protocol and maximum to the USA catalog ZIP."
+    }
+  ],
+  "titles": [
+    {
+      "id": "super-bomberman-2-snes",
+      "evidenceStatus": "original-game-modes-documented",
+      "modes": [
+        {"modeId":"normal","name":"Normal Game","playStyle":"single-player","simultaneousPlayers":1,"allowedHumanCounts":[1],"controllerProfileCandidate":"snes-joypad-2-v1"},
+        {"modeId":"battle-single","name":"Battle — Single Match","playStyle":"simultaneous","simultaneousPlayers":4,"allowedHumanCounts":[2,3,4],"controllerProfileCandidate":"snes-multitap-port2-v1"},
+        {"modeId":"battle-team","name":"Battle — Tag Team","playStyle":"simultaneous","simultaneousPlayers":4,"allowedHumanCounts":[2,3,4],"controllerProfileCandidate":"snes-multitap-port2-v1","conditions":["Configure teams and human/CPU slots inside the game before playing."]}
+      ],
+      "sourceIds":["hudson-super-bomberman-2-manual","libretro-super-bomberman-2-multitap"],
+      "variants":[
+        {"itemId":"station_df50d575815ab105084a79d68e0c8fb3","artifactSha256":"0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6","variantStatus":"declared-USA-raw-awaiting-current-catalog-and-gameplay-qualification"},
+        {"itemId":"station_80b7594ba22922d87fb43d720ba8be5a","artifactSha256":"b0393ca82b92d38bbb37f199d10016f7a06746ac128bb653216b4110027ea75f","variantStatus":"translation-unverified"}
+      ]
+    },
+    {
+      "id":"battletoads-in-battlemaniacs-snes",
+      "evidenceStatus":"original-game-modes-documented",
+      "modes":[
+        {"modeId":"two-players-a","name":"2 Players A","playStyle":"simultaneous","simultaneousPlayers":2,"allowedHumanCounts":[2],"controllerProfileCandidate":"snes-joypad-2-v1","conditions":["Friendly fire enabled."]},
+        {"modeId":"two-players-b","name":"2 Players B","playStyle":"simultaneous","simultaneousPlayers":2,"allowedHumanCounts":[2],"controllerProfileCandidate":"snes-joypad-2-v1","conditions":["Friendly fire disabled."]}
+      ],
+      "sourceIds":["tradewest-battlemaniacs-manual"],
+      "variants":[
+        {"itemId":"826da6daebe9edbebffb3721f83abf12","artifactSha256":"cd3a1292fdb5953ca414dd6a74ac0aa1886b2d132fce4c804e79d5e25ea029f6","variantStatus":"USA-label-contains-ESP-NTSC-ROM-content-hash-missing"},
+        {"itemId":"station_f1d9d06767f9a63592011424048bd181","artifactSha256":"05f82bc40155293779a3fbe7c377d894f1d124bee5a973d58ab515ac1f7db01d","variantStatus":"snesbr-variant-unverified"}
+      ]
+    },
+    {
+      "id":"secret-of-mana-snes",
+      "evidenceStatus":"original-game-modes-documented",
+      "modes":[{"modeId":"adventure-coop","name":"Adventure co-op","playStyle":"simultaneous","simultaneousPlayers":3,"allowedHumanCounts":[2,3],"controllerProfileCandidate":"snes-multitap-port2-v1","conditions":["Player 2 requires the first ally; player 3 requires both allies. Beginning a new save does not immediately provide three controllable characters."]}],
+      "sourceIds":["nintendo-secret-of-mana-manual"],
+      "variants":[{"itemId":"station_7da80d23885a72cc56464834711b85a5","artifactSha256":"4cc065671af8d511de06b3e6ccdb08ec70ef3cd4bfcc42d30092c07ddc808f3b","variantStatus":"snesbr-headered-variant-unverified"}]
+    },
+    {
+      "id":"mega-bomberman-megadrive",
+      "evidenceStatus":"partial-adapter-evidence-only",
+      "modes":[],
+      "sourceIds":["clownmdemu-multitap-release"],
+      "variants":[{"itemId":"9e5a873d6b384b8277568b297d3b8030","artifactSha256":"f5e2549d92901b3ee4ffc6b53e08ea508ab10871df4710c8ca4c0fdab7a80814","variantStatus":"exact-mode-protocol-and-content-hash-unverified"}]
+    }
+  ]
+}

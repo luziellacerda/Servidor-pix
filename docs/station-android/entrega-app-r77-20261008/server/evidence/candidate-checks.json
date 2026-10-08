@@ -1,0 +1,32 @@
+{
+  "baseCommit": "ab192bf1585e30f303d041f13b36a1f9c96d2caa",
+  "sourceManifestSha256": "dcb854b48241524e3beeb0478aacc4e3173116da37a6c141bc544610c66cbbb7",
+  "buildPassed": true,
+  "tests": [
+    {
+      "project": "tests/StationMultiplayer.Tests.csproj",
+      "passed": true,
+      "checks": 253,
+      "scope": "isolated synthetic C# hub/stream/codec/budget; no Android gameplay or deployment"
+    },
+    {
+      "project": "tests/StationMultiplayer.Http.Tests.csproj",
+      "passed": true,
+      "checks": 152,
+      "scope": "synthetic loopback TLS: four authenticated players, six WS links, signed HTTP, bound proofs, stream, disconnect/resume and chat; not Android gameplay or public network"
+    },
+    {
+      "project": "tests/StationRecovery/StationRecovery.Tests.csproj",
+      "passed": true,
+      "checks": 91,
+      "scope": "Production v2 ledger/state/negotiation with synthetic identities; not Android gameplay"
+    }
+  ],
+  "deployed": false,
+  "productionTouched": false,
+  "androidGameplayTested": false,
+  "recordedUtc": "2026-10-08T13:25:17.626007+00:00",
+  "profileRegistryExampleApprovedCount": 0,
+  "socialBlocksVerified": true,
+  "readyInvalidationPairOnlyVerified": true
+}

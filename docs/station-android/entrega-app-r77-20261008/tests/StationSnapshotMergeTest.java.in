@@ -1,0 +1,21 @@
+public final class StationSnapshotMergeTest {
+ static int checks;interface Action{void run()throws Exception;}static void check(boolean ok,String name){checks++;if(!ok)throw new AssertionError(name);}static void reject(Action action,String name)throws Exception{checks++;try{action.run();}catch(Exception expected){return;}throw new AssertionError(name);}
+ static JSONObject social(long revision){return new JSONObject().put("instance","a".repeat(32)).put("revision",revision).put("selfId","peer").put("serverTimeMs",1234+revision).put("room",JSONObject.NULL).put("rooms",new JSONArray()).put("socialCapabilities",new JSONArray().put("join-request-v1").put("chat-v1")).put("transports",new JSONArray().put("relay-wss-v2"));}
+ static JSONObject mp(long revision){return new JSONObject().put("instance","b".repeat(32)).put("revision",revision).put("selfId","peer").put("multiplayerVersion",3).put("capability","station-multiplayer.v3").put("profileCount",2).put("profiles",new JSONArray()).put("room",JSONObject.NULL).put("rooms",new JSONArray()).put("totalRooms",0);}
+ public static void main(String[] args)throws Exception {
+  Merge empty=new Merge();reject(()->empty.compose(null),"social identity required");
+  Merge merge=new Merge();JSONObject authority=social(10),initial=merge.compose(authority);long presentation=initial.getLong("revision");check(authority.getLong("revision")==10,"authority revision unchanged");
+  JSONObject same=merge.compose(social(11));check(same.getLong("revision")==presentation,"time/revision changes do not force display churn");
+  JSONObject old=social(9).put("selfId","wrong-old");check(merge.compose(old).getString("selfId").equals("peer"),"old social ignored");
+  reject(()->merge.offer(mp(1).put("selfId","wrong")),"wrong multiplayer identity denied");
+  merge.offer(mp(10));JSONObject visible=merge.compose(null);check(visible.getJSONArray("transports").getString(0).equals("relay-wss-v3"),"v3 transport exposed");check(visible.getJSONArray("socialCapabilities").length()==1,"unsupported join requests removed");
+  long stable=visible.getLong("revision");for(int n=11;n<80;n++){merge.offer(mp(n));check(merge.compose(null).getLong("revision")==stable,"unchanged content stable");}
+  JSONObject own=new JSONObject().put("roomId","room-new").put("generation",9).put("messages",new JSONArray().put("one"));JSONObject current=mp(100).put("room",own).put("rooms",new JSONArray().put(own)).put("totalRooms",1);merge.offer(current);visible=merge.compose(null);check(visible.getJSONObject("room").getLong("generation")==9,"private v3 room exposed");check(visible.getJSONArray("messages").length()==1,"room messages included");check(visible.isNull("nextPage"),"no stale pagination");
+  merge.offer(mp(99));check(merge.compose(null).getJSONObject("room").getString("roomId").equals("room-new"),"old multiplayer cannot erase room");JSONObject detached=merge.multiplayerRoom("");detached.put("generation",999);check(merge.multiplayerRoom("room-new").getLong("generation")==9,"caller cannot mutate cached room");
+  reject(()->merge.offer(mp(101).put("instance","c".repeat(32))),"multiplayer restart explicit");reject(()->merge.compose(social(20).put("instance","d".repeat(32))),"social restart explicit");
+  Merge legacy=new Merge();JSONObject oldRoom=new JSONObject().put("roomId","existing-v2").put("recoveryProtocol","station-stream.v2");legacy.compose(social(1).put("room",oldRoom));legacy.offer(mp(1));check(legacy.compose(null).getJSONObject("room").getString("roomId").equals("existing-v2"),"retained legacy membership preserved");check(legacy.compose(null).getJSONArray("transports").getString(0).equals("relay-wss-v2"),"retained legacy transport preserved");
+  Merge reversed=new Merge();reversed.offer(mp(1).put("selfId","other"));reject(()->reversed.compose(social(1)),"identity also checked when social arrives last");
+  for(Object bad:new Object[]{"", "a".repeat(31),"Z".repeat(32)})reject(()->new Merge().offer(mp(1).put("instance",bad)),"invalid instance");reject(()->new Merge().offer(mp(-1)),"negative authority revision");
+  System.out.println(new JSONObject().put("checks",checks).put("passed",true));
+ }
+}

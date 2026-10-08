@@ -1,0 +1,387 @@
+{
+  "baseCommit": "ab192bf1585e30f303d041f13b36a1f9c96d2caa",
+  "baseFiles": 57,
+  "modifiedBaseFiles": [
+    "src/TurboRamaSuiteOnlineServer/StationOnline.cs",
+    "src/TurboRamaSuiteOnlineServer/StationOnlineEndpoints.cs",
+    "src/TurboRamaSuiteOnlineServer/StationOnlineRegistration.cs",
+    "src/TurboRamaSuiteOnlineServer/StationRecoveryRelay.cs"
+  ],
+  "files": [
+    {
+      "path": "BASE-SOURCES.json",
+      "sha256": "120c994c86ffb6f80c05775cd01d906cc27525de63ce8b2770bcec884bdf0d18",
+      "bytes": 9865
+    },
+    {
+      "path": "BASE-TESTS.json",
+      "sha256": "f652c33177663f599b80ab031a4af1287995309f3f77d5ea8537d600d225be84",
+      "bytes": 742
+    },
+    {
+      "path": "CONTRACT.json",
+      "sha256": "d028309e27ea2acba94f244f53651bae3a7e3ce86287c87bfbb9628935174bc4",
+      "bytes": 7073
+    },
+    {
+      "path": "CONTRACT.md",
+      "sha256": "55dca925a1ca691246000d05345d6528bfc687fb037ed4c65b3e139f455cbe44",
+      "bytes": 7863
+    },
+    {
+      "path": "build_candidate.py",
+      "sha256": "03db7214b496b0a1267d71e1bab48506ab404bf7cd187d7a51c3f808cfdf2c24",
+      "bytes": 3292
+    },
+    {
+      "path": "docs/station-android/recovery-r67-20261007/contract-vectors.json",
+      "sha256": "b7efac34a5b04f78560c1749270a56fad640d8de5924c5f4e4abf62662dc0779",
+      "bytes": 6444
+    },
+    {
+      "path": "profiles.example.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "src/TurboRamaSuiteNotifications/DownloadCompletionMessage.cs",
+      "sha256": "b4e7090be47a89492a2941f91281d5dcdbb9a4e43f924c7cf8de8d6f64d5a329",
+      "bytes": 6475
+    },
+    {
+      "path": "src/TurboRamaSuiteNotifications/DownloadCompletionProtocol.cs",
+      "sha256": "995d6097bfac66a986280a911bb0beead74d3f686ade154d483b01516bbfcbfc",
+      "bytes": 6194
+    },
+    {
+      "path": "src/TurboRamaSuiteNotifications/ExtractionCompletionMessage.cs",
+      "sha256": "100d050e79cccabeff460871688c76654097ad1bf8e3a2202b539b4c0bd0cd21",
+      "bytes": 6240
+    },
+    {
+      "path": "src/TurboRamaSuiteNotifications/ExtractionCompletionProtocol.cs",
+      "sha256": "75baca61bc606021b91b7e0c44b2d4c3f738c33477ad90cf7decc5430175ef8e",
+      "bytes": 8072
+    },
+    {
+      "path": "src/TurboRamaSuiteNotifications/README.md",
+      "sha256": "b176327acf3a3e23ccc0764a0f43b327b7d469f6f270622cae03276bd1150789",
+      "bytes": 14372
+    },
+    {
+      "path": "src/TurboRamaSuiteNotifications/TurboRamaSuiteNotifications.csproj",
+      "sha256": "a615094cc3609a4ff77502d7dee27688879a91cbf833653063e4d6c4118eacf3",
+      "bytes": 328
+    },
+    {
+      "path": "src/TurboRamaSuiteNotifications/packages.lock.json",
+      "sha256": "22308ad23ccd417b5d96020fb92e203b85fad8c3788b3feadb2ca403d8ad596c",
+      "bytes": 60
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/ContentContracts.cs",
+      "sha256": "d426fea003302ab335d0813b649bb0d227563a7ab84a356ec41d01705d20bf97",
+      "bytes": 2231
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/ContentGatewayPepperVerifier.cs",
+      "sha256": "91844466899a5bb7acf8a603c2cdbbf1895a17745c782a6788139899834fb2c5",
+      "bytes": 5534
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/ContentProtocol.cs",
+      "sha256": "41a0bdaa9bfa554d5768a0fa0c2a2ebbce8ddd47179c7203dc81cdfc826535c2",
+      "bytes": 18919
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/ContentService.cs",
+      "sha256": "5a3fcef1494737eed6edcd1b8324cab5ce2a3bb3a6d6def04e18a01d2f038d67",
+      "bytes": 17374
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/ContentStore.cs",
+      "sha256": "90c780410cc3af59f3203c4048409cc263492fcd6e1ccd40bf25d4e93e6a4c73",
+      "bytes": 38061
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/Contracts.cs",
+      "sha256": "ae8c4d42c7196fa4368f0da0f6ab9bf1504b2c7121da4083d208dcc775201e26",
+      "bytes": 5632
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/DeviceInventoryProtocol.cs",
+      "sha256": "201b88376a2de122116c1d29c8016a85d13963301752671a0267aed323524651",
+      "bytes": 43359
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/DeviceInventoryService.cs",
+      "sha256": "74a5a7b9fdda606bc917be6638f9bceee2853e688bc1343cb1f57a4af2aa8e8b",
+      "bytes": 16405
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/DownloadNotificationEndpoints.cs",
+      "sha256": "e6541aa547153f0ec43e069eb4eb1424a044ea1209850cb78bf910d9d7e8ad7b",
+      "bytes": 8673
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/EmulationStationService.cs",
+      "sha256": "444a1ef8454ae5e8014c739d37ecf0403d35c77ba035d1bb951ecb6636822b41",
+      "bytes": 4802
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/EmulationStationStore.cs",
+      "sha256": "1b0dd26e34f77a0c6f7264ddbfbf90e2257c3f22b1306a9e01dc7304889c9067",
+      "bytes": 15893
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/ExtractionNotificationEndpoints.cs",
+      "sha256": "aaa8b285b3eb83bcdc34f8fe651e844f09e8e12ae9cc0c46bc98fb12ba468e6e",
+      "bytes": 8348
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/MotherboardInventoryNormalizer.cs",
+      "sha256": "c187e598e0b8fd06860e7efc1a03d9c4854c0abc3ade8fedab180a91479486a1",
+      "bytes": 5865
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/NetworkInventoryContract.cs",
+      "sha256": "54855f4a2a4fc5573da6dc8f75f8ad1f4a5802ab1de797829a851182107890a9",
+      "bytes": 6440
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/NetworkInventoryService.cs",
+      "sha256": "2f3bda1d769e85ccb5153c10ddfda41d24ae95127e6ffcea8b78a21d82690bdd",
+      "bytes": 14334
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/Program.cs",
+      "sha256": "e4aedde41f3ceef3ab98087782114bde1e6880679ce0e80becae38f0e9ad55b7",
+      "bytes": 27176
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/Protocol.cs",
+      "sha256": "e310237f5a9a17c9b0d4e15871b279e047b1b8a5c891819087bc4c5151ca09cf",
+      "bytes": 13218
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/RequestGuards.cs",
+      "sha256": "0ac9f1ffd10cf9ef0d17a18d60628a1797a9102c9f41fd10dd91371788234254",
+      "bytes": 11056
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/Security/README.txt",
+      "sha256": "5d02d1cda1cb8246f718574ccf5902cae3d251c58e43c77a5478cf60e052dbbe",
+      "bytes": 692
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/Security/android-attestation-roots.pem",
+      "sha256": "add931656106e4f32dcfc29aca0d36cb71dc37f9c68ae4803314762a64ef6f17",
+      "bytes": 2636
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/SessionAdminContracts.cs",
+      "sha256": "d10be744fb18b4379d5f0d73d3c66eea41bcd1794481b97ba54338413dce79c0",
+      "bytes": 1227
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/SharedEmulationStation.cs",
+      "sha256": "4c1cda05c7e8ecd0eaa8882ff9d6b534afdd7c2a90952e47ff59f9fd57fd72c3",
+      "bytes": 3203
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/Signing.cs",
+      "sha256": "d034644be7096ca89c0ff851c0560a539dae19915e5cbea5c6ca7c0ae7433474",
+      "bytes": 2368
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationAttestation.cs",
+      "sha256": "736bf27151f96c8e5fc87159b698ea0538a3dcd5bc2e29cd1867d55cf8e181f1",
+      "bytes": 10283
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationAttestationStatus.cs",
+      "sha256": "cfdeb4f538aaa26094cca2f7eac2e1ce6ba1ff89ca11838566901be22cc8091f",
+      "bytes": 4686
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationEndpoints.cs",
+      "sha256": "ad400c243cc5d785cb12eefcf26ba9752f71be4ffcdafd2e4aafb1a5639cd198",
+      "bytes": 14544
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationIsolation.cs",
+      "sha256": "325697f2a3ef35ea7d65a44f54be19d6e8be2abc0d36cf2539204266ff7cf13b",
+      "bytes": 2493
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationLibrary.cs",
+      "sha256": "dbb3a2101b7555268a2ef18cb27b5a176a275e0291164899cf04f30f77dc6473",
+      "bytes": 22535
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationLibraryMonitor.cs",
+      "sha256": "50fb2eca6b663b5b8eca9891684e69f52f7cf7642a60e97a598bdc3fd49fe4ac",
+      "bytes": 2703
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayer.cs",
+      "sha256": "642e86a7a03026cb86d7c49fd674b4bd339dec3dd64c6cbf6aae05cf23552887",
+      "bytes": 22296
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayerEndpoints.cs",
+      "sha256": "55ce091c978629ebc90d627e3099321bd9ecc8b497eba1611ab2616323376c6c",
+      "bytes": 7558
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayerStream.cs",
+      "sha256": "bd4b6709bf5955611322cca007b3ba6befbdfad2a4b6c075608546679eddbf5e",
+      "bytes": 13130
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationOnline.cs",
+      "sha256": "c2ec6327d46e01ae28316e91f18de48b3468f1daec75c738a58b3a7912ec43a2",
+      "bytes": 39389
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationOnlineEndpoints.cs",
+      "sha256": "1039bacbe65002aab05369848fc547c101e849bef2ca5c3748b2d505c92d3100",
+      "bytes": 11895
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationOnlineRegistration.cs",
+      "sha256": "da7dc3b9adb7d6b418077a7989f906ebecf86e24c5ddad50ea09b063af446d3b",
+      "bytes": 5820
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationProtocol.cs",
+      "sha256": "2b8da7a393e7df06b8ffaa730eb848c0d27043a95528b3a5194dd9f7c2668857",
+      "bytes": 7872
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationRecoveryRelay.cs",
+      "sha256": "e414b57cae8ff3acc9721ffcfba386db0e7a309b6322c719566b6c6623f206e3",
+      "bytes": 18619
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationRelay.cs",
+      "sha256": "e7f6eb4bc711252c0da6f3480a59c3b501b51986685ec7422c4780b173171a9e",
+      "bytes": 6811
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationRequestDiagnostics.cs",
+      "sha256": "eda39b5e7dddbcfcf197b7cae54d67ba7e455caeb5227243426a28f8208a06a3",
+      "bytes": 1741
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationRequestProof.cs",
+      "sha256": "c910f6d313a1a6d5b5124377b5351bc1a0f28be5e4b1cd7e01a2c159bc3dff50",
+      "bytes": 7466
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationSecurityPolicy.cs",
+      "sha256": "11e1135ae9d941aeae2e4e08969f203128b7682b676fe3962dc6df16c1c947b0",
+      "bytes": 3003
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationService.cs",
+      "sha256": "6ec5993eb0c1211bffeda05d18041787f9670963145c52144b972caf46562493",
+      "bytes": 24347
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationSessionSecurity.cs",
+      "sha256": "f10d286b127535a7cd5d73d31b2768c907987691a08ddd5ed888859e41aaf7be",
+      "bytes": 196
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationStore.cs",
+      "sha256": "2f5de8fc90aec459e5fba7a7e1a84301f82d0f497ecded74f15aab448bca8477",
+      "bytes": 25319
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/Store.cs",
+      "sha256": "fdb711f384b97aca0b41047091b0640a7d38ba1df84abb0d522420678631cdd4",
+      "bytes": 29032
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/SuiteDatabasePoolPolicy.cs",
+      "sha256": "a05bd64fdb7201575881c95d3dae000685809004b7e9698b0387549090e028ed",
+      "bytes": 1240
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/SuiteService.cs",
+      "sha256": "9656ef40a5aeb637f99c73fd2634e07e3e22806f51e1954f0cae00d5b7ac875c",
+      "bytes": 11479
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/SuiteSessionEndpoints.cs",
+      "sha256": "8929b41b9abd78462771b0d870ccce40eb943b8c95aaf0a78c0eda6d5010a29d",
+      "bytes": 3415
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/TurboRamaSuiteOnlineServer.csproj",
+      "sha256": "2985fd418ac75f6f72588e1e8e01756c1a9962c57a4699aacab0ce39c7ee56a7",
+      "bytes": 655
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/TurboRamaWhatsAppNotifier.cs",
+      "sha256": "94d641ae08ab7981aa42177d344c3ebf01b6d31793de74ffd739918a2283f6eb",
+      "bytes": 1729
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/appsettings.Development.example.json",
+      "sha256": "4a8f3766dc7e47a865c0c98fecc2ea3b33ce88ab6bb250e93ba1fa13c9f87877",
+      "bytes": 655
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/appsettings.json",
+      "sha256": "2084932176b274bbf7c4e485e49ba30596d4a9ed286cc497176b9012f76f6952",
+      "bytes": 683
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/packages.lock.json",
+      "sha256": "546eecd169bce1076fa07e499131f37f4577eda74ecffe2cd7061872e44bdd34",
+      "bytes": 1062
+    },
+    {
+      "path": "tests/Checks.cs",
+      "sha256": "bd3c295dacd5cafc7d418394a1957b019ba697582e383da50517530183a2a7b0",
+      "bytes": 23889
+    },
+    {
+      "path": "tests/Directory.Build.props",
+      "sha256": "7f08da0973696dbe2caed32c163845866eacf951a7389d8ed3f035e0908d2c92",
+      "bytes": 202
+    },
+    {
+      "path": "tests/HttpChecks.cs",
+      "sha256": "4074c388c1112ec1ad944e655e950957e59c218ad6fe04fd8ad2fd5917ae9025",
+      "bytes": 15503
+    },
+    {
+      "path": "tests/StationMultiplayer.Http.Tests.csproj",
+      "sha256": "5d1b39d451d1ed6257c4aaf96e5e616e92ee03538b1bdad349779a81b7255a51",
+      "bytes": 486
+    },
+    {
+      "path": "tests/StationMultiplayer.Tests.csproj",
+      "sha256": "deb9e58b77b4c0908c47776fcb69010b815d728498ddfd1ac8b9cfc47e9485fd",
+      "bytes": 482
+    },
+    {
+      "path": "tests/StationRecovery/Directory.Build.props",
+      "sha256": "7f08da0973696dbe2caed32c163845866eacf951a7389d8ed3f035e0908d2c92",
+      "bytes": 202
+    },
+    {
+      "path": "tests/StationRecovery/Program.cs",
+      "sha256": "977673160e21987d7930ac332acd4cf396adccf90bc023d615c6a65a0304bf0c",
+      "bytes": 12259
+    },
+    {
+      "path": "tests/StationRecovery/StationRecovery.Tests.csproj",
+      "sha256": "834a3a7f765a093ac97a154dda4b9a6a667db98dc95b5f2cf5ad64514ec10490",
+      "bytes": 640
+    }
+  ]
+}

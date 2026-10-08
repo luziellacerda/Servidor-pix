@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-08T13:26:40.115694+00:00",
+  "passed": true,
+  "metrics": {
+    "checks": 175,
+    "concurrentPublications": 4000,
+    "concurrentReads": 2000,
+    "historyLimit": 40000,
+    "passed": true
+  },
+  "sourceSHA256": "828af47362433d9270fc4b3e3636365dd8ced2f2a65b3ab4f6734d6fb878ccaf",
+  "testSHA256": "3694d7547dd8ec2d275b78c0e8bd458dd438365d136aafaec89622291d25a7db",
+  "recipeSHA256": "2d6dbf92be2915e86f9ac6d10acbaf4d6a277047c5aa523f22002e0ee5aab591",
+  "scope": "Actual pure Java display evidence helper. No source claims or game-content qualification."
+}

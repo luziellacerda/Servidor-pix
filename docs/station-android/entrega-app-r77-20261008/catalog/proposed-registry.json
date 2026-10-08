@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Operator review candidates; not a deployable authorization registry",
+  "approved": false,
+  "catalogSourceCommit": "bee3dcd5c2c0c0a228805957fe89b9a6023e8402",
+  "catalogRevision": 14,
+  "entries": [
+    {
+      "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+      "platform": "snes",
+      "name": "Super Bomberman 2",
+      "variant": "USA, raw SFC, as declared by catalog revision 14",
+      "itemRevision": 4,
+      "artifactSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+      "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+      "contentSizeBytes": 1048576,
+      "contentNormalization": "none-full-launch-file",
+      "artifactFileName": "Super Bomberman 2 (USA).sfc",
+      "artifactLaunchPath": "Super Bomberman 2 (USA).sfc",
+      "mode": "battle-single",
+      "modeDisplayName": "Battle — Single Match",
+      "playStyle": "simultaneous",
+      "simultaneousPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "devices": [
+        1,
+        257,
+        1,
+        1,
+        1
+      ],
+      "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+      "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+      "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+      "approved": false,
+      "evidenceSourceIds": [
+        "hudson-super-bomberman-2-manual",
+        "libretro-super-bomberman-2-multitap"
+      ],
+      "conditions": [
+        "Choose BATTLE GAME, then Single Match, and set each participating pad to MAN inside the game.",
+        "Normal Game is single player and is not authorized by this candidate.",
+        "Only the exact item/content pair is proposed; the BR translation and other Bomberman titles are not inherited."
+      ],
+      "operatorActionsRequired": [
+        "Verify the item revision and raw SHA256 against the current server artifact.",
+        "Reproduce and compare the exact R77 engine/runtime/controller identity before staging the profile.",
+        "Qualify exclusive P1/P2/P3/P4 controls and mode on this content, then approve and sign through the server contract."
+      ],
+      "qualification": {
+        "originalGameModeDocumented": true,
+        "rawContentDigestPublished": true,
+        "coreMappingIsolatedChecks": 6609,
+        "currentServerArtifactRehashed": false,
+        "exactContentGameplayQualified": false,
+        "fourPhonesQualified": false
+      },
+      "profileId": "snes-sbomberman2-usa-battle-single-r77",
+      "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+      "maximumPlayers": 4
+    }
+  ]
+}

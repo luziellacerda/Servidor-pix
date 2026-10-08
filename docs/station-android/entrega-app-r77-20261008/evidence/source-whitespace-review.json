@@ -1,0 +1,18 @@
+{
+  "scope": "git diff --cached --check with CR-at-EOL recognition",
+  "remainingFindings": [
+    "versions/station-multiplayer-r77-20261008/core-snes/multitap-input.patch:5: trailing whitespace.",
+    "versions/station-multiplayer-r77-20261008/core-snes/multitap-input.patch:24: trailing whitespace.",
+    "versions/station-multiplayer-r77-20261008/java/netplay-src/org/emulationstation/frontend/netplay/StationPresence.java:22: trailing whitespace.",
+    "versions/station-multiplayer-r77-20261008/java/netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java:118: trailing whitespace.",
+    "versions/station-multiplayer-r77-20261008/java/netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java:126: trailing whitespace.",
+    "versions/station-multiplayer-r77-20261008/native/station-multiplayer-r77.patch:199: trailing whitespace.",
+    "versions/station-multiplayer-r77-20261008/native/station-multiplayer-r77.patch:304: trailing whitespace.",
+    "versions/station-multiplayer-r77-20261008/native/station-multiplayer-r77.patch:357: trailing whitespace.",
+    "versions/station-multiplayer-r77-20261008/native/station-multiplayer-r77.patch:391: trailing whitespace.",
+    "versions/station-multiplayer-r77-20261008/server/src/TurboRamaSuiteOnlineServer/DeviceInventoryProtocol.cs:1027: new blank line at EOF.",
+    "versions/station-multiplayer-r77-20261008/server/src/TurboRamaSuiteOnlineServer/MotherboardInventoryNormalizer.cs:165: new blank line at EOF."
+  ],
+  "decision": "Preserve frozen and tested source bytes; patch context blank lines and inherited/frozen source whitespace are not rewritten after packaging. Documentation EOF was corrected.",
+  "functionalSourcesChanged": false
+}

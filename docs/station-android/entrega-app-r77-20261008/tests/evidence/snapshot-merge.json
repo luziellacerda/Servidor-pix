@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-08T13:21:14.618609+00:00",
+  "passed": true,
+  "sourceSHA256": "1fbdce87d1834091dcafc1b2b7eb3a81d77161ddff58194e34bc73c4c152c1c0",
+  "methodSHA256": [
+    "b1a691a740dee9e600d134d012bc305bf53af95465dc477244489f214f32e453",
+    "a225ccef061b66ab96f04bfd7325e79258ebd01d9ed861a24a65e8f2788692db",
+    "d7c8735111275214fab878658f3811d00c086d87595f4450744d2663790b6d56"
+  ],
+  "generatedSHA256": "3c1dad8ae28be73ef6f55b9c262962f035c0e1a48f4a8d0e10986a758572ab2d",
+  "recipeSHA256": "043a7a2f023e6a8a68a044a326426574c9d2812a1dcd081bb7e8c22f74127d5c",
+  "metrics": {
+    "checks": 90,
+    "passed": true
+  },
+  "scope": "three actual snapshot merge/revision methods, JSON-only fixtures; no signed HTTP or Android in this suite"
+}

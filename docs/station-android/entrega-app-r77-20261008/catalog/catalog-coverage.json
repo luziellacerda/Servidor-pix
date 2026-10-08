@@ -1,0 +1,52 @@
+{
+  "utc": "2026-10-08T12:34:27.106437+00:00",
+  "sourceCommit": "bee3dcd5c2c0c0a228805957fe89b9a6023e8402",
+  "catalogRevision": 14,
+  "latestPublishedCatalogChange": "0a5ccc4e6cb647f5fedafa6d400995fd62cd1bfe 2026-10-05T15:23:20-03:00",
+  "inventoryRows": 2467,
+  "visibleRows": 2212,
+  "compatibilityIds": 255,
+  "platformVisibleCounts": {
+    "megadrive": 887,
+    "megadrivebr": 94,
+    "n64": 157,
+    "neogeo": 189,
+    "neogeocd": 50,
+    "snes": 644,
+    "snesbr": 191
+  },
+  "publishedRawContentHashes": 849,
+  "missingContentHashes": 1618,
+  "visiblePublishedRawContentHashes": 849,
+  "visibleMissingContentHashes": 1363,
+  "researchItems": 6,
+  "itemsWithDocumentedOriginalModes": 5,
+  "unreviewedIds": 2461,
+  "authorizedIds": 0,
+  "blockerCounts": {
+    "SIGNED_PROFILE_AUTHORIZATION_MISSING": 2467,
+    "CONTENT_SHA256_MISSING": 1618,
+    "GAME_MODE_EVIDENCE_MISSING": 2461,
+    "LEGACY_ID_REQUIRES_EXPLICIT_BINDING": 255,
+    "EXACT_VARIANT_AND_MODE_GAMEPLAY_NOT_QUALIFIED": 6,
+    "GAME_MODE_OR_ADAPTER_EVIDENCE_INCOMPLETE": 1,
+    "ONLINE_ENGINE_NOT_QUALIFIED": 396
+  },
+  "sourceFiles": {
+    "docs/station-android/biblioteca-neogeocd-20261005/catalogo-completo.tsv": "3dae0cfa3877fba31b9a347b58795fe0df95333aea628b9ea8be597b7ccfed6e",
+    "docs/station-android/biblioteca-neogeocd-20261005/compatibilidade-ids.tsv": "1773f431c00b59cb0920e1f335e14f5cc88968401015cd0d238a5d795d222a51",
+    "docs/station-android/biblioteca-neogeocd-20261005/resumo-catalogo.json": "6bc60843901ce8c1179ab995f5407c97ff983b0e41752f4437338a99b9aea4e5"
+  },
+  "recipeSHA256": "8e35cb415c7ffe01c80a91d6c21473ddea5b38a73cce08bace7c956d7f6eb350",
+  "modeEvidenceSHA256": "c56d9f76ab1fad10051465494874bd65ae80099d4f541b39879fbf47edd46dfd",
+  "inventorySHA256": "5095eed365f94a6f2acf076cfa5d9abd6871499a8d459e285af1ca65fd805703",
+  "liveCatalogVerified": false,
+  "allTitlesResearched": false,
+  "productionModified": false,
+  "limitations": [
+    "Inventory covers every ID in the latest complete export found in existing remote refs, not a fresh authenticated live catalog.",
+    "Raw hashes are published transfer bytes; no current disk or normalized core payload was read.",
+    "Descriptive player counts are research hints and never authorize online rooms.",
+    "All candidates remain blocked until exact content, modes, profile, core and transport are qualified and authorized."
+  ]
+}

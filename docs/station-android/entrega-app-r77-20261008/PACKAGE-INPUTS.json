@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "baseApkSHA256": "d7145db3511a4056b16fdde10e4c07709a16b7f445596801b3535c1b28b06a51",
+  "javaBuildDirectory": "E:\\ESTUDO APK\\work\\station-multiplayer-r77-20261008\\java-build-final",
+  "javaBuildReceiptSHA256": "5f44b29a13c42e711051d82111f017cd5f6905fc263a330fd0e03e27517ca0b6",
+  "runtime": {
+    "path": "E:\\R77native\\candidate\\libstation_retroarch.so",
+    "sha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26"
+  },
+  "snesCore": {
+    "path": "E:\\ESTUDO APK\\work\\station-multiplayer-r77-20261008\\snes\\candidate\\libstation_bsnes.so",
+    "sha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527"
+  },
+  "engines": {
+    "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\assets\\station-online\\engines.json",
+    "sha256": "bba5045facf7641bd70cdf53f5cd01536d66e631018fa521d1c20d0732581af2"
+  },
+  "carousel": {
+    "path": "E:\\ESTUDO APK\\work\\station-multiplayer-r77-20261008\\carousel-build-02\\libturbo_carousel.so",
+    "sha256": "98e951b2aad45d63ebe563de95d7a9299339928e54ce082915a147a992ab0302"
+  },
+  "catalogAssets": [
+    {
+      "entry": "assets/station-catalog/player-evidence-v1.json",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-28\\turboramaemutestes-apk-e-estudo-apk-work\\work\\TurboElden-git\\versions\\station-multiplayer-r77-20261008\\assets\\station-catalog\\player-evidence-v1.json",
+      "sha256": "d0210c6211aa7ebfe77ce2973b3297e5b7d1c028c8f1d23d613ab21892716acb"
+    }
+  ]
+}

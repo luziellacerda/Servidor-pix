@@ -1,0 +1,21 @@
+{
+  "commit": "ab192bf1585e30f303d041f13b36a1f9c96d2caa",
+  "files": [
+    {
+      "path": "tests/StationRecovery/Program.cs",
+      "sha256": "977673160e21987d7930ac332acd4cf396adccf90bc023d615c6a65a0304bf0c"
+    },
+    {
+      "path": "tests/StationRecovery/StationRecovery.Tests.csproj",
+      "sha256": "834a3a7f765a093ac97a154dda4b9a6a667db98dc95b5f2cf5ad64514ec10490"
+    },
+    {
+      "path": "tests/StationRecovery/Directory.Build.props",
+      "sha256": "7f08da0973696dbe2caed32c163845866eacf951a7389d8ed3f035e0908d2c92"
+    },
+    {
+      "path": "docs/station-android/recovery-r67-20261007/contract-vectors.json",
+      "sha256": "b7efac34a5b04f78560c1749270a56fad640d8de5924c5f4e4abf62662dc0779"
+    }
+  ]
+}
