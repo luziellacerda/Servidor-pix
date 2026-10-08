@@ -1,0 +1,838 @@
+{
+  "schemaVersion": 1,
+  "games": {
+    "alientrilogy": {
+      "cover": "media/catalogo/7dd8819f6823fc24bde2b47df885d7a8.jpg",
+      "coverSha256": "88c5109a7387fabb18e44d095c464a381bc16a0cb9f3867620e32d1dd634d191",
+      "metadata": {
+        "description": "Alien Trilogy, nesta edição para PlayStation 1, leva a experiência para um cenário de ficção científica com exploração, tecnologia e desafios futuristas. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "aloneinthedarkoneeyedjacksrevenge": {
+      "cover": "media/catalogo/fe8b1259703fce793ea942cf2c83f98c.jpg",
+      "coverSha256": "762c0c0b1a51acd19cdb47ddf73310f8100648eff75f0ecb7718d3d457238c6a",
+      "metadata": {
+        "description": "Alone in the Dark One Eyed Jacks Revenge, nesta edição para PlayStation 1, constrói uma experiência de suspense e sobrevivência com exploração cuidadosa e atmosfera marcante. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "aloneinthedarkthenewnightmare": {
+      "cover": "media/catalogo/26af86cb42fa79dadc0e8c5e856cb1ab.jpg",
+      "coverSha256": "bf4101d9bb6586c44d86bb2351edb7994478ed64d1821174aa674d672d392ebc",
+      "metadata": {
+        "description": "Alone in the Dark The New Nightmare, nesta edição para PlayStation 1, constrói uma experiência de suspense e sobrevivência com exploração cuidadosa e atmosfera marcante. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "alundra": {
+      "cover": "media/catalogo/ed83c742b280f9df86cdbfd94e650e7e.jpg",
+      "coverSha256": "b4289e39290614fffeb03e9e1350ccf1e23b7875f7e987765656049609711a17",
+      "metadata": {
+        "description": "Alundra, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "apocalypse": {
+      "cover": "media/catalogo/b3b2074465dec72482e2ae13b5475799.jpg",
+      "coverSha256": "b690347649d7714c315ba851e48f0db8643cc7c4de8a333684be3b40bf92836d",
+      "metadata": {
+        "description": "Apocalypse, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "armoredcoreusav11": {
+      "cover": "media/catalogo/51bb9e098824e2f353f86811283837cc.jpg",
+      "coverSha256": "301ef3578c84ce1e9ff425379da8d7b16b265f52d7996ea233a48ea660dfc23b",
+      "metadata": {
+        "description": "Armored Core (v1 1), nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "armymenteamassault": {
+      "cover": "media/catalogo/db643c4b44d9b7d5ce46a2cef9110c6c.jpg",
+      "coverSha256": "cee35c936a3f5639b699e9c35282ca086029297bbf9cb30102ea9d249167e3bf",
+      "metadata": {
+        "description": "Army Men - Team Assault, nesta edição para PlayStation 1, é uma experiência de ação com objetivos, progressão e desafios ligados ao seu cenário. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "barbieexplorerspain": {
+      "cover": "media/catalogo/208b12b08a0316e754a0bf868d27bdae.jpg",
+      "coverSha256": "4cce1ca53e7ba6db0c6f76013832ed2e757202c5ecb92fe4d6b828f6f458d16e",
+      "metadata": {
+        "description": "Barbie - Explorer (Spain), nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "batmanforeverthearcadegame": {
+      "cover": "media/catalogo/be337843ccdef26d94f49ac5c29dbc3f.jpg",
+      "coverSha256": "0cf3657012b6a4bb21ea2f927093139869e62c6608c8edc286b1b06849d7b86d",
+      "metadata": {
+        "description": "Batman Forever The Arcade Game, nesta edição para PlayStation 1, explora investigação, combates táticos e os dispositivos do herói em uma cidade sombria. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "bloodomenlegacyofkain": {
+      "cover": "media/catalogo/9f735c679b9e8af375dee2df7338a310.jpg",
+      "coverSha256": "55fb5c3d150ab7f41117d9bf3b405845af48dc055cadfca01226194cf4695163",
+      "metadata": {
+        "description": "Blood Omen - Legacy of Kain, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "bloodyroarii": {
+      "cover": "media/catalogo/e3a228b45cdefc71371feb822aaf272c.jpg",
+      "coverSha256": "c324c50ea8ec353adda61878eedde3634095e7c178d37c9262a28bb7ba1a588a",
+      "metadata": {
+        "description": "Bloody Roar II, nesta edição para PlayStation 1, é centrado em luta competitiva, elenco próprio e domínio de golpes e combinações. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "bloodyroar": {
+      "cover": "media/catalogo/c795ca0ff1b9e847943a9975639c7531.jpg",
+      "coverSha256": "455a1b8bcc1657ac45126ed62338885abb3fc120f97c08c02d8869b716c865e6",
+      "metadata": {
+        "description": "Bloody Roar, nesta edição para PlayStation 1, é centrado em luta competitiva, elenco próprio e domínio de golpes e combinações. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "breathoffireiii": {
+      "cover": "media/catalogo/d8d8a6629f679af503fc72d762471af0.jpg",
+      "coverSha256": "de1c2cdd7df557fdbc5ca5f82381fcd7725043fc442bc4a347114f7ae58efcbe",
+      "metadata": {
+        "description": "Breath of Fire III, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "breathoffireiv": {
+      "cover": "media/catalogo/6d1df3fb6ad172287f09c80721bd1f5d.jpg",
+      "coverSha256": "0cc342947a3b0bcf9e0146b737761521c18ac05d1d4b1ee15ecdd599efb5a6ce",
+      "metadata": {
+        "description": "Breath of Fire IV, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "capcomvssnkmillenniumfight2000pro": {
+      "cover": "media/catalogo/b0a1ba9b133d2221d1e26e29536c4a62.jpg",
+      "coverSha256": "da663d6b21b89c885b9f4093c6cba1121563bc008fc25f5dba7c21be3f42f330",
+      "metadata": {
+        "description": "Capcom vs SNK - Millennium Fight 2000 Pro, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "carmageddon": {
+      "cover": "media/catalogo/fd1a202c87969dcdd5f7f1d437d26fdc.jpg",
+      "coverSha256": "5a1b9e5511c496a2650025e44ee184030271de7da496d783b69a4494ae879c92",
+      "metadata": {
+        "description": "Carmageddon, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "casperusa": {
+      "cover": "media/catalogo/4062045c2867acc8973794d7c0e7f642.jpg",
+      "coverSha256": "5464ec25316bb6e44493c8c5a83337784c5f8c24fb936a59eb3c66d55c443980",
+      "metadata": {
+        "description": "Casper, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "castlevaniachronicles": {
+      "cover": "media/catalogo/8a35285900e982b37c496309a492342e.jpg",
+      "coverSha256": "8bc20e90485aae4bfbd6549c34a96e60ccd73d9072eafd430055e4472d7f624f",
+      "metadata": {
+        "description": "Castlevania Chronicles, nesta edição para PlayStation 1, explora castelos sombrios, criaturas clássicas e progressão por armas e habilidades. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "castlevaniasymphonyofthenight": {
+      "cover": "media/catalogo/727a89d1a42b73224356eb065f176640.jpg",
+      "coverSha256": "1b7b0b073adea00392e98729b87cc1a49989c48e38291ebe462efc91b1c0c82b",
+      "metadata": {
+        "description": "Castlevania Symphony of the Night, nesta edição para PlayStation 1, explora castelos sombrios, criaturas clássicas e progressão por armas e habilidades. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "clocktoweriithestrugglewithin": {
+      "cover": "media/catalogo/c590369e40fc4033f2af1d67ce39a173.jpg",
+      "coverSha256": "8e8eee6f6366e0507572ec51e525f4abb3bb4219523fae7c266e2cc04faf43bb",
+      "metadata": {
+        "description": "Clock Tower II - The Struggle Within, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "clocktower": {
+      "cover": "media/catalogo/490033df43c2ac15c6d5c1b77c604899.jpg",
+      "coverSha256": "a5597489caf952434a456dffed0dea7efc44b9ac4d8cccde49f99a41b25720d0",
+      "metadata": {
+        "description": "Clock Tower, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "couriercrisisthesagaofthemodernfatalistusa": {
+      "cover": "media/catalogo/c58646399a9590ca34dff53f35a1cfb6.jpg",
+      "coverSha256": "f0a0946d4bac8189928dc6c9dd228915887d1a0910f8e564a7785865ee56a7ef",
+      "metadata": {
+        "description": "Courier Crisis - The Saga of the Modern Fatalist, nesta edição para PlayStation 1, desenvolve uma aventura de fantasia com exploração, progressão e personagens ligados ao seu universo. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "crashbandicoot2cortexstrikesback": {
+      "cover": "media/catalogo/0e2d36ab2334fb347ffdad764dae9970.jpg",
+      "coverSha256": "3ec26a8e896036e1ba05040de7b764eae15d44418f49cb0e01cf95168f7e223d",
+      "metadata": {
+        "description": "Crash Bandicoot 2 - Cortex Strikes Back, nesta edição para PlayStation 1, oferece plataforma acessível, fases criativas, segredos e desafios de precisão. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "crashbandicoot3warped": {
+      "cover": "media/catalogo/1783543c980e9eb6becd2049d2cbddbe.jpg",
+      "coverSha256": "488b0f3214c37f40a978ff07bd8259e45b004ddd071964a596e01092a9d72751",
+      "metadata": {
+        "description": "Crash Bandicoot 3 Warped, nesta edição para PlayStation 1, oferece plataforma acessível, fases criativas, segredos e desafios de precisão. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "crashbandicoot": {
+      "cover": "media/catalogo/9f38f570ef7b48b1d0373b35c4fb941f.jpg",
+      "coverSha256": "d9b23f3d6a3ee59fa74d2173d23a0414f2f47f5960e4c43362df0ad4497692cb",
+      "metadata": {
+        "description": "Crash Bandicoot, nesta edição para PlayStation 1, oferece plataforma acessível, fases criativas, segredos e desafios de precisão. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "crashbashusa": {
+      "cover": "media/catalogo/0197a3170bacad4a520b4ea58f20deb4.jpg",
+      "coverSha256": "f769f9ac16fa4f628a3adb62ed3193ad70606a04dd4c4504ee44d6f4ceb49ec6",
+      "metadata": {
+        "description": "Crash Bash, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "crashbash": {
+      "cover": "media/catalogo/cf00e83883e15066d406858a923b2f47.jpg",
+      "coverSha256": "133824a0ab2eb7b03dc04c1ae77a59fe04b707e27083cf87722936b0242723bc",
+      "metadata": {
+        "description": "Crash Bash, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "croclegendofthegobbos": {
+      "cover": "media/catalogo/bd3f86a16496e1a7834b6797bf355e6e.jpg",
+      "coverSha256": "c42b2f7036134f7dc1b712844a218e6ab4f68457202d33a434f68887028ae9be",
+      "metadata": {
+        "description": "Croc - Legend of the Gobbos, nesta edição para PlayStation 1, é uma aventura de exploração, progressão e descoberta construída em torno de seu universo próprio. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "ctrcrashteamracing": {
+      "cover": "media/catalogo/478653b8889b4347a2ed7dfdd55339a6.jpg",
+      "coverSha256": "a8b94b2bddd3afca67b3ed4ce76931bde4c82a3c1143a2fa4f5bbac50761d657",
+      "metadata": {
+        "description": "CTR - Crash Team Racing, nesta edição para PlayStation 1, é voltado a corridas, controle de veículos e domínio de pistas com progressão de desempenho. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "digimonrumblearena": {
+      "cover": "media/catalogo/ec65147cbe5a6a0ff5a85d9a8ff0adb1.jpg",
+      "coverSha256": "a607c6d3d0b318e2ae9f87cc2d9c1f668771fe74c9dba15b859d0fc0e93aabc0",
+      "metadata": {
+        "description": "Digimon Rumble Arena, nesta edição para PlayStation 1, reúne aventura e progressão de companheiros digitais em uma jornada de RPG. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "digimonworld": {
+      "cover": "media/catalogo/dc39f69ffaf89541dc78e05d383d47bb.jpg",
+      "coverSha256": "5a4ce3ad924a3ab285877434bdda944a863378d4c54319cb0cfb1d5e5fec16f8",
+      "metadata": {
+        "description": "Digimon World, nesta edição para PlayStation 1, reúne aventura e progressão de companheiros digitais em uma jornada de RPG. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "dinocrisis2": {
+      "cover": "media/catalogo/146f297a3cbf232a3c93cc999e50d9e5.jpg",
+      "coverSha256": "a8eb049ac7a2bb6be6afa8c0a632950acfa41be65fddf9be9336bf3a3f2c96df",
+      "metadata": {
+        "description": "Dino Crisis 2, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "dinocrisis": {
+      "cover": "media/catalogo/649da056227bf373d38e4921bf037915.jpg",
+      "coverSha256": "70f44ce7f8dc3e388e5ee6e94b3b68d0b68ae47d32b3008ffea6a0454b142201",
+      "metadata": {
+        "description": "Dino Crisis, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "disneysherculesactiongame": {
+      "cover": "media/catalogo/55d61d155f14d28edcda1d32dc82c401.jpg",
+      "coverSha256": "dfa790cefe6ecb9b1e81908fd605a51e9e0842e8335ccdfc0cde5ee8b68ab0a1",
+      "metadata": {
+        "description": "Disney's Hercules Action Game, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "disneystarzan": {
+      "cover": "media/catalogo/542d3ee9f716cf08d526d786a3b31cb0.jpg",
+      "coverSha256": "8eff43972d987d1e2ae8c6dbc875a6b88debeb1ebfe136dbc8a558700d59c610",
+      "metadata": {
+        "description": "Disney's Tarzan, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "dragonballzidainarudragonballdensetsu": {
+      "cover": "media/catalogo/c61c731fad5022f80d71f8010b56866a.jpg",
+      "coverSha256": "6c95775132d8224775dd26f9d910d9bfc429fb97697a54d01bc5394a25e964e7",
+      "metadata": {
+        "description": "Dragon Ball Z - Idainaru Dragon Ball Densetsu, nesta edição para PlayStation 1, adapta personagens e técnicas do anime para uma aventura de ação com identidade visual própria. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "dragonballgtfinalbout": {
+      "cover": "media/catalogo/ee12f73e29a49b46f50e3b56adc267f9.jpg",
+      "coverSha256": "301eefbd9e249e22e6697921f35ba082ad8e5c90fe57d39e1d24ad1dfab3b638",
+      "metadata": {
+        "description": "Dragonball GT - Final Bout, nesta edição para PlayStation 1, recria sua modalidade esportiva com partidas, equipes e progressão competitiva. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "dragonballzultimatebattle22": {
+      "cover": "media/catalogo/cdea4a2226fc750d8f932aeb4c9a4d28.jpg",
+      "coverSha256": "9e7f4c20078933b9582805ddd83bb7c81b8e9d24882c0ffaa785a761b50e5b3e",
+      "metadata": {
+        "description": "Dragonball Z - Ultimate Battle 22, nesta edição para PlayStation 1, recria sua modalidade esportiva com partidas, equipes e progressão competitiva. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "driverspain": {
+      "cover": "media/catalogo/0ca5cc44a44994427eb79cb554c1327a.jpg",
+      "coverSha256": "c9f14975c84d46198d0bcf90e675f934f607aeda9dc6a3e24c78442b80ddeb57",
+      "metadata": {
+        "description": "Driver (Spain), nesta edição para PlayStation 1, é voltado a corridas, controle de veículos e domínio de pistas com progressão de desempenho. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "driver2": {
+      "cover": "media/catalogo/735d4410d888af9a3155e5f85a701015.jpg",
+      "coverSha256": "929caa7064e3f424e0f02947cd6701910994f008f9d73060786fa8f289253052",
+      "metadata": {
+        "description": "Driver 2, nesta edição para PlayStation 1, é voltado a corridas, controle de veículos e domínio de pistas com progressão de desempenho. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "fantasticfour": {
+      "cover": "media/catalogo/2a307ffee7b6c82c32b667fc42980d5d.jpg",
+      "coverSha256": "53f5331618523a269ab322794394bbb60f99a69b97aae76dfcac442e42fd5186",
+      "metadata": {
+        "description": "Fantastic Four, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "fatalfurywildambition": {
+      "cover": "media/catalogo/03ed71fa52e78f5954ae711b5be39345.jpg",
+      "coverSha256": "beb787c99358f20ac0b14bfd0f962d0dea73dc05891b221169bfb2deb2ff4b7d",
+      "metadata": {
+        "description": "Fatal Fury - Wild Ambition, nesta edição para PlayStation 1, é centrado em luta competitiva, elenco próprio e domínio de golpes e combinações. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "fightingforce2": {
+      "cover": "media/catalogo/e836ff1d4e966e09de6e9c365e733983.jpg",
+      "coverSha256": "b3924894ca1dce25ccba31c818f25a2252dd9ee3679b8cbea456ddde9201c60c",
+      "metadata": {
+        "description": "Fighting Force 2, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "fightingforce": {
+      "cover": "media/catalogo/d1fe6540318e1ae27662a09ad41be16c.jpg",
+      "coverSha256": "ede8ed7fc0ec033b9078aa6828a7426790aa9a7f9b85a61873f90cff6c99dc00",
+      "metadata": {
+        "description": "Fighting Force, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "finalfantasychronicleschronotrigger": {
+      "cover": "media/catalogo/24570280f6f4c4457474f2949f3b065f.jpg",
+      "coverSha256": "ce7c40ba10558d86fd039d9b06ab2463455786cbd7e8508eb769de1888d1f1ee",
+      "metadata": {
+        "description": "Final Fantasy Chronicles - Chrono Trigger, nesta edição para PlayStation 1, desenvolve uma jornada de RPG com personagens, progressão, exploração e narrativa extensa. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "finalfantasychroniclesfinalfantasyiv": {
+      "cover": "media/catalogo/9b7252e116bc0bb2ddc2ff656e9148ff.jpg",
+      "coverSha256": "abe1dacb18921e32afaddce15d3e5cd7aeb79543bde34ea4cf491a1f4a8ef464",
+      "metadata": {
+        "description": "Final Fantasy Chronicles - Final Fantasy IV, nesta edição para PlayStation 1, desenvolve uma jornada de RPG com personagens, progressão, exploração e narrativa extensa. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "finalfantasyix": {
+      "cover": "media/catalogo/1a34a5167c02a0205d09e6d13018299a.jpg",
+      "coverSha256": "bd2b5e533a90a3042cfe52e29e913733483c940c4e89d7a588fdff06b190c899",
+      "metadata": {
+        "description": "Final Fantasy IX, nesta edição para PlayStation 1, desenvolve uma jornada de RPG com personagens, progressão, exploração e narrativa extensa. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "finalfantasyorigins": {
+      "cover": "media/catalogo/0b548d3f77d83241c17db94002304a1e.jpg",
+      "coverSha256": "93a01298af7b14715c368174b277f3a61b6520e837104c2f75f4e40657e032a7",
+      "metadata": {
+        "description": "Final Fantasy Origins, nesta edição para PlayStation 1, desenvolve uma jornada de RPG com personagens, progressão, exploração e narrativa extensa. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "finalfantasytactics": {
+      "cover": "media/catalogo/cfe2fa7a220805728babe1b252ec396e.jpg",
+      "coverSha256": "b68ebabab6ef2ca1a7f543ef54f83a4dc2ca59a9a9cc5eac993131077aaa933c",
+      "metadata": {
+        "description": "Final Fantasy Tactics, nesta edição para PlayStation 1, desenvolve uma jornada de RPG com personagens, progressão, exploração e narrativa extensa. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "finalfantasyv": {
+      "cover": "media/catalogo/c8674fad5f592f78761b62cd7b26e38f.jpg",
+      "coverSha256": "4975fa1d44812570bc7b1ada21edfa01a82319f9d6470dd2b96668df8953a4ec",
+      "metadata": {
+        "description": "Final Fantasy V, nesta edição para PlayStation 1, desenvolve uma jornada de RPG com personagens, progressão, exploração e narrativa extensa. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "finalfantasyvi": {
+      "cover": "media/catalogo/659dc7757d845e2fe79c174974035a42.jpg",
+      "coverSha256": "5088fea7305e6664927420abae998633cdf7870df4752cd78a4c958415381480",
+      "metadata": {
+        "description": "Final Fantasy VI, nesta edição para PlayStation 1, desenvolve uma jornada de RPG com personagens, progressão, exploração e narrativa extensa. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "finalfantasyviii": {
+      "cover": "media/catalogo/06cf38115752be08723509b648acbb8c.jpg",
+      "coverSha256": "6f1346a320ad260c68618e21b648153e9c5deab235899bbb8a251a1d922ab8d2",
+      "metadata": {
+        "description": "Final Fantasy VIII, nesta edição para PlayStation 1, desenvolve uma jornada de RPG com personagens, progressão, exploração e narrativa extensa. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "gdarius": {
+      "cover": "media/catalogo/67ba2cff5f02c3edb8c7b3e0810c69ce.jpg",
+      "coverSha256": "48bb54a24b0087b7b147b6fd490c00a89f1c773d447708419e265eff321dae69",
+      "metadata": {
+        "description": "G-Darius, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "gamelist": {
+      "cover": "media/catalogo/71806c74229d1fb96235dbcf1364d936.jpg",
+      "coverSha256": "118f9e622522e88112482481d89562c9e93fd0dad4fd7815fb2b8a4959b17bf3",
+      "metadata": {
+        "description": "gamelist, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "granturismo2": {
+      "cover": "media/catalogo/8d797309deeef5e2a6c40d6b1b23c818.jpg",
+      "coverSha256": "c2eed39531d52fd7d68b30df9275c51003c79780bd0dd9d1d0944b696043426d",
+      "metadata": {
+        "description": "Gran Turismo 2, nesta edição para PlayStation 1, é voltado a corridas, domínio dos veículos e evolução em pistas ou estradas variadas. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "granturismo": {
+      "cover": "media/catalogo/5926a329a48cad839e85e2b200d6f9e7.jpg",
+      "coverSha256": "dc8fe2c08f73489ef8a7d966384dce1bda20a0eba8c7625fa7ad0ac958d95b3b",
+      "metadata": {
+        "description": "Gran Turismo, nesta edição para PlayStation 1, é voltado a corridas, domínio dos veículos e evolução em pistas ou estradas variadas. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "grandtheftauto2": {
+      "cover": "media/catalogo/7a7728b3964e39a5e9576b562122b7e9.jpg",
+      "coverSha256": "28d5141c92e3dec78c61f3bbe5e38b20c5888d26098e5e977d54e9a2256b93f3",
+      "metadata": {
+        "description": "Grand Theft Auto 2, nesta edição para PlayStation 1, oferece um mundo urbano aberto com missões, veículos e liberdade de exploração. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "grandtheftauto": {
+      "cover": "media/catalogo/45104b1684945db33c41932598e4bd64.jpg",
+      "coverSha256": "c3cc99c5e325ec4d82d6c54424e3feb4cf56b3730e5f64727d123de7c22acc2f",
+      "metadata": {
+        "description": "Grand Theft Auto, nesta edição para PlayStation 1, oferece um mundo urbano aberto com missões, veículos e liberdade de exploração. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "guiltygear": {
+      "cover": "media/catalogo/d8afa718e640fe254c77d59de4601359.jpg",
+      "coverSha256": "a6980d7f341acfbdc5e4a839f1d340168b0b0376719aa82d06058aa14cb1f924",
+      "metadata": {
+        "description": "Guilty Gear, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "harrypotterandthechamberofsecrets": {
+      "cover": "media/catalogo/b12d3857f1273098432a04b1db5f3895.jpg",
+      "coverSha256": "589d0a37b0ac07f4aa72d9d27a970b500d6c01a68e1e86696a8aeddc253a9fbe",
+      "metadata": {
+        "description": "Harry Potter and the Chamber of Secrets, nesta edição para PlayStation 1, transporta o jogador para uma aventura mágica de exploração, desafios e descobertas. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "harrypotterandthephilosophersstone": {
+      "cover": "media/catalogo/cee436f1156a9061fd2ddaa3d151d920.jpg",
+      "coverSha256": "c4febe1b39d98e72dd9d6f0212d45e55f3a962ffd6a2d1ceed52b682c60c9a65",
+      "metadata": {
+        "description": "Harry Potter and the Philosopher's Stone, nesta edição para PlayStation 1, transporta o jogador para uma aventura mágica de exploração, desafios e descobertas. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "hugospain": {
+      "cover": "media/catalogo/34d4ea7b107579a46c80a3672d162d31.jpg",
+      "coverSha256": "9d4862c178e3e102ceb1f650cf303d7dd4931d9d366f9a3eb72a0b94d54e08da",
+      "metadata": {
+        "description": "Hugo (Spain), nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "hugo2spain": {
+      "cover": "media/catalogo/be7ad3adfc1d2bf2ccbec5e0bd9ac585.jpg",
+      "coverSha256": "48856aaeca5d357dfcd7143f2b26e17051d53d3347f5e856f45c0f0d8100e99d",
+      "metadata": {
+        "description": "Hugo 2 (Spain), nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "incrediblehulkthepantheonsaga": {
+      "cover": "media/catalogo/6cb9d4abe0ef5bf7f3a80f67ebf13640.jpg",
+      "coverSha256": "66a50afb881da7cb7fe7d35deed19808b1ff677b8a9ebbea5d7b4691ae473b5b",
+      "metadata": {
+        "description": "Incredible Hulk - The Pantheon Saga, nesta edição para PlayStation 1, desenvolve uma aventura de fantasia com exploração, progressão e personagens ligados ao seu universo. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "independenceday": {
+      "cover": "media/catalogo/be173bae1043142d268832a8ba1b98cb.jpg",
+      "coverSha256": "b70c87e88b5613a4c7ea429480b39276718774eb9af39b6322f553388833d50d",
+      "metadata": {
+        "description": "Independence Day, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "inuyashaafeudalfairytale": {
+      "cover": "media/catalogo/1e8579eb89f62203b7f44cbcae6e82e9.jpg",
+      "coverSha256": "1d4b7e9a01380d065e78f19e7ccb78ff13fba7b5c5c0e233efe36397d7bc7613",
+      "metadata": {
+        "description": "Inuyasha - A Feudal Fairy Tale, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "legendoflegaia": {
+      "cover": "media/catalogo/194e25b9e5ac630752b50f4a625bb882.jpg",
+      "coverSha256": "4c745d0e568ddf5864d0e191471455835b9dc3dc7f8d8bb3327345bcd4895342",
+      "metadata": {
+        "description": "Legend of Legaia, nesta edição para PlayStation 1, é uma aventura de exploração, progressão e descoberta construída em torno de seu universo próprio. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "legendofmana": {
+      "cover": "media/catalogo/5f1445e032ad09f42e6c6211bd1165f8.jpg",
+      "coverSha256": "beb97a00a4a95308478279189f4c70c612fd2db9a9dcd2aae1f08e0f6c0ef782",
+      "metadata": {
+        "description": "Legend of Mana, nesta edição para PlayStation 1, é uma aventura de exploração, progressão e descoberta construída em torno de seu universo próprio. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "medalofhonorunderground": {
+      "cover": "media/catalogo/c5e4957225cde83c156db007855d75a8.jpg",
+      "coverSha256": "8bd02cb8306e01341b1e7d8848b8550effbbec00b12be62403b2973cee80ce45",
+      "metadata": {
+        "description": "Medal of Honor - Underground, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "medalofhonor": {
+      "cover": "media/catalogo/7e89487a5ed7a21f310bd36888d6c05b.jpg",
+      "coverSha256": "3c2b4b4500cea9a1e80b335839ffdd3b3ffcd1d014f7bcf934742b948ed5ce79",
+      "metadata": {
+        "description": "Medal of Honor, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "medievilii": {
+      "cover": "media/catalogo/0bc276fb2408efe6c7ea0de9cffd6b85.jpg",
+      "coverSha256": "29dbdd99c8ccd6beb174ee82ae8f2dc13307c46258e88aed9437c0ce96c3487f",
+      "metadata": {
+        "description": "Medievil II, nesta edição para PlayStation 1, usa suspense, exploração e atmosfera sombria para conduzir seus desafios de sobrevivência. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "medievil": {
+      "cover": "media/catalogo/ffdb88f61555716bc8fdf7b948e29752.jpg",
+      "coverSha256": "90b543c8251a3e660e11a993d63a1970498aa964072a856dad785599dab0340e",
+      "metadata": {
+        "description": "Medievil, nesta edição para PlayStation 1, usa suspense, exploração e atmosfera sombria para conduzir seus desafios de sobrevivência. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "megamanx3": {
+      "cover": "media/catalogo/9c215883c4c485ad3128705a1ae3621c.jpg",
+      "coverSha256": "73cf66733f8e201c6db5ce688c21ba3aa5cd3ce390bde7839ec6e0b0aba43aa5",
+      "metadata": {
+        "description": "Mega Man X3, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "megamanx4": {
+      "cover": "media/catalogo/6fa42190473438f5f475f862babb3ea3.jpg",
+      "coverSha256": "c6914433544422dd438e886bc2c72b057ae2331c3d3bf6ebb62627717573baaf",
+      "metadata": {
+        "description": "Mega Man X4, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "megamanx5": {
+      "cover": "media/catalogo/c6593fee053a45a88ab39fe4a3765c83.jpg",
+      "coverSha256": "0c204158b9a77d688d76ae1317dcdfe45a15408adc3514080e07ce3ed76c9872",
+      "metadata": {
+        "description": "Mega Man X5, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "megamanx6": {
+      "cover": "media/catalogo/f9826e4ea1ebe18ab30d416d54582e7e.jpg",
+      "coverSha256": "79c95add89148ec6c05d5f49ff93ca8ef8b47e3a5c06dc95b6c98ae851bb6e11",
+      "metadata": {
+        "description": "Mega Man X6, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "megaman8": {
+      "cover": "media/catalogo/fbeb610ff0cfd1095a034e58bc444f9f.jpg",
+      "coverSha256": "b3d0ad502a7cd60b875d07a77cd136d7faf948e7924fbe5510e6842d3c48b9c9",
+      "metadata": {
+        "description": "MegaMan 8, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "metalgearsolid": {
+      "cover": "media/catalogo/c7bc9c9c5dbfc5fff7b3d1c3960da4bf.jpg",
+      "coverSha256": "8fdd588568a74acb00e4e090d3a12dc69f8ee164858d05f8cb7f58a025c80a9f",
+      "metadata": {
+        "description": "Metal Gear Solid, nesta edição para PlayStation 1, valoriza planejamento, reconhecimento de terreno e operações táticas. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "metalslugx": {
+      "cover": "media/catalogo/4e2e3e17aa253a1a3038e4c8d85c8670.jpg",
+      "coverSha256": "2130c1f76e08b74adc979648d8ce8f8364096f92b618cc0a2d238cd367518f45",
+      "metadata": {
+        "description": "Metal Slug X, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "mortalkombat3": {
+      "cover": "media/catalogo/f26388ed98375d72fcf9494cddfc2b9e.jpg",
+      "coverSha256": "a9635123e64e485a16b211761d7e408819a8aa13510a144b0069908928521609",
+      "metadata": {
+        "description": "Mortal Kombat 3, nesta edição para PlayStation 1, é centrado em luta competitiva, elenco próprio e domínio de golpes e combinações. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "mortalkombattrilogy": {
+      "cover": "media/catalogo/61bd0eae05be5312228015aab0d109e6.jpg",
+      "coverSha256": "97446247b8071d7959e78ddda8677def25182b97a06926440208447f0604e0af",
+      "metadata": {
+        "description": "Mortal Kombat Trilogy, nesta edição para PlayStation 1, é centrado em luta competitiva, elenco próprio e domínio de golpes e combinações. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "needforspeediiihotpursuit": {
+      "cover": "media/catalogo/3286beef869524b54d9a0bf4f91f7283.jpg",
+      "coverSha256": "75cd6dee49b756706975ad84cbc725505b6700fe54422f698121af566f51c6fe",
+      "metadata": {
+        "description": "Need for Speed III - Hot Pursuit, nesta edição para PlayStation 1, é voltado a corridas, domínio dos veículos e evolução em pistas ou estradas variadas. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "nightmarecreaturesii": {
+      "cover": "media/catalogo/dce65aa6a37a30eb68523d504aa8aaec.jpg",
+      "coverSha256": "05f4bc2b03c91faf3cd5dda4a82f199d230d6dd9b884eb22d7c2da0ef5cfe0e2",
+      "metadata": {
+        "description": "Nightmare Creatures II, nesta edição para PlayStation 1, usa suspense, exploração e atmosfera sombria para conduzir seus desafios de sobrevivência. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "nightmarecreatures": {
+      "cover": "media/catalogo/e794906ebed364cc239c8773644d9d82.jpg",
+      "coverSha256": "3fb2f5a828a25cb96a383e5e845b376f8e3e012e3b550478fdea3c114284757e",
+      "metadata": {
+        "description": "Nightmare Creatures, nesta edição para PlayStation 1, usa suspense, exploração e atmosfera sombria para conduzir seus desafios de sobrevivência. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "pandemonium2": {
+      "cover": "media/catalogo/ac36f3d0c58f3defc904fa6274a820ee.jpg",
+      "coverSha256": "18a372ff82d0b2f2cdc8b92a8f12384cc628a016a771495d6c85808e33f20264",
+      "metadata": {
+        "description": "Pandemonium! 2, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "pandemonium": {
+      "cover": "media/catalogo/fb80c15337c7e39741e19878273342e5.jpg",
+      "coverSha256": "7ed632078ce7513a1b3aaa9a4c43b3dc61ae04313b05606fae0896f5790a1746",
+      "metadata": {
+        "description": "Pandemonium!, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "parasiteeveii": {
+      "cover": "media/catalogo/19c2b5a2e74df39f2369f796fb24b07c.jpg",
+      "coverSha256": "5d429f1a02df5ef9e93b8c19de834814ccda7980110d451bc2a0ce96659293af",
+      "metadata": {
+        "description": "Parasite Eve II, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "parasiteeve": {
+      "cover": "media/catalogo/bb98889e4152bf22045e7d3d94cae3f9.jpg",
+      "coverSha256": "be7bffd5c96a14d79b2e549bf7c0ee687b2d4b20d24fd60222f662b2ef2545a7",
+      "metadata": {
+        "description": "Parasite Eve, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "residentevil1": {
+      "cover": "media/catalogo/c7b3134625d69f33cfbd440c60772f21.jpg",
+      "coverSha256": "482fed5a5d754172ea2898ea074ab1f699f8ff478e123fe5cd229c7f52f67079",
+      "metadata": {
+        "description": "Resident Evil 1, nesta edição para PlayStation 1, constrói uma experiência de suspense e sobrevivência com exploração cuidadosa e atmosfera marcante. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "residentevil2cd12": {
+      "cover": "media/catalogo/034fe444afb41d6a3f9cb20c4fc7ae96.jpg",
+      "coverSha256": "6e3af48e1b2d60d8805f0368e9d9bf2d7b332fdf54b00187ed5267e161d8f8bf",
+      "metadata": {
+        "description": "Resident Evil 2 CD 1-2, nesta edição para PlayStation 1, constrói uma experiência de suspense e sobrevivência com exploração cuidadosa e atmosfera marcante. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "residentevil3nemesis": {
+      "cover": "media/catalogo/6a422b0505a877095b49eb3e06d08afb.jpg",
+      "coverSha256": "80bfe9544c195686e6c8b9744da46aefcb013f0f025ca397f766292f78082ca1",
+      "metadata": {
+        "description": "Resident Evil 3 Nemesis, nesta edição para PlayStation 1, constrói uma experiência de suspense e sobrevivência com exploração cuidadosa e atmosfera marcante. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "residentevilsurvivor": {
+      "cover": "media/catalogo/920ccf74b513a64ead4908f1ebf376c0.jpg",
+      "coverSha256": "2234db6f7e3b5e00fba74eaf2ed4772035717a67618f520fe169b41c6f293ef4",
+      "metadata": {
+        "description": "Resident Evil Survivor, nesta edição para PlayStation 1, constrói uma experiência de suspense e sobrevivência com exploração cuidadosa e atmosfera marcante. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "silenthill": {
+      "cover": "media/catalogo/633c1eadd49a135df33f90df5d8eee3b.jpg",
+      "coverSha256": "2e6e0f1148053021e6fcc1740880e33207463ddd78b14dec5ca1666eb34e44c9",
+      "metadata": {
+        "description": "Silent Hill, nesta edição para PlayStation 1, constrói uma experiência de suspense e sobrevivência com exploração cuidadosa e atmosfera marcante. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "spidermanspain": {
+      "cover": "media/catalogo/5f83fbaefd9ade608626091388b30497.jpg",
+      "coverSha256": "3575dd7ab99e32ae9f90005a7cfefc846503e8beda9df488752a8b1455e4dc89",
+      "metadata": {
+        "description": "Spider-Man (Spain), nesta edição para PlayStation 1, combina movimentação acrobática, exploração urbana e missões de super-herói. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "spiderman2enterelectro": {
+      "cover": "media/catalogo/5e107207758c20e59108fbeb9ace5d49.jpg",
+      "coverSha256": "caa18bbffc0d593a1881487e5a74ee4cc0a404f3acc1a4de6e80ecd043b18028",
+      "metadata": {
+        "description": "Spider-Man 2 - Enter Electro, nesta edição para PlayStation 1, combina movimentação acrobática, exploração urbana e missões de super-herói. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "spyrothedragon": {
+      "cover": "media/catalogo/5c3e37813f642d0c653b61a33a135844.jpg",
+      "coverSha256": "95e125359110e83f49ca7efe1e500a0487cfd86d529c42e27d8ce25dbdec6165",
+      "metadata": {
+        "description": "Spyro the Dragon, nesta edição para PlayStation 1, desenvolve uma aventura de fantasia com exploração, progressão e personagens ligados ao seu universo. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "starwarsdarkforcesspain": {
+      "cover": "media/catalogo/dc2544a3ea0cd1349dc5bafa6e6524fd.jpg",
+      "coverSha256": "4d2af854ead5b068adeb37b96cde52e2a249e8187b3ec56548d34d635b0ed712",
+      "metadata": {
+        "description": "Star Wars - Dark Forces (Spain), nesta edição para PlayStation 1, leva a aventura para uma galáxia de naves, heróis e conflitos de ficção científica. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "streetfighterexplusalpha": {
+      "cover": "media/catalogo/88d2ebc60dcf77e9e1292b32c47fb66d.jpg",
+      "coverSha256": "fe0fa01b1c22ba09f68f5b5e2d648306d8fec9ead0197a13904bdf750bc12368",
+      "metadata": {
+        "description": "Street Fighter EX Plus Alpha, nesta edição para PlayStation 1, é centrado em luta competitiva, elenco próprio e domínio de golpes e combinações. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "streetfighterex2plus": {
+      "cover": "media/catalogo/b545beff7c9c9340754d4c49cad08fd9.jpg",
+      "coverSha256": "b7dd5ae143b88e0a29776a82afc3bddb19697114a5908386d817ab4b5af0815c",
+      "metadata": {
+        "description": "Street Fighter EX2 Plus, nesta edição para PlayStation 1, é centrado em luta competitiva, elenco próprio e domínio de golpes e combinações. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "strider2": {
+      "cover": "media/catalogo/975d69a971e93a30d4596a0a5748a216.jpg",
+      "coverSha256": "4059219e882f8812fd7b83a9e3dba2d2b2e29e65510e5a8b176567a6766e4ae7",
+      "metadata": {
+        "description": "Strider 2, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "strider": {
+      "cover": "media/catalogo/ffb8b002162bfea895335dac11b2cd6b.jpg",
+      "coverSha256": "6c5555135d64540afab325ef372b3c697edf9f81ab23f02ea3e557bd31f3b855",
+      "metadata": {
+        "description": "Strider, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "syphonfilter": {
+      "cover": "media/catalogo/dab9ba45e6b975691aac8b040a29e842.jpg",
+      "coverSha256": "bb722b6adc868acefa1980c7adeff08ec536b1790ae3a2a0ef046ff5c97eef27",
+      "metadata": {
+        "description": "Syphon Filter, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "tekken2": {
+      "cover": "media/catalogo/59290f46fc51d3cdf2e2a4f979573725.jpg",
+      "coverSha256": "cdf635c43702f1035064e844b522260c916e86fa2eb94b060572cd37628dc2be",
+      "metadata": {
+        "description": "Tekken 2, nesta edição para PlayStation 1, é centrado em luta competitiva, elenco próprio e domínio de golpes e combinações. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "tekken3": {
+      "cover": "media/catalogo/2fca511d6de6cb57a094e0b637b3b0ca.jpg",
+      "coverSha256": "00c32dac3512e9e07dc6615dfc84f4aeb186b0d6b4300da449e9e1b83e4b16c9",
+      "metadata": {
+        "description": "Tekken 3, nesta edição para PlayStation 1, é centrado em luta competitiva, elenco próprio e domínio de golpes e combinações. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "tekken": {
+      "cover": "media/catalogo/ce2972833ccd5eabb121ea7acd011c99.jpg",
+      "coverSha256": "31e3601aed72b461538f3e4fca563f05e2c9e557d3cb6369eef368e099a1fe74",
+      "metadata": {
+        "description": "Tekken, nesta edição para PlayStation 1, é centrado em luta competitiva, elenco próprio e domínio de golpes e combinações. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "tenchustealthassassins": {
+      "cover": "media/catalogo/970f53ce4958e6ad300ac04e24fe2e06.jpg",
+      "coverSha256": "a1401625318ee53ed2a13189551566c0b6f2903f726a978d723b668b3e1b1adb",
+      "metadata": {
+        "description": "Tenchu Stealth Assassins, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "timecrisisiiprojecttitan": {
+      "cover": "media/catalogo/1f432d5842d7ebcdf1be6627a680acb9.jpg",
+      "coverSha256": "bfa7f478a790647883fcce2f28e60004d971a25d41dd89cea1fa55932bb70e00",
+      "metadata": {
+        "description": "Time Crisis II - Project Titan, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "timecrisis": {
+      "cover": "media/catalogo/d9de7838d2775be8d0d841ee34401c7f.jpg",
+      "coverSha256": "51ddd3d66f05b21930ff8d514dac6119edc579070b235690ed55082e7b36e651",
+      "metadata": {
+        "description": "Time Crisis, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "tombraider2": {
+      "cover": "media/catalogo/f416c9f3d871f56262f7316179659dd1.jpg",
+      "coverSha256": "56de493a2c08e2df5207a778fe7e60dee544a7f513b24f2d97f32c3017f14467",
+      "metadata": {
+        "description": "Tomb Raider 2, nesta edição para PlayStation 1, equilibra exploração, ruínas, enigmas e aventura cinematográfica. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "tombraider3": {
+      "cover": "media/catalogo/68bdf4429b4b3895ea204eb1342ef515.jpg",
+      "coverSha256": "34d2aeb585ba6ed63e3a58ec8241b46f7f63686e0e51ee700fa765555f8b09ae",
+      "metadata": {
+        "description": "Tomb Raider 3, nesta edição para PlayStation 1, equilibra exploração, ruínas, enigmas e aventura cinematográfica. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "tombraider4": {
+      "cover": "media/catalogo/eeb0cfc46df5655536ea4abb47d11846.jpg",
+      "coverSha256": "a7569c5e4829d935c63d415b9fb8a4e22eb829b17d601cfc5b851e40f26b4326",
+      "metadata": {
+        "description": "Tomb Raider 4, nesta edição para PlayStation 1, equilibra exploração, ruínas, enigmas e aventura cinematográfica. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "tombraider": {
+      "cover": "media/catalogo/70106e50a6213eac14fc676a1c22b57c.jpg",
+      "coverSha256": "564dde5b1fecd7e42238b55269c781a671f5ddb2f7e7d578575eb2ba9a918dfe",
+      "metadata": {
+        "description": "Tomb Raider, nesta edição para PlayStation 1, equilibra exploração, ruínas, enigmas e aventura cinematográfica. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "tonyhawksproskater4": {
+      "cover": "media/catalogo/e253b7f3e83f94400d59a7cdfacb6d17.jpg",
+      "coverSha256": "cd48ed8228fa08deee8f7538d1bcf6731bf36342b6b7a28d15a3dcb33d949e02",
+      "metadata": {
+        "description": "Tony Hawk's Pro Skater 4, nesta edição para PlayStation 1, é dedicado ao skate, manobras encadeadas e exploração criativa de pistas urbanas. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "twistedmetal": {
+      "cover": "media/catalogo/6c4cbe3fb6b3c3eb2f8e16ca8f11cdd2.jpg",
+      "coverSha256": "9ccf475cf96d654b226f4f64ac005cc09f12d062669d37e3b7f81b0d898bf163",
+      "metadata": {
+        "description": "Twisted Metal, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "wipeout3": {
+      "cover": "media/catalogo/415a9037eb4cd491933ee7b60a9da208.jpg",
+      "coverSha256": "336956a8faab27a46666b0cac2b73783dcead220071e008a5de1630584d17db0",
+      "metadata": {
+        "description": "Wipeout 3, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "wormsarmageddon": {
+      "cover": "media/catalogo/fbc3a0eabb2ed943359386337554f2c4.jpg",
+      "coverSha256": "09d90771c6b9d7679cecb0bbbbc883e69c5b68e90cbb6a433820203b2b3b3b16",
+      "metadata": {
+        "description": "Worms Armageddon, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "wwfsmackdown": {
+      "cover": "media/catalogo/c7214268ab9c340331f3163cc8dc4cdf.jpg",
+      "coverSha256": "4d14ad173097515ba4574868b518044ba68ce75c68b88ca743930a54ca80eca1",
+      "metadata": {
+        "description": "WWF Smackdown!, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "xenawarriorprincess": {
+      "cover": "media/catalogo/92b5e7c02f94c9615f485089f9d9767a.jpg",
+      "coverSha256": "390226baabee562a168ba5472ef826e152a147b082b3e09ae805e17449f896c2",
+      "metadata": {
+        "description": "Xena - Warrior Princess, nesta edição para PlayStation 1, é uma experiência de ação com objetivos, progressão e desafios ligados ao seu cenário. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    },
+    "yugiohforbiddenmemories": {
+      "cover": "media/catalogo/8b6ade4184c0115840f176b4bfd4001c.jpg",
+      "coverSha256": "8aa37cf15db2d915b9021bc45f5e57f9d474d7cbd023335ad932d1e96d5a3043",
+      "metadata": {
+        "description": "Yu-Gi-Oh! Forbidden Memories, nesta edição para PlayStation 1, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote."
+      }
+    }
+  }
+}

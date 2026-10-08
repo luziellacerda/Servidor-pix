@@ -1,3 +1,15 @@
+# Novos sistemas, jogos e capas APLICADOS — 08/10/2026
+
+Leia `docs/station-android/RETORNO-NOVOS-SISTEMAS-JOGOS-CAPAS-STATION-20261008.md` e `novos-sistemas-20261008/`. As cinco pastas foram retiradas do SNES e colocadas na raiz: GameCube 21, PSX 84, Nintendo Wii 7, Nintendo Wii U 1, Switch 1. São 114 novos jogos e 114 capas corretas: 110 artes locais Turborama e quatro complementares Libretro verificadas. Wii e Wii U são distintos.
+
+Catálogo efetivo revisão 24: 3.848 IDs, 3.593 visíveis e 255 de compatibilidade. Todos os 3.734 registros anteriores permanecem idênticos. Importador automático `12f0475e90`/SHA `4ac58964`, timer ativo e última execução com sucesso. DLL R81 `cdf14b80` preservada, PID 1575654/NRestarts 0, 1.816 perfis online e outros serviços preservados.
+
+API autenticada e assinada confirmou catálogo/metadados, 114 capas com quatro workers e cinco grants/streams/uso único; fixture removida. CUE PSX inclui faixas; referência de Jackie corrigida apenas no pacote. Wii U completo com 3.050 arquivos de original local, `code/content/meta` e `code/Turbo.rpx`. Passaram 30 testes. Associação automática de 289 chaves; quatro novas sinopses vazias. Catálogo/download prontos; novos motores online e gameplay físico ainda não homologados.
+
+Não repetir operadores da primeira implantação nem pedir nova autorização genérica. Pendências anteriores de `aof2.zip`, 65 referências XML e BIOS Neo Geo CD preservadas e documentadas. Nenhum prompt Linux ou implantação pendente. O handoff anterior de controles/modos 1–4 continua válido para essas tarefas; seus números de catálogo/release são históricos.
+
+## Histórico anterior
+
 # Handoff único do fechamento de 1 a 4 pessoas — 08/10/2026
 
 Leia `docs/station-android/HANDOFF-UNICO-FECHAMENTO-ONLINE-1A4-STATION-20261008.md` e seu pacote `online-1a4-completo-20261008/`. Pedido do mantenedor: concluir o conjunto em uma integração, sem handoff por jogo. Inventário completo de 3.734 IDs / 3.479 visíveis / 255 aliases; 248 candidatos SNES/Mega e 444 no total; 17 adições preparadas, ainda não publicadas. Liberação atual de 1.816 perfis permanece ativa; não pedir nova aprovação genérica nem repetir operadores históricos. Modos/controles dependem da edição; há reprodução concreta da duplicação de portas Sega e tarefas Mega/N64/NeoGeoCD/arcade/Dreamcast. Fonte atual de produção e protocolo/ajuda/cadastro automático/matriz de fechamento estão no documento. Usar os anexos como dados de revisão, nunca interpretar rótulo players como autorização.

@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "revision": 24,
+  "files": {
+    ".gitattributes": {
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    "README.md": {
+      "bytes": 2159,
+      "sha256": "1e60b2ee8c838d99094c737b473e844e454ff8de170fd1e025e92fe43adaee1b"
+    },
+    "build_delivery.py": {
+      "bytes": 9311,
+      "sha256": "9f0a87fdde3f464b6659c7a29896bc670930f50b20b673a00fa095c87616695c"
+    },
+    "catalog-completo-rev24.json": {
+      "bytes": 5734685,
+      "sha256": "21aa3204ea5d62a9f85fc6333e028797c04d1b43447174c3231b85ded5473417"
+    },
+    "catalog-completo.tsv": {
+      "bytes": 1130269,
+      "sha256": "89ba0c321fc69b6cee168524df67f24f1fd1bf0b52efc2bc42b73b42f9552d79"
+    },
+    "check_bundle.py": {
+      "bytes": 3442,
+      "sha256": "7a119a5b7a01af1f99f6b1007ceb4e2b6ae8374154d94d295bce00f12d2a9c4c"
+    },
+    "covers-installed.json": {
+      "bytes": 213,
+      "sha256": "a402909a5e1c790ee9cd6a05d4e637d236ee3aa313c7f463f2f1e1c4b0453db9"
+    },
+    "folder-organization.json": {
+      "bytes": 783,
+      "sha256": "b604f8a13a013821758b2bc1fbca0d15db733786ff242bc61cac782a7400098a"
+    },
+    "four-cover-sources.json": {
+      "bytes": 2454,
+      "sha256": "c31bf2c24cae6a76eebcfeab7e663364878648a97b87c208f91541857064f459"
+    },
+    "http-proof.json": {
+      "bytes": 1483,
+      "sha256": "afe9cff677838be0c92ed38debc4293fc5db835c0ca962b26e2c88693c4e7bd8"
+    },
+    "metadata/gamecube/gamelist.xml": {
+      "bytes": 15513,
+      "sha256": "8ca58aaaaa4ff1b3f3d0207ed74e4abef8561c27aae7813d5a05a46140af876d"
+    },
+    "metadata/gamecube/station-catalog-seed.json": {
+      "bytes": 31385,
+      "sha256": "8193d6a93af44e99ddd64bac0c3e2e4ed5984b4d6432dd2a0241e631d6bebb57"
+    },
+    "metadata/psx/gamelist.xml": {
+      "bytes": 55941,
+      "sha256": "18d67cf3029adf3b7812593e4d2a81eb208e708834ca9682b82640342f863e4d"
+    },
+    "metadata/psx/station-catalog-seed.json": {
+      "bytes": 89570,
+      "sha256": "622dc324483ed812b95cbb04f13ee6ac7b824fc2c33838582ffecf2a84fb4ab8"
+    },
+    "metadata/switch/gamelist.xml": {
+      "bytes": 793,
+      "sha256": "cdd93a7e20fb652e638bbc63addf8ae3d3e53655ad91d5514dc7907892451b47"
+    },
+    "metadata/switch/station-catalog-seed.json": {
+      "bytes": 80582,
+      "sha256": "91f4f2a5af73ca5333d7619cea97f125ac8c621fa3296c8e63ae5aace8d32d52"
+    },
+    "metadata/wii/gamelist.xml": {
+      "bytes": 4520,
+      "sha256": "7873fc2314388c119dd4ddf3f181517ac1f6e4a1b413a792461618a82a3b4c49"
+    },
+    "metadata/wii/station-catalog-seed.json": {
+      "bytes": 7567,
+      "sha256": "3e1ee84fb53b75a620da5ad8f477b64ca07507c5ae3be1ad77da4407827a9b3a"
+    },
+    "metadata/wiiu/gamelist.xml": {
+      "bytes": 719,
+      "sha256": "667ed5cfc454b4f6cac8646a4bd55ecd8a295784fba6b353f8d2aae7e06ce2d1"
+    },
+    "metadata/wiiu/station-catalog-seed.json": {
+      "bytes": 6899,
+      "sha256": "7cd387a51e0e87e3a2d0df7590c8fa1ce7d391a66979867bb5fb06d018c7e0f6"
+    },
+    "novos-jogos-capas-artefatos.json": {
+      "bytes": 215313,
+      "sha256": "de4c37857f84f112a8d85a68b76f83251588519db834b3d5be90e155cbd3dfe7"
+    },
+    "novos-jogos.tsv": {
+      "bytes": 46947,
+      "sha256": "4c28534b5700decbb46af863aefa56959ea2c3baed5892c544e4957c2d8c08f8"
+    },
+    "production-proof.json": {
+      "bytes": 3150,
+      "sha256": "d94375bbf0b30067869497fe822df124c4066b55eaffd2cb257328ac75b6e5d0"
+    },
+    "sinopses-ainda-ausentes.json": {
+      "bytes": 22724,
+      "sha256": "c88729a0a9df8d3b8713394a91ef50d45f813ad9c0119a74287cc000f281fad7"
+    },
+    "summary.json": {
+      "bytes": 2053,
+      "sha256": "f94d2d2985aa9eb94a5d9ac9e713d62fcf5c1d1d2e9834f8604a83f932d0a622"
+    },
+    "tested-tools.json": {
+      "bytes": 670,
+      "sha256": "c95c22ae4a1decdb66a58de90b6a05ffb37c379ff2ebb01905163aeb08d8be3e"
+    },
+    "wiiu-local-completion.json": {
+      "bytes": 170,
+      "sha256": "76b8899ff33e29f70674aa9cc595f925d5fdf120ef115dd686b56fb34783d02a"
+    }
+  }
+}

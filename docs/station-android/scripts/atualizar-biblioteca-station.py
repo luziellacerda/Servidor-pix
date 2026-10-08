@@ -15,11 +15,14 @@ from pathlib import Path
 import shutil
 import tempfile
 import time
+import re
+import unicodedata
 import xml.etree.ElementTree as ET
 import zipfile
 from PIL import Image, ImageOps, ImageDraw
 from station_revista import select_revista_cover
 from station_disc import DiscPending, prepare_disc_artifact, support_sources, bios_status
+from station_packages import PackagePending, cue_reference_paths, package_layout, prepare_package, prepare_raw
 
 
 def load_module(name):
@@ -114,6 +117,42 @@ def compile_cover(source, temporary):
                 image = Image.new('RGB', (480, 720), '#17251d')
                 image.paste(scaled, ((480-scaled.width)//2, (720-scaled.height)//2))
     image.save(temporary, format='JPEG', quality=90, optimize=True)
+
+
+def catalog_key(value):
+    return re.sub('[^a-z0-9]', '', unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode().lower())
+
+
+def catalog_seed(folder, spec):
+    if not spec.get('catalogSeed'):
+        return {}
+    path = folder / spec['catalogSeed']
+    if path.is_symlink() or not path.resolve().is_relative_to(folder.resolve()) or path.stat().st_size > 16 * 1024 * 1024:
+        raise ValueError('unsafe catalog seed')
+    document = json.loads(path.read_bytes())
+    if document.get('schemaVersion') != 1 or not isinstance(document.get('games'), dict):
+        raise ValueError('invalid catalog seed')
+    return document['games']
+
+
+def prepare_package_archive(source, extensions, explicit, mode):
+    """Preserve archive contents when a CUE/RPX needs neighboring files."""
+    module = load_module('preparar-indice-artefatos')
+    members = module.archive_members(source, source.suffix.lower()[1:])
+    names = [name for name, _ in members]
+    primary = '.cue' if mode == 'cue-disc' else '.rpx'
+    choices = [name for name in names if Path(name).suffix.lower() == primary]
+    if not choices:
+        choices = [name for name in names if Path(name).suffix.lower() in extensions]
+    launch = explicit or (choices[0] if len(choices) == 1 else None)
+    if launch not in choices:
+        raise PackagePending('archive_requires_one_game_or_explicit_launch')
+    if mode == 'wiiu-folder' and Path(launch).suffix.lower() == '.rpx':
+        root = Path(launch).parent.parent
+        if Path(launch).parent.name.casefold() != 'code' or not all(
+                any(Path(n).is_relative_to(root / key) for n in names) for key in ('code', 'content', 'meta')):
+            raise PackagePending('wiiu_archive_requires_code_content_meta')
+    return source, module.describe({'filePath': str(source)}, launch)
 
 
 def prepare_artifact(source, temporary, extensions, explicit=None):
@@ -254,7 +293,7 @@ def bind_content_identities(items, identities):
             row['contentSha256'] = entry['contentSha256']
 
 
-def publish(config, bootstrap=False):
+def publish(config, bootstrap=False, on_progress=None):
     root = Path(config['volumeRoot']).resolve()
     if not root.is_dir() or root.is_symlink() or root.stat().st_dev != config['volumeDevice']:
         raise ValueError('expected media volume is unavailable')
@@ -286,10 +325,17 @@ def publish(config, bootstrap=False):
             if not folder.is_dir(): continue
             if folder.is_symlink() or not folder.resolve().is_relative_to(root): raise ValueError('platform folder is unsafe')
             games, missing = xml_games(folder)
+            catalog_games = catalog_seed(folder, spec)
             report['missingXmlRoms'] += missing
             mode = spec.get('artifactMode', 'single-rom')
-            if mode not in {'single-rom', 'arcade-set', 'chd-disc'}:
+            if mode not in {'single-rom', 'arcade-set', 'chd-disc', 'cue-disc', 'wiiu-folder'}:
                 raise ValueError('unknown platform artifact mode')
+            game_home = Path(spec.get('artifactDirectory', str(home / 'games')))
+            if not game_home.is_absolute() or game_home.resolve() != game_home or game_home.is_symlink():
+                raise ValueError('unsafe artifact directory')
+            if not (game_home.is_relative_to(home) or game_home.is_relative_to(root)):
+                raise ValueError('artifact directory leaves configured volumes')
+            game_home.mkdir(mode=0o750, parents=True, exist_ok=True)
             companions = (arcade_companions(folder, spec) if mode == 'arcade-set' else
                           support_sources(folder, root, spec) if mode == 'chd-disc' else [])
             companion_base = root if mode == 'chd-disc' else folder
@@ -304,24 +350,56 @@ def publish(config, bootstrap=False):
                 for p in revista.rglob('*'):
                     if p.is_file() and p.suffix.lower() in {'.jpg', '.jpeg', '.png', '.webp', '.gif'}:
                         magazine[p.stem].append(p)
-            for rom in safe_roms(folder.resolve(), set(spec['extensions']), nested_platforms):
+            roms = list(safe_roms(folder.resolve(), set(spec['extensions']), nested_platforms))
+            cue_dependencies = set()
+            if mode == 'cue-disc':
+                for cue in roms:
+                    if cue.suffix.lower() == '.cue':
+                        cue_dependencies.update(p.resolve() for p in cue_reference_paths(cue))
+            wiiu_roots = [p.parent.parent for p in roms if p.suffix.lower() == '.rpx' and p.parent.name.casefold() == 'code'] if mode == 'wiiu-folder' else []
+            for rom in roms:
+                if rom.resolve() in cue_dependencies:
+                    continue
+                if rom.suffix.lower() != '.rpx' and any(rom.is_relative_to(p) for p in wiiu_roots):
+                    continue  # Archives inside game content are dependencies, not games.
                 if rom in companions:
                     continue  # BIOS/support archives are dependencies, never listed as games.
                 if mode == 'chd-disc' and rom.suffix.lower() not in spec['extensions']:
                     continue  # Firmware ZIPs are support, not discs.
                 folder_path = list(rom.relative_to(folder).parent.parts)
+                if mode == 'wiiu-folder' and rom.suffix.lower() == '.rpx':
+                    folder_path = list(rom.parent.parent.relative_to(folder).parent.parts)
                 if len(folder_path)>8 or any(not n.strip() or n in {'.','..'} or len(n.encode('utf-16-le'))//2>80 or any(ord(c)<32 or c in '/\\' for c in n) for n in folder_path):
                     report['pending'].append({'platform':platform,'rom':rom.relative_to(folder).as_posix(),'reason':'invalid_folder_path'});continue
                 key = str(rom.resolve()); existing = state['sources'].get(key)
                 relative = rom.relative_to(folder).as_posix()
                 game = games.get(key)
-                override = overrides.get(platform + ':' + relative, {})
+                catalog_game = catalog_games.get(catalog_key(rom.parent.parent.name if mode == 'wiiu-folder' and rom.suffix.lower() == '.rpx' else rom.stem), {})
+                xml_fields = {'description': 'desc', 'releaseDate': 'releasedate'}
+                override = {k: v for k, v in catalog_game.get('metadata', {}).items()
+                            if game is None or not game.findtext(xml_fields.get(k, k), '').strip()}
+                override.update(overrides.get(platform + ':' + relative, {}))
                 # Existing platform aliases (including BR) remain unchanged.
                 actual_platform = spec.get('regionalPlatform', platform+'br') if 'pt-br' in rom.relative_to(folder).parts else platform
                 stamp_rom = stamp(rom)
                 candidates = magazine.get(rom.stem, [])
+                catalog_cover = None
+                if not candidates and catalog_game.get('cover'):
+                    catalog_cover = folder / catalog_game['cover']
+                    if catalog_cover.is_symlink() or not catalog_cover.resolve().is_relative_to((folder / 'media').resolve()):
+                        raise ValueError('catalog cover leaves media directory')
+                    candidates = [catalog_cover]
                 cover_stamp = [[str(p.relative_to(folder)), stamp(p)] for p in sorted(candidates)]
                 fingerprint = [stamp_rom, cover_stamp]
+                package_stamp = []
+                if mode in {'cue-disc', 'wiiu-folder'} and rom.suffix.lower() not in {'.zip', '.rar', '.7z'}:
+                    try:
+                        members, _ = package_layout(rom, mode)
+                        package_stamp = [[p.relative_to(folder).as_posix(), stamp(p)] for _, p, _ in members]
+                        fingerprint.append([mode, package_stamp])
+                    except PackagePending as error:
+                        report['pending'].append({'platform': platform, 'rom': relative, 'reason': str(error)})
+                        continue
                 if mode in {'arcade-set', 'chd-disc'}:
                     fingerprint.append([mode, companion_stamp])
                 unchanged = existing and existing['fingerprint'] == fingerprint
@@ -341,28 +419,52 @@ def publish(config, bootstrap=False):
                     continue
                 seen = state['observations'].get(key)
                 state['observations'][key] = fingerprint
-                if not bootstrap and (seen != fingerprint or time.time_ns()-stamp_rom[3] < 20_000_000_000):
+                recent = any(time.time_ns() - entry[1][3] < 20_000_000_000 for entry in package_stamp)
+                if not bootstrap and (seen != fingerprint or recent or time.time_ns()-stamp_rom[3] < 20_000_000_000):
                     report['pending'].append({'platform': platform, 'rom': relative, 'reason': 'copy_not_stable'}); continue
                 try:
                     source_cover = None
-                    if candidates: source_cover, _, _ = select_revista_cover(folder, rom, magazine)
-                    with tempfile.TemporaryDirectory(prefix='.build-', dir=home) as tmp:
+                    if catalog_cover is not None:
+                        if digest(catalog_cover) != catalog_game['coverSha256']:
+                            raise PackagePending('catalog_cover_changed')
+                        source_cover = catalog_cover
+                    elif candidates: source_cover, _, _ = select_revista_cover(folder, rom, magazine)
+                    with tempfile.TemporaryDirectory(prefix='.build-', dir=game_home) as tmp:
                         tmp = Path(tmp)
                         if mode == 'arcade-set':
                             game_source, descriptor = prepare_arcade_artifact(rom, tmp / rom.name, companions)
                         elif mode == 'chd-disc':
                             game_source, descriptor = prepare_disc_artifact(rom, tmp / (rom.stem+'.zip'), companions,
                                                                            spec, load_module('preparar-indice-artefatos').describe)
+                        elif mode in {'cue-disc', 'wiiu-folder'} and rom.suffix.lower() in {'.zip', '.rar', '.7z'}:
+                            game_source, descriptor = prepare_package_archive(rom, set(spec['extensions']), override.get('launchPath'), mode)
+                        elif mode in {'cue-disc', 'wiiu-folder'}:
+                            temporary_name = (rom.parent.parent.name + '.zip' if mode == 'wiiu-folder' and rom.suffix.lower() == '.rpx' else
+                                              rom.stem + '.zip' if rom.suffix.lower() == '.cue' else rom.name)
+                            game_source, descriptor = prepare_package(rom, tmp / temporary_name, mode,
+                                                                      load_module('preparar-indice-artefatos').describe)
+                        elif spec.get('copyRawOnce') and rom.suffix.lower() not in {'.zip', '.7z', '.rar'}:
+                            game_source, descriptor = prepare_raw(rom, tmp / rom.name)
                         else:
                             game_source, descriptor = prepare_artifact(rom, tmp / rom.name, set(spec['extensions']), override.get('launchPath'))
                         cover_tmp = tmp / 'cover.jpg'; compile_cover(source_cover, cover_tmp)
-                        game_dir = home / 'games' / descriptor['sha256']; game_dir.mkdir(mode=0o750, parents=True, exist_ok=True)
+                        game_dir = game_home / descriptor['sha256']; game_dir.mkdir(mode=0o750, parents=True, exist_ok=True)
                         target = game_dir / descriptor['fileName']
                         if not target.exists():
-                            with game_source.open('rb') as src, target.open('xb') as dest:
-                                shutil.copyfileobj(src, dest, 1024*1024); dest.flush(); os.fsync(dest.fileno())
-                            if digest(target) != descriptor['sha256']: target.unlink(); raise ValueError('copied ROM hash mismatch')
-                        if digest(target) != descriptor['sha256']: raise ValueError('existing immutable ROM hash mismatch')
+                            if game_source.is_relative_to(tmp):
+                                # Freshly built and hashed package: publish on the same
+                                # filesystem without copying or hashing its body again.
+                                with game_source.open('rb') as built: os.fsync(built.fileno())
+                                os.replace(game_source, target)
+                            else:
+                                copied_hash = hashlib.sha256()
+                                with game_source.open('rb') as src, target.open('xb') as dest:
+                                    for block in iter(lambda: src.read(1024*1024), b''):
+                                        copied_hash.update(block); dest.write(block)
+                                    dest.flush(); os.fsync(dest.fileno())
+                                if copied_hash.hexdigest() != descriptor['sha256']: target.unlink(); raise ValueError('copied ROM hash mismatch')
+                        elif digest(target) != descriptor['sha256']: raise ValueError('existing immutable ROM hash mismatch')
+                        if target.stat().st_size != descriptor['sizeBytes']: raise ValueError('immutable ROM size mismatch')
                         cover_dir = home / 'covers'; cover_dir.mkdir(mode=0o750, exist_ok=True)
                         cover_hash = digest(cover_tmp); cover_target = cover_dir / (cover_hash+'.jpg')
                         if not cover_target.exists(): shutil.copyfile(cover_tmp, cover_target)
@@ -373,6 +475,8 @@ def publish(config, bootstrap=False):
                             raise ValueError('source changed while compiling')
                         if [[p.relative_to(companion_base).as_posix(), stamp(p)] for p in companions] != companion_stamp:
                             raise ValueError('arcade companion changed while compiling')
+                        if package_stamp and [[p.relative_to(folder).as_posix(), stamp(p)] for _, p, _ in members] != package_stamp:
+                            raise ValueError('package input changed while compiling')
                         name = text(override.get('name', game.findtext('name', '') if game is not None else ''), 120) or text(rom.stem, 120)
                         ids = existing['ids'] if existing else ['station_' + hashlib.sha256((actual_platform+':'+relative).encode()).hexdigest()[:32]]
                         for item_id in ids:
@@ -388,8 +492,10 @@ def publish(config, bootstrap=False):
                         state['sources'][key] = {'ids': ids, 'fingerprint': fingerprint}
                         report['placeholderCovers'] += source_cover is None
                         report['metadataMissing'] += not row['metadata']['description']
+                        if on_progress is not None:
+                            on_progress(report['added'], report['updated'])
                 except (ValueError, OSError, zipfile.BadZipFile, ET.ParseError) as error:
-                    reason = str(error) if isinstance(error, DiscPending) else type(error).__name__
+                    reason = str(error) if isinstance(error, (DiscPending, PackagePending)) else type(error).__name__
                     report['pending'].append({'platform': platform, 'rom': relative, 'reason': reason})
         for row in rows.values():
             seed = metadata_seed.get(row['itemId'])

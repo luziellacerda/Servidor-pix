@@ -1,0 +1,771 @@
+{
+  "totalIds": 148,
+  "newGames": [
+    {
+      "itemId": "station_d9405ba1719a504fad37055a359e861e",
+      "platform": "psx",
+      "name": "Harvest Moon Back To Nature",
+      "sourceRom": "Harvest Moon Back To Nature.cue"
+    },
+    {
+      "itemId": "station_3b50bae45f3433371386de5687913fb8",
+      "platform": "psx",
+      "name": "Jackie Chan Stuntmaster BR",
+      "sourceRom": "Jackie Chan Stuntmaster BR.cue"
+    },
+    {
+      "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
+      "platform": "psx",
+      "name": "World Soccer Winning Eleven 2002 (Japan)",
+      "sourceRom": "World Soccer Winning Eleven 2002 (Japan).cue"
+    },
+    {
+      "itemId": "station_68188db1da6203f08a4b58e583d6af21",
+      "platform": "wii",
+      "name": "Epic Mickey 2 The Power of Two",
+      "sourceRom": "Epic Mickey 2 The Power of Two.iso"
+    }
+  ],
+  "allItems": [
+    {
+      "itemId": "station_7e4887bc3e6edba81a11f5a65fe279f8",
+      "name": "1941 - Counter Attack (World)",
+      "platform": "cps1"
+    },
+    {
+      "itemId": "station_da663d24f1b21233d607f0365ee1863a",
+      "name": "Cadillacs and Dinosaurs (World)",
+      "platform": "cps1"
+    },
+    {
+      "itemId": "station_1da4a68c9c4efb41fca2b16204597eae",
+      "name": "Captain Commando (World)",
+      "platform": "cps1"
+    },
+    {
+      "itemId": "station_208552a62612beae0fdbc4f0aec35ad3",
+      "name": "Final Fight (World)",
+      "platform": "cps1"
+    },
+    {
+      "itemId": "station_d5c2b72c57da35806add96453ac90db2",
+      "name": "Street Fighter II - The World Warrior (World 910214)",
+      "platform": "cps1"
+    },
+    {
+      "itemId": "station_a57978ebadf3561cb59587dac426d2b5",
+      "name": "Strider (US)",
+      "platform": "cps1"
+    },
+    {
+      "itemId": "station_6161e4442e0384b0b3f33e2697711cca",
+      "name": "The Punisher (World)",
+      "platform": "cps1"
+    },
+    {
+      "itemId": "station_a87384b87359586c74cc54b4f2a60630",
+      "name": "1944: The Loop Master (US 000620)",
+      "platform": "cps2"
+    },
+    {
+      "itemId": "station_52eb232b0c0d67812d971f5890e48492",
+      "name": "Marvel Super Heroes Vs. Street Fighter (US 970827)",
+      "platform": "cps2"
+    },
+    {
+      "itemId": "station_6f55b112c27ea96b2df69cf7e205d2d8",
+      "name": "Street Fighter Alpha 2 (US 960306)",
+      "platform": "cps2"
+    },
+    {
+      "itemId": "station_8188cff444a707ff9ac7799177b259df",
+      "name": "Street Fighter Alpha 3 (USA 980904)",
+      "platform": "cps2"
+    },
+    {
+      "itemId": "station_4dd5e7224167e84dbdef3a6dc0a595ec",
+      "name": "Super Street Fighter 2 Turbo (World 940223)",
+      "platform": "cps2"
+    },
+    {
+      "itemId": "station_84b036f254e56c789545be5991604a46",
+      "name": "JoJo's Bizarre Adventure: Heritage for the Future / JoJo no Kimyou na Bouken: Mirai e no Isan (Euro 990927)",
+      "platform": "cps3"
+    },
+    {
+      "itemId": "station_60b0c94a28de6bd4ab958ad7178078fb",
+      "name": "Street Fighter III 2nd Impact: Giant Attack (USA 970930)",
+      "platform": "cps3"
+    },
+    {
+      "itemId": "station_814ca9c544a65f3f85f2ac6e6f993973",
+      "name": "Street Fighter III 3rd Strike: Fight for the Future (Euro 990608)",
+      "platform": "cps3"
+    },
+    {
+      "itemId": "station_d200672b6feada42ed7102b5e6d034e2",
+      "name": "AeroWings 2 - Airstrike",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_a42bf0ff59174a89706c28e19d4b283c",
+      "name": "Airforce Delta",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_04ecfb322300cdefa2344784bb8b41be",
+      "name": "Alone in the Dark - The New Nightmare (Disco 1 de 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_1b4aeb7b677b8406e6810f443b22155a",
+      "name": "Alone in the Dark - The New Nightmare (Disco 2 de 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_dd7497f63bd28edf2a83912dd8b79153",
+      "name": "Buzz Lightyear of Star Command",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_bff918776f3da95ac81eb98bdf024f1e",
+      "name": "Capcom vs. SNK",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_c0b4bc1c83241d09396716dd502bd6ae",
+      "name": "ChuChu Rocket!",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_ed136a9394c2037d484c8f2a151a45b7",
+      "name": "Coaster Works",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_2d59f12eef6f69e3f1ef193123964691",
+      "name": "Conflict Zone - Modern War Strategy",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_e64d6154cb52871b946e2b88e578da05",
+      "name": "D2 (Disco 1 de 4)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_77a73fb9d8b7e6e1babaa3869f81b492",
+      "name": "D2 (Disco 2 de 4)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_ab4dde393bfbe5fec768d06c68d8a22f",
+      "name": "D2 (Disco 3 de 4)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_70f4c12ef657696e9c59673d24ef15c4",
+      "name": "D2 (Disco 4 de 4)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_7c83a91e5a7d52ebbe397c997239df45",
+      "name": "Deep Fighter (Disco 1 de 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_8cdc73fcbe8f2c91533612099ded04ec",
+      "name": "Deep Fighter (Disco 2 de 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_0953492c4c6576065efa98380dba2e52",
+      "name": "Donald Duck - Goin' Quackers",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_dedeb5d5406c24cd1bfb02343a0b0395",
+      "name": "DragonRiders - Chronicles of Pern",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_21c3071c3a57a83e67ccc1646164d931",
+      "name": "Ducati World - Racing Challenge",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_bdc6f2ee9158d13d4e436f299c439d5f",
+      "name": "Dynamite Cop!",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_bc75414425bee9e137946fd0daae844f",
+      "name": "Elemental Gimmick Gear",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_b45d526c6d27387e5b19af50e964e7eb",
+      "name": "ESPN International Track & Field",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_d66ed697f043f62d82128a29a6d1be76",
+      "name": "Evolution - The World of Sacred Device",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_0cfe2f28401d51af318820706bfd5eca",
+      "name": "Evolution 2 - Far Off Promise",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_452aa79c93d3770e753cb1aea22ecf25",
+      "name": "Expendable",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_33d132308c7bd9eec951462443b6abc4",
+      "name": "Fatal Fury - Mark of the Wolves",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_cba35363deb597f8f95306a8f26cb008",
+      "name": "Fighting Force 2 (Versão 1)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_295b59ba6eea68400c2035c7bed5c7a3",
+      "name": "Fighting Force 2 (Versão 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_3af20913f84c1ad9633675e8ff367db4",
+      "name": "GigaWing",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_a16868e55b0029bcd14cf33ec73ae3d6",
+      "name": "GigaWing 2",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_2dedf2839146d34730c4e6a1bfda04ff",
+      "name": "Grandia II",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_5cb2b9feeab6623cc3fb637464ca59e0",
+      "name": "Industrial Spy - Operation Espionage",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_a554e55007d010b0cfd8c7b459419f1d",
+      "name": "Jet Grind Radio",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_ccac76b40703cce95397ac0a50398df4",
+      "name": "King of Fighters Evolution, The",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_c752932ef3acc84d6a01e6a44ca0d4aa",
+      "name": "Last Blade 2, The - Heart of the Samurai",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_3ce57356d2c3c7f6738bddcbfb632c36",
+      "name": "Looney Tunes Space Race",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_017d4ad0c35b9e0537519cbae94bbfd4",
+      "name": "Marvel vs. Capcom 2",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_19000979c1ca293fe87b39cbf1261df9",
+      "name": "Monaco Grand Prix",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_260d6bef2e8b1fbc37291df14da0fa81",
+      "name": "Mr Driller",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_230924a63b3a42c13c0498005015eac0",
+      "name": "MTV Sports - Skateboarding Featuring Andy Macdonald",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_33d706b26f2fca7ed46a303365fba64e",
+      "name": "Next Tetris, The - On-line Edition",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_638a548059c37d3d2e3259f2afd55e55",
+      "name": "NFL 2K (Versão 1)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_2566875b68d223bcec73a5984b85b32d",
+      "name": "NFL 2K (Versão 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_a66342b859420441b5ef8eaa57827ba7",
+      "name": "NFL 2K (Versão 3)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_507f12c624c9507f41e1b772413ce21f",
+      "name": "NFL 2K (Versão 4)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_a13fd153caeaa066b77aa66ad6d4ec06",
+      "name": "Nightmare Creatures II",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_80db7b3d26f3d7baea291c99079d3984",
+      "name": "PenPen TriIcelon",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_3de779fc30ecef8cd9ba9983bc5c442a",
+      "name": "Phantasy Star Online Ver. 2",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_6b90c57070bf3754d9827c1e1631f0e9",
+      "name": "POD - Speedzone (Versão 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_366e8048e48996eb8cafe8af72e1da33",
+      "name": "Project Justice",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_662faa15e8c2dd5f535b2500282f416e",
+      "name": "Quake III Arena",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_b196cbb9aede47637a2f9e10c364445b",
+      "name": "Railroad Tycoon II - Gold Edition",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_1dbf87198a2f3782127b09c7796cc70b",
+      "name": "Rayman 2 - The Great Escape",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_dcdcc159757adac735f13adc78295121",
+      "name": "Razor Freestyle Scooter",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_7adb7ec83582d31b8ff1444dbcbe88eb",
+      "name": "Ready 2 Rumble Boxing (Versão 1)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_0c51dbadb7889354c5c8d1bda7f09e3b",
+      "name": "Ready 2 Rumble Boxing (Versão 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_831dad3abeace4fe1e42245c3175c04e",
+      "name": "Ready 2 Rumble Boxing (Versão 3)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_8e1757391f8e75bec508538e6b562224",
+      "name": "Record of Lodoss War",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_0289a0b3953d87cd8e21968d53db7ed7",
+      "name": "Reel Fishing - Wild",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_7f4cc48d1231d923ce5cdaffb7a37377",
+      "name": "Resident Evil - Code Veronica (Disco 1 de 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_60ef7b56bb6f80cd872b0d0a308ceda3",
+      "name": "Resident Evil - Code Veronica (Disco 2 de 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_cb4eb07055677be03620ae1a139eb634",
+      "name": "Resident Evil 2 (Disco 1 de 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_dc13c5680ad58a48188fa5173c0dd476",
+      "name": "Resident Evil 2 (Disco 2 de 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_b77346021ad26cdcff82b52b1b522382",
+      "name": "Ring, The - Terror's Realm",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_ec9a44d272e103292be41c72723bdaee",
+      "name": "Rippin' Riders Snowboarding",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_a00a2ad28a305798f6958ea5d24eaeae",
+      "name": "Shenmue (Disco 1 de 4)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_2a7b991c444781d0a8c7d2896d5828fe",
+      "name": "Shenmue (Disco 2 de 4)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_d8e0b511fdf1fe09fbd5cbbce0763682",
+      "name": "Shenmue (Disco 3 de 4)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_ae879fb139c155e29f0fcac79ffeec7c",
+      "name": "Shenmue (Disco 4 de 4)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_78b7c695e5d8c5ae8b0419fded758cad",
+      "name": "Skies of Arcadia (Disco 1 de 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_5903f2e5c538beb82117c37ea50fcb33",
+      "name": "Skies of Arcadia (Disco 2 de 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_14dd1839d4487040394e195ad6ca422c",
+      "name": "Soul Calibur (Versão 1)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_792e43445bed0faa5a01b1590b457b41",
+      "name": "Soul Calibur (Versão 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_8733156f40d4d906e09309118d13c213",
+      "name": "Speed Devils - Online Racing",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_e7e4a95c5a4dc19e88252ba442a6da0c",
+      "name": "Star Wars - Episode I - Jedi Power Battles",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_6f7a4e2edc98cc56706d5e86215f7933",
+      "name": "Star Wars - Episode I - Racer",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_95303351a29aa598e39c49f879695a9a",
+      "name": "Street Fighter Alpha 3",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_9393a16709fc3357c06c68f479309ae4",
+      "name": "Street Fighter III - 3rd Strike",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_2f7821c22769a1da65c254912811bcd0",
+      "name": "Street Fighter III - Double Impact",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_d9df73e4b0f75bf27ce7d70d3793ec90",
+      "name": "Stupid Invaders (Disco 1 de 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_aebd413245a839716a307d674e7bd216",
+      "name": "Stupid Invaders (Disco 2 de 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_a2a904a622ce3495c4d4283f8376927c",
+      "name": "Suzuki ALSTARE Extreme Racing",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_f9ddd8ec9bb91513b25cfad02d78f791",
+      "name": "Sword of the Berserk - Guts' Rage",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_dc32b8aa0106947e064debc9b7be355d",
+      "name": "Tee Off",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_65e5a7f87f18300cd8ff10a79195f8cb",
+      "name": "Test Drive Le Mans",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_386e1fcc4580721e8ee2ccb2442821e8",
+      "name": "Test Drive V-Rally",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_4f9c064f3b8d84de14442a58f716ab7b",
+      "name": "TimeStalkers",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_3cb78e3be8fe2c8f9f7eaf9045547e41",
+      "name": "Tom Clancy's Rainbow Six",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_19474164e353d34cdfca86f40e101678",
+      "name": "Tom Clancy's Rainbow Six - Rogue Spear",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_64b6c739fd188f9636b91cbf2ea9b9f3",
+      "name": "Tomb Raider - The Last Revelation",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_67e4ee7d44474a871dbbd8433621edb6",
+      "name": "Tomb Raider Chronicles",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_59a2e7e306dd4c9b1c0833b6c9afa5d4",
+      "name": "Toy Commander (Versão 1)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_002d1d405d347930a438061befe8ef02",
+      "name": "Toy Commander (Versão 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_ee64f9362c695e19ef8816b777db97f5",
+      "name": "TrickStyle (Versão 1)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_2806e3c4feb570f4c2b4a24eeb8d7381",
+      "name": "TrickStyle (Versão 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_a46cc5224458d79995ca07e43c77a9cd",
+      "name": "Typing of the Dead, The",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_071dbe9ffd4c61dcf033fc1b6f66bf15",
+      "name": "Vigilante 8 - 2nd Offense",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_37cd106cf1ef78a09b3055aeaed1a9fe",
+      "name": "Virtua Athlete 2000",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_2b3d5545daacecfb3311b0abb16f8a49",
+      "name": "Virtua Striker 2",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_05102e1dc7ad0d7dc12702b1bf3556cf",
+      "name": "Who Wants to Beat Up a Millionaire",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_e368aad668218529a012923729870732",
+      "name": "World Series Baseball 2K1 (Versão 1)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_4e2397f60df5d4a685a9e2accba450bd",
+      "name": "World Series Baseball 2K1 (Versão 2)",
+      "platform": "dreamcast"
+    },
+    {
+      "itemId": "station_43f3753dd92598f1841cdfd3ec273886",
+      "name": "1945k III",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_9122a13f5464bc686a0413c7aa47ee88",
+      "name": "Asterix (World ver. EAD)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_38c62a70c14ad43612b790380df4f4b3",
+      "name": "Batman",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_dc70679260ae154bc341a1f1b89f8fee",
+      "name": "Demon Front (ver. 102)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_9d9708d49c8ff8f996c0abbc9499223b",
+      "name": "Donkey Kong (US)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_b60e44691a1af9bca9853039b5ff9e36",
+      "name": "Drift Out (Japan)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_7bf27372f3049962eaf62b12765d10b3",
+      "name": "EspGaluda",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_ce7b8129d80dd6fe53bbae57cc470e43",
+      "name": "Grid Seeker: Project Stormhammer (World)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_4d7ade70930164d851c435ad54894c7d",
+      "name": "Gun Bird (Japan)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_8757f3c62d1922bce861b4de5f28f9a2",
+      "name": "Knights of Valour / Sangoku Senki (ver. 117)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_5e9d350bedf3f38c71fe9ab09aa22998",
+      "name": "Knights of Valour Plus / Sangoku Senki Plus (ver. 119)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_5a99bd9b70aeffc8be7ea37761d0ff34",
+      "name": "Knights of Valour Superheroes / Sangoku Senki Superheroes (ver. 322)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_9ed93c461c331375768d380231ed1a28",
+      "name": "Knights of Valour: Luan Shi Quan Huang Te Bie Ban / Sangoku Senki: Luan Shi Quan Huang Te Bie Ban (V112CN, China)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_2325ba192ed158e7a7a28d81e153c678",
+      "name": "Martial Masters (ver. 104, 102, 102US)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_43e41d521df4b03822a07e83c2ac0b05",
+      "name": "Raiden 2",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_f633da416caadcb8de1ca9e3d4ecc904",
+      "name": "Rolling Crush (version 1.07.E - 1999/02/11, Trust license)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_e9334dd7d112c8b083b133aa555849ef",
+      "name": "Shadow Force (US Version 2)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_718e7a9dea679b1e7b5f9cf46eef76b1",
+      "name": "Street Fighter Alpha 3 (USA 980904)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_c6c6ce14d5dd6deb0fdc991000025a63",
+      "name": "Super Space Invaders '91 (World)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_53fa1762c364a5d9cdee8a4d145f99c7",
+      "name": "Tank Force (US)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_9d1c9f01e3e37f23b103f819cbb61dc1",
+      "name": "Tetris (set 1)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_80583c3f80a1c88bcb97181ac6c486bf",
+      "name": "Thunder Dragon",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_b33f8e87ad6b4846ad79b5074a5f453c",
+      "name": "Tiger Heli (set 1)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_97949f02512a6796b20356a2c6eeee99",
+      "name": "Toki (set 1)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_4b0adfba219bd08a3dd5a70397d81bce",
+      "name": "Twin Cobra II (Ver 2.1O 1995/11/30)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_eb33d25e7e57c67802ff111da522419a",
+      "name": "Ultimate Mortal Kombat 3 (rev 1.2)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_df0b1a853d0e930424d5b7d485c33f1e",
+      "name": "Vendetta (World, 2 Players, ver. W)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_19fa16b7aea0ce4499f354eb9fcd7597",
+      "name": "Violent Storm (Europe ver EAB)",
+      "platform": "fbneo"
+    },
+    {
+      "itemId": "station_d9405ba1719a504fad37055a359e861e",
+      "name": "Harvest Moon Back To Nature",
+      "platform": "psx"
+    },
+    {
+      "itemId": "station_3b50bae45f3433371386de5687913fb8",
+      "name": "Jackie Chan Stuntmaster BR",
+      "platform": "psx"
+    },
+    {
+      "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
+      "name": "World Soccer Winning Eleven 2002 (Japan)",
+      "platform": "psx"
+    },
+    {
+      "itemId": "station_68188db1da6203f08a4b58e583d6af21",
+      "name": "Epic Mickey 2 The Power of Two",
+      "platform": "wii"
+    }
+  ]
+}

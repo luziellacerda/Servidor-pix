@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "revision": 24,
+  "addedGames": 114,
+  "systems": [
+    {
+      "platform": "gamecube",
+      "label": "Nintendo GameCube",
+      "games": 21,
+      "coverSources": {
+        "catalogo-turborama-local": 21
+      },
+      "artifactBytes": 26714476939
+    },
+    {
+      "platform": "psx",
+      "label": "PlayStation 1",
+      "games": 84,
+      "coverSources": {
+        "catalogo-turborama-local": 81,
+        "libretro-thumbnails": 3
+      },
+      "artifactBytes": 34251348466
+    },
+    {
+      "platform": "switch",
+      "label": "Nintendo Switch",
+      "games": 1,
+      "coverSources": {
+        "catalogo-turborama-local": 1
+      },
+      "artifactBytes": 111116558
+    },
+    {
+      "platform": "wii",
+      "label": "Nintendo Wii",
+      "games": 7,
+      "coverSources": {
+        "catalogo-turborama-local": 6,
+        "libretro-thumbnails": 1
+      },
+      "artifactBytes": 27651908624
+    },
+    {
+      "platform": "wiiu",
+      "label": "Nintendo Wii U",
+      "games": 1,
+      "coverSources": {
+        "catalogo-turborama-local": 1
+      },
+      "artifactBytes": 4316896523
+    }
+  ],
+  "totalIds": 3848,
+  "visibleIds": 3593,
+  "compatibilityIds": 255,
+  "allPreviousIdsPreserved": 3734,
+  "coverCount": 114,
+  "coverBytes": 15469005,
+  "futureKnownKeys": 289,
+  "sourceCoverCounts": {
+    "catalogo-turborama-local": 110,
+    "libretro-thumbnails": 4
+  },
+  "originalCoverCatalogSha256": "f4792aa4d52cdceb99b7f257e73bae974626ac433a8bac4d38d08920b6de7e83",
+  "newDescriptionsPresent": 110,
+  "newDescriptionsMissing": 4,
+  "platformCounts": {
+    "cps1": 36,
+    "cps2": 64,
+    "cps3": 11,
+    "dreamcast": 243,
+    "fbneo": 913,
+    "gamecube": 21,
+    "megadrive": 887,
+    "megadrivebr": 94,
+    "n64": 157,
+    "neogeo": 189,
+    "neogeocd": 50,
+    "psx": 84,
+    "snes": 644,
+    "snesbr": 191,
+    "switch": 1,
+    "wii": 7,
+    "wiiu": 1
+  },
+  "automaticScannerActive": true,
+  "catalogReloadWithoutRestartSeconds": 10,
+  "onlineProfilesPreserved": 1816,
+  "phoneGameplayValidated": false
+}

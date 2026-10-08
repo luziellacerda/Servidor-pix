@@ -1,0 +1,13 @@
+{
+  "filesInstalled": 403,
+  "gameCovers": 114,
+  "knownFutureTitles": 289,
+  "platforms": {
+    "gamecube": 21,
+    "psx": 84,
+    "wii": 7,
+    "wiiu": 1,
+    "switch": 1
+  },
+  "allSourceHashesMatched": true
+}

@@ -1,0 +1,38 @@
+{
+  "moved": [
+    {
+      "system": "gamecube",
+      "files": 21,
+      "bytes": 26714476939,
+      "fileIdentityPreserved": true
+    },
+    {
+      "system": "wiiu",
+      "files": 41,
+      "bytes": 206564697,
+      "fileIdentityPreserved": true
+    },
+    {
+      "system": "psx",
+      "files": 95,
+      "bytes": 34251345817,
+      "fileIdentityPreserved": true
+    },
+    {
+      "system": "wii",
+      "files": 7,
+      "bytes": 27651908624,
+      "fileIdentityPreserved": true
+    },
+    {
+      "system": "switch",
+      "files": 1,
+      "bytes": 111116558,
+      "fileIdentityPreserved": true
+    }
+  ],
+  "catalogRevisionPreserved": 20,
+  "indexSha256": "b3d44224a0264f3a14104f031d417492017b1d7756d7256607a51833c243348c",
+  "apiPid": 1536467,
+  "apiRestarted": false
+}

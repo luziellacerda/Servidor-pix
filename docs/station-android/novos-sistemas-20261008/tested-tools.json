@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "tools": {
+    "atualizar-biblioteca-station.py": "4ac58964a9683d41e5a35275a20dbd4c40a666b87469de3253c74def37a3f4fe",
+    "station_packages.py": "fdf63ca69c3b2e07b0f4708ed284639f425e7c4fb171c62a119534639f30cf49",
+    "station_revista.py": "680f1541115234508f55691691eb3f23574dad70194970bbd69322205c93a65e",
+    "station_disc.py": "849b246f9d4623e3167b1e471d931da7049a9a3642e5028a84e785b9efc609cc",
+    "preparar-indice-artefatos.py": "050b450ffa5fed2a6d840c47e20b14f64d5676ed300743fe7d59a0e2fa641ad7"
+  },
+  "tests": {
+    "packageDiscovery": 6,
+    "libraryRegression": 5,
+    "contentIdentityRegression": 4,
+    "revistaRegression": 15
+  }
+}

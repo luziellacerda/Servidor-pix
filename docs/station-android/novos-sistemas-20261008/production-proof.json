@@ -1,0 +1,105 @@
+{
+  "applied": true,
+  "revision": 24,
+  "newGames": 114,
+  "platformCounts": {
+    "gamecube": 21,
+    "psx": 84,
+    "wii": 7,
+    "wiiu": 1,
+    "switch": 1
+  },
+  "totalIds": 3848,
+  "totalVisible": 3593,
+  "preservedPreviousIds": 3734,
+  "allPreviousRowsPreserved": true,
+  "sourceRomFilesPreserved": true,
+  "sourceWiiuCompletedFromLocalOriginal": true,
+  "scannerRelease": "turborama-station-library-new-systems-20261008-12f0475e90",
+  "scannerSha256": "4ac58964a9683d41e5a35275a20dbd4c40a666b87469de3253c74def37a3f4fe",
+  "immutableGamesOnGameVolume": true,
+  "apiDllSha256": "cdf14b8067de415413c503de787c6d621c6e8f0466eb2cdd7c0eced8b5a619af",
+  "apiPidBefore": 1572068,
+  "apiPidAfter": 1575654,
+  "apiRestartedOnce": true,
+  "otherServicePidsPreserved": true,
+  "closedEmptyV3RoomClearedWithHumanConfirmation": false,
+  "reusedPreparedGames": 114,
+  "preexistingSourcePending": [
+    {
+      "platform": "neogeo",
+      "rom": "# 0 - ART OF FIGTHERS COLEÇÃO #/aof2.zip",
+      "reason": "ValueError"
+    }
+  ],
+  "noNewSourcePending": true,
+  "missingXmlReferences": 65,
+  "sandboxReadOnlyStore": true,
+  "apiIdentityReadsAllFiles": true,
+  "automaticSecondScanUnchanged": true,
+  "profilesPreserved": 1816,
+  "indexSha256": "6b8acfa4ca419ec705f48f53e2063633ff8f0a30a36cb8f4d651a108cbb31137",
+  "http": {
+    "passed": true,
+    "signedCatalogMatched": true,
+    "visibleItems": 3593,
+    "allMetadataMatched": true,
+    "coversVerified": 114,
+    "coverWorkers": 4,
+    "coverBytes": 15469005,
+    "downloadStreams": [
+      {
+        "platform": "gamecube",
+        "format": "raw",
+        "launchPath": "Resident Evil - Code - Veronica X (PT-BR DUB) - (Disc1).rvz",
+        "fileCount": 1,
+        "bytes": 530048860,
+        "streamPrefixMatched": true,
+        "oneUseVerified": true
+      },
+      {
+        "platform": "psx",
+        "format": "raw",
+        "launchPath": "Strider.PBP",
+        "fileCount": 1,
+        "bytes": 30314524,
+        "streamPrefixMatched": true,
+        "oneUseVerified": true
+      },
+      {
+        "platform": "wii",
+        "format": "raw",
+        "launchPath": "Super Mario Galaxy 2 (USA) (En,Fr,Es).rvz",
+        "fileCount": 1,
+        "bytes": 1438368956,
+        "streamPrefixMatched": true,
+        "oneUseVerified": true
+      },
+      {
+        "platform": "wiiu",
+        "format": "zip",
+        "launchPath": "code/Turbo.rpx",
+        "fileCount": 3050,
+        "bytes": 4316896523,
+        "streamPrefixMatched": true,
+        "oneUseVerified": true
+      },
+      {
+        "platform": "switch",
+        "format": "raw",
+        "launchPath": "Pokemon.Cafe.Mix.010072400E04A000.v0.nsp",
+        "fileCount": 1,
+        "bytes": 111116558,
+        "streamPrefixMatched": true,
+        "oneUseVerified": true
+      }
+    ],
+    "completeLargeDownloadMeasured": false,
+    "phoneGameplayTested": false,
+    "ownedSyntheticFixtureRemoved": true
+  },
+  "finishedUtc": "2026-10-08T23:07:38.123365+00:00",
+  "apiRestartsDuringWholeTask": 3,
+  "earlierAttemptRolledBackForUnchangedPreexistingPendingSource": true,
+  "closedEmptyV3RoomClearedAfterHumanConfirmationInEarlierAttempt": true
+}

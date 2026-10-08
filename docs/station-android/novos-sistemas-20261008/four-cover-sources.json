@@ -1,0 +1,42 @@
+[
+  {
+    "system": "psx",
+    "file": "Harvest Moon - Back to Nature (USA).png",
+    "repository": "Sony_-_PlayStation",
+    "path": "Named_Boxarts/Harvest Moon - Back to Nature (USA).png",
+    "gitBlobSha1": "276beb7d90287c48bdcf6a57cdd2c1ade5433683",
+    "sha256": "f777884e8b540a72e0e906ea4dff321eff4d448c477a60acd4925bcaac5444b4",
+    "url": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation/ccee75c7744d81676b6725307aca27ef6be6231a/Named_Boxarts/Harvest%20Moon%20-%20Back%20to%20Nature%20%28USA%29.png",
+    "treeSha": "ccee75c7744d81676b6725307aca27ef6be6231a"
+  },
+  {
+    "system": "psx",
+    "file": "Jackie Chan Stuntmaster (USA).png",
+    "repository": "Sony_-_PlayStation",
+    "path": "Named_Boxarts/Jackie Chan Stuntmaster (USA).png",
+    "gitBlobSha1": "3ee1fe6003db9b136f82a9b9064b75f28a3dbeed",
+    "sha256": "923b7c3091dcf51e3408be09aad28bca1b402871b248c25c8955cf4034708858",
+    "url": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation/ccee75c7744d81676b6725307aca27ef6be6231a/Named_Boxarts/Jackie%20Chan%20Stuntmaster%20%28USA%29.png",
+    "treeSha": "ccee75c7744d81676b6725307aca27ef6be6231a"
+  },
+  {
+    "system": "psx",
+    "file": "World Soccer Winning Eleven 2002 (Japan).png",
+    "repository": "Sony_-_PlayStation",
+    "path": "Named_Boxarts/World Soccer Winning Eleven 2002 (Japan).png",
+    "gitBlobSha1": "b3e4259ee0bbe9126607a7db9c15ea32b4b79a73",
+    "sha256": "d2d9195c0234c6d144ce2d7c98a0cebb45ac53a7bccaa4be5465f166908891ae",
+    "url": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation/ccee75c7744d81676b6725307aca27ef6be6231a/Named_Boxarts/World%20Soccer%20Winning%20Eleven%202002%20%28Japan%29.png",
+    "treeSha": "ccee75c7744d81676b6725307aca27ef6be6231a"
+  },
+  {
+    "system": "wii",
+    "file": "Disney Epic Mickey 2 - The Power of Two (USA) (En,Fr,Es,Pt).png",
+    "repository": "Nintendo_-_Wii",
+    "path": "Named_Boxarts/Disney Epic Mickey 2 - The Power of Two (USA) (En,Fr,Es,Pt).png",
+    "gitBlobSha1": "4a1701ee20097a2540975d0f205f3df4162aff04",
+    "sha256": "20b80e73537cc90ea5aa8a2586793af9a334e2cb277ab210a581a3b094088f63",
+    "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/1a44c6f4251dc9ef051043f22f8d9df4237c1ee8/Named_Boxarts/Disney%20Epic%20Mickey%202%20-%20The%20Power%20of%20Two%20%28USA%29%20%28En%2CFr%2CEs%2CPt%29.png",
+    "treeSha": "1a44c6f4251dc9ef051043f22f8d9df4237c1ee8"
+  }
+]

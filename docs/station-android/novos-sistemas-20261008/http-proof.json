@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "signedCatalogMatched": true,
+  "visibleItems": 3593,
+  "allMetadataMatched": true,
+  "coversVerified": 114,
+  "coverWorkers": 4,
+  "coverBytes": 15469005,
+  "downloadStreams": [
+    {
+      "platform": "gamecube",
+      "format": "raw",
+      "launchPath": "Resident Evil - Code - Veronica X (PT-BR DUB) - (Disc1).rvz",
+      "fileCount": 1,
+      "bytes": 530048860,
+      "streamPrefixMatched": true,
+      "oneUseVerified": true
+    },
+    {
+      "platform": "psx",
+      "format": "raw",
+      "launchPath": "Strider.PBP",
+      "fileCount": 1,
+      "bytes": 30314524,
+      "streamPrefixMatched": true,
+      "oneUseVerified": true
+    },
+    {
+      "platform": "wii",
+      "format": "raw",
+      "launchPath": "Super Mario Galaxy 2 (USA) (En,Fr,Es).rvz",
+      "fileCount": 1,
+      "bytes": 1438368956,
+      "streamPrefixMatched": true,
+      "oneUseVerified": true
+    },
+    {
+      "platform": "wiiu",
+      "format": "zip",
+      "launchPath": "code/Turbo.rpx",
+      "fileCount": 3050,
+      "bytes": 4316896523,
+      "streamPrefixMatched": true,
+      "oneUseVerified": true
+    },
+    {
+      "platform": "switch",
+      "format": "raw",
+      "launchPath": "Pokemon.Cafe.Mix.010072400E04A000.v0.nsp",
+      "fileCount": 1,
+      "bytes": 111116558,
+      "streamPrefixMatched": true,
+      "oneUseVerified": true
+    }
+  ],
+  "completeLargeDownloadMeasured": false,
+  "phoneGameplayTested": false,
+  "ownedSyntheticFixtureRemoved": true
+}
