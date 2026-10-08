@@ -142,6 +142,7 @@ def verify(index,values,base,execute_sql,additions,old_ids,observe=None):
         reverse=secrets.token_bytes(64);gw.send(frame(3,data=reverse));check(receive(hw,3,offset=0)[2]==reverse,'exact guest stream')
         hw.send(frame(4,64));receive(gw,5,offset=64,value=64);forwarded+=64
         gw.close();time.sleep(.5)
+        if observe is not None:check(gw.close_code==1000,'real WSS Close1000 response completed')
         preserved=command(host,'heartbeat')['room']
         check(preserved['roomId']==rid and preserved['generation']==generation and len(preserved['members'])==2,'room/generation survive physical guest detach')
         authenticate(guest,False)
@@ -169,6 +170,10 @@ def verify(index,values,base,execute_sql,additions,old_ids,observe=None):
             check(observations.get('version')==1 and observations.get('enabled') is True,'bounded local diagnostics available')
             active=observations.get('active',[])
             check(any(m['stream']['hostAccepted']==offsets[id(hw)] and m['stream']['clientAccepted']==offsets[id(gw)] for m in active),'measured stream matched by exact offsets')
+            ends=[r['termination'] for r in observations.get('recentTerminations',[])]
+            check(any(e.get('cause')=='PEER_CLOSE' and e.get('closeCode')==1000 and e.get('gracefulClose') is True and
+                e.get('epochAtFirstCause')==1 and e.get('epochAfterDetach')==2 and e.get('stateAtFirstCause')==2 for e in ends),
+                'actual Close classified before detach and stream retained')
         command(host,'leave');hw.close();gw.close()
         check(command(guest,'heartbeat')['room'] is None,'human exit still ends room')
         legacy=next(registry[eid] for eid in reversed(old_ids) if registry[eid].get('recoveryProtocol') is None and registry[eid]['platform']=='snes');rid,_,ticket=paired(host,guest,legacy,'station-relay.v1')
