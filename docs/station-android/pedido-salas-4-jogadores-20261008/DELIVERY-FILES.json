@@ -1,0 +1,46 @@
+{
+  "appCommit": "f8e8779737ae2cf3280b371eec4a6efc17f8e605",
+  "serverParent": "a9f7f41b243f62e7ff5c3240d65eb7704034184c",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "7d8068e13815607c36335808041faca0a685e0db31fa9e1f9b2ec3788fd835ba",
+      "bytes": 31131
+    },
+    {
+      "path": "docs/station-android/AGENTS.md",
+      "sha256": "ddfca3998d807102b70e62a2c3c017ed3f6e0d2f0dd57c220be2e060cfc0fae5",
+      "bytes": 32165
+    },
+    {
+      "path": "docs/station-android/PEDIDO-SALAS-ATE-4-JOGADORES-20261008.md",
+      "sha256": "d9c132154f4a52c07baa79c3da9a711d619d0593a404bbb52229c80500531f5a",
+      "bytes": 15068
+    },
+    {
+      "path": "docs/station-android/README.md",
+      "sha256": "38910c8f893c8b2512a62e8497c8df634d2383ab4b15cdb2aa4c3f11605d91c8",
+      "bytes": 28516
+    },
+    {
+      "path": "docs/station-android/pedido-salas-4-jogadores-20261008/AUDITORIA.json",
+      "sha256": "ac7a4a2c8c683ab2116af6726c19f58bee91854cf934129f5e8ee22a2a12cb24",
+      "bytes": 2814
+    },
+    {
+      "path": "docs/station-android/pedido-salas-4-jogadores-20261008/STATUS-R76.json",
+      "sha256": "57deb1572b5fd7100484a73b3320c25fb7f3e8982660d189a59434020ed64260",
+      "bytes": 1145
+    },
+    {
+      "path": "docs/station-android/pedido-salas-4-jogadores-20261008/installation-motorola-r76.json",
+      "sha256": "9c7c55108a891491338b977e271efb23ab27d2a9f60704a3a009de8bc43f6e49",
+      "bytes": 1107
+    },
+    {
+      "path": "docs/station-android/pedido-salas-4-jogadores-20261008/post-installation-motorola-r76.json",
+      "sha256": "62d9eca13cbf9201d00e08c55d3d1cf334b993cbd1d1104cc0808c0552d70a29",
+      "bytes": 442
+    }
+  ]
+}

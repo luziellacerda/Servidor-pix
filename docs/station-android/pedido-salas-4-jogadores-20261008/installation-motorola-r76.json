@@ -1,0 +1,33 @@
+{
+  "version": "R76",
+  "serverRegistryActivationVerified": true,
+  "startedUTC": "2026-10-08T11:42:50.072260+00:00",
+  "completedUTC": "2026-10-08T11:44:14.642435+00:00",
+  "model": "motorola edge 30",
+  "package": "org.turboramastation.frontend",
+  "apkSHA256": "d7145db3511a4056b16fdde10e4c07709a16b7f445596801b3535c1b28b06a51",
+  "deviceAPK_SHA256": "d7145db3511a4056b16fdde10e4c07709a16b7f445596801b3535c1b28b06a51",
+  "previousAPK_SHA256": "e56896f28b16645653bfd28311cd0a8a9a5458e6d443849916a4dede6dc7fafe",
+  "apkBytes": 2122907380,
+  "installSuccess": true,
+  "uidPreserved": true,
+  "originalInstallTimestampPreserved": true,
+  "uninstalled": false,
+  "dataCleared": false,
+  "deviceSettingsChanged": false,
+  "activeEmulatorBeforeInstall": false,
+  "launchVerified": false,
+  "directStreaming": true,
+  "extraAPKCopiedToPhone": false,
+  "installCommand": [
+    "install",
+    "--streaming",
+    "--no-incremental",
+    "-r",
+    "--user",
+    "0"
+  ],
+  "securityHandshakeVerified": false,
+  "twoDeviceGameplayVerified": false,
+  "thermalSavingsMeasured": false
+}

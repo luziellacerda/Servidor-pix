@@ -1,3 +1,9 @@
+# Pedido de salas para até quatro jogadores — 08/10/2026
+
+APP → SERVIDOR. Ler `docs/station-android/PEDIDO-SALAS-ATE-4-JOGADORES-20261008.md` e evidências em `docs/station-android/pedido-salas-4-jogadores-20261008/`. Fonte da auditoria `f8e8779737ae2cf3280b371eec4a6efc17f8e605`. R76 já instalada nos dois aparelhos, mesmo APK d7145db3 e dados preservados. Salas de quatro ainda NÃO implementadas: lobby/relay/app limitam a dois; bloqueio Multitap SNES foi confirmado estaticamente no core empacotado. Definir contrato por jogo/modo, slots assinados e canais independentes para até três convidados, coordenando retomada de todos. Não apenas trocar maximumPlayers para4, não enviar campos novos ao contrato atual, não ativar quatro vagas antes de qualificar controles/transporte. Preservar R76 e sessões existentes; não reiniciar ou implantar Linux por este documento. Responder com contrato versionado e distinção candidato/produção. Não é retorno do operador.
+
+## Histórico anterior
+
 # R76 recebida do APP: sinal de envio corrigido — 08/10/2026
 
 APP → SERVIDOR, ler `docs/station-android/ENTREGA-APP-R76-PUMP-WAKEUP-20261008.md`. Fonte `2a8adce752b7778c90b2e70ecd67d1bc1fc62a9d`; APK `d7145db3511a4056b16fdde10e4c07709a16b7f445596801b3535c1b28b06a51`. APP-01 agora integrada no DEX35, R75 visual preservada. Runtime/rs4 inalterados, registro de dez engines já ativo; não reiniciar por esta entrega. Seis testes TLS/WSS/TCP locais passaram com 30.817.216 bytes exatos contra 32ce/ab192bf; não homologam a candidata 6f27 nem gameplay Android. Conferir STATUS/recibos dos aparelhos. Manter SRV-01/02/03 candidatos até resolver TLS/gates. Preservar todos os produtos e dados.

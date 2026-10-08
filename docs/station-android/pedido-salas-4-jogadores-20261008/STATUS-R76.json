@@ -1,0 +1,35 @@
+{
+  "version": "R76",
+  "utc": "2026-10-08T11:45:17.407816+00:00",
+  "compiled": true,
+  "signed": true,
+  "installed": true,
+  "stable": false,
+  "apk": "G:\\BAKUP SISTEMA APP 03-10-2026\\apks-candidatos-visuais\\TurboStations-Premium-R76-20261008.apk",
+  "apkSHA256": "d7145db3511a4056b16fdde10e4c07709a16b7f445596801b3535c1b28b06a51",
+  "apkBytes": 2122907380,
+  "roomsDexSHA256": "c03ea2f4aa30c5e32654c575115583f72815b9701c16791c4f94c6ade753f2ff",
+  "runtimeSHA256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+  "serverRegistryChangeRequired": false,
+  "serverReturnReviewed": "ed9ca9fdcc16f3b9f86792d43ed01d5812a9f1d8",
+  "serverCandidateActivated": false,
+  "twoDeviceGameplayVerified": false,
+  "phones": [
+    "Samsung A56",
+    "Motorola Edge 30"
+  ],
+  "visualR75Included": true,
+  "sourceCount": 201,
+  "preservedSources": 200,
+  "tests": {
+    "regression": 1206,
+    "session": 101,
+    "sessionGuards": 42,
+    "pumpChecks": 1466,
+    "pumpCases": 143,
+    "tlsExecutions": 6,
+    "tlsExactBytes": 30817216
+  },
+  "pendingPhones": [],
+  "entryForegroundVerified": true
+}
