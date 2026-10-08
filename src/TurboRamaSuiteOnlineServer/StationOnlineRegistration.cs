@@ -35,7 +35,8 @@ public static class StationOnlineRegistration
         builder.Services.AddSingleton<IStationOnlineAccess,StationOnlineAccess>();
         if(recoveryEnabled){
             builder.Services.AddSingleton(sp=>new StationRecoveryRelay(sp.GetRequiredService<StationOnline>(),
-                sp.GetRequiredService<IStationOnlineAccess>(),sp.GetRequiredService<ILogger<StationRecoveryRelay>>(),recoveryRooms,recoveryWindow));
+                sp.GetRequiredService<IStationOnlineAccess>(),sp.GetRequiredService<ILogger<StationRecoveryRelay>>(),recoveryRooms,recoveryWindow,
+                builder.Configuration.GetValue("Station:Online:RecoveryDiagnosticsEnabled",true)));
             builder.Services.AddHostedService(sp=>sp.GetRequiredService<StationRecoveryRelay>());
         }
     }

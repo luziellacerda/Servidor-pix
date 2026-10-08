@@ -13,7 +13,7 @@ def load(name):
     spec=importlib.util.spec_from_file_location(name.replace('-','_'),Path(__file__).with_name(name))
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
 
-def verify(index,values,base,execute_sql,additions,old_ids):
+def verify(index,values,base,execute_sql,additions,old_ids,observe=None):
     helper=load('verificar-http-release-station.py');checks=0;clients=[];sockets=[];sessions={};snapshots={}
     public=serialization.load_pem_private_key(Path(values['Station__AssertionPrivateKeyPemFile']).read_bytes(),None).public_key()
     pepper=base64.b64decode(Path(values['Station__ActivationPepperFile']).read_bytes(),validate=True)
@@ -96,7 +96,7 @@ def verify(index,values,base,execute_sql,additions,old_ids):
             descriptor=command(client,action,**extra)['room']['relay'];check(descriptor['protocol']==protocol,'signed relay descriptor')
             return descriptor['ticket']
         return rid,room['generation'],ticket
-    completed=False;forwarded=0
+    completed=False;forwarded=0;latency=[];observations=None
     try:
         for _ in range(2):
             client=helper.StationReleaseVerification(execute_sql,pepper,public,index);clients.append(client);authenticate(client)
@@ -152,6 +152,23 @@ def verify(index,values,base,execute_sql,additions,old_ids):
         for ws in (hw,gw):receive(ws,6,offset=epoch,value=2)
         resumed=secrets.token_bytes(64);hw.send(frame(3,64,data=resumed));check(receive(gw,3,offset=64)[2]==resumed,'resume continues offsets without duplication')
         gw.send(frame(4,128));receive(hw,5,offset=128,value=128);forwarded+=64
+        if observe is not None:
+            offsets={id(hw):128,id(gw):64}
+            for sender,recipient,client,role in ((hw,gw,host,'host'),(gw,hw,guest,'client')):
+                command(client,'heartbeat')
+                for size in (64,2048,8192):
+                    for sample in range(4):
+                        payload=secrets.token_bytes(size);at=offsets[id(sender)];started=time.perf_counter_ns()
+                        sender.send(frame(3,at,data=payload));check(receive(recipient,3,offset=at)[2]==payload,'measured DATA exact bytes')
+                        latency.append(dict(role=role,kind='DATA',bytes=size,receiveMs=(time.perf_counter_ns()-started)/1e6))
+                        recipient.send(frame(4,at+size));receive(sender,5,offset=at+size,value=at+size);offsets[id(sender)]+=size;forwarded+=size
+                for sample in range(6):
+                    started=time.perf_counter_ns();sender.send(frame(9,sample));receive(sender,10,offset=sample)
+                    latency.append(dict(role=role,kind='PONG',bytes=0,roundTripMs=(time.perf_counter_ns()-started)/1e6))
+            observations=observe()
+            check(observations.get('version')==1 and observations.get('enabled') is True,'bounded local diagnostics available')
+            active=observations.get('active',[])
+            check(any(m['stream']['hostAccepted']==offsets[id(hw)] and m['stream']['clientAccepted']==offsets[id(gw)] for m in active),'measured stream matched by exact offsets')
         command(host,'leave');hw.close();gw.close()
         check(command(guest,'heartbeat')['room'] is None,'human exit still ends room')
         legacy=next(registry[eid] for eid in reversed(old_ids) if registry[eid].get('recoveryProtocol') is None and registry[eid]['platform']=='snes');rid,_,ticket=paired(host,guest,legacy,'station-relay.v1')
@@ -161,7 +178,8 @@ def verify(index,values,base,execute_sql,additions,old_ids):
         return dict(passed=True,checks=checks,syntheticLicenses=2,signedWindowsR74Engines=True,signedEngineIds=sorted(registry),signedEngines=list(registry.values()),signedTransports=state['transports'],signedRecoveryCapabilities=state['recoveryCapabilities'],signedRoomCapabilities=state['roomCapabilities'],legacyEngineIdsPreserved=True,
             exactForwardedBytes=forwarded,protectedV2Public=base.startswith('https:'),protectedResume=True,oneUseTickets=True,
             proofReplayDenied=True,ownRoomProfilesSigned=True,legacyV1=True,catalogCoverDownloadAuthorizationPreserved=True,gameDownloadVerified=True,
-            androidGameplay=False,nativePauseSimulated=True)
+            androidGameplay=False,nativePauseSimulated=True,latencySamples=latency,observations=observations,
+            latencyScope='Synthetic two clients on this server; not phone RTT or core FPS')
     finally:
         for ws in sockets:
             try:ws.close()

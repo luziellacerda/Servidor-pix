@@ -43,6 +43,19 @@ public static class StationOnlineEndpoints
             snapshot["recovery"]=JsonSerializer.SerializeToElement(context.RequestServices.GetRequiredService<StationRecoveryRelay>().Snapshot());
             return Results.Json(snapshot);
         });
+        // Operator-only bounded metadata. Public hostnames and forwarded requests are rejected.
+        app.MapGet("/ready/station/online/diagnostics",(HttpContext context)=>{
+            string host=context.Request.Host.Host.Trim('[',']');
+            bool localHost=host.Equals("localhost",StringComparison.OrdinalIgnoreCase)||
+                System.Net.IPAddress.TryParse(host,out var parsed)&&System.Net.IPAddress.IsLoopback(parsed);
+            if(!localHost||context.Connection.RemoteIpAddress is not {} address||!System.Net.IPAddress.IsLoopback(address)||
+                context.Request.Headers.Keys.Any(k=>k.StartsWith("X-Forwarded-",StringComparison.OrdinalIgnoreCase)||
+                    k.Equals("Forwarded",StringComparison.OrdinalIgnoreCase)||k.Equals("CF-Connecting-IP",StringComparison.OrdinalIgnoreCase)||
+                    k.Equals("X-Real-IP",StringComparison.OrdinalIgnoreCase)))return Results.NotFound();
+            context.Response.Headers.CacheControl="no-store";
+            if(!enabled||!app.Configuration.GetValue("Station:Online:RecoveryEnabled",false))return Results.StatusCode(503);
+            return Results.Json(context.RequestServices.GetRequiredService<StationRecoveryRelay>().Diagnostics());
+        });
         app.MapGet("/v1/station/online/relay",async (HttpContext context)=>{
             context.Response.Headers.CacheControl="no-store";
             if(!enabled||!app.Configuration.GetValue("Station:Online:RelayEnabled",false)){await RelayError(context,503,"STATION_ONLINE_RELAY_DISABLED");return;}

@@ -1,5 +1,6 @@
 using System.Buffers.Binary;
 using System.Net.WebSockets;
+using System.Diagnostics;
 using TurboRamaSuiteOnlineServer.Online;
 
 namespace TurboRamaSuiteOnlineServer;
@@ -67,7 +68,7 @@ public sealed class StationStreamWindow(int capacity)
     }
 }
 
-public sealed class StationStreamSession(int windowBytes)
+public sealed class StationStreamSession(int windowBytes,bool observe=false)
 {
     public const long Waiting=0,Synchronizing=1,Playing=2,Unrecoverable=3;
     public sealed class Connection(string id)
@@ -77,6 +78,7 @@ public sealed class StationStreamSession(int windowBytes)
         public long Sent,PeerAccepted=-1,PeerDelivered=-1,StateEpoch=-1,StateValue=-1,Pong=-1;
         public readonly CancellationTokenSource Stop=new();
         public long LastReceive=Environment.TickCount64;
+        public StationRecoveryConnectionObservation? Observation;
     }
     private readonly object gate=new();
     private readonly StationStreamWindow[] windows=[new(windowBytes),new(windowBytes)];
@@ -84,6 +86,9 @@ public sealed class StationStreamSession(int windowBytes)
     private readonly long[] maximumSent=new long[2];
     private TaskCompletionSource pulse=NewPulse();
     private long epoch=1,state=Waiting;
+    private readonly StationRecoveryTransitions? transitions=observe?new():null;
+    private readonly List<StationRecoveryConnectionObservation> observations=[];
+    private long discardedObservations;
     private static TaskCompletionSource NewPulse()=>new(TaskCreationOptions.RunContinuationsAsynchronously);
     private void Changed(){var old=pulse;pulse=NewPulse();old.TrySetResult();}
     private static int Side(bool host)=>host?0:1;
@@ -92,17 +97,19 @@ public sealed class StationStreamSession(int windowBytes)
     {
         lock(gate){int side=Side(host);if(connections[side] is not null)throw new OnlineFailure(409,"STATION_ONLINE_RELAY_ALREADY_ATTACHED");
             if(state==Unrecoverable)throw new OnlineFailure(409,"STATION_RECOVERY_UNRECOVERABLE");
-            var c=new Connection(id);connections[side]=c;Changed();return c;}
+            var c=new Connection(id);if(observe){c.Observation=new(host);if(observations.Count==8){
+                int old=observations.FindIndex(o=>!connections.Any(peer=>peer?.Observation==o));observations.RemoveAt(old);discardedObservations++;}
+                observations.Add(c.Observation);}connections[side]=c;Changed();return c;}
     }
     public void Detach(bool host,Connection c)
     {
-        lock(gate){int side=Side(host);if(connections[side]!=c)return;connections[side]=null;
+        lock(gate){int side=Side(host);if(connections[side]!=c)return;long beforeEpoch=epoch,beforeState=state;connections[side]=null;
             if(state!=Unrecoverable){state=Waiting;epoch++;foreach(var peer in connections)if(peer is not null){peer.Paused=false;peer.Ready=false;}}
-            Changed();}
+            transitions?.Add("Detach",host,beforeEpoch,epoch,beforeState,state);Changed();}
     }
     public void End()
     {
-        Connection?[] copy;lock(gate){state=Unrecoverable;epoch++;copy=connections.ToArray();Changed();}
+        Connection?[] copy;lock(gate){long beforeEpoch=epoch,beforeState=state;state=Unrecoverable;epoch++;copy=connections.ToArray();transitions?.Add("End",null,beforeEpoch,epoch,beforeState,state);Changed();}
         foreach(var c in copy)if(c is not null)try{c.Stop.Cancel();}catch(ObjectDisposedException){}
     }
     public long CurrentState {get{lock(gate)return state;}}
@@ -110,24 +117,29 @@ public sealed class StationStreamSession(int windowBytes)
     {lock(gate)return(epoch,state,windows.Sum(w=>w.Pending),windows.Sum(w=>w.Accepted),windows.Sum(w=>w.Delivered),connections.Count(c=>c is not null));}
     public (long HostAccepted,long HostDelivered,long ClientAccepted,long ClientDelivered) Directional()
     {lock(gate)return(windows[0].Accepted,windows[0].Delivered,windows[1].Accepted,windows[1].Delivered);}
-    public void Receive(bool host,Connection c,StationStreamFrame frame)
+    public void Receive(bool host,Connection c,StationStreamFrame frame,long receivedAt=0)
     {
+        if(observe&&receivedAt==0)receivedAt=Stopwatch.GetTimestamp();
         lock(gate){int side=Side(host);Current(side,c);var own=windows[side];var incoming=windows[1-side];
+            long lockedAt=observe?Stopwatch.GetTimestamp():0,beforeEpoch=epoch,beforeState=state;
+            transitions?.Receive(frame.Type);c.Observation?.Measure(frame.Type,frame.Data.Length,StationRecoveryConnectionObservation.Phase.ReceiveToLock,receivedAt,lockedAt);
             c.LastReceive=Environment.TickCount64;
             if(!c.Hello){
                 if(frame.Type!=StationStreamFrame.Hello||frame.Offset>own.Accepted)
                     throw new OnlineFailure(409,"STATION_RECOVERY_HELLO_REQUIRED");
                 if(frame.Value>maximumSent[side])throw new OnlineFailure(409,"STATION_RECOVERY_OFFSET_INVALID");
-                incoming.Confirm(frame.Value);c.Sent=frame.Value;c.Hello=true;
+                incoming.Confirm(frame.Value);if(observe)foreach(var observed in observations.Where(o=>o.Host!=host))observed.Confirmed(frame.Value);c.Sent=frame.Value;c.Hello=true;
             }else switch(frame.Type){
                 case StationStreamFrame.DataPacket:
+                    long beforeAccepted=own.Accepted;
                     own.Append(frame.Offset,frame.Data);
+                    if(own.Accepted>beforeAccepted)c.Observation?.Accepted(frame,receivedAt);
                     foreach(var peer in connections)if(peer is not null)peer.Ready=false;
                     break;
                 case StationStreamFrame.Ack:
                     if(frame.Value!=0)throw new OnlineFailure(400,"STATION_RECOVERY_FRAME_INVALID");
                     if(frame.Offset>maximumSent[side])throw new OnlineFailure(409,"STATION_RECOVERY_OFFSET_INVALID");
-                    incoming.Confirm(frame.Offset);c.Sent=Math.Max(c.Sent,frame.Offset);break;
+                    incoming.Confirm(frame.Offset);if(observe)foreach(var observed in observations.Where(o=>o.Host!=host))observed.Confirmed(frame.Offset);c.Sent=Math.Max(c.Sent,frame.Offset);break;
                 case StationStreamFrame.Paused:
                     if(frame.Value!=0)throw new OnlineFailure(400,"STATION_RECOVERY_FRAME_INVALID");
                     if(frame.Offset==epoch)c.Paused=true;break;
@@ -136,7 +148,7 @@ public sealed class StationStreamSession(int windowBytes)
                     break;
                 case StationStreamFrame.Ping:
                     if(frame.Value!=0)throw new OnlineFailure(400,"STATION_RECOVERY_FRAME_INVALID");
-                    c.Pong=frame.Offset;break;
+                    c.Pong=frame.Offset;c.Observation?.PingReceived(receivedAt);break;
                 case StationStreamFrame.Suspend:
                     if(frame.Value!=0)throw new OnlineFailure(400,"STATION_RECOVERY_FRAME_INVALID");
                     if(!c.Suspended){c.Suspended=true;state=Waiting;epoch++;foreach(var peer in connections)if(peer is not null){peer.Paused=false;peer.Ready=false;}}
@@ -154,11 +166,15 @@ public sealed class StationStreamSession(int windowBytes)
                 state=Synchronizing;
                 if(connections.All(peer=>peer is {Ready:true})&&windows.All(w=>w.Pending==0))state=Playing;
             }
-            Changed();}
+            if(epoch!=beforeEpoch||state!=beforeState||frame.Type is StationStreamFrame.Suspend or StationStreamFrame.Foreground or StationStreamFrame.NeedSync)
+                transitions?.Add(frame.Type switch{StationStreamFrame.Suspend=>"Suspend11",StationStreamFrame.Foreground=>"Foreground12",StationStreamFrame.NeedSync=>"NeedSync13",StationStreamFrame.Ready=>"Ready8",StationStreamFrame.Paused=>"Paused7",_=>"Hello1"},host,beforeEpoch,epoch,beforeState,state);
+            c.Observation?.Measure(frame.Type,frame.Data.Length,StationRecoveryConnectionObservation.Phase.ReceiveLockHeld,lockedAt,observe?Stopwatch.GetTimestamp():0);Changed();}
     }
     public (StationStreamFrame? Frame,Task Changed) Next(bool host,Connection c)
     {
+        long waitingAt=observe?Stopwatch.GetTimestamp():0;
         lock(gate){int side=Side(host);Current(side,c);var own=windows[side];var incoming=windows[1-side];
+            long lockedAt=observe?Stopwatch.GetTimestamp():0;
             StationStreamFrame? frame=null;
             if(c.StateEpoch!=epoch||c.StateValue!=state){c.StateEpoch=epoch;c.StateValue=state;frame=new(StationStreamFrame.State,epoch,state,[]);}
             else if(c.Hello&&(c.PeerAccepted!=own.Accepted||c.PeerDelivered!=own.Delivered)){
@@ -169,27 +185,56 @@ public sealed class StationStreamSession(int windowBytes)
                 var data=incoming.Read(c.Sent);frame=new(StationStreamFrame.DataPacket,c.Sent,0,data);c.Sent+=data.Length;
                 maximumSent[side]=Math.Max(maximumSent[side],c.Sent);
             }
+            if(observe&&frame is {} selected){var source=selected.Type==StationStreamFrame.DataPacket?
+                observations.LastOrDefault(o=>o.Host!=host&&o.OldestSampleAt(selected.Offset,selected.Offset+selected.Data.Length)!=0):null;
+                c.Observation?.Selected(selected,lockedAt,waitingAt,source);}
             return(frame,pulse.Task);}
+    }
+    public object Diagnostics()
+    {
+        lock(gate)return new {enabled=observe,epoch,state,hostAccepted=windows[0].Accepted,hostDelivered=windows[0].Delivered,
+            clientAccepted=windows[1].Accepted,clientDelivered=windows[1].Delivered,hostPending=windows[0].Pending,clientPending=windows[1].Pending,
+            availableHostWriterBytes=connections[0] is {} h?windows[1].Accepted-h.Sent:0,availableClientWriterBytes=connections[1] is {} c?windows[0].Accepted-c.Sent:0,
+            pendingHostPong=connections[0]?.Pong>=0,pendingClientPong=connections[1]?.Pong>=0,discardedObservations,
+            connectionObservationLimit=8,transitions=transitions?.Snapshot(),connections=observations.Select(o=>o.Snapshot(windows[o.Host?0:1].Delivered,windows[o.Host?0:1].Accepted)).ToArray()};
     }
 }
 
 // Waiting rooms occupy a bounded slot indefinitely; admission fails honestly when slots fill.
 // No room eviction for age. Process/native-process restart cannot restore this in-memory stream.
 public sealed class StationRecoveryRelay(StationOnline hub,IStationOnlineAccess access,
-    ILogger<StationRecoveryRelay> logger,int maximumRooms=64,int windowBytes=262144):BackgroundService
+    ILogger<StationRecoveryRelay> logger,int maximumRooms=64,int windowBytes=262144,bool observe=true):BackgroundService
 {
-    private sealed record Match(StationOnline.RelayLease Lease,StationStreamSession Stream);
+    private sealed record Match(StationOnline.RelayLease Lease,StationStreamSession Stream)
+    {public string Reference {get;}=Guid.NewGuid().ToString("N")[..12];}
     private readonly object gate=new();private readonly Dictionary<string,Match> matches=[];
+    private readonly Queue<object> completedObservations=[];private long discardedCompletedObservations;
     public object Snapshot(){lock(gate)return new{protocol="station-stream.v2",maximumRooms,windowBytes,
         retainedRooms=matches.Count,activeConnections=matches.Values.Sum(m=>m.Stream.Snapshot().Connections),
         pendingBytes=matches.Values.Sum(m=>m.Stream.Snapshot().Pending),
         maximumRetainedBytes=(long)maximumRooms*windowBytes*2,persistent=false};}
+    public object Diagnostics()
+    {
+        Match[] active;object[] completed;long discarded;
+        lock(gate){active=matches.Values.ToArray();completed=completedObservations.ToArray();discarded=discardedCompletedObservations;}
+        var gc=GC.GetGCMemoryInfo();using var process=Process.GetCurrentProcess();ThreadPool.GetAvailableThreads(out int workers,out int io);
+        return new {version=1,utc=DateTimeOffset.UtcNow,monotonicFrequency=Stopwatch.Frequency,enabled=observe,persistent=false,
+            active=active.Select(m=>new {reference=m.Reference,generation=m.Lease.Generation,stream=m.Stream.Diagnostics()}).ToArray(),
+            completedRoomLimit=8,discardedCompletedObservations=discarded,completed,
+            runtime=new {threadPoolThreads=ThreadPool.ThreadCount,threadPoolPendingWorkItems=ThreadPool.PendingWorkItemCount,
+                threadPoolCompletedWorkItems=ThreadPool.CompletedWorkItemCount,availableWorkers=workers,availableIo=io,
+                managedHeapBytes=GC.GetTotalMemory(false),allocatedBytes=GC.GetTotalAllocatedBytes(false),
+                collectionCounts=new[]{GC.CollectionCount(0),GC.CollectionCount(1),GC.CollectionCount(2)},
+                gcPauseTimePercentage=gc.PauseTimePercentage,lastGcPauseMs=gc.PauseDurations.ToArray().Select(t=>t.TotalMilliseconds).ToArray(),
+                gcHeapBytes=gc.HeapSizeBytes,gcFragmentedBytes=gc.FragmentedBytes,processWorkingSetBytes=process.WorkingSet64,
+                processCpuMs=process.TotalProcessorTime.TotalMilliseconds}};
+    }
     public async Task Attach(StationOnline.RelayLease lease,WebSocket socket,CancellationToken aborted)
     {
         Match match;lock(gate){
             if(!matches.TryGetValue(lease.RoomId,out match!)){
                 if(matches.Count>=maximumRooms)throw new OnlineFailure(503,"STATION_RECOVERY_FULL");
-                matches.Add(lease.RoomId,match=new(lease,new StationStreamSession(windowBytes)));
+                matches.Add(lease.RoomId,match=new(lease,new StationStreamSession(windowBytes,observe)));
             }
             if(match.Lease.Generation!=lease.Generation)throw new OnlineFailure(409,"STATION_RECOVERY_GENERATION_MISMATCH");
         }
@@ -211,7 +256,8 @@ public sealed class StationRecoveryRelay(StationOnline hub,IStationOnlineAccess 
                         throw new OnlineFailure(400,"STATION_RECOVERY_FRAME_INVALID");
                     count+=read.Count;
                 }while(!read.EndOfMessage);
-                match.Stream.Receive(lease.Host,c,StationStreamFrame.Decode(buffer.AsSpan(0,count)));
+                long receivedAt=observe?Stopwatch.GetTimestamp():0;
+                match.Stream.Receive(lease.Host,c,StationStreamFrame.Decode(buffer.AsSpan(0,count)),receivedAt);
                 PublishState();
             }
         }
@@ -232,7 +278,9 @@ public sealed class StationRecoveryRelay(StationOnline hub,IStationOnlineAccess 
             StationStreamSession.Unrecoverable=>"unrecoverable",_=>"waiting-reconnect"});
         async Task Send(){try{
             while(!stop.IsCancellationRequested){var next=match.Stream.Next(lease.Host,c);
-                if(next.Frame is {} frame){await socket.SendAsync(frame.Encode().AsMemory(),WebSocketMessageType.Binary,true,stop.Token);continue;}
+                if(next.Frame is {} frame){var encoded=frame.Encode();long sendingAt=c.Observation?.Sending(frame)??0;bool succeeded=false;
+                    try{await socket.SendAsync(encoded.AsMemory(),WebSocketMessageType.Binary,true,stop.Token);succeeded=true;}
+                    finally{c.Observation?.Sent(frame,sendingAt,succeeded);}continue;}
                 await next.Changed.WaitAsync(stop.Token);
             }
         }catch(Exception e)when(e is OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){if(!stop.IsCancellationRequested){First("SEND_FAILURE",e);stop.Cancel();}}}
@@ -262,7 +310,9 @@ public sealed class StationRecoveryRelay(StationOnline hub,IStationOnlineAccess 
     {
         Match[] copy;lock(gate)copy=matches.Values.ToArray();
         foreach(var match in copy)if(!hub.RecoveryRoomCurrent(match.Lease.RoomId,match.Lease.Generation)){
-            match.Stream.End();lock(gate)if(matches.GetValueOrDefault(match.Lease.RoomId)==match)matches.Remove(match.Lease.RoomId);
+            match.Stream.End();var captured=observe?new {reference=match.Reference,generation=match.Lease.Generation,completedUtc=DateTimeOffset.UtcNow,stream=match.Stream.Diagnostics()}:null;
+            lock(gate)if(matches.GetValueOrDefault(match.Lease.RoomId)==match){matches.Remove(match.Lease.RoomId);
+                if(captured is not null){if(completedObservations.Count==8){completedObservations.Dequeue();discardedCompletedObservations++;}completedObservations.Enqueue(captured);}}
         }
     }
 }

@@ -119,4 +119,5 @@ foreach(var who in new[]{namesHost,namesGuest}){
     Check(profiles.Single(x=>x.GetProperty("peerId").GetString()==guestView.GetProperty("selfId").GetString()).GetProperty("nickname").GetString()=="Synthetic guest","guest name independent of social page");
     Check(own.GetProperty("ready").GetArrayLength()==1,"profile extension preserves ready IDs");
 }
-Console.WriteLine(JsonSerializer.Serialize(new{passed=true,checks,scope="Production v2 ledger/state/negotiation with synthetic identities; not Android gameplay"}));
+int observationChecks=ObservationChecks.Run();
+Console.WriteLine(JsonSerializer.Serialize(new{passed=true,checks,observationChecks,scope="Production v2 ledger/state/negotiation and bounded observations with synthetic identities; not Android gameplay",benchmark=args.Contains("--benchmark")?ObservationChecks.Benchmark():null}));
