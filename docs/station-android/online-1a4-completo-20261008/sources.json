@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-08",
+  "sources": [
+    {
+      "id": "manual-battletoads",
+      "kind": "original-publisher-manual",
+      "url": "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf",
+      "locator": "Controlling the Action, printed page6",
+      "finding": "Dois modos simultâneos A/B; permitem ou desativam golpes entre parceiros."
+    },
+    {
+      "id": "manual-sbomber2",
+      "kind": "original-publisher-manual",
+      "url": "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf",
+      "locator": "Playing a Battle Game, printed pages8–9",
+      "finding": "Normal Game individual; Battle com até quatro humanos usando Multitap."
+    },
+    {
+      "id": "manual-sbomber3",
+      "kind": "original-publisher-manual",
+      "url": "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_3_-_SNES_-_Manual.pdf",
+      "locator": "PDFpage4, printed pages8–9",
+      "finding": "Battle Single/Tag até cinco nativos; Station solicitado limitado a quatro; humanos MAN, demais COM/OFF."
+    },
+    {
+      "id": "manual-mana",
+      "kind": "official-publisher-manual",
+      "url": "https://www.nintendo.com/es-es/games/oms/snes-classic/manuals/secret-of-mana/manual.pdf",
+      "locator": "Section12, PDFpage15",
+      "finding": "Cooperação até três simultâneos após recrutar aliados; Start permite entrar/sair."
+    },
+    {
+      "id": "manual-nbajam-snes",
+      "kind": "original-publisher-manual",
+      "url": "https://www.retrogames.cz/manualy/SNES/NBA_Jam_-_SNES_-_Manual.pdf",
+      "locator": "PDFpage3, printed pages2–3",
+      "finding": "Três/quatro com Super Multitap; opções e participação humana dependem da configuração no jogo."
+    },
+    {
+      "id": "manual-topgear3000",
+      "kind": "original-publisher-manual",
+      "url": "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf",
+      "locator": "VS Mode / Super NES Multi-Player Adapter",
+      "finding": "VS até quatro simultâneos; campeonato suporta dois. Outros carros podem ser controlados por CPU."
+    },
+    {
+      "id": "manual-megabomber",
+      "kind": "original-publisher-manual",
+      "url": "https://www.gamesdatabase.org/Media/SYSTEM/Sega_Genesis//Manual/formated/Mega_Bomberman_-_1994_-_Sega.pdf",
+      "locator": "Starting Up printed3; Battle printed13–14",
+      "finding": "Battle Normal/Tag até quatro; Sega Team Player; definir participantes MAN/COM. Diagrama mostra adaptador na segunda porta."
+    },
+    {
+      "id": "manual-generalchaos",
+      "kind": "original-publisher-manual",
+      "url": "https://www.gamesdatabase.org/Media/SYSTEM/Sega_Genesis//Manual/formated/General_Chaos_-_1993_-_Electronic_Arts.pdf",
+      "locator": "Printed7–9",
+      "finding": "EA4-Way Play; menu 2 Head-to-Head, 2 Side-by-Side, 3 e4; seis botões devem usar modo três botões."
+    },
+    {
+      "id": "libretro-multitap",
+      "kind": "official-emulator-documentation",
+      "url": "https://docs.libretro.com/guides/netplay-multiple-controllers/",
+      "locator": "SNES example",
+      "finding": "Exemplo quatro controles Bomberman2; não demonstra quatro telefones Station."
+    },
+    {
+      "id": "bsnes-multitap",
+      "kind": "official-emulator-documentation",
+      "url": "https://docs.libretro.com/library/bsnes_mercury_performance/#multitap-support",
+      "locator": "Multitap support",
+      "finding": "Adaptador SNES na segunda porta; até cinco pads físicos."
+    },
+    {
+      "id": "openemu-genesis-mapping",
+      "kind": "emulator-maintainer-source",
+      "url": "https://github.com/OpenEmu/GenesisPlus-Core/blob/1d652d0593453a8d477214ba6a53a12d2c15e9e3/GenPlusGameCore.m",
+      "locator": "configureInput/multiTapGames",
+      "finding": "Tabela técnica MD5/adaptadores em outro core; título não comprova checksum atual nem funcionamento no ClownMDEmu."
+    },
+    {
+      "id": "openemu-snes-mapping",
+      "kind": "emulator-maintainer-source",
+      "url": "https://github.com/OpenEmu/SNES9x-Core/blob/6b1495d48bdef85e04cb96f5050601b9c6be3d88/SNESGameCore.mm",
+      "locator": "multitapGames",
+      "finding": "Tabela técnica CRC32 para SNES Multitap em outro core; não prova capacidade simultânea de cada modo."
+    },
+    {
+      "id": "clown-manager",
+      "kind": "deployed-family-pinned-source",
+      "url": "https://github.com/Clownacy/clownmdemu-core/blob/88ef45a6585556e2247dd26b6c937d6b9fb4a12d/source/controller-manager.c",
+      "locator": "ControllerManager_Read",
+      "finding": "Protocolo Sega escolhido globalmente; encaminha cada porta ao adaptador sem adicionar base do índice ao callback."
+    },
+    {
+      "id": "clown-sega",
+      "kind": "deployed-family-pinned-source",
+      "url": "https://github.com/Clownacy/clownmdemu-core/blob/88ef45a6585556e2247dd26b6c937d6b9fb4a12d/source/controller-multitap-sega.c",
+      "locator": "ControllerMultitapSega_GetNybble",
+      "finding": "Índice local do pad0–3; precisa base por porta para representar0–7."
+    },
+    {
+      "id": "clown-wrapper",
+      "kind": "deployed-family-pinned-source",
+      "url": "https://github.com/Clownacy/clownmdemu-libretro/blob/d43c2708b0a31c285ce16724b6c4a2e92af07346/source/libretro-interface.c",
+      "locator": "InputRequestedCallback",
+      "finding": "Passa player_id diretamente como porta libretro; não remapeia o pad de porta física2 para slots baixos da sala."
+    },
+    {
+      "id": "clown-options",
+      "kind": "deployed-family-pinned-source",
+      "url": "https://github.com/Clownacy/clownmdemu-libretro/blob/d43c2708b0a31c285ce16724b6c4a2e92af07346/source/options.h",
+      "locator": "clownmdemu_input_protocol",
+      "finding": "standard/sega/ea; nenhum layout misto por porta ou opção3/6 botões nesse wrapper."
+    }
+  ],
+  "referenceSourcePins": {
+    "OpenEmu/GenesisPlus-Core": {
+      "commit": "1d652d0593453a8d477214ba6a53a12d2c15e9e3",
+      "sourceSha256": "9acb1fc6c1bfebc0fc984baf9785811624ec6972203e2f005d7159901df9625f"
+    },
+    "OpenEmu/SNES9x-Core": {
+      "commit": "6b1495d48bdef85e04cb96f5050601b9c6be3d88",
+      "sourceSha256": "f74023d418eb4631070cc68a400480d7113f5e62e00240b455e5d80149925f70"
+    }
+  },
+  "limits": [
+    "Manual facts describe original modes, not exact modifications or physical Android gameplay.",
+    "Reference mappings join by title until CRC/MD5 is computed offline over current exact content.",
+    "Other emulator configurations are research references, not deployed-core tests."
+  ]
+}

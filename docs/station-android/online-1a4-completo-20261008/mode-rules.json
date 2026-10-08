@@ -1,0 +1,459 @@
+{
+  "schemaVersion": 1,
+  "authorization": "Owner already authorized all compatible games for use/tests on20261008. Do not request that approval again.",
+  "purpose": "Original documented modes and exact-content proposed bindings; not a declaration of physical gameplay qualification.",
+  "rules": [
+    {
+      "platform": "snes",
+      "titleKeys": [
+        "Battletoads in Battlemaniacs"
+      ],
+      "mode": "two-player-a",
+      "displayName": "Dupla com golpes entre parceiros",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 2,
+      "maximumStationPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "profileSlug": "snes-battlemaniacs-mode-a-20261008",
+      "sourceIds": [
+        "manual-battletoads"
+      ],
+      "conditions": [
+        "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+      ],
+      "existingR81ConfigurationReady": true,
+      "technicalPrerequisites": []
+    },
+    {
+      "platform": "snes",
+      "titleKeys": [
+        "Battletoads in Battlemaniacs"
+      ],
+      "mode": "two-player-b",
+      "displayName": "Dupla sem golpes entre parceiros",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 2,
+      "maximumStationPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "profileSlug": "snes-battlemaniacs-mode-b-20261008",
+      "sourceIds": [
+        "manual-battletoads"
+      ],
+      "conditions": [
+        "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+      ],
+      "existingR81ConfigurationReady": true,
+      "technicalPrerequisites": []
+    },
+    {
+      "platform": "snes",
+      "titleKeys": [
+        "Super Bomberman 2"
+      ],
+      "mode": "normal",
+      "displayName": "Campanha solo",
+      "playStyle": "single-player",
+      "nativeMaximum": 1,
+      "maximumStationPlayers": 1,
+      "allowedPlayerCounts": [],
+      "controllerProfile": "standard-2p-v1",
+      "profileSlug": "snes-sbomberman2-normal-20261008",
+      "sourceIds": [
+        "manual-sbomber2"
+      ],
+      "conditions": [
+        "Normal Game é individual e não deve criar sala."
+      ],
+      "existingR81ConfigurationReady": true,
+      "technicalPrerequisites": []
+    },
+    {
+      "platform": "snes",
+      "titleKeys": [
+        "Super Bomberman 2"
+      ],
+      "mode": "battle-single",
+      "displayName": "Battle: todos contra todos",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "maximumStationPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "profileSlug": "snes-sbomberman2-usa-battle-single-r77",
+      "sourceIds": [
+        "manual-sbomber2",
+        "libretro-multitap"
+      ],
+      "conditions": [
+        "Battle Game → Single Match; pads participantes MAN; outros COM/OFF."
+      ],
+      "existingR81ConfigurationReady": true,
+      "technicalPrerequisites": []
+    },
+    {
+      "platform": "snes",
+      "titleKeys": [
+        "Super Bomberman 2"
+      ],
+      "mode": "battle-team",
+      "displayName": "Battle: equipes",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "maximumStationPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "profileSlug": "snes-sbomberman2-battle-team-20261008",
+      "sourceIds": [
+        "manual-sbomber2"
+      ],
+      "conditions": [
+        "Battle Game → Tag Match; configurar humanos e equipes no jogo."
+      ],
+      "existingR81ConfigurationReady": true,
+      "technicalPrerequisites": []
+    },
+    {
+      "platform": "snes",
+      "titleKeys": [
+        "Super Bomberman 3"
+      ],
+      "mode": "battle-single",
+      "displayName": "Battle: todos contra todos",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 5,
+      "maximumStationPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "profileSlug": "snes-sbomberman3-battle-single-20261008",
+      "sourceIds": [
+        "manual-sbomber3"
+      ],
+      "conditions": [
+        "Battle Game → Single Match; participantes MAN; quinto pad COM/OFF; cada equipe com ao menos um participante."
+      ],
+      "existingR81ConfigurationReady": true,
+      "technicalPrerequisites": []
+    },
+    {
+      "platform": "snes",
+      "titleKeys": [
+        "Super Bomberman 3"
+      ],
+      "mode": "battle-team",
+      "displayName": "Battle: equipes",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 5,
+      "maximumStationPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "profileSlug": "snes-sbomberman3-battle-team-20261008",
+      "sourceIds": [
+        "manual-sbomber3"
+      ],
+      "conditions": [
+        "Battle Game → Tag Match; participantes MAN; quinto pad COM/OFF; cada equipe com ao menos um participante."
+      ],
+      "existingR81ConfigurationReady": true,
+      "technicalPrerequisites": []
+    },
+    {
+      "platform": "snes",
+      "titleKeys": [
+        "NBA Jam"
+      ],
+      "mode": "match-multitap",
+      "displayName": "Partida de basquete",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "maximumStationPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "profileSlug": "snes-nbajam-multitap-20261008",
+      "sourceIds": [
+        "manual-nbajam-snes"
+      ],
+      "conditions": [
+        "Start Game com Multitap; cada humano confirma sua posição com Start; ajustar Tag Mode e equipes."
+      ],
+      "existingR81ConfigurationReady": true,
+      "technicalPrerequisites": []
+    },
+    {
+      "platform": "snes",
+      "titleKeys": [
+        "Top Gear 3000"
+      ],
+      "mode": "vs-race",
+      "displayName": "Corrida VS",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "maximumStationPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "profileSlug": "snes-topgear3000-vs-20261008",
+      "sourceIds": [
+        "manual-topgear3000"
+      ],
+      "conditions": [
+        "Selecionar VS Mode e2,3ou4 humanos; demais carros podem ficar CPU."
+      ],
+      "existingR81ConfigurationReady": true,
+      "technicalPrerequisites": []
+    },
+    {
+      "platform": "snes",
+      "titleKeys": [
+        "Top Gear 3000"
+      ],
+      "mode": "championship-2p",
+      "displayName": "Campeonato em dupla",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 2,
+      "maximumStationPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "profileSlug": "snes-topgear3000-championship-20261008",
+      "sourceIds": [
+        "manual-topgear3000"
+      ],
+      "conditions": [
+        "Campeonato de dois humanos; não prometer quatro neste modo."
+      ],
+      "existingR81ConfigurationReady": true,
+      "technicalPrerequisites": []
+    },
+    {
+      "platform": "snes",
+      "titleKeys": [
+        "Secret of Mana",
+        "Seiken Densetsu 2"
+      ],
+      "mode": "adventure-coop",
+      "displayName": "Aventura cooperativa",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 3,
+      "maximumStationPlayers": 3,
+      "allowedPlayerCounts": [
+        2,
+        3
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "profileSlug": "snes-secret-of-mana-coop-20261008",
+      "sourceIds": [
+        "manual-mana"
+      ],
+      "conditions": [
+        "Recrutar aliados para haver personagens extras; convidado pressiona Start para assumir aliado; máximo3.",
+        "Na variante BR/headered preservar o SHA de todos os bytes do arquivo; testar controles da tradução."
+      ],
+      "existingR81ConfigurationReady": true,
+      "technicalPrerequisites": []
+    },
+    {
+      "platform": "megadrive",
+      "titleKeys": [
+        "Mega Bomberman"
+      ],
+      "mode": "battle-normal",
+      "displayName": "Battle: todos contra todos",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "maximumStationPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "megadrive-sega-teamplayer-v1",
+      "profileSlug": "md-megabomberman-battle-normal-20261008",
+      "sourceIds": [
+        "manual-megabomber",
+        "clown-manager",
+        "clown-wrapper"
+      ],
+      "conditions": [
+        "Battle Mode; selecionar Normal/Tag; definir MAN/COM e equipes."
+      ],
+      "existingR81ConfigurationReady": false,
+      "technicalPrerequisites": [
+        "Verificar a porta física do adaptador na edição exata: manual e tabela OpenEmu usam layouts diferentes.",
+        "Integrar layout misto por porta e remapeamento para slots lógicos0–3; gerar controllerProfile/hash novo."
+      ]
+    },
+    {
+      "platform": "megadrive",
+      "titleKeys": [
+        "Mega Bomberman"
+      ],
+      "mode": "battle-tag",
+      "displayName": "Battle: equipes",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "maximumStationPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "megadrive-sega-teamplayer-v1",
+      "profileSlug": "md-megabomberman-battle-tag-20261008",
+      "sourceIds": [
+        "manual-megabomber",
+        "clown-manager",
+        "clown-wrapper"
+      ],
+      "conditions": [
+        "Battle Mode; selecionar Normal/Tag; definir MAN/COM e equipes."
+      ],
+      "existingR81ConfigurationReady": false,
+      "technicalPrerequisites": [
+        "Verificar a porta física do adaptador na edição exata: manual e tabela OpenEmu usam layouts diferentes.",
+        "Integrar layout misto por porta e remapeamento para slots lógicos0–3; gerar controllerProfile/hash novo."
+      ]
+    },
+    {
+      "platform": "megadrive",
+      "titleKeys": [
+        "General Chaos"
+      ],
+      "mode": "head-to-head",
+      "displayName": "Duelo",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 2,
+      "maximumStationPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "megadrive-ea-4way-v1",
+      "profileSlug": "md-general-chaos-head-to-head-20261008",
+      "sourceIds": [
+        "manual-generalchaos",
+        "clown-options"
+      ],
+      "conditions": [
+        "Escolher o modo correspondente no menu; jogadores humanos por EA4-Way Play.",
+        "O manual exige pad de três botões; garantir esse modo no core sem depender de o usuário segurar Mode."
+      ],
+      "existingR81ConfigurationReady": false,
+      "technicalPrerequisites": [
+        "Implementar e testar seleção de pad3/6botões no core ou comprovar equivalência serial nesta edição; usar hash/perfil correspondente."
+      ]
+    },
+    {
+      "platform": "megadrive",
+      "titleKeys": [
+        "General Chaos"
+      ],
+      "mode": "side-by-side",
+      "displayName": "Dupla cooperativa",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 2,
+      "maximumStationPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "megadrive-ea-4way-v1",
+      "profileSlug": "md-general-chaos-side-by-side-20261008",
+      "sourceIds": [
+        "manual-generalchaos",
+        "clown-options"
+      ],
+      "conditions": [
+        "Escolher o modo correspondente no menu; jogadores humanos por EA4-Way Play.",
+        "O manual exige pad de três botões; garantir esse modo no core sem depender de o usuário segurar Mode."
+      ],
+      "existingR81ConfigurationReady": false,
+      "technicalPrerequisites": [
+        "Implementar e testar seleção de pad3/6botões no core ou comprovar equivalência serial nesta edição; usar hash/perfil correspondente."
+      ]
+    },
+    {
+      "platform": "megadrive",
+      "titleKeys": [
+        "General Chaos"
+      ],
+      "mode": "squad-3p",
+      "displayName": "Combate com três pessoas",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 3,
+      "maximumStationPlayers": 3,
+      "allowedPlayerCounts": [
+        3
+      ],
+      "controllerProfile": "megadrive-ea-4way-v1",
+      "profileSlug": "md-general-chaos-squad-3p-20261008",
+      "sourceIds": [
+        "manual-generalchaos",
+        "clown-options"
+      ],
+      "conditions": [
+        "Escolher o modo correspondente no menu; jogadores humanos por EA4-Way Play.",
+        "O manual exige pad de três botões; garantir esse modo no core sem depender de o usuário segurar Mode."
+      ],
+      "existingR81ConfigurationReady": false,
+      "technicalPrerequisites": [
+        "Implementar e testar seleção de pad3/6botões no core ou comprovar equivalência serial nesta edição; usar hash/perfil correspondente."
+      ]
+    },
+    {
+      "platform": "megadrive",
+      "titleKeys": [
+        "General Chaos"
+      ],
+      "mode": "squad-4p",
+      "displayName": "Combate com quatro pessoas",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "maximumStationPlayers": 4,
+      "allowedPlayerCounts": [
+        4
+      ],
+      "controllerProfile": "megadrive-ea-4way-v1",
+      "profileSlug": "md-general-chaos-squad-4p-20261008",
+      "sourceIds": [
+        "manual-generalchaos",
+        "clown-options"
+      ],
+      "conditions": [
+        "Escolher o modo correspondente no menu; jogadores humanos por EA4-Way Play.",
+        "O manual exige pad de três botões; garantir esse modo no core sem depender de o usuário segurar Mode."
+      ],
+      "existingR81ConfigurationReady": false,
+      "technicalPrerequisites": [
+        "Implementar e testar seleção de pad3/6botões no core ou comprovar equivalência serial nesta edição; usar hash/perfil correspondente."
+      ]
+    }
+  ]
+}

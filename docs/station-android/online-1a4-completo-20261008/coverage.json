@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "catalogRevision": 20,
+  "catalogIds": 3734,
+  "visibleGames": 3479,
+  "compatibilityIds": 255,
+  "visibleByPlatform": {
+    "cps1": 36,
+    "cps2": 64,
+    "cps3": 11,
+    "dreamcast": 243,
+    "fbneo": 913,
+    "megadrive": 887,
+    "megadrivebr": 94,
+    "n64": 157,
+    "neogeo": 189,
+    "neogeocd": 50,
+    "snes": 644,
+    "snesbr": 191
+  },
+  "currentProfilesPreserved": 1816,
+  "boundContentIds": 2071,
+  "visible3or4Candidates": 444,
+  "snesMegaVisible3or4Candidates": 248,
+  "itemsWithDocumentedOriginalModes": 12,
+  "preparedProfileAdditions": 17,
+  "modesNeedingAppWork": 6,
+  "idsOmitted": 0,
+  "productionModified": false,
+  "allGameModesPhysicallyVerified": false,
+  "allDisplayCountsVerifiedAsSimultaneous": false,
+  "inputSha256": {
+    "catalog-rev20.json": "f72aa52f53c15cc7f8ebc07eb7a456eae39a7b43fd7b7a435f1d7901aa77581b",
+    "profiles-active-r81.json": "f3eb13fcb474edb5a1b549a3509aa47505765210b38d1f1dd81bc157b4ec555c",
+    "controller-profiles-r81.json": "9fa496be4601f6034cda4cdc04f38211d4dcf294faafbc14b1170a41ecbadf92",
+    "mode-rules.json": "bdaa827d0d0e14edc467ac57f12b81ccdd280d073d02e645653f4c8ca003206b",
+    "reference-adapter-mappings.json": "011536793f255cb09018e03882a6da4159d8fc1b216e5e2dae2cffe399ac3619"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "passed": true,
+  "checks": 7,
+  "cases": [
+    "raw launch identity",
+    "headered full identity and research CRC",
+    "exact ZIP launch member",
+    "normalized CRC never replaces full authorization SHA",
+    "no private paths in output"
+  ],
+  "productionModified": false
+}

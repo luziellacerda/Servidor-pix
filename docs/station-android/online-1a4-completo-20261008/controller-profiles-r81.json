@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Exact controller/options hashes only; these do not approve a game, mode or capacity.",
+  "entries": [
+    {
+      "release": "r76",
+      "platform": "snes",
+      "engineId": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+      "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+      "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+      "profileSHA256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+      "canonical": {
+        "schemaVersion": 1,
+        "controllerProfile": "standard-2p-v1",
+        "devices": [
+          1,
+          1
+        ],
+        "coreOptions": "bsnes_violate_accuracy = \"disabled\"\nbsnes_chip_hle = \"LLE\"\nbsnes_superfx_overclock = \"100%\"\nbsnes_region = \"auto\"\nbsnes_aspect_ratio = \"auto\"\nbsnes_crop_overscan = \"disabled\"\nbsnes_gamma_ramp = \"disabled\"\n"
+      }
+    },
+    {
+      "release": "r76",
+      "platform": "megadrive",
+      "engineId": "clownmdemu-d43c2708-rs4-804b2acfea4c",
+      "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+      "profileSHA256": "4c956b5c85d65bb8d6a02125f07aeb4c826d20b5d1bf81157ac69a77907531b5",
+      "canonical": {
+        "schemaVersion": 1,
+        "controllerProfile": "standard-2p-v1",
+        "devices": [
+          1,
+          1
+        ],
+        "coreOptions": ""
+      }
+    },
+    {
+      "release": "r81",
+      "platform": "snes",
+      "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+      "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+      "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+      "profileSHA256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+      "canonical": {
+        "schemaVersion": 1,
+        "controllerProfile": "standard-2p-v1",
+        "devices": [
+          1,
+          1
+        ],
+        "coreOptions": "bsnes_violate_accuracy = \"disabled\"\nbsnes_chip_hle = \"LLE\"\nbsnes_superfx_overclock = \"100%\"\nbsnes_region = \"auto\"\nbsnes_aspect_ratio = \"auto\"\nbsnes_crop_overscan = \"disabled\"\nbsnes_gamma_ramp = \"disabled\"\n"
+      }
+    },
+    {
+      "release": "r81",
+      "platform": "snes",
+      "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+      "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+      "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+      "profileSHA256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+      "canonical": {
+        "schemaVersion": 1,
+        "controllerProfile": "snes-multitap-port2-v1",
+        "devices": [
+          1,
+          257,
+          1,
+          1,
+          1
+        ],
+        "coreOptions": "bsnes_violate_accuracy = \"disabled\"\nbsnes_chip_hle = \"LLE\"\nbsnes_superfx_overclock = \"100%\"\nbsnes_region = \"auto\"\nbsnes_aspect_ratio = \"auto\"\nbsnes_crop_overscan = \"disabled\"\nbsnes_gamma_ramp = \"disabled\"\n"
+      }
+    },
+    {
+      "release": "r81",
+      "platform": "megadrive",
+      "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+      "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+      "profileSHA256": "4c956b5c85d65bb8d6a02125f07aeb4c826d20b5d1bf81157ac69a77907531b5",
+      "canonical": {
+        "schemaVersion": 1,
+        "controllerProfile": "standard-2p-v1",
+        "devices": [
+          1,
+          1
+        ],
+        "coreOptions": ""
+      }
+    },
+    {
+      "release": "r81",
+      "platform": "megadrive",
+      "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+      "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+      "profileSHA256": "e58a255c4574301069fc9a3afc3307179fa5774be4f7c9d8961fc00f6130336a",
+      "canonical": {
+        "schemaVersion": 1,
+        "controllerProfile": "megadrive-sega-teamplayer-v1",
+        "devices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "coreOptions": "clownmdemu_input_protocol = \"sega\"\n"
+      }
+    },
+    {
+      "release": "r81",
+      "platform": "megadrive",
+      "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+      "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+      "profileSHA256": "06dc23b0ac4aa75e0df10a0f27b487f22c396290031a3df79a0b391a2c115029",
+      "canonical": {
+        "schemaVersion": 1,
+        "controllerProfile": "megadrive-ea-4way-v1",
+        "devices": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "coreOptions": "clownmdemu_input_protocol = \"ea\"\n"
+      }
+    }
+  ]
+}

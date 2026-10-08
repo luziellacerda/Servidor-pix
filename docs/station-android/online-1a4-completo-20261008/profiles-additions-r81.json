@@ -1,0 +1,304 @@
+[
+  {
+    "itemId": "826da6daebe9edbebffb3721f83abf12",
+    "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-battlemaniacs-mode-a-20261008",
+    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+    "maximumPlayers": 2,
+    "approved": true,
+    "controllerProfile": "standard-2p-v1",
+    "mode": "two-player-a",
+    "allowedPlayerCounts": [
+      2
+    ]
+  },
+  {
+    "itemId": "826da6daebe9edbebffb3721f83abf12",
+    "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-battlemaniacs-mode-b-20261008",
+    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+    "maximumPlayers": 2,
+    "approved": true,
+    "controllerProfile": "standard-2p-v1",
+    "mode": "two-player-b",
+    "allowedPlayerCounts": [
+      2
+    ]
+  },
+  {
+    "itemId": "station_6c8ef5b68422ac62a7254720a0a1f0ad",
+    "contentSha256": "3ef9d4b537ea83c8ba9ec8be7aba37ddac22a71c73d0aec46fe8e5a8f5b34a7c",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-nbajam-multitap-20261008",
+    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+    "maximumPlayers": 4,
+    "approved": true,
+    "controllerProfile": "snes-multitap-port2-v1",
+    "mode": "match-multitap",
+    "allowedPlayerCounts": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+    "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-sbomberman2-normal-20261008",
+    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+    "maximumPlayers": 1,
+    "approved": true,
+    "controllerProfile": "standard-2p-v1",
+    "mode": "normal",
+    "allowedPlayerCounts": []
+  },
+  {
+    "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+    "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-sbomberman2-battle-team-20261008",
+    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+    "maximumPlayers": 4,
+    "approved": true,
+    "controllerProfile": "snes-multitap-port2-v1",
+    "mode": "battle-team",
+    "allowedPlayerCounts": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "itemId": "station_46fe7356ab5cc63a1438f720b9c7ce2d",
+    "contentSha256": "3c665283c14f050b60fe9693b12e437288bcd4aa3e56ef25106d503c44e0fda5",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-sbomberman3-battle-single-20261008",
+    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+    "maximumPlayers": 4,
+    "approved": true,
+    "controllerProfile": "snes-multitap-port2-v1",
+    "mode": "battle-single",
+    "allowedPlayerCounts": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "itemId": "station_46fe7356ab5cc63a1438f720b9c7ce2d",
+    "contentSha256": "3c665283c14f050b60fe9693b12e437288bcd4aa3e56ef25106d503c44e0fda5",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-sbomberman3-battle-team-20261008",
+    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+    "maximumPlayers": 4,
+    "approved": true,
+    "controllerProfile": "snes-multitap-port2-v1",
+    "mode": "battle-team",
+    "allowedPlayerCounts": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "itemId": "station_b0a50897ab5c3663dbabd624b7469572",
+    "contentSha256": "6be49983976564f1fd9eff2f14f5bb41d3a0ff48573e39318088ecce286aca62",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-topgear3000-vs-20261008",
+    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+    "maximumPlayers": 4,
+    "approved": true,
+    "controllerProfile": "snes-multitap-port2-v1",
+    "mode": "vs-race",
+    "allowedPlayerCounts": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "itemId": "station_b0a50897ab5c3663dbabd624b7469572",
+    "contentSha256": "6be49983976564f1fd9eff2f14f5bb41d3a0ff48573e39318088ecce286aca62",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-topgear3000-championship-20261008",
+    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+    "maximumPlayers": 2,
+    "approved": true,
+    "controllerProfile": "standard-2p-v1",
+    "mode": "championship-2p",
+    "allowedPlayerCounts": [
+      2
+    ]
+  },
+  {
+    "itemId": "station_f1d9d06767f9a63592011424048bd181",
+    "contentSha256": "05f82bc40155293779a3fbe7c377d894f1d124bee5a973d58ab515ac1f7db01d",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-battlemaniacs-mode-a-20261008",
+    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+    "maximumPlayers": 2,
+    "approved": true,
+    "controllerProfile": "standard-2p-v1",
+    "mode": "two-player-a",
+    "allowedPlayerCounts": [
+      2
+    ]
+  },
+  {
+    "itemId": "station_f1d9d06767f9a63592011424048bd181",
+    "contentSha256": "05f82bc40155293779a3fbe7c377d894f1d124bee5a973d58ab515ac1f7db01d",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-battlemaniacs-mode-b-20261008",
+    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+    "maximumPlayers": 2,
+    "approved": true,
+    "controllerProfile": "standard-2p-v1",
+    "mode": "two-player-b",
+    "allowedPlayerCounts": [
+      2
+    ]
+  },
+  {
+    "itemId": "station_7da80d23885a72cc56464834711b85a5",
+    "contentSha256": "4cc065671af8d511de06b3e6ccdb08ec70ef3cd4bfcc42d30092c07ddc808f3b",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-secret-of-mana-coop-20261008",
+    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+    "maximumPlayers": 3,
+    "approved": true,
+    "controllerProfile": "snes-multitap-port2-v1",
+    "mode": "adventure-coop",
+    "allowedPlayerCounts": [
+      2,
+      3
+    ]
+  },
+  {
+    "itemId": "station_80b7594ba22922d87fb43d720ba8be5a",
+    "contentSha256": "b0393ca82b92d38bbb37f199d10016f7a06746ac128bb653216b4110027ea75f",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-sbomberman2-normal-20261008",
+    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+    "maximumPlayers": 1,
+    "approved": true,
+    "controllerProfile": "standard-2p-v1",
+    "mode": "normal",
+    "allowedPlayerCounts": []
+  },
+  {
+    "itemId": "station_80b7594ba22922d87fb43d720ba8be5a",
+    "contentSha256": "b0393ca82b92d38bbb37f199d10016f7a06746ac128bb653216b4110027ea75f",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-sbomberman2-usa-battle-single-r77",
+    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+    "maximumPlayers": 4,
+    "approved": true,
+    "controllerProfile": "snes-multitap-port2-v1",
+    "mode": "battle-single",
+    "allowedPlayerCounts": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "itemId": "station_80b7594ba22922d87fb43d720ba8be5a",
+    "contentSha256": "b0393ca82b92d38bbb37f199d10016f7a06746ac128bb653216b4110027ea75f",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-sbomberman2-battle-team-20261008",
+    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+    "maximumPlayers": 4,
+    "approved": true,
+    "controllerProfile": "snes-multitap-port2-v1",
+    "mode": "battle-team",
+    "allowedPlayerCounts": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "itemId": "station_53bf1a7b190641b0c73448367a6b6557",
+    "contentSha256": "98b788fc146840a83ac898dbe96a4056ddb56e795d80eb610d4b2fd7a450fa02",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-topgear3000-vs-20261008",
+    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+    "maximumPlayers": 4,
+    "approved": true,
+    "controllerProfile": "snes-multitap-port2-v1",
+    "mode": "vs-race",
+    "allowedPlayerCounts": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "itemId": "station_53bf1a7b190641b0c73448367a6b6557",
+    "contentSha256": "98b788fc146840a83ac898dbe96a4056ddb56e795d80eb610d4b2fd7a450fa02",
+    "platform": "snes",
+    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+    "profileId": "snes-topgear3000-championship-20261008",
+    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+    "maximumPlayers": 2,
+    "approved": true,
+    "controllerProfile": "standard-2p-v1",
+    "mode": "championship-2p",
+    "allowedPlayerCounts": [
+      2
+    ]
+  }
+]

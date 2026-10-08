@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "passed": true,
+  "checks": 29595,
+  "allCatalogIdsCovered": 3734,
+  "existingProfilesPreserved": 1816,
+  "preparedProfileAdditions": 17,
+  "productionModified": false,
+  "limits": [
+    "Data/contract validation; not physical Android gameplay or WAN performance.",
+    "Prepared combined registry is not the file currently loaded by production."
+  ]
+}

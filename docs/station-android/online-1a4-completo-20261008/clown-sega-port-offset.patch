@@ -1,0 +1,34 @@
+--- a/source/controller-manager.c
++++ b/source/controller-manager.c
+@@ -10,6 +10,19 @@
+ 
+ 	for (i = 0; i < CC_COUNT_OF(manager->state.sega_multitaps); ++i)
+ 		ControllerMultitapSega_Initialise(&manager->state.sega_multitaps[i]);
++}
++
++typedef struct StationSegaPortCallback
++{
++    Controller_Callback callback;
++    const void *user_data;
++    cc_u8f base;
++} StationSegaPortCallback;
++
++static cc_bool StationSegaPortInput(void *user_data, cc_u8f index, Controller_Button button)
++{
++    const StationSegaPortCallback *bound = (const StationSegaPortCallback*)user_data;
++    return bound->callback((void*)bound->user_data, bound->base + index, button);
+ }
+ 
+ cc_u8f ControllerManager_Read(ControllerManager* const manager, const cc_u8f port_index, const cc_u16f microseconds, const Controller_Callback callback, const void* const user_data)
+@@ -25,7 +38,10 @@
+ 			return ControllerMultitapEA_ReadPort(&manager->state.ea_multitap, port_index, microseconds, callback, user_data);
+ 
+ 		case CONTROLLER_MANAGER_PROTOCOL_SEGA_TAP:
+-			return ControllerMultitapSega_Read(&manager->state.sega_multitaps[port_index], callback, user_data);
++		{
++			const StationSegaPortCallback bound = {callback, user_data, port_index * 4};
++			return ControllerMultitapSega_Read(&manager->state.sega_multitaps[port_index], StationSegaPortInput, &bound);
++		}
+ 	}
+ 
+ 	/* Just a placeholder fall-back value. */

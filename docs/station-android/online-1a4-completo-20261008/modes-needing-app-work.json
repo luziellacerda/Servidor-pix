@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "itemId": "2aa1ab2e9ac81ea795ce8b3825591075",
+      "name": "General Chaos",
+      "platform": "megadrive",
+      "profile": {
+        "itemId": "2aa1ab2e9ac81ea795ce8b3825591075",
+        "contentSha256": "a603a321352d808867f2959aaa92a0ac94a4ae811c7fa4ea64b1865d203b906d",
+        "platform": "megadrive",
+        "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+        "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+        "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+        "profileId": "md-general-chaos-head-to-head-20261008",
+        "profileSha256": "06dc23b0ac4aa75e0df10a0f27b487f22c396290031a3df79a0b391a2c115029",
+        "maximumPlayers": 2,
+        "approved": false,
+        "controllerProfile": "megadrive-ea-4way-v1",
+        "mode": "head-to-head",
+        "allowedPlayerCounts": [
+          2
+        ]
+      },
+      "sourceIds": [
+        "manual-generalchaos",
+        "clown-options"
+      ],
+      "conditions": [
+        "Escolher o modo correspondente no menu; jogadores humanos por EA4-Way Play.",
+        "O manual exige pad de três botões; garantir esse modo no core sem depender de o usuário segurar Mode."
+      ],
+      "nativeMaximum": 2,
+      "originalModeDocumented": true,
+      "physicalPhoneGameplayVerified": false,
+      "variantFlags": [],
+      "publicationState": "prepared-not-published",
+      "technicalPrerequisites": [
+        "Implementar e testar seleção de pad3/6botões no core ou comprovar equivalência serial nesta edição; usar hash/perfil correspondente."
+      ],
+      "authorization": "owner-request-all-compatible-games-for-use-and-tests-20261008"
+    },
+    {
+      "itemId": "2aa1ab2e9ac81ea795ce8b3825591075",
+      "name": "General Chaos",
+      "platform": "megadrive",
+      "profile": {
+        "itemId": "2aa1ab2e9ac81ea795ce8b3825591075",
+        "contentSha256": "a603a321352d808867f2959aaa92a0ac94a4ae811c7fa4ea64b1865d203b906d",
+        "platform": "megadrive",
+        "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+        "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+        "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+        "profileId": "md-general-chaos-side-by-side-20261008",
+        "profileSha256": "06dc23b0ac4aa75e0df10a0f27b487f22c396290031a3df79a0b391a2c115029",
+        "maximumPlayers": 2,
+        "approved": false,
+        "controllerProfile": "megadrive-ea-4way-v1",
+        "mode": "side-by-side",
+        "allowedPlayerCounts": [
+          2
+        ]
+      },
+      "sourceIds": [
+        "manual-generalchaos",
+        "clown-options"
+      ],
+      "conditions": [
+        "Escolher o modo correspondente no menu; jogadores humanos por EA4-Way Play.",
+        "O manual exige pad de três botões; garantir esse modo no core sem depender de o usuário segurar Mode."
+      ],
+      "nativeMaximum": 2,
+      "originalModeDocumented": true,
+      "physicalPhoneGameplayVerified": false,
+      "variantFlags": [],
+      "publicationState": "prepared-not-published",
+      "technicalPrerequisites": [
+        "Implementar e testar seleção de pad3/6botões no core ou comprovar equivalência serial nesta edição; usar hash/perfil correspondente."
+      ],
+      "authorization": "owner-request-all-compatible-games-for-use-and-tests-20261008"
+    },
+    {
+      "itemId": "2aa1ab2e9ac81ea795ce8b3825591075",
+      "name": "General Chaos",
+      "platform": "megadrive",
+      "profile": {
+        "itemId": "2aa1ab2e9ac81ea795ce8b3825591075",
+        "contentSha256": "a603a321352d808867f2959aaa92a0ac94a4ae811c7fa4ea64b1865d203b906d",
+        "platform": "megadrive",
+        "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+        "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+        "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+        "profileId": "md-general-chaos-squad-3p-20261008",
+        "profileSha256": "06dc23b0ac4aa75e0df10a0f27b487f22c396290031a3df79a0b391a2c115029",
+        "maximumPlayers": 3,
+        "approved": false,
+        "controllerProfile": "megadrive-ea-4way-v1",
+        "mode": "squad-3p",
+        "allowedPlayerCounts": [
+          3
+        ]
+      },
+      "sourceIds": [
+        "manual-generalchaos",
+        "clown-options"
+      ],
+      "conditions": [
+        "Escolher o modo correspondente no menu; jogadores humanos por EA4-Way Play.",
+        "O manual exige pad de três botões; garantir esse modo no core sem depender de o usuário segurar Mode."
+      ],
+      "nativeMaximum": 3,
+      "originalModeDocumented": true,
+      "physicalPhoneGameplayVerified": false,
+      "variantFlags": [],
+      "publicationState": "prepared-not-published",
+      "technicalPrerequisites": [
+        "Implementar e testar seleção de pad3/6botões no core ou comprovar equivalência serial nesta edição; usar hash/perfil correspondente."
+      ],
+      "authorization": "owner-request-all-compatible-games-for-use-and-tests-20261008"
+    },
+    {
+      "itemId": "2aa1ab2e9ac81ea795ce8b3825591075",
+      "name": "General Chaos",
+      "platform": "megadrive",
+      "profile": {
+        "itemId": "2aa1ab2e9ac81ea795ce8b3825591075",
+        "contentSha256": "a603a321352d808867f2959aaa92a0ac94a4ae811c7fa4ea64b1865d203b906d",
+        "platform": "megadrive",
+        "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+        "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+        "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+        "profileId": "md-general-chaos-squad-4p-20261008",
+        "profileSha256": "06dc23b0ac4aa75e0df10a0f27b487f22c396290031a3df79a0b391a2c115029",
+        "maximumPlayers": 4,
+        "approved": false,
+        "controllerProfile": "megadrive-ea-4way-v1",
+        "mode": "squad-4p",
+        "allowedPlayerCounts": [
+          4
+        ]
+      },
+      "sourceIds": [
+        "manual-generalchaos",
+        "clown-options"
+      ],
+      "conditions": [
+        "Escolher o modo correspondente no menu; jogadores humanos por EA4-Way Play.",
+        "O manual exige pad de três botões; garantir esse modo no core sem depender de o usuário segurar Mode."
+      ],
+      "nativeMaximum": 4,
+      "originalModeDocumented": true,
+      "physicalPhoneGameplayVerified": false,
+      "variantFlags": [],
+      "publicationState": "prepared-not-published",
+      "technicalPrerequisites": [
+        "Implementar e testar seleção de pad3/6botões no core ou comprovar equivalência serial nesta edição; usar hash/perfil correspondente."
+      ],
+      "authorization": "owner-request-all-compatible-games-for-use-and-tests-20261008"
+    },
+    {
+      "itemId": "9e5a873d6b384b8277568b297d3b8030",
+      "name": "Mega Bomberman",
+      "platform": "megadrive",
+      "profile": {
+        "itemId": "9e5a873d6b384b8277568b297d3b8030",
+        "contentSha256": "95cb73cf9c94bf8343b1814c4df0898aeb127a863ab42274f4f7cdee31fda1e1",
+        "platform": "megadrive",
+        "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+        "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+        "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+        "profileId": "md-megabomberman-battle-normal-20261008",
+        "profileSha256": "e58a255c4574301069fc9a3afc3307179fa5774be4f7c9d8961fc00f6130336a",
+        "maximumPlayers": 4,
+        "approved": false,
+        "controllerProfile": "megadrive-sega-teamplayer-v1",
+        "mode": "battle-normal",
+        "allowedPlayerCounts": [
+          2,
+          3,
+          4
+        ]
+      },
+      "sourceIds": [
+        "manual-megabomber",
+        "clown-manager",
+        "clown-wrapper"
+      ],
+      "conditions": [
+        "Battle Mode; selecionar Normal/Tag; definir MAN/COM e equipes."
+      ],
+      "nativeMaximum": 4,
+      "originalModeDocumented": true,
+      "physicalPhoneGameplayVerified": false,
+      "variantFlags": [],
+      "publicationState": "prepared-not-published",
+      "technicalPrerequisites": [
+        "Verificar a porta física do adaptador na edição exata: manual e tabela OpenEmu usam layouts diferentes.",
+        "Integrar layout misto por porta e remapeamento para slots lógicos0–3; gerar controllerProfile/hash novo."
+      ],
+      "authorization": "owner-request-all-compatible-games-for-use-and-tests-20261008"
+    },
+    {
+      "itemId": "9e5a873d6b384b8277568b297d3b8030",
+      "name": "Mega Bomberman",
+      "platform": "megadrive",
+      "profile": {
+        "itemId": "9e5a873d6b384b8277568b297d3b8030",
+        "contentSha256": "95cb73cf9c94bf8343b1814c4df0898aeb127a863ab42274f4f7cdee31fda1e1",
+        "platform": "megadrive",
+        "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+        "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+        "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+        "profileId": "md-megabomberman-battle-tag-20261008",
+        "profileSha256": "e58a255c4574301069fc9a3afc3307179fa5774be4f7c9d8961fc00f6130336a",
+        "maximumPlayers": 4,
+        "approved": false,
+        "controllerProfile": "megadrive-sega-teamplayer-v1",
+        "mode": "battle-tag",
+        "allowedPlayerCounts": [
+          2,
+          3,
+          4
+        ]
+      },
+      "sourceIds": [
+        "manual-megabomber",
+        "clown-manager",
+        "clown-wrapper"
+      ],
+      "conditions": [
+        "Battle Mode; selecionar Normal/Tag; definir MAN/COM e equipes."
+      ],
+      "nativeMaximum": 4,
+      "originalModeDocumented": true,
+      "physicalPhoneGameplayVerified": false,
+      "variantFlags": [],
+      "publicationState": "prepared-not-published",
+      "technicalPrerequisites": [
+        "Verificar a porta física do adaptador na edição exata: manual e tabela OpenEmu usam layouts diferentes.",
+        "Integrar layout misto por porta e remapeamento para slots lógicos0–3; gerar controllerProfile/hash novo."
+      ],
+      "authorization": "owner-request-all-compatible-games-for-use-and-tests-20261008"
+    }
+  ]
+}

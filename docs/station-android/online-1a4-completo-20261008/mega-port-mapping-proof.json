@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "88ef45a6585556e2247dd26b6c937d6b9fb4a12d",
+  "sourceSha256": {
+    "source/controller-manager.c": "6a4470172ba544ae03576c6de14b56bc606ad0eec9b057b488602091aa335fe1",
+    "source/controller-multitap-sega.c": "d409cfbd456d2a1b4856d6de3db5da87ffcf42df79ba6d69de675b5b6f7902eb",
+    "source/controller-multitap-ea.c": "1b139e1351129302de0b5e6ff388df68e9c74a2b477ceec07820ae03dbebce36",
+    "source/controller.c": "fb6a1cfabf94d7c6779b8a96c55ee4ec9570844e397e09732dc4c9aad5e62422",
+    "libraries/clowncommon/clowncommon.h": "cfc50a2bc54f74b0d43c00329131569b5c788914071c008f9039732224dfc869"
+  },
+  "results": {
+    "baseline": {
+      "segaButtonCases": 96,
+      "misroutedSegaCases": 48,
+      "standardOwnershipCases": 2,
+      "eaOwnershipCases": 4
+    },
+    "candidate": {
+      "segaButtonCases": 96,
+      "misroutedSegaCases": 0,
+      "standardOwnershipCases": 2,
+      "eaOwnershipCases": 4
+    }
+  },
+  "productionModified": false,
+  "androidBinaryBuilt": false,
+  "scope": "Independent physical port callback indices only; other layouts and input remapping remain required.",
+  "limits": [
+    "No ROM/BIOS/gameplay/Android/TCP or WAN was tested.",
+    "This defect does not explain the SNES Battletoads latency.",
+    "Integrate complete layout handling before creating a new engine/core hash; never replace the active binary with this partial patch."
+  ]
+}

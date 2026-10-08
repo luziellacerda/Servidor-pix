@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "utc": "2026-10-08T22:00:34.660595+00:00",
+  "service": "turborama-station-api.service",
+  "observed": {
+    "MainPID": "1536467",
+    "NRestarts": "0",
+    "ActiveState": "active"
+  },
+  "readiness": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    },
+    "multiplayer": {
+      "protocol": "station-stream.v3",
+      "activeRooms": 0,
+      "activeConnections": 0,
+      "approvedProfiles": 1816,
+      "profileCount": 1816,
+      "retainedBytes": 0,
+      "maximumRetainedBytes": 33554432
+    }
+  },
+  "dllSourceCommit": "db50a980fcfe01a9b0fee65316f67f43c63ac11c",
+  "dllSha256FromActivationReceipt": "cdf14b8067de415413c503de787c6d621c6e8f0466eb2cdd7c0eced8b5a619af",
+  "profileFileSha256FromActivationReceipt": "f3eb13fcb474edb5a1b549a3509aa47505765210b38d1f1dd81bc157b4ec555c",
+  "effectiveProfiles": 1816,
+  "preparedAdditionsNotPublished": 17,
+  "productionModifiedByThisHandoff": false
+}

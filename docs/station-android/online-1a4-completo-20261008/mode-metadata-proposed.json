@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "purpose": "Proposed signed display/help sidecar; current R81 API has not integrated these fields.",
+  "entries": [
+    {
+      "itemId": "2aa1ab2e9ac81ea795ce8b3825591075",
+      "contentSha256": "a603a321352d808867f2959aaa92a0ac94a4ae811c7fa4ea64b1865d203b906d",
+      "mode": "head-to-head",
+      "displayName": "Duelo",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 2,
+      "instructions": [
+        "Escolher o modo correspondente no menu; jogadores humanos por EA4-Way Play.",
+        "O manual exige pad de três botões; garantir esse modo no core sem depender de o usuário segurar Mode."
+      ],
+      "sourceIds": [
+        "manual-generalchaos",
+        "clown-options"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "2aa1ab2e9ac81ea795ce8b3825591075",
+      "contentSha256": "a603a321352d808867f2959aaa92a0ac94a4ae811c7fa4ea64b1865d203b906d",
+      "mode": "side-by-side",
+      "displayName": "Dupla cooperativa",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 2,
+      "instructions": [
+        "Escolher o modo correspondente no menu; jogadores humanos por EA4-Way Play.",
+        "O manual exige pad de três botões; garantir esse modo no core sem depender de o usuário segurar Mode."
+      ],
+      "sourceIds": [
+        "manual-generalchaos",
+        "clown-options"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "2aa1ab2e9ac81ea795ce8b3825591075",
+      "contentSha256": "a603a321352d808867f2959aaa92a0ac94a4ae811c7fa4ea64b1865d203b906d",
+      "mode": "squad-3p",
+      "displayName": "Combate com três pessoas",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 3,
+      "instructions": [
+        "Escolher o modo correspondente no menu; jogadores humanos por EA4-Way Play.",
+        "O manual exige pad de três botões; garantir esse modo no core sem depender de o usuário segurar Mode."
+      ],
+      "sourceIds": [
+        "manual-generalchaos",
+        "clown-options"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "2aa1ab2e9ac81ea795ce8b3825591075",
+      "contentSha256": "a603a321352d808867f2959aaa92a0ac94a4ae811c7fa4ea64b1865d203b906d",
+      "mode": "squad-4p",
+      "displayName": "Combate com quatro pessoas",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "instructions": [
+        "Escolher o modo correspondente no menu; jogadores humanos por EA4-Way Play.",
+        "O manual exige pad de três botões; garantir esse modo no core sem depender de o usuário segurar Mode."
+      ],
+      "sourceIds": [
+        "manual-generalchaos",
+        "clown-options"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "9e5a873d6b384b8277568b297d3b8030",
+      "contentSha256": "95cb73cf9c94bf8343b1814c4df0898aeb127a863ab42274f4f7cdee31fda1e1",
+      "mode": "battle-normal",
+      "displayName": "Battle: todos contra todos",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "instructions": [
+        "Battle Mode; selecionar Normal/Tag; definir MAN/COM e equipes."
+      ],
+      "sourceIds": [
+        "manual-megabomber",
+        "clown-manager",
+        "clown-wrapper"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "9e5a873d6b384b8277568b297d3b8030",
+      "contentSha256": "95cb73cf9c94bf8343b1814c4df0898aeb127a863ab42274f4f7cdee31fda1e1",
+      "mode": "battle-tag",
+      "displayName": "Battle: equipes",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "instructions": [
+        "Battle Mode; selecionar Normal/Tag; definir MAN/COM e equipes."
+      ],
+      "sourceIds": [
+        "manual-megabomber",
+        "clown-manager",
+        "clown-wrapper"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "826da6daebe9edbebffb3721f83abf12",
+      "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+      "mode": "two-player-a",
+      "displayName": "Dupla com golpes entre parceiros",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 2,
+      "instructions": [
+        "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+      ],
+      "sourceIds": [
+        "manual-battletoads"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "826da6daebe9edbebffb3721f83abf12",
+      "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+      "mode": "two-player-b",
+      "displayName": "Dupla sem golpes entre parceiros",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 2,
+      "instructions": [
+        "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+      ],
+      "sourceIds": [
+        "manual-battletoads"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_6c8ef5b68422ac62a7254720a0a1f0ad",
+      "contentSha256": "3ef9d4b537ea83c8ba9ec8be7aba37ddac22a71c73d0aec46fe8e5a8f5b34a7c",
+      "mode": "match-multitap",
+      "displayName": "Partida de basquete",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "instructions": [
+        "Start Game com Multitap; cada humano confirma sua posição com Start; ajustar Tag Mode e equipes."
+      ],
+      "sourceIds": [
+        "manual-nbajam-snes"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+      "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+      "mode": "normal",
+      "displayName": "Campanha solo",
+      "playStyle": "single-player",
+      "nativeMaximum": 1,
+      "instructions": [
+        "Normal Game é individual e não deve criar sala."
+      ],
+      "sourceIds": [
+        "manual-sbomber2"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+      "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+      "mode": "battle-single",
+      "displayName": "Battle: todos contra todos",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "instructions": [
+        "Battle Game → Single Match; pads participantes MAN; outros COM/OFF."
+      ],
+      "sourceIds": [
+        "manual-sbomber2",
+        "libretro-multitap"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+      "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+      "mode": "battle-team",
+      "displayName": "Battle: equipes",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "instructions": [
+        "Battle Game → Tag Match; configurar humanos e equipes no jogo."
+      ],
+      "sourceIds": [
+        "manual-sbomber2"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_46fe7356ab5cc63a1438f720b9c7ce2d",
+      "contentSha256": "3c665283c14f050b60fe9693b12e437288bcd4aa3e56ef25106d503c44e0fda5",
+      "mode": "battle-single",
+      "displayName": "Battle: todos contra todos",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 5,
+      "instructions": [
+        "Battle Game → Single Match; participantes MAN; quinto pad COM/OFF; cada equipe com ao menos um participante."
+      ],
+      "sourceIds": [
+        "manual-sbomber3"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_46fe7356ab5cc63a1438f720b9c7ce2d",
+      "contentSha256": "3c665283c14f050b60fe9693b12e437288bcd4aa3e56ef25106d503c44e0fda5",
+      "mode": "battle-team",
+      "displayName": "Battle: equipes",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 5,
+      "instructions": [
+        "Battle Game → Tag Match; participantes MAN; quinto pad COM/OFF; cada equipe com ao menos um participante."
+      ],
+      "sourceIds": [
+        "manual-sbomber3"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_b0a50897ab5c3663dbabd624b7469572",
+      "contentSha256": "6be49983976564f1fd9eff2f14f5bb41d3a0ff48573e39318088ecce286aca62",
+      "mode": "vs-race",
+      "displayName": "Corrida VS",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "instructions": [
+        "Selecionar VS Mode e2,3ou4 humanos; demais carros podem ficar CPU."
+      ],
+      "sourceIds": [
+        "manual-topgear3000"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_b0a50897ab5c3663dbabd624b7469572",
+      "contentSha256": "6be49983976564f1fd9eff2f14f5bb41d3a0ff48573e39318088ecce286aca62",
+      "mode": "championship-2p",
+      "displayName": "Campeonato em dupla",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 2,
+      "instructions": [
+        "Campeonato de dois humanos; não prometer quatro neste modo."
+      ],
+      "sourceIds": [
+        "manual-topgear3000"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_f1d9d06767f9a63592011424048bd181",
+      "contentSha256": "05f82bc40155293779a3fbe7c377d894f1d124bee5a973d58ab515ac1f7db01d",
+      "mode": "two-player-a",
+      "displayName": "Dupla com golpes entre parceiros",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 2,
+      "instructions": [
+        "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+      ],
+      "sourceIds": [
+        "manual-battletoads"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_f1d9d06767f9a63592011424048bd181",
+      "contentSha256": "05f82bc40155293779a3fbe7c377d894f1d124bee5a973d58ab515ac1f7db01d",
+      "mode": "two-player-b",
+      "displayName": "Dupla sem golpes entre parceiros",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 2,
+      "instructions": [
+        "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+      ],
+      "sourceIds": [
+        "manual-battletoads"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_7da80d23885a72cc56464834711b85a5",
+      "contentSha256": "4cc065671af8d511de06b3e6ccdb08ec70ef3cd4bfcc42d30092c07ddc808f3b",
+      "mode": "adventure-coop",
+      "displayName": "Aventura cooperativa",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 3,
+      "instructions": [
+        "Recrutar aliados para haver personagens extras; convidado pressiona Start para assumir aliado; máximo3.",
+        "Na variante BR/headered preservar o SHA de todos os bytes do arquivo; testar controles da tradução."
+      ],
+      "sourceIds": [
+        "manual-mana"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_80b7594ba22922d87fb43d720ba8be5a",
+      "contentSha256": "b0393ca82b92d38bbb37f199d10016f7a06746ac128bb653216b4110027ea75f",
+      "mode": "normal",
+      "displayName": "Campanha solo",
+      "playStyle": "single-player",
+      "nativeMaximum": 1,
+      "instructions": [
+        "Normal Game é individual e não deve criar sala."
+      ],
+      "sourceIds": [
+        "manual-sbomber2"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_80b7594ba22922d87fb43d720ba8be5a",
+      "contentSha256": "b0393ca82b92d38bbb37f199d10016f7a06746ac128bb653216b4110027ea75f",
+      "mode": "battle-single",
+      "displayName": "Battle: todos contra todos",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "instructions": [
+        "Battle Game → Single Match; pads participantes MAN; outros COM/OFF."
+      ],
+      "sourceIds": [
+        "manual-sbomber2",
+        "libretro-multitap"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_80b7594ba22922d87fb43d720ba8be5a",
+      "contentSha256": "b0393ca82b92d38bbb37f199d10016f7a06746ac128bb653216b4110027ea75f",
+      "mode": "battle-team",
+      "displayName": "Battle: equipes",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "instructions": [
+        "Battle Game → Tag Match; configurar humanos e equipes no jogo."
+      ],
+      "sourceIds": [
+        "manual-sbomber2"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_53bf1a7b190641b0c73448367a6b6557",
+      "contentSha256": "98b788fc146840a83ac898dbe96a4056ddb56e795d80eb610d4b2fd7a450fa02",
+      "mode": "vs-race",
+      "displayName": "Corrida VS",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 4,
+      "instructions": [
+        "Selecionar VS Mode e2,3ou4 humanos; demais carros podem ficar CPU."
+      ],
+      "sourceIds": [
+        "manual-topgear3000"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    },
+    {
+      "itemId": "station_53bf1a7b190641b0c73448367a6b6557",
+      "contentSha256": "98b788fc146840a83ac898dbe96a4056ddb56e795d80eb610d4b2fd7a450fa02",
+      "mode": "championship-2p",
+      "displayName": "Campeonato em dupla",
+      "playStyle": "simultaneous",
+      "nativeMaximum": 2,
+      "instructions": [
+        "Campeonato de dois humanos; não prometer quatro neste modo."
+      ],
+      "sourceIds": [
+        "manual-topgear3000"
+      ],
+      "authorizationSource": "exact-profile-only",
+      "physicalPhoneGameplayVerified": false
+    }
+  ]
+}

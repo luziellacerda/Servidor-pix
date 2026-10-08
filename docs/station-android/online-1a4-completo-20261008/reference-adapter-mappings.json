@@ -1,0 +1,1801 @@
+{
+  "megadrive": [
+    {
+      "referenceMd5": "2b27a61cdae4492044bd273c5807de75",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Barkley Shut Up and Jam! (USA, Europe)"
+    },
+    {
+      "referenceMd5": "952e40844509c5739f1e84ea7f9dfd90",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Barkley Shut Up and Jam 2 (USA)"
+    },
+    {
+      "referenceMd5": "76aab0e8bc8e670a347676aaf0a0aea3",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "College Football's National Championship (USA)"
+    },
+    {
+      "referenceMd5": "d608a160eda8597113b3cdf92941a048",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "College Football's National Championship II (USA)"
+    },
+    {
+      "referenceMd5": "a279a2fa2317f9081ba02226cce6b1ed",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Dragon - The Bruce Lee Story (Europe)"
+    },
+    {
+      "referenceMd5": "94ebb9a19bbb7b5749bf07ab3ce8fbb9",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Dragon - The Bruce Lee Story (USA)"
+    },
+    {
+      "referenceMd5": "817fceb36d9a454c59253be990779f99",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "From TV Animation Slam Dunk - Kyougou Makkou Taiketsu! (Japan)"
+    },
+    {
+      "referenceMd5": "9aad96cc5364d2289f470b75c59907a5",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Gauntlet (Japan) (En,Ja)"
+    },
+    {
+      "referenceMd5": "5e8ec4c047ef4af15027e93b5358858f",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Gauntlet IV (Japan) (En,Ja)"
+    },
+    {
+      "referenceMd5": "840f9f6fd4f22686b89cfd9a9ade105a",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Gauntlet IV (USA, Europe) (En,Ja)"
+    },
+    {
+      "referenceMd5": "1f8e7897522b6e645f4b8123bff23654",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "J. League Pro Striker Final Stage (Japan)"
+    },
+    {
+      "referenceMd5": "44752b050421c4e51d1bee96b3fed44e",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Lost Vikings, The (Europe)"
+    },
+    {
+      "referenceMd5": "a8dcb5476855a83702e2f49ebd4e2d57",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Lost Vikings, The (USA) (November, 1993)"
+    },
+    {
+      "referenceMd5": "8335ca918a503047fc9cde6a0b082308",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Lost Vikings, The (USA) (October, 1995)"
+    },
+    {
+      "referenceMd5": "5a94b1e8792bb3572db92c2019d99377",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Mega Bomberman (Europe, Korea) (En)"
+    },
+    {
+      "referenceMd5": "514f6cad98f5f632d680983a050fffc4",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Mega Bomberman (USA)"
+    },
+    {
+      "referenceMd5": "f9a4e85931dcaaceded19c0c2a7aace1",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "NBA Hang Time (Europe)"
+    },
+    {
+      "referenceMd5": "a2dddb13539df45f45ff4061cd6caacd",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "NBA Hang Time (USA)"
+    },
+    {
+      "referenceMd5": "d72f13bc94ad76c90deef86d5a138ff6",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "NBA Jam (Japan)"
+    },
+    {
+      "referenceMd5": "234bf02f7f7b6fdad65890424d3a8a8f",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "NBA Jam (USA, Europe) (Rev 1)"
+    },
+    {
+      "referenceMd5": "338b8ed45e02d96f1ed31eaab59eaf43",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "NBA Jam (USA, Europe)"
+    },
+    {
+      "referenceMd5": "edeb01f0aa8aed3868db1179670db22f",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "NBA Jam - Tournament Edition (World)"
+    },
+    {
+      "referenceMd5": "3d3c4c2dcc8631373b73cf11170dd4d7",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "NCAA Final Four Basketball (USA)"
+    },
+    {
+      "referenceMd5": "6e38acfb80ed7e0b1343fa4ffdc6477d",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "NCAA Football (USA)"
+    },
+    {
+      "referenceMd5": "035283320f792caa2b55129db21f0265",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "NFL '95 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "80652330e1b3e2892785e27413691e4e",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "NFL 98 (USA)"
+    },
+    {
+      "referenceMd5": "0faab2309047b85de82a62e0230ec9f4",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Pele II - World Tournament Soccer (USA, Europe)"
+    },
+    {
+      "referenceMd5": "15a8114b96afcabcb2bd08acbc7a11c0",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Prime Time NFL Starring Deion Sanders (USA)"
+    },
+    {
+      "referenceMd5": "a0003ccd281f9cc74aa2ef97fe23c2fc",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Puzzle & Action - Ichidanto-R (Japan)"
+    },
+    {
+      "referenceMd5": "15ee1db49894b798155ae60eaa2dd961",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Puzzle & Action - Ichidanto-R (World) (Ja) (Sega Ages)"
+    },
+    {
+      "referenceMd5": "16b0f48a07baf1fa0df27453b7f008d4",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Puzzle & Action - Tanto-R (Japan)"
+    },
+    {
+      "referenceMd5": "abddd42b2548e9b708991f689d726c9a",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Tiny Toon Adventures - Acme All-Stars (Europe)"
+    },
+    {
+      "referenceMd5": "1def1d7dbe4ab6b9e1fc90093292de6a",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Tiny Toon Adventures - Acme All-Stars (USA, Korea)"
+    },
+    {
+      "referenceMd5": "f314fe624d288b4e1228ae759bae1d86",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Unnecessary Roughness '95 (USA)"
+    },
+    {
+      "referenceMd5": "8be67519c2417d36ca51576ff1ab043b",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "World Championship Soccer II (Europe)"
+    },
+    {
+      "referenceMd5": "d0686cf7c1851ebc960c08c9f9908a31",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "World Championship Soccer II (USA)"
+    },
+    {
+      "referenceMd5": "d97666f8f935e50284026d442d9c5e6e",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "World Cup USA 94 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "296f057959c1c545178cc5c07f64877c",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "WWF Raw (World)"
+    },
+    {
+      "referenceMd5": "8130283788f82677ec583b7f627dbf0c",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "Yu Yu Hakusho - Makyou Toitsusen (Japan)"
+    },
+    {
+      "referenceMd5": "2a2165b2be91810f5b97e8d7d2f76ad5",
+      "adapter": "TeamPlayerPort1",
+      "referenceEdition": "YuYu Hakusho - Sunset Fighters (Brazil)"
+    },
+    {
+      "referenceMd5": "2dbad2e514d043d27340d640d9b138ac",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "ATP Tour (Europe)"
+    },
+    {
+      "referenceMd5": "723db55d679ef169b8210764a5f76c4d",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "ATP Tour Championship Tennis (USA)"
+    },
+    {
+      "referenceMd5": "5481f0cbab22ca071dad31dd3ca4f884",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "College Slam (USA)"
+    },
+    {
+      "referenceMd5": "6a492e2983b2bc306eec905411ee24a8",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "Dino Dini's Soccer (Europe)"
+    },
+    {
+      "referenceMd5": "dea9dd7a01d774ccdfe68c835fe55a8a",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "J. League Pro Striker (Japan)"
+    },
+    {
+      "referenceMd5": "f5f52249a5dc851864254935e185ea72",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "J. League Pro Striker (Japan) (v1.3)"
+    },
+    {
+      "referenceMd5": "ada241db25d7832866b1e58af2038bc6",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "J. League Pro Striker 2 (Japan)"
+    },
+    {
+      "referenceMd5": "a7046120d2a4b40949994c71177aec3c",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "J. League Pro Striker Perfect (Japan)"
+    },
+    {
+      "referenceMd5": "6f8cddb3775b588b49d13e7c62d08e86",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "Pepenga Pengo (Japan)"
+    },
+    {
+      "referenceMd5": "61c6f43629f218f75e9e78ff2e59bf55",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "Sega Sports 1 (Europe)"
+    },
+    {
+      "referenceMd5": "7bb99ff11b04544600ffe56dc79d72b3",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "Wimbledon Championship Tennis (Europe)"
+    },
+    {
+      "referenceMd5": "dd43c4cfd5958baeb9b4ddd5619f7255",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "Wimbledon Championship Tennis (Japan)"
+    },
+    {
+      "referenceMd5": "7978bb18dc7c6269f6b5c2178b93b407",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "Wimbledon Championship Tennis (USA)"
+    },
+    {
+      "referenceMd5": "441b7e9c9811e22458660eb73975569c",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "Columns III (USA)"
+    },
+    {
+      "referenceMd5": "eeb557cd38ad00d6b4df48585098269a",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "Columns III - Taiketsu! Columns World (Japan, Korea)"
+    },
+    {
+      "referenceMd5": "b3ed61c2da404c31d2a5b6f6ada7b7ff",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "NBA Action '94 (USA)"
+    },
+    {
+      "referenceMd5": "dc9117965c0c3fcb9d28eb826082b223",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "NBA Action '95 Starring David Robinson (USA, Europe)"
+    },
+    {
+      "referenceMd5": "8147342e86d065fc240f09c803eb81b9",
+      "adapter": "TeamPlayerPort1TeamPlayerPort2",
+      "referenceEdition": "NFL Quarterback Club (World)"
+    },
+    {
+      "referenceMd5": "8b99a84e9e661dccf4f79dbd7b149953",
+      "adapter": "TeamPlayerPort1TeamPlayerPort2",
+      "referenceEdition": "NFL Quarterback Club 96 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "b21b69f718115b502d10481e1f6ecc0b",
+      "adapter": "GamepadPort1TeamPlayerPort2",
+      "referenceEdition": "Party Quiz Mega Q (Japan)"
+    },
+    {
+      "referenceMd5": "a2b23303055f28e68afce7b7e2ea9edf",
+      "adapter": "TeamPlayerPort1TeamPlayerPort2",
+      "referenceEdition": "Double Dribble - The Playoff Edition (USA)"
+    },
+    {
+      "referenceMd5": "a4a4e29f3540d3a11cdd8ee391069841",
+      "adapter": "TeamPlayerPort1TeamPlayerPort2",
+      "referenceEdition": "Fever Pitch Soccer (Europe) (En,Fr,De,Es,It)"
+    },
+    {
+      "referenceMd5": "fb303d5d08b2ea748fe7aced9c0100fd",
+      "adapter": "TeamPlayerPort1TeamPlayerPort2",
+      "referenceEdition": "Head-On Soccer (USA)"
+    },
+    {
+      "referenceMd5": "8bc39c10ed8d26d53a0f24f5daca81c8",
+      "adapter": "TeamPlayerPort1TeamPlayerPort2",
+      "referenceEdition": "Hyper Dunk (Europe)"
+    },
+    {
+      "referenceMd5": "008bcd6a3fc35015df0851e996ce80b4",
+      "adapter": "TeamPlayerPort1TeamPlayerPort2",
+      "referenceEdition": "Hyper Dunk - The Playoff Edition (Japan)"
+    },
+    {
+      "referenceMd5": "494d00e7c0a3ee5448e6b82fa091bac8",
+      "adapter": "TeamPlayerPort1TeamPlayerPort2",
+      "referenceEdition": "International Superstar Soccer Deluxe (Europe)"
+    },
+    {
+      "referenceMd5": "e4392bd5e77321e8ec6e76a142e9536b",
+      "adapter": "TeamPlayerPort1TeamPlayerPort2",
+      "referenceEdition": "Mega Bomberman - Special 8-Player-Demo (Europe) (Proto)"
+    },
+    {
+      "referenceMd5": "3426fc8802e1a385dc227b9dde59cbe4",
+      "adapter": "TeamPlayerPort1TeamPlayerPort2",
+      "referenceEdition": "Ultimate Soccer (Europe) (En,Fr,De,Es,It)"
+    },
+    {
+      "referenceMd5": "29d948108a1c768c20af6796ab9ffc47",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Australian Rugby League (Europe)"
+    },
+    {
+      "referenceMd5": "1d51bbd116b76c6fdd6b7dd4c80e4957",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Bill Walsh College Football (USA, Europe)"
+    },
+    {
+      "referenceMd5": "585030d462ab6de4c79dc434141d16e2",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Bill Walsh College Football 95 (USA)"
+    },
+    {
+      "referenceMd5": "ac51f4585a42cba91d04f667dd1fd60a",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Coach K College Basketball (USA)"
+    },
+    {
+      "referenceMd5": "f54889e7ce17227d398669f9f4e7881d",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "College Football USA 96 (USA)"
+    },
+    {
+      "referenceMd5": "dcb35bb9064171f07bb8b49d43c24d5b",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "College Football USA 97 (USA)"
+    },
+    {
+      "referenceMd5": "64c2a99aba71e7796fd12546071592cc",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Elitserien 95 (Sweden)"
+    },
+    {
+      "referenceMd5": "add607e0dd5b9f294bb5a246d8946aed",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Elitserien 96 (Sweden)"
+    },
+    {
+      "referenceMd5": "22db8020749dd63b14c382b198ee1422",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "ESPN National Hockey Night (USA)"
+    },
+    {
+      "referenceMd5": "3c7380bea3c1d479e5604006eab86961",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "FIFA 98 - Road to World Cup (Europe) (En,Fr,Es,It,Sv)"
+    },
+    {
+      "referenceMd5": "a1546250206aafa61536b434e31cd568",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "FIFA International Soccer (Japan) (En,Ja)"
+    },
+    {
+      "referenceMd5": "8a53e4db0da7ee312c1e89d449eb7b1e",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "FIFA International Soccer (USA, Europe) (En,Fr,De,Es)"
+    },
+    {
+      "referenceMd5": "698a2fcf165e8c9bc5166aecf23771d2",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "FIFA Soccer 95 (Korea) (En,Fr,De,Es)"
+    },
+    {
+      "referenceMd5": "26ac4f884df64349dcf46344db85812b",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "FIFA Soccer 95 (USA, Europe) (En,Fr,De,Es)"
+    },
+    {
+      "referenceMd5": "545b07c1c599f49ea93a4b7b2c7c3782",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "FIFA Soccer 96 (USA, Europe) (En,Fr,De,Es,It,Sv)"
+    },
+    {
+      "referenceMd5": "f4a8436b5218a201a08401bedbfcd065",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "FIFA Soccer 97 (USA, Europe) (En,Fr,De,Es,It,Sv)"
+    },
+    {
+      "referenceMd5": "955622a63dc3b06c13823fb352f50912",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "General Chaos (USA, Europe)"
+    },
+    {
+      "referenceMd5": "9ff0afe64a5765a1e2bc1f40bcd2e554",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "General Chaos Daikonsen (Japan)"
+    },
+    {
+      "referenceMd5": "f0ecb410ac43c503f1321098e4203785",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "IMG International Tour Tennis (USA, Europe)"
+    },
+    {
+      "referenceMd5": "9ca0c88961d110eaef383a0d8e3f22f6",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Madden NFL '94 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "52b7e1ce6ae02a5b5c178d4df865b1dd",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Madden NFL 95 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "f997e2088e3728941cbe3bf491b3496e",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Madden NFL 96 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "c5e4b901ca41524c182e576bedb13981",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Madden NFL 97 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "e3044f5de786cfa13f2d689e427f62e3",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Madden NFL 98 (USA)"
+    },
+    {
+      "referenceMd5": "87fd7645d1d8f2539a341285fc697aa7",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "MLBPA Baseball (USA)"
+    },
+    {
+      "referenceMd5": "6a685a81ae70e8724c376779e3a812e4",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Mutant League Hockey (USA, Europe)"
+    },
+    {
+      "referenceMd5": "dbe3cb8f486debb2efb94b51ab33ae58",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "NBA Live 95 (Korea)"
+    },
+    {
+      "referenceMd5": "c997ae89f3417f5b3e702c84cf1275c4",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "NBA Live 95 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "3a3399aba2f0c9eb693e9d2acc4f673b",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "NBA Live 96 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "2c11f642effca640c92a3031f6c2cbb1",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "NBA Live 97 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "3817138d9054d91675f7378684744a4d",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "NBA Live 98 (USA)"
+    },
+    {
+      "referenceMd5": "9c3aeaa26c74dfae329602ee27d0c1f9",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "NBA Showdown '94 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "8356b3f0d091b9cc441e2ff8721ad063",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "NHL '94 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "a1dd079f6b1ae80e90dc08839de4d3d4",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "NHL '94 (USA, Europe) (Re-release)"
+    },
+    {
+      "referenceMd5": "94d3518a8e592563c78cf4da84d163c8",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "NHL 95 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "89e7e0fbe8db82b1f2dd7beafcc4e7fb",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "NHL 96 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "4ddc912038388de3818623c046890606",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "NHL 97 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "a2c92c09d420cf7c2d2e55e8777f3a31",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "NHL 98 (USA)"
+    },
+    {
+      "referenceMd5": "d8575831aa3a753221a43aa574dd473b",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "PGA European Tour (USA, Europe)"
+    },
+    {
+      "referenceMd5": "f65dc2d83128232e2da5cf569669083b",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "PGA Tour 96 (USA, Europe)"
+    },
+    {
+      "referenceMd5": "96b3768461d6fef3c6ffa0a59e8de7b0",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "PGA Tour Golf III (USA, Europe)"
+    },
+    {
+      "referenceMd5": "639c7a9083aba418f6cd38d7d68eddf0",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Rugby World Cup 95 (USA, Europe) (En,Fr,It)"
+    },
+    {
+      "referenceMd5": "c2967c23e72387743911bb28beb6f144",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Street Racer (Europe)"
+    },
+    {
+      "referenceMd5": "12ba891983dab9749bdaeb7dc8491de8",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Triple Play - Gold Edition (USA)"
+    },
+    {
+      "referenceMd5": "a214cbc398eb4e6962186bbd69144d9e",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Triple Play 96 (USA)"
+    },
+    {
+      "referenceMd5": "7841791f8e0d6cb6d776f7fcb338377f",
+      "adapter": "EA4WayPlay",
+      "referenceEdition": "Wayne Gretzky and the NHLPA All-Stars (USA, Europe)"
+    }
+  ],
+  "snes": [
+    {
+      "referenceCrc32": "5613f172",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Bakukyuu Renpatsu!! Super B-Daman (Japan)"
+    },
+    {
+      "referenceCrc32": "94bfcc92",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Bakutou Dochers - Bumps-jima wa Oosawagi (Japan)"
+    },
+    {
+      "referenceCrc32": "29fbd13d",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Barkley Shut Up and Jam! (Europe)"
+    },
+    {
+      "referenceCrc32": "8aff96d0",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Barkley no Power Dunk (Japan)"
+    },
+    {
+      "referenceCrc32": "726b6c5a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Barkley Shut Up and Jam! (USA)"
+    },
+    {
+      "referenceCrc32": "5f5e9b0b",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Battle Cross (Japan)"
+    },
+    {
+      "referenceCrc32": "d79c1ec5",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Battle Jockey (Japan)"
+    },
+    {
+      "referenceCrc32": "25391c9f",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Bill Walsh College Football (USA)"
+    },
+    {
+      "referenceCrc32": "9fea854d",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Bomber Man B-Daman (Japan)"
+    },
+    {
+      "referenceCrc32": "bbcd16f4",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Soccer Shootout (Europe)"
+    },
+    {
+      "referenceCrc32": "d96b3936",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "J.League Excite Stage '94 (Japan)"
+    },
+    {
+      "referenceCrc32": "c9e33615",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "J.League Excite Stage '94 (Japan) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "ee314ae5",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Capcom's Soccer Shootout (USA)"
+    },
+    {
+      "referenceCrc32": "89178bc0",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Capcom's Soccer Shootout (USA) (Beta)"
+    },
+    {
+      "referenceCrc32": "846151c8",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Chibi Maruko-chan - Harikiri 365-nichi no Maki (Japan)"
+    },
+    {
+      "referenceCrc32": "f4defcae",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Chibi Maruko-chan - Mezase! Minami no Island!! (Japan)"
+    },
+    {
+      "referenceCrc32": "ce842c6d",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "College Slam (USA)"
+    },
+    {
+      "referenceCrc32": "79663a93",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Crystal Beans from Dungeon Explorer (Japan)"
+    },
+    {
+      "referenceCrc32": "dbf4a8ab",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Dino Dini's Soccer! (Europe) (En,Fr,De)"
+    },
+    {
+      "referenceCrc32": "038212ea",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Dragon - The Bruce Lee Story (Europe)"
+    },
+    {
+      "referenceCrc32": "407c5c24",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Dragon - The Bruce Lee Story (USA)"
+    },
+    {
+      "referenceCrc32": "cc24110a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Dream Basketball - Dunk & Hoop (Japan)"
+    },
+    {
+      "referenceCrc32": "ebcc121c",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Dynamic Stadium (Japan)"
+    },
+    {
+      "referenceCrc32": "62abaee1",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Elite Soccer (USA)"
+    },
+    {
+      "referenceCrc32": "6d16f5e7",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "World Cup Striker (Europe) (En,Fr,De)"
+    },
+    {
+      "referenceCrc32": "6928d52a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "World Cup Striker (Europe) (En,Fr,De) (Beta)"
+    },
+    {
+      "referenceCrc32": "cab690a1",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "World Cup Striker (Japan)"
+    },
+    {
+      "referenceCrc32": "75058ede",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "ESPN National Hockey Night (USA)"
+    },
+    {
+      "referenceCrc32": "28c2d764",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "FIFA - A Caminho Da Copa 98 (Brazil) (En,Fr,De,Es,It,Sv)"
+    },
+    {
+      "referenceCrc32": "5e4f4856",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "FIFA - Road to World Cup 98 (Europe) (En,Fr,De,Es,It,Sv)"
+    },
+    {
+      "referenceCrc32": "a350821a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "FIFA International Soccer (Europe)"
+    },
+    {
+      "referenceCrc32": "4fa1d452",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "FIFA International Soccer (Japan)"
+    },
+    {
+      "referenceCrc32": "56296426",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "FIFA International Soccer (USA)"
+    },
+    {
+      "referenceCrc32": "8faf17e5",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "FIFA Soccer 96 (Europe) (En,Fr,De,Es,It,Sv)"
+    },
+    {
+      "referenceCrc32": "7566347d",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "FIFA Soccer 96 (USA) (En,Fr,De,Es,It,Sv)"
+    },
+    {
+      "referenceCrc32": "470eabe5",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "FIFA 97 (Europe) (En,Fr,De,Es,It,Sv)"
+    },
+    {
+      "referenceCrc32": "38916376",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "FIFA Soccer 97 (USA) (En,Fr,De,Es,It,Sv)"
+    },
+    {
+      "referenceCrc32": "e06fae58",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Finalset (Japan)"
+    },
+    {
+      "referenceCrc32": "e500c7ba",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "FireStriker (USA)"
+    },
+    {
+      "referenceCrc32": "bbbbabb6",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "FireStriker (USA) (Beta)"
+    },
+    {
+      "referenceCrc32": "46acfc84",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Holy Striker (Japan)"
+    },
+    {
+      "referenceCrc32": "9b1ea779",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Fever Pitch Soccer (Europe) (En,Fr,De,Es,It)"
+    },
+    {
+      "referenceCrc32": "25c8f98a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Fever Pitch Soccer (Europe) (Beta)"
+    },
+    {
+      "referenceCrc32": "60dc3634",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Head-On Soccer (USA)"
+    },
+    {
+      "referenceCrc32": "d05114c0",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "From TV Animation Slam Dunk - SD Heat Up!! (Japan)"
+    },
+    {
+      "referenceCrc32": "184b07dc",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Go! Go! Dodge League (Japan)"
+    },
+    {
+      "referenceCrc32": "06e6e66d",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Go! Go! Dodge League (Japan) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "3d2352ea",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Hammer Lock Wrestling (USA)"
+    },
+    {
+      "referenceCrc32": "d5fb8c83",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Tenryuu Genichirou no Pro Wres Revolution (Japan)"
+    },
+    {
+      "referenceCrc32": "19e67dff",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Hat Trick Hero 2 (Japan)"
+    },
+    {
+      "referenceCrc32": "0b94ccd4",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Hebereke no Oishii Puzzle wa Irimasenka (Japan)"
+    },
+    {
+      "referenceCrc32": "9f6d0228",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Human Grand Prix III - F1 Triple Battle (Japan)"
+    },
+    {
+      "referenceCrc32": "47453477",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Human Grand Prix IV - F1 Dream Battle (Japan)"
+    },
+    {
+      "referenceCrc32": "5c4b2544",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Hungry Dinosaurs (Europe)"
+    },
+    {
+      "referenceCrc32": "7abdb576",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Harapeko Bakka (Japan)"
+    },
+    {
+      "referenceCrc32": "cba724ba",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "International Superstar Soccer Deluxe (Europe)"
+    },
+    {
+      "referenceCrc32": "0a20e602",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "International Superstar Soccer Deluxe (USA)"
+    },
+    {
+      "referenceCrc32": "e7559d73",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Jikkyou World Soccer 2 - Fighting Eleven (Japan)"
+    },
+    {
+      "referenceCrc32": "261e0ea1",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Jikkyou World Soccer 2 - Fighting Eleven (Japan) (Beta)"
+    },
+    {
+      "referenceCrc32": "dd871511",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "J.League Excite Stage '95 (Japan)"
+    },
+    {
+      "referenceCrc32": "c286ee0c",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "J.League Excite Stage '95 (Japan) (Sample)"
+    },
+    {
+      "referenceCrc32": "e044e0f1",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "J.League Excite Stage '96 (Japan)"
+    },
+    {
+      "referenceCrc32": "857bbfab",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "J.League Excite Stage '96 (Japan) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "b81828ec",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "J.League Soccer Prime Goal (Japan)"
+    },
+    {
+      "referenceCrc32": "7538f598",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "J.League Soccer Prime Goal (Japan) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "26664bb4",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "J.League Super Soccer '95 - Jikkyou Stadium (Japan)"
+    },
+    {
+      "referenceCrc32": "247c17d3",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "J.R.R. Tolkien's The Lord of the Rings - Volume One (Europe)"
+    },
+    {
+      "referenceCrc32": "8b172b4e",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "J.R.R. Tolkien's The Lord of the Rings - Volume One (Germany)"
+    },
+    {
+      "referenceCrc32": "cd2150c8",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "J.R.R. Tolkien's The Lord of the Rings - Volume 1 (USA)"
+    },
+    {
+      "referenceCrc32": "94c1d85c",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Jikkyou Power Pro Wrestling '96 - Max Voltage (Japan)"
+    },
+    {
+      "referenceCrc32": "bba55bec",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Jimmy Connors Pro Tennis Tour (Europe)"
+    },
+    {
+      "referenceCrc32": "bea289fc",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Jimmy Connors Pro Tennis Tour (France)"
+    },
+    {
+      "referenceCrc32": "e2294a8e",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Jimmy Connors Pro Tennis Tour (Germany)"
+    },
+    {
+      "referenceCrc32": "a95bef02",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Jimmy Connors Pro Tennis Tour (Japan)"
+    },
+    {
+      "referenceCrc32": "913f1555",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Jimmy Connors Pro Tennis Tour (USA)"
+    },
+    {
+      "referenceCrc32": "69642b00",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "JWP Joshi Pro Wres - Pure Wrestle Queens (Japan)"
+    },
+    {
+      "referenceCrc32": "c819109c",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Kingyo Chuuihou! - Tobidase! Game Gakuen (Japan)"
+    },
+    {
+      "referenceCrc32": "7bf62174",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Kunio-kun no Dodge Ball Da yo Zenin Shuugou! (Japan)"
+    },
+    {
+      "referenceCrc32": "fdf2f478",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Looney Tunes Basketball (Europe)"
+    },
+    {
+      "referenceCrc32": "6d3bc96f",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Looney Tunes B-Ball (USA)"
+    },
+    {
+      "referenceCrc32": "a7d31544",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Madden NFL '94 (Europe)"
+    },
+    {
+      "referenceCrc32": "1e4b3858",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NFL Pro Football '94 (Japan)"
+    },
+    {
+      "referenceCrc32": "8bed5914",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Madden NFL '94 (USA)"
+    },
+    {
+      "referenceCrc32": "4b0c7993",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Madden NFL 95 (Europe)"
+    },
+    {
+      "referenceCrc32": "021a3f69",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Madden NFL 95 (USA)"
+    },
+    {
+      "referenceCrc32": "51a1fe86",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Madden NFL 96 (USA)"
+    },
+    {
+      "referenceCrc32": "4c78d04a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Madden NFL 96 (USA) (Sample)"
+    },
+    {
+      "referenceCrc32": "abcf026e",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Madden NFL 97 (USA)"
+    },
+    {
+      "referenceCrc32": "cf10cc01",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Madden NFL 98 (USA)"
+    },
+    {
+      "referenceCrc32": "b4f64a09",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Micro Machines (Europe)"
+    },
+    {
+      "referenceCrc32": "364e68bb",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Micro Machines (USA)"
+    },
+    {
+      "referenceCrc32": "1619b619",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Micro Machines 2 - Turbo Tournament (Europe)"
+    },
+    {
+      "referenceCrc32": "70740cf4",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Mizuki Shigeru no Youkai Hyakkiyakou (Japan)"
+    },
+    {
+      "referenceCrc32": "60844b65",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Multi Play Volleyball (Japan)"
+    },
+    {
+      "referenceCrc32": "d4dc20e1",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Natsume Championship Wrestling (USA)"
+    },
+    {
+      "referenceCrc32": "e52b9af6",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Give 'n Go (Europe)"
+    },
+    {
+      "referenceCrc32": "7ecaa194",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Jikkyou Basket - Winning Dunk (Japan)"
+    },
+    {
+      "referenceCrc32": "68c8b643",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Give 'n Go (USA)"
+    },
+    {
+      "referenceCrc32": "f1fe37a4",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Hang Time (Europe)"
+    },
+    {
+      "referenceCrc32": "262ce76b",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Hang Time (USA)"
+    },
+    {
+      "referenceCrc32": "2b8e81c6",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Jam (Europe)"
+    },
+    {
+      "referenceCrc32": "fa9a577a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Jam (Europe) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "118b162e",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Jam (Japan)"
+    },
+    {
+      "referenceCrc32": "43f1c013",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Jam (USA)"
+    },
+    {
+      "referenceCrc32": "8f42cae7",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Jam (USA) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "0318705b",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Jam (USA) (Beta)"
+    },
+    {
+      "referenceCrc32": "d48c8041",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Jam - Tournament Edition (Europe)"
+    },
+    {
+      "referenceCrc32": "3c169224",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Jam - Tournament Edition (Japan)"
+    },
+    {
+      "referenceCrc32": "1fbc1ddb",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Jam - Tournament Edition (USA)"
+    },
+    {
+      "referenceCrc32": "8d7b1828",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Jam - Tournament Edition (USA) (Beta)"
+    },
+    {
+      "referenceCrc32": "56fdbb8c",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Live 95 (Europe)"
+    },
+    {
+      "referenceCrc32": "500f57d3",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Live 95 (Japan)"
+    },
+    {
+      "referenceCrc32": "1cd2393d",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Live 95 (USA)"
+    },
+    {
+      "referenceCrc32": "17689c62",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Live 96 (Europe)"
+    },
+    {
+      "referenceCrc32": "042a6495",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Live 96 (USA)"
+    },
+    {
+      "referenceCrc32": "2c680c99",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Live 97 (Europe)"
+    },
+    {
+      "referenceCrc32": "5115b8e5",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Live 97 (USA)"
+    },
+    {
+      "referenceCrc32": "514bfcb5",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NBA Live 98 (USA)"
+    },
+    {
+      "referenceCrc32": "b07cfa91",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NCAA Final Four Basketball (USA)"
+    },
+    {
+      "referenceCrc32": "2641c12a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NCAA Football (USA)"
+    },
+    {
+      "referenceCrc32": "87bc35af",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NFL Quarterback Club (Europe)"
+    },
+    {
+      "referenceCrc32": "1c036b4f",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NFL Quarterback Club '95 (Japan)"
+    },
+    {
+      "referenceCrc32": "79f16421",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NFL Quarterback Club (USA)"
+    },
+    {
+      "referenceCrc32": "78d10e07",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NFL Quarterback Club (USA) (Beta)"
+    },
+    {
+      "referenceCrc32": "9708abe3",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NFL Quarterback Club 96 (Europe)"
+    },
+    {
+      "referenceCrc32": "3a4c0de6",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NFL Quarterback Club 96 (Japan)"
+    },
+    {
+      "referenceCrc32": "e557689f",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NFL Quarterback Club 96 (USA)"
+    },
+    {
+      "referenceCrc32": "b87abc7e",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NFL Quarterback Club 96 (USA) (Beta)"
+    },
+    {
+      "referenceCrc32": "208fbf59",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NHL Hockey '94 (Europe)"
+    },
+    {
+      "referenceCrc32": "bc37d603",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NHL Pro Hockey '94 (Japan)"
+    },
+    {
+      "referenceCrc32": "42212a77",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NHL '94 (USA)"
+    },
+    {
+      "referenceCrc32": "00ff0c74",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NHL '94 (USA) (Beta)"
+    },
+    {
+      "referenceCrc32": "6930b67a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NHL 95 (Europe)"
+    },
+    {
+      "referenceCrc32": "2e9b1463",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NHL 95 (USA)"
+    },
+    {
+      "referenceCrc32": "148b2734",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NHL 96 (Europe)"
+    },
+    {
+      "referenceCrc32": "b6c6e7f3",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NHL 96 (USA)"
+    },
+    {
+      "referenceCrc32": "313b9622",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NHL 97 (Europe)"
+    },
+    {
+      "referenceCrc32": "1a53b7a8",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NHL 97 (Europe) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "06badb74",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NHL 97 (USA)"
+    },
+    {
+      "referenceCrc32": "4f72aa8c",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NHL 97 (USA) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "03cad2d2",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "NHL 98 (USA)"
+    },
+    {
+      "referenceCrc32": "3ed21333",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Olympic Summer Games (Europe)"
+    },
+    {
+      "referenceCrc32": "6b882d11",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Olympic Summer Games (USA)"
+    },
+    {
+      "referenceCrc32": "0a2e4c2f",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Rushing Beat Shura (Japan)"
+    },
+    {
+      "referenceCrc32": "8071e5db",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Peace Keepers, The (USA)"
+    },
+    {
+      "referenceCrc32": "78f229dc",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Jigsaw Party (Japan)"
+    },
+    {
+      "referenceCrc32": "bb6c3c54",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Pieces (USA)"
+    },
+    {
+      "referenceCrc32": "689a7a79",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Puzzle'n Desu! (Japan)"
+    },
+    {
+      "referenceCrc32": "adf4ffce",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Rap Jam - Volume One (USA) (En,Fr,Es)"
+    },
+    {
+      "referenceCrc32": "a3876f76",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Saturday Night Slam Masters (Europe)"
+    },
+    {
+      "referenceCrc32": "a6e028c2",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Muscle Bomber - The Body Explosion (Japan)"
+    },
+    {
+      "referenceCrc32": "54161830",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Saturday Night Slam Masters (USA)"
+    },
+    {
+      "referenceCrc32": "c5cb2f26",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Secret of Mana (Europe)"
+    },
+    {
+      "referenceCrc32": "de112322",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Secret of Mana (Europe) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "6be4ca95",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Secret of Mana (France)"
+    },
+    {
+      "referenceCrc32": "e9334b9e",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Secret of Mana (France) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "b069bb3a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Secret of Mana (Germany)"
+    },
+    {
+      "referenceCrc32": "b8049e3c",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Seiken Densetsu 2 (Japan)"
+    },
+    {
+      "referenceCrc32": "d0176b24",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Secret of Mana (USA)"
+    },
+    {
+      "referenceCrc32": "e6b9a402",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Shijou Saikyou no Quiz Ou Ketteisen Super (Japan)"
+    },
+    {
+      "referenceCrc32": "58da330c",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Shin Nihon Pro Wrestling - Chou Senshi in Tokyo Dome - Fantastic Story (Japan)"
+    },
+    {
+      "referenceCrc32": "6cbbd019",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Shin Nihon Pro Wrestling Kounin - '94 Battlefield in Tokyo Dome (Japan)"
+    },
+    {
+      "referenceCrc32": "a467c220",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Shin Nihon Pro Wrestling Kounin - '95 Tokyo Dome Battle 7 (Japan)"
+    },
+    {
+      "referenceCrc32": "6f7d1745",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Smash Tennis (Europe)"
+    },
+    {
+      "referenceCrc32": "3ccba79c",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Smash Tennis (Europe) (Beta)"
+    },
+    {
+      "referenceCrc32": "2bcbff26",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Family Tennis (Japan)"
+    },
+    {
+      "referenceCrc32": "315af696",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Sporting News Baseball, The (USA)"
+    },
+    {
+      "referenceCrc32": "70d9c906",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Sterling Sharpe - End 2 End (USA)"
+    },
+    {
+      "referenceCrc32": "97357a1b",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Street Sports - Street Hockey '95 (USA)"
+    },
+    {
+      "referenceCrc32": "29296976",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Street Hockey '95 (USA) (Beta)"
+    },
+    {
+      "referenceCrc32": "e013d5b0",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Street Racer (Europe)"
+    },
+    {
+      "referenceCrc32": "2ae69849",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Street Racer (Europe) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "d1c1f675",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Street Racer (Japan)"
+    },
+    {
+      "referenceCrc32": "63e8b7d5",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Street Racer (USA)"
+    },
+    {
+      "referenceCrc32": "1934f184",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Street Racer (USA) (Beta)"
+    },
+    {
+      "referenceCrc32": "72123ef0",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Sugoi Hebereke (Japan)"
+    },
+    {
+      "referenceCrc32": "366c84f3",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Sugoro Quest++ - Dicenics (Japan)"
+    },
+    {
+      "referenceCrc32": "678501f2",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomberman (Europe)"
+    },
+    {
+      "referenceCrc32": "7989891a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomber Man (Japan)"
+    },
+    {
+      "referenceCrc32": "63a8e2c6",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomberman (USA)"
+    },
+    {
+      "referenceCrc32": "fc633ecb",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomber Man - Panic Bomber W (Japan)"
+    },
+    {
+      "referenceCrc32": "c60a4191",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomberman 2 (Europe)"
+    },
+    {
+      "referenceCrc32": "fb259f4f",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomber Man 2 (Japan)"
+    },
+    {
+      "referenceCrc32": "2aa1ddf8",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomber Man 2 (Japan) (Caravan You Taikenban)"
+    },
+    {
+      "referenceCrc32": "9c1f11e4",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomberman 2 (USA)"
+    },
+    {
+      "referenceCrc32": "a096a6e5",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomberman 3 (Europe)"
+    },
+    {
+      "referenceCrc32": "9ecb0fe6",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomber Man 3 (Japan)"
+    },
+    {
+      "referenceCrc32": "002fa245",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomber Man 3 (Japan) (Beta)"
+    },
+    {
+      "referenceCrc32": "3bbaeb19",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomber Man 4 (Japan)"
+    },
+    {
+      "referenceCrc32": "06b1f0f5",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomber Man 5 (Japan)"
+    },
+    {
+      "referenceCrc32": "4590ae9d",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Bomber Man 5 (Japan) (Caravan Event Ban)"
+    },
+    {
+      "referenceCrc32": "4f0b96fa",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Final Match Tennis (Japan)"
+    },
+    {
+      "referenceCrc32": "8fac5efd",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Fire Pro Wrestling 2 (Japan)"
+    },
+    {
+      "referenceCrc32": "b48513fe",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Fire Pro Wrestling 2 (Japan) (Beta)"
+    },
+    {
+      "referenceCrc32": "93f778af",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Fire Pro Wrestling III - Easy Type (Japan)"
+    },
+    {
+      "referenceCrc32": "4dfb9072",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Fire Pro Wrestling III - Final Bout (Japan)"
+    },
+    {
+      "referenceCrc32": "978dc1ca",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Fire Pro Wrestling III - Final Bout (Japan) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "3227f1b1",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Fire Pro Wrestling - Queen's Special (Japan)"
+    },
+    {
+      "referenceCrc32": "e279ebe3",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Fire Pro Wrestling Special (Japan)"
+    },
+    {
+      "referenceCrc32": "1a13435c",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Fire Pro Wrestling Special (Japan) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "959db484",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Fire Pro Wrestling X (Japan)"
+    },
+    {
+      "referenceCrc32": "82de1380",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Fire Pro Wrestling X Premium (Japan)"
+    },
+    {
+      "referenceCrc32": "74c75074",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Formation Soccer II (Japan)"
+    },
+    {
+      "referenceCrc32": "d547c5d2",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Formation Soccer 94 - World Cup Edition (Japan)"
+    },
+    {
+      "referenceCrc32": "bf1f2e16",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Formation Soccer 94 - World Cup Final Data (Japan)"
+    },
+    {
+      "referenceCrc32": "798352bf",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Formation Soccer 95 della Serie A (Japan)"
+    },
+    {
+      "referenceCrc32": "1cf83bc2",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Formation Soccer 95 della Serie A (Japan) (UCC Xaqua Version)"
+    },
+    {
+      "referenceCrc32": "f42272cb",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Formation Soccer 96 - World Club Edition (Japan)"
+    },
+    {
+      "referenceCrc32": "fb1d16c4",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Ice Hockey (Europe)"
+    },
+    {
+      "referenceCrc32": "a3890d4f",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Hockey '94 (Japan)"
+    },
+    {
+      "referenceCrc32": "60305047",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Kyousouba - Kaze no Sylphid (Japan)"
+    },
+    {
+      "referenceCrc32": "56f3a65a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Power League (Japan)"
+    },
+    {
+      "referenceCrc32": "271e1f3f",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Puyo Puyo Tsuu (Japan)"
+    },
+    {
+      "referenceCrc32": "3276e449",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Magic Johnson no Super Slam Dunk (Japan)"
+    },
+    {
+      "referenceCrc32": "3effc9e5",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Slam Dunk (USA)"
+    },
+    {
+      "referenceCrc32": "5be4a7e3",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Tekkyuu Fight! (Japan)"
+    },
+    {
+      "referenceCrc32": "329024c7",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Super Tetris 3 (Japan)"
+    },
+    {
+      "referenceCrc32": "fd851819",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Syndicate (Europe) (En,Fr,De)"
+    },
+    {
+      "referenceCrc32": "181cae99",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Syndicate (Europe) (En,Fr,De) (Beta)"
+    },
+    {
+      "referenceCrc32": "63c52dc4",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Syndicate (Japan)"
+    },
+    {
+      "referenceCrc32": "d74570d3",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Syndicate (USA)"
+    },
+    {
+      "referenceCrc32": "383face4",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Takeda Nobuhiro no Super League Soccer (Japan)"
+    },
+    {
+      "referenceCrc32": "ae78b20e",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Tiny Toon Adventures - Wild & Wacky Sports (Europe)"
+    },
+    {
+      "referenceCrc32": "0f3b758d",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Tiny Toon Adventures - Wild & Wacky Sports (Europe) (Rev 1)"
+    },
+    {
+      "referenceCrc32": "f13002c7",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Tiny Toon Adventures - Wild & Wacky Sports (Europe) (Beta)"
+    },
+    {
+      "referenceCrc32": "01344c8e",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Tiny Toon Adventures - Dotabata Daiundoukai (Japan)"
+    },
+    {
+      "referenceCrc32": "afe72ff0",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Tiny Toon Adventures - Wacky Sports Challenge (USA)"
+    },
+    {
+      "referenceCrc32": "493fdb13",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Top Gear 3000 (Europe)"
+    },
+    {
+      "referenceCrc32": "b9b9df06",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Planet's Champ TG 3000, The (Japan)"
+    },
+    {
+      "referenceCrc32": "a20be998",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Top Gear 3000 (USA)"
+    },
+    {
+      "referenceCrc32": "26a9c3f4",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Turbo Toons (Europe)"
+    },
+    {
+      "referenceCrc32": "ecb8a53a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Virtual Soccer (Europe)"
+    },
+    {
+      "referenceCrc32": "1d20cac2",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "J.League Super Soccer (Japan)"
+    },
+    {
+      "referenceCrc32": "accb5950",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Vegas Stakes (Europe)"
+    },
+    {
+      "referenceCrc32": "a6bb5a7a",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Las Vegas Dream in Golden Paradise (Japan)"
+    },
+    {
+      "referenceCrc32": "03a0e935",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Vegas Stakes (USA)"
+    },
+    {
+      "referenceCrc32": "6383d9a5",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Virtual Soccer (USA) (Proto)"
+    },
+    {
+      "referenceCrc32": "a9fcfd53",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Vs. Collection (Japan)"
+    },
+    {
+      "referenceCrc32": "5fc89932",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Wedding Peach (Japan)"
+    },
+    {
+      "referenceCrc32": "8b477300",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "WCW Super Brawl Wrestling (USA)"
+    },
+    {
+      "referenceCrc32": "a5a3bfbc",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "WWF Raw (Europe)"
+    },
+    {
+      "referenceCrc32": "3e0038bf",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "WWF Raw (USA)"
+    },
+    {
+      "referenceCrc32": "02855382",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Yuujin no Furi Furi Girls (Japan)"
+    },
+    {
+      "referenceCrc32": "48e9887f",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Zero 4 Champ RR (Japan)"
+    },
+    {
+      "referenceCrc32": "3c6a8dc8",
+      "adapter": "SNES-Multitap-Port2",
+      "referenceEdition": "Zero 4 Champ RR-Z (Japan)"
+    }
+  ]
+}
