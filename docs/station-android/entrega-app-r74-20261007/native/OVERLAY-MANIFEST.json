@@ -1,0 +1,38 @@
+{
+  "baseRuntimeSHA256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+  "files": {
+    "frontend/drivers/platform_unix.c": {
+      "beforeSHA256": "8a9b6c48585a15e0db8fc8c63939338dddcc52493f65240b6a1c5051602f9f32",
+      "afterSHA256": "afa4ca0b7df504e556f8d83c9c097f70ab06884361211136520fc089135e5ab8"
+    },
+    "frontend/drivers/platform_unix.h": {
+      "beforeSHA256": "91306f874ae9c4fb5d11718d1bc0688c1e01b9fe8e2f1caff245fe0ceb3d5c36",
+      "afterSHA256": "71d12dada6ad6f27e28f3878eee7936b0c26ab0ec7335c42cb2e94f1aecbf388"
+    },
+    "frontend/drivers/station_recovery.h": {
+      "beforeSHA256": "40cb8f2a75cd31cc530b41e853cce31524dd32ddc82a95313a328f358383108a",
+      "afterSHA256": "74b47b943216f1c50204c17a75a6d9d9fcfe9e1170652973f126a43bc9e5f728"
+    },
+    "input/drivers/android_input.c": {
+      "beforeSHA256": "4de1b00d03b4653d882cd8062f58b3aea20db60d50189b984fec17a210e67efa",
+      "afterSHA256": "cbee8de6e7b55ec3a3c13b7cf685b331a058c7b89d77d916da75e96dddc0f883"
+    },
+    "runloop.c": {
+      "beforeSHA256": "90690f1b50710fe23cf58141542856ce252674429f0b9d792553b2547d458945",
+      "afterSHA256": "e577f9d59e7d557e858277e2beb2141c13d845397177d77fb5748ab44c5f9e30"
+    },
+    "network/netplay/netplay_frontend.c": {
+      "beforeSHA256": "3dea62f27a197f2f4fa7c689a0ed09bbe8840ff1e00bf74edb299a2f40d40afa",
+      "afterSHA256": "b1d0f5ddea0c1fb2d675fd08b73503fd80b03c71a6a60c8dea7084a96950d4fe"
+    }
+  },
+  "jniMethods": [
+    "stationRecoveryControl",
+    "stationRecoveryStatus",
+    "stationRecoveryStalled",
+    "stationRequestQuit"
+  ],
+  "baseNetworkFrontendSHA256": "3dea62f27a197f2f4fa7c689a0ed09bbe8840ff1e00bf74edb299a2f40d40afa",
+  "preservedRecoveryPollSHA256": "d3a42419124dda592fea217088ed4e4687bf63718f657299ac8d73ad9fa41e12",
+  "scope": "Native lifecycle, recovery input queue, and upstream catch-up pacing"
+}

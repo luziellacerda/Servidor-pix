@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "unchangedExistingXmlElements": 246,
+  "newServiceElements": 1,
+  "malformedInputsRejected": 3,
+  "aapt2Parsed": true,
+  "serviceExported": false,
+  "permissionsAdded": 0,
+  "manifestSHA256": "3a821dccd8a9853acd345f106614ec955bbf66b681b7690f907348569e8bef0d",
+  "recipeSHA256": "365d2893886894f625f6a3c0936c822e64da047ab9a69e20fbb3a627f7cdabe6"
+}

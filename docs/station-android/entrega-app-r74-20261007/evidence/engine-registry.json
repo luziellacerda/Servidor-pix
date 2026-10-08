@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-08T00:18:20.847949+00:00",
+  "runtime": "E:\\R74fixed\\libstation_retroarch.so",
+  "runtimeSHA256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+  "nativeBuildReceiptSHA256": "e833706ddf33c137c7f4792925d9583c24b44c62a82bf6bfebb0cba31a6de34e",
+  "nativeOverlayManifestSHA256": "94f878ad49504c6a1b8e2e4a915f1d81428467e47286be78baf088f06b393096",
+  "manifest": "E:\\ESTUDO APK\\work\\station-session-lifecycle-r74-20261007\\compiled-final\\assets\\station-online\\engines.json",
+  "manifestSHA256": "d43d6af1581691fbf88d6a15f87bea66761ef2f4d8952857028c6541b908e985",
+  "registryAdditions": [
+    {
+      "id": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+      "platform": "snes",
+      "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+      "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+      "recoveryProtocol": "station-stream.v2"
+    },
+    {
+      "id": "clownmdemu-d43c2708-rs4-804b2acfea4c",
+      "platform": "megadrive",
+      "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+      "recoveryProtocol": "station-stream.v2"
+    }
+  ],
+  "registryOperation": "append only; never replace existing registry",
+  "existingEntriesToPreserve": 8,
+  "removeExistingIds": [],
+  "serverRegistryPreservationVerified": false,
+  "neogeoLaunchReady": false,
+  "serverActivationVerified": false,
+  "baseAPK_SHA256": "b23ff3d1e319ee050e6eb867e2643a5f66661da481dd2e3a4e50089d1604f077",
+  "recipeSHA256": "3b6f15458ab175928fdc4a839a7a4073d252f4d203a857b36f04c09df32b9853"
+}

@@ -1,0 +1,245 @@
+{
+  "scope": "Source, recipes and local fixtures; evidence/documents are separately identified",
+  "files": {
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationGameSession.java": {
+      "sha256": "b910af1422b358f929b3d39a787bd036f13fdd99326e80b605628823c5d7d412",
+      "bytes": 12978
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java": {
+      "sha256": "d2040c953db35042b4c3094129c0877609649da219f7d811cb49eb6efeadb728",
+      "bytes": 20720
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java": {
+      "sha256": "74abbfa763fad7f3cc4a1a3cb33df52c61f554c64b619b35bf9bf49b367997be",
+      "bytes": 76325
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionLink.java": {
+      "sha256": "2cdf6807d6d96e6265f8719a40ea75b3b81680d2b033dd985181c2094e89eb1c",
+      "bytes": 4149
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionRegistry.java": {
+      "sha256": "53834181e95328483d498348e51269c325851451bea4bbab3cb135689a705ba5",
+      "bytes": 1207
+    },
+    "java/netplay-src/org/emulationstation/frontend/netplay/StationSessionService.java": {
+      "sha256": "fb8857ab4b0bbd9507764c9a6e1b4a48eccddd25a7bff36ad406cd9a800b641a",
+      "bytes": 3397
+    },
+    "native/DELIVERY-SHA256.json": {
+      "sha256": "d878cd802470f7f9ff53f6ba82e982285238fe700dd408523ae6c49a27febbba",
+      "bytes": 1853
+    },
+    "native/native-delta-manifest.json": {
+      "sha256": "9fc687d3c7030475a5dc1e74c32601a7294c6581adce3cd69c6c770933c2a9cf",
+      "bytes": 2033
+    },
+    "native/OVERLAY-MANIFEST.json": {
+      "sha256": "94f878ad49504c6a1b8e2e4a915f1d81428467e47286be78baf088f06b393096",
+      "bytes": 1910
+    },
+    "native/prepare_native_delta.py": {
+      "sha256": "e1bdf87f5d56f46e707bf33e2946bdbb6e81e6bfa068bc63468fa386898dfa9e",
+      "bytes": 11763
+    },
+    "native/publish_delta.py": {
+      "sha256": "56d131f033a18f08667a8f97627b973a45be80eeb4a517ee3817dc3dfd5ae35a",
+      "bytes": 2195
+    },
+    "native/README.md": {
+      "sha256": "ca5fe6e96fd37ae1e8e676703c01ddeceecd50d25d7e5ab00a2b0fe126074040",
+      "bytes": 9577
+    },
+    "native/source/frontend/drivers/platform_unix.c": {
+      "sha256": "afa4ca0b7df504e556f8d83c9c097f70ab06884361211136520fc089135e5ab8",
+      "bytes": 109859
+    },
+    "native/source/frontend/drivers/platform_unix.h": {
+      "sha256": "71d12dada6ad6f27e28f3878eee7936b0c26ab0ec7335c42cb2e94f1aecbf388",
+      "bytes": 11457
+    },
+    "native/source/frontend/drivers/station_recovery.h": {
+      "sha256": "74b47b943216f1c50204c17a75a6d9d9fcfe9e1170652973f126a43bc9e5f728",
+      "bytes": 3796
+    },
+    "native/source/input/drivers/android_input.c": {
+      "sha256": "cbee8de6e7b55ec3a3c13b7cf685b331a058c7b89d77d916da75e96dddc0f883",
+      "bytes": 70204
+    },
+    "native/source/network/netplay/netplay_frontend.c": {
+      "sha256": "b1d0f5ddea0c1fb2d675fd08b73503fd80b03c71a6a60c8dea7084a96950d4fe",
+      "bytes": 323432
+    },
+    "native/source/runloop.c": {
+      "sha256": "e577f9d59e7d557e858277e2beb2141c13d845397177d77fb5748ab44c5f9e30",
+      "bytes": 293499
+    },
+    "native/station-lifecycle-r74.patch": {
+      "sha256": "ae4ceca5ffef5cc4902559706f5a01071605eba9dc4c7b1e864fd2fdbae05ba6",
+      "bytes": 12664
+    },
+    "native/tests/lifecycle-probe-result.json": {
+      "sha256": "05fdecb50018e06e2380f1d2d651c3c1897ec68737487babf261dd7d380790f5",
+      "bytes": 3547
+    },
+    "native/tests/lifecycle_probe.py": {
+      "sha256": "27d5af8117d96b1532e8ce86695ac23ece2f642470ebe2c08baae76894e2049c",
+      "bytes": 15812
+    },
+    "native/tests/pacing-result.json": {
+      "sha256": "01a37bbbfd17530a73d537b15e5ba61cba296bcc5de5af5ec9ad9efb6bafecfd",
+      "bytes": 2796
+    },
+    "native/tests/pacing_probe.py": {
+      "sha256": "ac5f477725cccbb09ab8765577278e740349ac168f15c45d96b1cd04b1601adb",
+      "bytes": 11263
+    },
+    "native/tests/recovery-input-result.json": {
+      "sha256": "0de393c9054d6c65c8bac12fc4d12e466a1955f4cce883fdc2e4a341ab084578",
+      "bytes": 1275
+    },
+    "native/tests/recovery_input_probe.py": {
+      "sha256": "76c4634f0bd4b11b1a73a623364c9bfedf5152c9f548efb95fe0d6349c339c1a",
+      "bytes": 4168
+    },
+    "recipes/build_candidate.py": {
+      "sha256": "f04767aab2e201b788fd89ca94b1a0ad197e7027146db88a1022ea5af227b070",
+      "bytes": 11997
+    },
+    "recipes/build_native_r74.py": {
+      "sha256": "d80e9535ceb33510742812ecac47a7258b90bac61e25c497744a62a2d0a0760d",
+      "bytes": 5906
+    },
+    "recipes/package_r74.py": {
+      "sha256": "5cafa4a1a5bc60e172f7deeba33d3c5f7148097a51e1c57e3ea3150d4ad2562e",
+      "bytes": 15740
+    },
+    "recipes/patch_session_manifest.py": {
+      "sha256": "529553d4c84887bf4b96e555a0c25e20412e9cecbff503414e8b071e0985879d",
+      "bytes": 7045
+    },
+    "recipes/prepare_engine_registry.py": {
+      "sha256": "3b6f15458ab175928fdc4a839a7a4073d252f4d203a857b36f04c09df32b9853",
+      "bytes": 5961
+    },
+    "recipes/publish_server_handoff.py": {
+      "sha256": "9c700d2b317df9d244e8a0cf1e164167f601b20c4c611a4685a7420569471b66",
+      "bytes": 7176
+    },
+    "recipes/run_tests.py": {
+      "sha256": "f83716a6c3020e7384f39648f1a75b637fc6146e0beebc60123333c503fb0188",
+      "bytes": 5064
+    },
+    "tests/session/delta-r73-r74.diff": {
+      "sha256": "716b92c736c2297bc7d28dc46fc482c98a159c93d4a16695b98477c13401b6dc",
+      "bytes": 40707
+    },
+    "tests/session/fixture-src/android/app/Activity.java": {
+      "sha256": "6067f045e5e3156f6e1e84ead721355716452a6f45e23522baee594e245754b3",
+      "bytes": 584
+    },
+    "tests/session/fixture-src/android/app/Service.java": {
+      "sha256": "e42a0800b1d55bb47bb209ef0701da12ee008f6db59b80f0e13d9e4a8e10b731",
+      "bytes": 223
+    },
+    "tests/session/fixture-src/android/content/ComponentName.java": {
+      "sha256": "88a40bf80856daf5a9809f681b0e9e464230d77a8cb0dd658ae1fa4927a92db5",
+      "bytes": 54
+    },
+    "tests/session/fixture-src/android/content/Context.java": {
+      "sha256": "9a6c4e979e1526f4022def17ca576c6d5ceefdeeb602b524087f37cc025f9bdf",
+      "bytes": 161
+    },
+    "tests/session/fixture-src/android/content/Intent.java": {
+      "sha256": "e120b78658440c999f6b1228d4a6c6d9abaae9f5a188b9e4a366c0f7870b7e8a",
+      "bytes": 594
+    },
+    "tests/session/fixture-src/android/content/ServiceConnection.java": {
+      "sha256": "02ae81c54a2735f900ea1078dca41a2cf95bd244ef6a9f177b64a0a7db645ede",
+      "bytes": 267
+    },
+    "tests/session/fixture-src/android/os/Bundle.java": {
+      "sha256": "4bd48308f016f8346e8817bfa79f884aa7b069661d37bee7aae9aa0a3216cd15",
+      "bytes": 936
+    },
+    "tests/session/fixture-src/android/os/Handler.java": {
+      "sha256": "b09c58400b9f0c5e7385bce94c8204621c63086361af4299087cea1a4c082e93",
+      "bytes": 776
+    },
+    "tests/session/fixture-src/android/os/IBinder.java": {
+      "sha256": "24c0684ad155a309e56ee6299bc9e7e7ff5ba3bf401ce2c903de75ad567b1183",
+      "bytes": 200
+    },
+    "tests/session/fixture-src/android/os/Looper.java": {
+      "sha256": "a5bc82f26ec298c9df1f195d7f6ce92dbdb0b148681c277a1a4ca6d336d1254e",
+      "bytes": 132
+    },
+    "tests/session/fixture-src/android/os/Message.java": {
+      "sha256": "0681fdbbf8bf604519e8d42074d92b31b31db870adbfe77bb42159a3fef297a7",
+      "bytes": 297
+    },
+    "tests/session/fixture-src/android/os/Messenger.java": {
+      "sha256": "e2eae2d2821fc63001dca05856a2bb3fc0aaa3207b6ee74bd0588f4cd1a78e8c",
+      "bytes": 846
+    },
+    "tests/session/fixture-src/android/os/Parcelable.java": {
+      "sha256": "8b2d7ba29255e96f68caca005ec7c8847e81a7b2a429240ca0d1d504756aa609",
+      "bytes": 50
+    },
+    "tests/session/fixture-src/android/os/Process.java": {
+      "sha256": "cdfad161b4a810e37d6ab7b1b02f3d06ac6e2a72a5e6fa2ba0408a73fb4fb945",
+      "bytes": 108
+    },
+    "tests/session/fixture-src/android/os/RemoteException.java": {
+      "sha256": "67d210acf4b44ccd0bcb6afd3c0db2dfed396ce33cffea676755badf315f4f00",
+      "bytes": 138
+    },
+    "tests/session/fixture-src/android/os/ResultReceiver.java": {
+      "sha256": "c47958e8df6e58ea54ed5f0fff958629ae72379ccca15c489e14fc509b1d2a87",
+      "bytes": 254
+    },
+    "tests/session/fixture-src/android/os/SystemClock.java": {
+      "sha256": "86972a0b2618e5e900da5d0de16dd6f17cc06e51c1f25325770c0d23401e07f1",
+      "bytes": 118
+    },
+    "tests/session/fixture-src/android/util/Log.java": {
+      "sha256": "bbc8abea2bceca51dd5e5c140bd7e352de3d8fbf7584372cadb39e4731ca83ce",
+      "bytes": 139
+    },
+    "tests/session/fixture-src/org/emulationstation/frontend/auth/StationTaskNavigation.java": {
+      "sha256": "792cbe429348fceddd8766cba422ca782d2763c06edd66f6746a6ea35cc96041",
+      "bytes": 172
+    },
+    "tests/session/fixture-src/org/emulationstation/frontend/netplay/StationOnlineClient.java": {
+      "sha256": "b342c26033a2696804f1d7289e1cbe4b936447603d9241abe309564e5ea98be0",
+      "bytes": 1285
+    },
+    "tests/session/fixture-src/org/emulationstation/frontend/netplay/StationSessionChannel.java": {
+      "sha256": "0e65879629ec1c3ce1e7021e3258613433506b9190dbc3c6488cb14ac4c71dff",
+      "bytes": 243
+    },
+    "tests/session/fixture-src/org/emulationstation/frontend/station/StationApi.java": {
+      "sha256": "52f274d6eddd900f4c598188d617840f3ae013955c19ee01403f8a72e4d1b5a9",
+      "bytes": 368
+    },
+    "tests/session/run_session_tests.py": {
+      "sha256": "6a1e5fb39a5cc84d93369214a0aff4648b384e0b66d9f24499f9d22da437ef1a",
+      "bytes": 7458
+    },
+    "tests/session/StationSessionLifecycleTest.java": {
+      "sha256": "7187a222b7e14477eaef1e1757374a3ad156033bba0f81b8fcaa3f04101c3c02",
+      "bytes": 10626
+    },
+    "tests/session/StationSessionRegistryTest.java": {
+      "sha256": "454d79ab3b8d1109b45b812f71bae6643ebc124f78143412d103428a7cf22434",
+      "bytes": 1567
+    },
+    "tests/session/test-receipt.json": {
+      "sha256": "ca5ee0fcfe2eae2c9379ab17aa632f03212f4f9a0bea1dd6fde698103a365942",
+      "bytes": 3514
+    },
+    "tests/test_manifest.py": {
+      "sha256": "365d2893886894f625f6a3c0936c822e64da047ab9a69e20fbb3a627f7cdabe6",
+      "bytes": 2203
+    }
+  }
+}

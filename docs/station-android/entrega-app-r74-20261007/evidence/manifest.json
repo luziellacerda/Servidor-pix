@@ -1,0 +1,12 @@
+{
+  "baseSHA256": "cc00ab597882646285b963cf28c7bbc25088092268450d610e35d83a7e6444c4",
+  "resultSHA256": "3a821dccd8a9853acd345f106614ec955bbf66b681b7690f907348569e8bef0d",
+  "service": "org.emulationstation.frontend.netplay.StationSessionService",
+  "exported": false,
+  "process": "application default",
+  "addedPermissions": [],
+  "existingNodesByteIdentical": true,
+  "oldStringIndicesPreserved": true,
+  "addedNodes": 2,
+  "size": 61832
+}

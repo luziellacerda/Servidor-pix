@@ -1,0 +1,49 @@
+{
+  "createdUtc": "2026-10-08T00:21:15.761734+00:00",
+  "branch": "fix/station-r74-session-lifecycle-20261007",
+  "base": "R73",
+  "compiled": true,
+  "installed": false,
+  "stable": false,
+  "androidGameplay": false,
+  "serverActivationVerified": false,
+  "apk": "G:\\BAKUP SISTEMA APP 03-10-2026\\apks-candidatos-visuais\\TurboStations-Premium-R74-20261007.apk",
+  "apkSHA256": "e56896f28b16645653bfd28311cd0a8a9a5458e6d443849916a4dede6dc7fafe",
+  "apkBytes": 2122907720,
+  "certificateSHA256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "runtimeSHA256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+  "roomsDexSHA256": "e8c57484aa2e566edf6226a02e1f5f8ba7f9c25c7f6b050b890a092637370d3c",
+  "javaSourceCount": 201,
+  "regressionChecks": 1206,
+  "sessionChecks": 101,
+  "sessionSourceGuards": 42,
+  "nativeProbeSuites": 3,
+  "preservedAPKEntries": 13221,
+  "changedEntries": [
+    "AndroidManifest.xml",
+    "assets/station-online/engines.json",
+    "classes35.dex",
+    "lib/arm64-v8a/libstation_retroarch.so"
+  ],
+  "mp4EntriesPreserved": 59,
+  "serverReturnReviewed": "815ceaca49baa0feb1e2d61726c0346ddad2bd37",
+  "serverAdditions": [
+    {
+      "id": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+      "platform": "snes",
+      "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+      "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+      "recoveryProtocol": "station-stream.v2"
+    },
+    {
+      "id": "clownmdemu-d43c2708-rs4-804b2acfea4c",
+      "platform": "megadrive",
+      "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+      "recoveryProtocol": "station-stream.v2"
+    }
+  ],
+  "installationBlockedBy": "New runtime identities must be activated by server operator before online acceptance; no active game may be interrupted",
+  "currentPhones": "Both last verified R73; no R74 installation performed",
+  "linuxDeployed": false
+}

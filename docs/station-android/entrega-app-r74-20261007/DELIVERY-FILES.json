@@ -1,0 +1,116 @@
+{
+  "appCommit": "557014b4ff5ec5c3c0162847d922c0587f68b0e9",
+  "serverParent": "815ceaca49baa0feb1e2d61726c0346ddad2bd37",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 26182,
+      "sha256": "adaa273ada11203eb4b2357e3eb4b14c25803b6f9e2ff1f9d08727e3a3bbe17e"
+    },
+    {
+      "path": "docs/station-android/AGENTS.md",
+      "bytes": 27216,
+      "sha256": "7cd7003ad0aeba81b89752e59e669e2953daa50eec6c12348547e65e1108e280"
+    },
+    {
+      "path": "docs/station-android/ENTREGA-APP-R74-LIFECYCLE-LATENCIA-20261007.md",
+      "bytes": 29668,
+      "sha256": "0559daaf2f06eef2d2bdcf769da530b34662788ae58241cc31664260ed0b4614"
+    },
+    {
+      "path": "docs/station-android/README.md",
+      "bytes": 23567,
+      "sha256": "d878aee50f8e07ee38d2ff5151873413981331e6fa4ac63450e19cb1e02af583"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/JAVA-OVERLAY-MANIFEST.json",
+      "bytes": 1604,
+      "sha256": "73b1158381e160f6f107d29481314cfed675e1bf9b4c279fc0510af29a0018c1"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/SOURCE-FILES.json",
+      "bytes": 10435,
+      "sha256": "84ee2979db51f12b9bbfb398df45246e16dc466d7a9aae3c9ff695f4dc4075eb"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/STATUS.json",
+      "bytes": 2146,
+      "sha256": "664c86319576a3455d4ecc919e66946ca3ccb319eb7cf1fae63cbc36183c56cf"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/evidence/engine-manifest.json",
+      "bytes": 2200,
+      "sha256": "d43d6af1581691fbf88d6a15f87bea66761ef2f4d8952857028c6541b908e985"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/evidence/engine-registry.json",
+      "bytes": 1742,
+      "sha256": "1d476089472985734a4cadfa302e92dd3b10a167347a1354367bfcba6afce922"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/evidence/java-dex-build.json",
+      "bytes": 74761,
+      "sha256": "f1cb3ebcdee7fb15c2eb85ab5ab6b95a77f17d5c31772c5a9a5dc3720d42b900"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/evidence/local-tests.json",
+      "bytes": 42683,
+      "sha256": "8e528be7632900402e9451d319e14672fa28776a77215963a751aa9ae5925d2e"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/evidence/manifest-tests.json",
+      "bytes": 381,
+      "sha256": "5557773569eef8d9be71d4ab281247db331e89be25a1f967e9d0ad894a0b86b4"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/evidence/manifest.json",
+      "bytes": 455,
+      "sha256": "82eecfdef9dc52f5f17697c832385d75d551dbcc402f42a9e1ca8e5b1e7f566c"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/evidence/native-build.json",
+      "bytes": 3836,
+      "sha256": "e833706ddf33c137c7f4792925d9583c24b44c62a82bf6bfebb0cba31a6de34e"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/evidence/online-research.json",
+      "bytes": 6704,
+      "sha256": "abbd55b0717a39749b3bcab86d39995cf2969c4856391adc95960319535bc413"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/evidence/package.json",
+      "bytes": 4574,
+      "sha256": "e543769a2056d79efb3a7f0b1fb2d4106a78a2c4dad942d4e1926c0c39a7e8a4"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/evidence/performance-sanitized.json",
+      "bytes": 892,
+      "sha256": "b40901c3b96c8cde18ced77b5af09052ff4c9afb1c556f3d259546446f43ebbb"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/evidence/server-engine-registry-additions.json",
+      "bytes": 643,
+      "sha256": "7900a5da609a0d209565ff1a5185370faffd0e390eb32e2ab55d3a8794ea904e"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/evidence/session-tests.json",
+      "bytes": 3514,
+      "sha256": "ca5ee0fcfe2eae2c9379ab17aa632f03212f4f9a0bea1dd6fde698103a365942"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/native/OVERLAY-MANIFEST.json",
+      "bytes": 1910,
+      "sha256": "94f878ad49504c6a1b8e2e4a915f1d81428467e47286be78baf088f06b393096"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/native/README.md",
+      "bytes": 9577,
+      "sha256": "ca5fe6e96fd37ae1e8e676703c01ddeceecd50d25d7e5ab00a2b0fe126074040"
+    },
+    {
+      "path": "docs/station-android/entrega-app-r74-20261007/native/station-lifecycle-r74.patch",
+      "bytes": 12664,
+      "sha256": "ae4ceca5ffef5cc4902559706f5a01071605eba9dc4c7b1e864fd2fdbae05ba6"
+    }
+  ]
+}

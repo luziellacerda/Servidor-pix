@@ -1,0 +1,83 @@
+{
+  "scope": "Read-only official-source and exact server-code audit. No server/phone/code mutation, no runtime tuning applied by this reviewer.",
+  "serverCommit": "815ceaca49baa0feb1e2d61726c0346ddad2bd37",
+  "deployedDllSourceCommit": "ab192bf1585e30f303d041f13b36a1f9c96d2caa",
+  "codeIdentity": {
+    "StationRecoveryRelay.csBlobBothCommits": "fe8006e30932b0fa4c4eba5d907b46ae1e2873dd",
+    "StationOnline.csBlobBothCommits": "5a3add94a5c023eac362188f13da6a8b63cc84e6"
+  },
+  "officialSources": [
+    {
+      "url": "https://docs.libretro.com/development/retroarch/netplay/",
+      "finding": "Netplay expects delayed inputs and uses replay; if unread input is too far behind, it stalls for catch-up without blocking UI. Optional input latency reduces replay frequency/cost. This supports preserving upstream pacing; it does not prescribe Station transport epoch restarts."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/libretro/RetroArch/v1.22.2/network/netplay/netplay_frontend.c",
+      "finding": "Official released source has RUNNING_FAST catch-up and self-clearing condition at lines7600-7612; creation is based on unread/self frame distance at7670-7679. It has no Station TSR2 bridge."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/libretro/RetroArch/master/network/netplay/netplay_frontend.c",
+      "finding": "Current upstream retains the same catch-up condition and clearing semantics at7962-7974 and8032-8041 despite other refactoring. No upstream rationale found for treating every RUNNING_FAST occurrence as a transport disconnect/recovery epoch."
+    },
+    {
+      "url": "https://docs.libretro.com/guides/netplay-getting-started/",
+      "finding": "The official relay option routes both endpoints through a proxy when direct connectivity is unavailable. It does not make that relay's measured network latency zero."
+    },
+    {
+      "url": "https://nginx.org/en/docs/http/ngx_http_core_module.html#tcp_nodelay",
+      "finding": "TCP_NODELAY defaults to on and is enabled for SSL, unbuffered proxying and WebSockets. The effective live nginx configuration still needs operator confirmation; a default document is not proof of production options."
+    }
+  ],
+  "appSocketReview": {
+    "StationRecoveryTunnel": "Remote constructor line154 calls setSocketFactory(tls) and setTcpNoDelay(true); native TCP also true at68.",
+    "WebSocketClient": "Actual socket from supplied SSLSocketFactory at575-576 receives socket.setTcpNoDelay(isTcpNoDelay()) at482 before connect491. Writer841-842 writes and flushes each queued frame.",
+    "conclusion": "Adding TCP_NODELAY again is not an evidence-backed fix. Physical RTT includes network, queuing and scheduling; client setter absence is ruled out."
+  },
+  "serverSendLoopReview": {
+    "mechanism": "StationStreamSession.Changed completes a TaskCompletionSource with asynchronous continuations. Send calls Next, immediately awaits SendAsync for available frames, or awaits Changed when no frame exists.",
+    "locks": "Per-match gate covers buffer/state operations bounded to16KiB DATA chunks. Socket SendAsync is outside that gate. PublishState takes the hub lock and updates memory; it does not perform SQL there.",
+    "timers": "No100ms/250ms batching sleep found in DATA/PONG forwarding.10s is authority watchdog polling;15s is retained-room pruning. Neither schedules ordinary DATA emission.",
+    "proxy": "Versioned ops/nginx-v1-station-relay.conf has proxy_buffering off and proxy_cache off.",
+    "limit": "Source inspection cannot rule out live TCP retransmission, proxy overrides, ThreadPool starvation, GC pauses or kernel send queues. No full-path WSS send-latency histogram was supplied."
+  },
+  "serverMetricsAlreadyPublished": {
+    "source": "docs/station-android/recovery-r73-20261007/ANALISE-PARTIDA-EM-ANDAMENTO.json",
+    "sampleUtc": "2026-10-07T23:22:23.991727+00:00",
+    "commandCount": 34,
+    "commandP50Ms": 0.08795,
+    "commandP95Ms": 0.1756,
+    "commandMaxMs": 0.7365,
+    "stationCpuPercentOneCoreOneSecond": 14.99,
+    "machineIdlePercentOneSecond": 96.98,
+    "warning": "These are internal command and one-second host samples, not Android RTT, complete auth HTTP duration, native gameplay FPS, or per-frame WSS receive-to-send latency. Do not compare as if they measure identical paths."
+  },
+  "pacingFinding": {
+    "r73Code": "netplay_frontend.c9067 marks sticky station_recovery_stalled for RUNNING_FAST; header35 clears only on wait=true; Java tick96-97 emits TSR2 NeedSync13. Upstream can clear RUNNING_FAST before Java's250ms tick while sticky marker remains.",
+    "status": "False-positive bridge reproduced in extracted real C and Java probe; independent diff review confirms only three escalation lines removed. Physical epoch storm attribution still requires server NeedSync13 versus detach/suspend records.",
+    "candidateBoundary": "Parent authorized removal of only automatic escalation of ordinary pacing; native catch-up, actual socket-loss recovery, authority checks, byte offsets, READY barrier, R73 handshake flush and genuine protocol error handling are preserved."
+  },
+  "operatorEvidenceNeeded": [
+    "For23:52:52-23:53:15UTC, report sanitized NeedSync13 receive counts by host/client and resulting epochs, distinguishing detach, Suspend11, explicit human exit and authority rejection.",
+    "Measure receive-complete to queued-frame selection and SendAsync start/end with monotonic durations, by DATA/PONG, using aggregate p50/p95/max rather than per-frame payload logs.",
+    "Report gate-wait time, send queue length, ThreadPool/GC pauses, socket RTT/retransmissions and effective nginx settings during the same match interval.",
+    "Correlate private connection identities internally; never publish tickets, request proofs, license codes, raw ROM content or personal logs."
+  ],
+  "remoteRefresh": {
+    "checkedUtc": "2026-10-08T00:12:39.761050+00:00",
+    "explicitRefspec": "+refs/heads/*:refs/remotes/origin/*",
+    "latestRelevantCommit": "815ceaca49baa0feb1e2d61726c0346ddad2bd37",
+    "newerReturnFound": false,
+    "checkoutModified": false
+  },
+  "pacingProbe": {
+    "frontendCandidateSHA256": "b1d0f5ddea0c1fb2d675fd08b73503fd80b03c71a6a60c8dea7084a96950d4fe",
+    "testRecipeSHA256": "ac5f477725cccbb09ab8765577278e740349ac168f15c45d96b1cd04b1601adb",
+    "catchupsEach": 200,
+    "baselineStickyFlags": 200,
+    "candidateStickyFlags": 0,
+    "javaBaselineSYNC13": 1,
+    "javaCandidateSYNC13": 0,
+    "physicalGameplay": false,
+    "independentReview": "Read recipe, hash verification and exact diff; did not rerun or mutate candidate."
+  }
+}

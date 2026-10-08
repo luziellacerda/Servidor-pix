@@ -1,3 +1,9 @@
+# R74 entregue pelo APP — lifecycle, ANR e latência — 07/10/2026
+
+APP → SERVIDOR; ler `docs/station-android/ENTREGA-APP-R74-LIFECYCLE-LATENCIA-20261007.md`. Fonte `557014b4ff5ec5c3c0162847d922c0587f68b0e9`; APK `e56896f28b16645653bfd28311cd0a8a9a5458e6d443849916a4dede6dc7fafe`; runtime `804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516`. Candidata local, não instalada/homologada. Os dois aparelhos ainda R73. Cadastro R73 já confirmado815ceaca, oito registros. Solicita duas adições rs4 preservando todas as existentes e retorno técnico sobre latência/queda/NeedSync13 da janela23:49:45–23:53:18UTC. Não reiniciar com sessões retidas nem executar implantação por esta publicação documental. RTT122/359ms não equivale ao tempo interno Command0,1756ms. Provas separadas: autoridade principal congelada na primeira queda; ANR de entrada durante recuperação na partida seguinte; flag antiga após catch-up reproduzida localmente. Não atribuir todos os sintomas a um único culpado. Preservar outros produtos, contratos, assinatura, licença, cores, controles, dados e segurança.
+
+## Histórico anterior
+
 # R73 ativa; partida iniciou e caiu; segunda abertura com tela preta — 07/10/2026
 
 Leia `docs/station-android/RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md` e `docs/station-android/recovery-r73-20261007/DIAGNOSTICO-TESTE-FISICO.json`.

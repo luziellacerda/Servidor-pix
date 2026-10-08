@@ -1,0 +1,16 @@
+[
+  {
+    "id": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+    "platform": "snes",
+    "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+    "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+    "recoveryProtocol": "station-stream.v2"
+  },
+  {
+    "id": "clownmdemu-d43c2708-rs4-804b2acfea4c",
+    "platform": "megadrive",
+    "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+    "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+    "recoveryProtocol": "station-stream.v2"
+  }
+]

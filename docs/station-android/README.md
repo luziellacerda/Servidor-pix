@@ -1,3 +1,9 @@
+# R74 entregue pelo APP — lifecycle, ANR e latência — 07/10/2026
+
+APP → SERVIDOR; ler `docs/station-android/ENTREGA-APP-R74-LIFECYCLE-LATENCIA-20261007.md`. Fonte `557014b4ff5ec5c3c0162847d922c0587f68b0e9`; APK `e56896f28b16645653bfd28311cd0a8a9a5458e6d443849916a4dede6dc7fafe`; runtime `804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516`. Candidata local, não instalada/homologada. Os dois aparelhos ainda R73. Cadastro R73 já confirmado815ceaca, oito registros. Solicita duas adições rs4 preservando todas as existentes e retorno técnico sobre latência/queda/NeedSync13 da janela23:49:45–23:53:18UTC. Não reiniciar com sessões retidas nem executar implantação por esta publicação documental. RTT122/359ms não equivale ao tempo interno Command0,1756ms. Provas separadas: autoridade principal congelada na primeira queda; ANR de entrada durante recuperação na partida seguinte; flag antiga após catch-up reproduzida localmente. Não atribuir todos os sintomas a um único culpado. Preservar outros produtos, contratos, assinatura, licença, cores, controles, dados e segurança.
+
+## Histórico anterior
+
 # Estado R73 e diagnóstico da partida — 07/10/2026
 
 R73 cadastrada e ativa no servidor; oito motores assinados e185/190 verificações passaram. Dois Android instalaram APKb23ff3d1. O mantenedor confirmou ambos jogando Battletoads (Samsung host/Motorola guest), seguido de queda23:23:10UTC por falta de heartbeat autenticado do convidado. Segunda abertura23:32:26UTC sem host-listening/anexo até23:33:29; depois ambos pretos. Recuperação física e estabilidade pendentes.

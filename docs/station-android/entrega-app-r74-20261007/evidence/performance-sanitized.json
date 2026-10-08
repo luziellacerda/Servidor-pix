@@ -1,0 +1,28 @@
+{
+  "samsung": {
+    "source": "read-only ADB sample 23:52 UTC R73",
+    "rttSamples": 18,
+    "rttMinMs": 102,
+    "rttMedianMs": 122.0,
+    "rttMaxMs": 306,
+    "thermalStatus": 0,
+    "batteryCelsius": 31.9,
+    "graphicsOrFrameRateMeasured": false,
+    "sustainedCpuSaturationProven": false,
+    "currentANRMotionEvents": true,
+    "capturedRuntimeSHA256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2"
+  },
+  "motorola": {
+    "source": "read-only ADB sample 23:52 UTC R73",
+    "rttSamples": 15,
+    "rttMinMs": 347,
+    "rttMedianMs": 359,
+    "rttMaxMs": 558,
+    "thermalStatus": 0,
+    "batteryCelsius": 34.0,
+    "graphicsOrFrameRateMeasured": false,
+    "sustainedCpuSaturationProven": false,
+    "currentANRMotionEvents": true,
+    "capturedRuntimeSHA256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2"
+  }
+}

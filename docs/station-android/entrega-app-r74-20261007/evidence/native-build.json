@@ -1,0 +1,76 @@
+{
+  "utc": "2026-10-08T00:12:31.608659+00:00",
+  "compiled": true,
+  "baseRuntimeSHA256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+  "runtimeSHA256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+  "runtimeBytes": 10669576,
+  "runtimePath": "E:\\R74fixed\\libstation_retroarch.so",
+  "sourceFolder": "E:\\R74fixed\\RetroArch-69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576",
+  "upstreamCommit": "69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576",
+  "sourceDelta": {
+    "frontend/drivers/platform_unix.c": {
+      "beforeSHA256": "8a9b6c48585a15e0db8fc8c63939338dddcc52493f65240b6a1c5051602f9f32",
+      "afterSHA256": "afa4ca0b7df504e556f8d83c9c097f70ab06884361211136520fc089135e5ab8"
+    },
+    "frontend/drivers/platform_unix.h": {
+      "beforeSHA256": "91306f874ae9c4fb5d11718d1bc0688c1e01b9fe8e2f1caff245fe0ceb3d5c36",
+      "afterSHA256": "71d12dada6ad6f27e28f3878eee7936b0c26ab0ec7335c42cb2e94f1aecbf388"
+    },
+    "frontend/drivers/station_recovery.h": {
+      "beforeSHA256": "40cb8f2a75cd31cc530b41e853cce31524dd32ddc82a95313a328f358383108a",
+      "afterSHA256": "74b47b943216f1c50204c17a75a6d9d9fcfe9e1170652973f126a43bc9e5f728"
+    },
+    "input/drivers/android_input.c": {
+      "beforeSHA256": "4de1b00d03b4653d882cd8062f58b3aea20db60d50189b984fec17a210e67efa",
+      "afterSHA256": "cbee8de6e7b55ec3a3c13b7cf685b331a058c7b89d77d916da75e96dddc0f883"
+    },
+    "runloop.c": {
+      "beforeSHA256": "90690f1b50710fe23cf58141542856ce252674429f0b9d792553b2547d458945",
+      "afterSHA256": "e577f9d59e7d557e858277e2beb2141c13d845397177d77fb5748ab44c5f9e30"
+    },
+    "network/netplay/netplay_frontend.c": {
+      "beforeSHA256": "3dea62f27a197f2f4fa7c689a0ed09bbe8840ff1e00bf74edb299a2f40d40afa",
+      "afterSHA256": "b1d0f5ddea0c1fb2d675fd08b73503fd80b03c71a6a60c8dea7084a96950d4fe"
+    }
+  },
+  "manifestSHA256": "94f878ad49504c6a1b8e2e4a915f1d81428467e47286be78baf088f06b393096",
+  "minimumLoadAlignment": 16384,
+  "exportsVerified": [
+    "ANativeActivity_onCreate",
+    "Java_org_emulationstation_frontend_netplay_StationRetroActivity_stationRecoveryControl",
+    "Java_org_emulationstation_frontend_netplay_StationRetroActivity_stationRecoveryStatus",
+    "Java_org_emulationstation_frontend_netplay_StationRetroActivity_stationRecoveryStalled",
+    "Java_org_emulationstation_frontend_netplay_StationRetroActivity_stationRequestQuit"
+  ],
+  "architecture": "AArch64",
+  "minAPI": 26,
+  "command": [
+    "E:\\TurboEdenEngine\\android-ndk-r28c\\ndk-build.cmd",
+    "NDK_PROJECT_PATH=E:\\R74fixed\\RetroArch-69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576\\pkg\\android\\phoenix-common",
+    "APP_BUILD_SCRIPT=E:\\R74fixed\\RetroArch-69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576\\pkg\\android\\phoenix-common\\jni\\Android.mk",
+    "NDK_APPLICATION_MK=E:\\R74fixed\\RetroArch-69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576\\pkg\\android\\phoenix-common\\jni\\Application.mk",
+    "NDK_OUT=E:\\R74fixed\\obj",
+    "NDK_LIBS_OUT=E:\\R74fixed\\lib",
+    "APP_ABI=arm64-v8a",
+    "TARGET_ABIS=arm64-v8a",
+    "APP_PLATFORM=android-26",
+    "NDK_NO_GL_HEADER_VER=26",
+    "APP_CPPFLAGS=-std=c++17",
+    "APP_SUPPORT_FLEXIBLE_PAGE_SIZES=true",
+    "HAVE_VULKAN=0",
+    "HAVE_CHEEVOS=0",
+    "HAVE_SAF=0",
+    "GIT_VERSION=",
+    "-j4"
+  ],
+  "recipeSHA256": "d80e9535ceb33510742812ecac47a7258b90bac61e25c497744a62a2d0a0760d",
+  "buildLogSHA256": "ba5f9954f0627af80dbcdb9aee6e620a0f84541524fcbc938be9f3c34db07f1d",
+  "recoveryProtocol": "station-stream.v2",
+  "r73HandshakePreserved": true,
+  "handshakeFunctionSHA256": "d3a42419124dda592fea217088ed4e4687bf63718f657299ac8d73ad9fa41e12",
+  "serverRegistryAdditionsRequired": true,
+  "serverDeployed": false,
+  "apkBuilt": false,
+  "installed": false,
+  "androidExecuted": false
+}

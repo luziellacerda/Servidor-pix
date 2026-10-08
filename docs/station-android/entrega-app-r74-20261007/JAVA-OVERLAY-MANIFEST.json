@@ -1,0 +1,21 @@
+{
+  "base": "R73",
+  "baseSourceReceiptSHA256": "f5f728c3bd06be6a5c00157402ef9711406fe65bd6a959d9a61f860f84a64f35",
+  "sourceCount": 201,
+  "files": {
+    "netplay-src/org/emulationstation/frontend/netplay/StationGameSession.java": "b910af1422b358f929b3d39a787bd036f13fdd99326e80b605628823c5d7d412",
+    "netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java": "d2040c953db35042b4c3094129c0877609649da219f7d811cb49eb6efeadb728",
+    "netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java": "74abbfa763fad7f3cc4a1a3cb33df52c61f554c64b619b35bf9bf49b367997be",
+    "netplay-src/org/emulationstation/frontend/netplay/StationSessionLink.java": "2cdf6807d6d96e6265f8719a40ea75b3b81680d2b033dd985181c2094e89eb1c",
+    "netplay-src/org/emulationstation/frontend/netplay/StationSessionRegistry.java": "53834181e95328483d498348e51269c325851451bea4bbab3cb135689a705ba5",
+    "netplay-src/org/emulationstation/frontend/netplay/StationSessionService.java": "fb8857ab4b0bbd9507764c9a6e1b4a48eccddd25a7bff36ad406cd9a800b641a"
+  },
+  "reviewedFiles": [
+    "netplay-src/org/emulationstation/frontend/netplay/StationGameSession.java",
+    "netplay-src/org/emulationstation/frontend/netplay/StationRetroActivity.java",
+    "netplay-src/org/emulationstation/frontend/netplay/StationRoomsActivity.java",
+    "netplay-src/org/emulationstation/frontend/netplay/StationSessionLink.java",
+    "netplay-src/org/emulationstation/frontend/netplay/StationSessionRegistry.java",
+    "netplay-src/org/emulationstation/frontend/netplay/StationSessionService.java"
+  ]
+}

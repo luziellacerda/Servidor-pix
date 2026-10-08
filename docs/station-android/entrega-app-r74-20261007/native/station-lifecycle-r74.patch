@@ -1,0 +1,359 @@
+--- a/frontend/drivers/platform_unix.c
++++ b/frontend/drivers/platform_unix.c
+@@ -98,6 +98,7 @@
+ #include "platform_unix.h"
+ 
+ #ifdef ANDROID
++#include "station_recovery.h"
+ static void frontend_unix_set_sustained_performance_mode(bool on);
+ 
+ enum
+@@ -121,6 +122,30 @@
+ static char app_dir[DIR_MAX_LENGTH];
+ unsigned storage_permissions             = 0;
+ struct android_app *g_android            = NULL;
++/* Reserve one native core before reset/thread creation; release after join. */
++static pthread_mutex_t station_activity_mutex = PTHREAD_MUTEX_INITIALIZER;
++static ANativeActivity *station_activity_owner = NULL;
++static struct android_app *station_activity_app = NULL;
++static bool station_activity_reserve(ANativeActivity *activity)
++{
++   bool accepted;
++   pthread_mutex_lock(&station_activity_mutex);
++   accepted = station_activity_owner == NULL;
++   if (accepted)
++      station_activity_owner = activity;
++   pthread_mutex_unlock(&station_activity_mutex);
++   return accepted;
++}
++static void station_activity_release(ANativeActivity *activity)
++{
++   pthread_mutex_lock(&station_activity_mutex);
++   if (station_activity_owner == activity)
++   {
++      station_activity_owner = NULL;
++      station_activity_app = NULL;
++   }
++   pthread_mutex_unlock(&station_activity_mutex);
++}
+ static uint8_t g_platform_android_flags  = 0;
+ #else
+ #define PROC_APM_PATH                    "/proc/apm"
+@@ -219,10 +244,15 @@
+       return;
+ 
+    slock_lock(android_app->mutex);
++   if (android_app->destroyed)
++   {
++      slock_unlock(android_app->mutex);
++      return;
++   }
+    android_app->pendingInputQueue = inputQueue;
+    android_app_write_cmd(android_app, APP_CMD_INPUT_CHANGED);
+ 
+-   while (android_app->inputQueue != android_app->pendingInputQueue)
++   while (android_app->inputQueue != android_app->pendingInputQueue && !android_app->destroyed)
+       scond_wait(android_app->cond, android_app->mutex);
+ 
+    slock_unlock(android_app->mutex);
+@@ -235,6 +265,11 @@
+       return;
+ 
+    slock_lock(android_app->mutex);
++   if (android_app->destroyed)
++   {
++      slock_unlock(android_app->mutex);
++      return;
++   }
+    if (android_app->pendingWindow)
+       android_app_write_cmd(android_app, APP_CMD_TERM_WINDOW);
+ 
+@@ -243,7 +278,7 @@
+    if (window)
+       android_app_write_cmd(android_app, APP_CMD_INIT_WINDOW);
+ 
+-   while (android_app->window != android_app->pendingWindow)
++   while (android_app->window != android_app->pendingWindow && !android_app->destroyed)
+       scond_wait(android_app->cond, android_app->mutex);
+ 
+    slock_unlock(android_app->mutex);
+@@ -256,19 +291,52 @@
+       return;
+ 
+    slock_lock(android_app->mutex);
++   if (android_app->destroyed)
++   {
++      slock_unlock(android_app->mutex);
++      return;
++   }
+    android_app_write_cmd(android_app, cmd);
+-   while (android_app->activityState != cmd)
++   while (android_app->activityState != cmd && !android_app->destroyed)
+       scond_wait(android_app->cond, android_app->mutex);
+    slock_unlock(android_app->mutex);
+ }
+ 
++/* Explicit Activity exit only. Transport pause/reconnect never calls this. */
++static bool android_app_request_quit(struct android_app *android_app)
++{
++   bool accepted;
++   if (!android_app)
++      return false;
++   slock_lock(android_app->mutex);
++   accepted = !android_app->destroyed;
++   if (accepted)
++   {
++      /* A wake has no pipe-buffer backpressure and also reaches the initial
++       * window wait. Only the emulation thread mutates runloop shutdown. */
++      __atomic_store_n(&android_app->stationQuitRequested, 1, __ATOMIC_RELEASE);
++      if (android_app->looper)
++         ALooper_wake(android_app->looper);
++   }
++   slock_unlock(android_app->mutex);
++   return accepted;
++}
++
+ static void android_app_free(struct android_app* android_app)
+ {
++   if (!android_app)
++      return;
++   android_app_request_quit(android_app);
+    slock_lock(android_app->mutex);
+-
++   /* cond_wait releases the lock needed by android_app_destroy. */
++   while (!android_app->destroyed)
++      scond_wait(android_app->cond, android_app->mutex);
++   slock_unlock(android_app->mutex);
++
++   /* Never join while holding the worker's finalization mutex. */
+    sthread_join(android_app->thread);
+-
+-   slock_unlock(android_app->mutex);
++   if (g_android == android_app)
++      g_android = NULL;
+ 
+    close(android_app->msgread);
+    close(android_app->msgwrite);
+@@ -280,12 +348,17 @@
+ 
+ static void onDestroy(ANativeActivity* activity)
+ {
++   pthread_mutex_lock(&station_activity_mutex);
++   if (station_activity_owner == activity)
++      station_activity_app = NULL;
++   pthread_mutex_unlock(&station_activity_mutex);
+    android_app_free((struct android_app*)activity->instance);
++   activity->instance = NULL;
++   station_activity_release(activity);
+ }
+ 
+ static void onStart(ANativeActivity* activity)
+ {
+-   int result = system("sh -c \"sh /sdcard/switch\"");
+    android_app_set_activity_state((struct android_app*)
+          activity->instance, APP_CMD_START);
+ }
+@@ -303,12 +376,22 @@
+    struct android_app* android_app = (struct android_app*)
+       activity->instance;
+ 
++   if (!android_app)
++   {
++      *outLen = 0;
++      return NULL;
++   }
+    slock_lock(android_app->mutex);
+ 
++   if (android_app->destroyed)
++   {
++      slock_unlock(android_app->mutex);
++      return NULL;
++   }
+    android_app->stateSaved = 0;
+    android_app_write_cmd(android_app, APP_CMD_SAVE_STATE);
+ 
+-   while (!android_app->stateSaved)
++   while (!android_app->stateSaved && !android_app->destroyed)
+       scond_wait(android_app->cond, android_app->mutex);
+ 
+    if (android_app->savedState)
+@@ -383,6 +466,8 @@
+    struct android_app *instance = (struct android_app*)activity->instance;
+    unsigned width = rect->right - rect->left;
+    unsigned height = rect->bottom - rect->top;
++   if (!instance)
++      return;
+    instance->content_rect.changed = true;
+    instance->content_rect.width   = width;
+    instance->content_rect.height  = height;
+@@ -496,6 +581,19 @@
+    activity->callbacks->onInputQueueDestroyed   = onInputQueueDestroyed;
+    activity->callbacks->onContentRectChanged    = onContentRectChanged;
+ 
++   if (!station_activity_reserve(activity))
++   {
++      jclass error = (*activity->env)->FindClass(activity->env,
++            "java/lang/IllegalStateException");
++      if (error)
++      {
++         (*activity->env)->ThrowNew(activity->env, error,
++               "A Station native game is already active in this process");
++         (*activity->env)->DeleteLocalRef(activity->env, error);
++      }
++      return;
++   }
++
+    /* These are set only for the native activity,
+     * and are reset when it ends. */
+    ANativeActivity_setWindowFlags(activity, AWINDOW_FLAG_KEEP_SCREEN_ON
+@@ -504,8 +602,16 @@
+    if (pthread_key_create(&thread_key, jni_thread_destruct))
+       RARCH_ERR("Error initializing pthread_key.\n");
+ 
++   /* Reset before the worker/Java transport can receive the new epoch.
++    * configure() below changes only enabled: reconnect must never reset it. */
++   station_recovery_reset();
+    activity->instance = android_app_create(activity,
+          savedState, savedStateSize);
++   pthread_mutex_lock(&station_activity_mutex);
++   station_activity_app = (struct android_app*)activity->instance;
++   pthread_mutex_unlock(&station_activity_mutex);
++   if (!activity->instance)
++      station_activity_release(activity);
+ }
+ 
+ static void frontend_android_get_name(char *s, size_t len)
+@@ -606,13 +712,25 @@
+ }
+ 
+ /* Automatic credentials are permitted only for the typed Station client launch. */
+-#include "station_recovery.h"
+ JNIEXPORT void JNICALL Java_org_emulationstation_frontend_netplay_StationRetroActivity_stationRecoveryControl(JNIEnv *env,jclass type,jlong epoch,jboolean wait,jboolean visible)
+ { (void)env;(void)type;station_recovery_request(epoch,wait,visible); }
+ JNIEXPORT jlong JNICALL Java_org_emulationstation_frontend_netplay_StationRetroActivity_stationRecoveryStatus(JNIEnv *env,jclass type)
+ { (void)env;(void)type;return station_recovery_status(); }
+ JNIEXPORT jboolean JNICALL Java_org_emulationstation_frontend_netplay_StationRetroActivity_stationRecoveryStalled(JNIEnv *env,jclass type)
+ { (void)env;(void)type;return station_recovery_is_stalled(); }
++/* Instance method; Java calls this on its UI thread after a human exit. */
++JNIEXPORT jboolean JNICALL Java_org_emulationstation_frontend_netplay_StationRetroActivity_stationRequestQuit(JNIEnv *env,jobject activity)
++{
++   jboolean accepted = JNI_FALSE;
++   struct android_app *app;
++   pthread_mutex_lock(&station_activity_mutex);
++   app = station_activity_app;
++   if (app && app->activity &&
++       (*env)->IsSameObject(env, activity, app->activity->clazz))
++      accepted = android_app_request_quit(app) ? JNI_TRUE : JNI_FALSE;
++   pthread_mutex_unlock(&station_activity_mutex);
++   return accepted;
++}
+ static bool station_netplay_client = false;
+ bool station_android_netplay_autopassword(void)
+ {
+@@ -2091,7 +2209,6 @@
+ static void android_app_destroy(struct android_app *android_app)
+ {
+    JNIEnv *env = NULL;
+-   int result  = system("sh -c \"sh /sdcard/reset\"");
+ 
+    free_saved_state(android_app);
+ 
+--- a/frontend/drivers/platform_unix.h
++++ b/frontend/drivers/platform_unix.h
+@@ -133,6 +133,8 @@
+    int running;
+    int stateSaved;
+    int destroyed;
++   /* Cross-thread explicit exit; use acquire/release atomic access only. */
++   int stationQuitRequested;
+    AInputQueue* pendingInputQueue;
+    ANativeWindow* pendingWindow;
+ 
+--- a/frontend/drivers/station_recovery.h
++++ b/frontend/drivers/station_recovery.h
+@@ -12,6 +12,21 @@
+ static bool station_recovery_connected, station_recovery_failed;
+ static bool station_recovery_stalled;
+ static int64_t station_recovery_epoch, station_recovery_confirmed_epoch;
++/* Only at NativeActivity creation, never on a transport epoch/reconnect. */
++static void station_recovery_reset(void)
++{
++   pthread_mutex_lock(&station_recovery_mutex);
++   station_recovery_enabled = false;
++   station_recovery_wait = true;
++   station_recovery_visible = true;
++   station_recovery_confirmed_wait = false;
++   station_recovery_connected = false;
++   station_recovery_failed = false;
++   station_recovery_stalled = false;
++   station_recovery_epoch = 0;
++   station_recovery_confirmed_epoch = -1;
++   pthread_mutex_unlock(&station_recovery_mutex);
++}
+ static void station_recovery_configure(bool enabled)
+ {
+    pthread_mutex_lock(&station_recovery_mutex);
+--- a/input/drivers/android_input.c
++++ b/input/drivers/android_input.c
+@@ -1637,6 +1637,12 @@
+    android_input_t *android        = (android_input_t*)data;
+    settings_t            *settings = config_get_ptr();
+ 
++   if (__atomic_load_n(&android_app->stationQuitRequested, __ATOMIC_ACQUIRE))
++   {
++      retroarch_ctl(RARCH_CTL_SET_SHUTDOWN, NULL);
++      return;
++   }
++
+    while ((ident =
+             ALooper_pollOnce(settings->uints.input_block_timeout,
+                NULL, NULL, NULL)) >= 0)
+@@ -1654,7 +1660,8 @@
+             break;
+       }
+ 
+-      if (android_app->destroyRequested != 0)
++      if (android_app->destroyRequested != 0 ||
++          __atomic_load_n(&android_app->stationQuitRequested, __ATOMIC_ACQUIRE))
+       {
+          retroarch_ctl(RARCH_CTL_SET_SHUTDOWN, NULL);
+          return;
+@@ -1679,7 +1686,8 @@
+       android_input_poll_main_cmd();
+ 
+    /* Check if we are exiting. */
+-   if (android_app->destroyRequested != 0)
++   if (android_app->destroyRequested != 0 ||
++          __atomic_load_n(&android_app->stationQuitRequested, __ATOMIC_ACQUIRE))
+    {
+       retroarch_ctl(RARCH_CTL_SET_SHUTDOWN, NULL);
+       return false;
+--- a/runloop.c
++++ b/runloop.c
+@@ -7282,6 +7282,14 @@
+                audio_buf_active, audio_buf_occupancy, audio_buf_underrun);
+    }
+ 
++#if defined(ANDROID) && defined(HAVE_NETWORKING)
++   /* The recovery wait skips core_run(), which normally polls Android input.
++    * Drain/ack its input queue and lifecycle commands even while no emulated
++    * frame may run. The following state check also handles an explicit quit. */
++   if (station_recovery_waiting())
++      input_driver_poll();
++#endif
++
+    switch ((enum runloop_state_enum)runloop_check_state(
+             input_st, audio_st, video_st,
+             uico_st,
+--- a/network/netplay/netplay_frontend.c
++++ b/network/netplay/netplay_frontend.c
+@@ -9063,9 +9063,6 @@
+       /* We may have received data even if we're stalled,
+        * so run post-frame sync. */
+       netplay_sync_input_post_frame(netplay, true);
+-#ifdef ANDROID
+-      if(station_recovery_active() && netplay->stall==NETPLAY_STALL_RUNNING_FAST)station_recovery_mark_stalled();
+-#endif
+       return false;
+    }
+ 
