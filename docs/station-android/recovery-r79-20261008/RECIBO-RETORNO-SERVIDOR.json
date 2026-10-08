@@ -84,8 +84,8 @@
     },
     {
       "path": "docs/station-android/RETORNO-IMPLEMENTACAO-R79-SINOPSES-E-MULTIPLAYER-20261008.md",
-      "sha256": "a4ce7fb5aaa596a5be741fea81b602d08222a7cb79c9abe9665ed75e7d92a8c0",
-      "sizeBytes": 9870
+      "sha256": "7a1e171615a9d49a10c4dc2452904c2ca1bc8c3ecceeaa052eb68745f1cb0337",
+      "sizeBytes": 10154
     },
     {
       "path": "AGENTS.md",
@@ -108,6 +108,6 @@
       "sizeBytes": 1013
     }
   ],
-  "appLatestObservedCommit": "167c214a408e5a573ce0b1b61077104cf6878078",
-  "concurrentAppChange": "Dreamcast LED R80 visual candidate; no generated/installed APK, preserved in app return"
+  "appLatestObservedCommit": "1ef9384478e0f290db556961428d9162cc33d58e",
+  "concurrentAppChange": "Dreamcast effect archived for future use only; no next-APK integration without new user request; server return merged"
 }
