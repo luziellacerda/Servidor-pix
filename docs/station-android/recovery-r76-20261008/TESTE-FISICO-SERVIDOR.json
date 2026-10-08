@@ -1,0 +1,168 @@
+{
+  "collectionStartUtc": "2026-10-08T11:48:33.848987+00:00",
+  "collectionEndUtc": "2026-10-08T11:58:33.882926+00:00",
+  "collectionSamples": 120,
+  "gameStartUtc": "2026-10-08T11:50:28.851145+00:00",
+  "firstEndUtc": "2026-10-08T11:56:06.489941+00:00",
+  "gameSamples": 67,
+  "processChanged": false,
+  "lastReady": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    }
+  },
+  "runtimeMarkers": [],
+  "transportEnds": [
+    {
+      "utc": "2026-10-08T11:56:06.489941+00:00",
+      "utcMs": "1791460566488",
+      "generation": "3",
+      "streamEpoch": "2",
+      "role": "host",
+      "cause": "REQUEST_ABORT",
+      "closeCode": "(null)",
+      "exceptionType": "WebSocketException",
+      "hostHeartbeatAgeMs": "13358",
+      "clientHeartbeatAgeMs": "11483",
+      "acceptedBytes": "791027",
+      "deliveredBytes": "791027",
+      "pendingBytes": "0",
+      "state": "0",
+      "hostAcceptedBytes": "396539",
+      "hostDeliveredBytes": "396539",
+      "clientAcceptedBytes": "394488",
+      "clientDeliveredBytes": "394488"
+    },
+    {
+      "utc": "2026-10-08T11:56:08.896892+00:00",
+      "utcMs": "1791460568896",
+      "generation": "3",
+      "streamEpoch": "3",
+      "role": "client",
+      "cause": "REQUEST_ABORT",
+      "closeCode": "(null)",
+      "exceptionType": "WebSocketException",
+      "hostHeartbeatAgeMs": "-1",
+      "clientHeartbeatAgeMs": "-1",
+      "acceptedBytes": "791027",
+      "deliveredBytes": "791027",
+      "pendingBytes": "0",
+      "state": "0",
+      "hostAcceptedBytes": "396539",
+      "hostDeliveredBytes": "396539",
+      "clientAcceptedBytes": "394488",
+      "clientDeliveredBytes": "394488"
+    }
+  ],
+  "stationCpuPercentOfOneCore": {
+    "min": 1.1903477033059031,
+    "median": 15.270112720493689,
+    "max": 19.830900499480812
+  },
+  "hostIdlePercent": {
+    "min": 93.06329475639376,
+    "median": 97.63144752800171,
+    "max": 98.26972372543435
+  },
+  "nicRxMbps": {
+    "min": 0.10921678247372323,
+    "median": 0.275364549876931,
+    "max": 1.3007925336263215
+  },
+  "nicTxMbps": {
+    "min": 0.07879625656803757,
+    "median": 0.3487641555489379,
+    "max": 0.5350236174918541
+  },
+  "nicErrorsAndDropsDelta": {
+    "min": 0,
+    "median": 0,
+    "max": 0,
+    "sum": 0
+  },
+  "tcpRetransmittedSegmentsSystemDelta": {
+    "min": 0,
+    "median": 0,
+    "max": 4,
+    "sum": 9
+  },
+  "rssKiB": {
+    "min": 690000,
+    "median": 703020,
+    "max": 720556
+  },
+  "memAvailableKiB": {
+    "min": 39426684,
+    "median": 39545348,
+    "max": 39569404
+  },
+  "v2ConnectionsRange": [
+    0,
+    2
+  ],
+  "pendingBytesRange": [
+    0,
+    400
+  ],
+  "presence": {
+    "host": {
+      "count": 18,
+      "maxIntervalSeconds": 20.533454,
+      "firstUtc": "2026-10-08T11:50:29.779151+00:00",
+      "lastUtc": "2026-10-08T11:55:53.131263+00:00"
+    },
+    "client": {
+      "count": 18,
+      "maxIntervalSeconds": 20.87495,
+      "firstUtc": "2026-10-08T11:50:29.070525+00:00",
+      "lastUtc": "2026-10-08T11:55:55.006110+00:00"
+    }
+  },
+  "direction": "SERVER_TO_APP",
+  "readOnly": true,
+  "phoneVersion": "R76",
+  "humanGameplayReport": "Both played, with stutters; user closed games",
+  "physicalLongplayVerified": false,
+  "stutterCauseProven": false,
+  "perFrameServerHistoryAvailable": false,
+  "sampleIntervalNominalSeconds": 5,
+  "sharedHostNicMetrics": true,
+  "cloudflareOrPhoneRttMeasured": false,
+  "activeDllSourceCommit": "ab192bf1585e30f303d041f13b36a1f9c96d2caa",
+  "activeServicePid": 1278094,
+  "automaticRestarts": 0,
+  "candidate6f27Activated": false,
+  "postExitHttp429": {
+    "utc": "2026-10-08T11:56:30.409074+00:00",
+    "method": "POST",
+    "path": "/v1/station/online/events",
+    "bodyErrorCodeUnavailable": true
+  },
+  "serverChangesPerformed": false,
+  "phoneReceipts": {
+    "installation-motorola-r76.json": {
+      "repositoryCommit": "ec935a2231d1ca2230426ccdd39edc3692632b22",
+      "path": "versions/station-pump-wakeup-r76-20261008/evidence/installation-motorola-r76.json",
+      "sha256": "9c7c55108a891491338b977e271efb23ab27d2a9f60704a3a009de8bc43f6e49",
+      "completedOrCheckedUTC": "2026-10-08T11:44:14.642435+00:00"
+    },
+    "post-installation-motorola-r76.json": {
+      "repositoryCommit": "ec935a2231d1ca2230426ccdd39edc3692632b22",
+      "path": "versions/station-pump-wakeup-r76-20261008/evidence/post-installation-motorola-r76.json",
+      "sha256": "62d9eca13cbf9201d00e08c55d3d1cf334b993cbd1d1104cc0808c0552d70a29",
+      "completedOrCheckedUTC": "2026-10-08T11:45:47.342002+00:00"
+    }
+  }
+}
