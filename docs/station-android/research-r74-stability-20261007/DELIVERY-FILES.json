@@ -1,0 +1,51 @@
+{
+  "appCommit": "f3f2cc9d63fe4261921b07754d3f1255b5e31484",
+  "serverParent": "815ceaca49baa0feb1e2d61726c0346ddad2bd37",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 25745,
+      "sha256": "c6ac2b9412b4157d6327a02c49ad99140ae1b91e34169e6a9df43bf718b5b38e"
+    },
+    {
+      "path": "docs/station-android/AGENTS.md",
+      "bytes": 26779,
+      "sha256": "a2a9d8d6befa987a66e3ee9630cba25396871f08369f458e2c23c9fd3cec21b3"
+    },
+    {
+      "path": "docs/station-android/PEDIDO-ESTABILIDADE-R74-PESQUISA-20261007.md",
+      "bytes": 15782,
+      "sha256": "8f8de9b8aa0391b1bbb3e379e648f2ee917748853267613657ba0635aa086f48"
+    },
+    {
+      "path": "docs/station-android/README.md",
+      "bytes": 23130,
+      "sha256": "ece9d6fbf93d8447876d11df6b6a6d188ea12335e542622b65e7d3c447075050"
+    },
+    {
+      "path": "docs/station-android/research-r74-stability-20261007/PUMP-RACE-ANALYSIS.md",
+      "bytes": 6025,
+      "sha256": "98ffa7f398d821157148cd3139ccb1781be63340dc214eab717dbbe03ecf7dfa"
+    },
+    {
+      "path": "docs/station-android/research-r74-stability-20261007/PumpRaceProbe.java.in",
+      "bytes": 7176,
+      "sha256": "7b0856ae5030fb8a92f7753b50fd05303a39afabe8dd518023ae6c8aa9dfa7a5"
+    },
+    {
+      "path": "docs/station-android/research-r74-stability-20261007/pump-race-output.txt",
+      "bytes": 550,
+      "sha256": "f0efcf8d2188f0591827b47277ae4fd60948b9eee6da5709d42175ca27799890"
+    },
+    {
+      "path": "docs/station-android/research-r74-stability-20261007/pump-race-receipt.json",
+      "bytes": 1648,
+      "sha256": "12fef236ea241a65e097aaa683951380982088b4b451a55bb4cdc5d62b0d62d2"
+    },
+    {
+      "path": "docs/station-android/research-r74-stability-20261007/run_pump_probe.py",
+      "bytes": 5348,
+      "sha256": "2fa48130744c3d7cdb5338256775aedc0ebc3dfaeef5b15ca3d108806cd0c506"
+    }
+  ]
+}

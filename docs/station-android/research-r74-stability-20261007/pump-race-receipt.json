@@ -1,0 +1,37 @@
+{
+  "utc": "2026-10-08T00:55:34.574591+00:00",
+  "sourceTunnelSHA256": "8af5ceb585498512ff9ff4e1409a46ee2ed9dca9ee66bcb0c43bc11fa7817896",
+  "sourceWireSHA256": "cb7e83ee84c1297c91c23bc24c47f7eb34204ce8ffda933f71d4b27bbc418a20",
+  "extractedPumpSHA256": "dea1c5d83a191afe99c6f38bf93f0dd3c856e1bba787524d8bcb2cce086dadf8",
+  "extractedProducerSHA256": "9596f0cb34882a4d3b8dee3776b3e62dde1ffff0009cf5e055d206c6879b46dc",
+  "generatedProbeSHA256": "300af2a24afc030ca84c90bcecdda1dda7ca71779a4e930053bf0c0027640400",
+  "recipeSHA256": "2fa48130744c3d7cdb5338256775aedc0ebc3dfaeef5b15ca3d108806cd0c506",
+  "templateSHA256": "7b0856ae5030fb8a92f7753b50fd05303a39afabe8dd518023ae6c8aa9dfa7a5",
+  "testOnlySchedulingHook": "after frame==null decision, before return/finally; CountDownLatch",
+  "models": [
+    "WebSocket remote.send sink",
+    "nativeStatus=0",
+    "outQueue=0"
+  ],
+  "realCode": [
+    "extracted pump()",
+    "tx producer fragment",
+    "StationRecoveryWire with Bytes"
+  ],
+  "limitations": [
+    "No Android/network/server/phone",
+    "Does not measure real tick delay or prove physical disconnect causality",
+    "Candidate exists only inside generated host fixture"
+  ],
+  "metrics": {
+    "checks": 1764,
+    "controlledRaces": 128,
+    "baselineDeferredUntilNextSignal": 64,
+    "baselineBytesPreserved": 64,
+    "candidateSentWithoutNextTick": 64,
+    "networkUsed": false,
+    "phoneUsed": false
+  },
+  "compiler": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.20.101-hotspot\\bin\\javac.exe",
+  "javaRuntime": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.20.101-hotspot\\bin\\java.exe"
+}

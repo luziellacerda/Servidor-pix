@@ -1,3 +1,15 @@
+# Pesquisa de estabilidade R74 recebida do APP — 07/10/2026
+
+Ler `docs/station-android/PEDIDO-ESTABILIDADE-R74-PESQUISA-20261007.md`. Fonte app `f3f2cc9d63fe4261921b07754d3f1255b5e31484`. Pedido ao operador, não retorno nem deploy.
+Corrigir/coletar SRV-01 (epoch da primeira causa), SRV-02 (handshake Close)
+e SRV-03 (latência real DATA/PONG/filas); cruzar APP-01 e EXP-01.
+R74 instalada nos dois aparelhos; mantenedor relatou melhora, sem homologação
+prolongada. R75 visual candidata mantém runtime/DEX/engines R74, não pede novo
+cadastro de motor. Preservar todos os produtos, sessões, dados e segurança.
+Coordenar qualquer reinício pois a recuperação reside em RAM.
+
+## Histórico anterior
+
 # R73 ativa; partida iniciou e caiu; segunda abertura com tela preta — 07/10/2026
 
 Leia `docs/station-android/RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md` e `docs/station-android/recovery-r73-20261007/DIAGNOSTICO-TESTE-FISICO.json`.

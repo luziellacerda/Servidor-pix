@@ -1,3 +1,15 @@
+# Pesquisa de estabilidade R74 recebida do APP — 07/10/2026
+
+Ler `docs/station-android/PEDIDO-ESTABILIDADE-R74-PESQUISA-20261007.md`. Fonte app `f3f2cc9d63fe4261921b07754d3f1255b5e31484`. Pedido ao operador, não retorno nem deploy.
+Corrigir/coletar SRV-01 (epoch da primeira causa), SRV-02 (handshake Close)
+e SRV-03 (latência real DATA/PONG/filas); cruzar APP-01 e EXP-01.
+R74 instalada nos dois aparelhos; mantenedor relatou melhora, sem homologação
+prolongada. R75 visual candidata mantém runtime/DEX/engines R74, não pede novo
+cadastro de motor. Preservar todos os produtos, sessões, dados e segurança.
+Coordenar qualquer reinício pois a recuperação reside em RAM.
+
+## Histórico anterior
+
 # Estado R73 e diagnóstico da partida — 07/10/2026
 
 R73 cadastrada e ativa no servidor; oito motores assinados e185/190 verificações passaram. Dois Android instalaram APKb23ff3d1. O mantenedor confirmou ambos jogando Battletoads (Samsung host/Motorola guest), seguido de queda23:23:10UTC por falta de heartbeat autenticado do convidado. Segunda abertura23:32:26UTC sem host-listening/anexo até23:33:29; depois ambos pretos. Recuperação física e estabilidade pendentes.
