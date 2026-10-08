@@ -1,0 +1,102 @@
+{
+  "sourceRevision": "6f27c6ca176b80da734a0000d6f07f72a480e5ed",
+  "dllSha256": "71ba30b8ca4b363344facc6ff750be6886183d576ef0a0456b57086d3b83d14e",
+  "dotnetRuntime": "8.0.31",
+  "dotnetSdk": "8.0.131",
+  "build": "Release, warning-free",
+  "deployed": false,
+  "stateChecks": 91,
+  "observationChecks": 589,
+  "terminationChecks": 88,
+  "terminationFaultCases": [
+    {
+      "fault": "close",
+      "cause": "PEER_CLOSE",
+      "singleWriter": true
+    },
+    {
+      "fault": "close-in-flight",
+      "cause": "PEER_CLOSE",
+      "singleWriter": true
+    },
+    {
+      "fault": "close-timeout",
+      "cause": "PEER_CLOSE",
+      "singleWriter": true
+    },
+    {
+      "fault": "eof",
+      "cause": "RECEIVE_FAILURE",
+      "singleWriter": true
+    },
+    {
+      "fault": "receive-io",
+      "cause": "RECEIVE_FAILURE",
+      "singleWriter": true
+    },
+    {
+      "fault": "send-io",
+      "cause": "SEND_FAILURE",
+      "singleWriter": true
+    },
+    {
+      "fault": "request-cancel",
+      "cause": "REQUEST_ABORT",
+      "singleWriter": true
+    },
+    {
+      "fault": "close-cancel",
+      "cause": "PEER_CLOSE",
+      "singleWriter": true
+    },
+    {
+      "fault": "human-leave",
+      "cause": "ROOM_ENDED",
+      "singleWriter": true
+    }
+  ],
+  "benchmark": {
+    "scope": "Sequential loopback-independent stream operations; not throughput SLA or phone/game latency",
+    "iterationsPerTrial": 20000,
+    "withoutDiagnosticsUs": [
+      4.323270000000001,
+      1.906425,
+      2.0306349999999997,
+      1.918145,
+      2.05851
+    ],
+    "withDiagnosticsUs": [
+      6.339829999999999,
+      4.043444999999999,
+      2.81953,
+      2.904055,
+      2.8094449999999997
+    ],
+    "medianWithoutUs": 2.0306349999999997,
+    "medianWithUs": 2.904055
+  },
+  "realTls": {
+    "tracedFixturesPassedChecks": [
+      35,
+      36
+    ],
+    "normalClose1000Reply": true,
+    "authorizedResumeSameGeneration": true,
+    "epochBeforeDetach": 1,
+    "epochAfterDetach": 2,
+    "loggingDisabledFixture": "Handshake timeout, also reproduced with immediate fixture consumption",
+    "overallQualificationPassed": false,
+    "causeOfDifferenceIsolated": false,
+    "syntheticOnly": true
+  },
+  "configuredShadowQualificationComplete": false,
+  "publicCandidateQualificationComplete": false,
+  "nativeLinuxAuthenticationAttemptCancelledBeforeOperator": true,
+  "productionDllUnchanged": true,
+  "limitations": [
+    "Fault matrix uses simulated sockets",
+    "No phone or ROM execution",
+    "Sequential microbenchmark is not capacity or FPS",
+    "TLS discrepancy must be resolved before activation"
+  ]
+}

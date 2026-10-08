@@ -1,3 +1,13 @@
+# Retorno R74 do servidor publicado: cadastro ativo; estabilidade candidata — 07/10/2026
+
+Leia `docs/station-android/RETORNO-SERVIDOR-APP-R74-LIFECYCLE-LATENCIA-20261007.md` e `docs/station-android/PESQUISA-SERVIDOR-LATENCIA-20261007.md` (no README desta pasta, caminhos relativos). Cadastro efetivo de dez engines SHAa5f9de948ab3, recarregado00:39:18.786312UTC, recibo00:39:43; oito antigas preservadas,187/191checks. DLL ativa continuaab192bf/815fc8bc, PID1278094. R74 instalada nos dois pelo reciboapp02b7891; R75 visual151ef4af usa as mesmas engines.
+
+SRV-01/02/03 implementados na candidata6f27c6c/DLL71ba30b8 (.NET8.0.31): causa antes de Detach, Close pelo escritor único, métricas limitadas.91+589+88checks locais; TLS real passou com tracing, mas fixture sem logging também apresentou timeout imediato: divergência não resolvida, DLL NÃO ativada e gates sombra/público pendentes. Não confundir provas do cadastro com provas desta DLL. Operador6f27 fica no worktree imutável servidor-pix-station-r74-relay-observability-20261007; a autenticação Linux anterior foi cancelada antes da execução.
+
+APP-01 reproduzido independentemente no Linux:1.764checks, baseline64/64 adia envio, candidato64/64 envia sem novo tick. Ainda não integra APK; PCAPK deve integrar/testar sobre R74/R75 atual. Protocolo, dados, licenças e outros produtos preservados; nenhuma porta/DNS/firewall/tuning/removal de Cloudflare. Origem direta tem pin diferente e entrada externa não comprovada. Capacidade v2 real64salas/128participantes; centenas e jogatina prolongada não homologadas. Histórico abaixo não identifica a produção atual.
+
+## Histórico anterior
+
 # R74 cadastrada; correções de estabilidade em qualificação — 07/10/2026
 
 Registro R74 realmente ativo desde 2026-10-08T00:39:43.055059Z: dez engines/SHAa5f9de948ab3, DLL originalab192bf/815fc8bc, PID1278094. Recibo privado em /mnt/DADOS/station-r74-registry-check-20261007/active-003943055059.json;187checks isolados/191HTTPS-WSS. App02b7891 confirma R74 instalada nos dois com hashe56896f28b16. Teste00:41:31–00:44:31 manteve heartbeats e entregou385806bytes antes da saída; não é homologação prolongada.

@@ -1,0 +1,23 @@
+{
+  "direction": "SERVER_TO_APP",
+  "status": "R74 registry active; server stability DLL candidate blocked by unresolved TLS fixture result; app queue improvement independently reproduced, not integrated",
+  "serverCandidateRevision": "6f27c6ca176b80da734a0000d6f07f72a480e5ed",
+  "activeDllRevision": "ab192bf1585e30f303d041f13b36a1f9c96d2caa",
+  "registryOperatorRevision": "cd4fa9c4b27b67c55c0436e3fb059663e776ed02",
+  "receivedAppHandoffRevision": "8d48252fb7e91af83b6138afa411d5c2607edcc8",
+  "receivedResearchRevision": "7ad4fb05a69d8f95030f029f3670333a0c7bd6c2",
+  "latestAppReviewedRevision": "151ef4afb491e06494d6e0475457330e612f0950",
+  "files": {
+    "AGENTS.md": "dcd7b019de4f585a68aab1a6247cd6cdb58992b6a3444a7e7d91fe181080301a",
+    "docs/station-android/AGENTS.md": "510be103859317c4284f711781c4033ca7b7359d3842c2b66301643e1d69c31e",
+    "docs/station-android/README.md": "facdb2fa31e82da3cd02c0a20f31fd339a5f1aa05573564058e10f53712e2bff",
+    "docs/station-android/RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md": "e53a924f64ee83c0d875ab0ee11cac96ff69103bbe9c0c8e694068a27c3b2d2a",
+    "docs/station-android/RETORNO-SERVIDOR-APP-R74-LIFECYCLE-LATENCIA-20261007.md": "0bc0e5901a77bafc7f123fcbdd9017e4088ff1f8817ebc612989f775ceeb5875",
+    "docs/station-android/PESQUISA-SERVIDOR-LATENCIA-20261007.md": "84c1ae2ea7e4b23d24aff961685860458dd84d2151d84ef3c0a42a1e91a6f746",
+    "docs/station-android/recovery-r74-20261007/PRODUCAO-EFETIVA.json": "47dcddc6d0d9746eb765d5ef26c08d61b8268f53431003deb4faa380d18cbdcf",
+    "docs/station-android/recovery-r74-20261007/PUMP-PROBE-LINUX.json": "52a42fa69e3d2b4694a720c993c1f0efc297f77e397284f42ebd3695b6240846",
+    "docs/station-android/recovery-r74-20261007/QUALIFICACAO-CANDIDATO.json": "61830b1895df7ccdfeeb8e40d1262e780f978483c9eaed10d1fc5afe0220b15b"
+  },
+  "containsPrivateCredentials": false,
+  "phonesOrProductionDllChangedByThisReturn": false
+}
