@@ -1,3 +1,11 @@
+# Station R81 online ATIVO — 08/10/2026, 21:08 UTC
+
+Liberação expressa do mantenedor aplicada: todos os 1.816 jogos SNES/Mega compatíveis (835/981), MultiplayerEnabled=true, gate legado=false. DLL db50a98/cdf14b80, PID1536467/NRestarts0; rotas v3 HTTP/WSS protegidas publicadas. Catálogo27.864, v2/v1 309, v3 264 checks públicos passaram, fixtures limpas e zero sessões no fim. R76/dez engines, índice20, licenças/chaves/outros produtos preservados. Autorização de uso não equivale a homologação física de gameplay. Não bloquear novamente esperando recibos nem repetir implantação/aprovações. Atualizar APK não é requisito para esse cadastro. Respeitar salas v3 também antes de qualquer restart.
+
+Leia o estado atual em `docs/station-android/RETORNO-EXECUCAO-HANDOFF-R81-20261008.md`. Os blocos/rascunhos abaixo são históricos, inclusive os que dizem flagsfalse/zero aprovado.
+
+## Histórico anterior
+
 # Station R81: base publicada; controles ainda pendentes — 08/10/2026
 
 SERVIDOR → APP. Leia `docs/station-android/RETORNO-EXECUCAO-HANDOFF-R81-20261008.md` e `recovery-r81-20261008/`. Executado o handoff `2cd3571`: importador ativo e agendado substituído, 2.071 identidades reais qualificadas, duas varreduras idênticas. Índice20: 3.734 IDs, 3.479 visíveis, 255 compatíveis. IDs, sinopses, metadados, capas, artefatos e revisões individuais conservados.

@@ -1,3 +1,17 @@
+# Estado atual: online R81 liberado — 08/10/2026, 21:08 UTC
+
+O mantenedor autorizou explicitamente a liberação de **todos os jogos compatíveis**, substituindo a exigência documental de aprovação física prévia. Aplicado no Station às **21:07:53 UTC** (18:07:53 Maceió), conferência pública concluída às **21:08:56 UTC**: **1.816 jogos autorizados, 835 SNES e 981 Mega Drive**. Não limitar a Battletoads/Bomberman nem repetir uma ativação já concluída.
+
+- `MultiplayerEnabled=true`; `MultiplayerLegacyCapacityGate=false`. A obrigatoriedade de acoplar as flags foi removida; admissão e dez engines da R76 preservadas. V3 continua exigindo licença, sessão/prova, conteúdo/core/runtime/controlador exatos e ticket de uso único.
+- Fonte do binário `db50a980fcfe01a9b0fee65316f67f43c63ac11c`; DLL SHA256 `cdf14b8067de415413c503de787c6d621c6e8f0466eb2cdd7c0eced8b5a619af`; serviço `turborama-station-api.service`, PID **1536467**, NRestarts0. Release `/opt/turborama-station-online-r81-20261008-db50a98`; cadastro SHA256 `f3eb13fcb474edb5a1b549a3509aa47505765210b38d1f1dd81bc157b4ec555c`. Novas salas v3 também entram na telemetria local para impedir reinício durante jogo.
+- Publicadas as duas rotas protegidas `/v1/station/online/multiplayer/command` e `/v1/station/online/multiplayer/relay` no Nginx, com prova, Authorization, subprotocolo e Upgrade WSS. O caminho público `https://app.lzgames.com.br` funciona. Cloudflare/firewall preservados.
+- HTTPS/WSS: **27.864 checks de catálogo**, **309 v2/v1**, **264 v3** passaram; sala/entrada/Pronto/início, stream nos dois sentidos e retomada autorizada. SNES/Mega com2 e Bomberman com4 clientes sintéticos. Fixtures removidas; zero salas/conexões/budget no fim. São provas do servidor, não homologação de controles/gameplay Android.
+- Cadastro padrão de dois controles para todos os títulos SNES/Mega atuais. Super Bomberman2 USA mantém o modo Battle → Single Match/multitap, `[2,3,4]`. A autorização não inventa multiplayer dentro de um jogo individual nem adiciona motor online a outras plataformas do APK. Índice20, conteúdo, capas, sinopses, chaves/licenças/esquema e outros produtos preservados.
+
+**No app:** reabrir o catálogo e criar sala nova nos dois aparelhos; consultar capabilities autenticadas e usar o perfil assinado recebido. Nenhuma nova compilação do APK é necessária por esta liberação. `approved:true` agora significa liberação expressa para uso/teste; a qualificação física permanece um fato distinto. Os documentos/JSON abaixo registram a fase anterior e seus rascunhos `approved:false`, não o cadastro ativo.
+
+## Histórico da implantação anterior — v3 ainda desativado às 20:22 UTC
+
 # R81: catálogo e base do servidor publicados; aprovação dos controles pendente
 
 **SERVIDOR → APP**, execução solicitada do handoff `2cd3571919f54126f2bfe9576864a8d8329b9db3`. Este retorno contém implantação efetiva, catálogo completo, vínculos preparados e resultados sanitizados em [recovery-r81-20261008](recovery-r81-20261008/). O serviço atualizado conserva a admissão atual da R76. **A ativação online da R81 ainda está incompleta, inclusive para duas pessoas:** faltam perfis reais aprovados e continuidade qualificada antes de ligar o gate global. Nenhum perfil foi aprovado por ensaio sintético.
