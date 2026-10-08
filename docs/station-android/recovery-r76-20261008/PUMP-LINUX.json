@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-08T11:43:25.559823+00:00",
+  "baselineSHA256": "8af5ceb585498512ff9ff4e1409a46ee2ed9dca9ee66bcb0c43bc11fa7817896",
+  "candidateSHA256": "442c50840a280d4a5605e32a06873fa14a879285a959a6f2a0b5231e2204ede9",
+  "wireSHA256": "cb7e83ee84c1297c91c23bc24c47f7eb34204ce8ffda933f71d4b27bbc418a20",
+  "extractedMethods": {
+    "BaselinePump": "dea1c5d83a191afe99c6f38bf93f0dd3c856e1bba787524d8bcb2cce086dadf8",
+    "FixedPump": "f65c9dd65816610ca86161f024a0d774601bdfffa2381e825232f0e13a59de72"
+  },
+  "recipeSHA256": "4a580dca2b951b110de8ecda2aadb8f9e4ee023e7b46e8317cb011d0904357e6",
+  "templateSHA256": "a14f9760cda82a584ec42efde80e2baa5eff7dc2ea63fce5d0397a2860a874ce",
+  "generatedSHA256": "3bc769baddb4dc2007a9a11174328f23b4bbde2ce7a6cc59f757fe88c0a3d0c7",
+  "metrics": {
+    "checks": 1488,
+    "cases": 143,
+    "baselineDeferred": 64,
+    "fixedImmediate": 64,
+    "networkUsed": false,
+    "phoneUsed": false
+  },
+  "realCode": [
+    "pump method copied directly from pinned baseline and actual candidate",
+    "nativeInput producer fragment",
+    "TSR2 codec and bounded Bytes buffer"
+  ],
+  "models": [
+    "WebSocket send/queue/open state",
+    "listener/native status",
+    "transport lost/provide effects",
+    "controlled executor rejection"
+  ],
+  "hooks": [
+    "one CountDownLatch after empty decision and before finally, no algorithm substitutions"
+  ],
+  "limits": [
+    "No Android or network in this suite",
+    "Does not prove frequency or latency of physical gameplay",
+    "Transient rejecting executor retries only on next caller; real executor only rejects at shutdown"
+  ],
+  "platform": "Linux/JDK17 independent reproduction",
+  "productionChanged": false,
+  "sourceMatchesPublishedR76": true
+}

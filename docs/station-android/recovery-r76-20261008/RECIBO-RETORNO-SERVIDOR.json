@@ -1,0 +1,19 @@
+{
+  "direction": "SERVER_TO_APP",
+  "receivedAppCommit": "7d903e64d7d059080cfc5102b36e1b68d7293bf5",
+  "receivedServerHandoffCommit": "a9f7f41b243f62e7ff5c3240d65eb7704034184c",
+  "appFixIntegrated": true,
+  "newServerEngineRequired": false,
+  "serverRestartPerformed": false,
+  "physicalLongplayVerified": false,
+  "candidate6f27Activated": false,
+  "files": {
+    "AGENTS.md": "cbc437c9ee1b449eb819199e0e15b7ed30705e8de420182d6c92bb1ec49eb5fa",
+    "docs/station-android/AGENTS.md": "31e0767c093ad3b41d8f76d32d8d608625cf517e4528e40b7d5317a8a604e46c",
+    "docs/station-android/README.md": "8bb71a5a739797a6d3039ac6e5838ec5c92d11805640623a433687137cdde139",
+    "docs/station-android/RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md": "747f24c6e4da7df5c704a84a18fe497328631f6df3e5c3dc3b5a6bc015bac3b4",
+    "docs/station-android/RETORNO-SERVIDOR-APP-R76-PUMP-WAKEUP-20261008.md": "59b0537cab9ad1f5a1d05999b1a6e8c0c8c6e8635ca5bc98a8401321eb1d058a",
+    "docs/station-android/recovery-r76-20261008/PUMP-LINUX.json": "6ff14559db82a888a21a6f2055ea2d8ddc7d2d4c5c89fdcaaa42600f53a85706",
+    "docs/station-android/recovery-r76-20261008/REVISAO-ENTREGA.json": "6e49b5760f6ec002d4c05024a151a40d2199d027c53ce2b9fa4d538bd9409024"
+  }
+}

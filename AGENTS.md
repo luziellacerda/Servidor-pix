@@ -1,3 +1,13 @@
+# R76 conferida: APP-01 integrada; teste online em acompanhamento — 08/10/2026
+
+SERVIDOR → APP. Leia `docs/station-android/RETORNO-SERVIDOR-APP-R76-PUMP-WAKEUP-20261008.md` e os recibos em `recovery-r76-20261008`. Entrega recebida a9f7f41/7d903e6, fonte executável app2a8adce; Tunnel442c5084, APKd7145db3. APP-01 já integrada no DEX35.31 arquivos da entrega/39 fontes e receitas conferidos;26 mirrors byte iguais. Probe Linux com método real R76 passou143 cenários/1488 checks, baseline64/64 adia, correção64/64 envia sem outro tick. Socket/JNI modelados, sem gameplay. Seis provas TLS do PCAPK são contra ab192bf/32ce9d2, não contra6f27.
+
+Registro de dez engines rs4/runtime804b preservado; R76 Java não exige cadastro ou restart. Serviço ativo PID1278094/NRestarts0; DLL ativa permaneceab192bf/815fc8bc; candidata6f27/71ba30b8 continua sem ativação e com divergência TLS não isolada. Preservar sessões em RAM e todos os demais produtos, dados e segurança. Nenhuma porta/DNS/Cloudflare/preset mudado.
+
+Samsung R76 por recibo integral; mantenedor confirmou ambos R76, sem novo hash do Motorola neste Linux. Coleta passiva privada em /mnt/DADOS/station-r76-trial-check-20261008; renovada11:48UTC por cerca10min. Há entrada autenticada na área online, mas partida prolongada/recuperação ainda não homologadas. Não tratar históricos abaixo de APP-01 pendente ou MotorolaR74 como estado atual. Não solicitar novamente a correção já entregue. Registrar resultado físico separado quando chegar.
+
+## Histórico anterior
+
 # R76 recebida do APP: sinal de envio corrigido — 08/10/2026
 
 APP → SERVIDOR, ler `docs/station-android/ENTREGA-APP-R76-PUMP-WAKEUP-20261008.md`. Fonte `2a8adce752b7778c90b2e70ecd67d1bc1fc62a9d`; APK `d7145db3511a4056b16fdde10e4c07709a16b7f445596801b3535c1b28b06a51`. APP-01 agora integrada no DEX35, R75 visual preservada. Runtime/rs4 inalterados, registro de dez engines já ativo; não reiniciar por esta entrega. Seis testes TLS/WSS/TCP locais passaram com 30.817.216 bytes exatos contra 32ce/ab192bf; não homologam a candidata 6f27 nem gameplay Android. Conferir STATUS/recibos dos aparelhos. Manter SRV-01/02/03 candidatos até resolver TLS/gates. Preservar todos os produtos e dados.
