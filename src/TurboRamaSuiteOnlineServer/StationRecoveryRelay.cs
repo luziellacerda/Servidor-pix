@@ -70,6 +70,8 @@ public sealed class StationStreamWindow(int capacity)
 
 public sealed class StationStreamSession(int windowBytes,bool observe=false)
 {
+    public sealed record Counters(long Epoch,long State,long Pending,long Accepted,long Delivered,int Connections,
+        long HostAccepted,long HostDelivered,long ClientAccepted,long ClientDelivered);
     public const long Waiting=0,Synchronizing=1,Playing=2,Unrecoverable=3;
     public sealed class Connection(string id)
     {
@@ -89,6 +91,7 @@ public sealed class StationStreamSession(int windowBytes,bool observe=false)
     private readonly StationRecoveryTransitions? transitions=observe?new():null;
     private readonly List<StationRecoveryConnectionObservation> observations=[];
     private long discardedObservations;
+    private readonly Queue<object> terminations=[];private long discardedTerminations;
     private static TaskCompletionSource NewPulse()=>new(TaskCreationOptions.RunContinuationsAsynchronously);
     private void Changed(){var old=pulse;pulse=NewPulse();old.TrySetResult();}
     private static int Side(bool host)=>host?0:1;
@@ -117,6 +120,11 @@ public sealed class StationStreamSession(int windowBytes,bool observe=false)
     {lock(gate)return(epoch,state,windows.Sum(w=>w.Pending),windows.Sum(w=>w.Accepted),windows.Sum(w=>w.Delivered),connections.Count(c=>c is not null));}
     public (long HostAccepted,long HostDelivered,long ClientAccepted,long ClientDelivered) Directional()
     {lock(gate)return(windows[0].Accepted,windows[0].Delivered,windows[1].Accepted,windows[1].Delivered);}
+    public Counters CaptureCounters()
+    {lock(gate)return new(epoch,state,windows.Sum(w=>w.Pending),windows.Sum(w=>w.Accepted),windows.Sum(w=>w.Delivered),
+        connections.Count(c=>c is not null),windows[0].Accepted,windows[0].Delivered,windows[1].Accepted,windows[1].Delivered);}
+    public void ObserveTermination(object value)
+    {if(!observe)return;lock(gate){if(terminations.Count==8){terminations.Dequeue();discardedTerminations++;}terminations.Enqueue(value);}}
     public void Receive(bool host,Connection c,StationStreamFrame frame,long receivedAt=0)
     {
         if(observe&&receivedAt==0)receivedAt=Stopwatch.GetTimestamp();
@@ -187,6 +195,7 @@ public sealed class StationStreamSession(int windowBytes,bool observe=false)
             }
             if(observe&&frame is {} selected){var source=selected.Type==StationStreamFrame.DataPacket?
                 observations.LastOrDefault(o=>o.Host!=host&&o.OldestSampleAt(selected.Offset,selected.Offset+selected.Data.Length)!=0):null;
+                c.Observation?.SelectedControl(selected.Type,c.Hello&&c.Sent<incoming.Accepted);
                 c.Observation?.Selected(selected,lockedAt,waitingAt,source);}
             return(frame,pulse.Task);}
     }
@@ -196,7 +205,8 @@ public sealed class StationStreamSession(int windowBytes,bool observe=false)
             clientAccepted=windows[1].Accepted,clientDelivered=windows[1].Delivered,hostPending=windows[0].Pending,clientPending=windows[1].Pending,
             availableHostWriterBytes=connections[0] is {} h?windows[1].Accepted-h.Sent:0,availableClientWriterBytes=connections[1] is {} c?windows[0].Accepted-c.Sent:0,
             pendingHostPong=connections[0]?.Pong>=0,pendingClientPong=connections[1]?.Pong>=0,discardedObservations,
-            connectionObservationLimit=8,transitions=transitions?.Snapshot(),connections=observations.Select(o=>o.Snapshot(windows[o.Host?0:1].Delivered,windows[o.Host?0:1].Accepted)).ToArray()};
+            connectionObservationLimit=8,terminationLimit=8,discardedTerminations,terminations=terminations.ToArray(),
+            transitions=transitions?.Snapshot(),connections=observations.Select(o=>o.Snapshot(windows[o.Host?0:1].Delivered,windows[o.Host?0:1].Accepted)).ToArray()};
     }
 }
 
@@ -209,18 +219,21 @@ public sealed class StationRecoveryRelay(StationOnline hub,IStationOnlineAccess 
     {public string Reference {get;}=Guid.NewGuid().ToString("N")[..12];}
     private readonly object gate=new();private readonly Dictionary<string,Match> matches=[];
     private readonly Queue<object> completedObservations=[];private long discardedCompletedObservations;
+    private readonly Queue<object> recentTerminations=[];private long discardedRecentTerminations;
     public object Snapshot(){lock(gate)return new{protocol="station-stream.v2",maximumRooms,windowBytes,
         retainedRooms=matches.Count,activeConnections=matches.Values.Sum(m=>m.Stream.Snapshot().Connections),
         pendingBytes=matches.Values.Sum(m=>m.Stream.Snapshot().Pending),
         maximumRetainedBytes=(long)maximumRooms*windowBytes*2,persistent=false};}
     public object Diagnostics()
     {
-        Match[] active;object[] completed;long discarded;
-        lock(gate){active=matches.Values.ToArray();completed=completedObservations.ToArray();discarded=discardedCompletedObservations;}
+        Match[] active;object[] completed,ends;long discarded,discardedEnds;
+        lock(gate){active=matches.Values.ToArray();completed=completedObservations.ToArray();discarded=discardedCompletedObservations;
+            ends=recentTerminations.ToArray();discardedEnds=discardedRecentTerminations;}
         var gc=GC.GetGCMemoryInfo();using var process=Process.GetCurrentProcess();ThreadPool.GetAvailableThreads(out int workers,out int io);
         return new {version=1,utc=DateTimeOffset.UtcNow,monotonicFrequency=Stopwatch.Frequency,enabled=observe,persistent=false,
             active=active.Select(m=>new {reference=m.Reference,generation=m.Lease.Generation,stream=m.Stream.Diagnostics()}).ToArray(),
             completedRoomLimit=8,discardedCompletedObservations=discarded,completed,
+            recentTerminationLimit=16,discardedRecentTerminations=discardedEnds,recentTerminations=ends,
             runtime=new {threadPoolThreads=ThreadPool.ThreadCount,threadPoolPendingWorkItems=ThreadPool.PendingWorkItemCount,
                 threadPoolCompletedWorkItems=ThreadPool.CompletedWorkItemCount,availableWorkers=workers,availableIo=io,
                 managedHeapBytes=GC.GetTotalMemory(false),allocatedBytes=GC.GetTotalAllocatedBytes(false),
@@ -239,11 +252,17 @@ public sealed class StationRecoveryRelay(StationOnline hub,IStationOnlineAccess 
             if(match.Lease.Generation!=lease.Generation)throw new OnlineFailure(409,"STATION_RECOVERY_GENERATION_MISMATCH");
         }
         var c=match.Stream.Attach(lease.Host,lease.AttachmentId!);
-        using var stop=CancellationTokenSource.CreateLinkedTokenSource(aborted,c.Stop.Token);
+        using var closeDeadline=new CancellationTokenSource();
+        using var stop=CancellationTokenSource.CreateLinkedTokenSource(aborted,c.Stop.Token,closeDeadline.Token);
+        var closeRequested=new TaskCompletionSource<(WebSocketCloseStatus Code,string Description)>(TaskCreationOptions.RunContinuationsAsynchronously);
+        var closeReplied=new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+        bool gracefulClose=false;
         string reason="TRANSPORT_CLOSED",exceptionType="none";int? closeCode=null;long firstUtc=0;
+        long firstObservedAt=0,firstCapturedAt=0;StationStreamSession.Counters? firstCounters=null;
         object endGate=new();
-        void First(string category,Exception? error=null,int? code=null){lock(endGate){if(firstUtc!=0)return;
-            firstUtc=DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();reason=category;exceptionType=error?.GetType().Name??"none";closeCode=code;}}
+        void First(string category,Exception? error=null,int? code=null){long detected=Stopwatch.GetTimestamp();long utc=DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+            lock(endGate){if(firstUtc!=0)return;firstCounters=match.Stream.CaptureCounters();firstCapturedAt=Stopwatch.GetTimestamp();
+                firstObservedAt=detected;firstUtc=utc;reason=category;exceptionType=error?.GetType().Name??"none";closeCode=code;}}
         Task send=Send(),watch=Watch();
         try{
             byte[] buffer=new byte[StationStreamFrame.HeaderBytes+StationStreamFrame.MaximumDataBytes];
@@ -251,7 +270,11 @@ public sealed class StationRecoveryRelay(StationOnline hub,IStationOnlineAccess 
                 int count=0;ValueWebSocketReceiveResult read;
                 do{
                     read=await socket.ReceiveAsync(buffer.AsMemory(count),stop.Token);
-                    if(read.MessageType==WebSocketMessageType.Close){First("PEER_CLOSE",code:(int?)socket.CloseStatus);return;}
+                    if(read.MessageType==WebSocketMessageType.Close){
+                        First("PEER_CLOSE",code:(int?)socket.CloseStatus);
+                        closeRequested.TrySetResult((socket.CloseStatus??WebSocketCloseStatus.Empty,socket.CloseStatusDescription??""));
+                        closeDeadline.CancelAfter(TimeSpan.FromSeconds(2)); // Only closing handshake, never a gameplay timeout.
+                        gracefulClose=await closeReplied.Task.WaitAsync(closeDeadline.Token);return;}
                     if(read.MessageType!=WebSocketMessageType.Binary||count+read.Count>buffer.Length||!read.EndOfMessage&&count+read.Count==buffer.Length)
                         throw new OnlineFailure(400,"STATION_RECOVERY_FRAME_INVALID");
                     count+=read.Count;
@@ -262,30 +285,49 @@ public sealed class StationRecoveryRelay(StationOnline hub,IStationOnlineAccess 
             }
         }
         catch(OnlineFailure e){First(e.Code,e);hub.RecoveryState(lease,"unrecoverable");match.Stream.End();}
-        catch(Exception e)when(e is OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){First(aborted.IsCancellationRequested?"REQUEST_ABORT":"TRANSPORT_EXCEPTION",e);}
+        catch(Exception e)when(e is OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){
+            First(aborted.IsCancellationRequested?"REQUEST_ABORT":c.Stop.IsCancellationRequested?"ROOM_ENDED":"RECEIVE_FAILURE",e);}
         finally{
             First("TRANSPORT_CLOSED");
-            stop.Cancel();socket.Abort();match.Stream.Detach(lease.Host,c);hub.CloseRelay(lease);
+            stop.Cancel();if(!gracefulClose)socket.Abort();match.Stream.Detach(lease.Host,c);hub.CloseRelay(lease);
             var ages=hub.RelayPresence(lease);var stats=match.Stream.Snapshot();
             var directions=match.Stream.Directional();
-            logger.LogInformation("Station recovery event=first-transport-end utcMs={UtcMs} correlation={Correlation} generation={Generation} streamEpoch={Epoch} attachment={Attachment} role={Role} cause={Cause} closeCode={CloseCode} exceptionType={ExceptionType} hostHeartbeatAgeMs={HostAge} clientHeartbeatAgeMs={ClientAge} acceptedBytes={Accepted} deliveredBytes={Delivered} pendingBytes={Pending} state={State} hostAcceptedBytes={HostAccepted} hostDeliveredBytes={HostDelivered} clientAcceptedBytes={ClientAccepted} clientDeliveredBytes={ClientDelivered}",
-                firstUtc,lease.Correlation,lease.Generation,stats.Epoch,lease.AttachmentId,lease.Host?"host":"client",reason,closeCode,exceptionType,ages.HostAgeMs,ages.ClientAgeMs,stats.Accepted,stats.Delivered,stats.Pending,stats.State,directions.HostAccepted,directions.HostDelivered,directions.ClientAccepted,directions.ClientDelivered);
+            var first=firstCounters!;
+            var end=new {utcMs=firstUtc,firstObservedMonotonicTicks=firstObservedAt,firstCapturedMonotonicTicks=firstCapturedAt,
+                role=lease.Host?"host":"client",cause=reason,closeCode,exceptionType,epochAtFirstCause=first.Epoch,stateAtFirstCause=first.State,
+                acceptedAtFirstCause=first.Accepted,deliveredAtFirstCause=first.Delivered,pendingAtFirstCause=first.Pending,
+                hostAcceptedAtFirstCause=first.HostAccepted,hostDeliveredAtFirstCause=first.HostDelivered,
+                clientAcceptedAtFirstCause=first.ClientAccepted,clientDeliveredAtFirstCause=first.ClientDelivered,
+                epochAfterDetach=stats.Epoch,stateAfterDetach=stats.State,gracefulClose,
+                closeReplyDeadlineMs=2000,elapsedFirstCauseToDetachMs=Stopwatch.GetElapsedTime(firstObservedAt).TotalMilliseconds};
+            match.Stream.ObserveTermination(end);
+            if(observe)lock(gate){if(recentTerminations.Count==16){recentTerminations.Dequeue();discardedRecentTerminations++;}
+                recentTerminations.Enqueue(new{reference=match.Reference,generation=lease.Generation,termination=end});}
+            logger.LogInformation("Station recovery event=first-transport-end utcMs={UtcMs} correlation={Correlation} generation={Generation} streamEpoch={Epoch} attachment={Attachment} role={Role} cause={Cause} closeCode={CloseCode} exceptionType={ExceptionType} hostHeartbeatAgeMs={HostAge} clientHeartbeatAgeMs={ClientAge} acceptedBytes={Accepted} deliveredBytes={Delivered} pendingBytes={Pending} state={State} hostAcceptedBytes={HostAccepted} hostDeliveredBytes={HostDelivered} clientAcceptedBytes={ClientAccepted} clientDeliveredBytes={ClientDelivered} epochAtFirstCause={FirstEpoch} epochAfterDetach={AfterEpoch} stateAtFirstCause={FirstState} acceptedAtFirstCause={FirstAccepted} deliveredAtFirstCause={FirstDelivered} pendingAtFirstCause={FirstPending} firstObservedMonotonicTicks={FirstObserved} firstCapturedMonotonicTicks={FirstCaptured} gracefulClose={GracefulClose} elapsedFirstCauseToDetachMs={DetachMs}",
+                firstUtc,lease.Correlation,lease.Generation,stats.Epoch,lease.AttachmentId,lease.Host?"host":"client",reason,closeCode,exceptionType,ages.HostAgeMs,ages.ClientAgeMs,stats.Accepted,stats.Delivered,stats.Pending,stats.State,directions.HostAccepted,directions.HostDelivered,directions.ClientAccepted,directions.ClientDelivered,
+                first.Epoch,stats.Epoch,first.State,first.Accepted,first.Delivered,first.Pending,firstObservedAt,firstCapturedAt,gracefulClose,end.elapsedFirstCauseToDetachMs);
             try{await Task.WhenAll(send,watch);}catch(Exception e)when(e is OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){}
             c.Stop.Dispose();
         }
-        void PublishState()=>hub.RecoveryState(lease,match.Stream.CurrentState switch{
-            StationStreamSession.Playing=>"playing",StationStreamSession.Synchronizing=>"synchronizing",
-            StationStreamSession.Unrecoverable=>"unrecoverable",_=>"waiting-reconnect"});
+        void PublishState(){long started=c.Observation is not null?Stopwatch.GetTimestamp():0;
+            hub.RecoveryState(lease,match.Stream.CurrentState switch{
+                StationStreamSession.Playing=>"playing",StationStreamSession.Synchronizing=>"synchronizing",
+                StationStreamSession.Unrecoverable=>"unrecoverable",_=>"waiting-reconnect"});c.Observation?.PublishedState(started);}
         async Task Send(){try{
-            while(!stop.IsCancellationRequested){var next=match.Stream.Next(lease.Host,c);
+            while(!stop.IsCancellationRequested){
+                if(closeRequested.Task.IsCompletedSuccessfully){var close=await closeRequested.Task;
+                    await socket.CloseOutputAsync(close.Code,close.Description,stop.Token);closeReplied.TrySetResult(true);return;}
+                var next=match.Stream.Next(lease.Host,c);
                 if(next.Frame is {} frame){var encoded=frame.Encode();long sendingAt=c.Observation?.Sending(frame)??0;bool succeeded=false;
                     try{await socket.SendAsync(encoded.AsMemory(),WebSocketMessageType.Binary,true,stop.Token);succeeded=true;}
                     finally{c.Observation?.Sent(frame,sendingAt,succeeded);}continue;}
-                await next.Changed.WaitAsync(stop.Token);
+                await Task.WhenAny(next.Changed,closeRequested.Task).WaitAsync(stop.Token);
             }
-        }catch(Exception e)when(e is OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){if(!stop.IsCancellationRequested){First("SEND_FAILURE",e);stop.Cancel();}}}
+        }catch(Exception e)when(e is OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){if(!stop.IsCancellationRequested){First("SEND_FAILURE",e);stop.Cancel();}}
+        finally{closeReplied.TrySetResult(false);}}
         async Task Watch(){try{
             while(!stop.IsCancellationRequested){
+                if(closeRequested.Task.IsCompleted)return;
                 if(!hub.RelayCurrent(lease)){First("LEASE_INVALIDATED");stop.Cancel();return;}
                 var ages=hub.RelayPresence(lease);
                 if((lease.Host?ages.HostAgeMs:ages.ClientAgeMs)>=60000){First("AUTH_HEARTBEAT_MISSING");stop.Cancel();return;}

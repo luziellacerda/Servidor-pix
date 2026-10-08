@@ -38,6 +38,7 @@ public sealed class StationRecoveryConnectionObservation(bool host)
     private int head,sampleCount;
     private long acceptedFrameCount,discardedSamples,matchedSelections;
     private long selectedAt,selectedReceivedAt,pingReceivedAt,inFlight,completedSends,failedSends;
+    private long controlsBeforeData,maximumControlsBeforeData;private readonly Histogram publishStateTiming=new();
     public string Reference {get;}=Guid.NewGuid().ToString("N")[..12];
     public bool Host {get;}=host;
     public static long Stamp()=>Stopwatch.GetTimestamp();
@@ -59,6 +60,10 @@ public sealed class StationRecoveryConnectionObservation(bool host)
         return 0;
     }
     public void PingReceived(long at)=>pingReceivedAt=at;
+    public void SelectedControl(byte type,bool dataAvailable)
+    {if(type==StationStreamFrame.DataPacket||!dataAvailable)controlsBeforeData=0;
+        else{controlsBeforeData++;maximumControlsBeforeData=Math.Max(maximumControlsBeforeData,controlsBeforeData);}}
+    public void PublishedState(long begin)=>publishStateTiming.Add(Stamp()-begin);
     public void Selected(StationStreamFrame frame,long lockedAt,long waitingAt,StationRecoveryConnectionObservation? source)
     {
         long at=Stamp();selectedAt=at;
@@ -81,6 +86,8 @@ public sealed class StationRecoveryConnectionObservation(bool host)
         return new {reference=Reference,role=Host?"host":"client",phases=result,dataSamplingStride=16,dataSampleCapacity=samples.Length,
             acceptedDataFrames=acceptedFrameCount,retainedDataSamples=sampleCount,discardedDataSamples=discardedSamples,matchedSelections,
             oldestSampledPendingByteAgeMs=oldest==0?(double?)null:(Stamp()-oldest)*1000.0/Stopwatch.Frequency,
+            consecutiveControlsWhileDataQueued=controlsBeforeData,maximumConsecutiveControlsWhileDataQueued=maximumControlsBeforeData,
+            publishStateCall=publishStateTiming.Snapshot(),
             writerInFlightFrames=Volatile.Read(ref inFlight),completedSendAttempts=Volatile.Read(ref completedSends),failedSendAttempts=Volatile.Read(ref failedSends)};
     }
 }
