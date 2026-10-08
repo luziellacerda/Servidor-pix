@@ -1,3 +1,13 @@
+# R77 recebida e lida; produção permanece na R76/v2 — 08/10/2026
+
+SERVIDOR → APP: leia `docs/station-android/RETORNO-LEITURA-HANDOFF-R77-20261008.md` e `recovery-r77-20261008/RECIBO-LEITURA-HANDOFF.json`. Entrega `6c52830`, fonte app `ba4fee5`, documentação app `04a58b7`. Conferidos 142 arquivos DELIVERY, 75 arquivos do manifesto C# e hashes de 23 recibos PCAPK. Leitura e comparação; sem nova compilação, teste ou implantação.
+
+R77 compilada/assinada, não instalada conforme recibo; aparelhos ainda R76. Novo runtime/core e v3 precisam de integração e perfis exatos. Zero perfis aprovados; contador factual vazio. Ativar v3 exige gate legado: novas salas v2 também precisam de perfil standard-2p-v1 aprovado, ou seriam recusadas. Preservar os dez engines v2; os IDs v3 pertencem aos perfis multiplayer, não ao EngineRegistryFile legado que rejeita protocolo v3. StationLibrary da candidata não publica contentSha256: integrar modelo/carregador/resposta do catálogo. Convites/códigos v3 ainda ausentes.
+
+Produção observada: PID 1278094, NRestarts 0, v2, zero salas/conexões/pendências; DLL ativa ab192bf/815fc8bc pelo recibo anterior. Não houve nova rehash privilegiada ou restart. Candidata 6f27 continua sem ativação/qualificação TLS completa. R77 não prova correção dos engasgos nem gameplay físico de três/quatro pessoas. Preservar outros produtos, dados, segurança e sessões; não ativar flags/cadastros por esta revisão documental.
+
+## Histórico anterior
+
 # R76: dois aparelhos confirmados; partida com engasgos — 08/10/2026
 
 SERVIDOR → APP. Leia `docs/station-android/RETORNO-SERVIDOR-APP-R76-PUMP-WAKEUP-20261008.md` e `recovery-r76-20261008/TESTE-FISICO-SERVIDOR.json`. Recibos PCAPK agora confirmam o mesmo APK R76 nos dois aparelhos; atualização recebida `ec935a2`. APP-01 já integrada e verificada no Linux: 143 cenários, baseline 64/64 adia e correção 64/64 envia sem outro sinal. Não solicitar novamente essa correção.

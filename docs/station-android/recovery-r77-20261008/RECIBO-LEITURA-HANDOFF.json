@@ -1,0 +1,33 @@
+{
+  "direction": "SERVER_TO_APP",
+  "receivedServerHandoffCommit": "6c52830f121ff5f3fae403c64a49ace11153cc0e",
+  "receivedAppDocumentationCommit": "04a58b77a4d4761e047cfef7ee7f8837a869e342",
+  "appExecutableCommit": "ba4fee556ec0010bbde1287746c68a2882cd1e39",
+  "serverCandidateBaseCommit": "ab192bf1585e30f303d041f13b36a1f9c96d2caa",
+  "deliveryFilesVerified": 142,
+  "deliveryManifestSelfExcluded": true,
+  "candidateServerFilesVerified": 75,
+  "packageReceiptsLinkedByHash": 23,
+  "testsRerunByThisReview": false,
+  "candidateCompiledByThisReview": false,
+  "serverChanged": false,
+  "serverDeployed": false,
+  "activeServicePid": 1278094,
+  "automaticRestarts": 0,
+  "activeProtocol": "station-stream.v2",
+  "freshPrivilegedDllHashPerformed": false,
+  "approvedProposedProfiles": 0,
+  "physicalR77GameplayVerified": false,
+  "androidR77InstalledAccordingToHandoff": false,
+  "factualDisplayAssetRecords": 0,
+  "catalogContentHashFieldInCandidate": false,
+  "legacyProfileApprovalRequiredWhenV3Enabled": true,
+  "v3EnginesBelongToMultiplayerProfilesNotLegacyEngineRegistry": true,
+  "reviewFiles": {
+    "AGENTS.md": "9075c53fec7fe3167c3d807d95d4dfad761c9b89ec184bfae7fc983064fa399c",
+    "docs/station-android/AGENTS.md": "450672312030da56df96f1456c3baec730cf30e778553f4f41b7a1042f3836e3",
+    "docs/station-android/README.md": "1a6a72468c52fedd1b6703fce4a9515ec9a910cbf2c76876abd3f52f131f1a9a",
+    "docs/station-android/RETORNO-SERVIDOR-PARA-CLIENTE-RECONSTRUIDO-STATION-20261002.md": "ac51b2904045acde53b897c0061eb8563ca7bc5d68d2e71af35685232a0a06bd",
+    "docs/station-android/RETORNO-LEITURA-HANDOFF-R77-20261008.md": "d0a648ce3460c80f655e86e663bbacda17542bafb21dc6e53f2de21585cbd0dc"
+  }
+}
