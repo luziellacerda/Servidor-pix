@@ -96,12 +96,26 @@ hot.Hub.ReplaceProfiles([altProfile,addedProfile]);
 var hotAfter=Json(hot.Hub.Command(hot.People[0],Cmd("snapshot",hotRoom,p:altProfile),security)).GetProperty("room");
 Check(hotAfter.GetProperty("roomId").GetString()==hotRoom.GetProperty("roomId").GetString()&&hotAfter.GetProperty("generation").GetInt64()==hotRoom.GetProperty("generation").GetInt64(),"registry reload preserves frozen room and generation");
 Check(reserved>0&&hot.Budget.UsedBytes==reserved,"registry reload preserves replay budget");
+string hotLink=hotRoom.GetProperty("links")[0].GetProperty("linkId").GetString()!;
+foreach(var person in hot.People){
+    var grant=Json(hot.Hub.Command(person,Cmd("ticket",hotRoom,link:hotLink,p:altProfile),security)).GetProperty("ticket");
+    Check(grant.GetProperty("ticket").GetString()!.Length>16,"registry reload preserves ticket issuance for both peers");
+}
+hot.Hub.ReplaceProfiles([altProfile,addedProfile]);
+Check(Json(hot.Hub.Command(hot.People[1],Cmd("resume",hotRoom,link:hotLink,p:altProfile),security)).GetProperty("ticket").ValueKind==JsonValueKind.Object,"a second deserialized reload preserves reconnect");
 var newGame=Json(hot.Hub.Command(new("new-game","new-game"),Cmd("create",capacity:2,p:addedProfile),security)).GetProperty("room");
 Check(newGame.GetProperty("itemId").GetString()==addedProfile.ItemId,"new registry game available without restart");
 Denied(()=>hot.Hub.ReplaceProfiles([altProfile,altProfile]),"STATION_MULTIPLAYER_PROFILE_AMBIGUOUS");
 Check(Json(hot.Hub.Command(hot.People[0],Cmd("snapshot",hotRoom,p:altProfile),security)).GetProperty("room").GetProperty("roomId").GetString()==hotRoom.GetProperty("roomId").GetString()&&hot.Budget.UsedBytes==reserved,"invalid replacement retains active room and registry");
 hot.Hub.Command(hot.People[0],Cmd("leave",hotRoom,p:altProfile),security);
 hot.Hub.Command(new("new-game","new-game"),Cmd("leave",newGame,p:addedProfile),security);
+var lobby=Make(1,capacity:2,profile:altProfile);
+lobby.Hub.ReplaceProfiles([altProfile,addedProfile]);
+var joinedAfterReload=Json(lobby.Hub.Command(new("reload-guest","reload-guest"),Cmd("join",lobby.Room,p:altProfile),security)).GetProperty("room");
+Check(joinedAfterReload.GetProperty("players").GetInt32()==2,"registry reload preserves join to an existing lobby");
+lobby.Hub.ReplaceProfiles([altProfile with{Approved=false},addedProfile]);
+Denied(()=>lobby.Hub.Command(lobby.People[0],Cmd("ready",joinedAfterReload,value:true,p:altProfile),security),"STATION_MULTIPLAYER_PROFILE_UNAPPROVED");
+lobby.Hub.Command(lobby.People[0],Cmd("leave",joinedAfterReload,p:altProfile),security);
 string profileDirectory=Path.Combine(Path.GetTempPath(),"station-profile-reload-"+Guid.NewGuid().ToString("N"));
 Directory.CreateDirectory(profileDirectory);
 try{

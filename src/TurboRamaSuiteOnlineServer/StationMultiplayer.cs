@@ -98,8 +98,23 @@ public sealed class StationMultiplayer
     public void ReplaceProfiles(IEnumerable<StationMultiplayerProfile> entries)
     {
         var validated=new StationMultiplayer(entries,platform,budget,clock,currentContentHash);
-        lock(gate){profiles=validated.profiles;gameProfiles=validated.gameProfiles;revision++;}
+        lock(gate){
+            // Records contain arrays, whose default equality is by reference.
+            // Reuse unchanged immutable records so existing room bindings remain
+            // equal after JSON deserialization and defensive array copying.
+            foreach(var (key,next) in validated.profiles.ToArray())
+                if(profiles.TryGetValue(key,out var previous)&&SameProfile(previous,next))
+                    validated.profiles[key]=previous;
+            profiles=validated.profiles;
+            gameProfiles=profiles.Values.GroupBy(p=>Key(p.ItemId,p.ContentSha256,p.EngineId,p.CoreSha256,p.RuntimeSha256)).ToDictionary(g=>g.Key,g=>g.ToArray());
+            revision++;
+        }
     }
+    private static bool SameProfile(StationMultiplayerProfile a,StationMultiplayerProfile b) =>
+        (a with{AllowedPlayerCounts=b.AllowedPlayerCounts,Instructions=b.Instructions,Sources=b.Sources})==b
+        &&a.AllowedPlayerCounts.SequenceEqual(b.AllowedPlayerCounts)
+        &&(a.Instructions is null?b.Instructions is null:b.Instructions is not null&&a.Instructions.SequenceEqual(b.Instructions))
+        &&(a.Sources is null?b.Sources is null:b.Sources is not null&&a.Sources.SequenceEqual(b.Sources));
     private static string Key(string? item,string? content,string? engine,string? core,string? runtime)=>string.Join('\n',item,content,engine,core,runtime);
     private static string ProfileKey(string? item,string? content,string? engine,string? core,string? runtime,string? profile,string? hash)=>Key(item,content,engine,core,runtime)+"\n"+profile+"\n"+hash;
     private static bool Text(string? value,int max)=>!string.IsNullOrWhiteSpace(value)&&value.Length<=max&&!value.Any(char.IsControl);
