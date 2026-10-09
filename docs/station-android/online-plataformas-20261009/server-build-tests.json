@@ -1,9 +1,9 @@
 {
   "compiled": true,
   "deployed": true,
-  "sourceCommit": "31fc7790f410c524c54a63e2cae15272b960e5ba",
-  "dllSha256": "e74fde53cbe65273d26b3576cb39b8d096dff476dff99409681cd2469b678007",
-  "checks": 1079,
+  "sourceCommit": "0a3df5f75700d4532d5801cf9dec6bf96ab5ebec",
+  "dllSha256": "25d98d65220e15de8ba4ee5e9e77e5ce66de9a04986ddfd924d42ca95f172e97",
+  "checks": 1084,
   "loopbackTlsChecks": 172,
   "v2Checks": 91,
   "v2ObservationChecks": 589,
@@ -23,5 +23,7 @@
     "replayReleasedAfterDetach": true,
     "scope": "synthetic in-process, not Android or WAN"
   },
-  "physicalAndroidGameplayQualified": false
+  "physicalAndroidGameplayQualified": false,
+  "profileReloadJoinAndTicketsAndResumeVerified": true,
+  "revokedProfileStillRejected": true
 }

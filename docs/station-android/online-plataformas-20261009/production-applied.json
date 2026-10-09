@@ -1,11 +1,11 @@
 {
   "applied": true,
-  "utc": "2026-10-09T17:04:31.845345+00:00",
+  "utc": "2026-10-09T17:25:34.997827+00:00",
   "reloadUtc": "2026-10-09T17:01:55.811112+00:00",
-  "pid": 1805466,
+  "pid": 1812555,
   "nRestarts": 0,
-  "sourceCommit": "31fc7790f410c524c54a63e2cae15272b960e5ba",
-  "dllSha256": "e74fde53cbe65273d26b3576cb39b8d096dff476dff99409681cd2469b678007",
+  "sourceCommit": "0a3df5f75700d4532d5801cf9dec6bf96ab5ebec",
+  "dllSha256": "25d98d65220e15de8ba4ee5e9e77e5ce66de9a04986ddfd924d42ca95f172e97",
   "catalogRevision": 27,
   "catalogItems": 3848,
   "catalogVisible": 3593,
@@ -1939,6 +1939,1293 @@
           "maximumRetainedBytes": 134217728
         }
       }
+    },
+    "profileReloadFix": {
+      "candidate": {
+        "catalog": {
+          "passed": true,
+          "checks": 35962,
+          "catalogRevision": 27,
+          "visibleItems": 3593,
+          "contentIdentityFields": 3593,
+          "metadataOptInVerified": true,
+          "allMetadataMatched": true,
+          "requestAndResponseSignaturesVerified": true,
+          "capabilities": [
+            {
+              "itemId": "826da6daebe9edbebffb3721f83abf12",
+              "status": 200,
+              "multiplayerVersion": 3,
+              "capability": "station-multiplayer.v3",
+              "approvedProfiles": 6,
+              "profiles": [
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "two-player",
+                  "allowedPlayerCounts": [
+                    2
+                  ],
+                  "modeTitle": null,
+                  "instructions": null,
+                  "sources": null
+                },
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-battlemaniacs-mode-a-20261008",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "two-player-a",
+                  "allowedPlayerCounts": [
+                    2
+                  ],
+                  "modeTitle": "Dupla com golpes entre parceiros",
+                  "instructions": [
+                    "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+                  ],
+                  "sources": [
+                    "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+                  ]
+                },
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-battlemaniacs-mode-b-20261008",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "two-player-b",
+                  "allowedPlayerCounts": [
+                    2
+                  ],
+                  "modeTitle": "Dupla sem golpes entre parceiros",
+                  "instructions": [
+                    "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+                  ],
+                  "sources": [
+                    "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+                  ]
+                },
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                  "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "two-player",
+                  "allowedPlayerCounts": [
+                    2
+                  ],
+                  "modeTitle": null,
+                  "instructions": null,
+                  "sources": null
+                },
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                  "profileId": "snes-battlemaniacs-mode-a-20261008",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "two-player-a",
+                  "allowedPlayerCounts": [
+                    2
+                  ],
+                  "modeTitle": "Dupla com golpes entre parceiros",
+                  "instructions": [
+                    "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+                  ],
+                  "sources": [
+                    "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+                  ]
+                },
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                  "profileId": "snes-battlemaniacs-mode-b-20261008",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "two-player-b",
+                  "allowedPlayerCounts": [
+                    2
+                  ],
+                  "modeTitle": "Dupla sem golpes entre parceiros",
+                  "instructions": [
+                    "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+                  ],
+                  "sources": [
+                    "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+                  ]
+                }
+              ]
+            },
+            {
+              "itemId": "ac79b8fc351cb0811a7e9b51a099ba9c",
+              "status": 200,
+              "multiplayerVersion": 3,
+              "capability": "station-multiplayer.v3",
+              "approvedProfiles": 0,
+              "profiles": []
+            },
+            {
+              "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+              "status": 200,
+              "multiplayerVersion": 3,
+              "capability": "station-multiplayer.v3",
+              "approvedProfiles": 6,
+              "profiles": [
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-sbomberman2-usa-battle-single-r77",
+                  "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+                  "maximumPlayers": 4,
+                  "approved": true,
+                  "controllerProfile": "snes-multitap-port2-v1",
+                  "mode": "battle-single",
+                  "allowedPlayerCounts": [
+                    2,
+                    3,
+                    4
+                  ],
+                  "modeTitle": null,
+                  "instructions": null,
+                  "sources": null
+                },
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-sbomberman2-normal-20261008",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 1,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "normal",
+                  "allowedPlayerCounts": [],
+                  "modeTitle": "Campanha solo",
+                  "instructions": [
+                    "Normal Game é individual e não deve criar sala."
+                  ],
+                  "sources": [
+                    "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+                  ]
+                },
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-sbomberman2-battle-team-20261008",
+                  "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+                  "maximumPlayers": 4,
+                  "approved": true,
+                  "controllerProfile": "snes-multitap-port2-v1",
+                  "mode": "battle-team",
+                  "allowedPlayerCounts": [
+                    2,
+                    3,
+                    4
+                  ],
+                  "modeTitle": "Battle: equipes",
+                  "instructions": [
+                    "Battle Game → Tag Match; configurar humanos e equipes no jogo.",
+                    "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+                  ],
+                  "sources": [
+                    "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+                  ]
+                },
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                  "profileId": "snes-sbomberman2-usa-battle-single-r77",
+                  "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+                  "maximumPlayers": 4,
+                  "approved": true,
+                  "controllerProfile": "snes-multitap-port2-v1",
+                  "mode": "battle-single",
+                  "allowedPlayerCounts": [
+                    2,
+                    3,
+                    4
+                  ],
+                  "modeTitle": "Battle: todos contra todos",
+                  "instructions": [
+                    "Battle Game → Single Match; pads participantes MAN; outros COM/OFF.",
+                    "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+                  ],
+                  "sources": [
+                    "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf",
+                    "https://docs.libretro.com/guides/netplay-multiple-controllers/"
+                  ]
+                },
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                  "profileId": "snes-sbomberman2-normal-20261008",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 1,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "normal",
+                  "allowedPlayerCounts": [],
+                  "modeTitle": "Campanha solo",
+                  "instructions": [
+                    "Normal Game é individual e não deve criar sala.",
+                    "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+                  ],
+                  "sources": [
+                    "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+                  ]
+                },
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                  "profileId": "snes-sbomberman2-battle-team-20261008",
+                  "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+                  "maximumPlayers": 4,
+                  "approved": true,
+                  "controllerProfile": "snes-multitap-port2-v1",
+                  "mode": "battle-team",
+                  "allowedPlayerCounts": [
+                    2,
+                    3,
+                    4
+                  ],
+                  "modeTitle": "Battle: equipes",
+                  "instructions": [
+                    "Battle Game → Tag Match; configurar humanos e equipes no jogo.",
+                    "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+                  ],
+                  "sources": [
+                    "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+                  ]
+                }
+              ]
+            }
+          ],
+          "public": false,
+          "physicalGameplayQualified": false,
+          "ownedSyntheticFixtureRemoved": true
+        },
+        "legacy": {
+          "passed": true,
+          "checks": 185,
+          "syntheticLicenses": 2,
+          "signedWindowsR74Engines": true,
+          "signedEngineIds": [
+            "bsnes-mercury-performance-79d7f9de",
+            "bsnes-mercury-performance-79d7f9de-autopass1",
+            "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+            "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+            "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+            "clownmdemu-d43c2708",
+            "clownmdemu-d43c2708-autopass1",
+            "clownmdemu-d43c2708-rs2-d66267cd4250",
+            "clownmdemu-d43c2708-rs3-9af2778898e4",
+            "clownmdemu-d43c2708-rs4-804b2acfea4c"
+          ],
+          "signedEngines": [
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "clownmdemu-d43c2708",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-autopass1",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-autopass1",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs2-d66267cd4250",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs3-9af2778898e4",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs4-804b2acfea4c",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+              "recoveryProtocol": "station-stream.v2"
+            }
+          ],
+          "signedTransports": [
+            "direct",
+            "relay-wss-v1",
+            "relay-wss-v2"
+          ],
+          "signedRecoveryCapabilities": [
+            "station-stream.v2"
+          ],
+          "signedRoomCapabilities": [
+            "short-invite-v1",
+            "own-room-member-profiles-v1"
+          ],
+          "legacyEngineIdsPreserved": true,
+          "exactForwardedBytes": 256,
+          "protectedV2Public": false,
+          "protectedResume": true,
+          "oneUseTickets": true,
+          "proofReplayDenied": true,
+          "ownRoomProfilesSigned": true,
+          "legacyV1": true,
+          "catalogCoverDownloadAuthorizationPreserved": true,
+          "gameDownloadVerified": true,
+          "androidGameplay": false,
+          "nativePauseSimulated": true,
+          "latencySamples": [],
+          "observations": null,
+          "latencyScope": "Synthetic two clients on this server; not phone RTT or core FPS"
+        },
+        "multiplayer": {
+          "passed": true,
+          "checks": 1257,
+          "approvedProfiles": 5176,
+          "signedV3": true,
+          "createJoinReadyStart": true,
+          "bidirectionalBytes": 3584,
+          "countsVerified": [
+            2,
+            4,
+            5
+          ],
+          "platformsVerified": [
+            "cps1",
+            "cps2",
+            "cps3",
+            "fbneo",
+            "megadrive",
+            "n64",
+            "neogeo",
+            "neogeocd",
+            "psx",
+            "snes"
+          ],
+          "engineBindingsVerified": [
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+              "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "megadrive",
+              "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+              "profileId": "standard-2p-v1",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+              "profileId": "snes-sbomberman2-usa-battle-single-r77",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-sbomberman3-battle-single-5p-20261009",
+              "maximumPlayers": 5
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-sbomberman3-battle-team-5p-20261009",
+              "maximumPlayers": 5
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-normal-605f43d7-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-battle-single-605f43d7-20261009",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-normal-b9c7ce2d-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "n64",
+              "engineId": "parallel-3be1f437-n64-v3-81b3daa38fb9",
+              "coreSha256": "09555f50df2767f078217058648420970024993603217bc9a29066032a8cad9d",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "neogeo",
+              "engineId": "fbneo-95153da1-neogeo-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "neogeocd",
+              "engineId": "neocd-b1e04c73-aslr1-v3-81b3daa38fb9",
+              "coreSha256": "78a35bc9a9435238d74125e77ae8f8d249ba59e90f07d43f43c84ad5ddc68870",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "psx",
+              "engineId": "pcsx-c8816799-psx-v3-81b3daa38fb9",
+              "coreSha256": "4de0afbd3bb113a4b9927b5b250860194b485f278d1dced81501dc6555fa18a8",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "fbneo",
+              "engineId": "fbneo-95153da1-fbneo-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "cps1",
+              "engineId": "fbneo-95153da1-cps1-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "cps2",
+              "engineId": "fbneo-95153da1-cps2-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "cps3",
+              "engineId": "fbneo-95153da1-cps3-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            }
+          ],
+          "snesAndMegaDrive": true,
+          "protectedResume": true,
+          "documentedBombermanModesVerified": [
+            "snes-normal-605f43d7-20261009",
+            "snes-battle-single-605f43d7-20261009",
+            "snes-normal-b9c7ce2d-20261009"
+          ],
+          "syntheticDevices": 5,
+          "public": false,
+          "physicalAndroidGameplayQualified": false
+        },
+        "quietAfter": {
+          "maximumRooms": 512,
+          "maximumConnections": 1024,
+          "activeRooms": 0,
+          "activeConnections": 0,
+          "forwardedBytes": 64,
+          "recovery": {
+            "protocol": "station-stream.v2",
+            "maximumRooms": 64,
+            "windowBytes": 262144,
+            "retainedRooms": 0,
+            "activeConnections": 0,
+            "pendingBytes": 0,
+            "maximumRetainedBytes": 33554432,
+            "persistent": false
+          },
+          "multiplayer": {
+            "protocol": "station-stream.v3",
+            "maximumPlayers": 5,
+            "maximumRooms": 100,
+            "activeRooms": 0,
+            "activeConnections": 0,
+            "approvedProfiles": 5169,
+            "profileCount": 5176,
+            "retainedBytes": 0,
+            "maximumRetainedBytes": 134217728
+          }
+        }
+      },
+      "public": {
+        "catalog": {
+          "passed": true,
+          "checks": 35962,
+          "catalogRevision": 27,
+          "visibleItems": 3593,
+          "contentIdentityFields": 3593,
+          "metadataOptInVerified": true,
+          "allMetadataMatched": true,
+          "requestAndResponseSignaturesVerified": true,
+          "capabilities": [
+            {
+              "itemId": "826da6daebe9edbebffb3721f83abf12",
+              "status": 200,
+              "multiplayerVersion": 3,
+              "capability": "station-multiplayer.v3",
+              "approvedProfiles": 6,
+              "profiles": [
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "two-player",
+                  "allowedPlayerCounts": [
+                    2
+                  ],
+                  "modeTitle": null,
+                  "instructions": null,
+                  "sources": null
+                },
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-battlemaniacs-mode-a-20261008",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "two-player-a",
+                  "allowedPlayerCounts": [
+                    2
+                  ],
+                  "modeTitle": "Dupla com golpes entre parceiros",
+                  "instructions": [
+                    "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+                  ],
+                  "sources": [
+                    "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+                  ]
+                },
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-battlemaniacs-mode-b-20261008",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "two-player-b",
+                  "allowedPlayerCounts": [
+                    2
+                  ],
+                  "modeTitle": "Dupla sem golpes entre parceiros",
+                  "instructions": [
+                    "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+                  ],
+                  "sources": [
+                    "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+                  ]
+                },
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                  "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "two-player",
+                  "allowedPlayerCounts": [
+                    2
+                  ],
+                  "modeTitle": null,
+                  "instructions": null,
+                  "sources": null
+                },
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                  "profileId": "snes-battlemaniacs-mode-a-20261008",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "two-player-a",
+                  "allowedPlayerCounts": [
+                    2
+                  ],
+                  "modeTitle": "Dupla com golpes entre parceiros",
+                  "instructions": [
+                    "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+                  ],
+                  "sources": [
+                    "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+                  ]
+                },
+                {
+                  "itemId": "826da6daebe9edbebffb3721f83abf12",
+                  "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                  "profileId": "snes-battlemaniacs-mode-b-20261008",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 2,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "two-player-b",
+                  "allowedPlayerCounts": [
+                    2
+                  ],
+                  "modeTitle": "Dupla sem golpes entre parceiros",
+                  "instructions": [
+                    "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+                  ],
+                  "sources": [
+                    "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+                  ]
+                }
+              ]
+            },
+            {
+              "itemId": "ac79b8fc351cb0811a7e9b51a099ba9c",
+              "status": 200,
+              "multiplayerVersion": 3,
+              "capability": "station-multiplayer.v3",
+              "approvedProfiles": 0,
+              "profiles": []
+            },
+            {
+              "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+              "status": 200,
+              "multiplayerVersion": 3,
+              "capability": "station-multiplayer.v3",
+              "approvedProfiles": 6,
+              "profiles": [
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-sbomberman2-usa-battle-single-r77",
+                  "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+                  "maximumPlayers": 4,
+                  "approved": true,
+                  "controllerProfile": "snes-multitap-port2-v1",
+                  "mode": "battle-single",
+                  "allowedPlayerCounts": [
+                    2,
+                    3,
+                    4
+                  ],
+                  "modeTitle": null,
+                  "instructions": null,
+                  "sources": null
+                },
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-sbomberman2-normal-20261008",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 1,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "normal",
+                  "allowedPlayerCounts": [],
+                  "modeTitle": "Campanha solo",
+                  "instructions": [
+                    "Normal Game é individual e não deve criar sala."
+                  ],
+                  "sources": [
+                    "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+                  ]
+                },
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                  "profileId": "snes-sbomberman2-battle-team-20261008",
+                  "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+                  "maximumPlayers": 4,
+                  "approved": true,
+                  "controllerProfile": "snes-multitap-port2-v1",
+                  "mode": "battle-team",
+                  "allowedPlayerCounts": [
+                    2,
+                    3,
+                    4
+                  ],
+                  "modeTitle": "Battle: equipes",
+                  "instructions": [
+                    "Battle Game → Tag Match; configurar humanos e equipes no jogo.",
+                    "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+                  ],
+                  "sources": [
+                    "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+                  ]
+                },
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                  "profileId": "snes-sbomberman2-usa-battle-single-r77",
+                  "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+                  "maximumPlayers": 4,
+                  "approved": true,
+                  "controllerProfile": "snes-multitap-port2-v1",
+                  "mode": "battle-single",
+                  "allowedPlayerCounts": [
+                    2,
+                    3,
+                    4
+                  ],
+                  "modeTitle": "Battle: todos contra todos",
+                  "instructions": [
+                    "Battle Game → Single Match; pads participantes MAN; outros COM/OFF.",
+                    "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+                  ],
+                  "sources": [
+                    "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf",
+                    "https://docs.libretro.com/guides/netplay-multiple-controllers/"
+                  ]
+                },
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                  "profileId": "snes-sbomberman2-normal-20261008",
+                  "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                  "maximumPlayers": 1,
+                  "approved": true,
+                  "controllerProfile": "standard-2p-v1",
+                  "mode": "normal",
+                  "allowedPlayerCounts": [],
+                  "modeTitle": "Campanha solo",
+                  "instructions": [
+                    "Normal Game é individual e não deve criar sala.",
+                    "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+                  ],
+                  "sources": [
+                    "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+                  ]
+                },
+                {
+                  "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                  "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                  "platform": "snes",
+                  "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                  "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                  "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                  "profileId": "snes-sbomberman2-battle-team-20261008",
+                  "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+                  "maximumPlayers": 4,
+                  "approved": true,
+                  "controllerProfile": "snes-multitap-port2-v1",
+                  "mode": "battle-team",
+                  "allowedPlayerCounts": [
+                    2,
+                    3,
+                    4
+                  ],
+                  "modeTitle": "Battle: equipes",
+                  "instructions": [
+                    "Battle Game → Tag Match; configurar humanos e equipes no jogo.",
+                    "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+                  ],
+                  "sources": [
+                    "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+                  ]
+                }
+              ]
+            }
+          ],
+          "public": true,
+          "physicalGameplayQualified": false,
+          "ownedSyntheticFixtureRemoved": true
+        },
+        "legacy": {
+          "passed": true,
+          "checks": 192,
+          "syntheticLicenses": 2,
+          "signedWindowsR74Engines": true,
+          "signedEngineIds": [
+            "bsnes-mercury-performance-79d7f9de",
+            "bsnes-mercury-performance-79d7f9de-autopass1",
+            "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+            "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+            "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+            "clownmdemu-d43c2708",
+            "clownmdemu-d43c2708-autopass1",
+            "clownmdemu-d43c2708-rs2-d66267cd4250",
+            "clownmdemu-d43c2708-rs3-9af2778898e4",
+            "clownmdemu-d43c2708-rs4-804b2acfea4c"
+          ],
+          "signedEngines": [
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "clownmdemu-d43c2708",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-autopass1",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-autopass1",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+              "recoveryProtocol": null
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs2-d66267cd4250",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs3-9af2778898e4",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+              "platform": "snes",
+              "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+              "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+              "recoveryProtocol": "station-stream.v2"
+            },
+            {
+              "engineId": "clownmdemu-d43c2708-rs4-804b2acfea4c",
+              "platform": "megadrive",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+              "recoveryProtocol": "station-stream.v2"
+            }
+          ],
+          "signedTransports": [
+            "direct",
+            "relay-wss-v1",
+            "relay-wss-v2"
+          ],
+          "signedRecoveryCapabilities": [
+            "station-stream.v2"
+          ],
+          "signedRoomCapabilities": [
+            "short-invite-v1",
+            "own-room-member-profiles-v1"
+          ],
+          "legacyEngineIdsPreserved": true,
+          "exactForwardedBytes": 256,
+          "protectedV2Public": true,
+          "protectedResume": true,
+          "oneUseTickets": true,
+          "proofReplayDenied": true,
+          "ownRoomProfilesSigned": true,
+          "legacyV1": true,
+          "catalogCoverDownloadAuthorizationPreserved": true,
+          "gameDownloadVerified": true,
+          "androidGameplay": false,
+          "nativePauseSimulated": true,
+          "latencySamples": [],
+          "observations": null,
+          "latencyScope": "Synthetic two clients on this server; not phone RTT or core FPS"
+        },
+        "multiplayer": {
+          "passed": true,
+          "checks": 1257,
+          "approvedProfiles": 5176,
+          "signedV3": true,
+          "createJoinReadyStart": true,
+          "bidirectionalBytes": 3584,
+          "countsVerified": [
+            2,
+            4,
+            5
+          ],
+          "platformsVerified": [
+            "cps1",
+            "cps2",
+            "cps3",
+            "fbneo",
+            "megadrive",
+            "n64",
+            "neogeo",
+            "neogeocd",
+            "psx",
+            "snes"
+          ],
+          "engineBindingsVerified": [
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+              "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "megadrive",
+              "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+              "profileId": "standard-2p-v1",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+              "profileId": "snes-sbomberman2-usa-battle-single-r77",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-sbomberman3-battle-single-5p-20261009",
+              "maximumPlayers": 5
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-sbomberman3-battle-team-5p-20261009",
+              "maximumPlayers": 5
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-normal-605f43d7-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-battle-single-605f43d7-20261009",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-normal-b9c7ce2d-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "n64",
+              "engineId": "parallel-3be1f437-n64-v3-81b3daa38fb9",
+              "coreSha256": "09555f50df2767f078217058648420970024993603217bc9a29066032a8cad9d",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "neogeo",
+              "engineId": "fbneo-95153da1-neogeo-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "neogeocd",
+              "engineId": "neocd-b1e04c73-aslr1-v3-81b3daa38fb9",
+              "coreSha256": "78a35bc9a9435238d74125e77ae8f8d249ba59e90f07d43f43c84ad5ddc68870",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "psx",
+              "engineId": "pcsx-c8816799-psx-v3-81b3daa38fb9",
+              "coreSha256": "4de0afbd3bb113a4b9927b5b250860194b485f278d1dced81501dc6555fa18a8",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "fbneo",
+              "engineId": "fbneo-95153da1-fbneo-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "cps1",
+              "engineId": "fbneo-95153da1-cps1-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "cps2",
+              "engineId": "fbneo-95153da1-cps2-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "cps3",
+              "engineId": "fbneo-95153da1-cps3-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            }
+          ],
+          "snesAndMegaDrive": true,
+          "protectedResume": true,
+          "documentedBombermanModesVerified": [
+            "snes-normal-605f43d7-20261009",
+            "snes-battle-single-605f43d7-20261009",
+            "snes-normal-b9c7ce2d-20261009"
+          ],
+          "syntheticDevices": 5,
+          "public": true,
+          "physicalAndroidGameplayQualified": false
+        },
+        "quietAfter": {
+          "maximumRooms": 512,
+          "maximumConnections": 1024,
+          "activeRooms": 0,
+          "activeConnections": 0,
+          "forwardedBytes": 64,
+          "recovery": {
+            "protocol": "station-stream.v2",
+            "maximumRooms": 64,
+            "windowBytes": 262144,
+            "retainedRooms": 0,
+            "activeConnections": 0,
+            "pendingBytes": 0,
+            "maximumRetainedBytes": 33554432,
+            "persistent": false
+          },
+          "multiplayer": {
+            "protocol": "station-stream.v3",
+            "maximumPlayers": 5,
+            "maximumRooms": 100,
+            "activeRooms": 0,
+            "activeConnections": 0,
+            "approvedProfiles": 5169,
+            "profileCount": 5176,
+            "retainedBytes": 0,
+            "maximumRetainedBytes": 134217728
+          }
+        }
+      }
     }
-  }
+  },
+  "initialCatalogDeployment": {
+    "utc": "2026-10-09T17:04:31.845345+00:00",
+    "reloadUtc": "2026-10-09T17:01:55.811112+00:00",
+    "sourceCommit": "31fc7790f410c524c54a63e2cae15272b960e5ba",
+    "dllSha256": "e74fde53cbe65273d26b3576cb39b8d096dff476dff99409681cd2469b678007",
+    "pid": 1805466
+  },
+  "reloadLocal": "Fri 2026-10-09 14:22:45 -03",
+  "profileReloadJoinAndReconnectCorrected": true
 }

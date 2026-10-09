@@ -2,7 +2,7 @@
 
 ## Resultado efetivo
 
-**Atualização aplicada e conferida pelo domínio público.** DLL `e74fde53cbe65273d26b3576cb39b8d096dff476dff99409681cd2469b678007`, fonte `31fc7790f410c524c54a63e2cae15272b960e5ba`, PID **1805466**, NRestarts **0**, recarga `2026-10-09T17:01:55.811112+00:00` e conclusão `2026-10-09T17:04:31.845345+00:00`. Catálogo **revisão 27 / 3.848 IDs / 3.593 visíveis / 255 aliases**, identidade de conteúdo de todos os 3.848 itens e **5.176 perfis**, preservando exatamente os **3.672 anteriores**. Foram acrescentados 1.504 perfis de oito plataformas. Aprovação de uso não declara gameplay Android homologado.
+**Atualização aplicada e conferida pelo domínio público.** DLL `25d98d65220e15de8ba4ee5e9e77e5ce66de9a04986ddfd924d42ca95f172e97`, fonte `0a3df5f75700d4532d5801cf9dec6bf96ab5ebec`, PID **1812555**, NRestarts **0**, última recarga `Fri 2026-10-09 14:22:45 -03` e conclusão `2026-10-09T17:25:34.997827+00:00`. Catálogo **revisão 27 / 3.848 IDs / 3.593 visíveis / 255 aliases**, identidade de conteúdo de todos os 3.848 itens e **5.176 perfis**, preservando exatamente os **3.672 anteriores**. Foram acrescentados 1.504 perfis de oito plataformas. Aprovação de uso não declara gameplay Android homologado.
 
 O servidor está publicado para SNES, Mega Drive, N64, Neo Geo, Neo Geo CD, PlayStation, FBNeo, CPS1, CPS2 e CPS3, nos modos e formatos cadastrados. Dreamcast, GameCube, Wii e Wii U já têm seus tetos e dados reconhecidos; a conexão dos motores dessas plataformas ao Station ainda depende do app. Switch possui somente Pokémon Café Mix no catálogo, sem modo local de duas pessoas confirmado. **Não anunciar todas as plataformas jogáveis nos celulares.**
 
@@ -37,7 +37,7 @@ Os tetos não concedem controles em campanhas individuais. Salas têm `allowedPl
 
 ## Importação automática e persistência
 
-O timer do importador continua ativo. Após duas observações de arquivo estável, um jogo novo entra com ID estável, capa relacionada, descritor e identidade offline. O importador mantém o registro persistente junto do índice e publica os perfis por dados antes de publicar o catálogo. A API recarrega o registro a cada dez segundos, sem reiniciar nem descartar salas em andamento; arquivo parcial/inválido mantém o último registro válido.
+O timer do importador continua ativo. Após duas observações de arquivo estável, um jogo novo entra com ID estável, capa relacionada, descritor e identidade offline. O importador mantém o registro persistente junto do índice e publica os perfis por dados antes de publicar o catálogo. A API recarrega o registro a cada dez segundos, sem reiniciar nem descartar salas em andamento; arquivo parcial/inválido mantém o último registro válido. A correção final preserva o objeto imutável de cada perfil sem alteração, evitando que arrays desserializados façam uma sala existente recusar entrada, tickets ou reconexão. Os testes também confirmam que uma revogação real continua sendo recusada. Recibo: `profile-reload-fix.json`.
 
 Política expressamente autorizada pelo mantenedor: jogos compatíveis recém-importados recebem até duas vagas, respeitando indicação individual e motor único disponível. Arcade novo com driver ainda não associado fica reconhecido no catálogo e aguarda associação por dados. Acima de duas pessoas exige modo/portas específicos. Não é necessário compilar o servidor para cadastrar nomes, capas, sinopses ou modos. Limites atuais: 4.096 IDs, 32 perfis por item, registro até 16 MiB; crescimento além disso exige ampliar capacidade com avaliação própria.
 
@@ -45,7 +45,7 @@ O catálogo publicado passou por duas varreduras privadas consecutivas sem mudan
 
 ## Provas realizadas e capacidade
 
-**1.079 verificações C#**, **172 TLS loopback**, **91 v2 + 589 observabilidade**, testes Python de importação/conjuntos e **10 verificações Java/Python CUE** passaram. A implantação testou versão anterior e candidata em serviços isolados com o sandbox efetivo, depois catálogo, capas, downloads, v1/v2 e v3 autenticados em HTTPS/WSS público. Recibos exatos em `online-plataformas-20261009/production-applied.json` e `server-build-tests.json`.
+**1.084 verificações C#**, **172 TLS loopback**, **91 v2 + 589 observabilidade**, testes Python de importação/conjuntos e **10 verificações Java/Python CUE** passaram. A implantação testou versão anterior e candidata em serviços isolados com o sandbox efetivo, depois catálogo, capas, downloads, v1/v2 e v3 autenticados em HTTPS/WSS público. Recibos exatos em `online-plataformas-20261009/production-applied.json` e `server-build-tests.json`.
 
 O v3 admite até 100 salas e cinco pessoas conforme o modo. O orçamento compartilhado de replay v2/v3 foi configurado em **128 MiB**, mantendo janela de 256 KiB por direção. Prova sintética: **320 participantes em 80 salas de quatro**, 240 ligações, 7.864.320 bytes idênticos em ambas as direções e memória liberada ao sair. O orçamento também limita admissões: 100 salas de cinco simultâneas excederiam 128 MiB. Isso não mede internet, Android, latência ou estabilidade prolongada.
 
