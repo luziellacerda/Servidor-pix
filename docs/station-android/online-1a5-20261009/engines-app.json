@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "androidPeerPlayValidated": false,
+  "engines": [
+    {
+      "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+      "platform": "snes",
+      "library": "libstation_bsnes.so",
+      "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+      "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+      "extensions": [
+        "sfc",
+        "smc"
+      ],
+      "overlay": "station-local/snes.cfg",
+      "options": "bsnes_violate_accuracy = \"disabled\"\nbsnes_chip_hle = \"LLE\"\nbsnes_superfx_overclock = \"100%\"\nbsnes_region = \"auto\"\nbsnes_aspect_ratio = \"auto\"\nbsnes_crop_overscan = \"disabled\"\nbsnes_gamma_ramp = \"disabled\"\n",
+      "launchReady": true,
+      "license": "GPL-3.0-or-later",
+      "sourceDirectory": "libretro--bsnes-mercury-79d7f9de218b",
+      "recoveryProtocol": "station-stream.v3"
+    },
+    {
+      "engineId": "clownmdemu-d43c2708-mp5-81b3daa38fb9",
+      "platform": "megadrive",
+      "library": "libstation_clownmdemu.so",
+      "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+      "extensions": [
+        "bin",
+        "md",
+        "gen"
+      ],
+      "overlay": "station-local/megadrive.cfg",
+      "options": "",
+      "launchReady": true,
+      "license": "AGPL-3.0-or-later",
+      "sourceDirectory": "Clownacy--clownmdemu-libretro-d43c2708b0a3",
+      "recoveryProtocol": "station-stream.v3"
+    },
+    {
+      "engineId": "geolith-19402493-mp5-81b3daa38fb9",
+      "platform": "neogeo",
+      "library": "libstation_geolith.so",
+      "coreSha256": "68ebde3e475d0e86f99bda278cadb85dc7fb32dc560072be017ad257dfd2eb0c",
+      "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+      "extensions": [
+        "neo"
+      ],
+      "overlay": "gamepads/flat/neogeo.cfg",
+      "options": "",
+      "launchReady": false,
+      "license": "BSD-3-Clause",
+      "sourceDirectory": "libretro--geolith-libretro-194024931935"
+    }
+  ],
+  "maximumPlayers": 5,
+  "fivePhoneGameplayValidated": false
+}

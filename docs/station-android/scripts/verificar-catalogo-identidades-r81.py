@@ -109,7 +109,9 @@ def verify(index, values, base, sql, identities=True, multiplayer='disabled'):
                     check(bool(value['profiles']) == (item_id in expected), 'compatibility alias not admitted')
                     if multiplayer == 'enabled':
                         active = json.loads(Path(values['Station__Online__MultiplayerProfileRegistryFile']).read_text())
-                        check(value['profiles'] == [p for p in active if p['itemId'] == item_id and item_id in expected], 'exact active profiles signed')
+                        def comparable(p):
+                            return dict(dict(modeTitle=None, instructions=None, sources=None), **p)
+                        check([comparable(p) for p in value['profiles']] == [comparable(p) for p in active if p['itemId'] == item_id and item_id in expected and p['maximumPlayers'] <= 4], 'exact compatible active profiles signed')
                         check(all(p['approved'] for p in value['profiles']), 'profiles released by operator')
                     else:
                         check(not any(p['approved'] for p in value['profiles']), 'unapproved profiles stay unapproved')

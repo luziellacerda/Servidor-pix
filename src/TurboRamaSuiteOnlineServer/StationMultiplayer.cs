@@ -7,11 +7,13 @@ namespace TurboRamaSuiteOnlineServer;
 // Exact allowlist, never an inference from a catalog's descriptive player count.
 public sealed record StationMultiplayerProfile(string ItemId,string ContentSha256,string Platform,
     string EngineId,string CoreSha256,string RuntimeSha256,string ProfileId,string ProfileSha256,
-    int MaximumPlayers,bool Approved,string ControllerProfile,string Mode,int[] AllowedPlayerCounts);
+    int MaximumPlayers,bool Approved,string ControllerProfile,string Mode,int[] AllowedPlayerCounts,
+    string? ModeTitle=null,string[]? Instructions=null,string[]? Sources=null);
 public sealed record StationMultiplayerCommand(string Action,string RequestId,string? RoomId=null,
     string? ItemId=null,string? ContentSha256=null,string? EngineId=null,string? CoreSha256=null,
     string? RuntimeSha256=null,string? ProfileId=null,string? ProfileSha256=null,int Capacity=0,
-    long Generation=0,string? LinkId=null,bool Value=false,string? Nickname=null,string? Text=null);
+    long Generation=0,string? LinkId=null,bool Value=false,string? Nickname=null,string? Text=null,
+    int ClientMaximumPlayers=4);
 public sealed record StationMultiplayerMessage(string MessageId,string FromPeerId,string Nickname,string Text,long UtcMs);
 
 // Shared with v2 when the candidate is enabled: reservations survive a network loss.
@@ -74,10 +76,14 @@ public sealed class StationMultiplayer
         foreach(var p in entries){
             Need(Text(p.ItemId,256)&&Text(p.Platform,64)&&Text(p.EngineId,128)&&Text(p.ProfileId,128)&&Text(p.ControllerProfile,128)
                 &&Hash(p.ContentSha256)&&Hash(p.CoreSha256)&&Hash(p.RuntimeSha256)&&Hash(p.ProfileSha256)
-                &&p.MaximumPlayers is >=1 and <=4&&Text(p.Mode,64)&&p.AllowedPlayerCounts is not null
+                &&p.MaximumPlayers is >=1 and <=5&&Text(p.Mode,64)&&p.AllowedPlayerCounts is not null
                 &&p.AllowedPlayerCounts.SequenceEqual(p.AllowedPlayerCounts.Distinct().Order())
-                &&p.AllowedPlayerCounts.All(n=>n is >=2 and <=4&&n<=p.MaximumPlayers)
+                &&p.AllowedPlayerCounts.All(n=>n is >=2 and <=5&&n<=p.MaximumPlayers)
                 &&(p.MaximumPlayers==1?p.AllowedPlayerCounts.Length==0:p.AllowedPlayerCounts.Contains(p.MaximumPlayers)),400,"STATION_MULTIPLAYER_PROFILE_INVALID");
+            Need(p.MaximumPlayers<5||(p.Platform=="snes"&&p.ControllerProfile=="snes-multitap-port2-v1"),400,"STATION_MULTIPLAYER_PROFILE_INVALID");
+            Need((p.ModeTitle is null||Text(p.ModeTitle,80))
+                &&(p.Instructions is null||p.Instructions.Length<=8&&p.Instructions.All(s=>Text(s,500)))
+                &&(p.Sources is null||p.Sources.Length<=8&&p.Sources.All(s=>Text(s,512)&&Uri.TryCreate(s,UriKind.Absolute,out var uri)&&uri.Scheme=="https"&&!string.IsNullOrEmpty(uri.Host)&&string.IsNullOrEmpty(uri.UserInfo))),400,"STATION_MULTIPLAYER_PROFILE_INVALID");
             // Explicitly selected different controller/mode profiles may coexist. A duplicate
             // complete identity remains ambiguous and cannot be resolved by choosing the first row.
             Need(profiles.TryAdd(ProfileKey(p.ItemId,p.ContentSha256,p.EngineId,p.CoreSha256,p.RuntimeSha256,p.ProfileId,p.ProfileSha256),p with{AllowedPlayerCounts=p.AllowedPlayerCounts!.ToArray()}),400,"STATION_MULTIPLAYER_PROFILE_AMBIGUOUS");
@@ -99,7 +105,7 @@ public sealed class StationMultiplayer
         Need(gameProfiles.ContainsKey(Key(c.ItemId,c.ContentSha256,c.EngineId,c.CoreSha256,c.RuntimeSha256)),409,"STATION_MULTIPLAYER_GAME_UNCLASSIFIED");
         Need(profiles.TryGetValue(ProfileKey(c.ItemId,c.ContentSha256,c.EngineId,c.CoreSha256,c.RuntimeSha256,c.ProfileId,c.ProfileSha256),out var p),409,"STATION_MULTIPLAYER_PROFILE_UNAPPROVED");
         Need(p!.Approved&&p.ProfileId==c.ProfileId&&p.ProfileSha256==c.ProfileSha256&&CatalogMatches(p),409,"STATION_MULTIPLAYER_PROFILE_UNAPPROVED");
-        Need(count is >=2 and <=4&&p.AllowedPlayerCounts.Contains(count),409,"STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED");return p;
+        Need(count is >=2 and <=5&&p.AllowedPlayerCounts.Contains(count),409,"STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED");return p;
     }
     private void Check(Room room,int count)
     {
@@ -118,6 +124,7 @@ public sealed class StationMultiplayer
         lock(gate){
             Need(Text(identity.LicenseId,256)&&Text(identity.DeviceId,256),401,"STATION_SESSION_INVALID");
             Need(Guid.TryParseExact(c.RequestId,"D",out _),400,"STATION_MULTIPLAYER_REQUEST_INVALID");
+            Need(c.ClientMaximumPlayers is >=2 and <=5,400,"STATION_MULTIPLAYER_CLIENT_CAPACITY_INVALID");
             Need(c.Action is "failed" or "chat" or "snapshot" or "capabilities" or "heartbeat" or "create" or "join" or "ready" or "start" or "leave" or "ticket" or "resume",400,"STATION_MULTIPLAYER_ACTION_INVALID");
             foreach(var k in grants.Where(x=>x.Value.Expires<=clock()).Select(x=>x.Key).ToArray())grants.Remove(k);
             foreach(var old in peers.Where(x=>x.Value.Room is null&&clock()-x.Value.Seen>=60000).Select(x=>x.Key).ToArray())peers.Remove(old);
@@ -129,7 +136,7 @@ public sealed class StationMultiplayer
             else if(c.Nickname is not null){Need(Text(c.Nickname,40),400,"STATION_MULTIPLAYER_NICKNAME_INVALID");peer.Nickname=c.Nickname;}
             string fingerprint=Convert.ToHexString(SHA256.HashData(JsonSerializer.SerializeToUtf8Bytes(c,StrictJson.Options)));
             if(peer.Receipts.TryGetValue(c.RequestId,out var previous)){
-                Need(previous==fingerprint,409,"STATION_MULTIPLAYER_REQUEST_REUSED");return View(peer,c.ItemId,GrantView(peer,c.LinkId),blocked);
+                Need(previous==fingerprint,409,"STATION_MULTIPLAYER_REQUEST_REUSED");return View(peer,c.ItemId,GrantView(peer,c.LinkId),blocked,c.ClientMaximumPlayers);
             }
             while(peer.Actions.TryPeek(out var at)&&clock()-at>=1000)peer.Actions.Dequeue();
             Need(peer.Actions.Count<20,429,"STATION_MULTIPLAYER_RATE_LIMIT");peer.Actions.Enqueue(clock());
@@ -137,14 +144,16 @@ public sealed class StationMultiplayer
             switch(c.Action){
                 case "create":{
                     Need(peer.Room is null,409,"STATION_MULTIPLAYER_ALREADY_IN_ROOM");Need(rooms.Count<100,503,"STATION_MULTIPLAYER_FULL");
-                    var p=Approved(c,c.Capacity);var room=new Room(Id(),peer,p,c.Capacity);rooms.Add(room.Id,room);peer.Room=room.Id;break;}
+                    var p=Approved(c,c.Capacity);Need(p.MaximumPlayers<=c.ClientMaximumPlayers,409,"STATION_MULTIPLAYER_CLIENT_UPDATE_REQUIRED");
+                    var room=new Room(Id(),peer,p,c.Capacity);rooms.Add(room.Id,room);peer.Room=room.Id;break;}
                 case "join":{
                     Need(peer.Room is null,409,"STATION_MULTIPLAYER_ALREADY_IN_ROOM");var room=Find(c.RoomId);
                     Need(blocked is null||room.Members.All(m=>!blocked.Contains(m.Peer.Id)),403,"STATION_ONLINE_BLOCKED");
                     Need(room.Stream is null&&room.Members.Count<room.Capacity,409,"STATION_MULTIPLAYER_ROOM_FULL");
                     Need(c.Generation==room.Generation,409,"STATION_MULTIPLAYER_GENERATION_MISMATCH");
-                    var p=Approved(c,room.Capacity);Need(p==room.Profile,409,"STATION_MULTIPLAYER_GAME_MISMATCH");
-                    int slot=Enumerable.Range(2,3).First(s=>room.Members.All(m=>m.Slot!=s));room.Members.Add(new(peer,slot));peer.Room=room.Id;Bump(room);break;}
+                    var p=Approved(c,room.Capacity);Need(p.MaximumPlayers<=c.ClientMaximumPlayers,409,"STATION_MULTIPLAYER_CLIENT_UPDATE_REQUIRED");
+                    Need(p==room.Profile,409,"STATION_MULTIPLAYER_GAME_MISMATCH");
+                    int slot=Enumerable.Range(2,4).First(s=>room.Members.All(m=>m.Slot!=s));room.Members.Add(new(peer,slot));peer.Room=room.Id;Bump(room);break;}
                 case "ready":{
                     var room=Own(peer,c);Need(room.Stream is null,409,"STATION_MULTIPLAYER_ALREADY_STARTED");Check(room,room.Capacity);
                     room.Members.Single(m=>m.Peer==peer).Ready=c.Value;break;}
@@ -176,7 +185,7 @@ public sealed class StationMultiplayer
             }
             peer.Receipts.Add(c.RequestId,fingerprint);peer.ReceiptOrder.Enqueue(c.RequestId);
             while(peer.ReceiptOrder.Count>64)peer.Receipts.Remove(peer.ReceiptOrder.Dequeue());revision++;
-            return View(peer,c.ItemId,ticket,blocked);
+            return View(peer,c.ItemId,ticket,blocked,c.ClientMaximumPlayers);
         }
     }
     private Room Find(string? id){Need(id is not null&&rooms.ContainsKey(id),404,"STATION_MULTIPLAYER_ROOM_UNKNOWN");return rooms[id!];}
@@ -194,17 +203,17 @@ public sealed class StationMultiplayer
     // while AdmissionGate is held. Network loss never invokes this membership change.
     public void ApplyBlock(OnlineIdentity identity,string otherPeerId){lock(gate){if(peers.TryGetValue(identity,out var peer)&&peer.Room is {} id&&rooms.TryGetValue(id,out var room)&&room.Members.Any(m=>m.Peer.Id==otherPeerId)){Leave(peer,room);revision++;}}}
     public bool HasRoom(OnlineIdentity identity){lock(gate)return peers.TryGetValue(identity,out var p)&&p.Room is not null;}
-    public object Snapshot(){lock(gate)return new{protocol=Protocol,activeRooms=rooms.Count,activeConnections=attachments.Count,
+    public object Snapshot(){lock(gate)return new{protocol=Protocol,maximumPlayers=5,activeRooms=rooms.Count,activeConnections=attachments.Count,
         approvedProfiles=profiles.Values.Count(p=>p.Approved&&CatalogMatches(p)),profileCount=profiles.Count,
         retainedBytes=budget.UsedBytes,maximumRetainedBytes=budget.MaximumBytes};}
     private object? GrantView(Peer peer,string? linkId){var grant=grants.Values.FirstOrDefault(g=>g.Lease.OwnerPeerId==peer.Id&&g.Lease.LinkId==linkId);return grant is null?null:TicketView(Find(grant.Lease.RoomId),grant);}
     private object TicketView(Room room,Grant g)=>new{path=RelayPath,protocol=Protocol,ticket=g.Token,expiresInSeconds=Math.Max(0,(g.Expires-clock())/1000),linkId=g.Lease.LinkId,ownerSlot=g.Lease.OwnerSlot,hostSide=g.Lease.HostSide,windowBytes=WindowBytes,epoch=room.Stream!.Snapshot().Epoch};
-    private object View(Peer peer,string? item,object? ticket,IReadOnlySet<string>? blocked)
+    private object View(Peer peer,string? item,object? ticket,IReadOnlySet<string>? blocked,int clientMaximumPlayers)
     {
         var own=peer.Room is {} id?rooms.GetValueOrDefault(id):null;item??=own?.Profile.ItemId;
-        var matches=profiles.Values.Where(p=>p.ItemId==item&&CatalogMatches(p)).Take(32).ToArray();
-        var visible=rooms.Values.Where(r=>blocked is null||r.Members.All(m=>!blocked.Contains(m.Peer.Id))).OrderBy(r=>r.Id,StringComparer.Ordinal).Take(100).ToArray();
-        return new{schemaVersion=1,multiplayerVersion=3,capability="station-multiplayer.v3",selfId=peer.Id,instance,revision,serverTimeMs=DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),status="ok",
+        var matches=profiles.Values.Where(p=>p.ItemId==item&&p.MaximumPlayers<=clientMaximumPlayers&&CatalogMatches(p)).Take(32).ToArray();
+        var visible=rooms.Values.Where(r=>r.Profile.MaximumPlayers<=clientMaximumPlayers&&(blocked is null||r.Members.All(m=>!blocked.Contains(m.Peer.Id)))).OrderBy(r=>r.Id,StringComparer.Ordinal).Take(100).ToArray();
+        return new{schemaVersion=1,multiplayerVersion=3,capability="station-multiplayer.v3",maximumPlayers=5,clientMaximumPlayers,selfId=peer.Id,instance,revision,serverTimeMs=DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),status="ok",
             profiles=matches,profileCount=profiles.Count,classification=matches.Length==0?"pending":"classified",
             totalRooms=visible.Length,rooms=visible.Select(r=>RoomView(r,false)).ToArray(),
             room=own is null?null:RoomView(own,true),ticket};
@@ -214,7 +223,7 @@ public sealed class StationMultiplayer
         var p=room.Profile;var stream=room.Stream?.Snapshot();
         string state=stream is null?"waiting":stream.Value.State switch{StationStreamSession.Playing=>"playing",StationStreamSession.Synchronizing=>"synchronizing",StationStreamSession.Unrecoverable=>"unrecoverable",_=>stream.Value.Epoch==1?"starting":"waiting-reconnect"};
         return new{id=room.Id,roomId=room.Id,itemId=p.ItemId,contentSha256=p.ContentSha256,platform=p.Platform,engineId=p.EngineId,coreSha256=p.CoreSha256,runtimeSha256=p.RuntimeSha256,
-            profileId=p.ProfileId,profileSha256=p.ProfileSha256,controllerProfile=p.ControllerProfile,mode=p.Mode,allowedPlayerCounts=p.AllowedPlayerCounts,maximumPlayers=p.MaximumPlayers,capacity=room.Capacity,hostPeerId=room.Host,hostId=room.Host,
+            profileId=p.ProfileId,profileSha256=p.ProfileSha256,controllerProfile=p.ControllerProfile,mode=p.Mode,modeTitle=p.ModeTitle,instructions=p.Instructions,sources=p.Sources,allowedPlayerCounts=p.AllowedPlayerCounts,maximumPlayers=p.MaximumPlayers,capacity=room.Capacity,hostPeerId=room.Host,hostId=room.Host,
             generation=room.Generation,epoch=stream?.Epoch??0,state,status=state,transport="relay-wss-v3",recoveryProtocol=Protocol,recoveryStarted=room.Stream?.HasPlayed??false,players=room.Members.Count,
             members=room.Members.Select(m=>m.Peer.Id).ToArray(),ready=room.Members.Where(m=>m.Ready).Select(m=>m.Peer.Id).ToArray(),
             roster=room.Members.OrderBy(m=>m.Slot).Select(m=>new{peerId=m.Peer.Id,nickname=m.Peer.Nickname,slot=m.Slot,ready=m.Ready}).ToArray(),

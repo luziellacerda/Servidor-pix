@@ -30,7 +30,7 @@ public sealed class StationMultiplayerStream
     private long epoch=1,state=StationStreamSession.Waiting;private readonly Action? retired;private bool released,retirementRequested,hasPlayed;
     public StationMultiplayerStream(string[] links,int windowBytes=StationMultiplayer.WindowBytes,Action? retired=null)
     {
-        if(links.Length is <1 or >3||links.Distinct(StringComparer.Ordinal).Count()!=links.Length)throw new ArgumentException("One to three unique links required.");
+        if(links.Length is <1 or >4||links.Distinct(StringComparer.Ordinal).Count()!=links.Length)throw new ArgumentException("One to four unique links required.");
         this.retired=retired;this.links=links.ToArray();windows=Enumerable.Range(0,links.Length*2).Select(_=>new StationStreamWindow(windowBytes)).ToArray();
         connections=new Connection?[windows.Length];maximumSent=new long[windows.Length];
     }

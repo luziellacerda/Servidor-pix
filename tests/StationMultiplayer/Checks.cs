@@ -10,10 +10,10 @@ CatalogChecks.Run(Check);
 void Denied(Action action,string code){checks++;try{action();throw new Exception("Expected "+code);}catch(OnlineFailure e){if(e.Code!=code)throw new Exception("Expected "+code+" got "+e.Code);}}
 string H(char c)=>new(c,64);
 var security=new StationSessionSecurity("rsa-pss-v1","synthetic-key-only");
-StationMultiplayerProfile Profile(int count=4,int[]? allowed=null)=>new("synthetic-game",H('a'),"snes","synthetic-engine",H('b'),H('c'),"synthetic-profile",H('d'),count,true,count>2?"snes-port2-multitap-v1":"standard-2p-v1","simultaneous",allowed??Enumerable.Range(2,Math.Max(0,count-1)).ToArray());
+StationMultiplayerProfile Profile(int count=5,int[]? allowed=null)=>new("synthetic-game",H('a'),"snes","synthetic-engine",H('b'),H('c'),"synthetic-profile",H('d'),count,true,count>2?"snes-multitap-port2-v1":"standard-2p-v1","simultaneous",allowed??Enumerable.Range(2,Math.Max(0,count-1)).ToArray());
 JsonElement Json(object value)=>JsonSerializer.SerializeToElement(value,StrictJson.Options);
 StationMultiplayerCommand Cmd(string action,JsonElement room=default,int capacity=0,string? link=null,bool value=false,StationMultiplayerProfile? p=null)
-{p??=Profile();return new(action,Guid.NewGuid().ToString(),room.ValueKind==JsonValueKind.Object?room.GetProperty("roomId").GetString():null,p.ItemId,p.ContentSha256,p.EngineId,p.CoreSha256,p.RuntimeSha256,p.ProfileId,p.ProfileSha256,capacity,room.ValueKind==JsonValueKind.Object?room.GetProperty("generation").GetInt64():0,link,value);}
+{p??=Profile();return new(action,Guid.NewGuid().ToString(),room.ValueKind==JsonValueKind.Object?room.GetProperty("roomId").GetString():null,p.ItemId,p.ContentSha256,p.EngineId,p.CoreSha256,p.RuntimeSha256,p.ProfileId,p.ProfileSha256,capacity,room.ValueKind==JsonValueKind.Object?room.GetProperty("generation").GetInt64():0,link,value,ClientMaximumPlayers:5);}
 (StationMultiplayer Hub,StationReplayBudget Budget,OnlineIdentity[] People,JsonElement Room) Make(int n,int? capacity=null,StationMultiplayerProfile? profile=null)
 {
     profile??=Profile();long time=0;var budget=new StationReplayBudget();var hub=new StationMultiplayer([profile],_=>"snes",budget,()=>time+=100);
@@ -23,9 +23,28 @@ StationMultiplayerCommand Cmd(string action,JsonElement room=default,int capacit
     foreach(var person in people)room=Json(hub.Command(person,Cmd("ready",room,value:true,p:profile),security)).GetProperty("room");
     return(hub,budget,people,room);
 }
+// Old clients must never receive a five-player profile they cannot parse.
+var helpProfile=Profile() with{ModeTitle="Batalha",Instructions=["Escolha BATTLE GAME."],Sources=["https://docs.libretro.com/library/bsnes_mercury_performance/"]};
+var negotiation=new StationMultiplayer([helpProfile,altForOld()],_=>"snes",new());
+StationMultiplayerProfile altForOld()=>Profile(4) with{ProfileId="synthetic-four-compatible",ProfileSha256=H('e')};
+var oldPerson=new OnlineIdentity("legacy-capacity","legacy-capacity");
+var oldCap=Json(negotiation.Command(oldPerson,Cmd("capabilities") with{ClientMaximumPlayers=4},security));
+Check(oldCap.GetProperty("maximumPlayers").GetInt32()==5&&oldCap.GetProperty("profiles").GetArrayLength()==1,"old client sees only its compatible profiles");
+Denied(()=>negotiation.Command(oldPerson,Cmd("create",capacity:5) with{ClientMaximumPlayers=4},security),"STATION_MULTIPLAYER_CLIENT_UPDATE_REQUIRED");
+Denied(()=>negotiation.Command(oldPerson,Cmd("capabilities") with{ClientMaximumPlayers=6},security),"STATION_MULTIPLAYER_CLIENT_CAPACITY_INVALID");
+var newPerson=new OnlineIdentity("five-capacity","five-capacity");
+var fiveCap=Json(negotiation.Command(newPerson,Cmd("capabilities"),security));
+Check(fiveCap.GetProperty("profiles").GetArrayLength()==2,"new client receives both classifications");
+var fiveRoom=Json(negotiation.Command(newPerson,Cmd("create",capacity:5),security)).GetProperty("room");
+Check(fiveRoom.GetProperty("modeTitle").GetString()=="Batalha"&&fiveRoom.GetProperty("instructions").GetArrayLength()==1,"mode help is bound to exact room");
+Check(Json(negotiation.Command(oldPerson,Cmd("snapshot") with{ClientMaximumPlayers=4},security)).GetProperty("totalRooms").GetInt32()==0,"old client cannot list an incompatible five-player mode");
+Denied(()=>negotiation.Command(oldPerson,Cmd("join",fiveRoom) with{ClientMaximumPlayers=4},security),"STATION_MULTIPLAYER_CLIENT_UPDATE_REQUIRED");
+foreach(var bad in new[]{Profile(6),Profile() with{ControllerProfile="standard-2p-v1"},Profile() with{Sources=["http://example.test/manual"]},Profile() with{Instructions=["line\nbreak"]}})
+    Denied(()=>new StationMultiplayer([bad],_=>"snes",new()),"STATION_MULTIPLAYER_PROFILE_INVALID");
+negotiation.Command(newPerson,Cmd("leave",fiveRoom),security);
 var unknown=new StationMultiplayer([], _=>"snes",new());
 Denied(()=>unknown.Command(new("u","d"),Cmd("create",capacity:2),security),"STATION_MULTIPLAYER_GAME_UNCLASSIFIED");
-foreach(int n in new[]{1,2,3,4}){
+foreach(int n in new[]{1,2,3,4,5}){
     var profile=Profile(n);var hub=new StationMultiplayer([profile],_=>"snes",new());
     if(n==1)Denied(()=>hub.Command(new("u","d"),Cmd("create",capacity:2,p:profile),security),"STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED");
     else Denied(()=>hub.Command(new("u","d"),Cmd("create",capacity:n+1,p:profile),security),"STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED");
@@ -63,7 +82,7 @@ Denied(()=>twoFour.Hub.Command(twoFour.People[0],Cmd("start",room4),security),"S
 foreach(var person in twoFour.People.Append(fourth))room4=Json(twoFour.Hub.Command(person,Cmd("ready",room4,value:true),security)).GetProperty("room");
 Check(Json(twoFour.Hub.Command(twoFour.People[0],Cmd("start",room4),security)).GetProperty("room").GetProperty("links").GetArrayLength()==3,"2or4 profile starts4");
 
-for(int players=2;players<=4;players++){
+for(int players=2;players<=5;players++){
     var f=Make(players);var before=f.Room;var start=Cmd("start",before);
     Denied(()=>f.Hub.Command(f.People[1],start,security),"STATION_MULTIPLAYER_HOST_REQUIRED");
     var snapshot=Json(f.Hub.Command(f.People[0],start,security));var room=snapshot.GetProperty("room");
@@ -130,7 +149,7 @@ for(int players=2;players<=4;players++){
 }
 // During a global pause, a payload on one link must not require imaginary READY
 // events on unchanged links. Cover every link and both directions for 2/3/4 people.
-for(int playerCount=2;playerCount<=4;playerCount++)for(int touched=0;touched<playerCount-1;touched++)foreach(bool hostSender in new[]{false,true}){
+for(int playerCount=2;playerCount<=5;playerCount++)for(int touched=0;touched<playerCount-1;touched++)foreach(bool hostSender in new[]{false,true}){
     string[] linkNames=Enumerable.Range(0,playerCount-1).Select(i=>"ready-link-"+i).ToArray();var stream=new StationMultiplayerStream(linkNames);
     var endpoints=new StationMultiplayerStream.Connection[linkNames.Length*2];int sender=touched*2+(hostSender?0:1),receiver=sender^1;
     for(int i=0;i<endpoints.Length;i++){

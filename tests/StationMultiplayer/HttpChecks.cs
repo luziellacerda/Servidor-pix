@@ -18,7 +18,7 @@ using var generatedCertificate=cr.CreateSelfSigned(DateTimeOffset.UtcNow.AddMinu
 // cannot always acquire the ephemeral handle returned by CreateSelfSigned.
 using var certificate=new X509Certificate2(generatedCertificate.Export(X509ContentType.Pkcs12),"",X509KeyStorageFlags.UserKeySet|X509KeyStorageFlags.Exportable);
 using var signer=new StationResponseSigner(rsa.ExportPkcs8PrivateKeyPem());using var access=new LabAccess(signer);
-var profile=new StationMultiplayerProfile("synthetic-item",H('a'),"snes","synthetic-engine",H('b'),H('c'),"synthetic-profile",H('d'),4,true,"snes-port2-multitap-v1","battle",[2,3,4]);
+var profile=new StationMultiplayerProfile("synthetic-item",H('a'),"snes","synthetic-engine",H('b'),H('c'),"synthetic-profile",H('d'),5,true,"snes-multitap-port2-v1","battle-single",[2,3,4,5]);
 var budget=new StationReplayBudget();var multi=new StationMultiplayer([profile],_=>"snes",budget);
 var legacy=new StationOnline([new(profile.EngineId,"snes",profile.CoreSha256,profile.RuntimeSha256,"station-stream.v2")],_=>"snes",relayEnabled:true,recoveryEnabled:true,
     legacyAdmission:multi.LegacyAllowed,externalMembership:multi.HasRoom);
@@ -37,7 +37,7 @@ using var http=new HttpClient(handler){BaseAddress=new Uri(address),Timeout=Time
 JsonElement room=default;
 StationMultiplayerCommand Cmd(string action,string? link=null,bool value=false,int capacity=0)=>new(action,Guid.NewGuid().ToString(),room.ValueKind==JsonValueKind.Object?room.GetProperty("roomId").GetString():null,
     profile.ItemId,profile.ContentSha256,profile.EngineId,profile.CoreSha256,profile.RuntimeSha256,profile.ProfileId,profile.ProfileSha256,capacity,
-    room.ValueKind==JsonValueKind.Object?room.GetProperty("generation").GetInt64():0,link,value);
+    room.ValueKind==JsonValueKind.Object?room.GetProperty("generation").GetInt64():0,link,value,ClientMaximumPlayers:5);
 async Task<JsonElement> Post(int user,StationMultiplayerCommand command,HttpStatusCode expected=HttpStatusCode.OK,bool proof=true,string? proofPath=null)
 {
     byte[] body=JsonSerializer.SerializeToUtf8Bytes(command,StrictJson.Options);using var request=new HttpRequestMessage(HttpMethod.Post,StationMultiplayer.CommandPath){Content=new ByteArrayContent(body)};
@@ -69,9 +69,9 @@ try{
     await Post(0,Cmd("capabilities"),HttpStatusCode.Unauthorized,proof:false);
     await Post(0,Cmd("capabilities"),HttpStatusCode.Unauthorized,proofPath:"/v1/station/online/command");
     var cap=await Post(0,Cmd("capabilities"));Check(cap.GetProperty("selfId").GetString()==socialIds[0],"same authoritative social identity");
-    room=(await Post(0,Cmd("create",capacity:4))).GetProperty("room");
-    for(int i=1;i<4;i++)room=(await Post(i,Cmd("join"))).GetProperty("room");
-    for(int i=0;i<4;i++)room=(await Post(i,Cmd("ready",value:true))).GetProperty("room");
+    room=(await Post(0,Cmd("create",capacity:5))).GetProperty("room");
+    for(int i=1;i<5;i++)room=(await Post(i,Cmd("join"))).GetProperty("room");
+    for(int i=0;i<5;i++)room=(await Post(i,Cmd("ready",value:true))).GetProperty("room");
     room=(await Post(0,Cmd("start"))).GetProperty("room");Check(room.GetProperty("state").GetString()=="starting","HTTP starting");
     var links=room.GetProperty("links").EnumerateArray().Select(x=>x.GetProperty("linkId").GetString()!).ToArray();
     await Post(1,Cmd("ticket",link:links[1]),HttpStatusCode.Forbidden);
@@ -87,7 +87,7 @@ try{
         for(int k=0;k<100;k++){int count=0;ValueWebSocketReceiveResult result;do{result=await ws.ReceiveAsync(buffer.AsMemory(count),timeout.Token);if(result.MessageType!=WebSocketMessageType.Binary)throw new Exception("unexpected close");count+=result.Count;}while(!result.EndOfMessage);
             var frame=StationMultiplayerFrame.Decode(buffer.AsSpan(0,count));if(predicate(frame))return frame;}
         throw new Exception("frame limit");}
-    for(int l=0;l<3;l++){sockets.Add(await Connect(0,links[l]));sockets.Add(await Connect(l+1,links[l]));}
+    for(int l=0;l<4;l++){sockets.Add(await Connect(0,links[l]));sockets.Add(await Connect(l+1,links[l]));}
     foreach(var ws in sockets){await Send(ws,StationStreamFrame.Hello);await Send(ws,StationStreamFrame.Paused,1);await Send(ws,StationStreamFrame.Ready,1);}
     foreach(var ws in sockets){await Until(ws,f=>f.Type==StationStreamFrame.State&&f.Offset==1&&f.Value==2);checks++;}
     await Send(sockets[1],StationStreamFrame.DataPacket,bytes:[11,22,33]);
@@ -106,13 +106,13 @@ try{
     await Post(0,Cmd("resume",link:links[0]),HttpStatusCode.Conflict);
     var left=await Post(0,Cmd("leave"));Check(left.GetProperty("room").ValueKind==JsonValueKind.Null,"human leave ends TLS room");
     await Task.Delay(1100); // Separate the new scenario from the production per-second command cap.
-    room=(await Post(0,Cmd("create",capacity:4))).GetProperty("room");
+    room=(await Post(0,Cmd("create",capacity:5))).GetProperty("room");
     room=(await Post(1,Cmd("join"))).GetProperty("room");room=(await Post(2,Cmd("join"))).GetProperty("room");
     await Block(1,2);
     var blocked=await Post(1,Cmd("snapshot"));Check(blocked.GetProperty("room").ValueKind==JsonValueKind.Null&&blocked.GetProperty("totalRooms").GetInt32()==0,"blocking guest leaves waiting room and blocked rooms are hidden");
     room=(await Post(0,Cmd("heartbeat"))).GetProperty("room");Check(room.GetProperty("players").GetInt32()==2,"waiting block preserves uninvolved host and member");
     Check((await Post(1,Cmd("join"),HttpStatusCode.Forbidden)).GetProperty("code").GetString()=="STATION_ONLINE_BLOCKED","join cannot bypass blocked non-host member");
-    var originalRoom=room;room=(await Post(1,Cmd("create",capacity:4))).GetProperty("room");
+    var originalRoom=room;room=(await Post(1,Cmd("create",capacity:5))).GetProperty("room");
     Check((await Post(2,Cmd("snapshot"))).GetProperty("rooms").EnumerateArray().All(r=>r.GetProperty("hostId").GetString()!=socialIds[1]),"incoming host block hides room bidirectionally");
     await Post(2,Cmd("join"),HttpStatusCode.Conflict); // Existing own membership still wins over another room.
     room=originalRoom;room=(await Post(3,Cmd("join"))).GetProperty("room");
@@ -122,7 +122,7 @@ try{
     Check(multi.HasRoom(access.Users[1].Identity),"block leaves unrelated v3 room intact");
     room=(await Post(1,Cmd("heartbeat"))).GetProperty("room");
     Check((await Post(2,Cmd("join"),HttpStatusCode.Forbidden)).GetProperty("code").GetString()=="STATION_ONLINE_BLOCKED","incoming host block denies guessed room ID");
-    Console.WriteLine(JsonSerializer.Serialize(new{passed=true,checks,scope="synthetic loopback TLS: four authenticated players, six WS links, signed HTTP, bound proofs, stream, disconnect/resume and chat; not Android gameplay or public network"}));
+    Console.WriteLine(JsonSerializer.Serialize(new{passed=true,checks,scope="synthetic loopback TLS: five authenticated players, eight WS links, signed HTTP, bound proofs, stream, disconnect/resume and chat; not Android gameplay or public network"}));
 }finally{foreach(var ws in sockets)ws.Dispose();await app.StopAsync();}
 
 sealed class LabAccess(StationResponseSigner signer):IStationOnlineAccess,IDisposable
@@ -135,7 +135,7 @@ sealed class LabAccess(StationResponseSigner signer):IStationOnlineAccess,IDispo
             var bytes=StationRequestProof.Canonical(method,path,body,credential,stamp,nonce);return $"v1.{stamp}.{nonce}."+StationProtocol.Encode(Key.SignData(bytes,HashAlgorithmName.SHA256,RSASignaturePadding.Pss));}
         public void Dispose()=>Key.Dispose();
     }
-    public User[] Users {get;}=Enumerable.Range(0,4).Select(i=>new User(i)).ToArray();
+    public User[] Users {get;}=Enumerable.Range(0,5).Select(i=>new User(i)).ToArray();
     public Task<StationSession?> Authenticate(string bearer,CancellationToken token){var u=Users.FirstOrDefault(u=>u.Bearer==bearer);return Task.FromResult(u is null?null:new StationSession("synthetic-session",u.Identity.LicenseId,u.Identity.DeviceId,u.Nickname,1,"rsa-pss-v1",StationProtocol.Encode(u.Key.ExportSubjectPublicKeyInfo())));}
     public Task<bool> AuthorizeRelay(StationOnline.RelayLease lease,CancellationToken token)=>Task.FromResult(Users.Any(u=>u.Identity==lease.Identity));
     public object Sign(object payload)=>signer.Sign(payload);public void Dispose(){foreach(var user in Users)user.Dispose();}
