@@ -31,17 +31,20 @@ public static class StationOnlineRegistration
             string? profilePath=builder.Configuration["Station:Online:MultiplayerProfileRegistryFile"];
             if(string.IsNullOrWhiteSpace(profilePath)||!Path.IsPathFullyQualified(profilePath)||!File.Exists(profilePath)||new FileInfo(profilePath).Length>16*1024*1024)
                 throw new InvalidOperationException("Multiplayer requires an explicit bounded profile registry.");
-            var profiles=JsonSerializer.Deserialize<StationMultiplayerProfile[]>(File.ReadAllBytes(profilePath),StrictJson.Options)??throw new InvalidOperationException("Profile array required.");
-            builder.Services.AddSingleton(new StationReplayBudget());
+            var profiles=StationMultiplayerProfileMonitor.Read(profilePath);
+            builder.Services.AddSingleton(new StationReplayBudget(builder.Configuration.GetValue<long>("Station:Online:ReplayMaximumBytes",33554432)));
             builder.Services.AddSingleton(sp=>new StationMultiplayer(profiles,
-                id=>{var item=(monitor?.Current??library).Catalog.FirstOrDefault(e=>e.ItemId==id);return item is null?null:Normalize(item.Platform);},
+                id=>{var item=(monitor?.Current??library).FindCatalogItem(id);return item is null?null:Normalize(item.Platform);},
                 sp.GetRequiredService<StationReplayBudget>(),
-                currentContentHash:id=>(monitor?.Current??library).Catalog.FirstOrDefault(e=>e.ItemId==id)?.ContentSha256));
+                currentContentHash:id=>(monitor?.Current??library).FindCatalogItem(id)?.ContentSha256));
             builder.Services.AddSingleton<StationMultiplayerRelay>();
+            builder.Services.AddSingleton(sp=>new StationMultiplayerProfileMonitor(profilePath,
+                sp.GetRequiredService<StationMultiplayer>(),sp.GetRequiredService<ILogger<StationMultiplayerProfileMonitor>>()));
+            builder.Services.AddHostedService(sp=>sp.GetRequiredService<StationMultiplayerProfileMonitor>());
         }
         builder.Services.AddSingleton(sp=>new StationOnline(engines, id =>
         {
-            var item = (monitor?.Current ?? library).Catalog.FirstOrDefault(e => e.ItemId == id);
+            var item = (monitor?.Current ?? library).FindCatalogItem(id);
             return item is null ? null : Normalize(item.Platform);
         },relayEnabled:builder.Configuration.GetValue("Station:Online:RelayEnabled",false),socialEnabled:builder.Configuration.GetValue("Station:Online:SocialEnabled",false),
             recoveryEnabled:recoveryEnabled,recoveryMaximumRooms:recoveryRooms,recoveryWindowBytes:recoveryWindow,

@@ -20,7 +20,7 @@ public sealed record StationMultiplayerMessage(string MessageId,string FromPeerI
 public sealed class StationReplayBudget(long maximumBytes=33554432)
 {
     private readonly object gate=new();private readonly Dictionary<string,long> reservations=[];
-    public long MaximumBytes {get;}=maximumBytes is >=524288 and <=33554432?maximumBytes:throw new ArgumentOutOfRangeException(nameof(maximumBytes));
+    public long MaximumBytes {get;}=maximumBytes is >=524288 and <=134217728?maximumBytes:throw new ArgumentOutOfRangeException(nameof(maximumBytes));
     public long UsedBytes {get{lock(gate)return reservations.Values.Sum();}}
     public bool TryReserve(string key,long bytes){lock(gate){
         if(reservations.TryGetValue(key,out long old))return old==bytes;
@@ -61,8 +61,8 @@ public sealed class StationMultiplayer
     private sealed record Grant(string Token,Lease Lease,long Expires);
     private readonly object gate=new();private readonly Dictionary<OnlineIdentity,Peer> peers=[];
     private readonly Dictionary<string,Room> rooms=[];private readonly Dictionary<string,Grant> grants=[];
-    private readonly Dictionary<string,string> attachments=[];private readonly Dictionary<string,StationMultiplayerProfile> profiles;
-    private readonly Dictionary<string,StationMultiplayerProfile[]> gameProfiles;
+    private readonly Dictionary<string,string> attachments=[];private Dictionary<string,StationMultiplayerProfile> profiles;
+    private Dictionary<string,StationMultiplayerProfile[]> gameProfiles;
     private readonly Func<string,string?> platform;private readonly Func<string,string?>? currentContentHash;
     private readonly Func<long> clock;private readonly StationReplayBudget budget;
     private readonly string instance=Id();private long revision;
@@ -87,11 +87,18 @@ public sealed class StationMultiplayer
                 &&(p.Sources is null||p.Sources.Length<=8&&p.Sources.All(s=>Text(s,512)&&Uri.TryCreate(s,UriKind.Absolute,out var uri)&&uri.Scheme=="https"&&!string.IsNullOrEmpty(uri.Host)&&string.IsNullOrEmpty(uri.UserInfo))),400,"STATION_MULTIPLAYER_PROFILE_INVALID");
             // Explicitly selected different controller/mode profiles may coexist. A duplicate
             // complete identity remains ambiguous and cannot be resolved by choosing the first row.
-            Need(profiles.TryAdd(ProfileKey(p.ItemId,p.ContentSha256,p.EngineId,p.CoreSha256,p.RuntimeSha256,p.ProfileId,p.ProfileSha256),p with{AllowedPlayerCounts=p.AllowedPlayerCounts!.ToArray()}),400,"STATION_MULTIPLAYER_PROFILE_AMBIGUOUS");
+            Need(profiles.TryAdd(ProfileKey(p.ItemId,p.ContentSha256,p.EngineId,p.CoreSha256,p.RuntimeSha256,p.ProfileId,p.ProfileSha256),p with{AllowedPlayerCounts=p.AllowedPlayerCounts!.ToArray(),Instructions=p.Instructions?.ToArray(),Sources=p.Sources?.ToArray()}),400,"STATION_MULTIPLAYER_PROFILE_AMBIGUOUS");
         }
         Need(profiles.Count<=50000,400,"STATION_MULTIPLAYER_PROFILE_LIMIT");
         Need(profiles.Values.GroupBy(p=>p.ItemId).All(g=>g.Count()<=32),400,"STATION_MULTIPLAYER_PROFILE_LIMIT");
         gameProfiles=profiles.Values.GroupBy(p=>Key(p.ItemId,p.ContentSha256,p.EngineId,p.CoreSha256,p.RuntimeSha256)).ToDictionary(g=>g.Key,g=>g.ToArray());
+    }
+    // Validate a whole immutable replacement before taking the room lock. Existing
+    // rooms keep their frozen profile, links, tickets and recovery windows.
+    public void ReplaceProfiles(IEnumerable<StationMultiplayerProfile> entries)
+    {
+        var validated=new StationMultiplayer(entries,platform,budget,clock,currentContentHash);
+        lock(gate){profiles=validated.profiles;gameProfiles=validated.gameProfiles;revision++;}
     }
     private static string Key(string? item,string? content,string? engine,string? core,string? runtime)=>string.Join('\n',item,content,engine,core,runtime);
     private static string ProfileKey(string? item,string? content,string? engine,string? core,string? runtime,string? profile,string? hash)=>Key(item,content,engine,core,runtime)+"\n"+profile+"\n"+hash;
@@ -115,7 +122,7 @@ public sealed class StationMultiplayer
             EngineId:p.EngineId,CoreSha256:p.CoreSha256,RuntimeSha256:p.RuntimeSha256,ProfileId:p.ProfileId,ProfileSha256:p.ProfileSha256),count);
     }
     public bool LegacyAllowed(string item,string content,string engine,string core,string runtime)
-    {return gameProfiles.TryGetValue(Key(item,content,engine,core,runtime),out var matches)&&matches.Count(p=>p.Approved&&p.AllowedPlayerCounts.Contains(2)&&p.ControllerProfile=="standard-2p-v1"&&CatalogMatches(p))==1;}
+    {lock(gate)return gameProfiles.TryGetValue(Key(item,content,engine,core,runtime),out var matches)&&matches.Count(p=>p.Approved&&p.AllowedPlayerCounts.Contains(2)&&p.ControllerProfile=="standard-2p-v1"&&CatalogMatches(p))==1;}
 
     private bool CatalogMatches(StationMultiplayerProfile profile) =>
         platform(profile.ItemId) is {} currentPlatform &&
@@ -205,7 +212,7 @@ public sealed class StationMultiplayer
     // while AdmissionGate is held. Network loss never invokes this membership change.
     public void ApplyBlock(OnlineIdentity identity,string otherPeerId){lock(gate){if(peers.TryGetValue(identity,out var peer)&&peer.Room is {} id&&rooms.TryGetValue(id,out var room)&&room.Members.Any(m=>m.Peer.Id==otherPeerId)){Leave(peer,room);revision++;}}}
     public bool HasRoom(OnlineIdentity identity){lock(gate)return peers.TryGetValue(identity,out var p)&&p.Room is not null;}
-    public object Snapshot(){lock(gate)return new{protocol=Protocol,maximumPlayers=5,activeRooms=rooms.Count,activeConnections=attachments.Count,
+    public object Snapshot(){lock(gate)return new{protocol=Protocol,maximumPlayers=5,maximumRooms=100,activeRooms=rooms.Count,activeConnections=attachments.Count,
         approvedProfiles=profiles.Values.Count(p=>p.Approved&&CatalogMatches(p)),profileCount=profiles.Count,
         retainedBytes=budget.UsedBytes,maximumRetainedBytes=budget.MaximumBytes};}
     private object? GrantView(Peer peer,string? linkId){var grant=grants.Values.FirstOrDefault(g=>g.Lease.OwnerPeerId==peer.Id&&g.Lease.LinkId==linkId);return grant is null?null:TicketView(Find(grant.Lease.RoomId),grant);}
@@ -215,9 +222,13 @@ public sealed class StationMultiplayer
         var own=peer.Room is {} id?rooms.GetValueOrDefault(id):null;item??=own?.Profile.ItemId;
         var matches=profiles.Values.Where(p=>p.ItemId==item&&p.MaximumPlayers<=clientMaximumPlayers&&CatalogMatches(p)).Take(32).ToArray();
         string? selectedPlatform=item is null?null:platform(item);
+        bool available=matches.Any(p=>p.Approved&&p.MaximumPlayers>=2);
+        string availability=available?"available":selectedPlatform is null?"select-game":
+            currentContentHash is not null&&currentContentHash(item!) is null?"content-identity-pending":
+            matches.Any(p=>p.Approved&&p.MaximumPlayers==1)?"single-player":matches.Length>0?"mode-pending":"online-engine-pending";
         var platformPolicy=new{platform=selectedPlatform is null?null:StationMultiplayerPlatformPolicy.Normalize(selectedPlatform),
             maximumPlayers=StationMultiplayerPlatformPolicy.MaximumPlayers(selectedPlatform),
-            approvedProfileCount=matches.Count(p=>p.Approved),onlineAvailable=matches.Any(p=>p.Approved&&p.MaximumPlayers>=2),
+            approvedProfileCount=matches.Count(p=>p.Approved),onlineAvailable=available,availability,
             limitSource="maintainer-20261009",gameModeRequired=true};
         var visible=rooms.Values.Where(r=>r.Profile.MaximumPlayers<=clientMaximumPlayers&&(blocked is null||r.Members.All(m=>!blocked.Contains(m.Peer.Id)))).OrderBy(r=>r.Id,StringComparer.Ordinal).Take(100).ToArray();
         return new{schemaVersion=1,multiplayerVersion=3,capability="station-multiplayer.v3",maximumPlayers=5,clientMaximumPlayers,selfId=peer.Id,instance,revision,serverTimeMs=DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),status="ok",

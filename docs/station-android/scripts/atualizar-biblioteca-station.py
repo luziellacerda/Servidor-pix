@@ -262,7 +262,7 @@ def content_identities(path):
             value[key] = entry
         return value
     document = json.loads(source.read_bytes(), object_pairs_hook=unique)
-    if not isinstance(document, dict) or set(document) != {'schemaVersion', 'entries'} or type(document['schemaVersion']) is not int or document['schemaVersion'] != 1:
+    if not isinstance(document, dict) or set(document) != {'schemaVersion', 'entries'} or type(document['schemaVersion']) is not int or document['schemaVersion'] not in (1,2):
         raise ValueError('invalid content identity schema')
     entries = document['entries']
     if not isinstance(entries, list) or len(entries) > 4096:
@@ -272,8 +272,10 @@ def content_identities(path):
         return isinstance(value, str) and len(value) == 64 and all(c in '0123456789abcdef' for c in value)
     result = {}
     for entry in entries:
-        if not isinstance(entry, dict) or set(entry) != keys or not hash_value(entry['artifactSha256']) or not hash_value(entry['contentSha256']):
+        if not isinstance(entry, dict) or set(entry) not in (keys,keys|{'contentIdentityScheme'}) or not hash_value(entry['artifactSha256']) or not hash_value(entry['contentSha256']):
             raise ValueError('invalid content identity entry')
+        if 'contentIdentityScheme' in entry and (document['schemaVersion']!=2 or entry['contentIdentityScheme'] not in ('cue-set-v1','wiiu-set-v1') or (entry['contentIdentityScheme']=='cue-set-v1' and not entry['launchPath'].lower().endswith('.cue')) or (entry['contentIdentityScheme']=='wiiu-set-v1' and entry['platform']!='wiiu')):
+            raise ValueError('invalid content identity scheme')
         if any(not isinstance(entry[key], str) or not entry[key] or len(entry[key]) > limit or any(ord(c) < 32 for c in entry[key]) for key, limit in [('itemId', 256), ('platform', 64), ('launchPath', 4096)]):
             raise ValueError('invalid content identity binding')
         if type(entry['expandedSizeBytes']) is not int or not 0 < entry['expandedSizeBytes'] <= 4 * (1 << 40) or type(entry['fileCount']) is not int or not 0 < entry['fileCount'] <= 100000:
@@ -287,10 +289,12 @@ def bind_content_identities(items, identities):
     for row in items:
         # Unknown or replaced payloads have no public hash; existing metadata is preserved.
         row.pop('contentSha256', None)
+        row.pop('contentIdentityScheme', None)
         entry = identities.get(row['itemId'])
         artifact = row.get('artifact', {})
         if entry and entry['platform'] == row['platform'] and entry['artifactSha256'] == artifact.get('sha256') and all(entry[key] == artifact.get(key) for key in ('launchPath', 'expandedSizeBytes', 'fileCount')):
             row['contentSha256'] = entry['contentSha256']
+            if entry.get('contentIdentityScheme'):row['contentIdentityScheme']=entry['contentIdentityScheme']
 
 
 def publish(config, bootstrap=False, on_progress=None):
@@ -503,7 +507,37 @@ def publish(config, bootstrap=False, on_progress=None):
                 row['metadata'] = dict(row.get('metadata', metadata()), description=metadata(override={'description':seed['description']})['description'])
         if len(rows) > 4096: raise ValueError('Station library capacity exceeded')
         items = list(rows.values())
+        if config.get('autoContentIdentity', False):
+            registry_path=Path(config['contentIdentityRegistry'])
+            if type(config['autoContentIdentity']) is not bool or registry_path.parent!=home or registry_path.is_symlink():
+                raise ValueError('automatic identity output must be inside the private library')
+            binder_path=Path(__file__).with_name('prepare_content_identity_registry.py')
+            if not binder_path.exists():binder_path=Path(__file__).resolve().parents[1]/'entrega-app-r81-20261008/server-tools/prepare_content_identity_registry.py'
+            binder_spec=importlib.util.spec_from_file_location('station_auto_identity_binder',binder_path)
+            binder=importlib.util.module_from_spec(binder_spec);binder_spec.loader.exec_module(binder)
+            from station_content_sets import bind_set
+            for row in items:
+                artifact=row.get('artifact',{});entry=identities.get(row['itemId'])
+                if entry and entry['platform']==row['platform'] and entry['artifactSha256']==artifact.get('sha256') and all(entry[k]==artifact.get(k) for k in ('launchPath','expandedSizeBytes','fileCount')):continue
+                try:
+                    identities[row['itemId']]=bind_set(row,binder.bind(row,row['filePath']))
+                except (binder.ValidationError,ValueError,OSError,zipfile.BadZipFile) as error:
+                    report.setdefault('onlineIdentityPending',[]).append({'itemId':row['itemId'],'reason':type(error).__name__})
+            document=dict(schemaVersion=2,entries=sorted(identities.values(),key=lambda row:row['itemId']))
+            previous_identities=json.loads(registry_path.read_bytes())
+            if document!=previous_identities:atomic_json(registry_path,document,gid)
         bind_content_identities(items, identities)
+        online=config.get('autoOnlineProfiles')
+        if online is not None:
+            if not isinstance(online,dict) or set(online)!={'registry','engineManifest','maintainerAuthorizedTwoSeats'} or online['maintainerAuthorizedTwoSeats'] is not True:
+                raise ValueError('explicit automatic room policy required')
+            output=Path(online['registry']);manifest=Path(online['engineManifest'])
+            if output.parent!=home or output.is_symlink() or not manifest.is_absolute() or manifest.is_symlink():raise ValueError('unsafe automatic room inputs')
+            if output.stat().st_size>16*1024*1024 or manifest.stat().st_size>32768:raise ValueError('automatic room input too large')
+            from station_online_profiles import prepare
+            current_profiles=json.loads(output.read_bytes())
+            updated_profiles=prepare(items,current_profiles,json.loads(manifest.read_bytes()))
+            if updated_profiles!=current_profiles:atomic_json(output,updated_profiles,gid)
         changed = original != json.dumps(items, sort_keys=True)
         result = dict(previous, revision=previous['revision']+1 if changed else previous['revision'], items=items)
         report['metadataMissing'] = sum(not r.get('metadata', {}).get('description') for r in items if r.get('catalogVisible', True))

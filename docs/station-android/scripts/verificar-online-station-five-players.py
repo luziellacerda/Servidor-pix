@@ -17,7 +17,7 @@ from websockets.exceptions import InvalidStatus
 from station_async_socket_check import SocketChecks
 
 
-def verify(index, values, base, sql):
+def verify(index, values, base, sql, additional_profiles=()):
     spec = importlib.util.spec_from_file_location('station_v3_owned', Path(__file__).with_name('verificar-http-release-station.py'))
     helper = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(helper)
@@ -32,6 +32,11 @@ def verify(index, values, base, sql):
                   and p['profileId'] in ('snes-normal-605f43d7-20261009',
                       'snes-battle-single-605f43d7-20261009', 'snes-normal-b9c7ce2d-20261009')]
     selected.extend(documented)
+    selected.extend(additional_profiles)
+    # One proof per exact mode; a new platform can reuse the existing public
+    # authentication/roster/recovery gates without a duplicated test client.
+    selected = list({tuple(p[k] for k in ('itemId','engineId','profileId','profileSha256')):p
+        for p in selected if p['approved'] and p['maximumPlayers'] >= 2}.values())
     path = '/v1/station/online/multiplayer/command'
     relay = '/v1/station/online/multiplayer/relay'
     clients, sessions, rooms = [], {}, []
@@ -179,7 +184,10 @@ def verify(index, values, base, sql):
                 ws.close()
             time.sleep(1.1)
         return dict(passed=True, checks=checks, approvedProfiles=len(profiles), signedV3=True, createJoinReadyStart=True,
-            bidirectionalBytes=forwarded, countsVerified=[2,4,5], snesAndMegaDrive=True, protectedResume=True,
+            bidirectionalBytes=forwarded, countsVerified=sorted({p['maximumPlayers'] for p in selected}),
+            platformsVerified=sorted({p['platform'] for p in selected}),
+            engineBindingsVerified=[{k:p[k] for k in ('platform','engineId','coreSha256','runtimeSha256','profileId','maximumPlayers')} for p in selected],
+            snesAndMegaDrive=True, protectedResume=True,
             documentedBombermanModesVerified=[p['profileId'] for p in documented],
             syntheticDevices=5, public=base.startswith('https:'), physicalAndroidGameplayQualified=False)
     finally:

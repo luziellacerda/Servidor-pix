@@ -11,10 +11,12 @@ public sealed record StationCatalogEntry(
 {
     public IReadOnlyList<string> FolderPath { get; init; } = Array.Empty<string>();
 
-    // SHA of the exact launch payload, supplied by the offline publisher.
+    // SHA of the exact launch payload or declared multi-file content set, supplied offline.
     // It is independent of an archive/container descriptor and never computed on a request.
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? ContentSha256 { get; init; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public string? ContentIdentityScheme { get; init; }
 
     public object PublicValue(bool includeMetadata)
     {
@@ -29,6 +31,8 @@ public sealed record StationCatalogEntry(
         // Preserve the old wire shape for unqualified items; do not invent a hash.
         if (ContentSha256 is not null)
             result["contentSha256"] = ContentSha256;
+        if (ContentIdentityScheme is not null)
+            result["contentIdentityScheme"] = ContentIdentityScheme;
         return result;
     }
 }
@@ -111,6 +115,7 @@ public sealed class StationLibrary
                 itemRev.TryGetInt64(out var parsedItemRev) && parsedItemRev > 0
                 ? parsedItemRev : revision;
             var contentSha256 = ReadContentSha256(row);
+            var contentIdentityScheme = ReadContentIdentityScheme(row,contentSha256);
             var filePath = RequirePath(row, "filePath");
             var coverPath = RequirePath(row, "coverPath");
             var catalogVisible = true;
@@ -151,9 +156,13 @@ public sealed class StationLibrary
                     throw new InvalidOperationException("Station artifact index is stale.");
                 }
             }
+            if (contentIdentityScheme is not null && (artifact is null || artifact.Format != "zip" ||
+                (contentIdentityScheme == "cue-set-v1" && !artifact.LaunchPath.EndsWith(".cue", StringComparison.OrdinalIgnoreCase)) ||
+                (contentIdentityScheme == "wiiu-set-v1" && (platform != "wiiu" || !artifact.LaunchPath.EndsWith(".rpx", StringComparison.OrdinalIgnoreCase)))))
+                throw new InvalidOperationException("Station content identity scheme does not match the artifact.");
             if (!items.TryAdd(itemId, new Resolved(
                     new StationCatalogEntry(itemId, name, platform, itemRevision, coverId, ReadMetadata(row))
-                    { FolderPath = ReadFolderPath(row), ContentSha256 = contentSha256 },
+                    { FolderPath = ReadFolderPath(row), ContentSha256 = contentSha256, ContentIdentityScheme = contentIdentityScheme },
                     filePath, artifact, lastWriteUtcTicks, catalogVisible)))
                 throw new InvalidOperationException("Station library index is invalid.");
             if (covers.TryGetValue(coverId, out var existing) &&
@@ -204,6 +213,8 @@ public sealed class StationLibrary
     }
 
     public int ItemCount => Catalog.Count;
+    public StationCatalogEntry? FindCatalogItem(string id) =>
+        _items.TryGetValue(id, out var item) && item.CatalogVisible ? item.Entry : null;
     public int CompatibilityItemCount => _items.Count - Catalog.Count;
     public bool ContainsItem(string itemId) => _items.ContainsKey(itemId);
 
@@ -217,6 +228,14 @@ public sealed class StationLibrary
             text.Any(character => character is not (>= '0' and <= '9' or >= 'a' and <= 'f')))
             throw new InvalidOperationException("Station content identity is invalid.");
         return text;
+    }
+    private static string? ReadContentIdentityScheme(JsonElement row,string? contentHash)
+    {
+        if (!row.TryGetProperty("contentIdentityScheme", out var value)) return null;
+        if (contentHash is null || value.ValueKind != JsonValueKind.String ||
+            value.GetString() is not ("cue-set-v1" or "wiiu-set-v1"))
+            throw new InvalidOperationException("Station content identity scheme is invalid.");
+        return value.GetString();
     }
 
     private static StationItemMetadata? ReadMetadata(JsonElement row)

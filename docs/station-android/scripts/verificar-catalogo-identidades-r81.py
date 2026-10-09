@@ -87,6 +87,7 @@ def verify(index, values, base, sql, identities=True, multiplayer='disabled'):
                 check(all(received[k] == row[k] for k in ('itemId', 'name', 'platform', 'revision', 'coverId')), 'item identity')
                 check(received.get('contentSha256') == (row.get('contentSha256') if identities else None), 'exact content identity')
                 check(('contentSha256' in received) == bool(identities and row.get('contentSha256')), 'unknown content not fabricated')
+                check(received.get('contentIdentityScheme') == (row.get('contentIdentityScheme') if identities else None), 'multi-file content identity scheme')
                 if include_metadata:
                     check(received['metadata'] == {k: row.get('metadata', {}).get(k, '') for k in metadata_keys} and received['folderPath'] == row.get('folderPath', []), 'all metadata and folders')
                 else:

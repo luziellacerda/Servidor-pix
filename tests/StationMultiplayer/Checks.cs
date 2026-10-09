@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 
 int checks=0;void Check(bool value,string name){checks++;if(!value)throw new Exception(name);}
 CatalogChecks.Run(Check);
+CapacityChecks.Run(Check);
 void Denied(Action action,string code){checks++;try{action();throw new Exception("Expected "+code);}catch(OnlineFailure e){if(e.Code!=code)throw new Exception("Expected "+code+" got "+e.Code);}}
 string H(char c)=>new(c,64);
 var security=new StationSessionSecurity("rsa-pss-v1","synthetic-key-only");
@@ -85,6 +86,41 @@ foreach(var entry in new[]{("snes",5),("snesbr",5),("megadrive",2),("megadrivebr
 var unconfiguredPlatform=new StationMultiplayer([],_=>"wiiu",new());
 var pendingPolicy=Json(unconfiguredPlatform.Command(new("pending-system","pending-system"),Cmd("capabilities"),security)).GetProperty("platformPolicy");
 Check(pendingPolicy.GetProperty("maximumPlayers").GetInt32()==4&&!pendingPolicy.GetProperty("onlineAvailable").GetBoolean(),"four-seat policy alone cannot advertise an absent engine");
+Check(pendingPolicy.GetProperty("availability").GetString()=="online-engine-pending","missing native engine has an explicit signed reason");
+// Updating the registry cannot discard a running room or its replay reservation.
+var hot=Make(2,profile:altProfile);
+var hotRoom=Json(hot.Hub.Command(hot.People[0],Cmd("start",hot.Room,p:altProfile),security)).GetProperty("room");
+long reserved=hot.Budget.UsedBytes;
+var addedProfile=altProfile with{ItemId="synthetic-added-game",ProfileId="synthetic-added-profile"};
+hot.Hub.ReplaceProfiles([altProfile,addedProfile]);
+var hotAfter=Json(hot.Hub.Command(hot.People[0],Cmd("snapshot",hotRoom,p:altProfile),security)).GetProperty("room");
+Check(hotAfter.GetProperty("roomId").GetString()==hotRoom.GetProperty("roomId").GetString()&&hotAfter.GetProperty("generation").GetInt64()==hotRoom.GetProperty("generation").GetInt64(),"registry reload preserves frozen room and generation");
+Check(reserved>0&&hot.Budget.UsedBytes==reserved,"registry reload preserves replay budget");
+var newGame=Json(hot.Hub.Command(new("new-game","new-game"),Cmd("create",capacity:2,p:addedProfile),security)).GetProperty("room");
+Check(newGame.GetProperty("itemId").GetString()==addedProfile.ItemId,"new registry game available without restart");
+Denied(()=>hot.Hub.ReplaceProfiles([altProfile,altProfile]),"STATION_MULTIPLAYER_PROFILE_AMBIGUOUS");
+Check(Json(hot.Hub.Command(hot.People[0],Cmd("snapshot",hotRoom,p:altProfile),security)).GetProperty("room").GetProperty("roomId").GetString()==hotRoom.GetProperty("roomId").GetString()&&hot.Budget.UsedBytes==reserved,"invalid replacement retains active room and registry");
+hot.Hub.Command(hot.People[0],Cmd("leave",hotRoom,p:altProfile),security);
+hot.Hub.Command(new("new-game","new-game"),Cmd("leave",newGame,p:addedProfile),security);
+string profileDirectory=Path.Combine(Path.GetTempPath(),"station-profile-reload-"+Guid.NewGuid().ToString("N"));
+Directory.CreateDirectory(profileDirectory);
+try{
+    string path=Path.Combine(profileDirectory,"profiles.json");
+    File.WriteAllBytes(path,JsonSerializer.SerializeToUtf8Bytes(new[]{altProfile},StrictJson.Options));
+    var liveRegistry=new StationMultiplayer([altProfile],_=>"snes",new());
+    var profileMonitor=new StationMultiplayerProfileMonitor(path,liveRegistry,NullLogger<StationMultiplayerProfileMonitor>.Instance);
+    Check(profileMonitor.Reload()&&!profileMonitor.Reload(),"initial registry is read once without losing a startup publication");
+    File.WriteAllBytes(path,JsonSerializer.SerializeToUtf8Bytes(new[]{altProfile,addedProfile},StrictJson.Options));
+    File.SetLastWriteTimeUtc(path,DateTime.UtcNow.AddSeconds(1));
+    Check(profileMonitor.Reload(),"complete atomic profile publication reloads");
+    File.WriteAllText(path,"[");File.SetLastWriteTimeUtc(path,DateTime.UtcNow.AddSeconds(2));
+    checks++;try{profileMonitor.Reload();throw new Exception("Expected malformed registry rejection");}catch(JsonException){}
+    Check(liveRegistry.LegacyAllowed(addedProfile.ItemId,addedProfile.ContentSha256,addedProfile.EngineId,addedProfile.CoreSha256,addedProfile.RuntimeSha256),"partial file retains last valid registry");
+    File.WriteAllBytes(path,JsonSerializer.SerializeToUtf8Bytes(new[]{addedProfile with{MaximumPlayers=5,ControllerProfile="standard-2p-v1"}},StrictJson.Options));
+    File.SetLastWriteTimeUtc(path,DateTime.UtcNow.AddSeconds(3));
+    Denied(()=>profileMonitor.Reload(),"STATION_MULTIPLAYER_PROFILE_INVALID");
+    Check(liveRegistry.LegacyAllowed(addedProfile.ItemId,addedProfile.ContentSha256,addedProfile.EngineId,addedProfile.CoreSha256,addedProfile.RuntimeSha256),"invalid controls retain last valid registry");
+}finally{Directory.Delete(profileDirectory,true);}
 string? catalogHash=H('a');
 var bound=new StationMultiplayer([altProfile],_=>"snes",new(),currentContentHash:_=>catalogHash);
 Check(bound.LegacyAllowed("synthetic-game",H('a'),"synthetic-engine",H('b'),H('c')),"exact current content permits approved legacy profile");
