@@ -14,7 +14,11 @@
     "approvedModeMaximums": [
       2
     ],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 0
   },
   {
     "platform": "cps2",
@@ -33,7 +37,11 @@
       1,
       2
     ],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 0
   },
   {
     "platform": "cps3",
@@ -51,7 +59,11 @@
     "approvedModeMaximums": [
       2
     ],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 0
   },
   {
     "platform": "dreamcast",
@@ -66,7 +78,11 @@
       "online-engine-pending": 243
     },
     "approvedModeMaximums": [],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 244
   },
   {
     "platform": "fbneo",
@@ -85,7 +101,11 @@
       1,
       2
     ],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 0
   },
   {
     "platform": "gamecube",
@@ -100,7 +120,11 @@
       "online-engine-pending": 21
     },
     "approvedModeMaximums": [],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 21
   },
   {
     "platform": "megadrive",
@@ -117,7 +141,11 @@
     "approvedModeMaximums": [
       2
     ],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 0
   },
   {
     "platform": "megadrivebr",
@@ -134,7 +162,11 @@
     "approvedModeMaximums": [
       2
     ],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 0
   },
   {
     "platform": "n64",
@@ -154,7 +186,11 @@
       2,
       4
     ],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 0
   },
   {
     "platform": "neogeo",
@@ -174,7 +210,11 @@
       1,
       2
     ],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 0
   },
   {
     "platform": "neogeocd",
@@ -193,7 +233,11 @@
       1,
       2
     ],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 0
   },
   {
     "platform": "psx",
@@ -213,7 +257,11 @@
       1,
       2
     ],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 0
   },
   {
     "platform": "snes",
@@ -233,7 +281,11 @@
       4,
       5
     ],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 0
   },
   {
     "platform": "snesbr",
@@ -253,7 +305,11 @@
       3,
       4
     ],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 0
   },
   {
     "platform": "switch",
@@ -268,7 +324,11 @@
       "online-engine-pending": 1
     },
     "approvedModeMaximums": [],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 1
   },
   {
     "platform": "wii",
@@ -283,7 +343,11 @@
       "online-engine-pending": 7
     },
     "approvedModeMaximums": [],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 7
   },
   {
     "platform": "wiiu",
@@ -298,6 +362,10 @@
       "online-engine-pending": 1
     },
     "approvedModeMaximums": [],
-    "physicalAndroidGameplayQualified": false
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": true,
+    "engineEnrollmentByData": true,
+    "engineEnrollmentRestartRequired": false,
+    "preparedModeCount": 1
   }
 ]

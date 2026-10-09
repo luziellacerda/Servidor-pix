@@ -1,11 +1,11 @@
 {
   "applied": true,
-  "utc": "2026-10-09T17:25:34.997827+00:00",
+  "utc": "2026-10-09T18:09:52.413592+00:00",
   "reloadUtc": "2026-10-09T17:01:55.811112+00:00",
-  "pid": 1812555,
+  "pid": 1820513,
   "nRestarts": 0,
-  "sourceCommit": "0a3df5f75700d4532d5801cf9dec6bf96ab5ebec",
-  "dllSha256": "25d98d65220e15de8ba4ee5e9e77e5ce66de9a04986ddfd924d42ca95f172e97",
+  "sourceCommit": "eb826d5df17dad51314d265e2cba91b05d1c96cf",
+  "dllSha256": "34fdc4b1ecea3216b3d30e49e003ef32a0520ca36637d186e9daeb369146645d",
   "catalogRevision": 27,
   "catalogItems": 3848,
   "catalogVisible": 3593,
@@ -3217,6 +3217,471 @@
           }
         }
       }
+    },
+    "serverPreparation": {
+      "futureTransport": {
+        "multiplayer": {
+          "passed": true,
+          "checks": 2029,
+          "approvedProfiles": 5181,
+          "signedV3": true,
+          "createJoinReadyStart": true,
+          "serverCapabilitiesPlatformsVerified": [
+            "dreamcast",
+            "gamecube",
+            "switch",
+            "wii",
+            "wiiu"
+          ],
+          "bidirectionalBytes": 5248,
+          "countsVerified": [
+            2,
+            4,
+            5
+          ],
+          "platformsVerified": [
+            "cps1",
+            "cps2",
+            "cps3",
+            "dreamcast",
+            "fbneo",
+            "gamecube",
+            "megadrive",
+            "n64",
+            "neogeo",
+            "neogeocd",
+            "psx",
+            "snes",
+            "switch",
+            "wii",
+            "wiiu"
+          ],
+          "engineBindingsVerified": [
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+              "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "megadrive",
+              "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+              "profileId": "standard-2p-v1",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+              "profileId": "snes-sbomberman2-usa-battle-single-r77",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-sbomberman3-battle-single-5p-20261009",
+              "maximumPlayers": 5
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-sbomberman3-battle-team-5p-20261009",
+              "maximumPlayers": 5
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-normal-605f43d7-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-battle-single-605f43d7-20261009",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-normal-b9c7ce2d-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "n64",
+              "engineId": "parallel-3be1f437-n64-v3-81b3daa38fb9",
+              "coreSha256": "09555f50df2767f078217058648420970024993603217bc9a29066032a8cad9d",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "neogeo",
+              "engineId": "fbneo-95153da1-neogeo-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "neogeocd",
+              "engineId": "neocd-b1e04c73-aslr1-v3-81b3daa38fb9",
+              "coreSha256": "78a35bc9a9435238d74125e77ae8f8d249ba59e90f07d43f43c84ad5ddc68870",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "psx",
+              "engineId": "pcsx-c8816799-psx-v3-81b3daa38fb9",
+              "coreSha256": "4de0afbd3bb113a4b9927b5b250860194b485f278d1dced81501dc6555fa18a8",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "fbneo",
+              "engineId": "fbneo-95153da1-fbneo-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "cps1",
+              "engineId": "fbneo-95153da1-cps1-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "cps2",
+              "engineId": "fbneo-95153da1-cps2-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "cps3",
+              "engineId": "fbneo-95153da1-cps3-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "dreamcast",
+              "engineId": "synthetic-audit-dreamcast",
+              "coreSha256": "c2328410355bd27917250c4ce0cb40291467269095bee2cb3ce2a6484ddf26d1",
+              "runtimeSha256": "8ca1dbdf9a94a5bec8cddda37f8dcce6ad179da7e25e899cc80226a44672f047",
+              "profileId": "synthetic-transport-only",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "gamecube",
+              "engineId": "synthetic-audit-gamecube",
+              "coreSha256": "68c807ab2de0eaa3a63f2ea757458740d586325ddc39c5f1655a55002a2ec2e6",
+              "runtimeSha256": "8ca1dbdf9a94a5bec8cddda37f8dcce6ad179da7e25e899cc80226a44672f047",
+              "profileId": "synthetic-transport-only",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "wii",
+              "engineId": "synthetic-audit-wii",
+              "coreSha256": "7569ffd8621092289326eb47693890f10b07c636425407380c0ddc0080a803f3",
+              "runtimeSha256": "8ca1dbdf9a94a5bec8cddda37f8dcce6ad179da7e25e899cc80226a44672f047",
+              "profileId": "synthetic-transport-only",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "wiiu",
+              "engineId": "synthetic-audit-wiiu",
+              "coreSha256": "78d6323c99b75abd5d1a5ea3abd2de828ac4f5ae6d07cd18cb41ebf8f3583bd1",
+              "runtimeSha256": "8ca1dbdf9a94a5bec8cddda37f8dcce6ad179da7e25e899cc80226a44672f047",
+              "profileId": "synthetic-transport-only",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "switch",
+              "engineId": "synthetic-audit-switch",
+              "coreSha256": "c5e24ae87ba8f53d7ac75ee3bfd4037cf6f394ab2546adc55b340dddd65c7bd9",
+              "runtimeSha256": "8ca1dbdf9a94a5bec8cddda37f8dcce6ad179da7e25e899cc80226a44672f047",
+              "profileId": "synthetic-transport-only",
+              "maximumPlayers": 2
+            }
+          ],
+          "snesAndMegaDrive": true,
+          "protectedResume": true,
+          "documentedBombermanModesVerified": [
+            "snes-normal-605f43d7-20261009",
+            "snes-battle-single-605f43d7-20261009",
+            "snes-normal-b9c7ce2d-20261009"
+          ],
+          "syntheticDevices": 5,
+          "public": false,
+          "physicalAndroidGameplayQualified": false
+        },
+        "readyAfter": {
+          "maximumRooms": 512,
+          "maximumConnections": 1024,
+          "activeRooms": 0,
+          "activeConnections": 0,
+          "forwardedBytes": 0,
+          "recovery": {
+            "protocol": "station-stream.v2",
+            "maximumRooms": 64,
+            "windowBytes": 262144,
+            "retainedRooms": 0,
+            "activeConnections": 0,
+            "pendingBytes": 0,
+            "maximumRetainedBytes": 33554432,
+            "persistent": false
+          },
+          "multiplayer": {
+            "protocol": "station-stream.v3",
+            "maximumPlayers": 5,
+            "maximumRooms": 100,
+            "activeRooms": 0,
+            "activeConnections": 0,
+            "approvedProfiles": 5174,
+            "profileCount": 5181,
+            "retainedBytes": 0,
+            "maximumRetainedBytes": 134217728
+          }
+        }
+      },
+      "public": {
+        "multiplayer": {
+          "passed": true,
+          "checks": 1443,
+          "approvedProfiles": 5176,
+          "signedV3": true,
+          "createJoinReadyStart": true,
+          "serverCapabilitiesPlatformsVerified": [
+            "dreamcast",
+            "gamecube",
+            "switch",
+            "wii",
+            "wiiu"
+          ],
+          "bidirectionalBytes": 3584,
+          "countsVerified": [
+            2,
+            4,
+            5
+          ],
+          "platformsVerified": [
+            "cps1",
+            "cps2",
+            "cps3",
+            "fbneo",
+            "megadrive",
+            "n64",
+            "neogeo",
+            "neogeocd",
+            "psx",
+            "snes"
+          ],
+          "engineBindingsVerified": [
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+              "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "megadrive",
+              "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+              "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+              "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+              "profileId": "standard-2p-v1",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+              "profileId": "snes-sbomberman2-usa-battle-single-r77",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-sbomberman3-battle-single-5p-20261009",
+              "maximumPlayers": 5
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-sbomberman3-battle-team-5p-20261009",
+              "maximumPlayers": 5
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-normal-605f43d7-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-battle-single-605f43d7-20261009",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "snes",
+              "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+              "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "snes-normal-b9c7ce2d-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "n64",
+              "engineId": "parallel-3be1f437-n64-v3-81b3daa38fb9",
+              "coreSha256": "09555f50df2767f078217058648420970024993603217bc9a29066032a8cad9d",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 4
+            },
+            {
+              "platform": "neogeo",
+              "engineId": "fbneo-95153da1-neogeo-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "neogeocd",
+              "engineId": "neocd-b1e04c73-aslr1-v3-81b3daa38fb9",
+              "coreSha256": "78a35bc9a9435238d74125e77ae8f8d249ba59e90f07d43f43c84ad5ddc68870",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "psx",
+              "engineId": "pcsx-c8816799-psx-v3-81b3daa38fb9",
+              "coreSha256": "4de0afbd3bb113a4b9927b5b250860194b485f278d1dced81501dc6555fa18a8",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "fbneo",
+              "engineId": "fbneo-95153da1-fbneo-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "cps1",
+              "engineId": "fbneo-95153da1-cps1-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "cps2",
+              "engineId": "fbneo-95153da1-cps2-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            },
+            {
+              "platform": "cps3",
+              "engineId": "fbneo-95153da1-cps3-v3-81b3daa38fb9",
+              "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+              "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+              "profileId": "local-mode-20261009",
+              "maximumPlayers": 2
+            }
+          ],
+          "snesAndMegaDrive": true,
+          "protectedResume": true,
+          "documentedBombermanModesVerified": [
+            "snes-normal-605f43d7-20261009",
+            "snes-battle-single-605f43d7-20261009",
+            "snes-normal-b9c7ce2d-20261009"
+          ],
+          "syntheticDevices": 5,
+          "public": true,
+          "physicalAndroidGameplayQualified": false
+        },
+        "readyAfter": {
+          "maximumRooms": 512,
+          "maximumConnections": 1024,
+          "activeRooms": 0,
+          "activeConnections": 0,
+          "forwardedBytes": 64,
+          "recovery": {
+            "protocol": "station-stream.v2",
+            "maximumRooms": 64,
+            "windowBytes": 262144,
+            "retainedRooms": 0,
+            "activeConnections": 0,
+            "pendingBytes": 0,
+            "maximumRetainedBytes": 33554432,
+            "persistent": false
+          },
+          "multiplayer": {
+            "protocol": "station-stream.v3",
+            "maximumPlayers": 5,
+            "maximumRooms": 100,
+            "activeRooms": 0,
+            "activeConnections": 0,
+            "approvedProfiles": 5169,
+            "profileCount": 5176,
+            "retainedBytes": 0,
+            "maximumRetainedBytes": 134217728
+          }
+        }
+      },
+      "importer": {
+        "passed": true,
+        "timerActive": true,
+        "execMainStatus": 0,
+        "lastScanStart": "Fri 2026-10-09 15:09:34 -03",
+        "postDeploymentScanChanged": false,
+        "catalogRevision": 27,
+        "preparedModeInput": true,
+        "persistentEngineManifest": true,
+        "previousProfilesPreserved": 5176,
+        "indexSha256": "f7924dcd6bdea74c2f32d8a482184f6f21f6a7f235b77f697432fd57637aef6e",
+        "identitiesSha256": "16efbad906b1f8aec26869fc9900a7aa50486fa351be4c82f507253a1902667a",
+        "profilesSha256": "a029fb61ce68fa26abadf0312b55b9ae163c6a3604a12bfd37e97d406fdfebaa"
+      }
     }
   },
   "initialCatalogDeployment": {
@@ -3226,6 +3691,18 @@
     "dllSha256": "e74fde53cbe65273d26b3576cb39b8d096dff476dff99409681cd2469b678007",
     "pid": 1805466
   },
-  "reloadLocal": "Fri 2026-10-09 14:22:45 -03",
-  "profileReloadJoinAndReconnectCorrected": true
+  "reloadLocal": "Fri 2026-10-09 14:57:04 -03",
+  "profileReloadJoinAndReconnectCorrected": true,
+  "previousServerPublication": {
+    "utc": "2026-10-09T17:25:34.997827+00:00",
+    "pid": 1812555,
+    "sourceCommit": "0a3df5f75700d4532d5801cf9dec6bf96ab5ebec",
+    "dllSha256": "25d98d65220e15de8ba4ee5e9e77e5ce66de9a04986ddfd924d42ca95f172e97"
+  },
+  "all15ServerPlatformsReady": true,
+  "serverFirstOrderComplete": true,
+  "engineEnrollmentByData": true,
+  "engineEnrollmentRestartRequired": false,
+  "preparedNativeItems": 273,
+  "preparedNativeModes": 274
 }

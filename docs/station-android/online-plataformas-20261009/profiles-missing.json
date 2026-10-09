@@ -4,1959 +4,2792 @@
     "name": "Jonas Indiana and the Lost Temple of RA",
     "platform": "neogeo",
     "contentSha256": "6a57737a529234bf0cfe133fd12c16ce227e31e75508bb8e456f914497fb869b",
-    "onlineState": "mode-pending"
+    "onlineState": "mode-pending",
+    "serverReady": true,
+    "nextIntegration": "game-driver-or-mode-data"
   },
   {
     "itemId": "station_320ff39a7a8b49e96da6105cef9330e9",
     "name": "Syougi No Tatsujin - Master of Syougi",
     "platform": "neogeo",
     "contentSha256": "f1d3985fa860e747146e02982d85aa9cb7f182fd9fd8f7c6fce3813e8c2664d6",
-    "onlineState": "mode-pending"
+    "onlineState": "mode-pending",
+    "serverReady": true,
+    "nextIntegration": "game-driver-or-mode-data"
   },
   {
     "itemId": "station_038ee7ed4846010ef01207622e5f6311",
     "name": "Tecmo World Soccer '96",
     "platform": "neogeo",
     "contentSha256": "bc92210b34f21a8f2220e23d90c35147bef428a2d7c4f130b3e04cb9eff0d2f1",
-    "onlineState": "mode-pending"
+    "onlineState": "mode-pending",
+    "serverReady": true,
+    "nextIntegration": "game-driver-or-mode-data"
   },
   {
     "itemId": "station_a41d0112a7739a83181d31548dd01c7d",
     "name": "The King of Fighters '96",
     "platform": "neogeo",
     "contentSha256": "ee1558bc18d5117219b02da0980f078f344e4a760ea5e22e4b54fa3d784c9e5c",
-    "onlineState": "mode-pending"
+    "onlineState": "mode-pending",
+    "serverReady": true,
+    "nextIntegration": "game-driver-or-mode-data"
   },
   {
     "itemId": "station_9f9bf97de88d3a3b7dd55e672c20d710",
     "name": "102 Dalmatians - Puppies to the Rescue",
     "platform": "dreamcast",
     "contentSha256": "986bd2d69f97987ece1d2fedc987b6ceeb85c5fd2a5fb38cb0d913f5c97f9d5b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_83478c3cb0c6851470d2b7fa11b5a873",
     "name": "18 Wheeler - American Pro Trucker",
     "platform": "dreamcast",
     "contentSha256": "d16cfd39ab54e64025df700afccd6dc7c663ae25f7addcc63c0ec805db5605dd",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_95d9fb6a7976caa3be73c0c4943873b8",
     "name": "4 Wheel Thunder",
     "platform": "dreamcast",
     "contentSha256": "1152ac60867f9daa1257d940e589151f21e32d6d31fdb3f96154e7ff78f8df23",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_287858ab40ee9ec0e2cb6567dc7cef11",
     "name": "4X4 EVO",
     "platform": "dreamcast",
     "contentSha256": "028121d0ab10a2cce86847ff7d8ede6db6d59473d3d68ecc512b97d7dded5164",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_d200672b6feada42ed7102b5e6d034e2",
     "name": "AeroWings 2 - Airstrike",
     "platform": "dreamcast",
     "contentSha256": "23bd2c49db9a7433d0862150fe4b738cb8e61894a55b1630a97603723d3b359c",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_82943724ade3d66e7afddba552a1422e",
     "name": "AeroWings",
     "platform": "dreamcast",
     "contentSha256": "069fea54bf2408d9c5f5866b0f89a6a7b09cdb31582a5c3ce67b764cec40d494",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a42bf0ff59174a89706c28e19d4b283c",
     "name": "Airforce Delta",
     "platform": "dreamcast",
     "contentSha256": "d113a3538fa2b1b46038ed1730182e7378d701d9893a659e92a9f4b87d666d0b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_1957617bf10c9bc36cbd027dd1cdbdd0",
     "name": "Alien Front Online",
     "platform": "dreamcast",
     "contentSha256": "acab8bf23053a3110eecd1eec7c8f920022be6b1783848f47be7b11463974bd9",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_04ecfb322300cdefa2344784bb8b41be",
     "name": "Alone in the Dark - The New Nightmare (Disco 1 de 2)",
     "platform": "dreamcast",
     "contentSha256": "51d36b6eaae6897794dc8ab5d9873acc873a77490786afe057954f47a1acf47e",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_1b4aeb7b677b8406e6810f443b22155a",
     "name": "Alone in the Dark - The New Nightmare (Disco 2 de 2)",
     "platform": "dreamcast",
     "contentSha256": "4acabd739e4d1a7d4a445b8cd4b96fe854a7389b509da24c533b9626d5323109",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_b122cea73ddf8475cd963c8dc38a346b",
     "name": "Armada",
     "platform": "dreamcast",
     "contentSha256": "ca3b39de2fe3c08ae4e24e1b311aeb62ba74203a465c7b3a1270a90cdab8fa53",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_3198b9d40054b1fa14282a7500ef659c",
     "name": "Atari Anniversary Edition",
     "platform": "dreamcast",
     "contentSha256": "017bf7fc1b3644be73affd8f2afb20e35d0a363355390acd0a4dd8a5efecbc4d",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_e7d94e0cfb2a9eca50743774289a8616",
     "name": "BANG! - Gunship Elite",
     "platform": "dreamcast",
     "contentSha256": "43c80ba62a5cfe403a63d819640f8c2cd39826d185b43d9b6bac71ae4974b79a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_06a754990599eb6a423cefe7dc9070d8",
     "name": "Bangai-O",
     "platform": "dreamcast",
     "contentSha256": "b229c276aee611825d541f247a2f9a532554ed7734964b125594115b4a88ba3f",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_78ee9a2ed5767f3ad0788bff26aa2996",
     "name": "Blue Stinger",
     "platform": "dreamcast",
     "contentSha256": "f83f7e2ba3a87d01d90d19767190e5486e05985be81194f9ac1a2a18f8007d1b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_3f0267d082d3d99218768e6f4088960b",
     "name": "Bomberman Online",
     "platform": "dreamcast",
     "contentSha256": "7fc8fae68d69f98a0285f05b77369946e5926f9afdb805d67f539beaa01642d9",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 2
   },
   {
     "itemId": "station_3b454a248a1a50a1223c89c35431faca",
     "name": "Bust-A-Move 4",
     "platform": "dreamcast",
     "contentSha256": "3874e8f1b94e5fa05ddc81a062d198e036868193d73e48c9180a1c520d012adc",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_dd7497f63bd28edf2a83912dd8b79153",
     "name": "Buzz Lightyear of Star Command",
     "platform": "dreamcast",
     "contentSha256": "9a56bb9160e89f1a1f4420ede454e311dc87ff38b2d9e69f4246ec0ac2cd742a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_cae84c3c3409171760fdc11eea9e7359",
     "name": "Caesars Palace 2000 - Millennium Gold Edition",
     "platform": "dreamcast",
     "contentSha256": "af9b155793a6a48ae5dcce4dfc10886309b8d7877955ebaadc76538b7656f567",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_ed5af569721f569982641d9011eb51f5",
     "name": "Cannon Spike",
     "platform": "dreamcast",
     "contentSha256": "6212156b6943ef02fb20d0ff0e437d95412c14013712866f4956f14468b07143",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_bff918776f3da95ac81eb98bdf024f1e",
     "name": "Capcom vs. SNK",
     "platform": "dreamcast",
     "contentSha256": "366a82fda976e115b57781bd675bf113cad2f0545c0eb49bafaeae61c6e9fb04",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_10a77bfff545c07a52f2683593cad3bb",
     "name": "Carrier",
     "platform": "dreamcast",
     "contentSha256": "8e263ca1db869c644ccb1ceec6d84d5c0e78a119d2bde07fc21bd2359e032ea8",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_9bca3ce933d0a890f85773bc7c2d880e",
     "name": "Centipede",
     "platform": "dreamcast",
     "contentSha256": "7b54c6eb449d0f99421c29efcb84df1bb9277311a1209bf65229a3ce0154cf96",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_39b36a5534e2407b3ce5311c617db9dc",
     "name": "Championship Surfer",
     "platform": "dreamcast",
     "contentSha256": "894b689e6486d52cda3a928f4d9b52491b14e8fef6a7b1d2e17d7242ebaeec1b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_380d6a7613fe5e513c5a3d6a1d25fba6",
     "name": "Charge 'n Blast",
     "platform": "dreamcast",
     "contentSha256": "21fc0a44247979dcfaa74ab004e895a93b783ab9f9eee04dd107c7aad7e27e6d",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_81f0aa9ef7e2e655efedea459bf9e09a",
     "name": "Chicken Run",
     "platform": "dreamcast",
     "contentSha256": "753964a71051bc07e8041accf34f3ddd1aa7fd4977d51e0b077aa8d1d9e8483f",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_c0b4bc1c83241d09396716dd502bd6ae",
     "name": "ChuChu Rocket!",
     "platform": "dreamcast",
     "contentSha256": "9c74b18b48bc359b46779de52d797f7b5f45725dd498ebe606a39591e33d574b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_ed136a9394c2037d484c8f2a151a45b7",
     "name": "Coaster Works",
     "platform": "dreamcast",
     "contentSha256": "1013948f22950fd01cda24c721d3f92d4dec162c229232d4700e93b77a869126",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_66eff1675fca6e529d0a622d08f09da6",
     "name": "Confidential Mission",
     "platform": "dreamcast",
     "contentSha256": "1676546d1c6e8330ca6557a8bdb4e81fd3e308a3ae87c97b6317083a5bfe59fd",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_2d59f12eef6f69e3f1ef193123964691",
     "name": "Conflict Zone - Modern War Strategy",
     "platform": "dreamcast",
     "contentSha256": "05c75114d2f112d08263082e49fa169578dd23d98af9465d968274f698929077",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_5210369132693e34f07b0871b9700e1f",
     "name": "Crazy Taxi 2",
     "platform": "dreamcast",
     "contentSha256": "c312ca42086d26d2dac326b9695b0e31ef21912777857e19e42b67d44aeab814",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_02dd0c5e7ff237bce158caf6cb5cf85f",
     "name": "Crazy Taxi",
     "platform": "dreamcast",
     "contentSha256": "78589e77bab773d50a3afe028766ace8d0edec22913dc1877ceea969347d38c7",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_9cd3ece7064d01c8dd39405cceaa15a3",
     "name": "Cyber Troopers - Virtual On - Oratorio Tangram",
     "platform": "dreamcast",
     "contentSha256": "755e9481db211723f5a0b82f82479029f9552a5e0f8af77355b07e83973b3e51",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_e64d6154cb52871b946e2b88e578da05",
     "name": "D2 (Disco 1 de 4)",
     "platform": "dreamcast",
     "contentSha256": "007a4285266f1f154f1c6351808b0f9a9aacdd6bc963b562d5d48c574db79cd4",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_77a73fb9d8b7e6e1babaa3869f81b492",
     "name": "D2 (Disco 2 de 4)",
     "platform": "dreamcast",
     "contentSha256": "fcd378fbfe3028bb631bd5f2d6d8eed99da6d34551f9132e4a546b07e16ecaab",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_ab4dde393bfbe5fec768d06c68d8a22f",
     "name": "D2 (Disco 3 de 4)",
     "platform": "dreamcast",
     "contentSha256": "4b319ff12d29f2352fd5af90779498a1eda3e33fd3ab11761f387b369c04802d",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_70f4c12ef657696e9c59673d24ef15c4",
     "name": "D2 (Disco 4 de 4)",
     "platform": "dreamcast",
     "contentSha256": "ec817d5fa9b1ddedc77a642bdec4a4b84eeb089c45e97744f3bf033099c7fc64",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_259e6a25e7bde71b068a0b8a75f0961d",
     "name": "Dave Mirra Freestyle BMX",
     "platform": "dreamcast",
     "contentSha256": "ba9ff9f9994047ebb2d81be29eaa5a1eae1603fbdc8d29dc06d2a2a3e00015f1",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_1ee814571be2c22a9c65a15d81f8b7dd",
     "name": "Daytona USA",
     "platform": "dreamcast",
     "contentSha256": "1f6c890319c35ff14452ecb2a68068c60c3ff1a1d72cb66e117c28f7388b020e",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_24866560a51e15aa8164f855ad4ad723",
     "name": "Dead or Alive 2",
     "platform": "dreamcast",
     "contentSha256": "07f11501d5d6175915d2417952ea90c9ffb042e317a9c4bc8800ce4365770e18",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_5240afc71444744c15007ae9f6b9d7f9",
     "name": "Death Crimson OX",
     "platform": "dreamcast",
     "contentSha256": "c2e9e6f22dbadce07eac9ff219bcd7e1e7911e19f906c265fd6d806cbb5b0984",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_7c83a91e5a7d52ebbe397c997239df45",
     "name": "Deep Fighter (Disco 1 de 2)",
     "platform": "dreamcast",
     "contentSha256": "b1856076f0b86f172ab78e304c03c1b5992be54807ae16d87f08e0cd9b818ba6",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_8cdc73fcbe8f2c91533612099ded04ec",
     "name": "Deep Fighter (Disco 2 de 2)",
     "platform": "dreamcast",
     "contentSha256": "cf52cf6e21b6aa2f2f2684c50f9c8c01ddc315685904825f981e00d93b127715",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_01646a9feac4ae6dc4b9fa49c546b360",
     "name": "Demolition Racer - No Exit",
     "platform": "dreamcast",
     "contentSha256": "f14c57f3050bc7fb1f7c114e164c12b079a7e4ce792153249beea5be500172a8",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_26b0b0591bd101ae392f2d01f1068a97",
     "name": "Dino Crisis",
     "platform": "dreamcast",
     "contentSha256": "c30a555c7569e673c4e3a1b006ee3713ab48b26178eeb53676005d13bfdfa175",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_df82749551fef69490da44076c787fa7",
     "name": "Dinosaur",
     "platform": "dreamcast",
     "contentSha256": "b64b5d3f5f3edb05ccf557f5f8da6ed4435be3a197db09207be92c378913479f",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_0953492c4c6576065efa98380dba2e52",
     "name": "Donald Duck - Goin' Quackers",
     "platform": "dreamcast",
     "contentSha256": "736b99450213e40fca1d80ca6e5e9a4969885bdf015bdbad68f9913c4b73e345",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_e78854c56c4e489540a05496568f16ea",
     "name": "Draconus - Cult of the Wyrm",
     "platform": "dreamcast",
     "contentSha256": "eca402c0a254503a4e71bf1b1773c71aa28c84315bff305b2c055f6f768ddaf7",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_dedeb5d5406c24cd1bfb02343a0b0395",
     "name": "DragonRiders - Chronicles of Pern",
     "platform": "dreamcast",
     "contentSha256": "172d774aa52964ac3116d49b17f7c6bdd717a05c0b8cb67c211fd584cd0d865c",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_21c3071c3a57a83e67ccc1646164d931",
     "name": "Ducati World - Racing Challenge",
     "platform": "dreamcast",
     "contentSha256": "2a14b9041335e83a31f01745662c054b80b7c3be9c9d292aaba720fbaa261518",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_bdc6f2ee9158d13d4e436f299c439d5f",
     "name": "Dynamite Cop!",
     "platform": "dreamcast",
     "contentSha256": "0da39e9be3e1cb28b2976572abe2d39722efa9ec4fb1d8bd3807c9e2e1771ed5",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_d0fb3f50d577eec144e4b4c22bae7948",
     "name": "ECCO the Dolphin - Defender of the Future",
     "platform": "dreamcast",
     "contentSha256": "b5467511dde0d80958914dea38ee7a0f6286f14c76796705d9bd45032136b074",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_f4a2b84b4721805fa57c9bda3a2664e4",
     "name": "ECW Hardcore Revolution",
     "platform": "dreamcast",
     "contentSha256": "59aaece14b9e13810bf2f6675b173f5641548baf1781204e0192ee43f409a8d1",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_b45d526c6d27387e5b19af50e964e7eb",
     "name": "ESPN International Track & Field",
     "platform": "dreamcast",
     "contentSha256": "9e3f4264d33bfa8ab8f028d7a91925adc700c150cfcbfd1dc45d3ac1e4dd1f68",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_bc75414425bee9e137946fd0daae844f",
     "name": "Elemental Gimmick Gear",
     "platform": "dreamcast",
     "contentSha256": "5b20e8a3f2f35ac7054840744163f757017d835627765322ab3a9b3be92dc743",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_3b23851db172d8be9ffaf91cc12c118c",
     "name": "Evil Dead - Hail to the King",
     "platform": "dreamcast",
     "contentSha256": "8196ce63a330c85c0e1c4a2b2e45c231cffb49ec8f0f689f9813f28aba7a2d74",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_d66ed697f043f62d82128a29a6d1be76",
     "name": "Evolution - The World of Sacred Device",
     "platform": "dreamcast",
     "contentSha256": "cbc80d772abcfe85d1a3a395ca30d62ee7890e980c06c4febe8f595e9e784662",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_0cfe2f28401d51af318820706bfd5eca",
     "name": "Evolution 2 - Far Off Promise",
     "platform": "dreamcast",
     "contentSha256": "02056f2268f19437b3b29d0b4e74edd9267b01e29cdfb0a94ff61bd2f874fbfa",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_452aa79c93d3770e753cb1aea22ecf25",
     "name": "Expendable",
     "platform": "dreamcast",
     "contentSha256": "a771d23631c9f723657bc0abc80961a7567c45d8321965890c5f7878616fd5ff",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_33d132308c7bd9eec951462443b6abc4",
     "name": "Fatal Fury - Mark of the Wolves",
     "platform": "dreamcast",
     "contentSha256": "cc8f95bcd294f326d2af8cb47f484308c65e1031865f7f26e9cc82e86fcb651f",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_cba35363deb597f8f95306a8f26cb008",
     "name": "Fighting Force 2 (Versão 1)",
     "platform": "dreamcast",
     "contentSha256": "6ce4990119a34442703eb3b4ec71963f1eff48c0da40a81941cf05d4d4316151",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_295b59ba6eea68400c2035c7bed5c7a3",
     "name": "Fighting Force 2 (Versão 2)",
     "platform": "dreamcast",
     "contentSha256": "45ade850e983911756f162cb72c4c5de0f3f9e213a8aeb26e9aef23c52edd399",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_9602f47daeb28cc32a4e284139087532",
     "name": "Flag to Flag",
     "platform": "dreamcast",
     "contentSha256": "972b590d9ec53c3e3d0d25a400025b0e575cea21f24d585469e3ee7bc36e1895",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_da99c256a8f1b4b096734d9ef3412dad",
     "name": "Floigan Bros. - Episode 1",
     "platform": "dreamcast",
     "contentSha256": "be9acef99867ea95ac1648d34305fa936f3e8a6595ae164381f0920ca867a494",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_1a9633d9f723c039bebd4a35a20e8017",
     "name": "Frogger 2 - Swampy's Revenge",
     "platform": "dreamcast",
     "contentSha256": "745b5b89742762fbcf8f6b1a272be7f91e259ab84ba9ed9f2dc157b35b465ff4",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_091f1fc26415fcafbabf355536848d40",
     "name": "Fur Fighters",
     "platform": "dreamcast",
     "contentSha256": "670d92ef6c5019d0dfc2bf50f1d72d1aa42e9f2209b93adbef4e288619cb5e89",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_f89c4573e5143fff9091ef3b942c3dfd",
     "name": "Gauntlet Legends",
     "platform": "dreamcast",
     "contentSha256": "75bf6a0f27f2a94335a2d8de9a023be1a8b92312f38d8d8e496887d54f9dcf86",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a16868e55b0029bcd14cf33ec73ae3d6",
     "name": "GigaWing 2",
     "platform": "dreamcast",
     "contentSha256": "100bf5d7ad42542876455540ba4d763eabd4816e73e77dc042c9304e108df8bc",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_3af20913f84c1ad9633675e8ff367db4",
     "name": "GigaWing",
     "platform": "dreamcast",
     "contentSha256": "650ba7a6abdc9f89071dfd9abe5972f86a6eb5aac61758217246b60f3bb7bb0d",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_96954320db61f9a6d930e2dbb46afa46",
     "name": "Grand Theft Auto 2",
     "platform": "dreamcast",
     "contentSha256": "ba21bf07dd15c836b3e1fd8ac7bb43780c70d7ebc064bb296b76816c2067c107",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_2dedf2839146d34730c4e6a1bfda04ff",
     "name": "Grandia II",
     "platform": "dreamcast",
     "contentSha256": "292f6081797740f9013e29ab82ccebea93993b52dcfe5a4a98029782ea63adec",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_26840025aa88fe8f1d12d5a6cd772edc",
     "name": "Grinch, The",
     "platform": "dreamcast",
     "contentSha256": "422ec91fc18bb3ed7301daf417dacaf84b2d41330f6c5e94da3f8499ed7345aa",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_26ab3f68b1fe773600a136a86861cf4e",
     "name": "Gunbird 2",
     "platform": "dreamcast",
     "contentSha256": "812ec3a6c8a3a0804bcfeae2078d5dbfa66ebec613bcecb7b341a7e8bee91ac3",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_acf73154b3b6ee0cad2ef96bb26a2b4b",
     "name": "Heavy Metal - Geomatrix",
     "platform": "dreamcast",
     "contentSha256": "3fa003a791c992469cefbbddb2b0130bfe07e9c497dd1303b5837b84b7c00200",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_28f4654486cd08554f53eda6c73b274e",
     "name": "Hidden & Dangerous",
     "platform": "dreamcast",
     "contentSha256": "8ef0186a22637a1c112f35dae7cf8463c90310aa0b0c68fb721890581e5ad791",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_1ee984b531411279f5ecb52acd2a5f94",
     "name": "House of the Dead 2, The",
     "platform": "dreamcast",
     "contentSha256": "e0ddbdb7cc8d516c530d0fb3c2756d880cc621d5cec9b02e6173dfc1a7416d1d",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_b680f7c1efabaaf0bfdb96069b88e7ec",
     "name": "Hydro Thunder",
     "platform": "dreamcast",
     "contentSha256": "5308030c286f160d023612c1316838492cdaa61c2b6c9b0ca98c0feaeb5545fe",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_406c20221eef87efa8e00165e0885283",
     "name": "Illbleed",
     "platform": "dreamcast",
     "contentSha256": "741b94bfa518abf6e28219b5d8974e019c6e402ae7c9db5c342b492a0e4ed6a2",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_0c08c6c306d42b0ec3fd60a9c73cf8dd",
     "name": "Incoming",
     "platform": "dreamcast",
     "contentSha256": "b45643fedb70d87f71e18c483dc260f7b98389d0cb2f891d0d62ac4db5c526d1",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_5cb2b9feeab6623cc3fb637464ca59e0",
     "name": "Industrial Spy - Operation Espionage",
     "platform": "dreamcast",
     "contentSha256": "2263889bf9c4539f9f5bcc00c6ad16d8613ef6aa040d6b6e2be8499e66c07b6b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a702c66e966302f89716ca5a0ebb180d",
     "name": "Iron Aces",
     "platform": "dreamcast",
     "contentSha256": "de247d685d332f87bf7496c8ac74e281513eb32c4fbb6fcc9c4e1276f322d74a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_075cdd039dab8d8760384d95f12faf14",
     "name": "Jeremy McGrath Supercross 2000",
     "platform": "dreamcast",
     "contentSha256": "dabd5c1a92703736ce1f0d05cc05d3cab8d46f1e9dc2b117eb13e3eccdc9b1db",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a554e55007d010b0cfd8c7b459419f1d",
     "name": "Jet Grind Radio",
     "platform": "dreamcast",
     "contentSha256": "e58895d6ff880c7abfd69d1e0d458c3fef3707e468de3164b2e55df2f43d237a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_d205337302231d6e3e4268abecdd60da",
     "name": "Jojo's Bizarre Adventure",
     "platform": "dreamcast",
     "contentSha256": "71364afe1cdbc15d3975e483837dc26c76f787ee2dc16001833fe820a7750b9a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a5faef1ef855e2a6465ea55f4f840905",
     "name": "KISS Psycho Circus - The Nightmare Child",
     "platform": "dreamcast",
     "contentSha256": "46ef2ba282e5e1327ff294cec09e9d3ddc3e55003b29301250e1a99a28253dcc",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_ccac76b40703cce95397ac0a50398df4",
     "name": "King of Fighters Evolution, The",
     "platform": "dreamcast",
     "contentSha256": "152700a6bf09416c1673f09fa1314f72696496bc8876d5e24462924470e72b71",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_7945768526859e6b7d7ce49e7286e29d",
     "name": "King of Fighters, The - Dream Match 1999",
     "platform": "dreamcast",
     "contentSha256": "25f482ed6d83869493886cd8a06354c9c87473cacabd6b75a71784ab6ff21ece",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_c752932ef3acc84d6a01e6a44ca0d4aa",
     "name": "Last Blade 2, The - Heart of the Samurai",
     "platform": "dreamcast",
     "contentSha256": "4e562d8aeca40edc45146ad835583759d47025a2fb447693015db6e4c57f4b97",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_bbf7f952b0f7f8311e2a669e1ed18ea4",
     "name": "Legacy of Kain - Soul Reaver",
     "platform": "dreamcast",
     "contentSha256": "d93602ac894cc58b0523fbf57c01c8ae2cbee5ab416a5ea0b61c310580eec3e0",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_3ce57356d2c3c7f6738bddcbfb632c36",
     "name": "Looney Tunes Space Race",
     "platform": "dreamcast",
     "contentSha256": "35de50d5d79ec575237dde86c307c45e41ed6a391eb3357425b2096ed7662f4b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_ef7ffaa5bd783a3e45b1ba43f2bce8e9",
     "name": "MDK 2",
     "platform": "dreamcast",
     "contentSha256": "ccd3c463294d959887467939610bbc2710163e5baa22a4654be4f92b127e3d76",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_230924a63b3a42c13c0498005015eac0",
     "name": "MTV Sports - Skateboarding Featuring Andy Macdonald",
     "platform": "dreamcast",
     "contentSha256": "355747f61a4c2fc1d625d98d65b99c179f7f030a27faddb16bf3a4b7da9cc470",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_1eda79c61edf1463d832c51133502424",
     "name": "Magforce Racing",
     "platform": "dreamcast",
     "contentSha256": "1756ecd116d3613e6f916b4bfeb7094a3d7d82fb15224ede7cfa40fb3ade6dd8",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_ff7c3efe4382261475296b8f5f07e754",
     "name": "Maken X",
     "platform": "dreamcast",
     "contentSha256": "0c380dee54aedfbff995586b28546ac9d0716fec426bb0ce432d555557d58fc6",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_6722dca017c4d202df7df597a8bfeb01",
     "name": "Mars Matrix",
     "platform": "dreamcast",
     "contentSha256": "83196aaf50ba6e4858b2b0abe51675e11825c70875a2602f351e2a01859d982a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_67b47b68f46d0a1dd91871dc690e2323",
     "name": "Marvel vs. Capcom - Clash of Super Heroes",
     "platform": "dreamcast",
     "contentSha256": "75f9c3ecfbf7d562181ab6ad54b0f3dee4d4b6e215f6bba1f4066e7e846f2b77",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_017d4ad0c35b9e0537519cbae94bbfd4",
     "name": "Marvel vs. Capcom 2",
     "platform": "dreamcast",
     "contentSha256": "373f4372d1f8d97cc88c5f85afb2a599e7f7942f4947de051ac5fb8ef70cd01b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_c4263de8deefd2184c734738a53ae510",
     "name": "Mat Hoffman's Pro BMX",
     "platform": "dreamcast",
     "contentSha256": "efbe173488a84fa912dc1d83057c6185fe938d65f6663b395bcf500c45401cf0",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_0cd7cc01da4a7894ed405517e62f3c38",
     "name": "Max Steel - Covert Missions",
     "platform": "dreamcast",
     "contentSha256": "bfcaa0226b46f7ed16587dea64447df7cfdea7789b229d92861983a4a5419019",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_55c9f383ef8b075cb213dd93b6a7b4ca",
     "name": "Maximum Pool",
     "platform": "dreamcast",
     "contentSha256": "9ec355ebe7383739aae13413639fdb3eeb65262ff6e0dcb631bcec34ee9dff9e",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_89049999ec6303fb080026988373c310",
     "name": "Metropolis Street Racer",
     "platform": "dreamcast",
     "contentSha256": "d1679e6f0576e011a050fd0f6684d6d372b85f2f0fb076a1a8583d48feb3d56f",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_4286f314b41131ebb53e4241d98a8834",
     "name": "Midway's Greatest Arcade Hits Volume 1",
     "platform": "dreamcast",
     "contentSha256": "604b26fda4ebc9094d6626e02d7940a9b4e6c88ef4eeb8f02283202c21230339",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_f82c95726fe81e48baaff9de3717055d",
     "name": "Midway's Greatest Arcade Hits Volume 2",
     "platform": "dreamcast",
     "contentSha256": "01dfeca9ba71517396593b6f74a8f40bc412d04104c520f03c3e3f7f104baa65",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_19000979c1ca293fe87b39cbf1261df9",
     "name": "Monaco Grand Prix",
     "platform": "dreamcast",
     "contentSha256": "19488905a65534c43faebdffd334f5ead447908b7be0cd458c7b2b4205ca3044",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_b41cb62b73b50370f20535f3bb5a510c",
     "name": "Mortal Kombat Gold",
     "platform": "dreamcast",
     "contentSha256": "c418e6efc91aa908ddd0df0e1b67f88d417e810b3197992bc1639735c2911e7d",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_260d6bef2e8b1fbc37291df14da0fa81",
     "name": "Mr Driller",
     "platform": "dreamcast",
     "contentSha256": "4f431dd92746e339d3221ba16d3d413d5ee72df7afe57631c0d95e100338be38",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_0adcfeaf43558ec6a20b451d698f6af3",
     "name": "Ms. Pac-Man - Maze Madness",
     "platform": "dreamcast",
     "contentSha256": "0eb1543633c61e4317373e1fead2e4b6e9910e24de779931899f20d884ee15ff",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_b3b0e90e3bf7d2abae2563a5cdcfbbc6",
     "name": "NBA 2K",
     "platform": "dreamcast",
     "contentSha256": "907e27c72d490457c88504f46277a387150b62657e5d4af824ac050b1febf229",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_500db56d5c282522f3b2b94cda7979a0",
     "name": "NBA 2K1",
     "platform": "dreamcast",
     "contentSha256": "a4ae2aca6293cce3eff24eaa8df26c235e5709721fb90f8a31fc0ca4968de227",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_0fd20d759e3def993070803740658207",
     "name": "NBA Showtime - NBA on NBC",
     "platform": "dreamcast",
     "contentSha256": "c73fc7a85efe7f6068e9a908d4725c474bca29a26ef3fee5adc11b97e04ffe37",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_62e260cc9aee49b946e59b12b4b0e8b2",
     "name": "NCAA College Football 2K2 - Road to the Rose Bowl",
     "platform": "dreamcast",
     "contentSha256": "f92f2c202b670223456f95f7c5ec532590637a942eb2636cd51408bd77994ebb",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_638a548059c37d3d2e3259f2afd55e55",
     "name": "NFL 2K (Versão 1)",
     "platform": "dreamcast",
     "contentSha256": "540ec5222df8f3b229db405355cd7018b0524e94bb0563d5a2f068158cf2bc79",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_2566875b68d223bcec73a5984b85b32d",
     "name": "NFL 2K (Versão 2)",
     "platform": "dreamcast",
     "contentSha256": "e1f7542b8c816ad652bfbe8d6c9d3a20104e474ab344e93a7f3af0a06c6217a3",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a66342b859420441b5ef8eaa57827ba7",
     "name": "NFL 2K (Versão 3)",
     "platform": "dreamcast",
     "contentSha256": "afa47a1eacaa00cfcfbf714ca5b6d81e691c1f81fce77d51260096e2cb7907a1",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_507f12c624c9507f41e1b772413ce21f",
     "name": "NFL 2K (Versão 4)",
     "platform": "dreamcast",
     "contentSha256": "f470fc848f551a8609350ecd4c45714aab65221b243a24a0337ac995fd1af492",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_cabf4f6c90fa4f652db6d54d23ffca77",
     "name": "NFL 2K1",
     "platform": "dreamcast",
     "contentSha256": "10821903e3dd97e8c4587d6b11a22025bcbafedf7284152d4311fcdf3253c324",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_799d6651e767214dfab88dd2308f4ef4",
     "name": "NFL 2K2",
     "platform": "dreamcast",
     "contentSha256": "6d1d3f889ad12b527654f4707ef03c3bf789b7c5aedc6c98f5ac6cbe2836e3d8",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_267f6a063feadcc0b0e010ac9500c369",
     "name": "NFL Blitz 2000",
     "platform": "dreamcast",
     "contentSha256": "4d3ff90b2db0e5d6a575932779ef249849ef75239587781f62f3fc81c5cdf861",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_c6590632b1517fd125da5aed29db94ec",
     "name": "NFL Blitz 2001",
     "platform": "dreamcast",
     "contentSha256": "be5afc8bd23a709872a6552d9a485cf5c1a62fd6c0a7adacafc293b541434d90",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_27e10d5ae9a480e52f39eeecf807d221",
     "name": "NFL QB Club 2001",
     "platform": "dreamcast",
     "contentSha256": "41b99ca82b03038861c22ed93d06eee71c8ed0917fae9f9c89a7f56cfd1676f2",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_fded753d7d7615bc46204035f8426e4d",
     "name": "NFL Quarterback Club 2000",
     "platform": "dreamcast",
     "contentSha256": "1ad59ad9a0b57c616a40c9843e5e42a356eb5062c1b5862c020ae1df589a8f38",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a015db37706cebf69292577ad443484d",
     "name": "NHL 2K",
     "platform": "dreamcast",
     "contentSha256": "2df14d21b8b803bb904e4e08f85c82cf2de436fea6f5bd17771af1ab2413f2d9",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_c0b39f98e2b26b3f9a51e0ddb996667c",
     "name": "NHL 2K2",
     "platform": "dreamcast",
     "contentSha256": "2e9e88e91b962bc731066db2d512e739a6716362b1a3b1e66d65efc24de8f285",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_5569f72b9ef4275d2a11d903f421c7ff",
     "name": "Namco Museum",
     "platform": "dreamcast",
     "contentSha256": "3033d73505b58fa02395c1464dfe92e8178021f6dd4bcc299ca5db95cbf674ba",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_33d706b26f2fca7ed46a303365fba64e",
     "name": "Next Tetris, The - On-line Edition",
     "platform": "dreamcast",
     "contentSha256": "bb4ec1f073d458001893eb617e29a40fe482ac4c2551806bd363d3adcb1b9f9a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a13fd153caeaa066b77aa66ad6d4ec06",
     "name": "Nightmare Creatures II",
     "platform": "dreamcast",
     "contentSha256": "a67f897b7a33e2ad6dfa09e9d503e4d686d8d4c3400c03cbcc695140c2e4c5ec",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_ad032c236f226a6a64b6e89bbd2d0726",
     "name": "Ooga Booga",
     "platform": "dreamcast",
     "contentSha256": "71c0b7fe893ffd284e603b23c66ba7e55603190f5116f96cc32484d746444752",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_4bea7ede5ff2acfe90ff001406e7a587",
     "name": "Outtrigger",
     "platform": "dreamcast",
     "contentSha256": "7192a05405c612f2207a59c12d2627ddc1b9f57612b2f8a9e054e8644f5d298b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_6b90c57070bf3754d9827c1e1631f0e9",
     "name": "POD - Speedzone (Versão 2)",
     "platform": "dreamcast",
     "contentSha256": "5330804b10020da3a58bc137697ae28787b6d4715a739ee17636152da551dab9",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_80db7b3d26f3d7baea291c99079d3984",
     "name": "PenPen TriIcelon",
     "platform": "dreamcast",
     "contentSha256": "3bd21368a0f4d6af4cd062d8d4aeec1326535d1563ec643292ac137678ec630a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_3de779fc30ecef8cd9ba9983bc5c442a",
     "name": "Phantasy Star Online Ver. 2",
     "platform": "dreamcast",
     "contentSha256": "1834ed3b1e8948ec44df062a3bdbd4e708e576ea0e5ba22c5d16693e47b5cc9f",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_81edb80679c2de9c7176c41674d5d3b4",
     "name": "Phantasy Star Online",
     "platform": "dreamcast",
     "contentSha256": "c709a76aae294da8174c3c2774d72033a9ed83299b21dc1b8bd042cb89c22969",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_2afc7c1a085b93efae6fc750eece452d",
     "name": "Plasma Sword - Nightmare of Bilstein",
     "platform": "dreamcast",
     "contentSha256": "aaf2beeed853a7119a4ccb58db131fafb98c952f61c11d0d69e9554c26bbddfe",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_abb6f9e922273ce6234993c4e7ab4c1d",
     "name": "Power Stone 2",
     "platform": "dreamcast",
     "contentSha256": "a808ce70b98eafe1838b2042ae9100fd2054cf054fd9c5833a5b5bcf71cd3062",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_436f5b67346b6f4d6be663ac2e8e3d46",
     "name": "Power Stone",
     "platform": "dreamcast",
     "contentSha256": "e837b6f90a46924f1e1ebd081c032a599e66d7a70e21a39567bb31d502c41b6f",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_05e9e537f8770bcc17e3c0edc33f031a",
     "name": "Prince of Persia - Arabian Nights",
     "platform": "dreamcast",
     "contentSha256": "6f78fda52f6f234ed97251eb2c71aa57080a0036f43982bb3d3495edf0818201",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_366e8048e48996eb8cafe8af72e1da33",
     "name": "Project Justice",
     "platform": "dreamcast",
     "contentSha256": "30ab3df6907a147d059ed28c93b75cff51a755d1c87545f24ce6c01443271842",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_85a611941e1add25eda2cb3e173a2145",
     "name": "Psychic Force 2012",
     "platform": "dreamcast",
     "contentSha256": "539f6289f500b1edc00d2fdcc61f9dc38dd0b6a37cf0f10994dbc3a048276de0",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_6593056c4d1c71e2241df1d9a70697d6",
     "name": "Q-bert",
     "platform": "dreamcast",
     "contentSha256": "a57f08f9f7f846d247d5d981d610d06d75307ec8b022c46e4226f415af80db40",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_662faa15e8c2dd5f535b2500282f416e",
     "name": "Quake III Arena",
     "platform": "dreamcast",
     "contentSha256": "6b4e87661625a28c9e59cd18ca3b9f206fda5af25e7b7021aaf6eb744854450a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_b196cbb9aede47637a2f9e10c364445b",
     "name": "Railroad Tycoon II - Gold Edition",
     "platform": "dreamcast",
     "contentSha256": "479fda82fb526b4ca33f191b2c99190fc77a8747543b170b9cc6ca12b4faa798",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_1dbf87198a2f3782127b09c7796cc70b",
     "name": "Rayman 2 - The Great Escape",
     "platform": "dreamcast",
     "contentSha256": "05ac19c8fd153b0dae2decf2780aabf99b5ad09da4e2b16379e06c512a605fd0",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_dcdcc159757adac735f13adc78295121",
     "name": "Razor Freestyle Scooter",
     "platform": "dreamcast",
     "contentSha256": "a5e666415e2c921541a1af41c181404de08361e804e67ab4454beafe8f77ee29",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_f8afa1befd9a22d427b23323e8270a36",
     "name": "Re-Volt",
     "platform": "dreamcast",
     "contentSha256": "ea2539985c199f499f02744020b666c5731c52a50a9331ff37907910b1bdcfd2",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_7adb7ec83582d31b8ff1444dbcbe88eb",
     "name": "Ready 2 Rumble Boxing (Versão 1)",
     "platform": "dreamcast",
     "contentSha256": "7b5c36497581aae1b6b0b224e654f13f05ef6b295a0b47d53f0fe2819f9fefd6",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_0c51dbadb7889354c5c8d1bda7f09e3b",
     "name": "Ready 2 Rumble Boxing (Versão 2)",
     "platform": "dreamcast",
     "contentSha256": "ed10091c90f3290d335fe3ded58324eecc144750d5b700afb004b7e2c16f4d27",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_831dad3abeace4fe1e42245c3175c04e",
     "name": "Ready 2 Rumble Boxing (Versão 3)",
     "platform": "dreamcast",
     "contentSha256": "2a52a8b2894b23382ee83e20aef865d216f36bc0c7c484f89647f3daf7774cb1",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_8e1757391f8e75bec508538e6b562224",
     "name": "Record of Lodoss War",
     "platform": "dreamcast",
     "contentSha256": "eacb3c64d7c86dec20c24cfdb76d2c675473084d7a481208e00163be8c552f97",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_0289a0b3953d87cd8e21968d53db7ed7",
     "name": "Reel Fishing - Wild",
     "platform": "dreamcast",
     "contentSha256": "c7965930d2c369e891e6b44fead95564bb7710c1e7e096c805e93c3f755219fd",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_7f4cc48d1231d923ce5cdaffb7a37377",
     "name": "Resident Evil - Code Veronica (Disco 1 de 2)",
     "platform": "dreamcast",
     "contentSha256": "ca99cfb59c62e2687eb962a2dac26223a509ebe1d1d190bb5496391959c7d9fd",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_60ef7b56bb6f80cd872b0d0a308ceda3",
     "name": "Resident Evil - Code Veronica (Disco 2 de 2)",
     "platform": "dreamcast",
     "contentSha256": "96f65ca3baf63ad707c04fb09de4658b0ed8674b62bf9cb91b4407d4152c9bf6",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_cb4eb07055677be03620ae1a139eb634",
     "name": "Resident Evil 2 (Disco 1 de 2)",
     "platform": "dreamcast",
     "contentSha256": "17f75a1f39dbd567572cd9008fa00c073622e4380e2070256a2b752086c861e6",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_dc13c5680ad58a48188fa5173c0dd476",
     "name": "Resident Evil 2 (Disco 2 de 2)",
     "platform": "dreamcast",
     "contentSha256": "53906c947ff375099a14f17f5f726ecd737c05c17766ac37c488b55fecb66b1a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a48ff861c4ddf98056d3b100df4cf731",
     "name": "Resident Evil 3 - Nemesis",
     "platform": "dreamcast",
     "contentSha256": "c649b4b06a82dfac6d1e6ba9efbe755a1f46af26f0cec41630c0ab6de50490bb",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_b77346021ad26cdcff82b52b1b522382",
     "name": "Ring, The - Terror's Realm",
     "platform": "dreamcast",
     "contentSha256": "d017bf1ba92441a318dec20c21bfcbb7174b827431b119cdcb8bb7a0e2c5cc01",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_ec9a44d272e103292be41c72723bdaee",
     "name": "Rippin' Riders Snowboarding",
     "platform": "dreamcast",
     "contentSha256": "91b39ee5fb6f8692d383ac4af67eb74bac994fd24e23b4c2f87b0f8f4e39bc2e",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_c0a3d60f574753fbf62fdd7635297ecb",
     "name": "Roadsters",
     "platform": "dreamcast",
     "contentSha256": "88712edf2255d222a14efa09b65508da9f4eccfbe51a136984dc28f413c1d31f",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_aacc205f00b5ddf2f394cd3b07da50ee",
     "name": "San Francisco RUSH 2049",
     "platform": "dreamcast",
     "contentSha256": "fc89a293ecfc411a25ea37e92fb16644b30e152fca5147fd96a2d6a15381daa8",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_08818684b6db962bcf8bf1c77bc75bce",
     "name": "Seaman",
     "platform": "dreamcast",
     "contentSha256": "a01b24813517a45f27ea84af354cd54eee168fb545c5d7b186f1a805a75852cd",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a22c6ae606633337568163382c0d4ce2",
     "name": "Sega Bass Fishing 2",
     "platform": "dreamcast",
     "contentSha256": "0f5343b12fa44d274a6596ea145f4380e23b88205e26fd6a97d4a7e28c8e943b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_7374b226f067e68c63521d3ba54f93e4",
     "name": "Sega GT",
     "platform": "dreamcast",
     "contentSha256": "b20612f8103d9da2f068880ea1a22de86e93523034a619d90e4dc5856069b2ef",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_58580280ab57920f39f1474db7380390",
     "name": "Sega Marine Fishing",
     "platform": "dreamcast",
     "contentSha256": "e84c6b40128e95b90324e34afa7389540fcc4dfcb461c388d8546569672e27a2",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_576004bf0c656b842b625e21e8796793",
     "name": "Sega Rally 2",
     "platform": "dreamcast",
     "contentSha256": "138876a31faddec24f1383879bf48bcbfa39d8f51cb0d06bd70719980cb3781e",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_04e5ab72f817c7edb905f353706ef58f",
     "name": "Sega Smashpack Volume 1",
     "platform": "dreamcast",
     "contentSha256": "89de67458911b7c0b8263636c66b9b4c180e984fd4eefe63bc724805f6aa7781",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_62fdebeeaf2ae52cd6a53fe3e4c4caba",
     "name": "Seventh Cross Evolution",
     "platform": "dreamcast",
     "contentSha256": "b44d95c0ffbfdcce7b092c23b8b7ab40b18c2b248f37c1908cabd6424ae1c1ab",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_cf9a4e8edec4198deaf1b4124e72a524",
     "name": "Shadow Man",
     "platform": "dreamcast",
     "contentSha256": "77927cd92d4d44d4f67a61374bb2777a1ece802d8dce6665049393330667b7b0",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a00a2ad28a305798f6958ea5d24eaeae",
     "name": "Shenmue (Disco 1 de 4)",
     "platform": "dreamcast",
     "contentSha256": "52666cb50cd1da9618c4fd00e6a0fa8f46f5a43ed5c8781054ce542dd5204a96",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_2a7b991c444781d0a8c7d2896d5828fe",
     "name": "Shenmue (Disco 2 de 4)",
     "platform": "dreamcast",
     "contentSha256": "b4df964346b9df23ac7f9ebdc68219f8d8eec8aedacf0c16eed4b4d2727b02c8",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_d8e0b511fdf1fe09fbd5cbbce0763682",
     "name": "Shenmue (Disco 3 de 4)",
     "platform": "dreamcast",
     "contentSha256": "e7dff41e670d13331758f3edcfe0bf0fb3541230ec164fefea0fc1cab8c9faf0",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_ae879fb139c155e29f0fcac79ffeec7c",
     "name": "Shenmue (Disco 4 de 4)",
     "platform": "dreamcast",
     "contentSha256": "1d5dcfe95b1cace4c3faf3a5f01914dd134240018230fa153d827ab56a675fd5",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_eca8d2ce8e85a936a2c5f1bf574daf8c",
     "name": "Silent Scope",
     "platform": "dreamcast",
     "contentSha256": "cab37efed223caed09beb53d3597fd6f39848febf8cf5c1677583fe9e8748764",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_78b7c695e5d8c5ae8b0419fded758cad",
     "name": "Skies of Arcadia (Disco 1 de 2)",
     "platform": "dreamcast",
     "contentSha256": "272b261b65433a4ac02e3408bfec9b40d51f1decf7c982a6f2478f90969e60f6",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_5903f2e5c538beb82117c37ea50fcb33",
     "name": "Skies of Arcadia (Disco 2 de 2)",
     "platform": "dreamcast",
     "contentSha256": "7208250a9097337bcc7935f3f3e8edf70b1a9eddf03f49f3c3a26c6cd1e403b6",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_e766efd27c8d569d9f5c4af1e9ee97cd",
     "name": "Slave Zero",
     "platform": "dreamcast",
     "contentSha256": "14cbb45e01aa9a3cba6ad48b5ccbaf9bf1c29f15a79be067828d4e064889bc4e",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_c71f237e83ae48ba28fa6e9756036ed6",
     "name": "Soldier of Fortune",
     "platform": "dreamcast",
     "contentSha256": "1ab5aa27c6cbd535dda53656357ebefccc645ceab974bcbf0905eb6b05b70034",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_176aed95d53e1b7f9a53e79ac5de9c21",
     "name": "Sonic Adventure 2",
     "platform": "dreamcast",
     "contentSha256": "21638ea6cfebad54efb8eb85488569460bc02b2c1aecf17130d47523b97d05a4",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_9957878b0075d8b3bb8749f22e0c03b2",
     "name": "Sonic Shuffle",
     "platform": "dreamcast",
     "contentSha256": "b0ca4b8c53e5f397f4048a64edc7950812d9b420bbf76ed61da047923e35f253",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_14dd1839d4487040394e195ad6ca422c",
     "name": "Soul Calibur (Versão 1)",
     "platform": "dreamcast",
     "contentSha256": "56a98f6582274417ecaf3b7c41d673ab373252bd6e27017ce04d8b47e5abbf94",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_792e43445bed0faa5a01b1590b457b41",
     "name": "Soul Calibur (Versão 2)",
     "platform": "dreamcast",
     "contentSha256": "33e20a84888dbf6d5c46f15bd4959058dd43bdcbe21738568e9c82b6fc00b92a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_0cad70eb2d83b1c3d057dd45cf921cce",
     "name": "Soul Fighter",
     "platform": "dreamcast",
     "contentSha256": "1edb9796d134d9af6e41a37c80b4376a377ddfcf9ff5f5babe0b9adc34bb8885",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_bd2363776c981d9b2c0af5c414bb64bc",
     "name": "South Park - Chef's Luv Shack",
     "platform": "dreamcast",
     "contentSha256": "8d024bd0f4547dc4fa560ab5331b63301f4566803dd98e8fe50dce4b98a6e99a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_e16bcbc64777960140a7cf204d61d035",
     "name": "Space Channel 5",
     "platform": "dreamcast",
     "contentSha256": "578daaa85e88fc1f5a6451d7458d912b7b005d44f3cb73a79df65e4616a37a6d",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_574228711862efe60f57e6e577c3820f",
     "name": "Spec Ops II - Omega Squad",
     "platform": "dreamcast",
     "contentSha256": "bee6e0cd89ae75782d8f1e609e80f274c9519ef507c8de6d342f5468541c788e",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_8733156f40d4d906e09309118d13c213",
     "name": "Speed Devils - Online Racing",
     "platform": "dreamcast",
     "contentSha256": "7bd97fbc24526b08d34f57f52c103ebe7ea58e22f3caccc9f6ba3fbf912c167c",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_10e2a927022bfa490f762773f7d27527",
     "name": "Speed Devils",
     "platform": "dreamcast",
     "contentSha256": "bcbbb8e6129062aff53015e9f54ec6d484bb2e9595c30286b2a1113a341ba8c3",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_fcedfda53cef9a34386573136494f33d",
     "name": "Spider-Man",
     "platform": "dreamcast",
     "contentSha256": "d106aa919ea6b4d8f6b668b9683f7a4e178387de00aeb584d109a20be578d43f",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_60f3413c1877e9d61157cfafa07f4f76",
     "name": "Spirit of Speed 1937",
     "platform": "dreamcast",
     "contentSha256": "13a63d7cba3b1d2d615a36487891a9c3132f8ba8d99c5ecc2b6b9c22045e2041",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_33cd3bdbcd9b7d21e75fcfc3331ccdaf",
     "name": "Sports Jam",
     "platform": "dreamcast",
     "contentSha256": "d7a36e4a994d28287e3c52a72468c0d6696b012963f2d26d97fd731d0f82fad3",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_3a48a9e3bfeaea1f38d1c7e779016ff3",
     "name": "Star Wars - Demolition",
     "platform": "dreamcast",
     "contentSha256": "9c07e5412e66bd2d30bf3fcf93b4a1704f658f86097ded703a7ce890a9ddb528",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_e7e4a95c5a4dc19e88252ba442a6da0c",
     "name": "Star Wars - Episode I - Jedi Power Battles",
     "platform": "dreamcast",
     "contentSha256": "5db333f5ec8f36e71c5dd2cf91e573b1a50423f688ee16e2b4348f3111e7577b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_6f7a4e2edc98cc56706d5e86215f7933",
     "name": "Star Wars - Episode I - Racer",
     "platform": "dreamcast",
     "contentSha256": "500cfe7e693b5371fed723306e334895dec7a3e7e22bc83507978fc738fd2b40",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_ee86b5604f7ade90f2e316cdcdb63521",
     "name": "StarLancer",
     "platform": "dreamcast",
     "contentSha256": "948991ac76dc5f15f075ed0dc2de568274a6d93457da72203f4fb76b062b2028",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_95303351a29aa598e39c49f879695a9a",
     "name": "Street Fighter Alpha 3",
     "platform": "dreamcast",
     "contentSha256": "9e9e1c7ef605ae5ffd1143174eb40fd0a44aed98fd4791b02738da75d324ac0a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_9393a16709fc3357c06c68f479309ae4",
     "name": "Street Fighter III - 3rd Strike",
     "platform": "dreamcast",
     "contentSha256": "54121ba2615e4d33528cff175566260578e94396d88822fc7f98a9acf164d3b5",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_2f7821c22769a1da65c254912811bcd0",
     "name": "Street Fighter III - Double Impact",
     "platform": "dreamcast",
     "contentSha256": "e117e030a55aa7db07a1903483c8ece09d373bf54a611d74895134e0d7881f82",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_4a06aa3da1b47f920155eec2e362fff9",
     "name": "Striker Pro 2000",
     "platform": "dreamcast",
     "contentSha256": "6d424455ca2a4f7e8ce703ba3cb0378d64dc22dba2629d0ed8d8906c7686b551",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_d9df73e4b0f75bf27ce7d70d3793ec90",
     "name": "Stupid Invaders (Disco 1 de 2)",
     "platform": "dreamcast",
     "contentSha256": "3e54c7a8d0a4324c841f31b5af42bc53e785650e71424b4d6f82f2a0a385db52",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_aebd413245a839716a307d674e7bd216",
     "name": "Stupid Invaders (Disco 2 de 2)",
     "platform": "dreamcast",
     "contentSha256": "0d691bff61a21f44c1ce1b09046751ced1959d20366458481c2733413ec8ed1b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a88b38027a1aef17841cbb65c8fb9415",
     "name": "Super Magnetic Neo",
     "platform": "dreamcast",
     "contentSha256": "9d89a7d55eb2b62d54528bc761947421548a51d9e6bfc3492ede8f9082822dd5",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_420209cf6ebbf7c01d84d7421d9f337b",
     "name": "Surf Rocket Racers",
     "platform": "dreamcast",
     "contentSha256": "474799ba366f74a56a45be20477f2300d4d89ce126b12cb1023977deac63a81b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a2a904a622ce3495c4d4283f8376927c",
     "name": "Suzuki ALSTARE Extreme Racing",
     "platform": "dreamcast",
     "contentSha256": "ae2f20d21c7228ac15b056ff1ff870ae05140a394ea6378489c1692704140ae7",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_f9ddd8ec9bb91513b25cfad02d78f791",
     "name": "Sword of the Berserk - Guts' Rage",
     "platform": "dreamcast",
     "contentSha256": "164cbfc8224d9e7ac211f21c212db73e999618438f605015bd0805b5abceaaec",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_14e62733e5dbac6683e6786740e6937c",
     "name": "Sydney 2000",
     "platform": "dreamcast",
     "contentSha256": "ec71629ee231442d2eee269500590c23290ca728c7a1bf2bf8ca89796c386c05",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_f17a816eeb1fe061c9a0ff9fef9e0cc0",
     "name": "TNN Motorsports Hardcore Heat",
     "platform": "dreamcast",
     "contentSha256": "5bcaff8902d9f8c68dea8fec27df847d0073b375deb763b4403f0c0f7d0b3844",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_08ece410ffa705f600e39806bf545c0b",
     "name": "Tech Romancer",
     "platform": "dreamcast",
     "contentSha256": "4131e26c9ce90a4d9e0ba3f9cb0b7f2b3af9f496ea3de0eabebdcf4e037884fb",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_dc32b8aa0106947e064debc9b7be355d",
     "name": "Tee Off",
     "platform": "dreamcast",
     "contentSha256": "0d684a0daacb62da86892a4b848df0cf27f902f7c9c36b06aa50055cb907db8e",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_3d981c463626068065a1d74812288d25",
     "name": "Tennis 2K2",
     "platform": "dreamcast",
     "contentSha256": "4cb1385839a035441a1db96e7901dda8d68f55b932dd8aeec63fd211e12836ee",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_1365c397304e2b2915fb6542f766453a",
     "name": "Test Drive 6",
     "platform": "dreamcast",
     "contentSha256": "bc81f0df9a33a3fb3d8181f1072baf9bc094a7ddccdfa3132f395ebf779efbce",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_65e5a7f87f18300cd8ff10a79195f8cb",
     "name": "Test Drive Le Mans",
     "platform": "dreamcast",
     "contentSha256": "5b9b4a3d6e47235888e280ac5d547c629bbca35d111222f1f073dfeedb19d71b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_386e1fcc4580721e8ee2ccb2442821e8",
     "name": "Test Drive V-Rally",
     "platform": "dreamcast",
     "contentSha256": "afd22ff328842d0a5127025b2b0c06b2ca3f6ad61b018c4b921be37baf9380f5",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_4f9c064f3b8d84de14442a58f716ab7b",
     "name": "TimeStalkers",
     "platform": "dreamcast",
     "contentSha256": "18154612ae63c28bb1ae38213565e083008a9800d3da265ff2b2eef4618f8d73",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_aa28be781e1712c14c9ecee75a6dff49",
     "name": "Tokyo Xtreme Racer 2",
     "platform": "dreamcast",
     "contentSha256": "e0b389fee6e67f831f5b0320f2dc053a1c25c02ce25cfc7db3c7b48e8eb8e760",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_c44a26d397a68f165693ab4c133a5b4e",
     "name": "Tokyo Xtreme Racer",
     "platform": "dreamcast",
     "contentSha256": "2b36e570eb9f0244723c11d7843b0713e2840a5ebe67325c3b9c8a88a3165825",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_19474164e353d34cdfca86f40e101678",
     "name": "Tom Clancy's Rainbow Six - Rogue Spear",
     "platform": "dreamcast",
     "contentSha256": "9ab4dbec55a892461e302ee9fcacd4cc1d27679047054496e9a942b6a03bd3b6",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_3cb78e3be8fe2c8f9f7eaf9045547e41",
     "name": "Tom Clancy's Rainbow Six",
     "platform": "dreamcast",
     "contentSha256": "cf6b93400872df425d9b5b034598c7120786296654ec3bea5a15437e7ed3db3c",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_64b6c739fd188f9636b91cbf2ea9b9f3",
     "name": "Tomb Raider - The Last Revelation",
     "platform": "dreamcast",
     "contentSha256": "5831f017d1e0238a3b9304f7ee3d33b152d2790a8dde8e8109a832a4ef66a8dc",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_67e4ee7d44474a871dbbd8433621edb6",
     "name": "Tomb Raider Chronicles",
     "platform": "dreamcast",
     "contentSha256": "4b0e50e7e6a9b181b9425ad9258b25b5b32117dba8e3aa8624c40aa7b99ec91e",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_94c4728844be416ce35cb291bd421e42",
     "name": "Tony Hawk's Pro Skater 2",
     "platform": "dreamcast",
     "contentSha256": "483b0827552660f239cd4351f72fb225f40f46e6f85718e3be7d81c9fa860a47",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_79c6a1866d2c8e2ddf42dfb27902004a",
     "name": "Tony Hawk's Pro Skater",
     "platform": "dreamcast",
     "contentSha256": "d7d636877883d799b0f5a1f3e1081c5f9e7ca5ac1c4b50f0cf2d44d5b1dfa626",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_59a2e7e306dd4c9b1c0833b6c9afa5d4",
     "name": "Toy Commander (Versão 1)",
     "platform": "dreamcast",
     "contentSha256": "b8bf5073bee72b745f0bdef635bc942061fba3c204b92acb90b686826e4ec37b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_002d1d405d347930a438061befe8ef02",
     "name": "Toy Commander (Versão 2)",
     "platform": "dreamcast",
     "contentSha256": "3afae8daed553762c1d027d531ddac9a81db7c03fb5744fe9331a45f8993826a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_3196e12d2c2130ea54a587031d52ca68",
     "name": "Toy Story 2 - Buzz Lightyear to the Rescue!",
     "platform": "dreamcast",
     "contentSha256": "45f4654a9e60d7e72f49df3f7e1058f9e618bedd323afdab02345917850c2d51",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_ee64f9362c695e19ef8816b777db97f5",
     "name": "TrickStyle (Versão 1)",
     "platform": "dreamcast",
     "contentSha256": "2af259d71ca23262c71e0878184cb8c2f110082f05ac1c21714403becf435a8a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_2806e3c4feb570f4c2b4a24eeb8d7381",
     "name": "TrickStyle (Versão 2)",
     "platform": "dreamcast",
     "contentSha256": "975632505db4b22229e976433c2cd16e6403422efa542e3fd9e779eca3c4a1f4",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a46cc5224458d79995ca07e43c77a9cd",
     "name": "Typing of the Dead, The",
     "platform": "dreamcast",
     "contentSha256": "c1684788149356f26a6073bf2ad731711a2799dbeaa93dd56eb45e6dbdf67cf7",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_c11a0d2b892a01e4d71d5ce7b2da2c9f",
     "name": "Ultimate Fighting Championship",
     "platform": "dreamcast",
     "contentSha256": "72c3e50451c86c3bc741926cc4747a985f884a168b4482102ffcf252b5a15126",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_1f2fd73ae0af6b53a525e635050ddcdb",
     "name": "Unreal Tournament",
     "platform": "dreamcast",
     "contentSha256": "0b7a435122b54fc4a99f76ae5a0de417597415510bc1b5bd7c7c37e851dd202d",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_d880d7c1777d3b92c023cd712b30e8c8",
     "name": "Vanishing Point",
     "platform": "dreamcast",
     "contentSha256": "7051bddbb5dc7b9d6e6beea83387daa40ed903b1c6cb53c32c3ecf11717f712b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_071dbe9ffd4c61dcf033fc1b6f66bf15",
     "name": "Vigilante 8 - 2nd Offense",
     "platform": "dreamcast",
     "contentSha256": "dfe1d0c7ab99a7598d329a4a320d3d26f0ceeb5082c7d6f40ed0f5ca62509b77",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_37cd106cf1ef78a09b3055aeaed1a9fe",
     "name": "Virtua Athlete 2000",
     "platform": "dreamcast",
     "contentSha256": "5fb869be2bbc957fae8b76a299ecf0394ccd2943b7608d4eeb15d540ab5fc8d6",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_524eb1f3f3254eb2cb3a143c7616d161",
     "name": "Virtua Fighter 3tb",
     "platform": "dreamcast",
     "contentSha256": "bbb75e18459b3d94376f926cad6f443c268adcb37baf777f1c2a09d6fd6b3fed",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_2b3d5545daacecfb3311b0abb16f8a49",
     "name": "Virtua Striker 2",
     "platform": "dreamcast",
     "contentSha256": "91b1ba3e28571610b9e0c22d4d753fbd9bd759d214b4f5b1ab95e38f487dce18",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_898a86759258a61673cc803f716af3dc",
     "name": "Virtua Tennis",
     "platform": "dreamcast",
     "contentSha256": "48df44e6b486a9e65734be2a275c8de543dd1be69919290f0d6a56f3061eea98",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_4a9cb93b2383a6f64dec6a5bf06cace6",
     "name": "WWF Attitude",
     "platform": "dreamcast",
     "contentSha256": "d95e34f8f7ba51ff2bfcc2f13ce103fbe40fd40f9afe2a251dd482dad7d9bd27",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_76c1e7aaa8759947e7a779db17c30031",
     "name": "WWF Royal Rumble",
     "platform": "dreamcast",
     "contentSha256": "9b3fd4a87915353b48512c34848f4431e6bbdeb81df977919d9d4e6d4f358e8e",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_124f750bb7766e4f7af18dd694c997ea",
     "name": "Wacky Races",
     "platform": "dreamcast",
     "contentSha256": "984f61cd803be6ab5eac9571473e0aada9e18b4db13f8f8758b51e2b3d465488",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_05102e1dc7ad0d7dc12702b1bf3556cf",
     "name": "Who Wants to Beat Up a Millionaire",
     "platform": "dreamcast",
     "contentSha256": "695de155c9a23901bec73db01f8d7e9fe27be5b48698a3d869b5c1c8c09540ae",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_d86bf2308f92f81b90fc95aa9ceec7f6",
     "name": "Wild Metal",
     "platform": "dreamcast",
     "contentSha256": "ccc888618d77232d6ecfea71d01a468b0d128859b76a82dd88dc643dbdc0b434",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_e368aad668218529a012923729870732",
     "name": "World Series Baseball 2K1 (Versão 1)",
     "platform": "dreamcast",
     "contentSha256": "674a5a0c76723a4a6be6a863428235a17bcfd84bfda40ba0660908cfcfdbc6a4",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_4e2397f60df5d4a685a9e2accba450bd",
     "name": "World Series Baseball 2K1 (Versão 2)",
     "platform": "dreamcast",
     "contentSha256": "145d03ab272e04942d97e9cd24b51b7b7d1dcdc1c607fd4d5d4d3ed9e363ace7",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_208d91d1f447376113bd9458347dca14",
     "name": "Worms Armageddon",
     "platform": "dreamcast",
     "contentSha256": "363c7eb29a156f23f203f4d42cc128e2ddd558025c16f7a606092b67d4baa9d4",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_96d508e996eb9a90c4c40e565d5b0408",
     "name": "Xtreme Sports",
     "platform": "dreamcast",
     "contentSha256": "cd779cfdb6e8a180cabd1d0fcaa00b153ab3013786ae820ec8d8aba12d0442e6",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_b300b7f3c14faba2da3f4501a0470186",
     "name": "Zombie Revenge",
     "platform": "dreamcast",
     "contentSha256": "e4682161aea48ef6a34b5593a193d06afbac83d825a7fc77fce0c6b96f085e0d",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_6d2bba00bfe7af8264a448da3646c395",
     "name": "JoJo no Kimyou na Bouken",
     "platform": "cps3",
     "contentSha256": "db032753ac936be1796ed07b58dc2b7be008620e2cf0c98d96ceef775f535395",
-    "onlineState": "mode-pending"
+    "onlineState": "mode-pending",
+    "serverReady": true,
+    "nextIntegration": "game-driver-or-mode-data"
   },
   {
     "itemId": "station_f290d9171a31ebaeb9b1cde667039d96",
     "name": "Street Fighter III 3rd Strike : Fight for the Future",
     "platform": "cps3",
     "contentSha256": "4deb4bc3316a6e5fa774d7809c6e680132fc677c3adde2a1453099db0f09980a",
-    "onlineState": "mode-pending"
+    "onlineState": "mode-pending",
+    "serverReady": true,
+    "nextIntegration": "game-driver-or-mode-data"
   },
   {
     "itemId": "station_12b835c9539b4800a6bb29ca00a25f94",
     "name": "Legend of Zelda, The - The Wind Waker (Europe) (En,Fr,De,Es,It)",
     "platform": "gamecube",
     "contentSha256": "3106a01516f59854a55fd6343da8b0f489ca8cfc523f300bb1913d7f1c602a2f",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_fa0e2bebbc9125b3ef593e1e2911716c",
     "name": "Legend of Zelda, The - Twilight Princess (Europe) (En,Fr,De,Es,It)",
     "platform": "gamecube",
     "contentSha256": "490ef919f413e00daedb4711777c3be05ef9afc12c7acca7675c721c9393c814",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_40c36e432a90826b84bc401acd61b81f",
     "name": "Luigi's Mansion (Europe) (En,Fr,De,Es,It)",
     "platform": "gamecube",
     "contentSha256": "089df26c394fa215cdf91a50f6d7119c5ea9d234ccef0b9f790126d3f8eacbf8",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_203c099590c11a7650a006d1dc4d705f",
     "name": "Mario Kart - Double Dash!! (Europe) (En,Fr,De,Es,It)",
     "platform": "gamecube",
     "contentSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_621bec6947fa88fea7d71e07e1ce524a",
     "name": "Mario Party 7 (Europe) (En,Fr,De,Es,It)",
     "platform": "gamecube",
     "contentSha256": "ba4def2b26b2aebd3c6e7ae6628767cb64c071034a9c9aa48628b94042ceb91a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_d747bcef157e06fdaa603277f4a0fa38",
     "name": "Metroid Prime",
     "platform": "gamecube",
     "contentSha256": "a7f2d6d8ce2003a9ddd7452ad8f7e21dbc3db917b1dbe011c2ad353a1027ee3a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_b4ee8d06c9390aad9464023b6459fd35",
     "name": "Pikmin 2",
     "platform": "gamecube",
     "contentSha256": "2c81bb89dfa3246215093b9ba78681e93697605e0eec3acd1de0e27890cde41e",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_aff0fdd0e252567e690275501f5c3e41",
     "name": "Prince of Persia -Two Thrones",
     "platform": "gamecube",
     "contentSha256": "15a6747ae101c712f1b4d11b6a2e34028c70e1a1eddd89b4ca1be46f7c6e380e",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_f66a5e4cda2b3d810af00fbf96712a35",
     "name": "Resident Evil - Code - Veronica X (PT-BR DUB) - (Disc1)",
     "platform": "gamecube",
     "contentSha256": "dc8cd7550c0c2448a0f5555db1a7bbd38af0bb1001839b99bf221ab8eb54572f",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_844acd6d2419cc61a21b8a1630fda73a",
     "name": "Resident Evil - Code - Veronica X (PT-BR DUB) - (Disc2)",
     "platform": "gamecube",
     "contentSha256": "635d1ad5edc6fcfe22a1a63bd029f78ccf4f6960136652a85fb6a62c79e161c0",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_22a388607337c6c0e10eef23327760e7",
     "name": "Resident Evil 4 (Disco 1)",
     "platform": "gamecube",
     "contentSha256": "7c428fe1f485019fa584330ca4bc6fbce7434eb947d8fd8cc07d5160d1290fa4",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_a60084aefb098972edfbfa9103ff9f0f",
     "name": "Resident Evil 4 (Disco 2)",
     "platform": "gamecube",
     "contentSha256": "3a64ac1c48af6916b2b0c033d827cc4920feb25d1723620f83d9f63810a14f41",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_2e3dc618c01206375b812abb1d55f69e",
     "name": "Sonic Heroes (DUB)",
     "platform": "gamecube",
     "contentSha256": "a5b119047f391bdabd5c3b258aed30167ca955d808e7628142a05cbb07d88254",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_3c9c45df9a48170befa8a0d719e6ce2e",
     "name": "Sonic_Adventure_2",
     "platform": "gamecube",
     "contentSha256": "c5b45e1231d554e423a7f842692c31e8e2952d142fbd3bd89f11d2f1ccb943cd",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_5ef747e4fd8c83fa197b2b2492c24088",
     "name": "Star Fox - Assault",
     "platform": "gamecube",
     "contentSha256": "d38681a0c86b34d267b0c0934a773a26af82d61265208ef21769a89898248330",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_2dc88daf495305000e730a205a1f06b6",
     "name": "Super Smash Bros. Melee (Europe) (En,Fr,De,Es,It)",
     "platform": "gamecube",
     "contentSha256": "0de05981a34156b9cedcef73c73d4244ac05cf6149ab3c9cfed917698819e464",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_d917b5d884654040babaf93bb5cbbd92",
     "name": "Terminator 3 - The Redemption",
     "platform": "gamecube",
     "contentSha256": "3ce8a256ea8b5ed55496fc9d00d3732bf50da009b3b6c9174355bfec341467e6",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_6b08767479d6f0715130e250c878b2a9",
     "name": "The Legend of Zelda - Twilight Princess",
     "platform": "gamecube",
     "contentSha256": "7996d841021a93979ddf9203a7662a379ba83c71b8f40674f348f0e6393c4f9c",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_211df505e8c566432c4ffeda71c84a82",
     "name": "The Legend of Zelda Four Swords Adventures",
     "platform": "gamecube",
     "contentSha256": "4b948d6059ff3d21048b3efa5a202cd5caf3a588f11e9a601a54c937f58a6e0b",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_d0a6aa65e5900ba9167a200f8dccfae5",
     "name": "The Legend of Zelda The Wind Waker",
     "platform": "gamecube",
     "contentSha256": "3ea3cc8f62acfaafe2d2adb96090bf87cfabd01f89e0631d571517faf670d5f1",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_6d7b4d0d988b1fcea440c9a7c8dfdbad",
     "name": "need for speed underground 2",
     "platform": "gamecube",
     "contentSha256": "dec85129ea88d7f041090c33ce114debe67cde25c47c64d6ca93b96c97dc0ab6",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_273b5bea1d45db87ff6711ec3c9166d8",
     "name": "Worms Armageddon",
     "platform": "psx",
     "contentSha256": "ae0fb139b3f935fefe212703cdfbd21664ab1002ead0c56d885d3cfe48259181",
-    "onlineState": "mode-pending"
+    "onlineState": "mode-pending",
+    "serverReady": true,
+    "nextIntegration": "game-driver-or-mode-data"
   },
   {
     "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
     "name": "Donkey Kong Country Returns.side",
     "platform": "wii",
     "contentSha256": "7f1874db282a19cf369625603ac5665d486220f470c5c1e29f7309160579bef5",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_68188db1da6203f08a4b58e583d6af21",
     "name": "Epic Mickey 2 The Power of Two",
     "platform": "wii",
     "contentSha256": "2c1f91631c25a0bbf20658f4a1170b7cbcf1a938e15a7969f78fdcbe9b36928d",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_75b2671c509572a3191465e244e9c241",
     "name": "Legend of Zelda, The - Skyward Sword (USA) (En,Fr,Es)",
     "platform": "wii",
     "contentSha256": "775f7753f4b0c6bfec2b3955ec5a10cef177f07562aeef7130aa0c7f5025f184",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_6e92c46795e509e9593cc55b5fb946ea",
     "name": "MarioKartWii.ini",
     "platform": "wii",
     "contentSha256": "cec1587537e8f9f965ef192ee9342f2ce1de881e9af9aba2852057db6977ff1a",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_68b4911aaba6d2a81b9e525f36a5c697",
     "name": "New SUPER MARIO BROS.side",
     "platform": "wii",
     "contentSha256": "56c89f8a24657b4e2892d089585602cb1b89c2fa8cfdc1dc25631e276b9fe07c",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_474055661521b99e82e6d0b6aee72435",
     "name": "Super Mario Galaxy (USA) (En,Fr,Es)",
     "platform": "wii",
     "contentSha256": "1c89187438103e053c0c4b74b3b3972d592251565722314646062860acee3bfe",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_11800c292110c10da2354418e3483b29",
     "name": "Super Mario Galaxy 2 (USA) (En,Fr,Es)",
     "platform": "wii",
     "contentSha256": "e6d4238efc145caf2d447cc9b9ecf567b8eda68b9d52db7240b5ccb069739c34",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_8d42174892b607ae006f5e68ddf62fe0",
     "name": "MARIO KART 8 [AMKE01]",
     "platform": "wiiu",
     "contentSha256": "bd2004ad104b416745052e307a478e1a82fe001f10e1073c5ac5a1656e097ee1",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   },
   {
     "itemId": "station_6c491717f8b3d13b282c410aad80fab6",
     "name": "Pokemon.Cafe.Mix.010072400E04A000.v0",
     "platform": "switch",
     "contentSha256": "7604cacd5ff72dddea55657bc7cb0f43f61a46f780d07f2b82d1302d1f63ad6e",
-    "onlineState": "online-engine-pending"
+    "onlineState": "online-engine-pending",
+    "serverReady": true,
+    "nextIntegration": "app-engine-manifest",
+    "preparedModeCount": 1
   }
 ]

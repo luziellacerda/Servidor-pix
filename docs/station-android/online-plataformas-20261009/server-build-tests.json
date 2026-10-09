@@ -1,14 +1,14 @@
 {
   "compiled": true,
   "deployed": true,
-  "sourceCommit": "0a3df5f75700d4532d5801cf9dec6bf96ab5ebec",
-  "dllSha256": "25d98d65220e15de8ba4ee5e9e77e5ce66de9a04986ddfd924d42ca95f172e97",
-  "checks": 1084,
+  "sourceCommit": "eb826d5df17dad51314d265e2cba91b05d1c96cf",
+  "dllSha256": "34fdc4b1ecea3216b3d30e49e003ef32a0520ca36637d186e9daeb369146645d",
+  "checks": 1250,
   "loopbackTlsChecks": 172,
   "v2Checks": 91,
   "v2ObservationChecks": 589,
   "pythonContentSetTests": 6,
-  "pythonAutoOnlineTests": 2,
+  "pythonAutoOnlineTests": 8,
   "pythonDiscoveryTests": 5,
   "pythonPackageDiscoveryTests": 6,
   "pythonIdentityTests": 4,
@@ -25,5 +25,6 @@
   },
   "physicalAndroidGameplayQualified": false,
   "profileReloadJoinAndTicketsAndResumeVerified": true,
-  "revokedProfileStillRejected": true
+  "revokedProfileStillRejected": true,
+  "futureNativePlatformsTransportAndResumeVerified": true
 }

@@ -1,5 +1,5 @@
 {
-  "utc": "2026-10-09T17:25:34.997827+00:00",
+  "utc": "2026-10-09T18:09:52.413592+00:00",
   "newDeployment": true,
   "oldReleaseAndProfilesPreserved": true,
   "realLicensesPreserved": true,
@@ -34,5 +34,7 @@
       "retainedBytes": 0,
       "maximumRetainedBytes": 134217728
     }
-  }
+  },
+  "serverPreparationApplied": true,
+  "humanRoomPreservedWithoutRestart": true
 }

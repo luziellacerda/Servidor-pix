@@ -113,7 +113,47 @@
     ],
     "profileConfigurationEncoding": "UTF-8 compact JSON, no BOM/newline, Unicode unescaped, SHA-256 lowercase hex",
     "contentIdentity": "exact existing contentSha256; cue-set-v1 and wiiu-set-v1 preserved",
-    "reloadWithinSeconds": 10
+    "reloadWithinSeconds": 10,
+    "manifestSchema": {
+      "schemaVersion": 1,
+      "requiredEngineFields": [
+        "engineId",
+        "platform",
+        "library",
+        "runtimeLibrary",
+        "coreSha256",
+        "runtimeSha256",
+        "extensions",
+        "options",
+        "launchReady",
+        "recoveryProtocol",
+        "maximumPlayers",
+        "controllerProfiles"
+      ],
+      "requiredControllerFields": [
+        "controllerProfile",
+        "maximumPlayers",
+        "configuration"
+      ],
+      "requiredConfigurationFields": [
+        "schemaVersion",
+        "controllerProfile",
+        "devices",
+        "coreOptions"
+      ]
+    },
+    "configurationExample": {
+      "schemaVersion": 1,
+      "controllerProfile": "gamecube-four-ports-v1",
+      "devices": [
+        "gamecube-pad",
+        "gamecube-pad",
+        "gamecube-pad",
+        "gamecube-pad"
+      ],
+      "coreOptions": ""
+    },
+    "exampleIsActualNativeReceipt": false
   },
   "controllerProfiles": [
     "dreamcast-four-ports-v1",
@@ -137,6 +177,8 @@
     "pause/resume all participants with the shared epoch",
     "use the automatic invitation/ticket flow"
   ],
-  "deployment": "prepared; see server-ready-deployment.json for actual application",
-  "androidGameplayValidated": false
+  "deployment": "applied and verified; see server-ready-deployment.json",
+  "androidGameplayValidated": false,
+  "sourceCommit": "eb826d5df17dad51314d265e2cba91b05d1c96cf",
+  "dllSha256": "34fdc4b1ecea3216b3d30e49e003ef32a0520ca36637d186e9daeb369146645d"
 }
