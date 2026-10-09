@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-09T14:50:08.317545+00:00",
+  "verifiedRemote": true,
+  "branch": "backup/station-online-antes-todas-plataformas-20261009",
+  "tag": "backup-station-online-20261009-antes-todas-plataformas",
+  "server": {
+    "repository": "luziellacerda/Servidor-pix",
+    "commit": "2b04f591eb10ad76efc3b630ded4fff9ef2c2a27",
+    "activeService": "turborama-station-api.service",
+    "PID": 1722044,
+    "NRestarts": 0
+  },
+  "app": {
+    "repository": "luziellacerda/TurboElden",
+    "commit": "4521218492ec65c33398aed07893f95e2d7f499d",
+    "compiled": true,
+    "newCompleteSignedApkBuiltHere": false,
+    "fivePhoneGameplayQualified": false
+  },
+  "requestedPlatformMaximums": {
+    "snes": 5,
+    "megadrive": 2,
+    "dreamcast": 4,
+    "n64": 4,
+    "gamecube": 4,
+    "wii": 4,
+    "wiiu": 4,
+    "neogeo": 2,
+    "neogeocd": 2,
+    "psx": 2,
+    "fbneo": 2,
+    "cps1": 2,
+    "cps2": 2,
+    "cps3": 2,
+    "switch": 2
+  },
+  "changesToProductionAtBackup": false,
+  "newServerWorktree": null,
+  "newAppWorktree": null
+}

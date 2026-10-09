@@ -1,3 +1,13 @@
+# Ampliação multiplataforma candidata e backup publicados — 09/10/2026
+
+Leia `docs/station-android/HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md` e `docs/station-android/online-plataformas-20261009/`. Cópia anterior preservada em ambos os repos: branch backup/station-online-antes-todas-plataformas-20261009, tag backup-station-online-20261009-antes-todas-plataformas; servidor2b04f59/app4521218. Ampliação está em branches feat/station-online-all-platforms-20261009 (servidor) e feat/station-online-all-platforms-client-20261009 (app). Produção permanece DLLad45a4f0/PID1722044/NRestarts0/índice24/3672perfis; não reaplicar operadores antigos nem revogar aprovações anteriores.
+
+Candidata: política SNES5, Mega2, N64/Dreamcast/GameCube/Wii/WiiU4, demais2; 504 C# passaram e DLL898151 compilou. 211Java/roomsDEXbec655/clientDEXe720 inalterado, quatro cores ARM64/API26/16KiB e runtime81b3 anterior. 200Java/21BIOS passaram. NeoCD corrigido para não serializar ponteiros ASLR; N64 fixa rtc-savestate=enabled; ambos passaram transferência/continuação de estado em processos de host. Não são gameplay Android/WAN. 1504 identidades novas verificadas com contêiner completo e payload; 2071 anteriores preservadas. Revisão25 é candidata privada, não publicação; projeção pública3848IDs/17rótulos e 1501 novos rascunhos NÃO aprovados estão no pacote. Não usar rascunhos para substituir o registro ativo.
+
+Pedido de todas plataformas ainda INCOMPLETO: Flycast GGPO4, conexão automática Dolphin/ENet, WiiU e modo Switch exigem integração nativa adicional; PSX3CUE precisam identidade das faixas; demais motores foram integrados em fonte candidata. APK completo/assinatura/instalação/teste de aparelhos e implantação conjunta índice/registro persistente/perfis/DLL pendentes. Base privada R81 e keystore ficam no PCAPK; usar receitas desta candidata, E: saídas/G: backup, sem limpar dados. Canais anteriores intactos. Não declarar todas online nem pedir aprovação genérica para trabalho já autorizado.
+
+## Estado anterior de produção preservado
+
 # Station até cinco: servidor aplicado, app compilado — 09/10/2026
 
 Leia `docs/station-android/HANDOFF-COMPLETO-ONLINE-ATE-5-STATION-20261009.md` e `online-1a5-20261009/`. É a entrega única vigente. Servidor DLLad45a4f0/fonte d8ebd657, PID1722044/NRestarts0, máximo5, 3.672 vínculos/perfis SHA244d98e7; originais1.816 e todas as configurações anteriores preservadas. Dados finais aplicados13:00:35UTC, provas públicas13:02:20UTC; catálogo24/3.848IDs/3.593visíveis/255compatibilidade, índice6b8acfa4, importer/capas/downloads/licenças/segredos/sandbox/outros produtos preservados. Zero salas/conexões/replay no fim. Não reaplicar operadores históricos nem pedir autorização genérica.

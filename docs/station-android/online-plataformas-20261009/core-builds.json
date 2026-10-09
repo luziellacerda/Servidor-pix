@@ -1,0 +1,82 @@
+{
+  "cores": [
+    {
+      "name": "pcsx",
+      "repository": "https://github.com/libretro/pcsx_rearmed",
+      "commit": "c8816799b50388e61cfe237fe2cdbb7d8175f20a",
+      "library": "libstation_online_pcsx.so",
+      "sha256": "4de0afbd3bb113a4b9927b5b250860194b485f278d1dced81501dc6555fa18a8",
+      "bytes": 1547280,
+      "license": "GPL-2.0-or-later",
+      "sourceArchive": "native/sources/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a.tar.gz",
+      "sourceArchiveSHA256": "edeb21fdeef8815521cb9d4488d2cd35746607c968ca9b26cce4e42c09f2dc99",
+      "compiled": true,
+      "abi": "arm64-v8a",
+      "minimumApi": 26,
+      "elfLoadAlignmentMinimum": 16384,
+      "libretroStateAndInputExports": true,
+      "physicalGameplayVerified": false
+    },
+    {
+      "name": "neocd",
+      "repository": "https://github.com/libretro/neocd_libretro",
+      "commit": "b1e04c738cb48a1dae0574b8877f6a116d270ca1",
+      "library": "libstation_online_neocd.so",
+      "sha256": "78a35bc9a9435238d74125e77ae8f8d249ba59e90f07d43f43c84ad5ddc68870",
+      "bytes": 1551584,
+      "license": "GPL-3.0-or-later",
+      "sourceArchive": "native/sources/neocd_libretro-b1e04c738cb48a1dae0574b8877f6a116d270ca1.tar.gz",
+      "sourceArchiveSHA256": "fac1ec580812ce7aa962498450e1b1cc8896a786eeb2f16cfe28807dc13d2418",
+      "compiled": true,
+      "abi": "arm64-v8a",
+      "minimumApi": 26,
+      "elfLoadAlignmentMinimum": 16384,
+      "libretroStateAndInputExports": true,
+      "physicalGameplayVerified": false,
+      "patches": [
+        {
+          "path": "native/patches/neocd-aslr-state.patch",
+          "sha256": "b17b60357a7f4e3f8733cfa275e8ec44b11875f3856807fe960a3e0a43d53e2e"
+        }
+      ],
+      "hostStateRoundtripQualified": true
+    },
+    {
+      "name": "parallel",
+      "repository": "https://github.com/libretro/parallel-n64",
+      "commit": "3be1f4372050ebd3e9b783b2f28b3c5a4c719fc4",
+      "library": "libstation_online_n64.so",
+      "sha256": "09555f50df2767f078217058648420970024993603217bc9a29066032a8cad9d",
+      "bytes": 5486424,
+      "license": "GPL-2.0-or-later AND BSD-3-Clause",
+      "sourceArchive": "native/sources/parallel-n64-3be1f4372050ebd3e9b783b2f28b3c5a4c719fc4.tar.gz",
+      "sourceArchiveSHA256": "4701e38b7903bbf82d8d9887b20a122aeb883a45251c4cc61aee8d14465e1880",
+      "compiled": true,
+      "abi": "arm64-v8a",
+      "minimumApi": 26,
+      "elfLoadAlignmentMinimum": 16384,
+      "libretroStateAndInputExports": true,
+      "physicalGameplayVerified": false
+    },
+    {
+      "name": "fbneo",
+      "repository": "https://github.com/libretro/FBNeo",
+      "commit": "95153da1f113c56735bd9a818171f908df628421",
+      "library": "libstation_online_fbneo.so",
+      "sha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+      "bytes": 72223816,
+      "license": "LicenseRef-FBNeo",
+      "sourceArchive": "native/sources/FBNeo-95153da1f113c56735bd9a818171f908df628421.tar.gz",
+      "sourceArchiveSHA256": "8792030538a92acf253dd9f5e0186b15e4ea332f6bd765c47eb9bde8a135eba1",
+      "compiled": true,
+      "abi": "arm64-v8a",
+      "minimumApi": 26,
+      "elfLoadAlignmentMinimum": 16384,
+      "libretroStateAndInputExports": true,
+      "physicalGameplayVerified": false
+    }
+  ],
+  "sourceArchivesIncludeUpstreamLicenses": true,
+  "apkBuilt": false,
+  "peerGameplayVerified": false
+}

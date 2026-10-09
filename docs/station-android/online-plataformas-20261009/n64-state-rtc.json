@@ -1,0 +1,18 @@
+{
+  "platform": "n64",
+  "utc": "2026-10-09T15:32:49.303582+00:00",
+  "hostCoreSHA256": "3968a710f4bfcd3e4f98a2e9979e1a8aece7c29f2294cf852d11952705533b1c",
+  "androidGameplayQualified": false,
+  "WANQualified": false,
+  "passed": true,
+  "stateBytes": 16790604,
+  "inputPortsObserved": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "transferredStateEqual": true,
+  "followingStateEqual": true,
+  "videoProduced": true
+}

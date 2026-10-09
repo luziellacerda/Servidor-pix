@@ -1,0 +1,10 @@
+{
+  "compiled": true,
+  "dllSHA256": "8981510264c82bb6a5c9a536634ca0905807635dca675b0794997acf129c5620",
+  "checks": 504,
+  "passed": true,
+  "scope": "synthetic hub/stream/codec/budget and all platform ceilings",
+  "catalogBindingTests": 19,
+  "catalogBindingTestsPassed": true,
+  "productionDeployed": false
+}

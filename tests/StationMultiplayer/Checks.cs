@@ -61,6 +61,30 @@ Denied(()=>unapproved.Command(new("u","d"),Cmd("create",capacity:2),security),"S
 var wrongPlatform=new StationMultiplayer([Profile()],_=>"megadrive",new());
 Denied(()=>wrongPlatform.Command(new("u","d"),Cmd("create",capacity:2),security),"STATION_MULTIPLAYER_PROFILE_UNAPPROVED");
 Check(Json(wrongPlatform.Command(new("u","d"),Cmd("capabilities"),security)).GetProperty("profiles").GetArrayLength()==0,"mismatched platform is not advertised");
+// Different engines share Station admission, but platform limits stay independent.
+foreach(var entry in new[]{("snes",5),("snesbr",5),("megadrive",2),("megadrivebr",2),
+    ("dreamcast",4),("n64",4),("n64br",4),("gamecube",4),("wii",4),("wiiu",4),
+    ("neogeo",2),("neogeocd",2),("psx",2),("fbneo",2),("cps1",2),("cps2",2),("cps3",2),("switch",2)})
+{
+    string system=StationMultiplayerPlatformPolicy.Normalize(entry.Item1);int maximum=entry.Item2;
+    Check(StationMultiplayerPlatformPolicy.MaximumPlayers(entry.Item1)==maximum,"configured platform ceiling "+entry.Item1);
+    var controller=maximum==5?"snes-multitap-port2-v1":maximum==4?"synthetic-four-pads":"standard-2p-v1";
+    var profile=Profile(maximum) with{Platform=system,ControllerProfile=controller};
+    var hub=new StationMultiplayer([profile],_=>entry.Item1,new());
+    var person=new OnlineIdentity("platform-"+entry.Item1,"platform-"+entry.Item1);
+    var capability=Json(hub.Command(person,Cmd("capabilities",p:profile),security));
+    var policy=capability.GetProperty("platformPolicy");
+    Check(policy.GetProperty("maximumPlayers").GetInt32()==maximum&&policy.GetProperty("onlineAvailable").GetBoolean(),"signed exact platform capability "+entry.Item1);
+    var opened=Json(hub.Command(person,Cmd("create",capacity:maximum,p:profile),security)).GetProperty("room");
+    Check(opened.GetProperty("capacity").GetInt32()==maximum,"room with requested platform ceiling "+entry.Item1);
+    hub.Command(person,Cmd("leave",opened,p:profile),security);
+    if(maximum<5)
+        Denied(()=>new StationMultiplayer([profile with{MaximumPlayers=maximum+1,AllowedPlayerCounts=[maximum+1]}],_=>entry.Item1,new()),
+            maximum==4?"STATION_MULTIPLAYER_PROFILE_INVALID":"STATION_MULTIPLAYER_PLATFORM_CAPACITY_UNSUPPORTED");
+}
+var unconfiguredPlatform=new StationMultiplayer([],_=>"wiiu",new());
+var pendingPolicy=Json(unconfiguredPlatform.Command(new("pending-system","pending-system"),Cmd("capabilities"),security)).GetProperty("platformPolicy");
+Check(pendingPolicy.GetProperty("maximumPlayers").GetInt32()==4&&!pendingPolicy.GetProperty("onlineAvailable").GetBoolean(),"four-seat policy alone cannot advertise an absent engine");
 string? catalogHash=H('a');
 var bound=new StationMultiplayer([altProfile],_=>"snes",new(),currentContentHash:_=>catalogHash);
 Check(bound.LegacyAllowed("synthetic-game",H('a'),"synthetic-engine",H('b'),H('c')),"exact current content permits approved legacy profile");

@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-09T15:38:01.506195+00:00",
+  "passed": true,
+  "indexBaselineSHA256": "6b8acfa4ca419ec705f48f53e2063633ff8f0a30a36cb8f4d651a108cbb31137",
+  "candidateRevision": 25,
+  "newIdentities": 1504,
+  "totalIdentities": 3575,
+  "issues": [],
+  "productionChanged": false,
+  "physicalGameplayQualified": false,
+  "containerBindingFullyVerified": true,
+  "previousIdentitiesPreserved": 2071,
+  "idsNamesCoversArtifactsAndMetadataPreserved": true
+}

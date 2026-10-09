@@ -1,0 +1,39 @@
+{
+  "utc": "2026-10-09T15:47:38.260578+00:00",
+  "serviceState": [
+    "MainPID=1722044",
+    "NRestarts=0",
+    "ExecMainStartTimestamp=Fri 2026-10-09 10:00:35 -03",
+    "ActiveState=active"
+  ],
+  "onlineHealth": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    },
+    "multiplayer": {
+      "protocol": "station-stream.v3",
+      "maximumPlayers": 5,
+      "activeRooms": 0,
+      "activeConnections": 0,
+      "approvedProfiles": 3672,
+      "profileCount": 3672,
+      "retainedBytes": 0,
+      "maximumRetainedBytes": 33554432
+    }
+  },
+  "newDeployment": false,
+  "otherServicesModified": false,
+  "proxyTunnelFirewallModified": false
+}

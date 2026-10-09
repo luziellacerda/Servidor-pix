@@ -1,0 +1,16 @@
+{
+  "platform": "neogeocd",
+  "utc": "2026-10-09T15:25:09.863603+00:00",
+  "hostCoreSHA256": "da59447ba0d5c67f065b2f6fe5ad94e00e193afb5ba95d404cf7edfab31a9708",
+  "androidGameplayQualified": false,
+  "WANQualified": false,
+  "passed": false,
+  "stateBytes": 8231939,
+  "inputPortsObserved": [
+    0,
+    1
+  ],
+  "transferredStateEqual": false,
+  "followingStateEqual": false,
+  "videoProduced": true
+}

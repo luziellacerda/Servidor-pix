@@ -59,9 +59,5 @@ public static class StationOnlineRegistration
             builder.Services.AddHostedService(sp=>sp.GetRequiredService<StationRecoveryRelay>());
         }
     }
-    private static string Normalize(string value)=>value.ToLowerInvariant() switch {
-        "snesbr" or "super nintendo" or "super nintendo - br"=>"snes",
-        "megadrivebr" or "megadrive - br"=>"megadrive",
-        "neo geo"=>"neogeo", _=>value.ToLowerInvariant()
-    };
+    private static string Normalize(string value)=>StationMultiplayerPlatformPolicy.Normalize(value);
 }

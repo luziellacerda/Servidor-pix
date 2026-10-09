@@ -1,0 +1,155 @@
+[
+  {
+    "platform": "cps1",
+    "items": 36,
+    "visible": 36,
+    "exactContentIdentities": 36,
+    "coverIds": 36,
+    "platformPlayerCeiling": 2,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "cps2",
+    "items": 64,
+    "visible": 64,
+    "exactContentIdentities": 64,
+    "coverIds": 64,
+    "platformPlayerCeiling": 2,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "cps3",
+    "items": 11,
+    "visible": 11,
+    "exactContentIdentities": 11,
+    "coverIds": 11,
+    "platformPlayerCeiling": 2,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "dreamcast",
+    "items": 243,
+    "visible": 243,
+    "exactContentIdentities": 0,
+    "coverIds": 243,
+    "platformPlayerCeiling": 4,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "fbneo",
+    "items": 913,
+    "visible": 913,
+    "exactContentIdentities": 913,
+    "coverIds": 913,
+    "platformPlayerCeiling": 2,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "gamecube",
+    "items": 21,
+    "visible": 21,
+    "exactContentIdentities": 0,
+    "coverIds": 21,
+    "platformPlayerCeiling": 4,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "megadrive",
+    "items": 1133,
+    "visible": 887,
+    "exactContentIdentities": 1133,
+    "coverIds": 1133,
+    "platformPlayerCeiling": 2,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "megadrivebr",
+    "items": 94,
+    "visible": 94,
+    "exactContentIdentities": 94,
+    "coverIds": 94,
+    "platformPlayerCeiling": 2,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "n64",
+    "items": 157,
+    "visible": 157,
+    "exactContentIdentities": 157,
+    "coverIds": 157,
+    "platformPlayerCeiling": 4,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "neogeo",
+    "items": 189,
+    "visible": 189,
+    "exactContentIdentities": 189,
+    "coverIds": 189,
+    "platformPlayerCeiling": 2,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "neogeocd",
+    "items": 50,
+    "visible": 50,
+    "exactContentIdentities": 50,
+    "coverIds": 50,
+    "platformPlayerCeiling": 2,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "psx",
+    "items": 84,
+    "visible": 84,
+    "exactContentIdentities": 84,
+    "coverIds": 84,
+    "platformPlayerCeiling": 2,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "snes",
+    "items": 653,
+    "visible": 644,
+    "exactContentIdentities": 653,
+    "coverIds": 653,
+    "platformPlayerCeiling": 5,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "snesbr",
+    "items": 191,
+    "visible": 191,
+    "exactContentIdentities": 191,
+    "coverIds": 191,
+    "platformPlayerCeiling": 5,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "switch",
+    "items": 1,
+    "visible": 1,
+    "exactContentIdentities": 0,
+    "coverIds": 1,
+    "platformPlayerCeiling": 2,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "wii",
+    "items": 7,
+    "visible": 7,
+    "exactContentIdentities": 0,
+    "coverIds": 7,
+    "platformPlayerCeiling": 4,
+    "newProductionDeployment": false
+  },
+  {
+    "platform": "wiiu",
+    "items": 1,
+    "visible": 1,
+    "exactContentIdentities": 0,
+    "coverIds": 1,
+    "platformPlayerCeiling": 4,
+    "newProductionDeployment": false
+  }
+]

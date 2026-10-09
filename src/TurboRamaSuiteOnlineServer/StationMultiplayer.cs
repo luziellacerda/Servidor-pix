@@ -81,6 +81,7 @@ public sealed class StationMultiplayer
                 &&p.AllowedPlayerCounts.All(n=>n is >=2 and <=5&&n<=p.MaximumPlayers)
                 &&(p.MaximumPlayers==1?p.AllowedPlayerCounts.Length==0:p.AllowedPlayerCounts.Contains(p.MaximumPlayers)),400,"STATION_MULTIPLAYER_PROFILE_INVALID");
             Need(p.MaximumPlayers<5||(p.Platform=="snes"&&p.ControllerProfile=="snes-multitap-port2-v1"),400,"STATION_MULTIPLAYER_PROFILE_INVALID");
+            Need(p.MaximumPlayers<=StationMultiplayerPlatformPolicy.MaximumPlayers(p.Platform),400,"STATION_MULTIPLAYER_PLATFORM_CAPACITY_UNSUPPORTED");
             Need((p.ModeTitle is null||Text(p.ModeTitle,80))
                 &&(p.Instructions is null||p.Instructions.Length<=8&&p.Instructions.All(s=>Text(s,500)))
                 &&(p.Sources is null||p.Sources.Length<=8&&p.Sources.All(s=>Text(s,512)&&Uri.TryCreate(s,UriKind.Absolute,out var uri)&&uri.Scheme=="https"&&!string.IsNullOrEmpty(uri.Host)&&string.IsNullOrEmpty(uri.UserInfo))),400,"STATION_MULTIPLAYER_PROFILE_INVALID");
@@ -117,7 +118,8 @@ public sealed class StationMultiplayer
     {return gameProfiles.TryGetValue(Key(item,content,engine,core,runtime),out var matches)&&matches.Count(p=>p.Approved&&p.AllowedPlayerCounts.Contains(2)&&p.ControllerProfile=="standard-2p-v1"&&CatalogMatches(p))==1;}
 
     private bool CatalogMatches(StationMultiplayerProfile profile) =>
-        platform(profile.ItemId) == profile.Platform &&
+        platform(profile.ItemId) is {} currentPlatform &&
+        StationMultiplayerPlatformPolicy.Normalize(currentPlatform) == StationMultiplayerPlatformPolicy.Normalize(profile.Platform) &&
         (currentContentHash is null || currentContentHash(profile.ItemId) == profile.ContentSha256);
     public object Command(OnlineIdentity identity,StationMultiplayerCommand c,StationSessionSecurity security,(string Id,string Nickname)? authority=null,IReadOnlySet<string>? blocked=null)
     {
@@ -212,9 +214,14 @@ public sealed class StationMultiplayer
     {
         var own=peer.Room is {} id?rooms.GetValueOrDefault(id):null;item??=own?.Profile.ItemId;
         var matches=profiles.Values.Where(p=>p.ItemId==item&&p.MaximumPlayers<=clientMaximumPlayers&&CatalogMatches(p)).Take(32).ToArray();
+        string? selectedPlatform=item is null?null:platform(item);
+        var platformPolicy=new{platform=selectedPlatform is null?null:StationMultiplayerPlatformPolicy.Normalize(selectedPlatform),
+            maximumPlayers=StationMultiplayerPlatformPolicy.MaximumPlayers(selectedPlatform),
+            approvedProfileCount=matches.Count(p=>p.Approved),onlineAvailable=matches.Any(p=>p.Approved&&p.MaximumPlayers>=2),
+            limitSource="maintainer-20261009",gameModeRequired=true};
         var visible=rooms.Values.Where(r=>r.Profile.MaximumPlayers<=clientMaximumPlayers&&(blocked is null||r.Members.All(m=>!blocked.Contains(m.Peer.Id)))).OrderBy(r=>r.Id,StringComparer.Ordinal).Take(100).ToArray();
         return new{schemaVersion=1,multiplayerVersion=3,capability="station-multiplayer.v3",maximumPlayers=5,clientMaximumPlayers,selfId=peer.Id,instance,revision,serverTimeMs=DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),status="ok",
-            profiles=matches,profileCount=profiles.Count,classification=matches.Length==0?"pending":"classified",
+            profiles=matches,profileCount=profiles.Count,classification=matches.Length==0?"pending":"classified",platformPolicy,
             totalRooms=visible.Length,rooms=visible.Select(r=>RoomView(r,false)).ToArray(),
             room=own is null?null:RoomView(own,true),ticket};
     }
