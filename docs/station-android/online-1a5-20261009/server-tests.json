@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": 433,
+  "sourceCommit": "d8ebd6572d7a3a82a95b09dc6c8dd4e2737334b5",
+  "executedOn": "2026-10-09",
+  "recordedUtc": "2026-10-09T13:05:30.182088+00:00",
+  "scope": "Synthetic C# hub/stream/codec/budget tests; no Android gameplay or deployment",
+  "httpLoopback": {
+    "passed": true,
+    "checks": 172,
+    "scope": "synthetic loopback TLS: five authenticated players, eight WS links, signed HTTP, bound proofs, stream, disconnect/resume and chat; not Android gameplay or public network"
+  },
+  "physicalAndroidGameplayVerified": false
+}

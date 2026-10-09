@@ -51627,7 +51627,7 @@
       "contentSha256": "4efab3f49cbe91ec77b6cba747ddfedfdc0b080c755a8b6ba51234f0676c000f",
       "catalogPlayerLabel": "1-4",
       "onlineStatus": "profiles-available",
-      "maximumOnlinePlayers": 2,
+      "maximumOnlinePlayers": 4,
       "modes": [
         {
           "profileId": "standard-2p-v1",
@@ -51639,6 +51639,40 @@
           "maximumPlayers": 2,
           "sources": null,
           "instructions": null
+        },
+        {
+          "profileId": "snes-normal-605f43d7-20261009",
+          "mode": "normal",
+          "modeTitle": "Campanha em dupla",
+          "allowedPlayerCounts": [
+            2
+          ],
+          "maximumPlayers": 2,
+          "sources": [
+            "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_-_SNES_-_Manual.pdf"
+          ],
+          "instructions": [
+            "NORMAL MODE: campanha para uma ou duas pessoas. Na sala com dois, o segundo jogador pressiona Start após começar.",
+            "Para três ou quatro pessoas, escolha o modo Batalha; a campanha não tem essas vagas."
+          ]
+        },
+        {
+          "profileId": "snes-battle-single-605f43d7-20261009",
+          "mode": "battle-single",
+          "modeTitle": "Batalha: todos contra todos",
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "maximumPlayers": 4,
+          "sources": [
+            "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_-_SNES_-_Manual.pdf"
+          ],
+          "instructions": [
+            "BATTLE MODE: escolha MAN nas posições dos participantes P1 a P4; outros ficam COM.",
+            "Três ou quatro pessoas funcionam somente na Batalha. A campanha permite no máximo duas."
+          ]
         }
       ]
     },
@@ -51666,7 +51700,8 @@
             "https://docs.libretro.com/guides/netplay-multiple-controllers/"
           ],
           "instructions": [
-            "Battle Game → Single Match; pads participantes MAN; outros COM/OFF."
+            "Battle Game → Single Match; pads participantes MAN; outros COM/OFF.",
+            "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
           ]
         },
         {
@@ -51679,7 +51714,8 @@
             "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
           ],
           "instructions": [
-            "Normal Game é individual e não deve criar sala."
+            "Normal Game é individual e não deve criar sala.",
+            "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
           ]
         },
         {
@@ -51696,7 +51732,8 @@
             "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
           ],
           "instructions": [
-            "Battle Game → Tag Match; configurar humanos e equipes no jogo."
+            "Battle Game → Tag Match; configurar humanos e equipes no jogo.",
+            "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
           ]
         }
       ]
@@ -51738,7 +51775,8 @@
           ],
           "instructions": [
             "No jogo, escolha BATTLE GAME → SINGLE MATCH.",
-            "Marque MAN nas posições dos participantes (P1 a P5). Use COM ou OFF nas demais posições. Cada celular controla somente a sua posição."
+            "Marque MAN nas posições dos participantes (P1 a P5). Use COM ou OFF nas demais posições. Cada celular controla somente a sua posição.",
+            "Três, quatro ou cinco pessoas funcionam somente na Batalha. NORMAL GAME permite uma ou duas."
           ]
         },
         {
@@ -51759,7 +51797,24 @@
           "instructions": [
             "No jogo, escolha BATTLE GAME → TAG MATCH.",
             "Marque MAN nas posições dos participantes (P1 a P5). Use COM ou OFF nas demais posições. Cada celular controla somente a sua posição.",
-            "Distribua os participantes em duas equipes, com pelo menos um jogador em cada equipe."
+            "Distribua os participantes em duas equipes, com pelo menos um jogador em cada equipe.",
+            "Três, quatro ou cinco pessoas funcionam somente na Batalha. NORMAL GAME permite uma ou duas."
+          ]
+        },
+        {
+          "profileId": "snes-normal-b9c7ce2d-20261009",
+          "mode": "normal",
+          "modeTitle": "Campanha em dupla",
+          "allowedPlayerCounts": [
+            2
+          ],
+          "maximumPlayers": 2,
+          "sources": [
+            "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_3_-_SNES_-_Manual.pdf"
+          ],
+          "instructions": [
+            "NORMAL GAME: escolha 2PLAYERS GAME para a campanha em dupla.",
+            "Três, quatro ou cinco pessoas funcionam somente na Batalha. A campanha permite no máximo duas."
           ]
         }
       ]
@@ -59371,7 +59426,9 @@
           ],
           "maximumPlayers": 2,
           "sources": null,
-          "instructions": null
+          "instructions": [
+            "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+          ]
         },
         {
           "profileId": "snes-sbomberman2-normal-20261008",
@@ -59383,7 +59440,8 @@
             "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
           ],
           "instructions": [
-            "Normal Game é individual e não deve criar sala."
+            "Normal Game é individual e não deve criar sala.",
+            "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
           ]
         },
         {
@@ -59401,7 +59459,8 @@
             "https://docs.libretro.com/guides/netplay-multiple-controllers/"
           ],
           "instructions": [
-            "Battle Game → Single Match; pads participantes MAN; outros COM/OFF."
+            "Battle Game → Single Match; pads participantes MAN; outros COM/OFF.",
+            "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
           ]
         },
         {
@@ -59418,7 +59477,8 @@
             "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
           ],
           "instructions": [
-            "Battle Game → Tag Match; configurar humanos e equipes no jogo."
+            "Battle Game → Tag Match; configurar humanos e equipes no jogo.",
+            "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
           ]
         }
       ]

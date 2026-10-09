@@ -1,0 +1,352 @@
+{
+  "applied": true,
+  "utc": "2026-10-09T13:02:20.974517+00:00",
+  "reloadUtc": "2026-10-09T13:00:35.002531+00:00",
+  "pid": 1722044,
+  "dllSha256": "ad45a4f0f4c7aef3dd4191b453da384be008e2b06aaaeb8b1ca359f3cb83570a",
+  "maximumPlayers": 5,
+  "approvedProfiles": 3672,
+  "fivePlayerProfiles": 2,
+  "profilesSha256": "244d98e76c4b5cc00f1af75abebe595688d1700cef6d2f8bc777dc84c3b388ad",
+  "indexSha256": "6b8acfa4ca419ec705f48f53e2063633ff8f0a30a36cb8f4d651a108cbb31137",
+  "catalogRevision": 24,
+  "catalogItems": 3848,
+  "legacyEngineRegistrySha256": "a5f9de948ab3fcf15b2657061d540dcbbafda98e1dd7a68137e617b58a894843",
+  "legacyEnginesPreserved": 10,
+  "realLicensesPreserved": true,
+  "schemaPreserved": true,
+  "catalogAndCoversPreserved": true,
+  "sharedProductsPreserved": true,
+  "proxyTunnelFirewallChanged": false,
+  "physicalFivePhoneGameplayQualified": false,
+  "readyAfter": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    },
+    "multiplayer": {
+      "protocol": "station-stream.v3",
+      "maximumPlayers": 5,
+      "activeRooms": 0,
+      "activeConnections": 0,
+      "approvedProfiles": 3672,
+      "profileCount": 3672,
+      "retainedBytes": 0,
+      "maximumRetainedBytes": 33554432
+    }
+  },
+  "readyBefore": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    },
+    "multiplayer": {
+      "protocol": "station-stream.v3",
+      "maximumPlayers": 5,
+      "activeRooms": 0,
+      "activeConnections": 0,
+      "approvedProfiles": 3666,
+      "profileCount": 3666,
+      "retainedBytes": 0,
+      "maximumRetainedBytes": 33554432
+    }
+  },
+  "dropinSha256": "07dc2c0fbc2eb1429fc50739aeaa5298bd6fc046d58a69b798f623088fc6d136",
+  "proof": {
+    "candidate": {
+      "catalog": {
+        "passed": true,
+        "checks": 28776,
+        "public": false
+      },
+      "legacy": {
+        "passed": true,
+        "checks": 185,
+        "protectedResume": true,
+        "oneUseTickets": true,
+        "proofReplayDenied": true,
+        "catalogCoverDownloadAuthorizationPreserved": true,
+        "gameDownloadVerified": true
+      },
+      "multiplayer": {
+        "passed": true,
+        "checks": 821,
+        "approvedProfiles": 3672,
+        "countsVerified": [
+          2,
+          4,
+          5
+        ],
+        "bidirectionalBytes": 2304,
+        "documentedBombermanModesVerified": [
+          "snes-normal-605f43d7-20261009",
+          "snes-battle-single-605f43d7-20261009",
+          "snes-normal-b9c7ce2d-20261009"
+        ],
+        "syntheticDevices": 5,
+        "public": false,
+        "signedV3": true,
+        "createJoinReadyStart": true,
+        "snesAndMegaDrive": true,
+        "protectedResume": true
+      }
+    },
+    "public": {
+      "catalog": {
+        "passed": true,
+        "checks": 28776,
+        "public": true
+      },
+      "legacy": {
+        "passed": true,
+        "checks": 189,
+        "protectedResume": true,
+        "oneUseTickets": true,
+        "proofReplayDenied": true,
+        "catalogCoverDownloadAuthorizationPreserved": true,
+        "gameDownloadVerified": true
+      },
+      "multiplayer": {
+        "passed": true,
+        "checks": 826,
+        "approvedProfiles": 3672,
+        "countsVerified": [
+          2,
+          4,
+          5
+        ],
+        "bidirectionalBytes": 2304,
+        "documentedBombermanModesVerified": [
+          "snes-normal-605f43d7-20261009",
+          "snes-battle-single-605f43d7-20261009",
+          "snes-normal-b9c7ce2d-20261009"
+        ],
+        "syntheticDevices": 5,
+        "public": true,
+        "signedV3": true,
+        "createJoinReadyStart": true,
+        "snesAndMegaDrive": true,
+        "protectedResume": true
+      }
+    }
+  },
+  "sandbox": {
+    "mediaFilesReadable": 35,
+    "protectedPathsDenied": 4,
+    "readOnlyMounts": true
+  },
+  "schemaVersion": 1,
+  "sourceCommit": "d8ebd6572d7a3a82a95b09dc6c8dd4e2737334b5",
+  "originalProfilesPreserved": 1816,
+  "previousProfileBindingsPreserved": 3666,
+  "addedBindings": 6,
+  "priorProfilesSha256": "5f358c59d5d21966b23420f01807cf8b8391bb4715ee1dc75708541ab5c03d9b",
+  "previousBinaryDeployment": {
+    "applied": true,
+    "utc": "2026-10-09T12:07:18.243988+00:00",
+    "reloadUtc": "2026-10-09T12:05:52.789691+00:00",
+    "pid": 1710299,
+    "dllSha256": "ad45a4f0f4c7aef3dd4191b453da384be008e2b06aaaeb8b1ca359f3cb83570a",
+    "maximumPlayers": 5,
+    "approvedProfiles": 3666,
+    "fivePlayerProfiles": 2,
+    "profilesSha256": "5f358c59d5d21966b23420f01807cf8b8391bb4715ee1dc75708541ab5c03d9b",
+    "indexSha256": "6b8acfa4ca419ec705f48f53e2063633ff8f0a30a36cb8f4d651a108cbb31137",
+    "catalogRevision": 24,
+    "catalogItems": 3848,
+    "legacyEngineRegistrySha256": "a5f9de948ab3fcf15b2657061d540dcbbafda98e1dd7a68137e617b58a894843",
+    "legacyEnginesPreserved": 10,
+    "realLicensesPreserved": true,
+    "schemaPreserved": true,
+    "catalogAndCoversPreserved": true,
+    "sharedProductsPreserved": true,
+    "proxyTunnelFirewallChanged": false,
+    "physicalFivePhoneGameplayQualified": false,
+    "readyAfter": {
+      "maximumRooms": 512,
+      "maximumConnections": 1024,
+      "activeRooms": 0,
+      "activeConnections": 0,
+      "forwardedBytes": 64,
+      "recovery": {
+        "protocol": "station-stream.v2",
+        "maximumRooms": 64,
+        "windowBytes": 262144,
+        "retainedRooms": 0,
+        "activeConnections": 0,
+        "pendingBytes": 0,
+        "maximumRetainedBytes": 33554432,
+        "persistent": false
+      },
+      "multiplayer": {
+        "protocol": "station-stream.v3",
+        "maximumPlayers": 5,
+        "activeRooms": 0,
+        "activeConnections": 0,
+        "approvedProfiles": 3666,
+        "profileCount": 3666,
+        "retainedBytes": 0,
+        "maximumRetainedBytes": 33554432
+      }
+    },
+    "readyBefore": {
+      "maximumRooms": 512,
+      "maximumConnections": 1024,
+      "activeRooms": 0,
+      "activeConnections": 0,
+      "forwardedBytes": 0,
+      "recovery": {
+        "protocol": "station-stream.v2",
+        "maximumRooms": 64,
+        "windowBytes": 262144,
+        "retainedRooms": 0,
+        "activeConnections": 0,
+        "pendingBytes": 0,
+        "maximumRetainedBytes": 33554432,
+        "persistent": false
+      },
+      "multiplayer": {
+        "protocol": "station-stream.v3",
+        "activeRooms": 0,
+        "activeConnections": 0,
+        "approvedProfiles": 1816,
+        "profileCount": 1816,
+        "retainedBytes": 0,
+        "maximumRetainedBytes": 33554432
+      }
+    },
+    "dropinSha256": "68bb66e1c3f1ca69812add86ccedbbecec1ad74b1cacb7c4a5a4aff8052e50a9",
+    "proof": {
+      "rollbackOld": {
+        "catalog": {
+          "passed": true,
+          "checks": 28776,
+          "public": false
+        },
+        "legacy": {
+          "passed": true,
+          "checks": 185,
+          "protectedResume": true,
+          "oneUseTickets": true,
+          "proofReplayDenied": true,
+          "catalogCoverDownloadAuthorizationPreserved": true,
+          "gameDownloadVerified": true
+        },
+        "multiplayer": {
+          "passed": true,
+          "checks": 261,
+          "approvedProfiles": 1816,
+          "countsVerified": [
+            2,
+            4
+          ],
+          "bidirectionalBytes": 640,
+          "syntheticDevices": 4,
+          "public": false,
+          "signedV3": true,
+          "createJoinReadyStart": true,
+          "snesAndMegaDrive": true,
+          "protectedResume": true
+        }
+      },
+      "candidate": {
+        "catalog": {
+          "passed": true,
+          "checks": 28776,
+          "public": false
+        },
+        "legacy": {
+          "passed": true,
+          "checks": 187,
+          "protectedResume": true,
+          "oneUseTickets": true,
+          "proofReplayDenied": true,
+          "catalogCoverDownloadAuthorizationPreserved": true,
+          "gameDownloadVerified": true
+        },
+        "multiplayer": {
+          "passed": true,
+          "checks": 614,
+          "approvedProfiles": 3666,
+          "countsVerified": [
+            2,
+            4,
+            5
+          ],
+          "bidirectionalBytes": 1664,
+          "syntheticDevices": 5,
+          "public": false,
+          "signedV3": true,
+          "createJoinReadyStart": true,
+          "snesAndMegaDrive": true,
+          "protectedResume": true
+        }
+      },
+      "public": {
+        "catalog": {
+          "passed": true,
+          "checks": 28776,
+          "public": true
+        },
+        "legacy": {
+          "passed": true,
+          "checks": 190,
+          "protectedResume": true,
+          "oneUseTickets": true,
+          "proofReplayDenied": true,
+          "catalogCoverDownloadAuthorizationPreserved": true,
+          "gameDownloadVerified": true
+        },
+        "multiplayer": {
+          "passed": true,
+          "checks": 615,
+          "approvedProfiles": 3666,
+          "countsVerified": [
+            2,
+            4,
+            5
+          ],
+          "bidirectionalBytes": 1664,
+          "syntheticDevices": 5,
+          "public": true,
+          "signedV3": true,
+          "createJoinReadyStart": true,
+          "snesAndMegaDrive": true,
+          "protectedResume": true
+        }
+      }
+    },
+    "sandbox": {
+      "mediaFilesReadable": 35,
+      "protectedPathsDenied": 4,
+      "readOnlyMounts": true
+    }
+  },
+  "NRestarts": 0,
+  "limits": [
+    "Five synthetic identities and relay transport; no physical Android gameplay qualification.",
+    "Native/game/mode limits are enforced. Room details are read-only; Station gameplay spectating is not implemented."
+  ]
+}

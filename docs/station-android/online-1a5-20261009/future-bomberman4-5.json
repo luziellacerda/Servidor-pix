@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "requestedFutureGames": [
+    {
+      "name": "Super Bomberman 4",
+      "platform": "snes",
+      "catalogItemId": null,
+      "contentSha256": null,
+      "approved": false,
+      "status": "WAITING_FOR_ROM_IMPORT_AND_EDITION_MODE_REVIEW",
+      "requestedModes": [
+        "Campanha",
+        "Batalha"
+      ],
+      "requestedMaximumPlayers": 5,
+      "controllerCandidate": "snes-multitap-port2-v1",
+      "steps": [
+        "Importador publica itemId/contentSha256 da ROM real.",
+        "Conferir manual original e quantidades por modo da edição presente.",
+        "Vincular dados ao motor/core/runtime exatos e testar pads; publicar somente o registro correto."
+      ]
+    },
+    {
+      "name": "Super Bomberman 5",
+      "platform": "snes",
+      "catalogItemId": null,
+      "contentSha256": null,
+      "approved": false,
+      "status": "WAITING_FOR_ROM_IMPORT_AND_EDITION_MODE_REVIEW",
+      "requestedModes": [
+        "Campanha",
+        "Batalha"
+      ],
+      "requestedMaximumPlayers": 5,
+      "controllerCandidate": "snes-multitap-port2-v1",
+      "steps": [
+        "Importador publica itemId/contentSha256 da ROM real.",
+        "Conferir manual original e quantidades por modo da edição presente.",
+        "Vincular dados ao motor/core/runtime exatos e testar pads; publicar somente o registro correto."
+      ]
+    }
+  ],
+  "artworkDoesNotProveGamePresent": true,
+  "onlineEnabledByThisFile": false
+}

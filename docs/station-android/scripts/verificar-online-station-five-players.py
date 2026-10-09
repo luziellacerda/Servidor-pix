@@ -28,6 +28,10 @@ def verify(index, values, base, sql):
                 next(p for p in profiles if p['platform'] == 'megadrive'),
                 next(p for p in profiles if p['itemId'] == 'station_df50d575815ab105084a79d68e0c8fb3' and p['maximumPlayers'] == 4),
                 *[p for p in profiles if p['maximumPlayers'] == 5]]
+    documented = [p for p in profiles if p['runtimeSha256'].startswith('81b3daa38fb9')
+                  and p['profileId'] in ('snes-normal-605f43d7-20261009',
+                      'snes-battle-single-605f43d7-20261009', 'snes-normal-b9c7ce2d-20261009')]
+    selected.extend(documented)
     path = '/v1/station/online/multiplayer/command'
     relay = '/v1/station/online/multiplayer/relay'
     clients, sessions, rooms = [], {}, []
@@ -124,6 +128,12 @@ def verify(index, values, base, sql):
             command(client, 'enter', route='/v1/station/online/command', nickname='R81 check '+str(number))
         for profile in selected:
             count = profile['maximumPlayers']
+            if profile in documented:
+                payload = dict(action='create', requestId=str(uuid.uuid4()), clientMaximumPlayers=5, capacity=5)
+                payload.update({k:profile[k] for k in ('itemId', 'contentSha256', 'engineId',
+                    'coreSha256', 'runtimeSha256', 'profileId', 'profileSha256')})
+                response = request(clients[0], path, payload)
+                check(response[0] == 409, 'unsupported mode cannot grant a fifth control')
             room = command(clients[0], 'create', profile, capacity=count)['room']
             rooms.append(room)
             for client in clients[1:count]:
@@ -170,6 +180,7 @@ def verify(index, values, base, sql):
             time.sleep(1.1)
         return dict(passed=True, checks=checks, approvedProfiles=len(profiles), signedV3=True, createJoinReadyStart=True,
             bidirectionalBytes=forwarded, countsVerified=[2,4,5], snesAndMegaDrive=True, protectedResume=True,
+            documentedBombermanModesVerified=[p['profileId'] for p in documented],
             syntheticDevices=5, public=base.startswith('https:'), physicalAndroidGameplayQualified=False)
     finally:
         for room in rooms:

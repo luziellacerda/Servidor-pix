@@ -20,8 +20,8 @@
       "id": "manual-sbomber3",
       "kind": "original-publisher-manual",
       "url": "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_3_-_SNES_-_Manual.pdf",
-      "locator": "PDFpage4, printed pages8–9",
-      "finding": "Batalha Single/Tag permite até cinco humanos; MAN para participantes, COM/OFF nas demais posições; duas equipes devem conter ao menos um jogador."
+      "locator": "Printed4–5 and8–9",
+      "finding": "Campanha uma/duas pessoas; Batalha Single/Tag até cinco humanos, MAN/COM/OFF, duas equipes participantes no Tag."
     },
     {
       "id": "manual-mana",
@@ -113,6 +113,104 @@
       "url": "https://github.com/Clownacy/clownmdemu-libretro/blob/d43c2708b0a31c285ce16724b6c4a2e92af07346/source/options.h",
       "locator": "clownmdemu_input_protocol",
       "finding": "standard/sega/ea; nenhum layout misto por porta ou opção3/6 botões nesse wrapper."
+    },
+    {
+      "id": "manual-sbomber1",
+      "kind": "original-publisher-manual",
+      "url": "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_-_SNES_-_Manual.pdf",
+      "locator": "Printed4–7 / PDFpages3–4",
+      "finding": "Campanha uma/duas pessoas; Batalha até quatro com Multitap."
+    },
+    {
+      "id": "manual-bomber-online",
+      "kind": "original-publisher-manual",
+      "url": "https://www.digitpress.com/library/manuals/dreamcast/bomberman_online.pdf",
+      "locator": "Printed13–17",
+      "finding": "Normal uma pessoa; Battle local até quatro. Network legado é outro modo."
+    },
+    {
+      "id": "publisher-bomber-hero",
+      "kind": "official-publisher-description",
+      "url": "https://www.nintendo.com/en-gb/Games/Nintendo-64/Bomberman-Hero-276445.html",
+      "locator": "Players",
+      "finding": "Uma pessoa; não presumir Batalha pelo nome Bomberman."
+    },
+    {
+      "id": "publisher-bomber64",
+      "kind": "official-publisher-description",
+      "url": "https://www.nintendo.com/es-es/Juegos/Nintendo-64/Bomberman-64-1204884.html",
+      "locator": "Jugadores",
+      "finding": "Uma a quatro pessoas no jogo original; motor N64 online Station ainda não integrado."
+    },
+    {
+      "id": "fbneo-bomber-inputs",
+      "kind": "emulator-maintainer-source",
+      "url": "https://github.com/finalburnneo/FBNeo/blob/ef832a87e8fee6a252bd25ffb2c03851f483b850/src/burn/drv/neogeo/d_neogeo.cpp",
+      "locator": "BurnDrvNeobombe/BurnDrvPanicbom",
+      "finding": "Campos de dois jogadores e duas entradas humanas; personagens CPU não representam controles adicionais."
+    },
+    {
+      "id": "publisher-dd",
+      "kind": "official-publisher-description",
+      "url": "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html",
+      "locator": "Description / Iwata Asks Mario Kart Wii part5",
+      "finding": "Multiplayer além de quatro usa várias GameCubes/TVs e LAN; não criar oito controles locais de um console."
+    },
+    {
+      "id": "publisher-party7",
+      "kind": "official-publisher-description",
+      "url": "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Party-7-268313.html",
+      "locator": "Description / Players",
+      "finding": "Até oito humanos compartilham quatro controles; esse modo não equivale a oito pads independentes."
+    },
+    {
+      "id": "publisher-starfox",
+      "kind": "official-publisher-description",
+      "url": "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Star-Fox-Assault-268874.html",
+      "locator": "Description / Players",
+      "finding": "Campanha solo; multiplayer quatro em tela dividida."
+    },
+    {
+      "id": "publisher-fourswords",
+      "kind": "official-publisher-description",
+      "url": "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-Four-Swords-Adventures-269028.html",
+      "locator": "Description / Players",
+      "finding": "Uma a quatro pessoas; multiplayer requer GBAs e cabos, não somente quatro controles comuns."
+    },
+    {
+      "id": "publisher-nsmbw",
+      "kind": "official-publisher-description",
+      "url": "https://www.nintendo.com/en-gb/Games/Wii/New-Super-Mario-Bros-Wii-282376.html",
+      "locator": "Description / Players",
+      "finding": "Até quatro na aventura cooperativa."
+    },
+    {
+      "id": "publisher-mkwii",
+      "kind": "official-publisher-description",
+      "url": "https://www.nintendo.com/en-gb/Games/Wii/Mario-Kart-Wii-281848.html",
+      "locator": "Description",
+      "finding": "Até quatro no mesmo console; o rótulo1–12 inclui o serviço de rede original, não doze pads locais."
+    },
+    {
+      "id": "manual-mk8",
+      "kind": "official-publisher-manual",
+      "url": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/manual-WiiU-Mario_Kart_8",
+      "locator": "Main Menu / PDFpage9",
+      "finding": "Multiplayer local duas a quatro pessoas; rede original e Time Trials possuem regras distintas."
+    },
+    {
+      "id": "manual-crashbash",
+      "kind": "original-publisher-manual",
+      "url": "https://manuals.plus/m/125216677d989cdac3362250e12753b63eb883f2d355f501dbdeecb2848ef0c1.pdf",
+      "locator": "Printed2,5–6",
+      "finding": "Adventure uma/duas pessoas; Battle/Tournament até quatro com Multitap."
+    },
+    {
+      "id": "retroarch-observers",
+      "kind": "official-emulator-documentation",
+      "url": "https://docs.libretro.com/development/retroarch/netplay/",
+      "locator": "PLAY/MODE/INPUT",
+      "finding": "Espectadores têm protocolo e papel próprios; não participam do fluxo de controles como jogadores."
     }
   ],
   "referenceSourcePins": {

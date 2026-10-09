@@ -1,3 +1,13 @@
+# Station até cinco: servidor aplicado, app compilado — 09/10/2026
+
+Leia `docs/station-android/HANDOFF-COMPLETO-ONLINE-ATE-5-STATION-20261009.md` e `online-1a5-20261009/`. É a entrega única vigente. Servidor DLLad45a4f0/fonte d8ebd657, PID1722044/NRestarts0, máximo5, 3.672 vínculos/perfis SHA244d98e7; originais1.816 e todas as configurações anteriores preservadas. Dados finais aplicados13:00:35UTC, provas públicas13:02:20UTC; catálogo24/3.848IDs/3.593visíveis/255compatibilidade, índice6b8acfa4, importer/capas/downloads/licenças/segredos/sandbox/outros produtos preservados. Zero salas/conexões/replay no fim. Não reaplicar operadores históricos nem pedir autorização genérica.
+
+Forma escolhida pelo mantenedor: avisos por campanha/Batalha, salas consultáveis por Ver detalhes sem Join/ticket/nativo; controles somente nas vagas reais. Esse botão NÃO transmite gameplay. Espectadores de jogo exigem papel/transport/bootstrap próprios, fora da barreira dos jogadores. Super Bomberman1: campanha2/Battle4;2: solo/Battle4;3: campanha2/Battle5. Cinco somente com runtime novo. 4/5 solicitados ainda não são ROM no catálogo; plano de importação sem IDs/hashes inventados. Coleção inteira17plataformas revisada:518candidatos/475visíveis são pistas, não gameplay homologado;27itens com modos originais documentados.
+
+App completo em `versions/station-five-player-support-20261009/`:209Java,5classes alteradas, roomsDEX82609bdc/clientDEXe7207a89, runtimearm64/API26/16KiB81b3daa3 compilado, fonteGPL integral e receitas entregues.166checksJava/1.176C host,433C#/172TLSloopback,826v3públicos/189legados/28.776catálogo passaram. APK completo assinado/instalação/teste físico de cinco PENDENTES no PCAPK, usando a base privada R81 hash85fac8f5/assinatura7b16ee1a e receita nova; E:saídas/G:backup. Não usar receita histórica, não limpar dados, não declarar gameplay/latência/centenas homologados. CanaisR76/R81 permanecem até montar candidata nova no PC.
+
+## Histórico anterior
+
 # Novos sistemas, jogos e capas APLICADOS — 08/10/2026
 
 Leia `docs/station-android/RETORNO-NOVOS-SISTEMAS-JOGOS-CAPAS-STATION-20261008.md` e `novos-sistemas-20261008/`. As cinco pastas foram retiradas do SNES e colocadas na raiz: GameCube 21, PSX 84, Nintendo Wii 7, Nintendo Wii U 1, Switch 1. São 114 novos jogos e 114 capas corretas: 110 artes locais Turborama e quatro complementares Libretro verificadas. Wii e Wii U são distintos.

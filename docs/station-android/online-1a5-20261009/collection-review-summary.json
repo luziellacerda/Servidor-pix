@@ -1,0 +1,202 @@
+{
+  "catalogItems": 3848,
+  "platforms": [
+    {
+      "platform": "cps1",
+      "items": 36,
+      "visible": 36,
+      "candidatesMoreThanTwo": 6,
+      "visibleCandidatesMoreThanTwo": 6,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 7,
+      "unknownOriginalModes": 36,
+      "unknownSimultaneousModes": 6
+    },
+    {
+      "platform": "cps2",
+      "items": 64,
+      "visible": 64,
+      "candidatesMoreThanTwo": 10,
+      "visibleCandidatesMoreThanTwo": 10,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 5,
+      "unknownOriginalModes": 64,
+      "unknownSimultaneousModes": 10
+    },
+    {
+      "platform": "cps3",
+      "items": 11,
+      "visible": 11,
+      "candidatesMoreThanTwo": 0,
+      "visibleCandidatesMoreThanTwo": 0,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 3,
+      "unknownOriginalModes": 11,
+      "unknownSimultaneousModes": 0
+    },
+    {
+      "platform": "dreamcast",
+      "items": 243,
+      "visible": 243,
+      "candidatesMoreThanTwo": 8,
+      "visibleCandidatesMoreThanTwo": 8,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 243,
+      "unknownOriginalModes": 242,
+      "unknownSimultaneousModes": 7
+    },
+    {
+      "platform": "fbneo",
+      "items": 913,
+      "visible": 913,
+      "candidatesMoreThanTwo": 101,
+      "visibleCandidatesMoreThanTwo": 101,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 28,
+      "unknownOriginalModes": 913,
+      "unknownSimultaneousModes": 101
+    },
+    {
+      "platform": "gamecube",
+      "items": 21,
+      "visible": 21,
+      "candidatesMoreThanTwo": 5,
+      "visibleCandidatesMoreThanTwo": 5,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 21,
+      "unknownOriginalModes": 17,
+      "unknownSimultaneousModes": 1
+    },
+    {
+      "platform": "megadrive",
+      "items": 1133,
+      "visible": 887,
+      "candidatesMoreThanTwo": 167,
+      "visibleCandidatesMoreThanTwo": 124,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 34,
+      "unknownOriginalModes": 1131,
+      "unknownSimultaneousModes": 165
+    },
+    {
+      "platform": "megadrivebr",
+      "items": 94,
+      "visible": 94,
+      "candidatesMoreThanTwo": 4,
+      "visibleCandidatesMoreThanTwo": 4,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 4,
+      "unknownOriginalModes": 94,
+      "unknownSimultaneousModes": 4
+    },
+    {
+      "platform": "n64",
+      "items": 157,
+      "visible": 157,
+      "candidatesMoreThanTwo": 77,
+      "visibleCandidatesMoreThanTwo": 77,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 1,
+      "unknownOriginalModes": 155,
+      "unknownSimultaneousModes": 76
+    },
+    {
+      "platform": "neogeo",
+      "items": 189,
+      "visible": 189,
+      "candidatesMoreThanTwo": 4,
+      "visibleCandidatesMoreThanTwo": 4,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 27,
+      "unknownOriginalModes": 187,
+      "unknownSimultaneousModes": 3
+    },
+    {
+      "platform": "neogeocd",
+      "items": 50,
+      "visible": 50,
+      "candidatesMoreThanTwo": 1,
+      "visibleCandidatesMoreThanTwo": 1,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 0,
+      "unknownOriginalModes": 50,
+      "unknownSimultaneousModes": 1
+    },
+    {
+      "platform": "psx",
+      "items": 84,
+      "visible": 84,
+      "candidatesMoreThanTwo": 6,
+      "visibleCandidatesMoreThanTwo": 6,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 84,
+      "unknownOriginalModes": 82,
+      "unknownSimultaneousModes": 4
+    },
+    {
+      "platform": "snes",
+      "items": 653,
+      "visible": 644,
+      "candidatesMoreThanTwo": 104,
+      "visibleCandidatesMoreThanTwo": 104,
+      "exactOnlineMoreThanTwo": 5,
+      "missingPlayerLabels": 31,
+      "unknownOriginalModes": 646,
+      "unknownSimultaneousModes": 99
+    },
+    {
+      "platform": "snesbr",
+      "items": 191,
+      "visible": 191,
+      "candidatesMoreThanTwo": 22,
+      "visibleCandidatesMoreThanTwo": 22,
+      "exactOnlineMoreThanTwo": 3,
+      "missingPlayerLabels": 0,
+      "unknownOriginalModes": 187,
+      "unknownSimultaneousModes": 19
+    },
+    {
+      "platform": "switch",
+      "items": 1,
+      "visible": 1,
+      "candidatesMoreThanTwo": 0,
+      "visibleCandidatesMoreThanTwo": 0,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 1,
+      "unknownOriginalModes": 1,
+      "unknownSimultaneousModes": 0
+    },
+    {
+      "platform": "wii",
+      "items": 7,
+      "visible": 7,
+      "candidatesMoreThanTwo": 2,
+      "visibleCandidatesMoreThanTwo": 2,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 7,
+      "unknownOriginalModes": 5,
+      "unknownSimultaneousModes": 0
+    },
+    {
+      "platform": "wiiu",
+      "items": 1,
+      "visible": 1,
+      "candidatesMoreThanTwo": 1,
+      "visibleCandidatesMoreThanTwo": 1,
+      "exactOnlineMoreThanTwo": 0,
+      "missingPlayerLabels": 1,
+      "unknownOriginalModes": 0,
+      "unknownSimultaneousModes": 0
+    }
+  ],
+  "candidatesMoreThanTwo": 518,
+  "visibleCandidatesMoreThanTwo": 475,
+  "documentedOriginalModeItems": 27,
+  "candidateCountsAreResearchLeadsNotGameplayQualification": true,
+  "profiles": 3672,
+  "previousProfilesPreserved": 1816,
+  "oldRuntimeAdditions": 20,
+  "newRuntimeProfiles": 1836,
+  "maximumProfilesPerGame": 8,
+  "physicalFivePhoneGameplayVerified": false
+}

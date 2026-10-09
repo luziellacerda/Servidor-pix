@@ -8,3 +8,7 @@
 
 # Preserve inbound R68 receipts byte for byte.
 docs/station-android/entrega-app-r68-20261007/** -text
+
+# Exact data/receipt bytes for the complete five-player delivery.
+docs/station-android/online-1a5-20261009/** -text
+docs/station-android/online-1a5-20261009/*.tsv whitespace=-blank-at-eol

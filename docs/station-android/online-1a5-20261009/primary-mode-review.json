@@ -1,0 +1,504 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-09",
+  "items": [
+    {
+      "itemId": "station_6e4c23a9931b4c2cf3449662605f43d7",
+      "mode": "Normal",
+      "displayName": "Normal",
+      "nativeMaximum": 2,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-sbomber1"
+      ],
+      "conditions": [
+        "Configurar o modo e os humanos nas posições corretas."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_6e4c23a9931b4c2cf3449662605f43d7",
+      "mode": "Battle",
+      "displayName": "Battle",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-sbomber1"
+      ],
+      "conditions": [
+        "Configurar o modo e os humanos nas posições corretas."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+      "mode": "Normal",
+      "displayName": "Normal",
+      "nativeMaximum": 1,
+      "playStyle": "solo",
+      "sourceIds": [
+        "manual-sbomber2"
+      ],
+      "conditions": [
+        "Configurar o modo e os humanos nas posições corretas."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+      "mode": "Battle Single",
+      "displayName": "Battle Single",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-sbomber2"
+      ],
+      "conditions": [
+        "Configurar o modo e os humanos nas posições corretas."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+      "mode": "Battle Tag",
+      "displayName": "Battle Tag",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-sbomber2"
+      ],
+      "conditions": [
+        "Configurar o modo e os humanos nas posições corretas."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_80b7594ba22922d87fb43d720ba8be5a",
+      "mode": "Normal",
+      "displayName": "Normal",
+      "nativeMaximum": 1,
+      "playStyle": "solo",
+      "sourceIds": [
+        "manual-sbomber2"
+      ],
+      "conditions": [
+        "Configurar o modo e os humanos nas posições corretas."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_80b7594ba22922d87fb43d720ba8be5a",
+      "mode": "Battle Single",
+      "displayName": "Battle Single",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-sbomber2"
+      ],
+      "conditions": [
+        "Configurar o modo e os humanos nas posições corretas."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_80b7594ba22922d87fb43d720ba8be5a",
+      "mode": "Battle Tag",
+      "displayName": "Battle Tag",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-sbomber2"
+      ],
+      "conditions": [
+        "Configurar o modo e os humanos nas posições corretas."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_46fe7356ab5cc63a1438f720b9c7ce2d",
+      "mode": "Normal",
+      "displayName": "Normal",
+      "nativeMaximum": 2,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-sbomber3"
+      ],
+      "conditions": [
+        "Configurar o modo e os humanos nas posições corretas."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_46fe7356ab5cc63a1438f720b9c7ce2d",
+      "mode": "Battle Single",
+      "displayName": "Battle Single",
+      "nativeMaximum": 5,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-sbomber3"
+      ],
+      "conditions": [
+        "Configurar o modo e os humanos nas posições corretas."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_46fe7356ab5cc63a1438f720b9c7ce2d",
+      "mode": "Battle Tag",
+      "displayName": "Battle Tag",
+      "nativeMaximum": 5,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-sbomber3"
+      ],
+      "conditions": [
+        "Configurar o modo e os humanos nas posições corretas."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_3f0267d082d3d99218768e6f4088960b",
+      "mode": "Normal",
+      "displayName": "Normal",
+      "nativeMaximum": 1,
+      "playStyle": "solo",
+      "sourceIds": [
+        "manual-bomber-online"
+      ],
+      "conditions": [
+        "Modo individual."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_3f0267d082d3d99218768e6f4088960b",
+      "mode": "Battle local",
+      "displayName": "Battle local",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-bomber-online"
+      ],
+      "conditions": [
+        "Apenas multiplayer local original; rede antiga não é a integração Station."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_3f28d41c9e666e0080106eda728e89da",
+      "mode": "Campanha",
+      "displayName": "Campanha",
+      "nativeMaximum": 1,
+      "playStyle": "solo",
+      "sourceIds": [
+        "publisher-bomber-hero"
+      ],
+      "conditions": [
+        "Este título é individual."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_bb41e3a086a00c5a06b27ea6c82a336a",
+      "mode": "Multiplayer original",
+      "displayName": "Multiplayer original",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "publisher-bomber64"
+      ],
+      "conditions": [
+        "O detalhamento de campanha/batalha e o motor N64 do Station ainda devem ser qualificados."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_7ea6f5bf4adbb94ef30ebeebb1790ef3",
+      "mode": "Entradas humanas do arcade",
+      "displayName": "Entradas humanas do arcade",
+      "nativeMaximum": 2,
+      "playStyle": "controller-maximum",
+      "sourceIds": [
+        "fbneo-bomber-inputs"
+      ],
+      "conditions": [
+        "O driver define somente dois jogadores. Mais personagens na tela podem ser CPU. Não conceder quatro entradas pelo texto da sinopse."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_c70df1c981030d9479da202b0b7ae961",
+      "mode": "Entradas humanas do arcade",
+      "displayName": "Entradas humanas do arcade",
+      "nativeMaximum": 2,
+      "playStyle": "controller-maximum",
+      "sourceIds": [
+        "fbneo-bomber-inputs"
+      ],
+      "conditions": [
+        "O driver define somente dois jogadores. Mais personagens na tela podem ser CPU. Não conceder quatro entradas pelo texto da sinopse."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+      "mode": "Corrida local",
+      "displayName": "Corrida local",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "publisher-dd"
+      ],
+      "conditions": [
+        "Mais de quatro envolve LAN com vários consoles/TVs; não é um Multitap.",
+        "Plataforma sem motor online v3 integrado nesta entrega."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_621bec6947fa88fea7d71e07e1ce524a",
+      "mode": "Festa oito pessoas",
+      "displayName": "Festa oito pessoas",
+      "nativeMaximum": 8,
+      "playStyle": "shared-controller",
+      "sourceIds": [
+        "publisher-party7"
+      ],
+      "conditions": [
+        "Oito humanos compartilham quatro pads, exige mapeamento específico; Station hoje suporta até cinco slots independentes.",
+        "Plataforma sem motor online v3 integrado nesta entrega."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_5ef747e4fd8c83fa197b2b2492c24088",
+      "mode": "Versus",
+      "displayName": "Versus",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "publisher-starfox"
+      ],
+      "conditions": [
+        "Campanha individual; quatro pessoas somente multiplayer de tela dividida.",
+        "Plataforma sem motor online v3 integrado nesta entrega."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_211df505e8c566432c4ffeda71c84a82",
+      "mode": "Multiplayer com GBA",
+      "displayName": "Multiplayer com GBA",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "publisher-fourswords"
+      ],
+      "conditions": [
+        "Exige consoles GBA e link; não basta ativar quatro controles comuns.",
+        "Plataforma sem motor online v3 integrado nesta entrega."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_6e92c46795e509e9593cc55b5fb946ea",
+      "mode": "Corrida local",
+      "displayName": "Corrida local",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "publisher-mkwii"
+      ],
+      "conditions": [
+        "Rótulo1–12 mistura modos. Local no mesmo Wii permite quatro; rede Nintendo antiga não é Station.",
+        "Plataforma sem motor online v3 integrado nesta entrega."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_68b4911aaba6d2a81b9e525f36a5c697",
+      "mode": "Aventura cooperativa",
+      "displayName": "Aventura cooperativa",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "publisher-nsmbw"
+      ],
+      "conditions": [
+        "Selecionar os participantes e controles do modo cooperativo.",
+        "Plataforma sem motor online v3 integrado nesta entrega."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_8d42174892b607ae006f5e68ddf62fe0",
+      "mode": "Multiplayer local",
+      "displayName": "Multiplayer local",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-mk8"
+      ],
+      "conditions": [
+        "Selecionar Multiplayer; Time Trials é solo; rede Nintendo é outro modo.",
+        "Plataforma sem motor online v3 integrado nesta entrega."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_d0644371e28e7a933f4a4aae0ecc954b",
+      "mode": "Adventure",
+      "displayName": "Adventure",
+      "nativeMaximum": 2,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-crashbash"
+      ],
+      "conditions": [
+        "Multitap PSX na primeira porta para quatro; motor PSX online ainda não integrado."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_d0644371e28e7a933f4a4aae0ecc954b",
+      "mode": "Battle",
+      "displayName": "Battle",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-crashbash"
+      ],
+      "conditions": [
+        "Multitap PSX na primeira porta para quatro; motor PSX online ainda não integrado."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_d0644371e28e7a933f4a4aae0ecc954b",
+      "mode": "Tournament",
+      "displayName": "Tournament",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-crashbash"
+      ],
+      "conditions": [
+        "Multitap PSX na primeira porta para quatro; motor PSX online ainda não integrado."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_0ac263df512a0ac82a3b3bb1ddac0ab1",
+      "mode": "Adventure",
+      "displayName": "Adventure",
+      "nativeMaximum": 2,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-crashbash"
+      ],
+      "conditions": [
+        "Multitap PSX na primeira porta para quatro; motor PSX online ainda não integrado."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_0ac263df512a0ac82a3b3bb1ddac0ab1",
+      "mode": "Battle",
+      "displayName": "Battle",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-crashbash"
+      ],
+      "conditions": [
+        "Multitap PSX na primeira porta para quatro; motor PSX online ainda não integrado."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_0ac263df512a0ac82a3b3bb1ddac0ab1",
+      "mode": "Tournament",
+      "displayName": "Tournament",
+      "nativeMaximum": 4,
+      "playStyle": "simultaneous",
+      "sourceIds": [
+        "manual-crashbash"
+      ],
+      "conditions": [
+        "Multitap PSX na primeira porta para quatro; motor PSX online ainda não integrado."
+      ],
+      "primaryConfirmed": true,
+      "stationProfileGranted": false
+    }
+  ],
+  "researchLeads": [
+    {
+      "itemId": "station_2dc88daf495305000e730a205a1f06b6",
+      "name": "Super Smash Bros. Melee",
+      "reason": "TITLE_RESEARCH_LEAD_REQUIRES_ORIGINAL_MANUAL",
+      "note": "Conferir manual original/VS e quatro pads do GameCube.",
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_f7efe099a4928bc6328dc2823e9af9f3",
+      "name": "CTR - Crash Team Racing",
+      "reason": "TITLE_RESEARCH_LEAD_REQUIRES_ORIGINAL_MANUAL",
+      "note": "Conferir manual original/Arcade/Battle e Multitap PSX.",
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
+      "name": "Winning Eleven 2002",
+      "reason": "TITLE_RESEARCH_LEAD_REQUIRES_ORIGINAL_MANUAL",
+      "note": "Conferir quantidade de humanos e layout de Multitap na edição japonesa.",
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_273b5bea1d45db87ff6711ec3c9166d8",
+      "name": "Worms Armageddon",
+      "reason": "TITLE_RESEARCH_LEAD_REQUIRES_ORIGINAL_MANUAL",
+      "note": "Conferir modo por turnos/quantidade de equipes; não inferir controles simultâneos.",
+      "stationProfileGranted": false
+    },
+    {
+      "itemId": "station_8391ca9ada6fb31b458340cbfbdd5d3e",
+      "name": "Wipeout 3",
+      "reason": "TITLE_RESEARCH_LEAD_REQUIRES_ORIGINAL_MANUAL",
+      "note": "Conferir split-screen versus link de múltiplos consoles; não presumir quatro pads de um console.",
+      "stationProfileGranted": false
+    }
+  ],
+  "limits": [
+    "Original-game facts and title research leads do not grant Station online seats.",
+    "Every reference is joined to the current itemId; no ROM or credential is distributed."
+  ]
+}

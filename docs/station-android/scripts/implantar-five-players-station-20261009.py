@@ -69,7 +69,7 @@ def checks(index,values,address,with_five):
     finally:adapter.close()
     if with_five:result['multiplayer']=five.verify(index,values,address,lambda s:ops.sql(db,s))
     else:result['multiplayer']=load('verificar-online-station-r81.py').verify(index,values,address,lambda s:ops.sql(db,s))
-    result['quietAfter']=wait_quiet(address)
+    result['quietAfter']=wait_quiet(LOCAL if address.startswith('https:') else address)
     return result
 def shadow(target,values,index,work,binds,label,with_five):
     env=work/(label+'.env');log=work/(label+'.log')
@@ -95,8 +95,9 @@ def shadow(target,values,index,work,binds,label,with_five):
         ops.run(command);r71.ready_recovery(address)
         return checks(index,values,address,with_five)
     finally:
-        subprocess.run(['systemctl','stop',unit],check=True,capture_output=True,timeout=30)
+        stopped=subprocess.run(['systemctl','stop',unit],check=False,capture_output=True,timeout=30)
         env.unlink(missing_ok=True)
+        if stopped.returncode not in (0,5):raise ValueError('Owned shadow unit cleanup failed')
 def verify_preservation(state):
     if digest(INDEX)!=state['indexSha256'] or security.files(OLD)!=state['oldFiles']:
         raise ValueError('Original release or catalog changed')
@@ -120,7 +121,7 @@ def main():
         if not path.is_absolute() or path.is_symlink():raise ValueError('Absolute regular owned inputs required')
     args.work_directory.mkdir(mode=0o700,exist_ok=False)
     seal=json.loads(args.seal.read_text());target=Path('/opt/turborama-station-five-players-20261009-'+seal['dllSha256'][:12])
-    if target.exists() or DROPIN.exists():raise ValueError('Release already exists; do not repeat a successful rollout')
+    if DROPIN.exists():raise ValueError('Release already exists; do not repeat a successful rollout')
     lock=INDEX.parent/'scan.lock'
     with lock.open('a') as held:
         fcntl.flock(held,fcntl.LOCK_EX)
@@ -144,21 +145,30 @@ def main():
         backup=args.work_directory/'rollback';backup.mkdir(mode=0o700)
         for n,path in enumerate(state['configuration']):shutil.copy2(path,backup/(str(n)+'.conf'))
         private(backup/'configuration-manifest.json',state['configuration'])
-        shutil.copytree(args.release_directory,target)
-        shutil.copyfile(registry,target/'online-engine-registry.json')
-        shutil.copyfile(args.profiles,target/'online-profiles-authorized.json')
-        for p in target.rglob('*'):
-            if p.is_file():os.chown(p,0,owner.pw_gid);p.chmod(0o640)
-            else:os.chown(p,0,owner.pw_gid);p.chmod(0o750)
-        os.chown(target,0,owner.pw_gid);target.chmod(0o750)
         newvalues=dict(values);newvalues.update(Station__Online__EngineRegistryFile=str(target/'online-engine-registry.json'),Station__Online__MultiplayerProfileRegistryFile=str(target/'online-profiles-authorized.json'))
         envtext='\n'.join(k+'='+v for k,v in newvalues.items() if k in ('Station__Online__EngineRegistryFile','Station__Online__MultiplayerProfileRegistryFile'))+'\n'
-        private(target/'five.env',envtext)
+        if target.exists():
+            # An unpublished root-owned candidate from a rolled-back attempt may
+            # be reused only when every byte still equals this exact input seal.
+            expected=dict(seal['files']);expected.update({'online-engine-registry.json':REGISTRY,
+                'online-profiles-authorized.json':seal['profilesSha256'],'five.env':hashlib.sha256(envtext.encode()).hexdigest()})
+            if target.is_symlink() or target.stat().st_uid!=0 or security.files(target)!=expected:
+                raise ValueError('Existing candidate differs from the exact reviewed seal')
+        else:
+            shutil.copytree(args.release_directory,target)
+            shutil.copyfile(registry,target/'online-engine-registry.json')
+            shutil.copyfile(args.profiles,target/'online-profiles-authorized.json')
+            for p in target.rglob('*'):
+                if p.is_file():os.chown(p,0,owner.pw_gid);p.chmod(0o640)
+                else:os.chown(p,0,owner.pw_gid);p.chmod(0o750)
+            os.chown(target,0,owner.pw_gid);target.chmod(0o750)
+            private(target/'five.env',envtext)
         oldbinds=show('BindReadOnlyPaths');binds=oldbinds.replace(str(OLD),str(target))
         proof={}
         proof['rollbackOld']=shadow(OLD,values,index,args.work_directory,oldbinds,'rollback-old',False)
         verify_preservation(state)
         proof['candidate']=shadow(target,newvalues,index,args.work_directory,binds,'candidate',True)
+        private(args.work_directory/'qualification.json',proof,True)
         verify_preservation(state)
         before=ready()
         if not quiet(before,args.closed_empty_room_confirmed):raise ValueError('A room connected during qualification: rollout deferred')
