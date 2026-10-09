@@ -41,7 +41,7 @@ O timer do importador continua ativo. Após duas observações de arquivo estáv
 
 Política expressamente autorizada pelo mantenedor: jogos compatíveis recém-importados recebem até duas vagas, respeitando indicação individual e motor único disponível. Arcade novo com driver ainda não associado fica reconhecido no catálogo e aguarda associação por dados. Acima de duas pessoas exige modo/portas específicos. Não é necessário compilar o servidor para cadastrar nomes, capas, sinopses ou modos. Limites atuais: 4.096 IDs, 32 perfis por item, registro até 16 MiB; crescimento além disso exige ampliar capacidade com avaliação própria.
 
-O catálogo publicado passou por duas varreduras privadas consecutivas sem mudanças. As identidades são calculadas fora das requisições de download. Identidade de conteúdo é necessária para impedir conectar jogos/versões diferentes na mesma partida; não é verificação adicional para baixar.
+O catálogo publicado passou por duas varreduras privadas consecutivas sem mudanças. A execução agendada efetiva de 14:06:41 (America/Maceio) terminou com status0; a conferência de 17:07:19UTC confirmou índice, identidades e perfis byte idênticos, timer ativo e políticas automáticas efetivas. O recibo é `importer-effective.json`. As identidades são calculadas fora das requisições de download. Identidade de conteúdo é necessária para impedir conectar jogos/versões diferentes na mesma partida; não é verificação adicional para baixar.
 
 ## Provas realizadas e capacidade
 
