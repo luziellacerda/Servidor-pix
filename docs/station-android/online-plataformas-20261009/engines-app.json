@@ -60,7 +60,8 @@
       "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
       "extensions": [
         "pbp",
-        "chd"
+        "chd",
+        "cue"
       ],
       "overlay": "station-platforms/psx/psx-black.cfg",
       "options": "pcsx_rearmed_drc = \"enabled\"\npcsx_rearmed_threaded_rendering = \"disabled\"\n",
@@ -69,7 +70,11 @@
       "sourceArchive": "native/sources/pcsx_rearmed-c8816799b50388e61cfe237fe2cdbb7d8175f20a.tar.gz",
       "recoveryProtocol": "station-stream.v3",
       "maximumPlayers": 2,
-      "status": "implemented-candidate-peer-gameplay-pending"
+      "status": "implemented-candidate-peer-gameplay-pending",
+      "contentIdentityByExtension": {
+        "cue": "cue-set-v1",
+        "default": "launch-file-v1"
+      }
     },
     {
       "engineId": "neocd-b1e04c73-aslr1-v3-81b3daa38fb9",

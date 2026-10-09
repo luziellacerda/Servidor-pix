@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "checks": 10,
+  "scope": "actual Java/Python portable CUE identities; no Android gameplay",
+  "sourceSHA256": "e12542bda3d81caf23a70225317764cab9be83b0f652350ae2f345bbf9d24b42",
+  "recipeSHA256": "d50af3b8023f5af9654c842106bd3303cc9858bde763e3e3e3dc493b4398a3be"
+}

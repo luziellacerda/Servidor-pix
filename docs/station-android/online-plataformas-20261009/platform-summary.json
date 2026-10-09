@@ -1,155 +1,303 @@
 [
   {
     "platform": "cps1",
-    "items": 36,
+    "normalizedPlatform": "cps1",
+    "maximumPlayers": 2,
+    "catalogItems": 36,
     "visible": 36,
-    "exactContentIdentities": 36,
-    "coverIds": 36,
-    "platformPlayerCeiling": 2,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 36,
+    "covers": 36,
+    "onlineStates": {
+      "available": 36
+    },
+    "approvedModeMaximums": [
+      2
+    ],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "cps2",
-    "items": 64,
+    "normalizedPlatform": "cps2",
+    "maximumPlayers": 2,
+    "catalogItems": 64,
     "visible": 64,
-    "exactContentIdentities": 64,
-    "coverIds": 64,
-    "platformPlayerCeiling": 2,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 64,
+    "covers": 64,
+    "onlineStates": {
+      "available": 62,
+      "single-player": 2
+    },
+    "approvedModeMaximums": [
+      1,
+      2
+    ],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "cps3",
-    "items": 11,
+    "normalizedPlatform": "cps3",
+    "maximumPlayers": 2,
+    "catalogItems": 11,
     "visible": 11,
-    "exactContentIdentities": 11,
-    "coverIds": 11,
-    "platformPlayerCeiling": 2,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 11,
+    "covers": 11,
+    "onlineStates": {
+      "available": 9,
+      "mode-pending": 2
+    },
+    "approvedModeMaximums": [
+      2
+    ],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "dreamcast",
-    "items": 243,
+    "normalizedPlatform": "dreamcast",
+    "maximumPlayers": 4,
+    "catalogItems": 243,
     "visible": 243,
-    "exactContentIdentities": 0,
-    "coverIds": 243,
-    "platformPlayerCeiling": 4,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 243,
+    "covers": 243,
+    "onlineStates": {
+      "online-engine-pending": 243
+    },
+    "approvedModeMaximums": [],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "fbneo",
-    "items": 913,
+    "normalizedPlatform": "fbneo",
+    "maximumPlayers": 2,
+    "catalogItems": 913,
     "visible": 913,
-    "exactContentIdentities": 913,
-    "coverIds": 913,
-    "platformPlayerCeiling": 2,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 913,
+    "covers": 913,
+    "onlineStates": {
+      "available": 846,
+      "single-player": 67
+    },
+    "approvedModeMaximums": [
+      1,
+      2
+    ],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "gamecube",
-    "items": 21,
+    "normalizedPlatform": "gamecube",
+    "maximumPlayers": 4,
+    "catalogItems": 21,
     "visible": 21,
-    "exactContentIdentities": 0,
-    "coverIds": 21,
-    "platformPlayerCeiling": 4,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 21,
+    "covers": 21,
+    "onlineStates": {
+      "online-engine-pending": 21
+    },
+    "approvedModeMaximums": [],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "megadrive",
-    "items": 1133,
+    "normalizedPlatform": "megadrive",
+    "maximumPlayers": 2,
+    "catalogItems": 1133,
     "visible": 887,
-    "exactContentIdentities": 1133,
-    "coverIds": 1133,
-    "platformPlayerCeiling": 2,
-    "newProductionDeployment": false
+    "compatibilityAliases": 246,
+    "contentIdentities": 1133,
+    "covers": 1133,
+    "onlineStates": {
+      "available": 887
+    },
+    "approvedModeMaximums": [
+      2
+    ],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "megadrivebr",
-    "items": 94,
+    "normalizedPlatform": "megadrive",
+    "maximumPlayers": 2,
+    "catalogItems": 94,
     "visible": 94,
-    "exactContentIdentities": 94,
-    "coverIds": 94,
-    "platformPlayerCeiling": 2,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 94,
+    "covers": 94,
+    "onlineStates": {
+      "available": 94
+    },
+    "approvedModeMaximums": [
+      2
+    ],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "n64",
-    "items": 157,
+    "normalizedPlatform": "n64",
+    "maximumPlayers": 4,
+    "catalogItems": 157,
     "visible": 157,
-    "exactContentIdentities": 157,
-    "coverIds": 157,
-    "platformPlayerCeiling": 4,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 157,
+    "covers": 157,
+    "onlineStates": {
+      "available": 118,
+      "single-player": 39
+    },
+    "approvedModeMaximums": [
+      1,
+      2,
+      4
+    ],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "neogeo",
-    "items": 189,
+    "normalizedPlatform": "neogeo",
+    "maximumPlayers": 2,
+    "catalogItems": 189,
     "visible": 189,
-    "exactContentIdentities": 189,
-    "coverIds": 189,
-    "platformPlayerCeiling": 2,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 189,
+    "covers": 189,
+    "onlineStates": {
+      "available": 180,
+      "single-player": 5,
+      "mode-pending": 4
+    },
+    "approvedModeMaximums": [
+      1,
+      2
+    ],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "neogeocd",
-    "items": 50,
+    "normalizedPlatform": "neogeocd",
+    "maximumPlayers": 2,
+    "catalogItems": 50,
     "visible": 50,
-    "exactContentIdentities": 50,
-    "coverIds": 50,
-    "platformPlayerCeiling": 2,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 50,
+    "covers": 50,
+    "onlineStates": {
+      "available": 47,
+      "single-player": 3
+    },
+    "approvedModeMaximums": [
+      1,
+      2
+    ],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "psx",
-    "items": 84,
+    "normalizedPlatform": "psx",
+    "maximumPlayers": 2,
+    "catalogItems": 84,
     "visible": 84,
-    "exactContentIdentities": 84,
-    "coverIds": 84,
-    "platformPlayerCeiling": 2,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 84,
+    "covers": 84,
+    "onlineStates": {
+      "single-player": 58,
+      "available": 25,
+      "mode-pending": 1
+    },
+    "approvedModeMaximums": [
+      1,
+      2
+    ],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "snes",
-    "items": 653,
+    "normalizedPlatform": "snes",
+    "maximumPlayers": 5,
+    "catalogItems": 653,
     "visible": 644,
-    "exactContentIdentities": 653,
-    "coverIds": 653,
-    "platformPlayerCeiling": 5,
-    "newProductionDeployment": false
+    "compatibilityAliases": 9,
+    "contentIdentities": 653,
+    "covers": 653,
+    "onlineStates": {
+      "available": 644
+    },
+    "approvedModeMaximums": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "snesbr",
-    "items": 191,
+    "normalizedPlatform": "snes",
+    "maximumPlayers": 5,
+    "catalogItems": 191,
     "visible": 191,
-    "exactContentIdentities": 191,
-    "coverIds": 191,
-    "platformPlayerCeiling": 5,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 191,
+    "covers": 191,
+    "onlineStates": {
+      "available": 191
+    },
+    "approvedModeMaximums": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "switch",
-    "items": 1,
+    "normalizedPlatform": "switch",
+    "maximumPlayers": 2,
+    "catalogItems": 1,
     "visible": 1,
-    "exactContentIdentities": 0,
-    "coverIds": 1,
-    "platformPlayerCeiling": 2,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 1,
+    "covers": 1,
+    "onlineStates": {
+      "online-engine-pending": 1
+    },
+    "approvedModeMaximums": [],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "wii",
-    "items": 7,
+    "normalizedPlatform": "wii",
+    "maximumPlayers": 4,
+    "catalogItems": 7,
     "visible": 7,
-    "exactContentIdentities": 0,
-    "coverIds": 7,
-    "platformPlayerCeiling": 4,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 7,
+    "covers": 7,
+    "onlineStates": {
+      "online-engine-pending": 7
+    },
+    "approvedModeMaximums": [],
+    "physicalAndroidGameplayQualified": false
   },
   {
     "platform": "wiiu",
-    "items": 1,
+    "normalizedPlatform": "wiiu",
+    "maximumPlayers": 4,
+    "catalogItems": 1,
     "visible": 1,
-    "exactContentIdentities": 0,
-    "coverIds": 1,
-    "platformPlayerCeiling": 4,
-    "newProductionDeployment": false
+    "compatibilityAliases": 0,
+    "contentIdentities": 1,
+    "covers": 1,
+    "onlineStates": {
+      "online-engine-pending": 1
+    },
+    "approvedModeMaximums": [],
+    "physicalAndroidGameplayQualified": false
   }
 ]

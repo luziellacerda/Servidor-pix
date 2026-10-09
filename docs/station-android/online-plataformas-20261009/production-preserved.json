@@ -1,11 +1,12 @@
 {
-  "utc": "2026-10-09T15:47:38.260578+00:00",
-  "serviceState": [
-    "MainPID=1722044",
-    "NRestarts=0",
-    "ExecMainStartTimestamp=Fri 2026-10-09 10:00:35 -03",
-    "ActiveState=active"
-  ],
+  "utc": "2026-10-09T17:04:31.845345+00:00",
+  "newDeployment": true,
+  "oldReleaseAndProfilesPreserved": true,
+  "realLicensesPreserved": true,
+  "schemaPreserved": true,
+  "romsCoversAndPriorMetadataPreserved": true,
+  "otherServicesModified": false,
+  "proxyTunnelFirewallModified": false,
   "onlineHealth": {
     "maximumRooms": 512,
     "maximumConnections": 1024,
@@ -25,15 +26,13 @@
     "multiplayer": {
       "protocol": "station-stream.v3",
       "maximumPlayers": 5,
+      "maximumRooms": 100,
       "activeRooms": 0,
       "activeConnections": 0,
-      "approvedProfiles": 3672,
-      "profileCount": 3672,
+      "approvedProfiles": 5169,
+      "profileCount": 5176,
       "retainedBytes": 0,
-      "maximumRetainedBytes": 33554432
+      "maximumRetainedBytes": 134217728
     }
-  },
-  "newDeployment": false,
-  "otherServicesModified": false,
-  "proxyTunnelFirewallModified": false
+  }
 }

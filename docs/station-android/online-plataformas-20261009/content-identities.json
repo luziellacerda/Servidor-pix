@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "entries": [
     {
       "itemId": "002447dbd564d789b8f9eaa3a1437231",
@@ -8984,6 +8984,15 @@
       "contentSha256": "8d3882b7f9102613f934a042953e14c1ffa86720defd1d2227462076ac68ecc1"
     },
     {
+      "itemId": "station_002d1d405d347930a438061befe8ef02",
+      "platform": "dreamcast",
+      "artifactSha256": "3afae8daed553762c1d027d531ddac9a81db7c03fb5744fe9331a45f8993826a",
+      "launchPath": "Toy Commander v1.022 (1999)(Sega)(NTSC)(US)(M4)[!][12S 51020].chd",
+      "expandedSizeBytes": 563146560,
+      "fileCount": 1,
+      "contentSha256": "3afae8daed553762c1d027d531ddac9a81db7c03fb5744fe9331a45f8993826a"
+    },
+    {
       "itemId": "station_002d85a776c8c4604382af4d5e8d7f06",
       "platform": "snesbr",
       "artifactSha256": "0f34442462f2b2d7640c5d242072c43a5ac546e356a6d19b1b048c3c7873a799",
@@ -9101,6 +9110,15 @@
       "contentSha256": "4195cb48ae0978a93cdd60b1f3534e27cc9c8d3bf08840871698d2b55c3f54ae"
     },
     {
+      "itemId": "station_01646a9feac4ae6dc4b9fa49c546b360",
+      "platform": "dreamcast",
+      "artifactSha256": "f14c57f3050bc7fb1f7c114e164c12b079a7e4ce792153249beea5be500172a8",
+      "launchPath": "Demolition Racer - No Exit v1.002 (2000)(Infogrames)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 408878054,
+      "fileCount": 1,
+      "contentSha256": "f14c57f3050bc7fb1f7c114e164c12b079a7e4ce792153249beea5be500172a8"
+    },
+    {
       "itemId": "station_0166467c4b6766dd084db0686f916949",
       "platform": "snesbr",
       "artifactSha256": "69c94bdc5f175c52990a2cc09744771aa004e2194031828beb26e985d6f31e7b",
@@ -9135,6 +9153,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "2c0bac12a7866fad1cb306da768a201c12f2520332df1ef51cba1576db21ff06"
+    },
+    {
+      "itemId": "station_017d4ad0c35b9e0537519cbae94bbfd4",
+      "platform": "dreamcast",
+      "artifactSha256": "373f4372d1f8d97cc88c5f85afb2a599e7f7942f4947de051ac5fb8ef70cd01b",
+      "launchPath": "Marvel vs. Capcom 2 v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 152961899,
+      "fileCount": 1,
+      "contentSha256": "373f4372d1f8d97cc88c5f85afb2a599e7f7942f4947de051ac5fb8ef70cd01b"
     },
     {
       "itemId": "station_018fde063f48466d1622341b9ab5eb88",
@@ -9245,6 +9272,15 @@
       "contentSha256": "1ca6b7f8b5ef8ea7bd1e4a73c104e352d2b8634bda4995d4f881db7474300e5e"
     },
     {
+      "itemId": "station_0289a0b3953d87cd8e21968d53db7ed7",
+      "platform": "dreamcast",
+      "artifactSha256": "c7965930d2c369e891e6b44fead95564bb7710c1e7e096c805e93c3f755219fd",
+      "launchPath": "Reel Fishing - Wild v1.001 (2001)(Natsume - Victor)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 420485169,
+      "fileCount": 1,
+      "contentSha256": "c7965930d2c369e891e6b44fead95564bb7710c1e7e096c805e93c3f755219fd"
+    },
+    {
       "itemId": "station_029613a6ab2ca2627e6efe8a57f66dde",
       "platform": "snes",
       "artifactSha256": "a8acbbd6f8afbf289a6b837da6cd8bd109a00cd38625c956ab8ff739732d9e4f",
@@ -9279,6 +9315,15 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "4915bc7aa703a5c5e4d5aa0a77dcc6bfed42629e6a6c2f899eb185b4cb190ca0"
+    },
+    {
+      "itemId": "station_02dd0c5e7ff237bce158caf6cb5cf85f",
+      "platform": "dreamcast",
+      "artifactSha256": "78589e77bab773d50a3afe028766ace8d0edec22913dc1877ceea969347d38c7",
+      "launchPath": "Crazy Taxi v1.004 (1999)(Sega)(NTSC)(US)[!][10S 51035].chd",
+      "expandedSizeBytes": 70063985,
+      "fileCount": 1,
+      "contentSha256": "78589e77bab773d50a3afe028766ace8d0edec22913dc1877ceea969347d38c7"
     },
     {
       "itemId": "station_02df55fd643c50edda01371f748aba75",
@@ -9452,6 +9497,33 @@
       "contentSha256": "0d74da59eaef494fa304e483d0d387ba3336f2b4c5663b8c71af1f1c19d2873d"
     },
     {
+      "itemId": "station_04e5ab72f817c7edb905f353706ef58f",
+      "platform": "dreamcast",
+      "artifactSha256": "89de67458911b7c0b8263636c66b9b4c180e984fd4eefe63bc724805f6aa7781",
+      "launchPath": "Sega Smashpack Volume 1 v1.002 (2000)(Sega)(NTSC)(US)[!][7S 51146][compilation].chd",
+      "expandedSizeBytes": 284042272,
+      "fileCount": 1,
+      "contentSha256": "89de67458911b7c0b8263636c66b9b4c180e984fd4eefe63bc724805f6aa7781"
+    },
+    {
+      "itemId": "station_04ecfb322300cdefa2344784bb8b41be",
+      "platform": "dreamcast",
+      "artifactSha256": "51d36b6eaae6897794dc8ab5d9873acc873a77490786afe057954f47a1acf47e",
+      "launchPath": "Alone in the Dark - The New Nightmare v1.000 (2001)(Infogrames)(NTSC)(US)(Disc 1 of 2)[!].chd",
+      "expandedSizeBytes": 814420960,
+      "fileCount": 1,
+      "contentSha256": "51d36b6eaae6897794dc8ab5d9873acc873a77490786afe057954f47a1acf47e"
+    },
+    {
+      "itemId": "station_05102e1dc7ad0d7dc12702b1bf3556cf",
+      "platform": "dreamcast",
+      "artifactSha256": "695de155c9a23901bec73db01f8d7e9fe27be5b48698a3d869b5c1c8c09540ae",
+      "launchPath": "Who Wants to Beat Up a Millionaire v1.004 (2000)(Simon & Schuster)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 155970727,
+      "fileCount": 1,
+      "contentSha256": "695de155c9a23901bec73db01f8d7e9fe27be5b48698a3d869b5c1c8c09540ae"
+    },
+    {
       "itemId": "station_051081a989100420bb6e1f6b52fb48ce",
       "platform": "neogeo",
       "artifactSha256": "3dacae11708ad5b0029ef6c829e54d7a34f474a2c56e4fff00d85f636b7ef630",
@@ -9522,6 +9594,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "6a7324734004d99206439430243b51a05fa8c25ffa314dafc7f127235d1a730f"
+    },
+    {
+      "itemId": "station_05e9e537f8770bcc17e3c0edc33f031a",
+      "platform": "dreamcast",
+      "artifactSha256": "6f78fda52f6f234ed97251eb2c71aa57080a0036f43982bb3d3495edf0818201",
+      "launchPath": "Prince of Persia - Arabian Nights v1.001 (2000)(Mattel)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 564525943,
+      "fileCount": 1,
+      "contentSha256": "6f78fda52f6f234ed97251eb2c71aa57080a0036f43982bb3d3495edf0818201"
     },
     {
       "itemId": "station_05f421491efeb44f3a6bb4c92b5ed6ab",
@@ -9605,6 +9686,15 @@
       "contentSha256": "fdafaa77f01a9a692411e27b3fb6045b247e5d625679b941d317a7b105f437d2"
     },
     {
+      "itemId": "station_06a754990599eb6a423cefe7dc9070d8",
+      "platform": "dreamcast",
+      "artifactSha256": "b229c276aee611825d541f247a2f9a532554ed7734964b125594115b4a88ba3f",
+      "launchPath": "Bangai-O v1.001 (2000)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 446517642,
+      "fileCount": 1,
+      "contentSha256": "b229c276aee611825d541f247a2f9a532554ed7734964b125594115b4a88ba3f"
+    },
+    {
       "itemId": "station_06b1105d06abd47a2c5345b79ea01b3f",
       "platform": "snes",
       "artifactSha256": "51c53e36ed0b959b0695fc6ef036fa7302d1c995eca35c28261d6f3cb77df0ca",
@@ -9621,6 +9711,15 @@
       "expandedSizeBytes": 524288,
       "fileCount": 1,
       "contentSha256": "e19f7d8d5c3e4cefeff5889380d8780495e01f0553d13be4182a15a5d4b615bb"
+    },
+    {
+      "itemId": "station_071dbe9ffd4c61dcf033fc1b6f66bf15",
+      "platform": "dreamcast",
+      "artifactSha256": "dfe1d0c7ab99a7598d329a4a320d3d26f0ceeb5082c7d6f40ed0f5ca62509b77",
+      "launchPath": "Vigilante 8 - 2nd Offense v1.000 (1999)(Activision)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 521650923,
+      "fileCount": 1,
+      "contentSha256": "dfe1d0c7ab99a7598d329a4a320d3d26f0ceeb5082c7d6f40ed0f5ca62509b77"
     },
     {
       "itemId": "station_074cee73c1fcbafad05d87493315fba9",
@@ -9648,6 +9747,15 @@
       "expandedSizeBytes": 82140501,
       "fileCount": 2,
       "contentSha256": "f606b7c9c1c52d651649807f7bc5e4b5b1ffb894007ec26f53638f37991efd55"
+    },
+    {
+      "itemId": "station_075cdd039dab8d8760384d95f12faf14",
+      "platform": "dreamcast",
+      "artifactSha256": "dabd5c1a92703736ce1f0d05cc05d3cab8d46f1e9dc2b117eb13e3eccdc9b1db",
+      "launchPath": "Jeremy McGrath Supercross 2000 v1.001 (2000)(Acclaim)(NTSC)(US)[!][1S T-8104N].chd",
+      "expandedSizeBytes": 204952362,
+      "fileCount": 1,
+      "contentSha256": "dabd5c1a92703736ce1f0d05cc05d3cab8d46f1e9dc2b117eb13e3eccdc9b1db"
     },
     {
       "itemId": "station_07686fe35b397ccd66bd5860f71a4cec",
@@ -9749,6 +9857,15 @@
       "contentSha256": "0ddc43103a0ee2764f0382362cdb343c2b78c672767bc4d9d37c8cd00157f058"
     },
     {
+      "itemId": "station_08818684b6db962bcf8bf1c77bc75bce",
+      "platform": "dreamcast",
+      "artifactSha256": "a01b24813517a45f27ea84af354cd54eee168fb545c5d7b186f1a805a75852cd",
+      "launchPath": "Seaman v1.001 (2000)(Sega)(NTSC)(US)[!][req. microphone].chd",
+      "expandedSizeBytes": 741574946,
+      "fileCount": 1,
+      "contentSha256": "a01b24813517a45f27ea84af354cd54eee168fb545c5d7b186f1a805a75852cd"
+    },
+    {
       "itemId": "station_0884fff4ffa401b94fe38b790b728d1a",
       "platform": "psx",
       "artifactSha256": "6178fd0e9b1849bde67aba268df0b525d8ba0cba017ba60ffb0d4582b41b8a75",
@@ -9785,6 +9902,15 @@
       "contentSha256": "f9bbc0b192e56759c226d8bf0ea63b5dc0369ab9581e703798c84482e15c70af"
     },
     {
+      "itemId": "station_08ece410ffa705f600e39806bf545c0b",
+      "platform": "dreamcast",
+      "artifactSha256": "4131e26c9ce90a4d9e0ba3f9cb0b7f2b3af9f496ea3de0eabebdcf4e037884fb",
+      "launchPath": "Tech Romancer v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 850781078,
+      "fileCount": 1,
+      "contentSha256": "4131e26c9ce90a4d9e0ba3f9cb0b7f2b3af9f496ea3de0eabebdcf4e037884fb"
+    },
+    {
       "itemId": "station_0900106c4477e25700297db7c3feb259",
       "platform": "neogeo",
       "artifactSha256": "6807a4f8f998edc319002ec68022d235fbcd1843cda8aef07830c3a202dded1e",
@@ -9810,6 +9936,24 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "0e834647669783c2b79cc1120c057c870c541079a7abd1eee3f787d59dc3c3eb"
+    },
+    {
+      "itemId": "station_091f1fc26415fcafbabf355536848d40",
+      "platform": "dreamcast",
+      "artifactSha256": "670d92ef6c5019d0dfc2bf50f1d72d1aa42e9f2209b93adbef4e288619cb5e89",
+      "launchPath": "Fur Fighters v2.001 (2000)(Acclaim)(NTSC)(US)(M4)[!].chd",
+      "expandedSizeBytes": 759842647,
+      "fileCount": 1,
+      "contentSha256": "670d92ef6c5019d0dfc2bf50f1d72d1aa42e9f2209b93adbef4e288619cb5e89"
+    },
+    {
+      "itemId": "station_0953492c4c6576065efa98380dba2e52",
+      "platform": "dreamcast",
+      "artifactSha256": "736b99450213e40fca1d80ca6e5e9a4969885bdf015bdbad68f9913c4b73e345",
+      "launchPath": "Donald Duck - Goin' Quackers v1.001 (2000)(Ubi Soft)(NTSC)(US)(M5)[!].chd",
+      "expandedSizeBytes": 569588340,
+      "fileCount": 1,
+      "contentSha256": "736b99450213e40fca1d80ca6e5e9a4969885bdf015bdbad68f9913c4b73e345"
     },
     {
       "itemId": "station_09585ec91580b0839276597c9d072da1",
@@ -9947,6 +10091,15 @@
       "contentSha256": "d83c7f7b57f343859823c047cdb23c39c3bee099f1daa09020c4d2e166938d0a"
     },
     {
+      "itemId": "station_0adcfeaf43558ec6a20b451d698f6af3",
+      "platform": "dreamcast",
+      "artifactSha256": "0eb1543633c61e4317373e1fead2e4b6e9910e24de779931899f20d884ee15ff",
+      "launchPath": "Ms. Pac-Man - Maze Madness v1.000 (2000)(Namco)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 375212131,
+      "fileCount": 1,
+      "contentSha256": "0eb1543633c61e4317373e1fead2e4b6e9910e24de779931899f20d884ee15ff"
+    },
+    {
       "itemId": "station_0b05a834597b2303d97d365b9cd85d91",
       "platform": "snes",
       "artifactSha256": "9e1a39aaf3585af0d6a5d79de3c35fcfe030c34bd4b09606a6fb8c7def19340b",
@@ -10046,6 +10199,15 @@
       "contentSha256": "99952a6f2ee58755572ef64cf6991a83f1841eb9a7c145ff35259a5b9292494e"
     },
     {
+      "itemId": "station_0c08c6c306d42b0ec3fd60a9c73cf8dd",
+      "platform": "dreamcast",
+      "artifactSha256": "b45643fedb70d87f71e18c483dc260f7b98389d0cb2f891d0d62ac4db5c526d1",
+      "launchPath": "Incoming v1.000 (1999)(Interplay)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 245818017,
+      "fileCount": 1,
+      "contentSha256": "b45643fedb70d87f71e18c483dc260f7b98389d0cb2f891d0d62ac4db5c526d1"
+    },
+    {
       "itemId": "station_0c1a704e582ff1873646d22c872dc0d3",
       "platform": "cps2",
       "artifactSha256": "9eee1e9910e3a8c9afa10259ee6cfeefd113555572d1740dcdf0b2db5e54295c",
@@ -10091,6 +10253,15 @@
       "contentSha256": "8a6f94ed9b723e55be1f3e3a1d356ef0ae0ac7004fec1a6839cb8adf643325a4"
     },
     {
+      "itemId": "station_0c51dbadb7889354c5c8d1bda7f09e3b",
+      "platform": "dreamcast",
+      "artifactSha256": "ed10091c90f3290d335fe3ded58324eecc144750d5b700afb004b7e2c16f4d27",
+      "launchPath": "Ready 2 Rumble Boxing v1.000 (1999)(Midway)(NTSC)(US)[!][8S T-9704NGD].chd",
+      "expandedSizeBytes": 376403301,
+      "fileCount": 1,
+      "contentSha256": "ed10091c90f3290d335fe3ded58324eecc144750d5b700afb004b7e2c16f4d27"
+    },
+    {
       "itemId": "station_0c6faed7ddf84bd64f7ff6b4acd2b52e",
       "platform": "snes",
       "artifactSha256": "32008c429eafe7eb59aff7a89f77e1a267f02f9061ff8830ade7b99081e27f7c",
@@ -10127,6 +10298,15 @@
       "contentSha256": "342ddf438aec3f0696de8f2cd74bb7f48a956f488f1246eeccaff5ef246ca50b"
     },
     {
+      "itemId": "station_0cad70eb2d83b1c3d057dd45cf921cce",
+      "platform": "dreamcast",
+      "artifactSha256": "1edb9796d134d9af6e41a37c80b4376a377ddfcf9ff5f5babe0b9adc34bb8885",
+      "launchPath": "Soul Fighter v1.000 (1999)(Red Orb)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 628157113,
+      "fileCount": 1,
+      "contentSha256": "1edb9796d134d9af6e41a37c80b4376a377ddfcf9ff5f5babe0b9adc34bb8885"
+    },
+    {
       "itemId": "station_0cbcad25706beb7f6f1456d17635c0a6",
       "platform": "snes",
       "artifactSha256": "dd0feb78e2d5d81f59241baf3bca5e2edaebbe98f0ac860a4eb6d448718f1ca5",
@@ -10136,6 +10316,15 @@
       "contentSha256": "dd0feb78e2d5d81f59241baf3bca5e2edaebbe98f0ac860a4eb6d448718f1ca5"
     },
     {
+      "itemId": "station_0cd7cc01da4a7894ed405517e62f3c38",
+      "platform": "dreamcast",
+      "artifactSha256": "bfcaa0226b46f7ed16587dea64447df7cfdea7789b229d92861983a4a5419019",
+      "launchPath": "Max Steel - Covert Missions v1.060 (2000)(Mattel)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 543143385,
+      "fileCount": 1,
+      "contentSha256": "bfcaa0226b46f7ed16587dea64447df7cfdea7789b229d92861983a4a5419019"
+    },
+    {
       "itemId": "station_0cfad99c976f041a0fafa0bac0ab97bf",
       "platform": "fbneo",
       "artifactSha256": "27b66bfc91c8b6e88655a72fc67de41a20fd1a95b395704eb6b10c697771ed67",
@@ -10143,6 +10332,15 @@
       "expandedSizeBytes": 589288,
       "fileCount": 2,
       "contentSha256": "1afd25966b2568dc4639943f4285616851aabe051ab684753db53489a95632ac"
+    },
+    {
+      "itemId": "station_0cfe2f28401d51af318820706bfd5eca",
+      "platform": "dreamcast",
+      "artifactSha256": "02056f2268f19437b3b29d0b4e74edd9267b01e29cdfb0a94ff61bd2f874fbfa",
+      "launchPath": "Evolution 2 - Far Off Promise v1.000 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 463722161,
+      "fileCount": 1,
+      "contentSha256": "02056f2268f19437b3b29d0b4e74edd9267b01e29cdfb0a94ff61bd2f874fbfa"
     },
     {
       "itemId": "station_0d4dfcd61278e98e57de87ccb83ac883",
@@ -10379,6 +10577,15 @@
       "contentSha256": "03d0127f5de3237e22ad00de0c20763274da7b71142dde693240ac96d10983a3"
     },
     {
+      "itemId": "station_0fd20d759e3def993070803740658207",
+      "platform": "dreamcast",
+      "artifactSha256": "c73fc7a85efe7f6068e9a908d4725c474bca29a26ef3fee5adc11b97e04ffe37",
+      "launchPath": "NBA Showtime - NBA on NBC v1.003 (1999)(Midway)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 227809567,
+      "fileCount": 1,
+      "contentSha256": "c73fc7a85efe7f6068e9a908d4725c474bca29a26ef3fee5adc11b97e04ffe37"
+    },
+    {
       "itemId": "station_0fde7cae66255184941aab100ee32515",
       "platform": "snes",
       "artifactSha256": "0fadb3b67bfb7d750d873e7601dd5ffdfd33b8ebda833a18a3c999c7f8aa9e15",
@@ -10433,6 +10640,15 @@
       "contentSha256": "d3c60d34571c5684b0cff5196c7c6db7364bee7d8b91048f0f3ae19d8f1a1db6"
     },
     {
+      "itemId": "station_10a77bfff545c07a52f2683593cad3bb",
+      "platform": "dreamcast",
+      "artifactSha256": "8e263ca1db869c644ccb1ceec6d84d5c0e78a119d2bde07fc21bd2359e032ea8",
+      "launchPath": "Carrier v1.001 (2000)(Jaleco)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 662526402,
+      "fileCount": 1,
+      "contentSha256": "8e263ca1db869c644ccb1ceec6d84d5c0e78a119d2bde07fc21bd2359e032ea8"
+    },
+    {
       "itemId": "station_10be810a28237bdd27a2137c16568668",
       "platform": "snesbr",
       "artifactSha256": "ddc8634dd7dc77f373f8baba0399cebf276d242ae41793b925ac565305ce5695",
@@ -10449,6 +10665,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "80c22cc92d51a54de9cd9fd00db5ff58a35fff35e822169c94e445d50834fba3"
+    },
+    {
+      "itemId": "station_10e2a927022bfa490f762773f7d27527",
+      "platform": "dreamcast",
+      "artifactSha256": "bcbbb8e6129062aff53015e9f54ec6d484bb2e9595c30286b2a1113a341ba8c3",
+      "launchPath": "Speed Devils v1.004 (1999)(Ubi Soft)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 506685660,
+      "fileCount": 1,
+      "contentSha256": "bcbbb8e6129062aff53015e9f54ec6d484bb2e9595c30286b2a1113a341ba8c3"
     },
     {
       "itemId": "station_10ea061e9f6cfeeb59f973ab13c2e723",
@@ -10503,6 +10728,15 @@
       "expandedSizeBytes": 354312124,
       "fileCount": 1,
       "contentSha256": "c7ba2551fe74386eeb3a61d09397ad4ef6148fe076021529b961cf647e22bbbb"
+    },
+    {
+      "itemId": "station_11800c292110c10da2354418e3483b29",
+      "platform": "wii",
+      "artifactSha256": "e6d4238efc145caf2d447cc9b9ecf567b8eda68b9d52db7240b5ccb069739c34",
+      "launchPath": "Super Mario Galaxy 2 (USA) (En,Fr,Es).rvz",
+      "expandedSizeBytes": 1438368956,
+      "fileCount": 1,
+      "contentSha256": "e6d4238efc145caf2d447cc9b9ecf567b8eda68b9d52db7240b5ccb069739c34"
     },
     {
       "itemId": "station_119f55ca5eb641e44b961c60bc9006a7",
@@ -10577,6 +10811,15 @@
       "contentSha256": "475c9baa1c2b76a6b3119e47d32814dc1c08e84e23250ae015bb0bccea915637"
     },
     {
+      "itemId": "station_124f750bb7766e4f7af18dd694c997ea",
+      "platform": "dreamcast",
+      "artifactSha256": "984f61cd803be6ab5eac9571473e0aada9e18b4db13f8f8758b51e2b3d465488",
+      "launchPath": "Wacky Races v1.001 (2000)(Infogrames)(NTSC)(US)(M3)[!].chd",
+      "expandedSizeBytes": 393188616,
+      "fileCount": 1,
+      "contentSha256": "984f61cd803be6ab5eac9571473e0aada9e18b4db13f8f8758b51e2b3d465488"
+    },
+    {
       "itemId": "station_126db71edb23f73c94ee40ed283a7b8b",
       "platform": "snesbr",
       "artifactSha256": "bb5fbe284afab7be2d01475e88675cde3f1d3bf59f923879ce909f2d31d7da0e",
@@ -10613,6 +10856,15 @@
       "contentSha256": "57b9a0763bf97ef84a258108f4d055a063295e4c9a05e15fa54ed5962aedf8a3"
     },
     {
+      "itemId": "station_12b835c9539b4800a6bb29ca00a25f94",
+      "platform": "gamecube",
+      "artifactSha256": "3106a01516f59854a55fd6343da8b0f489ca8cfc523f300bb1913d7f1c602a2f",
+      "launchPath": "Legend of Zelda, The - The Wind Waker (Europe) (En,Fr,De,Es,It).iso",
+      "expandedSizeBytes": 546776387,
+      "fileCount": 1,
+      "contentSha256": "3106a01516f59854a55fd6343da8b0f489ca8cfc523f300bb1913d7f1c602a2f"
+    },
+    {
       "itemId": "station_12bee5d8d825df52cb1b50915ee988f4",
       "platform": "snes",
       "artifactSha256": "67937dd7a29a93b1aaabb6df89f0748369ff47f3f6c655a402c00d5657973140",
@@ -10647,6 +10899,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "446a1036d036986fdea7906c83832d3ba79ef63a6ed8c4e88b89ab9cb25daded"
+    },
+    {
+      "itemId": "station_1365c397304e2b2915fb6542f766453a",
+      "platform": "dreamcast",
+      "artifactSha256": "bc81f0df9a33a3fb3d8181f1072baf9bc094a7ddccdfa3132f395ebf779efbce",
+      "launchPath": "Test Drive 6 v1.000 (1999)(Infogrames)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 305987311,
+      "fileCount": 1,
+      "contentSha256": "bc81f0df9a33a3fb3d8181f1072baf9bc094a7ddccdfa3132f395ebf779efbce"
     },
     {
       "itemId": "station_13847cc9332156f3a26c1b82e896b0f5",
@@ -10802,6 +11063,15 @@
       "contentSha256": "628dbf4475fc3531e43105a116ff45bc43250b6112f6b18b9f1a630878e4a6a2"
     },
     {
+      "itemId": "station_14dd1839d4487040394e195ad6ca422c",
+      "platform": "dreamcast",
+      "artifactSha256": "56a98f6582274417ecaf3b7c41d673ab373252bd6e27017ce04d8b47e5abbf94",
+      "launchPath": "Soul Calibur v1.000 (1999)(Namco)(NTSC)(US)[!][1S T-1401N].chd",
+      "expandedSizeBytes": 621117267,
+      "fileCount": 1,
+      "contentSha256": "56a98f6582274417ecaf3b7c41d673ab373252bd6e27017ce04d8b47e5abbf94"
+    },
+    {
       "itemId": "station_14decbbac8ea1e7d69253451e66a676e",
       "platform": "n64",
       "artifactSha256": "0c18bd96efd210876d0445af31618c6b25b5874118574e4998cc3f9f5f729aea",
@@ -10809,6 +11079,15 @@
       "expandedSizeBytes": 4194304,
       "fileCount": 1,
       "contentSha256": "fa528718a068489c8621bdd9dc006d3961b68b889bf136ba5eb5a6e875ced6fd"
+    },
+    {
+      "itemId": "station_14e62733e5dbac6683e6786740e6937c",
+      "platform": "dreamcast",
+      "artifactSha256": "ec71629ee231442d2eee269500590c23290ca728c7a1bf2bf8ca89796c386c05",
+      "launchPath": "Sydney 2000 v1.000 (2000)(EIDOS)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 482721822,
+      "fileCount": 1,
+      "contentSha256": "ec71629ee231442d2eee269500590c23290ca728c7a1bf2bf8ca89796c386c05"
     },
     {
       "itemId": "station_14fa36fae203715141ce612aecd8b858",
@@ -11144,6 +11423,15 @@
       "contentSha256": "1d3cceaa05e054b002caeb09fd5fb9e718ec446764f4169d97bc185da76fdf4d"
     },
     {
+      "itemId": "station_176aed95d53e1b7f9a53e79ac5de9c21",
+      "platform": "dreamcast",
+      "artifactSha256": "21638ea6cfebad54efb8eb85488569460bc02b2c1aecf17130d47523b97d05a4",
+      "launchPath": "Sonic Adventure 2 v1.008 (2001)(Sega)(NTSC)(US)(M5)[!].chd",
+      "expandedSizeBytes": 914666774,
+      "fileCount": 1,
+      "contentSha256": "21638ea6cfebad54efb8eb85488569460bc02b2c1aecf17130d47523b97d05a4"
+    },
+    {
       "itemId": "station_176e4ba8c6abc8a5c552fd797f48ea84",
       "platform": "psx",
       "artifactSha256": "838ac224f62babcda286a6142362d038d20ee41f2eb3e15252c76bf7f075d4c4",
@@ -11270,6 +11558,15 @@
       "contentSha256": "59cdcb1f0b59825cebaf22f947d7a5165f493246b064697db903be7185dfae67"
     },
     {
+      "itemId": "station_19000979c1ca293fe87b39cbf1261df9",
+      "platform": "dreamcast",
+      "artifactSha256": "19488905a65534c43faebdffd334f5ead447908b7be0cd458c7b2b4205ca3044",
+      "launchPath": "Monaco Grand Prix v1.215 (1999)(Ubi Soft)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 633946061,
+      "fileCount": 1,
+      "contentSha256": "19488905a65534c43faebdffd334f5ead447908b7be0cd458c7b2b4205ca3044"
+    },
+    {
       "itemId": "station_190b379b53528b9c588892deb74fdfc8",
       "platform": "snes",
       "artifactSha256": "489d6d704d3d917d9b46ce382230700419983a8d0d61a98fe07e08c935522dde",
@@ -11288,6 +11585,15 @@
       "contentSha256": "1999b98b86ac9c29363778799e9f368a4da3a656e002f31a4c6a7f87583a429f"
     },
     {
+      "itemId": "station_19474164e353d34cdfca86f40e101678",
+      "platform": "dreamcast",
+      "artifactSha256": "9ab4dbec55a892461e302ee9fcacd4cc1d27679047054496e9a942b6a03bd3b6",
+      "launchPath": "Tom Clancy's Rainbow Six - Rogue Spear v1.002 (2000)(Majesco - Red Storm)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 468695808,
+      "fileCount": 1,
+      "contentSha256": "9ab4dbec55a892461e302ee9fcacd4cc1d27679047054496e9a942b6a03bd3b6"
+    },
+    {
       "itemId": "station_1951f992ae41e9d33a453c40277266f4",
       "platform": "snes",
       "artifactSha256": "ee0e51d922d1cf8abe3dfc6b0d84a988a6635dc96b2a96962007c41aaa542774",
@@ -11304,6 +11610,15 @@
       "expandedSizeBytes": 1814737,
       "fileCount": 2,
       "contentSha256": "8382f1bc68b5606407e05217c072f873b0e955c9909c98ec395fd367103ad84f"
+    },
+    {
+      "itemId": "station_1957617bf10c9bc36cbd027dd1cdbdd0",
+      "platform": "dreamcast",
+      "artifactSha256": "acab8bf23053a3110eecd1eec7c8f920022be6b1783848f47be7b11463974bd9",
+      "launchPath": "Alien Front Online v1.000 (2001)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 140314753,
+      "fileCount": 1,
+      "contentSha256": "acab8bf23053a3110eecd1eec7c8f920022be6b1783848f47be7b11463974bd9"
     },
     {
       "itemId": "station_196abca6d753c431e30d6b7a78e612c5",
@@ -11405,6 +11720,15 @@
       "contentSha256": "b38931b6f897f5623c8bdad6595083e345a392f266110516086418a5a83d1736"
     },
     {
+      "itemId": "station_1a9633d9f723c039bebd4a35a20e8017",
+      "platform": "dreamcast",
+      "artifactSha256": "745b5b89742762fbcf8f6b1a272be7f91e259ab84ba9ed9f2dc157b35b465ff4",
+      "launchPath": "Frogger 2 - Swampy's Revenge v1.001 (2000)(Hasbro)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 307565613,
+      "fileCount": 1,
+      "contentSha256": "745b5b89742762fbcf8f6b1a272be7f91e259ab84ba9ed9f2dc157b35b465ff4"
+    },
+    {
       "itemId": "station_1aa5eaed53cd1799109d805d56d576cd",
       "platform": "snes",
       "artifactSha256": "0f474dafe5a26f3dea491d18073dd490d2f1f91313a7e91086565510d38d9a09",
@@ -11493,6 +11817,15 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "8c254d82237eba38a22d8d434ddd99b9187e408c6eb0393579f864f8c5e882ba"
+    },
+    {
+      "itemId": "station_1b4aeb7b677b8406e6810f443b22155a",
+      "platform": "dreamcast",
+      "artifactSha256": "4acabd739e4d1a7d4a445b8cd4b96fe854a7389b509da24c533b9626d5323109",
+      "launchPath": "Alone in the Dark - The New Nightmare v1.000 (2001)(Infogrames)(NTSC)(US)(Disc 2 of 2)[!].chd",
+      "expandedSizeBytes": 898679344,
+      "fileCount": 1,
+      "contentSha256": "4acabd739e4d1a7d4a445b8cd4b96fe854a7389b509da24c533b9626d5323109"
     },
     {
       "itemId": "station_1b5741abcaf5b17807b4b0162df52a8e",
@@ -11666,6 +11999,15 @@
       "contentSha256": "cd13bc282c7b4fa0e9240b3e3e3d40368433add6d686efe519daa583655102ef"
     },
     {
+      "itemId": "station_1dbf87198a2f3782127b09c7796cc70b",
+      "platform": "dreamcast",
+      "artifactSha256": "05ac19c8fd153b0dae2decf2780aabf99b5ad09da4e2b16379e06c512a605fd0",
+      "launchPath": "Rayman 2 - The Great Escape v1.003 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 661153185,
+      "fileCount": 1,
+      "contentSha256": "05ac19c8fd153b0dae2decf2780aabf99b5ad09da4e2b16379e06c512a605fd0"
+    },
+    {
       "itemId": "station_1dc935252c7bf6d743219735aa8864ba",
       "platform": "snes",
       "artifactSha256": "1e2ded7b1e350449b7a99b7ec414525e4b9b086c416deeee5eb3e48e032c46bd",
@@ -11756,6 +12098,15 @@
       "contentSha256": "8547960c6222bade54b1424499487fc05e4d1bc6d533fbc5b92e7ae5aae4883f"
     },
     {
+      "itemId": "station_1eda79c61edf1463d832c51133502424",
+      "platform": "dreamcast",
+      "artifactSha256": "1756ecd116d3613e6f916b4bfeb7094a3d7d82fb15224ede7cfa40fb3ade6dd8",
+      "launchPath": "Magforce Racing v1.001 (2000)(Crave)(NTSC)(US)(M5)[!].chd",
+      "expandedSizeBytes": 420549302,
+      "fileCount": 1,
+      "contentSha256": "1756ecd116d3613e6f916b4bfeb7094a3d7d82fb15224ede7cfa40fb3ade6dd8"
+    },
+    {
       "itemId": "station_1ee5d4c463cf13b80318c8bb41a1e23d",
       "platform": "snes",
       "artifactSha256": "e36322697c48baae6492db91e6cbf3844a420f6e0cc8a75f3a73556026ddbbb8",
@@ -11763,6 +12114,24 @@
       "expandedSizeBytes": 524288,
       "fileCount": 1,
       "contentSha256": "e36322697c48baae6492db91e6cbf3844a420f6e0cc8a75f3a73556026ddbbb8"
+    },
+    {
+      "itemId": "station_1ee814571be2c22a9c65a15d81f8b7dd",
+      "platform": "dreamcast",
+      "artifactSha256": "1f6c890319c35ff14452ecb2a68068c60c3ff1a1d72cb66e117c28f7388b020e",
+      "launchPath": "Daytona USA v1.004 (2001)(Hasbro - Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 410298653,
+      "fileCount": 1,
+      "contentSha256": "1f6c890319c35ff14452ecb2a68068c60c3ff1a1d72cb66e117c28f7388b020e"
+    },
+    {
+      "itemId": "station_1ee984b531411279f5ecb52acd2a5f94",
+      "platform": "dreamcast",
+      "artifactSha256": "e0ddbdb7cc8d516c530d0fb3c2756d880cc621d5cec9b02e6173dfc1a7416d1d",
+      "launchPath": "House of the Dead 2, The v1.001 (1999)(Sega)(NTSC)(US)[!][13S 51002].chd",
+      "expandedSizeBytes": 433554990,
+      "fileCount": 1,
+      "contentSha256": "e0ddbdb7cc8d516c530d0fb3c2756d880cc621d5cec9b02e6173dfc1a7416d1d"
     },
     {
       "itemId": "station_1f054f848be9c8a6615261eeaaf01065",
@@ -11781,6 +12150,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "ed4e1f413a4a9087bbfaaf78d6ae08dcbb2af317d9a48b5ef4f2f9e2a63e6e4c"
+    },
+    {
+      "itemId": "station_1f2fd73ae0af6b53a525e635050ddcdb",
+      "platform": "dreamcast",
+      "artifactSha256": "0b7a435122b54fc4a99f76ae5a0de417597415510bc1b5bd7c7c37e851dd202d",
+      "launchPath": "Unreal Tournament v1.000 (2001)(Infogrames)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 520863155,
+      "fileCount": 1,
+      "contentSha256": "0b7a435122b54fc4a99f76ae5a0de417597415510bc1b5bd7c7c37e851dd202d"
     },
     {
       "itemId": "station_1f3e5fdcb54f38e100650ed08de824c2",
@@ -11909,6 +12287,15 @@
       "contentSha256": "cedc0e99591a8765ef0254a983a9e812e24db5028bdeb6323eab0995d6d64e48"
     },
     {
+      "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+      "platform": "gamecube",
+      "artifactSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26",
+      "launchPath": "Mario Kart - Double Dash!! (Europe) (En,Fr,De,Es,It).iso",
+      "expandedSizeBytes": 1459978240,
+      "fileCount": 1,
+      "contentSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26"
+    },
+    {
       "itemId": "station_205f1c7deee8930dbc132074ffb00594",
       "platform": "neogeo",
       "artifactSha256": "3ce0161049604aa4b38740e9ac011e48e94d2c735339cbce73698d1ef5248c58",
@@ -11925,6 +12312,15 @@
       "expandedSizeBytes": 1429616,
       "fileCount": 1,
       "contentSha256": "a7cc8894488ee126851ee1f45eccb99e6da96f63b5bbd31689adaf08f7a37eab"
+    },
+    {
+      "itemId": "station_208d91d1f447376113bd9458347dca14",
+      "platform": "dreamcast",
+      "artifactSha256": "363c7eb29a156f23f203f4d42cc128e2ddd558025c16f7a606092b67d4baa9d4",
+      "launchPath": "Worms Armageddon v1.001 (1999)(MicroProse)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 489449213,
+      "fileCount": 1,
+      "contentSha256": "363c7eb29a156f23f203f4d42cc128e2ddd558025c16f7a606092b67d4baa9d4"
     },
     {
       "itemId": "station_2095644c169d3096ce0cf93e2cf0ead4",
@@ -11979,6 +12375,15 @@
       "expandedSizeBytes": 4066787,
       "fileCount": 2,
       "contentSha256": "ccf776a521c1a925cf3706c15a9246410b52aaaaaec6dabc657adbe8038562c0"
+    },
+    {
+      "itemId": "station_211df505e8c566432c4ffeda71c84a82",
+      "platform": "gamecube",
+      "artifactSha256": "4b948d6059ff3d21048b3efa5a202cd5caf3a588f11e9a601a54c937f58a6e0b",
+      "launchPath": "The Legend of Zelda Four Swords Adventures.iso",
+      "expandedSizeBytes": 1459978240,
+      "fileCount": 1,
+      "contentSha256": "4b948d6059ff3d21048b3efa5a202cd5caf3a588f11e9a601a54c937f58a6e0b"
     },
     {
       "itemId": "station_2133a507378ba088a93384c46da5201a",
@@ -12062,6 +12467,15 @@
       "contentSha256": "3bc2213f8e1254e5841a9209bf38b7c19817e84cbfa19dcd7a5c31509657b709"
     },
     {
+      "itemId": "station_21c3071c3a57a83e67ccc1646164d931",
+      "platform": "dreamcast",
+      "artifactSha256": "2a14b9041335e83a31f01745662c054b80b7c3be9c9d292aaba720fbaa261518",
+      "launchPath": "Ducati World - Racing Challenge v1.000 (2001)(Acclaim)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 438981052,
+      "fileCount": 1,
+      "contentSha256": "2a14b9041335e83a31f01745662c054b80b7c3be9c9d292aaba720fbaa261518"
+    },
+    {
       "itemId": "station_21d11b09bdd4b1e2bfe315ff039db73b",
       "platform": "fbneo",
       "artifactSha256": "d01815c1e7ecdd0a226fe8d9b649dcd00070aa96904bed488a23bd43b45ed0c6",
@@ -12125,6 +12539,15 @@
       "contentSha256": "946de556b4f877e54e16b5c828db89c038e50349cfd0ddf8ea96b6541f9d70fa"
     },
     {
+      "itemId": "station_22a388607337c6c0e10eef23327760e7",
+      "platform": "gamecube",
+      "artifactSha256": "7c428fe1f485019fa584330ca4bc6fbce7434eb947d8fd8cc07d5160d1290fa4",
+      "launchPath": "Resident Evil 4 (Disco 1).iso",
+      "expandedSizeBytes": 1459978240,
+      "fileCount": 1,
+      "contentSha256": "7c428fe1f485019fa584330ca4bc6fbce7434eb947d8fd8cc07d5160d1290fa4"
+    },
+    {
       "itemId": "station_22a73882f086e8e43a762b44768f3619",
       "platform": "fbneo",
       "artifactSha256": "314ded5323e7cc1347ad1b9b270743fab9f7d22028221925eebc6944028ce21c",
@@ -12159,6 +12582,15 @@
       "expandedSizeBytes": 474289740,
       "fileCount": 1,
       "contentSha256": "a0b6a074e258701adf9e41a86b66ea7f5079ec975b3b320d25c4fdf1a4a36231"
+    },
+    {
+      "itemId": "station_230924a63b3a42c13c0498005015eac0",
+      "platform": "dreamcast",
+      "artifactSha256": "355747f61a4c2fc1d625d98d65b99c179f7f030a27faddb16bf3a4b7da9cc470",
+      "launchPath": "MTV Sports - Skateboarding Featuring Andy Macdonald v1.002 (2000)(THQ)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 235561880,
+      "fileCount": 1,
+      "contentSha256": "355747f61a4c2fc1d625d98d65b99c179f7f030a27faddb16bf3a4b7da9cc470"
     },
     {
       "itemId": "station_2325ba192ed158e7a7a28d81e153c678",
@@ -12305,6 +12737,15 @@
       "contentSha256": "41afc1bda219190cb786c34e3099fe2f666d31b3aa2ba7bc68e1e474538dd1b6"
     },
     {
+      "itemId": "station_24866560a51e15aa8164f855ad4ad723",
+      "platform": "dreamcast",
+      "artifactSha256": "07f11501d5d6175915d2417952ea90c9ffb042e317a9c4bc8800ce4365770e18",
+      "launchPath": "Dead or Alive 2 v1.100 (2000)(Tecmo)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 232711719,
+      "fileCount": 1,
+      "contentSha256": "07f11501d5d6175915d2417952ea90c9ffb042e317a9c4bc8800ce4365770e18"
+    },
+    {
       "itemId": "station_2500198032b56e221afd604167d216b9",
       "platform": "megadrivebr",
       "artifactSha256": "a84c77ab6092795c8c3b9ed0dbc223d1aa04ba6563b5ab79f5bb6eaadc3e6a90",
@@ -12332,6 +12773,15 @@
       "contentSha256": "8f8f78eaade6d0035c9ccf9e1642d6ae63b745dbdbf53dbe42af3175657edb3c"
     },
     {
+      "itemId": "station_2566875b68d223bcec73a5984b85b32d",
+      "platform": "dreamcast",
+      "artifactSha256": "e1f7542b8c816ad652bfbe8d6c9d3a20104e474ab344e93a7f3af0a06c6217a3",
+      "launchPath": "NFL 2K v1.007 (1999)(Sega)(NTSC)(US)[!][13S 51003].chd",
+      "expandedSizeBytes": 635820805,
+      "fileCount": 1,
+      "contentSha256": "e1f7542b8c816ad652bfbe8d6c9d3a20104e474ab344e93a7f3af0a06c6217a3"
+    },
+    {
       "itemId": "station_25774d2783016977242c1785767b74ba",
       "platform": "megadrivebr",
       "artifactSha256": "660aa63d2cc6f50fb7f4ea69b1984debd8a45b29b9fd6a887ef4ef1e2f43f6bd",
@@ -12348,6 +12798,15 @@
       "expandedSizeBytes": 3312902,
       "fileCount": 2,
       "contentSha256": "1738450ead5003ad7ea899b43281ee1697b50e186f92d8a565504a628431f9b8"
+    },
+    {
+      "itemId": "station_259e6a25e7bde71b068a0b8a75f0961d",
+      "platform": "dreamcast",
+      "artifactSha256": "ba9ff9f9994047ebb2d81be29eaa5a1eae1603fbdc8d29dc06d2a2a3e00015f1",
+      "launchPath": "Dave Mirra Freestyle BMX v1.001 (2000)(Acclaim)(NTSC)(US)[!][0K055A, B, D, E T-8120N].chd",
+      "expandedSizeBytes": 305449033,
+      "fileCount": 1,
+      "contentSha256": "ba9ff9f9994047ebb2d81be29eaa5a1eae1603fbdc8d29dc06d2a2a3e00015f1"
     },
     {
       "itemId": "station_25a31cf806bf38ee8f00df3bbab11206",
@@ -12395,6 +12854,15 @@
       "contentSha256": "047530fff116108b8e50b7ebe82f51b4dfe05acda6618c71efb9b4d6d5c25a07"
     },
     {
+      "itemId": "station_260d6bef2e8b1fbc37291df14da0fa81",
+      "platform": "dreamcast",
+      "artifactSha256": "4f431dd92746e339d3221ba16d3d413d5ee72df7afe57631c0d95e100338be38",
+      "launchPath": "Mr Driller v1.001 (2000)(Namco)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 357075598,
+      "fileCount": 1,
+      "contentSha256": "4f431dd92746e339d3221ba16d3d413d5ee72df7afe57631c0d95e100338be38"
+    },
+    {
       "itemId": "station_2620ef956a0f1ee24d50fc8d43d8fcdd",
       "platform": "neogeo",
       "artifactSha256": "383189503038155875a94a694cde3b07f8b8b6179356deba334ee7f725d73460",
@@ -12413,6 +12881,24 @@
       "contentSha256": "7580fae5d9274f7f3f1aece618043c2832496d0bf75f4f5373607a53b5cbcc1a"
     },
     {
+      "itemId": "station_267f6a063feadcc0b0e010ac9500c369",
+      "platform": "dreamcast",
+      "artifactSha256": "4d3ff90b2db0e5d6a575932779ef249849ef75239587781f62f3fc81c5cdf861",
+      "launchPath": "NFL Blitz 2000 v1.002 (1999)(Midway)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 181745920,
+      "fileCount": 1,
+      "contentSha256": "4d3ff90b2db0e5d6a575932779ef249849ef75239587781f62f3fc81c5cdf861"
+    },
+    {
+      "itemId": "station_26840025aa88fe8f1d12d5a6cd772edc",
+      "platform": "dreamcast",
+      "artifactSha256": "422ec91fc18bb3ed7301daf417dacaf84b2d41330f6c5e94da3f8499ed7345aa",
+      "launchPath": "Grinch, The v1.001 (2000)(Konami)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 242243036,
+      "fileCount": 1,
+      "contentSha256": "422ec91fc18bb3ed7301daf417dacaf84b2d41330f6c5e94da3f8499ed7345aa"
+    },
+    {
       "itemId": "station_26998dafd8b251f5ee9e8cab6b981a10",
       "platform": "fbneo",
       "artifactSha256": "b8735518b50b77521dc944b1fc06ee69f63568793a373cb38bcdc192a4ac5905",
@@ -12420,6 +12906,24 @@
       "expandedSizeBytes": 1153536,
       "fileCount": 2,
       "contentSha256": "8ab8966c56b27c64369f78b215ff05929c18fb6249ebd19d806af5680bfd3b3d"
+    },
+    {
+      "itemId": "station_26ab3f68b1fe773600a136a86861cf4e",
+      "platform": "dreamcast",
+      "artifactSha256": "812ec3a6c8a3a0804bcfeae2078d5dbfa66ebec613bcecb7b341a7e8bee91ac3",
+      "launchPath": "Gunbird 2 v1.000 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 141289906,
+      "fileCount": 1,
+      "contentSha256": "812ec3a6c8a3a0804bcfeae2078d5dbfa66ebec613bcecb7b341a7e8bee91ac3"
+    },
+    {
+      "itemId": "station_26b0b0591bd101ae392f2d01f1068a97",
+      "platform": "dreamcast",
+      "artifactSha256": "c30a555c7569e673c4e3a1b006ee3713ab48b26178eeb53676005d13bfdfa175",
+      "launchPath": "Dino Crisis v1.000 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 536677388,
+      "fileCount": 1,
+      "contentSha256": "c30a555c7569e673c4e3a1b006ee3713ab48b26178eeb53676005d13bfdfa175"
     },
     {
       "itemId": "station_26b8097e976f990ca701b08d1fd413f9",
@@ -12584,6 +13088,24 @@
       "contentSha256": "f008ed0595e5a171f79e46aa787276556b9d98d5c1103a76a0ce27a25957efad"
     },
     {
+      "itemId": "station_27e10d5ae9a480e52f39eeecf807d221",
+      "platform": "dreamcast",
+      "artifactSha256": "41b99ca82b03038861c22ed93d06eee71c8ed0917fae9f9c89a7f56cfd1676f2",
+      "launchPath": "NFL QB Club 2001 v1.001 (2000)(Acclaim)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 94284503,
+      "fileCount": 1,
+      "contentSha256": "41b99ca82b03038861c22ed93d06eee71c8ed0917fae9f9c89a7f56cfd1676f2"
+    },
+    {
+      "itemId": "station_2806e3c4feb570f4c2b4a24eeb8d7381",
+      "platform": "dreamcast",
+      "artifactSha256": "975632505db4b22229e976433c2cd16e6403422efa542e3fd9e779eca3c4a1f4",
+      "launchPath": "TrickStyle v1.000 (1999)(Acclaim)(NTSC)(US)[!][3S T-8102N].chd",
+      "expandedSizeBytes": 286194592,
+      "fileCount": 1,
+      "contentSha256": "975632505db4b22229e976433c2cd16e6403422efa542e3fd9e779eca3c4a1f4"
+    },
+    {
       "itemId": "station_280a7667276351d00e3968a510e545d6",
       "platform": "fbneo",
       "artifactSha256": "b60a5bc6e1b4f0d9afc7b2c22a5a03bf9cdfd381660aa85da821224e6ce64d80",
@@ -12638,6 +13160,15 @@
       "contentSha256": "36e272ce2ceada41854cb9330d60864ffd476b0c8e8fe92a97768f21a9a3f13d"
     },
     {
+      "itemId": "station_287858ab40ee9ec0e2cb6567dc7cef11",
+      "platform": "dreamcast",
+      "artifactSha256": "028121d0ab10a2cce86847ff7d8ede6db6d59473d3d68ecc512b97d7dded5164",
+      "launchPath": "4X4 EVO v1.001 (2000)(GOD)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 210390473,
+      "fileCount": 1,
+      "contentSha256": "028121d0ab10a2cce86847ff7d8ede6db6d59473d3d68ecc512b97d7dded5164"
+    },
+    {
       "itemId": "station_287e44014db1154666dc14b910a09067",
       "platform": "snes",
       "artifactSha256": "2eacc934a23315606981d8db80f6b5a72d38746c78adaa35821458baa09cb482",
@@ -12663,6 +13194,15 @@
       "expandedSizeBytes": 209489068,
       "fileCount": 1,
       "contentSha256": "627e8503ed4d2b0fd98300b4bcaf23284714591740e0b88b80d4282fefe09bcf"
+    },
+    {
+      "itemId": "station_28f4654486cd08554f53eda6c73b274e",
+      "platform": "dreamcast",
+      "artifactSha256": "8ef0186a22637a1c112f35dae7cf8463c90310aa0b0c68fb721890581e5ad791",
+      "launchPath": "Hidden & Dangerous v1.100 (2000)(Take 2)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 329628949,
+      "fileCount": 1,
+      "contentSha256": "8ef0186a22637a1c112f35dae7cf8463c90310aa0b0c68fb721890581e5ad791"
     },
     {
       "itemId": "station_28f690949d6d305f18fbc60b8e0fb31e",
@@ -12699,6 +13239,15 @@
       "expandedSizeBytes": 86321297,
       "fileCount": 2,
       "contentSha256": "7f54169034f2d7f06179ccc4afcd0a5a8bf13c8cfd7fd7af26a03db6f49efe60"
+    },
+    {
+      "itemId": "station_295b59ba6eea68400c2035c7bed5c7a3",
+      "platform": "dreamcast",
+      "artifactSha256": "45ade850e983911756f162cb72c4c5de0f3f9e213a8aeb26e9aef23c52edd399",
+      "launchPath": "Fighting Force 2 v1.000 (1999)(EIDOS)(NTSC)(US)[!][9S T-36801N].chd",
+      "expandedSizeBytes": 258478078,
+      "fileCount": 1,
+      "contentSha256": "45ade850e983911756f162cb72c4c5de0f3f9e213a8aeb26e9aef23c52edd399"
     },
     {
       "itemId": "station_2978a448f38b1c1f9f2829a54235beec",
@@ -12809,6 +13358,15 @@
       "contentSha256": "e3c8ce7f91ffc4875f7dc8b7030df8cb298f832170d512be9bf14ebf0df265f9"
     },
     {
+      "itemId": "station_2a7b991c444781d0a8c7d2896d5828fe",
+      "platform": "dreamcast",
+      "artifactSha256": "b4df964346b9df23ac7f9ebdc68219f8d8eec8aedacf0c16eed4b4d2727b02c8",
+      "launchPath": "Shenmue v1.003 (2000)(Sega)(NTSC)(US)(Disc 2 of 4)[!].chd",
+      "expandedSizeBytes": 370254074,
+      "fileCount": 1,
+      "contentSha256": "b4df964346b9df23ac7f9ebdc68219f8d8eec8aedacf0c16eed4b4d2727b02c8"
+    },
+    {
       "itemId": "station_2aa95b17f087603afa84088f2e4b8dfe",
       "platform": "n64",
       "artifactSha256": "9bcb87ec04abeef56a75a30281f23360de051fef4f34dab9b51242acf76adfb5",
@@ -12818,6 +13376,15 @@
       "contentSha256": "4fe18c71dba3520dab2a0618fdd949cf0869579325ea2ecfd2040337daff3863"
     },
     {
+      "itemId": "station_2afc7c1a085b93efae6fc750eece452d",
+      "platform": "dreamcast",
+      "artifactSha256": "aaf2beeed853a7119a4ccb58db131fafb98c952f61c11d0d69e9554c26bbddfe",
+      "launchPath": "Plasma Sword - Nightmare of Bilstein v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 674376972,
+      "fileCount": 1,
+      "contentSha256": "aaf2beeed853a7119a4ccb58db131fafb98c952f61c11d0d69e9554c26bbddfe"
+    },
+    {
       "itemId": "station_2b141cdacfa7e97efa1c2ccc15bb1084",
       "platform": "fbneo",
       "artifactSha256": "c01b9484ba5a85e07026f1c873ef46a3e215b04876cdf605df102398df0f76a4",
@@ -12825,6 +13392,15 @@
       "expandedSizeBytes": 515333,
       "fileCount": 2,
       "contentSha256": "467e1b5642155cb43d2bffb383ed7c9b1936e24e777344fd831d2725970f9cdb"
+    },
+    {
+      "itemId": "station_2b3d5545daacecfb3311b0abb16f8a49",
+      "platform": "dreamcast",
+      "artifactSha256": "91b1ba3e28571610b9e0c22d4d753fbd9bd759d214b4f5b1ab95e38f487dce18",
+      "launchPath": "Virtua Striker 2 v1.002 (1999)(Sega)(NTSC)(US)(M5)[!].chd",
+      "expandedSizeBytes": 93668377,
+      "fileCount": 1,
+      "contentSha256": "91b1ba3e28571610b9e0c22d4d753fbd9bd759d214b4f5b1ab95e38f487dce18"
     },
     {
       "itemId": "station_2bb4a53639863ba62542c7f94d6bfc2b",
@@ -13034,6 +13610,15 @@
       "contentSha256": "fdee2c1af46eaad97b16ba8c624640777208752ece14a4f84427b74c8ee88ae8"
     },
     {
+      "itemId": "station_2d59f12eef6f69e3f1ef193123964691",
+      "platform": "dreamcast",
+      "artifactSha256": "05c75114d2f112d08263082e49fa169578dd23d98af9465d968274f698929077",
+      "launchPath": "Conflict Zone - Modern War Strategy v1.002 (2001)(Ubi Soft)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 390891026,
+      "fileCount": 1,
+      "contentSha256": "05c75114d2f112d08263082e49fa169578dd23d98af9465d968274f698929077"
+    },
+    {
       "itemId": "station_2d8b1a66f58934da86798cdd4cc65c91",
       "platform": "fbneo",
       "artifactSha256": "668a18e13b8b14ece63ac4ce3af89f0e63558d2daeee63a278e5f4a887f68e76",
@@ -13061,6 +13646,15 @@
       "contentSha256": "8374fafe9f0053a2e0f6de0b3b62088a0a48cb2115219b9507ddd63145acc131"
     },
     {
+      "itemId": "station_2dc88daf495305000e730a205a1f06b6",
+      "platform": "gamecube",
+      "artifactSha256": "0de05981a34156b9cedcef73c73d4244ac05cf6149ab3c9cfed917698819e464",
+      "launchPath": "Super Smash Bros. Melee (Europe) (En,Fr,De,Es,It).iso",
+      "expandedSizeBytes": 1459978240,
+      "fileCount": 1,
+      "contentSha256": "0de05981a34156b9cedcef73c73d4244ac05cf6149ab3c9cfed917698819e464"
+    },
+    {
       "itemId": "station_2dcd79ed2ba14856c4ec5c66618630fc",
       "platform": "snes",
       "artifactSha256": "c7af9e7f3243ba1b5dd81f32f710e60c2ae1d443ecaf7140bf42d71a1b69d8a2",
@@ -13068,6 +13662,15 @@
       "expandedSizeBytes": 524288,
       "fileCount": 1,
       "contentSha256": "c7af9e7f3243ba1b5dd81f32f710e60c2ae1d443ecaf7140bf42d71a1b69d8a2"
+    },
+    {
+      "itemId": "station_2dedf2839146d34730c4e6a1bfda04ff",
+      "platform": "dreamcast",
+      "artifactSha256": "292f6081797740f9013e29ab82ccebea93993b52dcfe5a4a98029782ea63adec",
+      "launchPath": "Grandia II v1.001 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 868315370,
+      "fileCount": 1,
+      "contentSha256": "292f6081797740f9013e29ab82ccebea93993b52dcfe5a4a98029782ea63adec"
     },
     {
       "itemId": "station_2e0aef502ea87197dd6e0670f2db304b",
@@ -13104,6 +13707,15 @@
       "expandedSizeBytes": 524288,
       "fileCount": 1,
       "contentSha256": "437ea48711d54c2275286170a17948cb57ba9d961ba475715c0dba5fbd61a2db"
+    },
+    {
+      "itemId": "station_2e3dc618c01206375b812abb1d55f69e",
+      "platform": "gamecube",
+      "artifactSha256": "a5b119047f391bdabd5c3b258aed30167ca955d808e7628142a05cbb07d88254",
+      "launchPath": "Sonic Heroes (DUB).iso",
+      "expandedSizeBytes": 1370324992,
+      "fileCount": 1,
+      "contentSha256": "a5b119047f391bdabd5c3b258aed30167ca955d808e7628142a05cbb07d88254"
     },
     {
       "itemId": "station_2e6fa9e84d344815a45ca05f370dd6db",
@@ -13212,6 +13824,15 @@
       "expandedSizeBytes": 83974973,
       "fileCount": 2,
       "contentSha256": "18d6bc399ebbf3e76f05e3730d31dac772d161ca24a76b5da1c74d582ae2b22b"
+    },
+    {
+      "itemId": "station_2f7821c22769a1da65c254912811bcd0",
+      "platform": "dreamcast",
+      "artifactSha256": "e117e030a55aa7db07a1903483c8ece09d373bf54a611d74895134e0d7881f82",
+      "launchPath": "Street Fighter III - Double Impact v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 212451250,
+      "fileCount": 1,
+      "contentSha256": "e117e030a55aa7db07a1903483c8ece09d373bf54a611d74895134e0d7881f82"
     },
     {
       "itemId": "station_2f9836fece2ce121bc67fc7febc98932",
@@ -13410,6 +14031,24 @@
       "expandedSizeBytes": 8388608,
       "fileCount": 1,
       "contentSha256": "19ab87158253f49e919a68a7ad0940df09f016ad4a5913f4dc1ca32a3160a749"
+    },
+    {
+      "itemId": "station_3196e12d2c2130ea54a587031d52ca68",
+      "platform": "dreamcast",
+      "artifactSha256": "45f4654a9e60d7e72f49df3f7e1058f9e618bedd323afdab02345917850c2d51",
+      "launchPath": "Toy Story 2 - Buzz Lightyear to the Rescue! v1.002 (2000)(Activision)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 702114608,
+      "fileCount": 1,
+      "contentSha256": "45f4654a9e60d7e72f49df3f7e1058f9e618bedd323afdab02345917850c2d51"
+    },
+    {
+      "itemId": "station_3198b9d40054b1fa14282a7500ef659c",
+      "platform": "dreamcast",
+      "artifactSha256": "017bf7fc1b3644be73affd8f2afb20e35d0a363355390acd0a4dd8a5efecbc4d",
+      "launchPath": "Atari Anniversary Edition v1.001 (2001)(Infogrames)(NTSC)(US)[!][compilation].chd",
+      "expandedSizeBytes": 430051386,
+      "fileCount": 1,
+      "contentSha256": "017bf7fc1b3644be73affd8f2afb20e35d0a363355390acd0a4dd8a5efecbc4d"
     },
     {
       "itemId": "station_31ad1c696d8e3e417dcf282305f4f438",
@@ -13628,6 +14267,24 @@
       "contentSha256": "a4ef366bb24b2226837517aa5d819b651b78cdc5981f38bf76239ec8a0f86106"
     },
     {
+      "itemId": "station_33cd3bdbcd9b7d21e75fcfc3331ccdaf",
+      "platform": "dreamcast",
+      "artifactSha256": "d7a36e4a994d28287e3c52a72468c0d6696b012963f2d26d97fd731d0f82fad3",
+      "launchPath": "Sports Jam v1.001 (2001)(Agetec)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 94627657,
+      "fileCount": 1,
+      "contentSha256": "d7a36e4a994d28287e3c52a72468c0d6696b012963f2d26d97fd731d0f82fad3"
+    },
+    {
+      "itemId": "station_33d132308c7bd9eec951462443b6abc4",
+      "platform": "dreamcast",
+      "artifactSha256": "cc8f95bcd294f326d2af8cb47f484308c65e1031865f7f26e9cc82e86fcb651f",
+      "launchPath": "Fatal Fury - Mark of the Wolves v0.800 (2001)(Agetec)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 400941166,
+      "fileCount": 1,
+      "contentSha256": "cc8f95bcd294f326d2af8cb47f484308c65e1031865f7f26e9cc82e86fcb651f"
+    },
+    {
       "itemId": "station_33d2a2b97bba906d590d3bc93eca89b6",
       "platform": "snes",
       "artifactSha256": "05152bcf9bf086e7bcdbfa7dd8edfe2085f1339c4d7e193e0071c49a10471ef4",
@@ -13644,6 +14301,15 @@
       "expandedSizeBytes": 72791,
       "fileCount": 2,
       "contentSha256": "c6aa63445b9390711483f20321ef5b8615b95943d79d2f8f9369d4ba61e15c58"
+    },
+    {
+      "itemId": "station_33d706b26f2fca7ed46a303365fba64e",
+      "platform": "dreamcast",
+      "artifactSha256": "bb4ec1f073d458001893eb617e29a40fe482ac4c2551806bd363d3adcb1b9f9a",
+      "launchPath": "Next Tetris, The - On-line Edition v1.100 (2000)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 281596585,
+      "fileCount": 1,
+      "contentSha256": "bb4ec1f073d458001893eb617e29a40fe482ac4c2551806bd363d3adcb1b9f9a"
     },
     {
       "itemId": "station_33f2ddf4d3efeb3c27b367c0f371d506",
@@ -13835,6 +14501,15 @@
       "contentSha256": "73ce610efa4d83f550505555ef009d545d7e8af042c45a149e3f5a7c49e4acb0"
     },
     {
+      "itemId": "station_366e8048e48996eb8cafe8af72e1da33",
+      "platform": "dreamcast",
+      "artifactSha256": "30ab3df6907a147d059ed28c93b75cff51a755d1c87545f24ce6c01443271842",
+      "launchPath": "Project Justice v1.001 (2001)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 859887937,
+      "fileCount": 1,
+      "contentSha256": "30ab3df6907a147d059ed28c93b75cff51a755d1c87545f24ce6c01443271842"
+    },
+    {
       "itemId": "station_3679af705ac65b4dd44aff1e149b1705",
       "platform": "fbneo",
       "artifactSha256": "d6b5517938aad68d5044825ee7fc9045f03371fe0b6d0998fc5b6855e8041818",
@@ -13952,6 +14627,15 @@
       "contentSha256": "56260ad82c684b56f061075e900426889c08129839b9e25cce3715b95d4c048d"
     },
     {
+      "itemId": "station_37cd106cf1ef78a09b3055aeaed1a9fe",
+      "platform": "dreamcast",
+      "artifactSha256": "5fb869be2bbc957fae8b76a299ecf0394ccd2943b7608d4eeb15d540ab5fc8d6",
+      "launchPath": "Virtua Athlete 2000 v1.002 (2000)(Agetec)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 50527674,
+      "fileCount": 1,
+      "contentSha256": "5fb869be2bbc957fae8b76a299ecf0394ccd2943b7608d4eeb15d540ab5fc8d6"
+    },
+    {
       "itemId": "station_37d4e53ec68360d075bdc00e7b996667",
       "platform": "cps1",
       "artifactSha256": "eade67051370f0142dab5035751ebf9daf74a28880e3f4ecf72df6767d0dbb9b",
@@ -13959,6 +14643,15 @@
       "expandedSizeBytes": 3943475,
       "fileCount": 1,
       "contentSha256": "720dea90e0442c30fae05659ab63727da443d33308aee4e4499c63bb17e1adb0"
+    },
+    {
+      "itemId": "station_380d6a7613fe5e513c5a3d6a1d25fba6",
+      "platform": "dreamcast",
+      "artifactSha256": "21fc0a44247979dcfaa74ab004e895a93b783ab9f9eee04dd107c7aad7e27e6d",
+      "launchPath": "Charge 'n Blast v1.000 (2000)(Infogrames)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 58895174,
+      "fileCount": 1,
+      "contentSha256": "21fc0a44247979dcfaa74ab004e895a93b783ab9f9eee04dd107c7aad7e27e6d"
     },
     {
       "itemId": "station_3812e33f3cb2f477d401f98f08361504",
@@ -14004,6 +14697,15 @@
       "expandedSizeBytes": 16777216,
       "fileCount": 1,
       "contentSha256": "49230384cbea9d952d1be80d7908fda97b20f6dbded5330a298b39127e865dcb"
+    },
+    {
+      "itemId": "station_386e1fcc4580721e8ee2ccb2442821e8",
+      "platform": "dreamcast",
+      "artifactSha256": "afd22ff328842d0a5127025b2b0c06b2ca3f6ad61b018c4b921be37baf9380f5",
+      "launchPath": "Test Drive V-Rally v1.001 (2000)(Infogrames)(NTSC)(US)(M3)[!].chd",
+      "expandedSizeBytes": 680349226,
+      "fileCount": 1,
+      "contentSha256": "afd22ff328842d0a5127025b2b0c06b2ca3f6ad61b018c4b921be37baf9380f5"
     },
     {
       "itemId": "station_387f65f9e16a1683b14e0a7455216567",
@@ -14141,6 +14843,15 @@
       "contentSha256": "17bf8af2a6ebfcdc53bf45031a81091bf51bf4698dd40f991a5ba9e3e7822b91"
     },
     {
+      "itemId": "station_39b36a5534e2407b3ce5311c617db9dc",
+      "platform": "dreamcast",
+      "artifactSha256": "894b689e6486d52cda3a928f4d9b52491b14e8fef6a7b1d2e17d7242ebaeec1b",
+      "launchPath": "Championship Surfer v1.002 (2000)(Mattel)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 307206208,
+      "fileCount": 1,
+      "contentSha256": "894b689e6486d52cda3a928f4d9b52491b14e8fef6a7b1d2e17d7242ebaeec1b"
+    },
+    {
       "itemId": "station_39e95a4f9fbf8261c6ea16c6caa55372",
       "platform": "megadrive",
       "artifactSha256": "a785b7c39b2337fe4c22b1a2ab8fdeaf9ca53f034998ecd1b1b4bed59fda7252",
@@ -14166,6 +14877,15 @@
       "expandedSizeBytes": 11146948,
       "fileCount": 2,
       "contentSha256": "d3cd0e75b00303ed3699923c3b838c517a171e71801773a96cae115f702997ed"
+    },
+    {
+      "itemId": "station_3a48a9e3bfeaea1f38d1c7e779016ff3",
+      "platform": "dreamcast",
+      "artifactSha256": "9c07e5412e66bd2d30bf3fcf93b4a1704f658f86097ded703a7ce890a9ddb528",
+      "launchPath": "Star Wars - Demolition v1.001 (2000)(Lucas Arts)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 553674845,
+      "fileCount": 1,
+      "contentSha256": "9c07e5412e66bd2d30bf3fcf93b4a1704f658f86097ded703a7ce890a9ddb528"
     },
     {
       "itemId": "station_3a63457cee005cbaa2f6e36d8e7dd949",
@@ -14249,6 +14969,15 @@
       "contentSha256": "3bbd0399213a9b8dec30e266f4b3bd7ea31ef22e2f555e388e8446a6ba977aaa"
     },
     {
+      "itemId": "station_3af20913f84c1ad9633675e8ff367db4",
+      "platform": "dreamcast",
+      "artifactSha256": "650ba7a6abdc9f89071dfd9abe5972f86a6eb5aac61758217246b60f3bb7bb0d",
+      "launchPath": "GigaWing v1.000 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 247166152,
+      "fileCount": 1,
+      "contentSha256": "650ba7a6abdc9f89071dfd9abe5972f86a6eb5aac61758217246b60f3bb7bb0d"
+    },
+    {
       "itemId": "station_3b0e1fbfcdd3377a33d5d1968f0eedd3",
       "platform": "snes",
       "artifactSha256": "3953097477cf8ec87589d3830586e98eb799a1383d40f5161f203a7561fcb939",
@@ -14265,6 +14994,15 @@
       "expandedSizeBytes": 16777216,
       "fileCount": 1,
       "contentSha256": "47eb21b087b6498ddfe67a2ed8601c8cd3680c96d5671225545c18ad71288c54"
+    },
+    {
+      "itemId": "station_3b23851db172d8be9ffaf91cc12c118c",
+      "platform": "dreamcast",
+      "artifactSha256": "8196ce63a330c85c0e1c4a2b2e45c231cffb49ec8f0f689f9813f28aba7a2d74",
+      "launchPath": "Evil Dead - Hail to the King v1.002 (2000)(THQ)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 887882095,
+      "fileCount": 1,
+      "contentSha256": "8196ce63a330c85c0e1c4a2b2e45c231cffb49ec8f0f689f9813f28aba7a2d74"
     },
     {
       "itemId": "station_3b35b418b40fa904586b4ede9b3b466b",
@@ -14285,13 +15023,23 @@
       "contentSha256": "8083307f3f4b7df9e5bf53d5f25877c2e548f0f677540d4ee62d60ccca3098f8"
     },
     {
+      "itemId": "station_3b454a248a1a50a1223c89c35431faca",
+      "platform": "dreamcast",
+      "artifactSha256": "3874e8f1b94e5fa05ddc81a062d198e036868193d73e48c9180a1c520d012adc",
+      "launchPath": "Bust-A-Move 4 v1.001 (2000)(Acclaim)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 207426272,
+      "fileCount": 1,
+      "contentSha256": "3874e8f1b94e5fa05ddc81a062d198e036868193d73e48c9180a1c520d012adc"
+    },
+    {
       "itemId": "station_3b50bae45f3433371386de5687913fb8",
       "platform": "psx",
       "artifactSha256": "c3cf3f201cd7b217903f0266d4f77d8cb66cdd280fd61ff6605e25bc5d620389",
       "launchPath": "Jackie Chan Stuntmaster BR.cue",
       "expandedSizeBytes": 627972332,
       "fileCount": 2,
-      "contentSha256": "07d677eb6c202fb556d989e8f46a90ff62e7df8e531e353b165c71fa524b9e90"
+      "contentSha256": "3d2344798240ad5a5d9a47725920427cef70bcf68cb948c8fd51c3a667595834",
+      "contentIdentityScheme": "cue-set-v1"
     },
     {
       "itemId": "station_3bb7eb68bcdf275d92c0db482831b753",
@@ -14366,6 +15114,15 @@
       "contentSha256": "1e187e56c15e17f03e4a4543482e272b6f5ae60a58aebed395fa3c332f5d064b"
     },
     {
+      "itemId": "station_3c9c45df9a48170befa8a0d719e6ce2e",
+      "platform": "gamecube",
+      "artifactSha256": "c5b45e1231d554e423a7f842692c31e8e2952d142fbd3bd89f11d2f1ccb943cd",
+      "launchPath": "Sonic_Adventure_2.iso",
+      "expandedSizeBytes": 1223896044,
+      "fileCount": 1,
+      "contentSha256": "c5b45e1231d554e423a7f842692c31e8e2952d142fbd3bd89f11d2f1ccb943cd"
+    },
+    {
       "itemId": "station_3ca622e23373960e309d0790939d656d",
       "platform": "fbneo",
       "artifactSha256": "889c7e8cfc0c3c9f93c2e0c3d3ec1fad9ecd4b54bf07335c1c902d22fb8016d0",
@@ -14375,6 +15132,15 @@
       "contentSha256": "dc126d13a79859e03f3bedf33594e8dc555c9fcca5fab0864e6107a5d81423bf"
     },
     {
+      "itemId": "station_3cb78e3be8fe2c8f9f7eaf9045547e41",
+      "platform": "dreamcast",
+      "artifactSha256": "cf6b93400872df425d9b5b034598c7120786296654ec3bea5a15437e7ed3db3c",
+      "launchPath": "Tom Clancy's Rainbow Six v1.004 (2000)(Majesco - Red Storm)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 357670044,
+      "fileCount": 1,
+      "contentSha256": "cf6b93400872df425d9b5b034598c7120786296654ec3bea5a15437e7ed3db3c"
+    },
+    {
       "itemId": "station_3cbc795f6361f8f23b2a479e886f9b41",
       "platform": "snes",
       "artifactSha256": "8113c2cedafc8fd5a56c8638ae340fb275f263ff5c5e18d04dc6c3ebc5cfffee",
@@ -14382,6 +15148,15 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "8113c2cedafc8fd5a56c8638ae340fb275f263ff5c5e18d04dc6c3ebc5cfffee"
+    },
+    {
+      "itemId": "station_3ce57356d2c3c7f6738bddcbfb632c36",
+      "platform": "dreamcast",
+      "artifactSha256": "35de50d5d79ec575237dde86c307c45e41ed6a391eb3357425b2096ed7662f4b",
+      "launchPath": "Looney Tunes Space Race v1.000 (2000)(Infogrames)(NTSC)(US)(M3)[!].chd",
+      "expandedSizeBytes": 478543919,
+      "fileCount": 1,
+      "contentSha256": "35de50d5d79ec575237dde86c307c45e41ed6a391eb3357425b2096ed7662f4b"
     },
     {
       "itemId": "station_3cf364ffb9346c5d3b9168afd86033dd",
@@ -14447,6 +15222,15 @@
       "contentSha256": "3f56dda75b8f70335e9ff150e173a91fb4204e23abd0717dace185c74676fb29"
     },
     {
+      "itemId": "station_3d981c463626068065a1d74812288d25",
+      "platform": "dreamcast",
+      "artifactSha256": "4cb1385839a035441a1db96e7901dda8d68f55b932dd8aeec63fd211e12836ee",
+      "launchPath": "Tennis 2K2 v1.003 (2001)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 185866047,
+      "fileCount": 1,
+      "contentSha256": "4cb1385839a035441a1db96e7901dda8d68f55b932dd8aeec63fd211e12836ee"
+    },
+    {
       "itemId": "station_3dc9e087a5bc7a0c186a9e73d3b15db9",
       "platform": "neogeo",
       "artifactSha256": "b89e7c138bd29d0ac2fd95c5cecf2897eb227be841517c66c39de171baac1f25",
@@ -14481,6 +15265,15 @@
       "expandedSizeBytes": 3304652,
       "fileCount": 2,
       "contentSha256": "21d11f9c55c706cd05a379840904249e16ff045ed966cece96ded37bdd26c8b5"
+    },
+    {
+      "itemId": "station_3de779fc30ecef8cd9ba9983bc5c442a",
+      "platform": "dreamcast",
+      "artifactSha256": "1834ed3b1e8948ec44df062a3bdbd4e708e576ea0e5ba22c5d16693e47b5cc9f",
+      "launchPath": "Phantasy Star Online Ver. 2 v1.004 (2001)(Sega)(NTSC)(US)(M5)[!][2S 51193][req. serial].chd",
+      "expandedSizeBytes": 638109102,
+      "fileCount": 1,
+      "contentSha256": "1834ed3b1e8948ec44df062a3bdbd4e708e576ea0e5ba22c5d16693e47b5cc9f"
     },
     {
       "itemId": "station_3e184bab69d122fd91315a7194dc4d88",
@@ -14562,6 +15355,15 @@
       "expandedSizeBytes": 524288,
       "fileCount": 1,
       "contentSha256": "9abb426bac62e03e4437f5a9a8455c3000042f339125cc60ae29382ae89d8493"
+    },
+    {
+      "itemId": "station_3f0267d082d3d99218768e6f4088960b",
+      "platform": "dreamcast",
+      "artifactSha256": "7fc8fae68d69f98a0285f05b77369946e5926f9afdb805d67f539beaa01642d9",
+      "launchPath": "Bomberman Online v1.004 (2001)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 518150362,
+      "fileCount": 1,
+      "contentSha256": "7fc8fae68d69f98a0285f05b77369946e5926f9afdb805d67f539beaa01642d9"
     },
     {
       "itemId": "station_3f28d41c9e666e0080106eda728e89da",
@@ -14735,6 +15537,15 @@
       "contentSha256": "0ccdb5abb5ba7625ed52b50e84767567017b5939b0c8646fcfa501b0768d21ba"
     },
     {
+      "itemId": "station_406c20221eef87efa8e00165e0885283",
+      "platform": "dreamcast",
+      "artifactSha256": "741b94bfa518abf6e28219b5d8974e019c6e402ae7c9db5c342b492a0e4ed6a2",
+      "launchPath": "Illbleed v1.002 (2001)(AIA)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 294358606,
+      "fileCount": 1,
+      "contentSha256": "741b94bfa518abf6e28219b5d8974e019c6e402ae7c9db5c342b492a0e4ed6a2"
+    },
+    {
       "itemId": "station_409478b4a789266ae9ec4b0c5c7119bc",
       "platform": "fbneo",
       "artifactSha256": "4f4cdc55a6ca7c39c8a22c214e9b6cf3473454ce57a16beb621c348174d12a99",
@@ -14751,6 +15562,15 @@
       "expandedSizeBytes": 629890012,
       "fileCount": 1,
       "contentSha256": "7291f840a7c42bb09cd759f647b236ba635fbd59bba8ef87c31d7f01dc875331"
+    },
+    {
+      "itemId": "station_40c36e432a90826b84bc401acd61b81f",
+      "platform": "gamecube",
+      "artifactSha256": "089df26c394fa215cdf91a50f6d7119c5ea9d234ccef0b9f790126d3f8eacbf8",
+      "launchPath": "Luigi's Mansion (Europe) (En,Fr,De,Es,It).iso",
+      "expandedSizeBytes": 1459978240,
+      "fileCount": 1,
+      "contentSha256": "089df26c394fa215cdf91a50f6d7119c5ea9d234ccef0b9f790126d3f8eacbf8"
     },
     {
       "itemId": "station_40e8b490cf4302554029354324b846d2",
@@ -14861,6 +15681,15 @@
       "contentSha256": "a656f55aff88d66d00d01c037368c7be7d8f753f042748c5a82736c76dcca7fc"
     },
     {
+      "itemId": "station_420209cf6ebbf7c01d84d7421d9f337b",
+      "platform": "dreamcast",
+      "artifactSha256": "474799ba366f74a56a45be20477f2300d4d89ce126b12cb1023977deac63a81b",
+      "launchPath": "Surf Rocket Racers v1.000 (2000)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 176134693,
+      "fileCount": 1,
+      "contentSha256": "474799ba366f74a56a45be20477f2300d4d89ce126b12cb1023977deac63a81b"
+    },
+    {
       "itemId": "station_4219625cd15603f8726b63cfb0a122af",
       "platform": "snes",
       "artifactSha256": "2c6119fbe40d23576adde568d60ffae793bbf6b512f8fea8dcd0b1cd2623ef02",
@@ -14886,6 +15715,15 @@
       "expandedSizeBytes": 85794602,
       "fileCount": 2,
       "contentSha256": "3bf6039c9ddaea4928432d94ae2e99a95c198f92b0e67f0c4f64e508867e57e8"
+    },
+    {
+      "itemId": "station_4286f314b41131ebb53e4241d98a8834",
+      "platform": "dreamcast",
+      "artifactSha256": "604b26fda4ebc9094d6626e02d7940a9b4e6c88ef4eeb8f02283202c21230339",
+      "launchPath": "Midway's Greatest Arcade Hits Volume 1 v1.001 (2000)(Midway)(NTSC)(US)[!][compilation].chd",
+      "expandedSizeBytes": 29209576,
+      "fileCount": 1,
+      "contentSha256": "604b26fda4ebc9094d6626e02d7940a9b4e6c88ef4eeb8f02283202c21230339"
     },
     {
       "itemId": "station_42986c11db3bcdaa4e506088cea1282d",
@@ -14967,6 +15805,15 @@
       "expandedSizeBytes": 11895600,
       "fileCount": 2,
       "contentSha256": "359337a89e7ed65b63424dd3e90281db8b73db7add3d24278ec9918de449435e"
+    },
+    {
+      "itemId": "station_436f5b67346b6f4d6be663ac2e8e3d46",
+      "platform": "dreamcast",
+      "artifactSha256": "e837b6f90a46924f1e1ebd081c032a599e66d7a70e21a39567bb31d502c41b6f",
+      "launchPath": "Power Stone v1.001 (1999)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 102666238,
+      "fileCount": 1,
+      "contentSha256": "e837b6f90a46924f1e1ebd081c032a599e66d7a70e21a39567bb31d502c41b6f"
     },
     {
       "itemId": "station_437907ef634a650ffda0a440d1042a3c",
@@ -15057,6 +15904,15 @@
       "expandedSizeBytes": 524288,
       "fileCount": 1,
       "contentSha256": "7dcdb8a9d8b72ea1250dbd15cd4e4279e07821be9df14d53298298851c19bc80"
+    },
+    {
+      "itemId": "station_452aa79c93d3770e753cb1aea22ecf25",
+      "platform": "dreamcast",
+      "artifactSha256": "a771d23631c9f723657bc0abc80961a7567c45d8321965890c5f7878616fd5ff",
+      "launchPath": "Expendable v1.000 (1999)(Infogrames)(NTSC)(US)(M5)[!].chd",
+      "expandedSizeBytes": 553225594,
+      "fileCount": 1,
+      "contentSha256": "a771d23631c9f723657bc0abc80961a7567c45d8321965890c5f7878616fd5ff"
     },
     {
       "itemId": "station_4537dd212ee9557903e4d0c0901d2471",
@@ -15309,6 +16165,15 @@
       "expandedSizeBytes": 16777216,
       "fileCount": 1,
       "contentSha256": "e31c33a5eb302b4405d31f2f79cfae1a7f4b76f80a2597e7fb1c2935c4092351"
+    },
+    {
+      "itemId": "station_474055661521b99e82e6d0b6aee72435",
+      "platform": "wii",
+      "artifactSha256": "1c89187438103e053c0c4b74b3b3972d592251565722314646062860acee3bfe",
+      "launchPath": "Super Mario Galaxy (USA) (En,Fr,Es).rvz",
+      "expandedSizeBytes": 3425535460,
+      "fileCount": 1,
+      "contentSha256": "1c89187438103e053c0c4b74b3b3972d592251565722314646062860acee3bfe"
     },
     {
       "itemId": "station_474705557672aa7b98919fc4e48fb8e3",
@@ -15599,6 +16464,15 @@
       "contentSha256": "0f4e8fb2591bb15994ace853a1fd093007a378d6d7e8b11527b7901d95081b6b"
     },
     {
+      "itemId": "station_4a06aa3da1b47f920155eec2e362fff9",
+      "platform": "dreamcast",
+      "artifactSha256": "6d424455ca2a4f7e8ce703ba3cb0378d64dc22dba2629d0ed8d8906c7686b551",
+      "launchPath": "Striker Pro 2000 v1.002 (2000)(Infogrames)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 330971228,
+      "fileCount": 1,
+      "contentSha256": "6d424455ca2a4f7e8ce703ba3cb0378d64dc22dba2629d0ed8d8906c7686b551"
+    },
+    {
       "itemId": "station_4a24f6337682c4e7659dae54e13172bc",
       "platform": "megadrive",
       "artifactSha256": "6106f5a0959d360554dd67a8a15df9fd813709fba7771712f9bbd6875c9e9344",
@@ -15651,6 +16525,15 @@
       "expandedSizeBytes": 13686638,
       "fileCount": 2,
       "contentSha256": "4f2446b8c98c5b7082884d6940bdf193ef342f00329abf7642e783d30bf940ba"
+    },
+    {
+      "itemId": "station_4a9cb93b2383a6f64dec6a5bf06cace6",
+      "platform": "dreamcast",
+      "artifactSha256": "d95e34f8f7ba51ff2bfcc2f13ce103fbe40fd40f9afe2a251dd482dad7d9bd27",
+      "launchPath": "WWF Attitude v1.010 (1999)(Acclaim)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 446524506,
+      "fileCount": 1,
+      "contentSha256": "d95e34f8f7ba51ff2bfcc2f13ce103fbe40fd40f9afe2a251dd482dad7d9bd27"
     },
     {
       "itemId": "station_4aa556a36b41a7f9ac01e733f61ac811",
@@ -15804,6 +16687,15 @@
       "expandedSizeBytes": 5653086,
       "fileCount": 2,
       "contentSha256": "d93b24e28d2bc3cb3b270570f83b20b973934e3b0f5f171ed8bc411463364a81"
+    },
+    {
+      "itemId": "station_4bea7ede5ff2acfe90ff001406e7a587",
+      "platform": "dreamcast",
+      "artifactSha256": "7192a05405c612f2207a59c12d2627ddc1b9f57612b2f8a9e054e8644f5d298b",
+      "launchPath": "Outtrigger v1.003 (2001)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 392879972,
+      "fileCount": 1,
+      "contentSha256": "7192a05405c612f2207a59c12d2627ddc1b9f57612b2f8a9e054e8644f5d298b"
     },
     {
       "itemId": "station_4c0258720d198b1b293254077b9fed80",
@@ -15995,6 +16887,15 @@
       "contentSha256": "1735f790ebcfa1bed2430aecde3abaf24c88ff99aa0186736f8f36b674bc9350"
     },
     {
+      "itemId": "station_4e2397f60df5d4a685a9e2accba450bd",
+      "platform": "dreamcast",
+      "artifactSha256": "145d03ab272e04942d97e9cd24b51b7b7d1dcdc1c607fd4d5d4d3ed9e363ace7",
+      "launchPath": "World Series Baseball 2K1 v1.000 (2000)(Sega)(NTSC)(US)[!][5S 51055].chd",
+      "expandedSizeBytes": 259366142,
+      "fileCount": 1,
+      "contentSha256": "145d03ab272e04942d97e9cd24b51b7b7d1dcdc1c607fd4d5d4d3ed9e363ace7"
+    },
+    {
       "itemId": "station_4e4ab219791cd6ad35bb51d12b21ec9c",
       "platform": "snesbr",
       "artifactSha256": "06422a4fb5073690b5203688f4141dcf09cfeb4dac647d1e9a2ba843c6e15168",
@@ -16121,6 +17022,15 @@
       "contentSha256": "1ff6dab2aba6cd55fb36f3927614dcaee2689cb32d3a73c7f0fb9f541fc42453"
     },
     {
+      "itemId": "station_4f9c064f3b8d84de14442a58f716ab7b",
+      "platform": "dreamcast",
+      "artifactSha256": "18154612ae63c28bb1ae38213565e083008a9800d3da265ff2b2eef4618f8d73",
+      "launchPath": "TimeStalkers v1.002 (2000)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 171394953,
+      "fileCount": 1,
+      "contentSha256": "18154612ae63c28bb1ae38213565e083008a9800d3da265ff2b2eef4618f8d73"
+    },
+    {
       "itemId": "station_4fb3bd07035dcd4746412a0707a10fc2",
       "platform": "snesbr",
       "artifactSha256": "3f1447d14dd8989df694138c8ce449ccccebfe8bba731248533101b370de8fbe",
@@ -16182,6 +17092,15 @@
       "expandedSizeBytes": 915274,
       "fileCount": 2,
       "contentSha256": "c506f8e3ffe260d089444f24e96405600692fcedf817ad895a7096862b80f349"
+    },
+    {
+      "itemId": "station_500db56d5c282522f3b2b94cda7979a0",
+      "platform": "dreamcast",
+      "artifactSha256": "a4ae2aca6293cce3eff24eaa8df26c235e5709721fb90f8a31fc0ca4968de227",
+      "launchPath": "NBA 2K1 v1.008 (2000)(Sega)(NTSC)(US)[!][1S 51063].chd",
+      "expandedSizeBytes": 503914119,
+      "fileCount": 1,
+      "contentSha256": "a4ae2aca6293cce3eff24eaa8df26c235e5709721fb90f8a31fc0ca4968de227"
     },
     {
       "itemId": "station_50148fded1d37c534ce09c950f180ba9",
@@ -16263,6 +17182,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "1121df3f05dd9dbb749f6b785eb9b3eb69968004f9d6ceffa6f84757af2f3702"
+    },
+    {
+      "itemId": "station_507f12c624c9507f41e1b772413ce21f",
+      "platform": "dreamcast",
+      "artifactSha256": "f470fc848f551a8609350ecd4c45714aab65221b243a24a0337ac995fd1af492",
+      "launchPath": "NFL 2K v1.007 (1999)(Sega)(NTSC)(US)[!][9S 51003].chd",
+      "expandedSizeBytes": 635820474,
+      "fileCount": 1,
+      "contentSha256": "f470fc848f551a8609350ecd4c45714aab65221b243a24a0337ac995fd1af492"
     },
     {
       "itemId": "station_508865674c25e2e41e04dcc3e0029dc7",
@@ -16409,6 +17337,15 @@
       "contentSha256": "4c1a6b12676f984098a505ea10c9157fece84f2c9f2ebeea4356cfa2d95da1fd"
     },
     {
+      "itemId": "station_5210369132693e34f07b0871b9700e1f",
+      "platform": "dreamcast",
+      "artifactSha256": "c312ca42086d26d2dac326b9695b0e31ef21912777857e19e42b67d44aeab814",
+      "launchPath": "Crazy Taxi 2 v1.004 (2001)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 102402268,
+      "fileCount": 1,
+      "contentSha256": "c312ca42086d26d2dac326b9695b0e31ef21912777857e19e42b67d44aeab814"
+    },
+    {
       "itemId": "station_521bef66f4db3a0ec91ae6338e958280",
       "platform": "snes",
       "artifactSha256": "340293c06536d7b6981ad7c681e404f4390ff6c62340f844a4558877c1b82af0",
@@ -16424,7 +17361,26 @@
       "launchPath": "World Soccer Winning Eleven 2002 (Japan).cue",
       "expandedSizeBytes": 474785316,
       "fileCount": 10,
-      "contentSha256": "68909c90d3a69ac164214060a3ee638673fd30ca6accc43f3f9ee919e46996e3"
+      "contentSha256": "cf391719429dddf498cd718bedc894631ab5122a3e5fe712954cf14ebbc5eb26",
+      "contentIdentityScheme": "cue-set-v1"
+    },
+    {
+      "itemId": "station_5240afc71444744c15007ae9f6b9d7f9",
+      "platform": "dreamcast",
+      "artifactSha256": "c2e9e6f22dbadce07eac9ff219bcd7e1e7911e19f906c265fd6d806cbb5b0984",
+      "launchPath": "Death Crimson OX v1.001 (2001)(Sammy)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 127719005,
+      "fileCount": 1,
+      "contentSha256": "c2e9e6f22dbadce07eac9ff219bcd7e1e7911e19f906c265fd6d806cbb5b0984"
+    },
+    {
+      "itemId": "station_524eb1f3f3254eb2cb3a143c7616d161",
+      "platform": "dreamcast",
+      "artifactSha256": "bbb75e18459b3d94376f926cad6f443c268adcb37baf777f1c2a09d6fd6b3fed",
+      "launchPath": "Virtua Fighter 3tb v1.002 (1999)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 487903070,
+      "fileCount": 1,
+      "contentSha256": "bbb75e18459b3d94376f926cad6f443c268adcb37baf777f1c2a09d6fd6b3fed"
     },
     {
       "itemId": "station_52934997d48f7f43e364528d602d412d",
@@ -16688,6 +17644,15 @@
       "contentSha256": "ba54d715abf100b94fee801351986fa818e4309730cefbacf9b4fad36e284c1c"
     },
     {
+      "itemId": "station_5569f72b9ef4275d2a11d903f421c7ff",
+      "platform": "dreamcast",
+      "artifactSha256": "3033d73505b58fa02395c1464dfe92e8178021f6dd4bcc299ca5db95cbf674ba",
+      "launchPath": "Namco Museum v1.010 (2000)(Namco)(NTSC)(US)[!][compilation].chd",
+      "expandedSizeBytes": 14169944,
+      "fileCount": 1,
+      "contentSha256": "3033d73505b58fa02395c1464dfe92e8178021f6dd4bcc299ca5db95cbf674ba"
+    },
+    {
       "itemId": "station_55722bc888398481780c96b673e901e9",
       "platform": "snesbr",
       "artifactSha256": "5dabd0d31f33bcb2102ebd0fc8873a8e5b6815d28a5dc3d24a6f32bbcf0b38cc",
@@ -16722,6 +17687,15 @@
       "expandedSizeBytes": 4879532,
       "fileCount": 2,
       "contentSha256": "7850f20b58e786664ead8a27fe1e5e934bfe2373952c3af36e55f12ed6f96f75"
+    },
+    {
+      "itemId": "station_55c9f383ef8b075cb213dd93b6a7b4ca",
+      "platform": "dreamcast",
+      "artifactSha256": "9ec355ebe7383739aae13413639fdb3eeb65262ff6e0dcb631bcec34ee9dff9e",
+      "launchPath": "Maximum Pool v1.004 (2000)(Sierra)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 337354075,
+      "fileCount": 1,
+      "contentSha256": "9ec355ebe7383739aae13413639fdb3eeb65262ff6e0dcb631bcec34ee9dff9e"
     },
     {
       "itemId": "station_55d9ec7f0e890b540d716cdc4e502500",
@@ -16904,6 +17878,15 @@
       "contentSha256": "5ce3134d9daa56571f5b20d305059182772b73d2c7061b4a8a1d7d43824d8431"
     },
     {
+      "itemId": "station_574228711862efe60f57e6e577c3820f",
+      "platform": "dreamcast",
+      "artifactSha256": "bee6e0cd89ae75782d8f1e609e80f274c9519ef507c8de6d342f5468541c788e",
+      "launchPath": "Spec Ops II - Omega Squad v1.008 (2000)(Ripcord)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 326640495,
+      "fileCount": 1,
+      "contentSha256": "bee6e0cd89ae75782d8f1e609e80f274c9519ef507c8de6d342f5468541c788e"
+    },
+    {
       "itemId": "station_5757a31df681d91274311e8b392e96df",
       "platform": "fbneo",
       "artifactSha256": "bc986b505d6d9e978f547d9b2c98c7eff8be4c137f06a9b182f55fe3da1d7b57",
@@ -16920,6 +17903,15 @@
       "expandedSizeBytes": 57952869,
       "fileCount": 2,
       "contentSha256": "c551fa6c6cb244887eae83b551be1f3f3f1ad09d55388baddf2dd82a56a1fb31"
+    },
+    {
+      "itemId": "station_576004bf0c656b842b625e21e8796793",
+      "platform": "dreamcast",
+      "artifactSha256": "138876a31faddec24f1383879bf48bcbfa39d8f51cb0d06bd70719980cb3781e",
+      "launchPath": "Sega Rally 2 v1.003 (1999)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 595750613,
+      "fileCount": 1,
+      "contentSha256": "138876a31faddec24f1383879bf48bcbfa39d8f51cb0d06bd70719980cb3781e"
     },
     {
       "itemId": "station_579adfbbca8f9ebe47f193232ffd589f",
@@ -16985,6 +17977,15 @@
       "contentSha256": "e5656bfe71df9a9b2d01f792dcb1cf12987d40fcfc0883725141202c375fc988"
     },
     {
+      "itemId": "station_58580280ab57920f39f1474db7380390",
+      "platform": "dreamcast",
+      "artifactSha256": "e84c6b40128e95b90324e34afa7389540fcc4dfcb461c388d8546569672e27a2",
+      "launchPath": "Sega Marine Fishing v1.001 (2000)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 96672693,
+      "fileCount": 1,
+      "contentSha256": "e84c6b40128e95b90324e34afa7389540fcc4dfcb461c388d8546569672e27a2"
+    },
+    {
       "itemId": "station_5871fc96e00e0553c4025829926928ab",
       "platform": "fbneo",
       "artifactSha256": "8c0871dc153149b9ab550e901218a45876dbab7462ec52c7ada5f5dced49b6c7",
@@ -17028,6 +18029,15 @@
       "expandedSizeBytes": 1234771,
       "fileCount": 2,
       "contentSha256": "52b71f5b254f551494dc78422ed40271e920f04fed842954f15c39d0c20961a4"
+    },
+    {
+      "itemId": "station_5903f2e5c538beb82117c37ea50fcb33",
+      "platform": "dreamcast",
+      "artifactSha256": "7208250a9097337bcc7935f3f3e8edf70b1a9eddf03f49f3c3a26c6cd1e403b6",
+      "launchPath": "Skies of Arcadia v1.002 (2000)(Sega)(NTSC)(US)(Disc 2 of 2)[!].chd",
+      "expandedSizeBytes": 542072206,
+      "fileCount": 1,
+      "contentSha256": "7208250a9097337bcc7935f3f3e8edf70b1a9eddf03f49f3c3a26c6cd1e403b6"
     },
     {
       "itemId": "station_5916d759d42bf2077298252b65bd395a",
@@ -17100,6 +18110,15 @@
       "expandedSizeBytes": 194887849,
       "fileCount": 1,
       "contentSha256": "3264e4ed344aaf2b14c9c6c08a7fc96ed5ee11eda37f5c1f9c0adc30706aceed"
+    },
+    {
+      "itemId": "station_59a2e7e306dd4c9b1c0833b6c9afa5d4",
+      "platform": "dreamcast",
+      "artifactSha256": "b8bf5073bee72b745f0bdef635bc942061fba3c204b92acb90b686826e4ec37b",
+      "launchPath": "Toy Commander v1.022 (1999)(Sega)(NTSC)(US)(M4)[!][11S 51020].chd",
+      "expandedSizeBytes": 563146172,
+      "fileCount": 1,
+      "contentSha256": "b8bf5073bee72b745f0bdef635bc942061fba3c204b92acb90b686826e4ec37b"
     },
     {
       "itemId": "station_59a8fa8311d9ae288aeb44237de2d66e",
@@ -17318,6 +18337,15 @@
       "contentSha256": "1bfa46966b5ce777ba75ca89adeee971d46bd85977862301ee9bba42e7af0cdd"
     },
     {
+      "itemId": "station_5cb2b9feeab6623cc3fb637464ca59e0",
+      "platform": "dreamcast",
+      "artifactSha256": "2263889bf9c4539f9f5bcc00c6ad16d8613ef6aa040d6b6e2be8499e66c07b6b",
+      "launchPath": "Industrial Spy - Operation Espionage v1.001 (2000)(UFO)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 82608996,
+      "fileCount": 1,
+      "contentSha256": "2263889bf9c4539f9f5bcc00c6ad16d8613ef6aa040d6b6e2be8499e66c07b6b"
+    },
+    {
       "itemId": "station_5cb9fb9ff4243f21dfaa9f3f294efb44",
       "platform": "megadrive",
       "artifactSha256": "b0cb45ac876d9b1fc7d1f04ed95e861449c10181778a9d7868325552a4edfc7b",
@@ -17505,6 +18533,15 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "183af7d642b55d52cd594786ec2f031d033cc6c8c1a2a84a834e4ada04301b26"
+    },
+    {
+      "itemId": "station_5ef747e4fd8c83fa197b2b2492c24088",
+      "platform": "gamecube",
+      "artifactSha256": "d38681a0c86b34d267b0c0934a773a26af82d61265208ef21769a89898248330",
+      "launchPath": "Star Fox - Assault.iso",
+      "expandedSizeBytes": 1459978240,
+      "fileCount": 1,
+      "contentSha256": "d38681a0c86b34d267b0c0934a773a26af82d61265208ef21769a89898248330"
     },
     {
       "itemId": "station_5f385b93cf8336066cde2b04a73e5b40",
@@ -17714,6 +18751,24 @@
       "contentSha256": "aa69d4e19c2eb206fe88eba65994c830256c220e5506f59824aefa0a75dd44d5"
     },
     {
+      "itemId": "station_60ef7b56bb6f80cd872b0d0a308ceda3",
+      "platform": "dreamcast",
+      "artifactSha256": "96f65ca3baf63ad707c04fb09de4658b0ed8674b62bf9cb91b4407d4152c9bf6",
+      "launchPath": "Resident Evil - Code Veronica v1.000 (2000)(Capcom)(NTSC)(US)(Disc 2 of 2)[!].chd",
+      "expandedSizeBytes": 642711069,
+      "fileCount": 1,
+      "contentSha256": "96f65ca3baf63ad707c04fb09de4658b0ed8674b62bf9cb91b4407d4152c9bf6"
+    },
+    {
+      "itemId": "station_60f3413c1877e9d61157cfafa07f4f76",
+      "platform": "dreamcast",
+      "artifactSha256": "13a63d7cba3b1d2d615a36487891a9c3132f8ba8d99c5ecc2b6b9c22045e2041",
+      "launchPath": "Spirit of Speed 1937 v1.001 (2000)(LJN)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 226212593,
+      "fileCount": 1,
+      "contentSha256": "13a63d7cba3b1d2d615a36487891a9c3132f8ba8d99c5ecc2b6b9c22045e2041"
+    },
+    {
       "itemId": "station_6161e4442e0384b0b3f33e2697711cca",
       "platform": "cps1",
       "artifactSha256": "86e4df987ce30ce76be426ad2208250fc95bb241e1850b09d0f98fc59ecf6bc7",
@@ -17748,6 +18803,15 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "9048ca33dee7fd4cb20bd9b493404d2b992f2257ec0ec18ac2316b8551c47fb1"
+    },
+    {
+      "itemId": "station_621bec6947fa88fea7d71e07e1ce524a",
+      "platform": "gamecube",
+      "artifactSha256": "ba4def2b26b2aebd3c6e7ae6628767cb64c071034a9c9aa48628b94042ceb91a",
+      "launchPath": "Mario Party 7 (Europe) (En,Fr,De,Es,It).iso",
+      "expandedSizeBytes": 1459978240,
+      "fileCount": 1,
+      "contentSha256": "ba4def2b26b2aebd3c6e7ae6628767cb64c071034a9c9aa48628b94042ceb91a"
     },
     {
       "itemId": "station_621c81f225d44a49694e03c4f18cba2a",
@@ -17804,6 +18868,24 @@
       "contentSha256": "154e078c588516c7fbc4eff04e8f4e5eda1e7613e63ff4a273736c49db08b325"
     },
     {
+      "itemId": "station_62e260cc9aee49b946e59b12b4b0e8b2",
+      "platform": "dreamcast",
+      "artifactSha256": "f92f2c202b670223456f95f7c5ec532590637a942eb2636cd51408bd77994ebb",
+      "launchPath": "NCAA College Football 2K2 - Road to the Rose Bowl v1.003 (2001)(Sega)(NTSC)(US)[!][2S 51176].chd",
+      "expandedSizeBytes": 538209870,
+      "fileCount": 1,
+      "contentSha256": "f92f2c202b670223456f95f7c5ec532590637a942eb2636cd51408bd77994ebb"
+    },
+    {
+      "itemId": "station_62fdebeeaf2ae52cd6a53fe3e4c4caba",
+      "platform": "dreamcast",
+      "artifactSha256": "b44d95c0ffbfdcce7b092c23b8b7ab40b18c2b248f37c1908cabd6424ae1c1ab",
+      "launchPath": "Seventh Cross Evolution v1.000 (1999)(UFO)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 233936090,
+      "fileCount": 1,
+      "contentSha256": "b44d95c0ffbfdcce7b092c23b8b7ab40b18c2b248f37c1908cabd6424ae1c1ab"
+    },
+    {
       "itemId": "station_632f44b64ad6d8cdfffd75ed7af8274a",
       "platform": "snes",
       "artifactSha256": "c5474de3592e2a99aac0e5511516658f9f0b50167c754a018409842ec35bcd45",
@@ -17838,6 +18920,15 @@
       "expandedSizeBytes": 1572864,
       "fileCount": 1,
       "contentSha256": "48a3ac52e2c9128abc2dc60e07817a51898e8a93be0d51d6f541a8635263a089"
+    },
+    {
+      "itemId": "station_638a548059c37d3d2e3259f2afd55e55",
+      "platform": "dreamcast",
+      "artifactSha256": "540ec5222df8f3b229db405355cd7018b0524e94bb0563d5a2f068158cf2bc79",
+      "launchPath": "NFL 2K v1.007 (1999)(Sega)(NTSC)(US)[!][10S 51003].chd",
+      "expandedSizeBytes": 635821239,
+      "fileCount": 1,
+      "contentSha256": "540ec5222df8f3b229db405355cd7018b0524e94bb0563d5a2f068158cf2bc79"
     },
     {
       "itemId": "station_639c4011647bc0cde593afde7a4f9252",
@@ -17910,6 +19001,15 @@
       "expandedSizeBytes": 168158,
       "fileCount": 2,
       "contentSha256": "78ed6b5d0532f723557c593cd52506c1a511ae5ba63db20b6774fce23941ae27"
+    },
+    {
+      "itemId": "station_64b6c739fd188f9636b91cbf2ea9b9f3",
+      "platform": "dreamcast",
+      "artifactSha256": "5831f017d1e0238a3b9304f7ee3d33b152d2790a8dde8e8109a832a4ef66a8dc",
+      "launchPath": "Tomb Raider - The Last Revelation v1.001 (2000)(EIDOS)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 691155025,
+      "fileCount": 1,
+      "contentSha256": "5831f017d1e0238a3b9304f7ee3d33b152d2790a8dde8e8109a832a4ef66a8dc"
     },
     {
       "itemId": "station_64bed45ade74719024414dcf29daec0a",
@@ -18002,6 +19102,15 @@
       "contentSha256": "91f938b4989215b1cd39635797f23b59b9d7b6d36e583f9eb69d022abe537bfc"
     },
     {
+      "itemId": "station_6593056c4d1c71e2241df1d9a70697d6",
+      "platform": "dreamcast",
+      "artifactSha256": "a57f08f9f7f846d247d5d981d610d06d75307ec8b022c46e4226f415af80db40",
+      "launchPath": "Q-bert v1.003 (2000)(Majesco)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 169836466,
+      "fileCount": 1,
+      "contentSha256": "a57f08f9f7f846d247d5d981d610d06d75307ec8b022c46e4226f415af80db40"
+    },
+    {
       "itemId": "station_65b612c3581ea948ee57a9bd0143dac0",
       "platform": "fbneo",
       "artifactSha256": "3217621cd7312d330914fe2284ab47d9f98cfef85081fef5b1b4c1bacd63e4c9",
@@ -18009,6 +19118,15 @@
       "expandedSizeBytes": 13011128,
       "fileCount": 2,
       "contentSha256": "c4d06fed24cde56e5602cc3b545346ceffb83468d53c40f51d1f04def3b6bf25"
+    },
+    {
+      "itemId": "station_65e5a7f87f18300cd8ff10a79195f8cb",
+      "platform": "dreamcast",
+      "artifactSha256": "5b9b4a3d6e47235888e280ac5d547c629bbca35d111222f1f073dfeedb19d71b",
+      "launchPath": "Test Drive Le Mans v1.000 (2000)(Infogrames)(NTSC)(US)(M3)[!].chd",
+      "expandedSizeBytes": 243253088,
+      "fileCount": 1,
+      "contentSha256": "5b9b4a3d6e47235888e280ac5d547c629bbca35d111222f1f073dfeedb19d71b"
     },
     {
       "itemId": "station_6611a2f475c577571346fec2052678ac",
@@ -18045,6 +19163,15 @@
       "expandedSizeBytes": 27999982,
       "fileCount": 2,
       "contentSha256": "4bd6001e813bcc10ac7a79eb135853d8c6ab7f5e151655a1d261935297f7eb7b"
+    },
+    {
+      "itemId": "station_662faa15e8c2dd5f535b2500282f416e",
+      "platform": "dreamcast",
+      "artifactSha256": "6b4e87661625a28c9e59cd18ca3b9f206fda5af25e7b7021aaf6eb744854450a",
+      "launchPath": "Quake III Arena v0.800 (2000)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 461873935,
+      "fileCount": 1,
+      "contentSha256": "6b4e87661625a28c9e59cd18ca3b9f206fda5af25e7b7021aaf6eb744854450a"
     },
     {
       "itemId": "station_66514df8671ea235cc5063356254ce22",
@@ -18090,6 +19217,24 @@
       "expandedSizeBytes": 68979,
       "fileCount": 2,
       "contentSha256": "0d88baa9df28760291f03281ac6ebc7980a00758a6fb3fc59fa163af12dd8f61"
+    },
+    {
+      "itemId": "station_66eff1675fca6e529d0a622d08f09da6",
+      "platform": "dreamcast",
+      "artifactSha256": "1676546d1c6e8330ca6557a8bdb4e81fd3e308a3ae87c97b6317083a5bfe59fd",
+      "launchPath": "Confidential Mission v1.004 (2001)(Sega)(NTSC)(US)(M5)[!].chd",
+      "expandedSizeBytes": 165685987,
+      "fileCount": 1,
+      "contentSha256": "1676546d1c6e8330ca6557a8bdb4e81fd3e308a3ae87c97b6317083a5bfe59fd"
+    },
+    {
+      "itemId": "station_6722dca017c4d202df7df597a8bfeb01",
+      "platform": "dreamcast",
+      "artifactSha256": "83196aaf50ba6e4858b2b0abe51675e11825c70875a2602f351e2a01859d982a",
+      "launchPath": "Mars Matrix v1.000 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 249532949,
+      "fileCount": 1,
+      "contentSha256": "83196aaf50ba6e4858b2b0abe51675e11825c70875a2602f351e2a01859d982a"
     },
     {
       "itemId": "station_673c3e7fb17176ef5fcc1bf565e6f9b4",
@@ -18164,6 +19309,15 @@
       "contentSha256": "39bb99eddb224de5f0789f807ffef06b9efa2efb7962dced31fb272f986699cd"
     },
     {
+      "itemId": "station_67b47b68f46d0a1dd91871dc690e2323",
+      "platform": "dreamcast",
+      "artifactSha256": "75f9c3ecfbf7d562181ab6ad54b0f3dee4d4b6e215f6bba1f4066e7e846f2b77",
+      "launchPath": "Marvel vs. Capcom - Clash of Super Heroes v1.000 (1999)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 284482813,
+      "fileCount": 1,
+      "contentSha256": "75f9c3ecfbf7d562181ab6ad54b0f3dee4d4b6e215f6bba1f4066e7e846f2b77"
+    },
+    {
       "itemId": "station_67bd9705e2a930192ff6c5590b087eb9",
       "platform": "fbneo",
       "artifactSha256": "43b4a8b716aeefdcc9794e5046eb7283e1af5cb8774a5ded49a8a2486ca45f3d",
@@ -18182,6 +19336,24 @@
       "contentSha256": "76f83f4fba94fbf0a512dd79c1cf4d453d5f9d047c20fca3eb4ca59426da0b55"
     },
     {
+      "itemId": "station_67e4ee7d44474a871dbbd8433621edb6",
+      "platform": "dreamcast",
+      "artifactSha256": "4b0e50e7e6a9b181b9425ad9258b25b5b32117dba8e3aa8624c40aa7b99ec91e",
+      "launchPath": "Tomb Raider Chronicles v1.000 (2000)(EIDOS)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 488945585,
+      "fileCount": 1,
+      "contentSha256": "4b0e50e7e6a9b181b9425ad9258b25b5b32117dba8e3aa8624c40aa7b99ec91e"
+    },
+    {
+      "itemId": "station_68188db1da6203f08a4b58e583d6af21",
+      "platform": "wii",
+      "artifactSha256": "2c1f91631c25a0bbf20658f4a1170b7cbcf1a938e15a7969f78fdcbe9b36928d",
+      "launchPath": "Epic Mickey 2 The Power of Two.iso",
+      "expandedSizeBytes": 4699979776,
+      "fileCount": 1,
+      "contentSha256": "2c1f91631c25a0bbf20658f4a1170b7cbcf1a938e15a7969f78fdcbe9b36928d"
+    },
+    {
       "itemId": "station_6831ef65d570c8606064614c9ff544a5",
       "platform": "n64",
       "artifactSha256": "d83634c48c221e2db71b9e785467aed6b67abe71692b36a80ea827f64a0166ae",
@@ -18198,6 +19370,15 @@
       "expandedSizeBytes": 1030368,
       "fileCount": 1,
       "contentSha256": "e7737d05b144aa82d963307060e74d4886e252c077d338d2e0c4f75303fea040"
+    },
+    {
+      "itemId": "station_68b4911aaba6d2a81b9e525f36a5c697",
+      "platform": "wii",
+      "artifactSha256": "56c89f8a24657b4e2892d089585602cb1b89c2fa8cfdc1dc25631e276b9fe07c",
+      "launchPath": "New SUPER MARIO BROS.side.iso",
+      "expandedSizeBytes": 4699979776,
+      "fileCount": 1,
+      "contentSha256": "56c89f8a24657b4e2892d089585602cb1b89c2fa8cfdc1dc25631e276b9fe07c"
     },
     {
       "itemId": "station_68ef17a0a5345b6d492ac7ea1248942d",
@@ -18380,6 +19561,15 @@
       "contentSha256": "a37cbb30e886bcba9d0bb0356405d610d8b42e406c87806fd6d08e8cfa091362"
     },
     {
+      "itemId": "station_6b08767479d6f0715130e250c878b2a9",
+      "platform": "gamecube",
+      "artifactSha256": "7996d841021a93979ddf9203a7662a379ba83c71b8f40674f348f0e6393c4f9c",
+      "launchPath": "The Legend of Zelda - Twilight Princess.gcm",
+      "expandedSizeBytes": 1459978240,
+      "fileCount": 1,
+      "contentSha256": "7996d841021a93979ddf9203a7662a379ba83c71b8f40674f348f0e6393c4f9c"
+    },
+    {
       "itemId": "station_6b0a82be57b3ddda7b761b600b451526",
       "platform": "snes",
       "artifactSha256": "7b2fdab972e393395f5379d7fb13e40464db152f6acf58b2d2a6a18f81cefecb",
@@ -18441,6 +19631,15 @@
       "expandedSizeBytes": 238219784,
       "fileCount": 1,
       "contentSha256": "35e6bd47aad801e3a79a15b7d05e2b830c3a4afd5bb037a6e997ffe4299d873a"
+    },
+    {
+      "itemId": "station_6b90c57070bf3754d9827c1e1631f0e9",
+      "platform": "dreamcast",
+      "artifactSha256": "5330804b10020da3a58bc137697ae28787b6d4715a739ee17636152da551dab9",
+      "launchPath": "POD - Speedzone v1.002 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 276401179,
+      "fileCount": 1,
+      "contentSha256": "5330804b10020da3a58bc137697ae28787b6d4715a739ee17636152da551dab9"
     },
     {
       "itemId": "station_6b9aceffb2f5e19598d18eb0f8b65eec",
@@ -18531,6 +19730,15 @@
       "expandedSizeBytes": 2097664,
       "fileCount": 1,
       "contentSha256": "aa48bac3325b8bf824e8698bb3e6185afef771e14f02020a4b2aadc336276e63"
+    },
+    {
+      "itemId": "station_6c491717f8b3d13b282c410aad80fab6",
+      "platform": "switch",
+      "artifactSha256": "7604cacd5ff72dddea55657bc7cb0f43f61a46f780d07f2b82d1302d1f63ad6e",
+      "launchPath": "Pokemon.Cafe.Mix.010072400E04A000.v0.nsp",
+      "expandedSizeBytes": 111116558,
+      "fileCount": 1,
+      "contentSha256": "7604cacd5ff72dddea55657bc7cb0f43f61a46f780d07f2b82d1302d1f63ad6e"
     },
     {
       "itemId": "station_6c5286358cdb2fb235f79db0f3e9b791",
@@ -18632,6 +19840,15 @@
       "contentSha256": "5a8632242a96d2bf7653316f14657d2911b77834139c1cbf0e23e3a8fddd4b60"
     },
     {
+      "itemId": "station_6d7b4d0d988b1fcea440c9a7c8dfdbad",
+      "platform": "gamecube",
+      "artifactSha256": "dec85129ea88d7f041090c33ce114debe67cde25c47c64d6ca93b96c97dc0ab6",
+      "launchPath": "need for speed underground 2.iso",
+      "expandedSizeBytes": 1459978240,
+      "fileCount": 1,
+      "contentSha256": "dec85129ea88d7f041090c33ce114debe67cde25c47c64d6ca93b96c97dc0ab6"
+    },
+    {
       "itemId": "station_6db8e6b8ffd6995be7ee9e86d7cf330f",
       "platform": "snes",
       "artifactSha256": "920bbaaf6a32cab5feabb5bc8b2b427dccd53bfd31d0da8acb7ea4e819139e4f",
@@ -18722,6 +19939,15 @@
       "contentSha256": "6abe908b4005a68d1f6e9a54339c94a33db41801890d8c058ce974fdab3d0bcd"
     },
     {
+      "itemId": "station_6e92c46795e509e9593cc55b5fb946ea",
+      "platform": "wii",
+      "artifactSha256": "cec1587537e8f9f965ef192ee9342f2ce1de881e9af9aba2852057db6977ff1a",
+      "launchPath": "MarioKartWii.ini.iso",
+      "expandedSizeBytes": 4699979776,
+      "fileCount": 1,
+      "contentSha256": "cec1587537e8f9f965ef192ee9342f2ce1de881e9af9aba2852057db6977ff1a"
+    },
+    {
       "itemId": "station_6e931cd1e88308572545f82ed02a5ec1",
       "platform": "snes",
       "artifactSha256": "55e57c5e012583ff0fafd1aee16b3f8269ee2b34fe10f10b93ba0dde72f2b78d",
@@ -18792,6 +20018,15 @@
       "expandedSizeBytes": 786432,
       "fileCount": 1,
       "contentSha256": "b92b73c12c24956ba668c2423edb1e6ecc88971c724e161d7e1512bce002cad3"
+    },
+    {
+      "itemId": "station_6f7a4e2edc98cc56706d5e86215f7933",
+      "platform": "dreamcast",
+      "artifactSha256": "500cfe7e693b5371fed723306e334895dec7a3e7e22bc83507978fc738fd2b40",
+      "launchPath": "Star Wars - Episode I - Racer v1.001 (2000)(Lucas Arts)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 288654668,
+      "fileCount": 1,
+      "contentSha256": "500cfe7e693b5371fed723306e334895dec7a3e7e22bc83507978fc738fd2b40"
     },
     {
       "itemId": "station_6f842d423e383cb705a18b26425b6f6a",
@@ -18900,6 +20135,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "2dfc2e037679a62a960dab9682bca6d1b2737f603edd336c8b2fdf05db10cc07"
+    },
+    {
+      "itemId": "station_70f4c12ef657696e9c59673d24ef15c4",
+      "platform": "dreamcast",
+      "artifactSha256": "ec817d5fa9b1ddedc77a642bdec4a4b84eeb089c45e97744f3bf033099c7fc64",
+      "launchPath": "D2 v1.000 (2000)(Sega)(NTSC)(US)(Disc 4 of 4)[!].chd",
+      "expandedSizeBytes": 729432849,
+      "fileCount": 1,
+      "contentSha256": "ec817d5fa9b1ddedc77a642bdec4a4b84eeb089c45e97744f3bf033099c7fc64"
     },
     {
       "itemId": "station_711850d2931f52ac0726c0cce1b60e46",
@@ -19100,6 +20344,15 @@
       "contentSha256": "2a2dc2ef84efd9a773d1e8231b7e3e57f0de7e4528968670963f2f1f358eef39"
     },
     {
+      "itemId": "station_7374b226f067e68c63521d3ba54f93e4",
+      "platform": "dreamcast",
+      "artifactSha256": "b20612f8103d9da2f068880ea1a22de86e93523034a619d90e4dc5856069b2ef",
+      "launchPath": "Sega GT v1.003 (2000)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 612815940,
+      "fileCount": 1,
+      "contentSha256": "b20612f8103d9da2f068880ea1a22de86e93523034a619d90e4dc5856069b2ef"
+    },
+    {
       "itemId": "station_73d4a5d491611e37aee5f6b184e9cbd2",
       "platform": "snes",
       "artifactSha256": "16f9c90d75bd23d0620be00ecf818fcb25c5935d4ee26b1fe17b926f8987aa65",
@@ -19289,6 +20542,15 @@
       "contentSha256": "34f9e7e383aa4fba2d7fbe264e3c3f8b70bfcf4fadd941e0349a28a87d1e6e76"
     },
     {
+      "itemId": "station_75b2671c509572a3191465e244e9c241",
+      "platform": "wii",
+      "artifactSha256": "775f7753f4b0c6bfec2b3955ec5a10cef177f07562aeef7130aa0c7f5025f184",
+      "launchPath": "Legend of Zelda, The - Skyward Sword (USA) (En,Fr,Es).rvz",
+      "expandedSizeBytes": 3988085104,
+      "fileCount": 1,
+      "contentSha256": "775f7753f4b0c6bfec2b3955ec5a10cef177f07562aeef7130aa0c7f5025f184"
+    },
+    {
       "itemId": "station_75b7e701368b7ca9f1683493e70d76e7",
       "platform": "fbneo",
       "artifactSha256": "d03e8ad986ab9547616c66c808c51fd50c98bcbe1e3b6e96b24c8fc8017c2159",
@@ -19397,6 +20659,15 @@
       "contentSha256": "601a25e9bacfefde21adbdcc42d5a35bb96f2c203ed1ee02426282a14761df85"
     },
     {
+      "itemId": "station_76c1e7aaa8759947e7a779db17c30031",
+      "platform": "dreamcast",
+      "artifactSha256": "9b3fd4a87915353b48512c34848f4431e6bbdeb81df977919d9d4e6d4f358e8e",
+      "launchPath": "WWF Royal Rumble v0.800 (2000)(THQ)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 147345438,
+      "fileCount": 1,
+      "contentSha256": "9b3fd4a87915353b48512c34848f4431e6bbdeb81df977919d9d4e6d4f358e8e"
+    },
+    {
       "itemId": "station_76f5e5f6e523a5495a40c06ac8f99561",
       "platform": "fbneo",
       "artifactSha256": "c816cc04e9f0468ac370f07bdab4dc6c15cd251d99ed6d4f0279d862bd355174",
@@ -19431,6 +20702,15 @@
       "expandedSizeBytes": 4194304,
       "fileCount": 1,
       "contentSha256": "cc385e467d7b645653a7f583989e0a9f536cc08f61144a88ef6a61aaac5882ef"
+    },
+    {
+      "itemId": "station_77a73fb9d8b7e6e1babaa3869f81b492",
+      "platform": "dreamcast",
+      "artifactSha256": "fcd378fbfe3028bb631bd5f2d6d8eed99da6d34551f9132e4a546b07e16ecaab",
+      "launchPath": "D2 v1.000 (2000)(Sega)(NTSC)(US)(Disc 2 of 4)[!].chd",
+      "expandedSizeBytes": 609449501,
+      "fileCount": 1,
+      "contentSha256": "fcd378fbfe3028bb631bd5f2d6d8eed99da6d34551f9132e4a546b07e16ecaab"
     },
     {
       "itemId": "station_77af28042053b8b1ddca5a2c0c718c68",
@@ -19541,6 +20821,15 @@
       "contentSha256": "63d2203c81496744b21f109481dad29bf29b0359b91645b5a05378773d03efe7"
     },
     {
+      "itemId": "station_78b7c695e5d8c5ae8b0419fded758cad",
+      "platform": "dreamcast",
+      "artifactSha256": "272b261b65433a4ac02e3408bfec9b40d51f1decf7c982a6f2478f90969e60f6",
+      "launchPath": "Skies of Arcadia v1.002 (2000)(Sega)(NTSC)(US)(Disc 1 of 2)[!].chd",
+      "expandedSizeBytes": 523608988,
+      "fileCount": 1,
+      "contentSha256": "272b261b65433a4ac02e3408bfec9b40d51f1decf7c982a6f2478f90969e60f6"
+    },
+    {
       "itemId": "station_78c7012f6eb090fcf54697a75b097a23",
       "platform": "cps1",
       "artifactSha256": "f517b9792e667b7fd19e9be732e95117a6062f673e286a35f342e11e0cfef205",
@@ -19566,6 +20855,15 @@
       "expandedSizeBytes": 3204630,
       "fileCount": 2,
       "contentSha256": "9ec05357ca76d84430244f9019aec77ff88b8b5ece49842448ac8943a5b74064"
+    },
+    {
+      "itemId": "station_78ee9a2ed5767f3ad0788bff26aa2996",
+      "platform": "dreamcast",
+      "artifactSha256": "f83f7e2ba3a87d01d90d19767190e5486e05985be81194f9ac1a2a18f8007d1b",
+      "launchPath": "Blue Stinger v1.000 (1999)(Activision)(NTSC)(US)[!][%BLUESTINGER].chd",
+      "expandedSizeBytes": 682468101,
+      "fileCount": 1,
+      "contentSha256": "f83f7e2ba3a87d01d90d19767190e5486e05985be81194f9ac1a2a18f8007d1b"
     },
     {
       "itemId": "station_78f0ef3e1315dcbd2cbefbfb64374108",
@@ -19611,6 +20909,24 @@
       "expandedSizeBytes": 71041,
       "fileCount": 2,
       "contentSha256": "2a281e22b8190c0cc1ad1328bee8caac01bf3792af533a8dc7f53e96987ccf9d"
+    },
+    {
+      "itemId": "station_792e43445bed0faa5a01b1590b457b41",
+      "platform": "dreamcast",
+      "artifactSha256": "33e20a84888dbf6d5c46f15bd4959058dd43bdcbe21738568e9c82b6fc00b92a",
+      "launchPath": "Soul Calibur v1.000 (1999)(Namco)(NTSC)(US)[!][4S T-1401N].chd",
+      "expandedSizeBytes": 621117326,
+      "fileCount": 1,
+      "contentSha256": "33e20a84888dbf6d5c46f15bd4959058dd43bdcbe21738568e9c82b6fc00b92a"
+    },
+    {
+      "itemId": "station_7945768526859e6b7d7ce49e7286e29d",
+      "platform": "dreamcast",
+      "artifactSha256": "25f482ed6d83869493886cd8a06354c9c87473cacabd6b75a71784ab6ff21ece",
+      "launchPath": "King of Fighters, The - Dream Match 1999 v1.004 (1999)(SNK)(NTSC)(US)(M4)[!].chd",
+      "expandedSizeBytes": 514019382,
+      "fileCount": 1,
+      "contentSha256": "25f482ed6d83869493886cd8a06354c9c87473cacabd6b75a71784ab6ff21ece"
     },
     {
       "itemId": "station_7950304a432ad601a0fa8c14c694a255",
@@ -19667,6 +20983,15 @@
       "contentSha256": "4951c35d905b3bee1b069f5c9db15ccdcb07a84decaa7dfc3a36138d3e56aa02"
     },
     {
+      "itemId": "station_799d6651e767214dfab88dd2308f4ef4",
+      "platform": "dreamcast",
+      "artifactSha256": "6d1d3f889ad12b527654f4707ef03c3bf789b7c5aedc6c98f5ac6cbe2836e3d8",
+      "launchPath": "NFL 2K2 v1.004 (2001)(Sega)(NTSC)(US)[!][2S 51168].chd",
+      "expandedSizeBytes": 675603904,
+      "fileCount": 1,
+      "contentSha256": "6d1d3f889ad12b527654f4707ef03c3bf789b7c5aedc6c98f5ac6cbe2836e3d8"
+    },
+    {
       "itemId": "station_79ad81b885f85b3f3948eeef9531c054",
       "platform": "megadrive",
       "artifactSha256": "0ec4a904636d8b0e29e9ac1e078dbf362d871efc8d3e680a0e5849644883fb7f",
@@ -19683,6 +21008,15 @@
       "expandedSizeBytes": 4551908,
       "fileCount": 2,
       "contentSha256": "a9769866c9be48d42f56e28476a4ca3c9e6935ab1c923185db8edf34f2ba25a5"
+    },
+    {
+      "itemId": "station_79c6a1866d2c8e2ddf42dfb27902004a",
+      "platform": "dreamcast",
+      "artifactSha256": "d7d636877883d799b0f5a1f3e1081c5f9e7ca5ac1c4b50f0cf2d44d5b1dfa626",
+      "launchPath": "Tony Hawk's Pro Skater v1.000 (2000)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 359676311,
+      "fileCount": 1,
+      "contentSha256": "d7d636877883d799b0f5a1f3e1081c5f9e7ca5ac1c4b50f0cf2d44d5b1dfa626"
     },
     {
       "itemId": "station_79ca63bf924c0b94ca216c97e8ccb5ec",
@@ -19802,6 +21136,15 @@
       "contentSha256": "6de10199b6ed167278baa98018bff2935210d32eb28f3e2ada07ab2e062ec5ad"
     },
     {
+      "itemId": "station_7adb7ec83582d31b8ff1444dbcbe88eb",
+      "platform": "dreamcast",
+      "artifactSha256": "7b5c36497581aae1b6b0b224e654f13f05ef6b295a0b47d53f0fe2819f9fefd6",
+      "launchPath": "Ready 2 Rumble Boxing v1.000 (1999)(Midway)(NTSC)(US)[!][2S T-9704NGD].chd",
+      "expandedSizeBytes": 376394160,
+      "fileCount": 1,
+      "contentSha256": "7b5c36497581aae1b6b0b224e654f13f05ef6b295a0b47d53f0fe2819f9fefd6"
+    },
+    {
       "itemId": "station_7aeac9ab242f815a55e8d857d30ea57e",
       "platform": "snes",
       "artifactSha256": "4d6c7d6d2693d8d43bafaff7582f9a94885362dadd9ee4012bbbdce1ba10c30e",
@@ -19899,6 +21242,15 @@
       "expandedSizeBytes": 924866,
       "fileCount": 2,
       "contentSha256": "6a0a064b469a46b479ebd20b4c011d6c5e3907e121e795e8fa7c252fe6b629ec"
+    },
+    {
+      "itemId": "station_7c83a91e5a7d52ebbe397c997239df45",
+      "platform": "dreamcast",
+      "artifactSha256": "b1856076f0b86f172ab78e304c03c1b5992be54807ae16d87f08e0cd9b818ba6",
+      "launchPath": "Deep Fighter v1.002 (2000)(Ubi Soft)(NTSC)(US)(Disc 1 of 2)[!].chd",
+      "expandedSizeBytes": 334612233,
+      "fileCount": 1,
+      "contentSha256": "b1856076f0b86f172ab78e304c03c1b5992be54807ae16d87f08e0cd9b818ba6"
     },
     {
       "itemId": "station_7c9b19f3bc8610170fcda995f448e95e",
@@ -20097,6 +21449,15 @@
       "expandedSizeBytes": 11345654,
       "fileCount": 2,
       "contentSha256": "9ff53032c944784d956f659bb621bbb1dff7d8712eef13680bf6c827ce5fc449"
+    },
+    {
+      "itemId": "station_7f4cc48d1231d923ce5cdaffb7a37377",
+      "platform": "dreamcast",
+      "artifactSha256": "ca99cfb59c62e2687eb962a2dac26223a509ebe1d1d190bb5496391959c7d9fd",
+      "launchPath": "Resident Evil - Code Veronica v1.000 (2000)(Capcom)(NTSC)(US)(Disc 1 of 2)[!].chd",
+      "expandedSizeBytes": 591310785,
+      "fileCount": 1,
+      "contentSha256": "ca99cfb59c62e2687eb962a2dac26223a509ebe1d1d190bb5496391959c7d9fd"
     },
     {
       "itemId": "station_7f4ffdabd1c2fb1f492d62ecc6f832eb",
@@ -20315,6 +21676,15 @@
       "contentSha256": "a77472dd5fb860388667f5341f885b399560f1240349e78625262e597a127a87"
     },
     {
+      "itemId": "station_80db7b3d26f3d7baea291c99079d3984",
+      "platform": "dreamcast",
+      "artifactSha256": "3bd21368a0f4d6af4cd062d8d4aeec1326535d1563ec643292ac137678ec630a",
+      "launchPath": "PenPen TriIcelon v1.020 (1999)(Infogrames)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 672855764,
+      "fileCount": 1,
+      "contentSha256": "3bd21368a0f4d6af4cd062d8d4aeec1326535d1563ec643292ac137678ec630a"
+    },
+    {
       "itemId": "station_81025c525460be4151611cb9da192796",
       "platform": "snesbr",
       "artifactSha256": "91f62ad7dd58b576bf35c00d685654671d3668a2d5d018aa2d62b801c993017d",
@@ -20450,6 +21820,24 @@
       "contentSha256": "2d16e139a9576c9f1ac74792ffbb17300e7ceb03f8775a6c26c7456d4ba506c5"
     },
     {
+      "itemId": "station_81edb80679c2de9c7176c41674d5d3b4",
+      "platform": "dreamcast",
+      "artifactSha256": "c709a76aae294da8174c3c2774d72033a9ed83299b21dc1b8bd042cb89c22969",
+      "launchPath": "Phantasy Star Online v2.011 (2001)(Sega)(NTSC)(US)(M5)[!][1S 51100B][req. serial].chd",
+      "expandedSizeBytes": 589393156,
+      "fileCount": 1,
+      "contentSha256": "c709a76aae294da8174c3c2774d72033a9ed83299b21dc1b8bd042cb89c22969"
+    },
+    {
+      "itemId": "station_81f0aa9ef7e2e655efedea459bf9e09a",
+      "platform": "dreamcast",
+      "artifactSha256": "753964a71051bc07e8041accf34f3ddd1aa7fd4977d51e0b077aa8d1d9e8483f",
+      "launchPath": "Chicken Run v1.000 (2000)(EIDOS)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 941416148,
+      "fileCount": 1,
+      "contentSha256": "753964a71051bc07e8041accf34f3ddd1aa7fd4977d51e0b077aa8d1d9e8483f"
+    },
+    {
       "itemId": "station_81f7b39458c1bdcc726d7222d3041e0c",
       "platform": "neogeo",
       "artifactSha256": "011e98c2c86db40b0a1e8b8de94699acaa8f0686c85db99f1a4486e5dd44d927",
@@ -20513,6 +21901,15 @@
       "contentSha256": "5b82cdd6f2da56f43680d6a5021faebe2e06036d30602c1a7917aa414cf8b5f4"
     },
     {
+      "itemId": "station_82943724ade3d66e7afddba552a1422e",
+      "platform": "dreamcast",
+      "artifactSha256": "069fea54bf2408d9c5f5866b0f89a6a7b09cdb31582a5c3ce67b764cec40d494",
+      "launchPath": "AeroWings v1.002 (1999)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 701083284,
+      "fileCount": 1,
+      "contentSha256": "069fea54bf2408d9c5f5866b0f89a6a7b09cdb31582a5c3ce67b764cec40d494"
+    },
+    {
       "itemId": "station_829f581d8c021c267705df33076d93d9",
       "platform": "megadrive",
       "artifactSha256": "f6c429e6cd3596bef5bdcc230bfc30e1fc9b8caeb21b43cdc10214d6ea935ca6",
@@ -20538,6 +21935,15 @@
       "expandedSizeBytes": 4354069,
       "fileCount": 2,
       "contentSha256": "5a92a41379e3bb3d2ac04eb5941de3cdbe739a1aa729ded868ca86b76393e340"
+    },
+    {
+      "itemId": "station_831dad3abeace4fe1e42245c3175c04e",
+      "platform": "dreamcast",
+      "artifactSha256": "2a52a8b2894b23382ee83e20aef865d216f36bc0c7c484f89647f3daf7774cb1",
+      "launchPath": "Ready 2 Rumble Boxing v1.000 (1999)(Midway)(NTSC)(US)[!][9I043B T-9704N].chd",
+      "expandedSizeBytes": 376401952,
+      "fileCount": 1,
+      "contentSha256": "2a52a8b2894b23382ee83e20aef865d216f36bc0c7c484f89647f3daf7774cb1"
     },
     {
       "itemId": "station_833518f99bbdc20f0fc6734040cc9882",
@@ -20574,6 +21980,15 @@
       "expandedSizeBytes": 1338832,
       "fileCount": 2,
       "contentSha256": "5e5a00055005f770b09870a277247114c6a9ceb9a07324e26bee8589a98fc14e"
+    },
+    {
+      "itemId": "station_83478c3cb0c6851470d2b7fa11b5a873",
+      "platform": "dreamcast",
+      "artifactSha256": "d16cfd39ab54e64025df700afccd6dc7c663ae25f7addcc63c0ec805db5605dd",
+      "launchPath": "18 Wheeler - American Pro Trucker v1.500 (2001)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 161540479,
+      "fileCount": 1,
+      "contentSha256": "d16cfd39ab54e64025df700afccd6dc7c663ae25f7addcc63c0ec805db5605dd"
     },
     {
       "itemId": "station_8351170ec3c1261f067bfa805983f011",
@@ -20693,6 +22108,15 @@
       "contentSha256": "27e16ff427de6124010e5c7a4a8d0fd16ce33b463334c66336d54202bd917f07"
     },
     {
+      "itemId": "station_844acd6d2419cc61a21b8a1630fda73a",
+      "platform": "gamecube",
+      "artifactSha256": "635d1ad5edc6fcfe22a1a63bd029f78ccf4f6960136652a85fb6a62c79e161c0",
+      "launchPath": "Resident Evil - Code - Veronica X (PT-BR DUB) - (Disc2).rvz",
+      "expandedSizeBytes": 569066624,
+      "fileCount": 1,
+      "contentSha256": "635d1ad5edc6fcfe22a1a63bd029f78ccf4f6960136652a85fb6a62c79e161c0"
+    },
+    {
       "itemId": "station_84841ef51b0fc5f1855a2dc84b5db323",
       "platform": "snes",
       "artifactSha256": "1576066e0cb771a91caf79e7d4f6dc00eb0daa47f0786f1604b32537429a7f45",
@@ -20808,6 +22232,15 @@
       "expandedSizeBytes": 524288,
       "fileCount": 1,
       "contentSha256": "d2163f1cc7a200075e1129f038a245c421688e2d62afca9934fedeffdf833cf5"
+    },
+    {
+      "itemId": "station_85a611941e1add25eda2cb3e173a2145",
+      "platform": "dreamcast",
+      "artifactSha256": "539f6289f500b1edc00d2fdcc61f9dc38dd0b6a37cf0f10994dbc3a048276de0",
+      "launchPath": "Psychic Force 2012 v1.010 (1999)(Taito)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 512345497,
+      "fileCount": 1,
+      "contentSha256": "539f6289f500b1edc00d2fdcc61f9dc38dd0b6a37cf0f10994dbc3a048276de0"
     },
     {
       "itemId": "station_85b177e77eab31b3a103fcc3c6497cba",
@@ -20979,6 +22412,15 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "03e82a00d2f3519691177617b1e7a92af06d1338e5ea15d5d41d187eaf8e2dfe"
+    },
+    {
+      "itemId": "station_8733156f40d4d906e09309118d13c213",
+      "platform": "dreamcast",
+      "artifactSha256": "7bd97fbc24526b08d34f57f52c103ebe7ea58e22f3caccc9f6ba3fbf912c167c",
+      "launchPath": "Speed Devils - Online Racing v1.002 (2000)(Ubi Soft)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 413258343,
+      "fileCount": 1,
+      "contentSha256": "7bd97fbc24526b08d34f57f52c103ebe7ea58e22f3caccc9f6ba3fbf912c167c"
     },
     {
       "itemId": "station_873eb72b6bc1c05d907650d654f4868d",
@@ -21215,6 +22657,15 @@
       "contentSha256": "2db39fbe4350ab3104e22948e174fc77d395956610ae2c2e0745a3418f7d452a"
     },
     {
+      "itemId": "station_89049999ec6303fb080026988373c310",
+      "platform": "dreamcast",
+      "artifactSha256": "d1679e6f0576e011a050fd0f6684d6d372b85f2f0fb076a1a8583d48feb3d56f",
+      "launchPath": "Metropolis Street Racer v1.010 (2000)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 654024662,
+      "fileCount": 1,
+      "contentSha256": "d1679e6f0576e011a050fd0f6684d6d372b85f2f0fb076a1a8583d48feb3d56f"
+    },
+    {
       "itemId": "station_891b70f45c2d88f1685ea69cf18f20c3",
       "platform": "neogeo",
       "artifactSha256": "ada5aa65de7bb13cdce870e1ed8236832afaf751b01b0290227ea3277e219fd5",
@@ -21249,6 +22700,15 @@
       "expandedSizeBytes": 1555490,
       "fileCount": 2,
       "contentSha256": "19a3efeaeb2387263cac733db2badfe77ec02c3996b32fd6bdfb9aefb140b0b3"
+    },
+    {
+      "itemId": "station_898a86759258a61673cc803f716af3dc",
+      "platform": "dreamcast",
+      "artifactSha256": "48df44e6b486a9e65734be2a275c8de543dd1be69919290f0d6a56f3061eea98",
+      "launchPath": "Virtua Tennis v1.001 (2000)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 134500495,
+      "fileCount": 1,
+      "contentSha256": "48df44e6b486a9e65734be2a275c8de543dd1be69919290f0d6a56f3061eea98"
     },
     {
       "itemId": "station_89af21a7061b7cea07a9618a4a857a25",
@@ -21557,6 +23017,15 @@
       "contentSha256": "8d170628d2d2fdf142bb82ad80e908bba54c45fa33241c779b8eafaf1b21171f"
     },
     {
+      "itemId": "station_8cdc73fcbe8f2c91533612099ded04ec",
+      "platform": "dreamcast",
+      "artifactSha256": "cf52cf6e21b6aa2f2f2684c50f9c8c01ddc315685904825f981e00d93b127715",
+      "launchPath": "Deep Fighter v1.002 (2000)(Ubi Soft)(NTSC)(US)(Disc 2 of 2)[!].chd",
+      "expandedSizeBytes": 372156719,
+      "fileCount": 1,
+      "contentSha256": "cf52cf6e21b6aa2f2f2684c50f9c8c01ddc315685904825f981e00d93b127715"
+    },
+    {
       "itemId": "station_8ced2cd94c2e90e79aabfbf7300cd1c0",
       "platform": "megadrive",
       "artifactSha256": "16950a92f418752251a0c32e96358d890d31f82cf856d7db007cd7839714534a",
@@ -21609,6 +23078,16 @@
       "expandedSizeBytes": 741548,
       "fileCount": 2,
       "contentSha256": "f983977f38da357cf2075c660002509027294e39dce8352eca1eaae643903eb7"
+    },
+    {
+      "itemId": "station_8d42174892b607ae006f5e68ddf62fe0",
+      "platform": "wiiu",
+      "artifactSha256": "d2fd3f31f1d35703bbf556231f463fbf70c8775dfbd52393649b53a62cf4140b",
+      "launchPath": "code/Turbo.rpx",
+      "expandedSizeBytes": 4316310053,
+      "fileCount": 3050,
+      "contentSha256": "bd2004ad104b416745052e307a478e1a82fe001f10e1073c5ac5a1656e097ee1",
+      "contentIdentityScheme": "wiiu-set-v1"
     },
     {
       "itemId": "station_8d5c3535bb9c0ae9b1fe7c55449ab328",
@@ -21744,6 +23223,15 @@
       "expandedSizeBytes": 38868497,
       "fileCount": 1,
       "contentSha256": "3e9bcfe30702f24ab639d22c7f5379fbd5c4f1f0c591c1bb0a947736b7971e63"
+    },
+    {
+      "itemId": "station_8e1757391f8e75bec508538e6b562224",
+      "platform": "dreamcast",
+      "artifactSha256": "eacb3c64d7c86dec20c24cfdb76d2c675473084d7a481208e00163be8c552f97",
+      "launchPath": "Record of Lodoss War v1.001 (2001)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 463562253,
+      "fileCount": 1,
+      "contentSha256": "eacb3c64d7c86dec20c24cfdb76d2c675473084d7a481208e00163be8c552f97"
     },
     {
       "itemId": "station_8e2de7cc839dec7ad66c3e8954e3303c",
@@ -22277,6 +23765,15 @@
       "contentSha256": "85e2e58e1f99fce366c85d49f77446395584ca4959ef772a707fe454ed46c68f"
     },
     {
+      "itemId": "station_9393a16709fc3357c06c68f479309ae4",
+      "platform": "dreamcast",
+      "artifactSha256": "54121ba2615e4d33528cff175566260578e94396d88822fc7f98a9acf164d3b5",
+      "launchPath": "Street Fighter III - 3rd Strike v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 288826230,
+      "fileCount": 1,
+      "contentSha256": "54121ba2615e4d33528cff175566260578e94396d88822fc7f98a9acf164d3b5"
+    },
+    {
       "itemId": "station_939cf663599c63ae2141d93a198e7163",
       "platform": "neogeo",
       "artifactSha256": "655bb35f1e3f7329ab8848a87565acd4ae443e9ebcbc28214785ea2de5949e69",
@@ -22385,6 +23882,15 @@
       "contentSha256": "2127a6a605561b7eb485c7b194d8bc7afcaa3484a38a8c88c68f480ba835e567"
     },
     {
+      "itemId": "station_94c4728844be416ce35cb291bd421e42",
+      "platform": "dreamcast",
+      "artifactSha256": "483b0827552660f239cd4351f72fb225f40f46e6f85718e3be7d81c9fa860a47",
+      "launchPath": "Tony Hawk's Pro Skater 2 v1.001 (2000)(Activision)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 664054339,
+      "fileCount": 1,
+      "contentSha256": "483b0827552660f239cd4351f72fb225f40f46e6f85718e3be7d81c9fa860a47"
+    },
+    {
       "itemId": "station_94e4fcbf37435dd10c3320e07ba442d6",
       "platform": "fbneo",
       "artifactSha256": "b92a255cf7fe305765123eae9f01535fd06bb1e86f1940cb35c24bcffb57f815",
@@ -22457,6 +23963,15 @@
       "contentSha256": "fe25e6b13d07678c068cecde35f4c96d9b5f2548b0eecf94913bef419854ccdf"
     },
     {
+      "itemId": "station_95303351a29aa598e39c49f879695a9a",
+      "platform": "dreamcast",
+      "artifactSha256": "9e9e1c7ef605ae5ffd1143174eb40fd0a44aed98fd4791b02738da75d324ac0a",
+      "launchPath": "Street Fighter Alpha 3 v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 541993859,
+      "fileCount": 1,
+      "contentSha256": "9e9e1c7ef605ae5ffd1143174eb40fd0a44aed98fd4791b02738da75d324ac0a"
+    },
+    {
       "itemId": "station_954051313f4ad53ab0a8536bcf644b01",
       "platform": "cps3",
       "artifactSha256": "e163a83c68e246d24d68249f777646a5db1302603f388ceb3e801a1b3ec80e8f",
@@ -22482,6 +23997,15 @@
       "expandedSizeBytes": 262144,
       "fileCount": 1,
       "contentSha256": "a9a46f883d265959c27639c16e91060a222f36f1006e731bd9ba9a3a1a0f37ac"
+    },
+    {
+      "itemId": "station_95d9fb6a7976caa3be73c0c4943873b8",
+      "platform": "dreamcast",
+      "artifactSha256": "1152ac60867f9daa1257d940e589151f21e32d6d31fdb3f96154e7ff78f8df23",
+      "launchPath": "4 Wheel Thunder v1.002 (2000)(Midway)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 571008098,
+      "fileCount": 1,
+      "contentSha256": "1152ac60867f9daa1257d940e589151f21e32d6d31fdb3f96154e7ff78f8df23"
     },
     {
       "itemId": "station_95e1b155058d7aeba9ccf34df25ff145",
@@ -22518,6 +24042,15 @@
       "expandedSizeBytes": 524288,
       "fileCount": 1,
       "contentSha256": "5eb9736d66b3ac730ebbfdd19ef2397282b5f1a62dc0048093e041e23b807741"
+    },
+    {
+      "itemId": "station_9602f47daeb28cc32a4e284139087532",
+      "platform": "dreamcast",
+      "artifactSha256": "972b590d9ec53c3e3d0d25a400025b0e575cea21f24d585469e3ee7bc36e1895",
+      "launchPath": "Flag to Flag v1.000 (1999)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 729196206,
+      "fileCount": 1,
+      "contentSha256": "972b590d9ec53c3e3d0d25a400025b0e575cea21f24d585469e3ee7bc36e1895"
     },
     {
       "itemId": "station_96134f351aeef517dcfd89570945ae6b",
@@ -22565,6 +24098,15 @@
       "contentSha256": "90ad69a489194aca7ef7b7fd1d30e0105da4934a81ac8b0333ea20f9248df92d"
     },
     {
+      "itemId": "station_96954320db61f9a6d930e2dbb46afa46",
+      "platform": "dreamcast",
+      "artifactSha256": "ba21bf07dd15c836b3e1fd8ac7bb43780c70d7ebc064bb296b76816c2067c107",
+      "launchPath": "Grand Theft Auto 2 v1.002 (2000)(Rockstar)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 323847331,
+      "fileCount": 1,
+      "contentSha256": "ba21bf07dd15c836b3e1fd8ac7bb43780c70d7ebc064bb296b76816c2067c107"
+    },
+    {
       "itemId": "station_96a0f18dd876a33627dd310e0b3c1495",
       "platform": "fbneo",
       "artifactSha256": "34d84cb40deb4b354de7e8e14023c083295a3d7c748490c6598e3df4dc4111ac",
@@ -22581,6 +24123,15 @@
       "expandedSizeBytes": 10920926,
       "fileCount": 2,
       "contentSha256": "8a1d0894fc9d2b9892bd7b4821b0cf2756bb2df66f62d8b5d4bbcefce9f027c4"
+    },
+    {
+      "itemId": "station_96d508e996eb9a90c4c40e565d5b0408",
+      "platform": "dreamcast",
+      "artifactSha256": "cd779cfdb6e8a180cabd1d0fcaa00b153ab3013786ae820ec8d8aba12d0442e6",
+      "launchPath": "Xtreme Sports v1.000 (2000)(Infogrames)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 552241698,
+      "fileCount": 1,
+      "contentSha256": "cd779cfdb6e8a180cabd1d0fcaa00b153ab3013786ae820ec8d8aba12d0442e6"
     },
     {
       "itemId": "station_96db468a5a1f7a06cd9d4cb737e1ccfb",
@@ -22736,6 +24287,15 @@
       "contentSha256": "2f1756e02db6aba5d6553bdb7e971be164727abb122fa605802eff785f751844"
     },
     {
+      "itemId": "station_9957878b0075d8b3bb8749f22e0c03b2",
+      "platform": "dreamcast",
+      "artifactSha256": "b0ca4b8c53e5f397f4048a64edc7950812d9b420bbf76ed61da047923e35f253",
+      "launchPath": "Sonic Shuffle v1.000 (2000)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 218783414,
+      "fileCount": 1,
+      "contentSha256": "b0ca4b8c53e5f397f4048a64edc7950812d9b420bbf76ed61da047923e35f253"
+    },
+    {
       "itemId": "station_99aced821c79e236896c9893c8f64741",
       "platform": "fbneo",
       "artifactSha256": "4fed92e8ab55e4f33ce9e6d8183f7cf512c03e3abd7552efae33f25db187e145",
@@ -22880,6 +24440,15 @@
       "contentSha256": "68baeccc4e82da95a5d3bfbec3d97d78fa90b62e22605e8d400a58181278fd3a"
     },
     {
+      "itemId": "station_9bca3ce933d0a890f85773bc7c2d880e",
+      "platform": "dreamcast",
+      "artifactSha256": "7b54c6eb449d0f99421c29efcb84df1bb9277311a1209bf65229a3ce0154cf96",
+      "launchPath": "Centipede v1.004 (1999)(Hasbro)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 355607018,
+      "fileCount": 1,
+      "contentSha256": "7b54c6eb449d0f99421c29efcb84df1bb9277311a1209bf65229a3ce0154cf96"
+    },
+    {
       "itemId": "station_9bcc6fe2171ba4f8e295fa8983fb9e42",
       "platform": "snes",
       "artifactSha256": "03f6c69aef92d36b5ea25a6023368da0e1da9fa160e8316ebd533d4f358ffacf",
@@ -22968,6 +24537,15 @@
       "expandedSizeBytes": 5599910,
       "fileCount": 2,
       "contentSha256": "c13dd68841eb89c081d2e528bb0288d9995aedab64d73c1eb8c58b8112a5360d"
+    },
+    {
+      "itemId": "station_9cd3ece7064d01c8dd39405cceaa15a3",
+      "platform": "dreamcast",
+      "artifactSha256": "755e9481db211723f5a0b82f82479029f9552a5e0f8af77355b07e83973b3e51",
+      "launchPath": "Cyber Troopers - Virtual On - Oratorio Tangram v1.000 (2000)(Activision)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 748917758,
+      "fileCount": 1,
+      "contentSha256": "755e9481db211723f5a0b82f82479029f9552a5e0f8af77355b07e83973b3e51"
     },
     {
       "itemId": "station_9ce8d5307a06ad42ee2c9c6919bb3976",
@@ -23312,6 +24890,15 @@
       "contentSha256": "573982fc55f154f5729e789439f6f71cf6ffee7a095371ba43bde51877a52969"
     },
     {
+      "itemId": "station_9f9bf97de88d3a3b7dd55e672c20d710",
+      "platform": "dreamcast",
+      "artifactSha256": "986bd2d69f97987ece1d2fedc987b6ceeb85c5fd2a5fb38cb0d913f5c97f9d5b",
+      "launchPath": "102 Dalmatians - Puppies to the Rescue v1.001 (2000)(EIDOS)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 424928037,
+      "fileCount": 1,
+      "contentSha256": "986bd2d69f97987ece1d2fedc987b6ceeb85c5fd2a5fb38cb0d913f5c97f9d5b"
+    },
+    {
       "itemId": "station_9fa894c881998a2ea149855686e55eab",
       "platform": "snes",
       "artifactSha256": "d3180e4c20b12e78e7a94a40d1f168d5a8198b21df9586ade0512720b415f67e",
@@ -23328,6 +24915,24 @@
       "expandedSizeBytes": 3145728,
       "fileCount": 1,
       "contentSha256": "fb093f4b3a8fa8a2500865ef78b2b0724e301aa2a834e88d18abfbb6aa76c11e"
+    },
+    {
+      "itemId": "station_a00a2ad28a305798f6958ea5d24eaeae",
+      "platform": "dreamcast",
+      "artifactSha256": "52666cb50cd1da9618c4fd00e6a0fa8f46f5a43ed5c8781054ce542dd5204a96",
+      "launchPath": "Shenmue v1.003 (2000)(Sega)(NTSC)(US)(Disc 1 of 4)[!][1S 51059-1S].chd",
+      "expandedSizeBytes": 415330902,
+      "fileCount": 1,
+      "contentSha256": "52666cb50cd1da9618c4fd00e6a0fa8f46f5a43ed5c8781054ce542dd5204a96"
+    },
+    {
+      "itemId": "station_a015db37706cebf69292577ad443484d",
+      "platform": "dreamcast",
+      "artifactSha256": "2df14d21b8b803bb904e4e08f85c82cf2de436fea6f5bd17771af1ab2413f2d9",
+      "launchPath": "NHL 2K v1.000 (2000)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 468304798,
+      "fileCount": 1,
+      "contentSha256": "2df14d21b8b803bb904e4e08f85c82cf2de436fea6f5bd17771af1ab2413f2d9"
     },
     {
       "itemId": "station_a04987cad6cd4800bccd3759bd370111",
@@ -23456,6 +25061,15 @@
       "contentSha256": "1ef4e36d666f40a1e86537d21e7ac3ebe9e4020337df2525ff734eaca4e8036d"
     },
     {
+      "itemId": "station_a13fd153caeaa066b77aa66ad6d4ec06",
+      "platform": "dreamcast",
+      "artifactSha256": "a67f897b7a33e2ad6dfa09e9d503e4d686d8d4c3400c03cbcc695140c2e4c5ec",
+      "launchPath": "Nightmare Creatures II v1.000 (2000)(Konami)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 369945825,
+      "fileCount": 1,
+      "contentSha256": "a67f897b7a33e2ad6dfa09e9d503e4d686d8d4c3400c03cbcc695140c2e4c5ec"
+    },
+    {
       "itemId": "station_a14181869cf6762779a0e99a59f91147",
       "platform": "snesbr",
       "artifactSha256": "e540ae921db32ef8657f9fd6e36191f58d958dc97aa452404b26e0fa2db78e39",
@@ -23481,6 +25095,15 @@
       "expandedSizeBytes": 7342319,
       "fileCount": 2,
       "contentSha256": "7b5f29dd025fa50d159f9280e81ce4f8b13737babbf7061972194290caff6956"
+    },
+    {
+      "itemId": "station_a16868e55b0029bcd14cf33ec73ae3d6",
+      "platform": "dreamcast",
+      "artifactSha256": "100bf5d7ad42542876455540ba4d763eabd4816e73e77dc042c9304e108df8bc",
+      "launchPath": "GigaWing 2 v1.000 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 284963174,
+      "fileCount": 1,
+      "contentSha256": "100bf5d7ad42542876455540ba4d763eabd4816e73e77dc042c9304e108df8bc"
     },
     {
       "itemId": "station_a18f1dca70025396e5eff610e63f1b26",
@@ -23591,6 +25214,15 @@
       "contentSha256": "62d3d650e956f23f3b221f83c5c5bd204afd0e4f4d9c47a3251962323de96089"
     },
     {
+      "itemId": "station_a22c6ae606633337568163382c0d4ce2",
+      "platform": "dreamcast",
+      "artifactSha256": "0f5343b12fa44d274a6596ea145f4380e23b88205e26fd6a97d4a7e28c8e943b",
+      "launchPath": "Sega Bass Fishing 2 v1.080 (2001)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 261985151,
+      "fileCount": 1,
+      "contentSha256": "0f5343b12fa44d274a6596ea145f4380e23b88205e26fd6a97d4a7e28c8e943b"
+    },
+    {
       "itemId": "station_a22e2115852343570778328af808c1dd",
       "platform": "snes",
       "artifactSha256": "b2221d0a59a399e437710e1191a37071d0a59c72d8e62427cd499de8d8fd7b61",
@@ -23634,6 +25266,15 @@
       "expandedSizeBytes": 6524943,
       "fileCount": 2,
       "contentSha256": "5da1b7ce859317c12b269caa9cbf2aed4a876b6d715231c0cf8da53a4dc510c2"
+    },
+    {
+      "itemId": "station_a2a904a622ce3495c4d4283f8376927c",
+      "platform": "dreamcast",
+      "artifactSha256": "ae2f20d21c7228ac15b056ff1ff870ae05140a394ea6378489c1692704140ae7",
+      "launchPath": "Suzuki ALSTARE Extreme Racing v1.000 (1999)(Ubi Soft)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 308898629,
+      "fileCount": 1,
+      "contentSha256": "ae2f20d21c7228ac15b056ff1ff870ae05140a394ea6378489c1692704140ae7"
     },
     {
       "itemId": "station_a2bb13f1b059b59508d035e07440705d",
@@ -23798,6 +25439,15 @@
       "contentSha256": "ee1558bc18d5117219b02da0980f078f344e4a760ea5e22e4b54fa3d784c9e5c"
     },
     {
+      "itemId": "station_a42bf0ff59174a89706c28e19d4b283c",
+      "platform": "dreamcast",
+      "artifactSha256": "d113a3538fa2b1b46038ed1730182e7378d701d9893a659e92a9f4b87d666d0b",
+      "launchPath": "Airforce Delta v1.000 (1999)(Konami)(NTSC)(US)[!][1S T-9501NAF].chd",
+      "expandedSizeBytes": 667142405,
+      "fileCount": 1,
+      "contentSha256": "d113a3538fa2b1b46038ed1730182e7378d701d9893a659e92a9f4b87d666d0b"
+    },
+    {
       "itemId": "station_a4323a01ac1972f36bf1930cebad96b1",
       "platform": "snes",
       "artifactSha256": "4cb52ba751c42d9e12ca429e5d657622a370b608002880a997f64de453f0de20",
@@ -23834,6 +25484,24 @@
       "contentSha256": "0b3b0fd42bbe06a812053df376b183412fc0de335c4b7cb8e45f3fe47b0044e9"
     },
     {
+      "itemId": "station_a46cc5224458d79995ca07e43c77a9cd",
+      "platform": "dreamcast",
+      "artifactSha256": "c1684788149356f26a6073bf2ad731711a2799dbeaa93dd56eb45e6dbdf67cf7",
+      "launchPath": "Typing of the Dead, The v1.004 (2000)(Sega)(NTSC)(US)[!][req. keyboard].chd",
+      "expandedSizeBytes": 957085123,
+      "fileCount": 1,
+      "contentSha256": "c1684788149356f26a6073bf2ad731711a2799dbeaa93dd56eb45e6dbdf67cf7"
+    },
+    {
+      "itemId": "station_a48ff861c4ddf98056d3b100df4cf731",
+      "platform": "dreamcast",
+      "artifactSha256": "c649b4b06a82dfac6d1e6ba9efbe755a1f46af26f0cec41630c0ab6de50490bb",
+      "launchPath": "Resident Evil 3 - Nemesis v1.000 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 655077710,
+      "fileCount": 1,
+      "contentSha256": "c649b4b06a82dfac6d1e6ba9efbe755a1f46af26f0cec41630c0ab6de50490bb"
+    },
+    {
       "itemId": "station_a4bb4c1167a09c330592a8b4a29f3cf9",
       "platform": "snes",
       "artifactSha256": "8304d8bc55aa9e64bdd144d384f4b185af2426e7d64888c6c23dd41366a53981",
@@ -23850,6 +25518,15 @@
       "expandedSizeBytes": 87431262,
       "fileCount": 2,
       "contentSha256": "030ef4eca2d0ba9c28670ce4516c7aafa5cefc8b73be08d2fcac7d6dec1beffd"
+    },
+    {
+      "itemId": "station_a554e55007d010b0cfd8c7b459419f1d",
+      "platform": "dreamcast",
+      "artifactSha256": "e58895d6ff880c7abfd69d1e0d458c3fef3707e468de3164b2e55df2f43d237a",
+      "launchPath": "Jet Grind Radio v1.005 (2000)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 652892730,
+      "fileCount": 1,
+      "contentSha256": "e58895d6ff880c7abfd69d1e0d458c3fef3707e468de3164b2e55df2f43d237a"
     },
     {
       "itemId": "station_a57978ebadf3561cb59587dac426d2b5",
@@ -23877,6 +25554,24 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "190742792a950a112f893cba0e083eb787cf24293f698967defff929635ba0e7"
+    },
+    {
+      "itemId": "station_a5faef1ef855e2a6465ea55f4f840905",
+      "platform": "dreamcast",
+      "artifactSha256": "46ef2ba282e5e1327ff294cec09e9d3ddc3e55003b29301250e1a99a28253dcc",
+      "launchPath": "KISS Psycho Circus - The Nightmare Child v1.000 (2000)(Take 2)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 424139821,
+      "fileCount": 1,
+      "contentSha256": "46ef2ba282e5e1327ff294cec09e9d3ddc3e55003b29301250e1a99a28253dcc"
+    },
+    {
+      "itemId": "station_a60084aefb098972edfbfa9103ff9f0f",
+      "platform": "gamecube",
+      "artifactSha256": "3a64ac1c48af6916b2b0c033d827cc4920feb25d1723620f83d9f63810a14f41",
+      "launchPath": "Resident Evil 4 (Disco 2).iso",
+      "expandedSizeBytes": 1459978240,
+      "fileCount": 1,
+      "contentSha256": "3a64ac1c48af6916b2b0c033d827cc4920feb25d1723620f83d9f63810a14f41"
     },
     {
       "itemId": "station_a605907dfc8faa0e4e6d345941536559",
@@ -23913,6 +25608,15 @@
       "expandedSizeBytes": 914820,
       "fileCount": 2,
       "contentSha256": "9833971fc423efde94e00dbf07a965e7288762a7341fd5968dba348a2899449e"
+    },
+    {
+      "itemId": "station_a66342b859420441b5ef8eaa57827ba7",
+      "platform": "dreamcast",
+      "artifactSha256": "afa47a1eacaa00cfcfbf714ca5b6d81e691c1f81fce77d51260096e2cb7907a1",
+      "launchPath": "NFL 2K v1.007 (1999)(Sega)(NTSC)(US)[!][610-7895-0444 MT B08, MT B13].chd",
+      "expandedSizeBytes": 635820741,
+      "fileCount": 1,
+      "contentSha256": "afa47a1eacaa00cfcfbf714ca5b6d81e691c1f81fce77d51260096e2cb7907a1"
     },
     {
       "itemId": "station_a6803260bf5d992bbc5d8c5fcd1cc6cd",
@@ -23976,6 +25680,15 @@
       "expandedSizeBytes": 1049088,
       "fileCount": 1,
       "contentSha256": "bd1b306243d3b0e998242181f29bf317fe1c2094b24e04179e990cf96d2ee4b5"
+    },
+    {
+      "itemId": "station_a702c66e966302f89716ca5a0ebb180d",
+      "platform": "dreamcast",
+      "artifactSha256": "de247d685d332f87bf7496c8ac74e281513eb32c4fbb6fcc9c4e1276f322d74a",
+      "launchPath": "Iron Aces v1.000 (2000)(Infogrames - XICAT Interactive)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 337577127,
+      "fileCount": 1,
+      "contentSha256": "de247d685d332f87bf7496c8ac74e281513eb32c4fbb6fcc9c4e1276f322d74a"
     },
     {
       "itemId": "station_a7072bb78c87587cd4449ee05783bcff",
@@ -24129,6 +25842,15 @@
       "expandedSizeBytes": 15451343,
       "fileCount": 2,
       "contentSha256": "c654a6b850d594c6c22913b8d884123f7f4c9dce31e7de1ee98c7cf703b90818"
+    },
+    {
+      "itemId": "station_a88b38027a1aef17841cbb65c8fb9415",
+      "platform": "dreamcast",
+      "artifactSha256": "9d89a7d55eb2b62d54528bc761947421548a51d9e6bfc3492ede8f9082822dd5",
+      "launchPath": "Super Magnetic Neo v1.001 (2000)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 99456544,
+      "fileCount": 1,
+      "contentSha256": "9d89a7d55eb2b62d54528bc761947421548a51d9e6bfc3492ede8f9082822dd5"
     },
     {
       "itemId": "station_a89b17a5be81d3d8148c9fad6a5c99a0",
@@ -24293,6 +26015,15 @@
       "contentSha256": "22d0b7687d66436abaf447bb29558e43f562283ec4dbe744df7d79a3e27a2577"
     },
     {
+      "itemId": "station_aa28be781e1712c14c9ecee75a6dff49",
+      "platform": "dreamcast",
+      "artifactSha256": "e0b389fee6e67f831f5b0320f2dc053a1c25c02ce25cfc7db3c7b48e8eb8e760",
+      "launchPath": "Tokyo Xtreme Racer 2 v1.002 (2000)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 431899520,
+      "fileCount": 1,
+      "contentSha256": "e0b389fee6e67f831f5b0320f2dc053a1c25c02ce25cfc7db3c7b48e8eb8e760"
+    },
+    {
       "itemId": "station_aa48fac4f7aecb1c11d7e2688c9231e2",
       "platform": "fbneo",
       "artifactSha256": "1eb0ffdc5dd33ac7e2927a854e955bd94da068d580948e5d7865261aa74607cf",
@@ -24327,6 +26058,15 @@
       "expandedSizeBytes": 67108864,
       "fileCount": 1,
       "contentSha256": "b97d52eac0d74a4e8b241d8f4d76689702a55b1c58d9091f6f6f59c438c9c3de"
+    },
+    {
+      "itemId": "station_aacc205f00b5ddf2f394cd3b07da50ee",
+      "platform": "dreamcast",
+      "artifactSha256": "fc89a293ecfc411a25ea37e92fb16644b30e152fca5147fd96a2d6a15381daa8",
+      "launchPath": "San Francisco RUSH 2049 v1.001 (2000)(Midway)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 950482193,
+      "fileCount": 1,
+      "contentSha256": "fc89a293ecfc411a25ea37e92fb16644b30e152fca5147fd96a2d6a15381daa8"
     },
     {
       "itemId": "station_aad3fb4c1ae775a0caa5f334ed105fd7",
@@ -24374,6 +26114,15 @@
       "contentSha256": "0774fe1035194a4ba46f111da8730c1c8ef1597a16ec79bf6a64e29f9d346715"
     },
     {
+      "itemId": "station_ab4dde393bfbe5fec768d06c68d8a22f",
+      "platform": "dreamcast",
+      "artifactSha256": "4b319ff12d29f2352fd5af90779498a1eda3e33fd3ab11761f387b369c04802d",
+      "launchPath": "D2 v1.000 (2000)(Sega)(NTSC)(US)(Disc 3 of 4)[!].chd",
+      "expandedSizeBytes": 662288071,
+      "fileCount": 1,
+      "contentSha256": "4b319ff12d29f2352fd5af90779498a1eda3e33fd3ab11761f387b369c04802d"
+    },
+    {
       "itemId": "station_ab7010aeea49f830f512af5bd7658bd2",
       "platform": "neogeo",
       "artifactSha256": "c8e7220080a6da5ec7c214d6a904723c87f9f2f0e32de1b38a7d7b78704201ad",
@@ -24399,6 +26148,15 @@
       "expandedSizeBytes": 59157,
       "fileCount": 2,
       "contentSha256": "1c24920518baed9c7eee708e11eedd97368083c2e67b6086f12f98647d16cfcd"
+    },
+    {
+      "itemId": "station_abb6f9e922273ce6234993c4e7ab4c1d",
+      "platform": "dreamcast",
+      "artifactSha256": "a808ce70b98eafe1838b2042ae9100fd2054cf054fd9c5833a5b5bcf71cd3062",
+      "launchPath": "Power Stone 2 v1.000 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 272892329,
+      "fileCount": 1,
+      "contentSha256": "a808ce70b98eafe1838b2042ae9100fd2054cf054fd9c5833a5b5bcf71cd3062"
     },
     {
       "itemId": "station_abbca1594804f02450cf219c902ef357",
@@ -24536,6 +26294,24 @@
       "contentSha256": "a098fdc39c2234ded7cbfa540743bd2c89882dfcc995ef8b0af57f348b065fc2"
     },
     {
+      "itemId": "station_acf73154b3b6ee0cad2ef96bb26a2b4b",
+      "platform": "dreamcast",
+      "artifactSha256": "3fa003a791c992469cefbbddb2b0130bfe07e9c497dd1303b5837b84b7c00200",
+      "launchPath": "Heavy Metal - Geomatrix v1.001 (2001)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 199195388,
+      "fileCount": 1,
+      "contentSha256": "3fa003a791c992469cefbbddb2b0130bfe07e9c497dd1303b5837b84b7c00200"
+    },
+    {
+      "itemId": "station_ad032c236f226a6a64b6e89bbd2d0726",
+      "platform": "dreamcast",
+      "artifactSha256": "71c0b7fe893ffd284e603b23c66ba7e55603190f5116f96cc32484d746444752",
+      "launchPath": "Ooga Booga v1.001 (2001)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 66368080,
+      "fileCount": 1,
+      "contentSha256": "71c0b7fe893ffd284e603b23c66ba7e55603190f5116f96cc32484d746444752"
+    },
+    {
       "itemId": "station_ad1fb79b969ee7b20832f152e6402e7f",
       "platform": "snes",
       "artifactSha256": "27eaccb4eea93832639565a664bf3561ed5a11ac025d377a3f33262d851c1b2b",
@@ -24662,6 +26438,15 @@
       "contentSha256": "c7b1706a0ee96f3e0d65cd043c05966bfe3d5c57d08bbd2df3118817424adf82"
     },
     {
+      "itemId": "station_ae879fb139c155e29f0fcac79ffeec7c",
+      "platform": "dreamcast",
+      "artifactSha256": "1d5dcfe95b1cace4c3faf3a5f01914dd134240018230fa153d827ab56a675fd5",
+      "launchPath": "Shenmue v1.003 (2000)(Sega)(NTSC)(US)(Disc 4 of 4)[!][Passport v1.004].chd",
+      "expandedSizeBytes": 562831180,
+      "fileCount": 1,
+      "contentSha256": "1d5dcfe95b1cace4c3faf3a5f01914dd134240018230fa153d827ab56a675fd5"
+    },
+    {
       "itemId": "station_ae91b84f5b5c5b684ac38b61d5b00c6e",
       "platform": "snes",
       "artifactSha256": "b072fd9b08042e3262446fdf418a41848251072a32bd7f8335cc03543c4ae6c8",
@@ -24678,6 +26463,15 @@
       "expandedSizeBytes": 140830,
       "fileCount": 2,
       "contentSha256": "379c18300be82cdfc6f157e20890028e0d33050b2e0e21f30395aaa5b34e8f70"
+    },
+    {
+      "itemId": "station_aebd413245a839716a307d674e7bd216",
+      "platform": "dreamcast",
+      "artifactSha256": "0d691bff61a21f44c1ce1b09046751ced1959d20366458481c2733413ec8ed1b",
+      "launchPath": "Stupid Invaders v1.001 (2001)(Ubi Soft)(NTSC)(US)(Disc 2 of 2)[!].chd",
+      "expandedSizeBytes": 894690693,
+      "fileCount": 1,
+      "contentSha256": "0d691bff61a21f44c1ce1b09046751ced1959d20366458481c2733413ec8ed1b"
     },
     {
       "itemId": "station_aec3ba85151f325de1d9055302ca23fe",
@@ -24759,6 +26553,15 @@
       "expandedSizeBytes": 8388608,
       "fileCount": 1,
       "contentSha256": "8c0f538d32243d7d230ff28432326fbb17ea59bec2e2d9815dc04317dbe70db0"
+    },
+    {
+      "itemId": "station_aff0fdd0e252567e690275501f5c3e41",
+      "platform": "gamecube",
+      "artifactSha256": "15a6747ae101c712f1b4d11b6a2e34028c70e1a1eddd89b4ca1be46f7c6e380e",
+      "launchPath": "Prince of Persia -Two Thrones.iso",
+      "expandedSizeBytes": 1178904576,
+      "fileCount": 1,
+      "contentSha256": "15a6747ae101c712f1b4d11b6a2e34028c70e1a1eddd89b4ca1be46f7c6e380e"
     },
     {
       "itemId": "station_affe528d02aa42b957bb7efa8ad14d18",
@@ -24869,6 +26672,15 @@
       "contentSha256": "a427db4860cb5140935f263ba872fe14949c3548db644fed46b2edf3dff3d4a8"
     },
     {
+      "itemId": "station_b122cea73ddf8475cd963c8dc38a346b",
+      "platform": "dreamcast",
+      "artifactSha256": "ca3b39de2fe3c08ae4e24e1b311aeb62ba74203a465c7b3a1270a90cdab8fa53",
+      "launchPath": "Armada v1.000 (1999)(Metro3D)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 499041797,
+      "fileCount": 1,
+      "contentSha256": "ca3b39de2fe3c08ae4e24e1b311aeb62ba74203a465c7b3a1270a90cdab8fa53"
+    },
+    {
       "itemId": "station_b12db31fde710d2676bb9cdd51cae3ac",
       "platform": "snes",
       "artifactSha256": "e3c62c9fe55d2311aa6a264f41b45d6cbc7b1b069ed3aa82ee57d381c062547d",
@@ -24903,6 +26715,15 @@
       "expandedSizeBytes": 7344768,
       "fileCount": 2,
       "contentSha256": "a1eac68f4d5068cf9001e60b1287c406432df179cd186372e1cc1d6d1d06f8c4"
+    },
+    {
+      "itemId": "station_b196cbb9aede47637a2f9e10c364445b",
+      "platform": "dreamcast",
+      "artifactSha256": "479fda82fb526b4ca33f191b2c99190fc77a8747543b170b9cc6ca12b4faa798",
+      "launchPath": "Railroad Tycoon II - Gold Edition v1.004 (2000)(GOD)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 376377003,
+      "fileCount": 1,
+      "contentSha256": "479fda82fb526b4ca33f191b2c99190fc77a8747543b170b9cc6ca12b4faa798"
     },
     {
       "itemId": "station_b1b70b7d0d68bd078265d86c429702d1",
@@ -25094,6 +26915,15 @@
       "contentSha256": "677c7ba9fa8f90e1c74c37b73fa9d52f6174f2addd1cebe071b257846d4a17c5"
     },
     {
+      "itemId": "station_b300b7f3c14faba2da3f4501a0470186",
+      "platform": "dreamcast",
+      "artifactSha256": "e4682161aea48ef6a34b5593a193d06afbac83d825a7fc77fce0c6b96f085e0d",
+      "launchPath": "Zombie Revenge v1.001 (1999)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 183993617,
+      "fileCount": 1,
+      "contentSha256": "e4682161aea48ef6a34b5593a193d06afbac83d825a7fc77fce0c6b96f085e0d"
+    },
+    {
       "itemId": "station_b3046965b522a8ae58250a72f2450b1d",
       "platform": "fbneo",
       "artifactSha256": "b4723d40e8ba2f7c219d832a7cb0ad3f13bea02e58facabd15a93f3c5fc411b2",
@@ -25139,6 +26969,24 @@
       "contentSha256": "bab5d09b9fae41b071542cb5634d09a7f2bf03445aad75779d2f20078daf9734"
     },
     {
+      "itemId": "station_b3b0e90e3bf7d2abae2563a5cdcfbbc6",
+      "platform": "dreamcast",
+      "artifactSha256": "907e27c72d490457c88504f46277a387150b62657e5d4af824ac050b1febf229",
+      "launchPath": "NBA 2K v1.008 (1999)(Sega)(NTSC)(US)[!][1S 51004].chd",
+      "expandedSizeBytes": 474399160,
+      "fileCount": 1,
+      "contentSha256": "907e27c72d490457c88504f46277a387150b62657e5d4af824ac050b1febf229"
+    },
+    {
+      "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+      "platform": "wii",
+      "artifactSha256": "7f1874db282a19cf369625603ac5665d486220f470c5c1e29f7309160579bef5",
+      "launchPath": "Donkey Kong Country Returns.side.iso",
+      "expandedSizeBytes": 4699979776,
+      "fileCount": 1,
+      "contentSha256": "7f1874db282a19cf369625603ac5665d486220f470c5c1e29f7309160579bef5"
+    },
+    {
       "itemId": "station_b3cd30eebde1d836dd1e8404ebf0cb6b",
       "platform": "fbneo",
       "artifactSha256": "283975a126fad3b45332cfc0b80249494e7397af3e2631c4dfb4d61e9caebff2",
@@ -25155,6 +27003,15 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "e2be173c77bd1957787be36d13334f655e14d32dad99cacb0fd5e5fc65d96fa1"
+    },
+    {
+      "itemId": "station_b41cb62b73b50370f20535f3bb5a510c",
+      "platform": "dreamcast",
+      "artifactSha256": "c418e6efc91aa908ddd0df0e1b67f88d417e810b3197992bc1639735c2911e7d",
+      "launchPath": "Mortal Kombat Gold v1.001 (1999)(Midway)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 594603868,
+      "fileCount": 1,
+      "contentSha256": "c418e6efc91aa908ddd0df0e1b67f88d417e810b3197992bc1639735c2911e7d"
     },
     {
       "itemId": "station_b43c350473878c3a9047bbae345dc2e2",
@@ -25182,6 +27039,15 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "bba8186e38d0d0938a439bda4fc2325c1b2c9760a643717fa4f372ebf9058fc2"
+    },
+    {
+      "itemId": "station_b45d526c6d27387e5b19af50e964e7eb",
+      "platform": "dreamcast",
+      "artifactSha256": "9e3f4264d33bfa8ab8f028d7a91925adc700c150cfcbfd1dc45d3ac1e4dd1f68",
+      "launchPath": "ESPN International Track & Field v1.001 (2000)(Konami)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 117323053,
+      "fileCount": 1,
+      "contentSha256": "9e3f4264d33bfa8ab8f028d7a91925adc700c150cfcbfd1dc45d3ac1e4dd1f68"
     },
     {
       "itemId": "station_b46cc345f2e5626a32cd9f0db9e3da95",
@@ -25263,6 +27129,15 @@
       "expandedSizeBytes": 1343462,
       "fileCount": 2,
       "contentSha256": "c59ad2e4b620b21815ad09c760a0f8b81500088e73859ee77c55f742e2b3493a"
+    },
+    {
+      "itemId": "station_b4ee8d06c9390aad9464023b6459fd35",
+      "platform": "gamecube",
+      "artifactSha256": "2c81bb89dfa3246215093b9ba78681e93697605e0eec3acd1de0e27890cde41e",
+      "launchPath": "Pikmin 2.iso",
+      "expandedSizeBytes": 1020252160,
+      "fileCount": 1,
+      "contentSha256": "2c81bb89dfa3246215093b9ba78681e93697605e0eec3acd1de0e27890cde41e"
     },
     {
       "itemId": "station_b51b1e114da722a3d3e94d3dbf51f18f",
@@ -25409,6 +27284,15 @@
       "contentSha256": "0d9b778648f0263988835d92dfc02f3a45b3fb35010c8ea7d7150a1ad984e5b1"
     },
     {
+      "itemId": "station_b680f7c1efabaaf0bfdb96069b88e7ec",
+      "platform": "dreamcast",
+      "artifactSha256": "5308030c286f160d023612c1316838492cdaa61c2b6c9b0ca98c0feaeb5545fe",
+      "launchPath": "Hydro Thunder v1.020 (1999)(Midway)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 338996863,
+      "fileCount": 1,
+      "contentSha256": "5308030c286f160d023612c1316838492cdaa61c2b6c9b0ca98c0feaeb5545fe"
+    },
+    {
       "itemId": "station_b681ff64f9fb87907194d9a10230f746",
       "platform": "fbneo",
       "artifactSha256": "838ecd551554601a4a57d3023234097cc822738a20f6851ec5d54fd550b5415c",
@@ -25506,6 +27390,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "9e6ebebcf14609c2a38a5f4409d0c8c859949cded70c5b6fd16fd15d9983d9d3"
+    },
+    {
+      "itemId": "station_b77346021ad26cdcff82b52b1b522382",
+      "platform": "dreamcast",
+      "artifactSha256": "d017bf1ba92441a318dec20c21bfcbb7174b827431b119cdcb8bb7a0e2c5cc01",
+      "launchPath": "Ring, The - Terror's Realm v1.002 (2000)(Infogrames)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 502449253,
+      "fileCount": 1,
+      "contentSha256": "d017bf1ba92441a318dec20c21bfcbb7174b827431b119cdcb8bb7a0e2c5cc01"
     },
     {
       "itemId": "station_b777dc56593ee36b866dc3c65a580c1b",
@@ -25895,6 +27788,15 @@
       "contentSha256": "a1fc78010553490849e4c70370434b6dc7c0f10c4a862e29de0b9f0f541fba16"
     },
     {
+      "itemId": "station_bbf7f952b0f7f8311e2a669e1ed18ea4",
+      "platform": "dreamcast",
+      "artifactSha256": "d93602ac894cc58b0523fbf57c01c8ae2cbee5ab416a5ea0b61c310580eec3e0",
+      "launchPath": "Legacy of Kain - Soul Reaver v1.000 (1999)(EIDOS)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 333100634,
+      "fileCount": 1,
+      "contentSha256": "d93602ac894cc58b0523fbf57c01c8ae2cbee5ab416a5ea0b61c310580eec3e0"
+    },
+    {
       "itemId": "station_bbf8d141435c3743617e1d125b8025a3",
       "platform": "n64",
       "artifactSha256": "50a1deb7254bac5a50b93b6e42a3f08d0d42a88fd77f2dab9d37423b66b65cfc",
@@ -25929,6 +27831,15 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "96da3512a1aa05a40f1e5d61c48932b0d55d9f136d6418b848153a9fecab06de"
+    },
+    {
+      "itemId": "station_bc75414425bee9e137946fd0daae844f",
+      "platform": "dreamcast",
+      "artifactSha256": "5b20e8a3f2f35ac7054840744163f757017d835627765322ab3a9b3be92dc743",
+      "launchPath": "Elemental Gimmick Gear v1.001 (1999)(Vatical)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 461215180,
+      "fileCount": 1,
+      "contentSha256": "5b20e8a3f2f35ac7054840744163f757017d835627765322ab3a9b3be92dc743"
     },
     {
       "itemId": "station_bcaeb53fc682642a5f1441ac4a77277c",
@@ -25985,6 +27896,15 @@
       "contentSha256": "f59a0a8ed11ea2ba6217b1640e74bab8d8d8161a4585f5ae4a02edd7958ad9a3"
     },
     {
+      "itemId": "station_bd2363776c981d9b2c0af5c414bb64bc",
+      "platform": "dreamcast",
+      "artifactSha256": "8d024bd0f4547dc4fa560ab5331b63301f4566803dd98e8fe50dce4b98a6e99a",
+      "launchPath": "South Park - Chef's Luv Shack v1.000 (1999)(Acclaim)(NTSC)(US)[!][1S T-8105N].chd",
+      "expandedSizeBytes": 209538668,
+      "fileCount": 1,
+      "contentSha256": "8d024bd0f4547dc4fa560ab5331b63301f4566803dd98e8fe50dce4b98a6e99a"
+    },
+    {
       "itemId": "station_bd384c8a3c882f8faf0fbda35ccbf1aa",
       "platform": "cps2",
       "artifactSha256": "dc937863fad2ada9dcedcd11de3b65ce7ddd9f2642946f2bf14011f83c179580",
@@ -26010,6 +27930,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "a2e01be301891e505e181e0bd9c662007e884c34074dd14457e828a612062034"
+    },
+    {
+      "itemId": "station_bdc6f2ee9158d13d4e436f299c439d5f",
+      "platform": "dreamcast",
+      "artifactSha256": "0da39e9be3e1cb28b2976572abe2d39722efa9ec4fb1d8bd3807c9e2e1771ed5",
+      "launchPath": "Dynamite Cop! v1.005 (1999)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 216551134,
+      "fileCount": 1,
+      "contentSha256": "0da39e9be3e1cb28b2976572abe2d39722efa9ec4fb1d8bd3807c9e2e1771ed5"
     },
     {
       "itemId": "station_bdf09f59970eb154bf9ccc9559cdbd0c",
@@ -26210,6 +28139,15 @@
       "contentSha256": "61f007bff06ec5c2e59a8051a02f949445e9c98910b8e1ee5a9856fa5d708f87"
     },
     {
+      "itemId": "station_bff918776f3da95ac81eb98bdf024f1e",
+      "platform": "dreamcast",
+      "artifactSha256": "366a82fda976e115b57781bd675bf113cad2f0545c0eb49bafaeae61c6e9fb04",
+      "launchPath": "Capcom vs. SNK v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 837237744,
+      "fileCount": 1,
+      "contentSha256": "366a82fda976e115b57781bd675bf113cad2f0545c0eb49bafaeae61c6e9fb04"
+    },
+    {
       "itemId": "station_bffbf93f8c72dcffd664b753c24b3171",
       "platform": "snes",
       "artifactSha256": "8784614896e2b3e8d98c8166613ca5d2329643795a4dc107791c58c6c51e1268",
@@ -26264,6 +28202,33 @@
       "contentSha256": "cfd666f0bbabec59613d9fe189db7d0a060a78047bc084c0c365840769047bf2"
     },
     {
+      "itemId": "station_c0a3d60f574753fbf62fdd7635297ecb",
+      "platform": "dreamcast",
+      "artifactSha256": "88712edf2255d222a14efa09b65508da9f4eccfbe51a136984dc28f413c1d31f",
+      "launchPath": "Roadsters v1.007 (2000)(Titus)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 267216082,
+      "fileCount": 1,
+      "contentSha256": "88712edf2255d222a14efa09b65508da9f4eccfbe51a136984dc28f413c1d31f"
+    },
+    {
+      "itemId": "station_c0b39f98e2b26b3f9a51e0ddb996667c",
+      "platform": "dreamcast",
+      "artifactSha256": "2e9e88e91b962bc731066db2d512e739a6716362b1a3b1e66d65efc24de8f285",
+      "launchPath": "NHL 2K2 v1.008 (2002)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 596401327,
+      "fileCount": 1,
+      "contentSha256": "2e9e88e91b962bc731066db2d512e739a6716362b1a3b1e66d65efc24de8f285"
+    },
+    {
+      "itemId": "station_c0b4bc1c83241d09396716dd502bd6ae",
+      "platform": "dreamcast",
+      "artifactSha256": "9c74b18b48bc359b46779de52d797f7b5f45725dd498ebe606a39591e33d574b",
+      "launchPath": "ChuChu Rocket! v1.007 (2000)(Sega)(NTSC)(US)(en-ja)[!].chd",
+      "expandedSizeBytes": 226857720,
+      "fileCount": 1,
+      "contentSha256": "9c74b18b48bc359b46779de52d797f7b5f45725dd498ebe606a39591e33d574b"
+    },
+    {
       "itemId": "station_c0cb54be8e9c83d7e7d0adba5f00d6d2",
       "platform": "fbneo",
       "artifactSha256": "2e5fa45637ae6f9153a8c50eae23428e5eeb1c500b9732fd9008370eeb0fe3bf",
@@ -26289,6 +28254,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "e02e48490557acbee61230332b773c58b32cbd0a8a83b21f5b1ac445bb40acba"
+    },
+    {
+      "itemId": "station_c11a0d2b892a01e4d71d5ce7b2da2c9f",
+      "platform": "dreamcast",
+      "artifactSha256": "72c3e50451c86c3bc741926cc4747a985f884a168b4482102ffcf252b5a15126",
+      "launchPath": "Ultimate Fighting Championship v1.001 (2000)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 842381787,
+      "fileCount": 1,
+      "contentSha256": "72c3e50451c86c3bc741926cc4747a985f884a168b4482102ffcf252b5a15126"
     },
     {
       "itemId": "station_c130baf9c1cfc8de0a83be31c9029a59",
@@ -26561,6 +28535,15 @@
       "contentSha256": "61254cc90bf6de3a939286efcf128b3687b731b3f9161f56add7b35d9b3f7f09"
     },
     {
+      "itemId": "station_c4263de8deefd2184c734738a53ae510",
+      "platform": "dreamcast",
+      "artifactSha256": "efbe173488a84fa912dc1d83057c6185fe938d65f6663b395bcf500c45401cf0",
+      "launchPath": "Mat Hoffman's Pro BMX v1.000 (2001)(Activision)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 760947473,
+      "fileCount": 1,
+      "contentSha256": "efbe173488a84fa912dc1d83057c6185fe938d65f6663b395bcf500c45401cf0"
+    },
+    {
       "itemId": "station_c43a2bb5793b17026d5aad305d87211f",
       "platform": "snes",
       "artifactSha256": "21cd6d749674c55342f5f1a895642d4b58b9bd7eb211f5df3a35dc6c2f5d4501",
@@ -26577,6 +28560,15 @@
       "expandedSizeBytes": 7037851,
       "fileCount": 2,
       "contentSha256": "0035c35f915c7339354cfc8cad523f579b169ad14d06372b08c5a808c91dcdb7"
+    },
+    {
+      "itemId": "station_c44a26d397a68f165693ab4c133a5b4e",
+      "platform": "dreamcast",
+      "artifactSha256": "2b36e570eb9f0244723c11d7843b0713e2840a5ebe67325c3b9c8a88a3165825",
+      "launchPath": "Tokyo Xtreme Racer v1.001 (1999)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 449419043,
+      "fileCount": 1,
+      "contentSha256": "2b36e570eb9f0244723c11d7843b0713e2840a5ebe67325c3b9c8a88a3165825"
     },
     {
       "itemId": "station_c451552d5a5ebc0a0ac8c62ccb52a603",
@@ -26750,6 +28742,15 @@
       "contentSha256": "d24c0175ee4eafed88e277691c5f5dafd4e197723097e2eb68aa6b40f449fff2"
     },
     {
+      "itemId": "station_c6590632b1517fd125da5aed29db94ec",
+      "platform": "dreamcast",
+      "artifactSha256": "be5afc8bd23a709872a6552d9a485cf5c1a62fd6c0a7adacafc293b541434d90",
+      "launchPath": "NFL Blitz 2001 v1.001 (2000)(Midway)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 408481343,
+      "fileCount": 1,
+      "contentSha256": "be5afc8bd23a709872a6552d9a485cf5c1a62fd6c0a7adacafc293b541434d90"
+    },
+    {
       "itemId": "station_c665c93193da910c6ca2e1f272b76068",
       "platform": "snes",
       "artifactSha256": "094555d5720158ee60c9d5ab9a13110192db5ebf0f6cf69abbb59a00bc470345",
@@ -26856,6 +28857,24 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "d91972bc43f3e6bf8c892b3e2a4d0f7f861e513141ce70e2930b6110f6f1cf12"
+    },
+    {
+      "itemId": "station_c71f237e83ae48ba28fa6e9756036ed6",
+      "platform": "dreamcast",
+      "artifactSha256": "1ab5aa27c6cbd535dda53656357ebefccc645ceab974bcbf0905eb6b05b70034",
+      "launchPath": "Soldier of Fortune v1.001 (2001)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 713085175,
+      "fileCount": 1,
+      "contentSha256": "1ab5aa27c6cbd535dda53656357ebefccc645ceab974bcbf0905eb6b05b70034"
+    },
+    {
+      "itemId": "station_c752932ef3acc84d6a01e6a44ca0d4aa",
+      "platform": "dreamcast",
+      "artifactSha256": "4e562d8aeca40edc45146ad835583759d47025a2fb447693015db6e4c57f4b97",
+      "launchPath": "Last Blade 2, The - Heart of the Samurai v1.002 (2001)(Agetec)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 240126655,
+      "fileCount": 1,
+      "contentSha256": "4e562d8aeca40edc45146ad835583759d47025a2fb447693015db6e4c57f4b97"
     },
     {
       "itemId": "station_c76970f8fa3c0b2c0c0a848c0e6292c9",
@@ -27191,6 +29210,15 @@
       "contentSha256": "eb168cbcb902f70cad1bce971b7a8524a71b0031d97e4393b206ec94270a54c1"
     },
     {
+      "itemId": "station_cabf4f6c90fa4f652db6d54d23ffca77",
+      "platform": "dreamcast",
+      "artifactSha256": "10821903e3dd97e8c4587d6b11a22025bcbafedf7284152d4311fcdf3253c324",
+      "launchPath": "NFL 2K1 v1.003 (2000)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 663882479,
+      "fileCount": 1,
+      "contentSha256": "10821903e3dd97e8c4587d6b11a22025bcbafedf7284152d4311fcdf3253c324"
+    },
+    {
       "itemId": "station_caca9dfd1a60118131a8c0849ce7a66a",
       "platform": "megadrive",
       "artifactSha256": "5f64364c0b67d71fd8e5c7bebb909a192d85fb977bb8b46d4617532d661b52c5",
@@ -27218,6 +29246,15 @@
       "contentSha256": "e7ddd28035a97c09cc5dcc6e7c8ce264f3667776741808e3302935c41e143c6a"
     },
     {
+      "itemId": "station_cae84c3c3409171760fdc11eea9e7359",
+      "platform": "dreamcast",
+      "artifactSha256": "af9b155793a6a48ae5dcce4dfc10886309b8d7877955ebaadc76538b7656f567",
+      "launchPath": "Caesars Palace 2000 - Millennium Gold Edition v1.011 (2000)(Interplay)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 191919488,
+      "fileCount": 1,
+      "contentSha256": "af9b155793a6a48ae5dcce4dfc10886309b8d7877955ebaadc76538b7656f567"
+    },
+    {
       "itemId": "station_cafe801a2649198985ce3c7a6f2aaeb3",
       "platform": "fbneo",
       "artifactSha256": "1d086125f14e8acff4e40ac78fde11102a3de67ace52bdb9ff0122af09e1e689",
@@ -27236,6 +29273,15 @@
       "contentSha256": "1a79d51a2ad7dd4848205a07ff8e5d873b155dc420de5e52158c9bab935e05c3"
     },
     {
+      "itemId": "station_cb4eb07055677be03620ae1a139eb634",
+      "platform": "dreamcast",
+      "artifactSha256": "17f75a1f39dbd567572cd9008fa00c073622e4380e2070256a2b752086c861e6",
+      "launchPath": "Resident Evil 2 v1.001 (2000)(Capcom)(NTSC)(US)(Disc 1 of 2)[!][Leon].chd",
+      "expandedSizeBytes": 749545877,
+      "fileCount": 1,
+      "contentSha256": "17f75a1f39dbd567572cd9008fa00c073622e4380e2070256a2b752086c861e6"
+    },
+    {
       "itemId": "station_cb64652871f85662b5748247b17b0ac4",
       "platform": "snesbr",
       "artifactSha256": "6f16723a281fe913ddc9587a1f42dea585b165b119e54f4692cbfffb238c885c",
@@ -27252,6 +29298,15 @@
       "expandedSizeBytes": 12582912,
       "fileCount": 1,
       "contentSha256": "e7e2ce7f04bef42d45b0c654990ce2ef0f3ca1478d39e1b45c18cbf06e3817f2"
+    },
+    {
+      "itemId": "station_cba35363deb597f8f95306a8f26cb008",
+      "platform": "dreamcast",
+      "artifactSha256": "6ce4990119a34442703eb3b4ec71963f1eff48c0da40a81941cf05d4d4316151",
+      "launchPath": "Fighting Force 2 v1.000 (1999)(EIDOS)(NTSC)(US)[!][5S T-36801N].chd",
+      "expandedSizeBytes": 258479088,
+      "fileCount": 1,
+      "contentSha256": "6ce4990119a34442703eb3b4ec71963f1eff48c0da40a81941cf05d4d4316151"
     },
     {
       "itemId": "station_cbbc06f5b8ee39ba4ff0f0ea1e827e3a",
@@ -27306,6 +29361,15 @@
       "expandedSizeBytes": 360220738,
       "fileCount": 1,
       "contentSha256": "758071832c199f9530f863b07d653d66167ebc9885aeb2468675a83b61bb04fa"
+    },
+    {
+      "itemId": "station_ccac76b40703cce95397ac0a50398df4",
+      "platform": "dreamcast",
+      "artifactSha256": "152700a6bf09416c1673f09fa1314f72696496bc8876d5e24462924470e72b71",
+      "launchPath": "King of Fighters Evolution, The v1.000 (2000)(Agetec)(NTSC)(US)(M4)[!].chd",
+      "expandedSizeBytes": 212174872,
+      "fileCount": 1,
+      "contentSha256": "152700a6bf09416c1673f09fa1314f72696496bc8876d5e24462924470e72b71"
     },
     {
       "itemId": "station_ccde7542a04b6a034c89701faeea4a23",
@@ -27587,6 +29651,15 @@
       "contentSha256": "815160c18b0996de183b510cce06dbdb1ccd650d16532f3ddacd58afd4541494"
     },
     {
+      "itemId": "station_cf9a4e8edec4198deaf1b4124e72a524",
+      "platform": "dreamcast",
+      "artifactSha256": "77927cd92d4d44d4f67a61374bb2777a1ece802d8dce6665049393330667b7b0",
+      "launchPath": "Shadow Man v1.010 (1999)(Acclaim)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 228546799,
+      "fileCount": 1,
+      "contentSha256": "77927cd92d4d44d4f67a61374bb2777a1ece802d8dce6665049393330667b7b0"
+    },
+    {
       "itemId": "station_cf9c118713926ddfad516b2422159807",
       "platform": "snesbr",
       "artifactSha256": "079022aa9f58623d322484eadc146d506fefb5466adb733654dcfeaf31556648",
@@ -27713,6 +29786,15 @@
       "contentSha256": "462f5c056cbbe541a33378187f56fce1fd338bc45fdd39cfea26c4177d83f55d"
     },
     {
+      "itemId": "station_d0a6aa65e5900ba9167a200f8dccfae5",
+      "platform": "gamecube",
+      "artifactSha256": "3ea3cc8f62acfaafe2d2adb96090bf87cfabd01f89e0631d571517faf670d5f1",
+      "launchPath": "The Legend of Zelda The Wind Waker.iso",
+      "expandedSizeBytes": 1459978240,
+      "fileCount": 1,
+      "contentSha256": "3ea3cc8f62acfaafe2d2adb96090bf87cfabd01f89e0631d571517faf670d5f1"
+    },
+    {
       "itemId": "station_d0bab37823fa3c20c65b0b488ac74899",
       "platform": "megadrive",
       "artifactSha256": "f1f5493bd3069ddb40b402b925413f7ab168dea7251f3812b5d2cf5f8cff9105",
@@ -27747,6 +29829,15 @@
       "expandedSizeBytes": 1440358,
       "fileCount": 1,
       "contentSha256": "214301abd2f8f61e184b96f479bdc5c30acc5fb6c767232bde270886cbc329b5"
+    },
+    {
+      "itemId": "station_d0fb3f50d577eec144e4b4c22bae7948",
+      "platform": "dreamcast",
+      "artifactSha256": "b5467511dde0d80958914dea38ee7a0f6286f14c76796705d9bd45032136b074",
+      "launchPath": "ECCO the Dolphin - Defender of the Future v1.000 (2000)(Sega)(NTSC)(US)(M4)[!].chd",
+      "expandedSizeBytes": 579923117,
+      "fileCount": 1,
+      "contentSha256": "b5467511dde0d80958914dea38ee7a0f6286f14c76796705d9bd45032136b074"
     },
     {
       "itemId": "station_d10374a50fcbfaac8a25b82ff8fa0f0c",
@@ -27918,6 +30009,24 @@
       "expandedSizeBytes": 13422,
       "fileCount": 2,
       "contentSha256": "47ecf95e51d15dc8b9ae9bf8c8781406cc83c5ab85fc6d326fbefb5bdcc0d743"
+    },
+    {
+      "itemId": "station_d200672b6feada42ed7102b5e6d034e2",
+      "platform": "dreamcast",
+      "artifactSha256": "23bd2c49db9a7433d0862150fe4b738cb8e61894a55b1630a97603723d3b359c",
+      "launchPath": "AeroWings 2 - Airstrike v1.001 (2000)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 662937643,
+      "fileCount": 1,
+      "contentSha256": "23bd2c49db9a7433d0862150fe4b738cb8e61894a55b1630a97603723d3b359c"
+    },
+    {
+      "itemId": "station_d205337302231d6e3e4268abecdd60da",
+      "platform": "dreamcast",
+      "artifactSha256": "71364afe1cdbc15d3975e483837dc26c76f787ee2dc16001833fe820a7750b9a",
+      "launchPath": "Jojo's Bizarre Adventure v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 82954214,
+      "fileCount": 1,
+      "contentSha256": "71364afe1cdbc15d3975e483837dc26c76f787ee2dc16001833fe820a7750b9a"
     },
     {
       "itemId": "station_d21fbb87b9067bcc3993a7d58292ffe5",
@@ -28334,6 +30443,15 @@
       "contentSha256": "3562304e7ea370c20238d5a83a4c3da9d6b9c24fb0cfccec5be38508bd50497b"
     },
     {
+      "itemId": "station_d66ed697f043f62d82128a29a6d1be76",
+      "platform": "dreamcast",
+      "artifactSha256": "cbc80d772abcfe85d1a3a395ca30d62ee7890e980c06c4febe8f595e9e784662",
+      "launchPath": "Evolution - The World of Sacred Device v1.290 (1999)(Ubi Soft)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 420656858,
+      "fileCount": 1,
+      "contentSha256": "cbc80d772abcfe85d1a3a395ca30d62ee7890e980c06c4febe8f595e9e784662"
+    },
+    {
       "itemId": "station_d67c15f109fdb322a7afde1cebd2bbed",
       "platform": "fbneo",
       "artifactSha256": "f6a63e00b0e39c9ee922c680cd3fa27f98cf646e69f9b44b1c2160c0192e7435",
@@ -28404,6 +30522,15 @@
       "expandedSizeBytes": 1388615,
       "fileCount": 2,
       "contentSha256": "23db335a2cdb0559698e190257331ff7b11dfd5d68cda1e3192c5d81fb07965f"
+    },
+    {
+      "itemId": "station_d747bcef157e06fdaa603277f4a0fa38",
+      "platform": "gamecube",
+      "artifactSha256": "a7f2d6d8ce2003a9ddd7452ad8f7e21dbc3db917b1dbe011c2ad353a1027ee3a",
+      "launchPath": "Metroid Prime.ISO",
+      "expandedSizeBytes": 1459978240,
+      "fileCount": 1,
+      "contentSha256": "a7f2d6d8ce2003a9ddd7452ad8f7e21dbc3db917b1dbe011c2ad353a1027ee3a"
     },
     {
       "itemId": "station_d7498e34066edb478eef46b071a8f3b6",
@@ -28541,6 +30668,24 @@
       "contentSha256": "c04d80b84514202ff319384ca20641eb0189e975eed5612915bd9c224b2ab30a"
     },
     {
+      "itemId": "station_d86bf2308f92f81b90fc95aa9ceec7f6",
+      "platform": "dreamcast",
+      "artifactSha256": "ccc888618d77232d6ecfea71d01a468b0d128859b76a82dd88dc643dbdc0b434",
+      "launchPath": "Wild Metal v1.003 (2000)(Rockstar - Take 2)(NTSC)(US)(M6)[!].chd",
+      "expandedSizeBytes": 62084196,
+      "fileCount": 1,
+      "contentSha256": "ccc888618d77232d6ecfea71d01a468b0d128859b76a82dd88dc643dbdc0b434"
+    },
+    {
+      "itemId": "station_d880d7c1777d3b92c023cd712b30e8c8",
+      "platform": "dreamcast",
+      "artifactSha256": "7051bddbb5dc7b9d6e6beea83387daa40ed903b1c6cb53c32c3ecf11717f712b",
+      "launchPath": "Vanishing Point v1.001 (2000)(Acclaim)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 559690173,
+      "fileCount": 1,
+      "contentSha256": "7051bddbb5dc7b9d6e6beea83387daa40ed903b1c6cb53c32c3ecf11717f712b"
+    },
+    {
       "itemId": "station_d8b449011d1941e9042b7e9533e3e622",
       "platform": "fbneo",
       "artifactSha256": "e99a24ce445d5284d57ba8a21b1550d8011df41cf7221f18fa5f28c0d4d9c5be",
@@ -28557,6 +30702,15 @@
       "expandedSizeBytes": 6988611,
       "fileCount": 2,
       "contentSha256": "89d3ba504e312c4e88b5aea886ede06d7a8dc0bf512018a6f58136a30adadb21"
+    },
+    {
+      "itemId": "station_d8e0b511fdf1fe09fbd5cbbce0763682",
+      "platform": "dreamcast",
+      "artifactSha256": "e7dff41e670d13331758f3edcfe0bf0fb3541230ec164fefea0fc1cab8c9faf0",
+      "launchPath": "Shenmue v1.003 (2000)(Sega)(NTSC)(US)(Disc 3 of 4)[!][2S 51059-3S].chd",
+      "expandedSizeBytes": 434368267,
+      "fileCount": 1,
+      "contentSha256": "e7dff41e670d13331758f3edcfe0bf0fb3541230ec164fefea0fc1cab8c9faf0"
     },
     {
       "itemId": "station_d8e4999294cffffd9fa8c54785e838e6",
@@ -28595,6 +30749,15 @@
       "contentSha256": "5126ce33642c0ff567211fa82aac48ebe4e233f9e51eaa47a72b1ec0742e9c37"
     },
     {
+      "itemId": "station_d917b5d884654040babaf93bb5cbbd92",
+      "platform": "gamecube",
+      "artifactSha256": "3ce8a256ea8b5ed55496fc9d00d3732bf50da009b3b6c9174355bfec341467e6",
+      "launchPath": "Terminator 3 - The Redemption.iso",
+      "expandedSizeBytes": 1295490176,
+      "fileCount": 1,
+      "contentSha256": "3ce8a256ea8b5ed55496fc9d00d3732bf50da009b3b6c9174355bfec341467e6"
+    },
+    {
       "itemId": "station_d93cde43ba760e01b819f44285d44817",
       "platform": "megadrive",
       "artifactSha256": "53c2a3ba4819b3ff28da6758c808757d7f6c5539cadf59bc3cc446d93ab7fe94",
@@ -28610,7 +30773,8 @@
       "launchPath": "Harvest Moon Back To Nature.cue",
       "expandedSizeBytes": 213954477,
       "fileCount": 2,
-      "contentSha256": "ff4cb5ffd27c5dfa471da5895809009c5056c6e4a98e93db086cfc16a094df78"
+      "contentSha256": "f71af141612891c727a2d5b70c4048f956509c5a1debf8e563e57dedd4e603fd",
+      "contentIdentityScheme": "cue-set-v1"
     },
     {
       "itemId": "station_d992f4b242aae2fd9cfee38eceb0e022",
@@ -28638,6 +30802,15 @@
       "expandedSizeBytes": 76033,
       "fileCount": 2,
       "contentSha256": "f5bb672efd8afb7905bc1cbbc44bc7053a9df2b0e6d40724493399445f4dda74"
+    },
+    {
+      "itemId": "station_d9df73e4b0f75bf27ce7d70d3793ec90",
+      "platform": "dreamcast",
+      "artifactSha256": "3e54c7a8d0a4324c841f31b5af42bc53e785650e71424b4d6f82f2a0a385db52",
+      "launchPath": "Stupid Invaders v1.001 (2001)(Ubi Soft)(NTSC)(US)(Disc 1 of 2)[!].chd",
+      "expandedSizeBytes": 903784205,
+      "fileCount": 1,
+      "contentSha256": "3e54c7a8d0a4324c841f31b5af42bc53e785650e71424b4d6f82f2a0a385db52"
     },
     {
       "itemId": "station_d9e01abe7fa4ea8bf8bfa3f200d5e5b6",
@@ -28692,6 +30865,15 @@
       "expandedSizeBytes": 8388608,
       "fileCount": 1,
       "contentSha256": "34f6bdc7b22dd44248a11ad9162cf631f904320c082e2c68f47c9bb189c483a3"
+    },
+    {
+      "itemId": "station_da99c256a8f1b4b096734d9ef3412dad",
+      "platform": "dreamcast",
+      "artifactSha256": "be9acef99867ea95ac1648d34305fa936f3e8a6595ae164381f0920ca867a494",
+      "launchPath": "Floigan Bros. - Episode 1 v1.001 (2001)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 421007211,
+      "fileCount": 1,
+      "contentSha256": "be9acef99867ea95ac1648d34305fa936f3e8a6595ae164381f0920ca867a494"
     },
     {
       "itemId": "station_daa198d184bd571dd2306d6778e0c0eb",
@@ -28784,6 +30966,15 @@
       "contentSha256": "8882fc99954ba21b5567c93df2ce7a494cf16f60daebb61b14f1f65cac73f6fc"
     },
     {
+      "itemId": "station_dc13c5680ad58a48188fa5173c0dd476",
+      "platform": "dreamcast",
+      "artifactSha256": "53906c947ff375099a14f17f5f726ecd737c05c17766ac37c488b55fecb66b1a",
+      "launchPath": "Resident Evil 2 v1.001 (2000)(Capcom)(NTSC)(US)(Disc 2 of 2)[!][Claire].chd",
+      "expandedSizeBytes": 751029682,
+      "fileCount": 1,
+      "contentSha256": "53906c947ff375099a14f17f5f726ecd737c05c17766ac37c488b55fecb66b1a"
+    },
+    {
       "itemId": "station_dc298d7750c1faa59a64e36eadf4e2ba",
       "platform": "fbneo",
       "artifactSha256": "95cf0c94f60e84f39fe510cdb09bba65bf381527099817e468da207f1b002c81",
@@ -28791,6 +30982,15 @@
       "expandedSizeBytes": 218676,
       "fileCount": 2,
       "contentSha256": "231112137e75f4df956e549bf8b6c67b7af04797deb2f9f7179211e0f709b77d"
+    },
+    {
+      "itemId": "station_dc32b8aa0106947e064debc9b7be355d",
+      "platform": "dreamcast",
+      "artifactSha256": "0d684a0daacb62da86892a4b848df0cf27f902f7c9c36b06aa50055cb907db8e",
+      "launchPath": "Tee Off v1.001 (1999)(Acclaim)(NTSC)(US)[!][3S T-8108N].chd",
+      "expandedSizeBytes": 365940054,
+      "fileCount": 1,
+      "contentSha256": "0d684a0daacb62da86892a4b848df0cf27f902f7c9c36b06aa50055cb907db8e"
     },
     {
       "itemId": "station_dc3408ff19d5857b66194714193a409d",
@@ -28865,6 +31065,15 @@
       "contentSha256": "c9563cb57314588aa3db22b76dc8acfba3e73733dd3538edd90af5a15595830e"
     },
     {
+      "itemId": "station_dcdcc159757adac735f13adc78295121",
+      "platform": "dreamcast",
+      "artifactSha256": "a5e666415e2c921541a1af41c181404de08361e804e67ab4454beafe8f77ee29",
+      "launchPath": "Razor Freestyle Scooter v1.000 (2001)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 409315404,
+      "fileCount": 1,
+      "contentSha256": "a5e666415e2c921541a1af41c181404de08361e804e67ab4454beafe8f77ee29"
+    },
+    {
       "itemId": "station_dcdec4b4f634d80d7283e53141f15c6f",
       "platform": "cps2",
       "artifactSha256": "4ca8d28849acee6b90100e96fc286f4a02f74767c8abec40050f26df139eaba9",
@@ -28917,6 +31126,15 @@
       "expandedSizeBytes": 2842456,
       "fileCount": 2,
       "contentSha256": "0ed792ea1544003d473bd97b1e9baaaf9f35f06e8c5295f18b47d49cb36a101d"
+    },
+    {
+      "itemId": "station_dd7497f63bd28edf2a83912dd8b79153",
+      "platform": "dreamcast",
+      "artifactSha256": "9a56bb9160e89f1a1f4420ede454e311dc87ff38b2d9e69f4246ec0ac2cd742a",
+      "launchPath": "Buzz Lightyear of Star Command v1.000 (2000)(Activision)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 532633425,
+      "fileCount": 1,
+      "contentSha256": "9a56bb9160e89f1a1f4420ede454e311dc87ff38b2d9e69f4246ec0ac2cd742a"
     },
     {
       "itemId": "station_dd93a0ed3cc11b988f06b43ce371072c",
@@ -29072,6 +31290,15 @@
       "contentSha256": "337e643d3e63915de06429992f306e8d2b73aed6849b795f9c855c2d03c18180"
     },
     {
+      "itemId": "station_dedeb5d5406c24cd1bfb02343a0b0395",
+      "platform": "dreamcast",
+      "artifactSha256": "172d774aa52964ac3116d49b17f7c6bdd717a05c0b8cb67c211fd584cd0d865c",
+      "launchPath": "DragonRiders - Chronicles of Pern v1.002 (2001)(Ubi Soft)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 511275934,
+      "fileCount": 1,
+      "contentSha256": "172d774aa52964ac3116d49b17f7c6bdd717a05c0b8cb67c211fd584cd0d865c"
+    },
+    {
       "itemId": "station_dee6fb1b943ab5dae976615093166109",
       "platform": "fbneo",
       "artifactSha256": "783f510fc601536e7c229546b9b5012034bba1dffa57b1fe8eedd18c33eab69c",
@@ -29180,6 +31407,15 @@
       "contentSha256": "3d7516250485c60dab84dafcf33d54c2a799aee82f7f8567f16e88bc5ad2eae0"
     },
     {
+      "itemId": "station_df82749551fef69490da44076c787fa7",
+      "platform": "dreamcast",
+      "artifactSha256": "b64b5d3f5f3edb05ccf557f5f8da6ed4435be3a197db09207be92c378913479f",
+      "launchPath": "Dinosaur v1.002 (2000)(Ubi Soft)(NTSC)(US)(M5)[!].chd",
+      "expandedSizeBytes": 899773042,
+      "fileCount": 1,
+      "contentSha256": "b64b5d3f5f3edb05ccf557f5f8da6ed4435be3a197db09207be92c378913479f"
+    },
+    {
       "itemId": "station_dfacfbd2fd649c979ed55d446b30ccf2",
       "platform": "snes",
       "artifactSha256": "a362033d0d7e754d79202b255679186ad799b9e784719614b913ec8c9857ae33",
@@ -29286,6 +31522,15 @@
       "expandedSizeBytes": 6735572,
       "fileCount": 2,
       "contentSha256": "0e6b528f82c08223e50c8223358012a3197ed402240fb01bb0700072f20af0a1"
+    },
+    {
+      "itemId": "station_e16bcbc64777960140a7cf204d61d035",
+      "platform": "dreamcast",
+      "artifactSha256": "578daaa85e88fc1f5a6451d7458d912b7b005d44f3cb73a79df65e4616a37a6d",
+      "launchPath": "Space Channel 5 v1.000 (2000)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 880907677,
+      "fileCount": 1,
+      "contentSha256": "578daaa85e88fc1f5a6451d7458d912b7b005d44f3cb73a79df65e4616a37a6d"
     },
     {
       "itemId": "station_e1766aea51bc9d1e1b8975ef87e1063d",
@@ -29457,6 +31702,15 @@
       "expandedSizeBytes": 5879426,
       "fileCount": 2,
       "contentSha256": "c710ca16e72421e36eefea9cfd1e77271a8e350175b4aa1a4a5ec929dec5dc3f"
+    },
+    {
+      "itemId": "station_e368aad668218529a012923729870732",
+      "platform": "dreamcast",
+      "artifactSha256": "674a5a0c76723a4a6be6a863428235a17bcfd84bfda40ba0660908cfcfdbc6a4",
+      "launchPath": "World Series Baseball 2K1 v1.000 (2000)(Sega)(NTSC)(US)[!][3S 51055].chd",
+      "expandedSizeBytes": 259365957,
+      "fileCount": 1,
+      "contentSha256": "674a5a0c76723a4a6be6a863428235a17bcfd84bfda40ba0660908cfcfdbc6a4"
     },
     {
       "itemId": "station_e370248f543c519b347fd3b638a16465",
@@ -29729,6 +31983,15 @@
       "contentSha256": "3851e4342ea6ccf1f266806416e67ca9e797f1d3cc559d32100aae9c8243f540"
     },
     {
+      "itemId": "station_e64d6154cb52871b946e2b88e578da05",
+      "platform": "dreamcast",
+      "artifactSha256": "007a4285266f1f154f1c6351808b0f9a9aacdd6bc963b562d5d48c574db79cd4",
+      "launchPath": "D2 v1.000 (2000)(Sega)(NTSC)(US)(Disc 1 of 4)[!].chd",
+      "expandedSizeBytes": 600119778,
+      "fileCount": 1,
+      "contentSha256": "007a4285266f1f154f1c6351808b0f9a9aacdd6bc963b562d5d48c574db79cd4"
+    },
+    {
       "itemId": "station_e6595e652484a4cf0d687f0214a76779",
       "platform": "snesbr",
       "artifactSha256": "81a29ed5f3f678ff99d78714f198ff9d43744c0a4a9be0f87c514b16eae85c03",
@@ -29828,6 +32091,24 @@
       "contentSha256": "e7e5f1e814657a0118c78a665dcf371f4bc70c4ade3ba864c06693cc7455eee2"
     },
     {
+      "itemId": "station_e766efd27c8d569d9f5c4af1e9ee97cd",
+      "platform": "dreamcast",
+      "artifactSha256": "14cbb45e01aa9a3cba6ad48b5ccbaf9bf1c29f15a79be067828d4e064889bc4e",
+      "launchPath": "Slave Zero v1.001 (1999)(Infogrames)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 145461639,
+      "fileCount": 1,
+      "contentSha256": "14cbb45e01aa9a3cba6ad48b5ccbaf9bf1c29f15a79be067828d4e064889bc4e"
+    },
+    {
+      "itemId": "station_e78854c56c4e489540a05496568f16ea",
+      "platform": "dreamcast",
+      "artifactSha256": "eca402c0a254503a4e71bf1b1773c71aa28c84315bff305b2c055f6f768ddaf7",
+      "launchPath": "Draconus - Cult of the Wyrm v1.000 (2000)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 848111712,
+      "fileCount": 1,
+      "contentSha256": "eca402c0a254503a4e71bf1b1773c71aa28c84315bff305b2c055f6f768ddaf7"
+    },
+    {
       "itemId": "station_e7aaa16e46610579bf2e5ff7d766a7f2",
       "platform": "snes",
       "artifactSha256": "54b2f03393109ac7fd36d8c7752f15a44d9607ab0187a371b853191db3592c01",
@@ -29844,6 +32125,24 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "c35eb339d94691221220cd3bd6bff577fb981a1a3bffb47782f3b456433bc4ad"
+    },
+    {
+      "itemId": "station_e7d94e0cfb2a9eca50743774289a8616",
+      "platform": "dreamcast",
+      "artifactSha256": "43c80ba62a5cfe403a63d819640f8c2cd39826d185b43d9b6bac71ae4974b79a",
+      "launchPath": "BANG! - Gunship Elite v1.003 (2000)(Red Storm)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 414943314,
+      "fileCount": 1,
+      "contentSha256": "43c80ba62a5cfe403a63d819640f8c2cd39826d185b43d9b6bac71ae4974b79a"
+    },
+    {
+      "itemId": "station_e7e4a95c5a4dc19e88252ba442a6da0c",
+      "platform": "dreamcast",
+      "artifactSha256": "5db333f5ec8f36e71c5dd2cf91e573b1a50423f688ee16e2b4348f3111e7577b",
+      "launchPath": "Star Wars - Episode I - Jedi Power Battles v1.004 (2000)(Lucas Arts)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 391846773,
+      "fileCount": 1,
+      "contentSha256": "5db333f5ec8f36e71c5dd2cf91e573b1a50423f688ee16e2b4348f3111e7577b"
     },
     {
       "itemId": "station_e7e63e5fd55b7cec1884c2d7d16d54f0",
@@ -30206,6 +32505,15 @@
       "contentSha256": "11caa1646ff4e3ec70010f1007c9d413479d160da72318392d1dc6fd1f4003bd"
     },
     {
+      "itemId": "station_ec9a44d272e103292be41c72723bdaee",
+      "platform": "dreamcast",
+      "artifactSha256": "91b39ee5fb6f8692d383ac4af67eb74bac994fd24e23b4c2f87b0f8f4e39bc2e",
+      "launchPath": "Rippin' Riders Snowboarding v1.001 (1999)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 478514239,
+      "fileCount": 1,
+      "contentSha256": "91b39ee5fb6f8692d383ac4af67eb74bac994fd24e23b4c2f87b0f8f4e39bc2e"
+    },
+    {
       "itemId": "station_eca6a4d798f6844d8069efd5dafc6c40",
       "platform": "fbneo",
       "artifactSha256": "31471d9d7032e876b5a66b00646a53625bbccdc8ba774ff3ee36ffcd0d334d17",
@@ -30213,6 +32521,15 @@
       "expandedSizeBytes": 385804,
       "fileCount": 2,
       "contentSha256": "6f11ce6e6e0ca8fa1dcb2d28e0a420fbd567df600bfc0c9e1873a7d953e51e2f"
+    },
+    {
+      "itemId": "station_eca8d2ce8e85a936a2c5f1bf574daf8c",
+      "platform": "dreamcast",
+      "artifactSha256": "cab37efed223caed09beb53d3597fd6f39848febf8cf5c1677583fe9e8748764",
+      "launchPath": "Silent Scope v1.000 (2000)(Konami)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 83432862,
+      "fileCount": 1,
+      "contentSha256": "cab37efed223caed09beb53d3597fd6f39848febf8cf5c1677583fe9e8748764"
     },
     {
       "itemId": "station_ecba75bb2376e01dfb4e32afd5dfe2a6",
@@ -30269,6 +32586,15 @@
       "contentSha256": "fa7e2b40093f0cc7233cc77e95bbbea2144c8183dec10446590396fffd7cda37"
     },
     {
+      "itemId": "station_ed136a9394c2037d484c8f2a151a45b7",
+      "platform": "dreamcast",
+      "artifactSha256": "1013948f22950fd01cda24c721d3f92d4dec162c229232d4700e93b77a869126",
+      "launchPath": "Coaster Works v1.002 (2001)(XICAT Interactive)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 73696770,
+      "fileCount": 1,
+      "contentSha256": "1013948f22950fd01cda24c721d3f92d4dec162c229232d4700e93b77a869126"
+    },
+    {
       "itemId": "station_ed2bf0bfae84e0d02a0eefbb8c0991fe",
       "platform": "neogeo",
       "artifactSha256": "4a472c65308f2b022f2b1d1702ac57c1c301eb6ced8ac8aaf1312168aca05b69",
@@ -30312,6 +32638,15 @@
       "expandedSizeBytes": 393532589,
       "fileCount": 1,
       "contentSha256": "28a0eb550b53794d6036783c64b5704f05826c9aa4ca90b984028fb0f29fcda8"
+    },
+    {
+      "itemId": "station_ed5af569721f569982641d9011eb51f5",
+      "platform": "dreamcast",
+      "artifactSha256": "6212156b6943ef02fb20d0ff0e437d95412c14013712866f4956f14468b07143",
+      "launchPath": "Cannon Spike v1.001 (2000)(Capcom)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 122081800,
+      "fileCount": 1,
+      "contentSha256": "6212156b6943ef02fb20d0ff0e437d95412c14013712866f4956f14468b07143"
     },
     {
       "itemId": "station_ed6e69b54418fcd01d046ed9b386a703",
@@ -30393,6 +32728,24 @@
       "expandedSizeBytes": 12582912,
       "fileCount": 1,
       "contentSha256": "94b9ae6f703f48bb351c6191b1fce9ea685059c750fde64579a8c3c73ce2fbd1"
+    },
+    {
+      "itemId": "station_ee64f9362c695e19ef8816b777db97f5",
+      "platform": "dreamcast",
+      "artifactSha256": "2af259d71ca23262c71e0878184cb8c2f110082f05ac1c21714403becf435a8a",
+      "launchPath": "TrickStyle v1.000 (1999)(Acclaim)(NTSC)(US)[!][2S T-8102N].chd",
+      "expandedSizeBytes": 286195305,
+      "fileCount": 1,
+      "contentSha256": "2af259d71ca23262c71e0878184cb8c2f110082f05ac1c21714403becf435a8a"
+    },
+    {
+      "itemId": "station_ee86b5604f7ade90f2e316cdcdb63521",
+      "platform": "dreamcast",
+      "artifactSha256": "948991ac76dc5f15f075ed0dc2de568274a6d93457da72203f4fb76b062b2028",
+      "launchPath": "StarLancer v1.002 (2000)(Crave)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 653776664,
+      "fileCount": 1,
+      "contentSha256": "948991ac76dc5f15f075ed0dc2de568274a6d93457da72203f4fb76b062b2028"
     },
     {
       "itemId": "station_ee91372a629832da4673657bf413d23b",
@@ -30519,6 +32872,15 @@
       "expandedSizeBytes": 4194304,
       "fileCount": 1,
       "contentSha256": "63ed151cf080d1c146892841d2d672012b555354230e71e1ad645f40bd56d249"
+    },
+    {
+      "itemId": "station_ef7ffaa5bd783a3e45b1ba43f2bce8e9",
+      "platform": "dreamcast",
+      "artifactSha256": "ccd3c463294d959887467939610bbc2710163e5baa22a4654be4f92b127e3d76",
+      "launchPath": "MDK 2 v1.100 (2000)(Interplay)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 727004492,
+      "fileCount": 1,
+      "contentSha256": "ccd3c463294d959887467939610bbc2710163e5baa22a4654be4f92b127e3d76"
     },
     {
       "itemId": "station_ef8c1575c7c14de32922819fdb78577b",
@@ -30762,6 +33124,15 @@
       "expandedSizeBytes": 3640357,
       "fileCount": 1,
       "contentSha256": "b0a563af7302ae91d592f3be0f254fe3c34d716750a03b348246ecbb8689dffd"
+    },
+    {
+      "itemId": "station_f17a816eeb1fe061c9a0ff9fef9e0cc0",
+      "platform": "dreamcast",
+      "artifactSha256": "5bcaff8902d9f8c68dea8fec27df847d0073b375deb763b4403f0c0f7d0b3844",
+      "launchPath": "TNN Motorsports Hardcore Heat v1.001 (1999)(ASC Games)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 471666391,
+      "fileCount": 1,
+      "contentSha256": "5bcaff8902d9f8c68dea8fec27df847d0073b375deb763b4403f0c0f7d0b3844"
     },
     {
       "itemId": "station_f19d493b2947c3625c98b990a2a5a4bb",
@@ -31034,6 +33405,15 @@
       "contentSha256": "47d81b07933fbd079f1857db69d6273194599c53de964a2e66c6d979a46b7e4b"
     },
     {
+      "itemId": "station_f4a2b84b4721805fa57c9bda3a2664e4",
+      "platform": "dreamcast",
+      "artifactSha256": "59aaece14b9e13810bf2f6675b173f5641548baf1781204e0192ee43f409a8d1",
+      "launchPath": "ECW Hardcore Revolution v1.001 (2000)(Acclaim)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 256926867,
+      "fileCount": 1,
+      "contentSha256": "59aaece14b9e13810bf2f6675b173f5641548baf1781204e0192ee43f409a8d1"
+    },
+    {
       "itemId": "station_f4ce859f24ccd5fd7c89d56aa592c566",
       "platform": "neogeo",
       "artifactSha256": "8cbb98c238e3f9aa624211c6dbec705bf19863e8cb2b6c118c57a7e7d32de43f",
@@ -31194,6 +33574,15 @@
       "expandedSizeBytes": 524288,
       "fileCount": 1,
       "contentSha256": "4d22279e534848012e0f1595468687742ae18cabc3fe44eeef938bc3a4dd08bf"
+    },
+    {
+      "itemId": "station_f66a5e4cda2b3d810af00fbf96712a35",
+      "platform": "gamecube",
+      "artifactSha256": "dc8cd7550c0c2448a0f5555db1a7bbd38af0bb1001839b99bf221ab8eb54572f",
+      "launchPath": "Resident Evil - Code - Veronica X (PT-BR DUB) - (Disc1).rvz",
+      "expandedSizeBytes": 530048860,
+      "fileCount": 1,
+      "contentSha256": "dc8cd7550c0c2448a0f5555db1a7bbd38af0bb1001839b99bf221ab8eb54572f"
     },
     {
       "itemId": "station_f66c4c262e2906a9d00a2dd14bfb1509",
@@ -31367,6 +33756,15 @@
       "contentSha256": "792e615a34ceae5a1b9a4f54c5a5d9b53e39299332fece83e4bceca2c22efb21"
     },
     {
+      "itemId": "station_f82c95726fe81e48baaff9de3717055d",
+      "platform": "dreamcast",
+      "artifactSha256": "01dfeca9ba71517396593b6f74a8f40bc412d04104c520f03c3e3f7f104baa65",
+      "launchPath": "Midway's Greatest Arcade Hits Volume 2 v1.001 (2001)(Midway)(NTSC)(US)[!][compilation].chd",
+      "expandedSizeBytes": 168488900,
+      "fileCount": 1,
+      "contentSha256": "01dfeca9ba71517396593b6f74a8f40bc412d04104c520f03c3e3f7f104baa65"
+    },
+    {
       "itemId": "station_f83d0f8e85ad9a1c938835ae93222922",
       "platform": "fbneo",
       "artifactSha256": "e303b5414f5c35bb8bf2594ac2a7352793d629695057025ab55fddb00c3098df",
@@ -31412,6 +33810,15 @@
       "contentSha256": "3a50876775c54a647ad2a8eadbd55eec10fc6461a6f3bc75ddc70cd68c14b318"
     },
     {
+      "itemId": "station_f89c4573e5143fff9091ef3b942c3dfd",
+      "platform": "dreamcast",
+      "artifactSha256": "75bf6a0f27f2a94335a2d8de9a023be1a8b92312f38d8d8e496887d54f9dcf86",
+      "launchPath": "Gauntlet Legends v1.003 (2000)(Midway)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 406260669,
+      "fileCount": 1,
+      "contentSha256": "75bf6a0f27f2a94335a2d8de9a023be1a8b92312f38d8d8e496887d54f9dcf86"
+    },
+    {
       "itemId": "station_f89d9c1d7ad37452f507a2abe77425a5",
       "platform": "fbneo",
       "artifactSha256": "bf54bab3d4ca5504d0e4c9e6fc1acd46587f80743274e24e5e1860c177d44782",
@@ -31428,6 +33835,15 @@
       "expandedSizeBytes": 12582912,
       "fileCount": 1,
       "contentSha256": "4ac1b72fb218aeb9ed222513e9a84b426a6a4466bd94572bcd369413a85b011f"
+    },
+    {
+      "itemId": "station_f8afa1befd9a22d427b23323e8270a36",
+      "platform": "dreamcast",
+      "artifactSha256": "ea2539985c199f499f02744020b666c5731c52a50a9331ff37907910b1bdcfd2",
+      "launchPath": "Re-Volt v1.010 (1999)(Acclaim)(NTSC)(US)[!][1S T-8109N].chd",
+      "expandedSizeBytes": 434356506,
+      "fileCount": 1,
+      "contentSha256": "ea2539985c199f499f02744020b666c5731c52a50a9331ff37907910b1bdcfd2"
     },
     {
       "itemId": "station_f8e30f3cd3eaa70db3c33e7a27820277",
@@ -31563,6 +33979,24 @@
       "expandedSizeBytes": 13143576,
       "fileCount": 2,
       "contentSha256": "84c7e1cccf97229946e255efa31eb647b5aba055b0ab4771996e35b7c140ee1b"
+    },
+    {
+      "itemId": "station_f9ddd8ec9bb91513b25cfad02d78f791",
+      "platform": "dreamcast",
+      "artifactSha256": "164cbfc8224d9e7ac211f21c212db73e999618438f605015bd0805b5abceaaec",
+      "launchPath": "Sword of the Berserk - Guts' Rage v1.000 (2000)(EIDOS)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 533365713,
+      "fileCount": 1,
+      "contentSha256": "164cbfc8224d9e7ac211f21c212db73e999618438f605015bd0805b5abceaaec"
+    },
+    {
+      "itemId": "station_fa0e2bebbc9125b3ef593e1e2911716c",
+      "platform": "gamecube",
+      "artifactSha256": "490ef919f413e00daedb4711777c3be05ef9afc12c7acca7675c721c9393c814",
+      "launchPath": "Legend of Zelda, The - Twilight Princess (Europe) (En,Fr,De,Es,It).iso",
+      "expandedSizeBytes": 1459978240,
+      "fileCount": 1,
+      "contentSha256": "490ef919f413e00daedb4711777c3be05ef9afc12c7acca7675c721c9393c814"
     },
     {
       "itemId": "station_fa2783a30c9ef50d2495e480ddc5a0cb",
@@ -31835,6 +34269,15 @@
       "contentSha256": "c9d481b756cfc37a5057f2e3a992d9cef2a4f3945fe8b14d671986305c82257a"
     },
     {
+      "itemId": "station_fcedfda53cef9a34386573136494f33d",
+      "platform": "dreamcast",
+      "artifactSha256": "d106aa919ea6b4d8f6b668b9683f7a4e178387de00aeb584d109a20be578d43f",
+      "launchPath": "Spider-Man v1.000 (2001)(Activision)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 519741235,
+      "fileCount": 1,
+      "contentSha256": "d106aa919ea6b4d8f6b668b9683f7a4e178387de00aeb584d109a20be578d43f"
+    },
+    {
       "itemId": "station_fd031795d82ff4c3c5b6ae0e5d94f6b1",
       "platform": "snesbr",
       "artifactSha256": "4346425fbb0031d545ceee5702298b2f734029954030c1915460d5c0382249d6",
@@ -31941,6 +34384,15 @@
       "expandedSizeBytes": 53204,
       "fileCount": 2,
       "contentSha256": "a120e7c6593da5e6e3317e81df98d761c1195eb074d5bc001603153e06e5b3e8"
+    },
+    {
+      "itemId": "station_fded753d7d7615bc46204035f8426e4d",
+      "platform": "dreamcast",
+      "artifactSha256": "1ad59ad9a0b57c616a40c9843e5e42a356eb5062c1b5862c020ae1df589a8f38",
+      "launchPath": "NFL Quarterback Club 2000 v1.030 (1999)(Acclaim)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 102424256,
+      "fileCount": 1,
+      "contentSha256": "1ad59ad9a0b57c616a40c9843e5e42a356eb5062c1b5862c020ae1df589a8f38"
     },
     {
       "itemId": "station_fded9ca30e8b042e59f33ffeede3c98d",
@@ -32112,6 +34564,15 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "964d21996e385e032b5d18baf716692ba1db780245cd71956c212045c1b8eb9a"
+    },
+    {
+      "itemId": "station_ff7c3efe4382261475296b8f5f07e754",
+      "platform": "dreamcast",
+      "artifactSha256": "0c380dee54aedfbff995586b28546ac9d0716fec426bb0ce432d555557d58fc6",
+      "launchPath": "Maken X v1.001 (2000)(Sega)(NTSC)(US)[!].chd",
+      "expandedSizeBytes": 511918552,
+      "fileCount": 1,
+      "contentSha256": "0c380dee54aedfbff995586b28546ac9d0716fec426bb0ce432d555557d58fc6"
     },
     {
       "itemId": "station_ff9e19c7d83aefa257f8cff021a8882e",

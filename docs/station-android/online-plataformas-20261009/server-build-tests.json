@@ -1,10 +1,27 @@
 {
   "compiled": true,
-  "dllSHA256": "8981510264c82bb6a5c9a536634ca0905807635dca675b0794997acf129c5620",
-  "checks": 504,
-  "passed": true,
-  "scope": "synthetic hub/stream/codec/budget and all platform ceilings",
-  "catalogBindingTests": 19,
-  "catalogBindingTestsPassed": true,
-  "productionDeployed": false
+  "deployed": true,
+  "sourceCommit": "31fc7790f410c524c54a63e2cae15272b960e5ba",
+  "dllSha256": "e74fde53cbe65273d26b3576cb39b8d096dff476dff99409681cd2469b678007",
+  "checks": 1079,
+  "loopbackTlsChecks": 172,
+  "v2Checks": 91,
+  "v2ObservationChecks": 589,
+  "pythonContentSetTests": 6,
+  "pythonAutoOnlineTests": 2,
+  "pythonDiscoveryTests": 5,
+  "pythonPackageDiscoveryTests": 6,
+  "pythonIdentityTests": 4,
+  "capacity": {
+    "participants": 320,
+    "rooms": 80,
+    "playersPerRoom": 4,
+    "links": 240,
+    "bidirectionalBytes": 7864320,
+    "replayMaximumBytes": 134217728,
+    "exactBytes": true,
+    "replayReleasedAfterDetach": true,
+    "scope": "synthetic in-process, not Android or WAN"
+  },
+  "physicalAndroidGameplayQualified": false
 }

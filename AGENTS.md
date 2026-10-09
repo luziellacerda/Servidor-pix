@@ -1,3 +1,11 @@
+# Station multiplataforma: SERVIDOR PUBLICADO — 09/10/2026
+
+Leia HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md no diretório de entrega vigente e online-plataformas-20261009/. Produção DLLe74fde53cbe6, fonte31fc7790, PID1805466/NRestarts0, índice27/3848IDs/3593visíveis, identidades3848/schema2, perfis5176 (3672 anteriores exatos +1504 novos). SNES5/Mega2/N644/demais2 nos modos cadastrados; Dreamcast/GC/Wii/WiiU teto4 e Switch2, com integração nativa do CLIENTE ainda pendente. Todas as plataformas Android NÃO concluídas. API/índice/importação persistente/hotreload/transportes e testes públicos concluídos; não repetir operadores históricos. Licenças/metadados/ROMs/capas/outros serviços/túnel preservados. Backup Git anterior permanece branch/tag backup-station-online... nos dois repos.
+
+212Java/roomsDEX9f13/clientDEXe720/runtime81b3 e quatro cores entregues. 1079C#/172TLS/91+589v2 e importação/conjuntos passaram;320participantes/80salas sintéticos sob128MiB, não WAN/Android. APK completo/assinatura/instalação/teste físico e Flycast4/Dolphin-Station/WiiU/Switch são pendências do PCAPK, base/keystore privadas. Não reabrir aprovação genérica nem inventar hash/motor/teste. Usar a mesma entrega completa, com registros efetivos; rascunhos históricos não substituem os5176.
+
+## Histórico preservado
+
 # Ampliação multiplataforma candidata e backup publicados — 09/10/2026
 
 Leia `docs/station-android/HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md` e `docs/station-android/online-plataformas-20261009/`. Cópia anterior preservada em ambos os repos: branch backup/station-online-antes-todas-plataformas-20261009, tag backup-station-online-20261009-antes-todas-plataformas; servidor2b04f59/app4521218. Ampliação está em branches feat/station-online-all-platforms-20261009 (servidor) e feat/station-online-all-platforms-client-20261009 (app). Produção permanece DLLad45a4f0/PID1722044/NRestarts0/índice24/3672perfis; não reaplicar operadores antigos nem revogar aprovações anteriores.

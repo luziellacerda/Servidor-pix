@@ -1,7 +1,7 @@
 {
-  "utc": "2026-10-09T15:38:11.120935+00:00",
+  "utc": "2026-10-09T16:26:06.988241+00:00",
   "compiled": true,
-  "sourceCount": 211,
+  "sourceCount": 212,
   "sourceHashes": {
     "client/src/java/org/emulationstation/frontend/AssetInstaller.java": "d3539b66cbc434e819b59d1fa614f3eb47c8b7c3d8b51c92284bc6dacbe0ccee",
     "client/src/java/org/emulationstation/frontend/DownloadService.java": "49b2994e4a213e861cfcef5ce0e353789f7f88928fec5f8b7e3b8ceb6f594c5f",
@@ -166,6 +166,7 @@
     "netplay-src/org/emulationstation/frontend/netplay/NetplayPaths.java": "e1cfc916a17eaaabadbcd821c2483469b99e0057944e2f2118fad064187e6a67",
     "netplay-src/org/emulationstation/frontend/netplay/NetplayUi.java": "f205101af034b89aa257c61347af9f942fce1603478c6fabb24597c91d6037cd",
     "netplay-src/org/emulationstation/frontend/netplay/StationActionButton.java": "70cc50af4b03be49c2dce056ef3bcdb6de02ce694f285d46c13e12b0ac055c4e",
+    "netplay-src/org/emulationstation/frontend/netplay/StationContentIdentity.java": "e12542bda3d81caf23a70225317764cab9be83b0f652350ae2f345bbf9d24b42",
     "netplay-src/org/emulationstation/frontend/netplay/StationCreateGameCard.java": "ccdd4e971da51331181cb017ccc11682b0cfdaee13252eb85344586b251431fd",
     "netplay-src/org/emulationstation/frontend/netplay/StationDolphinNetplayActivity.java": "f947b5f72a35184c3eafb2ad551f39ce5ded40a1949a3a536d685b2660461b8e",
     "netplay-src/org/emulationstation/frontend/netplay/StationExitPanel.java": "a443148b772163c7ef99c2fb66d19027cc80ec4ffdf973a17d250e510d2e4058",
@@ -188,7 +189,7 @@
     "netplay-src/org/emulationstation/frontend/netplay/StationNetplayActivity.java": "e6d93b5e1c159432f538f277b0d28813b91764ac5ce1145f14dbc872309dedbb",
     "netplay-src/org/emulationstation/frontend/netplay/StationOnlineBios.java": "0fea483a36d9b1877e2db3d0f8935123c8b808da3435114b850afe16030cb4f5",
     "netplay-src/org/emulationstation/frontend/netplay/StationOnlineClient.java": "01f2354a9599879b8125ef10b723b3033db08d8cbda649f2ee9164992249b91b",
-    "netplay-src/org/emulationstation/frontend/netplay/StationOnlineGame.java": "fc772c163f347a0ddea2c9f5139742cbe51d4afdc3a95f905ed40032cf60c7cf",
+    "netplay-src/org/emulationstation/frontend/netplay/StationOnlineGame.java": "a722c241551995b166a8c27ab103625bdc26d6369619088981dda3ab17636e57",
     "netplay-src/org/emulationstation/frontend/netplay/StationOnlinePlatformPolicy.java": "f80fc0b57e853ccd5672472d1466edda95cf6cd77d3247f5511a865b52afb340",
     "netplay-src/org/emulationstation/frontend/netplay/StationPlayerModel.java": "8adf63d868f72560ad5bf122be94c71581c396710e5d8d699bc8f4497f32b688",
     "netplay-src/org/emulationstation/frontend/netplay/StationPlayerSheet.java": "fdb1ff266df5059cd87589712064d2894ed00230b40d02ac9bc8fe1de146610a",
@@ -216,6 +217,7 @@
     "netplay-src/org/emulationstation/frontend/netplay/StationSocialIcon.java": "19ff1286d4f021df60b29075c9db848d68183f76312430b2ef5b1a8b97b2c44c"
   },
   "changedSources": [
+    "netplay-src/org/emulationstation/frontend/netplay/StationContentIdentity.java",
     "netplay-src/org/emulationstation/frontend/netplay/StationGamePlayerInfo.java",
     "netplay-src/org/emulationstation/frontend/netplay/StationMultiplayerProfile.java",
     "netplay-src/org/emulationstation/frontend/netplay/StationMultiplayerSession.java",
@@ -231,10 +233,10 @@
     "androidJar": "6cea1df3efb77103ac3e2beb9bf4718964b0e0869ab16d39d29d5cbae1c147ad",
     "d8Jar": "d43c8a94c9b1f1da1a7cc49c32b81e8cee1708b37ee8b530a81a0688222b42c0"
   },
-  "recipeSHA256": "b46603492f8456821feefde6f02b2509b97c8154ac3422399764155896418102",
+  "recipeSHA256": "ca3395e21210ec89087f11220363b131684b97845e89382a4fcd473e2835a6d2",
   "baseVersion": "R81",
   "clientDexSHA256": "e7207a89517b168cc476e30a823bed3a1b6ad57339e1042f08a4660184543d63",
-  "roomsDexSHA256": "bec655c6714ec66e2b247be33ea7aa2dae1ca139c3eb6e4419d576341943ce37",
+  "roomsDexSHA256": "9f13b23f1442dfa4f1ac5393195705a01e78a30e8b32c9f27d1f346f56f7e80f",
   "apkBuilt": false,
   "installed": false,
   "fivePhoneGameplayVerified": false

@@ -1,11 +1,96 @@
 {
-  "offlineBindings": 3848,
-  "previousBindingsPreserved": 2071,
-  "newBindings": 1777,
-  "completeContentSets": 4,
-  "registrySchemaVersion": 2,
-  "qualified": true,
-  "publicAndIsolatedProof": {
+  "applied": true,
+  "utc": "2026-10-09T17:04:31.845345+00:00",
+  "reloadUtc": "2026-10-09T17:01:55.811112+00:00",
+  "pid": 1805466,
+  "nRestarts": 0,
+  "sourceCommit": "31fc7790f410c524c54a63e2cae15272b960e5ba",
+  "dllSha256": "e74fde53cbe65273d26b3576cb39b8d096dff476dff99409681cd2469b678007",
+  "catalogRevision": 27,
+  "catalogItems": 3848,
+  "catalogVisible": 3593,
+  "contentIdentities": 3848,
+  "multiFileContentSets": [
+    "station_d9405ba1719a504fad37055a359e861e",
+    "station_523f952048a1583e0bc9c7f9971d0ecf",
+    "station_8d42174892b607ae006f5e68ddf62fe0",
+    "station_3b50bae45f3433371386de5687913fb8"
+  ],
+  "profiles": 5176,
+  "approvedProfiles": 5169,
+  "previousProfilesPreserved": 3672,
+  "newProfiles": 1504,
+  "maximumPlayers": 5,
+  "maximumRooms": 100,
+  "maximumReplayBytes": 134217728,
+  "syntheticCapacityParticipants": 320,
+  "activePlatforms": [
+    "cps1",
+    "cps2",
+    "cps3",
+    "fbneo",
+    "megadrive",
+    "n64",
+    "neogeo",
+    "neogeocd",
+    "psx",
+    "snes"
+  ],
+  "nativeClientPlatformsPending": [
+    "dreamcast",
+    "gamecube",
+    "wii",
+    "wiiu",
+    "switch"
+  ],
+  "allPlatformsAndroidGameplayComplete": false,
+  "indexSha256": "f7924dcd6bdea74c2f32d8a482184f6f21f6a7f235b77f697432fd57637aef6e",
+  "identitiesSha256": "16efbad906b1f8aec26869fc9900a7aa50486fa351be4c82f507253a1902667a",
+  "profilesSha256": "a029fb61ce68fa26abadf0312b55b9ae163c6a3604a12bfd37e97d406fdfebaa",
+  "legacyEngineRegistrySha256": "a5f9de948ab3fcf15b2657061d540dcbbafda98e1dd7a68137e617b58a894843",
+  "importerSha256": "4033928abe3c129618889d65367d63f37c7457c204d65d1a4e311303722044b0",
+  "autoContentIdentities": true,
+  "autoProfiles": true,
+  "profileReloadWithoutRestart": true,
+  "realLicensesPreserved": true,
+  "schemaPreserved": true,
+  "romsCoversAndPriorMetadataPreserved": true,
+  "sharedProductsPreserved": true,
+  "proxyTunnelFirewallChanged": false,
+  "sandbox": {
+    "mediaFilesReadable": 35,
+    "protectedPathsDenied": 4,
+    "readOnlyMounts": true
+  },
+  "readyAfter": {
+    "maximumRooms": 512,
+    "maximumConnections": 1024,
+    "activeRooms": 0,
+    "activeConnections": 0,
+    "forwardedBytes": 64,
+    "recovery": {
+      "protocol": "station-stream.v2",
+      "maximumRooms": 64,
+      "windowBytes": 262144,
+      "retainedRooms": 0,
+      "activeConnections": 0,
+      "pendingBytes": 0,
+      "maximumRetainedBytes": 33554432,
+      "persistent": false
+    },
+    "multiplayer": {
+      "protocol": "station-stream.v3",
+      "maximumPlayers": 5,
+      "maximumRooms": 100,
+      "activeRooms": 0,
+      "activeConnections": 0,
+      "approvedProfiles": 5169,
+      "profileCount": 5176,
+      "retainedBytes": 0,
+      "maximumRetainedBytes": 134217728
+    }
+  },
+  "proof": {
     "rollbackOld": {
       "catalog": {
         "passed": true,
@@ -1855,6 +1940,5 @@
         }
       }
     }
-  },
-  "physicalAndroidGameplayQualified": false
+  }
 }

@@ -1,8 +1,17 @@
 {
   "previousProfilesPreserved": 3672,
-  "newProfiles": 1501,
-  "newApproved": 0,
-  "missing": 3,
-  "metadataNeverAuthorizesSeats": true,
-  "productionChanged": false
+  "newProfiles": 1504,
+  "newApproved": 1497,
+  "totalProfiles": 5176,
+  "missingNativePlatforms": [
+    "dreamcast",
+    "gamecube",
+    "wii",
+    "wiiu",
+    "switch"
+  ],
+  "metadataNeverGrantsMoreThanTwoSeats": true,
+  "maintainerTwoSeatPolicy": true,
+  "productionChanged": true,
+  "physicalAndroidGameplayQualified": false
 }
