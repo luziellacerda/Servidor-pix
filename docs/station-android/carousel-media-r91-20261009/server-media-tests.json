@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "serverChecks": 20,
+  "publisherPreservesOtherEntries": true,
+  "realCarouselFiles": 58,
+  "videoBytes": 109503389,
+  "all720x720": true,
+  "all30fps": true,
+  "audioTracks": 0,
+  "mp4BytesUnchanged": true,
+  "manifestSHA256": "827dfe47fbd446bccd1fe715f97dd1b0d89e7ce6317a809f0f318ef198b77e83",
+  "candidateDLL_SHA256": "c1de870aeaa12b33598cf5bd34ebefbad14309192899dbd98ba9d6392fc3a247",
+  "serverSourceBase": "2b04f591eb10ad76efc3b630ded4fff9ef2c2a27",
+  "serverDeployed": false,
+  "sourceFiles": {
+    "StationCarouselMedia.cs": "56d6a4aa3c838ce9e75db42752db2c9f9a203f7a4d1c4219e088abee63766642",
+    "StationEndpoints.cs": "6be3ea2f7fa55ff1176c22fcda67a6d9018ce377601427d9c174b7488fba1e24"
+  }
+}

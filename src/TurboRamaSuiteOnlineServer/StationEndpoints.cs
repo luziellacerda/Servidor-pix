@@ -9,6 +9,7 @@ public static class StationEndpoints
 {
     public static void MapStation(this WebApplication app, bool enabled)
     {
+        app.MapStationCarouselMedia(enabled);
         var limiter = new StationRateLimiter(originRequestsPerMinute:
             app.Configuration.GetValue("Station:OriginRequestsPerMinute",30),
             maximumWindows:app.Configuration.GetValue("Station:MaximumRateWindows",4096));
