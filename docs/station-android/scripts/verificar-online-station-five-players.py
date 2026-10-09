@@ -17,7 +17,7 @@ from websockets.exceptions import InvalidStatus
 from station_async_socket_check import SocketChecks
 
 
-def verify(index, values, base, sql, additional_profiles=()):
+def verify(index, values, base, sql, additional_profiles=(), capabilities_items=()):
     spec = importlib.util.spec_from_file_location('station_v3_owned', Path(__file__).with_name('verificar-http-release-station.py'))
     helper = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(helper)
@@ -165,7 +165,7 @@ def verify(index, values, base, sql, additional_profiles=()):
                     check(receive(recipient, 3, 0)[2] == data, 'exact independent bidirectional stream')
                     recipient.send(frame(4, 64)); receive(sender, 5, 64, 64)
                     forwarded += len(data)
-            if profile == selected[0] or count == 5:
+            if profile == selected[0] or count == 5 or profile in additional_profiles:
                 drop = (count-2)*2+1 if count == 5 else 1
                 guest = (drop+1)//2
                 peers[drop].close()
@@ -183,7 +183,14 @@ def verify(index, values, base, sql, additional_profiles=()):
             for ws in peers:
                 ws.close()
             time.sleep(1.1)
+        for item in capabilities_items:
+            snapshot=command(clients[0],'capabilities',itemId=item['itemId'])
+            policy=snapshot['platformPolicy']
+            check(policy['serverReady'] is True and policy['transportProtocol']=='station-stream.v3','signed server readiness before APK integration')
+            check(policy['maximumPlayers']==(2 if item['platform']=='switch' else 4),'future platform exact ceiling')
+            check(len(snapshot['serverPlatforms'])==15 and all(p['serverReady'] for p in snapshot['serverPlatforms']),'signed complete server platform matrix')
         return dict(passed=True, checks=checks, approvedProfiles=len(profiles), signedV3=True, createJoinReadyStart=True,
+            serverCapabilitiesPlatformsVerified=sorted({i['platform'] for i in capabilities_items}),
             bidirectionalBytes=forwarded, countsVerified=sorted({p['maximumPlayers'] for p in selected}),
             platformsVerified=sorted({p['platform'] for p in selected}),
             engineBindingsVerified=[{k:p[k] for k in ('platform','engineId','coreSha256','runtimeSha256','profileId','maximumPlayers')} for p in selected],

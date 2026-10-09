@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 int checks=0;void Check(bool value,string name){checks++;if(!value)throw new Exception(name);}
 CatalogChecks.Run(Check);
 CapacityChecks.Run(Check);
+FuturePlatformChecks.Run(Check);
 void Denied(Action action,string code){checks++;try{action();throw new Exception("Expected "+code);}catch(OnlineFailure e){if(e.Code!=code)throw new Exception("Expected "+code+" got "+e.Code);}}
 string H(char c)=>new(c,64);
 var security=new StationSessionSecurity("rsa-pss-v1","synthetic-key-only");
@@ -76,6 +77,8 @@ foreach(var entry in new[]{("snes",5),("snesbr",5),("megadrive",2),("megadrivebr
     var capability=Json(hub.Command(person,Cmd("capabilities",p:profile),security));
     var policy=capability.GetProperty("platformPolicy");
     Check(policy.GetProperty("maximumPlayers").GetInt32()==maximum&&policy.GetProperty("onlineAvailable").GetBoolean(),"signed exact platform capability "+entry.Item1);
+    Check(policy.GetProperty("serverReady").GetBoolean()&&policy.GetProperty("transportProtocol").GetString()==StationMultiplayer.Protocol,"server preparation independent from APK "+entry.Item1);
+    Check(capability.GetProperty("serverPlatforms").GetArrayLength()==15,"all server platforms in signed capabilities");
     var opened=Json(hub.Command(person,Cmd("create",capacity:maximum,p:profile),security)).GetProperty("room");
     Check(opened.GetProperty("capacity").GetInt32()==maximum,"room with requested platform ceiling "+entry.Item1);
     hub.Command(person,Cmd("leave",opened,p:profile),security);
@@ -87,6 +90,8 @@ var unconfiguredPlatform=new StationMultiplayer([],_=>"wiiu",new());
 var pendingPolicy=Json(unconfiguredPlatform.Command(new("pending-system","pending-system"),Cmd("capabilities"),security)).GetProperty("platformPolicy");
 Check(pendingPolicy.GetProperty("maximumPlayers").GetInt32()==4&&!pendingPolicy.GetProperty("onlineAvailable").GetBoolean(),"four-seat policy alone cannot advertise an absent engine");
 Check(pendingPolicy.GetProperty("availability").GetString()=="online-engine-pending","missing native engine has an explicit signed reason");
+Check(pendingPolicy.GetProperty("serverReady").GetBoolean(),"server ready while future APK engine is absent");
+Check(!StationMultiplayerPlatformPolicy.ServerReady(null)&&!StationMultiplayerPlatformPolicy.ServerReady("unregistered-console"),"unregistered platforms are not declared ready");
 // Updating the registry cannot discard a running room or its replay reservation.
 var hot=Make(2,profile:altProfile);
 var hotRoom=Json(hot.Hub.Command(hot.People[0],Cmd("start",hot.Room,p:altProfile),security)).GetProperty("room");

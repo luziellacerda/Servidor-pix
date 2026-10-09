@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "serverFirstOrder": true,
+  "appImplementationIsNextStage": true,
+  "protocol": "station-stream.v3",
+  "binaryMagic": "TSR3",
+  "headerBytes": 24,
+  "integerEncoding": "signed-int64-big-endian",
+  "maximumDataBytes": 16384,
+  "windowBytes": 262144,
+  "topology": "host-star",
+  "hostLinks": "one duplex link per guest",
+  "maximumIndependentPlayers": 5,
+  "commandPath": "/v1/station/online/multiplayer/command",
+  "commandMethod": "POST",
+  "relayPath": "/v1/station/online/multiplayer/relay",
+  "relayScheme": "wss",
+  "authentication": "existing license + device-bound bearer/proofs; no public engine registration",
+  "serverPlatforms": [
+    {
+      "platform": "snes",
+      "maximumPlayers": 5,
+      "serverReady": true
+    },
+    {
+      "platform": "megadrive",
+      "maximumPlayers": 2,
+      "serverReady": true
+    },
+    {
+      "platform": "n64",
+      "maximumPlayers": 4,
+      "serverReady": true
+    },
+    {
+      "platform": "dreamcast",
+      "maximumPlayers": 4,
+      "serverReady": true
+    },
+    {
+      "platform": "gamecube",
+      "maximumPlayers": 4,
+      "serverReady": true
+    },
+    {
+      "platform": "wii",
+      "maximumPlayers": 4,
+      "serverReady": true
+    },
+    {
+      "platform": "wiiu",
+      "maximumPlayers": 4,
+      "serverReady": true
+    },
+    {
+      "platform": "switch",
+      "maximumPlayers": 2,
+      "serverReady": true
+    },
+    {
+      "platform": "neogeo",
+      "maximumPlayers": 2,
+      "serverReady": true
+    },
+    {
+      "platform": "neogeocd",
+      "maximumPlayers": 2,
+      "serverReady": true
+    },
+    {
+      "platform": "psx",
+      "maximumPlayers": 2,
+      "serverReady": true
+    },
+    {
+      "platform": "fbneo",
+      "maximumPlayers": 2,
+      "serverReady": true
+    },
+    {
+      "platform": "cps1",
+      "maximumPlayers": 2,
+      "serverReady": true
+    },
+    {
+      "platform": "cps2",
+      "maximumPlayers": 2,
+      "serverReady": true
+    },
+    {
+      "platform": "cps3",
+      "maximumPlayers": 2,
+      "serverReady": true
+    }
+  ],
+  "platformPolicy": {
+    "serverReady": "server transport and trusted enrollment implemented, independent from installed APK",
+    "onlineAvailable": "this exact game has an approved native-engine/content/controller binding",
+    "maximumPlayers": "platform ceiling; select an allowedPlayerCounts entry of the exact profile"
+  },
+  "engineEnrollment": {
+    "operator": "scripts/cadastrar-motor-online-station.py install",
+    "protectedLocalAdministration": true,
+    "serverRebuildRequired": false,
+    "serverRestartRequired": false,
+    "binaryHashes": "SHA-256 of the actual APK core and runtime files; both are verified offline",
+    "controllerProfiles": "explicit canonical controller definitions, including native device descriptors",
+    "profileConfigurationFieldOrder": [
+      "schemaVersion",
+      "controllerProfile",
+      "devices",
+      "coreOptions"
+    ],
+    "profileConfigurationEncoding": "UTF-8 compact JSON, no BOM/newline, Unicode unescaped, SHA-256 lowercase hex",
+    "contentIdentity": "exact existing contentSha256; cue-set-v1 and wiiu-set-v1 preserved",
+    "reloadWithinSeconds": 10
+  },
+  "controllerProfiles": [
+    "dreamcast-four-ports-v1",
+    "gamecube-four-ports-v1",
+    "gamecube-shared-controller-v1",
+    "gamecube-gba-link-v1",
+    "wii-four-remotes-v1",
+    "wii-co-star-v1",
+    "wiiu-four-controllers-v1",
+    "switch-two-controllers-v1"
+  ],
+  "preparedCatalogItems": 273,
+  "preparedModes": 274,
+  "preparedModesFile": "server-prepared-modes.json",
+  "futureEngineHashesFabricated": false,
+  "nativeAdapterResponsibilities": [
+    "connect the original native session to each Station duplex link",
+    "preserve native session during WSS replacement",
+    "map roster slot to the exact native input port",
+    "implement HELLO/PAUSED/READY and native-drained ACK watermarks",
+    "pause/resume all participants with the shared epoch",
+    "use the automatic invitation/ticket flow"
+  ],
+  "deployment": "prepared; see server-ready-deployment.json for actual application",
+  "androidGameplayValidated": false
+}

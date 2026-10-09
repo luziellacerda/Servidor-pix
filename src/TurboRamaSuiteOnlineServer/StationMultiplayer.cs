@@ -243,11 +243,14 @@ public sealed class StationMultiplayer
             matches.Any(p=>p.Approved&&p.MaximumPlayers==1)?"single-player":matches.Length>0?"mode-pending":"online-engine-pending";
         var platformPolicy=new{platform=selectedPlatform is null?null:StationMultiplayerPlatformPolicy.Normalize(selectedPlatform),
             maximumPlayers=StationMultiplayerPlatformPolicy.MaximumPlayers(selectedPlatform),
+            serverReady=StationMultiplayerPlatformPolicy.ServerReady(selectedPlatform),transportProtocol=Protocol,
+            transportTopology="host-star",engineRegistration="trusted-manifest",profileReloadWithoutRestart=true,
             approvedProfileCount=matches.Count(p=>p.Approved),onlineAvailable=available,availability,
             limitSource="maintainer-20261009",gameModeRequired=true};
         var visible=rooms.Values.Where(r=>r.Profile.MaximumPlayers<=clientMaximumPlayers&&(blocked is null||r.Members.All(m=>!blocked.Contains(m.Peer.Id)))).OrderBy(r=>r.Id,StringComparer.Ordinal).Take(100).ToArray();
         return new{schemaVersion=1,multiplayerVersion=3,capability="station-multiplayer.v3",maximumPlayers=5,clientMaximumPlayers,selfId=peer.Id,instance,revision,serverTimeMs=DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),status="ok",
             profiles=matches,profileCount=profiles.Count,classification=matches.Length==0?"pending":"classified",platformPolicy,
+            serverPlatforms=StationMultiplayerPlatformPolicy.SupportedPlatforms.Select(p=>new{platform=p,maximumPlayers=StationMultiplayerPlatformPolicy.MaximumPlayers(p),serverReady=true,transportProtocol=Protocol}),
             totalRooms=visible.Length,rooms=visible.Select(r=>RoomView(r,false)).ToArray(),
             room=own is null?null:RoomView(own,true),ticket};
     }

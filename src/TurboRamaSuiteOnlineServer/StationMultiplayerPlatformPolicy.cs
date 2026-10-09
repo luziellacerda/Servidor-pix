@@ -3,6 +3,12 @@ namespace TurboRamaSuiteOnlineServer;
 // Maintainer limits. A platform ceiling never grants a game, mode or engine approval.
 public static class StationMultiplayerPlatformPolicy
 {
+    public static IReadOnlyList<string> SupportedPlatforms { get; } = Array.AsReadOnly(new[]{
+        "snes","megadrive","n64","dreamcast","gamecube","wii","wiiu","switch",
+        "neogeo","neogeocd","psx","fbneo","cps1","cps2","cps3"});
+
+    public static bool ServerReady(string? platform) => platform is not null && SupportedPlatforms.Contains(Normalize(platform));
+
     public static string Normalize(string value) => value.ToLowerInvariant() switch
     {
         "snesbr" or "super nintendo" or "super nintendo - br" => "snes",
