@@ -66,14 +66,22 @@ public sealed class StationLibrary
     public const int MaximumArtifactFiles = 100_000;
     public long Revision { get; }
     public IReadOnlyList<StationCatalogEntry> Catalog { get; }
+    internal (long Length, long Ticks) SourceStamp { get; }
+
+    internal static (long, long) FileStamp(string path)
+    {
+        var info = new FileInfo(path);
+        return info.Exists ? (info.Length, info.LastWriteTimeUtc.Ticks) : (0, 0);
+    }
 
     private readonly Dictionary<string, Resolved> _items;
     private readonly Dictionary<string, (string Path, long Revision)> _covers;
 
     private StationLibrary(long revision, Dictionary<string, Resolved> items,
-        Dictionary<string, (string Path, long Revision)> covers)
+        Dictionary<string, (string Path, long Revision)> covers, (long, long) sourceStamp)
     {
         Revision = revision;
+        SourceStamp = sourceStamp;
         _items = items;
         _covers = covers;
         Catalog = items.Values.Where(item => item.CatalogVisible)
@@ -85,6 +93,7 @@ public sealed class StationLibrary
     {
         if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
             return null;
+        var sourceStamp = FileStamp(path);
         var json = File.ReadAllText(path);
         using var document = JsonDocument.Parse(json, new JsonDocumentOptions
         {
@@ -170,7 +179,9 @@ public sealed class StationLibrary
                 throw new InvalidOperationException("Station cover ID has conflicting revisions.");
             covers[coverId] = (coverPath, itemRevision);
         }
-        return new StationLibrary(revision, items, covers);
+        if (FileStamp(path) != sourceStamp)
+            throw new IOException("Station library changed while loading.");
+        return new StationLibrary(revision, items, covers, sourceStamp);
     }
 
     public bool TryResolve(string itemId, out string filePath, out StationCatalogEntry entry)
@@ -251,7 +262,9 @@ public sealed class StationLibrary
             var text = field.GetString() ?? "";
             if (text.Length > limit || text.Any(c => char.IsControl(c) && c != '\n' && c != '\t'))
                 throw new InvalidOperationException("Station metadata is invalid.");
-            return text;
+            // Android accepts line breaks in the synopsis only. Older indexes
+            // may contain XML formatting in publisher/player fields.
+            return key == "description" ? text : text.Replace('\n', ' ').Replace('\t', ' ');
         }
         var metadata = new StationItemMetadata(Read("description", 2000), Read("developer", 80),
             Read("publisher", 80), Read("genre", 80), Read("players", 40), Read("releaseDate", 40));

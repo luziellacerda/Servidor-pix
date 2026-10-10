@@ -74,6 +74,22 @@ try{
     for(int i=0;i<5;i++)room=(await Post(i,Cmd("ready",value:true))).GetProperty("room");
     room=(await Post(0,Cmd("start"))).GetProperty("room");Check(room.GetProperty("state").GetString()=="starting","HTTP starting");
     var links=room.GetProperty("links").EnumerateArray().Select(x=>x.GetProperty("linkId").GetString()!).ToArray();
+    // An authorization timeout before an upgrade must not look like HTTP 200.
+    var timeoutTicket=(await Post(0,Cmd("ticket",link:links[0]))).GetProperty("ticket").GetProperty("ticket").GetString()!;
+    using(var upgrade=new HttpRequestMessage(HttpMethod.Get,StationMultiplayer.RelayPath)){
+        upgrade.Headers.Add("Connection","Upgrade");upgrade.Headers.Add("Upgrade","websocket");
+        upgrade.Headers.Add("Sec-WebSocket-Version","13");upgrade.Headers.Add("Sec-WebSocket-Key",Convert.ToBase64String(RandomNumberGenerator.GetBytes(16)));
+        upgrade.Headers.Add("Sec-WebSocket-Protocol",StationMultiplayer.Protocol);
+        upgrade.Headers.Add("Authorization","StationRelay "+timeoutTicket);
+        upgrade.Headers.Add(StationRequestProof.Header,access.Users[0].Proof("GET",StationMultiplayer.RelayPath,[],timeoutTicket));
+        access.CancelRelayAuthorization=true;
+        using var denied=await http.SendAsync(upgrade);access.CancelRelayAuthorization=false;
+        Check(denied.StatusCode==HttpStatusCode.GatewayTimeout,"relay authorization timeout is a finite HTTP 504");
+        var error=JsonSerializer.Deserialize<JsonElement>(await denied.Content.ReadAsByteArrayAsync());
+        Check(error.GetProperty("code").GetString()=="STATION_MULTIPLAYER_TIMEOUT","relay timeout has a readable error contract");
+        Check(denied.Content.Headers.ContentLength>0,"relay timeout is framed before upgrade");
+    }
+    Check(JsonSerializer.SerializeToElement(multi.Snapshot()).GetProperty("activeConnections").GetInt32()==0,"failed authorization releases its attachment");
     await Post(1,Cmd("ticket",link:links[1]),HttpStatusCode.Forbidden);
     async Task<ClientWebSocket> Connect(int user,string link,string action="ticket"){
         var ticket=(await Post(user,Cmd(action,link:link))).GetProperty("ticket").GetProperty("ticket").GetString()!;
@@ -137,6 +153,7 @@ sealed class LabAccess(StationResponseSigner signer):IStationOnlineAccess,IDispo
     }
     public User[] Users {get;}=Enumerable.Range(0,5).Select(i=>new User(i)).ToArray();
     public Task<StationSession?> Authenticate(string bearer,CancellationToken token){var u=Users.FirstOrDefault(u=>u.Bearer==bearer);return Task.FromResult(u is null?null:new StationSession("synthetic-session",u.Identity.LicenseId,u.Identity.DeviceId,u.Nickname,1,"rsa-pss-v1",StationProtocol.Encode(u.Key.ExportSubjectPublicKeyInfo())));}
-    public Task<bool> AuthorizeRelay(StationOnline.RelayLease lease,CancellationToken token)=>Task.FromResult(Users.Any(u=>u.Identity==lease.Identity));
+    public bool CancelRelayAuthorization;
+    public Task<bool> AuthorizeRelay(StationOnline.RelayLease lease,CancellationToken token)=>CancelRelayAuthorization?Task.FromCanceled<bool>(new CancellationToken(true)):Task.FromResult(Users.Any(u=>u.Identity==lease.Identity));
     public object Sign(object payload)=>signer.Sign(payload);public void Dispose(){foreach(var user in Users)user.Dispose();}
 }

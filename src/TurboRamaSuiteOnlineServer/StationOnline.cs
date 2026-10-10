@@ -228,6 +228,7 @@ public sealed class StationOnline
     {
         Require(page >= 0 && page <= 40, 400, "STATION_ONLINE_PAGE_INVALID");
         var visible = peers.Values.Where(x => clock()-x.Seen<60000 && !Blocked(p,x)).OrderBy(x => x.Id, StringComparer.Ordinal).ToArray();
+        var visibleRooms = rooms.Values.Where(r => peers.TryGetValue(r.Host,out var host) && !Blocked(p,host)).OrderBy(r=>r.Id,StringComparer.Ordinal).ToArray();
         Room? selected = p.Room is not null ? rooms.GetValueOrDefault(p.Room) : null;
         return new {
             schemaVersion = 1, instance, revision, selfId = p.Id, heartbeatSeconds = 20, expiresAfterSeconds = 60,
@@ -242,8 +243,10 @@ public sealed class StationOnline
             sentJoinRequests=socialEnabled?joinRequests.Values.Where(x=>x.From==p.Id).Select(x=>new{requestId=x.Id,roomId=x.Room}).ToArray():[],
             page, totalPeers = visible.Length, totalRooms=rooms.Count,
             nextPage = (page+1)*100 < Math.Max(visible.Length,rooms.Count) ? page+1 : (int?)null,
-            peers = visible.Skip(page*100).Take(100).Select(x => new { peerId=x.Id, nickname=x.Nickname, status=x.Room is null ? "online" : "in-room" }).ToArray(),
-            rooms = rooms.Values.Where(r => peers.TryGetValue(r.Host,out var host) && !Blocked(p,host)).OrderBy(r=>r.Id,StringComparer.Ordinal)
+            nextPeerPage = (page+1)*100 < visible.Length ? page+1 : (int?)null,
+            nextRoomPage = (page+1)*100 < visibleRooms.Length ? page+1 : (int?)null,
+            peers = visible.Skip(page*100).Take(100).Select(x => new { peerId=x.Id, nickname=x.Nickname, status=x.Room is not null||externalMembership?.Invoke(x.Identity)==true ? "in-room" : "online" }).ToArray(),
+            rooms = visibleRooms
                 .Skip(page*100).Take(100).Select(r => new { roomId=r.Id,itemId=r.Item,engineId=r.Engine.Id,hostId=r.Host,state=r.State,players=r.Members.Count,maximumPlayers=2 }).ToArray(),
             invites = invites.Values.Where(i => i.To==p.Id).Select(i => new { inviteId=i.Id,fromPeerId=i.From,roomId=i.Room,itemId=rooms[i.Room].Item }).ToArray(),
             room = selected is null ? null : new { roomId=selected.Id,itemId=selected.Item,engineId=selected.Engine.Id,

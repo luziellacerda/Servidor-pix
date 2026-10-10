@@ -59,6 +59,18 @@ var command=new {action="enter",requestId=Id(),nickname="Test A"};
 var first=await Post("command",command,access.A);Check(first.Status==200,"authenticated enter");
 var snapshot=Payload(first.Body,command.requestId,"license-A");
 Check(snapshot.GetProperty("totalPeers").GetInt32()==1,"only real entered identities");
+// A quiet lobby must finish its normal ten-second wait with a signed 200.
+// Include bounded authentication latency so the request deadline cannot win that wait.
+access.DelayMillis=40;
+string idleRequestId=Id();
+var idle=await Post("events",new {requestId=idleRequestId,instance=snapshot.GetProperty("instance").GetString(),revision=snapshot.GetProperty("revision").GetInt64(),page=0},access.A);
+Check(idle.Status==200,"idle event wait has time for authentication and response signing");
+Check(Payload(idle.Body,idleRequestId,"license-A").GetProperty("totalPeers").GetInt32()==1,"idle wait returns the authoritative snapshot");
+access.DelayMillis=0;
+access.AuthenticationFailure=true;
+var authFailure=await Post("command",new {action="heartbeat",requestId=Id()},access.A);
+Check(authFailure.Status==503&&authFailure.Body.GetProperty("code").GetString()=="STATION_AUTH_UNAVAILABLE","authentication failure preserves JSON error contract");
+access.AuthenticationFailure=false;
 string createId=Id();
 var created=await Post("command",new {action="create",requestId=createId,itemId="synthetic-item",engineId="synthetic-engine",contentSha256=hash,optionsSha256=hash,coreSha256=hash,runtimeSha256=hash},access.A);
 var room=Payload(created.Body,createId,"license-A").GetProperty("room");
@@ -98,7 +110,9 @@ sealed class TestAccess(StationResponseSigner signer):IStationOnlineAccess
  public string A {get;}=StationProtocol.Encode(RandomNumberGenerator.GetBytes(32));
  public string B {get;}=StationProtocol.Encode(RandomNumberGenerator.GetBytes(32));
  public volatile bool Revoked;
- public Task<StationSession?> Authenticate(string token,CancellationToken cancellation)
- {cancellation.ThrowIfCancellationRequested();return Task.FromResult<StationSession?>(token==A&&!Revoked?new(new string('a',64),"license-A","device-A","Test A",1):token==B?new(new string('b',64),"license-B","device-B","Test B",1):null);}
+ public int DelayMillis;
+ public bool AuthenticationFailure;
+ public async Task<StationSession?> Authenticate(string token,CancellationToken cancellation)
+ {cancellation.ThrowIfCancellationRequested();if(AuthenticationFailure)throw new SuiteException(503,"STATION_AUTH_UNAVAILABLE","Authentication unavailable.");if(DelayMillis>0)await Task.Delay(DelayMillis,cancellation);return token==A&&!Revoked?new(new string('a',64),"license-A","device-A","Test A",1):token==B?new(new string('b',64),"license-B","device-B","Test B",1):null;}
  public object Sign(object payload)=>signer.Sign(payload);
 }

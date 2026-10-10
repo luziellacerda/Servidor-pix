@@ -125,6 +125,10 @@ public sealed class StationRequestProof(TimeProvider clock, int maximumNonces = 
         }
         catch (OperationCanceledException) when (!context.RequestAborted.IsCancellationRequested &&
             !context.Response.HasStarted)
-        { context.Response.StatusCode = 504; }
+        {
+            context.Response.StatusCode = 504;
+            await context.Response.WriteAsJsonAsync(new ErrorResponse(1, "STATION_TIMEOUT", "Request timed out."),
+                StrictJson.Options, context.RequestAborted);
+        }
     }
 }

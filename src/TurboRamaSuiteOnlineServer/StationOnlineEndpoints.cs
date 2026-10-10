@@ -87,7 +87,8 @@ public static class StationOnlineEndpoints
                 }finally{hub.CloseRelay(lease);}
             }catch(OnlineFailure e){if(!context.Response.HasStarted)await RelayError(context,e.Status,e.Code);}
             catch(SuiteException e){if(!context.Response.HasStarted)await RelayError(context,e.StatusCode,e.Code);}
-            catch(OperationCanceledException){}catch(System.Net.WebSockets.WebSocketException){}
+            catch(OperationCanceledException){if(!context.RequestAborted.IsCancellationRequested&&!context.Response.HasStarted)await RelayError(context,504,"STATION_ONLINE_TIMEOUT");}
+            catch(System.Net.WebSockets.WebSocketException){}
         });
         app.MapPost("/v1/station/online/command", async (HttpContext context) => {
             var result=await Handle(context,enabled,async (hub,identity,cancel) => {
@@ -145,6 +146,7 @@ public static class StationOnlineEndpoints
             }),StrictJson.Options);
         }
         catch(OnlineFailure e){if(e.Status==429)context.Response.Headers.RetryAfter="1";return Error(e.Status,e.Code);}
+        catch(SuiteException e){if(e.StatusCode==429)context.Response.Headers.RetryAfter="1";return Error(e.StatusCode,e.Code);}
         catch(JsonException){return Error(400,"STATION_ONLINE_BODY_INVALID");}
         catch(OperationCanceledException) when(!context.RequestAborted.IsCancellationRequested){return Error(504,"STATION_ONLINE_TIMEOUT");}
     }

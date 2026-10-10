@@ -62,6 +62,19 @@ public static class StationEndpoints
                 return Results.Json(new ErrorResponse(1, exception.Code, exception.Message),
                     StrictJson.Options, statusCode: exception.StatusCode);
             }
+            catch (OperationCanceledException) when (context.RequestAborted.IsCancellationRequested)
+            { return Results.StatusCode(499); }
+            catch (OperationCanceledException)
+            {
+                return Results.Json(new ErrorResponse(1, "STATION_TIMEOUT", "Request timed out."),
+                    StrictJson.Options, statusCode: 504);
+            }
+            catch (IOException)
+            {
+                // A cover may disappear between index lookup and opening it.
+                return Results.Json(new ErrorResponse(1, "STATION_COVER_NOT_FOUND", "Station cover is not found."),
+                    StrictJson.Options, statusCode: 404);
+            }
         }).TraceStation("cover");
         app.MapPost("/v1/station/downloads/authorize", async (HttpContext context) =>
         {

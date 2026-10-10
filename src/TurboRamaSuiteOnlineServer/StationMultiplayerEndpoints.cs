@@ -56,7 +56,8 @@ public static class StationMultiplayerEndpoints
                 }finally{hub.Close(lease);}
             }catch(OnlineFailure e){if(!context.Response.HasStarted)await RelayError(context,e.Status,e.Code);}
             catch(SuiteException e){if(!context.Response.HasStarted)await RelayError(context,e.StatusCode,e.Code);}
-            catch(OperationCanceledException){}catch(System.Net.WebSockets.WebSocketException){}
+            catch(OperationCanceledException){if(!context.RequestAborted.IsCancellationRequested&&!context.Response.HasStarted)await RelayError(context,504,"STATION_MULTIPLAYER_TIMEOUT");}
+            catch(System.Net.WebSockets.WebSocketException){}
         });
     }
     private static void Need(bool ok,int status,string code){if(!ok)throw new OnlineFailure(status,code);}

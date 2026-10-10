@@ -24,6 +24,29 @@ internal static class CatalogChecks
             void Save()=>File.WriteAllText(index,document.ToJsonString());
             string Wire(object value)=>JsonSerializer.Serialize(value,StrictJson.Options);
             Save();var initial=StationLibrary.TryLoad(index,verifyContent:false)!;
+            // Publish between the startup read and the monitor's construction.
+            var startupPath=Path.Combine(directory,"startup-index.json");
+            File.WriteAllText(startupPath,document.ToJsonString());
+            var startupInitial=StationLibrary.TryLoad(startupPath,verifyContent:false)!;
+            var startupDocument=document.DeepClone();startupDocument["revision"]=2;
+            startupDocument["items"]![0]!["metadata"]!["publisher"]="Studio\nName";
+            startupDocument["items"]![0]!["metadata"]!["players"]="1\t4";
+            startupDocument["items"]![0]!["metadata"]!["description"]="First line\nSecond\tline";
+            File.WriteAllText(startupPath,startupDocument.ToJsonString());
+            var startupMonitor=new StationLibraryMonitor(startupPath,startupInitial,false);
+            check(startupMonitor.Reload()&&startupMonitor.Current.Revision==2,"startup publication is not silently missed");
+            var normalized=startupMonitor.Current.Catalog.Single().Metadata!;
+            check(normalized.Publisher=="Studio Name"&&normalized.Players=="1 4","single-line metadata obeys Android catalog contract");
+            check(normalized.Description=="First line\nSecond\tline","synopsis line breaks remain available");
+            startupDocument["revision"]=3;File.WriteAllText(startupPath,startupDocument.ToJsonString());
+            int exchanges=0;
+            Parallel.For(0,8,_=>{if(startupMonitor.Reload())Interlocked.Increment(ref exchanges);});
+            check(exchanges==1&&startupMonitor.Current.Revision==3,"concurrent reload exchanges a publication once");
+            check(startupMonitor.TryResolveGrant("synthetic-content",game,1,out _),"startup and concurrent reload preserve issued artifacts");
+            startupDocument["items"]![0]!["name"]="Same revision replacement";
+            File.WriteAllText(startupPath,startupDocument.ToJsonString());
+            bool staleRejected=false;try{startupMonitor.Reload();}catch(InvalidOperationException){staleRejected=true;}
+            check(staleRejected&&startupMonitor.Current.Catalog.Single().Name=="Synthetic","same-revision replacement retains last valid catalog");
             var entry=initial.Catalog.Single();
             check(entry.ContentSha256 is null,"absent identity stays unknown");
             check(Wire(entry.PublicValue(false))==Wire(new {itemId=entry.ItemId,name=entry.Name,platform=entry.Platform,revision=entry.Revision,coverId=entry.CoverId,folderPath=entry.FolderPath}),"legacy catalog bytes without metadata preserved");
@@ -98,6 +121,8 @@ internal static class CatalogChecks
                 try{multi.Command(person,command with{ProfileSha256=new string('f',64)},security);}catch(OnlineFailure e){wrongProfileDenied=e.Code=="STATION_MULTIPLAYER_PROFILE_UNAPPROVED";}
                 check(wrongProfileDenied,"optional legacy gate does not weaken exact v3 profile admission");
                 check(JsonSerializer.SerializeToElement(multi.Command(person,command,security),StrictJson.Options).GetProperty("room").GetProperty("capacity").GetInt32()==4,"actual registration admits approved v3 mode");
+                var presence=JsonSerializer.SerializeToElement(legacy.Command(person,new("heartbeat",Guid.NewGuid().ToString())),StrictJson.Options);
+                check(presence.GetProperty("peers").EnumerateArray().Single(p=>p.GetProperty("peerId").GetString()==presence.GetProperty("selfId").GetString()).GetProperty("status").GetString()=="in-room","v3 membership is visible independently of public room pagination");
                 check(JsonSerializer.SerializeToElement(multi.Snapshot(),StrictJson.Options).GetProperty("activeRooms").GetInt32()==1,"operator telemetry sees v3 rooms before a restart");
                 multi.Command(person,command with{Action="leave",RequestId=Guid.NewGuid().ToString(),RoomId=JsonSerializer.SerializeToElement(multi.Command(person,command,security),StrictJson.Options).GetProperty("room").GetProperty("roomId").GetString(),Generation=1},security);
                 check(JsonSerializer.SerializeToElement(multi.Snapshot(),StrictJson.Options).GetProperty("activeRooms").GetInt32()==0,"operator telemetry clears ended v3 room");

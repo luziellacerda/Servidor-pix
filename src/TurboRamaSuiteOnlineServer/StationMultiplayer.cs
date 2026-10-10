@@ -13,7 +13,7 @@ public sealed record StationMultiplayerCommand(string Action,string RequestId,st
     string? ItemId=null,string? ContentSha256=null,string? EngineId=null,string? CoreSha256=null,
     string? RuntimeSha256=null,string? ProfileId=null,string? ProfileSha256=null,int Capacity=0,
     long Generation=0,string? LinkId=null,bool Value=false,string? Nickname=null,string? Text=null,
-    int ClientMaximumPlayers=4);
+    int ClientMaximumPlayers=4,int Page=0,int RoomPageSize=100);
 public sealed record StationMultiplayerMessage(string MessageId,string FromPeerId,string Nickname,string Text,long UtcMs);
 
 // Shared with v2 when the candidate is enabled: reservations survive a network loss.
@@ -149,6 +149,7 @@ public sealed class StationMultiplayer
             Need(Text(identity.LicenseId,256)&&Text(identity.DeviceId,256),401,"STATION_SESSION_INVALID");
             Need(Guid.TryParseExact(c.RequestId,"D",out _),400,"STATION_MULTIPLAYER_REQUEST_INVALID");
             Need(c.ClientMaximumPlayers is >=2 and <=5,400,"STATION_MULTIPLAYER_CLIENT_CAPACITY_INVALID");
+            Need(c.Page is >=0 and <=40&&c.RoomPageSize is 32 or 100,400,"STATION_MULTIPLAYER_PAGE_INVALID");
             Need(c.Action is "failed" or "chat" or "snapshot" or "capabilities" or "heartbeat" or "create" or "join" or "ready" or "start" or "leave" or "ticket" or "resume",400,"STATION_MULTIPLAYER_ACTION_INVALID");
             foreach(var k in grants.Where(x=>x.Value.Expires<=clock()).Select(x=>x.Key).ToArray())grants.Remove(k);
             foreach(var old in peers.Where(x=>x.Value.Room is null&&clock()-x.Value.Seen>=60000).Select(x=>x.Key).ToArray())peers.Remove(old);
@@ -160,7 +161,7 @@ public sealed class StationMultiplayer
             else if(c.Nickname is not null){Need(Text(c.Nickname,40),400,"STATION_MULTIPLAYER_NICKNAME_INVALID");peer.Nickname=c.Nickname;}
             string fingerprint=Convert.ToHexString(SHA256.HashData(JsonSerializer.SerializeToUtf8Bytes(c,StrictJson.Options)));
             if(peer.Receipts.TryGetValue(c.RequestId,out var previous)){
-                Need(previous==fingerprint,409,"STATION_MULTIPLAYER_REQUEST_REUSED");return View(peer,c.ItemId,GrantView(peer,c.LinkId),blocked,c.ClientMaximumPlayers);
+                Need(previous==fingerprint,409,"STATION_MULTIPLAYER_REQUEST_REUSED");return View(peer,c.ItemId,GrantView(peer,c.LinkId),blocked,c.ClientMaximumPlayers,c.Page,c.RoomPageSize);
             }
             while(peer.Actions.TryPeek(out var at)&&clock()-at>=1000)peer.Actions.Dequeue();
             Need(peer.Actions.Count<20,429,"STATION_MULTIPLAYER_RATE_LIMIT");peer.Actions.Enqueue(clock());
@@ -209,7 +210,7 @@ public sealed class StationMultiplayer
             }
             peer.Receipts.Add(c.RequestId,fingerprint);peer.ReceiptOrder.Enqueue(c.RequestId);
             while(peer.ReceiptOrder.Count>64)peer.Receipts.Remove(peer.ReceiptOrder.Dequeue());revision++;
-            return View(peer,c.ItemId,ticket,blocked,c.ClientMaximumPlayers);
+            return View(peer,c.ItemId,ticket,blocked,c.ClientMaximumPlayers,c.Page,c.RoomPageSize);
         }
     }
     private Room Find(string? id){Need(id is not null&&rooms.ContainsKey(id),404,"STATION_MULTIPLAYER_ROOM_UNKNOWN");return rooms[id!];}
@@ -232,7 +233,7 @@ public sealed class StationMultiplayer
         retainedBytes=budget.UsedBytes,maximumRetainedBytes=budget.MaximumBytes};}
     private object? GrantView(Peer peer,string? linkId){var grant=grants.Values.FirstOrDefault(g=>g.Lease.OwnerPeerId==peer.Id&&g.Lease.LinkId==linkId);return grant is null?null:TicketView(Find(grant.Lease.RoomId),grant);}
     private object TicketView(Room room,Grant g)=>new{path=RelayPath,protocol=Protocol,ticket=g.Token,expiresInSeconds=Math.Max(0,(g.Expires-clock())/1000),linkId=g.Lease.LinkId,ownerSlot=g.Lease.OwnerSlot,hostSide=g.Lease.HostSide,windowBytes=WindowBytes,epoch=room.Stream!.Snapshot().Epoch};
-    private object View(Peer peer,string? item,object? ticket,IReadOnlySet<string>? blocked,int clientMaximumPlayers)
+    private object View(Peer peer,string? item,object? ticket,IReadOnlySet<string>? blocked,int clientMaximumPlayers,int page,int roomPageSize)
     {
         var own=peer.Room is {} id?rooms.GetValueOrDefault(id):null;item??=own?.Profile.ItemId;
         var matches=profiles.Values.Where(p=>p.ItemId==item&&p.MaximumPlayers<=clientMaximumPlayers&&CatalogMatches(p)).Take(32).ToArray();
@@ -251,7 +252,8 @@ public sealed class StationMultiplayer
         return new{schemaVersion=1,multiplayerVersion=3,capability="station-multiplayer.v3",maximumPlayers=5,clientMaximumPlayers,selfId=peer.Id,instance,revision,serverTimeMs=DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),status="ok",
             profiles=matches,profileCount=profiles.Count,classification=matches.Length==0?"pending":"classified",platformPolicy,
             serverPlatforms=StationMultiplayerPlatformPolicy.SupportedPlatforms.Select(p=>new{platform=p,maximumPlayers=StationMultiplayerPlatformPolicy.MaximumPlayers(p),serverReady=true,transportProtocol=Protocol}),
-            totalRooms=visible.Length,rooms=visible.Select(r=>RoomView(r,false)).ToArray(),
+            page,roomPageSize,nextPage=visible.Length>(page+1)*roomPageSize?(int?)(page+1):null,
+            totalRooms=visible.Length,rooms=visible.Skip(page*roomPageSize).Take(roomPageSize).Select(r=>RoomView(r,false)).ToArray(),
             room=own is null?null:RoomView(own,true),ticket};
     }
     private object RoomView(Room room,bool member)

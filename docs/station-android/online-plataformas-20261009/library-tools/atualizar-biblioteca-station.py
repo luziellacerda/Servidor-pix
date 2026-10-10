@@ -68,6 +68,9 @@ def metadata(game=None, override=None):
             'players': ('players', 40), 'releaseDate': ('releasedate', 40)}
     result = {key: text((override or {}).get(key, game.findtext(xml, '') if game is not None else ''), size)
               for key, (xml, size) in keys.items()}
+    for key in result:
+        if key != 'description':
+            result[key] = result[key].replace('\n', ' ').replace('\t', ' ')
     # Same escaped JSON budget used by the signed .NET catalog, including non-ASCII.
     while len(json.dumps(result, ensure_ascii=True).encode()) > 7600:
         result['description'] = result['description'][:-80]

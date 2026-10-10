@@ -26,6 +26,30 @@ StationMultiplayerCommand Cmd(string action,JsonElement room=default,int capacit
     return(hub,budget,people,room);
 }
 // Old clients must never receive a five-player profile they cannot parse.
+// Preserve the legacy complete listing while allowing bounded pages in new clients.
+var paging=new StationMultiplayer([Profile()],_=>"snes",new());
+var pageHosts=Enumerable.Range(0,100).Select(i=>new OnlineIdentity("page-license-"+i,"page-device-"+i)).ToArray();
+foreach(var person in pageHosts)paging.Command(person,Cmd("create",capacity:5),security);
+var viewer=new OnlineIdentity("page-viewer","page-viewer");
+var legacyListing=Json(paging.Command(viewer,Cmd("snapshot"),security));
+Check(legacyListing.GetProperty("rooms").GetArrayLength()==100&&legacyListing.GetProperty("nextPage").ValueKind==JsonValueKind.Null,"legacy room list remains complete");
+var pageIds=new HashSet<string>();
+for(int page=0;page<4;page++){
+    var listed=Json(paging.Command(pageHosts[0],Cmd("snapshot") with{Page=page,RoomPageSize=32},security));
+    Check(listed.GetProperty("totalRooms").GetInt32()==100&&listed.GetProperty("page").GetInt32()==page,"room page retains authoritative total and cursor");
+    Check(listed.GetProperty("rooms").GetArrayLength()==(page==3?4:32),"bounded room page length");
+    Check(listed.GetProperty("room").ValueKind==JsonValueKind.Object,"own room survives public page changes");
+    Check(page==3?listed.GetProperty("nextPage").ValueKind==JsonValueKind.Null:listed.GetProperty("nextPage").GetInt32()==page+1,"room next page reaches the end exactly");
+    foreach(var listedRoom in listed.GetProperty("rooms").EnumerateArray())Check(pageIds.Add(listedRoom.GetProperty("roomId").GetString()!),"room pagination does not duplicate rooms");
+}
+Check(pageIds.Count==100,"all rooms remain reachable through pagination");
+var hiddenHost=Json(paging.Command(pageHosts[1],Cmd("snapshot"),security)).GetProperty("selfId").GetString()!;
+var filtered=Json(paging.Command(viewer,Cmd("snapshot") with{RoomPageSize=32},security,blocked:new HashSet<string>{hiddenHost}));
+Check(filtered.GetProperty("totalRooms").GetInt32()==99,"blocking is applied before room pagination and totals");
+Denied(()=>paging.Command(viewer,Cmd("snapshot") with{Page=-1},security),"STATION_MULTIPLAYER_PAGE_INVALID");
+Denied(()=>paging.Command(viewer,Cmd("snapshot") with{Page=41},security),"STATION_MULTIPLAYER_PAGE_INVALID");
+Denied(()=>paging.Command(viewer,Cmd("snapshot") with{RoomPageSize=0},security),"STATION_MULTIPLAYER_PAGE_INVALID");
+Check(Json(paging.Snapshot()).GetProperty("activeRooms").GetInt32()==100&&Json(paging.Snapshot()).GetProperty("activeConnections").GetInt32()==0,"listing and invalid cursors leave membership unchanged");
 var helpProfile=Profile() with{ModeTitle="Batalha",Instructions=["Escolha BATTLE GAME."],Sources=["https://docs.libretro.com/library/bsnes_mercury_performance/"]};
 var negotiation=new StationMultiplayer([helpProfile,altForOld()],_=>"snes",new());
 StationMultiplayerProfile altForOld()=>Profile(4) with{ProfileId="synthetic-four-compatible",ProfileSha256=H('e')};

@@ -5,30 +5,33 @@ public sealed class StationLibraryMonitor(string path, StationLibrary initial, b
 {
     private StationLibrary current = initial;
     private readonly object gate = new();
+    private readonly object reloadGate = new();
     private readonly List<(StationLibrary Library, DateTimeOffset Until)> previous = [];
-    private (long Length, long Ticks) stamp = FileStamp(path);
+    private (long Length, long Ticks) stamp = initial.SourceStamp;
     public StationLibrary Current => Volatile.Read(ref current);
     private static (long, long) FileStamp(string file)
     {
-        var info = new FileInfo(file);
-        return info.Exists ? (info.Length, info.LastWriteTimeUtc.Ticks) : (0, 0);
+        return StationLibrary.FileStamp(file);
     }
     public bool Reload()
     {
-        var nextStamp = FileStamp(path);
-        if (nextStamp == stamp) return false;
-        var before = Current;
-        var next = StationLibrary.TryLoad(path, before, verifyContent);
-        if (next is null || next.Revision <= before.Revision || FileStamp(path) != nextStamp)
-            throw new InvalidOperationException("Station catalog revision did not advance atomically.");
-        lock (gate)
+        lock (reloadGate)
         {
-            previous.RemoveAll(x => x.Until < DateTimeOffset.UtcNow);
-            previous.Add((before, DateTimeOffset.UtcNow.AddSeconds(120)));
-            Volatile.Write(ref current, next);
-            stamp = nextStamp;
+            var nextStamp = FileStamp(path);
+            if (nextStamp == stamp) return false;
+            var before = Current;
+            var next = StationLibrary.TryLoad(path, before, verifyContent);
+            if (next is null || next.Revision <= before.Revision || FileStamp(path) != nextStamp)
+                throw new InvalidOperationException("Station catalog revision did not advance atomically.");
+            lock (gate)
+            {
+                previous.RemoveAll(x => x.Until < DateTimeOffset.UtcNow);
+                previous.Add((before, DateTimeOffset.UtcNow.AddSeconds(120)));
+                Volatile.Write(ref current, next);
+                stamp = nextStamp;
+            }
+            return true;
         }
-        return true;
     }
     public bool TryResolveGrant(string id, string file, long revision, out StationResolvedArtifact artifact)
     {
