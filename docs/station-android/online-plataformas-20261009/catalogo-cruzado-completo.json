@@ -1,5 +1,5 @@
 {
-  "revision": 27,
+  "revision": 28,
   "status": "deployed-private-index-projection-confirmed-by-authenticated-public-api",
   "items": [
     {
@@ -51012,7 +51012,7 @@
       "itemId": "7f710e7c34917478c1f2d14e94121191",
       "name": "Mario Paint",
       "platform": "snes",
-      "revision": 4,
+      "revision": 28,
       "coverId": "35a3a6ba4f798a920f4ea32180a7ca84",
       "metadata": {
         "description": "Um ateliê criativo com Mario: desenhe, pinte, produza pequenas animações e componha músicas combinando sons. As ferramentas são operadas com o mouse do Super Nintendo. Além de montar suas próprias criações, você pode praticar a pontaria no minijogo de espantar insetos.",

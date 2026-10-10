@@ -1,3 +1,9 @@
+# Capas Station padronizadas e aplicadas — 10/10/2026
+
+Leia o MESMO HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md, seção Capas leves, e online-plataformas-20261009/capas-padronizadas-20261010.json. Catálogo atual28/3848IDs/3593visíveis; todas as3848capas de API são JPEG480×720. Todas as5798imagens emrevista/catalogo padronizadas;2238convertidas;revista5,0GB→802,5MB. MarioPaint únicoPNG deAPI passou805241→156138bytes, IDs iguais/revisão28;3847outras capas idênticas. 761referências/514fingerprints atualizados; duasvarreduras reais changedfalse/added0/updated0. NenhumaROM/download reconstruído, perfis/identidades/config/DLL preservados, PID1820513/NRestarts0. Backup privado /mnt/DADOS/station-cover-compression-20261010/originals-backup. NÃO reaplicar lote, nem executar operadores históricos. Cache app jáusa coverId-revision; nenhuma nova compilação exigida por essas capas. Catálogo cruzado/contrato/handoff espelhados.
+
+## Histórico preservado
+
 # Station: SERVIDOR CONCLUÍDO PARA TODAS AS PLATAFORMAS — 09/10/2026
 
 Ordem do mantenedor: concluir o servidor primeiro; produção do APK implementará o app depois. Leia HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e online-plataformas-20261009/. Servidor aplicado/conferido DLL34fdc4b1ecea, fonteeb826d5d, PID1820513/NRestarts0, índice27/3848IDs/3593visíveis, identidades3848/schema2, 5176perfis/5169aprovados preservados exatos. TODAS as15plataformas normalizadas/17rótulos têm servidor pronto: SNES5; Mega2; N64/Dreamcast/GC/Wii/WiiU4; demais2, respeitando allowedPlayerCounts de cada modo.

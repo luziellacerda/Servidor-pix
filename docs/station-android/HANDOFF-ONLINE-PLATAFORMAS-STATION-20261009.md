@@ -1,5 +1,46 @@
 # Station: servidor concluído para todas as plataformas; próxima etapa é o app — 09/10/2026
 
+## Capas leves em todas as plataformas — aplicado em 10/10/2026
+
+[Relatório da padronização e conferência pública](online-plataformas-20261009/capas-padronizadas-20261010.json). Catálogo atual **revisão 28**, SHA `304924d242a41be7d40f495545011aaea5f6deaa17559220e0533fa193c018ab`: **3.848 IDs / 3.593 visíveis**, todos com capa **JPEG de 480 × 720**, sem arquivo ausente ou capa provisória. As 17 categorias foram conferidas pela API pública autenticada, com resposta de catálogo assinada e quatro workers para capas.
+
+**Causa encontrada:** os novos sistemas mantiveram a arte original nas pastas `media/revista` e `media/catalogo`; o importador preparava outra imagem para o telefone. Dreamcast/FBNeo também tinham artes por título junto das cópias por nome da ROM. Esses originais chegavam a 1024 × 1536 e 3,3 MB. Havia ainda uma exceção real na API: Mario Paint era servido como PNG de 805.241 bytes.
+
+**Aplicação:** 2.238 imagens convertidas; as 5.798 imagens nas pastas conferidas agora são JPEG de 480 × 720. As `revista` passaram de **5.002.022.322 para 802.507.636 bytes**, redução de **83,96%**. Com `catalogo`, o conjunto passou de 5.259.478.682 para 843.195.945 bytes. A conversão usa o compilador existente: JPEG, qualidade 90 e `optimize=True`, ajustando a arte inteira sem recortar ou deformar. Imagens que já estavam no padrão foram mantidas.
+
+| Pasta de capas | Imagens agora | Antes (MB) | Depois (MB) |
+|---|---:|---:|---:|
+| `cps1/media/revista` | 36 | 3.24 | 3.24 |
+| `cps2/media/revista` | 64 | 6.95 | 6.95 |
+| `cps3/media/revista` | 11 | 1.45 | 1.45 |
+| `dreamcast/media/revista` | 454 | 631.55 | 75.96 |
+| `fbneo/media/revista` | 1826 | 2715.29 | 317.93 |
+| `gamecube/media/catalogo` | 32 | 30.73 | 4.75 |
+| `gamecube/media/revista` | 21 | 19.80 | 3.07 |
+| `megadrive/media/revista` | 999 | 133.42 | 133.42 |
+| `n64/media/revista` | 156 | 430.04 | 24.26 |
+| `neogeo/media/revista` | 190 | 552.04 | 32.17 |
+| `neogeo/neogeocd/media/revista` | 50 | 150.96 | 9.24 |
+| `psx/media/catalogo` | 119 | 100.24 | 15.92 |
+| `psx/media/revista` | 84 | 69.56 | 11.11 |
+| `snes/media/revista` | 1619 | 282.24 | 182.41 |
+| `switch/media/catalogo` | 110 | 113.55 | 17.43 |
+| `switch/media/revista` | 1 | 1.09 | 0.17 |
+| `wii/media/catalogo` | 9 | 4.39 | 1.27 |
+| `wii/media/revista` | 7 | 3.44 | 0.96 |
+| `wiiu/media/catalogo` | 9 | 8.54 | 1.32 |
+| `wiiu/media/revista` | 1 | 0.97 | 0.16 |
+
+Mario Paint mantém `itemId=7f710e7c34917478c1f2d14e94121191` e `coverId=35a3a6ba4f798a920f4ea32180a7ca84`; sua revisão passa a 28, e o JPEG possui **156.138 bytes**, aproximadamente **80,6% menor**. As outras 3.847 capas servidas permanecem com os mesmos bytes. A maior capa atual da API tem 198.087 bytes. Nenhum jogo ou capa do catálogo ficou sem associação.
+
+Foram corrigidas 761 referências em oito arquivos XML/JSON e 514 fingerprints de origem. Os descritores/caminhos das ROMs, IDs, sinopses, identidades, 5.176 perfis online e seus hashes permanecem iguais. A qualificação isolada e duas execuções reais do timer retornaram `revision=28`, `changed=false`, `added=0`, `updated=0`; nenhum download foi reconstruído. API permanece **PID 1820513 / NRestarts 0**, mesma DLL/configuração, com recarga do catálogo sem reiniciar o serviço.
+
+**Para o app:** ler o catálogo assinado atual, usar `coverId` no endpoint `/v1/station/covers/{coverId}` e manter os quatro workers. Cachear pela combinação **coverId + revisão do item**; `StationCoverStore` já faz isso, então apenas Mario Paint precisa baixar novamente ao receber a revisão 28. O descritor de download `artifact` vem da autorização assinada em `/v1/station/downloads/authorize`. Caminhos das pastas do HD não são URLs públicas. Esta mudança de dados não exige recompilar o APK. Novos jogos continuam recebendo capa de API em 480 × 720 pelo importador existente.
+
+**Backup integral das imagens alteradas e metadados:** `/mnt/DADOS/station-cover-compression-20261010/originals-backup`, fora das pastas monitoradas. O PNG antigo da API também foi preservado na entrega histórica. A licença sintética usada para a conferência HTTP foi removida. Não reaplicar esse lote: ele já está concluído.
+
+A redução das pastas alivia armazenamento e leitura local. Como as outras capas da API já eram JPEG leves, esses originais grandes não comprovam a causa de uma eventual demora restante no celular. A entrega ZIP de 09/10 e o recibo de implantação online continuam sendo registros daquela data; este relatório e o catálogo cruzado registram a atualização de capas da revisão 28.
+
 ## Checkup completo da produção — 10/10/2026
 
 [Relatório completo e evidências](online-plataformas-20261009/checkup-completo-20261010.json). As 13 etapas da produção e quatro verificações de contexto passaram. A API permaneceu no mesmo PID **1820513**, DLL **34fdc4b1** e **zero reinícios**, com dados, configurações, licenças, esquema e serviços preservados. Esta rodada atualizou somente a documentação desta entrega.
@@ -29,7 +70,7 @@ A entrega ZIP estável de 09/10, SHA `26c300927b5e56a4077178c587bbd39d6dc3b2cf93
 
 ## Resultado efetivo
 
-**Atualização aplicada e conferida pelo domínio público.** DLL `34fdc4b1ecea3216b3d30e49e003ef32a0520ca36637d186e9daeb369146645d`, fonte `eb826d5df17dad51314d265e2cba91b05d1c96cf`, PID **1820513**, NRestarts **0**, última recarga `Fri 2026-10-09 14:57:04 -03` e conclusão `2026-10-09T18:09:52.413592+00:00`. Catálogo **revisão 27 / 3.848 IDs / 3.593 visíveis / 255 aliases**, identidade de conteúdo de todos os 3.848 itens e **5.176 perfis**, preservando exatamente os **3.672 anteriores**. Foram acrescentados 1.504 perfis de oito plataformas. Aprovação de uso não declara gameplay Android homologado.
+**Atualização aplicada e conferida pelo domínio público.** DLL `34fdc4b1ecea3216b3d30e49e003ef32a0520ca36637d186e9daeb369146645d`, fonte `eb826d5df17dad51314d265e2cba91b05d1c96cf`, PID **1820513**, NRestarts **0**, última recarga `Fri 2026-10-09 14:57:04 -03` e conclusão `2026-10-09T18:09:52.413592+00:00`. Catálogo **revisão 28 / 3.848 IDs / 3.593 visíveis / 255 aliases** (a publicação online de 09/10 usou revisão 27; a atualização de capas de 10/10 está descrita acima), identidade de conteúdo de todos os 3.848 itens e **5.176 perfis**, preservando exatamente os **3.672 anteriores**. Foram acrescentados 1.504 perfis de oito plataformas. Aprovação de uso não declara gameplay Android homologado.
 
 O servidor está publicado para SNES, Mega Drive, N64, Neo Geo, Neo Geo CD, PlayStation, FBNeo, CPS1, CPS2 e CPS3, nos modos e formatos cadastrados. Dreamcast, GameCube, Wii, Wii U e Switch também têm o servidor concluído, com transporte, cadastro e modos preparados. A produção do APK implementará seus motores na próxima etapa. Switch possui somente Pokémon Café Mix no catálogo, sem modo local de duas pessoas confirmado. **Servidor concluído para todas as plataformas solicitadas. Jogabilidade nos celulares será conferida após a integração do app.**
 
@@ -91,7 +132,7 @@ Os tetos não concedem controles em campanhas individuais. Salas têm `allowedPl
 ## Como o app deve consumir a produção
 
 1. Usar o domínio `https://app.lzgames.com.br`, login/licença original, bearer e provas vinculadas ao aparelho. Contratos v1/v2, dez engines anteriores e flags de admissão permanecem preservados.
-2. Ler `GET /v1/station/catalog?metadata=1` autenticado e validar a resposta assinada. A revisão atual é 27. Usar `itemId`, `platform`, `revision`, `coverId`, `artifact`, `metadata` e `contentSha256` recebidos; não construir nomes/IDs a partir de capas ou pastas.
+2. Ler `GET /v1/station/catalog?metadata=1` autenticado e validar a resposta assinada. A revisão atual é 28. Usar `itemId`, `platform`, `revision`, `coverId`, `folderPath`, `metadata` e `contentSha256` recebidos; não construir nomes/IDs a partir de capas ou pastas.
 3. Pedir capas em `GET /v1/station/covers/{coverId}`, usando o `coverId` daquele item. Manter os quatro workers já implementados. Sinopses vêm de `metadata.description`; lacunas podem ser preenchidas por dados do servidor.
 4. Autorizar em `POST /v1/station/downloads/authorize` e consumir a URL/grant retornados em `GET /v1/station/artifacts/{grantId}`. Seguir o descritor de arquivo/pacote e seu `launchPath` completo. CUE acompanha suas faixas; Wii U acompanha `code/content/meta`. Nenhum throttling, espera ou verificação nova foi acrescentado ao downloader.
 5. Para salas v3, usar `POST /v1/station/online/multiplayer/command` com as provas existentes. Consultar `serverPlatforms`, `platformPolicy.serverReady`, `onlineAvailable`, `availability`, `maximumPlayers` e os perfis assinados. Estados: `available`, `single-player`, `mode-pending`, `content-identity-pending`, `online-engine-pending`, `select-game`.

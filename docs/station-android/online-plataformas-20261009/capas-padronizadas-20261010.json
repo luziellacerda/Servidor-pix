@@ -1,0 +1,732 @@
+{
+  "schemaVersion": 1,
+  "status": "applied-and-verified",
+  "appliedAt": "2026-10-10T14:13:30-0300",
+  "verifiedAt": "2026-10-10T14:21:42-0300",
+  "cause": "New platform imports retained original artwork in revista/catalogo while the importer compiled a separate phone cover. Extra title-named artwork also remained beside ROM-named covers. Mario Paint was one historical PNG still referenced by the API.",
+  "standard": {
+    "format": "JPEG",
+    "width": 480,
+    "height": 720,
+    "newConversionsQuality": 90,
+    "optimize": true,
+    "preserveCompleteArtwork": true,
+    "alreadyConformingImagesReencoded": false
+  },
+  "sourceImages": {
+    "total": 5798,
+    "converted": 2238,
+    "alreadyConforming": 3560,
+    "beforeBytes": 5259478682,
+    "afterBytes": 843195945,
+    "savedBytes": 4416282737,
+    "magazinesBeforeBytes": 5002022322,
+    "magazinesAfterBytes": 802507636,
+    "magazinesReductionPercent": 83.96,
+    "folders": {
+      "cps1/media/revista": {
+        "count": 36,
+        "bytes": 3244371,
+        "maximumBytes": 196548,
+        "formats": {
+          "JPEG": 36
+        },
+        "dimensions": {
+          "480x720": 36
+        }
+      },
+      "cps2/media/revista": {
+        "count": 64,
+        "bytes": 6946112,
+        "maximumBytes": 186807,
+        "formats": {
+          "JPEG": 64
+        },
+        "dimensions": {
+          "480x720": 64
+        }
+      },
+      "cps3/media/revista": {
+        "count": 11,
+        "bytes": 1445372,
+        "maximumBytes": 185099,
+        "formats": {
+          "JPEG": 11
+        },
+        "dimensions": {
+          "480x720": 11
+        }
+      },
+      "dreamcast/media/revista": {
+        "count": 454,
+        "bytes": 75961260,
+        "maximumBytes": 191521,
+        "formats": {
+          "JPEG": 454
+        },
+        "dimensions": {
+          "480x720": 454
+        }
+      },
+      "fbneo/media/revista": {
+        "count": 1826,
+        "bytes": 317930325,
+        "maximumBytes": 198087,
+        "formats": {
+          "JPEG": 1826
+        },
+        "dimensions": {
+          "480x720": 1826
+        }
+      },
+      "gamecube/media/catalogo": {
+        "count": 32,
+        "bytes": 4752064,
+        "maximumBytes": 170445,
+        "formats": {
+          "JPEG": 32
+        },
+        "dimensions": {
+          "480x720": 32
+        }
+      },
+      "gamecube/media/revista": {
+        "count": 21,
+        "bytes": 3069773,
+        "maximumBytes": 170445,
+        "formats": {
+          "JPEG": 21
+        },
+        "dimensions": {
+          "480x720": 21
+        }
+      },
+      "megadrive/media/revista": {
+        "count": 999,
+        "bytes": 133424805,
+        "maximumBytes": 152383,
+        "formats": {
+          "JPEG": 999
+        },
+        "dimensions": {
+          "480x720": 999
+        }
+      },
+      "n64/media/revista": {
+        "count": 156,
+        "bytes": 24261336,
+        "maximumBytes": 174382,
+        "formats": {
+          "JPEG": 156
+        },
+        "dimensions": {
+          "480x720": 156
+        }
+      },
+      "neogeo/media/revista": {
+        "count": 190,
+        "bytes": 32174462,
+        "maximumBytes": 184485,
+        "formats": {
+          "JPEG": 190
+        },
+        "dimensions": {
+          "480x720": 190
+        }
+      },
+      "neogeo/neogeocd/media/revista": {
+        "count": 50,
+        "bytes": 9239550,
+        "maximumBytes": 198087,
+        "formats": {
+          "JPEG": 50
+        },
+        "dimensions": {
+          "480x720": 50
+        }
+      },
+      "psx/media/catalogo": {
+        "count": 119,
+        "bytes": 15917419,
+        "maximumBytes": 154929,
+        "formats": {
+          "JPEG": 119
+        },
+        "dimensions": {
+          "480x720": 119
+        }
+      },
+      "psx/media/revista": {
+        "count": 84,
+        "bytes": 11111477,
+        "maximumBytes": 154929,
+        "formats": {
+          "JPEG": 84
+        },
+        "dimensions": {
+          "480x720": 84
+        }
+      },
+      "snes/media/revista": {
+        "count": 1619,
+        "bytes": 182411038,
+        "maximumBytes": 180241,
+        "formats": {
+          "JPEG": 1619
+        },
+        "dimensions": {
+          "480x720": 1619
+        }
+      },
+      "switch/media/catalogo": {
+        "count": 110,
+        "bytes": 17433736,
+        "maximumBytes": 183686,
+        "formats": {
+          "JPEG": 110
+        },
+        "dimensions": {
+          "480x720": 110
+        }
+      },
+      "switch/media/revista": {
+        "count": 1,
+        "bytes": 166751,
+        "maximumBytes": 166751,
+        "formats": {
+          "JPEG": 1
+        },
+        "dimensions": {
+          "480x720": 1
+        }
+      },
+      "wii/media/catalogo": {
+        "count": 9,
+        "bytes": 1269198,
+        "maximumBytes": 151922,
+        "formats": {
+          "JPEG": 9
+        },
+        "dimensions": {
+          "480x720": 9
+        }
+      },
+      "wii/media/revista": {
+        "count": 7,
+        "bytes": 961513,
+        "maximumBytes": 151922,
+        "formats": {
+          "JPEG": 7
+        },
+        "dimensions": {
+          "480x720": 7
+        }
+      },
+      "wiiu/media/catalogo": {
+        "count": 9,
+        "bytes": 1315892,
+        "maximumBytes": 164154,
+        "formats": {
+          "JPEG": 9
+        },
+        "dimensions": {
+          "480x720": 9
+        }
+      },
+      "wiiu/media/revista": {
+        "count": 1,
+        "bytes": 159491,
+        "maximumBytes": 159491,
+        "formats": {
+          "JPEG": 1
+        },
+        "dimensions": {
+          "480x720": 1
+        }
+      }
+    },
+    "convertedFolders": {
+      "dreamcast/media/revista": {
+        "count": 211,
+        "beforeBytes": 591360378,
+        "afterBytes": 35776016
+      },
+      "fbneo/media/revista": {
+        "count": 913,
+        "beforeBytes": 2559866220,
+        "afterBytes": 162510608
+      },
+      "gamecube/media/revista": {
+        "count": 21,
+        "beforeBytes": 19795694,
+        "afterBytes": 3069773
+      },
+      "n64/media/revista": {
+        "count": 156,
+        "beforeBytes": 430043688,
+        "afterBytes": 24261336
+      },
+      "neogeo/media/revista": {
+        "count": 190,
+        "beforeBytes": 552042337,
+        "afterBytes": 32174462
+      },
+      "neogeo/neogeocd/media/revista": {
+        "count": 50,
+        "beforeBytes": 150956662,
+        "afterBytes": 9239550
+      },
+      "psx/media/revista": {
+        "count": 84,
+        "beforeBytes": 69557793,
+        "afterBytes": 11111477
+      },
+      "snes/media/revista": {
+        "count": 325,
+        "beforeBytes": 118004787,
+        "afterBytes": 18179450
+      },
+      "switch/media/revista": {
+        "count": 1,
+        "beforeBytes": 1090958,
+        "afterBytes": 166751
+      },
+      "wii/media/revista": {
+        "count": 7,
+        "beforeBytes": 3436417,
+        "afterBytes": 961513
+      },
+      "wiiu/media/revista": {
+        "count": 1,
+        "beforeBytes": 970179,
+        "afterBytes": 159491
+      },
+      "gamecube/media/catalogo": {
+        "count": 32,
+        "beforeBytes": 30725394,
+        "afterBytes": 4752064
+      },
+      "psx/media/catalogo": {
+        "count": 119,
+        "beforeBytes": 100242179,
+        "afterBytes": 15917419
+      },
+      "switch/media/catalogo": {
+        "count": 110,
+        "beforeBytes": 113550301,
+        "afterBytes": 17433736
+      },
+      "wii/media/catalogo": {
+        "count": 9,
+        "beforeBytes": 4393801,
+        "afterBytes": 1269198
+      },
+      "wiiu/media/catalogo": {
+        "count": 9,
+        "beforeBytes": 8544685,
+        "afterBytes": 1315892
+      }
+    }
+  },
+  "delivery": {
+    "catalogRevision": 28,
+    "indexedItems": 3848,
+    "visibleItems": 3593,
+    "aliases": 255,
+    "missingCovers": 0,
+    "placeholderCovers": 0,
+    "allCoversJPEG480x720": true,
+    "observedMaximumBytes": 198087,
+    "unchangedCovers": 3847,
+    "compressedCovers": 1,
+    "correction": {
+      "name": "Mario Paint",
+      "itemId": "7f710e7c34917478c1f2d14e94121191",
+      "coverId": "35a3a6ba4f798a920f4ea32180a7ca84",
+      "beforeFormat": "PNG",
+      "afterFormat": "JPEG",
+      "beforeBytes": 805241,
+      "afterBytes": 156138,
+      "itemRevision": 28,
+      "sha256": "42a51cf795cd9839eb69d3fd2db30e7b2a045a150ce4ceaf6d2f2f7de754d9a0"
+    },
+    "folders": {
+      "megadrive": {
+        "items": 1133,
+        "visible": 887,
+        "bytes": 151018813,
+        "maximumBytes": 152383
+      },
+      "snes": {
+        "items": 653,
+        "visible": 644,
+        "bytes": 82654322,
+        "maximumBytes": 156138
+      },
+      "megadrivebr": {
+        "items": 94,
+        "visible": 94,
+        "bytes": 12431744,
+        "maximumBytes": 149917
+      },
+      "snesbr": {
+        "items": 191,
+        "visible": 191,
+        "bytes": 24016737,
+        "maximumBytes": 142421
+      },
+      "n64": {
+        "items": 157,
+        "visible": 157,
+        "bytes": 24418430,
+        "maximumBytes": 174382
+      },
+      "neogeo": {
+        "items": 189,
+        "visible": 189,
+        "bytes": 32008248,
+        "maximumBytes": 184485
+      },
+      "neogeocd": {
+        "items": 50,
+        "visible": 50,
+        "bytes": 9239550,
+        "maximumBytes": 198087
+      },
+      "dreamcast": {
+        "items": 243,
+        "visible": 243,
+        "bytes": 39705735,
+        "maximumBytes": 188037
+      },
+      "cps1": {
+        "items": 36,
+        "visible": 36,
+        "bytes": 3176180,
+        "maximumBytes": 191239
+      },
+      "cps2": {
+        "items": 64,
+        "visible": 64,
+        "bytes": 6801573,
+        "maximumBytes": 182465
+      },
+      "cps3": {
+        "items": 11,
+        "visible": 11,
+        "bytes": 1416605,
+        "maximumBytes": 181597
+      },
+      "fbneo": {
+        "items": 913,
+        "visible": 913,
+        "bytes": 152220530,
+        "maximumBytes": 192146
+      },
+      "gamecube": {
+        "items": 21,
+        "visible": 21,
+        "bytes": 3069773,
+        "maximumBytes": 170445
+      },
+      "psx": {
+        "items": 84,
+        "visible": 84,
+        "bytes": 11111477,
+        "maximumBytes": 154929
+      },
+      "wii": {
+        "items": 7,
+        "visible": 7,
+        "bytes": 961513,
+        "maximumBytes": 151922
+      },
+      "wiiu": {
+        "items": 1,
+        "visible": 1,
+        "bytes": 159491,
+        "maximumBytes": 159491
+      },
+      "switch": {
+        "items": 1,
+        "visible": 1,
+        "bytes": 166751,
+        "maximumBytes": 166751
+      }
+    },
+    "signedCatalogVerified": true,
+    "publicCoverWorkers": 4,
+    "publicSamples": [
+      {
+        "platform": "cps1",
+        "name": "1941 - Counter Attack (World)",
+        "itemId": "station_7e4887bc3e6edba81a11f5a65fe279f8",
+        "coverId": "cover_7e4887bc3e6edba81a11f5a65fe279f8",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 53775,
+        "sha256": "cd13d2bca4ce7cb12628e29445923720f7fa78b29bfa065bfbc8ef69148be8c8",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "cps2",
+        "name": "1944: The Loop Master (US 000620)",
+        "itemId": "station_a87384b87359586c74cc54b4f2a60630",
+        "coverId": "cover_a87384b87359586c74cc54b4f2a60630",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 67375,
+        "sha256": "f415d12b188575998f19f25b07ca8ba4207bba5d61d8ffd66d6af1ccb3133ff1",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "cps3",
+        "name": "JoJo no Kimyou na Bouken (USA 990128)",
+        "itemId": "station_dc6c1f56a1d2795d97245205053a1205",
+        "coverId": "cover_dc6c1f56a1d2795d97245205053a1205",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 180224,
+        "sha256": "83d3289510db99554e262909ae79ac34a25631b62c6bae3ac9eaabb1f5bd8470",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "dreamcast",
+        "name": "102 Dalmatians - Puppies to the Rescue",
+        "itemId": "station_9f9bf97de88d3a3b7dd55e672c20d710",
+        "coverId": "cover_9f9bf97de88d3a3b7dd55e672c20d710",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 72860,
+        "sha256": "df092ce0710c6bbdf0d04f939e89111a3bf84a8b88adc1a87198ce548e3d7ebe",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "fbneo",
+        "name": "10-Yard Fight (World, set 1)",
+        "itemId": "station_798bf0b0befc0193c2cee3e44d7f6c2c",
+        "coverId": "cover_798bf0b0befc0193c2cee3e44d7f6c2c",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 169854,
+        "sha256": "fb0afa9e373ed7dcf5614d55568cde41df3921a64e5abe082f4d93a3eb861a24",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "gamecube",
+        "name": "Legend of Zelda, The - The Wind Waker (Europe) (En,Fr,De,Es,It)",
+        "itemId": "station_12b835c9539b4800a6bb29ca00a25f94",
+        "coverId": "cover_12b835c9539b4800a6bb29ca00a25f94",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 158400,
+        "sha256": "bea2622953733b49c8ebb01ac34dfd76bf6c9b8c6ec8120a3b1442fc59c82d73",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "megadrive",
+        "name": "Cutthroat Island",
+        "itemId": "ce3f245960b94e064f027ffd8aefe466",
+        "coverId": "07c70baecdab7ea819c5f43f879e2fe5",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 139695,
+        "sha256": "940580747ab7aef65b11decf61bf4387550a17e1c466c2df7a540f1743d87fee",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "megadrivebr",
+        "name": "The Addams Family",
+        "itemId": "aa80098f341aba5ed29a56be5caaaacf",
+        "coverId": "f8dbd62a7aa41fbec3d25efc672a7194",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 134097,
+        "sha256": "d7466289a86551176bd69c46976a6d75d72c40dce995c11c0a4e92eafeb383e2",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "n64",
+        "name": "007: The World Is Not Enough",
+        "itemId": "station_c16309c829ad81a41da0b4cb7236a4fb",
+        "coverId": "cover_c16309c829ad81a41da0b4cb7236a4fb",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 152192,
+        "sha256": "656655ded258e0a67b23591ed84b1e40744b94f537548e7b435962807440ee83",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "neogeo",
+        "name": "2020 Super Baseball (set 1)",
+        "itemId": "station_939cf663599c63ae2141d93a198e7163",
+        "coverId": "cover_939cf663599c63ae2141d93a198e7163",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 166660,
+        "sha256": "d29b44e86b37d6245b8c6419a276043f112a8a1daf0cffa8814449cfe49224bf",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "neogeocd",
+        "name": "3 Count Bout",
+        "itemId": "station_6b714f8aebacccea27302ea3e7daee70",
+        "coverId": "cover_6b714f8aebacccea27302ea3e7daee70",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 177012,
+        "sha256": "d0e5245d7c3c16c6bd173f378b2b5932b6370bed5beeca782652f7cd57009d8d",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "psx",
+        "name": "Alien Trilogy",
+        "itemId": "station_ec52adaf9ea22c751f3d8dba87c09ebd",
+        "coverId": "cover_ec52adaf9ea22c751f3d8dba87c09ebd",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 119107,
+        "sha256": "2ba5308e240ae2842e904378c8d9d678e7cf328dc54026b8e107d3887d6d1255",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "snes",
+        "name": "Mario Paint",
+        "itemId": "7f710e7c34917478c1f2d14e94121191",
+        "coverId": "35a3a6ba4f798a920f4ea32180a7ca84",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 156138,
+        "sha256": "42a51cf795cd9839eb69d3fd2db30e7b2a045a150ce4ceaf6d2f2f7de754d9a0",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "snesbr",
+        "name": "ActRaiser 2",
+        "itemId": "station_126db71edb23f73c94ee40ed283a7b8b",
+        "coverId": "cover_126db71edb23f73c94ee40ed283a7b8b",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 126864,
+        "sha256": "94deca484c73c9d772eb292d0f13d665ce3d07cfef1c66abb7c2b2724f1a63c6",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "switch",
+        "name": "Pokemon.Cafe.Mix.010072400E04A000.v0",
+        "itemId": "station_6c491717f8b3d13b282c410aad80fab6",
+        "coverId": "cover_6c491717f8b3d13b282c410aad80fab6",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 166751,
+        "sha256": "29f3eb46b5f8de5ec53bb327261d585030ef897fbd8c435659a5070f4927a425",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "wii",
+        "name": "Donkey Kong Country Returns.side",
+        "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+        "coverId": "cover_b3c07c1607efaed3e805f8e4e3da7b09",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 150862,
+        "sha256": "57559d16f9d05fe43d8c59acd9d5fca908f9dc7496694f28dfba60850e9f1e07",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "platform": "wiiu",
+        "name": "MARIO KART 8 [AMKE01]",
+        "itemId": "station_8d42174892b607ae006f5e68ddf62fe0",
+        "coverId": "cover_8d42174892b607ae006f5e68ddf62fe0",
+        "status": 200,
+        "mime": "image/jpeg",
+        "bytes": 159491,
+        "sha256": "c8b27667097919f352a8e5961096be687444f08a57f7403ff20e4f4ab3d62c08",
+        "width": 480,
+        "height": 720
+      }
+    ]
+  },
+  "persistence": {
+    "metadataFilesUpdated": 8,
+    "coverReferencesUpdated": 761,
+    "sourceFingerprintsUpdated": 514,
+    "gameFilesRebuilt": 0,
+    "catalogReloadedWithoutRestart": true,
+    "isolatedScanner": {
+      "revision": 28,
+      "changed": false,
+      "added": 0,
+      "updated": 0,
+      "visible": 3593
+    },
+    "automaticProductionScans": [
+      {
+        "completed": "2026-10-10T14:14:20-03:00",
+        "revision": 28,
+        "changed": false,
+        "added": 0,
+        "updated": 0
+      },
+      {
+        "completed": "2026-10-10T14:15:26-03:00",
+        "revision": 28,
+        "changed": false,
+        "added": 0,
+        "updated": 0
+      }
+    ]
+  },
+  "preservation": {
+    "itemIds": true,
+    "coverIds": true,
+    "names": true,
+    "platforms": true,
+    "romPathsAndDescriptors": true,
+    "metadataExceptCoverReferences": true,
+    "licenses": true,
+    "onlineProfiles": true,
+    "contentIdentities": true,
+    "engineManifest": true,
+    "runtimeConfiguration": true,
+    "otherProducts": true,
+    "dllSha256": "34fdc4b1ecea3216b3d30e49e003ef32a0520ca36637d186e9daeb369146645d",
+    "pid": 1820513,
+    "nRestarts": 0
+  },
+  "hashes": {
+    "previousIndexSha256": "f7924dcd6bdea74c2f32d8a482184f6f21f6a7f235b77f697432fd57637aef6e",
+    "indexSha256": "304924d242a41be7d40f495545011aaea5f6deaa17559220e0533fa193c018ab",
+    "contentIdentitiesSha256": "16efbad906b1f8aec26869fc9900a7aa50486fa351be4c82f507253a1902667a",
+    "onlineProfilesSha256": "a029fb61ce68fa26abadf0312b55b9ae163c6a3604a12bfd37e97d406fdfebaa"
+  },
+  "backupDirectory": "/mnt/DADOS/station-cover-compression-20261010/originals-backup",
+  "syntheticVerificationLicenseRemoved": true,
+  "app": {
+    "catalogPath": "/v1/station/catalog?metadata=1",
+    "coverPath": "/v1/station/covers/{coverId}",
+    "cacheKey": "coverId + \"-\" + item.revision",
+    "workers": 4,
+    "newApkRequiredForThisDataChange": false,
+    "artifactDescriptorSource": "POST /v1/station/downloads/authorize signed response",
+    "folderImagesAreNotPublicCoverURLs": true,
+    "newGameAPICoversAutomaticallyCompiled": true,
+    "performanceLimit": "Source-folder compression reduces storage and local reads. Other API covers were already JPEG; this change does not establish the cause of any remaining network/UI delay."
+  }
+}

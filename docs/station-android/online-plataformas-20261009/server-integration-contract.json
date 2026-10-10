@@ -207,5 +207,18 @@
     "overlapHTTPStatus": 429,
     "retryAfterSeconds": 1,
     "clientRequirement": "Serialize polling; settle previous requests/cancellation before replacing a polling worker. Handle returned error code and Retry-After."
+  },
+  "coverDelivery": {
+    "catalogRevision": 28,
+    "format": "image/jpeg",
+    "width": 480,
+    "height": 720,
+    "observedMaximumBytes": 198087,
+    "coverPath": "/v1/station/covers/{coverId}",
+    "cacheKey": "coverId + \"-\" + item.revision",
+    "workers": 4,
+    "sourceOriginalsBackedUp": true,
+    "newApkRequiredForThisDataChange": false,
+    "receipt": "capas-padronizadas-20261010.json"
   }
 }
