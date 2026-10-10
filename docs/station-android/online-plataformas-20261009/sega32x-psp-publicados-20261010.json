@@ -1,0 +1,1299 @@
+{
+  "schemaVersion": 1,
+  "status": "applied",
+  "utc": "2026-10-10T22:40:20.495314+00:00",
+  "catalogRevision": 32,
+  "indexedItems": 3940,
+  "visibleItems": 3685,
+  "compatibilityAliases": 255,
+  "platforms": {
+    "sega32x": 36,
+    "psp": 9
+  },
+  "newGames": 45,
+  "generatedArtwork": 0,
+  "existingArtworkReused": 45,
+  "PSPAuthoredCatalogArtUsed": 4,
+  "PSPIncomingArtUsed": 5,
+  "allNewCoversJPEG480x720": true,
+  "originalItemsPreserved": 3895,
+  "contentIdentityCount": 3940,
+  "ROMBodyCopiesPSP": 0,
+  "PSPRawStorage": "readonly-hardlink",
+  "pid": 2136303,
+  "nRestarts": 0,
+  "apiRestarted": false,
+  "dllSha256": "2c0d034476969cbed58b519b744e841111373f89a4bcd6abb9cd14543abcde35",
+  "target": "/opt/turborama-station-endpoints-20261010-2c0d03447696",
+  "scannerSha256": "7f6e9ebb6e1ccc71c184e7d3e07cac856f1c0ceee4e281e272061406619e36bd",
+  "public": {
+    "passed": true,
+    "public": true,
+    "catalogRevision": 32,
+    "visibleItems": 3685,
+    "allCatalogFieldsExact": true,
+    "covers": [
+      {
+        "itemId": "station_07d2432e2eb85b33629224c734e2023b",
+        "platform": "sega32x",
+        "coverId": "cover_07d2432e2eb85b33629224c734e2023b",
+        "bytes": 71291,
+        "sha256": "9ed65a97b2104a26fd743b751ded33efe2005008cbb667fb21c208c5405bd7d3"
+      },
+      {
+        "itemId": "station_6c20479063a4473e2a147030f190a5ba",
+        "platform": "sega32x",
+        "coverId": "cover_6c20479063a4473e2a147030f190a5ba",
+        "bytes": 63939,
+        "sha256": "3afe251b06f3be5bf637c4c3ee8544f5a003fa7f128e0f4b7df3fcfc3c0392de"
+      },
+      {
+        "itemId": "station_2a3d789c81fb8777db5a6027ae5e0498",
+        "platform": "sega32x",
+        "coverId": "cover_2a3d789c81fb8777db5a6027ae5e0498",
+        "bytes": 66940,
+        "sha256": "628724206b9dd8feb100e1ff8cb74a593adf5d8aae4f24d8cd8c0193ca16b9a1"
+      },
+      {
+        "itemId": "station_81a599fa414978efdd505a7b05ebacf5",
+        "platform": "sega32x",
+        "coverId": "cover_81a599fa414978efdd505a7b05ebacf5",
+        "bytes": 70477,
+        "sha256": "71caea316402d5e90b0a9a746c1f48b0a5f47916bd117c2424ca9bad2f983bab"
+      },
+      {
+        "itemId": "station_a418e69c2c73c537a070122c1b0beb91",
+        "platform": "sega32x",
+        "coverId": "cover_a418e69c2c73c537a070122c1b0beb91",
+        "bytes": 67565,
+        "sha256": "483af16dec9a7943e2c622deb726becce8cb9cd611297185b6b3feedb4a53ae8"
+      },
+      {
+        "itemId": "station_f958e374546e10d8da85d9704414cee6",
+        "platform": "sega32x",
+        "coverId": "cover_f958e374546e10d8da85d9704414cee6",
+        "bytes": 65498,
+        "sha256": "962a671b738e09a4f872df0fcecf81841d9d61506e574815c0a73a5e44d20cc1"
+      },
+      {
+        "itemId": "station_10dcf45207552cd638758ee1b5b33347",
+        "platform": "sega32x",
+        "coverId": "cover_10dcf45207552cd638758ee1b5b33347",
+        "bytes": 52814,
+        "sha256": "87fc7e0ed4162314fad5178153bb219276cfeeb6f3ecfb59238253dcee0d2c6f"
+      },
+      {
+        "itemId": "station_ba56eebcec08e008297365c995ad26c0",
+        "platform": "sega32x",
+        "coverId": "cover_ba56eebcec08e008297365c995ad26c0",
+        "bytes": 58417,
+        "sha256": "cf40d6eece98ffa5d1bb04f5d06bd00e66ad9ec741347457879c93f449c74cfd"
+      },
+      {
+        "itemId": "station_cf003e7b750460e90cd5d224cc3d124a",
+        "platform": "sega32x",
+        "coverId": "cover_cf003e7b750460e90cd5d224cc3d124a",
+        "bytes": 46363,
+        "sha256": "22f6c08a2ea10e8e3979ae6197f17ffd7502f54afe80e85f36e687c33d10e4d3"
+      },
+      {
+        "itemId": "station_dac086dd4870b78ccbe937c5191c0558",
+        "platform": "sega32x",
+        "coverId": "cover_dac086dd4870b78ccbe937c5191c0558",
+        "bytes": 84090,
+        "sha256": "d521925f3579c02777fea565023761db45645e2e35c6696b72321ce062579bf5"
+      },
+      {
+        "itemId": "station_7e7595ac56968e608b75882c587bfede",
+        "platform": "sega32x",
+        "coverId": "cover_7e7595ac56968e608b75882c587bfede",
+        "bytes": 62730,
+        "sha256": "8eeb924ae751e56f54ba0b08b9a7cb6e1b9812dfa4582f224dcf0dcf2a2c3d9d"
+      },
+      {
+        "itemId": "station_82cc020e11f16a4934a57809a75787a8",
+        "platform": "sega32x",
+        "coverId": "cover_82cc020e11f16a4934a57809a75787a8",
+        "bytes": 65521,
+        "sha256": "a4cb43e5ad8ee8646ec542df8e98b5de74c84c9bdbfff5aa48bce3571364e079"
+      },
+      {
+        "itemId": "station_802d51e7fa08013dbc977afb4639748f",
+        "platform": "sega32x",
+        "coverId": "cover_802d51e7fa08013dbc977afb4639748f",
+        "bytes": 51853,
+        "sha256": "b2c01568e6b99c5eea4bd7ce0e6cf3807d14e53f0b05a8ef68d156cb105c3f1b"
+      },
+      {
+        "itemId": "station_73caaeba8d241bf4d12173fc8aeef1b4",
+        "platform": "sega32x",
+        "coverId": "cover_73caaeba8d241bf4d12173fc8aeef1b4",
+        "bytes": 76354,
+        "sha256": "73f8741c172f9fcf2c3078da0363f541a1aa048071731d27f1ab837f09043ce6"
+      },
+      {
+        "itemId": "station_6ac30cce6f06199fa0dedf37bea53080",
+        "platform": "sega32x",
+        "coverId": "cover_6ac30cce6f06199fa0dedf37bea53080",
+        "bytes": 77072,
+        "sha256": "cc01bff98022b844a2efb847a121db3c86bd445f15c7a6f9f1caa71ba5dbab3a"
+      },
+      {
+        "itemId": "station_8f563745b0465c509312999312d1739c",
+        "platform": "sega32x",
+        "coverId": "cover_8f563745b0465c509312999312d1739c",
+        "bytes": 68611,
+        "sha256": "ad21828e45ba05bb8d4c07a079573a49bd601e36aa77bd201c45ab57b98ac512"
+      },
+      {
+        "itemId": "station_6952529dd8484cf08d511efb940d43ae",
+        "platform": "sega32x",
+        "coverId": "cover_6952529dd8484cf08d511efb940d43ae",
+        "bytes": 55534,
+        "sha256": "f9e769db3f39607aa31965085e9d877d4bee1253b1f27a6cdb4b9ecada9174e7"
+      },
+      {
+        "itemId": "station_bf6a7291600e058e61949887315900c1",
+        "platform": "sega32x",
+        "coverId": "cover_bf6a7291600e058e61949887315900c1",
+        "bytes": 75828,
+        "sha256": "88a952b6b7153b6aae5e625b7b5ca494269faf95143307d916318280419c3afe"
+      },
+      {
+        "itemId": "station_5d9e631ba97d3dfdb4366c48dbdfbaf5",
+        "platform": "sega32x",
+        "coverId": "cover_5d9e631ba97d3dfdb4366c48dbdfbaf5",
+        "bytes": 76084,
+        "sha256": "f0ea38a480b8bf9c520c4bb1d6f8bb83e43ea390c7e8d687a40e8eec112f3f4b"
+      },
+      {
+        "itemId": "station_773b901a8dc1ea6a65741c212d694def",
+        "platform": "sega32x",
+        "coverId": "cover_773b901a8dc1ea6a65741c212d694def",
+        "bytes": 85539,
+        "sha256": "283af9ee9ad1404a210d8886708bc835ce50fa30ac3da92aa671e4b857fc44ee"
+      },
+      {
+        "itemId": "station_399cc7b2146a8ff5cf3b51bf545c210f",
+        "platform": "sega32x",
+        "coverId": "cover_399cc7b2146a8ff5cf3b51bf545c210f",
+        "bytes": 45883,
+        "sha256": "1feb6febb33ef707d5fd778f6ded69f769fc99325b1e0c421926a6e0e9fc8d84"
+      },
+      {
+        "itemId": "station_19ec64ef9f838e556bd5a31c688ffcc3",
+        "platform": "sega32x",
+        "coverId": "cover_19ec64ef9f838e556bd5a31c688ffcc3",
+        "bytes": 68448,
+        "sha256": "ef4d14a56f4e59e9cab823a12a2a55c0a5113414d02b227a44fc6806a289082f"
+      },
+      {
+        "itemId": "station_a2c47fb6f81dcd4e98068f4d717537e0",
+        "platform": "sega32x",
+        "coverId": "cover_a2c47fb6f81dcd4e98068f4d717537e0",
+        "bytes": 48538,
+        "sha256": "004b1b991c3f310e93cce4be4d1cdd44a379497690d1d5001f4b0d70d2cdc664"
+      },
+      {
+        "itemId": "station_c4673940cb0df64a8235da515aaef0e7",
+        "platform": "sega32x",
+        "coverId": "cover_c4673940cb0df64a8235da515aaef0e7",
+        "bytes": 72349,
+        "sha256": "5e9d9073180903cbd2d3c8f6e97956eb2b4e1c21f0b3484e70ec82c9028393bd"
+      },
+      {
+        "itemId": "station_c653292a3ab629f51d0f50f7a6e1ba96",
+        "platform": "sega32x",
+        "coverId": "cover_c653292a3ab629f51d0f50f7a6e1ba96",
+        "bytes": 62052,
+        "sha256": "f063267a835e2098ff0fe0cbf5f6fb79a67139c988cfabe4fa736e7c692a8e9f"
+      },
+      {
+        "itemId": "station_12f5c8582cbdd4509d532c51795a146a",
+        "platform": "sega32x",
+        "coverId": "cover_12f5c8582cbdd4509d532c51795a146a",
+        "bytes": 44705,
+        "sha256": "cb0c6b923a2f5627ce037ddc1858067cca3453ae2ae72e5d13520a37f52aaa84"
+      },
+      {
+        "itemId": "station_92c8e16dcb7eda60298de32b34145f3b",
+        "platform": "sega32x",
+        "coverId": "cover_92c8e16dcb7eda60298de32b34145f3b",
+        "bytes": 56230,
+        "sha256": "a717dfd4ca54239d2b1d3be2f83f94f682e53441850c6075afacbe246150db4d"
+      },
+      {
+        "itemId": "station_ba62f90ef11832d7dfa025c50b7e88b1",
+        "platform": "sega32x",
+        "coverId": "cover_ba62f90ef11832d7dfa025c50b7e88b1",
+        "bytes": 54142,
+        "sha256": "f047ed8a1da52a3bce5668e7407dda8bb6c643c78d890645c2dd100a118b42e4"
+      },
+      {
+        "itemId": "station_74851c2cc8bc0906e28a897038119ab7",
+        "platform": "sega32x",
+        "coverId": "cover_74851c2cc8bc0906e28a897038119ab7",
+        "bytes": 80641,
+        "sha256": "4be3dc7f1490efb530432fd58b13f08e6e12654d93aa55134d72df1bb8854122"
+      },
+      {
+        "itemId": "station_d700243751a04a564037c9d5ae680a15",
+        "platform": "sega32x",
+        "coverId": "cover_d700243751a04a564037c9d5ae680a15",
+        "bytes": 66517,
+        "sha256": "fb5d09493f4bcd43898ea700a0e9d9f9b03ae8da091864ed3218381990402118"
+      },
+      {
+        "itemId": "station_ea596307f52928ddb5b74f9307e1d616",
+        "platform": "sega32x",
+        "coverId": "cover_ea596307f52928ddb5b74f9307e1d616",
+        "bytes": 62845,
+        "sha256": "f33094a59486d9e4a095553c3609840e85d38c1a4e29b625c82edcf030cdad37"
+      },
+      {
+        "itemId": "station_9fb6f783f747411c78e3510291bc0a86",
+        "platform": "sega32x",
+        "coverId": "cover_9fb6f783f747411c78e3510291bc0a86",
+        "bytes": 73360,
+        "sha256": "afd3330ace47d5de2d142355d7c161b4f05b7fe07334c7b11202718700f27791"
+      },
+      {
+        "itemId": "station_4897aafe636c56d4fb5807891f23d45b",
+        "platform": "sega32x",
+        "coverId": "cover_4897aafe636c56d4fb5807891f23d45b",
+        "bytes": 77910,
+        "sha256": "2c4334024343772c00f5b12306a2837ff85ff596b641916c53567447c82e2a73"
+      },
+      {
+        "itemId": "station_f294710de213a47251ad81ff4ef2cf68",
+        "platform": "sega32x",
+        "coverId": "cover_f294710de213a47251ad81ff4ef2cf68",
+        "bytes": 47443,
+        "sha256": "e630e6ae60dc30b5b81e4a5ba0d4f1e19e5fdc74431a023853f9ff2ba6b60e6d"
+      },
+      {
+        "itemId": "station_1f1102c3a3fa64178f4796dd36cdfa2b",
+        "platform": "sega32x",
+        "coverId": "cover_1f1102c3a3fa64178f4796dd36cdfa2b",
+        "bytes": 75478,
+        "sha256": "2e64865f641b12c1f2822aff45e15a8cce7a19f9ac5aaaa12372871de6df2a7b"
+      },
+      {
+        "itemId": "station_2419ed34f56ff99c882b405c45b96c63",
+        "platform": "sega32x",
+        "coverId": "cover_2419ed34f56ff99c882b405c45b96c63",
+        "bytes": 65142,
+        "sha256": "c093c552a2838e390f854f5516c6bc601128c6e2bb5f9d4cec435ae7a66584f6"
+      },
+      {
+        "itemId": "station_cabbe628a3c7fa464faed52c71cca9ad",
+        "platform": "psp",
+        "coverId": "cover_cabbe628a3c7fa464faed52c71cca9ad",
+        "bytes": 64824,
+        "sha256": "4e0939eb2e4d28bd1ac668d8863361f2cb7916b6e72d54ede40170371ffa244a"
+      },
+      {
+        "itemId": "station_29ed11d6a20d90622152f8f190de8bb7",
+        "platform": "psp",
+        "coverId": "cover_29ed11d6a20d90622152f8f190de8bb7",
+        "bytes": 132079,
+        "sha256": "cae6bbf869987560ab207814d9bcbe0f4c5c306017b34eccd92f056370f83eb7"
+      },
+      {
+        "itemId": "station_63eac000b51d28d6e5980f00ce0156bc",
+        "platform": "psp",
+        "coverId": "cover_63eac000b51d28d6e5980f00ce0156bc",
+        "bytes": 135357,
+        "sha256": "71fa7e3872c858ccbb9f404f4fcbf69a1df0c490c6c7b756a7b43a43a1e8d720"
+      },
+      {
+        "itemId": "station_e0aedb909058bccd49510db9e76c1250",
+        "platform": "psp",
+        "coverId": "cover_e0aedb909058bccd49510db9e76c1250",
+        "bytes": 117412,
+        "sha256": "b86210ceeff3ac30c50320ebb5d28227c7c062bcedd64fc86cfc66bc58b63233"
+      },
+      {
+        "itemId": "station_81dd286a719a4a88c6102c6a30c8fd47",
+        "platform": "psp",
+        "coverId": "cover_81dd286a719a4a88c6102c6a30c8fd47",
+        "bytes": 123147,
+        "sha256": "73e925f47c33393f458b867a51f5bb501ba0fa18e4c82d39fbbb272bd748ca7b"
+      },
+      {
+        "itemId": "station_bcbca19b12e89506eb8d996c72055964",
+        "platform": "psp",
+        "coverId": "cover_bcbca19b12e89506eb8d996c72055964",
+        "bytes": 48693,
+        "sha256": "ad782a481c8b0ddcc2904b1359f0c7867fd3c0e863ae726e1ec082c264c28e66"
+      },
+      {
+        "itemId": "station_8c0886152e023c6468df561b89e8262b",
+        "platform": "psp",
+        "coverId": "cover_8c0886152e023c6468df561b89e8262b",
+        "bytes": 55612,
+        "sha256": "080d22d9add39791385cbb2935827536a674e6daac9b35712e931482bd3e7d12"
+      },
+      {
+        "itemId": "station_70611921fd1c353d2b3bced698af44b6",
+        "platform": "psp",
+        "coverId": "cover_70611921fd1c353d2b3bced698af44b6",
+        "bytes": 71146,
+        "sha256": "855ed140b61d06022e91199017e8f8527f573bcc1db41555a146780e8cf634ef"
+      },
+      {
+        "itemId": "station_cd1e3a34a620cf0c0160dc287d2f12e3",
+        "platform": "psp",
+        "coverId": "cover_cd1e3a34a620cf0c0160dc287d2f12e3",
+        "bytes": 54552,
+        "sha256": "5789d153e0ffe4905eb9c893cfbcf35d901e246148c8674b31a2a4d779246930"
+      }
+    ],
+    "coverConcurrency": 4,
+    "downloads": [
+      {
+        "itemId": "station_07d2432e2eb85b33629224c734e2023b",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_6c20479063a4473e2a147030f190a5ba",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_2a3d789c81fb8777db5a6027ae5e0498",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_81a599fa414978efdd505a7b05ebacf5",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_a418e69c2c73c537a070122c1b0beb91",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_f958e374546e10d8da85d9704414cee6",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_10dcf45207552cd638758ee1b5b33347",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_ba56eebcec08e008297365c995ad26c0",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_cf003e7b750460e90cd5d224cc3d124a",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_dac086dd4870b78ccbe937c5191c0558",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_7e7595ac56968e608b75882c587bfede",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_82cc020e11f16a4934a57809a75787a8",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_802d51e7fa08013dbc977afb4639748f",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_73caaeba8d241bf4d12173fc8aeef1b4",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_6ac30cce6f06199fa0dedf37bea53080",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_8f563745b0465c509312999312d1739c",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_6952529dd8484cf08d511efb940d43ae",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_bf6a7291600e058e61949887315900c1",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_5d9e631ba97d3dfdb4366c48dbdfbaf5",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_773b901a8dc1ea6a65741c212d694def",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_399cc7b2146a8ff5cf3b51bf545c210f",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_19ec64ef9f838e556bd5a31c688ffcc3",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_a2c47fb6f81dcd4e98068f4d717537e0",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_c4673940cb0df64a8235da515aaef0e7",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_c653292a3ab629f51d0f50f7a6e1ba96",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_12f5c8582cbdd4509d532c51795a146a",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_92c8e16dcb7eda60298de32b34145f3b",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_ba62f90ef11832d7dfa025c50b7e88b1",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_74851c2cc8bc0906e28a897038119ab7",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_d700243751a04a564037c9d5ae680a15",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_ea596307f52928ddb5b74f9307e1d616",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_9fb6f783f747411c78e3510291bc0a86",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_4897aafe636c56d4fb5807891f23d45b",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_f294710de213a47251ad81ff4ef2cf68",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_1f1102c3a3fa64178f4796dd36cdfa2b",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_2419ed34f56ff99c882b405c45b96c63",
+        "platform": "sega32x",
+        "format": "zip",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_cabbe628a3c7fa464faed52c71cca9ad",
+        "platform": "psp",
+        "format": "raw",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_29ed11d6a20d90622152f8f190de8bb7",
+        "platform": "psp",
+        "format": "raw",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_63eac000b51d28d6e5980f00ce0156bc",
+        "platform": "psp",
+        "format": "raw",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_e0aedb909058bccd49510db9e76c1250",
+        "platform": "psp",
+        "format": "raw",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_81dd286a719a4a88c6102c6a30c8fd47",
+        "platform": "psp",
+        "format": "raw",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_bcbca19b12e89506eb8d996c72055964",
+        "platform": "psp",
+        "format": "raw",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_8c0886152e023c6468df561b89e8262b",
+        "platform": "psp",
+        "format": "raw",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_70611921fd1c353d2b3bced698af44b6",
+        "platform": "psp",
+        "format": "raw",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      },
+      {
+        "itemId": "station_cd1e3a34a620cf0c0160dc287d2f12e3",
+        "platform": "psp",
+        "format": "raw",
+        "sampledBytes": 65536,
+        "exactBytes": true,
+        "singleUse": true
+      }
+    ],
+    "onlinePlatformsPreserved": 17,
+    "syntheticLicenseRemoved": true,
+    "fullWANDownloadsVerified": false,
+    "physicalAndroidGameplayVerified": false
+  },
+  "sandbox": {
+    "filesReadable": 7759,
+    "protectedPathsDenied": 4,
+    "readOnlyMounts": true
+  },
+  "preservation": {
+    "realLicenses": true,
+    "databaseSchema": true,
+    "existingConfigurations": true,
+    "otherServices": true,
+    "onlineProfiles": true,
+    "onlineEngines": true,
+    "onlineModes": true
+  },
+  "realScanner": {
+    "platforms": {
+      "megadrive": 887,
+      "megadrivebr": 94,
+      "snes": 644,
+      "snesbr": 191,
+      "n64": 157,
+      "neogeo": 189,
+      "neogeocd": 50,
+      "dreamcast": 243,
+      "cps1": 36,
+      "cps2": 64,
+      "cps3": 11,
+      "fbneo": 913,
+      "gamecube": 21,
+      "psx": 84,
+      "wii": 7,
+      "wiiu": 1,
+      "switch": 4,
+      "ps2": 25,
+      "saturn": 19,
+      "sega32x": 36,
+      "psp": 9
+    },
+    "pending": [
+      {
+        "platform": "neogeo",
+        "rom": "# 0 - ART OF FIGTHERS COLEÇÃO #/aof2.zip",
+        "reason": "ValueError"
+      }
+    ],
+    "added": 0,
+    "updated": 0,
+    "metadataMissing": 148,
+    "missingXmlRoms": 291,
+    "placeholderCovers": 0,
+    "runtimeRequirements": {
+      "neogeocd": {
+        "biosAvailable": false,
+        "reason": "neocdz_firmware_missing_or_invalid",
+        "driver": "neocdz"
+      }
+    },
+    "revision": 32,
+    "changed": false,
+    "items": 3940,
+    "visible": 3685
+  },
+  "onlinePlatformsPreserved": 17,
+  "movedFolders": [
+    {
+      "source": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/sega32x",
+      "destination": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/sega32x"
+    },
+    {
+      "source": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/psp",
+      "destination": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/psp"
+    }
+  ],
+  "indexSha256": "36aeaf6c5b4167e6eb7332880c0558824b473b7a41215bcd79ed04439344ffa5",
+  "identitiesSha256": "9ea31cab398951b65277eaf343e55aa5adcfbc5359d3dced0c9a4bbc15510526",
+  "appCompiledParserVerification": {
+    "realCompiledClient": true,
+    "sega32x": 36,
+    "catalogRevision": 32,
+    "visibleItems": 3685,
+    "passed": true,
+    "psp": 9,
+    "physicalAndroidGameplayVerified": false
+  },
+  "automaticCatalogSeeds": {
+    "sega32x": {
+      "xmlEntries": 36,
+      "catalogSeedKeys": 43,
+      "ambiguousKeysExcluded": [],
+      "existingXMLImages": 36,
+      "sourceCatalogCovers": 0,
+      "missingXMLImages": [],
+      "currentROMs": 36
+    },
+    "psp": {
+      "xmlEntries": 235,
+      "catalogSeedKeys": 464,
+      "ambiguousKeysExcluded": [
+        "atvoffroadfurypro",
+        "dragonballzshinbudokaianotherroad",
+        "toystory3"
+      ],
+      "existingXMLImages": 210,
+      "sourceCatalogCovers": 21,
+      "missingXMLImages": [
+        "Assassins Creed.cso",
+        "eFootball 2023 Version Beta ADLZ GAMING PRO.iso",
+        "Fast and the Furious, The (USA).cso",
+        "Fate_Unlimited_Codes_USA_PSP-EMiNENT.cso",
+        "Guilty Gear XX Reload - The Midnight Carnival (Japan).cso",
+        "Need For Speed Most Wanted USA.cso"
+      ],
+      "currentROMs": 9
+    }
+  },
+  "allNewItemsCrossed": true,
+  "nativeGameplayQualified": false,
+  "metadataPlayersAreNotOnlineSeatProof": true,
+  "sourceCommit": "7eb0e009d40ce01db86aea9c489937e9bd2fd00a",
+  "artwork": [
+    {
+      "platform": "sega32x",
+      "fileName": "36 Great Holes Starring Fred Couples.zip",
+      "coverSha256": "9ed65a97b2104a26fd743b751ded33efe2005008cbb667fb21c208c5405bd7d3",
+      "coverBytes": 71291,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/36 Great Holes Starring Fred Couples.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "After Burner Complete.zip",
+      "coverSha256": "3afe251b06f3be5bf637c4c3ee8544f5a003fa7f128e0f4b7df3fcfc3c0392de",
+      "coverBytes": 63939,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/After Burner Complete.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "BC Racers.zip",
+      "coverSha256": "628724206b9dd8feb100e1ff8cb74a593adf5d8aae4f24d8cd8c0193ca16b9a1",
+      "coverBytes": 66940,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/BC Racers.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Blackthorne.zip",
+      "coverSha256": "71caea316402d5e90b0a9a746c1f48b0a5f47916bd117c2424ca9bad2f983bab",
+      "coverBytes": 70477,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Blackthorne.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Brutal Unleashed - Above the Claw.zip",
+      "coverSha256": "483af16dec9a7943e2c622deb726becce8cb9cd611297185b6b3feedb4a53ae8",
+      "coverBytes": 67565,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Brutal Unleashed - Above the Claw.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Cosmic Carnage.zip",
+      "coverSha256": "962a671b738e09a4f872df0fcecf81841d9d61506e574815c0a73a5e44d20cc1",
+      "coverBytes": 65498,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Cosmic Carnage.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Darxide .zip",
+      "coverSha256": "87fc7e0ed4162314fad5178153bb219276cfeeb6f3ecfb59238253dcee0d2c6f",
+      "coverBytes": 52814,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Darxide .png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Doom.zip",
+      "coverSha256": "cf40d6eece98ffa5d1bb04f5d06bd00e66ad9ec741347457879c93f449c74cfd",
+      "coverBytes": 58417,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Doom.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "FIFA International Soccer 96.zip",
+      "coverSha256": "22f6c08a2ea10e8e3979ae6197f17ffd7502f54afe80e85f36e687c33d10e4d3",
+      "coverBytes": 46363,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/FIFA International Soccer 96.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Knuckles' Chaotix.zip",
+      "coverSha256": "d521925f3579c02777fea565023761db45645e2e35c6696b72321ce062579bf5",
+      "coverBytes": 84090,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Knuckles' Chaotix.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Kolibri.zip",
+      "coverSha256": "8eeb924ae751e56f54ba0b08b9a7cb6e1b9812dfa4582f224dcf0dcf2a2c3d9d",
+      "coverBytes": 62730,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Kolibri.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Metal Head.zip",
+      "coverSha256": "a4cb43e5ad8ee8646ec542df8e98b5de74c84c9bdbfff5aa48bce3571364e079",
+      "coverBytes": 65521,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Metal Head.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Mortal Kombat II.zip",
+      "coverSha256": "b2c01568e6b99c5eea4bd7ce0e6cf3807d14e53f0b05a8ef68d156cb105c3f1b",
+      "coverBytes": 51853,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Mortal Kombat II.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Motocross Championship.zip",
+      "coverSha256": "73f8741c172f9fcf2c3078da0363f541a1aa048071731d27f1ab837f09043ce6",
+      "coverBytes": 76354,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Motocross Championship.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "NBA Jam Tournament Edition.zip",
+      "coverSha256": "cc01bff98022b844a2efb847a121db3c86bd445f15c7a6f9f1caa71ba5dbab3a",
+      "coverBytes": 77072,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/NBA Jam Tournament Edition.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "NFL Quarterback Club.zip",
+      "coverSha256": "ad21828e45ba05bb8d4c07a079573a49bd601e36aa77bd201c45ab57b98ac512",
+      "coverBytes": 68611,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/NFL Quarterback Club.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Pitfall - The Mayan Adventure.zip",
+      "coverSha256": "f9e769db3f39607aa31965085e9d877d4bee1253b1f27a6cdb4b9ecada9174e7",
+      "coverBytes": 55534,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Pitfall - The Mayan Adventure.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Primal Rage.zip",
+      "coverSha256": "88a952b6b7153b6aae5e625b7b5ca494269faf95143307d916318280419c3afe",
+      "coverBytes": 75828,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Primal Rage.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "RBI Baseball 95.zip",
+      "coverSha256": "f0ea38a480b8bf9c520c4bb1d6f8bb83e43ea390c7e8d687a40e8eec112f3f4b",
+      "coverBytes": 76084,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/RBI Baseball 95.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Sangokushi IV.zip",
+      "coverSha256": "283af9ee9ad1404a210d8886708bc835ce50fa30ac3da92aa671e4b857fc44ee",
+      "coverBytes": 85539,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Sangokushi IV.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Shadow Squadron.zip",
+      "coverSha256": "1feb6febb33ef707d5fd778f6ded69f769fc99325b1e0c421926a6e0e9fc8d84",
+      "coverBytes": 45883,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Shadow Squadron.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Space Harrier.zip",
+      "coverSha256": "ef4d14a56f4e59e9cab823a12a2a55c0a5113414d02b227a44fc6806a289082f",
+      "coverBytes": 68448,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Space Harrier.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Spear Of Destiny.zip",
+      "coverSha256": "004b1b991c3f310e93cce4be4d1cdd44a379497690d1d5001f4b0d70d2cdc664",
+      "coverBytes": 48538,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Spear Of Destiny.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Spider-Man - Web of Fire.zip",
+      "coverSha256": "5e9d9073180903cbd2d3c8f6e97956eb2b4e1c21f0b3484e70ec82c9028393bd",
+      "coverBytes": 72349,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Spider-Man - Web of Fire.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Star Trek - Starfleet Academy Bridge Simulator.zip",
+      "coverSha256": "f063267a835e2098ff0fe0cbf5f6fb79a67139c988cfabe4fa736e7c692a8e9f",
+      "coverBytes": 62052,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Star Trek - Starfleet Academy Bridge Simulator.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Star Wars Arcade.zip",
+      "coverSha256": "cb0c6b923a2f5627ce037ddc1858067cca3453ae2ae72e5d13520a37f52aaa84",
+      "coverBytes": 44705,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Star Wars Arcade.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "T-MEK.zip",
+      "coverSha256": "a717dfd4ca54239d2b1d3be2f83f94f682e53441850c6075afacbe246150db4d",
+      "coverBytes": 56230,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/T-MEK.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Tempo.zip",
+      "coverSha256": "f047ed8a1da52a3bce5668e7407dda8bb6c643c78d890645c2dd100a118b42e4",
+      "coverBytes": 54142,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Tempo.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Toughman Contest.zip",
+      "coverSha256": "4be3dc7f1490efb530432fd58b13f08e6e12654d93aa55134d72df1bb8854122",
+      "coverBytes": 80641,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Toughman Contest.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Virtua Fighter.zip",
+      "coverSha256": "fb5d09493f4bcd43898ea700a0e9d9f9b03ae8da091864ed3218381990402118",
+      "coverBytes": 66517,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Virtua Fighter.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Virtua Racing Deluxe.zip",
+      "coverSha256": "f33094a59486d9e4a095553c3609840e85d38c1a4e29b625c82edcf030cdad37",
+      "coverBytes": 62845,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Virtua Racing Deluxe.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Wolfenstein 3D.zip",
+      "coverSha256": "e630e6ae60dc30b5b81e4a5ba0d4f1e19e5fdc74431a023853f9ff2ba6b60e6d",
+      "coverBytes": 47443,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Wolfenstein 3D.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "World Series Baseball '95.zip",
+      "coverSha256": "2e64865f641b12c1f2822aff45e15a8cce7a19f9ac5aaaa12372871de6df2a7b",
+      "coverBytes": 75478,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/World Series Baseball '95.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "WWF RAW.zip",
+      "coverSha256": "afd3330ace47d5de2d142355d7c161b4f05b7fe07334c7b11202718700f27791",
+      "coverBytes": 73360,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/WWF RAW.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "WWF Wrestlemania Arcade.zip",
+      "coverSha256": "2c4334024343772c00f5b12306a2837ff85ff596b641916c53567447c82e2a73",
+      "coverBytes": 77910,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/WWF Wrestlemania Arcade.png"
+      }
+    },
+    {
+      "platform": "sega32x",
+      "fileName": "Zaxxon's Motherbase 2000.zip",
+      "coverSha256": "c093c552a2838e390f854f5516c6bc601128c6e2bb5f9d4cec435ae7a66584f6",
+      "coverBytes": 65142,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Zaxxon's Motherbase 2000.png"
+      }
+    },
+    {
+      "platform": "psp",
+      "fileName": "Ghost Rider (Europe) (En,Fr,De,Es,It).cso",
+      "coverSha256": "71fa7e3872c858ccbb9f404f4fcbf69a1df0c490c6c7b756a7b43a43a1e8d720",
+      "coverBytes": 135357,
+      "origin": {
+        "source": "existing-turborama-psp-catalog",
+        "catalogId": "0a614f4d7177f612d609ab3fba4d0752",
+        "originalPath": "Images/0a614f4d7177f612d609ab3fba4d0752.jpg",
+        "regionNeutralTitleMatch": true
+      }
+    },
+    {
+      "platform": "psp",
+      "fileName": "Grand Theft Auto - Vice City Stories.cso",
+      "coverSha256": "ad782a481c8b0ddcc2904b1359f0c7867fd3c0e863ae726e1ec082c264c28e66",
+      "coverBytes": 48693,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Grand Theft Auto - Vice City Stories.png"
+      }
+    },
+    {
+      "platform": "psp",
+      "fileName": "Moto GP.cso",
+      "coverSha256": "080d22d9add39791385cbb2935827536a674e6daac9b35712e931482bd3e7d12",
+      "coverBytes": 55612,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Moto GP.png"
+      }
+    },
+    {
+      "platform": "psp",
+      "fileName": "Soul Calibur Broken Destiny (EUR).cso",
+      "coverSha256": "855ed140b61d06022e91199017e8f8527f573bcc1db41555a146780e8cf634ef",
+      "coverBytes": 71146,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Soul Calibur Broken Destiny (EUR).png"
+      }
+    },
+    {
+      "platform": "psp",
+      "fileName": "Toy Story 3.cso",
+      "coverSha256": "5789d153e0ffe4905eb9c893cfbcf35d901e246148c8674b31a2a4d779246930",
+      "coverBytes": 54552,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Toy Story 3.png"
+      }
+    },
+    {
+      "platform": "psp",
+      "fileName": "Crash - Mind over Mutant (Europe).cso",
+      "coverSha256": "4e0939eb2e4d28bd1ac668d8863361f2cb7916b6e72d54ede40170371ffa244a",
+      "coverBytes": 64824,
+      "origin": {
+        "source": "existing-incoming-image",
+        "originalPath": "media/images/Crash - Mind over Mutant (Europe).png"
+      }
+    },
+    {
+      "platform": "psp",
+      "fileName": "Crash of the Titans (USA).cso",
+      "coverSha256": "cae6bbf869987560ab207814d9bcbe0f4c5c306017b34eccd92f056370f83eb7",
+      "coverBytes": 132079,
+      "origin": {
+        "source": "existing-turborama-psp-catalog",
+        "catalogId": "7eb3ee4875503326ea2d42d2561777fc",
+        "originalPath": "Images/7eb3ee4875503326ea2d42d2561777fc.jpg",
+        "regionNeutralTitleMatch": true
+      }
+    },
+    {
+      "platform": "psp",
+      "fileName": "God of War - Chains of Olympus (Europe) (En,Fr,De,Es,It) (PSN).cso",
+      "coverSha256": "b86210ceeff3ac30c50320ebb5d28227c7c062bcedd64fc86cfc66bc58b63233",
+      "coverBytes": 117412,
+      "origin": {
+        "source": "existing-turborama-psp-catalog",
+        "catalogId": "566999d8528ddf17465f637729a80e14",
+        "originalPath": "Images/566999d8528ddf17465f637729a80e14.jpg",
+        "regionNeutralTitleMatch": true
+      }
+    },
+    {
+      "platform": "psp",
+      "fileName": "God of War - Ghost of Sparta (Europe) (En,Fr,De,Es,It) (PSN).cso",
+      "coverSha256": "73e925f47c33393f458b867a51f5bb501ba0fa18e4c82d39fbbb272bd748ca7b",
+      "coverBytes": 123147,
+      "origin": {
+        "source": "existing-turborama-psp-catalog",
+        "catalogId": "65e6c73a647fcf79f5c1732eee339bfe",
+        "originalPath": "Images/65e6c73a647fcf79f5c1732eee339bfe.jpg",
+        "regionNeutralTitleMatch": true
+      }
+    }
+  ]
+}

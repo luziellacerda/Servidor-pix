@@ -4,15 +4,20 @@
   "execMainStatus": 0,
   "lastScanStart": "Fri 2026-10-09 15:09:34 -03",
   "postDeploymentScanChanged": false,
-  "catalogRevision": 27,
+  "catalogRevision": 32,
   "preparedModeInput": true,
   "persistentEngineManifest": true,
   "previousProfilesPreserved": 5176,
-  "indexSha256": "f7924dcd6bdea74c2f32d8a482184f6f21f6a7f235b77f697432fd57637aef6e",
-  "identitiesSha256": "16efbad906b1f8aec26869fc9900a7aa50486fa351be4c82f507253a1902667a",
+  "indexSha256": "36aeaf6c5b4167e6eb7332880c0558824b473b7a41215bcd79ed04439344ffa5",
+  "identitiesSha256": "9ea31cab398951b65277eaf343e55aa5adcfbc5359d3dced0c9a4bbc15510526",
   "profilesSha256": "a029fb61ce68fa26abadf0312b55b9ae163c6a3604a12bfd37e97d406fdfebaa",
-  "utc": "2026-10-09T18:09:52.413592+00:00",
+  "utc": "2026-10-10T22:40:20.495314+00:00",
   "effectivePublishedImporter": true,
   "automaticIdentity": true,
-  "automaticProfiles": true
+  "automaticProfiles": true,
+  "receipt": "sega32x-psp-publicados-20261010.json",
+  "configuredFoldersAdded": [
+    "sega32x",
+    "psp"
+  ]
 }

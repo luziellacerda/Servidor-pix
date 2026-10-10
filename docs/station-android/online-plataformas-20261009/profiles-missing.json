@@ -3214,5 +3214,410 @@
     "onlineState": "online-engine-pending",
     "serverReady": true,
     "nextIntegration": "real-saturn-engine-runtime-and-two-controller-layout"
+  },
+  {
+    "itemId": "station_07d2432e2eb85b33629224c734e2023b",
+    "name": "Golf Magazine presents 36 Great Holes starring Fred Couples",
+    "platform": "sega32x",
+    "contentSha256": "1909e6ac8d79424fcb6799abb68ff90d546b228ada0e9d175d1a55442d9489f6",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_6c20479063a4473e2a147030f190a5ba",
+    "name": "After Burner",
+    "platform": "sega32x",
+    "contentSha256": "5225e4a73a893bd40579b6fedd6f50fe294b06be23b8ab928024498ed6f633f3",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_2a3d789c81fb8777db5a6027ae5e0498",
+    "name": "BC Racers",
+    "platform": "sega32x",
+    "contentSha256": "e606ab6b3d205011a811c8569cd17075f0b67139f90b8418e565567a5592bf73",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_81a599fa414978efdd505a7b05ebacf5",
+    "name": "Blackthorne",
+    "platform": "sega32x",
+    "contentSha256": "ed5da3dfc740881a0467679b8be5505e14282b1a61eff3121f6b714e24ddd9a6",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_a418e69c2c73c537a070122c1b0beb91",
+    "name": "Brutal Unleashed : Above the Claw",
+    "platform": "sega32x",
+    "contentSha256": "f8279a81a76445cd68df0bc0e0fb0e53379406f462195e1799f2d90a097afe29",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_f958e374546e10d8da85d9704414cee6",
+    "name": "Cosmic Carnage",
+    "platform": "sega32x",
+    "contentSha256": "7a4b355ca4dac233a1246e662b274d548f6dd6c0e4bb27a382b6bba42b354d37",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_10dcf45207552cd638758ee1b5b33347",
+    "name": "Darxide",
+    "platform": "sega32x",
+    "contentSha256": "31ae1b06ede2127c61b7e6ad58d56b21cf1a604f46f9d3a6f535679693ef929b",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_ba56eebcec08e008297365c995ad26c0",
+    "name": "Doom",
+    "platform": "sega32x",
+    "contentSha256": "0bfa9a1a9341bca5b68f29e0e94e334d9d2f781f84d02d60f51a8be24f12f11c",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_cf003e7b750460e90cd5d224cc3d124a",
+    "name": "FIFA Soccer 96",
+    "platform": "sega32x",
+    "contentSha256": "6641801d0266a5e795c467c6e66d055f70ff15e53b35accc0f537b19cc25850a",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_dac086dd4870b78ccbe937c5191c0558",
+    "name": "Knuckles' Chaotix",
+    "platform": "sega32x",
+    "contentSha256": "70e1a92a982f2684be3bc315267e545fb9c530d533fd62b6d38bb625541ed957",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_7e7595ac56968e608b75882c587bfede",
+    "name": "Kolibri",
+    "platform": "sega32x",
+    "contentSha256": "3e8bf99e7257921b5f0f4b2c2b836e2c414193cc3771540c603fd925c6316525",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_82cc020e11f16a4934a57809a75787a8",
+    "name": "Metal Head",
+    "platform": "sega32x",
+    "contentSha256": "950154ccd4d3dc9fdfcdff49d4d9a96021ffa68226f27528d8a6008f2cbc76f9",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_802d51e7fa08013dbc977afb4639748f",
+    "name": "Mortal Kombat II",
+    "platform": "sega32x",
+    "contentSha256": "c1d827dba5d315499cb2e6271522daf4928af2b682df30f223db6e52e0b8a31a",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_73caaeba8d241bf4d12173fc8aeef1b4",
+    "name": "Motocross Championship",
+    "platform": "sega32x",
+    "contentSha256": "b003d1194c7798ec8feca6c907b19e8b243150ee9fa0a3237f4dd643bf740fa2",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_6ac30cce6f06199fa0dedf37bea53080",
+    "name": "NBA Jam : Tournament Edition",
+    "platform": "sega32x",
+    "contentSha256": "7f7e1059671a99405e3782cd9b4e5d4025ee4bb122a89357b95b0fcac512f74f",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_8f563745b0465c509312999312d1739c",
+    "name": "NFL Quarterback Club",
+    "platform": "sega32x",
+    "contentSha256": "092ad8896ea7784d2feb7f17b1a348562588a361c50de6ade722a5c5cce698d5",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_6952529dd8484cf08d511efb940d43ae",
+    "name": "Pitfall : The Mayan Adventure",
+    "platform": "sega32x",
+    "contentSha256": "901a582a9b2d0a2f55f07f1a7b1aaa6484e680fabe4f83c9daffef955f4ec95b",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_bf6a7291600e058e61949887315900c1",
+    "name": "Primal Rage",
+    "platform": "sega32x",
+    "contentSha256": "04de760f8c87d9ccb9bdc4a756e70dbc71f70b3084849e5fd945ceccee39cc2a",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_5d9e631ba97d3dfdb4366c48dbdfbaf5",
+    "name": "RBI Baseball '95",
+    "platform": "sega32x",
+    "contentSha256": "89f8114f9a4fb5ec3e3f0229427117c72c4af2dbda337bc52e6afa60787e6d95",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_773b901a8dc1ea6a65741c212d694def",
+    "name": "Sangokushi IV",
+    "platform": "sega32x",
+    "contentSha256": "788fd87e5e2478eb37226b6231b7e1a7e7c3ba45bce020748d77ef2951a20feb",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_399cc7b2146a8ff5cf3b51bf545c210f",
+    "name": "Shadow Squadron",
+    "platform": "sega32x",
+    "contentSha256": "2f9b6017258fbb1c37d81df07c68d5255495d3bf76d9c7b680ff66bccf665750",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_19ec64ef9f838e556bd5a31c688ffcc3",
+    "name": "Space Harrier",
+    "platform": "sega32x",
+    "contentSha256": "a05c818769d5dca447fe7355b6d917536101a0e774fee63bc0f7010490edaaae",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_a2c47fb6f81dcd4e98068f4d717537e0",
+    "name": "Spear Of Destiny",
+    "platform": "sega32x",
+    "contentSha256": "4374fc1e8550e277b32d6584661a057669c06acd74d25b381d1a57b9d3b19761",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_c4673940cb0df64a8235da515aaef0e7",
+    "name": "The Amazing Spider-Man : Web of Fire",
+    "platform": "sega32x",
+    "contentSha256": "567eb80a69ca1fea67f4cb64252e6a23e9bd41c3f9c4c422a6bc04dfb763509d",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_c653292a3ab629f51d0f50f7a6e1ba96",
+    "name": "Star Trek, Starfleet Academy : Starship Bridge Simulator",
+    "platform": "sega32x",
+    "contentSha256": "37b9cbfb18a4591263f354016f11b83abdef7e496f91ce4f6bf7cafffe3dd158",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_12f5c8582cbdd4509d532c51795a146a",
+    "name": "Star Wars Arcade",
+    "platform": "sega32x",
+    "contentSha256": "cca56810bdf53bb17b85c9318700596d8d134f335d74a8d8ef01f25e9ecb86b4",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_92c8e16dcb7eda60298de32b34145f3b",
+    "name": "T-Mek",
+    "platform": "sega32x",
+    "contentSha256": "ee218c878a7c2105530631073b9f95fd8a61d1be110da030c599e983988e7d10",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_ba62f90ef11832d7dfa025c50b7e88b1",
+    "name": "Tempo",
+    "platform": "sega32x",
+    "contentSha256": "b8bf72deeda5cba5ca63bc59c96d0f1d223c9406475a9099b7831ac191671bf6",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_74851c2cc8bc0906e28a897038119ab7",
+    "name": "Toughman Contest",
+    "platform": "sega32x",
+    "contentSha256": "5085e80dee63cf0264aadb3595588c3098a68607e8cf48c948535483832bafc2",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_d700243751a04a564037c9d5ae680a15",
+    "name": "Virtua Fighter",
+    "platform": "sega32x",
+    "contentSha256": "c595e136c91a012b1e7d591acfb9d965926cac51acea998b90969d74391bfa08",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_ea596307f52928ddb5b74f9307e1d616",
+    "name": "Virtua Racing Deluxe",
+    "platform": "sega32x",
+    "contentSha256": "cc2917895842ba42ce871a07a327c5467a5b5df8b7999ccc4b7b5bea9d4caf6b",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_9fb6f783f747411c78e3510291bc0a86",
+    "name": "WWF Raw",
+    "platform": "sega32x",
+    "contentSha256": "901f61356060a983b938e7df02ac8b193d8c7c9c31aa5ed58083494f1e621d3b",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_4897aafe636c56d4fb5807891f23d45b",
+    "name": "WWF WrestleMania : The Arcade Game",
+    "platform": "sega32x",
+    "contentSha256": "b64adcee5a1f7a93a5672a45079c624ffe3af081fb834e2c57cb6c9d0aa37e6a",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_f294710de213a47251ad81ff4ef2cf68",
+    "name": "Wolfenstein 3d",
+    "platform": "sega32x",
+    "contentSha256": "9086ce596b74f0072ec4c6c6661f032abbda587aae4933d1866702f22b6c613f",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_1f1102c3a3fa64178f4796dd36cdfa2b",
+    "name": "World Series Baseball Starring Deion Sanders",
+    "platform": "sega32x",
+    "contentSha256": "9545b478e89c780bc9119b585bf88826956f54f40dfb534fb49eef9b40245f3a",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_2419ed34f56ff99c882b405c45b96c63",
+    "name": "Zaxxon's Motherbase 2000",
+    "platform": "sega32x",
+    "contentSha256": "c53102bfaf47c94cb039183bb2d5e4406ffb1f961afba8f58d03a887ae06c7ec",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_cabbe628a3c7fa464faed52c71cca9ad",
+    "name": "Crash : Mind Over Mutant",
+    "platform": "psp",
+    "contentSha256": "9e94ac13c1d46d5ef204caa38fddbaf4bbd9260573411a322046b939d60d3af5",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_29ed11d6a20d90622152f8f190de8bb7",
+    "name": "Crash of the Titans",
+    "platform": "psp",
+    "contentSha256": "2aaf040dec591c57abfaaa9204c1937fe6abf34afcc5446bdffd044117759c0d",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_63eac000b51d28d6e5980f00ce0156bc",
+    "name": "Ghost Rider",
+    "platform": "psp",
+    "contentSha256": "59d27d6fa89fd7d2aebf80f6864ad1a36e156950a54ccda2c0c1c0f5eccc9f80",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_e0aedb909058bccd49510db9e76c1250",
+    "name": "God of War : Chains of Olympus",
+    "platform": "psp",
+    "contentSha256": "c4df9fd665f59d2da2c4aea1592e2ce56f30713482ddcef7f53f56779ca76ab1",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_81dd286a719a4a88c6102c6a30c8fd47",
+    "name": "God of War : Ghost of Sparta",
+    "platform": "psp",
+    "contentSha256": "ca802d413f0b3a9109315395741be67335966b83ba0be7226703f04a501ab8ac",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_bcbca19b12e89506eb8d996c72055964",
+    "name": "Grand Theft Auto : Vice City Stories",
+    "platform": "psp",
+    "contentSha256": "c87f10f849b7c4d59cb6f5b9bba01441411be1b43bf19a5d16b8c7cefd841811",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_8c0886152e023c6468df561b89e8262b",
+    "name": "Moto GP",
+    "platform": "psp",
+    "contentSha256": "5be1884a0c054e44b8acf5d0b7816ad40f553df3eae066490401123bd11d257b",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_70611921fd1c353d2b3bced698af44b6",
+    "name": "Soulcalibur : Broken Destiny",
+    "platform": "psp",
+    "contentSha256": "66b6684396fbbe4862d999c753146b2089c56409ee178fadbf2879f04eb4b1fd",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
+  },
+  {
+    "itemId": "station_cd1e3a34a620cf0c0160dc287d2f12e3",
+    "name": "Toy Story 3",
+    "platform": "psp",
+    "contentSha256": "38015cf7ffce9a4cceadd0244de477a5eb075721004f4939455fab26c782abda",
+    "onlineState": "catalog-only",
+    "serverReady": false,
+    "nextIntegration": "PSP networking requires a native adhoc adapter; 32X requires a compatible native Station engine/controller proof; catalog players is descriptive only"
   }
 ]

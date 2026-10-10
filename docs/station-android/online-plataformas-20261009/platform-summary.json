@@ -271,6 +271,25 @@
     "preparedModeCount": 25
   },
   {
+    "platform": "psp",
+    "normalizedPlatform": "psp",
+    "maximumPlayers": null,
+    "catalogItems": 9,
+    "visible": 9,
+    "compatibilityAliases": 0,
+    "contentIdentities": 9,
+    "covers": 9,
+    "onlineStates": {
+      "catalog-only": 9
+    },
+    "approvedModeMaximums": [],
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": false,
+    "catalogAndDownloadsReady": true,
+    "engineEnrollmentByData": false,
+    "preparedModeCount": 0
+  },
+  {
     "platform": "psx",
     "normalizedPlatform": "psx",
     "maximumPlayers": 2,
@@ -314,6 +333,25 @@
     "engineEnrollmentByData": true,
     "engineEnrollmentRestartRequired": false,
     "preparedModeCount": 19
+  },
+  {
+    "platform": "sega32x",
+    "normalizedPlatform": "sega32x",
+    "maximumPlayers": null,
+    "catalogItems": 36,
+    "visible": 36,
+    "compatibilityAliases": 0,
+    "contentIdentities": 36,
+    "covers": 36,
+    "onlineStates": {
+      "catalog-only": 36
+    },
+    "approvedModeMaximums": [],
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": false,
+    "catalogAndDownloadsReady": true,
+    "engineEnrollmentByData": false,
+    "preparedModeCount": 0
   },
   {
     "platform": "snes",

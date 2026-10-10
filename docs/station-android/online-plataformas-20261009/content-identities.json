@@ -9821,6 +9821,15 @@
       "contentSha256": "5fb072c3c2e9d8e7f84bea9c4bf2253e6868eb2b1f13e35a7d75fdf05896d873"
     },
     {
+      "itemId": "station_07d2432e2eb85b33629224c734e2023b",
+      "platform": "sega32x",
+      "artifactSha256": "165f9af57123a26f5e873b5e55d9f63c882915b9ae8dd028e689a31b57991c3b",
+      "launchPath": "36 Great Holes Starring Fred Couples (32X) (JU) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "1909e6ac8d79424fcb6799abb68ff90d546b228ada0e9d175d1a55442d9489f6"
+    },
+    {
       "itemId": "station_080086e36dc168e799479433811cd0f2",
       "platform": "snesbr",
       "artifactSha256": "0faa00f7dda473ae268ab854736dc88c8936dbaffc71d8d0a3bd72cc86e7abd3",
@@ -10694,6 +10703,15 @@
       "contentSha256": "80c22cc92d51a54de9cd9fd00db5ff58a35fff35e822169c94e445d50834fba3"
     },
     {
+      "itemId": "station_10dcf45207552cd638758ee1b5b33347",
+      "platform": "sega32x",
+      "artifactSha256": "e97fe9f0f20102211afa356f0cee35ed776edfc7dcd6fae5857f4ef89caf3459",
+      "launchPath": "Darxide (32X) (E) (M4) [!].32x",
+      "expandedSizeBytes": 2097152,
+      "fileCount": 1,
+      "contentSha256": "31ae1b06ede2127c61b7e6ad58d56b21cf1a604f46f9d3a6f535679693ef929b"
+    },
+    {
       "itemId": "station_10e2a927022bfa490f762773f7d27527",
       "platform": "dreamcast",
       "artifactSha256": "bcbbb8e6129062aff53015e9f54ec6d484bb2e9595c30286b2a1113a341ba8c3",
@@ -10899,6 +10917,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "67937dd7a29a93b1aaabb6df89f0748369ff47f3f6c655a402c00d5657973140"
+    },
+    {
+      "itemId": "station_12f5c8582cbdd4509d532c51795a146a",
+      "platform": "sega32x",
+      "artifactSha256": "e145535b6ede51c3ef4e9fb400e9512855105373ea192f8672e502766a6b5b36",
+      "launchPath": "Star Wars Arcade (32X) (U) [!].32x",
+      "expandedSizeBytes": 2621440,
+      "fileCount": 1,
+      "contentSha256": "cca56810bdf53bb17b85c9318700596d8d134f335d74a8d8ef01f25e9ecb86b4"
     },
     {
       "itemId": "station_13141f0a4b7c64c46942555344d9b426",
@@ -11675,6 +11702,15 @@
       "contentSha256": "598375658a0c64f02075b9ba436c55024005a2bb690558d40e3adc4488a63207"
     },
     {
+      "itemId": "station_19ec64ef9f838e556bd5a31c688ffcc3",
+      "platform": "sega32x",
+      "artifactSha256": "49b5ceabd29d0f9d7ee1272221ba0ca3e0a3640522f50191c7dc64dcb5d2bfec",
+      "launchPath": "Space Harrier (32X) (JU) [!].32x",
+      "expandedSizeBytes": 2097152,
+      "fileCount": 1,
+      "contentSha256": "a05c818769d5dca447fe7355b6d917536101a0e774fee63bc0f7010490edaaae"
+    },
+    {
       "itemId": "station_19fa16b7aea0ce4499f354eb9fcd7597",
       "platform": "fbneo",
       "artifactSha256": "13d11a11cad9421f844bf607bc7311e3a3d0b4463c875705cf948f55d0d03499",
@@ -12195,6 +12231,15 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "31b7d43f915b3453c9105066f7151f8c05db979a9823e4fbb28b5a53800ec0f0"
+    },
+    {
+      "itemId": "station_1f1102c3a3fa64178f4796dd36cdfa2b",
+      "platform": "sega32x",
+      "artifactSha256": "97c1a122920f8723ed8003983b8e2177aae96b63851bacdc9cb1332b189b3fee",
+      "launchPath": "World Series Baseball '95 (32X) (U) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "9545b478e89c780bc9119b585bf88826956f54f40dfb534fb49eef9b40245f3a"
     },
     {
       "itemId": "station_1f1122bc6b7e52a869ecd4e8b91e65b1",
@@ -12762,6 +12807,15 @@
       "expandedSizeBytes": 2204197,
       "fileCount": 2,
       "contentSha256": "b20592c0bd45668d171356f8bf0aa0a39d8908ae24bf367593a23dd40188351a"
+    },
+    {
+      "itemId": "station_2419ed34f56ff99c882b405c45b96c63",
+      "platform": "sega32x",
+      "artifactSha256": "7bd3b35842b96f75d1d0d1c4be449c730cc96319ecba75ab3048ff60a439de03",
+      "launchPath": "Zaxxon's Motherbase 2000 (32X) (JU) [!].32x",
+      "expandedSizeBytes": 2097152,
+      "fileCount": 1,
+      "contentSha256": "c53102bfaf47c94cb039183bb2d5e4406ffb1f961afba8f58d03a887ae06c7ec"
     },
     {
       "itemId": "station_2433f9ecf66b9679738eb1772bbf1d37",
@@ -13367,6 +13421,15 @@
       "contentSha256": "b975a63ea4c3fd87781d3233660928e3b822334ad415ac495599cf85230ad01f"
     },
     {
+      "itemId": "station_29ed11d6a20d90622152f8f190de8bb7",
+      "platform": "psp",
+      "artifactSha256": "2aaf040dec591c57abfaaa9204c1937fe6abf34afcc5446bdffd044117759c0d",
+      "launchPath": "Crash of the Titans (USA).cso",
+      "expandedSizeBytes": 614379380,
+      "fileCount": 1,
+      "contentSha256": "2aaf040dec591c57abfaaa9204c1937fe6abf34afcc5446bdffd044117759c0d"
+    },
+    {
       "itemId": "station_2a0597f63569c08c5e62797a265ed070",
       "platform": "fbneo",
       "artifactSha256": "0aab42f1f7affbdeb57055ae30c87c76eab7d7d916f9581d11c81fff868f4b48",
@@ -13392,6 +13455,15 @@
       "expandedSizeBytes": 1017728,
       "fileCount": 2,
       "contentSha256": "29c3083a4350444ccba0f9e760fd588dcf54b9075d06aa6db5a860ac4a6f6cc7"
+    },
+    {
+      "itemId": "station_2a3d789c81fb8777db5a6027ae5e0498",
+      "platform": "sega32x",
+      "artifactSha256": "8618c79e1b2499f01421144041994f125282433672556e61bf4aac42938073ef",
+      "launchPath": "BC Racers (32X) (W) [c][!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "e606ab6b3d205011a811c8569cd17075f0b67139f90b8418e565567a5592bf73"
     },
     {
       "itemId": "station_2a43883ac96994bb48cd7b62fbde56b3",
@@ -14924,6 +14996,15 @@
       "contentSha256": "17bf8af2a6ebfcdc53bf45031a81091bf51bf4698dd40f991a5ba9e3e7822b91"
     },
     {
+      "itemId": "station_399cc7b2146a8ff5cf3b51bf545c210f",
+      "platform": "sega32x",
+      "artifactSha256": "2254bd108b1e2f04bcda9bf468b67b9173d6527ea7d386c6246c97858ea0c80a",
+      "launchPath": "Shadow Squadron (32X) (UE) [!].32x",
+      "expandedSizeBytes": 2097152,
+      "fileCount": 1,
+      "contentSha256": "2f9b6017258fbb1c37d81df07c68d5255495d3bf76d9c7b680ff66bccf665750"
+    },
+    {
       "itemId": "station_39b36a5534e2407b3ce5311c617db9dc",
       "platform": "dreamcast",
       "artifactSha256": "894b689e6486d52cda3a928f4d9b52491b14e8fef6a7b1d2e17d7242ebaeec1b",
@@ -16417,6 +16498,15 @@
       "expandedSizeBytes": 524288,
       "fileCount": 1,
       "contentSha256": "cef77f7a98c226811cd9e249190a0257f6ef9dfc366047cd71e3767a4e070379"
+    },
+    {
+      "itemId": "station_4897aafe636c56d4fb5807891f23d45b",
+      "platform": "sega32x",
+      "artifactSha256": "a98db218c9a187ea06cdd4ae46f2665ba2aee1d942da132b47d8df19710d035c",
+      "launchPath": "WWF Wrestlemania Arcade (32X) (W) [!].32x",
+      "expandedSizeBytes": 4194304,
+      "fileCount": 1,
+      "contentSha256": "b64adcee5a1f7a93a5672a45079c624ffe3af081fb834e2c57cb6c9d0aa37e6a"
     },
     {
       "itemId": "station_48e8700145e4644d3b0148894d20d34b",
@@ -18571,6 +18661,15 @@
       "contentSha256": "8c67b87bcb85e66985276475c4511a6fa82bb2a18d44b148eb638cfb39b2ff86"
     },
     {
+      "itemId": "station_5d9e631ba97d3dfdb4366c48dbdfbaf5",
+      "platform": "sega32x",
+      "artifactSha256": "6c35b47b1be7b2036a80c4feddbbdd33a289ff734c5cc6a646539c3666a8685f",
+      "launchPath": "RBI Baseball 95 (32X) (U) [!].32x",
+      "expandedSizeBytes": 2097152,
+      "fileCount": 1,
+      "contentSha256": "89f8114f9a4fb5ec3e3f0229427117c72c4af2dbda337bc52e6afa60787e6d95"
+    },
+    {
       "itemId": "station_5dd336a8269d38885871aace0c684139",
       "platform": "fbneo",
       "artifactSha256": "69246548518142870365637c5b9943e705f4ead9b9070ca1b8cf52f78f58c793",
@@ -19093,6 +19192,15 @@
       "contentSha256": "8267e2f092c86d5a29c9a826db82c7473638e28e2507cdaf5c86981f07cd0bef"
     },
     {
+      "itemId": "station_63eac000b51d28d6e5980f00ce0156bc",
+      "platform": "psp",
+      "artifactSha256": "59d27d6fa89fd7d2aebf80f6864ad1a36e156950a54ccda2c0c1c0f5eccc9f80",
+      "launchPath": "Ghost Rider (Europe) (En,Fr,De,Es,It).cso",
+      "expandedSizeBytes": 756351572,
+      "fileCount": 1,
+      "contentSha256": "59d27d6fa89fd7d2aebf80f6864ad1a36e156950a54ccda2c0c1c0f5eccc9f80"
+    },
+    {
       "itemId": "station_640b10eb55967f619c00dd2baae1a651",
       "platform": "fbneo",
       "artifactSha256": "7a28eb9f139d9baee9e4fc46603df3e3603e1a134d5c9ca84e64a9f914addb7c",
@@ -19543,6 +19651,15 @@
       "contentSha256": "835137aaf06e4447442cb9e2208c3e83e946f8d606650b3856e22216fff0530b"
     },
     {
+      "itemId": "station_6952529dd8484cf08d511efb940d43ae",
+      "platform": "sega32x",
+      "artifactSha256": "863b48b0db30c14019a7334b6b4e56a7dde53c880a42e296ce1c1e3a59df6353",
+      "launchPath": "Pitfall (32X) (U) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "901a582a9b2d0a2f55f07f1a7b1aaa6484e680fabe4f83c9daffef955f4ec95b"
+    },
+    {
       "itemId": "station_69679ae4944f00064ebee713e54e89e0",
       "platform": "n64",
       "artifactSha256": "70f98f0d9caf01d8c4c0716816d807cc4227b55269a20dcc390ecb68e5aa6b51",
@@ -19676,6 +19793,15 @@
       "expandedSizeBytes": 18310401,
       "fileCount": 2,
       "contentSha256": "d3700524b1cedf1cb5de93b7e56a2e7d6459fe894ec63ccc4f2a3d8c4261a581"
+    },
+    {
+      "itemId": "station_6ac30cce6f06199fa0dedf37bea53080",
+      "platform": "sega32x",
+      "artifactSha256": "3d6a01ffdfe2c443f466fd5024e585ecff12c81f5d53536bfeb8c96786187ecb",
+      "launchPath": "NBA Jam Tournament Edition (32X) (W) [!].32x",
+      "expandedSizeBytes": 4194304,
+      "fileCount": 1,
+      "contentSha256": "7f7e1059671a99405e3782cd9b4e5d4025ee4bb122a89357b95b0fcac512f74f"
     },
     {
       "itemId": "station_6ae7625eb5232d673eb4353894e75a2c",
@@ -19874,6 +20000,15 @@
       "expandedSizeBytes": 2097664,
       "fileCount": 1,
       "contentSha256": "aa48bac3325b8bf824e8698bb3e6185afef771e14f02020a4b2aadc336276e63"
+    },
+    {
+      "itemId": "station_6c20479063a4473e2a147030f190a5ba",
+      "platform": "sega32x",
+      "artifactSha256": "f1218b9729d43b8bf57e7e5ffa2f89475c79296cd5b064a661e814ea15e36c99",
+      "launchPath": "After Burner Complete (32X) (JU) [!].32x",
+      "expandedSizeBytes": 2097152,
+      "fileCount": 1,
+      "contentSha256": "5225e4a73a893bd40579b6fedd6f50fe294b06be23b8ab928024498ed6f633f3"
     },
     {
       "itemId": "station_6c491717f8b3d13b282c410aad80fab6",
@@ -20290,6 +20425,15 @@
       "contentSha256": "2dfc2e037679a62a960dab9682bca6d1b2737f603edd336c8b2fdf05db10cc07"
     },
     {
+      "itemId": "station_70611921fd1c353d2b3bced698af44b6",
+      "platform": "psp",
+      "artifactSha256": "66b6684396fbbe4862d999c753146b2089c56409ee178fadbf2879f04eb4b1fd",
+      "launchPath": "Soul Calibur Broken Destiny (EUR).cso",
+      "expandedSizeBytes": 398844558,
+      "fileCount": 1,
+      "contentSha256": "66b6684396fbbe4862d999c753146b2089c56409ee178fadbf2879f04eb4b1fd"
+    },
+    {
       "itemId": "station_70f4c12ef657696e9c59673d24ef15c4",
       "platform": "dreamcast",
       "artifactSha256": "ec817d5fa9b1ddedc77a642bdec4a4b84eeb089c45e97744f3bf033099c7fc64",
@@ -20506,6 +20650,15 @@
       "contentSha256": "b20612f8103d9da2f068880ea1a22de86e93523034a619d90e4dc5856069b2ef"
     },
     {
+      "itemId": "station_73caaeba8d241bf4d12173fc8aeef1b4",
+      "platform": "sega32x",
+      "artifactSha256": "99c256d4c8e0304cb2b0ed3d39ed48067f55ca753dae441e4ec252e9fa5ef148",
+      "launchPath": "Motocross Championship (32X) (JU) [!].32x",
+      "expandedSizeBytes": 2097152,
+      "fileCount": 1,
+      "contentSha256": "b003d1194c7798ec8feca6c907b19e8b243150ee9fa0a3237f4dd643bf740fa2"
+    },
+    {
       "itemId": "station_73d4a5d491611e37aee5f6b184e9cbd2",
       "platform": "snes",
       "artifactSha256": "16f9c90d75bd23d0620be00ecf818fcb25c5935d4ee26b1fe17b926f8987aa65",
@@ -20594,6 +20747,15 @@
       "expandedSizeBytes": 524288,
       "fileCount": 1,
       "contentSha256": "37a34499efc39c507d172dbea7944b91598bbc07ba3c6b7ad4810bb50df40530"
+    },
+    {
+      "itemId": "station_74851c2cc8bc0906e28a897038119ab7",
+      "platform": "sega32x",
+      "artifactSha256": "518685d97d578c8c190dee9afa063ac1bc1c7e3ff30d2d61c90f7f00bd151e61",
+      "launchPath": "Toughman Contest (32X) (W) [!].32x",
+      "expandedSizeBytes": 4194304,
+      "fileCount": 1,
+      "contentSha256": "5085e80dee63cf0264aadb3595588c3098a68607e8cf48c948535483832bafc2"
     },
     {
       "itemId": "station_7491668d9e3da8e4dc352b5711eb3d73",
@@ -20846,6 +21008,15 @@
       "expandedSizeBytes": 524800,
       "fileCount": 1,
       "contentSha256": "ba4cfaedebde0a8a73f91ee2536b722b7e20094bf85feb231b9421234e7e4b98"
+    },
+    {
+      "itemId": "station_773b901a8dc1ea6a65741c212d694def",
+      "platform": "sega32x",
+      "artifactSha256": "33dd9df88de78a0c56f5bece00f78d3d29f0ece8a941aa8e0f610c93c6b7e042",
+      "launchPath": "Sangokushi IV (32X) (J) [!].32x",
+      "expandedSizeBytes": 4194304,
+      "fileCount": 1,
+      "contentSha256": "788fd87e5e2478eb37226b6231b7e1a7e7c3ba45bce020748d77ef2951a20feb"
     },
     {
       "itemId": "station_776f309e10e2b36b23116f56d21951af",
@@ -21578,6 +21749,15 @@
       "contentSha256": "0d350fa24368bf66aea330b3a7766cb1d43db7991dfb901aa35e82f7b0588819"
     },
     {
+      "itemId": "station_7e7595ac56968e608b75882c587bfede",
+      "platform": "sega32x",
+      "artifactSha256": "7c095f232c1490d4b4514237e25ae1490cc77a077f2a0f0de7cf752b1f8028c6",
+      "launchPath": "Kolibri (32X) (W) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "3e8bf99e7257921b5f0f4b2c2b836e2c414193cc3771540c603fd925c6316525"
+    },
+    {
       "itemId": "station_7ea6f5bf4adbb94ef30ebeebb1790ef3",
       "platform": "neogeo",
       "artifactSha256": "91a37e7257dc9f440e967fa4d2b3251c66f4360e5cdcd13fb3f552789a4a9dda",
@@ -21765,6 +21945,15 @@
       "expandedSizeBytes": 1207565,
       "fileCount": 2,
       "contentSha256": "9d9a1e7ebafdfb61719cc7ffbe5bc9e9f02f00b783746a5dcf8937e86812c1d8"
+    },
+    {
+      "itemId": "station_802d51e7fa08013dbc977afb4639748f",
+      "platform": "sega32x",
+      "artifactSha256": "5373b47edc16b8ba9631e1fa2b1642796617bb673f5fd2533ae33963038b90d4",
+      "launchPath": "Mortal Kombat II (32X) (W) (Jan 1995) [!].32x",
+      "expandedSizeBytes": 4194304,
+      "fileCount": 1,
+      "contentSha256": "c1d827dba5d315499cb2e6271522daf4928af2b682df30f223db6e52e0b8a31a"
     },
     {
       "itemId": "station_8039aed419dfaa26dbde903e47476cb7",
@@ -21974,6 +22163,15 @@
       "contentSha256": "f7df5cd16ce6624567d1a24e9b9c0b9050ea9b6a9fe5a7973484589637756596"
     },
     {
+      "itemId": "station_81a599fa414978efdd505a7b05ebacf5",
+      "platform": "sega32x",
+      "artifactSha256": "050276c8d5f631c76e31cffa745510e208a821e8571c60d2be4fecaee59770dd",
+      "launchPath": "Blackthorne (32X) (U) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "ed5da3dfc740881a0467679b8be5505e14282b1a61eff3121f6b714e24ddd9a6"
+    },
+    {
       "itemId": "station_81a8a85dc45f140727f6a2a500507fa0",
       "platform": "fbneo",
       "artifactSha256": "d381fb799d558261b436ef1334c25c85775e52302c731e7872d684990fa8c4b7",
@@ -21999,6 +22197,15 @@
       "expandedSizeBytes": 11948290,
       "fileCount": 2,
       "contentSha256": "57e713b189f65caedbf42b8c59242fe7248f2f06594c33c97af9a8aa3a98fadc"
+    },
+    {
+      "itemId": "station_81dd286a719a4a88c6102c6a30c8fd47",
+      "platform": "psp",
+      "artifactSha256": "ca802d413f0b3a9109315395741be67335966b83ba0be7226703f04a501ab8ac",
+      "launchPath": "God of War - Ghost of Sparta (Europe) (En,Fr,De,Es,It) (PSN).cso",
+      "expandedSizeBytes": 1312524850,
+      "fileCount": 1,
+      "contentSha256": "ca802d413f0b3a9109315395741be67335966b83ba0be7226703f04a501ab8ac"
     },
     {
       "itemId": "station_81e89033c9779448a5bda3c70ca17c35",
@@ -22116,6 +22323,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "9674cc269d89a52d1719a487b44acf004fb777cbd58d76b19a2cd25749728215"
+    },
+    {
+      "itemId": "station_82cc020e11f16a4934a57809a75787a8",
+      "platform": "sega32x",
+      "artifactSha256": "35d2c71376fdc3e00f45880afd57c7e082ad96a07ddba5ebd668263c8d28df74",
+      "launchPath": "Metal Head (32X) (JU) (M2) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "950154ccd4d3dc9fdfcdff49d4d9a96021ffa68226f27528d8a6008f2cbc76f9"
     },
     {
       "itemId": "station_82e744dc1e5831f1feaf508fe3de8176",
@@ -23171,6 +23387,15 @@
       "contentSha256": "20b4c16764d74733c1821645b2d8cb7e6051d10adb9ca7c5856ccd80b7b569d1"
     },
     {
+      "itemId": "station_8c0886152e023c6468df561b89e8262b",
+      "platform": "psp",
+      "artifactSha256": "5be1884a0c054e44b8acf5d0b7816ad40f553df3eae066490401123bd11d257b",
+      "launchPath": "Moto GP.cso",
+      "expandedSizeBytes": 260748241,
+      "fileCount": 1,
+      "contentSha256": "5be1884a0c054e44b8acf5d0b7816ad40f553df3eae066490401123bd11d257b"
+    },
+    {
       "itemId": "station_8c1267815221881d9bdf02aa29ec1009",
       "platform": "snes",
       "artifactSha256": "83727f6954bce024edac7f3fd18a6fbf63d05b580f692d96faa37e60893c91cd",
@@ -23614,6 +23839,15 @@
       "contentSha256": "cd657ec07a7460a1354c742b03d484fb7b7b0099b7f9c91c2e51dbdc3553ad77"
     },
     {
+      "itemId": "station_8f563745b0465c509312999312d1739c",
+      "platform": "sega32x",
+      "artifactSha256": "89a671d1b8416ec6c2faa6ddf4b77be85a6bcb294cef546ed3a245f2f48a53d1",
+      "launchPath": "NFL Quarterback Club (32X) (W) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "092ad8896ea7784d2feb7f17b1a348562588a361c50de6ade722a5c5cce698d5"
+    },
+    {
       "itemId": "station_8f58b3db217e5abc217884560879bcce",
       "platform": "megadrive",
       "artifactSha256": "10bcb8755a231c56cb9ff013f33cf0f4fc0ec8ea73a075025dcba1c9eee9c352",
@@ -23918,6 +24152,15 @@
       "expandedSizeBytes": 741575,
       "fileCount": 2,
       "contentSha256": "eb7ca4d87f531ebee2622c18e47221acb829ff65afcbe095401a812a60fda87c"
+    },
+    {
+      "itemId": "station_92c8e16dcb7eda60298de32b34145f3b",
+      "platform": "sega32x",
+      "artifactSha256": "d954413402e8ad638300ba455b340e9fe70ba16e8f70ce1a5ed6b7bbc827ea5d",
+      "launchPath": "T-MEK (32X) (W) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "ee218c878a7c2105530631073b9f95fd8a61d1be110da030c599e983988e7d10"
     },
     {
       "itemId": "station_92d476f05117734c7ad16905e2b97b9e",
@@ -25171,6 +25414,15 @@
       "contentSha256": "d3180e4c20b12e78e7a94a40d1f168d5a8198b21df9586ade0512720b415f67e"
     },
     {
+      "itemId": "station_9fb6f783f747411c78e3510291bc0a86",
+      "platform": "sega32x",
+      "artifactSha256": "54ace51b7dd92288ad7243b8956ec6eb51d03d90ae3c10199f121ef1a3f2e31e",
+      "launchPath": "WWF RAW (32X) (W) [!].32x",
+      "expandedSizeBytes": 4194304,
+      "fileCount": 1,
+      "contentSha256": "901f61356060a983b938e7df02ac8b193d8c7c9c31aa5ed58083494f1e621d3b"
+    },
+    {
       "itemId": "station_9fb93887c5038516bac4f22700a9b1b3",
       "platform": "megadrive",
       "artifactSha256": "887ff635a1e2258fe6fab53870320cb60811ebc2679326b011e358cdeab62b09",
@@ -25549,6 +25801,15 @@
       "contentSha256": "8a169844f71f35f273811689149993821b961995c3113e7707608c6336e17cd7"
     },
     {
+      "itemId": "station_a2c47fb6f81dcd4e98068f4d717537e0",
+      "platform": "sega32x",
+      "artifactSha256": "fd119d90372ca3d02ad22d1e7d26c0f08056fea574225c733319b0c170cf5974",
+      "launchPath": "Spear Of Destiny.32x",
+      "expandedSizeBytes": 2403672,
+      "fileCount": 1,
+      "contentSha256": "4374fc1e8550e277b32d6584661a057669c06acd74d25b381d1a57b9d3b19761"
+    },
+    {
       "itemId": "station_a2dae754434845eee302a47ba8135a74",
       "platform": "megadrive",
       "artifactSha256": "c5ca78d865b17a4e58c73d70204c071e01258eb0a8bbb79c03ac504eb908e905",
@@ -25691,6 +25952,15 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "5874b942f974bb906d8cbc33b601a1faf8f14aee8d0995124c8dc84bb4973808"
+    },
+    {
+      "itemId": "station_a418e69c2c73c537a070122c1b0beb91",
+      "platform": "sega32x",
+      "artifactSha256": "82499d2fb84d12b93b161555e016caacff6c5373d628836a0f53560586c43f67",
+      "launchPath": "Brutal Unleashed - Above the Claw (32X) (U) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "f8279a81a76445cd68df0bc0e0fb0e53379406f462195e1799f2d90a097afe29"
     },
     {
       "itemId": "station_a41d0112a7739a83181d31548dd01c7d",
@@ -27970,6 +28240,24 @@
       "contentSha256": "70dea29a928c1625def31c862dc74960e39e587e416b45829efc21f13ebd9630"
     },
     {
+      "itemId": "station_ba56eebcec08e008297365c995ad26c0",
+      "platform": "sega32x",
+      "artifactSha256": "b258570978c8c3493e592fe7a4dc1652d067d4b022521380cf2336195a8a3bb3",
+      "launchPath": "Doom (32X) (JU) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "0bfa9a1a9341bca5b68f29e0e94e334d9d2f781f84d02d60f51a8be24f12f11c"
+    },
+    {
+      "itemId": "station_ba62f90ef11832d7dfa025c50b7e88b1",
+      "platform": "sega32x",
+      "artifactSha256": "7b39dbbccb687529e62790f8dea62ccff98d9cfdaddbcf5e5441e1c8aeb806df",
+      "launchPath": "Tempo (32X) (JU) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "b8bf72deeda5cba5ca63bc59c96d0f1d223c9406475a9099b7831ac191671bf6"
+    },
+    {
       "itemId": "station_ba6baebe2d3deaff8b10c804b63c630d",
       "platform": "fbneo",
       "artifactSha256": "8d61b311cf4f4da37726897d0a22d856961252317b6e514f76cecca7e122a8e9",
@@ -28186,6 +28474,15 @@
       "contentSha256": "af29e0e11eafbe1c845760668cf5d80461a4840558cd067d28e1cc6922d832a1"
     },
     {
+      "itemId": "station_bcbca19b12e89506eb8d996c72055964",
+      "platform": "psp",
+      "artifactSha256": "c87f10f849b7c4d59cb6f5b9bba01441411be1b43bf19a5d16b8c7cefd841811",
+      "launchPath": "Grand Theft Auto - Vice City Stories.cso",
+      "expandedSizeBytes": 939412751,
+      "fileCount": 1,
+      "contentSha256": "c87f10f849b7c4d59cb6f5b9bba01441411be1b43bf19a5d16b8c7cefd841811"
+    },
+    {
       "itemId": "station_bcf30aeee3b25a70cb70559514325070",
       "platform": "snes",
       "artifactSha256": "6161bdae9b75c6181b82239b1e35d8a97acbfafc0a55694460f21756b6275eef",
@@ -28391,6 +28688,15 @@
       "expandedSizeBytes": 70592131,
       "fileCount": 1,
       "contentSha256": "076aeb374d9954baf6e2cf5e30dfef4c34b4d1521aac031079718b34228c6a73"
+    },
+    {
+      "itemId": "station_bf6a7291600e058e61949887315900c1",
+      "platform": "sega32x",
+      "artifactSha256": "405331e1fca0783d41611e1181ece9910c52f19cfaee6edc2c37556fd281c4df",
+      "launchPath": "Primal Rage (32X) (W) [!].32x",
+      "expandedSizeBytes": 4194304,
+      "fileCount": 1,
+      "contentSha256": "04de760f8c87d9ccb9bdc4a756e70dbc71f70b3084849e5fd945ceccee39cc2a"
     },
     {
       "itemId": "station_bf79f9b52c6e11326f1f0dde5f83dde2",
@@ -28897,6 +29203,15 @@
       "contentSha256": "22453182d44380f08004a12c6492a0c4b2e1f584e268dcc3296a03ea03ae0909"
     },
     {
+      "itemId": "station_c4673940cb0df64a8235da515aaef0e7",
+      "platform": "sega32x",
+      "artifactSha256": "30258046d50508280efc5869c271af2b80141b1385df7a8190aff9e977c104b9",
+      "launchPath": "Spider-Man - Web of Fire (32X) (W) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "567eb80a69ca1fea67f4cb64252e6a23e9bd41c3f9c4c422a6bc04dfb763509d"
+    },
+    {
       "itemId": "station_c46a19a442d79316759bceec9705202d",
       "platform": "snes",
       "artifactSha256": "1b85c0690aa156a255c7f79e133e453345452698fa98abf8df744c262d0cf865",
@@ -29057,6 +29372,15 @@
       "expandedSizeBytes": 1572864,
       "fileCount": 1,
       "contentSha256": "d24c0175ee4eafed88e277691c5f5dafd4e197723097e2eb68aa6b40f449fff2"
+    },
+    {
+      "itemId": "station_c653292a3ab629f51d0f50f7a6e1ba96",
+      "platform": "sega32x",
+      "artifactSha256": "1e556996cd98e63a69f7b82cb3a240c0fa701bc48305b906d356b74bb7c1aa2c",
+      "launchPath": "Star Trek - Starfleet Academy Bridge Simulator (32X) (U) [!].32x",
+      "expandedSizeBytes": 2097152,
+      "fileCount": 1,
+      "contentSha256": "37b9cbfb18a4591263f354016f11b83abdef7e496f91ce4f6bf7cafffe3dd158"
     },
     {
       "itemId": "station_c6590632b1517fd125da5aed29db94ec",
@@ -29527,6 +29851,15 @@
       "contentSha256": "eb168cbcb902f70cad1bce971b7a8524a71b0031d97e4393b206ec94270a54c1"
     },
     {
+      "itemId": "station_cabbe628a3c7fa464faed52c71cca9ad",
+      "platform": "psp",
+      "artifactSha256": "9e94ac13c1d46d5ef204caa38fddbaf4bbd9260573411a322046b939d60d3af5",
+      "launchPath": "Crash - Mind over Mutant (Europe).cso",
+      "expandedSizeBytes": 809287677,
+      "fileCount": 1,
+      "contentSha256": "9e94ac13c1d46d5ef204caa38fddbaf4bbd9260573411a322046b939d60d3af5"
+    },
+    {
       "itemId": "station_cabf4f6c90fa4f652db6d54d23ffca77",
       "platform": "dreamcast",
       "artifactSha256": "10821903e3dd97e8c4587d6b11a22025bcbafedf7284152d4311fcdf3253c324",
@@ -29732,6 +30065,15 @@
       "expandedSizeBytes": 553550412,
       "fileCount": 1,
       "contentSha256": "2314ba9445d9ad3238f848331afc50809849a3924d1e873d0bbfb77c3ee6411e"
+    },
+    {
+      "itemId": "station_cd1e3a34a620cf0c0160dc287d2f12e3",
+      "platform": "psp",
+      "artifactSha256": "38015cf7ffce9a4cceadd0244de477a5eb075721004f4939455fab26c782abda",
+      "launchPath": "Toy Story 3.cso",
+      "expandedSizeBytes": 195547295,
+      "fileCount": 1,
+      "contentSha256": "38015cf7ffce9a4cceadd0244de477a5eb075721004f4939455fab26c782abda"
     },
     {
       "itemId": "station_cd34e8f38b87d7a75e52771012aaf5e2",
@@ -29957,6 +30299,15 @@
       "expandedSizeBytes": 1049088,
       "fileCount": 1,
       "contentSha256": "2221af8c99334be131a25e7126a7bbe666af637f518af8bf5fea817cacfbf78b"
+    },
+    {
+      "itemId": "station_cf003e7b750460e90cd5d224cc3d124a",
+      "platform": "sega32x",
+      "artifactSha256": "57cc8287610ea42db56238df02bf8d48dea0a483fc1de7e805cb8d40eae1c7bc",
+      "launchPath": "FIFA International Soccer 96 (32X) (UE) (M6) [c][!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "6641801d0266a5e795c467c6e66d055f70ff15e53b35accc0f537b19cc25850a"
     },
     {
       "itemId": "station_cf0169ef81d86b8033f2e0732df535b7",
@@ -30886,6 +31237,15 @@
       "contentSha256": "c16524c1661c83f9bbe7c55c9ee9b0824b3db85dbfee0a681b57c1c445771131"
     },
     {
+      "itemId": "station_d700243751a04a564037c9d5ae680a15",
+      "platform": "sega32x",
+      "artifactSha256": "356ea9f846da66fa2bcc5a479925678108a4ff26e7e3f52f6ca4030fd1b71ab0",
+      "launchPath": "Virtua Fighter (32X) (JU) [!].32x",
+      "expandedSizeBytes": 4194304,
+      "fileCount": 1,
+      "contentSha256": "c595e136c91a012b1e7d591acfb9d965926cac51acea998b90969d74391bfa08"
+    },
+    {
       "itemId": "station_d72f7d4b7e405934384293cddbf87def",
       "platform": "megadrive",
       "artifactSha256": "07d9d561830bd18473d4f7024cf6bfe7b139e78b04dafe8dc4ae1ae1ccb25fde",
@@ -31290,6 +31650,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "2863520756f69e8728528559c82fed991187ed1f6083e78aa4fe272df11a3402"
+    },
+    {
+      "itemId": "station_dac086dd4870b78ccbe937c5191c0558",
+      "platform": "sega32x",
+      "artifactSha256": "72a7585597a30cc2d4bae3a48e33415f902986cfeb34d34eb992ae181624b33a",
+      "launchPath": "Knuckles' Chaotix (32X) (JU) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "70e1a92a982f2684be3bc315267e545fb9c530d533fd62b6d38bb625541ed957"
     },
     {
       "itemId": "station_db02be74a5870396ea4f18f1cb480073",
@@ -31866,6 +32235,15 @@
       "expandedSizeBytes": 524288,
       "fileCount": 1,
       "contentSha256": "4f865447149219673e0c5630f37028461c6de05016d34fa17a67d8577da82259"
+    },
+    {
+      "itemId": "station_e0aedb909058bccd49510db9e76c1250",
+      "platform": "psp",
+      "artifactSha256": "c4df9fd665f59d2da2c4aea1592e2ce56f30713482ddcef7f53f56779ca76ab1",
+      "launchPath": "God of War - Chains of Olympus (Europe) (En,Fr,De,Es,It) (PSN).cso",
+      "expandedSizeBytes": 1246883823,
+      "fileCount": 1,
+      "contentSha256": "c4df9fd665f59d2da2c4aea1592e2ce56f30713482ddcef7f53f56779ca76ab1"
     },
     {
       "itemId": "station_e0ecf8dbfef8c2d1c772ba700daecc46",
@@ -32694,6 +33072,15 @@
       "expandedSizeBytes": 3440544,
       "fileCount": 2,
       "contentSha256": "997823e62a89cf724bbc10458b0fdde76be99696bc9c3039e1c18d3b47164a56"
+    },
+    {
+      "itemId": "station_ea596307f52928ddb5b74f9307e1d616",
+      "platform": "sega32x",
+      "artifactSha256": "21a5d5a4b2af5e9e33b67c289c4b4e240654d20a2124bfcc6000461d349a7d5b",
+      "launchPath": "Virtua Racing Deluxe (32X) (U) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "cc2917895842ba42ce871a07a327c5467a5b5df8b7999ccc4b7b5bea9d4caf6b"
     },
     {
       "itemId": "station_ea68541cef64941b9fad1f480b61647d",
@@ -33605,6 +33992,15 @@
       "contentSha256": "4deb4bc3316a6e5fa774d7809c6e680132fc677c3adde2a1453099db0f09980a"
     },
     {
+      "itemId": "station_f294710de213a47251ad81ff4ef2cf68",
+      "platform": "sega32x",
+      "artifactSha256": "b208b85bece43d217aa4ec0cd0de3a3627c573f6c43c1ea170dfa91add6d331b",
+      "launchPath": "Wolfenstein 3D.32x",
+      "expandedSizeBytes": 2794984,
+      "fileCount": 1,
+      "contentSha256": "9086ce596b74f0072ec4c6c6661f032abbda587aae4933d1866702f22b6c613f"
+    },
+    {
       "itemId": "station_f2953fa7189b8754c1c45831c315727f",
       "platform": "neogeocd",
       "artifactSha256": "16ef2f93689a2df5c1fcc5e97cf2741ea062bffc882a92d3ba2ecb8c6d605a9c",
@@ -34314,6 +34710,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "93e03273d044a0a179155dc4956743cc4ac50759d0eef07ac4871c185dd32741"
+    },
+    {
+      "itemId": "station_f958e374546e10d8da85d9704414cee6",
+      "platform": "sega32x",
+      "artifactSha256": "214643b2731891b823711f70a8712df64827d655767bc855eaa067d6b4ad334c",
+      "launchPath": "Cosmic Carnage (32X) (JU) [!].32x",
+      "expandedSizeBytes": 3145728,
+      "fileCount": 1,
+      "contentSha256": "7a4b355ca4dac233a1246e662b274d548f6dd6c0e4bb27a382b6bba42b354d37"
     },
     {
       "itemId": "station_f97578a5064d25aa1ec8a08e16ad4be6",

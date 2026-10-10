@@ -189,7 +189,7 @@
     "pause/resume all participants with the shared epoch",
     "use the automatic invitation/ticket flow"
   ],
-  "deployment": "applied and authenticated-public-API verified; see endpoint-review-20261010.json",
+  "deployment": "applied and authenticated-public-API verified; see sega32x-psp-publicados-20261010.json and limpeza-compilacoes-20261010.json",
   "androidGameplayValidated": false,
   "sourceCommit": "7eb0e009d40ce01db86aea9c489937e9bd2fd00a",
   "dllSha256": "2c0d034476969cbed58b519b744e841111373f89a4bcd6abb9cd14543abcde35",
@@ -271,11 +271,11 @@
     "receipt": "capas-padronizadas-20261010.json"
   },
   "catalogData": {
-    "revision": 31,
-    "indexedItems": 3895,
-    "visibleItems": 3640,
-    "normalizedCatalogPlatforms": 17,
-    "catalogLabels": 19,
+    "revision": 32,
+    "indexedItems": 3940,
+    "visibleItems": 3685,
+    "normalizedCatalogPlatforms": 19,
+    "catalogLabels": 21,
     "onlineServerPlatforms": 17,
     "catalogPath": "/v1/station/catalog?metadata=1",
     "artifactDescriptorSource": "signed /v1/station/downloads/authorize response",
@@ -301,8 +301,8 @@
       ".nsp",
       ".xci"
     ],
-    "rawClientHandling": "Save the exact single file at launchPath with its original extension; no ZIP extraction, forced ISO conversion or per-download body verification was added.",
-    "receipt": "endpoint-review-20261010.json",
+    "rawClientHandling": "Persist the signed single-file artifact at launchPath with its original extension, including PSP CSO. No forced ISO conversion or extra per-download integrity pass.",
+    "receipt": "sega32x-psp-publicados-20261010.json",
     "saturn": {
       "id": "saturn",
       "folder": "saturn",
@@ -321,7 +321,33 @@
       "maximumPlayers": 2,
       "controllerProfile": "saturn-two-controllers-v1",
       "biosProvisioned": false
-    }
+    },
+    "newCatalogPlatforms": [
+      {
+        "id": "sega32x",
+        "folder": "sega32x",
+        "items": 36,
+        "artifactFormat": "zip",
+        "launchExtension": ".32x",
+        "catalogAndDownloadsReady": true,
+        "onlineServerReady": false,
+        "clientPlatformMappingAlreadyPresent": true,
+        "generatedArtwork": 0
+      },
+      {
+        "id": "psp",
+        "folder": "psp",
+        "items": 9,
+        "artifactFormat": "raw",
+        "launchExtension": ".cso",
+        "catalogAndDownloadsReady": true,
+        "onlineServerReady": false,
+        "clientPlatformMappingAlreadyPresent": true,
+        "generatedArtwork": 0
+      }
+    ],
+    "refreshAfterPublicationSeconds": 10,
+    "metadataPlayersAreNotOnlineSeatProof": true
   },
   "importerSourceCommit": "7eb0e009d40ce01db86aea9c489937e9bd2fd00a",
   "nativeEngineReferences": [
@@ -354,6 +380,35 @@
       "keys": 37,
       "catalogCovers": 34,
       "revistaCovers": 19
+    },
+    "sega32x": {
+      "xmlEntries": 36,
+      "catalogSeedKeys": 43,
+      "ambiguousKeysExcluded": [],
+      "existingXMLImages": 36,
+      "sourceCatalogCovers": 0,
+      "missingXMLImages": [],
+      "currentROMs": 36
+    },
+    "psp": {
+      "xmlEntries": 235,
+      "catalogSeedKeys": 464,
+      "ambiguousKeysExcluded": [
+        "atvoffroadfurypro",
+        "dragonballzshinbudokaianotherroad",
+        "toystory3"
+      ],
+      "existingXMLImages": 210,
+      "sourceCatalogCovers": 21,
+      "missingXMLImages": [
+        "Assassins Creed.cso",
+        "eFootball 2023 Version Beta ADLZ GAMING PRO.iso",
+        "Fast and the Furious, The (USA).cso",
+        "Fate_Unlimited_Codes_USA_PSP-EMiNENT.cso",
+        "Guilty Gear XX Reload - The Midnight Carnival (Japan).cso",
+        "Need For Speed Most Wanted USA.cso"
+      ],
+      "currentROMs": 9
     }
   },
   "roomPresentation": {
@@ -514,5 +569,19 @@
     "signedApkBuilt": false,
     "installed": false,
     "androidGameplayVerified": false
+  },
+  "catalogIntegration": {
+    "clientCompiledParser": {
+      "realCompiledClient": true,
+      "sega32x": 36,
+      "catalogRevision": 32,
+      "visibleItems": 3685,
+      "passed": true,
+      "psp": 9,
+      "physicalAndroidGameplayVerified": false
+    },
+    "serverRestarted": false,
+    "onlinePlatformPoliciesUnchanged": 17,
+    "generatedArtwork": 0
   }
 }

@@ -1,3 +1,11 @@
+# Station: Sega 32X/PSP publicados e compilações antigas limpas — 10/10/2026
+
+Leia o MESMO HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e seus recibos sega32x-psp-publicados-20261010.json / limpeza-compilacoes-20261010.json. Catálogo32/3940IDs/3685visíveis/255aliases, identidades3940, 21rótulos/19plataformas de catálogo. Pastas sega32x36/psp9 agora na raiz; 45capas JPEG480×720 reutilizadas, zero artes novas, PSP quatro artes do catálogo/cinco recebidas. CSO raw por readonly-hardlink; ZIP32X launchPath .32x. IDs/metadata anteriores e perfis5176/5169aprovados/17políticas preservados. API PID2136303/DLL2c0d03447696/fonte7eb0e009 sem restart. HTTPS assinada/capas45/amostras45/parser Java real/segunda varredura/scanner/sandbox passaram. Mapping já existe; DEX e gameplay físico não foram alterados por esses dados. Metadata.players não é prova de netplay; PSP/32X são catálogo/downloads, integração online nativa própria pendente.
+
+Limpeza autorizada recuperou 138.97GiB reais em 117caminhos. Última entrega Station e último conjunto Turborama22arquivos conferidos e mantidos, assim como fontes/SDKs, Git/histórico, worktrees com alterações, dados/ROMs/capas/licenças e backups de artes. Não usar caminhos históricos removidos nem reaplicar operadores datados. Backup antes da inclusão branch backup/station-antes-sega32x-psp-20261010/tag backup-station-antes-sega32x-psp-20261010 nos doisGits, server6dbc9e2/app0d51ce1. Mesmo handoff/dados espelhados; nenhum novo handoff fragmentado. Estado atual abaixo; histórico preservado.
+
+## Histórico preservado
+
 # Station: revisão de endpoints aplicada — 10/10/2026
 
 Leia o MESMO HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e online-plataformas-20261009/endpoint-review-20261010.json. API ativa DLL2c0d03447696/fonte7eb0e009/PID2136303/NRestarts0; catálogo31/3895IDs/3640visíveis, identidades3895, perfis5176/5169aprovados e17políticas preservados. Publicação21:49UTC após confirmar zero salas/conexões. Timer/scanner status0/changed=false; sandbox efetivo7670arquivos legíveis/quatro caminhos protegidos negados/montagens sem escrita. Licenças/esquema/configs antigas/outros produtos preservados; túnel/proxy/firewall inalterados. Não reaplicar operadores datados ou o aplicar-endpoints.py já concluído.

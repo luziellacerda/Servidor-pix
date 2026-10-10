@@ -1,0 +1,871 @@
+{
+  "schemaVersion": 1,
+  "status": "completed",
+  "utc": "2026-10-10T22:57:55.026218+00:00",
+  "volume": "/mnt/DADOS",
+  "removed": [
+    {
+      "path": "/mnt/DADOS/EmuELEC/build.Turborama-Amlogic-ng.aarch64-4",
+      "kind": "completed-build-workspace",
+      "device": 66307,
+      "inode": 8136021
+    },
+    {
+      "path": "/mnt/DADOS/turborama-stable-audit.whkDnz",
+      "kind": "expired-extracted-build-or-log",
+      "device": 66307,
+      "inode": 3145729
+    },
+    {
+      "path": "/mnt/DADOS/turborama-image-audit.vVE2dG",
+      "kind": "expired-extracted-build-or-log",
+      "device": 66307,
+      "inode": 6029313
+    },
+    {
+      "path": "/mnt/DADOS/turborama-kernel-audit.jjwtFS",
+      "kind": "expired-extracted-build-or-log",
+      "device": 66307,
+      "inode": 655361
+    },
+    {
+      "path": "/mnt/DADOS/turborama-build-logs.iMbVbh",
+      "kind": "expired-extracted-build-or-log",
+      "device": 66307,
+      "inode": 524289
+    },
+    {
+      "path": "/mnt/DADOS/turborama-build-logs.rAhFSj",
+      "kind": "expired-extracted-build-or-log",
+      "device": 66307,
+      "inode": 393217
+    },
+    {
+      "path": "/mnt/DADOS/station-api-release-candidate-20261003-45fe4df.tar",
+      "kind": "superseded-server-archive",
+      "device": 66307,
+      "inode": 13
+    },
+    {
+      "path": "/mnt/DADOS/station-api-library-candidate-20261004-286f685",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 4849665
+    },
+    {
+      "path": "/mnt/DADOS/station-api-speed-candidate-20261003-4bb77ed2",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 2883585
+    },
+    {
+      "path": "/mnt/DADOS/station-api-release-candidate-20261003-134ae38",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 2359297
+    },
+    {
+      "path": "/mnt/DADOS/station-community-r41-candidate-20261006-a2bb176",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 4849683
+    },
+    {
+      "path": "/mnt/DADOS/station-api-relay-candidate-20261005-0bf8a0e",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 1048602
+    },
+    {
+      "path": "/mnt/DADOS/station-security-candidate-20261007-922ceb1",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 4063309
+    },
+    {
+      "path": "/mnt/DADOS/station-security-candidate-20261007-e41fc06",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 1179753
+    },
+    {
+      "path": "/mnt/DADOS/station-api-release-candidate-20261003-e1ac903",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 26083329
+    },
+    {
+      "path": "/mnt/DADOS/station-security-candidate-20261007-882a009",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 5898276
+    },
+    {
+      "path": "/mnt/DADOS/station-api-release-candidate-20261003-e1ac903.tar",
+      "kind": "superseded-server-archive",
+      "device": 66307,
+      "inode": 14
+    },
+    {
+      "path": "/mnt/DADOS/station-api-library-candidate-20261004-e9d3309",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 4980737
+    },
+    {
+      "path": "/mnt/DADOS/station-security-candidate-20261007-96d63e2",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 25034794
+    },
+    {
+      "path": "/mnt/DADOS/station-api-relay-candidate-20261005-e4e557a",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 1310744
+    },
+    {
+      "path": "/mnt/DADOS/station-community-r41-candidate-20261006-a4627b3",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 7995404
+    },
+    {
+      "path": "/mnt/DADOS/station-api-library-candidate-20261004-77d8d54",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 5242881
+    },
+    {
+      "path": "/mnt/DADOS/station-security-candidate-20261007-defd382",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 5898291
+    },
+    {
+      "path": "/mnt/DADOS/station-short-invite-candidate-20261006-f8adb3d",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 24903699
+    },
+    {
+      "path": "/mnt/DADOS/station-api-online-candidate-20261004-77d1dfb",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 3538945
+    },
+    {
+      "path": "/mnt/DADOS/station-security-candidate-20261007-b9eb904",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 4063294
+    },
+    {
+      "path": "/mnt/DADOS/station-api-folders-candidate-20261004-931030b",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 5505025
+    },
+    {
+      "path": "/mnt/DADOS/station-short-invite-candidate-20261006-a3e83d9",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 1179697
+    },
+    {
+      "path": "/mnt/DADOS/station-api-release-candidate-20261003-fd13c0d.tar",
+      "kind": "superseded-server-archive",
+      "device": 66307,
+      "inode": 17
+    },
+    {
+      "path": "/mnt/DADOS/station-admin-release-candidate-20261003-e1ac903",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 25559041
+    },
+    {
+      "path": "/mnt/DADOS/station-security-candidate-20261007-da07355",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 1179768
+    },
+    {
+      "path": "/mnt/DADOS/station-api-relay-candidate-20261005-58b1a6c",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 4456455
+    },
+    {
+      "path": "/mnt/DADOS/station-api-relay-candidate-20261005-8c8614e",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 3276810
+    },
+    {
+      "path": "/mnt/DADOS/station-api-relay-candidate-20261005-7607687",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 5767187
+    },
+    {
+      "path": "/mnt/DADOS/station-security-candidate-20261007-61b36a9",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 3670052
+    },
+    {
+      "path": "/mnt/DADOS/station-api-release-candidate-20261003-45fe4df",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 25952257
+    },
+    {
+      "path": "/mnt/DADOS/station-security-candidate-20261007-c55409b",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 24903714
+    },
+    {
+      "path": "/mnt/DADOS/station-api-release-candidate-20261003-fd13c0d",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 25821185
+    },
+    {
+      "path": "/mnt/DADOS/station-api-library-candidate-20261004-c46d7d6",
+      "kind": "superseded-server-compilation",
+      "device": 66307,
+      "inode": 4718593
+    },
+    {
+      "path": "/mnt/DADOS/station-api-release-candidate-20261003-134ae38.tar",
+      "kind": "superseded-server-archive",
+      "device": 66307,
+      "inode": 12
+    },
+    {
+      "path": "/mnt/DADOS/station-content-candidate-20261003-45fe4df",
+      "kind": "superseded-offline-catalog-compilation",
+      "device": 66307,
+      "inode": 25165825
+    },
+    {
+      "path": "/mnt/DADOS/station-content-reconciled-20261003-rev3",
+      "kind": "superseded-offline-catalog-compilation",
+      "device": 66307,
+      "inode": 1572865
+    },
+    {
+      "path": "/mnt/DADOS/station-content-revista-20261003-rev4",
+      "kind": "superseded-offline-catalog-compilation",
+      "device": 66307,
+      "inode": 2490369
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-activation-copy-20261006",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 1048616,
+      "head": "b56eea5991ea8eb1bea3231ae26b8d043cf622f1",
+      "branch": "fix/station-activation-copy-20261006"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-artifact-descriptor-20261002",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 24510465,
+      "head": "b56eea5991ea8eb1bea3231ae26b8d043cf622f1",
+      "branch": "feat/station-artifact-descriptor-20261002",
+      "orphanedRemainder": true
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-auto-room-access-20261006",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 3538984,
+      "head": "8d9c670ba813fb970a61ff9bf329e6286b51ad07",
+      "branch": "fix/station-auto-room-access-20261006"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-codes-panel-20261006",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 5111836,
+      "head": "9fb0450856683aeb86c75270b707a8ddda141786",
+      "branch": "fix/station-codes-panel-20261006"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-community-r41-20261006",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 4718611,
+      "head": "7703e7a96515ed90176bef2b401909c933ba6007",
+      "branch": "fix/station-community-production-r41-20261006"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-covers-revista-20261003",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 2097153,
+      "head": "d729f0884596a98270e8255b202af9d4060de063",
+      "branch": "feat/station-covers-revista-20261003"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-customer-provision-20261006",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 6815756,
+      "head": "734ead7f269781d7e7a3103be284413bee4a4eb5",
+      "branch": "fix/station-customer-provision-20261006"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-library-autodiscovery-20261004",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 3801089,
+      "head": "4e623bcbeaed3ee03d8a1767f66319e67659463d",
+      "branch": "feat/station-library-autodiscovery-20261004"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-neogeo-throughput-20261005",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 6291457,
+      "head": "41837c695b880323441002d837c35b850f942cc3",
+      "branch": "feat/station-neogeo-throughput-20261005"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-neogeocd-20261005",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 7208961,
+      "head": "100e4bbd92aa4c85cda10a633e6463fbb24ae8ab",
+      "branch": "feat/station-neogeocd-20261005"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-online-review-20261004",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 3407873,
+      "head": "a4814d453a1f193fcbe40a92c8690c4eb5d41fc9",
+      "branch": "review/station-online-handoff-20261004"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-poco-online-20261005",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 2228229,
+      "head": "61c0411d0a306f348f48647b466a05a3d0f78733",
+      "branch": "feat/station-poco-online-20261005"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-r55-reconciliation-20261006",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 4849697,
+      "head": "7c6e1674eaabab4d69d83b022a9660466dd0ec0c",
+      "branch": "fix/station-r55-reconciliation-20261006"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-raw-transfer-20261005",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 26083342,
+      "head": "11be7f3a725d236439be820dd0a3e6c517e771f5",
+      "branch": "feat/station-raw-transfer-20261005"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-second-player-20261005",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 4456469,
+      "head": "be2ba1f9c4d822c4c5d9731af375498d869184b2",
+      "branch": "fix/station-second-player-20261005"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-transfer-speed-20261003",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 2621441,
+      "head": "54bba11c52f35695fd47eabc7145f42af9990426",
+      "branch": "feat/station-transfer-speed-20261003"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-auto-room-access-20261006",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 1441836,
+      "head": "029612b06205ff66cc1c7dcb2a2dd1a4c47aa1f9",
+      "branch": "fix/station-auto-room-access-20261006"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-codes-panel-return-20261006",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 5373980,
+      "head": "3dbfdd0c0142b32f947faa158fbd499030dcae29",
+      "branch": "fix/station-codes-panel-return-20261006"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-community-return-r41-20261006",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 4980755,
+      "head": "0449f455e721971ae91e76708cf85083b09f74a5",
+      "branch": "fix/station-community-return-r41-20261006"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-customer-provision-return-20261006",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 6160397,
+      "head": "d1b535cc35c926172182c47686b6b44333a529de",
+      "branch": "fix/station-customer-provision-return-20261006"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-library-autodiscovery-20261004",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 3932161,
+      "head": "ba669c27418341c7f232a644317881779ddd3bf3",
+      "branch": "feat/station-library-autodiscovery-20261004"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-neogeo-throughput-20261005",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 6684673,
+      "head": "c8e240a2c886122e79ca2105c0a719a9217ed7dc",
+      "branch": "feat/station-neogeo-throughput-20261005"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-neogeocd-20261005",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 7340033,
+      "head": "0b4a405e907eccb303bc9c321fd555baa1d9619e",
+      "branch": "feat/station-neogeocd-20261005"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-new-systems-return-20261008",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 7078742,
+      "head": "010abe3a3248d2cf5ac02646244a2a387f6cfc4d",
+      "branch": "docs/station-new-systems-return-20261008"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-poco-online-20261005",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 2359310,
+      "head": "11672a9d1210a1ac7b5eb6287bff524665132dcf",
+      "branch": "feat/station-poco-online-20261005"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-r55-reconciliation-20261006",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 1966102,
+      "head": "3fc66a6d873ada92496948f22c8646290acbc22d",
+      "branch": "fix/station-r55-reconciliation-20261006"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-r71-production-return-20261007",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 4063366,
+      "head": "7ef2555d91983d39165eadb3ebbf3dc1f1f976fe",
+      "branch": "docs/station-r71-production-return-20261007"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-r73-production-return-20261007",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 4194462,
+      "head": "339f585f00401b085965a83182d71c5d6a9111d9",
+      "branch": "docs/station-r73-production-return-20261007"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-r74-production-stability-return-20261007",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 7209462,
+      "head": "2c0b1fb84cc32a3740ce327907ce8d039e2c0861",
+      "branch": "docs/station-r74-production-stability-return-20261007"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-r76-server-return-20261008",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 6292021,
+      "head": "a81c7fde61c6d048b4cea4c746052bd7304e600e",
+      "branch": "docs/station-r76-server-return-20261008"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-r77-handoff-review-return-20261008",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 13632234,
+      "head": "0c06eb9a4c1a94615fe7961e40650b87cbee83d8",
+      "branch": "docs/station-r77-handoff-review-return-20261008"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-r78-server-return-20261008",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 7078290,
+      "head": "f23e1878d13bf3f4a8f6517b96d23ca1978535fc",
+      "branch": "docs/station-r78-server-return-20261008"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-r79-server-return-20261008",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 7209829,
+      "head": "fd362b9eacbfa04dda7be44ea7bc729f120d0149",
+      "branch": "docs/station-r79-server-return-20261008"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-r81-server-return-20261008",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 7603565,
+      "head": "482fcc0069bd414761311a0b99cf806600a82f7c",
+      "branch": "docs/station-r81-server-return-20261008"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-raw-transfer-20261005",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 25559052,
+      "head": "6f012a767f07ca8318f96f0c3b0a90050d3f43c1",
+      "branch": "feat/station-raw-transfer-20261005"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-recovery-r67-20261007",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 3670110,
+      "head": "0455f002ff17fa9e85e66635130fabab59c7264d",
+      "branch": "fix/station-online-recovery-after-r67-20261007"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-relay-ready-return-20261006",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 1310758,
+      "head": "d1b535cc35c926172182c47686b6b44333a529de",
+      "branch": "fix/station-relay-ready-return-20261006"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-retornos-r66-20261007",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 24772658,
+      "head": "6c515fdb7dc81db1d9509197d8fed083b28b8745",
+      "branch": "review/station-retornos-r66-20261007"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-review-fixes-20261003",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 25296897,
+      "head": "e1cf0657a3af2560e227883b444e618748ac4660",
+      "branch": "feat/station-review-fixes-20261003"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-second-player-20261005",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 3276824,
+      "head": "a626b50a61c8ac1a82a2a5390bbf1a74f848dbe1",
+      "branch": "fix/station-second-player-20261005"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-security-20261007",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 5505069,
+      "head": "250a3e51a2876175155d148235af1fc402b84d08",
+      "branch": "fix/station-security-20261007"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-transfer-speed-20261003",
+      "kind": "clean-historical-git-worktree",
+      "device": 66307,
+      "inode": 4194305,
+      "head": "6dda2d57cf1c8adb4dc3452f02e36be4748e1551",
+      "branch": "feat/station-transfer-speed-20261003"
+    },
+    {
+      "path": "/mnt/DADOS/station-ps2-saturn-20261010/java-build",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 7079282
+    },
+    {
+      "path": "/mnt/DADOS/station-auto-room-access-check-20261006/native-password-tests-r2",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 7886888
+    },
+    {
+      "path": "/mnt/DADOS/station-auto-room-access-check-20261006/native-password-tests",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 7886885
+    },
+    {
+      "path": "/mnt/DADOS/station-auto-room-access-check-20261006/native-build",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 7885604
+    },
+    {
+      "path": "/mnt/DADOS/station-auto-room-access-check-20261006/native-build-r3",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 7886895
+    },
+    {
+      "path": "/mnt/DADOS/station-all-platforms-check-20261009/neocd-android-build",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 6954877
+    },
+    {
+      "path": "/mnt/DADOS/station-all-platforms-check-20261009/java-build-content-sets",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 6963877
+    },
+    {
+      "path": "/mnt/DADOS/station-all-platforms-check-20261009/native-fixtures",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 6962680
+    },
+    {
+      "path": "/mnt/DADOS/station-all-platforms-check-20261009/java-build-delivery",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 6963206
+    },
+    {
+      "path": "/mnt/DADOS/station-all-platforms-check-20261009/java-build-final",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 6962783
+    },
+    {
+      "path": "/mnt/DADOS/station-all-platforms-check-20261009/fbneo-android-build",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 6954879
+    },
+    {
+      "path": "/mnt/DADOS/station-all-platforms-check-20261009/java-build",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 6959512
+    },
+    {
+      "path": "/mnt/DADOS/station-all-platforms-check-20261009/neocd-state-check-patched",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 6962757
+    },
+    {
+      "path": "/mnt/DADOS/station-all-platforms-check-20261009/parallel-android-build",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 6954881
+    },
+    {
+      "path": "/mnt/DADOS/station-all-platforms-check-20261009/profile-tests",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 6959912
+    },
+    {
+      "path": "/mnt/DADOS/station-all-platforms-check-20261009/n64-state-check-rtc",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 6957148
+    },
+    {
+      "path": "/mnt/DADOS/station-all-platforms-check-20261009/n64-state-check-warm",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 6962745
+    },
+    {
+      "path": "/mnt/DADOS/station-all-platforms-check-20261009/pcsx-android-build",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 6954875
+    },
+    {
+      "path": "/mnt/DADOS/station-five-player-check-20261009/java-build-final",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 13645869
+    },
+    {
+      "path": "/mnt/DADOS/station-five-player-check-20261009/java-build",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 13645345
+    },
+    {
+      "path": "/mnt/DADOS/station-five-player-check-20261009/profile-tests",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 13645743
+    },
+    {
+      "path": "/mnt/DADOS/station-room-synopsis-20261010/java-final",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 7342070
+    },
+    {
+      "path": "/mnt/DADOS/station-room-synopsis-20261010/java-build",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 7341669
+    },
+    {
+      "path": "/mnt/DADOS/station-endpoint-review-20261010/lobby-tests",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 7080199
+    },
+    {
+      "path": "/mnt/DADOS/station-endpoint-review-20261010/lobby-release-tests",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 7080654
+    },
+    {
+      "path": "/mnt/DADOS/station-endpoint-review-20261010/java-final",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 7079788
+    },
+    {
+      "path": "/mnt/DADOS/station-endpoint-review-20261010/profile-tests",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 7080667
+    },
+    {
+      "path": "/mnt/DADOS/station-recovery-r67-check-20261007/java-final",
+      "kind": "superseded-compile-or-test-output",
+      "device": 66307,
+      "inode": 25977876
+    },
+    {
+      "path": "/mnt/DADOS/station-cover-compression-20261010/staged",
+      "kind": "consumed-cover-compilation-copy",
+      "device": 66307,
+      "inode": 7210238
+    },
+    {
+      "path": "/mnt/DADOS/station-cover-compression-20261010/staged-metadata",
+      "kind": "consumed-cover-compilation-copy",
+      "device": 66307,
+      "inode": 7212531
+    },
+    {
+      "path": "/mnt/DADOS/station-cover-compression-20261010/scanner-qualification",
+      "kind": "consumed-cover-compilation-copy",
+      "device": 66307,
+      "inode": 7214857
+    },
+    {
+      "path": "/mnt/DADOS/turbostation-neogeo-content-20261005-failed-e3ee95d",
+      "kind": "superseded-failed-offline-content-compilation",
+      "device": 66307,
+      "inode": 6422529
+    }
+  ],
+  "skipped": [
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-five-players-20261009",
+      "reason": "private-state-or-key-material"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-recovery-r67-20261007",
+      "reason": "private-state-or-key-material"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-retornos-r66-20261007",
+      "reason": "private-state-or-key-material"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-security-20261007",
+      "reason": "private-state-or-key-material"
+    },
+    {
+      "path": "/mnt/DADOS/servidor-pix-station-security-handoff-20261007",
+      "reason": "private-state-or-key-material"
+    },
+    {
+      "path": "/mnt/DADOS/turboelden-station-five-players-20261009",
+      "reason": "private-state-or-key-material"
+    }
+  ],
+  "removedPaths": 117,
+  "kinds": {
+    "completed-build-workspace": 1,
+    "expired-extracted-build-or-log": 5,
+    "superseded-server-archive": 4,
+    "superseded-server-compilation": 30,
+    "superseded-offline-catalog-compilation": 3,
+    "clean-historical-git-worktree": 42,
+    "superseded-compile-or-test-output": 28,
+    "consumed-cover-compilation-copy": 3,
+    "superseded-failed-offline-content-compilation": 1
+  },
+  "availableBytesBefore": 67035664384,
+  "availableBytesAfter": 216255602688,
+  "actualRecoveredBytes": 149219938304,
+  "actualRecoveredGiB": 138.972,
+  "seconds": 55.37,
+  "latestStationDelivery": "/mnt/DADOS/turboelden-station-ps2-saturn-20261010/versions/station-all-platforms-online-20261009",
+  "latestAppSeals": 365,
+  "latestTurboramaTarget": "/mnt/DADOS/EmuELEC/target",
+  "latestImageFiles": 22,
+  "latestImagesHashVerified": true,
+  "sourceAndSDKsKept": true,
+  "dirtyWorktreesKept": true,
+  "gitHistoryKept": true,
+  "liveMediaAllReadable": {
+    "filesReadable": 7759,
+    "protectedPathsDenied": 4,
+    "readOnlyMounts": true
+  },
+  "catalogRevision": 32,
+  "indexedItems": 3940,
+  "visibleItems": 3685,
+  "pid": 2136303,
+  "nRestarts": 0,
+  "apiRestarted": false,
+  "protectedDataHashesUnchanged": true,
+  "preservation": {
+    "realLicenses": true,
+    "databaseSchema": true,
+    "existingConfigurations": true,
+    "otherServices": true,
+    "onlineProfiles": true,
+    "onlineEngines": true,
+    "onlineModes": true
+  },
+  "publicSignedCatalogVerified": true,
+  "originalROMFoldersKept": true,
+  "licensesKeysAndClientDataKept": true,
+  "physicalAndroidGameplayVerified": false
+}

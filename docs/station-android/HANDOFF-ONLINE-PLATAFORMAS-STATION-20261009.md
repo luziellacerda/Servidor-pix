@@ -6,11 +6,33 @@
 
 - API ativa: PID **2136303**, NRestarts **0**; release `/opt/turborama-station-endpoints-20261010-2c0d03447696`.
 - DLL SHA-256 `2c0d034476969cbed58b519b744e841111373f89a4bcd6abb9cd14543abcde35`; fonte do servidor e importador `7eb0e009d40ce01db86aea9c489937e9bd2fd00a`; scanner SHA-256 `7f6e9ebb6e1ccc71c184e7d3e07cac856f1c0ceee4e281e272061406619e36bd`.
-- Catálogo **revisão 31 / 3.895 IDs / 3.640 visíveis / 255 aliases**, SHA `d44705f559cc884ccdc63087d662ff8c10425c2677ed0cc1eefc601b9f4522e1`. São 19 rótulos / 17 plataformas normalizadas.
-- **3.895 identidades**, **5.176 perfis / 5.169 aprovados**, preservando os perfis e os 3.876 vínculos de conteúdo anteriores. **320 jogos restantes / 321 modos preparados**.
+- Catálogo **revisão 32 / 3.940 IDs / 3.685 visíveis / 255 aliases**, SHA `36aeaf6c5b4167e6eb7332880c0558824b473b7a41215bcd79ed04439344ffa5`. São 21 rótulos / 19 plataformas normalizadas no catálogo; 17 políticas online permanecem vigentes.
+- **3.940 identidades**, **5.176 perfis / 5.169 aprovados**, preservando os perfis e os 3.895 vínculos de conteúdo anteriores. **320 jogos restantes / 321 modos preparados**.
 - Revisão de endpoints publicada em `2026-10-10T21:49:22.368044+00:00`: somente Station reiniciado após confirmar zero salas e conexões. HTTPS autenticado confirmou os 3.640 itens e as 17 políticas, 19 capas com quatro workers e 19 amostras de download. Timer/importador ativo; varredura real sem mudanças. Licenças sintéticas removidas; configurações anteriores, clientes, licenças reais, esquema e outros serviços preservados. Túnel/proxy/firewall inalterados.
 
-[Recibo atual da revisão e ativação](online-plataformas-20261009/endpoint-review-20261010.json). [Organização Saturn, capas, descritores e cabeçalhos](online-plataformas-20261009/ps2-saturn-servidor-20261010.json). Este é o mesmo handoff; os recibos anteriores preservam seus números e horários históricos.
+[Recibo anterior da revisão e ativação](online-plataformas-20261009/endpoint-review-20261010.json). [Organização Saturn, capas, descritores e cabeçalhos](online-plataformas-20261009/ps2-saturn-servidor-20261010.json). Este é o mesmo handoff; os recibos anteriores preservam seus números e horários históricos.
+
+## Sega 32X e PSP — catálogo, capas e downloads publicados
+
+Aplicado em `2026-10-10T22:40:20.495314+00:00`, sem reiniciar a API: **36 jogos de Sega 32X e nove de PSP**. Pastas inteiras movidas de `snes/sega32x` e `snes/psp` para `sega32x` e `psp` na raiz do HD. Os 611 arquivos originais recebidos, XML, imagens, vídeos e demais dados permaneceram no conjunto.
+
+**Capas:** 45 JPEG 480×720 em `media/revista`; nenhuma arte nova gerada. Sega 32X reutiliza suas 36 imagens recebidas. PSP reutiliza quatro artes correspondentes do catálogo Turborama e cinco imagens recebidas. As 21 artes PSP do catálogo e as demais artes XML foram preparadas em `media/catalogo`; os seeds registram 464 chaves PSP e 43 de 32X, excluindo associações ambíguas. Os 235 registros XML de PSP não são 235 ROMs: somente os nove arquivos presentes foram publicados.
+
+**Downloads:** PSP oferece CSO bruto, com nome/extensão e descritor assinados. Armazenamento `readonly-hardlink` mantém o mesmo inode da ROM, root/0444, sem duplicar os 6,53 GB de jogos; a verificação inicial é offline, sem nova passagem de integridade em cada download do app. Sega 32X oferece ZIP com `launchPath` exato para `.32x`. Índice, identidades e configuração foram qualificados antes da publicação; todos os 3.895 itens anteriores e os registros online permaneceram iguais. Segunda varredura isolada e scanner real: `changed=false`, `added=0`, `updated=0`.
+
+**Como o app lê:** abrir sessão/prova de aparelho pelo contrato existente e buscar `GET /v1/station/catalog?metadata=1`, verificando envelope e domínio. Usar `itemId`, plataforma explícita, revisão, `coverId`, metadados e `folderPath` da resposta. Buscar capas por `/v1/station/covers/{coverId}`, mantendo os quatro workers atuais e cache `coverId + revisão`. Autorizar cada download por `POST /v1/station/downloads/authorize`; usar o `grantId` uma vez em `/v1/station/artifacts/{grantId}` e executar o `launchPath` do descritor assinado. Nunca construir caminhos pela grafia do nome ou converter CSO para ISO. A recarga do índice publicado pode levar até dez segundos; atualizar a leitura do catálogo nesse intervalo.
+
+O parser do **cliente já compilado** leu os 3.685 itens reais e validou as 45 associações de plataformas/descritores/sinopses; mapping `psp`/`sega32x` já existe, sem alteração de Java/DEX por estes dados. API pública assinada confirmou todos os campos, as 45 capas com quatro workers e 45 amostras de download de até 64 KiB, com grants de uso único. O sandbox efetivo leu 7759 arquivos e negou os quatro caminhos protegidos. São provas de catálogo/transporte; teste físico do APK não foi executado aqui.
+
+Novos jogos dessas pastas entram pelo importador/timer existente, após estabilidade dos arquivos. Sinopses vêm de XML, seed ou override privado; capas correspondem por stem exato/seed sem associação ambígua. `metadata.players` é informativo: PSP pode indicar ad hoc e 32X pode indicar turnos. Esses números não aprovam vagas online. Esta inclusão entrega catálogo/capas/downloads; suas políticas/motores online exigem integração nativa própria. As 17 políticas anteriormente implementadas permanecem intactas.
+
+[Recibo, cruzamento das artes, descritores e provas](online-plataformas-20261009/sega32x-psp-publicados-20261010.json). Cópia estável anterior já publicada nos dois Gits: branch/tag `backup/station-antes-sega32x-psp-20261010` / `backup-station-antes-sega32x-psp-20261010`, servidor `6dbc9e2`, app `0d51ce1`.
+
+## Limpeza do HD DADOS — concluída
+
+Removidos **117 caminhos de compilações antigas, cópias de qualificação e arquivos intermediários**, recuperando **138.97 GiB** reais. Espaço disponível: **62.43 → 201.40 GiB**. Última entrega Station do servidor/app e as 22 saídas do último conjunto completo Turborama foram preservadas e conferidas por hash. Fontes, SDKs usados pela entrega Station, histórico Git, worktrees com alterações, arquivos privados, ROMs/capas em uso, licenças, clientes, bancos e backups das artes originais foram mantidos. Pastas históricas removidas continuam recuperáveis pelo Git; os arquivos de compilação podem ser reconstruídos.
+
+Pós-limpeza: mesmo PID/DLL, catálogo 32 assinado e 3.685 visíveis, todas as mídias publicadas legíveis, registros online e configurações preservados, timer ativo. Nenhum serviço foi reiniciado. Caminhos intermediários datados removidos não devem ser usados por operadores históricos; usar a entrega atual e suas fontes/receitas. [Inventário da remoção e conferência final](online-plataformas-20261009/limpeza-compilacoes-20261010.json).
 
 ## Revisão de endpoints, ações e recebimentos — aplicada em 10/10/2026
 
