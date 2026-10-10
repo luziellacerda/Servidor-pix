@@ -6,7 +6,11 @@ static class FuturePlatformChecks
 {
     public static void Run(Action<bool,string> check)
     {
-        foreach(string platform in new[]{"dreamcast","gamecube","wii","wiiu","switch"})
+        check(StationMultiplayerPlatformPolicy.ServerReady("ps2")&&StationMultiplayerPlatformPolicy.ServerReady("PlayStation 2 - BR")
+            &&StationMultiplayerPlatformPolicy.ServerReady("Sega Saturn"),"PS2 and Saturn server policies and aliases");
+        check(StationMultiplayerPlatformPolicy.MaximumPlayers("ps2")==2&&StationMultiplayerPlatformPolicy.MaximumPlayers("saturn")==2,
+            "PS2 and Saturn retain maintainer two-player ceilings");
+        foreach(string platform in new[]{"dreamcast","gamecube","wii","wiiu","switch","ps2","saturn"})
         for(int players=2;players<=StationMultiplayerPlatformPolicy.MaximumPlayers(platform);players++)
         {
             var budget=new StationReplayBudget();

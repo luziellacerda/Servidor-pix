@@ -8,13 +8,16 @@ separate layouts and can never bind to ordinary pads by accident.
 import argparse
 import json
 from pathlib import Path
-from station_online_profiles import NATIVE_CONTROLLERS, validate_modes
+from station_online_profiles import CEILINGS, NATIVE_CONTROLLERS, validate_modes
 
 POLICY='https://github.com/luziellacerda/Servidor-pix/blob/feat/station-online-all-platforms-20261009/docs/station-android/HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md'
 MELEE='https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Super-Smash-Bros-Melee-268951.html'
 GALAXY='https://www.nintendo.com/en-gb/Games/Wii/Super-Mario-Galaxy-283322.html'
 GALAXY2='https://m1.nintendo.net/docvc/RVL/EUR/SB4P/SB4P_E.pdf'
 POKEMON='https://app-pcm.pokemon-support.com/hc/en-us/articles/360053180271--How-many-players-can-play-the-game'
+DKRETURNS='https://www.nintendo.com/en-ca/store/products/donkey-kong-country-returns-hd-switch/'
+MK8='https://mariokart8.nintendo.com/'
+YUGIOH='https://www.konami.com/yugioh/earlydayscollection/us/en/'
 
 def prepare(catalog,review,sources):
     source_urls={s['id']:s['url'] for s in sources['sources']}
@@ -32,18 +35,25 @@ def prepare(catalog,review,sources):
             plans=[dict(mode='Versus',nativeMaximum=4,conditions=['Escolha VS MODE para duas a quatro pessoas. Os modos de aventura permanecem individuais.'],urls=[MELEE])]
         if item['itemId'] in ('station_474055661521b99e82e6d0b6aee72435','station_11800c292110c10da2354418e3483b29'):
             plans=[dict(mode='Co-Star',nativeMaximum=2,conditions=['O anfitrião controla Mario; o convidado controla o ponteiro/Co-Star. O segundo participante não é outro Mario.'],urls=[GALAXY if item['itemId'].startswith('station_474') else GALAXY2],controllerProfile='wii-co-star-v1')]
-        if system=='switch':
+        name=item['name'].lower().replace('_',' ').replace('.',' ')
+        if system=='switch' and 'pokemon' in name and 'cafe' in name:
             plans=[dict(mode='Individual',nativeMaximum=1,conditions=['Pokémon Café Mix/ReMix é individual. Esta edição não ganha modo de duas pessoas por abrir uma sala.'],urls=[POKEMON])]
+        elif system=='switch' and name.startswith('donkey kong country returns hd'):
+            plans=[dict(mode='Cooperativo local',nativeMaximum=2,conditions=['Selecione o modo local para dois jogadores desta edição. A sala usa dois controles independentes.'],urls=[DKRETURNS])]
+        elif system=='switch' and name.startswith('mario kart 8 deluxe'):
+            plans=[dict(mode='VS Race / Battle local',nativeMaximum=2,conditions=['Use VS Race ou Battle em multiplayer local. Esta sala Station está limitada a duas pessoas; o teto da plataforma não é quatro.'],urls=[MK8])]
+        elif system=='switch' and name.startswith('yu-gi-oh early days collection'):
+            plans=[dict(mode='Individual / seleção da coletânea',nativeMaximum=1,conditions=['Este cadastro oferece uma entrada de controle para os jogos da coletânea. Recursos de duelo pela rede do jogo não correspondem automaticamente a duas entradas de controle nesta sala. Um adaptador específico pode acrescentar um modo por dados.'],urls=[YUGIOH])]
         # Preserve known individual editions without advertising two controllers.
-        name=item['name'].lower().replace('_',' ')
         individual=system=='gamecube' and any(title in name for title in ('wind waker','windwaker','twilight princess','twilightprincess',"luigi's mansion",'metroid prime','prince of persia','resident evil','terminator 3','needforspeedunderground2'))
+        individual=individual or system=='ps2' and any(title in name for title in ('black (','castlevania','wrath of cortex','god of war','vice city','jak and daxter','max payne','mega man x8','metal gear solid','resident evil','resident 4','silent hill'))
         if not plans and (individual or system=='wii' and 'skyward' in name):
             plans=[dict(mode='Jogo local',nativeMaximum=1,conditions=['Nenhum modo com controles humanos independentes foi cadastrado para esta edição. O jogo local permanece disponível; um modo adicional pode ser cadastrado por dados.'],urls=[POLICY])]
         if not plans:
             plans=[dict(mode='Multiplayer local',nativeMaximum=2,conditions=['Use o modo multijogador local que ofereça controles independentes. Uma campanha individual não recebe outro personagem.',
                 'Duas vagas são a política de uso autorizada pelo mantenedor. Não representam homologação deste jogo; modos adicionais podem ser cadastrados por dados.'],urls=[POLICY])]
         for position,plan in enumerate(plans):
-            maximum=min(plan['nativeMaximum'],4 if system!='switch' else 2)
+            maximum=min(plan['nativeMaximum'],CEILINGS[system])
             controller=plan.get('controllerProfile',base['controllerProfile'])
             notes=list(plan['conditions'])
             # Shared eight-player and GBA-link modes have distinct native layouts;

@@ -338,7 +338,7 @@ def publish(config, bootstrap=False, on_progress=None):
             report['missingXmlRoms'] += missing
             mode = spec.get('artifactMode', 'single-rom')
             readonly_raw = spec.get('rawStorage') == 'readonly-hardlink'
-            if spec.get('rawStorage') not in (None, 'readonly-hardlink') or (readonly_raw and (mode != 'single-rom' or spec.get('copyRawOnce') is not True)):
+            if spec.get('rawStorage') not in (None, 'readonly-hardlink') or (readonly_raw and (mode not in {'single-rom','cue-disc'} or spec.get('copyRawOnce') is not True)):
                 raise ValueError('invalid raw storage policy')
             if mode not in {'single-rom', 'arcade-set', 'chd-disc', 'cue-disc', 'wiiu-folder'}:
                 raise ValueError('unknown platform artifact mode')
@@ -451,6 +451,9 @@ def publish(config, bootstrap=False, on_progress=None):
                                                                            spec, load_module('preparar-indice-artefatos').describe)
                         elif mode in {'cue-disc', 'wiiu-folder'} and rom.suffix.lower() in {'.zip', '.rar', '.7z'}:
                             game_source, descriptor = prepare_package_archive(rom, set(spec['extensions']), override.get('launchPath'), mode)
+                        elif readonly_raw and mode == 'cue-disc' and rom.suffix.lower() != '.cue':
+                            game_source, descriptor = prepare_raw(rom, tmp / rom.name, readonly_hardlink=True)
+                            raw_prepared = True
                         elif mode in {'cue-disc', 'wiiu-folder'}:
                             temporary_name = (rom.parent.parent.name + '.zip' if mode == 'wiiu-folder' and rom.suffix.lower() == '.rpx' else
                                               rom.stem + '.zip' if rom.suffix.lower() == '.cue' else rom.name)

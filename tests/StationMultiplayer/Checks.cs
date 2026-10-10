@@ -66,7 +66,8 @@ Check(Json(wrongPlatform.Command(new("u","d"),Cmd("capabilities"),security)).Get
 // Different engines share Station admission, but platform limits stay independent.
 foreach(var entry in new[]{("snes",5),("snesbr",5),("megadrive",2),("megadrivebr",2),
     ("dreamcast",4),("n64",4),("n64br",4),("gamecube",4),("wii",4),("wiiu",4),
-    ("neogeo",2),("neogeocd",2),("psx",2),("fbneo",2),("cps1",2),("cps2",2),("cps3",2),("switch",2)})
+    ("neogeo",2),("neogeocd",2),("psx",2),("fbneo",2),("cps1",2),("cps2",2),("cps3",2),("switch",2),
+    ("ps2",2),("ps2br",2),("saturn",2),("Sega Saturn",2)})
 {
     string system=StationMultiplayerPlatformPolicy.Normalize(entry.Item1);int maximum=entry.Item2;
     Check(StationMultiplayerPlatformPolicy.MaximumPlayers(entry.Item1)==maximum,"configured platform ceiling "+entry.Item1);
@@ -78,7 +79,7 @@ foreach(var entry in new[]{("snes",5),("snesbr",5),("megadrive",2),("megadrivebr
     var policy=capability.GetProperty("platformPolicy");
     Check(policy.GetProperty("maximumPlayers").GetInt32()==maximum&&policy.GetProperty("onlineAvailable").GetBoolean(),"signed exact platform capability "+entry.Item1);
     Check(policy.GetProperty("serverReady").GetBoolean()&&policy.GetProperty("transportProtocol").GetString()==StationMultiplayer.Protocol,"server preparation independent from APK "+entry.Item1);
-    Check(capability.GetProperty("serverPlatforms").GetArrayLength()==15,"all server platforms in signed capabilities");
+    Check(capability.GetProperty("serverPlatforms").GetArrayLength()==17,"all server platforms in signed capabilities");
     var opened=Json(hub.Command(person,Cmd("create",capacity:maximum,p:profile),security)).GetProperty("room");
     Check(opened.GetProperty("capacity").GetInt32()==maximum,"room with requested platform ceiling "+entry.Item1);
     hub.Command(person,Cmd("leave",opened,p:profile),security);

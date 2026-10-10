@@ -13,13 +13,16 @@ from urllib.parse import urlsplit
 ALIASES = {'snesbr':'snes', 'super nintendo':'snes', 'super nintendo - br':'snes',
            'megadrivebr':'megadrive', 'megadrive - br':'megadrive',
            'n64br':'n64', 'nintendo 64':'n64', 'nintendo 64 - br':'n64',
-           'neo geo':'neogeo', 'neo geo cd':'neogeocd', 'playstation 1':'psx'}
+           'neo geo':'neogeo', 'neo geo cd':'neogeocd', 'playstation 1':'psx',
+           'ps2br':'ps2', 'playstation 2':'ps2', 'playstation 2 - br':'ps2',
+           'sega saturn':'saturn', 'sega-saturn':'saturn', 'segasaturn':'saturn'}
 CEILINGS = dict(snes=5, megadrive=2, n64=4, dreamcast=4, gamecube=4,
                 wii=4, wiiu=4, switch=2, neogeo=2, neogeocd=2,
-                psx=2, fbneo=2, cps1=2, cps2=2, cps3=2)
+                psx=2, fbneo=2, cps1=2, cps2=2, cps3=2, ps2=2, saturn=2)
 NATIVE_CONTROLLERS = dict(dreamcast='dreamcast-four-ports-v1',
     gamecube='gamecube-four-ports-v1', wii='wii-four-remotes-v1',
-    wiiu='wiiu-four-controllers-v1', switch='switch-two-controllers-v1')
+    wiiu='wiiu-four-controllers-v1', switch='switch-two-controllers-v1',
+    ps2='ps2-two-controllers-v1', saturn='saturn-two-controllers-v1')
 ARCADES = {'neogeo','fbneo','cps1','cps2','cps3'}
 BINDING = ('itemId','contentSha256','engineId','coreSha256','runtimeSha256')
 PROFILE_KEY = (*BINDING, 'profileId','profileSha256')
