@@ -9380,6 +9380,15 @@
       "contentSha256": "cad7524b0cf06b8612a7f35fb1f0828d09a84e22c0d9295401ad7125542f7291"
     },
     {
+      "itemId": "station_036955f44e8422c68ceb8c674ad2433f",
+      "platform": "ps2",
+      "artifactSha256": "f4cd5e1474c212ab554fe31145c1164d9bfd38c52337d1a2d911a068b1675c1a",
+      "launchPath": "Street Fighter EX3 (USA).cso",
+      "expandedSizeBytes": 419605838,
+      "fileCount": 1,
+      "contentSha256": "f4cd5e1474c212ab554fe31145c1164d9bfd38c52337d1a2d911a068b1675c1a"
+    },
+    {
       "itemId": "station_038ee7ed4846010ef01207622e5f6311",
       "platform": "neogeo",
       "artifactSha256": "b92ea037728086aa6d58c8ca4d3e4c9cc8a50b007984068f65dcf394afab5c28",
@@ -9612,6 +9621,15 @@
       "expandedSizeBytes": 140252,
       "fileCount": 2,
       "contentSha256": "5fb7c78ccba3c7547adce8e1daa47b35e8e5c0f441110c627daaead7f7b8007d"
+    },
+    {
+      "itemId": "station_05f791dcb31b952edecca707dc81ec6a",
+      "platform": "ps2",
+      "artifactSha256": "3f55ee4e94d59c1fcc6af24e6cb56657d99edf9123a84e8b0685626a587b8ae9",
+      "launchPath": "Crash Bandicoot - The Wrath of Cortex (Europe).cso",
+      "expandedSizeBytes": 411104766,
+      "fileCount": 1,
+      "contentSha256": "3f55ee4e94d59c1fcc6af24e6cb56657d99edf9123a84e8b0685626a587b8ae9"
     },
     {
       "itemId": "station_06032758c294efb93fe33f72f4547749",
@@ -11693,6 +11711,15 @@
       "contentSha256": "89fd71848327643c0057f3d81db4c1824e804dfb1feb53b009c1145ee3978860"
     },
     {
+      "itemId": "station_1a64dfc6023f6d8a072961c557058cbb",
+      "platform": "ps2",
+      "artifactSha256": "cb3004a341d6a5316a518056cefa6be7f106c31e6cb747220accb0f9b84a3280",
+      "launchPath": "Max Payne 2 - The Fall of Max Payne (Europe) (En,Es)-020.cso",
+      "expandedSizeBytes": 2453470412,
+      "fileCount": 1,
+      "contentSha256": "cb3004a341d6a5316a518056cefa6be7f106c31e6cb747220accb0f9b84a3280"
+    },
+    {
       "itemId": "station_1a6870197f5b34719d82f4b76dae1c20",
       "platform": "snes",
       "artifactSha256": "2167fc7c5447b2287668d2f3e4ef1a285361b2292ecc8a4cbd9f966a460ad7a2",
@@ -11844,6 +11871,15 @@
       "expandedSizeBytes": 1606144,
       "fileCount": 1,
       "contentSha256": "646268f8bd11a39fdb68f6040ee973e9853f854bc723cf3e8a0a4c8e98598edd"
+    },
+    {
+      "itemId": "station_1b956a4cefd9663fecb1cf4104c8a432",
+      "platform": "ps2",
+      "artifactSha256": "936f5ecd5bb9eb4d8b4b1400bd72bf2f43c99c00635c6853190301d5c56b693f",
+      "launchPath": "Need for Speed - Underground 2 (Europe) (En,Fr,De,Es,It,Nl,Sv,Da)-012.iso",
+      "expandedSizeBytes": 4097146880,
+      "fileCount": 1,
+      "contentSha256": "936f5ecd5bb9eb4d8b4b1400bd72bf2f43c99c00635c6853190301d5c56b693f"
     },
     {
       "itemId": "station_1bd4e08982930b3540103883c6a5c9e7",
@@ -12078,6 +12114,15 @@
       "expandedSizeBytes": 2097664,
       "fileCount": 1,
       "contentSha256": "89baae16c10b3b2d26b988b7e0a2948089f26840d498d18323d6f3a449e447e6"
+    },
+    {
+      "itemId": "station_1e8054ffd8f8f2be1a0907d38f55735d",
+      "platform": "ps2",
+      "artifactSha256": "0a6da26088e480ba8ff36e794b69a878fb80c32999c813f864e960b7f2ae2088",
+      "launchPath": "Grand Theft Auto - San Andreas (USA).cso",
+      "expandedSizeBytes": 3075548452,
+      "fileCount": 1,
+      "contentSha256": "0a6da26088e480ba8ff36e794b69a878fb80c32999c813f864e960b7f2ae2088"
     },
     {
       "itemId": "station_1eadc87cef09af9d4a10a2d2c8a47599",
@@ -12692,6 +12737,15 @@
       "contentSha256": "2f7cd4eaa1fa6e8399778618dddde2242d8b02fb602630aa9148286be885506c"
     },
     {
+      "itemId": "station_23fc8972332d329f6f2fdf3cbfd6e911",
+      "platform": "ps2",
+      "artifactSha256": "65768cade88bfbaf566b67a3ef7a0bda5a9669779833914ffe7cd73a3e45cccd",
+      "launchPath": "Black (USA)-007.iso",
+      "expandedSizeBytes": 3919609856,
+      "fileCount": 1,
+      "contentSha256": "65768cade88bfbaf566b67a3ef7a0bda5a9669779833914ffe7cd73a3e45cccd"
+    },
+    {
       "itemId": "station_24171b161fa076c315f50cb27bb80799",
       "platform": "fbneo",
       "artifactSha256": "274f6cd0d19efebc1c00d9f5d71d9b32b778dec3a662dcba912bd218844cf445",
@@ -12807,6 +12861,15 @@
       "expandedSizeBytes": 305449033,
       "fileCount": 1,
       "contentSha256": "ba9ff9f9994047ebb2d81be29eaa5a1eae1603fbdc8d29dc06d2a2a3e00015f1"
+    },
+    {
+      "itemId": "station_25a2c8351bd788ae0d3314400fde0ac1",
+      "platform": "ps2",
+      "artifactSha256": "7dc424762da08823c92bdcf022db96b7c229e5d9cf114c7c5d4c966529fdfc15",
+      "launchPath": "Silent Hill - Shattered Memories (Europe) (En,Fr,De,Es,It).cso",
+      "expandedSizeBytes": 1214141318,
+      "fileCount": 1,
+      "contentSha256": "7dc424762da08823c92bdcf022db96b7c229e5d9cf114c7c5d4c966529fdfc15"
     },
     {
       "itemId": "station_25a31cf806bf38ee8f00df3bbab11206",
@@ -14562,6 +14625,15 @@
       "expandedSizeBytes": 2193606,
       "fileCount": 1,
       "contentSha256": "fda2bc0545ff51fb6bb5b7ebb2369b64d85b621b7460154e7b43148227cda288"
+    },
+    {
+      "itemId": "station_36d3798cd6a81b4956285268feb58346",
+      "platform": "switch",
+      "artifactSha256": "a84cd04ecf157a6bc150b50488c52d7987c7b3164927ec16a23dc222243521b7",
+      "launchPath": "Yu-Gi-Oh EARLY DAYS COLLECTION [01000D001FF18000][v0][US].xci",
+      "expandedSizeBytes": 7985954816,
+      "fileCount": 1,
+      "contentSha256": "a84cd04ecf157a6bc150b50488c52d7987c7b3164927ec16a23dc222243521b7"
     },
     {
       "itemId": "station_36f39ccc9ad4f0e55cda55a6f8cf78ee",
@@ -16671,6 +16743,15 @@
       "contentSha256": "86e9d76a8834732e511253d8092727bdbfb409b3d0ff1c06b6b6e481c9a039ef"
     },
     {
+      "itemId": "station_4b79fdce6a3440bebb413032ddda8e63",
+      "platform": "switch",
+      "artifactSha256": "7c820ba9d8fa548e74d9fa9173ad963d20f7bc44be75cfca365a438da8914055",
+      "launchPath": "Mario Kart 8 Deluxe [0100152000022000][v0].nsp",
+      "expandedSizeBytes": 7268474476,
+      "fileCount": 1,
+      "contentSha256": "7c820ba9d8fa548e74d9fa9173ad963d20f7bc44be75cfca365a438da8914055"
+    },
+    {
       "itemId": "station_4bd08569c9c793063364226c1ccabdd1",
       "platform": "fbneo",
       "artifactSha256": "e974d149a777b5c84566a83946b734b5989ab94ce0fa70424076d65854ccb09e",
@@ -16831,6 +16912,15 @@
       "expandedSizeBytes": 17765,
       "fileCount": 2,
       "contentSha256": "5f8a45b6721f0d20cc4f3e35591a4b80880202ccebbbd0d477a8409b866c1181"
+    },
+    {
+      "itemId": "station_4dd377f61418c14ccb18a5663ddb400b",
+      "platform": "ps2",
+      "artifactSha256": "ac7b73e246e12c1cb69013c0a789d75819ae1c0eb6492dd02f78d19088d7c092",
+      "launchPath": "Castlevania - Lament of Innocence (USA).iso",
+      "expandedSizeBytes": 3027042304,
+      "fileCount": 1,
+      "contentSha256": "ac7b73e246e12c1cb69013c0a789d75819ae1c0eb6492dd02f78d19088d7c092"
     },
     {
       "itemId": "station_4dd5e7224167e84dbdef3a6dc0a595ec",
@@ -18175,6 +18265,15 @@
       "contentSha256": "6489d0b43c139d93b985f99c1e2e85e304981f9707f66d5c660aadc4ee519b65"
     },
     {
+      "itemId": "station_59e96240a2cdd7543c93237403604725",
+      "platform": "ps2",
+      "artifactSha256": "22c29779421645be0e2c539f705777da3a84bccdf557ebb473fe5a3919228b52",
+      "launchPath": "Grand Theft Auto - Vice City (USA) (v4.00).iso",
+      "expandedSizeBytes": 3837526016,
+      "fileCount": 1,
+      "contentSha256": "22c29779421645be0e2c539f705777da3a84bccdf557ebb473fe5a3919228b52"
+    },
+    {
       "itemId": "station_5a3027a6797f3428c2a8181b23d89f80",
       "platform": "psx",
       "artifactSha256": "86d13dd741dab1939ddb7fdd47a494a52d342494b8cb12cf96e9759b2bdb9786",
@@ -19505,6 +19604,15 @@
       "expandedSizeBytes": 131072,
       "fileCount": 1,
       "contentSha256": "a7069cc52c34a15eb6dc7ba9cab799b69101719d0807645a6c9fb1068bb0d376"
+    },
+    {
+      "itemId": "station_6a62a64aeb4125b6d8929135e9d3e388",
+      "platform": "ps2",
+      "artifactSha256": "92e578c32f7e29cd70d3428ef72d91b717bb532085a69ef0cdf7c842f7a6ce48",
+      "launchPath": "Soulcalibur III (USA).iso",
+      "expandedSizeBytes": 4384325632,
+      "fileCount": 1,
+      "contentSha256": "92e578c32f7e29cd70d3428ef72d91b717bb532085a69ef0cdf7c842f7a6ce48"
     },
     {
       "itemId": "station_6aaced4f989723af71f15a8bcaa2f3c9",
@@ -21172,6 +21280,15 @@
       "contentSha256": "8e180b8cd63ac48487aa6edc920a259d154281ace875ca588c9358b20de28596"
     },
     {
+      "itemId": "station_7b1ea41c70f3aeba4d91bca00ba0a074",
+      "platform": "ps2",
+      "artifactSha256": "f687f4d144ef2401d02ff253dd1c0a9c1dca88e7964a7449e686127717d359ba",
+      "launchPath": "Jak and Daxter - The Precursor Legacy (USA) (En,Fr,De,Es,It) (Rev 1).iso",
+      "expandedSizeBytes": 1460305920,
+      "fileCount": 1,
+      "contentSha256": "f687f4d144ef2401d02ff253dd1c0a9c1dca88e7964a7449e686127717d359ba"
+    },
+    {
       "itemId": "station_7bbdc7564088c22b9d67408c42b177bd",
       "platform": "neogeo",
       "artifactSha256": "d089a00def297444199ac133a5f84099956f44576fe2b7128e7ced2a14013257",
@@ -22162,6 +22279,15 @@
       "contentSha256": "2bb126bceb81f3c5960be75e4cbc1c9d9ac49c8e1571fe92522c84cc0c6ae014"
     },
     {
+      "itemId": "station_84f784dd5b3b57066bc9c3c5be5620f4",
+      "platform": "ps2",
+      "artifactSha256": "e4d22e964729739e89099d42828a55b75cd0e1ff702ea85a3a5d793733dc1981",
+      "launchPath": "Gran Turismo 4 (USA)-022.iso",
+      "expandedSizeBytes": 5314478080,
+      "fileCount": 1,
+      "contentSha256": "e4d22e964729739e89099d42828a55b75cd0e1ff702ea85a3a5d793733dc1981"
+    },
+    {
       "itemId": "station_84fd13b9fcc70c073b577d8e8de51e58",
       "platform": "fbneo",
       "artifactSha256": "025d63c4f737bcaa9607ea59002ca9840d1db40207a1833dd0aab404660de532",
@@ -22954,6 +23080,15 @@
       "contentSha256": "3bc6f007de5057735650997bfdc87336bd92538be4edeb079958e1ac98d1d030"
     },
     {
+      "itemId": "station_8beca9ffb61269136733e04c71b6d689",
+      "platform": "ps2",
+      "artifactSha256": "20b4c16764d74733c1821645b2d8cb7e6051d10adb9ca7c5856ccd80b7b569d1",
+      "launchPath": "Need for Speed - Underground (Europe) (En,Fr,De,Es,It,Nl,Sv)-006.iso",
+      "expandedSizeBytes": 2726166528,
+      "fileCount": 1,
+      "contentSha256": "20b4c16764d74733c1821645b2d8cb7e6051d10adb9ca7c5856ccd80b7b569d1"
+    },
+    {
       "itemId": "station_8c1267815221881d9bdf02aa29ec1009",
       "platform": "snes",
       "artifactSha256": "83727f6954bce024edac7f3fd18a6fbf63d05b580f692d96faa37e60893c91cd",
@@ -23142,6 +23277,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "3d5bbc06e7e9797d937c803610c40b262c14c3f0a39e8048dd6b0b052a040fc1"
+    },
+    {
+      "itemId": "station_8dc2e6e40fb694b358ec724c6a88da4a",
+      "platform": "ps2",
+      "artifactSha256": "2a6c6e228d09a32dd849420802e53b9dba04b27806acfd6a3980b2b5f9f29234",
+      "launchPath": "Resident Evil - Code - Veronica X (Europe) (En,Fr,De,Es).cso",
+      "expandedSizeBytes": 3351763320,
+      "fileCount": 1,
+      "contentSha256": "2a6c6e228d09a32dd849420802e53b9dba04b27806acfd6a3980b2b5f9f29234"
     },
     {
       "itemId": "station_8dc32681ffc48dcc7dbbb3588a87cbe4",
@@ -25925,6 +26069,15 @@
       "contentSha256": "c35d995a0cc4f1468d94b8d05d13fbdc44d6d65a88a2c133f624918b6a564649"
     },
     {
+      "itemId": "station_a93c2f8838700098dc14eef383bf8eb2",
+      "platform": "ps2",
+      "artifactSha256": "376ccd6d64eaecdbdb83f4c835a6974856eeab47a776e16161f66cccf344d5f8",
+      "launchPath": "Mega Man X8 (Europe) (En,Fr,De,Es,It).cso",
+      "expandedSizeBytes": 1546563224,
+      "fileCount": 1,
+      "contentSha256": "376ccd6d64eaecdbdb83f4c835a6974856eeab47a776e16161f66cccf344d5f8"
+    },
+    {
       "itemId": "station_a943b12254299b07982e37c775b63be1",
       "platform": "fbneo",
       "artifactSha256": "580ce4d0f0e93a8b923a2244f5d53ab26b5da65fb7e240dd07b7ef526d14c1f1",
@@ -26049,6 +26202,15 @@
       "expandedSizeBytes": 33554432,
       "fileCount": 1,
       "contentSha256": "8ba76d36ac73fc64d99cbb67a7c971dd399243141f5d43c6cc6a735f2e421d3d"
+    },
+    {
+      "itemId": "station_aab0574d3b6398746da6cfe2bd82d273",
+      "platform": "ps2",
+      "artifactSha256": "35990ea7d71be885fbeec496348e1156655e5154b0a6f079cf91a7685cc3b7bf",
+      "launchPath": "BOMBA PATCH 2026.iso",
+      "expandedSizeBytes": 2007138304,
+      "fileCount": 1,
+      "contentSha256": "35990ea7d71be885fbeec496348e1156655e5154b0a6f079cf91a7685cc3b7bf"
     },
     {
       "itemId": "station_aac7d41b1f2d1df32ad0f01bf53f4dfe",
@@ -26609,6 +26771,15 @@
       "contentSha256": "c706b70097c679f6f0ced6f77a30620807d0b2555fc3c683c0ec2fc791176039"
     },
     {
+      "itemId": "station_b06b945542f498c7f94c0241c54b9ef3",
+      "platform": "ps2",
+      "artifactSha256": "7b2872b4a8c742960560722bd33375cbc67f8714988910c9d86df538b2e67dba",
+      "launchPath": "RESIDENT 4 DUBLADO.iso",
+      "expandedSizeBytes": 3988193280,
+      "fileCount": 1,
+      "contentSha256": "7b2872b4a8c742960560722bd33375cbc67f8714988910c9d86df538b2e67dba"
+    },
+    {
       "itemId": "station_b080412aca7e8c4db41590bbc77f8da4",
       "platform": "megadrive",
       "artifactSha256": "ad545932bf43c9b017382693b03ac3ddd97027acdb67055ced35d38d5391a170",
@@ -27138,6 +27309,15 @@
       "expandedSizeBytes": 1020252160,
       "fileCount": 1,
       "contentSha256": "2c81bb89dfa3246215093b9ba78681e93697605e0eec3acd1de0e27890cde41e"
+    },
+    {
+      "itemId": "station_b506279d79304a01a3623e81ff704419",
+      "platform": "ps2",
+      "artifactSha256": "f8b3a64f1c01ee1db5e822800c589d3b5232368a7fde9494d48584ee3e5780f5",
+      "launchPath": "Dragon Ball Z - Budokai Tenkaichi 2 (USA) (En,Ja).iso",
+      "expandedSizeBytes": 2998829056,
+      "fileCount": 1,
+      "contentSha256": "f8b3a64f1c01ee1db5e822800c589d3b5232368a7fde9494d48584ee3e5780f5"
     },
     {
       "itemId": "station_b51b1e114da722a3d3e94d3dbf51f18f",
@@ -27840,6 +28020,15 @@
       "expandedSizeBytes": 461215180,
       "fileCount": 1,
       "contentSha256": "5b20e8a3f2f35ac7054840744163f757017d835627765322ab3a9b3be92dc743"
+    },
+    {
+      "itemId": "station_bc77dc9a19c22b74899970af7cc02ce6",
+      "platform": "switch",
+      "artifactSha256": "dddd3d44b5609a6f538eeec230fcea780a115c38c6ccba207bcde9881a312bb1",
+      "launchPath": "Donkey Kong Country Returns HD [01009D901BC56000][v0][US](nsw2u.com).xci",
+      "expandedSizeBytes": 15971909632,
+      "fileCount": 1,
+      "contentSha256": "dddd3d44b5609a6f538eeec230fcea780a115c38c6ccba207bcde9881a312bb1"
     },
     {
       "itemId": "station_bcaeb53fc682642a5f1441ac4a77277c",
@@ -29426,6 +29615,15 @@
       "contentSha256": "ea2ac534bf14ac6e75100ec29429db29e77b3f3ca80134def14a35c0eb0d387c"
     },
     {
+      "itemId": "station_cd5a4594745885e08e3de492b34d6f22",
+      "platform": "ps2",
+      "artifactSha256": "ba79e10699e00c86d5867cc1347e97881f87ae7851283b89bd8e23c68d7f7cbc",
+      "launchPath": "Naruto Shippuden - Ultimate Ninja 5 (Europe) (Es,Fr,De,En,It).cso",
+      "expandedSizeBytes": 1741172482,
+      "fileCount": 1,
+      "contentSha256": "ba79e10699e00c86d5867cc1347e97881f87ae7851283b89bd8e23c68d7f7cbc"
+    },
+    {
       "itemId": "station_cd7be490e493eeaec66f07a7204ec80e",
       "platform": "snes",
       "artifactSha256": "7a8ffaf8bb549b400ec2f0bda9f3c0dbf5852c38618cdb21cd783c368383e2c7",
@@ -29487,6 +29685,15 @@
       "expandedSizeBytes": 19608752,
       "fileCount": 2,
       "contentSha256": "f188af93ce04ba36017c1e048434b2af5143463d2554c57097b210e94bdd0aa0"
+    },
+    {
+      "itemId": "station_cdd601d3875ab3d5bde38fc8a61db05c",
+      "platform": "ps2",
+      "artifactSha256": "a4bf7db314137b8238578a544fe960221da3040f3f4fd4f493de4bb7ef24d7fc",
+      "launchPath": "Tekken 5 (USA).iso",
+      "expandedSizeBytes": 4483547136,
+      "fileCount": 1,
+      "contentSha256": "a4bf7db314137b8238578a544fe960221da3040f3f4fd4f493de4bb7ef24d7fc"
     },
     {
       "itemId": "station_cdf19d395b8672f1d68cf2c737c93f04",
@@ -29894,6 +30101,15 @@
       "contentSha256": "db44f8b58a31b640a47aa4390101c3c6a5f613e4e49c636d44786278033dec19"
     },
     {
+      "itemId": "station_d139413f1b1c083983d0e04b8ed9f30a",
+      "platform": "ps2",
+      "artifactSha256": "7a067967a6283c6aaa72cd97dd136239ed2e1f5e099a42ca40ffc1a30126052e",
+      "launchPath": "Midnight Club 3 - DUB Edition Remix (USA).iso",
+      "expandedSizeBytes": 4269998080,
+      "fileCount": 1,
+      "contentSha256": "7a067967a6283c6aaa72cd97dd136239ed2e1f5e099a42ca40ffc1a30126052e"
+    },
+    {
       "itemId": "station_d155fc7c0bb3cc0731d92bdf3d2818f4",
       "platform": "megadrive",
       "artifactSha256": "b278b9a1004a1a106855cdc4f5a0d3d6fbddbcef0873a9ea78dee597831b5b7a",
@@ -29964,6 +30180,15 @@
       "expandedSizeBytes": 131072,
       "fileCount": 1,
       "contentSha256": "48518146219affe57ef02de20602da39a7daa9ae8edb00da03b78982db2712a6"
+    },
+    {
+      "itemId": "station_d195666b12e19a46aac696bdbe5497b5",
+      "platform": "ps2",
+      "artifactSha256": "939c626d6cc7e3d4df307e17346525fdf2fb4d3f79f248e9aeac7134942a109a",
+      "launchPath": "God of War II (Europe).cso",
+      "expandedSizeBytes": 6830100504,
+      "fileCount": 1,
+      "contentSha256": "939c626d6cc7e3d4df307e17346525fdf2fb4d3f79f248e9aeac7134942a109a"
     },
     {
       "itemId": "station_d19b197457d6212311207c1c72b470e6",
@@ -30477,6 +30702,15 @@
       "expandedSizeBytes": 2097152,
       "fileCount": 1,
       "contentSha256": "8715a641f2e4dd8b6066be7f2683d9129fff3fcccaf0a09cc8bdd2aa56460764"
+    },
+    {
+      "itemId": "station_d69b1ff57c377687d16f5346b0ad17b8",
+      "platform": "ps2",
+      "artifactSha256": "cef019c517de448bfc0e0bf0ae63f74a755937da08eb1240b2243f709b487010",
+      "launchPath": "Need for Speed - Most Wanted - Black Edition (USA).iso",
+      "expandedSizeBytes": 3702915072,
+      "fileCount": 1,
+      "contentSha256": "cef019c517de448bfc0e0bf0ae63f74a755937da08eb1240b2243f709b487010"
     },
     {
       "itemId": "station_d6b818f367bc07a74a2b63fe178f1596",
@@ -32352,6 +32586,15 @@
       "contentSha256": "9567ed7cda4da7802872d714d3adb68565f64948e8c4af83f2458e0d811cb9e8"
     },
     {
+      "itemId": "station_eaf8804a7d00c104dd5bbe7f214e42e2",
+      "platform": "ps2",
+      "artifactSha256": "7ba4ca4d06baaafe0d50fa60efcacfded6d2cb03b701c6def68ff24b978ca2f1",
+      "launchPath": "Metal Gear Solid 2 - Sons of Liberty (USA).iso",
+      "expandedSizeBytes": 4620910592,
+      "fileCount": 1,
+      "contentSha256": "7ba4ca4d06baaafe0d50fa60efcacfded6d2cb03b701c6def68ff24b978ca2f1"
+    },
+    {
       "itemId": "station_eb02a7a25683078222da84fb788e1631",
       "platform": "megadrive",
       "artifactSha256": "feab948550f7f97082e7190ed7360d69a89c20d3ca2bdf693f36c70fe8f49c51",
@@ -32656,6 +32899,15 @@
       "expandedSizeBytes": 5536988,
       "fileCount": 2,
       "contentSha256": "efe6897de2a5329e915c48619517eafa6d8486291a0a77076048a94e015d7adb"
+    },
+    {
+      "itemId": "station_ed72a216710d0a0f72893a5b5cafa2c5",
+      "platform": "ps2",
+      "artifactSha256": "25cb807c85049aa8fe3df048d79c7671d37318b4b04bfdb570e947c042e0b9b9",
+      "launchPath": "Castlevania - Curse of Darkness (USA).iso",
+      "expandedSizeBytes": 3522396160,
+      "fileCount": 1,
+      "contentSha256": "25cb807c85049aa8fe3df048d79c7671d37318b4b04bfdb570e947c042e0b9b9"
     },
     {
       "itemId": "station_ed83cb04e2c981be6206ebb4ff572c49",

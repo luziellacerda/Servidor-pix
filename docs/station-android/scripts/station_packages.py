@@ -1,8 +1,10 @@
 """Bundle local CUE discs and extracted Wii U games without dropping dependencies."""
 import hashlib
+import os
 from pathlib import Path, PureWindowsPath
 import re
 import shutil
+import stat
 import zipfile
 
 
@@ -126,8 +128,90 @@ def prepare_package(source, temporary, mode, describe):
     return temporary, describe({'filePath': str(temporary)}, launch)
 
 
-def prepare_raw(source, temporary):
+def writable_handles(device, inode):
+    """Reject writers opened before the source was made read only."""
+    for process in Path('/proc').iterdir():
+        if not process.name.isdecimal():
+            continue
+        try:
+            handles = list((process / 'fdinfo').iterdir())
+        except (FileNotFoundError, ProcessLookupError):
+            continue
+        for handle in handles:
+            try:
+                fields = dict(line.split(':', 1) for line in handle.read_text().splitlines() if ':' in line)
+                if int(fields['flags'].strip(), 8) & os.O_ACCMODE not in (os.O_WRONLY, os.O_RDWR):
+                    continue
+                opened = (process / 'fd' / handle.name).stat()
+                if (opened.st_dev, opened.st_ino) == (device, inode):
+                    return True
+            except (FileNotFoundError, ProcessLookupError):
+                continue
+    return False
+
+
+def prepare_readonly_raw(source, temporary):
+    """Publish one inode on the same volume, protected from in-place user edits.
+
+    The root importer freezes a finished source, rejects open writers and hashes
+    once. Users can replace the source pathname in its writable directory; an
+    existing grant keeps the old read-only inode in the private artifact store.
+    No writable aliases, symbolic links, cross-volume links or non-root callers.
+    """
+    if os.geteuid() != 0:
+        raise PackagePending('readonly_raw_requires_root_importer')
+    if source.is_symlink() or temporary.exists() or temporary.is_symlink():
+        raise PackagePending('readonly_raw_unsafe_path')
+    handle = os.open(source, os.O_RDONLY | os.O_NOFOLLOW)
+    before = os.fstat(handle)
+    linked = False
+    frozen = False
+    try:
+        if not stat.S_ISREG(before.st_mode) or not 0 < before.st_size <= 1 << 40:
+            raise PackagePending('raw_artifact_size_out_of_range')
+        if before.st_dev != temporary.parent.stat().st_dev:
+            raise PackagePending('readonly_raw_requires_same_volume')
+        if before.st_nlink != 1 and (before.st_uid != 0 or before.st_mode & 0o222):
+            raise PackagePending('readonly_raw_writable_alias')
+        os.fchown(handle, 0, before.st_gid)
+        os.fchmod(handle, 0o444)
+        frozen = True
+        if writable_handles(before.st_dev, before.st_ino):
+            raise PackagePending('readonly_raw_source_writer_active')
+        os.link(source, temporary, follow_symlinks=False)
+        linked = True
+        expected = (before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns)
+        def unchanged(path):
+            current = path.stat(follow_symlinks=False)
+            return stat.S_ISREG(current.st_mode) and (current.st_dev, current.st_ino, current.st_size, current.st_mtime_ns) == expected
+        if not unchanged(source) or not unchanged(temporary):
+            raise PackagePending('readonly_raw_source_changed')
+        digest = hashlib.sha256()
+        total = 0
+        with os.fdopen(os.dup(handle), 'rb') as inp:
+            for block in iter(lambda: inp.read(1024 * 1024), b''):
+                digest.update(block)
+                total += len(block)
+        if total != before.st_size or not unchanged(source) or not unchanged(temporary):
+            raise PackagePending('readonly_raw_source_changed')
+        os.fsync(handle)
+        return temporary, dict(fileName=source.name, sizeBytes=total, sha256=digest.hexdigest(),
+                               format='raw', launchPath=source.name, expandedSizeBytes=total, fileCount=1)
+    except BaseException:
+        if linked:
+            temporary.unlink(missing_ok=True)
+        if frozen:
+            os.fchown(handle, before.st_uid, before.st_gid)
+            os.fchmod(handle, stat.S_IMODE(before.st_mode))
+        raise
+    finally:
+        os.close(handle)
+
+
+def prepare_raw(source, temporary, readonly_hardlink=False):
     """One copy/hash pass in the immutable store, independent of download requests."""
+    if readonly_hardlink:
+        return prepare_readonly_raw(source, temporary)
     digest = hashlib.sha256()
     size = 0
     with source.open('rb') as inp, temporary.open('xb') as out:

@@ -1,8 +1,38 @@
-# Station: servidor concluído para todas as plataformas; próxima etapa é o app — 09/10/2026
+# Station: catálogo, capas, downloads e integração online do servidor — 10/10/2026
+
+## PS2 e Nintendo Switch organizados e publicados — 10/10/2026
+
+**Estado atual: catálogo revisão 29**, SHA `b5e4854b69b7c6a35aa2ce0e901d9508f3fd6f490f5b305b7a07c7d740eb7890`, **3.876 IDs / 3.621 visíveis / 255 aliases**. [Lista completa dos 28 jogos novos, capas, descritores e provas públicas](online-plataformas-20261009/ps2-switch-publicados-20261010.json). O catálogo cruzado e as identidades desta mesma entrega foram atualizados; recibos anteriores mantêm os números do dia em que foram produzidos.
+
+- `snes/ps2` foi recortada para `ps2` na raiz do HD: **25 jogos**, 16 ISO e 9 CSO.
+- `snes/swithc` foi unida à pasta `switch` existente: **4 jogos**. Pokémon Café Mix e seu cadastro anterior foram preservados. Entraram Donkey Kong Country Returns HD, Mario Kart 8 Deluxe e Yu-Gi-Oh Early Days Collection. A pasta com nome incorreto foi removida.
+- **28 capas prontas e associadas**, todas JPEG de 480 × 720: 24 artes PS2 existentes no sistema, 3 artes Switch existentes e Bomba Patch 2026 criada com `image_gen` no mesmo modelo da coleção. Resident Evil 4 Dublado usa a arte PlayStation 2 BR correta. Nenhuma capa provisória ou ausente no lote.
+- PS2 recebeu `media/revista`, 108 artes leves em `media/catalogo`, `gamelist.xml` e 109 chaves em `station-catalog-seed.json`. O importador identifica novos arquivos `.iso`/`.cso` automaticamente; títulos conhecidos recebem a capa/sinopse por dados, sem programar cada jogo. Switch continua com `.nsp`/`.xci` e suas 110 artes de cadastro. Para título desconhecido, fornecer arte com o mesmo nome da ROM em `media/revista` e dados XML/JSON; o cadastro automático não inventa sinopse ou compatibilidade.
+
+### Leitura correta pelo app
+
+1. Ler a resposta assinada de `GET /v1/station/catalog?metadata=1`, revisão 29. O `platform` novo é **`ps2`**; Switch continua **`switch`**. `StationPlatforms` já mapeia esses dois valores para as pastas locais `ps2`/`switch`.
+2. Associar pela mesma linha do catálogo: `itemId`, `coverId`, `name`, `metadata.description` e `contentSha256`. Buscar `/v1/station/covers/{coverId}` com os quatro workers e cache `coverId-revision`. As 28 imagens públicas foram confrontadas byte a byte com as artes de `revista`.
+3. Pedir `/v1/station/downloads/authorize` com o `itemId`; usar o descritor `artifact` dessa resposta assinada e o grant em `/v1/station/artifacts/{grantId}`. Os caminhos do HD não são URLs. O contrato devolve **`format:raw` / `fileCount:1`** para esses jogos. Salvar `.iso`, `.cso`, `.nsp` ou `.xci` intacto no `launchPath` original; CSO não vira ZIP e `expandedSizeBytes` representa o arquivo entregue, não uma ISO descomprimida. Nenhuma conversão/checksum extra foi adicionada à etapa de download do telefone.
+4. Catálogo/capas/downloads prontos não comprovam motor nativo ou gameplay Android. Switch mantém a política online já publicada, teto de dois jogadores, aguardando motor real/modo correto. **PS2 foi adicionada ao catálogo, não à política online das 15 plataformas**; transportar jogo online de PS2 exige integrar essa plataforma e o motor no app. Os 5.176 perfis anteriores continuam exatos. Não tentar abrir uma sala PS2 usando motor PSX nem assumir que a quantidade de jogos define vagas.
+
+### Publicação e armazenamento
+
+São **110.630.338.136 bytes** de ROMs novas, com cerca de 19 GiB disponíveis no volume. O importador agora tem a opção explícita `rawStorage:readonly-hardlink`, aplicada somente a PS2/Switch: o arquivo estável passa a root/0444, fica ligado ao armazenamento protegido pelo mesmo inode e é identificado em uma leitura inicial. Não há segunda cópia de 110,6 GB. Para substituir uma ROM, copiar um arquivo novo e substituir o nome na pasta da plataforma; não editar em lugar o arquivo já publicado. Grants anteriores continuam usando o inode anterior. As outras plataformas mantêm suas políticas de armazenamento.
+
+Capas já em JPEG/RGB de 480 × 720 são copiadas sem recompressão. Todas as **5.934 imagens** das pastas `revista`/`catalogo` continuam no padrão leve. O arquivo original de Bomba Patch, o prompt e backups ficam fora da mídia monitorada; a arte final está em `ps2/media/revista/BOMBA PATCH 2026.jpg`. Prompt/modelo/caminhos finais constam no relatório.
+
+Sete testes reais passaram, inclusive na proteção systemd usada pelo scanner: mesmo inode, troca de origem preservando download, recusa de escritor aberto, links graváveis, symlink e outro volume; cópia padrão preservada. Qualificação em sombra e segunda varredura sem mudanças passaram. A API pública autenticada confirmou os 3.621 itens, 28 capas e amostras de 8 MiB dos quatro formatos; essas amostras não são download completo ou gameplay Android. Licença sintética removida. **API permaneceu com PID 1820513/NRestarts 0**, sem reiniciar ou cancelar salas. Timer/importador retomados. A execução real de 10/10 às 15:04:36–15:04:40 retornou `revision=29`, `changed=false`, `added=0`, `updated=0`, `visible=3621`, status zero, usando a fonte nova. Não houve reconstrução dos jogos na varredura.
+
+Cópia estável anterior publicada nos dois Gits antes da alteração: branch `backup/station-antes-ps2-switch-20261010`, tag `backup-station-antes-ps2-switch-20261010` (servidor 8ff2ef3 / app 716620d). Backup privado do lote: `/mnt/DADOS/station-ps2-switch-20261010/backup-retry2`. O operador local datado já foi aplicado; não executar novamente `apply.py` nem operadores históricos.
+
+### Fontes de metadados revisados
+
+BLACK é tiro em primeira pessoa; o sufixo local `-007` era tratado indevidamente como James Bond no XML de origem. A correção foi aplicada apenas ao novo cadastro PS2. [Criterion/EA](https://www.ea.com/ea-studios/criterion-games/games). Os novos textos Switch identificam as edições específicas: [Donkey Kong Country Returns HD](https://www.nintendo.com/en-ca/store/products/donkey-kong-country-returns-hd-switch/), [Mario Kart 8 Deluxe](https://mariokart8.nintendo.com/), [Yu-Gi-Oh Early Days Collection](https://www.konami.com/yugioh/earlydayscollection/us/en/). Demais sinopses do lote foram reaproveitadas do catálogo local; não houve auditoria editorial completa das sinopses antigas.
 
 ## Capas leves em todas as plataformas — aplicado em 10/10/2026
 
-[Relatório da padronização e conferência pública](online-plataformas-20261009/capas-padronizadas-20261010.json). Catálogo atual **revisão 28**, SHA `304924d242a41be7d40f495545011aaea5f6deaa17559220e0533fa193c018ab`: **3.848 IDs / 3.593 visíveis**, todos com capa **JPEG de 480 × 720**, sem arquivo ausente ou capa provisória. As 17 categorias foram conferidas pela API pública autenticada, com resposta de catálogo assinada e quatro workers para capas.
+[Relatório da padronização e conferência pública](online-plataformas-20261009/capas-padronizadas-20261010.json). Catálogo dessa etapa **revisão 28**, SHA `304924d242a41be7d40f495545011aaea5f6deaa17559220e0533fa193c018ab`: **3.848 IDs / 3.593 visíveis**, todos com capa **JPEG de 480 × 720**, sem arquivo ausente ou capa provisória. As 17 categorias foram conferidas pela API pública autenticada, com resposta de catálogo assinada e quatro workers para capas.
 
 **Causa encontrada:** os novos sistemas mantiveram a arte original nas pastas `media/revista` e `media/catalogo`; o importador preparava outra imagem para o telefone. Dreamcast/FBNeo também tinham artes por título junto das cópias por nome da ROM. Esses originais chegavam a 1024 × 1536 e 3,3 MB. Havia ainda uma exceção real na API: Mario Paint era servido como PNG de 805.241 bytes.
 

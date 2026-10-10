@@ -240,6 +240,26 @@
     "preparedModeCount": 0
   },
   {
+    "platform": "ps2",
+    "normalizedPlatform": "ps2",
+    "maximumPlayers": null,
+    "catalogItems": 25,
+    "visible": 25,
+    "compatibilityAliases": 0,
+    "contentIdentities": 25,
+    "covers": 25,
+    "onlineStates": {
+      "online-platform-integration-pending": 25
+    },
+    "approvedModeMaximums": [],
+    "physicalAndroidGameplayQualified": false,
+    "serverReady": false,
+    "catalogAndDownloadsReady": true,
+    "engineEnrollmentByData": false,
+    "engineEnrollmentRestartRequired": null,
+    "preparedModeCount": 0
+  },
+  {
     "platform": "psx",
     "normalizedPlatform": "psx",
     "maximumPlayers": 2,
@@ -315,13 +335,13 @@
     "platform": "switch",
     "normalizedPlatform": "switch",
     "maximumPlayers": 2,
-    "catalogItems": 1,
-    "visible": 1,
+    "catalogItems": 4,
+    "visible": 4,
     "compatibilityAliases": 0,
-    "contentIdentities": 1,
-    "covers": 1,
+    "contentIdentities": 4,
+    "covers": 4,
     "onlineStates": {
-      "online-engine-pending": 1
+      "online-engine-pending": 4
     },
     "approvedModeMaximums": [],
     "physicalAndroidGameplayQualified": false,

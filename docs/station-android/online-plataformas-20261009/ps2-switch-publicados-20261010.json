@@ -1,0 +1,1159 @@
+{
+  "schemaVersion": 1,
+  "status": "applied",
+  "revision": 29,
+  "indexSha256": "b5e4854b69b7c6a35aa2ce0e901d9508f3fd6f490f5b305b7a07c7d740eb7890",
+  "items": 3876,
+  "visibleItems": 3621,
+  "newGames": 28,
+  "PS2": 25,
+  "newSwitch": 3,
+  "totalSwitch": 4,
+  "reusedCovers": 27,
+  "generatedCovers": 1,
+  "missingCovers": 0,
+  "sourceBytes": 110630338136,
+  "rawStorage": "readonly-hardlink",
+  "ROMBodyCopies": 0,
+  "originalItemsPreserved": 3848,
+  "contentIdentityCount": 3876,
+  "onlineProfilesPreserved": true,
+  "toolsDirectory": "/opt/turborama-station-library-ps2-switch-20261010-cc27d80b3ae6",
+  "scannerSha256": "80409dcd3fb6b2198545670ca2c161015a13c63caaebf753985154c4637ce7c9",
+  "packagesSha256": "8eb390e8f3a5d55492c39971a2026f8d12122d1249973457c72803b8dee1638e",
+  "qualificationSeconds": 374.45,
+  "noApiRestart": true,
+  "allChecksPassed": true,
+  "publicCatalogVerified": true,
+  "publicCoverWorkers": 4,
+  "publicCoverCount": 28,
+  "syntheticLicenseRemoved": true,
+  "sourceCoverCount": 5934,
+  "newRevistaBytes": 3855012,
+  "newPS2SeedBytes": 13258203,
+  "automaticPS2SeedKeys": 109,
+  "seedArtworkCount": 108,
+  "existingPS2ArtworkReused": 24,
+  "newSwitchArtworkReused": 3,
+  "generatedPS2ArtworkCount": 1,
+  "sourceCoverSummary": {
+    "snes/media/revista": {
+      "count": 1619,
+      "bytes": 182411038
+    },
+    "megadrive/media/revista": {
+      "count": 999,
+      "bytes": 133424805
+    },
+    "n64/media/revista": {
+      "count": 156,
+      "bytes": 24261336
+    },
+    "neogeo/media/revista": {
+      "count": 190,
+      "bytes": 32174462
+    },
+    "neogeo/neogeocd/media/revista": {
+      "count": 50,
+      "bytes": 9239550
+    },
+    "dreamcast/media/revista": {
+      "count": 454,
+      "bytes": 75961260
+    },
+    "cps1/media/revista": {
+      "count": 36,
+      "bytes": 3244371
+    },
+    "cps2/media/revista": {
+      "count": 64,
+      "bytes": 6946112
+    },
+    "cps3/media/revista": {
+      "count": 11,
+      "bytes": 1445372
+    },
+    "fbneo/media/revista": {
+      "count": 1826,
+      "bytes": 317930325
+    },
+    "gamecube/media/revista": {
+      "count": 21,
+      "bytes": 3069773
+    },
+    "gamecube/media/catalogo": {
+      "count": 32,
+      "bytes": 4752064
+    },
+    "psx/media/revista": {
+      "count": 84,
+      "bytes": 11111477
+    },
+    "psx/media/catalogo": {
+      "count": 119,
+      "bytes": 15917419
+    },
+    "wii/media/revista": {
+      "count": 7,
+      "bytes": 961513
+    },
+    "wii/media/catalogo": {
+      "count": 9,
+      "bytes": 1269198
+    },
+    "wiiu/media/revista": {
+      "count": 1,
+      "bytes": 159491
+    },
+    "wiiu/media/catalogo": {
+      "count": 9,
+      "bytes": 1315892
+    },
+    "switch/media/revista": {
+      "count": 4,
+      "bytes": 673991
+    },
+    "switch/media/catalogo": {
+      "count": 110,
+      "bytes": 17433736
+    },
+    "ps2/media/revista": {
+      "count": 25,
+      "bytes": 3347772
+    },
+    "ps2/media/catalogo": {
+      "count": 108,
+      "bytes": 13258203
+    }
+  },
+  "downloadSamples": [
+    {
+      "itemId": "station_7b1ea41c70f3aeba4d91bca00ba0a074",
+      "name": "Jak and Daxter - The Precursor Legacy (USA) (En,Fr,De,Es,It) (Rev 1)",
+      "platform": "ps2",
+      "extension": ".iso",
+      "artifactBytes": 1460305920,
+      "sampledBytes": 8388608,
+      "exactBytes": true,
+      "singleUseGrantVerified": true,
+      "completeDownloadVerified": false,
+      "milliseconds": 2937.02,
+      "sampleMegabytesPerSecond": 2.86
+    },
+    {
+      "itemId": "station_05f791dcb31b952edecca707dc81ec6a",
+      "name": "Crash Bandicoot - The Wrath of Cortex (Europe)",
+      "platform": "ps2",
+      "extension": ".cso",
+      "artifactBytes": 411104766,
+      "sampledBytes": 8388608,
+      "exactBytes": true,
+      "singleUseGrantVerified": true,
+      "completeDownloadVerified": false,
+      "milliseconds": 6407.94,
+      "sampleMegabytesPerSecond": 1.31
+    },
+    {
+      "itemId": "station_4b79fdce6a3440bebb413032ddda8e63",
+      "name": "Mario Kart 8 Deluxe [0100152000022000][v0]",
+      "platform": "switch",
+      "extension": ".nsp",
+      "artifactBytes": 7268474476,
+      "sampledBytes": 8388608,
+      "exactBytes": true,
+      "singleUseGrantVerified": true,
+      "completeDownloadVerified": false,
+      "milliseconds": 2992.42,
+      "sampleMegabytesPerSecond": 2.8
+    },
+    {
+      "itemId": "station_36d3798cd6a81b4956285268feb58346",
+      "name": "Yu-Gi-Oh EARLY DAYS COLLECTION [01000D001FF18000][v0][US]",
+      "platform": "switch",
+      "extension": ".xci",
+      "artifactBytes": 7985954816,
+      "sampledBytes": 8388608,
+      "exactBytes": true,
+      "singleUseGrantVerified": true,
+      "completeDownloadVerified": false,
+      "milliseconds": 2497.89,
+      "sampleMegabytesPerSecond": 3.36
+    }
+  ],
+  "rawSandboxTests": {
+    "passed": true,
+    "count": 7,
+    "output": "Running as unit: station-ps2-switch-raw-sandbox-20261010.service; invocation ID: 62781b2fae38459ea5b42182293584bd\ntest_cross_volume_refused_without_changing_source (__main__.ReadonlyRawTests.test_cross_volume_refused_without_changing_source) ... ok\ntest_default_copy_retains_source_and_separate_inode (__main__.ReadonlyRawTests.test_default_copy_retains_source_and_separate_inode) ... ok\ntest_one_inode_readonly_and_real_identity (__main__.ReadonlyRawTests.test_one_inode_readonly_and_real_identity) ... ok\ntest_open_writer_refused_and_source_permissions_restored (__main__.ReadonlyRawTests.test_open_writer_refused_and_source_permissions_restored) ... ok\ntest_replacing_source_keeps_existing_artifact (__main__.ReadonlyRawTests.test_replacing_source_keeps_existing_artifact) ... ok\ntest_symbolic_link_refused (__main__.ReadonlyRawTests.test_symbolic_link_refused) ... ok\ntest_writable_alias_refused (__main__.ReadonlyRawTests.test_writable_alias_refused) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 2.088s\n\nOK\nFinished with result: success\nMain processes terminated with: code=exited/status=0\nService runtime: 2.193s\nCPU time consumed: 2.185s\nMemory peak: 256.0K\nMemory swap peak: 0B\n",
+    "properties": [
+      "User=root",
+      "Group=root",
+      "UMask=0077",
+      "NoNewPrivileges=true",
+      "ProtectSystem=strict",
+      "ProtectHome=true",
+      "PrivateTmp=true"
+    ]
+  },
+  "sourceFileReplacement": "Published raw files are root-owned 0444. To change a ROM, copy to a new file and replace its pathname in the writable platform directory; existing grants retain the previous inode.",
+  "currentCatalogFormats": "All 3876 indexed covers are JPEG 480x720; 5934 source revista/catalogo images meet the same dimensions.",
+  "games": [
+    {
+      "itemId": "station_bc77dc9a19c22b74899970af7cc02ce6",
+      "coverId": "cover_bc77dc9a19c22b74899970af7cc02ce6",
+      "name": "Donkey Kong Country Returns HD [01009D901BC56000][v0][US](nsw2u.com)",
+      "platform": "switch",
+      "revision": 29,
+      "romRelativePath": "switch/Donkey Kong Country Returns HD [01009D901BC56000][v0][US](nsw2u.com).xci",
+      "coverRelativePath": "switch/media/revista/Donkey Kong Country Returns HD [01009D901BC56000][v0][US](nsw2u.com).jpg",
+      "coverSha256": "44f1f37e5c77e0bd65483dbe266a1ccfe9c952a4293fd7ef647511f4c8333368",
+      "coverBytes": 173008,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "54686cc50707c3986dd47b2777bfc26f",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Donkey Kong Country Returns HD [01009D901BC56000][v0][US](nsw2u.com).xci",
+        "sizeBytes": 15971909632,
+        "sha256": "dddd3d44b5609a6f538eeec230fcea780a115c38c6ccba207bcde9881a312bb1",
+        "format": "raw",
+        "launchPath": "Donkey Kong Country Returns HD [01009D901BC56000][v0][US](nsw2u.com).xci",
+        "expandedSizeBytes": 15971909632,
+        "fileCount": 1
+      },
+      "contentSha256": "dddd3d44b5609a6f538eeec230fcea780a115c38c6ccba207bcde9881a312bb1",
+      "metadata": {
+        "description": "Aventura de plataforma com Donkey Kong e Diddy Kong, fases de saltos, inimigos e coleta de bananas. Esta é a edição HD para Nintendo Switch.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_4b79fdce6a3440bebb413032ddda8e63",
+      "coverId": "cover_4b79fdce6a3440bebb413032ddda8e63",
+      "name": "Mario Kart 8 Deluxe [0100152000022000][v0]",
+      "platform": "switch",
+      "revision": 29,
+      "romRelativePath": "switch/Mario Kart 8 Deluxe [0100152000022000][v0].nsp",
+      "coverRelativePath": "switch/media/revista/Mario Kart 8 Deluxe [0100152000022000][v0].jpg",
+      "coverSha256": "ae0229916c5ac681b75f75dfa6ce352aeec7c49d534d8d7dddfae4d976f9b3fc",
+      "coverBytes": 161472,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "57c6c762fb0d62b1322780012a9c1a16",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Mario Kart 8 Deluxe [0100152000022000][v0].nsp",
+        "sizeBytes": 7268474476,
+        "sha256": "7c820ba9d8fa548e74d9fa9173ad963d20f7bc44be75cfca365a438da8914055",
+        "format": "raw",
+        "launchPath": "Mario Kart 8 Deluxe [0100152000022000][v0].nsp",
+        "expandedSizeBytes": 7268474476,
+        "fileCount": 1
+      },
+      "contentSha256": "7c820ba9d8fa548e74d9fa9173ad963d20f7bc44be75cfca365a438da8914055",
+      "metadata": {
+        "description": "Corridas de kart com personagens da Nintendo, pistas variadas, itens durante as provas e modo de batalha. Esta é a edição Deluxe para Nintendo Switch.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_36d3798cd6a81b4956285268feb58346",
+      "coverId": "cover_36d3798cd6a81b4956285268feb58346",
+      "name": "Yu-Gi-Oh EARLY DAYS COLLECTION [01000D001FF18000][v0][US]",
+      "platform": "switch",
+      "revision": 29,
+      "romRelativePath": "switch/Yu-Gi-Oh EARLY DAYS COLLECTION [01000D001FF18000][v0][US].xci",
+      "coverRelativePath": "switch/media/revista/Yu-Gi-Oh EARLY DAYS COLLECTION [01000D001FF18000][v0][US].jpg",
+      "coverSha256": "86510052c1b1d3066e83c7c4e06a3aee22b42b6faaf3b52f8a4fd29cc41d372c",
+      "coverBytes": 172760,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "ebaefcda0a02210971286011dce6168f",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Yu-Gi-Oh EARLY DAYS COLLECTION [01000D001FF18000][v0][US].xci",
+        "sizeBytes": 7985954816,
+        "sha256": "a84cd04ecf157a6bc150b50488c52d7987c7b3164927ec16a23dc222243521b7",
+        "format": "raw",
+        "launchPath": "Yu-Gi-Oh EARLY DAYS COLLECTION [01000D001FF18000][v0][US].xci",
+        "expandedSizeBytes": 7985954816,
+        "fileCount": 1
+      },
+      "contentSha256": "a84cd04ecf157a6bc150b50488c52d7987c7b3164927ec16a23dc222243521b7",
+      "metadata": {
+        "description": "Coletânea de jogos clássicos de Yu-Gi-Oh! originalmente lançados para Game Boy, Game Boy Color e Game Boy Advance. Reúne duelos de cartas e recursos de preservação dos títulos.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_aab0574d3b6398746da6cfe2bd82d273",
+      "coverId": "cover_aab0574d3b6398746da6cfe2bd82d273",
+      "name": "BOMBA PATCH 2026",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/BOMBA PATCH 2026.iso",
+      "coverRelativePath": "ps2/media/revista/BOMBA PATCH 2026.jpg",
+      "coverSha256": "e29a2b63f02106eddadd21b3154c86fe4748379b91bbea746adb8d7ced6d07e9",
+      "coverBytes": 153387,
+      "coverOrigin": "imagegen",
+      "catalogId": null,
+      "matchRule": "new_art_matching_collection_model",
+      "artifact": {
+        "fileName": "BOMBA PATCH 2026.iso",
+        "sizeBytes": 2007138304,
+        "sha256": "35990ea7d71be885fbeec496348e1156655e5154b0a6f079cf91a7685cc3b7bf",
+        "format": "raw",
+        "launchPath": "BOMBA PATCH 2026.iso",
+        "expandedSizeBytes": 2007138304,
+        "fileCount": 1
+      },
+      "contentSha256": "35990ea7d71be885fbeec496348e1156655e5154b0a6f079cf91a7685cc3b7bf",
+      "metadata": {
+        "description": "Edição de futebol Bomba Patch 2026 para PlayStation 2. O arquivo da coleção é uma edição modificada; times, elencos e recursos específicos dependem desta versão.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_23fc8972332d329f6f2fdf3cbfd6e911",
+      "coverId": "cover_23fc8972332d329f6f2fdf3cbfd6e911",
+      "name": "Black (USA)-007",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Black (USA)-007.iso",
+      "coverRelativePath": "ps2/media/revista/Black (USA)-007.jpg",
+      "coverSha256": "021ec595b0a2a4abca36a513102117fb08e905269ec1ae40a3a9ed4d8d6bff33",
+      "coverBytes": 143238,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "acf4c116950c9382a0dcbc4dd3489c40",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Black (USA)-007.iso",
+        "sizeBytes": 3919609856,
+        "sha256": "65768cade88bfbaf566b67a3ef7a0bda5a9669779833914ffe7cd73a3e45cccd",
+        "format": "raw",
+        "launchPath": "Black (USA)-007.iso",
+        "expandedSizeBytes": 3919609856,
+        "fileCount": 1
+      },
+      "contentSha256": "65768cade88bfbaf566b67a3ef7a0bda5a9669779833914ffe7cd73a3e45cccd",
+      "metadata": {
+        "description": "BLACK é um jogo de tiro em primeira pessoa da Criterion Games. A campanha combina confrontos intensos, armas pesadas e cenários com elementos destrutíveis.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_ed72a216710d0a0f72893a5b5cafa2c5",
+      "coverId": "cover_ed72a216710d0a0f72893a5b5cafa2c5",
+      "name": "Castlevania - Curse of Darkness (USA)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Castlevania - Curse of Darkness (USA).iso",
+      "coverRelativePath": "ps2/media/revista/Castlevania - Curse of Darkness (USA).jpg",
+      "coverSha256": "ca68e62f6c9c6f3facad8e1ca25178e36cd197ab70c6ac324626337ad32ab2f9",
+      "coverBytes": 150093,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "520b941e8175f10860bf52ec3017dd39",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Castlevania - Curse of Darkness (USA).iso",
+        "sizeBytes": 3522396160,
+        "sha256": "25cb807c85049aa8fe3df048d79c7671d37318b4b04bfdb570e947c042e0b9b9",
+        "format": "raw",
+        "launchPath": "Castlevania - Curse of Darkness (USA).iso",
+        "expandedSizeBytes": 3522396160,
+        "fileCount": 1
+      },
+      "contentSha256": "25cb807c85049aa8fe3df048d79c7671d37318b4b04bfdb570e947c042e0b9b9",
+      "metadata": {
+        "description": "Castlevania - Curse of Darkness, nesta edição para PlayStation 2, explora castelos sombrios, criaturas clássicas e progressão por armas e habilidades. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_4dd377f61418c14ccb18a5663ddb400b",
+      "coverId": "cover_4dd377f61418c14ccb18a5663ddb400b",
+      "name": "Castlevania - Lament of Innocence (USA)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Castlevania - Lament of Innocence (USA).iso",
+      "coverRelativePath": "ps2/media/revista/Castlevania - Lament of Innocence (USA).jpg",
+      "coverSha256": "f58de8119ee630c68cfd98f3c3f404265bc589c4d440b37906c0f87dee8ccedc",
+      "coverBytes": 139670,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "bd79e2a2ea0aab365d42d31ebf0b2060",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Castlevania - Lament of Innocence (USA).iso",
+        "sizeBytes": 3027042304,
+        "sha256": "ac7b73e246e12c1cb69013c0a789d75819ae1c0eb6492dd02f78d19088d7c092",
+        "format": "raw",
+        "launchPath": "Castlevania - Lament of Innocence (USA).iso",
+        "expandedSizeBytes": 3027042304,
+        "fileCount": 1
+      },
+      "contentSha256": "ac7b73e246e12c1cb69013c0a789d75819ae1c0eb6492dd02f78d19088d7c092",
+      "metadata": {
+        "description": "Castlevania - Lament of Innocence, nesta edição para PlayStation 2, explora castelos sombrios, criaturas clássicas e progressão por armas e habilidades. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_05f791dcb31b952edecca707dc81ec6a",
+      "coverId": "cover_05f791dcb31b952edecca707dc81ec6a",
+      "name": "Crash Bandicoot - The Wrath of Cortex (Europe)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Crash Bandicoot - The Wrath of Cortex (Europe).cso",
+      "coverRelativePath": "ps2/media/revista/Crash Bandicoot - The Wrath of Cortex (Europe).jpg",
+      "coverSha256": "2b164845693a09f98e8eaedbdaa529c30c6d818c6a5b4dffe339299af08116ad",
+      "coverBytes": 132256,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "20aa12847b5f3f27c54a7bc1181fef17",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Crash Bandicoot - The Wrath of Cortex (Europe).cso",
+        "sizeBytes": 411104766,
+        "sha256": "3f55ee4e94d59c1fcc6af24e6cb56657d99edf9123a84e8b0685626a587b8ae9",
+        "format": "raw",
+        "launchPath": "Crash Bandicoot - The Wrath of Cortex (Europe).cso",
+        "expandedSizeBytes": 411104766,
+        "fileCount": 1
+      },
+      "contentSha256": "3f55ee4e94d59c1fcc6af24e6cb56657d99edf9123a84e8b0685626a587b8ae9",
+      "metadata": {
+        "description": "Crash Bandicoot - The Wrath of Cortex, nesta edição para PlayStation 2, oferece plataforma acessível, fases criativas, segredos e desafios de precisão. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_b506279d79304a01a3623e81ff704419",
+      "coverId": "cover_b506279d79304a01a3623e81ff704419",
+      "name": "Dragon Ball Z - Budokai Tenkaichi 2 (USA) (En,Ja)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Dragon Ball Z - Budokai Tenkaichi 2 (USA) (En,Ja).iso",
+      "coverRelativePath": "ps2/media/revista/Dragon Ball Z - Budokai Tenkaichi 2 (USA) (En,Ja).jpg",
+      "coverSha256": "7161b98dd1e9b6264230e0d7113d2e2f1ff7473c5868360ea342889990a7d708",
+      "coverBytes": 164805,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "c76237b6396ef6f8c06c7058e8e722c3",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Dragon Ball Z - Budokai Tenkaichi 2 (USA) (En,Ja).iso",
+        "sizeBytes": 2998829056,
+        "sha256": "f8b3a64f1c01ee1db5e822800c589d3b5232368a7fde9494d48584ee3e5780f5",
+        "format": "raw",
+        "launchPath": "Dragon Ball Z - Budokai Tenkaichi 2 (USA) (En,Ja).iso",
+        "expandedSizeBytes": 2998829056,
+        "fileCount": 1
+      },
+      "contentSha256": "f8b3a64f1c01ee1db5e822800c589d3b5232368a7fde9494d48584ee3e5780f5",
+      "metadata": {
+        "description": "Dragon Ball Z - Budokai Tenkaichi 2, nesta edição para PlayStation 2, adapta personagens e técnicas do anime para uma aventura de ação com identidade visual própria. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_d195666b12e19a46aac696bdbe5497b5",
+      "coverId": "cover_d195666b12e19a46aac696bdbe5497b5",
+      "name": "God of War II (Europe)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/God of War II (Europe).cso",
+      "coverRelativePath": "ps2/media/revista/God of War II (Europe).jpg",
+      "coverSha256": "8fa95c129498bd138905ee70a03dbdcdd4d298410507f0ae45b76f4412c95bae",
+      "coverBytes": 123408,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "d41fe1cb4e180ab7a012215988d59b81",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "God of War II (Europe).cso",
+        "sizeBytes": 6830100504,
+        "sha256": "939c626d6cc7e3d4df307e17346525fdf2fb4d3f79f248e9aeac7134942a109a",
+        "format": "raw",
+        "launchPath": "God of War II (Europe).cso",
+        "expandedSizeBytes": 6830100504,
+        "fileCount": 1
+      },
+      "contentSha256": "939c626d6cc7e3d4df307e17346525fdf2fb4d3f79f248e9aeac7134942a109a",
+      "metadata": {
+        "description": "God of War II, nesta edição para PlayStation 2, combina ação, mitologia e uma jornada de grande escala conduzida por personagens marcantes. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_84f784dd5b3b57066bc9c3c5be5620f4",
+      "coverId": "cover_84f784dd5b3b57066bc9c3c5be5620f4",
+      "name": "Gran Turismo 4 (USA)-022",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Gran Turismo 4 (USA)-022.iso",
+      "coverRelativePath": "ps2/media/revista/Gran Turismo 4 (USA)-022.jpg",
+      "coverSha256": "6d39d9f70eba9566e1ee6f0bad8840fb40ac5e9251f81e481772a7cf4984d383",
+      "coverBytes": 111520,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "569038e62971fec9851a198e3c18a30a",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Gran Turismo 4 (USA)-022.iso",
+        "sizeBytes": 5314478080,
+        "sha256": "e4d22e964729739e89099d42828a55b75cd0e1ff702ea85a3a5d793733dc1981",
+        "format": "raw",
+        "launchPath": "Gran Turismo 4 (USA)-022.iso",
+        "expandedSizeBytes": 5314478080,
+        "fileCount": 1
+      },
+      "contentSha256": "e4d22e964729739e89099d42828a55b75cd0e1ff702ea85a3a5d793733dc1981",
+      "metadata": {
+        "description": "Gran Turismo 4-022, nesta edição para PlayStation 2, é voltado a corridas, domínio dos veículos e evolução em pistas ou estradas variadas. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_1e8054ffd8f8f2be1a0907d38f55735d",
+      "coverId": "cover_1e8054ffd8f8f2be1a0907d38f55735d",
+      "name": "Grand Theft Auto - San Andreas (USA)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Grand Theft Auto - San Andreas (USA).cso",
+      "coverRelativePath": "ps2/media/revista/Grand Theft Auto - San Andreas (USA).jpg",
+      "coverSha256": "8d93e69273b48f8db66ed8572b63045e6ce712214272ef0cf797140b44c08d9f",
+      "coverBytes": 134992,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "c0d3526cb3fe2bb50bed8ce8f115562a",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Grand Theft Auto - San Andreas (USA).cso",
+        "sizeBytes": 3075548452,
+        "sha256": "0a6da26088e480ba8ff36e794b69a878fb80c32999c813f864e960b7f2ae2088",
+        "format": "raw",
+        "launchPath": "Grand Theft Auto - San Andreas (USA).cso",
+        "expandedSizeBytes": 3075548452,
+        "fileCount": 1
+      },
+      "contentSha256": "0a6da26088e480ba8ff36e794b69a878fb80c32999c813f864e960b7f2ae2088",
+      "metadata": {
+        "description": "Grand Theft Auto - San Andreas, nesta edição para PlayStation 2, oferece um mundo urbano aberto com missões, veículos e liberdade de exploração. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_59e96240a2cdd7543c93237403604725",
+      "coverId": "cover_59e96240a2cdd7543c93237403604725",
+      "name": "Grand Theft Auto - Vice City (USA) (v4.00)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Grand Theft Auto - Vice City (USA) (v4.00).iso",
+      "coverRelativePath": "ps2/media/revista/Grand Theft Auto - Vice City (USA) (v4.00).jpg",
+      "coverSha256": "c728f8913384e91cab481f39904afb1e2cab9d6549ec3b654085dc7680027cc5",
+      "coverBytes": 137098,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "2545330c3e40f16d97a362fb63f858ba",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Grand Theft Auto - Vice City (USA) (v4.00).iso",
+        "sizeBytes": 3837526016,
+        "sha256": "22c29779421645be0e2c539f705777da3a84bccdf557ebb473fe5a3919228b52",
+        "format": "raw",
+        "launchPath": "Grand Theft Auto - Vice City (USA) (v4.00).iso",
+        "expandedSizeBytes": 3837526016,
+        "fileCount": 1
+      },
+      "contentSha256": "22c29779421645be0e2c539f705777da3a84bccdf557ebb473fe5a3919228b52",
+      "metadata": {
+        "description": "Grand Theft Auto - Vice City (v4 00), nesta edição para PlayStation 2, oferece um mundo urbano aberto com missões, veículos e liberdade de exploração. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_7b1ea41c70f3aeba4d91bca00ba0a074",
+      "coverId": "cover_7b1ea41c70f3aeba4d91bca00ba0a074",
+      "name": "Jak and Daxter - The Precursor Legacy (USA) (En,Fr,De,Es,It) (Rev 1)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Jak and Daxter - The Precursor Legacy (USA) (En,Fr,De,Es,It) (Rev 1).iso",
+      "coverRelativePath": "ps2/media/revista/Jak and Daxter - The Precursor Legacy (USA) (En,Fr,De,Es,It) (Rev 1).jpg",
+      "coverSha256": "05352646f116ac16148965369ae050209f0b8c907dd8a6676d020aad197bb775",
+      "coverBytes": 136113,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "bfe0b6800083c9fa4fdc50cdb9111212",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Jak and Daxter - The Precursor Legacy (USA) (En,Fr,De,Es,It) (Rev 1).iso",
+        "sizeBytes": 1460305920,
+        "sha256": "f687f4d144ef2401d02ff253dd1c0a9c1dca88e7964a7449e686127717d359ba",
+        "format": "raw",
+        "launchPath": "Jak and Daxter - The Precursor Legacy (USA) (En,Fr,De,Es,It) (Rev 1).iso",
+        "expandedSizeBytes": 1460305920,
+        "fileCount": 1
+      },
+      "contentSha256": "f687f4d144ef2401d02ff253dd1c0a9c1dca88e7964a7449e686127717d359ba",
+      "metadata": {
+        "description": "Jak and Daxter - The Precursor Legacy (Rev 1), nesta edição para PlayStation 2, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_1a64dfc6023f6d8a072961c557058cbb",
+      "coverId": "cover_1a64dfc6023f6d8a072961c557058cbb",
+      "name": "Max Payne 2 - The Fall of Max Payne (Europe) (En,Es)-020",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Max Payne 2 - The Fall of Max Payne (Europe) (En,Es)-020.cso",
+      "coverRelativePath": "ps2/media/revista/Max Payne 2 - The Fall of Max Payne (Europe) (En,Es)-020.jpg",
+      "coverSha256": "4e26bee7378965f2395f6f0484b37bec5a51040035797a767b730cb8f7a81374",
+      "coverBytes": 124214,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "67d71b54fe4f7e5345a30d51d3b9d807",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Max Payne 2 - The Fall of Max Payne (Europe) (En,Es)-020.cso",
+        "sizeBytes": 2453470412,
+        "sha256": "cb3004a341d6a5316a518056cefa6be7f106c31e6cb747220accb0f9b84a3280",
+        "format": "raw",
+        "launchPath": "Max Payne 2 - The Fall of Max Payne (Europe) (En,Es)-020.cso",
+        "expandedSizeBytes": 2453470412,
+        "fileCount": 1
+      },
+      "contentSha256": "cb3004a341d6a5316a518056cefa6be7f106c31e6cb747220accb0f9b84a3280",
+      "metadata": {
+        "description": "Max Payne 2 - The Fall of Max Payne-020, nesta edição para PlayStation 2, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_a93c2f8838700098dc14eef383bf8eb2",
+      "coverId": "cover_a93c2f8838700098dc14eef383bf8eb2",
+      "name": "Mega Man X8 (Europe) (En,Fr,De,Es,It)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Mega Man X8 (Europe) (En,Fr,De,Es,It).cso",
+      "coverRelativePath": "ps2/media/revista/Mega Man X8 (Europe) (En,Fr,De,Es,It).jpg",
+      "coverSha256": "78b85a198ac29174af00021b3490e746afe6d8492e162eae8068ce1d08fe9402",
+      "coverBytes": 155282,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "944323b187ad616b6a55afccbaa24f34",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Mega Man X8 (Europe) (En,Fr,De,Es,It).cso",
+        "sizeBytes": 1546563224,
+        "sha256": "376ccd6d64eaecdbdb83f4c835a6974856eeab47a776e16161f66cccf344d5f8",
+        "format": "raw",
+        "launchPath": "Mega Man X8 (Europe) (En,Fr,De,Es,It).cso",
+        "expandedSizeBytes": 1546563224,
+        "fileCount": 1
+      },
+      "contentSha256": "376ccd6d64eaecdbdb83f4c835a6974856eeab47a776e16161f66cccf344d5f8",
+      "metadata": {
+        "description": "Mega Man X8, nesta edição para PlayStation 2, é apresentado com a ambientação, a progressão e o estilo de jogo que definem sua identidade nesta plataforma. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_eaf8804a7d00c104dd5bbe7f214e42e2",
+      "coverId": "cover_eaf8804a7d00c104dd5bbe7f214e42e2",
+      "name": "Metal Gear Solid 2 - Sons of Liberty (USA)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Metal Gear Solid 2 - Sons of Liberty (USA).iso",
+      "coverRelativePath": "ps2/media/revista/Metal Gear Solid 2 - Sons of Liberty (USA).jpg",
+      "coverSha256": "974d6e190704e3472e3247e9d2e044a7e2f652448980b16eff70529ade68f13f",
+      "coverBytes": 128710,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "5efa5a117f18ecd094cdb97724f5592b",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Metal Gear Solid 2 - Sons of Liberty (USA).iso",
+        "sizeBytes": 4620910592,
+        "sha256": "7ba4ca4d06baaafe0d50fa60efcacfded6d2cb03b701c6def68ff24b978ca2f1",
+        "format": "raw",
+        "launchPath": "Metal Gear Solid 2 - Sons of Liberty (USA).iso",
+        "expandedSizeBytes": 4620910592,
+        "fileCount": 1
+      },
+      "contentSha256": "7ba4ca4d06baaafe0d50fa60efcacfded6d2cb03b701c6def68ff24b978ca2f1",
+      "metadata": {
+        "description": "Metal Gear Solid 2 - Sons of Liberty, nesta edição para PlayStation 2, valoriza planejamento, reconhecimento de terreno e operações táticas. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_d139413f1b1c083983d0e04b8ed9f30a",
+      "coverId": "cover_d139413f1b1c083983d0e04b8ed9f30a",
+      "name": "Midnight Club 3 - DUB Edition Remix (USA)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Midnight Club 3 - DUB Edition Remix (USA).iso",
+      "coverRelativePath": "ps2/media/revista/Midnight Club 3 - DUB Edition Remix (USA).jpg",
+      "coverSha256": "4a04b61b2a51a984fd371f5a89d904b86c2577b6b0a0e2f7c8d2ca3568745e7a",
+      "coverBytes": 146195,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "04f61ea6e3d420b51522a11745480515",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Midnight Club 3 - DUB Edition Remix (USA).iso",
+        "sizeBytes": 4269998080,
+        "sha256": "7a067967a6283c6aaa72cd97dd136239ed2e1f5e099a42ca40ffc1a30126052e",
+        "format": "raw",
+        "launchPath": "Midnight Club 3 - DUB Edition Remix (USA).iso",
+        "expandedSizeBytes": 4269998080,
+        "fileCount": 1
+      },
+      "contentSha256": "7a067967a6283c6aaa72cd97dd136239ed2e1f5e099a42ca40ffc1a30126052e",
+      "metadata": {
+        "description": "Midnight Club 3 - DUB Edition Remix, nesta edição para PlayStation 2, usa suspense, exploração e atmosfera sombria para conduzir seus desafios de sobrevivência. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_cd5a4594745885e08e3de492b34d6f22",
+      "coverId": "cover_cd5a4594745885e08e3de492b34d6f22",
+      "name": "Naruto Shippuden - Ultimate Ninja 5 (Europe) (Es,Fr,De,En,It)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Naruto Shippuden - Ultimate Ninja 5 (Europe) (Es,Fr,De,En,It).cso",
+      "coverRelativePath": "ps2/media/revista/Naruto Shippuden - Ultimate Ninja 5 (Europe) (Es,Fr,De,En,It).jpg",
+      "coverSha256": "b21bcf940cb54ec03db8e47e780f605340d0976f5fba4d614fc6ca0011eede6c",
+      "coverBytes": 146304,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "dcec4785f317295f45256c8633d0c8c0",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Naruto Shippuden - Ultimate Ninja 5 (Europe) (Es,Fr,De,En,It).cso",
+        "sizeBytes": 1741172482,
+        "sha256": "ba79e10699e00c86d5867cc1347e97881f87ae7851283b89bd8e23c68d7f7cbc",
+        "format": "raw",
+        "launchPath": "Naruto Shippuden - Ultimate Ninja 5 (Europe) (Es,Fr,De,En,It).cso",
+        "expandedSizeBytes": 1741172482,
+        "fileCount": 1
+      },
+      "contentSha256": "ba79e10699e00c86d5867cc1347e97881f87ae7851283b89bd8e23c68d7f7cbc",
+      "metadata": {
+        "description": "Naruto Shippuden - Ultimate Ninja 5 (Es,Fr,De,En,It), nesta edição para PlayStation 2, adapta personagens e técnicas do anime para uma aventura de ação com identidade visual própria. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_d69b1ff57c377687d16f5346b0ad17b8",
+      "coverId": "cover_d69b1ff57c377687d16f5346b0ad17b8",
+      "name": "Need for Speed - Most Wanted - Black Edition (USA)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Need for Speed - Most Wanted - Black Edition (USA).iso",
+      "coverRelativePath": "ps2/media/revista/Need for Speed - Most Wanted - Black Edition (USA).jpg",
+      "coverSha256": "68ef9592626b7afcdba9e4e0d279ac698b8cdef1a2bee457bcc62ddddc6af03f",
+      "coverBytes": 145196,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "3d535a169f07a4730e2f8528cfd8548e",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Need for Speed - Most Wanted - Black Edition (USA).iso",
+        "sizeBytes": 3702915072,
+        "sha256": "cef019c517de448bfc0e0bf0ae63f74a755937da08eb1240b2243f709b487010",
+        "format": "raw",
+        "launchPath": "Need for Speed - Most Wanted - Black Edition (USA).iso",
+        "expandedSizeBytes": 3702915072,
+        "fileCount": 1
+      },
+      "contentSha256": "cef019c517de448bfc0e0bf0ae63f74a755937da08eb1240b2243f709b487010",
+      "metadata": {
+        "description": "Need for Speed - Most Wanted - Black Edition, nesta edição para PlayStation 2, é voltado a corridas, domínio dos veículos e evolução em pistas ou estradas variadas. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_8beca9ffb61269136733e04c71b6d689",
+      "coverId": "cover_8beca9ffb61269136733e04c71b6d689",
+      "name": "Need for Speed - Underground (Europe) (En,Fr,De,Es,It,Nl,Sv)-006",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Need for Speed - Underground (Europe) (En,Fr,De,Es,It,Nl,Sv)-006.iso",
+      "coverRelativePath": "ps2/media/revista/Need for Speed - Underground (Europe) (En,Fr,De,Es,It,Nl,Sv)-006.jpg",
+      "coverSha256": "9bbc267cb080f4ded589e66e2bc53b99717579f7f4c460036434012062bc0790",
+      "coverBytes": 132445,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "8484d206b29015cf587bb156a149975e",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Need for Speed - Underground (Europe) (En,Fr,De,Es,It,Nl,Sv)-006.iso",
+        "sizeBytes": 2726166528,
+        "sha256": "20b4c16764d74733c1821645b2d8cb7e6051d10adb9ca7c5856ccd80b7b569d1",
+        "format": "raw",
+        "launchPath": "Need for Speed - Underground (Europe) (En,Fr,De,Es,It,Nl,Sv)-006.iso",
+        "expandedSizeBytes": 2726166528,
+        "fileCount": 1
+      },
+      "contentSha256": "20b4c16764d74733c1821645b2d8cb7e6051d10adb9ca7c5856ccd80b7b569d1",
+      "metadata": {
+        "description": "Need for Speed - Underground-006, nesta edição para PlayStation 2, é voltado a corridas, domínio dos veículos e evolução em pistas ou estradas variadas. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_1b956a4cefd9663fecb1cf4104c8a432",
+      "coverId": "cover_1b956a4cefd9663fecb1cf4104c8a432",
+      "name": "Need for Speed - Underground 2 (Europe) (En,Fr,De,Es,It,Nl,Sv,Da)-012",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Need for Speed - Underground 2 (Europe) (En,Fr,De,Es,It,Nl,Sv,Da)-012.iso",
+      "coverRelativePath": "ps2/media/revista/Need for Speed - Underground 2 (Europe) (En,Fr,De,Es,It,Nl,Sv,Da)-012.jpg",
+      "coverSha256": "c72623c086c7ac1c2c38b17c9a670dd10b2977a82b6ebfd1cd6ede619e9ca22b",
+      "coverBytes": 125982,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "b6ed1c618e3def3db83e6905595826ed",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Need for Speed - Underground 2 (Europe) (En,Fr,De,Es,It,Nl,Sv,Da)-012.iso",
+        "sizeBytes": 4097146880,
+        "sha256": "936f5ecd5bb9eb4d8b4b1400bd72bf2f43c99c00635c6853190301d5c56b693f",
+        "format": "raw",
+        "launchPath": "Need for Speed - Underground 2 (Europe) (En,Fr,De,Es,It,Nl,Sv,Da)-012.iso",
+        "expandedSizeBytes": 4097146880,
+        "fileCount": 1
+      },
+      "contentSha256": "936f5ecd5bb9eb4d8b4b1400bd72bf2f43c99c00635c6853190301d5c56b693f",
+      "metadata": {
+        "description": "Need for Speed - Underground 2-012, nesta edição para PlayStation 2, é voltado a corridas, domínio dos veículos e evolução em pistas ou estradas variadas. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_b06b945542f498c7f94c0241c54b9ef3",
+      "coverId": "cover_b06b945542f498c7f94c0241c54b9ef3",
+      "name": "Resident Evil 4 (Dublado) (BR)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/RESIDENT 4 DUBLADO.iso",
+      "coverRelativePath": "ps2/media/revista/RESIDENT 4 DUBLADO.jpg",
+      "coverSha256": "91429ec52fe764561549a9c45b666c894176236b3d1b54f741a8e5dd323c1af3",
+      "coverBytes": 101064,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "3012f1a4ee265ef1fdbd59609b1baa78",
+      "matchRule": "reviewed_title_alias",
+      "artifact": {
+        "fileName": "RESIDENT 4 DUBLADO.iso",
+        "sizeBytes": 3988193280,
+        "sha256": "7b2872b4a8c742960560722bd33375cbc67f8714988910c9d86df538b2e67dba",
+        "format": "raw",
+        "launchPath": "RESIDENT 4 DUBLADO.iso",
+        "expandedSizeBytes": 3988193280,
+        "fileCount": 1
+      },
+      "contentSha256": "7b2872b4a8c742960560722bd33375cbc67f8714988910c9d86df538b2e67dba",
+      "metadata": {
+        "description": "Resident Evil 4 (Dublado), nesta edição para PlayStation 2 • BR, constrói uma experiência de suspense e sobrevivência com exploração cuidadosa e atmosfera marcante. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_8dc2e6e40fb694b358ec724c6a88da4a",
+      "coverId": "cover_8dc2e6e40fb694b358ec724c6a88da4a",
+      "name": "Resident Evil - Code - Veronica X (Europe) (En,Fr,De,Es)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Resident Evil - Code - Veronica X (Europe) (En,Fr,De,Es).cso",
+      "coverRelativePath": "ps2/media/revista/Resident Evil - Code - Veronica X (Europe) (En,Fr,De,Es).jpg",
+      "coverSha256": "ede9d98f41b8e56df136d36efaf9f9b61ee726ead2d2bc0ecf60389ea58284cf",
+      "coverBytes": 113346,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "e8ea8fa4181679a41e28f75423c51ef0",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Resident Evil - Code - Veronica X (Europe) (En,Fr,De,Es).cso",
+        "sizeBytes": 3351763320,
+        "sha256": "2a6c6e228d09a32dd849420802e53b9dba04b27806acfd6a3980b2b5f9f29234",
+        "format": "raw",
+        "launchPath": "Resident Evil - Code - Veronica X (Europe) (En,Fr,De,Es).cso",
+        "expandedSizeBytes": 3351763320,
+        "fileCount": 1
+      },
+      "contentSha256": "2a6c6e228d09a32dd849420802e53b9dba04b27806acfd6a3980b2b5f9f29234",
+      "metadata": {
+        "description": "Resident Evil - Code - Veronica X, nesta edição para PlayStation 2, constrói uma experiência de suspense e sobrevivência com exploração cuidadosa e atmosfera marcante. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_25a2c8351bd788ae0d3314400fde0ac1",
+      "coverId": "cover_25a2c8351bd788ae0d3314400fde0ac1",
+      "name": "Silent Hill - Shattered Memories (Europe) (En,Fr,De,Es,It)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Silent Hill - Shattered Memories (Europe) (En,Fr,De,Es,It).cso",
+      "coverRelativePath": "ps2/media/revista/Silent Hill - Shattered Memories (Europe) (En,Fr,De,Es,It).jpg",
+      "coverSha256": "3f161fd18f7feccf28a65cc77dc5d74a806ff84a01a73308e4c2518b19616d04",
+      "coverBytes": 118949,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "2df9f204698413e4da7a5c28bfb8ca29",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Silent Hill - Shattered Memories (Europe) (En,Fr,De,Es,It).cso",
+        "sizeBytes": 1214141318,
+        "sha256": "7dc424762da08823c92bdcf022db96b7c229e5d9cf114c7c5d4c966529fdfc15",
+        "format": "raw",
+        "launchPath": "Silent Hill - Shattered Memories (Europe) (En,Fr,De,Es,It).cso",
+        "expandedSizeBytes": 1214141318,
+        "fileCount": 1
+      },
+      "contentSha256": "7dc424762da08823c92bdcf022db96b7c229e5d9cf114c7c5d4c966529fdfc15",
+      "metadata": {
+        "description": "Silent Hill - Shattered Memories, nesta edição para PlayStation 2, constrói uma experiência de suspense e sobrevivência com exploração cuidadosa e atmosfera marcante. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_6a62a64aeb4125b6d8929135e9d3e388",
+      "coverId": "cover_6a62a64aeb4125b6d8929135e9d3e388",
+      "name": "Soulcalibur III (USA)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Soulcalibur III (USA).iso",
+      "coverRelativePath": "ps2/media/revista/Soulcalibur III (USA).jpg",
+      "coverSha256": "933002513b32d1b7fcbde4240e9eb2c9bde0ac3929f3e6f1e9d8eaa53bf8a936",
+      "coverBytes": 137626,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "b3bd553383672b11d663477484d4a90b",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Soulcalibur III (USA).iso",
+        "sizeBytes": 4384325632,
+        "sha256": "92e578c32f7e29cd70d3428ef72d91b717bb532085a69ef0cdf7c842f7a6ce48",
+        "format": "raw",
+        "launchPath": "Soulcalibur III (USA).iso",
+        "expandedSizeBytes": 4384325632,
+        "fileCount": 1
+      },
+      "contentSha256": "92e578c32f7e29cd70d3428ef72d91b717bb532085a69ef0cdf7c842f7a6ce48",
+      "metadata": {
+        "description": "Soulcalibur III, nesta edição para PlayStation 2, é centrado em luta competitiva, elenco próprio e domínio de golpes e combinações. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_036955f44e8422c68ceb8c674ad2433f",
+      "coverId": "cover_036955f44e8422c68ceb8c674ad2433f",
+      "name": "Street Fighter EX3 (USA)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Street Fighter EX3 (USA).cso",
+      "coverRelativePath": "ps2/media/revista/Street Fighter EX3 (USA).jpg",
+      "coverSha256": "6491f7414530f2804b55f5016c00e07e00b8f98f44f8dcb4c15b376ed5d432d4",
+      "coverBytes": 109609,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "1648d9220c6d1761ec2497f2e7214c5f",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Street Fighter EX3 (USA).cso",
+        "sizeBytes": 419605838,
+        "sha256": "f4cd5e1474c212ab554fe31145c1164d9bfd38c52337d1a2d911a068b1675c1a",
+        "format": "raw",
+        "launchPath": "Street Fighter EX3 (USA).cso",
+        "expandedSizeBytes": 419605838,
+        "fileCount": 1
+      },
+      "contentSha256": "f4cd5e1474c212ab554fe31145c1164d9bfd38c52337d1a2d911a068b1675c1a",
+      "metadata": {
+        "description": "Street Fighter EX3, nesta edição para PlayStation 2, é centrado em luta competitiva, elenco próprio e domínio de golpes e combinações. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    },
+    {
+      "itemId": "station_cdd601d3875ab3d5bde38fc8a61db05c",
+      "coverId": "cover_cdd601d3875ab3d5bde38fc8a61db05c",
+      "name": "Tekken 5 (USA)",
+      "platform": "ps2",
+      "revision": 29,
+      "romRelativePath": "ps2/Tekken 5 (USA).iso",
+      "coverRelativePath": "ps2/media/revista/Tekken 5 (USA).jpg",
+      "coverSha256": "7fef98bb613bb89c8ae52ba601758c30fdf07d3b2deafad63c3d66e1cda751bb",
+      "coverBytes": 136270,
+      "coverOrigin": "catalogo-turborama-local",
+      "catalogId": "214ce20bf226e2f1795d799faeec9c90",
+      "matchRule": "exact_title_same_platform",
+      "artifact": {
+        "fileName": "Tekken 5 (USA).iso",
+        "sizeBytes": 4483547136,
+        "sha256": "a4bf7db314137b8238578a544fe960221da3040f3f4fd4f493de4bb7ef24d7fc",
+        "format": "raw",
+        "launchPath": "Tekken 5 (USA).iso",
+        "expandedSizeBytes": 4483547136,
+        "fileCount": 1
+      },
+      "contentSha256": "a4bf7db314137b8238578a544fe960221da3040f3f4fd4f493de4bb7ef24d7fc",
+      "metadata": {
+        "description": "Tekken 5, nesta edição para PlayStation 2, é centrado em luta competitiva, elenco próprio e domínio de golpes e combinações. A experiência reúne cenários, progressão e desafios ligados à proposta central do jogo. Sua identidade visual e o ritmo característico permanecem em destaque. O nome original e a arte própria permitem reconhecer imediatamente este título no carrossel. Esta entrada descreve somente o jogo selecionado, sem reutilizar o texto de outro pacote.",
+        "developer": "",
+        "publisher": "",
+        "genre": "",
+        "players": "",
+        "releaseDate": ""
+      },
+      "rawSameInode": true
+    }
+  ],
+  "metadataSources": {
+    "Black": "https://www.ea.com/ea-studios/criterion-games/games",
+    "Donkey Kong Country Returns HD": "https://www.nintendo.com/en-ca/store/products/donkey-kong-country-returns-hd-switch/",
+    "Mario Kart 8 Deluxe": "https://mariokart8.nintendo.com/",
+    "Yu-Gi-Oh EARLY DAYS COLLECTION": "https://www.konami.com/yugioh/earlydayscollection/us/en/"
+  },
+  "generatedArtwork": {
+    "mode": "built-in image_gen",
+    "assets": [
+      {
+        "game": "BOMBA PATCH 2026",
+        "prompt": "Crie uma capa vertical 2:3 de jogo para a coleção TURBORAMA, acompanhando fielmente o modelo visual da imagem de referência de PlayStation 2: moldura preta metálica com filetes azul elétrico, logotipo prateado TURBORAMA no topo, COLLECTION abaixo, faixa PLAYSTATION 2, grande título legível e exato BOMBA PATCH 2026. A referência serve exclusivamente para estilo, moldura, hierarquia e rodapé. Substitua totalmente a arte de BLACK, as balas e a caixa de BLACK por um cenário de futebol brasileiro com jogadores adultos em uniformes amarelo, verde, azul e branco, uma bola, um estádio cheio iluminado, gramado e ação esportiva. Caixa de jogo PS2 em perspectiva no canto inferior esquerdo com a MESMA nova arte e o texto BOMBA PATCH 2026. Selo circular no canto inferior direito com QUALIDADE PREMIUM. No rodapé use os ícones e textos DOWNLOAD COM RETOMADA e INSTALAÇÃO ORGANIZADA, e um escudo de check. Não inclua BLACK, armas, balas, rostos de jogadores reais, classificações etárias ou marcas de times. Todos os textos em português exatamente como pedidos, nítidos; toda a composição deve caber dentro da moldura, sem cortes. Imagem final profissional seguindo a família das capas Turborama existente.",
+        "reference": "catalogo-turborama:acf4c116950c9382a0dcbc4dd3489c40 (BLACK, PlayStation2 frame reference)",
+        "finalFile": "ps2/media/revista/BOMBA PATCH 2026.jpg"
+      }
+    ]
+  },
+  "scannerSourceHashes": {
+    "atualizar-biblioteca-station.py": "80409dcd3fb6b2198545670ca2c161015a13c63caaebf753985154c4637ce7c9",
+    "station_packages.py": "8eb390e8f3a5d55492c39971a2026f8d12122d1249973457c72803b8dee1638e"
+  },
+  "actualTimerRun": {
+    "start": "2026-10-10 15:04:36 -03",
+    "finish": "2026-10-10 15:04:40 -03",
+    "result": "success",
+    "exitStatus": 0,
+    "revision": 29,
+    "changed": false,
+    "added": 0,
+    "updated": 0,
+    "visible": 3621,
+    "execStart": "/opt/turborama-station-library-ps2-switch-20261010-cc27d80b3ae6/atualizar-biblioteca-station.py",
+    "timerActive": true
+  }
+}

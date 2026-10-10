@@ -209,7 +209,7 @@
     "clientRequirement": "Serialize polling; settle previous requests/cancellation before replacing a polling worker. Handle returned error code and Retry-After."
   },
   "coverDelivery": {
-    "catalogRevision": 28,
+    "catalogRevision": 29,
     "format": "image/jpeg",
     "width": 480,
     "height": 720,
@@ -220,5 +220,36 @@
     "sourceOriginalsBackedUp": true,
     "newApkRequiredForThisDataChange": false,
     "receipt": "capas-padronizadas-20261010.json"
+  },
+  "catalogData": {
+    "revision": 29,
+    "indexedItems": 3876,
+    "visibleItems": 3621,
+    "normalizedCatalogPlatforms": 16,
+    "catalogLabels": 18,
+    "onlineServerPlatforms": 15,
+    "catalogPath": "/v1/station/catalog?metadata=1",
+    "artifactDescriptorSource": "signed /v1/station/downloads/authorize response",
+    "newPlatform": {
+      "id": "ps2",
+      "folder": "ps2",
+      "catalogAndDownloadsReady": true,
+      "formats": [
+        ".iso",
+        ".cso"
+      ],
+      "onlineServerReady": false,
+      "clientPlatformMappingAlreadyPresent": true
+    },
+    "switchRoot": "switch",
+    "switchItems": 4,
+    "newRawFormats": [
+      ".iso",
+      ".cso",
+      ".nsp",
+      ".xci"
+    ],
+    "rawClientHandling": "Save the exact single file at launchPath with its original extension; no ZIP extraction, forced ISO conversion or per-download body verification was added.",
+    "receipt": "ps2-switch-publicados-20261010.json"
   }
 }

@@ -110,6 +110,10 @@ def compile_cover(source, temporary):
     else:
         with Image.open(source) as original:
             if original.width * original.height > 40_000_000: raise ValueError('cover dimensions too large')
+            if original.format == 'JPEG' and original.mode == 'RGB' and original.size == (480, 720) and original.getexif().get(274, 1) == 1:
+                original.load()
+                shutil.copyfile(source, temporary)
+                return
             image = ImageOps.exif_transpose(original).convert('RGB')
             if image.size != (480, 720):
                 # Fit the complete image; never crop a game cover or change its proportions.
@@ -311,6 +315,7 @@ def publish(config, bootstrap=False, on_progress=None):
         previous = json.loads((index_path if index_path.exists() else Path(config['baseIndex'])).read_text())
         identities = content_identities(config.get('contentIdentityRegistry'))
         rows = {row['itemId']: row for row in previous['items']}
+        verified_raw = {}
         state = json.loads(state_path.read_text()) if state_path.exists() else {'sources': {}, 'observations': {}}
         if not state['sources']:
             for entry in json.loads(Path(config['seedSourceMap']).read_text())['items']:
@@ -332,6 +337,9 @@ def publish(config, bootstrap=False, on_progress=None):
             catalog_games = catalog_seed(folder, spec)
             report['missingXmlRoms'] += missing
             mode = spec.get('artifactMode', 'single-rom')
+            readonly_raw = spec.get('rawStorage') == 'readonly-hardlink'
+            if spec.get('rawStorage') not in (None, 'readonly-hardlink') or (readonly_raw and (mode != 'single-rom' or spec.get('copyRawOnce') is not True)):
+                raise ValueError('invalid raw storage policy')
             if mode not in {'single-rom', 'arcade-set', 'chd-disc', 'cue-disc', 'wiiu-folder'}:
                 raise ValueError('unknown platform artifact mode')
             game_home = Path(spec.get('artifactDirectory', str(home / 'games')))
@@ -435,6 +443,7 @@ def publish(config, bootstrap=False, on_progress=None):
                     elif candidates: source_cover, _, _ = select_revista_cover(folder, rom, magazine)
                     with tempfile.TemporaryDirectory(prefix='.build-', dir=game_home) as tmp:
                         tmp = Path(tmp)
+                        raw_prepared = False
                         if mode == 'arcade-set':
                             game_source, descriptor = prepare_arcade_artifact(rom, tmp / rom.name, companions)
                         elif mode == 'chd-disc':
@@ -448,7 +457,8 @@ def publish(config, bootstrap=False, on_progress=None):
                             game_source, descriptor = prepare_package(rom, tmp / temporary_name, mode,
                                                                       load_module('preparar-indice-artefatos').describe)
                         elif spec.get('copyRawOnce') and rom.suffix.lower() not in {'.zip', '.7z', '.rar'}:
-                            game_source, descriptor = prepare_raw(rom, tmp / rom.name)
+                            game_source, descriptor = prepare_raw(rom, tmp / rom.name, readonly_hardlink=readonly_raw)
+                            raw_prepared = True
                         else:
                             game_source, descriptor = prepare_artifact(rom, tmp / rom.name, set(spec['extensions']), override.get('launchPath'))
                         cover_tmp = tmp / 'cover.jpg'; compile_cover(source_cover, cover_tmp)
@@ -473,7 +483,7 @@ def publish(config, bootstrap=False, on_progress=None):
                         cover_hash = digest(cover_tmp); cover_target = cover_dir / (cover_hash+'.jpg')
                         if not cover_target.exists(): shutil.copyfile(cover_tmp, cover_target)
                         for p in (game_dir.parent, game_dir, target, cover_dir, cover_target):
-                            p.chmod(0o750 if p.is_dir() else 0o640)
+                            p.chmod(0o750 if p.is_dir() else (0o444 if p == target and readonly_raw and raw_prepared else 0o640))
                             if gid is not None: os.chown(p, -1, gid)
                         if stamp(rom) != stamp_rom or [[str(p.relative_to(folder)), stamp(p)] for p in sorted(candidates)] != cover_stamp:
                             raise ValueError('source changed while compiling')
@@ -492,6 +502,10 @@ def publish(config, bootstrap=False, on_progress=None):
                                        coverPath=str(cover_target), artifact=descriptor, catalogVisible=old.get('catalogVisible', True) if old else True,
                                        metadata=metadata(game, override), folderPath=folder_path)
                             rows[item_id] = row
+                            if raw_prepared:
+                                verified_raw[item_id] = dict(itemId=item_id, platform=row['platform'], artifactSha256=descriptor['sha256'],
+                                    launchPath=descriptor['launchPath'], expandedSizeBytes=descriptor['expandedSizeBytes'],
+                                    fileCount=1, contentSha256=descriptor['sha256'])
                             report['updated' if old else 'added'] += 1
                         state['sources'][key] = {'ids': ids, 'fingerprint': fingerprint}
                         report['placeholderCovers'] += source_cover is None
@@ -520,7 +534,11 @@ def publish(config, bootstrap=False, on_progress=None):
                 artifact=row.get('artifact',{});entry=identities.get(row['itemId'])
                 if entry and entry['platform']==row['platform'] and entry['artifactSha256']==artifact.get('sha256') and all(entry[k]==artifact.get(k) for k in ('launchPath','expandedSizeBytes','fileCount')):continue
                 try:
-                    identities[row['itemId']]=bind_set(row,binder.bind(row,row['filePath']))
+                    # A newly prepared raw body already has a complete hash and
+                    # stable stat proof. Its launch payload is that same body.
+                    # ZIP/CUE/RPX identities retain the independent binder.
+                    checked = verified_raw.get(row['itemId'])
+                    identities[row['itemId']]=bind_set(row,checked if checked is not None else binder.bind(row,row['filePath']))
                 except (binder.ValidationError,ValueError,OSError,zipfile.BadZipFile) as error:
                     report.setdefault('onlineIdentityPending',[]).append({'itemId':row['itemId'],'reason':type(error).__name__})
             document=dict(schemaVersion=2,entries=sorted(identities.values(),key=lambda row:row['itemId']))
