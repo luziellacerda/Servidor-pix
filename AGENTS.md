@@ -1,3 +1,13 @@
+# Station: servidor das 17 plataformas concluído — 10/10/2026
+
+Leia o MESMO HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e online-plataformas-20261009/ps2-saturn-servidor-20261010.json. PS2/Saturn agora têm política online, teto2 e cadastro dos motores por dados. SNES5; Mega2; N64/Dreamcast/GameCube/Wii/WiiU4; demais2, respeitando os modos. Catálogo31: 3895IDs/3640visíveis/255aliases, identidades3895; perfis5176/5169aprovados preservados. 320jogos/321modos preparados. Saturn foi movida de snes/saturn para raiz/saturn com19jogos:17CHDraw/2ZIPcomCUE e todas as faixas,19capas de revista/34de catálogo JPEG480×720,16artes locais/3imagegen. SNES:1366chaves automáticas/1619capas existentes,12ambíguas excluídas. Nenhuma sinopse/perfil/ROM antiga perdida.
+
+API ativa DLL1717ac5ecec9, fonte33cdb982; importador fonte37a767f. A ativação reiniciou somente Station, com zero salas/conexões. Confirme o estado atual antes de qualquer ação; sessões são dinâmicas. HTTPS assinada confirmou as17políticas, catálogo e mídia; sombra855v3/C#1292/TLS172/Python16 passaram. Chaves/licenças/esquema/configs antigas/outros produtos preservados. Túnel/proxy/firewall inalterados. Não reaplicar operadores datados. Cópia anterior publicada nosdoisGits: backup/station-antes-online-ps2-saturn-20261010 e tag equivalente. Worktrees anteriores com CRLF de R71/R78 foram preservados.
+
+Próxima etapa do APK: motores/adaptadores reais Dreamcast/GC/Wii/WiiU/Switch/PS2/Saturn e testes nos aparelhos. serverReady não é onlineAvailable. PS2 Play!/LRPS2 não declaram netplay; Saturn Beetle exige adaptador Station/BIOS legítima. Não inventar hashes nem reutilizar PSX para PS2. Java212/D8 recompilados; clientDEXe720 inalterado/roomsDEX04eb novo; nenhum APK completo assinado/instalado. Suíte/painel/clientes de outros produtos ficam preservados. Mesmo documento e dados espelhados nosdoisrepos.
+
+## Histórico preservado
+
 # PS2/Switch e catálogo 29 aplicados — 10/10/2026
 
 Leia o MESMO HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md, seção PS2/Switch, e online-plataformas-20261009/ps2-switch-publicados-20261010.json. PS2 está na raiz/ps2 com 25 jogos ISO/CSO. Switch está na raiz/switch com quatro jogos; Pokémon anterior preservado. Catálogo 29: 3.876 IDs / 3.621 visíveis / 255 aliases; identidades 3.876. As 28 capas novas são JPEG 480×720: 27 artes locais e uma Bomba Patch via image_gen. PS2 tem 108 artes de cadastro e 109 chaves automáticas. Todas as 5.934 capas de origem estão no padrão; 3.876 capas de API são JPEG 480×720. Cache app: coverId + revisão; quatro workers.

@@ -10118,6 +10118,15 @@
       "contentSha256": "0eb1543633c61e4317373e1fead2e4b6e9910e24de779931899f20d884ee15ff"
     },
     {
+      "itemId": "station_0ae610b0db20123859e7af2d8307957b",
+      "platform": "saturn",
+      "artifactSha256": "1e9221fcbca14df48721e8e584ecb5018017f635b3fb338bcfa1594791702ec2",
+      "launchPath": "Panzer Dragoon II Zwei.chd",
+      "expandedSizeBytes": 329491289,
+      "fileCount": 1,
+      "contentSha256": "1e9221fcbca14df48721e8e584ecb5018017f635b3fb338bcfa1594791702ec2"
+    },
+    {
       "itemId": "station_0b05a834597b2303d97d365b9cd85d91",
       "platform": "snes",
       "artifactSha256": "9e1a39aaf3585af0d6a5d79de3c35fcfe030c34bd4b09606a6fb8c7def19340b",
@@ -15870,6 +15879,15 @@
       "contentSha256": "7fe0a3054927f30bf52be1928e7cc654500476e9d1b6553ee904edf18d30eda7"
     },
     {
+      "itemId": "station_4367d6e2b051382118ef0978c22e2ed6",
+      "platform": "saturn",
+      "artifactSha256": "32e529f6b794e0afab8ca88474a30348d8aae41a36c884dbf1a867bad2d46ae8",
+      "launchPath": "Sonic R.chd",
+      "expandedSizeBytes": 440285133,
+      "fileCount": 1,
+      "contentSha256": "32e529f6b794e0afab8ca88474a30348d8aae41a36c884dbf1a867bad2d46ae8"
+    },
+    {
       "itemId": "station_436e169efbd040b394b349c382a54777",
       "platform": "fbneo",
       "artifactSha256": "c69d5066f394c68e9f9727e57f726df67d4cbdb5f9838bc26ad28db6bf2682be",
@@ -16120,6 +16138,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "1a9e3daa0c6963754ab57ddd791b054989c89d89010f0d3ab846aec5842879a1"
+    },
+    {
+      "itemId": "station_45fff6551aa4eb739946c9564193ec6c",
+      "platform": "saturn",
+      "artifactSha256": "61ff0909c5d1b87129cf6ec6cbb797e0dfbe5298a5ef9279f3df5b5219e3dc03",
+      "launchPath": "Mega Man 8 (USA).chd",
+      "expandedSizeBytes": 213319203,
+      "fileCount": 1,
+      "contentSha256": "61ff0909c5d1b87129cf6ec6cbb797e0dfbe5298a5ef9279f3df5b5219e3dc03"
     },
     {
       "itemId": "station_46196475b1d5c297775454ac27fd2f6d",
@@ -19039,6 +19066,15 @@
       "contentSha256": "a8239355631d303ecebfd43fc14e80f148e4ac9937234e29cc87d6f939b033a0"
     },
     {
+      "itemId": "station_639efd166e97fa8479a418d8a83b56b0",
+      "platform": "saturn",
+      "artifactSha256": "20aea94f5d95a8b1e2e564d77f92e4e206d998cdd2bbf53a985e80b38821fa2c",
+      "launchPath": "Ultimate Mortal Kombat 3 (USA).chd",
+      "expandedSizeBytes": 211905642,
+      "fileCount": 1,
+      "contentSha256": "20aea94f5d95a8b1e2e564d77f92e4e206d998cdd2bbf53a985e80b38821fa2c"
+    },
+    {
       "itemId": "station_63a99e72e37013e6b2f7c37011af236b",
       "platform": "fbneo",
       "artifactSha256": "e4365dc218ed87c46a3f28f210c4128ffc2f55ed5e9cc3c90a1ca1158301023d",
@@ -20101,6 +20137,15 @@
       "contentSha256": "d4f2cb6b209db29f7aec62e5a23846681c14665fb007e94d7bcfc7b5611e938b"
     },
     {
+      "itemId": "station_6edde8121d6500a8cf6a0acad1fbc46b",
+      "platform": "saturn",
+      "artifactSha256": "c5600a7da32635b748eb1cd8fa451c88acd12675a982d73cac1e477d44814dc9",
+      "launchPath": "Guardian Heroes.chd",
+      "expandedSizeBytes": 382530170,
+      "fileCount": 1,
+      "contentSha256": "c5600a7da32635b748eb1cd8fa451c88acd12675a982d73cac1e477d44814dc9"
+    },
+    {
       "itemId": "station_6f08c23ce2d13f6757d2e799b6dfec29",
       "platform": "fbneo",
       "artifactSha256": "621319c8a0ff13f00c9ad4917156c45215addccd47232e57a48a345bb2514df6",
@@ -21019,6 +21064,16 @@
       "contentSha256": "2a281e22b8190c0cc1ad1328bee8caac01bf3792af533a8dc7f53e96987ccf9d"
     },
     {
+      "itemId": "station_7926a4f45b3c1593bdf5fa611b1b53c1",
+      "platform": "saturn",
+      "artifactSha256": "eb74f42dce66734e2b7bca732a59808224cabae88f9ba67736b6cede3f8af85b",
+      "launchPath": "Bug! (Europe).cue",
+      "expandedSizeBytes": 266143745,
+      "fileCount": 74,
+      "contentSha256": "1a3a2a1e993ea349b5788b7fcdd8bef0a586d1e27794a22eb578887b52ec2f06",
+      "contentIdentityScheme": "cue-set-v1"
+    },
+    {
       "itemId": "station_792e43445bed0faa5a01b1590b457b41",
       "platform": "dreamcast",
       "artifactSha256": "33e20a84888dbf6d5c46f15bd4959058dd43bdcbe21738568e9c82b6fc00b92a",
@@ -21035,6 +21090,15 @@
       "expandedSizeBytes": 514019382,
       "fileCount": 1,
       "contentSha256": "25f482ed6d83869493886cd8a06354c9c87473cacabd6b75a71784ab6ff21ece"
+    },
+    {
+      "itemId": "station_794e193f86bcbc70194efc56128d5629",
+      "platform": "saturn",
+      "artifactSha256": "27d67ffd100670c39e36f12ed7d4fe73ab0c55da72052e87053c3d384bf285b7",
+      "launchPath": "Panzer Dragoon.chd",
+      "expandedSizeBytes": 446615304,
+      "fileCount": 1,
+      "contentSha256": "27d67ffd100670c39e36f12ed7d4fe73ab0c55da72052e87053c3d384bf285b7"
     },
     {
       "itemId": "station_7950304a432ad601a0fa8c14c694a255",
@@ -21629,6 +21693,15 @@
       "expandedSizeBytes": 16777216,
       "fileCount": 1,
       "contentSha256": "535c6b9430f74e36e1347f20e656eeb662af699c40a868e1d4a6bdd3c577f7d4"
+    },
+    {
+      "itemId": "station_7fbb149b631dd3cfe1f3ecb1e43bf4a1",
+      "platform": "saturn",
+      "artifactSha256": "6cd3cddcc2ee25c9df97215eb5486318ad5ce204c9801e34443adeccdeb7228c",
+      "launchPath": "Castlevania Symphony of the Night.chd",
+      "expandedSizeBytes": 333542694,
+      "fileCount": 1,
+      "contentSha256": "6cd3cddcc2ee25c9df97215eb5486318ad5ce204c9801e34443adeccdeb7228c"
     },
     {
       "itemId": "station_7fbdad2753d5bf37ad9e3820eb89a241",
@@ -22484,6 +22557,15 @@
       "expandedSizeBytes": 1048576,
       "fileCount": 1,
       "contentSha256": "3dff3513ae6acb85a02b00b9f5adb4757ab97661993bded4f329127a792cef87"
+    },
+    {
+      "itemId": "station_8695736b7d88faec5238e63cb7c22edd",
+      "platform": "saturn",
+      "artifactSha256": "1e3cbcc31d22c71d05f4ab6b229e7664ce4d62349db3364b1f3b4fac03e690b8",
+      "launchPath": "Dragon Force.chd",
+      "expandedSizeBytes": 293010265,
+      "fileCount": 1,
+      "contentSha256": "1e3cbcc31d22c71d05f4ab6b229e7664ce4d62349db3364b1f3b4fac03e690b8"
     },
     {
       "itemId": "station_869d2bfa4a45a7515eb46bd9b5367c3e",
@@ -23423,6 +23505,16 @@
       "contentSha256": "f0913358cb0870c3dcc7f0c0d2d69704874c31a113150eda668c95024c0d6fd9"
     },
     {
+      "itemId": "station_8ea246d8199f466fc089f824a0b07728",
+      "platform": "saturn",
+      "artifactSha256": "63dd86f1e406648ae95934d60b42fc2c61f3f8a1dff7c9f2cf0e8f4be6576f4e",
+      "launchPath": "Rayman (Europe) (En,Fr,De) (1S).cue",
+      "expandedSizeBytes": 666158664,
+      "fileCount": 52,
+      "contentSha256": "9df7d38fc33b8eb31c8ff9c6a894cafbd54b82a0eaa512f9147d5529ec7121b5",
+      "contentIdentityScheme": "cue-set-v1"
+    },
+    {
       "itemId": "station_8eaeeee8b0f086ef1148a6482d2b1d89",
       "platform": "cps2",
       "artifactSha256": "593883beb9cb842dc6a68509767be03d39a548ead1f9f0b4eebd847b538b9d24",
@@ -23774,6 +23866,15 @@
       "contentSha256": "414695b0824cbe879a1c0d3737e90743e00ae1d15eeda2a1ecec7a8777f4ca3b"
     },
     {
+      "itemId": "station_92054f4ac7e67c2d6992d064783860bf",
+      "platform": "saturn",
+      "artifactSha256": "77808de5377a03bb25694bea6bdb25444274ec215556049a4acedcefd5d33626",
+      "launchPath": "Resident Evil (USA).chd",
+      "expandedSizeBytes": 404652332,
+      "fileCount": 1,
+      "contentSha256": "77808de5377a03bb25694bea6bdb25444274ec215556049a4acedcefd5d33626"
+    },
+    {
       "itemId": "station_921bc37a5c9c0b06f44b8e6e3c844592",
       "platform": "snes",
       "artifactSha256": "0838e531fe22c077528febe14cb3ff7c492f1f5fa8de354192bdff7137c27f5b",
@@ -23889,6 +23990,15 @@
       "expandedSizeBytes": 83744879,
       "fileCount": 2,
       "contentSha256": "ff2e3a9cee0d45ac309bd57a1c11ea97621c7d9e0ec3c79e7b1e75db84958fa4"
+    },
+    {
+      "itemId": "station_937ce5e5a3f72cd9405c3452e90ece24",
+      "platform": "saturn",
+      "artifactSha256": "2eac2b55898ff079127ba1726de8075ac86e50c21fadd50a04e9fe5e0521ae9a",
+      "launchPath": "Sonic Jam (USA).chd",
+      "expandedSizeBytes": 380637892,
+      "fileCount": 1,
+      "contentSha256": "2eac2b55898ff079127ba1726de8075ac86e50c21fadd50a04e9fe5e0521ae9a"
     },
     {
       "itemId": "station_937db7d7547c4ad7795dffe79c871a34",
@@ -24519,6 +24629,15 @@
       "expandedSizeBytes": 1761084,
       "fileCount": 2,
       "contentSha256": "cc051d38c4b89ee16888d7a0cc619dd1f9227d253b51f35f42d74911f6697360"
+    },
+    {
+      "itemId": "station_9adc4c902a1d3a65d5238d8078662f07",
+      "platform": "saturn",
+      "artifactSha256": "fffc6b40b07b1c939f88b729081963cb4f366034869d5f1f939ebc4981fff0ee",
+      "launchPath": "Tomb Raider (1996)(U.S. Gold USA)(US) - [4S].chd",
+      "expandedSizeBytes": 256992738,
+      "fileCount": 1,
+      "contentSha256": "fffc6b40b07b1c939f88b729081963cb4f366034869d5f1f939ebc4981fff0ee"
     },
     {
       "itemId": "station_9adf615b12a41a1bfaa768e69db299e0",
@@ -26184,6 +26303,15 @@
       "expandedSizeBytes": 3547139,
       "fileCount": 2,
       "contentSha256": "dcd526310e8ccd4bcf74eee51f4574ccf460e7744aab255f009f902b5de61451"
+    },
+    {
+      "itemId": "station_aa8d223fd7c4c179119627923d6bd4d7",
+      "platform": "saturn",
+      "artifactSha256": "acffa0ca49c043637c38d7d6dfe799bdd1a2dd517270428632b08a63ade910b6",
+      "launchPath": "Christmas NiGHTS into Dreams... (USA).chd",
+      "expandedSizeBytes": 433331363,
+      "fileCount": 1,
+      "contentSha256": "acffa0ca49c043637c38d7d6dfe799bdd1a2dd517270428632b08a63ade910b6"
     },
     {
       "itemId": "station_aaa89c450025497b91fee201157b04fb",
@@ -29516,6 +29644,15 @@
       "contentSha256": "4f7f6073d347cd401a6ca67ece443ffd4c68d3a241017f1cd10a406104f097b4"
     },
     {
+      "itemId": "station_cbe7c154d568ef540159d6d676a12fc0",
+      "platform": "saturn",
+      "artifactSha256": "fa6e6db144f8c3120a5c7f0d3980bffcfa3970e21181f0e798ce5146fdbfb2a1",
+      "launchPath": "NiGHTS Into Dreams... (1996)(Samsung)(KR).chd.chd",
+      "expandedSizeBytes": 357986093,
+      "fileCount": 1,
+      "contentSha256": "fa6e6db144f8c3120a5c7f0d3980bffcfa3970e21181f0e798ce5146fdbfb2a1"
+    },
+    {
       "itemId": "station_cc1bfcaa527c5f160fabde018927d975",
       "platform": "neogeocd",
       "artifactSha256": "6018984fd1b25d18d9b2eb3125ec754dde966a3e9b1c6a3b3bb3a4b20815db81",
@@ -30306,6 +30443,15 @@
       "expandedSizeBytes": 1130190,
       "fileCount": 2,
       "contentSha256": "9a6afe37b7bdeb0fc2786b3afcfacfb993c69f787f4831938465bb750a0d2106"
+    },
+    {
+      "itemId": "station_d2e873691815ed93036029682bd85126",
+      "platform": "saturn",
+      "artifactSha256": "3b3bfba04a42b704e5ce7292395e711f9ea5518ed92d26658d62e9dc295af1c0",
+      "launchPath": "Bomberman.chd",
+      "expandedSizeBytes": 348388259,
+      "fileCount": 1,
+      "contentSha256": "3b3bfba04a42b704e5ce7292395e711f9ea5518ed92d26658d62e9dc295af1c0"
     },
     {
       "itemId": "station_d2ff768761da4735499f059c68585d0d",
@@ -31198,6 +31344,15 @@
       "expandedSizeBytes": 8388608,
       "fileCount": 1,
       "contentSha256": "8882fc99954ba21b5567c93df2ce7a494cf16f60daebb61b14f1f65cac73f6fc"
+    },
+    {
+      "itemId": "station_dbde592a519e8572b810e9e8498929b9",
+      "platform": "saturn",
+      "artifactSha256": "8c62432d027ed99ee10a6c1c753ba13c8afd90624a8b0d345807ad974ecb6197",
+      "launchPath": "Quake (USA).chd",
+      "expandedSizeBytes": 291364055,
+      "fileCount": 1,
+      "contentSha256": "8c62432d027ed99ee10a6c1c753ba13c8afd90624a8b0d345807ad974ecb6197"
     },
     {
       "itemId": "station_dc13c5680ad58a48188fa5173c0dd476",
@@ -33855,6 +34010,15 @@
       "contentSha256": "6b4ef8a233387cf903a867d529ca13697ebad3a72fdd1afcdaf0741fae4ef120"
     },
     {
+      "itemId": "station_f6b304931e362bba25be50d85bb7ee8f",
+      "platform": "saturn",
+      "artifactSha256": "cc85c30d9a8b1cad44b9c84a07cf53dd2de08bef0e353e3a3a595837cea005a2",
+      "launchPath": "Virtua Fighter Remix (USA).chd",
+      "expandedSizeBytes": 388069481,
+      "fileCount": 1,
+      "contentSha256": "cc85c30d9a8b1cad44b9c84a07cf53dd2de08bef0e353e3a3a595837cea005a2"
+    },
+    {
       "itemId": "station_f6d3ca22640c633d9bc719504c43df35",
       "platform": "fbneo",
       "artifactSha256": "97341567454e78394f93e04054e5c1d5ec3c6de1bf4e7e8962ff6db937aec139",
@@ -34456,6 +34620,15 @@
       "expandedSizeBytes": 998895,
       "fileCount": 2,
       "contentSha256": "a1e2e458292ad9a2c534ac8470d01a472c385a96b2f7b44b8378944eb0581176"
+    },
+    {
+      "itemId": "station_fc543b8f5029d0cadf77bad53361918b",
+      "platform": "saturn",
+      "artifactSha256": "b423b57627d750ef75aa537daae82d852b56bc150154e08ae90dd0ee12348ef5",
+      "launchPath": "Virtua Fighter 2 (1995)(Sega of America)(US) - [P1H].chd",
+      "expandedSizeBytes": 409695113,
+      "fileCount": 1,
+      "contentSha256": "b423b57627d750ef75aa537daae82d852b56bc150154e08ae90dd0ee12348ef5"
     },
     {
       "itemId": "station_fc77a212f3b1b2dd9ee477ee4f31c789",

@@ -91,6 +91,16 @@
       "platform": "cps3",
       "maximumPlayers": 2,
       "serverReady": true
+    },
+    {
+      "platform": "ps2",
+      "maximumPlayers": 2,
+      "serverReady": true
+    },
+    {
+      "platform": "saturn",
+      "maximumPlayers": 2,
+      "serverReady": true
     }
   ],
   "platformPolicy": {
@@ -163,10 +173,12 @@
     "wii-four-remotes-v1",
     "wii-co-star-v1",
     "wiiu-four-controllers-v1",
-    "switch-two-controllers-v1"
+    "switch-two-controllers-v1",
+    "ps2-two-controllers-v1",
+    "saturn-two-controllers-v1"
   ],
-  "preparedCatalogItems": 273,
-  "preparedModes": 274,
+  "preparedCatalogItems": 320,
+  "preparedModes": 321,
   "preparedModesFile": "server-prepared-modes.json",
   "futureEngineHashesFabricated": false,
   "nativeAdapterResponsibilities": [
@@ -177,10 +189,10 @@
     "pause/resume all participants with the shared epoch",
     "use the automatic invitation/ticket flow"
   ],
-  "deployment": "applied and verified; see server-ready-deployment.json",
+  "deployment": "applied and authenticated-public-API verified; see ps2-saturn-servidor-20261010.json",
   "androidGameplayValidated": false,
-  "sourceCommit": "eb826d5df17dad51314d265e2cba91b05d1c96cf",
-  "dllSha256": "34fdc4b1ecea3216b3d30e49e003ef32a0520ca36637d186e9daeb369146645d",
+  "sourceCommit": "33cdb9821be9e73b9d3af51869b169f29bdb9e2f",
+  "dllSha256": "1717ac5ecec9131cd53353be608027d533dada773b36f1e952f64fe28027b68d",
   "presencePrerequisite": {
     "path": "/v1/station/online/command",
     "method": "POST",
@@ -222,12 +234,12 @@
     "receipt": "capas-padronizadas-20261010.json"
   },
   "catalogData": {
-    "revision": 29,
-    "indexedItems": 3876,
-    "visibleItems": 3621,
-    "normalizedCatalogPlatforms": 16,
-    "catalogLabels": 18,
-    "onlineServerPlatforms": 15,
+    "revision": 31,
+    "indexedItems": 3895,
+    "visibleItems": 3640,
+    "normalizedCatalogPlatforms": 17,
+    "catalogLabels": 19,
+    "onlineServerPlatforms": 17,
     "catalogPath": "/v1/station/catalog?metadata=1",
     "artifactDescriptorSource": "signed /v1/station/downloads/authorize response",
     "newPlatform": {
@@ -238,8 +250,11 @@
         ".iso",
         ".cso"
       ],
-      "onlineServerReady": false,
-      "clientPlatformMappingAlreadyPresent": true
+      "onlineServerReady": true,
+      "clientPlatformMappingAlreadyPresent": true,
+      "maximumPlayers": 2,
+      "onlineAvailability": "online-engine-pending",
+      "controllerProfile": "ps2-two-controllers-v1"
     },
     "switchRoot": "switch",
     "switchItems": 4,
@@ -250,6 +265,58 @@
       ".xci"
     ],
     "rawClientHandling": "Save the exact single file at launchPath with its original extension; no ZIP extraction, forced ISO conversion or per-download body verification was added.",
-    "receipt": "ps2-switch-publicados-20261010.json"
+    "receipt": "ps2-saturn-servidor-20261010.json",
+    "saturn": {
+      "id": "saturn",
+      "folder": "saturn",
+      "items": 19,
+      "formats": [
+        ".chd",
+        ".cue",
+        ".iso",
+        ".zip",
+        ".7z",
+        ".rar"
+      ],
+      "rawCHD": 17,
+      "normalizedCUEZIP": 2,
+      "onlineServerReady": true,
+      "maximumPlayers": 2,
+      "controllerProfile": "saturn-two-controllers-v1",
+      "biosProvisioned": false
+    }
+  },
+  "importerSourceCommit": "37a767fea4cdf8056da8657a7fa23b98706c56b2",
+  "nativeEngineReferences": [
+    {
+      "platform": "ps2",
+      "url": "https://docs.libretro.com/library/play/",
+      "documentedNetplay": false
+    },
+    {
+      "platform": "ps2",
+      "url": "https://docs.libretro.com/library/lrps2/",
+      "documentedNetplay": false
+    },
+    {
+      "platform": "saturn",
+      "url": "https://docs.libretro.com/library/beetle_saturn/",
+      "documentedNetplay": true,
+      "stationAndroidAdapterPresent": false
+    }
+  ],
+  "automaticCatalogSeeds": {
+    "snes": {
+      "file": "snes/station-catalog-seed.json",
+      "keys": 1366,
+      "sourceRevistaCovers": 1619,
+      "ambiguousKeysExcluded": 12
+    },
+    "saturn": {
+      "file": "saturn/station-catalog-seed.json",
+      "keys": 37,
+      "catalogCovers": 34,
+      "revistaCovers": 19
+    }
   }
 }

@@ -256,7 +256,7 @@
       "platform": "switch",
       "maximumPlayers": 2,
       "automaticRoomIntegrationReady": false,
-      "reason": "O jogo desta coleção não tem modo local confirmado para dois jogadores."
+      "reason": "O motor Switch ainda precisa integrar as salas Station; cada edição deve usar seu modo local correto."
     },
     {
       "platform": "neogeo",
@@ -299,6 +299,18 @@
       "maximumPlayers": 2,
       "automaticRoomIntegrationReady": true,
       "reason": ""
+    },
+    {
+      "platform": "ps2",
+      "maximumPlayers": 2,
+      "automaticRoomIntegrationReady": false,
+      "reason": "A conexão automática do motor PlayStation 2 com estas salas ainda precisa ser integrada."
+    },
+    {
+      "platform": "saturn",
+      "maximumPlayers": 2,
+      "automaticRoomIntegrationReady": false,
+      "reason": "A conexão automática do motor Sega Saturn com estas salas ainda precisa ser integrada."
     }
   ]
 }

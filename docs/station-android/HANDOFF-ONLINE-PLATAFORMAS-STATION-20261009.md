@@ -1,217 +1,90 @@
-# Station: catálogo, capas, downloads e integração online do servidor — 10/10/2026
+# Station: catálogo, capas, downloads e servidor online — 10/10/2026
 
-## PS2 e Nintendo Switch organizados e publicados — 10/10/2026
+## Estado atual confirmado na produção
 
-**Estado atual: catálogo revisão 29**, SHA `b5e4854b69b7c6a35aa2ce0e901d9508f3fd6f490f5b305b7a07c7d740eb7890`, **3.876 IDs / 3.621 visíveis / 255 aliases**. [Lista completa dos 28 jogos novos, capas, descritores e provas públicas](online-plataformas-20261009/ps2-switch-publicados-20261010.json). O catálogo cruzado e as identidades desta mesma entrega foram atualizados; recibos anteriores mantêm os números do dia em que foram produzidos.
+**Servidor concluído para as 17 plataformas solicitadas**, incluindo PS2 e Sega Saturn. A produção do APK pode implementar os motores usando esta mesma entrega. Servidor pronto significa transporte, autenticação, perfis e cadastro; os motores reais e o gameplay nos aparelhos continuam com as dependências indicadas abaixo.
 
-- `snes/ps2` foi recortada para `ps2` na raiz do HD: **25 jogos**, 16 ISO e 9 CSO.
-- `snes/swithc` foi unida à pasta `switch` existente: **4 jogos**. Pokémon Café Mix e seu cadastro anterior foram preservados. Entraram Donkey Kong Country Returns HD, Mario Kart 8 Deluxe e Yu-Gi-Oh Early Days Collection. A pasta com nome incorreto foi removida.
-- **28 capas prontas e associadas**, todas JPEG de 480 × 720: 24 artes PS2 existentes no sistema, 3 artes Switch existentes e Bomba Patch 2026 criada com `image_gen` no mesmo modelo da coleção. Resident Evil 4 Dublado usa a arte PlayStation 2 BR correta. Nenhuma capa provisória ou ausente no lote.
-- PS2 recebeu `media/revista`, 108 artes leves em `media/catalogo`, `gamelist.xml` e 109 chaves em `station-catalog-seed.json`. O importador identifica novos arquivos `.iso`/`.cso` automaticamente; títulos conhecidos recebem a capa/sinopse por dados, sem programar cada jogo. Switch continua com `.nsp`/`.xci` e suas 110 artes de cadastro. Para título desconhecido, fornecer arte com o mesmo nome da ROM em `media/revista` e dados XML/JSON; o cadastro automático não inventa sinopse ou compatibilidade.
+- API ativa: PID **2107490**, NRestarts **0**; release `/opt/turborama-station-ps2-saturn-20261010-1717ac5ecec9-c2831745`.
+- DLL SHA-256 `1717ac5ecec9131cd53353be608027d533dada773b36f1e952f64fe28027b68d`; fonte C# `33cdb9821be9e73b9d3af51869b169f29bdb9e2f`; fonte do importador `37a767fea4cdf8056da8657a7fa23b98706c56b2`.
+- Catálogo **revisão 31 / 3.895 IDs / 3.640 visíveis / 255 aliases**, SHA `d44705f559cc884ccdc63087d662ff8c10425c2677ed0cc1eefc601b9f4522e1`. São 19 rótulos / 17 plataformas normalizadas.
+- **3.895 identidades**, **5.176 perfis / 5.169 aprovados**, preservando os perfis e os 3.876 vínculos de conteúdo anteriores. **320 jogos restantes / 321 modos preparados**.
+- Publicação em `2026-10-10T19:50:05.223558+00:00`: somente Station reiniciado, com zero salas e conexões. HTTPS autenticado confirmou catálogo, as 17 políticas assinadas e amostras de mídia; timer/importador ativo, varredura final sem mudanças. Licenças sintéticas removidas; configurações anteriores, clientes, licenças reais, esquema e outros serviços preservados. Túnel/proxy/firewall inalterados.
 
-### Leitura correta pelo app
+[Recibo atual, jogos Saturn, capas, descritores, cabeçalhos e provas](online-plataformas-20261009/ps2-saturn-servidor-20261010.json). Este é o mesmo handoff; recibos antigos registram seus números e horários históricos.
 
-1. Ler a resposta assinada de `GET /v1/station/catalog?metadata=1`, revisão 29. O `platform` novo é **`ps2`**; Switch continua **`switch`**. `StationPlatforms` já mapeia esses dois valores para as pastas locais `ps2`/`switch`.
-2. Associar pela mesma linha do catálogo: `itemId`, `coverId`, `name`, `metadata.description` e `contentSha256`. Buscar `/v1/station/covers/{coverId}` com os quatro workers e cache `coverId-revision`. As 28 imagens públicas foram confrontadas byte a byte com as artes de `revista`.
-3. Pedir `/v1/station/downloads/authorize` com o `itemId`; usar o descritor `artifact` dessa resposta assinada e o grant em `/v1/station/artifacts/{grantId}`. Os caminhos do HD não são URLs. O contrato devolve **`format:raw` / `fileCount:1`** para esses jogos. Salvar `.iso`, `.cso`, `.nsp` ou `.xci` intacto no `launchPath` original; CSO não vira ZIP e `expandedSizeBytes` representa o arquivo entregue, não uma ISO descomprimida. Nenhuma conversão/checksum extra foi adicionada à etapa de download do telefone.
-4. Catálogo/capas/downloads prontos não comprovam motor nativo ou gameplay Android. Switch mantém a política online já publicada, teto de dois jogadores, aguardando motor real/modo correto. **PS2 foi adicionada ao catálogo, não à política online das 15 plataformas**; transportar jogo online de PS2 exige integrar essa plataforma e o motor no app. Os 5.176 perfis anteriores continuam exatos. Não tentar abrir uma sala PS2 usando motor PSX nem assumir que a quantidade de jogos define vagas.
+## Plataformas e limites do servidor
 
-### Publicação e armazenamento
-
-São **110.630.338.136 bytes** de ROMs novas, com cerca de 19 GiB disponíveis no volume. O importador agora tem a opção explícita `rawStorage:readonly-hardlink`, aplicada somente a PS2/Switch: o arquivo estável passa a root/0444, fica ligado ao armazenamento protegido pelo mesmo inode e é identificado em uma leitura inicial. Não há segunda cópia de 110,6 GB. Para substituir uma ROM, copiar um arquivo novo e substituir o nome na pasta da plataforma; não editar em lugar o arquivo já publicado. Grants anteriores continuam usando o inode anterior. As outras plataformas mantêm suas políticas de armazenamento.
-
-Capas já em JPEG/RGB de 480 × 720 são copiadas sem recompressão. Todas as **5.934 imagens** das pastas `revista`/`catalogo` continuam no padrão leve. O arquivo original de Bomba Patch, o prompt e backups ficam fora da mídia monitorada; a arte final está em `ps2/media/revista/BOMBA PATCH 2026.jpg`. Prompt/modelo/caminhos finais constam no relatório.
-
-Sete testes reais passaram, inclusive na proteção systemd usada pelo scanner: mesmo inode, troca de origem preservando download, recusa de escritor aberto, links graváveis, symlink e outro volume; cópia padrão preservada. Qualificação em sombra e segunda varredura sem mudanças passaram. A API pública autenticada confirmou os 3.621 itens, 28 capas e amostras de 8 MiB dos quatro formatos; essas amostras não são download completo ou gameplay Android. Licença sintética removida. **API permaneceu com PID 1820513/NRestarts 0**, sem reiniciar ou cancelar salas. Timer/importador retomados. A execução real de 10/10 às 15:04:36–15:04:40 retornou `revision=29`, `changed=false`, `added=0`, `updated=0`, `visible=3621`, status zero, usando a fonte nova. Não houve reconstrução dos jogos na varredura.
-
-Cópia estável anterior publicada nos dois Gits antes da alteração: branch `backup/station-antes-ps2-switch-20261010`, tag `backup-station-antes-ps2-switch-20261010` (servidor 8ff2ef3 / app 716620d). Backup privado do lote: `/mnt/DADOS/station-ps2-switch-20261010/backup-retry2`. O operador local datado já foi aplicado; não executar novamente `apply.py` nem operadores históricos.
-
-### Fontes de metadados revisados
-
-BLACK é tiro em primeira pessoa; o sufixo local `-007` era tratado indevidamente como James Bond no XML de origem. A correção foi aplicada apenas ao novo cadastro PS2. [Criterion/EA](https://www.ea.com/ea-studios/criterion-games/games). Os novos textos Switch identificam as edições específicas: [Donkey Kong Country Returns HD](https://www.nintendo.com/en-ca/store/products/donkey-kong-country-returns-hd-switch/), [Mario Kart 8 Deluxe](https://mariokart8.nintendo.com/), [Yu-Gi-Oh Early Days Collection](https://www.konami.com/yugioh/earlydayscollection/us/en/). Demais sinopses do lote foram reaproveitadas do catálogo local; não houve auditoria editorial completa das sinopses antigas.
-
-## Capas leves em todas as plataformas — aplicado em 10/10/2026
-
-[Relatório da padronização e conferência pública](online-plataformas-20261009/capas-padronizadas-20261010.json). Catálogo dessa etapa **revisão 28**, SHA `304924d242a41be7d40f495545011aaea5f6deaa17559220e0533fa193c018ab`: **3.848 IDs / 3.593 visíveis**, todos com capa **JPEG de 480 × 720**, sem arquivo ausente ou capa provisória. As 17 categorias foram conferidas pela API pública autenticada, com resposta de catálogo assinada e quatro workers para capas.
-
-**Causa encontrada:** os novos sistemas mantiveram a arte original nas pastas `media/revista` e `media/catalogo`; o importador preparava outra imagem para o telefone. Dreamcast/FBNeo também tinham artes por título junto das cópias por nome da ROM. Esses originais chegavam a 1024 × 1536 e 3,3 MB. Havia ainda uma exceção real na API: Mario Paint era servido como PNG de 805.241 bytes.
-
-**Aplicação:** 2.238 imagens convertidas; as 5.798 imagens nas pastas conferidas agora são JPEG de 480 × 720. As `revista` passaram de **5.002.022.322 para 802.507.636 bytes**, redução de **83,96%**. Com `catalogo`, o conjunto passou de 5.259.478.682 para 843.195.945 bytes. A conversão usa o compilador existente: JPEG, qualidade 90 e `optimize=True`, ajustando a arte inteira sem recortar ou deformar. Imagens que já estavam no padrão foram mantidas.
-
-| Pasta de capas | Imagens agora | Antes (MB) | Depois (MB) |
-|---|---:|---:|---:|
-| `cps1/media/revista` | 36 | 3.24 | 3.24 |
-| `cps2/media/revista` | 64 | 6.95 | 6.95 |
-| `cps3/media/revista` | 11 | 1.45 | 1.45 |
-| `dreamcast/media/revista` | 454 | 631.55 | 75.96 |
-| `fbneo/media/revista` | 1826 | 2715.29 | 317.93 |
-| `gamecube/media/catalogo` | 32 | 30.73 | 4.75 |
-| `gamecube/media/revista` | 21 | 19.80 | 3.07 |
-| `megadrive/media/revista` | 999 | 133.42 | 133.42 |
-| `n64/media/revista` | 156 | 430.04 | 24.26 |
-| `neogeo/media/revista` | 190 | 552.04 | 32.17 |
-| `neogeo/neogeocd/media/revista` | 50 | 150.96 | 9.24 |
-| `psx/media/catalogo` | 119 | 100.24 | 15.92 |
-| `psx/media/revista` | 84 | 69.56 | 11.11 |
-| `snes/media/revista` | 1619 | 282.24 | 182.41 |
-| `switch/media/catalogo` | 110 | 113.55 | 17.43 |
-| `switch/media/revista` | 1 | 1.09 | 0.17 |
-| `wii/media/catalogo` | 9 | 4.39 | 1.27 |
-| `wii/media/revista` | 7 | 3.44 | 0.96 |
-| `wiiu/media/catalogo` | 9 | 8.54 | 1.32 |
-| `wiiu/media/revista` | 1 | 0.97 | 0.16 |
-
-Mario Paint mantém `itemId=7f710e7c34917478c1f2d14e94121191` e `coverId=35a3a6ba4f798a920f4ea32180a7ca84`; sua revisão passa a 28, e o JPEG possui **156.138 bytes**, aproximadamente **80,6% menor**. As outras 3.847 capas servidas permanecem com os mesmos bytes. A maior capa atual da API tem 198.087 bytes. Nenhum jogo ou capa do catálogo ficou sem associação.
-
-Foram corrigidas 761 referências em oito arquivos XML/JSON e 514 fingerprints de origem. Os descritores/caminhos das ROMs, IDs, sinopses, identidades, 5.176 perfis online e seus hashes permanecem iguais. A qualificação isolada e duas execuções reais do timer retornaram `revision=28`, `changed=false`, `added=0`, `updated=0`; nenhum download foi reconstruído. API permanece **PID 1820513 / NRestarts 0**, mesma DLL/configuração, com recarga do catálogo sem reiniciar o serviço.
-
-**Para o app:** ler o catálogo assinado atual, usar `coverId` no endpoint `/v1/station/covers/{coverId}` e manter os quatro workers. Cachear pela combinação **coverId + revisão do item**; `StationCoverStore` já faz isso, então apenas Mario Paint precisa baixar novamente ao receber a revisão 28. O descritor de download `artifact` vem da autorização assinada em `/v1/station/downloads/authorize`. Caminhos das pastas do HD não são URLs públicas. Esta mudança de dados não exige recompilar o APK. Novos jogos continuam recebendo capa de API em 480 × 720 pelo importador existente.
-
-**Backup integral das imagens alteradas e metadados:** `/mnt/DADOS/station-cover-compression-20261010/originals-backup`, fora das pastas monitoradas. O PNG antigo da API também foi preservado na entrega histórica. A licença sintética usada para a conferência HTTP foi removida. Não reaplicar esse lote: ele já está concluído.
-
-A redução das pastas alivia armazenamento e leitura local. Como as outras capas da API já eram JPEG leves, esses originais grandes não comprovam a causa de uma eventual demora restante no celular. A entrega ZIP de 09/10 e o recibo de implantação online continuam sendo registros daquela data; este relatório e o catálogo cruzado registram a atualização de capas da revisão 28.
-
-## Checkup completo da produção — 10/10/2026
-
-[Relatório completo e evidências](online-plataformas-20261009/checkup-completo-20261010.json). As 13 etapas da produção e quatro verificações de contexto passaram. A API permaneceu no mesmo PID **1820513**, DLL **34fdc4b1** e **zero reinícios**, com dados, configurações, licenças, esquema e serviços preservados. Esta rodada atualizou somente a documentação desta entrega.
-
-| Ponto conferido | Resultado |
-|---|---|
-| Catálogo | Revisão 27: 3.848 IDs, 3.593 jogos visíveis e 255 aliases; todos os IDs, metadados e vínculos de conteúdo coincidem. |
-| Capas e acesso | 3.848 imagens válidas em 480×720, zero placeholders ou coverIds conflitantes; os 7.569 arquivos de mídia foram abertos pelo usuário no sandbox efetivo da API. |
-| Pacotes e abertura | 2.613 ZIPs únicos, 6.806 entradas e caminhos de lançamento conferidos. Os três CUE incluem suas faixas; Wii U contém 3.050 arquivos, `code/Turbo.rpx` e pacote de 4.316.896.523 bytes. O descritor Java usa `long` e comporta o conjunto. Não foi feita varredura CRC dos payloads. |
-| Perfis e importação | 5.176 perfis, 5.169 aprovados, 273 jogos restantes em 274 modos preparados; cadastros preservados. Timer ativo e importador concluído com status 0. |
-| Transporte | Passaram 1.250 verificações C#, 172 TLS, 91 v2 + 589 de observabilidade, 41 de salas, 318 de convites, 34 sociais, 88 de término e 30 de catálogo; 75 testes Python e verificações de administração/permissões. API pública: 35.962 verificações do catálogo assinado, 15 de segurança, 190 legadas e 1.413 v3; v3 isolado das 15 plataformas: 2.028. Contadores de frames podem variar conforme a chegada dos mesmos. |
-| HTTP de mídia | 62 capas públicas nas 17 categorias com quatro workers, bytes corretos, mediana 411,941 ms e p95 500,385 ms. Downloads das 17 categorias: 11 completos e seis maiores limitados a amostras de 8 MiB; bytes, descritores e concessões de uso único corretos. |
-| Velocidade | As mesmas amostras de 8 MiB alcançaram 294–334 MB/s na API local e 1,6–3,2 MB/s pelo percurso público. Não há `limit_rate` no Nginx nem cap de bytes no Station. A diferença aponta para o percurso externo, **sem isolar ISP, rota, Cloudflare ou celular**, e não mede velocidade máxima sustentada. |
-| Recursos e capacidade | CPU/memória sem pressão nas amostras, cerca de 37 GiB disponíveis e nenhum processo CUDA registrado. V3 permite até 100 salas e cinco pessoas conforme o modo, com replay de 128 MiB. Foram verificados 320 participantes em 80 salas sintéticas de quatro; 100 salas de cinco excedem esse orçamento. Gameplay Android/WAN para centenas não está homologado. |
-| Segurança e rotas | Provas vinculadas, recusa de token copiado, replay e permissões passaram. Origem pela interface LAN retornou 404. Login do painel responde 200; domínio da API é `app.lzgames.com.br`, e `/v1/station` no Turbobox responde 404 esperado. `RequireVerifiedApp=false`: acesso exclusivo ao APK oficial não é garantido. |
-| Registros | Toda a janela desde a publicação foi consultada, sem HTTP 5xx ou exceção fatal registrada. Houve **26 HTTP 429 anteriores à auditoria em `online/events`**. O backend aceita uma consulta pendente por aparelho; respostas históricas não tiveram corpo capturado para confirmar o código ou relacioná-las à jogatina. |
-
-**Pontos de atenção preservados:** partição `/` com 94% ocupados e aproximadamente 14 GiB livres; catálogo limitado a 4.096 IDs, com espaço para mais 248, incluindo aliases; 148 sinopses visíveis ausentes; 65 referências XML sem ROM; `aof2` incompleto, não publicado; requisito de BIOS do conjunto Neo Geo CD. Esses dados não foram inventados ou substituídos. O monitor auxiliar de outro produto, `turborama-suite-content-monitor`, está em falha `DATABASE_PROBE_HEALTH`; os acessos e banco do Station passaram e o outro serviço foi preservado.
-
-O túnel está ativo. Predominam cancelamentos HTTP em `online/events`; a mensagem indica contexto cancelado e, isoladamente, não prova queda do motor ou do túnel ([código da Cloudflare](https://github.com/cloudflare/cloudflared/blob/master/proxy/proxy.go)).
-
-**Requisitos para a produção do app:** enviar `enter` autenticado em `POST /v1/station/online/command` antes de consultar capacidades ou comandar v3. Sem presença a API recusa com 409. Declarar `clientMaximumPlayers` conforme o runtime real; a candidata de cinco declara 5. Manter somente um poll de `online/events` por aparelho, concluir o anterior ao substituir o worker e respeitar `Retry-After`; sobreposição é recusada com `STATION_ONLINE_POLL_EXISTS`/429. O contrato atualizado documenta essas regras.
-
-`serverReady:true` indica preparação do servidor. `online-engine-pending` nas cinco plataformas restantes exige motores/adaptadores reais no APK; cadastro será feito por dados, sem nova DLL ou restart. Seis drivers arcade sem vínculo exato e Worms por turnos continuam registrados como exceções. Controles, sincronização, latência, retomada e desempenho nos aparelhos serão conferidos na integração do app. Nenhum hash sintético foi instalado na produção.
-
-A entrega ZIP estável de 09/10, SHA `26c300927b5e56a4077178c587bbd39d6dc3b2cf93088937cd2457a2758f4e3d`, e todos os seus 828 arquivos passaram na verificação. Ela permanece a captura compilada original. O relatório e o contrato acompanham **este mesmo handoff** nos dois repositórios.
-
-## Resultado efetivo
-
-**Atualização aplicada e conferida pelo domínio público.** DLL `34fdc4b1ecea3216b3d30e49e003ef32a0520ca36637d186e9daeb369146645d`, fonte `eb826d5df17dad51314d265e2cba91b05d1c96cf`, PID **1820513**, NRestarts **0**, última recarga `Fri 2026-10-09 14:57:04 -03` e conclusão `2026-10-09T18:09:52.413592+00:00`. Catálogo **revisão 28 / 3.848 IDs / 3.593 visíveis / 255 aliases** (a publicação online de 09/10 usou revisão 27; a atualização de capas de 10/10 está descrita acima), identidade de conteúdo de todos os 3.848 itens e **5.176 perfis**, preservando exatamente os **3.672 anteriores**. Foram acrescentados 1.504 perfis de oito plataformas. Aprovação de uso não declara gameplay Android homologado.
-
-O servidor está publicado para SNES, Mega Drive, N64, Neo Geo, Neo Geo CD, PlayStation, FBNeo, CPS1, CPS2 e CPS3, nos modos e formatos cadastrados. Dreamcast, GameCube, Wii, Wii U e Switch também têm o servidor concluído, com transporte, cadastro e modos preparados. A produção do APK implementará seus motores na próxima etapa. Switch possui somente Pokémon Café Mix no catálogo, sem modo local de duas pessoas confirmado. **Servidor concluído para todas as plataformas solicitadas. Jogabilidade nos celulares será conferida após a integração do app.**
-
-Backup anterior publicado antes das alterações, em ambos os repositórios: branch `backup/station-online-antes-todas-plataformas-20261009`, tag anotada `backup-station-online-20261009-antes-todas-plataformas`; servidor `2b04f591eb10ad76efc3b630ded4fff9ef2c2a27`, app `4521218492ec65c33398aed07893f95e2d7f499d`. Branches atuais: `feat/station-online-all-platforms-20261009` no servidor e `feat/station-online-all-platforms-client-20261009` no app. Código cliente compilado em `cc74549`; use a pasta atual desta entrega para seus recibos posteriores.
-
-## Ordem atendida: concluir o servidor antes do app
-
-**O lado do servidor está preparado para todas as 15 plataformas normalizadas e os 17 rótulos do catálogo.** A implementação dos motores no app é a próxima etapa da produção do APK. Não é necessário esperar essa implementação para concluir o servidor.
-
-Além dos vínculos já publicados, o servidor agora tem os **273 jogos restantes cruzados com itemId, conteúdo e coverId em 274 modos preparados**. Há nove modos com até quatro vagas. Dreamcast, GameCube, Wii e Wii U têm teto de quatro; Switch tem teto de dois. Cada modo continua respeitando suas entradas humanas reais. GBA Link, controles compartilhados e Co-Star usam layouts próprios: um motor com quatro gamepads comuns não recebe esses modos por engano.
-
-O arquivo `server-prepared-modes.json` contém esses dados sem inventar hashes de motores. O manifesto protegido de motores do app é persistente e o importador consome ambos. Quando o APK implementar um motor, seu manifesto com **hashes dos binários reais, formatos e configurações dos controles** será cadastrado pelo operador local já entregue. Ele verifica os dois binários e cria os vínculos exatos de conteúdo/motor/runtime/layout. A API os recarrega em até dez segundos. **Esse cadastro não exige recompilar nem reiniciar o servidor.** Os 5.176 perfis anteriores continuam intactos.
-
-### Leitura do estado pelo aplicativo
-
-A resposta assinada de `capabilities`/`snapshot` em `POST /v1/station/online/multiplayer/command` agora contém `serverPlatforms`, com todas as plataformas e seus tetos. Para o jogo selecionado, `platformPolicy` contém:
-
-- `serverReady`: transporte e cadastro do servidor implementados para a plataforma.
-- `transportProtocol`: `station-stream.v3`; `transportTopology`: `host-star`.
-- `onlineAvailable`: há perfil aprovado com o conteúdo, motor, runtime e controles exatos deste jogo.
-- `availability`: estado daquele vínculo. `online-engine-pending` com `serverReady:true` indica que ainda falta o manifesto/integração do motor do app.
-- `maximumPlayers`: teto da plataforma. A quantidade da sala deve constar em `allowedPlayerCounts` do perfil escolhido.
-
-A produção do APK deve implementar o adaptador nativo, usar os tickets automáticos, conectar um link duplex anfitrião↔cada convidado e respeitar HELLO, PAUSED, READY, ACK e a época global. O servidor encaminha o fluxo sem emular o jogo. Bytes e offsets de TSR3 são definidos no código/contrato entregue; um ACK confirma escrita no motor, e não somente recebimento na rede. O adaptador deve manter a sessão nativa durante a substituição de WSS.
-
-### Cadastro de um motor entregue pela produção do APK
-
-O manifesto novo deve declarar `schemaVersion:1`, `recoveryProtocol:"station-stream.v3"`, `launchReady:true`, identificador imutável, plataforma, extensões, máximo, `library`, `runtimeLibrary`, hashes SHA-256 reais e `controllerProfiles`. Cada layout fornece `controllerProfile`, `maximumPlayers` e `configuration` com `schemaVersion`, `controllerProfile`, `devices`, `coreOptions`. As configurações podem descrever dispositivos nativos; os nomes GBA/Co-Star correspondem a recursos que o motor precisa implementar.
-
-A receita de `profileSha256` é SHA-256 de JSON compacto UTF-8 sem BOM/quebra final, Unicode sem escapes, campos na ordem `schemaVersion`, `controllerProfile`, `devices`, `coreOptions`. O manifesto precisa conter exatamente a configuração usada pelo APK. Um exemplo de formato, sem afirmação de teste nativo, está em `server-integration-contract.json`.
-
-Executar `cadastrar-motor-online-station.py install` na release ativa, com `--config` apontando para a configuração privada efetiva, `--incoming` para o manifesto recebido, `--artifacts` para os binários dessa entrega e `--output` para uma pasta privada nova. A administração local do Linux é obrigatória; licenças/códigos do app não podem cadastrar motores pela API. O operador preserva a configuração dos outros produtos, guarda cópia dos registros anteriores e rejeita IDs reaproveitados com outros binários, hashes divergentes, modos acima do teto e conteúdo substituído.
-
-`prepare` permite revisão offline do mesmo resultado sem publicar; `apply` publica uma candidata ainda correspondente ao catálogo atual. Para `install`, uma única autenticação Linux faz as duas etapas. O procedimento e suas verificações já estão instalados; a próxima entrega do app precisa fornecer seus dados reais.
-
-### Verificação das plataformas restantes
-
-Passaram **1.250 verificações C#**, **172 TLS loopback** e **oito testes Python de importação/cadastro**. As novas provas abrangem duas/três/quatro pessoas conforme o teto, início global, dados exatos em ambos os sentidos, desconexão, recarga de perfis e retomada. Uma instância isolada com hashes explicitamente sintéticos verifica também o transporte autenticado das cinco plataformas restantes. Esses motores de teste não são instalados no registro da produção. Recibo efetivo: `server-ready-deployment.json`.
-
-A preparação é completa no lado do servidor. Os testes de emulação, controles, sincronização e desempenho dos motores reais nos aparelhos pertencem à próxima integração do app. O jogo Switch atualmente presente é Pokémon Café Mix, individual; o teto de dois da plataforma não cria outro jogador nessa edição.
-
-## Plataformas e vagas reais
-
-| Plataforma | Teto do servidor | Cadastro e requisito do app |
+| Plataforma | Máximo por sala | Dependência do app |
 |---|---:|---|
-| SNES / BR | 5 | Perfis anteriores preservados; cinco somente nos modos cadastrados e com runtime novo. |
-| Mega Drive / BR | 2 | Dois; controles/portas do pacote anterior preservados. |
-| N64 | 4 | Motor e quatro portas compilados; quatro modos documentados cadastrados. Outros modos ficam em uma ou duas vagas. |
-| Neo Geo / FBNeo / CPS1/2/3 | 2 | FBNeo ARM64 compilado; quantidade limitada pelo driver exato e pelo cadastro individual. Seis conjuntos sem driver exato permanecem sem sala online. |
-| Neo Geo CD | 2 | NeoCD compilado e estado entre processos corrigido. HLE não comprova compatibilidade de toda a coleção. |
-| PlayStation 1 | 2 | PCSX compilado; PBP, CHD e três CUE com identidade de todas as faixas. Somente modos de controles distintos cadastrados; Worms Armageddon aguarda passagem de controle por turnos. |
-| Dreamcast | 4 | Servidor pronto para quatro. O app implementará o adaptador Flycast; o GGPO atual contém duas entradas. |
-| GameCube / Wii | 4 | Servidor pronto para quatro. Próxima etapa do app: ligar a sala Station ao ciclo nativo Dolphin/ENet. |
-| Wii U | 4 | Servidor pronto para quatro; conjunto completo e modos preparados. O app implementará seu adaptador nativo. |
-| Switch | 2 | Servidor pronto para dois. O único jogo atual é individual; a produção do app implementará um motor/modo compatível quando houver. |
+| SNES / BR | 5 | Modos cadastrados, multitap para cinco e runtime correspondente. |
+| Mega Drive / BR | 2 | Motores/controles anteriores preservados. |
+| N64 | 4 | Perfis de duas/quatro portas e modo exato; não transformar campanha solo em multiplayer. |
+| Dreamcast | 4 | Adaptador nativo Station; o GGPO de duas entradas não comprova quatro. |
+| GameCube / Wii / Wii U | 4 | Adaptador nativo; GBA Link, controles compartilhados e Co-Star usam layouts próprios. |
+| PS2 / Sega Saturn | 2 | Motores reais, sincronização, duas entradas e BIOS quando exigida. |
+| Switch | 2 | Motor/adaptador real e modo local da edição. |
+| Neo Geo / Neo Geo CD / PSX / FBNeo / CPS1 / CPS2 / CPS3 | 2 | Driver, BIOS e perfil exatos; exceções conhecidas preservadas. |
 
-Os tetos não concedem controles em campanhas individuais. Salas têm `allowedPlayerCounts`, `modeTitle`, `instructions`, perfil de portas e hashes exatos. `Ver detalhes` consulta a sala, sem assistir ao vídeo nem ganhar controle. Os modos N64 documentados são Bomberman 64 Batalha (2–4), Mario Kart 64 VS/Battle (2–4; GP no máximo 2), F-Zero X VS Battle (2–4) e Mario Tennis Exhibition em duplas (2 ou 4 no cadastro). SNES mantém os modos de Bomberman 1/2/3 anteriores; Bomberman 4/5 ainda não são ROMs presentes neste catálogo.
+O limite da plataforma não substitui `allowedPlayerCounts` do perfil. Não abrir sala com mais entradas do que o modo oferece. `Ver detalhes` não transmite gameplay nem cria espectador. Sete vínculos continuam sem aprovação: seis conjuntos arcade sem associação exata e Worms Armageddon por turnos. O catálogo ainda registra aof2 incompleto, 65 referências XML sem ROM, 148 sinopses ausentes e o requisito de BIOS NeoCD; não foram fabricados arquivos/compatibilidade.
 
-## Como o app deve consumir a produção
+## PS2 resolvido no servidor
 
-1. Usar o domínio `https://app.lzgames.com.br`, login/licença original, bearer e provas vinculadas ao aparelho. Contratos v1/v2, dez engines anteriores e flags de admissão permanecem preservados.
-2. Ler `GET /v1/station/catalog?metadata=1` autenticado e validar a resposta assinada. A revisão atual é 28. Usar `itemId`, `platform`, `revision`, `coverId`, `folderPath`, `metadata` e `contentSha256` recebidos; não construir nomes/IDs a partir de capas ou pastas.
-3. Pedir capas em `GET /v1/station/covers/{coverId}`, usando o `coverId` daquele item. Manter os quatro workers já implementados. Sinopses vêm de `metadata.description`; lacunas podem ser preenchidas por dados do servidor.
-4. Autorizar em `POST /v1/station/downloads/authorize` e consumir a URL/grant retornados em `GET /v1/station/artifacts/{grantId}`. Seguir o descritor de arquivo/pacote e seu `launchPath` completo. CUE acompanha suas faixas; Wii U acompanha `code/content/meta`. Nenhum throttling, espera ou verificação nova foi acrescentado ao downloader.
-5. Para salas v3, usar `POST /v1/station/online/multiplayer/command` com as provas existentes. Consultar `serverPlatforms`, `platformPolicy.serverReady`, `onlineAvailable`, `availability`, `maximumPlayers` e os perfis assinados. Estados: `available`, `single-player`, `mode-pending`, `content-identity-pending`, `online-engine-pending`, `select-game`.
-6. Escolher o perfil exato de conteúdo/motor/runtime/controles e um valor de `allowedPlayerCounts`. Executar criar/entrar/pronto/iniciar e usar os tickets retornados em WSS `/v1/station/online/multiplayer/relay`. Os convites e tickets são tratados pelo app; não pedir que o jogador digite um segredo extenso.
-7. `contentIdentityScheme` é opcional. Sem ele, permanece o hash do payload de lançamento já usado. Com `cue-set-v1`, `StationContentIdentity.java` calcula a identidade do CUE e das faixas **somente ao preparar a partida online**. `wiiu-set-v1` identifica todo o conjunto `code/content/meta`, para o futuro motor Wii U.
+Os 25 ISO/CSO estão na raiz `ps2`, com revista, artes de cadastro, XML, seed, downloads raw e **política online de duas pessoas**. `ps2br`/PlayStation 2 BR normalizam para `ps2`. Layout: `ps2-two-controllers-v1`. Seus 25 modos foram preparados: 13 entradas individuais e 12 de duas vagas por política de uso; estas não são homologação de modo original ou Android. O motor real precisa respeitar cada edição/modo. Nenhum jogo foi associado ao motor PSX.
 
-## Importação automática e persistência
+Os cores [Play!](https://docs.libretro.com/library/play/) e [LRPS2](https://docs.libretro.com/library/lrps2/) documentam ausência de netplay. Portanto o APK precisa fornecer um motor/adaptador capaz de estado sincronizado e controles remotos; somente cadastrar o nome PS2 não cria essa capacidade. A API responde `serverReady:true` e `online-engine-pending` até existir o vínculo real.
 
-O timer do importador continua ativo. Após duas observações de arquivo estável, um jogo novo entra com ID estável, capa relacionada, descritor e identidade offline. O importador mantém o registro persistente junto do índice e publica os perfis por dados antes de publicar o catálogo. A API recarrega o registro a cada dez segundos, sem reiniciar nem descartar salas em andamento; arquivo parcial/inválido mantém o último registro válido. A correção final preserva o objeto imutável de cada perfil sem alteração, evitando que arrays desserializados façam uma sala existente recusar entrada, tickets ou reconexão. Os testes também confirmam que uma revogação real continua sendo recusada. Recibo: `profile-reload-fix.json`.
+## Sega Saturn organizado e publicado
 
-Política expressamente autorizada pelo mantenedor: jogos compatíveis recém-importados recebem até duas vagas, respeitando indicação individual e motor único disponível. Arcade novo com driver ainda não associado fica reconhecido no catálogo e aguarda associação por dados. Acima de duas pessoas exige modo/portas específicos. Não é necessário compilar o servidor para cadastrar nomes, capas, sinopses ou modos. Limites atuais: 4.096 IDs, 32 perfis por item, registro até 16 MiB; crescimento além disso exige ampliar capacidade com avaliação própria.
+`snes/saturn` foi recortada para **`saturn` na raiz do HD**, ao lado de SNES/PS2/Mega. Pasta completa: `/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/saturn`.
 
-O catálogo publicado passou por duas varreduras privadas consecutivas sem mudanças. A execução agendada efetiva de 14:06:41 (America/Maceio) terminou com status0; a conferência de 17:07:19UTC confirmou índice, identidades e perfis byte idênticos, timer ativo e políticas automáticas efetivas. O recibo é `importer-effective.json`. As identidades são calculadas fora das requisições de download. Identidade de conteúdo é necessária para impedir conectar jogos/versões diferentes na mesma partida; não é verificação adicional para baixar.
+- **19 jogos**: 17 CHD servidos raw pelo mesmo inode, sem segunda cópia, e Bug!/Rayman originalmente em 7z, preparados como ZIP completo. Bug! inclui CUE + 73 faixas; Rayman, CUE + 51 faixas. Originais preservados. Ambos possuem identidade `cue-set-v1`; o hash do CUE sozinho não representa o disco.
+- **19 capas de revista**, 16 reutilizadas do catálogo Sega Saturn e três criadas com a ferramenta imagegen: Bomberman, Bug! e Rayman. Todas JPEG RGB 480×720; **34 artes de catálogo / 37 chaves** no seed. Prompts e caminhos finais no recibo. As imagens geradas originais ficam no backup privado; JPEG final em `saturn/media/revista`.
+- Os 17 cabeçalhos CHD confirmaram Sega Saturn e os títulos correspondentes. `Bomberman.chd` identifica SATURN BOMBERMAN/MK-81070; Castlevania identifica DRACULA-X. Essa leitura de 4 KiB não é teste completo de disco ou emulação.
+- Policy online pronta, teto dois, aliases Sega Saturn/segasaturn, layout `saturn-two-controllers-v1`. Há 19 modos preparados, respeitando as entradas individuais cadastradas; todos aguardam o motor real do APK.
+- O core [Beetle Saturn](https://docs.libretro.com/library/beetle_saturn/) documenta netplay e formatos CUE/CHD, mas o APK ainda precisa integrar o adaptador Station, controles e BIOS legítima. A pasta `saturn/bios` está preparada; nenhuma BIOS proprietária foi baixada ou fornecida nesta entrega.
 
-## Provas realizadas e capacidade
+## SNES: mesmo cadastro automático
 
-**1.250 verificações C#**, **172 TLS loopback**, **91 v2 + 589 observabilidade**, testes Python de importação/conjuntos e **10 verificações Java/Python CUE** passaram. A implantação testou versão anterior e candidata em serviços isolados com o sandbox efetivo, depois catálogo, capas, downloads, v1/v2 e v3 autenticados em HTTPS/WSS público. Recibos exatos em `online-plataformas-20261009/production-applied.json` e `server-build-tests.json`.
+SNES mantém jogos, grupos, IDs e perfis online anteriores, inclusive até cinco nos modos cadastrados. `snes/station-catalog-seed.json` agora oferece **1.366 chaves não ambíguas**, reutilizando as **1.619 capas já comprimidas de revista**. Doze chaves conflitantes foram excluídas da escolha automática. XML/overrides têm prioridade; o seed preenche dados ausentes. Dois registros/aliases de Battletoads receberam campos de metadata que estavam vazios; descrição, ROM, capa e vínculo de partida foram preservados.
 
-O v3 admite até 100 salas e cinco pessoas conforme o modo. O orçamento compartilhado de replay v2/v3 foi configurado em **128 MiB**, mantendo janela de 256 KiB por direção. Prova sintética: **320 participantes em 80 salas de quatro**, 240 ligações, 7.864.320 bytes idênticos em ambas as direções e memória liberada ao sair. O orçamento também limita admissões: 100 salas de cinco simultâneas excederiam 128 MiB. Isso não mede internet, Android, latência ou estabilidade prolongada.
+Para novo jogo, colocar a ROM na pasta da plataforma. O timer exige duas observações estáveis e idade mínima de 20 segundos, então publica nome, ID, capa, descritor e identidade. Capas conhecidas usam a associação por título; arte própria fica em `media/revista` com o nome exato da ROM. Dados complementares vêm de XML/seed/overrides. Título desconhecido usa a capa padrão existente até receber arte própria; uma sinopse não é inventada. Não é necessário programar cada jogo.
 
-Índice/IDs/metadados/capas/ROMs/downloads/licenças/schema/segredos/outros serviços foram preservados; só o Station e seu importador foram atualizados. Proxy, Cloudflare e firewall permanecem iguais. Zero salas/conexões/replay no fechamento dos testes; retorno da release anterior preparado, sem restaurar banco. Não repetir operadores históricos nem o operador desta primeira implantação.
+PS2 aceita ISO/CSO; Saturn, CHD/CUE/ISO e arquivos ZIP/7z/RAR com um CUE completo ou `launchPath` explícito. ISO é formato de publicação; o motor que vier precisa declarar o que realmente abre. Não inventar CUE/faixas. CHD/ISO raw de Saturn usa armazenamento protegido no mesmo volume, root/0444 e um inode. Substituir ROM significa copiar um arquivo novo e substituir o nome, preservando os artefatos de downloads anteriores. As outras plataformas mantêm suas configurações.
 
-## Entrega compilada para produção do APK
+## Como o aplicativo deve ler o servidor
 
-`versions/station-all-platforms-online-20261009/` contém **212 fontes Java**, DEX, quatro cores ARM64/API26/16 KiB, overlays, runtime de cinco, fontes/licenças e receitas completas. Client DEX (login/catálogo/download) segue byte idêntico: `e7207a89517b168cc476e30a823bed3a1b6ad57339e1042f08a4660184543d63`. Rooms DEX: `9f13b23f1442dfa4f1ac5393195705a01e78a30e8b32c9f27d1f346f56f7e80f`. Runtime: `81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc`.
+1. Usar `https://app.lzgames.com.br`, licença original, bearer e provas vinculadas ao aparelho. Ler e validar `GET /v1/station/catalog?metadata=1`. Usar a revisão recebida, `itemId`, `platform`, `name`, `metadata`, `coverId`, `folderPath`, `contentSha256` e eventual `contentIdentityScheme`; caminhos do HD não são URLs.
+2. Buscar `/v1/station/covers/{coverId}` pela mesma linha do catálogo, quatro workers e cache `coverId + revisão do item`. As capas servidas são JPEG de 480×720. Não tentar casar capas pelo índice de outra lista.
+3. Autorizar `/v1/station/downloads/authorize` com o itemId e validar seu descritor assinado `artifact`. Consumir `/v1/station/artifacts/{grantId}`. Raw preserva arquivo/extension/launchPath; ZIP extrai o pacote completo para um diretório exclusivo. Seguir tamanhos `long`, formato, fileCount e caminho de lançamento. Nenhuma espera, limite de velocidade ou verificação extra foi adicionada ao downloader.
+4. Enviar `enter` autenticado em `/v1/station/online/command` antes de v3. Manter somente um poll de `online/events` por aparelho e respeitar `Retry-After`. Declarar `clientMaximumPlayers` conforme o runtime real.
+5. Em `/v1/station/online/multiplayer/command`, usar `capabilities`/`snapshot`. `serverPlatforms` lista as 17 políticas. `platformPolicy.serverReady:true` é preparação do servidor; `onlineAvailable` requer perfil aprovado de conteúdo/motor/runtime/controles. `online-engine-pending` indica o motor real ainda ausente. Tratar também `single-player`, `mode-pending`, `content-identity-pending` e `select-game`.
+6. Selecionar perfil exato e quantidade em `allowedPlayerCounts`; criar/entrar/pronto/iniciar. Convites e tickets são automáticos. Conectar WSS `/v1/station/online/multiplayer/relay`, protocolo `station-stream.v3`, um link duplex anfitrião↔cada convidado.
+7. Respeitar TSR3, HELLO, PAUSED, READY, ACK e época global. ACK confirma escrita no motor. Preservar sessão nativa na troca do WSS. Identidade CUE/CHD é calculada na preparação/importação, sem varredura do corpo em cada download do servidor; o app compara a identidade para conectar versões iguais na partida.
 
-Perfis/controles Java: 200 verificações; BIOS isoladas: 21; CUE: 10. NeoCD remove ponteiros dependentes de ASLR do estado; estado de 8.231.939 bytes e continuação passaram entre processos. N64 fixa `parallel-n64-rtc-savestate=enabled`; estado de 16.790.604 bytes e quatro portas passaram entre processos, com renderizador/CPU fixados. Desempenho no celular ainda precisa ser medido. Fontes e licença própria do FBNeo estão incluídas; sua licença contém restrição sobre lucro monetário.
+## Cadastro do motor real sem nova DLL
 
-Montar o APK completo no PCAPK com `recipes/package_candidate.py`, base privada R81 SHA `85fac8f51daa3a370eabb14d98832f75c2f30ff81422c549538ee715627032c6` e certificado original `7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825`. Saída em E:, backup em G:, instalar com `adb install -r` e preservar dados. A base/keystore estão no PCAPK, indisponível nesta sessão; nenhum APK completo foi assinado ou telefone instalado aqui. Esta receita e os binários novos são necessários para os motores adicionais; apenas recadastrar no servidor não modifica o APK instalado.
+O manifesto recebido do APK deve declarar engineId imutável, plataforma, formatos reais, `library`, `runtimeLibrary`, seus hashes SHA-256, `launchReady:true`, `recoveryProtocol:station-stream.v3`, `maximumPlayers` e `controllerProfiles`. Para PS2/Saturn, declarar os layouts acima explicitamente. Cada layout contém `configuration` com `schemaVersion`, `controllerProfile`, `devices`, `coreOptions`. O motor/decoder do app deve implementar essa configuração; nomes de controles por si só não representam sua implementação.
 
-Pendências do **cliente**, reunidas nesta mesma entrega: Flycast quatro, ligação Station↔Dolphin/ENet, transporte Wii U, modo/motor Switch, montagem/assinatura/instalação e testes de controles/sincronização/retomada nos celulares. O servidor dessas cinco plataformas está concluído e o cadastro dos motores reais será feito por dados, sem recompilação/reinício. Não inventar hashes nem declarar gameplay Android antes da próxima implementação/teste do app. As pendências antigas de BIOS proprietária NeoCD, conjunto `aof2.zip` incompleto e 65 referências XML ausentes continuam registradas; nada foi apagado ou fabricado.
+`profileSha256` é SHA-256 do JSON compacto UTF-8, sem BOM/quebra final, Unicode sem escapes e campos na ordem `schemaVersion`, `controllerProfile`, `devices`, `coreOptions`. Exemplos do contrato não são recibos nativos. Não copiar hashes ilustrativos para a produção.
 
-## Arquivos para comparação completa
+Operador instalado: `/opt/turborama-station-ps2-saturn-20261010-1717ac5ecec9-c2831745/library-tools/cadastrar-motor-online-station.py install`, com `--config` da configuração privada efetiva, `--incoming` do manifesto real, `--artifacts` dos binários e `--output` de uma pasta privada nova. Exige administração local, confere ambos os binários e preserva perfis anteriores. `prepare` permite revisão offline; `apply` publica a candidata ainda correspondente ao catálogo. **Recarga em até dez segundos, sem recompilar ou reiniciar o servidor.** Credenciais do app não cadastram motores pela API.
 
-`server-integration-contract.json`: contrato completo do servidor para a próxima integração do app. `server-prepared-modes.json`: todos os 273 jogos restantes/274 modos cruzados com conteúdo/capas, sem hashes de motor inventados. `server-ready-deployment.json`: publicação efetiva e provas finais, incluindo preservação da sala humana que abriu durante a primeira conferência.
+## Testes, capacidade e entrega ao APK
 
-`catalogo-cruzado-completo.json`: todos os IDs/nomes/plataformas/capas/metadados/artefatos/identidades e estado online, sem caminhos privados. `content-identities.json`: 3.848 vínculos, schema2. `profiles-complete.json`: os 5.176 perfis efetivos. `profiles-new-profiles.json`: somente as 1.504 adições; não substituir o registro completo por ele. `modes-authorized.json`: dados dos modos novos. `platform-summary.json`: os 17 rótulos e contagens. `profiles-missing.json`: itens sem motor/modo atual. `production-applied.json`: publicação e provas reais. `engines-app.json`: hashes dos motores compilados. Demais recibos de Java/BIOS/cores/estado e backup acompanham o mesmo diretório.
+Nesta atualização passaram **1.292 verificações C#**, **172 TLS loopback**, **16 testes Python** de cadastro/importação/permissões e **855 verificações v3 assinadas na sombra**: início, dados nos dois sentidos, retomada e perfis SNES de duas/quatro/cinco pessoas. As 17 políticas e o catálogo/mídia também foram conferidos pelo HTTPS público após ativação. Testes sintéticos não homologam latência, controles ou gameplay Android.
 
-## Fontes primárias
+Capacidade configurada: v3 até 100 salas, cinco pessoas conforme modo, janela 256 KiB por direção e replay compartilhado 128 MiB; v1/v2 preservados. Teste sintético de 320 participantes/80 salas de quatro/7.864.320 bytes passou. O orçamento limita admissões; não significa 100 salas de cinco simultâneas ou medição da internet.
 
-- [Super Smash Bros. Melee, Nintendo](https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Super-Smash-Bros-Melee-268951.html).
-- [Super Mario Galaxy e Co-Star, Nintendo](https://www.nintendo.com/en-gb/Games/Wii/Super-Mario-Galaxy-283322.html); [manual Galaxy 2](https://m1.nintendo.net/docvc/RVL/EUR/SB4P/SB4P_E.pdf).
-- [Pokémon Café ReMix: quantidade de jogadores, suporte oficial](https://app-pcm.pokemon-support.com/hc/en-us/articles/360053180271--How-many-players-can-play-the-game).
+O pacote `versions/station-all-platforms-online-20261009` foi recompilado: **212 Java/D8**, alias PS2 BR corrigido. Client DEX permanece `e7207a89517b168cc476e30a823bed3a1b6ad57339e1042f08a4660184543d63`; Rooms DEX agora `04eb0fe853c6e485c69e69a18ee9b1551b3fc7422d6189fff9f431cabb655462`. Runtime `81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc` e motores reais anteriores preservados. Nenhum APK completo foi assinado/instalado nesta sessão; base/keystore continuam no PC do APK. Próxima etapa reúne Dreamcast, GameCube, Wii, Wii U, Switch, PS2 e Saturn, assinatura/instalação e testes físicos.
 
-- [Mario Kart 64, manual Nintendo](https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioKart64_EN.pdf).
-- [F-Zero X, manual Nintendo](https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_FZeroX_EN.pdf).
-- [Mario Tennis, manual Nintendo](https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioTennis_EN.pdf).
-- [Bomberman 64, Nintendo](https://www.nintendo.com/es-es/Juegos/Nintendo-64/Bomberman-64-1204884.html).
-- [Dolphin Android NetPlay 2609](https://alwaysdata.dolphin-emu.org/blog/2026/09/24/dolphin-progress-report-release-2609/) e [sessão nativa embarcada](https://github.com/dolphin-emu/dolphin/blob/5102a0339c2177575378107b76541e47cc52122d/Source/Android/app/src/main/java/org/dolphinemu/dolphinemu/features/netplay/model/NetplaySession.kt).
-- [Flycast GGPO embarcado](https://github.com/flyinghead/flycast/blob/e36e9df2dcc1487acdb1dc7725766f1f5ba029b5/core/network/ggpo.cpp).
-- [Drivers FBNeo fixados](https://github.com/finalburnneo/FBNeo/tree/95153da1f113c56735bd9a818171f908df628421/src/burn/drv); fontes específicas preservadas em cada modo.
-- [PCSX ReARMed](https://docs.libretro.com/library/pcsx_rearmed/) e [FBNeo Libretro](https://docs.libretro.com/library/fbneo/).
+## Arquivos únicos para comparar e retomar
+
+- `catalogo-cruzado-completo.json`: todos os 3.895 IDs, nomes, plataformas, capas, metadata, artefatos, identidades, perfis e modos preparados; sem caminhos privados de mídia.
+- `platform-summary.json`, `profiles-missing.json`: contagens por plataforma e dependências reais.
+- `content-identities.json`: 3.895 vínculos/schema2; `profiles-complete.json`: todos os 5.176 perfis. Não substituir por `profiles-new-profiles.json`, que contém só adições históricas.
+- `server-integration-contract.json`, `server-prepared-modes.json`: contrato v3 completo, 320 jogos/321 modos, layouts, hashes e receita de cadastro.
+- `engines-app.json`: motores reais atuais e políticas do cliente; nenhum engine PS2/Saturn fictício.
+- `library-tools/`: scanner, todas as dependências, operador de cadastro e testes correspondentes.
+- `ps2-saturn-servidor-20261010.json`: recibo atual desta atualização. `ps2-switch-publicados-20261010.json`, `capas-padronizadas-20261010.json`, `checkup-completo-20261010.json`, `server-ready-deployment.json`, `production-applied.json` e `profile-reload-fix.json` preservam as provas históricas. ZIP de 09/10 continua histórico e não representa o catálogo31.
+
+Cópia estável anterior publicada antes das mudanças nos dois Gits: branch `backup/station-antes-online-ps2-saturn-20261010`, tag `backup-station-antes-online-ps2-saturn-20261010`, servidor `26c5302`, app `52ba50d`. Backup privado atual: `/mnt/DADOS/station-ps2-saturn-20261010/backup`. Não repetir `apply.py` nem operadores datados. Consultar o estado dinâmico das salas antes de agir sobre serviços. Os dois arquivos CRLF das entregas R71/R78 anteriores ficaram fora desta alteração.
