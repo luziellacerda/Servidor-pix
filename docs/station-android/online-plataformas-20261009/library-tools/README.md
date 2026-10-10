@@ -9,3 +9,7 @@ Saturn ZIP/7z/RAR deve conter um CUE único, ou declarar `launchPath`, e todas a
 Publicação requer duas observações estáveis e idade mínima de 20 segundos. Capas exatas ficam em `media/revista`; o seed fornece associações por título normalizado. XML e overrides têm prioridade. JPEG RGB 480×720 conforme é preservado byte a byte. Perfis anteriores são preservados, inclusive recusas reais. Os testes usam arquivos sintéticos e não comprovam emulação.
 
 `cadastrar-motor-online-station.py install` aceita os 17 sistemas, verifica core/runtime reais e configurações explícitas dos controles; publicação exige administração local e recarrega por dados, sem recompilar/reiniciar o servidor. Registros de identidades, perfis e modos da sombra devem estar dentro do seu outputDirectory.
+
+## Revisão de endpoints de 10/10/2026
+
+Scanner desta release: SHA-256 `7f6e9ebb6e1ccc71c184e7d3e07cac856f1c0ceee4e281e272061406619e36bd`. A atualização também normaliza quebra de linha/tabulação para espaço em publisher, developer, genre, players e releaseDate. A sinopse mantém suas quebras permitidas. A varredura real após ativação retornou revisão31, changed=false, added=0, updated=0; ROMs, capas, IDs e metadados publicados permaneceram iguais. Ver endpoint-review-20261010.json no mesmo handoff.

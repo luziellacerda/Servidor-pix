@@ -189,10 +189,10 @@
     "pause/resume all participants with the shared epoch",
     "use the automatic invitation/ticket flow"
   ],
-  "deployment": "applied and authenticated-public-API verified; see ps2-saturn-servidor-20261010.json",
+  "deployment": "applied and authenticated-public-API verified; see endpoint-review-20261010.json",
   "androidGameplayValidated": false,
-  "sourceCommit": "33cdb9821be9e73b9d3af51869b169f29bdb9e2f",
-  "dllSha256": "1717ac5ecec9131cd53353be608027d533dada773b36f1e952f64fe28027b68d",
+  "sourceCommit": "7eb0e009d40ce01db86aea9c489937e9bd2fd00a",
+  "dllSha256": "2c0d034476969cbed58b519b744e841111373f89a4bcd6abb9cd14543abcde35",
   "presencePrerequisite": {
     "path": "/v1/station/online/command",
     "method": "POST",
@@ -218,10 +218,47 @@
     "overlapError": "STATION_ONLINE_POLL_EXISTS",
     "overlapHTTPStatus": 429,
     "retryAfterSeconds": 1,
-    "clientRequirement": "Serialize polling; settle previous requests/cancellation before replacing a polling worker. Handle returned error code and Retry-After."
+    "clientRequirement": "Serialize polling; settle previous requests/cancellation before replacing a polling worker. Handle returned error code and Retry-After.",
+    "handlerDeadlineSeconds": 15,
+    "idleWaitPreviouslyValid": true,
+    "transientReadOnlyRetry": {
+      "operations": [
+        "presence heartbeat",
+        "events",
+        "multiplayer snapshot"
+      ],
+      "httpStatuses": [
+        408,
+        429,
+        500,
+        502,
+        503,
+        504
+      ],
+      "networkExceptions": [
+        "StationApi.Offline",
+        "SocketTimeoutException",
+        "SocketException"
+      ],
+      "backoffMillis": [
+        1000,
+        2000,
+        4000,
+        8000
+      ],
+      "maximumRetryAfterMillis": 60000,
+      "overlapBackoffMillis": 1000,
+      "explicitCancellationStopsImmediately": true,
+      "terminal": [
+        "401/403 or other non-transient statuses",
+        "disabled Station service",
+        "TLS/identity/signature/JSON failure"
+      ],
+      "mutateCommandAutomaticallyReplayed": false
+    }
   },
   "coverDelivery": {
-    "catalogRevision": 29,
+    "catalogRevision": 31,
     "format": "image/jpeg",
     "width": 480,
     "height": 720,
@@ -265,7 +302,7 @@
       ".xci"
     ],
     "rawClientHandling": "Save the exact single file at launchPath with its original extension; no ZIP extraction, forced ISO conversion or per-download body verification was added.",
-    "receipt": "ps2-saturn-servidor-20261010.json",
+    "receipt": "endpoint-review-20261010.json",
     "saturn": {
       "id": "saturn",
       "folder": "saturn",
@@ -286,7 +323,7 @@
       "biosProvisioned": false
     }
   },
-  "importerSourceCommit": "37a767fea4cdf8056da8657a7fa23b98706c56b2",
+  "importerSourceCommit": "7eb0e009d40ce01db86aea9c489937e9bd2fd00a",
   "nativeEngineReferences": [
     {
       "platform": "ps2",
@@ -349,12 +386,133 @@
     "serverDeploymentRequired": false,
     "javaCompiled": true,
     "sourceCount": 212,
-    "roomsDexSHA256": "4c7c0fb655b640187c048beaccca272ad87d27fbd090a42f891a0e127d11348c",
+    "roomsDexSHA256": "c87d3efc19ff760015b355a00a45177bb43345ac9bb7a98fb53e61b87cd920e7",
     "clientDexSHA256": "e7207a89517b168cc476e30a823bed3a1b6ad57339e1042f08a4660184543d63",
     "signedApkBuilt": false,
     "installed": false,
     "physicalRoomUIVerified": false,
     "backupBranch": "backup/station-antes-sinopse-sala-20261010",
-    "backupTag": "backup-station-antes-sinopse-sala-20261010"
+    "backupTag": "backup-station-antes-sinopse-sala-20261010",
+    "currentCandidateReceipt": "endpoint-review-20261010.json",
+    "originalSynopsisAdjustmentUTC": "2026-10-10T20:32:21.175853+00:00",
+    "currentCandidateCompiledUTC": "2026-10-10T21:35:34.318794+00:00"
+  },
+  "roomPagination": {
+    "path": "/v1/station/online/multiplayer/command",
+    "requestFields": {
+      "page": {
+        "default": 0,
+        "minimum": 0,
+        "maximum": 40
+      },
+      "roomPageSize": {
+        "default": 100,
+        "allowed": [
+          32,
+          100
+        ]
+      }
+    },
+    "optional": true,
+    "backwardCompatibleDefault": true,
+    "candidatePageSize": 32,
+    "responseFields": [
+      "page",
+      "roomPageSize",
+      "nextPage",
+      "totalRooms",
+      "rooms",
+      "room"
+    ],
+    "nextPage": "next zero-based page or null after the last visible room",
+    "totalRooms": "visible filtered rooms before pagination",
+    "ownRoom": "independent from the requested room page, even an empty page",
+    "invalidRequest": {
+      "httpStatus": 400,
+      "code": "STATION_MULTIPLAYER_PAGE_INVALID"
+    },
+    "social": {
+      "path": "/v1/station/online/command and /v1/station/online/events",
+      "pageSize": 100,
+      "nextPeerPage": "next page of visible people",
+      "nextRoomPage": "next page of visible legacy rooms",
+      "legacyNextPageRetained": true
+    },
+    "presentation": {
+      "peerPage": "social snapshot page",
+      "nextPeerPage": "social nextPeerPage, legacy nextPage fallback",
+      "roomPage": "selected room snapshot page",
+      "nextRoomPage": "v3 nextPage or legacy nextRoomPage",
+      "navigation": "reset to page zero when switching people/rooms; fetch requested room page immediately; show loading while source page differs",
+      "authority": "composed revision is local presentation only; never use as a request proof",
+      "presence": "server reports v3 room membership independently of the visible page"
+    }
+  },
+  "errorDelivery": {
+    "requestProofTimeout": {
+      "httpStatus": 504,
+      "code": "STATION_TIMEOUT",
+      "body": "bounded JSON"
+    },
+    "legacyRelayAuthorizationTimeout": {
+      "httpStatus": 504,
+      "code": "STATION_ONLINE_TIMEOUT",
+      "beforeWebSocketUpgrade": true,
+      "successfulEmptyHTTP200": false
+    },
+    "multiplayerRelayAuthorizationTimeout": {
+      "httpStatus": 504,
+      "code": "STATION_MULTIPLAYER_TIMEOUT",
+      "beforeWebSocketUpgrade": true,
+      "successfulEmptyHTTP200": false,
+      "attachmentCleaned": true
+    },
+    "covers": {
+      "timeout": {
+        "httpStatus": 504,
+        "code": "STATION_TIMEOUT"
+      },
+      "cancelledRequestStatus": 499,
+      "cacheControl": "no-store on errors",
+      "nosniff": true,
+      "missingOrIOError": {
+        "httpStatus": 404,
+        "code": "STATION_COVER_NOT_FOUND"
+      }
+    },
+    "onlineAuthentication": "JSON SuiteException status/code, Retry-After: 1 for HTTP 429",
+    "relayAndRequestProofCancellation": "do not write a new error body after the caller has cancelled or a response has already started"
+  },
+  "catalogReload": {
+    "validatedFileStampCapturedBeforeRead": true,
+    "fileStampRecheckedAfterValidation": true,
+    "concurrentReloadSerialized": true,
+    "invalidOrUnchangedRevisionKeepsLastGood": true,
+    "outstandingGrantRetentionSeconds": 120,
+    "singleLineFields": [
+      "publisher",
+      "developer",
+      "genre",
+      "players",
+      "releaseDate"
+    ],
+    "singleLineControlNormalization": "replace newline/tab with spaces",
+    "synopsis": "description keeps permitted newline/tab",
+    "metadataRevisionUnchangedByThisReview": true
+  },
+  "endpointReview": {
+    "receipt": "endpoint-review-20261010.json",
+    "serverDeployed": true,
+    "utc": "2026-10-10T21:49:22.368044+00:00",
+    "sourceCommit": "7eb0e009d40ce01db86aea9c489937e9bd2fd00a",
+    "appSourceCommit": "6324a3515b9626162d04a973694d089ddda539bb",
+    "javaSourceCount": 212,
+    "lobbyChecks": 36,
+    "roomsDexSHA256": "c87d3efc19ff760015b355a00a45177bb43345ac9bb7a98fb53e61b87cd920e7",
+    "clientDexSHA256": "e7207a89517b168cc476e30a823bed3a1b6ad57339e1042f08a4660184543d63",
+    "serverMustPrecedeCandidateAPK": true,
+    "signedApkBuilt": false,
+    "installed": false,
+    "androidGameplayVerified": false
   }
 }
