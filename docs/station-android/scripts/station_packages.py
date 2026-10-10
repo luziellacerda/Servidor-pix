@@ -111,13 +111,14 @@ def package_layout(source, mode):
     return [(source.name, source, None)], source.name
 
 
-def prepare_package(source, temporary, mode, describe):
+def prepare_package(source, temporary, mode, describe, compression=zipfile.ZIP_STORED):
     members, launch = package_layout(source, mode)
     if len(members) == 1 and members[0][2] is None:
         return prepare_raw(source, temporary)
-    with zipfile.ZipFile(temporary, 'w', zipfile.ZIP_STORED, allowZip64=True) as archive:
+    with zipfile.ZipFile(temporary, 'w', compression, allowZip64=True) as archive:
         for name, path, content in members:
             entry = zipfile.ZipInfo(name, (1980, 1, 1, 0, 0, 0))
+            entry.compress_type = compression
             entry.external_attr = 0o100644 << 16
             with archive.open(entry, 'w', force_zip64=True) as dest:
                 if content is None:

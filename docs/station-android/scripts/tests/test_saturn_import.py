@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 import sys
+import subprocess
 import tempfile
 import unittest
 import xml.etree.ElementTree as ET
@@ -17,6 +18,25 @@ scanner=importlib.util.module_from_spec(spec);spec.loader.exec_module(scanner)
 
 @unittest.skipUnless(os.geteuid()==0,'real root importer permissions required')
 class SaturnImportTests(unittest.TestCase):
+    def test_seven_zip_multitrack_becomes_complete_zip(self):
+        with tempfile.TemporaryDirectory(prefix='station-saturn-archive-') as name:
+            root=Path(name);source=root/'source';source.mkdir();target=root/'archive.7z'
+            (source/'Track 01.bin').write_bytes(b'SYNTHETIC DATA TRACK'*1024)
+            (source/'Track 02.bin').write_bytes(b'SYNTHETIC AUDIO TRACK'*1024)
+            (source/'disc.cue').write_text('FILE "Track 01.bin" BINARY\n TRACK 01 MODE1/2352\n  INDEX 01 00:00:00\nFILE "Track 02.bin" BINARY\n TRACK 02 AUDIO\n  INDEX 01 00:00:00\n')
+            subprocess.run(['7z','a','-t7z',str(target),'disc.cue','Track 01.bin','Track 02.bin'],cwd=source,check=True,capture_output=True)
+            package,descriptor=scanner.prepare_package_archive(target,{'.cue'},None,'cue-disc',root/'out.zip',True)
+            self.assertEqual((descriptor['format'],descriptor['fileCount'],descriptor['launchPath']),('zip',3,'disc.cue'))
+            with zipfile.ZipFile(package) as archive:
+                self.assertEqual(set(archive.namelist()),{'disc.cue','Track 01.bin','Track 02.bin'})
+                self.assertEqual(archive.read('Track 02.bin'),(source/'Track 02.bin').read_bytes())
+            self.assertTrue(target.is_file())
+    def test_archive_missing_track_stays_pending(self):
+        with tempfile.TemporaryDirectory(prefix='station-saturn-incomplete-') as name:
+            root=Path(name);cue=root/'disc.cue';cue.write_text('FILE "Missing.bin" BINARY\n TRACK 01 MODE1/2352\n  INDEX 01 00:00:00\n');target=root/'archive.7z'
+            subprocess.run(['7z','a','-t7z',str(target),'disc.cue'],cwd=root,check=True,capture_output=True)
+            with self.assertRaises(scanner.PackagePending):scanner.prepare_package_archive(target,{'.cue'},None,'cue-disc',root/'out.zip',True)
+            self.assertFalse((root/'out.zip').exists())
     def test_complete_raw_cue_covers_identity_and_stable_rescan(self):
         with tempfile.TemporaryDirectory(prefix='station-saturn-isolated-') as name:
             root=Path(name);volume=root/'volume';home=root/'library';volume.mkdir();home.mkdir()

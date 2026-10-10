@@ -45,7 +45,8 @@ def prepare(catalog,review,sources):
         elif system=='switch' and name.startswith('yu-gi-oh early days collection'):
             plans=[dict(mode='Individual / seleção da coletânea',nativeMaximum=1,conditions=['Este cadastro oferece uma entrada de controle para os jogos da coletânea. Recursos de duelo pela rede do jogo não correspondem automaticamente a duas entradas de controle nesta sala. Um adaptador específico pode acrescentar um modo por dados.'],urls=[YUGIOH])]
         # Preserve known individual editions without advertising two controllers.
-        individual=system=='gamecube' and any(title in name for title in ('wind waker','windwaker','twilight princess','twilightprincess',"luigi's mansion",'metroid prime','prince of persia','resident evil','terminator 3','needforspeedunderground2'))
+        individual=item.get('metadata',{}).get('players')=='1'
+        individual=individual or system=='gamecube' and any(title in name for title in ('wind waker','windwaker','twilight princess','twilightprincess',"luigi's mansion",'metroid prime','prince of persia','resident evil','terminator 3','needforspeedunderground2'))
         individual=individual or system=='ps2' and any(title in name for title in ('black (','castlevania','wrath of cortex','god of war','vice city','jak and daxter','max payne','mega man x8','metal gear solid','resident evil','resident 4','silent hill'))
         if not plans and (individual or system=='wii' and 'skyward' in name):
             plans=[dict(mode='Jogo local',nativeMaximum=1,conditions=['Nenhum modo com controles humanos independentes foi cadastrado para esta edição. O jogo local permanece disponível; um modo adicional pode ser cadastrado por dados.'],urls=[POLICY])]

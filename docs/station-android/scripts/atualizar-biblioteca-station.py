@@ -13,6 +13,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import subprocess
 import tempfile
 import time
 import re
@@ -139,7 +140,7 @@ def catalog_seed(folder, spec):
     return document['games']
 
 
-def prepare_package_archive(source, extensions, explicit, mode):
+def prepare_package_archive(source, extensions, explicit, mode, temporary=None, normalize_disc=False):
     """Preserve archive contents when a CUE/RPX needs neighboring files."""
     module = load_module('preparar-indice-artefatos')
     members = module.archive_members(source, source.suffix.lower()[1:])
@@ -151,6 +152,21 @@ def prepare_package_archive(source, extensions, explicit, mode):
     launch = explicit or (choices[0] if len(choices) == 1 else None)
     if launch not in choices:
         raise PackagePending('archive_requires_one_game_or_explicit_launch')
+    if normalize_disc:
+        if mode != 'cue-disc' or not launch.lower().endswith('.cue') or temporary is None:
+            raise PackagePending('disc_archive_requires_complete_cue')
+        if not 0 < len(members) <= module.MAX_FILES or sum(size for _, size in members) > module.MAX_EXPANDED or len({n.casefold() for n in names}) != len(names):
+            raise PackagePending('disc_archive_limits_or_duplicate_paths')
+        # Decode once during import. Phones receive the same bounded ZIP/CUE
+        # contract as PSX, including every referenced track and its identity.
+        with tempfile.TemporaryDirectory(prefix='.disc-extract-', dir=temporary.parent) as name:
+            extracted = Path(name)
+            subprocess.run(['7z','x','-y','-bd','-bb0','-o'+str(extracted),'--',str(source)],
+                           check=True,capture_output=True,timeout=600)
+            actual = {p.relative_to(extracted).as_posix():p for p in extracted.rglob('*') if p.is_file() or p.is_symlink()}
+            if set(actual) != set(names) or any(p.is_symlink() or not p.is_file() or p.stat().st_size != size for key,size in members for p in [actual[key]]):
+                raise PackagePending('disc_archive_extracted_members_differ')
+            return prepare_package(extracted / launch, temporary, mode, module.describe, compression=zipfile.ZIP_DEFLATED)
     if mode == 'wiiu-folder' and Path(launch).suffix.lower() == '.rpx':
         root = Path(launch).parent.parent
         if Path(launch).parent.name.casefold() != 'code' or not all(
@@ -450,7 +466,9 @@ def publish(config, bootstrap=False, on_progress=None):
                             game_source, descriptor = prepare_disc_artifact(rom, tmp / (rom.stem+'.zip'), companions,
                                                                            spec, load_module('preparar-indice-artefatos').describe)
                         elif mode in {'cue-disc', 'wiiu-folder'} and rom.suffix.lower() in {'.zip', '.rar', '.7z'}:
-                            game_source, descriptor = prepare_package_archive(rom, set(spec['extensions']), override.get('launchPath'), mode)
+                            normalize_disc = spec.get('normalizeDiscArchives') is True
+                            game_source, descriptor = prepare_package_archive(rom, set(spec['extensions']), override.get('launchPath'), mode,
+                                tmp / (rom.stem+'.zip') if normalize_disc else None, normalize_disc)
                         elif readonly_raw and mode == 'cue-disc' and rom.suffix.lower() != '.cue':
                             game_source, descriptor = prepare_raw(rom, tmp / rom.name, readonly_hardlink=True)
                             raw_prepared = True
