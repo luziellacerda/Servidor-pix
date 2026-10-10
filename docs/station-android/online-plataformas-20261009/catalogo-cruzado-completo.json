@@ -1,5 +1,5 @@
 {
-  "revision": 32,
+  "revision": 33,
   "status": "published-and-public-signed-api-verified",
   "items": [
     {
@@ -229790,7 +229790,7 @@
       "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
       "name": "Donkey Kong Country Returns.side",
       "platform": "wii",
-      "revision": 21,
+      "revision": 33,
       "coverId": "cover_b3c07c1607efaed3e805f8e4e3da7b09",
       "artifact": {
         "fileName": "Donkey Kong Country Returns.side.iso",
@@ -229908,7 +229908,7 @@
       "itemId": "station_75b2671c509572a3191465e244e9c241",
       "name": "Legend of Zelda, The - Skyward Sword (USA) (En,Fr,Es)",
       "platform": "wii",
-      "revision": 21,
+      "revision": 33,
       "coverId": "cover_75b2671c509572a3191465e244e9c241",
       "artifact": {
         "fileName": "Legend of Zelda, The - Skyward Sword (USA) (En,Fr,Es).rvz",
@@ -229964,7 +229964,7 @@
       "itemId": "station_6e92c46795e509e9593cc55b5fb946ea",
       "name": "MarioKartWii.ini",
       "platform": "wii",
-      "revision": 21,
+      "revision": 33,
       "coverId": "cover_6e92c46795e509e9593cc55b5fb946ea",
       "artifact": {
         "fileName": "MarioKartWii.ini.iso",
@@ -230024,7 +230024,7 @@
       "itemId": "station_68b4911aaba6d2a81b9e525f36a5c697",
       "name": "New SUPER MARIO BROS.side",
       "platform": "wii",
-      "revision": 21,
+      "revision": 33,
       "coverId": "cover_68b4911aaba6d2a81b9e525f36a5c697",
       "artifact": {
         "fileName": "New SUPER MARIO BROS.side.iso",
@@ -230084,7 +230084,7 @@
       "itemId": "station_474055661521b99e82e6d0b6aee72435",
       "name": "Super Mario Galaxy (USA) (En,Fr,Es)",
       "platform": "wii",
-      "revision": 21,
+      "revision": 33,
       "coverId": "cover_474055661521b99e82e6d0b6aee72435",
       "artifact": {
         "fileName": "Super Mario Galaxy (USA) (En,Fr,Es).rvz",
@@ -230142,7 +230142,7 @@
       "itemId": "station_11800c292110c10da2354418e3483b29",
       "name": "Super Mario Galaxy 2 (USA) (En,Fr,Es)",
       "platform": "wii",
-      "revision": 21,
+      "revision": 33,
       "coverId": "cover_11800c292110c10da2354418e3483b29",
       "artifact": {
         "fileName": "Super Mario Galaxy 2 (USA) (En,Fr,Es).rvz",
@@ -230200,7 +230200,7 @@
       "itemId": "station_8d42174892b607ae006f5e68ddf62fe0",
       "name": "MARIO KART 8 [AMKE01]",
       "platform": "wiiu",
-      "revision": 21,
+      "revision": 33,
       "coverId": "cover_8d42174892b607ae006f5e68ddf62fe0",
       "artifact": {
         "fileName": "MARIO KART 8 [AMKE01].zip",
@@ -230547,7 +230547,7 @@
       "itemId": "station_aab0574d3b6398746da6cfe2bd82d273",
       "name": "BOMBA PATCH 2026",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_aab0574d3b6398746da6cfe2bd82d273",
       "artifact": {
         "fileName": "BOMBA PATCH 2026.iso",
@@ -230608,7 +230608,7 @@
       "itemId": "station_23fc8972332d329f6f2fdf3cbfd6e911",
       "name": "Black (USA)-007",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_23fc8972332d329f6f2fdf3cbfd6e911",
       "artifact": {
         "fileName": "Black (USA)-007.iso",
@@ -230666,7 +230666,7 @@
       "itemId": "station_ed72a216710d0a0f72893a5b5cafa2c5",
       "name": "Castlevania - Curse of Darkness (USA)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_ed72a216710d0a0f72893a5b5cafa2c5",
       "artifact": {
         "fileName": "Castlevania - Curse of Darkness (USA).iso",
@@ -230724,7 +230724,7 @@
       "itemId": "station_4dd377f61418c14ccb18a5663ddb400b",
       "name": "Castlevania - Lament of Innocence (USA)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_4dd377f61418c14ccb18a5663ddb400b",
       "artifact": {
         "fileName": "Castlevania - Lament of Innocence (USA).iso",
@@ -230782,7 +230782,7 @@
       "itemId": "station_05f791dcb31b952edecca707dc81ec6a",
       "name": "Crash Bandicoot - The Wrath of Cortex (Europe)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_05f791dcb31b952edecca707dc81ec6a",
       "artifact": {
         "fileName": "Crash Bandicoot - The Wrath of Cortex (Europe).cso",
@@ -230840,7 +230840,7 @@
       "itemId": "station_b506279d79304a01a3623e81ff704419",
       "name": "Dragon Ball Z - Budokai Tenkaichi 2 (USA) (En,Ja)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_b506279d79304a01a3623e81ff704419",
       "artifact": {
         "fileName": "Dragon Ball Z - Budokai Tenkaichi 2 (USA) (En,Ja).iso",
@@ -230901,7 +230901,7 @@
       "itemId": "station_d195666b12e19a46aac696bdbe5497b5",
       "name": "God of War II (Europe)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_d195666b12e19a46aac696bdbe5497b5",
       "artifact": {
         "fileName": "God of War II (Europe).cso",
@@ -230959,7 +230959,7 @@
       "itemId": "station_84f784dd5b3b57066bc9c3c5be5620f4",
       "name": "Gran Turismo 4 (USA)-022",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_84f784dd5b3b57066bc9c3c5be5620f4",
       "artifact": {
         "fileName": "Gran Turismo 4 (USA)-022.iso",
@@ -231020,7 +231020,7 @@
       "itemId": "station_1e8054ffd8f8f2be1a0907d38f55735d",
       "name": "Grand Theft Auto - San Andreas (USA)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_1e8054ffd8f8f2be1a0907d38f55735d",
       "artifact": {
         "fileName": "Grand Theft Auto - San Andreas (USA).cso",
@@ -231081,7 +231081,7 @@
       "itemId": "station_59e96240a2cdd7543c93237403604725",
       "name": "Grand Theft Auto - Vice City (USA) (v4.00)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_59e96240a2cdd7543c93237403604725",
       "artifact": {
         "fileName": "Grand Theft Auto - Vice City (USA) (v4.00).iso",
@@ -231139,7 +231139,7 @@
       "itemId": "station_7b1ea41c70f3aeba4d91bca00ba0a074",
       "name": "Jak and Daxter - The Precursor Legacy (USA) (En,Fr,De,Es,It) (Rev 1)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_7b1ea41c70f3aeba4d91bca00ba0a074",
       "artifact": {
         "fileName": "Jak and Daxter - The Precursor Legacy (USA) (En,Fr,De,Es,It) (Rev 1).iso",
@@ -231197,7 +231197,7 @@
       "itemId": "station_1a64dfc6023f6d8a072961c557058cbb",
       "name": "Max Payne 2 - The Fall of Max Payne (Europe) (En,Es)-020",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_1a64dfc6023f6d8a072961c557058cbb",
       "artifact": {
         "fileName": "Max Payne 2 - The Fall of Max Payne (Europe) (En,Es)-020.cso",
@@ -231255,7 +231255,7 @@
       "itemId": "station_a93c2f8838700098dc14eef383bf8eb2",
       "name": "Mega Man X8 (Europe) (En,Fr,De,Es,It)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_a93c2f8838700098dc14eef383bf8eb2",
       "artifact": {
         "fileName": "Mega Man X8 (Europe) (En,Fr,De,Es,It).cso",
@@ -231313,7 +231313,7 @@
       "itemId": "station_eaf8804a7d00c104dd5bbe7f214e42e2",
       "name": "Metal Gear Solid 2 - Sons of Liberty (USA)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_eaf8804a7d00c104dd5bbe7f214e42e2",
       "artifact": {
         "fileName": "Metal Gear Solid 2 - Sons of Liberty (USA).iso",
@@ -231371,7 +231371,7 @@
       "itemId": "station_d139413f1b1c083983d0e04b8ed9f30a",
       "name": "Midnight Club 3 - DUB Edition Remix (USA)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_d139413f1b1c083983d0e04b8ed9f30a",
       "artifact": {
         "fileName": "Midnight Club 3 - DUB Edition Remix (USA).iso",
@@ -231432,7 +231432,7 @@
       "itemId": "station_cd5a4594745885e08e3de492b34d6f22",
       "name": "Naruto Shippuden - Ultimate Ninja 5 (Europe) (Es,Fr,De,En,It)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_cd5a4594745885e08e3de492b34d6f22",
       "artifact": {
         "fileName": "Naruto Shippuden - Ultimate Ninja 5 (Europe) (Es,Fr,De,En,It).cso",
@@ -231493,7 +231493,7 @@
       "itemId": "station_d69b1ff57c377687d16f5346b0ad17b8",
       "name": "Need for Speed - Most Wanted - Black Edition (USA)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_d69b1ff57c377687d16f5346b0ad17b8",
       "artifact": {
         "fileName": "Need for Speed - Most Wanted - Black Edition (USA).iso",
@@ -231554,7 +231554,7 @@
       "itemId": "station_8beca9ffb61269136733e04c71b6d689",
       "name": "Need for Speed - Underground (Europe) (En,Fr,De,Es,It,Nl,Sv)-006",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_8beca9ffb61269136733e04c71b6d689",
       "artifact": {
         "fileName": "Need for Speed - Underground (Europe) (En,Fr,De,Es,It,Nl,Sv)-006.iso",
@@ -231615,7 +231615,7 @@
       "itemId": "station_1b956a4cefd9663fecb1cf4104c8a432",
       "name": "Need for Speed - Underground 2 (Europe) (En,Fr,De,Es,It,Nl,Sv,Da)-012",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_1b956a4cefd9663fecb1cf4104c8a432",
       "artifact": {
         "fileName": "Need for Speed - Underground 2 (Europe) (En,Fr,De,Es,It,Nl,Sv,Da)-012.iso",
@@ -231676,7 +231676,7 @@
       "itemId": "station_b06b945542f498c7f94c0241c54b9ef3",
       "name": "Resident Evil 4 (Dublado) (BR)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_b06b945542f498c7f94c0241c54b9ef3",
       "artifact": {
         "fileName": "RESIDENT 4 DUBLADO.iso",
@@ -231734,7 +231734,7 @@
       "itemId": "station_8dc2e6e40fb694b358ec724c6a88da4a",
       "name": "Resident Evil - Code - Veronica X (Europe) (En,Fr,De,Es)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_8dc2e6e40fb694b358ec724c6a88da4a",
       "artifact": {
         "fileName": "Resident Evil - Code - Veronica X (Europe) (En,Fr,De,Es).cso",
@@ -231792,7 +231792,7 @@
       "itemId": "station_25a2c8351bd788ae0d3314400fde0ac1",
       "name": "Silent Hill - Shattered Memories (Europe) (En,Fr,De,Es,It)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_25a2c8351bd788ae0d3314400fde0ac1",
       "artifact": {
         "fileName": "Silent Hill - Shattered Memories (Europe) (En,Fr,De,Es,It).cso",
@@ -231850,7 +231850,7 @@
       "itemId": "station_6a62a64aeb4125b6d8929135e9d3e388",
       "name": "Soulcalibur III (USA)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_6a62a64aeb4125b6d8929135e9d3e388",
       "artifact": {
         "fileName": "Soulcalibur III (USA).iso",
@@ -231911,7 +231911,7 @@
       "itemId": "station_036955f44e8422c68ceb8c674ad2433f",
       "name": "Street Fighter EX3 (USA)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_036955f44e8422c68ceb8c674ad2433f",
       "artifact": {
         "fileName": "Street Fighter EX3 (USA).cso",
@@ -231972,7 +231972,7 @@
       "itemId": "station_cdd601d3875ab3d5bde38fc8a61db05c",
       "name": "Tekken 5 (USA)",
       "platform": "ps2",
-      "revision": 29,
+      "revision": 33,
       "coverId": "cover_cdd601d3875ab3d5bde38fc8a61db05c",
       "artifact": {
         "fileName": "Tekken 5 (USA).iso",
@@ -234305,7 +234305,7 @@
       "itemId": "station_29ed11d6a20d90622152f8f190de8bb7",
       "name": "Crash of the Titans",
       "platform": "psp",
-      "revision": 32,
+      "revision": 33,
       "coverId": "cover_29ed11d6a20d90622152f8f190de8bb7",
       "artifact": {
         "fileName": "Crash of the Titans (USA).cso",
@@ -234336,7 +234336,7 @@
       "itemId": "station_63eac000b51d28d6e5980f00ce0156bc",
       "name": "Ghost Rider",
       "platform": "psp",
-      "revision": 32,
+      "revision": 33,
       "coverId": "cover_63eac000b51d28d6e5980f00ce0156bc",
       "artifact": {
         "fileName": "Ghost Rider (Europe) (En,Fr,De,Es,It).cso",
@@ -234367,7 +234367,7 @@
       "itemId": "station_e0aedb909058bccd49510db9e76c1250",
       "name": "God of War : Chains of Olympus",
       "platform": "psp",
-      "revision": 32,
+      "revision": 33,
       "coverId": "cover_e0aedb909058bccd49510db9e76c1250",
       "artifact": {
         "fileName": "God of War - Chains of Olympus (Europe) (En,Fr,De,Es,It) (PSN).cso",
@@ -234398,7 +234398,7 @@
       "itemId": "station_81dd286a719a4a88c6102c6a30c8fd47",
       "name": "God of War : Ghost of Sparta",
       "platform": "psp",
-      "revision": 32,
+      "revision": 33,
       "coverId": "cover_81dd286a719a4a88c6102c6a30c8fd47",
       "artifact": {
         "fileName": "God of War - Ghost of Sparta (Europe) (En,Fr,De,Es,It) (PSN).cso",

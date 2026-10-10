@@ -189,7 +189,7 @@
     "pause/resume all participants with the shared epoch",
     "use the automatic invitation/ticket flow"
   ],
-  "deployment": "applied and authenticated-public-API verified; see sega32x-psp-publicados-20261010.json and limpeza-compilacoes-20261010.json",
+  "deployment": "Applied; signed public catalog revision33 and 42 cover bodies verified. Same API process; existing online and artifact data preserved.",
   "androidGameplayValidated": false,
   "sourceCommit": "7eb0e009d40ce01db86aea9c489937e9bd2fd00a",
   "dllSha256": "2c0d034476969cbed58b519b744e841111373f89a4bcd6abb9cd14543abcde35",
@@ -268,10 +268,37 @@
     "workers": 4,
     "sourceOriginalsBackedUp": true,
     "newApkRequiredForThisDataChange": false,
-    "receipt": "capas-padronizadas-20261010.json"
+    "receipt": "capas-padronizadas-20261010.json",
+    "artworkCorrection": {
+      "receipt": "capas-site-ps2-psp-wii-wiiu-20261010.json",
+      "authoritativeSource": "hosted-turbobox-platform-catalogs",
+      "currentGamesInspected": 42,
+      "replaced": {
+        "wii": 6,
+        "wiiu": 1,
+        "ps2": 25,
+        "psp": 4
+      },
+      "unavailableOnSiteKept": 6,
+      "generatedArtwork": 0,
+      "dimensions": [
+        480,
+        720
+      ],
+      "format": "JPEG",
+      "originalSourceResolution": [
+        360,
+        540
+      ],
+      "cacheKey": "coverId + item.revision",
+      "coverIdsPreserved": true,
+      "oldCacheRevisionsMustNotBeReused": true,
+      "wiiuAutomaticSeedUsesGameFolder": true,
+      "noGenericTurboCoverFallback": true
+    }
   },
   "catalogData": {
-    "revision": 32,
+    "revision": 33,
     "indexedItems": 3940,
     "visibleItems": 3685,
     "normalizedCatalogPlatforms": 19,
@@ -302,7 +329,7 @@
       ".xci"
     ],
     "rawClientHandling": "Persist the signed single-file artifact at launchPath with its original extension, including PSP CSO. No forced ISO conversion or extra per-download integrity pass.",
-    "receipt": "sega32x-psp-publicados-20261010.json",
+    "receipt": "capas-site-ps2-psp-wii-wiiu-20261010.json",
     "saturn": {
       "id": "saturn",
       "folder": "saturn",
@@ -408,7 +435,24 @@
         "Guilty Gear XX Reload - The Midnight Carnival (Japan).cso",
         "Need For Speed Most Wanted USA.cso"
       ],
-      "currentROMs": 9
+      "currentROMs": 9,
+      "artworkSource": "current-hosted-site",
+      "sourceReceipt": "capas-site-ps2-psp-wii-wiiu-20261010.json"
+    },
+    "ps2": {
+      "catalogSeedKeys": 122,
+      "artworkSource": "current-hosted-site",
+      "sourceReceipt": "capas-site-ps2-psp-wii-wiiu-20261010.json"
+    },
+    "wii": {
+      "catalogSeedKeys": 10,
+      "artworkSource": "current-hosted-site",
+      "sourceReceipt": "capas-site-ps2-psp-wii-wiiu-20261010.json"
+    },
+    "wiiu": {
+      "catalogSeedKeys": 9,
+      "artworkSource": "current-hosted-site",
+      "sourceReceipt": "capas-site-ps2-psp-wii-wiiu-20261010.json"
     }
   },
   "roomPresentation": {
@@ -582,6 +626,19 @@
     },
     "serverRestarted": false,
     "onlinePlatformPoliciesUnchanged": 17,
-    "generatedArtwork": 0
+    "generatedArtwork": 0,
+    "currentCompiledParser": {
+      "realCompiledClient": true,
+      "sega32x": 36,
+      "catalogRevision": 33,
+      "visibleItems": 3685,
+      "passed": true,
+      "psp": 9,
+      "physicalAndroidGameplayVerified": false,
+      "existingIntegrationHarness": true,
+      "clientJarSha256": "61a71f796a734937c1573fe01ad33c927be0bb5ad6528e875afde97a75ab8164",
+      "newTestImplementation": false
+    },
+    "coverCorrection": "capas-site-ps2-psp-wii-wiiu-20261010.json"
   }
 }
