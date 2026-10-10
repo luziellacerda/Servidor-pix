@@ -1,0 +1,4009 @@
+{
+  "schemaVersion": 1,
+  "utcCompleted": "2026-10-10T16:34:36.302103+00:00",
+  "status": "passed-with-observations",
+  "scope": "Station production, signed public API, catalog/physical media, transport and configuration. Synthetic devices; no Android gameplay certification.",
+  "serverChecksPassed": true,
+  "configurationOrProductionBinaryChanged": false,
+  "productionRestarted": false,
+  "productionDataPreserved": true,
+  "headline": {
+    "pid": 1820513,
+    "nRestarts": 0,
+    "dllSha256": "34fdc4b1ecea3216b3d30e49e003ef32a0520ca36637d186e9daeb369146645d",
+    "catalogRevision": 27,
+    "catalogIDs": 3848,
+    "visibleGames": 3593,
+    "aliasIDs": 255,
+    "normalizedPlatforms": 15,
+    "catalogPlatformLabels": 17,
+    "profiles": 5176,
+    "approvedProfiles": 5169,
+    "covers": 3848,
+    "allCoverDimensions": "480x720",
+    "placeholderCovers": 0,
+    "preparedRemainingGames": 273,
+    "preparedModes": 274
+  },
+  "findings": [
+    {
+      "id": "TRANSFER",
+      "category": "performance",
+      "state": "external-path-bottleneck-observed",
+      "publicEightMiBSamplesMBps": [
+        1.586,
+        3.221
+      ],
+      "loopbackSameEightMiBContentsMBps": [
+        294.497,
+        333.518
+      ],
+      "configuredByteRateCapFound": false,
+      "interpretation": "The external request path limits these measurements relative to the local API. This does not isolate ISP, network route, Cloudflare or phone performance, and does not measure maximum sustained Internet throughput."
+    },
+    {
+      "id": "DISK",
+      "category": "operations",
+      "state": "attention",
+      "rootFilesystemUsedPercent": 94,
+      "rootFilesystemAvailableApproxGiB": 14,
+      "mediaVolumeAvailableApproxGiB": 118,
+      "dataVolumeAvailableApproxGiB": 69,
+      "action": "Plan disk-space recovery using an inventory and preserving backups, games and customer data. No file was removed during this checkup."
+    },
+    {
+      "id": "CATALOG-CAPACITY",
+      "category": "operations",
+      "state": "attention",
+      "maximumItemIDs": 4096,
+      "usedItemIDs": 3848,
+      "remainingItemIDs": 248,
+      "action": "Raise and qualify the capacity before importing beyond this ceiling; aliases also consume IDs."
+    },
+    {
+      "id": "CATALOG-QUALITY",
+      "category": "data",
+      "state": "existing-pending-data",
+      "visibleMissingDescriptions": 148,
+      "unavailableXMLReferencedROMs": 65,
+      "unpublishedIncompleteArcadeSet": "aof2",
+      "neoGeoCDBIOS": "Collection/importer still records a runtime requirement; this is distinct from any BIOS assets already supplied privately by the APK.",
+      "action": "Fill factual metadata and supply complete source content through the data pipeline; never fabricate BIOS, missing ROMs or game compatibility."
+    },
+    {
+      "id": "APP-INTEGRATION",
+      "category": "client",
+      "state": "next-authorized-app-stage",
+      "nativePlatformsPending": [
+        "dreamcast",
+        "gamecube",
+        "wii",
+        "wiiu",
+        "switch"
+      ],
+      "serverReadyForAll15": true,
+      "serverRebuildOrRestartForNewEngineRequired": false,
+      "details": "Production APK must provide real native engines/adapters/binary manifests. Switch current Pokémon Café Mix is single-player; four/five players require a supported game mode and matching controls. Physical gameplay, latency, thermal behavior and sustained WAN capacity are not certified by these server tests."
+    },
+    {
+      "id": "APP-EXCLUSIVITY",
+      "category": "security",
+      "state": "compatibility-policy",
+      "requireVerifiedApp": false,
+      "deviceBoundProofAndReplayTestsPassed": true,
+      "exclusiveOfficialAPKAccessGuaranteed": false,
+      "details": "Licenses and device proofs are active. Mandatory APK attestation is currently disabled, preserving previous clients; a legitimate license alone does not prove an official APK."
+    },
+    {
+      "id": "ROOM-CAPACITY",
+      "category": "capacity",
+      "state": "bounded-validated",
+      "configuredV3RoomCeiling": 100,
+      "maximumPerRoom": 5,
+      "sharedReplayBudgetBytes": 134217728,
+      "syntheticParticipantsVerified": 320,
+      "syntheticRoomsVerified": 80,
+      "syntheticPlayersPerRoom": 4,
+      "details": "Room ceilings and replay admission both apply. 100 five-player matches exceed the current replay budget; Android/WAN gameplay for hundreds is a separate qualification."
+    },
+    {
+      "id": "OTHER-PRODUCT-MONITOR",
+      "category": "shared-host",
+      "state": "existing-failure",
+      "service": "turborama-suite-content-monitor.service",
+      "errorCode": "DATABASE_PROBE_HEALTH",
+      "stationDependenciesAndDatabaseScopePassed": true,
+      "details": "Auxiliary Suite monitor is failed. Its cause needs its own review; this checkup preserved other products and did not restart or modify it."
+    },
+    {
+      "id": "CLOUDFLARE-LOGS",
+      "category": "diagnostics",
+      "state": "request-cancellations-observed",
+      "majorityRoute": "/v1/station/online/events",
+      "message": "Incoming request ended abruptly: context canceled",
+      "interpretation": "The message identifies a canceled request context. It alone cannot establish that the tunnel crashed or caused gameplay stalls. Most observed errors are HTTP event requests, distinct from native game stream continuity.",
+      "primarySource": "https://github.com/cloudflare/cloudflared/blob/master/proxy/proxy.go"
+    },
+    {
+      "id": "EVENTS-429",
+      "category": "client-control-plane",
+      "state": "observed-before-audit",
+      "HTTP429BeforeOwnedCheckup": 26,
+      "route": "POST /v1/station/online/events",
+      "backendWaitSeconds": 10,
+      "maximumConcurrentPendingPollsPerLicenseAndDevice": 1,
+      "retryAfterSeconds": 1,
+      "overlappingPollError": "STATION_ONLINE_POLL_EXISTS",
+      "historicalResponseBodiesCaptured": false,
+      "interpretation": "The historical HTTP429 responses are on the events control route, not the v3 game relay. Source shows overlapping polls are rejected; historical bodies were not collected, so that code/cause and any connection to gameplay stalls remain unproven. App must serialize polling and respect cancellation/Retry-After."
+    }
+  ],
+  "clientConsumption": {
+    "apiBase": "https://app.lzgames.com.br",
+    "panelBase": "https://turbobox.lzgames.com.br",
+    "catalog": "GET /v1/station/catalog?metadata=1",
+    "covers": "GET /v1/station/covers/{coverId}",
+    "grant": "POST /v1/station/downloads/authorize",
+    "artifact": "GET /v1/station/artifacts/{grantId}",
+    "presenceRequiredBeforeV3": "POST /v1/station/online/command action=enter",
+    "multiplayer": "POST /v1/station/online/multiplayer/command",
+    "relay": "WSS /v1/station/online/multiplayer/relay",
+    "capacityField": "clientMaximumPlayers must describe the actual runtime; new five-player runtime declares 5.",
+    "modeField": "Select only allowedPlayerCounts of the exact content/engine/runtime/controller profile.",
+    "verifiedExamples": [
+      {
+        "platform": "snes",
+        "serverReady": true,
+        "maximumPlayers": 5,
+        "onlineAvailable": true,
+        "availability": "available",
+        "profiles": 6
+      },
+      {
+        "platform": "megadrive",
+        "serverReady": true,
+        "maximumPlayers": 2,
+        "onlineAvailable": true,
+        "availability": "available",
+        "profiles": 2
+      },
+      {
+        "platform": "n64",
+        "serverReady": true,
+        "maximumPlayers": 4,
+        "onlineAvailable": true,
+        "availability": "available",
+        "profiles": 1
+      },
+      {
+        "platform": "dreamcast",
+        "serverReady": true,
+        "maximumPlayers": 4,
+        "onlineAvailable": false,
+        "availability": "online-engine-pending",
+        "profiles": 0
+      },
+      {
+        "platform": "gamecube",
+        "serverReady": true,
+        "maximumPlayers": 4,
+        "onlineAvailable": false,
+        "availability": "online-engine-pending",
+        "profiles": 0
+      },
+      {
+        "platform": "wii",
+        "serverReady": true,
+        "maximumPlayers": 4,
+        "onlineAvailable": false,
+        "availability": "online-engine-pending",
+        "profiles": 0
+      },
+      {
+        "platform": "wiiu",
+        "serverReady": true,
+        "maximumPlayers": 4,
+        "onlineAvailable": false,
+        "availability": "online-engine-pending",
+        "profiles": 0
+      },
+      {
+        "platform": "neogeo",
+        "serverReady": true,
+        "maximumPlayers": 2,
+        "onlineAvailable": true,
+        "availability": "available",
+        "profiles": 1
+      },
+      {
+        "platform": "neogeocd",
+        "serverReady": true,
+        "maximumPlayers": 2,
+        "onlineAvailable": true,
+        "availability": "available",
+        "profiles": 1
+      },
+      {
+        "platform": "psx",
+        "serverReady": true,
+        "maximumPlayers": 2,
+        "onlineAvailable": false,
+        "availability": "single-player",
+        "profiles": 1
+      },
+      {
+        "platform": "fbneo",
+        "serverReady": true,
+        "maximumPlayers": 2,
+        "onlineAvailable": true,
+        "availability": "available",
+        "profiles": 1
+      },
+      {
+        "platform": "cps1",
+        "serverReady": true,
+        "maximumPlayers": 2,
+        "onlineAvailable": true,
+        "availability": "available",
+        "profiles": 1
+      },
+      {
+        "platform": "cps2",
+        "serverReady": true,
+        "maximumPlayers": 2,
+        "onlineAvailable": true,
+        "availability": "available",
+        "profiles": 1
+      },
+      {
+        "platform": "cps3",
+        "serverReady": true,
+        "maximumPlayers": 2,
+        "onlineAvailable": true,
+        "availability": "available",
+        "profiles": 1
+      },
+      {
+        "platform": "switch",
+        "serverReady": true,
+        "maximumPlayers": 2,
+        "onlineAvailable": false,
+        "availability": "online-engine-pending",
+        "profiles": 0
+      }
+    ],
+    "bigFileFields": "Java candidate uses long for artifact and expanded byte sizes; the 4.3 GB Wii U package and 3050 entries fit its declared descriptor limits."
+  },
+  "tests": {
+    "multiplayerCSharp": {
+      "passed": true,
+      "checks": 1250,
+      "scope": "isolated synthetic C# hub/stream/codec/budget; no Android gameplay or deployment"
+    },
+    "tlsLoopback": {
+      "passed": true,
+      "checks": 172,
+      "scope": "synthetic loopback TLS: five authenticated players, eight WS links, signed HTTP, bound proofs, stream, disconnect/resume and chat; not Android gameplay or public network"
+    },
+    "recoveryCSharp": {
+      "passed": true,
+      "checks": 91,
+      "observationChecks": 589,
+      "scope": "Production v2 ledger/state/negotiation and bounded observations with synthetic identities; not Android gameplay",
+      "benchmark": null
+    },
+    "additionalDotnet": [
+      {
+        "project": "tests/StationOnline/StationOnline.Tests.csproj",
+        "exitCode": 0,
+        "outputTail": [
+          "{\"passed\":true,\"checks\":41,\"scope\":\"Synthetic in-process room and chat tests; no production service or Android game used\"}"
+        ]
+      },
+      {
+        "project": "tests/StationRoomCodes/StationRoomCodes.Tests.csproj",
+        "exitCode": 0,
+        "outputTail": [
+          "{\"passed\":true,\"checks\":318,\"syntheticRooms\":256,\"productionTouched\":false,\"androidGameplay\":false}"
+        ]
+      },
+      {
+        "project": "tests/StationOnlineSocial/StationOnlineSocial.Tests.csproj",
+        "exitCode": 0,
+        "outputTail": [
+          "Maximum fixture payload 365360 bytes, envelope 487936 bytes",
+          "PASS 34 server social checks; maximum fixture payload 365360 bytes, envelope 487936 bytes"
+        ]
+      },
+      {
+        "project": "tests/StationRecovery/Termination.Tests.csproj",
+        "exitCode": 0,
+        "outputTail": [
+          "{\"passed\":true,\"checks\":88,\"cases\":[{\"fault\":\"close\",\"cause\":\"PEER_CLOSE\",\"elapsedMs\":55.6973,\"singleWriter\":true},{\"fault\":\"close-in-flight\",\"cause\":\"PEER_CLOSE\",\"elapsedMs\":3.566,\"singleWriter\":true},{\"fault\":\"close-timeout\",\"cause\":\"PEER_CLOSE\",\"elapsedMs\":2001.968,\"singleWriter\":true},{\"fault\":\"eof\",\"cause\":\"RECEIVE_FAILURE\",\"elapsedMs\":2.1103,\"singleWriter\":true},{\"fault\":\"receive-io\",\"cause\":\"RECEIVE_FAILURE\",\"elapsedMs\":0.8174,\"singleWriter\":true},{\"fault\":\"send-io\",\"cause\":\"SEND_FAILURE\",\"elapsedMs\":0.4356,\"singleWriter\":true},{\"fault\":\"request-cancel\",\"cause\":\"REQUEST_ABORT\",\"elapsedMs\":0.9526,\"singleWriter\":true},{\"fault\":\"close-cancel\",\"cause\":\"PEER_CLOSE\",\"elapsedMs\":0.5012,\"singleWriter\":true},{\"fault\":\"human-leave\",\"cause\":\"ROOM_ENDED\",\"elapsedMs\":3.2971,\"singleWriter\":true}],\"scope\":\"Production relay with simulated faulting sockets; real TLS/WSS qualification required separately\"}"
+        ]
+      },
+      {
+        "project": "tests/StationLibraryAuto/StationLibraryAuto.Tests.csproj",
+        "exitCode": 0,
+        "outputTail": [
+          "PASS 30 Station snapshot, metadata, active grant and last-good checks"
+        ]
+      }
+    ],
+    "pythonUnitTests": 75,
+    "pythonChecks": [
+      {
+        "test": "station_auto_online_tests.py",
+        "passed": true,
+        "unitTests": 2,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_future_online_tests.py",
+        "passed": true,
+        "unitTests": 6,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_content_set_tests.py",
+        "passed": true,
+        "unitTests": 6,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_content_identity_tests.py",
+        "passed": true,
+        "unitTests": 4,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_disc_discovery_tests.py",
+        "passed": true,
+        "unitTests": 3,
+        "fixtureDependenciesSupplied": true
+      },
+      {
+        "test": "station_package_discovery_tests.py",
+        "passed": true,
+        "unitTests": 6,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_library_discovery_tests.py",
+        "passed": true,
+        "unitTests": 5,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_revista_tests.py",
+        "passed": true,
+        "unitTests": 15,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_reconcile_tests.py",
+        "passed": true,
+        "unitTests": 13,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_synopsis_update_tests.py",
+        "passed": true,
+        "unitTests": 9,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_export_index_tests.py",
+        "passed": true,
+        "unitTests": 6,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_hardening_config_checks.py",
+        "passed": true,
+        "unitTests": null,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_registration_checks.py",
+        "passed": true,
+        "unitTests": null,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_registration_rollback_checks.py",
+        "passed": true,
+        "unitTests": null,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_panel_checks.py",
+        "passed": true,
+        "unitTests": null,
+        "fixtureDependenciesSupplied": false
+      },
+      {
+        "test": "station_rollout_scope_checks.py",
+        "passed": true,
+        "unitTests": null,
+        "fixtureDependenciesSupplied": true
+      }
+    ],
+    "postgreSQLScopeUsesOwnedTemporaryCluster": true,
+    "rawROMPayloadRehashAtDownloadAdded": false,
+    "fullGameOrZIPPayloadCRCScansPerformed": false,
+    "completeSampledPublicDownloads": 11,
+    "largePublicDownloadsSampleBoundBytes": 8388608,
+    "publicCoverSamples": 62,
+    "publicCoverWorkers": 4,
+    "publicCoverMedianMs": 411.941,
+    "publicCoverP95Ms": 500.385
+  },
+  "evidence": {
+    "production": {
+      "schemaVersion": 1,
+      "utcStarted": "2026-10-10T13:28:37.166217+00:00",
+      "operation": "Station complete read-only checkup",
+      "productionRestarted": false,
+      "productionConfigurationChanged": false,
+      "physicalAndroidGameplayVerified": false,
+      "sections": {
+        "sealed-release": {
+          "passed": true,
+          "seconds": 0.078,
+          "result": {
+            "passed": true,
+            "dllMatchesPublishedHandoff": true,
+            "sealedFiles": 23,
+            "allInstalledToolsMatchSource": true,
+            "indexHash": "f7924dcd6bdea74c2f32d8a482184f6f21f6a7f235b77f697432fd57637aef6e",
+            "profilesHash": "a029fb61ce68fa26abadf0312b55b9ae163c6a3604a12bfd37e97d406fdfebaa",
+            "identitiesHash": "16efbad906b1f8aec26869fc9900a7aa50486fa351be4c82f507253a1902667a"
+          }
+        },
+        "catalog-assets-modes": {
+          "passed": true,
+          "seconds": 4.431,
+          "result": {
+            "passed": true,
+            "revision": 27,
+            "catalogItems": 3848,
+            "visibleItems": 3593,
+            "aliases": 255,
+            "catalogLimit": 4096,
+            "remainingItemIDs": 248,
+            "contentIdentities": 3848,
+            "uniqueMediaFiles": 7569,
+            "uniqueCovers": 3848,
+            "coverDimensions": {
+              "480x720": 3848
+            },
+            "missingMedia": [],
+            "conflictingCoverIds": [],
+            "sandbox": {
+              "mediaFilesReadable": 7569,
+              "protectedPathsDenied": 4,
+              "readOnlyMounts": true
+            },
+            "profiles": 5176,
+            "approvedProfiles": 5169,
+            "profilesPreservedByAutomaticGeneration": true,
+            "preparedItems": 273,
+            "preparedModes": 274,
+            "preparedFourPlayerModes": 9,
+            "actualFutureEnginesEnrolled": false,
+            "visibleMissingDescriptions": [
+              {
+                "itemId": "station_d200672b6feada42ed7102b5e6d034e2",
+                "name": "AeroWings 2 - Airstrike",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_a42bf0ff59174a89706c28e19d4b283c",
+                "name": "Airforce Delta",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_04ecfb322300cdefa2344784bb8b41be",
+                "name": "Alone in the Dark - The New Nightmare (Disco 1 de 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_1b4aeb7b677b8406e6810f443b22155a",
+                "name": "Alone in the Dark - The New Nightmare (Disco 2 de 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_dd7497f63bd28edf2a83912dd8b79153",
+                "name": "Buzz Lightyear of Star Command",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_bff918776f3da95ac81eb98bdf024f1e",
+                "name": "Capcom vs. SNK",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_c0b4bc1c83241d09396716dd502bd6ae",
+                "name": "ChuChu Rocket!",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_ed136a9394c2037d484c8f2a151a45b7",
+                "name": "Coaster Works",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_2d59f12eef6f69e3f1ef193123964691",
+                "name": "Conflict Zone - Modern War Strategy",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_e64d6154cb52871b946e2b88e578da05",
+                "name": "D2 (Disco 1 de 4)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_77a73fb9d8b7e6e1babaa3869f81b492",
+                "name": "D2 (Disco 2 de 4)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_ab4dde393bfbe5fec768d06c68d8a22f",
+                "name": "D2 (Disco 3 de 4)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_70f4c12ef657696e9c59673d24ef15c4",
+                "name": "D2 (Disco 4 de 4)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_7c83a91e5a7d52ebbe397c997239df45",
+                "name": "Deep Fighter (Disco 1 de 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_8cdc73fcbe8f2c91533612099ded04ec",
+                "name": "Deep Fighter (Disco 2 de 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_0953492c4c6576065efa98380dba2e52",
+                "name": "Donald Duck - Goin' Quackers",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_dedeb5d5406c24cd1bfb02343a0b0395",
+                "name": "DragonRiders - Chronicles of Pern",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_21c3071c3a57a83e67ccc1646164d931",
+                "name": "Ducati World - Racing Challenge",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_bdc6f2ee9158d13d4e436f299c439d5f",
+                "name": "Dynamite Cop!",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_b45d526c6d27387e5b19af50e964e7eb",
+                "name": "ESPN International Track & Field",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_bc75414425bee9e137946fd0daae844f",
+                "name": "Elemental Gimmick Gear",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_d66ed697f043f62d82128a29a6d1be76",
+                "name": "Evolution - The World of Sacred Device",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_0cfe2f28401d51af318820706bfd5eca",
+                "name": "Evolution 2 - Far Off Promise",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_452aa79c93d3770e753cb1aea22ecf25",
+                "name": "Expendable",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_33d132308c7bd9eec951462443b6abc4",
+                "name": "Fatal Fury - Mark of the Wolves",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_cba35363deb597f8f95306a8f26cb008",
+                "name": "Fighting Force 2 (Versão 1)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_295b59ba6eea68400c2035c7bed5c7a3",
+                "name": "Fighting Force 2 (Versão 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_a16868e55b0029bcd14cf33ec73ae3d6",
+                "name": "GigaWing 2",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_3af20913f84c1ad9633675e8ff367db4",
+                "name": "GigaWing",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_2dedf2839146d34730c4e6a1bfda04ff",
+                "name": "Grandia II",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_5cb2b9feeab6623cc3fb637464ca59e0",
+                "name": "Industrial Spy - Operation Espionage",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_a554e55007d010b0cfd8c7b459419f1d",
+                "name": "Jet Grind Radio",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_ccac76b40703cce95397ac0a50398df4",
+                "name": "King of Fighters Evolution, The",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_c752932ef3acc84d6a01e6a44ca0d4aa",
+                "name": "Last Blade 2, The - Heart of the Samurai",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_3ce57356d2c3c7f6738bddcbfb632c36",
+                "name": "Looney Tunes Space Race",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_230924a63b3a42c13c0498005015eac0",
+                "name": "MTV Sports - Skateboarding Featuring Andy Macdonald",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_017d4ad0c35b9e0537519cbae94bbfd4",
+                "name": "Marvel vs. Capcom 2",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_19000979c1ca293fe87b39cbf1261df9",
+                "name": "Monaco Grand Prix",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_260d6bef2e8b1fbc37291df14da0fa81",
+                "name": "Mr Driller",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_638a548059c37d3d2e3259f2afd55e55",
+                "name": "NFL 2K (Versão 1)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_2566875b68d223bcec73a5984b85b32d",
+                "name": "NFL 2K (Versão 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_a66342b859420441b5ef8eaa57827ba7",
+                "name": "NFL 2K (Versão 3)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_507f12c624c9507f41e1b772413ce21f",
+                "name": "NFL 2K (Versão 4)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_33d706b26f2fca7ed46a303365fba64e",
+                "name": "Next Tetris, The - On-line Edition",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_a13fd153caeaa066b77aa66ad6d4ec06",
+                "name": "Nightmare Creatures II",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_6b90c57070bf3754d9827c1e1631f0e9",
+                "name": "POD - Speedzone (Versão 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_80db7b3d26f3d7baea291c99079d3984",
+                "name": "PenPen TriIcelon",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_3de779fc30ecef8cd9ba9983bc5c442a",
+                "name": "Phantasy Star Online Ver. 2",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_366e8048e48996eb8cafe8af72e1da33",
+                "name": "Project Justice",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_662faa15e8c2dd5f535b2500282f416e",
+                "name": "Quake III Arena",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_b196cbb9aede47637a2f9e10c364445b",
+                "name": "Railroad Tycoon II - Gold Edition",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_1dbf87198a2f3782127b09c7796cc70b",
+                "name": "Rayman 2 - The Great Escape",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_dcdcc159757adac735f13adc78295121",
+                "name": "Razor Freestyle Scooter",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_7adb7ec83582d31b8ff1444dbcbe88eb",
+                "name": "Ready 2 Rumble Boxing (Versão 1)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_0c51dbadb7889354c5c8d1bda7f09e3b",
+                "name": "Ready 2 Rumble Boxing (Versão 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_831dad3abeace4fe1e42245c3175c04e",
+                "name": "Ready 2 Rumble Boxing (Versão 3)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_8e1757391f8e75bec508538e6b562224",
+                "name": "Record of Lodoss War",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_0289a0b3953d87cd8e21968d53db7ed7",
+                "name": "Reel Fishing - Wild",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_7f4cc48d1231d923ce5cdaffb7a37377",
+                "name": "Resident Evil - Code Veronica (Disco 1 de 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_60ef7b56bb6f80cd872b0d0a308ceda3",
+                "name": "Resident Evil - Code Veronica (Disco 2 de 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_cb4eb07055677be03620ae1a139eb634",
+                "name": "Resident Evil 2 (Disco 1 de 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_dc13c5680ad58a48188fa5173c0dd476",
+                "name": "Resident Evil 2 (Disco 2 de 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_b77346021ad26cdcff82b52b1b522382",
+                "name": "Ring, The - Terror's Realm",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_ec9a44d272e103292be41c72723bdaee",
+                "name": "Rippin' Riders Snowboarding",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_a00a2ad28a305798f6958ea5d24eaeae",
+                "name": "Shenmue (Disco 1 de 4)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_2a7b991c444781d0a8c7d2896d5828fe",
+                "name": "Shenmue (Disco 2 de 4)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_d8e0b511fdf1fe09fbd5cbbce0763682",
+                "name": "Shenmue (Disco 3 de 4)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_ae879fb139c155e29f0fcac79ffeec7c",
+                "name": "Shenmue (Disco 4 de 4)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_78b7c695e5d8c5ae8b0419fded758cad",
+                "name": "Skies of Arcadia (Disco 1 de 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_5903f2e5c538beb82117c37ea50fcb33",
+                "name": "Skies of Arcadia (Disco 2 de 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_14dd1839d4487040394e195ad6ca422c",
+                "name": "Soul Calibur (Versão 1)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_792e43445bed0faa5a01b1590b457b41",
+                "name": "Soul Calibur (Versão 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_8733156f40d4d906e09309118d13c213",
+                "name": "Speed Devils - Online Racing",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_e7e4a95c5a4dc19e88252ba442a6da0c",
+                "name": "Star Wars - Episode I - Jedi Power Battles",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_6f7a4e2edc98cc56706d5e86215f7933",
+                "name": "Star Wars - Episode I - Racer",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_95303351a29aa598e39c49f879695a9a",
+                "name": "Street Fighter Alpha 3",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_9393a16709fc3357c06c68f479309ae4",
+                "name": "Street Fighter III - 3rd Strike",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_2f7821c22769a1da65c254912811bcd0",
+                "name": "Street Fighter III - Double Impact",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_d9df73e4b0f75bf27ce7d70d3793ec90",
+                "name": "Stupid Invaders (Disco 1 de 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_aebd413245a839716a307d674e7bd216",
+                "name": "Stupid Invaders (Disco 2 de 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_a2a904a622ce3495c4d4283f8376927c",
+                "name": "Suzuki ALSTARE Extreme Racing",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_f9ddd8ec9bb91513b25cfad02d78f791",
+                "name": "Sword of the Berserk - Guts' Rage",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_dc32b8aa0106947e064debc9b7be355d",
+                "name": "Tee Off",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_65e5a7f87f18300cd8ff10a79195f8cb",
+                "name": "Test Drive Le Mans",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_386e1fcc4580721e8ee2ccb2442821e8",
+                "name": "Test Drive V-Rally",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_4f9c064f3b8d84de14442a58f716ab7b",
+                "name": "TimeStalkers",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_19474164e353d34cdfca86f40e101678",
+                "name": "Tom Clancy's Rainbow Six - Rogue Spear",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_3cb78e3be8fe2c8f9f7eaf9045547e41",
+                "name": "Tom Clancy's Rainbow Six",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_64b6c739fd188f9636b91cbf2ea9b9f3",
+                "name": "Tomb Raider - The Last Revelation",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_67e4ee7d44474a871dbbd8433621edb6",
+                "name": "Tomb Raider Chronicles",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_59a2e7e306dd4c9b1c0833b6c9afa5d4",
+                "name": "Toy Commander (Versão 1)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_002d1d405d347930a438061befe8ef02",
+                "name": "Toy Commander (Versão 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_ee64f9362c695e19ef8816b777db97f5",
+                "name": "TrickStyle (Versão 1)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_2806e3c4feb570f4c2b4a24eeb8d7381",
+                "name": "TrickStyle (Versão 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_a46cc5224458d79995ca07e43c77a9cd",
+                "name": "Typing of the Dead, The",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_071dbe9ffd4c61dcf033fc1b6f66bf15",
+                "name": "Vigilante 8 - 2nd Offense",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_37cd106cf1ef78a09b3055aeaed1a9fe",
+                "name": "Virtua Athlete 2000",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_2b3d5545daacecfb3311b0abb16f8a49",
+                "name": "Virtua Striker 2",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_05102e1dc7ad0d7dc12702b1bf3556cf",
+                "name": "Who Wants to Beat Up a Millionaire",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_e368aad668218529a012923729870732",
+                "name": "World Series Baseball 2K1 (Versão 1)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_4e2397f60df5d4a685a9e2accba450bd",
+                "name": "World Series Baseball 2K1 (Versão 2)",
+                "platform": "dreamcast"
+              },
+              {
+                "itemId": "station_7e4887bc3e6edba81a11f5a65fe279f8",
+                "name": "1941 - Counter Attack (World)",
+                "platform": "cps1"
+              },
+              {
+                "itemId": "station_1da4a68c9c4efb41fca2b16204597eae",
+                "name": "Captain Commando (World)",
+                "platform": "cps1"
+              },
+              {
+                "itemId": "station_da663d24f1b21233d607f0365ee1863a",
+                "name": "Cadillacs and Dinosaurs (World)",
+                "platform": "cps1"
+              },
+              {
+                "itemId": "station_208552a62612beae0fdbc4f0aec35ad3",
+                "name": "Final Fight (World)",
+                "platform": "cps1"
+              },
+              {
+                "itemId": "station_6161e4442e0384b0b3f33e2697711cca",
+                "name": "The Punisher (World)",
+                "platform": "cps1"
+              },
+              {
+                "itemId": "station_d5c2b72c57da35806add96453ac90db2",
+                "name": "Street Fighter II - The World Warrior (World 910214)",
+                "platform": "cps1"
+              },
+              {
+                "itemId": "station_a57978ebadf3561cb59587dac426d2b5",
+                "name": "Strider (US)",
+                "platform": "cps1"
+              },
+              {
+                "itemId": "station_a87384b87359586c74cc54b4f2a60630",
+                "name": "1944: The Loop Master (US 000620)",
+                "platform": "cps2"
+              },
+              {
+                "itemId": "station_52eb232b0c0d67812d971f5890e48492",
+                "name": "Marvel Super Heroes Vs. Street Fighter (US 970827)",
+                "platform": "cps2"
+              },
+              {
+                "itemId": "station_6f55b112c27ea96b2df69cf7e205d2d8",
+                "name": "Street Fighter Alpha 2 (US 960306)",
+                "platform": "cps2"
+              },
+              {
+                "itemId": "station_8188cff444a707ff9ac7799177b259df",
+                "name": "Street Fighter Alpha 3 (USA 980904)",
+                "platform": "cps2"
+              },
+              {
+                "itemId": "station_4dd5e7224167e84dbdef3a6dc0a595ec",
+                "name": "Super Street Fighter 2 Turbo (World 940223)",
+                "platform": "cps2"
+              },
+              {
+                "itemId": "station_84b036f254e56c789545be5991604a46",
+                "name": "JoJo's Bizarre Adventure: Heritage for the Future / JoJo no Kimyou na Bouken: Mirai e no Isan (Euro 990927)",
+                "platform": "cps3"
+              },
+              {
+                "itemId": "station_60b0c94a28de6bd4ab958ad7178078fb",
+                "name": "Street Fighter III 2nd Impact: Giant Attack (USA 970930)",
+                "platform": "cps3"
+              },
+              {
+                "itemId": "station_814ca9c544a65f3f85f2ac6e6f993973",
+                "name": "Street Fighter III 3rd Strike: Fight for the Future (Euro 990608)",
+                "platform": "cps3"
+              },
+              {
+                "itemId": "station_43f3753dd92598f1841cdfd3ec273886",
+                "name": "1945k III",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_9122a13f5464bc686a0413c7aa47ee88",
+                "name": "Asterix (World ver. EAD)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_9d1c9f01e3e37f23b103f819cbb61dc1",
+                "name": "Tetris (set 1)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_38c62a70c14ad43612b790380df4f4b3",
+                "name": "Batman",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_9d9708d49c8ff8f996c0abbc9499223b",
+                "name": "Donkey Kong (US)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_dc70679260ae154bc341a1f1b89f8fee",
+                "name": "Demon Front (ver. 102)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_b60e44691a1af9bca9853039b5ff9e36",
+                "name": "Drift Out (Japan)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_7bf27372f3049962eaf62b12765d10b3",
+                "name": "EspGaluda",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_ce7b8129d80dd6fe53bbae57cc470e43",
+                "name": "Grid Seeker: Project Stormhammer (World)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_4d7ade70930164d851c435ad54894c7d",
+                "name": "Gun Bird (Japan)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_8757f3c62d1922bce861b4de5f28f9a2",
+                "name": "Knights of Valour / Sangoku Senki (ver. 117)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_9ed93c461c331375768d380231ed1a28",
+                "name": "Knights of Valour: Luan Shi Quan Huang Te Bie Ban / Sangoku Senki: Luan Shi Quan Huang Te Bie Ban (V112CN, China)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_5e9d350bedf3f38c71fe9ab09aa22998",
+                "name": "Knights of Valour Plus / Sangoku Senki Plus (ver. 119)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_5a99bd9b70aeffc8be7ea37761d0ff34",
+                "name": "Knights of Valour Superheroes / Sangoku Senki Superheroes (ver. 322)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_2325ba192ed158e7a7a28d81e153c678",
+                "name": "Martial Masters (ver. 104, 102, 102US)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_43e41d521df4b03822a07e83c2ac0b05",
+                "name": "Raiden 2",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_f633da416caadcb8de1ca9e3d4ecc904",
+                "name": "Rolling Crush (version 1.07.E - 1999/02/11, Trust license)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_718e7a9dea679b1e7b5f9cf46eef76b1",
+                "name": "Street Fighter Alpha 3 (USA 980904)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_e9334dd7d112c8b083b133aa555849ef",
+                "name": "Shadow Force (US Version 2)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_c6c6ce14d5dd6deb0fdc991000025a63",
+                "name": "Super Space Invaders '91 (World)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_53fa1762c364a5d9cdee8a4d145f99c7",
+                "name": "Tank Force (US)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_4b0adfba219bd08a3dd5a70397d81bce",
+                "name": "Twin Cobra II (Ver 2.1O 1995/11/30)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_80583c3f80a1c88bcb97181ac6c486bf",
+                "name": "Thunder Dragon",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_b33f8e87ad6b4846ad79b5074a5f453c",
+                "name": "Tiger Heli (set 1)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_97949f02512a6796b20356a2c6eeee99",
+                "name": "Toki (set 1)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_eb33d25e7e57c67802ff111da522419a",
+                "name": "Ultimate Mortal Kombat 3 (rev 1.2)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_df0b1a853d0e930424d5b7d485c33f1e",
+                "name": "Vendetta (World, 2 Players, ver. W)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_19fa16b7aea0ce4499f354eb9fcd7597",
+                "name": "Violent Storm (Europe ver EAB)",
+                "platform": "fbneo"
+              },
+              {
+                "itemId": "station_d9405ba1719a504fad37055a359e861e",
+                "name": "Harvest Moon Back To Nature",
+                "platform": "psx"
+              },
+              {
+                "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
+                "name": "World Soccer Winning Eleven 2002 (Japan)",
+                "platform": "psx"
+              },
+              {
+                "itemId": "station_68188db1da6203f08a4b58e583d6af21",
+                "name": "Epic Mickey 2 The Power of Two",
+                "platform": "wii"
+              },
+              {
+                "itemId": "station_3b50bae45f3433371386de5687913fb8",
+                "name": "Jackie Chan Stuntmaster BR",
+                "platform": "psx"
+              }
+            ],
+            "platformCounts": {
+              "megadrive": {
+                "items": 1133,
+                "visible": 887,
+                "visibleOnlineWithTwoOrMore": 887
+              },
+              "snes": {
+                "items": 653,
+                "visible": 644,
+                "visibleOnlineWithTwoOrMore": 644
+              },
+              "megadrivebr": {
+                "items": 94,
+                "visible": 94,
+                "visibleOnlineWithTwoOrMore": 94
+              },
+              "snesbr": {
+                "items": 191,
+                "visible": 191,
+                "visibleOnlineWithTwoOrMore": 191
+              },
+              "n64": {
+                "items": 157,
+                "visible": 157,
+                "visibleOnlineWithTwoOrMore": 118
+              },
+              "neogeo": {
+                "items": 189,
+                "visible": 189,
+                "visibleOnlineWithTwoOrMore": 180
+              },
+              "neogeocd": {
+                "items": 50,
+                "visible": 50,
+                "visibleOnlineWithTwoOrMore": 47
+              },
+              "dreamcast": {
+                "items": 243,
+                "visible": 243,
+                "missingDescriptions": 101
+              },
+              "cps1": {
+                "items": 36,
+                "visible": 36,
+                "missingDescriptions": 7,
+                "visibleOnlineWithTwoOrMore": 36
+              },
+              "cps2": {
+                "items": 64,
+                "visible": 64,
+                "missingDescriptions": 5,
+                "visibleOnlineWithTwoOrMore": 62
+              },
+              "cps3": {
+                "items": 11,
+                "visible": 11,
+                "missingDescriptions": 3,
+                "visibleOnlineWithTwoOrMore": 9
+              },
+              "fbneo": {
+                "items": 913,
+                "visible": 913,
+                "missingDescriptions": 28,
+                "visibleOnlineWithTwoOrMore": 846
+              },
+              "gamecube": {
+                "items": 21,
+                "visible": 21
+              },
+              "psx": {
+                "items": 84,
+                "visible": 84,
+                "missingDescriptions": 3,
+                "visibleOnlineWithTwoOrMore": 25
+              },
+              "wii": {
+                "items": 7,
+                "visible": 7,
+                "missingDescriptions": 1
+              },
+              "wiiu": {
+                "items": 1,
+                "visible": 1
+              },
+              "switch": {
+                "items": 1,
+                "visible": 1
+              }
+            }
+          }
+        },
+        "automatic-importer": {
+          "passed": true,
+          "seconds": 0.045,
+          "result": {
+            "passed": true,
+            "timerActive": true,
+            "lastExitCode": 0,
+            "lastScanLocal": "Sat 2026-10-10 10:28:07 -03",
+            "reportRevision": 27,
+            "lastScanChanged": false,
+            "persistentModesAndEngines": true,
+            "engineEnrollmentByData": true,
+            "engineEnrollmentRequiresRestart": false,
+            "automaticProfileGenerationPreservedAllProfiles": true,
+            "reportFields": [
+              "platforms",
+              "pending",
+              "added",
+              "updated",
+              "metadataMissing",
+              "missingXmlRoms",
+              "placeholderCovers",
+              "runtimeRequirements",
+              "revision",
+              "changed",
+              "items",
+              "visible"
+            ],
+            "pendingCounts": {}
+          }
+        },
+        "database-scope": {
+          "passed": true,
+          "seconds": 0.216,
+          "result": {
+            "rawSharedTablesDenied": 6,
+            "administrativePrivilegesDenied": true,
+            "otherProductRowsHidden": true
+          }
+        },
+        "management-private-health": {
+          "passed": true,
+          "seconds": 0.014,
+          "result": {
+            "passed": true,
+            "authenticatedPrivateSocket": true,
+            "status": 200
+          }
+        },
+        "public-security": {
+          "passed": true,
+          "seconds": 4.799,
+          "result": {
+            "passed": true,
+            "checks": 15,
+            "copiedTokenDenied": true,
+            "requestReplayDenied": true,
+            "changedPathDenied": true,
+            "signedDowngradeDenied": true,
+            "completeCatalogPreserved": true,
+            "fourConcurrentProtectedCovers": true,
+            "hardwarePhoneVerified": false,
+            "strictPolicyEnforced": false
+          }
+        },
+        "public-full-signed-catalog": {
+          "passed": true,
+          "seconds": 4.641,
+          "result": {
+            "passed": true,
+            "checks": 35962,
+            "catalogRevision": 27,
+            "visibleItems": 3593,
+            "contentIdentityFields": 3593,
+            "metadataOptInVerified": true,
+            "allMetadataMatched": true,
+            "requestAndResponseSignaturesVerified": true,
+            "capabilities": [
+              {
+                "itemId": "826da6daebe9edbebffb3721f83abf12",
+                "status": 200,
+                "multiplayerVersion": 3,
+                "capability": "station-multiplayer.v3",
+                "approvedProfiles": 6,
+                "profiles": [
+                  {
+                    "itemId": "826da6daebe9edbebffb3721f83abf12",
+                    "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                    "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+                    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                    "maximumPlayers": 2,
+                    "approved": true,
+                    "controllerProfile": "standard-2p-v1",
+                    "mode": "two-player",
+                    "allowedPlayerCounts": [
+                      2
+                    ],
+                    "modeTitle": null,
+                    "instructions": null,
+                    "sources": null
+                  },
+                  {
+                    "itemId": "826da6daebe9edbebffb3721f83abf12",
+                    "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                    "profileId": "snes-battlemaniacs-mode-a-20261008",
+                    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                    "maximumPlayers": 2,
+                    "approved": true,
+                    "controllerProfile": "standard-2p-v1",
+                    "mode": "two-player-a",
+                    "allowedPlayerCounts": [
+                      2
+                    ],
+                    "modeTitle": "Dupla com golpes entre parceiros",
+                    "instructions": [
+                      "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+                    ],
+                    "sources": [
+                      "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+                    ]
+                  },
+                  {
+                    "itemId": "826da6daebe9edbebffb3721f83abf12",
+                    "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                    "profileId": "snes-battlemaniacs-mode-b-20261008",
+                    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                    "maximumPlayers": 2,
+                    "approved": true,
+                    "controllerProfile": "standard-2p-v1",
+                    "mode": "two-player-b",
+                    "allowedPlayerCounts": [
+                      2
+                    ],
+                    "modeTitle": "Dupla sem golpes entre parceiros",
+                    "instructions": [
+                      "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+                    ],
+                    "sources": [
+                      "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+                    ]
+                  },
+                  {
+                    "itemId": "826da6daebe9edbebffb3721f83abf12",
+                    "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+                    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                    "maximumPlayers": 2,
+                    "approved": true,
+                    "controllerProfile": "standard-2p-v1",
+                    "mode": "two-player",
+                    "allowedPlayerCounts": [
+                      2
+                    ],
+                    "modeTitle": null,
+                    "instructions": null,
+                    "sources": null
+                  },
+                  {
+                    "itemId": "826da6daebe9edbebffb3721f83abf12",
+                    "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "snes-battlemaniacs-mode-a-20261008",
+                    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                    "maximumPlayers": 2,
+                    "approved": true,
+                    "controllerProfile": "standard-2p-v1",
+                    "mode": "two-player-a",
+                    "allowedPlayerCounts": [
+                      2
+                    ],
+                    "modeTitle": "Dupla com golpes entre parceiros",
+                    "instructions": [
+                      "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+                    ],
+                    "sources": [
+                      "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+                    ]
+                  },
+                  {
+                    "itemId": "826da6daebe9edbebffb3721f83abf12",
+                    "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "snes-battlemaniacs-mode-b-20261008",
+                    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                    "maximumPlayers": 2,
+                    "approved": true,
+                    "controllerProfile": "standard-2p-v1",
+                    "mode": "two-player-b",
+                    "allowedPlayerCounts": [
+                      2
+                    ],
+                    "modeTitle": "Dupla sem golpes entre parceiros",
+                    "instructions": [
+                      "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+                    ],
+                    "sources": [
+                      "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+                    ]
+                  }
+                ]
+              },
+              {
+                "itemId": "ac79b8fc351cb0811a7e9b51a099ba9c",
+                "status": 200,
+                "multiplayerVersion": 3,
+                "capability": "station-multiplayer.v3",
+                "approvedProfiles": 0,
+                "profiles": []
+              },
+              {
+                "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                "status": 200,
+                "multiplayerVersion": 3,
+                "capability": "station-multiplayer.v3",
+                "approvedProfiles": 6,
+                "profiles": [
+                  {
+                    "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                    "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                    "profileId": "snes-sbomberman2-usa-battle-single-r77",
+                    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+                    "maximumPlayers": 4,
+                    "approved": true,
+                    "controllerProfile": "snes-multitap-port2-v1",
+                    "mode": "battle-single",
+                    "allowedPlayerCounts": [
+                      2,
+                      3,
+                      4
+                    ],
+                    "modeTitle": null,
+                    "instructions": null,
+                    "sources": null
+                  },
+                  {
+                    "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                    "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                    "profileId": "snes-sbomberman2-normal-20261008",
+                    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                    "maximumPlayers": 1,
+                    "approved": true,
+                    "controllerProfile": "standard-2p-v1",
+                    "mode": "normal",
+                    "allowedPlayerCounts": [],
+                    "modeTitle": "Campanha solo",
+                    "instructions": [
+                      "Normal Game é individual e não deve criar sala."
+                    ],
+                    "sources": [
+                      "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+                    ]
+                  },
+                  {
+                    "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                    "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                    "profileId": "snes-sbomberman2-battle-team-20261008",
+                    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+                    "maximumPlayers": 4,
+                    "approved": true,
+                    "controllerProfile": "snes-multitap-port2-v1",
+                    "mode": "battle-team",
+                    "allowedPlayerCounts": [
+                      2,
+                      3,
+                      4
+                    ],
+                    "modeTitle": "Battle: equipes",
+                    "instructions": [
+                      "Battle Game → Tag Match; configurar humanos e equipes no jogo.",
+                      "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+                    ],
+                    "sources": [
+                      "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+                    ]
+                  },
+                  {
+                    "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                    "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "snes-sbomberman2-usa-battle-single-r77",
+                    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+                    "maximumPlayers": 4,
+                    "approved": true,
+                    "controllerProfile": "snes-multitap-port2-v1",
+                    "mode": "battle-single",
+                    "allowedPlayerCounts": [
+                      2,
+                      3,
+                      4
+                    ],
+                    "modeTitle": "Battle: todos contra todos",
+                    "instructions": [
+                      "Battle Game → Single Match; pads participantes MAN; outros COM/OFF.",
+                      "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+                    ],
+                    "sources": [
+                      "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf",
+                      "https://docs.libretro.com/guides/netplay-multiple-controllers/"
+                    ]
+                  },
+                  {
+                    "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                    "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "snes-sbomberman2-normal-20261008",
+                    "profileSha256": "945bb950e94c95eed556387c92f0a1b18ae186f36061b459d76f6a634d4590ec",
+                    "maximumPlayers": 1,
+                    "approved": true,
+                    "controllerProfile": "standard-2p-v1",
+                    "mode": "normal",
+                    "allowedPlayerCounts": [],
+                    "modeTitle": "Campanha solo",
+                    "instructions": [
+                      "Normal Game é individual e não deve criar sala.",
+                      "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+                    ],
+                    "sources": [
+                      "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+                    ]
+                  },
+                  {
+                    "itemId": "station_df50d575815ab105084a79d68e0c8fb3",
+                    "contentSha256": "0a4b4a783a7faf6ada3e1326ecf85de77e8c2a171659b42a78a1fae43f806ca6",
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "snes-sbomberman2-battle-team-20261008",
+                    "profileSha256": "f59408b49f6e110a569fe9498af433b9f67c9586cbb8648238b8e571bb8b0143",
+                    "maximumPlayers": 4,
+                    "approved": true,
+                    "controllerProfile": "snes-multitap-port2-v1",
+                    "mode": "battle-team",
+                    "allowedPlayerCounts": [
+                      2,
+                      3,
+                      4
+                    ],
+                    "modeTitle": "Battle: equipes",
+                    "instructions": [
+                      "Battle Game → Tag Match; configurar humanos e equipes no jogo.",
+                      "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+                    ],
+                    "sources": [
+                      "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "public": true,
+            "physicalGameplayQualified": false,
+            "ownedSyntheticFixtureRemoved": true
+          }
+        },
+        "public-covers-downloads-all-platforms": {
+          "passed": true,
+          "seconds": 54.134,
+          "result": {
+            "passed": true,
+            "public": true,
+            "protectedDeviceProof": true,
+            "syntheticRowsRemoved": true,
+            "sampledCovers": 62,
+            "coverConcurrency": 4,
+            "coversTotalMs": 6494.205,
+            "coverLatency": {
+              "samples": 62,
+              "minimumMs": 270.503,
+              "medianMs": 411.941,
+              "p95Ms": 500.385,
+              "maximumMs": 513.604
+            },
+            "covers": [
+              {
+                "platform": "cps1",
+                "itemId": "station_7e4887bc3e6edba81a11f5a65fe279f8",
+                "coverId": "cover_7e4887bc3e6edba81a11f5a65fe279f8",
+                "bytes": 53775,
+                "httpSha256": "cd13d2bca4ce7cb12628e29445923720f7fa78b29bfa065bfbc8ef69148be8c8",
+                "exactIndexedBytes": true,
+                "totalMs": 292.696
+              },
+              {
+                "platform": "cps1",
+                "itemId": "station_0c409d12682ee7de809c1dc0524efe61",
+                "coverId": "cover_0c409d12682ee7de809c1dc0524efe61",
+                "bytes": 61061,
+                "httpSha256": "cb97fd43fdaf16617bf0c3ad065ac7012230ca180eb06cc65425efc1f5c2661e",
+                "exactIndexedBytes": true,
+                "totalMs": 270.503
+              },
+              {
+                "platform": "cps1",
+                "itemId": "station_1da4a68c9c4efb41fca2b16204597eae",
+                "coverId": "cover_1da4a68c9c4efb41fca2b16204597eae",
+                "bytes": 70797,
+                "httpSha256": "9b5478f3e3a5056d8896b71801bc6925be6526e3ae03d7a70eb9c0f6b321c6b0",
+                "exactIndexedBytes": true,
+                "totalMs": 317.88
+              },
+              {
+                "platform": "cps1",
+                "itemId": "station_7fe97dc4448e1fe10272ab66bbc8804c",
+                "coverId": "cover_7fe97dc4448e1fe10272ab66bbc8804c",
+                "bytes": 76168,
+                "httpSha256": "86c93c3d4253a5cb826b7413aae552faf3d77f531b79c0f87b69f957713d3bcf",
+                "exactIndexedBytes": true,
+                "totalMs": 313.468
+              },
+              {
+                "platform": "cps2",
+                "itemId": "station_a87384b87359586c74cc54b4f2a60630",
+                "coverId": "cover_a87384b87359586c74cc54b4f2a60630",
+                "bytes": 67375,
+                "httpSha256": "f415d12b188575998f19f25b07ca8ba4207bba5d61d8ffd66d6af1ccb3133ff1",
+                "exactIndexedBytes": true,
+                "totalMs": 301.995
+              },
+              {
+                "platform": "cps2",
+                "itemId": "station_151b21c1d1495bea728dc819a2edf081",
+                "coverId": "cover_151b21c1d1495bea728dc819a2edf081",
+                "bytes": 176704,
+                "httpSha256": "108d18f472f3dce00c3126a2a7fdec603bb4ca0e52a22c252dec4fcbf7346247",
+                "exactIndexedBytes": true,
+                "totalMs": 398.047
+              },
+              {
+                "platform": "cps2",
+                "itemId": "station_eb5c05375503c14a6571c0043d30259c",
+                "coverId": "cover_eb5c05375503c14a6571c0043d30259c",
+                "bytes": 175764,
+                "httpSha256": "e82ca47ec925b3931a7815ea31f9fe9fbeb36bf5be7c22aebd314d8c6d51dc4b",
+                "exactIndexedBytes": true,
+                "totalMs": 388.741
+              },
+              {
+                "platform": "cps2",
+                "itemId": "station_894874b90d1cc87da600fd474d7ff556",
+                "coverId": "cover_894874b90d1cc87da600fd474d7ff556",
+                "bytes": 72778,
+                "httpSha256": "fd9ee80fb82b051368327ee0e6afa3a30bea0ce5c2fe89749ad00cc007076cd9",
+                "exactIndexedBytes": true,
+                "totalMs": 354.668
+              },
+              {
+                "platform": "cps3",
+                "itemId": "station_dc6c1f56a1d2795d97245205053a1205",
+                "coverId": "cover_dc6c1f56a1d2795d97245205053a1205",
+                "bytes": 180224,
+                "httpSha256": "83d3289510db99554e262909ae79ac34a25631b62c6bae3ac9eaabb1f5bd8470",
+                "exactIndexedBytes": true,
+                "totalMs": 372.672
+              },
+              {
+                "platform": "cps3",
+                "itemId": "station_6d2bba00bfe7af8264a448da3646c395",
+                "coverId": "cover_6d2bba00bfe7af8264a448da3646c395",
+                "bytes": 181597,
+                "httpSha256": "0f2216489f63b4c162ab308dacb7c3ff2775aadbbc80b097a5f9b78dcb523e36",
+                "exactIndexedBytes": true,
+                "totalMs": 437.013
+              },
+              {
+                "platform": "cps3",
+                "itemId": "station_84b036f254e56c789545be5991604a46",
+                "coverId": "cover_84b036f254e56c789545be5991604a46",
+                "bytes": 68766,
+                "httpSha256": "1249f3010e58e2c73ad1b1f490d28685e06e2baa87d131995280840fdcdf3633",
+                "exactIndexedBytes": true,
+                "totalMs": 362.139
+              },
+              {
+                "platform": "cps3",
+                "itemId": "station_21d49379a0fee2ca42e6e824d94ae825",
+                "coverId": "cover_21d49379a0fee2ca42e6e824d94ae825",
+                "bytes": 72354,
+                "httpSha256": "27be0ddc6c36709acc26c107d460efd4f3f3fad02ad102ccffa046c3fe8eee22",
+                "exactIndexedBytes": true,
+                "totalMs": 351.612
+              },
+              {
+                "platform": "dreamcast",
+                "itemId": "station_9f9bf97de88d3a3b7dd55e672c20d710",
+                "coverId": "cover_9f9bf97de88d3a3b7dd55e672c20d710",
+                "bytes": 72860,
+                "httpSha256": "df092ce0710c6bbdf0d04f939e89111a3bf84a8b88adc1a87198ce548e3d7ebe",
+                "exactIndexedBytes": true,
+                "totalMs": 366.695
+              },
+              {
+                "platform": "dreamcast",
+                "itemId": "station_83478c3cb0c6851470d2b7fa11b5a873",
+                "coverId": "cover_83478c3cb0c6851470d2b7fa11b5a873",
+                "bytes": 172104,
+                "httpSha256": "923c88cc155095dfeecfcd18c5be4e944e24c69d6142f769082994ea1b082d0a",
+                "exactIndexedBytes": true,
+                "totalMs": 506.873
+              },
+              {
+                "platform": "dreamcast",
+                "itemId": "station_95d9fb6a7976caa3be73c0c4943873b8",
+                "coverId": "cover_95d9fb6a7976caa3be73c0c4943873b8",
+                "bytes": 173556,
+                "httpSha256": "aa95f07391aeb972bf068559370e6f457a1c41665e2b3e5b20d26f45bca0c383",
+                "exactIndexedBytes": true,
+                "totalMs": 512.534
+              },
+              {
+                "platform": "dreamcast",
+                "itemId": "station_287858ab40ee9ec0e2cb6567dc7cef11",
+                "coverId": "cover_287858ab40ee9ec0e2cb6567dc7cef11",
+                "bytes": 182331,
+                "httpSha256": "23879eecd054b4f8e91e7bfcfd0c0b668ab40922f8a56b1b737292f76f252ee3",
+                "exactIndexedBytes": true,
+                "totalMs": 500.385
+              },
+              {
+                "platform": "fbneo",
+                "itemId": "station_798bf0b0befc0193c2cee3e44d7f6c2c",
+                "coverId": "cover_798bf0b0befc0193c2cee3e44d7f6c2c",
+                "bytes": 169854,
+                "httpSha256": "fb0afa9e373ed7dcf5614d55568cde41df3921a64e5abe082f4d93a3eb861a24",
+                "exactIndexedBytes": true,
+                "totalMs": 513.604
+              },
+              {
+                "platform": "fbneo",
+                "itemId": "station_83600301972c3bda1eaef8cfe02635b9",
+                "coverId": "cover_83600301972c3bda1eaef8cfe02635b9",
+                "bytes": 53775,
+                "httpSha256": "cd13d2bca4ce7cb12628e29445923720f7fa78b29bfa065bfbc8ef69148be8c8",
+                "exactIndexedBytes": true,
+                "totalMs": 461.863
+              },
+              {
+                "platform": "fbneo",
+                "itemId": "station_ddec50e5c37d488f1a4b0b6e834d498d",
+                "coverId": "cover_ddec50e5c37d488f1a4b0b6e834d498d",
+                "bytes": 169011,
+                "httpSha256": "49989363925576b840c7f3242686437ad5094131b7f685ca86022623a94d2f14",
+                "exactIndexedBytes": true,
+                "totalMs": 496.481
+              },
+              {
+                "platform": "fbneo",
+                "itemId": "station_ce10df8191c71135c67356234939fbbc",
+                "coverId": "cover_ce10df8191c71135c67356234939fbbc",
+                "bytes": 173711,
+                "httpSha256": "288d1c7595be714cc0d928011a041b8eef519c31217f96daa0d75b1e39fdd284",
+                "exactIndexedBytes": true,
+                "totalMs": 485.327
+              },
+              {
+                "platform": "gamecube",
+                "itemId": "station_12b835c9539b4800a6bb29ca00a25f94",
+                "coverId": "cover_12b835c9539b4800a6bb29ca00a25f94",
+                "bytes": 158400,
+                "httpSha256": "bea2622953733b49c8ebb01ac34dfd76bf6c9b8c6ec8120a3b1442fc59c82d73",
+                "exactIndexedBytes": true,
+                "totalMs": 452.625
+              },
+              {
+                "platform": "gamecube",
+                "itemId": "station_fa0e2bebbc9125b3ef593e1e2911716c",
+                "coverId": "cover_fa0e2bebbc9125b3ef593e1e2911716c",
+                "bytes": 133491,
+                "httpSha256": "5e0768f8b086f32ed0ec9c5f3cf704ab5bf596af315819a2ff4ab533bcfc98b7",
+                "exactIndexedBytes": true,
+                "totalMs": 468.396
+              },
+              {
+                "platform": "gamecube",
+                "itemId": "station_40c36e432a90826b84bc401acd61b81f",
+                "coverId": "cover_40c36e432a90826b84bc401acd61b81f",
+                "bytes": 144008,
+                "httpSha256": "8f8f4775e75558576f1b62187c6936874ba9b825806187347f8d884ec77abd55",
+                "exactIndexedBytes": true,
+                "totalMs": 417.087
+              },
+              {
+                "platform": "gamecube",
+                "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+                "coverId": "cover_203c099590c11a7650a006d1dc4d705f",
+                "bytes": 155186,
+                "httpSha256": "641b7de1dea219ae2a97b5124754316db715a883e9bb77bd6dfcb7497b4c5da7",
+                "exactIndexedBytes": true,
+                "totalMs": 449.844
+              },
+              {
+                "platform": "megadrive",
+                "itemId": "ce3f245960b94e064f027ffd8aefe466",
+                "coverId": "07c70baecdab7ea819c5f43f879e2fe5",
+                "bytes": 139695,
+                "httpSha256": "940580747ab7aef65b11decf61bf4387550a17e1c466c2df7a540f1743d87fee",
+                "exactIndexedBytes": true,
+                "totalMs": 439.65
+              },
+              {
+                "platform": "megadrive",
+                "itemId": "2a43668160709fee43554514c775675e",
+                "coverId": "2f598a0e2cc8e51de014ae4ec91f700e",
+                "bytes": 117775,
+                "httpSha256": "7df8dd779b4b2645883d8b4ca5c70efcdee56cb6ef2f0fa33037af5cabf1f6a8",
+                "exactIndexedBytes": true,
+                "totalMs": 357.886
+              },
+              {
+                "platform": "megadrive",
+                "itemId": "5447386411b6f0bee58c9eef1544f714",
+                "coverId": "b832ccba7e711de4c1b8bad3f7efc335",
+                "bytes": 143065,
+                "httpSha256": "5bbaca501daad1255fd3ec390c1e6b32bc25307ca603622ed52faaacbb8094ae",
+                "exactIndexedBytes": true,
+                "totalMs": 388.42
+              },
+              {
+                "platform": "megadrive",
+                "itemId": "81f8ba14ead4d4792b5fe0e7a0f4c0c2",
+                "coverId": "ebacd8fa489069e5fad80c6bf60f2217",
+                "bytes": 134106,
+                "httpSha256": "cb7bab5ea7fde309c2efd19bcd7b821ebedc3d2e4ea3cc8f1c8d45e846d3d158",
+                "exactIndexedBytes": true,
+                "totalMs": 365.89
+              },
+              {
+                "platform": "megadrivebr",
+                "itemId": "aa80098f341aba5ed29a56be5caaaacf",
+                "coverId": "f8dbd62a7aa41fbec3d25efc672a7194",
+                "bytes": 134097,
+                "httpSha256": "d7466289a86551176bd69c46976a6d75d72c40dce995c11c0a4e92eafeb383e2",
+                "exactIndexedBytes": true,
+                "totalMs": 453.969
+              },
+              {
+                "platform": "megadrivebr",
+                "itemId": "161beab3bab9b68db1456dd91c94b9a4",
+                "coverId": "3bd56867e66a78790c464275e700bb3e",
+                "bytes": 114639,
+                "httpSha256": "bf758c1e39275fa570038b501de78e8952b0921655efa6316aa1eaac0d332642",
+                "exactIndexedBytes": true,
+                "totalMs": 304.916
+              },
+              {
+                "platform": "megadrivebr",
+                "itemId": "b85361dec6d63a775f337f6a8f2f6313",
+                "coverId": "1a320fd9820f3e58e4672be737eb8a23",
+                "bytes": 134812,
+                "httpSha256": "ca749414a0f9a481e3039e7ddec7b5c985e7cf938350eb8517062319777b2f26",
+                "exactIndexedBytes": true,
+                "totalMs": 341.882
+              },
+              {
+                "platform": "megadrivebr",
+                "itemId": "30fa85bcffa4e926cd2eb5cbb842c3f9",
+                "coverId": "7220568bca24443073af92da1479b041",
+                "bytes": 135117,
+                "httpSha256": "a4f829c6994a3c9b1b27e952133cb82cec9b9587b0c85decf204c256fa36f288",
+                "exactIndexedBytes": true,
+                "totalMs": 371.969
+              },
+              {
+                "platform": "n64",
+                "itemId": "station_c16309c829ad81a41da0b4cb7236a4fb",
+                "coverId": "cover_c16309c829ad81a41da0b4cb7236a4fb",
+                "bytes": 152192,
+                "httpSha256": "656655ded258e0a67b23591ed84b1e40744b94f537548e7b435962807440ee83",
+                "exactIndexedBytes": true,
+                "totalMs": 429.276
+              },
+              {
+                "platform": "n64",
+                "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+                "coverId": "cover_c13a5bbc179ccbe871697999c62ba13d",
+                "bytes": 160326,
+                "httpSha256": "135ba8c0f289b23d1f5cc540b836e3cff71e34e025ed03e754930761b7d4c024",
+                "exactIndexedBytes": true,
+                "totalMs": 469.274
+              },
+              {
+                "platform": "n64",
+                "itemId": "station_79cc0b2a020765962f2b9b3eedf4e32e",
+                "coverId": "cover_79cc0b2a020765962f2b9b3eedf4e32e",
+                "bytes": 148578,
+                "httpSha256": "a45521317bf0061472003855edbf1d5279122af431063359257118e95f131bf2",
+                "exactIndexedBytes": true,
+                "totalMs": 418.324
+              },
+              {
+                "platform": "n64",
+                "itemId": "station_eb3f13581597cf57510e84b656a410cf",
+                "coverId": "cover_eb3f13581597cf57510e84b656a410cf",
+                "bytes": 158568,
+                "httpSha256": "e4ec656a805f783139a55d7cf3dcd2fe16fdf4363a156bee9078c4c1d2696cd0",
+                "exactIndexedBytes": true,
+                "totalMs": 412.192
+              },
+              {
+                "platform": "neogeo",
+                "itemId": "station_939cf663599c63ae2141d93a198e7163",
+                "coverId": "cover_939cf663599c63ae2141d93a198e7163",
+                "bytes": 166660,
+                "httpSha256": "d29b44e86b37d6245b8c6419a276043f112a8a1daf0cffa8814449cfe49224bf",
+                "exactIndexedBytes": true,
+                "totalMs": 428.545
+              },
+              {
+                "platform": "neogeo",
+                "itemId": "station_96cff0b03936e587c553d69c3d9a225e",
+                "coverId": "cover_96cff0b03936e587c553d69c3d9a225e",
+                "bytes": 163611,
+                "httpSha256": "60001d339056d9bdd20bb335f44f96de4890d2e00495c1fc5e7f997753f543fa",
+                "exactIndexedBytes": true,
+                "totalMs": 448.009
+              },
+              {
+                "platform": "neogeo",
+                "itemId": "station_a2a5233c6060008f7e9fc7652ed324a3",
+                "coverId": "cover_a2a5233c6060008f7e9fc7652ed324a3",
+                "bytes": 166554,
+                "httpSha256": "98ee168ac9eae59099d2d774ee8cb723f62eeb10d818c158ceb90e0b69a6242a",
+                "exactIndexedBytes": true,
+                "totalMs": 434.722
+              },
+              {
+                "platform": "neogeo",
+                "itemId": "station_f0e54711555411a146db62d134bec774",
+                "coverId": "cover_f0e54711555411a146db62d134bec774",
+                "bytes": 163043,
+                "httpSha256": "f97b5167b95357ff4b232d2c791335cc89a603f7619d180627cf5015078dfc6a",
+                "exactIndexedBytes": true,
+                "totalMs": 432.198
+              },
+              {
+                "platform": "neogeocd",
+                "itemId": "station_6b714f8aebacccea27302ea3e7daee70",
+                "coverId": "cover_6b714f8aebacccea27302ea3e7daee70",
+                "bytes": 177012,
+                "httpSha256": "d0e5245d7c3c16c6bd173f378b2b5932b6370bed5beeca782652f7cd57009d8d",
+                "exactIndexedBytes": true,
+                "totalMs": 450.524
+              },
+              {
+                "platform": "neogeocd",
+                "itemId": "station_f0e06b2faa9dfb8cd2fc50195ca7b94e",
+                "coverId": "cover_f0e06b2faa9dfb8cd2fc50195ca7b94e",
+                "bytes": 196766,
+                "httpSha256": "420bbf127cd4ead274bbe790624f0856b073d5fd220ef9155c16f18db5068c39",
+                "exactIndexedBytes": true,
+                "totalMs": 499.487
+              },
+              {
+                "platform": "neogeocd",
+                "itemId": "station_cec10b234a2ec2ee24e4380f36726e97",
+                "coverId": "cover_cec10b234a2ec2ee24e4380f36726e97",
+                "bytes": 184491,
+                "httpSha256": "9ade203b24c6d16af32bae0714e9fe45bbee720972f58fac94f3aba61ac727c2",
+                "exactIndexedBytes": true,
+                "totalMs": 454.655
+              },
+              {
+                "platform": "neogeocd",
+                "itemId": "station_dec1105972879e0763b6c848b7ef93eb",
+                "coverId": "cover_dec1105972879e0763b6c848b7ef93eb",
+                "bytes": 182692,
+                "httpSha256": "1cd00b4b1e28497c09083552c2bf27664b257c83798e3de8524f0eba985b1f6e",
+                "exactIndexedBytes": true,
+                "totalMs": 465.945
+              },
+              {
+                "platform": "psx",
+                "itemId": "station_ec52adaf9ea22c751f3d8dba87c09ebd",
+                "coverId": "cover_ec52adaf9ea22c751f3d8dba87c09ebd",
+                "bytes": 119107,
+                "httpSha256": "2ba5308e240ae2842e904378c8d9d678e7cf328dc54026b8e107d3887d6d1255",
+                "exactIndexedBytes": true,
+                "totalMs": 387.991
+              },
+              {
+                "platform": "psx",
+                "itemId": "station_599469b58c769be4ae7443aace5fa5a7",
+                "coverId": "cover_599469b58c769be4ae7443aace5fa5a7",
+                "bytes": 133077,
+                "httpSha256": "38ca9569c32ae8c1c90acfbe6699388e9281fd3514443d7670f5cc403770d223",
+                "exactIndexedBytes": true,
+                "totalMs": 332.137
+              },
+              {
+                "platform": "psx",
+                "itemId": "station_d48c014269c4cf3406eaa68847a118c0",
+                "coverId": "cover_d48c014269c4cf3406eaa68847a118c0",
+                "bytes": 133802,
+                "httpSha256": "6d976687d0d0f86a8238a1318936da2114aac23342509acee076409f36b5f86d",
+                "exactIndexedBytes": true,
+                "totalMs": 423.313
+              },
+              {
+                "platform": "psx",
+                "itemId": "station_f7efe099a4928bc6328dc2823e9af9f3",
+                "coverId": "cover_f7efe099a4928bc6328dc2823e9af9f3",
+                "bytes": 139924,
+                "httpSha256": "1b02ac35560fe38ed4e8e55ed07f9f65524b2b50d9a04a98dacae621f52db986",
+                "exactIndexedBytes": true,
+                "totalMs": 409.379
+              },
+              {
+                "platform": "snes",
+                "itemId": "826da6daebe9edbebffb3721f83abf12",
+                "coverId": "368fe2edb8f4f709c0fd5bf40405aef2",
+                "bytes": 133655,
+                "httpSha256": "afd689677c1f3cbddbfe770c057c7e40c38abffa3c97f94dac59a62f7fc21e20",
+                "exactIndexedBytes": true,
+                "totalMs": 412.33
+              },
+              {
+                "platform": "snes",
+                "itemId": "0b6d00df789b94f5ac2587c28d8e00ae",
+                "coverId": "851996e1e01bbdb97d0ebc57425d1459",
+                "bytes": 133316,
+                "httpSha256": "67ab4ec89726ff3489d836a7fc348b6f6ed9c7a6b10670533597eca50cd3d833",
+                "exactIndexedBytes": true,
+                "totalMs": 390.179
+              },
+              {
+                "platform": "snes",
+                "itemId": "bba0ae28b358b6581357f6dff15799af",
+                "coverId": "9bd5045ca1d3a629a5423aadcf6ee6da",
+                "bytes": 125559,
+                "httpSha256": "b6897399559c30e1d6e6f3cf8e329bbe8fe1b798612d8ab15cde0122912dfcdd",
+                "exactIndexedBytes": true,
+                "totalMs": 373.241
+              },
+              {
+                "platform": "snes",
+                "itemId": "36713b9f340cfb4108196eafabf13c7f",
+                "coverId": "65f596500fb7e22838136e464c0e8455",
+                "bytes": 128753,
+                "httpSha256": "bbe3f76f64e129fbdba89dd8c2da344a3f9c8ce7f388e64fa00eed1ec4a58091",
+                "exactIndexedBytes": true,
+                "totalMs": 400.558
+              },
+              {
+                "platform": "snesbr",
+                "itemId": "station_126db71edb23f73c94ee40ed283a7b8b",
+                "coverId": "cover_126db71edb23f73c94ee40ed283a7b8b",
+                "bytes": 126864,
+                "httpSha256": "94deca484c73c9d772eb292d0f13d665ce3d07cfef1c66abb7c2b2724f1a63c6",
+                "exactIndexedBytes": true,
+                "totalMs": 411.941
+              },
+              {
+                "platform": "snesbr",
+                "itemId": "station_4d94be1fc59507db76763fea08b2b3e8",
+                "coverId": "cover_4d94be1fc59507db76763fea08b2b3e8",
+                "bytes": 125373,
+                "httpSha256": "9002d53b9afaa4d39fa2188d35b29825c781b81127111b05f934f05f73ce85f9",
+                "exactIndexedBytes": true,
+                "totalMs": 398.78
+              },
+              {
+                "platform": "snesbr",
+                "itemId": "station_27ddc1074c239f7dd655174edb1bd353",
+                "coverId": "cover_27ddc1074c239f7dd655174edb1bd353",
+                "bytes": 120655,
+                "httpSha256": "8465746a38da44a1b7d6777e4c5b5eac6ac8cb4c97b31bf2facb2ab5a2329460",
+                "exactIndexedBytes": true,
+                "totalMs": 331.003
+              },
+              {
+                "platform": "snesbr",
+                "itemId": "station_548944058b15a82f5866a7a1ec33aa60",
+                "coverId": "cover_548944058b15a82f5866a7a1ec33aa60",
+                "bytes": 118912,
+                "httpSha256": "8b46c6c3bc3c41e08814f1ddc45873d22605113676e6869f0ad193317ad0e456",
+                "exactIndexedBytes": true,
+                "totalMs": 338.181
+              },
+              {
+                "platform": "switch",
+                "itemId": "station_6c491717f8b3d13b282c410aad80fab6",
+                "coverId": "cover_6c491717f8b3d13b282c410aad80fab6",
+                "bytes": 166751,
+                "httpSha256": "29f3eb46b5f8de5ec53bb327261d585030ef897fbd8c435659a5070f4927a425",
+                "exactIndexedBytes": true,
+                "totalMs": 444.699
+              },
+              {
+                "platform": "wii",
+                "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+                "coverId": "cover_b3c07c1607efaed3e805f8e4e3da7b09",
+                "bytes": 150862,
+                "httpSha256": "57559d16f9d05fe43d8c59acd9d5fca908f9dc7496694f28dfba60850e9f1e07",
+                "exactIndexedBytes": true,
+                "totalMs": 439.994
+              },
+              {
+                "platform": "wii",
+                "itemId": "station_68188db1da6203f08a4b58e583d6af21",
+                "coverId": "cover_68188db1da6203f08a4b58e583d6af21",
+                "bytes": 96539,
+                "httpSha256": "9adf50279e202ecfccc6518510d0a0f12f419a846212a7ebc611fe8c3f6a5f96",
+                "exactIndexedBytes": true,
+                "totalMs": 398.252
+              },
+              {
+                "platform": "wii",
+                "itemId": "station_75b2671c509572a3191465e244e9c241",
+                "coverId": "cover_75b2671c509572a3191465e244e9c241",
+                "bytes": 142512,
+                "httpSha256": "28ba9cf59838ffe76aeafac314a2d90996d484e279d1ea6c03d40ad12cf963ec",
+                "exactIndexedBytes": true,
+                "totalMs": 378.829
+              },
+              {
+                "platform": "wii",
+                "itemId": "station_6e92c46795e509e9593cc55b5fb946ea",
+                "coverId": "cover_6e92c46795e509e9593cc55b5fb946ea",
+                "bytes": 135388,
+                "httpSha256": "7ada7676bb52e6f8a66edb016b81c6a330bffee000de0ac52047a05fd7480b26",
+                "exactIndexedBytes": true,
+                "totalMs": 383.438
+              },
+              {
+                "platform": "wiiu",
+                "itemId": "station_8d42174892b607ae006f5e68ddf62fe0",
+                "coverId": "cover_8d42174892b607ae006f5e68ddf62fe0",
+                "bytes": 159491,
+                "httpSha256": "c8b27667097919f352a8e5961096be687444f08a57f7403ff20e4f4ab3d62c08",
+                "exactIndexedBytes": true,
+                "totalMs": 387.274
+              }
+            ],
+            "downloads": [
+              {
+                "platform": "cps1",
+                "itemId": "station_4940c289c12dcb2753939649ee104143",
+                "artifactBytes": 768620,
+                "sampledBytes": 768620,
+                "completeDownloadVerified": true,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 613.363,
+                "sampleMegabytesPerSecond": 1.253
+              },
+              {
+                "platform": "cps2",
+                "itemId": "station_0866cfa3c34d0af7d7fea1fd780c5081",
+                "artifactBytes": 3948920,
+                "sampledBytes": 3948920,
+                "completeDownloadVerified": true,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 1728.26,
+                "sampleMegabytesPerSecond": 2.285
+              },
+              {
+                "platform": "cps3",
+                "itemId": "station_f290d9171a31ebaeb9b1cde667039d96",
+                "artifactBytes": 8297680,
+                "sampledBytes": 8297680,
+                "completeDownloadVerified": true,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 4253.813,
+                "sampleMegabytesPerSecond": 1.951
+              },
+              {
+                "platform": "dreamcast",
+                "itemId": "station_5569f72b9ef4275d2a11d903f421c7ff",
+                "artifactBytes": 14169944,
+                "sampledBytes": 8388608,
+                "completeDownloadVerified": false,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 3649.905,
+                "sampleMegabytesPerSecond": 2.298
+              },
+              {
+                "platform": "fbneo",
+                "itemId": "station_b46cc345f2e5626a32cd9f0db9e3da95",
+                "artifactBytes": 6859,
+                "sampledBytes": 6859,
+                "completeDownloadVerified": true,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 260.42,
+                "sampleMegabytesPerSecond": 0.026
+              },
+              {
+                "platform": "gamecube",
+                "itemId": "station_f66a5e4cda2b3d810af00fbf96712a35",
+                "artifactBytes": 530048860,
+                "sampledBytes": 8388608,
+                "completeDownloadVerified": false,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 4012.149,
+                "sampleMegabytesPerSecond": 2.091
+              },
+              {
+                "platform": "megadrive",
+                "itemId": "3c02fbb5b2e24c4fc3302fc7379fd5cf",
+                "artifactBytes": 28432,
+                "sampledBytes": 28432,
+                "completeDownloadVerified": true,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 233.326,
+                "sampleMegabytesPerSecond": 0.122
+              },
+              {
+                "platform": "megadrivebr",
+                "itemId": "station_6a5befb12218a8ab60c124ad30f2b6bd",
+                "artifactBytes": 35514,
+                "sampledBytes": 35514,
+                "completeDownloadVerified": true,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 242.386,
+                "sampleMegabytesPerSecond": 0.147
+              },
+              {
+                "platform": "n64",
+                "itemId": "station_def13eb0a1a3053b2f2073a203dda171",
+                "artifactBytes": 2554743,
+                "sampledBytes": 2554743,
+                "completeDownloadVerified": true,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 1475.94,
+                "sampleMegabytesPerSecond": 1.731
+              },
+              {
+                "platform": "neogeo",
+                "itemId": "station_f9b5624a8652bfaccf2e3c338510d29b",
+                "artifactBytes": 2423381,
+                "sampledBytes": 2423381,
+                "completeDownloadVerified": true,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 1197.957,
+                "sampleMegabytesPerSecond": 2.023
+              },
+              {
+                "platform": "neogeocd",
+                "itemId": "station_b163864d7572999b77b8a0ac17b2efc5",
+                "artifactBytes": 334021,
+                "sampledBytes": 334021,
+                "completeDownloadVerified": true,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 407.084,
+                "sampleMegabytesPerSecond": 0.821
+              },
+              {
+                "platform": "psx",
+                "itemId": "station_2d20d643d81633785c1892caab8cd0f4",
+                "artifactBytes": 30314524,
+                "sampledBytes": 8388608,
+                "completeDownloadVerified": false,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 2603.959,
+                "sampleMegabytesPerSecond": 3.221
+              },
+              {
+                "platform": "snes",
+                "itemId": "da2d0a8bd5c0d375b1fd20832691dc17",
+                "artifactBytes": 262144,
+                "sampledBytes": 262144,
+                "completeDownloadVerified": true,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 391.211,
+                "sampleMegabytesPerSecond": 0.67
+              },
+              {
+                "platform": "snesbr",
+                "itemId": "station_8d7ec373ac81f44318b0ffe2147ba03a",
+                "artifactBytes": 524288,
+                "sampledBytes": 524288,
+                "completeDownloadVerified": true,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 418.401,
+                "sampleMegabytesPerSecond": 1.253
+              },
+              {
+                "platform": "switch",
+                "itemId": "station_6c491717f8b3d13b282c410aad80fab6",
+                "artifactBytes": 111116558,
+                "sampledBytes": 8388608,
+                "completeDownloadVerified": false,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 2727.387,
+                "sampleMegabytesPerSecond": 3.076
+              },
+              {
+                "platform": "wii",
+                "itemId": "station_11800c292110c10da2354418e3483b29",
+                "artifactBytes": 1438368956,
+                "sampledBytes": 8388608,
+                "completeDownloadVerified": false,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 2697.397,
+                "sampleMegabytesPerSecond": 3.11
+              },
+              {
+                "platform": "wiiu",
+                "itemId": "station_8d42174892b607ae006f5e68ddf62fe0",
+                "artifactBytes": 4316896523,
+                "sampledBytes": 8388608,
+                "completeDownloadVerified": false,
+                "exactBytes": true,
+                "singleUseGrantVerified": true,
+                "totalMs": 5290.432,
+                "sampleMegabytesPerSecond": 1.586
+              }
+            ],
+            "completeDownloads": 11,
+            "largerFilesLimitedToEightMiB": true,
+            "all15SignedPlatformPolicies": [
+              {
+                "platform": "snes",
+                "serverReady": true,
+                "maximumPlayers": 5,
+                "onlineAvailable": true,
+                "availability": "available",
+                "profiles": 6
+              },
+              {
+                "platform": "megadrive",
+                "serverReady": true,
+                "maximumPlayers": 2,
+                "onlineAvailable": true,
+                "availability": "available",
+                "profiles": 2
+              },
+              {
+                "platform": "n64",
+                "serverReady": true,
+                "maximumPlayers": 4,
+                "onlineAvailable": true,
+                "availability": "available",
+                "profiles": 1
+              },
+              {
+                "platform": "dreamcast",
+                "serverReady": true,
+                "maximumPlayers": 4,
+                "onlineAvailable": false,
+                "availability": "online-engine-pending",
+                "profiles": 0
+              },
+              {
+                "platform": "gamecube",
+                "serverReady": true,
+                "maximumPlayers": 4,
+                "onlineAvailable": false,
+                "availability": "online-engine-pending",
+                "profiles": 0
+              },
+              {
+                "platform": "wii",
+                "serverReady": true,
+                "maximumPlayers": 4,
+                "onlineAvailable": false,
+                "availability": "online-engine-pending",
+                "profiles": 0
+              },
+              {
+                "platform": "wiiu",
+                "serverReady": true,
+                "maximumPlayers": 4,
+                "onlineAvailable": false,
+                "availability": "online-engine-pending",
+                "profiles": 0
+              },
+              {
+                "platform": "neogeo",
+                "serverReady": true,
+                "maximumPlayers": 2,
+                "onlineAvailable": true,
+                "availability": "available",
+                "profiles": 1
+              },
+              {
+                "platform": "neogeocd",
+                "serverReady": true,
+                "maximumPlayers": 2,
+                "onlineAvailable": true,
+                "availability": "available",
+                "profiles": 1
+              },
+              {
+                "platform": "psx",
+                "serverReady": true,
+                "maximumPlayers": 2,
+                "onlineAvailable": false,
+                "availability": "single-player",
+                "profiles": 1
+              },
+              {
+                "platform": "fbneo",
+                "serverReady": true,
+                "maximumPlayers": 2,
+                "onlineAvailable": true,
+                "availability": "available",
+                "profiles": 1
+              },
+              {
+                "platform": "cps1",
+                "serverReady": true,
+                "maximumPlayers": 2,
+                "onlineAvailable": true,
+                "availability": "available",
+                "profiles": 1
+              },
+              {
+                "platform": "cps2",
+                "serverReady": true,
+                "maximumPlayers": 2,
+                "onlineAvailable": true,
+                "availability": "available",
+                "profiles": 1
+              },
+              {
+                "platform": "cps3",
+                "serverReady": true,
+                "maximumPlayers": 2,
+                "onlineAvailable": true,
+                "availability": "available",
+                "profiles": 1
+              },
+              {
+                "platform": "switch",
+                "serverReady": true,
+                "maximumPlayers": 2,
+                "onlineAvailable": false,
+                "availability": "online-engine-pending",
+                "profiles": 0
+              }
+            ],
+            "timingScope": "Linux server through public HTTPS; not phone/WAN gameplay or maximum ISP capacity"
+          }
+        },
+        "public-legacy-v1-v2": {
+          "passed": true,
+          "seconds": 17.941,
+          "result": {
+            "passed": true,
+            "checks": 190,
+            "syntheticLicenses": 2,
+            "signedWindowsR74Engines": true,
+            "signedEngineIds": [
+              "bsnes-mercury-performance-79d7f9de",
+              "bsnes-mercury-performance-79d7f9de-autopass1",
+              "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+              "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+              "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+              "clownmdemu-d43c2708",
+              "clownmdemu-d43c2708-autopass1",
+              "clownmdemu-d43c2708-rs2-d66267cd4250",
+              "clownmdemu-d43c2708-rs3-9af2778898e4",
+              "clownmdemu-d43c2708-rs4-804b2acfea4c"
+            ],
+            "signedEngines": [
+              {
+                "engineId": "bsnes-mercury-performance-79d7f9de",
+                "platform": "snes",
+                "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+                "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+                "recoveryProtocol": null
+              },
+              {
+                "engineId": "clownmdemu-d43c2708",
+                "platform": "megadrive",
+                "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+                "runtimeSha256": "22ee3f67e4a5abf4625c2776928a8011a14c5ae0568d74d9576f4b49a9514905",
+                "recoveryProtocol": null
+              },
+              {
+                "engineId": "bsnes-mercury-performance-79d7f9de-autopass1",
+                "platform": "snes",
+                "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+                "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+                "recoveryProtocol": null
+              },
+              {
+                "engineId": "clownmdemu-d43c2708-autopass1",
+                "platform": "megadrive",
+                "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+                "runtimeSha256": "899e35279cf046242a7ae31f502078080bd6a94404770fe99e1e2e90be58a1ef",
+                "recoveryProtocol": null
+              },
+              {
+                "engineId": "bsnes-mercury-performance-79d7f9de-rs2-d66267cd4250",
+                "platform": "snes",
+                "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+                "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+                "recoveryProtocol": "station-stream.v2"
+              },
+              {
+                "engineId": "clownmdemu-d43c2708-rs2-d66267cd4250",
+                "platform": "megadrive",
+                "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+                "runtimeSha256": "d66267cd42507388f86034deb47e9f9670875784efb9afabfb8ffc64e3f3a856",
+                "recoveryProtocol": "station-stream.v2"
+              },
+              {
+                "engineId": "bsnes-mercury-performance-79d7f9de-rs3-9af2778898e4",
+                "platform": "snes",
+                "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+                "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+                "recoveryProtocol": "station-stream.v2"
+              },
+              {
+                "engineId": "clownmdemu-d43c2708-rs3-9af2778898e4",
+                "platform": "megadrive",
+                "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+                "runtimeSha256": "9af2778898e4ba026d65d9b5c74ef3d8089e58bdbdf9be40f8e28f0eedcb14c2",
+                "recoveryProtocol": "station-stream.v2"
+              },
+              {
+                "engineId": "bsnes-mercury-performance-79d7f9de-rs4-804b2acfea4c",
+                "platform": "snes",
+                "coreSha256": "cc14438319709f3b7868b3e652c731f6df472ff21bb01e4a65234ba2cc6f368b",
+                "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+                "recoveryProtocol": "station-stream.v2"
+              },
+              {
+                "engineId": "clownmdemu-d43c2708-rs4-804b2acfea4c",
+                "platform": "megadrive",
+                "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+                "runtimeSha256": "804b2acfea4c6d615bf40dba30e1777015098bf7375d0745db8d117555eb2516",
+                "recoveryProtocol": "station-stream.v2"
+              }
+            ],
+            "signedTransports": [
+              "direct",
+              "relay-wss-v1",
+              "relay-wss-v2"
+            ],
+            "signedRecoveryCapabilities": [
+              "station-stream.v2"
+            ],
+            "signedRoomCapabilities": [
+              "short-invite-v1",
+              "own-room-member-profiles-v1"
+            ],
+            "legacyEngineIdsPreserved": true,
+            "exactForwardedBytes": 256,
+            "protectedV2Public": true,
+            "protectedResume": true,
+            "oneUseTickets": true,
+            "proofReplayDenied": true,
+            "ownRoomProfilesSigned": true,
+            "legacyV1": true,
+            "catalogCoverDownloadAuthorizationPreserved": true,
+            "gameDownloadVerified": true,
+            "androidGameplay": false,
+            "nativePauseSimulated": true,
+            "latencySamples": [],
+            "observations": null,
+            "latencyScope": "Synthetic two clients on this server; not phone RTT or core FPS"
+          }
+        },
+        "public-v3-all-current-engines": {
+          "passed": true,
+          "seconds": 125.961,
+          "result": {
+            "passed": true,
+            "checks": 1413,
+            "approvedProfiles": 5176,
+            "signedV3": true,
+            "createJoinReadyStart": true,
+            "serverCapabilitiesPlatformsVerified": [
+              "dreamcast",
+              "gamecube",
+              "switch",
+              "wii",
+              "wiiu"
+            ],
+            "bidirectionalBytes": 3584,
+            "countsVerified": [
+              2,
+              4,
+              5
+            ],
+            "platformsVerified": [
+              "cps1",
+              "cps2",
+              "cps3",
+              "fbneo",
+              "megadrive",
+              "n64",
+              "neogeo",
+              "neogeocd",
+              "psx",
+              "snes"
+            ],
+            "engineBindingsVerified": [
+              {
+                "platform": "snes",
+                "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+                "maximumPlayers": 2
+              },
+              {
+                "platform": "megadrive",
+                "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+                "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+                "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                "profileId": "standard-2p-v1",
+                "maximumPlayers": 2
+              },
+              {
+                "platform": "snes",
+                "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                "profileId": "snes-sbomberman2-usa-battle-single-r77",
+                "maximumPlayers": 4
+              },
+              {
+                "platform": "snes",
+                "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                "profileId": "snes-sbomberman3-battle-single-5p-20261009",
+                "maximumPlayers": 5
+              },
+              {
+                "platform": "snes",
+                "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                "profileId": "snes-sbomberman3-battle-team-5p-20261009",
+                "maximumPlayers": 5
+              },
+              {
+                "platform": "snes",
+                "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                "profileId": "snes-normal-605f43d7-20261009",
+                "maximumPlayers": 2
+              },
+              {
+                "platform": "snes",
+                "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                "profileId": "snes-battle-single-605f43d7-20261009",
+                "maximumPlayers": 4
+              },
+              {
+                "platform": "snes",
+                "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                "profileId": "snes-normal-b9c7ce2d-20261009",
+                "maximumPlayers": 2
+              },
+              {
+                "platform": "n64",
+                "engineId": "parallel-3be1f437-n64-v3-81b3daa38fb9",
+                "coreSha256": "09555f50df2767f078217058648420970024993603217bc9a29066032a8cad9d",
+                "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                "profileId": "local-mode-20261009",
+                "maximumPlayers": 4
+              },
+              {
+                "platform": "neogeo",
+                "engineId": "fbneo-95153da1-neogeo-v3-81b3daa38fb9",
+                "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+                "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                "profileId": "local-mode-20261009",
+                "maximumPlayers": 2
+              },
+              {
+                "platform": "neogeocd",
+                "engineId": "neocd-b1e04c73-aslr1-v3-81b3daa38fb9",
+                "coreSha256": "78a35bc9a9435238d74125e77ae8f8d249ba59e90f07d43f43c84ad5ddc68870",
+                "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                "profileId": "local-mode-20261009",
+                "maximumPlayers": 2
+              },
+              {
+                "platform": "psx",
+                "engineId": "pcsx-c8816799-psx-v3-81b3daa38fb9",
+                "coreSha256": "4de0afbd3bb113a4b9927b5b250860194b485f278d1dced81501dc6555fa18a8",
+                "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                "profileId": "local-mode-20261009",
+                "maximumPlayers": 2
+              },
+              {
+                "platform": "fbneo",
+                "engineId": "fbneo-95153da1-fbneo-v3-81b3daa38fb9",
+                "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+                "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                "profileId": "local-mode-20261009",
+                "maximumPlayers": 2
+              },
+              {
+                "platform": "cps1",
+                "engineId": "fbneo-95153da1-cps1-v3-81b3daa38fb9",
+                "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+                "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                "profileId": "local-mode-20261009",
+                "maximumPlayers": 2
+              },
+              {
+                "platform": "cps2",
+                "engineId": "fbneo-95153da1-cps2-v3-81b3daa38fb9",
+                "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+                "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                "profileId": "local-mode-20261009",
+                "maximumPlayers": 2
+              },
+              {
+                "platform": "cps3",
+                "engineId": "fbneo-95153da1-cps3-v3-81b3daa38fb9",
+                "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+                "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                "profileId": "local-mode-20261009",
+                "maximumPlayers": 2
+              }
+            ],
+            "snesAndMegaDrive": true,
+            "protectedResume": true,
+            "documentedBombermanModesVerified": [
+              "snes-normal-605f43d7-20261009",
+              "snes-battle-single-605f43d7-20261009",
+              "snes-normal-b9c7ce2d-20261009"
+            ],
+            "syntheticDevices": 5,
+            "public": true,
+            "physicalAndroidGameplayQualified": false
+          }
+        },
+        "isolated-v3-all15-platforms": {
+          "passed": true,
+          "seconds": 36.356,
+          "result": {
+            "passed": true,
+            "syntheticEnginesOnlyInIsolatedShadow": true,
+            "productionEngineRegistryChanged": false,
+            "proof": {
+              "multiplayer": {
+                "passed": true,
+                "checks": 2028,
+                "approvedProfiles": 5181,
+                "signedV3": true,
+                "createJoinReadyStart": true,
+                "serverCapabilitiesPlatformsVerified": [
+                  "dreamcast",
+                  "gamecube",
+                  "switch",
+                  "wii",
+                  "wiiu"
+                ],
+                "bidirectionalBytes": 5248,
+                "countsVerified": [
+                  2,
+                  4,
+                  5
+                ],
+                "platformsVerified": [
+                  "cps1",
+                  "cps2",
+                  "cps3",
+                  "dreamcast",
+                  "fbneo",
+                  "gamecube",
+                  "megadrive",
+                  "n64",
+                  "neogeo",
+                  "neogeocd",
+                  "psx",
+                  "snes",
+                  "switch",
+                  "wii",
+                  "wiiu"
+                ],
+                "engineBindingsVerified": [
+                  {
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                    "profileId": "snes-battletoads-in-battlemaniacs-2p-r81",
+                    "maximumPlayers": 2
+                  },
+                  {
+                    "platform": "megadrive",
+                    "engineId": "clownmdemu-d43c2708-mp3-351cee4540e9",
+                    "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+                    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                    "profileId": "standard-2p-v1",
+                    "maximumPlayers": 2
+                  },
+                  {
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp3-351cee4540e9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "351cee4540e916468a504788911e4c5fcb4fe141e3b544b1b1255d32e1d04a26",
+                    "profileId": "snes-sbomberman2-usa-battle-single-r77",
+                    "maximumPlayers": 4
+                  },
+                  {
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "snes-sbomberman3-battle-single-5p-20261009",
+                    "maximumPlayers": 5
+                  },
+                  {
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "snes-sbomberman3-battle-team-5p-20261009",
+                    "maximumPlayers": 5
+                  },
+                  {
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "snes-normal-605f43d7-20261009",
+                    "maximumPlayers": 2
+                  },
+                  {
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "snes-battle-single-605f43d7-20261009",
+                    "maximumPlayers": 4
+                  },
+                  {
+                    "platform": "snes",
+                    "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-81b3daa38fb9",
+                    "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "snes-normal-b9c7ce2d-20261009",
+                    "maximumPlayers": 2
+                  },
+                  {
+                    "platform": "n64",
+                    "engineId": "parallel-3be1f437-n64-v3-81b3daa38fb9",
+                    "coreSha256": "09555f50df2767f078217058648420970024993603217bc9a29066032a8cad9d",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "local-mode-20261009",
+                    "maximumPlayers": 4
+                  },
+                  {
+                    "platform": "neogeo",
+                    "engineId": "fbneo-95153da1-neogeo-v3-81b3daa38fb9",
+                    "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "local-mode-20261009",
+                    "maximumPlayers": 2
+                  },
+                  {
+                    "platform": "neogeocd",
+                    "engineId": "neocd-b1e04c73-aslr1-v3-81b3daa38fb9",
+                    "coreSha256": "78a35bc9a9435238d74125e77ae8f8d249ba59e90f07d43f43c84ad5ddc68870",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "local-mode-20261009",
+                    "maximumPlayers": 2
+                  },
+                  {
+                    "platform": "psx",
+                    "engineId": "pcsx-c8816799-psx-v3-81b3daa38fb9",
+                    "coreSha256": "4de0afbd3bb113a4b9927b5b250860194b485f278d1dced81501dc6555fa18a8",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "local-mode-20261009",
+                    "maximumPlayers": 2
+                  },
+                  {
+                    "platform": "fbneo",
+                    "engineId": "fbneo-95153da1-fbneo-v3-81b3daa38fb9",
+                    "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "local-mode-20261009",
+                    "maximumPlayers": 2
+                  },
+                  {
+                    "platform": "cps1",
+                    "engineId": "fbneo-95153da1-cps1-v3-81b3daa38fb9",
+                    "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "local-mode-20261009",
+                    "maximumPlayers": 2
+                  },
+                  {
+                    "platform": "cps2",
+                    "engineId": "fbneo-95153da1-cps2-v3-81b3daa38fb9",
+                    "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "local-mode-20261009",
+                    "maximumPlayers": 2
+                  },
+                  {
+                    "platform": "cps3",
+                    "engineId": "fbneo-95153da1-cps3-v3-81b3daa38fb9",
+                    "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+                    "runtimeSha256": "81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc",
+                    "profileId": "local-mode-20261009",
+                    "maximumPlayers": 2
+                  },
+                  {
+                    "platform": "dreamcast",
+                    "engineId": "synthetic-checkup-dreamcast",
+                    "coreSha256": "c2328410355bd27917250c4ce0cb40291467269095bee2cb3ce2a6484ddf26d1",
+                    "runtimeSha256": "8ca1dbdf9a94a5bec8cddda37f8dcce6ad179da7e25e899cc80226a44672f047",
+                    "profileId": "synthetic-transport-only",
+                    "maximumPlayers": 4
+                  },
+                  {
+                    "platform": "gamecube",
+                    "engineId": "synthetic-checkup-gamecube",
+                    "coreSha256": "68c807ab2de0eaa3a63f2ea757458740d586325ddc39c5f1655a55002a2ec2e6",
+                    "runtimeSha256": "8ca1dbdf9a94a5bec8cddda37f8dcce6ad179da7e25e899cc80226a44672f047",
+                    "profileId": "synthetic-transport-only",
+                    "maximumPlayers": 4
+                  },
+                  {
+                    "platform": "wii",
+                    "engineId": "synthetic-checkup-wii",
+                    "coreSha256": "7569ffd8621092289326eb47693890f10b07c636425407380c0ddc0080a803f3",
+                    "runtimeSha256": "8ca1dbdf9a94a5bec8cddda37f8dcce6ad179da7e25e899cc80226a44672f047",
+                    "profileId": "synthetic-transport-only",
+                    "maximumPlayers": 4
+                  },
+                  {
+                    "platform": "wiiu",
+                    "engineId": "synthetic-checkup-wiiu",
+                    "coreSha256": "78d6323c99b75abd5d1a5ea3abd2de828ac4f5ae6d07cd18cb41ebf8f3583bd1",
+                    "runtimeSha256": "8ca1dbdf9a94a5bec8cddda37f8dcce6ad179da7e25e899cc80226a44672f047",
+                    "profileId": "synthetic-transport-only",
+                    "maximumPlayers": 4
+                  },
+                  {
+                    "platform": "switch",
+                    "engineId": "synthetic-checkup-switch",
+                    "coreSha256": "c5e24ae87ba8f53d7ac75ee3bfd4037cf6f394ab2546adc55b340dddd65c7bd9",
+                    "runtimeSha256": "8ca1dbdf9a94a5bec8cddda37f8dcce6ad179da7e25e899cc80226a44672f047",
+                    "profileId": "synthetic-transport-only",
+                    "maximumPlayers": 2
+                  }
+                ],
+                "snesAndMegaDrive": true,
+                "protectedResume": true,
+                "documentedBombermanModesVerified": [
+                  "snes-normal-605f43d7-20261009",
+                  "snes-battle-single-605f43d7-20261009",
+                  "snes-normal-b9c7ce2d-20261009"
+                ],
+                "syntheticDevices": 5,
+                "public": false,
+                "physicalAndroidGameplayQualified": false
+              },
+              "readyAfter": {
+                "maximumRooms": 512,
+                "maximumConnections": 1024,
+                "activeRooms": 0,
+                "activeConnections": 0,
+                "forwardedBytes": 0,
+                "recovery": {
+                  "protocol": "station-stream.v2",
+                  "maximumRooms": 64,
+                  "windowBytes": 262144,
+                  "retainedRooms": 0,
+                  "activeConnections": 0,
+                  "pendingBytes": 0,
+                  "maximumRetainedBytes": 33554432,
+                  "persistent": false
+                },
+                "multiplayer": {
+                  "protocol": "station-stream.v3",
+                  "maximumPlayers": 5,
+                  "maximumRooms": 100,
+                  "activeRooms": 0,
+                  "activeConnections": 0,
+                  "approvedProfiles": 5174,
+                  "profileCount": 5181,
+                  "retainedBytes": 0,
+                  "maximumRetainedBytes": 134217728
+                }
+              }
+            }
+          }
+        },
+        "production-logs-since-publication": {
+          "passed": true,
+          "seconds": 10.578,
+          "result": {
+            "turborama-station-api.service": {
+              "exitCode": 0,
+              "records": 10000,
+              "cappedAt10000": true,
+              "priorities": {
+                "6": 10000
+              },
+              "stationCodes": {},
+              "messageCategories": {
+                "ERR": 101
+              }
+            },
+            "turborama-station-library-scan.service": {
+              "exitCode": 0,
+              "records": 5395,
+              "cappedAt10000": false,
+              "priorities": {
+                "6": 5395
+              },
+              "stationCodes": {},
+              "messageCategories": {}
+            },
+            "cloudflared.service": {
+              "exitCode": 0,
+              "records": 327,
+              "cappedAt10000": false,
+              "priorities": {
+                "6": 327
+              },
+              "stationCodes": {},
+              "messageCategories": {
+                "ERR": 326,
+                "FAILED": 163
+              }
+            },
+            "nginx.service": {
+              "exitCode": 0,
+              "records": 0,
+              "cappedAt10000": false,
+              "priorities": {},
+              "stationCodes": {},
+              "messageCategories": {}
+            }
+          }
+        },
+        "final-preservation": {
+          "passed": true,
+          "seconds": 0.446,
+          "result": {
+            "passed": true,
+            "samePID": true,
+            "noRestart": true,
+            "publishedDataByteIdentical": true,
+            "configurationsPreserved": true,
+            "realLicensesAndSchemaPreserved": true,
+            "sharedProductsPreserved": true,
+            "ownedSyntheticFixturesCleaned": true,
+            "humanRoomsPreserved": true,
+            "readyAfter": {
+              "maximumRooms": 512,
+              "maximumConnections": 1024,
+              "activeRooms": 0,
+              "activeConnections": 0,
+              "forwardedBytes": 128,
+              "recovery": {
+                "protocol": "station-stream.v2",
+                "maximumRooms": 64,
+                "windowBytes": 262144,
+                "retainedRooms": 0,
+                "activeConnections": 0,
+                "pendingBytes": 0,
+                "maximumRetainedBytes": 33554432,
+                "persistent": false
+              },
+              "multiplayer": {
+                "protocol": "station-stream.v3",
+                "maximumPlayers": 5,
+                "maximumRooms": 100,
+                "activeRooms": 0,
+                "activeConnections": 0,
+                "approvedProfiles": 5169,
+                "profileCount": 5176,
+                "retainedBytes": 0,
+                "maximumRetainedBytes": 134217728
+              }
+            }
+          }
+        }
+      },
+      "effective": {
+        "pid": 1820513,
+        "nRestarts": 0,
+        "startedLocal": "Fri 2026-10-09 14:57:04 -03",
+        "release": "/opt/turborama-station-server-ready-20261009-34fdc4b1ecea",
+        "dllSha256": "34fdc4b1ecea3216b3d30e49e003ef32a0520ca36637d186e9daeb369146645d",
+        "readyBefore": {
+          "maximumRooms": 512,
+          "maximumConnections": 1024,
+          "activeRooms": 0,
+          "activeConnections": 0,
+          "forwardedBytes": 64,
+          "recovery": {
+            "protocol": "station-stream.v2",
+            "maximumRooms": 64,
+            "windowBytes": 262144,
+            "retainedRooms": 0,
+            "activeConnections": 0,
+            "pendingBytes": 0,
+            "maximumRetainedBytes": 33554432,
+            "persistent": false
+          },
+          "multiplayer": {
+            "protocol": "station-stream.v3",
+            "maximumPlayers": 5,
+            "maximumRooms": 100,
+            "activeRooms": 0,
+            "activeConnections": 0,
+            "approvedProfiles": 5169,
+            "profileCount": 5176,
+            "retainedBytes": 0,
+            "maximumRetainedBytes": 134217728
+          }
+        }
+      },
+      "utcCompleted": "2026-10-10T13:36:03.900383+00:00",
+      "allChecksPassed": true,
+      "initialCustomFixtureCorrections": {
+        "catalog-assets-modes": "Include the actual R81 historical native-engine manifest when checking immutable retained engine bindings.",
+        "public-covers-downloads-all-platforms": "Enter Station presence before v3 capabilities and declare clientMaximumPlayers=5. Initial media/download samples already passed before that precondition."
+      },
+      "failedProductionChecks": []
+    },
+    "context": {
+      "utcStarted": "2026-10-10T16:18:38.454639+00:00",
+      "productionConfigurationChanged": false,
+      "productionRestarted": false,
+      "sections": {
+        "effective-policies-and-transfer-settings": {
+          "passed": true,
+          "result": {
+            "effectiveNonSecretSettings": {
+              "Station__Enabled": "true",
+              "Station__OriginRequestsPerMinute": "2048",
+              "Station__MaximumRateWindows": "32768",
+              "Station__Online__Enabled": "true",
+              "Station__Online__SocialEnabled": "true",
+              "Station__Online__MultiplayerEnabled": "true",
+              "Station__Online__MultiplayerLegacyCapacityGate": "false",
+              "Station__Online__ReplayMaximumBytes": "134217728",
+              "Station__Online__RecoveryEnabled": "true",
+              "Station__Security__RequireVerifiedApp": "false"
+            },
+            "stationProxyDirectives": {
+              "turborama-station.locations.conf": [
+                "client_max_body_size 8k;",
+                "proxy_http_version 1.1;",
+                "proxy_connect_timeout 5s;",
+                "proxy_send_timeout 900s;",
+                "proxy_read_timeout 900s;",
+                "proxy_buffering off;",
+                "client_max_body_size 8k;",
+                "proxy_http_version 1.1;",
+                "proxy_connect_timeout 5s;",
+                "proxy_send_timeout 15s;",
+                "proxy_read_timeout 15s;",
+                "client_max_body_size 64k;",
+                "proxy_http_version 1.1;",
+                "proxy_connect_timeout 5s;",
+                "proxy_send_timeout 15s;",
+                "proxy_read_timeout 15s;",
+                "client_max_body_size 64k;",
+                "proxy_http_version 1.1;",
+                "proxy_connect_timeout 5s;",
+                "proxy_send_timeout 15s;",
+                "proxy_read_timeout 15s;"
+              ],
+              "turborama-station-online.locations.conf": [
+                "client_max_body_size 8k;",
+                "proxy_http_version 1.1;",
+                "proxy_connect_timeout 5s;",
+                "proxy_send_timeout 30s;",
+                "proxy_read_timeout 30s;",
+                "proxy_buffering off;",
+                "client_max_body_size 8k;",
+                "proxy_http_version 1.1;",
+                "proxy_connect_timeout 5s;",
+                "proxy_send_timeout 30s;",
+                "proxy_read_timeout 30s;",
+                "proxy_buffering off;",
+                "client_max_body_size 8k;",
+                "proxy_http_version 1.1;",
+                "proxy_connect_timeout 5s;",
+                "proxy_send_timeout 30s;",
+                "proxy_read_timeout 30s;",
+                "proxy_buffering off;",
+                "client_max_body_size 8k;",
+                "proxy_http_version 1.1;",
+                "proxy_connect_timeout 5s;",
+                "proxy_send_timeout 120s;",
+                "proxy_read_timeout 120s;",
+                "proxy_buffering off;"
+              ],
+              "turborama-station-relay.locations.conf": [
+                "client_max_body_size 8k;",
+                "proxy_http_version 1.1;",
+                "proxy_connect_timeout 5s;",
+                "proxy_send_timeout 120s;",
+                "proxy_read_timeout 120s;",
+                "proxy_buffering off;"
+              ]
+            },
+            "nginxByteRateDirectives": [],
+            "byteRateLimiterInStationCode": false,
+            "downloadPath": "asynchronous FileStream and CopyToAsync, no payload rehash",
+            "verifiedAppMandatory": false,
+            "exclusiveOfficialAPKAccessGuaranteed": false
+          }
+        },
+        "package-launch-paths-and-multifile-sets": {
+          "passed": true,
+          "result": {
+            "passed": true,
+            "artifactFormats": {
+              "zip": 2646,
+              "raw": 1202
+            },
+            "uniqueZipPackagesChecked": 2613,
+            "centralDirectoryFileEntries": 6806,
+            "missingLaunchEntries": [],
+            "multiFilePackages": [
+              {
+                "itemId": "station_d9405ba1719a504fad37055a359e861e",
+                "name": "Harvest Moon Back To Nature",
+                "platform": "psx",
+                "contentIdentityScheme": "cue-set-v1",
+                "fileCount": 2,
+                "launchPath": "Harvest Moon Back To Nature.cue",
+                "compressedBytes": 213954815
+              },
+              {
+                "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
+                "name": "World Soccer Winning Eleven 2002 (Japan)",
+                "platform": "psx",
+                "contentIdentityScheme": "cue-set-v1",
+                "fileCount": 10,
+                "launchPath": "World Soccer Winning Eleven 2002 (Japan).cue",
+                "compressedBytes": 474787358
+              },
+              {
+                "itemId": "station_8d42174892b607ae006f5e68ddf62fe0",
+                "name": "MARIO KART 8 [AMKE01]",
+                "platform": "wiiu",
+                "contentIdentityScheme": "wiiu-set-v1",
+                "fileCount": 3050,
+                "launchPath": "code/Turbo.rpx",
+                "compressedBytes": 4316896523
+              },
+              {
+                "itemId": "station_3b50bae45f3433371386de5687913fb8",
+                "name": "Jackie Chan Stuntmaster BR",
+                "platform": "psx",
+                "contentIdentityScheme": "cue-set-v1",
+                "fileCount": 2,
+                "launchPath": "Jackie Chan Stuntmaster BR.cue",
+                "compressedBytes": 627972666
+              }
+            ],
+            "payloadCRCOrFullROMRehashPerformed": false,
+            "importerQualitySummary": {
+              "pending": {
+                "type": "list",
+                "entries": 1
+              },
+              "metadataMissing": {
+                "type": "int",
+                "entries": 148
+              },
+              "missingXmlRoms": {
+                "type": "int",
+                "entries": 65
+              },
+              "placeholderCovers": {
+                "type": "int",
+                "entries": 0
+              },
+              "runtimeRequirements": {
+                "type": "dict",
+                "entries": 1
+              }
+            }
+          }
+        },
+        "loopback-versus-public-downloads": {
+          "passed": true,
+          "result": {
+            "passed": true,
+            "transport": "API loopback, same binaries/descriptor/content as public check",
+            "sameDeviceBoundSessionAndProofs": true,
+            "samples": [
+              {
+                "platform": "gamecube",
+                "itemId": "station_f66a5e4cda2b3d810af00fbf96712a35",
+                "sampledBytes": 8388608,
+                "exactBytes": true,
+                "totalMs": 28.485,
+                "sampleMegabytesPerSecond": 294.497
+              },
+              {
+                "platform": "psx",
+                "itemId": "station_2d20d643d81633785c1892caab8cd0f4",
+                "sampledBytes": 8388608,
+                "exactBytes": true,
+                "totalMs": 26.642,
+                "sampleMegabytesPerSecond": 314.86
+              },
+              {
+                "platform": "wiiu",
+                "itemId": "station_8d42174892b607ae006f5e68ddf62fe0",
+                "sampledBytes": 8388608,
+                "exactBytes": true,
+                "totalMs": 25.152,
+                "sampleMegabytesPerSecond": 333.518
+              }
+            ],
+            "probeLocation": "Linux server, not Android",
+            "maximumInternetBandwidthProven": false,
+            "syntheticFixtureRemoved": true
+          }
+        },
+        "preservation-after-context-checks": {
+          "passed": true,
+          "result": {
+            "passed": true,
+            "noRestart": true,
+            "realLicensesPreserved": true,
+            "dataAndSettingsByteIdentical": true,
+            "readyAfter": {
+              "maximumRooms": 512,
+              "maximumConnections": 1024,
+              "activeRooms": 0,
+              "activeConnections": 0,
+              "forwardedBytes": 128,
+              "recovery": {
+                "protocol": "station-stream.v2",
+                "maximumRooms": 64,
+                "windowBytes": 262144,
+                "retainedRooms": 0,
+                "activeConnections": 0,
+                "pendingBytes": 0,
+                "maximumRetainedBytes": 33554432,
+                "persistent": false
+              },
+              "multiplayer": {
+                "protocol": "station-stream.v3",
+                "maximumPlayers": 5,
+                "maximumRooms": 100,
+                "activeRooms": 0,
+                "activeConnections": 0,
+                "approvedProfiles": 5169,
+                "profileCount": 5176,
+                "retainedBytes": 0,
+                "maximumRetainedBytes": 134217728
+              }
+            }
+          }
+        }
+      },
+      "utcCompleted": "2026-10-10T16:18:40.909798+00:00",
+      "allChecksPassed": true
+    },
+    "resources": {
+      "utc": "2026-10-10T16:18:51.419052+00:00",
+      "memAvailableGiB": 36.78,
+      "swapUsedGiB": 5.87,
+      "pressure": {
+        "cpu": "some avg10=0.00 avg60=0.00 avg300=0.00 total=1121224433\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+        "memory": "some avg10=0.00 avg60=0.00 avg300=0.00 total=75390903\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=74686789\n",
+        "io": "some avg10=0.00 avg60=0.02 avg300=0.04 total=2987176429\nfull avg10=0.00 avg60=0.02 avg300=0.03 total=2964431528\n"
+      },
+      "beforeVMStat": {
+        "exitCode": 0,
+        "output": "procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------\n r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu\n 2  1 6161088 1100072 1348556 36219516    6   16  1516  1284 9173    3  3  1 97  0  0  0\n 2  1 6161088 1102268 1348568 36219532 7320    0  7320   906 9449 20515  3  1 92  3  0  0\n 2  0 6161088 1101940 1348568 36219612 7336    0  7336     5 9348 20280  3  1 93  3  0  0\n 1  1 6161088 1093212 1348580 36219612 6636    0  6636   173 10278 22004  4  1 92  3  0  0\n 1  1 6161088 1093644 1348588 36219620 7236    0  7236    61 9381 20131  3  1 92  3  0  0\n 1  1 6161088 1097760 1348588 36219620 6464    0  6464     0 9029 19149  3  1 93  3  0  0",
+        "error": ""
+      },
+      "afterVMStat": "procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------\n r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu\n 8  0 6154268 859448 1299028 36345396    7   15  1491  1268 9135    3  3  1 97  0  0  0\n 0  0 6154268 843020 1299028 36345368    0    0     0     0 8446 16501  4  1 94  0  0  0\n 1  0 6154268 852772 1299028 36345428    0    0     0     1 6941 16359  4  1 96  0  0  0\n 1  0 6154248 862068 1299040 36345696   36    0    36   152 8775 17522  5  1 94  0  0  0\n 2  0 6154248 792300 1299040 36345700    0    0     0     1 8937 17233  7  1 91  0  0  0\n 3  0 6154248 797500 1299040 36345656    0    0     0   416 8202 16182  7  1 92  0  0  0\n",
+      "stationProcessAfter": "    PID COMMAND         %CPU %MEM   RSS     ELAPSED\n1820513 dotnet           0.9  1.6 813812   22:21:51\n",
+      "gpuBefore": {
+        "exitCode": 0,
+        "output": "NVIDIA GeForce GTX 1070, 29, 7, 858, 8192, 42",
+        "error": ""
+      },
+      "gpuComputeProcessesBefore": {
+        "exitCode": 0,
+        "output": "",
+        "error": ""
+      },
+      "filesystems": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda2       220G  195G   14G  94% /\n/dev/nvme0n1p1  413G  324G   69G  83% /mnt/DADOS\n/dev/nvme1n1p1  469G  327G  118G  74% /media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc\n"
+    },
+    "apiJournal": {
+      "sinceLocal": "2026-10-09 14:57:04",
+      "cutoffOwnedCheckupUtc": "2026-10-10T13:28:37.166217+00:00",
+      "exitCode": 0,
+      "fullJournalWindowScanned": true,
+      "sections": {
+        "beforeOwnedCheckup": {
+          "counts": {
+            "records": 167649
+          },
+          "httpStatuses": {
+            "200": 14922,
+            "499": 152,
+            "409": 10,
+            "401": 2,
+            "101": 171,
+            "404": 765,
+            "429": 26
+          },
+          "stationErrorCodes": {}
+        },
+        "duringOwnedCheckup": {
+          "counts": {
+            "records": 12062,
+            "requestAbort": 1
+          },
+          "httpStatuses": {
+            "200": 956,
+            "499": 4,
+            "401": 22,
+            "409": 6,
+            "403": 1,
+            "404": 54,
+            "101": 72,
+            "429": 1,
+            "400": 1
+          },
+          "stationErrorCodes": {}
+        }
+      },
+      "HTTP429Requests": [
+        {
+          "utc": "2026-10-09T18:01:24.893196+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T18:10:09.928703+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T18:32:32.686199+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T18:43:44.530405+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T19:13:13.789269+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T19:28:07.623021+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T19:35:38.313027+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T19:36:26.969921+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T19:36:39.981060+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T19:44:43.369836+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T19:47:55.861559+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T20:00:38.535723+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T20:00:50.538572+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T20:01:19.423625+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T20:03:52.972121+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T20:07:35.330656+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T20:22:06.588376+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T20:22:17.268017+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T21:17:43.734622+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T21:20:35.883521+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T21:23:20.591920+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T21:44:03.707565+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T22:02:04.427005+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T22:02:37.029114+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-09T22:07:29.351991+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-10T00:42:07.165331+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": false
+        },
+        {
+          "utc": "2026-10-10T13:35:42.141277+00:00",
+          "method": "POST",
+          "path": "/v1/station/online/events",
+          "duringOwnedCheckup": true
+        }
+      ],
+      "rawMessagesAndPersonalDataSaved": false,
+      "numericHTTPParserExcludesElapsedMilliseconds": true,
+      "noHTTP5xxRecorded": true,
+      "fatalExceptionMatches": 0
+    },
+    "safeLogClassification": {
+      "cloudflared.service": {
+        "readExitCode": 0,
+        "records": 341,
+        "wholeWordErrorMessages": 340,
+        "patterns": [
+          [
+            "[time] ERR  error=\"Incoming request ended abruptly: context canceled\" connIndex=0 event=1 ingressRule=0 originService=http://[ip]:80",
+            78
+          ],
+          [
+            "[time] ERR Request failed error=\"Incoming request ended abruptly: context canceled\" connIndex=0 dest=https://app.lzgames.com.br/v1/station/online/events event=0 ip=[ip] type=http",
+            77
+          ],
+          [
+            "[time] ERR  error=\"Incoming request ended abruptly: context canceled\" connIndex=1 event=1 ingressRule=0 originService=http://[ip]:80",
+            65
+          ],
+          [
+            "[time] ERR Request failed error=\"Incoming request ended abruptly: context canceled\" connIndex=1 dest=https://app.lzgames.com.br/v1/station/online/events event=0 ip=[ip] type=http",
+            64
+          ],
+          [
+            "[time] ERR  error=\"Incoming request ended abruptly: context canceled\" connIndex=2 event=1 ingressRule=0 originService=http://[ip]:80",
+            6
+          ],
+          [
+            "[time] ERR Request failed error=\"Incoming request ended abruptly: context canceled\" connIndex=2 dest=https://app.lzgames.com.br/v1/station/online/events event=0 ip=[ip] type=http",
+            6
+          ],
+          [
+            "[time] ERR  error=\"Incoming request ended abruptly: context canceled\" connIndex=3 event=1 ingressRule=0 originService=http://[ip]:80",
+            6
+          ],
+          [
+            "[time] ERR Request failed error=\"Incoming request ended abruptly: context canceled\" connIndex=3 dest=https://app.lzgames.com.br/v1/station/online/events event=0 ip=[ip] type=http",
+            6
+          ],
+          [
+            "[time] ERR  error=\"unexpected EOF\" connIndex=1 event=1 ingressRule=0 originService=http://[ip]:80",
+            1
+          ],
+          [
+            "[time] ERR Request failed error=\"unexpected EOF\" connIndex=1 dest=https://app.lzgames.com.[redacted] event=0 ip=[ip] type=http",
+            1
+          ],
+          [
+            "[time] ERR  error=\"stream 9461 canceled by remote with error code 0\" connIndex=1 event=1 ingressRule=0 originService=http://[ip]:80",
+            1
+          ],
+          [
+            "[time] ERR Request failed error=\"stream 9461 canceled by remote with error code 0\" connIndex=1 dest=https://app.lzgames.com.[redacted] event=0 ip=[ip] type=http",
+            1
+          ]
+        ]
+      },
+      "turborama-station-api.service": {
+        "readExitCode": 0,
+        "records": 20000,
+        "wholeWordErrorMessages": 0,
+        "patterns": []
+      },
+      "turborama-suite-content-monitor.service": {
+        "readExitCode": 0,
+        "records": 6,
+        "wholeWordErrorMessages": 3,
+        "patterns": [
+          [
+            "SUITE CONTENT MONITOR: FAILED code=DATABASE_PROBE_HEALTH",
+            1
+          ],
+          [
+            "turborama-suite-content-monitor.service: Failed with result 'exit-code'.",
+            1
+          ],
+          [
+            "Failed to start turborama-suite-content-monitor.service - TurboRama Suite private content health and candidate monitor.",
+            1
+          ]
+        ]
+      }
+    },
+    "publicRouting": [
+      {
+        "host": "app.lzgames.com.br",
+        "path": "/v1/station/catalog?metadata=1",
+        "originLocal": true,
+        "exitCode": 0,
+        "response": "401 application/json; charset=utf-8 ",
+        "error": ""
+      },
+      {
+        "host": "app.lzgames.com.br",
+        "path": "/v1/station/online/multiplayer/relay",
+        "originLocal": false,
+        "exitCode": 0,
+        "response": "400 application/json; charset=utf-8 ",
+        "error": ""
+      },
+      {
+        "host": "app.lzgames.com.br",
+        "path": "/v1/station/covers/missing",
+        "originLocal": false,
+        "exitCode": 0,
+        "response": "401 application/json; charset=utf-8 ",
+        "error": ""
+      },
+      {
+        "host": "app.lzgames.com.br",
+        "path": "/v1/station/artifacts/missing",
+        "originLocal": false,
+        "exitCode": 0,
+        "response": "404 application/json; charset=utf-8 ",
+        "error": ""
+      },
+      {
+        "host": "turbobox.lzgames.com.br",
+        "path": "/admin/login",
+        "originLocal": false,
+        "exitCode": 0,
+        "response": "200 text/html; charset=UTF-8 ",
+        "error": ""
+      },
+      {
+        "host": "turbobox.lzgames.com.br",
+        "path": "/v1/station/catalog",
+        "originLocal": false,
+        "exitCode": 0,
+        "response": "404 text/plain; charset=utf-8 ",
+        "error": ""
+      }
+    ],
+    "LANOriginGuard": {
+      "localLANInterfaceOriginProbe": true,
+      "exitCode": 0,
+      "response": "404 text/html",
+      "interfaceAddressPublished": false
+    },
+    "gitRefs": {
+      "utc": "2026-10-10T13:22:28.393795+00:00",
+      "repositories": [
+        {
+          "repository": "Servidor-pix",
+          "localHead": "9f3739baba135354aa17c62de137090a801ea532",
+          "status": [
+            " M docs/station-android/entrega-app-r71-20261007/NAVIGATION-AUDIT.md",
+            " M docs/station-android/entrega-app-r78-20261008/BUILD-RESULT.md"
+          ],
+          "exitCode": 0,
+          "remoteRefs": [
+            "2b04f591eb10ad76efc3b630ded4fff9ef2c2a27\trefs/heads/backup/station-online-antes-todas-plataformas-20261009",
+            "9f3739baba135354aa17c62de137090a801ea532\trefs/heads/feat/station-online-all-platforms-20261009",
+            "9432c533871e1f41c80ff0ab3b99a3fa7a1c1e1f\trefs/tags/backup-station-online-20261009-antes-todas-plataformas",
+            "2b04f591eb10ad76efc3b630ded4fff9ef2c2a27\trefs/tags/backup-station-online-20261009-antes-todas-plataformas^{}"
+          ]
+        },
+        {
+          "repository": "TurboElden",
+          "localHead": "2f435700c68b530e8d4542c0ed1db32824024bf2",
+          "status": [],
+          "exitCode": 0,
+          "remoteRefs": [
+            "4521218492ec65c33398aed07893f95e2d7f499d\trefs/heads/backup/station-online-antes-todas-plataformas-20261009",
+            "2f435700c68b530e8d4542c0ed1db32824024bf2\trefs/heads/feat/station-online-all-platforms-client-20261009",
+            "e4807faf2684d53498a6268aaf0fc72d4401cca3\trefs/tags/backup-station-online-20261009-antes-todas-plataformas",
+            "4521218492ec65c33398aed07893f95e2d7f499d\trefs/tags/backup-station-online-20261009-antes-todas-plataformas^{}"
+          ]
+        }
+      ]
+    },
+    "mirrorsAndPackageHashes": {
+      "mirroredDataFiles": 28,
+      "differences": [],
+      "handoffByteIdentical": true,
+      "allPackageFileHashesVerified": true,
+      "packageMismatches": []
+    },
+    "appCandidateDelivery": {
+      "candidateSourceFiles": 212,
+      "deliveryFiles": 362,
+      "hashMismatches": [],
+      "completeAndroidGameplayDeclared": false
+    },
+    "stablePackage": {
+      "receipt": {
+        "schemaVersion": 1,
+        "utc": "2026-10-09T18:14:29.832694+00:00",
+        "file": "/home/lz-servidor/ENTREGA-UNICA-STATION-ONLINE-PLATAFORMAS-20261009.zip",
+        "sha256": "26c300927b5e56a4077178c587bbd39d6dc3b2cf93088937cd2457a2758f4e3d",
+        "sizeBytes": 150487136,
+        "files": 828,
+        "serverCommit": "9f3739baba135354aa17c62de137090a801ea532",
+        "appCommit": "2f435700c68b530e8d4542c0ed1db32824024bf2",
+        "all15ServerPlatformsReady": true,
+        "serverFirstOrderComplete": true,
+        "allRequestedPlatformsAndroidGameplayComplete": false,
+        "allFileHashesVerified": true
+      },
+      "manifest": {
+        "schemaVersion": 1,
+        "serverCommit": "9f3739baba135354aa17c62de137090a801ea532",
+        "appCommit": "2f435700c68b530e8d4542c0ed1db32824024bf2",
+        "serverApplied": true,
+        "completeSignedAPK": false,
+        "allRequestedPlatformsAndroidGameplayComplete": false,
+        "profileReloadJoinAndReconnectCorrected": true,
+        "all15ServerPlatformsReady": true,
+        "serverFirstOrderComplete": true,
+        "engineEnrollmentByData": true,
+        "engineEnrollmentRestartRequired": false,
+        "preparedNativeItems": 273,
+        "preparedNativeModes": 274
+      },
+      "zipEntries": 829,
+      "uniqueEntries": 829,
+      "badCRC": null,
+      "actualSha256": "26c300927b5e56a4077178c587bbd39d6dc3b2cf93088937cd2457a2758f4e3d"
+    }
+  },
+  "auditFixtureNotes": [
+    "Initial historical engine check omitted the preserved R81 manifest; resolved by comparing its published real engine hashes. No production profile was changed.",
+    "Initial v3 capability probe omitted entering presence; resolved by entering the existing presence API. The API correctly refused the request with HTTP409.",
+    "Sparse checkout omitted migrations from the first temporary PostgreSQL fixture. Materialized tracked migration files only in a private test folder and reran successfully.",
+    "NeoCD discovery tests first skipped without STATION_CHDMAN. Reran all three with the existing real verifier successfully."
+  ],
+  "artifactsModifiedByAudit": [
+    "This checkup report and the existing handoff/contract documentation, mirrored in both repositories. Production code/configuration/media/native clients unchanged."
+  ]
+}

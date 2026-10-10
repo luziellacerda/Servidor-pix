@@ -180,5 +180,32 @@
   "deployment": "applied and verified; see server-ready-deployment.json",
   "androidGameplayValidated": false,
   "sourceCommit": "eb826d5df17dad51314d265e2cba91b05d1c96cf",
-  "dllSha256": "34fdc4b1ecea3216b3d30e49e003ef32a0520ca36637d186e9daeb369146645d"
+  "dllSha256": "34fdc4b1ecea3216b3d30e49e003ef32a0520ca36637d186e9daeb369146645d",
+  "presencePrerequisite": {
+    "path": "/v1/station/online/command",
+    "method": "POST",
+    "action": "enter",
+    "before": "all v3 multiplayer commands including capabilities",
+    "authentication": "existing device-bound bearer/request proof",
+    "leaving": "offline through the same presence API"
+  },
+  "clientCapacityDeclaration": {
+    "field": "clientMaximumPlayers",
+    "value": "actual native runtime capability; five-player candidate declares 5",
+    "legacyOmittedValue": 4,
+    "allowedRange": [
+      2,
+      5
+    ]
+  },
+  "eventsPollingPolicy": {
+    "path": "/v1/station/online/events",
+    "method": "POST",
+    "maximumConcurrentPendingPollsPerLicenseAndDevice": 1,
+    "serverWaitSeconds": 10,
+    "overlapError": "STATION_ONLINE_POLL_EXISTS",
+    "overlapHTTPStatus": 429,
+    "retryAfterSeconds": 1,
+    "clientRequirement": "Serialize polling; settle previous requests/cancellation before replacing a polling worker. Handle returned error code and Retry-After."
+  }
 }

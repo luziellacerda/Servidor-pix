@@ -1,5 +1,32 @@
 # Station: servidor concluído para todas as plataformas; próxima etapa é o app — 09/10/2026
 
+## Checkup completo da produção — 10/10/2026
+
+[Relatório completo e evidências](online-plataformas-20261009/checkup-completo-20261010.json). As 13 etapas da produção e quatro verificações de contexto passaram. A API permaneceu no mesmo PID **1820513**, DLL **34fdc4b1** e **zero reinícios**, com dados, configurações, licenças, esquema e serviços preservados. Esta rodada atualizou somente a documentação desta entrega.
+
+| Ponto conferido | Resultado |
+|---|---|
+| Catálogo | Revisão 27: 3.848 IDs, 3.593 jogos visíveis e 255 aliases; todos os IDs, metadados e vínculos de conteúdo coincidem. |
+| Capas e acesso | 3.848 imagens válidas em 480×720, zero placeholders ou coverIds conflitantes; os 7.569 arquivos de mídia foram abertos pelo usuário no sandbox efetivo da API. |
+| Pacotes e abertura | 2.613 ZIPs únicos, 6.806 entradas e caminhos de lançamento conferidos. Os três CUE incluem suas faixas; Wii U contém 3.050 arquivos, `code/Turbo.rpx` e pacote de 4.316.896.523 bytes. O descritor Java usa `long` e comporta o conjunto. Não foi feita varredura CRC dos payloads. |
+| Perfis e importação | 5.176 perfis, 5.169 aprovados, 273 jogos restantes em 274 modos preparados; cadastros preservados. Timer ativo e importador concluído com status 0. |
+| Transporte | Passaram 1.250 verificações C#, 172 TLS, 91 v2 + 589 de observabilidade, 41 de salas, 318 de convites, 34 sociais, 88 de término e 30 de catálogo; 75 testes Python e verificações de administração/permissões. API pública: 35.962 verificações do catálogo assinado, 15 de segurança, 190 legadas e 1.413 v3; v3 isolado das 15 plataformas: 2.028. Contadores de frames podem variar conforme a chegada dos mesmos. |
+| HTTP de mídia | 62 capas públicas nas 17 categorias com quatro workers, bytes corretos, mediana 411,941 ms e p95 500,385 ms. Downloads das 17 categorias: 11 completos e seis maiores limitados a amostras de 8 MiB; bytes, descritores e concessões de uso único corretos. |
+| Velocidade | As mesmas amostras de 8 MiB alcançaram 294–334 MB/s na API local e 1,6–3,2 MB/s pelo percurso público. Não há `limit_rate` no Nginx nem cap de bytes no Station. A diferença aponta para o percurso externo, **sem isolar ISP, rota, Cloudflare ou celular**, e não mede velocidade máxima sustentada. |
+| Recursos e capacidade | CPU/memória sem pressão nas amostras, cerca de 37 GiB disponíveis e nenhum processo CUDA registrado. V3 permite até 100 salas e cinco pessoas conforme o modo, com replay de 128 MiB. Foram verificados 320 participantes em 80 salas sintéticas de quatro; 100 salas de cinco excedem esse orçamento. Gameplay Android/WAN para centenas não está homologado. |
+| Segurança e rotas | Provas vinculadas, recusa de token copiado, replay e permissões passaram. Origem pela interface LAN retornou 404. Login do painel responde 200; domínio da API é `app.lzgames.com.br`, e `/v1/station` no Turbobox responde 404 esperado. `RequireVerifiedApp=false`: acesso exclusivo ao APK oficial não é garantido. |
+| Registros | Toda a janela desde a publicação foi consultada, sem HTTP 5xx ou exceção fatal registrada. Houve **26 HTTP 429 anteriores à auditoria em `online/events`**. O backend aceita uma consulta pendente por aparelho; respostas históricas não tiveram corpo capturado para confirmar o código ou relacioná-las à jogatina. |
+
+**Pontos de atenção preservados:** partição `/` com 94% ocupados e aproximadamente 14 GiB livres; catálogo limitado a 4.096 IDs, com espaço para mais 248, incluindo aliases; 148 sinopses visíveis ausentes; 65 referências XML sem ROM; `aof2` incompleto, não publicado; requisito de BIOS do conjunto Neo Geo CD. Esses dados não foram inventados ou substituídos. O monitor auxiliar de outro produto, `turborama-suite-content-monitor`, está em falha `DATABASE_PROBE_HEALTH`; os acessos e banco do Station passaram e o outro serviço foi preservado.
+
+O túnel está ativo. Predominam cancelamentos HTTP em `online/events`; a mensagem indica contexto cancelado e, isoladamente, não prova queda do motor ou do túnel ([código da Cloudflare](https://github.com/cloudflare/cloudflared/blob/master/proxy/proxy.go)).
+
+**Requisitos para a produção do app:** enviar `enter` autenticado em `POST /v1/station/online/command` antes de consultar capacidades ou comandar v3. Sem presença a API recusa com 409. Declarar `clientMaximumPlayers` conforme o runtime real; a candidata de cinco declara 5. Manter somente um poll de `online/events` por aparelho, concluir o anterior ao substituir o worker e respeitar `Retry-After`; sobreposição é recusada com `STATION_ONLINE_POLL_EXISTS`/429. O contrato atualizado documenta essas regras.
+
+`serverReady:true` indica preparação do servidor. `online-engine-pending` nas cinco plataformas restantes exige motores/adaptadores reais no APK; cadastro será feito por dados, sem nova DLL ou restart. Seis drivers arcade sem vínculo exato e Worms por turnos continuam registrados como exceções. Controles, sincronização, latência, retomada e desempenho nos aparelhos serão conferidos na integração do app. Nenhum hash sintético foi instalado na produção.
+
+A entrega ZIP estável de 09/10, SHA `26c300927b5e56a4077178c587bbd39d6dc3b2cf93088937cd2457a2758f4e3d`, e todos os seus 828 arquivos passaram na verificação. Ela permanece a captura compilada original. O relatório e o contrato acompanham **este mesmo handoff** nos dois repositórios.
+
 ## Resultado efetivo
 
 **Atualização aplicada e conferida pelo domínio público.** DLL `34fdc4b1ecea3216b3d30e49e003ef32a0520ca36637d186e9daeb369146645d`, fonte `eb826d5df17dad51314d265e2cba91b05d1c96cf`, PID **1820513**, NRestarts **0**, última recarga `Fri 2026-10-09 14:57:04 -03` e conclusão `2026-10-09T18:09:52.413592+00:00`. Catálogo **revisão 27 / 3.848 IDs / 3.593 visíveis / 255 aliases**, identidade de conteúdo de todos os 3.848 itens e **5.176 perfis**, preservando exatamente os **3.672 anteriores**. Foram acrescentados 1.504 perfis de oito plataformas. Aprovação de uso não declara gameplay Android homologado.
