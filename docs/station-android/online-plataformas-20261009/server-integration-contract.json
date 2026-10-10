@@ -318,5 +318,43 @@
       "catalogCovers": 34,
       "revistaCovers": 19
     }
+  },
+  "roomPresentation": {
+    "utc": "2026-10-10T20:32:21.175853+00:00",
+    "textOrigins": {
+      "headingsAndButtons": "app",
+      "modeTitleAndInstructions": "signed-server-profile",
+      "synopsis": "signed-catalog.items[].metadata.description"
+    },
+    "catalogRequest": "GET /v1/station/catalog?metadata=1",
+    "lookupKey": "itemId",
+    "catalogRevision": 31,
+    "catalogSynopsisCounts": {
+      "allItems": 3895,
+      "allItemsWithSynopsis": 3747,
+      "visibleItems": 3640,
+      "visibleItemsWithSynopsis": 3492
+    },
+    "cachedCatalogLookup": true,
+    "additionalRequestsPerRoom": 0,
+    "views": {
+      "createRoom": "4-line synopsis; tap opens full text; player summary; Como jogar opens profile help",
+      "ownRoom": "4-line synopsis from the room itemId; tap opens full text; existing roster and ready/start controls; Como jogar opens room instructions",
+      "otherRooms": "2-line synopsis; Ver detalhes opens full synopsis and instructions"
+    },
+    "missingSynopsis": "Sinopse ainda não cadastrada.",
+    "catalogUnavailable": "Sinopse indisponível no momento.",
+    "instructionsRetained": true,
+    "admissionRulesChanged": false,
+    "serverDeploymentRequired": false,
+    "javaCompiled": true,
+    "sourceCount": 212,
+    "roomsDexSHA256": "4c7c0fb655b640187c048beaccca272ad87d27fbd090a42f891a0e127d11348c",
+    "clientDexSHA256": "e7207a89517b168cc476e30a823bed3a1b6ad57339e1042f08a4660184543d63",
+    "signedApkBuilt": false,
+    "installed": false,
+    "physicalRoomUIVerified": false,
+    "backupBranch": "backup/station-antes-sinopse-sala-20261010",
+    "backupTag": "backup-station-antes-sinopse-sala-20261010"
   }
 }

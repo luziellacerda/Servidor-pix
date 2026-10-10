@@ -61,6 +61,16 @@ PS2 aceita ISO/CSO; Saturn, CHD/CUE/ISO e arquivos ZIP/7z/RAR com um CUE complet
 6. Selecionar perfil exato e quantidade em `allowedPlayerCounts`; criar/entrar/pronto/iniciar. Convites e tickets são automáticos. Conectar WSS `/v1/station/online/multiplayer/relay`, protocolo `station-stream.v3`, um link duplex anfitrião↔cada convidado.
 7. Respeitar TSR3, HELLO, PAUSED, READY, ACK e época global. ACK confirma escrita no motor. Preservar sessão nativa na troca do WSS. Identidade CUE/CHD é calculada na preparação/importação, sem varredura do corpo em cada download do servidor; o app compara a identidade para conectar versões iguais na partida.
 
+## Sinopses na sala — ajuste para a próxima compilação do APK
+
+Títulos, botões e estados são escritos pelo app. `modeTitle` e `instructions` vêm dos perfis assinados do servidor. A **sinopse vem de `metadata.description` do catálogo assinado**, já publicado em `GET /v1/station/catalog?metadata=1`. O app deve procurar pelo `itemId` exato da sala, inclusive para o convidado; não associar pelo nome ou posição da lista.
+
+O fonte `StationRoomsActivity` desta mesma candidata foi ajustado: **Criar sala e Sua sala mostram a sinopse em quatro linhas, com toque para ler o texto inteiro**. Outras salas mostram duas linhas e a íntegra em Ver detalhes. Os limites permanecem compactos perto dos controles; instruções dos modos, controles e posições ficam acessíveis em **Como jogar**. Sem sinopse cadastrada, mostrar “Sinopse ainda não cadastrada.”. O catálogo revisionado é consultado em memória; nenhuma requisição nova por sala.
+
+O catálogo31 contém **3.492 sinopses entre 3.640 jogos visíveis**; os demais precisam de texto cadastrado. Java212/D8 recompilados e selados. **O APK completo assinado e a aparência nos celulares ainda precisam da compilação/instalação no PCAPK**; não há APK instalado por esta alteração. A API, os perfis, controles, regras de admissão e serviços em produção não precisaram de atualização. Comparar `roomPresentation` no contrato e `evidence/java-build.json` no app.
+
+Cópia anterior publicada nos dois Gits antes deste ajuste: branch `backup/station-antes-sinopse-sala-20261010`, tag `backup-station-antes-sinopse-sala-20261010`; servidor `f478d13`, app `45586f6`. Preservar este mesmo handoff.
+
 ## Cadastro do motor real sem nova DLL
 
 O manifesto recebido do APK deve declarar engineId imutável, plataforma, formatos reais, `library`, `runtimeLibrary`, seus hashes SHA-256, `launchReady:true`, `recoveryProtocol:station-stream.v3`, `maximumPlayers` e `controllerProfiles`. Para PS2/Saturn, declarar os layouts acima explicitamente. Cada layout contém `configuration` com `schemaVersion`, `controllerProfile`, `devices`, `coreOptions`. O motor/decoder do app deve implementar essa configuração; nomes de controles por si só não representam sua implementação.
@@ -75,7 +85,7 @@ Nesta atualização passaram **1.292 verificações C#**, **172 TLS loopback**, 
 
 Capacidade configurada: v3 até 100 salas, cinco pessoas conforme modo, janela 256 KiB por direção e replay compartilhado 128 MiB; v1/v2 preservados. Teste sintético de 320 participantes/80 salas de quatro/7.864.320 bytes passou. O orçamento limita admissões; não significa 100 salas de cinco simultâneas ou medição da internet.
 
-O pacote `versions/station-all-platforms-online-20261009` foi recompilado: **212 Java/D8**, alias PS2 BR corrigido. Client DEX permanece `e7207a89517b168cc476e30a823bed3a1b6ad57339e1042f08a4660184543d63`; Rooms DEX agora `04eb0fe853c6e485c69e69a18ee9b1551b3fc7422d6189fff9f431cabb655462`. Runtime `81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc` e motores reais anteriores preservados. Nenhum APK completo foi assinado/instalado nesta sessão; base/keystore continuam no PC do APK. Próxima etapa reúne Dreamcast, GameCube, Wii, Wii U, Switch, PS2 e Saturn, assinatura/instalação e testes físicos.
+O pacote `versions/station-all-platforms-online-20261009` foi recompilado: **212 Java/D8**, alias PS2 BR corrigido e sinopses da sala integradas. Client DEX permanece `e7207a89517b168cc476e30a823bed3a1b6ad57339e1042f08a4660184543d63`; Rooms DEX agora `4c7c0fb655b640187c048beaccca272ad87d27fbd090a42f891a0e127d11348c`. Runtime `81b3daa38fb9c051e1c83646b87df7120f84f31ed8b48fe6b0b362b617b847dc` e motores reais anteriores preservados. Nenhum APK completo foi assinado/instalado nesta sessão; base/keystore continuam no PC do APK. Próxima etapa reúne Dreamcast, GameCube, Wii, Wii U, Switch, PS2 e Saturn, assinatura/instalação e testes físicos.
 
 ## Arquivos únicos para comparar e retomar
 
