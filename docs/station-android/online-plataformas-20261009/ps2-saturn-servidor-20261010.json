@@ -1652,7 +1652,7 @@
     "v3": {
       "passed": true,
       "checks": 855,
-      "approvedProfiles": 5176,
+      "approvedProfiles": 5169,
       "signedV3": true,
       "createJoinReadyStart": true,
       "serverCapabilitiesPlatformsVerified": [
@@ -1748,7 +1748,9 @@
       ],
       "syntheticDevices": 5,
       "public": false,
-      "physicalAndroidGameplayQualified": false
+      "physicalAndroidGameplayQualified": false,
+      "profileCount": 5176,
+      "legacyHelperReportedTotalAsApproved": 5176
     },
     "syntheticLicensesRemoved": true
   },

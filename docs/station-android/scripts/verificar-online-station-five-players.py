@@ -189,7 +189,7 @@ def verify(index, values, base, sql, additional_profiles=(), capabilities_items=
             check(policy['serverReady'] is True and policy['transportProtocol']=='station-stream.v3','signed server readiness before APK integration')
             check(policy['maximumPlayers']==(2 if item['platform'] in ('switch','ps2','saturn') else 4),'future platform exact ceiling')
             check(len(snapshot['serverPlatforms'])==17 and all(p['serverReady'] for p in snapshot['serverPlatforms']),'signed complete server platform matrix')
-        return dict(passed=True, checks=checks, approvedProfiles=len(profiles), signedV3=True, createJoinReadyStart=True,
+        return dict(passed=True, checks=checks, profileCount=len(profiles), approvedProfiles=sum(p['approved'] for p in profiles), signedV3=True, createJoinReadyStart=True,
             serverCapabilitiesPlatformsVerified=sorted({i['platform'] for i in capabilities_items}),
             bidirectionalBytes=forwarded, countsVerified=sorted({p['maximumPlayers'] for p in selected}),
             platformsVerified=sorted({p['platform'] for p in selected}),
