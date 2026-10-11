@@ -1,0 +1,138 @@
+{
+  "allAddedProfilesBoundToFinalEngines": true,
+  "deployed": false,
+  "finalEngineIds": [
+    "pcsx-rearmed-ff81ed17-player-v3-42e4ca5f2acc",
+    "mupen64plus-ae-33bf7021-n64-v3-6dd47d4e0092",
+    "dolphin-5102a033-gamecube-v3-5912af1feeef",
+    "dolphin-5102a033-wii-v3-5912af1feeef"
+  ],
+  "finalOwnerGamesPrepared": 44,
+  "finalRuntimeReceiptSha256": "d1eb9bfe78be4c513daedde1ff1f624f653b5353db5a64b8a07d9df213dfb34e",
+  "individualItemContentHashesAndPrivateLedgerBytesPublished": false,
+  "inventory": {
+    "automatic-only-receipt.json": {
+      "bytes": 67698,
+      "sha256": "f1376645a38ac288eec7788980060c15a169f2c875ba209300df8e737d59539c"
+    },
+    "build_research.py": {
+      "bytes": 29687,
+      "sha256": "8c64857e964de0058905d51ea1f5e3c0989fe460465095438bc0ef655bd4a2f8"
+    },
+    "existing-test-policy-proposal.json": {
+      "bytes": 7475290,
+      "sha256": "ed5cb10e48cff29e2e8263045659e71ccc66eb0c354b0cb299eb34f24816e491"
+    },
+    "inputs/catalog.json": {
+      "bytes": 12096610,
+      "sha256": "22499d9d7f8c9daabe9d7d859cca60e2f59e0e2c233cae4eb4bb32e4ff4375a1"
+    },
+    "inputs/content-identities.json": {
+      "bytes": 1537269,
+      "sha256": "4c926082fc7e61d43146959e33681979f8100bbe9f832ffd218f83218127df9f"
+    },
+    "inputs/documentary-n64-additional-primary-review.json": {
+      "bytes": 21136,
+      "sha256": "c457b850d2f38f89fa7a663b616a7a7a95c28ae74d30d357854c9b1720d75881"
+    },
+    "inputs/documentary-n64-root-mode-decisions.json": {
+      "bytes": 13627,
+      "sha256": "6fca6d97e6338932ca3189b5cef2267209a0808b80821187eb0afc9969898d8e"
+    },
+    "inputs/documentary-psx-primary-consolidated.json": {
+      "bytes": 30926,
+      "sha256": "e7dcc503caea35c04d233aac50e7293dec7e76e42736f523b9bfcba856d60863"
+    },
+    "inputs/documentary-web-mode-research.json": {
+      "bytes": 65098,
+      "sha256": "d8464318c14cefeae25d3419da7dc32722fadf920f0b9ae84498f8aa695b8845"
+    },
+    "inputs/engines-original.json": {
+      "bytes": 19118,
+      "sha256": "9d76d080439fed3f9aa36ff59b7e5f15c2761cb4e426779c9b5fa85215e98b6f"
+    },
+    "inputs/original-prepared-modes.json": {
+      "bytes": 402497,
+      "sha256": "d7c7ccf3c6a10e6f1fbce8475baacbbca83cd1e7f325ad8b24ab42a0fa6b78a6"
+    },
+    "inputs/profiles-complete.json": {
+      "bytes": 4467437,
+      "sha256": "a029fb61ce68fa26abadf0312b55b9ae163c6a3604a12bfd37e97d406fdfebaa"
+    },
+    "inputs/runtime-identity-original.json": {
+      "bytes": 134460,
+      "sha256": "d1eb9bfe78be4c513daedde1ff1f624f653b5353db5a64b8a07d9df213dfb34e"
+    },
+    "inputs/server-build_incoming_manifest.py": {
+      "bytes": 4372,
+      "sha256": "362bcae9d8915f7f43aac4c48d06b35bdf57efc88d6acb9199aa06e3a0231426"
+    },
+    "inputs/server-merge_scoped_modes.py": {
+      "bytes": 9834,
+      "sha256": "ddac598ca1671e6d682b626866a3b1984eb88c5ff7d677c7b4cd563a6a677783"
+    },
+    "inputs/server-return.json": {
+      "bytes": 4865,
+      "sha256": "13ec0dda1a8bc938c8453ee1b3b707699fb6738c70034828fc37cdca1ddae9c9"
+    },
+    "inputs/server-station_online_profiles.py": {
+      "bytes": 13294,
+      "sha256": "3d5d5b5563e2a6825ab9e798da80313cdbf2640522bc4dfd6b47e25c7f69eae1"
+    },
+    "mode-additions.json": {
+      "bytes": 487692,
+      "sha256": "719a61a2158756f58646720ca202bad2a381c79e8380af345e11562e06e942ce"
+    },
+    "official-merge-receipt.json": {
+      "bytes": 89909,
+      "sha256": "d4ec7e7a2e63a8eee98c147841b011897dcda1576436119fb0620c0399d42ed5"
+    },
+    "prepare.py": {
+      "bytes": 38820,
+      "sha256": "2c03f5792f561698aa9aaa4da13b964663cb22df6970e010bdb37299061ba82e"
+    },
+    "prepared-new-profiles.json": {
+      "bytes": 92483,
+      "sha256": "8477fc12a39cc48e3b77d12f260cc7b8f055beaffab78f7709ba3e9643ca38fc"
+    },
+    "reviewed-decisions.json": {
+      "bytes": 68778,
+      "sha256": "1cde1bfb3e591108263abb3c0bf4d15bd91e22c9f9ffbb4ade41abad8c59aa8b"
+    }
+  },
+  "inventoryReferencesAreRelativeToPrivateModePreparationRoot": true,
+  "originalModePrefixReadAndCompared": true,
+  "originalModesPreserved": 321,
+  "originalProfilesPreserved": 5176,
+  "physicalGameplayValidated": false,
+  "preparedGamesByPlatform": {
+    "gamecube": 8,
+    "n64": 33,
+    "psx": 0,
+    "wii": 3
+  },
+  "preparedModesAdded": 78,
+  "preparedModesByPlatform": {
+    "gamecube": 9,
+    "n64": 66,
+    "psx": 0,
+    "wii": 3
+  },
+  "preparedProfilesAdded": 78,
+  "privateInventoryHashBytesChecked": true,
+  "publicHashManifestIsNotDeployableLedger": true,
+  "publicReceiptProvenance": {
+    "absolutePathsReplacedWithLogicalReferences": true,
+    "binaryFirmwarePkgMaterialGameMediaPersonalLogsIncluded": false,
+    "hashMapsPreserved": true,
+    "notAnOperatorDeployableIdentityPackagePair": true,
+    "originalPrivateReceiptSha256": "05f31f7aa6cf76b75fe76ef11f0e4b0391e14f216e05527e4306e2d2947bc6f8",
+    "originalReceiptRole": "private-mode-preparation"
+  },
+  "published": false,
+  "revision": "R133",
+  "schema": "station.r133.public-mode-preparation-hash-manifest.v1",
+  "serverActivationConfirmed": false,
+  "serverCommit": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+  "sourceCommit": "5966a8ad23ae9040c570d359b999c8a31de904b4"
+}

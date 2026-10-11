@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "revision": "R133",
+  "appSourceCommit": "5966a8ad23ae9040c570d359b999c8a31de904b4",
+  "appPublicDocsCommit": "c00f469517d41cf14f0d54a2d5cd3491cae6db00",
+  "serverParentCommit": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+  "apkSha256": "945f7ded35e551d638135a05140c32218eb38277d10eaf21e3f83087d71da112",
+  "apkBytes": 2714971151,
+  "installedOnOneMotorola": true,
+  "serverActivated": false,
+  "physicalGameplayValidated": false,
+  "catalogEntries": 3940,
+  "reviewedFinalOwnerModes": 78,
+  "finalOwnerGamesPrepared": 44,
+  "files": {
+    "AGENTS.md": {
+      "sha256": "5c95d24545f6c0292ba8665ed91dd4bde97c3ca3d65b89b18c63c7968530dfb7",
+      "bytes": 62021
+    },
+    "docs/station-android/AGENTS.md": {
+      "sha256": "2f7dd32194b6e74d2e99efc4bf669112b623ded895c483264193cdebf818ca54",
+      "bytes": 64700
+    },
+    "docs/station-android/README.md": {
+      "sha256": "12cf8ee0c49524cc923669d1a8b85fe9f02359c16733d6ecc9c507d5575883f6",
+      "bytes": 40979
+    },
+    "docs/station-android/r133/HANDOFF-APP-R133-PARA-SERVIDOR-20261011.md": {
+      "sha256": "71ecae721c7a120d3b73d975aabf5924f0d0bbb8136a3195cf826115b717a965",
+      "bytes": 20644
+    },
+    "docs/station-android/r133/README.md": {
+      "sha256": "981a0ead3cd07a7e9cbfbf888580c400ee5e31b0382830d2d0acc77900f7d248",
+      "bytes": 7620
+    },
+    "docs/station-android/r133/STATUS.json": {
+      "sha256": "f62c162f30b004b3f0992b3a456b8bae93087ca64b81b2f9bf852e00e32a4110",
+      "bytes": 9161
+    },
+    "docs/station-android/r133/catalog/.gitattributes": {
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "bytes": 8
+    },
+    "docs/station-android/r133/catalog/README.md": {
+      "sha256": "093ae2551d914ebe03a1aeff85768e3814c9123da9ecac6ff004af482303f7f6",
+      "bytes": 10928
+    },
+    "docs/station-android/r133/catalog/build_research.py": {
+      "sha256": "8c64857e964de0058905d51ea1f5e3c0989fe460465095438bc0ef655bd4a2f8",
+      "bytes": 29687
+    },
+    "docs/station-android/r133/catalog/documented-modes.json": {
+      "sha256": "df7ef5163e7fa2b0d4eb38e1963126f3295ef80213f6d14663222c3366b0ed8b",
+      "bytes": 116692
+    },
+    "docs/station-android/r133/catalog/matrix.csv": {
+      "sha256": "ab4b1c6b61b5dd51044d3505bda072f92c3fc3e2293fe2d4ba00e0a507d577e6",
+      "bytes": 740029
+    },
+    "docs/station-android/r133/catalog/matrix.json": {
+      "sha256": "c88b05521b19f5ebe39d5e47b19e4c88aad094095aadc61898b88d8bdbd26eee",
+      "bytes": 4326127
+    },
+    "docs/station-android/r133/catalog/n64-additional-primary-review.json": {
+      "sha256": "c457b850d2f38f89fa7a663b616a7a7a95c28ae74d30d357854c9b1720d75881",
+      "bytes": 21136
+    },
+    "docs/station-android/r133/catalog/n64-root-mode-decisions.json": {
+      "sha256": "6fca6d97e6338932ca3189b5cef2267209a0808b80821187eb0afc9969898d8e",
+      "bytes": 13627
+    },
+    "docs/station-android/r133/catalog/n64-root-primary-review-original.json": {
+      "sha256": "eae52e74b44e6373571e983f0a91693a2ca430251092926d91d5bc6f7102d599",
+      "bytes": 5907
+    },
+    "docs/station-android/r133/catalog/prepare.py": {
+      "sha256": "2c03f5792f561698aa9aaa4da13b964663cb22df6970e010bdb37299061ba82e",
+      "bytes": 38820
+    },
+    "docs/station-android/r133/catalog/psx-primary-consolidated.json": {
+      "sha256": "e7dcc503caea35c04d233aac50e7293dec7e76e42736f523b9bfcba856d60863",
+      "bytes": 30926
+    },
+    "docs/station-android/r133/catalog/psx-primary-followup.json": {
+      "sha256": "636f414decff8bd016ffee6767d2346e26ef67715cdfa001b875c8a947656766",
+      "bytes": 1760
+    },
+    "docs/station-android/r133/catalog/psx-primary-followup2.json": {
+      "sha256": "f095f455bc5d30bdd9551f83d11274e9603631a2b02a02e57d035966aba98126",
+      "bytes": 4581
+    },
+    "docs/station-android/r133/catalog/psx-primary-review.json": {
+      "sha256": "93a43729ec791d320150c40fcb23b8d56c39227313b269ddf4a8cd6430f5b9e8",
+      "bytes": 28299
+    },
+    "docs/station-android/r133/catalog/reviewed-mode-provenance.json": {
+      "sha256": "e5099271eda573bd6e67c80e6bff813cdadb5cbd308076152247bb9f3a30b8b1",
+      "bytes": 80655
+    },
+    "docs/station-android/r133/catalog/summary.json": {
+      "sha256": "23e9e1ff57081a5f6024a5d5c2a3017338f497b0b7341aa3256465d61fe859cd",
+      "bytes": 9431
+    },
+    "docs/station-android/r133/catalog/web-mode-research.json": {
+      "sha256": "d8464318c14cefeae25d3419da7dc32722fadf920f0b9ae84498f8aa695b8845",
+      "bytes": 65098
+    },
+    "docs/station-android/r133/evidence/.gitattributes": {
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "bytes": 8
+    },
+    "docs/station-android/r133/evidence/PUBLIC-EVIDENCE.json": {
+      "sha256": "57dfcf84a2aa650582173b473792d32f5e8ef7ff66b206801dbb88f56e5bb206",
+      "bytes": 2951
+    },
+    "docs/station-android/r133/evidence/installation.json": {
+      "sha256": "d35499f30f86c094d3729eeca1714062f2fd7ff7cd0fad17c151afeed3893c4a",
+      "bytes": 2522
+    },
+    "docs/station-android/r133/evidence/mode-preparation-hash-manifest.json": {
+      "sha256": "ec4dd6fea3e984cbeb7253923c85355a8909c23a965922da871b04849cfe00f4",
+      "bytes": 5151
+    },
+    "docs/station-android/r133/evidence/native-compilation.json": {
+      "sha256": "6ff3a7d90a5afc84da5343a73b1db6e6ac067bb287c38c26daed7de47dd9082f",
+      "bytes": 44377
+    },
+    "docs/station-android/r133/evidence/package-final.json": {
+      "sha256": "e3fa8f89c9ee9b1adb8f06c0720d38e94d219cf6099ce341390cb7bc8c95a166",
+      "bytes": 1720721
+    },
+    "docs/station-android/r133/evidence/runtime-final.json": {
+      "sha256": "39fdc5b550279cc71f948fef8272b11ebbbe9ca441410357be862ced73575cea",
+      "bytes": 133503
+    },
+    "docs/station-android/r133/evidence/server-kit-hash-manifest.json": {
+      "sha256": "1318fde7f0ad2a5b57d96f9df0d2de8e1abe46f511d904bbaaf7ea98254cf64c",
+      "bytes": 6672
+    },
+    "docs/station-android/r133/evidence/source-freeze.json": {
+      "sha256": "822533e8b14257fc76562420370790ba2e7fd572789572541f74bfd2dbb9bc27",
+      "bytes": 22998
+    },
+    "docs/station-android/r133/evidence/unsigned-package.json": {
+      "sha256": "381394ee7d306d329bc0ccf78c763fac06b9c91adb7dd81e4f638ad8c2d5d59c",
+      "bytes": 1719372
+    }
+  },
+  "privateArtifactsPublished": false,
+  "documentationLinksAdaptedForServerLayout": true
+}

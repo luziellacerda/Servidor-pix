@@ -1,0 +1,234 @@
+{
+  "additionalCompleteBackupCreated": false,
+  "apkBytes": 2714971151,
+  "apkSha256": "945f7ded35e551d638135a05140c32218eb38277d10eaf21e3f83087d71da112",
+  "approvedScopes": [
+    "console-hardware-panel-psp-ps3-ps4"
+  ],
+  "buildIdentityPending": false,
+  "compiled": true,
+  "compositionRequired": {
+    "additionCount": 0,
+    "all40DexByteIdentical": true,
+    "coresOptionsControllersTransportUnchanged": true,
+    "finalPackageProofPending": false,
+    "frontendLibraryByteIdentical": true,
+    "manifestResourcesSonyAssetsByteIdentical": true,
+    "preservedEntryCount": 13855,
+    "replacementCount": 5,
+    "videoLedEconomyLoadingPreserved": true
+  },
+  "currentPointerChangedByThisPreparation": false,
+  "identityReceiptSha256": "d1eb9bfe78be4c513daedde1ff1f624f653b5353db5a64b8a07d9df213dfb34e",
+  "independentOverlayReview": {
+    "addedAliases": 7,
+    "additionalShaderTimerDecoderThreadCount": 0,
+    "aliasesExactInverse": true,
+    "artReceiptSha256": "c9acd052c578225ca78a9c7d188810a14e18a5ff93bda07462f7996870c8fd6f",
+    "consumerExactInverse": true,
+    "cppExactInverse": true,
+    "driverMemoryOrThermalMeasured": false,
+    "firstAlphaScanAndTextureUploadRemain": true,
+    "newArtIndices": {
+      "ps3": 20,
+      "ps4": 21,
+      "psp": 19
+    },
+    "nominalGpuBytesPerVisitedNewFamily": 1048576,
+    "officialPhotoRgbaPreviewHashesChecked": true,
+    "original19ArtDeclarationsAndRowsByteIdentical": true,
+    "originalAliases": 69,
+    "rawRgbaAdditionalBytes": 3145728,
+    "sameNintendoPanelContextCacheAndLayout": true
+  },
+  "installation": {
+    "authenticatedSessionChecked": false,
+    "completedUTC": "2026-10-11T21:41:18.825876+00:00",
+    "dataDirectoryPreserved": true,
+    "dataPreserved": true,
+    "deviceModel": "motorola edge 30",
+    "directStreamingUpdate": true,
+    "entryObservationCompletedUTC": "2026-10-11T21:41:21.187453+00:00",
+    "extraAPKCopyOnPhone": false,
+    "installedDeviceCount": 1,
+    "launchOutcome": "frontend",
+    "officialFrontendObserved": true,
+    "originalInstallTimePreserved": true,
+    "originalPrivateReceiptSha256": "b44af78e82ecceb91bcdedd5c448abc6861a8369bb5f10631d14bd12d8676d0b",
+    "originalUIDPreserved": true,
+    "publicReceiptReference": "evidence/installation.json",
+    "startedUTC": "2026-10-11T21:39:25.405010+00:00"
+  },
+  "installed": true,
+  "integration": "integration/console-panel-r133",
+  "online": {
+    "catalogAliases": 255,
+    "catalogEntries": 3940,
+    "catalogRevision": 33,
+    "documentaryBlockedNativeEntries": 14,
+    "documentaryResearchInputs": [
+      {
+        "entries": 61,
+        "file": "web-mode-research.json",
+        "sha256": "d8464318c14cefeae25d3419da7dc32722fadf920f0b9ae84498f8aa695b8845"
+      },
+      {
+        "entries": 26,
+        "file": "psx-primary-consolidated.json",
+        "sha256": "e7dcc503caea35c04d233aac50e7293dec7e76e42736f523b9bfcba856d60863"
+      },
+      {
+        "entries": 3,
+        "file": "n64-root-mode-decisions.json",
+        "sha256": "6fca6d97e6338932ca3189b5cef2267209a0808b80821187eb0afc9969898d8e"
+      },
+      {
+        "entries": 7,
+        "file": "n64-additional-primary-review.json",
+        "sha256": "c457b850d2f38f89fa7a663b616a7a7a95c28ae74d30d357854c9b1720d75881"
+      }
+    ],
+    "documentedSinglePlayerNativeGames": 17,
+    "engines": [
+      {
+        "controllerProfiles": [
+          "standard-2p-v1"
+        ],
+        "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+        "engineId": "pcsx-rearmed-ff81ed17-player-v3-42e4ca5f2acc",
+        "maximumPlayers": 2,
+        "platform": "psx",
+        "runtimeSha256": "42e4ca5f2acc86f7b9c15584bb0f583b9fe07d24c88f955eebd0bcbde30f03d4"
+      },
+      {
+        "controllerProfiles": [
+          "direct-four-ports-v1"
+        ],
+        "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+        "engineId": "mupen64plus-ae-33bf7021-n64-v3-6dd47d4e0092",
+        "maximumPlayers": 4,
+        "platform": "n64",
+        "runtimeSha256": "6dd47d4e00923f27e71523cdfa6c9d3d37d45f0d5ab9cb00225acbfeed45987b"
+      },
+      {
+        "controllerProfiles": [
+          "dolphin-gamecube-four-ports-v1"
+        ],
+        "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+        "engineId": "dolphin-5102a033-gamecube-v3-5912af1feeef",
+        "maximumPlayers": 4,
+        "platform": "gamecube",
+        "runtimeSha256": "5912af1feeef31abd75095b169b919a6737637c6d070a6b7f69cdfccf5f74737"
+      },
+      {
+        "controllerProfiles": [
+          "dolphin-wii-remotes-four-v1"
+        ],
+        "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+        "engineId": "dolphin-5102a033-wii-v3-5912af1feeef",
+        "maximumPlayers": 4,
+        "platform": "wii",
+        "runtimeSha256": "5912af1feeef31abd75095b169b919a6737637c6d070a6b7f69cdfccf5f74737"
+      }
+    ],
+    "entriesWithoutCurrentClientOnlineEngine": 337,
+    "finalModeBindingPrepared": true,
+    "finalOwnerGamesPrepared": 44,
+    "fourExistingIdsRenewed": [
+      "psx",
+      "n64",
+      "gamecube",
+      "wii"
+    ],
+    "freshSignedV3CapabilitiesPending": true,
+    "identitiesPendingFinalBuild": false,
+    "lastRealServerReturnCommit": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+    "lastRealServerReturnCoversPublished": false,
+    "lastRealServerReturnNewFinalEnginesActivated": false,
+    "lastRealServerReturnPrivateKitReceived": false,
+    "lastRealServerReturnReviewedKitRevision": "R129",
+    "matrixAppliesToParentR132Identities": false,
+    "matrixReference": "audits/station-r132-online-mode-completion-20261011/summary.json",
+    "matrixSha256": "c88b05521b19f5ebe39d5e47b19e4c88aad094095aadc61898b88d8bdbd26eee",
+    "matrixSummarySha256": "23e9e1ff57081a5f6024a5d5c2a3017338f497b0b7341aa3256465d61fe859cd",
+    "maximumPlayersUnchanged": {
+      "gamecube": 4,
+      "n64": 4,
+      "psx": 2,
+      "wii": 4
+    },
+    "mergedModeAdditionsOriginalSha256": "719a61a2158756f58646720ca202bad2a381c79e8380af345e11562e06e942ce",
+    "nativeOperatorApplied": false,
+    "nativeOperatorAuthenticationAndSealedCandidateRequired": true,
+    "officialMergeReceiptOriginalSha256": "d4ec7e7a2e63a8eee98c147841b011897dcda1576436119fb0620c0399d42ed5",
+    "originalPreparedModesPreservedCount": 321,
+    "originalProfilesPreservedCount": 5176,
+    "preparedByPlatform": {
+      "gamecube": {
+        "games": 8,
+        "modes": 9
+      },
+      "n64": {
+        "games": 33,
+        "modes": 66
+      },
+      "psx": {
+        "games": 0,
+        "modes": 0
+      },
+      "wii": {
+        "games": 3,
+        "modes": 3
+      }
+    },
+    "preparedNewProfilesOriginalSha256": "8477fc12a39cc48e3b77d12f260cc7b8f055beaffab78f7709ba3e9643ca38fc",
+    "preparedProfilesAdded": 78,
+    "privateKitHashManifestReference": "evidence/server-kit-hash-manifest.json",
+    "privateKitPreparationReceiptSha256": "7bd90b84ffb065b738c275befa9b4a1650716fa2ab7549b7e8c2a82ef83126f2",
+    "privateKitPrepared": true,
+    "privateKitUploaded": false,
+    "privateModePreparationHashManifestReference": "evidence/mode-preparation-hash-manifest.json",
+    "privateModePreparationReceiptSha256": "05f31f7aa6cf76b75fe76ef11f0e4b0391e14f216e05527e4306e2d2947bc6f8",
+    "ps3Ps4OfflineOnly": true,
+    "psxDocumentaryReview": {
+      "all84PsxEntriesRemainHlePerEditionPending": true,
+      "documentaryFindingsDoNotAuthorizeCurrentRuntime": true,
+      "entriesWithPrimaryDocumentaryFindings": 10,
+      "historicalEntriesStillWithoutPrimaryEvidence": 16,
+      "historicalMultiplayerEntriesReviewed": 26,
+      "hlePerEditionValidated": false,
+      "newCurrentOwnerApprovals": 0
+    },
+    "r133FinalModeBindingPending": false,
+    "remainingN64GenericTestSelections": 110,
+    "reviewedDecisionsOriginalSha256": "1cde1bfb3e591108263abb3c0bf4d15bd91e22c9f9ffbb4ade41abad8c59aa8b",
+    "reviewedFinalOwnerModesPrepared": 78,
+    "sanitizedPublicReceiptPairDeployable": false,
+    "uniqueFinalServerDeliveryPublished": false,
+    "unknownOrUnreviewedGamesApproved": false,
+    "visibleCatalogEntries": 3685
+  },
+  "parentApkBytes": 2711825423,
+  "parentApkSha256": "47a619a194c095e70738a4d191fb8491ee410d868e4c11742530ffcaaf844f20",
+  "parentRevision": "R132",
+  "parentSourceCommit": "56ba83b7fcc5c243ae50052fec9b6f4141e1b5f1",
+  "phase": "installed-motorola-private-kit-and-reviewed-modes-ready-server-activation-pending",
+  "phoneOperatedByThisPreparation": false,
+  "physicalGameplayValidated": false,
+  "physicalThermalValidated": false,
+  "physicalVisualValidated": false,
+  "productivelyFrozenParentSourcesChanged": false,
+  "publicEvidenceIndex": "evidence/PUBLIC-EVIDENCE.json",
+  "revision": "R133",
+  "schemaVersion": 1,
+  "serverActivationConfirmed": false,
+  "signatureSchemesVerified": [
+    "v2",
+    "v3"
+  ],
+  "signedAndVerified": true,
+  "signingCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "sourceCommit": "5966a8ad23ae9040c570d359b999c8a31de904b4",
+  "sourceFreezeSha256": "66eca3d4c8cbe74cfcd2e3c8f8ede6908c1da1e6df94c0d9ff0b494ab27bc877",
+  "zipAlignmentVerifiedBytes": 16384
+}

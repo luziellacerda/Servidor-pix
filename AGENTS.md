@@ -1,3 +1,11 @@
+# R133 — entrega final de consoles e modos por edição
+
+APP → SERVIDOR, não implantação. Fonte Android 5966a8ad23ae9040c570d359b999c8a31de904b4; entrega pública c00f469517d41cf14f0d54a2d5cd3491cae6db00. R133 instalada/hash integral e dados preservados no Motorola, sem gameplay/ativação novos comprovados. Ler [o handoff único](docs/station-android/r133/HANDOFF-APP-R133-PARA-SERVIDOR-20261011.md), recibos e [a matriz integral](docs/station-android/r133/catalog/README.md).
+
+Este pacote supersede o parR129 na resposta a6b58e9. Kit privado do APK final, originais byte exatos e ledger específicos prontos; públicos sanitizados não são par de implantação. Usar registrador/merge já existentes a6, autenticação administrativa nativa e hotreloadv3, preservando baselines atuais e serviços. Não tratar Git/kit/preparo isolado como ativação. PS3/PS4 offline; PSX sem aprovações HLE novas; capacidade genérica não aprova modos/controles. Devolver recibos de aplicação, vínculos v3 assinados frescos e publicação de capas em uma única resposta.
+
+## Histórico anterior
+
 # R129 preparado; publicação Linux pendente; checagem horária ativa
 
 Ler o MESMO HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e online-plataformas-20261009/r128-retorno-servidor-20261011.json. A variante R129 c433052 atualiza o vínculo do bundle sem mudar o contrato. 68 testes passaram com R129; 18 selos conferidos e canonicais regenerados. Capas: 2.255 vínculos / 2.150 imagens, main9f598e2 e SNES9f85e9d; produção nomeada priorizada, UUID excluído. Catálogo33 até recibo aplicado real. Autenticação Linux e seis bibliotecas R129 ausentes; quatro motores novos NÃO ativados. Manutenção horária ativa, ciclos13h/14h status0. Preservar PS2/PSP/Wii/WiiU do site, jogos/IDs/perfis/serviços e API. Nunca executar operadores históricos nem fabricar evidência. PS3/PS4 offline.

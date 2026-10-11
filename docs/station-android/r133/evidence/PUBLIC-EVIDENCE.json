@@ -1,0 +1,67 @@
+{
+  "apkBytes": 2714971151,
+  "apkSha256": "945f7ded35e551d638135a05140c32218eb38277d10eaf21e3f83087d71da112",
+  "authenticatedSessionChecked": false,
+  "compilationAndIdentityPrepared": true,
+  "files": {
+    "installation.json": {
+      "bytes": 2522,
+      "originalPrivateReceiptSha256": "b44af78e82ecceb91bcdedd5c448abc6861a8369bb5f10631d14bd12d8676d0b",
+      "sha256": "d35499f30f86c094d3729eeca1714062f2fd7ff7cd0fad17c151afeed3893c4a"
+    },
+    "mode-preparation-hash-manifest.json": {
+      "bytes": 5151,
+      "originalPrivateReceiptSha256": "05f31f7aa6cf76b75fe76ef11f0e4b0391e14f216e05527e4306e2d2947bc6f8",
+      "sha256": "ec4dd6fea3e984cbeb7253923c85355a8909c23a965922da871b04849cfe00f4"
+    },
+    "native-compilation.json": {
+      "bytes": 44377,
+      "originalPrivateReceiptSha256": "cc2545ff817bf86b7fbe5d49405f6a7d859ed89404965bd7fde8e1a5062e6f70",
+      "sha256": "6ff3a7d90a5afc84da5343a73b1db6e6ac067bb287c38c26daed7de47dd9082f"
+    },
+    "package-final.json": {
+      "bytes": 1720721,
+      "originalPrivateReceiptSha256": "3e1532b125d3dc8304d35e672ffb3060bd8a91a4cfb4e6b6bf050823b54924ac",
+      "sha256": "e3fa8f89c9ee9b1adb8f06c0720d38e94d219cf6099ce341390cb7bc8c95a166"
+    },
+    "runtime-final.json": {
+      "bytes": 133503,
+      "originalPrivateReceiptSha256": "d1eb9bfe78be4c513daedde1ff1f624f653b5353db5a64b8a07d9df213dfb34e",
+      "sha256": "39fdc5b550279cc71f948fef8272b11ebbbe9ca441410357be862ced73575cea"
+    },
+    "server-kit-hash-manifest.json": {
+      "bytes": 6672,
+      "originalPrivateReceiptSha256": "7bd90b84ffb065b738c275befa9b4a1650716fa2ab7549b7e8c2a82ef83126f2",
+      "sha256": "1318fde7f0ad2a5b57d96f9df0d2de8e1abe46f511d904bbaaf7ea98254cf64c"
+    },
+    "source-freeze.json": {
+      "bytes": 22998,
+      "originalPrivateReceiptSha256": "66eca3d4c8cbe74cfcd2e3c8f8ede6908c1da1e6df94c0d9ff0b494ab27bc877",
+      "sha256": "822533e8b14257fc76562420370790ba2e7fd572789572541f74bfd2dbb9bc27"
+    },
+    "unsigned-package.json": {
+      "bytes": 1719372,
+      "originalPrivateReceiptSha256": "7df5c3f8524c00d89a380c94de2dd735409334c0034a4218379167844c931311",
+      "sha256": "381394ee7d306d329bc0ccf78c763fac06b9c91adb7dd81e4f638ad8c2d5d59c"
+    }
+  },
+  "installationCompletedUTC": "2026-10-11T21:41:18.825876+00:00",
+  "installationDeviceModel": "motorola edge 30",
+  "installed": true,
+  "nativeModesApproved": false,
+  "officialFrontendObserved": true,
+  "operatorApplied": false,
+  "operatorKitUsesOriginalPrivateReceiptBytes": true,
+  "originalPrivateReceiptHashesAreNotHashesOfSanitizedPublicCopies": true,
+  "physicalGameplayValidated": false,
+  "physicalThermalValidated": false,
+  "physicalVisualValidated": false,
+  "privateKitPrepared": true,
+  "reviewedGamesPrepared": 44,
+  "reviewedModesPrepared": 78,
+  "revision": "R133",
+  "serverActivated": false,
+  "serverKitUploaded": false,
+  "signedAndVerified": true,
+  "sourceCommit": "5966a8ad23ae9040c570d359b999c8a31de904b4"
+}

@@ -1,3 +1,11 @@
+# R133 — entrega final de consoles e modos por edição
+
+APP → SERVIDOR, não implantação. Fonte Android 5966a8ad23ae9040c570d359b999c8a31de904b4; entrega pública c00f469517d41cf14f0d54a2d5cd3491cae6db00. R133 instalada/hash integral e dados preservados no Motorola, sem gameplay/ativação novos comprovados. Ler [o handoff único](r133/HANDOFF-APP-R133-PARA-SERVIDOR-20261011.md), recibos e [a matriz integral](r133/catalog/README.md).
+
+Este pacote supersede o parR129 na resposta a6b58e9. Kit privado do APK final, originais byte exatos e ledger específicos prontos; públicos sanitizados não são par de implantação. Usar registrador/merge já existentes a6, autenticação administrativa nativa e hotreloadv3, preservando baselines atuais e serviços. Não tratar Git/kit/preparo isolado como ativação. PS3/PS4 offline; PSX sem aprovações HLE novas; capacidade genérica não aprova modos/controles. Devolver recibos de aplicação, vínculos v3 assinados frescos e publicação de capas em uma única resposta.
+
+## Histórico anterior
+
 # R129 Final-Modal — variante da entrega R128; quatro vínculos v3 e mídia/configuração Sony offline
 
 Entrega APP → SERVIDOR, não ativação. Fonte Android cf623c7c5cf34d4aa59ad278dc98fa6d7a50721b; APK R129 89dd543986fdcb0c4b7ea53e82de87907f3b41ee0fe892479d8a63f52e4b7df0, 2237505749bytes, assinado/conferido e instalação integral comprovada em um aparelho. Frontend oficial observado; autenticação e gameplay são verificações separadas. Ler [o mesmo handoff único](r128/HANDOFF-UNICO-MOTORES-ONLINE-R128-20261011.md) e os recibos atuais. Esta é uma atualização da branch/documento já publicado em 7b8c0a7e68b1b0bac5fdcebec62233611533394b.

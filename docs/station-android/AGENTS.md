@@ -1,3 +1,11 @@
+# R133 — entrega final de consoles e modos por edição
+
+APP → SERVIDOR, não implantação. Fonte Android 5966a8ad23ae9040c570d359b999c8a31de904b4; entrega pública c00f469517d41cf14f0d54a2d5cd3491cae6db00. R133 instalada/hash integral e dados preservados no Motorola, sem gameplay/ativação novos comprovados. Ler [o handoff único](r133/HANDOFF-APP-R133-PARA-SERVIDOR-20261011.md), recibos e [a matriz integral](r133/catalog/README.md).
+
+Este pacote supersede o parR129 na resposta a6b58e9. Kit privado do APK final, originais byte exatos e ledger específicos prontos; públicos sanitizados não são par de implantação. Usar registrador/merge já existentes a6, autenticação administrativa nativa e hotreloadv3, preservando baselines atuais e serviços. Não tratar Git/kit/preparo isolado como ativação. PS3/PS4 offline; PSX sem aprovações HLE novas; capacidade genérica não aprova modos/controles. Devolver recibos de aplicação, vínculos v3 assinados frescos e publicação de capas em uma única resposta.
+
+## Histórico anterior
+
 ## Estado da preparação do servidor — 11/10/2026
 
 A variante R129 Final-Modal foi incorporada à mesma entrega. A publicação protegida aguarda autenticação Linux; os seis binários privados R129 ainda não foram recebidos. Não declarar motores novos ativos sem recibo real. Manutenção horária e importação de capas estão preparadas e ativas, conforme o retorno consolidado existente.
