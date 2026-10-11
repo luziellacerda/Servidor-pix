@@ -5,39 +5,39 @@
       "controllerProfile": "standard-2p-v1",
       "profileSha256": "81c0e2323a37130dbdbdb9c2efefca8837a9bb6e7169304b4e5731b2ec56290a",
       "maximumPlayers": 2,
-      "engineId": "pcsx-rearmed-ff81ed17-player-v3-bdd07e7085ca",
+      "engineId": "pcsx-rearmed-ff81ed17-player-v3-f31f0a3dbfc9",
       "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
-      "runtimeSha256": "bdd07e7085caa79cb8e041e4f943869812f59639650c559dac8afb9f3392e9c5"
+      "runtimeSha256": "f31f0a3dbfc90163e1d12591facb26e66380a02e4c53ae92274ae7ebc01c4597"
     },
     "n64": {
       "controllerProfile": "direct-four-ports-v1",
       "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
       "maximumPlayers": 4,
-      "engineId": "mupen64plus-ae-33bf7021-n64-v3-bceb1e9a55af",
+      "engineId": "mupen64plus-ae-33bf7021-n64-v3-6868eddfca6c",
       "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
-      "runtimeSha256": "bceb1e9a55af41c2363b518ee09c1e45d171b7ba2f6a5a5628ea24553cc126bd"
+      "runtimeSha256": "6868eddfca6c5380b8191fe9c5ad7671faa3ffb1a0215c0fcc9b73236e685ef8"
     },
     "gamecube": {
       "controllerProfile": "dolphin-gamecube-four-ports-v1",
       "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
       "maximumPlayers": 4,
-      "engineId": "dolphin-5102a033-gamecube-v3-ff6109c31583",
+      "engineId": "dolphin-5102a033-gamecube-v3-9765756f70fd",
       "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
-      "runtimeSha256": "ff6109c31583368928f796094cf3429e86471f71336ecfe0373ad55af433ad3d"
+      "runtimeSha256": "9765756f70fda14d8103ce7ab7055a4e0fd92e1ed0edef09930ed38e013d9031"
     },
     "wii": {
       "controllerProfile": "dolphin-wii-remotes-four-v1",
       "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
       "maximumPlayers": 4,
-      "engineId": "dolphin-5102a033-wii-v3-ff6109c31583",
+      "engineId": "dolphin-5102a033-wii-v3-9765756f70fd",
       "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
-      "runtimeSha256": "ff6109c31583368928f796094cf3429e86471f71336ecfe0373ad55af433ad3d"
+      "runtimeSha256": "9765756f70fda14d8103ce7ab7055a4e0fd92e1ed0edef09930ed38e013d9031"
     }
   },
   "exactModeApprovalRequired": true,
   "legacyRegistryChanged": false,
-  "sourceRuntimeReceiptSha256": "2eb4ead34fba4853d22691f400ecb578489ca731f8a85467a146a3c7ab43a1ee",
-  "revision": "R128",
-  "apkSha256": "0189527c7537845562a2be4be15c0fab976c85f4f9c7f8ab884915c8bc3052dc",
-  "apkBytes": 2234617901
+  "sourceRuntimeReceiptSha256": "3fbd74d9c196af0d12b019a7049a8682852688bee71c0faa09bf6a685586bd4d",
+  "revision": "R129",
+  "apkSha256": "89dd543986fdcb0c4b7ea53e82de87907f3b41ee0fe892479d8a63f52e4b7df0",
+  "apkBytes": 2237505749
 }

@@ -1,20 +1,20 @@
 {
-  "revision": "R128",
-  "appSourceCommit": "3ea94ade312640ab69ca09e4092f60607996ccba",
+  "revision": "R129",
+  "appSourceCommit": "cf623c7c5cf34d4aa59ad278dc98fa6d7a50721b",
   "serverAuditedCommit": "141b488d6ad7fd3d2c8e74e76c1a004f1cb257fc",
-  "apkSha256": "0189527c7537845562a2be4be15c0fab976c85f4f9c7f8ab884915c8bc3052dc",
-  "apkBytes": 2234617901,
+  "apkSha256": "89dd543986fdcb0c4b7ea53e82de87907f3b41ee0fe892479d8a63f52e4b7df0",
+  "apkBytes": 2237505749,
   "engineIds": [
-    "pcsx-rearmed-ff81ed17-player-v3-bdd07e7085ca",
-    "mupen64plus-ae-33bf7021-n64-v3-bceb1e9a55af",
-    "dolphin-5102a033-gamecube-v3-ff6109c31583",
-    "dolphin-5102a033-wii-v3-ff6109c31583"
+    "pcsx-rearmed-ff81ed17-player-v3-f31f0a3dbfc9",
+    "mupen64plus-ae-33bf7021-n64-v3-6868eddfca6c",
+    "dolphin-5102a033-gamecube-v3-9765756f70fd",
+    "dolphin-5102a033-wii-v3-9765756f70fd"
   ],
   "serverActivated": false,
-  "installed": false,
+  "installed": true,
   "physicalGameplayValidated": false,
   "ps3Ps4Online": false,
-  "incomingManifestSha256": "27d29d72ede1396d6e7b2720733eab1d27bcb0a9b62462bbb5c500227b771fcb",
+  "incomingManifestSha256": "07d1cf13caa20f972720436db3365f1a7a29ab661c6a5eec84e4a06ebd1064c2",
   "publicOperatorFilesSha256": {
     "audit_test_fixtures.py": "4bf557e14bc8111363caff470d20a282b9094ba72610b0058b5fad184fc6bb7b",
     "build_incoming_manifest.py": "362bcae9d8915f7f43aac4c48d06b35bdf57efc88d6acb9199aa06e3a0231426",
@@ -35,5 +35,110 @@
     "test_private_artifact_kit.py": "76d24d823e041d14d87345d355e3952d17591cd3706e1e64245689e725527f8a",
     "test_scoped_mode_merge.py": "22495ee19b3c02ae68cb33f2f8605987dd758e68f0a1b254fb3034f371b1df80"
   },
-  "supersedesServerProcedure": "5696ed9bed01fdfa8cbd3414197c2eea4f3fc898"
+  "supersedesServerProcedure": "5696ed9bed01fdfa8cbd3414197c2eea4f3fc898",
+  "installedDevices": [
+    "Motorola Edge 30"
+  ],
+  "installationReceipt": "integration/local-sony-demos/evidence/installation-motorola-r129-menu.json",
+  "installationReceiptSha256": "563055e376993c42da115bdea49dd35624e1bf569257bdd6f4afdbce11b224f0",
+  "officialFrontendObserved": true,
+  "authenticatedSessionChecked": false,
+  "catalogPhysicallyObserved": true,
+  "localDemonstrationsPhysicallyObserved": true,
+  "variantOfDeliveryCommit": "7b8c0a7e68b1b0bac5fdcebec62233611533394b",
+  "variantOfAppRevision": "R128",
+  "changeScope": "local-Sony-demonstrations-media-settings-owned-label-guard-shared-bundle-binding",
+  "transportCoreOptionsAndProfilesChanged": false,
+  "additionalOnlineSystems": [],
+  "sonyLocalPlatformVideosAdded": [
+    "ps3",
+    "ps4"
+  ],
+  "sonyEmulatorConfigurationMenuAdded": [
+    "ps3",
+    "ps4"
+  ],
+  "historicalRegressionReceipt": "regression-final.json",
+  "correctedLocalCoverCacheContract": true,
+  "apk": "TurboStations-Premium-R129-20261011-Final-Modal.apk",
+  "sonySettingsOwnedLabelsGuardVerified": true,
+  "sonySettingsNativeReceipt": "integration/local-sony-demos/evidence/native-receipt.json",
+  "sonySettingsNativeReceiptSha256": "ce2ae53abd4da6d6f681b6f01725a5269975af3b1f4505382bd0d9f5906ba2b7",
+  "sonySettingsNativePayloadSha256": "b3d351d2274dc130d5866f4cc7e8ae145c1b9f467dc06f47bdcdc67f476c330f",
+  "sonySettingsNativeExactInverse": true,
+  "sonySettingsLabelsDrawnOnlyInOpenModal": true,
+  "externalEmulatorsBundledInStationApk": false,
+  "externalEmulatorsSeparatelyInstalled": true,
+  "externalEmulatorsInstalledSeparatelyOn": [
+    "Motorola Edge 30"
+  ],
+  "externalEmulatorInstallationReceipt": "integration/local-sony-demos/evidence/sony-official-installation.json",
+  "externalEmulatorInstallationReceiptSha256": "312c5388817285448a4c1c1e95924002b841da6384ec59474da6e0459d84c395",
+  "externalEmulatorInstallationStationSourceCommit": "af3b7e23dea8ffe5b6e83af56513f2ee1bb65dfd",
+  "externalEmulatorInstallationStationApkSha256": "e7011f0def73160f1cd8ac7c757c9cfec76b3b7bd59da87f3329441b2ad249d9",
+  "externalEmulatorInstallationCheckedUTC": "2026-10-11T15:24:42.439245+00:00",
+  "externalEmulatorInstallationAppliesToCurrentStationProcedure": false,
+  "externalEmulatorGameplayValidated": false,
+  "packageVariantHistory": [
+    {
+      "appSourceCommit": "71b5b50868f1e49befbd7ee342ab5493717c844a",
+      "apkSha256": "98849416b65401f3ff552a5f5be93408e8104410e866cf253925e2c369a976c9",
+      "apkBytes": 2234638381,
+      "installed": true,
+      "installedDevices": [
+        "Motorola Edge 30"
+      ],
+      "installationReceipt": "integration/local-sony-demos/evidence/installation-motorola-r129-corrected.json",
+      "installationReceiptSha256": "5399bc35939f354c85443ded57c7afd92ded7720783828a028a7d724a8a7f3ae",
+      "officialFrontendObserved": true,
+      "acceptedAsFinal": false,
+      "role": "intermediate-package-before-final-platform-artwork-refinement",
+      "reportedPhysicalObservationScope": {
+        "demoGameCoverNameAndOneOfOneObservedBothSonySystems": true,
+        "ps3DemoWarningObservedWithoutExternalEmulatorLaunch": true,
+        "bothMarkerFiles83BytesConfirmed": true,
+        "platformHeroAndThumbnailArtworkStillBlue": true,
+        "authenticatedSessionAndGameplayValidated": false
+      }
+    },
+    {
+      "appSourceCommit": "af3b7e23dea8ffe5b6e83af56513f2ee1bb65dfd",
+      "apkSha256": "e7011f0def73160f1cd8ac7c757c9cfec76b3b7bd59da87f3329441b2ad249d9",
+      "apkBytes": 2237505749,
+      "installed": true,
+      "installedDevices": [
+        "Motorola Edge 30"
+      ],
+      "apk": "TurboStations-Premium-R129-20261011-Final.apk",
+      "installationReceipt": "integration/local-sony-demos/evidence/installation-motorola-r129-final.json",
+      "installationReceiptSha256": "ebdd00455edec70872e72699e582637eb1e4854c46a8f39c3a382ad41bc11e3a",
+      "acceptedAsFinal": false,
+      "role": "visual-intermediate-before-owned-settings-label-modal-guard",
+      "officialFrontendObserved": true,
+      "reportedPhysicalObservationScope": {
+        "ps3ExternalSettingsOpenedByHumanTap": true,
+        "sonySettingsLabelsLeakedAfterReturn": true,
+        "currentModalGuardPhysicallyValidated": false,
+        "authenticatedSessionAndGameplayValidated": false
+      }
+    }
+  ],
+  "supersededInitialR129": {
+    "appSourceCommit": "83173d43737efa29e4e8e26309ec06b6e545909a",
+    "apkSha256": "82bea84df62172214eedab6f52440e990ca599af75397cbbaebe800ac0da4279",
+    "installedOnMotorola": true,
+    "acceptedAsFinal": false,
+    "reason": "native-private-cover-cache-path-contract"
+  },
+  "sonySettingsModalReturnPhysicallyValidated": true,
+  "sonySettingsMenuPhysicallyObserved": true,
+  "sonySettingsExternalLaunchPhysicallyObserved": true,
+  "sonyPlatformArtworkPhysicallyObserved": true,
+  "sonyPlatformVideoPosterFramesPhysicallyObserved": true,
+  "sonyPlatformVideoMotionPhysicallyValidated": false,
+  "physicalObservationReceipt": "integration/local-sony-demos/evidence/physical-observation-final.json",
+  "physicalObservationReceiptSha256": "755318f215b3956fe166222ef244b22626e3be2701a79376517d911db8d306e0",
+  "serverActivationConfirmed": false,
+  "thermalImprovementValidated": false,
+  "physicalObservationScope": "Sony-platforms-demo-lists-settings-and-return-only"
 }
