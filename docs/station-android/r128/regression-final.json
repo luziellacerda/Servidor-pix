@@ -1,0 +1,33 @@
+{
+  "revision": "R128",
+  "passed": true,
+  "testMethods": 68,
+  "runtimeReceiptSha256": "2eb4ead34fba4853d22691f400ecb578489ca731f8a85467a146a3c7ab43a1ee",
+  "engineIds": [
+    "pcsx-rearmed-ff81ed17-player-v3-bdd07e7085ca",
+    "mupen64plus-ae-33bf7021-n64-v3-bceb1e9a55af",
+    "dolphin-5102a033-gamecube-v3-ff6109c31583",
+    "dolphin-5102a033-wii-v3-ff6109c31583"
+  ],
+  "scope": "Isolated synthetic tests rerun with actual final R128 runtime receipt",
+  "linuxPrivilegesAndPublicationMocked": true,
+  "physicalGameplayValidated": false,
+  "suites": {
+    "operator-regression-receipt.json": {
+      "testMethods": 24,
+      "passed": true
+    },
+    "mode-merge-regression-receipt.json": {
+      "testMethods": 16,
+      "passed": true
+    },
+    "operator-transaction-regression-receipt.json": {
+      "testMethods": 20,
+      "passed": true
+    },
+    "private-kit-regression-receipt.json": {
+      "testMethods": 8,
+      "passed": true
+    }
+  }
+}

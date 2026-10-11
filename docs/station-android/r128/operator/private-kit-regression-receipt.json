@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "testMethods": 8,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "scope": "Synthetic ZIP/full byte hash/selected library privacy; signing assertions are fixture input, not APK cryptographic validation; no server publication",
+  "helperSha256": "27053b843d763adcf570e859b2c8658e216dbf6f80963b600fa5326958f70ef4",
+  "regressionSourceSha256": "76d24d823e041d14d87345d355e3952d17591cd3706e1e64245689e725527f8a"
+}

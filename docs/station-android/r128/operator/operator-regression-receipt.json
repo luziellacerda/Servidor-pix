@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "testMethods": 24,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "scope": "Isolated synthetic administrative preparation; no Linux publication, API deployment, device operation or physical gameplay",
+  "operatorBaselineSha256": "c4f61fef0e25677148f93e878902d75b1ab5d8c2855cda41a9d77b325e11e6e7",
+  "operatorPatchedSha256": "3d5d5b5563e2a6825ab9e798da80313cdbf2640522bc4dfd6b47e25c7f69eae1",
+  "regressionSourceSha256": "4a0f446e834bfabf368bc486b4483eb4565e8186ddbb4e74da7641ab8b61d57d"
+}

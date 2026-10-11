@@ -1,3 +1,11 @@
+# R128 — cadastro v3 dos motores reais e PS3 PS4 somente offline
+
+Entrega APP → SERVIDOR, não ativação. Fonte Android 3ea94ade312640ab69ca09e4092f60607996ccba; APK candidato R128 0189527c7537845562a2be4be15c0fab976c85f4f9c7f8ab884915c8bc3052dc assinado/conferido, não instalado. Ler [o handoff único](r128/HANDOFF-UNICO-MOTORES-ONLINE-R128-20261011.md) e seus recibos antes de aplicar. Dois scripts administrativos atualizados contra141b488; patches somente para comparação, não reaplicar aos arquivos já atualizados.
+
+O procedimento da entrega R1275696ed9 está supersedido: motores v3 usam autoOnlineProfiles/StationMultiplayer, não OnlineEngine/EngineRegistryFile legado. Perfis e modos explícitos, bytes reais, baselines/selo/scan.lock e rollback obrigatórios. Código Python novo precisa ir ao library-tools efetivo do scanner oneshot; hotreload10s é dos dados C#. Preservar serviços/partidas/perfis antigos e segurança; este commit Git não altera Linux nem reinicia API. PS3/PS4 apenas offline, nenhuma engine/sala online. Retornar uma matriz única de ativação assinada, aprovados/recusados e evidências atuais; não alegar gameplay pelo cadastro.
+
+## Histórico anterior
+
 # Station: capas do site PS2/PSP/Wii/WiiU corrigidas — 10/10/2026
 
 Leia o MESMO HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e online-plataformas-20261009/capas-site-ps2-psp-wii-wiiu-20261010.json. Catálogo33/3940IDs/3685visíveis/255aliases. Artes anteriores eram de uma cópia local antiga; agora25PS2/4PSP/6Wii/1WiiU têm as artes atuais do site. Seis jogos não constam com capa nesses catálogos e mantêm a correspondente, sem substituir outro título.160artes hospedadas compiladas JPEG480×720 nos seeds, sem novas artes; títulos comuns/BR separados. WiiU sem Turbo.jpg genérico, seleção por pasta do jogo.42capas/todoscampos do catálogo assinados e bytes conferidos, parser compilado leu33, scannerisolado/efetivo sem mudança ou reconstrução de ROM. Itemrevision33 nos36alterados; cache coverId+itemrevision. API PID2136303/DLL2c0d03447696 semrestart; IDs/contentidentity/artifacts/metadata/perfis5176/5169/17políticas/licenças/configs/outros serviços preservados. DEX inalterado; teste visual nos aparelhos pendente. BackupGit antes: backup/station-antes-capas-site-20261010/tag equivalente, server5f9c019/app2b4a6dd. Não reaplicar operadores datados; ler applied.json e fonte atual.

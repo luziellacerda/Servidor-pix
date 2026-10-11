@@ -1,3 +1,11 @@
+# R128 — cadastro v3 dos motores reais e PS3 PS4 somente offline
+
+Entrega APP → SERVIDOR, não ativação. Fonte Android 3ea94ade312640ab69ca09e4092f60607996ccba; APK candidato R128 0189527c7537845562a2be4be15c0fab976c85f4f9c7f8ab884915c8bc3052dc assinado/conferido, não instalado. Ler [o handoff único](r128/HANDOFF-UNICO-MOTORES-ONLINE-R128-20261011.md) e seus recibos antes de aplicar. Dois scripts administrativos atualizados contra141b488; patches somente para comparação, não reaplicar aos arquivos já atualizados.
+
+O procedimento da entrega R1275696ed9 está supersedido: motores v3 usam autoOnlineProfiles/StationMultiplayer, não OnlineEngine/EngineRegistryFile legado. Perfis e modos explícitos, bytes reais, baselines/selo/scan.lock e rollback obrigatórios. Código Python novo precisa ir ao library-tools efetivo do scanner oneshot; hotreload10s é dos dados C#. Preservar serviços/partidas/perfis antigos e segurança; este commit Git não altera Linux nem reinicia API. PS3/PS4 apenas offline, nenhuma engine/sala online. Retornar uma matriz única de ativação assinada, aprovados/recusados e evidências atuais; não alegar gameplay pelo cadastro.
+
+## Histórico anterior
+
 # Novos sistemas, jogos e capas APLICADOS — 08/10/2026
 
 Leia `docs/station-android/RETORNO-NOVOS-SISTEMAS-JOGOS-CAPAS-STATION-20261008.md` e `novos-sistemas-20261008/`. As cinco pastas foram retiradas do SNES e colocadas na raiz: GameCube 21, PSX 84, Nintendo Wii 7, Nintendo Wii U 1, Switch 1. São 114 novos jogos e 114 capas corretas: 110 artes locais Turborama e quatro complementares Libretro verificadas. Wii e Wii U são distintos.

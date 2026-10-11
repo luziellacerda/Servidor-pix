@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "testMethods": 16,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "scope": "Synthetic administrative mode merge only; no real HLE approval, deployment, API or Android gameplay",
+  "regressionSourceSha256": "22495ee19b3c02ae68cb33f2f8605987dd758e68f0a1b254fb3034f371b1df80",
+  "mergeSourceSha256": "ddac598ca1671e6d682b626866a3b1984eb88c5ff7d677c7b4cd563a6a677783"
+}

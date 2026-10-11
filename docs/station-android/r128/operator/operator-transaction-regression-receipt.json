@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "testMethods": 20,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "scope": "Isolated exact operator functions with synthetic files; Linux credentials/group/flock/fsync substituted; no OS security/concurrency or production/gameplay validation",
+  "operatorSourceSha256": "a3c81e0c379984d6b7736f79ce963c73a3f3250883f6304a32b5c6cfda73a096",
+  "regressionSourceSha256": "f34320aca97f4e4f3b6d9a5fe5ae9334d627ef26d50b064164905781e5cc751d"
+}

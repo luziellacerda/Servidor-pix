@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "serverSourceCommit": "141b488d6ad7fd3d2c8e74e76c1a004f1cb257fc",
+  "serverSourcePath": "docs/station-android/scripts/station_online_profiles.py",
+  "baselineSha256": "c4f61fef0e25677148f93e878902d75b1ab5d8c2855cda41a9d77b325e11e6e7",
+  "patchedSha256": "3d5d5b5563e2a6825ab9e798da80313cdbf2640522bc4dfd6b47e25c7f69eae1",
+  "runtimeApiChanged": false,
+  "legacyBehaviorPreservedWhenNewFieldsAbsent": true,
+  "deployed": false,
+  "serverRestartRequired": false,
+  "publicationOperator": {
+    "sourcePath": "docs/station-android/scripts/cadastrar-motor-online-station.py",
+    "baselineSha256": "877d39cc0f0d830df8f3f855c49e7c91ac2d363aeaca293d6010f996c4118b31",
+    "patchedSha256": "a3c81e0c379984d6b7736f79ce963c73a3f3250883f6304a32b5c6cfda73a096",
+    "optionalModeAdditions": true,
+    "oldCandidateWithoutModesStillAccepted": true,
+    "profilesPublishedLastUnderExistingLock": true
+  }
+}

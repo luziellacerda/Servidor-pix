@@ -1,0 +1,119 @@
+--- a/docs/station-android/scripts/cadastrar-motor-online-station.py
++++ b/docs/station-android/scripts/cadastrar-motor-online-station.py
+@@ -57,16 +57,44 @@
+         for name,key in (('library','coreSha256'),('runtimeLibrary','runtimeSha256')):
+             if not isinstance(engine.get(name),str) or digest(binary(root,engine[name]))!=engine[key]:raise ValueError('actual APK binary differs from engine hash')
+ 
++def restore_bytes(path,source,gid):
++    # Restore the exact baseline bytes, including formatting, under scan.lock.
++    handle,name=tempfile.mkstemp(prefix='.engine-registration-',dir=path.parent)
++    try:
++        with os.fdopen(handle,'wb') as stream:
++            os.fchmod(stream.fileno(),0o640);os.fchown(stream.fileno(),-1,gid)
++            with source.open('rb') as original:shutil.copyfileobj(original,stream)
++            stream.flush();os.fsync(stream.fileno())
++        os.replace(name,path)
++        directory=os.open(path.parent,os.O_DIRECTORY)
++        try:os.fsync(directory)
++        finally:os.close(directory)
++    finally:
++        if os.path.exists(name):os.unlink(name)
++
++def reviewed_modes(existing,candidate,incoming):
++    validate_modes(existing);validate_modes(candidate)
++    old=existing['modes'];next_modes=candidate['modes']
++    if candidate.get('schemaVersion')!=existing.get('schemaVersion') or next_modes[:len(old)]!=old:
++        raise ValueError('existing prepared modes must remain exact')
++    identities={e['engineId'] for e in incoming['engines']}
++    for mode in next_modes[len(old):]:
++        scoped=mode.get('engineIds')
++        if not scoped or not set(scoped)<=identities:
++            raise ValueError('new prepared modes must target only incoming engines')
++    return candidate
++
+ def stage(args):
+     catalog=read(args.catalog,32*1024*1024);existing=read(args.profiles,16*1024*1024)
+     current=validate_manifest(read(args.current,512*1024));modes=read(args.modes,8*1024*1024);validate_modes(modes)
+     incoming=read(args.incoming,512*1024);verify_binaries(incoming,args.artifacts)
++    next_modes=reviewed_modes(modes,read(args.mode_additions,8*1024*1024),incoming) if getattr(args,'mode_additions',None) else modes
+     old={e['engineId']:e for e in current['engines']}
+     for engine in incoming['engines']:
+         if engine['engineId'] in old and engine!=old[engine['engineId']]:raise ValueError('engine IDs are immutable; use a new ID for a new binary')
+         old[engine['engineId']]=engine
+     manifest=dict(current,engines=list(old.values()));validate_manifest(manifest)
+-    profiles=prepare(catalog['items'],existing,manifest,modes)
++    profiles=prepare(catalog['items'],existing,manifest,next_modes)
+     if profiles[:len(existing)]!=existing:raise ValueError('existing profiles must remain exact')
+     args.output.mkdir(mode=0o700,exist_ok=False);artifacts=args.output/'artifacts';artifacts.mkdir(mode=0o700)
+     for engine in incoming['engines']:
+@@ -74,10 +102,11 @@
+             destination=artifacts/engine[name];destination.parent.mkdir(mode=0o700,parents=True,exist_ok=True)
+             if destination.exists() and digest(destination)!=digest(binary(args.artifacts,engine[name])):raise ValueError('conflicting binary path in incoming delivery')
+             shutil.copyfile(binary(args.artifacts,engine[name]),destination);destination.chmod(0o600)
+-    for name,value in [('incoming.json',incoming),('engines.json',manifest),('profiles.json',profiles)]:write(args.output/name,value)
++    for name,value in [('incoming.json',incoming),('engines.json',manifest),('profiles.json',profiles),('modes.json',next_modes)]:write(args.output/name,value)
+     receipt=dict(schemaVersion=1,serverRebuildRequired=False,serverRestartRequired=False,
+         baseline={key:digest(path) for key,path in [('catalog',args.catalog),('profiles',args.profiles),('current',args.current),('modes',args.modes)]},
+-        files={name:digest(args.output/name) for name in ('incoming.json','engines.json','profiles.json')},
++        files={name:digest(args.output/name) for name in ('incoming.json','engines.json','profiles.json','modes.json')},
++        preparedModesAdded=len(next_modes['modes'])-len(modes['modes']),
+         enginesAdded=len(old)-len(current['engines']),profilesAdded=len(profiles)-len(existing),previousProfilesPreserved=len(existing),
+         realBinaryHashesVerified=True,androidGameplayValidated=False)
+     write(args.output/'receipt.json',receipt)
+@@ -92,7 +121,8 @@
+     with (home/'scan.lock').open('a') as lock:
+         fcntl.flock(lock,fcntl.LOCK_EX)
+         if receipt['baseline']!={k:digest(p) for k,p in paths.items()}:raise ValueError('publication baseline changed; prepare again with the current catalog')
+-        if receipt['files']!={n:digest(args.candidate/n) for n in ('incoming.json','engines.json','profiles.json')}:raise ValueError('candidate seal changed')
++        names=('incoming.json','engines.json','profiles.json','modes.json') if 'modes.json' in receipt['files'] else ('incoming.json','engines.json','profiles.json')
++        if receipt['files']!={n:digest(args.candidate/n) for n in names}:raise ValueError('candidate seal changed')
+         verify_binaries(incoming,args.candidate/'artifacts')
+         current=validate_manifest(read(paths['current'],512*1024));old={e['engineId']:e for e in current['engines']}
+         for engine in incoming['engines']:
+@@ -100,28 +130,42 @@
+             old[engine['engineId']]=engine
+         manifest=dict(current,engines=list(old.values()));validate_manifest(manifest)
+         existing=read(paths['profiles'],16*1024*1024)
+-        profiles=prepare(read(paths['catalog'],32*1024*1024)['items'],existing,manifest,read(paths['modes'],8*1024*1024))
++        old_modes=read(paths['modes'],8*1024*1024)
++        next_modes=reviewed_modes(old_modes,read(args.candidate/'modes.json',8*1024*1024),incoming) if 'modes.json' in receipt['files'] else old_modes
++        profiles=prepare(read(paths['catalog'],32*1024*1024)['items'],existing,manifest,next_modes)
+         if manifest!=read(args.candidate/'engines.json',512*1024) or profiles!=read(args.candidate/'profiles.json',16*1024*1024):raise ValueError('candidate is not the exact recomputed binding')
+         owner=pwd.getpwnam('turborama-station-api')
+         backup=home/('.engine-enrollment-'+os.urandom(8).hex());backup.mkdir(mode=0o700)
+-        for k in ('current','profiles'):shutil.copy2(paths[k],backup/(k+'.json'))
++        mode_changed=next_modes!=old_modes
++        backup_keys=('current','profiles','modes') if mode_changed else ('current','profiles')
++        for k in backup_keys:shutil.copy2(paths[k],backup/(k+'.json'))
+         try:
++            # Importers share scan.lock. Publish profiles last so the HTTP monitor
++            # only observes the completed approved binding set.
++            if mode_changed:write(paths['modes'],next_modes,owner.pw_gid)
+             write(paths['current'],manifest,owner.pw_gid);write(paths['profiles'],profiles,owner.pw_gid)
+         except Exception:
+-            for k in ('current','profiles'):write(paths[k],read(backup/(k+'.json'),16*1024*1024),owner.pw_gid)
++            rollback_keys=('modes','current','profiles') if mode_changed else ('current','profiles')
++            rollback_errors=[]
++            for k in rollback_keys:
++                try:restore_bytes(paths[k],backup/(k+'.json'),owner.pw_gid)
++                except Exception as error:rollback_errors.append((k,type(error).__name__))
++            if rollback_errors:raise ValueError('registry rollback requires operator recovery: '+repr(rollback_errors))
+             raise
+         result=dict(applied=True,serverRestarted=False,existingProfilesPreserved=len(existing),profilesAdded=len(profiles)-len(existing),reloadWithinSeconds=10,
+-            enginesSha256=digest(paths['current']),profilesSha256=digest(paths['profiles']))
++            enginesSha256=digest(paths['current']),profilesSha256=digest(paths['profiles']),preparedModesSha256=digest(paths['modes']),preparedModesAdded=len(next_modes['modes'])-len(old_modes['modes']))
+         write(backup/'receipt.json',result);print(json.dumps(result),flush=True)
+ 
+ def main():
+     parser=argparse.ArgumentParser(description=__doc__);sub=parser.add_subparsers(dest='action',required=True)
+     prepare_parser=sub.add_parser('prepare')
+     for name in ('catalog','profiles','current','modes','incoming','artifacts','output'):prepare_parser.add_argument('--'+name,type=Path,required=True)
++    prepare_parser.add_argument('--mode-additions',type=Path)
+     apply_parser=sub.add_parser('apply')
+     for name in ('config','candidate'):apply_parser.add_argument('--'+name,type=Path,required=True)
+     install_parser=sub.add_parser('install')
+     for name in ('config','incoming','artifacts','output'):install_parser.add_argument('--'+name,type=Path,required=True)
++    install_parser.add_argument('--mode-additions',type=Path)
+     args=parser.parse_args()
+     for value in vars(args).values():
+         if isinstance(value,Path) and (not value.is_absolute() or value.is_symlink()):raise ValueError('absolute regular paths required')

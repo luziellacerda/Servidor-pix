@@ -73,6 +73,8 @@ def validate_manifest(manifest):
             raise ValueError('invalid engine extensions')
         if not isinstance(engine.get('options'),str) or len(engine['options'])>8192:
             raise ValueError('bounded fixed engine options required')
+        if 'requireExplicitEngineModes' in engine and type(engine['requireExplicitEngineModes']) is not bool:
+            raise ValueError('explicit engine mode policy must be boolean')
         maximum=engine.get('maximumPlayers',CEILINGS[platform(engine['platform'])])
         if type(maximum) is not int or not 1<=maximum<=CEILINGS[platform(engine['platform'])]:
             raise ValueError('engine exceeds platform ceiling')
@@ -102,6 +104,10 @@ def validate_modes(document):
             raise ValueError('exact prepared content identity required')
         for key,limit in (('profileId',64),('controllerProfile',64),('mode',40),('modeTitle',80)):
             if not text(mode.get(key),limit):raise ValueError('invalid prepared mode text')
+        if 'engineIds' in mode:
+            scoped=mode['engineIds']
+            if not isinstance(scoped,list) or not 1<=len(scoped)<=64 or any(not text(value,120) for value in scoped) or len(set(scoped))!=len(scoped):
+                raise ValueError('bounded unique scoped engine identities required')
         key=(mode['itemId'],mode['contentSha256'],mode['profileId'])
         if key in seen:raise ValueError('duplicate prepared mode')
         seen.add(key);maximum=mode.get('maximumPlayers');counts=mode.get('allowedPlayerCounts')
@@ -142,7 +148,15 @@ def prepare(items,existing,manifest,modes=None):
                     'A importação reconhece o arquivo; compatibilidade do jogo e desempenho nos aparelhos precisam ser conferidos.',
                     'Acima de duas pessoas exige o cadastro do modo correto. Ver detalhes não transmite gameplay.'],sources=[])]
             if system in ARCADES and maximum>1:defaults[0]['instructions']=['Novo conjunto arcade reconhecido. Falta associar o driver e o modo a este conteúdo antes da sala online.']
-            for mode in planned if planned is not None else defaults:
+            # Newly pinned engines must have a reviewed edition/mode explicitly
+            # scoped to this engine. No generic approval on a future import.
+            if engine.get('requireExplicitEngineModes',False):
+                selected=[m for m in (planned or []) if engine['engineId'] in m.get('engineIds',[])]
+            elif planned is not None:
+                selected=[m for m in planned if 'engineIds' not in m or engine['engineId'] in m['engineIds']]
+            else:
+                selected=defaults
+            for mode in selected:
                 if mode['maximumPlayers']>engine.get('maximumPlayers',CEILINGS[system]):continue
                 config=profile_configuration(engine,mode['controllerProfile'],mode['maximumPlayers'])
                 if config is None:continue # engine must implement the exact port type

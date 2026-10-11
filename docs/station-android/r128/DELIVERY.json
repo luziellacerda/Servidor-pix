@@ -1,0 +1,39 @@
+{
+  "revision": "R128",
+  "appSourceCommit": "3ea94ade312640ab69ca09e4092f60607996ccba",
+  "serverAuditedCommit": "141b488d6ad7fd3d2c8e74e76c1a004f1cb257fc",
+  "apkSha256": "0189527c7537845562a2be4be15c0fab976c85f4f9c7f8ab884915c8bc3052dc",
+  "apkBytes": 2234617901,
+  "engineIds": [
+    "pcsx-rearmed-ff81ed17-player-v3-bdd07e7085ca",
+    "mupen64plus-ae-33bf7021-n64-v3-bceb1e9a55af",
+    "dolphin-5102a033-gamecube-v3-ff6109c31583",
+    "dolphin-5102a033-wii-v3-ff6109c31583"
+  ],
+  "serverActivated": false,
+  "installed": false,
+  "physicalGameplayValidated": false,
+  "ps3Ps4Online": false,
+  "incomingManifestSha256": "27d29d72ede1396d6e7b2720733eab1d27bcb0a9b62462bbb5c500227b771fcb",
+  "publicOperatorFilesSha256": {
+    "audit_test_fixtures.py": "4bf557e14bc8111363caff470d20a282b9094ba72610b0058b5fad184fc6bb7b",
+    "build_incoming_manifest.py": "362bcae9d8915f7f43aac4c48d06b35bdf57efc88d6acb9199aa06e3a0231426",
+    "cadastrar-motor-online-station.py": "a3c81e0c379984d6b7736f79ce963c73a3f3250883f6304a32b5c6cfda73a096",
+    "extract_private_server_artifacts.py": "27053b843d763adcf570e859b2c8658e216dbf6f80963b600fa5326958f70ef4",
+    "merge_scoped_modes.py": "ddac598ca1671e6d682b626866a3b1984eb88c5ff7d677c7b4cd563a6a677783",
+    "mode-merge-regression-receipt.json": "655eb8b6393a651c0cf0f8c8c9544cc867a7f5780a3aa017d0d9167e61e5fd30",
+    "operator-patch-receipt.json": "5aa8dbe53083dea97796ebd2f7b1b1694e9b43507c3f95c794feaacac2627de1",
+    "operator-regression-receipt.json": "fce623eadf7c1b9d2bd3065d4477ae7e1e41cb06d46eab3956456a91cf180566",
+    "operator-transaction-regression-receipt.json": "50e51f91f1c410de8756f8f2e14a58846d4a516e53250aab8b83f3dbab90661e",
+    "operator-transaction.patch": "1bf86eb98b400e89062f8de04896bdc488c904fac431d93c0650c89f16f5765a",
+    "private-kit-regression-receipt.json": "e5da68ee224e58829ba3f8eac2e0b7017e267c627da9df812860c9c58f423c95",
+    "profile-selection.patch": "50e51681285af3aff5133088e8ec0363dca8eb0ea6781dd528790e6478367805",
+    "PUBLIC-FILES.json": "fe7754a865a3b65d4d5479b2437a35a12bcfdd7ad0f5b2efdabe9d6ef45511d0",
+    "station_online_profiles.py": "3d5d5b5563e2a6825ab9e798da80313cdbf2640522bc4dfd6b47e25c7f69eae1",
+    "test_explicit_engine_modes.py": "4a0f446e834bfabf368bc486b4483eb4565e8186ddbb4e74da7641ab8b61d57d",
+    "test_operator_candidate_transaction.py": "f34320aca97f4e4f3b6d9a5fe5ae9334d627ef26d50b064164905781e5cc751d",
+    "test_private_artifact_kit.py": "76d24d823e041d14d87345d355e3952d17591cd3706e1e64245689e725527f8a",
+    "test_scoped_mode_merge.py": "22495ee19b3c02ae68cb33f2f8605987dd758e68f0a1b254fb3034f371b1df80"
+  },
+  "supersedesServerProcedure": "5696ed9bed01fdfa8cbd3414197c2eea4f3fc898"
+}
