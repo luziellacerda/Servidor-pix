@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "revision": "R127",
+  "baseApkSha256": "f2924c7b49ea4e40f67c41e0f2997ea4dcd5aee6f2d495517b3c5dfa3c664a9d",
+  "apkSha256": "a350878cca5c1a65c51e79ac13e9e38c2053d76e5404edb515ad1ddd650c3038",
+  "apkBytes": 2235617465,
+  "freezeSha256": "88c58884a055e8d9f87dc488a0fd0e844f0b48b2f19708342c486af68d7aad4b",
+  "identityReceiptSha256": "16c7e80c4a8e4a5f5ab5718af18192c912eb08353555b5b732a7ee263c9d352c",
+  "replacedEntrySha256": {
+    "AndroidManifest.xml": "e8822a0c4e98c6d6edd57797a1876c740f05682ac6a533bf580736f171ba0387",
+    "assets/station-online/engines.json": "48e336c8cc5222203306f1f44ab0381e46dc2eca88f7d97139e3003105b33841",
+    "classes28.dex": "5966ef8405701fa946c60fe6d922726cd74c27783a4cb76d240dfa4bc324de9d",
+    "classes35.dex": "585b88564556c9106df0f9ec5a979cdd726824e96dcdc662122717648e227276",
+    "classes6.dex": "61ff49b6253a9f31f0519c2517a6b2b5b55c5af53c529cfd728bd052f0c5dacb",
+    "lib/arm64-v8a/libstation_dolphin_runtime.so": "a206aed4b7bb491fb010deefde537742b1c95b0f7779f53a25a7a75e0edaf787",
+    "lib/arm64-v8a/libstation_mupen64plus_runtime.so": "9536fbd2a7d23713d1280a22276856924420dea9920bb557e0dda7117e5b3025"
+  },
+  "addedEntrySha256": {
+    "lib/arm64-v8a/libstation_psx_online.so": "f9d762e9fe82b5346b65d29d356d6cb93776a983eb4bf9a9e25ab73388b1eb4f"
+  },
+  "preservedEntryCount": 13549,
+  "preservedEntryManifestSha256": "c169bf8509abc5a1889a50c76ce4036c7535982e3f587b64cf8bdb8f7d9778ff",
+  "signingCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "signatureSchemesVerified": [
+    "v2",
+    "v3"
+  ],
+  "zipAlignmentVerifiedBytes": 16384,
+  "classicZip": true,
+  "zip64": false,
+  "verificationTools": {
+    "java": {
+      "sha256": "1977f302375adbb920d41dac65c7e22eb9c2ed8e1e8d6258964154ff16f14406"
+    },
+    "apksignerJar": {
+      "sha256": "00ef9948f843fe395d2440ae3ef41405b8040a6d5d46493bd1902ac0ee6deae7"
+    },
+    "zipalign": {
+      "sha256": "aa2475ce201962b871fb8daec020da03fd6292c9c1f422cd0fe2e39b20d4f673"
+    }
+  },
+  "engineIds": [
+    "pcsx-rearmed-ff81ed17-player-v3-f9d762e9fe82",
+    "mupen64plus-ae-33bf7021-n64-v3-9536fbd2a7d2",
+    "dolphin-5102a033-gamecube-v3-a206aed4b7bb",
+    "dolphin-5102a033-wii-v3-a206aed4b7bb"
+  ],
+  "offlineEmulatorEntriesChanged": false,
+  "n64DolphinCoresAndOptionsPreserved": true,
+  "snesMegadriveEntriesPreserved": true,
+  "installed": false,
+  "serverActivationConfirmed": false,
+  "physicalGameplayValidated": false,
+  "scope": "Actual final signed/aligned APK and all uncompressed entries; no Android gameplay"
+}

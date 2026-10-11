@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 3,
+  "baseApkSha256": "f2924c7b49ea4e40f67c41e0f2997ea4dcd5aee6f2d495517b3c5dfa3c664a9d",
+  "markers": {
+    "psx": {
+      "runtimeLibrary": "libstation_psx_online.so",
+      "runtimeSha256": "f9d762e9fe82b5346b65d29d356d6cb93776a983eb4bf9a9e25ab73388b1eb4f",
+      "runtimeBytes": 239232,
+      "fingerprintSha256": "8b3a45cc88813e88151ad64f0e33ae0fa66be8c6bcd02ed128493016095b98b5"
+    },
+    "n64": {
+      "runtimeLibrary": "libstation_mupen64plus_runtime.so",
+      "runtimeSha256": "9536fbd2a7d23713d1280a22276856924420dea9920bb557e0dda7117e5b3025",
+      "runtimeBytes": 41960,
+      "fingerprintSha256": "cc0caa111d8bb157e31c806a7f56f36f760cf55616f699f685ed3d525f86713c",
+      "elf": {
+        "machine": "AArch64",
+        "soname": "libstation_mupen64plus_runtime.so",
+        "needed": [
+          "libdl.so",
+          "libc.so"
+        ],
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ]
+      }
+    },
+    "dolphin": {
+      "runtimeLibrary": "libstation_dolphin_runtime.so",
+      "runtimeSha256": "a206aed4b7bb491fb010deefde537742b1c95b0f7779f53a25a7a75e0edaf787",
+      "runtimeBytes": 52872,
+      "fingerprintSha256": "d0af36040c7be64d276073eb86cf644913b0a2176004a2b83cba0dfda65b2238",
+      "elf": {
+        "machine": "AArch64",
+        "soname": "libstation_dolphin_runtime.so",
+        "needed": [
+          "libdl.so",
+          "libc.so"
+        ],
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ]
+      }
+    }
+  },
+  "engines": [
+    {
+      "engineId": "pcsx-rearmed-ff81ed17-player-v3-f9d762e9fe82",
+      "platform": "psx",
+      "backend": "psx-player-station-v1",
+      "library": "libpcsx_rearmed_libretro_android.so",
+      "runtimeLibrary": "libstation_psx_online.so",
+      "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+      "runtimeSha256": "f9d762e9fe82b5346b65d29d356d6cb93776a983eb4bf9a9e25ab73388b1eb4f",
+      "dependencySha256": {
+        "libmain.so": "62ad07ba8e62e3227d488f9075eb15167c2e95b721c43e480e2535b4319467f6",
+        "libSDL2.so": "a282b35554eb006773349430e117bfeeff32a84e246a058c8fb7c7027c2e4dee",
+        "libc++_shared.so": "b5d97c38a728afe28d341cda3369f512d35eaf9c680c1b0563cd6a63e395230f",
+        "libstation_frontend.so": "de092671462a0960665d06d1b463cd48108e65c599c5125c733d7205dd463468"
+      },
+      "extensions": [
+        "pbp",
+        "chd",
+        "cue"
+      ],
+      "overlay": "",
+      "options": "backend=psx-player-station-v1\nwire=PXL1\nownerSha256=62ad07ba8e62e3227d488f9075eb15167c2e95b721c43e480e2535b4319467f6\ncoreSha256=e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9\ncompiledDefaultsSha256=bcbb221ea532b6caffa5c78d807e2264ad6843e18b5e84a433fbd6aff7514d49\noptionsPolicy=compiled-defaults+explicit-overrides-v1\ninputPolicy=standard-two-ports-v1\nsynchronization=host-authoritative-lockstep-v1\ninputDelayFrames=4\nstatePolicy=owner-thread-snapshot-v1\nsaves=session-only-fresh\nhumanExitOnly=true\npcsx_rearmed_analog_combo=disabled\npcsx_rearmed_bios=HLE\npcsx_rearmed_drc_thread=disabled\npcsx_rearmed_frameskip_type=disabled\npcsx_rearmed_gpu_thread_rendering=disabled\npcsx_rearmed_multitap=disabled\npcsx_rearmed_spu_thread=disabled\n",
+      "launchReady": true,
+      "license": "GPL-2.0-or-later",
+      "sourceRevision": "ff81ed17a15241d2f3730cdd7585b38e172532ca",
+      "recoveryProtocol": "station-stream.v3",
+      "maximumPlayers": 2,
+      "controllerProfiles": [
+        "standard-2p-v1"
+      ],
+      "status": "implemented-candidate-peer-gameplay-pending",
+      "contentIdentityByExtension": {
+        "cue": "cue-set-v1",
+        "default": "launch-file-v1"
+      }
+    },
+    {
+      "engineId": "mupen64plus-ae-33bf7021-n64-v3-9536fbd2a7d2",
+      "platform": "n64",
+      "backend": "mupen64plus-ae-station-v1",
+      "library": "libstation_mupen64plus_core.so",
+      "runtimeLibrary": "libstation_mupen64plus_runtime.so",
+      "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+      "runtimeSha256": "9536fbd2a7d23713d1280a22276856924420dea9920bb557e0dda7117e5b3025",
+      "dependencySha256": {
+        "libSDL2_net.so": "f668cb9971913181761213be7d04dbfe5a3bf92c92d4ac9c1ab6d3eeaf44b9f5",
+        "libae-bridge.so": "ba5a7582295215f159e197f805dbfe85851aa912462996870f61ccd752ecb360",
+        "libjnidispatch.so": "ddfc6c965bbe366615c000ec1f06552ddf0bb2b4f9d921d0bff8c75b3cb2ca4c",
+        "libmupen64plus-audio-android-fp.so": "79bd6457b4a77364721e98df4946fadde2bc44256b156ae8b361bcf769e03f74",
+        "libmupen64plus-audio-android.so": "a8f8a5f83827a5056fca58bf72dc25951c56cdba568c55773f81efb20f2f0be5",
+        "libmupen64plus-input-android.so": "11783275d71eaa14f3e15eff330a784195fdd98b31ea4c16d23d4691e5f91512",
+        "libmupen64plus-rsp-hle.so": "67d0f74eb35a889c6abbc0ab0503691f45555ca601570911e0435be492bcf189",
+        "libmupen64plus-video-glide64mk2.so": "5c10d28d442ce37cacaba892317319029a0340b4503dd8ac10ff850fdc5e9ce6",
+        "libn64cpp.so": "fa2c06d3c09c0d9a4931fa7cd03a3aba15f6ed7ea990d8e4a37b8a5811867c0d",
+        "liboboe.so": "2d1ab385a0817273cbcd249ce6488b54a7d31dde193a8bf3037bcd901ea2079f",
+        "libsoundtouch.so": "9944e132db1c2362b52cd88b438413d92802847b2174c64ce4dc801a7eaa41e3",
+        "libsoundtouch_fp.so": "5fae9c0a403f01415327b1175ac20460a438184075c8da467dcfea56435a002a"
+      },
+      "extensions": [
+        "z64",
+        "n64",
+        "v64",
+        "rom"
+      ],
+      "overlay": "",
+      "options": "backend=mupen64plus-ae-station-v1\nwire=SN64/1\ncpu=cached-interpreter\nvideo=glide64mk2\nrsp=hle\nrawInput=false\nexpansionPak=true\ncountPerOp=0\ncountPerOpDen=0\nforceAlignmentOfPiDma=0\nrandomizeInterrupt=false\ninputDelay=2\nrollback=false\nsaves=session-only\n",
+      "launchReady": true,
+      "license": "GPL-2.0-or-later",
+      "sourceDirectory": "mupen64plus-ae-33bf7021549d7873e976884370fbd1a8e7333bc7",
+      "recoveryProtocol": "station-stream.v3",
+      "maximumPlayers": 4,
+      "controllerProfiles": [
+        "direct-four-ports-v1"
+      ],
+      "status": "implemented-candidate-peer-gameplay-pending",
+      "contentIdentityByExtension": {
+        "default": "launch-file-v1"
+      }
+    },
+    {
+      "engineId": "dolphin-5102a033-gamecube-v3-a206aed4b7bb",
+      "platform": "gamecube",
+      "backend": "dolphin-station-v1",
+      "library": "libstation_dolphin_online.so",
+      "extensions": [
+        "iso",
+        "gcm",
+        "gcz",
+        "ciso",
+        "wia",
+        "rvz"
+      ],
+      "overlay": "",
+      "options": "backend=dolphin-station-v1\nwire=DPL1\nsettingsPolicy=official-pinned-gameini+host-synchronized-strict-v1\ntraversal=direct\nupnp=false\nindex=false\nqos=false\nchunkedUploadLimit=false\nnetworkMode=fixeddelay\npadBuffer=5\nclientBuffer=1\nsaveLoad=true\nsaveWrite=true\nsyncAllWii=false\nsyncCodes=false\ncheats=false\nrecordInputs=false\nstrictSettingsSync=true\ngolfMode=false\nremoteGbas=false\nsaves=session-only\n",
+      "launchReady": true,
+      "license": "GPL-2.0-or-later",
+      "sourceDirectory": "dolphin-5102a0339c2177575378107b76541e47cc52122d",
+      "recoveryProtocol": "station-stream.v3",
+      "maximumPlayers": 4,
+      "status": "implemented-candidate-peer-gameplay-pending",
+      "contentIdentityByExtension": {
+        "default": "launch-file-v1"
+      },
+      "runtimeLibrary": "libstation_dolphin_runtime.so",
+      "runtimeSha256": "a206aed4b7bb491fb010deefde537742b1c95b0f7779f53a25a7a75e0edaf787",
+      "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+      "dependencySha256": {
+        "libstation_dolphin_file_redirect_hook.so": "23347bb99e0e73fde1f6deaf1b39d544ab4e4a5cc9e5f2c61c8d9facf5dfe06c",
+        "libstation_dolphin_gsl_alloc_hook.so": "e9254fe5325818c1ef50cf986cd6db9a87d9b3c29c4567cd74e666b512598d02",
+        "libstation_dolphin_hook.so": "7547dd37533c4352edf7666ef3b5220db08364054578bde7570c388658e0de16",
+        "libstation_dolphin_hook_impl.so": "b3f2973bdccfb877cfc10fcaadd40b69e48af39434cc232d02bfc81a1669e264"
+      },
+      "controllerProfiles": [
+        "dolphin-gamecube-four-ports-v1"
+      ]
+    },
+    {
+      "engineId": "dolphin-5102a033-wii-v3-a206aed4b7bb",
+      "platform": "wii",
+      "backend": "dolphin-station-v1",
+      "library": "libstation_dolphin_online.so",
+      "extensions": [
+        "iso",
+        "gcz",
+        "ciso",
+        "wbfs",
+        "wia",
+        "rvz"
+      ],
+      "overlay": "",
+      "options": "backend=dolphin-station-v1\nwire=DPL1\nsettingsPolicy=official-pinned-gameini+host-synchronized-strict-v1\ntraversal=direct\nupnp=false\nindex=false\nqos=false\nchunkedUploadLimit=false\nnetworkMode=fixeddelay\npadBuffer=5\nclientBuffer=1\nsaveLoad=true\nsaveWrite=true\nsyncAllWii=false\nsyncCodes=false\ncheats=false\nrecordInputs=false\nstrictSettingsSync=true\ngolfMode=false\nremoteGbas=false\nsaves=session-only\n",
+      "launchReady": true,
+      "license": "GPL-2.0-or-later",
+      "sourceDirectory": "dolphin-5102a0339c2177575378107b76541e47cc52122d",
+      "recoveryProtocol": "station-stream.v3",
+      "maximumPlayers": 4,
+      "status": "implemented-candidate-peer-gameplay-pending",
+      "contentIdentityByExtension": {
+        "default": "launch-file-v1"
+      },
+      "runtimeLibrary": "libstation_dolphin_runtime.so",
+      "runtimeSha256": "a206aed4b7bb491fb010deefde537742b1c95b0f7779f53a25a7a75e0edaf787",
+      "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+      "dependencySha256": {
+        "libstation_dolphin_file_redirect_hook.so": "23347bb99e0e73fde1f6deaf1b39d544ab4e4a5cc9e5f2c61c8d9facf5dfe06c",
+        "libstation_dolphin_gsl_alloc_hook.so": "e9254fe5325818c1ef50cf986cd6db9a87d9b3c29c4567cd74e666b512598d02",
+        "libstation_dolphin_hook.so": "7547dd37533c4352edf7666ef3b5220db08364054578bde7570c388658e0de16",
+        "libstation_dolphin_hook_impl.so": "b3f2973bdccfb877cfc10fcaadd40b69e48af39434cc232d02bfc81a1669e264"
+      },
+      "controllerProfiles": [
+        "dolphin-wii-remotes-four-v1"
+      ]
+    }
+  ],
+  "psxControllerProfileSha256": "81c0e2323a37130dbdbdb9c2efefca8837a9bb6e7169304b4e5731b2ec56290a",
+  "psxOptionsSha256": "8c1e81460dc19b6e8d151ec6231c9092000b4946e6f084222cb40d3aab2e66a9",
+  "enginesAssetSha256": "48e336c8cc5222203306f1f44ab0381e46dc2eca88f7d97139e3003105b33841",
+  "payloadSha256": {
+    "AndroidManifest.xml": "e8822a0c4e98c6d6edd57797a1876c740f05682ac6a533bf580736f171ba0387",
+    "classes28.dex": "5966ef8405701fa946c60fe6d922726cd74c27783a4cb76d240dfa4bc324de9d",
+    "classes35.dex": "585b88564556c9106df0f9ec5a979cdd726824e96dcdc662122717648e227276",
+    "classes6.dex": "61ff49b6253a9f31f0519c2517a6b2b5b55c5af53c529cfd728bd052f0c5dacb"
+  },
+  "normalPsxLibrariesPreserved": {
+    "libmain.so": "62ad07ba8e62e3227d488f9075eb15167c2e95b721c43e480e2535b4319467f6",
+    "libSDL2.so": "a282b35554eb006773349430e117bfeeff32a84e246a058c8fb7c7027c2e4dee",
+    "libpcsx_rearmed_libretro_android.so": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+    "libc++_shared.so": "b5d97c38a728afe28d341cda3369f512d35eaf9c680c1b0563cd6a63e395230f",
+    "libstation_frontend.so": "de092671462a0960665d06d1b463cd48108e65c599c5125c733d7205dd463468"
+  },
+  "n64DolphinCoreAndOptionsUnchanged": true,
+  "snesMegadriveEntriesUnchanged": true,
+  "registeredOnServer": false,
+  "installed": false,
+  "physicalGameplayValidated": false
+}

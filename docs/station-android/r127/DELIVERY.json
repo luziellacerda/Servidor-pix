@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "direction": "APP_TO_SERVER",
+  "revision": "R127",
+  "appSourceCommit": "50eefa3eb40f0987b9dc6001e1d10ed2ad81a77c",
+  "appBranch": "fix/station-psx-real-owner-r127-20261011",
+  "serverCodeCompared": "141b488d6ad7fd3d2c8e74e76c1a004f1cb257fc",
+  "registryAdditions": 4,
+  "registryFormat": "OnlineEngine[] with id/platform/coreSha256/runtimeSha256; no recoveryProtocol=v3 in v2 registry",
+  "psxCanonicalProfileSha256": "81c0e2323a37130dbdbdb9c2efefca8837a9bb6e7169304b4e5731b2ec56290a",
+  "psxOptionsSha256": "8c1e81460dc19b6e8d151ec6231c9092000b4946e6f084222cb40d3aab2e66a9",
+  "serverActivationConfirmed": false,
+  "installed": false,
+  "physicalGameplayValidated": false,
+  "apksOrPrivateDataIncluded": false
+}

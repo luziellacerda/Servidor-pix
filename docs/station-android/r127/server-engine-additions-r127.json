@@ -1,0 +1,26 @@
+[
+  {
+    "id": "pcsx-rearmed-ff81ed17-player-v3-f9d762e9fe82",
+    "platform": "psx",
+    "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+    "runtimeSha256": "f9d762e9fe82b5346b65d29d356d6cb93776a983eb4bf9a9e25ab73388b1eb4f"
+  },
+  {
+    "id": "mupen64plus-ae-33bf7021-n64-v3-9536fbd2a7d2",
+    "platform": "n64",
+    "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+    "runtimeSha256": "9536fbd2a7d23713d1280a22276856924420dea9920bb557e0dda7117e5b3025"
+  },
+  {
+    "id": "dolphin-5102a033-gamecube-v3-a206aed4b7bb",
+    "platform": "gamecube",
+    "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+    "runtimeSha256": "a206aed4b7bb491fb010deefde537742b1c95b0f7779f53a25a7a75e0edaf787"
+  },
+  {
+    "id": "dolphin-5102a033-wii-v3-a206aed4b7bb",
+    "platform": "wii",
+    "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+    "runtimeSha256": "a206aed4b7bb491fb010deefde537742b1c95b0f7779f53a25a7a75e0edaf787"
+  }
+]

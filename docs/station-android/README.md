@@ -1,3 +1,9 @@
+# R127 — PSX real entregue pelo app em 11/10/2026
+
+Entrega APP → SERVIDOR, não ativação. Fonte executável 50eefa3eb40f0987b9dc6001e1d10ed2ad81a77c no TurboElden; APK R127 assinado/conferido a350878cca5c1a65c51e79ac13e9e38c2053d76e5404edb515ad1ddd650c3038, não instalado. Ler [a entrega única e registros exatos](r127/ENTREGA-APP-R127-PSX-REAL-20261011.md). Preservar registros/perfis anteriores, SNES/Mega Drive e produção; não trocar engines antigos nem inserir recoveryProtocol v3 no registro v2. HLE/Standard2 PSX exige aprovação por edição/modo; v3 usa StationMultiplayer. Nenhum deploy/restart foi realizado.
+
+## Histórico anterior
+
 # Novos sistemas, jogos e capas APLICADOS — 08/10/2026
 
 Leia `docs/station-android/RETORNO-NOVOS-SISTEMAS-JOGOS-CAPAS-STATION-20261008.md` e `novos-sistemas-20261008/`. As cinco pastas foram retiradas do SNES e colocadas na raiz: GameCube 21, PSX 84, Nintendo Wii 7, Nintendo Wii U 1, Switch 1. São 114 novos jogos e 114 capas corretas: 110 artes locais Turborama e quatro complementares Libretro verificadas. Wii e Wii U são distintos.

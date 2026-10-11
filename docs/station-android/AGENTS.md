@@ -1,3 +1,9 @@
+# R127 — PSX real entregue pelo app em 11/10/2026
+
+Entrega APP → SERVIDOR, não ativação. Fonte executável 50eefa3eb40f0987b9dc6001e1d10ed2ad81a77c no TurboElden; APK R127 assinado/conferido a350878cca5c1a65c51e79ac13e9e38c2053d76e5404edb515ad1ddd650c3038, não instalado. Ler [a entrega única e registros exatos](r127/ENTREGA-APP-R127-PSX-REAL-20261011.md). Preservar registros/perfis anteriores, SNES/Mega Drive e produção; não trocar engines antigos nem inserir recoveryProtocol v3 no registro v2. HLE/Standard2 PSX exige aprovação por edição/modo; v3 usa StationMultiplayer. Nenhum deploy/restart foi realizado.
+
+## Histórico anterior
+
 # Station: capas do site PS2/PSP/Wii/WiiU corrigidas — 10/10/2026
 
 Leia o MESMO HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e online-plataformas-20261009/capas-site-ps2-psp-wii-wiiu-20261010.json. Catálogo33/3940IDs/3685visíveis/255aliases. Artes anteriores eram de uma cópia local antiga; agora25PS2/4PSP/6Wii/1WiiU têm as artes atuais do site. Seis jogos não constam com capa nesses catálogos e mantêm a correspondente, sem substituir outro título.160artes hospedadas compiladas JPEG480×720 nos seeds, sem novas artes; títulos comuns/BR separados. WiiU sem Turbo.jpg genérico, seleção por pasta do jogo.42capas/todoscampos do catálogo assinados e bytes conferidos, parser compilado leu33, scannerisolado/efetivo sem mudança ou reconstrução de ROM. Itemrevision33 nos36alterados; cache coverId+itemrevision. API PID2136303/DLL2c0d03447696 semrestart; IDs/contentidentity/artifacts/metadata/perfis5176/5169/17políticas/licenças/configs/outros serviços preservados. DEX inalterado; teste visual nos aparelhos pendente. BackupGit antes: backup/station-antes-capas-site-20261010/tag equivalente, server5f9c019/app2b4a6dd. Não reaplicar operadores datados; ler applied.json e fonte atual.
