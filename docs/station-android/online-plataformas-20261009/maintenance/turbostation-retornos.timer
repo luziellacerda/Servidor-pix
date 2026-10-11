@@ -1,0 +1,11 @@
+[Unit]
+Description=Checar novos retornos TurboStation a cada hora
+
+[Timer]
+OnCalendar=hourly
+AccuracySec=30s
+Persistent=true
+Unit=turbostation-retornos.service
+
+[Install]
+WantedBy=timers.target

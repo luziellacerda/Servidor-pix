@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "status": "administrative-prepared-covers-in-progress-native-authentication-pending",
+  "handoffCommit": "7b8c0a7e68b1b0bac5fdcebec62233611533394b",
+  "appDocumentationCommit": "1f88de40043eb5341ff978f2017b7b292db52bb8",
+  "appSourceCommit": "3ea94ade312640ab69ca09e4092f60607996ccba",
+  "candidateApkSha256": "0189527c7537845562a2be4be15c0fab976c85f4f9c7f8ab884915c8bc3052dc",
+  "administrativeScripts": {
+    "station_online_profiles.py": "3d5d5b5563e2a6825ab9e798da80313cdbf2640522bc4dfd6b47e25c7f69eae1",
+    "cadastrar-motor-online-station.py": "a3c81e0c379984d6b7736f79ce963c73a3f3250883f6304a32b5c6cfda73a096"
+  },
+  "scriptsEffectivePublicationConfirmed": false,
+  "tests": {
+    "methods": 68,
+    "passed": true,
+    "groups": [
+      {
+        "name": "test_explicit_engine_modes.py",
+        "passed": true
+      },
+      {
+        "name": "test_scoped_mode_merge.py",
+        "passed": true
+      },
+      {
+        "name": "test_operator_candidate_transaction.py",
+        "passed": true
+      },
+      {
+        "name": "test_private_artifact_kit.py",
+        "passed": true
+      }
+    ]
+  },
+  "newR128EnginesActivated": false,
+  "privateKitReceived": false,
+  "actualAndroidInstallationValidated": false,
+  "physicalGameplayValidated": false,
+  "covers": {
+    "status": "downloading-and-compiling-pinned-originals",
+    "matchedGameBindings": 2252,
+    "matchedByPlatform": {
+      "megadrive": 887,
+      "snes": 644,
+      "megadrivebr": 94,
+      "snesbr": 191,
+      "n64": 157,
+      "neogeo": 148,
+      "dreamcast": 11,
+      "gamecube": 21,
+      "psx": 79,
+      "switch": 3,
+      "saturn": 17
+    },
+    "distinctImages": 2146,
+    "latestProductionBindings": {
+      "megadrive": 283,
+      "snes": 671
+    },
+    "latestMainCommit": "46bc120fd582ba633f4ab57e803f21b9933917ef",
+    "snesPackageCommit": "9f85e9df1ec0c82d77156ed072b997855f719288",
+    "unresolved": 281,
+    "keepCorrectExistingCoverForUnmatched": true,
+    "format": "JPEG",
+    "geometry": [
+      480,
+      720
+    ],
+    "quality": 90,
+    "published": false,
+    "noGameFilesRebuilt": true,
+    "ignoredUnmappedGenerationArchive": true,
+    "noArtworkGenerated": true,
+    "ps2PspWiiWiiuWebsiteCorrectionsPreserved": true
+  },
+  "hourly": {
+    "enabled": true,
+    "timer": "turbostation-retornos.timer",
+    "service": "turbostation-retornos.service",
+    "calendar": "hourly",
+    "lingerEnabled": true,
+    "codexAuthenticationAndExecVerified": true,
+    "lastCheck": {
+      "utc": "2026-10-11T16:00:45.782779+00:00",
+      "fingerprint": "6b1be06a684e55d21a4c04fb30061deb4f2f0042047cc9b6cbd5996f5fc8f04d",
+      "inputs": {
+        "server:origin/docs/station-online-normal-motors-r128-20261011": "7b8c0a7e68b1b0bac5fdcebec62233611533394b",
+        "app:origin/fix/station-sony-offline-integrated-r128-20261011": "1f88de40043eb5341ff978f2017b7b292db52bb8",
+        "covers:origin/capas-super-nintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
+        "covers:origin/main": "46bc120fd582ba633f4ab57e803f21b9933917ef",
+        "privateInputFingerprint": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "newInput": true
+    },
+    "firstTimerExecutionExitCode": 0,
+    "implementsNewReceivedInputs": true,
+    "unknownPrivateBytesNeverInvented": true
+  },
+  "nativeAdministrativeAuthenticationRequired": true,
+  "apiRestarted": false,
+  "ps3Ps4Online": false,
+  "pending": [
+    "Type administrative password only in the native Linux window for actual protected publication",
+    "Receive six exact core/runtime libraries from the final signed R128 APK; Git contains no private kit",
+    "Per-edition approved native modes and PSX HLE evidence required by the incoming handoff; do not infer from historical generic profiles"
+  ]
+}

@@ -1,3 +1,9 @@
+# R128 preparado; publicação Linux pendente; checagem horária ativa
+
+Ler o MESMO HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e online-plataformas-20261009/r128-retorno-servidor-20261011.json.68testes passaram, scripts da entrega/mirror atualizados; não confundir Git com ativação. Capas2252vínculos/2146imagens, fonte main46bc120 e SNES9f85e9d, novos modelos nomeados em produção prioritários; arquivo UUID excluído. Compilação em andamento, catálogo33 até recibo applied real. Autenticação Linux e kit privado R128 ausentes; quatro motores NÃO ativados. Manutenção horária local ativa/Linger=yes/primeiro ciclo status0. Preservar PS2/PSP/Wii/WiiU do site, jogos/IDs/perfis/serviços; API não reiniciada. Nunca executar operadores datados ou fabricar evidência.
+
+## Histórico anterior
+
 # R128 — cadastro v3 dos motores reais e PS3 PS4 somente offline
 
 Entrega APP → SERVIDOR, não ativação. Fonte Android 3ea94ade312640ab69ca09e4092f60607996ccba; APK candidato R128 0189527c7537845562a2be4be15c0fab976c85f4f9c7f8ab884915c8bc3052dc assinado/conferido, não instalado. Ler [o handoff único](r128/HANDOFF-UNICO-MOTORES-ONLINE-R128-20261011.md) e seus recibos antes de aplicar. Dois scripts administrativos atualizados contra141b488; patches somente para comparação, não reaplicar aos arquivos já atualizados.

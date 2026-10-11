@@ -1,3 +1,13 @@
+## Retorno R128, capas novas e manutenção horária — 11/10/2026
+
+O retorno recebido é 7b8c0a7 (APP fonte3ea94ade; candidata R1280189527c, não instalada nesta tarefa). Os dois operadores administrativos foram incorporados também ao library-tools da entrega e os68testes passaram. **A aplicação nos arquivos protegidos ainda depende da autenticação nativa do Linux; os quatro motores não foram ativados.** O kit privado de seis bibliotecas não chegou ao Linux e o PC acessível pelo conector está offline. O registro v3 exige bytes reais e modos por edição; PSX exige evidência HLE. Não substituir essa lacuna por aprovação genérica, IDs fabricados ou pelo registro legado. PS3/PS4 continuam exclusivamente offline.
+
+O Git de capas correto é Capas-TurboRama. A execução horária já detectou main46bc120, com novas gerações SNES. Foram cruzados2252vínculos/2146imagens: SNES, Mega/BR, PSX, N64, NeoGeo, Dreamcast, GameCube, Saturn e Switch. As artes identificadas em capas-em-producao/SNES e Mega Drive têm prioridade sobre o pacote antigo; arquivo-geradas/UUIDs não identifica jogos e foi excluído.671vínculos SNES e283Mega usam os modelos recentes.281casos sem correspondência única conservam a capa atual. PS2/PSP/Wii/WiiU mantêm a correção do site. A preparação baixa originais com commit/SHA Git fixos e compila JPEG480×720; **a revisão publicada permanece33 até o recibo real da operação nativa**, sem reconstruir ROMs nem reiniciar API.
+
+A manutenção local turbostation-retornos.timer está ativa (OnCalendar=hourly, Linger=yes). A execução13h00 terminou com status0 e encontrou o lote novo. O monitor fetches os Gits, evita trabalho concorrente, inicia Codex quando chega novidade e registra pendências sem rotulá-las como concluídas. Autenticação administrativa real e o recebimento de arquivos privados continuam necessários para publicações protegidas. Estado e recibos locais em /home/lz-servidor/.local/share/turbostation-retornos e /mnt/DADOS/station-r128-20261011. Após autenticar, o workflow preparado qualifica scanner/sandbox, confere catálogo/capas assinados e publica a matriz fresca v3; só o recibo aplicado comprova isso.
+
+Ver r128-retorno-servidor-20261011.json nesta pasta. Backup estável antes das mudanças: branch backup/station-antes-r128-capas-20261011 e tag equivalente nos dois Gits. Não executar operadores históricos nem declarar gameplay pelo cadastro. Atualizar este mesmo retorno com os recibos efetivos quando a autenticação/kit chegarem.
+
 # Station: catálogo, capas, downloads e servidor online — 10/10/2026
 
 ## Estado atual confirmado na produção

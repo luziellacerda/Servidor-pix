@@ -1,0 +1,27 @@
+{
+  "codex": "/home/lz-servidor/.local/bin/codex",
+  "workingDirectory": "/mnt/DADOS/servidor-pix-station-r128-20261011",
+  "repositories": [
+    {
+      "name": "server",
+      "path": "/mnt/DADOS/servidor-pix-station-r128-20261011",
+      "url": "https://github.com/luziellacerda/Servidor-pix.git",
+      "incomingPrefix": "origin/docs/station-"
+    },
+    {
+      "name": "app",
+      "path": "/mnt/DADOS/turboelden-station-ps2-saturn-20261010",
+      "url": "https://github.com/luziellacerda/TurboElden.git",
+      "incomingPrefix": "origin/fix/station-"
+    },
+    {
+      "name": "covers",
+      "path": "/mnt/DADOS/Capas-TurboRama-station-20261011",
+      "url": "https://github.com/luziellacerda/Capas-TurboRama.git"
+    }
+  ],
+  "privateInputs": [
+    "/mnt/DADOS/station-r128-20261011/kit-privado",
+    "/mnt/DADOS/station-r128-20261011/retomar-autenticado.json"
+  ]
+}
