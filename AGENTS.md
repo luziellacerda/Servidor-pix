@@ -1,6 +1,6 @@
-# R128 preparado; publicação Linux pendente; checagem horária ativa
+# R129 preparado; publicação Linux pendente; checagem horária ativa
 
-Ler o MESMO HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e online-plataformas-20261009/r128-retorno-servidor-20261011.json.68testes passaram, scripts da entrega/mirror atualizados; não confundir Git com ativação. Capas2252vínculos/2146imagens, fonte main46bc120 e SNES9f85e9d, novos modelos nomeados em produção prioritários; arquivo UUID excluído. Compilação em andamento, catálogo33 até recibo applied real. Autenticação Linux e kit privado R128 ausentes; quatro motores NÃO ativados. Manutenção horária local ativa/Linger=yes/primeiro ciclo status0. Preservar PS2/PSP/Wii/WiiU do site, jogos/IDs/perfis/serviços; API não reiniciada. Nunca executar operadores datados ou fabricar evidência.
+Ler o MESMO HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e online-plataformas-20261009/r128-retorno-servidor-20261011.json. A variante R129 c433052 atualiza o vínculo do bundle sem mudar o contrato. 68 testes passaram com R129; 18 selos conferidos e canonicais regenerados. Capas: 2.255 vínculos / 2.150 imagens, main9f598e2 e SNES9f85e9d; produção nomeada priorizada, UUID excluído. Catálogo33 até recibo aplicado real. Autenticação Linux e seis bibliotecas R129 ausentes; quatro motores novos NÃO ativados. Manutenção horária ativa, ciclos13h/14h status0. Preservar PS2/PSP/Wii/WiiU do site, jogos/IDs/perfis/serviços e API. Nunca executar operadores históricos nem fabricar evidência. PS3/PS4 offline.
 
 ## Histórico anterior
 

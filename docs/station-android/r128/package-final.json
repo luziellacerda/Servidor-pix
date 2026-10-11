@@ -1,24 +1,26 @@
 {
   "schemaVersion": 1,
-  "revision": "R128",
+  "revision": "R129",
   "baseApkSha256": "f2924c7b49ea4e40f67c41e0f2997ea4dcd5aee6f2d495517b3c5dfa3c664a9d",
-  "apkSha256": "0189527c7537845562a2be4be15c0fab976c85f4f9c7f8ab884915c8bc3052dc",
-  "apkBytes": 2234617901,
-  "freezeSha256": "df42e06f303dd285981f303d82b519d285a20879122db4df504011fdc2974e38",
-  "identityReceiptSha256": "2eb4ead34fba4853d22691f400ecb578489ca731f8a85467a146a3c7ab43a1ee",
+  "apkSha256": "89dd543986fdcb0c4b7ea53e82de87907f3b41ee0fe892479d8a63f52e4b7df0",
+  "apkBytes": 2237505749,
+  "freezeSha256": "94b706c31b9293102428cd6726331b5b4131e89cbe5fb8002092c0002ca4db5c",
+  "identityReceiptSha256": "3fbd74d9c196af0d12b019a7049a8682852688bee71c0faa09bf6a685586bd4d",
   "replacedEntrySha256": {
     "AndroidManifest.xml": "acda0e4404e29764a32fb3452b69899dc4501b63100376620a7e41a2ad85ff31",
-    "assets/station-online/engines.json": "9353ba6fe382a30fda2d4095ccc34c0bd9544a92013d59e9083449ab7eb788dc",
-    "classes28.dex": "b01b0c9ca4d60dd5e257831cd7fb158ba5622039c990294896624b6a479128e4",
+    "assets/station-online/engines.json": "9211c9e872b0d96dd7b74fc69cdd5e7f6b4327756b0ea92540fd3415aeb97b3e",
+    "classes28.dex": "f682bbbb0575157cf04990e775258d6354d8a1037e84192f30251a954fe879af",
     "classes35.dex": "585b88564556c9106df0f9ec5a979cdd726824e96dcdc662122717648e227276",
     "classes6.dex": "61ff49b6253a9f31f0519c2517a6b2b5b55c5af53c529cfd728bd052f0c5dacb",
-    "lib/arm64-v8a/libstation_dolphin_runtime.so": "ff6109c31583368928f796094cf3429e86471f71336ecfe0373ad55af433ad3d",
-    "lib/arm64-v8a/libstation_mupen64plus_runtime.so": "bceb1e9a55af41c2363b518ee09c1e45d171b7ba2f6a5a5628ea24553cc126bd",
-    "lib/arm64-v8a/libturbo_carousel.so": "0d76a7a15cedd8d9e74c3824b77b2d0cbbd26067c503d0770fc97ad5e374dc2b"
+    "lib/arm64-v8a/libstation_dolphin_runtime.so": "9765756f70fda14d8103ce7ab7055a4e0fd92e1ed0edef09930ed38e013d9031",
+    "lib/arm64-v8a/libstation_mupen64plus_runtime.so": "6868eddfca6c5380b8191fe9c5ad7671faa3ffb1a0215c0fcc9b73236e685ef8",
+    "lib/arm64-v8a/libturbo_carousel.so": "b3d351d2274dc130d5866f4cc7e8ae145c1b9f467dc06f47bdcdc67f476c330f"
   },
   "addedEntrySha256": {
-    "classes39.dex": "9d27e997cb62897a5a0448fc5100235e2840531a195ec3fd71a1a25dedd088a7",
-    "lib/arm64-v8a/libstation_psx_online.so": "bdd07e7085caa79cb8e041e4f943869812f59639650c559dac8afb9f3392e9c5"
+    "assets/turbo-system-videos/720-ps3.mp4": "d6fb573d754c5a21edc633cf1b3ce61fd4c2f5d2615881178aee9427f8354ff9",
+    "assets/turbo-system-videos/720-ps4.mp4": "4162ed5331876ab0749fc5abe287f419af0b90b980ecafd32947422ee13643ae",
+    "classes39.dex": "4e7177427cb701e229603b7af1d74596a686380af9afb20f2e0e263a8c7fe8f0",
+    "lib/arm64-v8a/libstation_psx_online.so": "f31f0a3dbfc90163e1d12591facb26e66380a02e4c53ae92274ae7ebc01c4597"
   },
   "preservedEntryCount": 13548,
   "preservedEntryManifestSha256": "a6a3ee5d945c726f868c01ad2ab9df0033e37b69592b6417866c618bcfb9201f",
@@ -45,10 +47,10 @@
     }
   },
   "engineIds": [
-    "pcsx-rearmed-ff81ed17-player-v3-bdd07e7085ca",
-    "mupen64plus-ae-33bf7021-n64-v3-bceb1e9a55af",
-    "dolphin-5102a033-gamecube-v3-ff6109c31583",
-    "dolphin-5102a033-wii-v3-ff6109c31583"
+    "pcsx-rearmed-ff81ed17-player-v3-f31f0a3dbfc9",
+    "mupen64plus-ae-33bf7021-n64-v3-6868eddfca6c",
+    "dolphin-5102a033-gamecube-v3-9765756f70fd",
+    "dolphin-5102a033-wii-v3-9765756f70fd"
   ],
   "offlineEmulatorEntriesChanged": false,
   "n64DolphinCoresAndOptionsPreserved": true,
@@ -63,5 +65,16 @@
   ],
   "externalEmulatorsBundledInStationApk": false,
   "ps3Ps4OnlineEnabled": false,
-  "ps3Ps4PhysicalGameplayValidated": false
+  "localDemonstrationsOnly": true,
+  "sonyLocalPlatformVideosAdded": [
+    "ps3",
+    "ps4"
+  ],
+  "sonyEmulatorConfigurationMenuAdded": [
+    "ps3",
+    "ps4"
+  ],
+  "signedCatalogChanged": false,
+  "ps3Ps4PhysicalGameplayValidated": false,
+  "sourceCommit": "cf623c7c5cf34d4aa59ad278dc98fa6d7a50721b"
 }

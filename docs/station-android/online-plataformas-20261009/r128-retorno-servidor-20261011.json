@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "status": "administrative-prepared-covers-in-progress-native-authentication-pending",
-  "handoffCommit": "7b8c0a7e68b1b0bac5fdcebec62233611533394b",
-  "appDocumentationCommit": "1f88de40043eb5341ff978f2017b7b292db52bb8",
-  "appSourceCommit": "3ea94ade312640ab69ca09e4092f60607996ccba",
-  "candidateApkSha256": "0189527c7537845562a2be4be15c0fab976c85f4f9c7f8ab884915c8bc3052dc",
+  "handoffCommit": "c433052ce12c662355dac81c9d9c106b5f283bb1",
+  "appDocumentationCommit": "df4dcd60424f108d24e8c474f51ebbeeb3fba370",
+  "appSourceCommit": "cf623c7c5cf34d4aa59ad278dc98fa6d7a50721b",
+  "candidateApkSha256": "89dd543986fdcb0c4b7ea53e82de87907f3b41ee0fe892479d8a63f52e4b7df0",
   "administrativeScripts": {
     "station_online_profiles.py": "3d5d5b5563e2a6825ab9e798da80313cdbf2640522bc4dfd6b47e25c7f69eae1",
     "cadastrar-motor-online-station.py": "a3c81e0c379984d6b7736f79ce963c73a3f3250883f6304a32b5c6cfda73a096"
@@ -16,21 +16,30 @@
     "groups": [
       {
         "name": "test_explicit_engine_modes.py",
-        "passed": true
+        "passed": true,
+        "methods": 24
       },
       {
         "name": "test_scoped_mode_merge.py",
-        "passed": true
+        "passed": true,
+        "methods": 16
       },
       {
         "name": "test_operator_candidate_transaction.py",
-        "passed": true
+        "passed": true,
+        "methods": 20
       },
       {
         "name": "test_private_artifact_kit.py",
-        "passed": true
+        "passed": true,
+        "methods": 8
       }
-    ]
+    ],
+    "receiptRevision": "R129",
+    "executedOnLinux": true,
+    "historicalDeliveredReceiptsPreserved": true,
+    "publicOperatorSealsChecked": 18,
+    "canonicalProfilesGeneratedFromFinalRuntime": true
   },
   "newR128EnginesActivated": false,
   "privateKitReceived": false,
@@ -38,7 +47,7 @@
   "physicalGameplayValidated": false,
   "covers": {
     "status": "downloading-and-compiling-pinned-originals",
-    "matchedGameBindings": 2252,
+    "matchedGameBindings": 2255,
     "matchedByPlatform": {
       "megadrive": 887,
       "snes": 644,
@@ -48,18 +57,19 @@
       "neogeo": 148,
       "dreamcast": 11,
       "gamecube": 21,
-      "psx": 79,
+      "psx": 82,
       "switch": 3,
       "saturn": 17
     },
-    "distinctImages": 2146,
+    "distinctImages": 2150,
     "latestProductionBindings": {
-      "megadrive": 283,
-      "snes": 671
+      "megadrive": 331,
+      "snes": 671,
+      "psx": 28
     },
-    "latestMainCommit": "46bc120fd582ba633f4ab57e803f21b9933917ef",
+    "latestMainCommit": "9f598e215b83f0c62c6601909347f8358a2f5ba4",
     "snesPackageCommit": "9f85e9df1ec0c82d77156ed072b997855f719288",
-    "unresolved": 281,
+    "unresolved": 278,
     "keepCorrectExistingCoverForUnmatched": true,
     "format": "JPEG",
     "geometry": [
@@ -81,27 +91,50 @@
     "lingerEnabled": true,
     "codexAuthenticationAndExecVerified": true,
     "lastCheck": {
-      "utc": "2026-10-11T16:00:45.782779+00:00",
-      "fingerprint": "6b1be06a684e55d21a4c04fb30061deb4f2f0042047cc9b6cbd5996f5fc8f04d",
+      "utc": "2026-10-11T17:00:56.520373+00:00",
+      "fingerprint": "32295a55ea447d7c0ef7bc0189098a24e35f12fc6149ec0addc2e635b97cff77",
       "inputs": {
-        "server:origin/docs/station-online-normal-motors-r128-20261011": "7b8c0a7e68b1b0bac5fdcebec62233611533394b",
-        "app:origin/fix/station-sony-offline-integrated-r128-20261011": "1f88de40043eb5341ff978f2017b7b292db52bb8",
+        "server:origin/docs/station-online-normal-motors-r128-20261011": "c433052ce12c662355dac81c9d9c106b5f283bb1",
+        "app:origin/fix/station-sony-demo-installer-r129-20261011": "df4dcd60424f108d24e8c474f51ebbeeb3fba370",
         "covers:origin/capas-super-nintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
-        "covers:origin/main": "46bc120fd582ba633f4ab57e803f21b9933917ef",
+        "covers:origin/main": "9f598e215b83f0c62c6601909347f8358a2f5ba4",
         "privateInputFingerprint": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
       },
       "newInput": true
     },
     "firstTimerExecutionExitCode": 0,
     "implementsNewReceivedInputs": true,
-    "unknownPrivateBytesNeverInvented": true
+    "unknownPrivateBytesNeverInvented": true,
+    "confirmedTimerExecutionsLocal": [
+      "2026-10-11 13:00",
+      "2026-10-11 14:00"
+    ]
   },
   "nativeAdministrativeAuthenticationRequired": true,
   "apiRestarted": false,
   "ps3Ps4Online": false,
   "pending": [
     "Type administrative password only in the native Linux window for actual protected publication",
-    "Receive six exact core/runtime libraries from the final signed R128 APK; Git contains no private kit",
+    "Receive six exact core/runtime libraries from the final signed R129 APK; Git contains no private kit",
     "Per-edition approved native modes and PSX HLE evidence required by the incoming handoff; do not infer from historical generic profiles"
-  ]
+  ],
+  "finalDeliveryRevision": "R129",
+  "candidateApkBytes": 2237505749,
+  "finalEngineIds": [
+    "pcsx-rearmed-ff81ed17-player-v3-f31f0a3dbfc9",
+    "mupen64plus-ae-33bf7021-n64-v3-6868eddfca6c",
+    "dolphin-5102a033-gamecube-v3-9765756f70fd",
+    "dolphin-5102a033-wii-v3-9765756f70fd"
+  ],
+  "newFinalEnginesActivated": false,
+  "recordedAt": "2026-10-11T17:14:46.614963+00:00",
+  "incomingAppInstallationReported": {
+    "installed": true,
+    "devices": [
+      "Motorola Edge 30"
+    ],
+    "source": "Producer R129 receipt; server did not perform this installation",
+    "authenticatedSessionChecked": false,
+    "physicalGameplayValidated": false
+  }
 }
