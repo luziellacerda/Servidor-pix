@@ -20,5 +20,13 @@
   "installedApkHashVerified": true,
   "frontendObserved": true,
   "nativeExitPhysicalValidated": false,
-  "signalLossExitPhysicalValidated": false
+  "signalLossExitPhysicalValidated": false,
+  "installedOnEdge30": true,
+  "edge30InstalledApkHashVerified": true,
+  "edge30OriginalUIDAndDataPreserved": true,
+  "edge30FrontendObserved": true,
+  "installedDeviceModels": [
+    "moto g52",
+    "motorola edge 30"
+  ]
 }

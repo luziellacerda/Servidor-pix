@@ -1,6 +1,6 @@
 # R138 — correção do início SNES e encerramento nativo
 
-Entrega APP → SERVIDOR, 12/10/2026. **APK R138 final assinado SHA-256 `9183462e4d45cfcf2d2599d9e682b81890fee7b094505bf3073ab8183dd1dd10`, 2,714,991,631 bytes**, certificado original v2/v3 e alinhamento 16 KiB. Instalado no moto g52: hash integral, UID e dados preservados, frontend observado. Cadastro produtivo, saída física sem crash e partida em rede continuam pendentes nesta entrega. Conferir [STATUS.json](STATUS.json) antes de usar o kit. Este documento e seus metadados não executam publicação de registros ou reinício do serviço.
+Entrega APP → SERVIDOR, 12/10/2026. **APK R138 final assinado SHA-256 `9183462e4d45cfcf2d2599d9e682b81890fee7b094505bf3073ab8183dd1dd10`, 2,714,991,631 bytes**, certificado original v2/v3 e alinhamento 16 KiB. Instalado no moto g52 e no Edge 30: hash integral, UID e dados preservados; frontend g52 observado e Edge 30 conforme [recibo](evidence/instalacao-edge30.json). Cadastro produtivo, saída física sem crash e partida em rede continuam pendentes nesta entrega. Conferir [STATUS.json](STATUS.json) antes de usar o kit. Este documento e seus metadados não executam publicação de registros ou reinício do serviço.
 
 ## Causa comprovada do carregamento nos dois jogos
 
