@@ -1,6 +1,6 @@
 # R137 saída do jogo e prontidão SNES — sem ativação do servidor
 
-Ler `docs/station-android/r137/README.md`. R137 APK SHA `fe4bc08fbc1f36d2790831f6bcd9593204ec0a032ca0d3a42c1cd385bc272719` instalado no moto g52, hash/UID/dados preservados, frontend abriu. Corrige somente retorno Android quando o quit nativo foi aceito mas a thread de emulação já terminou. Super Mario Kart e Top Gear 3000 ainda ficaram sem READY (`nativeStatus=-1`) apesar de PONG; origem nativa pendente. Novos IDs PSX/N64/Dolphin exigem kit privado e cadastro real, sem misturar com R135/R136. Nenhuma implantação/reinício autorizado por este documento; saída em Super Mario Kart confirmada no g52, mas gameplay e saída em perda de sinal não homologados. Edge 30 e A56 permanecem R135.
+Ler `docs/station-android/r137/README.md`. R137 APK SHA `fe4bc08fbc1f36d2790831f6bcd9593204ec0a032ca0d3a42c1cd385bc272719` instalado no moto g52, hash/UID/dados preservados, frontend abriu. O usuário viu retorno às salas ao sair de Super Mario Kart, mas o tombstone registrou SIGABRT dentro de `stationRequestQuit()` antes da nova instrução Java; portanto, a saída R137 não está corrigida nem homologada. Super Mario Kart e Top Gear 3000 ainda ficaram sem READY (`nativeStatus=-1`) apesar de PONG; origem nativa pendente. Novos IDs PSX/N64/Dolphin exigem kit privado e cadastro real, sem misturar com R135/R136. Nenhuma implantação/reinício autorizado por este documento. Edge 30 e A56 permanecem R135.
 
 # R136 moto g52 — handoff complementar, sem ativação do servidor
 
