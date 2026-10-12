@@ -1,6 +1,6 @@
 # TurboStations R135 partidas online — entrada atual e histórico R134
 
-**Referência atual: [handoff R135](../r135/README.md) e [DELIVERY R135](../r135/DELIVERY.json).** R135 foi compilada, assinada, conferida e instalada no Edge 30; renova os quatro IDs pelo DEX35 corrigido. O kit privado R135 está preparado, e ativação/gameplay/saída online continuam aguardando comprovação. Os arquivos e requisitos R134 abaixo são o histórico desta mesma entrega; para o próximo cadastro, consumir os originais e IDs R135.
+**Referência atual: [handoff R135](../r135/README.md) e [DELIVERY R135](../r135/DELIVERY.json).** R135 foi compilada, assinada, conferida e instalada no Edge 30, moto g52 e Samsung A56; renova os quatro IDs pelo DEX35 corrigido. O kit privado R135 está preparado, e ativação/gameplay/saída online continuam aguardando comprovação. Os arquivos e requisitos R134 abaixo são o histórico desta mesma entrega; para o próximo cadastro, consumir os originais e IDs R135.
 
 Esta entrega reúne os requisitos do aplicativo R134, a revisão das partidas com três jogadores e os incidentes de saída relatados pelo proprietário. A referência Android instalada é `4f9039eb9ce13907ce043870bfe1f6e294888556`, APK SHA256 `f8cb09184f41bc7c942ce84541dbd90d575b7240467ce0033d35be65e57caee2`. O código do servidor continua baseado em `a6b58e9beb12eb564c1b58d9d4c32ed3e7513861`, com a entrega documental R133 preservada.
 

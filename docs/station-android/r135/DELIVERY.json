@@ -28,7 +28,33 @@
     "installedApkHashMatchesPackage": true,
     "dataPreserved": true,
     "evidenceScope": "direct update and official frontend observation; no online gameplay acceptance",
-    "otherPhonesUpdatedByThisOperation": false
+    "otherPhonesUpdatedByThisOperation": true,
+    "currentInstalledDevices": [
+      {
+        "model": "motorola edge 30",
+        "completedUtc": "2026-10-12T04:33:05.661370+00:00",
+        "frontendObserved": true,
+        "apkHashMatchesPackage": true,
+        "dataPreserved": true
+      },
+      {
+        "model": "moto g52",
+        "completedUtc": "2026-10-12T04:56:01.658258+00:00",
+        "frontendObserved": false,
+        "apkHashMatchesPackage": true,
+        "dataPreserved": true
+      },
+      {
+        "model": "SM-A566E",
+        "completedUtc": "2026-10-12T05:01:38.320391+00:00",
+        "frontendObserved": true,
+        "apkHashMatchesPackage": true,
+        "dataPreserved": true
+      }
+    ],
+    "currentInstalledDeviceCount": 3,
+    "motoG52VisualOpeningUnobservedBecauseDozing": true,
+    "latestCompletedUtc": "2026-10-12T05:01:38.320391+00:00"
   },
   "composition": {
     "replacementCount": 5,
