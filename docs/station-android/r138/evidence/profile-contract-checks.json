@@ -1,0 +1,19 @@
+{
+  "checksPassed": 6,
+  "generatorSha256": "4c50ac36bb18532c3d128abbee14e7a59fa2d42d62a296319bdb23c9e5d2ae6b",
+  "oldProfilesPreserved": 2,
+  "fixtureHleProfilesAdded": 2,
+  "configurations": [
+    {
+      "controllerProfile": "standard-2p-v1",
+      "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793"
+    },
+    {
+      "controllerProfile": "snes-multitap-port2-v1",
+      "profileSha256": "88568b97800afa017e3c75684effe23f3aad8e93f5b2ac947a0638a4268bd8f3"
+    }
+  ],
+  "fixtureOnly": true,
+  "serverPublished": false,
+  "androidGameplayValidated": false
+}

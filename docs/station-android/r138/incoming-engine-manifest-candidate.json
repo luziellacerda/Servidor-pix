@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "engines": [
+    {
+      "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+      "platform": "snes",
+      "library": "libstation_bsnes.so",
+      "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+      "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+      "extensions": [
+        "sfc",
+        "smc"
+      ],
+      "overlay": "station-local/snes.cfg",
+      "options": "bsnes_violate_accuracy = \"enabled\"\nbsnes_chip_hle = \"HLE\"\nbsnes_superfx_overclock = \"100%\"\nbsnes_region = \"auto\"\nbsnes_aspect_ratio = \"auto\"\nbsnes_crop_overscan = \"disabled\"\nbsnes_gamma_ramp = \"disabled\"\n",
+      "launchReady": true,
+      "license": "GPL-3.0-or-later",
+      "sourceDirectory": "libretro--bsnes-mercury-79d7f9de218b",
+      "recoveryProtocol": "station-stream.v3",
+      "runtimeLibrary": "libstation_retroarch.so",
+      "maximumPlayers": 5,
+      "requireExplicitEngineModes": true,
+      "controllerProfiles": [
+        {
+          "controllerProfile": "standard-2p-v1",
+          "maximumPlayers": 2,
+          "configuration": {
+            "schemaVersion": 1,
+            "controllerProfile": "standard-2p-v1",
+            "devices": [
+              1,
+              1
+            ],
+            "coreOptions": "bsnes_violate_accuracy = \"enabled\"\nbsnes_chip_hle = \"HLE\"\nbsnes_superfx_overclock = \"100%\"\nbsnes_region = \"auto\"\nbsnes_aspect_ratio = \"auto\"\nbsnes_crop_overscan = \"disabled\"\nbsnes_gamma_ramp = \"disabled\"\n"
+          }
+        },
+        {
+          "controllerProfile": "snes-multitap-port2-v1",
+          "maximumPlayers": 5,
+          "configuration": {
+            "schemaVersion": 1,
+            "controllerProfile": "snes-multitap-port2-v1",
+            "devices": [
+              1,
+              257,
+              1,
+              1,
+              1
+            ],
+            "coreOptions": "bsnes_violate_accuracy = \"enabled\"\nbsnes_chip_hle = \"HLE\"\nbsnes_superfx_overclock = \"100%\"\nbsnes_region = \"auto\"\nbsnes_aspect_ratio = \"auto\"\nbsnes_crop_overscan = \"disabled\"\nbsnes_gamma_ramp = \"disabled\"\n"
+          }
+        }
+      ]
+    },
+    {
+      "engineId": "clownmdemu-d43c2708-mp5-463bdb0b409e",
+      "platform": "megadrive",
+      "library": "libstation_clownmdemu.so",
+      "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+      "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+      "extensions": [
+        "bin",
+        "md",
+        "gen"
+      ],
+      "overlay": "station-local/megadrive.cfg",
+      "options": "",
+      "launchReady": true,
+      "license": "AGPL-3.0-or-later",
+      "sourceDirectory": "Clownacy--clownmdemu-libretro-d43c2708b0a3",
+      "recoveryProtocol": "station-stream.v3",
+      "runtimeLibrary": "libstation_retroarch.so"
+    },
+    {
+      "engineId": "neocd-b1e04c73-aslr1-v3-463bdb0b409e",
+      "platform": "neogeocd",
+      "library": "libstation_online_neocd.so",
+      "coreSha256": "78a35bc9a9435238d74125e77ae8f8d249ba59e90f07d43f43c84ad5ddc68870",
+      "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+      "extensions": [
+        "chd",
+        "cue"
+      ],
+      "overlay": "gamepads/flat/neogeo.cfg",
+      "options": "",
+      "launchReady": true,
+      "license": "GPL-3.0-or-later",
+      "sourceArchive": "native/sources/neocd_libretro-b1e04c738cb48a1dae0574b8877f6a116d270ca1.tar.gz",
+      "recoveryProtocol": "station-stream.v3",
+      "maximumPlayers": 2,
+      "status": "implemented-candidate-peer-gameplay-pending",
+      "runtimeLibrary": "libstation_retroarch.so"
+    },
+    {
+      "engineId": "fbneo-95153da1-neogeo-v3-463bdb0b409e",
+      "platform": "neogeo",
+      "library": "libstation_online_fbneo.so",
+      "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+      "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+      "extensions": [
+        "zip"
+      ],
+      "overlay": "station-platforms/arcade/arcade.cfg",
+      "options": "fbneo-allow-patched-romsets = \"disabled\"\nfbneo-hiscores = \"disabled\"\nfbneo-samplerate = \"48000\"\n",
+      "launchReady": true,
+      "license": "LicenseRef-FBNeo",
+      "sourceArchive": "native/sources/FBNeo-95153da1f113c56735bd9a818171f908df628421.tar.gz",
+      "recoveryProtocol": "station-stream.v3",
+      "maximumPlayers": 2,
+      "status": "implemented-candidate-peer-gameplay-pending",
+      "runtimeLibrary": "libstation_retroarch.so"
+    },
+    {
+      "engineId": "fbneo-95153da1-fbneo-v3-463bdb0b409e",
+      "platform": "fbneo",
+      "library": "libstation_online_fbneo.so",
+      "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+      "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+      "extensions": [
+        "zip"
+      ],
+      "overlay": "station-platforms/arcade/arcade.cfg",
+      "options": "fbneo-allow-patched-romsets = \"disabled\"\nfbneo-hiscores = \"disabled\"\nfbneo-samplerate = \"48000\"\n",
+      "launchReady": true,
+      "license": "LicenseRef-FBNeo",
+      "sourceArchive": "native/sources/FBNeo-95153da1f113c56735bd9a818171f908df628421.tar.gz",
+      "recoveryProtocol": "station-stream.v3",
+      "maximumPlayers": 2,
+      "status": "implemented-candidate-peer-gameplay-pending",
+      "runtimeLibrary": "libstation_retroarch.so"
+    },
+    {
+      "engineId": "fbneo-95153da1-cps1-v3-463bdb0b409e",
+      "platform": "cps1",
+      "library": "libstation_online_fbneo.so",
+      "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+      "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+      "extensions": [
+        "zip"
+      ],
+      "overlay": "station-platforms/arcade/arcade.cfg",
+      "options": "fbneo-allow-patched-romsets = \"disabled\"\nfbneo-hiscores = \"disabled\"\nfbneo-samplerate = \"48000\"\n",
+      "launchReady": true,
+      "license": "LicenseRef-FBNeo",
+      "sourceArchive": "native/sources/FBNeo-95153da1f113c56735bd9a818171f908df628421.tar.gz",
+      "recoveryProtocol": "station-stream.v3",
+      "maximumPlayers": 2,
+      "status": "implemented-candidate-peer-gameplay-pending",
+      "runtimeLibrary": "libstation_retroarch.so"
+    },
+    {
+      "engineId": "fbneo-95153da1-cps2-v3-463bdb0b409e",
+      "platform": "cps2",
+      "library": "libstation_online_fbneo.so",
+      "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+      "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+      "extensions": [
+        "zip"
+      ],
+      "overlay": "station-platforms/arcade/arcade.cfg",
+      "options": "fbneo-allow-patched-romsets = \"disabled\"\nfbneo-hiscores = \"disabled\"\nfbneo-samplerate = \"48000\"\n",
+      "launchReady": true,
+      "license": "LicenseRef-FBNeo",
+      "sourceArchive": "native/sources/FBNeo-95153da1f113c56735bd9a818171f908df628421.tar.gz",
+      "recoveryProtocol": "station-stream.v3",
+      "maximumPlayers": 2,
+      "status": "implemented-candidate-peer-gameplay-pending",
+      "runtimeLibrary": "libstation_retroarch.so"
+    },
+    {
+      "engineId": "fbneo-95153da1-cps3-v3-463bdb0b409e",
+      "platform": "cps3",
+      "library": "libstation_online_fbneo.so",
+      "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+      "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+      "extensions": [
+        "zip"
+      ],
+      "overlay": "station-platforms/arcade/arcade.cfg",
+      "options": "fbneo-allow-patched-romsets = \"disabled\"\nfbneo-hiscores = \"disabled\"\nfbneo-samplerate = \"48000\"\n",
+      "launchReady": true,
+      "license": "LicenseRef-FBNeo",
+      "sourceArchive": "native/sources/FBNeo-95153da1f113c56735bd9a818171f908df628421.tar.gz",
+      "recoveryProtocol": "station-stream.v3",
+      "maximumPlayers": 2,
+      "status": "implemented-candidate-peer-gameplay-pending",
+      "runtimeLibrary": "libstation_retroarch.so"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "baselinePlatformUnixSHA256": "baa00df315ba604e1ac5612e2186a685c27b843c20bcaea2f27c6a4036f7e7db",
+  "candidatePlatformUnixSHA256": "e4811bef12aeacd07947e51badaf8341be6c12c347c4952a9334ba22e56342f2",
+  "harnessTemplateSHA256": "6c928722ed5b089b8e3e67ffa82cc75272e88a4acfac3bf584ea797c24c67584",
+  "extractedProductionFunctions": [
+    "station_activity_release",
+    "android_app_request_quit",
+    "android_app_free",
+    "onDestroy",
+    "free_saved_state",
+    "android_app_destroy",
+    "android_app_entry"
+  ],
+  "realHostMutexesConditionsAndThreads": true,
+  "raceIterations": 300,
+  "quitAttemptsPerRace": 2128,
+  "scenarios": {
+    "baseline": {
+      "normal": {
+        "passed": true,
+        "expectedResultConfirmed": true,
+        "exitCode": 0,
+        "output": "PASS scenario=normal checks=48"
+      },
+      "double": {
+        "passed": false,
+        "expectedResultConfirmed": true,
+        "exitCode": 2,
+        "output": "FAIL line=270 condition=s->callbacks==1"
+      },
+      "early": {
+        "passed": false,
+        "expectedResultConfirmed": true,
+        "exitCode": 2,
+        "output": "FAIL line=290 condition=s.staleWakes==0"
+      },
+      "race": {
+        "passed": false,
+        "expectedResultConfirmed": true,
+        "exitCode": 2,
+        "output": "FAIL line=246 condition=current->staleWakes==0"
+      },
+      "join": {
+        "passed": true,
+        "expectedResultConfirmed": true,
+        "exitCode": 0,
+        "output": "PASS scenario=join checks=58"
+      }
+    },
+    "candidate": {
+      "normal": {
+        "passed": true,
+        "expectedResultConfirmed": true,
+        "exitCode": 0,
+        "output": "PASS scenario=normal checks=50"
+      },
+      "double": {
+        "passed": true,
+        "expectedResultConfirmed": true,
+        "exitCode": 0,
+        "output": "PASS scenario=double checks=60"
+      },
+      "early": {
+        "passed": true,
+        "expectedResultConfirmed": true,
+        "exitCode": 0,
+        "output": "PASS scenario=early checks=60"
+      },
+      "race": {
+        "passed": true,
+        "expectedResultConfirmed": true,
+        "exitCode": 0,
+        "output": "PASS scenario=race checks=92701"
+      },
+      "join": {
+        "passed": true,
+        "expectedResultConfirmed": true,
+        "exitCode": 0,
+        "output": "PASS scenario=join checks=60"
+      }
+    }
+  },
+  "allExpectedResultsConfirmed": true,
+  "fullNativeCompiled": false,
+  "androidExecuted": false,
+  "gameplayValidated": false,
+  "scope": "Native lifecycle only; Android/JNI/looper/config operations are fixtures."
+}

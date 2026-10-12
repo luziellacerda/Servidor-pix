@@ -1,0 +1,19 @@
+{
+  "revision": "R138",
+  "apkSha256": "9183462e4d45cfcf2d2599d9e682b81890fee7b094505bf3073ab8183dd1dd10",
+  "binaryCount": 5,
+  "engineCount": 8,
+  "binarySha256": {
+    "libstation_bsnes.so": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+    "libstation_retroarch.so": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+    "libstation_clownmdemu.so": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+    "libstation_online_neocd.so": "78a35bc9a9435238d74125e77ae8f8d249ba59e90f07d43f43c84ad5ddc68870",
+    "libstation_online_fbneo.so": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7"
+  },
+  "serverRegistered": false,
+  "serverDeployed": false,
+  "networkGameplayValidated": false,
+  "containsRomBiosSigningKeySerial": false,
+  "zipSha256": "babf4983f9404ce10df17e27dc43dcc4f1da4692ada1a9763dc882a62410b306",
+  "zipBytes": 100314920
+}
