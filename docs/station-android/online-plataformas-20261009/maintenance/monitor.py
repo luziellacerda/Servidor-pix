@@ -23,7 +23,7 @@ def git(repo,*args):
 def observe(fetch):
  result={}
  for repo in CFG['repositories']:
-  if fetch:git(repo,'-c','remote.origin.url='+repo['url'],'fetch','--no-tags','origin','+refs/heads/*:refs/remotes/origin/*')
+  if fetch:git(repo,'fetch','--no-tags',repo['url'],'+refs/heads/*:refs/remotes/origin/*')
   refs=git(repo,'for-each-ref','--format=%(refname:short)\t%(objectname)\t%(committerdate:unix)','refs/remotes/origin').splitlines()
   candidates=[]
   for line in refs:

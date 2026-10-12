@@ -1,8 +1,8 @@
 using System.Security.Cryptography;
 using System.Text.Json;
 using TurboRamaSuiteOnlineServer;
-if (args.Length == 1) {
-    var library=StationLibrary.TryLoad(args[0]) ?? throw new Exception("Missing index");
+if (args.Length == 1 || (args.Length == 2 && args[1] == "--trusted-import")) {
+    var library=StationLibrary.TryLoad(args[0],verifyContent:args.Length==1) ?? throw new Exception("Missing index");
     Console.WriteLine($"VALIDATED revision={library.Revision} visible={library.ItemCount} compatibility={library.CompatibilityItemCount}");
     return;
 }
@@ -59,6 +59,35 @@ try
     File.WriteAllBytes(game,[1,2,3]);Check(!importedFile.TryResolveArtifact("station_synthetic",out _));
     try{StationLibrary.TryLoad(index,verifyContent:false);throw new Exception("Stale file size accepted");}
     catch(InvalidOperationException){Check(true);}
+    File.WriteAllBytes(game,[0x80,0x37,0x12,0x40,1,2,3,4]);
+    Write(11,7,"Large catalog");
+    var large=System.Text.Json.Nodes.JsonNode.Parse(File.ReadAllText(index))!;
+    var template=large["items"]![0]!;
+    var entries=new System.Text.Json.Nodes.JsonArray();
+    for(var i=0;i<4690;i++) {
+        var entry=template.DeepClone();
+        entry["itemId"]=$"station_large_{i:D5}";
+        entry["coverId"]=$"cover_large_{i:D5}";
+        entries.Add(entry);
+    }
+    large["items"]=entries;
+    File.WriteAllText(index,large.ToJsonString());
+    var expanded=StationLibrary.TryLoad(index,verifyContent:false)!;
+    Check(expanded.ItemCount==4690);
+    Check(StationLibrary.CatalogMaximumItems(null)==4096);
+    Check(expanded.Catalog.Take(StationLibrary.CatalogMaximumItems(null)).Count()==4096);
+    Check(expanded.Catalog.Take(StationLibrary.CatalogMaximumItems("20000")).Count()==4690);
+    Check(expanded.Catalog[4096].ItemId=="station_large_04096");
+    foreach(var invalid in new[]{"", "0", "20001", "-1", " 5000", "5000,5000", "abc", "2147483648"}) {
+        try { StationLibrary.CatalogMaximumItems(invalid);throw new Exception("Invalid catalog limit accepted"); }
+        catch(SuiteException e) when(e.StatusCode==400 && e.Code=="STATION_INVALID_CATALOG_LIMIT") {Check(true);}
+    }
+    for(var i=entries.Count;i<=StationLibrary.MaximumItems;i++) {
+        var entry=template.DeepClone();entry["itemId"]=$"station_large_{i:D5}";entry["coverId"]=$"cover_large_{i:D5}";entries.Add(entry);
+    }
+    File.WriteAllText(index,large.ToJsonString());
+    try {StationLibrary.TryLoad(index,verifyContent:false);throw new Exception("Oversized library accepted");}
+    catch(InvalidOperationException) {Check(true);}
     Console.WriteLine($"PASS {checks} Station snapshot, metadata, active grant and last-good checks");
 }
 finally {Directory.Delete(directory,true);}

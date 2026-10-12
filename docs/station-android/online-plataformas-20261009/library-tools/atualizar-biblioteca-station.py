@@ -59,7 +59,14 @@ def atomic_json(path, data, gid=None):
 
 
 def text(value, maximum):
-    return ''.join(c for c in (value or '') if ord(c) >= 32 or c in '\n\t').strip()[:maximum]
+    clean = ''.join(c for c in (value or '') if unicodedata.category(c) != 'Cc' or c in '\n\t').strip()
+    # C# and Android bound strings in UTF-16 units. Never split a surrogate pair.
+    result, units = [], 0
+    for character in clean:
+        width = 2 if ord(character) > 0xffff else 1
+        if units + width > maximum: break
+        result.append(character); units += width
+    return ''.join(result)
 
 
 def metadata(game=None, override=None):
@@ -288,7 +295,7 @@ def content_identities(path):
     if not isinstance(document, dict) or set(document) != {'schemaVersion', 'entries'} or type(document['schemaVersion']) is not int or document['schemaVersion'] not in (1,2):
         raise ValueError('invalid content identity schema')
     entries = document['entries']
-    if not isinstance(entries, list) or len(entries) > 4096:
+    if not isinstance(entries, list) or len(entries) > 20_000:
         raise ValueError('invalid content identity count')
     keys = {'itemId', 'platform', 'artifactSha256', 'launchPath', 'expandedSizeBytes', 'fileCount', 'contentSha256'}
     def hash_value(value):
@@ -543,7 +550,7 @@ def publish(config, bootstrap=False, on_progress=None):
             seed = metadata_seed.get(row['itemId'])
             if seed and seed['platform'] == row['platform'] and seed['name'] == row['name'] and not row.get('metadata', {}).get('description'):
                 row['metadata'] = dict(row.get('metadata', metadata()), description=metadata(override={'description':seed['description']})['description'])
-        if len(rows) > 4096: raise ValueError('Station library capacity exceeded')
+        if len(rows) > 20_000: raise ValueError('Station library capacity exceeded')
         items = list(rows.values())
         if config.get('autoContentIdentity', False):
             registry_path=Path(config['contentIdentityRegistry'])

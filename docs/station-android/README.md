@@ -1,3 +1,5 @@
+NES/capas atuais: leia o MESMO [handoff](HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md) e seu recibo NES. Catálogo44, 750NES e469artes Recriadas publicados; ajuste de capacidade do APK preparado.
+
 ## Estado atual — R138 aplicada, catálogo42
 
 Leia o [handoff único atualizado](HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md) e a [matriz real](r138/server-return.json). Oito motores do kit recebido e capas publicados; quatro motores independentes dependem de seu kit R137.

@@ -1,3 +1,9 @@
+# NES publicado e capas Recriadas corrigidas — 12/10/2026
+
+Ler o MESMO handoff ONLINE-PLATAFORMAS-STATION-20261009 e online-plataformas-20261009/nes-publicado-20261012.json. Catálogo44/4690IDs/4435visíveis/255aliases;750NES na raiz,469artes Git NES/Recriadas novas +280frentes recebidas +DancingBlocks personalizado;JPEG480×720q90,95.254MB. Scanner automático confirmou469atualizados e estabilidade, sem restart adicional. N64157artes personalizadas coincidem comGit,157corpos locais/16HTTPS conferidos. Fonte efetiva7eb+3arquivos cap/consulta, DLL25c49dd/PID2637019/NRestarts0;8267perfis/8254aprovados/serviços/licenças preservados. Query completa maximumItems20000; R138 antiga lê4096/411NES, overlayJava/JNI compilado deve entrar no próximoAPK. Prova assinada43 antes da correção44; não alegar prova assinada dos novos corpos44 nem instalação/gameplay. Kit independente6libs/4engines pendente continua; NESnetplay não cadastrado. Usar rotina automática para fotos do operador, preservar todas as correspondências seguras e fonteRecriadas; não reaplicar workflows datados. Manutenção horária serializada.
+
+## Histórico preservado
+
 # R138 registrada; capas do catálogo42 publicadas — 12/10/2026
 
 Ler o MESMO docs/station-android/HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e r138/server-return.json. Oito motores RetroArch e3091perfis/modos acrescentados; prefixo5176perfis/321modos preservado; total8267/8254aprovados/3412modos. KitR138 SHA babf4983… conferido. MarioKart2p, TopGearVS2/3/4+Campeonato2 por edição/HLE canônico; Geolith inativo; PS3/PS4offline. Quatro motores independentes PSX/N64/GC/Wii R137 aguardam seu kit6libs/ledger qualificado, não registrar identidades inventadas. NeoCD firmware de novos conteúdos continua pendente.

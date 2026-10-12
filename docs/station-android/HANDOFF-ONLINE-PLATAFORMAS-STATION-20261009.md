@@ -1,3 +1,31 @@
+## NES e capas novas publicadas — 12/10/2026
+
+**Estado atual: catálogo44 / 4.690 IDs / 4.435 visíveis / 255 aliases.** NES foi movido de `snes/nes` para a raiz `nes`: 750 arquivos, 748 NES + um FDS + um UNIF, bytes preservados. O arquivo de Game Boy recebido no conjunto foi conservado e excluído do catálogo NES. [Recibo consolidado](online-plataformas-20261009/nes-publicado-20261012.json) · [Todos os vínculos NES/capa/Git](online-plataformas-20261009/nes-capas-20261012.json) · [Catálogo integral](online-plataformas-20261009/catalogo-cruzado-completo.json).
+
+### Capas e publicação automática
+
+**469 capas novas de `capas-em-producao/NES/Recriadas`** foram comprimidas e colocadas em `nes/media/revista`, com associação por ROM/título. Corrigida a primeira seleção, que usara a pasta de imagens originais do Git. 280 jogos sem correspondência segura nas artes do repositório conservam a capa frontal recebida; Dancing Blocks tem uma capa personalizada criada no modelo Turborama NES. Todos os750 têm capa JPEG RGB480×720/q90. O conjunto de origens escolhido tem1.216GB e foi reduzido a95.254MB. Gitmain5c6cc32c06e6944b9258df36ffdb846baa368a7f.
+
+A troca foi publicada **pelo importador automático existente**: revisão44, `updated:469`, `added:0`, 4.435visíveis, seguida de varreduras `changed:false`. A pasta de imagens/seed pertence ao operador e permite esse fluxo; autenticação manual adicional foi dispensada. Cache novo nos469 itens: revisão44, coverId preservado. Colocar uma ROM suportada em `nes` e a capa com o mesmo nome-base em `nes/media/revista` permite descoberta automática, sem programar jogo individual. Sinopse vem do XML/seed; cadastro complementar atende dados ausentes.
+
+**Nintendo64 conferido novamente:** 157 jogos/capas, todas as revistas e corpos do servidor coincidem com as imagens compiladas do Git atual;157 respostas autenticadas locais e16 amostras HTTPS confirmadas na revisão43. Mantida revisão42 desses itens e cache por coverId+item.revision. As imagens N64 já são as personalizadas Turborama; não houve nova arte diferente no Git. A correção44 altera somente o NES.
+
+### Leitura completa pelo app
+
+1. Usar **`GET /v1/station/catalog?metadata=1&maximumItems=20000`**, incluindo a query na prova por pedido. Validar envelope/assinatura/domínio/produto/licença/aparelho/sessão. Payload: `totalItems:4435`, `hasMore:false`.
+2. Sem `maximumItems`, a resposta é limitada a4.096 para preservar os aparelhos atuais: todos os3.685 anteriores +411NES. **R138 precisa do ajuste Java e JNI para mostrar os750NES.** Overlay/patch e recibo de compilação em `integration/station-nes-catalogo-20261012` no Git do app. Limites de parser/evidência/prefetch e os dois limites nativos de catálogo/preparação foram conciliados; ABI e agendamento atual das capas preservados. Java8/API34, D8/API26, parser4435/750, limite20000 e ELFarm64/API26/16KiB passaram. Novo APK completo/assinatura/instalação são a próxima etapa do PC de produção.
+3. `platform:"nes"` já mapeia Nintendinho. Usar os IDs, revisão, pasta e metadados do payload. Capas: `GET /v1/station/covers/{coverId}`, cache `coverId+item.revision`. Downloads: `POST /v1/station/downloads/authorize`, depois GET do grant em `/v1/station/artifacts/{grantId}` uma vez, preservando o descritor `raw`/launchPath. Licença/saves/dados podem ser preservados na atualização.
+
+### Prova e preservação
+
+A revisão43 foi autenticada/assinada localmente e pelo HTTPS:4435campos de catálogo,750capas locais,16amostras públicas e downloads completos dos três formatos, com recusa de replay e de limites inválidos. A correção44 foi confirmada pelos750JPEGs de entrada conferidos e pelo scanner real:469atualizados/zeroadicionados e estabilização; os corpos corrigidos não foram submetidos a uma segunda prova autenticada. Catálogo cruzado documenta essa distinção. Sem alegar teste visual/gameplay Android.
+
+API ativa DLL25c49dd9327f14c0dbbd0d605b0f33e51398682bb20a6e7cb3d1e3ef002ab2c7/PID2637019/NRestarts0. Compilada da fonte efetiva7eb0e009 mais somente os três arquivos de capacidade/consulta; diagnóstico R134 preparado não foi promovido. Um reinício somente do Station na publicação inicial, com zero salas/conexões; troca de capas sem reinício. 3.940IDs antigos,8.267perfis/8.254aprovados, licenças/esquema/configs/outros serviços preservados; túnel/proxy/firewall intactos. Testes:44catálogoC#, seis descobertaPython, quatro identidade, oito parserJava. Backup anterior publicado nos doisGits: backup/station-antes-nes-20261012/tag equivalente, servera338153/app9d9700b.
+
+NES está publicado para catálogo/capas/downloads; motor online próprio continua dependente da integração do APK. Os oito motores R138 aplicados e as pendências dos quatro independentes abaixo permanecem. Manutenção horária continua e prioriza as versões personalizadas/recriadas fornecidas; não reaplicar operadores históricos.
+
+## Histórico preservado
+
 ## R138 aplicada e capas publicadas — 12/10/2026
 
 **Aplicação administrativa concluída para o kit R138 recebido.** Oito motores RetroArch novos foram registrados, com 3.091 perfis/modos novos; os 5.176 perfis e 321 modos anteriores foram preservados. Total: 8.267 perfis, 8.254 aprovados e 3.412 modos persistidos. API continua PID2136303/DLL2c0d03447696, sem reinício ou nova DLL. [Matriz única e recibo real](r138/server-return.json) · [Respostas assinadas local/pública](r138/server-signed-bindings.json) · [Catálogo completo atualizado](online-plataformas-20261009/catalogo-cruzado-completo.json).
