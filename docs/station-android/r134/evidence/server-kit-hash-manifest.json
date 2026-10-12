@@ -1,0 +1,137 @@
+{
+  "apkBytes": 2714991631,
+  "apkSha256": "f8cb09184f41bc7c942ce84541dbd90d575b7240467ce0033d35be65e57caee2",
+  "canonicalProfiles": {
+    "gamecube": {
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+      "engineId": "dolphin-5102a033-gamecube-v3-9c87e2ec4c79",
+      "maximumPlayers": 4,
+      "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+      "runtimeSha256": "9c87e2ec4c798ab1f42130326855d0171617501ee513dfefa74241b3665e38ad"
+    },
+    "n64": {
+      "controllerProfile": "direct-four-ports-v1",
+      "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+      "engineId": "mupen64plus-ae-33bf7021-n64-v3-5f56099c433f",
+      "maximumPlayers": 4,
+      "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+      "runtimeSha256": "5f56099c433f29514c864d1eeea2995e3f52b0d15d76eaf125c4f4346a9d6e87"
+    },
+    "psx": {
+      "controllerProfile": "standard-2p-v1",
+      "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+      "engineId": "pcsx-rearmed-ff81ed17-player-v3-69ac2b703f03",
+      "maximumPlayers": 2,
+      "profileSha256": "81c0e2323a37130dbdbdb9c2efefca8837a9bb6e7169304b4e5731b2ec56290a",
+      "runtimeSha256": "69ac2b703f03826c8f7203b296665c6f2cc34cb944af7c3f758d9033116cade3"
+    },
+    "wii": {
+      "controllerProfile": "dolphin-wii-remotes-four-v1",
+      "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+      "engineId": "dolphin-5102a033-wii-v3-9c87e2ec4c79",
+      "maximumPlayers": 4,
+      "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+      "runtimeSha256": "9c87e2ec4c798ab1f42130326855d0171617501ee513dfefa74241b3665e38ad"
+    }
+  },
+  "inventory": {
+    "server-kit-original-receipts/engines.json": {
+      "bytes": 19118,
+      "sha256": "40e55b795eae0d2a0f1a439f271bab692eb84e38907043c537b69da403fa354e"
+    },
+    "server-kit-original-receipts/package-final.json": {
+      "bytes": 1966016,
+      "sha256": "39385a0f22a9d0d8c88306607872f2b6fb068197ab9c0176be1beb938d06596d"
+    },
+    "server-kit-original-receipts/psx-controller-profile.json": {
+      "bytes": 859,
+      "sha256": "60adcbb778dc49fed47909b693d5b6f192ef62efa90f822d44198d6c453c60a3"
+    },
+    "server-kit-original-receipts/runtime-final.json": {
+      "bytes": 819422,
+      "sha256": "2d6fc1c1933b4dc88aa09192138b8564b5f0b743461faa7580896b8339b2067f"
+    },
+    "server-kit-original-receipts/source-freeze.json": {
+      "bytes": 471434,
+      "sha256": "7b9eead9ecd79d1582647b1b41d45158a36627ba6b8231663a3fa87067a97af0"
+    },
+    "server-kit-tools/build_incoming_manifest.py": {
+      "bytes": 4372,
+      "sha256": "362bcae9d8915f7f43aac4c48d06b35bdf57efc88d6acb9199aa06e3a0231426"
+    },
+    "server-kit-tools/extract_private_server_artifacts.py": {
+      "bytes": 6099,
+      "sha256": "27053b843d763adcf570e859b2c8658e216dbf6f80963b600fa5326958f70ef4"
+    },
+    "server-kit/artifact-kit-receipt.json": {
+      "bytes": 5480,
+      "sha256": "3a38c00bb42781e24101243ca43c8e21630dbb7ef0de1d0b57d4475a1d8901f0"
+    },
+    "server-kit/incoming-engine-manifest.json": {
+      "bytes": 12221,
+      "sha256": "f5f8321b1bdad6ae4f48e45649e8a7e73cf87f470a83a200ccc934e7614efb7f"
+    },
+    "server-kit/libpcsx_rearmed_libretro_android.so": {
+      "bytes": 1582960,
+      "sha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9"
+    },
+    "server-kit/libstation_dolphin_online.so": {
+      "bytes": 15781128,
+      "sha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d"
+    },
+    "server-kit/libstation_dolphin_runtime.so": {
+      "bytes": 113256,
+      "sha256": "9c87e2ec4c798ab1f42130326855d0171617501ee513dfefa74241b3665e38ad"
+    },
+    "server-kit/libstation_mupen64plus_core.so": {
+      "bytes": 561056,
+      "sha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8"
+    },
+    "server-kit/libstation_mupen64plus_runtime.so": {
+      "bytes": 102360,
+      "sha256": "5f56099c433f29514c864d1eeea2995e3f52b0d15d76eaf125c4f4346a9d6e87"
+    },
+    "server-kit/libstation_psx_online.so": {
+      "bytes": 299560,
+      "sha256": "69ac2b703f03826c8f7203b296665c6f2cc34cb944af7c3f758d9033116cade3"
+    },
+    "server-kit/profile-canonical-receipt.json": {
+      "bytes": 2126,
+      "sha256": "7032ddc8bcfc648f531cca6bc7c1f199f33b0410ed40be5a27ec6b387a232eed"
+    }
+  },
+  "librariesAndDependenciesCheckedByPinnedExtractor": true,
+  "nativeAdministrationPerformed": false,
+  "nativeModesApproved": false,
+  "noApkFirmwareKeyOrGameCopied": true,
+  "optionsSource": "Exact original runtime engines and incoming canonical configuration; no policy changed",
+  "originalPackageReceiptSha256": "39385a0f22a9d0d8c88306607872f2b6fb068197ab9c0176be1beb938d06596d",
+  "originalPairIdentitySealMatched": true,
+  "originalRuntimeReceiptSha256": "2d6fc1c1933b4dc88aa09192138b8564b5f0b743461faa7580896b8339b2067f",
+  "originalSourceFreezeSha256": "7b9eead9ecd79d1582647b1b41d45158a36627ba6b8231663a3fa87067a97af0",
+  "physicalGameplayValidated": false,
+  "preparedUTC": "2026-10-11T22:47:52.044011+00:00",
+  "privateKitPrepared": true,
+  "publicReceiptProvenance": {
+    "absolutePathsReplacedWithLogicalReferences": true,
+    "binaryFirmwarePkgMaterialGameMediaPersonalLogsIncluded": false,
+    "hashMapsPreserved": true,
+    "notAnOperatorDeployableIdentityPackagePair": true,
+    "originalPrivateReceiptSha256": "b46b64a1aac139974eef764ba92b3039545fdee24d81a969dd198403f0c15d1f",
+    "originalReceiptRole": "kit"
+  },
+  "revision": "R134",
+  "schema": "station.r134.private-server-kit.v1",
+  "selectedLibraryCount": 6,
+  "serverActivationConfirmed": false,
+  "serverDeployed": false,
+  "serverOperatorGitBlobSha256": {
+    "build_incoming_manifest.py": "362bcae9d8915f7f43aac4c48d06b35bdf57efc88d6acb9199aa06e3a0231426",
+    "extract_private_server_artifacts.py": "27053b843d763adcf570e859b2c8658e216dbf6f80963b600fa5326958f70ef4"
+  },
+  "serverOperatorSourceCommit": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+  "signatureValidatedByExactFinalReceipt": true,
+  "sourceCommit": "4f9039eb9ce13907ce043870bfe1f6e294888556",
+  "uploaded": false
+}

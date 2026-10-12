@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-11",
+  "baseCommit": "524d2ebff08353fda62aacbc5f05f9248ba69b7c",
+  "proposal": "numeric-member-barrier-diagnostics",
+  "deployed": false,
+  "committedByAuditor": false,
+  "actualProject": "tests/StationMultiplayer/StationMultiplayer.Tests.csproj",
+  "configuration": "Release",
+  "dependencyRestore": {
+    "firstAttempt": "NU1301/rede NuGet bloqueada pelo sandbox; nenhuma falha de código inferida",
+    "resolved": true,
+    "method": "Feed temporário externo ao checkout, exclusivamente três dependências públicas já presentes no cache local",
+    "packages": [
+      "Npgsql 8.0.6",
+      "Microsoft.Extensions.Logging.Abstractions 8.0.0",
+      "Microsoft.Extensions.DependencyInjection.Abstractions 8.0.0"
+    ],
+    "productionProjectDependencyChanges": false
+  },
+  "commands": [
+    "dotnet restore tests/StationMultiplayer/StationMultiplayer.Tests.csproj --source <feed-local-temporario> --packages <cache-local-temporario> -p:NuGetAudit=false",
+    "dotnet run --project tests/StationMultiplayer/StationMultiplayer.Tests.csproj -c Release --no-restore",
+    "git diff --check"
+  ],
+  "results": {
+    "exitCode": 0,
+    "diffCheckExitCode": 0,
+    "passed": true,
+    "domainChecksTotal": 1452,
+    "addedThreePlayerChecks": 29,
+    "fixture": {
+      "players": 3,
+      "links": 2,
+      "expectedAttachments": 4,
+      "fixtureWaitMillis": 300000,
+      "threePlayerReplayReservationBytes": 1048576
+    },
+    "capacity": {
+      "syntheticParticipants": 320,
+      "rooms": 80,
+      "bidirectionalBytes": 7864320,
+      "maximumReplayBytes": 134217728
+    }
+  },
+  "outputs": [
+    {
+      "passed": true,
+      "syntheticParticipants": 320,
+      "rooms": 80,
+      "bidirectionalBytes": 7864320,
+      "maximumReplayBytes": 134217728,
+      "scope": "in-process bounded hub/stream capacity; no WAN or Android gameplay"
+    },
+    {
+      "passed": true,
+      "checks": 29,
+      "players": 3,
+      "links": 2,
+      "expectedAttachments": 4,
+      "fixtureWaitMillis": 300000,
+      "scope": "actual C# hub/stream/replay; synthetic in-process identities; no TLS WAN Android gameplay or deployment"
+    },
+    {
+      "passed": true,
+      "checks": 1452,
+      "scope": "isolated synthetic C# hub/stream/codec/budget; no Android gameplay or deployment"
+    }
+  ],
+  "excluded": [
+    "tests/StationMultiplayer/HttpChecks.cs não executado",
+    "Nenhum TLS/WAN, API geral, banco de produção, identidade/ativação real, USB, gameplay Android ou deployment",
+    "Os 300000ms são relógio sintético do hub avançado em 60 passos; não observação física durante cinco minutos"
+  ],
+  "sourceFiles": [
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayer.cs",
+      "sha256": "a0dc6beb38d491683d06dc7c72900cf4f61c0e1511690c895c50335ac44ed3b2"
+    },
+    {
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayerStream.cs",
+      "sha256": "7f49d7826e87a99e0ac89a93407ac011d59b60504a1a60f1d3d87ef52333b58d"
+    },
+    {
+      "path": "tests/StationMultiplayer/Checks.cs",
+      "sha256": "c3887f92f2512098f7a76e7da340db0785cfdb539c59c97c672c8fb28ba2d0dc"
+    },
+    {
+      "path": "tests/StationMultiplayer/StationMultiplayer.Tests.csproj",
+      "sha256": "6982e5c1059ad341a9c401851983b0143a270261b5cc24630aaabcf6ac20ec8f"
+    },
+    {
+      "path": "tests/StationMultiplayer/BarrierDiagnosticsChecks.cs",
+      "sha256": "f82618ee748e88524303ae0da7b30b10ff575fb8dcc67df572e69ce19aeaef63"
+    }
+  ],
+  "preservedInvariants": [
+    "Todos HELLO/PAUSED e READY da epoch atual, sem suspensão e pending0 para transição a Playing",
+    "Own exige generation exata antes de leave",
+    "Nenhuma saída humana automática, remoção de validador ou mudança de perfil",
+    "Roster congelado após start; reserva só liberada depois de aposentadoria e último detach",
+    "Diagnóstico privado ao membro, sem identidade/credencial/payload",
+    "room epoch/state e diagnóstico capturados no mesmo lock",
+    "Playing pode ter flags de Ready parciais durante DATA; waitingReasons=[] é intencional"
+  ],
+  "publicationNotes": "Este recibo descreve a execução local do domínio. Publicação de fontes/documentos na branch audit/station-consumer-online-r134-20261011 e deployment são ações distintas; deployment não autorizado nesta tarefa.",
+  "revalidationAfterWhitespaceCorrection": {
+    "createdUtc": "2026-10-12T01:01:46.594993+00:00",
+    "originalTestSha256": "80df9d789808b85d5a334b3f864c2fa48a88c70f035936ebdfc3f656ed57c5b3",
+    "change": "remove only final extra blank line from new test; no executable C# statement changed",
+    "passed": true,
+    "exitCode": 0,
+    "domainChecksTotal": 1452,
+    "addedThreePlayerChecks": 29,
+    "command": "dotnet run --project tests/StationMultiplayer/StationMultiplayer.Tests.csproj -c Release --no-restore",
+    "gitDiffCheckFromDeliveryBase": {
+      "passed": true,
+      "exitCode": 0
+    },
+    "attributes": "R134 documentation path recognizes CRLF in frozen receipts; blank-at-eol, blank-at-eof and space-before-tab checks remain enabled",
+    "productionSourcesChangedByCorrection": false,
+    "deployed": false,
+    "phoneValidation": false
+  }
+}

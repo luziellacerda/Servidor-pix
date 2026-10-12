@@ -56,6 +56,43 @@ public sealed class StationMultiplayerStream
     public bool HasPlayed {get{lock(gate)return hasPlayed;}}
     public (long Epoch,long State,long Pending,long Accepted,long Delivered,int Connections) Snapshot()
     {lock(gate)return(epoch,state,windows.Sum(w=>w.Pending),windows.Sum(w=>w.Accepted),windows.Sum(w=>w.Delivered),connections.Count(c=>c is not null));}
+    // Member-only numeric diagnostics; no peer IDs, room/link IDs, tickets or credentials.
+    // Reading this view does not alter readiness, epochs, replay or human exit policy.
+    public object BarrierDiagnostics()
+    {
+        lock(gate){
+            int expected=connections.Length,attached=connections.Count(c=>c is not null);
+            int hello=connections.Count(c=>c is {Hello:true});
+            int paused=connections.Count(c=>c is {Paused:true});
+            int ready=connections.Count(c=>c is {Ready:true});
+            long pending=windows.Sum(w=>w.Pending);
+            var reasons=new List<string>();
+            if(state==StationStreamSession.Unrecoverable)reasons.Add("unrecoverable");
+            else if(state!=StationStreamSession.Playing){
+                if(attached<expected)reasons.Add("missing-attachment");
+                if(hello<attached)reasons.Add("awaiting-hello");
+                if(suspended.Count>0)reasons.Add("participant-suspended");
+                if(paused<attached)reasons.Add("awaiting-core-pause");
+                if(ready<attached)reasons.Add("awaiting-ready");
+                if(pending>0)reasons.Add("pending-replay");
+            }
+            return new{schemaVersion=1,epoch,state,hasPlayed,linkCount=links.Length,
+                expectedAttachments=expected,attachedConnections=attached,
+                helloCount=hello,pausedCount=paused,readyCount=ready,pendingBytes=pending,
+                suspendedParticipants=suspended.Count,waitingReasons=reasons.ToArray(),
+                attachments=Enumerable.Range(0,expected).Select(side=>new{
+                    linkOrdinal=side/2+1,hostSide=side%2==0,
+                    attached=connections[side] is not null,
+                    hello=connections[side]?.Hello??false,paused=connections[side]?.Paused??false,
+                    ready=connections[side]?.Ready??false,
+                    acceptedBytes=windows[side].Accepted,deliveredBytes=windows[side].Delivered,
+                    pendingBytes=windows[side].Pending}).ToArray()};
+        }
+    }
+    // Keep public room state and member diagnostics in the same stream snapshot.
+    public (long Epoch,long State,long Pending,long Accepted,long Delivered,int Connections,object? Diagnostics,bool HasPlayed) SnapshotWithDiagnostics(bool member)
+    {lock(gate)return(epoch,state,windows.Sum(w=>w.Pending),windows.Sum(w=>w.Accepted),windows.Sum(w=>w.Delivered),
+        connections.Count(c=>c is not null),member?BarrierDiagnostics():null,hasPlayed);}
     public void Receive(string link,bool host,Connection c,StationStreamFrame frame)
     {
         lock(gate){int side=Side(link,host);Current(side,c);var own=windows[side];var incoming=windows[side^1];

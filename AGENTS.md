@@ -1,3 +1,11 @@
+# R134 e auditoria de partidas para entrega ao consumidor
+
+Ler docs/station-android/r134/README.md e INCIDENTE-TRES-JOGADORES-E-SAIDA.md. APK instalado R134 fonte4f9039e / SHA f8cb09184f41bc7c942ce84541dbd90d575b7240467ce0033d35be65e57caee2. Kit privado/ativação ainda sem retorno confirmado; esta publicação não implanta Linux. Baseline códigoa6b58e9, entrega docsR133 preservada. Diagnóstico member-only barrierDiagnostics capturado coerentemente com epoch/state; regras de início/READY/ACK/geração/leave/recuperação/autenticação intactas. Suíte domínioMP1452checks,29novos3p e capacidade320p/80salas; não alegar suíteHTTP ou gameplay/WAN/Android.
+
+O usuário pediu análise completa, repasse e publicação, e proibiu USB. Não fazer deploy/restart por ler os documentos. Usar kit original6libs, baselines atuais, administração nativa e recibos reais para ativação futura, preservando tudo do servidor. App overlayR135 ainda fonte/Java separado, sem APK/novosIDs; não cadastrar identidades inventadas. Materiais privados/credenciais/identidades pessoais não vão ao Git. Responder em uma única matriz de aplicação e prova assinada fresca, distinguindo preparado de aplicado.
+
+## Histórico preservado
+
 # R133 — entrega final de consoles e modos por edição
 
 APP → SERVIDOR, não implantação. Fonte Android 5966a8ad23ae9040c570d359b999c8a31de904b4; entrega pública c00f469517d41cf14f0d54a2d5cd3491cae6db00. R133 instalada/hash integral e dados preservados no Motorola, sem gameplay/ativação novos comprovados. Ler [o handoff único](docs/station-android/r133/HANDOFF-APP-R133-PARA-SERVIDOR-20261011.md), recibos e [a matriz integral](docs/station-android/r133/catalog/README.md).

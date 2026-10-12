@@ -258,13 +258,14 @@ public sealed class StationMultiplayer
     }
     private object RoomView(Room room,bool member)
     {
-        var p=room.Profile;var stream=room.Stream?.Snapshot();
+        var p=room.Profile;var stream=room.Stream?.SnapshotWithDiagnostics(member);
         string state=stream is null?"waiting":stream.Value.State switch{StationStreamSession.Playing=>"playing",StationStreamSession.Synchronizing=>"synchronizing",StationStreamSession.Unrecoverable=>"unrecoverable",_=>stream.Value.Epoch==1?"starting":"waiting-reconnect"};
         return new{id=room.Id,roomId=room.Id,itemId=p.ItemId,contentSha256=p.ContentSha256,platform=p.Platform,engineId=p.EngineId,coreSha256=p.CoreSha256,runtimeSha256=p.RuntimeSha256,
             profileId=p.ProfileId,profileSha256=p.ProfileSha256,controllerProfile=p.ControllerProfile,mode=p.Mode,modeTitle=p.ModeTitle,instructions=p.Instructions,sources=p.Sources,allowedPlayerCounts=p.AllowedPlayerCounts,maximumPlayers=p.MaximumPlayers,capacity=room.Capacity,hostPeerId=room.Host,hostId=room.Host,
-            generation=room.Generation,epoch=stream?.Epoch??0,state,status=state,transport="relay-wss-v3",recoveryProtocol=Protocol,recoveryStarted=room.Stream?.HasPlayed??false,players=room.Members.Count,
+            generation=room.Generation,epoch=stream?.Epoch??0,state,status=state,transport="relay-wss-v3",recoveryProtocol=Protocol,recoveryStarted=stream?.HasPlayed??false,players=room.Members.Count,
             members=room.Members.Select(m=>m.Peer.Id).ToArray(),ready=room.Members.Where(m=>m.Ready).Select(m=>m.Peer.Id).ToArray(),
             roster=room.Members.OrderBy(m=>m.Slot).Select(m=>new{peerId=m.Peer.Id,nickname=m.Peer.Nickname,slot=m.Slot,ready=m.Ready}).ToArray(),
+            barrierDiagnostics=stream?.Diagnostics,
             links=room.Links,connectionPassword=member?room.Password:null,messages=member?room.Messages.ToArray():[]};
     }
     public Lease TakeTicket(string token,Action<Lease> verify)

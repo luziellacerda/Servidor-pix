@@ -1,0 +1,1158 @@
+{
+  "schemaVersion": 1,
+  "title": "Auditoria do servidor e contratos TurboStations R134 — três jogadores e saída humana",
+  "date": "2026-10-11",
+  "codeRef": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+  "documentationRef": "524d2ebff08353fda62aacbc5f05f9248ba69b7c",
+  "publicBase": "https://app.lzgames.com.br",
+  "proposalStatus": "local-validado-sem-deploy; publicação coordenada pelo responsável",
+  "sections": [
+    {
+      "title": "Servidor auditado: versão, cadeia de evidência e alcance",
+      "paragraphs": [
+        "A auditoria usa o código Servidor-pix a6b58e9beb12eb564c1b58d9d4c32ed3e7513861, da branch feat/station-r128-aplicado-20261011. A branch de documentação docs/station-r133-final-console-modes-20261011 está no HEAD 524d2ebff08353fda62aacbc5f05f9248ba69b7c e conserva esse domínio de runtime. As 117 branches foram enumeradas em duas páginas, incluindo as 17 posteriores ao primeiro lote de 100. Não foi localizado retorno posterior que confirme aplicação do kit R134. A conclusão se limita às fontes e recibos públicos consultados; não houve consulta ao host produtivo ou inferência da configuração efetiva. [SA16-SA19, SA25]",
+        "O checkout isolado publication-server tem como base docs R133. A proposta acrescenta uma projeção numérica do estado da barreira para membros e uma suite determinística. Não foram executados comandos de aplicação administrativa, restart, acesso a banco produtivo, USB ou fluxo de licença real. Os testes invocam classes C# reais com identidades fictícias em processo e não constituem gameplay Android nem validação de TLS/WAN. [SA21-SA23]",
+        "O URL comercial /v1, schemaVersion=1, domínio de assinatura online/v1, revisão do pacote R134 e multiplayerVersion=3 são identificadores de eixos diferentes. O cliente comercial v1 e os domínios v1/v2 de lobby coexistem com station-multiplayer.v3. Para admitir um jogo v3, exige-se o snapshot próprio com capability e perfil exato. Resposta HTTP 200, PONG ou serverReady de plataforma não bastam. [SA01:236-268, SA07:29-32, SA26]"
+      ],
+      "tables": [],
+      "bullets": []
+    },
+    {
+      "title": "Falha comprovada de espera com três participantes",
+      "paragraphs": [
+        "Três jogadores significam um host e dois guests. A topologia host-star abre dois links, cada um com um endpoint host e um endpoint guest. Portanto a barreira precisa de quatro attachments de transporte, embora a sala tenha três membros. Cada direção conserva uma janela FIFO de 262144 bytes. A reserva é 2 links × 2 direções × 262144 = 1048576 bytes, exatamente 1 MiB. Confundir três jogadores com três conexões deixa um endpoint esperado sem participação. [SA01:185-191, SA02:17-35]",
+        "O servidor só passa de Waiting para Synchronizing quando todos os endpoints esperados estão anexados, com HELLO e PAUSED válidos, e nenhum participante está suspenso. Só passa para Playing quando as quatro flags Ready estão verdadeiras e todas as janelas têm pendingBytes=0. READY exige epoch corrente, confirmação de pausa e watermark Accepted exato da direção. ACK confirma entrega de replay e não substitui READY. O ready=true do lobby não substitui nenhum desses frames. [SA01:182-188, SA02:59-95]",
+        "No domínio real foi reproduzido o estado com quatro attachments, HELLO/PAUSED completos, três READY válidos e pending=0: Synchronizing e hasPlayed=false. Avançar 300000 ms no relógio sintético do hub, com heartbeat dos três peers e PING dos quatro endpoints, não inicia a partida. A última READY válida libera Playing. Isso prova uma condição de espera sem prazo global no código; não prova qual aparelho real deixou de emitir READY nem identifica uma ROM como causa. [SA21, SA23]",
+        "Watch fecha um attachment quando a lease fica inválida, o heartbeat de controle envelhece ≥60 s, o último frame recebido envelhece ≥30 s ou a autorização não pode ser revalidada. Verifica a cada 10 s e limita a consulta de autorização a 5 s. Se heartbeat e PING continuarem, as verificações de vida não detectam falta de READY nem replay pendente. A sala lógica é conservada para recuperação; o cliente pode manter loading se não apresentar a causa e não confirmar a saída humana. [SA02:149-159]",
+        "Os timeouts de 30/90 s do domínio legado não se aplicam automaticamente à barreira multiplayer v3. Um prazo opcional futuro exigiria política explícita de produto e protocolo. Este patch não inicia sem um participante, descarta bytes ou retira alguém por timer. A evidência aponta necessidade de diagnóstico, observação do lado nativo e confirmação de saída, conservando os validadores. [SA06:155-175, SA02:42-95]"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Estado observável",
+            "Condição exata",
+            "Efeito/limite"
+          ],
+          "rows": [
+            [
+              "starting",
+              "Epoch=1 e stream Waiting após start; anexos/HELLO/PAUSED ainda incompletos.",
+              "Roster congelado; ainda não prova gameplay."
+            ],
+            [
+              "waiting-reconnect",
+              "Stream Waiting em epoch>1, após Pause/detach/suspend.",
+              "Perda de rede não remove membros."
+            ],
+            [
+              "synchronizing",
+              "Todos HELLO+PAUSED, sem suspensos; falta READY ou há replay pendente.",
+              "Com tráfego de vida, pode esperar sem prazo global."
+            ],
+            [
+              "playing",
+              "Todos READY na transição e pending=0.",
+              "DATA pode invalidar flags do seu par durante tráfego normal sem sair de Playing."
+            ],
+            [
+              "unrecoverable",
+              "Falha explícita ou protocolo inválido chama End.",
+              "Resume/ticket recusados; leave humano continua disponível."
+            ]
+          ]
+        }
+      ],
+      "bullets": []
+    },
+    {
+      "title": "Regras de perfil, número de jogadores e ownership",
+      "paragraphs": [
+        "O perfil é identificado por itemId, contentSha256, platform, engineId, coreSha256, runtimeSha256, profileId, profileSha256, controllerProfile, mode e allowedPlayerCounts. Aprovação exige hashes de 64 caracteres hexadecimais, catálogo corrente compatível e entrada Approved. Plataforma ou engineId isolados não identificam um perfil. O teto global é cinco jogadores; a política administrativa limita SNES a 5, N64/Dreamcast/GameCube/Wii/WiiU a 4 e as demais plataformas aceitas a 2. Esses tetos não homologam automaticamente todos os números intermediários. [SA01:76-145, SA04]",
+        "Um perfil maximumPlayers=4 com allowedPlayerCounts=[2,4] recusa uma sala de três, mesmo com quatro portas disponíveis. Start revalida a quantidade real de membros; ready revalida a capacidade configurada. Uma sala de capacidade 4 pode iniciar com três presentes somente se 3 estiver explicitamente homologado e os três estiverem prontos. Este método não exige lotação completa. O novo teste configura capacity=3 e allowedPlayerCounts=[2,3,4]. [SA01:126-131,182-192, SA13, SA21]",
+        "Create e join exigem que maximumPlayers do perfil caiba no clientMaximumPlayers enviado. O default do comando é 4, e o domínio aceita de 2 a 5. Isso impede ingresso com capacidade de cliente inferior ao máximo do perfil, mesmo em sala menor. A classificação retorna até 32 matches por item e filtra a identidade corrente do catálogo. A listagem pública é paginada: até 100 salas, páginas de 0 a 40 e tamanho 32 ou 100. A ownRoom aparece separadamente. [SA01:151-179,236-257]",
+        "Após start, roster e links ficam congelados. O host é autenticado nos seus endpoints e cada guest no próprio link/slot; um guest não acessa o link de outro. Create/join dos domínios legado e v3 compartilham AdmissionGate para evitar duas memberships da mesma identidade. Bloqueio social e revogação são eventos explícitos que podem aposentar a sala; perda de transporte não escolhe saída lógica. [SA01:199-225,270-287, SA03:29-34, SA07:99-104]"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Ações do contrato (12 no total)",
+            "Condição/ownership",
+            "Limite",
+            "Efeito"
+          ],
+          "rows": [
+            [
+              "snapshot / capabilities",
+              "Lê própria sala e catálogo de perfis/plataformas.",
+              "Não seleciona mode/core nem aprova conteúdo.",
+              "Snapshot assinado pode incluir sala própria fora da página pública. [SA01:236-257]"
+            ],
+            [
+              "heartbeat",
+              "Atualiza Seen, sem mudar membership ou Ready.",
+              "Ausência de controle por aproximadamente 60 s pode fechar transport.",
+              "PING atualiza LastReceive do socket, não Seen do hub. [SA01:149-159; SA02:149-158]"
+            ],
+            [
+              "create",
+              "Sem sala; capacity homologada; até 100 salas; perfil compatível com clientMaximumPlayers.",
+              "Approved/CatalogMatches e IDs/hashes exatos.",
+              "Cria waiting, generation=1 e host no slot 1. [SA01:126-145,170-173]"
+            ],
+            [
+              "join",
+              "Sem sala; sala ainda não iniciada e não cheia; generation exata; perfil/bloqueios válidos.",
+              "Máximo do perfil deve caber no cliente; slot de 2 a 5.",
+              "Bump aumenta generation e limpa ready de todos. [SA01:174-181,218]"
+            ],
+            [
+              "ready",
+              "Own + generation; stream ausente; revalida perfil para a capacidade.",
+              "Ready de lobby é diferente de frame READY após start.",
+              "Altera o booleano do membro. [SA01:182-184]"
+            ],
+            [
+              "start",
+              "Host + generation; todos prontos; perfil aprovado para o número real presente.",
+              "allowedPlayerCounts deve conter 3 para testar três; máximo 4 não basta.",
+              "Congela roster/links; reserva 2 × Window por guest; aumenta generation. [SA01:185-192]"
+            ],
+            [
+              "leave",
+              "Own e generation exata, antes de qualquer mudança.",
+              "Waiting: guest sai sozinho; host aposenta tudo. Após start: qualquer membro aposenta tudo.",
+              "Perda de rede/timeout de attachment não executa leave. [SA01:193,216-225]"
+            ],
+            [
+              "failed",
+              "Own + generation e start realizado.",
+              "Falha terminal explícita; sem recuperação fabricada.",
+              "End passa para Unrecoverable; saída continua humana. [SA01:194; SA02:50-54]"
+            ],
+            [
+              "chat",
+              "Own + generation; texto de 1 a 500 sem caracteres de controle; uma mensagem/s.",
+              "Retém até 32 mensagens ou 65536 bytes.",
+              "Operação social não altera prontidão. [SA01:195-198]"
+            ],
+            [
+              "ticket / resume",
+              "Own + generation; perfil exato; started; proof RSA/EC; link autorizado; sem anexo ativo.",
+              "Host só acessa seus links; guest, o próprio link/slot. Stream não pode estar Unrecoverable.",
+              "Grant one-use de 60 s por attachment; resume não reduz roster. [SA01:199-209,270-287]"
+            ]
+          ]
+        }
+      ],
+      "bullets": [
+        "A tabela tem dez linhas por agrupamento: snapshot/capabilities e ticket/resume compartilham linhas. O código admite 12 ações.",
+        "Nickname, limitado a 40, só é usado sem autoridade social validada. Chat, limitado a 500 caracteres e 32 mensagens/65536 bytes, permanece em memória.",
+        "SNES com cinco jogadores exige o perfil administrativo snes-multitap-port2. O teto global de cinco não amplia outros motores."
+      ]
+    },
+    {
+      "title": "Generation, epoch, tickets e saída humana",
+      "paragraphs": [
+        "Generation pertence à composição da sala e aos comandos: começa em 1 e aumenta no join/reordenação e no start. Epoch pertence à sincronização do stream: começa em 1 e aumenta em pausa, detach, suspend, NEEDSYNC ou falha terminal. O snapshot pode conservar generation enquanto epoch muda muitas vezes na recuperação. Esses campos não são intercambiáveis; leave com epoch no lugar de generation não atende Own. [SA01:49,178-191,216-225, SA02:30-54]",
+        "Own valida sala existente, membership e generation exata antes de leave. Uma generation antiga recebe 409 STATION_MULTIPLAYER_GENERATION_MISMATCH sem remover o peer; o teste novo confirma a conservação da membership. O evento 4 herdado do cliente fazia uma tentativa com binding.generation e ignorava exceção. Esse caminho permite saída local com sala lógica ainda mantida; não prova que causou o incidente físico. A correção do cliente é preparada separadamente. [SA01:193,216-225, SA21; fonte cliente StationGameSession R124 herdada]",
+        "A correção do cliente se restringe à intenção humana de sair: após 409 de generation mismatch, obter snapshot assinado fresco e conferir roomId, recoveryProtocol, itemId, engineId, coreSha256, runtimeSha256, contentSha256, profileId e profileSha256 iguais ao binding anterior, com generation válida. Então enviar leave para a mesma sala com a geração atual. OwnRoom já null confirma saída. Não repetir em outra sala nem por erro 500/rede ambígua com UUID novo sem reconciliação. Esta é a regra do handoff coordenado; não é uma mudança deste patch de servidor. [SA01:263-268, SA03:34-36]",
+        "Ticket/resume exige Own atual, identidade completa de jogo/perfil, proof RSA-PSS ou EC-P256, link autorizado e ausência de anexo ativo. O grant dura 60 s e TakeTicket é one-use. A autorização é revalidada antes do upgrade e periodicamente. Revogação efetiva retira membership; indisponibilidade da consulta só encerra attachment para recuperação. O relatório não reproduz valores de tickets, tokens, chaves privadas ou senhas. [SA01:199-209,270-287, SA03:47-56, SA02:149-159]",
+        "Leave humano de guest em waiting remove somente esse guest; Bump limpa ready e recompõe slots. Leave do host em waiting ou de qualquer membro após start aposenta toda a sala e limpa ownRoom para todos. A reserva permanece enquanto writers/anexos podem usar as janelas; é liberada após o último Detach, em Unrecoverable e com retirementRequested. Os testes verificam essa sequência e a reserva de 1 MiB. [SA01:219-225, SA02:50-54, SA21]"
+      ],
+      "tables": [],
+      "bullets": []
+    },
+    {
+      "title": "Patch proposto de diagnóstico numérico, sem alteração de progressão",
+      "paragraphs": [
+        "O patch acrescenta BarrierDiagnostics() a StationMultiplayerStream e room.barrierDiagnostics à ownRoom assinada. A listagem pública recebe null; somente o membro recebe detalhe. Não cria rota pública de inspeção nem logs com identidades. O objeto possui schemaVersion=1, epoch, state, hasPlayed, linkCount, expectedAttachments, attachedConnections, helloCount, pausedCount, readyCount, pendingBytes, suspendedParticipants e waitingReasons. [SA21, SA22]",
+        "Attachments contém linkOrdinal sequencial local, hostSide, attached, hello, paused, ready, acceptedBytes, deliveredBytes e pendingBytes. Não inclui IDs de sala/link/peer/licença/dispositivo, tickets, senhas, tokens, payload ou bytes de ROM. Um endpoint ausente não revela ID. Os watermarks separam READY ausente de replay pendente; não identificam por si qual função de núcleo ou UI deixou de responder. [SA22]",
+        "WaitingReasons enumera missing-attachment, awaiting-hello, participant-suspended, awaiting-core-pause, awaiting-ready, pending-replay ou unrecoverable. Awaiting-core-pause indica ausência do frame PAUSED, não uma medição de CPU. As razões podem coexistir. Em Playing, a lista fica vazia: DATA invalida ready do par tocado durante tráfego normal sem criar outra barreira, até Pause/NEEDSYNC. ReadyCount abaixo de 4 em Playing não significa falha de sincronização. [SA02:69-95, SA22]",
+        "SnapshotWithDiagnostics(bool member) obtém estado, epoch, pending, accepted, delivered, connections, hasPlayed e diagnóstico sob o mesmo lock. A projeção não mistura duas epochs. Nenhum método Attach/Detach/Receive/Next/End/RetireRoom, regra Own, perfil, reserva, timeout ou geração foi relaxado. Snapshot anterior permanece disponível aos consumidores existentes. [SA21, SA22]",
+        "A interface pode apresentar contagens e motivo, mas o patch de servidor não redesenha a tela nem força saída. Após homologação, coletar snapshot próprio, distinguir attachment/HELLO/PAUSED/READY de ACK/replay, correlacionar com diagnóstico nativo sanitizado e verificar recuperação. O novo campo é opcional para o cliente até existir prova de deploy da branch. [SA21-SA23]"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Arquivo proposto",
+            "Mudança",
+            "Alcance"
+          ],
+          "rows": [
+            [
+              "StationMultiplayerStream.cs",
+              "37 linhas acrescentadas: diagnóstico e snapshot coerente.",
+              "Projeção sob lock; mutadores preservados."
+            ],
+            [
+              "StationMultiplayer.cs",
+              "RoomView usa snapshot coerente e expõe detalhe ao membro.",
+              "3 linhas novas/2 substituídas; comandos preservados."
+            ],
+            [
+              "BarrierDiagnosticsChecks.cs",
+              "Fixture novo com 29 checks e classes reais.",
+              "Identidades sintéticas; relógio determinístico do hub."
+            ],
+            [
+              "Checks.cs + StationMultiplayer.Tests.csproj",
+              "Inclui e executa o arquivo novo de checks.",
+              "Dependências, target framework e flags de produção preservados."
+            ]
+          ]
+        }
+      ],
+      "bullets": []
+    },
+    {
+      "title": "Validação executada: 29 checks novos e 1452 do domínio",
+      "paragraphs": [
+        "A suite real tests/StationMultiplayer/StationMultiplayer.Tests.csproj foi executada em Release, com as referências reais do servidor e Notifications. Os 29 checks novos foram somados aos existentes: passed=true, checks=1452. A suite de capacidade informou 320 participantes sintéticos, 80 salas, 7864320 bytes bidirecionais e maximumReplayBytes=134217728. Os números descrevem exercícios em processo, sem WAN/TLS, autenticação real de dispositivo ou engine Android. [SA13, SA14, SA21, SA23]",
+        "O novo fixture verifica dois links/quatro attachments para três jogadores, isolamento de não membro, epoch coerente, HELLO/PAUSED completos e uma READY ausente com pending=0. Verifica espera após cinco minutos de relógio sintético com heartbeat/PING, última READY liberando Playing, reserva de 1 MiB, leave de generation antiga recebendo 409 sem retirar membro, leave humano aposentando sala e último detach liberando reserva. O relógio avança em 60 passos instantâneos; não houve cinco minutos de observação física. [SA21, SA23]",
+        "O segundo fixture entra em Playing, solicita NEEDSYNC, envia 3 bytes e registra pending-replay. DATA novo invalida READY somente do par afetado. READY com watermark antigo não libera a direção. Entrega e ACK drenam a janela, mas o último READY ainda é obrigatório. Também confirma retomada conjunta, failed gerando Unrecoverable explícito e saída/liberação humana. [SA21]",
+        "A primeira tentativa de restore encontrou bloqueio de rede NuGet no sandbox, sem falha de código. Npgsql 8.0.6 e as duas dependências Logging/DependencyInjection Abstractions 8.0.0 já estavam no cache local. Um feed temporário fora do checkout permitiu restore bem-sucedido. O csproj final só inclui o teste novo, sem allowtestfixture, troca de pacote ou workaround produtivo. Run com --no-restore terminou com exit=0. [SA23]",
+        "A suite HTTP de HttpChecks.cs e testes físicos de três aparelhos não foram executados nesta etapa. Os 1452 checks são do domínio, sem validar a API geral. Ativação exige validadores nativos, resposta v3 fresca assinada e matriz física separada com conteúdo/perfil autorizado. O recibo guarda comandos, scopes e hashes dos arquivos editados; o responsável pelo handoff realiza commit/publicação. [SA15, SA17, SA23]"
+      ],
+      "tables": [],
+      "bullets": []
+    },
+    {
+      "title": "Serviços comerciais no servidor: elegibilidade, transações e revogação",
+      "paragraphs": [
+        "Este recorte complementa os serviços do cliente com o store real. EligibleDelivery exige product TURBORAMA_STATION_ANDROID, SKU STATION_ANDROID_LIFETIME_1_DEVICE, provisioning=PROVISIONED e condição financeira PAID. FindActivation exige licença ACTIVE, tipo LIFETIME, sem expiração, enrollment=PENDING_ENROLLMENT, maxActiveDevices=1, código não consumido nem expirado, verifier compatível e entrega elegível. O app não autentica por e-mail/senha nesse caminho. Dados de comprador pertencem à compra/produto de origem da licença. [SA11:27-48]",
+        "FindDevice exige dispositivo ACTIVE e licença ACTIVE/LIFETIME, sem expiração, BOUND e entrega elegível. FindSession procura digest do Bearer, autorização não expirada e geração corrente de revogação; revalida os vínculos. Sessão existente não preserva acesso após revogação, inelegibilidade financeira ou desativação do dispositivo. Sessão dura 180 s, desafio/grant 60 s; refresh cria nova sessão, sem mudar ownership. [SA11:86-117,333-362; SA09:97-164]",
+        "ActivateAsync usa transação SERIALIZABLE e repete somente conflitos de serialização/deadlock, até três tentativas com pequena espera aleatória. Não repete arbitrariamente o corpo da ativação. Licença/desafio/código são travados, consumidos e vinculados atomicamente; replay recebe 409. OpenSession consome desafio e registra sessão em operação transacional. O vínculo de segurança só se fortalece: request-proof e verified-app não aceitam downgrade explícito, recusado com 403. [SA11:120-317,365-384]",
+        "Perfil comercial projeta comprador da mesma compra/produto, displayName e profileVersion. Catálogo usa a biblioteca monitorada e jogos/metadados públicos; não inclui grant nem descritor do artefato da autorização posterior. O cache visual não expõe caminhos privados nem concede download. Essa família de rotas não recebe saves Android. [SA09:166-264, SA11:333-362]",
+        "O app pode mostrar biblioteca e cache assinado sem rede ou com sessão expirada. Já 403 LICENSE_DENIED/DEVICE_DENIED tem semântica de bloqueio persistente. O 404 mascarado de grant não deve ser convertido em revogação: a mesma resposta reúne diversas causas. Diagnose pelo contexto do pedido, authorize, perfil e sessão. Nenhuma licença produtiva foi consultada nesta autoria. [SA09:266-324, SA26]"
+      ],
+      "tables": [],
+      "bullets": []
+    },
+    {
+      "title": "Matriz de endpoints comerciais: esquemas, resposta e efeitos",
+      "paragraphs": [
+        "A origem HTTPS pública é a configuração do cliente auditado; os paths/handlers são do head do servidor. Disponibilidade efetiva depende de flags e composição do host. O envelope comum é {keyId, payload, signature}: payload Base64URL contém UTF-8 assinado por RSA-PSS/SHA-256. SchemaVersion=1 e domain delimitam propósito; o cliente verifica identidade/contexto e chaves fixadas. TLS, assinatura de resposta, proof de pedido e token de sessão são verificações distintas. Valores de chaves/pins/tokens não estão publicados. [SA08-SA11, SA26]",
+        "A tabela registra nomes de campos, sem montar pedidos com credenciais. Os números são limites/defaults do código auditado ou do cliente citado, sem declarar configuração produtiva. O handler comercial de 10 s não limita toda a transferência; o controle online de 15 s não é deadline da barreira. O JSON detalha errors, auth, cache/retry e efeitos por endpoint. [SA08, SA03]"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Método e caminho",
+            "Pedido",
+            "Resposta",
+            "Autorização/efeito"
+          ],
+          "rows": [
+            [
+              "POST /v1/station/activations/challenge",
+              "schemaVersion=1, domain=TurboRamaStationAndroid/<operação>/v1, productId=applicationId=TURBORAMA_STATION_ANDROID, deviceId canônico derivado da chave, clientVersion, deviceManufacturer, deviceModel e androidSdk; domain request-activation-challenge/v1, activationCode Base64URL de 32 bytes e devicePublicKey SPKI RSA-2048 Base64URL.",
+              "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga activation-challenge/v1: deviceId, challengeId, nonce, expiresInSeconds=60 e security (requestProofVersion, keyAttestation, requireVerifiedApp, keyAttestationChallenge, serverTime).",
+              "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Não exige Bearer prévio; verifica código elegível e vínculo público da chave. Insere desafio vinculado à licença/dispositivo candidatos e às gerações de ativação/revogação. Ainda não consome a ativação."
+            ],
+            [
+              "POST /v1/station/activations/complete",
+              "StationDeviceEnvelope {payload, signature, attestationChain?, keySignature?}. Payload assinado: identidade comum com domain activate/v1, challengeId, nonce, activationCode, devicePublicKey e metadados do cliente. Limite exterior de 65536 bytes e payload decodificado até 8192.",
+              "Envelope JSON {keyId, payload, signature}; payload é Base64URL dos bytes UTF-8 assinados RSA-PSS/SHA-256. A carga contém schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga activated/v1: licenseId, deviceId, challengeId, nonce.",
+              "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Prova do dispositivo RSA-2048 PSS/SHA-256, com assinatura de 256 bytes. Proof/attestation negociados conforme política vigente. A transação consome desafio/código, vincula um dispositivo, muda enrollment para BOUND e registra segurança. Entitlement lifetime de um dispositivo."
+            ],
+            [
+              "POST /v1/station/challenges",
+              "schemaVersion=1, domain=TurboRamaStationAndroid/<operação>/v1, productId=applicationId=TURBORAMA_STATION_ANDROID, deviceId canônico derivado da chave, clientVersion, deviceManufacturer, deviceModel e androidSdk; domain request-session-challenge/v1 e licenseId.",
+              "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga session-challenge/v1: licenseId, deviceId, challengeId, nonce, expiresInSeconds=60 e security.",
+              "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Dispositivo deve estar ACTIVE e vinculado a licença elegível BOUND. Não exige Bearer prévio. Insere desafio SESSION ligado à geração de revogação atual; não altera entitlement."
+            ],
+            [
+              "POST /v1/station/sessions",
+              "StationDeviceEnvelope assinado. Payload com identidade domain open-session/v1, challengeId, nonce, licenseId e metadados do cliente; extensões de segurança conforme negociação.",
+              "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga session/v1: licenseId, deviceId, challengeId, nonce, sessionId, accessToken, expiresInSeconds=180, requestProof, verifiedApp e serverTime. Somente nomes de campos, sem credenciais reais.",
+              "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Chave já vinculada, prova do desafio e segurança monotônica. Consome desafio e insere digest do accessToken, contexto sessionId e geração de revogação. Flags de request-proof/verifiedApp só fortalecem o vínculo."
+            ],
+            [
+              "GET /v1/station/me",
+              "Sem corpo. Authorization Bearer de sessão atual.",
+              "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga profile/v1: licenseId, deviceId, sessionId, displayName limitado a 80 caracteres e profileVersion.",
+              "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Sessão e entitlement elegíveis; perfil pertence ao comprador do mesmo produto/compra. Leitura do perfil no banco; não cria perfil, não edita comprador nem licença."
+            ],
+            [
+              "GET /v1/station/catalog?metadata=1",
+              "Bearer. Metadata exatamente 1 acrescenta metadados; ausência retorna o catálogo básico.",
+              "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga catalog/v1: licenseId, deviceId, sessionId, revision e items PublicValue. Contém jogos/metadados públicos; descritor de artefato e grant não chegam nessa resposta.",
+              "HTTPS com validação de hostname e pin no cliente; valores de pin/chave não reproduzidos. Sessão Bearer quando indicada; prova de pedido conforme política negociada. Pin TLS e assinatura de resposta são verificações distintas. Sessão elegível e biblioteca atual disponível. Leitura da biblioteca monitorada. Catálogo publicado não é inventário bruto de arquivos do servidor; alterações administrativas ocorrem fora desta rota."
+            ],
+            [
+              "GET /v1/station/covers/{coverId}",
+              "Bearer e coverId seguro do catálogo; não aceita URL arbitrária.",
+              "Blob de capa autorizado, mime/type e Content-Length. A rota usa no-store e nosniff. Não é envelope de grant nem conteúdo de jogo.",
+              "HTTPS com validação de hostname e pin no cliente; valores de pin/chave não reproduzidos. Sessão Bearer quando indicada; prova de pedido conforme política negociada. Pin TLS e assinatura de resposta são verificações distintas. Sessão, coverId e orçamento de origem/dispositivo. Leitura de blob. Rate limiter mantém janelas temporárias de contagem; não consome grant de jogo."
+            ],
+            [
+              "POST /v1/station/downloads/authorize",
+              "schemaVersion=1, domain=TurboRamaStationAndroid/<operação>/v1, productId=applicationId=TURBORAMA_STATION_ANDROID, deviceId canônico derivado da chave, clientVersion, deviceManufacturer, deviceModel e androidSdk; domain request-download/v1, itemId seguro e Bearer atual.",
+              "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga download-grant/v1: licenseId, deviceId, sessionId, itemId, itemRevision, artifact (descritor), grantId e expiresInSeconds=60.",
+              "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. DeviceId idêntico ao da sessão. O selo vincula licença, dispositivo, sessão, item, revisão, SHA/tamanho declarados e stamp do arquivo. Cria registro one-use de grant com path privado selado. O descritor público do artefato chega aqui, separado do catálogo."
+            ],
+            [
+              "GET /v1/station/artifacts/{grantId}",
+              "Bearer da mesma sessão e grantId canônico de 32 bytes. O cliente não fornece arquivo ou caminho arbitrário.",
+              "Application/octet-stream, Content-Length exato, no-store e nosniff. FileStream sequencial com buffer de 65536 bytes. Não assina cada chunk por envelope.",
+              "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Grant não consumido/expirado, mesma licença/dispositivo/sessão, selo válido e item/revisão/SHA/tamanho/path/stamp correspondentes. A comparação dos metadados não recalcula todo o SHA durante o GET. UPDATE atômico consumed_at antes do stream. Cliente instala em geração transacional própria; servidor não gerencia save Android."
+            ]
+          ]
+        }
+      ],
+      "bullets": []
+    },
+    {
+      "title": "Matriz comercial: erros, deadlines, cache e retries",
+      "paragraphs": [
+        "As rotas comerciais compartilham leitura/validação de JSON, rate limiting e handler. Corpo normal admite até 8192 bytes; StationDeviceEnvelope exterior até 65536, com payload decodificado até 8192. JSON deve ser objeto, de profundidade até 16, sem duplicados; identidade exata e metadados de cliente limitados. Disabled retorna 503. O 429 comercial não define Retry-After nesta classe; online define 1. Erros usam schemaVersion/code/message, sem paths privados de artefato. [SA08:140-244, SA09:377-434, SA10:13-21,137-151]",
+        "O default por origem é 30 pedidos/minuto por rota, configurável até 65536. MaximumWindows tem default 4096 e faixa de 4096 a 131072. Capas têm orçamento adicional de 4096/minuto por dispositivo e 16384/minuto por origem. Esses números são defaults/limites configuráveis, não medição do host produtivo. Workers e filas limitados no app não determinam a cota ativa do servidor. [SA08:249-307, SA26]"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Endpoint",
+            "Erros/recusa",
+            "Deadline",
+            "Cache e retry"
+          ],
+          "rows": [
+            [
+              "Desafio de ativação",
+              "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR. Código inelegível 403 STATION_ACTIVATION_INVALID; chave/dispositivo inválido 400 STATION_DEVICE_INVALID.",
+              "10 s no handler; desafio 60 s.",
+              "Resposta de desafio não é uma licença reutilizável. Sem retry automático genérico no servidor; repetir produz outro desafio, sujeito à quota."
+            ],
+            [
+              "Conclusão de ativação",
+              "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR. 409 STATION_CHALLENGE_INVALID/CHALLENGE_MISMATCH/ACTIVATION_REPLAY/DEVICE_ALREADY_BOUND/TRANSACTION_CONFLICT; 403 STATION_ACTIVATION_INVALID/PROOF_INVALID/DEVICE_DENIED.",
+              "10 s no handler; desafio deve permanecer válido e não consumido.",
+              "Ativação one-use. O store só repete transação serializável em deadlock/serialization, até 3 tentativas. Não repetir conclusão sem reconciliar uma resposta ambígua."
+            ],
+            [
+              "Desafio de sessão",
+              "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR. LicenseId inválido 400 STATION_LICENSE_INVALID; autorização 403 STATION_DEVICE_DENIED ou STATION_LICENSE_DENIED.",
+              "10 s; desafio 60 s.",
+              "Desafio específico, não cache duradouro nem sessão. Novo desafio é necessário depois de expirar/consumir."
+            ],
+            [
+              "Abertura de sessão",
+              "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR. 409 STATION_CHALLENGE_INVALID/CHALLENGE_MISMATCH; 403 STATION_DEVICE_DENIED/PROOF_INVALID/LICENSE_DENIED/SECURITY_DOWNGRADE_DENIED; 503 STATION_SECURITY_UNAVAILABLE.",
+              "10 s no handler; sessão autorizada 180 s no banco.",
+              "Bearer fica em memória no app. Cliente obtém nova sessão próximo da expiração; não prolonga a sessão pelo simples uso. Resposta/carga antiga não contorna revogação."
+            ],
+            [
+              "Perfil de comprador",
+              "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR. 401 STATION_SESSION_INVALID; 503 STATION_PROFILE_NOT_READY.",
+              "10 s.",
+              "Cliente pode preservar projeção assinada conforme cache privado. O código de rota analisado não mostra mutação de nome pelo app."
+            ],
+            [
+              "Catálogo comercial",
+              "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR.401 STATION_SESSION_INVALID; 503 STATION_CATALOG_NOT_READY.",
+              "10 s.",
+              "Cliente conserva catálogo assinado por licença/dispositivo, revisões e capas. Uma resposta de perfil/plataforma antiga não autoriza online. Falha transitória de rede não equivale a revogação."
+            ],
+            [
+              "Capas",
+              "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR.401 STATION_SESSION_INVALID; 404 STATION_COVER_NOT_FOUND; 503 STATION_CATALOG_NOT_READY; 429 STATION_RATE_LIMITED.",
+              "10 s para operação de capa; escrita usa cancelamento da requisição conforme rota.",
+              "Cache privado por revisão no cliente, um worker e fila prioritária. O cliente adia 404 por 60 s e trata 429 com espera. Isso não comprova existência atual no servidor."
+            ],
+            [
+              "Autorização de download",
+              "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR.401 STATION_SESSION_INVALID; 403 STATION_DEVICE_DENIED; 404 STATION_ITEM_NOT_FOUND; 503 STATION_DOWNLOAD_NOT_READY/ARTIFACT_NOT_READY.",
+              "10 s no handler; grant 60 s.",
+              "Não reaproveitar grant após uso/expiração/troca de sessão. Retomada do app autoriza novamente e começa arquivo inteiro; rota não negocia Range."
+            ],
+            [
+              "Transferência do artefato",
+              "404 STATION_GRANT_NOT_FOUND mascara grant inválido, expiração, consumo, sessão ausente/inválida, identidade diferente, selo inválido ou arquivo/revisão alterado. SuiteExceptions preservam seu status. IO/UnauthorizedAccess antes de enviar cabeçalhos também 404. Abortamento do cliente encerra stream; erro depois de cabeçalhos não vira um JSON completo.",
+              "Sem deadline geral de 10 s nessa rota. Abertura/consumo e CopyToAsync recebem RequestAborted; não foi encontrado prazo total de transferência.",
+              "Grant é consumido antes da emissão do arquivo. Falha parcial exige novo authorize; sem retomada Range/offset no contrato analisado. Um GET retry com mesmo grant não é equivalente a uma segunda transferência."
+            ]
+          ]
+        }
+      ],
+      "bullets": []
+    },
+    {
+      "title": "Grants, downloads e armazenamento: garantias e limite do hash",
+      "paragraphs": [
+        "Authorize exige sessão atual e deviceId idêntico ao da sessão. Resolve o artefato privado da biblioteca vigente e sela associated data contendo licença, dispositivo, sessão, item e grant. O corpo selado guarda path privado, revisão, SHA declarado, tamanho e lastWriteUtcTicks. O grant tem 32 bytes aleatórios e validade de 60 s; a resposta assinada leva artifact descriptor, itemRevision e grantId. O descritor não vem no catálogo. [SA09:219-264]",
+        "Consume verifica grant canônico, cipher presente, registro válido, Bearer, mesma licença/dispositivo e associação à mesma sessionId. Mudar a sessão não transfere automaticamente o grant. Resolve o artefato e compara path/revisão/SHA declarado/tamanho/mtime ao selo; consome o registro atomicamente antes de transmitir. Essas comparações não recalculam todo o SHA do arquivo por GET. As causas mascaradas recebem 404 GRANT_NOT_FOUND; falha parcial de transferência exige novo grant. [SA09:266-324, SA11:407-434]",
+        "A transferência abre FileStream sequencial com buffer de 65536 bytes, verifica tamanho/stamp antes dos headers, informa Content-Length e copia com RequestAborted. O contrato não oferece Range/offset. O cliente reinicia o arquivo inteiro e limita uma transferência, 32 pendentes e histórico de 48. Java instala por gerações privadas e recibos transacionais, remove apenas os arquivos que possui e conserva saves/arquivos desconhecidos. Essas rotas não recebem upload ou restore de saves Android. [SA08:91-137, SA26]",
+        "O hash completo de ROM durante download/instalação Java está desativado no snapshot herdado. O descritor assinado e seu SHA continuam como metadados; a publicação exige tamanho/formato/paths seguros. A preparação online é outro fluxo que precisa calcular/comparar a identidade real de conteúdo para o perfil autorizado. O diagnóstico da barreira não altera essas garantias. O dossiê não deve afirmar SHA local de download validado neste caminho atual. [SA26, SA01:126-145]"
+      ],
+      "tables": [],
+      "bullets": []
+    },
+    {
+      "title": "Matriz multiplayer e legado: contratos, autenticação e limites",
+      "paragraphs": [
+        "Rotas v3 aplicam no-store/nosniff, recusam query, exigem Bearer canônico e proof negociado e assinam snapshot após revalidar sessão. A prova HTTP associa método, path, token e body. Ticket WebSocket assina GET com body vazio e é consumido antes do upgrade. A identidade admitida tem licença/dispositivo elegíveis; ownership não é inferido do nome de usuário nem da senha de conexão externa. [SA03:10-56, SA07:12-22]",
+        "O cache de 64 recibos por peer/requestId/fingerprint oferece idempotência ao mesmo UUID e conteúdo. Não torna uma mutação com UUID novo segura após timeout ambíguo. Limites de 20 ações/s e chat de uma mensagem/s recebem 429 e Retry-After=1. Ticket/resume só entregam anexo próprio. As páginas públicas de 32/100, até 100 salas, não revelam connectionPassword, messages ou diagnóstico detalhado ao não membro. [SA01:149-212,235-268, SA03:37]",
+        "Lobby social v1, recuperação v2 e multiplayer v3 coexistem. Rotas legadas usam OnlineCommand/EventsRequest e station-relay.v1/station-stream.v2. V3 usa StationMultiplayerCommand e station-stream.v3/TSR3, ainda em URL /v1. Online/v1 no domain de assinatura não distingue relay: capability, multiplayerVersion, recoveryProtocol e binding exato são necessários. Station:Online:Enabled e MultiplayerEnabled devem permitir v3, independentemente das flags legadas RelayEnabled/RecoveryEnabled. [SA01:34,252-268, SA07:25-32,62-107]"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Endpoint",
+            "Request/response",
+            "Auth/ownership",
+            "Timeout/cache/erro"
+          ],
+          "rows": [
+            [
+              "POST /v1/station/online/multiplayer/command",
+              "StationMultiplayerCommand: action, requestId (UUID D); roomId?, itemId?, contentSha256?, engineId?, coreSha256?, runtimeSha256?, profileId?, profileSha256?, capacity (default 0), generation (default 0), linkId?, value (default false), nickname?, text?, clientMaximumPlayers (default 4), page (default 0), roomPageSize (default 100). JSON objeto até 8192 bytes, profundidade 16, sem duplicados; query proibida. Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga online/v1: licenseId, deviceId, sessionId, requestId e snapshot. Snapshot com schemaVersion=1, multiplayerVersion=3, capability=station-multiplayer.v3, instance, revision, selfId, platformPolicy, profiles, rooms, room e ticket. O patch adiciona room.barrierDiagnostics apenas ao membro.",
+              "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Bearer canônico de 32 bytes, header de 50 caracteres, proof conforme sessão e autenticação antes/depois da ação. AdmissionGate recusa create/join se existir membership legado. Salas, peers, anexos, replay e recibos ficam em memória. Own exige membership e generation exata antes de leave/ready/start/ticket. Só o host inicia; leave de qualquer membro após start aposenta toda a sala.",
+              "Controle de 15 s; ticket de 60 s. Peer sem sala pode expirar após 60 s; um membro não é removido apenas por atraso. No-store/nosniff. Cache de 64 recibos por peer: mesmo requestId e fingerprint é idempotente; outro conteúdo recebe 409 REQUEST_REUSED. Limite de 20 ações/s. Erro 500/timeout ambíguo exige reconciliar snapshot antes de mutação com UUID novo. 400 STATION_MULTIPLAYER_* para request/page/action/body/query; 413 BODY_TOO_LARGE; 401 SESSION_INVALID/REQUEST_PROOF_REQUIRED; 403 HOST_REQUIRED/LINK_FORBIDDEN/BLOCKED; 409 GENERATION_MISMATCH/GAME_MISMATCH/NOT_READY/UNRECOVERABLE/ALREADY_*; 429 RATE_LIMIT ou CHAT_RATE_LIMIT com Retry-After1; 503 DISABLED/FULL/REPLAY_FULL; 504 TIMEOUT."
+            ],
+            [
+              "GET (WebSocket upgrade) /v1/station/online/multiplayer/relay",
+              "Upgrade WebSocket, subprotocol station-stream.v3, sem query. Authorization StationRelay <ticket>, token one-use de 32 bytes, com proof do GET e body vazio. 101 com station-stream.v3 e frames binários TSR3. Erros anteriores ao upgrade usam JSON finito {schemaVersion:1, code, message:code} e Content-Length.",
+              "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. TakeTicket valida sala/generation/link/slot, assinatura e anexo exclusivo. AuthorizeRelay revalida dispositivo/licença em até 5 s antes do upgrade e durante Watch. Memória limitada: 3 jogadores, 2 links, 4 attachments e reserva de 1048576 bytes. Janela de 262144 bytes por direção; libera reserva após aposentadoria e último detach.",
+              "Auth de 5 s; Watch a cada 10 s. Fecha attachment se heartbeat de controle ausente ≥60 s ou frame recebido ausente ≥30 s. Sem prazo global de READY. CloseOutput de até 2 s depois de juntar writer/watch. No-store. Ticket consumido não pode ser reutilizado; resume gera outro. Sala, links e replay persistem na perda de rede. Ausência de tráfego fecha attachment, sem escolher saída humana. 400 STATION_MULTIPLAYER_UPGRADE_REQUIRED/frame inválido; 401 TICKET_INVALID/SESSION_INVALID; 409 ALREADY_ATTACHED/UNRECOVERABLE/proof-watermark errors; 503 DISABLED; 504 TIMEOUT antes de headers. Erro de protocolo depois do upgrade encerra stream em Unrecoverable; erro de transporte pausa para recuperar."
+            ],
+            [
+              "POST /v1/station/online/command",
+              "OnlineCommand legado: action/requestId e campos opcionais nickname, roomId, peerId, itemId, engineId, contentSha256, optionsSha256, coreSha256, runtimeSha256, address, port, text, value, page, transport, inviteCode, recoveryProtocol e generation, conforme ação. Não substituir por StationMultiplayerCommand. Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga online/v1 com snapshot legado de lobby, pessoas, convites e sala v1/v2. O mesmo domain online/v1 assina v3; snapshot/capability/protocolo distinguem a família.",
+              "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Sessão e proof negociados. AdmissionGate impede create/join legado de identidade já em v3. Block também afeta a sala multiplayer. Estado social e legacy membership em memória; a coordenação explicitamente impede duas memberships simultâneas da mesma identidade. Mantém operações sociais existentes.",
+              "Handler de 15 s. Timeouts legados de lobby de 30/90 s não são prazos da barreira v3. No-store/nosniff; recibos, eventos e revisões do domínio legado. HTTP 200 desse endpoint não demonstra capacidade v3. STATION_ONLINE_DISABLED503, SESSION_INVALID401, BODY_INVALID400/BODY_TOO_LARGE413, erros de ação/autorização/geração do domínio legado,429 Retry-After1,504 STATION_ONLINE_TIMEOUT."
+            ],
+            [
+              "POST /v1/station/online/events",
+              "EventsRequest {requestId, instance?, revision, page}. Bearer e proof conforme a segurança da sessão. Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga online/v1 com requestId e snapshot depois de mudança da revisão ou espera limitada. A sessão é reautenticada após esperar.",
+              "HTTPS com validação de hostname e pin no cliente; valores de pin/chave não reproduzidos. Sessão Bearer quando indicada; prova de pedido conforme política negociada. Pin TLS e assinatura de resposta são verificações distintas. Só entrega snapshot novo a sessão ainda válida; revogação revalida no fim. Leitura e presença do domínio legado; entrega não liga motores, não cria grant de ROM.",
+              "Espera por evento de até 10 s, dentro do handler de 15 s. no-store; long polling usa instance/revision. Não substitui heartbeat/progresso da barreira v3. 401 SESSION_INVALID; 400 BODY_INVALID; 413 BODY_TOO_LARGE; 429 limitações do hub; 503 ONLINE_DISABLED; 504 ONLINE_TIMEOUT."
+            ],
+            [
+              "GET (WebSocket upgrade) /v1/station/online/relay",
+              "Authorization StationRelay <ticket> e proof, sem query. Subprotocol station-relay.v1 ou station-stream.v2 conforme lease. Não usa station-stream.v3/TSR3. 101 com o protocolo selecionado; JSON finito se o upgrade for recusado. V1 faz forwarding simples; v2 oferece recuperação de stream entre o par.",
+              "HTTPS com validação de hostname e pin no cliente; valores de pin/chave não reproduzidos. Sessão Bearer quando indicada; prova de pedido conforme política negociada. Pin TLS e assinatura de resposta são verificações distintas. Ticket do domínio legado; v2 exige RecoveryEnabled e autorização de relay conforme dispositivo. Domínio legado independente, interoperando no bloqueio de admission. Não compartilha formato de payload v3 por ter /v1 no URL.",
+              "Timeouts pertencem ao relay selecionado. Não aplicar as regras de quatro attachments v3 a uma sala de dois endpoints v2. no-store; ticket one-use. Flags legadas e o endpoint antigo não demonstram v3 ativo. 503 STATION_ONLINE_RELAY_DISABLED/STATION_RECOVERY_DISABLED; 400 UPGRADE_REQUIRED; 401 TICKET_INVALID/SESSION_INVALID; 409 STATION_RECOVERY_PROTOCOL_MISMATCH; 504 ONLINE_TIMEOUT."
+            ],
+            [
+              "GET local /ready/station/online; /ready/station/online/diagnostics",
+              "Operador local. Diagnostics exige Host localhost/IP loopback, remoto loopback e ausência de forwarded headers. Agregados legacy/recovery/multiplayer conforme flags. O diagnostics atual pertence exclusivamente a recovery v2. O novo diagnóstico v3 entra no snapshot assinado do membro, sem nova rota de operador.",
+              "Restrição de endereço/host, endpoint interno. Nenhuma consulta a produção foi realizada. Leitura numérica; não altera configurações nem ativa kit.",
+              "Leitura local de snapshot; sem promessa de prontidão de jogo ou engineId. No-store. Agregados activeRooms/connections/budget não mostram CPU do núcleo ou vídeo e não liberam títulos por cache. 404 para acesso não autorizado por localidade; 503 quando flags necessárias desligadas."
+            ],
+            [
+              "Não mapeado neste head Família de mídia implementada no cliente; sem rota correspondente na árvore aplicada a6b/docs524d",
+              "Não declarar contrato produtivo com base apenas no cliente. Não observado: nenhuma chamada produtiva efetuada.",
+              "Implementação existente em branch histórica separada não prova composição no host atual. Sem prova de serviço atual publicado/ativo. Deve verificar branch/host/config antes de prometer feature.",
+              "Não determinado neste host. Capacidades/caches do cliente não suprem rota ausente no head auditado. A ausência de mapeamento na árvore é gap de composição; não é afirmação de HTTP404 real em produção."
+            ]
+          ]
+        }
+      ],
+      "bullets": []
+    },
+    {
+      "title": "Kit R134: diferenças de identidade e condições exatas para ativação",
+      "paragraphs": [
+        "O handoff público R133 não deve ser usado como lista final de engineId da R134. A R134 recompôs quatro identidades de engine/core/runtime, preservando a baseline. Mesmo um título com perfil anterior pode deixar de corresponder aos novos binários. Não contornar mismatch com ID legado, core alternativo ou capabilities de cache. Os IDs extraídos do kit R134 são informações públicas de handoff; este relatório não republica os artefatos nativos privados. [SA17, SA18, SA24]",
+        "O kit atual deve ser aplicado pelo responsável Linux autorizado, usando o conjunto privado original: ARTIFACTS com seis bibliotecas e três JSON técnicos, DELIVERY com runtime/package congelados, TOOLS na versão exata, private ledger e CANDIDATE como caminho absoluto ainda inexistente. Deve resolver a configuração ativa: outputDirectory, catálogo, índice de registry/engineManifest e preparedModes pertencem ao mesmo conjunto vigente; confirmar também os módulos Python realmente importados e seus hashes. O handoff público sanitizado não substitui o input privado da ativação. [SA17:46-60]",
+        "RequireExplicitEngineModes deve permanecer true. Os controllerProfiles administrativos devem ser objetos com schema/controller/devices/coreOptions, e não uma lista de nomes de assets. Exigem UTF-8 canônico, ordem determinística, ausência de BOM/terminador externo e vínculo SHA de perfil. validate_modes, prepare e validate_manifest devem usar os paths/config/ports vigentes e preservar a baseline de 5176 perfis/321 modos e os fluxos Sony/SNES/Mega existentes. PSX com HLE automático continua recusado; presença de arquivo não cria homologação. [SA17:64-85]",
+        "A aplicação nativa administrativa exige getuid=0 e PKEXEC_UID original do operador, scan.lock, selos, hashes de baseline e ledger privado. Não se pode forjar variável de ambiente para contornar a validação. A publicação de modes, engines e profiles revalida os arquivos e faz rollback dos bytes originais dos três arquivos se houver falha ou mudança de baseline. Reiniciar a API não substitui consistência. Nenhum desses passos foi executado nesta auditoria. [SA17:92-105]",
+        "O ProfileMonitor verifica o arquivo a cada 10 s, exige caminho absoluto regular sem reparse, tamanho máximo de 16 MiB e stamp estável antes de ReplaceProfiles. Registro inválido mantém a última versão válida. Perfis equivalentes preservam os objetos usados pelas salas existentes; o novo registro não muda o binding de uma sala já iniciada. Isso permite reload de dados sem restart da API, mas o scanner Python executa uma vez e seus imports/config precisam ser resolvidos separadamente. [SA01:96-111, SA05:20-65, SA17:102]",
+        "O kit descreve 78 modos/44 jogos preparados: N64 66 modos/33 jogos, GameCube 9/8, Wii 3/3. PSX tem zero modos novos confirmados e 84 pendências de HLE. Esses números indicam preparação e recusas, não aplicação produtiva ou gameplay. Depois da aplicação, exigir snapshot fresco assinado station-multiplayer.v3 que corresponda a content/core/runtime/profile/mode/allowedPlayerCounts do título real. ServerReady=true, HTTP 200, PONG, perfil em cache e relay v2 não substituem essa prova. [SA17, SA18, SA24]",
+        "O patch numérico é aditivo à API e exige build/deploy separado se o operador quiser receber barrierDiagnostics. Publicar branches de auditoria, documentos e builddocs não ativa o kit de engines nem atualiza o executável produtivo. O campo pode estar ausente até existir deployment confirmado; o cliente deve tratá-lo como opcional. Nesta tarefa foi autorizada publicação de fontes/handoff, sem deploy de servidor. [SA22, SA23]"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Plataforma",
+            "Identidade do handoff R133",
+            "Identidade do kit R134"
+          ],
+          "rows": [
+            [
+              "PSX",
+              "pcsx-rearmed-ff81ed17-player-v3-42e4ca5f2acc",
+              "pcsx-rearmed-ff81ed17-player-v3-69ac2b703f03"
+            ],
+            [
+              "N64",
+              "mupen64plus-ae-33bf7021-n64-v3-6dd47d4e0092",
+              "mupen64plus-ae-33bf7021-n64-v3-5f56099c433f"
+            ],
+            [
+              "GameCube",
+              "dolphin-5102a033-gamecube-v3-5912af1feeef",
+              "dolphin-5102a033-gamecube-v3-9c87e2ec4c79"
+            ],
+            [
+              "Wii",
+              "dolphin-5102a033-wii-v3-5912af1feeef",
+              "dolphin-5102a033-wii-v3-9c87e2ec4c79"
+            ]
+          ]
+        }
+      ],
+      "bullets": []
+    },
+    {
+      "title": "Matriz obrigatória de homologação em três jogadores",
+      "paragraphs": [
+        "O teste físico deve usar título conhecido, conteúdo identificado e perfil assinado com 3 explicitamente presente em allowedPlayerCounts. Selecionar um modo de máximo 4 jogadores não basta. Os três dispositivos devem usar o mesmo engine/core/runtime/profile e identidade de conteúdo. Os dois guests entram na mesma sala e geração; o host inicia após os três estarem prontos no lobby. Um perfil SNES de três jogadores já homologado pode isolar a barreira enquanto os novos engines N64/GC/Wii estiverem pendentes, sem estender a homologação destes últimos. [SA01:126-192, SA17:108, SA21]",
+        "Registrar snapshots próprios sanitizados com geração/epoch/state, quantidade de jogadores e contadores de link/attachments/HELLO/PAUSED/READY/pending/hasPlayed. Não exportar IDs de sala/peer, tokens, senha, serial USB ou caminho de ROM. No start de três jogadores, observar quatro attachments, quatro HELLO/PAUSED/READY e pending zero, depois confirmar execução do jogo, vídeo, áudio e inputs nos três aparelhos. Só a observação física confirma gameplay; contadores e frontend aberto não certificam o núcleo. [SA21-SA23]",
+        "Na recuperação, interromper e restabelecer a rede de um guest, alternar foreground/background e produzir replay controlado com input legítimo. A barreira deve pausar globalmente, preservar roster, aumentar epoch, reconstruir anexos com tickets frescos, drenar todas as janelas, receber todos os READY da mesma época e retomar conjuntamente. Nenhum guest deve ser retirado automaticamente para obter Ready. Saída humana de qualquer participante após start deve confirmar ownRoom=null nos três e retorno do aplicativo ao lobby sem ANR.",
+        "Provocar leave com geração anterior ao start para confirmar 409 sem saída e validar o helper humano do cliente após snapshot fresco do mesmo binding. Timeout ambíguo exige reconciliar ownRoom antes de outra mutação. Verificar também failed/unrecoverable com saída explícita, recusa de perfil incompatível, manutenção da última classificação válida após arquivo administrativo inválido e indicação de READY ausente sem autoexit. Essa matriz é um requisito pendente; esta auditoria cumpriu somente a parte em processo. [SA01-SA05, SA21-SA23]"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Caso",
+            "Critério de aceitação",
+            "Evidência a guardar"
+          ],
+          "rows": [
+            [
+              "Três jogadores: positivo",
+              "Quatro READY, pending=0 e gameplay/inputs nos três.",
+              "Snapshot próprio, logs numéricos nativos e observação física."
+            ],
+            [
+              "Um guest sem READY, com PING",
+              "Permanece Synchronizing e mostra awaiting-ready; saída humana funciona.",
+              "ready=3, expected=4, pending=0; hasPlayed não pode ser falso positivo."
+            ],
+            [
+              "Anexo ausente",
+              "Missing-attachment; sem início automático com outro guest.",
+              "attached<expected; reconecta ao mesmo link/slot."
+            ],
+            [
+              "Replay pendente",
+              "ACK drena bytes, mas não libera sem READY atualizado.",
+              "pending>0 → 0; epoch coerente e watermark Accepted."
+            ],
+            [
+              "Perda de rede / suspensão",
+              "Pausa global; recupera com roster constante e play conjunto.",
+              "epoch aumenta, tickets one-use frescos; sem leave automático."
+            ],
+            [
+              "Leave com generation antiga",
+              "409 conserva sala; retry humano da mesma sala com geração fresca confirma saída.",
+              "Generation mismatch, snapshot assinado e ownRoom=null."
+            ],
+            [
+              "Saída de host/guest após start",
+              "OwnRoom=null para todos; frontend retorna; reserva=0 após detach.",
+              "Sem ANR, socket abandonado ou sala lógica fantasma."
+            ],
+            [
+              "Falha terminal",
+              "Unrecoverable explicado; resume recusado; leave disponível.",
+              "Failed/erro de protocolo; sem promessa de recuperação fabricada."
+            ],
+            [
+              "Perfil [2,4] versus três",
+              "Recusa três por count; sem bypass.",
+              "Snapshot exato com quantidade explicitamente aprovada."
+            ],
+            [
+              "Baseline/kit administrativo",
+              "Validadores atuais, rollback e perfis baseline preservados.",
+              "Recibo da aplicação nativa e hashes/config/imports corretos."
+            ]
+          ]
+        }
+      ],
+      "bullets": []
+    },
+    {
+      "title": "Gaps remanescentes e condições para fechar o handoff",
+      "paragraphs": [
+        "O dossiê anterior descreve mídia/carrossel no cliente, mas a árvore aplicada a6b/docs524d não mapeia as rotas correspondentes. Existe uma branch histórica de mídia separada; isso não prova sua composição no host produtivo nem uma falha HTTP observada. Antes de prometer clips, confirmar a fonte, flags, host e mídia atuais. Nenhum pedido produtivo foi feito para comprovar status. [SA25, SA26]",
+        "Este recorte SQL complementa o dossiê de cliente com lifetime de um dispositivo, entitlement pago, fortalecimento monotônico de segurança e masking404 de grants. Rate limiting é configurável: números de código devem ser rotulados como defaults e limites, sem afirmar cota ativa. Catálogo contém jogos/metadados; artifact/grant chegam somente na autorização. Hash declarado e hash local da preparação online permanecem distintos da instalação Java, que omite o SHA completo de ROM. [SA08-SA11, SA26]",
+        "Ainda faltam recibo administrativo Linux de aplicação dos IDs R134 atuais, snapshot v3 fresco da API com os mesmos binários/conteúdo e teste físico continuado com três aparelhos. A auditoria não comprova execução de núcleo em cada attachment, causa física da ausência de READY, latência WAN, timeout do proxy TLS nem valores ativos das flags do host. Os 29 checks novos aprovados verificam regras de domínio e precisão do diagnóstico; não substituem esses itens. [SA17, SA21-SA25]",
+        "Para publicar, o responsável deve revisar o patch aditivo e documentos, conservar artefatos privados fora dos repositórios, incluir o recibo de 1452 checks com scope correto e criar os commits nas branches autorizadas. Deployment requer autorização operacional e aplicação pelo procedimento nativo do host vigente. Não concluir que o servidor está ativado, que três jogadores estão homologados ou que o loading foi corrigido em produção só porque a fonte compilou e o teste local passou. A entrega acrescenta observabilidade e reproduz a condição bloqueante; a correção de saída humana no cliente é validada separadamente."
+      ],
+      "tables": [],
+      "bullets": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "SA01",
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayer.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/src/TurboRamaSuiteOnlineServer/StationMultiplayer.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Registro de perfis, salas, geração, ownership, ações e tickets."
+    },
+    {
+      "id": "SA02",
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayerStream.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/src/TurboRamaSuiteOnlineServer/StationMultiplayerStream.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Barreira global, replay, epochs, recuperação e watchdog."
+    },
+    {
+      "id": "SA03",
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayerEndpoints.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/src/TurboRamaSuiteOnlineServer/StationMultiplayerEndpoints.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Rotas HTTP e WebSocket v3, autenticação, envelopes e limites."
+    },
+    {
+      "id": "SA04",
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayerPlatformPolicy.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/src/TurboRamaSuiteOnlineServer/StationMultiplayerPlatformPolicy.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Plataformas e tetos administrativos por plataforma."
+    },
+    {
+      "id": "SA05",
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayerProfileMonitor.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/src/TurboRamaSuiteOnlineServer/StationMultiplayerProfileMonitor.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Reload do registro validado de perfis sem reiniciar API."
+    },
+    {
+      "id": "SA06",
+      "path": "src/TurboRamaSuiteOnlineServer/StationOnline.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/src/TurboRamaSuiteOnlineServer/StationOnline.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Domínio legado v1/v2, lobby, presença e diferenças de timeout."
+    },
+    {
+      "id": "SA07",
+      "path": "src/TurboRamaSuiteOnlineServer/StationOnlineEndpoints.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/src/TurboRamaSuiteOnlineServer/StationOnlineEndpoints.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Rotas legadas, composição das flags v3 e diagnóstico operacional."
+    },
+    {
+      "id": "SA08",
+      "path": "src/TurboRamaSuiteOnlineServer/StationEndpoints.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/src/TurboRamaSuiteOnlineServer/StationEndpoints.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Rotas comerciais, transferência, rate limit e timeout."
+    },
+    {
+      "id": "SA09",
+      "path": "src/TurboRamaSuiteOnlineServer/StationService.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/src/TurboRamaSuiteOnlineServer/StationService.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Esquemas de ativação/sessão, perfil, catálogo e grant."
+    },
+    {
+      "id": "SA10",
+      "path": "src/TurboRamaSuiteOnlineServer/StationProtocol.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/src/TurboRamaSuiteOnlineServer/StationProtocol.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Identidade comercial, assinatura RSA-PSS e envelope."
+    },
+    {
+      "id": "SA11",
+      "path": "src/TurboRamaSuiteOnlineServer/StationStore.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/src/TurboRamaSuiteOnlineServer/StationStore.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Elegibilidade comercial, transações, revogação e consumo de grants."
+    },
+    {
+      "id": "SA12",
+      "path": "src/TurboRamaSuiteOnlineServer/StationLibrary.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/src/TurboRamaSuiteOnlineServer/StationLibrary.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Catálogo publicado, metadados, capas e artefatos vinculados."
+    },
+    {
+      "id": "SA13",
+      "path": "tests/StationMultiplayer/Checks.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/tests/StationMultiplayer/Checks.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Suite real do domínio e casos de allowedPlayerCounts."
+    },
+    {
+      "id": "SA14",
+      "path": "tests/StationMultiplayer/CapacityChecks.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/tests/StationMultiplayer/CapacityChecks.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Carga sintética limitada em processo; 320 participantes e 80 salas."
+    },
+    {
+      "id": "SA15",
+      "path": "tests/StationMultiplayer/HttpChecks.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/tests/StationMultiplayer/HttpChecks.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Suite HTTP separada, existente e não executada nesta validação."
+    },
+    {
+      "id": "SA16",
+      "path": "docs/station-android/online-plataformas-20261009/r128-retorno-servidor-20261011.json",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/docs/station-android/online-plataformas-20261009/r128-retorno-servidor-20261011.json",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Recibo histórico de preparação sem ativação produtiva."
+    },
+    {
+      "id": "SA17",
+      "path": "docs/station-android/r133/HANDOFF-APP-R133-PARA-SERVIDOR-20261011.md",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/524d2ebff08353fda62aacbc5f05f9248ba69b7c/docs/station-android/r133/HANDOFF-APP-R133-PARA-SERVIDOR-20261011.md",
+      "ref": "524d2ebff08353fda62aacbc5f05f9248ba69b7c",
+      "purpose": "Procedimento administrativo nativo e pré-requisitos de aplicação."
+    },
+    {
+      "id": "SA18",
+      "path": "docs/station-android/r133/DELIVERY.json",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/524d2ebff08353fda62aacbc5f05f9248ba69b7c/docs/station-android/r133/DELIVERY.json",
+      "ref": "524d2ebff08353fda62aacbc5f05f9248ba69b7c",
+      "purpose": "Delivery público R133 e status de não ativação."
+    },
+    {
+      "id": "SA19",
+      "path": "docs/station-android/AGENTS.md",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/docs/station-android/AGENTS.md",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Instruções herdadas e limites de publicação/ativação."
+    },
+    {
+      "id": "SA20",
+      "path": "src/TurboRamaSuiteOnlineServer/StationRecoveryRelay.cs",
+      "url": "https://github.com/luziellacerda/Servidor-pix/blob/a6b58e9beb12eb564c1b58d9d4c32ed3e7513861/src/TurboRamaSuiteOnlineServer/StationRecoveryRelay.cs",
+      "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+      "purpose": "Codec de frames e janelas FIFO reaproveitados por v3."
+    },
+    {
+      "id": "SA21",
+      "path": "tests/StationMultiplayer/BarrierDiagnosticsChecks.cs",
+      "url": null,
+      "ref": "patch-local-proposto-R134",
+      "purpose": "29 verificações determinísticas novas, com classes reais de hub/stream/replay; será publicado na branch de auditoria pelo responsável."
+    },
+    {
+      "id": "SA22",
+      "path": "src/TurboRamaSuiteOnlineServer/StationMultiplayerStream.cs:59-95; StationMultiplayer.cs:259-269",
+      "url": null,
+      "ref": "patch-local-proposto-R134",
+      "purpose": "Diagnóstico numérico opcional, exclusivo de membros e snapshot coerente; não ativa motores nem muda regras de progressão."
+    },
+    {
+      "id": "SA23",
+      "path": "work/server-three-player-validation.json",
+      "url": null,
+      "ref": "execução-local-20261011",
+      "purpose": "Recibo da suite real de domínio: 29 checks novos, 1452 totais; sem TLS, WAN, Android ou deploy."
+    },
+    {
+      "id": "SA24",
+      "path": "incoming-engine-manifest.json do kit privado R134, identificadores públicos extraídos",
+      "url": null,
+      "ref": "R134-kit-local",
+      "purpose": "Comparação dos quatro engineId de R134 com o handoff público R133; artefatos privados não incluídos."
+    },
+    {
+      "id": "SA25",
+      "path": "consulta GitHub branches, páginas 1 e 2, 117 branches",
+      "url": "https://github.com/luziellacerda/Servidor-pix/branches",
+      "ref": "consulta-20261011",
+      "purpose": "Confirmação de heads R128 aplicado a6b e docs R133 524d; não foi localizado recibo posterior de ativação R134."
+    },
+    {
+      "id": "SA26",
+      "path": "work/dossier-services.json, fontes SV05/SV06/SV07 e SV39",
+      "url": null,
+      "ref": "APK-R134-4f9039e",
+      "purpose": "Configuração pública do cliente, transporte HTTPS, identidade, cache e coexistência comercial v1/multiplayer v3."
+    }
+  ],
+  "findings": [
+    {
+      "id": "MP-01",
+      "severity": "high",
+      "status": "comprovado-no-código-e-teste",
+      "title": "READY ausente pode manter Synchronizing sem prazo global",
+      "condition": "3 jogadores, 2 links e 4 attachments; HELLO=4, PAUSED=4, READY=3 e pending=0, com heartbeat/PING ativos.",
+      "impact": "Transport pode continuar vivo sem a READY ausente; hasPlayed=false até READY válida, leave ou falha.",
+      "correction": "Diagnóstico aditivo por membro; investigar emissor nativo e oferecer confirmação de saída humana. Não forçarPlaying.",
+      "sources": [
+        "SA02:59-95,149-159",
+        "SA21",
+        "SA23"
+      ]
+    },
+    {
+      "id": "MP-02",
+      "severity": "high",
+      "status": "comprovado-no-código-e-teste",
+      "title": "Leave stale generation recusa sem retirar membership",
+      "condition": "Own verifica generation antes de Leave; o binding do cliente pode ser anterior ao start.",
+      "impact": "409 e erro ignorado pelo cliente podem conservar sala lógica após saída local.",
+      "correction": "Cliente: retry apenas de GENERATION_MISMATCH, após snapshot assinado fresco da mesma sala/protocolo/IDs/hashes e intenção humana. O patch do servidor preserva Own.",
+      "sources": [
+        "SA01:193,217-225",
+        "SA21"
+      ],
+      "clientFixOwner": "features_online"
+    },
+    {
+      "id": "MP-03",
+      "severity": "medium",
+      "status": "comprovado-no-código",
+      "title": "MaximumPlayers4 não significa allowed count3",
+      "condition": "Perfil com allowedPlayerCounts=[2,4].",
+      "impact": "Start com três jogadores é corretamente recusado; selecionar o perfil incorreto pode parecer defeito de transporte.",
+      "correction": "O teste físico de três requer 3 explicitamente presente na classificação assinada do modo/conteúdo.",
+      "sources": [
+        "SA01:126-131,182-192",
+        "SA13"
+      ]
+    },
+    {
+      "id": "MP-04",
+      "severity": "high",
+      "status": "gap-de-evidência-pública",
+      "title": "Handoff público R133 possui IDs anteriores ao kit R134",
+      "condition": "Quatro engineId recompostos no APK/kit R134; heads de retorno permanecem a6b/docs524d.",
+      "impact": "Registro aplicado anterior pode resultar em profile mismatch/online-engine-pending para os binários R134.",
+      "correction": "O administrador nativo deve aplicar o kit privado R134 exato e guardar recibos, sem usar IDs R133 ou cache.",
+      "sources": [
+        "SA17",
+        "SA18",
+        "SA24",
+        "SA25"
+      ]
+    },
+    {
+      "id": "SV-01",
+      "severity": "medium",
+      "status": "comprovado-no-código",
+      "title": "Catálogo e grant são contratos separados",
+      "condition": "Catalog PublicValue contém jogos/metadados; artifact descriptor é materializado em authorize.",
+      "impact": "Texto incorreto pode alegar que o cache autoriza download/hash.",
+      "correction": "Descritor assinado chega em download-grant; a instalação Java atual não verifica o hash completo de ROM.",
+      "sources": [
+        "SA09:184-198,219-264",
+        "SA26"
+      ]
+    },
+    {
+      "id": "SV-02",
+      "severity": "medium",
+      "status": "comprovado-na-árvore",
+      "title": "Rotas de mídia do cliente ausentes no head aplicado auditado",
+      "condition": "Branch de mídia separada; sem mapeamento correspondente no head a6b/docs524d.",
+      "impact": "Implementação do cliente não comprova serviço produtivo.",
+      "correction": "Confirmar composição de host/branch antes de declarar a feature; não afirmar HTTP 404 real sem observação.",
+      "sources": [
+        "SA25",
+        "SA26"
+      ]
+    },
+    {
+      "id": "MP-05",
+      "severity": "medium",
+      "status": "limite-de-validação",
+      "title": "Suite domínio não equivale a API/TLS/WAN ou gameplay",
+      "condition": "1452 checks C# isolados, incluindo 29 novos; HttpChecks não executada.",
+      "impact": "Risco de declarar homologação física antes da evidência.",
+      "correction": "Rotular o scope e executar a matriz física de três após ativação autorizada.",
+      "sources": [
+        "SA15",
+        "SA21",
+        "SA23"
+      ]
+    }
+  ],
+  "endpointMatrix": [
+    {
+      "name": "Desafio de ativação",
+      "method": "POST",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/activations/challenge",
+      "request": "schemaVersion=1, domain=TurboRamaStationAndroid/<operação>/v1, productId=applicationId=TURBORAMA_STATION_ANDROID, deviceId canônico derivado da chave, clientVersion, deviceManufacturer, deviceModel e androidSdk; domain request-activation-challenge/v1, activationCode Base64URL de 32 bytes e devicePublicKey SPKI RSA-2048 Base64URL.",
+      "response": "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga activation-challenge/v1: deviceId, challengeId, nonce, expiresInSeconds=60 e security (requestProofVersion, keyAttestation, requireVerifiedApp, keyAttestationChallenge, serverTime).",
+      "auth": "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Não exige Bearer prévio; verifica código elegível e vínculo público da chave.",
+      "errors": "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR. Código inelegível 403 STATION_ACTIVATION_INVALID; chave/dispositivo inválido 400 STATION_DEVICE_INVALID.",
+      "timeout": "10 s no handler; desafio 60 s.",
+      "cacheRetry": "Resposta de desafio não é uma licença reutilizável. Sem retry automático genérico no servidor; repetir produz outro desafio, sujeito à quota.",
+      "persistenceOwnership": "Insere desafio vinculado à licença/dispositivo candidatos e às gerações de ativação/revogação. Ainda não consome a ativação.",
+      "sources": [
+        "SA08:15-20,140-225",
+        "SA09:27-52",
+        "SA10:15-71",
+        "SA11:36-78"
+      ]
+    },
+    {
+      "name": "Conclusão de ativação",
+      "method": "POST",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/activations/complete",
+      "request": "StationDeviceEnvelope {payload, signature, attestationChain?, keySignature?}. Payload assinado: identidade comum com domain activate/v1, challengeId, nonce, activationCode, devicePublicKey e metadados do cliente. Limite exterior de 65536 bytes e payload decodificado até 8192.",
+      "response": "Envelope JSON {keyId, payload, signature}; payload é Base64URL dos bytes UTF-8 assinados RSA-PSS/SHA-256. A carga contém schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga activated/v1: licenseId, deviceId, challengeId, nonce.",
+      "auth": "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Prova do dispositivo RSA-2048 PSS/SHA-256, com assinatura de 256 bytes. Proof/attestation negociados conforme política vigente.",
+      "errors": "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR. 409 STATION_CHALLENGE_INVALID/CHALLENGE_MISMATCH/ACTIVATION_REPLAY/DEVICE_ALREADY_BOUND/TRANSACTION_CONFLICT; 403 STATION_ACTIVATION_INVALID/PROOF_INVALID/DEVICE_DENIED.",
+      "timeout": "10 s no handler; desafio deve permanecer válido e não consumido.",
+      "cacheRetry": "Ativação one-use. O store só repete transação serializável em deadlock/serialization, até 3 tentativas. Não repetir conclusão sem reconciliar uma resposta ambígua.",
+      "persistenceOwnership": "A transação consome desafio/código, vincula um dispositivo, muda enrollment para BOUND e registra segurança. Entitlement lifetime de um dispositivo.",
+      "sources": [
+        "SA08:18-20,154-225",
+        "SA09:54-94",
+        "SA10:76-112",
+        "SA11:120-234"
+      ]
+    },
+    {
+      "name": "Desafio de sessão",
+      "method": "POST",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/challenges",
+      "request": "schemaVersion=1, domain=TurboRamaStationAndroid/<operação>/v1, productId=applicationId=TURBORAMA_STATION_ANDROID, deviceId canônico derivado da chave, clientVersion, deviceManufacturer, deviceModel e androidSdk; domain request-session-challenge/v1 e licenseId.",
+      "response": "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga session-challenge/v1: licenseId, deviceId, challengeId, nonce, expiresInSeconds=60 e security.",
+      "auth": "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Dispositivo deve estar ACTIVE e vinculado a licença elegível BOUND. Não exige Bearer prévio.",
+      "errors": "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR. LicenseId inválido 400 STATION_LICENSE_INVALID; autorização 403 STATION_DEVICE_DENIED ou STATION_LICENSE_DENIED.",
+      "timeout": "10 s; desafio 60 s.",
+      "cacheRetry": "Desafio específico, não cache duradouro nem sessão. Novo desafio é necessário depois de expirar/consumir.",
+      "persistenceOwnership": "Insere desafio SESSION ligado à geração de revogação atual; não altera entitlement.",
+      "sources": [
+        "SA08:21-23",
+        "SA09:97-122",
+        "SA11:86-117"
+      ]
+    },
+    {
+      "name": "Abertura de sessão",
+      "method": "POST",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/sessions",
+      "request": "StationDeviceEnvelope assinado. Payload com identidade domain open-session/v1, challengeId, nonce, licenseId e metadados do cliente; extensões de segurança conforme negociação.",
+      "response": "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga session/v1: licenseId, deviceId, challengeId, nonce, sessionId, accessToken, expiresInSeconds=180, requestProof, verifiedApp e serverTime. Somente nomes de campos, sem credenciais reais.",
+      "auth": "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Chave já vinculada, prova do desafio e segurança monotônica.",
+      "errors": "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR. 409 STATION_CHALLENGE_INVALID/CHALLENGE_MISMATCH; 403 STATION_DEVICE_DENIED/PROOF_INVALID/LICENSE_DENIED/SECURITY_DOWNGRADE_DENIED; 503 STATION_SECURITY_UNAVAILABLE.",
+      "timeout": "10 s no handler; sessão autorizada 180 s no banco.",
+      "cacheRetry": "Bearer fica em memória no app. Cliente obtém nova sessão próximo da expiração; não prolonga a sessão pelo simples uso. Resposta/carga antiga não contorna revogação.",
+      "persistenceOwnership": "Consome desafio e insere digest do accessToken, contexto sessionId e geração de revogação. Flags de request-proof/verifiedApp só fortalecem o vínculo.",
+      "sources": [
+        "SA08:24-26",
+        "SA09:124-164,329-358",
+        "SA11:238-384"
+      ]
+    },
+    {
+      "name": "Perfil de comprador",
+      "method": "GET",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/me",
+      "request": "Sem corpo. Authorization Bearer de sessão atual.",
+      "response": "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga profile/v1: licenseId, deviceId, sessionId, displayName limitado a 80 caracteres e profileVersion.",
+      "auth": "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Sessão e entitlement elegíveis; perfil pertence ao comprador do mesmo produto/compra.",
+      "errors": "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR. 401 STATION_SESSION_INVALID; 503 STATION_PROFILE_NOT_READY.",
+      "timeout": "10 s.",
+      "cacheRetry": "Cliente pode preservar projeção assinada conforme cache privado. O código de rota analisado não mostra mutação de nome pelo app.",
+      "persistenceOwnership": "Leitura do perfil no banco; não cria perfil, não edita comprador nem licença.",
+      "sources": [
+        "SA08:27-34",
+        "SA09:166-181",
+        "SA11:333-362"
+      ]
+    },
+    {
+      "name": "Catálogo comercial",
+      "method": "GET",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/catalog?metadata=1",
+      "request": "Bearer. Metadata exatamente 1 acrescenta metadados; ausência retorna o catálogo básico.",
+      "response": "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga catalog/v1: licenseId, deviceId, sessionId, revision e items PublicValue. Contém jogos/metadados públicos; descritor de artefato e grant não chegam nessa resposta.",
+      "auth": "HTTPS com validação de hostname e pin no cliente; valores de pin/chave não reproduzidos. Sessão Bearer quando indicada; prova de pedido conforme política negociada. Pin TLS e assinatura de resposta são verificações distintas. Sessão elegível e biblioteca atual disponível.",
+      "errors": "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR.401 STATION_SESSION_INVALID; 503 STATION_CATALOG_NOT_READY.",
+      "timeout": "10 s.",
+      "cacheRetry": "Cliente conserva catálogo assinado por licença/dispositivo, revisões e capas. Uma resposta de perfil/plataforma antiga não autoriza online. Falha transitória de rede não equivale a revogação.",
+      "persistenceOwnership": "Leitura da biblioteca monitorada. Catálogo publicado não é inventário bruto de arquivos do servidor; alterações administrativas ocorrem fora desta rota.",
+      "sources": [
+        "SA08:35-42",
+        "SA09:184-198",
+        "SA12",
+        "SA26"
+      ]
+    },
+    {
+      "name": "Capas",
+      "method": "GET",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/covers/{coverId}",
+      "request": "Bearer e coverId seguro do catálogo; não aceita URL arbitrária.",
+      "response": "Blob de capa autorizado, mime/type e Content-Length. A rota usa no-store e nosniff. Não é envelope de grant nem conteúdo de jogo.",
+      "auth": "HTTPS com validação de hostname e pin no cliente; valores de pin/chave não reproduzidos. Sessão Bearer quando indicada; prova de pedido conforme política negociada. Pin TLS e assinatura de resposta são verificações distintas. Sessão, coverId e orçamento de origem/dispositivo.",
+      "errors": "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR.401 STATION_SESSION_INVALID; 404 STATION_COVER_NOT_FOUND; 503 STATION_CATALOG_NOT_READY; 429 STATION_RATE_LIMITED.",
+      "timeout": "10 s para operação de capa; escrita usa cancelamento da requisição conforme rota.",
+      "cacheRetry": "Cache privado por revisão no cliente, um worker e fila prioritária. O cliente adia 404 por 60 s e trata 429 com espera. Isso não comprova existência atual no servidor.",
+      "persistenceOwnership": "Leitura de blob. Rate limiter mantém janelas temporárias de contagem; não consome grant de jogo.",
+      "sources": [
+        "SA08:43-78,249-307",
+        "SA09:201-217",
+        "SA26"
+      ]
+    },
+    {
+      "name": "Autorização de download",
+      "method": "POST",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/downloads/authorize",
+      "request": "schemaVersion=1, domain=TurboRamaStationAndroid/<operação>/v1, productId=applicationId=TURBORAMA_STATION_ANDROID, deviceId canônico derivado da chave, clientVersion, deviceManufacturer, deviceModel e androidSdk; domain request-download/v1, itemId seguro e Bearer atual.",
+      "response": "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga download-grant/v1: licenseId, deviceId, sessionId, itemId, itemRevision, artifact (descritor), grantId e expiresInSeconds=60.",
+      "auth": "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. DeviceId idêntico ao da sessão. O selo vincula licença, dispositivo, sessão, item, revisão, SHA/tamanho declarados e stamp do arquivo.",
+      "errors": "Erros de identidade/formato 400; corpo grande 413; serviço desligado 503 STATION_DISABLED; rate limit 429 STATION_RATE_LIMITED; deadline 504 STATION_TIMEOUT; cancelamento do cliente 499; falha inesperada 500 STATION_INTERNAL_ERROR.401 STATION_SESSION_INVALID; 403 STATION_DEVICE_DENIED; 404 STATION_ITEM_NOT_FOUND; 503 STATION_DOWNLOAD_NOT_READY/ARTIFACT_NOT_READY.",
+      "timeout": "10 s no handler; grant 60 s.",
+      "cacheRetry": "Não reaproveitar grant após uso/expiração/troca de sessão. Retomada do app autoriza novamente e começa arquivo inteiro; rota não negocia Range.",
+      "persistenceOwnership": "Cria registro one-use de grant com path privado selado. O descritor público do artefato chega aqui, separado do catálogo.",
+      "sources": [
+        "SA08:79-90",
+        "SA09:219-264",
+        "SA11:387-405"
+      ]
+    },
+    {
+      "name": "Transferência do artefato",
+      "method": "GET",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/artifacts/{grantId}",
+      "request": "Bearer da mesma sessão e grantId canônico de 32 bytes. O cliente não fornece arquivo ou caminho arbitrário.",
+      "response": "Application/octet-stream, Content-Length exato, no-store e nosniff. FileStream sequencial com buffer de 65536 bytes. Não assina cada chunk por envelope.",
+      "auth": "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Grant não consumido/expirado, mesma licença/dispositivo/sessão, selo válido e item/revisão/SHA/tamanho/path/stamp correspondentes. A comparação dos metadados não recalcula todo o SHA durante o GET.",
+      "errors": "404 STATION_GRANT_NOT_FOUND mascara grant inválido, expiração, consumo, sessão ausente/inválida, identidade diferente, selo inválido ou arquivo/revisão alterado. SuiteExceptions preservam seu status. IO/UnauthorizedAccess antes de enviar cabeçalhos também 404. Abortamento do cliente encerra stream; erro depois de cabeçalhos não vira um JSON completo.",
+      "timeout": "Sem deadline geral de 10 s nessa rota. Abertura/consumo e CopyToAsync recebem RequestAborted; não foi encontrado prazo total de transferência.",
+      "cacheRetry": "Grant é consumido antes da emissão do arquivo. Falha parcial exige novo authorize; sem retomada Range/offset no contrato analisado. Um GET retry com mesmo grant não é equivalente a uma segunda transferência.",
+      "persistenceOwnership": "UPDATE atômico consumed_at antes do stream. Cliente instala em geração transacional própria; servidor não gerencia save Android.",
+      "sources": [
+        "SA08:91-137",
+        "SA09:266-324",
+        "SA11:407-434"
+      ]
+    },
+    {
+      "name": "Controle multiplayer v3",
+      "method": "POST",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/online/multiplayer/command",
+      "request": "StationMultiplayerCommand: action, requestId (UUID D); roomId?, itemId?, contentSha256?, engineId?, coreSha256?, runtimeSha256?, profileId?, profileSha256?, capacity (default 0), generation (default 0), linkId?, value (default false), nickname?, text?, clientMaximumPlayers (default 4), page (default 0), roomPageSize (default 100). JSON objeto até 8192 bytes, profundidade 16, sem duplicados; query proibida.",
+      "response": "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga online/v1: licenseId, deviceId, sessionId, requestId e snapshot. Snapshot com schemaVersion=1, multiplayerVersion=3, capability=station-multiplayer.v3, instance, revision, selfId, platformPolicy, profiles, rooms, room e ticket. O patch adiciona room.barrierDiagnostics apenas ao membro.",
+      "auth": "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Bearer canônico de 32 bytes, header de 50 caracteres, proof conforme sessão e autenticação antes/depois da ação. AdmissionGate recusa create/join se existir membership legado.",
+      "errors": "400 STATION_MULTIPLAYER_* para request/page/action/body/query; 413 BODY_TOO_LARGE; 401 SESSION_INVALID/REQUEST_PROOF_REQUIRED; 403 HOST_REQUIRED/LINK_FORBIDDEN/BLOCKED; 409 GENERATION_MISMATCH/GAME_MISMATCH/NOT_READY/UNRECOVERABLE/ALREADY_*; 429 RATE_LIMIT ou CHAT_RATE_LIMIT com Retry-After1; 503 DISABLED/FULL/REPLAY_FULL; 504 TIMEOUT.",
+      "timeout": "Controle de 15 s; ticket de 60 s. Peer sem sala pode expirar após 60 s; um membro não é removido apenas por atraso.",
+      "cacheRetry": "No-store/nosniff. Cache de 64 recibos por peer: mesmo requestId e fingerprint é idempotente; outro conteúdo recebe 409 REQUEST_REUSED. Limite de 20 ações/s. Erro 500/timeout ambíguo exige reconciliar snapshot antes de mutação com UUID novo.",
+      "persistenceOwnership": "Salas, peers, anexos, replay e recibos ficam em memória. Own exige membership e generation exata antes de leave/ready/start/ticket. Só o host inicia; leave de qualquer membro após start aposenta toda a sala.",
+      "sources": [
+        "SA01:8-35,149-225,235-287",
+        "SA03:8-80"
+      ]
+    },
+    {
+      "name": "Relay multiplayer v3",
+      "method": "GET (WebSocket upgrade)",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/online/multiplayer/relay",
+      "request": "Upgrade WebSocket, subprotocol station-stream.v3, sem query. Authorization StationRelay <ticket>, token one-use de 32 bytes, com proof do GET e body vazio.",
+      "response": "101 com station-stream.v3 e frames binários TSR3. Erros anteriores ao upgrade usam JSON finito {schemaVersion:1, code, message:code} e Content-Length.",
+      "auth": "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. TakeTicket valida sala/generation/link/slot, assinatura e anexo exclusivo. AuthorizeRelay revalida dispositivo/licença em até 5 s antes do upgrade e durante Watch.",
+      "errors": "400 STATION_MULTIPLAYER_UPGRADE_REQUIRED/frame inválido; 401 TICKET_INVALID/SESSION_INVALID; 409 ALREADY_ATTACHED/UNRECOVERABLE/proof-watermark errors; 503 DISABLED; 504 TIMEOUT antes de headers. Erro de protocolo depois do upgrade encerra stream em Unrecoverable; erro de transporte pausa para recuperar.",
+      "timeout": "Auth de 5 s; Watch a cada 10 s. Fecha attachment se heartbeat de controle ausente ≥60 s ou frame recebido ausente ≥30 s. Sem prazo global de READY. CloseOutput de até 2 s depois de juntar writer/watch.",
+      "cacheRetry": "No-store. Ticket consumido não pode ser reutilizado; resume gera outro. Sala, links e replay persistem na perda de rede. Ausência de tráfego fecha attachment, sem escolher saída humana.",
+      "persistenceOwnership": "Memória limitada: 3 jogadores, 2 links, 4 attachments e reserva de 1048576 bytes. Janela de 262144 bytes por direção; libera reserva após aposentadoria e último detach.",
+      "sources": [
+        "SA01:199-209,270-287",
+        "SA02:17-58,59-108,115-159",
+        "SA03:42-60",
+        "SA20"
+      ]
+    },
+    {
+      "name": "Controle/lobby legado",
+      "method": "POST",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/online/command",
+      "request": "OnlineCommand legado: action/requestId e campos opcionais nickname, roomId, peerId, itemId, engineId, contentSha256, optionsSha256, coreSha256, runtimeSha256, address, port, text, value, page, transport, inviteCode, recoveryProtocol e generation, conforme ação. Não substituir por StationMultiplayerCommand.",
+      "response": "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga online/v1 com snapshot legado de lobby, pessoas, convites e sala v1/v2. O mesmo domain online/v1 assina v3; snapshot/capability/protocolo distinguem a família.",
+      "auth": "HTTPS com hostname e pin validados pelo cliente; valores de chaves/pins omitidos. Bearer e prova de pedido quando indicados. TLS e assinatura da resposta são verificações distintas. Sessão e proof negociados. AdmissionGate impede create/join legado de identidade já em v3. Block também afeta a sala multiplayer.",
+      "errors": "STATION_ONLINE_DISABLED503, SESSION_INVALID401, BODY_INVALID400/BODY_TOO_LARGE413, erros de ação/autorização/geração do domínio legado,429 Retry-After1,504 STATION_ONLINE_TIMEOUT.",
+      "timeout": "Handler de 15 s. Timeouts legados de lobby de 30/90 s não são prazos da barreira v3.",
+      "cacheRetry": "No-store/nosniff; recibos, eventos e revisões do domínio legado. HTTP 200 desse endpoint não demonstra capacidade v3.",
+      "persistenceOwnership": "Estado social e legacy membership em memória; a coordenação explicitamente impede duas memberships simultâneas da mesma identidade. Mantém operações sociais existentes.",
+      "sources": [
+        "SA06:16-21,149-175,299-497",
+        "SA07:93-107,117-177"
+      ]
+    },
+    {
+      "name": "Eventos/lobby legado",
+      "method": "POST",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/online/events",
+      "request": "EventsRequest {requestId, instance?, revision, page}. Bearer e proof conforme a segurança da sessão.",
+      "response": "Envelope JSON {keyId, payload, signature}. Payload Base64URL contém bytes UTF-8 assinados por RSA-PSS/SHA-256. A carga inclui schemaVersion/domain/productId/applicationId e a identidade/contexto próprios da operação. Carga online/v1 com requestId e snapshot depois de mudança da revisão ou espera limitada. A sessão é reautenticada após esperar.",
+      "auth": "HTTPS com validação de hostname e pin no cliente; valores de pin/chave não reproduzidos. Sessão Bearer quando indicada; prova de pedido conforme política negociada. Pin TLS e assinatura de resposta são verificações distintas. Só entrega snapshot novo a sessão ainda válida; revogação revalida no fim.",
+      "errors": "401 SESSION_INVALID; 400 BODY_INVALID; 413 BODY_TOO_LARGE; 429 limitações do hub; 503 ONLINE_DISABLED; 504 ONLINE_TIMEOUT.",
+      "timeout": "Espera por evento de até 10 s, dentro do handler de 15 s.",
+      "cacheRetry": "no-store; long polling usa instance/revision. Não substitui heartbeat/progresso da barreira v3.",
+      "persistenceOwnership": "Leitura e presença do domínio legado; entrega não liga motores, não cria grant de ROM.",
+      "sources": [
+        "SA06:520-532",
+        "SA07:108-151"
+      ]
+    },
+    {
+      "name": "Relay legado v1/v2",
+      "method": "GET (WebSocket upgrade)",
+      "base": "https://app.lzgames.com.br",
+      "path": "/v1/station/online/relay",
+      "request": "Authorization StationRelay <ticket> e proof, sem query. Subprotocol station-relay.v1 ou station-stream.v2 conforme lease. Não usa station-stream.v3/TSR3.",
+      "response": "101 com o protocolo selecionado; JSON finito se o upgrade for recusado. V1 faz forwarding simples; v2 oferece recuperação de stream entre o par.",
+      "auth": "HTTPS com validação de hostname e pin no cliente; valores de pin/chave não reproduzidos. Sessão Bearer quando indicada; prova de pedido conforme política negociada. Pin TLS e assinatura de resposta são verificações distintas. Ticket do domínio legado; v2 exige RecoveryEnabled e autorização de relay conforme dispositivo.",
+      "errors": "503 STATION_ONLINE_RELAY_DISABLED/STATION_RECOVERY_DISABLED; 400 UPGRADE_REQUIRED; 401 TICKET_INVALID/SESSION_INVALID; 409 STATION_RECOVERY_PROTOCOL_MISMATCH; 504 ONLINE_TIMEOUT.",
+      "timeout": "Timeouts pertencem ao relay selecionado. Não aplicar as regras de quatro attachments v3 a uma sala de dois endpoints v2.",
+      "cacheRetry": "no-store; ticket one-use. Flags legadas e o endpoint antigo não demonstram v3 ativo.",
+      "persistenceOwnership": "Domínio legado independente, interoperando no bloqueio de admission. Não compartilha formato de payload v3 por ter /v1 no URL.",
+      "sources": [
+        "SA07:62-92",
+        "SA20"
+      ]
+    },
+    {
+      "name": "Prontidão do operador",
+      "method": "GET local",
+      "base": "loopback",
+      "path": "/ready/station/online; /ready/station/online/diagnostics",
+      "request": "Operador local. Diagnostics exige Host localhost/IP loopback, remoto loopback e ausência de forwarded headers.",
+      "response": "Agregados legacy/recovery/multiplayer conforme flags. O diagnostics atual pertence exclusivamente a recovery v2. O novo diagnóstico v3 entra no snapshot assinado do membro, sem nova rota de operador.",
+      "auth": "Restrição de endereço/host, endpoint interno. Nenhuma consulta a produção foi realizada.",
+      "errors": "404 para acesso não autorizado por localidade; 503 quando flags necessárias desligadas.",
+      "timeout": "Leitura local de snapshot; sem promessa de prontidão de jogo ou engineId.",
+      "cacheRetry": "No-store. Agregados activeRooms/connections/budget não mostram CPU do núcleo ou vídeo e não liberam títulos por cache.",
+      "persistenceOwnership": "Leitura numérica; não altera configurações nem ativa kit.",
+      "sources": [
+        "SA07:33-61",
+        "SA01:231-233"
+      ]
+    },
+    {
+      "name": "Mídia/carrossel",
+      "method": "Não mapeado neste head",
+      "base": "cliente comercial",
+      "path": "Família de mídia implementada no cliente; sem rota correspondente na árvore aplicada a6b/docs524d",
+      "request": "Não declarar contrato produtivo com base apenas no cliente.",
+      "response": "Não observado: nenhuma chamada produtiva efetuada.",
+      "auth": "Implementação existente em branch histórica separada não prova composição no host atual.",
+      "errors": "A ausência de mapeamento na árvore é gap de composição; não é afirmação de HTTP404 real em produção.",
+      "timeout": "Não determinado neste host.",
+      "cacheRetry": "Capacidades/caches do cliente não suprem rota ausente no head auditado.",
+      "persistenceOwnership": "Sem prova de serviço atual publicado/ativo. Deve verificar branch/host/config antes de prometer feature.",
+      "sources": [
+        "SA25",
+        "SA26"
+      ]
+    }
+  ],
+  "openQuestions": [
+    "Existe recibo administrativo nativo privado da aplicação R134, com engineIds atuais, paths/config vigentes e baseline preservada?",
+    "Qual attachment nativo deixa de emitir HELLO/PAUSED/READY ou entregar ACK no incidente físico? Os snapshots localizam o estado, sem atribuir causa de CPU/UI.",
+    "A API/host produtivos compilaram e implantaram barrierDiagnostics? Publicação de fontes sozinha não comprova disponibilidade.",
+    "Qual head/composição entrega mídia/carrossel atualmente? A árvore auditada não mapeia essas rotas.",
+    "Após ativação, a matriz física de três executou gameplay, inputs, recuperação e leave nos três aparelhos com hashes/perfil/conteúdo idênticos?",
+    "Logs do proxy e timeout externo de WebSocket foram validados? Nenhuma requisição produtiva foi realizada nesta autoria."
+  ]
+}

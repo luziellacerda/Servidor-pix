@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "schema": "station.psx.primary.documentary.review.v1",
+  "reviewPolicy": "Original publisher manuals only; documentary counts, no current owner or HLE approval.",
+  "checkedCatalogEntries": 3,
+  "entriesWithPrimaryDocumentaryFinding": 3,
+  "approvedModesAdded": 0,
+  "sourcesDescribeOriginalHardwareNotCurrentHleRuntime": true,
+  "entries": [
+    {
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [],
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false,
+      "reason": "Manual original confirma dois humanos no hardware PlayStation; falta revisao HLE por edicao e prova no owner atual. Nao autoriza modo online nem migracao de perfil historico.",
+      "catalogOrdinal": 3793,
+      "name": "Legend of Mana",
+      "primarySources": [
+        "https://legendofmana.info/_assets/files/lom-manual.pdf"
+      ],
+      "sourceDocument": "Manual original Square EA do PlayStation, secao Hints 2 e 3, copia digitalizada indexada; abertura direta do PDF expirou nesta consulta.",
+      "finding": "O manual distingue importacao de personagem de amigo via memory card e a configuracao 2P Control num save point para dois jogadores simultaneos. Importar outro protagonista exige dados diferentes, dialogo com Nouvelle em Domina e grupo sem NPC. Dois controladores nao demonstram disponibilidade imediata numa sessao nova sem saves.",
+      "requirements": [
+        "2P Control configurado no save point",
+        "Companheiro ou segundo personagem disponivel",
+        "Importacao de protagonista exige memory card e dados diferentes",
+        "Nao transportar saves ou afirmar modo fresh-session homologado"
+      ]
+    },
+    {
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [],
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false,
+      "reason": "Manual original confirma dois humanos no hardware PlayStation; falta revisao HLE por edicao e prova no owner atual. Nao autoriza modo online nem migracao de perfil historico.",
+      "catalogOrdinal": 3823,
+      "name": "Tekken 2",
+      "primarySources": [
+        "https://manualzz.com/doc/6728609/-user-manual-"
+      ],
+      "sourceDocument": "Transcricao OCR do manual original Namco 1996 NTSC U/C, pp. 4-5, 9-10 e 13.",
+      "finding": "Two-Player Vs permite dois humanos com segundo controle. Arcade muda para dois jogadores ao pressionar Start no controle 2. Team Battle tambem permite ingresso do segundo humano; equipes de ate oito personagens nao representam oito jogadores. Survival e Time Attack nao permitem ingresso 2P.",
+      "requirements": [
+        "Dois controles Standard, portas 1 e 2",
+        "Selecionar Vs ou ingressar por Start do jogador 2 em Arcade/Team Battle",
+        "Excluir Survival e Time Attack da aprovacao multiplayer"
+      ]
+    },
+    {
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [],
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false,
+      "reason": "Manual original confirma dois humanos no hardware PlayStation; falta revisao HLE por edicao e prova no owner atual. Nao autoriza modo online nem migracao de perfil historico.",
+      "catalogOrdinal": 3820,
+      "name": "Street Fighter EX2 Plus",
+      "primarySources": [
+        "https://manuals.plus/sony/ps1-street-fighter-ex2-plus-manual",
+        "https://device.report/manual/19545879"
+      ],
+      "sourceDocument": "Manual original Capcom Entertainment 2000 PlayStation, transcrito nas secoes Setting Up, Default Controls e Game Modes; nao usar o resumo automatico do site.",
+      "finding": "Versus oferece VS Battle e Team Battle em confronto de dois humanos. O numero de um a cinco personagens por equipe no Team Battle nao aumenta o numero de jogadores. O manual descreve controles direcionais e Key Config separado para ambos participantes.",
+      "requirements": [
+        "Dois controles e configuracao digital do manual",
+        "Selecionar Versus e depois VS Battle ou Team Battle",
+        "Nao confundir 1-5 personagens da equipe com 1-5 humanos"
+      ]
+    }
+  ]
+}

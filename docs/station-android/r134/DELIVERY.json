@@ -1,0 +1,19 @@
+{
+  "schema": "station.server.delivery.consumer.review.v1",
+  "revisionInstalled": "R134",
+  "appExecutableCommit": "4f9039eb9ce13907ce043870bfe1f6e294888556",
+  "apkSha256": "f8cb09184f41bc7c942ce84541dbd90d575b7240467ce0033d35be65e57caee2",
+  "serverCodeBaseline": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+  "priorDeliveryCommit": "524d2ebff08353fda62aacbc5f05f9248ba69b7c",
+  "userReportedIncidents": ["three-player continuous loading", "app-close prompt on online departure"],
+  "privateKitReceivedConfirmed": false,
+  "serverActivationConfirmed": false,
+  "privateArtifactsPublishedToGit": false,
+  "productionDeployedByThisReview": false,
+  "phoneUSBUsedByThisReview": false,
+  "physicalCauseOfReportedIncidentsConfirmed": false,
+  "appCorrectionState": "source overlay with local compilation and regression probes; signed APK assembly pending",
+  "serverCorrectionState": "member-only barrier diagnostics and domain tests; deployment pending",
+  "consumerOnlineAcceptancePending": true,
+  "publicKitIsDeploymentKit": false
+}

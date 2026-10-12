@@ -1,0 +1,82 @@
+{
+  "allOtherBytesIdentical": true,
+  "artAndShadersByteIdentical": true,
+  "baselineCarouselSha256": "baf0f07c89b2a0a8e788b211809c389511830805f386647461487706bcdb9709",
+  "changedLabels": [
+    {
+      "bytes": 22,
+      "fromSha256": "3f78d4148023b90d1d834b8be678e64a1ec3d67f1e2e644ca4dee1a097043bed",
+      "fromText": "PS3 \u2022 ABRIR EMULADOR",
+      "offset": 10202903,
+      "toSha256": "5fd7cd4334913728951d2f0220ea36244744c1da7b176ecbd08ebcbefd9c5b49",
+      "toText": "PS3 \u2022 CONFIGURA\u00c7\u00c3O"
+    },
+    {
+      "bytes": 22,
+      "fromSha256": "e3cdfb45d4c4b0e07b3a30a81ea7325eb84bd25c2e830b034049f32067b2e854",
+      "fromText": "PS4 \u2022 ABRIR EMULADOR",
+      "offset": 11199145,
+      "toSha256": "c2a5cd0995040537a37ca179ec7e98bccbe85b57476c8f46f861475d86f2ec47",
+      "toText": "PS4 \u2022 CONFIGURA\u00c7\u00c3O"
+    }
+  ],
+  "decoderRendererPolicyChanged": false,
+  "elfHeaderPreserved": true,
+  "elfLoadSegments": [
+    {
+      "alignment": 16384,
+      "fileBytes": 156781828,
+      "flags": 4,
+      "memoryBytes": 156781828,
+      "offset": 0,
+      "virtualAddress": 0
+    },
+    {
+      "alignment": 16384,
+      "fileBytes": 237084,
+      "flags": 5,
+      "memoryBytes": 237084,
+      "offset": 156781828,
+      "virtualAddress": 156798212
+    },
+    {
+      "alignment": 16384,
+      "fileBytes": 3484904,
+      "flags": 6,
+      "memoryBytes": 3486944,
+      "offset": 157018912,
+      "virtualAddress": 157051680
+    },
+    {
+      "alignment": 16384,
+      "fileBytes": 1292,
+      "flags": 6,
+      "memoryBytes": 429296,
+      "offset": 160503816,
+      "virtualAddress": 160552968
+    }
+  ],
+  "engineCommandsChanged": false,
+  "equalSizeReplacements": true,
+  "exactInversePassed": true,
+  "original16KiBAlignmentPreserved": true,
+  "passed": true,
+  "payload": {
+    "bytes": 160551608,
+    "name": "lib/arm64-v8a/libturbo_carousel.so",
+    "path": "private-build:settings-refinement-r134/labels/libturbo_carousel.so",
+    "sha256": "867d86a5dba085fadec1e4b8dee0f8be99467551ba830607d3041b324c02b80e"
+  },
+  "payloadBytes": 160551608,
+  "payloadSha256": "867d86a5dba085fadec1e4b8dee0f8be99467551ba830607d3041b324c02b80e",
+  "physicalVisualValidated": false,
+  "publicReceiptProvenance": {
+    "absolutePathsReplacedWithLogicalReferences": true,
+    "binaryFirmwarePkgMaterialGameMediaPersonalLogsIncluded": false,
+    "hashMapsPreserved": true,
+    "notAnOperatorDeployableIdentityPackagePair": true,
+    "originalPrivateReceiptSha256": "365574b534819659dfbe538723ff5fd537fda9fb2ff144f5ca97015939888716",
+    "originalReceiptRole": "labels"
+  },
+  "schema": "station.settings.labels.r134.v1"
+}
