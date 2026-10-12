@@ -1,18 +1,25 @@
 {
   "codex": "/home/lz-servidor/.local/bin/codex",
-  "workingDirectory": "/mnt/DADOS/servidor-pix-station-r128-20261011",
+  "workingDirectory": "/mnt/DADOS/servidor-pix-station-r138-20261012",
   "repositories": [
     {
       "name": "server",
-      "path": "/mnt/DADOS/servidor-pix-station-r128-20261011",
+      "path": "/mnt/DADOS/servidor-pix-station-r138-20261012",
       "url": "https://github.com/luziellacerda/Servidor-pix.git",
-      "incomingPrefix": "origin/docs/station-"
+      "incomingPrefix": "origin/docs/station-",
+      "incomingPrefixes": [
+        "origin/docs/station-"
+      ]
     },
     {
       "name": "app",
       "path": "/mnt/DADOS/turboelden-station-ps2-saturn-20261010",
       "url": "https://github.com/luziellacerda/TurboElden.git",
-      "incomingPrefix": "origin/fix/station-"
+      "incomingPrefix": "origin/fix/station-",
+      "incomingPrefixes": [
+        "origin/fix/station-",
+        "origin/build/station-"
+      ]
     },
     {
       "name": "covers",
@@ -22,6 +29,11 @@
   ],
   "privateInputs": [
     "/mnt/DADOS/station-r128-20261011/kit-privado",
-    "/mnt/DADOS/station-r128-20261011/retomar-autenticado.json"
+    "/mnt/DADOS/station-r128-20261011/retomar-autenticado.json",
+    "/mnt/DADOS/station-r138-20261012/applied.json",
+    "/mnt/DADOS/station-r138-20261012/kit-privado"
+  ],
+  "privateKitGlobs": [
+    "/mnt/DADOS/Kit-Servidor-TurboStations-*.zip"
   ]
 }

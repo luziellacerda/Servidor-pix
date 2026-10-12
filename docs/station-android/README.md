@@ -1,3 +1,7 @@
+## Estado atual — R138 aplicada, catálogo42
+
+Leia o [handoff único atualizado](HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md) e a [matriz real](r138/server-return.json). Oito motores do kit recebido e capas publicados; quatro motores independentes dependem de seu kit R137.
+
 # R133 — entrega final de consoles e modos por edição
 
 APP → SERVIDOR, não implantação. Fonte Android 5966a8ad23ae9040c570d359b999c8a31de904b4; entrega pública c00f469517d41cf14f0d54a2d5cd3491cae6db00. R133 instalada/hash integral e dados preservados no Motorola, sem gameplay/ativação novos comprovados. Ler [o handoff único](r133/HANDOFF-APP-R133-PARA-SERVIDOR-20261011.md), recibos e [a matriz integral](r133/catalog/README.md).

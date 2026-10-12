@@ -1,3 +1,47 @@
+## R138 aplicada e capas publicadas — 12/10/2026
+
+**Aplicação administrativa concluída para o kit R138 recebido.** Oito motores RetroArch novos foram registrados, com 3.091 perfis/modos novos; os 5.176 perfis e 321 modos anteriores foram preservados. Total: 8.267 perfis, 8.254 aprovados e 3.412 modos persistidos. API continua PID2136303/DLL2c0d03447696, sem reinício ou nova DLL. [Matriz única e recibo real](r138/server-return.json) · [Respostas assinadas local/pública](r138/server-signed-bindings.json) · [Catálogo completo atualizado](online-plataformas-20261009/catalogo-cruzado-completo.json).
+
+| Plataforma/owner recebido | Perfis R138 acrescentados | Registro e resposta assinada |
+|---|---:|---|
+| SNES/BR | 850 | Aplicado; HLE e controles canônicos conferidos |
+| Mega Drive/BR | 978 | Aplicado; controles/opções anteriores preservados |
+| Neo Geo CD | 50 | Aplicado; firmware de novos conteúdos continua pendência separada |
+| Neo Geo/FBNeo | 189 | Aplicado |
+| FBNeo | 913 | Aplicado |
+| CPS1 | 36 | Aplicado |
+| CPS2 | 64 | Aplicado |
+| CPS3 | 11 | Aplicado |
+
+São 3.085 novas aprovações e seis recusas preservadas; novo cadastro não transforma recusa em aprovação. SNES usa `requireExplicitEngineModes=true`: copiados somente os vínculos já aprovados de conteúdo/core/controle, sem aprovar jogo desconhecido por `metadata.players`. Novos IDs de perfil são específicos da engine, mantendo os hashes LLE antigos. Geolith permanece inativo; PS3/PS4 offline.
+
+**Super Mario Kart:** dois jogadores, perfil HLE `8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793`. **Top Gear 3000, edição comum e PT-BR:** Corrida VS `[2,3,4]`, perfil multitap HLE `88568b97800afa017e3c75684effe23f3aad8e93f5b2ac947a0638a4268bd8f3`; Campeonato em dupla `[2]`, perfil padrão acima. As cinco combinações constam com itemId/content/core/runtime/profile exatos no recibo. Os dois participantes precisam da mesma R138; três/quatro precisam de todos na mesma composição. READY, ACK, epoch/geração, replay e autorização foram preservados. PONG não confirma carga do core.
+
+**Quatro motores independentes do APK atual continuam sem cadastro correspondente:** PSX `pcsx-rearmed-ff81ed17-player-v3-c26d8836df25`; N64 `mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e`; GameCube/Wii `dolphin-5102a033-…-v3-2e0b36222097`. O ZIP privado R138 entregue tem somente as cinco bibliotecas RetroArch; não contém as seis bibliotecas independentes R137. Seus bytes e ledger qualificado são necessários para registrar esses quatro IDs. Cadastro/política antiga permanece preservado, mas não prova disponibilidade desses IDs novos. Não misturar identidade anterior nem inventar hashes ou aprovação HLE PSX.
+
+### Capas e leitura pelo app
+
+**Catálogo publicado: revisão42 / 3.940 IDs / 3.685 visíveis / 255 aliases.** Git `Capas-TurboRama`, main `5c6cc32c06e6944b9258df36ffdb846baa368a7f`, SNES `9f85e9df1ec0c82d77156ed072b997855f719288`. Primeiro lote: 2.255 jogos cruzados, 2.150 imagens distintas, 2.353 vínculos de catálogo substituídos na revisão40. Segundo lote: 295 novas artes Mega e27 PSX, 322 imagens, 412 vínculos substituídos na revisão41. Os aliases entram nesses números de vínculos. A revisão42 atualiza os carimbos de todas as capas SNES/BR, Mega/BR, PSX e N64: 2.057 itens visíveis voltam a ser buscados pelo cache existente.
+
+As **157 capas N64 já coincidiam com os bytes compilados do Git**; foram conferidas e suas revisões atualizadas para o app baixar novamente. Não foram inventadas artes diferentes. SNES/Mega/PSX receberam os lotes novos onde a associação era única. JPEG RGB480×720, qualidade90, nos respectivos `media/revista` e seeds `media/catalogo`; não há PNG grande novo servindo o app. 278 correspondências sem arte única mantêm a correspondente existente; PS2/PSP/Wii/WiiU conservam as artes corrigidas do site. [Mapeamento por jogo/capa/Git](online-plataformas-20261009/capas-git-20261012.json).
+
+1. Reabrir/atualizar a leitura autenticada de `GET /v1/station/catalog?metadata=1` e validar o envelope assinado. Exigir revisão42 ou superior para esta entrega.
+2. Usar `itemId`, `platform`, `folderPath`, `metadata`, `coverId` e **a revisão do item** recebidos. Buscar `/v1/station/covers/{coverId}` com sessão/prova e os quatro workers existentes; cache por `coverId + item.revision`. Não reutilizar o cache antigo só porque o coverId ficou igual. Não precisa limpar dados, licença ou saves.
+3. Para download, `POST /v1/station/downloads/authorize` e GET do grant uma vez em `/v1/station/artifacts/{grantId}`. Conservar formato e `launchPath` do descritor assinado; não construir URL pelo nome do jogo.
+4. Para sala R138, consultar `POST /v1/station/online/multiplayer/command`, ação `capabilities`, com itemId e `clientMaximumPlayers:5`. Usar a lista assinada correspondente ao engine/core/runtime/profile/modo da R138, incluindo contagens permitidas. O catálogo público no Git é comparação documental, não autorização de sala.
+
+A prova pública assinada conferiu todos os campos de catálogo; 2.255+322 corpos de capas foram conferidos pela API local autenticada e52 amostras pela rota HTTPS. A revisão42 repetiu os157 corpos N64 e quatro amostras públicas. Quatro workers em cada lote. Provas dos oito motores: 11 consultas assinadas locais e11 públicas; engine desconhecida, conteúdo errado, perfil desconhecido e Top Gear cinco recusados com409. DNS/TLS intermitentes deste PC foram contornados somente no cliente de verificação, usando endereços observados e mantendo hostname/certificado/prova; DNS/túnel/proxy/firewall do servidor não foram alterados.
+
+As varreduras isolada/efetiva passaram sem reconstruir ROMs, alterar IDs, descritores, sinopses, identidades de conteúdo, licenças, esquema ou outros serviços. A recuperação corrigiu carimbos de arquivos após um rollback e preservou evidência privada. Nenhuma NativeActivity/ELF Android foi executada no servidor. Suíte de domínio:1.452 checks,29 novos3p, capacidade isolada320p/80salas; estes testes não homologam gameplay/WAN/Android. O scanner ainda informa firmware NeoCD ausente/inválido e uma cópia AOF2 não catalogada; não foi criada BIOS nem apagado o jogo publicado correspondente.
+
+### Retorno à produção do APK e manutenção
+
+APK esperado SHA `9183462e4d45cfcf2d2599d9e682b81890fee7b094505bf3073ab8183dd1dd10`; runtime `463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f`. Recibos recebidos comprovam instalação no g52 e Edge30; A56 última R135. Aqui não houve montagem/instalação de APK ou USB. Testar Mario Kart2p, Top Gear2/3/4p, retorno de sinal, saída de host/convidado sem crash e cinco em modo que permita cinco. Registro/carga de120 quadros não é aceite físico.
+
+Backup anterior publicado nos dois Gits: `backup/station-antes-r138-20261012` e tag `backup-station-antes-r138-20261012`, servidor a6b58e9/app a773988. Manutenção horária `turbostation-retornos.timer` mantida; acompanha branches de retorno docs/build/fix, novos kits em `/mnt/DADOS` e capas, escolhendo o commit mais recente mesmo quando o nome da branch é reutilizado. Usa lock para serializar trabalho e autenticação Linux nativa para arquivos protegidos. Não reaplicar workflows datados: consultar os recibos aplicados e o estado atual. Esta é a consolidação no mesmo handoff, com histórico abaixo preservado.
+
+## Histórico preservado
+
 ## Retorno R129, capas novas e manutenção horária — 11/10/2026
 
 A checagem das 14h recebeu **c433052**, variante R129 do mesmo handoff R128. Fonte Android `cf623c7`; APK Final-Modal `89dd5439`, 2.237.505.749 bytes. O produtor apresentou recibo de instalação integral no Motorola; autenticação e gameplay continuam sem confirmação. Os scripts administrativos e o contrato permanecem iguais; os quatro IDs foram renovados para este pacote. O kit R128 não corresponde aos runtimes R129.

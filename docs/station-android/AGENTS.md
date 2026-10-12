@@ -1,3 +1,11 @@
+# R138 registrada; capas do catálogo42 publicadas — 12/10/2026
+
+Ler o MESMO docs/station-android/HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e r138/server-return.json. Oito motores RetroArch e3091perfis/modos acrescentados; prefixo5176perfis/321modos preservado; total8267/8254aprovados/3412modos. KitR138 SHA babf4983… conferido. MarioKart2p, TopGearVS2/3/4+Campeonato2 por edição/HLE canônico; Geolith inativo; PS3/PS4offline. Quatro motores independentes PSX/N64/GC/Wii R137 aguardam seu kit6libs/ledger qualificado, não registrar identidades inventadas. NeoCD firmware de novos conteúdos continua pendente.
+
+Catálogo42/3940IDs/3685visíveis/255aliases. Capas novas SNES/Mega/PSX publicadas;157N64 já coincidem comGit e revisão/cache atualizados. Gitmain5c6cc32/SNES9f85e9d, JPEG480×720q90; PS2/PSP/Wii/WiiU do site preservados. Provas assinadas11locais+11públicas/4recusas por interface; catálogo/capas/metadata/IDs/scanner/sandbox/licenças/esquema/outros serviços preservados; PID2136303/DLL2c0d semrestart ouDLLnova. Testesdomínio1452/29novos3p/320p80salas isolados; gameplay/saída física/perda de sinal ainda dependem dos aparelhos na mesmaR138. Não usar Git/aprovação administrativa como prova de gameplay. Manutenção horária continua, serializada; usar recibos atuais, não workflows já aplicados. BackupantesR138 publicado nos doisGits.
+
+## Histórico preservado
+
 # R133 — entrega final de consoles e modos por edição
 
 APP → SERVIDOR, não implantação. Fonte Android 5966a8ad23ae9040c570d359b999c8a31de904b4; entrega pública c00f469517d41cf14f0d54a2d5cd3491cae6db00. R133 instalada/hash integral e dados preservados no Motorola, sem gameplay/ativação novos comprovados. Ler [o handoff único](r133/HANDOFF-APP-R133-PARA-SERVIDOR-20261011.md), recibos e [a matriz integral](r133/catalog/README.md).
