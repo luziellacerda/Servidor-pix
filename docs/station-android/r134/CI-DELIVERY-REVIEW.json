@@ -1,0 +1,26 @@
+{
+  "schema": "station.consumer.review.ci.followup.v1",
+  "productionDeployed": false,
+  "productionDatabaseAccessed": false,
+  "phoneUsbAccessed": false,
+  "events": [
+    {
+      "commit": "c1035ee47d5c497797c7064f4d1026955a24b365",
+      "job": "https://github.com/luziellacerda/Servidor-pix/actions/runs/38189970063/job/114620407058",
+      "failure": "Reject whitespace errors in this change",
+      "correction": "Recognize CRLF for byte-frozen R134 evidence by path while retaining all standard whitespace checks; remove only final extra blank line in new test; 1452 multiplayer checks repeated and passed",
+      "correctedCommit": "ef2f32fe81dc32ad7d143f5b23320f8f70dcc975"
+    },
+    {
+      "commit": "ef2f32fe81dc32ad7d143f5b23320f8f70dcc975",
+      "job": "https://github.com/luziellacerda/Servidor-pix/actions/runs/38190347514/job/114621565200",
+      "failure": "Validate forward migrations and role isolation",
+      "observed": "32 forward migrations completed 32 COMMITs in the disposable CI PostgreSQL database; subsequent assertion still required 27 rows",
+      "baselineContainsSame32Migrations": true,
+      "correction": "Compare complete sorted version set in suite.schema_migrations with every forward migration basename, rejecting missing, extra or substituted versions even with equal counts",
+      "changedProductionSql": false,
+      "preserved": ["strict pinned checksum validation", "psql ON_ERROR_STOP", "transactional migration files", "seven pinned 010-016 checksum rows", "subsequent role isolation tests"]
+    }
+  ],
+  "acceptance": "Source compilation and CI evidence qualify the candidate only; physical three-player gameplay and Android exit acceptance remain pending. Read the latest GitHub checks on PR 5 for final workflow status."
+}

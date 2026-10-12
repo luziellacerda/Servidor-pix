@@ -74,6 +74,7 @@ jobs:
           PGUSER: postgres
           PGDATABASE: turborama_suite_ci
         run: |
+          set -euo pipefail
           psql --set=ON_ERROR_STOP=1 --command='CREATE ROLE "turborama-suite" LOGIN; CREATE ROLE "turborama-suite-admin" LOGIN;'
           psql --set=ON_ERROR_STOP=1 --file=ops/production/prepare-suite-content-roles.sql
           sha256sum --check --strict ops/production/suite-content-migrations.sha256
@@ -83,7 +84,10 @@ jobs:
             checksum=$(sha256sum "$migration" | cut -d ' ' -f 1)
             psql --set=ON_ERROR_STOP=1 --set=migration_sha256="$checksum" --file="$migration"
           done
-          test "$(psql --tuples-only --no-align --command='SELECT count(*) FROM suite.schema_migrations;')" = 27
+          # Every forward script must have its exact version registered: no missing or extra rows.
+          expected_versions=$(printf '%s\n' migrations/suite/*.up.sql | sed 's|.*/||; s|\.up\.sql$||' | LC_ALL=C sort)
+          applied_versions=$(psql --set=ON_ERROR_STOP=1 --tuples-only --no-align --command='SELECT version FROM suite.schema_migrations;' | LC_ALL=C sort)
+          diff -u <(printf '%s\n' "$expected_versions") <(printf '%s\n' "$applied_versions")
           test "$(psql --tuples-only --no-align --command="SELECT count(*) FROM suite.schema_migration_checksums WHERE version ~ '^01[0-6]_';")" = 7
       - name: Exercise monitor ownership and catalog races on PostgreSQL 16
         env:

@@ -8,6 +8,7 @@ Esta entrega reúne os requisitos do aplicativo R134, a revisão das partidas co
 2. [Incidente de três jogadores e saída](INCIDENTE-TRES-JOGADORES-E-SAIDA.md).
 3. [Dossiê completo do aplicativo](https://github.com/luziellacerda/TurboElden/tree/audit/station-consumer-online-r134-20261011/docs/handoff-completo-r134-20261011).
 4. [Matriz por edição e modo](catalog/README.md) e [evidências públicas](evidence/).
+5. [Revisão das verificações de compilação no GitHub](CI-DELIVERY-REVIEW.json).
 
 O diagnóstico novo acrescenta `barrierDiagnostics` somente à visão da própria sala dos participantes. Ele mostra contagens/flags/offsets e razões de espera, sem tickets, credenciais, IDs pessoais ou bytes de jogo. A regra de início, ACK real, recuperação, autorização e saída humana permanece preservada. Os testes e a fonte estão na revisão; a publicação de Git não instala esse código em produção.
 
