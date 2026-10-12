@@ -12,3 +12,6 @@ docs/station-android/entrega-app-r68-20261007/** -text
 # Exact data/receipt bytes for the complete five-player delivery.
 docs/station-android/online-1a5-20261009/** -text
 docs/station-android/online-1a5-20261009/*.tsv whitespace=-blank-at-eol
+
+# Preserve byte-frozen R134 CRLF receipts while retaining whitespace checks.
+docs/station-android/r134/** whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

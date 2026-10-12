@@ -162,4 +162,3 @@ static class BarrierDiagnosticsChecks
         }
     }
 }
-
