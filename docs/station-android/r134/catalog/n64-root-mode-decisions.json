@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "schema": "station.primary.documentary.review.v1",
+  "checkedCatalogEntries": 3,
+  "approvedModesAdded": 0,
+  "entries": [
+    {
+      "catalogOrdinal": 2158,
+      "platform": "n64",
+      "name": "The New Tetris",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "primarySources": [
+        "https://nintendo64.pl/wp-content/uploads/The-New-Tetris-USA.pdf",
+        "https://manualzz.com/doc/22162295/nintendo-the-new-tetris-video-game-instruction-booklet"
+      ],
+      "sourceDocument": "Original Nintendo of America instruction booklet, digital pages3/4, printed pages2/5; scanned images visually read.",
+      "sourceSHA256": "1720935f64bf552eddd716609fe039e9cf2f61d856c86dbe1f7cf20dd3bcfd5f",
+      "modes": [
+        {
+          "profileId": "review-2158-marathon-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "marathon",
+          "modeTitle": "The New Tetris: Multiplayer Marathon",
+          "instructions": [
+            "Escolha Multi Player / Marathon para 2, 3, 4 humanos; Sprint pertence \u00e0 lista individual.",
+            "Cada pessoa usa uma porta N64 independente; mantenha o controle1 conectado e escolha os nomes dos jogadores.",
+            "Controller Pak s\u00f3 \u00e9 necess\u00e1rio para transferir perfis; n\u00e3o \u00e9 requisito da partida multiplayer."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 controller ports1-4; independent human ports, no accessory/link/dual-controller scheme"
+        },
+        {
+          "profileId": "review-2158-ultra-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "ultra",
+          "modeTitle": "The New Tetris: Multiplayer Ultra",
+          "instructions": [
+            "Escolha Multi Player / Ultra para 2, 3, 4 humanos; Sprint pertence \u00e0 lista individual.",
+            "Cada pessoa usa uma porta N64 independente; mantenha o controle1 conectado e escolha os nomes dos jogadores.",
+            "Controller Pak s\u00f3 \u00e9 necess\u00e1rio para transferir perfis; n\u00e3o \u00e9 requisito da partida multiplayer."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 controller ports1-4; independent human ports, no accessory/link/dual-controller scheme"
+        },
+        {
+          "profileId": "review-2158-lines-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "lines",
+          "modeTitle": "The New Tetris: Multiplayer Lines",
+          "instructions": [
+            "Escolha Multi Player / Lines para 2, 3, 4 humanos; Sprint pertence \u00e0 lista individual.",
+            "Cada pessoa usa uma porta N64 independente; mantenha o controle1 conectado e escolha os nomes dos jogadores.",
+            "Controller Pak s\u00f3 \u00e9 necess\u00e1rio para transferir perfis; n\u00e3o \u00e9 requisito da partida multiplayer."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 controller ports1-4; independent human ports, no accessory/link/dual-controller scheme"
+        }
+      ],
+      "finding": "Multiplayer menu explicitly permits two, three or four humans with independent controllers; printed page5 lists Marathon, Ultra and Lines. Sprint belongs to Single list and is not imported as a multiplayer mode.",
+      "requirements": [
+        "Each human requires its own standard N64 controller socket; port1 cannot be empty",
+        "Player names selected in Multi Player",
+        "Controller Pak optional only for profile transfer, not a mandatory multiplayer dependency"
+      ],
+      "currentOwnerApproval": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2195,
+      "platform": "n64",
+      "name": "Star Wars Episode I: Racer",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "primarySources": [
+        "https://emulation64.fr/pdf/N64%20-%20Star%20Wars%20Episode%20I%20-%20Racer%20%28Francais%29.pdf",
+        "https://www.nintendo.co.jp/n01/n64/software/nus_p_nepj/index.html"
+      ],
+      "sourceDocument": "LucasArts/Lucasfilm original Nintendo64 manual, digital page14 MODE DEUX JOUEURS; Nintendo original product page.",
+      "sourceSHA256": "a003fcfbf3e9f6ae4ae0c869159ed7053096b00f7d41d1bb98fbe8669d1d28d7",
+      "modes": [
+        {
+          "profileId": "review-2195-two-player-race-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "two-player-race",
+          "modeTitle": "Star Wars Episode I: Racer: Corrida para dois jogadores",
+          "instructions": [
+            "Conecte dois controles N64 independentes e escolha 2 JOUEURS; cada humano recebe metade da tela.",
+            "Escolha os podracers e a pista; o modo documentado aceita somente dois humanos.",
+            "Alta resolu\u00e7\u00e3o \u00e9 opcional e exige Expansion Pak; n\u00e3o importar os oito jogadores do port PC ou a configura\u00e7\u00e3o de dois controles por pessoa."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 controller ports1-4; independent human ports, no accessory/link/dual-controller scheme"
+        }
+      ],
+      "finding": "Attach the second controller, choose 2 JOUEURS, choose each podracer and a course; race uses one half-screen per human. The adjacent Options section only requires Expansion Pak for high resolution, not for the base two-player mode.",
+      "requirements": [
+        "Two independent standard N64 controllers",
+        "Choose 2 JOUEURS before the race",
+        "No PC eight-player mode or dual-controller cheat imported",
+        "High resolution optional and requires Expansion Pak"
+      ],
+      "currentOwnerApproval": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false,
+      "documentarySourceTitle": "Star Wars Episode I - Racer"
+    },
+    {
+      "catalogOrdinal": 2222,
+      "platform": "n64",
+      "name": "WinBack: Covert Operations",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "primarySources": [
+        "https://nintendo64.pl/wp-content/uploads/WinBack-Covert-Operations-USA.pdf"
+      ],
+      "sourceDocument": "Original Koei instruction booklet, digital page6/printed10-11 MODES; digital4/printed6-7 standard controller actions.",
+      "sourceSHA256": "a6585a192e3d71a7e5bb8774a0e494ad6cfadbfc2a357c4c78589e8a93dda162",
+      "modes": [
+        {
+          "profileId": "review-2222-death-match-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "death-match",
+          "modeTitle": "WinBack: Covert Operations: Death Match",
+          "instructions": [
+            "Escolha Multiplayer / Death Match para 2, 3, 4 humanos, com um controle N64 independente por pessoa.",
+            "O modo Story \u00e9 individual e n\u00e3o recebe mais assentos pela sala.",
+            "Respeite a contagem deste modo: Point Match aceita3\u20134; Death Match2\u20134; Lethal Tag, Cube Hunt, Quick Draw e Team Battle somente2."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 controller ports1-4; independent human ports, no accessory/link/dual-controller scheme"
+        },
+        {
+          "profileId": "review-2222-lethal-tag-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "lethal-tag",
+          "modeTitle": "WinBack: Covert Operations: Lethal Tag",
+          "instructions": [
+            "Escolha Multiplayer / Lethal Tag para 2 humanos, com um controle N64 independente por pessoa.",
+            "O modo Story \u00e9 individual e n\u00e3o recebe mais assentos pela sala.",
+            "Respeite a contagem deste modo: Point Match aceita3\u20134; Death Match2\u20134; Lethal Tag, Cube Hunt, Quick Draw e Team Battle somente2."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 controller ports1-4; independent human ports, no accessory/link/dual-controller scheme"
+        },
+        {
+          "profileId": "review-2222-cube-hunt-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "cube-hunt",
+          "modeTitle": "WinBack: Covert Operations: Cube Hunt",
+          "instructions": [
+            "Escolha Multiplayer / Cube Hunt para 2 humanos, com um controle N64 independente por pessoa.",
+            "O modo Story \u00e9 individual e n\u00e3o recebe mais assentos pela sala.",
+            "Respeite a contagem deste modo: Point Match aceita3\u20134; Death Match2\u20134; Lethal Tag, Cube Hunt, Quick Draw e Team Battle somente2."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 controller ports1-4; independent human ports, no accessory/link/dual-controller scheme"
+        },
+        {
+          "profileId": "review-2222-quick-draw-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "quick-draw",
+          "modeTitle": "WinBack: Covert Operations: Quick Draw",
+          "instructions": [
+            "Escolha Multiplayer / Quick Draw para 2 humanos, com um controle N64 independente por pessoa.",
+            "O modo Story \u00e9 individual e n\u00e3o recebe mais assentos pela sala.",
+            "Respeite a contagem deste modo: Point Match aceita3\u20134; Death Match2\u20134; Lethal Tag, Cube Hunt, Quick Draw e Team Battle somente2."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 controller ports1-4; independent human ports, no accessory/link/dual-controller scheme"
+        },
+        {
+          "profileId": "review-2222-team-battle-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "team-battle",
+          "modeTitle": "WinBack: Covert Operations: Team Battle",
+          "instructions": [
+            "Escolha Multiplayer / Team Battle para 2 humanos, com um controle N64 independente por pessoa.",
+            "O modo Story \u00e9 individual e n\u00e3o recebe mais assentos pela sala.",
+            "Respeite a contagem deste modo: Point Match aceita3\u20134; Death Match2\u20134; Lethal Tag, Cube Hunt, Quick Draw e Team Battle somente2."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 controller ports1-4; independent human ports, no accessory/link/dual-controller scheme"
+        },
+        {
+          "profileId": "review-2222-point-match-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            3,
+            4
+          ],
+          "mode": "point-match",
+          "modeTitle": "WinBack: Covert Operations: Point Match",
+          "instructions": [
+            "Escolha Multiplayer / Point Match para 3, 4 humanos, com um controle N64 independente por pessoa.",
+            "O modo Story \u00e9 individual e n\u00e3o recebe mais assentos pela sala.",
+            "Respeite a contagem deste modo: Point Match aceita3\u20134; Death Match2\u20134; Lethal Tag, Cube Hunt, Quick Draw e Team Battle somente2."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 controller ports1-4; independent human ports, no accessory/link/dual-controller scheme"
+        }
+      ],
+      "finding": "Original Versus rules distinguish the capacity of six modes: DeathMatch2-4; LethalTag/CubeHunt/QuickDraw/TeamBattle2; PointMatch3-4. A general four-player label must not make every mode accept four. Story remains one player.",
+      "requirements": [
+        "Independent standard N64 controller per human; original C/R/Z/analog actions",
+        "Versus mode selected before match",
+        "Do not infer two-player availability for Point Match or four-player availability for Team Battle"
+      ],
+      "currentOwnerApproval": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false,
+      "documentarySourceTitle": "WinBack - Covert Operations"
+    }
+  ],
+  "reviewPolicy": "Original publisher manuals visually inspected; documentary facts do not assert server activation or physical gameplay.",
+  "sourceResearchInputs": [
+    {
+      "file": "r133-n64-root-primary-review.json",
+      "sha256": "eae52e74b44e6373571e983f0a91693a2ca430251092926d91d5bc6f7102d599",
+      "entries": 3
+    }
+  ],
+  "adaptation": "Two documented punctuation variants explicitly map to exact existing catalog ordinals/names; inputs remain original hardware evidence, no gameplay claim."
+}

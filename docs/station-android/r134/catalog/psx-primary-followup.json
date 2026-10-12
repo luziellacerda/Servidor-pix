@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "schema": "station.psx.independent.documentary-review.v1",
+  "approvedModesAdded": 0,
+  "entries": [
+    {
+      "catalogOrdinal": 3780,
+      "name": "Fighting Force",
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [2],
+      "primarySources": [
+        "https://gamesurge.com/playstation/strategy/psx_man/Ff.shtml",
+        "https://db.hfsplay.fr/files/2020/06/20/Tomb_Raider_III_Adventures_of_Lara_Croft_-_1998_-_Eidos_Interactive_zYQVJgX.pdf"
+      ],
+      "sourceDocument": "Eidos/Core Fighting Force original instruction manual transcription, printed pp.4,6-7; Eidos original Fighting Force advertisement inside Tomb Raider III instruction booklet corroborates two-player mode.",
+      "finding": "The original manual has a 2 Players main-menu option, requiring two connected controllers; players choose different characters. Its default controls use direction and digital buttons. Eidos publisher material separately describes solo or two-player play.",
+      "reason": "Documentary original-hardware support is not per-edition HLE approval for the current owner/runtime. No catalog content hash or region was matched against the manual.",
+      "requirements": [
+        "Select 2 Players at the main menu with two distinct virtual StandardPad ports.",
+        "Choose different characters; the manual excludes both players choosing the same character.",
+        "Review the exact content edition with the pinned HLE policy before any approved mode is generated."
+      ],
+      "modes": [],
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    }
+  ]
+}

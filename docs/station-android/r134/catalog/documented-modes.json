@@ -1,0 +1,3270 @@
+{
+  "schemaVersion": 1,
+  "modes": [
+    {
+      "catalogOrdinal": 808,
+      "name": "Battletoads in Battlemaniacs (USA)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1817,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "two-player-a",
+      "modeTitle": "Dupla com golpes entre parceiros",
+      "instructions": [
+        "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 808,
+      "name": "Battletoads in Battlemaniacs (USA)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1818,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "two-player-b",
+      "modeTitle": "Dupla sem golpes entre parceiros",
+      "instructions": [
+        "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1348,
+      "name": "NBA Jam",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1819,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "match-multitap",
+      "modeTitle": "Partida de basquete",
+      "instructions": [
+        "Start Game com Multitap; cada humano confirma sua posição com Start; ajustar Tag Mode e equipes."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/NBA_Jam_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1782,
+      "name": "Super Bomberman 2",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1820,
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "normal",
+      "modeTitle": "Campanha solo",
+      "instructions": [
+        "Normal Game é individual e não deve criar sala."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1782,
+      "name": "Super Bomberman 2",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1821,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "battle-team",
+      "modeTitle": "Battle: equipes",
+      "instructions": [
+        "Battle Game → Tag Match; configurar humanos e equipes no jogo.",
+        "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1783,
+      "name": "Super Bomberman 3",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1822,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "battle-single",
+      "modeTitle": "Battle: todos contra todos",
+      "instructions": [
+        "No jogo, escolha BATTLE GAME → SINGLE MATCH.",
+        "Marque MAN nas posições P1 a P4 usadas pelos participantes. Deixe P5 em COM ou OFF. Para usar cinco humanos, todos precisam da atualização com cinco posições."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_3_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1783,
+      "name": "Super Bomberman 3",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1823,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "battle-team",
+      "modeTitle": "Battle: equipes",
+      "instructions": [
+        "No jogo, escolha BATTLE GAME → TAG MATCH.",
+        "Marque MAN nas posições P1 a P4 usadas pelos participantes. Deixe P5 em COM ou OFF. Para usar cinco humanos, todos precisam da atualização com cinco posições.",
+        "As duas equipes precisam de pelo menos um participante cada."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_3_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1696,
+      "name": "Top Gear 3000",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1824,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "vs-race",
+      "modeTitle": "Corrida VS",
+      "instructions": [
+        "Selecionar VS Mode e2,3ou4 humanos; demais carros podem ficar CPU."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1696,
+      "name": "Top Gear 3000",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1825,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "championship-2p",
+      "modeTitle": "Campeonato em dupla",
+      "instructions": [
+        "Campeonato de dois humanos; não prometer quatro neste modo."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1038,
+      "name": "Battletoads in Battlemaniacs",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1826,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "two-player-a",
+      "modeTitle": "Dupla com golpes entre parceiros",
+      "instructions": [
+        "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1038,
+      "name": "Battletoads in Battlemaniacs",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1827,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "two-player-b",
+      "modeTitle": "Dupla sem golpes entre parceiros",
+      "instructions": [
+        "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1473,
+      "name": "Secret of Mana",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1828,
+      "maximumPlayers": 3,
+      "allowedPlayerCounts": [
+        2,
+        3
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "adventure-coop",
+      "modeTitle": "Aventura cooperativa",
+      "instructions": [
+        "Recrutar aliados para haver personagens extras; convidado pressiona Start para assumir aliado; máximo3.",
+        "Na variante BR/headered preservar o SHA de todos os bytes do arquivo; testar controles da tradução."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/es-es/games/oms/snes-classic/manuals/secret-of-mana/manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1545,
+      "name": "Super Bomberman 2 (PT-BR)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1829,
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "normal",
+      "modeTitle": "Campanha solo",
+      "instructions": [
+        "Normal Game é individual e não deve criar sala."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1545,
+      "name": "Super Bomberman 2 (PT-BR)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1830,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "battle-single",
+      "modeTitle": "Battle: todos contra todos",
+      "instructions": [
+        "Battle Game → Single Match; pads participantes MAN; outros COM/OFF.",
+        "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf",
+        "https://docs.libretro.com/guides/netplay-multiple-controllers/"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1545,
+      "name": "Super Bomberman 2 (PT-BR)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1831,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "battle-team",
+      "modeTitle": "Battle: equipes",
+      "instructions": [
+        "Battle Game → Tag Match; configurar humanos e equipes no jogo.",
+        "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1695,
+      "name": "Top Gear 3000 (PT-BR)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1832,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "vs-race",
+      "modeTitle": "Corrida VS",
+      "instructions": [
+        "Selecionar VS Mode e2,3ou4 humanos; demais carros podem ficar CPU."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1695,
+      "name": "Top Gear 3000 (PT-BR)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1833,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "championship-2p",
+      "modeTitle": "Campeonato em dupla",
+      "instructions": [
+        "Campeonato de dois humanos; não prometer quatro neste modo."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1781,
+      "name": "Super Bomberman",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1834,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "normal",
+      "modeTitle": "Campanha em dupla",
+      "instructions": [
+        "NORMAL MODE: campanha para uma ou duas pessoas. Na sala com dois, o segundo jogador pressiona Start após começar.",
+        "Para três ou quatro pessoas, escolha o modo Batalha; a campanha não tem essas vagas."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1781,
+      "name": "Super Bomberman",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1835,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "battle-single",
+      "modeTitle": "Batalha: todos contra todos",
+      "instructions": [
+        "BATTLE MODE: escolha MAN nas posições dos participantes P1 a P4; outros ficam COM.",
+        "Três ou quatro pessoas funcionam somente na Batalha. A campanha permite no máximo duas."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1783,
+      "name": "Super Bomberman 3",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 1836,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "normal",
+      "modeTitle": "Campanha em dupla",
+      "instructions": [
+        "NORMAL GAME: escolha 2PLAYERS GAME para a campanha em dupla.",
+        "Três, quatro ou cinco pessoas funcionam somente na Batalha. A campanha permite no máximo duas."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_3_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1782,
+      "name": "Super Bomberman 2",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3363,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "battle-single",
+      "modeTitle": "Battle: todos contra todos",
+      "instructions": [
+        "Battle Game → Single Match; pads participantes MAN; outros COM/OFF.",
+        "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf",
+        "https://docs.libretro.com/guides/netplay-multiple-controllers/"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 808,
+      "name": "Battletoads in Battlemaniacs (USA)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3653,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "two-player-a",
+      "modeTitle": "Dupla com golpes entre parceiros",
+      "instructions": [
+        "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 808,
+      "name": "Battletoads in Battlemaniacs (USA)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3654,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "two-player-b",
+      "modeTitle": "Dupla sem golpes entre parceiros",
+      "instructions": [
+        "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1348,
+      "name": "NBA Jam",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3655,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "match-multitap",
+      "modeTitle": "Partida de basquete",
+      "instructions": [
+        "Start Game com Multitap; cada humano confirma sua posição com Start; ajustar Tag Mode e equipes."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/NBA_Jam_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1782,
+      "name": "Super Bomberman 2",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3656,
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "normal",
+      "modeTitle": "Campanha solo",
+      "instructions": [
+        "Normal Game é individual e não deve criar sala.",
+        "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1782,
+      "name": "Super Bomberman 2",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3657,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "battle-team",
+      "modeTitle": "Battle: equipes",
+      "instructions": [
+        "Battle Game → Tag Match; configurar humanos e equipes no jogo.",
+        "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1783,
+      "name": "Super Bomberman 3",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3658,
+      "maximumPlayers": 5,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "battle-single",
+      "modeTitle": "Battle: todos contra todos",
+      "instructions": [
+        "No jogo, escolha BATTLE GAME → SINGLE MATCH.",
+        "Marque MAN nas posições dos participantes (P1 a P5). Use COM ou OFF nas demais posições. Cada celular controla somente a sua posição.",
+        "Três, quatro ou cinco pessoas funcionam somente na Batalha. NORMAL GAME permite uma ou duas."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_3_-_SNES_-_Manual.pdf",
+        "https://docs.libretro.com/library/bsnes_mercury_performance/"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1783,
+      "name": "Super Bomberman 3",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3659,
+      "maximumPlayers": 5,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "battle-team",
+      "modeTitle": "Battle: equipes",
+      "instructions": [
+        "No jogo, escolha BATTLE GAME → TAG MATCH.",
+        "Marque MAN nas posições dos participantes (P1 a P5). Use COM ou OFF nas demais posições. Cada celular controla somente a sua posição.",
+        "Distribua os participantes em duas equipes, com pelo menos um jogador em cada equipe.",
+        "Três, quatro ou cinco pessoas funcionam somente na Batalha. NORMAL GAME permite uma ou duas."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_3_-_SNES_-_Manual.pdf",
+        "https://docs.libretro.com/library/bsnes_mercury_performance/"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1696,
+      "name": "Top Gear 3000",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3660,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "vs-race",
+      "modeTitle": "Corrida VS",
+      "instructions": [
+        "Selecionar VS Mode e2,3ou4 humanos; demais carros podem ficar CPU."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1696,
+      "name": "Top Gear 3000",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3661,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "championship-2p",
+      "modeTitle": "Campeonato em dupla",
+      "instructions": [
+        "Campeonato de dois humanos; não prometer quatro neste modo."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1038,
+      "name": "Battletoads in Battlemaniacs",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3662,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "two-player-a",
+      "modeTitle": "Dupla com golpes entre parceiros",
+      "instructions": [
+        "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1038,
+      "name": "Battletoads in Battlemaniacs",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3663,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "two-player-b",
+      "modeTitle": "Dupla sem golpes entre parceiros",
+      "instructions": [
+        "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1473,
+      "name": "Secret of Mana",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3664,
+      "maximumPlayers": 3,
+      "allowedPlayerCounts": [
+        2,
+        3
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "adventure-coop",
+      "modeTitle": "Aventura cooperativa",
+      "instructions": [
+        "Recrutar aliados para haver personagens extras; convidado pressiona Start para assumir aliado; máximo3.",
+        "Na variante BR/headered preservar o SHA de todos os bytes do arquivo; testar controles da tradução."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/es-es/games/oms/snes-classic/manuals/secret-of-mana/manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1545,
+      "name": "Super Bomberman 2 (PT-BR)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3665,
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "normal",
+      "modeTitle": "Campanha solo",
+      "instructions": [
+        "Normal Game é individual e não deve criar sala.",
+        "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1545,
+      "name": "Super Bomberman 2 (PT-BR)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3666,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "battle-single",
+      "modeTitle": "Battle: todos contra todos",
+      "instructions": [
+        "Battle Game → Single Match; pads participantes MAN; outros COM/OFF.",
+        "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf",
+        "https://docs.libretro.com/guides/netplay-multiple-controllers/"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1545,
+      "name": "Super Bomberman 2 (PT-BR)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3667,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "battle-team",
+      "modeTitle": "Battle: equipes",
+      "instructions": [
+        "Battle Game → Tag Match; configurar humanos e equipes no jogo.",
+        "Neste jogo, o multiplayer funciona somente no modo Batalha. NORMAL GAME é para uma pessoa."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.videogamemanual.com/snes/Super%20Bomberman%202%20(USA).pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1695,
+      "name": "Top Gear 3000 (PT-BR)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3668,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "vs-race",
+      "modeTitle": "Corrida VS",
+      "instructions": [
+        "Selecionar VS Mode e2,3ou4 humanos; demais carros podem ficar CPU."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1695,
+      "name": "Top Gear 3000 (PT-BR)",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3669,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "championship-2p",
+      "modeTitle": "Campeonato em dupla",
+      "instructions": [
+        "Campeonato de dois humanos; não prometer quatro neste modo."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1781,
+      "name": "Super Bomberman",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3670,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "normal",
+      "modeTitle": "Campanha em dupla",
+      "instructions": [
+        "NORMAL MODE: campanha para uma ou duas pessoas. Na sala com dois, o segundo jogador pressiona Start após começar.",
+        "Para três ou quatro pessoas, escolha o modo Batalha; a campanha não tem essas vagas."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1781,
+      "name": "Super Bomberman",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3671,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "snes-multitap-port2-v1",
+      "mode": "battle-single",
+      "modeTitle": "Batalha: todos contra todos",
+      "instructions": [
+        "BATTLE MODE: escolha MAN nas posições dos participantes P1 a P4; outros ficam COM.",
+        "Três ou quatro pessoas funcionam somente na Batalha. A campanha permite no máximo duas."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 1783,
+      "name": "Super Bomberman 3",
+      "platform": "snes",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3672,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "standard-2p-v1",
+      "mode": "normal",
+      "modeTitle": "Campanha em dupla",
+      "instructions": [
+        "NORMAL GAME: escolha 2PLAYERS GAME para a campanha em dupla.",
+        "Três, quatro ou cinco pessoas funcionam somente na Batalha. A campanha permite no máximo duas."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.retrogames.cz/manualy/SNES/Super_Bomberman_3_-_SNES_-_Manual.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2085,
+      "name": "Bomberman 64",
+      "platform": "n64",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3686,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Batalha",
+      "instructions": [
+        "Escolha BATTLE. A campanha é individual; configure MAN nas vagas humanas e COM nas restantes.",
+        "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+        "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/es-es/Juegos/Nintendo-64/Bomberman-64-1204884.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2107,
+      "name": "F-Zero X",
+      "platform": "n64",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3708,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "VS Battle",
+      "instructions": [
+        "Escolha VS BATTLE para duas, três ou quatro pessoas. O GP é individual.",
+        "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+        "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_FZeroX_EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2137,
+      "name": "Mario Kart 64",
+      "platform": "n64",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3738,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "VS ou Batalha",
+      "instructions": [
+        "Para três ou quatro pessoas escolha VS ou BATTLE. MARIO GP permite no máximo duas e TIME TRIALS é individual.",
+        "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+        "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioKart64_EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2141,
+      "name": "Mario Tennis",
+      "platform": "n64",
+      "sourceFile": "profiles-complete.json",
+      "sourceOrdinal": 3742,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Exhibition em duplas",
+      "instructions": [
+        "Escolha EXHIBITION e DOUBLES para quatro controles. TOURNAMENT é individual.",
+        "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+        "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioTennis_EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2483,
+      "name": "Bomberman Online",
+      "platform": "dreamcast",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 16,
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "controllerProfile": "dreamcast-four-ports-v1",
+      "mode": "solo",
+      "modeTitle": "Normal",
+      "instructions": [
+        "Modo individual.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/bomberman_online.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2483,
+      "name": "Bomberman Online",
+      "platform": "dreamcast",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 17,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "dreamcast-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Battle local",
+      "instructions": [
+        "Apenas multiplayer local original; rede antiga não é a integração Station.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/bomberman_online.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3738,
+      "name": "Mario Kart - Double Dash!! (Europe) (En,Fr,De,Es,It)",
+      "platform": "gamecube",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 248,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "gamecube-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Corrida local",
+      "instructions": [
+        "Mais de quatro envolve LAN com vários consoles/TVs; não é um Multitap.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3739,
+      "name": "Mario Party 7 (Europe) (En,Fr,De,Es,It)",
+      "platform": "gamecube",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 249,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "gamecube-shared-controller-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Festa oito pessoas",
+      "instructions": [
+        "Esta sala limita o modo compartilhado a quatro participantes. O app deve distribuir os lados do controle explicitamente; não anunciar oito vagas.",
+        "Oito humanos compartilham quatro pads, exige mapeamento específico; Station hoje suporta até cinco slots independentes.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Party-7-268313.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3749,
+      "name": "Star Fox - Assault",
+      "platform": "gamecube",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 259,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "gamecube-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Versus",
+      "instructions": [
+        "Campanha individual; quatro pessoas somente multiplayer de tela dividida.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Star-Fox-Assault-268874.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3750,
+      "name": "Super Smash Bros. Melee (Europe) (En,Fr,De,Es,It)",
+      "platform": "gamecube",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 260,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "gamecube-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Versus",
+      "instructions": [
+        "Escolha VS MODE para duas a quatro pessoas. Os modos de aventura permanecem individuais.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Super-Smash-Bros-Melee-268951.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3753,
+      "name": "The Legend of Zelda Four Swords Adventures",
+      "platform": "gamecube",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 263,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "gamecube-gba-link-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Multiplayer com GBA",
+      "instructions": [
+        "Exige consoles GBA e link; não basta ativar quatro controles comuns.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-Four-Swords-Adventures-269028.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3842,
+      "name": "MarioKartWii.ini",
+      "platform": "wii",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 269,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "wii-four-remotes-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Corrida local",
+      "instructions": [
+        "Rótulo1–12 mistura modos. Local no mesmo Wii permite quatro; rede Nintendo antiga não é Station.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Wii/Mario-Kart-Wii-281848.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3843,
+      "name": "New SUPER MARIO BROS.side",
+      "platform": "wii",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 270,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "wii-four-remotes-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Aventura cooperativa",
+      "instructions": [
+        "Selecionar os participantes e controles do modo cooperativo.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Wii/New-Super-Mario-Bros-Wii-282376.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3844,
+      "name": "Super Mario Galaxy (USA) (En,Fr,Es)",
+      "platform": "wii",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 271,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "wii-co-star-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Co-Star",
+      "instructions": [
+        "O anfitrião controla Mario; o convidado controla o ponteiro/Co-Star. O segundo participante não é outro Mario.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Wii/Super-Mario-Galaxy-283322.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3845,
+      "name": "Super Mario Galaxy 2 (USA) (En,Fr,Es)",
+      "platform": "wii",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 272,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "wii-co-star-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Co-Star",
+      "instructions": [
+        "O anfitrião controla Mario; o convidado controla o ponteiro/Co-Star. O segundo participante não é outro Mario.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://m1.nintendo.net/docvc/RVL/EUR/SB4P/SB4P_E.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3846,
+      "name": "MARIO KART 8 [AMKE01]",
+      "platform": "wiiu",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 273,
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "wiiu-four-controllers-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Multiplayer local",
+      "instructions": [
+        "Selecionar Multiplayer; Time Trials é solo; rede Nintendo é outro modo.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/manual-WiiU-Mario_Kart_8"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3847,
+      "name": "Pokemon.Cafe.Mix.010072400E04A000.v0",
+      "platform": "switch",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 274,
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "controllerProfile": "switch-two-controllers-v1",
+      "mode": "solo",
+      "modeTitle": "Individual",
+      "instructions": [
+        "Pokémon Café Mix/ReMix é individual. Esta edição não ganha modo de duas pessoas por abrir uma sala.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://app-pcm.pokemon-support.com/hc/en-us/articles/360053180271--How-many-players-can-play-the-game"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3849,
+      "name": "Donkey Kong Country Returns HD [01009D901BC56000][v0][US](nsw2u.com)",
+      "platform": "switch",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 275,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "switch-two-controllers-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Cooperativo local",
+      "instructions": [
+        "Selecione o modo local para dois jogadores desta edição. A sala usa dois controles independentes.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.nintendo.com/en-ca/store/products/donkey-kong-country-returns-hd-switch/"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3850,
+      "name": "Mario Kart 8 Deluxe [0100152000022000][v0]",
+      "platform": "switch",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 276,
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "switch-two-controllers-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "VS Race / Battle local",
+      "instructions": [
+        "Use VS Race ou Battle em multiplayer local. Esta sala Station está limitada a duas pessoas; o teto da plataforma não é quatro.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://mariokart8.nintendo.com/"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3851,
+      "name": "Yu-Gi-Oh EARLY DAYS COLLECTION [01000D001FF18000][v0][US]",
+      "platform": "switch",
+      "sourceFile": "server-prepared-modes.json",
+      "sourceOrdinal": 277,
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "controllerProfile": "switch-two-controllers-v1",
+      "mode": "solo",
+      "modeTitle": "Individual / seleção da coletânea",
+      "instructions": [
+        "Este cadastro oferece uma entrada de controle para os jogos da coletânea. Recursos de duelo pela rede do jogo não correspondem automaticamente a duas entradas de controle nesta sala. Um adaptador específico pode acrescentar um modo por dados.",
+        "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+      ],
+      "approvedInHistoricalSource": true,
+      "sources": [
+        "https://www.konami.com/yugioh/earlydayscollection/us/en/"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3741,
+      "name": "Pikmin 2",
+      "platform": "gamecube",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "mode": "local-2p",
+      "modeTitle": "Pikmin2: multijogador local",
+      "instructions": [
+        "Escolha o modo local de dois jogadores; a campanha individual não ganha um segundo jogador.",
+        "Cada participante usa uma porta GameCube independente; ambos precisam da mesma edição e conteúdo."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Pikmin-2-268544.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3747,
+      "name": "Sonic Heroes (DUB)",
+      "platform": "gamecube",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "mode": "local-2p",
+      "modeTitle": "Sonic Heroes: dois jogadores",
+      "instructions": [
+        "Escolha um modo de competição para dois jogadores; não selecionar três ou quatro assentos.",
+        "A edição DUB permanece vinculada ao conteúdo exato do catálogo; esta evidência documental não é teste dessa edição no telefone."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Sonic-Heroes-268742.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3755,
+      "name": "need for speed underground 2",
+      "platform": "gamecube",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "mode": "local-2p",
+      "modeTitle": "Corrida local",
+      "instructions": [
+        "Use a corrida local para dois jogadores; não confundir campanha individual ou recursos LAN com este modo."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Need-For-Speed-Underground-2-268478.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3748,
+      "name": "Sonic_Adventure_2",
+      "platform": "gamecube",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "mode": "battle-2p",
+      "modeTitle": "Sonic Adventure2: Battle para dois",
+      "instructions": [
+        "Escolha 2P Battle; ação, caça, tiro, kart e Chao Karate deste modo usam dois jogadores.",
+        "Três ou quatro jogadores pertencem ao modo Chao Party Race, não a este Battle."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Sonic-Adventure-2-Battle-268709.html",
+        "https://manuals.plus/m/25fee396fca2f1e899f5d0b83bb30d2076fcba00c82cd2b735ff1ea35f4887ad"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3748,
+      "name": "Sonic_Adventure_2",
+      "platform": "gamecube",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "mode": "chao-party-race",
+      "modeTitle": "Chao Party Race: até quatro",
+      "instructions": [
+        "Escolha Chao Race em 2P Battle e o tipo Party Race, com dados de Chao disponíveis no Memory Card.",
+        "Conecte uma porta por participante; os jogadores impulsionam seu Chao com A.",
+        "Beginner Race é individual; Party Race não habilita campanha ou Battle de ação para quatro."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Sonic-Adventure-2-Battle-268709.html",
+        "https://manuals.plus/m/25fee396fca2f1e899f5d0b83bb30d2076fcba00c82cd2b735ff1ea35f4887ad"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3739,
+      "name": "Mario Party 7 (Europe) (En,Fr,De,Es,It)",
+      "platform": "gamecube",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "mode": "party-cruise-4p",
+      "modeTitle": "Mario Party7: Battle Royale até quatro",
+      "instructions": [
+        "Use Party Cruise em Battle Royale ou Minigame Cruise comum; cada pessoa ocupa uma porta GameCube.",
+        "No Control Room, deixe Mic desligado: esse modo não depende de microfone.",
+        "Não selecione 4-Team Battle, Deluxe Cruise ou minigames de oito jogadores: o adaptador não divide um controle entre duas pessoas."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Party-7-268313.html",
+        "https://www.scribd.com/document/733198408/Mario-Party-7"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3839,
+      "name": "Donkey Kong Country Returns.side",
+      "platform": "wii",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "dolphin-wii-remotes-four-v1",
+      "mode": "local-coop-2p",
+      "modeTitle": "Donkey Kong Country Returns: dupla",
+      "instructions": [
+        "Entre no modo cooperativo de Donkey Kong e Diddy: somente dois jogadores.",
+        "Use Wii Remote horizontal com os comandos de movimento configurados; a ação de sacudir é necessária para bater, rolar e soprar.",
+        "Esta aprovação documental de modo não comprova os bindings ou a partida física em cada aparelho."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Wii/Donkey-Kong-Country-Returns-280968.html",
+        "https://www.nintendo.com/en-gb/News/2010/Donkey-Kong-Country-Returns-a-rip-roaring-banana-scoring-treat-251997.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2095,
+      "name": "Diddy Kong Racing",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "versus",
+      "modeTitle": "Diddy Kong Racing: Versus até quatro",
+      "instructions": [
+        "Escolha Versus para dois, três ou quatro jogadores com controles N64 padrão independentes.",
+        "Não selecionar aventura cooperativa por inferência de outro lançamento."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Diddy-Kong-Racing-269448.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2097,
+      "name": "Donkey Kong 64 [Expansion Pak Bundle]",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "battle",
+      "modeTitle": "Donkey Kong64: Battle até quatro",
+      "instructions": [
+        "Resgate o primeiro Kong para desbloquear Battle; a aventura principal continua individual.",
+        "Use Battle com dois, três ou quatro controles N64 padrão.",
+        "Expansion Pak obrigatório; a preparação recusa owner cuja opção expansionPak=true esteja ausente."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_DonkeyKong64_EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2114,
+      "name": "GoldenEye 007",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "multiplayer",
+      "modeTitle": "GoldenEye007: multiplayer até quatro",
+      "instructions": [
+        "Escolha o multiplayer original com dois, três ou quatro participantes.",
+        "Use o esquema padrão de um controle N64 por pessoa; não escolher configurações com dois controles por jogador."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/us/whatsnew/goldeneye-007-returns-for-nintendo-switch-online-expansion-pack-members/"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2125,
+      "name": "Kirby 64: The Crystal Shards",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "mini-games",
+      "modeTitle": "Kirby64: minigames até quatro",
+      "instructions": [
+        "Escolha MINI-GAMES com dois, três ou quatro controles; CPU pode completar vagas.",
+        "A aventura de história permanece individual."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_Kirby64TheCrystalShards_EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2140,
+      "name": "Mario Party",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "board",
+      "modeTitle": "Mario Party: tabuleiro até quatro",
+      "instructions": [
+        "Escolha o tabuleiro clássico com dois, três ou quatro humanos; CPU completa vagas.",
+        "Minigames seguem as equipes e controles do jogo; uma quantidade de participantes do tabuleiro não muda modos individuais ou Duel."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mario-Party-269569.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2138,
+      "name": "Mario Party 2",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "board",
+      "modeTitle": "Mario Party: tabuleiro até quatro",
+      "instructions": [
+        "Escolha o tabuleiro clássico com dois, três ou quatro humanos; CPU completa vagas.",
+        "Minigames seguem as equipes e controles do jogo; uma quantidade de participantes do tabuleiro não muda modos individuais ou Duel."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mario-Party-2-269580.html",
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioParty2_EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2138,
+      "name": "Mario Party 2",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "duel-2p",
+      "modeTitle": "Mario Party: Duel para dois",
+      "instructions": [
+        "Escolha o modo de duelo para dois participantes; não aplicar três ou quatro ao duelo."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mario-Party-2-269580.html",
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioParty2_EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2139,
+      "name": "Mario Party 3",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "board",
+      "modeTitle": "Mario Party: tabuleiro até quatro",
+      "instructions": [
+        "Escolha o tabuleiro clássico com dois, três ou quatro humanos; CPU completa vagas.",
+        "Minigames seguem as equipes e controles do jogo; uma quantidade de participantes do tabuleiro não muda modos individuais ou Duel."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mario-Party-3-269591.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2139,
+      "name": "Mario Party 3",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "duel-2p",
+      "modeTitle": "Mario Party: Duel para dois",
+      "instructions": [
+        "Escolha o modo de duelo para dois participantes; não aplicar três ou quatro ao duelo."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mario-Party-3-269591.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2165,
+      "name": "Perfect Dark",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "deathmatch",
+      "modeTitle": "Perfect Dark: Deathmatch até quatro",
+      "instructions": [
+        "Escolha Deathmatch com controles N64 padrão independentes.",
+        "Três ou quatro jogadores exigem Expansion Pak; a preparação verifica expansionPak=true.",
+        "Não habilitar cooperação ou configurações dual-controller por esta decisão."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Perfect-Dark-269635.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2073,
+      "name": "1080° Snowboarding",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "1080 Snowboarding: corrida para dois",
+      "instructions": [
+        "Escolha a corrida local 2P com um controle N64 padrão por jogador; modalidades de treino e manobras individuais continuam solo."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/es-es/Juegos/Nintendo-64/1080-Snowboarding-269404.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2103,
+      "name": "Excitebike 64",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Excitebike64: corrida até quatro",
+      "instructions": [
+        "Escolha a corrida para dois, três ou quatro jogadores; cada um ocupa uma porta N64 independente.",
+        "Não aplicar assentos adicionais a desafios individuais ou edição de pistas."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Excitebike-64-269470.html",
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_Excitebike64_EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2174,
+      "name": "Ridge Racer 64",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Ridge Racer64: corrida até quatro",
+      "instructions": [
+        "Use a corrida multiplayer local de dois, três ou quatro; a campanha individual permanece solo."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Ridge-Racer-64-269701.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2167,
+      "name": "Pokémon Puzzle League",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Pokemon Puzzle League: batalha para dois",
+      "instructions": [
+        "Escolha a batalha local contra outro jogador com duas portas N64 padrão.",
+        "Não confundir com Pokémon Stadium, Transfer Pak ou versões de Game Boy."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Pokemon-Puzzle-League-269657.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2143,
+      "name": "Mickey's Speedway USA",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Mickey Speedway USA: Contest até quatro",
+      "instructions": [
+        "Escolha Contest Mode para dois, três ou quatro participantes; Adventure não ganha jogadores adicionais."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mickey-s-Speedway-USA-269613.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2104,
+      "name": "Extreme-G",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Extreme-G: corrida até quatro",
+      "instructions": [
+        "Escolha a corrida multiplayer local de dois, três ou quatro usando portas N64 independentes.",
+        "Esta decisão cobre corrida; não homologa por inferência outros modos ou sequelas."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://throwbackentertainment.com/game/extreme-g/"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2105,
+      "name": "Extreme-G",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "local-multiplayer",
+      "modeTitle": "Extreme-G: corrida até quatro",
+      "instructions": [
+        "Escolha a corrida multiplayer local de dois, três ou quatro com portas N64 independentes.",
+        "A edição deste item continua vinculada ao conteúdo catalogado; não é aprovação de gameplay físico."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://throwbackentertainment.com/game/extreme-g/"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2136,
+      "name": "Mario Golf",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "turn-based-stroke",
+      "modeTitle": "Mario Golf: Stroke em turnos",
+      "instructions": [
+        "Escolha Stroke com dois, três ou quatro participantes.",
+        "Cada humano usa seu controle N64 independente; as tacadas são alternadas, não ação simultânea.",
+        "Não selecionar Tournament, Get Character, Ring Shot, Speed Golf ou Training: são individuais."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioGolf_EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2136,
+      "name": "Mario Golf",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "turn-based-skins",
+      "modeTitle": "Mario Golf: Skins Match em turnos",
+      "instructions": [
+        "Escolha Skins Match com dois, três ou quatro participantes.",
+        "Cada humano usa seu controle N64 independente; as tacadas são alternadas, não ação simultânea.",
+        "Não selecionar Tournament, Get Character, Ring Shot, Speed Golf ou Training: são individuais."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioGolf_EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2136,
+      "name": "Mario Golf",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "turn-based-clubslots",
+      "modeTitle": "Mario Golf: Club Slots em turnos",
+      "instructions": [
+        "Escolha Club Slots com dois, três ou quatro participantes.",
+        "Cada humano usa seu controle N64 independente; as tacadas são alternadas, não ação simultânea.",
+        "Não selecionar Tournament, Get Character, Ring Shot, Speed Golf ou Training: são individuais."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioGolf_EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2136,
+      "name": "Mario Golf",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "turn-based-minigolf",
+      "modeTitle": "Mario Golf: Mini-Golf em turnos",
+      "instructions": [
+        "Escolha Mini-Golf com dois, três ou quatro participantes.",
+        "Cada humano usa seu controle N64 independente; as tacadas são alternadas, não ação simultânea.",
+        "Não selecionar Tournament, Get Character, Ring Shot, Speed Golf ou Training: são individuais."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioGolf_EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2136,
+      "name": "Mario Golf",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "turn-based-match",
+      "modeTitle": "Mario Golf: Match Game em turnos",
+      "instructions": [
+        "Escolha Match Game com dois participantes.",
+        "Cada humano usa seu controle N64 independente; as tacadas são alternadas, não ação simultânea.",
+        "Não selecionar Tournament, Get Character, Ring Shot, Speed Golf ou Training: são individuais."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioGolf_EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2124,
+      "name": "Killer Instinct Gold",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "arcade-2p",
+      "modeTitle": "Killer Instinct Gold: Arcade para dois",
+      "instructions": [
+        "Escolha Arcade e pressione START nos controles1 e2 para dois humanos.",
+        "Não criar sala de três ou quatro por causa de Tournament: os participantes desse torneio se revezam nos combates de dois."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://manuals.plus/m/f64ee64136eb8177ed9265521c37f63c63c5fc54bd191b1c9fb025a2685848f8.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2170,
+      "name": "Pokémon Stadium",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "kidsclub-single",
+      "modeTitle": "Pokémon Stadium: Kids Club: minigame avulso",
+      "instructions": [
+        "Escolha um minigame avulso; cada humano entra com A no próprio controle. Bots não contam como humanos.",
+        "Use uma porta N64 independente por humano; Transfer Pak, GB Tower e troca de Pokémon ficam fora deste modo."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://manualzz.com/doc/24022192/nintendo-64-game-pak-pok%C3%A9mon-stadium-instruction-booklet",
+        "https://pkproject.net/juegos/manual/manual-N64-Pokemon-Stadium-EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2170,
+      "name": "Pokémon Stadium",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "kidsclub-series",
+      "modeTitle": "Pokémon Stadium: Kids Club: sequência de minigames",
+      "instructions": [
+        "Escolha a sequência de minigames até o número de vitórias definido; cada humano entra com A no próprio controle.",
+        "Use uma porta N64 independente por humano; Transfer Pak, GB Tower e troca de Pokémon ficam fora deste modo."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://manualzz.com/doc/24022192/nintendo-64-game-pak-pok%C3%A9mon-stadium-instruction-booklet",
+        "https://pkproject.net/juegos/manual/manual-N64-Pokemon-Stadium-EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2170,
+      "name": "Pokémon Stadium",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "freebattle-rental2",
+      "modeTitle": "Pokémon Stadium: Free Battle: duelo Rental Only",
+      "instructions": [
+        "Escolha Free Battle com dois humanos e Rental Only obrigatório; nenhum Pokémon importado de Game Boy.",
+        "Use uma porta N64 independente por humano; Transfer Pak, GB Tower e troca de Pokémon ficam fora deste modo."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://manualzz.com/doc/24022192/nintendo-64-game-pak-pok%C3%A9mon-stadium-instruction-booklet",
+        "https://pkproject.net/juegos/manual/manual-N64-Pokemon-Stadium-EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2170,
+      "name": "Pokémon Stadium",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "freebattle-tag-rental",
+      "modeTitle": "Pokémon Stadium: Free Battle: Tag-Team Rental Only",
+      "instructions": [
+        "Escolha Tag-Team/Anything Goes com três ou quatro humanos e Rental Only obrigatório; cada treinador comanda seu próprio time.",
+        "Use uma porta N64 independente por humano; Transfer Pak, GB Tower e troca de Pokémon ficam fora deste modo."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://manualzz.com/doc/24022192/nintendo-64-game-pak-pok%C3%A9mon-stadium-instruction-booklet",
+        "https://pkproject.net/juegos/manual/manual-N64-Pokemon-Stadium-EN.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2213,
+      "name": "Turok: Rage Wars",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "bloodlust",
+      "modeTitle": "Turok Rage Wars: Bloodlust",
+      "instructions": [
+        "Escolha Multiplayer Mode / Bloodlust para dois, três ou quatro humanos, um controle N64 por pessoa.",
+        "Bots completam até quatro vagas totais; não contam como jogadores humanos."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.ultra64.net/pdf/N64%20-%20Turok%20-%20Rage%20Wars%20%28Francais%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2213,
+      "name": "Turok: Rage Wars",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "frag-tag",
+      "modeTitle": "Turok Rage Wars: Frag Tag",
+      "instructions": [
+        "Escolha Multiplayer Mode / Frag Tag para dois, três ou quatro humanos, um controle N64 por pessoa.",
+        "Bots completam até quatro vagas totais; não contam como jogadores humanos."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.ultra64.net/pdf/N64%20-%20Turok%20-%20Rage%20Wars%20%28Francais%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2213,
+      "name": "Turok: Rage Wars",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "team-bloodlust",
+      "modeTitle": "Turok Rage Wars: Team Bloodlust",
+      "instructions": [
+        "Escolha Multiplayer Mode / Team Bloodlust para dois, três ou quatro humanos, um controle N64 por pessoa.",
+        "Bots completam até quatro vagas totais; não contam como jogadores humanos."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.ultra64.net/pdf/N64%20-%20Turok%20-%20Rage%20Wars%20%28Francais%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2213,
+      "name": "Turok: Rage Wars",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "capture-flag",
+      "modeTitle": "Turok Rage Wars: Capture the Flag",
+      "instructions": [
+        "Escolha Multiplayer Mode / Capture the Flag para dois, três ou quatro humanos, um controle N64 por pessoa.",
+        "Bots completam até quatro vagas totais; não contam como jogadores humanos."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.ultra64.net/pdf/N64%20-%20Turok%20-%20Rage%20Wars%20%28Francais%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2213,
+      "name": "Turok: Rage Wars",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "2-player-trials",
+      "modeTitle": "Turok Rage Wars: Trials para dois",
+      "instructions": [
+        "Escolha 2 Player Trials: duas pessoas, controles independentes e missões próprias; não ampliar para três ou quatro.",
+        "A documentação do modo não comprova a progressão desta edição em teste físico."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.ultra64.net/pdf/N64%20-%20Turok%20-%20Rage%20Wars%20%28Francais%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2092,
+      "name": "Cruis'n USA",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "split-screen-2p",
+      "modeTitle": "Cruis'n USA: corrida para dois",
+      "instructions": [
+        "Escolha a corrida em tela dividida para dois jogadores, com um controle N64 por pessoa.",
+        "Não criar sala de três ou quatro: o modo documentado aceita somente dois."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Cruis-n-USA--276775.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2158,
+      "name": "The New Tetris",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "marathon",
+      "modeTitle": "The New Tetris: Multiplayer Marathon",
+      "instructions": [
+        "Escolha Multi Player / Marathon para 2, 3, 4 humanos; Sprint pertence à lista individual.",
+        "Cada pessoa usa uma porta N64 independente; mantenha o controle1 conectado e escolha os nomes dos jogadores.",
+        "Controller Pak só é necessário para transferir perfis; não é requisito da partida multiplayer."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://nintendo64.pl/wp-content/uploads/The-New-Tetris-USA.pdf",
+        "https://manualzz.com/doc/22162295/nintendo-the-new-tetris-video-game-instruction-booklet"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2158,
+      "name": "The New Tetris",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "ultra",
+      "modeTitle": "The New Tetris: Multiplayer Ultra",
+      "instructions": [
+        "Escolha Multi Player / Ultra para 2, 3, 4 humanos; Sprint pertence à lista individual.",
+        "Cada pessoa usa uma porta N64 independente; mantenha o controle1 conectado e escolha os nomes dos jogadores.",
+        "Controller Pak só é necessário para transferir perfis; não é requisito da partida multiplayer."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://nintendo64.pl/wp-content/uploads/The-New-Tetris-USA.pdf",
+        "https://manualzz.com/doc/22162295/nintendo-the-new-tetris-video-game-instruction-booklet"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2158,
+      "name": "The New Tetris",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "lines",
+      "modeTitle": "The New Tetris: Multiplayer Lines",
+      "instructions": [
+        "Escolha Multi Player / Lines para 2, 3, 4 humanos; Sprint pertence à lista individual.",
+        "Cada pessoa usa uma porta N64 independente; mantenha o controle1 conectado e escolha os nomes dos jogadores.",
+        "Controller Pak só é necessário para transferir perfis; não é requisito da partida multiplayer."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://nintendo64.pl/wp-content/uploads/The-New-Tetris-USA.pdf",
+        "https://manualzz.com/doc/22162295/nintendo-the-new-tetris-video-game-instruction-booklet"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2195,
+      "name": "Star Wars Episode I: Racer",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "two-player-race",
+      "modeTitle": "Star Wars Episode I: Racer: Corrida para dois jogadores",
+      "instructions": [
+        "Conecte dois controles N64 independentes e escolha 2 JOUEURS; cada humano recebe metade da tela.",
+        "Escolha os podracers e a pista; o modo documentado aceita somente dois humanos.",
+        "Alta resolução é opcional e exige Expansion Pak; não importar os oito jogadores do port PC ou a configuração de dois controles por pessoa."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://emulation64.fr/pdf/N64%20-%20Star%20Wars%20Episode%20I%20-%20Racer%20%28Francais%29.pdf",
+        "https://www.nintendo.co.jp/n01/n64/software/nus_p_nepj/index.html"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2222,
+      "name": "WinBack: Covert Operations",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "death-match",
+      "modeTitle": "WinBack: Covert Operations: Death Match",
+      "instructions": [
+        "Escolha Multiplayer / Death Match para 2, 3, 4 humanos, com um controle N64 independente por pessoa.",
+        "O modo Story é individual e não recebe mais assentos pela sala.",
+        "Respeite a contagem deste modo: Point Match aceita3–4; Death Match2–4; Lethal Tag, Cube Hunt, Quick Draw e Team Battle somente2."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://nintendo64.pl/wp-content/uploads/WinBack-Covert-Operations-USA.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2222,
+      "name": "WinBack: Covert Operations",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "lethal-tag",
+      "modeTitle": "WinBack: Covert Operations: Lethal Tag",
+      "instructions": [
+        "Escolha Multiplayer / Lethal Tag para 2 humanos, com um controle N64 independente por pessoa.",
+        "O modo Story é individual e não recebe mais assentos pela sala.",
+        "Respeite a contagem deste modo: Point Match aceita3–4; Death Match2–4; Lethal Tag, Cube Hunt, Quick Draw e Team Battle somente2."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://nintendo64.pl/wp-content/uploads/WinBack-Covert-Operations-USA.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2222,
+      "name": "WinBack: Covert Operations",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "cube-hunt",
+      "modeTitle": "WinBack: Covert Operations: Cube Hunt",
+      "instructions": [
+        "Escolha Multiplayer / Cube Hunt para 2 humanos, com um controle N64 independente por pessoa.",
+        "O modo Story é individual e não recebe mais assentos pela sala.",
+        "Respeite a contagem deste modo: Point Match aceita3–4; Death Match2–4; Lethal Tag, Cube Hunt, Quick Draw e Team Battle somente2."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://nintendo64.pl/wp-content/uploads/WinBack-Covert-Operations-USA.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2222,
+      "name": "WinBack: Covert Operations",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "quick-draw",
+      "modeTitle": "WinBack: Covert Operations: Quick Draw",
+      "instructions": [
+        "Escolha Multiplayer / Quick Draw para 2 humanos, com um controle N64 independente por pessoa.",
+        "O modo Story é individual e não recebe mais assentos pela sala.",
+        "Respeite a contagem deste modo: Point Match aceita3–4; Death Match2–4; Lethal Tag, Cube Hunt, Quick Draw e Team Battle somente2."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://nintendo64.pl/wp-content/uploads/WinBack-Covert-Operations-USA.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2222,
+      "name": "WinBack: Covert Operations",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "team-battle",
+      "modeTitle": "WinBack: Covert Operations: Team Battle",
+      "instructions": [
+        "Escolha Multiplayer / Team Battle para 2 humanos, com um controle N64 independente por pessoa.",
+        "O modo Story é individual e não recebe mais assentos pela sala.",
+        "Respeite a contagem deste modo: Point Match aceita3–4; Death Match2–4; Lethal Tag, Cube Hunt, Quick Draw e Team Battle somente2."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://nintendo64.pl/wp-content/uploads/WinBack-Covert-Operations-USA.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2222,
+      "name": "WinBack: Covert Operations",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "point-match",
+      "modeTitle": "WinBack: Covert Operations: Point Match",
+      "instructions": [
+        "Escolha Multiplayer / Point Match para 3, 4 humanos, com um controle N64 independente por pessoa.",
+        "O modo Story é individual e não recebe mais assentos pela sala.",
+        "Respeite a contagem deste modo: Point Match aceita3–4; Death Match2–4; Lethal Tag, Cube Hunt, Quick Draw e Team Battle somente2."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://nintendo64.pl/wp-content/uploads/WinBack-Covert-Operations-USA.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2189,
+      "name": "Snowboard Kids",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "battle-race",
+      "modeTitle": "Snowboard Kids: Battle Race",
+      "instructions": [
+        "Escolha a quantidade de humanos e Battle Race; selecione a pista."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.videogamemanual.com/n64/Snowboard%20Kids%20%28USA%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2188,
+      "name": "Snowboard Kids 2",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "battle-mode",
+      "modeTitle": "Snowboard Kids 2: Battle Mode",
+      "instructions": [
+        "Escolha Battle Mode e a quantidade humana; confirme personagem, pista e prancha."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.emulation64.fr/pdf/N64%20-%20Snowboard%20Kids%202%20%28Anglais%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2091,
+      "name": "Conker's Bad Fur Day",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "beach",
+      "modeTitle": "Conker: Beach",
+      "instructions": [
+        "Escolha Beach; participantes adicionais entram com Start."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2091,
+      "name": "Conker's Bad Fur Day",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "raptor",
+      "modeTitle": "Conker: Raptor",
+      "instructions": [
+        "Escolha Raptor; participantes adicionais entram com Start."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2091,
+      "name": "Conker's Bad Fur Day",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "war-total-war",
+      "modeTitle": "Conker: War / Total War",
+      "instructions": [
+        "Escolha War / Total War; participantes adicionais entram com Start."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2091,
+      "name": "Conker's Bad Fur Day",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "war-colors",
+      "modeTitle": "Conker: War / Colors",
+      "instructions": [
+        "Escolha War / Colors; participantes adicionais entram com Start."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2091,
+      "name": "Conker's Bad Fur Day",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "heist",
+      "modeTitle": "Conker: Heist",
+      "instructions": [
+        "Escolha Heist; participantes adicionais entram com Start."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2091,
+      "name": "Conker's Bad Fur Day",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "tank",
+      "modeTitle": "Conker: Tank",
+      "instructions": [
+        "Escolha Tank; participantes adicionais entram com Start."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2091,
+      "name": "Conker's Bad Fur Day",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "race",
+      "modeTitle": "Conker: Race",
+      "instructions": [
+        "Escolha Race; participantes adicionais entram com Start."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2091,
+      "name": "Conker's Bad Fur Day",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "death-match",
+      "modeTitle": "Conker: Death Match",
+      "instructions": [
+        "Escolha Death Match; participantes adicionais entram com Start."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2149,
+      "name": "Mortal Kombat 4",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "arcade-one-on-one",
+      "modeTitle": "Mortal Kombat 4: Arcade 1 on 1",
+      "instructions": [
+        "Escolha Arcade / 1 on 1; cada humano seleciona um lutador."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://bdjogos.com.br/manuais/928-mortal-kombat-4-nintendo-64-manual-usa.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2149,
+      "name": "Mortal Kombat 4",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "arcade-two-on-two",
+      "modeTitle": "Mortal Kombat 4: Arcade 2 on 2",
+      "instructions": [
+        "Escolha Arcade / 2 on 2; cada humano seleciona dois lutadores."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://bdjogos.com.br/manuais/928-mortal-kombat-4-nintendo-64-manual-usa.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2149,
+      "name": "Mortal Kombat 4",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "team",
+      "modeTitle": "Mortal Kombat 4: Team",
+      "instructions": [
+        "Escolha Team; defina o tamanho da equipe de lutadores para cada humano."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://bdjogos.com.br/manuais/928-mortal-kombat-4-nintendo-64-manual-usa.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2149,
+      "name": "Mortal Kombat 4",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "vs-endurance",
+      "modeTitle": "Mortal Kombat 4: VS Endurance",
+      "instructions": [
+        "Escolha VS Endurance; dois humanos disputam a sequência de confrontos."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://bdjogos.com.br/manuais/928-mortal-kombat-4-nintendo-64-manual-usa.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2151,
+      "name": "Mortal Kombat Trilogy",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "mortal-kombat",
+      "modeTitle": "Mortal Kombat Trilogy: Mortal Kombat",
+      "instructions": [
+        "Escolha Mortal Kombat; cada humano seleciona um lutador."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.emulation64.fr/pdf/N64%20-%20Mortal%20Kombat%20Trilogy%20%28Anglais%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2173,
+      "name": "Quake II",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "deathmatch",
+      "modeTitle": "Quake II: Deathmatch",
+      "instructions": [
+        "Escolha Start / Multi / Deathmatch; confirme humanos, equipes e arena."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.videogamemanual.com/n64/Quake%20II%20%28USA%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2173,
+      "name": "Quake II",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "frag-teams",
+      "modeTitle": "Quake II: Frag Teams",
+      "instructions": [
+        "Escolha Start / Multi / Frag Teams; confirme humanos, equipes e arena."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.videogamemanual.com/n64/Quake%20II%20%28USA%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2173,
+      "name": "Quake II",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "flag-wars",
+      "modeTitle": "Quake II: Flag Wars",
+      "instructions": [
+        "Escolha Start / Multi / Flag Wars; confirme humanos, equipes e arena."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.videogamemanual.com/n64/Quake%20II%20%28USA%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 2173,
+      "name": "Quake II",
+      "platform": "n64",
+      "sourceFile": "documentary-research",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "death-tag",
+      "modeTitle": "Quake II: Death Tag",
+      "instructions": [
+        "Escolha Start / Multi / Death Tag; confirme humanos, equipes e arena."
+      ],
+      "approvedInHistoricalSource": false,
+      "documentaryReviewPrepared": true,
+      "sources": [
+        "https://www.videogamemanual.com/n64/Quake%20II%20%28USA%29.pdf"
+      ],
+      "operatorApplied": false,
+      "physicalGameplayValidated": false
+    }
+  ]
+}

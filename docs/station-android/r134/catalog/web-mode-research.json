@@ -1,0 +1,1609 @@
+{
+  "schemaVersion": 1,
+  "researchDate": "2026-10-11",
+  "entries": [
+    {
+      "catalogOrdinal": 3735,
+      "name": "Legend of Zelda, The - The Wind Waker (Europe) (En,Fr,De,Es,It)",
+      "platform": "gamecube",
+      "classification": "single-player",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-The-Wind-Waker-269039.html"
+      ],
+      "finding": "A ficha oficial de GameCube identifica um jogador. O Tingle Tuner opcional usa outro hardware e não converte a campanha em quatro portas locais.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3754,
+      "name": "The Legend of Zelda The Wind Waker",
+      "platform": "gamecube",
+      "classification": "single-player",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-The-Wind-Waker-269039.html"
+      ],
+      "finding": "A ficha oficial de GameCube identifica um jogador; o título duplicado do catálogo recebe a mesma conclusão documental, sem duplicar uma sala.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3736,
+      "name": "Legend of Zelda, The - Twilight Princess (Europe) (En,Fr,De,Es,It)",
+      "platform": "gamecube",
+      "classification": "single-player",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-Twilight-Princess-269050.html"
+      ],
+      "finding": "A ficha oficial de GameCube identifica um jogador na campanha.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3752,
+      "name": "The Legend of Zelda - Twilight Princess",
+      "platform": "gamecube",
+      "classification": "single-player",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-Twilight-Princess-269050.html"
+      ],
+      "finding": "A ficha oficial de GameCube identifica um jogador; o item distinto mantém sua edição/conteúdo próprios.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3737,
+      "name": "Luigi's Mansion (Europe) (En,Fr,De,Es,It)",
+      "platform": "gamecube",
+      "classification": "single-player",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Luigi-s-Mansion-268236.html"
+      ],
+      "finding": "A ficha oficial de GameCube identifica um jogador.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3740,
+      "name": "Metroid Prime",
+      "platform": "gamecube",
+      "classification": "single-player",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Metroid-Prime-268423.html"
+      ],
+      "finding": "A ficha oficial de GameCube identifica um jogador. Não transferir o modo multiplayer de Metroid Prime 2 para o primeiro jogo.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3745,
+      "name": "Resident Evil 4 (Disco 1)",
+      "platform": "gamecube",
+      "classification": "single-player",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Resident-Evil-4-268665.html"
+      ],
+      "finding": "A ficha oficial de GameCube identifica um jogador. Disco1 e Disco2 não são dois jogadores.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3746,
+      "name": "Resident Evil 4 (Disco 2)",
+      "platform": "gamecube",
+      "classification": "single-player",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Resident-Evil-4-268665.html"
+      ],
+      "finding": "A ficha oficial de GameCube identifica um jogador; a divisão em discos não acrescenta assentos.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3742,
+      "name": "Prince of Persia -Two Thrones",
+      "platform": "gamecube",
+      "classification": "single-player",
+      "primarySources": [
+        "https://manuals.plus/m/9974a1642a5548f3ec76ead9b03f57757ff082c8b1f9889c67e84f947fa2c485"
+      ],
+      "finding": "Manual original da Ubisoft para GameCube: um jogador e controle na porta1. Não há decisão multiplayer nova.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3738,
+      "name": "Mario Kart - Double Dash!! (Europe) (En,Fr,De,Es,It)",
+      "platform": "gamecube",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
+      ],
+      "finding": "A ficha oficial declara até quatro jogadores simultâneos; mantém o modo existente de portas GameCube independentes, sem ativar LAN entre consoles.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3749,
+      "name": "Star Fox - Assault",
+      "platform": "gamecube",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Star-Fox-Assault-268874.html"
+      ],
+      "finding": "A ficha oficial declara até quatro jogadores simultâneos no modo local; campanha não recebe assentos adicionais.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3750,
+      "name": "Super Smash Bros. Melee (Europe) (En,Fr,De,Es,It)",
+      "platform": "gamecube",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Super-Smash-Bros-Melee-268951.html"
+      ],
+      "finding": "A ficha oficial declara até quatro jogadores simultâneos; mantém o modo existente de batalha local.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3741,
+      "name": "Pikmin 2",
+      "platform": "gamecube",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Pikmin-2-268544.html"
+      ],
+      "finding": "A ficha oficial de GameCube informa um ou dois jogadores simultâneos, sem suporte documental a três ou quatro.",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [
+        {
+          "profileId": "review-3741-local2-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "local-2p",
+          "modeTitle": "Pikmin2: multijogador local",
+          "instructions": [
+            "Escolha o modo local de dois jogadores; a campanha individual não ganha um segundo jogador.",
+            "Cada participante usa uma porta GameCube independente; ambos precisam da mesma edição e conteúdo."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 3747,
+      "name": "Sonic Heroes (DUB)",
+      "platform": "gamecube",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Sonic-Heroes-268742.html"
+      ],
+      "finding": "A ficha oficial de GameCube informa um ou dois jogadores simultâneos, sem suporte documental a três ou quatro.",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [
+        {
+          "profileId": "review-3747-local2-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "local-2p",
+          "modeTitle": "Sonic Heroes: dois jogadores",
+          "instructions": [
+            "Escolha um modo de competição para dois jogadores; não selecionar três ou quatro assentos.",
+            "A edição DUB permanece vinculada ao conteúdo exato do catálogo; esta evidência documental não é teste dessa edição no telefone."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 3755,
+      "name": "need for speed underground 2",
+      "platform": "gamecube",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Need-For-Speed-Underground-2-268478.html"
+      ],
+      "finding": "A ficha oficial de GameCube informa um ou dois jogadores simultâneos, sem suporte documental a três ou quatro.",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [
+        {
+          "profileId": "review-3755-local2-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "local-2p",
+          "modeTitle": "Corrida local",
+          "instructions": [
+            "Use a corrida local para dois jogadores; não confundir campanha individual ou recursos LAN com este modo."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 3748,
+      "name": "Sonic_Adventure_2",
+      "platform": "gamecube",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Sonic-Adventure-2-Battle-268709.html",
+        "https://manuals.plus/m/25fee396fca2f1e899f5d0b83bb30d2076fcba00c82cd2b735ff1ea35f4887ad"
+      ],
+      "finding": "Manual original SEGA distingue Battle de dois jogadores e Party Race de Chao com até quatro controles; o quatro não se aplica à campanha nem a todos os Battle. Importação de Chao por GBA é opcional.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-sa2-battle2-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "battle-2p",
+          "modeTitle": "Sonic Adventure2: Battle para dois",
+          "instructions": [
+            "Escolha 2P Battle; ação, caça, tiro, kart e Chao Karate deste modo usam dois jogadores.",
+            "Três ou quatro jogadores pertencem ao modo Chao Party Race, não a este Battle."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        },
+        {
+          "profileId": "review-sa2-chaorace4-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "chao-party-race",
+          "modeTitle": "Chao Party Race: até quatro",
+          "instructions": [
+            "Escolha Chao Race em 2P Battle e o tipo Party Race, com dados de Chao disponíveis no Memory Card.",
+            "Conecte uma porta por participante; os jogadores impulsionam seu Chao com A.",
+            "Beginner Race é individual; Party Race não habilita campanha ou Battle de ação para quatro."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 3739,
+      "name": "Mario Party 7 (Europe) (En,Fr,De,Es,It)",
+      "platform": "gamecube",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Party-7-268313.html",
+        "https://www.scribd.com/document/733198408/Mario-Party-7"
+      ],
+      "finding": "Manual original Nintendo/Hudson: Party Cruise Battle Royale e Minigame Cruise aceitam até quatro, com um controle por pessoa; Control Room oferece Mic desligado. Oito e 4-Team Battle compartilham controles e continuam recusados.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-mp7-standard4-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "party-cruise-4p",
+          "modeTitle": "Mario Party7: Battle Royale até quatro",
+          "instructions": [
+            "Use Party Cruise em Battle Royale ou Minigame Cruise comum; cada pessoa ocupa uma porta GameCube.",
+            "No Control Room, deixe Mic desligado: esse modo não depende de microfone.",
+            "Não selecione 4-Team Battle, Deluxe Cruise ou minigames de oito jogadores: o adaptador não divide um controle entre duas pessoas."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 3743,
+      "name": "Resident Evil - Code - Veronica X (PT-BR DUB) - (Disc1)",
+      "platform": "gamecube",
+      "classification": "pending-primary-evidence",
+      "primarySources": [
+        "https://www.gamesdatabase.org/Media/SYSTEM/Nintendo_GameCube//Manual/formated/Resident_Evil_-_Code_Veronica_X_-_2003_-_Capcom.pdf"
+      ],
+      "finding": "Manual original Capcom para GameCube localizado, mas a ferramenta não permitiu extrair a página de quantidade. A política histórica genérica não é prova, e não foi criada sala para esta edição DUB.",
+      "documentarySimultaneousCounts": [],
+      "modes": [],
+      "reason": "exact-GameCube-primary-player-page-not-readable-DUB-edition-not-reviewed"
+    },
+    {
+      "catalogOrdinal": 3744,
+      "name": "Resident Evil - Code - Veronica X (PT-BR DUB) - (Disc2)",
+      "platform": "gamecube",
+      "classification": "pending-primary-evidence",
+      "primarySources": [
+        "https://www.gamesdatabase.org/Media/SYSTEM/Nintendo_GameCube//Manual/formated/Resident_Evil_-_Code_Veronica_X_-_2003_-_Capcom.pdf"
+      ],
+      "finding": "Manual original Capcom para GameCube localizado, mas a ferramenta não permitiu extrair a página de quantidade. A política histórica genérica não é prova, e não foi criada sala para esta edição DUB.",
+      "documentarySimultaneousCounts": [],
+      "modes": [],
+      "reason": "exact-GameCube-primary-player-page-not-readable-DUB-edition-not-reviewed"
+    },
+    {
+      "catalogOrdinal": 3751,
+      "name": "Terminator 3 - The Redemption",
+      "platform": "gamecube",
+      "classification": "pending-primary-evidence",
+      "primarySources": [
+        "https://worthplaying.com/article/2004/8/17/news/18671-terminator-3-the-redemption-ngcps2xbox-official-website-launched/"
+      ],
+      "finding": "Comunicado original Atari reproduzido anuncia modo cooperativo também para GameCube. A classificação genérica solo é contradita, mas faltou ler fonte primária da contagem exata/portas desta edição; não inferir assentos de outras plataformas.",
+      "documentarySimultaneousCounts": [],
+      "modes": [],
+      "reason": "GameCube-coop-announced-exact-primary-seat-count-not-extracted"
+    },
+    {
+      "catalogOrdinal": 3753,
+      "name": "The Legend of Zelda Four Swords Adventures",
+      "platform": "gamecube",
+      "classification": "unsupported-special-controller",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-Four-Swords-Adventures-269028.html"
+      ],
+      "finding": "O multijogador usa Game Boy Advance e cabos de conexão; quatro controles GameCube comuns não implementam esse requisito.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [],
+      "reason": "gamecube-gba-link-v1-not-implemented-by-current-native-port-profile"
+    },
+    {
+      "catalogOrdinal": 3841,
+      "name": "Legend of Zelda, The - Skyward Sword (USA) (En,Fr,Es)",
+      "platform": "wii",
+      "classification": "single-player",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Wii/The-Legend-of-Zelda-Skyward-Sword-283531.html"
+      ],
+      "finding": "Ficha oficial Wii: um jogador e Wii MotionPlus. Não há modo local de dois, três ou quatro para transformar em sala online.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3842,
+      "name": "MarioKartWii.ini",
+      "platform": "wii",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Wii/Mario-Kart-Wii-281848.html"
+      ],
+      "finding": "Ficha oficial Wii: até quatro jogadores simultâneos no multiplayer local. Não usa o serviço Nintendo WFC encerrado; mantém o modo local já documentado.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3843,
+      "name": "New SUPER MARIO BROS.side",
+      "platform": "wii",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Wii/New-Super-Mario-Bros-Wii-282376.html"
+      ],
+      "finding": "Ficha oficial Wii: até quatro jogadores na cooperação local. Mantém o modo local já documentado e os controles configurados pelo owner.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 3839,
+      "name": "Donkey Kong Country Returns.side",
+      "platform": "wii",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Wii/Donkey-Kong-Country-Returns-280968.html",
+        "https://www.nintendo.com/en-gb/News/2010/Donkey-Kong-Country-Returns-a-rip-roaring-banana-scoring-treat-251997.html"
+      ],
+      "finding": "Nintendo documenta cooperação local de Donkey Kong e Diddy para dois. Gestos de Wii Remote fazem parte do controle; o owner serializa estados configurados de movimento, sem comprovar os bindings físicos de cada telefone.",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [
+        {
+          "profileId": "review-dkreturns-coop2-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "local-coop-2p",
+          "modeTitle": "Donkey Kong Country Returns: dupla",
+          "instructions": [
+            "Entre no modo cooperativo de Donkey Kong e Diddy: somente dois jogadores.",
+            "Use Wii Remote horizontal com os comandos de movimento configurados; a ação de sacudir é necessária para bater, rolar e soprar.",
+            "Esta aprovação documental de modo não comprova os bindings ou a partida física em cada aparelho."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Wii Remote horizontal e gestos configurados no owner normal; estado de movimento transportado por WiimoteData"
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 3840,
+      "name": "Epic Mickey 2 The Power of Two",
+      "platform": "wii",
+      "classification": "pending-primary-evidence",
+      "primarySources": [
+        "https://thewaltdisneycompany.com/news/creative-inspiration-behind-disney-epic-mickey-2-power-two/"
+      ],
+      "finding": "Disney confirma cooperação e lançamento Wii. Não foi extraída nesta auditoria a página primária de controles/contagem da edição Wii. Não transferir o manual Xbox/PS3 ou o modo solo do port PC para o item Wii.",
+      "documentarySimultaneousCounts": [],
+      "modes": [],
+      "reason": "exact-Wii-primary-mode-and-controller-review-not-extracted"
+    },
+    {
+      "catalogOrdinal": 3844,
+      "name": "Super Mario Galaxy (USA) (En,Fr,Es)",
+      "platform": "wii",
+      "classification": "unsupported-special-controller",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Wii/Super-Mario-Galaxy-283322.html"
+      ],
+      "finding": "Dois participantes documentados pertencem ao Co-Star de assistente/pointer. Esse papel não é equivalente a duas portas comuns; o perfil Co-Star distinto não está homologado pelo owner atual.",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [],
+      "reason": "wii-co-star-v1-role-and-input-profile-not-implemented"
+    },
+    {
+      "catalogOrdinal": 3845,
+      "name": "Super Mario Galaxy 2 (USA) (En,Fr,Es)",
+      "platform": "wii",
+      "classification": "unsupported-special-controller",
+      "primarySources": [
+        "https://m1.nintendo.net/docvc/RVL/EUR/SB4P/SB4P_E.pdf"
+      ],
+      "finding": "Dois participantes documentados pertencem ao Co-Star de assistente/pointer. Esse papel não é equivalente a duas portas comuns; o perfil Co-Star distinto não está homologado pelo owner atual.",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [],
+      "reason": "wii-co-star-v1-role-and-input-profile-not-implemented"
+    },
+    {
+      "catalogOrdinal": 2095,
+      "name": "Diddy Kong Racing",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Diddy-Kong-Racing-269448.html"
+      ],
+      "finding": "Nintendo documenta Versus local de dois a quatro jogadores; não incluir aventura cooperativa ou recursos de versões posteriores.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-diddy-versus4-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "versus",
+          "modeTitle": "Diddy Kong Racing: Versus até quatro",
+          "instructions": [
+            "Escolha Versus para dois, três ou quatro jogadores com controles N64 padrão independentes.",
+            "Não selecionar aventura cooperativa por inferência de outro lançamento."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2097,
+      "name": "Donkey Kong 64 [Expansion Pak Bundle]",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_DonkeyKong64_EN.pdf"
+      ],
+      "finding": "Manual Nintendo: Battle para dois a quatro controles; é desbloqueado após resgatar o primeiro Kong. Expansion Pak obrigatório, e a canonical do owner fornecido precisa conter expansionPak=true.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-dk64-battle4-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "battle",
+          "modeTitle": "Donkey Kong64: Battle até quatro",
+          "instructions": [
+            "Resgate o primeiro Kong para desbloquear Battle; a aventura principal continua individual.",
+            "Use Battle com dois, três ou quatro controles N64 padrão.",
+            "Expansion Pak obrigatório; a preparação recusa owner cuja opção expansionPak=true esteja ausente."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [
+            "expansionPak=true"
+          ],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2114,
+      "name": "GoldenEye 007",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/us/whatsnew/goldeneye-007-returns-for-nintendo-switch-online-expansion-pack-members/"
+      ],
+      "finding": "Nintendo descreve o multiplayer original para dois a quatro. A decisão é para o jogo original catalogado e controles N64 padrão; não habilita configurações dual-controller.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-goldeneye-multi4-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "multiplayer",
+          "modeTitle": "GoldenEye007: multiplayer até quatro",
+          "instructions": [
+            "Escolha o multiplayer original com dois, três ou quatro participantes.",
+            "Use o esquema padrão de um controle N64 por pessoa; não escolher configurações com dois controles por jogador."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2125,
+      "name": "Kirby 64: The Crystal Shards",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_Kirby64TheCrystalShards_EN.pdf"
+      ],
+      "finding": "Manual Nintendo: MINI-GAMES aceita controles2,3,4 e completa participantes com CPU; o modo de história é solo.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-kirby64-minigames4-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "mini-games",
+          "modeTitle": "Kirby64: minigames até quatro",
+          "instructions": [
+            "Escolha MINI-GAMES com dois, três ou quatro controles; CPU pode completar vagas.",
+            "A aventura de história permanece individual."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2140,
+      "name": "Mario Party",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mario-Party-269569.html"
+      ],
+      "finding": "Nintendo documenta o tabuleiro clássico até quatro. Em Mario Party2/3 o duelo é separado para dois; a contagem de um modo não homologa todos os outros.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-mp2140-board4-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "board",
+          "modeTitle": "Mario Party: tabuleiro até quatro",
+          "instructions": [
+            "Escolha o tabuleiro clássico com dois, três ou quatro humanos; CPU completa vagas.",
+            "Minigames seguem as equipes e controles do jogo; uma quantidade de participantes do tabuleiro não muda modos individuais ou Duel."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2138,
+      "name": "Mario Party 2",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mario-Party-2-269580.html",
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioParty2_EN.pdf"
+      ],
+      "finding": "Nintendo documenta o tabuleiro clássico até quatro. Em Mario Party2/3 o duelo é separado para dois; a contagem de um modo não homologa todos os outros.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-mp2138-board4-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "board",
+          "modeTitle": "Mario Party: tabuleiro até quatro",
+          "instructions": [
+            "Escolha o tabuleiro clássico com dois, três ou quatro humanos; CPU completa vagas.",
+            "Minigames seguem as equipes e controles do jogo; uma quantidade de participantes do tabuleiro não muda modos individuais ou Duel."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        },
+        {
+          "profileId": "review-mp2138-duel2-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "duel-2p",
+          "modeTitle": "Mario Party: Duel para dois",
+          "instructions": [
+            "Escolha o modo de duelo para dois participantes; não aplicar três ou quatro ao duelo."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2139,
+      "name": "Mario Party 3",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mario-Party-3-269591.html"
+      ],
+      "finding": "Nintendo documenta o tabuleiro clássico até quatro. Em Mario Party2/3 o duelo é separado para dois; a contagem de um modo não homologa todos os outros.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-mp2139-board4-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "board",
+          "modeTitle": "Mario Party: tabuleiro até quatro",
+          "instructions": [
+            "Escolha o tabuleiro clássico com dois, três ou quatro humanos; CPU completa vagas.",
+            "Minigames seguem as equipes e controles do jogo; uma quantidade de participantes do tabuleiro não muda modos individuais ou Duel."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        },
+        {
+          "profileId": "review-mp2139-duel2-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "duel-2p",
+          "modeTitle": "Mario Party: Duel para dois",
+          "instructions": [
+            "Escolha o modo de duelo para dois participantes; não aplicar três ou quatro ao duelo."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2165,
+      "name": "Perfect Dark",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Perfect-Dark-269635.html"
+      ],
+      "finding": "Nintendo documenta Deathmatch de dois a quatro e exige Expansion Pak para três ou quatro. A decisão não inclui cooperação, Counter-Operative ou dual-controller sem evidência própria.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-perfectdark-dm4-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "deathmatch",
+          "modeTitle": "Perfect Dark: Deathmatch até quatro",
+          "instructions": [
+            "Escolha Deathmatch com controles N64 padrão independentes.",
+            "Três ou quatro jogadores exigem Expansion Pak; a preparação verifica expansionPak=true.",
+            "Não habilitar cooperação ou configurações dual-controller por esta decisão."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [
+            "expansionPak=true"
+          ],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2169,
+      "name": "Pocket Monsters Stadium 2",
+      "platform": "n64",
+      "classification": "pending-primary-evidence",
+      "primarySources": [],
+      "finding": "Pocket Monsters Stadium2 japonês é outro item. Nome parecido não prova equivalência ao Pokémon Stadium ocidental ou aos mesmos modos/acessórios.",
+      "documentarySimultaneousCounts": [],
+      "modes": [],
+      "reason": "Japanese-Stadium-edition-not-equated-to-western-PokemonStadium"
+    },
+    {
+      "catalogOrdinal": 2073,
+      "name": "1080° Snowboarding",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/es-es/Juegos/Nintendo-64/1080-Snowboarding-269404.html"
+      ],
+      "finding": "Nintendo informa um ou dois simultâneos; o modo local de corrida não aceita três ou quatro.",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [
+        {
+          "profileId": "review-2073-local-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "local-multiplayer",
+          "modeTitle": "1080 Snowboarding: corrida para dois",
+          "instructions": [
+            "Escolha a corrida local 2P com um controle N64 padrão por jogador; modalidades de treino e manobras individuais continuam solo."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2103,
+      "name": "Excitebike 64",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Excitebike-64-269470.html",
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_Excitebike64_EN.pdf"
+      ],
+      "finding": "Ficha e manual Nintendo confirmam corrida local e controles nas portas1,2,3,4; Expansion Pak é compatível, não obrigatório.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-2103-local-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "local-multiplayer",
+          "modeTitle": "Excitebike64: corrida até quatro",
+          "instructions": [
+            "Escolha a corrida para dois, três ou quatro jogadores; cada um ocupa uma porta N64 independente.",
+            "Não aplicar assentos adicionais a desafios individuais ou edição de pistas."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2174,
+      "name": "Ridge Racer 64",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Ridge-Racer-64-269701.html"
+      ],
+      "finding": "Nintendo identifica modo simultâneo de um a quatro no lançamento Nintendo64 original.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-2174-local-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "local-multiplayer",
+          "modeTitle": "Ridge Racer64: corrida até quatro",
+          "instructions": [
+            "Use a corrida multiplayer local de dois, três ou quatro; a campanha individual permanece solo."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2167,
+      "name": "Pokémon Puzzle League",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Pokemon-Puzzle-League-269657.html"
+      ],
+      "finding": "Nintendo descreve batalha de quebra-cabeça para dois simultâneos; não há suporte documental a três ou quatro.",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [
+        {
+          "profileId": "review-2167-local-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "local-multiplayer",
+          "modeTitle": "Pokemon Puzzle League: batalha para dois",
+          "instructions": [
+            "Escolha a batalha local contra outro jogador com duas portas N64 padrão.",
+            "Não confundir com Pokémon Stadium, Transfer Pak ou versões de Game Boy."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2143,
+      "name": "Mickey's Speedway USA",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mickey-s-Speedway-USA-269613.html"
+      ],
+      "finding": "Nintendo descreve Contest Mode para até quatro amigos simultâneos; Adventure é individual.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-2143-local-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "local-multiplayer",
+          "modeTitle": "Mickey Speedway USA: Contest até quatro",
+          "instructions": [
+            "Escolha Contest Mode para dois, três ou quatro participantes; Adventure não ganha jogadores adicionais."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2104,
+      "name": "Extreme-G",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://throwbackentertainment.com/game/extreme-g/"
+      ],
+      "finding": "O atual titular Throwback identifica o lançamento N64 de1997 e corrida simultânea de dois a quatro; não aplicar esse modo a outra edição da série.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-2104-local-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "local-multiplayer",
+          "modeTitle": "Extreme-G: corrida até quatro",
+          "instructions": [
+            "Escolha a corrida multiplayer local de dois, três ou quatro usando portas N64 independentes.",
+            "Esta decisão cobre corrida; não homologa por inferência outros modos ou sequelas."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2105,
+      "name": "Extreme-G",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://throwbackentertainment.com/game/extreme-g/"
+      ],
+      "finding": "Segundo item de Extreme-G conserva seu conteúdo exato do catálogo. A fonte do titular descreve o mesmo lançamento original; a decisão documental não comprova esta edição no telefone.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-2105-local-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "local-multiplayer",
+          "modeTitle": "Extreme-G: corrida até quatro",
+          "instructions": [
+            "Escolha a corrida multiplayer local de dois, três ou quatro com portas N64 independentes.",
+            "A edição deste item continua vinculada ao conteúdo catalogado; não é aprovação de gameplay físico."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2136,
+      "name": "Mario Golf",
+      "platform": "n64",
+      "classification": "alternating-independent-ports",
+      "primarySources": [
+        "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioGolf_EN.pdf"
+      ],
+      "finding": "Manual Nintendo p.2 permite2,3,4 controles; p.3 distingue os modos. Stroke/Skins/ClubSlots/MiniGolf aceitam2–4 e Match Game somente2. As tacadas alternam entre controles independentes, compatíveis com as quatro portas nativas; não foram declaradas simultâneas.",
+      "documentarySimultaneousCounts": [],
+      "modes": [
+        {
+          "profileId": "review-mariogolf-stroke-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "turn-based-stroke",
+          "modeTitle": "Mario Golf: Stroke em turnos",
+          "instructions": [
+            "Escolha Stroke com dois, três ou quatro participantes.",
+            "Cada humano usa seu controle N64 independente; as tacadas são alternadas, não ação simultânea.",
+            "Não selecionar Tournament, Get Character, Ring Shot, Speed Golf ou Training: são individuais."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        },
+        {
+          "profileId": "review-mariogolf-skins-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "turn-based-skins",
+          "modeTitle": "Mario Golf: Skins Match em turnos",
+          "instructions": [
+            "Escolha Skins Match com dois, três ou quatro participantes.",
+            "Cada humano usa seu controle N64 independente; as tacadas são alternadas, não ação simultânea.",
+            "Não selecionar Tournament, Get Character, Ring Shot, Speed Golf ou Training: são individuais."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        },
+        {
+          "profileId": "review-mariogolf-clubslots-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "turn-based-clubslots",
+          "modeTitle": "Mario Golf: Club Slots em turnos",
+          "instructions": [
+            "Escolha Club Slots com dois, três ou quatro participantes.",
+            "Cada humano usa seu controle N64 independente; as tacadas são alternadas, não ação simultânea.",
+            "Não selecionar Tournament, Get Character, Ring Shot, Speed Golf ou Training: são individuais."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        },
+        {
+          "profileId": "review-mariogolf-minigolf-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "turn-based-minigolf",
+          "modeTitle": "Mario Golf: Mini-Golf em turnos",
+          "instructions": [
+            "Escolha Mini-Golf com dois, três ou quatro participantes.",
+            "Cada humano usa seu controle N64 independente; as tacadas são alternadas, não ação simultânea.",
+            "Não selecionar Tournament, Get Character, Ring Shot, Speed Golf ou Training: são individuais."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        },
+        {
+          "profileId": "review-mariogolf-match-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "turn-based-match",
+          "modeTitle": "Mario Golf: Match Game em turnos",
+          "instructions": [
+            "Escolha Match Game com dois participantes.",
+            "Cada humano usa seu controle N64 independente; as tacadas são alternadas, não ação simultânea.",
+            "Não selecionar Tournament, Get Character, Ring Shot, Speed Golf ou Training: são individuais."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ],
+      "documentaryAlternatingIndependentPortCounts": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "catalogOrdinal": 2197,
+      "name": "Super Mario 64",
+      "platform": "n64",
+      "classification": "single-player",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Super-Mario-64-269745.html"
+      ],
+      "finding": "A ficha oficial identifica um jogador para este jogo Nintendo64 original. Compartilhar uma sessão de tela não transforma a aventura em multijogador local.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 2129,
+      "name": "The Legend of Zelda: Majora's Mask",
+      "platform": "n64",
+      "classification": "single-player",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/The-Legend-of-Zelda-Majora-s-Mask-269525.html"
+      ],
+      "finding": "A ficha oficial identifica um jogador para este jogo Nintendo64 original. Compartilhar uma sessão de tela não transforma a aventura em multijogador local.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 2227,
+      "name": "Yoshi's Story",
+      "platform": "n64",
+      "classification": "single-player",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Yoshi-s-Story-269800.html"
+      ],
+      "finding": "A ficha oficial identifica um jogador para este jogo Nintendo64 original. Compartilhar uma sessão de tela não transforma a aventura em multijogador local.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 2166,
+      "name": "Pilotwings 64",
+      "platform": "n64",
+      "classification": "pending-primary-evidence",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Pilotwings-64-269646.html"
+      ],
+      "finding": "A ficha Nintendo Europe exibe1–4 simultâneos, sem nomear modo local, enquanto o catálogo histórico identifica aventura individual. Esse conflito impede transformar o campo isolado em aprovação; precisa de manual original por modo.",
+      "documentarySimultaneousCounts": [],
+      "modes": [],
+      "reason": "primary-product-player-field-conflicts-with-existing-solo-classification-mode-manual-required"
+    },
+    {
+      "catalogOrdinal": 2198,
+      "name": "Smash Remix",
+      "platform": "n64",
+      "classification": "pending-primary-evidence",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Super-Smash-Bros-269756.html"
+      ],
+      "finding": "Nintendo documenta até quatro para Super Smash Bros original, mas o item instalado é o mod Smash Remix. A fonte do jogo original não é evidência suficiente da edição modificada nem dos modos/limites que ela altera.",
+      "documentarySimultaneousCounts": [],
+      "modes": [],
+      "reason": "SmashRemix-mod-specific-mode-and-edition-review-not-provided-by-original-game-source"
+    },
+    {
+      "catalogOrdinal": 2124,
+      "name": "Killer Instinct Gold",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://manuals.plus/m/f64ee64136eb8177ed9265521c37f63c63c5fc54bd191b1c9fb025a2685848f8.pdf"
+      ],
+      "finding": "Manual original Nintendo/Rare p.8: Arcade é iniciado por START nos controles1 e2. Tournament de2–8 alterna participantes nos combates; não são oito portas ou oito lutadores simultâneos.",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [
+        {
+          "profileId": "review-kigold-arcade2-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "arcade-2p",
+          "modeTitle": "Killer Instinct Gold: Arcade para dois",
+          "instructions": [
+            "Escolha Arcade e pressione START nos controles1 e2 para dois humanos.",
+            "Não criar sala de três ou quatro por causa de Tournament: os participantes desse torneio se revezam nos combates de dois."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2082,
+      "name": "Banjo to Kazooie no Daibouken 2",
+      "platform": "n64",
+      "classification": "pending-primary-evidence",
+      "primarySources": [
+        "https://www.nintendo.co.jp/n01/n64/software/nus_p_nb7j/index.html",
+        "https://news.xbox.com/en-us/2015/06/16/xbox-rare-celebrates-its-30th-anniversary-with-a-massive-30-game-collection/amp/"
+      ],
+      "finding": "Nintendo identifica a edição japonesa Banjo to Kazooie no Daibouken2 e1–4; o titular confirma multiplayer no original Banjo-Tooie. Sem discriminar minigames/controles por modo, a aventura e os minigames não recebem uma aprovação comum.",
+      "documentarySimultaneousCounts": [],
+      "modes": [],
+      "reason": "Japanese-BanjoTooie-primary-per-minigame-port-and-count-review-required",
+      "documentaryMaximumHumanPlayers": 4
+    },
+    {
+      "catalogOrdinal": 2170,
+      "name": "Pokémon Stadium",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://manualzz.com/doc/24022192/nintendo-64-game-pak-pok%C3%A9mon-stadium-instruction-booklet",
+        "https://pkproject.net/juegos/manual/manual-N64-Pokemon-Stadium-EN.pdf"
+      ],
+      "finding": "Manual Nintendo original, pp.4/14–15/28–32: controles2/3/4 explícitos; Kids Club sem Transfer Pak; Free Battle usa Rental Only do cartucho. Duelo2 e Tag-Team3/4 são decisões separadas. Batalhas alternam comandos de portas independentes; os minigames são simultâneos. Não alcança a edição japonesa2169.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-stadium-kidsclub-single-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "kidsclub-single",
+          "modeTitle": "Pokémon Stadium: Kids Club: minigame avulso",
+          "instructions": [
+            "Escolha um minigame avulso; cada humano entra com A no próprio controle. Bots não contam como humanos.",
+            "Use uma porta N64 independente por humano; Transfer Pak, GB Tower e troca de Pokémon ficam fora deste modo."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 independent ports; Rental Only mandatory in both Free Battle decisions; no Game Boy/Transfer Pak state",
+          "participation": "simultaneous"
+        },
+        {
+          "profileId": "review-stadium-kidsclub-series-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "kidsclub-series",
+          "modeTitle": "Pokémon Stadium: Kids Club: sequência de minigames",
+          "instructions": [
+            "Escolha a sequência de minigames até o número de vitórias definido; cada humano entra com A no próprio controle.",
+            "Use uma porta N64 independente por humano; Transfer Pak, GB Tower e troca de Pokémon ficam fora deste modo."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 independent ports; Rental Only mandatory in both Free Battle decisions; no Game Boy/Transfer Pak state",
+          "participation": "simultaneous"
+        },
+        {
+          "profileId": "review-stadium-freebattle-rental2-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "freebattle-rental2",
+          "modeTitle": "Pokémon Stadium: Free Battle: duelo Rental Only",
+          "instructions": [
+            "Escolha Free Battle com dois humanos e Rental Only obrigatório; nenhum Pokémon importado de Game Boy.",
+            "Use uma porta N64 independente por humano; Transfer Pak, GB Tower e troca de Pokémon ficam fora deste modo."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 independent ports; Rental Only mandatory in both Free Battle decisions; no Game Boy/Transfer Pak state",
+          "participation": "alternating-independent-ports"
+        },
+        {
+          "profileId": "review-stadium-freebattle-tag-rental-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            3,
+            4
+          ],
+          "mode": "freebattle-tag-rental",
+          "modeTitle": "Pokémon Stadium: Free Battle: Tag-Team Rental Only",
+          "instructions": [
+            "Escolha Tag-Team/Anything Goes com três ou quatro humanos e Rental Only obrigatório; cada treinador comanda seu próprio time.",
+            "Use uma porta N64 independente por humano; Transfer Pak, GB Tower e troca de Pokémon ficam fora deste modo."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": "Standard N64 independent ports; Rental Only mandatory in both Free Battle decisions; no Game Boy/Transfer Pak state",
+          "participation": "alternating-independent-ports"
+        }
+      ],
+      "documentaryParticipationByMode": {
+        "kidsclub-single": "simultaneous",
+        "kidsclub-series": "simultaneous",
+        "freebattle-rental2": "alternating-independent-ports",
+        "freebattle-tag-rental": "alternating-independent-ports"
+      }
+    },
+    {
+      "catalogOrdinal": 2086,
+      "name": "Bomberman Hero",
+      "platform": "n64",
+      "classification": "single-player",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Bomberman-Hero-276445.html"
+      ],
+      "finding": "A ficha oficial Nintendo/Hudson identifica um jogador. Bomberman Hero não herda o Battle multiplayer de Bomberman64 ou de outro título da série.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 2213,
+      "name": "Turok: Rage Wars",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.ultra64.net/pdf/N64%20-%20Turok%20-%20Rage%20Wars%20%28Francais%29.pdf"
+      ],
+      "finding": "Manual original Acclaim, páginas digitais3/11–14: uma porta por jogador; Multiplayer aceita até quatro e distingue Bloodlust, Frag Tag, Team Bloodlust e Capture the Flag. 2 Player Trials usa somente dois. Bots compartilham o teto de quatro.",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-turokrage-bloodlust-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "bloodlust",
+          "modeTitle": "Turok Rage Wars: Bloodlust",
+          "instructions": [
+            "Escolha Multiplayer Mode / Bloodlust para dois, três ou quatro humanos, um controle N64 por pessoa.",
+            "Bots completam até quatro vagas totais; não contam como jogadores humanos."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        },
+        {
+          "profileId": "review-turokrage-frag-tag-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "frag-tag",
+          "modeTitle": "Turok Rage Wars: Frag Tag",
+          "instructions": [
+            "Escolha Multiplayer Mode / Frag Tag para dois, três ou quatro humanos, um controle N64 por pessoa.",
+            "Bots completam até quatro vagas totais; não contam como jogadores humanos."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        },
+        {
+          "profileId": "review-turokrage-team-bloodlust-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "team-bloodlust",
+          "modeTitle": "Turok Rage Wars: Team Bloodlust",
+          "instructions": [
+            "Escolha Multiplayer Mode / Team Bloodlust para dois, três ou quatro humanos, um controle N64 por pessoa.",
+            "Bots completam até quatro vagas totais; não contam como jogadores humanos."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        },
+        {
+          "profileId": "review-turokrage-capture-flag-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "mode": "capture-flag",
+          "modeTitle": "Turok Rage Wars: Capture the Flag",
+          "instructions": [
+            "Escolha Multiplayer Mode / Capture the Flag para dois, três ou quatro humanos, um controle N64 por pessoa.",
+            "Bots completam até quatro vagas totais; não contam como jogadores humanos."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        },
+        {
+          "profileId": "review-turokrage-trials2-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "2-player-trials",
+          "modeTitle": "Turok Rage Wars: Trials para dois",
+          "instructions": [
+            "Escolha 2 Player Trials: duas pessoas, controles independentes e missões próprias; não ampliar para três ou quatro.",
+            "A documentação do modo não comprova a progressão desta edição em teste físico."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2214,
+      "name": "Turok 2: Seeds of Evil",
+      "platform": "n64",
+      "classification": "pending-primary-evidence",
+      "primarySources": [
+        "https://www.gamesdatabase.org/Media/SYSTEM/Nintendo_N64//Manual/formated/Turok_2-_Seeds_of_Evil_-_1998_-_Acclaim_Entertainment.pdf"
+      ],
+      "finding": "A revisão por modo Nintendo64 não foi concluída: o manual original localizado de Turok2 retornou404/403 e o de Turok3 não pôde ser lido. Não transferir modos/contagens dos remasters PC ou Switch para estas edições do catálogo.",
+      "documentarySimultaneousCounts": [],
+      "modes": [],
+      "reason": "original-N64-manual-per-mode-count-and-controller-pages-not-readable"
+    },
+    {
+      "catalogOrdinal": 2215,
+      "name": "Turok 3: Shadow of Oblivion",
+      "platform": "n64",
+      "classification": "pending-primary-evidence",
+      "primarySources": [],
+      "finding": "A revisão por modo Nintendo64 não foi concluída: o manual original localizado de Turok2 retornou404/403 e o de Turok3 não pôde ser lido. Não transferir modos/contagens dos remasters PC ou Switch para estas edições do catálogo.",
+      "documentarySimultaneousCounts": [],
+      "modes": [],
+      "reason": "original-N64-manual-per-mode-count-and-controller-pages-not-readable"
+    },
+    {
+      "catalogOrdinal": 2092,
+      "name": "Cruis'n USA",
+      "platform": "n64",
+      "classification": "simultaneous",
+      "primarySources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-64/Cruis-n-USA--276775.html"
+      ],
+      "finding": "A ficha original Nintendo/Midway distingue corrida individual e tela dividida para dois. As quatro portas do console não ampliam esse modo para três ou quatro.",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [
+        {
+          "profileId": "review-cruisnusa-split2-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "mode": "split-screen-2p",
+          "modeTitle": "Cruis'n USA: corrida para dois",
+          "instructions": [
+            "Escolha a corrida em tela dividida para dois jogadores, com um controle N64 por pessoa.",
+            "Não criar sala de três ou quatro: o modo documentado aceita somente dois."
+          ],
+          "adapterCompatible": true,
+          "requiredEngineOptions": [],
+          "configuredInputCondition": ""
+        }
+      ]
+    },
+    {
+      "catalogOrdinal": 2081,
+      "name": "Banjo to Kazooie no Daibouken",
+      "platform": "n64",
+      "classification": "single-player",
+      "primarySources": [
+        "https://assets.topics.apps-jp.nintendo.com/uploads/files/2022/01/18/07/56/21/754200/41442_1999_02.pdf"
+      ],
+      "finding": "Arquivo original Nintendo de fevereiro1999 identifica a edição japonesa de Banjo to Kazooie no Daibouken como jogo para uma pessoa. Não herda os minigames de Banjo-Tooie.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 2163,
+      "name": "Mario Story",
+      "platform": "n64",
+      "classification": "single-player",
+      "primarySources": [
+        "https://assets.topics.apps-jp.nintendo.com/uploads/files/2022/01/27/02/26/12/869107/38704_2000_09.pdf"
+      ],
+      "finding": "Arquivo original Nintendo de setembro2000 identifica Mario Story para Nintendo64 como jogo para uma pessoa. Os companheiros da aventura não são controles de outros humanos.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    },
+    {
+      "catalogOrdinal": 2168,
+      "name": "Pocket Monster Snap",
+      "platform": "n64",
+      "classification": "single-player",
+      "primarySources": [
+        "https://assets.topics.apps-jp.nintendo.com/uploads/files/2022/06/08/07/17/36/786757/49246_1999_07.pdf"
+      ],
+      "finding": "Arquivo original Nintendo de julho1999 identifica Pocket Monster Snap como jogo para uma pessoa. Compartilhar fotografias não implementa uma sala de duas ou mais pessoas.",
+      "documentarySimultaneousCounts": [],
+      "modes": []
+    }
+  ],
+  "documentaryApprovalIsPhysicalGameplay": false,
+  "playerCountsInferredFromCeiling": false
+}

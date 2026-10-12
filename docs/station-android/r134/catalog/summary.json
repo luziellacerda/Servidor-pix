@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "revision": "R134",
+  "sourceCommit": "4f9039eb9ce13907ce043870bfe1f6e294888556",
+  "serverCommit": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+  "catalogRevision": 33,
+  "catalogEntries": 3940,
+  "visible": 3685,
+  "aliases": 255,
+  "originalProfiles": 5176,
+  "originalPreparedModes": 321,
+  "reviewedFinalOwnerModes": 78,
+  "existingTestPolicyProposals": 172,
+  "nativeModeRefusals": 4,
+  "allGenericHistoricalDecisions": 5436,
+  "gameSpecificDocumentedModeRecords": 130,
+  "additionalDocumentaryEntries": 97,
+  "documentaryResearchInputs": [
+    {
+      "file": "web-mode-research.json",
+      "sha256": "d8464318c14cefeae25d3419da7dc32722fadf920f0b9ae84498f8aa695b8845",
+      "entries": 61
+    },
+    {
+      "file": "psx-primary-consolidated.json",
+      "sha256": "e7dcc503caea35c04d233aac50e7293dec7e76e42736f523b9bfcba856d60863",
+      "entries": 26
+    },
+    {
+      "file": "n64-root-mode-decisions.json",
+      "sha256": "6fca6d97e6338932ca3189b5cef2267209a0808b80821187eb0afc9969898d8e",
+      "entries": 3
+    },
+    {
+      "file": "n64-additional-primary-review.json",
+      "sha256": "c457b850d2f38f89fa7a663b616a7a7a95c28ae74d30d357854c9b1720d75881",
+      "entries": 7
+    }
+  ],
+  "finalOwnerGamesPrepared": 44,
+  "documentedSinglePlayerGames": 17,
+  "preparedProfilesAdded": 78,
+  "finalEngineIds": [
+    "pcsx-rearmed-ff81ed17-player-v3-69ac2b703f03",
+    "mupen64plus-ae-33bf7021-n64-v3-5f56099c433f",
+    "dolphin-5102a033-gamecube-v3-9c87e2ec4c79",
+    "dolphin-5102a033-wii-v3-9c87e2ec4c79"
+  ],
+  "originalProfilesPreserved": true,
+  "originalModesPreserved": true,
+  "unknownGamesApproved": false,
+  "playerCountsInferredFromPlatformCeiling": false,
+  "previousPsxApprovalsMigrated": false,
+  "operatorApplied": false,
+  "currentProductionAuthenticatedSnapshotCaptured": false,
+  "physicalGameplayValidated": false,
+  "ps3Ps4Online": false,
+  "offlineSonyModulesPreserved": true,
+  "perPlatform": [
+    {
+      "platform": "cps1",
+      "catalogEntries": 36,
+      "visible": 36,
+      "aliases": 0,
+      "states": {
+        "baseline-current-engine-profile-compatible": 36
+      }
+    },
+    {
+      "platform": "cps2",
+      "catalogEntries": 64,
+      "visible": 64,
+      "aliases": 0,
+      "states": {
+        "baseline-current-engine-profile-compatible": 62,
+        "baseline-single-player-classification": 2
+      }
+    },
+    {
+      "platform": "cps3",
+      "catalogEntries": 11,
+      "visible": 11,
+      "aliases": 0,
+      "states": {
+        "baseline-current-engine-profile-compatible": 9,
+        "no-approved-current-edition-mode-binding": 2
+      }
+    },
+    {
+      "platform": "dreamcast",
+      "catalogEntries": 243,
+      "visible": 243,
+      "aliases": 0,
+      "states": {
+        "no-current-client-online-engine": 243
+      }
+    },
+    {
+      "platform": "fbneo",
+      "catalogEntries": 913,
+      "visible": 913,
+      "aliases": 0,
+      "states": {
+        "baseline-current-engine-profile-compatible": 846,
+        "baseline-single-player-classification": 67
+      }
+    },
+    {
+      "platform": "gamecube",
+      "catalogEntries": 21,
+      "visible": 21,
+      "aliases": 0,
+      "states": {
+        "documented-single-player-no-online-room": 9,
+        "reviewed-final-owner-binding-prepared": 8,
+        "documentary-mode-blocked": 4
+      }
+    },
+    {
+      "platform": "megadrive",
+      "catalogEntries": 1133,
+      "visible": 887,
+      "aliases": 246,
+      "states": {
+        "baseline-current-engine-profile-compatible": 887
+      }
+    },
+    {
+      "platform": "megadrivebr",
+      "catalogEntries": 94,
+      "visible": 94,
+      "aliases": 0,
+      "states": {
+        "baseline-current-engine-profile-compatible": 94
+      }
+    },
+    {
+      "platform": "n64",
+      "catalogEntries": 157,
+      "visible": 157,
+      "aliases": 0,
+      "states": {
+        "existing-test-policy-pending-game-review": 110,
+        "reviewed-final-owner-binding-prepared": 33,
+        "documented-single-player-no-online-room": 7,
+        "documentary-mode-blocked": 7
+      }
+    },
+    {
+      "platform": "neogeo",
+      "catalogEntries": 189,
+      "visible": 189,
+      "aliases": 0,
+      "states": {
+        "baseline-current-engine-profile-compatible": 180,
+        "baseline-single-player-classification": 5,
+        "no-approved-current-edition-mode-binding": 4
+      }
+    },
+    {
+      "platform": "neogeocd",
+      "catalogEntries": 50,
+      "visible": 50,
+      "aliases": 0,
+      "states": {
+        "baseline-current-engine-profile-compatible": 47,
+        "baseline-single-player-classification": 3
+      }
+    },
+    {
+      "platform": "ps2",
+      "catalogEntries": 25,
+      "visible": 25,
+      "aliases": 0,
+      "states": {
+        "no-current-client-online-engine": 25
+      }
+    },
+    {
+      "platform": "psp",
+      "catalogEntries": 9,
+      "visible": 9,
+      "aliases": 0,
+      "states": {
+        "no-current-client-online-engine": 9
+      }
+    },
+    {
+      "platform": "psx",
+      "catalogEntries": 84,
+      "visible": 84,
+      "aliases": 0,
+      "states": {
+        "psx-hle-per-edition-review-pending": 84
+      }
+    },
+    {
+      "platform": "saturn",
+      "catalogEntries": 19,
+      "visible": 19,
+      "aliases": 0,
+      "states": {
+        "no-current-client-online-engine": 19
+      }
+    },
+    {
+      "platform": "sega32x",
+      "catalogEntries": 36,
+      "visible": 36,
+      "aliases": 0,
+      "states": {
+        "no-current-client-online-engine": 36
+      }
+    },
+    {
+      "platform": "snes",
+      "catalogEntries": 653,
+      "visible": 644,
+      "aliases": 9,
+      "states": {
+        "baseline-current-engine-profile-compatible": 644
+      }
+    },
+    {
+      "platform": "snesbr",
+      "catalogEntries": 191,
+      "visible": 191,
+      "aliases": 0,
+      "states": {
+        "baseline-current-engine-profile-compatible": 191
+      }
+    },
+    {
+      "platform": "switch",
+      "catalogEntries": 4,
+      "visible": 4,
+      "aliases": 0,
+      "states": {
+        "no-current-client-online-engine": 4
+      }
+    },
+    {
+      "platform": "wii",
+      "catalogEntries": 7,
+      "visible": 7,
+      "aliases": 0,
+      "states": {
+        "reviewed-final-owner-binding-prepared": 3,
+        "documentary-mode-blocked": 3,
+        "documented-single-player-no-online-room": 1
+      }
+    },
+    {
+      "platform": "wiiu",
+      "catalogEntries": 1,
+      "visible": 1,
+      "aliases": 0,
+      "states": {
+        "no-current-client-online-engine": 1
+      }
+    }
+  ],
+  "inputProvenance": {
+    "catalog": {
+      "gitPath": "docs/station-android/online-plataformas-20261009/catalogo-cruzado-completo.json",
+      "sha256": "22499d9d7f8c9daabe9d7d859cca60e2f59e0e2c233cae4eb4bb32e4ff4375a1"
+    },
+    "profiles": {
+      "gitPath": "docs/station-android/online-plataformas-20261009/profiles-complete.json",
+      "sha256": "a029fb61ce68fa26abadf0312b55b9ae163c6a3604a12bfd37e97d406fdfebaa"
+    },
+    "modes": {
+      "gitPath": "docs/station-android/online-plataformas-20261009/server-prepared-modes.json",
+      "sha256": "d7c7ccf3c6a10e6f1fbce8475baacbbca83cd1e7f325ad8b24ab42a0fa6b78a6"
+    },
+    "content": {
+      "gitPath": "docs/station-android/online-plataformas-20261009/content-identities.json",
+      "sha256": "4c926082fc7e61d43146959e33681979f8100bbe9f832ffd218f83218127df9f"
+    },
+    "return": {
+      "gitPath": "docs/station-android/online-plataformas-20261009/r128-retorno-servidor-20261011.json",
+      "sha256": "13ec0dda1a8bc938c8453ee1b3b707699fb6738c70034828fc37cdca1ddae9c9"
+    },
+    "incoming": {
+      "gitPath": "docs/station-android/r128/operator/build_incoming_manifest.py",
+      "sha256": "362bcae9d8915f7f43aac4c48d06b35bdf57efc88d6acb9199aa06e3a0231426"
+    },
+    "merge": {
+      "gitPath": "docs/station-android/r128/operator/merge_scoped_modes.py",
+      "sha256": "ddac598ca1671e6d682b626866a3b1984eb88c5ff7d677c7b4cd563a6a677783"
+    },
+    "operator": {
+      "gitPath": "docs/station-android/online-plataformas-20261009/library-tools/station_online_profiles.py",
+      "sha256": "3d5d5b5563e2a6825ab9e798da80313cdbf2640522bc4dfd6b47e25c7f69eae1"
+    }
+  },
+  "finalRuntimeReceiptSha256": "2d6fc1c1933b4dc88aa09192138b8564b5f0b743461faa7580896b8339b2067f",
+  "localEngineAssetSha256": "40e55b795eae0d2a0f1a439f271bab692eb84e38907043c537b69da403fa354e",
+  "observedReturn": {
+    "privateKitReceived": false,
+    "newFinalEnginesActivated": false,
+    "nativeAdministrativeAuthenticationRequired": true,
+    "coversPublished": false
+  },
+  "states": {
+    "baseline-current-engine-profile-compatible": 2996,
+    "existing-test-policy-pending-game-review": 110,
+    "reviewed-final-owner-binding-prepared": 44,
+    "documented-single-player-no-online-room": 17,
+    "documentary-mode-blocked": 14,
+    "baseline-single-player-classification": 77,
+    "no-approved-current-edition-mode-binding": 6,
+    "no-current-client-online-engine": 337,
+    "psx-hle-per-edition-review-pending": 84
+  },
+  "remainingGenericNativeSelections": 110,
+  "closedWithoutNewApproval": 441
+}

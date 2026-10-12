@@ -1,0 +1,290 @@
+{
+  "apkBytes": 2714991631,
+  "apkSha256": "f8cb09184f41bc7c942ce84541dbd90d575b7240467ce0033d35be65e57caee2",
+  "approvedScopes": [
+    "graphics-settings-grouped-pages",
+    "sony-emulator-settings-and-return",
+    "native-sony-settings-action-labels"
+  ],
+  "buildIdentityPending": false,
+  "compiled": true,
+  "compositionRequired": {
+    "additionCount": 0,
+    "changedDexPartitions": [
+      "classes28.dex",
+      "classes40.dex"
+    ],
+    "dex28AllowedFamily": "org.emulationstation.frontend.station.StationGraphicsPanel",
+    "dex40AllowedFamilies": [
+      "org.emulationstation.frontend.sony.Ps3Activity",
+      "org.emulationstation.frontend.sony.Ps4Activity"
+    ],
+    "fullPackageProofPending": false,
+    "nativeCarouselAllowedLabels": 2,
+    "nativeLabelsEqualSizeBytesEach": 22,
+    "preservedEntryCount": 13853,
+    "replacementCount": 7,
+    "unrelatedDexPreservedCount": 38
+  },
+  "frozenSourcesChanged": false,
+  "identityReceiptSha256": "2d6fc1c1933b4dc88aa09192138b8564b5f0b743461faa7580896b8339b2067f",
+  "installed": true,
+  "integration": "integration/settings-refinement-r134",
+  "newCompleteSnapshotCreated": false,
+  "online": {
+    "aliases": 255,
+    "baselineModesPreserved": 321,
+    "baselineProfilesPreserved": 5176,
+    "catalogEntries": 3940,
+    "currentIdentitiesPending": false,
+    "engines": [
+      {
+        "backend": "psx-player-station-v1",
+        "contentIdentityByExtension": {
+          "cue": "cue-set-v1",
+          "default": "launch-file-v1"
+        },
+        "controllerProfiles": [
+          "standard-2p-v1"
+        ],
+        "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+        "dependencySha256": {
+          "libSDL2.so": "a282b35554eb006773349430e117bfeeff32a84e246a058c8fb7c7027c2e4dee",
+          "libc++_shared.so": "b5d97c38a728afe28d341cda3369f512d35eaf9c680c1b0563cd6a63e395230f",
+          "libmain.so": "62ad07ba8e62e3227d488f9075eb15167c2e95b721c43e480e2535b4319467f6",
+          "libstation_frontend.so": "4e7ad58e1e8f8a284654120c27280eed8c124ad5301a9e87d769e41f100d8d0d"
+        },
+        "engineId": "pcsx-rearmed-ff81ed17-player-v3-69ac2b703f03",
+        "extensions": [
+          "pbp",
+          "chd",
+          "cue"
+        ],
+        "launchReady": true,
+        "library": "libpcsx_rearmed_libretro_android.so",
+        "license": "GPL-2.0-or-later",
+        "maximumPlayers": 2,
+        "options": "backend=psx-player-station-v1\nwire=PXL1\nownerSha256=62ad07ba8e62e3227d488f9075eb15167c2e95b721c43e480e2535b4319467f6\ncoreSha256=e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9\ncompiledDefaultsSha256=bcbb221ea532b6caffa5c78d807e2264ad6843e18b5e84a433fbd6aff7514d49\noptionsPolicy=compiled-defaults+explicit-overrides-v1\ninputPolicy=standard-two-ports-v1\nsynchronization=host-authoritative-lockstep-v1\ninputDelayFrames=4\nstatePolicy=owner-thread-snapshot-v1\nsaves=session-only-fresh\nhumanExitOnly=true\npcsx_rearmed_analog_combo=disabled\npcsx_rearmed_bios=HLE\npcsx_rearmed_drc_thread=disabled\npcsx_rearmed_frameskip_type=disabled\npcsx_rearmed_gpu_thread_rendering=disabled\npcsx_rearmed_multitap=disabled\npcsx_rearmed_spu_thread=disabled\n",
+        "overlay": "",
+        "platform": "psx",
+        "recoveryProtocol": "station-stream.v3",
+        "runtimeLibrary": "libstation_psx_online.so",
+        "runtimeSha256": "69ac2b703f03826c8f7203b296665c6f2cc34cb944af7c3f758d9033116cade3",
+        "sourceRevision": "ff81ed17a15241d2f3730cdd7585b38e172532ca",
+        "status": "implemented-candidate-peer-gameplay-pending"
+      },
+      {
+        "backend": "mupen64plus-ae-station-v1",
+        "contentIdentityByExtension": {
+          "default": "launch-file-v1"
+        },
+        "controllerProfiles": [
+          "direct-four-ports-v1"
+        ],
+        "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+        "dependencySha256": {
+          "libSDL2_net.so": "f668cb9971913181761213be7d04dbfe5a3bf92c92d4ac9c1ab6d3eeaf44b9f5",
+          "libae-bridge.so": "ba5a7582295215f159e197f805dbfe85851aa912462996870f61ccd752ecb360",
+          "libjnidispatch.so": "ddfc6c965bbe366615c000ec1f06552ddf0bb2b4f9d921d0bff8c75b3cb2ca4c",
+          "libmupen64plus-audio-android-fp.so": "79bd6457b4a77364721e98df4946fadde2bc44256b156ae8b361bcf769e03f74",
+          "libmupen64plus-audio-android.so": "a8f8a5f83827a5056fca58bf72dc25951c56cdba568c55773f81efb20f2f0be5",
+          "libmupen64plus-input-android.so": "11783275d71eaa14f3e15eff330a784195fdd98b31ea4c16d23d4691e5f91512",
+          "libmupen64plus-rsp-hle.so": "67d0f74eb35a889c6abbc0ab0503691f45555ca601570911e0435be492bcf189",
+          "libmupen64plus-video-glide64mk2.so": "5c10d28d442ce37cacaba892317319029a0340b4503dd8ac10ff850fdc5e9ce6",
+          "libn64cpp.so": "fa2c06d3c09c0d9a4931fa7cd03a3aba15f6ed7ea990d8e4a37b8a5811867c0d",
+          "liboboe.so": "2d1ab385a0817273cbcd249ce6488b54a7d31dde193a8bf3037bcd901ea2079f",
+          "libsoundtouch.so": "9944e132db1c2362b52cd88b438413d92802847b2174c64ce4dc801a7eaa41e3",
+          "libsoundtouch_fp.so": "5fae9c0a403f01415327b1175ac20460a438184075c8da467dcfea56435a002a"
+        },
+        "engineId": "mupen64plus-ae-33bf7021-n64-v3-5f56099c433f",
+        "extensions": [
+          "z64",
+          "n64",
+          "v64",
+          "rom"
+        ],
+        "launchReady": true,
+        "library": "libstation_mupen64plus_core.so",
+        "license": "GPL-2.0-or-later",
+        "maximumPlayers": 4,
+        "options": "backend=mupen64plus-ae-station-v1\nwire=SN64/1\ncpu=cached-interpreter\nvideo=glide64mk2\nrsp=hle\nrawInput=false\nexpansionPak=true\ncountPerOp=0\ncountPerOpDen=0\nforceAlignmentOfPiDma=0\nrandomizeInterrupt=false\ninputDelay=2\nrollback=false\nsaves=session-only\n",
+        "overlay": "",
+        "platform": "n64",
+        "recoveryProtocol": "station-stream.v3",
+        "runtimeLibrary": "libstation_mupen64plus_runtime.so",
+        "runtimeSha256": "5f56099c433f29514c864d1eeea2995e3f52b0d15d76eaf125c4f4346a9d6e87",
+        "sourceDirectory": "mupen64plus-ae-33bf7021549d7873e976884370fbd1a8e7333bc7",
+        "status": "implemented-candidate-peer-gameplay-pending"
+      },
+      {
+        "backend": "dolphin-station-v1",
+        "contentIdentityByExtension": {
+          "default": "launch-file-v1"
+        },
+        "controllerProfiles": [
+          "dolphin-gamecube-four-ports-v1"
+        ],
+        "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+        "dependencySha256": {
+          "libstation_dolphin_file_redirect_hook.so": "23347bb99e0e73fde1f6deaf1b39d544ab4e4a5cc9e5f2c61c8d9facf5dfe06c",
+          "libstation_dolphin_gsl_alloc_hook.so": "e9254fe5325818c1ef50cf986cd6db9a87d9b3c29c4567cd74e666b512598d02",
+          "libstation_dolphin_hook.so": "7547dd37533c4352edf7666ef3b5220db08364054578bde7570c388658e0de16",
+          "libstation_dolphin_hook_impl.so": "b3f2973bdccfb877cfc10fcaadd40b69e48af39434cc232d02bfc81a1669e264"
+        },
+        "engineId": "dolphin-5102a033-gamecube-v3-9c87e2ec4c79",
+        "extensions": [
+          "iso",
+          "gcm",
+          "gcz",
+          "ciso",
+          "wia",
+          "rvz"
+        ],
+        "launchReady": true,
+        "library": "libstation_dolphin_online.so",
+        "license": "GPL-2.0-or-later",
+        "maximumPlayers": 4,
+        "options": "backend=dolphin-station-v1\nwire=DPL1\nsettingsPolicy=official-pinned-gameini+host-synchronized-strict-v1\ntraversal=direct\nupnp=false\nindex=false\nqos=false\nchunkedUploadLimit=false\nnetworkMode=fixeddelay\npadBuffer=5\nclientBuffer=1\nsaveLoad=true\nsaveWrite=true\nsyncAllWii=false\nsyncCodes=false\ncheats=false\nrecordInputs=false\nstrictSettingsSync=true\ngolfMode=false\nremoteGbas=false\nsaves=session-only\n",
+        "overlay": "",
+        "platform": "gamecube",
+        "recoveryProtocol": "station-stream.v3",
+        "runtimeLibrary": "libstation_dolphin_runtime.so",
+        "runtimeSha256": "9c87e2ec4c798ab1f42130326855d0171617501ee513dfefa74241b3665e38ad",
+        "sourceDirectory": "dolphin-5102a0339c2177575378107b76541e47cc52122d",
+        "status": "implemented-candidate-peer-gameplay-pending"
+      },
+      {
+        "backend": "dolphin-station-v1",
+        "contentIdentityByExtension": {
+          "default": "launch-file-v1"
+        },
+        "controllerProfiles": [
+          "dolphin-wii-remotes-four-v1"
+        ],
+        "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+        "dependencySha256": {
+          "libstation_dolphin_file_redirect_hook.so": "23347bb99e0e73fde1f6deaf1b39d544ab4e4a5cc9e5f2c61c8d9facf5dfe06c",
+          "libstation_dolphin_gsl_alloc_hook.so": "e9254fe5325818c1ef50cf986cd6db9a87d9b3c29c4567cd74e666b512598d02",
+          "libstation_dolphin_hook.so": "7547dd37533c4352edf7666ef3b5220db08364054578bde7570c388658e0de16",
+          "libstation_dolphin_hook_impl.so": "b3f2973bdccfb877cfc10fcaadd40b69e48af39434cc232d02bfc81a1669e264"
+        },
+        "engineId": "dolphin-5102a033-wii-v3-9c87e2ec4c79",
+        "extensions": [
+          "iso",
+          "gcz",
+          "ciso",
+          "wbfs",
+          "wia",
+          "rvz"
+        ],
+        "launchReady": true,
+        "library": "libstation_dolphin_online.so",
+        "license": "GPL-2.0-or-later",
+        "maximumPlayers": 4,
+        "options": "backend=dolphin-station-v1\nwire=DPL1\nsettingsPolicy=official-pinned-gameini+host-synchronized-strict-v1\ntraversal=direct\nupnp=false\nindex=false\nqos=false\nchunkedUploadLimit=false\nnetworkMode=fixeddelay\npadBuffer=5\nclientBuffer=1\nsaveLoad=true\nsaveWrite=true\nsyncAllWii=false\nsyncCodes=false\ncheats=false\nrecordInputs=false\nstrictSettingsSync=true\ngolfMode=false\nremoteGbas=false\nsaves=session-only\n",
+        "overlay": "",
+        "platform": "wii",
+        "recoveryProtocol": "station-stream.v3",
+        "runtimeLibrary": "libstation_dolphin_runtime.so",
+        "runtimeSha256": "9c87e2ec4c798ab1f42130326855d0171617501ee513dfefa74241b3665e38ad",
+        "sourceDirectory": "dolphin-5102a0339c2177575378107b76541e47cc52122d",
+        "status": "implemented-candidate-peer-gameplay-pending"
+      }
+    ],
+    "freshSignedV3CapabilitiesCaptured": false,
+    "lastReturnCoversPublished": false,
+    "lastReturnFinalEnginesActivated": false,
+    "lastReturnKitReceived": false,
+    "lastReturnReviewedRevision": "R129",
+    "nativeOperatorApplied": false,
+    "parentReviewedGames": 44,
+    "parentReviewedModes": 78,
+    "preparedGamesByPlatform": {
+      "gamecube": 8,
+      "n64": 33,
+      "psx": 0,
+      "wii": 3
+    },
+    "preparedModesByPlatform": {
+      "gamecube": 9,
+      "n64": 66,
+      "psx": 0,
+      "wii": 3
+    },
+    "privateOriginalPairRequired": true,
+    "ps3Ps4OfflineOnly": true,
+    "psxHistoricalEntriesWithoutPrimaryEvidence": 16,
+    "psxHistoricalPrimaryReviewWindowEntries": 26,
+    "psxHlePerEditionPendingEntries": 84,
+    "psxMaximumPlayers": 2,
+    "psxMultitapApproved": false,
+    "psxNewOwnerApprovals": 0,
+    "psxPrimaryDocumentaryEntries": 10,
+    "publicSanitizedPairDeployable": false,
+    "r134FinalBindingPrepared": true,
+    "reviewedGamesPrepared": 44,
+    "reviewedModesPrepared": 78,
+    "sameServerDeliveryBranch": "docs/station-r133-final-console-modes-20261011",
+    "serverLatestRealReturn": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+    "visible": 3685
+  },
+  "parentApkBytes": 2714971151,
+  "parentApkSha256": "945f7ded35e551d638135a05140c32218eb38277d10eaf21e3f83087d71da112",
+  "parentRevision": "R133",
+  "parentSourceCommit": "5966a8ad23ae9040c570d359b999c8a31de904b4",
+  "phase": "signed-and-verified-installation-pending",
+  "phoneOperatedByThisDocumentationPreparation": false,
+  "physicalConfigurationConsumedByRealGameValidated": false,
+  "physicalControllerValidated": false,
+  "physicalGameplayValidated": false,
+  "physicalSettingsNavigationValidated": false,
+  "physicalThermalValidated": false,
+  "physicalVisualValidated": false,
+  "publicEvidenceIndex": "evidence/PUBLIC-EVIDENCE.json",
+  "revision": "R134",
+  "schemaVersion": 1,
+  "serverActivationConfirmed": false,
+  "signatureSchemesVerified": [
+    "v2",
+    "v3"
+  ],
+  "signedAndVerified": true,
+  "signingCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "sonySettings": {
+    "backendOrDriverToggleInvented": false,
+    "configurationDefaultsAutomaticallyRewritten": false,
+    "existingFieldsPreserved": true,
+    "homeXdgBeforeDlopen": true,
+    "humanChangesSavedAtomically": true,
+    "pendingSavesFinishBeforeBack": true,
+    "ps3NativeEditableFields": 16,
+    "ps3NativeFields": 18,
+    "ps3NativeReadOnlyFields": 2,
+    "ps4NativeEditableFields": 8,
+    "ps4NativeFields": 11,
+    "ps4NativeReadOnlyFields": 3,
+    "sourceContractReference": "integration/settings-refinement-r134/evidence/sony-settings-contract.json",
+    "touchPreferenceEachOwner": true
+  },
+  "sourceCommit": "4f9039eb9ce13907ce043870bfe1f6e294888556",
+  "sourceFreezeSha256": "7b9eead9ecd79d1582647b1b41d45158a36627ba6b8231663a3fa87067a97af0",
+  "withdrawnCandidate": {
+    "installed": false,
+    "reason": "PS4 settings callback could submit work after Activity destruction; corrected before installation",
+    "sourceCommit": "e85a1a11b281ca57e1df771f15abfb797238efc2"
+  },
+  "zipAlignmentVerifiedBytes": 16384,
+  "installedDeviceModels": [
+    "motorola edge 30",
+    "SM-A566E"
+  ],
+  "installationReceipts": [
+    "../../docs/handoff-completo-r134-20261011/instalacao-r134-edge30.json",
+    "../../docs/handoff-completo-r134-20261011/instalacao-r134-samsung-a56.json"
+  ],
+  "consumerOnlineAcceptancePending": true,
+  "userReportedIncidents": [
+    "three-player continuous loading",
+    "app-close prompt on online departure"
+  ]
+}

@@ -337,6 +337,7 @@ Check(chat.GetProperty("room").GetProperty("messages").GetArrayLength()==1,"memb
 var outsider=Json(linked.Hub.Command(new("spectator","spectator"),Cmd("snapshot"),security));
 Check(outsider.GetProperty("rooms")[0].GetProperty("messages").GetArrayLength()==0&&outsider.GetProperty("rooms")[0].GetProperty("connectionPassword").ValueKind==JsonValueKind.Null,"public list never exposes chat or password");
 Denied(()=>linked.Hub.Command(new("intruder","intruder"),Cmd("chat",linked.Room) with{Text="intrusion"},security),"STATION_MULTIPLAYER_MEMBERSHIP_REQUIRED");
+BarrierDiagnosticsChecks.Run(Check);
 Console.WriteLine(JsonSerializer.Serialize(new{passed=true,checks,scope="isolated synthetic C# hub/stream/codec/budget; no Android gameplay or deployment"}));
 
 sealed class SyntheticAccess:IStationOnlineAccess

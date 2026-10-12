@@ -1,0 +1,614 @@
+{
+  "schemaVersion": 1,
+  "schema": "station.psx.independent.documentary-review.v1",
+  "reviewPolicy": "Original publisher document/OCR portions and official Sony statements only; generated mirror summaries and title regex are not approval evidence.",
+  "checkedCatalogEntries": 26,
+  "entriesWithPrimaryDocumentaryFinding": 10,
+  "entriesStillWithoutPrimaryDocumentaryFinding": 20,
+  "approvedModesAdded": 0,
+  "sourcesDescribeOriginalHardwareNotCurrentHleRuntime": true,
+  "sourceReceiptSha256": "ed5cb10e48cff29e2e8263045659e71ccc66eb0c354b0cb299eb34f24816e491",
+  "entries": [
+    {
+      "catalogOrdinal": 3759,
+      "name": "CTR - Crash Team Racing",
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "primarySources": [
+        "https://www.scribd.com/document/527590176/Crash-Team-Racing-1999-Sony-US-SCUS-94426"
+      ],
+      "finding": "O manual original descreve Single Race e Cup Race com um ou dois jogadores humanos e os demais pilotos controlados pelo jogo.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Selecionar Arcade e dois jogadores; n\u00e3o usar Adventure ou Time Trial como modo simult\u00e2neo.",
+        "Esta leitura comprova o modo Arcade 2p; n\u00e3o foi usada a s\u00edntese autom\u00e1tica do mirror para aprovar modos 3/4p."
+      ],
+      "sourceDocument": "SCEA CTR instruction booklet, US SCUS-94426 scan, Main Menu / Arcade",
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3760,
+      "name": "Capcom vs. SNK - Millennium Fight 2000 Pro",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3769,
+      "name": "Crash Bash (USA)",
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "primarySources": [
+        "https://www.scribd.com/document/744924761/Crash-Bash-2000-Sony-Computer-Entertainment"
+      ],
+      "finding": "O manual distingue Adventure com at\u00e9 dois humanos e Battle/Tournament com at\u00e9 quatro humanos; acima de dois requer Multitap.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Para este owner, restringir qualquer candidatura a dois StandardPad em portas distintas.",
+        "N\u00e3o habilitar 3/4 jogadores: o owner atual n\u00e3o tem Multitap.",
+        "Arenas de Battle/Tournament podem depender de desbloqueio no Adventure; saves da sess\u00e3o n\u00e3o garantem desbloqueios."
+      ],
+      "sourceDocument": "SCEA Crash Bash instruction booklet scan, Setup / Get Ready To Play / Battle and Tournament",
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3770,
+      "name": "Crash Bash",
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2,
+        3,
+        4
+      ],
+      "primarySources": [
+        "https://www.scribd.com/document/744924761/Crash-Bash-2000-Sony-Computer-Entertainment"
+      ],
+      "finding": "O documento do t\u00edtulo confirma Adventure 2p e Battle/Tournament at\u00e9 4p, mas n\u00e3o vincula a edi\u00e7\u00e3o sem regi\u00e3o indicada no cat\u00e1logo.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Identificar a edi\u00e7\u00e3o/conte\u00fado antes de aplicar o manual.",
+        "Acima de dois requer Multitap, ausente no owner atual.",
+        "Confirmar arena/modo acess\u00edvel em sess\u00e3o nova."
+      ],
+      "sourceDocument": "SCEA Crash Bash instruction booklet scan; catalog edition unspecified",
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3772,
+      "name": "Digimon Rumble Arena",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3774,
+      "name": "Dragon Ball Z - Idainaru Dragon Ball Densetsu",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3775,
+      "name": "Dragonball GT - Final Bout",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3776,
+      "name": "Dragonball Z - Ultimate Battle 22",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3780,
+      "name": "Fighting Force",
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "primarySources": [
+        "https://gamesurge.com/playstation/strategy/psx_man/Ff.shtml",
+        "https://db.hfsplay.fr/files/2020/06/20/Tomb_Raider_III_Adventures_of_Lara_Croft_-_1998_-_Eidos_Interactive_zYQVJgX.pdf"
+      ],
+      "sourceDocument": "Eidos/Core Fighting Force original instruction manual transcription, printed pp.4,6-7; Eidos original Fighting Force advertisement inside Tomb Raider III instruction booklet corroborates two-player mode.",
+      "finding": "The original manual has a 2 Players main-menu option, requiring two connected controllers; players choose different characters. Its default controls use direction and digital buttons. Eidos publisher material separately describes solo or two-player play.",
+      "reason": "Documentary original-hardware support is not per-edition HLE approval for the current owner/runtime. No catalog content hash or region was matched against the manual.",
+      "requirements": [
+        "Select 2 Players at the main menu with two distinct virtual StandardPad ports.",
+        "Choose different characters; the manual excludes both players choosing the same character.",
+        "Review the exact content edition with the pinned HLE policy before any approved mode is generated."
+      ],
+      "modes": [],
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3785,
+      "name": "Gran Turismo 2",
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "primarySources": [
+        "https://manuals.plus/m/418c46ff8034ef5d38d6e9a08c7d74a8ff0744684e56025d4ea3c6ed39a5bd2d.pdf",
+        "https://manualzz.com/doc/7306411/playstation-gran-turismo-2-video-game-manual"
+      ],
+      "finding": "O manual separa Arcade Mode no disco 1, com 2 Player Battle em tela dividida, de Simulation Mode no disco 2, para um jogador.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "O conte\u00fado catalogado precisa ser o disco Arcade ou incluir sele\u00e7\u00e3o comprovada do disco correto.",
+        "Usar Arcade \u2192 2 Player Battle; Simulation disc n\u00e3o pode receber aprova\u00e7\u00e3o 2p.",
+        "O texto admite controles digitais; n\u00e3o transportar o perfil DualShock por nome do jogo."
+      ],
+      "sourceDocument": "SCEA Gran Turismo 2 instruction booklet, printed pp.10 and14\u201315",
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3786,
+      "name": "Gran Turismo",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [],
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false,
+      "reason": "Manual original confirma dois humanos no hardware PlayStation; falta revisao HLE por edicao e prova no owner atual. Nao autoriza modo online nem migracao de perfil historico.",
+      "catalogOrdinal": 3793,
+      "name": "Legend of Mana",
+      "primarySources": [
+        "https://legendofmana.info/_assets/files/lom-manual.pdf"
+      ],
+      "sourceDocument": "Manual original Square EA do PlayStation, secao Hints 2 e 3, copia digitalizada indexada; abertura direta do PDF expirou nesta consulta.",
+      "finding": "O manual distingue importacao de personagem de amigo via memory card e a configuracao 2P Control num save point para dois jogadores simultaneos. Importar outro protagonista exige dados diferentes, dialogo com Nouvelle em Domina e grupo sem NPC. Dois controladores nao demonstram disponibilidade imediata numa sessao nova sem saves.",
+      "requirements": [
+        "2P Control configurado no save point",
+        "Companheiro ou segundo personagem disponivel",
+        "Importacao de protagonista exige memory card e dados diferentes",
+        "Nao transportar saves ou afirmar modo fresh-session homologado"
+      ]
+    },
+    {
+      "catalogOrdinal": 3802,
+      "name": "Metal Slug X",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3803,
+      "name": "Mortal Kombat 3",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3804,
+      "name": "Mortal Kombat Trilogy",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3805,
+      "name": "Need for Speed III - Hot Pursuit",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3819,
+      "name": "Street Fighter EX Plus Alpha",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [],
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false,
+      "reason": "Manual original confirma dois humanos no hardware PlayStation; falta revisao HLE por edicao e prova no owner atual. Nao autoriza modo online nem migracao de perfil historico.",
+      "catalogOrdinal": 3820,
+      "name": "Street Fighter EX2 Plus",
+      "primarySources": [
+        "https://manuals.plus/sony/ps1-street-fighter-ex2-plus-manual",
+        "https://device.report/manual/19545879"
+      ],
+      "sourceDocument": "Manual original Capcom Entertainment 2000 PlayStation, transcrito nas secoes Setting Up, Default Controls e Game Modes; nao usar o resumo automatico do site.",
+      "finding": "Versus oferece VS Battle e Team Battle em confronto de dois humanos. O numero de um a cinco personagens por equipe no Team Battle nao aumenta o numero de jogadores. O manual descreve controles direcionais e Key Config separado para ambos participantes.",
+      "requirements": [
+        "Dois controles e configuracao digital do manual",
+        "Selecionar Versus e depois VS Battle ou Team Battle",
+        "Nao confundir 1-5 personagens da equipe com 1-5 humanos"
+      ]
+    },
+    {
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "modes": [],
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false,
+      "reason": "Manual original confirma dois humanos no hardware PlayStation; falta revisao HLE por edicao e prova no owner atual. Nao autoriza modo online nem migracao de perfil historico.",
+      "catalogOrdinal": 3823,
+      "name": "Tekken 2",
+      "primarySources": [
+        "https://manualzz.com/doc/6728609/-user-manual-"
+      ],
+      "sourceDocument": "Transcricao OCR do manual original Namco 1996 NTSC U/C, pp. 4-5, 9-10 e 13.",
+      "finding": "Two-Player Vs permite dois humanos com segundo controle. Arcade muda para dois jogadores ao pressionar Start no controle 2. Team Battle tambem permite ingresso do segundo humano; equipes de ate oito personagens nao representam oito jogadores. Survival e Time Attack nao permitem ingresso 2P.",
+      "requirements": [
+        "Dois controles Standard, portas 1 e 2",
+        "Selecionar Vs ou ingressar por Start do jogador 2 em Arcade/Team Battle",
+        "Excluir Survival e Time Attack da aprovacao multiplayer"
+      ]
+    },
+    {
+      "catalogOrdinal": 3824,
+      "name": "Tekken 3",
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "primarySources": [
+        "https://manualzz.com/doc/6957401/tekken-3---sony-playstation---manual",
+        "https://blog.playstation.com/2018/11/26/playstation-classic-the-miniature-ultimate-faq/"
+      ],
+      "finding": "O manual descreve VS entre dois humanos, entrada do Player 2 em Arcade e Team Battle com dois participantes; n\u00famero de personagens da equipe n\u00e3o \u00e9 n\u00famero de jogadores.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Usar VS ou Team Battle com Player 2; Survival/Time Attack n\u00e3o aceitam ingresso do segundo jogador.",
+        "Direcional e quatro bot\u00f5es digitais constam no manual.",
+        "Sony Classic usa edi\u00e7\u00e3o PAL de Tekken 3; a corrobora\u00e7\u00e3o n\u00e3o determina a regi\u00e3o do conte\u00fado catalogado."
+      ],
+      "sourceDocument": "Namco Hometek Tekken 3 instruction booklet, Controls / Getting Started; Sony Classic FAQ",
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3825,
+      "name": "Tekken",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3833,
+      "name": "Tony Hawk's Pro Skater 4",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3834,
+      "name": "Twisted Metal",
+      "platform": "psx",
+      "classification": "simultaneous",
+      "documentarySimultaneousCounts": [
+        2
+      ],
+      "primarySources": [
+        "https://blog.playstation.com/2018/11/26/playstation-classic-the-miniature-ultimate-faq/"
+      ],
+      "finding": "A Sony inclui Twisted Metal na lista de jogos para dois jogadores da edi\u00e7\u00e3o PlayStation Classic.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Documento oficial corrobora dois jogadores nessa edi\u00e7\u00e3o; n\u00e3o especifica o percurso exato de sele\u00e7\u00e3o do modo.",
+        "N\u00e3o prova que a edi\u00e7\u00e3o/hash do cat\u00e1logo nem o BIOS HLE atual reproduzem esse modo."
+      ],
+      "sourceDocument": "Sony PlayStation Classic FAQ, multiplayer list and original Classic controllers",
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3835,
+      "name": "Wipeout 3",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3836,
+      "name": "World Soccer Winning Eleven 2002 (Japan)",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "A evid\u00eancia documental n\u00e3o homologa HLE, identidade de edi\u00e7\u00e3o/conte\u00fado, owner ABI, estado inicial e sincroniza\u00e7\u00e3o do APK atual.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": true,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    },
+    {
+      "catalogOrdinal": 3837,
+      "name": "Worms Armageddon",
+      "platform": "psx",
+      "classification": "pending-primary-evidence",
+      "documentarySimultaneousCounts": [],
+      "primarySources": [],
+      "finding": "O perfil hist\u00f3rico informa dois jogadores, mas n\u00e3o fornece manual prim\u00e1rio ou prova HLE por edi\u00e7\u00e3o nesta revis\u00e3o.",
+      "reason": "O hist\u00f3rico j\u00e1 recusa Worms Armageddon; turnos ou compartilhamento de um controle n\u00e3o equivalem a dois inputs humanos simult\u00e2neos.",
+      "modes": [],
+      "requirements": [
+        "Obter documento prim\u00e1rio do modo e revisar a edi\u00e7\u00e3o exata com HLE e dois inputs humanos distintos."
+      ],
+      "sourceDocument": null,
+      "historicalApproval": false,
+      "currentOwnerApproval": false,
+      "currentOwnerHleReviewed": false,
+      "catalogEditionBindingVerified": false,
+      "physicalGameplayValidated": false
+    }
+  ],
+  "sourceResearchInputs": [
+    {
+      "file": "r133-psx-primary-review.json",
+      "sha256": "93a43729ec791d320150c40fcb23b8d56c39227313b269ddf4a8cd6430f5b9e8",
+      "entries": 26
+    },
+    {
+      "file": "r133-psx-primary-followup.json",
+      "sha256": "636f414decff8bd016ffee6767d2346e26ef67715cdfa001b875c8a947656766",
+      "entries": 1
+    },
+    {
+      "file": "r133-psx-primary-followup2.json",
+      "sha256": "f095f455bc5d30bdd9551f83d11274e9603631a2b02a02e57d035966aba98126",
+      "entries": 3
+    }
+  ],
+  "consolidation": "Only pending documentary rows were replaced by exact ordinal/name/platform matches; no HLE decision or approved mode added."
+}

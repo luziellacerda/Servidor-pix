@@ -1,0 +1,62 @@
+{
+  "apkBytes": 2714991631,
+  "apkSha256": "f8cb09184f41bc7c942ce84541dbd90d575b7240467ce0033d35be65e57caee2",
+  "compiled": true,
+  "files": {
+    "java-compilation.json": {
+      "bytes": 239145,
+      "originalPrivateReceiptSha256": "f5e530c092e9c57c623cc32201c11a8d3a2eb4ace7e92683ca1b3eda6206e5d9",
+      "sha256": "c29132268e2a6a60995b3f5367a042ae4bd57a8106339a0a5f3a1bf5c5c1eb99"
+    },
+    "mode-preparation-hash-manifest.json": {
+      "bytes": 5269,
+      "originalPrivateReceiptSha256": "d5ca95395a41b28deae5402e6fa200e916184685de869018cbc5612bc4a21b98",
+      "sha256": "341a9de11662eb30fdc097fd0e29f228f04afb197c07c080e49041750b23bdd8"
+    },
+    "native-labels.json": {
+      "bytes": 2644,
+      "originalPrivateReceiptSha256": "365574b534819659dfbe538723ff5fd537fda9fb2ff144f5ca97015939888716",
+      "sha256": "1060c44aa83aced0b74df25adf8e9c163e105cdd044e89ec5cf318a64e0c62f4"
+    },
+    "package-final.json": {
+      "bytes": 1950761,
+      "originalPrivateReceiptSha256": "39385a0f22a9d0d8c88306607872f2b6fb068197ab9c0176be1beb938d06596d",
+      "sha256": "37067ad264d2e5768a68d88cd6c1ce4e6385f07780d28b3bdc883767630b87f5"
+    },
+    "runtime-final.json": {
+      "bytes": 813530,
+      "originalPrivateReceiptSha256": "2d6fc1c1933b4dc88aa09192138b8564b5f0b743461faa7580896b8339b2067f",
+      "sha256": "de2a1d1febbacd5dbdbf8c3cf0deaa546c9920745d7ce30f9a74e25b8cca5230"
+    },
+    "server-kit-hash-manifest.json": {
+      "bytes": 6314,
+      "originalPrivateReceiptSha256": "b46b64a1aac139974eef764ba92b3039545fdee24d81a969dd198403f0c15d1f",
+      "sha256": "bb0fa7375998de4105881ce36d3cc24265837c00fa0287155a6baa83169d91bf"
+    },
+    "settings-payloads.json": {
+      "bytes": 240126,
+      "originalPrivateReceiptSha256": "d8d2c4c6ce9483187dc3aa023587d7313ddfaeb525f451a50acb06c84e550230",
+      "sha256": "cdd46b8655097d1181391f2d8e6977b1fb616707110f0259858c02b875e22497"
+    },
+    "source-freeze.json": {
+      "bytes": 468199,
+      "originalPrivateReceiptSha256": "7b9eead9ecd79d1582647b1b41d45158a36627ba6b8231663a3fa87067a97af0",
+      "sha256": "7771019c4d6de19d23866f3f7d43db74a5e3df4193e51bc46fc53e7af69bfe2e"
+    },
+    "unsigned-package.json": {
+      "bytes": 1949412,
+      "originalPrivateReceiptSha256": "203a89f3764fe4f29ea6362c90b88887234ff1eecab4fb49f3e1d72e3a2b6072",
+      "sha256": "56e5a90e28a2f613b5bbef81f0dd010ba25d94afb44736b67917154cd32007e7"
+    }
+  },
+  "installed": false,
+  "operatorKitUsesOriginalPrivateReceiptBytes": true,
+  "originalPrivateReceiptHashesAreNotHashesOfSanitizedPublicCopies": true,
+  "physicalControllerValidated": false,
+  "physicalGameplayValidated": false,
+  "physicalThermalValidated": false,
+  "revision": "R134",
+  "serverActivated": false,
+  "signedAndVerified": true,
+  "sourceCommit": "4f9039eb9ce13907ce043870bfe1f6e294888556"
+}
