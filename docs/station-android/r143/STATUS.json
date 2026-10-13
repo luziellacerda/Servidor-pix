@@ -19,7 +19,7 @@
   "duplicateFlagConfirmedByRealParser": true,
   "uniqueFlagConfirmedEnabledByRealParser": true,
   "actualAndroidVariablesMeasured": false,
-  "physicalGameplayValidated": false,
+  "physicalGameplayValidated": true,
   "preservedDexPartitions": 39,
   "preservedEntryCount": 13855,
   "preservedDex28Sha256": "534653399c359834c04733a18220524cfd95480f23e0f07d49babcc0ef2eb5bd",
@@ -50,5 +50,14 @@
   "jniStackOverflowCauseIsolated": false,
   "installedOnMotoG52": true,
   "frontendObserved": true,
-  "installationReceipt": "evidence/installation-moto-g52.json"
+  "installationReceipt": "evidence/installation-moto-g52.json",
+  "physicalGameplayValidationEvidence": "human-maintainer-report-only",
+  "physicalGameplayValidationScope": "Top Gear 3000 Corrida VS, three participants",
+  "threePlayerGameplayReportedSuccessful": true,
+  "selectionUnblockedReported": true,
+  "fourHumanPlayerGameplayValidated": false,
+  "fivePlayerGameplayValidated": false,
+  "independentControlInstrumented": false,
+  "raceCaptureObtained": false,
+  "humanResultReceipt": "evidence/three-player-human-result.json"
 }

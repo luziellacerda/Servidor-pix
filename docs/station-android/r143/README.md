@@ -1,3 +1,13 @@
+## R143 — teste humano com três jogadores concluído, 13/10/2026
+
+Após o teste solicitado de Top Gear 3000 em Corrida VS, o mantenedor respondeu primeiro “entrou 4 jogadores” e depois confirmou “jogou 3 jogadore”. Registrar sucesso relatado de jogo com **três participantes** e desbloqueio da seleção. A primeira resposta não comprova quatro telefones humanos. [Resultado e limites](evidence/three-player-human-result.json).
+
+A R143 permanece instalada no g52, com APK/fonte e preservação de dados conferidos. Na leitura passiva posterior, o g52 já estava no frontend em uma sala de Super Bomberman 3, sem processo station_netplay ativo; não houve captura da corrida ou medição dos controles independentes. Captura privada preservada. Resultado humano não equivale a instrumentação Android nem homologa outros jogos, quatro/cinco jogadores físicos, estabilidade prolongada ou queda de sinal. Avisos JNI anteriores continuam sem causa isolada.
+
+A correção localizada remove a duplicidade da opção que impedia a leitura do remapeamento multitap SNES. Motores, downloads, saída, FPS, READY/ACK e demais métodos permanecem conforme os recibos. Kit dos quatro marcadores independentes preparado e ainda não aplicado; SNES mantém cadastro existente. APK de testes e instalador continuam R143. Nenhuma recompilação para registrar este resultado.
+
+## Histórico preservado
+
 ## R143 instalada e frontend observado no g52 — 13/10/2026
 
 APK R143 `508480e3671ae924f037bd32f6d71efda7a9d905c45c7b2571bd9f219add83d4`, fonte `26257869b59af8ecea44932ab287705990a9acbe`, instalado no moto g52. Hash integral/UID/dados/primeira instalação preservados e frontend oficial observado. Aparelho ocioso, sem jogo/download/serviço antes da atualização; nenhum force-stop ou limpeza de dados nesta instalação. [Recibo](evidence/installation-moto-g52.json).

@@ -1,0 +1,22 @@
+{
+  "revision": "R143",
+  "game": "Top Gear 3000",
+  "mode": "Corrida VS",
+  "sourceCommit": "26257869b59af8ecea44932ab287705990a9acbe",
+  "apkSha256": "508480e3671ae924f037bd32f6d71efda7a9d905c45c7b2571bd9f219add83d4",
+  "evidenceType": "human-maintainer-report",
+  "userReports": [
+    "entrou 4 jogadores",
+    "jogou 3 jogadore"
+  ],
+  "interpretation": "Three participants played, confirmed by maintainer after the R143 test request. Earlier entry into four-player mode is not proof of four human phones.",
+  "threePlayerGameplayReportedSuccessful": true,
+  "selectionUnblockedReported": true,
+  "fourHumanPlayerGameplayValidated": false,
+  "fivePlayerGameplayValidated": false,
+  "independentControlInstrumented": false,
+  "raceCaptureObtained": false,
+  "androidPrivateConfigMeasured": false,
+  "scope": "Top Gear 3000 Corrida VS; does not homologate other games, four/five physical players, prolonged play, network loss or ANR.",
+  "postTestPassiveObservation": "g52 back in frontend, different game room; no station_netplay process present. Raw screenshot private."
+}

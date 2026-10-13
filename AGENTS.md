@@ -1,3 +1,9 @@
+# R143 — três jogadores confirmados pelo mantenedor
+
+Top Gear 3000 Corrida VS jogado com três participantes, relato humano após R143; seleção desbloqueada. Quatro/cinco telefones e outros jogos não homologados. Captura posterior já fora da corrida, sem processo online; nenhum controle instrumentado. Ler o MESMO handoff e r143/evidence/three-player-human-result.json. APK/fonte e preservação de dados exatos; nenhum código alterado para registrar o resultado. Kit independente preparado, não aplicado; SNES cadastro existente. Aviso JNI anterior sem causa isolada. Preservar histórico, fontes congeladas, desempenho, downloads e demais lógicas.
+
+## Histórico preservado
+
 # R143 instalada g52, frontend observado — teste3 pendente
 
 APK508480e3/fonte26257869 instalado no g52 com SHA integral/UID/dados/primeira instalação/entrada oficial conferidos; ocioso sem serviço, nenhuma parada forçada/limpeza nesta instalação. A56/EdgeR141; core/runtime/perfilSNES iguais. R142 falhou em seleção3, dupla chave false→true usa false no parserreal. R143 substituição única/guard perfilSNES; downloads/HLE/saída/FPS/READY/motores preservados. Teste g52 anfitrião CorridaVS3 solicitado, ainda sem resultado. Novo kit4IDs independenteR143a4ba2105/mesmos78modos pendente; SNEScad existente. Nenhumdeployrestart/promocão permanente. Ler MESMO handoff/r143/STATUS. Capturas/binários/chaves/seriaisprivados foraGit.
