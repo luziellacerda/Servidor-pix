@@ -12,7 +12,7 @@
   "incomingApkWouldRevertR140Dex35": true,
   "r140InstalledOnMotoG52": true,
   "edge30LastKnown": "R139-DIAG-startup",
-  "a56LastKnown": "R135",
+  "a56LastKnown": "R141",
   "directServerVhostAppliedPerReturn": true,
   "incomingFourEngineRegistrationAppliedPerReturn": true,
   "combinedR141EngineRegistrationApplied": false,
@@ -56,7 +56,10 @@
     "android-download-moto-g52.json": "f92e7f7d25fd90b24ca508c7f45235bea5e5c638a9c27dcfde4abb0e2d7f6603",
     "private-independent-kit-prepared.json": "d4f06f2cbf6b63b027533d52514fa8c48836877a555dec29ed6033af08db17e9",
     "private-independent-kit-delivered.json": "4a7cba11f596aa79997695ea8537f1272bcd1cb72ab5113c849a7591b1ef889d",
-    "backup-verified.json": "328563f2133901a21ab05ef539b33caf12b1288b8432d56a59caef512d435741"
+    "backup-verified.json": "328563f2133901a21ab05ef539b33caf12b1288b8432d56a59caef512d435741",
+    "installation-samsung-a56.json": "8d632bcb742b04da266bb4d8e3aef199647f68a63b9df80d864f2cd771f1c39b",
+    "installation-samsung-a56-first-refusal.json": "8a8d7de38fcc5eb79854182ac22a9af2fbd6984ccf4cfb31d0ce9542cd57f125",
+    "a56-installer-scope-review.json": "b99dd84e6c65d6957469cfa4df41c8df81f6d0314b4473a9b0f26dcb92c21606"
   },
   "sourceCommit": "240b7c0504252e542975089f585bd67d5264f074",
   "apkSha256": "b5a76023860bceb2aa11c946c8003fa2d92951e700dbde3a498f8316857670d4",
@@ -69,9 +72,14 @@
   "gameplayValidated": false,
   "privateKitDelivered": true,
   "privateKitSha256": "d8d9746d492866d5f279f3fbb1f5c0ab64c99db3f81a26e654c67baef4afc1b9",
-  "updatedUTC": "2026-10-13T19:57:01.698648+00:00",
+  "updatedUTC": "2026-10-13T20:27:00.904150+00:00",
   "backupPending": false,
   "backupVerified": true,
   "backupVerifiedFileCount": 403,
-  "backupReceiptSha256": "7af1d2f0906d99667dd52a41d88a3351788c61b1b657f2c12ad93bc9baa80762"
+  "backupReceiptSha256": "7af1d2f0906d99667dd52a41d88a3351788c61b1b657f2c12ad93bc9baa80762",
+  "a56ObservedPreviousRevision": "R138",
+  "r141InstalledOnSamsungA56": true,
+  "a56ApkSha256": "b5a76023860bceb2aa11c946c8003fa2d92951e700dbde3a498f8316857670d4",
+  "a56ReceiptSha256": "8d632bcb742b04da266bb4d8e3aef199647f68a63b9df80d864f2cd771f1c39b",
+  "a56FrontendObserved": false
 }

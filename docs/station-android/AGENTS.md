@@ -1,3 +1,9 @@
+# Samsung A56 atualizado para a mesma R141 — 13/10/2026
+
+Moto g52 e Samsung SM-A566E agora na mesma R141/b5a76023, fonte executável240b7c05; atualização A56 da R138 encontrada, SHA/UID/dados/primeira instalação preservados, sem recompilar ou alterar lógica. Ler r141/STATUS.json e evidence/installation-samsung-a56.json no mesmo handoff. Edge30 última R139-DIAG conhecida; não inferir todos os telefones atualizados, cadastro ou gameplay. Ponteiros de recuperação e fontes congeladas intactos; binários/seriais/logs privados foraGit.
+
+## Histórico preservado
+
 # R141 — downloads diretos integrados e reparos preservados
 
 Ler o MESMO handoff vigente e docs/station-android/r141/README.md/STATUS.json. Fonte executável congelada240b7c0504252e542975089f585bd67d5264f074, APKb5a76023, originalv2/v3/16KiB, instalado no moto g52 com SHA/UID/dados/primeira instalação preservados. Download Android546.776.387bytes/75.288ms e INSTALL_FINISHED, serviço ausente depois; operador percebeu >2x, sem razão pareada medida. FonteHTTP4478 copiada exatamente, somenteDEX28/famíliaHTTP+3marcadores+engines; 13.855entradas/39DEX, DEX35R14049f381, coreHLE/opções/caches/FPS/READY exatos. Kit privadoI:/SERVIDOR LER12.842.618bytes/d8d9746d,6libs20deps4novosIDs/incomingv3; cadastroR141 pendente, preservar oitoRetro IDs e os modos anteriores. Não confundircad e696/R139 comR141. BATmanifestoR141, scriptsbyteexatos; lançamento permanente R139recuperação. Edge30 últimaDIAG, A56R135. Não alterar fontes congeladas ou iniciar novos ajustes de gameplay/performance por este setor; mantenedor adiou a questão de partidas e pediu terminar downloads. Nenhuma API deploy/restart/cad nestePC. Binários/ROM/BIOS/chaves/seriais/capturas privadas foraGit.

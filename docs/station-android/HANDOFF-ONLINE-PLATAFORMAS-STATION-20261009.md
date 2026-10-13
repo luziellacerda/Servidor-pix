@@ -1,3 +1,9 @@
+## Samsung A56 também atualizado para R141 — 13/10/2026
+
+Samsung SM-A566E/Android16 atualizado da R138 realmente encontrada para o mesmo APK R141 `b5a76023…`, fonte executável `240b7c05…`. SHA integral instalado, assinatura original, UID, dados e primeira instalação preservados. Nenhuma recompilação, alteração de código/configuração ou limpeza de dados. Moto g52 e A56 agora compartilham a R141; Edge30 permanece na última versão temporária de diagnóstico conhecida. [Recibo A56](r141/evidence/installation-samsung-a56.json). A primeira tentativa recusou o baseline histórico R135 sem instalar; a segunda confirmou a R138 atual e atualizou com as mesmas proteções. Instalação não comprova gameplay ou cadastro dos quatro novos IDs.
+
+## Histórico preservado
+
 ## R141 concluída no app: downloads diretos com reparos R140 preservados — 13/10/2026
 
 Fonte240b7c05, APKb5a76023/2.715.008.015 bytes, assinatura original v2/v3/16 KiB e todas13.860 entradas conferidas. Moto g52 atualizado, SHA integral/UID/dados/primeira instalação preservados. Download Android autorizado200/artefato200 concluiu:546.776.387bytes/75.288ms (~7,26MB/s), preparação5.862ms, INSTALL_FINISHED e serviço de download ausente depois. Operador percebeu mais que o dobro da velocidade; comparação controlada antiga/nova não foi executada. Fonte seleciona o host direto; Host/socket independente não foi observado. Leia [resultado/contratos/evidências](r141/README.md).
