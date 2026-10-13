@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-13",
+  "hostname": "downloads-station.lzgames.com.br",
+  "serverApplied": true,
+  "dnsOnly": true,
+  "dynamicDnsTimerActive": true,
+  "certificateTimerActive": true,
+  "apiProcessPreserved": true,
+  "nginxMasterProcessPreserved": true,
+  "testsPassed": {
+    "dnsAndCertificateTransaction": 14,
+    "isolatedProxyUnauthorizedCases": 9
+  },
+  "externalHttps": [
+    {
+      "country": "BR",
+      "network": "Oracle",
+      "resolvedIp": "187.21.52.192",
+      "httpStatus": 404,
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "tlsError": null,
+      "totalMs": 256
+    },
+    {
+      "country": "BR",
+      "network": "The Constant Company",
+      "resolvedIp": "187.21.52.192",
+      "httpStatus": 404,
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "tlsError": null,
+      "totalMs": 229
+    }
+  ],
+  "actualAuthorizedDeviceDownloadVerified": false,
+  "speedImprovementMeasured": false,
+  "originalSigningKeyPending": true
+}

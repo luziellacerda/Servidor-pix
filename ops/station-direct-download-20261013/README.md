@@ -42,6 +42,8 @@ Os desafios DNS são restritos ao hostname e apagados após validação ou timeo
 - Pedidos de artefato sem autorização recusados pela API; catálogo e outros caminhos bloqueados.
 - Guard antigo preservado no acesso direto ao domínio principal; login público existente HTTP 200.
 - Nenhum desafio ACME desta configuração ficou no DNS após emissão.
+- Duas redes externas no Brasil acessaram o IPv4 direto com TLS 1.3 autorizado e
+  HTTP 404 esperado no caminho bloqueado (229/256 ms totais; não são medidas de download).
 
 Os grants conservam o contrato da API: validade de 60 segundos para iniciar,
 consumo único, vínculos de licença/aparelho/sessão e prova quando exigida. Não repetir
