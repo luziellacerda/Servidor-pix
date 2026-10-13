@@ -110,6 +110,31 @@ class MergeFixtures(unittest.TestCase):
         self.assertEqual(first,second)
         self.assertEqual(r2["addedScopedModes"],0)
 
+    def test_fixed_ledger_renews_once_after_a_native_owner_was_registered(self):
+        first,_=run(profiles=[profile()])
+        previous=profile()
+        previous["profileId"]=first["modes"][0]["profileId"]
+        previous["engineId"]=ENGINES["n64"]["engineId"]
+        profiles=[previous]
+        frozen_profiles=copy.deepcopy(profiles)
+        frozen_modes=copy.deepcopy(first)
+        review=decision("n64")
+        review.pop("biosPolicy");review.pop("reviewEvidence")
+        runtime=copy.deepcopy(RUNTIME)
+        for engine in runtime["engines"]:
+            engine["runtimeSha256"]="d"*64
+            engine["engineId"]=engine["engineId"].rsplit("-",1)[0]+"-"+"d"*12
+        out,receipt=merge(M,dict(items=[item()]),profiles,first,runtime,
+            dict(schemaVersion=1,modes=[review]),migrate_existing_native_profiles=False)
+        self.assertEqual(receipt["addedScopedModes"],1)
+        self.assertEqual(receipt["previewProfilesAdded"],1)
+        self.assertEqual(out["modes"][:len(first["modes"])],frozen_modes["modes"])
+        self.assertEqual(profiles,frozen_profiles)
+        self.assertEqual(first,frozen_modes)
+        self.assertEqual(out["modes"][-1]["mode"],review["mode"])
+        self.assertEqual(out["modes"][-1]["allowedPlayerCounts"],review["allowedPlayerCounts"])
+        self.assertEqual(out["modes"][-1]["sources"],review["sources"])
+
     def test_dynamic_new_runtime_id_is_derived_not_fixed(self):
         current=copy.deepcopy(RUNTIME)
         for e in current["engines"]:

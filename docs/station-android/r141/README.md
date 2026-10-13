@@ -1,3 +1,9 @@
+## Cadastro efetivo da R141 aplicado — 13/10/2026
+
+O preparo administrativo é executado no repositório completo do servidor, que contém seus operadores e testes. O aplicativo recebe o recibo e os vínculos resultantes.
+
+Os quatro IDs da R141 `b5a76023…` e seus 78 vínculos foram cadastrados, com preservação dos registros anteriores e provas assinadas locais/públicas. Totais: 39 motores, 11.604 perfis e 6.743 modos; catálogo 46. Dezessete testes e preparação contra os dados atuais confirmaram a correção da duplicação de modos no preparador. [Recibo atual](server-return.json) e [mesmo handoff](../HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md). Download Android concluído a 7,26 MB/s no recibo recebido; gameplay continua sem homologação física.
+
 ## Resultado atual: R141 assinada, instalada e download Android concluído
 
 Reconstrução salva e conferida no backup F existente: **403 arquivos**, bundles incrementais dos dois Gits e captura Android privada; versões anteriores e ponteiros de recuperação preservados. [Recibo do backup](evidence/backup-verified.json).

@@ -64,7 +64,8 @@ def prepare(catalog, profiles, old_modes, installed_engines, provenance, researc
                       controllerProfile=policies[system]["controllerProfile"])
         decisions.append(record)
     reviewed = dict(schemaVersion=1, modes=decisions)
-    merged, receipt = merger.merge(operator, catalog, profiles, old_modes, runtime, reviewed)
+    merged, receipt = merger.merge(operator, catalog, profiles, old_modes, runtime, reviewed,
+                                   migrate_existing_native_profiles=False)
     if receipt["previewProfilesAdded"] != len(decisions):
         raise ValueError("Each reviewed decision must produce one current native owner binding")
     return manifest, policies, reviewed, merged, receipt

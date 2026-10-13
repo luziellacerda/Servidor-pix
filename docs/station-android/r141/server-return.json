@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "status": "R141-independent-engines-applied-and-signed-verified; physical Android download reported complete; gameplay not validated",
+  "utc": "2026-10-13T20:25:45.671327+00:00",
+  "apkSha256": "b5a76023860bceb2aa11c946c8003fa2d92951e700dbde3a498f8316857670d4",
+  "sourceCommit": "240b7c0504252e542975089f585bd67d5264f074",
+  "privateKit": {
+    "zipSha256": "d8d9746d492866d5f279f3fbb1f5c0ab64c99db3f81a26e654c67baef4afc1b9",
+    "zipBytes": 12842618,
+    "files": 38,
+    "manifestListedFilesVerified": 37,
+    "nativeLibrariesVerified": 6,
+    "distinctDependenciesVerified": 20,
+    "containsPrivateBinariesOrKeysInGit": false
+  },
+  "applied": {
+    "status": "applied",
+    "utc": "2026-10-13T20:19:44.873001+00:00",
+    "source": "verified private R141 signed-APK USB kit",
+    "enginesAdded": 4,
+    "realLibrariesVerified": 6,
+    "realDependenciesVerified": 20,
+    "profilesAdded": 78,
+    "originalProfilesPreserved": 11526,
+    "profileCount": 11604,
+    "approvedProfiles": 11583,
+    "originalModesPreserved": 6665,
+    "preparedModes": 6743,
+    "engineCount": 39,
+    "catalogRevision": 46,
+    "apiRestarted": false,
+    "pid": 2867363,
+    "dllSha256": "ef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a",
+    "apkSha256": "b5a76023860bceb2aa11c946c8003fa2d92951e700dbde3a498f8316857670d4",
+    "zipSha256": "d8d9746d492866d5f279f3fbb1f5c0ab64c99db3f81a26e654c67baef4afc1b9",
+    "realLicensesPreserved": true,
+    "signedPlatforms": [
+      "n64",
+      "gamecube",
+      "wii"
+    ],
+    "psxEngineRegistered": true,
+    "psxHleGameApprovalsAdded": 0,
+    "physicalGameplayValidated": false
+  },
+  "effectiveBindings": {
+    "engines": 39,
+    "profiles": 11604,
+    "rawApprovedProfiles": 11583,
+    "approvedProfilesMatchingCurrentContent": 11571,
+    "preparedModes": 6743,
+    "uniqueGamesWithR141Modes": 44,
+    "r141ProfilesByPlatform": {
+      "n64": 66,
+      "gamecube": 9,
+      "wii": 3
+    },
+    "psxNewHleApprovals": 0
+  },
+  "preservation": {
+    "originalProfiles": 11526,
+    "originalPreparedModes": 6665,
+    "originalEngines": 35,
+    "prefixesExact": true,
+    "catalogRevision": 46,
+    "indexedItems": 4690,
+    "visibleItems": 4435,
+    "aliases": 255,
+    "realLicensesPreserved": true,
+    "catalogConfigurationAndContentIdentitiesPreserved": true,
+    "activeRetroArchIdsUnchanged": 8,
+    "retroArchDescriptorsUnchanged": 9,
+    "apiRestarted": false,
+    "pid": 2867363,
+    "dllSha256": "ef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a"
+  },
+  "signedChecks": {
+    "local": {
+      "address": "http://127.0.0.1:5192",
+      "signedChecks": [
+        {
+          "platform": "n64",
+          "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+              "contentSha256": "ceaa25016faab3da1ca55a4ef77305078b596e3caf3724e74f14eeea8f58debe",
+              "platform": "n64",
+              "engineId": "mupen64plus-ae-33bf7021-n64-v3-6638adec6f02",
+              "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+              "runtimeSha256": "6638adec6f02917243f5a84c0d0a88d966254440fee369c700020fd9a4587b56",
+              "profileId": "review-2073-local-v1-owner-5a1e99ec7001",
+              "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+              "maximumPlayers": 2,
+              "approved": true,
+              "controllerProfile": "direct-four-ports-v1",
+              "mode": "local-multiplayer",
+              "allowedPlayerCounts": [
+                2
+              ],
+              "modeTitle": "1080 Snowboarding: corrida para dois",
+              "instructions": [
+                "Escolha a corrida local 2P com um controle N64 padrão por jogador; modalidades de treino e manobras individuais continuam solo."
+              ],
+              "sources": [
+                "https://www.nintendo.com/es-es/Juegos/Nintendo-64/1080-Snowboarding-269404.html"
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "gamecube",
+          "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+              "contentSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26",
+              "platform": "gamecube",
+              "engineId": "dolphin-5102a033-gamecube-v3-0f8cb2115a39",
+              "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+              "runtimeSha256": "0f8cb2115a397895b3f201da64d79e1897eca16440d0687eddb4792f32164639",
+              "profileId": "prepared-local-1-20261009-owner-64f14f69c37a",
+              "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+              "maximumPlayers": 4,
+              "approved": true,
+              "controllerProfile": "dolphin-gamecube-four-ports-v1",
+              "mode": "local-multiplayer",
+              "allowedPlayerCounts": [
+                2,
+                3,
+                4
+              ],
+              "modeTitle": "Corrida local",
+              "instructions": [
+                "Mais de quatro envolve LAN com vários consoles/TVs; não é um Multitap.",
+                "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+              ],
+              "sources": [
+                "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "wii",
+          "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+              "contentSha256": "7f1874db282a19cf369625603ac5665d486220f470c5c1e29f7309160579bef5",
+              "platform": "wii",
+              "engineId": "dolphin-5102a033-wii-v3-0f8cb2115a39",
+              "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+              "runtimeSha256": "0f8cb2115a397895b3f201da64d79e1897eca16440d0687eddb4792f32164639",
+              "profileId": "review-dkreturns-coop2-v1-owner-bc97233785ce",
+              "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+              "maximumPlayers": 2,
+              "approved": true,
+              "controllerProfile": "dolphin-wii-remotes-four-v1",
+              "mode": "local-coop-2p",
+              "allowedPlayerCounts": [
+                2
+              ],
+              "modeTitle": "Donkey Kong Country Returns: dupla",
+              "instructions": [
+                "Entre no modo cooperativo de Donkey Kong e Diddy: somente dois jogadores.",
+                "Use Wii Remote horizontal com os comandos de movimento configurados; a ação de sacudir é necessária para bater, rolar e soprar.",
+                "Esta aprovação documental de modo não comprova os bindings ou a partida física em cada aparelho."
+              ],
+              "sources": [
+                "https://www.nintendo.com/en-gb/Games/Wii/Donkey-Kong-Country-Returns-280968.html",
+                "https://www.nintendo.com/en-gb/News/2010/Donkey-Kong-Country-Returns-a-rip-roaring-banana-scoring-treat-251997.html"
+              ]
+            }
+          ]
+        }
+      ],
+      "negativeAdmissionChecks": [
+        {
+          "case": "wrong-content",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "unknown-engine",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "n64-five-refused",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+          "roomCreated": false
+        }
+      ],
+      "syntheticLicenseRemoved": true,
+      "physicalGameplayValidated": false,
+      "psxHleGameApprovalsAdded": 0
+    },
+    "public": {
+      "address": "https://app.lzgames.com.br",
+      "signedChecks": [
+        {
+          "platform": "n64",
+          "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+              "contentSha256": "ceaa25016faab3da1ca55a4ef77305078b596e3caf3724e74f14eeea8f58debe",
+              "platform": "n64",
+              "engineId": "mupen64plus-ae-33bf7021-n64-v3-6638adec6f02",
+              "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+              "runtimeSha256": "6638adec6f02917243f5a84c0d0a88d966254440fee369c700020fd9a4587b56",
+              "profileId": "review-2073-local-v1-owner-5a1e99ec7001",
+              "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+              "maximumPlayers": 2,
+              "approved": true,
+              "controllerProfile": "direct-four-ports-v1",
+              "mode": "local-multiplayer",
+              "allowedPlayerCounts": [
+                2
+              ],
+              "modeTitle": "1080 Snowboarding: corrida para dois",
+              "instructions": [
+                "Escolha a corrida local 2P com um controle N64 padrão por jogador; modalidades de treino e manobras individuais continuam solo."
+              ],
+              "sources": [
+                "https://www.nintendo.com/es-es/Juegos/Nintendo-64/1080-Snowboarding-269404.html"
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "gamecube",
+          "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+              "contentSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26",
+              "platform": "gamecube",
+              "engineId": "dolphin-5102a033-gamecube-v3-0f8cb2115a39",
+              "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+              "runtimeSha256": "0f8cb2115a397895b3f201da64d79e1897eca16440d0687eddb4792f32164639",
+              "profileId": "prepared-local-1-20261009-owner-64f14f69c37a",
+              "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+              "maximumPlayers": 4,
+              "approved": true,
+              "controllerProfile": "dolphin-gamecube-four-ports-v1",
+              "mode": "local-multiplayer",
+              "allowedPlayerCounts": [
+                2,
+                3,
+                4
+              ],
+              "modeTitle": "Corrida local",
+              "instructions": [
+                "Mais de quatro envolve LAN com vários consoles/TVs; não é um Multitap.",
+                "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+              ],
+              "sources": [
+                "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "wii",
+          "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+              "contentSha256": "7f1874db282a19cf369625603ac5665d486220f470c5c1e29f7309160579bef5",
+              "platform": "wii",
+              "engineId": "dolphin-5102a033-wii-v3-0f8cb2115a39",
+              "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+              "runtimeSha256": "0f8cb2115a397895b3f201da64d79e1897eca16440d0687eddb4792f32164639",
+              "profileId": "review-dkreturns-coop2-v1-owner-bc97233785ce",
+              "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+              "maximumPlayers": 2,
+              "approved": true,
+              "controllerProfile": "dolphin-wii-remotes-four-v1",
+              "mode": "local-coop-2p",
+              "allowedPlayerCounts": [
+                2
+              ],
+              "modeTitle": "Donkey Kong Country Returns: dupla",
+              "instructions": [
+                "Entre no modo cooperativo de Donkey Kong e Diddy: somente dois jogadores.",
+                "Use Wii Remote horizontal com os comandos de movimento configurados; a ação de sacudir é necessária para bater, rolar e soprar.",
+                "Esta aprovação documental de modo não comprova os bindings ou a partida física em cada aparelho."
+              ],
+              "sources": [
+                "https://www.nintendo.com/en-gb/Games/Wii/Donkey-Kong-Country-Returns-280968.html",
+                "https://www.nintendo.com/en-gb/News/2010/Donkey-Kong-Country-Returns-a-rip-roaring-banana-scoring-treat-251997.html"
+              ]
+            }
+          ]
+        }
+      ],
+      "negativeAdmissionChecks": [
+        {
+          "case": "wrong-content",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "unknown-engine",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "n64-five-refused",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+          "roomCreated": false
+        }
+      ],
+      "syntheticLicenseRemoved": true,
+      "physicalGameplayValidated": false,
+      "psxHleGameApprovalsAdded": 0
+    },
+    "positiveBindings": 6,
+    "negativeAdmissions": 6,
+    "syntheticLicensesRemoved": true,
+    "physicalGameplayValidated": false
+  },
+  "administrativePreparerRepair": {
+    "issue": "Renewal migrated previously scoped native profiles and also appended the fixed reviewed ledger, duplicating modes; strict count gate refused before publication",
+    "fix": "Fixed-ledger preparer disables automatic prior-profile migration; existing profile/mode prefixes preserved; default generic migration retained",
+    "scopedModeTestsPassed": 17,
+    "regressionTestAdded": true,
+    "newModesExactly": 78,
+    "sourceFiles": [
+      "docs/station-android/r128/operator/merge_scoped_modes.py",
+      "docs/station-android/r139/prepare_independent_owners.py",
+      "docs/station-android/r128/operator/test_scoped_mode_merge.py"
+    ],
+    "sourceSha256": {
+      "docs/station-android/r128/operator/merge_scoped_modes.py": "e7022a95f2c8c100411c2225a6ff3f980d8f4b92dd3baba0174f6d7dbff9f568",
+      "docs/station-android/r139/prepare_independent_owners.py": "dc623d265aa11f660472bfa6f2b2dba263a9bd54b68d2c60012a1128a32c4bc0",
+      "docs/station-android/r128/operator/test_scoped_mode_merge.py": "5e22b3147c52d4068503b6ca8b32600337e8294e2b1e498d24728d75f07da8a9"
+    },
+    "gameplayCodeChanged": false
+  },
+  "androidDownloadProducerEvidence": {
+    "schema": "station.r141.android-download.observation.v1",
+    "revision": "R141",
+    "deviceModel": "moto g52",
+    "apkSha256": "b5a76023860bceb2aa11c946c8003fa2d92951e700dbde3a498f8316857670d4",
+    "sourceCommit": "240b7c0504252e542975089f585bd67d5264f074",
+    "captureStartedUTC": "2026-10-13T19:46:02.181554+00:00",
+    "captureCompletedUTC": "2026-10-13T19:53:45.039228+00:00",
+    "ownPidVerified": true,
+    "installedApkHashVerified": true,
+    "authorizedHttpStatus": 200,
+    "artifactHttpStatus": 200,
+    "artifactBytes": 546776387,
+    "downloadElapsedMillis": 75288,
+    "averageBytesPerSecond": 7262463.965040909,
+    "averageDecimalMegabytesPerSecond": 7.26246396504091,
+    "authorizeElapsedMillis": 801,
+    "artifactHeadersElapsedMillis": 1105,
+    "installElapsedMillis": 5862,
+    "installFinishedObserved": true,
+    "installFinishedCounter": 1093552774,
+    "expandedBytesFromCounter": 546776387,
+    "installCounterMeaning": "artifact.sizeBytes + artifact.expandedSizeBytes; not additional network bytes",
+    "postCaptureDownloadServiceRecordPresent": false,
+    "postCaptureForegroundServiceRecords": 0,
+    "newDownloadFailureEventsInCapturedAttempt": 0,
+    "noAppStopOrSettingsMutationByCollector": true,
+    "rawLogsPrivateOnly": true,
+    "gameTitleProvidedByOperator": false,
+    "physicalAuthorizedDownloadAndInstallValidated": true,
+    "operatorReportedSpeedImprovement": "mais que dobro velocidade",
+    "previousOriginControlledBenchmarkPerformed": false,
+    "measuredSpeedImprovementRatio": null,
+    "socketHostIndependentlyObserved": false,
+    "directOriginSelectionEvidence": "Exact installed R141 DEX28 compiled from byte-pinned source selects the direct origin for every canonical artifact GET; destination is inferred from code, not independently observed socket/Host",
+    "physicalCancelFreshGrantTestPerformed": false,
+    "gameplayValidated": false,
+    "events": [
+      {
+        "deviceLoggedUTC": "2026-10-13 19:50:13.247",
+        "event": "AUTHORIZE",
+        "status": 200,
+        "count": 0
+      },
+      {
+        "deviceLoggedUTC": "2026-10-13 19:50:13.256",
+        "event": "AUTHORIZE_ELAPSED_MS",
+        "status": 0,
+        "count": 801
+      },
+      {
+        "deviceLoggedUTC": "2026-10-13 19:50:14.367",
+        "event": "ARTIFACT",
+        "status": 200,
+        "count": 0
+      },
+      {
+        "deviceLoggedUTC": "2026-10-13 19:50:14.367",
+        "event": "ARTIFACT_HEADERS_ELAPSED_MS",
+        "status": 0,
+        "count": 1105
+      },
+      {
+        "deviceLoggedUTC": "2026-10-13 19:51:29.656",
+        "event": "DOWNLOAD_ELAPSED_MS",
+        "status": 0,
+        "count": 75288
+      },
+      {
+        "deviceLoggedUTC": "2026-10-13 19:51:29.656",
+        "event": "DOWNLOAD_BYTES",
+        "status": 0,
+        "count": 546776387
+      },
+      {
+        "deviceLoggedUTC": "2026-10-13 19:51:35.519",
+        "event": "INSTALL_ELAPSED_MS",
+        "status": 0,
+        "count": 5862
+      },
+      {
+        "deviceLoggedUTC": "2026-10-13 19:51:35.520",
+        "event": "INSTALL_FINISHED",
+        "status": 0,
+        "count": 1093552774
+      }
+    ],
+    "privateCaptureSha256": "da7348ab9d6ad455b3acef69e869c9182b8bf1c8c6051c5892c277c002216ad1",
+    "privateAppLogSha256": "861fc69d7d39cc7e994c1698439a3bc551e0edf815fcc7671546b478e5d6d90e",
+    "limits": [
+      "One authorized Android download completed; not all games/platforms tested",
+      "Average is observed artifact bytes over the existing transfer body timer, not a paired old/new WAN benchmark",
+      "The passive app main buffer does not prove absence of every ANR/native crash",
+      "Server cancellation/regrant receipts are separate; this Android trial completed without cancellation"
+    ]
+  },
+  "directDownloadContract": {
+    "onlyCanonicalArtifactGetUsesDedicatedOrigin": true,
+    "authorizationLoginCatalogCoversAndCommandsOriginalOrigin": true,
+    "contentHashingOnAndroidUnchangedDisabled": true,
+    "descriptorSizeFormatAndPathValidationPreserved": true,
+    "singleUseGrantAndFreshAuthorizationAfterInterruptionPreserved": true,
+    "serverExistingProtectedDownloadEvidence": "evidence/incoming-server-protected-download-validation.json",
+    "negativePublicTlsObservation": {
+      "publicCaAndHostnameValidated": true,
+      "unauthorizedTestWithNonCanonicalPlaceholderReturned404": true,
+      "catalogOnDownloadOriginReturned404": true,
+      "authorizedTransferOrPerformanceNotMeasuredByThisProbe": true,
+      "canonical43CharacterGrantWithoutCredentialsStatus": 404,
+      "canonical43CharacterGrantWithoutCredentialsCode": "STATION_GRANT_NOT_FOUND",
+      "canonicalGrantPatternConfirmedFromActiveVhost": true,
+      "dnsUpdateTimerActive": true,
+      "certificateRenewalTimerActive": true
+    }
+  },
+  "phones": {
+    "motoG52": "R141 b5a76023 per producer installation/hash receipt",
+    "edge30": "last confirmed R139 diagnostic; do not infer R141 installation",
+    "samsungA56": "last confirmed R135"
+  },
+  "pending": [
+    "Physical Android cancellation/fresh-authorization scenario and paired performance comparison were not tested by the R141 download capture",
+    "Online gameplay after the R140 room option correction still needs phones on the same current composition; owner registration is not gameplay",
+    "Two earlier relay HTTP409 response codes and earlier RenderThread exit crash still need diagnosis when gameplay work resumes",
+    "PS1 per-edition HLE approval, NES APK catalog overlay, and missing app owners for Dreamcast/PS2/Saturn/WiiU/Switch/PSP/32X/NES remain separate pending work"
+  ]
+}

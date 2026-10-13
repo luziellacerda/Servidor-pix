@@ -15,7 +15,7 @@
   "a56LastKnown": "R135",
   "directServerVhostAppliedPerReturn": true,
   "incomingFourEngineRegistrationAppliedPerReturn": true,
-  "combinedR141EngineRegistrationApplied": false,
+  "combinedR141EngineRegistrationApplied": true,
   "r141Compiled": true,
   "r141Signed": true,
   "r141Installed": true,
@@ -73,5 +73,12 @@
   "backupPending": false,
   "backupVerified": true,
   "backupVerifiedFileCount": 403,
-  "backupReceiptSha256": "7af1d2f0906d99667dd52a41d88a3351788c61b1b657f2c12ad93bc9baa80762"
+  "backupReceiptSha256": "7af1d2f0906d99667dd52a41d88a3351788c61b1b657f2c12ad93bc9baa80762",
+  "serverReceipt": "server-return.json",
+  "serverReceiptUpdatedUTC": "2026-10-13T20:25:45.671327+00:00",
+  "serverCurrentEngineCount": 39,
+  "serverCurrentProfileCount": 11604,
+  "serverCurrentPreparedModeCount": 6743,
+  "serverApiRestarted": false,
+  "serverPhysicalGameplayValidated": false
 }
