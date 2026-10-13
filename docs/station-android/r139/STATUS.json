@@ -33,7 +33,8 @@
   "cpuGpuThermalImprovementMeasured": false,
   "installed": true,
   "installedDeviceModels": [
-    "moto g52"
+    "moto g52",
+    "motorola edge 30"
   ],
   "frontendObserved": true,
   "installedApkHashVerified": true,
@@ -43,7 +44,6 @@
   "installedUTC": "2026-10-13T12:57:47.426969+00:00",
   "installationCompletedUTC": "2026-10-13T12:57:48.425144+00:00",
   "otherLastVerifiedPhones": {
-    "motorola edge 30": "R138",
     "Samsung A56": "R135"
   },
   "serverRegistered": false,
@@ -74,5 +74,9 @@
   "roomCreationSymptomConfirmed": true,
   "roomCreationGame": "Battletoads in Battlemaniacs (USA)",
   "roomCreationStoppedBeforeNative": true,
-  "roomCreationFreshCapabilitiesCaptured": false
+  "roomCreationFreshCapabilitiesCaptured": false,
+  "installedOnEdge30": true,
+  "edge30InstalledApkHashVerified": true,
+  "edge30OriginalUIDAndDataPreserved": true,
+  "edge30FrontendObserved": true
 }

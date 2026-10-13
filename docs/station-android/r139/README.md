@@ -73,3 +73,7 @@ O usuário relatou não conseguir criar uma sala. Na captura do moto g52 entre 0
 ## Tela confirmada: Battletoads
 
 Uma segunda captura USB mostrou **Battletoads in Battlemaniacs (USA), SNES**, com “Não há modo aprovado para esta edição e o motor instalado. Atualize o aplicativo e o catálogo nos participantes.” O retorno assinado documentado R138 já aprova essa edição em modos de dois jogadores, mas vinculados ao engine `bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e`. O APK R139 usa `bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-ae72f1371e8e`; o filtro conserva identidade exata e não trata os perfis antigos como autorização do motor novo. O operador precisa conservar os modos/edições e registrar os vínculos R139 reais. A captura confirma título/mensagem, sem fornecer o payload fresco de capabilities. A tela bruta e o nome da conta permanecem privados; [o recibo sanitizado](evidence/room-create-observation.json) registra a evidência e os perfis anteriores.
+
+## Edge 30 atualizado em 13/10/2026
+
+R139 instalada também no Edge 30, SHA integral `19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164`, dados/UID/primeira instalação preservados. Frontend oficial observado: true. [Recibo](evidence/instalacao-edge30.json). Moto g52 e Edge 30 estão na mesma R139; Samsung A56 última R135 conferida. Apenas instalação e inventário foram atualizados; fonte executável42da e APK permanecem os mesmos. Este recibo não valida uma partida ou cadastro do servidor.

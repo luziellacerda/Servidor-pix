@@ -1,3 +1,7 @@
+## Inventário atualizado em 13/10: Edge30 na R139
+
+R139 instalada também no Edge30, SHA integral/UID/dados/primeira instalação preservados; frontend oficial observado: true. Moto g52 e Edge30 estão na mesma R139; A56 última R135. [Recibo Edge30](r139/evidence/instalacao-edge30.json). APK/fonte e contratos permanecem os da entrega abaixo; esta atualização documental não confirma cadastro ou partida.
+
 ## R139 assinada com correção de recursos nativos
 
 Entrega APP → SERVIDOR de 13/10/2026. **APK R139 compilado, assinado e instalado no moto g52; kit privado e cadastro R139 ainda não recebidos/confirmados pelo servidor.** Fonte produtiva `42da152e54bbbb4a6d569ca26fe90835503bcccb`, arquivo nativo `24420118e5ce94376b077051084a84d4c52f152d00b9e2330333896bced798fb`, runtime `ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378` / 10.673.192 bytes, APK `19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164` / 2.714.991.631 bytes. Certificado original v2/v3 e alinhamento 16 KiB. Hash integral instalado, UID/dados/primeira instalação preservados e frontend observado; Edge 30 última R138, A56 última R135. [Estado e procedimento](r139/README.md) · [STATUS](r139/STATUS.json) · [Recibo de instalação](r139/evidence/instalacao-moto-g52.json).
