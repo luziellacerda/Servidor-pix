@@ -59,5 +59,8 @@
   "fivePlayerGameplayValidated": false,
   "independentControlInstrumented": false,
   "raceCaptureObtained": false,
-  "humanResultReceipt": "evidence/three-player-human-result.json"
+  "humanResultReceipt": "evidence/three-player-human-result.json",
+  "bombermanGameplayReportedSuccessful": true,
+  "bombermanHumanResultReceipt": "evidence/bomberman-human-result.json",
+  "bombermanParticipantCountReconfirmed": false
 }

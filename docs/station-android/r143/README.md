@@ -1,3 +1,11 @@
+## R143 — Bomberman também funcionou no teste relatado, 13/10/2026
+
+O mantenedor confirmou “bom ber man tabem ok” após o sucesso de Top Gear 3000 com três jogadores. Registrar um segundo resultado positivo de jogo, agora para Bomberman. A captura anterior mostrava Super Bomberman 3 selecionado na sala; o relato atual não repetiu o título exato, modo ou quantidade de participantes. Não atribuir automaticamente três/quatro/cinco jogadores a este novo resultado. [Recibo do relato e limites](evidence/bomberman-human-result.json).
+
+Mesmo APK R143 instalado no g52, mesma fonte congelada e mesmos motores. Esta atualização registra evidência humana; não modifica código, gera APK ou aplica cadastro no servidor. Top Gear 3000 Corrida VS com três participantes continua confirmado pelo mantenedor. Testes físicos com quatro/cinco participantes, controles instrumentados e estabilidade prolongada continuam pendentes.
+
+## Histórico preservado
+
 ## R143 — teste humano com três jogadores concluído, 13/10/2026
 
 Após o teste solicitado de Top Gear 3000 em Corrida VS, o mantenedor respondeu primeiro “entrou 4 jogadores” e depois confirmou “jogou 3 jogadore”. Registrar sucesso relatado de jogo com **três participantes** e desbloqueio da seleção. A primeira resposta não comprova quatro telefones humanos. [Resultado e limites](evidence/three-player-human-result.json).

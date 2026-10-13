@@ -1,0 +1,17 @@
+{
+  "revision": "R143",
+  "evidenceType": "human-maintainer-report",
+  "userReport": "bom ber man tabem ok",
+  "gameReported": "Bomberman",
+  "successfulGameplayReported": true,
+  "lastObservedFrontendSelection": "Super Bomberman 3",
+  "exactPlayedTitleReconfirmed": false,
+  "modeReconfirmed": false,
+  "participantCountReconfirmed": false,
+  "independentControlsInstrumented": false,
+  "inGameCaptureObtained": false,
+  "scope": "Additional successful Bomberman test reported by maintainer in R143 context. Prior passive screenshot showed Super Bomberman 3 selected; exact played title, mode and participant count were not restated. Does not validate four/five participants, all Bomberman editions or prolonged/network-loss stability.",
+  "apkSha256": "508480e3671ae924f037bd32f6d71efda7a9d905c45c7b2571bd9f219add83d4",
+  "sourceCommit": "26257869b59af8ecea44932ab287705990a9acbe",
+  "newApkCompiled": false
+}

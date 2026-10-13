@@ -1,3 +1,9 @@
+# R143 — Bomberman também OK no relato humano
+
+Mantenedor confirmou Bomberman após Top Gear 3000 Corrida VS3. Seleção anterior era Super Bomberman 3; título jogado, modo e número de participantes não repetidos no novo relato. Ler r143/evidence/bomberman-human-result.json; não inferir quatro/cinco jogadores ou todas as edições. Mesmo APK/fonte/motores; apenas registro documental, sem nova compilação ou cadastro aplicado.
+
+## Histórico preservado
+
 # R143 — três jogadores confirmados pelo mantenedor
 
 Top Gear 3000 Corrida VS jogado com três participantes, relato humano após R143; seleção desbloqueada. Quatro/cinco telefones e outros jogos não homologados. Captura posterior já fora da corrida, sem processo online; nenhum controle instrumentado. Ler o MESMO handoff e r143/evidence/three-player-human-result.json. APK/fonte e preservação de dados exatos; nenhum código alterado para registrar o resultado. Kit independente preparado, não aplicado; SNES cadastro existente. Aviso JNI anterior sem causa isolada. Preservar histórico, fontes congeladas, desempenho, downloads e demais lógicas.
