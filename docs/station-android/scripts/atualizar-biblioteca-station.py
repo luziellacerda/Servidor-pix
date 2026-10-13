@@ -75,6 +75,9 @@ def metadata(game=None, override=None):
             'players': ('players', 40), 'releaseDate': ('releasedate', 40)}
     result = {key: text((override or {}).get(key, game.findtext(xml, '') if game is not None else ''), size)
               for key, (xml, size) in keys.items()}
+    for key in result:
+        if key != 'description':
+            result[key] = result[key].replace('\n', ' ').replace('\t', ' ')
     # Same escaped JSON budget used by the signed .NET catalog, including non-ASCII.
     while len(json.dumps(result, ensure_ascii=True).encode()) > 7600:
         result['description'] = result['description'][:-80]
@@ -445,7 +448,7 @@ def publish(config, bootstrap=False, on_progress=None):
                         row['folderPath'] = folder_path
                         new_metadata = metadata(game, override)
                         seed = metadata_seed.get(item_id)
-                        if not new_metadata['description'] and seed and seed['platform'] == row['platform'] and seed['name'] == row['name']:
+                        if not new_metadata['description'] and 'description' not in override and seed and seed['platform'] == row['platform'] and seed['name'] == row['name']:
                             new_metadata['description'] = metadata(override={'description':seed['description']})['description']
                         if row.get('metadata') != new_metadata: row['metadata'] = new_metadata
                         if override.get('name'): row['name'] = text(override['name'], 120)
@@ -549,6 +552,19 @@ def publish(config, bootstrap=False, on_progress=None):
                 row['metadata'] = dict(row.get('metadata', metadata()), description=metadata(override={'description':seed['description']})['description'])
         if len(rows) > 20_000: raise ValueError('Station library capacity exceeded')
         items = list(rows.values())
+        normalization = config.get('cartridgeNormalization')
+        if normalization is not None:
+            if not isinstance(normalization, dict) or set(normalization) != {'outputDirectory'}:
+                raise ValueError('invalid cartridge normalization policy')
+            target = Path(normalization['outputDirectory'])
+            if not target.is_absolute() or not (target.is_relative_to(home) or target.is_relative_to(root)):
+                raise ValueError('cartridge normalization leaves configured volumes')
+            from station_cartridge import prepare as prepare_cartridges
+            receipts, normalized_raw, pending = prepare_cartridges(items, target, gid)
+            verified_raw.update(normalized_raw)
+            report['cartridgeNormalizations'] = receipts
+            report['cartridgeNormalizationPending'] = pending
+            report['updated'] += len(receipts)
         if config.get('autoContentIdentity', False):
             registry_path=Path(config['contentIdentityRegistry'])
             if type(config['autoContentIdentity']) is not bool or registry_path.parent!=home or registry_path.is_symlink():

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "deviceModel": "moto g52",
+  "package": "org.turboramastation.frontend",
+  "runtimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "runtimeMatchesR139": true,
+  "topGear3000ContentMatchesServer": true,
+  "topGear3000ContentSha256": "6be49983976564f1fd9eff2f14f5bb41d3a0ff48573e39318088ecce286aca62",
+  "timezone": "America/Maceio",
+  "events": [
+    {
+      "utc": "2026-10-13T14:35:55.192+00:00",
+      "source": "server-loopback-snapshot",
+      "event": "Top Gear 3000 VS: two lobby members ready; start accepted; no native attachment/HELLO/READY at this sample"
+    },
+    {
+      "utc": "2026-10-13T14:35:56.784134+00:00",
+      "source": "server-journal",
+      "event": "WebSocket HTTP101 completed after 166.3749ms connection lifetime"
+    },
+    {
+      "utc": "2026-10-13T14:35:56.790067+00:00",
+      "source": "server-journal",
+      "event": "WebSocket HTTP101 completed after 230.8867ms connection lifetime"
+    },
+    {
+      "utc": "2026-10-13T14:35:57.208+00:00",
+      "source": "server-loopback-snapshot",
+      "event": "native barrier became terminal without reaching Playing"
+    },
+    {
+      "utc": "2026-10-13T14:37:03.658+00:00",
+      "source": "phone-activity-events",
+      "event": "new StationRetroActivity created"
+    },
+    {
+      "utc": "2026-10-13T14:37:23.890514+00:00",
+      "source": "server-journal",
+      "event": "WebSocket HTTP101 completed after 19937.2224ms connection lifetime"
+    },
+    {
+      "utc": "2026-10-13T14:37:23.918+00:00",
+      "source": "phone-activity-events",
+      "event": "StationRetroActivity paused"
+    },
+    {
+      "utc": "2026-10-13T14:37:23.923+00:00",
+      "source": "phone-crash-buffer",
+      "event": "SIGSEGV SEGV_MAPERR fault address0x10 on RenderThread in station_netplay process"
+    },
+    {
+      "utc": "2026-10-13T14:37:24.041+00:00",
+      "source": "phone-crash-buffer",
+      "event": "FORTIFY pthread_mutex_lock on a destroyed mutex on two other threads"
+    },
+    {
+      "utc": "2026-10-13T14:37:24.214+00:00",
+      "source": "phone-activity-events",
+      "event": "station_netplay process died"
+    },
+    {
+      "utc": "2026-10-13T14:37:26.347+00:00",
+      "source": "server-journal",
+      "event": "subsequent command refused404 STATION_MULTIPLAYER_ROOM_UNKNOWN"
+    }
+  ],
+  "currentCrashFullBacktraceAvailable": false,
+  "currentExitInfoReason": "EXIT_SELF status0",
+  "oldOct11And12TombstonesNotUsedAsCurrentCause": true,
+  "connectionLifetimeIsNotHandshakeLatency": true,
+  "oneSecondSamplingCannotExcludeBriefAttachments": true,
+  "laterTenMinuteUsbCapture": {
+    "startUtc": "2026-10-13T15:04:54+00:00",
+    "activeRoomsObserved": 0,
+    "activeConnectionsObserved": 0,
+    "newGameplayAttemptCaptured": false
+  },
+  "mainBufferRotatedPastFailure": true,
+  "unresolved": [
+    "Underlying content/core/driver initialization failure in current VS attempt",
+    "Native readiness failure in championship",
+    "Function causing earlier SIGSEGV/destruction sequence"
+  ],
+  "causalServerOrAppGameplayConclusion": "undetermined; actual crash is in Android process, no proof yet of initial loading cause",
+  "apkModified": false,
+  "deviceDataCleared": false,
+  "deviceSettingsChanged": false,
+  "containsSerialOrPersonalData": false,
+  "newAttempt": {
+    "vs": {
+      "utcStart": "2026-10-13T15:34:20.320+00:00",
+      "nativeHooksLoaded": true,
+      "sessionOwnerBound": true,
+      "nativeReturnUtc": "2026-10-13T15:34:21.193+00:00",
+      "nativeReturnCode": 1,
+      "returnedToFrontendUtc": "2026-10-13T15:34:21.292+00:00",
+      "newCrashRecorded": false
+    },
+    "championshipTwoPlayer": {
+      "utcStart": "2026-10-13T15:35:22.548+00:00",
+      "nativeHooksLoaded": true,
+      "sessionOwnerBound": true,
+      "streamState": 0,
+      "epoch": 1,
+      "nativeStatus": -1,
+      "nativeLocalReady": false,
+      "nativeReadySent": -1,
+      "txBytes": 0,
+      "rxBytes": 0,
+      "pongRttMsSamples": [
+        119,
+        178,
+        160,
+        165,
+        518
+      ],
+      "sessionNotPlaying": true,
+      "serverTerminalUtc": "2026-10-13T15:36:09.819+00:00"
+    },
+    "sourceReview": {
+      "rarchMainAndroidReturn1": "task_push_load_content_from_cli returned false",
+      "files": "pinned corresponding source retroarch.c:6029-6036 and tasks/task_content.c:2716-2724",
+      "contentInitCauseNotYetLogged": true,
+      "confirmingNativeEpochRequired": true
+    },
+    "clockOffsetsNotCalibrated": true,
+    "phoneNativeStackPermission": "debuggerd requires root; no root or bypass attempted"
+  },
+  "newAttemptCapturedAfterEarlierWindow": true
+}

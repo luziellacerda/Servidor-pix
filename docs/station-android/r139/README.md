@@ -1,3 +1,9 @@
+## Retorno atual do servidor — 13/10/2026
+
+Os oito motores RetroArch R139 foram recebidos/aplicados e suas capabilities assinadas foram conferidas na revisão46. Consulte [server-return.json](server-return.json), [server-signed-bindings.json](server-signed-bindings.json), [server-matrix.json](server-matrix.json) e o [mesmo handoff consolidado](../HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md). O diagnóstico USB confirma runtime/cartucho do moto g52 e captura SIGSEGV/mutex destruído; a falha inicial de Top Gear ainda exige captura atual. Seis bibliotecas independentes foram obtidas/conferidas, quatro cadastros/78 modos preparados, mas a autenticação Linux foi cancelada: publicação adicional pendente. Recebimento/cadastro não comprovam gameplay. O envio e os recibos históricos abaixo são preservados.
+
+## Histórico da produção
+
 # R139 recursos nativos e cadastro dos motores
 
 Entrega APP → SERVIDOR de 13/10/2026. A R139 está compilada, assinada e instalada no moto g52, com hash integral, UID, dados e primeira instalação preservados; frontend observado. O Edge 30 permanece R138 e o A56 R135 nas últimas conferências. O runtime corrige falhas de alocação/início e a propriedade da chave de dados por thread usada pelo JNI. O cadastro dos oito motores R139 e o recebimento do seu kit privado permanecem pendentes. O [handoff canônico](../HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md) continua sendo o ponto único de repasse.

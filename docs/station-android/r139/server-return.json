@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "status": "R139-RetroArch-applied-and-signed-verified; Android gameplay incident open",
+  "consolidatedUtc": "2026-10-13T15:47:43.300683+00:00",
+  "incomingServerCommit": "4ff2d4f6fac380f2ecd5372e8d5ba79afccbb119",
+  "incomingAppCommit": "645af7fc41c124fcfe2cc7f1dc8baad9e9acbceb",
+  "apkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+  "privateKitSha256": "1449d2f93d3aa345809529a93bcdfb143381383574c79f507181a1b8c48f8fdd",
+  "registration": {
+    "status": "applied",
+    "revision": "R139",
+    "utc": "2026-10-13T13:40:06.220478+00:00",
+    "privateKitSha256": "1449d2f93d3aa345809529a93bcdfb143381383574c79f507181a1b8c48f8fdd",
+    "enginesAdded": 8,
+    "previousProfilesPreserved": 8267,
+    "profilesAdded": 3091,
+    "profileCount": 11358,
+    "approvedProfiles": 11339,
+    "previousModesPreserved": 3412,
+    "preparedModes": 6503,
+    "catalogRevision": 44,
+    "indexedItems": 4690,
+    "apiRestarted": false,
+    "pid": 2637019,
+    "dllSha256": "25c49dd9327f14c0dbbd0d605b0f33e51398682bb20a6e7cb3d1e3ef002ab2c7",
+    "freshSignedLocalChecks": 12,
+    "freshSignedPublicChecks": 12,
+    "negativeAdmissionChecks": 8,
+    "realLicensesPreserved": true,
+    "existingCatalogAndIdentitiesPreserved": true,
+    "existingBindingsPreserved": true,
+    "controllerOptionsAndHlePreserved": true,
+    "independentR137EnginesStillAwaitSixLibraries": true,
+    "physicalGameplayValidated": false
+  },
+  "service": {
+    "name": "turborama-station-api.service",
+    "pid": 2867363,
+    "dllSha256": "ef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a",
+    "nRestarts": 0,
+    "onlyStationRestartedForExplicitAudit": true
+  },
+  "catalog": {
+    "revision": 46,
+    "items": 4690,
+    "visibleItems": 4435,
+    "aliases": 255
+  },
+  "effectiveBindings": {
+    "engines": 27,
+    "profiles": 11370,
+    "rawApprovedProfiles": 11349,
+    "approvedProfilesMatchingCurrentContent": 11337,
+    "preparedModes": 6509
+  },
+  "cartridgeRepairs": {
+    "count": 6,
+    "originalsPreserved": true,
+    "normalizedOnImportOnly": true,
+    "perDownloadIntegrityChecksAdded": false,
+    "completeSignedDownloadsVerifiedLocallyAndOverPublicHttps": true,
+    "jellyBoy2TitleAndCoverCorrected": true,
+    "jellyBoy2MultiplayerNotApprovedWithoutEvidence": true
+  },
+  "testEvidence": {
+    "domain1452": true,
+    "threePlayer29": true,
+    "capacity320Peers80Rooms": true,
+    "httpChecks192": true,
+    "modePreservation4": true,
+    "publicR139SignedChecks": 12,
+    "publicR139NegativeChecks": 4,
+    "publicCatalogItems": 4435,
+    "twoSyntheticR139MembersJoinedReadyStarted": true,
+    "actualNativeFramesOrAndroidGameplay": false
+  },
+  "sharedServices": {
+    "services": {
+      "turborama-management.service": true,
+      "turborama-suite-api.service": true,
+      "turborama-es-api.service": true,
+      "nginx.service": true,
+      "cloudflared.service": true,
+      "postgresql.service": true,
+      "mariadb.service": true,
+      "redis-server.service": true
+    },
+    "allRecordedSharedServiceStatesPreserved": true
+  },
+  "platforms": [
+    {
+      "platform": "cps1",
+      "visibleGames": 36,
+      "currentR139Profiles": 36,
+      "gamesWithAdministrativeMultiplayerProfile": 36,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "cps2",
+      "visibleGames": 64,
+      "currentR139Profiles": 64,
+      "gamesWithAdministrativeMultiplayerProfile": 62,
+      "gamesWithOnlyIndividualProfile": 2,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "cps3",
+      "visibleGames": 11,
+      "currentR139Profiles": 9,
+      "gamesWithAdministrativeMultiplayerProfile": 9,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "dreamcast",
+      "visibleGames": 243,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "fbneo",
+      "visibleGames": 913,
+      "currentR139Profiles": 913,
+      "gamesWithAdministrativeMultiplayerProfile": 846,
+      "gamesWithOnlyIndividualProfile": 67,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "gamecube",
+      "visibleGames": 21,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "native-bytes-verified-publication-awaits-Linux-authentication",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "megadrive",
+      "visibleGames": 981,
+      "currentR139Profiles": 981,
+      "gamesWithAdministrativeMultiplayerProfile": 979,
+      "gamesWithOnlyIndividualProfile": 2,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "n64",
+      "visibleGames": 157,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "native-bytes-verified-publication-awaits-Linux-authentication",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "neogeo",
+      "visibleGames": 189,
+      "currentR139Profiles": 185,
+      "gamesWithAdministrativeMultiplayerProfile": 180,
+      "gamesWithOnlyIndividualProfile": 5,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "neogeocd",
+      "visibleGames": 50,
+      "currentR139Profiles": 50,
+      "gamesWithAdministrativeMultiplayerProfile": 47,
+      "gamesWithOnlyIndividualProfile": 3,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "nes",
+      "visibleGames": 750,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "ps2",
+      "visibleGames": 25,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "psp",
+      "visibleGames": 9,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "psx",
+      "visibleGames": 84,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "native-bytes-verified-publication-awaits-Linux-authentication",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "saturn",
+      "visibleGames": 19,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "sega32x",
+      "visibleGames": 36,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "snes",
+      "visibleGames": 835,
+      "currentR139Profiles": 852,
+      "gamesWithAdministrativeMultiplayerProfile": 833,
+      "gamesWithOnlyIndividualProfile": 1,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "switch",
+      "visibleGames": 4,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "wii",
+      "visibleGames": 7,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "native-bytes-verified-publication-awaits-Linux-authentication",
+      "androidGameplayValidated": false
+    },
+    {
+      "platform": "wiiu",
+      "visibleGames": 1,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false
+    }
+  ],
+  "independentOwners": {
+    "schemaVersion": 1,
+    "source": "read-only authorized USB installed app",
+    "files": [
+      {
+        "name": "libpcsx_rearmed_libretro_android.so",
+        "sha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+        "bytes": 1582960,
+        "matchesInstalledManifest": true,
+        "elf64Aarch64": true
+      },
+      {
+        "name": "libstation_psx_online.so",
+        "sha256": "c26d8836df255ad4cc10d19d328b6fc8dcbc6a429725794c88acd4de5ca3dc50",
+        "bytes": 301656,
+        "matchesInstalledManifest": true,
+        "elf64Aarch64": true
+      },
+      {
+        "name": "libstation_mupen64plus_core.so",
+        "sha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+        "bytes": 561056,
+        "matchesInstalledManifest": true,
+        "elf64Aarch64": true
+      },
+      {
+        "name": "libstation_mupen64plus_runtime.so",
+        "sha256": "2f248cfcdc9e6d0e20795b1dab84f581b8fe9ea59eb0994ae96036aed2abeb77",
+        "bytes": 104456,
+        "matchesInstalledManifest": true,
+        "elf64Aarch64": true
+      },
+      {
+        "name": "libstation_dolphin_online.so",
+        "sha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+        "bytes": 15781128,
+        "matchesInstalledManifest": true,
+        "elf64Aarch64": true
+      },
+      {
+        "name": "libstation_dolphin_runtime.so",
+        "sha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+        "bytes": 115368,
+        "matchesInstalledManifest": true,
+        "elf64Aarch64": true
+      }
+    ],
+    "dependencies": [
+      {
+        "name": "libmain.so",
+        "sha256": "62ad07ba8e62e3227d488f9075eb15167c2e95b721c43e480e2535b4319467f6",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libSDL2.so",
+        "sha256": "a282b35554eb006773349430e117bfeeff32a84e246a058c8fb7c7027c2e4dee",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libc++_shared.so",
+        "sha256": "b5d97c38a728afe28d341cda3369f512d35eaf9c680c1b0563cd6a63e395230f",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libstation_frontend.so",
+        "sha256": "4e7ad58e1e8f8a284654120c27280eed8c124ad5301a9e87d769e41f100d8d0d",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libSDL2_net.so",
+        "sha256": "f668cb9971913181761213be7d04dbfe5a3bf92c92d4ac9c1ab6d3eeaf44b9f5",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libae-bridge.so",
+        "sha256": "ba5a7582295215f159e197f805dbfe85851aa912462996870f61ccd752ecb360",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libjnidispatch.so",
+        "sha256": "ddfc6c965bbe366615c000ec1f06552ddf0bb2b4f9d921d0bff8c75b3cb2ca4c",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libmupen64plus-audio-android-fp.so",
+        "sha256": "79bd6457b4a77364721e98df4946fadde2bc44256b156ae8b361bcf769e03f74",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libmupen64plus-audio-android.so",
+        "sha256": "a8f8a5f83827a5056fca58bf72dc25951c56cdba568c55773f81efb20f2f0be5",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libmupen64plus-input-android.so",
+        "sha256": "11783275d71eaa14f3e15eff330a784195fdd98b31ea4c16d23d4691e5f91512",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libmupen64plus-rsp-hle.so",
+        "sha256": "67d0f74eb35a889c6abbc0ab0503691f45555ca601570911e0435be492bcf189",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libmupen64plus-video-glide64mk2.so",
+        "sha256": "5c10d28d442ce37cacaba892317319029a0340b4503dd8ac10ff850fdc5e9ce6",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libn64cpp.so",
+        "sha256": "fa2c06d3c09c0d9a4931fa7cd03a3aba15f6ed7ea990d8e4a37b8a5811867c0d",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "liboboe.so",
+        "sha256": "2d1ab385a0817273cbcd249ce6488b54a7d31dde193a8bf3037bcd901ea2079f",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libsoundtouch.so",
+        "sha256": "9944e132db1c2362b52cd88b438413d92802847b2174c64ce4dc801a7eaa41e3",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libsoundtouch_fp.so",
+        "sha256": "5fae9c0a403f01415327b1175ac20460a438184075c8da467dcfea56435a002a",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libstation_dolphin_file_redirect_hook.so",
+        "sha256": "23347bb99e0e73fde1f6deaf1b39d544ab4e4a5cc9e5f2c61c8d9facf5dfe06c",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libstation_dolphin_gsl_alloc_hook.so",
+        "sha256": "e9254fe5325818c1ef50cf986cd6db9a87d9b3c29c4567cd74e666b512598d02",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libstation_dolphin_hook.so",
+        "sha256": "7547dd37533c4352edf7666ef3b5220db08364054578bde7570c388658e0de16",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libstation_dolphin_hook_impl.so",
+        "sha256": "b3f2973bdccfb877cfc10fcaadd40b69e48af39434cc232d02bfc81a1669e264",
+        "matchesInstalledManifest": true
+      }
+    ],
+    "allSixLibrariesAndTwentyDependenciesMatchInstalledManifest": true,
+    "currentEngineIds": [
+      "dolphin-5102a033-gamecube-v3-2e0b36222097",
+      "dolphin-5102a033-wii-v3-2e0b36222097",
+      "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+      "pcsx-rearmed-ff81ed17-player-v3-c26d8836df25"
+    ],
+    "preparedEngines": 4,
+    "preparedModesAdded": 78,
+    "preparedProfilesAdded": 78,
+    "preparedModesByPlatform": {
+      "n64": 66,
+      "gamecube": 9,
+      "wii": 3
+    },
+    "unknownGamesApproved": false,
+    "psxHleGameApprovalsAdded": 0,
+    "status": "prepared-awaiting-Linux-authentication",
+    "published": false,
+    "apiRestartRequired": false,
+    "linuxAuthenticationOutcome": "Request dismissed",
+    "physicalGameplayValidated": false
+  },
+  "phoneDiagnostic": "server-phone-diagnostic.json",
+  "pending": [
+    "Live USB VS12:34: native runloop-return result1 and return to frontend; championship12:35: PONG119..518ms/nativeStatus-1/zero native bytes/neverReady; underlying core/content/driver load cause and earlier exit crash remain unisolated",
+    "Publish prepared four independent native owners/78 reviewed modes using genuine Linux authentication; dialog was dismissed",
+    "PSX: current owner still has zero per-edition HLE-reviewed approvals; original-hardware manuals do not validate current HLE",
+    "NES catalog capacity overlay is not in R139 APK (4096 legacy limit); complete server catalog query uses maximumItems=20000",
+    "Dreamcast/PS2/Saturn/WiiU/Switch/PSP/32X/NES: current received app has no corresponding online native owner"
+  ],
+  "realLicensesPreserved": true,
+  "physicalGameplayValidated": false,
+  "allPlatformsGameplayReady": false
+}

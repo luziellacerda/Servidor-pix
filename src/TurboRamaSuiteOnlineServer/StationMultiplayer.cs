@@ -231,6 +231,23 @@ public sealed class StationMultiplayer
     public object Snapshot(){lock(gate)return new{protocol=Protocol,maximumPlayers=5,maximumRooms=100,activeRooms=rooms.Count,activeConnections=attachments.Count,
         approvedProfiles=profiles.Values.Count(p=>p.Approved&&CatalogMatches(p)),profileCount=profiles.Count,
         retainedBytes=budget.UsedBytes,maximumRetainedBytes=budget.MaximumBytes};}
+    // Served only by the loopback operator route. No personal IDs, room passwords,
+    // relay tickets, authentication material or game payloads enter this snapshot.
+    public object Diagnostics()
+    {
+        lock(gate)return new{schemaVersion=1,utc=DateTimeOffset.UtcNow,protocol=Protocol,
+            activeRooms=rooms.Count,activeConnections=attachments.Count,
+            retainedBytes=budget.UsedBytes,maximumRetainedBytes=budget.MaximumBytes,
+            rooms=rooms.Values.OrderBy(r=>r.Id,StringComparer.Ordinal).Take(100).Select(room=>{
+                var stream=room.Stream?.SnapshotWithDiagnostics(true);
+                return new{roomTag=Convert.ToHexString(SHA256.HashData(System.Text.Encoding.UTF8.GetBytes(room.Id))).ToLowerInvariant()[..24],
+                    itemId=room.Profile.ItemId,platform=room.Profile.Platform,engineId=room.Profile.EngineId,
+                    profileId=room.Profile.ProfileId,capacity=room.Capacity,players=room.Members.Count,
+                    lobbyReadyCount=room.Members.Count(m=>m.Ready),generation=room.Generation,
+                    epoch=stream?.Epoch??0,started=stream is not null,hasPlayed=stream?.HasPlayed??false,
+                    barrierDiagnostics=stream?.Diagnostics};
+            }).ToArray()};
+    }
     private object? GrantView(Peer peer,string? linkId){var grant=grants.Values.FirstOrDefault(g=>g.Lease.OwnerPeerId==peer.Id&&g.Lease.LinkId==linkId);return grant is null?null:TicketView(Find(grant.Lease.RoomId),grant);}
     private object TicketView(Room room,Grant g)=>new{path=RelayPath,protocol=Protocol,ticket=g.Token,expiresInSeconds=Math.Max(0,(g.Expires-clock())/1000),linkId=g.Lease.LinkId,ownerSlot=g.Lease.OwnerSlot,hostSide=g.Lease.HostSide,windowBytes=WindowBytes,epoch=room.Stream!.Snapshot().Epoch};
     private object View(Peer peer,string? item,object? ticket,IReadOnlySet<string>? blocked,int clientMaximumPlayers,int page,int roomPageSize)

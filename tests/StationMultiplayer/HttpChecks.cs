@@ -66,6 +66,22 @@ async Task Block(int user,int other)
 }
 var sockets=new List<ClientWebSocket>();
 try{
+    const string operatorPath="/ready/station/online/multiplayer-diagnostics";
+    using(var response=await http.GetAsync(operatorPath)){
+        Check(response.StatusCode==HttpStatusCode.OK,"loopback multiplayer operator diagnostics available");
+        Check(response.Headers.CacheControl?.NoStore==true,"operator diagnostics are not cached");
+        var diagnostic=JsonSerializer.Deserialize<JsonElement>(await response.Content.ReadAsByteArrayAsync());
+        Check(diagnostic.GetProperty("activeRooms").GetInt32()==0,"operator snapshot initially has no rooms");
+    }
+    foreach(var header in new[]{"X-Forwarded-For","X-Forwarded-Host","Forwarded","CF-Connecting-IP","X-Real-IP"}){
+        using var request=new HttpRequestMessage(HttpMethod.Get,operatorPath);request.Headers.Add(header,"synthetic-forwarder");
+        using var response=await http.SendAsync(request);Check(response.StatusCode==HttpStatusCode.NotFound,"forwarded operator request rejected: "+header);
+    }
+    using(var request=new HttpRequestMessage(HttpMethod.Get,operatorPath)){
+        request.Headers.Host="app.lzgames.com.br";
+        using var response=await http.SendAsync(request);Check(response.StatusCode==HttpStatusCode.NotFound,"public host cannot access operator diagnostics");
+    }
+    using(var response=await http.GetAsync(operatorPath+"?unexpected=1"))Check(response.StatusCode==HttpStatusCode.NotFound,"operator query is rejected");
     await Post(0,Cmd("capabilities"),HttpStatusCode.Unauthorized,proof:false);
     await Post(0,Cmd("capabilities"),HttpStatusCode.Unauthorized,proofPath:"/v1/station/online/command");
     var cap=await Post(0,Cmd("capabilities"));Check(cap.GetProperty("selfId").GetString()==socialIds[0],"same authoritative social identity");
@@ -73,6 +89,14 @@ try{
     for(int i=1;i<5;i++)room=(await Post(i,Cmd("join"))).GetProperty("room");
     for(int i=0;i<5;i++)room=(await Post(i,Cmd("ready",value:true))).GetProperty("room");
     room=(await Post(0,Cmd("start"))).GetProperty("room");Check(room.GetProperty("state").GetString()=="starting","HTTP starting");
+    using(var response=await http.GetAsync(operatorPath)){
+        var diagnostic=JsonSerializer.Deserialize<JsonElement>(await response.Content.ReadAsByteArrayAsync());
+        var current=diagnostic.GetProperty("rooms")[0];
+        Check(current.GetProperty("players").GetInt32()==5&&current.GetProperty("capacity").GetInt32()==5,"operator snapshot reports the real roster capacity");
+        Check(current.GetProperty("barrierDiagnostics").GetProperty("expectedAttachments").GetInt32()==8,"five players require eight real attachments");
+        string body=current.GetRawText();
+        Check(!new[]{"licenseId","deviceId","peerId","password","connectionPassword","ticket","payload"}.Any(k=>body.Contains("\""+k+"\"",StringComparison.OrdinalIgnoreCase)),"operator snapshot has no personal identities or credentials");
+    }
     var links=room.GetProperty("links").EnumerateArray().Select(x=>x.GetProperty("linkId").GetString()!).ToArray();
     // An authorization timeout before an upgrade must not look like HTTP 200.
     var timeoutTicket=(await Post(0,Cmd("ticket",link:links[0]))).GetProperty("ticket").GetProperty("ticket").GetString()!;

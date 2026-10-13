@@ -1,3 +1,15 @@
+Atualização USB das 12h34/12h35: no VS, rarch_main retornou erro1 depois de carregar hooks e owner; voltou ao frontend sem novo SIGSEGV. No Campeonato2p, PONG119..518ms, nativeStatus=-1, localReady=false, readySent=-1 e zero TX/RX; nunca Playing. A fonte Android pin69a4 (rarch_main:6029-6036) associa retorno1 à falha de carga CLI; a causa interna ainda não foi registrada. debuggerd exige root no aparelho; não contornar. A produção deve fornecer erro de core/conteúdo/driver da composição exata, com log limitado ao início, preservando HLE/READY/FPS. Recibo sanitizado atualizado no MESMO handoff.
+
+# Estado aplicado e diagnóstico USB — 13/10/2026
+
+Ler o MESMO HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e r139/server-return.json/server-phone-diagnostic.json. R139 RetroArch recebido no USB/cadastrado: oito motores,3091 perfis; HLE/controles/modos/recusas anteriores preservados. API PID2867363/DLLef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a/NRestarts0; catálogo46/4690 IDs/4435 visíveis/255aliases;27engines/11370perfis/11349aprovados administrativos/11337 vinculados ao conteúdo atual/6509modos. Seis cartuchos normalizados na importação, originais/artefatos antigos preservados; JellyBoy2 corrigido sem aprovação multiplayer inventada. Provas assinadas públicas completas +192HTTP; licenças e serviços compartilhados preservados.
+
+Pedido atual autoriza explicitamente USB neste Linux; supersede proibições históricas de depuração. Moto g52 autorizado: runtimeR139 ae72f137 e SHA de TopGear3000 coincidem com servidor; Edge30 R139 confirmado por recibo produtor14:32Z. Falha atual11:37locais/14:37Z: SIGSEGV RenderThread, mutex destruído, processo station_netplay morto; backtrace atual ausente/mainbuffer rotacionado. Não usar tombstones antigos como causa atual ou inventar ajuste de controles/HLE/timers. Captura seguinte10min sem nova tentativa. Falha inicial de loading continua sem causa isolada. Nenhum APK/dado/configuração do telefone alterado.
+
+Seis libs e20dependências reais dos quatro owners PSX/N64/GC/Wii obtidos legitimamente por ADB, privados em /mnt/DADOS/station-online-audit-20261013/phone-independent-kit, hashes exatos do manifesto instalado. Registrar não requer restart: candidato selado4engines/78perfis/modos(66N64/9GC/3Wii), prefixos preservados. NÃO APLICADO: pkexec88775 encerrou126 Request dismissed. Não contornar autenticação. PSX zero novos HLE por edição; restantes modos não documentados conservam pendência. Publicar somente via registrador atual e recibos reais; APKR139 ainda4096itens, overlayNES não incorporado. Servidor20plataformas de catálogo não equivale a20motores online. Manutenção horária serializada, reconhecer entradas já analisadas e retomar somente com novos inputs. Nunca reaplicar operadores datados; dados privados/binários/ROMs/seriais/chaves foraGit.
+
+## Histórico preservado
+
 # Edge30 atualizado para R139 — 13/10
 
 Moto g52 e Edge30: R139/19acdece…, dados/hash conferidos; ver r139/evidence/instalacao-edge30.json. A56 última R135. O novo recibo muda só inventário de instalação, sem confirmar cadastro ou gameplay.
