@@ -1,0 +1,28 @@
+{
+  "schema": "station.r139.startup-logging.final.v1",
+  "passed": true,
+  "diagnosticApkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+  "diagnosticApkBytes": 2715028584,
+  "signatureCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "v2": true,
+  "v3": true,
+  "zipAlignment16KiB": true,
+  "sourceCommit": "7ca5e5c8f8c93de4451830413318a0172a30ac91",
+  "checkedEntries": 13861,
+  "preservedEntryCount": 13855,
+  "preservedRetroArchSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "wrapperFingerprints": [
+    "8be1909b35d2868916b651e39d7aba1a5da7c4872664321424b90c18cd492b72",
+    "b6a01fd7c0c72de90fd19a4eb49fd29966ec41c7b4aed51827c9b21525cca4fc",
+    "dd89839329e1541121d5b5c4ea853b9b030c0d52284695e576226f48300ec4d9"
+  ],
+  "diagnosticTemporary": true,
+  "permanentRelease": false,
+  "promoted": false,
+  "installed": false,
+  "serverRegistered": false,
+  "physicalGameplayValidated": false,
+  "sourceReceiptSha256": "e6ddb2c8a43db6fa6569385749068e78dfc621f950acd727368a3edc76f0efa9",
+  "evidenceScope": "Build/signature proof only; current phone installation is recorded separately",
+  "containsRawLogsBinariesSecretsOrPhoneIdentifiers": false
+}

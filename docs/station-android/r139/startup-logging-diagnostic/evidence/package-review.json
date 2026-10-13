@@ -1,0 +1,94 @@
+{
+  "schema": "station.r139.startup-logging.independent-package-review.v1",
+  "passed": true,
+  "createdUtc": "2026-10-13T18:17:51.111063+00:00",
+  "sourceCommit": "7ca5e5c8f8c93de4451830413318a0172a30ac91",
+  "frozenProductiveSourceFilesChecked": 16,
+  "sourceFreezeByteMatch": true,
+  "baselineApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+  "unsignedApkSha256": "62bad1860fe6359d02ce7cd457c207ff3b6cd58f0f0820bb4fcdf6bd9aa5a6d7",
+  "unsignedApkBytes": 2713636041,
+  "unsignedWholeFileHashVerified": true,
+  "actualEntryHashesChecked": 13861,
+  "originalEntryHashesSource": "independent-final-r139",
+  "baselineReceiptSha256": "0c2cb5c37eed525fa88d906f5e4e1fcd9c616af80fc85dd758c6e01e4c3f5058",
+  "packageReceiptSha256": "165f7a9a4d84bf5248c802923731a2a4758b9660a73187ee5dae4cfd5d0a2a45",
+  "replacedEntries": [
+    "assets/station-online/engines.json",
+    "classes35.dex",
+    "lib/arm64-v8a/libstation_dolphin_runtime.so",
+    "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+    "lib/arm64-v8a/libstation_psx_online.so"
+  ],
+  "addedEntries": [
+    "lib/arm64-v8a/libstation_startup_logging.so"
+  ],
+  "removedEntries": [],
+  "byteIdenticalOldEntries": 13855,
+  "actualDexSha256": "e13e8c9c56c429cc23e5eb8b18a9ab42614be7a75ae85a1cf0fedd5c24df366a",
+  "directApkDecodeCompared": true,
+  "originalClassCount": 608,
+  "finalClassCount": 609,
+  "unchangedClasses": 606,
+  "modifiedMethods": {
+    "StationRetroActivity": ".method public onCreate(Landroid/os/Bundle;)V",
+    "StationRetroLaunch": ".method static prepare(Landroid/content/Context;Lorg/emulationstation/frontend/netplay/StationOnlineGame;Lorg/json/JSONObject;Lorg/json/JSONObject;Lorg/emulationstation/frontend/station/StationApi$Cancellation;)Ljava/lang/String;"
+  },
+  "insertedClass": "Lorg/emulationstation/frontend/netplay/StationStartupLogging;",
+  "inversePassed": true,
+  "classProjectionProof": "verifiedClasses=608 finalClasses=609 unchanged=606 originalAllowed=2 finalAllowed=3 donorSHA=dd6ea401376aafcba86518038fa2589c3d626c076cdcfc21252efca1a93ab6a9",
+  "helperCompiledProjectionPreserved": true,
+  "untouchedRootDexPartitions": 39,
+  "ps4ChildDexPreserved": true,
+  "preservedRetroArchSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "preservedRetroArchDescriptors": 9,
+  "activeV3RetroArchDescriptors": 8,
+  "existingRetroArchCoreBinariesPreserved": 5,
+  "otherLibretroCoreBinariesPreserved": 11,
+  "independentPoliciesPreserved": 3,
+  "renewedIndependentDescriptors": 4,
+  "wrapperBoundPayloadCounts": {
+    "inherited": 345,
+    "diagnostic": 346
+  },
+  "sidecarSha256": "05ecff9574c281d3546440aa5e8d3df104b8c6b4c032003a10aabf0efef81171",
+  "sidecarBytes": 7864,
+  "sidecarMinimumLoadAlignment": 16384,
+  "preInstallRecipeDefects": [
+    {
+      "fixCommit": "e1a0fc6ad958d8f30268e1eb4b19d7dcedcd1d37",
+      "issue": "Extra blank separator normalized by assembler; insertion shortened to retain exact inverse",
+      "scope": "tooling-only"
+    },
+    {
+      "fixCommit": "f4de0faca9bdf47a77ab85fa428d5a6c34c90b6d",
+      "issue": "Destination ZIP write mutated donor ZipInfo; copy metadata before writing",
+      "scope": "tooling-only"
+    },
+    {
+      "fixCommit": "7ca5e5c8f8c93de4451830413318a0172a30ac91",
+      "issue": "Forced ZIP64 headers rejected by Android zipalign; use classic APK ZIP headers",
+      "scope": "tooling-only"
+    }
+  ],
+  "failedBuildsInstalled": false,
+  "failedBuildInstallationEvidence": "producer-confirmation-and-stage-receipts",
+  "diagnosticTemporary": true,
+  "permanentRelease": false,
+  "currentPointersUpdated": false,
+  "signatureReceiptObserved": true,
+  "signatureIndependentlyRecheckedInThisReview": false,
+  "signedApkSha256Observed": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+  "signedFinalReceiptSha256": "d5802e2f8a24a1029fec28df19f5367b087b3e1245ff79aa3317dc869fe37c9c",
+  "installed": false,
+  "installationReviewed": false,
+  "physicalGameplayValidated": false,
+  "limits": [
+    "Original full APK not rehashed in this review; inherited entry map comes from prior independent exact-R139 review",
+    "Signature/alignment are observed in producer verifier receipts, not rerun by this reviewer",
+    "No USB operation, gameplay, performance measurement or diagnostic capture performed"
+  ],
+  "sourceReceiptSha256": "c3eb1fa40fbbba13056db56a2042e8e2d089fcb68bae6394b8b0c281bb242acd",
+  "evidenceScope": "Independent source/unsigned-APK preservation review; no phone inspection",
+  "containsRawLogsBinariesSecretsOrPhoneIdentifiers": false
+}

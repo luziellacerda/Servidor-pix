@@ -1,3 +1,15 @@
+## Diagnóstico temporário R139 — 13/10/2026, 15h16–15h21 locais
+
+**Investigação de Top Gear 3000 (SNES), ainda sem correção aplicada.** APK temporário `5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d` / 2.715.028.584 bytes, [fonte congelada `7ca5e5c8`](https://github.com/luziellacerda/TurboElden/tree/7ca5e5c8f8c93de4451830413318a0172a30ac91/integration/startup-logging-diagnostic-r139-20261013). Assinatura original v2/v3 e alinhamento 16 KiB conferidos. Instalado no moto g52 às 18:16:13.900 UTC, com hash integral, UID/dados preservados e frontend observado; Edge 30 continua na R139 original `19acdece…`. [STATUS atual](r139/startup-logging-diagnostic/STATUS.json) · [Instalação g52](r139/startup-logging-diagnostic/evidence/instalacao-moto-g52.json).
+
+O diagnóstico habilita registros de início por auxiliar JNI e configuração privada. RetroArch `ae72f137…`, cores e todos os nove descritores RetroArch permanecem exatos; os oito IDs ativos já cadastrados continuam válidos para SNES. Os quatro IDs independentes PSX/N64/GameCube/Wii são temporários e **não foram cadastrados no servidor**. A R139 de release e seus ponteiros continuam preservados. [Assinatura](r139/startup-logging-diagnostic/evidence/signed-apk-proof.json) · [Probe Android: sete casos](r139/startup-logging-diagnostic/evidence/android-sidecar-probe.json) · [Auditoria de preservação](r139/startup-logging-diagnostic/evidence/package-review.json).
+
+**VS e Campeonato em dupla capturados no g52, como anfitrião:** nas duas tentativas, o core informou ausência de `dsp4.program.rom` e `dsp4.data.rom` (18:18:46.980 e 18:20:58.122 UTC). A carga falhou às 18:18:47.088 / 18:20:58.226, e o runloop retornou 1 às 18:18:47.104 / 18:20:58.239. Não houve novo crash nessas tentativas. A falha imediata de carga está registrada; ainda falta explicar quais opções o core consumiu e por que solicitou DSP4 na composição com HLE declarada. Nenhum BIOS ou valor de HLE foi alterado, e nenhuma correção causal foi aplicada.
+
+Os três arquivos solicitados (`logcat-topgear3000-vs.txt`, `logcat-topgear3000-campeonato.txt`, `erro-inicializacao-retroarch.txt`) já estão disponíveis para o g52. Continuam pendentes a captura do Edge 30 e a entrega conjunta privada em `SERVIDOR LER`. Não houve entrega, deploy ou reinício da API nesta etapa. Restaurar o APK R139 original `19acdece…` após as capturas; restauração e gameplay ainda não comprovados. Logs brutos, APKs, bibliotecas e identificadores dos telefones permanecem privados.
+
+## Histórico preservado
+
 ## Quatro motores independentes publicados — 13/10/2026, 14h06
 
 **Autenticação Linux concluída e cadastro aplicado**, sem reiniciar a API. Seis bibliotecas e vinte dependências exatas obtidas pelo USB do moto g52 permitiram cadastrar os motores atuais PS1/N64/GameCube/Wii. Foram acrescentados **78 perfis e modos revisados em 44 jogos: 66 N64, nove GameCube e três Wii**. PS1 recebeu o motor, mas conserva zero aprovações HLE por edição nesta etapa. [Recibo aplicado e provas](r139/native-owner-usb-receipt.json) · [Retorno consolidado](r139/server-return.json).

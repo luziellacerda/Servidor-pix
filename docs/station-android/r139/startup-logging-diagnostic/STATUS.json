@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "status": "temporary-diagnostic-installed-g52; VS and championship content-load errors captured; two-phone handoff incomplete",
+  "updatedUtc": "2026-10-13T18:23:48.420630+00:00",
+  "diagnosticTemporary": true,
+  "permanentRelease": false,
+  "sourceCommit": "7ca5e5c8f8c93de4451830413318a0172a30ac91",
+  "sourceUrl": "https://github.com/luziellacerda/TurboElden/tree/7ca5e5c8f8c93de4451830413318a0172a30ac91/integration/startup-logging-diagnostic-r139-20261013",
+  "artifact": {
+    "apkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+    "bytes": 2715028584,
+    "signed": true,
+    "originalCertificatePreserved": true,
+    "v2": true,
+    "v3": true,
+    "alignmentBytes": 16384
+  },
+  "releasePreserved": {
+    "apkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+    "productiveSourceCommit": "42da152e54bbbb4a6d569ca26fe90835503bcccb",
+    "nativeRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+    "currentPointersUpdated": false,
+    "retroArchDescriptorsUnchanged": 9,
+    "activeV3RetroArchIdsUnchanged": 8,
+    "independentTemporaryDescriptorsRenewed": 4,
+    "independentTemporaryIdsRegisteredOnServer": false
+  },
+  "diagnosticScope": {
+    "game": "Top Gear 3000",
+    "platform": "SNES",
+    "purpose": "startup log capture",
+    "newGameplayLogic": false,
+    "hleControllersReadyAckAndFpsPreserved": true,
+    "useForPerformanceBenchmark": false
+  },
+  "phones": [
+    {
+      "model": "moto g52",
+      "installedApkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+      "diagnosticInstalled": true,
+      "installedUtc": "2026-10-13T18:16:13.900356+00:00",
+      "installedHashVerified": true,
+      "originalUidPreserved": true,
+      "dataPreserved": true,
+      "frontendObserved": true,
+      "originalR139Restored": false
+    },
+    {
+      "model": "motorola edge 30",
+      "installedApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+      "diagnosticInstalled": false,
+      "currentStateEvidence": "previous R139 installation receipt; no new USB operation in this documentation update"
+    }
+  ],
+  "capture": {
+    "startedUtc": "2026-10-13T18:16:28.718Z",
+    "currentDevice": "moto g52",
+    "capturedAttempts": 2,
+    "participantCountConfirmedInThisUpdate": false,
+    "capturedHostRole": true,
+    "attempts": [
+      {
+        "mode": "Top Gear 3000 VS",
+        "host": true,
+        "missingDsp4FirmwareReportedUtc": "2026-10-13T18:18:46.980Z",
+        "missingFiles": [
+          "dsp4.program.rom",
+          "dsp4.data.rom"
+        ],
+        "failedToLoadContentUtc": "2026-10-13T18:18:47.088Z",
+        "nativeRunloopReturnedUtc": "2026-10-13T18:18:47.104Z",
+        "nativeRunloopResult": 1,
+        "newCrashesObserved": 0,
+        "captureCompletedUtc": "2026-10-13T18:19:01.287724+00:00",
+        "clockObservation": {
+          "hostBeforeEpoch": 1791915388.7185125,
+          "hostAfterEpoch": 1791915388.7886748,
+          "deviceEpochSeconds": 1791915388,
+          "resolutionSeconds": 1,
+          "roundTripSeconds": 0.07016229629516602,
+          "deviceMinusHostIntervalSeconds": [
+            -0.7886748313903809,
+            0.28148746490478516
+          ]
+        }
+      },
+      {
+        "mode": "Top Gear 3000 Campeonato em dupla",
+        "host": true,
+        "missingDsp4FirmwareReportedUtc": "2026-10-13T18:20:58.122Z",
+        "missingFiles": [
+          "dsp4.program.rom",
+          "dsp4.data.rom"
+        ],
+        "failedToLoadContentUtc": "2026-10-13T18:20:58.226Z",
+        "nativeRunloopReturnedUtc": "2026-10-13T18:20:58.239Z",
+        "nativeRunloopResult": 1,
+        "newCrashesObserved": 0,
+        "captureCompletedUtc": "2026-10-13T18:21:25.055549+00:00",
+        "clockObservation": {
+          "hostBeforeEpoch": 1791915580.7755482,
+          "hostAfterEpoch": 1791915580.839112,
+          "deviceEpochSeconds": 1791915580,
+          "resolutionSeconds": 1,
+          "roundTripSeconds": 0.06356382369995117,
+          "deviceMinusHostIntervalSeconds": [
+            -0.8391120433807373,
+            0.22445178031921387
+          ]
+        }
+      }
+    ],
+    "campaignCaptured": true,
+    "g52ModeCapturesComplete": true,
+    "g52RequestedThreeFilesAvailable": true,
+    "edge30Captured": false,
+    "bothPhonesCovered": false,
+    "rawLogsPublished": false,
+    "clockOffsetsCalibrated": true,
+    "clockCalibrationUsesBoundsNotExactOffsets": true,
+    "participantCountReportedByUser": 2
+  },
+  "findings": {
+    "immediateFailureObserved": "Core content load failed after reporting missing DSP4 firmware",
+    "underlyingCauseConfirmed": false,
+    "hleOptionConsumptionUnderInvestigation": true,
+    "requiredNextAnalysis": "Explain why DSP4 firmware was requested while the approved SNES profile declares HLE",
+    "correctivePatchApplied": false,
+    "gameplayValidated": false,
+    "exitFailureResolved": false
+  },
+  "serverHandoff": {
+    "requestedFiles": [
+      "logcat-topgear3000-vs.txt",
+      "logcat-topgear3000-campeonato.txt",
+      "erro-inicializacao-retroarch.txt"
+    ],
+    "captureRequirement": "both phones, start through failure; VS and two-player championship with internal RetroArch/core/driver error",
+    "privateDestinationFolder": "SERVIDOR LER",
+    "g52ThreeFilesAvailable": true,
+    "edge30CoveragePending": true,
+    "complete": false,
+    "delivered": false,
+    "newNativeLibrariesRequired": false,
+    "apiDeployed": false,
+    "apiRestarted": false,
+    "serverRegistrationPerformed": false
+  },
+  "restoration": {
+    "planned": true,
+    "targetApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+    "after": "required captures",
+    "completed": false
+  },
+  "evidence": {
+    "signed-apk-proof.json": "evidence/signed-apk-proof.json",
+    "android-sidecar-probe.json": "evidence/android-sidecar-probe.json",
+    "package-review.json": "evidence/package-review.json",
+    "instalacao-moto-g52.json": "evidence/instalacao-moto-g52.json"
+  },
+  "evidenceScopesClarified": true,
+  "containsRawLogsBinariesSecretsOrPhoneIdentifiers": false
+}
