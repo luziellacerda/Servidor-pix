@@ -1,0 +1,64 @@
+{
+  "revision": "R144",
+  "deviceModel": "SM-A566E",
+  "codeEnteredFromUserProvidedInput": true,
+  "activationSubmitRequested": true,
+  "frontendOpenedReportedByHuman": true,
+  "activationConfirmedByHuman": true,
+  "frontendAfterActivationObservedByUsb": false,
+  "usbDisconnectedBeforePostActivationObservation": true,
+  "sensitiveCodePublished": false,
+  "mainBackgroundReportedTooDark": true,
+  "visualAcceptance": false,
+  "newRequestedRevision": "R145",
+  "nextBackgroundScope": "Sky-blue background on all pages currently using blue, preserve neutral black/green backgrounds",
+  "nextWavePalettes": {
+    "snes": [
+      "red",
+      "red",
+      "gray"
+    ],
+    "nes": [
+      "purple",
+      "red",
+      "gray"
+    ],
+    "n64": [
+      "thin-yellow",
+      "green",
+      "blue",
+      "red",
+      "thin-yellow"
+    ],
+    "gamecube": [
+      "yellow",
+      "green",
+      "purple",
+      "gray"
+    ],
+    "psx": [
+      "red",
+      "blue",
+      "yellow"
+    ],
+    "ps2": [
+      "red",
+      "blue",
+      "yellow"
+    ],
+    "dreamcast": [
+      "green",
+      "blue",
+      "red",
+      "yellow",
+      "orange"
+    ],
+    "finalburnneo": [
+      "green",
+      "yellow",
+      "orange"
+    ]
+  },
+  "afterVisualTask": "Investigate and repair N64, PS1, GameCube and Wii online with concrete client/server evidence",
+  "stableR143PromotedOrMoved": false
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "station.r144.candidate.backup.public-summary.v1",
+  "revision": "R144",
+  "sourceCommit": "1ac3f7d2fdd7cd349a5b37127b66712834e844fd",
+  "apkSha256": "01427f4e73141b7d6a462c2420a9abeb018a8716102e7fb959bf9a1d69eccee0",
+  "candidateOnly": true,
+  "previouslyValidated": true,
+  "verifiedFileCount": 2047,
+  "nativeInputCount": 158,
+  "allNativeInputsIncluded": true,
+  "bundlesVerified": 2,
+  "fullStableR143RequiredForRecovery": true,
+  "stableRecoveryTag": "estavel-station-r143-20261013",
+  "stablePromoted": false,
+  "permanentPointersChanged": false,
+  "initialCheckpointPreserved": true,
+  "currentAttemptAlreadyInInitialCheckpoint": false,
+  "limitation": "Initial backup predates attempt 4; its installation result is recorded separately.",
+  "containsPrivateFileNamesPathsOrValues": false
+}

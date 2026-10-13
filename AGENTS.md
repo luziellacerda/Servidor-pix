@@ -1,3 +1,37 @@
+# R144 instalada e ativada; R145 visual em preparação
+
+Leia r144/STATUS e o mesmo handoff. A56 instalação nova SHA01427/fonte1ac conferidos; abertura após código confirmado pelo mantenedor, USB desconectado. Não publicar o código. R144 não aprovada no fundo: próxima R145 azul céu em todos os fundos azuis e novos números/cores de faixas conforme recibo, sem trocar fundos neutros/verde/preto ou lógica. Depois investigar N64/PS1/GC/Wii online com evidência e kit correspondente ao APK real; nenhum reparo de gameplay já incluído na R144. Estável R143 e ponteiros permanecem exatos.
+
+## Histórico preservado
+
+# R144 instalada; ativação A56 aguardando código
+
+Mesma fonte1ac e APK01427. Instalação nova após ausência do pacote, hash/identidade novos conferidos; dados/UID anteriores não preservados por serem inaplicáveis. Própria LoginActivity observada, FLAG_SECURE original explica captura preta. Código novo da licença do A56 solicitado ao mantenedor; não reutilizar senha histórica, outra licença ou credencial administrativa dentro do app. Nenhuma emissão/troca/licença ou mensagem realizada. Aprovação visual, carrossel/salas, continua pendente. Fonte produtiva, helpers, R143 estável e rede v3 permanecem no estado registrado.
+
+## Histórico preservado
+
+# Sexta tentativa R144 — instalação nova autorizada
+
+A sexta tentativa instalou a R144 como instalação nova autorizada no Samsung A56. O SHA integral do APK e a identidade do novo pacote foram conferidos. A entrada oficial não foi observada automaticamente; a abertura da interface e a aprovação visual ainda precisam de confirmação humana.
+
+A quarta tentativa registrou INSTALL_FAILED_INSUFFICIENT_STORAGE. Depois, havia aproximadamente 15,15 GB disponíveis. A quinta tentativa parou na pré-validação, antes de instalar: o pacote estava ausente globalmente e para o usuário 0. O diagnóstico foi somente leitura. A inspeção de cópias de instalador apagou zero arquivos e não desinstalou nem limpou o aplicativo. A causa da remoção prévia não foi estabelecida. Por isso a sexta operação usou instalação nova, autorizada por “instale”; preservação do UID/dados anteriores não se aplica.
+
+Mesma fonte congelada 1ac3f7d e APK 01427f4e. Teste visual físico pendente, rede v3 não integrada, helpers antigos exatos, tag e backup completos R143 preservados. Nenhuma recompilação, lógica, deploy/restart ou cadastro aplicado por este registro. O checkpoint candidato inicial foi validado com 2.047 arquivos, 158 inputs nativos e dois bundles; depende do ponto completo R143. As novas tentativas serão anexadas em diretório distinto, sem substituir o checkpoint inicial.
+
+[Recibo da instalação nova](docs/station-android/r144/evidence/instalacao-r144-samsung-a56-tentativa6-nova.json).
+
+## Histórico preservado
+
+# Quarta tentativa R144 — resultado conferido
+
+A quarta tentativa não confirmou a instalação da R144. O recibo registra o erro Android INSTALL_FAILED_INSUFFICIENT_STORAGE. Não atribuir outra causa nem declarar a versão instalada. Antes desta tentativa, o A56 estava ocioso com 7.564.333.056 bytes disponíveis. O teste visual físico permanece pendente. A fonte congelada 1ac3f7d e o APK 01427f4e são os mesmos; nenhuma recompilação, lógica ou cadastro foi alterado por este registro.
+
+O checkpoint candidato anterior foi validado com 2.047 arquivos, 158 inputs nativos e dois bundles Git. A recuperação depende do backup completo estável R143. A quarta tentativa será anexada em atualização distinta; o ponto inicial e a estável R143 permanecem preservados.
+
+[Recibo da quarta tentativa](docs/station-android/r144/evidence/instalacao-r144-samsung-a56-tentativa4.json). [Resumo sanitizado do backup](docs/station-android/r144/evidence/candidate-backup-summary.json).
+
+## Histórico preservado
+
 # R144 visual: retorno de rede recebido, rota futura pendente
 
 Ler r144/STATUS e o mesmo handoff. A fonte executável R144 1ac3f7d permanece visual; o retorno QoS/relay direto é documental, sem implementação dessa rota no APK atual. Teste físico visual pendente e A56 ainda com recusa de espaço na terceira tentativa. Preservar histórico do servidor, mas não iniciar mudança de rede por esta etapa de design. R143 estável e ponteiros intactos.

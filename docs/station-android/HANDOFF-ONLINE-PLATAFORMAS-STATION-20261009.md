@@ -1,3 +1,49 @@
+## Comparação do retorno 23h UTC com o A56 R144
+
+O novo retorno c926aa9 confirma catálogo/perfis/motores no estado R141 aplicado e falta do ZIP R143 a4ba2105 no Linux. O A56 já está na R144, APK01427, cujo kit privado exato é 7b1cdb6c (12.164.472 bytes), preparado localmente e não aplicado. Os quatro fingerprints independentes são vinculados ao DEX/carrossel: o kit R143 não substitui o kit da R144. A próxima R145 visual também terá seus fingerprints e kit próprios. SNES mantém cadastro existente, coerente com os relatos positivos anteriores.
+
+A nova rota direta v3 e a política de rede estão documentadas no servidor, mas não integradas na R144. A falta do kit correspondente é uma pendência concreta para os owners independentes; não prova isoladamente a causa de todos os erros de N64/PS1/GC/Wii. Não reaplicar R141/QoS ou executar operadores históricos. A investigação de online foi autorizada após o visual e deve usar o APK efetivamente testado, sem presumir aplicação do kit ou funcionamento por tamanho de biblioteca.
+
+## Histórico preservado
+
+## R144 ativada por relato humano; refinamento visual R145 solicitado
+
+O código fornecido pelo mantenedor foi preenchido no campo protegido e o botão Entrar foi acionado no A56. Depois o USB foi desconectado; a confirmação posterior foi humana: “Abriu a tela inicial”. Nenhum código é copiado ao Git. A instalação R144 permanece comprovada pelo SHA do APK e identidade do novo pacote. A abertura pós-ativação não foi observada por USB.
+
+O mantenedor considerou o fundo azul ainda escuro: pediu azul céu em todas as telas que usam azul. A R145 deverá conservar fundos neutros/preto/verde e alterar os fundos azuis e as faixas solicitadas: SNES vermelho/vermelho/cinza; NES roxo/vermelho/cinza; N64 amarelo fino/verde/azul/vermelho/amarelo fino; GameCube amarelo/verde/roxo/cinza; PSX e PS2 vermelho/azul/amarelo; Dreamcast verde/azul/vermelho/amarelo/laranja; FinalBurn Neo verde/amarelo/laranja. Demais paletas R144 continuam. A aprovação visual da R144 é negativa para o fundo; não promovê-la a estável.
+
+Após o visual e a comparação do handoff, foi solicitado investigar e corrigir a operação online de N64, PS1, GameCube e Wii. Cruzar erros reais, motores entregues e kit registrado, preservando outros comportamentos. Essa investigação ainda não foi implementada na fonte R144, que segue congelada em 1ac3f7d. A tag/backup estável R143 continua intacta.
+
+## Histórico preservado
+
+## R144 no A56: acesso aguardando código novo
+
+A instalação nova está conferida pelo SHA do APK e identidade do pacote. A hierarquia do próprio aplicativo confirmou o campo protegido de senha de acesso e o botão Entrar. A captura preta é compatível com o FLAG_SECURE já existente em LoginActivity; não alterar essa proteção nem atribuir à paleta um travamento. O código atual do A56 não foi encontrado nos handoffs: o painel documenta códigos curtos, de uso único, sem recuperação do texto anterior. O acesso ao navegador falhou após uma reinicialização e tentativa de recuperação. Foi solicitado ao mantenedor o código novo da licença do A56 para preenchê-lo no aplicativo. Nenhum código foi digitado, nenhuma licença emitida/trocada e nenhuma mensagem enviada. Teste visual do carrossel e das salas ainda pendente.
+
+## Histórico preservado
+
+## Sexta tentativa R144 — instalação nova autorizada
+
+A sexta tentativa instalou a R144 como instalação nova autorizada no Samsung A56. O SHA integral do APK e a identidade do novo pacote foram conferidos. A entrada oficial não foi observada automaticamente; a abertura da interface e a aprovação visual ainda precisam de confirmação humana.
+
+A quarta tentativa registrou INSTALL_FAILED_INSUFFICIENT_STORAGE. Depois, havia aproximadamente 15,15 GB disponíveis. A quinta tentativa parou na pré-validação, antes de instalar: o pacote estava ausente globalmente e para o usuário 0. O diagnóstico foi somente leitura. A inspeção de cópias de instalador apagou zero arquivos e não desinstalou nem limpou o aplicativo. A causa da remoção prévia não foi estabelecida. Por isso a sexta operação usou instalação nova, autorizada por “instale”; preservação do UID/dados anteriores não se aplica.
+
+Mesma fonte congelada 1ac3f7d e APK 01427f4e. Teste visual físico pendente, rede v3 não integrada, helpers antigos exatos, tag e backup completos R143 preservados. Nenhuma recompilação, lógica, deploy/restart ou cadastro aplicado por este registro. O checkpoint candidato inicial foi validado com 2.047 arquivos, 158 inputs nativos e dois bundles; depende do ponto completo R143. As novas tentativas serão anexadas em diretório distinto, sem substituir o checkpoint inicial.
+
+[Recibo da instalação nova](r144/evidence/instalacao-r144-samsung-a56-tentativa6-nova.json).
+
+## Histórico preservado
+
+## Quarta tentativa R144 — resultado conferido
+
+A quarta tentativa não confirmou a instalação da R144. O recibo registra o erro Android INSTALL_FAILED_INSUFFICIENT_STORAGE. Não atribuir outra causa nem declarar a versão instalada. Antes desta tentativa, o A56 estava ocioso com 7.564.333.056 bytes disponíveis. O teste visual físico permanece pendente. A fonte congelada 1ac3f7d e o APK 01427f4e são os mesmos; nenhuma recompilação, lógica ou cadastro foi alterado por este registro.
+
+O checkpoint candidato anterior foi validado com 2.047 arquivos, 158 inputs nativos e dois bundles Git. A recuperação depende do backup completo estável R143. A quarta tentativa será anexada em atualização distinta; o ponto inicial e a estável R143 permanecem preservados.
+
+[Recibo da quarta tentativa](r144/evidence/instalacao-r144-samsung-a56-tentativa4.json). [Resumo sanitizado do backup](r144/evidence/candidate-backup-summary.json).
+
+## Histórico preservado
+
 ## Retorno de rede recebido durante a publicação da R144
 
 O GitHub trouxe o retorno de prioridade de rede e relay direto do servidor (commit 799d124, integrado em c349ef5). O arquivo foi preservado como evidência recebida. A R144 congelada em 1ac3f7d conserva os endpoints e a fábrica TLS anteriores: a nova rota v3 ainda depende de uma alteração futura de aplicativo. A etapa atual continua sendo o teste visual solicitado; não atribuir à R144 a adoção da rota direta ou gameplay nessa rota. O relato de aplicação pertence ao retorno do servidor e não a uma verificação nova feita neste aparelho. A tag estável R143 permanece inalterada.
