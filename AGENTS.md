@@ -4,7 +4,13 @@ Ler o MESMO handoff e r141/server-return.json. A combinação APK b5a76023/fonte
 
 A pré-validação recusou duplicações do preparador antes da publicação. A lista fixa agora renova somente os 78 modos revisados; a migração genérica mantém seu comportamento anterior. Dezessete testes passaram, incluindo renovação de um cadastro nativo já existente. O conjunto completo de operadores/testes administrativos permanece no repositório do servidor; o recibo e as instruções estão espelhados no app. O código de gameplay e a fonte congelada do APK não foram alterados.
 
-Não reaplicar: /mnt/DADOS/station-r141-20261013/applied.json existe. Não pedir novamente kit ou logs recebidos. O recibo Android comprova download de 546.776.387 bytes em 75.288 ms, instalação concluída e serviço ausente depois. Cancelamento Android e comparação pareada não testados. Moto g52 R141; últimas versões comprovadas do Edge 30 e A56 são R139 de diagnóstico e R135. Gameplay, relay409 e saída antiga continuam pendentes; o mantenedor adiou ajustes desse setor nesta entrega de downloads. Logs, chaves, binários e seriais privados fora do Git. Manter os dois arquivos históricos CRLF locais sem commit.
+Não reaplicar: /mnt/DADOS/station-r141-20261013/applied.json existe. Não pedir novamente kit ou logs recebidos. O recibo Android comprova download de 546.776.387 bytes em 75.288 ms, instalação concluída e serviço ausente depois. Cancelamento Android e comparação pareada não testados. Moto g52 e Samsung A56 agora na mesma R141 b5a76023, por recibos de instalação/hash. A56 atualizado da R138 observada, UID/dados/primeira instalação preservados; frontend e gameplay não comprovados pelo instalador. Edge 30 última R139 de diagnóstico. Gameplay, relay409 e saída antiga continuam pendentes; o mantenedor adiou ajustes desse setor nesta entrega de downloads. Logs, chaves, binários e seriais privados fora do Git. Manter os dois arquivos históricos CRLF locais sem commit.
+
+## Histórico preservado
+
+# Samsung A56 atualizado para a mesma R141 — 13/10/2026
+
+Moto g52 e Samsung SM-A566E agora na mesma R141/b5a76023, fonte executável240b7c05; atualização A56 da R138 encontrada, SHA/UID/dados/primeira instalação preservados, sem recompilar ou alterar lógica. Ler r141/STATUS.json e evidence/installation-samsung-a56.json no mesmo handoff. Edge30 última R139-DIAG conhecida; não inferir todos os telefones atualizados, cadastro ou gameplay. Ponteiros de recuperação e fontes congeladas intactos; binários/seriais/logs privados foraGit.
 
 ## Histórico preservado
 

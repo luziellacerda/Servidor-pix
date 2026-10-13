@@ -8,7 +8,13 @@ A validação detectou que o preparador de renovação adicionava os modos das a
 
 O recibo da produção comprova no moto g52 **546.776.387 bytes baixados em 75.288 ms: média 7,26 MB/s decimal**, preparação de 5.862 ms, instalação concluída e serviço de download ausente na leitura posterior. O contador final soma transferência e expansão; não representa outra transferência do mesmo tamanho. A observação de velocidade anterior não teve comparação pareada. CA/hostname/pin e contrato de download seguem os recibos publicados; o destino de socket não foi observado separadamente na captura Android.
 
-Somente o GET canônico de artefato usa a origem de downloads. Autorização, login, catálogo, capas e comandos seguem a origem anterior. A R141 conserva o DEX35 e os dois ajustes de opções da R140; os hashes por download Android continuam desativados conforme a política vigente. O cadastro está concluído, mas **gameplay de Top Gear e outros jogos não foi homologado por estes testes**. Última instalação comprovada: moto g52 R141; Edge 30 R139 de diagnóstico; A56 R135. Cancelamento e nova autorização no Android, teste online com composição igual e diagnóstico dos dois relay409/falha antiga de saída continuam pendentes nos respectivos setores.
+Somente o GET canônico de artefato usa a origem de downloads. Autorização, login, catálogo, capas e comandos seguem a origem anterior. A R141 conserva o DEX35 e os dois ajustes de opções da R140; os hashes por download Android continuam desativados conforme a política vigente. O cadastro está concluído, mas **gameplay de Top Gear e outros jogos não foi homologado por estes testes**. Os recibos agora confirmam moto g52 e Samsung A56 na mesma R141 `b5a76023…`; o A56 foi atualizado da R138 efetivamente encontrada, com SHA, UID, dados e primeira instalação preservados. O frontend do A56 não foi observado pelo instalador, e gameplay permanece sem prova. Edge 30 conserva a última R139 de diagnóstico comprovada. Cancelamento e nova autorização no Android, teste online com composição igual e diagnóstico dos dois relay409/falha antiga de saída continuam pendentes nos respectivos setores.
+
+## Histórico preservado
+
+## Samsung A56 também atualizado para R141 — 13/10/2026
+
+Samsung SM-A566E/Android16 atualizado da R138 realmente encontrada para o mesmo APK R141 `b5a76023…`, fonte executável `240b7c05…`. SHA integral instalado, assinatura original, UID, dados e primeira instalação preservados. Nenhuma recompilação, alteração de código/configuração ou limpeza de dados. Moto g52 e A56 agora compartilham a R141; Edge30 permanece na última versão temporária de diagnóstico conhecida. [Recibo A56](r141/evidence/installation-samsung-a56.json). A primeira tentativa recusou o baseline histórico R135 sem instalar; a segunda confirmou a R138 atual e atualizou com as mesmas proteções. Instalação não comprova gameplay ou cadastro dos quatro novos IDs.
 
 ## Histórico preservado
 

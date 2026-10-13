@@ -476,12 +476,14 @@
   "phones": {
     "motoG52": "R141 b5a76023 per producer installation/hash receipt",
     "edge30": "last confirmed R139 diagnostic; do not infer R141 installation",
-    "samsungA56": "last confirmed R135"
+    "samsungA56": "R141 b5a76023 per producer full-hash installation receipt; updated from observed R138; frontend/gameplay not confirmed by installer"
   },
   "pending": [
     "Physical Android cancellation/fresh-authorization scenario and paired performance comparison were not tested by the R141 download capture",
     "Online gameplay after the R140 room option correction still needs phones on the same current composition; owner registration is not gameplay",
     "Two earlier relay HTTP409 response codes and earlier RenderThread exit crash still need diagnosis when gameplay work resumes",
     "PS1 per-edition HLE approval, NES APK catalog overlay, and missing app owners for Dreamcast/PS2/Saturn/WiiU/Switch/PSP/32X/NES remain separate pending work"
-  ]
+  ],
+  "newDeviceReceipt": "evidence/installation-samsung-a56.json",
+  "sameR141ConfirmedOnMotoG52AndSamsungA56": true
 }

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "model": "SM-A566E",
+  "actualBaselineRevision": "R138",
+  "actualBaselineSha256": "9183462e4d45cfcf2d2599d9e682b81890fee7b094505bf3073ab8183dd1dd10",
+  "priorKnownR135IsHistorical": true,
+  "derivedInstallerSha256": "c41234fd67607c1f92b56031993891a7e14c5c815e55eaef69430f9789ec1a92",
+  "templateSha256": "f698f43920555468f3198c7fe7f20c7e86be6289f9c96c37bf7c9d91f73dd5ac",
+  "inverseMatchesReviewedInstaller": true,
+  "appOrApkChanged": false,
+  "compiled": false,
+  "installed": false
+}

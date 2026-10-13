@@ -1,8 +1,12 @@
-## Cadastro efetivo da R141 aplicado — 13/10/2026
+## Cadastro atual e aparelhos — 13/10/2026
 
-O preparo administrativo é executado no repositório completo do servidor, que contém seus operadores e testes. O aplicativo recebe o recibo e os vínculos resultantes.
+R141 b5a76023 cadastrada: quatro novos IDs e 78 vínculos revisados; totais 39 motores, 11.604 perfis e 6.743 modos, com provas assinadas locais/públicas e registros anteriores preservados. [Recibo aplicado](server-return.json). Moto g52 e Samsung A56 agora têm a mesma R141, por SHA integral e recibos preservando dados/UID. [Instalação A56](evidence/installation-samsung-a56.json). Gameplay ainda precisa de teste; Edge 30 permanece na última R139 de diagnóstico comprovada. Operadores administrativos e dezessete testes da correção de duplicação ficam no repositório completo do servidor.
 
-Os quatro IDs da R141 `b5a76023…` e seus 78 vínculos foram cadastrados, com preservação dos registros anteriores e provas assinadas locais/públicas. Totais: 39 motores, 11.604 perfis e 6.743 modos; catálogo 46. Dezessete testes e preparação contra os dados atuais confirmaram a correção da duplicação de modos no preparador. [Recibo atual](server-return.json) e [mesmo handoff](../HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md). Download Android concluído a 7,26 MB/s no recibo recebido; gameplay continua sem homologação física.
+## Histórico preservado
+
+## Samsung A56 também atualizado para R141 — 13/10/2026
+
+Samsung SM-A566E/Android16 atualizado da R138 realmente encontrada para o mesmo APK R141 `b5a76023…`, fonte executável `240b7c05…`. SHA integral instalado, assinatura original, UID, dados e primeira instalação preservados. Nenhuma recompilação, alteração de código/configuração ou limpeza de dados. Moto g52 e A56 agora compartilham a R141; Edge30 permanece na última versão temporária de diagnóstico conhecida. [Recibo A56](evidence/installation-samsung-a56.json). A primeira tentativa recusou o baseline histórico R135 sem instalar; a segunda confirmou a R138 atual e atualizou com as mesmas proteções. Instalação não comprova gameplay ou cadastro dos quatro novos IDs.
 
 ## Resultado atual: R141 assinada, instalada e download Android concluído
 
