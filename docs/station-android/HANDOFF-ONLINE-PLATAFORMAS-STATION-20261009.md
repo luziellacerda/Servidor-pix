@@ -2,13 +2,116 @@
 
 **Catálogo 47; 132 arquivos de revista substituídos, correspondendo a 133 vínculos.** O conjunto correto foi entregue pelo proprietário em `CAPAS N64` no pen drive e ainda não estava no Git de artes consultado. As verificações anteriores de igualdade com esse Git eram verdadeiras, mas comparavam a coleção antiga. Agora as imagens novas estão em `n64/media/revista`, com nomes associados às ROMs instaladas. [Recibo, catálogo N64 completo e origens por jogo](online-plataformas-20261009/n64-capas-usb-20261013.json).
 
-Todas são JPEG RGB 480×720/q90, sem recorte:330.455.594 bytes de originais→18.636.845 bytes. Mario Kart 64 e Zelda Ocarina usam os JPEGs avulsos entregues e conferidos visualmente; Bomberman 64 usa a edição 1997, confirmada pelo metadado e pelo cabeçalho NBME, sem confundir com 2001. Monaco Grand Prix foi conciliado pelo título e cabeçalho NMGP. São 156 imagens para 157 registros, pois duas edições/entradas de Zelda compartilham o arquivo de revista.
+Todas são JPEG RGB 480×720/q90, sem recorte: 330.455.594 bytes de originais → 18.636.845 bytes. Mario Kart 64 e Zelda Ocarina usam os JPEGs avulsos entregues e conferidos visualmente; Bomberman 64 usa a edição 1997, confirmada pelo metadado e pelo cabeçalho NBME, sem confundir com 2001. Monaco Grand Prix foi conciliado pelo título e cabeçalho NMGP. São 156 imagens para 157 registros, pois duas edições/entradas de Zelda compartilham o arquivo de revista.
 
-**24 jogos conservaram a capa anterior porque a arte nova finalizada não veio no pacote.** A lista completa está no recibo; não usar fotos de referência, gerações anteriores ou arte de outro jogo para preencher essas faltas. O catálogo do USB registra 335 capas prontas e 53 não concluídas; isso não significa 335 ROMs novas. Os jogos/metadados/descritivos, IDs e coverIds, demais plataformas e três registros online foram preservados. O importador existente publicou sem reiniciar API: 46 → 47, added: 0 / updated: 133,4.435 visíveis / 4.690 IDs. Backup local das 132 revistas e backup Git do ponto anterior conferidos.
+**24 jogos conservaram a capa anterior porque a arte nova finalizada não veio no pacote.** A lista completa está no recibo; não usar fotos de referência, gerações anteriores ou arte de outro jogo para preencher essas faltas. O catálogo do USB registra 335 capas prontas e 53 não concluídas; isso não significa 335 ROMs novas. Os jogos/metadados/descritivos, IDs e coverIds, demais plataformas e três registros online foram preservados. O importador existente publicou sem reiniciar API: 46 → 47, added: 0 / updated: 133, 4.435 visíveis / 4.690 IDs. Backup local das 132 revistas e backup Git do ponto anterior conferidos.
 
 **Entrega conferida:** 157 capas pela API local e 21 por HTTPS público, com sessão/prova por pedido, assinatura do catálogo, hash, MIME e 480×720 verificados. Licenças sintéticas removidas; licenças reais e PID 2867363 intactos. Os 133 itens têm revisão própria nova; o app deve invalidar pelo par `coverId + item.revision` ao receber o catálogo 47. Não precisa recompilar para esta troca; a visualização física nos celulares não foi homologada nesta tarefa.
 
-Manutenção: as 132 substituições do USB têm precedência sobre as artes antigas do Git. Não reaplicar operadores de R128/R138 nem voltar essas capas ao conjunto anterior quando atualizar outras plataformas. Novas artes para os 24 títulos pendentes exigem arquivos finalizados correspondentes. Registro dos owners R143 continua pendente do kit privado; QoS, motores e APKs permanecem no estado descrito abaixo.
+Manutenção: as 132 substituições do USB têm precedência sobre as artes antigas do Git. Não reaplicar operadores de R128/R138 nem voltar essas capas ao conjunto anterior quando atualizar outras plataformas. Novas artes para os 24 títulos pendentes exigem arquivos finalizados correspondentes. O servidor conserva o cadastro R141; os próximos owners precisam do kit exato do APK testado (A56 R144, conforme novo retorno abaixo). QoS e motores não foram alterados por esta troca de capas; estável R143 preservada.
+
+## Histórico preservado
+
+## Comparação do retorno 23h UTC com o A56 R144
+
+O novo retorno c926aa9 confirma catálogo/perfis/motores no estado R141 aplicado e falta do ZIP R143 a4ba2105 no Linux. O A56 já está na R144, APK01427, cujo kit privado exato é 7b1cdb6c (12.164.472 bytes), preparado localmente e não aplicado. Os quatro fingerprints independentes são vinculados ao DEX/carrossel: o kit R143 não substitui o kit da R144. A próxima R145 visual também terá seus fingerprints e kit próprios. SNES mantém cadastro existente, coerente com os relatos positivos anteriores.
+
+A nova rota direta v3 e a política de rede estão documentadas no servidor, mas não integradas na R144. A falta do kit correspondente é uma pendência concreta para os owners independentes; não prova isoladamente a causa de todos os erros de N64/PS1/GC/Wii. Não reaplicar R141/QoS ou executar operadores históricos. A investigação de online foi autorizada após o visual e deve usar o APK efetivamente testado, sem presumir aplicação do kit ou funcionamento por tamanho de biblioteca.
+
+## Histórico preservado
+
+## R144 ativada por relato humano; refinamento visual R145 solicitado
+
+O código fornecido pelo mantenedor foi preenchido no campo protegido e o botão Entrar foi acionado no A56. Depois o USB foi desconectado; a confirmação posterior foi humana: “Abriu a tela inicial”. Nenhum código é copiado ao Git. A instalação R144 permanece comprovada pelo SHA do APK e identidade do novo pacote. A abertura pós-ativação não foi observada por USB.
+
+O mantenedor considerou o fundo azul ainda escuro: pediu azul céu em todas as telas que usam azul. A R145 deverá conservar fundos neutros/preto/verde e alterar os fundos azuis e as faixas solicitadas: SNES vermelho/vermelho/cinza; NES roxo/vermelho/cinza; N64 amarelo fino/verde/azul/vermelho/amarelo fino; GameCube amarelo/verde/roxo/cinza; PSX e PS2 vermelho/azul/amarelo; Dreamcast verde/azul/vermelho/amarelo/laranja; FinalBurn Neo verde/amarelo/laranja. Demais paletas R144 continuam. A aprovação visual da R144 é negativa para o fundo; não promovê-la a estável.
+
+Após o visual e a comparação do handoff, foi solicitado investigar e corrigir a operação online de N64, PS1, GameCube e Wii. Cruzar erros reais, motores entregues e kit registrado, preservando outros comportamentos. Essa investigação ainda não foi implementada na fonte R144, que segue congelada em 1ac3f7d. A tag/backup estável R143 continua intacta.
+
+## Histórico preservado
+
+## R144 no A56: acesso aguardando código novo
+
+A instalação nova está conferida pelo SHA do APK e identidade do pacote. A hierarquia do próprio aplicativo confirmou o campo protegido de senha de acesso e o botão Entrar. A captura preta é compatível com o FLAG_SECURE já existente em LoginActivity; não alterar essa proteção nem atribuir à paleta um travamento. O código atual do A56 não foi encontrado nos handoffs: o painel documenta códigos curtos, de uso único, sem recuperação do texto anterior. O acesso ao navegador falhou após uma reinicialização e tentativa de recuperação. Foi solicitado ao mantenedor o código novo da licença do A56 para preenchê-lo no aplicativo. Nenhum código foi digitado, nenhuma licença emitida/trocada e nenhuma mensagem enviada. Teste visual do carrossel e das salas ainda pendente.
+
+## Histórico preservado
+
+## Sexta tentativa R144 — instalação nova autorizada
+
+A sexta tentativa instalou a R144 como instalação nova autorizada no Samsung A56. O SHA integral do APK e a identidade do novo pacote foram conferidos. A entrada oficial não foi observada automaticamente; a abertura da interface e a aprovação visual ainda precisam de confirmação humana.
+
+A quarta tentativa registrou INSTALL_FAILED_INSUFFICIENT_STORAGE. Depois, havia aproximadamente 15,15 GB disponíveis. A quinta tentativa parou na pré-validação, antes de instalar: o pacote estava ausente globalmente e para o usuário 0. O diagnóstico foi somente leitura. A inspeção de cópias de instalador apagou zero arquivos e não desinstalou nem limpou o aplicativo. A causa da remoção prévia não foi estabelecida. Por isso a sexta operação usou instalação nova, autorizada por “instale”; preservação do UID/dados anteriores não se aplica.
+
+Mesma fonte congelada 1ac3f7d e APK 01427f4e. Teste visual físico pendente, rede v3 não integrada, helpers antigos exatos, tag e backup completos R143 preservados. Nenhuma recompilação, lógica, deploy/restart ou cadastro aplicado por este registro. O checkpoint candidato inicial foi validado com 2.047 arquivos, 158 inputs nativos e dois bundles; depende do ponto completo R143. As novas tentativas serão anexadas em diretório distinto, sem substituir o checkpoint inicial.
+
+[Recibo da instalação nova](r144/evidence/instalacao-r144-samsung-a56-tentativa6-nova.json).
+
+## Histórico preservado
+
+## Quarta tentativa R144 — resultado conferido
+
+A quarta tentativa não confirmou a instalação da R144. O recibo registra o erro Android INSTALL_FAILED_INSUFFICIENT_STORAGE. Não atribuir outra causa nem declarar a versão instalada. Antes desta tentativa, o A56 estava ocioso com 7.564.333.056 bytes disponíveis. O teste visual físico permanece pendente. A fonte congelada 1ac3f7d e o APK 01427f4e são os mesmos; nenhuma recompilação, lógica ou cadastro foi alterado por este registro.
+
+O checkpoint candidato anterior foi validado com 2.047 arquivos, 158 inputs nativos e dois bundles Git. A recuperação depende do backup completo estável R143. A quarta tentativa será anexada em atualização distinta; o ponto inicial e a estável R143 permanecem preservados.
+
+[Recibo da quarta tentativa](r144/evidence/instalacao-r144-samsung-a56-tentativa4.json). [Resumo sanitizado do backup](r144/evidence/candidate-backup-summary.json).
+
+## Histórico preservado
+
+## Retorno de rede recebido durante a publicação da R144
+
+O GitHub trouxe o retorno de prioridade de rede e relay direto do servidor (commit 799d124, integrado em c349ef5). O arquivo foi preservado como evidência recebida. A R144 congelada em 1ac3f7d conserva os endpoints e a fábrica TLS anteriores: a nova rota v3 ainda depende de uma alteração futura de aplicativo. A etapa atual continua sendo o teste visual solicitado; não atribuir à R144 a adoção da rota direta ou gameplay nessa rota. O relato de aplicação pertence ao retorno do servidor e não a uma verificação nova feita neste aparelho. A tag estável R143 permanece inalterada.
+
+## Histórico preservado
+
+## Terceira tentativa R144: armazenamento ainda insuficiente no A56
+
+Antes da terceira tentativa, o A56 estava ocioso e dispunha de aproximadamente 6,88 GB livres. O Android voltou a recusar a atualização com INSTALL_FAILED_INSUFFICIENT_STORAGE. Não houve confirmação de instalação da R144, desinstalação ou limpeza de dados. O último APK conferido antes desta tentativa era a R143. É necessário liberar mais espaço interno ou usar outro telefone ocioso autorizado.
+
+Carrossel: paletas solicitadas por sistema e ondas mais visíveis. Salas online: somente brilho, mantendo RGB, tema e desenho. O teste visual físico ainda não foi aprovado pelo mantenedor. A R143 permanece como ponto estável de retorno, com tag, backup e ponteiros permanentes preservados. O kit independente R144 foi preparado, sem aplicação no servidor.
+
+[Recibo da terceira tentativa](r144/evidence/instalacao-r144-samsung-a56-tentativa3.json).
+
+## Histórico preservado
+
+## Android recusou atualização R144 no A56 por armazenamento
+
+O instalador conferiu o APK assinado, ociosidade e baseline R143 real no A56. Duas tentativas não confirmaram instalação; a segunda registrou `INSTALL_FAILED_INSUFFICIENT_STORAGE`. A primeira leitura posterior confirmou APK R143 ainda instalado e cerca de 6,42 GB disponíveis em /data, sem jogo/download ativo. Esses dados não garantem espaço temporário suficiente para atualizar o APK grande. O mantenedor informou que irá liberar espaço; não remover jogos/saves/app nem enfraquecer guards por hipótese. Instalação e aparência R144 permanecem pendentes até recibo posterior concluído.
+
+## Histórico preservado
+
+## R144 visual pronta para teste em 13/10/2026
+
+O mantenedor pediu ondas mais visíveis e cores por sistema no menu principal; depois especificou que as salas online devem conservar a aparência atual e receber apenas mais brilho. A R144 atende à correção: paletas somente no carrossel; salas mantêm RGB/tema/desenho e alteram apenas 12 transparências.
+
+APK R144 `01427f4e73141b7d6a462c2420a9abeb018a8716102e7fb959bf9a1d69eccee0`, 2.715.024.399 bytes, fonte congelada `1ac3f7d2fdd7cd349a5b37127b66712834e844fd`, certificado original v2/v3 e alinhamento 16 KiB. Seis substituições, zero adições/remoções, 13.854 entradas preservadas e 39 DEX exatos. DEX35 inteiro mantém gameplay, saída, g52 e multitap R143; a família HTTP de downloads R141 é preservada em DEX28. Fonte nova `integration/wave-palette-r144-20261013-final`; preparo 81e4ec0 ficou histórico sem APK.
+
+O carrossel R133 foi recompilado byte exatamente e os dois rótulos R134 foram reaplicados para recuperar o carrossel R143 real antes do overlay. Apenas o seletor de cores das ondas mudou, com cache curto de chave completa. Três faixas/66 vértices, tempo, curvas, máscara diagonal, nuvens, shaders e LEDs permanecem exatos. Nativa R144 `67180bdd145cd03f456249b31b9163ee0baa3e66fb10b909e20831823accea10`, 160.555.568 bytes; 33 exports, dependências/SONAME e LOAD 16 KiB conferidos. Java mantém 34 ms, 24 amostras, Paint/Path, lifecycle, tema e pausa fora de foco; 271 outras classes exatas e inversão integral do método confirmada.
+
+| Sistema | Ondas do menu principal |
+| --- | --- |
+| SNES e BR | Três tons de vermelho |
+| Nintendo 64 e BR | Verde, azul, vermelho |
+| GameCube | Três tons de roxo |
+| Wii | Branco, azul, branco |
+| Wii U | Azul, branco, azul |
+| Switch | Vermelho, azul, branco |
+| PSX | Vermelho, cinza, verde |
+| PS2 e BR | Azul, branco, verde |
+| PSP e BR | Azul, branco, cinza |
+| Mega Drive e BR | Azul, vermelho, cinza |
+| 32X | Vermelho, azul, laranja |
+| Saturn | Cinza, azul, branco |
+| Dreamcast | Laranja, branco, amarelo |
+| Naomi e Naomi 2 | Azul, branco, laranja |
+| Neo Geo | Amarelo, azul, branco |
+| CPS 1, 2 e 3 | Azul, amarelo, branco |
+
+No carrossel, opacidades B0/A0/90. Sistemas não citados mantêm RGB do tema e também recebem essas opacidades. Salas online: topos 20/18/18→60/58/50; rodapés 08/06/05→28/24/20, apenas alpha em hex. Não há novas cores de plataforma na sala nem alteração de StationRoomsActivity/StationHyperspaceView ou preferência. Ganho físico de CPU/FPS não foi medido; o desenho e a agenda antigos são preservados e a consulta de aliases só é refeita quando a chave muda.
+
+A R144 é candidata visual para teste. A tag/backup estáveis R143 e ponteiros permanentes permanecem intactos. Instalador USB explícito aponta a R144 com BAT/PS byte exatos. Há instalação A56 em acompanhamento; publicar conclusão apenas com recibo de hash e dados. Não usar estado de montagem como prova visual. Última fonte instalada observada antes da tentativa A56 é R143, SHA508480e3, apesar do recibo anterior ter R141 como último conhecido.
+
+Quatro IDs independentes foram renovados pelo vínculo obrigatório com DEX28/carrossel, sem mudar os owners/cores/opções/controles ou os nove descritores RetroArch. Kit R144 `7b1cdb6c68a1ddcd05af2e4703d2900061f7f2c4082a3f3c80c6d4c428d18739`, 12.164.472 bytes, 38 arquivos, seis bibliotecas/vinte dependências, apenas mesmos 78 modos revisados. Kit preparado, não aplicado; SNES conserva cadastro existente. Não reaplicar R141, migrar modos duas vezes, alterar licenças ou implantar/reiniciar API. PS1 zero novas aprovações HLE. [Provas e estado](r144/STATUS.json).
 
 ## Histórico preservado
 

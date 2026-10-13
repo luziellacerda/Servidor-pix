@@ -1,6 +1,58 @@
 # Capas N64 do USB publicadas — 13/10/2026
 
-Ler o MESMO handoff e online-plataformas-20261009/n64-capas-usb-20261013.json. Catálogo 47:132 revistas novas / 133 vínculos / 24 capas anteriores conservadas porque não vieram novas finalizadas;156 imagens para 157 itens. Origem correta é USB CAPAS N64, não o Git antigo. JPEG RGB 480×720/q90,330,456 MB → 18,637 MB;157 HTTP locais e 21 públicos autenticados conferidos. IDs, metadados, ROMs, três registros online, API / PID 2867363 e demais plataformas preservados; licenças sintéticas removidas. Backup de 132 arquivos e ponto Git anterior verificados. Cache coverId+item.revision atualizado; visual Android não homologada aqui. Não reaplicar: /mnt/DADOS/station-n64-usb-capas-20261013/applied.json. Essas 132 artes USB têm precedência sobre Git antigo; não restaurar automaticamente. Kit R143 ainda pendente; não reaplicar R141/QoS. Continuar manutenção horária serializada.
+Ler o MESMO handoff e online-plataformas-20261009/n64-capas-usb-20261013.json. Catálogo 47:132 revistas novas / 133 vínculos / 24 capas anteriores conservadas porque não vieram novas finalizadas;156 imagens para 157 itens. Origem correta é USB CAPAS N64, não o Git antigo. JPEG RGB 480×720/q90,330,456 MB → 18,637 MB;157 HTTP locais e 21 públicos autenticados conferidos. IDs, metadados, ROMs, três registros online, API / PID 2867363 e demais plataformas preservados; licenças sintéticas removidas. Backup de 132 arquivos e ponto Git anterior verificados. Cache coverId+item.revision atualizado; visual Android não homologada aqui. Não reaplicar: /mnt/DADOS/station-n64-usb-capas-20261013/applied.json. Essas 132 artes USB têm precedência sobre Git antigo; não restaurar automaticamente. Kit dos owners deve corresponder ao APK testado (A56 R144; estável R143 preservada); não reaplicar R141/QoS. Continuar manutenção horária serializada.
+
+## Histórico preservado
+
+# R144 instalada e ativada; R145 visual em preparação
+
+Leia r144/STATUS e o mesmo handoff. A56 instalação nova SHA01427/fonte1ac conferidos; abertura após código confirmado pelo mantenedor, USB desconectado. Não publicar o código. R144 não aprovada no fundo: próxima R145 azul céu em todos os fundos azuis e novos números/cores de faixas conforme recibo, sem trocar fundos neutros/verde/preto ou lógica. Depois investigar N64/PS1/GC/Wii online com evidência e kit correspondente ao APK real; nenhum reparo de gameplay já incluído na R144. Estável R143 e ponteiros permanecem exatos.
+
+## Histórico preservado
+
+# R144 instalada; ativação A56 aguardando código
+
+Mesma fonte1ac e APK01427. Instalação nova após ausência do pacote, hash/identidade novos conferidos; dados/UID anteriores não preservados por serem inaplicáveis. Própria LoginActivity observada, FLAG_SECURE original explica captura preta. Código novo da licença do A56 solicitado ao mantenedor; não reutilizar senha histórica, outra licença ou credencial administrativa dentro do app. Nenhuma emissão/troca/licença ou mensagem realizada. Aprovação visual, carrossel/salas, continua pendente. Fonte produtiva, helpers, R143 estável e rede v3 permanecem no estado registrado.
+
+## Histórico preservado
+
+# Sexta tentativa R144 — instalação nova autorizada
+
+A sexta tentativa instalou a R144 como instalação nova autorizada no Samsung A56. O SHA integral do APK e a identidade do novo pacote foram conferidos. A entrada oficial não foi observada automaticamente; a abertura da interface e a aprovação visual ainda precisam de confirmação humana.
+
+A quarta tentativa registrou INSTALL_FAILED_INSUFFICIENT_STORAGE. Depois, havia aproximadamente 15,15 GB disponíveis. A quinta tentativa parou na pré-validação, antes de instalar: o pacote estava ausente globalmente e para o usuário 0. O diagnóstico foi somente leitura. A inspeção de cópias de instalador apagou zero arquivos e não desinstalou nem limpou o aplicativo. A causa da remoção prévia não foi estabelecida. Por isso a sexta operação usou instalação nova, autorizada por “instale”; preservação do UID/dados anteriores não se aplica.
+
+Mesma fonte congelada 1ac3f7d e APK 01427f4e. Teste visual físico pendente, rede v3 não integrada, helpers antigos exatos, tag e backup completos R143 preservados. Nenhuma recompilação, lógica, deploy/restart ou cadastro aplicado por este registro. O checkpoint candidato inicial foi validado com 2.047 arquivos, 158 inputs nativos e dois bundles; depende do ponto completo R143. As novas tentativas serão anexadas em diretório distinto, sem substituir o checkpoint inicial.
+
+[Recibo da instalação nova](docs/station-android/r144/evidence/instalacao-r144-samsung-a56-tentativa6-nova.json).
+
+## Histórico preservado
+
+# Quarta tentativa R144 — resultado conferido
+
+A quarta tentativa não confirmou a instalação da R144. O recibo registra o erro Android INSTALL_FAILED_INSUFFICIENT_STORAGE. Não atribuir outra causa nem declarar a versão instalada. Antes desta tentativa, o A56 estava ocioso com 7.564.333.056 bytes disponíveis. O teste visual físico permanece pendente. A fonte congelada 1ac3f7d e o APK 01427f4e são os mesmos; nenhuma recompilação, lógica ou cadastro foi alterado por este registro.
+
+O checkpoint candidato anterior foi validado com 2.047 arquivos, 158 inputs nativos e dois bundles Git. A recuperação depende do backup completo estável R143. A quarta tentativa será anexada em atualização distinta; o ponto inicial e a estável R143 permanecem preservados.
+
+[Recibo da quarta tentativa](docs/station-android/r144/evidence/instalacao-r144-samsung-a56-tentativa4.json). [Resumo sanitizado do backup](docs/station-android/r144/evidence/candidate-backup-summary.json).
+
+## Histórico preservado
+
+# R144 visual: retorno de rede recebido, rota futura pendente
+
+Ler r144/STATUS e o mesmo handoff. A fonte executável R144 1ac3f7d permanece visual; o retorno QoS/relay direto é documental, sem implementação dessa rota no APK atual. Teste físico visual pendente e A56 ainda com recusa de espaço na terceira tentativa. Preservar histórico do servidor, mas não iniciar mudança de rede por esta etapa de design. R143 estável e ponteiros intactos.
+
+## Histórico preservado
+
+# Terceira tentativa R144: armazenamento ainda insuficiente no A56
+
+Ler o mesmo handoff e r144/STATUS.json. Antes da terceira tentativa, o A56 estava ocioso e dispunha de aproximadamente 6,88 GB livres. O Android voltou a recusar a atualização com INSTALL_FAILED_INSUFFICIENT_STORAGE. Não houve confirmação de instalação da R144, desinstalação ou limpeza de dados. O último APK conferido antes desta tentativa era a R143. É necessário liberar mais espaço interno ou usar outro telefone ocioso autorizado. Fonte congelada 1ac3f7d; APK 01427f4e. Visual físico pendente; carrossel usa paletas e salas só brilho. DEX35, multiplayer R143, HLE, saída, motores e downloads preservados. R143 continua estável: não mover tag, backup ou ponteiros permanentes. Kit independente R144 preparado, sem aplicação; nenhum deploy ou restart autorizado. Chaves, APK, capturas e registros brutos permanecem privados.
+
+## Histórico preservado
+
+# R144 candidata visual — estável R143 preservada
+
+Ler mesmo handoff/r144/STATUS. Pedido atual: ondas por sistema no carrossel; correção explícita salas online mantêm RGB/design e apenas mais brilho. Fonte1ac3f7d/01427f4e, 6substituições/13854preservadas/39DEX. DEX35 integral, HTTPfamílias, g52/HLE/multitap/cores/controles/READY preservados. NativebaselineR133→R143 exato antes do overlay, 3faixas66vertices e cachecurto sem novos timers/heap; Java só12alphas/271classesexatas. R144 teste, não mover tag estávelR143 nem seus ponteiros permanentes. A56 antesR143 hash real; instalação em acompanhamento, não declarar concluída semrecibo. KitindependenteR1447b1cdb6c/mesmos78modos preparado, nãoaplicado; SNEScadastroexistente, não deployment/restart. ScriptsUSBexatos, manifestoR144. Fontes congeladas não editar; bytes/chaves/logs/serialprivados foraGit.
 
 ## Histórico preservado
 

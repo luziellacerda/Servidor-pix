@@ -1,3 +1,31 @@
+# Sexta tentativa R144 — instalação nova autorizada
+
+A sexta tentativa instalou a R144 como instalação nova autorizada no Samsung A56. O SHA integral do APK e a identidade do novo pacote foram conferidos. A entrada oficial não foi observada automaticamente; a abertura da interface e a aprovação visual ainda precisam de confirmação humana.
+
+A quarta tentativa registrou INSTALL_FAILED_INSUFFICIENT_STORAGE. Depois, havia aproximadamente 15,15 GB disponíveis. A quinta tentativa parou na pré-validação, antes de instalar: o pacote estava ausente globalmente e para o usuário 0. O diagnóstico foi somente leitura. A inspeção de cópias de instalador apagou zero arquivos e não desinstalou nem limpou o aplicativo. A causa da remoção prévia não foi estabelecida. Por isso a sexta operação usou instalação nova, autorizada por “instale”; preservação do UID/dados anteriores não se aplica.
+
+Mesma fonte congelada 1ac3f7d e APK 01427f4e. Teste visual físico pendente, rede v3 não integrada, helpers antigos exatos, tag e backup completos R143 preservados. Nenhuma recompilação, lógica, deploy/restart ou cadastro aplicado por este registro. O checkpoint candidato inicial foi validado com 2.047 arquivos, 158 inputs nativos e dois bundles; depende do ponto completo R143. As novas tentativas serão anexadas em diretório distinto, sem substituir o checkpoint inicial.
+
+Ler o mesmo handoff e r144/STATUS.json.
+
+## Histórico preservado
+
+# Quarta tentativa R144 — resultado conferido
+
+A quarta tentativa não confirmou a instalação da R144. O recibo registra o erro Android INSTALL_FAILED_INSUFFICIENT_STORAGE. Não atribuir outra causa nem declarar a versão instalada. Antes desta tentativa, o A56 estava ocioso com 7.564.333.056 bytes disponíveis. O teste visual físico permanece pendente. A fonte congelada 1ac3f7d e o APK 01427f4e são os mesmos; nenhuma recompilação, lógica ou cadastro foi alterado por este registro.
+
+O checkpoint candidato anterior foi validado com 2.047 arquivos, 158 inputs nativos e dois bundles Git. A recuperação depende do backup completo estável R143. A quarta tentativa será anexada em atualização distinta; o ponto inicial e a estável R143 permanecem preservados.
+
+Ler o mesmo handoff e r144/STATUS.json.
+
+## Histórico preservado
+
+# Terceira tentativa R144: armazenamento ainda insuficiente no A56
+
+Ler o mesmo handoff e r144/STATUS.json. Antes da terceira tentativa, o A56 estava ocioso e dispunha de aproximadamente 6,88 GB livres. O Android voltou a recusar a atualização com INSTALL_FAILED_INSUFFICIENT_STORAGE. Não houve confirmação de instalação da R144, desinstalação ou limpeza de dados. O último APK conferido antes desta tentativa era a R143. É necessário liberar mais espaço interno ou usar outro telefone ocioso autorizado. Fonte congelada 1ac3f7d; APK 01427f4e. Visual físico pendente; carrossel usa paletas e salas só brilho. DEX35, multiplayer R143, HLE, saída, motores e downloads preservados. R143 continua estável: não mover tag, backup ou ponteiros permanentes. Kit independente R144 preparado, sem aplicação; nenhum deploy ou restart autorizado. Chaves, APK, capturas e registros brutos permanecem privados.
+
+## Histórico preservado
+
 # Referência estável R143 aprovada em 13/10/2026
 
 Tag e ramo `estavel-station-r143-20261013` no app e neste handoff. Ler `estavel-station-r143-20261013/README.md`, manifesto, estado completo e restauração. Mesmo APK R143 `508480e3`, fonte executável `26257869`; g52 instalado, A56/Edge30 última R141. Top Gear 3000 VS três participantes e Bomberman OK por relatos do mantenedor, com limites nos recibos. Backup completo do ponto na raiz F existente. SNES conserva registro; kit R143 dos quatro owners independentes preparado, ainda não aplicado. Não reaplicar R141 nem implantar/reiniciar API por promoção Git. Dados/licenças/contratos/motores e demais produtos preservados. Receitas e recibos históricos congelados permanecem intactos; suas flags refletem o momento em que foram criados.

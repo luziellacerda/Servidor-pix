@@ -1,0 +1,60 @@
+{
+  "schema": "station.r144.wave-brightness.java-source.v1",
+  "passed": true,
+  "ownerCorrection": "Online room stays as it is, only more brightness; platform colours are only for the native carousel.",
+  "baselineSourceRelative": "versions/station-video-room-footer-r124-20261011/java/client/src/java/org/emulationstation/frontend/station/StationWaveBackground.java",
+  "baselineSourceSha256": "fa038decbe408ca4d05c873f2aad4553b2bde8bc091ee162cda3e9881483c5cd",
+  "proposedSourceSha256": "553c98972c89954c01da7b0f192e4d2978c11c1069c4661e542b735e67c88da4",
+  "compiledLastFullBaselineSourceIdentical": true,
+  "baselinePreservationLater": "R134 source-freeze has identical Wave family before/after; R136/R137/R140/R142/R143 scoped to DEX35; R141 DEX28 only HTTP family.",
+  "changedJavaClass": "StationWaveBackground",
+  "changedMethod": "updatePalette(int)",
+  "changedArgbConstants": 12,
+  "rgbBitsPreserved": true,
+  "topAlphaBefore": [
+    32,
+    24,
+    24
+  ],
+  "topAlphaAfter": [
+    96,
+    88,
+    80
+  ],
+  "bottomAlphaBefore": [
+    8,
+    6,
+    5
+  ],
+  "bottomAlphaAfter": [
+    40,
+    36,
+    32
+  ],
+  "exactByteInversePassed": true,
+  "importsFieldsAndMethodsAdded": 0,
+  "frameMillis": 34,
+  "samples": 24,
+  "newPreferences": 0,
+  "newNetworkRequests": 0,
+  "roomActivityModified": false,
+  "platformPaletteAddedToOnlineRoom": false,
+  "unchanged": "All bytes outside the twelve ARGB constants; callbacks/lifecycle/geometry/theme/RGB/economy and existing objects exact.",
+  "limits": [
+    "Source-only inverse proof; no DEX assembly, Android rendering, physical performance or visual acceptance by this proof."
+  ],
+  "replacements": {
+    "0x2029acff": "0x6029acff",
+    "0x185782ff": "0x585782ff",
+    "0x1838d9e8": "0x5038d9e8",
+    "0x203b4b59": "0x603b4b59",
+    "0x18384550": "0x58384550",
+    "0x18616b74": "0x50616b74",
+    "0x0833509b": "0x2833509b",
+    "0x06233573": "0x24233573",
+    "0x052087a7": "0x202087a7",
+    "0x081a2128": "0x281a2128",
+    "0x061a2027": "0x241a2027",
+    "0x05303840": "0x20303840"
+  }
+}
