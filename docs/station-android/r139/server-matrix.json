@@ -48688,7 +48688,8 @@
       "coverId": "cover_c16309c829ad81a41da0b4cb7236a4fb",
       "contentSha256": "b5787cdab9a724f52831b5b560d444a4e3694d62021018a7d919636396b0c22a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
@@ -48700,7 +48701,21 @@
       "coverId": "cover_c13a5bbc179ccbe871697999c62ba13d",
       "contentSha256": "ceaa25016faab3da1ca55a4ef77305078b596e3caf3724e74f14eeea8f58debe",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2073-local-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_79cc0b2a020765962f2b9b3eedf4e32e",
@@ -48712,7 +48727,8 @@
       "coverId": "cover_79cc0b2a020765962f2b9b3eedf4e32e",
       "contentSha256": "be4a5d9c32e79334ddbe1611136b6a7c31c1e41a2a1024bbc32eec6632855c4d",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_eb3f13581597cf57510e84b656a410cf",
@@ -48724,7 +48740,8 @@
       "coverId": "cover_eb3f13581597cf57510e84b656a410cf",
       "contentSha256": "acae3faba2f0f3e55d6fc0746b392275cbaf51a27e82cf4f88adcc32080d481a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_69a8606c168169ad859bda969b38c822",
@@ -48736,7 +48753,8 @@
       "coverId": "cover_69a8606c168169ad859bda969b38c822",
       "contentSha256": "f93da7e6f10a04f440bce33bcfe953dd554f639ae52bba702c417f9232f311a1",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_bd87d16fd6476f9a1018e729f27e8500",
@@ -48748,7 +48766,8 @@
       "coverId": "cover_bd87d16fd6476f9a1018e729f27e8500",
       "contentSha256": "94c4b3f6964109fe237e158ba5a659d5c05b14361f35f6c36a3e6583434782ef",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_a43a0627f05d5cf0f8e9a171787f4d07",
@@ -48760,7 +48779,8 @@
       "coverId": "cover_a43a0627f05d5cf0f8e9a171787f4d07",
       "contentSha256": "9edae0d4d39ccb493bfaf8dcd3075db2582dea1b70ffcc477ee15a0048d97eea",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_c4b42b069f90bfa11307adc5988703c0",
@@ -48772,7 +48792,8 @@
       "coverId": "cover_c4b42b069f90bfa11307adc5988703c0",
       "contentSha256": "196dbc64385a4bf943198b7fc9e61a876db1d39fbabafadf39b696849126f5a0",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_87e8cae9c8afa6da2291443cab6cd16b",
@@ -48784,7 +48805,8 @@
       "coverId": "cover_87e8cae9c8afa6da2291443cab6cd16b",
       "contentSha256": "740a878157b15c0cd65e2623dea3ab9c90b6984ad709d8543b7e50f33e88fc62",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_0b1430b55e29efabec36ad1c8cff6eac",
@@ -48796,7 +48818,8 @@
       "coverId": "cover_0b1430b55e29efabec36ad1c8cff6eac",
       "contentSha256": "4e1f268fc2ab63c04a97b2426c7e1404d8b30e8cd45dbfd860d1d9dcc3a817ff",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_45749abc20a8c49a39cc3465de5fa176",
@@ -48808,7 +48831,8 @@
       "coverId": "cover_45749abc20a8c49a39cc3465de5fa176",
       "contentSha256": "82d5b9062263daad5108645049de3f06c9db00a2eeffa409876af74e43437748",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_315d4200dc38e19a7196b7db188daf94",
@@ -48820,7 +48844,8 @@
       "coverId": "cover_315d4200dc38e19a7196b7db188daf94",
       "contentSha256": "19ab87158253f49e919a68a7ad0940df09f016ad4a5913f4dc1ca32a3160a749",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_afe32004ae48d7699013dae2a2d74f75",
@@ -48832,7 +48857,8 @@
       "coverId": "cover_afe32004ae48d7699013dae2a2d74f75",
       "contentSha256": "8c0f538d32243d7d230ff28432326fbb17ea59bec2e2d9815dc04317dbe70db0",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_bb41e3a086a00c5a06b27ea6c82a336a",
@@ -48844,7 +48870,23 @@
       "coverId": "cover_bb41e3a086a00c5a06b27ea6c82a336a",
       "contentSha256": "e6da7c26127788cd894b88b71cc055ff9dec0d0f4f8e10d9b15b40153af2b52a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "local-mode-20261009-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_3f28d41c9e666e0080106eda728e89da",
@@ -48856,7 +48898,8 @@
       "coverId": "cover_3f28d41c9e666e0080106eda728e89da",
       "contentSha256": "655463225e4d8e9fcd4de8ca417341288b9b8e0fc21664c3916dc7696e941827",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_5bb088e618e29e191d9d16108d4ac5f1",
@@ -48868,7 +48911,8 @@
       "coverId": "cover_5bb088e618e29e191d9d16108d4ac5f1",
       "contentSha256": "7a6d5c3bd0d98fda2fab81e26d9d847c51686f23afcb201411f07d9bfcb994ef",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_eb2ebe04f6ab857fe1c917960ae8bd43",
@@ -48880,7 +48924,8 @@
       "coverId": "cover_eb2ebe04f6ab857fe1c917960ae8bd43",
       "contentSha256": "b4bf199e3aecfc624cf50ad766ed1f9517bd33992669f5dacbeae957fe530564",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_1eadc87cef09af9d4a10a2d2c8a47599",
@@ -48892,7 +48937,8 @@
       "coverId": "cover_1eadc87cef09af9d4a10a2d2c8a47599",
       "contentSha256": "ccd8fd5b359c6426b15b44f96d1f74dda3bfe77005d7e7c95f84c78d355a97dc",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_31ad1c696d8e3e417dcf282305f4f438",
@@ -48904,7 +48950,8 @@
       "coverId": "cover_31ad1c696d8e3e417dcf282305f4f438",
       "contentSha256": "47129ac8098569d1406cc56fc40b431f5bde3491e2f393cd2e529163c444ab34",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_7848e09128ef0b874c62695fe4cbbb6c",
@@ -48916,7 +48963,121 @@
       "coverId": "cover_7848e09128ef0b874c62695fe4cbbb6c",
       "contentSha256": "690ba4e8074340aa3d7a5128f3300f6010f3128cf8fdf18ba3b91cbca16ef13b",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-conker-beach4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "beach",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-conker-raptor4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "raptor",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-conker-war-total-war4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "war-total-war",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-conker-war-colors4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "war-colors",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-conker-heist4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "heist",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-conker-tank4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "tank",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-conker-race4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "race",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-conker-death-match4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "death-match",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_cc60cb35b5a420d3ff0f7ac018c7fa8a",
@@ -48928,7 +49089,21 @@
       "coverId": "cover_cc60cb35b5a420d3ff0f7ac018c7fa8a",
       "contentSha256": "cd57767cf92ae61e1a4671bbf4f3b113da40dcb9454ff6d769596f134ddb5874",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-cruisnusa-split2-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "split-screen-2p",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_1e122fe96b38217a0fd79abdc7727d2b",
@@ -48940,7 +49115,8 @@
       "coverId": "cover_1e122fe96b38217a0fd79abdc7727d2b",
       "contentSha256": "403d39bd8fdfeef1483af1f9a736fc102b020d06fcf217576a33ac55b9d20d9f",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_69679ae4944f00064ebee713e54e89e0",
@@ -48952,7 +49128,8 @@
       "coverId": "cover_69679ae4944f00064ebee713e54e89e0",
       "contentSha256": "56a80ddd9fb1bf44f63e502dd56695be21b837ee0addd7fbc1cef78c571f17ed",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_e228a8d23dd1c71a2fe8619898efb5ad",
@@ -48964,7 +49141,23 @@
       "coverId": "cover_e228a8d23dd1c71a2fe8619898efb5ad",
       "contentSha256": "7a933e42f1e6b518c41b1a805afc63174f444c47dda55e038a40848cb21f4bf7",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-diddy-versus4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "versus",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_5ebd3ac363d17608751f924b0ca59c80",
@@ -48976,7 +49169,8 @@
       "coverId": "cover_5ebd3ac363d17608751f924b0ca59c80",
       "contentSha256": "eccdbe42168f6b5efcaadcedda1cc811181d9b3ffdbd8ce8a8e6558a711a4368",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_a086a5ed56efb1e03a6319417e75654d",
@@ -48988,7 +49182,23 @@
       "coverId": "cover_a086a5ed56efb1e03a6319417e75654d",
       "contentSha256": "f96db0640dfbbce674e91f32ff1a14f660a4a41b1c396959be301e189b9aa297",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-dk64-battle4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "battle",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_dbcf43be7424b3507ab6b568bb598417",
@@ -49000,7 +49210,8 @@
       "coverId": "cover_dbcf43be7424b3507ab6b568bb598417",
       "contentSha256": "8882fc99954ba21b5567c93df2ce7a494cf16f60daebb61b14f1f65cac73f6fc",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_4027b6956e288df0110d1232e084fcf9",
@@ -49012,7 +49223,8 @@
       "coverId": "cover_4027b6956e288df0110d1232e084fcf9",
       "contentSha256": "881ba9ea9b35636f9b669aa8725d75b6f39976fb340b756682ece6934dd8edbc",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_dd4409268eb7d81d31abf5246e479fac",
@@ -49024,7 +49236,8 @@
       "coverId": "cover_dd4409268eb7d81d31abf5246e479fac",
       "contentSha256": "77a10ea97a09eee5d62abc7dca46237829875b840075853f758105f9446b9b8e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_aaaf4c6a3666e2450b2ab22f3fb8b57f",
@@ -49036,7 +49249,8 @@
       "coverId": "cover_aaaf4c6a3666e2450b2ab22f3fb8b57f",
       "contentSha256": "8ba76d36ac73fc64d99cbb67a7c971dd399243141f5d43c6cc6a735f2e421d3d",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_2f1062d33b0c4876d7b567fdb1a18597",
@@ -49048,7 +49262,8 @@
       "coverId": "cover_2f1062d33b0c4876d7b567fdb1a18597",
       "contentSha256": "de9b45fa4a1fc849ed6902e85417a54b868e183a7e7ac0125585e57b4bbae358",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_01a07c99af038df6ea30bc674fbae372",
@@ -49060,7 +49275,23 @@
       "coverId": "cover_01a07c99af038df6ea30bc674fbae372",
       "contentSha256": "589cd50d35908ec8ce36257763034f1529e671c62cbdbafaf7dde0d4de24aa0d",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2103-local-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_76560374a7506f47c484845a810cd42d",
@@ -49072,7 +49303,23 @@
       "coverId": "cover_76560374a7506f47c484845a810cd42d",
       "contentSha256": "ed9a0d2c47ce733fbdae5559f1cec3c6ef97e477cdb66f8bdb43313418cf6b5c",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2104-local-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_b740ae6b66c6274c4b5b3e250c4928f9",
@@ -49084,7 +49331,23 @@
       "coverId": "cover_b740ae6b66c6274c4b5b3e250c4928f9",
       "contentSha256": "3fedd2662503278ed840bc1d293e8a279359390d33d535c1a74b44fe3b6084ed",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2105-local-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_e3a9098896b4b588086c314e7275d31c",
@@ -49096,7 +49359,8 @@
       "coverId": "cover_e3a9098896b4b588086c314e7275d31c",
       "contentSha256": "4f59a7b005f6fb6623aa2e01d303ec83c421d8ea0a076d28cd2fe608a5e255db",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_de6b7625634abd137bcd0b0fad208e0c",
@@ -49108,7 +49372,23 @@
       "coverId": "cover_de6b7625634abd137bcd0b0fad208e0c",
       "contentSha256": "d21a0e0d68319aadc0cf4cb44b6d4034fd605ffed5494c2af1f59f86797003f6",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "local-mode-20261009-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_48e8700145e4644d3b0148894d20d34b",
@@ -49120,7 +49400,8 @@
       "coverId": "cover_48e8700145e4644d3b0148894d20d34b",
       "contentSha256": "8e3de3526965087bfa5d035500fbeb65cf429d1f7b89d2de11a1fc84e6402c2e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_8841b1c6c5bf0a2fedae184dff0c3634",
@@ -49132,7 +49413,8 @@
       "coverId": "cover_8841b1c6c5bf0a2fedae184dff0c3634",
       "contentSha256": "ee703f102683b7fe48870ad4df9ea23bd27d75a34e2c618b5a6848f4f660bbfc",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_7c9b19f3bc8610170fcda995f448e95e",
@@ -49144,7 +49426,8 @@
       "coverId": "cover_7c9b19f3bc8610170fcda995f448e95e",
       "contentSha256": "9918e21ca40eaa092277631e995165ccc5b6d9fdfe74de5d44284ddec3a1b615",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_097acca869351350201cbcc87f0b2de2",
@@ -49156,7 +49439,8 @@
       "coverId": "cover_097acca869351350201cbcc87f0b2de2",
       "contentSha256": "782afaa65905a756abdfb8fd019e4905deca666cd722237d06642719f413cf99",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_158ad3f5ca7952fd32385bb13e64bcc0",
@@ -49168,7 +49452,8 @@
       "coverId": "cover_158ad3f5ca7952fd32385bb13e64bcc0",
       "contentSha256": "e8cdba32ed5b184fed75a4ff997c2d588761eff0a98078f283b2efe6be160e9b",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_45d24f35ae127d6f9a6b69b0e837922d",
@@ -49180,7 +49465,8 @@
       "coverId": "cover_45d24f35ae127d6f9a6b69b0e837922d",
       "contentSha256": "475e986a402c98bd4836a229c85323d441959dc12f597df912fa2046e3f11c34",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_1ce0e5afb5b081389f501aa360943e44",
@@ -49192,7 +49478,23 @@
       "coverId": "cover_1ce0e5afb5b081389f501aa360943e44",
       "contentSha256": "d482291d6316da814ed6ca8031842d2a4a91ee323b70cde27713eb3a86dabce6",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-goldeneye-multi4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_6fb5facd95acd228ee38a568ea4d0ebb",
@@ -49204,7 +49506,8 @@
       "coverId": "cover_6fb5facd95acd228ee38a568ea4d0ebb",
       "contentSha256": "cdfa080e3e2d0cbe235213ce13c10cc2f0b39ec2da6391f79334513543c20bf8",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_ae5227df3448add87dd492c7e33c7b52",
@@ -49216,7 +49519,8 @@
       "coverId": "cover_ae5227df3448add87dd492c7e33c7b52",
       "contentSha256": "dbdcde2b328a56ffa00405f1b431322b17353e757b36c1edeaef917b9e60e9ba",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_0167ac98c3fd422f30e9950a75a83dfc",
@@ -49228,7 +49532,8 @@
       "coverId": "cover_0167ac98c3fd422f30e9950a75a83dfc",
       "contentSha256": "ad9f9d7b21e62479d94fa0572e67aab84b1b975c02cf59157654a183c3d291f3",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d1a5e38a8c5f2f84231a569cca038397",
@@ -49240,7 +49545,8 @@
       "coverId": "cover_d1a5e38a8c5f2f84231a569cca038397",
       "contentSha256": "1e89e8f5f92b430375ab06875dbfbe697d6ad380ad02f9fb1d0318069e500ca9",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_f07bd4e46f523be19dd5eec0181c6b7d",
@@ -49252,7 +49558,8 @@
       "coverId": "cover_f07bd4e46f523be19dd5eec0181c6b7d",
       "contentSha256": "75c770122ac5e1dde228b0ec9347edf4455adb14274603223f3e8e390b6507e6",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_6fd8006d4af021b50ab6d8aece8718fb",
@@ -49264,7 +49571,8 @@
       "coverId": "cover_6fd8006d4af021b50ab6d8aece8718fb",
       "contentSha256": "ca4b964ea8e41c75d2265b9859bc21010aeaca6905cca9531a5c8fd27a9e91a3",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_9448f314a832fc3d1c79ddd189aa3622",
@@ -49276,7 +49584,8 @@
       "coverId": "cover_9448f314a832fc3d1c79ddd189aa3622",
       "contentSha256": "341e6ac75dd33221aad58694ddc04a9db8609a89320f9bf52a9f57fa80db0b74",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_46e82d75cbf20fa316073a457a186870",
@@ -49288,7 +49597,8 @@
       "coverId": "cover_46e82d75cbf20fa316073a457a186870",
       "contentSha256": "3c32060d5e603b85fa5388de89bb3a32a4bb0fef3cd93470d1f00fed9fe71c3e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_57d53edfb3595591c72c34f0df5e41d3",
@@ -49300,7 +49610,8 @@
       "coverId": "cover_57d53edfb3595591c72c34f0df5e41d3",
       "contentSha256": "04de5ff0f5ebc7d6f4de5c1c0299e3cef119df72130a9fa5dd75fa872f695b29",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_8ee93824e1d167bfba6a7440003be4b6",
@@ -49312,7 +49623,21 @@
       "coverId": "cover_8ee93824e1d167bfba6a7440003be4b6",
       "contentSha256": "7256fd432d7e3e24f044e0e7d45b46de680852aaa647c0df553e8a8d81cc62a0",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-kigold-arcade2-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "arcade-2p",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_784ec0d20b856b5e13bf648b1f1bc562",
@@ -49324,7 +49649,23 @@
       "coverId": "cover_784ec0d20b856b5e13bf648b1f1bc562",
       "contentSha256": "6fa2cb4a2b92ccb544e2b8294de9e53a319016310218bf0519922a28d0e7e575",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-kirby64-minigames4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "mini-games",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_2717d4b16dce16111da88d804795cfff",
@@ -49336,7 +49677,8 @@
       "coverId": "cover_2717d4b16dce16111da88d804795cfff",
       "contentSha256": "97eacc30c74363fc153ef42b023da0b4ddcbf84c091c1b46499f94e051fbf91e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_dba0992dabf16af2bb37a30b38030e48",
@@ -49348,7 +49690,8 @@
       "coverId": "cover_dba0992dabf16af2bb37a30b38030e48",
       "contentSha256": "def905c2a1312f4961c724f9def0cc9bc9bd9bc22839df00e40c6bed9f574a85",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_f163aa9ea82147a11e193227bfd2e85e",
@@ -49360,7 +49703,8 @@
       "coverId": "cover_f163aa9ea82147a11e193227bfd2e85e",
       "contentSha256": "3e257b3c6fe262be78dcc83bf5e149027128b5fe0206fd4029ea4c5e4d5558b5",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_1aef76ab8b40ea28acdc93c9bc4b4b7e",
@@ -49372,7 +49716,8 @@
       "coverId": "cover_1aef76ab8b40ea28acdc93c9bc4b4b7e",
       "contentSha256": "d64d412d595ca32a248320da56772291b6bac7bcd942752f357c4bba367685e6",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_4edf8e2a65d21b8485a9869f7ad77749",
@@ -49384,7 +49729,8 @@
       "coverId": "cover_4edf8e2a65d21b8485a9869f7ad77749",
       "contentSha256": "52d452bd77a2619581e0dbd62f7bea646958c40d7c3f722aacbcce710fe46e18",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_937db7d7547c4ad7795dffe79c871a34",
@@ -49396,7 +49742,8 @@
       "coverId": "cover_937db7d7547c4ad7795dffe79c871a34",
       "contentSha256": "7d9e4554abd1c360f9af32ff72c6be47d8f67ce3f08e1c8ffef0ea8aa70ad622",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_385ba04620139d2a3c6b0a80817db95c",
@@ -49408,7 +49755,8 @@
       "coverId": "cover_385ba04620139d2a3c6b0a80817db95c",
       "contentSha256": "49230384cbea9d952d1be80d7908fda97b20f6dbded5330a298b39127e865dcb",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_a9485c63d5a87b5352b6590623018919",
@@ -49420,7 +49768,8 @@
       "coverId": "cover_a9485c63d5a87b5352b6590623018919",
       "contentSha256": "7eaef372a0e0f00a8e0150150686d1c72a87c5232a9ea3b374424275efdad059",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d7ce970e7be3ef8c14fc0967dacb5a6f",
@@ -49432,7 +49781,8 @@
       "coverId": "cover_d7ce970e7be3ef8c14fc0967dacb5a6f",
       "contentSha256": "0614ccd5bbe6fa5b40f899ca000505390bf49eb6a13f6c1b053ba827c84309b6",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_a692847b13ca81542fd704249d55da12",
@@ -49444,7 +49794,8 @@
       "coverId": "cover_a692847b13ca81542fd704249d55da12",
       "contentSha256": "5e2c3a938d237b81b0c2c446c264c9f72832ddb667af4dfd9582fd6a206680a4",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_1794eaccbc017f6c9a6e786618476732",
@@ -49456,7 +49807,77 @@
       "coverId": "cover_1794eaccbc017f6c9a6e786618476732",
       "contentSha256": "7a88bc98f33fe0d796e411ad87228d30bc2436e258738faa5531039926cce1d1",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mariogolf-stroke-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "turn-based-stroke",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mariogolf-skins-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "turn-based-skins",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mariogolf-clubslots-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "turn-based-clubslots",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mariogolf-minigolf-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "turn-based-minigolf",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mariogolf-match-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "turn-based-match",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_84aeaba085789f28f1dff0de5b693aea",
@@ -49468,7 +49889,23 @@
       "coverId": "cover_84aeaba085789f28f1dff0de5b693aea",
       "contentSha256": "d4128ebd99f4e8be8af01abc8c9492da858aea3df6ae4f7887bde0ce9dbb06a8",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "local-mode-20261009-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_2aa95b17f087603afa84088f2e4b8dfe",
@@ -49480,7 +49917,35 @@
       "coverId": "cover_2aa95b17f087603afa84088f2e4b8dfe",
       "contentSha256": "4fe18c71dba3520dab2a0618fdd949cf0869579325ea2ecfd2040337daff3863",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mp2138-board4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "board",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mp2138-duel2-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "duel-2p",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_c7f1f5d4ff6b5b6cad0d209384b755ba",
@@ -49492,7 +49957,35 @@
       "coverId": "cover_c7f1f5d4ff6b5b6cad0d209384b755ba",
       "contentSha256": "09424011362d05bdac3cd650332599d497395f870fc827482b8c61a0e817858a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mp2139-board4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "board",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mp2139-duel2-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "duel-2p",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_a9299da8688ad5b503e9e7c17f57073b",
@@ -49504,7 +49997,23 @@
       "coverId": "cover_a9299da8688ad5b503e9e7c17f57073b",
       "contentSha256": "2a11e1a957402aa4410f299d69c454a4b2d8f7dc7eb99af970461bfe1849a88f",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mp2140-board4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "board",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_26b8097e976f990ca701b08d1fd413f9",
@@ -49516,7 +50025,22 @@
       "coverId": "cover_26b8097e976f990ca701b08d1fd413f9",
       "contentSha256": "eb83be5bba8ae8b6c5061a9a472b28c13f96a449927d68d11f470efb65172903",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "local-mode-20261009-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_7e060b0493043d6803f2387081c6365d",
@@ -49528,7 +50052,8 @@
       "coverId": "cover_7e060b0493043d6803f2387081c6365d",
       "contentSha256": "4b6d92ef1621d147a8b2f53132648b76ccbfd5913af5deae594f2a999abcf919",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_be329beebbf13c54e1358387d8915bea",
@@ -49540,7 +50065,23 @@
       "coverId": "cover_be329beebbf13c54e1358387d8915bea",
       "contentSha256": "c5167c95c64f9e9a4662bb68a31de1e3997362a73fb0f40ba90d346af714d858",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2143-local-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_003f8fb606d1024c1b85bc3db1be39d9",
@@ -49552,7 +50093,8 @@
       "coverId": "cover_003f8fb606d1024c1b85bc3db1be39d9",
       "contentSha256": "ee523c98565451fa75447375a1c7fe7d546e2bfc4ead100b182b7db878c4fed6",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_5926594115d94b25fbc2933a69b6e8e4",
@@ -49564,7 +50106,8 @@
       "coverId": "cover_5926594115d94b25fbc2933a69b6e8e4",
       "contentSha256": "b12cb258396a66a5881a364ba460e508573655f98490304f5b8a223c26943f60",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_3b1018d16643447e4d9dedace68c184b",
@@ -49576,7 +50119,8 @@
       "coverId": "cover_3b1018d16643447e4d9dedace68c184b",
       "contentSha256": "47eb21b087b6498ddfe67a2ed8601c8cd3680c96d5671225545c18ad71288c54",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_9f10b0c2b4b0d6bd9dc77dd3c3f15d2a",
@@ -49588,7 +50132,8 @@
       "coverId": "cover_9f10b0c2b4b0d6bd9dc77dd3c3f15d2a",
       "contentSha256": "3aa9e06e267e43ca85dbb6e651e64055731422f574af093f60bbb16a2d7b0298",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_676eaf9d028d7f1e5b320be89e1e420f",
@@ -49600,7 +50145,8 @@
       "coverId": "cover_676eaf9d028d7f1e5b320be89e1e420f",
       "contentSha256": "d7149bd11b6cd3a994c8981235e61f82a5e52c98ce85f4b80425815d7e26ac5e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_4f51cf5bd9b1ea568e7b2305f38f38d7",
@@ -49612,7 +50158,57 @@
       "coverId": "cover_4f51cf5bd9b1ea568e7b2305f38f38d7",
       "contentSha256": "a98808483e9495ddeb0de144dc234e0d5976f633ea97e6967ce119fe9ccbb38c",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mk4-arcade-one-on-one2-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "arcade-one-on-one",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mk4-arcade-two-on-two2-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "arcade-two-on-two",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mk4-team2-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "team",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mk4-vs-endurance2-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "vs-endurance",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_742ab5abda8117702ed2ee457350c28c",
@@ -49624,7 +50220,8 @@
       "coverId": "cover_742ab5abda8117702ed2ee457350c28c",
       "contentSha256": "619ab0dae6d2fcdf785167231786c6a743d0fe9081b269d57dc005b7d00fa86a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_efdd8a8ad3692ca6d6d28d3eeb280649",
@@ -49636,7 +50233,21 @@
       "coverId": "cover_efdd8a8ad3692ca6d6d28d3eeb280649",
       "contentSha256": "4159adfdaf27068353c899d785ebdefea2a58ad9708a723b3dabbdb2cc8fb810",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-mk-trilogy-mortal-kombat2-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "mortal-kombat",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_bd0b8bb0e186e5cdbd05de504f9867a0",
@@ -49648,7 +50259,8 @@
       "coverId": "cover_bd0b8bb0e186e5cdbd05de504f9867a0",
       "contentSha256": "78f45ea8435885cb5c7c553e53e7bfde30040c7ffb6ab8ba4856954dddd5eb14",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_74e562eec96251043c67cb4380122447",
@@ -49660,7 +50272,8 @@
       "coverId": "cover_74e562eec96251043c67cb4380122447",
       "contentSha256": "e419c6695240feb1a1217333ca4ad4778b003fa55a56fa08de2fc63138816713",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_f7d36fb973466a46f7446bdef802623c",
@@ -49672,7 +50285,8 @@
       "coverId": "cover_f7d36fb973466a46f7446bdef802623c",
       "contentSha256": "762cce3d9d81a4a30ffb3d968500653d1a8242b9c5ae4b9f20da0cc22f8e2cdb",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_0d4dfcd61278e98e57de87ccb83ac883",
@@ -49684,7 +50298,8 @@
       "coverId": "cover_0d4dfcd61278e98e57de87ccb83ac883",
       "contentSha256": "d0c85a3035687673be6b4c38cfba3728a6c50cf7beee36fc3a8572f4013a512b",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_8f487591fba0d23f8877766fd8c3a8b3",
@@ -49696,7 +50311,8 @@
       "coverId": "cover_8f487591fba0d23f8877766fd8c3a8b3",
       "contentSha256": "cd657ec07a7460a1354c742b03d484fb7b7b0099b7f9c91c2e51dbdc3553ad77",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_15ad5484f221dd7e1d4adb0cf5528159",
@@ -49708,7 +50324,8 @@
       "coverId": "cover_15ad5484f221dd7e1d4adb0cf5528159",
       "contentSha256": "a84cc56686cce0a09f7c1a3a35db71a9015521d628e079099e8721669bebb324",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_502597c2d99688edb7c022402a2fe275",
@@ -49720,7 +50337,51 @@
       "coverId": "cover_502597c2d99688edb7c022402a2fe275",
       "contentSha256": "4b5c73b8e122101326af228773d4fa69ac4f02c5b276433002d30d8209f99e91",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2158-marathon-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "marathon",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2158-ultra-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "ultra",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2158-lines-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "lines",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_5cc6b31fc955106780474302bb1bc857",
@@ -49732,7 +50393,8 @@
       "coverId": "cover_5cc6b31fc955106780474302bb1bc857",
       "contentSha256": "7fa7da0734c672ff9926bfae6b23bfb917eefa903fa0d4c1bb8165156c60bfc1",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_69265dcf413ed2164084a25a0360615d",
@@ -49744,7 +50406,8 @@
       "coverId": "cover_69265dcf413ed2164084a25a0360615d",
       "contentSha256": "835137aaf06e4447442cb9e2208c3e83e946f8d606650b3856e22216fff0530b",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d1b8ffcaef9863bf6c7b6ee6d2460892",
@@ -49756,7 +50419,8 @@
       "coverId": "cover_d1b8ffcaef9863bf6c7b6ee6d2460892",
       "contentSha256": "d95f0ea01b5858b1c0027e32b621ffe61c35dd4a357ea00c84b5e64f7b7fa50a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_abd25dde8db51071f6597620c5a7ca90",
@@ -49768,7 +50432,8 @@
       "coverId": "cover_abd25dde8db51071f6597620c5a7ca90",
       "contentSha256": "b4ce737a2e2992e42ff2ef99f330b114dddafe758e6046e074cc61b0c0a51c8b",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_aac7d41b1f2d1df32ad0f01bf53f4dfe",
@@ -49780,7 +50445,8 @@
       "coverId": "cover_aac7d41b1f2d1df32ad0f01bf53f4dfe",
       "contentSha256": "b97d52eac0d74a4e8b241d8f4d76689702a55b1c58d9091f6f6f59c438c9c3de",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_3989ef527cdf23275a4ca1bf4df71e38",
@@ -49792,7 +50458,8 @@
       "coverId": "cover_3989ef527cdf23275a4ca1bf4df71e38",
       "contentSha256": "17bf8af2a6ebfcdc53bf45031a81091bf51bf4698dd40f991a5ba9e3e7822b91",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_1627b9639b69534d4b05cef26978a358",
@@ -49804,7 +50471,23 @@
       "coverId": "cover_1627b9639b69534d4b05cef26978a358",
       "contentSha256": "9499da0468a6d1ca32c5b9938d8e1dd6a9dc61a98e8e6948163031610d0eae55",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-perfectdark-dm4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "deathmatch",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_99d903301cc6f5cac7938212902e1312",
@@ -49816,7 +50499,8 @@
       "coverId": "cover_99d903301cc6f5cac7938212902e1312",
       "contentSha256": "37302ed5e4bbff05f250cf6a7d58fc3208cddfc5ba6b4c20062fc9ff99416371",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_45e96d61df476556c50e747e036f7007",
@@ -49828,7 +50512,21 @@
       "coverId": "cover_45e96d61df476556c50e747e036f7007",
       "contentSha256": "f24e2c80ec0c7d414e78f4981734969f2f3bfd12747f9995c1322b8fb65ec702",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2167-local-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_047e71b0b50a7e6f34c79366be16d907",
@@ -49840,7 +50538,8 @@
       "coverId": "cover_047e71b0b50a7e6f34c79366be16d907",
       "contentSha256": "3bf1549b5443cdb3e6e7c74617646f6ad881394b70df01e43cbe8025a10efd97",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_e31d5726f128ef569be128eeedec7859",
@@ -49852,7 +50551,8 @@
       "coverId": "cover_e31d5726f128ef569be128eeedec7859",
       "contentSha256": "4e5545f03110ff9777a06a179a226df7640fc584389af9d63660722e2f666712",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_fc12cfeccd1ed2717917b982d72bed52",
@@ -49864,7 +50564,62 @@
       "coverId": "cover_fc12cfeccd1ed2717917b982d72bed52",
       "contentSha256": "da7465fbe86f584b56cc12774dc32588216be7556c0d863285bd831262d526b3",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-stadium-kidsclub-single-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "kidsclub-single",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-stadium-kidsclub-series-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "kidsclub-series",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-stadium-freebattle-rental2-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "freebattle-rental2",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-stadium-freebattle-tag-rental-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "freebattle-tag-rental",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_fa3a7d85390d06e85b819844b03e678d",
@@ -49876,7 +50631,8 @@
       "coverId": "cover_fa3a7d85390d06e85b819844b03e678d",
       "contentSha256": "eeceaaa6bfc2a5bb26c82fc50fe239bea2ee293b2fc9fd8e8ca11985414bf660",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_fffa8ccdeb38518ec060a085485c0c04",
@@ -49888,7 +50644,8 @@
       "coverId": "cover_fffa8ccdeb38518ec060a085485c0c04",
       "contentSha256": "ec3e49becd4964e47a679d2ed6fde5bd498f1c3e20d85e0f2e61853811a142c7",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_9529270dc5c0bbcb26be916bc5a85632",
@@ -49900,7 +50657,65 @@
       "coverId": "cover_9529270dc5c0bbcb26be916bc5a85632",
       "contentSha256": "fe25e6b13d07678c068cecde35f4c96d9b5f2548b0eecf94913bef419854ccdf",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-quake2-deathmatch4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "deathmatch",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-quake2-frag-teams4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "frag-teams",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-quake2-flag-wars4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "flag-wars",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-quake2-death-tag4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "death-tag",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_ed8d4378fa187538ed1e81a2ac18f34d",
@@ -49912,7 +50727,23 @@
       "coverId": "cover_ed8d4378fa187538ed1e81a2ac18f34d",
       "contentSha256": "65fc95a5ea78c0404aeee637145c8cf98dad7a7e5ef202142578f75a6ec80eeb",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2174-local-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_cb76e10402b9591b1bf8b82a7b01975d",
@@ -49924,7 +50755,8 @@
       "coverId": "cover_cb76e10402b9591b1bf8b82a7b01975d",
       "contentSha256": "e7e2ce7f04bef42d45b0c654990ce2ef0f3ca1478d39e1b45c18cbf06e3817f2",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_f8a3d5a35aaa39f9f6825d31d3933d60",
@@ -49936,7 +50768,8 @@
       "coverId": "cover_f8a3d5a35aaa39f9f6825d31d3933d60",
       "contentSha256": "4ac1b72fb218aeb9ed222513e9a84b426a6a4466bd94572bcd369413a85b011f",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_2444c17982bc5b2213daac6b4a9685d3",
@@ -49948,7 +50781,8 @@
       "coverId": "cover_2444c17982bc5b2213daac6b4a9685d3",
       "contentSha256": "b78aa019abff4a04aabddea4da20599fb5c31e1623b686b001b86455a0cf3e09",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d3b5421783fa19fc5ddba2f5a5492fd0",
@@ -49960,7 +50794,8 @@
       "coverId": "cover_d3b5421783fa19fc5ddba2f5a5492fd0",
       "contentSha256": "88967b3c2eddba8ba2b2ca7e60de726bb397519f0c46431b3a71f1618e6ddc3a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_f227fcb00441a358bb79fb8fb22cd177",
@@ -49972,7 +50807,8 @@
       "coverId": "cover_f227fcb00441a358bb79fb8fb22cd177",
       "contentSha256": "d381c34410415107a48d90d01d211a7631bdbc4a3e9a8b83b6d2f0c020046aeb",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d901495a6ac27fbd5d6a6b10c16823c0",
@@ -49984,7 +50820,8 @@
       "coverId": "cover_d901495a6ac27fbd5d6a6b10c16823c0",
       "contentSha256": "34347cc53968095f920080891c7291d46eda5d8647c2527ffe48ab74c0b4b344",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_bacb18b54961c1e24cad5647f52d5620",
@@ -49996,7 +50833,8 @@
       "coverId": "cover_bacb18b54961c1e24cad5647f52d5620",
       "contentSha256": "c6173f8ec0cd46b5aa3aec1e0cade4d44f8245cd861d215a0d7a9b4f107f9502",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_e7274b73523875c9181a183f90e9c9cb",
@@ -50008,7 +50846,8 @@
       "coverId": "cover_e7274b73523875c9181a183f90e9c9cb",
       "contentSha256": "545edea3dee2227d931ac7401902645df05b42c7bf682291fdbb19969fd992cb",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_fad82a489d29d1555132ff16d18a78a6",
@@ -50020,7 +50859,8 @@
       "coverId": "cover_fad82a489d29d1555132ff16d18a78a6",
       "contentSha256": "f232a1598ecda4cc2c9379d7dc17cbf7305d1681d3d8cec76b656fc97684c66e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_ca2c3b8562aa79a13283e08cbfd59847",
@@ -50032,7 +50872,8 @@
       "coverId": "cover_ca2c3b8562aa79a13283e08cbfd59847",
       "contentSha256": "8adf9f389f94d420df884b3020c69194a753caf00c7756155813c7ee6190137f",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_6831ef65d570c8606064614c9ff544a5",
@@ -50044,7 +50885,8 @@
       "coverId": "cover_6831ef65d570c8606064614c9ff544a5",
       "contentSha256": "34dd17e20e0384b3edc8e9ebaccd3351b946e7bc266c9679bb9c85c4d941592d",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_815a54e4ed88a45e67e3aaf145683157",
@@ -50056,7 +50898,8 @@
       "coverId": "cover_815a54e4ed88a45e67e3aaf145683157",
       "contentSha256": "cd332c229fd4340653c296290d44a2de5c9a9ec951d1fef432ee863e6121a338",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_c69a445ef65dd21d6d02f1666e8ef748",
@@ -50068,7 +50911,8 @@
       "coverId": "cover_c69a445ef65dd21d6d02f1666e8ef748",
       "contentSha256": "f7921776c78c50cb65446b74bebd6392b908068c6af510d5accee0e5f53698bf",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_a0a7532e6ea0a3acb1a33f047991cbdf",
@@ -50080,7 +50924,23 @@
       "coverId": "cover_a0a7532e6ea0a3acb1a33f047991cbdf",
       "contentSha256": "c44abf1846393c0974b5adf9c57e556d94f98b22b8b1074ec517ceba99ff31c7",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-snowboard-kids2-battle-mode4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "battle-mode",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_bbf8d141435c3743617e1d125b8025a3",
@@ -50092,7 +50952,23 @@
       "coverId": "cover_bbf8d141435c3743617e1d125b8025a3",
       "contentSha256": "b59629c03d82c31a0858f5cd4053d03aab774064c140c82228f5b9108493dcb9",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-snowboard-kids-battle-race4-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "battle-race",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_48ff45709eff84c62697891e8034b564",
@@ -50104,7 +50980,8 @@
       "coverId": "cover_48ff45709eff84c62697891e8034b564",
       "contentSha256": "0bf39d3ff7ea14271db444fba558bcab89b45d5616b2cc5c3a41d4f20c4a5ad7",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_91a158f8706aaf745b25f636b445018c",
@@ -50116,7 +50993,8 @@
       "coverId": "cover_91a158f8706aaf745b25f636b445018c",
       "contentSha256": "62f1658bee34b05df9bf9d423cc158905cebc0c1b6414058dea325b8a227a1e7",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_640f8973d6f19b2b8f6a50c559a9e254",
@@ -50128,7 +51006,8 @@
       "coverId": "cover_640f8973d6f19b2b8f6a50c559a9e254",
       "contentSha256": "5c46ba1e1beff36b0279172e16fa71ad9964d5b285cddd87a63d60dacf71590a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_7597a02a349f67b9c804b8a4b041e9b7",
@@ -50140,7 +51019,8 @@
       "coverId": "cover_7597a02a349f67b9c804b8a4b041e9b7",
       "contentSha256": "9c32d0087fa2b83c5ee6f19ee86683907653ed8f30e7d4680a0adac334559dd7",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_54cbd25f0b6ce1742842d8b56c5f01b4",
@@ -50152,7 +51032,8 @@
       "coverId": "cover_54cbd25f0b6ce1742842d8b56c5f01b4",
       "contentSha256": "d5c00fe4314ec66b50d82641bd79b4132ef232341935b53534aaea74ef2ea20c",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_6625c85b16ec435cb68bf28133341cdb",
@@ -50164,7 +51045,21 @@
       "coverId": "cover_6625c85b16ec435cb68bf28133341cdb",
       "contentSha256": "06709d18f8a388f5278bf39739f5b31354ae21572afd075e5ee90d30e726cc1a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2195-two-player-race-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "two-player-race",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_e7535cd986bc19457a86cd85b7af7e42",
@@ -50176,7 +51071,8 @@
       "coverId": "cover_e7535cd986bc19457a86cd85b7af7e42",
       "contentSha256": "e7e5f1e814657a0118c78a665dcf371f4bc70c4ade3ba864c06693cc7455eee2",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_91efa09fe8e9a9e1e8d3aaa9985f17f7",
@@ -50188,7 +51084,8 @@
       "coverId": "cover_91efa09fe8e9a9e1e8d3aaa9985f17f7",
       "contentSha256": "f3b0fc9f565f995368b6fa5aefc8ec1e5194c488948b41f3534dece4abcec2b4",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_821c36aaed3912980cb351a12df7af46",
@@ -50200,7 +51097,8 @@
       "coverId": "cover_821c36aaed3912980cb351a12df7af46",
       "contentSha256": "a1ea87138b2d735f14280c3e8683ae03daf18bc2a12b70c4a92ea83ff012c293",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_47386145e8e205ff69eaef8e3e36308c",
@@ -50212,7 +51110,8 @@
       "coverId": "cover_47386145e8e205ff69eaef8e3e36308c",
       "contentSha256": "e31c33a5eb302b4405d31f2f79cfae1a7f4b76f80a2597e7fb1c2935c4092351",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_8cf7b2f99ce5c8c960bfcbe3cc619844",
@@ -50224,7 +51123,8 @@
       "coverId": "cover_8cf7b2f99ce5c8c960bfcbe3cc619844",
       "contentSha256": "dd869186f8dc8ca929eaaf08234c89f1829d949499030ae9826efcecf59c8836",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_97ffcf3eb5bc8cff24442d409f147179",
@@ -50236,7 +51136,8 @@
       "coverId": "cover_97ffcf3eb5bc8cff24442d409f147179",
       "contentSha256": "96a5205481700300b7a4d4a58493493e40067a8ee8801f4622b3941dc57fabb8",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_47e7c16d9ad7f75f519778a60a577580",
@@ -50248,7 +51149,8 @@
       "coverId": "cover_47e7c16d9ad7f75f519778a60a577580",
       "contentSha256": "07183bbf2f87b9830988275acf89d9d353e00de4eba49ad527dcc80901d0aa89",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_86080b8f3740ec83f8469d96411f98c4",
@@ -50260,7 +51162,8 @@
       "coverId": "cover_86080b8f3740ec83f8469d96411f98c4",
       "contentSha256": "e5790884542a4f7d436d303e49b06200ccae25a680b5f70b9afff010539c99cb",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_c18ecaf38e851690964d266d4ee6f21c",
@@ -50272,7 +51175,8 @@
       "coverId": "cover_c18ecaf38e851690964d266d4ee6f21c",
       "contentSha256": "9caa8b3bc804035e99034d0aebb2d10fdad5d0adf409d4cbaae88af62cb53a94",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_587f3e5301281e88a676e33ab60d1b9d",
@@ -50284,7 +51188,8 @@
       "coverId": "cover_587f3e5301281e88a676e33ab60d1b9d",
       "contentSha256": "ac329a97655d333bad00f07f47e9f7a194f8ad117a47d50e157faedbce11cc31",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_66514df8671ea235cc5063356254ce22",
@@ -50296,7 +51201,8 @@
       "coverId": "cover_66514df8671ea235cc5063356254ce22",
       "contentSha256": "38b1a99d5659063dc3d8e93fecb7464b275aa73177ac98e6f53d25e912e6aad8",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_3a976263631b86e52c3c529e64f27160",
@@ -50308,7 +51214,8 @@
       "coverId": "cover_3a976263631b86e52c3c529e64f27160",
       "contentSha256": "83ce0a72700f2ce44a9a6c6d203e9191155d9bc6401f4a00e102c3ddaf9c2095",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_99e1db023db159f5148763d76f8950ce",
@@ -50320,7 +51227,8 @@
       "coverId": "cover_99e1db023db159f5148763d76f8950ce",
       "contentSha256": "4b79ea5bbf31d51bad534dcc0fcf4bdb55c286aa9e3fb9714c4544ed3b02f5ee",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_a26f7e0883b088e0e6c2d249b9ee5341",
@@ -50332,7 +51240,8 @@
       "coverId": "cover_a26f7e0883b088e0e6c2d249b9ee5341",
       "contentSha256": "209bf134b806f40f494c8d6c1fefa55cbaff62ce358f841c0f30e97f013812e4",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d992f4b242aae2fd9cfee38eceb0e022",
@@ -50344,7 +51253,8 @@
       "coverId": "cover_d992f4b242aae2fd9cfee38eceb0e022",
       "contentSha256": "c823e62db924d78212ac6e10db67e85430358b2e9c5c78510581b32a606ce1b0",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_fad423e0925447432dcbb0d2a5c72a7e",
@@ -50356,7 +51266,8 @@
       "coverId": "cover_fad423e0925447432dcbb0d2a5c72a7e",
       "contentSha256": "ec5a8a6c74b0dbbab5280bd886797b44ef5881c3125e9d8a2b7921852172f751",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_c703be5259a57d43cae5bb265a496ec9",
@@ -50368,7 +51279,8 @@
       "coverId": "cover_c703be5259a57d43cae5bb265a496ec9",
       "contentSha256": "19316a00a1ef8b3045d9e3d8853fddfc599f3d34db3597e97c29e23f08a529ad",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_9e65555d49a2174180b0cb22496ac84b",
@@ -50380,7 +51292,77 @@
       "coverId": "cover_9e65555d49a2174180b0cb22496ac84b",
       "contentSha256": "4b60b5947cc0f96847212e8eb2185a60bcdf1ddacfd31d0bf88a60e73f6ba5c9",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-turokrage-bloodlust-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "bloodlust",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-turokrage-frag-tag-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "frag-tag",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-turokrage-team-bloodlust-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "team-bloodlust",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-turokrage-capture-flag-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "capture-flag",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-turokrage-trials2-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "2-player-trials",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_26083fc2b48cd39a4da2b99b704d36f4",
@@ -50392,7 +51374,8 @@
       "coverId": "cover_26083fc2b48cd39a4da2b99b704d36f4",
       "contentSha256": "ca2c58983b712563a84a62d6aa9c4c0fb62a5fac8c44f5c3fe2c06bdf9c9a875",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_bf9c50c667c0aa2112d5faf4306419cc",
@@ -50404,7 +51387,8 @@
       "coverId": "cover_bf9c50c667c0aa2112d5faf4306419cc",
       "contentSha256": "3b218c76acafd7f5fbaea32083a0b560f7f6d7861c2f83c99e504046c7ea9a09",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_3bb7eb68bcdf275d92c0db482831b753",
@@ -50416,7 +51400,8 @@
       "coverId": "cover_3bb7eb68bcdf275d92c0db482831b753",
       "contentSha256": "c595700014c729e2a7daf36d6475f9c93e4553cf87363791d58d67be3d48f817",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d1588c0c27e23ea687c5bfc16bed9a89",
@@ -50428,7 +51413,8 @@
       "coverId": "cover_d1588c0c27e23ea687c5bfc16bed9a89",
       "contentSha256": "9e1ade0e37072bfe829c98c15afa869ab849770ac79bc15e80946e082d9ed5a3",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_da76d7a66e340edfe2a562bded4c9869",
@@ -50440,7 +51426,8 @@
       "coverId": "cover_da76d7a66e340edfe2a562bded4c9869",
       "contentSha256": "34f6bdc7b22dd44248a11ad9162cf631f904320c082e2c68f47c9bb189c483a3",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_14decbbac8ea1e7d69253451e66a676e",
@@ -50452,7 +51439,8 @@
       "coverId": "cover_14decbbac8ea1e7d69253451e66a676e",
       "contentSha256": "fa528718a068489c8621bdd9dc006d3961b68b889bf136ba5eb5a6e875ced6fd",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_def13eb0a1a3053b2f2073a203dda171",
@@ -50464,7 +51452,8 @@
       "coverId": "cover_def13eb0a1a3053b2f2073a203dda171",
       "contentSha256": "3d70dbef107d8511571e347e88e2f6e11934817e89f44dc894a420db6cb8d875",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_152824d4b97e4aa50085e06d05364e18",
@@ -50476,7 +51465,8 @@
       "coverId": "cover_152824d4b97e4aa50085e06d05364e18",
       "contentSha256": "8a4bda81962af21548c70f6c239290e03ed5fe7492ed6e1074ba002aa631dd89",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_4e577685b9feb98a02a1b2cb884f2925",
@@ -50488,7 +51478,84 @@
       "coverId": "cover_4e577685b9feb98a02a1b2cb884f2925",
       "contentSha256": "bc1188c4b21f82306541435b10c3efe8e7e5ba130fa5a774f736bc54c462343c",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2222-death-match-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "death-match",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2222-lethal-tag-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "lethal-tag",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2222-cube-hunt-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "cube-hunt",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2222-quick-draw-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "quick-draw",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2222-team-battle-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "team-battle",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+          "profileId": "review-2222-point-match-v1-owner-6463a58773d9",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "point-match",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_abf1679b96297ffeda431c56605d3bf6",
@@ -50500,7 +51567,8 @@
       "coverId": "cover_abf1679b96297ffeda431c56605d3bf6",
       "contentSha256": "888ff21c8e67aeff79710b4d8983edc9f8fd1a2cba0769d1942571785ecde2d5",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_c2b109a6e1a89c53c2c57ae07c334b93",
@@ -50512,7 +51580,8 @@
       "coverId": "cover_c2b109a6e1a89c53c2c57ae07c334b93",
       "contentSha256": "4926f8f1cd79d86b6bb91520b84ac8e155226ed9a4f9810be987ee5eae012fbc",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_7fb80e3a95201dfa39a518474043b988",
@@ -50524,7 +51593,8 @@
       "coverId": "cover_7fb80e3a95201dfa39a518474043b988",
       "contentSha256": "535c6b9430f74e36e1347f20e656eeb662af699c40a868e1d4a6bdd3c577f7d4",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_ee496f6432e5b450eea30a7a7485c182",
@@ -50536,7 +51606,8 @@
       "coverId": "cover_ee496f6432e5b450eea30a7a7485c182",
       "contentSha256": "94b9ae6f703f48bb351c6191b1fce9ea685059c750fde64579a8c3c73ce2fbd1",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_ecba75bb2376e01dfb4e32afd5dfe2a6",
@@ -50548,7 +51619,8 @@
       "coverId": "cover_ecba75bb2376e01dfb4e32afd5dfe2a6",
       "contentSha256": "f33f91ebd7760b78bf8132e2695b38c3bc7ebcb3fe9e9b6aca43bae36f9dbe55",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_23c83c0af84a554b338c8eac2876cd8c",
@@ -50560,7 +51632,8 @@
       "coverId": "cover_23c83c0af84a554b338c8eac2876cd8c",
       "contentSha256": "6a1e9187341b7ab5604627987e5de5f9c0e044fb0f31bba89e44ec4f8236120e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_939cf663599c63ae2141d93a198e7163",
@@ -84831,7 +85904,8 @@
       "coverId": "cover_12b835c9539b4800a6bb29ca00a25f94",
       "contentSha256": "3106a01516f59854a55fd6343da8b0f489ca8cfc523f300bb1913d7f1c602a2f",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_fa0e2bebbc9125b3ef593e1e2911716c",
@@ -84843,7 +85917,8 @@
       "coverId": "cover_fa0e2bebbc9125b3ef593e1e2911716c",
       "contentSha256": "490ef919f413e00daedb4711777c3be05ef9afc12c7acca7675c721c9393c814",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_40c36e432a90826b84bc401acd61b81f",
@@ -84855,7 +85930,8 @@
       "coverId": "cover_40c36e432a90826b84bc401acd61b81f",
       "contentSha256": "089df26c394fa215cdf91a50f6d7119c5ea9d234ccef0b9f790126d3f8eacbf8",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_203c099590c11a7650a006d1dc4d705f",
@@ -84867,7 +85943,23 @@
       "coverId": "cover_203c099590c11a7650a006d1dc4d705f",
       "contentSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+          "profileId": "prepared-local-1-20261009-owner-a848dc80a588",
+          "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_621bec6947fa88fea7d71e07e1ce524a",
@@ -84879,7 +85971,23 @@
       "coverId": "cover_621bec6947fa88fea7d71e07e1ce524a",
       "contentSha256": "ba4def2b26b2aebd3c6e7ae6628767cb64c071034a9c9aa48628b94042ceb91a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+          "profileId": "review-mp7-standard4-v1-owner-a848dc80a588",
+          "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "mode": "party-cruise-4p",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_d747bcef157e06fdaa603277f4a0fa38",
@@ -84891,7 +85999,8 @@
       "coverId": "cover_d747bcef157e06fdaa603277f4a0fa38",
       "contentSha256": "a7f2d6d8ce2003a9ddd7452ad8f7e21dbc3db917b1dbe011c2ad353a1027ee3a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_b4ee8d06c9390aad9464023b6459fd35",
@@ -84903,7 +86012,21 @@
       "coverId": "cover_b4ee8d06c9390aad9464023b6459fd35",
       "contentSha256": "2c81bb89dfa3246215093b9ba78681e93697605e0eec3acd1de0e27890cde41e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+          "profileId": "review-3741-local2-v1-owner-a848dc80a588",
+          "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "mode": "local-2p",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_aff0fdd0e252567e690275501f5c3e41",
@@ -84915,7 +86038,8 @@
       "coverId": "cover_aff0fdd0e252567e690275501f5c3e41",
       "contentSha256": "15a6747ae101c712f1b4d11b6a2e34028c70e1a1eddd89b4ca1be46f7c6e380e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_f66a5e4cda2b3d810af00fbf96712a35",
@@ -84927,7 +86051,8 @@
       "coverId": "cover_f66a5e4cda2b3d810af00fbf96712a35",
       "contentSha256": "dc8cd7550c0c2448a0f5555db1a7bbd38af0bb1001839b99bf221ab8eb54572f",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_844acd6d2419cc61a21b8a1630fda73a",
@@ -84939,7 +86064,8 @@
       "coverId": "cover_844acd6d2419cc61a21b8a1630fda73a",
       "contentSha256": "635d1ad5edc6fcfe22a1a63bd029f78ccf4f6960136652a85fb6a62c79e161c0",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_22a388607337c6c0e10eef23327760e7",
@@ -84951,7 +86077,8 @@
       "coverId": "cover_22a388607337c6c0e10eef23327760e7",
       "contentSha256": "7c428fe1f485019fa584330ca4bc6fbce7434eb947d8fd8cc07d5160d1290fa4",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_a60084aefb098972edfbfa9103ff9f0f",
@@ -84963,7 +86090,8 @@
       "coverId": "cover_a60084aefb098972edfbfa9103ff9f0f",
       "contentSha256": "3a64ac1c48af6916b2b0c033d827cc4920feb25d1723620f83d9f63810a14f41",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_2e3dc618c01206375b812abb1d55f69e",
@@ -84975,7 +86103,21 @@
       "coverId": "cover_2e3dc618c01206375b812abb1d55f69e",
       "contentSha256": "a5b119047f391bdabd5c3b258aed30167ca955d808e7628142a05cbb07d88254",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+          "profileId": "review-3747-local2-v1-owner-a848dc80a588",
+          "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "mode": "local-2p",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_3c9c45df9a48170befa8a0d719e6ce2e",
@@ -84987,7 +86129,35 @@
       "coverId": "cover_3c9c45df9a48170befa8a0d719e6ce2e",
       "contentSha256": "c5b45e1231d554e423a7f842692c31e8e2952d142fbd3bd89f11d2f1ccb943cd",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+          "profileId": "review-sa2-battle2-v1-owner-a848dc80a588",
+          "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "mode": "battle-2p",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        },
+        {
+          "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+          "profileId": "review-sa2-chaorace4-v1-owner-a848dc80a588",
+          "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "mode": "chao-party-race",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_5ef747e4fd8c83fa197b2b2492c24088",
@@ -84999,7 +86169,23 @@
       "coverId": "cover_5ef747e4fd8c83fa197b2b2492c24088",
       "contentSha256": "d38681a0c86b34d267b0c0934a773a26af82d61265208ef21769a89898248330",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+          "profileId": "prepared-local-1-20261009-owner-a848dc80a588",
+          "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_2dc88daf495305000e730a205a1f06b6",
@@ -85011,7 +86197,23 @@
       "coverId": "cover_2dc88daf495305000e730a205a1f06b6",
       "contentSha256": "0de05981a34156b9cedcef73c73d4244ac05cf6149ab3c9cfed917698819e464",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+          "profileId": "prepared-local-1-20261009-owner-a848dc80a588",
+          "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_d917b5d884654040babaf93bb5cbbd92",
@@ -85023,7 +86225,8 @@
       "coverId": "cover_d917b5d884654040babaf93bb5cbbd92",
       "contentSha256": "3ce8a256ea8b5ed55496fc9d00d3732bf50da009b3b6c9174355bfec341467e6",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_6b08767479d6f0715130e250c878b2a9",
@@ -85035,7 +86238,8 @@
       "coverId": "cover_6b08767479d6f0715130e250c878b2a9",
       "contentSha256": "7996d841021a93979ddf9203a7662a379ba83c71b8f40674f348f0e6393c4f9c",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_211df505e8c566432c4ffeda71c84a82",
@@ -85047,7 +86251,8 @@
       "coverId": "cover_211df505e8c566432c4ffeda71c84a82",
       "contentSha256": "4b948d6059ff3d21048b3efa5a202cd5caf3a588f11e9a601a54c937f58a6e0b",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d0a6aa65e5900ba9167a200f8dccfae5",
@@ -85059,7 +86264,8 @@
       "coverId": "cover_d0a6aa65e5900ba9167a200f8dccfae5",
       "contentSha256": "3ea3cc8f62acfaafe2d2adb96090bf87cfabd01f89e0631d571517faf670d5f1",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_6d7b4d0d988b1fcea440c9a7c8dfdbad",
@@ -85071,7 +86277,21 @@
       "coverId": "cover_6d7b4d0d988b1fcea440c9a7c8dfdbad",
       "contentSha256": "dec85129ea88d7f041090c33ce114debe67cde25c47c64d6ca93b96c97dc0ab6",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+          "profileId": "review-3755-local2-v1-owner-a848dc80a588",
+          "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "mode": "local-2p",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_ec52adaf9ea22c751f3d8dba87c09ebd",
@@ -85083,7 +86303,8 @@
       "coverId": "cover_ec52adaf9ea22c751f3d8dba87c09ebd",
       "contentSha256": "482d3ff224b927cf022d8585dac51fa335cae7835cd99d5c54abc040d7488ee8",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_599469b58c769be4ae7443aace5fa5a7",
@@ -85095,7 +86316,8 @@
       "coverId": "cover_599469b58c769be4ae7443aace5fa5a7",
       "contentSha256": "3264e4ed344aaf2b14c9c6c08a7fc96ed5ee11eda37f5c1f9c0adc30706aceed",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d48c014269c4cf3406eaa68847a118c0",
@@ -85107,7 +86329,8 @@
       "coverId": "cover_d48c014269c4cf3406eaa68847a118c0",
       "contentSha256": "1bc96b2dc8389c9573d718a9f92cb32c7c6f1c8f0c63516fd6eee2b80054ac1b",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_f7efe099a4928bc6328dc2823e9af9f3",
@@ -85119,7 +86342,8 @@
       "coverId": "cover_f7efe099a4928bc6328dc2823e9af9f3",
       "contentSha256": "a54dcd0c04b5821b9052929c8af060fb08ce96ebebc484ba0f39b67e9f386967",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_767e5e92f2f353479e6120f1c28f96a7",
@@ -85131,7 +86355,8 @@
       "coverId": "cover_767e5e92f2f353479e6120f1c28f96a7",
       "contentSha256": "6782ccca63a19cbc6760ca928b3c36d0e6ac4b3e479c722083c96111bd25cc73",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_4316c7f4447e968c033b499189f146cd",
@@ -85143,7 +86368,8 @@
       "coverId": "cover_4316c7f4447e968c033b499189f146cd",
       "contentSha256": "28305e3b57d284cf2ae1b7109b5e677524857fd842a6ad10a6a5d9c3ef23796d",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_91d27cd1d44190b0a7fc599db2d9ebd4",
@@ -85155,7 +86381,8 @@
       "coverId": "cover_91d27cd1d44190b0a7fc599db2d9ebd4",
       "contentSha256": "aabd865cf73047d1625433cea1ae2f7c69c1b739445bcda7cf4dcc43578bfcf4",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_9be9b057f1e9166e717560ce8990850c",
@@ -85167,7 +86394,8 @@
       "coverId": "cover_9be9b057f1e9166e717560ce8990850c",
       "contentSha256": "1e9e90fc755e428ea3f7254985e2b377f36be3c31be92e3058bd1b63d930ca54",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_b8b51169831dcfe229f979f2db5a78b9",
@@ -85179,7 +86407,8 @@
       "coverId": "cover_b8b51169831dcfe229f979f2db5a78b9",
       "contentSha256": "972eac75f9ae6c8c80a410b2e021e6ec79f68070fa3905602b2a02a14baeaf9f",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_18480d7c7f4c1024b0934f98d59f8d53",
@@ -85191,7 +86420,8 @@
       "coverId": "cover_18480d7c7f4c1024b0934f98d59f8d53",
       "contentSha256": "3939653add897c0e89f2004aae0978dc27ec61f73a514837566090d513288766",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d32e100a4d1e457c5a34990002401771",
@@ -85203,7 +86433,8 @@
       "coverId": "cover_d32e100a4d1e457c5a34990002401771",
       "contentSha256": "0552e0f3288fe42cd66d7be1f051408adecc475a4f9487fe7e203c0f25920f86",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d9e01abe7fa4ea8bf8bfa3f200d5e5b6",
@@ -85215,7 +86446,8 @@
       "coverId": "cover_d9e01abe7fa4ea8bf8bfa3f200d5e5b6",
       "contentSha256": "468834f72cb34b15e345b2b58ddc5e21d23c370af3f9021363315eb82ed7bbf9",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_01c21865fe0261fc4698fc7ca61fa09b",
@@ -85227,7 +86459,8 @@
       "coverId": "cover_01c21865fe0261fc4698fc7ca61fa09b",
       "contentSha256": "994834126dfc6c203a83c6761bbdb7ea3e874b6bcb77529cacbad5b9b017bf05",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_0ac263df512a0ac82a3b3bb1ddac0ab1",
@@ -85239,7 +86472,8 @@
       "coverId": "cover_0ac263df512a0ac82a3b3bb1ddac0ab1",
       "contentSha256": "d83c7f7b57f343859823c047cdb23c39c3bee099f1daa09020c4d2e166938d0a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d0644371e28e7a933f4a4aae0ecc954b",
@@ -85251,7 +86485,8 @@
       "coverId": "cover_d0644371e28e7a933f4a4aae0ecc954b",
       "contentSha256": "93d501e72f37e514a3d8245fb63c8c51db5c49b534c77916a9db89714714ce48",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_176e4ba8c6abc8a5c552fd797f48ea84",
@@ -85263,7 +86498,8 @@
       "coverId": "cover_176e4ba8c6abc8a5c552fd797f48ea84",
       "contentSha256": "838ac224f62babcda286a6142362d038d20ee41f2eb3e15252c76bf7f075d4c4",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_8bbc153b58a63e8ff944ff1a67913ca6",
@@ -85275,7 +86511,8 @@
       "coverId": "cover_8bbc153b58a63e8ff944ff1a67913ca6",
       "contentSha256": "5b6d172207d8cff4d19be8875ca4ff23269e64402bf64031e0aa4415129182c1",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_8a0c2970090c84cc789ad6032fd7afed",
@@ -85287,7 +86524,8 @@
       "coverId": "cover_8a0c2970090c84cc789ad6032fd7afed",
       "contentSha256": "446565da2548ea41cf843c8fc2c194acadcba0cd2139fb3894e92f0ab836901a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_f7ee3da977e7e23324b415e45e778680",
@@ -85299,7 +86537,8 @@
       "coverId": "cover_f7ee3da977e7e23324b415e45e778680",
       "contentSha256": "c4b51f74ed97f6c2301ea1324f9915c18ef83d772cf4381400eb51d6acf52cf1",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_878c9044184e6395dce157c144b41d5c",
@@ -85311,7 +86550,8 @@
       "coverId": "cover_878c9044184e6395dce157c144b41d5c",
       "contentSha256": "cfb89dd56e9295287a8c036fcfb499ecafad90b32bdc67677a2f9c5908a9b9fc",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_8d692460b3a90a94d438366e707843f5",
@@ -85323,7 +86563,8 @@
       "coverId": "cover_8d692460b3a90a94d438366e707843f5",
       "contentSha256": "4e7e6ae37a1999d693fdd457f6a7a3dcbf95893e769150e361b755236926653b",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_21a2b0d856089a8f42ddc9f6a65b6b75",
@@ -85335,7 +86576,8 @@
       "coverId": "cover_21a2b0d856089a8f42ddc9f6a65b6b75",
       "contentSha256": "3bc2213f8e1254e5841a9209bf38b7c19817e84cbfa19dcd7a5c31509657b709",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_f5d7a9e8e45fd4c1f1113ecb2b137580",
@@ -85347,7 +86589,8 @@
       "coverId": "cover_f5d7a9e8e45fd4c1f1113ecb2b137580",
       "contentSha256": "46a8dcd2c929b70f7f81706e5f658f0bbbfcff6742426c0f8a4a2d5ffb467dec",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_ca50e3a4766eba036c7ead5be47d1022",
@@ -85359,7 +86602,8 @@
       "coverId": "cover_ca50e3a4766eba036c7ead5be47d1022",
       "contentSha256": "8cc3dc816ccd763178a582199a374454bd3aec4ced1b47051186ea6e5d71bb93",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_0884fff4ffa401b94fe38b790b728d1a",
@@ -85371,7 +86615,8 @@
       "coverId": "cover_0884fff4ffa401b94fe38b790b728d1a",
       "contentSha256": "6178fd0e9b1849bde67aba268df0b525d8ba0cba017ba60ffb0d4582b41b8a75",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_5d3ca071e3695c7b84f92fb7d6879a5c",
@@ -85383,7 +86628,8 @@
       "coverId": "cover_5d3ca071e3695c7b84f92fb7d6879a5c",
       "contentSha256": "11758a130f96f2ec7dfcffc71e756ef7d61ecc11d265c2d200852213f6943e80",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_2bb4a53639863ba62542c7f94d6bfc2b",
@@ -85395,7 +86641,8 @@
       "coverId": "cover_2bb4a53639863ba62542c7f94d6bfc2b",
       "contentSha256": "20b668bc24e94bce8026162fd63d8bd4d01010878543d012fc1f109ccf3e8827",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_a1ec8c2ac08fd798a1cd60ba62ed319d",
@@ -85407,7 +86654,8 @@
       "coverId": "cover_a1ec8c2ac08fd798a1cd60ba62ed319d",
       "contentSha256": "eb5ea747c5df7aac3fc4fbc5eb4390bba44c774119100c8918be44faef0ceef1",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_c039e16497864c85d3e367e29ea1a648",
@@ -85419,7 +86667,8 @@
       "coverId": "cover_c039e16497864c85d3e367e29ea1a648",
       "contentSha256": "eff27fe1af3d491cde798fe5c2dac597242614b4cfbe8a0d09af65dd6db4dd0c",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_07bde5803ff1506c390a6b26f050db41",
@@ -85431,7 +86680,8 @@
       "coverId": "cover_07bde5803ff1506c390a6b26f050db41",
       "contentSha256": "28428c75cb54fe05a86a9b6bd02d0612eabb93547e30b72d96df0585388a36d5",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_edd45ef4e281f6f16d0dad1dd28707d3",
@@ -85443,7 +86693,8 @@
       "coverId": "cover_edd45ef4e281f6f16d0dad1dd28707d3",
       "contentSha256": "b618e27abcad7a23375751b80bb4c81df02de9f1c15b73d96607d7ef01540034",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_c3182f2435bcf5ad19c7bab6ee1c7c32",
@@ -85455,7 +86706,8 @@
       "coverId": "cover_c3182f2435bcf5ad19c7bab6ee1c7c32",
       "contentSha256": "01b8cd0776838348349696f0438e4a0463e3c5af9404fdf251143129d1cae9ab",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_5d7d2287d0c3672fcd90b9bca7e2bdef",
@@ -85467,7 +86719,8 @@
       "coverId": "cover_5d7d2287d0c3672fcd90b9bca7e2bdef",
       "contentSha256": "3d49592b2107ff288fa320e082fa772e132907bc0089c5824e03c9973e3b71dc",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d9405ba1719a504fad37055a359e861e",
@@ -85479,7 +86732,8 @@
       "coverId": "cover_d9405ba1719a504fad37055a359e861e",
       "contentSha256": "f71af141612891c727a2d5b70c4048f956509c5a1debf8e563e57dedd4e603fd",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_4305091211a8141539ca0f0cc01ffae8",
@@ -85491,7 +86745,8 @@
       "coverId": "cover_4305091211a8141539ca0f0cc01ffae8",
       "contentSha256": "fa561a650aed00b7395da3a7e47e9a787e14d708683e46b46e5e5cfa0b5c43cc",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_51511441b906e2e1b5473f2eed934c26",
@@ -85503,7 +86758,8 @@
       "coverId": "cover_51511441b906e2e1b5473f2eed934c26",
       "contentSha256": "f7e1e072a8f49cc35669d93ca938b6e8b8dd923364853198983a0a3b84f9232d",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_27c40261aaf7d395897c1843c4f84403",
@@ -85515,7 +86771,8 @@
       "coverId": "cover_27c40261aaf7d395897c1843c4f84403",
       "contentSha256": "1d99b50c4cb64f2427829a449ca05d6223dbcfe3e4cbec65d7ec2503ebbaf2de",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_21ef7c0ff4f0ae3021d91cc7c7123780",
@@ -85527,7 +86784,8 @@
       "coverId": "cover_21ef7c0ff4f0ae3021d91cc7c7123780",
       "contentSha256": "e7d78ea2748183a53b8d4ef95b8edf962f4c2ea68f5bc6ad0be4abe9463b6af2",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_f6a3cb8bc7c60756f2fcbbd1a22da63c",
@@ -85539,7 +86797,8 @@
       "coverId": "cover_f6a3cb8bc7c60756f2fcbbd1a22da63c",
       "contentSha256": "6b4ef8a233387cf903a867d529ca13697ebad3a72fdd1afcdaf0741fae4ef120",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_feca9272f103898c2d94dcec4ecf9b6d",
@@ -85551,7 +86810,8 @@
       "coverId": "cover_feca9272f103898c2d94dcec4ecf9b6d",
       "contentSha256": "5d952258866f4695dfef1f2bd3a80e2173551dfaa994cafd7caab36cfbbb6a7a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_3e184bab69d122fd91315a7194dc4d88",
@@ -85563,7 +86823,8 @@
       "coverId": "cover_3e184bab69d122fd91315a7194dc4d88",
       "contentSha256": "aaafb1179be3a70284bb4d09ed61d27800123f5eab9b45ec6ef0907bf2faed4c",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_23cf56085f247df7002ecaa0c1f3f115",
@@ -85575,7 +86836,8 @@
       "coverId": "cover_23cf56085f247df7002ecaa0c1f3f115",
       "contentSha256": "141bfa95bb4ec534006cdcd92dd4c57bb439f27e1d9ad16cc4d65bf6b77151a6",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_df816435d145366ec93dec3d5d0ae14c",
@@ -85587,7 +86849,8 @@
       "coverId": "cover_df816435d145366ec93dec3d5d0ae14c",
       "contentSha256": "3d7516250485c60dab84dafcf33d54c2a799aee82f7f8567f16e88bc5ad2eae0",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_567fdeb252352a5e61cee1b14ed3438f",
@@ -85599,7 +86862,8 @@
       "coverId": "cover_567fdeb252352a5e61cee1b14ed3438f",
       "contentSha256": "e133eb96ec4e5c00c5a7e354ed9bc817cd6abdbb92010621f6a562713086f885",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_02f57472ad1820030f85bdeefa13a647",
@@ -85611,7 +86875,8 @@
       "coverId": "cover_02f57472ad1820030f85bdeefa13a647",
       "contentSha256": "90c3fed5c180a0b5372395940492b4b7c207ffecdc65f88cc381eabc4d4be078",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_3c72a1590ef3e0777a2404fcbc6c6b06",
@@ -85623,7 +86888,8 @@
       "coverId": "cover_3c72a1590ef3e0777a2404fcbc6c6b06",
       "contentSha256": "e5260757d65d84d31d7248744ca690d99fb4ead74e1c1500269a80cffa695ed1",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_59ab822e147bf7843c9ebd0d81690ff2",
@@ -85635,7 +86901,8 @@
       "coverId": "cover_59ab822e147bf7843c9ebd0d81690ff2",
       "contentSha256": "812d630defe2a9c8d1579a7daae29d53dc95d874d25c2db4c4286a86084bc38a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_e731d423e54bb63e03d763d9a64d0ebe",
@@ -85647,7 +86914,8 @@
       "coverId": "cover_e731d423e54bb63e03d763d9a64d0ebe",
       "contentSha256": "d4ac9f36c63680a75750afc410a37366844d841c7b1d4ab22ccdd6f2e68239e5",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_5a3027a6797f3428c2a8181b23d89f80",
@@ -85659,7 +86927,8 @@
       "coverId": "cover_5a3027a6797f3428c2a8181b23d89f80",
       "contentSha256": "86d13dd741dab1939ddb7fdd47a494a52d342494b8cb12cf96e9759b2bdb9786",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_fa2783a30c9ef50d2495e480ddc5a0cb",
@@ -85671,7 +86940,8 @@
       "coverId": "cover_fa2783a30c9ef50d2495e480ddc5a0cb",
       "contentSha256": "c9b2bac88092d842fd7031d39491f2dd379547831507f2afba26087d59898fa5",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_418034197071d4d6374e9356c13cb772",
@@ -85683,7 +86953,8 @@
       "coverId": "cover_418034197071d4d6374e9356c13cb772",
       "contentSha256": "99ffbd7ae50e8fd52972ad7c48e5e204d2c25dcadc0a8dfb77e242c26bdb048e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_1dd48095b439ca88431b818e83402b03",
@@ -85695,7 +86966,8 @@
       "coverId": "cover_1dd48095b439ca88431b818e83402b03",
       "contentSha256": "985c4f73e2bb4ad57f77dbdb25783421d7be1c78705c53bfb2920b398bd9e55e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_861cd306f4b866d6d5fb27a9feb46b80",
@@ -85707,7 +86979,8 @@
       "coverId": "cover_861cd306f4b866d6d5fb27a9feb46b80",
       "contentSha256": "196727ca842ee27204f61891a0a11a617343300cfbb65d48e174c3110e713727",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_1e3e65602323e46fb66228112f4354af",
@@ -85719,7 +86992,8 @@
       "coverId": "cover_1e3e65602323e46fb66228112f4354af",
       "contentSha256": "72d327fec792c38da29cf1c979135d59d2c6d447aff5b3107ac65bda9b667646",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_9928d12f24b00fe5cee9ed7a9acc6886",
@@ -85731,7 +87005,8 @@
       "coverId": "cover_9928d12f24b00fe5cee9ed7a9acc6886",
       "contentSha256": "f1350b5ec644e65bef657a0ca1e56ff95799dfd1fa01bfbba5da1193118fefaa",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_f0996ea935f08c7d31f96f4026774af4",
@@ -85743,7 +87018,8 @@
       "coverId": "cover_f0996ea935f08c7d31f96f4026774af4",
       "contentSha256": "46ae69df9004cc12f21aa07fbb0fdc32dc9aad59d9ab4b9e642b372d53852c18",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_3c9aac49835e17626f6fcf46de3eb7c2",
@@ -85755,7 +87031,8 @@
       "coverId": "cover_3c9aac49835e17626f6fcf46de3eb7c2",
       "contentSha256": "1e187e56c15e17f03e4a4543482e272b6f5ae60a58aebed395fa3c332f5d064b",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d5b5ea4e5f61c2c452ee9c5106ae3c1c",
@@ -85767,7 +87044,8 @@
       "coverId": "cover_d5b5ea4e5f61c2c452ee9c5106ae3c1c",
       "contentSha256": "29269eb8c8cc8eb83e04fb81c958a47d8ec0b15bb8c74eb0a2a426a9bb8dc58b",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_115d2283e97d804c5de110fcf9b5c99e",
@@ -85779,7 +87057,8 @@
       "coverId": "cover_115d2283e97d804c5de110fcf9b5c99e",
       "contentSha256": "c7ba2551fe74386eeb3a61d09397ad4ef6148fe076021529b961cf647e22bbbb",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_1fae84c70eaa9172559550b8e554f728",
@@ -85791,7 +87070,8 @@
       "coverId": "cover_1fae84c70eaa9172559550b8e554f728",
       "contentSha256": "1118904ee65426b07989c627a3b0ed6b355813f77706d2ecc0285d1fe95a681e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_62e237688c2d03a0c91c6cd0d5e6c1fe",
@@ -85803,7 +87083,8 @@
       "coverId": "cover_62e237688c2d03a0c91c6cd0d5e6c1fe",
       "contentSha256": "154e078c588516c7fbc4eff04e8f4e5eda1e7613e63ff4a273736c49db08b325",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_eeb8175568dc6c4d9f303f9f9417ca8d",
@@ -85815,7 +87096,8 @@
       "coverId": "cover_eeb8175568dc6c4d9f303f9f9417ca8d",
       "contentSha256": "6862b40325508c05d7d97acb53d924909a70c83fbc7358224fe38a27cfade3ad",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_a1a371bbdcc09412dab5f7d82637f229",
@@ -85827,7 +87109,8 @@
       "coverId": "cover_a1a371bbdcc09412dab5f7d82637f229",
       "contentSha256": "ce728fd942488c5a523d2dfc73bd7f67d52811ddb29724c77be256959c790907",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_97be9d6e8d19fa6b9a53027256cb59e5",
@@ -85839,7 +87122,8 @@
       "coverId": "cover_97be9d6e8d19fa6b9a53027256cb59e5",
       "contentSha256": "00d58eee83b25c4e3a18bcf75ed8b0b05e45d012d5d116b166fc6e93eed194b9",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_7fcc7511a1cebd38d5b9673357e43b64",
@@ -85851,7 +87135,8 @@
       "coverId": "cover_7fcc7511a1cebd38d5b9673357e43b64",
       "contentSha256": "2e2754aabc26c7d5d5c586a675557645135910e5962fb51b3f42e48d24c2065d",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_0bf496dd3c539502dccd7a84e8453d90",
@@ -85863,7 +87148,8 @@
       "coverId": "cover_0bf496dd3c539502dccd7a84e8453d90",
       "contentSha256": "560a9ce6de59aa7d2d9ab194c4671f2dbb60aa4fedcb4a99cee51381eea72183",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_2d20d643d81633785c1892caab8cd0f4",
@@ -85875,7 +87161,8 @@
       "coverId": "cover_2d20d643d81633785c1892caab8cd0f4",
       "contentSha256": "3571322666687f17438a82f013b6cc8bb5b316192c9a8e974bd270f744b87aa8",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_9f4ec61454bc15df1b1026766554b928",
@@ -85887,7 +87174,8 @@
       "coverId": "cover_9f4ec61454bc15df1b1026766554b928",
       "contentSha256": "573982fc55f154f5729e789439f6f71cf6ffee7a095371ba43bde51877a52969",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_22f26f76fb1831385d5aac5f8a21069b",
@@ -85899,7 +87187,8 @@
       "coverId": "cover_22f26f76fb1831385d5aac5f8a21069b",
       "contentSha256": "a0b6a074e258701adf9e41a86b66ea7f5079ec975b3b320d25c4fdf1a4a36231",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_ea68541cef64941b9fad1f480b61647d",
@@ -85911,7 +87200,8 @@
       "coverId": "cover_ea68541cef64941b9fad1f480b61647d",
       "contentSha256": "b5f33b496fa33525c19427da92e95d2f498c3b747be01fd065ba272c504b829a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_affe528d02aa42b957bb7efa8ad14d18",
@@ -85923,7 +87213,8 @@
       "coverId": "cover_affe528d02aa42b957bb7efa8ad14d18",
       "contentSha256": "e29af8a4b7f1dd623f6c47837cc8b17b2c312265d01f0305b61b539ef50a7061",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_ccfa700d308656b40463cfa1b1e8c6bf",
@@ -85935,7 +87226,8 @@
       "coverId": "cover_ccfa700d308656b40463cfa1b1e8c6bf",
       "contentSha256": "2314ba9445d9ad3238f848331afc50809849a3924d1e873d0bbfb77c3ee6411e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_40ba026f6c175623f9afb11e7c34a1e6",
@@ -85947,7 +87239,8 @@
       "coverId": "cover_40ba026f6c175623f9afb11e7c34a1e6",
       "contentSha256": "7291f840a7c42bb09cd759f647b236ba635fbd59bba8ef87c31d7f01dc875331",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_88f7b85e57227618661449c2857e9590",
@@ -85959,7 +87252,8 @@
       "coverId": "cover_88f7b85e57227618661449c2857e9590",
       "contentSha256": "ce97bc896a0d0947a97fe2e9632d281186109947365216b73993372bea07638a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_74a477ca8a7004426d16100c888bbd13",
@@ -85971,7 +87265,8 @@
       "coverId": "cover_74a477ca8a7004426d16100c888bbd13",
       "contentSha256": "71f8899f028209b7ba3ebaa31c739f731972d21a7321893dc199f74141f4db7c",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_ca5dbeece25e698b73ed24f7acb3bd7e",
@@ -85983,7 +87278,8 @@
       "coverId": "cover_ca5dbeece25e698b73ed24f7acb3bd7e",
       "contentSha256": "ab482418e5e754fdecff59cebd7e9dec02ffd66a77f99c89ed394f4fcf06c1c8",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_8e069e7681d8af6b243c34ed66591beb",
@@ -85995,7 +87291,8 @@
       "coverId": "cover_8e069e7681d8af6b243c34ed66591beb",
       "contentSha256": "21e64decc53c79fd176dd55d35f3587e26171c5b3ab5ebfbef5c4286d91b056e",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_af2a73086ddf145e4a1144adf1de9edf",
@@ -86007,7 +87304,8 @@
       "coverId": "cover_af2a73086ddf145e4a1144adf1de9edf",
       "contentSha256": "dde78c467bec92d95c5e8bf61fb8a8e090dbf6f07dd3cde32f8da907d89c03a3",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_d56f57826b5505cb1c897d7c7d995f26",
@@ -86019,7 +87317,8 @@
       "coverId": "cover_d56f57826b5505cb1c897d7c7d995f26",
       "contentSha256": "d4e108b71212d2084eceb6f754074806cca6e97298c792dcf5d775670ce63d4b",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_8391ca9ada6fb31b458340cbfbdd5d3e",
@@ -86031,7 +87330,8 @@
       "coverId": "cover_8391ca9ada6fb31b458340cbfbdd5d3e",
       "contentSha256": "2b55bc773a919434957386b9ce7d9f0185cdce1d09c6f9e7d47461c1be08c271",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
@@ -86043,7 +87343,8 @@
       "coverId": "cover_523f952048a1583e0bc9c7f9971d0ecf",
       "contentSha256": "cf391719429dddf498cd718bedc894631ab5122a3e5fe712954cf14ebbc5eb26",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_273b5bea1d45db87ff6711ec3c9166d8",
@@ -86055,7 +87356,8 @@
       "coverId": "cover_273b5bea1d45db87ff6711ec3c9166d8",
       "contentSha256": "ae0fb139b3f935fefe212703cdfbd21664ab1002ead0c56d885d3cfe48259181",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_28c96e14627cc01b83e7c00ae90497e9",
@@ -86067,7 +87369,8 @@
       "coverId": "cover_28c96e14627cc01b83e7c00ae90497e9",
       "contentSha256": "627e8503ed4d2b0fd98300b4bcaf23284714591740e0b88b80d4282fefe09bcf",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
@@ -86079,7 +87382,21 @@
       "coverId": "cover_b3c07c1607efaed3e805f8e4e3da7b09",
       "contentSha256": "7f1874db282a19cf369625603ac5665d486220f470c5c1e29f7309160579bef5",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "dolphin-5102a033-wii-v3-2e0b36222097",
+          "profileId": "review-dkreturns-coop2-v1-owner-550ee4076a78",
+          "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+          "controllerProfile": "dolphin-wii-remotes-four-v1",
+          "mode": "local-coop-2p",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_68188db1da6203f08a4b58e583d6af21",
@@ -86091,7 +87408,8 @@
       "coverId": "cover_68188db1da6203f08a4b58e583d6af21",
       "contentSha256": "2c1f91631c25a0bbf20658f4a1170b7cbcf1a938e15a7969f78fdcbe9b36928d",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_75b2671c509572a3191465e244e9c241",
@@ -86103,7 +87421,8 @@
       "coverId": "cover_75b2671c509572a3191465e244e9c241",
       "contentSha256": "775f7753f4b0c6bfec2b3955ec5a10cef177f07562aeef7130aa0c7f5025f184",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_6e92c46795e509e9593cc55b5fb946ea",
@@ -86115,7 +87434,23 @@
       "coverId": "cover_6e92c46795e509e9593cc55b5fb946ea",
       "contentSha256": "cec1587537e8f9f965ef192ee9342f2ce1de881e9af9aba2852057db6977ff1a",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "dolphin-5102a033-wii-v3-2e0b36222097",
+          "profileId": "prepared-local-1-20261009-owner-550ee4076a78",
+          "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+          "controllerProfile": "dolphin-wii-remotes-four-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_68b4911aaba6d2a81b9e525f36a5c697",
@@ -86127,7 +87462,23 @@
       "coverId": "cover_68b4911aaba6d2a81b9e525f36a5c697",
       "contentSha256": "56c89f8a24657b4e2892d089585602cb1b89c2fa8cfdc1dc25631e276b9fe07c",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": [
+        {
+          "engineId": "dolphin-5102a033-wii-v3-2e0b36222097",
+          "profileId": "prepared-local-1-20261009-owner-550ee4076a78",
+          "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+          "controllerProfile": "dolphin-wii-remotes-four-v1",
+          "mode": "local-multiplayer",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true
+        }
+      ]
     },
     {
       "itemId": "station_474055661521b99e82e6d0b6aee72435",
@@ -86139,7 +87490,8 @@
       "coverId": "cover_474055661521b99e82e6d0b6aee72435",
       "contentSha256": "1c89187438103e053c0c4b74b3b3972d592251565722314646062860acee3bfe",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_11800c292110c10da2354418e3483b29",
@@ -86151,7 +87503,8 @@
       "coverId": "cover_11800c292110c10da2354418e3483b29",
       "contentSha256": "e6d4238efc145caf2d447cc9b9ecf567b8eda68b9d52db7240b5ccb069739c34",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_8d42174892b607ae006f5e68ddf62fe0",
@@ -86187,7 +87540,8 @@
       "coverId": "cover_3b50bae45f3433371386de5687913fb8",
       "contentSha256": "3d2344798240ad5a5d9a47725920427cef70bcf68cb948c8fd51c3a667595834",
       "r139Profiles": [],
-      "physicalGameplayValidated": false
+      "physicalGameplayValidated": false,
+      "independentOwnerProfiles": []
     },
     {
       "itemId": "station_bc77dc9a19c22b74899970af7cc02ce6",

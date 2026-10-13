@@ -1,4 +1,8 @@
-## Retorno atual do servidor — 13/10/2026
+## Publicação adicional concluída — 13/10/2026
+
+Os quatro motores independentes foram aplicados às 14h06, com 78 modos e perfis revisados (66 N64, nove GameCube e três Wii) e provas assinadas locais e públicas. A API permaneceu ativa. PS1 exige aprovação HLE por edição. Totais atuais: 31 motores, 11.448 perfis, 11.427 aprovações administrativas e 6.587 modos; catálogo 46. [Recibo aplicado](native-owner-usb-receipt.json) e [retorno completo](server-return.json). O diagnóstico de Top Gear continua aberto. Os cancelamentos de autenticação registrados abaixo são históricos, superados pela aplicação atual.
+
+## Histórico do retorno anterior do servidor — 13/10/2026
 
 Os oito motores RetroArch R139 foram recebidos/aplicados e suas capabilities assinadas foram conferidas na revisão46. Consulte [server-return.json](server-return.json), [server-signed-bindings.json](server-signed-bindings.json), [server-matrix.json](server-matrix.json) e o [mesmo handoff consolidado](../HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md). O diagnóstico USB confirma runtime/cartucho do moto g52 e captura SIGSEGV/mutex destruído; a falha inicial de Top Gear ainda exige captura atual. Seis bibliotecas independentes foram obtidas/conferidas, quatro cadastros/78 modos preparados, mas a autenticação Linux foi cancelada: publicação adicional pendente. Recebimento/cadastro não comprovam gameplay. O envio e os recibos históricos abaixo são preservados.
 

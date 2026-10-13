@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "status": "R139-RetroArch-applied-and-signed-verified; Android gameplay incident open",
-  "consolidatedUtc": "2026-10-13T15:47:43.300683+00:00",
+  "status": "R139-RetroArch-and-four-independent-owners-applied-and-signed-verified; Android gameplay incident open",
+  "consolidatedUtc": "2026-10-13T17:11:36.817180+00:00",
   "incomingServerCommit": "4ff2d4f6fac380f2ecd5372e8d5ba79afccbb119",
   "incomingAppCommit": "645af7fc41c124fcfe2cc7f1dc8baad9e9acbceb",
   "apkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
@@ -47,11 +47,11 @@
     "aliases": 255
   },
   "effectiveBindings": {
-    "engines": 27,
-    "profiles": 11370,
-    "rawApprovedProfiles": 11349,
-    "approvedProfilesMatchingCurrentContent": 11337,
-    "preparedModes": 6509
+    "engines": 31,
+    "profiles": 11448,
+    "rawApprovedProfiles": 11427,
+    "approvedProfilesMatchingCurrentContent": 11415,
+    "preparedModes": 6587
   },
   "cartridgeRepairs": {
     "count": 6,
@@ -72,7 +72,11 @@
     "publicR139NegativeChecks": 4,
     "publicCatalogItems": 4435,
     "twoSyntheticR139MembersJoinedReadyStarted": true,
-    "actualNativeFramesOrAndroidGameplay": false
+    "actualNativeFramesOrAndroidGameplay": false,
+    "independentOwnerLocalSignedPlatforms": 3,
+    "independentOwnerPublicSignedPlatforms": 3,
+    "independentOwnerNegativeAdmissionChecks": 6,
+    "independentOwnerReviewedProfilesAdded": 78
   },
   "sharedServices": {
     "services": {
@@ -95,7 +99,8 @@
       "gamesWithAdministrativeMultiplayerProfile": 36,
       "gamesWithOnlyIndividualProfile": 0,
       "status": "registered-R139-RetroArch",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 36
     },
     {
       "platform": "cps2",
@@ -104,7 +109,8 @@
       "gamesWithAdministrativeMultiplayerProfile": 62,
       "gamesWithOnlyIndividualProfile": 2,
       "status": "registered-R139-RetroArch",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 64
     },
     {
       "platform": "cps3",
@@ -113,7 +119,8 @@
       "gamesWithAdministrativeMultiplayerProfile": 9,
       "gamesWithOnlyIndividualProfile": 0,
       "status": "registered-R139-RetroArch",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 9
     },
     {
       "platform": "dreamcast",
@@ -122,7 +129,8 @@
       "gamesWithAdministrativeMultiplayerProfile": 0,
       "gamesWithOnlyIndividualProfile": 0,
       "status": "catalog-downloads-no-current-app-online-engine",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
     },
     {
       "platform": "fbneo",
@@ -131,16 +139,18 @@
       "gamesWithAdministrativeMultiplayerProfile": 846,
       "gamesWithOnlyIndividualProfile": 67,
       "status": "registered-R139-RetroArch",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 913
     },
     {
       "platform": "gamecube",
       "visibleGames": 21,
       "currentR139Profiles": 0,
-      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 8,
       "gamesWithOnlyIndividualProfile": 0,
-      "status": "native-bytes-verified-publication-awaits-Linux-authentication",
-      "androidGameplayValidated": false
+      "status": "independent-owner-registered-with-reviewed-modes-signed-verified",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 9
     },
     {
       "platform": "megadrive",
@@ -149,16 +159,18 @@
       "gamesWithAdministrativeMultiplayerProfile": 979,
       "gamesWithOnlyIndividualProfile": 2,
       "status": "registered-R139-RetroArch",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 981
     },
     {
       "platform": "n64",
       "visibleGames": 157,
       "currentR139Profiles": 0,
-      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 33,
       "gamesWithOnlyIndividualProfile": 0,
-      "status": "native-bytes-verified-publication-awaits-Linux-authentication",
-      "androidGameplayValidated": false
+      "status": "independent-owner-registered-with-reviewed-modes-signed-verified",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 66
     },
     {
       "platform": "neogeo",
@@ -167,7 +179,8 @@
       "gamesWithAdministrativeMultiplayerProfile": 180,
       "gamesWithOnlyIndividualProfile": 5,
       "status": "registered-R139-RetroArch",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 185
     },
     {
       "platform": "neogeocd",
@@ -176,7 +189,8 @@
       "gamesWithAdministrativeMultiplayerProfile": 47,
       "gamesWithOnlyIndividualProfile": 3,
       "status": "registered-R139-RetroArch",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 50
     },
     {
       "platform": "nes",
@@ -185,7 +199,8 @@
       "gamesWithAdministrativeMultiplayerProfile": 0,
       "gamesWithOnlyIndividualProfile": 0,
       "status": "catalog-downloads-no-current-app-online-engine",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
     },
     {
       "platform": "ps2",
@@ -194,7 +209,8 @@
       "gamesWithAdministrativeMultiplayerProfile": 0,
       "gamesWithOnlyIndividualProfile": 0,
       "status": "catalog-downloads-no-current-app-online-engine",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
     },
     {
       "platform": "psp",
@@ -203,7 +219,8 @@
       "gamesWithAdministrativeMultiplayerProfile": 0,
       "gamesWithOnlyIndividualProfile": 0,
       "status": "catalog-downloads-no-current-app-online-engine",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
     },
     {
       "platform": "psx",
@@ -211,8 +228,9 @@
       "currentR139Profiles": 0,
       "gamesWithAdministrativeMultiplayerProfile": 0,
       "gamesWithOnlyIndividualProfile": 0,
-      "status": "native-bytes-verified-publication-awaits-Linux-authentication",
-      "androidGameplayValidated": false
+      "status": "independent-owner-registered-HLE-game-approval-pending",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
     },
     {
       "platform": "saturn",
@@ -221,7 +239,8 @@
       "gamesWithAdministrativeMultiplayerProfile": 0,
       "gamesWithOnlyIndividualProfile": 0,
       "status": "catalog-downloads-no-current-app-online-engine",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
     },
     {
       "platform": "sega32x",
@@ -230,7 +249,8 @@
       "gamesWithAdministrativeMultiplayerProfile": 0,
       "gamesWithOnlyIndividualProfile": 0,
       "status": "catalog-downloads-no-current-app-online-engine",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
     },
     {
       "platform": "snes",
@@ -239,7 +259,8 @@
       "gamesWithAdministrativeMultiplayerProfile": 833,
       "gamesWithOnlyIndividualProfile": 1,
       "status": "registered-R139-RetroArch",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 852
     },
     {
       "platform": "switch",
@@ -248,16 +269,18 @@
       "gamesWithAdministrativeMultiplayerProfile": 0,
       "gamesWithOnlyIndividualProfile": 0,
       "status": "catalog-downloads-no-current-app-online-engine",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
     },
     {
       "platform": "wii",
       "visibleGames": 7,
       "currentR139Profiles": 0,
-      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 3,
       "gamesWithOnlyIndividualProfile": 0,
-      "status": "native-bytes-verified-publication-awaits-Linux-authentication",
-      "androidGameplayValidated": false
+      "status": "independent-owner-registered-with-reviewed-modes-signed-verified",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 3
     },
     {
       "platform": "wiiu",
@@ -266,7 +289,8 @@
       "gamesWithAdministrativeMultiplayerProfile": 0,
       "gamesWithOnlyIndividualProfile": 0,
       "status": "catalog-downloads-no-current-app-online-engine",
-      "androidGameplayValidated": false
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
     }
   ],
   "independentOwners": {
@@ -435,21 +459,331 @@
     },
     "unknownGamesApproved": false,
     "psxHleGameApprovalsAdded": 0,
-    "status": "prepared-awaiting-Linux-authentication",
-    "published": false,
+    "status": "applied-and-signed-verified",
+    "published": true,
     "apiRestartRequired": false,
-    "linuxAuthenticationOutcome": "Request dismissed",
-    "physicalGameplayValidated": false
+    "linuxAuthenticationOutcome": "completed",
+    "physicalGameplayValidated": false,
+    "applied": {
+      "status": "applied",
+      "utc": "2026-10-13T17:06:43.279495+00:00",
+      "source": "authorized read-only USB installed R139",
+      "enginesAdded": 4,
+      "realLibrariesVerified": 6,
+      "realDependenciesVerified": 20,
+      "profilesAdded": 78,
+      "originalProfilesPreserved": 11370,
+      "profileCount": 11448,
+      "approvedProfiles": 11427,
+      "originalModesPreserved": 6509,
+      "preparedModes": 6587,
+      "engineCount": 31,
+      "catalogRevision": 46,
+      "apiRestarted": false,
+      "pid": 2867363,
+      "dllSha256": "ef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a",
+      "realLicensesPreserved": true,
+      "signedPlatforms": [
+        "n64",
+        "gamecube",
+        "wii"
+      ],
+      "psxEngineRegistered": true,
+      "psxHleGameApprovalsAdded": 0,
+      "physicalGameplayValidated": false
+    },
+    "localSignedChecks": {
+      "address": "http://127.0.0.1:5192",
+      "signedChecks": [
+        {
+          "platform": "n64",
+          "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+              "contentSha256": "ceaa25016faab3da1ca55a4ef77305078b596e3caf3724e74f14eeea8f58debe",
+              "platform": "n64",
+              "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+              "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+              "runtimeSha256": "2f248cfcdc9e6d0e20795b1dab84f581b8fe9ea59eb0994ae96036aed2abeb77",
+              "profileId": "review-2073-local-v1-owner-6463a58773d9",
+              "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+              "maximumPlayers": 2,
+              "approved": true,
+              "controllerProfile": "direct-four-ports-v1",
+              "mode": "local-multiplayer",
+              "allowedPlayerCounts": [
+                2
+              ],
+              "modeTitle": "1080 Snowboarding: corrida para dois",
+              "instructions": [
+                "Escolha a corrida local 2P com um controle N64 padrão por jogador; modalidades de treino e manobras individuais continuam solo."
+              ],
+              "sources": [
+                "https://www.nintendo.com/es-es/Juegos/Nintendo-64/1080-Snowboarding-269404.html"
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "gamecube",
+          "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+              "contentSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26",
+              "platform": "gamecube",
+              "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+              "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+              "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+              "profileId": "prepared-local-1-20261009-owner-a848dc80a588",
+              "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+              "maximumPlayers": 4,
+              "approved": true,
+              "controllerProfile": "dolphin-gamecube-four-ports-v1",
+              "mode": "local-multiplayer",
+              "allowedPlayerCounts": [
+                2,
+                3,
+                4
+              ],
+              "modeTitle": "Corrida local",
+              "instructions": [
+                "Mais de quatro envolve LAN com vários consoles/TVs; não é um Multitap.",
+                "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+              ],
+              "sources": [
+                "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "wii",
+          "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+              "contentSha256": "7f1874db282a19cf369625603ac5665d486220f470c5c1e29f7309160579bef5",
+              "platform": "wii",
+              "engineId": "dolphin-5102a033-wii-v3-2e0b36222097",
+              "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+              "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+              "profileId": "review-dkreturns-coop2-v1-owner-550ee4076a78",
+              "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+              "maximumPlayers": 2,
+              "approved": true,
+              "controllerProfile": "dolphin-wii-remotes-four-v1",
+              "mode": "local-coop-2p",
+              "allowedPlayerCounts": [
+                2
+              ],
+              "modeTitle": "Donkey Kong Country Returns: dupla",
+              "instructions": [
+                "Entre no modo cooperativo de Donkey Kong e Diddy: somente dois jogadores.",
+                "Use Wii Remote horizontal com os comandos de movimento configurados; a ação de sacudir é necessária para bater, rolar e soprar.",
+                "Esta aprovação documental de modo não comprova os bindings ou a partida física em cada aparelho."
+              ],
+              "sources": [
+                "https://www.nintendo.com/en-gb/Games/Wii/Donkey-Kong-Country-Returns-280968.html",
+                "https://www.nintendo.com/en-gb/News/2010/Donkey-Kong-Country-Returns-a-rip-roaring-banana-scoring-treat-251997.html"
+              ]
+            }
+          ]
+        }
+      ],
+      "negativeAdmissionChecks": [
+        {
+          "case": "wrong-content",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "unknown-engine",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "n64-five-refused",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+          "roomCreated": false
+        }
+      ],
+      "syntheticLicenseRemoved": true,
+      "physicalGameplayValidated": false,
+      "psxHleGameApprovalsAdded": 0
+    },
+    "publicSignedChecks": {
+      "address": "https://app.lzgames.com.br",
+      "signedChecks": [
+        {
+          "platform": "n64",
+          "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+              "contentSha256": "ceaa25016faab3da1ca55a4ef77305078b596e3caf3724e74f14eeea8f58debe",
+              "platform": "n64",
+              "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+              "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+              "runtimeSha256": "2f248cfcdc9e6d0e20795b1dab84f581b8fe9ea59eb0994ae96036aed2abeb77",
+              "profileId": "review-2073-local-v1-owner-6463a58773d9",
+              "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+              "maximumPlayers": 2,
+              "approved": true,
+              "controllerProfile": "direct-four-ports-v1",
+              "mode": "local-multiplayer",
+              "allowedPlayerCounts": [
+                2
+              ],
+              "modeTitle": "1080 Snowboarding: corrida para dois",
+              "instructions": [
+                "Escolha a corrida local 2P com um controle N64 padrão por jogador; modalidades de treino e manobras individuais continuam solo."
+              ],
+              "sources": [
+                "https://www.nintendo.com/es-es/Juegos/Nintendo-64/1080-Snowboarding-269404.html"
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "gamecube",
+          "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+              "contentSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26",
+              "platform": "gamecube",
+              "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+              "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+              "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+              "profileId": "prepared-local-1-20261009-owner-a848dc80a588",
+              "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+              "maximumPlayers": 4,
+              "approved": true,
+              "controllerProfile": "dolphin-gamecube-four-ports-v1",
+              "mode": "local-multiplayer",
+              "allowedPlayerCounts": [
+                2,
+                3,
+                4
+              ],
+              "modeTitle": "Corrida local",
+              "instructions": [
+                "Mais de quatro envolve LAN com vários consoles/TVs; não é um Multitap.",
+                "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+              ],
+              "sources": [
+                "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "wii",
+          "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+              "contentSha256": "7f1874db282a19cf369625603ac5665d486220f470c5c1e29f7309160579bef5",
+              "platform": "wii",
+              "engineId": "dolphin-5102a033-wii-v3-2e0b36222097",
+              "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+              "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+              "profileId": "review-dkreturns-coop2-v1-owner-550ee4076a78",
+              "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+              "maximumPlayers": 2,
+              "approved": true,
+              "controllerProfile": "dolphin-wii-remotes-four-v1",
+              "mode": "local-coop-2p",
+              "allowedPlayerCounts": [
+                2
+              ],
+              "modeTitle": "Donkey Kong Country Returns: dupla",
+              "instructions": [
+                "Entre no modo cooperativo de Donkey Kong e Diddy: somente dois jogadores.",
+                "Use Wii Remote horizontal com os comandos de movimento configurados; a ação de sacudir é necessária para bater, rolar e soprar.",
+                "Esta aprovação documental de modo não comprova os bindings ou a partida física em cada aparelho."
+              ],
+              "sources": [
+                "https://www.nintendo.com/en-gb/Games/Wii/Donkey-Kong-Country-Returns-280968.html",
+                "https://www.nintendo.com/en-gb/News/2010/Donkey-Kong-Country-Returns-a-rip-roaring-banana-scoring-treat-251997.html"
+              ]
+            }
+          ]
+        }
+      ],
+      "negativeAdmissionChecks": [
+        {
+          "case": "wrong-content",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "unknown-engine",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "n64-five-refused",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+          "roomCreated": false
+        }
+      ],
+      "syntheticLicenseRemoved": true,
+      "physicalGameplayValidated": false,
+      "psxHleGameApprovalsAdded": 0
+    }
   },
   "phoneDiagnostic": "server-phone-diagnostic.json",
   "pending": [
     "Live USB VS12:34: native runloop-return result1 and return to frontend; championship12:35: PONG119..518ms/nativeStatus-1/zero native bytes/neverReady; underlying core/content/driver load cause and earlier exit crash remain unisolated",
-    "Publish prepared four independent native owners/78 reviewed modes using genuine Linux authentication; dialog was dismissed",
     "PSX: current owner still has zero per-edition HLE-reviewed approvals; original-hardware manuals do not validate current HLE",
     "NES catalog capacity overlay is not in R139 APK (4096 legacy limit); complete server catalog query uses maximumItems=20000",
     "Dreamcast/PS2/Saturn/WiiU/Switch/PSP/32X/NES: current received app has no corresponding online native owner"
   ],
   "realLicensesPreserved": true,
   "physicalGameplayValidated": false,
-  "allPlatformsGameplayReady": false
+  "allPlatformsGameplayReady": false,
+  "usbRootInspection": {
+    "mountedReadOnly": true,
+    "authorityFiles": [
+      "content-authority-envelope.json",
+      "content-authority-issuer.spki.der",
+      "suite-authority-envelope.json",
+      "suite-authority-issuer.spki.der"
+    ],
+    "authorityProductId": "TURBORAMA_SUITE",
+    "stationProductId": "TURBORAMA_STATION_ANDROID",
+    "authorityFilesNotAppliedToStation": true,
+    "r139KitInServidorLerMatchesAlreadyReceived": true
+  },
+  "requestedProductionDiagnostics": {
+    "suggestedFilenames": [
+      "logcat-topgear3000-vs.txt",
+      "logcat-topgear3000-campeonato.txt",
+      "erro-inicializacao-retroarch.txt"
+    ],
+    "capture": "both devices, from start to failure, include internal RetroArch/bsnes content/core/driver load error",
+    "transfer": "private USB SERVIDOR LER",
+    "newNativeLibrariesStillRequired": false
+  }
 }

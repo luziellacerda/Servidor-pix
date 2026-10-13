@@ -1,3 +1,19 @@
+## Quatro motores independentes publicados — 13/10/2026, 14h06
+
+**Autenticação Linux concluída e cadastro aplicado**, sem reiniciar a API. Seis bibliotecas e vinte dependências exatas obtidas pelo USB do moto g52 permitiram cadastrar os motores atuais PS1/N64/GameCube/Wii. Foram acrescentados **78 perfis e modos revisados em 44 jogos: 66 N64, nove GameCube e três Wii**. PS1 recebeu o motor, mas conserva zero aprovações HLE por edição nesta etapa. [Recibo aplicado e provas](r139/native-owner-usb-receipt.json) · [Retorno consolidado](r139/server-return.json).
+
+Produção: catálogo 46/4690 IDs/4435 visíveis/255 aliases; **31 motores, 11448 perfis, 11427 com aprovação administrativa, 11415 vinculados ao conteúdo atual e 6587 modos**. Prefixos anteriores de 11.370 perfis e 6.509 modos preservados. Capabilities assinadas verificadas localmente e por HTTPS público para N64/GameCube/Wii; seis recusas por conteúdo/motor incorretos ou cinco jogadores no N64 foram confirmadas. API continua PID2867363/DLLef5270b3…/NRestarts0; licenças reais preservadas. Homologação física e o erro de início de Top Gear continuam pendentes.
+
+O bloqueio inicial foi apenas alteração de formatação do manifesto pelo scanner, com conteúdo lógico idêntico; o candidato foi regenerado e qualificado contra o estado atual antes de gravar. A rotina local também foi corrigida para aceitar o timer parado durante a transação. Os registros abaixo de cancelamento/preparo descrevem tentativas anteriores, superadas por este recibo.
+
+### Arquivos solicitados à produção do APK
+
+As bibliotecas anteriormente ausentes já foram recebidas e cadastradas. Para localizar o erro interno de carga de Top Gear, solicitar registros dos dois celulares desde “Iniciar partida” até falhar, com estes **nomes sugeridos de entrega**: `logcat-topgear3000-vs.txt`, `logcat-topgear3000-campeonato.txt` e `erro-inicializacao-retroarch.txt`. Incluir o erro real do carregamento RetroArch/bsnes/core/driver que explica `runloop-return result=1`, preservando controles/HLE/READY/FPS. Transferência privada pelo pen drive em `SERVIDOR LER`; nenhum dado pessoal/log bruto no Git.
+
+A raiz do pen drive contém `content-authority-envelope.json`, `content-authority-issuer.spki.der`, `suite-authority-envelope.json` e `suite-authority-issuer.spki.der`: identificam TURBORAMA_SUITE e não foram aplicados ao produto TURBORAMA_STATION_ANDROID. O kit R139 em `SERVIDOR LER` coincide byte exato com o já recebido. Esses arquivos de autoridade não são catálogos, BIOS ou bibliotecas de emulação.
+
+## Histórico preservado
+
 ## Retorno do servidor e diagnóstico USB — 13/10/2026
 
 **R139 RetroArch recebida, cadastrada e conferida em produção.** O kit privado enviado no USB foi verificado: cinco bibliotecas e oito motores. O cadastro preservou os registros anteriores e acrescentou 3.091 perfis; assinaturas novas confirmaram SNES, Mega Drive, Neo Geo/CD, FBNeo e CPS1/2/3, incluindo Battletoads, Mario Kart e Top Gear 3000. [Retorno aplicado](r139/server-return.json) · [Vínculos assinados](r139/server-signed-bindings.json) · [Matriz completa dos 4.690 registros](r139/server-matrix.json).
