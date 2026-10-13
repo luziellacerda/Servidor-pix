@@ -1,3 +1,9 @@
+# Três telefones na mesma R141 — 13/10/2026
+
+Moto g52, Samsung A56 e Motorola Edge30 agora com APK R141/b5a76023 exato, fonte executável240b7c05 congelada. Edge30 atualizado da DIAG5aaa: hash/UID/dados/primeira instalação preservados e versão temporária retirada, sem recompilar ou alterar lógica. Ler r141/STATUS e evidence/installation-edge30.json no mesmo handoff. Não confundir instalação com cadastro aplicado ou gameplay; usar somente retorno e testes reais. Fonte e ponteiros de recuperação intactos; binários/seriais/logs privados foraGit.
+
+## Histórico preservado
+
 # R141 aplicada no Station — 13/10/2026
 
 Ler o MESMO handoff e r141/server-return.json. A combinação APK b5a76023/fonte 240b7c0 foi cadastrada com quatro IDs e 78 vínculos às 20h19 UTC. O kit d8d9746d possui seis bibliotecas e vinte dependências conferidas. Os 35 motores, 11.526 perfis e 6.665 modos anteriores foram preservados; totais atuais: 39 motores, 11.604 perfis e 6.743 modos, catálogo 46. As provas locais e públicas para N64/GameCube/Wii e as seis recusas passaram. Licenças, DLL ef5270b3 e PID 2867363 preservados. PS1 conserva zero novas aprovações HLE por edição.

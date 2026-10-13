@@ -1,3 +1,9 @@
+## Edge 30 atualizado: três aparelhos na mesma R141 — 13/10/2026
+
+Motorola Edge30/Android14 atualizado da versão temporária R139-DIAG para o mesmo APK R141 `b5a76023…`, fonte executável `240b7c05…`. SHA integral instalado, assinatura original, UID, dados e primeira instalação preservados. Logger/sidecar temporários removidos pela composição final já conferida. Nenhuma recompilação, mudança adicional de lógica ou limpeza de dados. Moto g52, Samsung A56 e Edge30 agora compartilham exatamente a R141. [Recibo Edge30](r141/evidence/installation-edge30.json). Cadastro administrativo dos quatro IDs e gameplay dependem das provas correspondentes; instalação não equivale a uma partida validada.
+
+## Histórico preservado
+
 ## R141 recebida e cadastrada no servidor — 13/10/2026, 17h19
 
 **Cadastro aplicado aos bytes reais da R141 `b5a76023…`.** O kit privado `d8d9746d…` tem 12.842.618 bytes e 38 arquivos; seis bibliotecas ELF64 Aarch64 e vinte dependências conferidas. Foram acrescentados quatro motores e **78 vínculos dos modos já revisados em 44 jogos: 66 N64, nove GameCube e três Wii**. PS1 recebeu o motor e conserva zero aprovações HLE novas por edição. [Recibo aplicado, preservação e provas assinadas](r141/server-return.json).
