@@ -1,0 +1,84 @@
+{
+  "schema": "station.wave.palette.selection.provenance.v1",
+  "revision": "R144",
+  "passed": true,
+  "sourceReviewOnly": true,
+  "physicalVisualValidated": false,
+  "newOffsetsIntroduced": false,
+  "sourceArtifacts": {
+    "r133-native-carrousel": {
+      "reference": "private-build:R133/native/overlay/native_carousel.cpp",
+      "sha256": "c8ce063f7b1459553b39f4169507ef1a51f7f5b61fb5fb9398e0ac7bf0a36ec2"
+    },
+    "r132-native-info": {
+      "reference": "private-build:R132/native/overlay/native/r132_native_info.h",
+      "sha256": "e6c910b188018146a394ff2128f9f82144afcbe46d0bd3924d09b200661c5c75"
+    },
+    "r132-native-folders": {
+      "reference": "private-build:R132/native/overlay/native/r132_native_folders.h",
+      "sha256": "c7508df310cc76df20c7577c3e9f4bf277b62cf2d3724c321d97541036c9bcbf"
+    }
+  },
+  "originalAccessors": [
+    {
+      "sourceArtifact": "r133-native-carrousel",
+      "function": "enterSystem",
+      "lines": [257, 258, 259],
+      "establishes": "cursor at gui+0xf0; visible index vector begin/end at gui+0xf8 and gui+0x100; mapped index=begin[cursor]; platform key is strData(items+index*0xe8+0x60), bounded by systemCount"
+    },
+    {
+      "sourceArtifact": "r133-native-carrousel",
+      "function": "enterSystem",
+      "lines": [266],
+      "establishes": "The exact selected platform key is stored in the existing game-list filter at gui+0x150; the wave selector only reads this filter"
+    },
+    {
+      "sourceArtifact": "r132-native-info",
+      "function": "updateSystemInfo",
+      "lines": [134, 135, 138, 156],
+      "establishes": "The existing synopsis uses the same cursor, visible mapping, stride and key offset for system presentation"
+    },
+    {
+      "sourceArtifact": "r132-native-info",
+      "function": "updateSystemInfo",
+      "lines": [163],
+      "establishes": "Platform key comes from item+0x60; title comes from item+0x18, and ID from item start. R144 reads the platform key, never the title or ID"
+    },
+    {
+      "sourceArtifact": "r132-native-folders",
+      "function": "showFolderMenu / enterFolderGames",
+      "lines": [86, 120, 121],
+      "establishes": "Folder menus retain folderPlatform; entering their games writes that exact platform to gui+0x150. R144 reads folderPlatform for folder menus and the existing filter for games"
+    },
+    {
+      "sourceArtifact": "r133-native-carrousel",
+      "function": "strData",
+      "lines": [44],
+      "establishes": "The established native string accessor returns the string bytes, handling the original small/heap string representation; R144 reuses it without creating an object"
+    }
+  ],
+  "selectionGuards": {
+    "requiresGuiOpenPhase3": true,
+    "systemItemsAndVisibleVectorMustBeNonNull": true,
+    "visibleCursorAndMappedSystemIndexBoundsChecked": true,
+    "noCatalogGetterOrJniCallAdded": true,
+    "noModelOrUiMutation": true
+  },
+  "cache": {
+    "fixedKeyBytes": 64,
+    "longestDeclaredAliasBytes": 20,
+    "copiesCompleteKeyWithTerminatorOnlyIfItFits": true,
+    "oversizeKeyUsesThemeFallbackWithoutTruncation": true,
+    "cachedValueIsPalettePointerOnly": true,
+    "fallbackReadsCurrentThemeId": true,
+    "aliasLookupOnlyWhenTheCopiedKeyChanges": true,
+    "heapWorkerTimerNetworkIntroduced": false
+  },
+  "baselineQualification": {
+    "r133CarouselByteReproducedSha256": "baf0f07c89b2a0a8e788b211809c389511830805f386647461487706bcdb9709",
+    "r134EqualSizeLabelPatchReplayed": true,
+    "actualR143CarouselByteReproducedSha256": "867d86a5dba085fadec1e4b8dee0f8be99467551ba830607d3041b324c02b80e",
+    "actualR143ApkCarouselComparedAsCompleteBytes": true,
+    "scopeLimit": "Desktop compilation/source proof; no Android visual, thermal or CPU measurement is inferred"
+  }
+}

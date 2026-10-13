@@ -1,3 +1,9 @@
+# R144 candidata visual — estável R143 preservada
+
+Ler mesmo handoff/r144/STATUS. Pedido atual: ondas por sistema no carrossel; correção explícita salas online mantêm RGB/design e apenas mais brilho. Fonte1ac3f7d/01427f4e, 6substituições/13854preservadas/39DEX. DEX35 integral, HTTPfamílias, g52/HLE/multitap/cores/controles/READY preservados. NativebaselineR133→R143 exato antes do overlay, 3faixas66vertices e cachecurto sem novos timers/heap; Java só12alphas/271classesexatas. R144 teste, não mover tag estávelR143 nem seus ponteiros permanentes. A56 antesR143 hash real; instalação em acompanhamento, não declarar concluída semrecibo. KitindependenteR1447b1cdb6c/mesmos78modos preparado, nãoaplicado; SNEScadastroexistente, não deployment/restart. ScriptsUSBexatos, manifestoR144. Fontes congeladas não editar; bytes/chaves/logs/serialprivados foraGit.
+
+## Histórico preservado
+
 # Referência estável atual R143
 
 O proprietário autorizou salvar como estável e backup completo deste ponto em 13/10/2026. Tag/ramo `estavel-station-r143-20261013`; ler checkpoint, manifesto e restauração. Fonte executável congelada `26257869b59af8ecea44932ab287705990a9acbe`, APK `508480e3671ae924f037bd32f6d71efda7a9d905c45c7b2571bd9f219add83d4`. Top Gear 3000 VS3 e Bomberman positivos por relato humano; limites no checkpoint. g52 R143; A56/Edge última R141. SNES cadastro atual; kit independente R143 ainda não aplicado. Não mover tags históricas, alterar receitas congeladas ou resolvedores release antigos. CURRENT/ATUAL apontam R143 após backup verificado; a receita/BAT R143 é necessária porque compile_current só suporta até R134. Todas as fontes completas, donor R142, ferramentas, autoridade original privada e evidências estão no checkpoint completo F existente. Nenhum deploy/restart ou APK novo nesta promoção.

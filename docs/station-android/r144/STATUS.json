@@ -1,0 +1,33 @@
+{
+  "revision": "R144",
+  "sourceCommit": "1ac3f7d2fdd7cd349a5b37127b66712834e844fd",
+  "apkSha256": "01427f4e73141b7d6a462c2420a9abeb018a8716102e7fb959bf9a1d69eccee0",
+  "apkBytes": 2715024399,
+  "compiled": true,
+  "signed": true,
+  "installed": false,
+  "physicalVisualValidated": false,
+  "changes": "Carrousel WAVES platform palettes and opacity; rooms opacity-only, current RGB/theme preserved",
+  "gameplayDex35Preserved": true,
+  "retroArchAndCoresPreserved": true,
+  "httpDownloadClassesPreserved": true,
+  "preservedEntries": 13854,
+  "preservedDexPartitions": 39,
+  "unchangedDex28Classes": 271,
+  "changedArgbConstants": 12,
+  "nativeSourceInversePassed": true,
+  "fpsAndSchedulingUnchanged": true,
+  "stableTagPreserved": "estavel-station-r143-20261013",
+  "permanentPointersPromoted": false,
+  "serverKitSha256": "7b1cdb6c68a1ddcd05af2e4703d2900061f7f2c4082a3f3c80c6d4c428d18739",
+  "serverApplied": false,
+  "apiDeployed": false,
+  "apiRestarted": false,
+  "installationPending": "Samsung A56: Android INSTALL_FAILED_INSUFFICIENT_STORAGE; user freeing internal space",
+  "androidInstallErrorCode": "INSTALL_FAILED_INSUFFICIENT_STORAGE",
+  "lastVerifiedPhones": {
+    "Samsung A56": "R143 observed SHA before attempted R144 update",
+    "moto g52": "R143 last known",
+    "Edge30": "R141 last known"
+  }
+}
