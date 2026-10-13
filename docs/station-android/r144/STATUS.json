@@ -23,11 +23,14 @@
   "serverApplied": false,
   "apiDeployed": false,
   "apiRestarted": false,
-  "installationPending": "Samsung A56: Android INSTALL_FAILED_INSUFFICIENT_STORAGE; user freeing internal space",
+  "installationPending": "Samsung A56: third attempt INSTALL_FAILED_INSUFFICIENT_STORAGE; additional internal space or another authorized phone needed",
   "androidInstallErrorCode": "INSTALL_FAILED_INSUFFICIENT_STORAGE",
   "lastVerifiedPhones": {
-    "Samsung A56": "R143 observed SHA before attempted R144 update",
+    "Samsung A56": "R143 exact SHA verified before third failed attempt",
     "moto g52": "R143 last known",
     "Edge30": "R141 last known"
-  }
+  },
+  "installedOnSamsungA56": false,
+  "frontendObserved": false,
+  "installationReceipt": "evidence/instalacao-r144-samsung-a56-tentativa3.json"
 }

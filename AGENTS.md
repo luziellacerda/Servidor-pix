@@ -1,3 +1,9 @@
+# Terceira tentativa R144: armazenamento ainda insuficiente no A56
+
+Ler o mesmo handoff e r144/STATUS.json. Antes da terceira tentativa, o A56 estava ocioso e dispunha de aproximadamente 6,88 GB livres. O Android voltou a recusar a atualização com INSTALL_FAILED_INSUFFICIENT_STORAGE. Não houve confirmação de instalação da R144, desinstalação ou limpeza de dados. O último APK conferido antes desta tentativa era a R143. É necessário liberar mais espaço interno ou usar outro telefone ocioso autorizado. Fonte congelada 1ac3f7d; APK 01427f4e. Visual físico pendente; carrossel usa paletas e salas só brilho. DEX35, multiplayer R143, HLE, saída, motores e downloads preservados. R143 continua estável: não mover tag, backup ou ponteiros permanentes. Kit independente R144 preparado, sem aplicação; nenhum deploy ou restart autorizado. Chaves, APK, capturas e registros brutos permanecem privados.
+
+## Histórico preservado
+
 # R144 candidata visual — estável R143 preservada
 
 Ler mesmo handoff/r144/STATUS. Pedido atual: ondas por sistema no carrossel; correção explícita salas online mantêm RGB/design e apenas mais brilho. Fonte1ac3f7d/01427f4e, 6substituições/13854preservadas/39DEX. DEX35 integral, HTTPfamílias, g52/HLE/multitap/cores/controles/READY preservados. NativebaselineR133→R143 exato antes do overlay, 3faixas66vertices e cachecurto sem novos timers/heap; Java só12alphas/271classesexatas. R144 teste, não mover tag estávelR143 nem seus ponteiros permanentes. A56 antesR143 hash real; instalação em acompanhamento, não declarar concluída semrecibo. KitindependenteR1447b1cdb6c/mesmos78modos preparado, nãoaplicado; SNEScadastroexistente, não deployment/restart. ScriptsUSBexatos, manifestoR144. Fontes congeladas não editar; bytes/chaves/logs/serialprivados foraGit.

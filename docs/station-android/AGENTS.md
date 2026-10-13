@@ -1,3 +1,9 @@
+# Terceira tentativa R144: armazenamento ainda insuficiente no A56
+
+Ler o mesmo handoff e r144/STATUS.json. Antes da terceira tentativa, o A56 estava ocioso e dispunha de aproximadamente 6,88 GB livres. O Android voltou a recusar a atualização com INSTALL_FAILED_INSUFFICIENT_STORAGE. Não houve confirmação de instalação da R144, desinstalação ou limpeza de dados. O último APK conferido antes desta tentativa era a R143. É necessário liberar mais espaço interno ou usar outro telefone ocioso autorizado. Fonte congelada 1ac3f7d; APK 01427f4e. Visual físico pendente; carrossel usa paletas e salas só brilho. DEX35, multiplayer R143, HLE, saída, motores e downloads preservados. R143 continua estável: não mover tag, backup ou ponteiros permanentes. Kit independente R144 preparado, sem aplicação; nenhum deploy ou restart autorizado. Chaves, APK, capturas e registros brutos permanecem privados.
+
+## Histórico preservado
+
 # Referência estável R143 aprovada em 13/10/2026
 
 Tag e ramo `estavel-station-r143-20261013` no app e neste handoff. Ler `estavel-station-r143-20261013/README.md`, manifesto, estado completo e restauração. Mesmo APK R143 `508480e3`, fonte executável `26257869`; g52 instalado, A56/Edge30 última R141. Top Gear 3000 VS três participantes e Bomberman OK por relatos do mantenedor, com limites nos recibos. Backup completo do ponto na raiz F existente. SNES conserva registro; kit R143 dos quatro owners independentes preparado, ainda não aplicado. Não reaplicar R141 nem implantar/reiniciar API por promoção Git. Dados/licenças/contratos/motores e demais produtos preservados. Receitas e recibos históricos congelados permanecem intactos; suas flags refletem o momento em que foram criados.

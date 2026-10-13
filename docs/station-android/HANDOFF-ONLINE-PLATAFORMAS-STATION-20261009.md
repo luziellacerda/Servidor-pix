@@ -1,3 +1,13 @@
+## Terceira tentativa R144: armazenamento ainda insuficiente no A56
+
+Antes da terceira tentativa, o A56 estava ocioso e dispunha de aproximadamente 6,88 GB livres. O Android voltou a recusar a atualização com INSTALL_FAILED_INSUFFICIENT_STORAGE. Não houve confirmação de instalação da R144, desinstalação ou limpeza de dados. O último APK conferido antes desta tentativa era a R143. É necessário liberar mais espaço interno ou usar outro telefone ocioso autorizado.
+
+Carrossel: paletas solicitadas por sistema e ondas mais visíveis. Salas online: somente brilho, mantendo RGB, tema e desenho. O teste visual físico ainda não foi aprovado pelo mantenedor. A R143 permanece como ponto estável de retorno, com tag, backup e ponteiros permanentes preservados. O kit independente R144 foi preparado, sem aplicação no servidor.
+
+[Recibo da terceira tentativa](r144/evidence/instalacao-r144-samsung-a56-tentativa3.json).
+
+## Histórico preservado
+
 ## Android recusou atualização R144 no A56 por armazenamento
 
 O instalador conferiu o APK assinado, ociosidade e baseline R143 real no A56. Duas tentativas não confirmaram instalação; a segunda registrou `INSTALL_FAILED_INSUFFICIENT_STORAGE`. A primeira leitura posterior confirmou APK R143 ainda instalado e cerca de 6,42 GB disponíveis em /data, sem jogo/download ativo. Esses dados não garantem espaço temporário suficiente para atualizar o APK grande. O mantenedor informou que irá liberar espaço; não remover jogos/saves/app nem enfraquecer guards por hipótese. Instalação e aparência R144 permanecem pendentes até recibo posterior concluído.
