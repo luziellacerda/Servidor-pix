@@ -32,5 +32,8 @@
   },
   "installedOnSamsungA56": false,
   "frontendObserved": false,
-  "installationReceipt": "evidence/instalacao-r144-samsung-a56-tentativa3.json"
+  "installationReceipt": "evidence/instalacao-r144-samsung-a56-tentativa3.json",
+  "networkQosReturnReceived": true,
+  "directV3RouteImplementedInR144": false,
+  "serverNetworkReturnStatus": "server-applied-app-route-pending"
 }

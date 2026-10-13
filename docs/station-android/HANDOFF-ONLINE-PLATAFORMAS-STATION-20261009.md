@@ -1,3 +1,9 @@
+## Retorno de rede recebido durante a publicação da R144
+
+O GitHub trouxe o retorno de prioridade de rede e relay direto do servidor (commit 799d124, integrado em c349ef5). O arquivo foi preservado como evidência recebida. A R144 congelada em 1ac3f7d conserva os endpoints e a fábrica TLS anteriores: a nova rota v3 ainda depende de uma alteração futura de aplicativo. A etapa atual continua sendo o teste visual solicitado; não atribuir à R144 a adoção da rota direta ou gameplay nessa rota. O relato de aplicação pertence ao retorno do servidor e não a uma verificação nova feita neste aparelho. A tag estável R143 permanece inalterada.
+
+## Histórico preservado
+
 ## Terceira tentativa R144: armazenamento ainda insuficiente no A56
 
 Antes da terceira tentativa, o A56 estava ocioso e dispunha de aproximadamente 6,88 GB livres. O Android voltou a recusar a atualização com INSTALL_FAILED_INSUFFICIENT_STORAGE. Não houve confirmação de instalação da R144, desinstalação ou limpeza de dados. O último APK conferido antes desta tentativa era a R143. É necessário liberar mais espaço interno ou usar outro telefone ocioso autorizado.
@@ -46,6 +52,30 @@ No carrossel, opacidades B0/A0/90. Sistemas não citados mantêm RGB do tema e t
 A R144 é candidata visual para teste. A tag/backup estáveis R143 e ponteiros permanentes permanecem intactos. Instalador USB explícito aponta a R144 com BAT/PS byte exatos. Há instalação A56 em acompanhamento; publicar conclusão apenas com recibo de hash e dados. Não usar estado de montagem como prova visual. Última fonte instalada observada antes da tentativa A56 é R143, SHA508480e3, apesar do recibo anterior ter R141 como último conhecido.
 
 Quatro IDs independentes foram renovados pelo vínculo obrigatório com DEX28/carrossel, sem mudar os owners/cores/opções/controles ou os nove descritores RetroArch. Kit R144 `7b1cdb6c68a1ddcd05af2e4703d2900061f7f2c4082a3f3c80c6d4c428d18739`, 12.164.472 bytes, 38 arquivos, seis bibliotecas/vinte dependências, apenas mesmos 78 modos revisados. Kit preparado, não aplicado; SNES conserva cadastro existente. Não reaplicar R141, migrar modos duas vezes, alterar licenças ou implantar/reiniciar API. PS1 zero novas aprovações HLE. [Provas e estado](r144/STATUS.json).
+
+## Histórico preservado
+
+## Divisão de banda e relay direto aplicados — 13/10/2026, 19h20
+
+**Servidor aplicado e testado; selecionar a rota direta no próximo APK.** A saída deste PC agora tem filas separadas para partidas/controle, demais serviços e downloads, com reservas de 20% / 20% / 60% e empréstimo automático da capacidade ociosa. Sem tráfego das outras classes, os downloads aproveitam o teto do ramo. Configuração inicial: internet 33 Mbps, saída física 95 Mbps; destinos da LAN têm ramo próprio e podem aproveitar até 95 Mbps. O enlace estava a 100 Mbps, embora a interface suporte gigabit. O operador informou 800 Mbps de download e cerca de 100 Mbps de upload; as medições deste PC deram 92,034 / 36,940 Mbps. Conferir cabo/porta e capacidade efetiva antes de elevar os tetos. Isto controla o tráfego deste PC; outros aparelhos da rede precisam de controle no roteador para compartilhar a mesma política.
+
+A API e o master Nginx conservaram seus processos. A política persiste no boot e um timer confere as filas a cada 30 segundos. O instalador recusou uma falha de leitura das classes e restaurou o vhost; a versão de tc ignora JSON para HTB, e o leitor foi corrigido e testado antes da aplicação final. Nenhum motor, catálogo, licença real ou opção de emulação foi alterado.
+
+Foi acrescentado **deliberadamente** um segundo caminho ao host direto, preservando o GET de artefato:
+
+```text
+wss://downloads-station.lzgames.com.br/v1/station/online/multiplayer/relay
+Sec-WebSocket-Protocol: station-stream.v3
+SPKI SHA256: bcd134d59fcdbb35e0343c86d31a666cc95cf158d70b27aceceefd19158d072f
+```
+
+CA pública, hostname e pin continuam obrigatórios. Authorization deve ser `StationRelay <ticket novo>`, com a prova vinculada ao ticket e ao GET/caminho canônico, sem query. Origem/pin de login, comandos, catálogo e relay legado permanecem os anteriores. Não trocar o pin global. **Na produção, atualizar conjuntamente o URI multiplayer v3 e sua fábrica TLS, em todos os owners que abrem essa conexão.** A R141 e a estável R143 ainda usam a rota antiga para multiplayer. Preservar callbacks, READY/ACK, geração, replay, janelas, tempos, protocolo, HLE e DEX35/opções R140. Usar a estável R143 real (APK508480e3, fonte26257869) como base, preservando também os parsers multitap e a seleção SNES de três a cinco jogadores já corrigidos; fontes R77 servem apenas como referência da autoridade, não como receita de APK. Se a alteração entrar nos fingerprints dos owners independentes, renovar pelo fluxo vigente, entregar o kit privado e manter os modos já revisados; não reutilizar markers de outro APK. Em falha/reconexão, usar ticket novo pelo fluxo existente, preservando a mesma geração válida; nunca reaproveitar um ticket consumido em outra origem.
+
+O cadastro de prioridade usa somente o socket IP/porta do Nginx, não recebe credenciais e não substitui a autorização da API. Uma resposta HTTP recusada fecha o keepalive para impedir que aquela conexão seja reutilizada como download prioritário. Falha do auxiliar de QoS mantém a autorização obrigatória e permite continuar pelo proxy. `X-Station-Qos: 1` confirma o cadastro; não é requisito de autorização nem READY. Túneis antigos multiplexam outros serviços e compartilham a classe interativa; a partida direta possui identificação própria.
+
+**Provas concluídas:** oito testes de configuração/segurança; Nginx real com TLS, ida/volta binária e falha do auxiliar; quatro cenários de filas Linux em namespaces isolados, com empréstimo da sobra, preservação da reserva de download sob carga de jogo e ramo LAN; duas conexões WSS na API de produção com licenças temporárias, tickets e provas válidas, prioridade confirmada, PING/PONG e recusa de ticket consumido. As identidades temporárias foram removidas e as licenças reais preservadas. Não é prova de gameplay Android. Nova medição registrou 91,066 Mbps de download, 24,704 Mbps de upload e pico de latência sob envio 45,237 ms; a anterior registrou 168,937 ms. O servidor de teste não foi confirmado idêntico: não atribuir uma razão causal de melhora a essa comparação. Os tetos são ajustáveis por medição.
+
+[Recibo de servidor e testes](network-qos/server-return.json). Código operacional completo no servidor: `ops/station-network-qos`. Retomar testes físicos da rota direta depois que a produção a incorporar, com APK igual nos aparelhos. Os relatos positivos de Top Gear 3000 VS3 e Bomberman na R143 estão preservados no histórico; não equivalem à validação Android desta nova rota. Não reaplicar o instalador: `/mnt/DADOS/station-network-qos-20261013/applied.json` existe.
 
 ## Histórico preservado
 

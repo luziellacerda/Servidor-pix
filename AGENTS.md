@@ -1,3 +1,9 @@
+# R144 visual: retorno de rede recebido, rota futura pendente
+
+Ler r144/STATUS e o mesmo handoff. A fonte executável R144 1ac3f7d permanece visual; o retorno QoS/relay direto é documental, sem implementação dessa rota no APK atual. Teste físico visual pendente e A56 ainda com recusa de espaço na terceira tentativa. Preservar histórico do servidor, mas não iniciar mudança de rede por esta etapa de design. R143 estável e ponteiros intactos.
+
+## Histórico preservado
+
 # Terceira tentativa R144: armazenamento ainda insuficiente no A56
 
 Ler o mesmo handoff e r144/STATUS.json. Antes da terceira tentativa, o A56 estava ocioso e dispunha de aproximadamente 6,88 GB livres. O Android voltou a recusar a atualização com INSTALL_FAILED_INSUFFICIENT_STORAGE. Não houve confirmação de instalação da R144, desinstalação ou limpeza de dados. O último APK conferido antes desta tentativa era a R143. É necessário liberar mais espaço interno ou usar outro telefone ocioso autorizado. Fonte congelada 1ac3f7d; APK 01427f4e. Visual físico pendente; carrossel usa paletas e salas só brilho. DEX35, multiplayer R143, HLE, saída, motores e downloads preservados. R143 continua estável: não mover tag, backup ou ponteiros permanentes. Kit independente R144 preparado, sem aplicação; nenhum deploy ou restart autorizado. Chaves, APK, capturas e registros brutos permanecem privados.
@@ -7,6 +13,12 @@ Ler o mesmo handoff e r144/STATUS.json. Antes da terceira tentativa, o A56 estav
 # R144 candidata visual — estável R143 preservada
 
 Ler mesmo handoff/r144/STATUS. Pedido atual: ondas por sistema no carrossel; correção explícita salas online mantêm RGB/design e apenas mais brilho. Fonte1ac3f7d/01427f4e, 6substituições/13854preservadas/39DEX. DEX35 integral, HTTPfamílias, g52/HLE/multitap/cores/controles/READY preservados. NativebaselineR133→R143 exato antes do overlay, 3faixas66vertices e cachecurto sem novos timers/heap; Java só12alphas/271classesexatas. R144 teste, não mover tag estávelR143 nem seus ponteiros permanentes. A56 antesR143 hash real; instalação em acompanhamento, não declarar concluída semrecibo. KitindependenteR1447b1cdb6c/mesmos78modos preparado, nãoaplicado; SNEScadastroexistente, não deployment/restart. ScriptsUSBexatos, manifestoR144. Fontes congeladas não editar; bytes/chaves/logs/serialprivados foraGit.
+
+## Histórico preservado
+
+# QoS e relay direto Station aplicados — 13/10/2026
+
+Ler o MESMO handoff e network-qos/server-return.json. Filas de saída ativas neste PC: WAN33 Mbps, enlace95 Mbps em NIC negociada100; reservas20/20/60 com empréstimo, LAN separada. Operator800down/~100up; medido92,034down/36,940up. O relay v3 direto no host downloads-station foi acrescentado deliberadamente, mantendo artefatos e bloqueando outras APIs. Dois tickets/provas reais via WSS e PING/PONG/prioridade passaram; replay recusado, duas licenças temporárias removidas, reais intactas. Oito testes e quatro cenários de filas reais isoladas passaram; leitor tc HTB compatível com texto. PID da API e master Nginx preservados. Política/timer ativos no boot. R141 e a estável R143 ainda apontam multiplayer à origem antiga; usar a base estável R143 e preservar os parsers/seleção multitap atuais. A produção deve escolher URI+pin apenas para v3 e preservar callbacks/HLE/DEX35 R140 e novos fingerprints/kit quando exigidos. Gameplay físico nesta rota direta não homologado; relatos da R143 continuam no histórico. Comparação Ookla posterior não teve servidor idêntico confirmado. Não reaplicar: /mnt/DADOS/station-network-qos-20261013/applied.json. Código completo em ops/station-network-qos no servidor, recibos no app; não espelhar operadores parcialmente nem importar chaves. Continuar manutenção horária por maintenance.lock, apenas para inputs novos.
 
 ## Histórico preservado
 
