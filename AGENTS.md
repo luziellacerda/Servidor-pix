@@ -1,3 +1,9 @@
+# Referência estável atual R143
+
+O proprietário autorizou salvar como estável e backup completo deste ponto em 13/10/2026. Tag/ramo `estavel-station-r143-20261013`; ler checkpoint, manifesto e restauração. Fonte executável congelada `26257869b59af8ecea44932ab287705990a9acbe`, APK `508480e3671ae924f037bd32f6d71efda7a9d905c45c7b2571bd9f219add83d4`. Top Gear 3000 VS3 e Bomberman positivos por relato humano; limites no checkpoint. g52 R143; A56/Edge última R141. SNES cadastro atual; kit independente R143 ainda não aplicado. Não mover tags históricas, alterar receitas congeladas ou resolvedores release antigos. CURRENT/ATUAL apontam R143 após backup verificado; a receita/BAT R143 é necessária porque compile_current só suporta até R134. Todas as fontes completas, donor R142, ferramentas, autoridade original privada e evidências estão no checkpoint completo F existente. Nenhum deploy/restart ou APK novo nesta promoção.
+
+## Histórico preservado
+
 # R143 — Bomberman também OK no relato humano
 
 Mantenedor confirmou Bomberman após Top Gear 3000 Corrida VS3. Seleção anterior era Super Bomberman 3; título jogado, modo e número de participantes não repetidos no novo relato. Ler r143/evidence/bomberman-human-result.json; não inferir quatro/cinco jogadores ou todas as edições. Mesmo APK/fonte/motores; apenas registro documental, sem nova compilação ou cadastro aplicado.

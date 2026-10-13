@@ -1,3 +1,9 @@
+## R143 promovida a estável pelo proprietário em 13/10/2026
+
+Tag e ramo `estavel-station-r143-20261013`. [Checkpoint completo](estavel-station-r143-20261013/README.md) fixa fonte/APK, histórico, recibos e retorno. Top Gear VS3 e Bomberman confirmados por relatos; quatro/cinco telefones e kit independente R143 permanecem pendentes. Backup completo do ponto na raiz F existente; ponteiros permanentes promovidos pelo procedimento verificado. Nenhum novo código/APK/deploy por esta promoção.
+
+## Histórico preservado
+
 ## R143 — Bomberman também funcionou no teste relatado, 13/10/2026
 
 O mantenedor confirmou “bom ber man tabem ok” após o sucesso de Top Gear 3000 com três jogadores. Registrar um segundo resultado positivo de jogo, agora para Bomberman. A captura anterior mostrava Super Bomberman 3 selecionado na sala; o relato atual não repetiu o título exato, modo ou quantidade de participantes. Não atribuir automaticamente três/quatro/cinco jogadores a este novo resultado. [Recibo do relato e limites](r143/evidence/bomberman-human-result.json).

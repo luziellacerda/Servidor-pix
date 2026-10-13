@@ -37,7 +37,7 @@
   "serverApplied": false,
   "apiDeployed": false,
   "apiRestarted": false,
-  "permanentPointersPromoted": false,
+  "permanentPointersPromoted": true,
   "privateKitSha256": "a4ba210580ea68beb0086c2c986c6a884e888a1e9ad599bd7e9d9ae33364f606",
   "privateKitBytes": 12161998,
   "privateKitFiles": 38,
@@ -62,5 +62,9 @@
   "humanResultReceipt": "evidence/three-player-human-result.json",
   "bombermanGameplayReportedSuccessful": true,
   "bombermanHumanResultReceipt": "evidence/bomberman-human-result.json",
-  "bombermanParticipantCountReconfirmed": false
+  "bombermanParticipantCountReconfirmed": false,
+  "stableDesignatedByOwner": true,
+  "stableTag": "estavel-station-r143-20261013",
+  "stableCheckpoint": "docs/station-android/estavel-station-r143-20261013",
+  "completeBackupRequested": true
 }

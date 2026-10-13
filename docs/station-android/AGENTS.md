@@ -1,3 +1,9 @@
+# Referência estável R143 aprovada em 13/10/2026
+
+Tag e ramo `estavel-station-r143-20261013` no app e neste handoff. Ler `estavel-station-r143-20261013/README.md`, manifesto, estado completo e restauração. Mesmo APK R143 `508480e3`, fonte executável `26257869`; g52 instalado, A56/Edge30 última R141. Top Gear 3000 VS três participantes e Bomberman OK por relatos do mantenedor, com limites nos recibos. Backup completo do ponto na raiz F existente. SNES conserva registro; kit R143 dos quatro owners independentes preparado, ainda não aplicado. Não reaplicar R141 nem implantar/reiniciar API por promoção Git. Dados/licenças/contratos/motores e demais produtos preservados. Receitas e recibos históricos congelados permanecem intactos; suas flags refletem o momento em que foram criados.
+
+## Histórico preservado
+
 # Três telefones na mesma R141 — 13/10/2026
 
 Moto g52, Samsung A56 e Motorola Edge30 agora com APK R141/b5a76023 exato, fonte executável240b7c05 congelada. Edge30 atualizado da DIAG5aaa: hash/UID/dados/primeira instalação preservados e versão temporária retirada, sem recompilar ou alterar lógica. Ler r141/STATUS e evidence/installation-edge30.json no mesmo handoff. Não confundir instalação com cadastro aplicado ou gameplay; usar somente retorno e testes reais. Fonte e ponteiros de recuperação intactos; binários/seriais/logs privados foraGit.
