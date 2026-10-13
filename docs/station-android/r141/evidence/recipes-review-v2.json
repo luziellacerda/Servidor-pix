@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 2,
+  "date": "2026-10-13",
+  "scope": "Independent read-only review after the first real R141 helper compilation found incompatible APIs in the pinned reduced APKtool",
+  "priorReviewPreserved": "work/r141-recipes-read-only-review.json",
+  "productFilesModifiedByReviewer": false,
+  "compiledByReviewer": false,
+  "recipesExecutedByReviewer": false,
+  "adbUsed": false,
+  "result": "No material preservation defect found in the corrected helper snapshot; actual assembly remains a build gate",
+  "firstAttempt": {
+    "sourceCommit": "b9241af1ed6aa2177eb0229737db8a3e4c0daa6b",
+    "failedStage": "Host helper javac API compatibility against the actual reduced APKtool3.0.3",
+    "productiveHttpJavaAndD8OverlayPassedPerRoot": true,
+    "noApkBuiltOrInstalledFromFailedAttempt": true,
+    "priorStaticReviewDidNotEstablishApiCompatibility": true
+  },
+  "reviewedSnapshot": {
+    "recipe/ScopedHttpDex.java": "4635362cc338c64fca39334f862edc93ba98c190504ad0b2c2669011825ad1bc",
+    "recipe/common.py": "6c783e45834f34310fae21429f2df48e5da7f2daa7817fd4f31d8295d64480cb",
+    "recipe/build_dex.py": "2fc72122b82d386e811b53b40ea059631e911dbe33313b95dda874076f84e347",
+    "recipe/build_identity.py": "874c1ee9a2d08ed350ce9bde230109a11720c8233dc354874ac3e240b7249245",
+    "recipe/assemble_apk.py": "0fbbf7071013835d4782e7129bce5bd030f5d7ac72afcd2cf326bd9ce375de5e",
+    "recipe/verify_apk.py": "7680852e336c509cb72102d63797c92a8185cd62638d9af97d7b1556a11e2997",
+    "java/org/emulationstation/frontend/station/StationHttp.java": "15b1c9231cb195e6682159fbdfd661b229444c35cba713cf7662c65250eefa0b",
+    "java/org/emulationstation/frontend/station/StationDownloadOrigin.java": "732f5fb64cd1c079f6250739810f3cedb30c44e0494d4e2436d025b9cbca8ad3"
+  },
+  "actualReadOnlyChecks": {
+    "reviewedProductiveJavaHashes": 2,
+    "retainedDependencyHashes": 14,
+    "passedHashChecks": 16,
+    "failedHashChecks": 0,
+    "restorationSource": "integration/core-options-binding-r140-20261013/recipe/AssembleScopedPartition.java",
+    "restorationSourceSha256": "5ea794aad4cb177080e331b09d449419e352020ac61a6b9ea4194e32b4b1b022",
+    "restorationMethodsExtractedAndComparedByteExact": true,
+    "restorationMethodsSha256": "1a71007e9b9bce7acf35a848cd41172cebff9d166c24bca240a4308eda7ba2d1",
+    "restorationHashMatchesProvenance": true,
+    "apktoolJarActuallyReadSha256": "dbf930b076c6b9be08d57c449cacefc3bdd6b71ebd59b3066fc0e1f5b14f9423",
+    "javaClassApiInspection": "JDK17 javap read the actual pinned APKtool classes, without compilation or recipe execution",
+    "confirmedDeclaredApi": [
+      "DexBackedDexFile(byte[],int)",
+      "DexBackedDexFile.classCount/classStartOffset/hiddenApiRestrictionsOffset",
+      "DexBackedClassDef(DexBackedDexFile,int,int)",
+      "SmaliBuilder(int) and buildFile(File,DexBuilder)",
+      "DexBuilder(Opcodes) and internArrayEncodedValue(ArrayEncodedValue)",
+      "FileDataStore.raf"
+    ]
+  },
+  "correctedHelperReview": {
+    "decoder": "Uses the pinned fork constructor and explicit class table iteration; rejects hidden API metadata and duplicate types",
+    "scopeSelection": "Pinned271-type donor, exact six-type donor HTTP family and seven-type overlay; ResponseBody is explicitly replaced by the donor object; only five HTTP types may change and Origin is the single added type",
+    "encoder": "Renders272 selected canonical smali definitions into a newly created private selected-smali directory; encodes through the same SmaliBuilder28/DexBuilder Opcodes28 API already used in R140",
+    "restorationCoverage": "Iterates every donor type except MODIFIED5, including ResponseBody; missing unrelated class aborts",
+    "restorationRestriction": "Checks the static field tuple, flags, annotations, hidden API restrictions and initial values. Restores only an exact prefix followed by explicitly trimmed default values; changed values/non-default suffix abort. Retains parsed fields/methods/annotations and only reinserts the original initializer array",
+    "ownership": "Replaces the exact interned BuilderClassDef and resets sortedClasses before writing; output store closes its raf using the real fork API",
+    "postwriteGate": "Rereads the produced DEX, demands the closed272-type set and byte-equal canonical representations for all266 retained types including Body; receipt records old/new/retained class hashes and restoration count",
+    "productiveDownloadSourcesChangedByCorrection": false,
+    "commonBuildIdentityAssemblyFinalVerifierChangedByCorrection": false
+  },
+  "preservationGuardsStillRequired": {
+    "exactDonorR140": "61e873e7bbd75a13fbd0d55515a3726f4debd8984cc0fe8f9d73401e0897792c",
+    "correctedDex35": "49f381dc3ef375797d2db56b25a8a6c86a8150c2515ce115f4639b7bb243478e",
+    "otherDexByteExact": 39,
+    "retroArchRuntime": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+    "retroArchDescriptorsExact": 9,
+    "boundPayloads": 345,
+    "renewedIndependentEngineIdsOnly": 4,
+    "replacedZipEntriesOnly": 5,
+    "totalZipEntries": 13860,
+    "noAddedOrRemovedZipEntries": true,
+    "noRelayLoggingReadyRetryAuthChange": true
+  },
+  "limits": [
+    "No helper compilation, DEX assembly or final APK verification was executed by this reviewer",
+    "Real API inspection establishes the referenced declared API shapes; root must still qualify javac and actual encoder output using a newly frozen source commit and fresh build directory",
+    "The produced DEX must pass all266 final canonical comparisons, not merely compile successfully",
+    "The original v1 static review remains historical and must not be presented as successful build qualification",
+    "No Android gameplay, download destination or speed conclusion follows from this review"
+  ]
+}

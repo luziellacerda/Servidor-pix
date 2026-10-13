@@ -1,0 +1,151 @@
+{
+  "schema": "station.r141.compiled-preservation-review.v1",
+  "passed": true,
+  "reviewedAtUtc": "2026-10-13T19:44:04.634158+00:00",
+  "sourceCommit": "240b7c0504252e542975089f585bd67d5264f074",
+  "baselineApkSha256": "61e873e7bbd75a13fbd0d55515a3726f4debd8984cc0fe8f9d73401e0897792c",
+  "finalApkSha256": "b5a76023860bceb2aa11c946c8003fa2d92951e700dbde3a498f8316857670d4",
+  "finalApkBytes": 2715008015,
+  "mapComparisonScope": "two real assembly SHA maps; not a third independent full-APK rehash",
+  "comparedEntryHashes": 13860,
+  "preservedEntryCount": 13855,
+  "replacedEntries": [
+    "assets/station-online/engines.json",
+    "classes28.dex",
+    "lib/arm64-v8a/libstation_dolphin_runtime.so",
+    "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+    "lib/arm64-v8a/libstation_psx_online.so"
+  ],
+  "addedEntries": [],
+  "removedEntries": [],
+  "selectedActualFinalEntrySha256": {
+    "assets/station-online/engines.json": "b39731c458445055f7272817233111aa0a66fa3c0191e2c281d4b85c72174737",
+    "classes28.dex": "534653399c359834c04733a18220524cfd95480f23e0f07d49babcc0ef2eb5bd",
+    "classes35.dex": "49f381dc3ef375797d2db56b25a8a6c86a8150c2515ce115f4639b7bb243478e",
+    "lib/arm64-v8a/libstation_dolphin_runtime.so": "0f8cb2115a397895b3f201da64d79e1897eca16440d0687eddb4792f32164639",
+    "lib/arm64-v8a/libstation_mupen64plus_runtime.so": "6638adec6f02917243f5a84c0d0a88d966254440fee369c700020fd9a4587b56",
+    "lib/arm64-v8a/libstation_psx_online.so": "e990120d57cc8fac22a5f9809d6289e2f630c732a2341371c50afafb496bff20",
+    "lib/arm64-v8a/libstation_retroarch.so": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378"
+  },
+  "selectedActualEntriesRead": 7,
+  "preservedDexPartitions": 39,
+  "preservedDex35Sha256": "49f381dc3ef375797d2db56b25a8a6c86a8150c2515ce115f4639b7bb243478e",
+  "preservedR140OnlineBinding": true,
+  "preservedRetroArchSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "preservedRetroArchDescriptors": 9,
+  "dex28": {
+    "sha256": "534653399c359834c04733a18220524cfd95480f23e0f07d49babcc0ef2eb5bd",
+    "originalClasses": 271,
+    "finalClasses": 272,
+    "preservedClasses": 266,
+    "responseBodyPreserved": true,
+    "responseBodyCanonicalSha256": "284a735a30b0cd01a7766d2261b24c0a24680b3ff54e0d6dcd26881c85d0b5df",
+    "restoredInitializerArrays": 0,
+    "addedTypes": [
+      "Lorg/emulationstation/frontend/station/StationDownloadOrigin;"
+    ],
+    "removedTypes": [],
+    "changedTypes": [
+      "Lorg/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda0;",
+      "Lorg/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda1;",
+      "Lorg/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda2;",
+      "Lorg/emulationstation/frontend/station/StationHttp$1;",
+      "Lorg/emulationstation/frontend/station/StationHttp;"
+    ],
+    "proofScope": "actual postwrite compiler class projections cross-checked; reviewer did not independently disassemble again"
+  },
+  "sourceFilesChecked": 13,
+  "retainedDependenciesChecked": 14,
+  "exactReviewedHttpSources": true,
+  "sharedOwnerCoreControllerOptionsPolicyEqual": true,
+  "wrapperReview": {
+    "psx": {
+      "policyEqual": true,
+      "payloadCount": 345,
+      "onlyChangedPayload": "classes28.dex",
+      "dex35Bound": true,
+      "sourceChainAppendOnly": true,
+      "runtimeSha256": "e990120d57cc8fac22a5f9809d6289e2f630c732a2341371c50afafb496bff20",
+      "fingerprintSha256": "e921e49466c45c6bbbf96da21f9f78502c55a06876418302d425e38ba855eed3"
+    },
+    "n64": {
+      "policyEqual": true,
+      "payloadCount": 345,
+      "onlyChangedPayload": "classes28.dex",
+      "dex35Bound": true,
+      "sourceChainAppendOnly": true,
+      "runtimeSha256": "6638adec6f02917243f5a84c0d0a88d966254440fee369c700020fd9a4587b56",
+      "fingerprintSha256": "05f2d45ccd2b1cfd6bba6e0e0006a19459674bf6b2080953308597ccc69d91aa"
+    },
+    "dolphin": {
+      "policyEqual": true,
+      "payloadCount": 345,
+      "onlyChangedPayload": "classes28.dex",
+      "dex35Bound": true,
+      "sourceChainAppendOnly": true,
+      "runtimeSha256": "0f8cb2115a397895b3f201da64d79e1897eca16440d0687eddb4792f32164639",
+      "fingerprintSha256": "7f5a50db3ce0810271992a2516d65e033a6cb736e2484dabadccb6f5d4e501bd"
+    }
+  },
+  "renewedIndependentEngines": [
+    {
+      "platform": "psx",
+      "engineId": "pcsx-rearmed-ff81ed17-player-v3-e990120d57cc",
+      "runtimeSha256": "e990120d57cc8fac22a5f9809d6289e2f630c732a2341371c50afafb496bff20"
+    },
+    {
+      "platform": "n64",
+      "engineId": "mupen64plus-ae-33bf7021-n64-v3-6638adec6f02",
+      "runtimeSha256": "6638adec6f02917243f5a84c0d0a88d966254440fee369c700020fd9a4587b56"
+    },
+    {
+      "platform": "gamecube",
+      "engineId": "dolphin-5102a033-gamecube-v3-0f8cb2115a39",
+      "runtimeSha256": "0f8cb2115a397895b3f201da64d79e1897eca16440d0687eddb4792f32164639"
+    },
+    {
+      "platform": "wii",
+      "engineId": "dolphin-5102a033-wii-v3-0f8cb2115a39",
+      "runtimeSha256": "0f8cb2115a397895b3f201da64d79e1897eca16440d0687eddb4792f32164639"
+    }
+  ],
+  "observedSignerProof": {
+    "passed": true,
+    "originalCertificate": true,
+    "v2": true,
+    "v3": true,
+    "zipAlignment16KiB": true,
+    "verificationScope": "actual linked final verification receipts; no third signature command executed"
+  },
+  "receiptSha256": {
+    "r140Assembly": "9873b08093cffcf9b0a9741f252b3311cb9ae5953f065b5a31a17244cdfe5a7b",
+    "r140Final": "331e07a45c3563748555245598993f1a7cf7f12b0fbf8d7729c13bd83a96013a",
+    "r141Dex": "3309745d6e467f08ca9c629dcc508032617ff987c2f5cfabe1368a90ddf5d786",
+    "r141Classes": "4d2bd668095dbc3ff8e9c02fb26d04800523e7c9ab4622b1cf4802e95a600d19",
+    "r141Identity": "130c20e30c1c07bb0ed03c0e91dae60b0933b539d3baecb0795000262bb1e308",
+    "r141Assembly": "5b0b3721dc6b3aa0cc2552e77b68c13d6c8e20d810e63fc65a90a9ca0d07b5b4",
+    "r141Final": "5be0925783885fbd39c7a3554dd7b1f0238c3f322b5842cced282f345e0165a6",
+    "r141Copy": "490ca9603c3a294de7ffc8acdde09c55e0e409b9454294af420b7376309c4574"
+  },
+  "unexpectedPreservationDifferenceFound": false,
+  "reviewerGitUsed": false,
+  "reviewerAdbUsed": false,
+  "reviewerCompiled": false,
+  "reviewerSigned": false,
+  "reviewerInstalled": false,
+  "reviewerModifiedSource": false,
+  "serverRegistrationForNewIdsVerified": false,
+  "physicalDownloadValidated": false,
+  "speedImprovementMeasured": false,
+  "remainingRisks": [
+    "The four newly compiled independent IDs still require an exact server registration receipt",
+    "Android authorized download/cancel/regrant and client Internet speed remain physical acceptance work",
+    "Preservation does not itself validate Top Gear gameplay or synchronization"
+  ],
+  "limits": [
+    "All-entry preservation conclusion relies on separately produced real assembly/final verification maps and their receipt SHA links",
+    "This reviewer read seven selected final APK entries and both sets of actual wrapper fingerprints; no complete APK hash repeated",
+    "Canonical 266-class preservation is the actual compiler postwrite proof cross-check, not a new independent DEX decoder execution",
+    "Git source freeze is reported by the build receipts; current bytes and dependency pins were checked without a new Git command"
+  ]
+}

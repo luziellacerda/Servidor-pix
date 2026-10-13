@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "revision": "R141",
+  "sourceCommit": "b9241af1ed6aa2177eb0229737db8a3e4c0daa6b",
+  "recordedUTC": "2026-10-13T19:37:01.835582+00:00",
+  "status": "failed-before-APK",
+  "stage": "host-ScopedHttpDex-compilation",
+  "productiveJava8Compiled": true,
+  "closedD8OverlayCompiled": true,
+  "scopedDexProduced": false,
+  "apkAssembled": false,
+  "signed": false,
+  "installed": false,
+  "failure": "Pinned APKtool reduced API does not expose full upstream DexPool/decoder methods used by the helper",
+  "correctionScope": "Only compiler helper API compatibility and preservation of explicit default initializer arrays; exact reviewed HTTP Java sources and app donor remain unchanged",
+  "historicalOutputPreserved": true,
+  "requiresNewSourceFreezeBeforeRetry": true,
+  "phoneDataChanged": false
+}

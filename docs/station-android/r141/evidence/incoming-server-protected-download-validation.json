@@ -1,0 +1,17 @@
+{
+  "authorizedCompleteDownloadVerified": true,
+  "artifactHashVerified": true,
+  "artifactBytes": 4194304,
+  "platform": "snes",
+  "publicCaHostnameAndSpkiVerified": true,
+  "foreignSessionRefused": true,
+  "grantReuseRefused": true,
+  "abandonedStreamGrantConsumed": true,
+  "freshAuthorizationAfterAbandonedStreamVerified": true,
+  "expiryRefused": true,
+  "socketDestination": "local-production-vhost",
+  "customerWanSpeedMeasured": false,
+  "androidDeviceTestCompleted": false,
+  "syntheticLicensesRemoved": true,
+  "realLicensesPreserved": true
+}

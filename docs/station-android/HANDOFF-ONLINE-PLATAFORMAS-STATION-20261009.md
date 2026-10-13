@@ -1,3 +1,19 @@
+## R141 concluída no app: downloads diretos com reparos R140 preservados — 13/10/2026
+
+Fonte240b7c05, APKb5a76023/2.715.008.015 bytes, assinatura original v2/v3/16 KiB e todas13.860 entradas conferidas. Moto g52 atualizado, SHA integral/UID/dados/primeira instalação preservados. Download Android autorizado200/artefato200 concluiu:546.776.387bytes/75.288ms (~7,26MB/s), preparação5.862ms, INSTALL_FINISHED e serviço de download ausente depois. Operador percebeu mais que o dobro da velocidade; comparação controlada antiga/nova não foi executada. Fonte seleciona o host direto; Host/socket independente não foi observado. Leia [resultado/contratos/evidências](r141/README.md).
+
+Cinco substituições,13.855entradas/39DEX preservadas; DEX35 R14049f381 e as duas flags, runtimeae72/noveRetro, HLE/cores/cache/FPS/controles/READY exatos. BAT/PowerShell preservados e manifestoR141. Kit privado entregue no USB SERVIDOR LER:12.842.618bytes/SHAd8d9746d,6libs/20deps/4novosIDs/incomingv3/referências78modos. Esses quatro IDs aguardam cadastro real próprio, preservando todos os prefixos e aprovações existentes; não usar recibo e696 para esta combinação. Oito IDs RetroArch/SNES existentes mantidos. Nenhuma API reiniciada/deploy ou cadastro aplicado por este PC. Edge30 últimaDIAG, A56R135; R139 segue referência de recuperação.
+
+Não foi ampliada a lógica de partidas neste setor. Relay409 sem código conhecido e testes de gameplay/perda de sinal continuam nas pendências anteriores, para retomada posterior conforme o mantenedor. Download Android cancelamento/regrant e ratio pareado de velocidade continuam sem teste nesta tentativa. Capturas brutas/binários/chaves/seriais fora do Git; documentação e receitas atuais nos dois repositórios.
+
+## Histórico preservado
+
+## R141 preparada: downloads diretos conservando os reparos R140 — 13/10/2026
+
+Retorno de downloads app4478e49/servidorc8817a2 lido junto ao retorno online app73a39fc/servidordceb9a4. APK USB e69616ee parte da R139 e retiraria DEX35 corrigida da R140; não foi instalado. A composição solicitada usa somente a origem HTTP revisada sobre o donor R14061e873e7, com DEX35 49f381dc exata. R140 está instalada no moto g52 e sua reconstrução foi preservada no backup F existente; Edge30 última R139-DIAG conhecida, A56 R135. Nova fonte R141 ainda na preparação, sem assinatura/instalação/cadastro. Cinco substituições/13.855 entradas preservadas, fila/cache/FPS/cores/HLE/READY exatos. Quatro novos IDs independentes da combinação exigem bytes e recibos próprios; cadastro do e696 não se aplica à R141. Leia [estado, contratos, provas e pendências](r141/README.md). Download Android e velocidade pendentes. Relay409 permanece sem motivo; proposta de captura segura separada, sem mudança de proteção ou logging nesta composição.
+
+## Histórico preservado
+
 ## Diagnóstico USB de Top Gear recebido e conferido — 13/10/2026
 
 O pacote `Diagnostico-TopGear3000-R139-20261013.zip` foi recebido: 53.620 bytes, SHA256 `43ed435a1d0540d440f28b53de1403e305819ddf3e8e424f0dba156ab4387e9a`. Os onze arquivos listados conferem com o manifesto. Moto g52 e Edge 30 têm capturas de VS e Campeonato: quatro tentativas separadas, cada aparelho como anfitrião, sem captura simultânea de uma mesma rodada. [Diagnóstico e cruzamento com a API](r139/server-phone-diagnostic.json) · [Retorno consolidado](r139/server-return.json).
