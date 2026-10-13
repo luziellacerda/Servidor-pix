@@ -35,5 +35,13 @@
   ],
   "actualAuthorizedDeviceDownloadVerified": false,
   "speedImprovementMeasured": false,
-  "originalSigningKeyPending": true
+  "originalSigningKeyPending": false,
+  "signedApkSha256": "e69616ee6377920f808f3b5a267f5592ffff9ae70c2bbe2063c6902cd903c02a",
+  "appSigned": true,
+  "renewedNativeOwnersRegistered": true,
+  "renewedOwnerSignedBindingsVerified": true,
+  "authorizedProductionVhostDownloadVerified": true,
+  "grantReuseForeignSessionAndExpiryRefused": true,
+  "usbCopyVerified": true,
+  "installed": false
 }

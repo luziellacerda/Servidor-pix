@@ -1,6 +1,7 @@
 # Origem direta dos downloads Station — 13/10/2026
 
-**Servidor aplicado e HTTPS conferido; atualização Android ainda sem assinatura ou instalação.**
+**Servidor aplicado e HTTPS conferido; atualização Android assinada com a chave original
+e identidades v3 cadastradas. Instalação no aparelho e teste de velocidade pendentes.**
 
 Foi criado `downloads-station.lzgames.com.br`, registro A somente DNS, TTL 60,
 apontando inicialmente para o IPv4 público informado pelo operador. O encaminhamento
@@ -54,15 +55,32 @@ um GET já consumido em outra origem; obter autorização nova após falha de tr
 O APK R139 atualmente instalado continua utilizando a origem antiga. O overlay
 `integration/station-direct-download-20261013` no Git do app seleciona esta origem
 e seu pin somente para o GET de artefato; login/catálogo/capas/comandos preservam a
-origem e o pin atuais. Candidata unsigned preparada, mantendo 39 DEX e 266 classes
-da partição alterada. Assinatura original, instalação preservando dados e teste físico
-do download/velocidade ainda dependem da chave do operador. Não promover binário
-unsigned, misturar identidades ou presumir ganho de velocidade com os testes HTTP.
+origem e o pin atuais. Candidata final assinada, mantendo 39 DEX e 266 classes da
+partição alterada. APK SHA256
+`e69616ee6377920f808f3b5a267f5592ffff9ae70c2bbe2063c6902cd903c02a`,
+2.713.648.143 bytes, certificado original v2/v3 e alinhamento 16 KiB conferidos.
+Todas as 13.860 entradas foram verificadas após assinatura. Instalação preservando
+dados e teste físico do download/velocidade ainda estão pendentes; não presumir ganho
+de velocidade com os testes HTTP.
 
 As quatro identidades PSX/N64/GameCube/Wii precisam renovar seus vínculos de bundle
 porque DEX28 faz parte do fingerprint; cores, opções e controladores permanecem iguais.
-O registro administrativo v3 dessas novas identidades ainda não foi realizado.
-Preservar todos os registros atuais e qualificar o APK final antes desse procedimento.
+O registro administrativo v3 foi aplicado pelo registrador vigente, sem deploy ou
+restart. Seis bibliotecas reais e 20 dependências distintas do APK assinado foram
+conferidas. Acrescentados quatro IDs e 78 vínculos dos mesmos modos já aprovados;
+31 motores, 11.448 perfis e 6.587 modos anteriores preservados. Totais: 35 motores,
+11.526 perfis e 6.665 modos. Respostas assinadas locais/públicas para N64/GameCube/Wii
+e seis recusas de admissão indevida passaram. Catálogo46, configurações, identidades
+de conteúdo, licenças reais, DLL e processo preservados. Zero aprovações HLE PSX novas.
+Não é prova de gameplay. [Recibo sanitizado](registration.json).
+
+O vhost de produção foi verificado com duas sessões sintéticas/provas reais: download
+completo de 4 MiB e SHA correto, recusa de sessão estrangeira, reuso e expiração,
+fechamento de leitura parcial e nova autorização válida. CA pública, hostname e pin
+preservados; sessões sintéticas removidas, licenças reais intactas. A conexão TLS
+chegou ao vhost local, sem medição de Internet do cliente ou execução Android.
+[Recibo sanitizado](protected-download-validation.json). APK e instalador entregues
+no pendrive, com SHA conferido na cópia e ejeção segura; instalação física pendente.
 
 ## Operação
 
