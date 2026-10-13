@@ -1,0 +1,25 @@
+[Unit]
+Description=Station direct game connection priority
+Requires=station-network-qos.service
+After=station-network-qos.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/station-network-qos/priority.py
+Restart=on-failure
+RestartSec=2s
+RuntimeDirectory=station-network-qos
+RuntimeDirectoryMode=0755
+RuntimeDirectoryPreserve=restart
+UMask=0007
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_CHOWN
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+
+[Install]
+WantedBy=multi-user.target
