@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "preparedUTC": "2026-10-13T18:40:14.185386+00:00",
+  "file": "Diagnostico-TopGear3000-R139-20261013.zip",
+  "sha256": "43ed435a1d0540d440f28b53de1403e305819ddf3e8e424f0dba156ab4387e9a",
+  "bytes": 53620,
+  "usbFolder": "SERVIDOR LER",
+  "privateUsbCopyHashVerified": true,
+  "existingFBackupCopyHashVerified": true,
+  "bothPhoneModelsAndBothModesCaptured": true,
+  "simultaneousPairCapture": false,
+  "rawOtherAppLogsDelivered": false,
+  "containsApkRomBiosKeyOrPhoneSerial": false,
+  "requestCaptureDelivered": true,
+  "gameplayFixedOrValidated": false,
+  "apiDeployedOrRestarted": false,
+  "deliveredUTC": "2026-10-13T18:42:41.734605+00:00"
+}
