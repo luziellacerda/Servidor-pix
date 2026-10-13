@@ -1,0 +1,293 @@
+{
+  "status": "server-applied-app-route-pending",
+  "appliedAtUtc": "2026-10-13T22:20:11.790193+00:00",
+  "verifiedAtUtc": "2026-10-13T22:42:38.477121+00:00",
+  "qos": {
+    "active": true,
+    "interface": "enp6s0",
+    "linkMbps": 95,
+    "wanMbps": 33,
+    "gameReservedPercent": 20,
+    "otherReservedPercent": 20,
+    "downloadReservedPercent": 60,
+    "idleCapacityBorrowing": true,
+    "classes": [
+      {
+        "handle": "53:202",
+        "rateMbps": 12.4,
+        "ceilMbps": 95.0,
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "lended": 0,
+        "borrowed": 0
+      },
+      {
+        "handle": "53:101",
+        "rateMbps": 6.6,
+        "ceilMbps": 33.0,
+        "bytes": 15838,
+        "packets": 174,
+        "drops": 0,
+        "overlimits": 0,
+        "lended": 174,
+        "borrowed": 0
+      },
+      {
+        "handle": "53:203",
+        "rateMbps": 37.2,
+        "ceilMbps": 95.0,
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "lended": 0,
+        "borrowed": 0
+      },
+      {
+        "handle": "53:10",
+        "rateMbps": 33.0,
+        "ceilMbps": 33.0,
+        "bytes": 95462,
+        "packets": 326,
+        "drops": 0,
+        "overlimits": 0,
+        "lended": 0,
+        "borrowed": 0
+      },
+      {
+        "handle": "53:1",
+        "rateMbps": 95.0,
+        "ceilMbps": 95.0,
+        "bytes": 95462,
+        "packets": 326,
+        "drops": 0,
+        "overlimits": 0,
+        "lended": 0,
+        "borrowed": 0
+      },
+      {
+        "handle": "53:20",
+        "rateMbps": 62.0,
+        "ceilMbps": 95.0,
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "lended": 0,
+        "borrowed": 0
+      },
+      {
+        "handle": "53:103",
+        "rateMbps": 19.8,
+        "ceilMbps": 33.0,
+        "bytes": 46002,
+        "packets": 68,
+        "drops": 0,
+        "overlimits": 0,
+        "lended": 48,
+        "borrowed": 0
+      },
+      {
+        "handle": "53:102",
+        "rateMbps": 6.6,
+        "ceilMbps": 33.0,
+        "bytes": 33622,
+        "packets": 84,
+        "drops": 0,
+        "overlimits": 0,
+        "lended": 76,
+        "borrowed": 0
+      },
+      {
+        "handle": "53:201",
+        "rateMbps": 12.4,
+        "ceilMbps": 95.0,
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "lended": 0,
+        "borrowed": 0
+      }
+    ]
+  },
+  "physicalLinkMbps": 100,
+  "directRelayUri": "wss://downloads-station.lzgames.com.br/v1/station/online/multiplayer/relay",
+  "spkiSha256": "bcd134d59fcdbb35e0343c86d31a666cc95cf158d70b27aceceefd19158d072f",
+  "signedWssTest": {
+    "passed": true,
+    "directWssAuthenticatedConnections": 2,
+    "subprotocol": "station-stream.v3",
+    "bothConnectionsPrioritized": true,
+    "ticketProofVerifiedByLiveApi": true,
+    "pingPongBothDirections": true,
+    "consumedTicketReplayRefused": true,
+    "tlsPublicCaHostnameAndSpkiVerified": true,
+    "physicalAndroidGameplayValidated": false,
+    "syntheticLicensesRemoved": true,
+    "realLicensesPreserved": true,
+    "stationPidPreserved": true
+  },
+  "kernelQualification": {
+    "classStatusCompatible": true,
+    "idle": {
+      "bulk": {
+        "bytes": 4898816,
+        "seconds": 4.0843491778941825,
+        "Mbps": 9.595
+      }
+    },
+    "sparse": {
+      "game": {
+        "bytes": 3152,
+        "seconds": 3.9995704639004543,
+        "latencyP95Millis": 0.1693840604275465,
+        "frames": 394,
+        "Mbps": 0.006
+      },
+      "bulk": {
+        "bytes": 4882432,
+        "seconds": 4.090700800064951,
+        "Mbps": 9.548
+      }
+    },
+    "busy": {
+      "bulk": {
+        "bytes": 3014656,
+        "seconds": 4.156520521035418,
+        "Mbps": 5.802
+      },
+      "game": {
+        "bytes": 2015232,
+        "seconds": 4.174895165953785,
+        "Mbps": 3.862
+      }
+    },
+    "lan": {
+      "bulk": {
+        "bytes": 19251200,
+        "seconds": 4.022139898966998,
+        "Mbps": 38.29
+      }
+    },
+    "passed": true,
+    "isolatedNamespaces": true,
+    "physicalPhonesOrInternetGameplay": false
+  },
+  "proxyQualification": {
+    "passed": true,
+    "actualNginxTlsTest": true,
+    "binaryRoundTrip": true,
+    "backendAuthPreserved": true,
+    "qosCannotReadAuthMaterial": true,
+    "forgedPriorityPeerHeadersOverwritten": true,
+    "refusalClosesConnection": true,
+    "qosFailurePreservesBackendAuthAndGameplay": true,
+    "artifactPreserved": true,
+    "hostnameMismatchRefused": true,
+    "unrelatedPathsRefused": 5,
+    "notAProductionGameTest": true
+  },
+  "unitTestsPassed": 8,
+  "publicBlockedPaths": {
+    "/": 404,
+    "/v1/station/catalog": 404,
+    "/v1/station/online/command": 404,
+    "/v1/station/online/relay": 404,
+    "/ready/station/online/multiplayer-diagnostics": 404,
+    "/__station_qos_mark": 404,
+    "/v1/station/online/multiplayer/relay?x=1": 404
+  },
+  "invalidTicket": {
+    "status": 401,
+    "connectionClose": true,
+    "directGamePriority": "1",
+    "code": "STATION_MULTIPLAYER_TICKET_INVALID"
+  },
+  "artifactRoute": {
+    "status": 404,
+    "connectionClose": true,
+    "directGamePriority": null,
+    "code": "STATION_GRANT_NOT_FOUND"
+  },
+  "stationPidPreserved": true,
+  "nginxMasterPreserved": true,
+  "androidRouteUpdated": false,
+  "physicalGameplayValidated": false,
+  "beforeCalibration": {
+    "tool": "Official Ookla CLI",
+    "success": true,
+    "downloadMbps": 92.034,
+    "uploadMbps": 36.94,
+    "ping": {
+      "jitter": 6.209,
+      "latency": 16.46,
+      "low": 10.034,
+      "high": 30.241
+    },
+    "downloadLatency": {
+      "iqm": 38.702,
+      "low": 15.122,
+      "high": 61.464,
+      "jitter": 2.925
+    },
+    "uploadLatency": {
+      "iqm": 35.973,
+      "low": 10.667,
+      "high": 168.937,
+      "jitter": 12.917
+    },
+    "serverCity": "Maceió",
+    "serverCountry": "Brazil",
+    "lossPercent": 0,
+    "notGameplay": true
+  },
+  "afterCalibration": {
+    "tool": "Official Ookla CLI",
+    "success": true,
+    "downloadMbps": 91.066,
+    "uploadMbps": 24.704,
+    "ping": {
+      "jitter": 7.9,
+      "latency": 14.696,
+      "low": 5.942,
+      "high": 33.29
+    },
+    "downloadLatency": {
+      "iqm": 28.219,
+      "low": 16.977,
+      "high": 42.239,
+      "jitter": 4.973
+    },
+    "uploadLatency": {
+      "iqm": 10.696,
+      "low": 4.131,
+      "high": 45.237,
+      "jitter": 6.213
+    },
+    "serverCity": "Maceió",
+    "serverCountry": "Brazil",
+    "lossPercent": 0,
+    "notGameplay": true,
+    "sameServerIndependentlyConfirmed": false
+  },
+  "comparisonWasNotControlledSameServer": true,
+  "appliedSourceSha256": {
+    "policy.py": "13549158348931210ee58e7489685d017d0a8c7779d0d1c3785ae243e9fdbcfb",
+    "test_policy.py": "26200cca5957ff5f923a68d0dcb92544206f6564f93796cbea3be617b156fd0d",
+    "priority.py": "56010f23fa7048d31f569e47e944d7df586f1e7ab9c1af01e7a808279baa913e",
+    "game.locations.conf": "42fb7bcee94d3196d5ff3b19b872842790efd4fd7ce7be798d7df89f3cb4f2f1",
+    "station-network-qos-check.timer": "bf7bd124fa9b94f74dac4ea952087acd00b49f194275449acfa1f67fac8113b9",
+    "game.proxy.conf": "36bce2ab788e946d5d94d0a075d446ba9fa0771c97cce7cc15327763bd4cf15d",
+    "station-network-priority.service": "ced545fbe31abd48bb6c39408ebd75b893a84358e4b1803723ab0037a9adc6ac",
+    "kernel_test.py": "0be46a285bf34f6c6a116df7304b6395c1e856e551c8d8bd386eae160fcec788",
+    "station-network-qos-check.service": "0f6555be3b2801f1098c427fbbe28b772ad2be4ae5864ca9c1959de4710db3d4",
+    "deploy.py": "e99a7050261aec2d10c55567e67ba1ff1993b07af93370aa0a91b98c1d518312",
+    "proxy_test.py": "1419fb4098e24b45758b361f3a7e5ffd57a37e955e91401defd467e8c214126f",
+    "station-network-qos.service": "a1deac39ef1160e4a3ecfe311ea99e68b108bd7b74980152e2455fbf177b6e1d"
+  },
+  "signedTestSourceSha256": "0ed127e6f5d5dcacbbfe7d3613972538082c1f872bdcf79cab216728fe1d81a5",
+  "stableBackupCommit": "35ec12ffd35cc9645e0758ba8cd5d0dac0e1f6b7"
+}

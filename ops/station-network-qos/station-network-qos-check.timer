@@ -1,0 +1,11 @@
+[Unit]
+Description=Check Station network queues after interface changes
+
+[Timer]
+OnBootSec=90s
+OnUnitActiveSec=30s
+AccuracySec=5s
+Unit=station-network-qos-check.service
+
+[Install]
+WantedBy=timers.target
