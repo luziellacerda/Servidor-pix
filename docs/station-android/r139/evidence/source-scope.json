@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "baselineSourceSha256": "e4811bef12aeacd07947e51badaf8341be6c12c347c4952a9334ba22e56342f2",
+  "candidateSourceSha256": "24420118e5ce94376b077051084a84d4c52f152d00b9e2330333896bced798fb",
+  "onlyProductiveFile": "frontend/drivers/platform_unix.c",
+  "files": {
+    "README.md": "d0a9460971f6dbd7e062d22d937c93dfc9a05cb02303d27e088f4d4680eb5bdc",
+    ".gitattributes": "308a40fa1d89ae5ea4390b4c9b46a0108b09f171f07898f25d451fa0c69c4e9f",
+    "recipe/patch_resource_lifecycle.py": "685de6c92972bdc7671cf36e6409f18b2bd111023f62a3419a75628775958cf1",
+    "recipe/test_resource_lifecycle.py": "3ac26e5a7bb4680ce52434aac0287db7d30f3bd3dd490aef696fa5114338b03a",
+    "recipe/test_recipe_path_guards.py": "bb871c9e31526a2d98c62a6263d17a67606520dde2259d21896a608b62dd480e",
+    "tests/resource_tls_harness.c.in": "4416c2c15215b85da301c0a89b6ec39eccc17d1f9d4f3f71c152d30616e64064",
+    "native/source/frontend/drivers/platform_unix.c": "24420118e5ce94376b077051084a84d4c52f152d00b9e2330333896bced798fb",
+    "evidence/native-resource-tests.json": "7d81d82e1f70b5a19eaa46f7e3b8acf27863a32b3d30ee83fc5df7031e8e953c",
+    "evidence/recipe-path-guards.json": "8ee9cdf3f7b80df193686e929f73ef01ca1ce0a4503c85c09ac34e78bbe3253b"
+  },
+  "historicalSourcesModified": false,
+  "allOtherSourceBytesPreservedByInverse": true,
+  "inheritedR138LifecycleFunctionsByteExact": {
+    "android_app_destroy": "012d3f6623b8ce93654064d42f320967863e44a74cc793a5842d1ef27f2a0de3",
+    "android_app_entry": "f9012dee5980b10513bcd0a1020b0a1acd3a262f04f17ead1bef68717da8fc81",
+    "android_app_request_quit": "3b7bdb29c3321e8aacbc6c79683730ac2b59c555a2a7575720f54da41216a769",
+    "android_app_free": "7077e4addcbe0d74eea685715f30069adb1b88a3c4bd6264f987423b18d0d4aa",
+    "station_activity_reserve": "db7eb220c10b4af7fbfabd65c8a5e04a237d47760223c72af0f8ef4542433a13",
+    "station_activity_release": "7f791b83e63b99e558cfa2b6735bd901a63d44adfe381af351d35a54d99bc20f"
+  },
+  "candidateScenarios": 24,
+  "pathGuardNegativeCases": 8,
+  "apkBuiltByThisOverlayTask": false,
+  "androidExecutedByThisOverlayTask": false
+}

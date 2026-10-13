@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "revision": "R139",
+  "deviceModel": "moto g52",
+  "deviceSerialPublished": false,
+  "sourceCommit": "42da152e54bbbb4a6d569ca26fe90835503bcccb",
+  "installedApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+  "installedCompletedUTC": "2026-10-13T12:57:48.425144+00:00",
+  "observationWindowLocal": {
+    "startAfterVerifiedInstall": "2026-10-13T09:57:48.425144-03:00",
+    "firstParsedLog": "2026-10-13T09:57:48.441000-03:00",
+    "lastParsedLog": "2026-10-13T09:59:51.207000-03:00",
+    "timezone": "America/Fortaleza"
+  },
+  "humanReportedCannotCreateRoom": true,
+  "gameTitleConfirmedInThisReceipt": true,
+  "visibleMessageConfirmedInThisReceipt": true,
+  "freshSignedCapabilitiesPayloadCaptured": false,
+  "observedUnavailableEvents": [
+    {
+      "localTime": "2026-10-13T09:58:45.803000-03:00",
+      "operation": "classifications",
+      "line": 40,
+      "createRoomLine688Observed": false,
+      "exceptionType": "StationOnlineGame.Unavailable"
+    },
+    {
+      "localTime": "2026-10-13T09:58:47.814000-03:00",
+      "operation": "profiles",
+      "line": 32,
+      "createRoomLine688Observed": true,
+      "exceptionType": "StationOnlineGame.Unavailable"
+    },
+    {
+      "localTime": "2026-10-13T09:58:48.944000-03:00",
+      "operation": "profiles",
+      "line": 32,
+      "createRoomLine688Observed": true,
+      "exceptionType": "StationOnlineGame.Unavailable"
+    },
+    {
+      "localTime": "2026-10-13T09:58:49.646000-03:00",
+      "operation": "profiles",
+      "line": 32,
+      "createRoomLine688Observed": true,
+      "exceptionType": "StationOnlineGame.Unavailable"
+    }
+  ],
+  "sourceCausalPath": {
+    "headerClassifications": "StationOnlineGame.classifications:40 throws Unavailable only after the fresh result has no valid classifications for the selected item and local engine.",
+    "createModeChoices": "StationOnlineGame.profiles:32 throws Unavailable when choices are empty; choices require valid classifications with maximumPlayers>=2.",
+    "profileFilter": "StationMultiplayerProfile.classifications:61 requires approved=true AND exact selected itemId AND exact local engineId; profile constructor also checks canonical controller/core/options hashes.",
+    "createRequestNotReachedByTheseEvents": "StationRoomsActivity.createRoom:688 asks for mode choices. The actual room create mutation is at createVerifiedRoom:719, after valid selection and ROM/core/runtime preparation.",
+    "nativeOwnerNotExecutedAtThisFailurePoint": true,
+    "javaIdenticalAcrossR138AndR139": true
+  },
+  "engineRegistrationConsistency": {
+    "localR139RuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+    "previousR138RuntimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+    "retroarchDescriptorsChanged": 9,
+    "changedLaunchReadyV3Engines": 8,
+    "inactiveRetroarchDescriptorChanged": 1,
+    "independentEnginesUnchanged": [
+      "psx",
+      "n64",
+      "gamecube",
+      "wii"
+    ],
+    "coreAndOptionsPreservedForAllChangedDescriptors": true,
+    "changes": [
+      {
+        "platform": "snes",
+        "library": "libstation_bsnes.so",
+        "launchReady": true,
+        "oldEngineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+        "newEngineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-ae72f1371e8e",
+        "oldRuntimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "newRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+        "optionsByteExact": true,
+        "coreSha256Preserved": true
+      },
+      {
+        "platform": "megadrive",
+        "library": "libstation_clownmdemu.so",
+        "launchReady": true,
+        "oldEngineId": "clownmdemu-d43c2708-mp5-463bdb0b409e",
+        "newEngineId": "clownmdemu-d43c2708-mp5-ae72f1371e8e",
+        "oldRuntimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "newRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+        "optionsByteExact": true,
+        "coreSha256Preserved": true
+      },
+      {
+        "platform": "neogeo",
+        "library": "libstation_geolith.so",
+        "launchReady": false,
+        "oldEngineId": "geolith-19402493-mp5-463bdb0b409e",
+        "newEngineId": "geolith-19402493-mp5-ae72f1371e8e",
+        "oldRuntimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "newRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+        "optionsByteExact": true,
+        "coreSha256Preserved": true
+      },
+      {
+        "platform": "neogeocd",
+        "library": "libstation_online_neocd.so",
+        "launchReady": true,
+        "oldEngineId": "neocd-b1e04c73-aslr1-v3-463bdb0b409e",
+        "newEngineId": "neocd-b1e04c73-aslr1-v3-ae72f1371e8e",
+        "oldRuntimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "newRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+        "optionsByteExact": true,
+        "coreSha256Preserved": true
+      },
+      {
+        "platform": "neogeo",
+        "library": "libstation_online_fbneo.so",
+        "launchReady": true,
+        "oldEngineId": "fbneo-95153da1-neogeo-v3-463bdb0b409e",
+        "newEngineId": "fbneo-95153da1-neogeo-v3-ae72f1371e8e",
+        "oldRuntimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "newRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+        "optionsByteExact": true,
+        "coreSha256Preserved": true
+      },
+      {
+        "platform": "fbneo",
+        "library": "libstation_online_fbneo.so",
+        "launchReady": true,
+        "oldEngineId": "fbneo-95153da1-fbneo-v3-463bdb0b409e",
+        "newEngineId": "fbneo-95153da1-fbneo-v3-ae72f1371e8e",
+        "oldRuntimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "newRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+        "optionsByteExact": true,
+        "coreSha256Preserved": true
+      },
+      {
+        "platform": "cps1",
+        "library": "libstation_online_fbneo.so",
+        "launchReady": true,
+        "oldEngineId": "fbneo-95153da1-cps1-v3-463bdb0b409e",
+        "newEngineId": "fbneo-95153da1-cps1-v3-ae72f1371e8e",
+        "oldRuntimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "newRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+        "optionsByteExact": true,
+        "coreSha256Preserved": true
+      },
+      {
+        "platform": "cps2",
+        "library": "libstation_online_fbneo.so",
+        "launchReady": true,
+        "oldEngineId": "fbneo-95153da1-cps2-v3-463bdb0b409e",
+        "newEngineId": "fbneo-95153da1-cps2-v3-ae72f1371e8e",
+        "oldRuntimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "newRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+        "optionsByteExact": true,
+        "coreSha256Preserved": true
+      },
+      {
+        "platform": "cps3",
+        "library": "libstation_online_fbneo.so",
+        "launchReady": true,
+        "oldEngineId": "fbneo-95153da1-cps3-v3-463bdb0b409e",
+        "newEngineId": "fbneo-95153da1-cps3-v3-ae72f1371e8e",
+        "oldRuntimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "newRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+        "optionsByteExact": true,
+        "coreSha256Preserved": true
+      }
+    ],
+    "documentedServerReturn": {
+      "status": "received-R138-RetroArch-kit-applied-and-verified",
+      "source": "docs/station-android/r138/server-return.json",
+      "sha256": "5175ddbbec7a0edfffd9fc5312e42c5ae13e259e29165c9b4d9f4cd0212c1f4c"
+    },
+    "r139RegistrationNotConfirmedByThisObservation": true,
+    "conditionalInference": "The screen confirms the selected SNES title Battletoads in Battlemaniacs (USA) and no approved mode for the installed engine. The documented previous signed return approves this edition for two-player modes on R138 engine 463b..., while the installed R139 local engine is ae72.... The exact filter does not accept those R138 profiles for R139. A fresh capabilities payload is still required to establish the full current server list; the real qualified R139 kit/registration has not been confirmed.",
+    "doNotTreatOldProfilesAsNewEngineAuthorization": true
+  },
+  "diagnosticLabelAssessment": {
+    "sourceConfirmedMisleadingLabel": true,
+    "routePath": "versions/station-video-room-footer-r124-20261011/java/client/src/java/org/emulationstation/frontend/station/StationDiagnostics.java",
+    "routeLines": [
+      40,
+      48
+    ],
+    "httpPath": "versions/station-video-room-footer-r124-20261011/java/client/src/java/org/emulationstation/frontend/station/StationHttp.java",
+    "httpLines": [
+      89,
+      90,
+      92
+    ],
+    "behavior": "Online/multiplayer routes are not mapped to a specific Event, so route() returns REQUEST_FAILED even for HTTP200. StationHttp records that route category immediately after getResponseCode, independently of success/failure.",
+    "requestFailedEventCountByHttpStatus": {
+      "200": 148,
+      "not-parsed": 3
+    },
+    "eventIntervalMeanSeconds": 0.8004333333333333,
+    "http200IsNotEvidenceOfNetworkFailure": true,
+    "inheritedDiagnosticBehaviorUnchangedByR139": true
+  },
+  "activityAndResourceContext": {
+    "afterSummaryRecordedUTC": "2026-10-13T12:58:54.134272+00:00",
+    "afterSummaryActivity": "org.emulationstation.frontend.netplay.StationRoomsActivity",
+    "roomsVisibleInAfterSummary": true,
+    "downloadServicePresent": true,
+    "nativeGameProcessPresentInAfterSummary": false,
+    "laterActivityFileKnownComponents": [
+      "StationRoomsActivity",
+      "ESActivity"
+    ],
+    "laterActivityFileResumedKnownComponents": [],
+    "laterScreenReportedBlackByRoot": true,
+    "screenMeaning": "A black capture does not establish ANR or the on-screen error. Off/locked/secure/disconnected-window state was not distinguished; a human message/game confirmation is pending separately.",
+    "anrTargetMarkersAfterInstall": 0,
+    "fatalAnyProcessMarkersAfterInstall": 0,
+    "newAnrNotEstablishedByThisEvidence": true,
+    "cpuComparisonValid": false,
+    "cpuComparisonReason": "Before sample was the menu; after sample was Rooms plus DownloadService. Different foreground work/service conditions cannot establish a CPU improvement/regression."
+  },
+  "rawPrivateHashesOnly": {
+    "logcat.txt": {
+      "sha256": "bc0ef47fba5c58d50e49181832e1f0f6141ee5d015f73eb9aa28a9889ded7688",
+      "bytes": 1600052,
+      "fileRecordedUTC": "2026-10-13T12:59:50.820446+00:00"
+    },
+    "activity.txt": {
+      "sha256": "b6946758980381946480005e6a7a8d2c2281464a2d84fc9cc2cad166f53bf503",
+      "bytes": 35136,
+      "fileRecordedUTC": "2026-10-13T12:59:50.881926+00:00"
+    },
+    "screen.png": {
+      "sha256": "c35bacdb98b522206335afa5b9baffd2e4e3352a40749bb747e469cd403af514",
+      "bytes": 15580,
+      "fileRecordedUTC": "2026-10-13T12:59:51.790466+00:00"
+    },
+    "summary.json": {
+      "sha256": "5811bac94c612f8cb6e6e03f71853c08b3f5d0c62582fda16defeb217743e41f",
+      "bytes": 2643,
+      "fileRecordedUTC": "2026-10-13T12:58:54.134917+00:00"
+    }
+  },
+  "safeSourceHashes": {
+    "StationOnlineGame.java": "032c87b7435a0ef7ab38cc2a98532dae6f226593ff366909f16547bacefeebd8",
+    "StationMultiplayerProfile.java": "8f860be54196af7b7f5f41e5103188a469b6d4c4a7206d7bc5a28b544c099ae8",
+    "StationRoomsActivity.java": "cbe080a2f7b9d99c4ce36f7ba19e6a292f92e29ba2117623af14a2863eda3fb1",
+    "StationDiagnostics.java": "4ab4bc93edf1444094f0be982cbbe8218bbe1a18e46f3d2fab7c2f434a41934f"
+  },
+  "rawLogsOrScreensPublished": false,
+  "usbCommandsPerformedByThisAnalysis": false,
+  "appCodeChangedByThisAnalysis": false,
+  "serverChangedByThisAnalysis": false,
+  "nextEvidenceNeeded": "Register and confirm the real R139 engines/profiles by the existing v3 operator, preserving the documented two-player Battletoads modes and all R138 records; obtain fresh signed capabilities matching ae72... then repeat room creation and physical gameplay/exit/signal loss.",
+  "screenConfirmation": {
+    "observedGameTitle": "Battletoads in Battlemaniacs (USA)",
+    "platform": "snes",
+    "visibleMessage": "Não há modo aprovado para esta edição e o motor instalado. Atualize o aplicativo e o catálogo nos participantes.",
+    "topOwnActivity": "org.emulationstation.frontend.netplay.StationRoomsActivity",
+    "screenSha256": "d5b493d00e3c5035acecf3943dd67f7b9f9ccdd049f9a0fe6aa0a00014c7d8f5",
+    "screenPrivateOnly": true,
+    "confirmedUTC": "2026-10-13T13:10:36.692727+00:00",
+    "accountNameOrRawScreenPublished": false
+  },
+  "previousSignedBattletoadsBindings": {
+    "source": "docs/station-android/r138/server-signed-bindings.json",
+    "sourceSha256": "17ff72e0d70a4bb45637110fb07dc420812f3632ba208fdd40aadd15e452d9bb",
+    "checks": [
+      {
+        "scope": "local",
+        "itemId": "826da6daebe9edbebffb3721f83abf12",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "826da6daebe9edbebffb3721f83abf12",
+            "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-battletoads-in-battlemaniacs-2p-r81-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dois jogadores",
+            "instructions": [],
+            "sources": [
+              "https://github.com/luziellacerda/Servidor-pix/blob/270027cdcf00846823489eea7f539a27892800cd/docs/station-android/r138/README.md"
+            ]
+          },
+          {
+            "itemId": "826da6daebe9edbebffb3721f83abf12",
+            "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-battlemaniacs-mode-a-20261008-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player-a",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dupla com golpes entre parceiros",
+            "instructions": [
+              "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+            ],
+            "sources": [
+              "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+            ]
+          },
+          {
+            "itemId": "826da6daebe9edbebffb3721f83abf12",
+            "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-battlemaniacs-mode-b-20261008-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player-b",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dupla sem golpes entre parceiros",
+            "instructions": [
+              "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+            ],
+            "sources": [
+              "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+            ]
+          }
+        ]
+      },
+      {
+        "scope": "public",
+        "itemId": "826da6daebe9edbebffb3721f83abf12",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "826da6daebe9edbebffb3721f83abf12",
+            "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-battletoads-in-battlemaniacs-2p-r81-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dois jogadores",
+            "instructions": [],
+            "sources": [
+              "https://github.com/luziellacerda/Servidor-pix/blob/270027cdcf00846823489eea7f539a27892800cd/docs/station-android/r138/README.md"
+            ]
+          },
+          {
+            "itemId": "826da6daebe9edbebffb3721f83abf12",
+            "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-battlemaniacs-mode-a-20261008-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player-a",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dupla com golpes entre parceiros",
+            "instructions": [
+              "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+            ],
+            "sources": [
+              "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+            ]
+          },
+          {
+            "itemId": "826da6daebe9edbebffb3721f83abf12",
+            "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-battlemaniacs-mode-b-20261008-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player-b",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dupla sem golpes entre parceiros",
+            "instructions": [
+              "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+            ],
+            "sources": [
+              "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+            ]
+          }
+        ]
+      }
+    ],
+    "freshR139Capabilities": false
+  }
+}

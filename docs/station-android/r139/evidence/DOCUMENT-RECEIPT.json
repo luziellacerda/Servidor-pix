@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "revision": "R139",
+  "baseServerCommit": "08e0031",
+  "sourceCommit": "42da152e54bbbb4a6d569ca26fe90835503bcccb",
+  "signedApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+  "runtimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "copiedProducerReceiptsByteExact": {
+    "engines.json": "b48cd9a420c15cb5fce38647b07a9de9adc7399e76ae835bd733c37525dfe945",
+    "runtime-identity.json": "454221bb7bcd58f28edc5770f6d67307d02df83659c21a28ac95268be6d07edf",
+    "evidence/package-final.json": "5d81be8da0cd63a0d3e669ff8326cb0fd64a78b191448dc8d3fc7343da2b463a",
+    "evidence/native-build-candidate.json": "2ab05db5fe5a9c690d8e9c956f1c3397623e09dd8bffad539fa8a4e42d954458",
+    "evidence/source-freeze.json": "844401089ea0d8435937d54365f6377091cb826e086f13694a1afdde8e123757",
+    "evidence/native-resource-tests.json": "7d81d82e1f70b5a19eaa46f7e3b8acf27863a32b3d30ee83fc5df7031e8e953c",
+    "evidence/source-scope.json": "5e182a1103f68f74abc4ed9132f86daf3d5682f95d59addcf58d502410191484",
+    "evidence/android-jni-resource-probe.json": "36618fea896a6a93da6955e8e09d0dfb00a02260ddb2821ba43795ecbc4e205b",
+    "evidence/instalacao-moto-g52.json": "dc522f2595b6860751c28a33eded943bf47708d72297c8bef0cc00e9f60560a4"
+  },
+  "preparedAdministrativeManifestOnly": true,
+  "serverDataOrCodeMutated": false,
+  "commitPushOrDeploymentPerformed": false,
+  "historicalDocuments": {
+    "docs/station-android/HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md": {
+      "historicalSuffixSHA256": "d9c9199ff5c2f478214caffa30282d759d80a04b44dc1511fadd46e0d5a292be",
+      "prefixBytes": 3654,
+      "suffixByteExact": true,
+      "baselineCommit": "08e0031"
+    },
+    "AGENTS.md": {
+      "historicalSuffixSHA256": "145cac0c4fbc8c7b741d91a606e56e4d61d29d83767f0873abe354a1cea5cca1",
+      "prefixBytes": 1586,
+      "suffixByteExact": true,
+      "baselineCommit": "08e0031"
+    },
+    "docs/station-android/AGENTS.md": {
+      "historicalSuffixSHA256": "8b045b0ad2dd365931473cb0f8bbcfba2596352c3a5b8d560fc192b62eb90abe",
+      "prefixBytes": 1586,
+      "suffixByteExact": true,
+      "baselineCommit": "08e0031"
+    }
+  },
+  "documentFileSha256": {
+    ".gitattributes": "85c59c9e7949ba5544aafdb4c1a11f9665de1bd946c162068fbe3fb6f14d5044",
+    "engines.json": "b48cd9a420c15cb5fce38647b07a9de9adc7399e76ae835bd733c37525dfe945",
+    "evidence/android-jni-resource-probe.json": "36618fea896a6a93da6955e8e09d0dfb00a02260ddb2821ba43795ecbc4e205b",
+    "evidence/independent-package-summary.json": "58eac1a31b6ac6dc67352378146934e802b4edfac39b73eab0a0462568ca5980",
+    "evidence/instalacao-moto-g52.json": "dc522f2595b6860751c28a33eded943bf47708d72297c8bef0cc00e9f60560a4",
+    "evidence/native-build-candidate.json": "2ab05db5fe5a9c690d8e9c956f1c3397623e09dd8bffad539fa8a4e42d954458",
+    "evidence/native-resource-tests.json": "7d81d82e1f70b5a19eaa46f7e3b8acf27863a32b3d30ee83fc5df7031e8e953c",
+    "evidence/package-final.json": "5d81be8da0cd63a0d3e669ff8326cb0fd64a78b191448dc8d3fc7343da2b463a",
+    "evidence/private-kit-prepared.json": "5abe16fd9d83b9b41eb3302411f06cf58fa36d85fc4009669ee3ce933f51a904",
+    "evidence/recipe-path-guards-sanitized.json": "55db38a77063525c69bc80385eeb07566ccc4c5b948592e42d87e37e9a8cf62f",
+    "evidence/room-create-observation.json": "379876487a6e6e5defe4367210e7bbe41b0399177eab08ff4316b4e16fc594ca",
+    "evidence/source-freeze.json": "844401089ea0d8435937d54365f6377091cb826e086f13694a1afdde8e123757",
+    "evidence/source-scope.json": "5e182a1103f68f74abc4ed9132f86daf3d5682f95d59addcf58d502410191484",
+    "incoming-engine-manifest-candidate.json": "d4fb6f9cb6208dea87f884e800f79ad186f4488a5b567d8c4fb2f1e0796b5df6",
+    "README.md": "d09bc158f6bfb35903b9b52f07f69722bac406b61c8317d59b2004f8040d254a",
+    "runtime-identity.json": "454221bb7bcd58f28edc5770f6d67307d02df83659c21a28ac95268be6d07edf",
+    "STATUS.json": "d3f5cf878afa88c0f869cdd9dbedb25a7308a532f75c6d072090096233e8e4a8"
+  },
+  "pendingRootFinalization": [
+    "Git publication and backup promotion",
+    "Real R139 server receipt/registration and fresh capabilities",
+    "Physical gameplay, exit and signal-loss validation"
+  ],
+  "privateKitPrepared": true,
+  "privateKitReceivedByServer": false,
+  "serverRegistered": false
+}

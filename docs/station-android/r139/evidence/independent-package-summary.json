@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "revision": "R139",
+  "baseApkSha256": "9183462e4d45cfcf2d2599d9e682b81890fee7b094505bf3073ab8183dd1dd10",
+  "candidateApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+  "candidateApkBytes": 2714991631,
+  "freezeSha256": "3c3bbb4fb09fc3054daba70869f1ba64b49c15d8f5b8a0ff464d16a174f68cdc",
+  "identityReceiptSha256": "454221bb7bcd58f28edc5770f6d67307d02df83659c21a28ac95268be6d07edf",
+  "replacedEntrySha256": {
+    "lib/arm64-v8a/libstation_retroarch.so": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+    "assets/station-online/engines.json": "b48cd9a420c15cb5fce38647b07a9de9adc7399e76ae835bd733c37525dfe945"
+  },
+  "addedEntrySha256": {},
+  "preservedEntryCount": 13858,
+  "preservedEntryManifestSha256": "1657e9198ecbca5d2ef4f0807eb8682e26df663473a9ccb44c6e33d08af0152e",
+  "removedSignatureMetadata": [],
+  "changedDexPartitions": [],
+  "all40DexByteIdentical": true,
+  "independentWrapperPins": {
+    "libstation_psx_online.so": {
+      "runtimeSha256": "c26d8836df255ad4cc10d19d328b6fc8dcbc6a429725794c88acd4de5ca3dc50",
+      "fingerprintSha256": "8950075ba8fd86c69f99a27ebd6d548e41e255b15d536d3c5a2254d42e14dbe3",
+      "boundEntryCount": 350,
+      "r139ReplacedEntriesBound": false
+    },
+    "libstation_mupen64plus_runtime.so": {
+      "runtimeSha256": "2f248cfcdc9e6d0e20795b1dab84f581b8fe9ea59eb0994ae96036aed2abeb77",
+      "fingerprintSha256": "810fb99ada75d9198ef430ea9c219318c1c16012ffe461b6f523f467739de3ff",
+      "boundEntryCount": 357,
+      "r139ReplacedEntriesBound": false
+    },
+    "libstation_dolphin_runtime.so": {
+      "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+      "fingerprintSha256": "d6d3440bf649c1170b2e011328d3c71a510adb8423f2088af09e4a4b109832ab",
+      "boundEntryCount": 349,
+      "r139ReplacedEntriesBound": false
+    }
+  },
+  "runtimePlayerCapacity": 5,
+  "retroArchEngineDescriptors": 9,
+  "activeV3RetroArchEngines": 8,
+  "optionsAndFpsUnchanged": true,
+  "independentEntryVerification": true,
+  "signatureChecked": false,
+  "zipalignChecked": false,
+  "installed": false,
+  "serverActivationConfirmed": false,
+  "physicalGameplayValidated": false,
+  "verificationRecipeSha256": "23ad62318ad11b1b2d041a73afa3ce8b447a22482785f1db1c0a5c02e8f15a70",
+  "producerFullReceiptSha256": "0c2cb5c37eed525fa88d906f5e4e1fcd9c616af80fc85dd758c6e01e4c3f5058",
+  "fullPreservedEntryMapOmittedFromPublicSummary": true
+}

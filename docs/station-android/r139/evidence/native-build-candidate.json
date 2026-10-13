@@ -1,0 +1,26 @@
+{
+  "revision": "R139",
+  "mode": "candidate",
+  "compiled": true,
+  "sourceArchiveSha256": "b8f7649a5edacbe9e913d5e50f66482c0aa082fbd2237f5fd7800d00723b735a",
+  "sourceManifestSha256": "63049a133ed0a761133f4ffc36ce642870dc699e103a5a73ab0b7683a6d90f47",
+  "sourceFiles": 11149,
+  "changedSourceFiles": [
+    "frontend/drivers/platform_unix.c"
+  ],
+  "runtimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "runtimeBytes": 10673192,
+  "baseRuntimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+  "minimumLoadAlignment": 16384,
+  "maximumPlayers": 5,
+  "sourceDateEpoch": "1791504000",
+  "buildLogSha256": "cf309d0241337b7e6e9a6dc9a6cc7a3debaaf44965d28f73b51a508a507efd73",
+  "recipeSha256": "7b7cdbbdb821290653461b94eae6970c1081d64e509a6c90b3343434936b0f5d",
+  "utc": "2026-10-13T12:48:43.039384+00:00",
+  "apkBuilt": false,
+  "installed": false,
+  "gameplayValidated": false,
+  "emulationAndRecoveryLoopsChanged": false,
+  "overlaySha256": "24420118e5ce94376b077051084a84d4c52f152d00b9e2330333896bced798fb",
+  "sourceFreezeSha256": "844401089ea0d8435937d54365f6377091cb826e086f13694a1afdde8e123757"
+}
