@@ -1,7 +1,10 @@
 # Origem direta dos downloads Station — 13/10/2026
 
 **Servidor aplicado e HTTPS conferido; atualização Android assinada com a chave original
-e identidades v3 cadastradas. Instalação no aparelho e teste de velocidade pendentes.**
+e identidades v3 cadastradas. O operador relatou downloads perto de 10 MB/s, com melhora
+maior que duas vezes.** [Resultado informado](operator-speed-result.json).
+O relato é um teste prático; não há comparação controlada gravada ou SHA instalado
+adquirido por ADB.
 
 Foi criado `downloads-station.lzgames.com.br`, registro A somente DNS, TTL 60,
 apontando inicialmente para o IPv4 público informado pelo operador. O encaminhamento
@@ -59,9 +62,9 @@ origem e o pin atuais. Candidata final assinada, mantendo 39 DEX e 266 classes d
 partição alterada. APK SHA256
 `e69616ee6377920f808f3b5a267f5592ffff9ae70c2bbe2063c6902cd903c02a`,
 2.713.648.143 bytes, certificado original v2/v3 e alinhamento 16 KiB conferidos.
-Todas as 13.860 entradas foram verificadas após assinatura. Instalação preservando
-dados e teste físico do download/velocidade ainda estão pendentes; não presumir ganho
-de velocidade com os testes HTTP.
+Todas as 13.860 entradas foram verificadas após assinatura. O operador relatou
+a melhora de velocidade no aparelho após a entrega do kit; o SHA instalado não foi
+adquirido por ADB. As provas HTTP anteriores verificam contrato e segurança.
 
 As quatro identidades PSX/N64/GameCube/Wii precisam renovar seus vínculos de bundle
 porque DEX28 faz parte do fingerprint; cores, opções e controladores permanecem iguais.
@@ -80,7 +83,8 @@ fechamento de leitura parcial e nova autorização válida. CA pública, hostnam
 preservados; sessões sintéticas removidas, licenças reais intactas. A conexão TLS
 chegou ao vhost local, sem medição de Internet do cliente ou execução Android.
 [Recibo sanitizado](protected-download-validation.json). APK e instalador entregues
-no pendrive, com SHA conferido na cópia e ejeção segura; instalação física pendente.
+no pendrive, com SHA conferido na cópia e ejeção segura. O resultado do teste prático
+informado pelo operador está no recibo acima.
 
 ## Operação
 

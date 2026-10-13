@@ -1,0 +1,11 @@
+{
+  "recordedAtUtc": "2026-10-13T20:04:07.235507+00:00",
+  "source": "operator report in conversation",
+  "result": "Downloads improved by more than twice, approaching 10 megabytes per second.",
+  "approximateReportedPeakMegabytesPerSecond": 10,
+  "reportedImprovementMoreThanTwice": true,
+  "practicalDeviceDownloadTestReported": true,
+  "controlledSameFileAndNetworkComparisonRecorded": false,
+  "installedApkHashIndependentlyVerified": false,
+  "publicReleaseApproved": false
+}

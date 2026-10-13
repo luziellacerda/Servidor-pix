@@ -43,5 +43,10 @@
   "authorizedProductionVhostDownloadVerified": true,
   "grantReuseForeignSessionAndExpiryRefused": true,
   "usbCopyVerified": true,
-  "installed": false
+  "installedApkHashIndependentlyVerified": false,
+  "practicalDeviceDownloadTestReported": true,
+  "userReportedSpeedImprovement": true,
+  "approximateUserReportedPeakMegabytesPerSecond": 10,
+  "controlledSpeedComparisonRecorded": false,
+  "operatorResultReceipt": "operator-speed-result.json"
 }
