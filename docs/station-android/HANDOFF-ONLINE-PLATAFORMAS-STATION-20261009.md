@@ -1,3 +1,17 @@
+## Capas novas do N64 recebidas pelo USB e publicadas — 13/10/2026, 20h44
+
+**Catálogo 47; 132 arquivos de revista substituídos, correspondendo a 133 vínculos.** O conjunto correto foi entregue pelo proprietário em `CAPAS N64` no pen drive e ainda não estava no Git de artes consultado. As verificações anteriores de igualdade com esse Git eram verdadeiras, mas comparavam a coleção antiga. Agora as imagens novas estão em `n64/media/revista`, com nomes associados às ROMs instaladas. [Recibo, catálogo N64 completo e origens por jogo](online-plataformas-20261009/n64-capas-usb-20261013.json).
+
+Todas são JPEG RGB 480×720/q90, sem recorte:330.455.594 bytes de originais→18.636.845 bytes. Mario Kart 64 e Zelda Ocarina usam os JPEGs avulsos entregues e conferidos visualmente; Bomberman 64 usa a edição 1997, confirmada pelo metadado e pelo cabeçalho NBME, sem confundir com 2001. Monaco Grand Prix foi conciliado pelo título e cabeçalho NMGP. São 156 imagens para 157 registros, pois duas edições/entradas de Zelda compartilham o arquivo de revista.
+
+**24 jogos conservaram a capa anterior porque a arte nova finalizada não veio no pacote.** A lista completa está no recibo; não usar fotos de referência, gerações anteriores ou arte de outro jogo para preencher essas faltas. O catálogo do USB registra 335 capas prontas e 53 não concluídas; isso não significa 335 ROMs novas. Os jogos/metadados/descritivos, IDs e coverIds, demais plataformas e três registros online foram preservados. O importador existente publicou sem reiniciar API: 46 → 47, added: 0 / updated: 133,4.435 visíveis / 4.690 IDs. Backup local das 132 revistas e backup Git do ponto anterior conferidos.
+
+**Entrega conferida:** 157 capas pela API local e 21 por HTTPS público, com sessão/prova por pedido, assinatura do catálogo, hash, MIME e 480×720 verificados. Licenças sintéticas removidas; licenças reais e PID 2867363 intactos. Os 133 itens têm revisão própria nova; o app deve invalidar pelo par `coverId + item.revision` ao receber o catálogo 47. Não precisa recompilar para esta troca; a visualização física nos celulares não foi homologada nesta tarefa.
+
+Manutenção: as 132 substituições do USB têm precedência sobre as artes antigas do Git. Não reaplicar operadores de R128/R138 nem voltar essas capas ao conjunto anterior quando atualizar outras plataformas. Novas artes para os 24 títulos pendentes exigem arquivos finalizados correspondentes. Registro dos owners R143 continua pendente do kit privado; QoS, motores e APKs permanecem no estado descrito abaixo.
+
+## Histórico preservado
+
 ## Manutenção horária — 13/10/2026, ciclo 23h UTC
 
 **Conferência concluída; cadastro R143 continua parcial por falta do kit privado neste Linux.** O evento `5cad33db…` aponta os mesmos commits servidor `f2294f8…`, app `c349ef5…` e capas main `5c6cc32…` / SNES `9f85e9d…`, confirmados diretamente nos remotos. Não chegou carga útil nova para implementar ou capa nova para importar.
