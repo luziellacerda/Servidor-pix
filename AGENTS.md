@@ -1,3 +1,9 @@
+# R142 multitap SNES — candidato assinado, 13/10/2026
+
+Ler o MESMO handoff e r142/STATUS/README. Pedido atual de 3/4 jogadores autoriza investigação específica de gameplay; melhorias gerais de velocidade seguem adiadas. Fonte9a38881 congelada, APKf99b51a0, apenas entrega do perfil multitap assinado SNES em .rmp privado da sala; leitor do runtime não lê essas chaves em cfg geral. DEX28/downloadsR141, HLER140, saída, native/core/perfis/FPS/READY exatos. 607 classes e39DEX/13855entradas preservados. Host leitor real passou; Android3/4 ainda pendente. Instalar no aparelho autorizado ocioso, sem limpar dados; BATtesteR142 scripts exatos, permanentesR139 intactos. SNES não requer cadastro novo; quatroIDs independentes renovados exigem kitR1423163f542/mesmos78modos, preservarR141/cadastrosanteriores, semdeployrestart. Não inferir aplicação do kit, jogo humano ou medidas do aparelho. Capturas/seriais/chaves/binários privados foraGit.
+
+## Histórico preservado
+
 # Três telefones na mesma R141 — 13/10/2026
 
 Moto g52, Samsung A56 e Motorola Edge30 agora com APK R141/b5a76023 exato, fonte executável240b7c05 congelada. Edge30 atualizado da DIAG5aaa: hash/UID/dados/primeira instalação preservados e versão temporária retirada, sem recompilar ou alterar lógica. Ler r141/STATUS e evidence/installation-edge30.json no mesmo handoff. Não confundir instalação com cadastro aplicado ou gameplay; usar somente retorno e testes reais. Fonte e ponteiros de recuperação intactos; binários/seriais/logs privados foraGit.
