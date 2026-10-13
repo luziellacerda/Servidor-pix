@@ -1,0 +1,55 @@
+{
+  "schema": "station.r143.snes-multitap-unique-flag.dex.v1",
+  "passed": true,
+  "compiled": true,
+  "sourceCommit": "26257869b59af8ecea44932ab287705990a9acbe",
+  "sourceFiles": {
+    "recipe/assemble_apk.py": "3cd3d81840c2f5730f2e1523e5daf7fd57823e90ca806449203b33010cce9d0b",
+    "recipe/AssembleScopedPartition.java": "5ea794aad4cb177080e331b09d449419e352020ac61a6b9ea4194e32b4b1b022",
+    "recipe/build_dex.py": "505e76c49c2a5fe3e4a1d72cad73bf44cfef72db594d65c36e0c74ffacb2761c",
+    "recipe/build_identity.py": "9a368bd2c41b62a5b3bae44c800744a0716e6f18be1c99527a67e218ac3d31d8",
+    "recipe/common.py": "f9af62b38308fc7d0585f8a7eed91c2373f74038a70a02e4b9c534dc756386d9",
+    "recipe/DecodeDolphinPartition.java": "d1365cf8cce05fb08c6e04dbcc47e9b154af268637bf0d768c32f851420c2b67",
+    "recipe/patch_binding.py": "c5da2d511b5e2be1a860bfddf0bc463635fe975ce48a762a609394cf8cda730d",
+    "recipe/r142-multitap-method.smali": "56ccf68b90427af76fc9ab653173193f7c47e4e06f3102f0ef1673e3870439fb",
+    "recipe/snes-multitap-method.smali": "bc7af8241e88f499c5ea5ef670fd994d7926d70faa5ac2ef5bd4b5e8fac3c534",
+    "recipe/verify_apk.py": "ceeab3fe39aeaf216be53480320e27b479d31d5a702744c79e4dc46e3880ddf4",
+    "recipe/VerifyScopedPartition.java": "2280ceb8104df843f35f81cb21e3371749db48f63dc6b6229adea0d316ee823b",
+    "PROPOSED-SCOPE.json": "de9248c593929fb3f5472014e9604d1f02a925c91001c46b7d9ccf42c13ce4a5"
+  },
+  "baselineApkSha256": "f99b51a04f4967c086533157835868dcc6a22a3eb06eb63706886f9f60453b83",
+  "baselineDexSha256": "7a55eb6fe16986a92ad30a85fb0b32c449dba59d0c1aaf9636ed385aaf4267c7",
+  "outputDexSha256": "0cc5f639202ed3da50c246a9b07eda91c8c8d81bdc9764c67f08f3da459a74c4",
+  "inputSha256": {
+    "java": "1977f302375adbb920d41dac65c7e22eb9c2ed8e1e8d6258964154ff16f14406",
+    "javac": "9c71eee841aeebb723bfc2cceca7d72c6c1988fb679402f4123aa4d0e86aa549",
+    "apktool": "dbf930b076c6b9be08d57c449cacefc3bdd6b71ebd59b3066fc0e1f5b14f9423"
+  },
+  "clinicalQualificationSha256": "85b4cbe983bdecf413d0b2fdbcf1eccf574d96c35c895eb69e2612efaac99e4d",
+  "assemblyProof": "verifiedClasses=608 finalClasses=608 unchanged=607 originalAllowed=1 finalAllowed=1 donorSHA=7a55eb6fe16986a92ad30a85fb0b32c449dba59d0c1aaf9636ed385aaf4267c7\nassembledClasses=608 restoredInitializerArrays=1 originalAllowed=1 finalAllowed=1 donorSHA=7a55eb6fe16986a92ad30a85fb0b32c449dba59d0c1aaf9636ed385aaf4267c7",
+  "existingProgramClassesRecompiled": false,
+  "newProgramClassesCompiled": false,
+  "originalClassCount": 608,
+  "finalClassCount": 608,
+  "unchangedClasses": 607,
+  "modifiedClasses": [
+    "Lorg/emulationstation/frontend/netplay/StationRetroLaunch;"
+  ],
+  "modifiedMethods": [
+    ".method private static prepareSnesMultitap(Lorg/emulationstation/frontend/netplay/StationOnlineGame;Ljava/io/File;Ljava/lang/StringBuilder;I)V"
+  ],
+  "addedMethods": [],
+  "addedClasses": [],
+  "removedClasses": [],
+  "inversePassed": true,
+  "condition": "snes + snes-multitap-port2-v1 only",
+  "uniqueRemapFlag": true,
+  "revision": "R143",
+  "candidateOnly": true,
+  "diagnosticLoggerIncluded": false,
+  "nativeRuntimeRebuilt": false,
+  "promoted": false,
+  "installed": false,
+  "serverRegistered": false,
+  "physicalGameplayValidated": false
+}

@@ -4,6 +4,48 @@ Ler o MESMO handoff e network-qos/server-return.json. Filas de saída ativas nes
 
 ## Histórico preservado
 
+# Referência estável atual R143
+
+O proprietário autorizou salvar como estável e backup completo deste ponto em 13/10/2026. Tag/ramo `estavel-station-r143-20261013`; ler checkpoint, manifesto e restauração. Fonte executável congelada `26257869b59af8ecea44932ab287705990a9acbe`, APK `508480e3671ae924f037bd32f6d71efda7a9d905c45c7b2571bd9f219add83d4`. Top Gear 3000 VS3 e Bomberman positivos por relato humano; limites no checkpoint. g52 R143; A56/Edge última R141. SNES cadastro atual; kit independente R143 ainda não aplicado. Não mover tags históricas, alterar receitas congeladas ou resolvedores release antigos. CURRENT/ATUAL apontam R143 após backup verificado; a receita/BAT R143 é necessária porque compile_current só suporta até R134. Todas as fontes completas, donor R142, ferramentas, autoridade original privada e evidências estão no checkpoint completo F existente. Nenhum deploy/restart ou APK novo nesta promoção.
+
+## Histórico preservado
+
+# R143 — Bomberman também OK no relato humano
+
+Mantenedor confirmou Bomberman após Top Gear 3000 Corrida VS3. Seleção anterior era Super Bomberman 3; título jogado, modo e número de participantes não repetidos no novo relato. Ler r143/evidence/bomberman-human-result.json; não inferir quatro/cinco jogadores ou todas as edições. Mesmo APK/fonte/motores; apenas registro documental, sem nova compilação ou cadastro aplicado.
+
+## Histórico preservado
+
+# R143 — três jogadores confirmados pelo mantenedor
+
+Top Gear 3000 Corrida VS jogado com três participantes, relato humano após R143; seleção desbloqueada. Quatro/cinco telefones e outros jogos não homologados. Captura posterior já fora da corrida, sem processo online; nenhum controle instrumentado. Ler o MESMO handoff e r143/evidence/three-player-human-result.json. APK/fonte e preservação de dados exatos; nenhum código alterado para registrar o resultado. Kit independente preparado, não aplicado; SNES cadastro existente. Aviso JNI anterior sem causa isolada. Preservar histórico, fontes congeladas, desempenho, downloads e demais lógicas.
+
+## Histórico preservado
+
+# R143 instalada g52, frontend observado — teste3 pendente
+
+APK508480e3/fonte26257869 instalado no g52 com SHA integral/UID/dados/primeira instalação/entrada oficial conferidos; ocioso sem serviço, nenhuma parada forçada/limpeza nesta instalação. A56/EdgeR141; core/runtime/perfilSNES iguais. R142 falhou em seleção3, dupla chave false→true usa false no parserreal. R143 substituição única/guard perfilSNES; downloads/HLE/saída/FPS/READY/motores preservados. Teste g52 anfitrião CorridaVS3 solicitado, ainda sem resultado. Novo kit4IDs independenteR143a4ba2105/mesmos78modos pendente; SNEScad existente. Nenhumdeployrestart/promocão permanente. Ler MESMO handoff/r143/STATUS. Capturas/binários/chaves/seriaisprivados foraGit.
+
+## Histórico preservado
+
+# R143 flag única — R142 falhou no teste humano3
+
+Ler o MESMO handoff e r143/STATUS/README. Pesquisa web10424/docs confirmam multitap porta2; causa própria daR142 é false seguido detrue, parserreal usa primeira chave. Testes3parser/1leitor real passaram sobfixtures, nãoAndroid. R143fonte26257869/APK508480e3 substitui uma vez a linha nohelperSNES; motores/perfis/READY/FPS/descargaR141/HLE/saída intactos. 607classes/39DEX/13855entradas preservados. Preparações e montagem recusada antesdo guard de aliases mantidas; nenhum APKprévioR143 instalado. Instalação g52 emandamento; A56/EdgeR141. Novo kitindependenteR143a4ba2105/mesmos78modos pendente, SNEScadastroinalterado; preservarR141/cadastrosanteriores, nenhumdeployrestart. StackOverflowJNI avisado semstackcausal, separadoda flag. Nãohomologar3/4 ouANR; capturas/chaves/binários/seriaisprivados foraGit.
+
+## Histórico preservado
+
+# R142 instalada g52 — teste3 pendente
+
+APKf99b51a0/fonte9a38881 instalados no g52 com SHA integral/UID/dados/primeira instalação preservados. Duas recusas antes de instalação por serviço residual; aplicativo já fora da partida encerrado, sem download/emulador filho, guardas originais mantidas. Frontend não observado automaticamente. A56/Edge30 permanecemR141; SNESruntime/core/perfil idênticos, mas gameplay/3ºcontrole pendente. Teste solicitado g52 anfitrião Corrida VS3. Ler r142/STATUS e recibos no MESMO handoff. Fonte congelada/descargaR141/HLE/FPS/READY intactos; quatroIDs independentes/kitR1423163f542 ainda requerem cadastro, SNES nenhum novo. Não promover ponteiros nem inferir gameplay.
+
+## Histórico preservado
+
+# R142 multitap SNES — candidato assinado, 13/10/2026
+
+Ler o MESMO handoff e r142/STATUS/README. Pedido atual de 3/4 jogadores autoriza investigação específica de gameplay; melhorias gerais de velocidade seguem adiadas. Fonte9a38881 congelada, APKf99b51a0, apenas entrega do perfil multitap assinado SNES em .rmp privado da sala; leitor do runtime não lê essas chaves em cfg geral. DEX28/downloadsR141, HLER140, saída, native/core/perfis/FPS/READY exatos. 607 classes e39DEX/13855entradas preservados. Host leitor real passou; Android3/4 ainda pendente. Instalar no aparelho autorizado ocioso, sem limpar dados; BATtesteR142 scripts exatos, permanentesR139 intactos. SNES não requer cadastro novo; quatroIDs independentes renovados exigem kitR1423163f542/mesmos78modos, preservarR141/cadastrosanteriores, semdeployrestart. Não inferir aplicação do kit, jogo humano ou medidas do aparelho. Capturas/seriais/chaves/binários privados foraGit.
+
+## Histórico preservado
+
 # Três telefones na mesma R141 — 13/10/2026
 
 Moto g52, Samsung A56 e Motorola Edge30 agora com APK R141/b5a76023 exato, fonte executável240b7c05 congelada. Edge30 atualizado da DIAG5aaa: hash/UID/dados/primeira instalação preservados e versão temporária retirada, sem recompilar ou alterar lógica. Ler r141/STATUS e evidence/installation-edge30.json no mesmo handoff. Não confundir instalação com cadastro aplicado ou gameplay; usar somente retorno e testes reais. Fonte e ponteiros de recuperação intactos; binários/seriais/logs privados foraGit.

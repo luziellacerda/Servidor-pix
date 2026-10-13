@@ -1,0 +1,55 @@
+{
+  "revision": "R142",
+  "sourceCommit": "9a38881f467ee533b4f8bcff3ea6769b98401175",
+  "apkSha256": "f99b51a04f4967c086533157835868dcc6a22a3eb06eb63706886f9f60453b83",
+  "apkBytes": 2715008015,
+  "compiled": true,
+  "signed": true,
+  "installed": true,
+  "installationStatus": "g52-installed-hash-and-data-verified",
+  "baseline": "R141",
+  "changedClass": "StationRetroLaunch",
+  "modifiedExistingMethods": [
+    "prepare"
+  ],
+  "addedMethods": [
+    "prepareSnesMultitap"
+  ],
+  "scope": "SNES + signed snes-multitap-port2-v1 only",
+  "preservedEntryCount": 13855,
+  "preservedDexPartitions": 39,
+  "preservedDex28Sha256": "534653399c359834c04733a18220524cfd95480f23e0f07d49babcc0ef2eb5bd",
+  "changedDex35Sha256": "7a55eb6fe16986a92ad30a85fb0b32c449dba59d0c1aaf9636ed385aaf4267c7",
+  "preservedRetroArchSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "preservedSnesCoreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+  "snesApprovedVsCounts": [
+    2,
+    3,
+    4
+  ],
+  "snesProfileSha256": "88568b97800afa017e3c75684effe23f3aad8e93f5b2ac947a0638a4268bd8f3",
+  "hostControlReaderPassed": true,
+  "actualAndroidVariablesMeasured": false,
+  "physicalGameplayValidated": false,
+  "serverRegistrationRequiredForSnes": false,
+  "renewedIndependentRegistrationPending": true,
+  "serverApplied": false,
+  "apiDeployed": false,
+  "apiRestarted": false,
+  "currentPermanentPointersPromoted": false,
+  "privateKitSha256": "3163f54225860816be10fd4388534dfba655261f8946a82c4853c71eb2832cc2",
+  "privateKitBytes": 12160430,
+  "privateKitFileCount": 38,
+  "lastKnownPhones": {
+    "moto g52": "R142",
+    "Samsung A56": "R141",
+    "Edge30": "R141"
+  },
+  "installedOnMotoG52": true,
+  "frontendObserved": false,
+  "installationReceipt": "evidence/installation-moto-g52.json",
+  "physicalThreePlayerSelectionFailed": true,
+  "physicalTestOutcome": "user-reported-3-players-still-unselectable",
+  "homologated": false,
+  "supersededTestCandidate": "R143 unique flag fix"
+}

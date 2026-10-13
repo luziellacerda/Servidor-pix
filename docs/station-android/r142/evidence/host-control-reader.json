@@ -1,0 +1,28 @@
+{
+  "schema": "station.snes-device-delivery.qualification.v1",
+  "passed": true,
+  "executedCases": 1,
+  "productionRemapLoaderExecuted": true,
+  "productionControllerInitExecuted": true,
+  "globalConfigDeviceKeyNotRead": true,
+  "extractedBodiesByteExact": true,
+  "sourceSha256": {
+    "configuration.c": "67d33a5933bd3464df2c7846b05e644ca9d4da7596258e6814dcc782bdbffdca",
+    "command.c": "216253ff0ee8c14e1a9552f586bc4fb52287fb15efdf7763d71ef4e3e9c0bdf6"
+  },
+  "extractedSha256": {
+    "input_remapping_load_file": "b5a3c5d62769d34c7305803917092e2db07a793a2d1f29f38cef15c2be982d4b",
+    "command_event_init_controllers": "a2c9f094b577f03a4afe54fe42c6e1aaed456d518342c8af766a058b5b7da832"
+  },
+  "fixtureSourceSha256": "4fb547d082407ac97ca35cc855017ef4e110fdb2d098b6955397f58f9c55a256",
+  "compilerSha256": "986af49c2d1eefeac324f724ff54597753d1053927fa5d58a37a457f578e1cf8",
+  "fixtureBinarySha256": "76cb689c498d4c6728a3ec9b629a52e3fe82f40fe8173f58af9509ce328eb29f",
+  "stdout": "cases=1 actualRemapLoader=true actualControllerInit=true adapter=257 unrelatedButtonMappingsPreserved=true",
+  "unchangedRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "actualAndroidVariablesMeasured": false,
+  "physicalGameplayValidated": false,
+  "limitations": [
+    "Config getters, settings structures, port dispatch and default button maps controlled on host; not full Android runtime",
+    "Profiles and networking unchanged; actual installed adapter still needs phone test"
+  ]
+}
