@@ -1,0 +1,52 @@
+{
+  "schema": "station.hourly-maintenance.v1",
+  "eventUTC": "2026-10-13T21:00:02.736906+00:00",
+  "eventFingerprint": "51f69c69ba51252496340312b2776c1b2052df55048ffeb38cf008dc03fff60c",
+  "status": "partial",
+  "incoming": {
+    "serverCommit": "d54c5d8b61ccb9f141d9eab0c3d885dd3d5073fe",
+    "appCommit": "49ab137dcaffcd0cdcd3465de8e1a44f9d501c10",
+    "change": "Edge 30 R141 installation receipt and documentation",
+    "edge30ReceiptSha256": "135bd5092d8e6dcaa61a829c47676f61434ec58b289ed40716f00e63e0c52fe9"
+  },
+  "covers": {
+    "main": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+    "capasSuperNintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
+    "newChanges": 0,
+    "imported": 0,
+    "catalogRevisionUnchanged": 46
+  },
+  "server": {
+    "effectiveExecStart": "/usr/bin/dotnet /opt/turborama-station-online-audit-20261013-ef5270b3d47b-e/TurboRamaSuiteOnlineServer.dll",
+    "pidObserved": 2867363,
+    "nRestartsObserved": 0,
+    "dllSha256FromAppliedReceipt": "ef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a",
+    "binaryHashRecomputedThisCycle": false,
+    "r141AppliedReceiptExists": true,
+    "enginesFromAppliedReceipt": 39,
+    "profilesFromAppliedReceipt": 11604,
+    "modesFromAppliedReceipt": 6743,
+    "newRegistration": false,
+    "apiRestartedThisCycle": false,
+    "scannerTimerStoppedThisCycle": false
+  },
+  "phones": {
+    "motoG52": "R141 from earlier producer receipt",
+    "samsungA56": "R141 from earlier producer receipt",
+    "edge30": "R141 from new producer full-hash installation receipt; frontend/gameplay unobserved"
+  },
+  "validation": [
+    "incoming commits and changed paths reviewed",
+    "Edge30 evidence SHA256 matched STATUS.json",
+    "cover refs unchanged from event baselines",
+    "live systemd ExecStart/PID/NRestarts matched prior applied receipt",
+    "private R141 applied receipt exists; registration not repeated"
+  ],
+  "pending": [
+    "physical gameplay and Top Gear READY/exit validation",
+    "Android cancellation/regrant and paired download comparison",
+    "safe relay409 reason",
+    "PS1 per-edition HLE ledger and missing platform owners where not delivered",
+    "NES APK catalog overlay"
+  ]
+}

@@ -1,3 +1,11 @@
+## Manutenção horária de 21h UTC — 13/10/2026
+
+Entrada nova: recibo de instalação do Edge 30 na R141 `b5a76023…`, SHA do recibo `135bd509…`, vindo dos commits APP→SERVIDOR `49ab137`/`d54c5d8`. O recibo declara APK instalado com hash integral, UID, dados e primeira instalação preservados, substituindo o diagnóstico temporário. Moto g52, A56 e Edge 30 constam agora na mesma R141 por recibos de instalação; frontend e gameplay do Edge 30 não foram observados pelo instalador. [Recibo sanitizado desta conferência](r141/maintenance-20261013-21z.json).
+
+O cadastro R141 já aplicado foi preservado: quatro motores e 78 vínculos não foram reaplicados. `ExecStart` efetivo ainda aponta para a DLL `ef5270b3…`, PID 2867363, sem reinício. O hash da DLL nesta conferência vem do recibo aplicado, pois a leitura direta do binário protegido exige autenticação Linux; não foi alegada nova medição. As refs de capas `main` (`5c6cc32`) e `capas-super-nintendo` (`9f85e9d`) não mudaram; zero novas capas a importar, catálogo 46 preservado. Scanner e API não foram parados. Gameplay, cancelamento/regrant Android, comparação pareada e motivo seguro dos 409 continuam pendentes.
+
+## Histórico preservado
+
 ## Edge 30 atualizado: três aparelhos na mesma R141 — 13/10/2026
 
 Motorola Edge30/Android14 atualizado da versão temporária R139-DIAG para o mesmo APK R141 `b5a76023…`, fonte executável `240b7c05…`. SHA integral instalado, assinatura original, UID, dados e primeira instalação preservados. Logger/sidecar temporários removidos pela composição final já conferida. Nenhuma recompilação, mudança adicional de lógica ou limpeza de dados. Moto g52, Samsung A56 e Edge30 agora compartilham exatamente a R141. [Recibo Edge30](r141/evidence/installation-edge30.json). Cadastro administrativo dos quatro IDs e gameplay dependem das provas correspondentes; instalação não equivale a uma partida validada.

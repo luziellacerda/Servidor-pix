@@ -475,7 +475,7 @@
   },
   "phones": {
     "motoG52": "R141 b5a76023 per producer installation/hash receipt",
-    "edge30": "last confirmed R139 diagnostic; do not infer R141 installation",
+    "edge30": "R141 b5a76023 per producer full-hash installation receipt; data/UID preserved; frontend/gameplay not confirmed by installer",
     "samsungA56": "R141 b5a76023 per producer full-hash installation receipt; updated from observed R138; frontend/gameplay not confirmed by installer"
   },
   "pending": [
@@ -485,5 +485,7 @@
     "PS1 per-edition HLE approval, NES APK catalog overlay, and missing app owners for Dreamcast/PS2/Saturn/WiiU/Switch/PSP/32X/NES remain separate pending work"
   ],
   "newDeviceReceipt": "evidence/installation-samsung-a56.json",
-  "sameR141ConfirmedOnMotoG52AndSamsungA56": true
+  "sameR141ConfirmedOnMotoG52AndSamsungA56": true,
+  "threePhonesOnSameR141Confirmed": true,
+  "edge30CurrentReceipt": "evidence/installation-edge30.json"
 }
