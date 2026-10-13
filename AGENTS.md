@@ -1,3 +1,9 @@
+# R142 instalada g52 — teste3 pendente
+
+APKf99b51a0/fonte9a38881 instalados no g52 com SHA integral/UID/dados/primeira instalação preservados. Duas recusas antes de instalação por serviço residual; aplicativo já fora da partida encerrado, sem download/emulador filho, guardas originais mantidas. Frontend não observado automaticamente. A56/Edge30 permanecemR141; SNESruntime/core/perfil idênticos, mas gameplay/3ºcontrole pendente. Teste solicitado g52 anfitrião Corrida VS3. Ler r142/STATUS e recibos no MESMO handoff. Fonte congelada/descargaR141/HLE/FPS/READY intactos; quatroIDs independentes/kitR1423163f542 ainda requerem cadastro, SNES nenhum novo. Não promover ponteiros nem inferir gameplay.
+
+## Histórico preservado
+
 # R142 multitap SNES — candidato assinado, 13/10/2026
 
 Ler o MESMO handoff e r142/STATUS/README. Pedido atual de 3/4 jogadores autoriza investigação específica de gameplay; melhorias gerais de velocidade seguem adiadas. Fonte9a38881 congelada, APKf99b51a0, apenas entrega do perfil multitap assinado SNES em .rmp privado da sala; leitor do runtime não lê essas chaves em cfg geral. DEX28/downloadsR141, HLER140, saída, native/core/perfis/FPS/READY exatos. 607 classes e39DEX/13855entradas preservados. Host leitor real passou; Android3/4 ainda pendente. Instalar no aparelho autorizado ocioso, sem limpar dados; BATtesteR142 scripts exatos, permanentesR139 intactos. SNES não requer cadastro novo; quatroIDs independentes renovados exigem kitR1423163f542/mesmos78modos, preservarR141/cadastrosanteriores, semdeployrestart. Não inferir aplicação do kit, jogo humano ou medidas do aparelho. Capturas/seriais/chaves/binários privados foraGit.

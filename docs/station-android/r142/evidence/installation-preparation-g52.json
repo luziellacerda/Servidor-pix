@@ -1,0 +1,12 @@
+{
+  "revision": "R142",
+  "deviceModel": "moto g52",
+  "userConfirmedGameExited": true,
+  "emulatorProcessAbsent": true,
+  "downloadServiceAbsent": true,
+  "residualOwnServiceStopped": true,
+  "directServiceStopSucceeded": false,
+  "appForceStopped": true,
+  "uninstalledOrClearedData": false,
+  "idleRevalidated": true
+}

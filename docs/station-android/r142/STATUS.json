@@ -5,8 +5,8 @@
   "apkBytes": 2715008015,
   "compiled": true,
   "signed": true,
-  "installed": false,
-  "installationStatus": "awaiting-idle-phone",
+  "installed": true,
+  "installationStatus": "g52-installed-hash-and-data-verified",
   "baseline": "R141",
   "changedClass": "StationRetroLaunch",
   "modifiedExistingMethods": [
@@ -41,8 +41,11 @@
   "privateKitBytes": 12160430,
   "privateKitFileCount": 38,
   "lastKnownPhones": {
-    "moto g52": "R141",
+    "moto g52": "R142",
     "Samsung A56": "R141",
     "Edge30": "R141"
-  }
+  },
+  "installedOnMotoG52": true,
+  "frontendObserved": false,
+  "installationReceipt": "evidence/installation-moto-g52.json"
 }

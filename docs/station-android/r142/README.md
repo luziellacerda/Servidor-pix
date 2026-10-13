@@ -1,3 +1,13 @@
+## R142 instalada no moto g52 — 13/10/2026
+
+APK R142 `f99b51a04f4967c086533157835868dcc6a22a3eb06eb63706886f9f60453b83` instalado no moto g52 e hash integral conferido; UID, dados e primeira instalação preservados. Fonte executável congelada `9a38881f467ee533b4f8bcff3ea6769b98401175`. [Recibo](evidence/installation-moto-g52.json).
+
+As duas primeiras tentativas recusaram o serviço residual antes de instalar. Após o mantenedor sair da partida, não havia emulador filho nem DownloadService: restava somente o ForegroundService próprio. O Android recusou parar diretamente esse serviço; o aplicativo já fora da partida foi encerrado, sem apagar dados, e as verificações originais de repouso passaram. A terceira tentativa instalou. O instalador não comprovou visualmente o frontend; a abertura e o teste real dependem do usuário. [Preparação sanitizada](evidence/installation-preparation-g52.json).
+
+Teste solicitado: g52 como anfitrião, Top Gear 3000 Corrida VS com três participantes, opção3 e comando independente do terceiro carro. A56 e Edge30 permanecem R141 neste momento; SNES/RetroArch/core/perfil da sala são byte exatos entre R141/R142. Não inferir corrida válida ou sincronismo por essa igualdade; o primeiro teste físico está pendente. Atualizar outros aparelhos autorizados quando disponíveis, sem interromper partidas/downloads. Quatro IDs independentes R142 e seu kit continuam aguardando cadastro; este reparo de SNES conserva cadastro válido e não requer alteração no servidor. Downloads R141 e reparos anteriores preservados; fontes/recibos no Git, APK/kit/registros privados no backup F existente.
+
+## Histórico preservado
+
 ## R142 — candidato para 3/4 jogadores SNES, 13/10/2026
 
 Relato atual: Top Gear 3000, Corrida VS, três participantes na mesma sala, opções 3/4 escuras e indisponíveis. O g52 registrou dois canais v3 (posições 2 e 3), ambos em estado 2. Capturas e logs privados preservados. A conexão da sala não comprova que o jogo recebeu o multitap nem que existe corrida humana jogável.
