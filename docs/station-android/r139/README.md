@@ -1,3 +1,7 @@
+## Diagnóstico completo recebido pelo USB — 13/10/2026
+
+Os registros dos dois modelos, em VS e Campeonato, foram recebidos e conferidos. Os quatro testes mostram o bsnes solicitando os arquivos DSP4 ausentes e falhando na carga do jogo. A seleção das opções HLE da sala é o ajuste candidato do app; consumo efetivo nos aparelhos e gameplay ainda precisam de prova. Duas recusas 409 do relay também permanecem com código específico desconhecido. [Leitura completa](server-phone-diagnostic.json) e [mesmo handoff](../HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md). Nenhum serviço foi reiniciado nesta análise.
+
 ## Publicação adicional concluída — 13/10/2026
 
 Os quatro motores independentes foram aplicados às 14h06, com 78 modos e perfis revisados (66 N64, nove GameCube e três Wii) e provas assinadas locais e públicas. A API permaneceu ativa. PS1 exige aprovação HLE por edição. Totais atuais: 31 motores, 11.448 perfis, 11.427 aprovações administrativas e 6.587 modos; catálogo 46. [Recibo aplicado](native-owner-usb-receipt.json) e [retorno completo](server-return.json). O diagnóstico de Top Gear continua aberto. Os cancelamentos de autenticação registrados abaixo são históricos, superados pela aplicação atual.

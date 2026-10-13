@@ -1,3 +1,31 @@
+## Diagnóstico USB de Top Gear recebido e conferido — 13/10/2026
+
+O pacote `Diagnostico-TopGear3000-R139-20261013.zip` foi recebido: 53.620 bytes, SHA256 `43ed435a1d0540d440f28b53de1403e305819ddf3e8e424f0dba156ab4387e9a`. Os onze arquivos listados conferem com o manifesto. Moto g52 e Edge 30 têm capturas de VS e Campeonato: quatro tentativas separadas, cada aparelho como anfitrião, sem captura simultânea de uma mesma rodada. [Diagnóstico e cruzamento com a API](r139/server-phone-diagnostic.json) · [Retorno consolidado](r139/server-return.json).
+
+| Aparelho / modo | Erro de carga observado, UTC | Resultado |
+| --- | --- | --- |
+| moto g52 / VS | 18:18:47.088 | Retorno nativo 1 às 18:18:47.104 |
+| moto g52 / Campeonato | 18:20:58.226 | Retorno nativo 1 às 18:20:58.239 |
+| Edge 30 / VS | 18:32:53.434 | Retorno nativo 1 às 18:32:53.445 |
+| Edge 30 / Campeonato | 18:33:56.777 | Depois, erro de menu; sem READY e sem bytes nativos nos registros |
+
+Em todos os quatro testes, o bsnes pede `dsp4.program.rom` e `dsp4.data.rom`, informa que faltam e falha ao carregar o conteúdo. O [código do core no pin recebido](https://github.com/libretro/bsnes-mercury/blob/79d7f9de218b/target-libretro/libretro.cpp) confirma que a ausência de arquivos solicitados marca `load_request_error` e faz a carga retornar falsa. Isso explica a falha imediata do jogo. Não houve novo crash nesses quatro recortes; a ocorrência anterior de RenderThread continua separada.
+
+A composição declara `bsnes_violate_accuracy="enabled"` e `bsnes_chip_hle="HLE"`. O launcher escreve o arquivo de opções da sala; o [resolvedor do runtime no pin recebido](https://github.com/libretro/RetroArch/blob/69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576/runloop.c) permite selecionar opções anteriores de jogo, pasta ou core. A correção mínima candidata relatada pela produção é definir, apenas na configuração privada online:
+
+```ini
+global_core_options = "true"
+game_specific_options = "false"
+```
+
+A revisão estática confirma esse caminho de seleção. O arquivo legado específico e os valores efetivos no core do telefone não foram lidos, portanto a origem particular da sobreposição ainda não está comprovada. A produção relata vinte casos do resolvedor no host; o recibo dessas qualificações não veio no USB nem foi encontrado nos refs lidos. Essa declaração não foi transformada em teste executado por este servidor. Confirmar a candidata preservando HLE, cores, controladores, perfis, READY/ACK, gerações e FPS e registrar partida real nos aparelhos.
+
+O journal correspondente tem seis upgrades HTTP101, duas recusas HTTP409 do relay (18:18:46.957 e 18:32:53.185 UTC), uma recusa de geração antes do segundo início, duas recusas por estado irrecuperável e um HTTP429 do lobby fora dos quatro inícios. Os motivos das duas recusas do relay não foram registrados; obter somente o código seguro da resposta no próximo teste. Não inferir causa ou ordenar eventos entre computadores por milissegundos: as calibrações fornecem intervalos. O PID continua 2867363, NRestarts 0; não há marcador de falha fatal não tratada no recorte. Os registros não comprovam ausência de todo problema de transporte nem uma partida funcional.
+
+APK de diagnóstico `5aaa6db5…` é temporário; runtime `ae72f137…` e descritores RetroArch permanecem os da R139, conforme recibos recebidos. Os quatro marcadores independentes temporários não foram cadastrados. Logs privados foram preservados; nenhum firmware, APK, perfil, configuração do telefone ou serviço foi modificado nesta leitura. A candidata e o gameplay continuam pendentes. O recebimento atual supersede as pendências históricas de envio do Edge 30 abaixo.
+
+## Histórico preservado
+
 ## Diagnóstico temporário R139 — 13/10/2026, 15h16–15h21 locais
 
 **Investigação de Top Gear 3000 (SNES), ainda sem correção aplicada.** APK temporário `5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d` / 2.715.028.584 bytes, [fonte congelada `7ca5e5c8`](https://github.com/luziellacerda/TurboElden/tree/7ca5e5c8f8c93de4451830413318a0172a30ac91/integration/startup-logging-diagnostic-r139-20261013). Assinatura original v2/v3 e alinhamento 16 KiB conferidos. Instalado no moto g52 às 18:16:13.900 UTC, com hash integral, UID/dados preservados e frontend observado; Edge 30 continua na R139 original `19acdece…`. [STATUS atual](r139/startup-logging-diagnostic/STATUS.json) · [Instalação g52](r139/startup-logging-diagnostic/evidence/instalacao-moto-g52.json).
