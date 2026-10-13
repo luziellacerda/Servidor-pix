@@ -1,3 +1,5 @@
+R140 `b93623b`: duas chaves no launcher, base R139 de release e runtime preservado. O recibo dos vinte casos host foi recebido e conferido; não testa Android/bsnes/gameplay. APK final e novos marcadores de quatro IDs independentes ainda precisam de bytes e recibos reais.
+
 ## Diagnóstico completo recebido pelo USB — 13/10/2026
 
 Os registros dos dois modelos, em VS e Campeonato, foram recebidos e conferidos. Os quatro testes mostram o bsnes solicitando os arquivos DSP4 ausentes e falhando na carga do jogo. A seleção das opções HLE da sala é o ajuste candidato do app; consumo efetivo nos aparelhos e gameplay ainda precisam de prova. Duas recusas 409 do relay também permanecem com código específico desconhecido. [Leitura completa](server-phone-diagnostic.json) e [mesmo handoff](../HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md). Nenhum serviço foi reiniciado nesta análise.

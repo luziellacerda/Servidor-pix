@@ -372,7 +372,7 @@
     },
     "producerReportsHostResolverCases": 20,
     "producerHostResolverEvidenceIncludedInUsb": false,
-    "producerHostResolverEvidenceFoundInReceivedGit": false,
+    "producerHostResolverEvidenceFoundInReceivedGit": true,
     "serverIndependentStaticSourceReview": {
       "coreSource": "https://github.com/libretro/bsnes-mercury/blob/79d7f9de218b/target-libretro/libretro.cpp",
       "coreSourceSha256": "90bfb5826f9e2e85a05d11137eeeebdbc05359b7eba3632d4296e87c5dae007a",
@@ -425,6 +425,39 @@
     "apiAppliedOrRestarted": false,
     "correctiveApkInstalledOrGameplayValidated": false,
     "priorCrashStillSeparateUnresolvedIncident": true,
-    "rawLogsOrPhoneIdentifiersPublished": false
+    "rawLogsOrPhoneIdentifiersPublished": false,
+    "producerHostResolverEvidenceReadUtc": "2026-10-13T19:03:02.025415+00:00",
+    "producerHostResolverQualification": {
+      "sourceCommit": "b93623b708bafe151441d3e4920acad51718e118",
+      "receiptSha256": "42db9aa7537486f15b555987ac05d0d4850de7b34af9ffa5063a014438bfc821",
+      "passed": true,
+      "executedCases": 20,
+      "reviewedOnServer": true,
+      "executedByThisServer": false,
+      "threeExtractedFunctionHashesMatchCorrespondingUpstreamBodiesWithNewlineVariants": true,
+      "fullUpstreamSourceShaMatchesProducerModifiedSource": false,
+      "discoveryHelpersMocked": true,
+      "optionManagerMocked": true,
+      "actualPhoneLegacyFileRead": false,
+      "actualBsnesVariablesMeasured": false,
+      "androidExecuted": false,
+      "gameplayValidated": false,
+      "receipt": "startup-logging-diagnostic/evidence/host-resolver-qualification.json"
+    },
+    "appR140Candidate": {
+      "sourceCommit": "b93623b708bafe151441d3e4920acad51718e118",
+      "state": "source-and-recipes-versioned; no compiled/signed/installed artifact receipt received",
+      "baselineApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+      "cfgKeys": {
+        "global_core_options": "true",
+        "game_specific_options": "false"
+      },
+      "retroArchDescriptorsAndActiveIdsPreserved": true,
+      "activeRetroArchIdsPreserved": 8,
+      "independentEngineIdsToRenewAfterActualBytesReceived": 4,
+      "newMarkerLibrariesToVerifyAfterCompile": 3,
+      "serverRegistered": false,
+      "physicalGameplayValidated": false
+    }
   }
 }

@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "passed": true,
+  "executedCases": 20,
+  "target": "Windows x64 host DLL",
+  "unchangedRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "runloopSourceSha256": "13179287191fe00a76c6d35ddc75374388543b2c05607b14dc8c6efef135a012",
+  "strlSourceSha256": "d4f175aff35115dad85f539281727fdfdf58133d583f21af66d88e5c774a89e3",
+  "extraction": {
+    "runloop_init_core_options_path": {
+      "startLine": 1147,
+      "endLine": 1240,
+      "sha256": "c22f636196d347b6f1dbae0307b5d80c4dc5740c2f22ace6022dd94033ba3185"
+    },
+    "runloop_init_core_variables": {
+      "startLine": 1268,
+      "endLine": 1292,
+      "sha256": "f8e66667cd4b4cb6ea28a78c84a7a9f485770d8e4fb2057a2564c2a4a9bca1dd"
+    },
+    "SET_VARIABLES_call": {
+      "startLine": 1501,
+      "endLine": 1506,
+      "sha256": "d4c74e28243ab40c112d4eec4f1aa5872066bef30ec3220bb6ee0632867ab079"
+    }
+  },
+  "extractedBodiesByteExact": true,
+  "canonicalOptionsSha256": "28f869bf6f28581274de7fdfb179d4a4e86cc37bbc1bb67533677bac745c0e41",
+  "fixtureLegacyOptionsSha256": "ce88edd41af712f92ea53648e2bd49484b795e8d7a429f669f11fce6e8650d87",
+  "compilerSha256": "7d31c6f6fad98987b6c9d21b800afaa8b3e37f052e94aaddc941d42ff2a35579",
+  "fixtureSourceSha256": "c43e3d2af6a4789ab0060ea88b838f1ba91f444b7c00c71d493500886f222678",
+  "fixtureDllSha256": "f356a1bdb302ad6fa7d89ae5ecb85d0e99a65b64b0d9118f664e16616f206469",
+  "privateRunnerSha256": "2754a5f88d882c5503f37aa64432faa6bb7dcffcf0c4b917d788aae30e569671",
+  "productionResolverAndWrapperExecuted": true,
+  "productionSetVariablesCallExecuted": true,
+  "actualHostFileExistenceObserved": true,
+  "productionDiscoveryHelpersMocked": true,
+  "productionCoreOptionManagerMocked": true,
+  "actualBsnesVariablesMeasured": false,
+  "initialFixtureCompileError": "strlcpy extraction originally included its surrounding conditional; retry anchors the unchanged function declaration.",
+  "initialCompileLogSha256": "2bddba07e1e9be52729f352b0c7000cd47f056545c38711daec49bc6bc18798c",
+  "explicitCoffLinkerSha256": "3208134dfd067fb969f8d052db5da2e9e44802e239494e051113d81ce8700e83",
+  "initialDriverLinkFailureLogSha256": "5a05d5a7607bacefee9050a980cd5a865f1d03f0d06ab4c0817ada3a22342a51",
+  "initialCrtStackProbeFailureLogSha256": "4a0674fe2149a8ecf7d645d809b7e654d3fdca9d944b8a61710d855b55b0bb19",
+  "crtStackProbeLibrarySha256": "8fe40dd342b90b35d62b8f5d55b4e92df7785c122976618365cfe3b014cc857a",
+  "currentDeviceLegacyFileRead": false,
+  "androidExecuted": false,
+  "adbUsed": false,
+  "productSourceModified": false,
+  "apkBuilt": false,
+  "gameplayValidated": false,
+  "cases": [
+    {
+      "legacyFiles": "none",
+      "settings": "current-defaults",
+      "gameSpecificOptions": true,
+      "globalCoreOptions": false,
+      "selected": "room-seed",
+      "inputClass": "canonical-HLE",
+      "canonicalPassedDirectlyToManager": false,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 1,
+        "folder": 1,
+        "core": 1
+      }
+    },
+    {
+      "legacyFiles": "none",
+      "settings": "global-only",
+      "gameSpecificOptions": true,
+      "globalCoreOptions": true,
+      "selected": "room",
+      "inputClass": "canonical-HLE",
+      "canonicalPassedDirectlyToManager": true,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 1,
+        "folder": 1,
+        "core": 0
+      }
+    },
+    {
+      "legacyFiles": "none",
+      "settings": "specific-off-only",
+      "gameSpecificOptions": false,
+      "globalCoreOptions": false,
+      "selected": "room-seed",
+      "inputClass": "canonical-HLE",
+      "canonicalPassedDirectlyToManager": false,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 0,
+        "folder": 0,
+        "core": 1
+      }
+    },
+    {
+      "legacyFiles": "none",
+      "settings": "two-key-binding",
+      "gameSpecificOptions": false,
+      "globalCoreOptions": true,
+      "selected": "room",
+      "inputClass": "canonical-HLE",
+      "canonicalPassedDirectlyToManager": true,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 0,
+        "folder": 0,
+        "core": 0
+      }
+    },
+    {
+      "legacyFiles": "per-core",
+      "settings": "current-defaults",
+      "gameSpecificOptions": true,
+      "globalCoreOptions": false,
+      "selected": "per-core",
+      "inputClass": "legacy-LLE",
+      "canonicalPassedDirectlyToManager": false,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 1,
+        "folder": 1,
+        "core": 1
+      }
+    },
+    {
+      "legacyFiles": "per-core",
+      "settings": "global-only",
+      "gameSpecificOptions": true,
+      "globalCoreOptions": true,
+      "selected": "room",
+      "inputClass": "canonical-HLE",
+      "canonicalPassedDirectlyToManager": true,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 1,
+        "folder": 1,
+        "core": 0
+      }
+    },
+    {
+      "legacyFiles": "per-core",
+      "settings": "specific-off-only",
+      "gameSpecificOptions": false,
+      "globalCoreOptions": false,
+      "selected": "per-core",
+      "inputClass": "legacy-LLE",
+      "canonicalPassedDirectlyToManager": false,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 0,
+        "folder": 0,
+        "core": 1
+      }
+    },
+    {
+      "legacyFiles": "per-core",
+      "settings": "two-key-binding",
+      "gameSpecificOptions": false,
+      "globalCoreOptions": true,
+      "selected": "room",
+      "inputClass": "canonical-HLE",
+      "canonicalPassedDirectlyToManager": true,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 0,
+        "folder": 0,
+        "core": 0
+      }
+    },
+    {
+      "legacyFiles": "game",
+      "settings": "current-defaults",
+      "gameSpecificOptions": true,
+      "globalCoreOptions": false,
+      "selected": "game",
+      "inputClass": "legacy-LLE",
+      "canonicalPassedDirectlyToManager": false,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 1,
+        "folder": 0,
+        "core": 0
+      }
+    },
+    {
+      "legacyFiles": "game",
+      "settings": "global-only",
+      "gameSpecificOptions": true,
+      "globalCoreOptions": true,
+      "selected": "game",
+      "inputClass": "legacy-LLE",
+      "canonicalPassedDirectlyToManager": false,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 1,
+        "folder": 0,
+        "core": 0
+      }
+    },
+    {
+      "legacyFiles": "game",
+      "settings": "specific-off-only",
+      "gameSpecificOptions": false,
+      "globalCoreOptions": false,
+      "selected": "room-seed",
+      "inputClass": "canonical-HLE",
+      "canonicalPassedDirectlyToManager": false,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 0,
+        "folder": 0,
+        "core": 1
+      }
+    },
+    {
+      "legacyFiles": "game",
+      "settings": "two-key-binding",
+      "gameSpecificOptions": false,
+      "globalCoreOptions": true,
+      "selected": "room",
+      "inputClass": "canonical-HLE",
+      "canonicalPassedDirectlyToManager": true,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 0,
+        "folder": 0,
+        "core": 0
+      }
+    },
+    {
+      "legacyFiles": "folder",
+      "settings": "current-defaults",
+      "gameSpecificOptions": true,
+      "globalCoreOptions": false,
+      "selected": "folder",
+      "inputClass": "legacy-LLE",
+      "canonicalPassedDirectlyToManager": false,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 1,
+        "folder": 1,
+        "core": 0
+      }
+    },
+    {
+      "legacyFiles": "folder",
+      "settings": "global-only",
+      "gameSpecificOptions": true,
+      "globalCoreOptions": true,
+      "selected": "folder",
+      "inputClass": "legacy-LLE",
+      "canonicalPassedDirectlyToManager": false,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 1,
+        "folder": 1,
+        "core": 0
+      }
+    },
+    {
+      "legacyFiles": "folder",
+      "settings": "specific-off-only",
+      "gameSpecificOptions": false,
+      "globalCoreOptions": false,
+      "selected": "room-seed",
+      "inputClass": "canonical-HLE",
+      "canonicalPassedDirectlyToManager": false,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 0,
+        "folder": 0,
+        "core": 1
+      }
+    },
+    {
+      "legacyFiles": "folder",
+      "settings": "two-key-binding",
+      "gameSpecificOptions": false,
+      "globalCoreOptions": true,
+      "selected": "room",
+      "inputClass": "canonical-HLE",
+      "canonicalPassedDirectlyToManager": true,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 0,
+        "folder": 0,
+        "core": 0
+      }
+    },
+    {
+      "legacyFiles": "all",
+      "settings": "current-defaults",
+      "gameSpecificOptions": true,
+      "globalCoreOptions": false,
+      "selected": "game",
+      "inputClass": "legacy-LLE",
+      "canonicalPassedDirectlyToManager": false,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 1,
+        "folder": 0,
+        "core": 0
+      }
+    },
+    {
+      "legacyFiles": "all",
+      "settings": "global-only",
+      "gameSpecificOptions": true,
+      "globalCoreOptions": true,
+      "selected": "game",
+      "inputClass": "legacy-LLE",
+      "canonicalPassedDirectlyToManager": false,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 1,
+        "folder": 0,
+        "core": 0
+      }
+    },
+    {
+      "legacyFiles": "all",
+      "settings": "specific-off-only",
+      "gameSpecificOptions": false,
+      "globalCoreOptions": false,
+      "selected": "per-core",
+      "inputClass": "legacy-LLE",
+      "canonicalPassedDirectlyToManager": false,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 0,
+        "folder": 0,
+        "core": 1
+      }
+    },
+    {
+      "legacyFiles": "all",
+      "settings": "two-key-binding",
+      "gameSpecificOptions": false,
+      "globalCoreOptions": true,
+      "selected": "room",
+      "inputClass": "canonical-HLE",
+      "canonicalPassedDirectlyToManager": true,
+      "sourceFilesUnchanged": true,
+      "settingsInputsUnchanged": true,
+      "unrelatedFlagsUnchanged": true,
+      "discoveryCalls": {
+        "game": 0,
+        "folder": 0,
+        "core": 0
+      }
+    }
+  ],
+  "limits": [
+    "Discovery/path formatting helpers provide controlled paths, while path existence uses real new files.",
+    "The exact production resolver and wrapper choose the paths; a stub manager records both arguments.",
+    "No full RetroArch manager/parser, bsnes, Android lifecycle or gameplay execution occurred.",
+    "The actual legacy file on the phone remains unread; this reproduces a concrete allowed precedence path, not device-specific attribution."
+  ]
+}

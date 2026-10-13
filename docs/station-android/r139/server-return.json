@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "R139 and independent owners applied; private USB startup diagnosis received: DSP4 content-load failure confirmed, corrective app and gameplay pending",
-  "consolidatedUtc": "2026-10-13T18:55:24.430608+00:00",
+  "consolidatedUtc": "2026-10-13T19:03:02.026117+00:00",
   "incomingServerCommit": "4ff2d4f6fac380f2ecd5372e8d5ba79afccbb119",
   "incomingAppCommit": "645af7fc41c124fcfe2cc7f1dc8baad9e9acbceb",
   "apkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
@@ -1127,7 +1127,7 @@
       },
       "producerReportsHostResolverCases": 20,
       "producerHostResolverEvidenceIncludedInUsb": false,
-      "producerHostResolverEvidenceFoundInReceivedGit": false,
+      "producerHostResolverEvidenceFoundInReceivedGit": true,
       "serverIndependentStaticSourceReview": {
         "coreSource": "https://github.com/libretro/bsnes-mercury/blob/79d7f9de218b/target-libretro/libretro.cpp",
         "coreSourceSha256": "90bfb5826f9e2e85a05d11137eeeebdbc05359b7eba3632d4296e87c5dae007a",
@@ -1180,11 +1180,44 @@
       "apiAppliedOrRestarted": false,
       "correctiveApkInstalledOrGameplayValidated": false,
       "priorCrashStillSeparateUnresolvedIncident": true,
-      "rawLogsOrPhoneIdentifiersPublished": false
+      "rawLogsOrPhoneIdentifiersPublished": false,
+      "producerHostResolverEvidenceReadUtc": "2026-10-13T19:03:02.025415+00:00",
+      "producerHostResolverQualification": {
+        "sourceCommit": "b93623b708bafe151441d3e4920acad51718e118",
+        "receiptSha256": "42db9aa7537486f15b555987ac05d0d4850de7b34af9ffa5063a014438bfc821",
+        "passed": true,
+        "executedCases": 20,
+        "reviewedOnServer": true,
+        "executedByThisServer": false,
+        "threeExtractedFunctionHashesMatchCorrespondingUpstreamBodiesWithNewlineVariants": true,
+        "fullUpstreamSourceShaMatchesProducerModifiedSource": false,
+        "discoveryHelpersMocked": true,
+        "optionManagerMocked": true,
+        "actualPhoneLegacyFileRead": false,
+        "actualBsnesVariablesMeasured": false,
+        "androidExecuted": false,
+        "gameplayValidated": false,
+        "receipt": "startup-logging-diagnostic/evidence/host-resolver-qualification.json"
+      },
+      "appR140Candidate": {
+        "sourceCommit": "b93623b708bafe151441d3e4920acad51718e118",
+        "state": "source-and-recipes-versioned; no compiled/signed/installed artifact receipt received",
+        "baselineApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+        "cfgKeys": {
+          "global_core_options": "true",
+          "game_specific_options": "false"
+        },
+        "retroArchDescriptorsAndActiveIdsPreserved": true,
+        "activeRetroArchIdsPreserved": 8,
+        "independentEngineIdsToRenewAfterActualBytesReceived": 4,
+        "newMarkerLibrariesToVerifyAfterCompile": 3,
+        "serverRegistered": false,
+        "physicalGameplayValidated": false
+      }
     }
   },
   "pending": [
-    "Top Gear 3000: app must bind the approved room core options (global_core_options=true and game_specific_options=false), verify consumed HLE values on both phones and complete real gameplay; retain investigation of two relay409 response codes and earlier RenderThread crash",
+    "Top Gear 3000: validate the R140 two-key room options candidate on both phones with actual effective HLE values and gameplay; qualify its four independent IDs only after verified compiled marker bytes; retain relay409 exact-code and earlier RenderThread crash investigations",
     "PSX: current owner still has zero per-edition HLE-reviewed approvals; original-hardware manuals do not validate current HLE",
     "NES catalog capacity overlay is not in R139 APK (4096 legacy limit); complete server catalog query uses maximumItems=20000",
     "Dreamcast/PS2/Saturn/WiiU/Switch/PSP/32X/NES: current received app has no corresponding online native owner"
