@@ -1,0 +1,37 @@
+{
+  "schema": "station.r143.snes-multitap-unique-flag.final.v1",
+  "passed": true,
+  "apkSha256": "508480e3671ae924f037bd32f6d71efda7a9d905c45c7b2571bd9f219add83d4",
+  "apkBytes": 2715024399,
+  "signatureCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "v2": true,
+  "v3": true,
+  "zipAlignment16KiB": true,
+  "sourceCommit": "26257869b59af8ecea44932ab287705990a9acbe",
+  "clinicalQualificationSha256": "85b4cbe983bdecf413d0b2fdbcf1eccf574d96c35c895eb69e2612efaac99e4d",
+  "checkedEntries": 13860,
+  "preservedEntryCount": 13855,
+  "replacedEntries": [
+    "assets/station-online/engines.json",
+    "classes35.dex",
+    "lib/arm64-v8a/libstation_dolphin_runtime.so",
+    "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+    "lib/arm64-v8a/libstation_psx_online.so"
+  ],
+  "addedEntries": [],
+  "removedEntries": [],
+  "preservedRetroArchSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "wrapperFingerprints": [
+    "7524a855c297c9b37cfa6bbd5335247b11adf8e14726a46ee71e3cd9c0782e1d",
+    "afe973baec02cad67c73807920158242152b7d7cf91f26304c6c657f19e2f0e5",
+    "6e681a290bd738f8dab5bc18b022e034b3c5088ec205e8d9dffa484aaa7047a7"
+  ],
+  "revision": "R143",
+  "candidateOnly": true,
+  "diagnosticLoggerIncluded": false,
+  "nativeRuntimeRebuilt": false,
+  "promoted": false,
+  "installed": false,
+  "serverRegistered": false,
+  "physicalGameplayValidated": false
+}

@@ -47,5 +47,9 @@
   },
   "installedOnMotoG52": true,
   "frontendObserved": false,
-  "installationReceipt": "evidence/installation-moto-g52.json"
+  "installationReceipt": "evidence/installation-moto-g52.json",
+  "physicalThreePlayerSelectionFailed": true,
+  "physicalTestOutcome": "user-reported-3-players-still-unselectable",
+  "homologated": false,
+  "supersededTestCandidate": "R143 unique flag fix"
 }

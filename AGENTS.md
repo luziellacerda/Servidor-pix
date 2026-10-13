@@ -1,3 +1,15 @@
+# R143 instalada g52, frontend observado — teste3 pendente
+
+APK508480e3/fonte26257869 instalado no g52 com SHA integral/UID/dados/primeira instalação/entrada oficial conferidos; ocioso sem serviço, nenhuma parada forçada/limpeza nesta instalação. A56/EdgeR141; core/runtime/perfilSNES iguais. R142 falhou em seleção3, dupla chave false→true usa false no parserreal. R143 substituição única/guard perfilSNES; downloads/HLE/saída/FPS/READY/motores preservados. Teste g52 anfitrião CorridaVS3 solicitado, ainda sem resultado. Novo kit4IDs independenteR143a4ba2105/mesmos78modos pendente; SNEScad existente. Nenhumdeployrestart/promocão permanente. Ler MESMO handoff/r143/STATUS. Capturas/binários/chaves/seriaisprivados foraGit.
+
+## Histórico preservado
+
+# R143 flag única — R142 falhou no teste humano3
+
+Ler o MESMO handoff e r143/STATUS/README. Pesquisa web10424/docs confirmam multitap porta2; causa própria daR142 é false seguido detrue, parserreal usa primeira chave. Testes3parser/1leitor real passaram sobfixtures, nãoAndroid. R143fonte26257869/APK508480e3 substitui uma vez a linha nohelperSNES; motores/perfis/READY/FPS/descargaR141/HLE/saída intactos. 607classes/39DEX/13855entradas preservados. Preparações e montagem recusada antesdo guard de aliases mantidas; nenhum APKprévioR143 instalado. Instalação g52 emandamento; A56/EdgeR141. Novo kitindependenteR143a4ba2105/mesmos78modos pendente, SNEScadastroinalterado; preservarR141/cadastrosanteriores, nenhumdeployrestart. StackOverflowJNI avisado semstackcausal, separadoda flag. Nãohomologar3/4 ouANR; capturas/chaves/binários/seriaisprivados foraGit.
+
+## Histórico preservado
+
 # R142 instalada g52 — teste3 pendente
 
 APKf99b51a0/fonte9a38881 instalados no g52 com SHA integral/UID/dados/primeira instalação preservados. Duas recusas antes de instalação por serviço residual; aplicativo já fora da partida encerrado, sem download/emulador filho, guardas originais mantidas. Frontend não observado automaticamente. A56/Edge30 permanecemR141; SNESruntime/core/perfil idênticos, mas gameplay/3ºcontrole pendente. Teste solicitado g52 anfitrião Corrida VS3. Ler r142/STATUS e recibos no MESMO handoff. Fonte congelada/descargaR141/HLE/FPS/READY intactos; quatroIDs independentes/kitR1423163f542 ainda requerem cadastro, SNES nenhum novo. Não promover ponteiros nem inferir gameplay.
