@@ -1,0 +1,12 @@
+[Unit]
+Description=Check the Station direct origin IP every minute
+
+[Timer]
+OnBootSec=45s
+OnUnitActiveSec=60s
+AccuracySec=5s
+RandomizedDelaySec=5s
+Unit=station-direct-download-dns.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Check the Station direct HTTPS certificate twice a day
+
+[Timer]
+OnCalendar=*-*-* 00,12:00:00
+RandomizedDelaySec=30m
+Persistent=true
+Unit=station-direct-download-certificate.service
+
+[Install]
+WantedBy=timers.target

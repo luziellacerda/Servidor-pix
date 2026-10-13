@@ -1,0 +1,12 @@
+[Unit]
+Description=Renew only the existing pinned Station direct download certificate
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/station-direct-download/renew_certificate.py
+TimeoutStartSec=600
+NoNewPrivileges=yes
+PrivateTmp=yes
+UMask=0077

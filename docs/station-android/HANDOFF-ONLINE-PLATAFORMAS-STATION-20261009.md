@@ -1,3 +1,7 @@
+## Downloads diretos protegidos — 13/10/2026
+
+Servidor `downloads-station.lzgames.com.br` somente DNS e HTTPS aplicado; atualizadores de IPv4 e certificado ativos. API/banco/catalogo/licencas preservados, sem restart. App R139 instalado continua na origem anterior; overlay direto sobre donor exato compilado unsigned, aguardando chave original, assinatura/instalação/teste físico e registro dos quatro IDs de bundle renovados. Nenhum APK unsigned foi publicado/instalado e nenhum ganho de velocidade foi presumido. [Escopo e evidências desta configuração](../../ops/station-direct-download-20261013/README.md).
+
 ## Inventário atualizado em 13/10: Edge30 na R139
 
 R139 instalada também no Edge30, SHA integral/UID/dados/primeira instalação preservados; frontend oficial observado: true. Moto g52 e Edge30 estão na mesma R139; A56 última R135. [Recibo Edge30](r139/evidence/instalacao-edge30.json). APK/fonte e contratos permanecem os da entrega abaixo; esta atualização documental não confirma cadastro ou partida.
