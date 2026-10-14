@@ -53,9 +53,11 @@ publicar motores pela API.
 
 ## Novas versões visuais recebidas durante a revisão
 
-O retorno de produção `92c387c8` informa R153/R154/R155 rejeitadas ou retidas,
-com o kit R155 aguardando a substituta R156. A R155 foi instalada no A56 para
-avaliar o visual, mas seus IDs não são os da R152. Este trabalho usa os kits
-R152/R151 já recebidos e autorizados. Não declarar que o cadastro R152 autoriza
-um runtime R155; a revisão completa está disponível para o próximo kit aceito.
-As fontes e os recibos dessas versões visuais permanecem intactos.
+O retorno `6775e8ea` confirma a R156 instalada no A56 para teste visual,
+APK `a072af70c04f0b9f9455b22a856bcdf0995b42da5650c2f9ee87243d17f5d5a6`,
+fonte `4d2c6b1c73c63204e7928b4aa556b668035fa6f3`. A aprovação visual permanece
+pendente e o kit R156 ainda não foi gerado. Os kits R153/R154/R155 estão retidos.
+Este trabalho usa os kits R152/R151 recebidos e autorizados; seus IDs diferem
+dos runtimes das novas revisões. A revisão completa está disponível para o
+próximo kit aceito. As fontes e os recibos visuais permanecem intactos, sem
+aplicação dos kits retidos ou atribuição de homologação física pelo servidor.

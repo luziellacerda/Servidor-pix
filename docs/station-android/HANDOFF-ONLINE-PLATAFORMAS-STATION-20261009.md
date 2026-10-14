@@ -6,7 +6,7 @@ Publicação sem reinício da API: 51 motores, 12509 perfis e 7619 modos prepara
 
 Consulte [lista completa](n64-completo-20261014/LISTA-COMPLETA.md), [recibo atual](n64-completo-20261014/server-return.json) e [preparador do próximo kit](n64-completo-20261014/README.md). O app deve buscar capabilities assinadas com clientMaximumPlayers=4, selecionar somente o vínculo exato de edição/motor/hashes e usar allowedPlayerCounts do modo. As instruções distinguem campanha, batalha, minijogos e turnos. Os 37 jogos individuais não ganham vagas online por cadastro.
 
-Retorno de produção 92c387c8 recebido: R155 instalada no A56 para revisão visual, kits R153/R154/R155 retidos; substituta R156 em preparação. Não aplicar esses kits retidos nem autorizar seus runtimes com o vínculo R152. O preparador completo está pronto para o próximo kit final aceito, preservando os modos GameCube/Wii do fluxo original. R143 estável, binários/fontes/receitas congelados, ROMs/capas, licenças, outros produtos e política100/800 mantidos. Mesmo handoff e manutenção horária.
+Retorno de produção 6775e8ea recebido e mesclado: R156 instalada no A56 para revisão visual, aprovação visual pendente e kit final ainda não gerado. Kits R153/R154/R155 retidos. Não aplicar esses kits retidos nem autorizar seus runtimes com o vínculo R152. O preparador completo está pronto para o próximo kit final aceito, preservando os modos GameCube/Wii do fluxo original. R143 estável, binários/fontes/receitas congelados, ROMs/capas, licenças, outros produtos e política100/800 mantidos. Mesmo handoff e manutenção horária.
 
 ## Histórico anterior preservado
 

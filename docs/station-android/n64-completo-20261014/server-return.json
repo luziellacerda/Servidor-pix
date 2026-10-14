@@ -1,6 +1,6 @@
 {
   "schema": "station.n64.complete-collection-server-return.v1",
-  "checkedUtc": "2026-10-14T17:48:57.135945+00:00",
+  "checkedUtc": "2026-10-14T17:51:43.615085+00:00",
   "reviewCompleted": true,
   "totalEditions": 157,
   "reviewedEditions": 157,
@@ -39,14 +39,18 @@
   "completeReviewLedgerSha256": "7aa9da840b8dcc1a9ea3404280d9866dfc7e1b15377228be6cb8bf4800e17908",
   "preparerSha256": "4fcc40012d77624b82874239669a71bddb7dca880d47e67f72970c7673c70b7c",
   "newerProductionReturn": {
-    "commit": "92c387c8",
-    "installedVisualCandidateReported": "R155",
+    "commit": "6775e8ea",
+    "installedVisualCandidateReported": "R156",
+    "apkSha256": "a072af70c04f0b9f9455b22a856bcdf0995b42da5650c2f9ee87243d17f5d5a6",
+    "sourceCommit": "4d2c6b1c73c63204e7928b4aa556b668035fa6f3",
+    "visualApprovalPending": true,
+    "finalKitGenerated": false,
     "withheldKits": [
       "R153",
       "R154",
       "R155"
     ],
-    "replacementInProgress": "R156",
+    "replacementInProgress": "R156-visual-acceptance",
     "lastConfirmedServerKitRevision": "R152",
     "doNotAuthorizeDifferentRuntimeUsingR152": true
   },

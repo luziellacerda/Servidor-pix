@@ -6,7 +6,7 @@ Publicação sem reinício da API: 51 motores, 12509 perfis e 7619 modos prepara
 
 Ler o topo do MESMO handoff e n64-completo-20261014/server-return.json. Autoridade privada /mnt/DADOS/station-n64-complete-review-20261014/applied.json. Não repetir cadastros concluídos R151/R152, deploy da DLL ou scanner/quarentena. O operador completo /mnt/DADOS/station-n64-complete-review-20261014/apply-complete-review.py executa publicação e provas em uma invocação administrativa genuína; se houver recibo de enrollment/publicação, conciliar o estado antes de reexecutar. Os dois CRLF históricos server ficam fora dos commits.
 
-Produção92c387c8: R155 visual instalada, kitsR153/R154/R155retidos, substitutaR156 em preparação; última aplicação confirmadaR152. Não registrar kit retido ou inventar runtime final. Próximo kit aceito: fluxo R139 original78 modos mais preparador completo321 N64, baseline fresca/scan.lock/registrador vigente, sem nova DLL. R143 estável e outros serviços/licenças/capas/ROMs/banda100/800 preservados. Não falsear gameplay físico dos157/4Android. Manutenção horária existente conserva as pendências globais e acompanha a próxima entrega aceita.
+Produção6775e8ea mesclada: R156 visual instalada, aprovação pendente/kit não gerado; kitsR153/R154/R155retidos, última aplicação confirmadaR152. Não registrar kit retido ou inventar runtime final. Próximo kit aceito: fluxo R139 original78 modos mais preparador completo321 N64, baseline fresca/scan.lock/registrador vigente, sem nova DLL. R143 estável e outros serviços/licenças/capas/ROMs/banda100/800 preservados. Não falsear gameplay físico dos157/4Android. Manutenção horária existente conserva as pendências globais e acompanha a próxima entrega aceita.
 
 ## Histórico anterior preservado
 
