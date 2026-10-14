@@ -42,9 +42,16 @@ de backup R149 concluiu com sucesso; cadastro no servidor continua `false`.
 
 ## Teste e dependência do servidor
 
-O reparo **offline** pode ser testado no A56 com APK R149 assinado e instalado,
-sem cadastrar o kit: repetir a mesma edição de Wind Waker e conferir abertura,
-pausa, retorno e saída. Preparação/compilação não provam esse resultado físico.
+O teste **offline** da R149 no A56 ultrapassou o antigo `LinkageError` e abriu
+o Dolphin. Em seguida, a edição europeia cadastrada de *Wind Waker* falhou com
+`The disc could not be read (at 0x55e3c040 - 0x55e3c060)`: a leitura começa
+no byte 1.440.989.248, mas o ISO instalado mede 546.776.387 bytes. Seu SHA
+coincide com o catálogo; o cabeçalho `GZLE01` discorda do nome europeu. O
+diagnóstico e a quarentena **somente desse item** estão em
+[ERRO-LEITURA-WIND-WAKER-20261014.md](ERRO-LEITURA-WIND-WAKER-20261014.md).
+O teste de pausa, retomada, saída e gameplay completo continua pendente até
+ter uma imagem verificada. A falha de mídia não exige recompilar o APK nem
+cadastrar o kit online para ser investigada.
 
 O **online** dos motores independentes exige o kit privado **R149 exato** e as
 capacidades assinadas destes quatro IDs renovados:
@@ -65,9 +72,10 @@ IDs, perfis, modos, licenças e dados anteriores. Não reaplicar R141 ou QoS,
 executar operadores históricos, implantar ou reiniciar a API para este kit.
 Ver [instrução de recebimento](RECEBIMENTO.md).
 
-**Pendente:** repetir Wind Waker offline no A56 e confirmar abertura, pausa,
-retorno e saída; recebimento e cadastro aditivo do kit no servidor,
+**Pendente:** quarentena da imagem defeituosa no servidor, verificação da fonte
+e nova edição jogável; depois confirmar abertura, pausa, retorno e saída no
+A56; recebimento e cadastro aditivo do kit no servidor,
 capacidades assinadas e sessões online reais. A instalação confirmada não
-comprova que o reparo resolveu o jogo. Só após essas provas se pode avaliar
+comprova que o jogo é jogável. Só após essas provas se pode avaliar
 acesso online e aceite ao consumidor. O estado exato está em
 [STATUS.json](STATUS.json) e no [recibo sanitizado de instalação](evidence/INSTALACAO-A56-SUCESSO-20261014.json).

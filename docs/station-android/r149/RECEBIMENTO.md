@@ -16,8 +16,11 @@ O kit R149 **não tem recibo de cadastro aplicado**; o kit R148 segue sem
 aplicação comprovada e não substitui a R149.
 
 O APK R149 foi instalado no Samsung A56 com SHA-256 conferido, sem desinstalar
-ou limpar dados. O reparo de `onPause()` em DEX10 ainda precisa
-ser confirmado **offline** no jogo. O teste **online** exige o kit/IDs
+ou limpar dados. O teste **offline** abriu o Dolphin sem repetir o antigo
+`LinkageError`, mas revelou leitura fora da imagem de *Wind Waker* cadastrada.
+Esse item requer quarentena e verificação do artefato conforme
+[diagnóstico de mídia](ERRO-LEITURA-WIND-WAKER-20261014.md); não atribuir esta
+falha ao kit nem declarar gameplay homologado. O teste **online** exige o kit/IDs
 correspondentes ao APK R149 instalado. Quando o pacote final chegar:
 
 1. Autenticar localmente e obter baseline protegido **atual** de catálogo,
