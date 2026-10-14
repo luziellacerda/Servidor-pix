@@ -95,9 +95,10 @@ Se uma imagem válida for localizada, conferir **o arquivo real** com
 Publicar como artefato imutável com identidade e revisão coerentes. A outra
 edição de Wind Waker tem uma
 [cópia local que passou verificação estática](VALIDACAO-WIND-WAKER-ALTERNATIVA-20261014.md),
-mas o arquivo efetivamente servido no Linux e a jogabilidade ainda precisam
-de confirmação. No A56, remover pelo app apenas a instalação velha
-desse jogo antes de baixar a edição validada; preservar saves e demais dados.
+mas o arquivo efetivamente servido no Linux e a jogabilidade prolongada ainda
+precisam de confirmação. O usuário relatou que a segunda entrada baixada no
+A56 entrou no jogo em 14/10/2026. Preservar saves e demais dados; não remover
+automaticamente a instalação da outra entrada.
 
 ### Rollback protegido
 

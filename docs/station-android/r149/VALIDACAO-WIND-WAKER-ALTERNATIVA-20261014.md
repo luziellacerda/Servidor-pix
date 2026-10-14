@@ -42,10 +42,14 @@ teste offline no A56**. Suspender somente a entrada Europe defeituosa conforme
 varredura a republique. Não substituir os bytes ou o vínculo da entrada Europe
 pela edição USA, nem alterar a lógica do APK ou outros jogos.
 
-A imagem servida no Linux, a nova autorização de download, a instalação desta
-segunda entrada no A56 e uma partida jogável **ainda não foram verificadas** por
-esta análise. A entrada anteriormente instalada no telefone continua associada
-ao seu próprio ID; publicar revisão não a troca automaticamente.
+A imagem servida no Linux e a revisão atual do catálogo **ainda não foram
+conferidas diretamente** por esta análise. Em 14/10/2026, após baixar a
+segunda entrada no A56, o usuário respondeu que ela **entrou no jogo** ao
+abrir para jogar sozinho. Esse relato confirma a abertura observada pelo
+usuário; não constitui captura de log, comparação do SHA do artefato servido
+ou teste prolongado de jogabilidade. A entrada anteriormente instalada no
+telefone continua associada ao seu próprio ID; publicar revisão não a troca
+automaticamente.
 
 Os campos conferidos em formato legível por máquina estão em
 [`evidence/VALIDACAO-WIND-WAKER-ALTERNATIVA-20261014.json`](evidence/VALIDACAO-WIND-WAKER-ALTERNATIVA-20261014.json).

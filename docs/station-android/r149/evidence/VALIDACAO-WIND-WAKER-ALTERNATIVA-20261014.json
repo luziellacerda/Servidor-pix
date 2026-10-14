@@ -36,7 +36,10 @@
   "doNotRepointEuropeItemToUsaImage": true,
   "linuxProductionArtifactConfirmed": false,
   "linuxCatalogCurrentStateConfirmed": false,
-  "a56CandidateDownloadTested": false,
+  "a56CandidateDownloadTested": true,
+  "a56CandidateLaunchReportedByUser": true,
+  "a56CandidateLaunchReportDate": "2026-10-14",
+  "a56CandidateRuntimeLogsCaptured": false,
   "a56CandidateGameplayTested": false,
-  "recommendation": "Quarantine only the broken Europe item; after verifying the current Linux artifact and index, offer the already distinct USA candidate item for a new offline A56 test."
+  "recommendation": "Quarantine only the broken Europe item; the distinct USA candidate launched on the A56 according to the user, while its Linux artifact SHA and sustained gameplay remain unverified."
 }
