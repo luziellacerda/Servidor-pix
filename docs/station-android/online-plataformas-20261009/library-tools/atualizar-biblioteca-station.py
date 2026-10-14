@@ -317,6 +317,8 @@ def content_identities(path):
 
 def bind_content_identities(items, identities):
     for row in items:
+        if row.get('catalogVisible', True) is False and 'artifact' not in row:
+            continue  # Retain the historical identity of quarantined bytes.
         # Unknown or replaced payloads have no public hash; existing metadata is preserved.
         row.pop('contentSha256', None)
         row.pop('contentIdentityScheme', None)
@@ -575,6 +577,8 @@ def publish(config, bootstrap=False, on_progress=None):
             binder=importlib.util.module_from_spec(binder_spec);binder_spec.loader.exec_module(binder)
             from station_content_sets import bind_set
             for row in items:
+                if row.get('catalogVisible', True) is False and 'artifact' not in row:
+                    continue  # No current launch payload to bind or republish.
                 artifact=row.get('artifact',{});entry=identities.get(row['itemId'])
                 if entry and entry['platform']==row['platform'] and entry['artifactSha256']==artifact.get('sha256') and all(entry[k]==artifact.get(k) for k in ('launchPath','expandedSizeBytes','fileCount')):continue
                 try:

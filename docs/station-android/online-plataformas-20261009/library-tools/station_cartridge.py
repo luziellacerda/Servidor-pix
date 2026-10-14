@@ -55,6 +55,8 @@ def prepare(rows, directory, gid):
     if gid is not None: os.chown(directory, -1, gid)
     receipts, checked, pending = [], {}, []
     for row in rows:
+        if row.get('catalogVisible', True) is False and 'artifact' not in row:
+            continue  # Quarantined metadata has no downloadable cartridge.
         platform = {'snesbr': 'snes', 'megadrivebr': 'megadrive'}.get(row['platform'], row['platform'])
         artifact = row['artifact']
         extension = PurePosixPath(artifact['launchPath']).suffix.lower()
