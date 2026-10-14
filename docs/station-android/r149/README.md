@@ -1,10 +1,13 @@
-# R149 — reparo mínimo do Dolphin offline, APK e kit preparados
+# R149 — reparo mínimo do Dolphin offline, APK instalado e kit na mídia de repasse
 
 Fonte/receita congelada em `ef5d00b189a4a57bb2044e297b2f1b9b4fa90ce0`.
 O APK R149 foi compilado e assinado; APK e kit foram relidos diretamente no
-backup local e coincidem com os recibos de produção. Isso não equivale à
-instalação, aplicação no servidor ou versão liberada. A R143 continua a
-referência estável.
+backup local e coincidem com os recibos de produção. A instalação USB no
+Samsung A56 concluiu com `SUCCESS` em 14/10/2026 às 13:16:35 UTC. O SHA-256
+do APK instalado coincide com o da R149 e o procedimento não desinstalou,
+limpou dados nem forçou a parada do aplicativo. O kit foi copiado à mídia de
+repasse com hash conferido anteriormente, mas **não há recibo de aplicação no
+servidor**. A R143 continua a referência estável.
 
 No Samsung A56 com R148, *The Legend of Zelda: The Wind Waker* falhou antes
 do jogo abrir com `LinkageError`: `EmulationActivity.onPause()` tenta
@@ -62,8 +65,9 @@ IDs, perfis, modos, licenças e dados anteriores. Não reaplicar R141 ou QoS,
 executar operadores históricos, implantar ou reiniciar a API para este kit.
 Ver [instrução de recebimento](RECEBIMENTO.md).
 
-**Pendente:** instalação e teste offline reais no aparelho; recebimento e
-cadastro aditivo do kit no servidor, capacidades assinadas e sessões online
-reais. O teste físico não deve ser inferido da compilação. Só após essas provas
-se pode avaliar acesso online e aceite ao consumidor. O estado exato está em
-[STATUS.json](STATUS.json).
+**Pendente:** repetir Wind Waker offline no A56 e confirmar abertura, pausa,
+retorno e saída; recebimento e cadastro aditivo do kit no servidor,
+capacidades assinadas e sessões online reais. A instalação confirmada não
+comprova que o reparo resolveu o jogo. Só após essas provas se pode avaliar
+acesso online e aceite ao consumidor. O estado exato está em
+[STATUS.json](STATUS.json) e no [recibo sanitizado de instalação](evidence/INSTALACAO-A56-SUCESSO-20261014.json).

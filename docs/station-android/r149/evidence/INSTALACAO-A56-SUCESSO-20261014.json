@@ -1,0 +1,21 @@
+{
+  "schema": "station.r149.usb-install-evidence.sanitized.v1",
+  "revision": "R149",
+  "device": "Samsung A56",
+  "transport": "USB",
+  "completedUtc": "2026-10-14T13:16:35.3527296Z",
+  "installAttempted": true,
+  "installSuccess": true,
+  "resultCode": "SUCCESS",
+  "apkSha256": "698e8a7914cc7be2facc00e6701ff1f3533fa13f763358b51578a35d25c2741e",
+  "installedHashVerified": true,
+  "installedApkSha256": "698e8a7914cc7be2facc00e6701ff1f3533fa13f763358b51578a35d25c2741e",
+  "dataPreservationRequested": true,
+  "forceStopped": false,
+  "uninstalledOrClearedData": false,
+  "downgradeRequested": false,
+  "offlineGamecubePhysicalFixValidated": false,
+  "serverKitApplied": false,
+  "onlineGameplayValidated": false,
+  "source": "recibo local de instalação USB; campos pessoais e número de série omitidos"
+}
