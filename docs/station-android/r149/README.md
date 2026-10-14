@@ -49,7 +49,10 @@ no byte 1.440.989.248, mas o ISO instalado mede 546.776.387 bytes. Seu SHA
 coincide com o catálogo; o cabeçalho `GZLE01` discorda do nome europeu. O
 diagnóstico e a quarentena **somente desse item** estão em
 [ERRO-LEITURA-WIND-WAKER-20261014.md](ERRO-LEITURA-WIND-WAKER-20261014.md).
-O teste de pausa, retomada, saída e gameplay completo continua pendente até
+Após o aviso de leitura, o usuário saiu do jogo no A56 e informou que o
+TurboStations voltou normalmente à lista de jogos, sem travar. Essa saída
+após erro foi observada pelo usuário, não por registro USB. Pausa, retomada,
+saída após uma partida jogável e gameplay completo continuam pendentes até
 ter uma imagem verificada. A falha de mídia não exige recompilar o APK nem
 cadastrar o kit online para ser investigada.
 
@@ -73,8 +76,8 @@ executar operadores históricos, implantar ou reiniciar a API para este kit.
 Ver [instrução de recebimento](RECEBIMENTO.md).
 
 **Pendente:** quarentena da imagem defeituosa no servidor, verificação da fonte
-e nova edição jogável; depois confirmar abertura, pausa, retorno e saída no
-A56; recebimento e cadastro aditivo do kit no servidor,
+e nova edição jogável; depois confirmar leitura, gameplay, pausa, retomada e
+saída após partida no A56; recebimento e cadastro aditivo do kit no servidor,
 capacidades assinadas e sessões online reais. A instalação confirmada não
 comprova que o jogo é jogável. Só após essas provas se pode avaliar
 acesso online e aceite ao consumidor. O estado exato está em

@@ -7,6 +7,12 @@ instalada no Samsung A56. Nesta tentativa, o lançamento ultrapassou o antigo
 pelo ponto que antes bloqueava a preparação; pausa, retomada e uma partida
 completa ainda não foram validadas.
 
+Após o aviso de leitura, o usuário saiu do jogo no A56 e informou que o
+TurboStations voltou à lista de jogos normalmente, sem travar. Esse resultado
+de saída após erro foi relatado diretamente pelo usuário; o telefone já não
+aparecia na USB para confirmar essa etapa por registro. A saída de uma partida
+jogável, pausa e retomada continuam sem validação.
+
 ## Evidência física e correspondência do catálogo
 
 O Dolphin exibiu `The disc could not be read (at 0x55e3c040 - 0x55e3c060).`
