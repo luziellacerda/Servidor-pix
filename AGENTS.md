@@ -1,3 +1,13 @@
+# App atual R151 exige seu kit; não confundir a liberação R149 — 14/10/2026
+
+Ler o topo do MESMO handoff, r151/README.md e r151/server-receiver-status.json. Retornoappbcb1fc6/fonteR151d5afd35/APKc6090d6 instaladoA56. Mensagem N64: indicadorOnline, nenhum modo aprovado para motor instalado. Exige engine mupen64plus-ae-33bf7021-n64-v3-8eda486330ca/runtime8eda4863, corefe6e810a igual. R149dcad0757 já aplicada e nova prova4clientes pública passou; STATUSr149 corrigido true refere-se SÓ R149. Não marcarR151aplicada nem relaxar vínculos por core igual.
+
+KitR151 SHA76cf298a4a9efffc068bddb94e312dacc10e0ca35aca2ffc57ddf8c7b8f51651 não encontrado noUSB(SERVIDORLER contémR149/WindWaker) ou busca nativa61.902pastas/367ZIPcandidatos. Uma pasta temporária privada de WhatsApp ficou fora, conectorPCAPKoffline. Receptor /mnt/DADOS/station-r151-20261014/kit-privado criado; pergunta assíncrona pedeZIPexato/caminho, semAPK/senhas. Receber6ELF20deps4IDs78modos,baselineprotegido fresco49+, preparar/registrar aditivo vigente/scan.lock, semdeploy/restart; devolvercapabilities1080Snowboardingpara2 e modos4PcomidentidadeR151. Arquivos congelados/receitas/recibos da produçãoR150/R151 preservados.
+
+WindWaker aplicado,catálogo49/API3297582/DLLb3473cc0/scannera10c78f53797,43motores/11682perfis/6821modos atuais preservados. Não repetir operadores/aplicados; manterglobalpartialporbytesR151pendentes. Não declararN64pronto para APKR151 enquanto sóR149cadastrada. R143estável intacta; mesmasbranches/handoff/monitor.
+
+## Histórico preservado integralmente
+
 # N64 R149 pronto para a produção: STATUS corrigido e prova pública atual — 14/10/2026
 
 Ler a seção atual do mesmo handoff e r149/evidence/server-n64-live-ready-20261014.json. A inconsistência que mantinha STATUSr149 com serverKitApplied=false/serverRegistrationConfirmed=false foi corrigida em ambos Gits: agora true, serverConsumerReady/n64ServerReady=true, n64ServerOffline=false. O consumerReady de aceite físico do APK permanece separado e não indica o servidor offline. README/recebimento abrem pelo estado atual; hashes/APK/kit/fontes congeladas/candidata/estável/flags físicas preservados.
