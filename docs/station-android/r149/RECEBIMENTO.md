@@ -8,13 +8,20 @@ O APK assinado R149 tem **2.715.089.935 bytes**, SHA-256
 Receber somente `Kit-Servidor-TurboStations-R149-Independentes.zip`, de
 **12.181.272 bytes**, SHA-256
 `ed95ba61c92285937014a91e86b1dd7dd0a6928e10a9d063132973244e4eb5ec`.
-Os hashes e tamanhos foram conferidos no backup privado local; o servidor
-ainda precisa receber/verificar seus próprios bytes. O kit R148 segue sem
+Os hashes e tamanhos foram conferidos no backup privado local. A cópia na mídia
+de repasse teve hash conferido anteriormente; a mídia não estava acessível
+para nova leitura nesta atualização. O servidor ainda precisa receber/verificar
+seus próprios bytes.
+O kit R149 **não tem recibo de cadastro aplicado**; o kit R148 segue sem
 aplicação comprovada e não substitui a R149.
 
-O reparo de `onPause()` em DEX10 pode ser confirmado **offline** no telefone
-sem ação neste servidor. O teste **online** exige o kit/IDs correspondentes ao
-APK R149 realmente instalado. Quando o pacote final chegar:
+O APK R149 foi instalado no Samsung A56 com SHA-256 conferido, sem desinstalar
+ou limpar dados. O teste **offline** abriu o Dolphin sem repetir o antigo
+`LinkageError`, mas revelou leitura fora da imagem de *Wind Waker* cadastrada.
+Esse item requer quarentena e verificação do artefato conforme
+[diagnóstico de mídia](ERRO-LEITURA-WIND-WAKER-20261014.md); não atribuir esta
+falha ao kit nem declarar gameplay homologado. O teste **online** exige o kit/IDs
+correspondentes ao APK R149 instalado. Quando o pacote final chegar:
 
 1. Autenticar localmente e obter baseline protegido **atual** de catálogo,
    perfis, modos e motores antes de escrever; preservar retorno/rollback.

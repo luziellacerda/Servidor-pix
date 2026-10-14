@@ -1,10 +1,13 @@
-# R149 — reparo mínimo do Dolphin offline, APK e kit preparados
+# R149 — reparo mínimo do Dolphin offline, APK instalado e kit na mídia de repasse
 
 Fonte/receita congelada em `ef5d00b189a4a57bb2044e297b2f1b9b4fa90ce0`.
 O APK R149 foi compilado e assinado; APK e kit foram relidos diretamente no
-backup local e coincidem com os recibos de produção. Isso não equivale à
-instalação, aplicação no servidor ou versão liberada. A R143 continua a
-referência estável.
+backup local e coincidem com os recibos de produção. A instalação USB no
+Samsung A56 concluiu com `SUCCESS` em 14/10/2026 às 13:16:35 UTC. O SHA-256
+do APK instalado coincide com o da R149 e o procedimento não desinstalou,
+limpou dados nem forçou a parada do aplicativo. O kit foi copiado à mídia de
+repasse com hash conferido anteriormente, mas **não há recibo de aplicação no
+servidor**. A R143 continua a referência estável.
 
 No Samsung A56 com R148, *The Legend of Zelda: The Wind Waker* falhou antes
 do jogo abrir com `LinkageError`: `EmulationActivity.onPause()` tenta
@@ -39,9 +42,19 @@ de backup R149 concluiu com sucesso; cadastro no servidor continua `false`.
 
 ## Teste e dependência do servidor
 
-O reparo **offline** pode ser testado no A56 com APK R149 assinado e instalado,
-sem cadastrar o kit: repetir a mesma edição de Wind Waker e conferir abertura,
-pausa, retorno e saída. Preparação/compilação não provam esse resultado físico.
+O teste **offline** da R149 no A56 ultrapassou o antigo `LinkageError` e abriu
+o Dolphin. Em seguida, a edição europeia cadastrada de *Wind Waker* falhou com
+`The disc could not be read (at 0x55e3c040 - 0x55e3c060)`: a leitura começa
+no byte 1.440.989.248, mas o ISO instalado mede 546.776.387 bytes. Seu SHA
+coincide com o catálogo; o cabeçalho `GZLE01` discorda do nome europeu. O
+diagnóstico e a quarentena **somente desse item** estão em
+[ERRO-LEITURA-WIND-WAKER-20261014.md](ERRO-LEITURA-WIND-WAKER-20261014.md).
+Após o aviso de leitura, o usuário saiu do jogo no A56 e informou que o
+TurboStations voltou normalmente à lista de jogos, sem travar. Essa saída
+após erro foi observada pelo usuário, não por registro USB. Pausa, retomada,
+saída após uma partida jogável e gameplay completo continuam pendentes até
+ter uma imagem verificada. A falha de mídia não exige recompilar o APK nem
+cadastrar o kit online para ser investigada.
 
 O **online** dos motores independentes exige o kit privado **R149 exato** e as
 capacidades assinadas destes quatro IDs renovados:
@@ -62,8 +75,10 @@ IDs, perfis, modos, licenças e dados anteriores. Não reaplicar R141 ou QoS,
 executar operadores históricos, implantar ou reiniciar a API para este kit.
 Ver [instrução de recebimento](RECEBIMENTO.md).
 
-**Pendente:** instalação e teste offline reais no aparelho; recebimento e
-cadastro aditivo do kit no servidor, capacidades assinadas e sessões online
-reais. O teste físico não deve ser inferido da compilação. Só após essas provas
-se pode avaliar acesso online e aceite ao consumidor. O estado exato está em
-[STATUS.json](STATUS.json).
+**Pendente:** quarentena da imagem defeituosa no servidor, verificação da fonte
+e nova edição jogável; depois confirmar leitura, gameplay, pausa, retomada e
+saída após partida no A56; recebimento e cadastro aditivo do kit no servidor,
+capacidades assinadas e sessões online reais. A instalação confirmada não
+comprova que o jogo é jogável. Só após essas provas se pode avaliar
+acesso online e aceite ao consumidor. O estado exato está em
+[STATUS.json](STATUS.json) e no [recibo sanitizado de instalação](evidence/INSTALACAO-A56-SUCESSO-20261014.json).
