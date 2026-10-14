@@ -4,6 +4,20 @@ Ler r145/README e STATUS. Fonte `25d10b2322d2e5687c9dfacc71a826c3955fad5d`, APK 
 
 ## Histórico preservado
 
+## Capas novas do N64 recebidas pelo USB e publicadas — 13/10/2026, 20h44
+
+**Catálogo 47; 132 arquivos de revista substituídos, correspondendo a 133 vínculos.** O conjunto correto foi entregue pelo proprietário em `CAPAS N64` no pen drive e ainda não estava no Git de artes consultado. As verificações anteriores de igualdade com esse Git eram verdadeiras, mas comparavam a coleção antiga. Agora as imagens novas estão em `n64/media/revista`, com nomes associados às ROMs instaladas. [Recibo, catálogo N64 completo e origens por jogo](online-plataformas-20261009/n64-capas-usb-20261013.json).
+
+Todas são JPEG RGB 480×720/q90, sem recorte: 330.455.594 bytes de originais → 18.636.845 bytes. Mario Kart 64 e Zelda Ocarina usam os JPEGs avulsos entregues e conferidos visualmente; Bomberman 64 usa a edição 1997, confirmada pelo metadado e pelo cabeçalho NBME, sem confundir com 2001. Monaco Grand Prix foi conciliado pelo título e cabeçalho NMGP. São 156 imagens para 157 registros, pois duas edições/entradas de Zelda compartilham o arquivo de revista.
+
+**24 jogos conservaram a capa anterior porque a arte nova finalizada não veio no pacote.** A lista completa está no recibo; não usar fotos de referência, gerações anteriores ou arte de outro jogo para preencher essas faltas. O catálogo do USB registra 335 capas prontas e 53 não concluídas; isso não significa 335 ROMs novas. Os jogos/metadados/descritivos, IDs e coverIds, demais plataformas e três registros online foram preservados. O importador existente publicou sem reiniciar API: 46 → 47, added: 0 / updated: 133, 4.435 visíveis / 4.690 IDs. Backup local das 132 revistas e backup Git do ponto anterior conferidos.
+
+**Entrega conferida:** 157 capas pela API local e 21 por HTTPS público, com sessão/prova por pedido, assinatura do catálogo, hash, MIME e 480×720 verificados. Licenças sintéticas removidas; licenças reais e PID 2867363 intactos. Os 133 itens têm revisão própria nova; o app deve invalidar pelo par `coverId + item.revision` ao receber o catálogo 47. Não precisa recompilar para esta troca; a visualização física nos celulares não foi homologada nesta tarefa.
+
+Manutenção: as 132 substituições do USB têm precedência sobre as artes antigas do Git. Não reaplicar operadores de R128/R138 nem voltar essas capas ao conjunto anterior quando atualizar outras plataformas. Novas artes para os 24 títulos pendentes exigem arquivos finalizados correspondentes. O servidor conserva o cadastro R141; os próximos owners precisam do kit exato do APK testado (A56 R144, conforme novo retorno abaixo). QoS e motores não foram alterados por esta troca de capas; estável R143 preservada.
+
+## Histórico preservado
+
 ## Comparação do retorno 23h UTC com o A56 R144
 
 O novo retorno c926aa9 confirma catálogo/perfis/motores no estado R141 aplicado e falta do ZIP R143 a4ba2105 no Linux. O A56 já está na R144, APK01427, cujo kit privado exato é 7b1cdb6c (12.164.472 bytes), preparado localmente e não aplicado. Os quatro fingerprints independentes são vinculados ao DEX/carrossel: o kit R143 não substitui o kit da R144. A próxima R145 visual também terá seus fingerprints e kit próprios. SNES mantém cadastro existente, coerente com os relatos positivos anteriores.
@@ -104,6 +118,20 @@ No carrossel, opacidades B0/A0/90. Sistemas não citados mantêm RGB do tema e t
 A R144 é candidata visual para teste. A tag/backup estáveis R143 e ponteiros permanentes permanecem intactos. Instalador USB explícito aponta a R144 com BAT/PS byte exatos. Há instalação A56 em acompanhamento; publicar conclusão apenas com recibo de hash e dados. Não usar estado de montagem como prova visual. Última fonte instalada observada antes da tentativa A56 é R143, SHA508480e3, apesar do recibo anterior ter R141 como último conhecido.
 
 Quatro IDs independentes foram renovados pelo vínculo obrigatório com DEX28/carrossel, sem mudar os owners/cores/opções/controles ou os nove descritores RetroArch. Kit R144 `7b1cdb6c68a1ddcd05af2e4703d2900061f7f2c4082a3f3c80c6d4c428d18739`, 12.164.472 bytes, 38 arquivos, seis bibliotecas/vinte dependências, apenas mesmos 78 modos revisados. Kit preparado, não aplicado; SNES conserva cadastro existente. Não reaplicar R141, migrar modos duas vezes, alterar licenças ou implantar/reiniciar API. PS1 zero novas aprovações HLE. [Provas e estado](r144/STATUS.json).
+
+## Histórico preservado
+
+## Manutenção horária — 13/10/2026, ciclo 23h UTC
+
+**Conferência concluída; cadastro R143 continua parcial por falta do kit privado neste Linux.** O evento `5cad33db…` aponta os mesmos commits servidor `f2294f8…`, app `c349ef5…` e capas main `5c6cc32…` / SNES `9f85e9d…`, confirmados diretamente nos remotos. Não chegou carga útil nova para implementar ou capa nova para importar.
+
+A autenticação Linux nativa permitiu uma leitura protegida sob `scan.lock` compartilhado. ExecStart permanece `/usr/bin/dotnet /opt/turborama-station-online-audit-20261013-ef5270b3d47b-e/TurboRamaSuiteOnlineServer.dll`; SHA256 `ef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a`, PID 2867363 e NRestarts 0. Importador e seus três helpers coincidem byte a byte com a fonte atual. Catálogo 46: 4.690 IDs / 4.435 visíveis. Manifesto persistente v3, perfis e modos continuam byte idênticos aos exports da R141 aplicada: 39 motores / 11.604 perfis / 6.743 modos. O registro legado selecionado pela configuração da API é uma lista de dez entradas, distinta do manifesto persistente v3; ambos foram lidos e seus hashes registrados.
+
+O recibo documental R143 está idêntico nos dois Gits. O ZIP esperado tem SHA256 `a4ba210580ea68beb0086c2c986c6a884e888a1e9ad599bd7e9d9ae33364f606`, 12.161.998 bytes. A busca também autenticada nos volumes montados não o localizou; o USB SERVIDOR LER contém os kits R139/R141. O checkpoint `F:/TurboStations-Backup-Completo-20261011` não está montado neste PC. Nenhum byte R143 foi substituído por R141, extraído por hipótese ou cadastrado. SNES conserva registro; PSX conserva zero novas aprovações HLE por edição.
+
+Backups publicados e confirmados nos dois Gits em `backup/station-antes-manutencao-20261013-23z`; conferência entregue em worktrees próprias/branch `feat/station-hourly-20261013-23z`. O monitor pai mantém `maintenance.lock`. API, scanner, timer do scanner e QoS não foram interrompidos/reaplicados. Não houve mudança de dados, ROMs, capas, APK, credenciais ou outros produtos. Sem publicação de catálogo, as provas assinadas anteriores foram preservadas; não alegar nova prova assinada ou teste Android neste ciclo.
+
+[Recibo sanitizado desta conferência](r143/maintenance-20261013-23z.json). Auditoria privada: `/mnt/DADOS/station-maintenance-20261013-23z`. Próximo ciclo: somente com entrada nova, localizar o ZIP exato em `/mnt/DADOS/Kit-Servidor-TurboStations-R143-Independentes.zip` (glob já monitorado) ou no USB, conferir manifesto/6 ELF64/20 dependências/4 IDs reais e preparar por chamada da função `prepare` vigente com `migrate_existing_native_profiles=False`, usando baseline protegido fresco e os mesmos 78 modos. Não executar `main` de operadores históricos. Publicar pelo registrador vigente, sob autenticação Linux nativa, parando apenas o timer do scanner, aguardando seu oneshot e usando `scan.lock`; depois conferir recibo aplicado e bindings assinados novos. Não reaplicar R141/QoS nem promover HEAD inteiro. Integração URI+TLS no próximo APK e pendências físicas anteriores permanecem com seus limites originais.
 
 ## Histórico preservado
 

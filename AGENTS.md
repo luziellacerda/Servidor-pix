@@ -4,6 +4,12 @@ Ler r145/README e STATUS. Fonte `25d10b2322d2e5687c9dfacc71a826c3955fad5d`, APK 
 
 ## Histórico preservado
 
+# Capas N64 do USB publicadas — 13/10/2026
+
+Ler o MESMO handoff e online-plataformas-20261009/n64-capas-usb-20261013.json. Catálogo 47:132 revistas novas / 133 vínculos / 24 capas anteriores conservadas porque não vieram novas finalizadas;156 imagens para 157 itens. Origem correta é USB CAPAS N64, não o Git antigo. JPEG RGB 480×720/q90,330,456 MB → 18,637 MB;157 HTTP locais e 21 públicos autenticados conferidos. IDs, metadados, ROMs, três registros online, API / PID 2867363 e demais plataformas preservados; licenças sintéticas removidas. Backup de 132 arquivos e ponto Git anterior verificados. Cache coverId+item.revision atualizado; visual Android não homologada aqui. Não reaplicar: /mnt/DADOS/station-n64-usb-capas-20261013/applied.json. Essas 132 artes USB têm precedência sobre Git antigo; não restaurar automaticamente. Kit dos owners deve corresponder ao APK testado (A56 R144; estável R143 preservada); não reaplicar R141/QoS. Continuar manutenção horária serializada.
+
+## Histórico preservado
+
 # R144 instalada e ativada; R145 visual em preparação
 
 Leia r144/STATUS e o mesmo handoff. A56 instalação nova SHA01427/fonte1ac conferidos; abertura após código confirmado pelo mantenedor, USB desconectado. Não publicar o código. R144 não aprovada no fundo: próxima R145 azul céu em todos os fundos azuis e novos números/cores de faixas conforme recibo, sem trocar fundos neutros/verde/preto ou lógica. Depois investigar N64/PS1/GC/Wii online com evidência e kit correspondente ao APK real; nenhum reparo de gameplay já incluído na R144. Estável R143 e ponteiros permanecem exatos.
