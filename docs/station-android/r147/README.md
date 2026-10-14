@@ -1,3 +1,11 @@
+## Atualização: primeira base rejeitada pela conferência
+
+A primeira reconstrução terminou, mas não reproduziu o hash completo obrigatório. A comparação encontrou duas causas na receita:37 linhas vazias removidas de zconf.h e mapa de caminhos descartado pelo alvo mGBA. Código executável e dados de runtime comparados permaneceram iguais; os dados de depuração e o identificador da compilação diferiram. A correção da receita será congelada em escopo final distinto, mantendo esta tentativa e os gates92b/f7. Nenhum core produtivo/APK R147 instalado ou kit aplicado. Ler evidence/native-baseline-attempt1.json.
+
+O backup completo R146 foi concluído:3.619 arquivos, dois bundles com recuperação real em bare novo e fsck completo estrito; R145/R143 e ponteiros estáveis preservados. Ler evidence/r146-backup-summary.json.
+
+## Registro anterior preservado
+
 # Preparação R147 — fechamento do trabalho visual e online
 
 Estado de compilação: fontes congeladas e publicadas no commit `6b4eab2c9221bb698362547df822962cda81cee9`. DEX10 compilado e conferido, SHA `4d200405747b4d42108fe6bd8afdccc290db3fa1a72a9aa28c779f8772a53a78`, 6.357.400 bytes. Motor: configuração concluída, reconstrução integral da base em andamento. APK, instalação, kit final aplicado e gameplay da R147 ainda não comprovados. Ler BUILD-PROGRESS.json. Este registro de progresso permanece como histórico depois da conclusão.

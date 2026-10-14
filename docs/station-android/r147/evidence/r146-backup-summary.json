@@ -1,0 +1,19 @@
+{
+  "schema": "station.r146.backup-public-summary.v1",
+  "revision": "R146",
+  "passed": true,
+  "sourceCommit": "bfea454d04ef297e9dfd1b397e0bf25df3937e93",
+  "verifiedFiles": 3619,
+  "receiptSha256": "abc18c9cf23c765ac8abaa35a62f72999ee396310a731fcb93fadf020b2bb4a1",
+  "standaloneGitBundles": 2,
+  "standaloneRecoveryPassed": true,
+  "strictFullFsckPassed": true,
+  "withoutAlternatesRemotesOrReflogs": true,
+  "r145DependencyAll3632FilesRehashed": true,
+  "r143ToolsAndAuthorityDependencyVerified": true,
+  "checkpointName": "direct-v3-relay-r146-20261014",
+  "candidateOnly": true,
+  "stablePromoted": false,
+  "phoneInstalled": false,
+  "serverKitApplied": false
+}

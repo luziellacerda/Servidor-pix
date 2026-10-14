@@ -1,3 +1,9 @@
+# R147 primeira base rejeitada; receita final em preparação
+
+Fonte6b permanece intacta. Baseline compilou mas não passou92b: perda37newlines em zconf.h e mapa metadata mGBA sobrescrito. .text/.rodata/runtime comparados exatos; debug/buildID diferentes. Ler r147/evidence/native-baseline-attempt1.json. Nova scope-final/namespaceEFinal em preparação, sem relaxar hashes e sem motor produtivo/APK/instalação/cadastro/gameplay. DEX4d e49files/45pins anteriores preservados. Backup R146 completo3.619files e2bundles recuperados/fsckstrict verificados; dependênciasR145/R143 e estável intactas. Nenhumdeploy/restart/migração/HLEgenérica.
+
+## Histórico preservado
+
 # R147 fontes publicadas; DEX conferido, motor em compilação
 
 Fonte `6b4eab2c9221bb698362547df822962cda81cee9`, 49 arquivos/45 pins. Uma classe/quatro métodos de posse de boot Dolphin já montados: 4.990 classes preservadas, inversão integral passou, DEX4d200405. Correção nativa de uma linha exige primeiro reproduzir f7/92b e quatro hooks; configuração passou, compilação integral em andamento. Ler r147/README e BUILD-PROGRESS. Nenhum APK R147, instalação, cadastro ou gameplay comprovado. R145 visual e R146 rota preservados pela receita, a conferir no pacote final. R143 estável intacta. Não aplicar kit antigo como se fosse R147; aguardar kit real correspondente. Sem deploy/restart/migração genérica, ampliação HLE ou mudança de desempenho. Backup R146 em preparação; R145 completo verificado.

@@ -1,0 +1,32 @@
+{
+  "schema": "station.r147.baseline-attempt1.v1",
+  "sourceCommit": "6b4eab2c9221bb698362547df822962cda81cee9",
+  "baselineBuilt": true,
+  "baselineQualified": false,
+  "originalUnstrippedSha256": "92b1951facb9fca6aad644026c47adcc62e09c9b5aca61629aab7e1515a270fe",
+  "actualUnstrippedSha256": "371c80cfa8e8fe8f8dce70928a94b96d317c68e0061e4a65c08da13d53c5e45b",
+  "codeTextAndRodataByteExact": true,
+  "allAllocatedSectionsExceptBuildIdByteExact": true,
+  "changedSymbolCount": 1760,
+  "changedSymbolsOnlyDwarf": true,
+  "changedSections": [
+    ".debug_info",
+    ".debug_line",
+    ".debug_str",
+    ".note.gnu.build-id",
+    ".symtab"
+  ],
+  "causes": [
+    "CMake argument forwarding removed37 leading blank lines from generated zconf.h",
+    "mGBA target replaces COMPILE_OPTIONS and drops inherited metadata path normalization"
+  ],
+  "nextScope": "integration/dolphin-boot-cleanup-r147-20261014-final",
+  "nextBuildNamespace": "E:/StationDolphinBootCleanupR147Final-20261014",
+  "strictOriginalHashGatesRetained": true,
+  "priorSourceAndFailedOutputPreserved": true,
+  "productiveCoreBuilt": false,
+  "apkBuilt": false,
+  "phoneInstalled": false,
+  "serverChanged": false,
+  "privateDiagnosticSha256": "2cd7a374838c38ed8057912e7699d952ce8e8472a4c3e90080cbf2850b571094"
+}

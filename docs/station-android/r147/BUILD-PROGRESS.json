@@ -58,7 +58,7 @@
   "preservedClassesInChangedPartition": 4990,
   "postAssemblyWholeClassInversePassed": true,
   "nativeConfigurePassed": true,
-  "nativeBaselineCompilationInProgress": true,
+  "nativeBaselineCompilationInProgress": false,
   "nativeCompiled": false,
   "apkCompiled": false,
   "apkSigned": false,
@@ -68,5 +68,9 @@
   "physicalGameplayValidated": false,
   "stablePromoted": false,
   "stableRevision": "R143",
-  "backupR146InPreparation": true
+  "backupR146InPreparation": false,
+  "nativeBaselineAttempt1Built": true,
+  "nativeBaselineAttempt1Qualified": false,
+  "finalScopeInPreparation": true,
+  "backupR146Verified": true
 }
