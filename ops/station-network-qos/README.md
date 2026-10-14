@@ -67,14 +67,14 @@ continuam bloqueados nesse host. `X-Station-Qos: 1` indica o cadastro da fila,
 sem substituir qualquer verificação do ticket. O protocolo, replay, READY/ACK,
 geração, janelas e limites da API permanecem iguais.
 
-**A R141 e a estável R143 ainda usam a origem anterior para multiplayer.** A produção do APK deve
-selecionar este URI e o pin correspondente somente na conexão multiplayer v3,
-preservando origem/pin de login e comandos e a rota anterior do relay legado.
-Modificar somente o URI, mantendo a fábrica TLS antiga, causaria erro de pin.
-Usar a estável R143 como base, mantendo os parsers/seleção multitap atuais.
-O detalhe de integração está no handoff existente. Os callbacks e os ajustes de
-opções da R140 devem ser conservados; qualquer alteração de fingerprint deve
-seguir a renovação normal dos owners e o kit privado.
+**A R146 já integrou URI e fábrica TLS próprios para multiplayer v3**, e a R148
+recebida documenta sua preservação. Login, comandos, download e relay legado
+conservam as rotas e pins anteriores. A R141 e a referência estável R143 usam a
+origem anterior para multiplayer. Modificar apenas o URI mantendo a fábrica TLS
+antiga causaria erro de pin; não repetir essa integração sobre receita congelada.
+O detalhe está no handoff existente. Callbacks, opções, parsers e seleção multitap
+conservam seus contratos. Qualquer fingerprint novo exige kit e registro
+correspondentes ao APK efetivamente usado; este ajuste de taxa não os cadastra.
 
 ## Operação e reversão
 
