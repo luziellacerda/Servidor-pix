@@ -168,10 +168,15 @@ def prepare(items,existing,manifest,modes=None):
                 if key in keys:continue
                 output.append(record);keys.add(key);bindings.add(binding)
     if len(output)>50000:raise ValueError('automatic profile limit exceeded')
-    counts={}
+    counts={};content_groups={}
     for p in output:
-        counts[p['itemId']]=counts.get(p['itemId'],0)+1
-        if counts[p['itemId']]>32:raise ValueError('automatic profile per-game limit exceeded')
+        binding=tuple(p[k] for k in BINDING)
+        counts[binding]=counts.get(binding,0)+1
+        if counts[binding]>32:raise ValueError('automatic profile per-engine-binding limit exceeded')
+        content_groups.setdefault((p['itemId'],p['contentSha256']),[]).append(p)
+    for group in content_groups.values():
+        if len(json.dumps(group,ensure_ascii=True,separators=(',',':')).encode('ascii'))>128*1024:
+            raise ValueError('automatic profile content projection exceeds the server byte limit')
     if len((json.dumps(output,ensure_ascii=False,indent=2)+'\n').encode())>16*1024*1024:
         raise ValueError('automatic profile registry exceeds the server byte limit')
     return output

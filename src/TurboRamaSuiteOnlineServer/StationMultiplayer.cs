@@ -31,6 +31,8 @@ public sealed class StationReplayBudget(long maximumBytes=33554432)
 
 public sealed class StationMultiplayer
 {
+    public const int MaximumProfilesPerEngineBinding=32;
+    public const int MaximumProfileBytesPerContent=128*1024;
     public const string Protocol="station-stream.v3",CommandPath="/v1/station/online/multiplayer/command",RelayPath="/v1/station/online/multiplayer/relay";
     public const int WindowBytes=262144;
     private sealed class Peer(string id,OnlineIdentity identity,string nickname,long seen)
@@ -90,7 +92,12 @@ public sealed class StationMultiplayer
             Need(profiles.TryAdd(ProfileKey(p.ItemId,p.ContentSha256,p.EngineId,p.CoreSha256,p.RuntimeSha256,p.ProfileId,p.ProfileSha256),p with{AllowedPlayerCounts=p.AllowedPlayerCounts!.ToArray(),Instructions=p.Instructions?.ToArray(),Sources=p.Sources?.ToArray()}),400,"STATION_MULTIPLAYER_PROFILE_AMBIGUOUS");
         }
         Need(profiles.Count<=50000,400,"STATION_MULTIPLAYER_PROFILE_LIMIT");
-        Need(profiles.Values.GroupBy(p=>p.ItemId).All(g=>g.Count()<=32),400,"STATION_MULTIPLAYER_PROFILE_LIMIT");
+        // Immutable engine versions coexist. Count modes within the exact engine
+        // binding, and bound each content's complete projection by encoded bytes.
+        Need(profiles.Values.GroupBy(p=>Key(p.ItemId,p.ContentSha256,p.EngineId,p.CoreSha256,p.RuntimeSha256))
+            .All(g=>g.Count()<=MaximumProfilesPerEngineBinding),400,"STATION_MULTIPLAYER_PROFILE_LIMIT");
+        Need(profiles.Values.GroupBy(p=>(p.ItemId,p.ContentSha256))
+            .All(g=>JsonSerializer.SerializeToUtf8Bytes(g.ToArray(),StrictJson.Options).Length<=MaximumProfileBytesPerContent),400,"STATION_MULTIPLAYER_PROFILE_LIMIT");
         gameProfiles=profiles.Values.GroupBy(p=>Key(p.ItemId,p.ContentSha256,p.EngineId,p.CoreSha256,p.RuntimeSha256)).ToDictionary(g=>g.Key,g=>g.ToArray());
     }
     // Validate a whole immutable replacement before taking the room lock. Existing
@@ -253,7 +260,7 @@ public sealed class StationMultiplayer
     private object View(Peer peer,string? item,object? ticket,IReadOnlySet<string>? blocked,int clientMaximumPlayers,int page,int roomPageSize)
     {
         var own=peer.Room is {} id?rooms.GetValueOrDefault(id):null;item??=own?.Profile.ItemId;
-        var matches=profiles.Values.Where(p=>p.ItemId==item&&p.MaximumPlayers<=clientMaximumPlayers&&CatalogMatches(p)).Take(32).ToArray();
+        var matches=profiles.Values.Where(p=>p.ItemId==item&&p.MaximumPlayers<=clientMaximumPlayers&&CatalogMatches(p)).ToArray();
         string? selectedPlatform=item is null?null:platform(item);
         bool available=matches.Any(p=>p.Approved&&p.MaximumPlayers>=2);
         string availability=available?"available":selectedPlatform is null?"select-game":

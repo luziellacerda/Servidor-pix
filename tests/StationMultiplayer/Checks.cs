@@ -9,6 +9,7 @@ int checks=0;void Check(bool value,string name){checks++;if(!value)throw new Exc
 CatalogChecks.Run(Check);
 CapacityChecks.Run(Check);
 FuturePlatformChecks.Run(Check);
+ProfileVersionChecks.Run(Check);
 void Denied(Action action,string code){checks++;try{action();throw new Exception("Expected "+code);}catch(OnlineFailure e){if(e.Code!=code)throw new Exception("Expected "+code+" got "+e.Code);}}
 string H(char c)=>new(c,64);
 var security=new StationSessionSecurity("rsa-pss-v1","synthetic-key-only");
