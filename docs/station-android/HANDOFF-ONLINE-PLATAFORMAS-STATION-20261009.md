@@ -1,3 +1,49 @@
+## N64 R149 publicado: até quatro jogadores — 14/10/2026, 10h59 Maceió
+
+**Aplicação concluída e transporte público aprovado.** O kit `Kit-Servidor-TurboStations-R149-Independentes.zip` foi recebido em `SERVIDOR LER` no pen drive: 12.181.272 bytes, SHA-256 `ed95ba61c92285937014a91e86b1dd7dd0a6928e10a9d063132973244e4eb5ec`. As seis bibliotecas ARM64 e vinte dependências distintas coincidem com o manifesto e com o APK R149 `698e8a7914cc7be2facc00e6701ff1f3533fa13f763358b51578a35d25c2741e`. Não é mais necessário solicitar esse kit. [Recibo aplicado e cobertura integral dos 157 itens N64](r149/server-return.json).
+
+### Correção e cadastro efetivos
+
+A API e o importador limitavam cada jogo a 32 perfis somando todas as versões históricas do motor. Conker tinha 25 perfis anteriores e oito novos, totalizando 33: o cadastro seria recusado, e a projeção antiga também truncava modos. Ambos foram corrigidos para **32 modos por vínculo exato de motor** (`itemId`, `contentSha256`, `engineId`, `coreSha256`, `runtimeSha256`), com teto de **128 KiB codificados por jogo/conteúdo**. Os limites globais de 50.000 perfis e 16 MiB continuam aplicados. A resposta `capabilities` agora inclui todos os perfis compatíveis com o conteúdo e com a capacidade do cliente, dentro do orçamento validado. Perfis antigos e salas existentes são preservados nas recargas.
+
+Foram adicionados quatro motores e 78 perfis/modos do kit: **66 N64, nove GameCube e três Wii**. O motor PS1 foi cadastrado sem novas aprovações HLE por edição. Totais publicados: **43 motores, 11.682 perfis e 6.821 modos**. O catálogo permanece na revisão **48**, com os mesmos 4.690 IDs e 4.435 itens visíveis. Prefixos dos registros anteriores, licenças reais, ROMs, metadados e capas foram conferidos e preservados.
+
+O N64 nativo R149 tem **33 edições com 66 modos revisados; 26 dessas edições permitem quatro jogadores** (25 títulos distintos, pois há duas edições de Extreme-G). Os outros 124 itens não possuem modo revisado desse owner independente; seus perfis legados foram preservados. A lista de 157 itens no recibo registra cada caso. Não anunciar que todos os jogos N64 aceitam quatro pessoas nem tratar um perfil legado como aprovação do motor atual.
+
+### Leitura e sessão pelo app
+
+1. Todos os participantes devem executar o mesmo APK R149 e usar o conteúdo da mesma edição. O recibo novo comprova instalação e hash da R149 no Samsung A56; a recusa anterior de armazenamento é histórica. A versão dos demais aparelhos e a partida física de quatro pessoas não foram comprovadas aqui.
+2. Solicitar `capabilities` pelo contrato assinado existente, em `POST /v1/station/online/multiplayer/command`. Identificar a plataforma N64 pelo catálogo e selecionar o perfil do motor **`mupen64plus-ae-33bf7021-n64-v3-dcad075758e5`**, core `fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8`, runtime `dcad075758e57caea6d94557318d03c7f834801419fa00a576f857ecaaaad5d0`.
+3. Usar os sete campos exatos do perfil retornado: `itemId`, `contentSha256`, `engineId`, `coreSha256`, `runtimeSha256`, `profileId`, `profileSha256`. Informar `clientMaximumPlayers=4`; escolher uma capacidade presente em `allowedPlayerCounts` do modo selecionado. Respeitar `modeTitle` e `instructions`, como corrida, batalha ou campanha, sem inferir capacidade pelo nome do jogo.
+4. Seguir `create` → `join` → `ready` → `start`, com `requestId` novo e `roomId`/`generation` atuais. Cada participante ocupa seu `slot` único. Uma sala de quatro tem três ligações anfitrião–convidado e **seis conexões**, duas por ligação; o anfitrião deve abrir as três, cada convidado a sua. Obter o ticket próprio de cada ligação.
+5. O transporte permanece `station-stream.v3` em `/v1/station/online/multiplayer/relay`, com os tickets, provas de aparelho, TLS e pin exigidos pelo contrato. A rota pública direta testada é `wss://downloads-station.lzgames.com.br/v1/station/online/multiplayer/relay`. Manter presença no contrato online e na sala, confirmar READY real do motor e aguardar a barreira completa. Em recuperação, respeitar epoch e offsets monotônicos de cada ligação; não enviar teclas de outro slot nem simular presença/READY.
+
+### Evidência e alcance dos testes
+
+Passaram **1.463 verificações C#**, incluindo preservação de sala e todos os perfis ao cadastrar novas versões, recusa de excesso por motor, orçamento codificado e capacidade de 320 participantes/80 salas. Passaram **192 verificações de HTTP/TLS real**. No importador, nove testes passaram e dez testes dependentes de root não relacionados a esta correção ficaram ignorados; as três verificações novas de cota passaram.
+
+A prova aplicada, local e pela rota pública, usou quatro clientes sintéticos licenciados em Mario Kart 64: slots 1–4, seis WebSockets autenticados, barreira real chegando a `playing`, 24.615 bytes bidirecionais conferidos sem mistura de ligações, queda de um convidado, pausa global e retomada no epoch seguinte com offsets corretos. Todos os 66 modos das 33 edições foram conferidos nas respostas assinadas. Na rota pública, CA, hostname, SPKI e prioridade `X-Station-Qos: 1` passaram. As licenças sintéticas usadas foram removidas. **Isso comprova admissão, entrega de modos e transporte do servidor; não comprova emulação ou estabilidade de partida em quatro Android reais.**
+
+### Publicação e continuidade
+
+Release efetiva: `/opt/turborama-station-n64-ready-20261014-b3473cc01601`; DLL SHA-256 `b3473cc0160169f686501af914cdbf8ebfdf8dcaa4dff768e1106ee8461c9179`, PID 3297582, `NRestarts=0` no recibo. A mudança de fonte foi confrontada com a release anterior efetiva. Apenas a API Station foi reiniciada, após confirmar zero salas/conexões; o scanner passou a usar o importador corrigido na mesma release e sua execução persistente terminou em exit 0, com timer ativo. Os demais serviços foram preservados. Backup Git prévio confirmado em ambos os repositórios: `backup/station-before-n64-four-players-20261014`; R143 estável continua intacta.
+
+Os tetos definidos pelo operador seguem upload 100 Mbps/plano download 800 Mbps, com a prioridade de partidas existente; não houve medição/recalibração, mudança de NIC, portas, firewall ou túnel. CPU/JIT nativos não foram alterados. As capas SNES publicadas e as 132 capas N64 novas do USB mantêm sua precedência sobre artes antigas do Git.
+
+Autoridade privada: `/mnt/DADOS/station-n64-online-audit-20261014/applied.json`, provas `four-player-live-local.json` e `four-player-live-public.json`. **Não repetir `stage-native.py`, `activate-native.py` ou operadores já aplicados.** Para uma futura R150 assinada, receber seu kit exato e cadastrar seus fingerprints aditivamente pelo preparador/registrador vigentes sob `scan.lock`; o limite corrigido permite coexistência de versões. Um kit novo sozinho não exige repetir esta publicação da DLL. Recibos de instalação/partida continuam específicos de cada revisão.
+
+Rollback, se necessário: com baseline fresco e sem partidas, pausar apenas o timer do scanner, aguardar seu oneshot, restaurar os três registros (`modes`, `current`, `profiles`) do backup privado desta ativação sob `scan.lock`, retirar somente os dois drop-ins desta atualização, executar `daemon-reload`, reiniciar somente Station e reativar o timer. Não voltar à DLL antiga mantendo os registros novos que ultrapassam a cota antiga; não restaurar catálogo/capas ou outros serviços por esse motivo. Os arquivos protegidos anteriores e a release anterior foram retidos.
+
+O retorno novo de Wind Waker identifica um defeito de mídia GameCube e oferece um operador separado de quarentena, ainda não aplicado nesta tarefa N64. Os documentos novos e o relato de abertura da edição alternativa foram preservados no Git. Não atribuir essa falha de leitura ao relay nem executar automaticamente seu operador sobre um snapshot antigo. R150 visual e novas artes SNES em produção seguem no monitor horário existente; este resultado não marca suas pendências como concluídas.
+
+### Fontes oficiais consultadas
+
+A API Mupen64Plus define controle de netplay por jogador de 1 a 4 e negociação de versões. [Core Front-End API](https://github.com/mupen64plus/mupen64plus-core/blob/master/doc/emuwiki-api-doc/Mupen64Plus-v2.0-Core-Front-End.mediawiki).
+
+O protocolo original usa TCP para registro/configuração/saves e UDP para inputs. O app Station já encapsula seu protocolo SN64/1 no transporte autenticado TSR3/WSS; o gerenciador original não é substituição direta desse contrato. [Netplay API](https://github.com/mupen64plus/mupen64plus-core/blob/master/doc/emuwiki-api-doc/Mupen64Plus-v2.0-Netplay-API.mediawiki), [gerenciador oficial AE](https://github.com/mupen64plus-ae/netplayroom-manager).
+
+## Histórico preservado integralmente
+
 ## Capas SNES e limites de banda aplicados — 14/10/2026
 
 **Banda:** upload alterado de 33 para **100 Mbps** às 12h31 UTC; download do plano **800 Mbps**, sem teto de entrada aplicado por esta política. A ordem do operador define os valores; nenhuma medição da Claro foi usada nesta alteração. O enlace físico permanece **100 Mbps/full duplex**, impedindo alcançar 800 Mbps neste PC enquanto cabo/porta/negociação continuarem assim. A política de saída mantém prioridade das partidas, reservas 20/20/60 e empréstimo de capacidade ociosa. Com os tetos WAN/placa iguais a 100, garantias internet90/LAN10 e teto100 para ambos evitam ramo LAN com taxa zero. Downloads podem usar100 quando as demais classes estiverem ociosas; é teto total, não velocidade garantida por telefone.
