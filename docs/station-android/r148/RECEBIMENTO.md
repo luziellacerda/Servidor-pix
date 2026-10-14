@@ -21,6 +21,7 @@ operadores históricos, reaplicar R141/QoS nem implantar ou reiniciar a API
 para receber este kit.
 
 Devolver recibo de aplicação e capacidades assinadas com os quatro IDs
-exatos de `STATUS.json`. Nenhum recibo de aplicação, instalação física ou
-partida R148 existe nesta entrega. A divisão de banda é independente deste
-kit; ver [diagnóstico dos downloads](../network-qos/DIAGNOSTICO-DOWNLOADS-ANTES-DEPOIS-20261014.md).
+exatos de `STATUS.json`. A instalação da R148 no Samsung A56 foi comprovada
+por SHA integral no aparelho; ver o [recibo sanitizado](evidence/installation-a56-sanitized.json).
+Ainda não há recibo de aplicação deste kit nem partida R148 validada. A divisão
+de banda é independente deste kit; ver [diagnóstico dos downloads](../network-qos/DIAGNOSTICO-DOWNLOADS-ANTES-DEPOIS-20261014.md).

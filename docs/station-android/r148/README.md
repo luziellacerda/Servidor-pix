@@ -38,9 +38,18 @@ mesmos 78 modos revisados: 66 N64, nove GameCube e três Wii; zero novas
 aprovações PS1 HLE. O kit R147 é de revisão anterior e não cadastra estes
 quatro IDs novos.
 
-**Pendências:** nenhum recibo de instalação, aplicação do kit no servidor,
-teste visual no telefone ou partida física R148 foi registrado. O servidor
-deve conferir o APK e kit correspondentes, obter baseline protegido fresco e
-registrar aditivamente os quatro IDs/modos pelo procedimento vigente sob
-`scan.lock`. Não promover esta candidata ao consumidor antes da validação.
-Consultar `STATUS.json` para os hashes, entradas alteradas e estados exatos.
+**Instalação:** a R148 foi instalada por atualização (`adb install -r`) no
+Samsung A56 em 14/10/2026 às 12:09 UTC. O instalador retornou `SUCCESS` e
+conferiu no aparelho o SHA-256 integral do APK
+`c8b8c30cac7d36ec2a8ca8d470542096919435c749dede535cd0d58648e00dc1`.
+Não houve desinstalação nem limpeza de dados; a primeira instalação permaneceu
+inalterada na comparação antes/depois. O instalador não abriu o aplicativo.
+O [recibo sanitizado](evidence/installation-a56-sanitized.json) registra o
+escopo da conferência, sem identificação USB ou código de licença.
+
+**Pendências:** não há recibo de aplicação do kit no servidor, teste visual no
+telefone ou partida física R148. O servidor deve conferir o APK e kit
+correspondentes, obter baseline protegido fresco e registrar aditivamente os
+quatro IDs/modos pelo procedimento vigente sob `scan.lock`. Não promover esta
+candidata ao consumidor antes da validação. Consultar `STATUS.json` para os
+hashes, entradas alteradas e estados exatos.
