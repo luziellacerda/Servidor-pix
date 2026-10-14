@@ -11,7 +11,7 @@ from pathlib import Path
 
 POLICY = {
     "n64": ("direct-four-ports-v1", 4,
-        "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c"),
+        "688d519ae641911804fe3286e6b5f50cc7f8c06c42ccb1be36781f0fb067b83d"),
     "gamecube": ("dolphin-gamecube-four-ports-v1", 4,
         "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1"),
     "wii": ("dolphin-wii-remotes-four-v1", 4,
@@ -23,7 +23,8 @@ POLICY = {
 
 def canonical(config):
     ordered = {key: config[key] for key in ("schemaVersion", "controllerProfile", "devices", "coreOptions")}
-    return json.dumps(ordered, ensure_ascii=False, separators=(",", ":"), allow_nan=False).encode("utf-8")
+    # Android JSONObject.quote escapes '/', including the slash in SN64/1.
+    return json.dumps(ordered, ensure_ascii=False, separators=(",", ":"), allow_nan=False).replace("/", "\\/").encode("utf-8")
 
 
 def incoming(runtime, package=None):

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "utc": "2026-10-14T19:13:34.628180+00:00",
+  "deviceModel": "SM-A566E",
+  "game": "007: The World Is Not Enough",
+  "platform": "n64",
+  "installedApkSha256": "6203804f1590d5377c261ac079a7bf302decc9e8c7269ddd2495bfaac70de7c6",
+  "engineId": "mupen64plus-ae-33bf7021-n64-v3-30cb5db4dbc6",
+  "roomCreatedOnPhysicalAndroid": true,
+  "mode": "arena",
+  "capacity": 2,
+  "profileParserAccepted": true,
+  "actualProfileCountInIndependentParser": 387,
+  "actualEditionCountInIndependentParser": 157,
+  "androidParserFailures": 0,
+  "physicalAndroidGameplayValidated": false,
+  "roomLeftOpenForUser": true
+}

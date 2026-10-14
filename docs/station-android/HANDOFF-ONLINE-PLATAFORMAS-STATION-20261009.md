@@ -1,3 +1,21 @@
+<!-- STATION-USB-007-20261014 -->
+## USB 007: criação de sala confirmada no Samsung — 14/10/2026
+
+**Bloqueio de criação resolvido e conferido no aparelho.** O Samsung SM-A566E criou uma sala de **007: The World Is Not Enough**, modo **Arena**, com duas vagas. A tela “Sua sala” e o diagnóstico efetivo do Station confirmam a mesma edição e o motor atual. A sala real foi deixada aberta. Isso comprova a criação; não registra uma partida física com dois ou quatro celulares.
+
+Foram encontrados dois problemas concretos. O APK R157 instalado inicialmente tinha motores ainda sem cadastro. Depois do cadastro, o próprio DEX instalado reproduziu a recusa de classificação na linha43: o Android escapa a barra de `SN64/1` ao calcular o SHA256 da configuração, enquanto o servidor usava outra representação JSON. A configuração e os controles eram iguais, mas os hashes divergiam. O registrador de perfis, o importador e a receita do próximo kit agora usam os bytes do Android. Somente o fingerprint foi corrigido em1.425 perfis de sete motores N64; as aprovações, recusas, capacidades e binários não foram alterados.
+
+Durante a reconexão, o Samsung recebeu outro APK às15h57min31s: SHA256 `6203804f1590d5377c261ac079a7bf302decc9e8c7269ddd2495bfaac70de7c6`, derivado do R157 estável. O motor N64 atual é `mupen64plus-ae-33bf7021-n64-v3-30cb5db4dbc6`. O número dessa nova versão e seu commit ainda não tinham sido publicados na branch da produção; não foi inventado um rótulo R158. Os26 ELF da instalação atual foram lidos e conferidos por USB. Seus cores, opções, controles e vinte dependências coincidem com a política anterior, e o DEX35 é idêntico ao R157. O novo owner também foi cadastrado, em duas transações reais78+321; o cadastro R157 anterior permanece disponível. Nenhum ZIP original da produção foi recebido ou declarado verificado: a origem dos bytes foi o APK instalado autorizado.
+
+Para o APK atual:157 edições N64 classificadas,120 com multiplayer e37 individuais;387 perfis desse owner, incluindo321 decisões da revisão completa e66 modos anteriores. O DEX real executado no Android aceitou todos387, sem falhas. Capabilities assinadas locais/públicas das157 edições,164 admissões de modos multiplayer e157 recusas de modos individuais passaram. Quatro clientes sintéticos no transporte público também passaram; não são quatro Android executando jogos. Seis regressões de hash/migração e17 de renovação passaram.
+
+Consulte [estado atual e identidades exatas](r157/server-return.json), [causa, correção e consumo pelo app](r157/server-fingerprint-fix/README.md) e [confirmação da sala real](r157/server-fingerprint-fix/physical-room-created.json). Os dois aparelhos precisam do mesmo motor/revisão e da mesma edição para entrar juntos. A API não foi reiniciada; a janela nativa do Linux foi usada nas gravações protegidas. Capas, ROMs, licenças reais, serviços compartilhados, banda100/800 e tags estáveis foram preservados. A configuração temporária de tela USB foi restaurada e os arquivos de diagnóstico temporários do telefone foram removidos. As36 capas preparadas no ciclo18z continuam fora desta correção.
+
+Não repetir os cadastros R157/atual, a migração de hashes ou os operadores datados. Autoridades privadas: `/mnt/DADOS/station-usb-room-diagnostic-20261014-1819/applied.json`, `fingerprint-applied.json`, `current-apk-6203804f/applied.json` e `physical-room-created.json`. Fontes/recibos congelados e relatos anteriores permanecem abaixo como histórico.
+
+
+## Histórico anterior preservado
+
 ## Manutenção 18h UTC — R157 instalada segundo produção; capas novas preparadas — 14/10/2026
 
 **Estado parcial: nenhuma nova publicação no servidor.** O evento trouxe `08ac3f9d`/`c9906512` com receita visual R157; durante o ciclo chegou `bd0c51d2` documentando APK R157 assinado e instalado no A56. APK reportado: SHA256 `563625c40bfce77def6770a67448f83e2206e67a07023c58359ad2a0de4eee34`, 2.715.106.319 bytes. Este PC conferiu o documento, não o APK/aparelho. Aceite visual da sala, kit privado R157 e entrega USB ainda dependem de recibos próprios. R153/R154/R155/R156 estão retidas para cadastro. [Repasse R157 recebido](r157/README.md). A última aplicação comprovada continua R152/R151, com157 edições N64 revisadas; não foi repetida.

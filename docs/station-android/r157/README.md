@@ -1,3 +1,7 @@
+## Retorno atual do servidor e USB
+
+Cadastro R157 e do APK atual `6203804f` aplicado; compatibilidade do hash Android corrigida. **Sala do 007/Arena criada no Samsung e confirmada no servidor.** Ler [retorno atual](server-return.json) e [diagnóstico resolvido](server-fingerprint-fix/README.md). Os registros de ausência de cadastro abaixo descrevem o instante do repasse original. O ZIP original da produção não foi recebido; os binários exatos foram conferidos na instalação USB autorizada.
+
 # R157 — ondas da sala online e repasse ao servidor
 
 ## Identidade e escopo do APK

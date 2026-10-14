@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "route": "local",
+      "signedIdentityVerified": true,
+      "exactProfiles": 2,
+      "roomCapacitiesAdmitted": [
+        2,
+        4
+      ],
+      "unsafeAdmissionsRefused": [
+        {
+          "reason": "old-incompatible-fingerprint",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        },
+        {
+          "reason": "wrong-runtime",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED"
+        },
+        {
+          "reason": "solo",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "route": "public",
+      "signedIdentityVerified": true,
+      "exactProfiles": 2,
+      "roomCapacitiesAdmitted": [
+        2,
+        4
+      ],
+      "unsafeAdmissionsRefused": [
+        {
+          "reason": "old-incompatible-fingerprint",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        },
+        {
+          "reason": "wrong-runtime",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED"
+        },
+        {
+          "reason": "solo",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    }
+  ],
+  "ownSyntheticLicensesRemoved": true,
+  "realLicensesPreserved": true
+}

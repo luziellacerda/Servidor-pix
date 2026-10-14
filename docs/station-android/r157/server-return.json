@@ -1,0 +1,123 @@
+{
+  "schema": "station.server.usb-007-resolved.v1",
+  "updatedUtc": "2026-10-14T19:18:10.259898+00:00",
+  "serverN64Ready": true,
+  "serverN64Offline": false,
+  "serverRegistrationConfirmed": true,
+  "physicalAndroidRoomCreated": true,
+  "physicalAndroidGameplayValidated": false,
+  "currentInstalledApkSha256": "6203804f1590d5377c261ac079a7bf302decc9e8c7269ddd2495bfaac70de7c6",
+  "currentInstalledApkBytes": 2715106319,
+  "currentInstalledVersionLabel": "APK6203804f; no new version number/commit published by producer at inspection",
+  "currentInstalledSourceCommit": null,
+  "parentStableApkSha256": "563625c40bfce77def6770a67448f83e2206e67a07023c58359ad2a0de4eee34",
+  "currentEngineBindings": [
+    {
+      "platform": "psx",
+      "engineId": "pcsx-rearmed-ff81ed17-player-v3-532f95ee08ac",
+      "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+      "runtimeSha256": "532f95ee08ac40fe4ee6e65106a0276fe1b2fad534156f965ff98c4a2892bb53"
+    },
+    {
+      "platform": "n64",
+      "engineId": "mupen64plus-ae-33bf7021-n64-v3-30cb5db4dbc6",
+      "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+      "runtimeSha256": "30cb5db4dbc63c0fbaa32d0f91754c74d928e7d0e87dc3e733c0c96ffcc0d372"
+    },
+    {
+      "platform": "gamecube",
+      "engineId": "dolphin-5102a033-gamecube-v3-70870a060c43",
+      "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+      "runtimeSha256": "70870a060c4324c203b2b65b229b27c50cc123c042c8a5080d9e4c3ed59113c8"
+    },
+    {
+      "platform": "wii",
+      "engineId": "dolphin-5102a033-wii-v3-70870a060c43",
+      "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+      "runtimeSha256": "70870a060c4324c203b2b65b229b27c50cc123c042c8a5080d9e4c3ed59113c8"
+    }
+  ],
+  "actualCurrentFilesVerified": {
+    "engineElfFiles": 6,
+    "dependencyElfFiles": 20,
+    "independentlyReadApkHash": true,
+    "controllerOptionsAndDependenciesUnchanged": true,
+    "profileParserDexIdenticalToR157": true,
+    "originalProducerZipReceived": false,
+    "originalProducerZipHashVerifiedHere": false
+  },
+  "r157Registration": {
+    "applied": true,
+    "enginesAdded": 4,
+    "profilesAdded": 399,
+    "preparedModesAdded": 399,
+    "first78TransactionApplied": true,
+    "second321TransactionApplied": true
+  },
+  "currentApkRegistration": {
+    "applied": true,
+    "enginesAdded": 4,
+    "profilesAdded": 399,
+    "preparedModesAdded": 399,
+    "first78TransactionApplied": true,
+    "second321TransactionApplied": true,
+    "currentTotalEngines": 59,
+    "currentTotalProfiles": 13322,
+    "currentTotalPreparedModes": 8417,
+    "catalogRevision": 59
+  },
+  "androidHashCompatibility": {
+    "applied": true,
+    "previousProfilesRepaired": 1425,
+    "previousNativeOwnersRepaired": 7,
+    "cause": "Android JSONObject.quote escapes the slash in SN64/1; previous Python recipe did not.",
+    "previousProfileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+    "correctAndroidProfileSha256": "688d519ae641911804fe3286e6b5f50cc7f8c06c42ccb1be36781f0fb067b83d",
+    "newScannerAndNextKitRecipeCorrected": true,
+    "approvalsAndCountsPreserved": true
+  },
+  "n64Coverage": {
+    "editions": 157,
+    "multiplayer": 120,
+    "individual": 37,
+    "maximumFour": 85,
+    "maximumThree": 2,
+    "maximumTwo": 33,
+    "profilesForCurrentOwner": 387,
+    "completeReviewModes": 321,
+    "signedLocalAndPublicEditionsVerified": 157,
+    "newMultiplayerModeAdmissionsVerified": 164,
+    "individualModeOnlineRefusalsVerified": 157
+  },
+  "actualAndroidParser": {
+    "apkClasses35Sha256": "e2cbccdb9af8dbeb1485c7119312875aece8660956833d22ee042b5b5306b513",
+    "loadedActualDex": true,
+    "acceptedProfiles": 387,
+    "classifiedEditions": 157,
+    "multiplayerEditions": 120,
+    "failures": 0
+  },
+  "actualRoom": {
+    "game": "007: The World Is Not Enough",
+    "platform": "n64",
+    "mode": "arena",
+    "capacity": 2,
+    "screenAndEffectiveServerRoomVerified": true,
+    "leftOpenForUser": true
+  },
+  "verification": {
+    "controllerHashAndMigrationRegressionTests": 6,
+    "futureEnrollmentRegressionTests": 17,
+    "currentPublicFourParticipantTransportPassed": true,
+    "ownSyntheticLicensesRemoved": true,
+    "realLicensesPreserved": true,
+    "apiRestarted": false,
+    "phoneApkOrDataChangedByThisWork": false,
+    "usbDiagnosticFilesRemoved": true,
+    "temporaryScreenSettingRestored": true
+  },
+  "physicalTwoOrFourPhoneGameplayValidated": false,
+  "stableR157AndR143TagsPreserved": true,
+  "hourlyMaintenanceKept": true,
+  "unrelatedPendingCoverBatchApplied": false
+}

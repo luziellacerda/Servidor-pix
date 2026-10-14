@@ -41,6 +41,19 @@ def text(value, limit):
 def encoded(value):
     return (json.dumps(value,ensure_ascii=False,separators=(',',':'),allow_nan=False)+'\n').encode()
 
+def profile_bytes(configuration):
+    """Match Android JSONObject.quote, including the mandatory slash escape.
+
+    This recipe is used only for the controller fingerprint. Registry JSON
+    retains its existing encoding. The Android client hashes these exact bytes.
+    """
+    ordered={key:configuration[key] for key in
+             ('schemaVersion','controllerProfile','devices','coreOptions')}
+    return json.dumps(ordered,ensure_ascii=False,separators=(',',':'),allow_nan=False).replace('/','\\/').encode()
+
+def profile_digest(configuration):
+    return hashlib.sha256(profile_bytes(configuration)).hexdigest()
+
 def profile_configuration(engine, controller, maximum):
     for definition in engine.get('controllerProfiles',[]):
         if definition['controllerProfile'] == controller:
@@ -162,7 +175,7 @@ def prepare(items,existing,manifest,modes=None):
                 if config is None:continue # engine must implement the exact port type
                 record={key:engine[key] for key in ('engineId','coreSha256','runtimeSha256')}
                 record.update(itemId=item['itemId'],contentSha256=item['contentSha256'],platform=system,
-                    profileSha256=hashlib.sha256(encoded(config)[:-1]).hexdigest())
+                    profileSha256=profile_digest(config))
                 record.update({key:mode[key] for key in MODE_FIELDS})
                 key=tuple(record[k] for k in PROFILE_KEY)
                 if key in keys:continue
