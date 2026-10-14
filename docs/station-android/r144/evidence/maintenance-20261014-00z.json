@@ -1,0 +1,111 @@
+{
+  "schema": "station.hourly-maintenance.v1",
+  "utc": "2026-10-14T00:04:17.309689+00:00",
+  "status": "partial",
+  "event": {
+    "utc": "2026-10-14T00:00:02.969762+00:00",
+    "fingerprint": "b61a8ad66c4417fd429934e421d8c642f4ed584448082dbafe0b77416152a7e8",
+    "privateInputFingerprint": "713094b6a3dd238ddd52ac9012ff0f5891cc89dcfafaf5a309437844780ea4e7"
+  },
+  "result": "Conferência sem carga útil nova além do estado já conciliado; não reaplicar N64 USB/R141/QoS.",
+  "refsVerified": {
+    "server": "717afb43065136eaf916eb6af0e38601c96db708",
+    "app": "a0ed0cc4d8cae7ef3b0c2da35abbe8c642d7d3a9",
+    "coversMain": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+    "coversSnes": "9f85e9df1ec0c82d77156ed072b997855f719288"
+  },
+  "backup": {
+    "branch": "backup/station-antes-manutencao-20261014-00z",
+    "bothRemoteCommitsVerified": true
+  },
+  "delivery": {
+    "branch": "feat/station-hourly-20261014-00z",
+    "serverWorktree": "/mnt/DADOS/servidor-pix-station-manutencao-20261014-00z",
+    "appWorktree": "/mnt/DADOS/turboelden-station-manutencao-20261014-00z"
+  },
+  "receivedDocuments": {
+    "r143/evidence/private-kit-receipt.json": {
+      "sha256": "b468686c9e2d2066a69cf3a0721e3b8e98b8f43cd877764f33b4fcf083bbbb49",
+      "byteIdenticalMirror": true
+    },
+    "r144/evidence/private-kit-receipt.json": {
+      "sha256": "e9566338d65059c954f92f5457d70378ab310d3143054d09dba962c232ac3c8f",
+      "byteIdenticalMirror": true
+    },
+    "r144/STATUS.json": {
+      "sha256": "6e49fff5bd7c6cdf03c29a7158188776e5e9cd80979b6ea8cbfebb53355fe986",
+      "byteIdenticalMirror": true
+    },
+    "online-plataformas-20261009/n64-capas-usb-20261013.json": {
+      "sha256": "056b2cbe7b7e7d0cfd03bc98c5559c6068317b83e8a0555a32b70962a3a2b00c",
+      "byteIdenticalMirror": true
+    }
+  },
+  "nativeAuthentication": {
+    "authenticated": false,
+    "exitCode": -15,
+    "snapshotAvailable": false,
+    "ownUnauthenticatedRequestCancelled": true,
+    "rootOperationTerminated": false
+  },
+  "effectiveRuntime": {
+    "execStart": "/usr/bin/dotnet /opt/turborama-station-online-audit-20261013-ef5270b3d47b-e/TurboRamaSuiteOnlineServer.dll",
+    "apiPid": 2867363,
+    "apiNRestarts": 0,
+    "scannerExecStart": "/usr/bin/python3 -B /opt/turborama-station-online-audit-20261013-ef5270b3d47b-e/library-tools/atualizar-biblioteca-station.py --config /mnt/DADOS/station-library-auto-private-20261004/config.json",
+    "scannerTimerActive": true,
+    "binaryConfigProtectedReadCompletedThisCycle": false,
+    "newServerBinaryRequiredByReceivedPayload": false
+  },
+  "lastAppliedEvidence": {
+    "catalogRevision": 47,
+    "persistentEngines": 39,
+    "profiles": 11604,
+    "modes": 6743,
+    "source": "Previous applied receipts and mirrored handoff; protected bytes not freshly read unless currentProtectedAudit is present.",
+    "n64UsbPrecedencePreserved": true
+  },
+  "covers": {
+    "gitRefsChanged": false,
+    "importedThisCycle": 0,
+    "romsOpenedHashedOrRebuilt": 0,
+    "signedCatalogAndServedBytesRetestedThisCycle": false,
+    "previousVerifiedLocalBodies": 157,
+    "previousVerifiedPublicBodies": 21
+  },
+  "kits": {
+    "userSearchFound": 0,
+    "inaccessibleDirectories": 91,
+    "protectedSearchCompleted": false,
+    "registeredThisCycle": 0,
+    "psxHleApprovalsAdded": 0
+  },
+  "preservation": {
+    "maintenanceLockHeldByMonitorParent": 3042368,
+    "scanLockAcquiredThisCycle": false,
+    "localCrlfFilesBytePreserved": true,
+    "activeServicesComparison": {
+      "utc": "2026-10-14T00:02:52.826299+00:00",
+      "activeServicesBefore": 87,
+      "activeServicesAfter": 87,
+      "added": [],
+      "removed": [],
+      "stationApiPid": 2867363,
+      "freshProtectedAuditAvailable": false
+    },
+    "productionDataPublished": false,
+    "apiRestarted": false,
+    "scannerTimerStopped": false,
+    "scannerTerminated": false,
+    "apkChanged": false,
+    "historicalOperatorsExecuted": false,
+    "newAutomationsCreated": false,
+    "externalMessagesSent": false
+  },
+  "privateAuditDirectory": "/mnt/DADOS/station-maintenance-20261014-00z",
+  "pending": [
+    "Receber o kit privado da composição efetivamente testada: R144 no A56, ZIP SHA256 7b1cdb6c68a1ddcd05af2e4703d2900061f7f2c4082a3f3c80c6d4c428d18739, 12.164.472 bytes; R143 no g52, a4ba210580ea68beb0086c2c986c6a884e888a1e9ad599bd7e9d9ae33364f606, 12.161.998 bytes. Nenhum localizado no escopo acessível; um kit não substitui outro.",
+    "Aguardar entrega final R145/kit próprio e evidência da investigação online; integração da rota direta v3 no APK, gameplay e ledger HLE PS1 por edição continuam pendentes. Não alterar APK neste PC.",
+    "Concluir autenticação Linux nativa para leitura fresca da DLL/configuração/catálogo/registries protegidos e scan.lock; pedido limitado a 120 s encerrou sem autenticação. Busca teve 91 diretórios inacessíveis, listados somente na auditoria privada."
+  ]
+}
