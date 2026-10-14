@@ -66,12 +66,12 @@ class PolicySafetyTests(unittest.TestCase):
             self.assertEqual(restored.entries, {value: "101"})
 
     def test_invalid_link_or_wan_rate_refused(self):
-        for link, wan in [(100, 100), (90, 100), (100, -1)]:
+        for link, wan in [(90, 100), (100, -1), (10001, 100), (100, float('nan')), (float('inf'), 100)]:
             with self.assertRaises(ValueError):
                 policy.validate({"interface": "eth0", "linkMbps": link, "wanMbps": wan})
 
-    def test_class_budget_always_fits_measured_link(self):
-        for link, wan in [(95, 33), (40, 10), (950, 90)]:
+    def test_class_budget_fits_link_including_equal_ceiling(self):
+        for link, wan in [(95, 33), (40, 10), (950, 90), (100, 100), (100, 95), (1, 1)]:
             rows = policy.classes({"interface": "eth0", "linkMbps": link, "wanMbps": wan})
             root = next(x for x in rows if x[0] == "1")
             self.assertAlmostEqual(sum(x[2] for x in rows if x[1] == "1"), root[2])
@@ -80,6 +80,14 @@ class PolicySafetyTests(unittest.TestCase):
                 rate = next(x[2] for x in rows if x[0] == parent)
                 self.assertAlmostEqual(sum(x[2] for x in children), rate)
                 self.assertTrue(all(x[3] <= root[3] for x in children))
+                self.assertTrue(all(0 < x[2] <= x[3] for x in children))
+
+    def test_full_upload_ceiling_keeps_lan_and_idle_borrowing(self):
+        rows = {x[0]: x for x in policy.classes({"interface": "eth0", "linkMbps": 100, "wanMbps": 100})}
+        self.assertEqual(rows["10"][2:4], (90, 100))
+        self.assertEqual(rows["20"][2:4], (10, 100))
+        self.assertEqual(rows["101"][2:4], (18, 100))
+        self.assertEqual(rows["103"][2:4], (54, 100))
 
 
 if __name__ == "__main__":

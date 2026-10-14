@@ -126,6 +126,47 @@ def main():
             assert result["busy"]["game"]["Mbps"] >= 3, "game_cannot_borrow_idle_capacity"
             assert result["lan"]["bulk"]["Mbps"] >= 29, "lan_incorrectly_limited_to_wan"
             assert result["lan"]["bulk"]["Mbps"] <= 46, "link_ceiling_not_applied"
+
+            # Raise the ceiling during established traffic, without replacing queues/sets.
+            qdisc_before = json.loads(policy.run(["ip", "netns", "exec", left, "tc", "-j", "qdisc", "show", "dev", left_dev]))
+            live = subprocess.Popen(["ip", "netns", "exec", left, "python3", str(tx),
+                                     str(pathlib.Path(__file__).parent), "sparse"],
+                                    stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            try:
+                deadline = time.monotonic() + 3
+                while True:
+                    sockets = policy.run(["ip", "netns", "exec", left, "ss", "-tn", "state", "established"])
+                    if ":15002" in sockets and ":15004" in sockets:
+                        break
+                    if time.monotonic() >= deadline:
+                        raise RuntimeError("reload_fixture_not_connected")
+                    time.sleep(.05)
+                next_config = dict(config, linkMbps=100, wanMbps=100,
+                                   operatorPlanDownloadMbps=800, operatorPlanUploadMbps=100)
+                updater = ("import sys,json;sys.path.insert(0," + repr(str(pathlib.Path(__file__).parent)) + ");"
+                           "import policy;print(json.dumps(policy.apply(" + repr(next_config) + ")))")
+                changed = json.loads(policy.run(["ip", "netns", "exec", left, "python3", "-c", updater]))
+                assert changed["wanGuaranteedMbps"] == 90 and changed["lanGuaranteedMbps"] == 10, "equal_ceiling_invalid_budget"
+                qdisc_after = json.loads(policy.run(["ip", "netns", "exec", left, "tc", "-j", "qdisc", "show", "dev", left_dev]))
+                assert qdisc_after == qdisc_before, "rate_reload_replaced_queues"
+                output, error = live.communicate(timeout=10)
+                assert live.returncode == 0, "established_connections_failed_on_reload"
+                result["liveReload100"] = json.loads(output)
+                assert result["liveReload100"]["game"]["frames"] >= 250, "reload_lost_game_frames"
+                assert result["liveReload100"]["bulk"]["Mbps"] >= 60, "new_ceiling_not_effective"
+                result["existingQueuesPreservedOnReload"] = True
+                result["equalCeilingStatusCompatible"] = True
+                result["equalCeilingBudget"] = {k: changed[k] for k in ["wanMbps", "wanGuaranteedMbps", "lanGuaranteedMbps"]}
+                output = policy.run(["ip", "netns", "exec", left, "python3", str(tx),
+                                     str(pathlib.Path(__file__).parent), "lan"])
+                result["lan100"] = json.loads(output)
+                assert result["lan100"]["bulk"]["Mbps"] >= 85, "lan_cannot_borrow_at_equal_ceiling"
+                assert result["lan100"]["bulk"]["Mbps"] <= 112, "equal_link_ceiling_not_applied"
+            finally:
+                if live.poll() is None:
+                    live.terminate()
+                    try: live.wait(timeout=3)
+                    except subprocess.TimeoutExpired: live.kill(); live.wait()
         result["passed"] = True
         result["isolatedNamespaces"] = True
         result["physicalPhonesOrInternetGameplay"] = False

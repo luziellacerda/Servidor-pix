@@ -1,0 +1,220 @@
+{
+  "passed": true,
+  "appliedUtc": "2026-10-14T12:31:00.703509+00:00",
+  "previousUploadCeilingMbps": 33,
+  "uploadCeilingMbps": 100,
+  "operatorPlanDownloadMbps": 800,
+  "operatorPlanUploadMbps": 100,
+  "ratesBasedOnOperatorInput": true,
+  "ISPMeasurementPerformed": false,
+  "direction": "outbound",
+  "ingressLimitAppliedByThisPolicy": false,
+  "physicalLinkMbps": 100,
+  "physicalDuplex": "full",
+  "download800Achieved": false,
+  "providerIntermittencyResolved": false,
+  "qos": {
+    "active": true,
+    "classes": [
+      {
+        "borrowed": 0,
+        "bytes": 176963,
+        "ceilMbps": 100.0,
+        "drops": 0,
+        "handle": "53:202",
+        "lended": 1786,
+        "overlimits": 0,
+        "packets": 1786,
+        "rateMbps": 2.0
+      },
+      {
+        "borrowed": 286447,
+        "bytes": 1471571233,
+        "ceilMbps": 100.0,
+        "drops": 0,
+        "handle": "53:101",
+        "lended": 1829479,
+        "overlimits": 28944,
+        "packets": 2680640,
+        "rateMbps": 18.0
+      },
+      {
+        "borrowed": 0,
+        "bytes": 0,
+        "ceilMbps": 100.0,
+        "drops": 0,
+        "handle": "53:203",
+        "lended": 0,
+        "overlimits": 0,
+        "packets": 0,
+        "rateMbps": 6.0
+      },
+      {
+        "borrowed": 0,
+        "bytes": 56769654515,
+        "ceilMbps": 100.0,
+        "drops": 0,
+        "handle": "53:10",
+        "lended": 6693167,
+        "overlimits": 5716747,
+        "packets": 41145461,
+        "rateMbps": 90.0
+      },
+      {
+        "borrowed": 0,
+        "bytes": 56769836032,
+        "ceilMbps": 100.0,
+        "drops": 0,
+        "handle": "53:1",
+        "lended": 0,
+        "overlimits": 91601,
+        "packets": 41147316,
+        "rateMbps": 100.0
+      },
+      {
+        "borrowed": 0,
+        "bytes": 181517,
+        "ceilMbps": 100.0,
+        "drops": 0,
+        "handle": "53:20",
+        "lended": 0,
+        "overlimits": 0,
+        "packets": 1855,
+        "rateMbps": 10.0
+      },
+      {
+        "borrowed": 191696,
+        "bytes": 7918590666,
+        "ceilMbps": 100.0,
+        "drops": 0,
+        "handle": "53:103",
+        "lended": 761803,
+        "overlimits": 352504,
+        "packets": 5233859,
+        "rateMbps": 54.0
+      },
+      {
+        "borrowed": 6215024,
+        "bytes": 47379492616,
+        "ceilMbps": 100.0,
+        "drops": 0,
+        "handle": "53:102",
+        "lended": 2378069,
+        "overlimits": 1830141,
+        "packets": 33230962,
+        "rateMbps": 18.0
+      },
+      {
+        "borrowed": 0,
+        "bytes": 4554,
+        "ceilMbps": 100.0,
+        "drops": 0,
+        "handle": "53:201",
+        "lended": 69,
+        "overlimits": 0,
+        "packets": 69,
+        "rateMbps": 2.0
+      }
+    ],
+    "configuredPlanDownloadMbps": 800,
+    "configuredPlanUploadMbps": 100,
+    "direction": "outbound",
+    "downloadReservedPercent": 60,
+    "gameReservedPercent": 20,
+    "idleCapacityBorrowing": true,
+    "ingressLimitAppliedByThisPolicy": false,
+    "interface": "enp6s0",
+    "lanGuaranteedMbps": 10.0,
+    "linkMbps": 100,
+    "otherReservedPercent": 20,
+    "wanGuaranteedMbps": 90.0,
+    "wanMbps": 100
+  },
+  "unitTestsPassed": 9,
+  "isolatedKernelTests": {
+    "classStatusCompatible": true,
+    "idle": {
+      "bulk": {
+        "bytes": 4898816,
+        "seconds": 4.084250504965894,
+        "Mbps": 9.596
+      }
+    },
+    "sparse": {
+      "game": {
+        "bytes": 3144,
+        "seconds": 3.9933456029975787,
+        "latencyP95Millis": 0.17048500012606382,
+        "frames": 393,
+        "Mbps": 0.006
+      },
+      "bulk": {
+        "bytes": 4866048,
+        "seconds": 4.076496014022268,
+        "Mbps": 9.549
+      }
+    },
+    "busy": {
+      "bulk": {
+        "bytes": 3014656,
+        "seconds": 4.160640483023599,
+        "Mbps": 5.797
+      },
+      "game": {
+        "bytes": 2015232,
+        "seconds": 4.176680444041267,
+        "Mbps": 3.86
+      }
+    },
+    "lan": {
+      "bulk": {
+        "bytes": 19267584,
+        "seconds": 4.024472250021063,
+        "Mbps": 38.301
+      }
+    },
+    "liveReload100": {
+      "bulk": {
+        "bytes": 46891008,
+        "seconds": 4.01167302695103,
+        "Mbps": 93.509
+      },
+      "game": {
+        "bytes": 3152,
+        "seconds": 3.9928211090154946,
+        "latencyP95Millis": 0.15903194434940815,
+        "frames": 394,
+        "Mbps": 0.006
+      }
+    },
+    "existingQueuesPreservedOnReload": true,
+    "equalCeilingStatusCompatible": true,
+    "equalCeilingBudget": {
+      "wanMbps": 100,
+      "wanGuaranteedMbps": 90.0,
+      "lanGuaranteedMbps": 10.0
+    },
+    "lan100": {
+      "bulk": {
+        "bytes": 47955968,
+        "seconds": 4.008257916895673,
+        "Mbps": 95.714
+      }
+    },
+    "passed": true,
+    "isolatedNamespaces": true,
+    "physicalPhonesOrInternetGameplay": false
+  },
+  "existingQueuesPreserved": true,
+  "classifierRulesPreserved": true,
+  "serviceProcessesPreserved": true,
+  "protectedDataPreserved": true,
+  "APIrestarted": false,
+  "nginxRestartedOrReloaded": false,
+  "portsOrFirewallChanged": false,
+  "nativeAuthentication": true,
+  "checkTimerActive": true,
+  "persistentCheckPassed": true,
+  "policySha256": "0b0bc26a3450a6f682167a0e1733d986d9c4fde5b5183424a85b24151fc463b3",
+  "configSha256": "5034aa73e0483cd20c65fd6fa68653d0a2ed73c29fc970cb2c14412e56d63d78"
+}

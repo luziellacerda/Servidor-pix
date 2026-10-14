@@ -25,7 +25,7 @@ def validate(config):
     if not re.fullmatch(r"[A-Za-z0-9_-]{1,15}", config["interface"]):
         raise ValueError("invalid_interface")
     link, wan = float(config["linkMbps"]), float(config["wanMbps"])
-    if not (1 <= wan < link <= 10000):
+    if not (1 <= wan <= link <= 10000):
         raise ValueError("invalid_rates")
     for key, family in [("lan4", 4), ("lan6", 6)]:
         for value in config.get(key, []):
@@ -39,13 +39,14 @@ def validate(config):
 
 
 def classes(config):
-    """The LAN can borrow idle WAN capacity; WAN stays below the measured uplink."""
+    """Share the link with a positive LAN guarantee; WAN can borrow up to its ceiling."""
     config = validate(config)
     link, wan = float(config["linkMbps"]), float(config["wanMbps"])
-    lan = link - wan
-    rows = [("1", "root", link, link, 0), ("10", "1", wan, wan, 0),
+    lan = max(link - wan, link * .1)
+    wan_rate = link - lan
+    rows = [("1", "root", link, link, 0), ("10", "1", wan_rate, wan, 0),
             ("20", "1", lan, link, 1)]
-    for prefix, rate, ceil in [("10", wan, wan), ("20", lan, link)]:
+    for prefix, rate, ceil in [("10", wan_rate, wan), ("20", lan, link)]:
         for suffix, share, priority in [("1", .2, 0), ("2", .2, 1), ("3", .6, 2)]:
             rows.append((prefix + suffix, prefix, rate * share, ceil, priority))
     return rows
@@ -167,9 +168,14 @@ def status(config):
             raise RuntimeError("qos_rate_mismatch")
     # Do not return dynamic client tuples.
     run(["nft", "list", "chain", "inet", TABLE, "classify"])
+    budgets = {minor: rate for minor, _, rate, _, _ in classes(config)}
     return {"active": True, "interface": dev, "linkMbps": config["linkMbps"],
             "wanMbps": config["wanMbps"], "gameReservedPercent": 20,
             "otherReservedPercent": 20, "downloadReservedPercent": 60,
+            "wanGuaranteedMbps": budgets["10"], "lanGuaranteedMbps": budgets["20"],
+            "configuredPlanDownloadMbps": config.get("operatorPlanDownloadMbps"),
+            "configuredPlanUploadMbps": config.get("operatorPlanUploadMbps", config.get("operatorPlanUploadMbpsApproximate")),
+            "direction": "outbound", "ingressLimitAppliedByThisPolicy": False,
             "idleCapacityBorrowing": True,
             "classes": actual}
 

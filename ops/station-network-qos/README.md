@@ -1,21 +1,29 @@
 # Divisão automática da banda do Station
 
-Aplicada em 13/10/2026. O controle cobre a saída **deste PC**, incluindo tráfego
+Aplicada em 13/10/2026 e atualizada em 14/10/2026. O controle cobre a saída **deste PC**, incluindo tráfego
 local e para a internet. A API Station e o master Nginx conservaram seus processos.
 Licenças, banco de produção, catálogo, motores, opções de emulação e APK não foram
 alterados pela configuração de rede.
 
 ## Capacidade e empréstimo
 
-O operador informou plano de 800 Mbps de download e aproximadamente 100 Mbps de
-upload. A interface suporta gigabit, mas o enlace estava negociado a **100 Mbps**.
-As medições deram 92,034 Mbps de download e 36,940 Mbps de upload no Ookla, e
-aproximadamente 29 Mbps de envio no destino Cloudflare. São resultados desses
-testes, não comprovação da capacidade contratada em todos os caminhos.
+O operador determinou **100 Mbps de upload e 800 Mbps de download**. Esses dados
+definem a configuração atual; não houve teste de velocidade da operadora nesta
+atualização. A interface suporta gigabit, mas o enlace físico continua negociado
+a **100 Mbps/full duplex**. Portanto, 800 Mbps de recepção ainda não são possíveis
+por esta ligação. Não forçar renegociação enquanto este PC atende outros serviços.
 
-O teto inicial do envio para a internet é **33 Mbps**; a saída da placa tem teto
-de 95 Mbps. Destinos locais possuem ramo próprio e podem aproveitar a capacidade
-ociosa até 95 Mbps, sem receber o teto de internet. As reservas em cada ramo são:
+O teto atual de envio para a internet é **100 Mbps**; a saída da placa também tem
+teto de 100 Mbps. Este controle é de saída: **não impõe teto à entrada de dados
+neste PC**. Os 800 Mbps constam como capacidade informada do plano, sem afirmar
+que foram alcançados ou criar uma limitação artificial menor no download.
+
+Internet e rede local continuam em ramos próprios. Com o teto internet igual ao
+da placa, as garantias dos ramos são 90 Mbps para internet e 10 Mbps para LAN;
+ambos podem emprestar capacidade ociosa até 100 Mbps. A reserva LAN evita taxa
+zero e não fixa a internet em 90 Mbps. O HTB distingue a garantia `rate` e o teto
+`ceil` disponível por empréstimo. [Manual do HTB](https://man7.org/linux/man-pages/man8/tc-htb.8.html).
+As reservas dentro de cada ramo são:
 
 | Classe | Reserva mínima | Prioridade | Uso da capacidade ociosa |
 | --- | --- | --- | --- |
@@ -23,11 +31,17 @@ ociosa até 95 Mbps, sem receber o teto de internet. As reservas em cada ramo s�
 | Demais serviços | 20% | Média | Permitido |
 | Downloads HTTPS | 60% | Baixa | Permitido |
 
-No ramo internet, isso corresponde a 6,6 / 6,6 / 19,8 Mbps. Um download sozinho
-pode aproveitar o teto inteiro de 33 Mbps; a reserva passa a ser utilizada pelas
+No ramo internet, isso corresponde a 18 / 18 / 54 Mbps. Um download sozinho
+pode aproveitar o teto inteiro de 100 Mbps; a reserva passa a ser utilizada pelas
 outras classes conforme há tráfego. O controle considera a **soma dos fluxos**.
-As classes têm FQ-CoDel para reduzir filas; o ramo de internet permanece limitado
-à capacidade inicialmente calibrada mesmo quando não há partida.
+As classes têm FQ-CoDel para reduzir filas. Os 100 Mbps são teto configurado,
+não promessa de velocidade por aparelho, resolução de instabilidade da Claro ou
+homologação de gameplay. Limitar pela capacidade informada, acima da capacidade
+que a operadora eventualmente entrega, pode deixar filas no equipamento externo.
+
+Histórico da implantação de 13/10: teto internet 33 Mbps e placa 95 Mbps, apoiados
+nos testes então executados. Estes valores foram substituídos em 14/10 por ordem
+do operador. As medições anteriores não definem os tetos atuais.
 
 Os túneis existentes transportam vários serviços criptografados na mesma conexão.
 Eles compartilham a classe interativa. A separação específica de uma partida
@@ -73,8 +87,12 @@ classifica tráfego; não altera regras de firewall, NAT ou roteamento existente
 
 Consultar: `python3 /opt/station-network-qos/policy.py status`. Ajustar as taxas
 no JSON protegido e recarregar `station-network-qos.service` preserva sockets e
-filas existentes. A nova taxa deve vir de medições, especialmente após corrigir
-o enlace de 100 Mbps. Não forçar gigabit sem conferir cabo e porta.
+filas existentes. Pausar somente o timer de conferência durante a troca atômica
+dos arquivos, aguardar um check em andamento e restaurar/conferir o timer ao final.
+Não reiniciar o serviço de QoS para trocar taxas: o restart retiraria suas filas.
+As taxas atuais vêm da ordem do operador; não recalibrar por medição da Claro sem
+nova solicitação. Após corrigir cabo/porta e obter enlace gigabit, revisar o teto
+da placa para liberar a capacidade física nova, preservando o teto WAN de 100 Mbps.
 
 Parar as unidades de prioridade/timer e depois `station-network-qos.service`
 retira apenas esta classificação e devolve a fila padrão do kernel. O instalador
@@ -89,6 +107,13 @@ segurança da configuração, TLS/WebSocket real em fixture, quatro cenários de
 filas Linux isoladas e duas conexões WSS com tickets/provas reais e licenças
 sintéticas removidas. São provas de rede e admissão; gameplay Android ainda
 depende do teste físico com a atualização do app.
+
+O ajuste atual está em `docs/station-android/network-qos/limits-20261014.json`:
+nove testes de segurança/configuração e seis cenários de tráfego em namespaces
+Linux isolados, incluindo troca de teto durante conexões estabelecidas. No host,
+reload de taxas preservou layout das filas, regras, PID/estado dos serviços,
+catálogo, registros online e DLL. O check persistente passou. Testes isolados
+não são medições da operadora nem prova de estabilidade da partida na internet.
 
 Referências: [HTB](https://man7.org/linux/man-pages/man8/tc-htb.8.html),
 [FQ-CoDel](https://www.rfc-editor.org/rfc/rfc8290.html),
