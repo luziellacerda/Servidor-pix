@@ -56,5 +56,9 @@
     "Install update on idle authorized USB phone",
     "Human sky-blue/band/readability check",
     "R146 N64/PS1/GameCube/Wii online investigation with actual titles/logs and matching server kit"
-  ]
+  ],
+  "latestReceivedCatalogReturnCommit": "989b12b45d468338670c07bf92f1be6631915759",
+  "latestReceivedServerCatalogRevision": 47,
+  "serverOnlineRegistriesPreservedDuringCoverUpdate": true,
+  "serverCoverUpdateDoesNotRegisterIndependentR145Engines": true
 }
