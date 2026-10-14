@@ -1,0 +1,23 @@
+{
+  "schema": "station.r148.usb-installation.public-receipt.v1",
+  "revision": "R148",
+  "deviceModel": "Samsung SM-A566E",
+  "completedUtc": "2026-10-14T12:09:50.5666789Z",
+  "installationMethod": "adb install -r",
+  "installationResult": "SUCCESS",
+  "expectedApkSha256": "c8b8c30cac7d36ec2a8ca8d470542096919435c749dede535cd0d58648e00dc1",
+  "installedApkSha256": "c8b8c30cac7d36ec2a8ca8d470542096919435c749dede535cd0d58648e00dc1",
+  "installedHashVerified": true,
+  "firstInstallTimeUnchangedOnPrePostCheck": true,
+  "dataPreservationRequested": true,
+  "uninstalledOrClearedData": false,
+  "forceStopped": false,
+  "onlineSessionDetectedByInstaller": false,
+  "appLaunchedByInstaller": false,
+  "visualTestConfirmed": false,
+  "gameplayConfirmed": false,
+  "serverRegistrationConfirmed": false,
+  "serverKitApplied": false,
+  "privateSourceReceiptSha256": "99a67b60982524dc7ecf5f2452c02544bfe14010d04c2be31e2c093b4cdee03a",
+  "containsUsbSerialActivationCodeOrRawLog": false
+}
