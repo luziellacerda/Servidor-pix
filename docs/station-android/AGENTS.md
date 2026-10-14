@@ -1,3 +1,9 @@
+# R145 visual compilada — motores online em investigação
+
+Ler r145/README e STATUS. Fonte `25d10b2322d2e5687c9dfacc71a826c3955fad5d`, APK `275f31b34145eb77c457b1a9c09bbff4034cc28a990b74121b0b1fd4573c5df0`; azul céu em fundos azuis e faixas solicitadas, somente dez literais/7 classes/9 métodos mais três cabeçalhos visuais. Inversão integral, 37 DEX/13.852 entradas e reparos anteriores preservados. Instalação/aceite físico conforme STATUS; não inferir pelo build. R143 estável intacta. Kit independente R145 `89c7fb016ab23a3ecf050e1ce2f83a3e0dfecfb93eb5763a895f3c5beac50fb8` preparado, não aplicado; mesmos78modos, PS1 zero novas aprovações HLE. Retorno23z/c926aa9 ainda R141. Próxima etapa N64/PS1/GC/Wii autorizada, mas R145 não contém reparo de gameplay/rota v3. Preservar fonte congelada, políticas, dados e desempenho; nenhum deploy/restart.
+
+## Histórico preservado
+
 # Sexta tentativa R144 — instalação nova autorizada
 
 A sexta tentativa instalou a R144 como instalação nova autorizada no Samsung A56. O SHA integral do APK e a identidade do novo pacote foram conferidos. A entrada oficial não foi observada automaticamente; a abertura da interface e a aprovação visual ainda precisam de confirmação humana.

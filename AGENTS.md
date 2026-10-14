@@ -1,3 +1,9 @@
+# R145 visual compilada — motores online em investigação
+
+Ler r145/README e STATUS. Fonte `25d10b2322d2e5687c9dfacc71a826c3955fad5d`, APK `275f31b34145eb77c457b1a9c09bbff4034cc28a990b74121b0b1fd4573c5df0`; azul céu em fundos azuis e faixas solicitadas, somente dez literais/7 classes/9 métodos mais três cabeçalhos visuais. Inversão integral, 37 DEX/13.852 entradas e reparos anteriores preservados. Instalação/aceite físico conforme STATUS; não inferir pelo build. R143 estável intacta. Kit independente R145 `89c7fb016ab23a3ecf050e1ce2f83a3e0dfecfb93eb5763a895f3c5beac50fb8` preparado, não aplicado; mesmos78modos, PS1 zero novas aprovações HLE. Retorno23z/c926aa9 ainda R141. Próxima etapa N64/PS1/GC/Wii autorizada, mas R145 não contém reparo de gameplay/rota v3. Preservar fonte congelada, políticas, dados e desempenho; nenhum deploy/restart.
+
+## Histórico preservado
+
 # R144 instalada e ativada; R145 visual em preparação
 
 Leia r144/STATUS e o mesmo handoff. A56 instalação nova SHA01427/fonte1ac conferidos; abertura após código confirmado pelo mantenedor, USB desconectado. Não publicar o código. R144 não aprovada no fundo: próxima R145 azul céu em todos os fundos azuis e novos números/cores de faixas conforme recibo, sem trocar fundos neutros/verde/preto ou lógica. Depois investigar N64/PS1/GC/Wii online com evidência e kit correspondente ao APK real; nenhum reparo de gameplay já incluído na R144. Estável R143 e ponteiros permanecem exatos.

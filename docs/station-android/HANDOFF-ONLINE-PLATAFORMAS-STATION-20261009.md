@@ -1,3 +1,9 @@
+# R145 visual compilada — motores online em investigação
+
+Ler r145/README e STATUS. Fonte `25d10b2322d2e5687c9dfacc71a826c3955fad5d`, APK `275f31b34145eb77c457b1a9c09bbff4034cc28a990b74121b0b1fd4573c5df0`; azul céu em fundos azuis e faixas solicitadas, somente dez literais/7 classes/9 métodos mais três cabeçalhos visuais. Inversão integral, 37 DEX/13.852 entradas e reparos anteriores preservados. Instalação/aceite físico conforme STATUS; não inferir pelo build. R143 estável intacta. Kit independente R145 `89c7fb016ab23a3ecf050e1ce2f83a3e0dfecfb93eb5763a895f3c5beac50fb8` preparado, não aplicado; mesmos78modos, PS1 zero novas aprovações HLE. Retorno23z/c926aa9 ainda R141. Próxima etapa N64/PS1/GC/Wii autorizada, mas R145 não contém reparo de gameplay/rota v3. Preservar fonte congelada, políticas, dados e desempenho; nenhum deploy/restart.
+
+## Histórico preservado
+
 ## Comparação do retorno 23h UTC com o A56 R144
 
 O novo retorno c926aa9 confirma catálogo/perfis/motores no estado R141 aplicado e falta do ZIP R143 a4ba2105 no Linux. O A56 já está na R144, APK01427, cujo kit privado exato é 7b1cdb6c (12.164.472 bytes), preparado localmente e não aplicado. Os quatro fingerprints independentes são vinculados ao DEX/carrossel: o kit R143 não substitui o kit da R144. A próxima R145 visual também terá seus fingerprints e kit próprios. SNES mantém cadastro existente, coerente com os relatos positivos anteriores.
