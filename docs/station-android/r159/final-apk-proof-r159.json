@@ -1,0 +1,30 @@
+{
+  "schema": "station.r159.n64-owner.final.v1",
+  "passed": true,
+  "packageRevision": "R159",
+  "apkSha256": "4837be706f9ac1f913b4844353741f70c539674e125ae185239611cf5faac2b3",
+  "apkBytes": 2715106319,
+  "baseApkSha256": "fc1d2d983deb5179979a4aebac7fa64b1740da1c62ae46bfc0d1f4c11eb46cf0",
+  "signatureCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "v2": true,
+  "v3": true,
+  "zipAlignment16KiB": true,
+  "checkedEntries": 13860,
+  "preservedEntryCount": 13855,
+  "replacedEntries": [
+    "assets/station-online/engines.json",
+    "classes35.dex",
+    "lib/arm64-v8a/libstation_dolphin_runtime.so",
+    "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+    "lib/arm64-v8a/libstation_psx_online.so"
+  ],
+  "changedDexPartitions": [
+    "classes35.dex"
+  ],
+  "preservedDexPartitions": 39,
+  "androidManifestPreserved": true,
+  "androidVersionCodePreservedFromR158": true,
+  "installed": false,
+  "physicalVisualValidated": false,
+  "stable": false
+}

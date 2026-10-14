@@ -1,0 +1,18 @@
+{
+  "schema": "station.r159.g52.install.v1",
+  "recordedAtUtc": "2026-10-14T21:42:26.015Z",
+  "revision": "R159",
+  "model": "moto g52",
+  "method": "adb install -r",
+  "apkSha256": "4837be706f9ac1f913b4844353741f70c539674e125ae185239611cf5faac2b3",
+  "installedBaseApkSha256": "4837be706f9ac1f913b4844353741f70c539674e125ae185239611cf5faac2b3",
+  "installedHashMatches": true,
+  "apkBytes": 2715106319,
+  "uninstalledOrClearedData": false,
+  "installerPreflightBlockedBeforeTransfer": true,
+  "preflightReason": "stale Mupen64Plus AE CoreService from prior failed N64 session; no download service or online native process found",
+  "serverRegistered": false,
+  "gameplayValidated": false,
+  "mainAppLaunchChecked": true,
+  "mainAppProcessRunningAfterLaunch": true
+}

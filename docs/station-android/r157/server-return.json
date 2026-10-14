@@ -8,7 +8,7 @@
   "physicalAndroidGameplayValidated": false,
   "currentInstalledApkSha256": "fc1d2d983deb5179979a4aebac7fa64b1740da1c62ae46bfc0d1f4c11eb46cf0",
   "currentInstalledApkBytes": 2715106319,
-  "currentInstalledVersionLabel": "APKfc1d2d98; no new version number/commit published by producer at inspection",
+  "currentInstalledVersionLabel": "R158 final, confirmed by exact APK hash in producer receipt received during delivery",
   "currentInstalledSourceCommit": null,
   "parentStableApkSha256": "563625c40bfce77def6770a67448f83e2206e67a07023c58359ad2a0de4eee34",
   "currentEngineBindings": [
@@ -180,5 +180,10 @@
     "signedLocalAndPublicCapabilitiesVerifiedAfterRecovery": true,
     "evidence": "r157/current-usb-070241-20261014/boot-recovery.json"
   },
-  "currentN64ProfilesAfterBootRecovery": 387
+  "currentN64ProfilesAfterBootRecovery": 387,
+  "currentInstalledProducerReceiptCommit": "9abfc7ee4d515f7fb10844fb04c16d3384570640",
+  "latestProducerReturnCommit": "df3ef713ca75cbb6421b3b5750594fb0bb9ed8c3",
+  "r159ServerApplied": false,
+  "r159ReceiverStatusPath": "r159/server-receiver-status.json",
+  "sameGuestFailureReportedByProducer": true
 }

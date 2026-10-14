@@ -25,6 +25,14 @@ O usuário relata loop infinito no convidado e dificuldade de sair. O convidado 
 - Compilar e assinar pelo processo normal da produção; registrar hashes finais e comparar os dois celulares. Para testar juntos, precisam da mesma revisão/motor e da mesma edição. Se o pacote final alterar os motores, entregar seus bytes exatos e o kit correspondente; não reutilizar um ID de outro binário. Se mudar apenas o visual, preservar a identidade de emulação somente quando os próprios binários e políticas forem de fato idênticos.
 - Aceite: criar Arena, entrar com o segundo aparelho, Pronto nos dois, iniciar, observar os dois cores vivos, conexões do motor e partida real; sair pelo convidado e pelo anfitrião; repetir após uma falha controlada sem loop. A prova sintética de quatro participantes já passou no servidor e não substitui esse aceite Android.
 
+### Retorno R159 recebido durante esta publicação
+
+A produção publicou **`df3ef713ca75cbb6421b3b5750594fb0bb9ed8c3`** enquanto este retorno era enviado. Seu recibo confirma que o APK`fc1d2d98` analisado aqui é a **R158 final**. O handoff R159 da produção registra também `N64_OWNER_MISSING` no moto g52: a mesma exceção capturada aqui no anfitrião, com a mesma causa de Application Context. Essa informação do convidado vem do recibo da produção; não é uma segunda captura USB feita neste Linux.
+
+A produção relata R159 assinada e instalada no moto g52, com correção pontual do marcador. APK R159: SHA256`4837be706f9ac1f913b4844353741f70c539674e125ae185239611cf5faac2b3`; motor N64`mupen64plus-ae-33bf7021-n64-v3-7d50f27b4702`. Seus documentos foram recebidos e preservados. **O ZIP privado R159 ainda não foi entregue/verificado neste servidor, e a R159 não está cadastrada aqui.** O cadastro070241 e as provas acima correspondem à R158; não os apresentar como cadastro R159. O handoff da produção registra explicitamente a entrega do kit e o aceite físico como pendentes. O servidor voltou ativo com o cadastro existente; o próximo teste precisa dos dois aparelhos com o mesmo APK e do motor correspondente já registrado.
+
+Ler [estado de recebimento R159](r159/server-receiver-status.json) e [handoff original da produção](https://github.com/luziellacerda/TurboElden/blob/df3ef713ca75cbb6421b3b5750594fb0bb9ed8c3/docs/server/r159/N64-OWNER-HANDOFF.md). A correção do APK permanece sob responsabilidade da produção conforme orientação do usuário. Este retorno entrega nossa prova do anfitrião e a recuperação do servidor; não instala nem aprova o APK novo.
+
 ### Evento posterior: recuperação após reinício do PC
 
 Este PC reiniciou às **18:19 de 14/10/2026, UTC−3**, depois das exceções Android acima. No boot, o HD UUID`a2700961-7d8b-435f-9408-9132877ff0fc` estava presente, mas sem montagem automática em`/etc/fstab`. O Station tentou montar seu namespace antes de existir `.station-content-new-systems-20261008`, falhou com **226/NAMESPACE** e atingiu o limite de cinco tentativas. A porta5192 ficou indisponível. É uma falha posterior distinta do `N64_OWNER_MISSING` capturado às18:08/18:09.
@@ -35,7 +43,7 @@ Este PC reiniciou às **18:19 de 14/10/2026, UTC−3**, depois das exceções An
 
 ### Cadastro e provas concluídas neste servidor
 
-APK instalado: SHA256 `fc1d2d983deb5179979a4aebac7fa64b1740da1c62ae46bfc0d1f4c11eb46cf0`, 2.715.106.319 bytes, atualização no Samsung às17:43:20 local. Número novo de release/commit ainda não publicado na branch consultada; não inventar R158/R159. Motor N64 **`mupen64plus-ae-33bf7021-n64-v3-0702412628d2`**. Seis ELF e vinte dependências conferidos diretamente; cores, opções, controles e dependências preservados em relação à instalação anterior. Nenhum ZIP original foi recebido ou teve seu hash declarado verificado aqui.
+APK instalado: SHA256 `fc1d2d983deb5179979a4aebac7fa64b1740da1c62ae46bfc0d1f4c11eb46cf0`, 2.715.106.319 bytes, atualização no Samsung às17:43:20 local. Na inspeção USB inicial não havia recibo desse build; o retorno recebido durante a publicação agora o confirma como R158 final, conforme a seção R159 acima. Motor N64 **`mupen64plus-ae-33bf7021-n64-v3-0702412628d2`**. Seis ELF e vinte dependências conferidos diretamente; cores, opções, controles e dependências preservados em relação à instalação anterior. Nenhum ZIP original foi recebido ou teve seu hash declarado verificado aqui.
 
 Quatro motores exatos registrados em duas transações reais78+321, com baseline nova e preservação dos vínculos anteriores. Publicação às20:52:18UTC: **63 motores, 13.728 perfis, 8.816 modos preparados, catálogo79**. Não houve deploy ou reinício: PID3297582/DLLb3473cc0. Os totais são o snapshot da publicação; o scanner continua ativo.
 

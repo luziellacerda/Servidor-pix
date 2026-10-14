@@ -1,3 +1,7 @@
+## Retorno R159 recebido; preservar distinção entre versões
+
+Produçãodf3ef713 confirmaAPKfc1d2d98 comoR158final e mesmo N64_OWNER_MISSING no g52. R159APK4837be70/motor7d50f27b4702 relatada assinada+instaladag52, mas ZIPprivado ainda não entregue/verificado aqui; R159ServerApplied=false. R158owner070241 está cadastrado. Ler r159/server-receiver-status.json e mesmo handoff. Não confundir relatório do produtor, cadastro do servidor e gameplay físico; não reexecutar operadores anteriores.
+
 ## Boot posterior recuperado — 14/10/2026
 
 PCreiniciou18:19UTC−3; volumejogosnãoautomontado causou226/NAMESPACE naAPI. Recuperação aplicada: UUIDcorreto/entradafstabnofail/RequiresMountsFor somenteAPI+scanner, mesmaDLL, API19631ativa/NRestarts0. Capabilities assinadas007owner070241 locais/públicas PASS outra vez,387perfis preservados. Sala anterior não deve ser considerada aberta apósboot. ErroAndroidN64_OWNER_MISSING às18:08/18:09 continua responsabilidade da correção doAPK pela produção. Mesmo handoff/evidência `r157/current-usb-070241-20261014/boot-recovery.json`; autoridade privada /mnt/DADOS/station-n64-new-phone-20261014-204558/boot-recovery-applied.json. NÃOrepetiroperador.
