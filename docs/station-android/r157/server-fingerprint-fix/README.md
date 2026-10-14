@@ -1,3 +1,7 @@
+## Estado posterior: novo APK e falha distinta de início
+
+A correção de hash descrita abaixo continua aplicada. O APK atual `fc1d2d98`/N64`0702412628d2` já recebeu seus387 perfis e passou no parser real; também criou sala no Samsung. O fechamento posterior é **N64_OWNER_MISSING** no vínculo interno de início do CoreService. Não repetir a migração de hash ou o cadastro para tentar resolver essa exceção. Ler o topo do [mesmo handoff](../../HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md) e a [captura confirmada](../current-usb-070241-20261014/host-crash-confirmed.json).
+
 # Correção do aviso de classificação do 007
 
 ## Prova e alteração aplicada

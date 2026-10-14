@@ -1,40 +1,40 @@
 {
   "schema": "station.server.usb-007-resolved.v1",
-  "updatedUtc": "2026-10-14T19:18:10.259898+00:00",
+  "updatedUtc": "2026-10-14T21:45:31.429080+00:00",
   "serverN64Ready": true,
   "serverN64Offline": false,
   "serverRegistrationConfirmed": true,
   "physicalAndroidRoomCreated": true,
   "physicalAndroidGameplayValidated": false,
-  "currentInstalledApkSha256": "6203804f1590d5377c261ac079a7bf302decc9e8c7269ddd2495bfaac70de7c6",
+  "currentInstalledApkSha256": "fc1d2d983deb5179979a4aebac7fa64b1740da1c62ae46bfc0d1f4c11eb46cf0",
   "currentInstalledApkBytes": 2715106319,
-  "currentInstalledVersionLabel": "APK6203804f; no new version number/commit published by producer at inspection",
+  "currentInstalledVersionLabel": "APKfc1d2d98; no new version number/commit published by producer at inspection",
   "currentInstalledSourceCommit": null,
   "parentStableApkSha256": "563625c40bfce77def6770a67448f83e2206e67a07023c58359ad2a0de4eee34",
   "currentEngineBindings": [
     {
       "platform": "psx",
-      "engineId": "pcsx-rearmed-ff81ed17-player-v3-532f95ee08ac",
+      "engineId": "pcsx-rearmed-ff81ed17-player-v3-25f26a587ea3",
       "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
-      "runtimeSha256": "532f95ee08ac40fe4ee6e65106a0276fe1b2fad534156f965ff98c4a2892bb53"
+      "runtimeSha256": "25f26a587ea3a84eb336d26a33fe71eff02508ff964c6268c2e902bf1c8ed94b"
     },
     {
       "platform": "n64",
-      "engineId": "mupen64plus-ae-33bf7021-n64-v3-30cb5db4dbc6",
+      "engineId": "mupen64plus-ae-33bf7021-n64-v3-0702412628d2",
       "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
-      "runtimeSha256": "30cb5db4dbc63c0fbaa32d0f91754c74d928e7d0e87dc3e733c0c96ffcc0d372"
+      "runtimeSha256": "0702412628d22ffa7c4c02c1f0708aa7b4d6f827a854ec2b2f9b1592d51f9f61"
     },
     {
       "platform": "gamecube",
-      "engineId": "dolphin-5102a033-gamecube-v3-70870a060c43",
+      "engineId": "dolphin-5102a033-gamecube-v3-91be6a0d00e2",
       "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
-      "runtimeSha256": "70870a060c4324c203b2b65b229b27c50cc123c042c8a5080d9e4c3ed59113c8"
+      "runtimeSha256": "91be6a0d00e213996bde57eb11fdcef3626735ce1af4c5f27e97a710ed4ef7c0"
     },
     {
       "platform": "wii",
-      "engineId": "dolphin-5102a033-wii-v3-70870a060c43",
+      "engineId": "dolphin-5102a033-wii-v3-91be6a0d00e2",
       "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
-      "runtimeSha256": "70870a060c4324c203b2b65b229b27c50cc123c042c8a5080d9e4c3ed59113c8"
+      "runtimeSha256": "91be6a0d00e213996bde57eb11fdcef3626735ce1af4c5f27e97a710ed4ef7c0"
     }
   ],
   "actualCurrentFilesVerified": {
@@ -61,10 +61,11 @@
     "preparedModesAdded": 399,
     "first78TransactionApplied": true,
     "second321TransactionApplied": true,
-    "currentTotalEngines": 59,
-    "currentTotalProfiles": 13322,
-    "currentTotalPreparedModes": 8417,
-    "catalogRevision": 59
+    "currentTotalEngines": 63,
+    "currentTotalProfiles": 13728,
+    "currentTotalPreparedModes": 8816,
+    "catalogRevision": 79,
+    "verifiedUtc": "2026-10-14T20:57:39.307564+00:00"
   },
   "androidHashCompatibility": {
     "applied": true,
@@ -103,7 +104,11 @@
     "mode": "arena",
     "capacity": 2,
     "screenAndEffectiveServerRoomVerified": true,
-    "leftOpenForUser": true
+    "engineId": "mupen64plus-ae-33bf7021-n64-v3-0702412628d2",
+    "laterPhysicalLaunchFailed": true,
+    "roomLeftOpenForUserAtCapture": true,
+    "laterHostRebootObserved": true,
+    "roomStillOpenAfterReboot": false
   },
   "verification": {
     "controllerHashAndMigrationRegressionTests": 6,
@@ -114,10 +119,66 @@
     "apiRestarted": false,
     "phoneApkOrDataChangedByThisWork": false,
     "usbDiagnosticFilesRemoved": true,
-    "temporaryScreenSettingRestored": true
+    "temporaryScreenSettingRestored": true,
+    "apiRestartedFieldScope": "Registration and diagnostic work; the host subsequently rebooted, and its stopped API was recovered without changing its DLL."
   },
   "physicalTwoOrFourPhoneGameplayValidated": false,
   "stableR157AndR143TagsPreserved": true,
   "hourlyMaintenanceKept": true,
-  "unrelatedPendingCoverBatchApplied": false
+  "unrelatedPendingCoverBatchApplied": false,
+  "previousUsbInstallation": {
+    "currentInstalledApkSha256": "6203804f1590d5377c261ac079a7bf302decc9e8c7269ddd2495bfaac70de7c6",
+    "currentEngineBindings": [
+      {
+        "platform": "psx",
+        "engineId": "pcsx-rearmed-ff81ed17-player-v3-532f95ee08ac",
+        "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+        "runtimeSha256": "532f95ee08ac40fe4ee6e65106a0276fe1b2fad534156f965ff98c4a2892bb53"
+      },
+      {
+        "platform": "n64",
+        "engineId": "mupen64plus-ae-33bf7021-n64-v3-30cb5db4dbc6",
+        "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+        "runtimeSha256": "30cb5db4dbc63c0fbaa32d0f91754c74d928e7d0e87dc3e733c0c96ffcc0d372"
+      },
+      {
+        "platform": "gamecube",
+        "engineId": "dolphin-5102a033-gamecube-v3-70870a060c43",
+        "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+        "runtimeSha256": "70870a060c4324c203b2b65b229b27c50cc123c042c8a5080d9e4c3ed59113c8"
+      },
+      {
+        "platform": "wii",
+        "engineId": "dolphin-5102a033-wii-v3-70870a060c43",
+        "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+        "runtimeSha256": "70870a060c4324c203b2b65b229b27c50cc123c042c8a5080d9e4c3ed59113c8"
+      }
+    ],
+    "actualRoom": {
+      "game": "007: The World Is Not Enough",
+      "platform": "n64",
+      "mode": "arena",
+      "capacity": 2,
+      "screenAndEffectiveServerRoomVerified": true,
+      "leftOpenForUser": true
+    }
+  },
+  "currentAppNativeLaunchBlocked": true,
+  "currentAppFailure": "N64_OWNER_MISSING",
+  "appCorrectionOwner": "APK production; user confirmed production is correcting the app",
+  "guestInfiniteWaitReported": true,
+  "guestLogsCapturedHere": false,
+  "guestAnalysisOwner": "APK production PC",
+  "currentEvidencePath": "r157/current-usb-070241-20261014",
+  "physicalFailureEvidence": "r157/current-usb-070241-20261014/host-crash-confirmed.json",
+  "currentRuntime": {
+    "serviceActive": true,
+    "pid": 19631,
+    "dllSha256": "b3473cc0160169f686501af914cdbf8ebfdf8dcaa4dff768e1106ee8461c9179",
+    "bootRecoveryApplied": true,
+    "mountOrderingFixed": true,
+    "signedLocalAndPublicCapabilitiesVerifiedAfterRecovery": true,
+    "evidence": "r157/current-usb-070241-20261014/boot-recovery.json"
+  },
+  "currentN64ProfilesAfterBootRecovery": 387
 }

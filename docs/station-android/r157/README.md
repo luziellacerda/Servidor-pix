@@ -1,3 +1,11 @@
+## Boot posterior recuperado — 14/10/2026
+
+PCreiniciou18:19UTC−3; volumejogosnãoautomontado causou226/NAMESPACE naAPI. Recuperação aplicada: UUIDcorreto/entradafstabnofail/RequiresMountsFor somenteAPI+scanner, mesmaDLL, API19631ativa/NRestarts0. Capabilities assinadas007owner070241 locais/públicas PASS outra vez,387perfis preservados. Sala anterior não deve ser considerada aberta apósboot. ErroAndroidN64_OWNER_MISSING às18:08/18:09 continua responsabilidade da correção doAPK pela produção. Mesmo handoff/evidência `r157/current-usb-070241-20261014/boot-recovery.json`; autoridade privada /mnt/DADOS/station-n64-new-phone-20261014-204558/boot-recovery-applied.json. NÃOrepetiroperador.
+
+## Atualização USB e falha física do anfitrião — 14/10/2026
+
+O APK atual é `fc1d2d98`, motor N64 `0702412628d2`, já cadastrado e aprovado no servidor. A sala007/Arena foi criada, mas o core do anfitrião fecha com **N64_OWNER_MISSING**. A causa Activity/Application Context foi comprovada nos DEX instalados. A produção está corrigindo o app e analisando o convidado; **gameplay Android ainda não aprovado**. Ler [estado atual](server-return.json) e [falha confirmada](current-usb-070241-20261014/host-crash-confirmed.json). As seções abaixo são históricas e não devem substituir o estado atual.
+
 ## Retorno atual do servidor e USB
 
 Cadastro R157 e do APK atual `6203804f` aplicado; compatibilidade do hash Android corrigida. **Sala do 007/Arena criada no Samsung e confirmada no servidor.** Ler [retorno atual](server-return.json) e [diagnóstico resolvido](server-fingerprint-fix/README.md). Os registros de ausência de cadastro abaixo descrevem o instante do repasse original. O ZIP original da produção não foi recebido; os binários exatos foram conferidos na instalação USB autorizada.

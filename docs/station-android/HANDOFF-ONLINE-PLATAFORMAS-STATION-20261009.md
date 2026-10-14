@@ -1,3 +1,52 @@
+<!-- STATION-USB-070241-20261014 -->
+## N64: APK novo cadastrado; falha de abertura capturada no anfitrião — 14/10/2026
+
+**O servidor está cadastrado para esta instalação. O jogo no anfitrião está bloqueado por uma exceção do app.** A criação de sala funcionou no Samsung SM-A566E: 007: The World Is Not Enough, Arena, duas vagas. Depois, os dois jogadores ficaram prontos e a sala iniciou no Station, mas o processo Android `:n64core` fechou três vezes com `java.lang.IllegalStateException: N64_OWNER_MISSING`, em `StationN64Bridge.onServiceStart(StationN64Bridge.java:33)`, chamado por `CoreService.onStartCommand`. Não registrar a partida como funcionando. A produção está corrigindo o app e analisando o convidado, conforme instrução do usuário.
+
+### Causa demonstrada no APK instalado
+
+1. O `CoreFragment` chama `Context.getApplicationContext()` e passa esse objeto para `ActivityHelper.startCoreService`.
+2. `ActivityHelper` chama `StationN64Bridge.propagate(context, intent)` antes de `startService` e `bindService`.
+3. `propagate` só adiciona `station.n64.launch` quando `isStationContext(context)` é verdadeiro. Esse predicado compara a identidade do objeto com a Activity ou um serviço já cadastrado; o Application Context não coincide no primeiro início.
+4. O serviço recebe o Intent sem esse extra, apesar de existir uma Session no processo. O ramo exato de `onServiceStart` lança `N64_OWNER_MISSING`.
+
+Isso foi conferido nos DEX reais extraídos por USB: `classes35.dex` SHA256 `e2cbccdb9af8dbeb1485c7119312875aece8660956833d22ee042b5b5306b513` e `classes36.dex` SHA256 `6e0f7116d156518fad1e65e72f4c204cfacfd9904c4ee2c3110395d56842d707`. A ausência de owner aqui é o vínculo interno Activity/Service. O cadastro exato do motor no servidor já foi aplicado e aprovado; repetir o cadastro não corrige essa exceção Android.
+
+### Horários e cruzamento dos dois lados
+
+Falhas no anfitrião: **18:08:37.586, 18:08:39.444 e 18:09:20.217 de 14/10/2026, UTC−3**; em UTC, 21:08:37.586, 21:08:39.444 e 21:09:20.217. `dumpsys activity exit-info` confirma APP CRASH(EXCEPTION) no processo `:n64core`. Às21:09:51UTC, o Station mostrava dois participantes, dois prontos, sala iniciada e **zero conexões do motor, hasPlayed=false**. Na janela18:07:30–18:12:30 local dos registros visíveis houve408 linhas HTTP200, zero101 e zero401/403/409/500/502. Isso localiza o bloqueio capturado antes da abertura do transporte do jogo.
+
+O usuário relata loop infinito no convidado e dificuldade de sair. O convidado está sendo analisado por USB no PC da produção; seus logs não foram capturados neste Linux. A correlação com a queda do anfitrião é um fato temporal, e a causa específica do bloqueio do botão/fluxo de saída ainda precisa da captura do convidado. Não atribuir ao convidado uma exceção que só foi observada no anfitrião.
+
+### Correção e aceite que a produção deve conferir
+
+- Propagar o vínculo da Session verificada também no caminho real que recebe Application Context, restringindo o alvo ao CoreService explícito do próprio pacote e à mesma sessão/geração. Manter a validação de `onServiceStart`; não remover a proteção de owner ou ampliar globalmente `isStationContext`, que também protege saves, shutdown e controles. Conferir notification reentry, rotação e reinício nulo separadamente.
+- Tratar o fechamento terminal do processo N64 como falha daquela tentativa: cancelar preparação e retentativa automática da mesma geração, liberar recursos do cliente e manter saída acessível para anfitrião e convidado. A recuperação de transporte não deve transformar uma falha terminal de inicialização em novo lançamento infinito. A produção deve cruzar o recibo do convidado antes de declarar esse fluxo corrigido.
+- Compilar e assinar pelo processo normal da produção; registrar hashes finais e comparar os dois celulares. Para testar juntos, precisam da mesma revisão/motor e da mesma edição. Se o pacote final alterar os motores, entregar seus bytes exatos e o kit correspondente; não reutilizar um ID de outro binário. Se mudar apenas o visual, preservar a identidade de emulação somente quando os próprios binários e políticas forem de fato idênticos.
+- Aceite: criar Arena, entrar com o segundo aparelho, Pronto nos dois, iniciar, observar os dois cores vivos, conexões do motor e partida real; sair pelo convidado e pelo anfitrião; repetir após uma falha controlada sem loop. A prova sintética de quatro participantes já passou no servidor e não substitui esse aceite Android.
+
+### Evento posterior: recuperação após reinício do PC
+
+Este PC reiniciou às **18:19 de 14/10/2026, UTC−3**, depois das exceções Android acima. No boot, o HD UUID`a2700961-7d8b-435f-9408-9132877ff0fc` estava presente, mas sem montagem automática em`/etc/fstab`. O Station tentou montar seu namespace antes de existir `.station-content-new-systems-20261008`, falhou com **226/NAMESPACE** e atingiu o limite de cinco tentativas. A porta5192 ficou indisponível. É uma falha posterior distinta do `N64_OWNER_MISSING` capturado às18:08/18:09.
+
+**Recuperação aplicada e comprovada:** o volume correto foi conferido pelo UUID e seus dados existentes; o Linux o havia montado pelo desktop durante a conferência. Foi acrescentada uma única entrada de montagem ext4 com `nofail`/tempo de espera do dispositivo e `RequiresMountsFor` para o HD e`/mnt/DADOS` somente na API Station e no scanner. O serviço, que estava parado, foi iniciado com a mesma DLL, sem relaxar o namespace ou refazer os cadastros. PID atual **19631**, ativo e zero reinícios após essa inicialização. As capabilities assinadas do007 para o owner070241 foram verificadas outra vez localmente e pela internet. Os387 perfis N64 permanecem cadastrados; licenças de teste próprias removidas e reais preservadas.
+
+[Recibo da recuperação](r157/current-usb-070241-20261014/boot-recovery.json). A sala física anterior foi comprovada antes do reinício; não afirmar que continua aberta após o boot. Criar uma sala nova para o próximo aceite com o APK corrigido pela produção. A recuperação deste Linux não corrige o código Android nem aprova gameplay. Autoridade privada `boot-recovery-applied.json` na mesma pasta de trabalho; não repetir o operador já aplicado.
+
+### Cadastro e provas concluídas neste servidor
+
+APK instalado: SHA256 `fc1d2d983deb5179979a4aebac7fa64b1740da1c62ae46bfc0d1f4c11eb46cf0`, 2.715.106.319 bytes, atualização no Samsung às17:43:20 local. Número novo de release/commit ainda não publicado na branch consultada; não inventar R158/R159. Motor N64 **`mupen64plus-ae-33bf7021-n64-v3-0702412628d2`**. Seis ELF e vinte dependências conferidos diretamente; cores, opções, controles e dependências preservados em relação à instalação anterior. Nenhum ZIP original foi recebido ou teve seu hash declarado verificado aqui.
+
+Quatro motores exatos registrados em duas transações reais78+321, com baseline nova e preservação dos vínculos anteriores. Publicação às20:52:18UTC: **63 motores, 13.728 perfis, 8.816 modos preparados, catálogo79**. Não houve deploy ou reinício: PID3297582/DLLb3473cc0. Os totais são o snapshot da publicação; o scanner continua ativo.
+
+Para este owner N64: **387 perfis, 157 edições, 120 multiplayer e37 individuais**;85 edições têm máximo4, duas máximo3 e33 máximo2, conforme cada modo. O parser real do APK executado no Samsung aceitou todos387 sem falhas. Capabilities assinadas locais/públicas das157 edições,164 admissões de modos multiplayer e157 recusas de modo individual passaram. Transporte público com quatro clientes sintéticos passou: seis WSS autenticados, slots1–4, barreira READY, bytes bidirecionais isolados, pausa/retomada, epoch2, TLS/SPKI e prioridade. Nenhuma partida física em dois/quatro Android foi homologada.
+
+Ler [estado atual](r157/server-return.json), [análise confirmada do anfitrião](r157/current-usb-070241-20261014/host-crash-confirmed.json), [cadastro e provas](r157/current-usb-070241-20261014/summary.json) e [sala criada no aparelho](r157/current-usb-070241-20261014/physical-room-created.json). Este é o MESMO handoff, com evidências sem credenciais. Logs completos, capturas, DEX/ELF e dados do aparelho ficam privados.
+
+Não reaplicar os operadores anteriores, a migração de hashes ou este cadastro. Autoridade privada `/mnt/DADOS/station-n64-new-phone-20261014-204558/applied.json`; falha física em `host-crash-confirmed.json`. Os arquivos temporários próprios foram removidos do telefone e o ajuste temporário de tela foi restaurado. API, scanner, ROMs, capas, licenças reais, outros produtos, política100/800 e tags estáveisR143/R157 preservados. As36 capas preparadas no ciclo20z permanecem fora deste atendimento. O estado global de aceite Android continua parcial. A API foi recuperada após o reboot posterior, conforme a seção própria acima.
+
+## Histórico anterior preservado
+
 <!-- STATION-HOURLY-20261014-20Z -->
 ## Manutenção 20h UTC — cadastro USB conciliado e lote SNES revalidado — 14/10/2026
 

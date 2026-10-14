@@ -1,3 +1,15 @@
+## Boot posterior recuperado — 14/10/2026
+
+PCreiniciou18:19UTC−3; volumejogosnãoautomontado causou226/NAMESPACE naAPI. Recuperação aplicada: UUIDcorreto/entradafstabnofail/RequiresMountsFor somenteAPI+scanner, mesmaDLL, API19631ativa/NRestarts0. Capabilities assinadas007owner070241 locais/públicas PASS outra vez,387perfis preservados. Sala anterior não deve ser considerada aberta apósboot. ErroAndroidN64_OWNER_MISSING às18:08/18:09 continua responsabilidade da correção doAPK pela produção. Mesmo handoff/evidência `r157/current-usb-070241-20261014/boot-recovery.json`; autoridade privada /mnt/DADOS/station-n64-new-phone-20261014-204558/boot-recovery-applied.json. NÃOrepetiroperador.
+
+## Atual USB070241: servidor cadastrado; falha Android confirmada — 14/10/2026
+
+APKfc1d2d98/N64owner0702412628d2: 6ELF+20deps reais conferidos; cadastro78+321 aplicado, 63motores/13728perfis/8816modos/Cat79 no snapshot, semreinício. Parserreal387/157/zerofalhas; 157capabilities locais/públicas,164admissõesMP/157recusasSolo e4clientessintéticos/6WSS/recuperação PASS. SalaREAL007/Arena2P criada no SamsungA56, depois tentativa física2P falhou: APPCRASH :n64core/N64_OWNER_MISSING em StationN64Bridge.onServiceStart linha33, 18:08:37.586/18:08:39.444/18:09:20.217 UTC−3. Causa confirmada nosDEX35/36: CoreFragment passa ApplicationContext; propagate reconhece apenas Activity/serviço já registrado, omite station.n64.launch; CoreService recusa. Server2prontos/iniciado/0WSS/hasPlayedfalse. Produção corrige app e analisa convidado; não inventar causa específica do loop sem seuslogs. ServidorN64Ready=true, offline=false, gameplayAndroid=false. Não repetir enrollment/migrações. Mesmo handoff e r157/server-return.json; autoridade /mnt/DADOS/station-n64-new-phone-20261014-204558/applied.json e host-crash-confirmed.json. Arquivos temporários próprios removidos e ajuste de tela restaurado; sala real mantida para usuário. Fontescongeladas/tagsR143R157/API/scanner/outrosserviços/ROM/capas/licençasreais/100800 preservados. 36capas20z e aceiteAndroid continuam pendentes fora desta entrega.
+
+Ler [docs/station-android/HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md](docs/station-android/HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md).
+
+## Histórico preservado
+
 <!-- STATION-USB-007-20261014 -->
 ## USB 007: criação de sala confirmada no Samsung — 14/10/2026
 

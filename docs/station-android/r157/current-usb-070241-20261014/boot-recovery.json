@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "utc": "2026-10-14T21:44:19.194834+00:00",
+  "mountedCorrectVolume": true,
+  "apiRunning": true,
+  "pid": 19631,
+  "engineCount": 63,
+  "profileCount": 13728,
+  "catalogRevision": 81,
+  "currentN64Profiles": 387,
+  "apiStartedAfterHostReboot": true,
+  "liveSessionRestartedByThisWork": false,
+  "fstabEntryAdded": true,
+  "apiAndScannerMountOrderingAdded": true,
+  "hardeningPreserved": true,
+  "dllChanged": false,
+  "registryOrRomOrCoversChanged": false,
+  "reenrollmentExecuted": false,
+  "verifiedUtc": "2026-10-14T21:44:23.564048+00:00",
+  "signedCapabilities": [
+    {
+      "route": "local",
+      "signedIdentityVerified": true,
+      "exactN64ProfilesVerified": 2
+    },
+    {
+      "route": "public",
+      "signedIdentityVerified": true,
+      "exactN64ProfilesVerified": 2
+    }
+  ],
+  "ownSyntheticLicensesRemoved": true,
+  "realLicensesPreserved": true,
+  "physicalAndroidGameplayValidated": false,
+  "activeRoomsAtFinalCheck": 0,
+  "activeConnectionsAtFinalCheck": 0
+}
