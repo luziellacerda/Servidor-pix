@@ -1,0 +1,113 @@
+AUDITORIA DE COBERTURA ONLINE — QUATRO MOTORES INDEPENDENTES
+Somente leitura. Nenhuma aprovação, política, cadastro, código produtivo, licença,
+telefone ou servidor foi alterado. Não declara o produto pronto para consumidor.
+
+1. O QUE OS 78 REGISTROS SIGNIFICAM
+78 são modos/perfis com vínculo exato a 44 IDs/edições, e 43 textos de título.
+Extreme-G aparece em duas identidades de conteúdo distintas: não deduplicar por nome.
+
+Plataforma | Itens de catálogo | Modos revisados | Edições cobertas | Fora deste ledger
+N64        | 157               | 66              | 33               | 124
+GameCube   | 21                | 9               | 8                | 13
+Wii        | 7                 | 3               | 3                | 4
+PS1        | 84                | 0               | 0                | 84
+
+N64 possui os 157 metadados completos recebidos na revisão47, todos visíveis.
+Os IDs, nomes, conteúdo, metadados e artefatos coincidem com o snapshot histórico.
+GameCube/Wii/PS1 usam o snapshot completo revisão44 e matriz revisão46: não foi
+recebido aqui um export completo fresco da revisão47 dessas plataformas. O recibo47
+atesta catálogo4690 IDs/4435visíveis e preservação das demais linhas/metadados/registros.
+A cobertura completa atual dessas três plataformas permanece sem qualificação fresca.
+4435 é o total visível de todo o catálogo, não o número de jogos N64 ou de jogos online.
+Fora deste ledger não significa automaticamente multiplayer, incompatível ou falha.
+
+2. QUANTIDADE DE PARTICIPANTES E CONTROLES
+2 participantes:76 modos/44edições. 3:53modos/32edições. 4:54modos/33edições. 5:zero.
+N64: direct-four-ports-v1, limite4; GameCube: dolphin-gamecube-four-ports-v1, limite4;
+Wii: dolphin-wii-remotes-four-v1, limite4; PS1: standard-2p-v1, limite2.
+Todos78 registros cruzam título/edição/conteúdo, limite do controlador e opções exigidas.
+Esse cruzamento é de dados e código administrativo, não uma execução Android.
+Exemplos que exigem seleção por modo: Mario Tennis Exhibition em duplas permite2/4,
+sem3; Pokémon Stadium Tag-Team Rental e WinBack Point Match permitem3/4 naquele modo.
+Um limite4 do motor ou metadata.players=4 não aprova todo modo nem toda edição.
+Nenhuma capacidade5 foi acrescentada a esses quatro owners; SNES/RetroArch é outro escopo.
+
+3. LACUNAS MENSURÁVEIS, SEM INFERIR INCOMPATIBILIDADE
+Pesquisa histórica N64:33edições preparadas,7documentadas solo,7com pendência específica,
+110com política histórica de teste ainda aguardando revisão do jogo. São124 fora do ledger.
+GameCube:8preparadas,9documentadas solo,4pendências documentais/adaptação.
+Wii:3preparadas,1documentada solo,3pendências documentais/adaptação.
+PS1:84 aguardando HLE por edição no recorte; nenhuma nova aprovação HLE no retorno aplicado.
+Esses estados são documentais históricos e não devem substituir um export atual e testes.
+Metadata.players está vazio em todas21GC/7Wii/84PS1 do snapshot, portanto não dá contagem.
+
+As quatro recusas do ledger são por perfil/modo, não uma recusa do título inteiro:
+- Mario Party7: modo de controles compartilhados recusado; Party Cruise Battle Royale
+  para2/3/4 controles independentes já consta em outro modo aprovado. Não homologar8/4-Team.
+- Four Swords Adventures: exige perfil GBA-link, não implementado pelo perfil de quatro GC.
+- Super Mario Galaxy1/2: papel Co-Star/pointer exige perfil específico, não quatro remotes comuns.
+Outras pendências documentais incluem edição japonesa Banjo-Tooie, Smash Remix, Turok2/3,
+Terminator3 GameCube, Code Veronica DUB e Epic Mickey2 Wii. Não herdar prova de outra edição.
+
+PS1 revisão consolidada possui26entries:10simultaneous e16pending-primary-evidence.
+Todos26 têm currentOwnerApproval=false e currentOwnerHleReviewed=false; approvedModesAdded=0.
+Inconsistência documental: campo entriesStillWithoutPrimaryDocumentaryFinding informa20,
+mas a lista atual classifica16 como pending. Não usar20 como contagem reconciliada nem
+transformar essa correção de resumo em aprovação. Fontes descrevem hardware original,
+não o HLE atual no Android.
+
+4. CONDIÇÕES REAIS NO PREPARADOR CANÔNICO
+Arquivo atual: docs/station-android/r139/prepare_independent_owners.py, SHA dc623d26,
+igual ao pin do último retorno aplicado R141. Função prepare:
+- exige mesmo ordinal/título/plataforma e identidade de conteúdo dos modos históricos;
+- exige decisão documental específica, adapterCompatible=true e opções do motor presentes;
+- conserva maximumPlayers, allowedPlayerCounts e sources exatos;
+- recusa PS1 neste ledger; PS1 usa revisão HLE separada por edição;
+- chama merge(..., migrate_existing_native_profiles=False), sem migração genérica;
+- requer um novo vínculo de owner para cada decisão revisada.
+Builder POLICY fixa controles, hashes de configuração e limitações acima; exige os quatro
+owners reais, launchReady, recoveryProtocol v3 e requireExplicitEngineModes=true.
+Merger verifica extensão de lançamento, conteúdo, controlador, limite e fontes HTTPS.
+Para PS1 exige biosPolicy=HLE-per-game-approved, reviewEvidence, máximo2 e counts[2].
+Preserva prefixos antigos e classifica o restante explicit-reviewed-mode-pending.
+Não há autorização para inferir contagens só pelo teto da plataforma ou cache descritivo.
+
+5. O QUE O RETORNO DO SERVIDOR PROVA
+Último retorno aplicado deste recorte é R141:39engines,11604perfis,6743modos preparados;
+78novos vínculos e44games dos owners R141. Esses totais incluem históricos/outros motores,
+e não são6743 jogos únicos nem prova de suporte a todos4435visíveis.
+R146kit conserva exatamente os78modos originais; R147kit/aplicação não são alegados por esta auditoria.
+Todos78 physicalGameplayValidated=false; os recibos fornecidos não comprovam gameplay
+físico desses quatro owners. Casos SNES da estávelR143 não homologam N64/PS1/GC/Wii.
+
+6. HANDOFF PARA QUALIFICAR O PRODUTO
+Antes de ampliar cadastro, obter export fresco assinado do catálogo/perfis/modos efetivos
+com itemId, contentSha256, engine/core/runtime, controller/profileSha e contagem por modo.
+Conferir o kit correspondente ao APK realmente instalado, sem aplicar kit histórico como atual.
+Separar erro de admissão (perfil/modo/owner) de falha depois de iniciar o motor/READY.
+Uma partida já admitida que fica carregando requer prova do caminho real de inicialização;
+não atribuir toda falha à falta de cadastro.
+
+Rodada inicial com modos já revisados e todos telefones na mesma composição final:
+- N64 Mario Kart64, VS ou Batalha:2, depois3 e4 participantes;
+- GameCube Mario Kart Double Dash Europe, Corrida local:2, depois3 e4;
+- Wii MarioKartWii.ini (metadado aponta ISO), Corrida local:2, depois3 e4.
+Registrar cada aparelho/assento/controlador independente, carga/render, READY e ACK,
+entrada na corrida, controle humano real, saída normal, perda de sinal e reentrada.
+Incluir g52 para verificar ausência de ANR; não alterar CPU/JIT/timers/opções para fazer passar.
+Com4telefones disponíveis, confirmar que o quarto controla seu veículo e os demais continuam.
+
+Para PS1, primeiro concluir HLE da edição/conteúdo exatos no runtime final, com fonte do
+modo original e execução real local/inputs independentes. Só após revisão explícita,
+publicar ledger limitado à edição/política2p e testar a sala oficial. Não baixar/copiar BIOS
+proprietária nem aprovar genericamente todos84jogos ou modos3/4/5 neste perfil.
+
+Para cada nova edição fora do ledger, guardar evidência do modo original/portas/acessórios,
+identidade de conteúdo e teste no core/controlador exatos. Aprovar apenas os modos que
+passarem; modos solo e acessórios especiais precisam de descrição própria ao consumidor.
+Entrega final deve apresentar matriz por edição/mode/2-3-4-5 com prova física e pendências,
+e manter consumerReady=false enquanto admissão/partida/saída/recuperação ainda não forem qualificadas.
+
+Arquivos sanitizados detalhados: coverage-summary.json, reviewed-modes-sanitized.json,
+catalog-edition-coverage-sanitized.json. Nenhuma ROM, BIOS, código de ativação, serial,
+credencial ou log bruto foi incluído. O auditor não importa nem executa módulos administrativos.

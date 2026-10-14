@@ -1,0 +1,10 @@
+{
+  "schema": "station.r147.usb-count-only.public-observation.v1",
+  "observedUtc": "2026-10-14T01:42:40.319064+00:00",
+  "connectedPhoneCount": 0,
+  "authorizedPhoneCount": 0,
+  "unauthorizedPhoneCount": 0,
+  "offlinePhoneCount": 0,
+  "containsDeviceSerials": false,
+  "phoneOperationPerformed": false
+}

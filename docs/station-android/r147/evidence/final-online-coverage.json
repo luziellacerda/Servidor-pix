@@ -1,0 +1,1559 @@
+{
+  "schema": "station.r147.current-native-ledger.public-coverage.v1",
+  "sourceCommit": "64a6da91aee9c61d26a3a85172af6521fcc82a36",
+  "sourceFinalKitLedgerSha256": "e5099271eda573bd6e67c80e6bff813cdadb5cbd308076152247bb9f3a30b8b1",
+  "sourceFinalKitLedgerBytes": 80655,
+  "reviewedModeCount": 78,
+  "reviewedEditionCount": 44,
+  "reviewedModesByPlatform": {
+    "psx": 0,
+    "n64": 66,
+    "gamecube": 9,
+    "wii": 3
+  },
+  "reviewedEditionsByPlatform": {
+    "psx": 0,
+    "n64": 33,
+    "gamecube": 8,
+    "wii": 3
+  },
+  "nativeOwnerMaximumPlayers": {
+    "psx": 2,
+    "n64": 4,
+    "gamecube": 4,
+    "wii": 4
+  },
+  "fivePlayerModesInThisLedger": 0,
+  "psxPerEditionHleApprovalsInThisLedger": 0,
+  "lastDocumentedN64Catalog": {
+    "revision": 47,
+    "editionCount": 157,
+    "reviewedHere": 33,
+    "outsideThisLedger": 124,
+    "doesNotDescribeOtherLegacyOwners": true
+  },
+  "otherPlatformHistoricalSnapshot": {
+    "gamecubeCatalog": 21,
+    "reviewedHere": 8,
+    "wiiCatalog": 7,
+    "reviewedWiiHere": 3,
+    "psxCatalog": 84,
+    "reviewedPsxHere": 0,
+    "currentCompleteOtherPlatformCatalogNotVerified": true
+  },
+  "wholeCatalogOnlineApproved": false,
+  "nativePresenceIsNotGameApproval": true,
+  "registrationOfThisFinalOwnerPending": true,
+  "physicalGameplayValidated": false,
+  "editions": [
+    {
+      "platform": "gamecube",
+      "catalogOrdinal": 3738,
+      "name": "Mario Kart - Double Dash!! (Europe) (En,Fr,De,Es,It)",
+      "modes": [
+        {
+          "sourceFile": "server-prepared-modes.json",
+          "sourceOrdinal": 248,
+          "targetControllerProfile": "dolphin-gamecube-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "gamecube",
+      "catalogOrdinal": 3739,
+      "name": "Mario Party 7 (Europe) (En,Fr,De,Es,It)",
+      "modes": [
+        {
+          "mode": "party-cruise-4p",
+          "modeTitle": "Mario Party7: Battle Royale até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 17,
+          "targetControllerProfile": "dolphin-gamecube-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Party-7-268313.html",
+            "https://www.scribd.com/document/733198408/Mario-Party-7"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "gamecube",
+      "catalogOrdinal": 3741,
+      "name": "Pikmin 2",
+      "modes": [
+        {
+          "mode": "local-2p",
+          "modeTitle": "Pikmin2: multijogador local",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 13,
+          "targetControllerProfile": "dolphin-gamecube-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Pikmin-2-268544.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "gamecube",
+      "catalogOrdinal": 3747,
+      "name": "Sonic Heroes (DUB)",
+      "modes": [
+        {
+          "mode": "local-2p",
+          "modeTitle": "Sonic Heroes: dois jogadores",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 14,
+          "targetControllerProfile": "dolphin-gamecube-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Sonic-Heroes-268742.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "gamecube",
+      "catalogOrdinal": 3748,
+      "name": "Sonic_Adventure_2",
+      "modes": [
+        {
+          "mode": "battle-2p",
+          "modeTitle": "Sonic Adventure2: Battle para dois",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 16,
+          "targetControllerProfile": "dolphin-gamecube-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Sonic-Adventure-2-Battle-268709.html",
+            "https://manuals.plus/m/25fee396fca2f1e899f5d0b83bb30d2076fcba00c82cd2b735ff1ea35f4887ad"
+          ]
+        },
+        {
+          "mode": "chao-party-race",
+          "modeTitle": "Chao Party Race: até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 16,
+          "targetControllerProfile": "dolphin-gamecube-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Sonic-Adventure-2-Battle-268709.html",
+            "https://manuals.plus/m/25fee396fca2f1e899f5d0b83bb30d2076fcba00c82cd2b735ff1ea35f4887ad"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "gamecube",
+      "catalogOrdinal": 3749,
+      "name": "Star Fox - Assault",
+      "modes": [
+        {
+          "sourceFile": "server-prepared-modes.json",
+          "sourceOrdinal": 259,
+          "targetControllerProfile": "dolphin-gamecube-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Star-Fox-Assault-268874.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "gamecube",
+      "catalogOrdinal": 3750,
+      "name": "Super Smash Bros. Melee (Europe) (En,Fr,De,Es,It)",
+      "modes": [
+        {
+          "sourceFile": "server-prepared-modes.json",
+          "sourceOrdinal": 260,
+          "targetControllerProfile": "dolphin-gamecube-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Super-Smash-Bros-Melee-268951.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "gamecube",
+      "catalogOrdinal": 3755,
+      "name": "need for speed underground 2",
+      "modes": [
+        {
+          "mode": "local-2p",
+          "modeTitle": "Corrida local",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 15,
+          "targetControllerProfile": "dolphin-gamecube-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Need-For-Speed-Underground-2-268478.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2073,
+      "name": "1080° Snowboarding",
+      "modes": [
+        {
+          "mode": "local-multiplayer",
+          "modeTitle": "1080 Snowboarding: corrida para dois",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 38,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://www.nintendo.com/es-es/Juegos/Nintendo-64/1080-Snowboarding-269404.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2085,
+      "name": "Bomberman 64",
+      "modes": [
+        {
+          "sourceFile": "profiles-complete.json",
+          "sourceOrdinal": 3686,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/es-es/Juegos/Nintendo-64/Bomberman-64-1204884.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2091,
+      "name": "Conker's Bad Fur Day",
+      "modes": [
+        {
+          "mode": "beach",
+          "modeTitle": "Conker: Beach",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+          ]
+        },
+        {
+          "mode": "raptor",
+          "modeTitle": "Conker: Raptor",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+          ]
+        },
+        {
+          "mode": "war-total-war",
+          "modeTitle": "Conker: War / Total War",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+          ]
+        },
+        {
+          "mode": "war-colors",
+          "modeTitle": "Conker: War / Colors",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+          ]
+        },
+        {
+          "mode": "heist",
+          "modeTitle": "Conker: Heist",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+          ]
+        },
+        {
+          "mode": "tank",
+          "modeTitle": "Conker: Tank",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+          ]
+        },
+        {
+          "mode": "race",
+          "modeTitle": "Conker: Race",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+          ]
+        },
+        {
+          "mode": "death-match",
+          "modeTitle": "Conker: Death Match",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.videogamemanual.com/n64/Conker%27s%20Bad%20Fur%20Day%20%28USA%29.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2092,
+      "name": "Cruis'n USA",
+      "modes": [
+        {
+          "mode": "split-screen-2p",
+          "modeTitle": "Cruis'n USA: corrida para dois",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 58,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-64/Cruis-n-USA--276775.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2095,
+      "name": "Diddy Kong Racing",
+      "modes": [
+        {
+          "mode": "versus",
+          "modeTitle": "Diddy Kong Racing: Versus até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 29,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-64/Diddy-Kong-Racing-269448.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2097,
+      "name": "Donkey Kong 64 [Expansion Pak Bundle]",
+      "modes": [
+        {
+          "mode": "battle",
+          "modeTitle": "Donkey Kong64: Battle até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 30,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_DonkeyKong64_EN.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2103,
+      "name": "Excitebike 64",
+      "modes": [
+        {
+          "mode": "local-multiplayer",
+          "modeTitle": "Excitebike64: corrida até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 39,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-64/Excitebike-64-269470.html",
+            "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_Excitebike64_EN.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2104,
+      "name": "Extreme-G",
+      "modes": [
+        {
+          "mode": "local-multiplayer",
+          "modeTitle": "Extreme-G: corrida até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 43,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://throwbackentertainment.com/game/extreme-g/"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2105,
+      "name": "Extreme-G",
+      "modes": [
+        {
+          "mode": "local-multiplayer",
+          "modeTitle": "Extreme-G: corrida até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 44,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://throwbackentertainment.com/game/extreme-g/"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2107,
+      "name": "F-Zero X",
+      "modes": [
+        {
+          "sourceFile": "profiles-complete.json",
+          "sourceOrdinal": 3708,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_FZeroX_EN.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2114,
+      "name": "GoldenEye 007",
+      "modes": [
+        {
+          "mode": "multiplayer",
+          "modeTitle": "GoldenEye007: multiplayer até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 31,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/us/whatsnew/goldeneye-007-returns-for-nintendo-switch-online-expansion-pack-members/"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2124,
+      "name": "Killer Instinct Gold",
+      "modes": [
+        {
+          "mode": "arcade-2p",
+          "modeTitle": "Killer Instinct Gold: Arcade para dois",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 51,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://manuals.plus/m/f64ee64136eb8177ed9265521c37f63c63c5fc54bd191b1c9fb025a2685848f8.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2125,
+      "name": "Kirby 64: The Crystal Shards",
+      "modes": [
+        {
+          "mode": "mini-games",
+          "modeTitle": "Kirby64: minigames até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 32,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_Kirby64TheCrystalShards_EN.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2136,
+      "name": "Mario Golf",
+      "modes": [
+        {
+          "mode": "turn-based-stroke",
+          "modeTitle": "Mario Golf: Stroke em turnos",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 45,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioGolf_EN.pdf"
+          ]
+        },
+        {
+          "mode": "turn-based-skins",
+          "modeTitle": "Mario Golf: Skins Match em turnos",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 45,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioGolf_EN.pdf"
+          ]
+        },
+        {
+          "mode": "turn-based-clubslots",
+          "modeTitle": "Mario Golf: Club Slots em turnos",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 45,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioGolf_EN.pdf"
+          ]
+        },
+        {
+          "mode": "turn-based-minigolf",
+          "modeTitle": "Mario Golf: Mini-Golf em turnos",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 45,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioGolf_EN.pdf"
+          ]
+        },
+        {
+          "mode": "turn-based-match",
+          "modeTitle": "Mario Golf: Match Game em turnos",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 45,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioGolf_EN.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2137,
+      "name": "Mario Kart 64",
+      "modes": [
+        {
+          "sourceFile": "profiles-complete.json",
+          "sourceOrdinal": 3738,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioKart64_EN.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2138,
+      "name": "Mario Party 2",
+      "modes": [
+        {
+          "mode": "board",
+          "modeTitle": "Mario Party: tabuleiro até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 34,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mario-Party-2-269580.html",
+            "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioParty2_EN.pdf"
+          ]
+        },
+        {
+          "mode": "duel-2p",
+          "modeTitle": "Mario Party: Duel para dois",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 34,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mario-Party-2-269580.html",
+            "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioParty2_EN.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2139,
+      "name": "Mario Party 3",
+      "modes": [
+        {
+          "mode": "board",
+          "modeTitle": "Mario Party: tabuleiro até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 35,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mario-Party-3-269591.html"
+          ]
+        },
+        {
+          "mode": "duel-2p",
+          "modeTitle": "Mario Party: Duel para dois",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 35,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mario-Party-3-269591.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2140,
+      "name": "Mario Party",
+      "modes": [
+        {
+          "mode": "board",
+          "modeTitle": "Mario Party: tabuleiro até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 33,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mario-Party-269569.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2141,
+      "name": "Mario Tennis",
+      "modes": [
+        {
+          "sourceFile": "profiles-complete.json",
+          "sourceOrdinal": 3742,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/eu/media/downloads/games_8/emanuals/nintendo_8/Manual_Nintendo64_MarioTennis_EN.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2143,
+      "name": "Mickey's Speedway USA",
+      "modes": [
+        {
+          "mode": "local-multiplayer",
+          "modeTitle": "Mickey Speedway USA: Contest até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 42,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-64/Mickey-s-Speedway-USA-269613.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2149,
+      "name": "Mortal Kombat 4",
+      "modes": [
+        {
+          "mode": "arcade-one-on-one",
+          "modeTitle": "Mortal Kombat 4: Arcade 1 on 1",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 4,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://bdjogos.com.br/manuais/928-mortal-kombat-4-nintendo-64-manual-usa.pdf"
+          ]
+        },
+        {
+          "mode": "arcade-two-on-two",
+          "modeTitle": "Mortal Kombat 4: Arcade 2 on 2",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 4,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://bdjogos.com.br/manuais/928-mortal-kombat-4-nintendo-64-manual-usa.pdf"
+          ]
+        },
+        {
+          "mode": "team",
+          "modeTitle": "Mortal Kombat 4: Team",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 4,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://bdjogos.com.br/manuais/928-mortal-kombat-4-nintendo-64-manual-usa.pdf"
+          ]
+        },
+        {
+          "mode": "vs-endurance",
+          "modeTitle": "Mortal Kombat 4: VS Endurance",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 4,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://bdjogos.com.br/manuais/928-mortal-kombat-4-nintendo-64-manual-usa.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2151,
+      "name": "Mortal Kombat Trilogy",
+      "modes": [
+        {
+          "mode": "mortal-kombat",
+          "modeTitle": "Mortal Kombat Trilogy: Mortal Kombat",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 5,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://www.emulation64.fr/pdf/N64%20-%20Mortal%20Kombat%20Trilogy%20%28Anglais%29.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2158,
+      "name": "The New Tetris",
+      "modes": [
+        {
+          "mode": "marathon",
+          "modeTitle": "The New Tetris: Multiplayer Marathon",
+          "sourceFile": "n64-root-mode-decisions.json",
+          "sourceOrdinal": 1,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://nintendo64.pl/wp-content/uploads/The-New-Tetris-USA.pdf",
+            "https://manualzz.com/doc/22162295/nintendo-the-new-tetris-video-game-instruction-booklet"
+          ]
+        },
+        {
+          "mode": "ultra",
+          "modeTitle": "The New Tetris: Multiplayer Ultra",
+          "sourceFile": "n64-root-mode-decisions.json",
+          "sourceOrdinal": 1,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://nintendo64.pl/wp-content/uploads/The-New-Tetris-USA.pdf",
+            "https://manualzz.com/doc/22162295/nintendo-the-new-tetris-video-game-instruction-booklet"
+          ]
+        },
+        {
+          "mode": "lines",
+          "modeTitle": "The New Tetris: Multiplayer Lines",
+          "sourceFile": "n64-root-mode-decisions.json",
+          "sourceOrdinal": 1,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://nintendo64.pl/wp-content/uploads/The-New-Tetris-USA.pdf",
+            "https://manualzz.com/doc/22162295/nintendo-the-new-tetris-video-game-instruction-booklet"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2165,
+      "name": "Perfect Dark",
+      "modes": [
+        {
+          "mode": "deathmatch",
+          "modeTitle": "Perfect Dark: Deathmatch até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 36,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-64/Perfect-Dark-269635.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2167,
+      "name": "Pokémon Puzzle League",
+      "modes": [
+        {
+          "mode": "local-multiplayer",
+          "modeTitle": "Pokemon Puzzle League: batalha para dois",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 41,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-64/Pokemon-Puzzle-League-269657.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2170,
+      "name": "Pokémon Stadium",
+      "modes": [
+        {
+          "mode": "kidsclub-single",
+          "modeTitle": "Pokémon Stadium: Kids Club: minigame avulso",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 53,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://manualzz.com/doc/24022192/nintendo-64-game-pak-pok%C3%A9mon-stadium-instruction-booklet",
+            "https://pkproject.net/juegos/manual/manual-N64-Pokemon-Stadium-EN.pdf"
+          ]
+        },
+        {
+          "mode": "kidsclub-series",
+          "modeTitle": "Pokémon Stadium: Kids Club: sequência de minigames",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 53,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://manualzz.com/doc/24022192/nintendo-64-game-pak-pok%C3%A9mon-stadium-instruction-booklet",
+            "https://pkproject.net/juegos/manual/manual-N64-Pokemon-Stadium-EN.pdf"
+          ]
+        },
+        {
+          "mode": "freebattle-rental2",
+          "modeTitle": "Pokémon Stadium: Free Battle: duelo Rental Only",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 53,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://manualzz.com/doc/24022192/nintendo-64-game-pak-pok%C3%A9mon-stadium-instruction-booklet",
+            "https://pkproject.net/juegos/manual/manual-N64-Pokemon-Stadium-EN.pdf"
+          ]
+        },
+        {
+          "mode": "freebattle-tag-rental",
+          "modeTitle": "Pokémon Stadium: Free Battle: Tag-Team Rental Only",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 53,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            3,
+            4
+          ],
+          "sources": [
+            "https://manualzz.com/doc/24022192/nintendo-64-game-pak-pok%C3%A9mon-stadium-instruction-booklet",
+            "https://pkproject.net/juegos/manual/manual-N64-Pokemon-Stadium-EN.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2173,
+      "name": "Quake II",
+      "modes": [
+        {
+          "mode": "deathmatch",
+          "modeTitle": "Quake II: Deathmatch",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 6,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.videogamemanual.com/n64/Quake%20II%20%28USA%29.pdf"
+          ]
+        },
+        {
+          "mode": "frag-teams",
+          "modeTitle": "Quake II: Frag Teams",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 6,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.videogamemanual.com/n64/Quake%20II%20%28USA%29.pdf"
+          ]
+        },
+        {
+          "mode": "flag-wars",
+          "modeTitle": "Quake II: Flag Wars",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 6,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.videogamemanual.com/n64/Quake%20II%20%28USA%29.pdf"
+          ]
+        },
+        {
+          "mode": "death-tag",
+          "modeTitle": "Quake II: Death Tag",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 6,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.videogamemanual.com/n64/Quake%20II%20%28USA%29.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2174,
+      "name": "Ridge Racer 64",
+      "modes": [
+        {
+          "mode": "local-multiplayer",
+          "modeTitle": "Ridge Racer64: corrida até quatro",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 40,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-64/Ridge-Racer-64-269701.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2188,
+      "name": "Snowboard Kids 2",
+      "modes": [
+        {
+          "mode": "battle-mode",
+          "modeTitle": "Snowboard Kids 2: Battle Mode",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 2,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.emulation64.fr/pdf/N64%20-%20Snowboard%20Kids%202%20%28Anglais%29.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2189,
+      "name": "Snowboard Kids",
+      "modes": [
+        {
+          "mode": "battle-race",
+          "modeTitle": "Snowboard Kids: Battle Race",
+          "sourceFile": "n64-additional-primary-review.json",
+          "sourceOrdinal": 1,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.videogamemanual.com/n64/Snowboard%20Kids%20%28USA%29.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2195,
+      "name": "Star Wars Episode I: Racer",
+      "modes": [
+        {
+          "mode": "two-player-race",
+          "modeTitle": "Star Wars Episode I: Racer: Corrida para dois jogadores",
+          "sourceFile": "n64-root-mode-decisions.json",
+          "sourceOrdinal": 2,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://emulation64.fr/pdf/N64%20-%20Star%20Wars%20Episode%20I%20-%20Racer%20%28Francais%29.pdf",
+            "https://www.nintendo.co.jp/n01/n64/software/nus_p_nepj/index.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2213,
+      "name": "Turok: Rage Wars",
+      "modes": [
+        {
+          "mode": "bloodlust",
+          "modeTitle": "Turok Rage Wars: Bloodlust",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 55,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.ultra64.net/pdf/N64%20-%20Turok%20-%20Rage%20Wars%20%28Francais%29.pdf"
+          ]
+        },
+        {
+          "mode": "frag-tag",
+          "modeTitle": "Turok Rage Wars: Frag Tag",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 55,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.ultra64.net/pdf/N64%20-%20Turok%20-%20Rage%20Wars%20%28Francais%29.pdf"
+          ]
+        },
+        {
+          "mode": "team-bloodlust",
+          "modeTitle": "Turok Rage Wars: Team Bloodlust",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 55,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.ultra64.net/pdf/N64%20-%20Turok%20-%20Rage%20Wars%20%28Francais%29.pdf"
+          ]
+        },
+        {
+          "mode": "capture-flag",
+          "modeTitle": "Turok Rage Wars: Capture the Flag",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 55,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.ultra64.net/pdf/N64%20-%20Turok%20-%20Rage%20Wars%20%28Francais%29.pdf"
+          ]
+        },
+        {
+          "mode": "2-player-trials",
+          "modeTitle": "Turok Rage Wars: Trials para dois",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 55,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://www.ultra64.net/pdf/N64%20-%20Turok%20-%20Rage%20Wars%20%28Francais%29.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "n64",
+      "catalogOrdinal": 2222,
+      "name": "WinBack: Covert Operations",
+      "modes": [
+        {
+          "mode": "death-match",
+          "modeTitle": "WinBack: Covert Operations: Death Match",
+          "sourceFile": "n64-root-mode-decisions.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://nintendo64.pl/wp-content/uploads/WinBack-Covert-Operations-USA.pdf"
+          ]
+        },
+        {
+          "mode": "lethal-tag",
+          "modeTitle": "WinBack: Covert Operations: Lethal Tag",
+          "sourceFile": "n64-root-mode-decisions.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://nintendo64.pl/wp-content/uploads/WinBack-Covert-Operations-USA.pdf"
+          ]
+        },
+        {
+          "mode": "cube-hunt",
+          "modeTitle": "WinBack: Covert Operations: Cube Hunt",
+          "sourceFile": "n64-root-mode-decisions.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://nintendo64.pl/wp-content/uploads/WinBack-Covert-Operations-USA.pdf"
+          ]
+        },
+        {
+          "mode": "quick-draw",
+          "modeTitle": "WinBack: Covert Operations: Quick Draw",
+          "sourceFile": "n64-root-mode-decisions.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://nintendo64.pl/wp-content/uploads/WinBack-Covert-Operations-USA.pdf"
+          ]
+        },
+        {
+          "mode": "team-battle",
+          "modeTitle": "WinBack: Covert Operations: Team Battle",
+          "sourceFile": "n64-root-mode-decisions.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://nintendo64.pl/wp-content/uploads/WinBack-Covert-Operations-USA.pdf"
+          ]
+        },
+        {
+          "mode": "point-match",
+          "modeTitle": "WinBack: Covert Operations: Point Match",
+          "sourceFile": "n64-root-mode-decisions.json",
+          "sourceOrdinal": 3,
+          "targetControllerProfile": "direct-four-ports-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            3,
+            4
+          ],
+          "sources": [
+            "https://nintendo64.pl/wp-content/uploads/WinBack-Covert-Operations-USA.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "wii",
+      "catalogOrdinal": 3839,
+      "name": "Donkey Kong Country Returns.side",
+      "modes": [
+        {
+          "mode": "local-coop-2p",
+          "modeTitle": "Donkey Kong Country Returns: dupla",
+          "sourceFile": "web-mode-research.json",
+          "sourceOrdinal": 25,
+          "targetControllerProfile": "dolphin-wii-remotes-four-v1",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Wii/Donkey-Kong-Country-Returns-280968.html",
+            "https://www.nintendo.com/en-gb/News/2010/Donkey-Kong-Country-Returns-a-rip-roaring-banana-scoring-treat-251997.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "wii",
+      "catalogOrdinal": 3842,
+      "name": "MarioKartWii.ini",
+      "modes": [
+        {
+          "sourceFile": "server-prepared-modes.json",
+          "sourceOrdinal": 269,
+          "targetControllerProfile": "dolphin-wii-remotes-four-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Wii/Mario-Kart-Wii-281848.html"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "wii",
+      "catalogOrdinal": 3843,
+      "name": "New SUPER MARIO BROS.side",
+      "modes": [
+        {
+          "sourceFile": "server-prepared-modes.json",
+          "sourceOrdinal": 270,
+          "targetControllerProfile": "dolphin-wii-remotes-four-v1",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Wii/New-Super-Mario-Bros-Wii-282376.html"
+          ]
+        }
+      ]
+    }
+  ],
+  "independentAuditEvidence": {
+    "sourceEvidenceSha256": "b3bc58d10a0d6e44da8ce608566ca1bbc097cb557210f7236891b7787b44fbef",
+    "sourceSchema": "station.consumer.online-coverage.readonly-audit.v1",
+    "publicFileIsSanitizedLedgerSummary": true,
+    "suppliedAuditPathsAndRawBodyNotRepublished": true
+  },
+  "nextAction": "Qualify each missing exact edition/content/mode, current owner and distinct human inputs before approving; extend five-player adapters/policy only in a separate authorized scope."
+}

@@ -1,3 +1,9 @@
+# R147 final compilada — teste físico e cadastro correspondente pendentes
+
+Fonte `64a6da91aee9c61d26a3a85172af6521fcc82a36`, 52 arquivos/48 pins; APK `c038a0d75113359187d8eb9d2762e8d7e4ceee1f3538d1982313fc1e3a781ad6`. Uma classe/quatro métodos DEX10 e uma linha de limpeza de boot Dolphin, core `3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29` após reprodução integral f7/92b/quatro hooks. Seis substituições/13.854 entradas/39 DEX; 345 bindings genéricos mudam só DEX10, core separado nos campos existentes. R145 visual/R146 rota e CPU/JIT/políticas/opções/controles preservados. Kit `38041c427894dfd502bcc0d6859ca036630ebaab6c8df1ecd05f65a944f201ee` preparado, seis bibliotecas/20 dependências/mesmos78modos, zero novas aprovações PS1 HLE; sem retorno aplicado ou gameplay físico comprovado. A leitura USB atual registrou 0 aparelho(s), sendo 0 autorizado(s). Instalação desta revisão conferida em 0 modelo(s) pelos recibos fornecidos; a leitura USB não prova instalação. Ler r147/STATUS e README. Backup R146 3.619 arquivos, R145 3.632 e R143 estável intactos. Tentativa6b/BUILD-PROGRESS permanecem históricos; não reescrever como prova final. Sem deploy/restart/migração genérica/promoção estável; repasse ao consumidor ainda não homologado.
+
+## Histórico preservado integralmente
+
 # R147 primeira base rejeitada; receita final em preparação
 
 Fonte6b permanece intacta. Baseline compilou mas não passou92b: perda37newlines em zconf.h e mapa metadata mGBA sobrescrito. .text/.rodata/runtime comparados exatos; debug/buildID diferentes. Ler r147/evidence/native-baseline-attempt1.json. Nova scope-final/namespaceEFinal em preparação, sem relaxar hashes e sem motor produtivo/APK/instalação/cadastro/gameplay. DEX4d e49files/45pins anteriores preservados. Backup R146 completo3.619files e2bundles recuperados/fsckstrict verificados; dependênciasR145/R143 e estável intactas. Nenhumdeploy/restart/migração/HLEgenérica.
