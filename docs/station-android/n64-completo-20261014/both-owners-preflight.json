@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "bothReceivedOwnersPrepared": true,
+  "completeEditions": 157,
+  "reviewedDecisionsPerRevision": 321,
+  "profilesAdded": 642,
+  "enginesAdded": 0,
+  "finalProfileCount": 12480,
+  "finalModeCount": 7619,
+  "aggregateByteBudgetPassed": true,
+  "priorModesAndProfilesPreserved": true,
+  "servingDataChanged": false
+}

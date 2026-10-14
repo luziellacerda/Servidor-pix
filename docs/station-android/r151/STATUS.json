@@ -35,5 +35,13 @@
     "lastDocumentedAppliedUtc": "2026-10-14T13:59:03.892506+00:00",
     "lastDocumentedN64Modes": 66,
     "lastDocumentedN64EngineId": "mupen64plus-ae-33bf7021-n64-v3-dcad075758e5"
-  }
+  },
+  "n64CompleteCollectionReviewApplied": true,
+  "n64CompleteReviewedGameEditions": 157,
+  "n64CompleteReviewModeDecisions": 321,
+  "n64MultiplayerGameEditions": 120,
+  "n64IndividualOnlyGameEditions": 37,
+  "n64FourPlayerEditions": 85,
+  "completeCollectionReceipt": "../n64-completo-20261014/server-return.json",
+  "completeCollectionCheckedUtc": "2026-10-14T17:48:26.670035+00:00"
 }

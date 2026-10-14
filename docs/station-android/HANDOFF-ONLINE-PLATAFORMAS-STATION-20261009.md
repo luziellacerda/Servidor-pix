@@ -1,3 +1,15 @@
+# N64 — coleção de 157 edições revisada — 14/10/2026
+
+**Aplicado e comprovado no servidor para R152/R151.** As 157 edições foram identificadas na ROM real e revisadas nos manuais originais: 120 têm multiplayer documentado e 37 são individuais. Entre as multiplayer, 85 permitem até quatro pessoas, duas até três e 33 até duas, conforme o modo. Não restam edições sem classificação nesta coleção.
+
+Publicação sem reinício da API: 51 motores, 12509 perfis e 7619 modos preparados; 642 perfis/modos novos, 321 por revisão. Corrigidas somente as duas permissões históricas que ofereciam multiplayer a jogos individuais. As capabilities assinadas locais e públicas das 157 edições, a admissão dos 164 novos modos multiplayer R152 e a recusa dos 157 modos individuais passaram. O transporte público com quatro participantes sintéticos também passou, incluindo portas independentes, barreira, bytes separados e recuperação. Isso não executa os 157 jogos em Android nem homologa o desempenho dos celulares.
+
+Consulte [lista completa](n64-completo-20261014/LISTA-COMPLETA.md), [recibo atual](n64-completo-20261014/server-return.json) e [preparador do próximo kit](n64-completo-20261014/README.md). O app deve buscar capabilities assinadas com clientMaximumPlayers=4, selecionar somente o vínculo exato de edição/motor/hashes e usar allowedPlayerCounts do modo. As instruções distinguem campanha, batalha, minijogos e turnos. Os 37 jogos individuais não ganham vagas online por cadastro.
+
+Retorno de produção 92c387c8 recebido: R155 instalada no A56 para revisão visual, kits R153/R154/R155 retidos; substituta R156 em preparação. Não aplicar esses kits retidos nem autorizar seus runtimes com o vínculo R152. O preparador completo está pronto para o próximo kit final aceito, preservando os modos GameCube/Wii do fluxo original. R143 estável, binários/fontes/receitas congelados, ROMs/capas, licenças, outros produtos e política100/800 mantidos. Mesmo handoff e manutenção horária.
+
+## Histórico anterior preservado
+
 ## N64 do APK atual R152 liberado; R151 também cadastrada — 14/10/2026
 
 **Estado atual aplicado e verificado.** Os kits R151 e R152 chegaram em `SERVIDOR LER` na USB. O documento mais recente da produção informa que o Galaxy A56 já está na R152: APK `f06747b7a953813de5281ddd71f15d8cf36bf8a0ab78920bbe226dabb3c7448e`, fonte `6d76c1dd487e5f2352e2c37df8e7cd0cbee22b1e`. A instalação R151 descrita abaixo é anterior. Os ZIPs e todos os 37 arquivos de cada manifesto foram conferidos; seis bibliotecas e vinte dependências ELF64 AArch64 por revisão correspondem aos hashes do APK final informado pela produção.

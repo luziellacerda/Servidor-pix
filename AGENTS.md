@@ -1,3 +1,15 @@
+# N64 — coleção de 157 edições revisada — 14/10/2026
+
+**Aplicado e comprovado no servidor para R152/R151.** As 157 edições foram identificadas na ROM real e revisadas nos manuais originais: 120 têm multiplayer documentado e 37 são individuais. Entre as multiplayer, 85 permitem até quatro pessoas, duas até três e 33 até duas, conforme o modo. Não restam edições sem classificação nesta coleção.
+
+Publicação sem reinício da API: 51 motores, 12509 perfis e 7619 modos preparados; 642 perfis/modos novos, 321 por revisão. Corrigidas somente as duas permissões históricas que ofereciam multiplayer a jogos individuais. As capabilities assinadas locais e públicas das 157 edições, a admissão dos 164 novos modos multiplayer R152 e a recusa dos 157 modos individuais passaram. O transporte público com quatro participantes sintéticos também passou, incluindo portas independentes, barreira, bytes separados e recuperação. Isso não executa os 157 jogos em Android nem homologa o desempenho dos celulares.
+
+Ler o topo do MESMO handoff e n64-completo-20261014/server-return.json. Autoridade privada /mnt/DADOS/station-n64-complete-review-20261014/applied.json. Não repetir cadastros concluídos R151/R152, deploy da DLL ou scanner/quarentena. O operador completo /mnt/DADOS/station-n64-complete-review-20261014/apply-complete-review.py executa publicação e provas em uma invocação administrativa genuína; se houver recibo de enrollment/publicação, conciliar o estado antes de reexecutar. Os dois CRLF históricos server ficam fora dos commits.
+
+Produção92c387c8: R155 visual instalada, kitsR153/R154/R155retidos, substitutaR156 em preparação; última aplicação confirmadaR152. Não registrar kit retido ou inventar runtime final. Próximo kit aceito: fluxo R139 original78 modos mais preparador completo321 N64, baseline fresca/scan.lock/registrador vigente, sem nova DLL. R143 estável e outros serviços/licenças/capas/ROMs/banda100/800 preservados. Não falsear gameplay físico dos157/4Android. Manutenção horária existente conserva as pendências globais e acompanha a próxima entrega aceita.
+
+## Histórico anterior preservado
+
 # N64 R152 pronto no servidor; R151 preservada — 14/10/2026
 
 Ler o topo do MESMO handoff e r152/server-return.json. Kits R151/R152 da USB verificados e aplicados sob scan.lock, sem deploy/reinício. A56 agora R152 conforme novo documento USB, APKf06747b7/fonte6d76c1dd. Motor atual mupen64plus-ae-33bf7021-n64-v3-62d4d48b1184, runtime62d4d48b; R1518eda4863 também registrada. Catálogo49,51motores/11838perfis/6977modos, API3297582/DLLb3473cc0. Cada revisão4IDs/6ELF/20deps/78modos,66N64/9GC/3Wii/0HLEPS1novo, prefixos antigos conservados.

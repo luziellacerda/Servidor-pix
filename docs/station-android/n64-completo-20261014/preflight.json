@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "completeEditions": 157,
+  "reviewedDecisions": 321,
+  "scopedProfilesAdded": 321,
+  "priorModesPreserved": true,
+  "changedRomRejected": true,
+  "changedEngineConfigRejected": true,
+  "missingEditionRejected": true,
+  "impossibleHumanCountRejected": true,
+  "servingDataChanged": false
+}

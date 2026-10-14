@@ -1,0 +1,27 @@
+{
+  "physicalAndroidGameplayValidated": false,
+  "publicNetwork": true,
+  "engineId": "mupen64plus-ae-33bf7021-n64-v3-62d4d48b1184",
+  "sampleItemId": "station_afe32004ae48d7699013dae2a2d74f75",
+  "sampleGame": "BattleTanx: Global Assault",
+  "sampleModesAdvertised": 2,
+  "sampleGameEditionsAdvertised": 1,
+  "passed": true,
+  "participants": 4,
+  "uniqueControllerSlots": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "hostGuestLinks": 3,
+  "authenticatedWebSockets": 6,
+  "nativeReadyBarrierVerified": true,
+  "bidirectionalBytesVerified": 24615,
+  "linkIsolationVerified": true,
+  "globalPauseAndResumeVerified": true,
+  "monotonicOffsetsVerified": true,
+  "publicTLSAndSpkiVerified": true,
+  "allDirectConnectionsPrioritized": true,
+  "ownSyntheticLicensesRemoved": true
+}
