@@ -1,0 +1,37 @@
+{
+  "schema": "station.r147.current-kit-receiver-action.public-spec.v1",
+  "sourceCommit": "64a6da91aee9c61d26a3a85172af6521fcc82a36",
+  "apkSha256": "c038a0d75113359187d8eb9d2762e8d7e4ceee1f3538d1982313fc1e3a781ad6",
+  "apkBytes": 2715089935,
+  "privateKitFileName": "Kit-Servidor-TurboStations-R147-Independentes.zip",
+  "kitSha256": "38041c427894dfd502bcc0d6859ca036630ebaab6c8df1ecd05f65a944f201ee",
+  "kitBytes": 12183965,
+  "currentDolphinCoreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+  "independentEngineIds": [
+    "pcsx-rearmed-ff81ed17-player-v3-c5b26dda64f5",
+    "mupen64plus-ae-33bf7021-n64-v3-f93bba46f558",
+    "dolphin-5102a033-gamecube-v3-588d5c035248",
+    "dolphin-5102a033-wii-v3-588d5c035248"
+  ],
+  "binaryCount": 6,
+  "dependencyCount": 20,
+  "reviewedModeCount": 78,
+  "reviewedEditionCount": 44,
+  "psxHleApprovalsAdded": 0,
+  "needed": [
+    "Receive the exact current private ZIP; do not substitute an older owner composition.",
+    "Complete native Linux authentication and obtain a fresh protected catalog/profile/mode/engine baseline.",
+    "Verify six actual ELF binaries, twenty dependencies, four current IDs and the exact reviewed 78-mode ledger.",
+    "Import the current prepare_independent_owners.prepare signature; its internal merge already fixes migrate_existing_native_profiles=False.",
+    "Use the existing transactional registrar additively under scan.lock; retain previous data, licenses and profiles.",
+    "Return the applied receipt and exact signed capabilities, then test equal current APKs, separate inputs, signal loss and exit."
+  ],
+  "serverApplicationConfirmed": false,
+  "physicalGameplayValidated": false,
+  "consumerReady": false,
+  "newAppOrServerLogicChangeRequestedByTheseReturns": false,
+  "doNotExecuteHistoricalDeployOrRegistration": true,
+  "doNotReapplyR141OrQos": true,
+  "doNotReplaceCurrentStatusManifestOrSource": true,
+  "stableR143Unchanged": true
+}

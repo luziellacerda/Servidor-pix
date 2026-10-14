@@ -1,0 +1,75 @@
+{
+  "schema": "station.r147.received-hourly01z.public-summary.v1",
+  "source": {
+    "repository": "app",
+    "commit": "8f7f8289be2318825be9843f14bd9fe34bb1534f",
+    "publicGitPath": "docs/server/r146/evidence/maintenance-20261014-01z.json",
+    "blobSha256": "6bb03aa8b9943fc52e090561a078bd8fdb816d64e149788b64a3a00ce5fb297e"
+  },
+  "utc": "2026-10-14T01:05:55.508081+00:00",
+  "status": "partial",
+  "protectedNativeAuthentication01z": {
+    "authenticated": false,
+    "exitCode": -15,
+    "snapshotAvailable": false,
+    "ownUnauthenticatedRequestCancelled": true,
+    "rootOperationTerminated": false
+  },
+  "previousProtectedAuthentication23z": {
+    "completed": true,
+    "auditUtc": "2026-10-13T23:02:46.764282+00:00",
+    "rootOperationTerminated": false
+  },
+  "previousProtected23zSource": {
+    "repository": "server",
+    "commit": "c926aa9cc27c462c508b87f207cfef0964e4b7f9",
+    "publicGitPath": "docs/station-android/r143/maintenance-20261013-23z.json",
+    "blobSha256": "07f060e092e2122b47f73e41efbaf7fb9bfa38d2925281a0a8bc2cb3d1e8c35d"
+  },
+  "freshProtectedBaselineAvailable01z": false,
+  "lastAppliedCountsAreHistorical": {
+    "catalogRevision": 47,
+    "persistentEngines": 39,
+    "profiles": 11604,
+    "modes": 6743,
+    "n64UsbPrecedencePreserved": true
+  },
+  "oldProtected23zCatalogRevision": 46,
+  "accessibleKitSearch": {
+    "userSearchFound": 0,
+    "inaccessibleDirectories": 91,
+    "protectedSearchCompleted": false,
+    "registeredThisCycle": 0,
+    "psxHleApprovalsAdded": 0
+  },
+  "documentedR146DirectV3ImplementationReceived": true,
+  "historicalR147StateAt01z": {
+    "sourceCommit": "6b4eab2c9221bb698362547df822962cda81cee9",
+    "dexSha256Reported": "4d200405747b4d42108fe6bd8afdccc290db3fa1a72a9aa28c779f8772a53a78",
+    "dexCompiledPerProducerReceipt": true,
+    "nativeBaselineCompilationInProgress": true,
+    "nativeCompiled": false,
+    "apkCompiled": false,
+    "serverKitFinalReceived": false
+  },
+  "historicalR147StateMustNotReplaceCurrentFinal": true,
+  "newServerBinaryRequiredAt01z": false,
+  "productionChangesAt01z": {
+    "productionDataPublished": false,
+    "apiRestarted": false,
+    "scannerTimerStopped": false,
+    "scannerTerminated": false,
+    "apkChanged": false,
+    "historicalOperatorsExecuted": false
+  },
+  "coversAt01z": {
+    "gitRefsChanged": false,
+    "importedThisCycle": 0,
+    "romsOpenedHashedOrRebuilt": 0,
+    "signedCatalogAndServedBytesRetestedThisCycle": false
+  },
+  "previousN64CoverReceiptCommit": "989b12b45d468338670c07bf92f1be6631915759",
+  "currentFinalKitApplicationNotConfirmed": true,
+  "physicalGameplayNotConfirmed": true,
+  "machinePathsRawLogsAndPrivateFingerprintsOmitted": true
+}
