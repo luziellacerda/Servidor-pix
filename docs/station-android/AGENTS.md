@@ -1,3 +1,9 @@
+# R146 conexão v3 compilada; reparos Dolphin R147 em preparação
+
+Fonte `bfea454d04ef297e9dfd1b397e0bf25df3937e93`, APK `04930201ad2f1c016f3385b3f08248ed4fa112d482a98761d00494b7a937468a`. URI+TLS v3 direta integradas; API/login/downloads/legado, visual R145, motores/controles e reparos anteriores preservados. Cinco substituições/13.855 entradas/39DEX; duas classes e um método novo, inversão integral. TLS real CA+hostname+SPKI passou, sem sessão/gameplay. Ler r146/STATUS e README. Nenhum USB na última leitura; não afirmar instalação/partida/cadastro. Kit R146 `96d057769b4ac420fb01e6896ae3738a31a92efe19529d4592b72f71ee9817af` preparado, mesmos78modos, PS1 HLE zero novas aprovações. Dois defeitos Dolphin de inicialização/posse comprovados por fixtures e tratados em R147 separada, ainda não no APK. Backup completo R145 3.632 arquivos verificado; R143 estável intacta. Sem deploy/restart, preservar fontes congeladas/políticas/dados.
+
+## Histórico preservado
+
 # R145 visual compilada — motores online em investigação
 
 Ler r145/README e STATUS. Fonte `25d10b2322d2e5687c9dfacc71a826c3955fad5d`, APK `275f31b34145eb77c457b1a9c09bbff4034cc28a990b74121b0b1fd4573c5df0`; azul céu em fundos azuis e faixas solicitadas, somente dez literais/7 classes/9 métodos mais três cabeçalhos visuais. Inversão integral, 37 DEX/13.852 entradas e reparos anteriores preservados. Instalação/aceite físico conforme STATUS; não inferir pelo build. R143 estável intacta. Kit independente R145 `89c7fb016ab23a3ecf050e1ce2f83a3e0dfecfb93eb5763a895f3c5beac50fb8` preparado, não aplicado; mesmos78modos, PS1 zero novas aprovações HLE. Retorno23z/c926aa9 ainda R141. Próxima etapa N64/PS1/GC/Wii autorizada, mas R145 não contém reparo de gameplay/rota v3. Preservar fonte congelada, políticas, dados e desempenho; nenhum deploy/restart.

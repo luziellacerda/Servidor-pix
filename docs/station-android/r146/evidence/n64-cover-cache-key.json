@@ -1,0 +1,49 @@
+{
+  "schema": "station.r146.n64.cover-cache-check.v1",
+  "actualDonor": "R145 classes28.dex",
+  "classes": {
+    "StationCoverStore": {
+      "sha256": "e78ed31106c8df793ed7a64f7340e630f32cd78dad22f0a708ee43c0b03558d0",
+      "lines": [
+        2943,
+        2955,
+        2969,
+        2973,
+        2979,
+        2987
+      ]
+    },
+    "StationCoordinator": {
+      "sha256": "41e3ab0c07e258d4a6059d4815cf3638da3f6f980835e7d0f4431c7a5a14af7b",
+      "lines": [
+        1001,
+        1003,
+        1005,
+        1057,
+        1061,
+        1065
+      ]
+    },
+    "StationCatalog": {
+      "sha256": "1b9cc181deee61a86a03f12b21d786ca8bfa2e09e3f370528bc8c38929dabe24",
+      "lines": []
+    },
+    "StationCatalog$Item": {
+      "sha256": "c12507b286adaff1094318f88da5b06b5da35345f5c12b3ca2edbb8288db2f34",
+      "lines": []
+    }
+  },
+  "confirmed": [
+    "StationCoordinator passes item.coverId and item.revision into both cached and get.",
+    "StationCoverStore get constructs key coverId + hyphen + revision and uses it for per-image exclusion and cache.",
+    "Cover revision is distinct from global catalog revision."
+  ],
+  "minimalChangeRequiredForCacheKey": false,
+  "limits": [
+    "Only actual client cache/caller path inspected; fresh N64 cover files and phone display were not accessed.",
+    "No native carousel image load or server deployment executed by this check."
+  ],
+  "sourceModified": false,
+  "phoneAccessed": false,
+  "liveServerCalled": false
+}

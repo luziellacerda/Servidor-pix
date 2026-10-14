@@ -1,0 +1,172 @@
+{
+  "schema": "station.r146.independent-online.read-only-audit.v1",
+  "scope": "Planning evidence only; no source, server registry, phone, license or deployment changes",
+  "latestServerReturnCommit": "c926aa9",
+  "latestServerReturn": "work/publication-server/docs/station-android/r144/evidence/server-maintenance-20261013-23z-received.json",
+  "serverEvidenceUtc": "2026-10-13T23:06:04.241525+00:00",
+  "effectiveServer": {
+    "apiDllSha256": "ef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a",
+    "apiPid": 2867363,
+    "apiRestarts": 0,
+    "v3Engines": 39,
+    "v3Profiles": 11604,
+    "v3PreparedModes": 6743,
+    "enginesProfilesModesStillExactR141AppliedExports": true,
+    "legacyRegistryEntries": 10,
+    "legacyRegistryIsDifferentFromV3Manifest": true,
+    "newOwnersRegisteredAt23z": 0
+  },
+  "observedR144Candidate": {
+    "apkSha256": "01427f4e73141b7d6a462c2420a9abeb018a8716102e7fb959bf9a1d69eccee0",
+    "kitSha256": "7b1cdb6c68a1ddcd05af2e4703d2900061f7f2c4082a3f3c80c6d4c428d18739",
+    "kitBytes": 12164472,
+    "kitPreparedOnly": true,
+    "kitServerApplied": false,
+    "independentEngines": {
+      "psx": "pcsx-rearmed-ff81ed17-player-v3-3537bea1a6d2",
+      "n64": "mupen64plus-ae-33bf7021-n64-v3-4783da1ca2f5",
+      "gamecube": "dolphin-5102a033-gamecube-v3-3e87fc03cdd1",
+      "wii": "dolphin-5102a033-wii-v3-3e87fc03cdd1"
+    },
+    "existingIndependentLibraries": 6,
+    "distinctDependencies": 20,
+    "nativeLibrariesPresentDoesNotEstablishGameplay": true
+  },
+  "registrationGate": {
+    "source": "work/publication-server/src/TurboRamaSuiteOnlineServer/StationMultiplayer.cs",
+    "approvedMethodLine": 126,
+    "requiresExact": [
+      "itemId",
+      "contentSha256",
+      "engineId",
+      "coreSha256",
+      "runtimeSha256",
+      "profileId",
+      "profileSha256",
+      "approved",
+      "current catalog content",
+      "allowedPlayerCounts"
+    ],
+    "errorCodes": [
+      "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+      "STATION_MULTIPLAYER_PROFILE_UNAPPROVED",
+      "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+    ],
+    "currentAppProfileSelectionFiltersLocalExactEngine": true,
+    "registrationMismatchIsConcreteButNotProofOfEveryReportedFailure": true
+  },
+  "reviewedNativeModes": {
+    "provenance": "work/r144-independent-kit-private-complete/references/reviewed-78-mode-provenance.json",
+    "total": 78,
+    "n64": 66,
+    "gamecube": 9,
+    "wii": 3,
+    "psx": 0,
+    "maximumControllerCapacity": {
+      "n64": 4,
+      "gamecube": 4,
+      "wii": 4,
+      "psx": 2
+    },
+    "gameSpecificCountsRemainAuthoritative": true,
+    "operator": "work/publication-server/docs/station-android/r139/prepare_independent_owners.py",
+    "fixedLedgerAvoidsDuplicateMigration": "migrate_existing_native_profiles=False",
+    "preserveExistingProfilesModesAndEngineIds": true
+  },
+  "wiiArtifactNameCrosscheck": {
+    "metadataSnapshot": "work/publication-server/docs/station-android/online-plataformas-20261009/catalogo-cruzado-completo.json",
+    "snapshotRows": 4690,
+    "catalogOrdinals": [
+      3839,
+      3842,
+      3843
+    ],
+    "displayNames": [
+      "Donkey Kong Country Returns.side",
+      "MarioKartWii.ini",
+      "New SUPER MARIO BROS.side"
+    ],
+    "artifactLaunchPaths": [
+      "Donkey Kong Country Returns.side.iso",
+      "MarioKartWii.ini.iso",
+      "New SUPER MARIO BROS.side.iso"
+    ],
+    "eachArtifactBytes": 4699979776,
+    "artifactFormat": "raw",
+    "metadataArtifactAndContentHashesMatch": true,
+    "actualTerminalExtensionIsoIsSupported": true,
+    "sidecarImportBugNotEstablishedByDisplayName": true,
+    "gameBytesInspected": false,
+    "freshProductionArtifactResponseNotQueried": true
+  },
+  "psx": {
+    "currentOwnerHleApprovalsFound": 0,
+    "r141NewHleApprovals": 0,
+    "r144KitNewHleApprovals": 0,
+    "documentaryReview": "work/publication-server/docs/station-android/r134/catalog/psx-primary-consolidated.json",
+    "documentaryReviewCatalogEntries": 26,
+    "documentaryReviewApprovedModesAdded": 0,
+    "manualMultiplayerEvidenceDoesNotApproveCurrentHleRuntime": true,
+    "profile": "standard-2p-v1",
+    "profileSha256": "81c0e2323a37130dbdbdb9c2efefca8837a9bb6e7169304b4e5731b2ec56290a",
+    "optionsSha256": "8c1e81460dc19b6e8d151ec6231c9092000b4946e6f084222cb40d3aab2e66a9",
+    "biosPolicyRequired": "HLE-per-game-approved",
+    "reviewEvidenceRequired": "Explicit HTTPS per-edition review ledger, exact content identity and simultaneous two human inputs",
+    "cueRequiresCueSetV1": true,
+    "doNotMigrateOldRetroArchPsxApprovals": true,
+    "doNotEnableMultitapAnalogOrBiosFallbackByGuess": true
+  },
+  "directV3Relay": {
+    "serverApplied": true,
+    "uri": "wss://downloads-station.lzgames.com.br/v1/station/online/multiplayer/relay",
+    "spkiSha256": "bcd134d59fcdbb35e0343c86d31a666cc95cf158d70b27aceceefd19158d072f",
+    "subprotocol": "station-stream.v3",
+    "appR144RouteIntegrated": false,
+    "actualRetainedDexCallsite": "E:/StationSnesUniqueFlagR143-20261013/dex-r2/final-smali/org/emulationstation/frontend/netplay/StationMultiplayerSession$Channel.smali",
+    "actualRetainedDexCallsiteLines": [
+      162,
+      186
+    ],
+    "currentCallsite": "StationRelayTls.multiplayerEndpoint() plus StationRelayTls.create()",
+    "minimalClientChange": "Select direct URI and corresponding dedicated TLS factory only for the v3 Channel; preserve API and legacy endpoint/create behavior",
+    "retainHostnameCaSpkiTicketPathProofEpochReadyAckReplay": true,
+    "serverSignedWssFixturePassed": true,
+    "physicalAndroidGameplayValidated": false,
+    "doNotReapplyQos": true
+  },
+  "deliverySequence": [
+    "Finish the authorized visual R145 and base R146 on its actual qualified package, preserving all R143 repairs",
+    "Integrate only the required direct-v3 URI/TLS pair with exact donor inverse/class guards and original signing identity",
+    "Produce the corresponding final APK and current independent owner kit; never substitute R143/R144 IDs for newly bound R145/R146 IDs",
+    "Deliver private six-library/twenty-dependency kit, final manifest, canonical policies and exact reviewed-mode provenance",
+    "On the server use a fresh protected export and the current fixed-ledger preparation/operator to add current bindings without duplicate migration or legacy-registry edits",
+    "Return signed fresh exact-mode capabilities and applied receipt before declaring registration successful",
+    "Collect physical stage-specific error evidence for N64/GameCube/Wii and perform per-edition PSX HLE qualification before new PSX approvals",
+    "Test current equal APKs on participants: creation, native startup, separate inputs, signal loss/recovery and exit; report registration and transport separately from gameplay"
+  ],
+  "unresolved": [
+    "No current N64/PS1/GameCube/Wii physical failure trace proving the failing stage was provided to this read-only audit",
+    "Old relay409 exact safe error code and prior RenderThread failure remain separate; do not attribute them to registry or pin without new evidence",
+    "R145/R146 final APK hashes and engine IDs do not exist yet in this audit; all future manifests must derive from their final qualified receipts",
+    "PSX HLE per-edition approval and physical state/input compatibility remain unqualified"
+  ],
+  "mutations": {
+    "sourceChanged": false,
+    "gitChanged": false,
+    "serverChanged": false,
+    "phoneChanged": false,
+    "licenseChanged": false
+  },
+  "observedR146Candidate": {
+    "apkSha256": "04930201ad2f1c016f3385b3f08248ed4fa112d482a98761d00494b7a937468a",
+    "independentEngineIds": [
+      "pcsx-rearmed-ff81ed17-player-v3-442db90ca4ba",
+      "mupen64plus-ae-33bf7021-n64-v3-d22cca056491",
+      "dolphin-5102a033-gamecube-v3-3d3a183103d7",
+      "dolphin-5102a033-wii-v3-3d3a183103d7"
+    ],
+    "kitSha256": "96d057769b4ac420fb01e6896ae3738a31a92efe19529d4592b72f71ee9817af",
+    "serverApplied": false
+  },
+  "auditOriginallyPerformedOnR144And23zReturn": true
+}
