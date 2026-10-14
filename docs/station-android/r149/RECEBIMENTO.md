@@ -1,3 +1,13 @@
+## Estado atual do servidor — 14/10/2026, conferido às 15h19 UTC
+
+**Kit R149 recebido, validado e aplicado; N64 liberado para a produção testar até quatro jogadores nos modos revisados.** `serverRegistrationConfirmed=true`, `serverKitApplied=true`, `serverConsumerReady=true`, `n64ServerReady=true`, `n64ServerOffline=false`. [Recibo aplicado do kit](server-return.json), [prova pública N64 atual](evidence/server-n64-live-ready-20261014.json), [correção Wind Waker aplicada](evidence/server-wind-waker-applied-20261014.json).
+
+A prova atual validou os 66 modos/33 edições, quatro slots, seis conexões autenticadas, barreira `playing`, troca isolada de dados e recuperação de queda. 26 edições aceitam quatro pessoas. O motor exato é `mupen64plus-ae-33bf7021-n64-v3-dcad075758e5`; o app deve selecionar seu perfil pela resposta assinada de `capabilities` e respeitar `allowedPlayerCounts`. Os outros 124 itens N64 não têm perfil revisado desse owner, e não devem receber aprovação inventada. Catálogo atual 49; 43 motores/11.682 perfis/6.821 modos.
+
+Os indicadores antigos de kit pendente abaixo são históricos. `consumerReady`/homologação física do APK continuam separados da prontidão **do servidor**, agora confirmada. Nenhuma partida em quatro Android foi comprovada por esta prova de transporte. Não promover a R143 estável, trocar o APK ou reaplicar kit/operadores por esta atualização documental.
+
+## Histórico da entrega do app preservado integralmente
+
 # Recebimento do kit privado R149
 
 **Pacote preparado; ainda não aplicado.** A fonte da receita é
