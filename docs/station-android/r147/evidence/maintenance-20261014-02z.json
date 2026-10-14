@@ -1,0 +1,413 @@
+{
+  "schema": "station.hourly-maintenance.v1",
+  "utc": "2026-10-14T02:08:10.756444+00:00",
+  "cycle": "20261014-02z",
+  "status": "partial",
+  "event": {
+    "utc": "2026-10-14T02:00:03.648759+00:00",
+    "fingerprint": "c44c061ffecd22f851bc8106dedd1eeae487d6e7ab26daceb6f87c6310fef078",
+    "inputs": {
+      "server:origin/docs/station-online-exit-r135-20261012": "c5ba9d636ffe7b98a07f55dfc252d49254e5633b",
+      "app:origin/build/station-online-exit-r135-20261012": "71873f584b503b825a1b1827f840bf54d6d9c22c",
+      "covers:origin/capas-super-nintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
+      "covers:origin/main": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+      "privateInputFingerprint": "713094b6a3dd238ddd52ac9012ff0f5891cc89dcfafaf5a309437844780ea4e7"
+    },
+    "newInput": true
+  },
+  "inputsObserved": {
+    "server:origin/docs/station-online-exit-r135-20261012": "c5ba9d636ffe7b98a07f55dfc252d49254e5633b",
+    "app:origin/build/station-online-exit-r135-20261012": "71873f584b503b825a1b1827f840bf54d6d9c22c",
+    "covers:origin/capas-super-nintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
+    "covers:origin/main": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+    "privateInputFingerprint": "713094b6a3dd238ddd52ac9012ff0f5891cc89dcfafaf5a309437844780ea4e7"
+  },
+  "result": "Handoff final R147 recebido e qualificado documentalmente; sem bytes privados novos ou capas Git novas. Nenhuma implantação ou publicação de dados.",
+  "gitBackups": {
+    "server": {
+      "commit": "c5ba9d636ffe7b98a07f55dfc252d49254e5633b",
+      "branch": "backup/station-antes-manutencao-20261014-02z",
+      "confirmed": true
+    },
+    "app": {
+      "commit": "71873f584b503b825a1b1827f840bf54d6d9c22c",
+      "branch": "backup/station-antes-manutencao-20261014-02z",
+      "confirmed": true
+    }
+  },
+  "delivery": {
+    "branch": "feat/station-hourly-20261014-02z",
+    "serverWorktree": "/mnt/DADOS/servidor-pix-station-manutencao-20261014-02z",
+    "appWorktree": "/mnt/DADOS/turboelden-station-manutencao-20261014-02z"
+  },
+  "receivedDocuments": {
+    "r147/README.md": {
+      "sha256": "af7a86834e178c01342c839de8ca540714c4a6cba91242a4db899fbddfe12c87",
+      "byteIdenticalMirror": true
+    },
+    "r147/BUILD-PROGRESS.json": {
+      "sha256": "d56d1e7cdeaed414ed524be4398148afb7ad893a968aa3761c2a49cb4b584092",
+      "byteIdenticalMirror": true
+    },
+    "r147/STATUS.json": {
+      "sha256": "3fe161ab6c40c4824b86f0e4144f2d4485d3855492b32b9e7f8829a161889261",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/final-installation-summaries.json": {
+      "sha256": "e5086959c258295e0190355dce0c042a2a6f6adbc6c0b5e9507178b15596515e",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/historical-direct-download-branch-audit.json": {
+      "sha256": "5c25c5de90ee59f0381ff2d4331bd18a87b4ea1c1d9d552f8f674f2324b3f5e8",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/r146-backup-summary.json": {
+      "sha256": "de6ae8a1457885ca62975bc3eccbe0f567dd3897d921fad93abc8fe81c93d916",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/final-dex-qualification-summary.json": {
+      "sha256": "05a7849501ac2e851197b0ef1134c8ca6d39ed58c47f4c3b45120f84abe23059",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/final-apk-proof-summary.json": {
+      "sha256": "12f62e1d6757a907c80b04feb9871fa17895e07af9aa8f7a7f9996ff2ad7b733",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/current-kit-receiver-action.json": {
+      "sha256": "cea0ca43167662fa05f2f1f92588f297fbc74a8894183c42b92fdece54e8b0da",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/final-usb-count-observation.json": {
+      "sha256": "b7360bc77c02770cca97d73d332a4416098e660bf34143bb4437a5814858cc4c",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/final-backup-summary.json": {
+      "sha256": "f1d3c644a3cfed2e7533a1ad6ae616dc4dcb08541f2afa779e656d8b8e835f31",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/native-baseline-attempt1.json": {
+      "sha256": "ff8927105f253b38b85ac250219a9318d094f23aa898731f9dbf1e5436aaf452",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/final-private-kit-summary.json": {
+      "sha256": "d861ab4b7ce3aa5e55b8eb18243e1b516d72e280994eb56465cee1f1379a9ffa",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/final-helper-preparation-summary.json": {
+      "sha256": "a1ad4a56d3b331a0125d73c46c60294b3f380b581c3c2c2ec4e6f06ac8986648",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/final-native-qualification-summary.json": {
+      "sha256": "7fea608a8aafa11c372cec21d903b01e6989ccd4c9d20b5a94869ffd5e8e5507",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/latest-return-source-sha256.json": {
+      "sha256": "931ff2de74b54acafa3391cd02c50a941d8dcc2b083814f5725e710507f8c255",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/server-return-20261014-01z-summary.json": {
+      "sha256": "00da74743fe074b1378ef603814b6a83d81314c826b5e6a60494afecc708bd49",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/final-online-coverage.json": {
+      "sha256": "c79b799e323f8a277d6e4e59b2fc758c899db5bdaa7a5e74433274b74e0940b8",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/consumer-coverage/reviewed-modes-sanitized.json": {
+      "sha256": "7dba6aedab1bdf3aee86464483de721471a93ee8f947bb591147589471613b55",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/consumer-coverage/catalog-edition-coverage-sanitized.json": {
+      "sha256": "a4883437d647a42f5a5e605ffc8b364866c22b74355d98934c73ce450c8bb2cf",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/consumer-coverage/SOURCE-SHA256.json": {
+      "sha256": "df3ca453c3dc2bc657818799d73cf1ce4c97580561dfd4c25ee3d7a910c39acf",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/consumer-coverage/RELATORIO-COBERTURA-HANDOFF.txt": {
+      "sha256": "27aa7052911c0182dcb1cb416068d11357005e4cce17d2bd0db4f6d8088e5c32",
+      "byteIdenticalMirror": true
+    },
+    "r147/evidence/consumer-coverage/coverage-summary.json": {
+      "sha256": "ca7ff70153fab57e4e2fdac0444ef015a9bdb7bf62e3ee338514e5de59efbc42",
+      "byteIdenticalMirror": true
+    }
+  },
+  "sourceQualification": {
+    "sourceCommit": "64a6da91aee9c61d26a3a85172af6521fcc82a36",
+    "checkedPins": 48,
+    "allSha256Match": true,
+    "producerBuildEvidenceOnly": true,
+    "nativeBuildDexSigningOrAndroidTestsExecutedHere": false
+  },
+  "receivedFinalR147": {
+    "sourceCommit": "64a6da91aee9c61d26a3a85172af6521fcc82a36",
+    "apkSha256": "c038a0d75113359187d8eb9d2762e8d7e4ceee1f3538d1982313fc1e3a781ad6",
+    "apkBytes": 2715089935,
+    "compiledSignedPerProducerReceipt": true,
+    "installedPerProducerReceipt": false,
+    "physicalGameplayValidated": false,
+    "serverKitSha256": "38041c427894dfd502bcc0d6859ca036630ebaab6c8df1ecd05f65a944f201ee",
+    "serverKitBytes": 12183965,
+    "binaryCount": 6,
+    "dependencyCount": 20,
+    "engineIds": [
+      "pcsx-rearmed-ff81ed17-player-v3-c5b26dda64f5",
+      "mupen64plus-ae-33bf7021-n64-v3-f93bba46f558",
+      "dolphin-5102a033-gamecube-v3-588d5c035248",
+      "dolphin-5102a033-wii-v3-588d5c035248"
+    ],
+    "currentDolphinCoreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+    "privateKitReceivedHere": false,
+    "serverKitAppliedHere": false
+  },
+  "ledgerDocumentCheck": {
+    "modeCount": 78,
+    "editionCount": 44,
+    "platformCounts": {
+      "n64": 66,
+      "gamecube": 9,
+      "wii": 3
+    },
+    "participantModeCounts": {
+      "2": 76,
+      "3": 53,
+      "4": 54,
+      "5": 0
+    },
+    "allPhysicalValidationFalse": true,
+    "prepareSignature": [
+      "catalog",
+      "profiles",
+      "old_modes",
+      "installed_engines",
+      "provenance",
+      "research",
+      "operator",
+      "builder",
+      "merger"
+    ],
+    "genericMigrationInternallyFalse": true,
+    "sourceInputHashesChecked": 16,
+    "sourceInputHashesMatch": 11,
+    "sourceInputHashDifferences": {
+      "server/docs/station-android/online-plataformas-20261009/library-tools/station_online_profiles.py": {
+        "localSha256": "3d5d5b5563e2a6825ab9e798da80313cdbf2640522bc4dfd6b47e25c7f69eae1",
+        "gitBlobSha256": "3d5d5b5563e2a6825ab9e798da80313cdbf2640522bc4dfd6b47e25c7f69eae1",
+        "expected": "4c50ac36bb18532c3d128abbee14e7a59fa2d42d62a296319bdb23c9e5d2ae6b",
+        "gitBlobMatch": false,
+        "localMatch": false,
+        "localCrlfCount": 0,
+        "lfNormalizedMatch": false
+      },
+      "server/docs/station-android/online-plataformas-20261009/catalogo-cruzado-completo.json": {
+        "localSha256": "9eafb658974801b733059f3feff9eb1de2f1c818222b8b61c2f8a326551246d9",
+        "gitBlobSha256": "9eafb658974801b733059f3feff9eb1de2f1c818222b8b61c2f8a326551246d9",
+        "expected": "d82dbfe68c25e9c1edff66b111b1f8eb971c0e70103a86536c970a494f9b0a4d",
+        "gitBlobMatch": false,
+        "localMatch": false,
+        "localCrlfCount": 0,
+        "lfNormalizedMatch": false
+      },
+      "server/docs/station-android/online-plataformas-20261009/n64-capas-usb-20261013.json": {
+        "localSha256": "056b2cbe7b7e7d0cfd03bc98c5559c6068317b83e8a0555a32b70962a3a2b00c",
+        "gitBlobSha256": "056b2cbe7b7e7d0cfd03bc98c5559c6068317b83e8a0555a32b70962a3a2b00c",
+        "expected": "e89dfd745fc8d794b2ba0576f5d9b805ad1244253f7aa7cc2ebca9e0c2843141",
+        "gitBlobMatch": false,
+        "localMatch": false,
+        "localCrlfCount": 0,
+        "lfNormalizedMatch": false
+      },
+      "server/docs/station-android/online-plataformas-20261009/server-prepared-modes.json": {
+        "localSha256": "d7c7ccf3c6a10e6f1fbce8475baacbbca83cd1e7f325ad8b24ab42a0fa6b78a6",
+        "gitBlobSha256": "d7c7ccf3c6a10e6f1fbce8475baacbbca83cd1e7f325ad8b24ab42a0fa6b78a6",
+        "expected": "3665b1c3b3cb221075b8a2ce76894c11d8aa01eb800073d3b53582b141d6df4a",
+        "gitBlobMatch": false,
+        "localMatch": false,
+        "localCrlfCount": 0,
+        "lfNormalizedMatch": false
+      },
+      "server/docs/station-android/online-plataformas-20261009/profiles-complete.json": {
+        "localSha256": "a029fb61ce68fa26abadf0312b55b9ae163c6a3604a12bfd37e97d406fdfebaa",
+        "gitBlobSha256": "a029fb61ce68fa26abadf0312b55b9ae163c6a3604a12bfd37e97d406fdfebaa",
+        "expected": "f71ec6d61e5a59c408053e37e2b16ff31903e0cb2c0b3f5cd1b613bd2820dd0c",
+        "gitBlobMatch": false,
+        "localMatch": false,
+        "localCrlfCount": 0,
+        "lfNormalizedMatch": false
+      }
+    },
+    "differencesAreNotProofOfProtectedRuntimeMismatch": true
+  },
+  "privateKitSearch": {
+    "searchRoots": [
+      "/mnt/DADOS",
+      "/home/lz-servidor/Downloads",
+      "/media/lz-servidor/EEROMS",
+      "/media/lz-servidor/ESD-USB",
+      "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc",
+      "/media/lz-servidor/EEROMS1"
+    ],
+    "matchingKits": 0,
+    "inaccessibleDirectories": 91,
+    "absenceInAllStorageNotProven": true,
+    "privateFingerprintUnchanged": true
+  },
+  "nativeAuthentication": {
+    "authenticated": false,
+    "exitCode": -15,
+    "snapshotAvailable": false,
+    "ownUnauthenticatedRequestCancelled": true,
+    "rootOperationTerminated": false,
+    "unauthenticatedRequestLimitSeconds": 120
+  },
+  "effectiveRuntime": {
+    "execStart": "{ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-station-online-audit-20261013-ef5270b3d47b-e/TurboRamaSuiteOnlineServer.dll ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+    "apiPid": 2867363,
+    "apiNRestarts": 0,
+    "scannerExecStart": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -B /opt/turborama-station-online-audit-20261013-ef5270b3d47b-e/library-tools/atualizar-biblioteca-station.py --config /mnt/DADOS/station-library-auto-private-20261004/config.json ; ignore_errors=no ; start_time=[Tue 2026-10-13 23:05:31 -03] ; stop_time=[Tue 2026-10-13 23:05:38 -03] ; pid=3086944 ; code=exited ; status=0 }",
+    "scannerTimerActive": true,
+    "freshProtectedBinaryConfigAndRegistriesRead": false,
+    "freshDllSha256": null,
+    "newServerBinaryRequestedByFinalHandoff": false,
+    "protectedPathsUserReadable": {
+      "/opt/turborama-station-online-audit-20261013-ef5270b3d47b-e/TurboRamaSuiteOnlineServer.dll": false,
+      "/mnt/DADOS/station-library-auto-private-20261004/config.json": false,
+      "/opt/turborama-station-online-audit-20261013-ef5270b3d47b-e/library-tools/atualizar-biblioteca-station.py": false
+    }
+  },
+  "previousAppliedEvidence": {
+    "catalogRevision": 47,
+    "engines": 39,
+    "profiles": 11604,
+    "modes": 6743,
+    "isFreshProtectedBaseline": false,
+    "source": "Previous applied R141/N64 USB receipts; not reread as a protected baseline this cycle."
+  },
+  "covers": {
+    "main": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+    "snes": "9f85e9df1ec0c82d77156ed072b997855f719288",
+    "newGitCovers": 0,
+    "imported": 0,
+    "n64UsbPrecedencePreserved": true,
+    "romBytesHashedCopiedOrReconstructed": false,
+    "newAuthenticatedSignedCatalogOrCoverByteProbePerformed": false,
+    "reasonNoNewProbe": "No catalog or cover publication in this cycle."
+  },
+  "preservation": {
+    "maintenanceLock": {
+      "lockPath": "/home/lz-servidor/.local/share/turbostation-retornos/maintenance.lock",
+      "holderPid": 3084161,
+      "kernelLockLines": [
+        "50: FLOCK  ADVISORY  WRITE 3084161 08:02:13019415 0 EOF"
+      ]
+    },
+    "trackedServices": {
+      "turborama-station-api.service": {
+        "before": {
+          "MainPID": "2867363",
+          "NRestarts": "0",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "after": {
+          "MainPID": "2867363",
+          "NRestarts": "0",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "turborama-station-library-scan.service": {
+        "before": {
+          "MainPID": "0",
+          "NRestarts": "0",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        },
+        "after": {
+          "MainPID": "0",
+          "NRestarts": "0",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        }
+      },
+      "turborama-station-library-scan.timer": {
+        "before": {
+          "MainPID": null,
+          "NRestarts": null,
+          "ActiveState": "active",
+          "SubState": "waiting"
+        },
+        "after": {
+          "MainPID": null,
+          "NRestarts": null,
+          "ActiveState": "active",
+          "SubState": "waiting"
+        }
+      },
+      "nginx.service": {
+        "before": {
+          "MainPID": "3172",
+          "NRestarts": "0",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "after": {
+          "MainPID": "3172",
+          "NRestarts": "0",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "turborama-suite-api.service": {
+        "before": {
+          "MainPID": "3052",
+          "NRestarts": "0",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "after": {
+          "MainPID": "3052",
+          "NRestarts": "0",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "turborama-pix.service": {
+        "before": {
+          "MainPID": "3048",
+          "NRestarts": "0",
+          "ActiveState": "active",
+          "SubState": "running"
+        },
+        "after": {
+          "MainPID": "3048",
+          "NRestarts": "0",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      }
+    },
+    "twoHistoricalLocalFilesBytePreserved": true,
+    "scanLockAcquired": false,
+    "apiRestarted": false,
+    "scannerTimerStopped": false,
+    "scannerTerminated": false,
+    "productionDataChanged": false,
+    "apkChanged": false,
+    "r141QosOrN64UsbReapplied": false,
+    "historicalOperatorMainExecuted": false,
+    "newAutomationCreated": false,
+    "externalMessageSent": false,
+    "psxNewHleApprovals": 0,
+    "ps3Ps4Offline": true
+  },
+  "privateAuditDirectory": "/mnt/DADOS/station-maintenance-20261014-02z",
+  "pending": [
+    "Receber/localizar Kit-Servidor-TurboStations-R147-Independentes.zip: SHA256 38041c427894dfd502bcc0d6859ca036630ebaab6c8df1ecd05f65a944f201ee, 12.183.965 bytes, da fonte64a6da91/APKc038a0d7. Zero kits R143–R147 encontrados no escopo acessível; 91 diretórios inacessíveis, sem afirmar ausência global. Não substituir por outro kit.",
+    "Concluir autenticação Linux nativa e obter baseline protegido fresco de DLL/config/index/registries sob scan.lock. A janela de120s expirou sem root; somente o próprio pedido não autenticado foi cancelado. Conferir as cinco divergências de hashes documentais contra fonte efetiva/snapshots corretos, sem sobrescrever produção a partir deles.",
+    "Após receber bytes reais e baseline: validar seis ELF/vinte dependências/quatro IDs e ledger78, usar prepare vigente com migrate_existing_native_profiles=False interno e registrador transacional, preservar prefixos/licenças/SNES e devolver recibo aplicado mais capabilities assinadas locais/públicas. Nenhum cadastro R147 foi aplicado neste ciclo.",
+    "Instalação e gameplay físicos R147 continuam não comprovados nos recibos recebidos. Testar APK igual, controles distintos, perda de sinal e saída no PC/aparelhos responsáveis; este PC não modifica APK. PS1 exige ledger HLE real por edição; PS3/PS4 permanecem offline."
+  ]
+}
