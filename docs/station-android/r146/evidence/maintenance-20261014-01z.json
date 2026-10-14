@@ -1,0 +1,240 @@
+{
+  "schema": "station.hourly-maintenance.v1",
+  "utc": "2026-10-14T01:05:55.508081+00:00",
+  "status": "partial",
+  "event": {
+    "utc": "2026-10-14T01:00:03.518849+00:00",
+    "fingerprint": "a5b6014f5b0ac47eb136b6d012fe71ca5f933e400677de7702a1b4dae0628d11",
+    "inputs": {
+      "server:origin/docs/station-online-exit-r135-20261012": "b6c08e55ad11773a306d5fcece64696c3d1c4529",
+      "app:origin/build/station-online-exit-r135-20261012": "6b4eab2c9221bb698362547df822962cda81cee9",
+      "covers:origin/capas-super-nintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
+      "covers:origin/main": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+      "privateInputFingerprint": "713094b6a3dd238ddd52ac9012ff0f5891cc89dcfafaf5a309437844780ea4e7"
+    },
+    "newInput": true
+  },
+  "result": "Novos handoffs R145/R146 e progresso R147 conciliados; sem bytes privados novos ou capas Git novas para publicar.",
+  "refsVerified": {
+    "server": "1db24e95fbc64e74eb5526f6bdf98ea2830e2fc5",
+    "app": "dd925efea0acb2545812d3ee5676323e2705e87c",
+    "coversMain": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+    "coversSnes": "9f85e9df1ec0c82d77156ed072b997855f719288"
+  },
+  "initialBackups": {
+    "server": {
+      "branch": "backup/station-antes-manutencao-20261014-01z",
+      "sha256Commit": "b6c08e55ad11773a306d5fcece64696c3d1c4529",
+      "remoteConfirmed": true
+    },
+    "app": {
+      "branch": "backup/station-antes-manutencao-20261014-01z",
+      "sha256Commit": "6b4eab2c9221bb698362547df822962cda81cee9",
+      "remoteConfirmed": true
+    }
+  },
+  "r147Backups": {
+    "server": {
+      "commit": "1db24e95fbc64e74eb5526f6bdf98ea2830e2fc5",
+      "branch": "backup/station-antes-manutencao-20261014-01z-r147",
+      "remoteConfirmed": true
+    },
+    "app": {
+      "commit": "dd925efea0acb2545812d3ee5676323e2705e87c",
+      "branch": "backup/station-antes-manutencao-20261014-01z-r147",
+      "remoteConfirmed": true
+    }
+  },
+  "delivery": {
+    "branch": "feat/station-hourly-20261014-01z",
+    "serverWorktree": "/mnt/DADOS/servidor-pix-station-manutencao-20261014-01z",
+    "appWorktree": "/mnt/DADOS/turboelden-station-manutencao-20261014-01z"
+  },
+  "receivedDocuments": {
+    "r145/README.md": {
+      "sha256": "1218f4012a6b5bd742d33f0a33339513df20df3a946e740a8a03edfaae416de8",
+      "byteIdenticalMirror": true
+    },
+    "r145/STATUS.json": {
+      "sha256": "544964d39b3430b78d7fcf3c8c32c7180436d12c1f82337bfedaaf3426a6c9cd",
+      "byteIdenticalMirror": true
+    },
+    "r145/evidence/private-kit-receipt.json": {
+      "sha256": "3ce9811593af2b9ed1c05f845d4ff60f712a642c3db7f4ae7fd8813aa86189a1",
+      "byteIdenticalMirror": true
+    },
+    "r145/evidence/native-preservation.json": {
+      "sha256": "51206840b4d48f42e5749ccc9dd365c126348c2e4447d066648227f20309a34e",
+      "byteIdenticalMirror": true
+    },
+    "r145/evidence/catalog47-return-comparison.json": {
+      "sha256": "ee749417b5d4b1c21ad7259489e381d7ac4c45b9d4ce9127926157cb0c09ce48",
+      "byteIdenticalMirror": true
+    },
+    "r145/evidence/final-apk-proof.json": {
+      "sha256": "524b9a0bb0d9827cf76abb27377d69bfebd6d792b758674e6bb52ad024b9b2d2",
+      "byteIdenticalMirror": true
+    },
+    "r145/evidence/dex-preservation.json": {
+      "sha256": "708a7c3f6f6d812c4ae5c5a976cd6a2d16e4b10a4d214c10493158231301aa6b",
+      "byteIdenticalMirror": true
+    },
+    "r145/evidence/server-maintenance-20261013-23z-received.json": {
+      "sha256": "07f060e092e2122b47f73e41efbaf7fb9bfa38d2925281a0a8bc2cb3d1e8c35d",
+      "byteIdenticalMirror": true
+    },
+    "r146/README.md": {
+      "sha256": "178e6c0cb9fd9407109fc8ebdf76d2604dacacb93ccabd0f2a4a24bca7e719a1",
+      "byteIdenticalMirror": true
+    },
+    "r146/STATUS.json": {
+      "sha256": "b48a427d0f495201be0a5d632fe91c33be5477067cb3b7faf0525eeed1e09008",
+      "byteIdenticalMirror": true
+    },
+    "r146/evidence/private-kit-receipt.json": {
+      "sha256": "40d0c76e04ae078d006c6071d2bb92d737807af8386d6107ca6459c3f4ff68fa",
+      "byteIdenticalMirror": true
+    },
+    "r146/evidence/native-owner-registration-audit.json": {
+      "sha256": "6ad2a25fea82ba5c10e2a0f899365ff9e51847ab28e9bdf96be1f9317262d873",
+      "byteIdenticalMirror": true
+    },
+    "r146/evidence/r145-backup-summary.json": {
+      "sha256": "a55e7d5a5d7b58494024d5a5215d658ce3b3346e84cf55aa9c2107ff42ef71aa",
+      "byteIdenticalMirror": true
+    },
+    "r146/evidence/n64-cover-cache-key.json": {
+      "sha256": "1a5f621f0f8c15675f7f0a162cca24898c2b0379bca4df7a154e1f0c623baff6",
+      "byteIdenticalMirror": true
+    },
+    "r146/evidence/final-apk-proof.json": {
+      "sha256": "aafab1ca2231a5eeef8e2e282e4ce1b95f52111f752daaee82c6ec0afda81474",
+      "byteIdenticalMirror": true
+    },
+    "r146/evidence/live-tls-receipt.json": {
+      "sha256": "f30324113e78ecc47f51dba57ce26842756c40afb23bc194eea819e52f0fe56a",
+      "byteIdenticalMirror": true
+    },
+    "r147/README.md": {
+      "sha256": "f97b99b100fbc6f3d940eb7e863130646b5bcf31ead85513bc69e20e2587e36b",
+      "byteIdenticalMirror": true
+    },
+    "r147/BUILD-PROGRESS.json": {
+      "sha256": "34c0a6956bcdae20ef1854333e88a8d15b5073c5ae3252c1440289e957289e2a",
+      "byteIdenticalMirror": true
+    }
+  },
+  "r147SourcePins": {
+    "sourceCommit": "6b4eab2c9221bb698362547df822962cda81cee9",
+    "checkedFiles": 45,
+    "allSha256Match": true,
+    "privateDexRead": false,
+    "testsExecutedHere": false
+  },
+  "receivedBuildState": {
+    "r145": {
+      "signedCandidate": true,
+      "installed": false
+    },
+    "r146": {
+      "signedCandidate": true,
+      "installed": false,
+      "directV3UriAndTlsIntegratedInProducerApk": true,
+      "gameplayValidated": false
+    },
+    "r147": {
+      "sourceCommit": "6b4eab2c9221bb698362547df822962cda81cee9",
+      "dexSha256Reported": "4d200405747b4d42108fe6bd8afdccc290db3fa1a72a9aa28c779f8772a53a78",
+      "dexCompiledPerProducerReceipt": true,
+      "nativeBaselineCompilationInProgress": true,
+      "nativeCompiled": false,
+      "apkCompiled": false,
+      "serverKitFinalReceived": false
+    }
+  },
+  "nativeAuthentication": {
+    "authenticated": false,
+    "exitCode": -15,
+    "snapshotAvailable": false,
+    "ownUnauthenticatedRequestCancelled": true,
+    "rootOperationTerminated": false
+  },
+  "effectiveRuntime": {
+    "execStart": "{ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-station-online-audit-20261013-ef5270b3d47b-e/TurboRamaSuiteOnlineServer.dll ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+    "apiPid": 2867363,
+    "apiNRestarts": 0,
+    "scannerTimerActive": true,
+    "binaryConfigProtectedReadCompletedThisCycle": false,
+    "newServerBinaryRequiredByReceivedPayload": false
+  },
+  "lastAppliedEvidence": {
+    "catalogRevision": 47,
+    "persistentEngines": 39,
+    "profiles": 11604,
+    "modes": 6743,
+    "source": "Previous applied receipts; protected files were not freshly read this cycle.",
+    "n64UsbPrecedencePreserved": true
+  },
+  "covers": {
+    "gitRefsChanged": false,
+    "privateInputFingerprintChanged": false,
+    "importedThisCycle": 0,
+    "romsOpenedHashedOrRebuilt": 0,
+    "signedCatalogAndServedBytesRetestedThisCycle": false,
+    "priorQualification": "N64 applied receipt: 157 local / 21 public bodies; no new bodies published this cycle"
+  },
+  "kits": {
+    "expectedByRevision": {
+      "r143": {
+        "expectedZipSha256": "a4ba210580ea68beb0086c2c986c6a884e888a1e9ad599bd7e9d9ae33364f606",
+        "expectedZipBytes": 12161998,
+        "provenance": "received producer receipt; private ZIP not received here"
+      },
+      "r144": {
+        "expectedZipSha256": "7b1cdb6c68a1ddcd05af2e4703d2900061f7f2c4082a3f3c80c6d4c428d18739",
+        "expectedZipBytes": 12164472,
+        "provenance": "received producer receipt; private ZIP not received here"
+      },
+      "r145": {
+        "expectedZipSha256": "89c7fb016ab23a3ecf050e1ce2f83a3e0dfecfb93eb5763a895f3c5beac50fb8",
+        "expectedZipBytes": 12171175,
+        "provenance": "received producer receipt; private ZIP not received here"
+      },
+      "r146": {
+        "expectedZipSha256": "96d057769b4ac420fb01e6896ae3738a31a92efe19529d4592b72f71ee9817af",
+        "expectedZipBytes": 12175118,
+        "provenance": "received producer receipt; private ZIP not received here"
+      }
+    },
+    "userSearchFound": 0,
+    "inaccessibleDirectories": 91,
+    "protectedSearchCompleted": false,
+    "registeredThisCycle": 0,
+    "psxHleApprovalsAdded": 0
+  },
+  "preservation": {
+    "maintenanceLockHeldByMonitorParent": 3064256,
+    "scanLockAcquiredThisCycle": false,
+    "localCrlfFilesBytePreserved": true,
+    "activeServicesComparison": {
+      "activeServicesBefore": 87,
+      "activeServicesAfter": 87,
+      "added": [],
+      "removed": []
+    },
+    "productionDataPublished": false,
+    "apiRestarted": false,
+    "scannerTimerStopped": false,
+    "scannerTerminated": false,
+    "apkChanged": false,
+    "historicalOperatorsExecuted": false,
+    "newAutomationsCreated": false,
+    "externalMessagesSent": false
+  },
+  "privateAuditDirectory": "/mnt/DADOS/station-maintenance-20261014-01z",
+  "pending": [
+    "Receber os bytes privados do kit do APK final efetivamente escolhido/instalado. A56 última R144 e g52 última R143; R145/R146 são candidatas assinadas sem instalação comprovada. R146 espera ZIP 96d057769b4ac420fb01e6896ae3738a31a92efe19529d4592b72f71ee9817af / 12.175.118 B. Zero kits R143–R147 localizados no escopo acessível; 91 diretórios inacessíveis. Um kit não substitui outra composição.",
+    "Concluir autenticação Linux nativa para ler DLL/configuração/catálogo/registries protegidos e adquirir scan.lock. A janela de 120 s expirou sem root; somente o próprio pedido não autenticado foi cancelado. Cadastro exige baseline fresco, seis ELF/vinte dependências reais, quatro IDs e 78 modos explícitos, preparador vigente sem migração genérica e registrador transacional.",
+    "Aguardar recibos finais de core/APK/kit R147: chegou DEX10 documentado, mas o motor permanece em reconstrução e não há APK/assinatura/instalação/kit final. Gameplay Android autenticado, falhas físicas por etapa e ledger HLE PS1 por edição continuam pendentes; PS3/PS4 somente offline."
+  ]
+}
