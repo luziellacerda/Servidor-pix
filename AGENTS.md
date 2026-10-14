@@ -1,3 +1,14 @@
+# N64 R152 pronto no servidor; R151 preservada — 14/10/2026
+
+Ler o topo do MESMO handoff e r152/server-return.json. Kits R151/R152 da USB verificados e aplicados sob scan.lock, sem deploy/reinício. A56 agora R152 conforme novo documento USB, APKf06747b7/fonte6d76c1dd. Motor atual mupen64plus-ae-33bf7021-n64-v3-62d4d48b1184, runtime62d4d48b; R1518eda4863 também registrada. Catálogo49,51motores/11838perfis/6977modos, API3297582/DLLb3473cc0. Cada revisão4IDs/6ELF/20deps/78modos,66N64/9GC/3Wii/0HLEPS1novo, prefixos antigos conservados.
+
+Capabilities assinadas locais/públicas R151/R152 passaram. R152:1080Snowboarding2P criar/entrar/Pronto/iniciar; MarioKart64 quatro clientes/6WSS/READY/playing/24.615B/pausa/epoch2/reconexão/TLS+SPKI+prioridade passaram.66modos/33edições/26edições4P;124demais sem novo modo revisado desse owner. Não inventar gameplay em quatroAndroid. Licenças sintéticas removidas, reais/outrosserviços/índice/capas/ROMs preservados. Atualizar cache capabilities no app; todos jogadores mesma revisão/edição. STATUS servidor true/online agora; aceite físico não homologado.
+
+Autoridade /mnt/DADOS/station-r151-20261014/applied.json PASSED; published.json/enrollment-r152/r151 e provas existentes. NÃO REAPLICAR operadores/cadastro/DLL nem pedir kits já recebidos. WindWaker/quarentena/scanner aplicados continuam corretos; scanner a10c78f53797, timerativo. Mesmas branches/handoff/monitor, backup station-before-r151-r152-engines-20261014 confirmado, R143 estável intacta. SNES/N64 novas capas e limites100/800 do operador conservados. Fontes/receitas/recibos congelados e os doisCRLF históricos locais ficam intactos.
+
+
+## Histórico anterior preservado
+
 # App atual R151 exige seu kit; não confundir a liberação R149 — 14/10/2026
 
 Ler o topo do MESMO handoff, r151/README.md e r151/server-receiver-status.json. Retornoappbcb1fc6/fonteR151d5afd35/APKc6090d6 instaladoA56. Mensagem N64: indicadorOnline, nenhum modo aprovado para motor instalado. Exige engine mupen64plus-ae-33bf7021-n64-v3-8eda486330ca/runtime8eda4863, corefe6e810a igual. R149dcad0757 já aplicada e nova prova4clientes pública passou; STATUSr149 corrigido true refere-se SÓ R149. Não marcarR151aplicada nem relaxar vínculos por core igual.

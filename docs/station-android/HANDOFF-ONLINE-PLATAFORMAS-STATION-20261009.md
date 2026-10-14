@@ -1,3 +1,27 @@
+## N64 do APK atual R152 liberado; R151 também cadastrada — 14/10/2026
+
+**Estado atual aplicado e verificado.** Os kits R151 e R152 chegaram em `SERVIDOR LER` na USB. O documento mais recente da produção informa que o Galaxy A56 já está na R152: APK `f06747b7a953813de5281ddd71f15d8cf36bf8a0ab78920bbe226dabb3c7448e`, fonte `6d76c1dd487e5f2352e2c37df8e7cd0cbee22b1e`. A instalação R151 descrita abaixo é anterior. Os ZIPs e todos os 37 arquivos de cada manifesto foram conferidos; seis bibliotecas e vinte dependências ELF64 AArch64 por revisão correspondem aos hashes do APK final informado pela produção.
+
+O operador vigente preparou os dois cadastros com baseline protegido fresco e publicou sob `scan.lock`, primeiro R152, depois R151 para preservar a possibilidade de retorno. Aplicação às **2026-10-14T16:04:56.973804+00:00**, provas concluídas às **2026-10-14T16:07:27.494324+00:00**. Foram acrescentados oito motores, 156 perfis e 156 modos: por revisão, quatro motores e78 modos (66 N64, nove GameCube, três Wii, zero nova aprovação PS1 HLE). Totais vivos **51 motores /11.838 perfis /6.977 modos**, catálogo49. Prefixos anteriores, capas, ROMs, licenças e serviços compartilhados preservados. API PID3297582/DLLb3473cc01601, **sem reinício**, timer do scanner ativo.
+
+| Revisão | Motor N64 disponível | Situação |
+| --- | --- | --- |
+| R152 atual | `mupen64plus-ae-33bf7021-n64-v3-62d4d48b1184` | Cadastro aplicado, capabilities assinadas e transporte público de quatro participantes passaram |
+| R151 anterior | `mupen64plus-ae-33bf7021-n64-v3-8eda486330ca` | Cadastro aplicado e capabilities assinadas locais/públicas passaram |
+
+**Prova pública R152:** os66 modos das33 edições revisadas chegam completos; Mario Kart64 criou sala com quatro licenças sintéticas independentes, portas1–4, três links/seis WSS autenticados. READY chegou a playing, 24.615bytes foram conferidos sem mistura entre links; queda de um participante, pausa global e reconexão no epoch2 preservaram a sequência. TLS/hostname/SPKI e prioridade da rota pública passaram. Todas as licenças sintéticas próprias foram removidas. **1080 Snowboarding** (`station_c13a5bbc179ccbe871697999c62ba13d`) tem capabilities exatas de R151 e R152 para dois jogadores; na R152, criar/entrar/Pronto/iniciar passaram local e publicamente. Quatro nessa modalidade, runtime incorreto e motor desconhecido foram recusados corretamente.
+
+### Consumo pelo app
+
+Ao abrir Criar sala, renovar a consulta autenticada `POST /v1/station/online/multiplayer/command` com `action=capabilities`, `requestId` novo, `itemId` da edição e `clientMaximumPlayers=4`. Validar a assinatura pelo contrato existente e `snapshot.multiplayerVersion=3`. Selecionar somente perfil aprovado que coincida com item/conteúdo, engineId, coreSha256 e runtimeSha256 do APK instalado. Criar/entrar usam a mesma tupla com profileId/profileSha256; a capacidade vem de `allowedPlayerCounts` do modo. Preservar coração de presença, tickets autenticados e `station-stream.v3`. Todos os telefones da partida devem usar a mesma revisão e edição. Não reusar ausência de modos em cache obtida antes deste cadastro.
+
+O core N64 continua `fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8`; runtime R152 é `62d4d48b1184e082e6ec8f5d525a474022699103cc311e175170048abfba2229`. Os hashes completos e os perfis estão no recibo. O status de servidor para R152 agora é pronto/online. O aceite físico de uma partida Android permanece separado: estes testes não executam o emulador em quatro celulares. São33 edições N64 revisadas/26 aptas a quatro; a relação dos157 itens identifica também os124 sem novo modo desse owner e conserva os legados.
+
+[Retorno atual R152](r152/server-return.json) · [capabilities públicas](r152/evidence/signed-public-capabilities.json) · [prova pública quatro participantes](r152/evidence/public-four-participants.json) · [retorno R151 preservada](r151/server-return.json). Usar o mesmo handoff. A ausência de kit e os bloqueios de cadastro relatados nas seções anteriores são históricos e foram resolvidos. Não reaplicar kits R141/R149/R151/R152 ou publicar outra DLL para este cadastro. Backup prévio nos dois Gits `backup/station-before-r151-r152-engines-20261014`; R143 estável, banda100/800, CPU/JIT, rede/túnel e prioridade mantidos. Wind Waker continua corrigido no catálogo49 e o scanner corrigido permanece ativo.
+
+
+## Histórico anterior preservado
+
 ## App atual R151: servidor ativo; falta receber o kit dessa identidade — 14/10/2026
 
 **Este é o estado mais recente do N64 solicitado pela produção.** Durante a entrega chegou o retorno app `bcb1fc6`: o A56 já usa R151, APK `c6090d6fc31dea07cdc6b6494acf4af39835ef9ec38ad1dbcdf7ebdba9b4eda5`, fonte `d5afd35f57b5765a54aa6c5c751c4ede55f404bf`. Na tentativa de 1080 Snowboarding o indicador estava Online, mas não apareceu modo aprovado para o **motor instalado**. O motor R151 é `mupen64plus-ae-33bf7021-n64-v3-8eda486330ca`, runtime `8eda486330caf7245fb733820c11b94f3ec2c2d216e8ab7ae1dd36afbed02616`; o core `fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8` não mudou. [Diagnóstico recebido da produção](r151/README.md), [estado do recebimento no servidor](r151/server-receiver-status.json).

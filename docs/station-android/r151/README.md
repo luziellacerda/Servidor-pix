@@ -1,3 +1,9 @@
+# Cadastro R151 aplicado; APK atual informado é R152
+
+O kit R151 já foi recebido, verificado e aplicado. O cadastro contém66 modos N64/33edições, nove modos GameCube e três Wii. As respostas assinadas locais/públicas conferiram perfis exatos dos três sistemas. [Retorno aplicado](server-return.json). O relato de bloqueio abaixo ocorreu antes do cadastro e foi conservado. A produção agora informa R152 instalada no A56; [o cadastro R152 também foi concluído](../r152/server-return.json). Atualizar a consulta de capabilities do app e manter os participantes na mesma revisão. Nenhuma partida física Android foi homologada por estes recibos.
+
+## Histórico anterior preservado
+
 # R151 no A56: capa SNES aprovada, sala N64 bloqueada
 
 Estado em 14/10/2026. A fonte R151 está congelada no commit
