@@ -1,3 +1,9 @@
+# R147 fontes publicadas; DEX conferido, motor em compilação
+
+Fonte `6b4eab2c9221bb698362547df822962cda81cee9`, 49 arquivos/45 pins. Uma classe/quatro métodos de posse de boot Dolphin já montados: 4.990 classes preservadas, inversão integral passou, DEX4d200405. Correção nativa de uma linha exige primeiro reproduzir f7/92b e quatro hooks; configuração passou, compilação integral em andamento. Ler r147/README e BUILD-PROGRESS. Nenhum APK R147, instalação, cadastro ou gameplay comprovado. R145 visual e R146 rota preservados pela receita, a conferir no pacote final. R143 estável intacta. Não aplicar kit antigo como se fosse R147; aguardar kit real correspondente. Sem deploy/restart/migração genérica, ampliação HLE ou mudança de desempenho. Backup R146 em preparação; R145 completo verificado.
+
+## Histórico preservado
+
 # R146 conexão v3 compilada; reparos Dolphin R147 em preparação
 
 Fonte `bfea454d04ef297e9dfd1b397e0bf25df3937e93`, APK `04930201ad2f1c016f3385b3f08248ed4fa112d482a98761d00494b7a937468a`. URI+TLS v3 direta integradas; API/login/downloads/legado, visual R145, motores/controles e reparos anteriores preservados. Cinco substituições/13.855 entradas/39DEX; duas classes e um método novo, inversão integral. TLS real CA+hostname+SPKI passou, sem sessão/gameplay. Ler r146/STATUS e README. Nenhum USB na última leitura; não afirmar instalação/partida/cadastro. Kit R146 `96d057769b4ac420fb01e6896ae3738a31a92efe19529d4592b72f71ee9817af` preparado, mesmos78modos, PS1 HLE zero novas aprovações. Dois defeitos Dolphin de inicialização/posse comprovados por fixtures e tratados em R147 separada, ainda não no APK. Backup completo R145 3.632 arquivos verificado; R143 estável intacta. Sem deploy/restart, preservar fontes congeladas/políticas/dados.
