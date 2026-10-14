@@ -1,3 +1,15 @@
+## Manutenção 00h UTC — 14/10/2026: conferência sem carga útil nova
+
+Refs remotas server 717afb4 / app a0ed0cc e capas main 5c6cc32 / SNES 9f85e9d confirmadas; fingerprint privado 713094b6 reproduz o evento. Documentos R143/R144/N64 espelhados byte exatamente. N64 USB catálogo 47 já publicado tem precedência sobre Git antigo; zero capas importadas neste ciclo. R141/QoS e registros anteriores preservados.
+
+ExecStart efetivo continua na DLL ef5270b3, PID 2867363/NRestarts 0; scanner usa importador da mesma árvore e configuração privada existente, timer ativo. Nenhum novo handoff recebido exige binário novo. A leitura protegida não concluiu: a janela nativa expirou em 120 s; somente o próprio pkexec não autenticado foi cancelado. DLL/configuração/index e scan.lock não foram lidos neste ciclo. Não tratar os hashes e contagens anteriores como prova fresca.
+
+Busca acessível não encontrou kits R143/R144/R145; kit R144 7b1cdb6c/12.164.472 B deve corresponder ao A56 APK01427, R143 a4ba2105/12.161.998 B ao g52 APK508480. R145 ainda é solicitação visual sem entrega final neste evento. Não cadastrar owners sem bytes reais/modos explícitos; PS1 mantém zero HLE novo sem ledger. Gameplay/rota direta no APK/investigação independente continuam pendentes.
+
+Backup Git dos dois pontos publicado e confirmado em backup/station-antes-manutencao-20261014-00z; entrega em feat/station-hourly-20261014-00z. Recibo: r144/evidence/maintenance-20261014-00z.json; auditoria privada /mnt/DADOS/station-maintenance-20261014-00z. Maintenance.lock pertence ao monitor pai; 87 serviços ativos antes/depois, nenhuma diferença de lista. Sem publicação de dados, restart, parada de timer, alteração de APK ou execução de operadores históricos. Dois CRLF locais byte preservados. Estado partial.
+
+## Histórico preservado
+
 ## Capas novas do N64 recebidas pelo USB e publicadas — 13/10/2026, 20h44
 
 **Catálogo 47; 132 arquivos de revista substituídos, correspondendo a 133 vínculos.** O conjunto correto foi entregue pelo proprietário em `CAPAS N64` no pen drive e ainda não estava no Git de artes consultado. As verificações anteriores de igualdade com esse Git eram verdadeiras, mas comparavam a coleção antiga. Agora as imagens novas estão em `n64/media/revista`, com nomes associados às ROMs instaladas. [Recibo, catálogo N64 completo e origens por jogo](online-plataformas-20261009/n64-capas-usb-20261013.json).
