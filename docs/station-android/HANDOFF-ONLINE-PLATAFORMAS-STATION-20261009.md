@@ -1,3 +1,20 @@
+<!-- STATION-HOURLY-20261014-20Z -->
+## Manutenção 20h UTC — cadastro USB conciliado e lote SNES revalidado — 14/10/2026
+
+**36 capas preparadas e conferidas, sem publicação.** A autenticação Linux nativa expirou em115.17s; somente o próprio pkexec ainda não autenticado foi cancelado. Nenhuma operação root foi iniciada ou interrompida.
+
+Os remotos server2fe82c8b/app685c4936 foram conferidos. Correspondem à entrega USB já aplicada e comprovada. Seus recibos administrativos R157, correção do hash Android e cadastro do APK6203804f estão PASSED: não há nova carga de motores a aplicar neste evento. A pendência antiga de receber/cadastrar R157 está superada pela leitura USB exata autorizada e pelas duas transações78+321 já concluídas. Não afirmar recebimento/verificação do ZIP original; o número/commit do APK atual continuam sem publicação da produtora. A sala007 criada anteriormente é uma prova de criação, sem homologação de partida física.
+
+Capas Git main5c6cc32 e SNES9f85e9d inalteradas, zero importações do Git. O manifesto local SNES mudou, mas permanecem191 finalizadas e os mesmos bytes e mapeamentos do lote18z:48 artes novas,34 fontes com correspondência exata,36 revistas/36 vínculos e14 sem edição instalada correspondente preservadas. Foi preparado um plano novo no20z, reutilizando JPEGs já compilados e conferindo hashes, RGB480×720/q90, nomes ROM/edição e gravação atômica. O operador atual verifica também os módulos que receberam a correção de hash Android.
+
+ExecStart observado continua `/usr/bin/dotnet /opt/turborama-station-n64-ready-20261014-b3473cc01601/TurboRamaSuiteOnlineServer.dll`, API PID3297582/NRestarts0. Scanner `/opt/turborama-station-library-quarantine-20261014-a10c78f53797/library-tools/atualizar-biblioteca-station.py`, último exit0 e timer ativo. Não foi possível ler DLL/configuração/índice protegidos neste ciclo; os totais59 motores/13322 perfis/8417 modos/catálogo59 são do recibo USB anterior e não uma baseline fresca. Não houve alteração de APK, cadastros, ROMs, licenças reais, serviços compartilhados, banda100/800, capasN64USB ou fontes/tags estáveisR143/R157. Não repetir provas N64 completas por esta conferência.
+
+Backups estáveis Git publicados e conferidos em `backup/station-before-hourly-20261014-20z`, pontos server2fe82c8b/app685c4936; entrega em branch própria `feat/station-hourly-20261014-20z`. Worktrees próprios noDADOS; checkouts e dois CRLF históricos preservados. [Recibo sanitizado](online-plataformas-20261009/maintenance/20261014-20z/sanitized-receipt.json) e [plano](online-plataformas-20261009/maintenance/20261014-20z/cover-plan.json). Autoridade privada `/mnt/DADOS/station-maintenance-20261014-20z`. A manutenção existente mantém maintenance.lock pelo monitor pai3411362 até seu retorno; não declarar liberação antes disso. Nenhuma automação ou mensagem externa criada.
+
+Próximo ciclo: Conciliar `/mnt/DADOS/station-maintenance-20261014-20z/{published,applied}.json` antes de qualquer execução. Ambos permanecem ausentes neste ciclo. Revalidar manifesto/fontes/JPEGs/mapeamentos e os módulos atuais; se iguais, executar por autenticação Linux nativa `pkexec /usr/bin/python3 -B /mnt/DADOS/station-maintenance-20261014-20z/publish-covers.py`, acompanhando o próprio pedido por no máximo120s e cancelando somente se ainda não autenticado. O controlador manual `/mnt/DADOS/station-maintenance-20261014-20z/authenticate-native.py` usa limite115s. Se inputs mudaram, preparar novo plano. Nunca executar o publicador18z ou operadores USB já aplicados. O publicador requer baseline fresca/configuração e DLL efetivas, pausa só timer do scanner/aguarda oneshot/scan.lock, backup/rollback e qualificação sem reconstrução de ROMs. Publica revistas, seeds, coverPath/revisão/fingerprints e comprova catálogo assinado e36 corpos em ambas origens. PSX sem novas aprovações HLE, PS3/PS4 offline e vínculos antigos preservados. Estado global parcial por pendências reais, sem pedir kit já substituído pelo recebimento USB.
+
+## Histórico anterior preservado
+
 <!-- STATION-USB-007-20261014 -->
 ## USB 007: criação de sala confirmada no Samsung — 14/10/2026
 
