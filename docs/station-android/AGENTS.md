@@ -1,3 +1,9 @@
+# Manutenção 18h UTC — R157 instalada por recibo; capas preparadas — 14/10/2026
+
+Retornos08ac3f9d/bd0c51d2 recebidos: R157 assinada/instaladaA56 conforme produtora, aceitevisual/kit/USB/cadastro pendentes. R153–R156 retidas; NÃOAPLICAR. R152/R151 e157N64 já aplicadas/provadas, não repetir. CapasGit iguais;48locais novas,36revistas/36vínculos/34artes compiladas,14sem edição correspondente. Primeira authLinux concluiu mas faltouwebsockets antes de baseline/publicação; dependência agora usa venv existente. Tentativa2canceladasemroot após148s por erro do monitor corrigido; tentativa3expirou118s. NENHUMA capa/seed/fingerprint/catálogo publicada nem provaHTTP executada; API3297582/scannera10c78f53797/timers preservados. Ler MESMO handoff/maintenance/20261014-18z e /mnt/DADOS/station-maintenance-20261014-18z. Próximo ciclo conciliar published/applied antes de executar publicador novo com authnativa<=120s/baseline fresca/scan.lock. R157kit exige78modos/nova baseline/321decisõesN64 próprias; não relaxar replay por relato409. R143/CRLF/ROMs/capas/licenças/outros produtos/banda100/800/globalpartial preservados.
+
+## Histórico anterior preservado
+
 # N64 — coleção de 157 edições revisada — 14/10/2026
 
 **Aplicado e comprovado no servidor para R152/R151.** As 157 edições foram identificadas na ROM real e revisadas nos manuais originais: 120 têm multiplayer documentado e 37 são individuais. Entre as multiplayer, 85 permitem até quatro pessoas, duas até três e 33 até duas, conforme o modo. Não restam edições sem classificação nesta coleção.

@@ -1,0 +1,185 @@
+{
+  "schema": "station.hourly-maintenance.v1",
+  "utc": "2026-10-14T18:13:33.368612+00:00",
+  "status": "partial",
+  "eventFingerprint": "1402315197878bcee34260117ded93297d926380561929f0989e96aa7131170d",
+  "sourceRefs": {
+    "server": "a714b3958f62d441282b6dbea5f20b63522b4285",
+    "appAtEvent": "08ac3f9d2e439c764773815d5faff48e2161575d",
+    "appLaterReceived": "bd0c51d2a1d7fcd5690966969f8372e334d52587",
+    "coversMain": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+    "coversSNES": "9f85e9df1ec0c82d77156ed072b997855f719288"
+  },
+  "backupBranch": "backup/station-before-hourly-20261014-18z",
+  "backupCommits": {
+    "server": "a714b3958f62d441282b6dbea5f20b63522b4285",
+    "app": "15bb377052e9870b7dd1346363bc82141cc73c9b"
+  },
+  "backupRemotesVerified": true,
+  "deliveryBranch": "feat/station-hourly-20261014-18z",
+  "receivedApp": {
+    "revision": "R157",
+    "APKDocumentedSignedAndInstalledByProducer": true,
+    "APKBytesReceivedHere": false,
+    "APKHashReported": "563625c40bfce77def6770a67448f83e2206e67a07023c58359ad2a0de4eee34",
+    "APKBytesReported": 2715106319,
+    "sourceCommit": "c9906512faf4d80ca5fd6d66880772f02b29a359",
+    "kitReceivedHere": false,
+    "visualAcceptancePending": true,
+    "serverRegistrationConfirmed": false,
+    "withheldRevisions": [
+      "R153",
+      "R154",
+      "R155",
+      "R156"
+    ],
+    "sourcePins": [
+      {
+        "path": "docs/server/r157/README.md",
+        "sha256": "069d68a532feca0c22b985d0e2e07922c93ede3e940ae8e81530e440e5f1f5d6"
+      },
+      {
+        "path": "integration/online-wave-corrections-r156/README.md",
+        "sha256": "86d87adf68acf45b055446d8a36baa06a8694793a80cb43e7dda599f51b12d99"
+      },
+      {
+        "path": "integration/online-wave-corrections-r157/README.md",
+        "sha256": "36510a40dbc67d67a243b84ef798b28d7d6863d3c67b1951827f5406a8ec5a32"
+      },
+      {
+        "path": "integration/online-wave-corrections-r157/java/org/emulationstation/frontend/netplay/StationHyperspaceView.java",
+        "sha256": "c8ccbf36b44e4dcb979bb7d5dab1191c048d8a72e48e78b4f026b2b7a87c9f57"
+      },
+      {
+        "path": "integration/online-wave-corrections-r157/recipe/AssembleScopedPartition.java",
+        "sha256": "5ea794aad4cb177080e331b09d449419e352020ac61a6b9ea4194e32b4b1b022"
+      },
+      {
+        "path": "integration/online-wave-corrections-r157/recipe/DecodeDolphinPartition.java",
+        "sha256": "d1365cf8cce05fb08c6e04dbcc47e9b154af268637bf0d768c32f851420c2b67"
+      },
+      {
+        "path": "integration/online-wave-corrections-r157/recipe/VerifyScopedPartition.java",
+        "sha256": "77c1dfe5781fb519dab8a514ce1344cf6e965f8c96bc913795c889e7c67c2d2b"
+      },
+      {
+        "path": "integration/online-wave-corrections-r157/recipe/assemble_dex.py",
+        "sha256": "7d8a437f34f0d423f1b396317a3662e1efa23f3e76c72d29fb73c9de5bdd855d"
+      },
+      {
+        "path": "integration/online-wave-corrections-r157/recipe/build_candidate.py",
+        "sha256": "3b109524ffdb3ed825398b6b01dccf76c0a0cedf7304e29a11fc3f09dea40891"
+      },
+      {
+        "path": "integration/online-wave-corrections-r157/recipe/build_java.py",
+        "sha256": "8ad8c47207d409e533294e0349fef48b5e915e565f40c42c9e613047536a903f"
+      }
+    ],
+    "N64ReviewLedgerAndPreparerPinsVerified": true,
+    "proofReplayReport": {
+      "code": "STATION_REQUEST_PROOF_REPLAY",
+      "route": "online/events",
+      "reportedInProducerREADME": true,
+      "reproducedHere": false,
+      "causeProved": false,
+      "securityChanged": false
+    }
+  },
+  "covers": {
+    "gitRefsUnchanged": true,
+    "gitCoverImports": 0,
+    "localFinalizedSnapshot": 191,
+    "newLocalFinalArtworks": 48,
+    "preparedMagazineCovers": 36,
+    "preparedBindings": 36,
+    "uniqueArtworkSources": 34,
+    "unmatchedNewArtworks": 14,
+    "format": "JPEG RGB",
+    "resolution": [
+      480,
+      720
+    ],
+    "quality": 90,
+    "preflightPassed": true,
+    "installed": false,
+    "HTTPProofsExecuted": false,
+    "seedsOrFingerprintsPublished": false,
+    "sourceManifestSha256": "b8117203b3ac090c4c16c9f1aa0a143f8ba0c3349d4f3eb0936fe7500daced5e",
+    "planSha256": "de8738913d9c9e8b61e2d62c4559ad182f414d892293eb8fd9eaf0683cfbdc81",
+    "operatorSha256": "efdc020c5e53058949c9fb650da5e2d4b020e149b1a945f7e7568b2ed4aafaef",
+    "atomicWriteFixturePassed": true
+  },
+  "authentication": {
+    "firstAttempt": {
+      "authenticated": true,
+      "waitSeconds": 87.73,
+      "exitCode": 1,
+      "rootOperationKilled": false
+    },
+    "firstFailure": {
+      "utc": "2026-10-14T18:06:07.530992+00:00",
+      "errorType": "ModuleNotFoundError",
+      "reason": "No module named 'websockets'",
+      "publicationExists": false
+    },
+    "secondAttempt": {
+      "requestLifetimeSecondsFromFileTimestamps": 148.26,
+      "exceeded120Seconds": true,
+      "cause": "readlink of setuid pkexec /proc/exe denied; launcher treated transition as uncertain",
+      "ownRequestConfirmedStillPkexecViaCommAndCmdline": true,
+      "ownUnauthenticatedRequestCancelled": true,
+      "rootOperationStarted": false,
+      "rootOperationInterrupted": false,
+      "correctedControl": "Read /proc/comm and cmdline; subsequent authentication cutoff 118 seconds"
+    },
+    "finalAttempt": {
+      "authenticated": false,
+      "authenticationWaitSeconds": 118.14,
+      "ownUnauthenticatedRequestCancelled": true,
+      "rootOperationKilled": false
+    }
+  },
+  "effectiveServiceObservation": {
+    "apiPID": 3297582,
+    "NRestarts": 0,
+    "ExecStart": "/usr/bin/dotnet /opt/turborama-station-n64-ready-20261014-b3473cc01601/TurboRamaSuiteOnlineServer.dll",
+    "scannerExecStart": "/usr/bin/python3 -B /opt/turborama-station-library-quarantine-20261014-a10c78f53797/library-tools/atualizar-biblioteca-station.py --config /mnt/DADOS/station-library-auto-private-20261004/config.json",
+    "scannerLastExitCode": 0,
+    "scannerTimerActive": true,
+    "protectedDLLAndScannerConfigurationReadFirstAttempt": true,
+    "freshProtectedCatalogReadThisCycle": false
+  },
+  "previousN64Authority": {
+    "path": "/mnt/DADOS/station-n64-complete-review-20261014/applied.json",
+    "passed": true,
+    "revisions": [
+      "R152",
+      "R151"
+    ],
+    "editions": 157,
+    "engineCount": 51,
+    "profileCount": 12509,
+    "modeCount": 7619,
+    "catalogRevision": 50,
+    "countsArePreviousReceiptNotFreshProtectedBaseline": true,
+    "reappliedThisCycle": false
+  },
+  "preservation": {
+    "noAPIOrOtherServicesRestarted": true,
+    "scannerTimerStoppedThisCycle": false,
+    "ROMsNotHashedCopiedOrRebuilt": true,
+    "APKNotModified": true,
+    "securityNotRelaxed": true,
+    "physicalAndroidResultsNotInvented": true,
+    "automationCreated": false,
+    "externalMessagesSent": false,
+    "originalCheckoutsAndTwoHistoricalCRLFChangesPreserved": true,
+    "maintenanceLockHeldByExistingParentMonitor": true
+  },
+  "privateWorkDirectory": "/mnt/DADOS/station-maintenance-20261014-18z",
+  "pending": [
+    "Concluir autenticação Linux nativa para baseline protegido fresco e publicação transacional das 36 capas SNES preparadas; conferir catálogo assinado e 36 corpos JPEG locais/públicos após publicação.",
+    "Receber o kit privado final aceito R157; o retorno bd0c51d2 documenta APK assinado e instalado, mas kit/aceite visual/entrega USB/cadastro continuam sem recibos. R153–R156 retidos. Não reaplicar R151/R152.",
+    "Preservar pendências físicas Android e globais anteriores; cadastro e transporte sintético não homologam gameplay nos aparelhos."
+  ]
+}

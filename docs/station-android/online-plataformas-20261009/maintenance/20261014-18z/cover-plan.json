@@ -1,0 +1,524 @@
+{
+  "sourceManifestSha256": "b8117203b3ac090c4c16c9f1aa0a143f8ba0c3349d4f3eb0936fe7500daced5e",
+  "preparedOnly": true,
+  "artworks": [
+    {
+      "title": "Double Dragon V - The Shadow Falls",
+      "primaryRelease": "Double Dragon V - The Shadow Falls (USA)",
+      "magazine": "Double Dragon V - The Shadow Falls (USA).jpg",
+      "sourceSha256": "13521fa2120f4f0f37ac98b6c5bfae3f2e64a91f6feb2686c00ce76edd00f6fd",
+      "compiledSha256": "c41c4f78beb40a9bc053542ae644b6a480a749e955606bfe4fcac7bf564cd4dd",
+      "compiledBytes": 158102,
+      "itemIds": [
+        "bd7c338745e46a055f7ab53b3c0e4363"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Exertainment Mountain Bike Rally",
+      "primaryRelease": "Exertainment Mountain Bike Rally (USA)",
+      "magazine": "Exertainment Mountain Bike Rally (USA).jpg",
+      "sourceSha256": "862a6d093344a0cf91a9fbb0c771b20b2a4cc0944126ef54f086f8eba35ba335",
+      "compiledSha256": "3d149151cf4d36ca21765307df5d78d927f1d0dbf22ae038e60d097c37b563d7",
+      "compiledBytes": 168038,
+      "itemIds": [
+        "39334c5fa178dfb28c3f93ac5ce2f661"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Demolition Man",
+      "primaryRelease": "Demolition Man (USA)",
+      "magazine": "## 1 -PT-BR ##/Demolition Man (USA).jpg",
+      "sourceSha256": "90b00b5139bd87580514d428d4e0da1863eb4707297cf7bbfddd70bdd7c0050e",
+      "compiledSha256": "92d5bc6b2ec85f7b81178574c8f629e5511ec81441f5b845fae328883b1256b7",
+      "compiledBytes": 138454,
+      "itemIds": [
+        "station_4194034cc606ee0af1e916090ab8ec70"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Demon's Crest",
+      "primaryRelease": "Demon's Crest (USA)",
+      "magazine": "## 1 -PT-BR ##/Demon's Crest (USA).jpg",
+      "sourceSha256": "0babfc3987c98fb12b708f76beab7d70b82566aa33027a886e4313cd4869ed33",
+      "compiledSha256": "e54c784dec260b2612f2a564ed4d0fc3aff5720d8f9206a80a770dfca5445191",
+      "compiledBytes": 152892,
+      "itemIds": [
+        "station_2cf50f13fd0bcbf82bcaf3904405370f"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Dennis the Menace",
+      "primaryRelease": "Dennis the Menace (USA)",
+      "magazine": "Dennis the Menace (USA).jpg",
+      "sourceSha256": "8e03b04a4d3f4a10a657d6ecf7d86237ba02535e886b585dcd85afacc427b8c8",
+      "compiledSha256": "006179a6e03765f42764442a45d0b200c23ffe4be31310ea9ad0e0060029e9c8",
+      "compiledBytes": 170023,
+      "itemIds": [
+        "station_dfacfbd2fd649c979ed55d446b30ccf2"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Desert Strike - Return to the Gulf",
+      "primaryRelease": "Desert Strike - Return to the Gulf (USA)",
+      "magazine": "Desert Strike - Return to the Gulf (USA).jpg",
+      "sourceSha256": "bf00eb21c8721ea3ef05a875c7dca209ff79fcd1cb2410288eb42c27afcc04ce",
+      "compiledSha256": "f58d545845868ab17687de3d280e0e0144dcb0784ad89d044c4e5f538304273d",
+      "compiledBytes": 155161,
+      "itemIds": [
+        "station_c991b2b04890b5ac6b3a0f7237129728"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Dig & Spike Volleyball",
+      "primaryRelease": "Dig & Spike Volleyball (USA)",
+      "magazine": "Dig & Spike Volleyball (USA).jpg",
+      "sourceSha256": "541c07b294eb979a1b6f9e851f7e3cced2e9aefe3c381914d81b5c8039aab1f8",
+      "compiledSha256": "7bf99fb3e26b852014c42e8753c7b4f28e31b0b82167c3f826e873241c9b5e62",
+      "compiledBytes": 152608,
+      "itemIds": [
+        "station_ade27e99748fc259e61c1e616e62790b"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Dino Dini's Soccer!",
+      "primaryRelease": "Dino Dini's Soccer! (Europe) (En,Fr,De)",
+      "magazine": "Dino Dini's Soccer! (Europe).jpg",
+      "sourceSha256": "7cb38d5faac31beb9b764f4c53dcd2ad97388634c147d7e7cbc9d2df95dc5424",
+      "compiledSha256": "67a800c37605e0d2d72a514691d433017cf5d19a50dd340a4534f66dc1ddeee5",
+      "compiledBytes": 157979,
+      "itemIds": [
+        "station_15758b31e43d35c4cc2f99efd07a91da"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Dirt Racer",
+      "primaryRelease": "Dirt Racer (Europe) (En,Fr,De)",
+      "magazine": "Dirt Racer (Europe).jpg",
+      "sourceSha256": "8e186e9f4deb412d92d94fce0126a4e20d2d1a0f0f1d7b3462669ecd1d04668b",
+      "compiledSha256": "1de058598f4b8d0ff6ab4899cb6b058a679584573917445db44beba5387bbab8",
+      "compiledBytes": 166075,
+      "itemIds": [
+        "station_184e80cfc00b4057cb96bf479cf38b48"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Dirt Trax FX",
+      "primaryRelease": "Dirt Trax FX (USA)",
+      "magazine": "Dirt Trax FX (USA).jpg",
+      "sourceSha256": "7a3aaea0346fff14c66f7acb9e5044134dc931d3e06e9d0e803aaa8ed11c1070",
+      "compiledSha256": "1a59ac912e8a7219a5b7ae0dcb445a3c7b729bfdd21ed83d6817703cf635e8b8",
+      "compiledBytes": 164604,
+      "itemIds": [
+        "station_632f44b64ad6d8cdfffd75ed7af8274a"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Donkey Kong Country 2 - Diddy's Kong Quest",
+      "primaryRelease": "Donkey Kong Country 2 - Diddy's Kong Quest (USA) (En,Fr)",
+      "magazine": "## 1 -PT-BR ##/Donkey Kong Country 2 - Diddy's Kong Quest (USA).jpg",
+      "sourceSha256": "c6b99a8b6d35d065175f2664ca6a8aec47c8ee63631aca48cf4fcd19a9c67bc9",
+      "compiledSha256": "0389b298cb66efc527c0db917be0e20597cca84d8f1b3f0b080c657200f26697",
+      "compiledBytes": 159085,
+      "itemIds": [
+        "station_40078034f6e0a3df307d045844dd3b42"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Donkey Kong Country 3 - Dixie Kong's Double Trouble!",
+      "primaryRelease": "Donkey Kong Country 3 - Dixie Kong's Double Trouble! (USA) (En,Fr)",
+      "magazine": "## 1 -PT-BR ##/Donkey Kong Country 3 - Dixie Kong's Double Trouble! (USA).jpg",
+      "sourceSha256": "75dfb59ebb887368e92f0e8492dd5242843e5dd37af506f1360487f909dc612d",
+      "compiledSha256": "095fb665063411a968d4de909076c171ebf17fe68754053d566ddfeceb87f1ae",
+      "compiledBytes": 169932,
+      "itemIds": [
+        "station_ac06c36d530a36a8e2e1360a520d8bf8"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Donkey Kong Country 3 - Dixie Kong's Double Trouble!",
+      "primaryRelease": "Donkey Kong Country 3 - Dixie Kong's Double Trouble! (USA) (En,Fr)",
+      "magazine": "## DONKEY KONG ##/Donkey Kong Country 3 - Dixie Kong's Double Trouble! (USA).jpg",
+      "sourceSha256": "75dfb59ebb887368e92f0e8492dd5242843e5dd37af506f1360487f909dc612d",
+      "compiledSha256": "095fb665063411a968d4de909076c171ebf17fe68754053d566ddfeceb87f1ae",
+      "compiledBytes": 169932,
+      "itemIds": [
+        "station_696cc13719d5c89263b8685b6eaf60bf"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Doom Troopers",
+      "primaryRelease": "Doom Troopers (USA)",
+      "magazine": "Doom Troopers (USA).jpg",
+      "sourceSha256": "3bdbb9df9f6d69c6ad90a45d3e61a882443939fdbd6b01c71e76f695d9849f26",
+      "compiledSha256": "70eba5104f37a93abfe805fcf97d73a608f0607a7b3289a7be8d56c02a78a4df",
+      "compiledBytes": 163323,
+      "itemIds": [
+        "station_8ec6d85a680c00f82ab453d9ea344513"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Doom",
+      "primaryRelease": "Doom (USA)",
+      "magazine": "Doom (USA).jpg",
+      "sourceSha256": "b89fd2a9200d7c8fb4d7d2fe4fdb22fe271697ed1894cdb2fca3dda1bf5e0c3f",
+      "compiledSha256": "2d0b6993807deca29ad1f08ce11514ddc2651081f8d9f5314f1156322db4a101",
+      "compiledBytes": 154236,
+      "itemIds": [
+        "station_e41c5a002bb49a140e4fc0fec025f8e1"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Doomsday Warrior",
+      "primaryRelease": "Doomsday Warrior (USA)",
+      "magazine": "Doomsday Warrior (USA).jpg",
+      "sourceSha256": "de23a2f5eae5eb1a768de8248877af6cdbc2dd57d1c42531a6fe04853cccfbfd",
+      "compiledSha256": "9f7fb4f810716ff990f4802f0bbc7faa3ffc44300e60929fcd1ba77416efaa49",
+      "compiledBytes": 168979,
+      "itemIds": [
+        "station_d15cb1ab13d83bba42e6b9e98409d07e"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Dragon - The Bruce Lee Story",
+      "primaryRelease": "Dragon - The Bruce Lee Story (USA)",
+      "magazine": "## 1 -PT-BR ##/Dragon - The Bruce Lee Story (USA).jpg",
+      "sourceSha256": "6919c26d76a169113eb21278ed4e42dfca372063066cdd187a81e4acd2935405",
+      "compiledSha256": "a58002a906dbc90e45b3382e97a9ead47aba6b99ca130b27c9901784ff65328a",
+      "compiledBytes": 128355,
+      "itemIds": [
+        "station_0998a461347b0dcc85c6805b2e6b70b6"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Dragon View",
+      "primaryRelease": "Dragon View (USA)",
+      "magazine": "Dragon View (USA).jpg",
+      "sourceSha256": "43454cc15e105486c9ef4402301e90e5f30b526868e1af36758a2556849d1651",
+      "compiledSha256": "f5925f6ce357c77b836ab44a4672f170d1d1eddcbde6d9f0cd479671eea083c3",
+      "compiledBytes": 159527,
+      "itemIds": [
+        "station_89b783b0091b4baf2251d88595171c54"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Dragon's Lair",
+      "primaryRelease": "Dragon's Lair (USA)",
+      "magazine": "## 1 -PT-BR ##/Dragon's Lair (USA).jpg",
+      "sourceSha256": "232c9b592758164602e229566c08d86b6eaea37eb16a871f98ca5034e28c2163",
+      "compiledSha256": "bbf64c313ce6b13a157e13a1818cd9d137e7bf06fa74a68e4d5d86bbcd1d07ee",
+      "compiledBytes": 154499,
+      "itemIds": [
+        "station_675393a80fa6ca0936293fff5ed07351"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Drakkhen",
+      "primaryRelease": "Drakkhen (USA)",
+      "magazine": "Drakkhen (USA).jpg",
+      "sourceSha256": "9dff23f021b7ec602d5f2ee4330c99d29beb4c7587110258444e00683e13f7e7",
+      "compiledSha256": "842a60c961d463b4daa65956c8cc040b72ac861a489be19a720e7ed866576878",
+      "compiledBytes": 161848,
+      "itemIds": [
+        "station_7a146b45c8afc5eaafffbe3579d32192"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Dungeon Master",
+      "primaryRelease": "Dungeon Master (USA)",
+      "magazine": "Dungeon Master (USA).jpg",
+      "sourceSha256": "43706f03714de33e8fa6359bec0263f8536e10e94028a9f64fac6a8e2721e777",
+      "compiledSha256": "6273c1098a63f7dd06d7ecd0ce9754b6948e492e54ebc67a9f42dad28c9e883a",
+      "compiledBytes": 160337,
+      "itemIds": [
+        "station_706033608edc46b8d321b17410964199"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "E.V.O. - Search for Eden",
+      "primaryRelease": "E.V.O. - Search for Eden (USA)",
+      "magazine": "## 1 -PT-BR ##/E.V.O. - Search for Eden (USA).jpg",
+      "sourceSha256": "95c4c2d8b1a8d4dbbbf7fc224d4999cd569b24e2b123a42407a631d1d58eea70",
+      "compiledSha256": "1ef69a34a24a1b5bba643454472b6ce420217f79e61eae7ce98b18795811ccbb",
+      "compiledBytes": 170200,
+      "itemIds": [
+        "station_79ca63bf924c0b94ca216c97e8ccb5ec"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Earth Defense Force",
+      "primaryRelease": "Earth Defense Force (USA)",
+      "magazine": "Earth Defense Force (USA).jpg",
+      "sourceSha256": "49a03ed2a6f12fbde60db95db5832b9a28118b012dbd2c66e64af5e1d158a710",
+      "compiledSha256": "29a45273d0dbe2e6761a5aad6c48818dba87517b9a337990c1c539582a3885ce",
+      "compiledBytes": 155941,
+      "itemIds": [
+        "station_e4f3a48449c46025670d6d30898de805"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "EarthBound",
+      "primaryRelease": "EarthBound (USA)",
+      "magazine": "## 1 -PT-BR ##/Earthbound (USA).jpg",
+      "sourceSha256": "95f6fc369c91fe3d90155fe4ba58701191e192847ec8aa86bfed09f202b0b4ea",
+      "compiledSha256": "75d4a25322a5e5bfcb10abb5ab94fce28985e71f4017d1828a9fbc9dc21b03b9",
+      "compiledBytes": 147947,
+      "itemIds": [
+        "station_f07bfe68cffaa7eae822906bb7cbe715"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Earthworm Jim 2",
+      "primaryRelease": "Earthworm Jim 2 (USA)",
+      "magazine": "## 1 -PT-BR ##/Earthworm Jim 2 (USA).jpg",
+      "sourceSha256": "ad5cb713ce10ca839d52134e6b7ff769bff55d5fd18880aae27ced6637b5e083",
+      "compiledSha256": "7dbcfe4fac70ea26e40a26960fce66b2cfcf97f089e418e0172c8f9d5bda489d",
+      "compiledBytes": 158908,
+      "itemIds": [
+        "station_81844c5c3ef7ce8178db335c5ea18b03"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Earthworm Jim",
+      "primaryRelease": "Earthworm Jim (USA)",
+      "magazine": "Earthworm Jim (USA).jpg",
+      "sourceSha256": "b1ecd06832db0e6d875d508f13bc2b06a5f549cc1ad0047e9d9b9148d363deae",
+      "compiledSha256": "1f522c248a6cd3a7de0cf1814c08a2f3e56d732bfc5c13848aeceb03818c8149",
+      "compiledBytes": 159677,
+      "itemIds": [
+        "station_a8bbb161b0be74fc8ed874e400acd78b"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Eek! The Cat",
+      "primaryRelease": "Eek! The Cat (USA)",
+      "magazine": "Eek! The Cat (USA).jpg",
+      "sourceSha256": "94aeea7e67a16014ba4ed8320e0097068a5c0516fa310e7f4eb781e64ed3dfd6",
+      "compiledSha256": "b1979eecb85bf0cffd142cb9d9469347af819b8121178e4b6d0da48b83c200cd",
+      "compiledBytes": 152008,
+      "itemIds": [
+        "station_dfba3446735e982e2aebf165b33fa771"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Elite Soccer",
+      "primaryRelease": "Elite Soccer (USA)",
+      "magazine": "Elite Soccer (USA).jpg",
+      "sourceSha256": "ec4a265e807f6abdd85f03e56ce92c9086f40c29d26b5c12d51d82e76173fef5",
+      "compiledSha256": "053be9b8e4b381262cd7b4a6781bd359d8de1f5ee71040c96fb28a1269a6507e",
+      "compiledBytes": 142534,
+      "itemIds": [
+        "station_6dd191758a32801dccc18422d75cf54e"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Emmitt Smith Football",
+      "primaryRelease": "Emmitt Smith Football (USA)",
+      "magazine": "Emmitt Smith Football (USA).jpg",
+      "sourceSha256": "0fcd8896d8226fff39429e8d8adeee105a9510a9eb021de8a4c84e68d2842b2e",
+      "compiledSha256": "119bee508422ee0fda9cd3ec0ffa8a288e30a096db75b318e680d08ea197f987",
+      "compiledBytes": 138821,
+      "itemIds": [
+        "station_6b63186ec8a03267acce6385e5c34761"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Equinox",
+      "primaryRelease": "Equinox (USA)",
+      "magazine": "Equinox (USA).jpg",
+      "sourceSha256": "516786bd376c13047ca235fbc4e273c29b5645ddb97f73a84b330d4f69bf2b79",
+      "compiledSha256": "0388978d8737bff60de35580f08a36edd2e899b374b5d8c76b4981a815ee486c",
+      "compiledBytes": 162802,
+      "itemIds": [
+        "station_c09a4ee6f97360bd09a884fa51b40960"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "ESPN Baseball Tonight",
+      "primaryRelease": "ESPN Baseball Tonight (USA)",
+      "magazine": "ESPN Baseball Tonight (USA).jpg",
+      "sourceSha256": "51d8b887e155eee01a3c96e9ac2d92ee94ea7dadeefb109e50b0b85f55603a00",
+      "compiledSha256": "22ba96dcb375d8fada97facf55ebae24353ff2b347375602552b3b86414b62f1",
+      "compiledBytes": 132406,
+      "itemIds": [
+        "station_c6c3ef24f4bbb960eb51c471fb998470"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "ESPN National Hockey Night",
+      "primaryRelease": "ESPN National Hockey Night (USA)",
+      "magazine": "ESPN National Hockey Night (USA).jpg",
+      "sourceSha256": "60f8d1027d1dde8fde473bb7009586fe86a6ae69d22a10647ea269c68b0319ac",
+      "compiledSha256": "1062cd38a6bc171532fe52cc64e6790338d58132ef92d56da307a2ad426b2f9b",
+      "compiledBytes": 170819,
+      "itemIds": [
+        "station_0dd7bc7a5b320b4de6ca2554139c336f"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "ESPN Speedworld",
+      "primaryRelease": "ESPN Speedworld (USA)",
+      "magazine": "ESPN Speedworld (USA).jpg",
+      "sourceSha256": "b9d463d539c37cfad7ca7ab9784f801a2dd126fe9a3ff214f6e805ea81c2e0ad",
+      "compiledSha256": "7a0e4f94291df48f683aa67ed73dc7549fe00e53eeb3d786ac45f29447e1eb44",
+      "compiledBytes": 153797,
+      "itemIds": [
+        "station_6b0a82be57b3ddda7b761b600b451526"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "ESPN Sunday Night NFL",
+      "primaryRelease": "ESPN Sunday Night NFL (USA)",
+      "magazine": "ESPN Sunday Night NFL (USA).jpg",
+      "sourceSha256": "7c3d1737831408e0dbb2eb905dabd08b27a2dc59042636a9b89829c5181e6830",
+      "compiledSha256": "a427eb2e7aae35e160360d38b1ff2c7a0cb601e7c014b00c3be15d0e5de45c7f",
+      "compiledBytes": 130125,
+      "itemIds": [
+        "station_368e6194d59a976bec4df88432c3f229"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Duel, The - Test Drive II",
+      "primaryRelease": "Duel, The - Test Drive II (USA)",
+      "magazine": "Duel, The - Test Drive II (USA).jpg",
+      "sourceSha256": "1b33e5ea7ff5f6478a8f6cdd18f761a579ea20f623a227bd066735145ad04784",
+      "compiledSha256": "8b81d728de1432cc69c1ea1f360d0b67f4fe56639997eec7dd9a9802cce6f5ab",
+      "compiledBytes": 144123,
+      "itemIds": [
+        "station_dcdc98559f1d0da61b0005e7dd589371"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "title": "Donkey Kong Country 2 - Diddy's Kong Quest",
+      "primaryRelease": "Donkey Kong Country 2 - Diddy's Kong Quest (USA) (En,Fr)",
+      "magazine": "## DONKEY KONG ##/Donkey Kong Country 2 - Diddy's Kong Quest (USA) (Rev 1).jpg",
+      "sourceSha256": "c6b99a8b6d35d065175f2664ca6a8aec47c8ee63631aca48cf4fcd19a9c67bc9",
+      "compiledSha256": "0389b298cb66efc527c0db917be0e20597cca84d8f1b3f0b080c657200f26697",
+      "compiledBytes": 159085,
+      "itemIds": [
+        "station_7950304a432ad601a0fa8c14c694a255"
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    }
+  ],
+  "unmatched": [
+    {
+      "title": "Dennis",
+      "primaryRelease": "Dennis (Europe)",
+      "sourceFile": "capas/DENNIS_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Desert Fighter",
+      "primaryRelease": "Desert Fighter (Europe)",
+      "sourceFile": "capas/DESERT_FIGHTER_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "DinoCity",
+      "primaryRelease": "DinoCity (USA)",
+      "sourceFile": "capas/DINOCITY_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Donkey Kong Country - Competition Cartridge",
+      "primaryRelease": "Donkey Kong Country - Competition Cartridge (USA) (Competition Cart, Nintendo Power mail-order)",
+      "sourceFile": "capas/DONKEY_KONG_COUNTRY_COMPETITION_CARTRIDGE_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Dragon Ball Z - Chomutujeon",
+      "primaryRelease": "Dragon Ball Z - Chomutujeon (Korea)",
+      "sourceFile": "capas/DRAGON_BALL_Z_CHOMUTUJEON_4K_V2.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Dragon Ball Z - Hyper Dimension",
+      "primaryRelease": "Dragon Ball Z - Hyper Dimension (France)",
+      "sourceFile": "capas/DRAGON_BALL_Z_HYPER_DIMENSION_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Dragon Ball Z - La Legende Saien",
+      "primaryRelease": "Dragon Ball Z - La Legende Saien (France)",
+      "sourceFile": "capas/DRAGON_BALL_Z_LA_LEGENDE_SAIEN_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Dragon Ball Z - Super Butouden",
+      "primaryRelease": "Dragon Ball Z - Super Butouden (France)",
+      "sourceFile": "capas/DRAGON_BALL_Z_SUPER_BUTOUDEN_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Dragon Ball Z - Ultime Menace",
+      "primaryRelease": "Dragon Ball Z - Ultime Menace (France)",
+      "sourceFile": "capas/DRAGON_BALL_Z_ULTIME_MENACE_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Dream T.V.",
+      "primaryRelease": "Dream T.V. (USA)",
+      "sourceFile": "capas/DREAM_T_V_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Eric Cantona Football Challenge",
+      "primaryRelease": "Eric Cantona Football Challenge (France) (En,Fr,De,Es,It,Nl,Sv)",
+      "sourceFile": "capas/ERIC_CANTONA_FOOTBALL_CHALLENGE_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Euro Football Champ",
+      "primaryRelease": "Euro Football Champ (Europe)",
+      "sourceFile": "capas/EURO_FOOTBALL_CHAMP_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Exertainment Mountain Bike Rally + Speed Racer",
+      "primaryRelease": "Exertainment Mountain Bike Rally + Speed Racer (USA)",
+      "sourceFile": "capas/EXERTAINMENT_MOUNTAIN_BIKE_RALLY_SPEED_RACER_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Exhaust Heat",
+      "primaryRelease": "Exhaust Heat (Europe)",
+      "sourceFile": "capas/EXHAUST_HEAT_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    }
+  ]
+}
