@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "stageFailureWasPrettyModeJson": true,
+  "prettyBytes": 8524199,
+  "compactBytes": 6755374,
+  "registrarLimitBytes": 8388608,
+  "semanticEqualityVerified": true,
+  "priorModesUnchanged": true,
+  "pendingModes": 321,
+  "first78AlreadyApplied": true,
+  "protectedRegistrarOrLimitsChanged": false,
+  "productionMutated": false
+}

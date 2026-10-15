@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "originalOfflineBridgePreserved": true,
+  "newBridgeExports": [
+    "stationVideoOverrideReady",
+    "overrideAeVidExtFuncs"
+  ],
+  "newBridgeSoname": "libstation_ae_bridge.so",
+  "targetCore": "libstation_mupen64plus_core.so",
+  "allPtLoadAlignments": 16384,
+  "androidExecutionPerformedHere": false,
+  "reviewedActualKitLibrary": true
+}

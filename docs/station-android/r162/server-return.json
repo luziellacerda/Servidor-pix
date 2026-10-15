@@ -1,0 +1,131 @@
+{
+  "schema": "station.r162.server-return.v1",
+  "updatedUtc": "2026-10-15T14:22:04.954423+00:00",
+  "revision": "R162",
+  "serverApplied": true,
+  "serverN64Ready": true,
+  "serverN64Offline": false,
+  "acceptedKitSha256": "a777e90a1c5add265aed328e13c884af1277a8dee6770be4ca109d431aeec942",
+  "acceptedKitBytes": 12338080,
+  "privateKitReceivedAndHashVerifiedHere": true,
+  "archiveFiles": 40,
+  "manifestHashedFiles": 39,
+  "actualReceivedElfFilesVerified": 27,
+  "engineLibraries": 6,
+  "dependencies": 21,
+  "apkRequestedHere": false,
+  "apkReceivedHere": false,
+  "apkHashIndependentlyReadHere": false,
+  "producerReportedInstalledApkSha256": "7ec742c4cae7b663f2198e347253986b4c4c5d0d0461052dd75df56ca6335dd7",
+  "producerReportedInstalledPhones": [
+    "moto g52",
+    "Samsung A56"
+  ],
+  "currentPhonesPersonallyInspectedHere": false,
+  "exactEngineBindings": [
+    {
+      "platform": "psx",
+      "engineId": "pcsx-rearmed-ff81ed17-player-v3-bf682d6798e7",
+      "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+      "runtimeSha256": "bf682d6798e74cb46cd221ecceb10475e4f7fb2d11e1da45a84e2f25ac7ad4ab"
+    },
+    {
+      "platform": "n64",
+      "engineId": "mupen64plus-ae-33bf7021-n64-v3-57155617f470",
+      "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+      "runtimeSha256": "57155617f470e39144ba050169bdf5801f0392f62995a95d0116a4497ce0fd1e"
+    },
+    {
+      "platform": "gamecube",
+      "engineId": "dolphin-5102a033-gamecube-v3-3bfbe6be43a7",
+      "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+      "runtimeSha256": "3bfbe6be43a7c507a381b4d5ef9a0f7571737031453eb7254835687199972796"
+    },
+    {
+      "platform": "wii",
+      "engineId": "dolphin-5102a033-wii-v3-3bfbe6be43a7",
+      "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+      "runtimeSha256": "3bfbe6be43a7c507a381b4d5ef9a0f7571737031453eb7254835687199972796"
+    }
+  ],
+  "n64ProfileSha256": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
+  "n64Cpu": "dynarec",
+  "inputDelay": 2,
+  "newOnlineVideoBridge": "libstation_ae_bridge.so",
+  "onlineBridgeSha256": "3d0a9e9dc5ca31629f478023b849fe2037b4a68b9ac3689ba413a5f542191986",
+  "offlineBridgeAndAllPriorCoresOptionsPreserved": true,
+  "publication": {
+    "catalogRevision": 96,
+    "catalogEntries": 4744,
+    "engineCount": 75,
+    "profileCount": 14928,
+    "preparedModeCount": 10013,
+    "pid": 2489,
+    "dllSha256": "b3473cc0160169f686501af914cdbf8ebfdf8dcaa4dff768e1106ee8461c9179",
+    "enginesAdded": 4,
+    "profilesAdded": 399,
+    "preparedModesAdded": 399
+  },
+  "first78ReviewedModesApplied": true,
+  "complete321DecisionsApplied": true,
+  "first78TransactionRepeated": false,
+  "priorEngineCountPreserved": 71,
+  "priorProfilesAndModesPreserved": true,
+  "compactSerializationFix": {
+    "semanticEqualityVerified": true,
+    "limitBytes": 8388608,
+    "prettyBytes": 8524199,
+    "compactBytes": 6755374,
+    "protectedLimitsChanged": false
+  },
+  "n64Coverage": {
+    "editions": 157,
+    "multiplayerEditions": 120,
+    "individualOnlyEditions": 37,
+    "ownerProfiles": 387,
+    "maximumFourEditions": 85,
+    "maximumThreeEditions": 2,
+    "maximumTwoEditions": 33
+  },
+  "verification": {
+    "all157SignedCapabilitiesLocal": true,
+    "all157SignedCapabilitiesPublic": true,
+    "newMultiplayerModeAdmissions": 164,
+    "individualOrUnsupportedCountRefusals": 223,
+    "publicFourParticipantTransportPassed": true,
+    "publicParticipants": 4,
+    "readyPauseRecoveryTlsSpkiAndPriorityPassed": true,
+    "otherNativeSignedCapabilitySamplesPassed": true,
+    "ownSyntheticLicensesRemoved": true,
+    "realLicensesPreserved": true,
+    "firstFourParticipantAttemptHttp502": true,
+    "remainingProofRetestPassed": true,
+    "public502CauseNotEstablished": true
+  },
+  "apiRestarted": false,
+  "protectedRegistrarChanged": false,
+  "priorR161StillRegistered": true,
+  "romCoversNetworkAndOtherProductsUnchanged": true,
+  "psxHleApprovalsAdded": 0,
+  "physicalAndroidGameplayValidated": false,
+  "physicalFourAndroidGameplayValidated": false,
+  "r161BlackScreenCauseDocumentedByProducer": true,
+  "r162VideoFixPhysicallyHomologatedHere": false,
+  "hostExitAudit": {
+    "separateFromVideoFix": true,
+    "serverPolicyChanged": false,
+    "physicalGuestTraceAfterHostLeaveStillNeeded": true
+  },
+  "privateAuthority": "/mnt/DADOS/station-git-return-20261015-1355/applied.json",
+  "nextAction": "Test the same R162 APK and edition on both phones: offline image, online first frame, audio, independent controls and host exit. Do not repeat registration.",
+  "evidencePaths": [
+    "evidence/received-kit-verified.json",
+    "evidence/video-bridge-static-proof.json",
+    "evidence/preflight.json",
+    "evidence/compact-mode-preflight.json",
+    "evidence/server-applied.json",
+    "evidence/public-four-participant-transport.json",
+    "evidence/operator-source-sha256.json",
+    "evidence/public-502-observation.json"
+  ]
+}

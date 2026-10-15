@@ -1,6 +1,6 @@
 {
   "schema": "station.r161.server-return.v1",
-  "updatedUtc": "2026-10-15T12:38:13.110493+00:00",
+  "updatedUtc": "2026-10-15T14:22:04.954423+00:00",
   "revision": "R161",
   "serverApplied": true,
   "serverN64Ready": true,
@@ -91,7 +91,7 @@
   "physicalFourAndroidGameplayValidated": false,
   "twoCurrentPhoneInstallationsDirectlyVerifiedHere": false,
   "producerA56InstallReceiptReceived": true,
-  "current007BlackScreenCauseConfirmed": false,
+  "current007BlackScreenCauseConfirmed": true,
   "bandwidthUploadMbps": 100,
   "bandwidthDownloadMbps": 800,
   "onboardOnlyNetworkPreserved": true,
@@ -106,5 +106,8 @@
     "evidence/server-applied.json",
     "evidence/public-four-participant-transport.json",
     "evidence/operator-source-sha256.json"
-  ]
+  ],
+  "r161PhysicalVideoFailureDocumentedByProducer": true,
+  "videoFailureEvidence": "physical-n64-video-failure-20261015.md",
+  "nextVideoTestRevision": "R162"
 }

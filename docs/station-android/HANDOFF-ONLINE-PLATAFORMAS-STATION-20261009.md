@@ -1,3 +1,56 @@
+<!-- STATION-R162-APPLIED-20261015 -->
+## R162: retorno analisado e motores aplicados — 15/10/2026
+
+**R162 cadastrada e comprovada no servidor para o próximo teste dos dois aparelhos.**
+Retornos da produção 841a7ff/0effcce/f4411a1: a captura R161 demonstrou falha de
+VideoExt ligado ao core offline; o online executava outro core e caía em
+SDL_SetVideoMode failed. A R162 acrescenta uma ponte exclusiva online. A produção
+informa R162 instalada nos dois aparelhos; este Linux não inspecionou esses telefones.
+Ler [estado efetivo](r162/server-return.json) e [análise física da produção](r161/physical-n64-video-failure-20261015.md).
+
+O kit privado exato já estava disponível localmente: SHA a777e90a, 12.338.080 bytes.
+Conferidos 40 arquivos ZIP, 39 hashes do manifesto, seis ELF de motores e 21
+dependências. A ponte nova exporta stationVideoOverrideReady/overrideAeVidExtFuncs,
+aponta ao core online e tem PT_LOAD de 16 KiB. Ponte offline, cores e opções anteriores
+preservados. **Nenhum APK solicitado/recebido/lido aqui:** seu hash 7ec742c4 é o
+relatado pela produção e pelos recibos de instalação. O registrador vigente aceita
+os binários privados do kit; não foi usado APK antigo nem declarada verificação
+local da assinatura/instalação R162.
+
+Aplicação aditiva com autenticação Linux real, baselines frescas, backup e
+scan.lock: quatro motores, 78+321 decisões reais, 399 novos perfis/modos; os
+71 owners anteriores foram preservados. A primeira etapa passou;
+a segunda encontrou JSON indentado de 8.524.199 bytes acima do limite de 8 MiB. A mesma
+estrutura compactada tem 6.755.374 bytes, igualdade semântica e prefixos conferidos.
+Retomada somente da etapa de 321, com outra baseline; a etapa de 78 não foi repetida.
+Nenhum limite/validador/módulo protegido alterado.
+
+Passaram capabilities assinadas locais/públicas das 157 edições, 164 admissões multiplayer,
+223 recusas e transporte público com quatro participantes
+sintéticos/slots/READY/pausa-retomada/TLS-SPKI/prioridade. Não é gameplay Android.
+Snapshot final: catálogo 96, 75 motores, 14928 perfis,
+10013 modos; API PID 2489/DLL b347 sem reinício. Licenças sintéticas
+próprias removidas/reais preservadas. Capas, ROMs, rede onboard/DNS/banda 100/800,
+DLL, políticas de recuperação e demais produtos preservados.
+
+A primeira prova com quatro participantes recebeu HTTP 502 na preparação da
+sala. API local respondeu 200 em 4,7 ms, acesso público voltou a responder e os PIDs
+e reinícios permaneceram iguais. O journal registrou oito streams cancelados;
+a causa do 502 não foi estabelecida. Foi repetida somente a prova restante,
+que passou; cadastro e 157 edições não foram repetidos. A falha e o diagnóstico
+foram preservados em [observação sanitizada](r162/evidence/public-502-observation.json).
+
+Próximo teste: mesma R162/edição nos dois telefones, imagem offline e primeiro
+quadro online, áudio, fluidez e controles. Saída do anfitrião é uma auditoria
+separada, sem mudança misturada nesta publicação; ainda precisa de captura do
+convidado por 25 s. O DownloadService observado no A56 não foi comprovado como
+órfão. O preparo inicial de 44,6 s do carrossel no g52 antecede o jogo e não foi uma
+medição do servidor. [Capturador corrigido](r159/diagnostics/README.md).
+
+Autoridade `/mnt/DADOS/station-git-return-20261015-1355/applied.json`, PASSED. NÃO repetir cadastro/provas/DLL/R161,
+R159 ou recuperação de boot. R162 continua candidata até gameplay físico; os
+recibos originais da produção e todas as evidências da primeira falha foram preservados.
+
 <!-- STATION-MAINTENANCE-20261015-13Z -->
 ## Manutenção 13h UTC — capas publicadas e R161 do g52 conciliada — 15/10/2026
 

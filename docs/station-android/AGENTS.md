@@ -1,3 +1,17 @@
+## R162 aplicada por kit privado — 15/10/2026
+
+Ler o topo do mesmo handoff e r162/server-return.json. Kit a777e90a conferido,
+27 ELF/40 arquivos; APK não solicitado/recebido nem assinatura local alegada.
+Ponte VideoExt online nova, offline/core/opções preservados. Cadastro 78+321
+concluído; etapa de 78 não repetida após falha de tamanho do JSON indentado.
+JSON compacto semanticamente igual; limites/registrador protegido intactos.
+Autoridade /mnt/DADOS/station-git-return-20261015-1355/applied.json PASSED.
+157 capabilities locais/públicas, 164 admissões/223 recusas e quatro clientes sintéticos PASS.
+NÃO repetir cadastro/provas/DLL/R161/R159/boot recovery. Teste físico R162 e
+saída do anfitrião seguem separados/pendentes. Preservar capas 13z/rede/banda.
+
+## Histórico preservado
+
 ## Manutenção13z aplicada — 15/10/2026
 
 Ler o topo do MESMO handoff e maintenance/20261015-13z/sanitized-receipt.json.

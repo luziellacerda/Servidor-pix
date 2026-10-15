@@ -1,0 +1,13 @@
+{
+  "schema": "station.r162.received-applied.v1",
+  "utc": "2026-10-15T14:22:04.954423+00:00",
+  "producerCommit": "f4411a11f8ad82a60aeda727496f1a04eb2518c0",
+  "privateKitReceived": true,
+  "kitHashAnd27ElfsVerified": true,
+  "apkReceived": false,
+  "sourceApkIndependentlyVerified": false,
+  "serverApplied": true,
+  "serverN64Ready": true,
+  "physicalGameplayValidated": false,
+  "currentServerReturn": "server-return.json"
+}
