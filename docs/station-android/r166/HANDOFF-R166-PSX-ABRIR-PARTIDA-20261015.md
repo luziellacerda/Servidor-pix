@@ -2,6 +2,10 @@
 
 **Estado em 15/10/2026:** o APK R166 foi montado, assinado e conferido; o kit independente foi gerado e conferido. Cadastro no servidor e partida física R166 ainda estão pendentes. Este documento não é recibo de implantação.
 
+**Atualização de escopo:** o cliente solicitou também ampliar as células menores do carrossel em 10%. Está sendo montada uma R167 combinada sobre a R166, com novas identidades. Se o cadastro R166 ainda não começou, aguarde o handoff R167 para fazer um único cadastro. Se já foi aplicado, preserve o recibo e as identidades R166; a R167 será aditiva.
+
+O [kit privado sem APK](https://github.com/luziellacerda/TurboramaEmulationStation/tree/0b4dc002/station-server-handoffs/r166) está no ramo `handoff/station-r166-psx-open-20261015`; a [fonte e receita do app](https://github.com/luziellacerda/TurboElden/tree/build/station-r166-psx-open-20261015) estão em ramo separado. Este ramo de handoff não efetua o cadastro: aplicar o registrador do servidor e devolver recibo comprovado.
+
 ## Incidente comprovado em dois telefones R165
 
 O Galaxy A56 e o moto g52 estavam na R165. Na edição aprovada **Capcom vs. SNK — Millennium Fight 2000 Pro**, modo **VS Mode** para duas pessoas, os participantes chegaram à mesma sala. No g52, tocar em **Abrir partida** não abriu o emulador. A captura mostrou o anfitrião e o convidado na sala, com a opção de reconectar após a falha. O registro do aparelho chegou a `StationRooms: launch stage=prepare` e terminou em `java.io.IOException` em `StationPsxLaunch.verifyBinaries:142`, antes de iniciar o processo PSX. Um HTTP 409 de geração anterior foi sucedido pela preparação da geração atual; ele não explica esta falha.
