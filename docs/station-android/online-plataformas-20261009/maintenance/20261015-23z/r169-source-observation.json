@@ -1,0 +1,58 @@
+{
+  "utc": "2026-10-15T23:05:29.612642+00:00",
+  "observedRef": "origin/fix/station-psx-cas-r169-20261015",
+  "commit": "e0fea23e96ccedad686f7d7d7d2a821780e486a0",
+  "mergeBaseWithAppliedReturn": "e8c0e8c6cbeb57202c9193cbe4f3cd394da027ca",
+  "deliveryKind": "Producer R169 patch/package/signing recipes only in this public ref; final receipt and server kit absent from the scoped tree",
+  "r169ScopedFiles": [
+    "integration/psx-cas-r169/README.md",
+    "integration/psx-cas-r169/recipe/package_candidate.py",
+    "integration/psx-cas-r169/recipe/patch_dex.py",
+    "integration/psx-cas-r169/recipe/sign_private.py"
+  ],
+  "receivedFileSha256": {
+    "integration/psx-cas-r169/README.md": {
+      "bytes": 1211,
+      "sha256": "67fdac80004e5fee6b012608ea39d7b2055ccc00c749c8a7aa87640d36b05754"
+    },
+    "integration/psx-cas-r169/recipe/package_candidate.py": {
+      "bytes": 21213,
+      "sha256": "73a5522e84d385c709513bc73aa6a73ea5c29f0cd55ba72aee61dd11bb6153a0"
+    },
+    "integration/psx-cas-r169/recipe/patch_dex.py": {
+      "bytes": 12357,
+      "sha256": "0e092e4d9da3dc4d157355d05e64ee9bf043b05f9b8256c1b1f72adfb4ea4b7e"
+    },
+    "integration/psx-cas-r169/recipe/sign_private.py": {
+      "bytes": 15386,
+      "sha256": "aebbe299cb9ada0712c41d15308d37cfb8408813796270d37207532fbbe7c190"
+    },
+    "tooling/usb-installer/Instalar-TurboStations-USB.ps1": {
+      "bytes": 48499,
+      "sha256": "f631752a2ee0ed0569a929cc53b9c8e9f1e4a48239c4da7c4dc80f991126e0c8"
+    },
+    "tooling/usb-installer/README.md": {
+      "bytes": 10539,
+      "sha256": "f1ca8d5a06ccf3dc633cb14481b6a5e341a414369b045c6af3d231be8b1e4e2a"
+    },
+    "tooling/usb-installer/UsbInstallerLauncher.cs": {
+      "bytes": 77108,
+      "sha256": "6d0c5e6be1c0efb10e7e374ed6702cf2ff484f61a64786c0e0c1bb373a6ce472"
+    },
+    "tooling/usb-installer/tests/Check-Installer-Simulations.ps1": {
+      "bytes": 18746,
+      "sha256": "ee1b5b64a670df313a4e54b027dcb3094b84b3a439d5c7a099ca125083484928"
+    }
+  },
+  "localKitGlobsFound": [],
+  "appliedR168Preserved": true,
+  "r169Registered": false,
+  "r169RuntimeIdsAsserted": false,
+  "r169ApkHashAsserted": false,
+  "apkReceivedReadSignedBuiltOrInstalledHere": false,
+  "producerClaim": "R168 DEX35 contains an unresolved helper CAS call; R169 recipe redirects one call to AtomicReference.compareAndSet",
+  "producerClaimReproducedOnAndroidHere": false,
+  "noApkRecipeExecuted": true,
+  "noAppSourceModified": true,
+  "nextRequiredInput": "Final R169 signed APK proof, producer handoff and matching private independent-engine kit with explicit modes; do not reuse R168 identities for R169"
+}

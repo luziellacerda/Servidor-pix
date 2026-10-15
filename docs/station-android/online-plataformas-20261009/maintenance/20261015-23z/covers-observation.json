@@ -1,0 +1,37 @@
+{
+  "manifestSha256": "c78c2fed7eb724347896dd9b8ae92f566a5bd113c379521fc8dbedff7cc48f05",
+  "manifestRows": 1003,
+  "finalized": 220,
+  "declaredOriginalsPresent": 0,
+  "declaredOriginalsAbsent": 220,
+  "pngFilesInCoverDirectory": 0,
+  "requiredOriginals": [
+    {
+      "title": "Fighter's History",
+      "sourceFile": "capas/FIGHTER_S_HISTORY_4K.png",
+      "expectedSha256": "2e0c7792ecffbe30cb42f4bbd1fb1d1a3ed1476d2dfedaf244efdd0427b69344",
+      "exists": false
+    },
+    {
+      "title": "FIFA International Soccer",
+      "sourceFile": "capas/FIFA_INTERNATIONAL_SOCCER_4K.png",
+      "expectedSha256": "260ff871cd433009ca06aa546d85b0de5f34f543cdc25ecc32b7c05ea93bb839",
+      "exists": false
+    },
+    {
+      "title": "FIFA Soccer 96",
+      "sourceFile": "capas/FIFA_SOCCER_96_4K.png",
+      "expectedSha256": "3321eed4ff8682d2cf1deb3b519f53fe9d6e66d309353ca7f5a653f6cf78ac8a",
+      "exists": false
+    }
+  ],
+  "finalizedDefinition": "Rows with declared outputFile and outputSha256, including provided-original-4k",
+  "unchangedSince13z": true,
+  "gitMain": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+  "gitSuperNintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
+  "newGitAssets": 0,
+  "newImports": 0,
+  "jpegsCompiled": 0,
+  "existingCoversPreserved": true,
+  "artworksWithoutExactInstalledEditionRetained": 20
+}
