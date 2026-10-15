@@ -145,6 +145,36 @@ try{
     room=(await Post(1,Cmd("failed"))).GetProperty("room");Check(room.GetProperty("state").GetString()=="unrecoverable","member native failure terminal");
     await Post(0,Cmd("resume",link:links[0]),HttpStatusCode.Conflict);
     var left=await Post(0,Cmd("leave"));Check(left.GetProperty("room").ValueKind==JsonValueKind.Null,"human leave ends TLS room");
+    // Confirmed host exit must reach the guest before the relay closes. A lost
+    // transport above still uses the ordinary waiting/resume epoch.
+    await Task.Delay(1100);
+    room=(await Post(3,Cmd("create",capacity:2))).GetProperty("room");
+    room=(await Post(4,Cmd("join"))).GetProperty("room");
+    room=(await Post(3,Cmd("ready",value:true))).GetProperty("room");
+    room=(await Post(4,Cmd("ready",value:true))).GetProperty("room");
+    room=(await Post(3,Cmd("start"))).GetProperty("room");
+    string leavingLink=room.GetProperty("links")[0].GetProperty("linkId").GetString()!;
+    var leavingHost=await Connect(3,leavingLink);var leavingGuest=await Connect(4,leavingLink);
+    sockets.Add(leavingHost);sockets.Add(leavingGuest);
+    foreach(var ws in new[]{leavingHost,leavingGuest}){await Send(ws,StationStreamFrame.Hello);await Send(ws,StationStreamFrame.Paused,1);await Send(ws,StationStreamFrame.Ready,1);}
+    foreach(var ws in new[]{leavingHost,leavingGuest})Check((await Until(ws,f=>f.Type==StationStreamFrame.State&&f.Value==StationStreamSession.Playing)).Offset==1,"confirmed-leave fixture reached play");
+    // Submit real TSR3 game traffic over TLS immediately before the signed
+    // leave request; the controlled-socket fixture covers the exact race.
+    await Send(leavingGuest,StationStreamFrame.DataPacket,bytes:Enumerable.Range(0,64).Select(i=>(byte)i).ToArray());
+    var leaveClock=System.Diagnostics.Stopwatch.StartNew();
+    Check((await Post(3,Cmd("leave"))).GetProperty("room").ValueKind==JsonValueKind.Null,"confirmed host leave removes room");
+    foreach(var ws in new[]{leavingHost,leavingGuest}){
+        var ended=await Until(ws,f=>f.Type==StationStreamFrame.State&&f.Value==StationStreamSession.Unrecoverable);
+        Check(ended.Offset==2,"STATE=3 delivered before close to both sides");
+        using var closeLimit=new CancellationTokenSource(5000);
+        var close=await ws.ReceiveAsync(new byte[32].AsMemory(),closeLimit.Token);
+        Check(close.MessageType==WebSocketMessageType.Close,"terminal frame precedes WebSocket close");
+    }
+    // Neither synthetic client replies to Close; the server must still release
+    // the replay reservation at the bounded two-second deadline.
+    using(var cleanupLimit=new CancellationTokenSource(5000))
+        while(budget.UsedBytes!=0)await Task.Delay(20,cleanupLimit.Token);
+    Check(leaveClock.Elapsed<TimeSpan.FromSeconds(4),"confirmed leave bounded even without client close reply");
     await Task.Delay(1100); // Separate the new scenario from the production per-second command cap.
     room=(await Post(0,Cmd("create",capacity:5))).GetProperty("room");
     room=(await Post(1,Cmd("join"))).GetProperty("room");room=(await Post(2,Cmd("join"))).GetProperty("room");
