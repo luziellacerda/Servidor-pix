@@ -1,0 +1,29 @@
+{
+  "physicalAndroidGameplayValidated": false,
+  "publicNetwork": true,
+  "engineId": "mupen64plus-ae-33bf7021-n64-v3-a74636835393",
+  "sampleItemId": "station_c16309c829ad81a41da0b4cb7236a4fb",
+  "sampleGame": "007: The World Is Not Enough",
+  "sampleModesAdvertised": 2,
+  "sampleGameEditionsAdvertised": 1,
+  "passed": true,
+  "participants": 4,
+  "uniqueControllerSlots": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "hostGuestLinks": 3,
+  "authenticatedWebSockets": 6,
+  "bidirectionalBytesVerified": 24615,
+  "linkIsolationVerified": true,
+  "globalPauseAndResumeVerified": true,
+  "monotonicOffsetsVerified": true,
+  "publicTLSAndSpkiVerified": true,
+  "allDirectConnectionsPrioritized": true,
+  "ownSyntheticLicensesRemoved": true,
+  "transportReadyBarrierVerified": true,
+  "nativeEmulatorFrontendExecuted": false,
+  "syntheticTransportParticipants": true
+}

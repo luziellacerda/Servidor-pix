@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "enginesAdded": 4,
+  "profilesAdded": 492,
+  "modesAdded": 492,
+  "nativeReviewedModes": 399,
+  "psx": {
+    "reviewedEditions": 84,
+    "decisions": 93,
+    "approvedMultiplayerModes": 23,
+    "approvedMultiplayerEditions": 19,
+    "pendingMultiplayerModes": 17,
+    "localClassificationsWithoutSeats": 53,
+    "exactEditionAndReceivedRuntimePolicyReevaluated": true,
+    "metadataUsedForApproval": false,
+    "sourceRealCoreEvidenceReusedForIdenticalCoreAndOptions": true,
+    "physicalAndroidGameplayValidated": false
+  },
+  "previousEngineCount": 79,
+  "previousProfileCount": 15420,
+  "previousModeCount": 10505,
+  "engineCount": 83,
+  "profileCount": 15912,
+  "modeCount": 10997,
+  "owners": {
+    "psx": "pcsx-rearmed-ff81ed17-player-v3-0a01a6ef6e99",
+    "n64": "mupen64plus-ae-33bf7021-n64-v3-a74636835393",
+    "gamecube": "dolphin-5102a033-gamecube-v3-85dda51eaeda",
+    "wii": "dolphin-5102a033-wii-v3-85dda51eaeda"
+  },
+  "allPreviousBindingsPreserved": true,
+  "physicalGameplayValidated": false
+}

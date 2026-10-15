@@ -1,3 +1,53 @@
+<!-- STATION-R165-APPLIED-20261015 -->
+## R165 aplicada: motores, modos e saída do anfitrião — 15/10/2026
+
+**Servidor atualizado para o app R165.** Pedido `2d4240f` concluído.
+Ler [recibo efetivo](r165/server-return.json), [instruções](r165/README.md) e
+[492 perfis e modos atuais](r165/profiles-r165.json). Os pedidos anteriores
+com cadastro pendente permanecem abaixo como histórico.
+
+Kit privado `2e260ba8`: 43 arquivos, 42 hashes e 27 ELF conferidos. Nenhum APK
+recebido. Quatro motores novos: PSX `0a01a6ef6e99`, N64 `a74636835393`,
+GameCube/Wii `85dda51eaeda`. Os 79 motores anteriores foram preservados.
+Catálogo 100: **83 motores, 15.912 perfis e 10.997 modos**.
+
+PSX: todas as 84 edições reavaliadas; 23 modos de duas pessoas em 19 edições
+aprovados, 17 modos impedidos e 53 classificações locais sem vagas online.
+N64: 157 edições e 387 perfis; 120 edições multiplayer e 37 individuais,
+com 230 modos multiplayer e 157 modos individuais. GameCube: nove modos;
+Wii: três. Aprovação depende de conteúdo, motor, runtime e controles exatos.
+
+Correção de saída ativa: fonte `c0ca229`, DLL `53d4adc9c114`,
+PID 152812. Dois reinícios controlados somente do Station, sem
+sessão em curso. Passaram 1.467 verificações C#, 226 HTTP/TLS, sete regressões
+dos dados e testes isolados com o mesmo sandbox da produção.
+
+A primeira DLL5722 falhou na saída pública. Uma regressão reproduziu Abort
+antes do Close recíproco com frame em trânsito. A DLL final conclui essa troca
+no prazo original de dois segundos. **Três salas públicas independentes**
+confirmaram STATE3 antes de close1000 nos dois participantes, com tráfego
+concorrente e repetição idempotente da saída três vezes por sala.
+Perda de rede sem leave confirmado conserva a recuperação anterior.
+
+Passaram capabilities assinadas locais/públicas das 84 edições PSX e 157 N64:
+23 admissões/167 recusas PSX e 230 admissões/245 recusas N64. Transporte público
+PSX com dois clientes e estado real de 4.456.448 bytes, N64 com quatro clientes,
+READY, pausa/retomada, TLS/SPKI e prioridade passaram na DLL5722. Essas provas
+foram preservadas; a final teve nova consulta dos quatro motores, admissões
+GC/Wii e as provas de saída. A proveniência está no recibo.
+
+**São testes sintéticos; não comprovam gameplay Android.** Há recibo piloto
+R165 no A56; R165 no g52 não está comprovada neste retorno. Testar os dois
+aparelhos com a mesma R165, edição e modo aprovado: vídeo, áudio, controles e
+aviso/retorno do convidado ao sair o anfitrião. R164 estável preservada.
+
+Autoridade privada `/mnt/DADOS/station-psx-return-20261015-1736/completed.json`,
+PASSED. Não repetir cadastro, provas completas, capas ou implantação. Os dados
+anteriores, licenças reais, esquema, ROMs, capas, saves, rede onboard/DNS,
+banda 100/800, outros serviços e releases de retorno foram preservados.
+
+## Histórico preservado
+
 <!-- STATION-PSX-APPLIED-20261015 -->
 ## PSX: todas as 84 edições mapeadas; modos atuais publicados — 15/10/2026
 

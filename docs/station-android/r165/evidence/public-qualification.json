@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "psxLocalEditions": 84,
+  "psxPublicEditions": 84,
+  "psxAdmittedModes": 23,
+  "psxRefusals": 167,
+  "n64LocalEditions": 157,
+  "n64PublicEditions": 157,
+  "n64AdmittedModes": 230,
+  "n64Refusals": 245,
+  "otherPlatformsAdmittedModes": 12,
+  "psxTwoParticipantTransportPassed": true,
+  "n64FourParticipantTransportPassed": true,
+  "confirmedHostExitPublicPassed": true,
+  "exactLeaveReplayPassed": true,
+  "realLicensesPreserved": true,
+  "ownSyntheticLicensesRemoved": true,
+  "physicalAndroidGameplayValidated": false,
+  "editionAndTransportProofDllSha256": "5722fcf64f81644a7227533a4b002d528d6952344e511e8dc9f00dc0ab3cc97e",
+  "finalCloseAndFreshFourOwnerProofDllSha256": "53d4adc9c1143f09c6b136ee085cb599dbe58a286b582107cc88a640483b2eb2",
+  "fullEditionAndPayloadProofsNotReplayed": true,
+  "finalChangeOnlyConfirmedCloseDrain": true
+}

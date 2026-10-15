@@ -1,0 +1,18 @@
+{
+  "files": {
+    "TurboRamaSuiteOnlineServer.runtimeconfig.json": "d016785efd2ef8792ac1fc0be3d3639fa334b5b3abe4e14fbeee530300e803e3",
+    "TurboRamaSuiteNotifications.pdb": "631bad6fbe8a99ea72a1be5be8a7776f993bfcff8adcbf23f94ef0556438f8e7",
+    "TurboRamaSuiteOnlineServer.deps.json": "adf285cbed07023ced1ddb54cbc0212de3b465c2211ecade4eac906e6201219c",
+    "Npgsql.dll": "0c3042974ae128bc31227dadfce24543078e978c7620b84e43a99669fa964811",
+    "packages.lock.json": "546eecd169bce1076fa07e499131f37f4577eda74ecffe2cd7061872e44bdd34",
+    "TurboRamaSuiteNotifications.dll": "f5f0def15b7b5a8d5429c35575273990013c8b1f1b070c4e9d1e8a4c89315aa0",
+    "TurboRamaSuiteOnlineServer": "592ebd0d232a0a8fca4c69af495608f85764e7de73eb578ad11a791395b2a129",
+    "web.config": "a466ce3c7b1c7e0a375b94bc5879b0cab5c32fcc09dbd2854721ba444968bd2c",
+    "TurboRamaSuiteOnlineServer.pdb": "ad293c3310d38b2c824c92c47efdbdc199f92380ebfd6dca5aeee1a20a7ab916",
+    "TurboRamaSuiteOnlineServer.dll": "53d4adc9c1143f09c6b136ee085cb599dbe58a286b582107cc88a640483b2eb2",
+    "appsettings.Development.example.json": "4a8f3766dc7e47a865c0c98fecc2ea3b33ce88ab6bb250e93ba1fa13c9f87877",
+    "appsettings.json": "2084932176b274bbf7c4e485e49ba30596d4a9ed286cc497176b9012f76f6952"
+  },
+  "oldDllSha256": "5722fcf64f81644a7227533a4b002d528d6952344e511e8dc9f00dc0ab3cc97e",
+  "newDllSha256": "53d4adc9c1143f09c6b136ee085cb599dbe58a286b582107cc88a640483b2eb2"
+}
