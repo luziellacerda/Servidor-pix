@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "utc": "2026-10-15T01:01:56.016460+00:00",
+  "matchedMagazines": 36,
+  "uniqueBindings": 36,
+  "uniqueArtworks": 34,
+  "unmatchedArtworks": 14,
+  "finalizedAtSnapshot": 191,
+  "prior20zMappingsAndBytesIdentical": true,
+  "exactMagazineROMStemsVerified": true,
+  "sourceHashesAndJPEGGeometryVerified": true,
+  "atomicWriteFixturePassed": true,
+  "expectedModulesUpdatedForR159": true,
+  "planSha256": "07c72553a7abc623b31ca61bd5ec74f2042b36d615fb2a5df189a5f3470dce82",
+  "operatorSha256": "14fdbc2bc3648fb8641e7260e2cdeb05a1262ebcdd2e9de35a7ded29b6f2614e",
+  "privilegedPublicationExecuted": false
+}
