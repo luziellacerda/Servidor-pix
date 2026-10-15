@@ -1,3 +1,18 @@
+<!-- STATION-MAINTENANCE-20261015-11Z -->
+## Manutenção 11h UTC — conferência e estado real das36 capas — 15/10/2026
+
+Conferência em 2026-10-15T11:14:14.928543+00:00:30 branches servidor/61 app/duas capas comparadas aos refs remotos. O evento aponta somente à entrega anterior server35e7b6b1/app50d1a611; nenhuma carga útil nova de handoff/motor/capaGit. R159 aplicada/provada conciliada, sem repetir cadastro/provas completas/deploy/bootrecovery. Backups prévios publicados e conferidos em `backup/station-before-hourly-20261015-11z` nos dois Gits; worktrees próprias noDADOS.
+
+As36 capas SNES foram publicadas:34 artes/36 vínculos, catálogo88→89, JPEG RGB480×720/q90. Catálogo assinado e36 corpos autenticados locais e36 públicos conferidos; licenças sintéticas próprias removidas. Seeds/fingerprints/revisões atualizados, scanner idempotente sem reconstrução/cópia/hash de ROM.14 artes sem edição exata preservadas na origem.
+
+Primeira autenticação nativa concluiu, mas parou antes de carregar o contexto protegido: script auxiliar local `inspect.py` colidiu com módulo padrão Python. Renomeado para `inspect-cycle.py`; falha e recibos preservados; tentativas seguintes executadas em diretórios separados. A tentativa2 bloqueou preparo de uma ROM NeoGeo ainda não importada, sem ler seus bytes; ela foi preservada pendente. A tentativa3 revelou que o helper de provas carregava validador antigo limitado a64motores; o publicador agora carrega explicitamente o módulo protegido vigente128/82d95a86 e verifica sua origem. Rollback de inodes passou em fixture; bytes anteriores das36revistas/seed foram conferidos após o rollback. Os erros/recibos anteriores estão preservados. Pré-validação de fontes/JPEGs/mapeamentos/módulos e fixture de escrita atômica passou. Sem arte nova, alteração de APK ou repetição de motores.
+
+API19631/NRestarts0/ExecStartb347 e demais serviços acompanhados preservados; scanner últimoexit0/timerativo. A leitura de DLL/configuração/índice só é comprovada pelos recibos protegidos efetivamente existentes, não pelos snapshots anteriores. Preservados checkouts/alterações locais, doisCRLF históricos, ROMs/saves/licenças reais, capasN64USB, outros produtos e banda100/800. Não houve homologação física Android nem nova causa demonstrada para007.
+
+[Recibo sanitizado](online-plataformas-20261009/maintenance/20261015-11z/sanitized-receipt.json). Autoridade privada `/mnt/DADOS/station-maintenance-20261015-11z`; operação atual `/mnt/DADOS/station-maintenance-20261015-11z/native-attempt4`. Branch de entrega `feat/station-hourly-20261015-11z`. Monitor existente PID204239 mantém maintenance.lock até retorno final; timerhorário de usuário ativo/habilitado. Nenhuma automação nova/mensagem externa.
+
+Próximo ciclo: As36 capas estão concluídas: NÃO repetir publicador; autoridade /mnt/DADOS/station-maintenance-20261015-11z/native-attempt4/applied.json. Próximo ciclo somente inputs realmente novos, baseline protegida fresca e bytes privados finais reais para motores; preservar cadastro R159 e pendências físicas. Publicação exige ExecStart/DLL/configuração/módulos reais, baseline fresca, somente timer scanner parado durante publicação, oneshot concluído e scan.lock, transação e provas assinadas local/público. Novos motores somente bytes finais reais/78+321/registrador vigente; PSX exige ledgerHLE real, PS3PS4offline. Não alterar renderer/JIT/timeouts por hipótese.
+
 <!-- STATION-MAINTENANCE-20261015-02Z -->
 ## Conferência do ciclo 02h UTC — sem entrada útil nova; publicação de capas pendente
 
