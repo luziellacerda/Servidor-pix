@@ -1,0 +1,60 @@
+{
+  "schema": "station.psx.android-xml-production-contract.v1",
+  "buildExecutedHere": false,
+  "donor": {
+    "revision": "R167",
+    "apkSha256": "dd6f8f8131cf5ee55d450c60e0b08963a662dc6cad092588f0db50153badd978",
+    "apkBytes": 2715483234,
+    "changedDexPartition": "classes35.dex",
+    "classes35Sha256": "5eccedadc2d5fe22a4d9aac9f23620ce9c5e3749d101831e0d42fd1972c13580",
+    "dexVersion": "039",
+    "classes35ClassCount": 608,
+    "classes36Sha256": "a1c12b34c5eba4060707235c86dea3bbdfa59ef52264afc7ebaaa5d73231287c",
+    "totalDexPartitions": 40
+  },
+  "source": {
+    "path": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxLaunch.java",
+    "sha256": "bb045d8113c6ca7887a26c79b066a74ca79ad7f340d7032cf9399006db14ad4b",
+    "lineEndings": "CRLF; preserve raw frozen bytes",
+    "previousSha256": "f594e1aa8fe0e54733652fda2e0330acbde9a15cfa4119b1a291dda2ee85be2d"
+  },
+  "dexScope": {
+    "modifiedTypes": [
+      "Lorg/emulationstation/frontend/netplay/StationPsxLaunch;"
+    ],
+    "addedTypes": [
+      "Lorg/emulationstation/frontend/netplay/StationPsxLaunch$1;"
+    ],
+    "otherTypesMustRemainSemanticallyEqual": 607,
+    "candidateClasses35ClassCount": 609,
+    "otherDexPartitionsPreservedBytewise": 39,
+    "r166SingleClassRecipeReusableWithoutAdaptation": false,
+    "classes35DexVersionMustRemain": "039",
+    "staticInitializersAndForeignClassGraphMustRemainUnchanged": true
+  },
+  "assemblyScope": {
+    "replaceClasses35": true,
+    "updateLinkedRuntimeFingerprintAssetsCoherently": true,
+    "expectedFingerprintEntries": [
+      "assets/station-online/engines.json",
+      "lib/arm64-v8a/libstation_psx_online.so",
+      "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+      "lib/arm64-v8a/libstation_dolphin_runtime.so"
+    ],
+    "runtimeMarkerOnly": true,
+    "coreOptionsDependenciesAndNativeExecutableSectionsPreserved": true,
+    "r167CarouselSha256Preserved": "82017952a6bf44a7a8c9098a3ef568fb0d2b809d99211be0e17785a77559d22a",
+    "originalApkEntrySetMustRemainUnchanged": true
+  },
+  "releaseGates": [
+    "Retain original application signing certificate, package, Android ABI and alignment checks.",
+    "Compare exact DEX graphs: modify only root StationPsxLaunch and add its one anonymous handler type; preserve the other607 classes in classes35 and all39 other DEX partitions.",
+    "Run source probes, then package and verify the final signed APK; do not ship diagnostic fixtures/classes.",
+    "Emit exact final APK SHA and independent private kit with owners bound to the final payload; do not invent engine IDs or copy old approvals blindly.",
+    "Run fresh server enrollment preflight against actual new kit and current protected baseline, preserving existing records and limits; do not replay applied R167 operator.",
+    "Publish the final signed APK and final-apk-proof.json with tooling/usb-installer/publish_current_installer.py; keep APK and private keys outside Git.",
+    "Manual USB installation on chosen devices only, preserving app data; observe first frame, sound, independent controls and guest return after host leaves."
+  ],
+  "physicalGameplayApproved": false,
+  "productionPcReachableThroughConnector": false
+}

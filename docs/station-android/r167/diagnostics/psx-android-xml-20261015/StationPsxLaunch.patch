@@ -1,0 +1,143 @@
+diff --git a/integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxLaunch.java b/integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxLaunch.java
+index 80ec4b5..a7a4660 100644
+--- a/integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxLaunch.java
++++ b/integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxLaunch.java
+@@ -7,12 +7,14 @@ import android.os.Environment;
+ import org.emulationstation.frontend.station.StationApi;
+ import org.json.*;
+ import java.io.*;
+-import java.nio.charset.StandardCharsets;
++import java.nio.charset.*;
++import java.nio.ByteBuffer;
+ import java.nio.file.*;
+ import java.security.MessageDigest;
+ import java.util.*;
+-import javax.xml.parsers.DocumentBuilderFactory;
+-import org.w3c.dom.*;
++import javax.xml.parsers.SAXParserFactory;
++import org.xml.sax.*;
++import org.xml.sax.ext.DefaultHandler2;
+ 
+ /** Private one-use handoff. The room worker has already checked the signed,
+  * per-game profile and the exact installed content; metadata never grants seats. */
+@@ -172,28 +174,100 @@ final class StationPsxLaunch {
+     private static void copyPresentationSettings(File source,File home,StationApi.Cancellation cancel)throws Exception {
+         if(!source.exists())return;
+         if(!source.isFile()||Files.isSymbolicLink(source.toPath())||source.length()>1048576)throw new IOException("PSX_INPUT_PREFERENCES");
+-        DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
+-        factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl",true);
+-        factory.setFeature("http://xml.org/sax/features/external-general-entities",false);
+-        factory.setFeature("http://xml.org/sax/features/external-parameter-entities",false);
+-        factory.setExpandEntityReferences(false);
+-        Document document;try(InputStream input=new FileInputStream(source)){document=factory.newDocumentBuilder().parse(input);}
+-        StringBuilder config=new StringBuilder("<?xml version=\"1.0\"?>\n<config>\n");
+-        NodeList nodes=document.getElementsByTagName("string");Set<String> found=new HashSet<>();
+-        for(int i=0;i<nodes.getLength();i++){cancel.check();Element element=(Element)nodes.item(i);String key=element.getAttribute("name");
+-            if(!"Player1Controller".equals(key)&&!"Player2Controller".equals(key))continue;
+-            String value=element.getAttribute("value");if(value.length()>512||!found.add(key))throw new IOException("PSX_INPUT_PREFERENCE_VALUE");
+-            for(int j=0;j<value.length();j++)if(Character.isISOControl(value.charAt(j)))throw new IOException("PSX_INPUT_PREFERENCE_VALUE");
+-            config.append("  <string name=\"").append(key).append("\" value=\"")
++        byte[] settings;
++        try(InputStream input=new FileInputStream(source);ByteArrayOutputStream bytes=new ByteArrayOutputStream()) {
++            byte[] buffer=new byte[4096];int read;
++            while((read=input.read(buffer))!=-1){cancel.check();if(bytes.size()+read>1048576)throw new IOException("PSX_INPUT_PREFERENCES");bytes.write(buffer,0,read);}
++            settings=bytes.toByteArray();
++        }
++        Charset encoding=StandardCharsets.UTF_8;
++        if(settings.length>=2&&((settings[0]&255)==255&&(settings[1]&255)==254||(settings[0]&255)==254&&(settings[1]&255)==255))encoding=StandardCharsets.UTF_16;
++        else if(settings.length>=4&&settings[0]==0&&settings[1]=='<')encoding=StandardCharsets.UTF_16BE;
++        else if(settings.length>=4&&settings[0]=='<'&&settings[1]==0)encoding=StandardCharsets.UTF_16LE;
++        else {
++            int skip=settings.length>=3&&(settings[0]&255)==239&&(settings[1]&255)==187&&(settings[2]&255)==191?3:0;
++            String head=new String(settings,skip,Math.min(1024,settings.length-skip),StandardCharsets.US_ASCII);
++            java.util.regex.Matcher declared=java.util.regex.Pattern.compile("^<\\?xml\\s+[^?]*?encoding\\s*=\\s*['\"]([A-Za-z][A-Za-z0-9._-]*)['\"]").matcher(head);
++            if(declared.find())try{encoding=Charset.forName(declared.group(1));}catch(IllegalArgumentException failure){throw new IOException("PSX_INPUT_PREFERENCES_ENCODING",failure);}
++        }
++        String xml=encoding.newDecoder().onMalformedInput(CodingErrorAction.REPORT).onUnmappableCharacter(CodingErrorAction.REPORT).decode(ByteBuffer.wrap(settings)).toString();
++        if(xml.startsWith("\uFEFF"))xml=xml.substring(1);
++        // The normal EmulationStation writer emits sibling bool/int/float/string
++        // entries. Keep any XML prolog outside one synthetic parsing root.
++        int body=0;
++        while(body<xml.length()) {
++            while(body<xml.length()&&Character.isWhitespace(xml.charAt(body)))body++;
++            if(xml.startsWith("<!--",body)){int end=xml.indexOf("-->",body+4);if(end<0)throw new IOException("PSX_INPUT_PREFERENCES_XML");body=end+3;}
++            else if(xml.startsWith("<?",body)){int end=xml.indexOf("?>",body+2);if(end<0)throw new IOException("PSX_INPUT_PREFERENCES_XML");body=end+2;}
++            else break;
++        }
++        if(xml.startsWith("<!DOCTYPE",body))throw new IOException("PSX_INPUT_PREFERENCES_DTD");
++        final String document=xml.substring(0,body)+"<station-psx-settings>"+xml.substring(body)+"</station-psx-settings>";
++        final Map<String,String> controllers=new LinkedHashMap<>();final Set<String> found=new HashSet<>();final String[] stretch={null};final boolean[] sawSetting={false};
++        // Android's native SAX reader supports the lexical handler contract.
++        // Reject declarations in startDTD, before external resolution or expansion;
++        // do not depend on the unsupported Xerces DOM feature URIs.
++        SAXParserFactory factory=SAXParserFactory.newInstance();factory.setNamespaceAware(false);factory.setValidating(false);
++        XMLReader reader=factory.newSAXParser().getXMLReader();
++        DefaultHandler2 handler=new DefaultHandler2() {
++            private int depth;private boolean wrappedDocument;
++            @Override public void startDTD(String name,String publicId,String systemId)throws SAXException {
++                throw new SAXException(new IOException("PSX_INPUT_PREFERENCES_DTD"));
++            }
++            @Override public void endElement(String uri,String localName,String tag){depth--;}
++            @Override public void characters(char[] value,int start,int length)throws SAXException {
++                if(depth==1)for(int i=start;i<start+length;i++)if(!Character.isWhitespace(value[i]))throw new SAXException(new IOException("PSX_INPUT_PREFERENCES_XML"));
++            }
++            @Override public InputSource resolveEntity(String publicId,String systemId)throws SAXException {
++                throw new SAXException(new IOException("PSX_INPUT_PREFERENCES_ENTITY"));
++            }
++            @Override public InputSource resolveEntity(String name,String publicId,String baseURI,String systemId)throws SAXException {
++                throw new SAXException(new IOException("PSX_INPUT_PREFERENCES_ENTITY"));
++            }
++            @Override public void error(SAXParseException failure)throws SAXException {throw failure;}
++            @Override public void fatalError(SAXParseException failure)throws SAXException {throw failure;}
++            @Override public void startElement(String uri,String localName,String tag,Attributes attributes)throws SAXException {
++                try {
++                    cancel.check();depth++;
++                    if(depth==2){
++                        // Native settings also include named map entries and future types.
++                        boolean setting=attributes.getValue("name")!=null;
++                        if(sawSetting[0]&&(wrappedDocument||!setting))throw new IOException("PSX_INPUT_PREFERENCES_XML");
++                        wrappedDocument=!setting;sawSetting[0]=true;
++                    }
++                    String key=attributes.getValue("name");
++                    if("string".equals(tag)&&("Player1Controller".equals(key)||"Player2Controller".equals(key))) {
++                        String value=attributes.getValue("value");if(value==null)value="";
++                        if(value.length()>512||!found.add(key))throw new IOException("PSX_INPUT_PREFERENCE_VALUE");
++                        for(int j=0;j<value.length();j++)if(Character.isISOControl(value.charAt(j)))throw new IOException("PSX_INPUT_PREFERENCE_VALUE");
++                        controllers.put(key,value);
++                    }else if("bool".equals(tag)&&"LibretroStretch".equals(key)) {
++                        String value=attributes.getValue("value");
++                        if(!("true".equals(value)||"false".equals(value))||!found.add(key))throw new IOException("PSX_DISPLAY_PREFERENCE_VALUE");
++                        stretch[0]=value;
++                    }
++                }catch(Exception failure){throw new SAXException(failure);}
++            }
++        };
++        reader.setContentHandler(handler);reader.setErrorHandler(handler);reader.setEntityResolver(handler);
++        reader.setProperty("http://xml.org/sax/properties/lexical-handler",handler);
++        cancel.check();
++        try {
++            reader.parse(new InputSource(new StringReader(document)));
++        }catch(SAXException failure) {
++            if(failure.getException()!=null)throw failure.getException();
++            throw new IOException("PSX_INPUT_PREFERENCES_XML",failure);
++        }
++        if(!sawSetting[0])throw new IOException("PSX_INPUT_PREFERENCES_XML");
++        // The exact libmain Settings::loadFile reads direct document children.
++        StringBuilder config=new StringBuilder("<?xml version=\"1.0\"?>\n");
++        for(Map.Entry<String,String> entry:controllers.entrySet()) {
++            String value=entry.getValue();
++            config.append("  <string name=\"").append(entry.getKey()).append("\" value=\"")
+                 .append(value.replace("&","&amp;").replace("\"","&quot;").replace("<","&lt;").replace(">","&gt;")).append("\"/>\n");
+         }
+-        NodeList bools=document.getElementsByTagName("bool");
+-        for(int i=0;i<bools.getLength();i++){cancel.check();Element element=(Element)bools.item(i);
+-            if(!"LibretroStretch".equals(element.getAttribute("name")))continue;
+-            String value=element.getAttribute("value");
+-            if(!("true".equals(value)||"false".equals(value))||!found.add("LibretroStretch"))throw new IOException("PSX_DISPLAY_PREFERENCE_VALUE");
+-            config.append("  <bool name=\"LibretroStretch\" value=\"").append(value).append("\"/>\n");
+-        }config.append("</config>\n");
++        if(stretch[0]!=null)config.append("  <bool name=\"LibretroStretch\" value=\"").append(stretch[0]).append("\"/>\n");
++        cancel.check();
+         try(FileOutputStream out=new FileOutputStream(new File(home,".emulationstation/es_settings.cfg"))){out.write(config.toString().getBytes(StandardCharsets.UTF_8));out.getFD().sync();}
+     }
+ }

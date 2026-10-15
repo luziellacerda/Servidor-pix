@@ -1,3 +1,22 @@
+<!-- STATION-PSX-ANDROID-XML-20261015 -->
+## Atualização: falha Android R167 capturada e fonte corrigido
+
+O Motorola conectado está na R167 pelo hash independente do APK. O erro de
+Capcom VS foi capturado em `StationPsxLaunch.copyPresentationSettings`: a
+fábrica DOM do Android rejeita uma feature antes da conexão do motor.
+O método corrigido passou em 29 verificações no próprio Motorola e 64 JVM;
+o arquivo real de preferências permaneceu intacto. O novo APK ainda precisa
+ser compilado e assinado pela produção. Reinstalar a mesma R167 não inclui
+esta correção. A indicação anterior de instalar R167 abaixo é histórica.
+
+Ler [incidente, contrato e provas](diagnostics/psx-android-xml-20261015/README.md)
+e `diagnostics/psx-android-xml-20261015/build-contract.json`. Compilar a partir
+da R167 exata e fonte bb045d81, preservar 39 DEX e 607 classes de DEX35,
+alterar StationPsxLaunch e incluir StationPsxLaunch$1. Emitir prova final/kit
+exato e publicar o instalador USB permanente para instalação manual.
+Não repetir a publicação R167 já aplicada nem alterar os impedimentos Crash.
+Servidor não foi reiniciado ou alterado para este reparo do cliente.
+
 # R167 — cadastro aplicado e consumo público conferido
 
 O kit privado `82cf0bff` foi verificado neste Linux:48 arquivos, 47 hashes e 27 ELF

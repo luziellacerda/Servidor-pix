@@ -1,7 +1,7 @@
 {
   "schema": "station.server-return.r167.v1",
   "revision": "R167",
-  "updatedUtc": "2026-10-15T20:34:14.838152+00:00",
+  "updatedUtc": "2026-10-15T21:29:07.865330+00:00",
   "serverApplied": true,
   "serverN64Ready": true,
   "serverN64Offline": false,
@@ -373,20 +373,20 @@
     "doNotSelectFirstProfileFromPreviousRuntime": true
   },
   "nextAction": {
-    "required": "Install the same signed R167 on both phones using the producer permanent USB installer, preserving data; record each installed hash and physical result.",
+    "required": "Build and sign a successor APK containing the qualified XML fix; deliver its exact independent kit and publish the permanent manual USB installer. Reinstalling unchanged R167 does not fix this incident.",
+    "sourcePath": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxLaunch.java",
+    "contract": "diagnostics/psx-android-xml-20261015/build-contract.json",
+    "productionPcConnectorOnline": false,
+    "installedFix": false,
     "psxPilotItemId": "station_767e5e92f2f353479e6120f1c28f96a7",
     "psxPilotContentSha256": "6782ccca63a19cbc6760ca928b3c36d0e6ac4b3e479c722083c96111bd25cc73",
     "psxPilotMode": "versus",
     "capacity": 2,
-    "producerPermanentInstallerMustBeConfirmedForR167": true,
-    "publicGitInstallerManifestStillR165AtReceipt": true,
-    "privateWindowsInstallerStateInspectedHere": false,
     "checks": [
-      "Neighbor covers only +10% width",
-      "Open match leaves room and opens emulator",
-      "First video frame and sound on both devices",
-      "Independent controls",
-      "Human host exit and guest notice/return observed for at least25 seconds"
+      "Verify exact final signed APK and kit; preflight enrollment over current baseline without replaying R167.",
+      "Manually install identical corrected APK on both phones, preserving data.",
+      "Observe first video frame, sound and independent controls.",
+      "Observe guest notice and return for25 seconds after host leaves."
     ]
   },
   "existingR165ServiceRollbackPlanPreserved": {
@@ -404,5 +404,38 @@
     "preserveEveryOtherDropInAndRelease": true,
     "rollbackOnlyLatestOverrideWouldSelectIntermediate5722": true
   },
-  "r167ServiceRollbackRequired": false
+  "r167ServiceRollbackRequired": false,
+  "previousPhysicalPilotInstructionBeforeCapturedFailure": {
+    "required": "Install the same signed R167 on both phones using the producer permanent USB installer, preserving data; record each installed hash and physical result.",
+    "psxPilotItemId": "station_767e5e92f2f353479e6120f1c28f96a7",
+    "psxPilotContentSha256": "6782ccca63a19cbc6760ca928b3c36d0e6ac4b3e479c722083c96111bd25cc73",
+    "psxPilotMode": "versus",
+    "capacity": 2,
+    "producerPermanentInstallerMustBeConfirmedForR167": true,
+    "publicGitInstallerManifestStillR165AtReceipt": true,
+    "privateWindowsInstallerStateInspectedHere": false,
+    "checks": [
+      "Neighbor covers only +10% width",
+      "Open match leaves room and opens emulator",
+      "First video frame and sound on both devices",
+      "Independent controls",
+      "Human host exit and guest notice/return observed for at least25 seconds"
+    ]
+  },
+  "installedMotoG52ApkIndependentlyReadHere": {
+    "sha256": "dd6f8f8131cf5ee55d450c60e0b08963a662dc6cad092588f0db50153badd978",
+    "revision": "R167",
+    "apkReceived": false,
+    "signatureIndependentlyVerifiedHere": false
+  },
+  "clientPsxLaunchIncident": {
+    "report": "diagnostics/psx-android-xml-20261015/incident.json",
+    "confirmed": "ParserConfigurationException at Android DOM setFeature before native attachment",
+    "fixedSourceSha256": "bb045d8113c6ca7887a26c79b066a74ca79ad7f340d7032cf9399006db14ad4b",
+    "actualAndroidChecksPassed": 29,
+    "jvmFixtureChecksPassed": 64,
+    "normalPreferencesUntouched": true,
+    "correctedApkBuiltSignedOrInstalledHere": false,
+    "serverChangedOrRestarted": false
+  }
 }

@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "baselineFailedWithParserConfigurationException": true,
+  "exceptionType": "javax.xml.parsers.ParserConfigurationException",
+  "baselineProductionBodyExecuted": true,
+  "sourceSha256": "f594e1aa8fe0e54733652fda2e0330acbde9a15cfa4119b1a291dda2ee85be2d",
+  "productionMethodSha256": "29526ea612e14c0c9da68a862162ef23ca28216d6897479a75bc7992b1825191",
+  "extractedActualProductionMethod": true,
+  "methodTextNormalizedLineEndingsOnly": true,
+  "diagnosticDexSha256": "520d88b0664212de5698d4bddc7c0f01e6c0d2b6a23f1f7a592da0de0fb289ac",
+  "installedApkModified": false,
+  "stationAppInvokedOrStopped": false,
+  "apkRomSaveOrLicenseReceived": false,
+  "toolSha256": {
+    "javac": "3214f94e6407fdf98909e67a976323e1f14353d65f5e672163c4a7d136efdb80",
+    "androidJar": "d9eb9da824d9e247a352f570f01e1169e725b2954bca9e283a71786c59b59f9a",
+    "d8": "b773a721be3d4988dea9660815a9e441b76100e5b0f5c72b5893cfadadc76c6f"
+  },
+  "ownPhoneDiagnosticFilesRemoved": true
+}

@@ -1,0 +1,24 @@
+{
+  "publishedCandidatesBeforeFinal": false,
+  "installedCandidates": false,
+  "finalSourceSha256": "bb045d8113c6ca7887a26c79b066a74ca79ad7f340d7032cf9399006db14ad4b",
+  "discarded": [
+    {
+      "implementation": "XmlPullParser",
+      "finding": "Optional unsupported feature setter in host parser; unresolved attribute entity accepted on actual Android; rejected."
+    },
+    {
+      "implementation": "SAX before native format support",
+      "finding": "Actual settings fragment with sibling entries rejected as junk after document element; corrected."
+    },
+    {
+      "implementation": "SAX before named map support",
+      "finding": "Real normal settings include named map entries; accepted in final parser."
+    },
+    {
+      "implementation": "SAX with config output wrapper",
+      "finding": "Exact native Settings reader uses direct children; output corrected to native fragments."
+    }
+  ],
+  "androidAppProcessKilledLogExplanation": "Uncaught probe assertions/parse exceptions were later captured; no OOM claim is made."
+}

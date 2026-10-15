@@ -1,3 +1,57 @@
+<!-- STATION-PSX-ANDROID-XML-20261015 -->
+## Capcom PSX: falha Android capturada; código corrigido para a próxima compilação
+
+**O erro foi localizado no APK R167 instalado no moto g52.** O SHA-256 foi
+lido no próprio telefone e coincide com `dd6f8f8131cf5ee55d450c60e0b08963a662dc6cad092588f0db50153badd978`.
+Às 17:47:56 e 17:47:58 UTC−3, o app lançou
+`javax.xml.parsers.ParserConfigurationException` em
+`DocumentBuilderFactoryImpl.setFeature` → `StationPsxLaunch.copyPresentationSettings`,
+na preparação de Capcom vs. SNK / VS. A sala já tinha os dois participantes
+prontos e início aceito; nenhuma conexão do motor foi aberta. Portanto, nesta
+tentativa capturada, a falha antecede o transporte de jogo.
+
+Corrigido o método no fonte canônico do app: SAX compatível com Android,
+recusa de DTD/entidades externas, entrada limitada e cancelamento preservados.
+A leitura aceita as entradas XML irmãs do arquivo real, inclusive `map`;
+a cópia privada mantém o formato que o `Settings::loadFile` do `libmain.so`
+recebido lê. Apenas nomes dos dois controles e `LibretroStretch` são copiados;
+o arquivo normal permaneceu intacto. A correção anterior de `libc++_shared.so`
+e as demais funções de preparação continuam preservadas.
+
+**Provas:** o método original reproduziu a exceção no Android; o método
+corrigido passou em 29 verificações no Motorola, incluindo as preferências
+reais. Session/Launch passou em 64 verificações JVM com fixtures explícitas.
+O DEX de diagnóstico foi removido do seu diretório temporário. Nenhum APK,
+ROM, save ou licença foi recebido; o app não foi reinstalado ou encerrado
+pelos testes. Isso comprova o método corrigido, não uma partida no APK novo.
+
+O código, contrato de compilação e evidências estão no
+[diagnóstico desta R167](r167/diagnostics/psx-android-xml-20261015/README.md)
+e no [fonte do app](https://github.com/luziellacerda/TurboElden/blob/fix/station-psx-android-xml-20261015/integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxLaunch.java).
+Fonte congelado SHA-256 `bb045d8113c6ca7887a26c79b066a74ca79ad7f340d7032cf9399006db14ad4b`.
+**O APK instalado ainda contém a falha; reinstalar a mesma R167 não a corrige.**
+O PC que assina o APK está offline no conector. Próxima ação da produção:
+compilar e assinar um sucessor com o fonte entregue, usando doador R167 e
+certificado originais, sem transferir APK/chaves ao Git ou a este Linux.
+
+A classe anônima SAX acrescenta `StationPsxLaunch$1`: o DEX35 deve ter 609
+classes, com uma classe alterada, uma adicionada e as outras 607 preservadas.
+As outras 39 partições DEX, carrossel R167, núcleos, opções e dependências
+permanecem. A receita R166 que exige uma única classe precisa ser adaptada;
+seguir `build-contract.json`. Publicar prova final, kit independente exato e
+instalador USB permanente; validar o novo kit sobre baseline fresca antes do
+cadastro, mantendo os limites. Não inventar engineId ou repetir o cadastro R167.
+Instalação nos aparelhos é manual e preserva dados. Depois, observar vídeo,
+áudio, controles independentes e retorno do convidado após sair o anfitrião.
+
+**Servidor preservado:** DLL53d4/fontec0ca229, sem reinício ou mudança de rede,
+catálogo ou licenças. R167 continua cadastrada: 87 motores, 16.404 perfis e
+11.489 modos; não executar operadores antigos. Crash1/2/3 são individuais;
+CTR e Crash Bash conservam o impedimento `recoveryReplayRamEqual`, independente
+desta falha Java. R164 estável e demais pendências globais mantidas.
+
+## Histórico preservado
+
 <!-- STATION-R167-APPLIED-20261015 -->
 ## R167 aplicada: motores cadastrados e API pública conferida
 

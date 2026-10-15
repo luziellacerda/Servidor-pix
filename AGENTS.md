@@ -1,3 +1,21 @@
+<!-- STATION-PSX-ANDROID-XML-20261015 -->
+## PSX R167: falha de preparação Android confirmada
+
+Ler o topo do MESMO handoff e `docs/station-android/r167/diagnostics/psx-android-xml-20261015/incident.json`.
+Moto g52 R167 identificado pelo hash do APK no próprio aparelho; preparação
+Capcom VS falha em ParserConfigurationException antes de conectar o motor.
+Fonte StationPsxLaunch corrigido SHA bb045d8113c6ca7887a26c79b066a74ca79ad7f340d7032cf9399006db14ad4b:
+29 verificações Android reais, incluindo preferências intactas, e 64 JVM passaram.
+Nenhum APK novo compilado/assinado/instalado aqui. Produção precisa compilar
+sucessor com assinatura original, publicar kit exato e instalador USB manual.
+DEX35: 609 classes, 607 preservadas, root alterada e novo StationPsxLaunch$1;
+não reutilizar receita R166 de uma classe sem adaptação. Não repetir R167
+aplicada/provas/serviço. Crash mantém seus impedimentos. Serviço53d4 sem restart,
+rede/ROMs/saves/licenças preservados; logs/preferências/serial permanecem privados.
+As instruções R167 de instalar o APK antigo abaixo são histórico anterior ao erro.
+
+## Histórico preservado
+
 <!-- STATION-R167-APPLIED-20261015 -->
 ## R167 aplicada: motores cadastrados e API pública conferida
 
@@ -178,7 +196,7 @@ Não mudar renderer/JIT/timeouts por hipótese; APK/serviços/ROMs/licenças int
 
 Ler o topo do mesmo handoff e r159/server-return.json. Autoridade `/mnt/DADOS/station-r159-20261014/applied.json` PASSED: kit original USB d1f0b380 e APK4837be70 lidos/conferidos, 38 arquivos/26ELF; cadastro78+321 aplicado.67 motores/14127perfis/9215modos/Cat 84, 63 owners anteriores preservados, sem reinício da API 19631/DLLb347. N64R159 owner7d50f27b4702:387perfis/157edições/120MP/37solo.157 capabilities locais/públicas, 164 admissõesMP/157 recusasSolo/223contagens inválidas e4clientes sintéticos/6WSS/recuperação passaram. Não é gameplayAndroid. Importador MAXIMUM_TRUSTED_ENGINES=128, 512 KiB/hash/controles intactos; módulo instalado82d95a86;4regressõescapacidade+3versões+6hash passaram. NÃO repetir cadastro/provas/deploy/bootrecovery.
 
-Usuário relata007online preto com áudio travando, offline abre. Sem captura atual/ADB local nem hash dos dois aparelhos nessa tentativa; causa NÃOconfirmada. N64_OWNER_MISSING capturado eraR158, corrigida pela produçãoR159. Código online forçaGlide64mk2+cached interpreter1; não alterar renderer/JIT/timeout sem evidência. Pesquisa oficial e captura no mesmo handoff. Produção corrigeAPK; última análise lifecycleb173499 preservada. DNS contornada APENAS nos clientes de teste/Git, mantendo TLS/hostkeys; sistema/rede intactos. API/scanner/timer/licençasreais/ROM/capas/outrosprodutos/banda100/800/tagsR143R157 preservados.36capas20z e aceiteAndroid pendentes: REVALIDAR plano de capas porque hash do módulo protegido mudou. Recibos originais da produção congelados; preferir retorno efetivo r159. Globalpartial.
+Usuário relata007online preto com áudio travando, offline abre. Sem captura atual/ADB local nem hash dos dois aparelhos nessa tentativa; causa NÃOconfirmada. N64_OWNER_MISSING capturado eraR158, corrigida pela produçãoR159. Código online forçaGlide 64mk2+cached interpreter1; não alterar renderer/JIT/timeout sem evidência. Pesquisa oficial e captura no mesmo handoff. Produção corrigeAPK; última análise lifecycleb173499 preservada. DNS contornada APENAS nos clientes de teste/Git, mantendo TLS/hostkeys; sistema/rede intactos. API/scanner/timer/licençasreais/ROM/capas/outrosprodutos/banda100/800/tagsR143R157 preservados.36capas20z e aceiteAndroid pendentes: REVALIDAR plano de capas porque hash do módulo protegido mudou. Recibos originais da produção congelados; preferir retorno efetivo r159. Globalpartial.
 
 ## Histórico preservado
 
@@ -731,7 +749,7 @@ Leia `docs/station-android/RETORNO-SERVIDOR-APP-R74-LIFECYCLE-LATENCIA-20261007.
 
 SRV-01/02/03 implementados na candidata6f27c6c/DLL71ba30b8 (.NET8.0.31): causa antes de Detach, Close pelo escritor único, métricas limitadas.91+589+88checks locais; TLS real passou com tracing, mas fixture sem logging também apresentou timeout imediato: divergência não resolvida, DLL NÃO ativada e gates sombra/público pendentes. Não confundir provas do cadastro com provas desta DLL. Operador6f27 fica no worktree imutável servidor-pix-station-r74-relay-observability-20261007; a autenticação Linux anterior foi cancelada antes da execução.
 
-APP-01 reproduzido independentemente no Linux:1.764checks, baseline64/64 adia envio, candidato64/64 envia sem novo tick. Ainda não integra APK; PCAPK deve integrar/testar sobre R74/R75 atual. Protocolo, dados, licenças e outros produtos preservados; nenhuma porta/DNS/firewall/tuning/removal de Cloudflare. Origem direta tem pin diferente e entrada externa não comprovada. Capacidade v2 real64salas/128participantes; centenas e jogatina prolongada não homologadas. Histórico abaixo não identifica a produção atual.
+APP-01 reproduzido independentemente no Linux:1.764checks, baseline 64/64 adia envio, candidato64/64 envia sem novo tick. Ainda não integra APK; PCAPK deve integrar/testar sobre R74/R75 atual. Protocolo, dados, licenças e outros produtos preservados; nenhuma porta/DNS/firewall/tuning/removal de Cloudflare. Origem direta tem pin diferente e entrada externa não comprovada. Capacidade v2 real64salas/128participantes; centenas e jogatina prolongada não homologadas. Histórico abaixo não identifica a produção atual.
 
 ## Histórico anterior
 
@@ -916,7 +934,7 @@ Leia docs/station-android/RETORNO-PAINEL-CODIGOS-STATION-20261006.md. Interface1
 
 # Comunidade R41 publicada — 06/10/2026
 
-Leia docs/station-android/RETORNO-COMUNIDADE-STATION-R41-20261006.md. API a2bb176530fd4d2dfa740da7e934fd84d097404e, DLL d181bf97d5b39a334e95144267d6ece3f11d4e659a314d7d16cd2746e1999e13, PID875574; SocialEnabled=true, conversas privadas/pedidos de entrada verificados por três licenças sintéticas no domínio público, 186 checks e WSS com pin. Catálogo14/2212, relay512/1024 e licenças/chaves/outros serviços preservados. Histórico privado até32 e64KiB na resposta. Backup restaurado, nenhuma migration. Retorno Android 5e40f7e confirma R41 instalada no Samsung, hashb6b19321 e dados preservados. POCO, gameplay em dupla, Pessoas/Voltar/correspondência Boogerman–Battletoads e latência externa continuam pendentes. Preservar APK R41; nunca retomar delta R34 sobre essa fonte. Scripts históricos recusam sucessoras; usar retorno/rollback R41.
+Leia docs/station-android/RETORNO-COMUNIDADE-STATION-R41-20261006.md. API a2bb176530fd4d2dfa740da7e934fd84d097404e, DLL d181bf97d5b39a334e95144267d6ece3f11d4e659a314d7d16cd2746e1999e13, PID875574; SocialEnabled=true, conversas privadas/pedidos de entrada verificados por três licenças sintéticas no domínio público, 186 checks e WSS com pin. Catálogo14/2212, relay512/1024 e licenças/chaves/outros serviços preservados. Histórico privado até32 e 64KiB na resposta. Backup restaurado, nenhuma migration. Retorno Android 5e40f7e confirma R41 instalada no Samsung, hashb6b19321 e dados preservados. POCO, gameplay em dupla, Pessoas/Voltar/correspondência Boogerman–Battletoads e latência externa continuam pendentes. Preservar APK R41; nunca retomar delta R34 sobre essa fonte. Scripts históricos recusam sucessoras; usar retorno/rollback R41.
 
 ## Histórico anterior — os blocos abaixo não identificam a publicação atual
 
