@@ -27,6 +27,7 @@ ARCADES = {'neogeo','fbneo','cps1','cps2','cps3'}
 BINDING = ('itemId','contentSha256','engineId','coreSha256','runtimeSha256')
 PROFILE_KEY = (*BINDING, 'profileId','profileSha256')
 MAXIMUM_TRUSTED_ENGINES = 128
+MAXIMUM_PROFILE_CONTENT_BYTES = 256 * 1024
 MODE_FIELDS = ('profileId','maximumPlayers','allowedPlayerCounts','approved',
                'controllerProfile','mode','modeTitle','instructions','sources')
 
@@ -189,7 +190,7 @@ def prepare(items,existing,manifest,modes=None):
         if counts[binding]>32:raise ValueError('automatic profile per-engine-binding limit exceeded')
         content_groups.setdefault((p['itemId'],p['contentSha256']),[]).append(p)
     for group in content_groups.values():
-        if len(json.dumps(group,ensure_ascii=True,separators=(',',':')).encode('ascii'))>128*1024:
+        if len(json.dumps(group,ensure_ascii=True,separators=(',',':')).encode('ascii'))>MAXIMUM_PROFILE_CONTENT_BYTES:
             raise ValueError('automatic profile content projection exceeds the server byte limit')
     if len((json.dumps(output,ensure_ascii=False,indent=2)+'\n').encode())>16*1024*1024:
         raise ValueError('automatic profile registry exceeds the server byte limit')

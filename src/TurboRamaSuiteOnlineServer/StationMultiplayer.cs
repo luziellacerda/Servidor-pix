@@ -32,7 +32,9 @@ public sealed class StationReplayBudget(long maximumBytes=33554432)
 public sealed class StationMultiplayer
 {
     public const int MaximumProfilesPerEngineBinding=32;
-    public const int MaximumProfileBytesPerContent=128*1024;
+    // Bounded space for coexisting immutable revisions without rewriting older
+    // policies; signed response size is covered by the Android-envelope test.
+    public const int MaximumProfileBytesPerContent=256*1024;
     public const string Protocol="station-stream.v3",CommandPath="/v1/station/online/multiplayer/command",RelayPath="/v1/station/online/multiplayer/relay";
     public const int WindowBytes=262144;
     private sealed class Peer(string id,OnlineIdentity identity,string nickname,long seen)

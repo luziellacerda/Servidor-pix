@@ -37,15 +37,28 @@ static class ProfileVersionChecks
         try{_=new StationMultiplayer(Enumerable.Range(0,33).Select(mode=>Mode(0,mode)),_=>"n64",new());}
         catch(OnlineFailure failure){refused=failure.Code=="STATION_MULTIPLAYER_PROFILE_LIMIT";}
         check(refused,"33 modes in a single exact engine binding are still refused");
-        var oversized=Enumerable.Range(0,8).Select(owner=>Mode(owner,0) with{
-            Instructions=Enumerable.Repeat(new string('\u03a9',500),8).ToArray()}).ToArray();
+        StationMultiplayerProfile WithNotes(int owner)=>Mode(owner,0) with{
+            Instructions=Enumerable.Repeat(new string('\u03a9',500),8).ToArray()};
+        var extended=existing.Concat(renewed).Concat(Enumerable.Range(50,8).Select(WithNotes)).ToArray();
+        hub.ReplaceProfiles(extended);
+        var extendedView=JsonSerializer.SerializeToElement(hub.Command(person,new("capabilities",Guid.NewGuid().ToString(),
+            ItemId:original.ItemId,ClientMaximumPlayers:4),security),StrictJson.Options);
+        int extendedBytes=JsonSerializer.SerializeToUtf8Bytes(extended,StrictJson.Options).Length;
+        check(extendedBytes>128*1024&&extendedBytes<=StationMultiplayer.MaximumProfileBytesPerContent,
+            "coexisting immutable revisions above the old byte budget remain bounded");
+        check(extendedView.GetProperty("profiles").GetArrayLength()==48&&extendedView.GetProperty("room").GetProperty("roomId").GetString()==roomId,
+            "larger exact revision listing preserves every previous mode and active room");
+        int viewBytes=JsonSerializer.SerializeToUtf8Bytes(extendedView,StrictJson.Options).Length;
+        check(4*((viewBytes+2)/3)+8192<524288,
+            "larger revision listing including base64 and envelope allowance fits Android response bound");
+        var oversized=existing.Concat(renewed).Concat(Enumerable.Range(50,12).Select(WithNotes)).ToArray();
         refused=false;
         try{hub.ReplaceProfiles(oversized);}
         catch(OnlineFailure failure){refused=failure.Code=="STATION_MULTIPLAYER_PROFILE_LIMIT";}
         check(refused,"encoded profile bytes remain bounded across engine versions");
         var after=JsonSerializer.SerializeToElement(hub.Command(person,new("capabilities",Guid.NewGuid().ToString(),
             ItemId:original.ItemId,ClientMaximumPlayers:4),security),StrictJson.Options);
-        check(after.GetProperty("profiles").GetArrayLength()==40&&after.GetProperty("room").GetProperty("roomId").GetString()==roomId,
+        check(after.GetProperty("profiles").GetArrayLength()==48&&after.GetProperty("room").GetProperty("roomId").GetString()==roomId,
             "oversized replacement keeps the previous profiles and room intact");
     }
 }
