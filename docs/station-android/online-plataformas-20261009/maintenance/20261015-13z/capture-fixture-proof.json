@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "fixtureOnly": true,
+  "physicalAndroidExecuted": false,
+  "debugPropertiesRestored": true,
+  "logcatReaderStopped": true,
+  "snapshots": 1,
+  "privateOutputIgnoredByGit": true,
+  "earlyLogcatExitFailsCapture": true,
+  "forbiddenDeviceMutationCommandsRejectedByFixture": true
+}

@@ -1,0 +1,144 @@
+{
+  "schema": "station.hourly-maintenance.v1",
+  "utc": "2026-10-15T13:14:52.020154+00:00",
+  "status": "partial",
+  "event": {
+    "utc": "2026-10-15T13:00:20.690956+00:00",
+    "fingerprint": "dd93ba5592b31d7c7b214b6f327efbec77058cf5e279938ce797711742ac11d4",
+    "inputs": {
+      "server:origin/docs/station-online-exit-r135-20261012": "65ae925018e38fcb7ec93dba54395b3c5a2a96c9",
+      "app:origin/build/station-online-exit-r135-20261012": "0c9f14ecfcfd4a9e2a0166c2db4e0e9f99bfbdf3",
+      "covers:origin/capas-super-nintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
+      "covers:origin/main": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+      "privateInputFingerprint": "dea5c5ab49599f2b9d0a2681b3169504a82ae3a595a9b7d472eb5c215a51fa6b"
+    },
+    "newInput": true
+  },
+  "deliveryBranch": "feat/station-hourly-20261015-13z",
+  "backups": [
+    {
+      "name": "server",
+      "branch": "backup/station-before-hourly-20261015-13z",
+      "commit": "65ae925018e38fcb7ec93dba54395b3c5a2a96c9",
+      "remoteVerified": true
+    },
+    {
+      "name": "app",
+      "branch": "backup/station-before-hourly-20261015-13z",
+      "commit": "0c9f14ecfcfd4a9e2a0166c2db4e0e9f99bfbdf3",
+      "remoteVerified": true
+    }
+  ],
+  "incomingRefCounts": {
+    "server": 30,
+    "app": 61,
+    "covers": 2
+  },
+  "incomingReferencesUnchangedOnFinalCheck": true,
+  "latestProducerCommit": "0c9f14ecfcfd4a9e2a0166c2db4e0e9f99bfbdf3",
+  "R161": {
+    "alreadyApplied": true,
+    "previousAuthority": "/mnt/DADOS/station-r161-usb-20261015/applied.json",
+    "enrollmentRepeated": false,
+    "privateKitRequestedAgain": false,
+    "apkChangedOrInstalledHere": false,
+    "motoG52InstallationDocumentReceived": true,
+    "motoG52ReceiptVerifiedAsProducerEvidenceOnly": true,
+    "a56AndG52DeclaredInstalledApkSha256": "66f429d47af725a6767064c3623ee10c505171a85fbc8c0a50dc9e5bc4f80081",
+    "physicalGameplayValidated": false
+  },
+  "diagnostics": {
+    "correctPackage": "org.turboramastation.frontend",
+    "fixImportedByteExact": true,
+    "fixture": {
+      "passed": true,
+      "fixtureOnly": true,
+      "physicalAndroidExecuted": false,
+      "debugPropertiesRestored": true,
+      "logcatReaderStopped": true,
+      "snapshots": 1,
+      "privateOutputIgnoredByGit": true,
+      "earlyLogcatExitFailsCapture": true,
+      "forbiddenDeviceMutationCommandsRejectedByFixture": true
+    }
+  },
+  "covers": {
+    "gitBranchesUnchanged": true,
+    "gitImports": 0,
+    "sourceManifestSha256": "c78c2fed7eb724347896dd9b8ae92f566a5bd113c379521fc8dbedff7cc48f05",
+    "finalizedAtSnapshot": 220,
+    "newFinalArtworks": 29,
+    "sourceOriginalsPresentAtSnapshot": 9,
+    "declaredOriginalsAbsentAtSnapshot": 211,
+    "published": true,
+    "authority": "/mnt/DADOS/station-maintenance-20261015-13z/covers-next-plan/applied.json",
+    "previousCatalogRevision": 93,
+    "catalogRevision": 94,
+    "changedMagazines": 11,
+    "changedBindings": 13,
+    "uniqueNewArtworks": 9,
+    "updatedFingerprints": 11,
+    "prior36ReconciledAndPreservedWithoutRewrite": true,
+    "prior36Explanation": "Current magazine, seed and immutable cover equal the exact producer JPEG for the same original master and ROM edition.",
+    "prior36ProducerReceipt": "/mnt/DADOS/IMAGENS SNES/controle/app-cover-backups/20261015T111403497898Z/receipt.json",
+    "otherProducerMagazinesPreserved": 11,
+    "otherProducerBindingsPreserved": 12,
+    "all48ExistingBindingsRechecked": true,
+    "localAuthenticatedBodies": 61,
+    "publicAuthenticatedBodies": 61,
+    "signedCatalogExactLocalAndPublic": true,
+    "ownSyntheticLicensesRemoved": true,
+    "romHashes": 0,
+    "romCopies": 0,
+    "format": "JPEG RGB480x720/q90",
+    "missingRequiredOriginalArtworks": 3,
+    "newArtworksWithoutExactEdition": 6,
+    "earlierUnmatchedArtworksPreserved": 14,
+    "physicalAndroidVisualVerified": false
+  },
+  "protectedBaseline": {
+    "readUtc": "2026-10-15T13:03:08.892584+00:00",
+    "pid": 2489,
+    "dllSha256": "b3473cc0160169f686501af914cdbf8ebfdf8dcaa4dff768e1106ee8461c9179",
+    "configAndRegistryHashesVerified": true,
+    "registriesEqualR161AppliedSnapshot": true,
+    "engineCount": 71,
+    "profileCount": 14529,
+    "modeCount": 9614,
+    "countsBasis": "engine/mode counts read; profile registry bytes equal the R161 applied receipt, unchanged through cover publication",
+    "catalogEntries": 4744
+  },
+  "services": {
+    "allTrackedPidsAndRestartsUnchanged": true,
+    "apiRestarted": false,
+    "apiPid": 2489,
+    "scannerExitStatus": 0,
+    "scannerTimerActive": true,
+    "onlyScannerTimerStoppedDuringPublication": true,
+    "producerCoverSyncLockAlsoHeld": true,
+    "existingHourlyUserTimerActiveAndEnabled": true,
+    "maintenanceLockHeldByMonitorPid": 27207,
+    "maintenanceLockReleased": false,
+    "maintenanceLockReleaseOwner": "existing parent monitor after final result"
+  },
+  "preserved": {
+    "licenses": true,
+    "saves": true,
+    "ROMs": true,
+    "IDs": true,
+    "coverIDs": true,
+    "synopses": true,
+    "otherProducts": true,
+    "n64USBCovers": true,
+    "networkOnboardOnly": true,
+    "dns": true,
+    "bandwidth100Upload800Plan": true,
+    "stableR143AndR157": true,
+    "twoHistoricalCRLF": true
+  },
+  "pending": [
+    "Disponibilizar os PNG finais exatos de Fighter's History, FIFA International Soccer e FIFA Soccer 96, ausentes nos caminhos do manifesto e sem JPEG publicado comprovado; hashes/caminhos em covers-pending.json. As capas atuais foram preservadas.",
+    "Seis novas artes não têm edição instalada exata correspondente (mais as 14 anteriores preservadas); não importar por aproximação.",
+    "Teste físico R161 com o mesmo APK/edição nos dois aparelhos e captura de 007: imagem, áudio, controles, desempenho, reconexão e saída continuam sem homologação Android."
+  ]
+}

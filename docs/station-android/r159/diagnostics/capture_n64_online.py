@@ -14,7 +14,7 @@ import shutil
 import subprocess
 import time
 
-PACKAGE = 'org.emulationstation.frontend'
+PACKAGE = 'org.turboramastation.frontend'
 DEBUG_TAGS = ('StationRooms', 'StationRecovery', 'StationN64', 'CoreService', 'CoreInterface')
 FILTERS = [x + ':V' for x in DEBUG_TAGS + ('Core', 'Video', 'Audio', 'Input', 'RSP', 'AEVidExt', 'mupen64plus-video-glide64mk2')]
 FILTERS += ['AndroidRuntime:E', 'libc:E', 'DEBUG:E', 'libEGL:W', 'OpenGLRenderer:W', 'SurfaceView:W', '*:S']

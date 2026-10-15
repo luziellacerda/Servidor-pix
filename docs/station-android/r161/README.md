@@ -1,3 +1,11 @@
+## Retorno novo do moto g52 — 15/10/2026
+
+O [recibo da produtora](g52-install-receipt.json), recebido em `0c9f14ec`, confirma o mesmo APK R161 `66f429d4` no moto g52, atualizado sobre R159 com dados preservados pelo modo de instalação. O A56 tem recibo da mesma composição. Este Linux conferiu os documentos; não leu os aparelhos. Os recibos observam a LoginActivity, sem comprovar login, sala, imagem, áudio ou gameplay físico. O cadastro do servidor já está aplicado e não foi repetido.
+
+O [capturador existente](../r159/diagnostics/README.md) consulta agora o pacote correto `org.turboramastation.frontend`; a fixture local passou com leitor normal e leitor encerrado cedo, restaurando as propriedades de diagnóstico. Não modifica ou instala o APK.
+
+## Histórico preservado
+
 ## Estado efetivo do servidor — 15/10/2026
 
 **R161 recebida da USB, conferida e aplicada.** Leia o [retorno efetivo](server-return.json) e a [prova de aplicação](evidence/server-applied.json). N64 liberado para testar o mesmo APK nos dois celulares; gameplay físico não homologado. Não repetir cadastro. A documentação original abaixo descreve o estado anterior à aplicação.

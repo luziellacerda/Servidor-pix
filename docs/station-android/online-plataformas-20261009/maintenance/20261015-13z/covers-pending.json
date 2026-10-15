@@ -1,0 +1,65 @@
+{
+  "requiredMissingOriginals": [
+    {
+      "title": "Fighter's History",
+      "sourceFile": "capas/FIGHTER_S_HISTORY_4K.png",
+      "sourceSha256": "2e0c7792ecffbe30cb42f4bbd1fb1d1a3ed1476d2dfedaf244efdd0427b69344",
+      "rom": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Fighter's History (USA).zip",
+      "reason": "Declared original absent; no already published producer JPEG for this exact edition"
+    },
+    {
+      "title": "FIFA International Soccer",
+      "sourceFile": "capas/FIFA_INTERNATIONAL_SOCCER_4K.png",
+      "sourceSha256": "260ff871cd433009ca06aa546d85b0de5f34f543cdc25ecc32b7c05ea93bb839",
+      "rom": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/## 1 -PT-BR ##/FIFA International Soccer (USA).smc",
+      "reason": "Declared original absent; no already published producer JPEG for this exact edition"
+    },
+    {
+      "title": "FIFA Soccer 96",
+      "sourceFile": "capas/FIFA_SOCCER_96_4K.png",
+      "sourceSha256": "3321eed4ff8682d2cf1deb3b519f53fe9d6e66d309353ca7f5a653f6cf78ac8a",
+      "rom": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/FIFA Soccer 96 (USA).sfc",
+      "reason": "Declared original absent; no already published producer JPEG for this exact edition"
+    }
+  ],
+  "newArtworksWithoutExactInstalledEdition": [
+    {
+      "title": "F1-ROC II - Race of Champions",
+      "primaryRelease": "F1-ROC II - Race of Champions (USA)",
+      "sourceFile": "capas/F1_ROC_II_RACE_OF_CHAMPIONS_4K.png",
+      "reason": "No exact installed ROM edition, or declared original unavailable (see unavailable)"
+    },
+    {
+      "title": "Fever Pitch Soccer",
+      "primaryRelease": "Fever Pitch Soccer (Europe) (En,Fr,De,Es,It)",
+      "sourceFile": "capas/FEVER_PITCH_SOCCER_4K.png",
+      "reason": "No exact installed ROM edition, or declared original unavailable (see unavailable)"
+    },
+    {
+      "title": "FIFA - A Caminho Da Copa 98",
+      "primaryRelease": "FIFA - A Caminho Da Copa 98 (Brazil) (En,Fr,De,Es,It,Sv)",
+      "sourceFile": "capas/FIFA_A_CAMINHO_DA_COPA_98_4K.png",
+      "reason": "No exact installed ROM edition, or declared original unavailable (see unavailable)"
+    },
+    {
+      "title": "FIFA - Road to World Cup 98",
+      "primaryRelease": "FIFA - Road to World Cup 98 (Europe) (En,Fr,De,Es,It,Sv) (A8FE)",
+      "sourceFile": "capas/FIFA_ROAD_TO_WORLD_CUP_98_4K.png",
+      "reason": "No exact installed ROM edition, or declared original unavailable (see unavailable)"
+    },
+    {
+      "title": "FIFA 97",
+      "primaryRelease": "FIFA 97 (Europe) (En,Fr,De,Es,It,Sv)",
+      "sourceFile": "capas/FIFA_97_4K.png",
+      "reason": "No exact installed ROM edition, or declared original unavailable (see unavailable)"
+    },
+    {
+      "title": "FIFA Soccer 97",
+      "primaryRelease": "FIFA Soccer 97 (USA) (En,Fr,De,Es,It,Sv)",
+      "sourceFile": "capas/FIFA_SOCCER_97_4K.png",
+      "reason": "No exact installed ROM edition, or declared original unavailable (see unavailable)"
+    }
+  ],
+  "preserveCurrentCovers": true,
+  "doNotGenerateReplacementArtwork": true
+}

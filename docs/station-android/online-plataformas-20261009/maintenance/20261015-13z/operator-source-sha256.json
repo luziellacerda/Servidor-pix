@@ -1,0 +1,11 @@
+{
+  "protected-baseline/read-baseline.py": "905088648a44bf63c658a4d42e06c23ac330fe994dab5fa4ce18f97f0759fa8d",
+  "protected-baseline/authenticate-native.py": "999f947c9735659a6a79e156947967e5cbed1b050df3ffe9005115db232e638c",
+  "covers-next-plan/prepare-covers.py": "71f6d4a61204b962bb42fe1c1cd2f47791e90de2314d7d17b60af4601faf5747",
+  "covers-next-plan/publish-covers.py": "ffc5012bc2e0331fc15d2b5cabeabf95c9c148a8d3f5fb780c642692121fc374",
+  "covers-next-plan/proof_http.py": "b5b5655f440aaa017a340f2d1c30ae0035c88c9ae8905d387a9532e93e098647",
+  "covers-next-plan/authenticate-native.py": "b41f400f79169481772bf29ce4cbb2ee2ec9db53e3486da0b6c6bfaf862a2e18",
+  "covers-next-plan/preflight.py": "5e9ffb83fb64ad17cf35541806944daccf3ccd74fc92a51fb2684eb6f2f52cb9",
+  "capture-fixture/capture_n64_online.py": "4ca0487043c7ba5d6323594400b3ae6e8712417b23bd4dca3da65d8f393f475f",
+  "capture-fixture/test_capture_fixture.py": "fe89cff0f3a70f059380d3a4fd555fad2e4332dd92aab26b286243b66fb86a12"
+}

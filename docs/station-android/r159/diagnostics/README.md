@@ -2,6 +2,7 @@
 
 Ferramenta de diagnóstico, sem instalação de APK. O cadastro R159 já está aplicado.
 A tela preta de 007 com áudio travando ainda não tem causa confirmada.
+O identificador do pacote consultado no Android é `org.turboramastation.frontend`.
 
 ## Executar no PC conectado ao telefone
 

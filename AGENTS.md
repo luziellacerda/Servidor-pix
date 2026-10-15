@@ -1,3 +1,20 @@
+## Manutenção13z aplicada — 15/10/2026
+
+Ler o topo do MESMO handoff e maintenance/20261015-13z/sanitized-receipt.json.
+Capas:11 revistas/13 vínculos publicados, catálogo94;61 provas locais+61 públicas.
+As36 diferenças de JPEG foram conciliadas como mesma arte/edição com outro
+codificador; preservadas sem replay11z. Autoridade privada
+/mnt/DADOS/station-maintenance-20261015-13z/covers-next-plan/applied.json PASSED.
+NÃO executar publicadores11z/13z nem repetir enrollment R161/R159/DLL.
+Restam3 PNGs exatos ausentes e6 novas artes sem edição instalada; paths/hashes
+em covers-pending.json. Novo input exige NOVO plano/baseline/scan.lock e o
+cover-sync.lock existente da produtora. R161g52/A56 pelo recibo da produção,
+mesmoAPK66f429d4; gameplay físico007 não homologado. Capturador corrigido para
+org.turboramastation.frontend e fixture passou. Rede/outrosprodutos/CRLF/tags
+preservados. Não pedir kit R161 de novo nem recriar artes ausentes.
+
+## Histórico preservado
+
 ## R161 aplicada pela USB — 15/10/2026
 
 Ler o topo do mesmo handoff e r161/server-return.json. Kit bcfbe393/APK66f429d4
