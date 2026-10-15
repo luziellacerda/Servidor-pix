@@ -1,6 +1,6 @@
 # R169 — cadastro aditivo do PSX CAS no servidor
 
-**Estado em 15/10/2026:** esta é uma entrega de documentos e kit privado; **não é implantação**. O último recibo R168 conhecido informa `serverApplied=false`, `serverConsumerReady=false` e falha no preflight WinBack. A R168 também provocou uma exceção fatal no Android ao iniciar PSX online; [o incidente sanitizado](https://github.com/luziellacerda/Servidor-pix/blob/34aa3d92d49e70a3e1eeefaaff3e67ed1de98120/docs/station-android/r168/incidents/INCIDENTE-R168-PSX-NOSUCHMETHOD-20261015.md) pede que ela não seja cadastrada. A R167 segue a última baseline aplicada conhecida. A R169 corrige o ponto Android, mas **nenhuma partida PSX R169 foi testada**.
+**Estado em 15/10/2026:** esta é uma entrega de documentos e kit privado; **não é implantação**. O último recibo R168 conhecido informa `serverApplied=false`, `serverConsumerReady=false` e falha no preflight WinBack. A R168 também provocou uma exceção fatal no Android ao iniciar PSX online; [o incidente sanitizado](https://github.com/luziellacerda/Servidor-pix/blob/34aa3d92d49e70a3e1eeefaaff3e67ed1de98120/docs/station-android/r168/incidents/INCIDENTE-R168-PSX-NOSUCHMETHOD-20261015.md) pede que ela não seja cadastrada. A R167 segue a última baseline aplicada conhecida. A R169 corrige o ponto Android, mas **nenhuma partida PSX R169 foi testada**. No A56 com R169, a tentativa de PSX mostrou exatamente **“não há modo aprovado para esta edição e o motor instalado”**. O cadastro e a requalificação R169 ainda precisam ser comprovados no servidor.
 
 ## Entrega exata
 
@@ -24,7 +24,7 @@ Somente cinco entradas do APK mudaram: `classes35.dex`, `assets/station-online/e
 1. Conferir o SHA-256 do ZIP e todos os 54 itens do manifesto, incluindo `engines-apk.json`, 27 ELF, dependências, políticas e recibos. Não pedir APK, chave ou logs brutos.
 2. Partir da baseline protegida **real** aplicada. Resolver o gate WinBack: o preflight R168 rejeitou 137.167 B diante do limite de 131.072 B. Um commit que ajusta o limite não substitui um novo recibo de execução. Não apagar versões antigas, relaxar aprovação de modos ou contornar a trava.
 3. Cadastrar os quatro owners R169 **aditivamente** e requalificar apenas modos por tupla exata de `itemId`, hash de conteúdo, `engineId`, core, runtime e perfil. Preservar R167, N64, GameCube/Wii, limites de jogadores, licenças e recusas. Não aprovar pelo nome do jogo nem pelo número de modos de referência do kit.
-4. Entregar `serverApplied=true` com hash do kit aceito, commit efetivamente executado, baseline e contagens antes/depois, quatro IDs, modos PSX admitidos e consulta pública **autenticada e assinada** via `POST /v1/station/online/multiplayer/command`, ação `capabilities`. HTTP 200 isolado, código preparado e sala `playing` não comprovam partida física.
+4. Entregar recibo **APLICADO**, `serverApplied=true`, com hash do kit aceito, commit efetivamente executado, baseline e contagens antes/depois, quatro IDs, modos PSX admitidos e consulta pública **autenticada e assinada** via `POST /v1/station/online/multiplayer/command`, ação `capabilities`, confirmando a edição de teste no motor R169. HTTP 200 isolado, código preparado e sala `playing` não comprovam partida física.
 
 ## Piloto Android após recibo aplicado
 
