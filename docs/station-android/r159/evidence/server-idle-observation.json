@@ -1,0 +1,17 @@
+{
+  "schema": "station.n64.read-only-observation.v1",
+  "startedUtc": "2026-10-15T11:31:11.156985+00:00",
+  "endedUtc": "2026-10-15T11:41:11.3404797+00:00",
+  "samples": 600,
+  "validSamples": 600,
+  "minimumRooms": 1,
+  "maximumRooms": 1,
+  "maximumNativeConnections": 0,
+  "maximumRetainedBytes": 0,
+  "physicalAttemptCaptured": false,
+  "userWillTestLater": true,
+  "noCurrentFailureCauseInferred": true,
+  "observationEnded": true,
+  "serverRestarted": false,
+  "maximumStartedRooms": 0
+}

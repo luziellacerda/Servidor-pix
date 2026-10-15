@@ -1,3 +1,18 @@
+## Atualização 15/10/2026: diagnóstico N64, rede e capas
+
+Ler o topo do mesmo HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e
+r159/diagnostics/README.md. R159 já aplicada: não repetir cadastro/provas/deploy.
+282 verificações JVM com a política real de controles passaram; não são gameplay
+Android. Capturador ADB testado em fixture para a produção; usuário testará depois,
+telefone no PC do APK, conector remoto desconectado, causa física007 não confirmada.
+Preservar somente rede onboard e DNS corrigido conforme autoridade privada
+/mnt/DADOS/station-network-connectivity-20261015/completed.json. Não reativar Wi-Fi
+nem executar device reapply como consulta. As36 capas SNES foram aplicadas/provadas
+no ciclo11z/Cat89; não republicar.14 artes sem edição correspondente preservadas.
+Não mudar renderer/JIT/timeouts por hipótese; APK/serviços/ROMs/licenças intactos.
+
+## Histórico preservado
+
 ## R159 aplicada; diagnóstico físico007 pendente — 14/10/2026
 
 Ler o topo do mesmo handoff e r159/server-return.json. Autoridade `/mnt/DADOS/station-r159-20261014/applied.json` PASSED: kit original USB d1f0b380 e APK4837be70 lidos/conferidos, 38 arquivos/26ELF; cadastro78+321 aplicado.67 motores/14127perfis/9215modos/Cat 84, 63 owners anteriores preservados, sem reinício da API 19631/DLLb347. N64R159 owner7d50f27b4702:387perfis/157edições/120MP/37solo.157 capabilities locais/públicas, 164 admissõesMP/157 recusasSolo/223contagens inválidas e4clientes sintéticos/6WSS/recuperação passaram. Não é gameplayAndroid. Importador MAXIMUM_TRUSTED_ENGINES=128, 512 KiB/hash/controles intactos; módulo instalado82d95a86;4regressõescapacidade+3versões+6hash passaram. NÃO repetir cadastro/provas/deploy/bootrecovery.

@@ -1,6 +1,6 @@
 {
   "schema": "station.r159.server-return.v1",
-  "updatedUtc": "2026-10-15T00:13:55.834201+00:00",
+  "updatedUtc": "2026-10-15T11:42:48.651882+00:00",
   "revision": "R159",
   "serverN64Ready": true,
   "serverN64Offline": false,
@@ -133,12 +133,39 @@
   "apiAndScannerPreserved": true,
   "bandwidthUploadMbps": 100,
   "bandwidthDownloadMbps": 800,
-  "unrelated36CoverBatchApplied": false,
+  "unrelated36CoverBatchApplied": true,
   "stableTagsPreserved": true,
   "evidencePaths": [
     "evidence/received-final-verified.json",
     "evidence/server-applied.json",
     "evidence/public-four-participant-transport.json",
-    "evidence/importer-capacity-applied.json"
-  ]
+    "evidence/importer-capacity-applied.json",
+    "evidence/actual-controller-protocol-proof.json",
+    "evidence/capture-fixture-proof.json",
+    "evidence/server-idle-observation.json"
+  ],
+  "followUp20261015": {
+    "diagnosticTool": "diagnostics/capture_n64_online.py",
+    "diagnosticInstructions": "diagnostics/README.md",
+    "actualControllerProtocolChecks": 282,
+    "actualControllerProtocolPassed": true,
+    "localJvmOnly": true,
+    "captureFixturePassed": true,
+    "captureTestedOnPhysicalAndroid": false,
+    "phoneAtApkProductionPcPerUser": true,
+    "remoteConnectorDisconnected": true,
+    "userWillTestLater": true,
+    "currentPhysical007CauseConfirmed": false,
+    "newApkOrEngineChange": false,
+    "serverRegistrationRepeated": false,
+    "onboardOnlyNetworkRepairCompleted": true,
+    "networkRepairAuthority": "/mnt/DADOS/station-network-connectivity-20261015/completed.json",
+    "coverBatchAlreadyPublishedInHourly11z": true,
+    "coverPublicationCatalogSnapshot": 89,
+    "coverPublicationAuthority": "/mnt/DADOS/station-maintenance-20261015-11z/native-attempt4/applied.json",
+    "originalPublicationSnapshotRetained": true,
+    "serverObservationEnded": true,
+    "serverObservationSamples": 600,
+    "serverObservationMaximumNativeConnections": 0
+  }
 }

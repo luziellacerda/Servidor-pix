@@ -1,3 +1,9 @@
+## Diagnóstico 15/10/2026
+
+282 verificações do protocolo de controles passaram. Tela preta de 007 ainda
+não confirmada por captura. [Capturador para o PC da produção](diagnostics/README.md)
+pronto; usuário testará depois. As 36 capas SNES já foram publicadas no ciclo 11z, catálogo 89.
+
 # R159 aplicada no servidor
 
 O kit original e o APK final da USB foram recebidos e conferidos. **Cadastro R159 aplicado; N64 disponível no servidor.** As provas assinadas das 157 edições e o transporte público com quatro participantes sintéticos passaram. O relato atual de 007 com som travando e tela preta continua sem causa confirmada; partida física Android não está homologada.

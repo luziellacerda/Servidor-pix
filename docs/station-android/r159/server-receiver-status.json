@@ -1,6 +1,6 @@
 {
   "schema": "station.r159.server-received-applied.v1",
-  "updatedUtc": "2026-10-15T00:13:55.834201+00:00",
+  "updatedUtc": "2026-10-15T11:42:48.651882+00:00",
   "producerCommit": "df3ef713ca75cbb6421b3b5750594fb0bb9ed8c3",
   "latestProducerEvidenceCommit": "b173499",
   "producerDocumentsReceived": true,
@@ -22,5 +22,7 @@
   "r159InstallationOnBothCurrentTestPhonesVerifiedHere": false,
   "previousBindingsPreserved": true,
   "currentServerReturn": "server-return.json",
-  "nextAction": "Capture current 007 black screen and stuttering on both phones with server timeline. Do not repeat enrollment or confuse transport qualification with physical gameplay."
+  "nextAction": "When the user tests again, capture both phone roles and server timeline using the prepared ADB tool. Current black screen cause and physical gameplay remain unconfirmed. Do not repeat completed enrollment.",
+  "diagnosticToolReady": "diagnostics/README.md",
+  "userWillTestLater": true
 }

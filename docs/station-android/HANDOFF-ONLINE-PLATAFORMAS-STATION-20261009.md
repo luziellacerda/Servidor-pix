@@ -1,3 +1,49 @@
+<!-- STATION-N64-DIAGNOSTICS-20261015 -->
+## N64: protocolo conferido e captura pronta para a produção — 15/10/2026
+
+**007 online continua sem causa física confirmada para tela preta/áudio travando.**
+O usuário informou que o telefone está no PC de produção do APK e que testará
+mais tarde. Este Linux não tem telefone ADB autorizado disponível; o conector
+remoto da produção está desconectado, o que não comprova que aquele PC esteja
+desligado. Não houve nova tentativa física capturada nem APK alterado.
+
+Entre 11:31:11 e 11:41:11 UTC, as 600 consultas do diagnóstico do servidor
+mostraram uma sala sem partida iniciada e **zero conexões nativas**. Essa
+observação terminou; não capturou a tela preta. Ver
+[intervalo e limites da observação](r159/evidence/server-idle-observation.json).
+
+O probe JVM existente foi adaptado somente no ambiente privado para registrar
+os controles com MEMORY=2, conforme a política do app: o anfitrião conserva
+MEMORY e os convidados usam NONE=1 nos inputs/roster. Passaram **282 verificações**
+com dois, três e quatro participantes, incluindo cadastro, preparação, saves,
+ordem e isolamento dos inputs, contrapressão e cancelamento. A fonte do app é
+`f9df99323a71e1d6e15e09e0c3b8dba7ee11be65`. É uma prova local do protocolo Java;
+não executa vídeo, áudio, core Android ou uma partida física. Nenhum defeito novo
+foi demonstrado por ela. Ver [prova e hashes](r159/evidence/actual-controller-protocol-proof.json).
+
+A produção pode usar o [capturador ADB e as instruções](r159/diagnostics/README.md)
+no próximo teste, com um coletor por telefone/papel durante a mesma tentativa.
+A [fixture](r159/evidence/capture-fixture-proof.json) confirmou conclusão normal,
+restauração de tags e falha explícita quando o leitor ADB termina cedo. Logs
+ficam privados em `StationDiagnostics`; só código e provas sanitizadas estão no
+Git. Não confundir `gfxinfo`/SurfaceFlinger com FPS/VI nativo. O script não cria
+contadores ausentes no APK nem garante descobrir a causa sem os dados necessários.
+
+A R159 permanece cadastrada: não repetir enrollment, provas completas, migração,
+deploy ou recuperação de boot. API PID 19631/DLL b347 e banda 100/800 preservadas.
+A revisão de rede anterior deste PC foi aplicada: somente cabo onboard,
+Wi-Fi desligado, DNS IPv4 1.1.1.1/8.8.8.8 e sem rota IPv6 padrão de internet;
+endereçamento IPv6 local preservado. Autoridade privada
+`/mnt/DADOS/station-network-connectivity-20261015/completed.json`, PASSED,
+72+24 verificações de conectividade. Não reexecutar `device reapply` como leitura.
+Isso não comprova a correção da tela preta de 007.
+
+As **36 capas SNES já foram publicadas e comprovadas** na manutenção 11z,
+catálogo 88→89; 14 artes sem edição exata continuam preservadas. A autoridade é
+`/mnt/DADOS/station-maintenance-20261015-11z/native-attempt4/applied.json`.
+Não repetir o publicador. Flags/seções anteriores descrevem instantes históricos;
+os recibos originais da produção permanecem congelados.
+
 <!-- STATION-MAINTENANCE-20261015-11Z -->
 ## Manutenção 11h UTC — conferência e estado real das36 capas — 15/10/2026
 
