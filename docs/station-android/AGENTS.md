@@ -1,3 +1,31 @@
+<!-- STATION-R169-APPLIED-20261015 -->
+## R169 aplicada — ler o recibo e não repetir etapas
+
+O mesmo handoff e r169/server-return.json são a autoridade atual.
+Kit859b33b1/54arquivos53hashes27ELF, quatro novos owners/492 vínculos.
+Cat100/4744,95motores17388perfis12473modos; anteriores preservados.
+BuildC#3781bcc/operadorf1c2266/DLLf0aa8c5c2e41/PID238611; um restart sem sala.
+Leitor17MiB, scanner/registrador/módulo17/9MiB,256owners/manifesto1MiB ativos.
+Controle explícito/256KiBconteúdo/32porbinding/50000perfis e lógicaN64 preservados.
+1472C#/226HTTP/seisPythoncapacidade/seispreparador PASS. Preparador recebido
+corrigido para comparar declaração Android com política enriquecida, sem afrouxar gates.
+Capabilities84PSX157N64 assinadas local/público, admissões/recusas, PSX2/N644
+clientes sintéticos e saídaSTATE3 antes declose1000 PASS; NÃO é gameplay Android.
+PSX23modos2P/19edições,17impedidos/53locais; N64387/230MP/157solo,GC9/Wii3.
+Auditor4744 somente leitura:139revisadas,171locais,18pendentes,325semperfil,
+1087semmotorAPK,3003aprovaçõeshistóricas semprova,1formatoincompatível.
+Não aprovar por título/metadados, não publicar saídas privadas por edição.
+R168NoSuchMethodAndroid preservado; clientePSX usarR16968521db5, nãoR168.
+NenhumAPKrecebido/instaladoaqui. Instalador permanente MANUAL; produção relata
+ambosR169, mas piloto Capcom VS/quadro/som/controles/retornoconvidado25s pendente.
+Não repetir cadastro/deploy/provas/controladores históricos. Rootautoridade
+station-r169-20261015/completed.json PASSED e current-applied-audit.json fresca.
+Novas mutações exigem audit fresca, limites e rollback de dados/ferramentas/software
+compatíveis; restaurar só módulo8MiB sobre modosR169 é inválido.
+Scanner/timerhorário, licenças, demaisprodutos,ROMs/capas/saves/rede100800/R164 preservados.
+
+## Histórico preservado
+
 <!-- STATION-R168-APPLIED-CAPACITY-20261015 -->
 ## R168 aplicada — correção de abertura PSX
 

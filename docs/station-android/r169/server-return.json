@@ -1,0 +1,167 @@
+{
+  "schema": "station.r169.applied-server-return.v1",
+  "revision": "R169",
+  "generatedUtc": "2026-10-15T23:58:03.339678+00:00",
+  "serverApplied": true,
+  "serverRegistrationConfirmed": true,
+  "serverConsumerReady": true,
+  "consumerReadyScope": "Four exact R169 engines and their 492 explicit reviewed mode/classification bindings; not all catalog games online",
+  "acceptedKitSha256": "859b33b156698abecadadf035f8117a4b2b680439c4fed32eb2001347dc6c832",
+  "acceptedKitBytes": 14918062,
+  "privateKitCommit": "5158d84add5e8efd03c020cf7561f8fc100729a1",
+  "producerHandoffCommit": "2609492e86b730cb76944458d1f83eecafb350cb",
+  "producerSourceCommit": "e0fea23e96ccedad686f7d7d7d2a821780e486a0",
+  "producerSignedApkSha256": "68521db5fbd46d6da9895c4d9b291febda5597c82ba3b51935ccd7e98520877d",
+  "producerSignedApkProofChecked": true,
+  "apkReceivedOrSignedOrInstalledHere": false,
+  "bothPhonesInstalled": "Reported by producer handoff; not independently inspected in this server delivery",
+  "publication": {
+    "catalogRevision": 100,
+    "catalogItems": 4744,
+    "before": {
+      "engineCount": 91,
+      "profileCount": 16896,
+      "modeCount": 11981
+    },
+    "engineCount": 95,
+    "profileCount": 17388,
+    "modeCount": 12473,
+    "enginesAdded": 4,
+    "profilesAdded": 492,
+    "modesAdded": 492,
+    "previousBindingsPreserved": true,
+    "catalogAndContentIdentityBytesPreserved": true,
+    "rawFileSha256": {
+      "catalog": "5f0ac1dfc7297cb9ab49bfab9e9f19b77955799a077b339967d7c798f3bbe4bb",
+      "profiles": "7e7022f67d66f6670edec6ae1ae24e1dea442fb8510a47948df0f284de925195",
+      "current": "4db9c6971dd356d0d816e9b739c23f714402e2922d5965f1ad1ee997d616f128",
+      "modes": "bef60cca338592e3e1c904a80ab6d282a8ffc4c542c296a5b1e7ae75c4fa50fe"
+    }
+  },
+  "exactEngineIds": {
+    "psx": "pcsx-rearmed-ff81ed17-player-v3-cddba501a25c",
+    "n64": "mupen64plus-ae-33bf7021-n64-v3-a69ac794a2d1",
+    "gamecube": "dolphin-5102a033-gamecube-v3-48da63940e83",
+    "wii": "dolphin-5102a033-wii-v3-48da63940e83"
+  },
+  "activeSoftware": {
+    "sourceCommit": "3781bccd1764f69803a0a777f80f9e632af3f911",
+    "preparedOperatorCommit": "f1c2266fd05342d845b485a09d1121cda75570d3",
+    "assemblyInformationalVersion": "1.0.0+3781bccd1764f69803a0a777f80f9e632af3f911",
+    "productionSourcesIdenticalBetweenBuildAndOperatorCommits": true,
+    "dllSha256": "f0aa8c5c2e41724067052923a77cbe35cb6748c615785b468b9e913303f9ec25",
+    "apiPid": 238611,
+    "automaticRestarts": 0,
+    "controlledRestarts": 1,
+    "earlierServiceConfigurationPreserved": true,
+    "noRealRoomCancelled": true,
+    "sameEffectiveSandboxShadowPassed": true,
+    "exactShadowProfilesBytes": 17294779
+  },
+  "activeTools": {
+    "scannerAndRegistrarUseMatchingPolicyModule": true,
+    "sha256": {
+      "station_online_profiles.py": "44373941216ecf1460ed8de499247f345f16495fa3dbc9a58188641928ead3c0",
+      "cadastrar-motor-online-station.py": "ede602b072992583d645240239f58f3cac51d2de69be15a212a56585b80be761",
+      "atualizar-biblioteca-station.py": "db1468fbf8bc5d3ba4578888af4e0422704b6019a8a056847179a5b7a9b878ab"
+    },
+    "scannerPathResolvedAndChecked": true,
+    "registrarPathReconciledAgainstAppliedR168": true
+  },
+  "limits": {
+    "profileRegistryBytes": 17825792,
+    "preparedModesBytes": 9437184,
+    "trustedEngineCount": 256,
+    "trustedManifestBytes": 1048576,
+    "profilesPerBinding": 32,
+    "profilesPerContentBytes": 262144,
+    "profileCount": 50000
+  },
+  "actualBytes": {
+    "profilesCompact": 15033038,
+    "profilesIndented": 17294779,
+    "modesCompact": 8469257,
+    "manifestCompact": 192296
+  },
+  "preparationFix": {
+    "commit": "f1c2266fd05342d845b485a09d1121cda75570d3",
+    "reason": "APK lists controller names; explicit server policy stores full definitions. Compare identities and options exactly, validate controller projection and fingerprint, require explicit modes.",
+    "coreControllerAndApprovalGatesPreserved": true
+  },
+  "psx": {
+    "editions": 84,
+    "decisions": 93,
+    "approvedMultiplayerModes": 23,
+    "approvedMultiplayerEditions": 19,
+    "pendingMultiplayerModes": 17,
+    "pendingMultiplayerEditions": 12,
+    "localOnlyEditions": 53,
+    "previousRealCoreLedgerReusedOnlyAfterEqualCoreDependenciesAndOptions": true
+  },
+  "n64": {
+    "editions": 157,
+    "profiles": 387,
+    "multiplayerModes": 230,
+    "multiplayerEditions": 120,
+    "localClassifications": 157,
+    "nativeLogicChanged": false
+  },
+  "gamecubeModes": 9,
+  "wiiModes": 3,
+  "publicSignedQualification": {
+    "psxEditions": 84,
+    "n64Editions": 157,
+    "psxModeAdmissions": 23,
+    "psxRefusals": 167,
+    "n64ModeAdmissions": 230,
+    "n64Refusals": 245,
+    "fourOwnersAndTwelveGcWiiModesPassed": true,
+    "requestLicenseAndSignatureVerified": true,
+    "psxTwoSyntheticParticipantsPassed": true,
+    "n64FourSyntheticParticipantsPassed": true,
+    "hostExitState3BeforeNormalClosePassed": true,
+    "largeImmutableHistoryWithinAndroidBound": true
+  },
+  "capcomVsSnkPilot": {
+    "itemId": "station_767e5e92f2f353479e6120f1c28f96a7",
+    "contentSha256": "6782ccca63a19cbc6760ca928b3c36d0e6ac4b3e479c722083c96111bd25cc73",
+    "engineId": "pcsx-rearmed-ff81ed17-player-v3-cddba501a25c",
+    "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+    "runtimeSha256": "cddba501a25c703e34197bcd19799894012a2e025b1087d282811c1ec509b33a",
+    "profileId": "psx-r169-20261015-005-versus",
+    "profileSha256": "81c0e2323a37130dbdbdb9c2efefca8837a9bb6e7169304b4e5731b2ec56290a",
+    "approved": true,
+    "controllerProfile": "standard-2p-v1",
+    "mode": "versus",
+    "modeTitle": "VS Mode",
+    "maximumPlayers": 2,
+    "allowedPlayerCounts": [
+      2
+    ]
+  },
+  "catalogAudit": {
+    "FORMATO_INCOMPATIVEL": 1,
+    "LOCAL_ONLY": 171,
+    "MULTIPLAYER_REVIEW_PENDING": 18,
+    "NO_EXACT_PROFILE": 325,
+    "NO_INSTALLED_ONLINE_ENGINE": 1087,
+    "REGISTRY_APPROVED_WITHOUT_GAME_PROOF": 3003,
+    "REVIEWED_MULTIPLAYER_APPROVED": 139
+  },
+  "preserved": {
+    "realLicenses": true,
+    "schema": true,
+    "otherServices": true,
+    "allPriorOwnersProfilesModes": true,
+    "scannerTimerActive": true,
+    "ownSyntheticLicensesRemoved": true,
+    "romsCoversSaves": true,
+    "onboardDnsAnd100Up800Down": true,
+    "r164StableFallback": true
+  },
+  "physicalAndroidGameplayValidated": false,
+  "stableGameplayDeclared": false,
+  "remainingPhysicalPilot": "Same R169 on both phones; exact Capcom VS 2P; picture, sound, independent controls; host exits and guest returns for 25 seconds",
+  "rollback": "Use native fresh audit and protected transaction backups for compatible registries/tools/software together. Do not restore only the old 8 MiB mode tools over R169 mode data.",
+  "immutableHistoricalInputs": "Producer kit serverApplied=false and earlier R168/R169 blocked/recipe-only notices are inputs; this applied receipt supersedes their server status. Preserve the R168 Android failure report."
+}
