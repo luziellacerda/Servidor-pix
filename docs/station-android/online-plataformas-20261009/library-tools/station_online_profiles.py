@@ -26,6 +26,7 @@ NATIVE_CONTROLLERS = dict(dreamcast='dreamcast-four-ports-v1',
 ARCADES = {'neogeo','fbneo','cps1','cps2','cps3'}
 BINDING = ('itemId','contentSha256','engineId','coreSha256','runtimeSha256')
 PROFILE_KEY = (*BINDING, 'profileId','profileSha256')
+MAXIMUM_TRUSTED_ENGINES = 128
 MODE_FIELDS = ('profileId','maximumPlayers','allowedPlayerCounts','approved',
                'controllerProfile','mode','modeTitle','instructions','sources')
 
@@ -72,7 +73,7 @@ def profile_configuration(engine, controller, maximum):
     return dict(schemaVersion=1,controllerProfile=controller,devices=devices,coreOptions=engine['options'])
 
 def validate_manifest(manifest):
-    if not isinstance(manifest,dict) or manifest.get('schemaVersion') != 1 or not isinstance(manifest.get('engines'),list) or len(manifest['engines'])>64 or len(encoded(manifest))>512*1024:
+    if not isinstance(manifest,dict) or manifest.get('schemaVersion') != 1 or not isinstance(manifest.get('engines'),list) or len(manifest['engines'])>MAXIMUM_TRUSTED_ENGINES or len(encoded(manifest))>512*1024:
         raise ValueError('invalid trusted engine manifest')
     seen=set()
     for engine in manifest['engines']:

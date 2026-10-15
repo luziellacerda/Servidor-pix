@@ -1,3 +1,11 @@
+## R159 aplicada; diagnóstico físico007 pendente — 14/10/2026
+
+Ler o topo do mesmo handoff e r159/server-return.json. Autoridade `/mnt/DADOS/station-r159-20261014/applied.json` PASSED: kit original USB d1f0b380 e APK4837be70 lidos/conferidos, 38 arquivos/26ELF; cadastro78+321 aplicado.67 motores/14127perfis/9215modos/Cat 84, 63 owners anteriores preservados, sem reinício da API 19631/DLLb347. N64R159 owner7d50f27b4702:387perfis/157edições/120MP/37solo.157 capabilities locais/públicas, 164 admissõesMP/157 recusasSolo/223contagens inválidas e4clientes sintéticos/6WSS/recuperação passaram. Não é gameplayAndroid. Importador MAXIMUM_TRUSTED_ENGINES=128, 512 KiB/hash/controles intactos; módulo instalado82d95a86;4regressõescapacidade+3versões+6hash passaram. NÃO repetir cadastro/provas/deploy/bootrecovery.
+
+Usuário relata007online preto com áudio travando, offline abre. Sem captura atual/ADB local nem hash dos dois aparelhos nessa tentativa; causa NÃOconfirmada. N64_OWNER_MISSING capturado eraR158, corrigida pela produçãoR159. Código online forçaGlide64mk2+cached interpreter1; não alterar renderer/JIT/timeout sem evidência. Pesquisa oficial e captura no mesmo handoff. Produção corrigeAPK; última análise lifecycleb173499 preservada. DNS contornada APENAS nos clientes de teste/Git, mantendo TLS/hostkeys; sistema/rede intactos. API/scanner/timer/licençasreais/ROM/capas/outrosprodutos/banda100/800/tagsR143R157 preservados.36capas20z e aceiteAndroid pendentes: REVALIDAR plano de capas porque hash do módulo protegido mudou. Recibos originais da produção congelados; preferir retorno efetivo r159. Globalpartial.
+
+## Histórico preservado
+
 ## Retorno R159 recebido; preservar distinção entre versões
 
 Produçãodf3ef713 confirmaAPKfc1d2d98 comoR158final e mesmo N64_OWNER_MISSING no g52. R159APK4837be70/motor7d50f27b4702 relatada assinada+instaladag52, mas ZIPprivado ainda não entregue/verificado aqui; R159ServerApplied=false. R158owner070241 está cadastrado. Ler r159/server-receiver-status.json e mesmo handoff. Não confundir relatório do produtor, cadastro do servidor e gameplay físico; não reexecutar operadores anteriores.

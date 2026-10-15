@@ -183,7 +183,10 @@
   "currentN64ProfilesAfterBootRecovery": 387,
   "currentInstalledProducerReceiptCommit": "9abfc7ee4d515f7fb10844fb04c16d3384570640",
   "latestProducerReturnCommit": "df3ef713ca75cbb6421b3b5750594fb0bb9ed8c3",
-  "r159ServerApplied": false,
+  "r159ServerApplied": true,
   "r159ReceiverStatusPath": "r159/server-receiver-status.json",
-  "sameGuestFailureReportedByProducer": true
+  "sameGuestFailureReportedByProducer": true,
+  "supersededByRevision": "R159",
+  "currentServerReturnPath": "../r159/server-return.json",
+  "historicalR158Snapshot": true
 }

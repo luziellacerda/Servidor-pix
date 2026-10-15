@@ -1,3 +1,55 @@
+<!-- STATION-R159-APPLIED-20261014 -->
+## R159 aplicada; 007 com tela preta e áudio travando em diagnóstico — 14/10/2026
+
+**N64 da R159 está registrado e disponível no servidor. O problema físico atual de 007 não está resolvido nem homologado.** O usuário relata que offline abre, mas online há tela preta com áudio travando. Não foi obtida neste Linux uma captura dessa nova tentativa nem a comprovação do APK dos dois aparelhos nela. `N64_OWNER_MISSING` foi demonstrado na R158 e corrigido pela produção na R159; não atribuir automaticamente a nova tela preta à mesma exceção.
+
+### Aplicação e provas concluídas
+
+Kit original recebido em `SERVIDOR LER/R159-N64` no pen drive montado somente para leitura: SHA256 `d1f0b3805392c13b597e85b4ef8ec1fa938c19f77f2e5f5ee6ee3f2948c5454c`, 12.187.843 bytes. APK final assinado lido integralmente da mesma entrega: SHA256 `4837be706f9ac1f913b4844353741f70c539674e125ae185239611cf5faac2b3`, 2.715.106.319 bytes. Os38 arquivos do manifesto e os 26 ELF reais do APK foram conferidos, incluindo seis bibliotecas de motores e vinte dependências. Este operador não instalou APK.
+
+| Plataforma | Motor R159 cadastrado |
+| --- | --- |
+| N64 | `mupen64plus-ae-33bf7021-n64-v3-7d50f27b4702` |
+| PSX | `pcsx-rearmed-ff81ed17-player-v3-7d5350589348` |
+| GameCube | `dolphin-5102a033-gamecube-v3-008698beba99` |
+| Wii | `dolphin-5102a033-wii-v3-008698beba99` |
+
+Aplicação aditiva em duas transações reais, 78+321, com baseline efetiva e `scan.lock`: quatro motores e399 perfis/modos adicionados, preservando os 63 motores anteriores e os prefixos de perfis/modos. Snapshot às 23:47:10 UTC: catálogo84/4.741 registros, **67 motores, 14.127 perfis e9.215 modos preparados**. Sem reinício da API; PID 19631 e mesma DLL `b3473cc0160169f686501af914cdbf8ebfdf8dcaa4dff768e1106ee8461c9179`. Nenhuma aprovação PSX HLE adicionada.
+
+O importador Python limitava o manifesto a 64 motores;63+4 excederia a cota. O limite explícito passou a 128, conservando512 KiB por manifesto e todas as validações de identidade, hashes, perfis e controles. Módulo instalado atomicamente sob a trava do scanner, SHA256 `82d95a867c359afec0de6e99f9d286d5ac8da712bdf52ee696b6b5cba37995f8`. Quatro regressões de capacidade passaram, mais três de versões e seis de hash Android. Nenhum owner anterior foi apagado.
+
+Owner N64 atual:387 perfis, 157 edições, 120 multiplayer e37 individuais. Entre as multiplayer, 85 têm máximo 4, duas máximo 3 e33 máximo 2, conforme o modo. Capabilities assinadas locais/públicas das 157 edições, 164 admissões multiplayer e157 recusas de modos individuais passaram;223 recusas de contagem/modo indevidos também passaram. GameCube/Wii tiveram a identidade das capabilities assinadas conferida localmente e publicamente, com 9/3 modos aprovados.
+
+Quatro participantes **sintéticos** na rede pública, usando007, passaram: slots1–4, três vínculos/seis WSS, barreira READY, 24.615 bytes bidirecionais separados, pausa/retomada, epoch2, offsets, TLS/SPKI e prioridade. As licenças sintéticas próprias foram removidas; as reais foram preservadas. Essa prova não executa o renderizador nem o áudio Android e não comprova uma partida em quatro celulares.
+
+Uma prova parou por falha DNS `EAI_AGAIN` após a primeira etapa pública; os cadastros já estavam aplicados e não foram repetidos. As etapas restantes passaram com resolução HTTPS autenticada somente no cliente de teste, mantendo CA, SNI, hostname e SPKI. Nenhuma configuração DNS do sistema, túnel ou serviço foi alterada.
+
+Ler [retorno efetivo R159](r159/server-return.json), [recebimento conciliado](r159/server-receiver-status.json) e [provas sanitizadas](r159/evidence/server-applied.json). Os recibos congelados da produção e as seções anteriores permanecem históricos. Autoridade administrativa: `/mnt/DADOS/station-r159-20261014/applied.json`, PASSED. **Não repetir cadastro, aplicação ou operadores anteriores.**
+
+### Pesquisa oficial e comparação com nosso código
+
+1. **Vídeo e perfil gráfico:** em relato de tela preta com som, o mantenedor do Mupen64PlusAE orienta verificar o perfil e a compatibilidade do aparelho. É uma linha de diagnóstico, sem comprovar a causa neste007. [Discussão oficial #1130](https://github.com/mupen64plus-ae/mupen64plus-ae/discussions/1130).
+2. **Orientação e Surface:** o mantenedor relata casos de tela preta no netplay associados à orientação fixa e propõe comparação com automática. Conferir criação/recriação da Surface antes de escolher uma mudança. A explicação do tópico sobre o lobby upstream sair do caminho não se aplica ao relay WSS próprio do Station. [Discussão oficial #1165](https://github.com/mupen64plus-ae/mupen64plus-ae/discussions/1165).
+3. **Diferença concreta do app:** `integration/n64-owner-application-context-r159/recipe/StationN64Bridge.java`, `Session.prefs`, força `GLIDE64MK2`, `r4300Emulator="1"` e RSP HLE; `ready` também solicita Glide64mk2 explicitamente. No core oficial, 1 significa interpretador com cache. As preferências efetivas do offline neste aparelho não foram capturadas: não afirmar outro plugin/JIT sem lê-las. O custo de CPU precisa ser medido nos celulares. [Mapeamento oficial do core](https://github.com/mupen64plus/mupen64plus-core/blob/master/src/main/main.c).
+4. **Áudio:** o plugin Android oficial força time stretching no netplay. Áudio entrecortado sozinho não distingue falta de desempenho local de espera pelos inputs. Medir FPS/VI, tempo de espera e estado da barreira. [Plugin oficial no commit usado](https://github.com/mupen64plus-ae/mupen64plus-ae/blob/33bf7021549d7873e976884370fbd1a8e7333bc7/mupen64plus-audio-android/src/plugin.cpp).
+5. **Inicialização e transporte:** a API nativa usa TCP para cadastro/settings/saves e UDP para inputs; no Station os dados passam pelo mux e WSS. `StationMultiplayerStream.ReceiveDataPacket` e `Next` encaminham bootstrap antes de `Playing`. No cliente, `StationMultiplayerTunnel` também escoa bytes antes de READY. Não foi demonstrado bloqueio circular nesse ponto. [Protocolo oficial](https://github.com/mupen64plus/mupen64plus-core/blob/master/doc/emuwiki-api-doc/Mupen64Plus-v2.0-Netplay-API.mediawiki).
+
+Produção até `b173499`: a evidência `integration/n64-owner-application-context-r159/evidence/a 56-service-lifecycle-20261014.md` relata CoreService persistente numa tentativa R158 e destruição correta no offline R159. O encerramento online R159 ainda precisa de prova. Não transformar a hipótese histórica de serviço órfão na causa da nova tela preta. Fonte e recibos originais preservados no Git.
+
+### Captura necessária para escolher a correção
+
+Em uma tentativa nova, confirmar hash/motor e edição idênticos nos dois aparelhos e registrar horário/papéis. Capturar dos dois: `StationRooms`, `StationRecovery`, `CoreService`, falhas nativas, Surface/EGL/GL, retorno ao anexar plugins, primeiro frame e FPS/VI. Ler preferências/plugins efetivos offline e online; não apenas o nome no menu. Manter saída acessível para anfitrião e convidado.
+
+Cruzar com conexões por vínculo, Hello/Paused/Ready, epoch, estado, bytes aceitos/entregues e retenção do servidor. O relay encaminha bytes; os celulares renderizam N64. Se faltar cadastro/roster/primeiro ACK nativo, localizar essa etapa; se houver frames/áudio e pausas repetidas, medir inputs/latência; se o transporte avançar sem frames apresentados, investigar o caminho gráfico Android. São critérios de investigação, não causas já confirmadas.
+
+Comparações de perfil gráfico ou orientação devem ocorrer no build de diagnóstico da produção, uma variável por vez e com clientes compatíveis. Não ativar JIT, retirar barreiras, ampliar timeouts ou trocar plugin no servidor por tentativa: a política determinística e seus hashes mudariam. Uma identidade final diferente precisa do kit correspondente e do registrador vigente.
+
+Neste Linux, o ADB não apresentava aparelho autorizado e a janela inicial de observação tinha zero salas/conexões; não contém a falha física reportada. O monitor de leitura foi reaberto para uma nova tentativa. **Não há evidência suficiente para atribuir a tela preta atual ao servidor, à GPU ou à internet.** A correção do APK segue com a produção; este retorno entrega cadastro concluído, fatos de código e critérios de captura.
+
+API/scanner e outros serviços preservados; limites100 Mbps de upload/800 Mbps de download mantidos. As36 capas do ciclo20z não foram publicadas neste atendimento. Revalidar o plano antigo de capas, pois o módulo de perfis mudou. Tags estáveisR143/R157 protegidas. Estado global parcial pelo aceite físico e pelas capas.
+
+## Histórico anterior: R158 e recebimento inicial R159, superados pelo estado acima
+
 <!-- STATION-USB-070241-20261014 -->
 ## N64: APK novo cadastrado; falha de abertura capturada no anfitrião — 14/10/2026
 
