@@ -1,3 +1,70 @@
+<!-- STATION-HOURLY-20261015-22Z-R168-RECEIVED -->
+## R168 recebida; publicação recusada pelo orçamento de WinBack — 15/10/2026, 22h UTC
+
+**O kit R168 chegou pelo Git privado e foi conferido, mas não foi cadastrado.**
+A branch pública `build/station-r168-psx-xml-20261015` ainda contém a receita
+`e8c0e8c6`; a carga real está no commit privado `4733c00f`, conferida por blob Git
+e SHA-256. ZIP `c0de71c3a4e10cce320f7ba6966e183871760157ca67e9010eb5bdfb0850177b`,
+14.275.389 bytes, 51 arquivos/50 hashes manifestados e 27 ELF ARM64 verificados.
+A cadeia de recibos da produção vincula o kit ao APK final `875fb069…`;
+nenhum APK foi recebido e a assinatura não foi verificada independentemente neste Linux.
+
+A R168 traz a correção SAX do PSX: fonte `bb045d81…`, uma classe alterada e
+uma adicionada no DEX35, 607 classes preservadas por prova da produção. As
+outras 39 partições DEX, carrossel R167, núcleos, 21 dependências, ponte AE,
+opções e controles permanecem pelos hashes/recibos conferidos. Os quatro
+owners recebidos são PSX `b21623fee188`, N64 `a0c9d15cfbc7` e GameCube/Wii
+`04383e1f63a0`; **esses owners ainda não estão registrados**.
+
+A autenticação Linux nativa concluiu em 61,71s, somente para leitura. Processo,
+ExecStart, DLL `53d4adc9c114`, configuração efetiva e ferramentas instaladas
+coincidem com a autoridade aplicada. Baseline sob `scan.lock`: catálogo100 /
+4.744 itens / 87 motores / 16.404 perfis / 11.489 modos, exatamente R167.
+API152812/NRestarts0, nginx4266 e cloudflared5155/NRestarts1 histórico preservados.
+
+**O preflight real recusou os primeiros 78 vínculos**, antes de staging ou
+transação: `automatic profile content projection exceeds the server byte limit`.
+WinBack: Covert Operations, item `station_4e577685b9feb98a02a1b2cb884f2925`,
+já tem 124 perfis ocupando130.472B. Os seis primeiros vínculos R168 elevam a
+projeção para137.167B, acima de131.072B em6.095B. Restam600B na baseline.
+A guarda/limite não foi alterada; não houve poda, reescrita de históricos,
+cadastro parcial ou tentativa administrativa de publicação. As 321 decisões
+N64 e os 492 vínculos completos não receberam validação final.
+
+Separadamente, a preparação PSX reavaliou o ledger HLE real das84 edições:
+93 decisões,23 modos2P em19 edições,17 impedidos e53 classificações locais.
+Todas coincidem com a política vigente R167. As negativas de core alterado,
+HLE real ausente e edição trocada passaram. Isso é preparação; não comprova
+capabilities assinadas R168 nem transporte/gameplay Android dessa revisão.
+
+Capas Git `main5c6cc32` / `capas-super-nintendo9f85e9d` e manifestoSNES
+`c78c2fed` iguais, sem PNG novo nos caminhos declarados. Zero importações ou
+JPEGs compilados. Os três PNGs finais exatos pendentes13z e as20 artes sem
+edição instalada exata continuam pendentes; capas13z/1080R164 preservadas.
+Nenhum timer foi parado, scanner invocado, serviço reiniciado ou arquivo de
+catálogo/ROM/capa/save/licença/rede/outro produto alterado por este ciclo.
+R164 estável, PS3/PS4offline e os dois CRLF históricos permanecem preservados.
+
+Ler [recibo R168](r168/server-return.json) e
+[conferência22z](online-plataformas-20261009/maintenance/20261015-22z/sanitized-receipt.json).
+Autoridade privada `/mnt/DADOS/station-maintenance-20261015-22z/`, incluindo
+`received-kit-verified.json`, `protected-audit.json`, `capacity-rejection.json`
+e `psx-requalification.json`. Os preparadores R168 são funções puras no Git
+do servidor; não existe publicador R168 aprovado neste ciclo.
+
+**Próximo ciclo:** não pedir novamente este kit nem repetir R167/R166/DLL/provas
+completas/capas. Primeiro conciliar recibos posteriores e o orçamento por
+conteúdo. A publicação conjunta só pode prosseguir com solução autorizada que
+preserve os históricos e o contrato vigente, baseline protegida nova e
+preflight completo aprovado; então registrador transacional/scan.lock,
+parando apenas o timer scanner durante a publicação real e aguardando o
+oneshot. Não executar `authenticate-next.py` R166 nem tratar este retorno como
+cadastro R168. Instalador privado, hashes dos dois APKs corrigidos, quadro,
+som, controles e retorno do convidado25s ainda precisam de prova física.
+O monitor pai205323 mantém `maintenance.lock` até encerrar; não foi liberado por este agente.
+
+## Histórico preservado
+
 <!-- STATION-PSX-ANDROID-XML-20261015 -->
 ## Capcom PSX: falha Android capturada; código corrigido para a próxima compilação
 
