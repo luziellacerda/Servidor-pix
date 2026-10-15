@@ -1,3 +1,51 @@
+<!-- STATION-HOURLY-20261015-23Z -->
+## Ciclo 23h UTC: R168 conferida; receitas R169 recebidas sem kit final
+
+A leitura nativa somente de conferência confirmou a R168 já aplicada: catálogo
+100/4.744 itens, 91 motores, 16.896 perfis e 11.981 modos. Processo, ExecStart,
+DLL `3480b991ac87`, 28 arquivos de configuração e três ferramentas instaladas
+coincidem com os recibos; API PID215916/NRestarts0. Autenticação genuína em
+6,37s; `scan.lock` adquirido. O recibo final R168 confirma entrega remota e
+liberação da lease anterior. Nenhuma publicação, parada de timer, scanner,
+reinício ou repetição das provas completas ocorreu neste ciclo.
+
+Foi observada a branch APP `fix/station-psx-cas-r169-20261015`, commit
+`e0fea23e96ccedad686f7d7d7d2a821780e486a0`. Contém README e três receitas de
+patch, empacotamento e assinatura. O produtor descreve uma chamada CAS inválida
+no DEX35 da R168 e uma troca para `AtomicReference.compareAndSet`. Este Linux
+leu os fontes; não reproduziu esse erro em Android. Não há recibo final
+assinado/handoff de servidor R169 no escopo dessa árvore, nem ZIP R169 nos
+globs locais autorizados. Mensagens de commit não substituem recibos e bytes.
+**R169 não cadastrada.** Nenhum APK ou receita foi executado ou alterado aqui;
+os IDs R168 não foram reutilizados para anunciar uma revisão futura.
+
+Capas Git `main5c6cc32`/`capas-super-nintendo9f85e9d` e manifesto SNES
+`c78c2fed` iguais: 220 outputs declarados, zero originais nos caminhos atuais.
+Continuam ausentes os PNGs exatos de Fighter's History, FIFA International
+Soccer e FIFA Soccer96. Zero importações/JPEGs; 20 artes sem edição exata,
+capas corretas anteriores e 1080R164 preservadas.
+
+Backups anteriores dos dois Gits e da entrada R169 publicados e lidos de volta;
+entrega em `feat/station-hourly-20261015-23z`, worktrees próprias no DADOS.
+Ler [recibo deste ciclo](online-plataformas-20261009/maintenance/20261015-23z/sanitized-receipt.json).
+Autoridade privada `/mnt/DADOS/station-maintenance-20261015-23z/`.
+Serviços compartilhados, ROMs, saves, licenças, rede100/800/DNS, R164 e os dois
+CRLF históricos preservados. Timer scanner ativo/últimoexit0; timer horário
+ativo/habilitado. A manutenção continua serializada pelo monitor pai225524
+até ele encerrar; este agente não liberou seu lock nem editou state/config.
+
+Próximo ciclo: conciliar recibos R168 e esta conferência, sem repetir cadastro,
+deploy ou provas. R169 exige handoff final, prova do APK assinado e kit privado
+exato, modos explícitos e ledger HLE PSX real. Só então baseline protegida
+fresca, preflight integral nos limites vigentes e registrador transacional.
+Não executar receitas Android neste PC nem restaurar validador/DLL128KiB sobre
+dados R168. Se só houver as mesmas receitas/capas, registrar conferência.
+Hashes dos dois celulares e gameplay/áudio/controles/saída física continuam
+pendentes, assim como os17 impedimentos PSX, sinopses/campos editoriais,
+502 histórico sem causa e N64 com3/4 Android. PS3/PS4 permanecem offline.
+
+## Histórico preservado
+
 <!-- STATION-R168-APPLIED-CAPACITY-20261015 -->
 ## R168 aplicada: abertura PSX corrigida e cadastro conferido
 
