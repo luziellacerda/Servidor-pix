@@ -333,5 +333,20 @@
     }
   ],
   "privateAuthority": "/mnt/DADOS/station-psx-return-20261015-1736/completed.json",
-  "nextAction": "Use the same R165 and exact approved edition/mode on both phones; verify first video frame, audio, independent controls and confirmed host exit/notice/return on the guest. Preserve R164 fallback. Do not reenroll, republish covers or redeploy this release."
+  "nextAction": "Use the same R165 and exact approved edition/mode on both phones; verify first video frame, audio, independent controls and confirmed host exit/notice/return on the guest. Preserve R164 fallback. Do not reenroll, republish covers or redeploy this release.",
+  "rollbackPlan": {
+    "applied": false,
+    "requiresEffectiveDllSha256": "53d4adc9c1143f09c6b136ee085cb599dbe58a286b582107cc88a640483b2eb2",
+    "requiresNoLiveRoomsOrRecovery": true,
+    "ownedOverridesToRemove": [
+      "/etc/systemd/system/turborama-station-api.service.d/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz-station-r165-host-exit-20261015.conf",
+      "/etc/systemd/system/turborama-station-api.service.d/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz-station-r165-host-exit-20261015.conf"
+    ],
+    "targetDllSha256": "b3473cc0160169f686501af914cdbf8ebfdf8dcaa4dff768e1106ee8461c9179",
+    "targetRelease": "/opt/turborama-station-n64-ready-20261014-b3473cc01601",
+    "daemonReloadAndControlledStationRestartRequired": true,
+    "preserveRegisteredEnginesProfilesAndModes": true,
+    "preserveEveryOtherDropInAndRelease": true,
+    "rollbackOnlyLatestOverrideWouldSelectIntermediate5722": true
+  }
 }

@@ -90,7 +90,10 @@ piloto; g52 na R165 não está comprovado neste retorno. Não promover gameplay
 R165 nem quatro Android por causa de testes sintéticos. R164 estável preservada.
 
 Autoridade privada `/mnt/DADOS/station-psx-return-20261015-1736/completed.json`, PASSED. **Não repetir o cadastro,
-os publicadores PSX/R164/capas nem esta implantação.** Retorno de serviço remove
-somente o novo drop-in próprio e reativa a DLL b347 preservada; não desfaz os
-dados aditivos ou bindings antigos. Nenhuma mudança de Wi-Fi/onboard/DNS,
+os publicadores PSX/R164/capas nem esta implantação.** Para retornar à baseline b347, conferir que a DLL53d4 ainda é a efetiva,
+aguardar zero salas/conexões/recuperações e remover os **dois drop-ins próprios
+R165**, listados em rollbackPlan no recibo. Recarregar o systemd e reiniciar
+somente o Station, conferindo a DLL b347. Remover apenas o último selecionaria
+a intermediária5722. Preservar todos os outros drop-ins, releases e dados
+aditivos; o plano está preparado, não foi executado. Nenhuma mudança de Wi-Fi/onboard/DNS,
 banda100/800, ROM, arte, save, chave/licença real ou outro produto.
