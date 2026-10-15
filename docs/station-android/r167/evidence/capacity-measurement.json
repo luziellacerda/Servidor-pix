@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "largestProfileGroupBytes": 130472,
+  "limitBytes": 131072,
+  "remainingBytesForLargestGroup": 600,
+  "largestItemId": "station_4e577685b9feb98a02a1b2cb884f2925",
+  "profileGroups": 3391,
+  "protectedLimitChanged": false
+}

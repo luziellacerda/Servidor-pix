@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "apiPid": 152812,
+  "automaticRestarts": 0,
+  "dllSha256": "53d4adc9c1143f09c6b136ee085cb599dbe58a286b582107cc88a640483b2eb2",
+  "serviceConfigurationUnchanged": true,
+  "scannerTimerActive": true,
+  "realLicensesPreserved": true,
+  "ownSyntheticLicensesRemoved": true
+}

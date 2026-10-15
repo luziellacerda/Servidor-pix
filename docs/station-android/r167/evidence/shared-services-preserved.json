@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "baselineObservedInCycle20z": true,
+  "allComparedUnitsUnchanged": true,
+  "services": {
+    "turborama-station-api.service": {
+      "MainPID": "152812",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "Id": "turborama-station-api.service",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "nginx.service": {
+      "MainPID": "4266",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "Id": "nginx.service",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "cloudflared.service": {
+      "MainPID": "5155",
+      "NRestarts": "1",
+      "ExecMainStatus": "0",
+      "Id": "cloudflared.service",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "station-network-priority.service": {
+      "MainPID": "4310",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "Id": "station-network-priority.service",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "station-network-qos.service": {
+      "MainPID": "0",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "Id": "station-network-qos.service",
+      "ActiveState": "active",
+      "SubState": "exited"
+    },
+    "turborama-station-management.service": {
+      "MainPID": "3223",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "Id": "turborama-station-management.service",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "turborama-suite-api.service": {
+      "MainPID": "4125",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "Id": "turborama-suite-api.service",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "turborama-suite-content-gateway.service": {
+      "MainPID": "4127",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "Id": "turborama-suite-content-gateway.service",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "turborama-suite-admin.service": {
+      "MainPID": "3224",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "Id": "turborama-suite-admin.service",
+      "ActiveState": "active",
+      "SubState": "running"
+    }
+  }
+}

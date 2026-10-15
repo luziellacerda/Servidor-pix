@@ -1,0 +1,112 @@
+{
+  "passed": true,
+  "route": "shadow-loopback",
+  "checks": [
+    {
+      "platform": "psx",
+      "itemId": "station_01c21865fe0261fc4698fc7ca61fa09b",
+      "engineId": "pcsx-rearmed-ff81ed17-player-v3-4d5c4cb8f609",
+      "exactSignedProfiles": 1,
+      "admittedModes": 0,
+      "clientMaximumPlayers": 5
+    },
+    {
+      "platform": "n64",
+      "itemId": "station_003f8fb606d1024c1b85bc3db1be39d9",
+      "engineId": "mupen64plus-ae-33bf7021-n64-v3-cf820ae1f2ca",
+      "exactSignedProfiles": 2,
+      "admittedModes": 0,
+      "clientMaximumPlayers": 5
+    },
+    {
+      "platform": "gamecube",
+      "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+      "engineId": "dolphin-5102a033-gamecube-v3-5ce990f91db1",
+      "exactSignedProfiles": 1,
+      "admittedModes": 0,
+      "clientMaximumPlayers": 5
+    },
+    {
+      "platform": "gamecube",
+      "itemId": "station_2dc88daf495305000e730a205a1f06b6",
+      "engineId": "dolphin-5102a033-gamecube-v3-5ce990f91db1",
+      "exactSignedProfiles": 1,
+      "admittedModes": 0,
+      "clientMaximumPlayers": 5
+    },
+    {
+      "platform": "gamecube",
+      "itemId": "station_2e3dc618c01206375b812abb1d55f69e",
+      "engineId": "dolphin-5102a033-gamecube-v3-5ce990f91db1",
+      "exactSignedProfiles": 1,
+      "admittedModes": 0,
+      "clientMaximumPlayers": 5
+    },
+    {
+      "platform": "gamecube",
+      "itemId": "station_3c9c45df9a48170befa8a0d719e6ce2e",
+      "engineId": "dolphin-5102a033-gamecube-v3-5ce990f91db1",
+      "exactSignedProfiles": 2,
+      "admittedModes": 0,
+      "clientMaximumPlayers": 5
+    },
+    {
+      "platform": "gamecube",
+      "itemId": "station_5ef747e4fd8c83fa197b2b2492c24088",
+      "engineId": "dolphin-5102a033-gamecube-v3-5ce990f91db1",
+      "exactSignedProfiles": 1,
+      "admittedModes": 0,
+      "clientMaximumPlayers": 5
+    },
+    {
+      "platform": "gamecube",
+      "itemId": "station_621bec6947fa88fea7d71e07e1ce524a",
+      "engineId": "dolphin-5102a033-gamecube-v3-5ce990f91db1",
+      "exactSignedProfiles": 1,
+      "admittedModes": 0,
+      "clientMaximumPlayers": 5
+    },
+    {
+      "platform": "gamecube",
+      "itemId": "station_6d7b4d0d988b1fcea440c9a7c8dfdbad",
+      "engineId": "dolphin-5102a033-gamecube-v3-5ce990f91db1",
+      "exactSignedProfiles": 1,
+      "admittedModes": 0,
+      "clientMaximumPlayers": 5
+    },
+    {
+      "platform": "gamecube",
+      "itemId": "station_b4ee8d06c9390aad9464023b6459fd35",
+      "engineId": "dolphin-5102a033-gamecube-v3-5ce990f91db1",
+      "exactSignedProfiles": 1,
+      "admittedModes": 0,
+      "clientMaximumPlayers": 5
+    },
+    {
+      "platform": "wii",
+      "itemId": "station_68b4911aaba6d2a81b9e525f36a5c697",
+      "engineId": "dolphin-5102a033-wii-v3-5ce990f91db1",
+      "exactSignedProfiles": 1,
+      "admittedModes": 0,
+      "clientMaximumPlayers": 5
+    },
+    {
+      "platform": "wii",
+      "itemId": "station_6e92c46795e509e9593cc55b5fb946ea",
+      "engineId": "dolphin-5102a033-wii-v3-5ce990f91db1",
+      "exactSignedProfiles": 1,
+      "admittedModes": 0,
+      "clientMaximumPlayers": 5
+    },
+    {
+      "platform": "wii",
+      "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+      "engineId": "dolphin-5102a033-wii-v3-5ce990f91db1",
+      "exactSignedProfiles": 1,
+      "admittedModes": 0,
+      "clientMaximumPlayers": 5
+    }
+  ],
+  "ownSyntheticLicenseRemoved": true,
+  "physicalAndroidGameplayValidated": false
+}

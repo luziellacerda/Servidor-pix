@@ -1,3 +1,56 @@
+<!-- STATION-R167-APPLIED-20261015 -->
+## R167 aplicada: motores cadastrados e API pública conferida
+
+O retorno combinado da produção foi aplicado. Ler o [recibo](docs/station-android/r167/server-return.json),
+o [contrato de consumo e piloto](docs/station-android/r167/README.md) e os [492 vínculos exatos](docs/station-android/r167/profiles-r167.json).
+A R166 não foi aplicada: foi substituída diretamente pela R167, conforme o pedido.
+Não executar o controlador R166 que ficou pendente no ciclo 20z.
+
+Kit privado `82cf0bff`: 48 arquivos, 47 hashes e 27 ELF ARM64 conferidos.
+Quatro motores novos: PSX `4d5c4cb8f609`, N64 `cf820ae1f2ca`, GameCube/Wii
+`5ce990f91db1`. Núcleos, 21 dependências, opções e controles preservados;
+os marcadores vinculam o novo carrossel. Os recibos da produção confirmam as
+40 partições DEX da R166 e a correção do nome `libc++_shared.so` no PSX.
+Nenhum APK recebido ou assinatura do APK verificada neste Linux.
+
+Baseline protegida: 83 motores, 15.912 perfis e 10.997 modos. Após o cadastro:
+**87 motores, 16.404 perfis e 11.489 modos**, catálogo 100 com 4.744 itens.
+Todas as linhas anteriores foram preservadas. Cobertura requalificada:
+
+- PSX: 84 edições, 93 decisões; 23 modos para duas pessoas em 19 edições,
+  17 modos impedidos e 53 classificações locais sem vagas online.
+- N64: 157 edições, 387 perfis; 230 modos multiplayer e 157 individuais.
+- GameCube: nove modos; Wii: três modos.
+
+Conteúdo, motor, core, runtime, perfil, controles e capacidade foram conferidos.
+Seis instruções novas de WinBack foram condensadas para respeitar o orçamento
+vigente, mantendo aprovação, capacidade, fontes e todos os registros antigos.
+Nenhum jogo foi aprovado pelo nome ou por `metadata.players`.
+
+Passaram as capabilities assinadas locais e públicas das 84 edições PSX e
+157 N64, com 23 admissões/167 recusas PSX e 230 admissões/245 recusas N64.
+Os quatro motores e os 12 modos GameCube/Wii foram conferidos. Transporte PSX
+com dois clientes e snapshot real de 4.456.448 bytes; N64 com quatro clientes,
+seis WSS, TLS/SPKI, prioridade e pausa/retomada passaram. A saída do anfitrião
+entregou STATE3 antes de close1000 nos dois clientes, com três tentativas do
+mesmo leave. Essas provas são sintéticas e não homologam gameplay Android.
+
+**Zero reinícios nesta entrega.** DLL `53d4adc9c114`, fonte `c0ca229`, PID 152812,
+NRestarts 0. A correção N64/R165 permanece ativa, sem nova lógica de jogo.
+Scanner ativo; licenças reais preservadas e contas próprias de teste removidas.
+ROMs, capas, saves, IDs, downloads, outros produtos, rede 100/800 e R164 preservados.
+Autoridade: `/mnt/DADOS/station-r167-git-20261015/completed.json`, PASSED.
+Não repetir cadastro, provas completas, DLL, capas ou operadores históricos.
+
+Produção: confirmar o instalador privado e instalar manualmente o mesmo APK
+R167 (`dd6f8f81…`) nos dois aparelhos, preservando dados. Testar as vizinhas
+10% mais largas e Capcom vs. SNK / VS com duas vagas na edição exata do README.
+Registrar cada hash instalado, primeiro quadro, som, controles e retorno do
+convidado por 25 segundos após sair o anfitrião. **R167/PSX Android ainda não
+estão homologados.** As demais pendências globais permanecem registradas.
+
+## Histórico preservado
+
 <!-- STATION-R165-APPLIED-20261015 -->
 ## R165 aplicada: cadastro e saída confirmada — 15/10/2026
 

@@ -1,3 +1,9 @@
+## Atualização: R167 aplicada
+
+A R166 não foi aplicada. O retorno combinado R167 foi cadastrado diretamente;
+ler [recibo R167](../r167/server-return.json). Não executar `authenticate-next.py`
+da R166. O preparo abaixo é histórico preservado.
+
 # R166 — kit recebido e cadastro preparado; autenticação pendente
 
 **Não aplicado.** O kit privado R166 `b2b4eb84` foi recebido e conferido neste Linux:
