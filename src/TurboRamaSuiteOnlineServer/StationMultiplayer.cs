@@ -197,7 +197,7 @@ public sealed class StationMultiplayer
                     Need(budget.TryReserve("v3:"+room.Id,(long)links.Length*2*WindowBytes),503,"STATION_MULTIPLAYER_REPLAY_FULL");
                     try{room.Links=links;room.Stream=new StationMultiplayerStream(links.Select(l=>l.LinkId).ToArray(),WindowBytes,()=>budget.Release("v3:"+room.Id));room.Generation++;}
                     catch{budget.Release("v3:"+room.Id);throw;}break;}
-                case "leave":{var room=Own(peer,c);Leave(peer,room);break;}
+                case "leave":{var room=Own(peer,c);Leave(peer,room,confirmedLeave:true);break;}
                 case "failed":{var room=Own(peer,c);Need(room.Stream is not null,409,"STATION_MULTIPLAYER_START_REQUIRED");room.Stream!.End();break;}
                 case "chat":{
                     var room=Own(peer,c);Need(Text(c.Text,500),400,"STATION_MULTIPLAYER_TEXT_INVALID");Need(clock()-peer.LastChat>=1000,429,"STATION_MULTIPLAYER_CHAT_RATE_LIMIT");peer.LastChat=clock();
@@ -223,10 +223,10 @@ public sealed class StationMultiplayer
     private Room Find(string? id){Need(id is not null&&rooms.ContainsKey(id),404,"STATION_MULTIPLAYER_ROOM_UNKNOWN");return rooms[id!];}
     private Room Own(Peer peer,StationMultiplayerCommand c){var room=Find(c.RoomId);Need(peer.Room==room.Id&&room.Members.Any(m=>m.Peer==peer),403,"STATION_MULTIPLAYER_MEMBERSHIP_REQUIRED");Need(c.Generation==room.Generation,409,"STATION_MULTIPLAYER_GENERATION_MISMATCH");return room;}
     private void Bump(Room room){room.Generation++;int slot=1;foreach(var m in room.Members.OrderBy(m=>m.Slot)){m.Slot=slot++;m.Ready=false;}}
-    private void Leave(Peer peer,Room room)
+    private void Leave(Peer peer,Room room,bool confirmedLeave=false)
     {
         if(room.Host==peer.Id||room.Stream is not null){
-            room.Stream?.RetireRoom();foreach(var m in room.Members)m.Peer.Room=null;rooms.Remove(room.Id);
+            room.Stream?.RetireRoom(confirmedLeave);foreach(var m in room.Members)m.Peer.Room=null;rooms.Remove(room.Id);
             foreach(var k in grants.Where(x=>x.Value.Lease.RoomId==room.Id).Select(x=>x.Key).ToArray())grants.Remove(k);
         }else{room.Members.RemoveAll(m=>m.Peer==peer);peer.Room=null;Bump(room);}
     }

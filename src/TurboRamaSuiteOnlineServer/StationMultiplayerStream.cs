@@ -27,7 +27,7 @@ public sealed class StationMultiplayerStream
     private readonly object gate=new();private readonly string[] links;
     private readonly StationStreamWindow[] windows;private readonly Connection?[] connections;private readonly long[] maximumSent;
     private readonly HashSet<int> suspended=[];private TaskCompletionSource pulse=NewPulse();
-    private long epoch=1,state=StationStreamSession.Waiting;private readonly Action? retired;private bool released,retirementRequested,hasPlayed;
+    private long epoch=1,state=StationStreamSession.Waiting;private readonly Action? retired;private bool released,retirementRequested,hasPlayed,confirmedLeavePending;
     public StationMultiplayerStream(string[] links,int windowBytes=StationMultiplayer.WindowBytes,Action? retired=null)
     {
         if(links.Length is <1 or >4||links.Distinct(StringComparer.Ordinal).Count()!=links.Length)throw new ArgumentException("One to four unique links required.");
@@ -47,12 +47,17 @@ public sealed class StationMultiplayerStream
     public void Detach(string link,bool host,Connection c)
     {lock(gate){int side=Side(link,host);if(connections[side]!=c)return;connections[side]=null;
         if(state!=StationStreamSession.Unrecoverable)Pause();Retire();Changed();}}
-    public void End()
-    {Connection?[] copy;lock(gate){state=StationStreamSession.Unrecoverable;epoch++;copy=connections.ToArray();Retire();Changed();}
-        foreach(var c in copy)if(c is not null)try{c.Stop.Cancel();}catch(ObjectDisposedException){}}
-    public void RetireRoom(){lock(gate)retirementRequested=true;End();}
+    public void End(bool confirmedLeave=false)
+    {Connection?[] copy;lock(gate){state=StationStreamSession.Unrecoverable;epoch++;confirmedLeavePending=confirmedLeave;copy=connections.ToArray();
+        // A confirmed leave gives the sole WS writer time to publish STATE=3.
+        // Other failures still cancel immediately; all leave timers are bounded.
+        if(confirmedLeave)foreach(var c in copy)if(c is not null)c.Stop.CancelAfter(2000);
+        Retire();Changed();}
+        if(!confirmedLeave)foreach(var c in copy)if(c is not null)try{c.Stop.Cancel();}catch(ObjectDisposedException){}}
+    public void RetireRoom(bool confirmedLeave=false){lock(gate)retirementRequested=true;End(confirmedLeave);}
     private void Retire(){if(retirementRequested&&!released&&state==StationStreamSession.Unrecoverable&&connections.All(c=>c is null)){released=true;retired?.Invoke();}}
     public long CurrentState {get{lock(gate)return state;}}
+    public bool ConfirmedLeavePending {get{lock(gate)return confirmedLeavePending;}}
     public bool HasPlayed {get{lock(gate)return hasPlayed;}}
     public (long Epoch,long State,long Pending,long Accepted,long Delivered,int Connections) Snapshot()
     {lock(gate)return(epoch,state,windows.Sum(w=>w.Pending),windows.Sum(w=>w.Accepted),windows.Sum(w=>w.Delivered),connections.Count(c=>c is not null));}
@@ -155,7 +160,7 @@ public sealed class StationMultiplayerRelay(StationMultiplayer hub,IStationOnlin
         using var stop=CancellationTokenSource.CreateLinkedTokenSource(aborted,connection.Stop.Token);
         string reason="transport-closed";long epochAtFirstCause=0;object endGate=new();
         void First(string category){lock(endGate){if(epochAtFirstCause!=0)return;reason=category;epochAtFirstCause=stream.Snapshot().Epoch;}}
-        Task send=Send(),watch=Watch();bool closeReceived=false;
+        Task send=Send(),watch=Watch();bool closeReceived=false,terminalCloseSent=false;
         try{
             byte[] buffer=new byte[StationStreamFrame.HeaderBytes+StationStreamFrame.MaximumDataBytes];
             while(!stop.IsCancellationRequested){
@@ -175,16 +180,20 @@ public sealed class StationMultiplayerRelay(StationMultiplayer hub,IStationOnlin
             try{await Task.WhenAll(send,watch);}catch(Exception e)when(e is OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){}
             if(closeReceived&&socket.State==WebSocketState.CloseReceived){using var closeTimeout=new CancellationTokenSource(2000);
                 try{await socket.CloseOutputAsync(WebSocketCloseStatus.NormalClosure,"",closeTimeout.Token);}catch(Exception e)when(e is OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){}}
-            socket.Abort();stream.Detach(lease.LinkId,lease.HostSide,connection);hub.Close(lease);
+            if(!(terminalCloseSent&&closeReceived&&socket.State==WebSocketState.Closed))socket.Abort();
+            stream.Detach(lease.LinkId,lease.HostSide,connection);hub.Close(lease);
             logger.LogInformation("Station multiplayer transport-end generation={Generation} slot={Slot} hostSide={HostSide} cause={Cause} epochAtFirstCause={FirstEpoch} epochAfterDetach={AfterEpoch}",lease.Generation,lease.OwnerSlot,lease.HostSide,reason,epochAtFirstCause,stream.Snapshot().Epoch);
             connection.Stop.Dispose();
         }
         async Task Send(){try{while(!stop.IsCancellationRequested){var next=stream.Next(lease.LinkId,lease.HostSide,connection);
-            if(next.Frame is {} frame){await socket.SendAsync(StationMultiplayerFrame.Encode(frame).AsMemory(),WebSocketMessageType.Binary,true,stop.Token);continue;}
+            if(next.Frame is {} frame){await socket.SendAsync(StationMultiplayerFrame.Encode(frame).AsMemory(),WebSocketMessageType.Binary,true,stop.Token);
+                if(frame.Type==StationStreamFrame.State&&frame.Value==StationStreamSession.Unrecoverable&&stream.ConfirmedLeavePending){
+                    await socket.CloseOutputAsync(WebSocketCloseStatus.NormalClosure,"",stop.Token);terminalCloseSent=true;return;}
+                continue;}
             await next.Changed.WaitAsync(stop.Token);
         }}catch(Exception e)when(e is OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){if(!stop.IsCancellationRequested){First("send-failure");stop.Cancel();}}}
         async Task Watch(){try{while(!stop.IsCancellationRequested){
-            if(!hub.Current(lease)){First("lease-invalidated");stop.Cancel();return;}
+            if(!hub.Current(lease)){if(stream.ConfirmedLeavePending)return;First("lease-invalidated");stop.Cancel();return;}
             if(hub.PresenceAge(lease)>=60000){First("auth-heartbeat-missing");stop.Cancel();return;}
             if(Environment.TickCount64-Volatile.Read(ref connection.LastReceive)>=30000){First("transport-idle");stop.Cancel();return;}
             using var timeout=CancellationTokenSource.CreateLinkedTokenSource(stop.Token);timeout.CancelAfter(5000);
