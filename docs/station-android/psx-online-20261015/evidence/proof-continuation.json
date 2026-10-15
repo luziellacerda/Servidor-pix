@@ -1,0 +1,11 @@
+{
+  "schema": "station.psx.proof-continuation.v1",
+  "publicationPassed": true,
+  "publicationRepeated": false,
+  "initialProofStoppedBeforeCreatingFixtures": true,
+  "reason": "Diagnostic loader lacked the directory of its existing deploy helper",
+  "fix": "Added the helper directory to sys.path in the private proof runner only",
+  "productionCodeChangedByFix": false,
+  "remainingProofPassed": true,
+  "authority": "completed.json"
+}

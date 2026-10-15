@@ -1,3 +1,12 @@
+## PSX: mapa de todas as 84 edições e cadastro atual publicado
+
+Consulte o [mesmo handoff](HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md) e o
+[mapa PSX completo](psx-online-20261015/README.md). Dados ativos e provas concluídas:
+19 edições/23 modos de duas pessoas aprovados; todos os84 jogos/capas/downloads
+conferidos, com impedimentos explícitos dos demais modos. Sem reinício da API.
+
+## Histórico preservado
+
 NES/capas atuais: leia o MESMO [handoff](HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md) e seu recibo NES. Catálogo44, 750NES e469artes Recriadas publicados; ajuste de capacidade do APK preparado.
 
 ## Estado atual — R138 aplicada, catálogo42

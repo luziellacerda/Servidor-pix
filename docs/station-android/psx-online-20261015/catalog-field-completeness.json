@@ -1,0 +1,1722 @@
+{
+  "schema": "station.psx.catalog-field-completeness.v1",
+  "editions": 84,
+  "allIdsCoversArtifactsAndInitialDiscIdsPresent": true,
+  "allPublicDownloadsAuthorized": true,
+  "metadataPreserved": true,
+  "missingCounts": {
+    "description": 3,
+    "developer": 84,
+    "publisher": 84,
+    "genre": 84,
+    "players": 84,
+    "releaseDate": 84
+  },
+  "missing": {
+    "description": [
+      {
+        "itemId": "station_d9405ba1719a504fad37055a359e861e",
+        "name": "Harvest Moon Back To Nature"
+      },
+      {
+        "itemId": "station_3b50bae45f3433371386de5687913fb8",
+        "name": "Jackie Chan Stuntmaster BR"
+      },
+      {
+        "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
+        "name": "World Soccer Winning Eleven 2002 (Japan)"
+      }
+    ],
+    "developer": [
+      {
+        "itemId": "station_ec52adaf9ea22c751f3d8dba87c09ebd",
+        "name": "Alien Trilogy"
+      },
+      {
+        "itemId": "station_599469b58c769be4ae7443aace5fa5a7",
+        "name": "Breath of Fire III"
+      },
+      {
+        "itemId": "station_d48c014269c4cf3406eaa68847a118c0",
+        "name": "Breath of Fire IV"
+      },
+      {
+        "itemId": "station_f7efe099a4928bc6328dc2823e9af9f3",
+        "name": "CTR - Crash Team Racing"
+      },
+      {
+        "itemId": "station_767e5e92f2f353479e6120f1c28f96a7",
+        "name": "Capcom vs. SNK - Millennium Fight 2000 Pro"
+      },
+      {
+        "itemId": "station_4316c7f4447e968c033b499189f146cd",
+        "name": "Casper (USA)"
+      },
+      {
+        "itemId": "station_91d27cd1d44190b0a7fc599db2d9ebd4",
+        "name": "Castlevania Chronicles"
+      },
+      {
+        "itemId": "station_9be9b057f1e9166e717560ce8990850c",
+        "name": "Castlevania Symphony of the Night"
+      },
+      {
+        "itemId": "station_b8b51169831dcfe229f979f2db5a78b9",
+        "name": "Clock Tower"
+      },
+      {
+        "itemId": "station_18480d7c7f4c1024b0934f98d59f8d53",
+        "name": "Courier Crisis - The Saga of the Modern Fatalist (USA)"
+      },
+      {
+        "itemId": "station_01c21865fe0261fc4698fc7ca61fa09b",
+        "name": "Crash Bandicoot"
+      },
+      {
+        "itemId": "station_d32e100a4d1e457c5a34990002401771",
+        "name": "Crash Bandicoot 2 - Cortex Strikes Back"
+      },
+      {
+        "itemId": "station_d9e01abe7fa4ea8bf8bfa3f200d5e5b6",
+        "name": "Crash Bandicoot 3 Warped"
+      },
+      {
+        "itemId": "station_d0644371e28e7a933f4a4aae0ecc954b",
+        "name": "Crash Bash"
+      },
+      {
+        "itemId": "station_0ac263df512a0ac82a3b3bb1ddac0ab1",
+        "name": "Crash Bash (USA)"
+      },
+      {
+        "itemId": "station_176e4ba8c6abc8a5c552fd797f48ea84",
+        "name": "Croc - Legend of the Gobbos"
+      },
+      {
+        "itemId": "station_8bbc153b58a63e8ff944ff1a67913ca6",
+        "name": "Digimon Rumble Arena"
+      },
+      {
+        "itemId": "station_8a0c2970090c84cc789ad6032fd7afed",
+        "name": "Digimon World"
+      },
+      {
+        "itemId": "station_f7ee3da977e7e23324b415e45e778680",
+        "name": "Dragon Ball Z - Idainaru Dragon Ball Densetsu"
+      },
+      {
+        "itemId": "station_878c9044184e6395dce157c144b41d5c",
+        "name": "Dragonball GT - Final Bout"
+      },
+      {
+        "itemId": "station_8d692460b3a90a94d438366e707843f5",
+        "name": "Dragonball Z - Ultimate Battle 22"
+      },
+      {
+        "itemId": "station_21a2b0d856089a8f42ddc9f6a65b6b75",
+        "name": "Driver (Spain)"
+      },
+      {
+        "itemId": "station_f5d7a9e8e45fd4c1f1113ecb2b137580",
+        "name": "Driver 2"
+      },
+      {
+        "itemId": "station_0884fff4ffa401b94fe38b790b728d1a",
+        "name": "Fighting Force"
+      },
+      {
+        "itemId": "station_ca50e3a4766eba036c7ead5be47d1022",
+        "name": "Fighting Force 2"
+      },
+      {
+        "itemId": "station_5d3ca071e3695c7b84f92fb7d6879a5c",
+        "name": "Final Fantasy Chronicles - Chrono Trigger"
+      },
+      {
+        "itemId": "station_2bb4a53639863ba62542c7f94d6bfc2b",
+        "name": "Final Fantasy Chronicles - Final Fantasy IV"
+      },
+      {
+        "itemId": "station_a1ec8c2ac08fd798a1cd60ba62ed319d",
+        "name": "Final Fantasy IX"
+      },
+      {
+        "itemId": "station_c039e16497864c85d3e367e29ea1a648",
+        "name": "Final Fantasy Origins"
+      },
+      {
+        "itemId": "station_edd45ef4e281f6f16d0dad1dd28707d3",
+        "name": "Gran Turismo"
+      },
+      {
+        "itemId": "station_07bde5803ff1506c390a6b26f050db41",
+        "name": "Gran Turismo 2"
+      },
+      {
+        "itemId": "station_c3182f2435bcf5ad19c7bab6ee1c7c32",
+        "name": "Harry Potter and the Chamber of Secrets"
+      },
+      {
+        "itemId": "station_5d7d2287d0c3672fcd90b9bca7e2bdef",
+        "name": "Harry Potter and the Philosopher's Stone"
+      },
+      {
+        "itemId": "station_d9405ba1719a504fad37055a359e861e",
+        "name": "Harvest Moon Back To Nature"
+      },
+      {
+        "itemId": "station_4305091211a8141539ca0f0cc01ffae8",
+        "name": "Hugo (Spain)"
+      },
+      {
+        "itemId": "station_51511441b906e2e1b5473f2eed934c26",
+        "name": "Hugo 2 (Spain)"
+      },
+      {
+        "itemId": "station_3b50bae45f3433371386de5687913fb8",
+        "name": "Jackie Chan Stuntmaster BR"
+      },
+      {
+        "itemId": "station_27c40261aaf7d395897c1843c4f84403",
+        "name": "Legend of Legaia"
+      },
+      {
+        "itemId": "station_21ef7c0ff4f0ae3021d91cc7c7123780",
+        "name": "Legend of Mana"
+      },
+      {
+        "itemId": "station_feca9272f103898c2d94dcec4ecf9b6d",
+        "name": "Medal of Honor"
+      },
+      {
+        "itemId": "station_f6a3cb8bc7c60756f2fcbbd1a22da63c",
+        "name": "Medal of Honor - Underground"
+      },
+      {
+        "itemId": "station_3e184bab69d122fd91315a7194dc4d88",
+        "name": "Mega Man X3"
+      },
+      {
+        "itemId": "station_23cf56085f247df7002ecaa0c1f3f115",
+        "name": "Mega Man X4"
+      },
+      {
+        "itemId": "station_df816435d145366ec93dec3d5d0ae14c",
+        "name": "Mega Man X5"
+      },
+      {
+        "itemId": "station_567fdeb252352a5e61cee1b14ed3438f",
+        "name": "Mega Man X6"
+      },
+      {
+        "itemId": "station_02f57472ad1820030f85bdeefa13a647",
+        "name": "MegaMan 8"
+      },
+      {
+        "itemId": "station_3c72a1590ef3e0777a2404fcbc6c6b06",
+        "name": "Metal Gear Solid"
+      },
+      {
+        "itemId": "station_59ab822e147bf7843c9ebd0d81690ff2",
+        "name": "Metal Slug X"
+      },
+      {
+        "itemId": "station_e731d423e54bb63e03d763d9a64d0ebe",
+        "name": "Mortal Kombat 3"
+      },
+      {
+        "itemId": "station_5a3027a6797f3428c2a8181b23d89f80",
+        "name": "Mortal Kombat Trilogy"
+      },
+      {
+        "itemId": "station_fa2783a30c9ef50d2495e480ddc5a0cb",
+        "name": "Need for Speed III - Hot Pursuit"
+      },
+      {
+        "itemId": "station_1dd48095b439ca88431b818e83402b03",
+        "name": "Nightmare Creatures"
+      },
+      {
+        "itemId": "station_418034197071d4d6374e9356c13cb772",
+        "name": "Nightmare Creatures II"
+      },
+      {
+        "itemId": "station_1e3e65602323e46fb66228112f4354af",
+        "name": "Parasite Eve"
+      },
+      {
+        "itemId": "station_861cd306f4b866d6d5fb27a9feb46b80",
+        "name": "Parasite Eve II"
+      },
+      {
+        "itemId": "station_9928d12f24b00fe5cee9ed7a9acc6886",
+        "name": "Resident Evil 1"
+      },
+      {
+        "itemId": "station_f0996ea935f08c7d31f96f4026774af4",
+        "name": "Resident Evil 2 CD 1-2"
+      },
+      {
+        "itemId": "station_3c9aac49835e17626f6fcf46de3eb7c2",
+        "name": "Resident Evil 3 Nemesis"
+      },
+      {
+        "itemId": "station_d5b5ea4e5f61c2c452ee9c5106ae3c1c",
+        "name": "Resident Evil Survivor"
+      },
+      {
+        "itemId": "station_115d2283e97d804c5de110fcf9b5c99e",
+        "name": "Silent Hill"
+      },
+      {
+        "itemId": "station_1fae84c70eaa9172559550b8e554f728",
+        "name": "Spider-Man (Spain)"
+      },
+      {
+        "itemId": "station_62e237688c2d03a0c91c6cd0d5e6c1fe",
+        "name": "Spider-Man 2 - Enter Electro"
+      },
+      {
+        "itemId": "station_eeb8175568dc6c4d9f303f9f9417ca8d",
+        "name": "Spyro the Dragon"
+      },
+      {
+        "itemId": "station_a1a371bbdcc09412dab5f7d82637f229",
+        "name": "Star Wars - Dark Forces (Spain)"
+      },
+      {
+        "itemId": "station_97be9d6e8d19fa6b9a53027256cb59e5",
+        "name": "Street Fighter EX Plus Alpha"
+      },
+      {
+        "itemId": "station_7fcc7511a1cebd38d5b9673357e43b64",
+        "name": "Street Fighter EX2 Plus"
+      },
+      {
+        "itemId": "station_2d20d643d81633785c1892caab8cd0f4",
+        "name": "Strider"
+      },
+      {
+        "itemId": "station_0bf496dd3c539502dccd7a84e8453d90",
+        "name": "Strider 2"
+      },
+      {
+        "itemId": "station_ea68541cef64941b9fad1f480b61647d",
+        "name": "Tekken"
+      },
+      {
+        "itemId": "station_9f4ec61454bc15df1b1026766554b928",
+        "name": "Tekken 2"
+      },
+      {
+        "itemId": "station_22f26f76fb1831385d5aac5f8a21069b",
+        "name": "Tekken 3"
+      },
+      {
+        "itemId": "station_affe528d02aa42b957bb7efa8ad14d18",
+        "name": "Tenchu Stealth Assassins"
+      },
+      {
+        "itemId": "station_40ba026f6c175623f9afb11e7c34a1e6",
+        "name": "Time Crisis"
+      },
+      {
+        "itemId": "station_ccfa700d308656b40463cfa1b1e8c6bf",
+        "name": "Time Crisis II - Project Titan"
+      },
+      {
+        "itemId": "station_8e069e7681d8af6b243c34ed66591beb",
+        "name": "Tomb Raider"
+      },
+      {
+        "itemId": "station_88f7b85e57227618661449c2857e9590",
+        "name": "Tomb Raider 2"
+      },
+      {
+        "itemId": "station_74a477ca8a7004426d16100c888bbd13",
+        "name": "Tomb Raider 3"
+      },
+      {
+        "itemId": "station_ca5dbeece25e698b73ed24f7acb3bd7e",
+        "name": "Tomb Raider 4"
+      },
+      {
+        "itemId": "station_af2a73086ddf145e4a1144adf1de9edf",
+        "name": "Tony Hawk's Pro Skater 4"
+      },
+      {
+        "itemId": "station_d56f57826b5505cb1c897d7c7d995f26",
+        "name": "Twisted Metal"
+      },
+      {
+        "itemId": "station_8391ca9ada6fb31b458340cbfbdd5d3e",
+        "name": "Wipeout 3"
+      },
+      {
+        "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
+        "name": "World Soccer Winning Eleven 2002 (Japan)"
+      },
+      {
+        "itemId": "station_273b5bea1d45db87ff6711ec3c9166d8",
+        "name": "Worms Armageddon"
+      },
+      {
+        "itemId": "station_28c96e14627cc01b83e7c00ae90497e9",
+        "name": "Yu-Gi-Oh! Forbidden Memories"
+      }
+    ],
+    "publisher": [
+      {
+        "itemId": "station_ec52adaf9ea22c751f3d8dba87c09ebd",
+        "name": "Alien Trilogy"
+      },
+      {
+        "itemId": "station_599469b58c769be4ae7443aace5fa5a7",
+        "name": "Breath of Fire III"
+      },
+      {
+        "itemId": "station_d48c014269c4cf3406eaa68847a118c0",
+        "name": "Breath of Fire IV"
+      },
+      {
+        "itemId": "station_f7efe099a4928bc6328dc2823e9af9f3",
+        "name": "CTR - Crash Team Racing"
+      },
+      {
+        "itemId": "station_767e5e92f2f353479e6120f1c28f96a7",
+        "name": "Capcom vs. SNK - Millennium Fight 2000 Pro"
+      },
+      {
+        "itemId": "station_4316c7f4447e968c033b499189f146cd",
+        "name": "Casper (USA)"
+      },
+      {
+        "itemId": "station_91d27cd1d44190b0a7fc599db2d9ebd4",
+        "name": "Castlevania Chronicles"
+      },
+      {
+        "itemId": "station_9be9b057f1e9166e717560ce8990850c",
+        "name": "Castlevania Symphony of the Night"
+      },
+      {
+        "itemId": "station_b8b51169831dcfe229f979f2db5a78b9",
+        "name": "Clock Tower"
+      },
+      {
+        "itemId": "station_18480d7c7f4c1024b0934f98d59f8d53",
+        "name": "Courier Crisis - The Saga of the Modern Fatalist (USA)"
+      },
+      {
+        "itemId": "station_01c21865fe0261fc4698fc7ca61fa09b",
+        "name": "Crash Bandicoot"
+      },
+      {
+        "itemId": "station_d32e100a4d1e457c5a34990002401771",
+        "name": "Crash Bandicoot 2 - Cortex Strikes Back"
+      },
+      {
+        "itemId": "station_d9e01abe7fa4ea8bf8bfa3f200d5e5b6",
+        "name": "Crash Bandicoot 3 Warped"
+      },
+      {
+        "itemId": "station_d0644371e28e7a933f4a4aae0ecc954b",
+        "name": "Crash Bash"
+      },
+      {
+        "itemId": "station_0ac263df512a0ac82a3b3bb1ddac0ab1",
+        "name": "Crash Bash (USA)"
+      },
+      {
+        "itemId": "station_176e4ba8c6abc8a5c552fd797f48ea84",
+        "name": "Croc - Legend of the Gobbos"
+      },
+      {
+        "itemId": "station_8bbc153b58a63e8ff944ff1a67913ca6",
+        "name": "Digimon Rumble Arena"
+      },
+      {
+        "itemId": "station_8a0c2970090c84cc789ad6032fd7afed",
+        "name": "Digimon World"
+      },
+      {
+        "itemId": "station_f7ee3da977e7e23324b415e45e778680",
+        "name": "Dragon Ball Z - Idainaru Dragon Ball Densetsu"
+      },
+      {
+        "itemId": "station_878c9044184e6395dce157c144b41d5c",
+        "name": "Dragonball GT - Final Bout"
+      },
+      {
+        "itemId": "station_8d692460b3a90a94d438366e707843f5",
+        "name": "Dragonball Z - Ultimate Battle 22"
+      },
+      {
+        "itemId": "station_21a2b0d856089a8f42ddc9f6a65b6b75",
+        "name": "Driver (Spain)"
+      },
+      {
+        "itemId": "station_f5d7a9e8e45fd4c1f1113ecb2b137580",
+        "name": "Driver 2"
+      },
+      {
+        "itemId": "station_0884fff4ffa401b94fe38b790b728d1a",
+        "name": "Fighting Force"
+      },
+      {
+        "itemId": "station_ca50e3a4766eba036c7ead5be47d1022",
+        "name": "Fighting Force 2"
+      },
+      {
+        "itemId": "station_5d3ca071e3695c7b84f92fb7d6879a5c",
+        "name": "Final Fantasy Chronicles - Chrono Trigger"
+      },
+      {
+        "itemId": "station_2bb4a53639863ba62542c7f94d6bfc2b",
+        "name": "Final Fantasy Chronicles - Final Fantasy IV"
+      },
+      {
+        "itemId": "station_a1ec8c2ac08fd798a1cd60ba62ed319d",
+        "name": "Final Fantasy IX"
+      },
+      {
+        "itemId": "station_c039e16497864c85d3e367e29ea1a648",
+        "name": "Final Fantasy Origins"
+      },
+      {
+        "itemId": "station_edd45ef4e281f6f16d0dad1dd28707d3",
+        "name": "Gran Turismo"
+      },
+      {
+        "itemId": "station_07bde5803ff1506c390a6b26f050db41",
+        "name": "Gran Turismo 2"
+      },
+      {
+        "itemId": "station_c3182f2435bcf5ad19c7bab6ee1c7c32",
+        "name": "Harry Potter and the Chamber of Secrets"
+      },
+      {
+        "itemId": "station_5d7d2287d0c3672fcd90b9bca7e2bdef",
+        "name": "Harry Potter and the Philosopher's Stone"
+      },
+      {
+        "itemId": "station_d9405ba1719a504fad37055a359e861e",
+        "name": "Harvest Moon Back To Nature"
+      },
+      {
+        "itemId": "station_4305091211a8141539ca0f0cc01ffae8",
+        "name": "Hugo (Spain)"
+      },
+      {
+        "itemId": "station_51511441b906e2e1b5473f2eed934c26",
+        "name": "Hugo 2 (Spain)"
+      },
+      {
+        "itemId": "station_3b50bae45f3433371386de5687913fb8",
+        "name": "Jackie Chan Stuntmaster BR"
+      },
+      {
+        "itemId": "station_27c40261aaf7d395897c1843c4f84403",
+        "name": "Legend of Legaia"
+      },
+      {
+        "itemId": "station_21ef7c0ff4f0ae3021d91cc7c7123780",
+        "name": "Legend of Mana"
+      },
+      {
+        "itemId": "station_feca9272f103898c2d94dcec4ecf9b6d",
+        "name": "Medal of Honor"
+      },
+      {
+        "itemId": "station_f6a3cb8bc7c60756f2fcbbd1a22da63c",
+        "name": "Medal of Honor - Underground"
+      },
+      {
+        "itemId": "station_3e184bab69d122fd91315a7194dc4d88",
+        "name": "Mega Man X3"
+      },
+      {
+        "itemId": "station_23cf56085f247df7002ecaa0c1f3f115",
+        "name": "Mega Man X4"
+      },
+      {
+        "itemId": "station_df816435d145366ec93dec3d5d0ae14c",
+        "name": "Mega Man X5"
+      },
+      {
+        "itemId": "station_567fdeb252352a5e61cee1b14ed3438f",
+        "name": "Mega Man X6"
+      },
+      {
+        "itemId": "station_02f57472ad1820030f85bdeefa13a647",
+        "name": "MegaMan 8"
+      },
+      {
+        "itemId": "station_3c72a1590ef3e0777a2404fcbc6c6b06",
+        "name": "Metal Gear Solid"
+      },
+      {
+        "itemId": "station_59ab822e147bf7843c9ebd0d81690ff2",
+        "name": "Metal Slug X"
+      },
+      {
+        "itemId": "station_e731d423e54bb63e03d763d9a64d0ebe",
+        "name": "Mortal Kombat 3"
+      },
+      {
+        "itemId": "station_5a3027a6797f3428c2a8181b23d89f80",
+        "name": "Mortal Kombat Trilogy"
+      },
+      {
+        "itemId": "station_fa2783a30c9ef50d2495e480ddc5a0cb",
+        "name": "Need for Speed III - Hot Pursuit"
+      },
+      {
+        "itemId": "station_1dd48095b439ca88431b818e83402b03",
+        "name": "Nightmare Creatures"
+      },
+      {
+        "itemId": "station_418034197071d4d6374e9356c13cb772",
+        "name": "Nightmare Creatures II"
+      },
+      {
+        "itemId": "station_1e3e65602323e46fb66228112f4354af",
+        "name": "Parasite Eve"
+      },
+      {
+        "itemId": "station_861cd306f4b866d6d5fb27a9feb46b80",
+        "name": "Parasite Eve II"
+      },
+      {
+        "itemId": "station_9928d12f24b00fe5cee9ed7a9acc6886",
+        "name": "Resident Evil 1"
+      },
+      {
+        "itemId": "station_f0996ea935f08c7d31f96f4026774af4",
+        "name": "Resident Evil 2 CD 1-2"
+      },
+      {
+        "itemId": "station_3c9aac49835e17626f6fcf46de3eb7c2",
+        "name": "Resident Evil 3 Nemesis"
+      },
+      {
+        "itemId": "station_d5b5ea4e5f61c2c452ee9c5106ae3c1c",
+        "name": "Resident Evil Survivor"
+      },
+      {
+        "itemId": "station_115d2283e97d804c5de110fcf9b5c99e",
+        "name": "Silent Hill"
+      },
+      {
+        "itemId": "station_1fae84c70eaa9172559550b8e554f728",
+        "name": "Spider-Man (Spain)"
+      },
+      {
+        "itemId": "station_62e237688c2d03a0c91c6cd0d5e6c1fe",
+        "name": "Spider-Man 2 - Enter Electro"
+      },
+      {
+        "itemId": "station_eeb8175568dc6c4d9f303f9f9417ca8d",
+        "name": "Spyro the Dragon"
+      },
+      {
+        "itemId": "station_a1a371bbdcc09412dab5f7d82637f229",
+        "name": "Star Wars - Dark Forces (Spain)"
+      },
+      {
+        "itemId": "station_97be9d6e8d19fa6b9a53027256cb59e5",
+        "name": "Street Fighter EX Plus Alpha"
+      },
+      {
+        "itemId": "station_7fcc7511a1cebd38d5b9673357e43b64",
+        "name": "Street Fighter EX2 Plus"
+      },
+      {
+        "itemId": "station_2d20d643d81633785c1892caab8cd0f4",
+        "name": "Strider"
+      },
+      {
+        "itemId": "station_0bf496dd3c539502dccd7a84e8453d90",
+        "name": "Strider 2"
+      },
+      {
+        "itemId": "station_ea68541cef64941b9fad1f480b61647d",
+        "name": "Tekken"
+      },
+      {
+        "itemId": "station_9f4ec61454bc15df1b1026766554b928",
+        "name": "Tekken 2"
+      },
+      {
+        "itemId": "station_22f26f76fb1831385d5aac5f8a21069b",
+        "name": "Tekken 3"
+      },
+      {
+        "itemId": "station_affe528d02aa42b957bb7efa8ad14d18",
+        "name": "Tenchu Stealth Assassins"
+      },
+      {
+        "itemId": "station_40ba026f6c175623f9afb11e7c34a1e6",
+        "name": "Time Crisis"
+      },
+      {
+        "itemId": "station_ccfa700d308656b40463cfa1b1e8c6bf",
+        "name": "Time Crisis II - Project Titan"
+      },
+      {
+        "itemId": "station_8e069e7681d8af6b243c34ed66591beb",
+        "name": "Tomb Raider"
+      },
+      {
+        "itemId": "station_88f7b85e57227618661449c2857e9590",
+        "name": "Tomb Raider 2"
+      },
+      {
+        "itemId": "station_74a477ca8a7004426d16100c888bbd13",
+        "name": "Tomb Raider 3"
+      },
+      {
+        "itemId": "station_ca5dbeece25e698b73ed24f7acb3bd7e",
+        "name": "Tomb Raider 4"
+      },
+      {
+        "itemId": "station_af2a73086ddf145e4a1144adf1de9edf",
+        "name": "Tony Hawk's Pro Skater 4"
+      },
+      {
+        "itemId": "station_d56f57826b5505cb1c897d7c7d995f26",
+        "name": "Twisted Metal"
+      },
+      {
+        "itemId": "station_8391ca9ada6fb31b458340cbfbdd5d3e",
+        "name": "Wipeout 3"
+      },
+      {
+        "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
+        "name": "World Soccer Winning Eleven 2002 (Japan)"
+      },
+      {
+        "itemId": "station_273b5bea1d45db87ff6711ec3c9166d8",
+        "name": "Worms Armageddon"
+      },
+      {
+        "itemId": "station_28c96e14627cc01b83e7c00ae90497e9",
+        "name": "Yu-Gi-Oh! Forbidden Memories"
+      }
+    ],
+    "genre": [
+      {
+        "itemId": "station_ec52adaf9ea22c751f3d8dba87c09ebd",
+        "name": "Alien Trilogy"
+      },
+      {
+        "itemId": "station_599469b58c769be4ae7443aace5fa5a7",
+        "name": "Breath of Fire III"
+      },
+      {
+        "itemId": "station_d48c014269c4cf3406eaa68847a118c0",
+        "name": "Breath of Fire IV"
+      },
+      {
+        "itemId": "station_f7efe099a4928bc6328dc2823e9af9f3",
+        "name": "CTR - Crash Team Racing"
+      },
+      {
+        "itemId": "station_767e5e92f2f353479e6120f1c28f96a7",
+        "name": "Capcom vs. SNK - Millennium Fight 2000 Pro"
+      },
+      {
+        "itemId": "station_4316c7f4447e968c033b499189f146cd",
+        "name": "Casper (USA)"
+      },
+      {
+        "itemId": "station_91d27cd1d44190b0a7fc599db2d9ebd4",
+        "name": "Castlevania Chronicles"
+      },
+      {
+        "itemId": "station_9be9b057f1e9166e717560ce8990850c",
+        "name": "Castlevania Symphony of the Night"
+      },
+      {
+        "itemId": "station_b8b51169831dcfe229f979f2db5a78b9",
+        "name": "Clock Tower"
+      },
+      {
+        "itemId": "station_18480d7c7f4c1024b0934f98d59f8d53",
+        "name": "Courier Crisis - The Saga of the Modern Fatalist (USA)"
+      },
+      {
+        "itemId": "station_01c21865fe0261fc4698fc7ca61fa09b",
+        "name": "Crash Bandicoot"
+      },
+      {
+        "itemId": "station_d32e100a4d1e457c5a34990002401771",
+        "name": "Crash Bandicoot 2 - Cortex Strikes Back"
+      },
+      {
+        "itemId": "station_d9e01abe7fa4ea8bf8bfa3f200d5e5b6",
+        "name": "Crash Bandicoot 3 Warped"
+      },
+      {
+        "itemId": "station_d0644371e28e7a933f4a4aae0ecc954b",
+        "name": "Crash Bash"
+      },
+      {
+        "itemId": "station_0ac263df512a0ac82a3b3bb1ddac0ab1",
+        "name": "Crash Bash (USA)"
+      },
+      {
+        "itemId": "station_176e4ba8c6abc8a5c552fd797f48ea84",
+        "name": "Croc - Legend of the Gobbos"
+      },
+      {
+        "itemId": "station_8bbc153b58a63e8ff944ff1a67913ca6",
+        "name": "Digimon Rumble Arena"
+      },
+      {
+        "itemId": "station_8a0c2970090c84cc789ad6032fd7afed",
+        "name": "Digimon World"
+      },
+      {
+        "itemId": "station_f7ee3da977e7e23324b415e45e778680",
+        "name": "Dragon Ball Z - Idainaru Dragon Ball Densetsu"
+      },
+      {
+        "itemId": "station_878c9044184e6395dce157c144b41d5c",
+        "name": "Dragonball GT - Final Bout"
+      },
+      {
+        "itemId": "station_8d692460b3a90a94d438366e707843f5",
+        "name": "Dragonball Z - Ultimate Battle 22"
+      },
+      {
+        "itemId": "station_21a2b0d856089a8f42ddc9f6a65b6b75",
+        "name": "Driver (Spain)"
+      },
+      {
+        "itemId": "station_f5d7a9e8e45fd4c1f1113ecb2b137580",
+        "name": "Driver 2"
+      },
+      {
+        "itemId": "station_0884fff4ffa401b94fe38b790b728d1a",
+        "name": "Fighting Force"
+      },
+      {
+        "itemId": "station_ca50e3a4766eba036c7ead5be47d1022",
+        "name": "Fighting Force 2"
+      },
+      {
+        "itemId": "station_5d3ca071e3695c7b84f92fb7d6879a5c",
+        "name": "Final Fantasy Chronicles - Chrono Trigger"
+      },
+      {
+        "itemId": "station_2bb4a53639863ba62542c7f94d6bfc2b",
+        "name": "Final Fantasy Chronicles - Final Fantasy IV"
+      },
+      {
+        "itemId": "station_a1ec8c2ac08fd798a1cd60ba62ed319d",
+        "name": "Final Fantasy IX"
+      },
+      {
+        "itemId": "station_c039e16497864c85d3e367e29ea1a648",
+        "name": "Final Fantasy Origins"
+      },
+      {
+        "itemId": "station_edd45ef4e281f6f16d0dad1dd28707d3",
+        "name": "Gran Turismo"
+      },
+      {
+        "itemId": "station_07bde5803ff1506c390a6b26f050db41",
+        "name": "Gran Turismo 2"
+      },
+      {
+        "itemId": "station_c3182f2435bcf5ad19c7bab6ee1c7c32",
+        "name": "Harry Potter and the Chamber of Secrets"
+      },
+      {
+        "itemId": "station_5d7d2287d0c3672fcd90b9bca7e2bdef",
+        "name": "Harry Potter and the Philosopher's Stone"
+      },
+      {
+        "itemId": "station_d9405ba1719a504fad37055a359e861e",
+        "name": "Harvest Moon Back To Nature"
+      },
+      {
+        "itemId": "station_4305091211a8141539ca0f0cc01ffae8",
+        "name": "Hugo (Spain)"
+      },
+      {
+        "itemId": "station_51511441b906e2e1b5473f2eed934c26",
+        "name": "Hugo 2 (Spain)"
+      },
+      {
+        "itemId": "station_3b50bae45f3433371386de5687913fb8",
+        "name": "Jackie Chan Stuntmaster BR"
+      },
+      {
+        "itemId": "station_27c40261aaf7d395897c1843c4f84403",
+        "name": "Legend of Legaia"
+      },
+      {
+        "itemId": "station_21ef7c0ff4f0ae3021d91cc7c7123780",
+        "name": "Legend of Mana"
+      },
+      {
+        "itemId": "station_feca9272f103898c2d94dcec4ecf9b6d",
+        "name": "Medal of Honor"
+      },
+      {
+        "itemId": "station_f6a3cb8bc7c60756f2fcbbd1a22da63c",
+        "name": "Medal of Honor - Underground"
+      },
+      {
+        "itemId": "station_3e184bab69d122fd91315a7194dc4d88",
+        "name": "Mega Man X3"
+      },
+      {
+        "itemId": "station_23cf56085f247df7002ecaa0c1f3f115",
+        "name": "Mega Man X4"
+      },
+      {
+        "itemId": "station_df816435d145366ec93dec3d5d0ae14c",
+        "name": "Mega Man X5"
+      },
+      {
+        "itemId": "station_567fdeb252352a5e61cee1b14ed3438f",
+        "name": "Mega Man X6"
+      },
+      {
+        "itemId": "station_02f57472ad1820030f85bdeefa13a647",
+        "name": "MegaMan 8"
+      },
+      {
+        "itemId": "station_3c72a1590ef3e0777a2404fcbc6c6b06",
+        "name": "Metal Gear Solid"
+      },
+      {
+        "itemId": "station_59ab822e147bf7843c9ebd0d81690ff2",
+        "name": "Metal Slug X"
+      },
+      {
+        "itemId": "station_e731d423e54bb63e03d763d9a64d0ebe",
+        "name": "Mortal Kombat 3"
+      },
+      {
+        "itemId": "station_5a3027a6797f3428c2a8181b23d89f80",
+        "name": "Mortal Kombat Trilogy"
+      },
+      {
+        "itemId": "station_fa2783a30c9ef50d2495e480ddc5a0cb",
+        "name": "Need for Speed III - Hot Pursuit"
+      },
+      {
+        "itemId": "station_1dd48095b439ca88431b818e83402b03",
+        "name": "Nightmare Creatures"
+      },
+      {
+        "itemId": "station_418034197071d4d6374e9356c13cb772",
+        "name": "Nightmare Creatures II"
+      },
+      {
+        "itemId": "station_1e3e65602323e46fb66228112f4354af",
+        "name": "Parasite Eve"
+      },
+      {
+        "itemId": "station_861cd306f4b866d6d5fb27a9feb46b80",
+        "name": "Parasite Eve II"
+      },
+      {
+        "itemId": "station_9928d12f24b00fe5cee9ed7a9acc6886",
+        "name": "Resident Evil 1"
+      },
+      {
+        "itemId": "station_f0996ea935f08c7d31f96f4026774af4",
+        "name": "Resident Evil 2 CD 1-2"
+      },
+      {
+        "itemId": "station_3c9aac49835e17626f6fcf46de3eb7c2",
+        "name": "Resident Evil 3 Nemesis"
+      },
+      {
+        "itemId": "station_d5b5ea4e5f61c2c452ee9c5106ae3c1c",
+        "name": "Resident Evil Survivor"
+      },
+      {
+        "itemId": "station_115d2283e97d804c5de110fcf9b5c99e",
+        "name": "Silent Hill"
+      },
+      {
+        "itemId": "station_1fae84c70eaa9172559550b8e554f728",
+        "name": "Spider-Man (Spain)"
+      },
+      {
+        "itemId": "station_62e237688c2d03a0c91c6cd0d5e6c1fe",
+        "name": "Spider-Man 2 - Enter Electro"
+      },
+      {
+        "itemId": "station_eeb8175568dc6c4d9f303f9f9417ca8d",
+        "name": "Spyro the Dragon"
+      },
+      {
+        "itemId": "station_a1a371bbdcc09412dab5f7d82637f229",
+        "name": "Star Wars - Dark Forces (Spain)"
+      },
+      {
+        "itemId": "station_97be9d6e8d19fa6b9a53027256cb59e5",
+        "name": "Street Fighter EX Plus Alpha"
+      },
+      {
+        "itemId": "station_7fcc7511a1cebd38d5b9673357e43b64",
+        "name": "Street Fighter EX2 Plus"
+      },
+      {
+        "itemId": "station_2d20d643d81633785c1892caab8cd0f4",
+        "name": "Strider"
+      },
+      {
+        "itemId": "station_0bf496dd3c539502dccd7a84e8453d90",
+        "name": "Strider 2"
+      },
+      {
+        "itemId": "station_ea68541cef64941b9fad1f480b61647d",
+        "name": "Tekken"
+      },
+      {
+        "itemId": "station_9f4ec61454bc15df1b1026766554b928",
+        "name": "Tekken 2"
+      },
+      {
+        "itemId": "station_22f26f76fb1831385d5aac5f8a21069b",
+        "name": "Tekken 3"
+      },
+      {
+        "itemId": "station_affe528d02aa42b957bb7efa8ad14d18",
+        "name": "Tenchu Stealth Assassins"
+      },
+      {
+        "itemId": "station_40ba026f6c175623f9afb11e7c34a1e6",
+        "name": "Time Crisis"
+      },
+      {
+        "itemId": "station_ccfa700d308656b40463cfa1b1e8c6bf",
+        "name": "Time Crisis II - Project Titan"
+      },
+      {
+        "itemId": "station_8e069e7681d8af6b243c34ed66591beb",
+        "name": "Tomb Raider"
+      },
+      {
+        "itemId": "station_88f7b85e57227618661449c2857e9590",
+        "name": "Tomb Raider 2"
+      },
+      {
+        "itemId": "station_74a477ca8a7004426d16100c888bbd13",
+        "name": "Tomb Raider 3"
+      },
+      {
+        "itemId": "station_ca5dbeece25e698b73ed24f7acb3bd7e",
+        "name": "Tomb Raider 4"
+      },
+      {
+        "itemId": "station_af2a73086ddf145e4a1144adf1de9edf",
+        "name": "Tony Hawk's Pro Skater 4"
+      },
+      {
+        "itemId": "station_d56f57826b5505cb1c897d7c7d995f26",
+        "name": "Twisted Metal"
+      },
+      {
+        "itemId": "station_8391ca9ada6fb31b458340cbfbdd5d3e",
+        "name": "Wipeout 3"
+      },
+      {
+        "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
+        "name": "World Soccer Winning Eleven 2002 (Japan)"
+      },
+      {
+        "itemId": "station_273b5bea1d45db87ff6711ec3c9166d8",
+        "name": "Worms Armageddon"
+      },
+      {
+        "itemId": "station_28c96e14627cc01b83e7c00ae90497e9",
+        "name": "Yu-Gi-Oh! Forbidden Memories"
+      }
+    ],
+    "players": [
+      {
+        "itemId": "station_ec52adaf9ea22c751f3d8dba87c09ebd",
+        "name": "Alien Trilogy"
+      },
+      {
+        "itemId": "station_599469b58c769be4ae7443aace5fa5a7",
+        "name": "Breath of Fire III"
+      },
+      {
+        "itemId": "station_d48c014269c4cf3406eaa68847a118c0",
+        "name": "Breath of Fire IV"
+      },
+      {
+        "itemId": "station_f7efe099a4928bc6328dc2823e9af9f3",
+        "name": "CTR - Crash Team Racing"
+      },
+      {
+        "itemId": "station_767e5e92f2f353479e6120f1c28f96a7",
+        "name": "Capcom vs. SNK - Millennium Fight 2000 Pro"
+      },
+      {
+        "itemId": "station_4316c7f4447e968c033b499189f146cd",
+        "name": "Casper (USA)"
+      },
+      {
+        "itemId": "station_91d27cd1d44190b0a7fc599db2d9ebd4",
+        "name": "Castlevania Chronicles"
+      },
+      {
+        "itemId": "station_9be9b057f1e9166e717560ce8990850c",
+        "name": "Castlevania Symphony of the Night"
+      },
+      {
+        "itemId": "station_b8b51169831dcfe229f979f2db5a78b9",
+        "name": "Clock Tower"
+      },
+      {
+        "itemId": "station_18480d7c7f4c1024b0934f98d59f8d53",
+        "name": "Courier Crisis - The Saga of the Modern Fatalist (USA)"
+      },
+      {
+        "itemId": "station_01c21865fe0261fc4698fc7ca61fa09b",
+        "name": "Crash Bandicoot"
+      },
+      {
+        "itemId": "station_d32e100a4d1e457c5a34990002401771",
+        "name": "Crash Bandicoot 2 - Cortex Strikes Back"
+      },
+      {
+        "itemId": "station_d9e01abe7fa4ea8bf8bfa3f200d5e5b6",
+        "name": "Crash Bandicoot 3 Warped"
+      },
+      {
+        "itemId": "station_d0644371e28e7a933f4a4aae0ecc954b",
+        "name": "Crash Bash"
+      },
+      {
+        "itemId": "station_0ac263df512a0ac82a3b3bb1ddac0ab1",
+        "name": "Crash Bash (USA)"
+      },
+      {
+        "itemId": "station_176e4ba8c6abc8a5c552fd797f48ea84",
+        "name": "Croc - Legend of the Gobbos"
+      },
+      {
+        "itemId": "station_8bbc153b58a63e8ff944ff1a67913ca6",
+        "name": "Digimon Rumble Arena"
+      },
+      {
+        "itemId": "station_8a0c2970090c84cc789ad6032fd7afed",
+        "name": "Digimon World"
+      },
+      {
+        "itemId": "station_f7ee3da977e7e23324b415e45e778680",
+        "name": "Dragon Ball Z - Idainaru Dragon Ball Densetsu"
+      },
+      {
+        "itemId": "station_878c9044184e6395dce157c144b41d5c",
+        "name": "Dragonball GT - Final Bout"
+      },
+      {
+        "itemId": "station_8d692460b3a90a94d438366e707843f5",
+        "name": "Dragonball Z - Ultimate Battle 22"
+      },
+      {
+        "itemId": "station_21a2b0d856089a8f42ddc9f6a65b6b75",
+        "name": "Driver (Spain)"
+      },
+      {
+        "itemId": "station_f5d7a9e8e45fd4c1f1113ecb2b137580",
+        "name": "Driver 2"
+      },
+      {
+        "itemId": "station_0884fff4ffa401b94fe38b790b728d1a",
+        "name": "Fighting Force"
+      },
+      {
+        "itemId": "station_ca50e3a4766eba036c7ead5be47d1022",
+        "name": "Fighting Force 2"
+      },
+      {
+        "itemId": "station_5d3ca071e3695c7b84f92fb7d6879a5c",
+        "name": "Final Fantasy Chronicles - Chrono Trigger"
+      },
+      {
+        "itemId": "station_2bb4a53639863ba62542c7f94d6bfc2b",
+        "name": "Final Fantasy Chronicles - Final Fantasy IV"
+      },
+      {
+        "itemId": "station_a1ec8c2ac08fd798a1cd60ba62ed319d",
+        "name": "Final Fantasy IX"
+      },
+      {
+        "itemId": "station_c039e16497864c85d3e367e29ea1a648",
+        "name": "Final Fantasy Origins"
+      },
+      {
+        "itemId": "station_edd45ef4e281f6f16d0dad1dd28707d3",
+        "name": "Gran Turismo"
+      },
+      {
+        "itemId": "station_07bde5803ff1506c390a6b26f050db41",
+        "name": "Gran Turismo 2"
+      },
+      {
+        "itemId": "station_c3182f2435bcf5ad19c7bab6ee1c7c32",
+        "name": "Harry Potter and the Chamber of Secrets"
+      },
+      {
+        "itemId": "station_5d7d2287d0c3672fcd90b9bca7e2bdef",
+        "name": "Harry Potter and the Philosopher's Stone"
+      },
+      {
+        "itemId": "station_d9405ba1719a504fad37055a359e861e",
+        "name": "Harvest Moon Back To Nature"
+      },
+      {
+        "itemId": "station_4305091211a8141539ca0f0cc01ffae8",
+        "name": "Hugo (Spain)"
+      },
+      {
+        "itemId": "station_51511441b906e2e1b5473f2eed934c26",
+        "name": "Hugo 2 (Spain)"
+      },
+      {
+        "itemId": "station_3b50bae45f3433371386de5687913fb8",
+        "name": "Jackie Chan Stuntmaster BR"
+      },
+      {
+        "itemId": "station_27c40261aaf7d395897c1843c4f84403",
+        "name": "Legend of Legaia"
+      },
+      {
+        "itemId": "station_21ef7c0ff4f0ae3021d91cc7c7123780",
+        "name": "Legend of Mana"
+      },
+      {
+        "itemId": "station_feca9272f103898c2d94dcec4ecf9b6d",
+        "name": "Medal of Honor"
+      },
+      {
+        "itemId": "station_f6a3cb8bc7c60756f2fcbbd1a22da63c",
+        "name": "Medal of Honor - Underground"
+      },
+      {
+        "itemId": "station_3e184bab69d122fd91315a7194dc4d88",
+        "name": "Mega Man X3"
+      },
+      {
+        "itemId": "station_23cf56085f247df7002ecaa0c1f3f115",
+        "name": "Mega Man X4"
+      },
+      {
+        "itemId": "station_df816435d145366ec93dec3d5d0ae14c",
+        "name": "Mega Man X5"
+      },
+      {
+        "itemId": "station_567fdeb252352a5e61cee1b14ed3438f",
+        "name": "Mega Man X6"
+      },
+      {
+        "itemId": "station_02f57472ad1820030f85bdeefa13a647",
+        "name": "MegaMan 8"
+      },
+      {
+        "itemId": "station_3c72a1590ef3e0777a2404fcbc6c6b06",
+        "name": "Metal Gear Solid"
+      },
+      {
+        "itemId": "station_59ab822e147bf7843c9ebd0d81690ff2",
+        "name": "Metal Slug X"
+      },
+      {
+        "itemId": "station_e731d423e54bb63e03d763d9a64d0ebe",
+        "name": "Mortal Kombat 3"
+      },
+      {
+        "itemId": "station_5a3027a6797f3428c2a8181b23d89f80",
+        "name": "Mortal Kombat Trilogy"
+      },
+      {
+        "itemId": "station_fa2783a30c9ef50d2495e480ddc5a0cb",
+        "name": "Need for Speed III - Hot Pursuit"
+      },
+      {
+        "itemId": "station_1dd48095b439ca88431b818e83402b03",
+        "name": "Nightmare Creatures"
+      },
+      {
+        "itemId": "station_418034197071d4d6374e9356c13cb772",
+        "name": "Nightmare Creatures II"
+      },
+      {
+        "itemId": "station_1e3e65602323e46fb66228112f4354af",
+        "name": "Parasite Eve"
+      },
+      {
+        "itemId": "station_861cd306f4b866d6d5fb27a9feb46b80",
+        "name": "Parasite Eve II"
+      },
+      {
+        "itemId": "station_9928d12f24b00fe5cee9ed7a9acc6886",
+        "name": "Resident Evil 1"
+      },
+      {
+        "itemId": "station_f0996ea935f08c7d31f96f4026774af4",
+        "name": "Resident Evil 2 CD 1-2"
+      },
+      {
+        "itemId": "station_3c9aac49835e17626f6fcf46de3eb7c2",
+        "name": "Resident Evil 3 Nemesis"
+      },
+      {
+        "itemId": "station_d5b5ea4e5f61c2c452ee9c5106ae3c1c",
+        "name": "Resident Evil Survivor"
+      },
+      {
+        "itemId": "station_115d2283e97d804c5de110fcf9b5c99e",
+        "name": "Silent Hill"
+      },
+      {
+        "itemId": "station_1fae84c70eaa9172559550b8e554f728",
+        "name": "Spider-Man (Spain)"
+      },
+      {
+        "itemId": "station_62e237688c2d03a0c91c6cd0d5e6c1fe",
+        "name": "Spider-Man 2 - Enter Electro"
+      },
+      {
+        "itemId": "station_eeb8175568dc6c4d9f303f9f9417ca8d",
+        "name": "Spyro the Dragon"
+      },
+      {
+        "itemId": "station_a1a371bbdcc09412dab5f7d82637f229",
+        "name": "Star Wars - Dark Forces (Spain)"
+      },
+      {
+        "itemId": "station_97be9d6e8d19fa6b9a53027256cb59e5",
+        "name": "Street Fighter EX Plus Alpha"
+      },
+      {
+        "itemId": "station_7fcc7511a1cebd38d5b9673357e43b64",
+        "name": "Street Fighter EX2 Plus"
+      },
+      {
+        "itemId": "station_2d20d643d81633785c1892caab8cd0f4",
+        "name": "Strider"
+      },
+      {
+        "itemId": "station_0bf496dd3c539502dccd7a84e8453d90",
+        "name": "Strider 2"
+      },
+      {
+        "itemId": "station_ea68541cef64941b9fad1f480b61647d",
+        "name": "Tekken"
+      },
+      {
+        "itemId": "station_9f4ec61454bc15df1b1026766554b928",
+        "name": "Tekken 2"
+      },
+      {
+        "itemId": "station_22f26f76fb1831385d5aac5f8a21069b",
+        "name": "Tekken 3"
+      },
+      {
+        "itemId": "station_affe528d02aa42b957bb7efa8ad14d18",
+        "name": "Tenchu Stealth Assassins"
+      },
+      {
+        "itemId": "station_40ba026f6c175623f9afb11e7c34a1e6",
+        "name": "Time Crisis"
+      },
+      {
+        "itemId": "station_ccfa700d308656b40463cfa1b1e8c6bf",
+        "name": "Time Crisis II - Project Titan"
+      },
+      {
+        "itemId": "station_8e069e7681d8af6b243c34ed66591beb",
+        "name": "Tomb Raider"
+      },
+      {
+        "itemId": "station_88f7b85e57227618661449c2857e9590",
+        "name": "Tomb Raider 2"
+      },
+      {
+        "itemId": "station_74a477ca8a7004426d16100c888bbd13",
+        "name": "Tomb Raider 3"
+      },
+      {
+        "itemId": "station_ca5dbeece25e698b73ed24f7acb3bd7e",
+        "name": "Tomb Raider 4"
+      },
+      {
+        "itemId": "station_af2a73086ddf145e4a1144adf1de9edf",
+        "name": "Tony Hawk's Pro Skater 4"
+      },
+      {
+        "itemId": "station_d56f57826b5505cb1c897d7c7d995f26",
+        "name": "Twisted Metal"
+      },
+      {
+        "itemId": "station_8391ca9ada6fb31b458340cbfbdd5d3e",
+        "name": "Wipeout 3"
+      },
+      {
+        "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
+        "name": "World Soccer Winning Eleven 2002 (Japan)"
+      },
+      {
+        "itemId": "station_273b5bea1d45db87ff6711ec3c9166d8",
+        "name": "Worms Armageddon"
+      },
+      {
+        "itemId": "station_28c96e14627cc01b83e7c00ae90497e9",
+        "name": "Yu-Gi-Oh! Forbidden Memories"
+      }
+    ],
+    "releaseDate": [
+      {
+        "itemId": "station_ec52adaf9ea22c751f3d8dba87c09ebd",
+        "name": "Alien Trilogy"
+      },
+      {
+        "itemId": "station_599469b58c769be4ae7443aace5fa5a7",
+        "name": "Breath of Fire III"
+      },
+      {
+        "itemId": "station_d48c014269c4cf3406eaa68847a118c0",
+        "name": "Breath of Fire IV"
+      },
+      {
+        "itemId": "station_f7efe099a4928bc6328dc2823e9af9f3",
+        "name": "CTR - Crash Team Racing"
+      },
+      {
+        "itemId": "station_767e5e92f2f353479e6120f1c28f96a7",
+        "name": "Capcom vs. SNK - Millennium Fight 2000 Pro"
+      },
+      {
+        "itemId": "station_4316c7f4447e968c033b499189f146cd",
+        "name": "Casper (USA)"
+      },
+      {
+        "itemId": "station_91d27cd1d44190b0a7fc599db2d9ebd4",
+        "name": "Castlevania Chronicles"
+      },
+      {
+        "itemId": "station_9be9b057f1e9166e717560ce8990850c",
+        "name": "Castlevania Symphony of the Night"
+      },
+      {
+        "itemId": "station_b8b51169831dcfe229f979f2db5a78b9",
+        "name": "Clock Tower"
+      },
+      {
+        "itemId": "station_18480d7c7f4c1024b0934f98d59f8d53",
+        "name": "Courier Crisis - The Saga of the Modern Fatalist (USA)"
+      },
+      {
+        "itemId": "station_01c21865fe0261fc4698fc7ca61fa09b",
+        "name": "Crash Bandicoot"
+      },
+      {
+        "itemId": "station_d32e100a4d1e457c5a34990002401771",
+        "name": "Crash Bandicoot 2 - Cortex Strikes Back"
+      },
+      {
+        "itemId": "station_d9e01abe7fa4ea8bf8bfa3f200d5e5b6",
+        "name": "Crash Bandicoot 3 Warped"
+      },
+      {
+        "itemId": "station_d0644371e28e7a933f4a4aae0ecc954b",
+        "name": "Crash Bash"
+      },
+      {
+        "itemId": "station_0ac263df512a0ac82a3b3bb1ddac0ab1",
+        "name": "Crash Bash (USA)"
+      },
+      {
+        "itemId": "station_176e4ba8c6abc8a5c552fd797f48ea84",
+        "name": "Croc - Legend of the Gobbos"
+      },
+      {
+        "itemId": "station_8bbc153b58a63e8ff944ff1a67913ca6",
+        "name": "Digimon Rumble Arena"
+      },
+      {
+        "itemId": "station_8a0c2970090c84cc789ad6032fd7afed",
+        "name": "Digimon World"
+      },
+      {
+        "itemId": "station_f7ee3da977e7e23324b415e45e778680",
+        "name": "Dragon Ball Z - Idainaru Dragon Ball Densetsu"
+      },
+      {
+        "itemId": "station_878c9044184e6395dce157c144b41d5c",
+        "name": "Dragonball GT - Final Bout"
+      },
+      {
+        "itemId": "station_8d692460b3a90a94d438366e707843f5",
+        "name": "Dragonball Z - Ultimate Battle 22"
+      },
+      {
+        "itemId": "station_21a2b0d856089a8f42ddc9f6a65b6b75",
+        "name": "Driver (Spain)"
+      },
+      {
+        "itemId": "station_f5d7a9e8e45fd4c1f1113ecb2b137580",
+        "name": "Driver 2"
+      },
+      {
+        "itemId": "station_0884fff4ffa401b94fe38b790b728d1a",
+        "name": "Fighting Force"
+      },
+      {
+        "itemId": "station_ca50e3a4766eba036c7ead5be47d1022",
+        "name": "Fighting Force 2"
+      },
+      {
+        "itemId": "station_5d3ca071e3695c7b84f92fb7d6879a5c",
+        "name": "Final Fantasy Chronicles - Chrono Trigger"
+      },
+      {
+        "itemId": "station_2bb4a53639863ba62542c7f94d6bfc2b",
+        "name": "Final Fantasy Chronicles - Final Fantasy IV"
+      },
+      {
+        "itemId": "station_a1ec8c2ac08fd798a1cd60ba62ed319d",
+        "name": "Final Fantasy IX"
+      },
+      {
+        "itemId": "station_c039e16497864c85d3e367e29ea1a648",
+        "name": "Final Fantasy Origins"
+      },
+      {
+        "itemId": "station_edd45ef4e281f6f16d0dad1dd28707d3",
+        "name": "Gran Turismo"
+      },
+      {
+        "itemId": "station_07bde5803ff1506c390a6b26f050db41",
+        "name": "Gran Turismo 2"
+      },
+      {
+        "itemId": "station_c3182f2435bcf5ad19c7bab6ee1c7c32",
+        "name": "Harry Potter and the Chamber of Secrets"
+      },
+      {
+        "itemId": "station_5d7d2287d0c3672fcd90b9bca7e2bdef",
+        "name": "Harry Potter and the Philosopher's Stone"
+      },
+      {
+        "itemId": "station_d9405ba1719a504fad37055a359e861e",
+        "name": "Harvest Moon Back To Nature"
+      },
+      {
+        "itemId": "station_4305091211a8141539ca0f0cc01ffae8",
+        "name": "Hugo (Spain)"
+      },
+      {
+        "itemId": "station_51511441b906e2e1b5473f2eed934c26",
+        "name": "Hugo 2 (Spain)"
+      },
+      {
+        "itemId": "station_3b50bae45f3433371386de5687913fb8",
+        "name": "Jackie Chan Stuntmaster BR"
+      },
+      {
+        "itemId": "station_27c40261aaf7d395897c1843c4f84403",
+        "name": "Legend of Legaia"
+      },
+      {
+        "itemId": "station_21ef7c0ff4f0ae3021d91cc7c7123780",
+        "name": "Legend of Mana"
+      },
+      {
+        "itemId": "station_feca9272f103898c2d94dcec4ecf9b6d",
+        "name": "Medal of Honor"
+      },
+      {
+        "itemId": "station_f6a3cb8bc7c60756f2fcbbd1a22da63c",
+        "name": "Medal of Honor - Underground"
+      },
+      {
+        "itemId": "station_3e184bab69d122fd91315a7194dc4d88",
+        "name": "Mega Man X3"
+      },
+      {
+        "itemId": "station_23cf56085f247df7002ecaa0c1f3f115",
+        "name": "Mega Man X4"
+      },
+      {
+        "itemId": "station_df816435d145366ec93dec3d5d0ae14c",
+        "name": "Mega Man X5"
+      },
+      {
+        "itemId": "station_567fdeb252352a5e61cee1b14ed3438f",
+        "name": "Mega Man X6"
+      },
+      {
+        "itemId": "station_02f57472ad1820030f85bdeefa13a647",
+        "name": "MegaMan 8"
+      },
+      {
+        "itemId": "station_3c72a1590ef3e0777a2404fcbc6c6b06",
+        "name": "Metal Gear Solid"
+      },
+      {
+        "itemId": "station_59ab822e147bf7843c9ebd0d81690ff2",
+        "name": "Metal Slug X"
+      },
+      {
+        "itemId": "station_e731d423e54bb63e03d763d9a64d0ebe",
+        "name": "Mortal Kombat 3"
+      },
+      {
+        "itemId": "station_5a3027a6797f3428c2a8181b23d89f80",
+        "name": "Mortal Kombat Trilogy"
+      },
+      {
+        "itemId": "station_fa2783a30c9ef50d2495e480ddc5a0cb",
+        "name": "Need for Speed III - Hot Pursuit"
+      },
+      {
+        "itemId": "station_1dd48095b439ca88431b818e83402b03",
+        "name": "Nightmare Creatures"
+      },
+      {
+        "itemId": "station_418034197071d4d6374e9356c13cb772",
+        "name": "Nightmare Creatures II"
+      },
+      {
+        "itemId": "station_1e3e65602323e46fb66228112f4354af",
+        "name": "Parasite Eve"
+      },
+      {
+        "itemId": "station_861cd306f4b866d6d5fb27a9feb46b80",
+        "name": "Parasite Eve II"
+      },
+      {
+        "itemId": "station_9928d12f24b00fe5cee9ed7a9acc6886",
+        "name": "Resident Evil 1"
+      },
+      {
+        "itemId": "station_f0996ea935f08c7d31f96f4026774af4",
+        "name": "Resident Evil 2 CD 1-2"
+      },
+      {
+        "itemId": "station_3c9aac49835e17626f6fcf46de3eb7c2",
+        "name": "Resident Evil 3 Nemesis"
+      },
+      {
+        "itemId": "station_d5b5ea4e5f61c2c452ee9c5106ae3c1c",
+        "name": "Resident Evil Survivor"
+      },
+      {
+        "itemId": "station_115d2283e97d804c5de110fcf9b5c99e",
+        "name": "Silent Hill"
+      },
+      {
+        "itemId": "station_1fae84c70eaa9172559550b8e554f728",
+        "name": "Spider-Man (Spain)"
+      },
+      {
+        "itemId": "station_62e237688c2d03a0c91c6cd0d5e6c1fe",
+        "name": "Spider-Man 2 - Enter Electro"
+      },
+      {
+        "itemId": "station_eeb8175568dc6c4d9f303f9f9417ca8d",
+        "name": "Spyro the Dragon"
+      },
+      {
+        "itemId": "station_a1a371bbdcc09412dab5f7d82637f229",
+        "name": "Star Wars - Dark Forces (Spain)"
+      },
+      {
+        "itemId": "station_97be9d6e8d19fa6b9a53027256cb59e5",
+        "name": "Street Fighter EX Plus Alpha"
+      },
+      {
+        "itemId": "station_7fcc7511a1cebd38d5b9673357e43b64",
+        "name": "Street Fighter EX2 Plus"
+      },
+      {
+        "itemId": "station_2d20d643d81633785c1892caab8cd0f4",
+        "name": "Strider"
+      },
+      {
+        "itemId": "station_0bf496dd3c539502dccd7a84e8453d90",
+        "name": "Strider 2"
+      },
+      {
+        "itemId": "station_ea68541cef64941b9fad1f480b61647d",
+        "name": "Tekken"
+      },
+      {
+        "itemId": "station_9f4ec61454bc15df1b1026766554b928",
+        "name": "Tekken 2"
+      },
+      {
+        "itemId": "station_22f26f76fb1831385d5aac5f8a21069b",
+        "name": "Tekken 3"
+      },
+      {
+        "itemId": "station_affe528d02aa42b957bb7efa8ad14d18",
+        "name": "Tenchu Stealth Assassins"
+      },
+      {
+        "itemId": "station_40ba026f6c175623f9afb11e7c34a1e6",
+        "name": "Time Crisis"
+      },
+      {
+        "itemId": "station_ccfa700d308656b40463cfa1b1e8c6bf",
+        "name": "Time Crisis II - Project Titan"
+      },
+      {
+        "itemId": "station_8e069e7681d8af6b243c34ed66591beb",
+        "name": "Tomb Raider"
+      },
+      {
+        "itemId": "station_88f7b85e57227618661449c2857e9590",
+        "name": "Tomb Raider 2"
+      },
+      {
+        "itemId": "station_74a477ca8a7004426d16100c888bbd13",
+        "name": "Tomb Raider 3"
+      },
+      {
+        "itemId": "station_ca5dbeece25e698b73ed24f7acb3bd7e",
+        "name": "Tomb Raider 4"
+      },
+      {
+        "itemId": "station_af2a73086ddf145e4a1144adf1de9edf",
+        "name": "Tony Hawk's Pro Skater 4"
+      },
+      {
+        "itemId": "station_d56f57826b5505cb1c897d7c7d995f26",
+        "name": "Twisted Metal"
+      },
+      {
+        "itemId": "station_8391ca9ada6fb31b458340cbfbdd5d3e",
+        "name": "Wipeout 3"
+      },
+      {
+        "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
+        "name": "World Soccer Winning Eleven 2002 (Japan)"
+      },
+      {
+        "itemId": "station_273b5bea1d45db87ff6711ec3c9166d8",
+        "name": "Worms Armageddon"
+      },
+      {
+        "itemId": "station_28c96e14627cc01b83e7c00ae90497e9",
+        "name": "Yu-Gi-Oh! Forbidden Memories"
+      }
+    ]
+  },
+  "nextRequestedRound": "Whole catalog mapping and metadata enrichment, without inventing player support"
+}

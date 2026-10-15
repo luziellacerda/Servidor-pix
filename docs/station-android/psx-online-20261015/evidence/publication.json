@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "appliedUtc": "2026-10-15T16:51:02.767759+00:00",
+  "apiRestarted": false,
+  "pid": 2489,
+  "dllSha256": "b3473cc0160169f686501af914cdbf8ebfdf8dcaa4dff768e1106ee8461c9179",
+  "catalogRevision": 100,
+  "engineCount": 79,
+  "profileCount": 15420,
+  "preparedModeCount": 10505,
+  "profilesAdded": 93,
+  "approvedMultiplayerModes": 23,
+  "approvedMultiplayerEditions": 19,
+  "previousBindingsPreserved": true,
+  "engineManifestPreserved": true,
+  "catalogCoversRomAndIdentitiesPreserved": true,
+  "sharedServicesPreserved": true,
+  "scannerTimerActive": true,
+  "physicalAndroidGameplayValidated": false,
+  "rawFileSha256": {
+    "catalog": "5f0ac1dfc7297cb9ab49bfab9e9f19b77955799a077b339967d7c798f3bbe4bb",
+    "profiles": "5f6bfe8d91b4c162750761b6756daf34ca0de2421bdd1244598437c0bb48c54f",
+    "current": "7c380f7873f99428c337788b2864e542fdc8187215486ac3e98a0a94c4248bd8",
+    "modes": "884738a5f01b79f5f5c526ddd1d83f4500ff78db530d51f57b79b4634fcd5d4e"
+  }
+}

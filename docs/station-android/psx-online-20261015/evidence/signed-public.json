@@ -1,0 +1,1629 @@
+{
+  "passed": true,
+  "ledgerSha256": "fd5d55c4c4a04c9761ac3f9245ae12bc465d081e5a90dfc9d8d547948dd14da3",
+  "route": "public",
+  "exactEngineId": "pcsx-rearmed-ff81ed17-player-v3-1b315b86b4a7",
+  "checkedEditions": 84,
+  "signedCapabilities": 84,
+  "roomModeAdmissions": 23,
+  "refusals": 167,
+  "ownSyntheticLicensesRemoved": true,
+  "physicalAndroidGameplayValidated": false,
+  "editions": [
+    {
+      "itemId": "station_ec52adaf9ea22c751f3d8dba87c09ebd",
+      "game": "Alien Trilogy",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-001-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_599469b58c769be4ae7443aace5fa5a7",
+      "game": "Breath of Fire III",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-002-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_d48c014269c4cf3406eaa68847a118c0",
+      "game": "Breath of Fire IV",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-003-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_f7efe099a4928bc6328dc2823e9af9f3",
+      "game": "CTR - Crash Team Racing",
+      "exactProfiles": 2,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-004-arcade",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        },
+        {
+          "profileId": "psx-20261015-004-versus",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_767e5e92f2f353479e6120f1c28f96a7",
+      "game": "Capcom vs. SNK - Millennium Fight 2000 Pro",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-005-versus"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-005-versus",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-005-versus",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-005-versus",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-005-versus",
+          "capacity": 5
+        },
+        {
+          "alteredBinding": "contentSha256"
+        },
+        {
+          "alteredBinding": "coreSha256"
+        },
+        {
+          "alteredBinding": "runtimeSha256"
+        },
+        {
+          "alteredBinding": "engineId"
+        },
+        {
+          "alteredBinding": "profileSha256"
+        }
+      ]
+    },
+    {
+      "itemId": "station_4316c7f4447e968c033b499189f146cd",
+      "game": "Casper (USA)",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-006-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_91d27cd1d44190b0a7fc599db2d9ebd4",
+      "game": "Castlevania Chronicles",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-007-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_9be9b057f1e9166e717560ce8990850c",
+      "game": "Castlevania Symphony of the Night",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-008-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_b8b51169831dcfe229f979f2db5a78b9",
+      "game": "Clock Tower",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-009-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_18480d7c7f4c1024b0934f98d59f8d53",
+      "game": "Courier Crisis - The Saga of the Modern Fatalist (USA)",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-010-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_01c21865fe0261fc4698fc7ca61fa09b",
+      "game": "Crash Bandicoot",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-011-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_d32e100a4d1e457c5a34990002401771",
+      "game": "Crash Bandicoot 2 - Cortex Strikes Back",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-012-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_d9e01abe7fa4ea8bf8bfa3f200d5e5b6",
+      "game": "Crash Bandicoot 3 Warped",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-013-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_d0644371e28e7a933f4a4aae0ecc954b",
+      "game": "Crash Bash",
+      "exactProfiles": 3,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-014-adventure",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        },
+        {
+          "profileId": "psx-20261015-014-battle",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        },
+        {
+          "profileId": "psx-20261015-014-tournament",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_0ac263df512a0ac82a3b3bb1ddac0ab1",
+      "game": "Crash Bash (USA)",
+      "exactProfiles": 3,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-015-adventure",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        },
+        {
+          "profileId": "psx-20261015-015-battle",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        },
+        {
+          "profileId": "psx-20261015-015-tournament",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_176e4ba8c6abc8a5c552fd797f48ea84",
+      "game": "Croc - Legend of the Gobbos",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-016-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_8bbc153b58a63e8ff944ff1a67913ca6",
+      "game": "Digimon Rumble Arena",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-017-versus"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-017-versus",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-017-versus",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-017-versus",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-017-versus",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_8a0c2970090c84cc789ad6032fd7afed",
+      "game": "Digimon World",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-018-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_f7ee3da977e7e23324b415e45e778680",
+      "game": "Dragon Ball Z - Idainaru Dragon Ball Densetsu",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-019-versus"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-019-versus",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-019-versus",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-019-versus",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-019-versus",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_878c9044184e6395dce157c144b41d5c",
+      "game": "Dragonball GT - Final Bout",
+      "exactProfiles": 2,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-020-battle",
+        "psx-20261015-020-tournament"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-020-battle",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-020-battle",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-020-battle",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-020-battle",
+          "capacity": 5
+        },
+        {
+          "profileId": "psx-20261015-020-tournament",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-020-tournament",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-020-tournament",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-020-tournament",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_8d692460b3a90a94d438366e707843f5",
+      "game": "Dragonball Z - Ultimate Battle 22",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-021-versus"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-021-versus",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-021-versus",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-021-versus",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-021-versus",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_21a2b0d856089a8f42ddc9f6a65b6b75",
+      "game": "Driver (Spain)",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-022-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_f5d7a9e8e45fd4c1f1113ecb2b137580",
+      "game": "Driver 2",
+      "exactProfiles": 4,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-023-free-ride",
+        "psx-20261015-023-cops",
+        "psx-20261015-023-checkpoint",
+        "psx-20261015-023-flag"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-023-free-ride",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-023-free-ride",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-023-free-ride",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-023-free-ride",
+          "capacity": 5
+        },
+        {
+          "profileId": "psx-20261015-023-cops",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-023-cops",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-023-cops",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-023-cops",
+          "capacity": 5
+        },
+        {
+          "profileId": "psx-20261015-023-checkpoint",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-023-checkpoint",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-023-checkpoint",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-023-checkpoint",
+          "capacity": 5
+        },
+        {
+          "profileId": "psx-20261015-023-flag",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-023-flag",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-023-flag",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-023-flag",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_0884fff4ffa401b94fe38b790b728d1a",
+      "game": "Fighting Force",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-024-coop"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-024-coop",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-024-coop",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-024-coop",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-024-coop",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_ca50e3a4766eba036c7ead5be47d1022",
+      "game": "Fighting Force 2",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-025-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_5d3ca071e3695c7b84f92fb7d6879a5c",
+      "game": "Final Fantasy Chronicles - Chrono Trigger",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-026-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_2bb4a53639863ba62542c7f94d6bfc2b",
+      "game": "Final Fantasy Chronicles - Final Fantasy IV",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-027-multi"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-027-multi",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-027-multi",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-027-multi",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-027-multi",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_a1ec8c2ac08fd798a1cd60ba62ed319d",
+      "game": "Final Fantasy IX",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-028-battle",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_c039e16497864c85d3e367e29ea1a648",
+      "game": "Final Fantasy Origins",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-029-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_edd45ef4e281f6f16d0dad1dd28707d3",
+      "game": "Gran Turismo",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-030-arcade",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_07bde5803ff1506c390a6b26f050db41",
+      "game": "Gran Turismo 2",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-031-arcade",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_c3182f2435bcf5ad19c7bab6ee1c7c32",
+      "game": "Harry Potter and the Chamber of Secrets",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-032-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_5d7d2287d0c3672fcd90b9bca7e2bdef",
+      "game": "Harry Potter and the Philosopher's Stone",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-033-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_d9405ba1719a504fad37055a359e861e",
+      "game": "Harvest Moon Back To Nature",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-034-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_4305091211a8141539ca0f0cc01ffae8",
+      "game": "Hugo (Spain)",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-035-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_51511441b906e2e1b5473f2eed934c26",
+      "game": "Hugo 2 (Spain)",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-036-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_3b50bae45f3433371386de5687913fb8",
+      "game": "Jackie Chan Stuntmaster BR",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-037-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_27c40261aaf7d395897c1843c4f84403",
+      "game": "Legend of Legaia",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-038-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_21ef7c0ff4f0ae3021d91cc7c7123780",
+      "game": "Legend of Mana",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-039-coop"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-039-coop",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-039-coop",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-039-coop",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-039-coop",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_feca9272f103898c2d94dcec4ecf9b6d",
+      "game": "Medal of Honor",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-040-versus"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-040-versus",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-040-versus",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-040-versus",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-040-versus",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_f6a3cb8bc7c60756f2fcbbd1a22da63c",
+      "game": "Medal of Honor - Underground",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-041-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_3e184bab69d122fd91315a7194dc4d88",
+      "game": "Mega Man X3",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-042-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_23cf56085f247df7002ecaa0c1f3f115",
+      "game": "Mega Man X4",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-043-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_df816435d145366ec93dec3d5d0ae14c",
+      "game": "Mega Man X5",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-044-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_567fdeb252352a5e61cee1b14ed3438f",
+      "game": "Mega Man X6",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-045-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_02f57472ad1820030f85bdeefa13a647",
+      "game": "MegaMan 8",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-046-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_3c72a1590ef3e0777a2404fcbc6c6b06",
+      "game": "Metal Gear Solid",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-047-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_59ab822e147bf7843c9ebd0d81690ff2",
+      "game": "Metal Slug X",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-048-coop",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_e731d423e54bb63e03d763d9a64d0ebe",
+      "game": "Mortal Kombat 3",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-049-versus"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-049-versus",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-049-versus",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-049-versus",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-049-versus",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_5a3027a6797f3428c2a8181b23d89f80",
+      "game": "Mortal Kombat Trilogy",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-050-versus"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-050-versus",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-050-versus",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-050-versus",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-050-versus",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_fa2783a30c9ef50d2495e480ddc5a0cb",
+      "game": "Need for Speed III - Hot Pursuit",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-051-race"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-051-race",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-051-race",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-051-race",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-051-race",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_1dd48095b439ca88431b818e83402b03",
+      "game": "Nightmare Creatures",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-052-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_418034197071d4d6374e9356c13cb772",
+      "game": "Nightmare Creatures II",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-053-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_1e3e65602323e46fb66228112f4354af",
+      "game": "Parasite Eve",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-054-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_861cd306f4b866d6d5fb27a9feb46b80",
+      "game": "Parasite Eve II",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-055-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_9928d12f24b00fe5cee9ed7a9acc6886",
+      "game": "Resident Evil 1",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-056-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_f0996ea935f08c7d31f96f4026774af4",
+      "game": "Resident Evil 2 CD 1-2",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-057-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_3c9aac49835e17626f6fcf46de3eb7c2",
+      "game": "Resident Evil 3 Nemesis",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-058-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_d5b5ea4e5f61c2c452ee9c5106ae3c1c",
+      "game": "Resident Evil Survivor",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-059-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_115d2283e97d804c5de110fcf9b5c99e",
+      "game": "Silent Hill",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-060-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_1fae84c70eaa9172559550b8e554f728",
+      "game": "Spider-Man (Spain)",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-061-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_62e237688c2d03a0c91c6cd0d5e6c1fe",
+      "game": "Spider-Man 2 - Enter Electro",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-062-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_eeb8175568dc6c4d9f303f9f9417ca8d",
+      "game": "Spyro the Dragon",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-063-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_a1a371bbdcc09412dab5f7d82637f229",
+      "game": "Star Wars - Dark Forces (Spain)",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-064-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_97be9d6e8d19fa6b9a53027256cb59e5",
+      "game": "Street Fighter EX Plus Alpha",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-065-versus"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-065-versus",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-065-versus",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-065-versus",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-065-versus",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_7fcc7511a1cebd38d5b9673357e43b64",
+      "game": "Street Fighter EX2 Plus",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-066-versus"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-066-versus",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-066-versus",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-066-versus",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-066-versus",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_2d20d643d81633785c1892caab8cd0f4",
+      "game": "Strider",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-067-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_0bf496dd3c539502dccd7a84e8453d90",
+      "game": "Strider 2",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-068-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_ea68541cef64941b9fad1f480b61647d",
+      "game": "Tekken",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-069-versus"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-069-versus",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-069-versus",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-069-versus",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-069-versus",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_9f4ec61454bc15df1b1026766554b928",
+      "game": "Tekken 2",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-070-versus"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-070-versus",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-070-versus",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-070-versus",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-070-versus",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_22f26f76fb1831385d5aac5f8a21069b",
+      "game": "Tekken 3",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-071-versus",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_affe528d02aa42b957bb7efa8ad14d18",
+      "game": "Tenchu Stealth Assassins",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-072-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_40ba026f6c175623f9afb11e7c34a1e6",
+      "game": "Time Crisis",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-073-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_ccfa700d308656b40463cfa1b1e8c6bf",
+      "game": "Time Crisis II - Project Titan",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-074-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_8e069e7681d8af6b243c34ed66591beb",
+      "game": "Tomb Raider",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-075-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_88f7b85e57227618661449c2857e9590",
+      "game": "Tomb Raider 2",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-076-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_74a477ca8a7004426d16100c888bbd13",
+      "game": "Tomb Raider 3",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-077-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_ca5dbeece25e698b73ed24f7acb3bd7e",
+      "game": "Tomb Raider 4",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-078-local",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_af2a73086ddf145e4a1144adf1de9edf",
+      "game": "Tony Hawk's Pro Skater 4",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-079-competition",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_d56f57826b5505cb1c897d7c7d995f26",
+      "game": "Twisted Metal",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-080-duel",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_8391ca9ada6fb31b458340cbfbdd5d3e",
+      "game": "Wipeout 3",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-081-race"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-081-race",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-081-race",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-081-race",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-081-race",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
+      "game": "World Soccer Winning Eleven 2002 (Japan)",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": true,
+      "signedIdentityVerified": true,
+      "admittedModes": [
+        "psx-20261015-082-match"
+      ],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-082-match",
+          "capacity": 1
+        },
+        {
+          "profileId": "psx-20261015-082-match",
+          "capacity": 3
+        },
+        {
+          "profileId": "psx-20261015-082-match",
+          "capacity": 4
+        },
+        {
+          "profileId": "psx-20261015-082-match",
+          "capacity": 5
+        }
+      ]
+    },
+    {
+      "itemId": "station_273b5bea1d45db87ff6711ec3c9166d8",
+      "game": "Worms Armageddon",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-083-teams",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        }
+      ]
+    },
+    {
+      "itemId": "station_28c96e14627cc01b83e7c00ae90497e9",
+      "game": "Yu-Gi-Oh! Forbidden Memories",
+      "exactProfiles": 1,
+      "currentOwnerOnlineAvailable": false,
+      "signedIdentityVerified": true,
+      "admittedModes": [],
+      "refusals": [
+        {
+          "profileId": "psx-20261015-084-duel",
+          "capacity": 2,
+          "reason": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+        }
+      ]
+    }
+  ]
+}

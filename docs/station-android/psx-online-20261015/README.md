@@ -8,16 +8,26 @@ serial observado, identidade do conteúdo, revisão, capa, artefato de download,
 sinopse/metadados e decisões de modos. Não contém caminhos privados do servidor.
 Nenhuma edição foi omitida por ser individual ou por apresentar falha.
 
+O [inventário dos discos](disc-inventory.json) registra **93 discos em 84 edições**,
+incluindo todos os discos internos dos sete PBP multidisco. A tabela CSV distingue
+PBP/CHD/CUE do formato de entrega raw/zip e lista os seriais internos. Isso não
+constitui aprovação de troca de disco durante uma partida online.
+
 Esta rodada cobre PSX. O mapeamento integral das demais plataformas será a
 próxima rodada solicitada pelo mantenedor. O mesmo handoff principal permanece
 em uso; este diretório reúne dados e evidências dessa rodada.
 
 ## Situação verificável
 
-Ler [server-return.json](server-return.json) para saber se a publicação e suas
-provas terminaram. O recibo preparado não equivale a dados ativos.
+**Publicação e provas do servidor concluídas.** Ler [server-return.json](server-return.json)
+e os [recibos finais](evidence/completed.json). As 84 edições passaram na leitura
+pública de catálogo, nos 84 corpos de capa e nos 84 grants/amostras de download.
+Capabilities assinadas passaram local e publicamente para todos os itens;
+as 23 modalidades aprovadas criaram sala, e 167 admissões inválidas foram recusadas.
+Dois participantes sintéticos passaram por TLS/SPKI, slots 1/2, READY, transporte
+do estado real de 4.456.448 bytes e pausa/retomada. Isso não é gameplay Android.
 
-| Decisão preparada para o motor atual | Quantidade |
+| Cadastro publicado para o motor atual | Quantidade |
 | --- | ---: |
 | Edições com mapa completo de catálogo, capa e download | 84 |
 | Perfis/modos novos, específicos desse motor | 93 |
@@ -63,6 +73,12 @@ ou uma partida entre telefones. Não certificam desempenho, todos os níveis,
 multidisco durante uma partida ou controles físicos. A validação Android permanece
 identificada separadamente nos recibos.
 
+Tekken 3 contém o executável `TEKKEN3\SLUS_004.02`. O core relata `TEKKEN3SL`
+porque monta seu identificador com os nove primeiros caracteres alfanuméricos
+do caminho; o serial do executável é `SLUS00402`. A diferença foi registrada,
+sem renomear o conteúdo nem deduzir que seja uma modificação da ROM. A regra
+está em [CheckCdrom do upstream exato](https://github.com/notaz/pcsx_rearmed/blob/ff81ed17a15241d2f3730cdd7585b38e172532ca/libpcsxcore/misc.c#L495).
+
 | Edição/modo | Resultado que impede aprovação deste modo atual |
 | --- | --- |
 | CTR; Crash Bash USA e PAL; Gran Turismo 1/2; Metal Slug X; Tekken 3; Twisted Metal | RAM divergiu após restauração do mesmo estado no segundo processo. Os resultados originais estão preservados. |
@@ -99,6 +115,13 @@ o botão Criar sala.
 - [Manuais originais e achados por modo](evidence/research-sources.json).
 - [Revisão do programa original e dos controles](evidence/software-mode-review.json).
 - [Preparação pelo registrador real e seus selos](evidence/preparation.json).
+- [Publicação protegida](evidence/publication.json), [capabilities locais](evidence/signed-local.json)
+  e [públicas](evidence/signed-public.json), [mídia pública](evidence/catalog-covers-downloads-public.json)
+  e [transporte de dois participantes](evidence/two-participant-public.json).
+- [Disponibilidade dos campos de catálogo](catalog-field-completeness.json): três
+  sinopses estão vazias; developer/publisher/genre/players/releaseDate continuam
+  vazios nos 84 metadados recebidos. Foram preservados, sem inventar informações.
+  Esse enriquecimento pertence à próxima rodada de catálogo solicitada.
 - [Frontend diagnóstico e método de reprodução](diagnostics/README.md).
 - [Preparador específico de PSX](prepare_psx_online.py) e [regressões](test_review_policy.py).
 

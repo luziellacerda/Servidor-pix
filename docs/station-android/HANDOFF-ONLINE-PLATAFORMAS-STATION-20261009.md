@@ -1,3 +1,81 @@
+<!-- STATION-PSX-APPLIED-20261015 -->
+## PSX: todas as 84 edições mapeadas; modos atuais publicados — 15/10/2026
+
+**Catálogo, capas e downloads das 84 edições PSX conferidos na API pública.**
+Ler [retorno efetivo](psx-online-20261015/server-return.json),
+[mapa completo CSV](psx-online-20261015/catalogo-psx-completo.csv),
+[revisão por edição/modo](psx-online-20261015/reviewed-library.json)
+e [contrato de consumo](psx-online-20261015/CONSUMO-APP.md).
+São 76 PBP, cinco CHD e três conjuntos CUE; os sete PBP multidisco contêm
+16 discos, totalizando 93 discos nas 84 edições. Todos os discos internos foram
+identificados, com os seriais próprios, sem extrair/substituir os jogos.
+Não confundir esse inventário com aprovação de troca de disco online.
+
+**Publicação aditiva concluída para o motor PSX da R164:**
+`pcsx-rearmed-ff81ed17-player-v3-1b315b86b4a7`, core `e7534aa6`, runtime
+`1b315b86`, perfil `standard-2p-v1`/SHA `81c0e232`. São 93 perfis/modos novos:
+23 modalidades de duas pessoas aprovadas em 19 edições, 17 modalidades com
+impedimento explícito e 53 classificações locais que concedem zero vagas online.
+Os jogos locais continuam disponíveis. **Não estão todos os 84 jogos aprovados
+para partidas de duas pessoas**: nem todos oferecem esse modo, e há falhas
+reproduzidas no motor atual. A lista completa de resultados está no mapa, sem
+omitir os títulos que falharam. Não copiar aprovação de engines PSX antigas.
+
+O core Android ARM64 real recebido foi executado para todas as 84 edições em
+QEMU/Bionic AOSP, com frontend diagnóstico independente, conteúdo imutável e
+opções HLE fixadas. As 84 identidades coincidiram; 82 ensaios iniciais coincidiram,
+62 ensaios após restauração coincidiram em RAM. Candidatos MP usaram 2.760 quadros,
+dois ports Standard, estado real de 4.456.448 bytes e replay adicional. Isso não
+executa o APK, os hooks SDL/GOT do owner nem comprova gameplay Android. Os
+resultados negativos foram conservados e não renomeados como aprovação.
+
+Há divergência após restaurar estado em CTR, Crash Bash USA/PAL, GT1/2,
+Metal Slug X, Tekken 3 e Twisted Metal. THPS4 divergiu já no ensaio inicial.
+FFIX ainda requer confirmação do modo/atribuição dos personagens na edição
+instalada; Worms Quick Multiplayer não comprovou portas independentes no turno
+observado; Yu-Gi-Oh exige decks em dois cartões preparados, ausentes na sessão
+nova, e também divergiu após restauração. Esses impedimentos pertencem ao
+conteúdo/motor/modo; criar outra autorização no servidor não os corrige.
+Driver 2 tem quatro modalidades próprias; FFIV, Legend of Mana, Medal of Honor,
+Densetsu e Winning Eleven japonês receberam instruções específicas de entrada.
+O ID `TEKKEN3SL` relatado pelo core vem do caminho do executável, cujo serial é
+`SLUS00402`; não é evidência de ROM modificada. Usar identidade SHA do conteúdo.
+
+Passaram 84 capabilities assinadas locais +84 públicas, 23 admissões de modos e
+167 recusas de capacidade/vínculo/modo inválidos. Passaram os 84 corpos de capa,
+84 grants e 84 amostras de download de 64 KiB, comparadas aos arquivos efetivos;
+não foi declarado download integral desses jogos. Dois clientes sintéticos
+passaram por slots 1/2, READY, TLS/SPKI/prioridade, transporte exato do estado e
+120 mensagens de controle em duas direções, pausa e retomada. A identidade PXL1
+usada nessa prova de bytes é sintética; ela não executa a sessão nativa do APK.
+Todas as licenças temporárias próprias foram removidas; licenças reais preservadas.
+
+Snapshot final: catálogo 100, 79 motores, 15.420 perfis e 10.505 modos;
+API PID2489/DLLb347/NRestarts0, sem reinício. Motores, perfis e modos anteriores,
+IDs, ROMs, capas, saves, rede onboard/DNS e banda100/800, outros produtos e
+scanner/timer foram preservados. O primeiro runner de prova parou no import de
+um helper antes de criar fixtures; corrigido somente sys.path do diagnóstico,
+retomada da prova restante passou, sem repetir a publicação.
+Autoridades privadas `/mnt/DADOS/station-psx-online-20261015/published.json` e
+`completed.json`, PASSED. **Não repetir o publicador nem a prova completa.**
+
+O app deve filtrar capabilities pela identidade completa do motor instalado:
+itemId/conteúdo/engine/core/runtime/profileId/profileSha256. A disponibilidade
+agregada da plataforma pode incluir engines históricas. `approved=true` em uma
+classificação local de máximo1/contagens[] não libera sala. Capas usam coverId +
+item.revision; sinopses vêm de catalog?metadata=1. Três sinopses PSX estão vazias;
+os outros campos editoriais ainda vazios foram explicitados, sem inventar dados.
+O enriquecimento do catálogo das demais plataformas é a próxima rodada pedida.
+Nenhum APK solicitado, recebido, alterado ou instalado nesta tarefa.
+
+Novo recibo da produção `a762b46` preserva R164 como ponto estável observado de
+007/N64 em dois aparelhos: instalação g52 com hash conferido, relato humano de
+partida e nova capa1080 vista no A56. Isso atualiza a evidência física N64 de dois
+jogadores, sem medição instrumental, sem ampliar para 3/4 e sem encerrar a falha
+de saída do anfitrião. O documento original foi preservado no Git do app.
+As pendências de artes exatas, saída física, 502 histórico e demais plataformas
+continuam separadas. Os dois CRLF históricos R71/R78 ficaram fora desta entrega.
+
 <!-- STATION-R164-APPLIED-20261015 -->
 ## R164: motores cadastrados e nova capa de 1080° publicada — 15/10/2026
 

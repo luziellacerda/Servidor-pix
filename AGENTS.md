@@ -1,3 +1,22 @@
+## PSX publicado e mapa integral das 84 edições — 15/10/2026
+
+Ler o topo do MESMO handoff e `docs/station-android/psx-online-20261015/server-return.json`.
+Autoridades privadas station-psx-online-20261015/published.json e completed.json
+PASSED:93 novos perfis/modos,19 edições/23 modos2P aprovados,17 modos impedidos,
+53 classificações locais sem vagas.84 mapas/93 discos/84 capas e grants públicos,
+84 capabilities locais+públicas,23 admissões/167 recusas/2 clientes WSS passaram.
+Core ARM64 recebido executado nas84 em QEMU/Bionic; NÃO é APK/gameplay físico.
+Não declarar todos84 online nem copiar aprovações antigas. Cat100/79motores/
+15420perfis/10505modos,API2489/DLLb347 semrestart,anteriores preservados.
+NÃO repetir publicação/provas/DLL/capas ou operadoresR164. Mesma R164 PSX
+engine1b315b86/profile81c0,duas portas Standard. Impedimentos exatos e consumo no
+mapa/README; três sinopses e campos editoriais vazios registrados para próxima
+rodada de catálogo. Produção a762b46 confirma R164/N64 007 dois jogadores por
+relato humano/hash g52;3/4/saída e medições não homologados. Preservar esse recibo,
+fontes/recibos anteriores, licenças, rede100/800 e demais pendências globais.
+
+## Histórico preservado
+
 ## R164 aplicada e capa de 1080° publicada — 15/10/2026
 
 Ler o topo do mesmo handoff e r164/server-return.json. Autoridade
