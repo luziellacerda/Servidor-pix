@@ -1,3 +1,6 @@
+# R165: cadastro urgente ainda pendente - 15/10/2026
+Ler docs/station-android/r165/HANDOFF-URGENTE-CADASTRO-R165-20261015.md. O A56 com APK R165 relata motor nao cadastrado e ausencia de modos; o kit privado ja foi entregue. Registrar quatro owners exatos e requalificar modos PSX mediante prova. Nenhum cadastro R165 ou gameplay aprovado e afirmado por este aviso. Preservar R164 e evitar replay de operadores antigos.
+
 ## PSX publicado e mapa integral das 84 edições — 15/10/2026
 
 Ler o topo do MESMO handoff e `docs/station-android/psx-online-20261015/server-return.json`.

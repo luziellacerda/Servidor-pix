@@ -1,3 +1,6 @@
+## R165: handoff urgente de cadastro - 15/10/2026
+Ler r165/HANDOFF-URGENTE-CADASTRO-R165-20261015.md. Kit privado bbe57e5 ja entregue; retorno PSX 3f55caa ainda vincula o motor R164. A56 R165 relata motor ausente/sem modos. Registrar owners R165 e qualificar modos por identidade completa, com recibo aplicado. Host-exit N64 220bc64 continua sem implantacao comprovada.
+
 ## PSX publicado e mapa integral das 84 edições — 15/10/2026
 
 Ler o topo do MESMO handoff e `docs/station-android/psx-online-20261015/server-return.json`.
