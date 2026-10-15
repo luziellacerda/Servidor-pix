@@ -158,6 +158,9 @@ try{
     sockets.Add(leavingHost);sockets.Add(leavingGuest);
     foreach(var ws in new[]{leavingHost,leavingGuest}){await Send(ws,StationStreamFrame.Hello);await Send(ws,StationStreamFrame.Paused,1);await Send(ws,StationStreamFrame.Ready,1);}
     foreach(var ws in new[]{leavingHost,leavingGuest})Check((await Until(ws,f=>f.Type==StationStreamFrame.State&&f.Value==StationStreamSession.Playing)).Offset==1,"confirmed-leave fixture reached play");
+    // Submit real TSR3 game traffic over TLS immediately before the signed
+    // leave request; the controlled-socket fixture covers the exact race.
+    await Send(leavingGuest,StationStreamFrame.DataPacket,bytes:Enumerable.Range(0,64).Select(i=>(byte)i).ToArray());
     var leaveClock=System.Diagnostics.Stopwatch.StartNew();
     Check((await Post(3,Cmd("leave"))).GetProperty("room").ValueKind==JsonValueKind.Null,"confirmed host leave removes room");
     foreach(var ws in new[]{leavingHost,leavingGuest}){
