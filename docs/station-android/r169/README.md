@@ -1,0 +1,7 @@
+# R169 PSX CAS — handoff ao servidor
+
+Leia o [handoff R169](HANDOFF-R169-PSX-CAS-20261015.md) e o [recibo do kit](server-kit-receipt-r169.json). Esta branch contém somente documentação e recibo; `serverApplied=false` para **R169** permanece até o operador executar o cadastro e devolver prova do ambiente real. A R168 já foi aplicada no [recibo de 82c81df](https://github.com/luziellacerda/Servidor-pix/blob/82c81df9c042f1470a6b94e4cede7059c9db1865/docs/station-android/r168/server-return.json).
+
+O [kit privado exato](https://github.com/luziellacerda/TurboramaEmulationStation/tree/5158d84add5e8efd03c020cf7561f8fc100729a1/station-server-handoffs/r169) está no commit `5158d84add5e8efd03c020cf7561f8fc100729a1`, ZIP SHA-256 `859b33b156698abecadadf035f8117a4b2b680439c4fed32eb2001347dc6c832`. Não há APK no Git. Dois aparelhos têm o APK R169 assinado com hash instalado conferido e abriram o painel; gameplay PSX ainda não foi validado.
+
+No A56 com R169, *Capcom vs. SNK — Millennium Fight 2000 Pro* exibiu “não há modo aprovado para esta edição e o motor instalado”. Não usar a R168 como cliente PSX devido à falha Android; seu cadastro já aplicado é a baseline de dados. Cadastrar R169 aditivamente com o [preparador](https://github.com/luziellacerda/Servidor-pix/blob/280539b/docs/station-android/r169/operator/README.md) e devolver recibo APLICADO com capacidades públicas autenticadas antes do piloto físico. Preservar o N64 já funcional.
