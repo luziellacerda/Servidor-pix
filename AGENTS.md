@@ -1,3 +1,27 @@
+<!-- STATION-R168-APPLIED-CAPACITY-20261015 -->
+## R168 aplicada — correção de abertura PSX
+
+Cadastro e provas completas do servidor concluídos. Ler o topo do MESMO
+handoff e r168/server-return.json. Autoridade privada station-r168-capacity-20261015/completed.json PASSED.
+Kit c0de71c3, 51 arquivos/50 hashes/27 ELF, APK875fb069 por recibo do produtor.
+91 motores/16.896 perfis/11.981 modos; quatro owners/492 vínculos aditivos.
+PSX 84/93 decisões,23 modos2P/19 edições,17 impedidos/53 locais; N64 157/387.
+Conferência assinada local e pública, admissões/recusas, PSX2P/N644P e saída
+STATE3 antes de close1000 passaram. Não é gameplay físico Android.
+Capacidade de metadados por conteúdo 128→256KiB no C# e no único módulo instalado;
+demais limites preservados. WinBack133 perfis/nove R168, envelope189469B<524288B.
+1470 C#/226 HTTP/quatro Python passaram; todos os prefixos antigos preservados.
+Fonte b1d5364/DLL3480b991ac87/PID215916, um restart controlado sem sala,
+zero automáticos. Reparos N64/R165, DLL53d4/overrides anteriores e R164 preservados.
+NÃO repetir publicação/provas/deploy/R167. Recibo serverApplied=false do kit e
+bloqueio WinBack abaixo são históricos. Rollback só com dados/software
+compatíveis; retirar apenas o override novo não serve com a projeção R168.
+Instalador permanente MANUAL; confirmar mesmo APK R168 nos dois aparelhos e
+observar Capcom VS2P/quadro/som/controles/retorno convidado25s. Não pedir kit de novo.
+Preservar licenças, esquema, outros produtos, ROMs/artes/saves/rede100800 e pendências.
+
+## Histórico preservado
+
 <!-- STATION-R168-PSX-ANDROID-XML-HANDOFF-20261015 -->
 ## R168: kit e handoff recebidos, cadastro ainda pendente
 

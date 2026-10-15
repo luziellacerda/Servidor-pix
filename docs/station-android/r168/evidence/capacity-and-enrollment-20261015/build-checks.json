@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "sourceCommit": "b1d53643cb0fdfebbc1bf351485d868a079664fe",
+  "csharpChecks": 1470,
+  "httpChecks": 226,
+  "pythonProfileTests": 4,
+  "beforeRegressionRefusedWith": "STATION_MULTIPLAYER_PROFILE_LIMIT",
+  "afterRegressionAcceptedBoundedHistory": true,
+  "newContentProfileBudgetBytes": 262144,
+  "perEngineBindingModeLimit": 32,
+  "trustedEngineLimit": 128,
+  "profileCountLimit": 50000,
+  "profileRegistryLimitBytes": 16777216,
+  "modeRegistryLimitBytes": 8388608,
+  "nativeSimulationProtocolOrHostExitImplementationChanged": false
+}

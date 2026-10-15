@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "productionApiRestarted": false,
+  "fourOwnerCapabilitiesPassed": true,
+  "confirmedLeavePassed": true,
+  "terminalBeforeClose": true,
+  "normalCloseCode": 1000,
+  "idempotentLeaveAttempts": 3,
+  "sameEffectiveSandbox": true,
+  "loopbackOnly": true,
+  "ownSyntheticLicensesRemoved": true,
+  "physicalGameplayValidated": false
+}

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "itemId": "station_4e577685b9feb98a02a1b2cb884f2925",
+  "allHistoricalProfiles": 133,
+  "newExactModes": 9,
+  "signedHttpEnvelopeBytes": 189469,
+  "androidExistingBoundBytes": 524288,
+  "signatureAndRequestIdentityVerified": true,
+  "physicalGameplay": false
+}
