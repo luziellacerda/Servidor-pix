@@ -179,7 +179,20 @@ public sealed class StationMultiplayerRelay(StationMultiplayer hub,IStationOnlin
             // An in-flight game frame may complete ReceiveAsync after confirmed leave.
             // Let the sole writer send STATE=3 and CloseOutput before canceling it.
             if(stream.ConfirmedLeavePending&&!aborted.IsCancellationRequested&&!closeReceived&&!stop.IsCancellationRequested)
-                try{await send.WaitAsync(TimeSpan.FromSeconds(2));}catch(Exception e)when(e is TimeoutException or OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){}
+                try{
+                    await send.WaitAsync(TimeSpan.FromSeconds(2));
+                    // A frame received after leave ends the game reader, but a sent
+                    // Close alone does not complete the WebSocket handshake. Drain
+                    // remaining input until the peer Close using the ORIGINAL
+                    // two-second leave deadline; never feed a retired game stream.
+                    if(terminalCloseSent&&socket.State==WebSocketState.CloseSent){
+                        byte[] closing=new byte[StationStreamFrame.HeaderBytes+StationStreamFrame.MaximumDataBytes];
+                        while(!stop.IsCancellationRequested&&socket.State==WebSocketState.CloseSent){
+                            var reply=await socket.ReceiveAsync(closing.AsMemory(),stop.Token);
+                            if(reply.MessageType==WebSocketMessageType.Close){closeReceived=true;break;}
+                        }
+                    }
+                }catch(Exception e)when(e is TimeoutException or OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){}
             stop.Cancel();
             // The send loop is the sole data/control writer. Join it BEFORE close output.
             try{await Task.WhenAll(send,watch);}catch(Exception e)when(e is OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){}

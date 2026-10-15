@@ -334,8 +334,13 @@ await raceSocket.TerminalSendStarted.Task.WaitAsync(TimeSpan.FromSeconds(3));
 raceSocket.ReleaseFrame.TrySetResult();
 Check(await Task.WhenAny(raceSocket.TerminalSendCancelled.Task,Task.Delay(100))!=raceSocket.TerminalSendCancelled.Task&&!raceAttach.IsCompleted,
     "in-flight receive cannot cancel terminal writer");
-raceSocket.ReleaseTerminalSend.TrySetResult();await raceAttach.WaitAsync(TimeSpan.FromSeconds(4));
-Check(raceSocket.Events.SequenceEqual(new[]{"STATE=3","CLOSE"}),"in-flight frame still delivers terminal state before close");
+raceSocket.ReleaseTerminalSend.TrySetResult();await raceSocket.CloseSent.Task.WaitAsync(TimeSpan.FromSeconds(3));
+await Task.Delay(100);
+Check(!raceAttach.IsCompleted&&raceSocket.State==WebSocketState.CloseSent&&raceSocket.AbortCalls==0,
+    "confirmed exit waits for delayed peer close instead of aborting an in-flight transport");
+raceSocket.ReleaseCloseReply.TrySetResult();await raceAttach.WaitAsync(TimeSpan.FromSeconds(4));
+Check(raceSocket.Events.SequenceEqual(new[]{"STATE=3","CLOSE","CLOSE-ACK"})&&raceSocket.AbortCalls==0,
+    "in-flight terminal state completes the reciprocal close handshake without abort");
 Check(raceFixture.Budget.UsedBytes==0,"in-flight exit releases replay reservation");
 // Proof canonicalization binds the credential AND exact v3 route, not the old relay path.
 using(var key=RSA.Create(2048)){
@@ -388,17 +393,20 @@ sealed class InFlightLeaveSocket:WebSocket
     public readonly TaskCompletionSource InitialStateSent=new(TaskCreationOptions.RunContinuationsAsynchronously),
         FrameReadStarted=new(TaskCreationOptions.RunContinuationsAsynchronously),ReleaseFrame=new(TaskCreationOptions.RunContinuationsAsynchronously),
         TerminalSendStarted=new(TaskCreationOptions.RunContinuationsAsynchronously),TerminalSendCancelled=new(TaskCreationOptions.RunContinuationsAsynchronously),
-        ReleaseTerminalSend=new(TaskCreationOptions.RunContinuationsAsynchronously);
+        ReleaseTerminalSend=new(TaskCreationOptions.RunContinuationsAsynchronously),
+        CloseSent=new(TaskCreationOptions.RunContinuationsAsynchronously),ReleaseCloseReply=new(TaskCreationOptions.RunContinuationsAsynchronously);
+    public int AbortCalls;
     public readonly List<string> Events=[];
     public void QueueGameFrame()=>incoming.Writer.TryWrite(StationMultiplayerFrame.Encode(new(StationStreamFrame.DataPacket,0,0,[7])));
     public override WebSocketCloseStatus? CloseStatus=>null;public override string? CloseStatusDescription=>null;
     public override WebSocketState State=>state;public override string? SubProtocol=>StationMultiplayer.Protocol;
-    public override void Abort()=>state=WebSocketState.Aborted;public override void Dispose()=>Abort();
+    public override void Abort(){AbortCalls++;state=WebSocketState.Aborted;}public override void Dispose()=>Abort();
     public override Task CloseAsync(WebSocketCloseStatus closeStatus,string? statusDescription,CancellationToken cancellationToken)=>CloseOutputAsync(closeStatus,statusDescription,cancellationToken);
     public override Task CloseOutputAsync(WebSocketCloseStatus closeStatus,string? statusDescription,CancellationToken cancellationToken)
-    {cancellationToken.ThrowIfCancellationRequested();Events.Add("CLOSE");state=WebSocketState.CloseSent;return Task.CompletedTask;}
+    {cancellationToken.ThrowIfCancellationRequested();Events.Add("CLOSE");state=WebSocketState.CloseSent;CloseSent.TrySetResult();return Task.CompletedTask;}
     public override async Task<WebSocketReceiveResult> ReceiveAsync(ArraySegment<byte> buffer,CancellationToken cancellationToken)
-    {byte[] frame=await incoming.Reader.ReadAsync(cancellationToken);FrameReadStarted.TrySetResult();
+    {if(state==WebSocketState.CloseSent){await ReleaseCloseReply.Task.WaitAsync(cancellationToken);state=WebSocketState.Closed;Events.Add("CLOSE-ACK");return new(0,WebSocketMessageType.Close,true);}
+        byte[] frame=await incoming.Reader.ReadAsync(cancellationToken);FrameReadStarted.TrySetResult();
         await ReleaseFrame.Task.WaitAsync(cancellationToken);frame.CopyTo(buffer.AsSpan());return new(frame.Length,WebSocketMessageType.Binary,true);}
     public override async Task SendAsync(ArraySegment<byte> buffer,WebSocketMessageType messageType,bool endOfMessage,CancellationToken cancellationToken)
     {var frame=StationMultiplayerFrame.Decode(buffer.AsSpan());
