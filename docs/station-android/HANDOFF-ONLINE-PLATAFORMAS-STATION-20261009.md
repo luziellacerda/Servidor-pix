@@ -1,3 +1,54 @@
+<!-- STATION-MAINTENANCE-20261015-20Z -->
+## Manutenção de 15/10 às 20h UTC: R166 recebida, cadastro ainda não aplicado
+
+Chegou o [handoff R166](r166/HANDOFF-R166-PSX-ABRIR-PARTIDA-20261015.md),
+produtor `cc216a1`, fonte congelada `e9dbad1`. Ele documenta uma recusa local de
+`libc++_shared.so` antes do emulador PSX em dois telefones R165. A candidata
+corrige a validação do nome; este Linux não alterou código ou instalação do APK.
+
+O kit privado `b2b4eb84` foi recebido integralmente do commit `e8ef432`:
+12.988.932 bytes,45 entradas/44 hashes/27ELF conferidos. Núcleos,21 dependências,
+políticas e histórico de fontes nativas preservados; os três marcadores mudam
+pelo vínculo DEX35. Recibos do APK final assinado `4872f6dd` conferidos como
+documentos; nenhum APK recebido/inspecionado nem aparelho lido aqui.
+
+Preflight do registrador vigente passou: quatro owners/492 perfis e modos
+aditivos. PSX84/93 decisões,23 modos2P em19 edições,17 impedidos e53 locais sem
+vagas; ledger HLE real reavaliado e decisões R165 comparadas. N64387 perfis,
+230 modosMP/157 individuais; GC9/Wii3. A projeção inicial excedeu o orçamento de
+WinBack por420 bytes. Condensadas apenas instruções repetidas de seis vínculos
+novos R166, mantendo fontes/modos/contagens e registros antigos. Validador,
+limites128KiB e DLL intactos; regressões negativas passaram. Contagens87/16404/
+11489 são projeção não aplicada, não leitura protegida atual.
+
+**Autenticação nativa expirou em115,18s, sem root. Nada publicado.** Só o próprio
+pedido não autenticado foi cancelado. Sem baseline protegida fresca, cadastro ou
+provas R166. Processo/ExecStart apontam53d4/PID152812/NRestarts0; DLL/configuração
+e registros protegidos não foram lidos neste ciclo. Health/diagnóstico200, zero
+salas/conexões no instante observado, sem homologação Android. R165 aplicada e
+host-exit preservados; nenhum timer parado ou serviço reiniciado.
+
+Capas `main5c6cc32`/SNES9f85e9d e manifesto c78c2fed iguais, zero importações.
+Três PNGs finais exatos continuam ausentes; seis novas+14 anteriores sem edição
+exata preservadas, junto das capas13z/1080R164. Pendências físicas,502 histórico,
+sinopses/campos editoriais e PS3/PS4 offline conservados.
+
+Backups remotos `backup/station-before-hourly-20261015-20z` conferidos nos dois
+Gits; entrega em `feat/station-hourly-20261015-20z`, worktrees próprias noDADOS.
+[Recibo sanitizado](online-plataformas-20261009/maintenance/20261015-20z/sanitized-receipt.json),
+[retorno R166](r166/server-return.json) e [próxima ação exata](r166/README.md).
+Autoridade privada `/mnt/DADOS/station-maintenance-20261015-20z`. Monitor pai172611 mantém maintenance.lock até o retorno
+final; não declarar liberação antecipada. Checkouts/CRLF/tags/ROMs/saves/licenças/
+IDs/capas/rede100/800 e outros produtos preservados; sem automações novas.
+
+Próximo: conciliar native-started/candidate/registrar-applied/data-applied/erro
+e comparar inputs. Com os mesmos bytes e nenhuma operação iniciada/aplicada,
+usar `/mnt/DADOS/station-maintenance-20261015-20z/authenticate-next.py`; exige autenticação Linux, baseline fresca,
+registrador vigente/scan.lock e provas reais. Não repetir operadores históricos
+nem tratar este preparo como implantação. Estado global **partial**.
+
+## Histórico preservado
+
 <!-- STATION-MAINTENANCE-20261015-19Z -->
 ## Manutenção de 15/10 às 19h UTC: R165 conferida, sem carga nova
 
