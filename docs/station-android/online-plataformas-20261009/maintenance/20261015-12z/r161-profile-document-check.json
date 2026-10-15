@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": 2,
+  "source": "Pure serializer AST from producer aba688e8619303a1dc9091a9931e55ef65457221; exact received R159 policy input",
+  "priorAndroidProfileSha256": "688d519ae641911804fe3286e6b5f50cc7f8c06c42ccb1be36781f0fb067b83d",
+  "declaredR161ProfileSha256Reproduced": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
+  "engineELFBytesVerified": false,
+  "R161ApkOrKitReceived": false,
+  "androidExecuted": false,
+  "productionMutated": false
+}

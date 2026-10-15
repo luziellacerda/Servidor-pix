@@ -1,0 +1,7 @@
+{
+  "authenticated": false,
+  "waitSeconds": 115.16,
+  "ownUnauthenticatedRequestCancelled": true,
+  "rootOperationInterrupted": false,
+  "exitCode": -15
+}

@@ -1,0 +1,372 @@
+{
+  "schema": "station.hourly-maintenance.v1",
+  "utc": "2026-10-15T12:13:56.544808+00:00",
+  "status": "partial",
+  "event": {
+    "utc": "2026-10-15T12:00:20.504859+00:00",
+    "fingerprint": "fabb975378495b8b343d9ead3e92332f7cc0d748da77f2a8da04272dee742c24",
+    "inputs": {
+      "server:origin/docs/station-online-exit-r135-20261012": "73503359608720a326349447b31164cde70399a4",
+      "app:origin/build/station-online-exit-r135-20261012": "f22293a1fcb1fd732edd1b711ccbbf23dd07c6d1",
+      "covers:origin/capas-super-nintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
+      "covers:origin/main": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+      "privateInputFingerprint": "3760de2ae086b51201b6298a3eea0582cb2554b79f083f2706834e3495f202cf"
+    },
+    "newInput": true
+  },
+  "deliveryBranch": "feat/station-hourly-20261015-12z",
+  "backups": {
+    "server": {
+      "branch": "backup/station-before-hourly-20261015-12z",
+      "commit": "73503359608720a326349447b31164cde70399a4",
+      "remoteVerified": true
+    },
+    "app": {
+      "branch": "backup/station-before-hourly-20261015-12z",
+      "commit": "aba688e8619303a1dc9091a9931e55ef65457221",
+      "remoteVerified": true
+    },
+    "appR161Installed": {
+      "branch": "backup/station-before-hourly-20261015-12z-r161-installed",
+      "commit": "3274b8c9ae25b82925cb180e85fe8099a3a743a1",
+      "remoteVerified": true
+    },
+    "appR161USBHandoff": {
+      "branch": "backup/station-before-hourly-20261015-12z-r161-usb-handoff",
+      "commit": "28f82a13ff3e9bf8623195f6fc15c4d1011cf30e",
+      "remoteVerified": true
+    }
+  },
+  "incomingRefs": {
+    "server": {
+      "refs/heads/docs/station-app-r55-review-20261006": "8d9c670ba813fb970a61ff9bf329e6286b51ad07",
+      "refs/heads/docs/station-four-player-rooms-audit-20261008": "6d40e26fc132d68ca482421bc29f10cf33d5d699",
+      "refs/heads/docs/station-neogeo-audit-r65-20261007": "4d9893d898213ec3202313d3209c072e73642586",
+      "refs/heads/docs/station-neogeocd-bios-r66-20261007": "7a5db18564d50607a6ef90ef31b45a03232ae45a",
+      "refs/heads/docs/station-online-exit-r135-20261012": "73503359608720a326349447b31164cde70399a4",
+      "refs/heads/docs/station-online-normal-motors-r128-20261011": "c433052ce12c662355dac81c9d9c106b5f283bb1",
+      "refs/heads/docs/station-psx-real-r127-20261011": "5696ed9bed01fdfa8cbd3414197c2eea4f3fc898",
+      "refs/heads/docs/station-r126-real-emulators-20261011": "6e3a7fac6f728ec30a57bf4f4d42f00fdd1c1534",
+      "refs/heads/docs/station-r133-final-console-modes-20261011": "524d2ebff08353fda62aacbc5f05f9248ba69b7c",
+      "refs/heads/docs/station-r62-client-delivery-20261006": "24f74206c8761989a6131364032fd319e1dd0154",
+      "refs/heads/docs/station-r63-integrated-20261006": "860b120fae847df7149e2014c36157c0e35149b8",
+      "refs/heads/docs/station-r64-recovery-request-20261007": "553a26c8045cd2fd324ec871ef79950faa316728",
+      "refs/heads/docs/station-r67-recovery-implementation-20261007": "6c5f5cf33cf3ee9930066d52a55fa3357de75c13",
+      "refs/heads/docs/station-r71-recovery-build-20261007": "e03a87217df9e51908b97bb775ecac889c22088c",
+      "refs/heads/docs/station-r72-native-registration-20261007": "5e4509270b27f9158a7e637515e3ef6e1d93987f",
+      "refs/heads/docs/station-r73-handshake-flush-20261007": "1b26b34cd0f205afaf70b4f9ebf2391da7853537",
+      "refs/heads/docs/station-r74-server-stability-return-20261007": "ed9ca9fdcc16f3b9f86792d43ed01d5812a9f1d8",
+      "refs/heads/docs/station-r74-session-lifecycle-20261007": "8d48252fb7e91af83b6138afa411d5c2607edcc8",
+      "refs/heads/docs/station-r74-stability-research-20261007": "7ad4fb05a69d8f95030f029f3670333a0c7bd6c2",
+      "refs/heads/docs/station-r76-pump-wakeup-20261008": "a9f7f41b243f62e7ff5c3240d65eb7704034184c",
+      "refs/heads/docs/station-r76-server-review-20261008": "bee3dcd5c2c0c0a228805957fe89b9a6023e8402",
+      "refs/heads/docs/station-r77-handoff-review-20261008": "ae77b9cca7fc881771bdb809a308e40bafaad1c5",
+      "refs/heads/docs/station-r77-multiplayer-candidate-20261008": "6c52830f121ff5f3fae403c64a49ace11153cc0e",
+      "refs/heads/docs/station-r78-server-review-20261008": "af58034595614098ea4df4d959e50947670c080f",
+      "refs/heads/docs/station-r78-synopses-20261008": "525f03735cbec194e942c91417d38a4d799c8910",
+      "refs/heads/docs/station-r79-room-bootstrap-20261008": "706f47ff06659feb777d3c4c999b645cb5c3a1ff",
+      "refs/heads/docs/station-r79-server-return-20261008": "a4fd0d73a7eaaf43fafbae1c42e9b83580985433",
+      "refs/heads/docs/station-r81-activation-final-20261008": "2cd3571919f54126f2bfe9576864a8d8329b9db3",
+      "refs/heads/docs/station-r81-server-return-20261008": "9502c02e43cf375640b8f99de281a1efe9eb5358",
+      "refs/heads/docs/station-retornos-r66-20261007": "b37c873b70bf361388b3a18fd58eed3b5452565a"
+    },
+    "app": {
+      "refs/heads/build/station-online-exit-r135-20261012": "aba688e8619303a1dc9091a9931e55ef65457221",
+      "refs/heads/fix/station-auto-room-access-20261006": "029612b06205ff66cc1c7dcb2a2dd1a4c47aa1f9",
+      "refs/heads/fix/station-bluetooth-controls-r96-20261009": "d9db7833455fea26598bbacf82cf0bb5a2e7b634",
+      "refs/heads/fix/station-carousel-diagonal-online-compact-r123-20261011": "728c79a7169e845ba3afa6b240335422845c5dc5",
+      "refs/heads/fix/station-carousel-online-ui-r119-20261010": "15de1405e68cdeab297acec95f70436842368b4d",
+      "refs/heads/fix/station-codes-panel-return-20261006": "d1b535cc35c926172182c47686b6b44333a529de",
+      "refs/heads/fix/station-collection-corners-r68-20261007": "c2a1a6d130552b4470b2be3f49db0d1ab72c37b5",
+      "refs/heads/fix/station-collection-media-r69-20261007": "17cd4718740e79c62e0522a1b0d3c363d7177068",
+      "refs/heads/fix/station-collection-navigation-r70-20261007": "17c0194b519e693cff37c36084eafcf16a883a40",
+      "refs/heads/fix/station-community-return-r41-20261006": "0449f455e721971ae91e76708cf85083b09f74a5",
+      "refs/heads/fix/station-console-mode-completion-r133-20261011": "c00f469517d41cf14f0d54a2d5cd3491cae6db00",
+      "refs/heads/fix/station-controller-ui-r97-20261009": "c8c4df2ef23cfbae7cd7bd728114cafa42a2b599",
+      "refs/heads/fix/station-cover-sequential-r116-20261010": "2c7132bc2e023a8f8e17c3c15d8bc59fbe72ba7d",
+      "refs/heads/fix/station-customer-provision-return-20261006": "d1b535cc35c926172182c47686b6b44333a529de",
+      "refs/heads/fix/station-download-actions-r92-20261009": "fc8fd99c976a016a30f6834c79cfe6f9db79d23f",
+      "refs/heads/fix/station-download-center-r90-20261009": "1cb887782b931a5a86dffc7a77278a9b07fb9f24",
+      "refs/heads/fix/station-effects-server-r117-20261010": "b71190037264e1cb5537439b542999853a358086",
+      "refs/heads/fix/station-game-layout-r84-20261008": "f422b276e3e37ddc3faf6479dbd74d0448e3f943",
+      "refs/heads/fix/station-game-menu-controller-audit-r120-20261010": "da9d7ecc749de696413db52bce2b350a5770a623",
+      "refs/heads/fix/station-gamecube-led-r93-20261009": "0abefb7b7a0bfccb79c597d930aa492887f6dc81",
+      "refs/heads/fix/station-menu-loop-r130-20261011": "50d2b3edf90aa5eb9a9db4e13acf595a41ee335d",
+      "refs/heads/fix/station-n64-usb-070241-20261014": "f22293a1fcb1fd732edd1b711ccbbf23dd07c6d1",
+      "refs/heads/fix/station-neogeo-cd-r65-20261007": "db0ca4c391c09b4577836bb04bb9fbfdaa04765d",
+      "refs/heads/fix/station-neogeo-collection-map-r75-20261007": "2c0b1fb84cc32a3740ce327907ce8d039e2c0861",
+      "refs/heads/fix/station-neogeocd-bundled-bios-r66-20261007": "6c515fdb7dc81db1d9509197d8fed083b28b8745",
+      "refs/heads/fix/station-online-cover-led-r86-20261008": "d0515ea514132a991122f0690148791adba8be78",
+      "refs/heads/fix/station-online-layout-recovery-r71-20261007": "7ef2555d91983d39165eadb3ebbf3dc1f1f976fe",
+      "refs/heads/fix/station-online-readiness-r81-20261008": "4521218492ec65c33398aed07893f95e2d7f499d",
+      "refs/heads/fix/station-online-recovery-after-r67-20261007": "0455f002ff17fa9e85e66635130fabab59c7264d",
+      "refs/heads/fix/station-online-room-gpu-reuse-r121-20261011": "8f74bf2d7178b9c0411420d4ef88965296d1c448",
+      "refs/heads/fix/station-platform-led-r87-20261008": "16ad674829af1378adf17aa3dbd475b053c639a3",
+      "refs/heads/fix/station-player-facts-r82-20261008": "9652d4211815ee87974da26795d71f4d84d0c92e",
+      "refs/heads/fix/station-psx-real-owner-r127-20261011": "30d2c0b83d79e0642ee5f1ee5aea7350a7c75c84",
+      "refs/heads/fix/station-pump-wakeup-r76-20261008": "a81c7fde61c6d048b4cea4c746052bd7304e600e",
+      "refs/heads/fix/station-r55-reconciliation-20261006": "3fc66a6d873ada92496948f22c8646290acbc22d",
+      "refs/heads/fix/station-r62-integrated-20261006": "087b6823814d1ec6fc3b925dba8045d9b5628f02",
+      "refs/heads/fix/station-r63-auto-access-20261006": "8613d88d4f553e72e5fedcd1d3ea470010301734",
+      "refs/heads/fix/station-r64-controls-drop-diagnostics-20261007": "3d8ab189ce64ce4f39e0a024ab390b426b5ea1f8",
+      "refs/heads/fix/station-r67-media-security-20261007": "319a74150213d525f06b7a16fb234294bfd83edb",
+      "refs/heads/fix/station-r72-native-registration-profiles-20261007": "22d7e665664e8ad9c97c8137a2da90172c8750fc",
+      "refs/heads/fix/station-r73-recovery-handshake-20261007": "339f585f00401b085965a83182d71c5d6a9111d9",
+      "refs/heads/fix/station-r74-session-lifecycle-20261007": "02b78919862ac40ea08ddff284e65c604b6d7f9f",
+      "refs/heads/fix/station-relay-ready-return-20261006": "d1b535cc35c926172182c47686b6b44333a529de",
+      "refs/heads/fix/station-remote-media-r91-20261009": "53fd5d0a8b225c7726ff241f24c04060b55a598d",
+      "refs/heads/fix/station-room-bootstrap-r79-20261008": "fd362b9eacbfa04dda7be44ea7bc729f120d0149",
+      "refs/heads/fix/station-second-player-20261005": "a626b50a61c8ac1a82a2a5390bbf1a74f848dbe1",
+      "refs/heads/fix/station-security-20261007": "250a3e51a2876175155d148235af1fc402b84d08",
+      "refs/heads/fix/station-server-integration-r99-20261009": "9248d9a7810241b06ad400c550e6e1717dfb3dd2",
+      "refs/heads/fix/station-settings-refinement-r134-20261011": "4f9039eb9ce13907ce043870bfe1f6e294888556",
+      "refs/heads/fix/station-single-pass-r88-20261009": "cc8ece658b3e64360b72fc993e93a3196d5b8141",
+      "refs/heads/fix/station-snes-light-maps-r95-20261009": "90cab6386b8b217e00bcf242a9b9182fee0ee7f0",
+      "refs/heads/fix/station-sony-demo-installer-r129-20261011": "a773988fa9076f6b9f1eee7e7468e86c8409442d",
+      "refs/heads/fix/station-sony-internal-r131-20261011": "8a199d025e9eb338f1973f8e2f8ca975862cdef5",
+      "refs/heads/fix/station-sony-offline-integrated-r128-20261011": "3ca742b3e97e73fecb36fc38689ca6fd44c1ead6",
+      "refs/heads/fix/station-startup-cleanup-r132-20261011": "e50ff324cca1642ea2d1bce953590d318d606f4e",
+      "refs/heads/fix/station-synopses-r78-20261008": "f23e1878d13bf3f4a8f6517b96d23ca1978535fc",
+      "refs/heads/fix/station-theme-room-download-r122-20261011": "dbbfaae13ba454038873fd762f70639130b8ac2b",
+      "refs/heads/fix/station-title-count-r85-20261008": "35a4220ba3b3446bf9c53a3ebaf4667bcec77b2d",
+      "refs/heads/fix/station-usb-salas-r157-20261014": "685c49366b321789494602b04f39cf7d48e24385",
+      "refs/heads/fix/station-video-endframe-r89-20261009": "51331b0d1990f671215c7941f2eaac703369a9c8",
+      "refs/heads/fix/station-visual-refinement-r118-20261010": "52e66c72f17d41ffd3472a0826cd8483fe3f7e80"
+    },
+    "covers": {
+      "refs/heads/capas-super-nintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
+      "refs/heads/main": "5c6cc32c06e6944b9258df36ffdb846baa368a7f"
+    }
+  },
+  "latestProducerCommit": "28f82a13ff3e9bf8623195f6fc15c4d1011cf30e",
+  "R161": {
+    "schema": "station.engine-receiver.v1",
+    "utc": "2026-10-15T12:08:31.349445+00:00",
+    "producerCommit": "aba688e8619303a1dc9091a9931e55ef65457221",
+    "documentReceived": true,
+    "expected": {
+      "apk": {
+        "file": "TurboStations-Premium-R161-n64-online-dynarec.apk",
+        "bytes": 2715122703,
+        "sha256": "66f429d47af725a6767064c3623ee10c505171a85fbc8c0a50dc9e5bc4f80081"
+      },
+      "kit": {
+        "file": "Kit-Servidor-TurboStations-R161-Independentes.zip",
+        "bytes": 12189409,
+        "sha256": "bcfbe393e6e560cd04f8994de3267fd7ff76487c3e9f234aa5bd20abd7f0eadf"
+      },
+      "n64EngineId": "mupen64plus-ae-33bf7021-n64-v3-656d6d7c017f",
+      "n64RuntimeSha256": "656d6d7c017f17b55c3da06a5ee5ed11a60072f1b159790c78c4a8ab4606c9e3",
+      "n64ProfileSha256": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63"
+    },
+    "privateApkReceived": false,
+    "privateKitReceived": false,
+    "externalFileHashesVerifiedHere": false,
+    "elfAndDependenciesVerifiedHere": false,
+    "serverApplied": false,
+    "serverCountsFreshlyRead": false,
+    "physicalGameplayValidated": false,
+    "previousR159Authority": "/mnt/DADOS/station-r159-20261014/applied.json",
+    "previousR159Reapplied": false,
+    "search": {
+      "utc": "2026-10-15T12:03:13.757940+00:00",
+      "roots": [
+        "/mnt/DADOS",
+        "/media/lz-servidor"
+      ],
+      "followSymlinks": false,
+      "excludedDirectoryNames": [
+        ".git",
+        "node_modules",
+        ".cache",
+        "__pycache__"
+      ],
+      "directories": 55227,
+      "inaccessibleDirectories": 127,
+      "candidatePaths": [],
+      "artifactBytesRead": 0,
+      "elapsedSeconds": 7.72
+    },
+    "documentProfileCheck": {
+      "passed": true,
+      "checks": 2,
+      "source": "Pure serializer AST from producer aba688e8619303a1dc9091a9931e55ef65457221; exact received R159 policy input",
+      "priorAndroidProfileSha256": "688d519ae641911804fe3286e6b5f50cc7f8c06c42ccb1be36781f0fb067b83d",
+      "declaredR161ProfileSha256Reproduced": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
+      "engineELFBytesVerified": false,
+      "R161ApkOrKitReceived": false,
+      "androidExecuted": false,
+      "productionMutated": false
+    },
+    "pending": [
+      "Receber os bytes privados exatos do ZIP e APK final R161; os caminhos E: da produção não estão montados neste PC.",
+      "Ler baseline protegida fresca e registrar quatro identidades/78 modos; outra baseline e 321 decisões N64, somente após validar bytes e campos exatos.",
+      "Confirmar capabilities assinadas, negativas e transporte público; homologação física Android permanece separada."
+    ],
+    "latestProducerCommit": "28f82a13ff3e9bf8623195f6fc15c4d1011cf30e",
+    "producerA56InstallReceiptReceived": true,
+    "producerA56InstalledSha256": "66f429d47af725a6767064c3623ee10c505171a85fbc8c0a50dc9e5bc4f80081",
+    "installationPersonallyReadFromDeviceHere": false,
+    "producerObservedLoginActivityOnly": true,
+    "producerUSBDeliveryReceiptReceived": true,
+    "producerUSBFolder": "SERVIDOR LER/R161-N64-ONLINE-DYNAREC-20261015",
+    "producerUSBReadbackDoesNotProveLinuxReceipt": true,
+    "usbVolumeESDUSBDetectedHere": false
+  },
+  "covers": {
+    "gitBranchesUnchanged": true,
+    "gitImports": 0,
+    "prior36Authority": "/mnt/DADOS/station-maintenance-20261015-11z/native-attempt4/applied.json",
+    "prior36ReceiptPreserved": true,
+    "prior36SourceMagazinesCurrentlyEqualOldBytes": 36,
+    "currentServedPrior36CoversVerified": false,
+    "prior36Reapplied": false,
+    "initialPreparedSnapshot": 201,
+    "initialPreparedMagazines": 9,
+    "initialPreparedBindings": 9,
+    "latestPreparedSnapshot": 203,
+    "latestPreparedMagazines": 11,
+    "latestPreparedBindings": 12,
+    "latestPreparedUniqueArtworks": 11,
+    "currentFinalizedSnapshot": 204,
+    "sourceManifestStillMatchesPrepared": false,
+    "newUnmatchedArtworks": 1,
+    "priorUnmatchedArtworks": 14,
+    "format": "JPEG RGB480x720/q90",
+    "preflight": {
+      "passed": true,
+      "utc": "2026-10-15T12:10:55.534944+00:00",
+      "matchedMagazines": 11,
+      "uniqueBindings": 12,
+      "uniqueArtworks": 11,
+      "liveManifestStillMatches": false,
+      "newUnmatchedArtworks": 1,
+      "finalizedAtSnapshot": 203,
+      "exactMagazineROMStemsVerified": true,
+      "sourceHashesAndJPEGGeometryVerified": true,
+      "atomicWriteAndInodeRollbackFixturePassed": true,
+      "previous36ExcludedFromNewPlan": true,
+      "prior36ProtectedReconciliationRequired": true,
+      "planSha256": "f3b4ad91e9085644665c80c53d76bf7c807c96ae0c40c8043c72d4dc0b2f2325",
+      "operatorSha256": "7bab405019ccbb8599aefb542109f8e4a098d948b3f5a586b1c1e438a2fe0c71",
+      "privilegedPublicationExecuted": false
+    },
+    "published": false,
+    "applied": false
+  },
+  "authentication": {
+    "authenticated": false,
+    "waitSeconds": 115.16,
+    "ownUnauthenticatedRequestCancelled": true,
+    "rootOperationInterrupted": false,
+    "exitCode": -15
+  },
+  "currentProcessBaseline": {
+    "apiPid": 2489,
+    "apiNRestarts": 0,
+    "execStart": "{ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-station-n64-ready-20261014-b3473cc01601/TurboRamaSuiteOnlineServer.dll ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+    "bootObservedLocal": "2026-10-15 08:53:54 -03",
+    "historicalApi19631IsPreviousBoot": true,
+    "currentDllAndConfigRead": false,
+    "currentCatalogAndEngineCountsRead": false,
+    "previousR159AuthorityPreserved": true,
+    "prior89CatalogIsHistoricalSnapshot": true
+  },
+  "serviceContinuity": {
+    "turborama-station-api.service": {
+      "MainPID": "2489",
+      "NRestarts": "0",
+      "ActiveState": "active",
+      "ExecMainStatus": "0"
+    },
+    "nginx.service": {
+      "MainPID": "4266",
+      "NRestarts": "0",
+      "ActiveState": "active",
+      "ExecMainStatus": "0"
+    },
+    "station-network-priority.service": {
+      "MainPID": "4310",
+      "NRestarts": "0",
+      "ActiveState": "active",
+      "ExecMainStatus": "0"
+    },
+    "turborama-station-management.service": {
+      "MainPID": "3223",
+      "NRestarts": "0",
+      "ActiveState": "active",
+      "ExecMainStatus": "0"
+    },
+    "turborama-suite-api.service": {
+      "MainPID": "4125",
+      "NRestarts": "0",
+      "ActiveState": "active",
+      "ExecMainStatus": "0"
+    },
+    "turborama-suite-content-gateway.service": {
+      "MainPID": "4127",
+      "NRestarts": "0",
+      "ActiveState": "active",
+      "ExecMainStatus": "0"
+    },
+    "turborama-suite-admin.service": {
+      "MainPID": "3224",
+      "NRestarts": "0",
+      "ActiveState": "active",
+      "ExecMainStatus": "0"
+    },
+    "turborama-station-library-scan.service": {
+      "MainPID": "0",
+      "NRestarts": "0",
+      "ActiveState": "inactive",
+      "ExecMainStatus": "0"
+    },
+    "turborama-station-library-scan.timer": {
+      "MainPID": null,
+      "NRestarts": null,
+      "ActiveState": "active",
+      "ExecMainStatus": null
+    },
+    "cloudflared.service": {
+      "MainPID": "5155",
+      "NRestarts": "1",
+      "ActiveState": "active",
+      "ExecMainStatus": "0"
+    },
+    "turborama-pix.service": {
+      "MainPID": "4121",
+      "NRestarts": "0",
+      "ActiveState": "active",
+      "ExecMainStatus": "0"
+    }
+  },
+  "hourlyTimer": {
+    "is-active": "active",
+    "is-enabled": "enabled"
+  },
+  "preservation": {
+    "originalCheckoutsAndDirtyFiles": true,
+    "coversCheckout": true,
+    "productionDataChanged": false,
+    "servicesRestartedByThisCycle": false,
+    "scannerTimerStoppedByThisCycle": false,
+    "romBytesReadCopiedOrRebuilt": 0,
+    "apkChanged": false,
+    "licensesChanged": false,
+    "newAutomation": false,
+    "externalMessages": false,
+    "networkChanged": false
+  },
+  "maintenanceLock": {
+    "holder": 8666,
+    "existingMonitorParent": true,
+    "heldUntilParentReturns": true
+  },
+  "privateWorkDirectory": "/mnt/DADOS/station-maintenance-20261015-12z",
+  "pending": [
+    "R161 instalada no A56 e copiada ao USB segundo recibos3274/28f82a1; ESD-USB não detectada neste Linux e ZIPbcfbe393/APK66f429d4 não recebidos aqui. Receber a pasta SERVIDOR LER/R161-N64-ONLINE-DYNAREC-20261015, validar bytes e cadastrar78+321 com provas.",
+    "Autenticação Linux pendente: expirou em 115,16 s sem root. Conciliar as 36 revistas que voltaram aos bytes anteriores com catálogo/seed/fingerprints protegidos; causa e estado servido atual não confirmados. Não repetir o publicador 11z.",
+    "Publicar/provar o lote novo após conciliação: snapshot 203 com 11 revistas/12 vínculos compilados. Manifesto evoluiu para 204 finalizadas; revalidar/repreparar antes de publicar. Uma arte nova e 14 anteriores sem edição exata preservadas.",
+    "Diagnóstico físico de 007/áudio, gameplay Android e saída pelos Recentes continuam pendentes; recibo de instalação não homologa esses testes."
+  ]
+}

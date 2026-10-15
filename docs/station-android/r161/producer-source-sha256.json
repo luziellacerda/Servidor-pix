@@ -1,0 +1,31 @@
+{
+  "utc": "2026-10-15T12:08:31.349198+00:00",
+  "producerCommit": "aba688e8619303a1dc9091a9931e55ef65457221",
+  "sourceSha256": {
+    "docs/server/r159/N64-OWNER-HANDOFF.md": "91bfeaeda5c9f69f539029c8ec804bf79e56f31f7a1c28ce3a1da1f8c40d98b1",
+    "docs/server/r161/README.md": "67e2f2d3ccf3836b70c2fb772d548ca3158758dbf40d04240d422364915d7654",
+    "integration/n64-gopher64-evaluation-20261015/README.md": "e8f25f811d6f4ed198eda9e93aeeb0d564749158d4402e11b0ae61eac8b114c1",
+    "integration/n64-online-dynarec-r161/README.md": "71a2fb09f3560ae6036e2b19c1f0718ad45fb630723dec8693a9a43a130e27b2",
+    "integration/n64-online-dynarec-r161/packaging/build_candidate.py": "a435fcf955b958721cbb1633cee7ed271ab30a6e841a26f5155a4b50560d7511",
+    "integration/n64-online-dynarec-r161/packaging/package_private_kit.py": "e643448ca7c3918a4ccf982595c979229afe7f9c1622d6571abab12fdba2a555",
+    "integration/n64-online-dynarec-r161/packaging/sign_private.py": "fef2b292ee4b5f06db67a0809301d478c0d0c359917e87aa80d9b4e1d86044ac",
+    "integration/n64-online-dynarec-r161/recipe/build_dex.py": "befffd3aa869bce9f239c8a696dfa267bfd96545398d82c4b8e86ed7b3c5025a",
+    "integration/n64-online-dynarec-r161/recipe/patch_profile.py": "510d74bb9b22214990afed6dcd444e4435814a096938cb6d1f939162065a0f5e",
+    "integration/n64-owner-application-context-r159/evidence/a56-service-lifecycle-20261014.md": "fc58782ffa84782c4086d8077091f1cb6505c8ab1f03da1272d6bd96ea54b6eb"
+  },
+  "pythonRecipeSyntaxParsed": [
+    "integration/n64-online-dynarec-r161/packaging/build_candidate.py",
+    "integration/n64-online-dynarec-r161/packaging/package_private_kit.py",
+    "integration/n64-online-dynarec-r161/packaging/sign_private.py",
+    "integration/n64-online-dynarec-r161/recipe/build_dex.py",
+    "integration/n64-online-dynarec-r161/recipe/patch_profile.py"
+  ],
+  "recipesExecuted": false,
+  "apkChanged": false,
+  "latestProducerCommit": "28f82a13ff3e9bf8623195f6fc15c4d1011cf30e",
+  "latestUpdateSourceSha256": {
+    "docs/server/r161/README.md": "e8a74442d94507fddf343d1eeb5b023d6b28f2bcb89416a88d7a87746e74f626",
+    "docs/server/r161/a56-install-receipt.json": "e9554b9b2a66c0c79faa56104125960fb6ac7e368d2f511f665fd770c0fe7bae",
+    "docs/server/r161/usb-delivery-receipt.json": "3a2c61bf0433bc1a9e4a30cc529e28a5021279a8944991de4b39cf3e4ca97b57"
+  }
+}
