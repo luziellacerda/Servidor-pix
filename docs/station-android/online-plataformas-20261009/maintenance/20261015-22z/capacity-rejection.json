@@ -1,0 +1,34 @@
+{
+  "passed": false,
+  "rejectionConfirmed": true,
+  "originalValidatorUnchanged": true,
+  "baselineEqualFreshProtectedAudit": true,
+  "stage": "first-78-before-complete-N64-and-PSX",
+  "failures": [
+    {
+      "itemId": "station_4e577685b9feb98a02a1b2cb884f2925",
+      "name": "WinBack: Covert Operations",
+      "contentSha256": "bc1188c4b21f82306541435b10c3efe8e7e5ba130fa5a774f736bc54c462343c",
+      "baselineProfiles": 124,
+      "baselineBytes": 130472,
+      "newProfilesInFirst78Stage": 6,
+      "projectedBytesFirst78Stage": 137167,
+      "limitBytes": 131072,
+      "excessBytesFirst78Stage": 6095,
+      "remainingBaselineBytes": 600,
+      "newProfileSizes": [
+        1127,
+        1113,
+        1109,
+        1113,
+        1117,
+        1122
+      ]
+    }
+  ],
+  "productionWrites": false,
+  "proposedPartialRegistrationApplied": false,
+  "historicalProfilesChanged": false,
+  "limitsRaised": false,
+  "perItemSizingDiagnosticOnly": true
+}
