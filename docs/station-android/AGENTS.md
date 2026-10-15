@@ -1,3 +1,17 @@
+## R164 aplicada e capa de 1080° publicada — 15/10/2026
+
+Ler o topo do mesmo handoff e r164/server-return.json. Autoridade
+/mnt/DADOS/station-r164-git-20261015/completed.json PASSED. Kit privado 37e3b9dd, 40 arquivos/27 ELF,
+quatro motores/399 perfis adicionados, prefixos R162 e anteriores preservados.
+157 capabilities locais/públicas, 164 admissões/223 recusas e quatro clientes
+sintéticos passaram. Não é gameplay Android. Capa exata de 1080° publicada:
+JPEG 480×720/q90, 150488 bytes, hash abd127d8; cache coverId+item.revision.
+NÃO repetir cadastro/capa/DLL/R162/R161/R159. APK não recebido; A56 R164 por
+recibo da produção. Testar mesma R164/edição nos dois aparelhos e novo efeito
+da capa. Preservar pendências SNES, rede onboard, banda100/800 e demais produtos.
+
+## Histórico preservado
+
 ## R162 aplicada por kit privado — 15/10/2026
 
 Ler o topo do mesmo handoff e r162/server-return.json. Kit a777e90a conferido,

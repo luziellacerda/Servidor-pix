@@ -1,0 +1,80 @@
+{
+  "local": {
+    "passed": true,
+    "route": "local",
+    "exactEngineRevisions": [
+      "CURRENT",
+      "BASE_R162"
+    ],
+    "checkedEditions": 157,
+    "signedCapabilitiesVerified": 157,
+    "completeReviewedProfilesPerRevision": 321,
+    "multiplayerEditions": 120,
+    "individualOnlyEditions": 37,
+    "newCURRENTMultiplayerModeAdmissions": 0,
+    "unsupportedModeCountAdmissionsRefused": 0,
+    "ownSyntheticLicensesRemoved": true,
+    "physicalAndroidGameplayValidated": false
+  },
+  "public": {
+    "passed": true,
+    "route": "public",
+    "exactEngineRevisions": [
+      "CURRENT",
+      "BASE_R162"
+    ],
+    "checkedEditions": 157,
+    "signedCapabilitiesVerified": 157,
+    "completeReviewedProfilesPerRevision": 321,
+    "multiplayerEditions": 120,
+    "individualOnlyEditions": 37,
+    "newCURRENTMultiplayerModeAdmissions": 164,
+    "unsupportedModeCountAdmissionsRefused": 223,
+    "ownSyntheticLicensesRemoved": true,
+    "physicalAndroidGameplayValidated": false
+  },
+  "passed": true,
+  "otherNativeSamples": {
+    "passed": true,
+    "checks": [
+      {
+        "route": "local",
+        "platform": "gamecube",
+        "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+        "engineId": "dolphin-5102a033-gamecube-v3-c3d597148345",
+        "exactSignedProfilesVerified": 1,
+        "signedIdentityVerified": true
+      },
+      {
+        "route": "local",
+        "platform": "wii",
+        "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+        "engineId": "dolphin-5102a033-wii-v3-c3d597148345",
+        "exactSignedProfilesVerified": 1,
+        "signedIdentityVerified": true
+      },
+      {
+        "route": "public",
+        "platform": "gamecube",
+        "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+        "engineId": "dolphin-5102a033-gamecube-v3-c3d597148345",
+        "exactSignedProfilesVerified": 1,
+        "signedIdentityVerified": true
+      },
+      {
+        "route": "public",
+        "platform": "wii",
+        "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+        "engineId": "dolphin-5102a033-wii-v3-c3d597148345",
+        "exactSignedProfilesVerified": 1,
+        "signedIdentityVerified": true
+      }
+    ],
+    "gamecubeApprovedModes": 9,
+    "wiiApprovedModes": 3,
+    "psxHleApprovalsAdded": 0,
+    "ownSyntheticLicensesRemoved": true,
+    "realLicensesPreserved": true
+  },
+  "physicalAndroidGameplayValidated": false
+}

@@ -1,3 +1,58 @@
+<!-- STATION-R164-APPLIED-20261015 -->
+## R164: motores cadastrados e nova capa de 1080° publicada — 15/10/2026
+
+**Servidor pronto para o teste da R164.** Retorno recebido do app no commit
+`1ae4a17`, branch `build/station-selection-n64-cover-r164-20261015`.
+Kit e arte obtidos do Git privado, commit `07aaea3cbdef9c42c4339fdfe1e1f79cd2623dd4`.
+Ler [estado efetivo](r164/server-return.json) e [recibo da capa](r164/new-1080-cover.json).
+
+Kit SHA `37e3b9dd`/12.339.010 bytes: 40 arquivos, 39 hashes, seis ELF de motores
+e 21 dependências conferidos neste Linux. Cores, opções, controles e todas as
+dependências da R162 são idênticos; somente os três marcadores de runtime mudam.
+N64 mantém Dynarec, Glide64mk2, inputDelay=2 e a ponte de vídeo online da R162.
+Nenhum APK solicitado ou recebido aqui. APK `903700d5` e instalação no A56 são
+evidência da produção; este Linux não inspecionou os telefones. As 40 partições
+DEX preservadas são prova relatada pela produção, sem leitura local de DEX.
+
+Cadastro aditivo em duas transações reais, 78 e 321, com autenticação Linux,
+baseline fresca em cada etapa, backup e scan.lock. Acrescentados quatro motores
+e 399 perfis/modos; 75 owners anteriores preservados.
+JSON compacto foi conferido antes da gravação, dentro do limite de 8 MiB;
+nenhum limite, registrador ou módulo protegido alterado. Não repetir R162.
+
+Passaram capabilities assinadas locais/públicas das 157 edições N64, 164
+admissões e 223 recusas. Quatro clientes sintéticos no transporte público
+confirmaram slots independentes, READY, dados separados, pausa/retomada,
+TLS/SPKI e prioridade. Amostras GameCube/Wii também passaram. Isso não é
+gameplay Android; zero novas aprovações PSX HLE. Snapshot: catálogo
+100, 79 motores, 15327 perfis e
+10412 modos, API PID 2489/DLL b347 sem reinício.
+
+**Somente a capa de 1080° Snowboarding foi substituída por esta operação:**
+PNG `2f8ee5b6`, RGB 1024×1536, compilado pelo importador vigente para JPEG
+480×720/q90, sem recorte. O arquivo cai de 2.698.285 para 150.488 bytes;
+JPEG SHA `abd127d8f6668fc918c7cb5c46c3d5980a4867b52b2197397825ecc7d6529cbf`.
+itemId `station_c13a5bbc179ccbe871697999c62ba13d` e coverId foram preservados;
+revisão do item 45→100, catálogo
+99→100. A baseline protegida
+e o JPEG antigo foram conferidos pelos endpoints antes da alteração. Backup
+recuperável, qualificação do scanner em cópia descartável e catálogo assinado e corpos
+autenticados locais/públicos passaram. Atualizar cache por coverId + item.revision.
+Outras capas, metadados, ROMs, registros online e serviços foram preservados.
+
+A produção registra que o usuário viu imagem N64 online sem engasgos
+significativos na R162; é relato visual sem medição instrumental. A seleção
+R164 foi validada no A56, mas o novo efeito da capa e o gameplay R164 entre
+telefones ainda precisam de aceite físico. Ambos precisam da mesma R164 e
+edição; este retorno só traz recibo de instalação R164 do A56. Saída do
+anfitrião segue na auditoria separada da R162, sem política nova aplicada.
+
+Autoridades `/mnt/DADOS/station-r164-git-20261015/applied.json`, `cover/applied.json` e `completed.json`, PASSED.
+Não repetir cadastro, capa, provas completas ou deploy de DLL. Rede onboard,
+DNS e limites 100/800 preservados. Permanecem as pendências de capas SNES
+exatas, artes sem edição instalada e validação Android. Os recibos originais
+da produção permanecem abaixo e no diretório producer; estado atual acima.
+
 <!-- STATION-R162-APPLIED-20261015 -->
 ## R162: retorno analisado e motores aplicados — 15/10/2026
 

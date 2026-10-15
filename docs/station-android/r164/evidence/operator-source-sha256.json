@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "codeSha256": {
+    "received_policy.py": "f520690bc43eaef2fec67d79b343d511df4710a6c1a88e5f6f53ea2c838ec704",
+    "prove-current.py": "9b154ca1c3030feec04f42531016c28d7969e4713bc97ce64981b9ec00eb12a3",
+    "prepare-r164.py": "f3151e02df14c799c2fa3275300d67c7849e5bf6541ce4709ded00b2c1433efb",
+    "build-operators.py": "18d7078ca4f3cd5561140591d7f12a4348d5117e682385fadbaa5e374062a08e",
+    "four-player-complete-check.py": "d261f21d5b82fef73a1ef47f17f05ddeb32c48f601b2b7ae94de9bb0ea15fa4e",
+    "apply-r164.py": "868e303f4b6f4d9d6fe57e74557fd9f0d738cbb2090120d68f9f38c90a893046",
+    "proof_http.py": "b5b5655f440aaa017a340f2d1c30ae0035c88c9ae8905d387a9532e93e098647",
+    "authenticate-native.py": "f7596a48fa22b590484e5ebb72bae9644e8a9f99534a52e120913bf892ab1642",
+    "enroll-r164.py": "46a6a9658e30359b4394a2fa1456073119f50d816c6ece9cd542db80bc1964f4",
+    "publish-one-cover.py": "ea932634dc016bcc6aaa8461ccadf19600e9bd70477a6f77964c41dfa2b06f63",
+    "hold-lease.py": "1a70930aaf3ca185f0cf6ca4aa170eb571002a4760eb8a53f3a1dac37958ef1a"
+  },
+  "privateKitVerified": true,
+  "noProtectedMutationYet": true,
+  "authTarget": "apply-r164.py",
+  "separateEngineAndCoverTransactions": true,
+  "compactModeBoundRetained": true
+}
