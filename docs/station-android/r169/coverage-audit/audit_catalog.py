@@ -251,7 +251,9 @@ def audit_item(item, policy, app_by_platform, server_by_id, profiles_by_item, mo
             "allowedPlayerCounts": profile.get("allowedPlayerCounts", []),
             "documentedExactMode": documented,
             "reviewedGameModeEvidence": reviewed,
-            "genericAutoProfile": str(profile.get("profileId", "")).startswith("local-auto-") or not mode_matches,
+            "genericAutoProfile": (profile.get("profileId") in {"standard-2p-v1", "local-auto-2p-v1"}
+                                   or str(profile.get("profileId", "")).startswith("local-auto-")
+                                   or not mode_matches),
             "physicalAndroidGameplayValidated": profile.get("physicalAndroidGameplayValidated") is True,
         }
         if profile.get("approved") is not True:
