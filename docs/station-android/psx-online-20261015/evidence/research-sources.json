@@ -1,0 +1,582 @@
+{
+  "schema": "station.psx.primary-research.v1",
+  "publisherScans": [
+    {
+      "itemId": "station_f7efe099a4928bc6328dc2823e9af9f3",
+      "name": "CTR - Crash Team Racing",
+      "primaryDocumentTitle": "CTR - Crash Team Racing (USA)",
+      "url": "https://www.videogamemanual.com/ps1/CTR%20-%20Crash%20Team%20Racing%20%28USA%29.pdf",
+      "pdfSha256": "d6b7fa3a93235302549cc1eb3cc1d7bea8661ba2404901c1754dffe5c5437164",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Arcade: corrida e campeonato",
+          "paraphrase": "O manual descreve Arcade com dois controles, em corrida ou copa.",
+          "pdfPages": [
+            8,
+            9
+          ]
+        },
+        {
+          "mode": "Versus e batalha",
+          "paraphrase": "O manual separa Vs./Battle e exige Multitap acima de dois.",
+          "pdfPages": [
+            9,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_767e5e92f2f353479e6120f1c28f96a7",
+      "name": "Capcom vs. SNK - Millennium Fight 2000 Pro",
+      "primaryDocumentTitle": "Capcom vs. SNK Pro (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Capcom%20vs.%20SNK%20Pro%20%28USA%29.pdf",
+      "pdfSha256": "0fff6e9938cc313ca3347c9839624581d45f078a154a66456336f2c877033f02",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "VS Mode",
+          "paraphrase": "O manual exige dois controles e identifica VS como disputa entre duas pessoas.",
+          "pdfPages": [
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_d0644371e28e7a933f4a4aae0ecc954b",
+      "name": "Crash Bash",
+      "primaryDocumentTitle": "Crash Bash (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Crash%20Bash%20%28USA%29.pdf",
+      "pdfSha256": "5fe13a5424723d4c28fe612ea69f0ceddd004c2fb8772dcbfd1d45eeec502378",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Aventura cooperativa",
+          "paraphrase": "O manual descreve Adventure com uma ou duas pessoas.",
+          "pdfPages": [
+            7,
+            8
+          ]
+        },
+        {
+          "mode": "Batalha",
+          "paraphrase": "O manual distingue Battle de Adventure e condiciona arenas ao progresso.",
+          "pdfPages": [
+            7,
+            8
+          ]
+        },
+        {
+          "mode": "Torneio",
+          "paraphrase": "O manual descreve torneios competitivos e o uso de Multitap acima de duas pessoas.",
+          "pdfPages": [
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_0ac263df512a0ac82a3b3bb1ddac0ab1",
+      "name": "Crash Bash (USA)",
+      "primaryDocumentTitle": "Crash Bash (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Crash%20Bash%20%28USA%29.pdf",
+      "pdfSha256": "5fe13a5424723d4c28fe612ea69f0ceddd004c2fb8772dcbfd1d45eeec502378",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Aventura cooperativa",
+          "paraphrase": "O manual descreve Adventure com uma ou duas pessoas.",
+          "pdfPages": [
+            7,
+            8
+          ]
+        },
+        {
+          "mode": "Batalha",
+          "paraphrase": "O manual distingue Battle de Adventure e condiciona arenas ao progresso.",
+          "pdfPages": [
+            7,
+            8
+          ]
+        },
+        {
+          "mode": "Torneio",
+          "paraphrase": "O manual descreve torneios competitivos e o uso de Multitap acima de duas pessoas.",
+          "pdfPages": [
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_8bbc153b58a63e8ff944ff1a67913ca6",
+      "name": "Digimon Rumble Arena",
+      "primaryDocumentTitle": "Digimon Rumble Arena (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Digimon%20Rumble%20Arena%20%28USA%29.pdf",
+      "pdfSha256": "aae2b2559ae6e2b5444b49c5acb15795c8ba61a6bd69c1cf15450ca9589eed81",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "2 Players",
+          "paraphrase": "O manual separa 2 Player de VS Computer e descreve os handicaps.",
+          "pdfPages": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_878c9044184e6395dce157c144b41d5c",
+      "name": "Dragonball GT - Final Bout",
+      "primaryDocumentTitle": "Dragon Ball GT - Final Bout (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Dragon%20Ball%20GT%20-%20Final%20Bout%20%28USA%29.pdf",
+      "pdfSha256": "eb82359aab4afa33bcf5c81f267342bea9a28a0b0aa41845240404c74e71e526",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Battle: dois jogadores",
+          "paraphrase": "O manual descreve Battle e a competição com dois controles.",
+          "pdfPages": [
+            7
+          ]
+        },
+        {
+          "mode": "Torneio de duas pessoas",
+          "paraphrase": "O torneio aceita duas ou mais pessoas usando dois controles; nesta sala são somente duas.",
+          "pdfPages": [
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_8d692460b3a90a94d438366e707843f5",
+      "name": "Dragonball Z - Ultimate Battle 22",
+      "primaryDocumentTitle": "Dragon Ball Z - Ultimate Battle 22 (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Dragon%20Ball%20Z%20-%20Ultimate%20Battle%2022%20%28USA%29.pdf",
+      "pdfSha256": "0788ce1767af2f3ed6d79f463d9b0e90efde48d110e41c231a11ca18073cfce8",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "1P versus 2P",
+          "paraphrase": "O manual exige dois controles para 1P versus 2P.",
+          "pdfPages": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_f5d7a9e8e45fd4c1f1113ecb2b137580",
+      "name": "Driver 2",
+      "primaryDocumentTitle": "Driver 2 (GH) (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Driver%202%20%28GH%29%20%28USA%29.pdf",
+      "pdfSha256": "aa27f750e8024fa5d2901c1c7d50660e6fbfccaccfb1e0f444aa8474eae6fef0",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Passeio em dupla",
+          "paraphrase": "O manual descreve passeio simultâneo de duas pessoas.",
+          "pdfPages": [
+            17
+          ]
+        },
+        {
+          "mode": "Polícia e ladrão",
+          "paraphrase": "O manual atribui funções distintas aos dois jogadores.",
+          "pdfPages": [
+            17
+          ]
+        },
+        {
+          "mode": "Corrida por checkpoints",
+          "paraphrase": "O manual descreve competição entre duas pessoas nos checkpoints.",
+          "pdfPages": [
+            17
+          ]
+        },
+        {
+          "mode": "Capture a bandeira",
+          "paraphrase": "O manual descreve dois jogadores adversários na disputa da bandeira.",
+          "pdfPages": [
+            17
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_0884fff4ffa401b94fe38b790b728d1a",
+      "name": "Fighting Force",
+      "primaryDocumentTitle": "Fighting Force (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Fighting%20Force%20%28USA%29.pdf",
+      "pdfSha256": "b8d8686bd23a438c8f6d7f7046ba7a587d7da93840b9636d42a9d35fa6d8597a",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Campanha cooperativa",
+          "paraphrase": "O manual distingue jogo de duas pessoas e proíbe escolher o mesmo personagem nas duas portas.",
+          "pdfPages": [
+            8,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_2bb4a53639863ba62542c7f94d6bfc2b",
+      "name": "Final Fantasy Chronicles - Final Fantasy IV",
+      "primaryDocumentTitle": "Final Fantasy Chronicles (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Final%20Fantasy%20Chronicles%20%28USA%29.pdf",
+      "pdfSha256": "4ae7132ac0c79f651d35311e5a826d372e65cd8fbb4ae92737a7a2a0ee969e75",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Cooperativo: Multi",
+          "paraphrase": "O manual explica Multi, dois controles e batalhas em conjunto.",
+          "pdfPages": [
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_a1ec8c2ac08fd798a1cd60ba62ed319d",
+      "name": "Final Fantasy IX",
+      "primaryDocumentTitle": "Final Fantasy IX (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Final%20Fantasy%20IX%20%28USA%29.pdf",
+      "pdfSha256": "e40b97724313bb12c80bbf0a433150329ddb0d22f58cd2fac82f6a3d8eedd86f",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Batalhas com controle dividido",
+          "paraphrase": "A distribuição precisa ser confirmada no menu de ajuda da edição PS1; o manual impresso consultado não bastou.",
+          "pdfPages": []
+        }
+      ]
+    },
+    {
+      "itemId": "station_edd45ef4e281f6f16d0dad1dd28707d3",
+      "name": "Gran Turismo",
+      "primaryDocumentTitle": "Gran Turismo (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Gran%20Turismo%20%28USA%29.pdf",
+      "pdfSha256": "7965a38395027292fe21b0b67d7d26541bd7d9685958d4eca2c0bfd652847b3a",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Arcade: 2 Player Battle",
+          "paraphrase": "O manual descreve duas pessoas e dois controles na tela dividida.",
+          "pdfPages": [
+            19
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_07bde5803ff1506c390a6b26f050db41",
+      "name": "Gran Turismo 2",
+      "primaryDocumentTitle": "Gran Turismo 2 (GH) (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Gran%20Turismo%202%20%28GH%29%20%28USA%29.pdf",
+      "pdfSha256": "856d8e5449fa20ef41c4e222628caeb49dc69f295cb4565a1488d3087357cdcd",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Disco Arcade: 2 Player Battle",
+          "paraphrase": "O manual identifica Arcade e a escolha independente dos carros em duas telas.",
+          "pdfPages": [
+            12,
+            17
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_21ef7c0ff4f0ae3021d91cc7c7123780",
+      "name": "Legend of Mana",
+      "primaryDocumentTitle": "Legend of Mana (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Legend%20of%20Mana%20%28USA%29.pdf",
+      "pdfSha256": "c2fcd1bdc7affdc76e14f39cb18c58055c9a8b0cbee4c1b425fc7d97ffa54e17",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Aventura: controle do companheiro",
+          "paraphrase": "O manual exige controles nas duas portas e explica 2P Control no ponto de gravação.",
+          "pdfPages": [
+            5,
+            27
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_feca9272f103898c2d94dcec4ecf9b6d",
+      "name": "Medal of Honor",
+      "primaryDocumentTitle": "Medal of Honor (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Medal%20of%20Honor%20%28USA%29.pdf",
+      "pdfSha256": "e8d261d2efe3da102915f7ea23b72554b12bf1c288dd6d23433a4a6b4957eac5",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Multiplayer: confronto",
+          "paraphrase": "O manual exige dois controles e descreve o confronto e a seleção das duas personagens.",
+          "pdfPages": [
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_59ab822e147bf7843c9ebd0d81690ff2",
+      "name": "Metal Slug X",
+      "primaryDocumentTitle": "Metal Slug X (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Metal%20Slug%20X%20%28USA%29.pdf",
+      "pdfSha256": "9bf4df6d7070415f9b02189b34d7a8fa69945067daf1d251cf176f3757016697",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Arcade cooperativo",
+          "paraphrase": "O manual descreve entrada da segunda porta em 2P Mode.",
+          "pdfPages": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_e731d423e54bb63e03d763d9a64d0ebe",
+      "name": "Mortal Kombat 3",
+      "primaryDocumentTitle": "Mortal Kombat 3 (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Mortal%20Kombat%203%20%28USA%29.pdf",
+      "pdfSha256": "80043102c0b8f64a3a9ac99c170fc50019b84e037f99d54ef70629bc59f7ba3a",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Combate versus",
+          "paraphrase": "O manual descreve partidas de duas pessoas, seleção e rodadas de combate.",
+          "pdfPages": [
+            7,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_5a3027a6797f3428c2a8181b23d89f80",
+      "name": "Mortal Kombat Trilogy",
+      "primaryDocumentTitle": "Mortal Kombat Trilogy (GH) (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Mortal%20Kombat%20Trilogy%20%28GH%29%20%28USA%29.pdf",
+      "pdfSha256": "951f21b63598fb87eceb82e4f733407cd36a5edc8195b56d699dbe325691b52c",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Mortal Kombat: versus",
+          "paraphrase": "O manual define Mortal Kombat como um ou dois jogadores e entrada pelo segundo Start.",
+          "pdfPages": [
+            9,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_fa2783a30c9ef50d2495e480ddc5a0cb",
+      "name": "Need for Speed III - Hot Pursuit",
+      "primaryDocumentTitle": "Need for Speed III - Hot Pursuit (GH) (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Need%20for%20Speed%20III%20-%20Hot%20Pursuit%20%28GH%29%20%28USA%29.pdf",
+      "pdfSha256": "a56b4bbb8a2d5f933ae451bc9294b96b8f7fa4675e0bbe23a6295e690011a99f",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Corrida: Two Player",
+          "paraphrase": "O manual descreve competição de duas pessoas na tela dividida.",
+          "pdfPages": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_97be9d6e8d19fa6b9a53027256cb59e5",
+      "name": "Street Fighter EX Plus Alpha",
+      "primaryDocumentTitle": "Street Fighter EX Plus Alpha (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Street%20Fighter%20EX%20Plus%20Alpha%20%28USA%29.pdf",
+      "pdfSha256": "a687f96116bd30bb810fecf00cf14cafdd643d455311ed66985f804dabb0e71a",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "VS Mode",
+          "paraphrase": "O manual define V.S. como confronto de dois jogadores.",
+          "pdfPages": [
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_7fcc7511a1cebd38d5b9673357e43b64",
+      "name": "Street Fighter EX2 Plus",
+      "primaryDocumentTitle": "Street Fighter EX2 Plus (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Street%20Fighter%20EX2%20Plus%20%28USA%29.pdf",
+      "pdfSha256": "b61fdf300a942987f0253589e81fe1ae7400d50969346bc70d8dda4d80cff67a",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Versus: VS Battle",
+          "paraphrase": "O manual descreve Versus entre dois jogadores e diferencia VS Battle de Team Battle.",
+          "pdfPages": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_ea68541cef64941b9fad1f480b61647d",
+      "name": "Tekken",
+      "primaryDocumentTitle": "Tekken (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Tekken%20%28USA%29.pdf",
+      "pdfSha256": "02d8e1323add579c82e7e11cfe2139bbb3ea0ce4fda1d79e7e1ec82912d2a407",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Dois jogadores",
+          "paraphrase": "O manual descreve Two-Player e a entrada do segundo controle.",
+          "pdfPages": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_9f4ec61454bc15df1b1026766554b928",
+      "name": "Tekken 2",
+      "primaryDocumentTitle": "Tekken 2 (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Tekken%202%20%28USA%29.pdf",
+      "pdfSha256": "8c1b4f4f4ee773c0f34666eb4ef605ce1bbc06ae9f36fcbdf41c93428737954a",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Two-Player VS",
+          "paraphrase": "O manual exige dois controles e descreve Two-Player VS.",
+          "pdfPages": [
+            6,
+            11,
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_22f26f76fb1831385d5aac5f8a21069b",
+      "name": "Tekken 3",
+      "primaryDocumentTitle": "Tekken 3 (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Tekken%203%20%28USA%29.pdf",
+      "pdfSha256": "fde7b1a67674821656f67ce67d63ba98a80524d29b66b3d9943d2c2fc13cfa21",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "VS Mode",
+          "paraphrase": "O manual descreve duas pessoas em VS Mode.",
+          "pdfPages": [
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_af2a73086ddf145e4a1144adf1de9edf",
+      "name": "Tony Hawk's Pro Skater 4",
+      "primaryDocumentTitle": "Tony Hawk's Pro Skater 4 (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Tony%20Hawk%27s%20Pro%20Skater%204%20%28USA%29.pdf",
+      "pdfSha256": "edb3405d39ba045df406993bb4279132ecc3510eece7983b234d83292ee1118d",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Two Player: competição",
+          "paraphrase": "O manual exige dois controles para Two Player e descreve as modalidades.",
+          "pdfPages": [
+            9,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_d56f57826b5505cb1c897d7c7d995f26",
+      "name": "Twisted Metal",
+      "primaryDocumentTitle": "Twisted Metal (LB) (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Twisted%20Metal%20%28LB%29%20%28USA%29.pdf",
+      "pdfSha256": "ede7cf0ca3cf203ada0d668e224786260f27cad98d10f126f648a9e0242f5cd0",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Two Player Duel",
+          "paraphrase": "O manual diferencia campanha individual de duelo entre duas pessoas.",
+          "pdfPages": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_8391ca9ada6fb31b458340cbfbdd5d3e",
+      "name": "Wipeout 3",
+      "primaryDocumentTitle": "WipEout 3 (USA)",
+      "url": "https://www.videogamemanual.com/ps1/WipEout%203%20%28USA%29.pdf",
+      "pdfSha256": "66181ea5bf8ed55a5854fcdafcb728aa4db1f4477c251beb135630f08fbc76fb",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Corrida: dois jogadores",
+          "paraphrase": "O manual mostra a escolha de um ou dois jogadores antes do Main Menu.",
+          "pdfPages": [
+            8,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_273b5bea1d45db87ff6711ec3c9166d8",
+      "name": "Worms Armageddon",
+      "primaryDocumentTitle": "Worms Armageddon (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Worms%20Armageddon%20%28USA%29.pdf",
+      "pdfSha256": "7d8b2aca2e74bc66b94567c9fac1dde244b660908a5745bf3ac0c21f7283f2d1",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "Batalha por turnos",
+          "paraphrase": "O manual descreve Quick Multiplayer por turnos; as opções consultadas não demonstram a divisão nas duas portas.",
+          "pdfPages": [
+            9,
+            34
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_28c96e14627cc01b83e7c00ae90497e9",
+      "name": "Yu-Gi-Oh! Forbidden Memories",
+      "primaryDocumentTitle": "Yu-Gi-Oh! Forbidden Memories (USA)",
+      "url": "https://www.videogamemanual.com/ps1/Yu-Gi-Oh%21%20Forbidden%20Memories%20%28USA%29.pdf",
+      "pdfSha256": "466849686c5c41879e8d033c8a38f2de4dc6e23712714805a8d5cf6b09d02b10",
+      "primaryContent": "Original publisher instruction booklet scan, mirrored; generated site summaries were not used",
+      "findings": [
+        {
+          "mode": "2P Duel: dois decks salvos",
+          "paraphrase": "O manual exige cartão de cada pessoa nos slots 1 e 2 com decks preparados antes do duelo.",
+          "pdfPages": [
+            22
+          ]
+        }
+      ]
+    }
+  ],
+  "runtimeReferences": [
+    "https://docs.libretro.com/library/pcsx_rearmed/",
+    "https://docs.libretro.com/development/retroarch/netplay/",
+    "https://github.com/notaz/pcsx_rearmed/tree/ff81ed17a15241d2f3730cdd7585b38e172532ca"
+  ]
+}

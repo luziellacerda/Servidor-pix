@@ -1,0 +1,249 @@
+{
+  "schema": "station.psx.primary-software-mode-review.v1",
+  "scope": "Human visual review of original game UI through the diagnostic frontend. Not Android app or physical gameplay validation.",
+  "editions": [
+    {
+      "itemId": "station_f7ee3da977e7e23324b415e45e778680",
+      "name": "Dragon Ball Z - Idainaru Dragon Ball Densetsu",
+      "contentSha256": "c4b51f74ed97f6c2301ea1324f9915c18ef83d772cf4381400eb51d6acf52cf1",
+      "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+      "discSerial": "SLPS00355",
+      "primaryMaterial": "Original publisher game software user interface, executed from exact owned edition",
+      "twoIndependentPortsModeConfirmed": true,
+      "finding": "O programa original mostra VS Battle, 1P vs 2P e duas linhas de equipe identificadas como 1P e 2P. A segunda porta também respondeu à navegação de retorno no ensaio.",
+      "instruction": "Escolha VS Battle, 1P vs 2P. Cada pessoa seleciona sua equipe. Z Campaign e confrontos contra a CPU são modos diferentes.",
+      "physicalAndroidGameplayValidated": false,
+      "privateCaptures": [
+        {
+          "checkpoint": 7,
+          "sha256": "46b5b373229115f0a0473a52f3615c8a575f018151d219c9d05679b058ebc37d"
+        },
+        {
+          "checkpoint": 12,
+          "sha256": "caeb49f260d00d258d66dda3ed346984dcf649cb2c4d73dc13c788e683f82662"
+        },
+        {
+          "checkpoint": 15,
+          "sha256": "14170f1d0e15571c8e952aea9815f5efaa067740d5bd90bb8fd7b3bfc97ec654"
+        },
+        {
+          "checkpoint": 27,
+          "sha256": "8469f663d94ae39c2e780db24278b9ecc63895c2b9d2dbab36bdf994849ae100"
+        }
+      ],
+      "interactionCommands": [
+        "step 1 8 0",
+        "step 60 0 0",
+        "capture",
+        "step 6 8 0",
+        "step 60 0 0",
+        "capture",
+        "step 600 0 0",
+        "capture",
+        "step 6 32 0",
+        "step 6 0 0",
+        "step 6 256 0",
+        "step 120 0 0",
+        "capture",
+        "step 6 256 0",
+        "step 120 0 0",
+        "capture",
+        "step 6 256 0",
+        "step 6 0 0",
+        "capture",
+        "step 6 0 256",
+        "step 6 0 0",
+        "capture",
+        "step 6 1 0",
+        "step 6 0 0",
+        "capture",
+        "step 6 0 1",
+        "step 6 0 0",
+        "capture"
+      ],
+      "lastObservedStatus": {
+        "frames": 1041,
+        "videoFrames": 808,
+        "videoHash": 12091739203624885922,
+        "changedVideoSamples": 22,
+        "nonzeroAudioSamples": 0,
+        "ramHash": 2461389150481699813,
+        "ramBytes": 2097152,
+        "portPolls": [
+          16656,
+          16656
+        ],
+        "nonzeroPortPolls": [
+          37,
+          12
+        ],
+        "width": 320,
+        "height": 240
+      }
+    },
+    {
+      "itemId": "station_523f952048a1583e0bc9c7f9971d0ecf",
+      "name": "World Soccer Winning Eleven 2002 (Japan)",
+      "contentSha256": "cf391719429dddf498cd718bedc894631ab5122a3e5fe712954cf14ebbc5eb26",
+      "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+      "discSerial": "SLPM87056",
+      "primaryMaterial": "Original publisher game software user interface, executed from exact owned edition",
+      "twoIndependentPortsModeConfirmed": true,
+      "finding": "Na seleção de lados, o programa original mostra Controller 1 e Controller 2. Um comando Right somente na porta 2 moveu seu ícone do centro para Away, enquanto Controller 1 permaneceu em Home.",
+      "instruction": "Na primeira abertura, Cross permite continuar com as opções padrão sem importar cartão offline. Selecione Match Mode, Exhibition Match; mantenha Controller 1 em Home e mova Controller 2 para Away. Confirme com Circle.",
+      "physicalAndroidGameplayValidated": false,
+      "privateCaptures": [
+        {
+          "checkpoint": 7,
+          "sha256": "1b3c9b58ad54447db5168438902b912da202f68904ac9ca8a31d05da601d0d79"
+        },
+        {
+          "checkpoint": 10,
+          "sha256": "10abf4eb0bc3ea9419136bbedaea28aa1dc082236d12aaf1a029535b53a7ada6"
+        },
+        {
+          "checkpoint": 13,
+          "sha256": "94f41273aacd08759ab43f8552afe8070f7c8c63179c15989443e4d2f2816a55"
+        },
+        {
+          "checkpoint": 16,
+          "sha256": "7b4771fcf80693c981a4c9c95ab6f85261049e2bf3778e69f0502d3adc2dcc1f"
+        },
+        {
+          "checkpoint": 19,
+          "sha256": "c6fc1336b4f93ae10e6fc4b11002ab852aed7a240bd0d83dabe62796b0eadf3a"
+        }
+      ],
+      "interactionCommands": [
+        "step 600 0 0",
+        "capture",
+        "step 6 256 0",
+        "step 120 0 0",
+        "capture",
+        "step 6 256 0",
+        "step 600 0 0",
+        "capture",
+        "step 6 1 0",
+        "step 600 0 0",
+        "capture",
+        "step 6 256 0",
+        "step 180 0 0",
+        "capture",
+        "step 6 256 0",
+        "step 180 0 0",
+        "capture",
+        "step 6 0 128",
+        "step 30 0 0",
+        "capture",
+        "step 6 256 0",
+        "step 180 0 0",
+        "capture"
+      ],
+      "lastObservedStatus": {
+        "frames": 2534,
+        "videoFrames": 2496,
+        "videoHash": 4789406732402368475,
+        "changedVideoSamples": 49,
+        "nonzeroAudioSamples": 3420008,
+        "ramHash": 15370788824168891340,
+        "ramBytes": 2097152,
+        "portPolls": [
+          40544,
+          40544
+        ],
+        "nonzeroPortPolls": [
+          36,
+          6
+        ],
+        "width": 368,
+        "height": 480
+      }
+    },
+    {
+      "itemId": "station_273b5bea1d45db87ff6711ec3c9166d8",
+      "name": "Worms Armageddon",
+      "contentSha256": "ae0fb139b3f935fefe212703cdfbd21664ab1002ead0c56d885d3cfe48259181",
+      "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+      "discSerial": "SLUS00888",
+      "primaryMaterial": "Original publisher game software user interface, executed from exact owned edition",
+      "twoIndependentPortsModeConfirmed": false,
+      "finding": "Quick Multiplayer iniciou com duas equipes humanas. No turno Player Two observado, Right na porta 2 não moveu o personagem; Left na porta 1 moveu a mira. Esse caminho não comprovou dois controles independentes.",
+      "instruction": "Não oferecer Quick Multiplayer como duas portas independentes nesta integração sem comprovação específica; o ensaio observado foi compatível com controle compartilhado por turnos.",
+      "physicalAndroidGameplayValidated": false,
+      "privateCaptures": [
+        {
+          "checkpoint": 7,
+          "sha256": "52b97bc0c4946b74c5f4fadfec651f2ac7c94d81c2d149b012cc5c7f1f8401c8"
+        },
+        {
+          "checkpoint": 12,
+          "sha256": "1db90f80a7fda80800d1867ea0e34e7b6c02e89e7a785f603bdc3f54188f538c"
+        },
+        {
+          "checkpoint": 14,
+          "sha256": "4df6fa302625adf5f55e3fb37ab4912b3ba2815289cd9e4580d2c0354bad1b65"
+        },
+        {
+          "checkpoint": 16,
+          "sha256": "8497bb57abc222188bfa98e6c63a585f3698080641cf092850cacbb0df2063d2"
+        },
+        {
+          "checkpoint": 18,
+          "sha256": "98b0e185192f85cc9329f2cc308353368bd2544dcc4abd0a7f1bde0afd405899"
+        },
+        {
+          "checkpoint": 20,
+          "sha256": "7aaf91a5c85da92d8395a5f95b2a0426069ea0b0f01a960caad02332c83058a5"
+        },
+        {
+          "checkpoint": 22,
+          "sha256": "8f19b47c0a1d7bbf39255f0b90acf2b74ac112a0238de2eb94ee9c7f6750920b"
+        }
+      ],
+      "interactionCommands": [
+        "step 600 0 0",
+        "capture",
+        "step 6 32 0",
+        "step 6 0 0",
+        "step 6 1 0",
+        "step 60 0 0",
+        "capture",
+        "capture",
+        "step 6 1 0",
+        "step 600 0 0",
+        "capture",
+        "step 1200 0 0",
+        "capture",
+        "step 2700 0 0",
+        "capture",
+        "step 120 0 128",
+        "capture",
+        "step 120 0 0",
+        "capture",
+        "step 60 0 128",
+        "capture",
+        "step 60 64 0",
+        "capture"
+      ],
+      "lastObservedStatus": {
+        "frames": 5546,
+        "videoFrames": 4519,
+        "videoHash": 1522904686507075369,
+        "changedVideoSamples": 147,
+        "nonzeroAudioSamples": 6434626,
+        "ramHash": 8128469639472506863,
+        "ramBytes": 2097152,
+        "portPolls": [
+          88736,
+          88736
+        ],
+        "nonzeroPortPolls": [
+          78,
+          180
+        ],
+        "width": 320,
+        "height": 240
+      }
+    }
+  ]
+}

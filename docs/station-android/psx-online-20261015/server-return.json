@@ -1,0 +1,21 @@
+{
+  "schema": "station.psx.catalog-and-online-status.v1",
+  "serverDataPublished": false,
+  "exactPsxEditions": 84,
+  "catalogRevision": 100,
+  "existingEngines": 79,
+  "profilesAdded": 93,
+  "modesAdded": 93,
+  "onlineApprovedEditions": 19,
+  "approvedMultiplayerModes": 23,
+  "pendingMultiplayerModes": 17,
+  "localClassifications": 53,
+  "allEditionsHaveCatalogDownloadAndCoverMapping": true,
+  "actualReceivedArm64CoreExecutedForAll84": true,
+  "freshStartLockstepPassed": 82,
+  "recoveryReplayRamMatched": 62,
+  "physicalAndroidGameplayValidated": false,
+  "oldPsxApprovalsMigrated": false,
+  "currentEngineId": "pcsx-rearmed-ff81ed17-player-v3-1b315b86b4a7",
+  "sourceCoreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9"
+}
