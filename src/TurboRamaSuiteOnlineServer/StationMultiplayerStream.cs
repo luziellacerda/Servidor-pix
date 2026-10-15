@@ -175,7 +175,12 @@ public sealed class StationMultiplayerRelay(StationMultiplayer hub,IStationOnlin
         }catch(OnlineFailure e){First(e.Code);stream.End();}
         catch(Exception e)when(e is OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){First(aborted.IsCancellationRequested?"request-abort":"transport-exception");}
         finally{
-            First("transport-closed");stop.Cancel();
+            First("transport-closed");
+            // An in-flight game frame may complete ReceiveAsync after confirmed leave.
+            // Let the sole writer send STATE=3 and CloseOutput before canceling it.
+            if(stream.ConfirmedLeavePending&&!aborted.IsCancellationRequested&&!closeReceived&&!stop.IsCancellationRequested)
+                try{await send.WaitAsync(TimeSpan.FromSeconds(2));}catch(Exception e)when(e is TimeoutException or OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){}
+            stop.Cancel();
             // The send loop is the sole data/control writer. Join it BEFORE close output.
             try{await Task.WhenAll(send,watch);}catch(Exception e)when(e is OperationCanceledException or WebSocketException or IOException or ObjectDisposedException){}
             if(closeReceived&&socket.State==WebSocketState.CloseReceived){using var closeTimeout=new CancellationTokenSource(2000);

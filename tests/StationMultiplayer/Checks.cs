@@ -4,6 +4,7 @@ using TurboRamaSuiteOnlineServer;
 using TurboRamaSuiteOnlineServer.Online;
 using Microsoft.Extensions.Logging.Abstractions;
 using System.Security.Cryptography;
+using System.Threading.Channels;
 
 int checks=0;void Check(bool value,string name){checks++;if(!value)throw new Exception(name);}
 CatalogChecks.Run(Check);
@@ -319,6 +320,23 @@ await new StationMultiplayerRelay(writerFixture.Hub,new SyntheticAccess(),NullLo
 Check(ws.MaximumWriters==1&&ws.CloseCalls==1,"close serialized behind sender");
 Check(writerFixture.Budget.UsedBytes==524288,"network close retains logical allocation");
 writerFixture.Hub.Command(writerFixture.People[0],Cmd("leave",wr),security);Check(writerFixture.Budget.UsedBytes==0,"human leave releases retained empty stream");
+// A game frame can finish receiving immediately after the host leaves. Its
+// terminal Receive exception must not cancel a STATE=3 send already in flight.
+var raceFixture=Make(2,capacity:2);var raceRoom=Json(raceFixture.Hub.Command(raceFixture.People[0],Cmd("start",raceFixture.Room),security)).GetProperty("room");
+string raceLink=raceRoom.GetProperty("links")[0].GetProperty("linkId").GetString()!;
+string raceTicket=Json(raceFixture.Hub.Command(raceFixture.People[1],Cmd("ticket",raceRoom,link:raceLink),security)).GetProperty("ticket").GetProperty("ticket").GetString()!;
+var raceLease=raceFixture.Hub.TakeTicket(raceTicket,_=>{});using var raceSocket=new InFlightLeaveSocket();
+Task raceAttach=new StationMultiplayerRelay(raceFixture.Hub,new SyntheticAccess(),NullLogger<StationMultiplayerRelay>.Instance).Attach(raceLease,raceSocket,CancellationToken.None);
+await raceSocket.InitialStateSent.Task.WaitAsync(TimeSpan.FromSeconds(3));
+raceSocket.QueueGameFrame();await raceSocket.FrameReadStarted.Task.WaitAsync(TimeSpan.FromSeconds(3));
+raceFixture.Hub.Command(raceFixture.People[0],Cmd("leave",raceRoom),security);
+await raceSocket.TerminalSendStarted.Task.WaitAsync(TimeSpan.FromSeconds(3));
+raceSocket.ReleaseFrame.TrySetResult();
+Check(await Task.WhenAny(raceSocket.TerminalSendCancelled.Task,Task.Delay(100))!=raceSocket.TerminalSendCancelled.Task&&!raceAttach.IsCompleted,
+    "in-flight receive cannot cancel terminal writer");
+raceSocket.ReleaseTerminalSend.TrySetResult();await raceAttach.WaitAsync(TimeSpan.FromSeconds(4));
+Check(raceSocket.Events.SequenceEqual(new[]{"STATE=3","CLOSE"}),"in-flight frame still delivers terminal state before close");
+Check(raceFixture.Budget.UsedBytes==0,"in-flight exit releases replay reservation");
 // Proof canonicalization binds the credential AND exact v3 route, not the old relay path.
 using(var key=RSA.Create(2048)){
     var proof=new StationRequestProof(TimeProvider.System);string credential=StationProtocol.Encode(RandomNumberGenerator.GetBytes(32));
@@ -362,4 +380,30 @@ sealed class CloseDuringSendSocket:WebSocket
     {await started.Task.WaitAsync(cancellationToken);state=WebSocketState.CloseReceived;return new(0,WebSocketMessageType.Close,true);}
     public override async Task SendAsync(ArraySegment<byte> buffer,WebSocketMessageType messageType,bool endOfMessage,CancellationToken cancellationToken)
     {int n=Interlocked.Increment(ref writers);MaximumWriters=Math.Max(MaximumWriters,n);if(n!=1)throw new Exception("overlapping send");started.TrySetResult();try{await Task.Delay(Timeout.Infinite,cancellationToken);}finally{Interlocked.Decrement(ref writers);}}
+}
+sealed class InFlightLeaveSocket:WebSocket
+{
+    private readonly Channel<byte[]> incoming=Channel.CreateUnbounded<byte[]>();
+    private WebSocketState state=WebSocketState.Open;
+    public readonly TaskCompletionSource InitialStateSent=new(TaskCreationOptions.RunContinuationsAsynchronously),
+        FrameReadStarted=new(TaskCreationOptions.RunContinuationsAsynchronously),ReleaseFrame=new(TaskCreationOptions.RunContinuationsAsynchronously),
+        TerminalSendStarted=new(TaskCreationOptions.RunContinuationsAsynchronously),TerminalSendCancelled=new(TaskCreationOptions.RunContinuationsAsynchronously),
+        ReleaseTerminalSend=new(TaskCreationOptions.RunContinuationsAsynchronously);
+    public readonly List<string> Events=[];
+    public void QueueGameFrame()=>incoming.Writer.TryWrite(StationMultiplayerFrame.Encode(new(StationStreamFrame.DataPacket,0,0,[7])));
+    public override WebSocketCloseStatus? CloseStatus=>null;public override string? CloseStatusDescription=>null;
+    public override WebSocketState State=>state;public override string? SubProtocol=>StationMultiplayer.Protocol;
+    public override void Abort()=>state=WebSocketState.Aborted;public override void Dispose()=>Abort();
+    public override Task CloseAsync(WebSocketCloseStatus closeStatus,string? statusDescription,CancellationToken cancellationToken)=>CloseOutputAsync(closeStatus,statusDescription,cancellationToken);
+    public override Task CloseOutputAsync(WebSocketCloseStatus closeStatus,string? statusDescription,CancellationToken cancellationToken)
+    {cancellationToken.ThrowIfCancellationRequested();Events.Add("CLOSE");state=WebSocketState.CloseSent;return Task.CompletedTask;}
+    public override async Task<WebSocketReceiveResult> ReceiveAsync(ArraySegment<byte> buffer,CancellationToken cancellationToken)
+    {byte[] frame=await incoming.Reader.ReadAsync(cancellationToken);FrameReadStarted.TrySetResult();
+        await ReleaseFrame.Task.WaitAsync(cancellationToken);frame.CopyTo(buffer.AsSpan());return new(frame.Length,WebSocketMessageType.Binary,true);}
+    public override async Task SendAsync(ArraySegment<byte> buffer,WebSocketMessageType messageType,bool endOfMessage,CancellationToken cancellationToken)
+    {var frame=StationMultiplayerFrame.Decode(buffer.AsSpan());
+        if(frame.Type==StationStreamFrame.State&&frame.Value==StationStreamSession.Unrecoverable){
+            TerminalSendStarted.TrySetResult();using var registration=cancellationToken.Register(()=>TerminalSendCancelled.TrySetResult());
+            await ReleaseTerminalSend.Task.WaitAsync(cancellationToken);Events.Add("STATE=3");
+        }else if(frame.Type==StationStreamFrame.State)InitialStateSent.TrySetResult();}
 }
