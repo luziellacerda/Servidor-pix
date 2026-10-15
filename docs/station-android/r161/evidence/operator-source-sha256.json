@@ -1,0 +1,15 @@
+{
+  "schema": "station.r161.operator-source.v1",
+  "sha256": {
+    "enroll-current-from-usb.py": "adbd7faf5ca096f096f4eab82f27a04735b90e43f1ea47778e48e2a03f3918d5",
+    "received_policy.py": "ae392df0c5e763e431c5707e8c0d158005d6135840a6441de231ed0553e97da5",
+    "prove-current.py": "f454c9c82fee66938dd15e826fd720590b5e72896db9a55d3d3045e3f98fa674",
+    "four-player-complete-check.py": "a48763b8ec8326dcf2a45067a9bf0748d8102999620769ca732c59c0e8e5b009",
+    "proof_http.py": "b5b5655f440aaa017a340f2d1c30ae0035c88c9ae8905d387a9532e93e098647",
+    "authenticate-native.py": "85e92efe2f78ed9fb7daa30fe6bf2ca91ab46100518018916a69700f8c90396a"
+  },
+  "frozenHistoricalBuilderEdited": false,
+  "existingRegistrarUsed": true,
+  "newCpuPolicyOnlyForVerifiedReceivedOwners": true,
+  "nativeLinuxAuthenticationRequired": true
+}

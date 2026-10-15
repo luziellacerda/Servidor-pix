@@ -1,3 +1,9 @@
+## Estado efetivo do servidor — 15/10/2026
+
+**R161 recebida da USB, conferida e aplicada.** Leia o [retorno efetivo](server-return.json) e a [prova de aplicação](evidence/server-applied.json). N64 liberado para testar o mesmo APK nos dois celulares; gameplay físico não homologado. Não repetir cadastro. A documentação original abaixo descreve o estado anterior à aplicação.
+
+## Documento anterior preservado
+
 # R161 recebida somente como handoff — 15/10/2026
 
 A produção publicou a candidata N64 online com Dynarec em `aba688e8` e o recibo de instalação A56 em `3274b8c9ae25b82925cb180e85fe8099a3a743a1`. A instalação é evidência da produtora; este Linux não leu o aparelho. Login, sala e gameplay não foram confirmados. O APK e o ZIP privados exatos ainda não foram recebidos neste Linux; `serverApplied=false`. A R159 aplicada continua a referência disponível. Nenhum APK ou receita de montagem foi executado neste PC.

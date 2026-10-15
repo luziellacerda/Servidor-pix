@@ -1,6 +1,6 @@
 {
   "schema": "station.engine-receiver.v1",
-  "utc": "2026-10-15T12:08:31.349445+00:00",
+  "utc": "2026-10-15T12:38:13.110493+00:00",
   "producerCommit": "aba688e8619303a1dc9091a9931e55ef65457221",
   "documentReceived": true,
   "expected": {
@@ -18,12 +18,12 @@
     "n64RuntimeSha256": "656d6d7c017f17b55c3da06a5ee5ed11a60072f1b159790c78c4a8ab4606c9e3",
     "n64ProfileSha256": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63"
   },
-  "privateApkReceived": false,
-  "privateKitReceived": false,
-  "externalFileHashesVerifiedHere": false,
-  "elfAndDependenciesVerifiedHere": false,
-  "serverApplied": false,
-  "serverCountsFreshlyRead": false,
+  "privateApkReceived": true,
+  "privateKitReceived": true,
+  "externalFileHashesVerifiedHere": true,
+  "elfAndDependenciesVerifiedHere": true,
+  "serverApplied": true,
+  "serverCountsFreshlyRead": true,
   "physicalGameplayValidated": false,
   "previousR159Authority": "/mnt/DADOS/station-r159-20261014/applied.json",
   "previousR159Reapplied": false,
@@ -58,9 +58,7 @@
     "productionMutated": false
   },
   "pending": [
-    "Receber os bytes privados exatos do ZIP e APK final R161; os caminhos E: da produção não estão montados neste PC.",
-    "Ler baseline protegida fresca e registrar quatro identidades/78 modos; outra baseline e 321 decisões N64, somente após validar bytes e campos exatos.",
-    "Confirmar capabilities assinadas, negativas e transporte público; homologação física Android permanece separada."
+    "Testar a mesma R161 nos dois aparelhos; gameplay físico e causa da tela preta ainda não homologados."
   ],
   "latestProducerCommit": "28f82a13ff3e9bf8623195f6fc15c4d1011cf30e",
   "producerA56InstallReceiptReceived": true,
@@ -70,5 +68,7 @@
   "producerUSBDeliveryReceiptReceived": true,
   "producerUSBFolder": "SERVIDOR LER/R161-N64-ONLINE-DYNAREC-20261015",
   "producerUSBReadbackDoesNotProveLinuxReceipt": true,
-  "usbVolumeESDUSBDetectedHere": false
+  "usbVolumeESDUSBDetectedHere": true,
+  "serverN64Ready": true,
+  "currentServerReturn": "server-return.json"
 }

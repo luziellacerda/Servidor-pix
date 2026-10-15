@@ -1,0 +1,24 @@
+{
+  "checks": 282,
+  "jvmLoopbackOnly": true,
+  "androidOrNativeGameplay": false,
+  "elapsedMs": 10950,
+  "cpuMode": 2,
+  "legacyCpuModesRejected": [
+    0,
+    1
+  ],
+  "controllerRegistrationPlugin": 2,
+  "hostMempakRetained": true,
+  "guestMempakNormalizedToNone": true,
+  "reflectsProducerCpuGuardPatch": true,
+  "actualApkDexExecuted": false,
+  "producerCpuPatchCommit": "aba688e8619303a1dc9091a9931e55ef65457221",
+  "sourceSha256": {
+    "StationN64ProtocolProbe.java": "9d1c8c264ea300852eaa51baa4967bededbc8e807bb191f8ccc4bd20d9418009",
+    "StationN64Wire.java": "fa30f4a200bfec71a715f9f0c5ee54e51f27f98e3c8723f191094d6df717ca40",
+    "StationN64Mux.java": "6c3b37e207355063cea92e46c0a8a23056884a765b19c1f053774da6eb82009f",
+    "StationN64Server.java": "a2487cebf32245cfac11ddde5494813fc3c5c6de1e34f3144897b673ce5c8397"
+  },
+  "passed": true
+}

@@ -1,3 +1,18 @@
+## R161 aplicada pela USB — 15/10/2026
+
+Ler o topo do mesmo handoff e r161/server-return.json. Kit bcfbe393/APK66f429d4
+conferidos neste Linux, 38 arquivos/26ELF, assinatura e certificado. Cadastro
+78+321 aplicado, quatro motores/399perfis; R159 e owners anteriores preservados.
+N64 owner656d6d7c017f/CPUdynarec/perfilef8bfd6e:157edições e provas assinadas,
+164admissões/recusas e quatro clientes sintéticos passaram. Não é gameplayAndroid.
+NÃO repetir cadastro/provas/DLL/boot recovery. Autoridade privada
+/mnt/DADOS/station-r161-usb-20261015/applied.json. Os dois aparelhos precisam do
+mesmo APK R161 para testar. Preservar rede onboard/DNS/banda100/800.
+Capas36/ciclo11z são recibo histórico: a divergência12z e o lote novo permanecem
+na manutenção própria; não publicar/reaplicar capas por este retorno.
+
+## Histórico preservado
+
 ## Atualização 15/10/2026: diagnóstico N64, rede e capas
 
 Ler o topo do mesmo HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e

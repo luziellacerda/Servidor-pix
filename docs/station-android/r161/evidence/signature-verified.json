@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "apkSignatureV2Verified": true,
+  "apkSignatureV3Verified": true,
+  "signingCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "originalCertificatePreserved": true,
+  "independentlyVerifiedHere": true
+}

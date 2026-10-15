@@ -1,3 +1,48 @@
+<!-- STATION-R161-APPLIED-20261015 -->
+## R161 recebida pela USB e aplicada no Station — 15/10/2026
+
+**Cadastro R161 concluído e comprovado; N64 disponível para testar o mesmo APK nos dois aparelhos.**
+Isso não homologa a tela preta/áudio de 007 nem uma partida Android física.
+O kit de 12.189.409 bytes/SHA bcfbe393 e o APK de 2.715.122.703 bytes/SHA 66f429d4
+foram lidos deste pen drive e conferidos integralmente. Os 38 arquivos manifestados,
+seis ELF de motores e vinte dependências coincidem com o APK real. Assinaturas
+v2/v3 e certificado original conferidos neste Linux; nenhum APK instalado aqui.
+
+O motor N64 é `mupen64plus-ae-33bf7021-n64-v3-656d6d7c017f`, com perfil Android
+`ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63`.
+A alteração recebida é CPU Dynarec; vídeo, core, dependências e inputDelay=2
+permanecem iguais à R159. O preparador usa uma adaptação restrita à política
+recebida, sem editar o builder histórico ou recalcular o hash com JSON incompatível.
+Os quatro vínculos exatos estão no [retorno efetivo R161](r161/server-return.json).
+
+Autenticação Linux genuína concluída. Baseline fresca sob scan.lock, backup e
+registrador vigente em duas transações reais, 78+321: quatro motores e 399
+perfis/modos novos, preservando os 67 motores anteriores e seus
+perfis/modos. Snapshot final: catálogo 93, 71
+motores, 14529 perfis e 9614 modos preparados.
+API PID 2489/DLL b347 preservada, sem reinício. O PID 19631 é anterior
+ao boot já registrado no ciclo12z; não identifica a API atual.
+
+Passaram capabilities assinadas locais/públicas das157 edições, 164 admissões de
+modos multiplayer e 223 recusas de modos/contagens
+incompatíveis. Quatro participantes sintéticos passaram pelo transporte público,
+com slots independentes, READY, pausa/retomada e TLS/SPKI; não são quatro celulares.
+Outras 282 verificações JVM passaram com CPU2 e a política de controles do app;
+essa prova adapta o fonte conforme o patch da produção e não executa o DEX Android.
+Licenças sintéticas próprias removidas; licenças reais e demais serviços preservados.
+
+N64 permanece com157 edições revisadas:120 multiplayer e37 individuais, com
+capacidade por modo. A instalação A56 é comprovada pelo recibo da produção;
+este Linux não conferiu os dois aparelhos atuais. Ambos precisam do mesmo APK
+R161/edição para o próximo teste. O [capturador existente](r159/diagnostics/README.md)
+continua disponível. R159 preservada; NÃO repetir enrollment, provas completas,
+DLL, recuperação de boot ou operadores já aplicados. Autoridade privada:
+`/mnt/DADOS/station-r161-usb-20261015/applied.json`, PASSED.
+
+Nenhuma capa/ROM/rede/limite100/800 alterado por este cadastro. A divergência das
+36 revistas e o lote novo do ciclo12z continuam em sua manutenção própria; o
+recibo11z é histórico. Recibos originais da produção permanecem congelados.
+
 <!-- STATION-MAINTENANCE-20261015-12Z -->
 ## Manutenção 12h UTC — R161 documental e capas aguardam publicação — 15/10/2026
 
