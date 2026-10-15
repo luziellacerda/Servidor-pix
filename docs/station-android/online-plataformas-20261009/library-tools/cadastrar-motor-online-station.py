@@ -15,7 +15,9 @@ import pwd
 import shutil
 import sys
 import tempfile
-from station_online_profiles import prepare, validate_manifest, validate_modes
+from station_online_profiles import (MAXIMUM_PREPARED_MODE_BYTES,
+    MAXIMUM_TRUSTED_MANIFEST_BYTES,
+    MAXIMUM_PROFILE_REGISTRY_BYTES, prepare, validate_manifest, validate_modes)
 
 MAX_BINARY=256*1024*1024
 
@@ -85,10 +87,10 @@ def reviewed_modes(existing,candidate,incoming):
     return candidate
 
 def stage(args):
-    catalog=read(args.catalog,32*1024*1024);existing=read(args.profiles,16*1024*1024)
-    current=validate_manifest(read(args.current,512*1024));modes=read(args.modes,8*1024*1024);validate_modes(modes)
-    incoming=read(args.incoming,512*1024);verify_binaries(incoming,args.artifacts)
-    next_modes=reviewed_modes(modes,read(args.mode_additions,8*1024*1024),incoming) if getattr(args,'mode_additions',None) else modes
+    catalog=read(args.catalog,32*1024*1024);existing=read(args.profiles,MAXIMUM_PROFILE_REGISTRY_BYTES)
+    current=validate_manifest(read(args.current,MAXIMUM_TRUSTED_MANIFEST_BYTES));modes=read(args.modes,MAXIMUM_PREPARED_MODE_BYTES);validate_modes(modes)
+    incoming=read(args.incoming,MAXIMUM_TRUSTED_MANIFEST_BYTES);verify_binaries(incoming,args.artifacts)
+    next_modes=reviewed_modes(modes,read(args.mode_additions,MAXIMUM_PREPARED_MODE_BYTES),incoming) if getattr(args,'mode_additions',None) else modes
     old={e['engineId']:e for e in current['engines']}
     for engine in incoming['engines']:
         if engine['engineId'] in old and engine!=old[engine['engineId']]:raise ValueError('engine IDs are immutable; use a new ID for a new binary')
@@ -117,23 +119,23 @@ def apply(args):
     config=read(args.config,1024*1024);home=Path(config['outputDirectory']);online=config['autoOnlineProfiles']
     paths={'catalog':home/'index.json','profiles':Path(online['registry']),'current':Path(online['engineManifest']),'modes':Path(online['preparedModes'])}
     if any(path.parent!=home or path.is_symlink() for path in paths.values()):raise ValueError('protected persistent Station registries required')
-    receipt=read(args.candidate/'receipt.json',16384);incoming=read(args.candidate/'incoming.json',512*1024)
+    receipt=read(args.candidate/'receipt.json',16384);incoming=read(args.candidate/'incoming.json',MAXIMUM_TRUSTED_MANIFEST_BYTES)
     with (home/'scan.lock').open('a') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX)
         if receipt['baseline']!={k:digest(p) for k,p in paths.items()}:raise ValueError('publication baseline changed; prepare again with the current catalog')
         names=('incoming.json','engines.json','profiles.json','modes.json') if 'modes.json' in receipt['files'] else ('incoming.json','engines.json','profiles.json')
         if receipt['files']!={n:digest(args.candidate/n) for n in names}:raise ValueError('candidate seal changed')
         verify_binaries(incoming,args.candidate/'artifacts')
-        current=validate_manifest(read(paths['current'],512*1024));old={e['engineId']:e for e in current['engines']}
+        current=validate_manifest(read(paths['current'],MAXIMUM_TRUSTED_MANIFEST_BYTES));old={e['engineId']:e for e in current['engines']}
         for engine in incoming['engines']:
             if engine['engineId'] in old and engine!=old[engine['engineId']]:raise ValueError('engine IDs are immutable')
             old[engine['engineId']]=engine
         manifest=dict(current,engines=list(old.values()));validate_manifest(manifest)
-        existing=read(paths['profiles'],16*1024*1024)
-        old_modes=read(paths['modes'],8*1024*1024)
-        next_modes=reviewed_modes(old_modes,read(args.candidate/'modes.json',8*1024*1024),incoming) if 'modes.json' in receipt['files'] else old_modes
+        existing=read(paths['profiles'],MAXIMUM_PROFILE_REGISTRY_BYTES)
+        old_modes=read(paths['modes'],MAXIMUM_PREPARED_MODE_BYTES)
+        next_modes=reviewed_modes(old_modes,read(args.candidate/'modes.json',MAXIMUM_PREPARED_MODE_BYTES),incoming) if 'modes.json' in receipt['files'] else old_modes
         profiles=prepare(read(paths['catalog'],32*1024*1024)['items'],existing,manifest,next_modes)
-        if manifest!=read(args.candidate/'engines.json',512*1024) or profiles!=read(args.candidate/'profiles.json',16*1024*1024):raise ValueError('candidate is not the exact recomputed binding')
+        if manifest!=read(args.candidate/'engines.json',MAXIMUM_TRUSTED_MANIFEST_BYTES) or profiles!=read(args.candidate/'profiles.json',MAXIMUM_PROFILE_REGISTRY_BYTES):raise ValueError('candidate is not the exact recomputed binding')
         owner=pwd.getpwnam('turborama-station-api')
         backup=home/('.engine-enrollment-'+os.urandom(8).hex());backup.mkdir(mode=0o700)
         mode_changed=next_modes!=old_modes

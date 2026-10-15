@@ -595,18 +595,19 @@ def publish(config, bootstrap=False, on_progress=None):
         bind_content_identities(items, identities)
         online=config.get('autoOnlineProfiles')
         if online is not None:
+            from station_online_profiles import (MAXIMUM_PREPARED_MODE_BYTES,
+                MAXIMUM_PROFILE_REGISTRY_BYTES, MAXIMUM_TRUSTED_MANIFEST_BYTES, prepare)
             required={'registry','engineManifest','maintainerAuthorizedTwoSeats'}
             if not isinstance(online,dict) or not required<=set(online) or set(online)-required-{'preparedModes'} or online['maintainerAuthorizedTwoSeats'] is not True:
                 raise ValueError('explicit automatic room policy required')
             output=Path(online['registry']);manifest=Path(online['engineManifest'])
             if output.parent!=home or output.is_symlink() or not manifest.is_absolute() or manifest.is_symlink():raise ValueError('unsafe automatic room inputs')
-            if output.stat().st_size>16*1024*1024 or manifest.stat().st_size>512*1024:raise ValueError('automatic room input too large')
+            if output.stat().st_size>MAXIMUM_PROFILE_REGISTRY_BYTES or manifest.stat().st_size>MAXIMUM_TRUSTED_MANIFEST_BYTES:raise ValueError('automatic room input too large')
             modes=None
             if 'preparedModes' in online:
                 mode_path=Path(online['preparedModes'])
-                if mode_path.parent!=home or mode_path.is_symlink() or mode_path.stat().st_size>8*1024*1024:raise ValueError('unsafe prepared mode input')
+                if mode_path.parent!=home or mode_path.is_symlink() or mode_path.stat().st_size>MAXIMUM_PREPARED_MODE_BYTES:raise ValueError('unsafe prepared mode input')
                 modes=json.loads(mode_path.read_bytes())
-            from station_online_profiles import prepare
             current_profiles=json.loads(output.read_bytes())
             updated_profiles=prepare(items,current_profiles,json.loads(manifest.read_bytes()),modes)
             if updated_profiles!=current_profiles:atomic_json(output,updated_profiles,gid)

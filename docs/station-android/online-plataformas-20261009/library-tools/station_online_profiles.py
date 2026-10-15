@@ -26,8 +26,11 @@ NATIVE_CONTROLLERS = dict(dreamcast='dreamcast-four-ports-v1',
 ARCADES = {'neogeo','fbneo','cps1','cps2','cps3'}
 BINDING = ('itemId','contentSha256','engineId','coreSha256','runtimeSha256')
 PROFILE_KEY = (*BINDING, 'profileId','profileSha256')
-MAXIMUM_TRUSTED_ENGINES = 128
+MAXIMUM_TRUSTED_ENGINES = 256
+MAXIMUM_TRUSTED_MANIFEST_BYTES = 1024 * 1024
 MAXIMUM_PROFILE_CONTENT_BYTES = 256 * 1024
+MAXIMUM_PREPARED_MODE_BYTES = 9 * 1024 * 1024
+MAXIMUM_PROFILE_REGISTRY_BYTES = 17 * 1024 * 1024
 MODE_FIELDS = ('profileId','maximumPlayers','allowedPlayerCounts','approved',
                'controllerProfile','mode','modeTitle','instructions','sources')
 
@@ -74,7 +77,7 @@ def profile_configuration(engine, controller, maximum):
     return dict(schemaVersion=1,controllerProfile=controller,devices=devices,coreOptions=engine['options'])
 
 def validate_manifest(manifest):
-    if not isinstance(manifest,dict) or manifest.get('schemaVersion') != 1 or not isinstance(manifest.get('engines'),list) or len(manifest['engines'])>MAXIMUM_TRUSTED_ENGINES or len(encoded(manifest))>512*1024:
+    if not isinstance(manifest,dict) or manifest.get('schemaVersion') != 1 or not isinstance(manifest.get('engines'),list) or len(manifest['engines'])>MAXIMUM_TRUSTED_ENGINES or len(encoded(manifest))>MAXIMUM_TRUSTED_MANIFEST_BYTES:
         raise ValueError('invalid trusted engine manifest')
     seen=set()
     for engine in manifest['engines']:
@@ -111,7 +114,7 @@ def validate_manifest(manifest):
 
 def validate_modes(document):
     if document is None:return []
-    if not isinstance(document,dict) or document.get('schemaVersion')!=1 or not isinstance(document.get('modes'),list) or len(document['modes'])>16000 or len(encoded(document))>8*1024*1024:
+    if not isinstance(document,dict) or document.get('schemaVersion')!=1 or not isinstance(document.get('modes'),list) or len(document['modes'])>16000 or len(encoded(document))>MAXIMUM_PREPARED_MODE_BYTES:
         raise ValueError('invalid prepared mode registry')
     seen=set()
     for mode in document['modes']:
@@ -192,6 +195,6 @@ def prepare(items,existing,manifest,modes=None):
     for group in content_groups.values():
         if len(json.dumps(group,ensure_ascii=True,separators=(',',':')).encode('ascii'))>MAXIMUM_PROFILE_CONTENT_BYTES:
             raise ValueError('automatic profile content projection exceeds the server byte limit')
-    if len((json.dumps(output,ensure_ascii=False,indent=2)+'\n').encode())>16*1024*1024:
+    if len((json.dumps(output,ensure_ascii=False,indent=2)+'\n').encode())>MAXIMUM_PROFILE_REGISTRY_BYTES:
         raise ValueError('automatic profile registry exceeds the server byte limit')
     return output

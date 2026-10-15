@@ -29,7 +29,7 @@ public static class StationOnlineRegistration
         if(multiplayerEnabled&&!recoveryEnabled)throw new InvalidOperationException("Multiplayer requires recovery to be enabled.");
         if(multiplayerEnabled||legacyGate){
             string? profilePath=builder.Configuration["Station:Online:MultiplayerProfileRegistryFile"];
-            if(string.IsNullOrWhiteSpace(profilePath)||!Path.IsPathFullyQualified(profilePath)||!File.Exists(profilePath)||new FileInfo(profilePath).Length>16*1024*1024)
+            if(string.IsNullOrWhiteSpace(profilePath)||!Path.IsPathFullyQualified(profilePath)||!File.Exists(profilePath)||new FileInfo(profilePath).Length>StationMultiplayerProfileMonitor.MaximumRegistryBytes)
                 throw new InvalidOperationException("Multiplayer requires an explicit bounded profile registry.");
             var profiles=StationMultiplayerProfileMonitor.Read(profilePath);
             builder.Services.AddSingleton(new StationReplayBudget(builder.Configuration.GetValue<long>("Station:Online:ReplayMaximumBytes",33554432)));

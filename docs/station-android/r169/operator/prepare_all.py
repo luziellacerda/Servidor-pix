@@ -19,6 +19,7 @@ import zipfile
 DOC = Path(__file__).resolve().parents[2]
 TOOLS = DOC / "online-plataformas-20261009" / "library-tools"
 KIT_SHA256 = "859b33b156698abecadadf035f8117a4b2b680439c4fed32eb2001347dc6c832"
+KIT_BYTES = 14918062
 APK_SHA256 = "68521db5fbd46d6da9895c4d9b291febda5597c82ba3b51935ccd7e98520877d"
 R168_KIT_SHA256 = "c0de71c3a4e10cce320f7ba6966e183871760157ca67e9010eb5bdfb0850177b"
 NEW_IDS = {
@@ -43,8 +44,45 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def read_json(path):
-    return json.loads(Path(path).read_bytes())
+def read_bounded(path, maximum):
+    path = Path(path)
+    require(not path.is_symlink() and path.is_file() and 0 < path.stat().st_size <= maximum,
+            "Bounded regular authority file required: " + str(path))
+    with path.open("rb") as stream:
+        content = stream.read(maximum + 1)
+    require(0 < len(content) <= maximum, "Authority file grew during reading: " + str(path))
+    return content
+
+
+def read_json(path, maximum):
+    return json.loads(read_bounded(path, maximum))
+
+
+def digest_file(path, maximum):
+    path = Path(path)
+    require(not path.is_symlink() and path.is_file() and 0 < path.stat().st_size <= maximum,
+            "Bounded regular authority file required: " + str(path))
+    value = hashlib.sha256()
+    total = 0
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            total += len(block)
+            require(total <= maximum, "Authority file grew during hashing: " + str(path))
+            value.update(block)
+    return value.hexdigest()
+
+
+def check_output_paths(inputs, outputs):
+    require(len({path.parent.resolve() for path in outputs}) == 1 and
+            all(not any(parent.is_symlink() for parent in path.parents) for path in outputs),
+            "Outputs must share one real preparation directory")
+    parent = outputs[0].parent
+    require(parent.is_dir() and not any(parent.iterdir()),
+            "Create an empty preparation directory before running")
+    require(len({path.resolve() for path in outputs}) == len(outputs) and
+            not {path.resolve() for path in outputs} & {path.resolve() for path in inputs} and
+            all(not path.exists() and not path.is_symlink() for path in outputs),
+            "Preparation must not overwrite an input or follow a symlink")
 
 
 def load_profiles_tool():
@@ -58,7 +96,8 @@ def load_profiles_tool():
 
 def verify_kit(path):
     path = Path(path)
-    require(digest(path.read_bytes()) == KIT_SHA256, "R169 kit ZIP hash differs")
+    require(path.stat().st_size == KIT_BYTES and digest_file(path, KIT_BYTES) == KIT_SHA256,
+            "R169 kit ZIP size or hash differs")
     with zipfile.ZipFile(path) as archive:
         file_manifest = json.loads(archive.read("MANIFESTO-ARQUIVOS.json"))
         require(file_manifest["revision"] == "R169", "Wrong kit revision")
@@ -209,6 +248,15 @@ def prepare(catalog, profiles, modes, manifest, received, r168_receipt, operator
         profile = by_new_key.get(key)
         require(profile is not None and all(profile[field] == mode[field] for field in MODE_FIELDS),
                 "R169 projected profile differs from reviewed mode")
+    mode_bytes = len(operator.encoded(prepared_modes))
+    profile_compact_bytes = len(operator.encoded(prepared_profiles))
+    manifest_compact_bytes = len(operator.encoded(merged_manifest))
+    profile_indented_bytes = len((json.dumps(prepared_profiles, ensure_ascii=False,
+                                             indent=2) + "\n").encode("utf-8"))
+    require(mode_bytes <= operator.MAXIMUM_PREPARED_MODE_BYTES and
+            profile_indented_bytes <= operator.MAXIMUM_PROFILE_REGISTRY_BYTES and
+            manifest_compact_bytes <= operator.MAXIMUM_TRUSTED_MANIFEST_BYTES,
+            "R169 registry exceeds coordinated capacity")
     audit = dict(schema="station.r169.server-preflight.v1", serverApplied=False,
                  kitSha256=KIT_SHA256, apkSha256=APK_SHA256,
                  baselineRevision=previous["catalogRevision"], baselineAppliedR168=True,
@@ -219,6 +267,15 @@ def prepare(catalog, profiles, modes, manifest, received, r168_receipt, operator
                  psxApproved2p=psx_approved, psxPending=psx_pending,
                  psxLocalOnly=psx_local,
                  capcomVs2pProfileId=pilot[0]["profileId"],
+                 modesCompactBytes=mode_bytes, profilesCompactBytes=profile_compact_bytes,
+                 profilesIndentedBytes=profile_indented_bytes,
+                 manifestCompactBytes=manifest_compact_bytes,
+                 modesByteLimit=operator.MAXIMUM_PREPARED_MODE_BYTES,
+                 profilesByteLimit=operator.MAXIMUM_PROFILE_REGISTRY_BYTES,
+                 manifestByteLimit=operator.MAXIMUM_TRUSTED_MANIFEST_BYTES,
+                 candidateSha256={"manifest": digest(operator.encoded(merged_manifest)),
+                                  "profiles": digest(operator.encoded(prepared_profiles)),
+                                  "modes": digest(operator.encoded(prepared_modes))},
                  previousBindingsPreserved=True, n64LogicChanged=False,
                  physicalAndroidGameplayValidated=False)
     return merged_manifest, prepared_profiles, prepared_modes, audit
@@ -229,20 +286,38 @@ def main():
     for name in ("kit-zip", "r168-receipt", "catalog", "profiles", "modes", "manifest",
                  "out-manifest", "out-profiles", "out-modes", "out-audit"):
         parser.add_argument("--" + name, type=Path, required=True)
+    for name in ("catalog", "profiles", "modes", "manifest"):
+        parser.add_argument("--r168-" + name + "-sha256", required=True)
     args = parser.parse_args()
     inputs = [args.kit_zip, args.r168_receipt, args.catalog, args.profiles,
               args.modes, args.manifest]
     outputs = [args.out_manifest, args.out_profiles, args.out_modes, args.out_audit]
-    require(len({p.resolve() for p in outputs}) == len(outputs) and
-            not {p.resolve() for p in outputs} & {p.resolve() for p in inputs},
-            "Preparation must not overwrite an input")
+    check_output_paths(inputs, outputs)
+    baseline = {name: getattr(args, "r168_" + name + "_sha256")
+                for name in ("catalog", "profiles", "modes", "manifest")}
+    operator = load_profiles_tool()
+    limits = {"catalog": 32 * 1024 * 1024,
+              "profiles": operator.MAXIMUM_PROFILE_REGISTRY_BYTES,
+              "modes": operator.MAXIMUM_PREPARED_MODE_BYTES,
+              "manifest": operator.MAXIMUM_TRUSTED_MANIFEST_BYTES}
+    authority = {name: read_bounded(getattr(args, name), limits[name])
+                 for name in baseline}
+    require(all(re.fullmatch(r"[0-9a-f]{64}", value) for value in baseline.values()) and
+            all(digest(authority[name]) == baseline[name] for name in baseline),
+            "Current authority differs from the private applied R168 hashes")
     received = verify_kit(args.kit_zip)
-    result = prepare(read_json(args.catalog), read_json(args.profiles), read_json(args.modes),
-                     read_json(args.manifest), received, read_json(args.r168_receipt))
+    result = prepare(json.loads(authority["catalog"]),
+                     json.loads(authority["profiles"]),
+                     json.loads(authority["modes"]),
+                     json.loads(authority["manifest"]), received,
+                     read_json(args.r168_receipt, 16 * 1024), operator=operator)
     for target, value in zip(outputs, result):
         require(target.parent.is_dir(), "Output directory must exist: " + str(target.parent))
-        require(not target.exists(), "Refusing to overwrite output: " + str(target))
-        target.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        require(not target.exists() and not target.is_symlink(),
+                "Refusing to overwrite output or follow a symlink: " + str(target))
+        content = (json.dumps(value, ensure_ascii=False, indent=2) + "\n").encode("utf-8") if target == args.out_audit else operator.encoded(value)
+        target.write_bytes(content)
+        require(target.read_bytes() == content, "Prepared output write differs: " + str(target))
     print(json.dumps(result[-1], ensure_ascii=False, sort_keys=True))
 
 

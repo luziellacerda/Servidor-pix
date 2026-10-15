@@ -166,6 +166,16 @@ try{
     File.SetLastWriteTimeUtc(path,DateTime.UtcNow.AddSeconds(3));
     Denied(()=>profileMonitor.Reload(),"STATION_MULTIPLAYER_PROFILE_INVALID");
     Check(liveRegistry.LegacyAllowed(addedProfile.ItemId,addedProfile.ContentSha256,addedProfile.EngineId,addedProfile.CoreSha256,addedProfile.RuntimeSha256),"invalid controls retain last valid registry");
+    var validRegistry=JsonSerializer.SerializeToUtf8Bytes(new[]{altProfile},StrictJson.Options);
+    using(var padded=File.Create(path)){
+        padded.Write(validRegistry);
+        var whitespace=new byte[65536];Array.Fill(whitespace,(byte)' ');
+        long remaining=16L*1024*1024+1-validRegistry.Length;
+        while(remaining>0){int amount=(int)Math.Min(remaining,whitespace.Length);padded.Write(whitespace,0,amount);remaining-=amount;}
+    }
+    Check(StationMultiplayerProfileMonitor.Read(path).Length==1,"R169 registry over old 16 MiB limit loads valid profiles");
+    using(var oversized=File.OpenWrite(path))oversized.SetLength(StationMultiplayerProfileMonitor.MaximumRegistryBytes+1);
+    checks++;try{StationMultiplayerProfileMonitor.Read(path);throw new Exception("Expected profile registry bound");}catch(InvalidOperationException){}
 }finally{Directory.Delete(profileDirectory,true);}
 string? catalogHash=H('a');
 var bound=new StationMultiplayer([altProfile],_=>"snes",new(),currentContentHash:_=>catalogHash);
