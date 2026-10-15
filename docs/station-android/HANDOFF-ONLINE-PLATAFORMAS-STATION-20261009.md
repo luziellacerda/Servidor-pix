@@ -1,3 +1,48 @@
+<!-- STATION-MAINTENANCE-20261015-19Z -->
+## Manutenção de 15/10 às 19h UTC: R165 conferida, sem carga nova
+
+O retorno `a11ba368` do app apenas confirma o cadastro dos quatro motores R165
+e mantém os testes físicos pendentes. Não entrega outros bytes ou modos.
+A entrega aplicada `861273e`/`fb45134`, a autoridade privada
+`/mnt/DADOS/station-psx-return-20261015-1736/completed.json` e
+[r165/server-return.json](r165/server-return.json) foram conciliadas.
+Nenhum cadastro, implantação ou publicador foi repetido neste ciclo.
+
+Leitura protegida com autenticação Linux nativa concluída em 12,65 segundos
+para a chamada inteira, sob o `scan.lock` existente. Processo/ExecStart/DLL
+`53d4adc9c114`, configuração efetiva, quatro owners e arquivos de catálogo,
+perfis e modos coincidem com a R165 aplicada: catálogo100/4744 itens,
+83 motores/15912 perfis/10997 modos. API PID152812/NRestarts0; health e
+diagnóstico locais responderam200, com zero salas/conexões na observação.
+O scanner não foi invocado nem seu timer parado; serviços e rede preservados.
+
+Capas Git `main5c6cc32`/`capas-super-nintendo9f85e9d` sem mudança. O manifesto
+SNES é o mesmo do plano aplicado13z:220 finalizadas declaradas e zero originais
+presentes nos caminhos declarados nesta leitura. Não há arte nova para compilar.
+Faltam os PNGs finais exatos de Fighter's History, FIFA International Soccer e
+FIFA Soccer96; seis artes novas e14 anteriores seguem sem edição exata.
+As publicações13z/R164 e suas provas assinadas/HTTP anteriores foram preservadas;
+este ciclo não repetiu essas provas nem publicou capas.
+
+Backups Git prévios publicados e conferidos em
+`backup/station-before-hourly-20261015-19z` nos dois repositórios. Entrega na
+branch própria `feat/station-hourly-20261015-19z`, com worktrees DADOS distintas.
+[Recibo sanitizado](online-plataformas-20261009/maintenance/20261015-19z/sanitized-receipt.json).
+Autoridade desta conferência: `/mnt/DADOS/station-maintenance-20261015-19z`.
+O monitor pai158180 mantém `maintenance.lock` até o retorno final; o timer
+horário existente permanece ativo. Checkouts anteriores, dois CRLF históricos,
+ROMs, saves, licenças reais, IDs/sinopses, outros produtos e tags estáveis intactos.
+
+Estado global **partial** pelas pendências conservadas. Próximo ciclo: ler
+este recibo e a autoridade R165; agir somente sobre refs/bytes/arte realmente
+novos. Não repetir R165/PSX/R164/capas11z13z. Para o aceite físico, dois aparelhos
+com a mesma R165/edição/modo aprovado; observar imagem, áudio, controles e
+aviso/retorno do convidado por25s após a saída do anfitrião. PSX mantém17 modos
+impedidos ou sem prova específica e53 classificações locais sem vagas;
+PS3/PS4 somente offline. O502 histórico da R162 continua sem causa estabelecida.
+
+## Histórico preservado
+
 <!-- STATION-R165-APPLIED-20261015 -->
 ## R165 aplicada: motores, modos e saída do anfitrião — 15/10/2026
 
