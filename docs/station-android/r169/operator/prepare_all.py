@@ -138,6 +138,28 @@ def scoped_profile_id(source_id, platform, old_engine_id, new_engine_id):
     return source_id[:-len(old_suffix)] + new_suffix
 
 
+def verify_owner_projection(engine, runtime, policy, operator):
+    """Compare APK declarations with the enriched, explicit server policy."""
+    server_fields = {"controllerProfiles", "requireExplicitEngineModes"}
+    require({k: v for k, v in engine.items() if k not in server_fields} ==
+            {k: v for k, v in runtime.items() if k not in server_fields},
+            "APK and server owner identity/core/options differ")
+    require(engine.get("requireExplicitEngineModes") is True and
+            ("requireExplicitEngineModes" not in runtime or
+             runtime["requireExplicitEngineModes"] is True),
+            "Explicit server modes required")
+    require(runtime.get("controllerProfiles") == [policy["controllerProfile"]],
+            "APK controller declaration differs")
+    config = operator.profile_configuration(engine, policy["controllerProfile"],
+                                            policy["maximumPlayers"])
+    require(config is not None and operator.profile_digest(config) == policy["profileSha256"],
+            "R169 Android controller fingerprint differs")
+    require(engine.get("controllerProfiles") == [dict(
+        controllerProfile=policy["controllerProfile"],
+        maximumPlayers=policy["maximumPlayers"], configuration=config)],
+        "Explicit server controller policy differs")
+
+
 def prepare(catalog, profiles, modes, manifest, received, r168_receipt, operator=None):
     operator = operator or load_profiles_tool()
     require(r168_receipt.get("serverApplied") is True and
@@ -169,7 +191,7 @@ def prepare(catalog, profiles, modes, manifest, received, r168_receipt, operator
     for platform, engine in new_engines.items():
         old = source_engines[platform]
         require(old["engineId"] == expected_old[platform] and engine["engineId"] == NEW_IDS[platform]
-                and engine == runtime_engines[platform] and engine["engineId"] not in all_engines,
+                and engine["engineId"] not in all_engines,
                 "Owner identity changed or R169 already registered")
         retained = lambda value: {key: item for key, item in value.items()
                                   if key not in {"engineId", "runtimeSha256"}}
@@ -179,10 +201,7 @@ def prepare(catalog, profiles, modes, manifest, received, r168_receipt, operator
                 policy["coreSha256"] == engine["coreSha256"] and
                 policy["runtimeSha256"] == engine["runtimeSha256"],
                 "R169 controller policy does not match engine")
-        config = operator.profile_configuration(engine, policy["controllerProfile"],
-                                                policy["maximumPlayers"])
-        require(config is not None and operator.profile_digest(config) == policy["profileSha256"],
-                "R169 Android controller fingerprint differs")
+        verify_owner_projection(engine, runtime_engines[platform], policy, operator)
     merged_manifest = deepcopy(manifest)
     merged_manifest["engines"].extend(deepcopy(incoming["engines"]))
     operator.validate_manifest(merged_manifest)
