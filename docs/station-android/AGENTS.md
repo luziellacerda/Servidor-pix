@@ -1,3 +1,19 @@
+<!-- STATION-R168-PSX-ANDROID-XML-HANDOFF-20261015 -->
+## R168: kit e handoff recebidos, cadastro ainda pendente
+
+Ler `r168/README.md`, `r168/HANDOFF-R168-PSX-ANDROID-XML-20261015.md` e
+`r168/server-kit-receipt-r168.json`. ZIP privado sem APK `c0de71c3a4e1`,
+commit `4733c00f` de `luziellacerda/TurboramaEmulationStation`; fonte
+TurboElden `e8c0e8c6`. O APK assinado R168 `875fb0696c4f` foi conferido
+pelo produtor, mas este ramo do Servidor-pix é somente documentação;
+`serverApplied=false`. R167 já está aplicada e não deve ser repetida.
+Conferir kit exato, cadastrar R168 aditivamente, requalificar modos por
+identidade completa e preservar a lógica N64. A exceção XML Android da R167
+foi corrigida no APK R168; gameplay PSX nos telefones permanece pendente.
+Não tratar este commit como cadastro ou deploy.
+
+## Histórico preservado
+
 <!-- STATION-PSX-ANDROID-XML-20261015 -->
 ## PSX R167: falha de preparação Android confirmada
 
