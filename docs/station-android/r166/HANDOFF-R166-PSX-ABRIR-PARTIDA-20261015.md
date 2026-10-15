@@ -2,6 +2,8 @@
 
 **Estado em 15/10/2026:** o APK R166 foi montado, assinado e conferido; o kit independente foi gerado e conferido. Cadastro no servidor e partida física R166 ainda estão pendentes. Este documento não é recibo de implantação.
 
+**Atualização de escopo:** o cliente solicitou também ampliar as células menores do carrossel em 10%. Está sendo montada uma R167 combinada sobre a R166, com novas identidades. Se o cadastro R166 ainda não começou, aguarde o handoff R167 para fazer um único cadastro. Se já foi aplicado, preserve o recibo e as identidades R166; a R167 será aditiva.
+
 O [kit privado sem APK](https://github.com/luziellacerda/TurboramaEmulationStation/tree/0b4dc002/station-server-handoffs/r166) está no ramo `handoff/station-r166-psx-open-20261015`; a [fonte e receita do app](https://github.com/luziellacerda/TurboElden/tree/build/station-r166-psx-open-20261015) estão em ramo separado. Este ramo de handoff não efetua o cadastro: aplicar o registrador do servidor e devolver recibo comprovado.
 
 ## Incidente comprovado em dois telefones R165
