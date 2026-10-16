@@ -1,3 +1,11 @@
+<!-- STATION-R169-USER-TEST-SUCCESS-20261016 -->
+## Resultado informado pelo usuário
+
+Após a entrega R169, o usuário disse “funcioou em testes”. Relato positivo
+registrado no MESMO handoff e r169/server-return.json. Jogo/revisão/aparelhos/
+saída não especificados nesta mensagem; preservar essa precisão e o sucesso
+relatado. Não repetir implantação, cadastro ou provas pelo recebimento deste relato.
+
 <!-- STATION-R169-APPLIED-20261015 -->
 ## R169 aplicada — ler o recibo e não repetir etapas
 

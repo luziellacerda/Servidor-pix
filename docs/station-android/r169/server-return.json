@@ -163,5 +163,20 @@
   "stableGameplayDeclared": false,
   "remainingPhysicalPilot": "Same R169 on both phones; exact Capcom VS 2P; picture, sound, independent controls; host exits and guest returns for 25 seconds",
   "rollback": "Use native fresh audit and protected transaction backups for compatible registries/tools/software together. Do not restore only the old 8 MiB mode tools over R169 mode data.",
-  "immutableHistoricalInputs": "Producer kit serverApplied=false and earlier R168/R169 blocked/recipe-only notices are inputs; this applied receipt supersedes their server status. Preserve the R168 Android failure report."
+  "immutableHistoricalInputs": "Producer kit serverApplied=false and earlier R168/R169 blocked/recipe-only notices are inputs; this applied receipt supersedes their server status. Preserve the R168 Android failure report.",
+  "userTestReports": [
+    {
+      "receivedUtc": "2026-10-16T11:09:00.949356+00:00",
+      "source": "Direct user message in this conversation",
+      "verbatim": "funcioou em testes",
+      "userReportedTestSuccess": true,
+      "context": "Reply following the applied R169 server return and physical pilot request",
+      "gameExplicitlyConfirmed": false,
+      "revisionExplicitlyConfirmed": false,
+      "phoneCountExplicitlyConfirmed": false,
+      "hostExitGuestReturn25SecondsConfirmed": false,
+      "newInstrumentedGameplayChecksPerformed": false
+    }
+  ],
+  "userReportedWorkingInTests": true
 }

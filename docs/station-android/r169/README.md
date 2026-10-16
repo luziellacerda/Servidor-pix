@@ -1,3 +1,11 @@
+<!-- STATION-R169-USER-TEST-SUCCESS-20261016 -->
+## Relato de teste recebido — 16/10/2026
+
+O usuário informou: **“funcioou em testes”**, em resposta à entrega da R169.
+Resultado positivo registrado no recibo em `userTestReports` e
+`userReportedWorkingInTests=true`. Esta mensagem não especifica jogo,
+revisão instalada, quantidade de aparelhos nem o comportamento ao sair da sala.
+
 <!-- STATION-R169-APPLIED-20261015 -->
 # R169 aplicada e qualificada no servidor — 15/10/2026
 
