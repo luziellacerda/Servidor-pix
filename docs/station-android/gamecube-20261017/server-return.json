@@ -1,22 +1,22 @@
 {
-  "schema": "station.gamecube.server-return.r173.v1",
-  "request": "Preparar GameCube e corrigir Mario Kart informado como sala completa",
+  "schema": "station.gamecube.server-return.r174.v1",
+  "request": "Corrigir lentidão e queda de quadros no GameCube online",
   "baselineStable": "R172",
-  "candidate": "R173",
-  "compiledSourceCommit": "69f90f80e98a9dcf1f37d41be5617abb240b2b37",
+  "candidate": "R174",
+  "compiledSourceCommit": "bf155ec2bfaea7dbc31da036e2bf8d346edf7469",
   "apk": {
-    "schema": "station.gamecube-rooms.final.r173.v1",
+    "schema": "station.gamecube-cpu.final.r174.v1",
     "passed": true,
-    "packageRevision": "R173",
-    "sourceCommit": "69f90f80e98a9dcf1f37d41be5617abb240b2b37",
-    "apkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
+    "packageRevision": "R174",
+    "sourceCommit": "bf155ec2bfaea7dbc31da036e2bf8d346edf7469",
+    "apkSha256": "6ab94ff0999ef2f0d5febe0d46fd27e715692c1aea8c216a2ce87d9cb8b51c4d",
     "apkBytes": 2714238050,
-    "baseApkSha256": "4a92627952a4f9673ff402667825fcb1f926aaf85a44bef7882559f000c56c5b",
+    "baseApkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
     "signatureCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
     "v2": true,
     "v3": true,
     "zipAlignment16KiB": true,
-    "versionCode": 15,
+    "versionCode": 16,
     "minimumSdk": 26,
     "targetSdk": 34,
     "checkedEntries": 13861,
@@ -33,8 +33,8 @@
       "classes35.dex"
     ],
     "preservedDexPartitions": 39,
-    "unsignedPackageReceiptSha256": "fae54153d1c8bc633b32fe6f3ed4b97ec55ad881f15d717292cc53cdf9785c01",
-    "signerRecipeSha256": "2d68ab68e8bbb9bd8fbda9d420d5fe062482742b584a7bc75b2cfd3dbc1f8420",
+    "unsignedPackageReceiptSha256": "9586a97903f22ac8460608ab09dfb4a5ef494528e5507a77521ccf54bb3e4310",
+    "signerRecipeSha256": "4f13fb4ca3b12246fffdda5676d616227c9688d527140da3e4a8fbfb908b42a2",
     "installed": false,
     "serverRegistered": false,
     "productionUpdaterEnabled": false,
@@ -43,40 +43,70 @@
     "stable": false
   },
   "privateKit": {
-    "schema": "station.r173.private-kit-receipt.v1",
+    "schema": "station.r174.private-kit-receipt.v1",
     "passed": true,
-    "apkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
-    "zipSha256": "ff4dc7bde0fae8a4506803773d0bc9c5537f454fb337c294c9853d5ff5ba4580",
-    "zipBytes": 15027848,
-    "fileCount": 64,
+    "apkSha256": "6ab94ff0999ef2f0d5febe0d46fd27e715692c1aea8c216a2ce87d9cb8b51c4d",
+    "zipSha256": "5f8f4b01d9ac4e91949b94b66e2bd94eecfa83e30603c44be858c9cc70ae8b7d",
+    "zipBytes": 15033128,
+    "fileCount": 66,
     "elfCount": 27,
     "engineIds": {
-      "psx": "pcsx-rearmed-ff81ed17-player-v3-a7c5c8aa45d8",
-      "n64": "mupen64plus-ae-33bf7021-n64-v3-fcbb4c272d8e",
-      "gamecube": "dolphin-5102a033-gamecube-v3-27da50adc1c5",
-      "wii": "dolphin-5102a033-wii-v3-27da50adc1c5"
+      "psx": "pcsx-rearmed-ff81ed17-player-v3-da589eff7721",
+      "n64": "mupen64plus-ae-33bf7021-n64-v3-d234e27bb6cb",
+      "gamecube": "dolphin-5102a033-gamecube-v3-75f9278b4bf2",
+      "wii": "dolphin-5102a033-wii-v3-75f9278b4bf2"
     },
-    "recipeSha256": "2badd111c3a2c6ccaef129cb722d4c2924c83df75332897f575fef6049a6ebf5",
+    "recipeSha256": "82bccc93e2bf04fb34221cf8c0da8ebaedda3bd2ac375e337b863390b6546ac9",
     "serverApplied": false,
     "physicalGameplayValidated": false
   },
-  "metadataRevisionR172Applied": true,
-  "serverR173Applied": true,
-  "installedR173": true,
-  "uiBugReproduced": true,
-  "androidCandidateChecksPerPhone": 82,
-  "unrelatedPresentationComparisons": 672,
-  "gamecubeReview": {
-    "catalogItems": 21,
-    "visibleItems": 20,
-    "multiplayerGames": 9,
-    "multiplayerModes": 10,
-    "individualModes": 12,
-    "unsupportedGbaModes": 2
+  "serverR174Applied": true,
+  "installedR174": true,
+  "artifactProofFlagsAreBuildTimeOnly": true,
+  "functionalChange": "GameCube online only: NativeConfig CurrentRun Core.CPUThread=false; verify Active before nativeConnect.",
+  "noNewThreadsTimersOrFrameWork": true,
+  "offlinePreferencesSaved": false,
+  "psxInputDelayFrames": 8,
+  "nativeCoreBinariesPreserved": true,
+  "otherEmulationOptionsPreserved": true,
+  "effectiveData": {
+    "passed": true,
+    "revision": "R174",
+    "serverApplied": true,
+    "apiPid": "795999",
+    "apkSha256": "6ab94ff0999ef2f0d5febe0d46fd27e715692c1aea8c216a2ce87d9cb8b51c4d",
+    "acceptedKitSha256": "5f8f4b01d9ac4e91949b94b66e2bd94eecfa83e30603c44be858c9cc70ae8b7d",
+    "counts": {
+      "catalogRevision": 102,
+      "catalogItems": 4844,
+      "engines": 115,
+      "profiles": 19893,
+      "modes": 13472
+    },
+    "exactEngineIds": {
+      "psx": "pcsx-rearmed-ff81ed17-player-v3-da589eff7721",
+      "n64": "mupen64plus-ae-33bf7021-n64-v3-d234e27bb6cb",
+      "gamecube": "dolphin-5102a033-gamecube-v3-75f9278b4bf2",
+      "wii": "dolphin-5102a033-wii-v3-75f9278b4bf2"
+    },
+    "profileSha256": {
+      "psx": "86f543015f84ca292c6853d10cbc58e4869b825520dbff117a4868bf18637683",
+      "n64": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
+      "gamecube": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+      "wii": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed"
+    },
+    "rawFileSha256": {
+      "catalog": "9d883898ee7cf87bda01936df91b4b7c8fa511c6b3009e646c627415f2bd4ab4",
+      "profiles": "fa06e4586d0aa2add43d7c2707db34df14a0763ac9af3e49a862d34bd9433f40",
+      "current": "e742c9949f7188ca742b17b9d39f2c9d44a0259f3c5512f5c78fc59a0e91592f",
+      "modes": "ff8c68f25a43f4eb49604afde90de340af5d6ee7a5823ec1b9e179e3478633a2"
+    },
+    "previousDecisionsPreserved": true,
+    "preparedModeEngineBindingsAdded": 507
   },
   "enrollmentPreflight": {
     "passed": true,
-    "revision": "R173",
+    "revision": "R174",
     "enginesAdded": 4,
     "profilesAdded": 507,
     "modesAdded": 0,
@@ -88,14 +118,16 @@
       "wii": 3
     },
     "previousDecisionsPreserved": true,
-    "sourceClassRecognitionOnly": true,
-    "emulationOptionsPreserved": true,
+    "gamecubeOnlineCurrentRunCpuThread": false,
+    "nativeCoreBinariesPreserved": true,
+    "serializedPoliciesPreserved": true,
+    "otherEmulationOptionsPreserved": true,
     "psxInputDelayFrames": 8,
     "exactEngineIds": {
-      "psx": "pcsx-rearmed-ff81ed17-player-v3-a7c5c8aa45d8",
-      "n64": "mupen64plus-ae-33bf7021-n64-v3-fcbb4c272d8e",
-      "gamecube": "dolphin-5102a033-gamecube-v3-27da50adc1c5",
-      "wii": "dolphin-5102a033-wii-v3-27da50adc1c5"
+      "psx": "pcsx-rearmed-ff81ed17-player-v3-da589eff7721",
+      "n64": "mupen64plus-ae-33bf7021-n64-v3-d234e27bb6cb",
+      "gamecube": "dolphin-5102a033-gamecube-v3-75f9278b4bf2",
+      "wii": "dolphin-5102a033-wii-v3-75f9278b4bf2"
     },
     "profileSha256": {
       "psx": "86f543015f84ca292c6853d10cbc58e4869b825520dbff117a4868bf18637683",
@@ -104,38 +136,30 @@
       "wii": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed"
     },
     "before": {
-      "catalogRevision": 100,
-      "catalogItems": 4744,
-      "engines": 107,
-      "profiles": 18879,
-      "modes": 13472
-    },
-    "after": {
-      "catalogRevision": 100,
-      "catalogItems": 4744,
+      "catalogRevision": 102,
+      "catalogItems": 4844,
       "engines": 111,
       "profiles": 19386,
       "modes": 13472
     },
-    "profilesCompactBytes": 16912902,
-    "modesCompactBytes": 9212464,
+    "after": {
+      "catalogRevision": 102,
+      "catalogItems": 4844,
+      "engines": 115,
+      "profiles": 19893,
+      "modes": 13472
+    },
+    "profilesCompactBytes": 17390802,
+    "modesCompactBytes": 9235810,
     "candidateSha256": {
-      "engines": "8d1b7d4816017a43d07da9073546f121c9574bc881de341b700fd8fb8474f278",
-      "profiles": "c16565fd47d0fbaf2d83f9e36cbc3bb6da3abdd19535c94d0ce98d9d0f9cd140",
-      "modes": "2b055fa25ab22643db5d04ec6a76bbd51f730a794f319f079ae3d8b6cd642af4"
+      "engines": "e742c9949f7188ca742b17b9d39f2c9d44a0259f3c5512f5c78fc59a0e91592f",
+      "profiles": "fa06e4586d0aa2add43d7c2707db34df14a0763ac9af3e49a862d34bd9433f40",
+      "modes": "ff8c68f25a43f4eb49604afde90de340af5d6ee7a5823ec1b9e179e3478633a2"
     },
     "apiRestartRequired": false,
     "serverApplied": false,
     "physicalGameplayValidated": false
   },
-  "physicalGameplayValidated": false,
-  "globalUpdateOffered": false,
-  "stablePromoted": false,
-  "rootAuthority": "/mnt/DADOS/station-r173-activation-20261017/completed.json",
-  "installationAuthority": "/mnt/DADOS/station-r173-usb-install-20261017/installed-verified.json",
-  "registrationLinuxAuthenticationPending": false,
-  "verificationCompleted": true,
-  "artifactProofFlagsAreBuildTimeOnly": true,
   "verification": {
     "signedGamecubeRoutes": {
       "local": {
@@ -158,95 +182,24 @@
     "previousDecisionsPreserved": true,
     "syntheticLicensesRemoved": true,
     "realLicensesUntouched": true,
-    "apiRestarted": true,
+    "apiRestarted": false,
     "networkChanged": false,
-    "scannerTimerRestored": true,
-    "apiPid": "795999",
-    "previousApiPid": "723553",
-    "sameBinaryRestartForOwnedOrphan": true,
-    "noEnrollmentReplayed": true,
-    "physicalGameplayValidated": false
+    "scannerTimerRestored": true
   },
-  "effectiveData": {
-    "passed": true,
-    "revision": "R173",
-    "serverApplied": true,
-    "apiPid": "723553",
-    "apkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
-    "acceptedKitSha256": "ff4dc7bde0fae8a4506803773d0bc9c5537f454fb337c294c9853d5ff5ba4580",
-    "counts": {
-      "catalogRevision": 100,
-      "catalogItems": 4744,
-      "engines": 111,
-      "profiles": 19386,
-      "modes": 13472
-    },
-    "exactEngineIds": {
-      "psx": "pcsx-rearmed-ff81ed17-player-v3-a7c5c8aa45d8",
-      "n64": "mupen64plus-ae-33bf7021-n64-v3-fcbb4c272d8e",
-      "gamecube": "dolphin-5102a033-gamecube-v3-27da50adc1c5",
-      "wii": "dolphin-5102a033-wii-v3-27da50adc1c5"
-    },
-    "profileSha256": {
-      "psx": "86f543015f84ca292c6853d10cbc58e4869b825520dbff117a4868bf18637683",
-      "n64": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
-      "gamecube": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
-      "wii": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed"
-    },
-    "rawFileSha256": {
-      "catalog": "5f0ac1dfc7297cb9ab49bfab9e9f19b77955799a077b339967d7c798f3bbe4bb",
-      "profiles": "c16565fd47d0fbaf2d83f9e36cbc3bb6da3abdd19535c94d0ce98d9d0f9cd140",
-      "current": "8d1b7d4816017a43d07da9073546f121c9574bc881de341b700fd8fb8474f278",
-      "modes": "2b055fa25ab22643db5d04ec6a76bbd51f730a794f319f079ae3d8b6cd642af4"
-    },
-    "previousDecisionsPreserved": true,
-    "preparedModeEngineBindingsAdded": 507
-  },
-  "fourPlayerRelay": {
-    "physicalAndroidGameplayValidated": false,
-    "publicNetwork": true,
-    "engineId": "dolphin-5102a033-gamecube-v3-27da50adc1c5",
-    "sampleItemId": "station_203c099590c11a7650a006d1dc4d705f",
-    "sampleGame": "Mario Kart - Double Dash!! (Europe) (En,Fr,De,Es,It)",
-    "sampleModesAdvertised": 1,
-    "sampleGameEditionsAdvertised": 1,
-    "passed": true,
-    "participants": 4,
-    "uniqueControllerSlots": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "hostGuestLinks": 3,
-    "authenticatedWebSockets": 6,
-    "serverReadyBarrierWithSyntheticClientsVerified": true,
-    "bidirectionalBytesVerified": 863,
-    "linkIsolationVerified": true,
-    "globalPauseAndResumeVerified": true,
-    "monotonicOffsetsVerified": true,
-    "publicTLSAndSpkiVerified": true,
-    "allDirectConnectionsPrioritized": true,
-    "ownSyntheticLicensesRemoved": true,
-    "payloadFormat": "DPL1-shaped opaque transport fixture; no ENet peer or game executed",
-    "nativeEmulatorExecuted": false
-  },
-  "runtimeAdmissionNote": "Failed verification used a stale pre-join generation for leave. Proof-only successor used the authoritative joined room; no enrollment replay. Owned synthetic orphan cleared by one controlled same-binary restart while no live game and HTTP transfers idle.",
-  "usbPhase": "Both authorized USB phones installed and read back: exact original-signer R173/version15; UID/data preserved. Physical GameCube gameplay still requires a new room test.",
   "installation": {
     "passed": true,
-    "revision": "R173",
+    "revision": "R174",
     "bothPhonesSameApk": true,
-    "installedApkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
+    "installedApkSha256": "6ab94ff0999ef2f0d5febe0d46fd27e715692c1aea8c216a2ce87d9cb8b51c4d",
     "phones": [
       {
         "passed": true,
         "phone": "moto_g52",
         "model": "moto g52",
         "androidSdk": 33,
-        "versionCode": 15,
-        "versionName": "1.0.8-R173",
-        "installedApkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
+        "versionCode": 16,
+        "versionName": "1.0.8-R174",
+        "installedApkSha256": "6ab94ff0999ef2f0d5febe0d46fd27e715692c1aea8c216a2ce87d9cb8b51c4d",
         "originalUidPreserved": true,
         "uninstalled": false,
         "dataCleared": false,
@@ -257,30 +210,312 @@
         "phone": "SM_A566E",
         "model": "SM-A566E",
         "androidSdk": 36,
-        "versionCode": 15,
-        "versionName": "1.0.8-R173",
-        "installedApkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
+        "versionCode": 16,
+        "versionName": "1.0.8-R174",
+        "installedApkSha256": "6ab94ff0999ef2f0d5febe0d46fd27e715692c1aea8c216a2ce87d9cb8b51c4d",
         "originalUidPreserved": true,
         "uninstalled": false,
         "dataCleared": false,
-        "physicalGameplayValidated": false,
-        "successfulAttemptEvidenceDirectory": "/mnt/DADOS/station-r173-usb-install-20261017/retry-samsung-internal-2/SM_A566E"
+        "physicalGameplayValidated": false
       }
     ],
     "dataPreserved": true,
-    "physicalGameplayValidated": false,
-    "samsungPriorStorageFailureReconciled": true
+    "physicalGameplayValidated": false
   },
-  "operationalStateUtc": "2026-10-17T19:06:36.013191+00:00",
-  "samsungInstallationMethod": {
-    "explicitAndroidInternalVolume": true,
-    "standardFlags": [
-      "-f",
-      "--force-uuid",
-      "internal"
-    ],
-    "originalDataPreserved": true,
-    "apkUnchanged": true,
-    "automaticLocationFirstAttemptFailedInsufficientStorage": true
+  "rootAuthority": "/mnt/DADOS/station-r174-activation-20261017/enrollment-reviewed-current/completed.json",
+  "installationAuthority": "/mnt/DADOS/station-r174-usb-install-20261017/installed-verified.json",
+  "catalog102AdvanceReviewedAndPreserved": true,
+  "priorFailedR174AttemptApplied": false,
+  "r173PerformanceObservation": "performance-observation.json",
+  "physicalGameplayValidated": false,
+  "physicalPerformanceImprovementValidated": false,
+  "physicalComparisonPending": true,
+  "globalUpdateOffered": false,
+  "stablePromoted": false,
+  "previousR173": {
+    "schema": "station.gamecube.server-return.r173.v1",
+    "request": "Preparar GameCube e corrigir Mario Kart informado como sala completa",
+    "baselineStable": "R172",
+    "candidate": "R173",
+    "compiledSourceCommit": "69f90f80e98a9dcf1f37d41be5617abb240b2b37",
+    "apk": {
+      "schema": "station.gamecube-rooms.final.r173.v1",
+      "passed": true,
+      "packageRevision": "R173",
+      "sourceCommit": "69f90f80e98a9dcf1f37d41be5617abb240b2b37",
+      "apkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
+      "apkBytes": 2714238050,
+      "baseApkSha256": "4a92627952a4f9673ff402667825fcb1f926aaf85a44bef7882559f000c56c5b",
+      "signatureCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+      "v2": true,
+      "v3": true,
+      "zipAlignment16KiB": true,
+      "versionCode": 15,
+      "minimumSdk": 26,
+      "targetSdk": 34,
+      "checkedEntries": 13861,
+      "preservedEntryCount": 13855,
+      "replacedEntries": [
+        "AndroidManifest.xml",
+        "assets/station-online/engines.json",
+        "classes35.dex",
+        "lib/arm64-v8a/libstation_dolphin_runtime.so",
+        "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+        "lib/arm64-v8a/libstation_psx_online.so"
+      ],
+      "changedDexPartitions": [
+        "classes35.dex"
+      ],
+      "preservedDexPartitions": 39,
+      "unsignedPackageReceiptSha256": "fae54153d1c8bc633b32fe6f3ed4b97ec55ad881f15d717292cc53cdf9785c01",
+      "signerRecipeSha256": "2d68ab68e8bbb9bd8fbda9d420d5fe062482742b584a7bc75b2cfd3dbc1f8420",
+      "installed": false,
+      "serverRegistered": false,
+      "productionUpdaterEnabled": false,
+      "physicalGameplayValidated": false,
+      "physicalInstallerValidated": false,
+      "stable": false
+    },
+    "privateKit": {
+      "schema": "station.r173.private-kit-receipt.v1",
+      "passed": true,
+      "apkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
+      "zipSha256": "ff4dc7bde0fae8a4506803773d0bc9c5537f454fb337c294c9853d5ff5ba4580",
+      "zipBytes": 15027848,
+      "fileCount": 64,
+      "elfCount": 27,
+      "engineIds": {
+        "psx": "pcsx-rearmed-ff81ed17-player-v3-a7c5c8aa45d8",
+        "n64": "mupen64plus-ae-33bf7021-n64-v3-fcbb4c272d8e",
+        "gamecube": "dolphin-5102a033-gamecube-v3-27da50adc1c5",
+        "wii": "dolphin-5102a033-wii-v3-27da50adc1c5"
+      },
+      "recipeSha256": "2badd111c3a2c6ccaef129cb722d4c2924c83df75332897f575fef6049a6ebf5",
+      "serverApplied": false,
+      "physicalGameplayValidated": false
+    },
+    "metadataRevisionR172Applied": true,
+    "serverR173Applied": true,
+    "installedR173": true,
+    "uiBugReproduced": true,
+    "androidCandidateChecksPerPhone": 82,
+    "unrelatedPresentationComparisons": 672,
+    "gamecubeReview": {
+      "catalogItems": 21,
+      "visibleItems": 20,
+      "multiplayerGames": 9,
+      "multiplayerModes": 10,
+      "individualModes": 12,
+      "unsupportedGbaModes": 2
+    },
+    "enrollmentPreflight": {
+      "passed": true,
+      "revision": "R173",
+      "enginesAdded": 4,
+      "profilesAdded": 507,
+      "modesAdded": 0,
+      "preparedModeEngineBindingsAdded": 507,
+      "modeCounts": {
+        "psx": 93,
+        "n64": 387,
+        "gamecube": 24,
+        "wii": 3
+      },
+      "previousDecisionsPreserved": true,
+      "sourceClassRecognitionOnly": true,
+      "emulationOptionsPreserved": true,
+      "psxInputDelayFrames": 8,
+      "exactEngineIds": {
+        "psx": "pcsx-rearmed-ff81ed17-player-v3-a7c5c8aa45d8",
+        "n64": "mupen64plus-ae-33bf7021-n64-v3-fcbb4c272d8e",
+        "gamecube": "dolphin-5102a033-gamecube-v3-27da50adc1c5",
+        "wii": "dolphin-5102a033-wii-v3-27da50adc1c5"
+      },
+      "profileSha256": {
+        "psx": "86f543015f84ca292c6853d10cbc58e4869b825520dbff117a4868bf18637683",
+        "n64": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
+        "gamecube": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+        "wii": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed"
+      },
+      "before": {
+        "catalogRevision": 100,
+        "catalogItems": 4744,
+        "engines": 107,
+        "profiles": 18879,
+        "modes": 13472
+      },
+      "after": {
+        "catalogRevision": 100,
+        "catalogItems": 4744,
+        "engines": 111,
+        "profiles": 19386,
+        "modes": 13472
+      },
+      "profilesCompactBytes": 16912902,
+      "modesCompactBytes": 9212464,
+      "candidateSha256": {
+        "engines": "8d1b7d4816017a43d07da9073546f121c9574bc881de341b700fd8fb8474f278",
+        "profiles": "c16565fd47d0fbaf2d83f9e36cbc3bb6da3abdd19535c94d0ce98d9d0f9cd140",
+        "modes": "2b055fa25ab22643db5d04ec6a76bbd51f730a794f319f079ae3d8b6cd642af4"
+      },
+      "apiRestartRequired": false,
+      "serverApplied": false,
+      "physicalGameplayValidated": false
+    },
+    "physicalGameplayValidated": false,
+    "globalUpdateOffered": false,
+    "stablePromoted": false,
+    "rootAuthority": "/mnt/DADOS/station-r173-activation-20261017/completed.json",
+    "installationAuthority": "/mnt/DADOS/station-r173-usb-install-20261017/installed-verified.json",
+    "registrationLinuxAuthenticationPending": false,
+    "verificationCompleted": true,
+    "artifactProofFlagsAreBuildTimeOnly": true,
+    "verification": {
+      "signedGamecubeRoutes": {
+        "local": {
+          "passed": true,
+          "editions": 20,
+          "admitted": 20,
+          "refused": 28,
+          "mixedRuntimeRefused": true
+        },
+        "public": {
+          "passed": true,
+          "editions": 20,
+          "admitted": 20,
+          "refused": 28,
+          "mixedRuntimeRefused": true
+        }
+      },
+      "otherThreeOwnersVerified": true,
+      "fourPlayerPublicRelayVerified": true,
+      "previousDecisionsPreserved": true,
+      "syntheticLicensesRemoved": true,
+      "realLicensesUntouched": true,
+      "apiRestarted": true,
+      "networkChanged": false,
+      "scannerTimerRestored": true,
+      "apiPid": "795999",
+      "previousApiPid": "723553",
+      "sameBinaryRestartForOwnedOrphan": true,
+      "noEnrollmentReplayed": true,
+      "physicalGameplayValidated": false
+    },
+    "effectiveData": {
+      "passed": true,
+      "revision": "R173",
+      "serverApplied": true,
+      "apiPid": "723553",
+      "apkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
+      "acceptedKitSha256": "ff4dc7bde0fae8a4506803773d0bc9c5537f454fb337c294c9853d5ff5ba4580",
+      "counts": {
+        "catalogRevision": 100,
+        "catalogItems": 4744,
+        "engines": 111,
+        "profiles": 19386,
+        "modes": 13472
+      },
+      "exactEngineIds": {
+        "psx": "pcsx-rearmed-ff81ed17-player-v3-a7c5c8aa45d8",
+        "n64": "mupen64plus-ae-33bf7021-n64-v3-fcbb4c272d8e",
+        "gamecube": "dolphin-5102a033-gamecube-v3-27da50adc1c5",
+        "wii": "dolphin-5102a033-wii-v3-27da50adc1c5"
+      },
+      "profileSha256": {
+        "psx": "86f543015f84ca292c6853d10cbc58e4869b825520dbff117a4868bf18637683",
+        "n64": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
+        "gamecube": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+        "wii": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed"
+      },
+      "rawFileSha256": {
+        "catalog": "5f0ac1dfc7297cb9ab49bfab9e9f19b77955799a077b339967d7c798f3bbe4bb",
+        "profiles": "c16565fd47d0fbaf2d83f9e36cbc3bb6da3abdd19535c94d0ce98d9d0f9cd140",
+        "current": "8d1b7d4816017a43d07da9073546f121c9574bc881de341b700fd8fb8474f278",
+        "modes": "2b055fa25ab22643db5d04ec6a76bbd51f730a794f319f079ae3d8b6cd642af4"
+      },
+      "previousDecisionsPreserved": true,
+      "preparedModeEngineBindingsAdded": 507
+    },
+    "fourPlayerRelay": {
+      "physicalAndroidGameplayValidated": false,
+      "publicNetwork": true,
+      "engineId": "dolphin-5102a033-gamecube-v3-27da50adc1c5",
+      "sampleItemId": "station_203c099590c11a7650a006d1dc4d705f",
+      "sampleGame": "Mario Kart - Double Dash!! (Europe) (En,Fr,De,Es,It)",
+      "sampleModesAdvertised": 1,
+      "sampleGameEditionsAdvertised": 1,
+      "passed": true,
+      "participants": 4,
+      "uniqueControllerSlots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "hostGuestLinks": 3,
+      "authenticatedWebSockets": 6,
+      "serverReadyBarrierWithSyntheticClientsVerified": true,
+      "bidirectionalBytesVerified": 863,
+      "linkIsolationVerified": true,
+      "globalPauseAndResumeVerified": true,
+      "monotonicOffsetsVerified": true,
+      "publicTLSAndSpkiVerified": true,
+      "allDirectConnectionsPrioritized": true,
+      "ownSyntheticLicensesRemoved": true,
+      "payloadFormat": "DPL1-shaped opaque transport fixture; no ENet peer or game executed",
+      "nativeEmulatorExecuted": false
+    },
+    "runtimeAdmissionNote": "Failed verification used a stale pre-join generation for leave. Proof-only successor used the authoritative joined room; no enrollment replay. Owned synthetic orphan cleared by one controlled same-binary restart while no live game and HTTP transfers idle.",
+    "usbPhase": "Both authorized USB phones installed and read back: exact original-signer R173/version15; UID/data preserved. Physical GameCube gameplay still requires a new room test.",
+    "installation": {
+      "passed": true,
+      "revision": "R173",
+      "bothPhonesSameApk": true,
+      "installedApkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
+      "phones": [
+        {
+          "passed": true,
+          "phone": "moto_g52",
+          "model": "moto g52",
+          "androidSdk": 33,
+          "versionCode": 15,
+          "versionName": "1.0.8-R173",
+          "installedApkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
+          "originalUidPreserved": true,
+          "uninstalled": false,
+          "dataCleared": false,
+          "physicalGameplayValidated": false
+        },
+        {
+          "passed": true,
+          "phone": "SM_A566E",
+          "model": "SM-A566E",
+          "androidSdk": 36,
+          "versionCode": 15,
+          "versionName": "1.0.8-R173",
+          "installedApkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
+          "originalUidPreserved": true,
+          "uninstalled": false,
+          "dataCleared": false,
+          "physicalGameplayValidated": false,
+          "successfulAttemptEvidenceDirectory": "/mnt/DADOS/station-r173-usb-install-20261017/retry-samsung-internal-2/SM_A566E"
+        }
+      ],
+      "dataPreserved": true,
+      "physicalGameplayValidated": false,
+      "samsungPriorStorageFailureReconciled": true
+    },
+    "operationalStateUtc": "2026-10-17T19:06:36.013191+00:00",
+    "samsungInstallationMethod": {
+      "explicitAndroidInternalVolume": true,
+      "standardFlags": [
+        "-f",
+        "--force-uuid",
+        "internal"
+      ],
+      "originalDataPreserved": true,
+      "apkUnchanged": true,
+      "automaticLocationFirstAttemptFailedInsufficientStorage": true
+    }
   }
 }

@@ -1,3 +1,22 @@
+# GameCube — desempenho R174 em comparação
+
+R174/16 instalada e conferida no Moto g52 e Samsung A56, mesmo APK6ab94ff0.
+Cadastro e provas local/pública/relay4P concluídos sem restart;115owners,
+19893perfis/13472modos, catálogo102/4844 preservado. UID e dados mantidos.
+A entrada R173 foi confirmada pelo proprietário, mas houve lentidão.
+
+A candidata testa Core.CPUThread=false somente no GameCube online via camada
+CurrentRun, com leitura nativa Active confirmada. A [observação R173](performance-observation.json)
+localiza a maior espera medida do anfitrião no vídeo. O [Dolphin oficial](https://github.com/dolphin-emu/dolphin/blob/5102a0339c2177575378107b76541e47cc52122d/Source/Android/app/src/main/res/values/strings.xml)
+alerta para problemas de Dual Core no netplay; isso fundamenta a comparação,
+sem provar melhora antes da partida. [Recibo atual](server-return.json).
+
+Falta a comparação física R174 de Mario Kart com sala nova e ambos na mesma
+revisão. PSXinput8/N64/Wii/núcleos/renderer/resolução/buffer/clock preservados.
+R172 permanece estável. Não repetir cadastro/instalação; não publicar oferta geral.
+
+## Histórico da R173
+
 # GameCube — revisão completa e correção de entrada
 
 ## Estado aplicado e instalado

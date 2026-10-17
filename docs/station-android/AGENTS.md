@@ -1,3 +1,43 @@
+<!-- STATION-GAMECUBE-R174-20261017 -->
+## GameCube R174: candidata para comparar a lentidão
+
+O proprietário confirmou que R173 entrou e jogou Mario Kart nos dois, depois
+relatou queda de quadros/lentidão. A captura mediu o Motorola em cerca de
+44–45 quadros/s. Em20s, a CPU esperou4,813s por ação do vídeo e0,017s pelo
+cliente nativo de rede; o Samsung esperou principalmente a rede do netplay.
+O servidor manteve duas conexões e estado/epoch durante240amostras. Esse
+recorte localiza a espera observada no anfitrião; não exclui outros atrasos.
+O teste temporário60Hz não ajudou; a configuração original foi restaurada.
+
+R174 testa somente Core.CPUThread=false no CurrentRun do GameCube ONLINE,
+com leitura Active confirmada antes de nativeConnect. O Dolphin oficial alerta
+para problemas de desempenho de Dual Core no netplay. Não salva preferências
+offline. Wii/PSXinput8/N64, núcleos, renderer, resolução, clock e buffer mantidos.
+Fonte compilada bf155ec2bfaea7dbc31da036e2bf8d346edf7469; APK
+6ab94ff0999ef2f0d5febe0d46fd27e715692c1aea8c216a2ce87d9cb8b51c4d,
+version16/1.0.8-R174, certificado original/16KiB. Dois tipos efetivos mudaram;
+611classes,39DEX e13855entradas preservados. Dez verificações do contrato,
+API nativa real/referências/escopo/assinatura passaram. Não recompilar por docs.
+
+Cadastro concluído sem restart:115motores/19893perfis/13472modos; catálogo
+102/4844 preservado. A revisão fresca encontrou configuração diferente e
+catálogo102/4844; os três registros online eram idênticos à R173. A primeira tentativa
+parou sem aplicar nada; uma baseline fresca, coerente com a API real, permitiu
+adicionar4owners+507decisões/vínculos e zero novas linhas de modo.
+Local/público20edições/20admissões/28recusas cada; relay sintético4P e os outros
+três owners passaram. Não repetir os operadores. Moto g52 e Samsung A56
+atualizados15→16; base.apk de cada um confere com6ab94ff0, UID/dados preservados.
+
+Falta medir a partida R174: a hipótese ainda NÃO é melhora comprovada.
+Criar sala NOVA de Mario Kart com ambos naR174. Autoridades privadas:
+station-r174-activation-20261017/enrollment-reviewed-current/completed.json e
+station-r174-usb-install-20261017/installed-verified.json. R172 segue estável.
+Ler o MESMO handoff/seção GameCube e gamecube-20261017/server-return.json;
+no app, docs/server/GAMECUBE-R173-20261017.md e integration/gamecube-cpu-r174.
+Sem oferta geral do APK; sem mudanças de rede ou serviço de outros produtos.
+
+## Histórico preservado
+
 <!-- STATION-GAMECUBE-R173-APPLIED-20261017 -->
 ## R173 aplicada e instalada: entrada nas salas GameCube corrigida
 
