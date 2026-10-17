@@ -195,6 +195,9 @@ def prepare(items,existing,manifest,modes=None):
     for group in content_groups.values():
         if len(json.dumps(group,ensure_ascii=True,separators=(',',':')).encode('ascii'))>MAXIMUM_PROFILE_CONTENT_BYTES:
             raise ValueError('automatic profile content projection exceeds the server byte limit')
-    if len((json.dumps(output,ensure_ascii=False,indent=2)+'\n').encode())>MAXIMUM_PROFILE_REGISTRY_BYTES:
+    # Both the registrar and the scheduled scanner persist compact UTF-8 JSON.
+    # Enforce the HTTP reader's limit on those actual bytes, not on a pretty
+    # representation that is never published.
+    if len(encoded(output))>MAXIMUM_PROFILE_REGISTRY_BYTES:
         raise ValueError('automatic profile registry exceeds the server byte limit')
     return output

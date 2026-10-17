@@ -17,7 +17,8 @@ import sys
 import tempfile
 from station_online_profiles import (MAXIMUM_PREPARED_MODE_BYTES,
     MAXIMUM_TRUSTED_MANIFEST_BYTES,
-    MAXIMUM_PROFILE_REGISTRY_BYTES, prepare, validate_manifest, validate_modes)
+    MAXIMUM_PROFILE_REGISTRY_BYTES, platform, prepare, profile_configuration,
+    validate_manifest, validate_modes)
 
 MAX_BINARY=256*1024*1024
 
@@ -75,16 +76,35 @@ def restore_bytes(path,source,gid):
         if os.path.exists(name):os.unlink(name)
 
 def reviewed_modes(existing,candidate,incoming):
-    validate_modes(existing);validate_modes(candidate)
+    validate_modes(existing);validate_modes(candidate);validate_manifest(incoming)
     old=existing['modes'];next_modes=candidate['modes']
-    if candidate.get('schemaVersion')!=existing.get('schemaVersion') or next_modes[:len(old)]!=old:
+    if candidate.get('schemaVersion')!=existing.get('schemaVersion') or len(next_modes)<len(old):
         raise ValueError('existing prepared modes must remain exact')
-    identities={e['engineId'] for e in incoming['engines']}
+    identities={e['engineId']:e for e in incoming['engines']}
+    def targets(mode,scoped):
+        if not scoped or not set(scoped)<=set(identities):
+            raise ValueError('new prepared mode bindings must target only incoming engines')
+        for identity in scoped:
+            engine=identities[identity]
+            if platform(engine['platform'])!=platform(mode['platform']) or mode['maximumPlayers']>engine.get('maximumPlayers',5) or profile_configuration(engine,mode['controllerProfile'],mode['maximumPlayers']) is None:
+                raise ValueError('prepared mode binding needs matching platform and implemented controller')
+    for before,after in zip(old,next_modes):
+        if before==after:continue
+        # A revision may reuse a reviewed decision without duplicating its text.
+        # Preserve every decision field and every prior owner, in exact order.
+        if {k:v for k,v in before.items() if k!='engineIds'}!={k:v for k,v in after.items() if k!='engineIds'}:
+            raise ValueError('existing prepared mode decisions must remain exact')
+        previous=before.get('engineIds');following=after.get('engineIds')
+        if not previous or not following or following[:len(previous)]!=previous or len(following)<=len(previous):
+            raise ValueError('existing prepared mode engine bindings must remain exact')
+        targets(after,following[len(previous):])
     for mode in next_modes[len(old):]:
-        scoped=mode.get('engineIds')
-        if not scoped or not set(scoped)<=identities:
-            raise ValueError('new prepared modes must target only incoming engines')
+        targets(mode,mode.get('engineIds'))
     return candidate
+
+def extended_bindings(existing,candidate):
+    return sum(len(after.get('engineIds',[]))-len(before.get('engineIds',[]))
+               for before,after in zip(existing['modes'],candidate['modes']))
 
 def stage(args):
     catalog=read(args.catalog,32*1024*1024);existing=read(args.profiles,MAXIMUM_PROFILE_REGISTRY_BYTES)
@@ -109,6 +129,7 @@ def stage(args):
         baseline={key:digest(path) for key,path in [('catalog',args.catalog),('profiles',args.profiles),('current',args.current),('modes',args.modes)]},
         files={name:digest(args.output/name) for name in ('incoming.json','engines.json','profiles.json','modes.json')},
         preparedModesAdded=len(next_modes['modes'])-len(modes['modes']),
+        preparedModeEngineBindingsAdded=extended_bindings(modes,next_modes),
         enginesAdded=len(old)-len(current['engines']),profilesAdded=len(profiles)-len(existing),previousProfilesPreserved=len(existing),
         realBinaryHashesVerified=True,androidGameplayValidated=False)
     write(args.output/'receipt.json',receipt)
@@ -155,7 +176,7 @@ def apply(args):
             if rollback_errors:raise ValueError('registry rollback requires operator recovery: '+repr(rollback_errors))
             raise
         result=dict(applied=True,serverRestarted=False,existingProfilesPreserved=len(existing),profilesAdded=len(profiles)-len(existing),reloadWithinSeconds=10,
-            enginesSha256=digest(paths['current']),profilesSha256=digest(paths['profiles']),preparedModesSha256=digest(paths['modes']),preparedModesAdded=len(next_modes['modes'])-len(old_modes['modes']))
+            enginesSha256=digest(paths['current']),profilesSha256=digest(paths['profiles']),preparedModesSha256=digest(paths['modes']),preparedModesAdded=len(next_modes['modes'])-len(old_modes['modes']),preparedModeEngineBindingsAdded=extended_bindings(old_modes,next_modes))
         write(backup/'receipt.json',result);print(json.dumps(result),flush=True)
 
 def main():

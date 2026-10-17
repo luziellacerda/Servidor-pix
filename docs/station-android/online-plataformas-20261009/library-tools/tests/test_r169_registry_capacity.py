@@ -50,9 +50,15 @@ class R169RegistryCapacityTests(unittest.TestCase):
             "runtimeSha256": "b" * 64, "extensions": ["z64"], "options": "",
             "launchReady": True, "recoveryProtocol": "station-stream.v3"}]}
         self.assertEqual(prepare([], rows, manifest), rows)
-        rows = self.unique_rows(34)
+        # R172 publishes the same compact representation as the scanner.
+        # An unused pretty representation must not reject bytes that fit.
+        rows = self.unique_rows(40)
         size = len((json.dumps(rows, ensure_ascii=False, indent=2) + "\n").encode())
         self.assertGreater(size, MAXIMUM_PROFILE_REGISTRY_BYTES)
+        self.assertLessEqual(len(encoded(rows)), MAXIMUM_PROFILE_REGISTRY_BYTES)
+        self.assertEqual(prepare([], rows, manifest), rows)
+        rows = self.unique_rows(42)
+        self.assertGreater(len(encoded(rows)), MAXIMUM_PROFILE_REGISTRY_BYTES)
         with self.assertRaisesRegex(ValueError, "registry exceeds"):
             prepare([], rows, manifest)
 
