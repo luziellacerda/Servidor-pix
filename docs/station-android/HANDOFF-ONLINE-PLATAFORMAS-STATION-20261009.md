@@ -1,3 +1,72 @@
+<!-- STATION-R171-PHYSICAL-PERFORMANCE-FAILED-20261017 -->
+## R171 nos dois aparelhos: lentidão permanece; pesquisa PSX concluída
+
+A candidata R171 foi compilada da fonte congelada
+`065c28cc556f7f866670a07fc1d9365c9a67b315`, cadastrada e instalada no Moto g52
+(Android 33) e Samsung A56 (Android 36). Os dois APKs realmente instalados foram
+lidos e conferem com `11231dae0ba776a56505102fdbb431632890ca3c4a85fcb086582930c316bbfd`,
+`1.0.8-R171`/versionCode 13. UID, dados e assinatura preservados. A R170 é agora
+histórico, não a versão atual destes dois aparelhos. Não reinstalar por causa
+apenas deste registro.
+
+O único delta funcional da R171 foi o ciclo de vida da prioridade Wi-Fi do PSX
+visível. Mesmo núcleo PCSX ReARMed, opções, controles, protocolo PXL1 e atraso de
+quatro quadros. 111 verificações de ciclo de vida passaram; montagem/DEX/ABI e
+assinatura conferidos. Cadastro aditivo: 103 motores, 18.372 perfis, 13.457 modos;
+catálogo revisão 100/4.744 itens preservado. Quatro identidades exatas e 492
+decisões adicionadas, capabilities local/públicas aprovadas. Sem restart do
+Station, alteração de rede ou oferta geral do atualizador.
+
+**Resultado físico: NÃO resolveu.** O usuário informou "não teve nenhuma
+melhora" em Capcom vs. SNK VS com os dois na R171. Na segunda captura de 25 s:
+45,52 quadros nativos/s; encaminhamento interno do relay mediano 0,283 ms e
+máximo 0,442 ms em 4.549 mensagens. O caminho completo até a admissão no convidado
+teve mediana de 47,08 ms; isso inclui rede e processamento no telefone. O Wi-Fi
+local do Samsung melhorou (mediana 34,45 -> 2,725 ms), mas a lentidão persistiu.
+Não atribuir causa exclusiva ao Wi-Fi, ao servidor, ao túnel ou ao núcleo; o
+atraso interno medido do relay não explica sozinho dezenas de milissegundos.
+A candidata não está estável nem homologada. Instalação e testes sintéticos não
+substituem esse resultado físico.
+
+### Pesquisa pedida: alternativas para PSX online
+
+- **Android:** primeira comparação indicada é o RetroArch completo com PCSX
+  ReARMed e seu netplay oficial. É candidata de comparação, sem prova nestes
+  telefones. A página do núcleo declara netplay; o FAQ geral ainda o desaconselha
+  para PSX por custo de desempenho. Registrar essa divergência.
+- **PC:** DuckStation Netplay com Arkadyzja oferece rollback nos jogos suportados
+  e conexão direta com fallback por relay. O beta oficial lista Windows/Linux;
+  não foi confirmado um cliente Android pronto para substituir o Station.
+- Beetle PSX declara estados determinísticos, mas exige mais CPU. SwanStation
+  ainda declara estados básicos e tem pedido de netplay aberto (#169). ePSXe
+  documenta netplay local por Wi-Fi; Mednafen documenta cliente/servidor nativo.
+  Nenhum foi medido como vencedor neste Moto e Samsung.
+
+O Station já incorpora PCSX ReARMed, mas usa sincronização própria
+PXL1/station-stream.v3; não executa o netplay do RetroArch. O netplay oficial
+mantém estados, prevê controles, refaz quadros quando necessário e recupera
+atraso. Essas funções pertencem ao frontend; trocar somente o arquivo do core
+não as acrescenta. Próxima comparação indicada: implementação completa oficial,
+mesmo jogo/BIOS/opções e ambos os anfitriões, LAN e internet separadas. Nenhuma
+segunda candidata, migração, regra de roteador ou protocolo foi aplicada nesta
+pesquisa. Fontes primárias e evidência sanitizada em `r171/server-return.json`.
+
+Autoridade privada já concluída, não repetir operadores históricos:
+
+- `/mnt/DADOS/station-r171-activation-20261017/completed.json` — cadastro/provas.
+- `/mnt/DADOS/station-r171-usb-install-20261017/installed-verified.json` — dois APKs.
+- `/mnt/DADOS/station-r171-online-comparison-20261017/sanitized-comparison.json` —
+  comparação e segunda captura. Logs e pcap privados não vão para o Git.
+- `/mnt/DADOS/station-build-r171-20261017/final/TurboStations-Premium-R171.apk`.
+- Kit privado exato: `3841ed8f5b1f9d8a5c00be0441acbd39cf6b9bfe1a6107d4e9faeb9c024eccde`.
+
+Fonte e receita congeladas continuam em `065c28c`; commits posteriores deste
+retorno são documentação, não outra compilação. Não há autenticação Linux ou
+captura pendente. Preservar uma eventual partida ativa; para qualquer próxima
+instalação, primeiro verificar sala e obter a saída dos aparelhos.
+
+## Histórico preservado
+
 <!-- STATION-R170-BOTH-PHONES-INSTALLED-20261017 -->
 ## Moto g52 e Samsung A56 estão com a mesma R170
 

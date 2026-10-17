@@ -1,0 +1,403 @@
+{
+  "schema": "station.r171.server-return.v1",
+  "revision": "R171",
+  "utc": "2026-10-17T16:19:25.676861+00:00",
+  "status": "physical-performance-test-failed",
+  "sourceCommit": "065c28cc556f7f866670a07fc1d9365c9a67b315",
+  "appBranch": "fix/station-psx-wifi-latency-r171-20261017",
+  "apk": {
+    "schema": "station.psx-updater.final.r171.v1",
+    "passed": true,
+    "packageRevision": "R171",
+    "sourceCommit": "065c28cc556f7f866670a07fc1d9365c9a67b315",
+    "apkSha256": "11231dae0ba776a56505102fdbb431632890ca3c4a85fcb086582930c316bbfd",
+    "apkBytes": 2714221666,
+    "baseApkSha256": "42533ba2b53532be38872bcb97a07b0647e5a9b6091b565a1af7292f390be1c3",
+    "signatureCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+    "v2": true,
+    "v3": true,
+    "zipAlignment16KiB": true,
+    "versionCode": 13,
+    "minimumSdk": 26,
+    "targetSdk": 34,
+    "checkedEntries": 13861,
+    "preservedEntryCount": 13855,
+    "replacedEntries": [
+      "AndroidManifest.xml",
+      "assets/station-online/engines.json",
+      "classes35.dex",
+      "lib/arm64-v8a/libstation_dolphin_runtime.so",
+      "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+      "lib/arm64-v8a/libstation_psx_online.so"
+    ],
+    "changedDexPartitions": [
+      "classes35.dex"
+    ],
+    "preservedDexPartitions": 39,
+    "unsignedPackageReceiptSha256": "e031ef0af8baf306526e62e4b14185e1ced59e31923d67dbfefd890272209658",
+    "signerRecipeSha256": "684cf4493dbdee560cfff50bef02da5cf4bb3f98937bda808b2f31122edb9ed0",
+    "installed": false,
+    "serverRegistered": false,
+    "productionUpdaterEnabled": false,
+    "physicalGameplayValidated": false,
+    "physicalInstallerValidated": false,
+    "stable": false
+  },
+  "privateKit": {
+    "schema": "station.r171.private-kit-receipt.v1",
+    "passed": true,
+    "apkSha256": "11231dae0ba776a56505102fdbb431632890ca3c4a85fcb086582930c316bbfd",
+    "zipSha256": "3841ed8f5b1f9d8a5c00be0441acbd39cf6b9bfe1a6107d4e9faeb9c024eccde",
+    "zipBytes": 15018524,
+    "fileCount": 60,
+    "elfCount": 27,
+    "engineIds": {
+      "psx": "pcsx-rearmed-ff81ed17-player-v3-eef3d267df91",
+      "n64": "mupen64plus-ae-33bf7021-n64-v3-4dbaf2fb3d20",
+      "gamecube": "dolphin-5102a033-gamecube-v3-bef3e1975e6b",
+      "wii": "dolphin-5102a033-wii-v3-bef3e1975e6b"
+    },
+    "recipeSha256": "197d7f469b398e4602b6c4db1546282b94cbfb03ab5f0ce578038767a3a3afb1",
+    "serverApplied": false,
+    "physicalGameplayValidated": false
+  },
+  "serverApplied": true,
+  "server": {
+    "passed": true,
+    "revision": "R171",
+    "serverApplied": true,
+    "data": {
+      "passed": true,
+      "revision": "R171",
+      "acceptedKitSha256": "3841ed8f5b1f9d8a5c00be0441acbd39cf6b9bfe1a6107d4e9faeb9c024eccde",
+      "apkSha256": "11231dae0ba776a56505102fdbb431632890ca3c4a85fcb086582930c316bbfd",
+      "serverRestarted": false,
+      "apiPid": "723553",
+      "counts": {
+        "catalogRevision": 100,
+        "catalogItems": 4744,
+        "engines": 103,
+        "profiles": 18372,
+        "modes": 13457
+      },
+      "exactEngineIds": {
+        "psx": "pcsx-rearmed-ff81ed17-player-v3-eef3d267df91",
+        "n64": "mupen64plus-ae-33bf7021-n64-v3-4dbaf2fb3d20",
+        "gamecube": "dolphin-5102a033-gamecube-v3-bef3e1975e6b",
+        "wii": "dolphin-5102a033-wii-v3-bef3e1975e6b"
+      },
+      "rawFileSha256": {
+        "catalog": "5f0ac1dfc7297cb9ab49bfab9e9f19b77955799a077b339967d7c798f3bbe4bb",
+        "profiles": "06f9bc2c69bdf372a1a25727d53d3569155c1e083238b59cac7b71ed1d8a6ad3",
+        "current": "550387473907249a2f427fd2c22e9d88b149a9b1f03018e73c925a4cb8369115",
+        "modes": "cd0ddc28d400ee9c554d72669e7de12db8560121bed9f1dd73a47c0d5cf3600e"
+      },
+      "previousBindingsPreserved": true
+    },
+    "signedCapabilitiesLocalAndPublic": true,
+    "realLicensesUntouched": true,
+    "apiRestarted": false,
+    "networkChanged": false,
+    "physicalGameplayValidated": false
+  },
+  "phones": {
+    "passed": true,
+    "revision": "R171",
+    "bothPhonesSameApk": true,
+    "installedApkSha256": "11231dae0ba776a56505102fdbb431632890ca3c4a85fcb086582930c316bbfd",
+    "phones": [
+      {
+        "passed": true,
+        "phone": "moto_g52",
+        "model": "moto g52",
+        "androidSdk": 33,
+        "versionCode": 13,
+        "versionName": "1.0.8-R171",
+        "installedApkSha256": "11231dae0ba776a56505102fdbb431632890ca3c4a85fcb086582930c316bbfd",
+        "originalUidPreserved": true,
+        "uninstalled": false,
+        "dataCleared": false,
+        "physicalGameplayValidated": false
+      },
+      {
+        "passed": true,
+        "phone": "SM_A566E",
+        "model": "SM-A566E",
+        "androidSdk": 36,
+        "versionCode": 13,
+        "versionName": "1.0.8-R171",
+        "installedApkSha256": "11231dae0ba776a56505102fdbb431632890ca3c4a85fcb086582930c316bbfd",
+        "originalUidPreserved": true,
+        "uninstalled": false,
+        "dataCleared": false,
+        "physicalGameplayValidated": false
+      }
+    ],
+    "dataPreserved": true,
+    "physicalGameplayValidated": false
+  },
+  "diagnosisBefore": {
+    "schema": "station.psx.periodic-stall-diagnosis.r170.v1",
+    "revisionMeasured": "R170",
+    "bothPhonesInstalledApkSha256": "42533ba2b53532be38872bcb97a07b0647e5a9b6091b565a1af7292f390be1c3",
+    "game": "Capcom vs. SNK - Millennium Fight 2000 Pro",
+    "core": "PCSX ReARMed r26l-112-gff81ed1, Libretro, inside Station",
+    "onlineOwner": "Station custom PXL1 / station-stream.v3; not RetroArch netplay",
+    "measuredNativeFramesPerSecond": 47.689396121159014,
+    "nativeFrameSpacingMilliseconds": {
+      "median": 16.8612003326416,
+      "p90": 36.622047424316406,
+      "p99": 54.53300476074219,
+      "maximum": 85.18600463867188
+    },
+    "actualRelayForwardingMilliseconds": {
+      "messages": 4746,
+      "median": 0.29087066650390625,
+      "maximum": 0.5538463592529297
+    },
+    "guestFrameAdmissionRoundTripMilliseconds": {
+      "median": 35.97700595855713,
+      "maximum": 105.06796836853027
+    },
+    "separateDirectLanRttMilliseconds": {
+      "samsung": {
+        "samples": 80,
+        "received": 80,
+        "median": 34.45,
+        "maximum": 111
+      },
+      "motorola": {
+        "samples": 80,
+        "received": 80,
+        "median": 1.71,
+        "maximum": 1053
+      }
+    },
+    "liveFollowup": {
+      "windowSeconds": 37.94647359699593,
+      "hostFrameEquivalentPerSecond": 52.6267610848059,
+      "nativeAudioSamplesPerSecond": {
+        "motorola": 38342.82913702252,
+        "samsung": 38326.88975574661
+      },
+      "normalAudioSamplesPerSecond": 44100,
+      "thermalStatus": {
+        "motorola": 0,
+        "samsung": 2
+      }
+    },
+    "renderPresentationNear60": true,
+    "presentationIsNotEmulationFps": true,
+    "nativeAudioDropsObserved": 0,
+    "missingHostFrameNumbers": 0,
+    "activeWifiLatencyLocksObserved": 0,
+    "measuredRelayWasNotSourceOfTensOfMilliseconds": true,
+    "soleRootCauseProven": false,
+    "candidate": "R171: official foreground Wi-Fi latency lease; effectiveness must be measured",
+    "reference": "https://source.android.com/docs/core/connect/wifi-low-latency",
+    "serverOrNetworkReconfiguredForDiagnosis": false,
+    "rawLogsTokensSerialsIncluded": false
+  },
+  "tests": {
+    "sessionLaunchWifiLifecycleChecks": 111,
+    "realAndroidSdkCompilationPassed": true,
+    "actualDexPartitions": 40,
+    "unrelatedDexPartitionsPreserved": 39,
+    "unrelatedClassesInChangedDexPreserved": 585,
+    "actualUniqueClasses": 51634,
+    "actualAppMethodReferencesChecked": 128,
+    "nativeWrapperExportsPreserved": true,
+    "negativeUnreviewedProjectionCasesRejected": 4,
+    "signedLocalAndPublicFourOwnerCapabilitiesPassed": true,
+    "physicalGameplayValidated": false
+  },
+  "scope": {
+    "productiveFamilies": [
+      "StationPsxSession",
+      "StationPsxWifiLatency"
+    ],
+    "foregroundValidatedPsxOnly": true,
+    "newThreadsTimersOrPolling": false,
+    "newPermissions": false,
+    "coreOptionsProtocolInputDelayControlsUnchanged": true,
+    "n64DolphinNativeLogicUnchanged": true,
+    "allPreviousGameDecisionsPreserved": true,
+    "serverProcessRestarted": false,
+    "networkChanged": false,
+    "globalAppUpdateOffered": false
+  },
+  "physicalComparison": {
+    "pending": false,
+    "schema": "station.r171.physical-comparison.v1",
+    "revision": "R171",
+    "sameExactApkInstalledBothPhones": true,
+    "phones": {
+      "SM_A566E": {
+        "nativeAudioSamplesPerSecond": 41740.81054791076,
+        "normalAudioSamplesPerSecond": 44100,
+        "nativeAudioIntervals": 4,
+        "lanRttMedianMs": 2.725,
+        "lanRttMaximumMs": 58.8,
+        "lanPingReplies": 80,
+        "osWifiOperationMode": 4,
+        "stationLeaseTagPresent": true,
+        "thermalStatus": {
+          "before": 2,
+          "after": 2
+        }
+      },
+      "moto_g52": {
+        "nativeAudioSamplesPerSecond": 41795.47734688017,
+        "normalAudioSamplesPerSecond": 44100,
+        "nativeAudioIntervals": 4,
+        "lanRttMedianMs": 1.88,
+        "lanRttMaximumMs": 12.8,
+        "lanPingReplies": 77,
+        "osWifiOperationMode": null,
+        "stationLeaseTagPresent": true,
+        "thermalStatus": {
+          "before": 0,
+          "after": 0
+        }
+      }
+    },
+    "serverFirstWindow": {
+      "durationSeconds": 37.94643096800428,
+      "stateValues": [
+        2
+      ],
+      "epochValues": [
+        1
+      ],
+      "pendingBytesMax": 386,
+      "hostFrameEquivalentPerSec": 55.130349459318985,
+      "guestFrameEquivalentPerSec": 55.130349459318985
+    },
+    "secondRelayCapture": {
+      "schema": "station.pxl1-current-link-timing.v1",
+      "events": 9098,
+      "connections": 2,
+      "epochs": [
+        1
+      ],
+      "nativeKinds": {
+        "7": 2275,
+        "1": 1136,
+        "2": 1138
+      },
+      "hostFrames": 1138,
+      "hostFramesPerSecond": 45.51739361608763,
+      "missingHostFrameNumbers": 0,
+      "relayForwardMs": {
+        "n": 4549,
+        "min": 0.07605552673339844,
+        "median": 0.2830028533935547,
+        "mean": 0.26521553807689424,
+        "p90": 0.33593177795410156,
+        "p99": 0.38886070251464844,
+        "max": 0.4420280456542969
+      },
+      "hostFrameSpacingMs": {
+        "n": 1137,
+        "min": 0.0,
+        "median": 17.004013061523438,
+        "mean": 21.969623490185096,
+        "p90": 38.2380485534668,
+        "p99": 65.32001495361328,
+        "max": 126.3420581817627
+      },
+      "hostFrameArrivedAfterRemoteInputMs": {
+        "n": 1136,
+        "min": 10.216951370239258,
+        "median": 34.26253795623779,
+        "mean": 37.28331541511375,
+        "p90": 55.908918380737305,
+        "p99": 80.2450180053711,
+        "max": 116.00494384765625
+      },
+      "guestExecutedAfterHostFrameMs": {
+        "n": 1134,
+        "min": 27.317047119140625,
+        "median": 58.426856994628906,
+        "mean": 60.23474366156092,
+        "p90": 78.04083824157715,
+        "p99": 104.77304458618164,
+        "max": 147.78995513916016
+      },
+      "guestNewInputAfterCausalHostFrameMs": {
+        "n": 1133,
+        "min": 36.15212440490723,
+        "median": 69.57101821899414,
+        "mean": 72.6563166646124,
+        "p90": 95.50714492797852,
+        "p99": 117.59090423583984,
+        "max": 159.81698036193848
+      },
+      "hostInputAdmissionRoundtripMs": {
+        "n": 1136,
+        "min": 2.994060516357422,
+        "median": 6.361484527587891,
+        "mean": 8.380803004117078,
+        "p90": 11.626005172729492,
+        "p99": 40.06505012512207,
+        "max": 47.17302322387695
+      },
+      "guestFrameAdmissionRoundtripMs": {
+        "n": 1134,
+        "min": 3.4379959106445312,
+        "median": 47.0808744430542,
+        "mean": 44.33796330103799,
+        "p90": 67.92306900024414,
+        "p99": 78.02295684814453,
+        "max": 147.5238800048828
+      },
+      "nativePadAndStatePayloadRetained": false
+    },
+    "humanObservedResult": "Continua lento ou travando; não teve nenhuma melhora",
+    "diagnosedSlowdownResolved": false,
+    "gameplayApproved": false,
+    "stable": false,
+    "wifiWasSoleCause": false,
+    "nextScopeRequestedByUser": "Web research: best PSX online emulator and how its netplay works; no second candidate change applied",
+    "rawLogsSerialsCredentialsIncluded": false
+  },
+  "containsCredentialsSerialsOrRawLogs": false,
+  "installedOnBothPhones": true,
+  "stable": false,
+  "slowdownResolved": false,
+  "receiptSnapshotsAreHistorical": true,
+  "receiptSnapshotExplanation": "The apk/privateKit objects retain the exact original build-time receipts. Current installation and enrollment are proved separately in phones/server; build-time false flags are not current status.",
+  "research": {
+    "scope": "User requested comparison of PSX netplay emulators and how they work. Research only; no second emulator/protocol migration applied.",
+    "androidFirstComparisonCandidate": "Full RetroArch frontend with PCSX ReARMed official netplay; recommendation for a controlled comparison, not a validated performance fix on these phones.",
+    "androidCandidateConfidence": "PCSX official core page declares netplay and current metadata declares deterministic save states, while the general RetroArch FAQ still warns against PSX performance. Actual same-phone validation is required.",
+    "desktopReference": "DuckStation Netplay with Arkadyzja; official beta lists Windows/Linux, direct peers with relay fallback and rollback for supported PSX titles. No ready Android client verified.",
+    "otherCandidates": {
+      "Beetle PSX": "Current metadata declares deterministic save states but describes greater CPU cost than PCSX ReARMed.",
+      "SwanStation": "Current metadata still declares basic save states; netplay request #169 remains open. Changing only an info flag is not a verified fix.",
+      "ePSXe Android": "Official documentation describes local Wi-Fi/Wi-Fi Direct netplay; not evidence of a drop-in internet relay for Station.",
+      "Mednafen": "Documented native client/server netplay; desktop reference, no ready official Android Station replacement verified."
+    },
+    "architecturalDifference": "Station uses its own PXL1/station-stream.v3 lockstep and not RetroArch netplay. RetroArch documents state serialization, prediction, rollback/replay and catch-up; a Libretro core alone does not provide that frontend.",
+    "proposedAcceptanceComparison": [
+      "Same two phones, same exact game/core/BIOS/options and measured emulation/audio speed offline and online",
+      "Use full official netplay implementation as an isolated reference before changing Station code",
+      "Compare direct LAN then internet/relay and both host directions to separate endpoint/synchronizer from external path",
+      "Require sustained correct game speed and usable sound/controls/exit before approving a replacement"
+    ],
+    "sources": [
+      "https://docs.libretro.com/library/pcsx_rearmed/",
+      "https://raw.githubusercontent.com/libretro/libretro-super/master/dist/info/pcsx_rearmed_libretro.info",
+      "https://docs.libretro.com/development/retroarch/netplay/",
+      "https://docs.libretro.com/guides/netplay-faq/",
+      "https://arkadyzja.honmaru.pl/",
+      "https://www.honmaru.pl/en/arkadyzja/",
+      "https://raw.githubusercontent.com/libretro/libretro-super/master/dist/info/mednafen_psx_libretro.info",
+      "https://raw.githubusercontent.com/libretro/libretro-super/master/dist/info/swanstation_libretro.info",
+      "https://github.com/libretro/swanstation/issues/169",
+      "https://www.epsxe.com/android/changelog.html",
+      "https://mednafen.github.io/documentation/netplay.html"
+    ],
+    "emulatorOrProtocolChangedAfterFailedR171Test": false
+  }
+}
