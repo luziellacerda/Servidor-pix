@@ -1,3 +1,28 @@
+<!-- STATION-R170-BOTH-PHONES-INSTALLED-20261017 -->
+## Moto g52 e Samsung A56 estão com a mesma R170
+
+Por pedido explícito do proprietário, o segundo aparelho USB, Samsung A56
+(SM-A566E/Android36/arm64), recebeu atualização11→12 preservando o mesmo UID
+Android, sem desinstalação, limpeza de dados, downgrade ou permissões globais.
+O Moto g52/Android33 já havia sido atualizado e conferido. Os dois `base.apk`
+foram lidos individualmente e conferem com o APK R170 assinado original:
+`42533ba2b53532be38872bcb97a07b0647e5a9b6091b565a1af7292f390be1c3`, versão`1.0.8-R170`/12.
+A abertura do Samsung passou, com atividade do Station retomada, processo vivo
+após5s e sem exceção fatal observada. Não afirmar autenticação ou gameplay
+homologados por causa da instalação. Não reinstalar nenhum dos dois sem motivo.
+
+API/cadastro R170 continuam prontos e inalterados. Agora falta o piloto online
+com ambos os anfitriões, quadro/som/controles/saída, além da interface do
+atualizador Android. A oferta geral de APK continua sem versão publicada.
+Recibo atual em r170/second-installation.json; o primeiro installation.json
+registra a etapa anterior, de um aparelho. Autoridade privada:
+/mnt/DADOS/station-r170-usb-second-20261017/installed-verified.json.
+Esta instalação foi autorizada para o segundo telefone; não é autorização
+permanente para instalar outros aparelhos automaticamente.
+
+
+## Histórico preservado
+
 <!-- STATION-R170-MOTO-INSTALLED-20261017 -->
 ## R170 instalada no Moto g52 por pedido explícito do proprietário
 
