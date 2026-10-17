@@ -1,3 +1,28 @@
+<!-- STATION-R170-MOTO-INSTALLED-20261017 -->
+## R170 instalada no Moto g52 por pedido explícito do proprietário
+
+O usuário pediu instalar no telefone conectado a este Linux. Foi instalado o
+APK R170 já assinado, sem recompilar ou alterar o servidor. Moto g52/Android33,
+arm64-v8a:11→12, `1.0.8-R170`. SHA do `base.apk` lido no próprio aparelho:
+`42533ba2b53532be38872bcb97a07b0647e5a9b6091b565a1af7292f390be1c3`. A R169 anterior também foi identificada pelo hash.
+Atualização USB com `adb install -r --streaming`, sucesso; mesmo UID preservado,
+sem desinstalação, limpeza de dados, downgrade ou concessão global de permissões.
+A abertura chegou à LoginActivity, processo vivo e sem exceção fatal observada;
+a tela estava com bloqueio/AOD. Não afirmar login autenticado, catálogo, partida
+ou desempenho aprovados. Não repetir a instalação no Moto sem motivo.
+
+A instalação R170 do Samsung A56 ainda não foi comprovada; apenas um aparelho
+foi atualizado nesta etapa. Não marcar os dois como R170. Instalação USB neste
+aparelho foi autorizada expressamente; isso não autoriza atualizar outros
+telefones automaticamente. Continuam pendentes piloto com ambos os anfitriões,
+imagem/som/controles/saída e interface do atualizador Android. API/cadastro R170
+permanecem concluídos e a oferta geral de APK continua sem versão publicada.
+Recibo agregado em r170/installation.json; autoridade privada local
+/mnt/DADOS/station-r170-usb-install-20261017/installed-verified.json.
+
+
+## Histórico preservado
+
 <!-- STATION-R170-SERVER-APPLIED-20261017 -->
 ## R170 aplicada: autoridade atual, sem repetir o operador
 
