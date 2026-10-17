@@ -1,0 +1,116 @@
+{
+  "schema": "station.stable.checkpoint.v1",
+  "revision": "R172",
+  "stable": true,
+  "ownerApproval": {
+    "utc": "2026-10-17T18:03:19.204774+00:00",
+    "source": "explicit owner request in this conversation",
+    "text": "salva backup como estavel",
+    "revision": "R172",
+    "apkSha256": "4a92627952a4f9673ff402667825fcb1f926aaf85a44bef7882559f000c56c5b",
+    "scope": "Owner-designated stable recovery point after the measured and reported Capcom vs. SNK two-phone improvement; not a new all-platform compatibility test or public updater release"
+  },
+  "tagAndBranch": "estavel-station-r172-20261017",
+  "previousStableTagsPreserved": [
+    "estavel-station-r143-20261013",
+    "estavel-station-r157-20261014",
+    "estavel-station-r164-20261015"
+  ],
+  "frozenCompilationSource": "8317792fa231831f788cb10b7061bb11bc9fa97d",
+  "appPayloadBeforeStableMetadata": "1c9fb2152df653ac07b5d5f5480e7c36f946ee2b",
+  "serverPayloadBeforeStableMetadata": "337543c3076cc9c4f5a419bbb855053408470a5b",
+  "apk": {
+    "backupRelativePath": "apk/TurboStations-Premium-R172-ESTAVEL.apk",
+    "sha256": "4a92627952a4f9673ff402667825fcb1f926aaf85a44bef7882559f000c56c5b",
+    "bytes": 2714238050,
+    "versionCode": 14,
+    "versionName": "1.0.8-R172",
+    "certificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+    "v2": true,
+    "v3": true,
+    "zipAlignment16KiB": true,
+    "installedShaVerifiedOn": [
+      "Moto g52",
+      "Samsung A56"
+    ]
+  },
+  "privateKitSha256": "cd0a4e43bd48a04cc5b8fc72e9a8236f737f13ed0e46a5eb556774d1d8e326be",
+  "server": {
+    "effectiveApiSourceCommit": "770e9765106403de38114423fec43527c3867517",
+    "effectiveApiDllSha256": "f8303b6dc41216213d8824f59d729f9269499fdade66e4fe9c2abfe79e8bc495",
+    "registrationToolsSourceCommit": "09954af1901d6ae5a9e34d29ed8d4dfd6b66b67a",
+    "dataRevision": "R172",
+    "applied": true,
+    "counts": {
+      "catalogRevision": 100,
+      "catalogItems": 4744,
+      "engines": 107,
+      "profiles": 18864,
+      "modes": 13457
+    },
+    "engineIds": {
+      "psx": "pcsx-rearmed-ff81ed17-player-v3-7a14d3a4d304",
+      "n64": "mupen64plus-ae-33bf7021-n64-v3-8cfc9b1a45d4",
+      "gamecube": "dolphin-5102a033-gamecube-v3-ff5113148661",
+      "wii": "dolphin-5102a033-wii-v3-ff5113148661"
+    },
+    "controllerProfileSha256": {
+      "psx": "86f543015f84ca292c6853d10cbc58e4869b825520dbff117a4868bf18637683",
+      "n64": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
+      "gamecube": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+      "wii": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed"
+    }
+  },
+  "observedPhysicalTest": {
+    "game": "Capcom vs. SNK VS",
+    "phones": [
+      "Moto g52",
+      "Samsung A56"
+    ],
+    "nativeFrameRateEquivalent": {
+      "host": {
+        "acceptedBytesDelta": 111734,
+        "expectedStableBytesPerNativeFrame": 78,
+        "nativeFrameRateEquivalent": 59.86930194940527
+      },
+      "guest": {
+        "acceptedBytesDelta": 108908,
+        "expectedStableBytesPerNativeFrame": 76,
+        "nativeFrameRateEquivalent": 59.89073474585019
+      }
+    },
+    "audioSpeedPercent": {
+      "moto_g52": 99.65817313622435,
+      "SM_A566E": 99.90449790763122
+    },
+    "ownerReport": "tivemos grandes melhoras",
+    "allGamesOrHostRolesValidated": false,
+    "explicitControlsAndHostExitValidated": false
+  },
+  "functionalDelta": {
+    "psxInputDelayFrames": {
+      "before": 4,
+      "after": 8
+    },
+    "additionalNominalControlLatencyMilliseconds": 66.67,
+    "frameskipEnabled": false,
+    "emulatedClockChanged": false,
+    "n64LogicChanged": false
+  },
+  "privateBackup": {
+    "directory": "/mnt/DADOS/station-estavel-r172-20261017",
+    "inventory": "INVENTARIO-SHA256.json",
+    "verification": "VERIFICACAO-FINAL.json",
+    "containsIndependentFileCopies": true,
+    "gitBundles": [
+      "codigo/TurboElden-R172-ESTAVEL.bundle",
+      "codigo/Servidor-pix-R172-ESTAVEL.bundle"
+    ],
+    "includesExactCompilationDonorInputsAndToolchain": true,
+    "sameLocalDataVolume": true,
+    "licenseDatabaseOrWholePcBackup": false
+  },
+  "stableDesignationChangesApkBytes": false,
+  "recompiledOrReinstalledForDesignation": false,
+  "productionUpdaterEnabled": false
+}

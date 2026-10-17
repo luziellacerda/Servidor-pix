@@ -1,7 +1,7 @@
 {
   "schema": "station.r172.server-return.v1",
   "utc": "2026-10-17T17:46:50.004250+00:00",
-  "status": "physical-psx-improvement-measured-and-owner-reported",
+  "status": "owner-designated-stable-r172-recovery-point",
   "revision": "R172",
   "sourceCommit": "8317792fa231831f788cb10b7061bb11bc9fa97d",
   "serverOperatorSourceCommit": "09954af1901d6ae5a9e34d29ed8d4dfd6b66b67a",
@@ -129,7 +129,7 @@
   },
   "serverApplied": true,
   "installedOnMeasuredPhones": true,
-  "physicalPerformanceApproved": false,
+  "physicalPerformanceApproved": true,
   "currentlyInstalledRevision": "R172",
   "currentlyAppliedServerRevision": "R172",
   "functionalDelta": {
@@ -160,7 +160,7 @@
     "https://docs.libretro.com/library/pcsx_rearmed/",
     "https://docs.libretro.com/development/retroarch/netplay/"
   ],
-  "stable": false,
+  "stable": true,
   "productionUpdaterEnabled": false,
   "measuredBaseline": {
     "revision": "R171",
@@ -408,7 +408,18 @@
     },
     "allGamesValidated": false,
     "bothHostRolesValidated": false,
-    "stablePromoted": false,
+    "stablePromoted": true,
     "noSettingChangedDuringCapture": true
-  }
+  },
+  "stableDesignation": {
+    "utc": "2026-10-17T18:03:19.204774+00:00",
+    "source": "explicit owner request in this conversation",
+    "text": "salva backup como estavel",
+    "revision": "R172",
+    "apkSha256": "4a92627952a4f9673ff402667825fcb1f926aaf85a44bef7882559f000c56c5b",
+    "scope": "Owner-designated stable recovery point after the measured and reported Capcom vs. SNK two-phone improvement; not a new all-platform compatibility test or public updater release"
+  },
+  "stableTagAndBranch": "estavel-station-r172-20261017",
+  "stableBackupDirectory": "/mnt/DADOS/station-estavel-r172-20261017",
+  "physicalPerformanceApprovalScope": "Owner-approved stable recovery point for the observed two-phone Capcom vs. SNK improvement; existing explicit control/exit/all-game limits preserved"
 }

@@ -1,3 +1,20 @@
+<!-- STATION-R172-OWNER-STABLE-20261017 -->
+## R172 estável por aprovação expressa do proprietário
+
+Pedido posterior ao piloto: “salva backup como estavel”. A R172 é agora a
+referência estável de recuperação. Tag e ramo `estavel-station-r172-20261017`;
+fonte compilada8317792, mesmo APK4a926279/version14 já instalado nos dois.
+Checkpoint privado `/mnt/DADOS/station-estavel-r172-20261017`, com cópias
+independentes/verificadas, insumos/ferramentas/assinatura, kit/cadastro/release
+da API, provas e bundles Git. Não recompilar, reinstalar ou recadastrar.
+
+A designação estável é do proprietário; conserva os limites do teste físico
+descritos abaixo e não simula homologação de todos os jogos ou saídas. Este
+backup não publica atualização geral nem altera a partida ativa. Versões e
+tags anteriores preservadas. Ver manifesto/checkpoint R172 e ESTAVEL.md.
+
+## Histórico preservado
+
 <!-- STATION-R172-PHYSICAL-IMPROVEMENT-20261017 -->
 ## R172 nos dois aparelhos: melhora PSX medida e relatada
 
