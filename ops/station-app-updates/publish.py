@@ -116,7 +116,7 @@ def inspect(apk, aapt, signer, require_module=False, zipalign=None):
 
 def registered(apk, registry):
     registry = regular(registry)
-    if not registry.is_file() or registry.stat().st_size > 17 * 1024**2:
+    if not registry.is_file() or registry.stat().st_size > 18 * 1024**2:
         raise ValueError('Effective profile registry is missing or excessive')
     profiles = load_json(registry.read_text())
     if not isinstance(profiles, list):

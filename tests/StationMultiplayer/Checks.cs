@@ -170,10 +170,10 @@ try{
     using(var padded=File.Create(path)){
         padded.Write(validRegistry);
         var whitespace=new byte[65536];Array.Fill(whitespace,(byte)' ');
-        long remaining=16L*1024*1024+1-validRegistry.Length;
+        long remaining=17L*1024*1024+1-validRegistry.Length;
         while(remaining>0){int amount=(int)Math.Min(remaining,whitespace.Length);padded.Write(whitespace,0,amount);remaining-=amount;}
     }
-    Check(StationMultiplayerProfileMonitor.Read(path).Length==1,"R169 registry over old 16 MiB limit loads valid profiles");
+    Check(StationMultiplayerProfileMonitor.Read(path).Length==1,"R170 registry over old 17 MiB limit loads valid profiles");
     using(var oversized=File.OpenWrite(path))oversized.SetLength(StationMultiplayerProfileMonitor.MaximumRegistryBytes+1);
     checks++;try{StationMultiplayerProfileMonitor.Read(path);throw new Exception("Expected profile registry bound");}catch(InvalidOperationException){}
 }finally{Directory.Delete(profileDirectory,true);}

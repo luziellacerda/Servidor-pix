@@ -8,7 +8,7 @@ namespace TurboRamaSuiteOnlineServer;
 public sealed class StationMultiplayerProfileMonitor(string path, StationMultiplayer hub,
     ILogger<StationMultiplayerProfileMonitor> logger) : BackgroundService
 {
-    public const long MaximumRegistryBytes = 17L * 1024 * 1024;
+    public const long MaximumRegistryBytes = 18L * 1024 * 1024;
     private readonly object gate = new();
     // Force one read after registration so a publication between the initial
     // load and monitor construction cannot be mistaken for an unchanged file.

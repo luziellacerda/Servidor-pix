@@ -30,7 +30,7 @@ MAXIMUM_TRUSTED_ENGINES = 256
 MAXIMUM_TRUSTED_MANIFEST_BYTES = 1024 * 1024
 MAXIMUM_PROFILE_CONTENT_BYTES = 256 * 1024
 MAXIMUM_PREPARED_MODE_BYTES = 9 * 1024 * 1024
-MAXIMUM_PROFILE_REGISTRY_BYTES = 17 * 1024 * 1024
+MAXIMUM_PROFILE_REGISTRY_BYTES = 18 * 1024 * 1024
 MODE_FIELDS = ('profileId','maximumPlayers','allowedPlayerCounts','approved',
                'controllerProfile','mode','modeTitle','instructions','sources')
 
