@@ -1,0 +1,758 @@
+{
+  "schema": "station.gamecube.complete-review.v1",
+  "reviewDate": "2026-10-17",
+  "catalogRevision": 100,
+  "items": [
+    {
+      "itemId": "station_12b835c9539b4800a6bb29ca00a25f94",
+      "name": "Legend of Zelda, The - The Wind Waker (Europe) (En,Fr,De,Es,It)",
+      "contentSha256": "3106a01516f59854a55fd6343da8b0f489ca8cfc523f300bb1913d7f1c602a2f",
+      "visible": false,
+      "format": null,
+      "gameId": null,
+      "discNumber": null,
+      "revision": null,
+      "classification": "hidden-preserved",
+      "onlineHumanCounts": [],
+      "modes": []
+    },
+    {
+      "itemId": "station_fa0e2bebbc9125b3ef593e1e2911716c",
+      "name": "Legend of Zelda, The - Twilight Princess (Europe) (En,Fr,De,Es,It)",
+      "contentSha256": "490ef919f413e00daedb4711777c3be05ef9afc12c7acca7675c721c9393c814",
+      "visible": true,
+      "format": "iso",
+      "gameId": "GZ2E01",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "individual",
+      "onlineHumanCounts": [],
+      "modes": [
+        {
+          "profileId": "gc-reviewed-solo-20261017",
+          "mode": "solo",
+          "modeTitle": "Campanha individual",
+          "maximumPlayers": 1,
+          "allowedPlayerCounts": [],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-Twilight-Princess-269050.html"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_40c36e432a90826b84bc401acd61b81f",
+      "name": "Luigi's Mansion (Europe) (En,Fr,De,Es,It)",
+      "contentSha256": "089df26c394fa215cdf91a50f6d7119c5ea9d234ccef0b9f790126d3f8eacbf8",
+      "visible": true,
+      "format": "iso",
+      "gameId": "GLME01",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "individual",
+      "onlineHumanCounts": [],
+      "modes": [
+        {
+          "profileId": "gc-reviewed-solo-20261017",
+          "mode": "solo",
+          "modeTitle": "Campanha individual",
+          "maximumPlayers": 1,
+          "allowedPlayerCounts": [],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Luigi-s-Mansion-268236.html"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+      "name": "Mario Kart - Double Dash!! (Europe) (En,Fr,De,Es,It)",
+      "contentSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26",
+      "visible": true,
+      "format": "iso",
+      "gameId": "GM4E01",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "multiplayer-standard-controller",
+      "onlineHumanCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "prepared-local-1-20261009-owner-463f75f3511d",
+          "mode": "local-multiplayer",
+          "modeTitle": "Corrida local",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "Mais de quatro envolve LAN com vários consoles/TVs; não é um Multitap.",
+            "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_621bec6947fa88fea7d71e07e1ce524a",
+      "name": "Mario Party 7 (Europe) (En,Fr,De,Es,It)",
+      "contentSha256": "ba4def2b26b2aebd3c6e7ae6628767cb64c071034a9c9aa48628b94042ceb91a",
+      "visible": true,
+      "format": "iso",
+      "gameId": "GP7E01",
+      "discNumber": 0,
+      "revision": 1,
+      "classification": "multiplayer-standard-controller",
+      "onlineHumanCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-mp7-standard4-v1-owner-463f75f3511d",
+          "mode": "party-cruise-4p",
+          "modeTitle": "Mario Party7: Battle Royale até quatro",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "Use Party Cruise em Battle Royale ou Minigame Cruise comum; cada pessoa ocupa uma porta GameCube.",
+            "No Control Room, deixe Mic desligado: esse modo não depende de microfone.",
+            "Não selecione 4-Team Battle, Deluxe Cruise ou minigames de oito jogadores: o adaptador não divide um controle entre duas pessoas."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Party-7-268313.html",
+            "https://www.scribd.com/document/733198408/Mario-Party-7"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_d747bcef157e06fdaa603277f4a0fa38",
+      "name": "Metroid Prime",
+      "contentSha256": "a7f2d6d8ce2003a9ddd7452ad8f7e21dbc3db917b1dbe011c2ad353a1027ee3a",
+      "visible": true,
+      "format": "iso",
+      "gameId": "GM8P01",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "individual",
+      "onlineHumanCounts": [],
+      "modes": [
+        {
+          "profileId": "gc-reviewed-solo-20261017",
+          "mode": "solo",
+          "modeTitle": "Campanha individual",
+          "maximumPlayers": 1,
+          "allowedPlayerCounts": [],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Metroid-Prime-268423.html"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_b4ee8d06c9390aad9464023b6459fd35",
+      "name": "Pikmin 2",
+      "contentSha256": "2c81bb89dfa3246215093b9ba78681e93697605e0eec3acd1de0e27890cde41e",
+      "visible": true,
+      "format": "iso",
+      "gameId": "GPVE01",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "multiplayer-standard-controller",
+      "onlineHumanCounts": [
+        2
+      ],
+      "modes": [
+        {
+          "profileId": "review-3741-local2-v1-owner-463f75f3511d",
+          "mode": "local-2p",
+          "modeTitle": "Pikmin2: multijogador local",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "Escolha o modo local de dois jogadores; a campanha individual não ganha um segundo jogador.",
+            "Cada participante usa uma porta GameCube independente; ambos precisam da mesma edição e conteúdo."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Pikmin-2-268544.html"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_aff0fdd0e252567e690275501f5c3e41",
+      "name": "Prince of Persia -Two Thrones",
+      "contentSha256": "15a6747ae101c712f1b4d11b6a2e34028c70e1a1eddd89b4ca1be46f7c6e380e",
+      "visible": true,
+      "format": "iso",
+      "gameId": "GKME41",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "individual",
+      "onlineHumanCounts": [],
+      "modes": [
+        {
+          "profileId": "gc-reviewed-solo-20261017",
+          "mode": "solo",
+          "modeTitle": "Campanha individual",
+          "maximumPlayers": 1,
+          "allowedPlayerCounts": [],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online."
+          ],
+          "sources": [
+            "https://www.ubisoft.com/en-gb/games/prince-of-persia-the-two-thrones"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_f66a5e4cda2b3d810af00fbf96712a35",
+      "name": "Resident Evil - Code - Veronica X (PT-BR DUB) - (Disc1)",
+      "contentSha256": "dc8cd7550c0c2448a0f5555db1a7bbd38af0bb1001839b99bf221ab8eb54572f",
+      "visible": true,
+      "format": "rvz",
+      "gameId": null,
+      "discNumber": null,
+      "revision": null,
+      "classification": "individual",
+      "onlineHumanCounts": [],
+      "modes": [
+        {
+          "profileId": "gc-reviewed-solo-20261017",
+          "mode": "solo",
+          "modeTitle": "Campanha individual",
+          "maximumPlayers": 1,
+          "allowedPlayerCounts": [],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+            "Os discos 1 e 2 pertencem à mesma aventura individual; não são dois jogadores. A edição dublada permanece vinculada ao seu conteúdo exato."
+          ],
+          "sources": [
+            "https://www.gamesdatabase.org/Media/SYSTEM/Nintendo_GameCube//Manual/formated/Resident_Evil_-_Code_Veronica_X_-_2003_-_Capcom.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_844acd6d2419cc61a21b8a1630fda73a",
+      "name": "Resident Evil - Code - Veronica X (PT-BR DUB) - (Disc2)",
+      "contentSha256": "635d1ad5edc6fcfe22a1a63bd029f78ccf4f6960136652a85fb6a62c79e161c0",
+      "visible": true,
+      "format": "rvz",
+      "gameId": null,
+      "discNumber": null,
+      "revision": null,
+      "classification": "individual",
+      "onlineHumanCounts": [],
+      "modes": [
+        {
+          "profileId": "gc-reviewed-solo-20261017",
+          "mode": "solo",
+          "modeTitle": "Campanha individual",
+          "maximumPlayers": 1,
+          "allowedPlayerCounts": [],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+            "Os discos 1 e 2 pertencem à mesma aventura individual; não são dois jogadores. A edição dublada permanece vinculada ao seu conteúdo exato."
+          ],
+          "sources": [
+            "https://www.gamesdatabase.org/Media/SYSTEM/Nintendo_GameCube//Manual/formated/Resident_Evil_-_Code_Veronica_X_-_2003_-_Capcom.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_22a388607337c6c0e10eef23327760e7",
+      "name": "Resident Evil 4 (Disco 1)",
+      "contentSha256": "7c428fe1f485019fa584330ca4bc6fbce7434eb947d8fd8cc07d5160d1290fa4",
+      "visible": true,
+      "format": "iso",
+      "gameId": "G4BP08",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "individual",
+      "onlineHumanCounts": [],
+      "modes": [
+        {
+          "profileId": "gc-reviewed-solo-20261017",
+          "mode": "solo",
+          "modeTitle": "Campanha individual",
+          "maximumPlayers": 1,
+          "allowedPlayerCounts": [],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+            "Campanha, Assignment Ada e Mercenaries desta versão são individuais. Os discos 1 e 2 não são duas vagas de jogador."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Resident-Evil-4-268665.html"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_a60084aefb098972edfbfa9103ff9f0f",
+      "name": "Resident Evil 4 (Disco 2)",
+      "contentSha256": "3a64ac1c48af6916b2b0c033d827cc4920feb25d1723620f83d9f63810a14f41",
+      "visible": true,
+      "format": "iso",
+      "gameId": "G4BP08",
+      "discNumber": 1,
+      "revision": 0,
+      "classification": "individual",
+      "onlineHumanCounts": [],
+      "modes": [
+        {
+          "profileId": "gc-reviewed-solo-20261017",
+          "mode": "solo",
+          "modeTitle": "Campanha individual",
+          "maximumPlayers": 1,
+          "allowedPlayerCounts": [],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+            "Campanha, Assignment Ada e Mercenaries desta versão são individuais. Os discos 1 e 2 não são duas vagas de jogador."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Resident-Evil-4-268665.html"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_2e3dc618c01206375b812abb1d55f69e",
+      "name": "Sonic Heroes (DUB)",
+      "contentSha256": "a5b119047f391bdabd5c3b258aed30167ca955d808e7628142a05cbb07d88254",
+      "visible": true,
+      "format": "iso",
+      "gameId": "G9SE8P",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "multiplayer-standard-controller",
+      "onlineHumanCounts": [
+        2
+      ],
+      "modes": [
+        {
+          "profileId": "review-3747-local2-v1-owner-463f75f3511d",
+          "mode": "local-2p",
+          "modeTitle": "Sonic Heroes: dois jogadores",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "Escolha um modo de competição para dois jogadores; não selecionar três ou quatro assentos.",
+            "A edição DUB permanece vinculada ao conteúdo exato do catálogo; esta evidência documental não é teste dessa edição no telefone."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Sonic-Heroes-268742.html"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_3c9c45df9a48170befa8a0d719e6ce2e",
+      "name": "Sonic_Adventure_2",
+      "contentSha256": "c5b45e1231d554e423a7f842692c31e8e2952d142fbd3bd89f11d2f1ccb943cd",
+      "visible": true,
+      "format": "iso",
+      "gameId": "GSNE8P",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "multiplayer-standard-controller",
+      "onlineHumanCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "review-sa2-battle2-v1-owner-463f75f3511d",
+          "mode": "battle-2p",
+          "modeTitle": "Sonic Adventure2: Battle para dois",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "Escolha 2P Battle; ação, caça, tiro, kart e Chao Karate deste modo usam dois jogadores.",
+            "Três ou quatro jogadores pertencem ao modo Chao Party Race, não a este Battle."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Sonic-Adventure-2-Battle-268709.html",
+            "https://manuals.plus/m/25fee396fca2f1e899f5d0b83bb30d2076fcba00c82cd2b735ff1ea35f4887ad"
+          ]
+        },
+        {
+          "profileId": "review-sa2-chaorace4-v1-owner-463f75f3511d",
+          "mode": "chao-party-race",
+          "modeTitle": "Chao Party Race: até quatro",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "Escolha Chao Race em 2P Battle e o tipo Party Race, com dados de Chao disponíveis no Memory Card.",
+            "Conecte uma porta por participante; os jogadores impulsionam seu Chao com A.",
+            "Beginner Race é individual; Party Race não habilita campanha ou Battle de ação para quatro."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Sonic-Adventure-2-Battle-268709.html",
+            "https://manuals.plus/m/25fee396fca2f1e899f5d0b83bb30d2076fcba00c82cd2b735ff1ea35f4887ad"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_5ef747e4fd8c83fa197b2b2492c24088",
+      "name": "Star Fox - Assault",
+      "contentSha256": "d38681a0c86b34d267b0c0934a773a26af82d61265208ef21769a89898248330",
+      "visible": true,
+      "format": "iso",
+      "gameId": "GF7E01",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "multiplayer-standard-controller",
+      "onlineHumanCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "prepared-local-1-20261009-owner-463f75f3511d",
+          "mode": "local-multiplayer",
+          "modeTitle": "Versus",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "Campanha individual; quatro pessoas somente multiplayer de tela dividida.",
+            "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Star-Fox-Assault-268874.html"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_2dc88daf495305000e730a205a1f06b6",
+      "name": "Super Smash Bros. Melee (Europe) (En,Fr,De,Es,It)",
+      "contentSha256": "0de05981a34156b9cedcef73c73d4244ac05cf6149ab3c9cfed917698819e464",
+      "visible": true,
+      "format": "iso",
+      "gameId": "GALE01",
+      "discNumber": 0,
+      "revision": 2,
+      "classification": "multiplayer-standard-controller",
+      "onlineHumanCounts": [
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        {
+          "profileId": "prepared-local-1-20261009-owner-463f75f3511d",
+          "mode": "local-multiplayer",
+          "modeTitle": "Versus",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "Escolha VS MODE para duas a quatro pessoas. Os modos de aventura permanecem individuais.",
+            "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Super-Smash-Bros-Melee-268951.html"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_d917b5d884654040babaf93bb5cbbd92",
+      "name": "Terminator 3 - The Redemption",
+      "contentSha256": "3ce8a256ea8b5ed55496fc9d00d3732bf50da009b3b6c9174355bfec341467e6",
+      "visible": true,
+      "format": "iso",
+      "gameId": "GT6E70",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "multiplayer-standard-controller",
+      "onlineHumanCounts": [
+        2
+      ],
+      "modes": [
+        {
+          "profileId": "gc-reviewed-solo-20261017",
+          "mode": "solo",
+          "modeTitle": "Campanha individual",
+          "maximumPlayers": 1,
+          "allowedPlayerCounts": [],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+            "Para duas pessoas, escolha o modo Tech-Com Force, cadastrado separadamente. A campanha principal continua individual."
+          ],
+          "sources": [
+            "https://www.gamesdatabase.org/Media/SYSTEM/Nintendo_GameCube//Manual/formated/Terminator_3_-_The_Redemption_-_2004_-_Atari.pdf"
+          ]
+        },
+        {
+          "profileId": "gc-tech-com-force-20261017",
+          "mode": "tech-com-force",
+          "modeTitle": "Tech-Com Force: cooperativo para dois",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "No menu principal, selecione Tech-Com Force. Esse minijogo de tiro permite duas pessoas cooperando no helicóptero contra as forças da Skynet.",
+            "Cada celular ocupa uma entrada de controle GameCube. Use duas vagas; a campanha principal permanece individual.",
+            "Modo documentado no manual original do GameCube, páginas 5 e 9. Cadastro e transporte não substituem o teste nos aparelhos."
+          ],
+          "sources": [
+            "https://www.gamesdatabase.org/Media/SYSTEM/Nintendo_GameCube//Manual/formated/Terminator_3_-_The_Redemption_-_2004_-_Atari.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_6b08767479d6f0715130e250c878b2a9",
+      "name": "The Legend of Zelda - Twilight Princess",
+      "contentSha256": "7996d841021a93979ddf9203a7662a379ba83c71b8f40674f348f0e6393c4f9c",
+      "visible": true,
+      "format": "gcm",
+      "gameId": "GZ2E01",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "individual",
+      "onlineHumanCounts": [],
+      "modes": [
+        {
+          "profileId": "gc-reviewed-solo-20261017",
+          "mode": "solo",
+          "modeTitle": "Campanha individual",
+          "maximumPlayers": 1,
+          "allowedPlayerCounts": [],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-Twilight-Princess-269050.html"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_211df505e8c566432c4ffeda71c84a82",
+      "name": "The Legend of Zelda Four Swords Adventures",
+      "contentSha256": "4b948d6059ff3d21048b3efa5a202cd5caf3a588f11e9a601a54c937f58a6e0b",
+      "visible": true,
+      "format": "iso",
+      "gameId": "G4SE01",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "individual-with-gba-mode-unavailable",
+      "onlineHumanCounts": [],
+      "modes": [
+        {
+          "profileId": "gc-reviewed-solo-20261017",
+          "mode": "solo",
+          "modeTitle": "Campanha individual",
+          "maximumPlayers": 1,
+          "allowedPlayerCounts": [],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+            "Aqui um jogador usa o controle GameCube e comanda os quatro Links. O modo multiplayer exige Game Boy Advance e está descrito separadamente."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-Four-Swords-Adventures-269028.html",
+            "https://dolphin-emu.org/docs/guides/netplay-guide/"
+          ]
+        },
+        {
+          "profileId": "gc-fsa-gba-required-20261017",
+          "mode": "gba-adventure",
+          "modeTitle": "Aventura para dois a quatro: exige GBA",
+          "maximumPlayers": 4,
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "approved": false,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "O multiplayer de Four Swords Adventures exige um Game Boy Advance por participante, com sua própria tela e conexão ao GameCube.",
+            "O perfil atual do app transmite quatro controles GameCube e não oferece as telas e os controles GBA. Por isso este modo não libera sala nesta instalação.",
+            "O modo individual com controle GameCube continua disponível no jogo normal. Não escolha quatro controles comuns como substituição dos GBAs."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-Four-Swords-Adventures-269028.html",
+            "https://dolphin-emu.org/docs/guides/netplay-guide/"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_d0a6aa65e5900ba9167a200f8dccfae5",
+      "name": "The Legend of Zelda The Wind Waker",
+      "contentSha256": "3ea3cc8f62acfaafe2d2adb96090bf87cfabd01f89e0631d571517faf670d5f1",
+      "visible": true,
+      "format": "iso",
+      "gameId": "GZLE01",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "individual-with-gba-mode-unavailable",
+      "onlineHumanCounts": [],
+      "modes": [
+        {
+          "profileId": "gc-reviewed-solo-20261017",
+          "mode": "solo",
+          "modeTitle": "Campanha individual",
+          "maximumPlayers": 1,
+          "allowedPlayerCounts": [],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+            "O Tingle Tuner utiliza um Game Boy Advance; não é uma segunda entrada de controle GameCube. Consulte o modo separado."
+          ],
+          "sources": [
+            "https://www.raurusreturn.net/downloads/manuals/the-wind-waker/tww-us.pdf",
+            "https://dolphin-emu.org/docs/guides/netplay-guide/"
+          ]
+        },
+        {
+          "profileId": "gc-tingle-gba-required-20261017",
+          "mode": "tingle-tuner-gba",
+          "modeTitle": "Tingle Tuner: apoio com GBA",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": false,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "O segundo participante controla o Tingle Tuner em um Game Boy Advance ligado ao GameCube; não controla um segundo Link.",
+            "O perfil atual do app não oferece a tela e os controles GBA. Este modo auxiliar não libera sala com dois controles GameCube. A campanha individual continua disponível no jogo normal."
+          ],
+          "sources": [
+            "https://www.raurusreturn.net/downloads/manuals/the-wind-waker/tww-us.pdf",
+            "https://dolphin-emu.org/docs/guides/netplay-guide/"
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": "station_6d7b4d0d988b1fcea440c9a7c8dfdbad",
+      "name": "need for speed underground 2",
+      "contentSha256": "dec85129ea88d7f041090c33ce114debe67cde25c47c64d6ca93b96c97dc0ab6",
+      "visible": true,
+      "format": "iso",
+      "gameId": "GUGE69",
+      "discNumber": 0,
+      "revision": 0,
+      "classification": "multiplayer-standard-controller",
+      "onlineHumanCounts": [
+        2
+      ],
+      "modes": [
+        {
+          "profileId": "review-3755-local2-v1-owner-463f75f3511d",
+          "mode": "local-2p",
+          "modeTitle": "Corrida local",
+          "maximumPlayers": 2,
+          "allowedPlayerCounts": [
+            2
+          ],
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "instructions": [
+            "Use a corrida local para dois jogadores; não confundir campanha individual ou recursos LAN com este modo."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Need-For-Speed-Underground-2-268478.html"
+          ]
+        }
+      ]
+    }
+  ],
+  "visibleItems": 20,
+  "hiddenItems": 1,
+  "multiplayerGames": 9,
+  "multiplayerModes": 10,
+  "physicalGameplayValidated": false
+}

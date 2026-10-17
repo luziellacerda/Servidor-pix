@@ -1,0 +1,136 @@
+{
+  "schema": "station.gamecube.server-return.r173.v1",
+  "request": "Preparar GameCube e corrigir Mario Kart informado como sala completa",
+  "baselineStable": "R172",
+  "candidate": "R173",
+  "compiledSourceCommit": "69f90f80e98a9dcf1f37d41be5617abb240b2b37",
+  "apk": {
+    "schema": "station.gamecube-rooms.final.r173.v1",
+    "passed": true,
+    "packageRevision": "R173",
+    "sourceCommit": "69f90f80e98a9dcf1f37d41be5617abb240b2b37",
+    "apkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
+    "apkBytes": 2714238050,
+    "baseApkSha256": "4a92627952a4f9673ff402667825fcb1f926aaf85a44bef7882559f000c56c5b",
+    "signatureCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+    "v2": true,
+    "v3": true,
+    "zipAlignment16KiB": true,
+    "versionCode": 15,
+    "minimumSdk": 26,
+    "targetSdk": 34,
+    "checkedEntries": 13861,
+    "preservedEntryCount": 13855,
+    "replacedEntries": [
+      "AndroidManifest.xml",
+      "assets/station-online/engines.json",
+      "classes35.dex",
+      "lib/arm64-v8a/libstation_dolphin_runtime.so",
+      "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+      "lib/arm64-v8a/libstation_psx_online.so"
+    ],
+    "changedDexPartitions": [
+      "classes35.dex"
+    ],
+    "preservedDexPartitions": 39,
+    "unsignedPackageReceiptSha256": "fae54153d1c8bc633b32fe6f3ed4b97ec55ad881f15d717292cc53cdf9785c01",
+    "signerRecipeSha256": "2d68ab68e8bbb9bd8fbda9d420d5fe062482742b584a7bc75b2cfd3dbc1f8420",
+    "installed": false,
+    "serverRegistered": false,
+    "productionUpdaterEnabled": false,
+    "physicalGameplayValidated": false,
+    "physicalInstallerValidated": false,
+    "stable": false
+  },
+  "privateKit": {
+    "schema": "station.r173.private-kit-receipt.v1",
+    "passed": true,
+    "apkSha256": "7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a",
+    "zipSha256": "ff4dc7bde0fae8a4506803773d0bc9c5537f454fb337c294c9853d5ff5ba4580",
+    "zipBytes": 15027848,
+    "fileCount": 64,
+    "elfCount": 27,
+    "engineIds": {
+      "psx": "pcsx-rearmed-ff81ed17-player-v3-a7c5c8aa45d8",
+      "n64": "mupen64plus-ae-33bf7021-n64-v3-fcbb4c272d8e",
+      "gamecube": "dolphin-5102a033-gamecube-v3-27da50adc1c5",
+      "wii": "dolphin-5102a033-wii-v3-27da50adc1c5"
+    },
+    "recipeSha256": "2badd111c3a2c6ccaef129cb722d4c2924c83df75332897f575fef6049a6ebf5",
+    "serverApplied": false,
+    "physicalGameplayValidated": false
+  },
+  "metadataRevisionR172Applied": true,
+  "serverR173Applied": false,
+  "installedR173": false,
+  "uiBugReproduced": true,
+  "androidCandidateChecksPerPhone": 82,
+  "unrelatedPresentationComparisons": 672,
+  "gamecubeReview": {
+    "catalogItems": 21,
+    "visibleItems": 20,
+    "multiplayerGames": 9,
+    "multiplayerModes": 10,
+    "individualModes": 12,
+    "unsupportedGbaModes": 2
+  },
+  "enrollmentPreflight": {
+    "passed": true,
+    "revision": "R173",
+    "enginesAdded": 4,
+    "profilesAdded": 507,
+    "modesAdded": 0,
+    "preparedModeEngineBindingsAdded": 507,
+    "modeCounts": {
+      "psx": 93,
+      "n64": 387,
+      "gamecube": 24,
+      "wii": 3
+    },
+    "previousDecisionsPreserved": true,
+    "sourceClassRecognitionOnly": true,
+    "emulationOptionsPreserved": true,
+    "psxInputDelayFrames": 8,
+    "exactEngineIds": {
+      "psx": "pcsx-rearmed-ff81ed17-player-v3-a7c5c8aa45d8",
+      "n64": "mupen64plus-ae-33bf7021-n64-v3-fcbb4c272d8e",
+      "gamecube": "dolphin-5102a033-gamecube-v3-27da50adc1c5",
+      "wii": "dolphin-5102a033-wii-v3-27da50adc1c5"
+    },
+    "profileSha256": {
+      "psx": "86f543015f84ca292c6853d10cbc58e4869b825520dbff117a4868bf18637683",
+      "n64": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
+      "gamecube": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+      "wii": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed"
+    },
+    "before": {
+      "catalogRevision": 100,
+      "catalogItems": 4744,
+      "engines": 107,
+      "profiles": 18879,
+      "modes": 13472
+    },
+    "after": {
+      "catalogRevision": 100,
+      "catalogItems": 4744,
+      "engines": 111,
+      "profiles": 19386,
+      "modes": 13472
+    },
+    "profilesCompactBytes": 16912902,
+    "modesCompactBytes": 9212464,
+    "candidateSha256": {
+      "engines": "8d1b7d4816017a43d07da9073546f121c9574bc881de341b700fd8fb8474f278",
+      "profiles": "c16565fd47d0fbaf2d83f9e36cbc3bb6da3abdd19535c94d0ce98d9d0f9cd140",
+      "modes": "2b055fa25ab22643db5d04ec6a76bbd51f730a794f319f079ae3d8b6cd642af4"
+    },
+    "apiRestartRequired": false,
+    "serverApplied": false,
+    "physicalGameplayValidated": false
+  },
+  "physicalGameplayValidated": false,
+  "globalUpdateOffered": false,
+  "stablePromoted": false,
+  "rootAuthority": "/mnt/DADOS/station-r173-activation-20261017/completed.json",
+  "installationAuthority": "/mnt/DADOS/station-r173-usb-install-20261017/installed-verified.json"
+}

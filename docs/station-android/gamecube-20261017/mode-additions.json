@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "engineId": "dolphin-5102a033-gamecube-v3-ff5113148661",
+  "reviewDate": "2026-10-17",
+  "documentaryReview": true,
+  "physicalGameplayValidated": false,
+  "modes": [
+    {
+      "itemId": "station_fa0e2bebbc9125b3ef593e1e2911716c",
+      "contentSha256": "490ef919f413e00daedb4711777c3be05ef9afc12c7acca7675c721c9393c814",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-reviewed-solo-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "approved": true,
+      "mode": "solo",
+      "modeTitle": "Campanha individual",
+      "instructions": [
+        "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online."
+      ],
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-Twilight-Princess-269050.html"
+      ]
+    },
+    {
+      "itemId": "station_40c36e432a90826b84bc401acd61b81f",
+      "contentSha256": "089df26c394fa215cdf91a50f6d7119c5ea9d234ccef0b9f790126d3f8eacbf8",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-reviewed-solo-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "approved": true,
+      "mode": "solo",
+      "modeTitle": "Campanha individual",
+      "instructions": [
+        "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online."
+      ],
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Luigi-s-Mansion-268236.html"
+      ]
+    },
+    {
+      "itemId": "station_d747bcef157e06fdaa603277f4a0fa38",
+      "contentSha256": "a7f2d6d8ce2003a9ddd7452ad8f7e21dbc3db917b1dbe011c2ad353a1027ee3a",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-reviewed-solo-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "approved": true,
+      "mode": "solo",
+      "modeTitle": "Campanha individual",
+      "instructions": [
+        "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online."
+      ],
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Metroid-Prime-268423.html"
+      ]
+    },
+    {
+      "itemId": "station_aff0fdd0e252567e690275501f5c3e41",
+      "contentSha256": "15a6747ae101c712f1b4d11b6a2e34028c70e1a1eddd89b4ca1be46f7c6e380e",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-reviewed-solo-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "approved": true,
+      "mode": "solo",
+      "modeTitle": "Campanha individual",
+      "instructions": [
+        "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online."
+      ],
+      "sources": [
+        "https://www.ubisoft.com/en-gb/games/prince-of-persia-the-two-thrones"
+      ]
+    },
+    {
+      "itemId": "station_f66a5e4cda2b3d810af00fbf96712a35",
+      "contentSha256": "dc8cd7550c0c2448a0f5555db1a7bbd38af0bb1001839b99bf221ab8eb54572f",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-reviewed-solo-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "approved": true,
+      "mode": "solo",
+      "modeTitle": "Campanha individual",
+      "instructions": [
+        "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+        "Os discos 1 e 2 pertencem à mesma aventura individual; não são dois jogadores. A edição dublada permanece vinculada ao seu conteúdo exato."
+      ],
+      "sources": [
+        "https://www.gamesdatabase.org/Media/SYSTEM/Nintendo_GameCube//Manual/formated/Resident_Evil_-_Code_Veronica_X_-_2003_-_Capcom.pdf"
+      ]
+    },
+    {
+      "itemId": "station_844acd6d2419cc61a21b8a1630fda73a",
+      "contentSha256": "635d1ad5edc6fcfe22a1a63bd029f78ccf4f6960136652a85fb6a62c79e161c0",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-reviewed-solo-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "approved": true,
+      "mode": "solo",
+      "modeTitle": "Campanha individual",
+      "instructions": [
+        "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+        "Os discos 1 e 2 pertencem à mesma aventura individual; não são dois jogadores. A edição dublada permanece vinculada ao seu conteúdo exato."
+      ],
+      "sources": [
+        "https://www.gamesdatabase.org/Media/SYSTEM/Nintendo_GameCube//Manual/formated/Resident_Evil_-_Code_Veronica_X_-_2003_-_Capcom.pdf"
+      ]
+    },
+    {
+      "itemId": "station_22a388607337c6c0e10eef23327760e7",
+      "contentSha256": "7c428fe1f485019fa584330ca4bc6fbce7434eb947d8fd8cc07d5160d1290fa4",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-reviewed-solo-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "approved": true,
+      "mode": "solo",
+      "modeTitle": "Campanha individual",
+      "instructions": [
+        "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+        "Campanha, Assignment Ada e Mercenaries desta versão são individuais. Os discos 1 e 2 não são duas vagas de jogador."
+      ],
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Resident-Evil-4-268665.html"
+      ]
+    },
+    {
+      "itemId": "station_a60084aefb098972edfbfa9103ff9f0f",
+      "contentSha256": "3a64ac1c48af6916b2b0c033d827cc4920feb25d1723620f83d9f63810a14f41",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-reviewed-solo-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "approved": true,
+      "mode": "solo",
+      "modeTitle": "Campanha individual",
+      "instructions": [
+        "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+        "Campanha, Assignment Ada e Mercenaries desta versão são individuais. Os discos 1 e 2 não são duas vagas de jogador."
+      ],
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Resident-Evil-4-268665.html"
+      ]
+    },
+    {
+      "itemId": "station_6b08767479d6f0715130e250c878b2a9",
+      "contentSha256": "7996d841021a93979ddf9203a7662a379ba83c71b8f40674f348f0e6393c4f9c",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-reviewed-solo-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "approved": true,
+      "mode": "solo",
+      "modeTitle": "Campanha individual",
+      "instructions": [
+        "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online."
+      ],
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-Twilight-Princess-269050.html"
+      ]
+    },
+    {
+      "itemId": "station_d0a6aa65e5900ba9167a200f8dccfae5",
+      "contentSha256": "3ea3cc8f62acfaafe2d2adb96090bf87cfabd01f89e0631d571517faf670d5f1",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-reviewed-solo-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "approved": true,
+      "mode": "solo",
+      "modeTitle": "Campanha individual",
+      "instructions": [
+        "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+        "O Tingle Tuner utiliza um Game Boy Advance; não é uma segunda entrada de controle GameCube. Consulte o modo separado."
+      ],
+      "sources": [
+        "https://www.raurusreturn.net/downloads/manuals/the-wind-waker/tww-us.pdf",
+        "https://dolphin-emu.org/docs/guides/netplay-guide/"
+      ]
+    },
+    {
+      "itemId": "station_211df505e8c566432c4ffeda71c84a82",
+      "contentSha256": "4b948d6059ff3d21048b3efa5a202cd5caf3a588f11e9a601a54c937f58a6e0b",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-reviewed-solo-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "approved": true,
+      "mode": "solo",
+      "modeTitle": "Campanha individual",
+      "instructions": [
+        "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+        "Aqui um jogador usa o controle GameCube e comanda os quatro Links. O modo multiplayer exige Game Boy Advance e está descrito separadamente."
+      ],
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-Four-Swords-Adventures-269028.html",
+        "https://dolphin-emu.org/docs/guides/netplay-guide/"
+      ]
+    },
+    {
+      "itemId": "station_d917b5d884654040babaf93bb5cbbd92",
+      "contentSha256": "3ce8a256ea8b5ed55496fc9d00d3732bf50da009b3b6c9174355bfec341467e6",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-reviewed-solo-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "approved": true,
+      "mode": "solo",
+      "modeTitle": "Campanha individual",
+      "instructions": [
+        "A campanha desta edição é para uma pessoa. Escolha o jogo normal para jogar individualmente; este perfil não libera vagas online.",
+        "Para duas pessoas, escolha o modo Tech-Com Force, cadastrado separadamente. A campanha principal continua individual."
+      ],
+      "sources": [
+        "https://www.gamesdatabase.org/Media/SYSTEM/Nintendo_GameCube//Manual/formated/Terminator_3_-_The_Redemption_-_2004_-_Atari.pdf"
+      ]
+    },
+    {
+      "itemId": "station_d917b5d884654040babaf93bb5cbbd92",
+      "contentSha256": "3ce8a256ea8b5ed55496fc9d00d3732bf50da009b3b6c9174355bfec341467e6",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-tech-com-force-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "approved": true,
+      "mode": "tech-com-force",
+      "modeTitle": "Tech-Com Force: cooperativo para dois",
+      "instructions": [
+        "No menu principal, selecione Tech-Com Force. Esse minijogo de tiro permite duas pessoas cooperando no helicóptero contra as forças da Skynet.",
+        "Cada celular ocupa uma entrada de controle GameCube. Use duas vagas; a campanha principal permanece individual.",
+        "Modo documentado no manual original do GameCube, páginas 5 e 9. Cadastro e transporte não substituem o teste nos aparelhos."
+      ],
+      "sources": [
+        "https://www.gamesdatabase.org/Media/SYSTEM/Nintendo_GameCube//Manual/formated/Terminator_3_-_The_Redemption_-_2004_-_Atari.pdf"
+      ]
+    },
+    {
+      "itemId": "station_211df505e8c566432c4ffeda71c84a82",
+      "contentSha256": "4b948d6059ff3d21048b3efa5a202cd5caf3a588f11e9a601a54c937f58a6e0b",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-fsa-gba-required-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "approved": false,
+      "mode": "gba-adventure",
+      "modeTitle": "Aventura para dois a quatro: exige GBA",
+      "instructions": [
+        "O multiplayer de Four Swords Adventures exige um Game Boy Advance por participante, com sua própria tela e conexão ao GameCube.",
+        "O perfil atual do app transmite quatro controles GameCube e não oferece as telas e os controles GBA. Por isso este modo não libera sala nesta instalação.",
+        "O modo individual com controle GameCube continua disponível no jogo normal. Não escolha quatro controles comuns como substituição dos GBAs."
+      ],
+      "sources": [
+        "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/The-Legend-of-Zelda-Four-Swords-Adventures-269028.html",
+        "https://dolphin-emu.org/docs/guides/netplay-guide/"
+      ]
+    },
+    {
+      "itemId": "station_d0a6aa65e5900ba9167a200f8dccfae5",
+      "contentSha256": "3ea3cc8f62acfaafe2d2adb96090bf87cfabd01f89e0631d571517faf670d5f1",
+      "platform": "gamecube",
+      "engineIds": [
+        "dolphin-5102a033-gamecube-v3-ff5113148661"
+      ],
+      "profileId": "gc-tingle-gba-required-20261017",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "maximumPlayers": 2,
+      "allowedPlayerCounts": [
+        2
+      ],
+      "approved": false,
+      "mode": "tingle-tuner-gba",
+      "modeTitle": "Tingle Tuner: apoio com GBA",
+      "instructions": [
+        "O segundo participante controla o Tingle Tuner em um Game Boy Advance ligado ao GameCube; não controla um segundo Link.",
+        "O perfil atual do app não oferece a tela e os controles GBA. Este modo auxiliar não libera sala com dois controles GameCube. A campanha individual continua disponível no jogo normal."
+      ],
+      "sources": [
+        "https://www.raurusreturn.net/downloads/manuals/the-wind-waker/tww-us.pdf",
+        "https://dolphin-emu.org/docs/guides/netplay-guide/"
+      ]
+    }
+  ]
+}

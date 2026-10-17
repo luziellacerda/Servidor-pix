@@ -1,3 +1,36 @@
+<!-- STATION-GAMECUBE-R173-20261017 -->
+## GameCube: coleção revisada; R173 corrige falsa sala completa
+
+O proprietário pediu GameCube e relatou Mario Kart como sala completa. O serviço
+mostrava duas vagas, um jogador e nenhuma conexão. O app R172 ignorava o perfil
+`dolphin-gamecube-four-ports-v1` na apresentação; reproduzido em sua classe real.
+R173 reconhece somente esse identificador, com os gates de aprovação/contagem/elenco.
+82 verificações JVM e82 no ART de CADA telefone passaram;672 outros casos idênticos.
+C++ transporte2085 passou em isolamento. Não é gameplay Android.
+
+Coleção:21 IDs/20 visíveis,20 hashes integrais conferidos; nove jogos/dez modosMP,
+12 modos individuais e duas recusas GBA. Terminator3/Tech-Com Force2P era omissão.
+15 decisões aplicadas ao R172:107 motores/18879 perfis/13472 modos, sem restart.
+O primeiro teste HTTP parou por apelido do próprio teste >24 caracteres, antes
+de criar salas; não repetir esse operador nem afirmar sua prova concluída.
+
+R173 montada/assinada:fonte69f90f80e98a9dcf1f37d41be5617abb240b2b37,
+APK7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a,
+2714238050B/version15/SDK26–34/mesmo certificado. Seis entradas alteradas,
+13855 preservadas e39DEX intactos. Núcleos/dependências/opções preservados;
+PSXinput8 não mudou. Kitff4dc7bde0fae8a4506803773d0bc9c5537f454fb337c294c9853d5ff5ba4580.
+IDsPSXa7c5c8aa45d8/N64fcbb4c272d8e/GC-Wii27da50adc1c5.
+
+FASE ATUAL: cadastro R173 preparado, aguardando autenticação Linux; ainda não
+aplicado ou instalado. Projeção4owners+507 decisões/507vínculos, zero linhas de
+modo novas;111motores/19386perfis/13472modos. A salaR172 do usuário precisa ser
+encerrada pelo app antes de instalar; criar sala nova depois com ambosR173.
+Autoridades:station-r173-activation-20261017 e station-r173-usb-install-20261017.
+Ler gamecube-20261017/README.md, CATALOGO.md e server-return.json antes de continuar.
+R172 estável/backup/tag preservados. Sem oferta geral, rede ou API alteradas.
+
+## Histórico preservado
+
 <!-- STATION-R172-OWNER-STABLE-20261017 -->
 ## R172 estável por aprovação expressa do proprietário
 
