@@ -1,0 +1,20 @@
+{
+  "authorityDirectory": "/mnt/DADOS/station-usb-room-diagnostic-20261014-1819",
+  "currentAppliedPassed": true,
+  "engineCount": 59,
+  "profileCount": 13322,
+  "modeCount": 8417,
+  "catalogRevision": 59,
+  "dllSha256": "b3473cc0160169f686501af914cdbf8ebfdf8dcaa4dff768e1106ee8461c9179",
+  "pid": 3297582,
+  "actualApkSha256": "6203804f1590d5377c261ac079a7bf302decc9e8c7269ddd2495bfaac70de7c6",
+  "engineEnrollmentReappliedThisCycle": false,
+  "hashRepairReappliedThisCycle": false,
+  "originalProducerZIPReceived": false,
+  "originalProducerZIPHashVerifiedHere": false,
+  "androidHashRepairPassed": true,
+  "correctedProfiles": 1425,
+  "physicalRoomCreatedPreviously": true,
+  "physicalGameplayValidated": false,
+  "countsSource": "previous applied receipt, not a fresh protected baseline from this cycle"
+}

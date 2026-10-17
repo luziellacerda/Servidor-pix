@@ -1,0 +1,18 @@
+{
+  "revision": "R138",
+  "finalApkSha256": "9183462e4d45cfcf2d2599d9e682b81890fee7b094505bf3073ab8183dd1dd10",
+  "bytes": 2714991631,
+  "signingCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "signatureSchemes": [
+    "v2",
+    "v3"
+  ],
+  "alignmentBytes": 16384,
+  "changedEntries": [
+    "assets/station-online/engines.json",
+    "lib/arm64-v8a/libstation_retroarch.so"
+  ],
+  "preservedEntries": 13858,
+  "fullEntryHashesVerified": true,
+  "installed": false
+}

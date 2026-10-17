@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "inputResultsJsonSHA256": "314c904ba57d4eb49280470a599758d56ed7671be160550e3ab3bcc38a17d208",
+  "sourceProbeSHA256": "527966b203362c95c704d65a1d33b81b3a6719e09a14245f8e7a957ef09bd1ef",
+  "probeBinarySHA256": "877fe729158baf75344b372eef5bb61ab3c0109a389e78d96dfea5930c796e5c",
+  "results": [
+    {
+      "game": "Super Mario Kart",
+      "chipMode": "HLE",
+      "accuracyOverrides": "enabled",
+      "exitCode": 0,
+      "sanitizedLines": [
+        "probe-start mode=HLE violate-accuracy=enabled content-bytes=524288 isolated-content-path=true run-frames=120",
+        "core-firmware level=1 name=dsp1b.program.rom",
+        "core-firmware level=1 name=dsp1b.data.rom",
+        "probe-result mode=HLE violate-accuracy=enabled loaded=true firmware-errors=0 log-debug=5 log-info=21 log-warn=0 log-error=0 supports-no-game=false",
+        "frame-probe-result mode=HLE violate-accuracy=enabled loaded=true run-calls=120 video-calls=120 video-data-calls=120 width=256 height=224 audio-frames=63933 input-polls=0 input-state=zero serialized=true state-bytes=325179 state-fnv1a64=144479d8d0092c54 firmware-errors=0 core-errors=0"
+      ],
+      "capturedTextSHA256Lf": "43423a35939f812d931b1632d930af7d7bc0152d52a81f19564b1e0c4441328d",
+      "storedLogFileSHA256": "2217a4943fd8b8a940accfc1802eec02f4e672948c3b6c25a7aef00db49978fa",
+      "captureHashQualification": "Captured stdout uses UTF-8 LF; the stored local TXT uses CRLF. Both hashes are preserved.",
+      "frameResult": {
+        "mode": "HLE",
+        "violate-accuracy": "enabled",
+        "loaded": true,
+        "run-calls": 120,
+        "video-calls": 120,
+        "video-data-calls": 120,
+        "width": 256,
+        "height": 224,
+        "audio-frames": 63933,
+        "input-polls": 0,
+        "input-state": "zero",
+        "serialized": true,
+        "state-bytes": 325179,
+        "state-fnv1a64": "144479d8d0092c54",
+        "firmware-errors": 0,
+        "core-errors": 0
+      }
+    },
+    {
+      "game": "Top Gear 3000",
+      "chipMode": "HLE",
+      "accuracyOverrides": "enabled",
+      "exitCode": 0,
+      "sanitizedLines": [
+        "probe-start mode=HLE violate-accuracy=enabled content-bytes=1048576 isolated-content-path=true run-frames=120",
+        "core-firmware level=1 name=dsp4.program.rom",
+        "core-firmware level=1 name=dsp4.data.rom",
+        "probe-result mode=HLE violate-accuracy=enabled loaded=true firmware-errors=0 log-debug=5 log-info=16 log-warn=0 log-error=0 supports-no-game=false",
+        "frame-probe-result mode=HLE violate-accuracy=enabled loaded=true run-calls=120 video-calls=120 video-data-calls=120 width=256 height=224 audio-frames=63933 input-polls=70 input-state=zero serialized=true state-bytes=320941 state-fnv1a64=193d7548d0a6e065 firmware-errors=0 core-errors=0"
+      ],
+      "capturedTextSHA256Lf": "c18e439f9e9723c06060c0148993085e7fe289e08f70e9a68ccf1c52850c2064",
+      "storedLogFileSHA256": "976c38e1a1fa6615201d7316e73ca2e3bd811ebc78bd58161526f2b94c57f4ea",
+      "captureHashQualification": "Captured stdout uses UTF-8 LF; the stored local TXT uses CRLF. Both hashes are preserved.",
+      "frameResult": {
+        "mode": "HLE",
+        "violate-accuracy": "enabled",
+        "loaded": true,
+        "run-calls": 120,
+        "video-calls": 120,
+        "video-data-calls": 120,
+        "width": 256,
+        "height": 224,
+        "audio-frames": 63933,
+        "input-polls": 70,
+        "input-state": "zero",
+        "serialized": true,
+        "state-bytes": 320941,
+        "state-fnv1a64": "193d7548d0a6e065",
+        "firmware-errors": 0,
+        "core-errors": 0
+      }
+    }
+  ],
+  "androidExecuted": true,
+  "apkModified": false,
+  "networkGameplayValidated": false
+}

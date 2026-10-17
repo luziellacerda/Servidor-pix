@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "cases": {
+    "relative-work": {
+      "exitCode": 1,
+      "rejected": true
+    },
+    "repository-work": {
+      "exitCode": 1,
+      "rejected": true
+    },
+    "existing-work": {
+      "exitCode": 1,
+      "rejected": true
+    },
+    "existing-receipt": {
+      "exitCode": 1,
+      "rejected": true
+    },
+    "frozen-receipt-folder": {
+      "exitCode": 1,
+      "rejected": true
+    },
+    "candidate-as-receipt": {
+      "exitCode": 1,
+      "rejected": true
+    },
+    "patch-existing-baseline": {
+      "exitCode": 1,
+      "rejected": true
+    },
+    "patch-frozen-folder": {
+      "exitCode": 1,
+      "rejected": true
+    }
+  },
+  "protectedInputsSha256": {
+    "TurboElden/integration/online-snes-startup-r138/native/source/frontend/drivers/platform_unix.c": "e4811bef12aeacd07947e51badaf8341be6c12c347c4952a9334ba22e56342f2",
+    "TurboElden/integration/native-resource-lifecycle-r139-20261013/native/source/frontend/drivers/platform_unix.c": "24420118e5ce94376b077051084a84d4c52f152d00b9e2330333896bced798fb",
+    "TurboElden/integration/native-resource-lifecycle-r139-20261013/recipe/patch_resource_lifecycle.py": "685de6c92972bdc7671cf36e6409f18b2bd111023f62a3419a75628775958cf1",
+    "TurboElden/integration/native-resource-lifecycle-r139-20261013/recipe/test_resource_lifecycle.py": "3ac26e5a7bb4680ce52434aac0287db7d30f3bd3dd490aef696fa5114338b03a",
+    "TurboElden/integration/native-resource-lifecycle-r139-20261013/tests/resource_tls_harness.c.in": "4416c2c15215b85da301c0a89b6ec39eccc17d1f9d4f3f71c152d30616e64064"
+  },
+  "allProtectedBytesPreserved": true,
+  "rejectedCallsCreatedNoOutputs": true,
+  "producerReceiptSHA256": "8ee9cdf3f7b80df193686e929f73ef01ca1ce0a4503c85c09ac34e78bbe3253b",
+  "localAbsolutePathsRemoved": true
+}

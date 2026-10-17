@@ -1,0 +1,63 @@
+{
+  "schema": "station.r144.wave-palette.final.v1",
+  "passed": true,
+  "apkSha256": "01427f4e73141b7d6a462c2420a9abeb018a8716102e7fb959bf9a1d69eccee0",
+  "apkBytes": 2715024399,
+  "signatureCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "v2": true,
+  "v3": true,
+  "zipAlignment16KiB": true,
+  "sourceCommit": "1ac3f7d2fdd7cd349a5b37127b66712834e844fd",
+  "sourceFiles": {
+    "java/org/emulationstation/frontend/station/StationWaveBackground.java": "553c98972c89954c01da7b0f192e4d2978c11c1069c4661e542b735e67c88da4",
+    "native/native_space.h": "e197030037ccb922304cef57d2b99a951a952fa354bb990e8dabe6f412336725",
+    "native/station_wave_palette.h": "a3e42391c906fe5126b69213d97c685f4077ef6867aec4c27adbe426deea3b29",
+    "recipe/assemble_apk.py": "a374f2364a581e080f1f690d94c38552de1f1124e142e9908935bb5344c1afcc",
+    "recipe/AssembleScopedPartition.java": "5ea794aad4cb177080e331b09d449419e352020ac61a6b9ea4194e32b4b1b022",
+    "recipe/build_dex.py": "aee63b26ad2c57fb1ae36c84b42bb12d484c9e24fc5c1fa616e655878be4b55a",
+    "recipe/build_identity.py": "0585bc95cf09dc87e3e274c91bb5831a4defca429d1ad0994b52dcee9d3b2e2f",
+    "recipe/build_native.py": "3c5cc2b72a6af09714b91935b9b7148585e86c6b4819f0a128e2e670c0fd4873",
+    "recipe/common.py": "cece0f499dcb38ca9a66078cc20d2ffcacdbd70fd684310b4c6faed467f95cdf",
+    "recipe/DecodeDolphinPartition.java": "d1365cf8cce05fb08c6e04dbcc47e9b154af268637bf0d768c32f851420c2b67",
+    "recipe/verify_apk.py": "806e412a509d375fc5b8900106b3b7a204d6de0526a2fb9096f9feb0ccab1363",
+    "recipe/VerifyScopedPartition.java": "c58eac1f58bfe7b8ee182374d183fb8b8f6dece25a485613b6f8c94fb62996ed",
+    "PROPOSED-SCOPE.json": "ff57df00de3338f5cff05867cf32f040fbb48d5971048128acac40158a057702",
+    "java/evidence/java-source-preservation.json": "1b389ddc4d8aa58588593439aadee7e5754b4a2d8be9a7fccad8df2e1181ee59"
+  },
+  "assemblyReceiptSha256": "54e2dde026f46a8f20cd2b5335823a0bf54a5b433a654c1461e88314de085b18",
+  "baselineApkSha256": "508480e3671ae924f037bd32f6d71efda7a9d905c45c7b2571bd9f219add83d4",
+  "checkedEntries": 13860,
+  "preservedEntryCount": 13854,
+  "replacedEntries": [
+    "assets/station-online/engines.json",
+    "classes28.dex",
+    "lib/arm64-v8a/libstation_dolphin_runtime.so",
+    "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+    "lib/arm64-v8a/libstation_psx_online.so",
+    "lib/arm64-v8a/libturbo_carousel.so"
+  ],
+  "addedEntries": [],
+  "removedEntries": [],
+  "preservedDex35Sha256": "0cc5f639202ed3da50c246a9b07eda91c8c8d81bdc9764c67f08f3da459a74c4",
+  "preservedRetroArchSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "preservedDexPartitions": 39,
+  "preservedRetroArchDescriptors": 9,
+  "changedPayloadEntries": [
+    "classes28.dex",
+    "lib/arm64-v8a/libturbo_carousel.so"
+  ],
+  "wrapperFingerprints": [
+    "ca6d412adf643feab8073082dc50349e42b63904a2978714e0f56d9f378db535",
+    "53d6187037db87ef4bff4b8ea661f43f324256aa507727617b899e948ba3da8c",
+    "67e2fdb38f2a52c2303cf3365a7883a983d843dbb0687138df3ef9e9df9d6efb"
+  ],
+  "revision": "R144",
+  "candidateOnly": true,
+  "diagnosticLoggerIncluded": false,
+  "nativeRuntimeRebuilt": false,
+  "promoted": false,
+  "installed": false,
+  "serverRegistered": false,
+  "serverRegistrationPending": true,
+  "physicalVisualValidated": false
+}

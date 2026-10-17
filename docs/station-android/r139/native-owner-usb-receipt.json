@@ -1,0 +1,460 @@
+{
+  "schemaVersion": 1,
+  "source": "read-only authorized USB installed app",
+  "files": [
+    {
+      "name": "libpcsx_rearmed_libretro_android.so",
+      "sha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+      "bytes": 1582960,
+      "matchesInstalledManifest": true,
+      "elf64Aarch64": true
+    },
+    {
+      "name": "libstation_psx_online.so",
+      "sha256": "c26d8836df255ad4cc10d19d328b6fc8dcbc6a429725794c88acd4de5ca3dc50",
+      "bytes": 301656,
+      "matchesInstalledManifest": true,
+      "elf64Aarch64": true
+    },
+    {
+      "name": "libstation_mupen64plus_core.so",
+      "sha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+      "bytes": 561056,
+      "matchesInstalledManifest": true,
+      "elf64Aarch64": true
+    },
+    {
+      "name": "libstation_mupen64plus_runtime.so",
+      "sha256": "2f248cfcdc9e6d0e20795b1dab84f581b8fe9ea59eb0994ae96036aed2abeb77",
+      "bytes": 104456,
+      "matchesInstalledManifest": true,
+      "elf64Aarch64": true
+    },
+    {
+      "name": "libstation_dolphin_online.so",
+      "sha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+      "bytes": 15781128,
+      "matchesInstalledManifest": true,
+      "elf64Aarch64": true
+    },
+    {
+      "name": "libstation_dolphin_runtime.so",
+      "sha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+      "bytes": 115368,
+      "matchesInstalledManifest": true,
+      "elf64Aarch64": true
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "libmain.so",
+      "sha256": "62ad07ba8e62e3227d488f9075eb15167c2e95b721c43e480e2535b4319467f6",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libSDL2.so",
+      "sha256": "a282b35554eb006773349430e117bfeeff32a84e246a058c8fb7c7027c2e4dee",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libc++_shared.so",
+      "sha256": "b5d97c38a728afe28d341cda3369f512d35eaf9c680c1b0563cd6a63e395230f",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libstation_frontend.so",
+      "sha256": "4e7ad58e1e8f8a284654120c27280eed8c124ad5301a9e87d769e41f100d8d0d",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libSDL2_net.so",
+      "sha256": "f668cb9971913181761213be7d04dbfe5a3bf92c92d4ac9c1ab6d3eeaf44b9f5",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libae-bridge.so",
+      "sha256": "ba5a7582295215f159e197f805dbfe85851aa912462996870f61ccd752ecb360",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libjnidispatch.so",
+      "sha256": "ddfc6c965bbe366615c000ec1f06552ddf0bb2b4f9d921d0bff8c75b3cb2ca4c",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libmupen64plus-audio-android-fp.so",
+      "sha256": "79bd6457b4a77364721e98df4946fadde2bc44256b156ae8b361bcf769e03f74",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libmupen64plus-audio-android.so",
+      "sha256": "a8f8a5f83827a5056fca58bf72dc25951c56cdba568c55773f81efb20f2f0be5",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libmupen64plus-input-android.so",
+      "sha256": "11783275d71eaa14f3e15eff330a784195fdd98b31ea4c16d23d4691e5f91512",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libmupen64plus-rsp-hle.so",
+      "sha256": "67d0f74eb35a889c6abbc0ab0503691f45555ca601570911e0435be492bcf189",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libmupen64plus-video-glide64mk2.so",
+      "sha256": "5c10d28d442ce37cacaba892317319029a0340b4503dd8ac10ff850fdc5e9ce6",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libn64cpp.so",
+      "sha256": "fa2c06d3c09c0d9a4931fa7cd03a3aba15f6ed7ea990d8e4a37b8a5811867c0d",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "liboboe.so",
+      "sha256": "2d1ab385a0817273cbcd249ce6488b54a7d31dde193a8bf3037bcd901ea2079f",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libsoundtouch.so",
+      "sha256": "9944e132db1c2362b52cd88b438413d92802847b2174c64ce4dc801a7eaa41e3",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libsoundtouch_fp.so",
+      "sha256": "5fae9c0a403f01415327b1175ac20460a438184075c8da467dcfea56435a002a",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libstation_dolphin_file_redirect_hook.so",
+      "sha256": "23347bb99e0e73fde1f6deaf1b39d544ab4e4a5cc9e5f2c61c8d9facf5dfe06c",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libstation_dolphin_gsl_alloc_hook.so",
+      "sha256": "e9254fe5325818c1ef50cf986cd6db9a87d9b3c29c4567cd74e666b512598d02",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libstation_dolphin_hook.so",
+      "sha256": "7547dd37533c4352edf7666ef3b5220db08364054578bde7570c388658e0de16",
+      "matchesInstalledManifest": true
+    },
+    {
+      "name": "libstation_dolphin_hook_impl.so",
+      "sha256": "b3f2973bdccfb877cfc10fcaadd40b69e48af39434cc232d02bfc81a1669e264",
+      "matchesInstalledManifest": true
+    }
+  ],
+  "allSixLibrariesAndTwentyDependenciesMatchInstalledManifest": true,
+  "currentEngineIds": [
+    "dolphin-5102a033-gamecube-v3-2e0b36222097",
+    "dolphin-5102a033-wii-v3-2e0b36222097",
+    "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+    "pcsx-rearmed-ff81ed17-player-v3-c26d8836df25"
+  ],
+  "preparedEngines": 4,
+  "preparedModesAdded": 78,
+  "preparedProfilesAdded": 78,
+  "preparedModesByPlatform": {
+    "n64": 66,
+    "gamecube": 9,
+    "wii": 3
+  },
+  "unknownGamesApproved": false,
+  "psxHleGameApprovalsAdded": 0,
+  "status": "applied-and-signed-verified",
+  "published": true,
+  "apiRestartRequired": false,
+  "linuxAuthenticationOutcome": "completed",
+  "physicalGameplayValidated": false,
+  "applied": {
+    "status": "applied",
+    "utc": "2026-10-13T17:06:43.279495+00:00",
+    "source": "authorized read-only USB installed R139",
+    "enginesAdded": 4,
+    "realLibrariesVerified": 6,
+    "realDependenciesVerified": 20,
+    "profilesAdded": 78,
+    "originalProfilesPreserved": 11370,
+    "profileCount": 11448,
+    "approvedProfiles": 11427,
+    "originalModesPreserved": 6509,
+    "preparedModes": 6587,
+    "engineCount": 31,
+    "catalogRevision": 46,
+    "apiRestarted": false,
+    "pid": 2867363,
+    "dllSha256": "ef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a",
+    "realLicensesPreserved": true,
+    "signedPlatforms": [
+      "n64",
+      "gamecube",
+      "wii"
+    ],
+    "psxEngineRegistered": true,
+    "psxHleGameApprovalsAdded": 0,
+    "physicalGameplayValidated": false
+  },
+  "localSignedChecks": {
+    "address": "http://127.0.0.1:5192",
+    "signedChecks": [
+      {
+        "platform": "n64",
+        "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+        "signed": true,
+        "bindingsExact": true,
+        "profiles": [
+          {
+            "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+            "contentSha256": "ceaa25016faab3da1ca55a4ef77305078b596e3caf3724e74f14eeea8f58debe",
+            "platform": "n64",
+            "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+            "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+            "runtimeSha256": "2f248cfcdc9e6d0e20795b1dab84f581b8fe9ea59eb0994ae96036aed2abeb77",
+            "profileId": "review-2073-local-v1-owner-6463a58773d9",
+            "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "direct-four-ports-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "1080 Snowboarding: corrida para dois",
+            "instructions": [
+              "Escolha a corrida local 2P com um controle N64 padrão por jogador; modalidades de treino e manobras individuais continuam solo."
+            ],
+            "sources": [
+              "https://www.nintendo.com/es-es/Juegos/Nintendo-64/1080-Snowboarding-269404.html"
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "gamecube",
+        "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+        "signed": true,
+        "bindingsExact": true,
+        "profiles": [
+          {
+            "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+            "contentSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26",
+            "platform": "gamecube",
+            "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+            "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+            "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+            "profileId": "prepared-local-1-20261009-owner-a848dc80a588",
+            "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+            "maximumPlayers": 4,
+            "approved": true,
+            "controllerProfile": "dolphin-gamecube-four-ports-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2,
+              3,
+              4
+            ],
+            "modeTitle": "Corrida local",
+            "instructions": [
+              "Mais de quatro envolve LAN com vários consoles/TVs; não é um Multitap.",
+              "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+            ],
+            "sources": [
+              "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "wii",
+        "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+        "signed": true,
+        "bindingsExact": true,
+        "profiles": [
+          {
+            "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+            "contentSha256": "7f1874db282a19cf369625603ac5665d486220f470c5c1e29f7309160579bef5",
+            "platform": "wii",
+            "engineId": "dolphin-5102a033-wii-v3-2e0b36222097",
+            "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+            "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+            "profileId": "review-dkreturns-coop2-v1-owner-550ee4076a78",
+            "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "dolphin-wii-remotes-four-v1",
+            "mode": "local-coop-2p",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Donkey Kong Country Returns: dupla",
+            "instructions": [
+              "Entre no modo cooperativo de Donkey Kong e Diddy: somente dois jogadores.",
+              "Use Wii Remote horizontal com os comandos de movimento configurados; a ação de sacudir é necessária para bater, rolar e soprar.",
+              "Esta aprovação documental de modo não comprova os bindings ou a partida física em cada aparelho."
+            ],
+            "sources": [
+              "https://www.nintendo.com/en-gb/Games/Wii/Donkey-Kong-Country-Returns-280968.html",
+              "https://www.nintendo.com/en-gb/News/2010/Donkey-Kong-Country-Returns-a-rip-roaring-banana-scoring-treat-251997.html"
+            ]
+          }
+        ]
+      }
+    ],
+    "negativeAdmissionChecks": [
+      {
+        "case": "wrong-content",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+        "roomCreated": false
+      },
+      {
+        "case": "unknown-engine",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+        "roomCreated": false
+      },
+      {
+        "case": "n64-five-refused",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+        "roomCreated": false
+      }
+    ],
+    "syntheticLicenseRemoved": true,
+    "physicalGameplayValidated": false,
+    "psxHleGameApprovalsAdded": 0
+  },
+  "publicSignedChecks": {
+    "address": "https://app.lzgames.com.br",
+    "signedChecks": [
+      {
+        "platform": "n64",
+        "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+        "signed": true,
+        "bindingsExact": true,
+        "profiles": [
+          {
+            "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+            "contentSha256": "ceaa25016faab3da1ca55a4ef77305078b596e3caf3724e74f14eeea8f58debe",
+            "platform": "n64",
+            "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+            "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+            "runtimeSha256": "2f248cfcdc9e6d0e20795b1dab84f581b8fe9ea59eb0994ae96036aed2abeb77",
+            "profileId": "review-2073-local-v1-owner-6463a58773d9",
+            "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "direct-four-ports-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "1080 Snowboarding: corrida para dois",
+            "instructions": [
+              "Escolha a corrida local 2P com um controle N64 padrão por jogador; modalidades de treino e manobras individuais continuam solo."
+            ],
+            "sources": [
+              "https://www.nintendo.com/es-es/Juegos/Nintendo-64/1080-Snowboarding-269404.html"
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "gamecube",
+        "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+        "signed": true,
+        "bindingsExact": true,
+        "profiles": [
+          {
+            "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+            "contentSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26",
+            "platform": "gamecube",
+            "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+            "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+            "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+            "profileId": "prepared-local-1-20261009-owner-a848dc80a588",
+            "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+            "maximumPlayers": 4,
+            "approved": true,
+            "controllerProfile": "dolphin-gamecube-four-ports-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2,
+              3,
+              4
+            ],
+            "modeTitle": "Corrida local",
+            "instructions": [
+              "Mais de quatro envolve LAN com vários consoles/TVs; não é um Multitap.",
+              "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+            ],
+            "sources": [
+              "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "wii",
+        "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+        "signed": true,
+        "bindingsExact": true,
+        "profiles": [
+          {
+            "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+            "contentSha256": "7f1874db282a19cf369625603ac5665d486220f470c5c1e29f7309160579bef5",
+            "platform": "wii",
+            "engineId": "dolphin-5102a033-wii-v3-2e0b36222097",
+            "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+            "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+            "profileId": "review-dkreturns-coop2-v1-owner-550ee4076a78",
+            "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "dolphin-wii-remotes-four-v1",
+            "mode": "local-coop-2p",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Donkey Kong Country Returns: dupla",
+            "instructions": [
+              "Entre no modo cooperativo de Donkey Kong e Diddy: somente dois jogadores.",
+              "Use Wii Remote horizontal com os comandos de movimento configurados; a ação de sacudir é necessária para bater, rolar e soprar.",
+              "Esta aprovação documental de modo não comprova os bindings ou a partida física em cada aparelho."
+            ],
+            "sources": [
+              "https://www.nintendo.com/en-gb/Games/Wii/Donkey-Kong-Country-Returns-280968.html",
+              "https://www.nintendo.com/en-gb/News/2010/Donkey-Kong-Country-Returns-a-rip-roaring-banana-scoring-treat-251997.html"
+            ]
+          }
+        ]
+      }
+    ],
+    "negativeAdmissionChecks": [
+      {
+        "case": "wrong-content",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+        "roomCreated": false
+      },
+      {
+        "case": "unknown-engine",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+        "roomCreated": false
+      },
+      {
+        "case": "n64-five-refused",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+        "roomCreated": false
+      }
+    ],
+    "syntheticLicenseRemoved": true,
+    "physicalGameplayValidated": false,
+    "psxHleGameApprovalsAdded": 0
+  }
+}

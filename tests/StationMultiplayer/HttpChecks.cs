@@ -66,6 +66,22 @@ async Task Block(int user,int other)
 }
 var sockets=new List<ClientWebSocket>();
 try{
+    const string operatorPath="/ready/station/online/multiplayer-diagnostics";
+    using(var response=await http.GetAsync(operatorPath)){
+        Check(response.StatusCode==HttpStatusCode.OK,"loopback multiplayer operator diagnostics available");
+        Check(response.Headers.CacheControl?.NoStore==true,"operator diagnostics are not cached");
+        var diagnostic=JsonSerializer.Deserialize<JsonElement>(await response.Content.ReadAsByteArrayAsync());
+        Check(diagnostic.GetProperty("activeRooms").GetInt32()==0,"operator snapshot initially has no rooms");
+    }
+    foreach(var header in new[]{"X-Forwarded-For","X-Forwarded-Host","Forwarded","CF-Connecting-IP","X-Real-IP"}){
+        using var request=new HttpRequestMessage(HttpMethod.Get,operatorPath);request.Headers.Add(header,"synthetic-forwarder");
+        using var response=await http.SendAsync(request);Check(response.StatusCode==HttpStatusCode.NotFound,"forwarded operator request rejected: "+header);
+    }
+    using(var request=new HttpRequestMessage(HttpMethod.Get,operatorPath)){
+        request.Headers.Host="app.lzgames.com.br";
+        using var response=await http.SendAsync(request);Check(response.StatusCode==HttpStatusCode.NotFound,"public host cannot access operator diagnostics");
+    }
+    using(var response=await http.GetAsync(operatorPath+"?unexpected=1"))Check(response.StatusCode==HttpStatusCode.NotFound,"operator query is rejected");
     await Post(0,Cmd("capabilities"),HttpStatusCode.Unauthorized,proof:false);
     await Post(0,Cmd("capabilities"),HttpStatusCode.Unauthorized,proofPath:"/v1/station/online/command");
     var cap=await Post(0,Cmd("capabilities"));Check(cap.GetProperty("selfId").GetString()==socialIds[0],"same authoritative social identity");
@@ -73,6 +89,14 @@ try{
     for(int i=1;i<5;i++)room=(await Post(i,Cmd("join"))).GetProperty("room");
     for(int i=0;i<5;i++)room=(await Post(i,Cmd("ready",value:true))).GetProperty("room");
     room=(await Post(0,Cmd("start"))).GetProperty("room");Check(room.GetProperty("state").GetString()=="starting","HTTP starting");
+    using(var response=await http.GetAsync(operatorPath)){
+        var diagnostic=JsonSerializer.Deserialize<JsonElement>(await response.Content.ReadAsByteArrayAsync());
+        var current=diagnostic.GetProperty("rooms")[0];
+        Check(current.GetProperty("players").GetInt32()==5&&current.GetProperty("capacity").GetInt32()==5,"operator snapshot reports the real roster capacity");
+        Check(current.GetProperty("barrierDiagnostics").GetProperty("expectedAttachments").GetInt32()==8,"five players require eight real attachments");
+        string body=current.GetRawText();
+        Check(!new[]{"licenseId","deviceId","peerId","password","connectionPassword","ticket","payload"}.Any(k=>body.Contains("\""+k+"\"",StringComparison.OrdinalIgnoreCase)),"operator snapshot has no personal identities or credentials");
+    }
     var links=room.GetProperty("links").EnumerateArray().Select(x=>x.GetProperty("linkId").GetString()!).ToArray();
     // An authorization timeout before an upgrade must not look like HTTP 200.
     var timeoutTicket=(await Post(0,Cmd("ticket",link:links[0]))).GetProperty("ticket").GetProperty("ticket").GetString()!;
@@ -121,6 +145,36 @@ try{
     room=(await Post(1,Cmd("failed"))).GetProperty("room");Check(room.GetProperty("state").GetString()=="unrecoverable","member native failure terminal");
     await Post(0,Cmd("resume",link:links[0]),HttpStatusCode.Conflict);
     var left=await Post(0,Cmd("leave"));Check(left.GetProperty("room").ValueKind==JsonValueKind.Null,"human leave ends TLS room");
+    // Confirmed host exit must reach the guest before the relay closes. A lost
+    // transport above still uses the ordinary waiting/resume epoch.
+    await Task.Delay(1100);
+    room=(await Post(3,Cmd("create",capacity:2))).GetProperty("room");
+    room=(await Post(4,Cmd("join"))).GetProperty("room");
+    room=(await Post(3,Cmd("ready",value:true))).GetProperty("room");
+    room=(await Post(4,Cmd("ready",value:true))).GetProperty("room");
+    room=(await Post(3,Cmd("start"))).GetProperty("room");
+    string leavingLink=room.GetProperty("links")[0].GetProperty("linkId").GetString()!;
+    var leavingHost=await Connect(3,leavingLink);var leavingGuest=await Connect(4,leavingLink);
+    sockets.Add(leavingHost);sockets.Add(leavingGuest);
+    foreach(var ws in new[]{leavingHost,leavingGuest}){await Send(ws,StationStreamFrame.Hello);await Send(ws,StationStreamFrame.Paused,1);await Send(ws,StationStreamFrame.Ready,1);}
+    foreach(var ws in new[]{leavingHost,leavingGuest})Check((await Until(ws,f=>f.Type==StationStreamFrame.State&&f.Value==StationStreamSession.Playing)).Offset==1,"confirmed-leave fixture reached play");
+    // Submit real TSR3 game traffic over TLS immediately before the signed
+    // leave request; the controlled-socket fixture covers the exact race.
+    await Send(leavingGuest,StationStreamFrame.DataPacket,bytes:Enumerable.Range(0,64).Select(i=>(byte)i).ToArray());
+    var leaveClock=System.Diagnostics.Stopwatch.StartNew();
+    Check((await Post(3,Cmd("leave"))).GetProperty("room").ValueKind==JsonValueKind.Null,"confirmed host leave removes room");
+    foreach(var ws in new[]{leavingHost,leavingGuest}){
+        var ended=await Until(ws,f=>f.Type==StationStreamFrame.State&&f.Value==StationStreamSession.Unrecoverable);
+        Check(ended.Offset==2,"STATE=3 delivered before close to both sides");
+        using var closeLimit=new CancellationTokenSource(5000);
+        var close=await ws.ReceiveAsync(new byte[32].AsMemory(),closeLimit.Token);
+        Check(close.MessageType==WebSocketMessageType.Close,"terminal frame precedes WebSocket close");
+    }
+    // Neither synthetic client replies to Close; the server must still release
+    // the replay reservation at the bounded two-second deadline.
+    using(var cleanupLimit=new CancellationTokenSource(5000))
+        while(budget.UsedBytes!=0)await Task.Delay(20,cleanupLimit.Token);
+    Check(leaveClock.Elapsed<TimeSpan.FromSeconds(4),"confirmed leave bounded even without client close reply");
     await Task.Delay(1100); // Separate the new scenario from the production per-second command cap.
     room=(await Post(0,Cmd("create",capacity:5))).GetProperty("room");
     room=(await Post(1,Cmd("join"))).GetProperty("room");room=(await Post(2,Cmd("join"))).GetProperty("room");

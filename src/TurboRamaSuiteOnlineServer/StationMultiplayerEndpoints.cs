@@ -7,6 +7,17 @@ public static class StationMultiplayerEndpoints
 {
     public static void MapStationMultiplayer(this WebApplication app,bool enabled)
     {
+        app.MapGet("/ready/station/online/multiplayer-diagnostics",(HttpContext context)=>{
+            string host=context.Request.Host.Host.Trim('[',']');
+            bool localHost=host.Equals("localhost",StringComparison.OrdinalIgnoreCase)||
+                System.Net.IPAddress.TryParse(host,out var parsed)&&System.Net.IPAddress.IsLoopback(parsed);
+            if(!localHost||context.Connection.RemoteIpAddress is not {} address||!System.Net.IPAddress.IsLoopback(address)||
+                context.Request.QueryString.HasValue||context.Request.Headers.Keys.Any(k=>k.StartsWith("X-Forwarded-",StringComparison.OrdinalIgnoreCase)||
+                    k.Equals("Forwarded",StringComparison.OrdinalIgnoreCase)||k.Equals("CF-Connecting-IP",StringComparison.OrdinalIgnoreCase)||
+                    k.Equals("X-Real-IP",StringComparison.OrdinalIgnoreCase)))return Results.NotFound();
+            context.Response.Headers.CacheControl="no-store";
+            return enabled?Results.Json(context.RequestServices.GetRequiredService<StationMultiplayer>().Diagnostics()):Results.StatusCode(503);
+        });
         app.MapPost(StationMultiplayer.CommandPath,async (HttpContext context)=>{
             context.Response.Headers.CacheControl="no-store";context.Response.Headers["X-Content-Type-Options"]="nosniff";
             if(!enabled)return Error(503,"STATION_MULTIPLAYER_DISABLED");
@@ -34,8 +45,8 @@ public static class StationMultiplayerEndpoints
                 if(await access.Authenticate(bearer,timeout.Token) is null){hub.Revoke(identity);return Error(401,"STATION_SESSION_INVALID");}
                 return Results.Json(access.Sign(new{schemaVersion=1,domain=StationProtocol.Prefix+"online/v1",productId=StationProtocol.Product,applicationId=StationProtocol.Application,
                     licenseId=session.LicenseId,deviceId=session.DeviceId,sessionId=session.SessionId,requestId=command.RequestId,snapshot}),StrictJson.Options);
-            }catch(OnlineFailure e){if(e.Status==429)context.Response.Headers.RetryAfter="1";return Error(e.Status,e.Code);}
-            catch(SuiteException e){return Error(e.StatusCode,e.Code);}
+            }catch(OnlineFailure e){LogFailure(context,e.Status,e.Code);if(e.Status==429)context.Response.Headers.RetryAfter="1";return Error(e.Status,e.Code);}
+            catch(SuiteException e){LogFailure(context,e.StatusCode,e.Code);return Error(e.StatusCode,e.Code);}
             catch(JsonException){return Error(400,"STATION_MULTIPLAYER_BODY_INVALID");}
             catch(OperationCanceledException)when(!context.RequestAborted.IsCancellationRequested){return Error(504,"STATION_MULTIPLAYER_TIMEOUT");}
         }).DisableAntiforgery();
@@ -60,6 +71,9 @@ public static class StationMultiplayerEndpoints
             catch(System.Net.WebSockets.WebSocketException){}
         });
     }
+    private static void LogFailure(HttpContext context,int status,string code)=>
+        context.RequestServices.GetRequiredService<ILogger<StationMultiplayer>>().LogInformation(
+            "Station multiplayer command-refused trace={Trace} status={Status} code={Code}",context.TraceIdentifier,status,code);
     private static void Need(bool ok,int status,string code){if(!ok)throw new OnlineFailure(status,code);}
     public static StationMultiplayerCommand Parse(byte[] bytes)
     {

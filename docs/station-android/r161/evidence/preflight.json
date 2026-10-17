@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "exactR161PolicyAccepted": true,
+  "changedOptionsEngineAndRuntimeRejected": 3,
+  "firstReviewedModes": 78,
+  "completeReviewedDecisions": 321,
+  "reviewedEditions": 157,
+  "baselineIsHistoricalPreflightOnly": true,
+  "liveBaselineRead": false,
+  "productionMutated": false,
+  "frozenBuilderModified": false,
+  "policyAdapterSha256": "ae392df0c5e763e431c5707e8c0d158005d6135840a6441de231ed0553e97da5"
+}

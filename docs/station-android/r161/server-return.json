@@ -1,0 +1,113 @@
+{
+  "schema": "station.r161.server-return.v1",
+  "updatedUtc": "2026-10-15T14:22:04.954423+00:00",
+  "revision": "R161",
+  "serverApplied": true,
+  "serverN64Ready": true,
+  "serverN64Offline": false,
+  "originalKitReceived": true,
+  "originalKitHashVerifiedHere": true,
+  "acceptedApkSha256": "66f429d47af725a6767064c3623ee10c505171a85fbc8c0a50dc9e5bc4f80081",
+  "acceptedApkBytes": 2715122703,
+  "acceptedKitSha256": "bcfbe393e6e560cd04f8994de3267fd7ff76487c3e9f234aa5bd20abd7f0eadf",
+  "acceptedKitBytes": 12189409,
+  "all38ManifestFilesVerified": true,
+  "all26ActualApkElfVerified": true,
+  "signatureV2V3AndOriginalCertificateVerified": true,
+  "exactEngineBindings": [
+    {
+      "platform": "psx",
+      "engineId": "pcsx-rearmed-ff81ed17-player-v3-3c5f696fa30e",
+      "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+      "runtimeSha256": "3c5f696fa30ee9a7760b3925acf49693456a5a988f6362062658a3604e4a1939"
+    },
+    {
+      "platform": "n64",
+      "engineId": "mupen64plus-ae-33bf7021-n64-v3-656d6d7c017f",
+      "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+      "runtimeSha256": "656d6d7c017f17b55c3da06a5ee5ed11a60072f1b159790c78c4a8ab4606c9e3"
+    },
+    {
+      "platform": "gamecube",
+      "engineId": "dolphin-5102a033-gamecube-v3-8b181081428b",
+      "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+      "runtimeSha256": "8b181081428b9012eb8bcb291010018d1b0c0d3217e5e555f6db306b582b5256"
+    },
+    {
+      "platform": "wii",
+      "engineId": "dolphin-5102a033-wii-v3-8b181081428b",
+      "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+      "runtimeSha256": "8b181081428b9012eb8bcb291010018d1b0c0d3217e5e555f6db306b582b5256"
+    }
+  ],
+  "n64Cpu": "dynarec",
+  "n64ProfileSha256": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
+  "first78ReviewedModesApplied": true,
+  "complete321N64DecisionsApplied": true,
+  "enginesAdded": 4,
+  "profilesAdded": 399,
+  "preparedModesAdded": 399,
+  "priorEngineCountPreserved": 67,
+  "priorProfilesAndModesPreserved": true,
+  "finalSnapshot": {
+    "catalogRevision": 93,
+    "catalogEntries": 4744,
+    "engineCount": 71,
+    "profileCount": 14529,
+    "preparedModeCount": 9614,
+    "pid": 2489,
+    "dllSha256": "b3473cc0160169f686501af914cdbf8ebfdf8dcaa4dff768e1106ee8461c9179"
+  },
+  "n64Coverage": {
+    "editions": 157,
+    "multiplayerEditions": 120,
+    "individualOnlyEditions": 37,
+    "maximumFourEditions": 85,
+    "maximumThreeEditions": 2,
+    "maximumTwoEditions": 33,
+    "exactOwnerProfiles": 387,
+    "pendingClassification": 0,
+    "capacityDependsOnMode": true
+  },
+  "verification": {
+    "all157SignedCapabilitiesLocal": true,
+    "all157SignedCapabilitiesPublic": true,
+    "multiplayerModeAdmissionsPublic": 164,
+    "individualAndUnsupportedCountRefusalsPublic": 223,
+    "publicFourParticipantTransportPassed": true,
+    "publicParticipants": 4,
+    "dynarecControllerProtocolJvmChecks": 282,
+    "actualApkDexExecutedByJvmProbe": false,
+    "otherNativeSignedCapabilitySamplesPassed": true,
+    "ownSyntheticLicensesRemoved": true,
+    "realLicensesPreserved": true
+  },
+  "apiRestarted": false,
+  "scannerTimerRestored": true,
+  "apkInstalledByThisOperator": false,
+  "psxHleApprovalsAdded": 0,
+  "priorR159StillRegistered": true,
+  "physicalAndroidGameplayValidated": false,
+  "physicalFourAndroidGameplayValidated": false,
+  "twoCurrentPhoneInstallationsDirectlyVerifiedHere": false,
+  "producerA56InstallReceiptReceived": true,
+  "current007BlackScreenCauseConfirmed": true,
+  "bandwidthUploadMbps": 100,
+  "bandwidthDownloadMbps": 800,
+  "onboardOnlyNetworkPreserved": true,
+  "coversRomCatalogAndOtherServicesUnchangedByEnrollment": true,
+  "privateAuthority": "/mnt/DADOS/station-r161-usb-20261015/applied.json",
+  "nextAction": "Use the same exact R161 APK on both phones, create a new room and capture physical gameplay; do not repeat completed registration.",
+  "evidencePaths": [
+    "evidence/received-final-verified.json",
+    "evidence/signature-verified.json",
+    "evidence/preflight.json",
+    "evidence/dynarec-controller-protocol-proof.json",
+    "evidence/server-applied.json",
+    "evidence/public-four-participant-transport.json",
+    "evidence/operator-source-sha256.json"
+  ],
+  "r161PhysicalVideoFailureDocumentedByProducer": true,
+  "videoFailureEvidence": "physical-n64-video-failure-20261015.md",
+  "nextVideoTestRevision": "R162"
+}

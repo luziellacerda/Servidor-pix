@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "diagnosticOnly": true,
+  "sourceCommit": "5f4be74b1b6434b42de53285884d26b8b4ed9790",
+  "sidecarSourceSha256": "d850c858ac1d923f23efc18129cefa4a3913dde1bb691d46de15a3ca6a1127ea",
+  "unchangedRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "sidecarSha256": "05ecff9574c281d3546440aa5e8d3df104b8c6b4c032003a10aabf0efef81171",
+  "probeJarSha256": "27ce107b05c37b14dcc1fa97114b45748343b29356a6d8f8520d964328341f4f",
+  "probeBuildReceiptSha256": "ef51985f6888c213875591c64cc94a72a7e1769308e2f8417655321110224111",
+  "startedUtc": "2026-10-13T18:08:26.465200+00:00",
+  "completedUtc": "2026-10-13T18:08:30.070583+00:00",
+  "androidExecuted": true,
+  "plannedCases": 7,
+  "passed": true,
+  "failureCategory": null,
+  "observedFixedDiagnostics": [
+    {
+      "stage": "resolve",
+      "category": "PATH_MISSING"
+    },
+    {
+      "stage": "resolve",
+      "category": "PATH_INVALID"
+    },
+    {
+      "stage": "resolve",
+      "category": "PATH_INVALID"
+    },
+    {
+      "stage": "resolve",
+      "category": "PATH_INVALID"
+    },
+    {
+      "stage": "resolve",
+      "category": "RUNTIME_NOT_LOADED"
+    },
+    {
+      "stage": "enable",
+      "category": "INFO_ENABLED"
+    },
+    {
+      "stage": "enable",
+      "category": "INFO_ENABLED"
+    }
+  ],
+  "temporaryFilesRemoved": true,
+  "emptyScratchRemovedAndAbsentVerified": true,
+  "appLaunched": false,
+  "appForceStopped": false,
+  "appDataOrSettingsModified": false,
+  "apkInstalled": false,
+  "nativeActivityStarted": false,
+  "gameplayValidated": false,
+  "qualification": "Actual app_process64 JNI/Android loader calls and seven guarded cases; no NativeActivity, core or gameplay proof.",
+  "sourceReceiptSha256": "9c350e4b12f2d8eb5fd08c8b0ae6a1fd73ebe22bde251857fb7f389657b8feb5",
+  "evidenceScope": "Seven isolated real Android JNI/loader cases; no NativeActivity or game",
+  "containsRawLogsBinariesSecretsOrPhoneIdentifiers": false,
+  "device": {
+    "model": "moto g52",
+    "sdk": 33,
+    "abi": "arm64-v8a"
+  },
+  "testedSidecarIsByteIdenticalToFinalDiagnostic": true
+}

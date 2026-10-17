@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "appliedUtc": "2026-10-15T20:23:27.852347+00:00",
+  "baseline": {
+    "catalogRevision": 100,
+    "catalogEntries": 4744,
+    "engines": 83,
+    "profiles": 15912,
+    "modes": 10997
+  },
+  "publication": {
+    "catalogRevision": 100,
+    "catalogEntries": 4744,
+    "engines": 87,
+    "profiles": 16404,
+    "modes": 11489,
+    "enginesAdded": 4,
+    "profilesAdded": 492,
+    "modesAdded": 492,
+    "dataFileSha256": {
+      "catalog": "5f0ac1dfc7297cb9ab49bfab9e9f19b77955799a077b339967d7c798f3bbe4bb",
+      "profiles": "31f988edc7abc606aaf6c203acc6333ba4f7cf8b57479a691e83bc821fb821a1",
+      "current": "ec0203a83455f3dc2b091550db1708018a86ee6cc3fb3f983e258ce6095a4ef9",
+      "modes": "952fc9d86f3b9e2f86ff974082b13c1b5d02644dec0d27d8446e803e55867514"
+    }
+  },
+  "registeredDirectlyFromR165ToR167": true,
+  "allHistoricalPrefixesPreserved": true,
+  "apiRestarted": false,
+  "protectedRegistrarAndLimitsUnchanged": true
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "station.r161.usb-delivery-receipt.v1",
+  "observedAtLocal": "2026-10-15T09:10:33-03:00",
+  "driveLetterAtDelivery": "I",
+  "volumeLabel": "ESD-USB",
+  "usbDeviceModel": "SanDisk Cruzer Glide 3.0",
+  "folder": "SERVIDOR LER/R161-N64-ONLINE-DYNAREC-20261015",
+  "signedApk": {
+    "filename": "TurboStations-Premium-R161-n64-online-dynarec.apk",
+    "bytes": 2715122703,
+    "sha256ReadBackFromUsb": "66f429d47af725a6767064c3623ee10c505171a85fbc8c0a50dc9e5bc4f80081"
+  },
+  "independentKit": {
+    "filename": "Kit-Servidor-TurboStations-R161-Independentes.zip",
+    "bytes": 12189409,
+    "sha256ReadBackFromUsb": "bcfbe393e6e560cd04f8994de3267fd7ff76487c3e9f234aa5bd20abd7f0eadf"
+  },
+  "handoffAndReceiptsCopied": true,
+  "serverReceived": false,
+  "serverApplied": false,
+  "physicalGameplayValidated": false,
+  "deviceSerialStored": false
+}

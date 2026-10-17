@@ -59,13 +59,25 @@ public sealed record StationResolvedArtifact(string FilePath, StationCatalogEntr
 
 public sealed class StationLibrary
 {
-    public const int MaximumItems = 4096;
+    public const int LegacyCatalogMaximumItems = 4096;
+    public const int MaximumItems = 20_000;
     public const int MaximumCoverBytes = 5 * 1024 * 1024;
     public const long MaximumArtifactBytes = 1L << 40;
     public const long MaximumExpandedBytes = 4L << 40;
     public const int MaximumArtifactFiles = 100_000;
     public long Revision { get; }
     public IReadOnlyList<StationCatalogEntry> Catalog { get; }
+
+    public static int CatalogMaximumItems(string? value)
+    {
+        if (value is null) return LegacyCatalogMaximumItems;
+        if (!int.TryParse(value, System.Globalization.NumberStyles.None,
+                System.Globalization.CultureInfo.InvariantCulture, out var maximum) ||
+            maximum < 1 || maximum > MaximumItems)
+            throw new SuiteException(400, "STATION_INVALID_CATALOG_LIMIT",
+                "Station catalog item limit is invalid.");
+        return maximum;
+    }
     internal (long Length, long Ticks) SourceStamp { get; }
 
     internal static (long, long) FileStamp(string path)

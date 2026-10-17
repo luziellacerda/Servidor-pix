@@ -1,0 +1,195 @@
+{
+  "passed": true,
+  "checkedUtc": "2026-10-14T20:48:10.738418+00:00",
+  "revision": "current-USB-fc1d2d98",
+  "sourceCommit": null,
+  "apkSha256": "fc1d2d983deb5179979a4aebac7fa64b1740da1c62ae46bfc0d1f4c11eb46cf0",
+  "apkBytes": 2715106319,
+  "source": "Exact installed APK read through authorized USB",
+  "sourceApkHashIndependentlyReadHere": true,
+  "engineManifestSha256": "77de9ff0a09ff87a5763b0b924229aefac75512fb173f2b398ba4cd31d22f887",
+  "engineBinaryCount": 6,
+  "dependencyCount": 20,
+  "unchangedDependencyHashesActuallyVerified": true,
+  "files": [
+    {
+      "name": "libpcsx_rearmed_libretro_android.so",
+      "sha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+      "bytes": 1582960,
+      "dependency": false
+    },
+    {
+      "name": "libstation_psx_online.so",
+      "sha256": "25f26a587ea3a84eb336d26a33fe71eff02508ff964c6268c2e902bf1c8ed94b",
+      "bytes": 333656,
+      "dependency": false
+    },
+    {
+      "name": "libstation_mupen64plus_core.so",
+      "sha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+      "bytes": 561056,
+      "dependency": false
+    },
+    {
+      "name": "libstation_mupen64plus_runtime.so",
+      "sha256": "0702412628d22ffa7c4c02c1f0708aa7b4d6f827a854ec2b2f9b1592d51f9f61",
+      "bytes": 136456,
+      "dependency": false
+    },
+    {
+      "name": "libstation_dolphin_online.so",
+      "sha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+      "bytes": 15781160,
+      "dependency": false
+    },
+    {
+      "name": "libstation_dolphin_runtime.so",
+      "sha256": "91be6a0d00e213996bde57eb11fdcef3626735ce1af4c5f27e97a710ed4ef7c0",
+      "bytes": 147368,
+      "dependency": false
+    },
+    {
+      "name": "libmain.so",
+      "sha256": "62ad07ba8e62e3227d488f9075eb15167c2e95b721c43e480e2535b4319467f6",
+      "bytes": 4588272,
+      "dependency": true
+    },
+    {
+      "name": "libSDL2.so",
+      "sha256": "a282b35554eb006773349430e117bfeeff32a84e246a058c8fb7c7027c2e4dee",
+      "bytes": 1239896,
+      "dependency": true
+    },
+    {
+      "name": "libc++_shared.so",
+      "sha256": "b5d97c38a728afe28d341cda3369f512d35eaf9c680c1b0563cd6a63e395230f",
+      "bytes": 1423696,
+      "dependency": true
+    },
+    {
+      "name": "libstation_frontend.so",
+      "sha256": "438789d8e328ef6416b990ec64a41f96747a32714745088d16f88c65839a888d",
+      "bytes": 3034632,
+      "dependency": true
+    },
+    {
+      "name": "libSDL2_net.so",
+      "sha256": "f668cb9971913181761213be7d04dbfe5a3bf92c92d4ac9c1ab6d3eeaf44b9f5",
+      "bytes": 15888,
+      "dependency": true
+    },
+    {
+      "name": "libae-bridge.so",
+      "sha256": "ba5a7582295215f159e197f805dbfe85851aa912462996870f61ccd752ecb360",
+      "bytes": 326424,
+      "dependency": true
+    },
+    {
+      "name": "libjnidispatch.so",
+      "sha256": "ddfc6c965bbe366615c000ec1f06552ddf0bb2b4f9d921d0bff8c75b3cb2ca4c",
+      "bytes": 165992,
+      "dependency": true
+    },
+    {
+      "name": "libmupen64plus-audio-android-fp.so",
+      "sha256": "79bd6457b4a77364721e98df4946fadde2bc44256b156ae8b361bcf769e03f74",
+      "bytes": 88304,
+      "dependency": true
+    },
+    {
+      "name": "libmupen64plus-audio-android.so",
+      "sha256": "a8f8a5f83827a5056fca58bf72dc25951c56cdba568c55773f81efb20f2f0be5",
+      "bytes": 88208,
+      "dependency": true
+    },
+    {
+      "name": "libmupen64plus-input-android.so",
+      "sha256": "11783275d71eaa14f3e15eff330a784195fdd98b31ea4c16d23d4691e5f91512",
+      "bytes": 7920,
+      "dependency": true
+    },
+    {
+      "name": "libmupen64plus-rsp-hle.so",
+      "sha256": "67d0f74eb35a889c6abbc0ab0503691f45555ca601570911e0435be492bcf189",
+      "bytes": 63832,
+      "dependency": true
+    },
+    {
+      "name": "libmupen64plus-video-glide64mk2.so",
+      "sha256": "5c10d28d442ce37cacaba892317319029a0340b4503dd8ac10ff850fdc5e9ce6",
+      "bytes": 712936,
+      "dependency": true
+    },
+    {
+      "name": "libn64cpp.so",
+      "sha256": "fa2c06d3c09c0d9a4931fa7cd03a3aba15f6ed7ea990d8e4a37b8a5811867c0d",
+      "bytes": 1330832,
+      "dependency": true
+    },
+    {
+      "name": "liboboe.so",
+      "sha256": "2d1ab385a0817273cbcd249ce6488b54a7d31dde193a8bf3037bcd901ea2079f",
+      "bytes": 259048,
+      "dependency": true
+    },
+    {
+      "name": "libsoundtouch.so",
+      "sha256": "9944e132db1c2362b52cd88b438413d92802847b2174c64ce4dc801a7eaa41e3",
+      "bytes": 91760,
+      "dependency": true
+    },
+    {
+      "name": "libsoundtouch_fp.so",
+      "sha256": "5fae9c0a403f01415327b1175ac20460a438184075c8da467dcfea56435a002a",
+      "bytes": 89992,
+      "dependency": true
+    },
+    {
+      "name": "libstation_dolphin_file_redirect_hook.so",
+      "sha256": "23347bb99e0e73fde1f6deaf1b39d544ab4e4a5cc9e5f2c61c8d9facf5dfe06c",
+      "bytes": 4184,
+      "dependency": true
+    },
+    {
+      "name": "libstation_dolphin_gsl_alloc_hook.so",
+      "sha256": "e9254fe5325818c1ef50cf986cd6db9a87d9b3c29c4567cd74e666b512598d02",
+      "bytes": 4496,
+      "dependency": true
+    },
+    {
+      "name": "libstation_dolphin_hook.so",
+      "sha256": "7547dd37533c4352edf7666ef3b5220db08364054578bde7570c388658e0de16",
+      "bytes": 4400,
+      "dependency": true
+    },
+    {
+      "name": "libstation_dolphin_hook_impl.so",
+      "sha256": "b3f2973bdccfb877cfc10fcaadd40b69e48af39434cc232d02bfc81a1669e264",
+      "bytes": 258824,
+      "dependency": true
+    }
+  ],
+  "producerOriginalZipReceived": false,
+  "producerOriginalZipHashVerifiedHere": false,
+  "phoneApplicationOrDataChanged": false,
+  "physicalGameplayValidated": false,
+  "policies": [
+    {
+      "platform": "psx",
+      "fixedFunctionalPolicyUnchanged": true
+    },
+    {
+      "platform": "n64",
+      "fixedFunctionalPolicyUnchanged": true
+    },
+    {
+      "platform": "gamecube",
+      "fixedFunctionalPolicyUnchanged": true
+    },
+    {
+      "platform": "wii",
+      "fixedFunctionalPolicyUnchanged": true
+    }
+  ],
+  "currentDex35Sha256": "e2cbccdb9af8dbeb1485c7119312875aece8660956833d22ee042b5b5306b513"
+}

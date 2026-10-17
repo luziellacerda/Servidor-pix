@@ -1,0 +1,15 @@
+{
+  "revision": "R144",
+  "ownLoginUiObserved": true,
+  "passwordFieldAndEnterButtonPresent": true,
+  "screenshotProtectedByExistingFlagSecure": true,
+  "flagSecureSourceUnchanged": true,
+  "existingCodeForA56FoundInHandoffs": false,
+  "activationCodeEntered": false,
+  "activationPerformed": false,
+  "browserAccessFailedAfterOneResetRetry": true,
+  "waitingForFreshCodeFromUser": true,
+  "newLicenseCreated": false,
+  "existingLicenseChanged": false,
+  "containsSecretOrPersonalData": false
+}

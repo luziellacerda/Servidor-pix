@@ -1,0 +1,34 @@
+{
+  "schema": "station.r146.direct-v3.live-tls-probe.v1",
+  "passed": true,
+  "host": "downloads-station.lzgames.com.br",
+  "port": 443,
+  "directFactory": {
+    "passed": true,
+    "elapsedMs": 396,
+    "protocol": "TLSv1.3",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
+    "actualSpkiSha256": "bcd134d59fcdbb35e0343c86d31a666cc95cf158d70b27aceceefd19158d072f",
+    "hostnameIdentification": "HTTPS",
+    "systemCaAndPinFactoryUsed": true
+  },
+  "legacyFactoryAgainstDirectHost": {
+    "rejected": true,
+    "expectedPinMismatchObserved": true,
+    "errorClass": "SSLHandshakeException",
+    "category": "spki-pin-mismatch"
+  },
+  "connectTimeoutMs": 10000,
+  "socketHandshakeTimeoutMs": 15000,
+  "applicationBytesSent": false,
+  "httpOrWebSocketRequested": false,
+  "phoneAccessed": false,
+  "physicalGameplayValidated": false,
+  "startedAtUtc": "2026-10-14T00:13:41.040699+00:00",
+  "finishedAtUtc": "2026-10-14T00:13:41.544319+00:00",
+  "tlsDraftSourceSha256": "73f5c9a2f1a79ff5807efa0fc7b209a6e02dda9b72ae493cc438d778c42a0a92",
+  "stationConfigFixtureSha256": "70cdee88662777853d8c40f3161663ecab9b365fd8e5e041abf6e4db5d39bdc9",
+  "probeSourceSha256": "20d2778809e8c210c3661d16fe2676c94da0ee8cb05ad3384635755f3fe1273f",
+  "runnerSourceSha256": "5866f53abcb5452123c81236d0b7abd0f1d7c8c586e42445840b4e3ad738d61f",
+  "routeDraftModified": false
+}

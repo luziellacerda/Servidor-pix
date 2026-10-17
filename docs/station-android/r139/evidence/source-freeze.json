@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "revision": "R139",
+  "sourceCommit": "42da152e54bbbb4a6d569ca26fe90835503bcccb",
+  "baseRuntimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+  "nativeSourceSha256": "24420118e5ce94376b077051084a84d4c52f152d00b9e2330333896bced798fb",
+  "sourceFiles": {
+    "frontend/drivers/platform_unix.c": "24420118e5ce94376b077051084a84d4c52f152d00b9e2330333896bced798fb"
+  },
+  "changedSourceFiles": [
+    "frontend/drivers/platform_unix.c"
+  ],
+  "sourceRoles": {
+    "nativeRuntimeSource": {
+      "integration/native-resource-lifecycle-r139-20261013/native/source/frontend/drivers/platform_unix.c": "24420118e5ce94376b077051084a84d4c52f152d00b9e2330333896bced798fb"
+    },
+    "buildAndPackagingRecipes": {
+      "integration/native-resource-lifecycle-r139-20261013/recipe/build_native_r139.py": "7b7cdbbdb821290653461b94eae6970c1081d64e509a6c90b3343434936b0f5d",
+      "integration/native-resource-lifecycle-r139-20261013/recipe/freeze_r139_sources.py": "a0f22a07994b6df5e3fba578ccf8918ea855a5673c1d6f8055dd6172edfcbf39",
+      "integration/native-resource-lifecycle-r139-20261013/recipe/package_r139.py": "a34931b7db4a1f503f22d08b9c6710e68c878cb0de3b429ce5bde6928aab8a08",
+      "integration/native-resource-lifecycle-r139-20261013/recipe/patch_resource_lifecycle.py": "685de6c92972bdc7671cf36e6409f18b2bd111023f62a3419a75628775958cf1",
+      "integration/native-resource-lifecycle-r139-20261013/recipe/test_recipe_path_guards.py": "bb871c9e31526a2d98c62a6263d17a67606520dde2259d21896a608b62dd480e",
+      "integration/native-resource-lifecycle-r139-20261013/recipe/test_resource_lifecycle.py": "3ac26e5a7bb4680ce52434aac0287db7d30f3bd3dd490aef696fa5114338b03a",
+      "integration/native-resource-lifecycle-r139-20261013/recipe/verify_apk_r139.py": "23ad62318ad11b1b2d041a73afa3ce8b447a22482785f1db1c0a5c02e8f15a70"
+    },
+    "nativeAndScopeTests": {
+      "integration/native-resource-lifecycle-r139-20261013/tests/resource_tls_harness.c.in": "4416c2c15215b85da301c0a89b6ec39eccc17d1f9d4f3f71c152d30616e64064",
+      "integration/native-resource-lifecycle-r139-20261013/tests/test_package_scope.py": "397e451815723efdd4ee2f91743503103dd4f935f146eb7310df7f40befd3e30"
+    }
+  },
+  "sourceArchiveSha256": "b8f7649a5edacbe9e913d5e50f66482c0aa082fbd2237f5fd7800d00723b735a",
+  "baselineSourceManifestSha256": "63049a133ed0a761133f4ffc36ce642870dc699e103a5a73ab0b7683a6d90f47",
+  "baselineR138OverlaySha256": "e4811bef12aeacd07947e51badaf8341be6c12c347c4952a9334ba22e56342f2",
+  "committedSourceBytesVerified": true,
+  "apkCreated": false,
+  "nativeCompiled": false
+}

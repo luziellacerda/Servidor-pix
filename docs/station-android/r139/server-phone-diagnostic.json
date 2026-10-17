@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "deviceModel": "moto g52",
+  "package": "org.turboramastation.frontend",
+  "runtimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "runtimeMatchesR139": true,
+  "topGear3000ContentMatchesServer": true,
+  "topGear3000ContentSha256": "6be49983976564f1fd9eff2f14f5bb41d3a0ff48573e39318088ecce286aca62",
+  "timezone": "America/Maceio",
+  "events": [
+    {
+      "utc": "2026-10-13T14:35:55.192+00:00",
+      "source": "server-loopback-snapshot",
+      "event": "Top Gear 3000 VS: two lobby members ready; start accepted; no native attachment/HELLO/READY at this sample"
+    },
+    {
+      "utc": "2026-10-13T14:35:56.784134+00:00",
+      "source": "server-journal",
+      "event": "WebSocket HTTP101 completed after 166.3749ms connection lifetime"
+    },
+    {
+      "utc": "2026-10-13T14:35:56.790067+00:00",
+      "source": "server-journal",
+      "event": "WebSocket HTTP101 completed after 230.8867ms connection lifetime"
+    },
+    {
+      "utc": "2026-10-13T14:35:57.208+00:00",
+      "source": "server-loopback-snapshot",
+      "event": "native barrier became terminal without reaching Playing"
+    },
+    {
+      "utc": "2026-10-13T14:37:03.658+00:00",
+      "source": "phone-activity-events",
+      "event": "new StationRetroActivity created"
+    },
+    {
+      "utc": "2026-10-13T14:37:23.890514+00:00",
+      "source": "server-journal",
+      "event": "WebSocket HTTP101 completed after 19937.2224ms connection lifetime"
+    },
+    {
+      "utc": "2026-10-13T14:37:23.918+00:00",
+      "source": "phone-activity-events",
+      "event": "StationRetroActivity paused"
+    },
+    {
+      "utc": "2026-10-13T14:37:23.923+00:00",
+      "source": "phone-crash-buffer",
+      "event": "SIGSEGV SEGV_MAPERR fault address0x10 on RenderThread in station_netplay process"
+    },
+    {
+      "utc": "2026-10-13T14:37:24.041+00:00",
+      "source": "phone-crash-buffer",
+      "event": "FORTIFY pthread_mutex_lock on a destroyed mutex on two other threads"
+    },
+    {
+      "utc": "2026-10-13T14:37:24.214+00:00",
+      "source": "phone-activity-events",
+      "event": "station_netplay process died"
+    },
+    {
+      "utc": "2026-10-13T14:37:26.347+00:00",
+      "source": "server-journal",
+      "event": "subsequent command refused404 STATION_MULTIPLAYER_ROOM_UNKNOWN"
+    }
+  ],
+  "currentCrashFullBacktraceAvailable": false,
+  "currentExitInfoReason": "EXIT_SELF status0",
+  "oldOct11And12TombstonesNotUsedAsCurrentCause": true,
+  "connectionLifetimeIsNotHandshakeLatency": true,
+  "oneSecondSamplingCannotExcludeBriefAttachments": true,
+  "laterTenMinuteUsbCapture": {
+    "startUtc": "2026-10-13T15:04:54+00:00",
+    "activeRoomsObserved": 0,
+    "activeConnectionsObserved": 0,
+    "newGameplayAttemptCaptured": false
+  },
+  "mainBufferRotatedPastFailure": true,
+  "unresolved": [
+    "Why the declared room HLE options were not consumed on the physical phones; validate both cfg settings with exact preserved composition",
+    "Exact rejection code of the two relay HTTP409 responses; do not infer reason from status or relax generation/READY",
+    "Cause of the earlier RenderThread SIGSEGV/destruction sequence",
+    "Physical online gameplay after corrective APK"
+  ],
+  "causalServerOrAppGameplayConclusion": "Immediate native core content-load failure proven on four separate host attempts; why HLE option selection differed and relay409 reasons still need confirmation; no end-to-end gameplay validation",
+  "apkModified": false,
+  "deviceDataCleared": false,
+  "deviceSettingsChanged": false,
+  "containsSerialOrPersonalData": false,
+  "newAttempt": {
+    "vs": {
+      "utcStart": "2026-10-13T15:34:20.320+00:00",
+      "nativeHooksLoaded": true,
+      "sessionOwnerBound": true,
+      "nativeReturnUtc": "2026-10-13T15:34:21.193+00:00",
+      "nativeReturnCode": 1,
+      "returnedToFrontendUtc": "2026-10-13T15:34:21.292+00:00",
+      "newCrashRecorded": false
+    },
+    "championshipTwoPlayer": {
+      "utcStart": "2026-10-13T15:35:22.548+00:00",
+      "nativeHooksLoaded": true,
+      "sessionOwnerBound": true,
+      "streamState": 0,
+      "epoch": 1,
+      "nativeStatus": -1,
+      "nativeLocalReady": false,
+      "nativeReadySent": -1,
+      "txBytes": 0,
+      "rxBytes": 0,
+      "pongRttMsSamples": [
+        119,
+        178,
+        160,
+        165,
+        518
+      ],
+      "sessionNotPlaying": true,
+      "serverTerminalUtc": "2026-10-13T15:36:09.819+00:00"
+    },
+    "sourceReview": {
+      "rarchMainAndroidReturn1": "task_push_load_content_from_cli returned false",
+      "files": "pinned corresponding source retroarch.c:6029-6036 and tasks/task_content.c:2716-2724",
+      "contentInitCauseNotYetLogged": true,
+      "confirmingNativeEpochRequired": true
+    },
+    "clockOffsetsNotCalibrated": true,
+    "phoneNativeStackPermission": "debuggerd requires root; no root or bypass attempted"
+  },
+  "newAttemptCapturedAfterEarlierWindow": true,
+  "latestAnalysisUtc": "2026-10-13T18:55:24.430608+00:00",
+  "receivedUsbDiagnostic": {
+    "receivedUtc": "2026-10-13T18:55:24.430608+00:00",
+    "zipName": "Diagnostico-TopGear3000-R139-20261013.zip",
+    "zipBytes": 53620,
+    "zipSha256": "43ed435a1d0540d440f28b53de1403e305819ddf3e8e424f0dba156ab4387e9a",
+    "manifestListedFilesVerified": 11,
+    "phonesCovered": [
+      "moto g52",
+      "motorola edge 30"
+    ],
+    "modesCovered": [
+      "vs",
+      "campeonato"
+    ],
+    "simultaneousPairCapture": false,
+    "captures": [
+      {
+        "phoneModel": "moto g52",
+        "declaredMode": "vs",
+        "hostRoleObserved": true,
+        "scope": "separate host attempt; not simultaneous two-phone capture",
+        "diagnosticApkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+        "startUtc": "2026-10-13T18:16:28.718118+00:00",
+        "endUtc": "2026-10-13T18:19:01.287724+00:00",
+        "clockDeviceMinusHostIntervalSeconds": [
+          -0.7886748313903809,
+          0.28148746490478516
+        ],
+        "observations": [
+          {
+            "utc": "2026-10-13T18:18:46.980000+00:00",
+            "category": "missing-dsp4-program",
+            "sourceFile": "moto-g52/logcat-topgear3000-vs.txt",
+            "line": 614
+          },
+          {
+            "utc": "2026-10-13T18:18:46.980000+00:00",
+            "category": "missing-dsp4-data",
+            "sourceFile": "moto-g52/logcat-topgear3000-vs.txt",
+            "line": 615
+          },
+          {
+            "utc": "2026-10-13T18:18:47.088000+00:00",
+            "category": "content-load-failed",
+            "sourceFile": "moto-g52/logcat-topgear3000-vs.txt",
+            "line": 623
+          },
+          {
+            "utc": "2026-10-13T18:18:47.104000+00:00",
+            "category": "native-return-1",
+            "sourceFile": "moto-g52/logcat-topgear3000-vs.txt",
+            "line": 624
+          }
+        ],
+        "nativeNotReadySamples": [],
+        "newCrashMarkers": [],
+        "physicalGameplayValidated": false
+      },
+      {
+        "phoneModel": "moto g52",
+        "declaredMode": "campeonato",
+        "hostRoleObserved": true,
+        "scope": "separate host attempt; not simultaneous two-phone capture",
+        "diagnosticApkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+        "startUtc": "2026-10-13T18:19:40.775149+00:00",
+        "endUtc": "2026-10-13T18:21:25.055549+00:00",
+        "clockDeviceMinusHostIntervalSeconds": [
+          -0.8391120433807373,
+          0.22445178031921387
+        ],
+        "observations": [
+          {
+            "utc": "2026-10-13T18:20:58.122000+00:00",
+            "category": "missing-dsp4-program",
+            "sourceFile": "moto-g52/logcat-topgear3000-campeonato.txt",
+            "line": 217
+          },
+          {
+            "utc": "2026-10-13T18:20:58.122000+00:00",
+            "category": "missing-dsp4-data",
+            "sourceFile": "moto-g52/logcat-topgear3000-campeonato.txt",
+            "line": 218
+          },
+          {
+            "utc": "2026-10-13T18:20:58.226000+00:00",
+            "category": "content-load-failed",
+            "sourceFile": "moto-g52/logcat-topgear3000-campeonato.txt",
+            "line": 220
+          },
+          {
+            "utc": "2026-10-13T18:20:58.239000+00:00",
+            "category": "native-return-1",
+            "sourceFile": "moto-g52/logcat-topgear3000-campeonato.txt",
+            "line": 222
+          }
+        ],
+        "nativeNotReadySamples": [],
+        "newCrashMarkers": [],
+        "physicalGameplayValidated": false
+      },
+      {
+        "phoneModel": "motorola edge 30",
+        "declaredMode": "vs",
+        "hostRoleObserved": true,
+        "scope": "separate host attempt; not simultaneous two-phone capture",
+        "diagnosticApkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+        "startUtc": "2026-10-13T18:29:56.735104+00:00",
+        "endUtc": "2026-10-13T18:33:05.889079+00:00",
+        "clockDeviceMinusHostIntervalSeconds": [
+          1.169588565826416,
+          2.264450788497925
+        ],
+        "observations": [
+          {
+            "utc": "2026-10-13T18:32:53.379000+00:00",
+            "category": "missing-dsp4-program",
+            "sourceFile": "edge30/logcat-topgear3000-vs.txt",
+            "line": 465
+          },
+          {
+            "utc": "2026-10-13T18:32:53.379000+00:00",
+            "category": "missing-dsp4-data",
+            "sourceFile": "edge30/logcat-topgear3000-vs.txt",
+            "line": 466
+          },
+          {
+            "utc": "2026-10-13T18:32:53.434000+00:00",
+            "category": "content-load-failed",
+            "sourceFile": "edge30/logcat-topgear3000-vs.txt",
+            "line": 470
+          },
+          {
+            "utc": "2026-10-13T18:32:53.445000+00:00",
+            "category": "native-return-1",
+            "sourceFile": "edge30/logcat-topgear3000-vs.txt",
+            "line": 471
+          }
+        ],
+        "nativeNotReadySamples": [],
+        "newCrashMarkers": [],
+        "physicalGameplayValidated": false
+      },
+      {
+        "phoneModel": "motorola edge 30",
+        "declaredMode": "campeonato",
+        "hostRoleObserved": true,
+        "scope": "separate host attempt; not simultaneous two-phone capture",
+        "diagnosticApkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+        "startUtc": "2026-10-13T18:33:17.110728+00:00",
+        "endUtc": "2026-10-13T18:36:10.350788+00:00",
+        "clockDeviceMinusHostIntervalSeconds": [
+          0.8230090141296387,
+          1.8887465000152588
+        ],
+        "observations": [
+          {
+            "utc": "2026-10-13T18:33:56.724000+00:00",
+            "category": "missing-dsp4-program",
+            "sourceFile": "edge30/logcat-topgear3000-campeonato.txt",
+            "line": 171
+          },
+          {
+            "utc": "2026-10-13T18:33:56.724000+00:00",
+            "category": "missing-dsp4-data",
+            "sourceFile": "edge30/logcat-topgear3000-campeonato.txt",
+            "line": 172
+          },
+          {
+            "utc": "2026-10-13T18:33:56.777000+00:00",
+            "category": "content-load-failed",
+            "sourceFile": "edge30/logcat-topgear3000-campeonato.txt",
+            "line": 173
+          },
+          {
+            "utc": "2026-10-13T18:33:56.895000+00:00",
+            "category": "menu-driver-init-failed-after-content-load-failure",
+            "sourceFile": "edge30/logcat-topgear3000-campeonato.txt",
+            "line": 182
+          }
+        ],
+        "nativeNotReadySamples": [
+          {
+            "utc": "2026-10-13T18:33:57.136000+00:00",
+            "nativeStatus": -1,
+            "localReady": false,
+            "readySent": -1,
+            "txBytes": 0,
+            "rxBytes": 0
+          },
+          {
+            "utc": "2026-10-13T18:34:07.147000+00:00",
+            "nativeStatus": -1,
+            "localReady": false,
+            "readySent": -1,
+            "txBytes": 0,
+            "rxBytes": 0
+          },
+          {
+            "utc": "2026-10-13T18:34:17.165000+00:00",
+            "nativeStatus": -1,
+            "localReady": false,
+            "readySent": -1,
+            "txBytes": 0,
+            "rxBytes": 0
+          },
+          {
+            "utc": "2026-10-13T18:34:27.182000+00:00",
+            "nativeStatus": -1,
+            "localReady": false,
+            "readySent": -1,
+            "txBytes": 0,
+            "rxBytes": 0
+          },
+          {
+            "utc": "2026-10-13T18:34:37.198000+00:00",
+            "nativeStatus": -1,
+            "localReady": false,
+            "readySent": -1,
+            "txBytes": 0,
+            "rxBytes": 0
+          }
+        ],
+        "newCrashMarkers": [],
+        "physicalGameplayValidated": false
+      }
+    ],
+    "declaredReleaseRuntimePreserved": true,
+    "runtimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+    "diagnosticApkIsRelease": false,
+    "temporaryIndependentEngineMarkersRegistered": false,
+    "immediateFailureConfirmed": "DSP4 files requested but absent; content load failed on all four captured attempts",
+    "specificLegacyOverrideFileReadOnPhone": false,
+    "underlyingHleOptionSelectionProvenOnPhone": false,
+    "proposedAppCfgSettings": {
+      "global_core_options": "true",
+      "game_specific_options": "false"
+    },
+    "coreHleValuesAlreadyDeclared": {
+      "bsnes_violate_accuracy": "enabled",
+      "bsnes_chip_hle": "HLE"
+    },
+    "producerReportsHostResolverCases": 20,
+    "producerHostResolverEvidenceIncludedInUsb": false,
+    "producerHostResolverEvidenceFoundInReceivedGit": true,
+    "serverIndependentStaticSourceReview": {
+      "coreSource": "https://github.com/libretro/bsnes-mercury/blob/79d7f9de218b/target-libretro/libretro.cpp",
+      "coreSourceSha256": "90bfb5826f9e2e85a05d11137eeeebdbc05359b7eba3632d4296e87c5dae007a",
+      "runtimeSource": "https://github.com/libretro/RetroArch/blob/69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576/runloop.c",
+      "runtimeSourceSha256": "0a7414cce55674b37a2c08f371b95b1533b83d895bf3d1083d7fc48fb1e8c657",
+      "finding": "Missing requested files sets load_request_error and makes cartridge loading return false; resolver allows game/folder/core paths to precede room path unless both proposed settings bind it",
+      "physicalConfigurationConsumptionValidated": false
+    },
+    "serverJournalCrossCheck": {
+      "windowStartUtc": "2026-10-13T18:16:00+00:00",
+      "windowEndUtc": "2026-10-13T18:37:00+00:00",
+      "records": 8510,
+      "acceptedRelay101": 6,
+      "refusedRelay409": 2,
+      "refusedRelay409TimesUtc": [
+        "2026-10-13T18:18:46.957442+00:00",
+        "2026-10-13T18:32:53.185256+00:00"
+      ],
+      "relay409ResponseCodesRecorded": false,
+      "relay409CauseInferred": false,
+      "commandRefusals": [
+        {
+          "utc": "2026-10-13T18:20:49.000054+00:00",
+          "httpStatus": 409,
+          "code": "STATION_MULTIPLAYER_GENERATION_MISMATCH"
+        },
+        {
+          "utc": "2026-10-13T18:21:00.725653+00:00",
+          "httpStatus": 409,
+          "code": "STATION_MULTIPLAYER_UNRECOVERABLE"
+        },
+        {
+          "utc": "2026-10-13T18:34:45.634227+00:00",
+          "httpStatus": 409,
+          "code": "STATION_MULTIPLAYER_UNRECOVERABLE"
+        }
+      ],
+      "lobbyEvents429": [
+        {
+          "utc": "2026-10-13T18:22:06.701027+00:00",
+          "route": "/v1/station/online/events"
+        }
+      ],
+      "unhandledOrFatalMarkersObserved": 0,
+      "servicePid": 2867363,
+      "serviceNRestarts": 0,
+      "connectionLifetimeIsNotHandshakeLatency": true,
+      "clockIntervalsDoNotPermitMillisecondCausalOrdering": true
+    },
+    "apiAppliedOrRestarted": false,
+    "correctiveApkInstalledOrGameplayValidated": false,
+    "priorCrashStillSeparateUnresolvedIncident": true,
+    "rawLogsOrPhoneIdentifiersPublished": false,
+    "producerHostResolverEvidenceReadUtc": "2026-10-13T19:03:02.025415+00:00",
+    "producerHostResolverQualification": {
+      "sourceCommit": "b93623b708bafe151441d3e4920acad51718e118",
+      "receiptSha256": "42db9aa7537486f15b555987ac05d0d4850de7b34af9ffa5063a014438bfc821",
+      "passed": true,
+      "executedCases": 20,
+      "reviewedOnServer": true,
+      "executedByThisServer": false,
+      "threeExtractedFunctionHashesMatchCorrespondingUpstreamBodiesWithNewlineVariants": true,
+      "fullUpstreamSourceShaMatchesProducerModifiedSource": false,
+      "discoveryHelpersMocked": true,
+      "optionManagerMocked": true,
+      "actualPhoneLegacyFileRead": false,
+      "actualBsnesVariablesMeasured": false,
+      "androidExecuted": false,
+      "gameplayValidated": false,
+      "receipt": "startup-logging-diagnostic/evidence/host-resolver-qualification.json"
+    },
+    "appR140Candidate": {
+      "sourceCommit": "b93623b708bafe151441d3e4920acad51718e118",
+      "state": "source-and-recipes-versioned; no compiled/signed/installed artifact receipt received",
+      "baselineApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+      "cfgKeys": {
+        "global_core_options": "true",
+        "game_specific_options": "false"
+      },
+      "retroArchDescriptorsAndActiveIdsPreserved": true,
+      "activeRetroArchIdsPreserved": 8,
+      "independentEngineIdsToRenewAfterActualBytesReceived": 4,
+      "newMarkerLibrariesToVerifyAfterCompile": 3,
+      "serverRegistered": false,
+      "physicalGameplayValidated": false
+    }
+  }
+}

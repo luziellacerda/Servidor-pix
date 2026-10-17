@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "actualProtectedR168Verified": true,
+  "actualDllAndProcessVerified": true,
+  "allPriorServiceConfigurationsPreserved": true,
+  "onlyDiagnosticPrefixChanged": true,
+  "publicationRepeated": false,
+  "deploymentRepeated": false
+}

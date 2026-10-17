@@ -1,0 +1,293 @@
+{
+  "schema": "station.hourly-maintenance-return.v1",
+  "cycle": "20261015-22z",
+  "utc": "2026-10-15T22:13:51.175527+00:00",
+  "status": "partial",
+  "scope": "R168 receipt, protected reconciliation and read-only preflight; no production publication",
+  "eventFingerprint": "30895ff19198e8eeaded4c5fe5341b08c1a360a9c20acdc83f4a59a938f5df11",
+  "serverApplied": false,
+  "serverRegistrationConfirmed": false,
+  "serverConsumerReady": false,
+  "currentR167StillRegisteredAndOnline": true,
+  "input": {
+    "publicAppCommit": "e8c0e8c6cbeb57202c9193cbe4f3cd394da027ca",
+    "publicServerCommit": "24d06e5bffbf6b8114ce1405566ae936ca4378f6",
+    "privateRepository": "luziellacerda/TurboramaEmulationStation",
+    "privateRef": "handoff/station-r168-psx-android-xml-20261015",
+    "privateCommit": "4733c00fbba4be0c8dd5b9c813ba74002732d1b5",
+    "privateZipGitBlob": "aac06afdf7c28e5cd25e3e1ec221112f94e4f7b5",
+    "verified": {
+      "passed": true,
+      "revision": "R168",
+      "originalKitSha256": "c0de71c3a4e10cce320f7ba6966e183871760157ca67e9010eb5bdfb0850177b",
+      "originalKitBytes": 14275389,
+      "manifestFilesVerified": 50,
+      "actualArm64ElfVerified": 27,
+      "coreAnd21DependenciesUnchanged": true,
+      "psxNativeSourcesEqualR167": true,
+      "runtimeIdentityAndFrozenSourceHashesVerified": true,
+      "producerFinalApkProofVerified": true,
+      "producerSignedApkSha256": "875fb0696c4fb50ce4af953bccd62fcd68dfdecb247f65d2fc027b71aa330b3d",
+      "sourceCommit": "e8c0e8c6cbeb57202c9193cbe4f3cd394da027ca",
+      "exactEngineIds": {
+        "psx": "pcsx-rearmed-ff81ed17-player-v3-b21623fee188",
+        "n64": "mupen64plus-ae-33bf7021-n64-v3-a0c9d15cfbc7",
+        "gamecube": "dolphin-5102a033-gamecube-v3-04383e1f63a0",
+        "wii": "dolphin-5102a033-wii-v3-04383e1f63a0"
+      },
+      "apkReceivedOrInspectedHere": false,
+      "apkSignatureIndependentlyVerifiedHere": false,
+      "physicalAndroidGameplayValidated": false
+    },
+    "r168RuntimeSha256": {
+      "libpcsx_rearmed_libretro_android.so": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+      "libstation_psx_online.so": "b21623fee188dabf304c36aff588f56e8f1999e1ee7ad5ecaa90865df5f27cd4",
+      "libstation_mupen64plus_core.so": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+      "libstation_mupen64plus_runtime.so": "a0c9d15cfbc7f84ebe7088de68f99d53419bdf840c4a24429723a4f64460d415",
+      "libstation_dolphin_online.so": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+      "libstation_dolphin_runtime.so": "04383e1f63a036b590aa22398bc0d2280a3bb04bcf472858f11f9ce4bd3577a9"
+    }
+  },
+  "protectedBaseline": {
+    "utc": "2026-10-15T22:04:56.534326+00:00",
+    "actualApiPid": 152812,
+    "automaticRestarts": 0,
+    "dllPath": "/opt/turborama-station-host-exit-r165-20261015-53d4adc9c114/TurboRamaSuiteOnlineServer.dll",
+    "dllSha256": "53d4adc9c1143f09c6b136ee085cb599dbe58a286b582107cc88a640483b2eb2",
+    "counts": {
+      "catalogRevision": 100,
+      "catalogEntries": 4744,
+      "engines": 87,
+      "profiles": 16404,
+      "modes": 11489
+    },
+    "dataSha256": {
+      "catalog": "5f0ac1dfc7297cb9ab49bfab9e9f19b77955799a077b339967d7c798f3bbe4bb",
+      "profiles": "31f988edc7abc606aaf6c203acc6333ba4f7cf8b57479a691e83bc821fb821a1",
+      "current": "ec0203a83455f3dc2b091550db1708018a86ee6cc3fb3f983e258ce6095a4ef9",
+      "modes": "952fc9d86f3b9e2f86ff974082b13c1b5d02644dec0d27d8446e803e55867514"
+    },
+    "scannerConfigSha256": "373d4eb2d33f594441f64326a94cb7648fa0dca977a1cb37b8e9d57f2d51d743",
+    "realProcessIndexMatchesScanner": true,
+    "serviceConfigurationEqualApplied": true,
+    "libraryToolsSha256": {
+      "atualizar-biblioteca-station.py": "b777d2c5f5fe38d88ea6cbdf539d0592c3bfd9d8de1af8ae9d2f29aa9ff26089",
+      "station_online_profiles.py": "82d95a867c359afec0de6e99f9d286d5ac8da712bdf52ee696b6b5cba37995f8",
+      "cadastrar-motor-online-station.py": "a3c81e0c379984d6b7736f79ce963c73a3f3250883f6304a32b5c6cfda73a096"
+    },
+    "scanLockAcquired": true,
+    "scanLockWaitSeconds": 0.0
+  },
+  "nativeAuthentication": {
+    "authenticated": true,
+    "elapsedSeconds": 61.71,
+    "ownUnauthenticatedRequestCancelled": false,
+    "rootOperationInterrupted": false,
+    "exitCode": 0,
+    "protectedAuditPassed": true,
+    "dataApplied": false,
+    "completed": false
+  },
+  "preflight": {
+    "fullCandidatePassed": false,
+    "productionPublicationAttempted": false,
+    "rejection": {
+      "passed": false,
+      "rejectionConfirmed": true,
+      "originalValidatorUnchanged": true,
+      "baselineEqualFreshProtectedAudit": true,
+      "stage": "first-78-before-complete-N64-and-PSX",
+      "failures": [
+        {
+          "itemId": "station_4e577685b9feb98a02a1b2cb884f2925",
+          "name": "WinBack: Covert Operations",
+          "contentSha256": "bc1188c4b21f82306541435b10c3efe8e7e5ba130fa5a774f736bc54c462343c",
+          "baselineProfiles": 124,
+          "baselineBytes": 130472,
+          "newProfilesInFirst78Stage": 6,
+          "projectedBytesFirst78Stage": 137167,
+          "limitBytes": 131072,
+          "excessBytesFirst78Stage": 6095,
+          "remainingBaselineBytes": 600,
+          "newProfileSizes": [
+            1127,
+            1113,
+            1109,
+            1113,
+            1117,
+            1122
+          ]
+        }
+      ],
+      "productionWrites": false,
+      "proposedPartialRegistrationApplied": false,
+      "historicalProfilesChanged": false,
+      "limitsRaised": false,
+      "perItemSizingDiagnosticOnly": true
+    },
+    "psxRequalificationOnly": {
+      "passed": true,
+      "scope": "PSX decision preparation only; full R168 registration remains rejected",
+      "summary": {
+        "reviewedEditions": 84,
+        "decisions": 93,
+        "approvedMultiplayerModes": 23,
+        "approvedMultiplayerEditions": 19,
+        "pendingMultiplayerModes": 17,
+        "localClassificationsWithoutSeats": 53,
+        "exactEditionAndReceivedRuntimePolicyReevaluated": true,
+        "metadataUsedForApproval": false,
+        "sourceRealCoreEvidenceReusedForIdenticalCoreAndOptions": true,
+        "physicalAndroidGameplayValidated": false
+      },
+      "all93CurrentR167DecisionsPreserved": true,
+      "realPerEditionCoreEvidenceRechecked": true,
+      "wrongCoreRefused": true,
+      "missingRealHleRefused": true,
+      "changedEditionRefused": true,
+      "serverApplied": false,
+      "signedR168CapabilitiesNotProved": true,
+      "androidGameplayValidated": false
+    },
+    "expectedFullNewBindings": 492,
+    "expectedFullNewOwners": 4,
+    "complete492ProjectionValidated": false,
+    "registrarCandidateStaged": false,
+    "signedR168CapabilitiesProved": false,
+    "r168TransportProved": false
+  },
+  "covers": {
+    "checkedUtc": "2026-10-15T22:04:16.677073+00:00",
+    "main": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+    "snesBranch": "9f85e9df1ec0c82d77156ed072b997855f719288",
+    "gitRefsUnchanged": true,
+    "gitAssetsAdded": 0,
+    "sourceManifestSha256": "c78c2fed7eb724347896dd9b8ae92f566a5bd113c379521fc8dbedff7cc48f05",
+    "sourceManifestEqualApplied13z": true,
+    "finalizedDeclared": 220,
+    "finalizedOriginalsPresent": 0,
+    "capasDirectoryFiles": 0,
+    "requiredMissing": [
+      {
+        "title": "Fighter's History",
+        "path": "/mnt/DADOS/IMAGENS SNES/capas/FIGHTER_S_HISTORY_4K.png",
+        "expectedSha256": "2e0c7792ecffbe30cb42f4bbd1fb1d1a3ed1476d2dfedaf244efdd0427b69344",
+        "present": false
+      },
+      {
+        "title": "FIFA International Soccer",
+        "path": "/mnt/DADOS/IMAGENS SNES/capas/FIFA_INTERNATIONAL_SOCCER_4K.png",
+        "expectedSha256": "260ff871cd433009ca06aa546d85b0de5f34f543cdc25ecc32b7c05ea93bb839",
+        "present": false
+      },
+      {
+        "title": "FIFA Soccer 96",
+        "path": "/mnt/DADOS/IMAGENS SNES/capas/FIFA_SOCCER_96_4K.png",
+        "expectedSha256": "3321eed4ff8682d2cf1deb3b519f53fe9d6e66d309353ca7f5a653f6cf78ac8a",
+        "present": false
+      }
+    ],
+    "newArtworksWithoutExactEditionCarriedForward": [
+      {
+        "title": "F1-ROC II - Race of Champions",
+        "primaryRelease": "F1-ROC II - Race of Champions (USA)",
+        "sourceFile": "capas/F1_ROC_II_RACE_OF_CHAMPIONS_4K.png",
+        "reason": "No exact installed ROM edition, or declared original unavailable (see unavailable)"
+      },
+      {
+        "title": "Fever Pitch Soccer",
+        "primaryRelease": "Fever Pitch Soccer (Europe) (En,Fr,De,Es,It)",
+        "sourceFile": "capas/FEVER_PITCH_SOCCER_4K.png",
+        "reason": "No exact installed ROM edition, or declared original unavailable (see unavailable)"
+      },
+      {
+        "title": "FIFA - A Caminho Da Copa 98",
+        "primaryRelease": "FIFA - A Caminho Da Copa 98 (Brazil) (En,Fr,De,Es,It,Sv)",
+        "sourceFile": "capas/FIFA_A_CAMINHO_DA_COPA_98_4K.png",
+        "reason": "No exact installed ROM edition, or declared original unavailable (see unavailable)"
+      },
+      {
+        "title": "FIFA - Road to World Cup 98",
+        "primaryRelease": "FIFA - Road to World Cup 98 (Europe) (En,Fr,De,Es,It,Sv) (A8FE)",
+        "sourceFile": "capas/FIFA_ROAD_TO_WORLD_CUP_98_4K.png",
+        "reason": "No exact installed ROM edition, or declared original unavailable (see unavailable)"
+      },
+      {
+        "title": "FIFA 97",
+        "primaryRelease": "FIFA 97 (Europe) (En,Fr,De,Es,It,Sv)",
+        "sourceFile": "capas/FIFA_97_4K.png",
+        "reason": "No exact installed ROM edition, or declared original unavailable (see unavailable)"
+      },
+      {
+        "title": "FIFA Soccer 97",
+        "primaryRelease": "FIFA Soccer 97 (USA) (En,Fr,De,Es,It,Sv)",
+        "sourceFile": "capas/FIFA_SOCCER_97_4K.png",
+        "reason": "No exact installed ROM edition, or declared original unavailable (see unavailable)"
+      }
+    ],
+    "published13zAuthority": "/mnt/DADOS/station-maintenance-20261015-13z/covers-next-plan/applied.json",
+    "publicationReplayed": false,
+    "newJpegsCompiled": 0,
+    "productionWrites": 0,
+    "sameAs19z": true,
+    "sourceManifestEqual20z": true
+  },
+  "preservation": {
+    "historicalR167ProfilesModesAndEnginesUntouched": true,
+    "apkCodeBuildInstallOrPhoneDataChangedHere": false,
+    "newDllOrServiceDeployment": false,
+    "apiNginxOrTunnelRestarted": false,
+    "scannerTimerStopped": false,
+    "scannerInvokedByThisCycle": false,
+    "scannerTimerActiveAndLastExitZero": true,
+    "romFilesReadHashedOrCopied": 0,
+    "catalogCoverOrSeedWrites": 0,
+    "realLicensesWritten": false,
+    "syntheticLicensesCreated": false,
+    "networkPolicy100Upload800DownloadAndOnboardDnsChanged": false,
+    "otherProductsChanged": false,
+    "newAutomationsOrExternalMessages": false,
+    "existingCheckoutsAndHistoricalCrlfVerifiedPreserved": true,
+    "stableTagsMoved": false,
+    "monitorStateJsonManuallyWritten": false
+  },
+  "git": {
+    "branch": "feat/station-hourly-20261015-22z",
+    "backupRefs": [
+      {
+        "repository": "server",
+        "sourceRef": "origin/docs/station-online-exit-r135-20261012",
+        "sourceCommit": "24d06e5bffbf6b8114ce1405566ae936ca4378f6",
+        "backupBranch": "backup/station-before-hourly-20261015-22z",
+        "remoteVerified": true,
+        "utc": "2026-10-15T22:02:26.189804+00:00"
+      },
+      {
+        "repository": "app",
+        "sourceRef": "origin/build/station-r168-psx-xml-20261015",
+        "sourceCommit": "e8c0e8c6cbeb57202c9193cbe4f3cd394da027ca",
+        "backupBranch": "backup/station-before-hourly-20261015-22z",
+        "remoteVerified": true,
+        "utc": "2026-10-15T22:02:31.497658+00:00"
+      }
+    ],
+    "serverWorktree": "/mnt/DADOS/servidor-pix-station-manutencao-20261015-22z",
+    "appWorktree": "/mnt/DADOS/turboelden-station-manutencao-20261015-22z",
+    "commitsPublishedAtReceiptCreation": false
+  },
+  "maintenance": {
+    "existingParentPid": 205323,
+    "maintenanceLockOwner": "existing parent monitor until its own completion",
+    "manualReleaseAttempted": false,
+    "hourlyUserTimerPreserved": true,
+    "authorityDirectory": "/mnt/DADOS/station-maintenance-20261015-22z",
+    "nextCycle": "Read this receipt and capacity-rejection.json; reconcile any later receipt before action. Kit already received. Do not authenticate or publish while the unchanged full preflight rejects the current content budget. A revised authorized solution must retain all prior tuples and existing safety limits; then take a new protected baseline, fully validate and stage transactionally, stop only the scan timer for actual publication, wait for its oneshot and share scan.lock. Signed capabilities and transport are pending for R168."
+  },
+  "pending": [
+    "Receber três PNGs finais exatos pendentes13z;20 artes continuam sem edição instalada exata. Não repetir capas13z/1080R164.",
+    "R168 recebida e verificada (kit c0de71c3/APK875fb069 por recibos), mas cadastro conjunto recusado: WinBack 137167B já nos primeiros78 sobre limite131072B (excesso6095B). Resolver o orçamento preservando perfis históricos e contrato vigente; só depois baseline fresca, preflight completo e transação dos quatro owners. Não pedir o kit de novo nem executar operadores antigos. Instalador privado e dois APKs corrigidos/mesma edição/quadro/som/controles/saída25s seguem sem homologação.",
+    "Manter17 modos PSX impedidos pelas razões documentadas; não aprovar por nome/metadados. Mapeamento das demais plataformas e três sinopses PSX/campos editoriais ficam na rodada de catálogo solicitada.",
+    "HTTP502 histórico da primeira provaR162 permanece sem causa estabelecida; restante retestado passou. R167 não reproduziu esse erro nas provas concluídas.",
+    "R164N64 duas pessoas por relato humano preservado; três/quatro Android e saída física não homologados. PS3/PS4 permanecem offline."
+  ]
+}

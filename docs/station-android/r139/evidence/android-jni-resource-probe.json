@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "executedUTC": "2026-10-13T12:49:35.479566+00:00",
+  "deviceModel": "moto g52",
+  "androidApi": 33,
+  "deviceSerialPublished": false,
+  "isolatedAppProcess": true,
+  "realAndroidJavaVM": true,
+  "realPthreadTlsDestructors": true,
+  "productiveSourceSha256": "24420118e5ce94376b077051084a84d4c52f152d00b9e2330333896bced798fb",
+  "librarySha256": "b6391c15a6d2377ba775b9b75b3ad76b3cb5a8b8b95437f504bc5e2333c29d09",
+  "jarSha256": "4c7acc601edecf5f56952da1d6a45dda68ff6e9de894872fe35c89de8028c9ef",
+  "remoteArtifactHashesVerified": true,
+  "exitCode": 0,
+  "allJavaAssertionsPassed": true,
+  "counters": {
+    "INITIALIZE": [
+      100,
+      1,
+      1,
+      1,
+      1
+    ],
+    "JAVA_MAIN": [
+      20,
+      20,
+      0
+    ],
+    "JAVA_THREAD": [
+      20,
+      20,
+      0
+    ],
+    "DESTRUCTOR_VM_STATE": {
+      "beforeAlreadyDetached": 0,
+      "afterDetached": 8,
+      "callbacks": 8
+    },
+    "NATIVE_OWNERS": [
+      8,
+      160,
+      160,
+      8,
+      8,
+      8,
+      8,
+      8,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0
+    ]
+  },
+  "safeOutput": [
+    "INITIALIZE 100 1 1 1 1",
+    "JAVA_MAIN 20 20 0",
+    "JAVA_THREAD 20 20 0",
+    "DESTRUCTOR_VM_STATE beforeAlreadyDetached=0 afterDetached=8 callbacks=8",
+    "NATIVE_OWNERS 8 160 160 8 8 8 8 8 0 0 0 1 1 0 0",
+    "PASS R139_ANDROID_JNI_RESOURCE_PROBE"
+  ],
+  "scratchInitiallyAbsent": true,
+  "cleanupFileJar": true,
+  "cleanupFileLibrary": true,
+  "cleanupDirectory": true,
+  "scratchAbsentAfter": true,
+  "apkInstalled": false,
+  "userAppStartedOrStopped": false,
+  "applicationDataTouched": false,
+  "settingsChanged": false,
+  "logcatCleared": false,
+  "romOrBiosRead": false,
+  "nativeActivityLifecycleValidated": false,
+  "networkGameplayValidated": false,
+  "cpuOrThermalPerformanceMeasured": false,
+  "scope": "Three production JNI/TLS helpers extracted verbatim. JavaVM and pthread thread exit are real Android behavior; g_android is only a context marker. The audit does not exercise the app Activity, renderer, gameplay or main native library."
+}

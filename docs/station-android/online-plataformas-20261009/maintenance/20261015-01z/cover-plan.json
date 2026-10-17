@@ -1,0 +1,925 @@
+{
+  "preparedUtc": "2026-10-15T01:01:34.733593+00:00",
+  "sourceManifestSha256": "817fe992acce5d741be8817bb216f320010a48f3cc1a6b09cb057c143950d549",
+  "finalizedAtSnapshot": 191,
+  "newFinalArtworks": 48,
+  "matches": [
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Double Dragon V - The Shadow Falls (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DOUBLE_DRAGON_V_THE_SHADOW_FALLS_4K.png",
+      "sourceSha256": "13521fa2120f4f0f37ac98b6c5bfae3f2e64a91f6feb2686c00ce76edd00f6fd",
+      "sourceTitle": "Double Dragon V - The Shadow Falls",
+      "primaryRelease": "Double Dragon V - The Shadow Falls (USA)",
+      "sourceBytes": 12005805,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/13521fa2120f4f0f37ac98b6c5bfae3f2e64a91f6feb2686c00ce76edd00f6fd",
+      "compiledSha256": "c41c4f78beb40a9bc053542ae644b6a480a749e955606bfe4fcac7bf564cd4dd",
+      "compiledBytes": 158102,
+      "oldMagazineSha256": "cbf29056f817a8458332dde00e56b1280bfb899d83c3b9ecb3f77b8ab6222629",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Double Dragon V - The Shadow Falls (USA).zip",
+          "bindingIds": [
+            "bd7c338745e46a055f7ab53b3c0e4363"
+          ],
+          "itemId": "bd7c338745e46a055f7ab53b3c0e4363",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Exertainment Mountain Bike Rally (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/EXERTAINMENT_MOUNTAIN_BIKE_RALLY_4K.png",
+      "sourceSha256": "862a6d093344a0cf91a9fbb0c771b20b2a4cc0944126ef54f086f8eba35ba335",
+      "sourceTitle": "Exertainment Mountain Bike Rally",
+      "primaryRelease": "Exertainment Mountain Bike Rally (USA)",
+      "sourceBytes": 12686494,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/862a6d093344a0cf91a9fbb0c771b20b2a4cc0944126ef54f086f8eba35ba335",
+      "compiledSha256": "3d149151cf4d36ca21765307df5d78d927f1d0dbf22ae038e60d097c37b563d7",
+      "compiledBytes": 168038,
+      "oldMagazineSha256": "3a6c7276aa935eec76ceefcd6e55af165089c628dd83c114063407cd2b1c543c",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Exertainment Mountain Bike Rally (USA).zip",
+          "bindingIds": [
+            "39334c5fa178dfb28c3f93ac5ce2f661"
+          ],
+          "itemId": "39334c5fa178dfb28c3f93ac5ce2f661",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/## 1 -PT-BR ##/Demolition Man (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DEMOLITION_MAN_4K.png",
+      "sourceSha256": "90b00b5139bd87580514d428d4e0da1863eb4707297cf7bbfddd70bdd7c0050e",
+      "sourceTitle": "Demolition Man",
+      "primaryRelease": "Demolition Man (USA)",
+      "sourceBytes": 11131474,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/90b00b5139bd87580514d428d4e0da1863eb4707297cf7bbfddd70bdd7c0050e",
+      "compiledSha256": "92d5bc6b2ec85f7b81178574c8f629e5511ec81441f5b845fae328883b1256b7",
+      "compiledBytes": 138454,
+      "oldMagazineSha256": "50558a873e46ac7caa59a37c666fe2b250637c9bea32c5a9f9f1c410404200bd",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/## 1 -PT-BR ##/Demolition Man (USA).sfc",
+          "bindingIds": [
+            "station_4194034cc606ee0af1e916090ab8ec70"
+          ],
+          "itemId": "station_4194034cc606ee0af1e916090ab8ec70",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/## 1 -PT-BR ##/Demon's Crest (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DEMON_S_CREST_4K.png",
+      "sourceSha256": "0babfc3987c98fb12b708f76beab7d70b82566aa33027a886e4313cd4869ed33",
+      "sourceTitle": "Demon's Crest",
+      "primaryRelease": "Demon's Crest (USA)",
+      "sourceBytes": 11871554,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/0babfc3987c98fb12b708f76beab7d70b82566aa33027a886e4313cd4869ed33",
+      "compiledSha256": "e54c784dec260b2612f2a564ed4d0fc3aff5720d8f9206a80a770dfca5445191",
+      "compiledBytes": 152892,
+      "oldMagazineSha256": "bb2083ed84034d053baab6ceb6512c4403f3d07c578867cad4c10838d385433c",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/## 1 -PT-BR ##/Demon's Crest (USA).smc",
+          "bindingIds": [
+            "station_2cf50f13fd0bcbf82bcaf3904405370f"
+          ],
+          "itemId": "station_2cf50f13fd0bcbf82bcaf3904405370f",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Dennis the Menace (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DENNIS_THE_MENACE_4K.png",
+      "sourceSha256": "8e03b04a4d3f4a10a657d6ecf7d86237ba02535e886b585dcd85afacc427b8c8",
+      "sourceTitle": "Dennis the Menace",
+      "primaryRelease": "Dennis the Menace (USA)",
+      "sourceBytes": 12660606,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/8e03b04a4d3f4a10a657d6ecf7d86237ba02535e886b585dcd85afacc427b8c8",
+      "compiledSha256": "006179a6e03765f42764442a45d0b200c23ffe4be31310ea9ad0e0060029e9c8",
+      "compiledBytes": 170023,
+      "oldMagazineSha256": "a5a4473078e664349055b860146ed5cbe226f1e1c4f505861ad974ab42d75b7f",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Dennis the Menace (USA).sfc",
+          "bindingIds": [
+            "station_dfacfbd2fd649c979ed55d446b30ccf2"
+          ],
+          "itemId": "station_dfacfbd2fd649c979ed55d446b30ccf2",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Desert Strike - Return to the Gulf (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DESERT_STRIKE_RETURN_TO_THE_GULF_4K.png",
+      "sourceSha256": "bf00eb21c8721ea3ef05a875c7dca209ff79fcd1cb2410288eb42c27afcc04ce",
+      "sourceTitle": "Desert Strike - Return to the Gulf",
+      "primaryRelease": "Desert Strike - Return to the Gulf (USA)",
+      "sourceBytes": 11392230,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/bf00eb21c8721ea3ef05a875c7dca209ff79fcd1cb2410288eb42c27afcc04ce",
+      "compiledSha256": "f58d545845868ab17687de3d280e0e0144dcb0784ad89d044c4e5f538304273d",
+      "compiledBytes": 155161,
+      "oldMagazineSha256": "d3c66e0c7bf2516b66dbe2cf487c93cd424ac14af0c081a4f609c9899e6b0416",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Desert Strike - Return to the Gulf (USA).sfc",
+          "bindingIds": [
+            "station_c991b2b04890b5ac6b3a0f7237129728"
+          ],
+          "itemId": "station_c991b2b04890b5ac6b3a0f7237129728",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Dig & Spike Volleyball (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DIG_SPIKE_VOLLEYBALL_4K.png",
+      "sourceSha256": "541c07b294eb979a1b6f9e851f7e3cced2e9aefe3c381914d81b5c8039aab1f8",
+      "sourceTitle": "Dig & Spike Volleyball",
+      "primaryRelease": "Dig & Spike Volleyball (USA)",
+      "sourceBytes": 11512925,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/541c07b294eb979a1b6f9e851f7e3cced2e9aefe3c381914d81b5c8039aab1f8",
+      "compiledSha256": "7bf99fb3e26b852014c42e8753c7b4f28e31b0b82167c3f826e873241c9b5e62",
+      "compiledBytes": 152608,
+      "oldMagazineSha256": "1d196f8a5a0059510c2f1ae5418173d9a482cedbe13e8cffac3e199792bcf657",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Dig & Spike Volleyball (USA).sfc",
+          "bindingIds": [
+            "station_ade27e99748fc259e61c1e616e62790b"
+          ],
+          "itemId": "station_ade27e99748fc259e61c1e616e62790b",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Dino Dini's Soccer! (Europe).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DINO_DINI_S_SOCCER_4K.png",
+      "sourceSha256": "7cb38d5faac31beb9b764f4c53dcd2ad97388634c147d7e7cbc9d2df95dc5424",
+      "sourceTitle": "Dino Dini's Soccer!",
+      "primaryRelease": "Dino Dini's Soccer! (Europe) (En,Fr,De)",
+      "sourceBytes": 11687662,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/7cb38d5faac31beb9b764f4c53dcd2ad97388634c147d7e7cbc9d2df95dc5424",
+      "compiledSha256": "67a800c37605e0d2d72a514691d433017cf5d19a50dd340a4534f66dc1ddeee5",
+      "compiledBytes": 157979,
+      "oldMagazineSha256": "ade6ee7fdc7d62a30389e36638037fae613771c40d107053f5b04d9f52292366",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Dino Dini's Soccer! (Europe).sfc",
+          "bindingIds": [
+            "station_15758b31e43d35c4cc2f99efd07a91da"
+          ],
+          "itemId": "station_15758b31e43d35c4cc2f99efd07a91da",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Dirt Racer (Europe).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DIRT_RACER_4K.png",
+      "sourceSha256": "8e186e9f4deb412d92d94fce0126a4e20d2d1a0f0f1d7b3462669ecd1d04668b",
+      "sourceTitle": "Dirt Racer",
+      "primaryRelease": "Dirt Racer (Europe) (En,Fr,De)",
+      "sourceBytes": 12617385,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/8e186e9f4deb412d92d94fce0126a4e20d2d1a0f0f1d7b3462669ecd1d04668b",
+      "compiledSha256": "1de058598f4b8d0ff6ab4899cb6b058a679584573917445db44beba5387bbab8",
+      "compiledBytes": 166075,
+      "oldMagazineSha256": "17fa6f455a104d6411a6995a553538fa348bd3a5927ceda8518d0221fdb95285",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Dirt Racer (Europe).sfc",
+          "bindingIds": [
+            "station_184e80cfc00b4057cb96bf479cf38b48"
+          ],
+          "itemId": "station_184e80cfc00b4057cb96bf479cf38b48",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Dirt Trax FX (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DIRT_TRAX_FX_4K.png",
+      "sourceSha256": "7a3aaea0346fff14c66f7acb9e5044134dc931d3e06e9d0e803aaa8ed11c1070",
+      "sourceTitle": "Dirt Trax FX",
+      "primaryRelease": "Dirt Trax FX (USA)",
+      "sourceBytes": 12215260,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/7a3aaea0346fff14c66f7acb9e5044134dc931d3e06e9d0e803aaa8ed11c1070",
+      "compiledSha256": "1a59ac912e8a7219a5b7ae0dcb445a3c7b729bfdd21ed83d6817703cf635e8b8",
+      "compiledBytes": 164604,
+      "oldMagazineSha256": "2051518d19eed7fd880416efbad0aa7e0743fb18f0731a13f28d1884ce9d7ec6",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Dirt Trax FX (USA).sfc",
+          "bindingIds": [
+            "station_632f44b64ad6d8cdfffd75ed7af8274a"
+          ],
+          "itemId": "station_632f44b64ad6d8cdfffd75ed7af8274a",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/## 1 -PT-BR ##/Donkey Kong Country 2 - Diddy's Kong Quest (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DONKEY_KONG_COUNTRY_2_DIDDY_S_KONG_QUEST_4K.png",
+      "sourceSha256": "c6b99a8b6d35d065175f2664ca6a8aec47c8ee63631aca48cf4fcd19a9c67bc9",
+      "sourceTitle": "Donkey Kong Country 2 - Diddy's Kong Quest",
+      "primaryRelease": "Donkey Kong Country 2 - Diddy's Kong Quest (USA) (En,Fr)",
+      "sourceBytes": 11672418,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/c6b99a8b6d35d065175f2664ca6a8aec47c8ee63631aca48cf4fcd19a9c67bc9",
+      "compiledSha256": "0389b298cb66efc527c0db917be0e20597cca84d8f1b3f0b080c657200f26697",
+      "compiledBytes": 159085,
+      "oldMagazineSha256": "fcd41e0a9042c04617d7cbb0375556d8e45f4e14d47ae08f3228379df5f200e1",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/## 1 -PT-BR ##/Donkey Kong Country 2 - Diddy's Kong Quest (USA).smc",
+          "bindingIds": [
+            "station_40078034f6e0a3df307d045844dd3b42"
+          ],
+          "itemId": "station_40078034f6e0a3df307d045844dd3b42",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/## 1 -PT-BR ##/Donkey Kong Country 3 - Dixie Kong's Double Trouble! (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DONKEY_KONG_COUNTRY_3_DIXIE_KONG_S_DOUBLE_TROUBLE_4K.png",
+      "sourceSha256": "75dfb59ebb887368e92f0e8492dd5242843e5dd37af506f1360487f909dc612d",
+      "sourceTitle": "Donkey Kong Country 3 - Dixie Kong's Double Trouble!",
+      "primaryRelease": "Donkey Kong Country 3 - Dixie Kong's Double Trouble! (USA) (En,Fr)",
+      "sourceBytes": 12763448,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/75dfb59ebb887368e92f0e8492dd5242843e5dd37af506f1360487f909dc612d",
+      "compiledSha256": "095fb665063411a968d4de909076c171ebf17fe68754053d566ddfeceb87f1ae",
+      "compiledBytes": 169932,
+      "oldMagazineSha256": "8c0c646b84d8fdba54534e40bc6fe0e3376dd0553957aea5473fddbe9fb032a1",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/## 1 -PT-BR ##/Donkey Kong Country 3 - Dixie Kong's Double Trouble! (USA).fig",
+          "bindingIds": [
+            "station_ac06c36d530a36a8e2e1360a520d8bf8"
+          ],
+          "itemId": "station_ac06c36d530a36a8e2e1360a520d8bf8",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/## DONKEY KONG ##/Donkey Kong Country 3 - Dixie Kong's Double Trouble! (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DONKEY_KONG_COUNTRY_3_DIXIE_KONG_S_DOUBLE_TROUBLE_4K.png",
+      "sourceSha256": "75dfb59ebb887368e92f0e8492dd5242843e5dd37af506f1360487f909dc612d",
+      "sourceTitle": "Donkey Kong Country 3 - Dixie Kong's Double Trouble!",
+      "primaryRelease": "Donkey Kong Country 3 - Dixie Kong's Double Trouble! (USA) (En,Fr)",
+      "sourceBytes": 12763448,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/75dfb59ebb887368e92f0e8492dd5242843e5dd37af506f1360487f909dc612d",
+      "compiledSha256": "095fb665063411a968d4de909076c171ebf17fe68754053d566ddfeceb87f1ae",
+      "compiledBytes": 169932,
+      "oldMagazineSha256": "8c0c646b84d8fdba54534e40bc6fe0e3376dd0553957aea5473fddbe9fb032a1",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/## DONKEY KONG ##/Donkey Kong Country 3 - Dixie Kong's Double Trouble! (USA).sfc",
+          "bindingIds": [
+            "station_696cc13719d5c89263b8685b6eaf60bf"
+          ],
+          "itemId": "station_696cc13719d5c89263b8685b6eaf60bf",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Doom Troopers (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DOOM_TROOPERS_4K.png",
+      "sourceSha256": "3bdbb9df9f6d69c6ad90a45d3e61a882443939fdbd6b01c71e76f695d9849f26",
+      "sourceTitle": "Doom Troopers",
+      "primaryRelease": "Doom Troopers (USA)",
+      "sourceBytes": 12413750,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/3bdbb9df9f6d69c6ad90a45d3e61a882443939fdbd6b01c71e76f695d9849f26",
+      "compiledSha256": "70eba5104f37a93abfe805fcf97d73a608f0607a7b3289a7be8d56c02a78a4df",
+      "compiledBytes": 163323,
+      "oldMagazineSha256": "60dda264542ceb16436a4536b8fc7d9a75d90cfb7b9adebd542b8e1a58d4f700",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Doom Troopers (USA).sfc",
+          "bindingIds": [
+            "station_8ec6d85a680c00f82ab453d9ea344513"
+          ],
+          "itemId": "station_8ec6d85a680c00f82ab453d9ea344513",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Doom (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DOOM_4K.png",
+      "sourceSha256": "b89fd2a9200d7c8fb4d7d2fe4fdb22fe271697ed1894cdb2fca3dda1bf5e0c3f",
+      "sourceTitle": "Doom",
+      "primaryRelease": "Doom (USA)",
+      "sourceBytes": 12253974,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/b89fd2a9200d7c8fb4d7d2fe4fdb22fe271697ed1894cdb2fca3dda1bf5e0c3f",
+      "compiledSha256": "2d0b6993807deca29ad1f08ce11514ddc2651081f8d9f5314f1156322db4a101",
+      "compiledBytes": 154236,
+      "oldMagazineSha256": "d7b2f2924ba2dc2146cc71d6392cb6f00187a3841a606026333c9338f25243cf",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Doom (USA).sfc",
+          "bindingIds": [
+            "station_e41c5a002bb49a140e4fc0fec025f8e1"
+          ],
+          "itemId": "station_e41c5a002bb49a140e4fc0fec025f8e1",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Doomsday Warrior (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DOOMSDAY_WARRIOR_4K.png",
+      "sourceSha256": "de23a2f5eae5eb1a768de8248877af6cdbc2dd57d1c42531a6fe04853cccfbfd",
+      "sourceTitle": "Doomsday Warrior",
+      "primaryRelease": "Doomsday Warrior (USA)",
+      "sourceBytes": 12574557,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/de23a2f5eae5eb1a768de8248877af6cdbc2dd57d1c42531a6fe04853cccfbfd",
+      "compiledSha256": "9f7fb4f810716ff990f4802f0bbc7faa3ffc44300e60929fcd1ba77416efaa49",
+      "compiledBytes": 168979,
+      "oldMagazineSha256": "ac2584d1161d02cfeda2db3ef59f798a2517f8bbc0a6710f9a6efcde9cb96f9b",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Doomsday Warrior (USA).sfc",
+          "bindingIds": [
+            "station_d15cb1ab13d83bba42e6b9e98409d07e"
+          ],
+          "itemId": "station_d15cb1ab13d83bba42e6b9e98409d07e",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/## 1 -PT-BR ##/Dragon - The Bruce Lee Story (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DRAGON_THE_BRUCE_LEE_STORY_4K.png",
+      "sourceSha256": "6919c26d76a169113eb21278ed4e42dfca372063066cdd187a81e4acd2935405",
+      "sourceTitle": "Dragon - The Bruce Lee Story",
+      "primaryRelease": "Dragon - The Bruce Lee Story (USA)",
+      "sourceBytes": 10043048,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/6919c26d76a169113eb21278ed4e42dfca372063066cdd187a81e4acd2935405",
+      "compiledSha256": "a58002a906dbc90e45b3382e97a9ead47aba6b99ca130b27c9901784ff65328a",
+      "compiledBytes": 128355,
+      "oldMagazineSha256": "6948f608032d1230a52502001547d5197b1b5dd4d9b78f745e5aecca93fe947b",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/## 1 -PT-BR ##/Dragon - The Bruce Lee Story (USA).smc",
+          "bindingIds": [
+            "station_0998a461347b0dcc85c6805b2e6b70b6"
+          ],
+          "itemId": "station_0998a461347b0dcc85c6805b2e6b70b6",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Dragon View (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DRAGON_VIEW_4K.png",
+      "sourceSha256": "43454cc15e105486c9ef4402301e90e5f30b526868e1af36758a2556849d1651",
+      "sourceTitle": "Dragon View",
+      "primaryRelease": "Dragon View (USA)",
+      "sourceBytes": 12188214,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/43454cc15e105486c9ef4402301e90e5f30b526868e1af36758a2556849d1651",
+      "compiledSha256": "f5925f6ce357c77b836ab44a4672f170d1d1eddcbde6d9f0cd479671eea083c3",
+      "compiledBytes": 159527,
+      "oldMagazineSha256": "4af81c2c60f507cb9f680b253c8d795a059653c28230ebb6210c08ba4cb56678",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Dragon View (USA).sfc",
+          "bindingIds": [
+            "station_89b783b0091b4baf2251d88595171c54"
+          ],
+          "itemId": "station_89b783b0091b4baf2251d88595171c54",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/## 1 -PT-BR ##/Dragon's Lair (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DRAGON_S_LAIR_4K.png",
+      "sourceSha256": "232c9b592758164602e229566c08d86b6eaea37eb16a871f98ca5034e28c2163",
+      "sourceTitle": "Dragon's Lair",
+      "primaryRelease": "Dragon's Lair (USA)",
+      "sourceBytes": 11856758,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/232c9b592758164602e229566c08d86b6eaea37eb16a871f98ca5034e28c2163",
+      "compiledSha256": "bbf64c313ce6b13a157e13a1818cd9d137e7bf06fa74a68e4d5d86bbcd1d07ee",
+      "compiledBytes": 154499,
+      "oldMagazineSha256": "606efbc16f52a6a61d634e77e75c132479f8b86f2aec931582ab9b9cdef7032c",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/## 1 -PT-BR ##/Dragon's Lair (USA).sfc",
+          "bindingIds": [
+            "station_675393a80fa6ca0936293fff5ed07351"
+          ],
+          "itemId": "station_675393a80fa6ca0936293fff5ed07351",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Drakkhen (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DRAKKHEN_4K.png",
+      "sourceSha256": "9dff23f021b7ec602d5f2ee4330c99d29beb4c7587110258444e00683e13f7e7",
+      "sourceTitle": "Drakkhen",
+      "primaryRelease": "Drakkhen (USA)",
+      "sourceBytes": 12992536,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/9dff23f021b7ec602d5f2ee4330c99d29beb4c7587110258444e00683e13f7e7",
+      "compiledSha256": "842a60c961d463b4daa65956c8cc040b72ac861a489be19a720e7ed866576878",
+      "compiledBytes": 161848,
+      "oldMagazineSha256": "a0dff307a511bb318fa168082b1f5ef71f78a3328b83d84e6f4a4d08be9db105",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Drakkhen (USA).sfc",
+          "bindingIds": [
+            "station_7a146b45c8afc5eaafffbe3579d32192"
+          ],
+          "itemId": "station_7a146b45c8afc5eaafffbe3579d32192",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Dungeon Master (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DUNGEON_MASTER_4K.png",
+      "sourceSha256": "43706f03714de33e8fa6359bec0263f8536e10e94028a9f64fac6a8e2721e777",
+      "sourceTitle": "Dungeon Master",
+      "primaryRelease": "Dungeon Master (USA)",
+      "sourceBytes": 12753342,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/43706f03714de33e8fa6359bec0263f8536e10e94028a9f64fac6a8e2721e777",
+      "compiledSha256": "6273c1098a63f7dd06d7ecd0ce9754b6948e492e54ebc67a9f42dad28c9e883a",
+      "compiledBytes": 160337,
+      "oldMagazineSha256": "4eacc0e56b9747ec3c1311bcc25ac1d0852466682856a97140a8ede6422d4c52",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Dungeon Master (USA).sfc",
+          "bindingIds": [
+            "station_706033608edc46b8d321b17410964199"
+          ],
+          "itemId": "station_706033608edc46b8d321b17410964199",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/## 1 -PT-BR ##/E.V.O. - Search for Eden (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/E_V_O_SEARCH_FOR_EDEN_4K.png",
+      "sourceSha256": "95c4c2d8b1a8d4dbbbf7fc224d4999cd569b24e2b123a42407a631d1d58eea70",
+      "sourceTitle": "E.V.O. - Search for Eden",
+      "primaryRelease": "E.V.O. - Search for Eden (USA)",
+      "sourceBytes": 13561924,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/95c4c2d8b1a8d4dbbbf7fc224d4999cd569b24e2b123a42407a631d1d58eea70",
+      "compiledSha256": "1ef69a34a24a1b5bba643454472b6ce420217f79e61eae7ce98b18795811ccbb",
+      "compiledBytes": 170200,
+      "oldMagazineSha256": "998e7f2f40936f623e8e5810e22c81ebb896b9ba323804d4edbe95b8afd7d9ef",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/## 1 -PT-BR ##/E.V.O. - Search for Eden (USA).smc",
+          "bindingIds": [
+            "station_79ca63bf924c0b94ca216c97e8ccb5ec"
+          ],
+          "itemId": "station_79ca63bf924c0b94ca216c97e8ccb5ec",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Earth Defense Force (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/EARTH_DEFENSE_FORCE_4K.png",
+      "sourceSha256": "49a03ed2a6f12fbde60db95db5832b9a28118b012dbd2c66e64af5e1d158a710",
+      "sourceTitle": "Earth Defense Force",
+      "primaryRelease": "Earth Defense Force (USA)",
+      "sourceBytes": 12288866,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/49a03ed2a6f12fbde60db95db5832b9a28118b012dbd2c66e64af5e1d158a710",
+      "compiledSha256": "29a45273d0dbe2e6761a5aad6c48818dba87517b9a337990c1c539582a3885ce",
+      "compiledBytes": 155941,
+      "oldMagazineSha256": "03678262662229854850e9041d74f9b666e7df1535aef67335b71d4251db6e7f",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Earth Defense Force (USA).sfc",
+          "bindingIds": [
+            "station_e4f3a48449c46025670d6d30898de805"
+          ],
+          "itemId": "station_e4f3a48449c46025670d6d30898de805",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/## 1 -PT-BR ##/Earthbound (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/EARTHBOUND_4K.png",
+      "sourceSha256": "95f6fc369c91fe3d90155fe4ba58701191e192847ec8aa86bfed09f202b0b4ea",
+      "sourceTitle": "EarthBound",
+      "primaryRelease": "EarthBound (USA)",
+      "sourceBytes": 11505544,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/95f6fc369c91fe3d90155fe4ba58701191e192847ec8aa86bfed09f202b0b4ea",
+      "compiledSha256": "75d4a25322a5e5bfcb10abb5ab94fce28985e71f4017d1828a9fbc9dc21b03b9",
+      "compiledBytes": 147947,
+      "oldMagazineSha256": "e455fb7adbac9525f603bcf085cbe3a94b8142d0fadb941ac80a6a6a0dcc0849",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/## 1 -PT-BR ##/Earthbound (USA).smc",
+          "bindingIds": [
+            "station_f07bfe68cffaa7eae822906bb7cbe715"
+          ],
+          "itemId": "station_f07bfe68cffaa7eae822906bb7cbe715",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/## 1 -PT-BR ##/Earthworm Jim 2 (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/EARTHWORM_JIM_2_4K_V2.png",
+      "sourceSha256": "ad5cb713ce10ca839d52134e6b7ff769bff55d5fd18880aae27ced6637b5e083",
+      "sourceTitle": "Earthworm Jim 2",
+      "primaryRelease": "Earthworm Jim 2 (USA)",
+      "sourceBytes": 11821374,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/ad5cb713ce10ca839d52134e6b7ff769bff55d5fd18880aae27ced6637b5e083",
+      "compiledSha256": "7dbcfe4fac70ea26e40a26960fce66b2cfcf97f089e418e0172c8f9d5bda489d",
+      "compiledBytes": 158908,
+      "oldMagazineSha256": "9e76b1ca2e2e431063a82b26fe758830748492c95af442e191756516874b912d",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/## 1 -PT-BR ##/Earthworm Jim 2 (USA).sfc",
+          "bindingIds": [
+            "station_81844c5c3ef7ce8178db335c5ea18b03"
+          ],
+          "itemId": "station_81844c5c3ef7ce8178db335c5ea18b03",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Earthworm Jim (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/EARTHWORM_JIM_4K.png",
+      "sourceSha256": "b1ecd06832db0e6d875d508f13bc2b06a5f549cc1ad0047e9d9b9148d363deae",
+      "sourceTitle": "Earthworm Jim",
+      "primaryRelease": "Earthworm Jim (USA)",
+      "sourceBytes": 11804338,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/b1ecd06832db0e6d875d508f13bc2b06a5f549cc1ad0047e9d9b9148d363deae",
+      "compiledSha256": "1f522c248a6cd3a7de0cf1814c08a2f3e56d732bfc5c13848aeceb03818c8149",
+      "compiledBytes": 159677,
+      "oldMagazineSha256": "c6e31a8785527b5ebb2bbf085dcda68e7c43170a0623992b94541e044b14e495",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Earthworm Jim (USA).sfc",
+          "bindingIds": [
+            "station_a8bbb161b0be74fc8ed874e400acd78b"
+          ],
+          "itemId": "station_a8bbb161b0be74fc8ed874e400acd78b",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Eek! The Cat (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/EEK_THE_CAT_4K.png",
+      "sourceSha256": "94aeea7e67a16014ba4ed8320e0097068a5c0516fa310e7f4eb781e64ed3dfd6",
+      "sourceTitle": "Eek! The Cat",
+      "primaryRelease": "Eek! The Cat (USA)",
+      "sourceBytes": 12034837,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/94aeea7e67a16014ba4ed8320e0097068a5c0516fa310e7f4eb781e64ed3dfd6",
+      "compiledSha256": "b1979eecb85bf0cffd142cb9d9469347af819b8121178e4b6d0da48b83c200cd",
+      "compiledBytes": 152008,
+      "oldMagazineSha256": "c379408420efabc3b5efc140cd5c67bfd3a3eae9d7d0c57b98b5664cf764b391",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Eek! The Cat (USA).sfc",
+          "bindingIds": [
+            "station_dfba3446735e982e2aebf165b33fa771"
+          ],
+          "itemId": "station_dfba3446735e982e2aebf165b33fa771",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Elite Soccer (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/ELITE_SOCCER_4K.png",
+      "sourceSha256": "ec4a265e807f6abdd85f03e56ce92c9086f40c29d26b5c12d51d82e76173fef5",
+      "sourceTitle": "Elite Soccer",
+      "primaryRelease": "Elite Soccer (USA)",
+      "sourceBytes": 10936045,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/ec4a265e807f6abdd85f03e56ce92c9086f40c29d26b5c12d51d82e76173fef5",
+      "compiledSha256": "053be9b8e4b381262cd7b4a6781bd359d8de1f5ee71040c96fb28a1269a6507e",
+      "compiledBytes": 142534,
+      "oldMagazineSha256": "6169ddff9ddd84518ba84b740521b638d10d2534080e2b595e49c8a30cada42a",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Elite Soccer (USA).sfc",
+          "bindingIds": [
+            "station_6dd191758a32801dccc18422d75cf54e"
+          ],
+          "itemId": "station_6dd191758a32801dccc18422d75cf54e",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Emmitt Smith Football (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/EMMITT_SMITH_FOOTBALL_4K.png",
+      "sourceSha256": "0fcd8896d8226fff39429e8d8adeee105a9510a9eb021de8a4c84e68d2842b2e",
+      "sourceTitle": "Emmitt Smith Football",
+      "primaryRelease": "Emmitt Smith Football (USA)",
+      "sourceBytes": 10988274,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/0fcd8896d8226fff39429e8d8adeee105a9510a9eb021de8a4c84e68d2842b2e",
+      "compiledSha256": "119bee508422ee0fda9cd3ec0ffa8a288e30a096db75b318e680d08ea197f987",
+      "compiledBytes": 138821,
+      "oldMagazineSha256": "2a23412f38689a97a7fec1305843bdc020bc111a8981c0b17d0d404f45383150",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Emmitt Smith Football (USA).sfc",
+          "bindingIds": [
+            "station_6b63186ec8a03267acce6385e5c34761"
+          ],
+          "itemId": "station_6b63186ec8a03267acce6385e5c34761",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Equinox (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/EQUINOX_4K.png",
+      "sourceSha256": "516786bd376c13047ca235fbc4e273c29b5645ddb97f73a84b330d4f69bf2b79",
+      "sourceTitle": "Equinox",
+      "primaryRelease": "Equinox (USA)",
+      "sourceBytes": 12650646,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/516786bd376c13047ca235fbc4e273c29b5645ddb97f73a84b330d4f69bf2b79",
+      "compiledSha256": "0388978d8737bff60de35580f08a36edd2e899b374b5d8c76b4981a815ee486c",
+      "compiledBytes": 162802,
+      "oldMagazineSha256": "27d0b62c5d97dc441f7afae9d609c969eec7b9fee32b300b9a2c30d005e4af98",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Equinox (USA).sfc",
+          "bindingIds": [
+            "station_c09a4ee6f97360bd09a884fa51b40960"
+          ],
+          "itemId": "station_c09a4ee6f97360bd09a884fa51b40960",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/ESPN Baseball Tonight (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/ESPN_BASEBALL_TONIGHT_4K.png",
+      "sourceSha256": "51d8b887e155eee01a3c96e9ac2d92ee94ea7dadeefb109e50b0b85f55603a00",
+      "sourceTitle": "ESPN Baseball Tonight",
+      "primaryRelease": "ESPN Baseball Tonight (USA)",
+      "sourceBytes": 10238245,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/51d8b887e155eee01a3c96e9ac2d92ee94ea7dadeefb109e50b0b85f55603a00",
+      "compiledSha256": "22ba96dcb375d8fada97facf55ebae24353ff2b347375602552b3b86414b62f1",
+      "compiledBytes": 132406,
+      "oldMagazineSha256": "f88189851b5ddc809f7e433deee7581048dfa9c0bc3aa45d182074e380fb090b",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/ESPN Baseball Tonight (USA).sfc",
+          "bindingIds": [
+            "station_c6c3ef24f4bbb960eb51c471fb998470"
+          ],
+          "itemId": "station_c6c3ef24f4bbb960eb51c471fb998470",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/ESPN National Hockey Night (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/ESPN_NATIONAL_HOCKEY_NIGHT_4K.png",
+      "sourceSha256": "60f8d1027d1dde8fde473bb7009586fe86a6ae69d22a10647ea269c68b0319ac",
+      "sourceTitle": "ESPN National Hockey Night",
+      "primaryRelease": "ESPN National Hockey Night (USA)",
+      "sourceBytes": 12603871,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/60f8d1027d1dde8fde473bb7009586fe86a6ae69d22a10647ea269c68b0319ac",
+      "compiledSha256": "1062cd38a6bc171532fe52cc64e6790338d58132ef92d56da307a2ad426b2f9b",
+      "compiledBytes": 170819,
+      "oldMagazineSha256": "325f4bdb7c9257a1901fdfd8ea4a5ba3a91091e00318ce40391e50423e8cc08c",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/ESPN National Hockey Night (USA).sfc",
+          "bindingIds": [
+            "station_0dd7bc7a5b320b4de6ca2554139c336f"
+          ],
+          "itemId": "station_0dd7bc7a5b320b4de6ca2554139c336f",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/ESPN Speedworld (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/ESPN_SPEEDWORLD_4K.png",
+      "sourceSha256": "b9d463d539c37cfad7ca7ab9784f801a2dd126fe9a3ff214f6e805ea81c2e0ad",
+      "sourceTitle": "ESPN Speedworld",
+      "primaryRelease": "ESPN Speedworld (USA)",
+      "sourceBytes": 12145941,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/b9d463d539c37cfad7ca7ab9784f801a2dd126fe9a3ff214f6e805ea81c2e0ad",
+      "compiledSha256": "7a0e4f94291df48f683aa67ed73dc7549fe00e53eeb3d786ac45f29447e1eb44",
+      "compiledBytes": 153797,
+      "oldMagazineSha256": "722697af3072098c6311936b77b59e47cdb42fe05f5b5811dd0d9b319c705a6d",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/ESPN Speedworld (USA).sfc",
+          "bindingIds": [
+            "station_6b0a82be57b3ddda7b761b600b451526"
+          ],
+          "itemId": "station_6b0a82be57b3ddda7b761b600b451526",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/ESPN Sunday Night NFL (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/ESPN_SUNDAY_NIGHT_NFL_4K.png",
+      "sourceSha256": "7c3d1737831408e0dbb2eb905dabd08b27a2dc59042636a9b89829c5181e6830",
+      "sourceTitle": "ESPN Sunday Night NFL",
+      "primaryRelease": "ESPN Sunday Night NFL (USA)",
+      "sourceBytes": 9912754,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/7c3d1737831408e0dbb2eb905dabd08b27a2dc59042636a9b89829c5181e6830",
+      "compiledSha256": "a427eb2e7aae35e160360d38b1ff2c7a0cb601e7c014b00c3be15d0e5de45c7f",
+      "compiledBytes": 130125,
+      "oldMagazineSha256": "9be8acbc5d6c802614f01e478858e2c4a91926de766f5fde9fac05040c73d350",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/ESPN Sunday Night NFL (USA).sfc",
+          "bindingIds": [
+            "station_368e6194d59a976bec4df88432c3f229"
+          ],
+          "itemId": "station_368e6194d59a976bec4df88432c3f229",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Duel, The - Test Drive II (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DUEL_THE_TEST_DRIVE_II_4K.png",
+      "sourceSha256": "1b33e5ea7ff5f6478a8f6cdd18f761a579ea20f623a227bd066735145ad04784",
+      "sourceTitle": "Duel, The - Test Drive II",
+      "primaryRelease": "Duel, The - Test Drive II (USA)",
+      "sourceBytes": 12476778,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/1b33e5ea7ff5f6478a8f6cdd18f761a579ea20f623a227bd066735145ad04784",
+      "compiledSha256": "8b81d728de1432cc69c1ea1f360d0b67f4fe56639997eec7dd9a9802cce6f5ab",
+      "compiledBytes": 144123,
+      "oldMagazineSha256": "9565eb999ddac5286697facf6df2b1938a4b8f3b839b0fda1bef3dcf5304fff5",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Duel, The - Test Drive II (USA).sfc",
+          "bindingIds": [
+            "station_dcdc98559f1d0da61b0005e7dd589371"
+          ],
+          "itemId": "station_dcdc98559f1d0da61b0005e7dd589371",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/## DONKEY KONG ##/Donkey Kong Country 2 - Diddy's Kong Quest (USA) (Rev 1).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/DONKEY_KONG_COUNTRY_2_DIDDY_S_KONG_QUEST_4K.png",
+      "sourceSha256": "c6b99a8b6d35d065175f2664ca6a8aec47c8ee63631aca48cf4fcd19a9c67bc9",
+      "sourceTitle": "Donkey Kong Country 2 - Diddy's Kong Quest",
+      "primaryRelease": "Donkey Kong Country 2 - Diddy's Kong Quest (USA) (En,Fr)",
+      "sourceBytes": 11672418,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-01z/compiled/c6b99a8b6d35d065175f2664ca6a8aec47c8ee63631aca48cf4fcd19a9c67bc9",
+      "compiledSha256": "0389b298cb66efc527c0db917be0e20597cca84d8f1b3f0b080c657200f26697",
+      "compiledBytes": 159085,
+      "oldMagazineSha256": "fcd41e0a9042c04617d7cbb0375556d8e45f4e14d47ae08f3228379df5f200e1",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/## DONKEY KONG ##/Donkey Kong Country 2 - Diddy's Kong Quest (USA) (Rev 1).sfc",
+          "bindingIds": [
+            "station_7950304a432ad601a0fa8c14c694a255"
+          ],
+          "itemId": "station_7950304a432ad601a0fa8c14c694a255",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    }
+  ],
+  "unmatched": [
+    {
+      "title": "Dennis",
+      "primaryRelease": "Dennis (Europe)",
+      "sourceFile": "capas/DENNIS_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Desert Fighter",
+      "primaryRelease": "Desert Fighter (Europe)",
+      "sourceFile": "capas/DESERT_FIGHTER_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "DinoCity",
+      "primaryRelease": "DinoCity (USA)",
+      "sourceFile": "capas/DINOCITY_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Donkey Kong Country - Competition Cartridge",
+      "primaryRelease": "Donkey Kong Country - Competition Cartridge (USA) (Competition Cart, Nintendo Power mail-order)",
+      "sourceFile": "capas/DONKEY_KONG_COUNTRY_COMPETITION_CARTRIDGE_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Dragon Ball Z - Chomutujeon",
+      "primaryRelease": "Dragon Ball Z - Chomutujeon (Korea)",
+      "sourceFile": "capas/DRAGON_BALL_Z_CHOMUTUJEON_4K_V2.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Dragon Ball Z - Hyper Dimension",
+      "primaryRelease": "Dragon Ball Z - Hyper Dimension (France)",
+      "sourceFile": "capas/DRAGON_BALL_Z_HYPER_DIMENSION_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Dragon Ball Z - La Legende Saien",
+      "primaryRelease": "Dragon Ball Z - La Legende Saien (France)",
+      "sourceFile": "capas/DRAGON_BALL_Z_LA_LEGENDE_SAIEN_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Dragon Ball Z - Super Butouden",
+      "primaryRelease": "Dragon Ball Z - Super Butouden (France)",
+      "sourceFile": "capas/DRAGON_BALL_Z_SUPER_BUTOUDEN_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Dragon Ball Z - Ultime Menace",
+      "primaryRelease": "Dragon Ball Z - Ultime Menace (France)",
+      "sourceFile": "capas/DRAGON_BALL_Z_ULTIME_MENACE_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Dream T.V.",
+      "primaryRelease": "Dream T.V. (USA)",
+      "sourceFile": "capas/DREAM_T_V_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Eric Cantona Football Challenge",
+      "primaryRelease": "Eric Cantona Football Challenge (France) (En,Fr,De,Es,It,Nl,Sv)",
+      "sourceFile": "capas/ERIC_CANTONA_FOOTBALL_CHALLENGE_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Euro Football Champ",
+      "primaryRelease": "Euro Football Champ (Europe)",
+      "sourceFile": "capas/EURO_FOOTBALL_CHAMP_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Exertainment Mountain Bike Rally + Speed Racer",
+      "primaryRelease": "Exertainment Mountain Bike Rally + Speed Racer (USA)",
+      "sourceFile": "capas/EXERTAINMENT_MOUNTAIN_BIKE_RALLY_SPEED_RACER_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    },
+    {
+      "title": "Exhaust Heat",
+      "primaryRelease": "Exhaust Heat (Europe)",
+      "sourceFile": "capas/EXHAUST_HEAT_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    }
+  ],
+  "compilerPath": "/mnt/DADOS/servidor-pix-station-manutencao-20261015-01z/docs/station-android/online-plataformas-20261009/library-tools/atualizar-biblioteca-station.py",
+  "compilerSha256": "b777d2c5f5fe38d88ea6cbdf539d0592c3bfd9d8de1af8ae9d2f29aa9ff26089",
+  "productionChanged": false
+}

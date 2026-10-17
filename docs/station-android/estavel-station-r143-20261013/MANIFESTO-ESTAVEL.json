@@ -1,0 +1,73 @@
+{
+  "schema": "station.stable.checkpoint.v1",
+  "revision": "R143",
+  "dateLocal": "2026-10-13",
+  "timezone": "America/Fortaleza",
+  "stableDesignatedByOwner": true,
+  "ownerAuthorization": "agora salve como estavel no git faça descrição completa aim de se tiver problemas possa voltart entender até momento; faça bakup desta versão completa com tudo que precisa para esta ponto",
+  "tag": "estavel-station-r143-20261013",
+  "recoveryBranch": "estavel-station-r143-20261013",
+  "executableSourceCommit": "26257869b59af8ecea44932ab287705990a9acbe",
+  "sourceDirectory": "integration/snes-multitap-unique-flag-r143-20261013-final2",
+  "package": "org.turboramastation.frontend",
+  "apkFile": "TurboStations-Premium-R143-multitap-flag-20261013.apk",
+  "apkSha256": "508480e3671ae924f037bd32f6d71efda7a9d905c45c7b2571bd9f219add83d4",
+  "apkBytes": 2715024399,
+  "certificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "signatureSchemes": [
+    "v2",
+    "v3"
+  ],
+  "alignmentBytes": 16384,
+  "baselineRevision": "R142",
+  "baselineApkSha256": "f99b51a04f4967c086533157835868dcc6a22a3eb06eb63706886f9f60453b83",
+  "baselineExecutableSourceCommit": "9a38881f467ee533b4f8bcff3ea6769b98401175",
+  "preservedEntryCount": 13855,
+  "totalEntryCount": 13860,
+  "replacedEntries": [
+    "assets/station-online/engines.json",
+    "classes35.dex",
+    "lib/arm64-v8a/libstation_dolphin_runtime.so",
+    "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+    "lib/arm64-v8a/libstation_psx_online.so"
+  ],
+  "addedEntries": [],
+  "removedEntries": [],
+  "preservedDexPartitions": 39,
+  "unchangedDex35Classes": 607,
+  "totalDex35Classes": 608,
+  "modifiedMethods": [
+    "StationRetroLaunch.prepareSnesMultitap"
+  ],
+  "newCodeOrApkForPromotion": false,
+  "lastVerifiedPhones": {
+    "moto g52": "R143",
+    "Samsung A56": "R141",
+    "Edge30": "R141"
+  },
+  "humanAcceptedTests": [
+    "Top Gear 3000 Corrida VS: three participants played",
+    "Bomberman: successful gameplay reported; title/mode/count not restated"
+  ],
+  "fourHumanPlayersValidated": false,
+  "fiveHumanPlayersValidated": false,
+  "serverState": "R141 registry applied per returned receipt; R143 independent kit prepared, not applied; SNES existing registration",
+  "privateKitSha256": "a4ba210580ea68beb0086c2c986c6a884e888a1e9ad599bd7e9d9ae33364f606",
+  "privateKitBytes": 12161998,
+  "backupRoot": "F:/TurboStations-Backup-Completo-20261011",
+  "completeCheckpointDirectory": "desenvolvimento/reconstrucao-atual/estavel-station-r143-20261013",
+  "historyPreserved": true,
+  "restoreDocument": "RESTAURACAO.md",
+  "stateDocument": "ESTADO-COMPLETO.md",
+  "frozenEvidence": {
+    "bomberman-human-result.json": "7312149fa69ed73544cfae432ddd5f73f9f247e6cf89c3f34c599ab9fbc7c4c8",
+    "dex-compilation.json": "7f5af0e811925caae78724babe724be98a1daea597576654b7dc14e92a3538c1",
+    "final-apk-proof.json": "82c35405eaff4c99a3af162679ea5aa7eb4e0ab22c90c044f257fab05d3a2a2a",
+    "host-parser-and-controller.json": "85b4cbe983bdecf413d0b2fdbcf1eccf574d96c35c895eb69e2612efaac99e4d",
+    "installation-moto-g52.json": "d3645b7d1d25c6e4873f0dd91c1f62c7ccd611e6f3fc5639f4d242c65980bf22",
+    "parser-header-pins.json": "ca632ef5fc71371e83e652e346ec1b7b7f5cd59534a9b7ca9e3f434d0cb4a663",
+    "private-kit-receipt.json": "b468686c9e2d2066a69cf3a0721e3b8e98b8f43cd877764f33b4fcf083bbbb49",
+    "three-player-human-result.json": "0602282bf70bf855781d4536354530fc4bc4d806560ae89c56627e9d14ef8a51"
+  },
+  "publicationVerificationReceipt": "private complete checkpoint backup-receipt.json; Git refs must resolve to the checkpoint commit"
+}

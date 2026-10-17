@@ -1,0 +1,45 @@
+{
+  "schema": "station.r149.windwaker.alternative-local-validation.v1",
+  "date": "2026-10-14",
+  "scope": "local-static-copy-only",
+  "candidateItemId": "station_d0a6aa65e5900ba9167a200f8dccfae5",
+  "candidateCatalogName": "The Legend of Zelda The Wind Waker",
+  "localSourcePath": "D:\\TurboRoms\\roms\\gamecube\\PT-BR Traduzidos\\The Legend of Zelda - The Wind Waker.iso",
+  "localSourcePathContainsPersonalData": false,
+  "fileBytes": 1459978240,
+  "sha256": "3ea3cc8f62acfaafe2d2adb96090bf87cfabd01f89e0631d571517faf670d5f1",
+  "catalogDescriptorSizeAndSha256Matched": true,
+  "dolphinToolHeader": {
+    "gameId": "GZLE01",
+    "country": "USA",
+    "region": "NTSC-U",
+    "revision": 0
+  },
+  "dolphinToolVerify": {
+    "exitCode": 0,
+    "problemsFound": "No",
+    "crc32": "fdef2657",
+    "sha1": "a8948d98eba82c4c54cccb79eabc8aec08400863",
+    "nonfatalOutput": "Error creating key"
+  },
+  "fst": {
+    "offsetBytes": 3948288,
+    "sizeBytes": 57054,
+    "entryCountIncludingRoot": 2391,
+    "entryCountFollowingRoot": 2390
+  },
+  "failedOtherEditionReadRangePresentInCandidate": true,
+  "failedOtherEditionItemId": "station_12b835c9539b4800a6bb29ca00a25f94",
+  "failedOtherEditionBytes": 546776387,
+  "failedOtherEditionCatalogLabel": "Europe",
+  "failedOtherEditionHeaderGameId": "GZLE01",
+  "doNotRepointEuropeItemToUsaImage": true,
+  "linuxProductionArtifactConfirmed": false,
+  "linuxCatalogCurrentStateConfirmed": false,
+  "a56CandidateDownloadTested": true,
+  "a56CandidateLaunchReportedByUser": true,
+  "a56CandidateLaunchReportDate": "2026-10-14",
+  "a56CandidateRuntimeLogsCaptured": false,
+  "a56CandidateGameplayTested": false,
+  "recommendation": "Quarantine only the broken Europe item; the distinct USA candidate launched on the A56 according to the user, while its Linux artifact SHA and sustained gameplay remain unverified."
+}

@@ -26,6 +26,11 @@ NATIVE_CONTROLLERS = dict(dreamcast='dreamcast-four-ports-v1',
 ARCADES = {'neogeo','fbneo','cps1','cps2','cps3'}
 BINDING = ('itemId','contentSha256','engineId','coreSha256','runtimeSha256')
 PROFILE_KEY = (*BINDING, 'profileId','profileSha256')
+MAXIMUM_TRUSTED_ENGINES = 256
+MAXIMUM_TRUSTED_MANIFEST_BYTES = 1024 * 1024
+MAXIMUM_PROFILE_CONTENT_BYTES = 256 * 1024
+MAXIMUM_PREPARED_MODE_BYTES = 9 * 1024 * 1024
+MAXIMUM_PROFILE_REGISTRY_BYTES = 18 * 1024 * 1024
 MODE_FIELDS = ('profileId','maximumPlayers','allowedPlayerCounts','approved',
                'controllerProfile','mode','modeTitle','instructions','sources')
 
@@ -40,6 +45,19 @@ def text(value, limit):
 
 def encoded(value):
     return (json.dumps(value,ensure_ascii=False,separators=(',',':'),allow_nan=False)+'\n').encode()
+
+def profile_bytes(configuration):
+    """Match Android JSONObject.quote, including the mandatory slash escape.
+
+    This recipe is used only for the controller fingerprint. Registry JSON
+    retains its existing encoding. The Android client hashes these exact bytes.
+    """
+    ordered={key:configuration[key] for key in
+             ('schemaVersion','controllerProfile','devices','coreOptions')}
+    return json.dumps(ordered,ensure_ascii=False,separators=(',',':'),allow_nan=False).replace('/','\\/').encode()
+
+def profile_digest(configuration):
+    return hashlib.sha256(profile_bytes(configuration)).hexdigest()
 
 def profile_configuration(engine, controller, maximum):
     for definition in engine.get('controllerProfiles',[]):
@@ -59,7 +77,7 @@ def profile_configuration(engine, controller, maximum):
     return dict(schemaVersion=1,controllerProfile=controller,devices=devices,coreOptions=engine['options'])
 
 def validate_manifest(manifest):
-    if not isinstance(manifest,dict) or manifest.get('schemaVersion') != 1 or not isinstance(manifest.get('engines'),list) or len(manifest['engines'])>64 or len(encoded(manifest))>512*1024:
+    if not isinstance(manifest,dict) or manifest.get('schemaVersion') != 1 or not isinstance(manifest.get('engines'),list) or len(manifest['engines'])>MAXIMUM_TRUSTED_ENGINES or len(encoded(manifest))>MAXIMUM_TRUSTED_MANIFEST_BYTES:
         raise ValueError('invalid trusted engine manifest')
     seen=set()
     for engine in manifest['engines']:
@@ -96,7 +114,7 @@ def validate_manifest(manifest):
 
 def validate_modes(document):
     if document is None:return []
-    if not isinstance(document,dict) or document.get('schemaVersion')!=1 or not isinstance(document.get('modes'),list) or len(document['modes'])>16000 or len(encoded(document))>8*1024*1024:
+    if not isinstance(document,dict) or document.get('schemaVersion')!=1 or not isinstance(document.get('modes'),list) or len(document['modes'])>16000 or len(encoded(document))>MAXIMUM_PREPARED_MODE_BYTES:
         raise ValueError('invalid prepared mode registry')
     seen=set()
     for mode in document['modes']:
@@ -162,16 +180,21 @@ def prepare(items,existing,manifest,modes=None):
                 if config is None:continue # engine must implement the exact port type
                 record={key:engine[key] for key in ('engineId','coreSha256','runtimeSha256')}
                 record.update(itemId=item['itemId'],contentSha256=item['contentSha256'],platform=system,
-                    profileSha256=hashlib.sha256(encoded(config)[:-1]).hexdigest())
+                    profileSha256=profile_digest(config))
                 record.update({key:mode[key] for key in MODE_FIELDS})
                 key=tuple(record[k] for k in PROFILE_KEY)
                 if key in keys:continue
                 output.append(record);keys.add(key);bindings.add(binding)
     if len(output)>50000:raise ValueError('automatic profile limit exceeded')
-    counts={}
+    counts={};content_groups={}
     for p in output:
-        counts[p['itemId']]=counts.get(p['itemId'],0)+1
-        if counts[p['itemId']]>32:raise ValueError('automatic profile per-game limit exceeded')
-    if len((json.dumps(output,ensure_ascii=False,indent=2)+'\n').encode())>16*1024*1024:
+        binding=tuple(p[k] for k in BINDING)
+        counts[binding]=counts.get(binding,0)+1
+        if counts[binding]>32:raise ValueError('automatic profile per-engine-binding limit exceeded')
+        content_groups.setdefault((p['itemId'],p['contentSha256']),[]).append(p)
+    for group in content_groups.values():
+        if len(json.dumps(group,ensure_ascii=True,separators=(',',':')).encode('ascii'))>MAXIMUM_PROFILE_CONTENT_BYTES:
+            raise ValueError('automatic profile content projection exceeds the server byte limit')
+    if len((json.dumps(output,ensure_ascii=False,indent=2)+'\n').encode())>MAXIMUM_PROFILE_REGISTRY_BYTES:
         raise ValueError('automatic profile registry exceeds the server byte limit')
     return output

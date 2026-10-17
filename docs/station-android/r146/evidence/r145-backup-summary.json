@@ -1,0 +1,18 @@
+{
+  "revision": "R145",
+  "sourceCommit": "25d10b2322d2e5687c9dfacc71a826c3955fad5d",
+  "candidateOnly": true,
+  "stablePromoted": false,
+  "permanentPointersChanged": false,
+  "verifiedFileCount": 3632,
+  "verifiedBytes": 7284313591,
+  "allNativeInputsIncluded": true,
+  "nativeInputCount": 158,
+  "installationState": "compiled-not-installed",
+  "olderCheckpointsOverwritten": false,
+  "activationInputOrFilledXmlCopied": false,
+  "schema": "station.r145.verified-backup.public-summary.v1",
+  "backupReceiptSha256": "63d60f73703922ff7e1e9bbf4d0d82a69b43868965d5341b15109a87a4cb8399",
+  "fullGitBundles": 2,
+  "standaloneBundles": true
+}

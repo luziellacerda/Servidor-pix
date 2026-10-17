@@ -8,6 +8,7 @@ namespace TurboRamaSuiteOnlineServer;
 public sealed class StationMultiplayerProfileMonitor(string path, StationMultiplayer hub,
     ILogger<StationMultiplayerProfileMonitor> logger) : BackgroundService
 {
+    public const long MaximumRegistryBytes = 18L * 1024 * 1024;
     private readonly object gate = new();
     // Force one read after registration so a publication between the initial
     // load and monitor construction cannot be mistaken for an unchanged file.
@@ -33,7 +34,7 @@ public sealed class StationMultiplayerProfileMonitor(string path, StationMultipl
     public static StationMultiplayerProfile[] Read(string path)
     {
         if (!Path.IsPathFullyQualified(path) || !File.Exists(path) ||
-            new FileInfo(path).Length > 16 * 1024 * 1024 ||
+            new FileInfo(path).Length > MaximumRegistryBytes ||
             (File.GetAttributes(path) & FileAttributes.ReparsePoint) != 0)
             throw new InvalidOperationException("Bounded regular profile registry required.");
         using var file = File.OpenRead(path);
@@ -43,7 +44,7 @@ public sealed class StationMultiplayerProfileMonitor(string path, StationMultipl
         int count;
         while ((count = file.Read(buffer)) != 0)
         {
-            if (data.Length + count > 16 * 1024 * 1024)
+            if (data.Length + count > MaximumRegistryBytes)
                 throw new InvalidOperationException("Profile registry exceeds the byte limit.");
             data.Write(buffer, 0, count);
         }

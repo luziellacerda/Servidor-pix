@@ -1,0 +1,44 @@
+{
+  "schema": "station.r164.selection-actions.physical-qa.v1",
+  "revision": "R164",
+  "date": "2026-10-15",
+  "deviceModel": "Samsung A56",
+  "installedApkSha256": "903700d5d6dcd63779df636cfb11bf94e2fadbeece462d2cb7a6cdf1dfbd5210",
+  "installedHashMethod": "adb sha256sum of installed base.apk",
+  "installedHashMatchesSignedCandidate": true,
+  "screenPixels": [2340, 1080],
+  "selectionVisualChecks": {
+    "largeCoverTenPercentNarrower": true,
+    "smallGameCardsReduced": true,
+    "darkActionStripBottomAlignedWithCover": true,
+    "refreshIconSeparatedFromSearch": true,
+    "visibleActions": ["JOGAR", "JOGAR ONLINE", "SAVES", "APAGAR", "VOLTAR"],
+    "userDesignAcceptance": "MANTENHA PROPORÇÃO 10% COMO ESTAVA TODO RESTO DESIGN ESTA OK"
+  },
+  "touchChecks": {
+    "firstN64MiniCardSelected": "1080° Snowboarding",
+    "refreshResetSelectionTo": "007: The World Is Not Enough / catalog list",
+    "searchQuery": "1080",
+    "searchResultCount": "1/1",
+    "searchFieldClearOfRatingStars": true
+  },
+  "screenshots": [
+    {
+      "name": "r164-check.png",
+      "sha256": "61ce5b9deb15e2f694d81ddc0aa121603c6172e014376c0c08289cf6124920aa"
+    },
+    {
+      "name": "r164-n64-selected.png",
+      "sha256": "e00db03021967b80a6fc73d9a6050b3b039ad412aaad5faa0d464326547816de"
+    },
+    {
+      "name": "r164-search.png",
+      "sha256": "3a77ff17212a7379ba1e7cf993b94e8e7fecaf35b30e2b39efe16f9f9b4aff70"
+    }
+  ],
+  "screenshotsIncludedInPublicGit": false,
+  "new1080CoverPublished": false,
+  "r164ServerRegistered": false,
+  "r164N64OnlineGameplayRetested": false,
+  "stableReleaseApproved": false
+}

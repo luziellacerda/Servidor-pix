@@ -1,0 +1,5 @@
+PASS staggered-resume first=1 epoch=1 hostFrame=241 guestFrame=240
+PASS staggered-resume first=2 epoch=1 hostFrame=240 guestFrame=240
+PASS staggered-resume first=1 epoch=3 hostFrame=241 guestFrame=240
+PASS staggered-resume first=2 epoch=3 hostFrame=240 guestFrame=240
+PASS PSX resume race checks=62 actualJavaAndProtocol=true syntheticOwner=true physicalGameplay=false

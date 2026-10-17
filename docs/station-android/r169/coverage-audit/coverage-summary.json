@@ -1,0 +1,187 @@
+{
+  "schema": "station.readonly-coverage-audit.v1",
+  "mutatedServerState": false,
+  "catalogRevision": 100,
+  "catalogItems": 4744,
+  "visibleItems": 4488,
+  "installedEngines": 13,
+  "serverEngines": 95,
+  "profilesRead": 17388,
+  "modesRead": 12473,
+  "classificationCounts": {
+    "FORMATO_INCOMPATIVEL": 1,
+    "LOCAL_ONLY": 171,
+    "MULTIPLAYER_REVIEW_PENDING": 18,
+    "NO_EXACT_PROFILE": 325,
+    "NO_INSTALLED_ONLINE_ENGINE": 1087,
+    "REGISTRY_APPROVED_WITHOUT_GAME_PROOF": 3003,
+    "REVIEWED_MULTIPLAYER_APPROVED": 139
+  },
+  "actionableGapEditions": 4462,
+  "exactModeSourceApprovedEditions": 2162,
+  "reviewedEvidenceApprovedEditions": 139,
+  "registryApprovedUnverifiedEditions": 3003,
+  "physicalGameplayValidatedEditions": 0,
+  "byPlatform": {
+    "cps1": {
+      "items": 36,
+      "visible": 36,
+      "classifications": {
+        "REGISTRY_APPROVED_WITHOUT_GAME_PROOF": 36
+      }
+    },
+    "cps2": {
+      "items": 64,
+      "visible": 64,
+      "classifications": {
+        "LOCAL_ONLY": 2,
+        "REGISTRY_APPROVED_WITHOUT_GAME_PROOF": 62
+      }
+    },
+    "cps3": {
+      "items": 11,
+      "visible": 11,
+      "classifications": {
+        "MULTIPLAYER_REVIEW_PENDING": 2,
+        "REGISTRY_APPROVED_WITHOUT_GAME_PROOF": 9
+      }
+    },
+    "dreamcast": {
+      "items": 243,
+      "visible": 243,
+      "classifications": {
+        "NO_INSTALLED_ONLINE_ENGINE": 243
+      }
+    },
+    "fbneo": {
+      "items": 913,
+      "visible": 913,
+      "classifications": {
+        "LOCAL_ONLY": 67,
+        "REGISTRY_APPROVED_WITHOUT_GAME_PROOF": 846
+      }
+    },
+    "gamecube": {
+      "items": 21,
+      "visible": 20,
+      "classifications": {
+        "FORMATO_INCOMPATIVEL": 1,
+        "NO_EXACT_PROFILE": 12,
+        "REGISTRY_APPROVED_WITHOUT_GAME_PROOF": 8
+      }
+    },
+    "megadrive": {
+      "items": 1227,
+      "visible": 981,
+      "classifications": {
+        "LOCAL_ONLY": 2,
+        "NO_EXACT_PROFILE": 246,
+        "REGISTRY_APPROVED_WITHOUT_GAME_PROOF": 979
+      }
+    },
+    "n64": {
+      "items": 157,
+      "visible": 157,
+      "classifications": {
+        "LOCAL_ONLY": 37,
+        "REVIEWED_MULTIPLAYER_APPROVED": 120
+      }
+    },
+    "neogeo": {
+      "items": 189,
+      "visible": 189,
+      "classifications": {
+        "LOCAL_ONLY": 6,
+        "MULTIPLAYER_REVIEW_PENDING": 3,
+        "REGISTRY_APPROVED_WITHOUT_GAME_PROOF": 180
+      }
+    },
+    "neogeocd": {
+      "items": 50,
+      "visible": 50,
+      "classifications": {
+        "LOCAL_ONLY": 3,
+        "REGISTRY_APPROVED_WITHOUT_GAME_PROOF": 47
+      }
+    },
+    "nes": {
+      "items": 750,
+      "visible": 750,
+      "classifications": {
+        "NO_INSTALLED_ONLINE_ENGINE": 750
+      }
+    },
+    "ps2": {
+      "items": 25,
+      "visible": 25,
+      "classifications": {
+        "NO_INSTALLED_ONLINE_ENGINE": 25
+      }
+    },
+    "psp": {
+      "items": 9,
+      "visible": 9,
+      "classifications": {
+        "NO_INSTALLED_ONLINE_ENGINE": 9
+      }
+    },
+    "psx": {
+      "items": 84,
+      "visible": 84,
+      "classifications": {
+        "LOCAL_ONLY": 53,
+        "MULTIPLAYER_REVIEW_PENDING": 12,
+        "REVIEWED_MULTIPLAYER_APPROVED": 19
+      }
+    },
+    "saturn": {
+      "items": 19,
+      "visible": 19,
+      "classifications": {
+        "NO_INSTALLED_ONLINE_ENGINE": 19
+      }
+    },
+    "sega32x": {
+      "items": 36,
+      "visible": 36,
+      "classifications": {
+        "NO_INSTALLED_ONLINE_ENGINE": 36
+      }
+    },
+    "snes": {
+      "items": 898,
+      "visible": 889,
+      "classifications": {
+        "LOCAL_ONLY": 1,
+        "MULTIPLAYER_REVIEW_PENDING": 1,
+        "NO_EXACT_PROFILE": 63,
+        "REGISTRY_APPROVED_WITHOUT_GAME_PROOF": 833
+      }
+    },
+    "switch": {
+      "items": 4,
+      "visible": 4,
+      "classifications": {
+        "NO_INSTALLED_ONLINE_ENGINE": 4
+      }
+    },
+    "wii": {
+      "items": 7,
+      "visible": 7,
+      "classifications": {
+        "NO_EXACT_PROFILE": 4,
+        "REGISTRY_APPROVED_WITHOUT_GAME_PROOF": 3
+      }
+    },
+    "wiiu": {
+      "items": 1,
+      "visible": 1,
+      "classifications": {
+        "NO_INSTALLED_ONLINE_ENGINE": 1
+      }
+    }
+  },
+  "protectedReadOnlyAuditExecuted": true,
+  "aggregateEvidence": "Same exact catalog/manifest/profile/mode bytes as the protected published authority; projection and native read-only audit completed",
+  "protectsPerEditionPrivateOutputs": true
+}

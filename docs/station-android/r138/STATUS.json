@@ -1,0 +1,32 @@
+{
+  "revision": "R138",
+  "stage": "signed-installed-moto-g52-awaiting-server-registration",
+  "signedApkSha256": "9183462e4d45cfcf2d2599d9e682b81890fee7b094505bf3073ab8183dd1dd10",
+  "signedApkBytes": 2714991631,
+  "signedApkVerified": true,
+  "installed": true,
+  "serverRegistered": false,
+  "serverDeployed": false,
+  "networkGameplayValidated": false,
+  "coreLoadOnMotoG52Validated": true,
+  "core120FramesOnMotoG52Validated": true,
+  "nativeLifecycleHostFixturesValidated": true,
+  "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+  "enginesAssetSha256": "76b3cb61149293200cb8853784e6b6e4023f4e4c33b6b7cfcad8a954e1f9f519",
+  "newRetroarchDescriptors": 9,
+  "incomingLaunchReadyV3Engines": 8,
+  "independentR137EnginesPreserved": 4,
+  "installedOn": "moto g52",
+  "installedApkHashVerified": true,
+  "frontendObserved": true,
+  "nativeExitPhysicalValidated": false,
+  "signalLossExitPhysicalValidated": false,
+  "installedOnEdge30": true,
+  "edge30InstalledApkHashVerified": true,
+  "edge30OriginalUIDAndDataPreserved": true,
+  "edge30FrontendObserved": true,
+  "installedDeviceModels": [
+    "moto g52",
+    "motorola edge 30"
+  ]
+}

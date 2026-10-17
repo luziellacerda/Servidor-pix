@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "previousSourceCommit": "070f8f5fdbb3e6003a1bcd816e3475381da649b0",
+  "fixedSourceCommit": "c0ca229802909556223e54b3f610f084081b2837",
+  "failedBeforeFix": "confirmed exit waits for delayed peer close instead of aborting an in-flight transport",
+  "failedBaselineExitCode": 134,
+  "deterministicRegressionPassedAfterFix": true,
+  "oldInFlightTestDidNotRequireReciprocalClose": true,
+  "closeDrainUsesOriginalTwoSecondDeadline": true,
+  "independentPublicCloseTrials": 3,
+  "physicalAndroidGameplayValidated": false,
+  "tcpResetPacketCapturePerformed": false,
+  "references": [
+    "https://www.rfc-editor.org/rfc/rfc6455#section-1.4",
+    "https://www.rfc-editor.org/rfc/rfc6455#section-7.1.2",
+    "https://learn.microsoft.com/en-us/dotnet/api/system.net.websockets.websocket.closeoutputasync?view=net-10.0"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "matchedMagazines": 36,
+  "uniqueBindings": 36,
+  "uniqueArtworks": 34,
+  "unmatchedArtworks": 14,
+  "finalizedAtSnapshot": 191,
+  "sourceManifestSha256": "817fe992acce5d741be8817bb216f320010a48f3cc1a6b09cb057c143950d549",
+  "prior18zMappingsAndBytesIdentical": true,
+  "exactMagazineROMStemsVerified": true,
+  "sourceHashesAndJPEGGeometryVerified": true,
+  "atomicWriteFixturePassed": true,
+  "operatorSha256": "400b3d4d873ebe7b6026ae5d8821b8e406d6846870ba4761d49670f240a43737",
+  "planSha256": "6713f4436143ec0e2c36f86307cccf18a029972669d66574f38775509fee71f6",
+  "privilegedPublicationExecuted": false
+}

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "realCurrentRegistrarStagePassed": true,
+  "enginesAdded": 4,
+  "profilesAdded": 492,
+  "preparedModesAdded": 492,
+  "oldPrefixesExact": true,
+  "exactlySixNewWinbackInstructionEdits": true,
+  "allDecisionsCountsSourcesAndControllerHashesExact": true,
+  "wrongCoreGateRefused": true,
+  "missingRealHleRefused": true,
+  "changedEditionRefused": true,
+  "compactModesBytes": 7784305,
+  "compactProfileBytes": 14108974,
+  "r166NotRegisteredInBaseline": true,
+  "protectedValidatorOrLimitChanged": false,
+  "projectionOnlyNotFreshProtectedRead": true
+}

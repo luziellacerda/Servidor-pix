@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": 7,
+  "cases": [
+    "unverified-kit",
+    "wrong-received-runtime",
+    "pending-mode-cannot-be-promoted",
+    "changed-content",
+    "missing-source-approval",
+    "changed-control-ports",
+    "metadata-player-count-does-not-grant-seats"
+  ],
+  "physicalGameplayValidated": false
+}

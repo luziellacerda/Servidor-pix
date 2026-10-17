@@ -1,0 +1,23 @@
+{
+  "checks": 282,
+  "jvmLoopbackOnly": true,
+  "androidOrNativeGameplay": false,
+  "elapsedMs": 9988,
+  "passed": true,
+  "controllerRegistrationPlugin": 2,
+  "hostMempakRetained": true,
+  "guestMempakNormalizedToNone": true,
+  "sourceAppCommit": "f9df99323a71e1d6e15e09e0c3b8dba7ee11be65",
+  "productionFilesModified": false,
+  "sourceSha256": {
+    "java/org/emulationstation/frontend/netplay/StationN64Server.java": "39d86015ce89ed34818fb275ab35c963871fc975b4ff16e21f7aa07d68909216",
+    "java/org/emulationstation/frontend/netplay/StationN64Mux.java": "6c3b37e207355063cea92e46c0a8a23056884a765b19c1f053774da6eb82009f",
+    "java/org/emulationstation/frontend/netplay/StationN64Wire.java": "fa30f4a200bfec71a715f9f0c5ee54e51f27f98e3c8723f191094d6df717ca40",
+    "tests/StationN64ProtocolProbe.java": "97c449f67289e3744ceddb53fe4f4250ef9f066faa46c988db9fea8fbcbf453b"
+  },
+  "adaptedProbeSha256": "b44bbbd7732c17528f4cd538869ddfa00ebf1d59f711bba02487124772cf971d",
+  "changesToExistingProbe": [
+    "Controller registration plugin: MEMORY=2 for each player",
+    "Host input/roster plugin: MEMORY=2; guest input/roster plugin: NONE=1"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "station.psx.scoped-preparation.v1",
+  "exactReviewedEditions": 84,
+  "profilesAdded": 93,
+  "modesAdded": 93,
+  "enginesAdded": 0,
+  "approvedMultiplayerModes": 23,
+  "approvedMultiplayerEditions": 19,
+  "localClassifications": 53,
+  "pendingMultiplayerModes": 17,
+  "previousProfilesPreserved": 15327,
+  "previousModesPreserved": 10412,
+  "currentEngineId": "pcsx-rearmed-ff81ed17-player-v3-1b315b86b4a7",
+  "controllerProfileSha256": "81c0e2323a37130dbdbdb9c2efefca8837a9bb6e7169304b4e5731b2ec56290a",
+  "previousPsxApprovalsMigrated": false,
+  "metadataPlayerCountsUsedForApproval": false,
+  "coreProbeIsAndroidGameplay": false,
+  "physicalAndroidGameplayValidated": false,
+  "published": false,
+  "actualRegistrarStagePassed": true,
+  "exactReceivedCoreAndRuntimeVerified": true,
+  "allCandidateSealsVerified": true,
+  "registrarReceipt": {
+    "schemaVersion": 1,
+    "serverRebuildRequired": false,
+    "serverRestartRequired": false,
+    "baseline": {
+      "catalog": "acc36205d24d2f4b9b8563369cb5d130193300fce120388726d190f614cdb3f7",
+      "profiles": "7e7eecb7e2698972c01867865841ae8b55cd5d58a5f6c525fd244440e7ffd93b",
+      "current": "7c380f7873f99428c337788b2864e542fdc8187215486ac3e98a0a94c4248bd8",
+      "modes": "16358655ed60f9cf25768e0c9a3c4bd74381c58b426e87f1cec9478929474b5d"
+    },
+    "files": {
+      "incoming.json": "8fe472501b5c5686cc53cfd4aa8dbb065ac69b14898e423edb365be13c23416c",
+      "engines.json": "7c380f7873f99428c337788b2864e542fdc8187215486ac3e98a0a94c4248bd8",
+      "profiles.json": "5f6bfe8d91b4c162750761b6756daf34ca0de2421bdd1244598437c0bb48c54f",
+      "modes.json": "884738a5f01b79f5f5c526ddd1d83f4500ff78db530d51f57b79b4634fcd5d4e"
+    },
+    "preparedModesAdded": 93,
+    "enginesAdded": 0,
+    "profilesAdded": 93,
+    "previousProfilesPreserved": 15327,
+    "realBinaryHashesVerified": true,
+    "androidGameplayValidated": false
+  }
+}

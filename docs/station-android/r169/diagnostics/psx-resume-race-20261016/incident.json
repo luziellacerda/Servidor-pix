@@ -1,0 +1,310 @@
+{
+  "schema": "station.psx-resume-race-diagnostic.v1",
+  "generatedUtc": "2026-10-17T00:38:27.874670+00:00",
+  "status": "REPRODUCED_DEFECTS_FIXED_IN_SOURCE_NOT_INSTALLED",
+  "game": "Capcom vs. SNK - Millennium Fight 2000 Pro",
+  "platform": "psx",
+  "revisionObserved": "R169 DEX35 and PSX runtime independently read and identical on moto g52 and Samsung A56",
+  "wholeApkHashReadInThisDiagnostic": false,
+  "installedParts": {
+    "classes35.dex": {
+      "bytes": 780284,
+      "sha256": "e2c7ef47475d790f14eb8a4635c8d3f1da2c52f9f4d92237f32bd5043073a736"
+    },
+    "libstation_psx_online.so": {
+      "bytes": 341144,
+      "sha256": "cddba501a25c703e34197bcd19799894012a2e025b1087d282811c1ec509b33a",
+      "matchesPreviouslyVerifiedPrivateKit": true
+    }
+  },
+  "physicalObservations": {
+    "onlineMorning": {
+      "dateLocal": "2026-10-16",
+      "alignedServerSeconds": 90.543616,
+      "serverCpuSeconds": 0.652808,
+      "serverCpuPercentOfOneCore": 0.72,
+      "activeConnections": 2,
+      "serviceRestarts": 0,
+      "rttSamples": 10,
+      "rttRangeMs": [
+        23,
+        35
+      ],
+      "rttMedianMs": 25,
+      "rttScope": "moto-to-relay only; not inter-phone RTT",
+      "audioSamples": 18,
+      "audioFramesRemained": 0,
+      "blackScreenCaptured": true
+    },
+    "offlineEvening": {
+      "dateLocal": "2026-10-16",
+      "gameImageReachedTitleScreen": true,
+      "hleBiosUsed": true,
+      "compilerThreadEnabled": true,
+      "audioSamples": 9,
+      "audioFramesPerSecondMean": 44099.62498983869,
+      "expectedAudioSampleRate": 44100,
+      "audioDrops": 0,
+      "thermalStatus": 0,
+      "nativeVideoFpsMeasured": false
+    },
+    "onlineEvening": {
+      "dateLocal": "2026-10-16",
+      "roleReportedByUser": "Motorola host; Samsung A56 guest",
+      "playingReceivedAtLocal": "21:13:17.510",
+      "pauseEpochReceivedAtLocal": "21:13:17.590",
+      "guestTransportEndedFirst": true,
+      "serverGuestEndCause": "request-abort",
+      "serverHostEndCause": "transport-exception",
+      "hostAudioFramesStoppedAt": 2876,
+      "hostTransportCloseCode": 1006,
+      "laterAuthorityRefusal": true,
+      "guestLogCaptured": true,
+      "exactCauseOfGuestTerminationConfirmed": false,
+      "guestTerminalCategory": "NATIVE_DATAGRAM",
+      "guestTerminalAtLocal": "21:13:17.317",
+      "guestNativeAudioFrames": 0,
+      "categoryConfirmed": "PSX native datagram admission failed after synchronization; no phone-side packet/result logging exposes the precise rejected payload"
+    },
+    "workingMatch": {
+      "dateLocal": "2026-10-16",
+      "playingStartAroundLocal": "21:20:50",
+      "rolesVerifiedByTrafficAndUser": "Motorola host, A56 guest",
+      "priorReversedRolesAttempt": "both native audio counters remained zero; that attempt was stopped before new Motorola-host match",
+      "nativeSteadyThroughput": {
+        "seconds": 110.000118,
+        "startUTC": "2026-10-17T00:20:58.535980+00:00",
+        "endUTC": "2026-10-17T00:22:48.536098+00:00",
+        "state": 2,
+        "epoch": 1,
+        "host": {
+          "nativeBytesAccepted": 435084,
+          "bytesPerSecond": 3955.3048479457084,
+          "inferredFramesPerSecond": 50.70903651212446,
+          "nativeFrameBytes": 78,
+          "pendingBytesEnd": 0
+        },
+        "guest": {
+          "nativeBytesAccepted": 423966,
+          "bytesPerSecond": 3854.232229096336,
+          "inferredFramesPerSecond": 50.7135819617939,
+          "nativeFrameBytes": 76,
+          "pendingBytesEnd": 0
+        },
+        "serviceCpuPercentOfOneCore": 17.740150060566297
+      },
+      "motoAudioFramesPerSecondMean": 37658.1,
+      "a56AudioFramesPerSecondMean": 37642.5,
+      "audioSpeedPercentApprox": 85.4,
+      "audioDrops": 0,
+      "inferredNativeFpsApprox": 50.71,
+      "inferenceBasis": "During unchanged epoch/state in steady play, host sends one 40-byte FRAME plus one 38-byte INPUT commit per executed frame; guest sends one 38-byte INPUT plus one 38-byte FRAME commit. Counters are opaque byte totals, not a direct UI/frame timing API."
+    },
+    "scheduling": {
+      "tool": "Perfetto official trace processor v58.2; verified downloaded binary hash 58042408e6cc861fb1a731c26bb082dc222285561eaa4e12a48a8b2b90dca7b9",
+      "durationSecondsPerPhone": 30,
+      "moto": {
+        "inputWorkerSleeps24To27Ms": 1159,
+        "meanSleepMs": 25.013,
+        "sdlCpuSeconds": 14.2,
+        "sdlSleepingSeconds": 14.675,
+        "sdlRunnableSeconds": 1.099
+      },
+      "a56": {
+        "inputWorkerSleeps24To27Ms": 1157,
+        "meanSleepMs": 25.036,
+        "sdlCpuSeconds": 8.613,
+        "sdlSleepingSeconds": 20.744,
+        "sdlRunnableSeconds": 0.47
+      },
+      "basis": "Target native processes only in aggregate; raw traces remain private. The input-worker identity is matched to thread creation order/source and its distinctive repeated 25ms wait; truncated kernel names alone are not unique."
+    }
+  },
+  "reproducedDefects": [
+    {
+      "id": "PSX_RESUME_DRAINED_CYCLE",
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxSession.java",
+      "description": "A guest that resumes first sends its real future INPUT before host Java tick. Host retains that input, so DRAINED becomes false. Java refuses nativeResume until inbox empty, but owner must resume to consume it. Exact ACK and applied snapshot are already valid.",
+      "fix": "Retain DRAINED for READY and cached transport status; omit it only from resume eligibility after authenticated PLAYING. All epoch/serial/owner/state guards remain."
+    },
+    {
+      "id": "PSX_EARLY_BOOTSTRAP_FRAME_REJECTED",
+      "file": "integration/psx-online/native/StationPsxProtocol.cpp",
+      "description": "Host first emits a genuine neutral bootstrap FRAME before guest resume has primed local neutral inputs. Native admission returns Invalid for legitimate timing.",
+      "fix": "Return Wait only for exact current-state neutral guest pad inside the signed unprimed delay window while paused. Retain bounded transport packet without ACK/copy until actual resume primes it. Wrong pads/windows remain refused."
+    },
+    {
+      "id": "PSX_OUTBOUND_PERIODIC_POLL",
+      "files": [
+        "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxEndpoint.java",
+        "integration/psx-online/java/org/emulationstation/frontend/netplay/StationMultiplayerTunnel.java"
+      ],
+      "description": "PSX takeOutgoing ignores its timeout and returns immediately. On empty queue, shared input worker sleeps on nativeHint for 25ms; core output never signals that semaphore. Both phones show ~40 such sleeps/sec during slow play. A 25ms wait exceeds one 60Hz frame (16.7ms).",
+      "fix": "Add bounded native condition-variable notification for PSX outgoing data, snapshot export and close. Wait only on the IO worker, outside endpointReading/READY ownership. Default endpoint returns false so Dolphin/TCP retain their legacy wait. No input-delay, core option, protocol byte, server throttle or controller approval changes."
+    }
+  ],
+  "sourceBefore": [
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxSession.java",
+      "sha256": "73fdcb47ad0472dd0f4a398020e647af8da5f82b4ab3af78dbbbb457be29288b"
+    },
+    {
+      "file": "integration/psx-online/native/StationPsxProtocol.cpp",
+      "sha256": "01e4d93dce252e543930ce5feb76062da482dd354d6db9b404699aee17190625"
+    }
+  ],
+  "sourceAfter": [
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxSession.java",
+      "sha256": "727a62365a34df77960f9d4b8b56dfda0eb5a6342fa3548f35a478e2197ae780"
+    },
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxBridge.java",
+      "sha256": "e0a918cbbfe2e5092bd2db06c2cf8cf32c2be837b22916b34f33b9b70fd45ba9"
+    },
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxEndpoint.java",
+      "sha256": "249b25e5e6022277859cf13a45871777d1ec8e545dcaf802aa5c9447bd2f5c56"
+    },
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationMultiplayerEndpoint.java",
+      "sha256": "5a32a423577ca46825d92c33ff24f32825a57fc7591ec738808e61e76dedc53b"
+    },
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationMultiplayerTunnel.java",
+      "sha256": "98aa416b71460c4d294284fa00f97e03e10e61a6ddf6fa69bf87455f60e5f1ac"
+    },
+    {
+      "file": "integration/psx-online/native/StationPsxProtocol.cpp",
+      "sha256": "f6cba4f4342292ebf29256fc2d860895d7d6ae704d214db503989b1002e79143"
+    },
+    {
+      "file": "integration/psx-online/native/StationPsxProtocol.hpp",
+      "sha256": "11def66295a42c2b04fd5365d46bc913683faba4291729857c2ec02c00364475"
+    },
+    {
+      "file": "integration/psx-online/native/StationPsxEntry.cpp",
+      "sha256": "b4421060dbe049234b2b91f81204b1d3bca4a216aad9178d0fcd17384f379662"
+    }
+  ],
+  "verification": {
+    "sameFinalHarnessAgainstBaseline": "FAILED all four: host first Invalid, guest first deadlock, at epochs 1 and 3",
+    "fixedCrossJavaNative": "PASS staggered-resume first=1 epoch=1 hostFrame=241 guestFrame=240\nPASS staggered-resume first=2 epoch=1 hostFrame=240 guestFrame=240\nPASS staggered-resume first=1 epoch=3 hostFrame=241 guestFrame=240\nPASS staggered-resume first=2 epoch=3 hostFrame=240 guestFrame=240\nPASS PSX resume race checks=62 actualJavaAndProtocol=true syntheticOwner=true physicalGameplay=false",
+    "javaSessionLaunchChecks": 64,
+    "nativeProtocolChecks": 202916,
+    "nativeAdapterChecks": 16090,
+    "nativeAdapterSyntheticExecutions": 513,
+    "androidArm64ProtocolCompilationPassed": true,
+    "actualJavaAndProtocol": true,
+    "ownersAreSynthetic": true,
+    "physicalCorrectedApkTested": false,
+    "outboundEventWakeChecks": 61,
+    "outboundEventWakeObservedHostMillisecondsUpperBound": 0.133,
+    "psxEndpointChecks": 192,
+    "dolphinTcpRegressionChecks": 470,
+    "arm64FullLinkJniExportCount": 16,
+    "arm64LoadAlignmentBytes": 16384,
+    "pacingModelScenarios": 48,
+    "pacingModelTargetWithNotifications": "host59.9/guest59.7-59.9FPS in defined synthetic phase/work matrix; not corrected Android measurement"
+  },
+  "deployment": {
+    "productionServerChanged": false,
+    "serverRestarted": false,
+    "registriesOrLicensesChanged": false,
+    "networkOrQosChanged": false,
+    "apkBuiltSignedOrInstalled": false,
+    "newRuntimeRegistrationPerformed": false,
+    "newPrivateKitRequiredAfterProducerBuild": true
+  },
+  "limits": [
+    "Two startup defects are independently reproduced with actual Java/C++ protocol; the observed A56 NATIVE_DATAGRAM confirms the admission failure category, not the exact original packet/result.",
+    "Steady Android play was measured before the fix at about51FPS/85% speed. The 25ms periodic wait is independently measured in both phones and removed in candidate source.",
+    "The candidate was not compiled into a signed APK or installed; neither60FPS on corrected phones nor a universal cure for all jitter is claimed.",
+    "Synthetic owner tests and the discrete phase/work model are separate from physical-phone evidence.",
+    "Both offline and online use HLE and load the same game. HLE compatibility warning and cdrom lba-150 during state application are recorded; no causal attribution to a missing file.",
+    "PSX fixes do not prove equivalent N64 gameplay behavior. Core/binaries, saves, real licenses, server data, network and other products remain unchanged."
+  ],
+  "sources": [
+    {
+      "title": "Libretro netplay protocol and per-frame input synchronization",
+      "url": "https://github.com/libretro/docs/blob/master/docs/development/retroarch/netplay.md"
+    },
+    {
+      "title": "PCSX ReARMed BIOS and timing documentation",
+      "url": "https://docs.libretro.com/library/pcsx_rearmed/"
+    },
+    {
+      "title": "Android Slow Sessions and SurfaceFlinger measurements",
+      "url": "https://developer.android.com/topic/performance/issues/slow-session"
+    },
+    {
+      "title": "Perfetto CPU scheduling events and sleeping/runnable semantics",
+      "url": "https://perfetto.dev/docs/data-sources/cpu-scheduling"
+    },
+    {
+      "title": "Android JNI architecture and blocking C++ calls from background threads",
+      "url": "https://developer.android.com/ndk/guides/jni-tips"
+    },
+    {
+      "title": "C++ condition_variable predicate wait and notifications",
+      "url": "https://eel.is/c%2B%2Bdraft/thread.condition.condvar"
+    }
+  ],
+  "installedPartsVerifiedOn": [
+    "moto g52",
+    "Samsung A56"
+  ],
+  "changedProductionSources": [
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxSession.java",
+      "baselineSha256": "73fdcb47ad0472dd0f4a398020e647af8da5f82b4ab3af78dbbbb457be29288b",
+      "candidateSha256": "727a62365a34df77960f9d4b8b56dfda0eb5a6342fa3548f35a478e2197ae780"
+    },
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxBridge.java",
+      "baselineSha256": "d4a52a90ba9f6ff5eb3e8e220b417d171df7f2115cd17467e3b1b57aa4967260",
+      "candidateSha256": "e0a918cbbfe2e5092bd2db06c2cf8cf32c2be837b22916b34f33b9b70fd45ba9"
+    },
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxEndpoint.java",
+      "baselineSha256": "d1f9eb7a2d295f11e20c030dda24b8cbe553422534ecc0bf629b358b2b8a1ed5",
+      "candidateSha256": "249b25e5e6022277859cf13a45871777d1ec8e545dcaf802aa5c9447bd2f5c56"
+    },
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationMultiplayerEndpoint.java",
+      "baselineSha256": "4e1836a8abd9c3e63475981a0b1af426edaa9533d6190c9309df2e5fb429ab96",
+      "candidateSha256": "5a32a423577ca46825d92c33ff24f32825a57fc7591ec738808e61e76dedc53b"
+    },
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationMultiplayerTunnel.java",
+      "baselineSha256": "63222e1586e4398dbb6c51d2ca4ba99893b63e454f588acec2c9296bd9869559",
+      "candidateSha256": "98aa416b71460c4d294284fa00f97e03e10e61a6ddf6fa69bf87455f60e5f1ac"
+    },
+    {
+      "file": "integration/psx-online/native/StationPsxProtocol.cpp",
+      "baselineSha256": "01e4d93dce252e543930ce5feb76062da482dd354d6db9b404699aee17190625",
+      "candidateSha256": "f6cba4f4342292ebf29256fc2d860895d7d6ae704d214db503989b1002e79143"
+    },
+    {
+      "file": "integration/psx-online/native/StationPsxProtocol.hpp",
+      "baselineSha256": "ad168ec6e6d4a1e9de374b5db3e7e6aebb6dff858b9b372968b6fc19a29abcba",
+      "candidateSha256": "11def66295a42c2b04fd5365d46bc913683faba4291729857c2ec02c00364475"
+    },
+    {
+      "file": "integration/psx-online/native/StationPsxEntry.cpp",
+      "baselineSha256": "901c0fff549c02f88da79e4144de478ba59d9a833a944a6dca1fb93c43db86ed",
+      "candidateSha256": "b4421060dbe049234b2b91f81204b1d3bca4a216aad9178d0fcd17384f379662"
+    }
+  ],
+  "numericAdmissionDiagnostic": "New endpoint logs only native result, PXL kind and byte length on rejection, including bounded truncated-frame handling. No IDs, tickets, controls or state payloads.",
+  "autonomousObservation": {
+    "untilLocal": "2026-10-17 08:00 America/Maceio",
+    "untilUtc": "2026-10-17T11:00:00Z",
+    "userService": "station-psx-observacao-20261016.service",
+    "readOnly": true,
+    "boundedPrivateLogs": true,
+    "serverSamplingIntervalSeconds": 30,
+    "installedApkUnderObservation": "R169; not corrected candidate",
+    "hourlyReturnWatcherPreserved": true
+  }
+}

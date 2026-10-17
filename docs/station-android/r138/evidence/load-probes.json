@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "inputResultsJsonSHA256": "dc78099bc2544ef6819d99c9e48157858b935d787692c9bf0a310d5d9c434db2",
+  "sourceProbeSHA256": "f0c04ab0f65ce5f4baca4498ecf717b86e2aeb856a125cf079a49c241c53ed1c",
+  "probeBinarySHA256": "34ecd046d5dae05cf2e72958d84cf01f5ff765148790ec28ba20f44aea213ef5",
+  "results": [
+    {
+      "game": "Super Mario Kart",
+      "chipMode": "LLE",
+      "accuracyOverrides": "disabled",
+      "exitCode": 1,
+      "sanitizedLines": [
+        "probe-start mode=LLE violate-accuracy=disabled content-bytes=524288 isolated-content-path=true run-frames=0",
+        "core-firmware level=1 name=dsp1b.program.rom",
+        "core-firmware level=1 name=dsp1b.data.rom",
+        "core-firmware level=1 name=dsp1b.program.rom",
+        "core-firmware level=3 name=dsp1b.program.rom",
+        "core-firmware level=1 name=dsp1b.data.rom",
+        "core-firmware level=3 name=dsp1b.data.rom",
+        "probe-result mode=LLE violate-accuracy=disabled loaded=false firmware-errors=2 log-debug=5 log-info=27 log-warn=0 log-error=2 supports-no-game=false"
+      ],
+      "capturedTextSHA256Lf": "019623001508778a18f8a059a5be672e1ff1d600af10d8f4ce1752f71605b0f8",
+      "storedLogFileSHA256": "9590afb3c0d1e3760cd877be5659149402438ab1014798db1958da35e1cf150a",
+      "captureHashQualification": "Captured stdout uses UTF-8 LF; the stored local TXT uses CRLF. Both hashes are preserved."
+    },
+    {
+      "game": "Super Mario Kart",
+      "chipMode": "HLE",
+      "accuracyOverrides": "disabled",
+      "exitCode": 1,
+      "sanitizedLines": [
+        "probe-start mode=HLE violate-accuracy=disabled content-bytes=524288 isolated-content-path=true run-frames=0",
+        "core-firmware level=1 name=dsp1b.program.rom",
+        "core-firmware level=1 name=dsp1b.data.rom",
+        "core-firmware level=1 name=dsp1b.program.rom",
+        "core-firmware level=3 name=dsp1b.program.rom",
+        "core-firmware level=1 name=dsp1b.data.rom",
+        "core-firmware level=3 name=dsp1b.data.rom",
+        "probe-result mode=HLE violate-accuracy=disabled loaded=false firmware-errors=2 log-debug=5 log-info=27 log-warn=0 log-error=2 supports-no-game=false"
+      ],
+      "capturedTextSHA256Lf": "71dc62f2d2b5ddfa83e4f800ece2cfc31fd9e79e5ed2bbbc840fc8575d999fb9",
+      "storedLogFileSHA256": "ba2a0bc43784a19359973c5a8d3f133ff40e680511e513a4b145106f5d533813",
+      "captureHashQualification": "Captured stdout uses UTF-8 LF; the stored local TXT uses CRLF. Both hashes are preserved."
+    },
+    {
+      "game": "Super Mario Kart",
+      "chipMode": "HLE",
+      "accuracyOverrides": "enabled",
+      "exitCode": 0,
+      "sanitizedLines": [
+        "probe-start mode=HLE violate-accuracy=enabled content-bytes=524288 isolated-content-path=true run-frames=0",
+        "core-firmware level=1 name=dsp1b.program.rom",
+        "core-firmware level=1 name=dsp1b.data.rom",
+        "probe-result mode=HLE violate-accuracy=enabled loaded=true firmware-errors=0 log-debug=5 log-info=21 log-warn=0 log-error=0 supports-no-game=false"
+      ],
+      "capturedTextSHA256Lf": "fdfda7230f2483bb8cde0c2c2e48191e0da42f8a696fb107acddd4535b1b7a32",
+      "storedLogFileSHA256": "49d1d04a83697cb488a582f78b2248b1f1d46c9cbd73cda2304b01bd66606863",
+      "captureHashQualification": "Captured stdout uses UTF-8 LF; the stored local TXT uses CRLF. Both hashes are preserved."
+    },
+    {
+      "game": "Top Gear 3000",
+      "chipMode": "LLE",
+      "accuracyOverrides": "disabled",
+      "exitCode": 1,
+      "sanitizedLines": [
+        "probe-start mode=LLE violate-accuracy=disabled content-bytes=1048576 isolated-content-path=true run-frames=0",
+        "core-firmware level=1 name=dsp4.program.rom",
+        "core-firmware level=1 name=dsp4.data.rom",
+        "core-firmware level=1 name=dsp4.program.rom",
+        "core-firmware level=3 name=dsp4.program.rom",
+        "core-firmware level=1 name=dsp4.data.rom",
+        "core-firmware level=3 name=dsp4.data.rom",
+        "probe-result mode=LLE violate-accuracy=disabled loaded=false firmware-errors=2 log-debug=5 log-info=22 log-warn=0 log-error=2 supports-no-game=false"
+      ],
+      "capturedTextSHA256Lf": "e1ea7fc2af7efa8824d3f0233cb217f404743f8e55d38ac21b8101d08bc06998",
+      "storedLogFileSHA256": "b7096a85f2f3fa5216630af278464eac1b2a34633f4d33206ccebdfc19302615",
+      "captureHashQualification": "Captured stdout uses UTF-8 LF; the stored local TXT uses CRLF. Both hashes are preserved."
+    },
+    {
+      "game": "Top Gear 3000",
+      "chipMode": "HLE",
+      "accuracyOverrides": "disabled",
+      "exitCode": 1,
+      "sanitizedLines": [
+        "probe-start mode=HLE violate-accuracy=disabled content-bytes=1048576 isolated-content-path=true run-frames=0",
+        "core-firmware level=1 name=dsp4.program.rom",
+        "core-firmware level=1 name=dsp4.data.rom",
+        "core-firmware level=1 name=dsp4.program.rom",
+        "core-firmware level=3 name=dsp4.program.rom",
+        "core-firmware level=1 name=dsp4.data.rom",
+        "core-firmware level=3 name=dsp4.data.rom",
+        "probe-result mode=HLE violate-accuracy=disabled loaded=false firmware-errors=2 log-debug=5 log-info=22 log-warn=0 log-error=2 supports-no-game=false"
+      ],
+      "capturedTextSHA256Lf": "cad7918db6ba3ec2ac639750e1fa266c210c95495c558b62d8f4ea8b11b17527",
+      "storedLogFileSHA256": "bfb09353ac80d9c754e2208c247d39df655ce6b3fe335d3e5ce5afdea7bacd0a",
+      "captureHashQualification": "Captured stdout uses UTF-8 LF; the stored local TXT uses CRLF. Both hashes are preserved."
+    },
+    {
+      "game": "Top Gear 3000",
+      "chipMode": "HLE",
+      "accuracyOverrides": "enabled",
+      "exitCode": 0,
+      "sanitizedLines": [
+        "probe-start mode=HLE violate-accuracy=enabled content-bytes=1048576 isolated-content-path=true run-frames=0",
+        "core-firmware level=1 name=dsp4.program.rom",
+        "core-firmware level=1 name=dsp4.data.rom",
+        "probe-result mode=HLE violate-accuracy=enabled loaded=true firmware-errors=0 log-debug=5 log-info=16 log-warn=0 log-error=0 supports-no-game=false"
+      ],
+      "capturedTextSHA256Lf": "f2f59624943547e14996778f1f133571b5e004f65cbeced198d6fcfb3cbe4e9a",
+      "storedLogFileSHA256": "be585f06d4c808fed3f8ba4dd7ff908921b570c7dfef9f009b6aa246b8abb7cc",
+      "captureHashQualification": "Captured stdout uses UTF-8 LF; the stored local TXT uses CRLF. Both hashes are preserved."
+    }
+  ],
+  "androidExecuted": true,
+  "apkModified": false,
+  "networkGameplayValidated": false
+}

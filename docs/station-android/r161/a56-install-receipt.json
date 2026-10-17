@@ -1,0 +1,20 @@
+{
+  "schema": "station.r161.android-install-receipt.v1",
+  "observedAtLocal": "2026-10-15T09:07:30-03:00",
+  "deviceModel": "Samsung SM-A566E",
+  "packageName": "org.turboramastation.frontend",
+  "priorInstalledApkSha256": "4837be706f9ac1f913b4844353741f70c539674e125ae185239611cf5faac2b3",
+  "signedApkSha256": "66f429d47af725a6767064c3623ee10c505171a85fbc8c0a50dc9e5bc4f80081",
+  "installedBaseApkSha256": "66f429d47af725a6767064c3623ee10c505171a85fbc8c0a50dc9e5bc4f80081",
+  "method": "adb install --no-incremental -r --user 0",
+  "installResult": "Success",
+  "userDataPreservedByInstallMode": true,
+  "activeGameOrDownloadServiceBeforeInstall": false,
+  "appProcessStartedAfterInstall": true,
+  "activityObservedAfterLaunch": "org.emulationstation.frontend.auth.LoginActivity",
+  "loginCompletionObserved": false,
+  "serverApplied": false,
+  "physicalOnlineGameplayValidated": false,
+  "deviceSerialStored": false,
+  "rawLogsStored": false
+}

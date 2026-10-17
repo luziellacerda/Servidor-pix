@@ -1,0 +1,56 @@
+{
+  "schema": "station.n64.host-start-crash-confirmed.v1",
+  "passed": true,
+  "updatedUtc": "2026-10-14T21:16:37.842644+00:00",
+  "apkSha256": "fc1d2d983deb5179979a4aebac7fa64b1740da1c62ae46bfc0d1f4c11eb46cf0",
+  "deviceModel": "SM-A566E",
+  "deviceRoleConfirmedByUser": "host",
+  "nativeProcess": ":n64core",
+  "fatalException": "java.lang.IllegalStateException: N64_OWNER_MISSING",
+  "topFrame": "org.emulationstation.frontend.netplay.StationN64Bridge.onServiceStart(StationN64Bridge.java:33)",
+  "caller": "paulscode.android.mupen64plusae.jni.CoreService.onStartCommand",
+  "crashTimesLocal": [
+    "2026-10-14T18:08:37.586-03:00",
+    "2026-10-14T18:08:39.444-03:00",
+    "2026-10-14T18:09:20.217-03:00"
+  ],
+  "crashTimesUtc": [
+    "2026-10-14T21:08:37.586Z",
+    "2026-10-14T21:08:39.444Z",
+    "2026-10-14T21:09:20.217Z"
+  ],
+  "actualDex35Sha256": "e2cbccdb9af8dbeb1485c7119312875aece8660956833d22ee042b5b5306b513",
+  "actualDex36Sha256": "6e0f7116d156518fad1e65e72f4c204cfacfd9904c4ee2c3110395d56842d707",
+  "exactInstalledBytecodeInspected": true,
+  "confirmedCallChain": [
+    "CoreFragment calls context.getApplicationContext before ActivityHelper.startCoreService",
+    "ActivityHelper calls StationN64Bridge.propagate with that application Context before startService and bindService",
+    "propagate accepts only isStationContext(context)",
+    "isStationContext compares object identity to Activity or an already registered service",
+    "application Context does not match either at the first service start",
+    "onServiceStart sees a current Session but Intent without station.n64.launch and throws N64_OWNER_MISSING"
+  ],
+  "serverAtFailure": {
+    "players": 2,
+    "lobbyReadyCount": 2,
+    "started": true,
+    "hasPlayed": false,
+    "activeNativeConnections": 0,
+    "apiRestarted": false,
+    "timeWindowLocal": "18:07:30–18:12:30 -03:00",
+    "observedHttp200Lines": 408,
+    "observedWebSocket101Lines": 0,
+    "observedHttp4014034095xxLines": 0
+  },
+  "guestInfiniteWaitReportedByUser": true,
+  "guestDebugLogsCapturedHere": false,
+  "guestBeingAnalyzedOnProductionPc": true,
+  "serverRegistrationReady": true,
+  "phoneNativeLaunchWorking": false,
+  "physicalAndroidGameplayValidated": false,
+  "patchAppliedToInstalledApk": false,
+  "originalBridgeSourcePath": "versions/station-mupen-online-r125-20261011/java/org/emulationstation/frontend/netplay/StationN64Bridge.java",
+  "originalBridgeSourceSha256": "54b93f8c9007d48c9b3dd727197e87a58838ea3e1da816a2a96375ff79099693",
+  "appCorrectionOwner": "APK production, as directed by user",
+  "noAppSourceOrInstalledApkChangedHere": true
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "station.r143.parser-and-control-reader.qualification.v1",
+  "passed": true,
+  "executedCases": 1,
+  "productionRemapLoaderExecuted": true,
+  "productionControllerInitExecuted": true,
+  "globalConfigDeviceKeyNotRead": true,
+  "extractedBodiesByteExact": true,
+  "sourceSha256": {
+    "configuration.c": "67d33a5933bd3464df2c7846b05e644ca9d4da7596258e6814dcc782bdbffdca",
+    "command.c": "216253ff0ee8c14e1a9552f586bc4fb52287fb15efdf7763d71ef4e3e9c0bdf6"
+  },
+  "extractedSha256": {
+    "input_remapping_load_file": "b5a3c5d62769d34c7305803917092e2db07a793a2d1f29f38cef15c2be982d4b",
+    "command_event_init_controllers": "a2c9f094b577f03a4afe54fe42c6e1aaed456d518342c8af766a058b5b7da832"
+  },
+  "fixtureSourceSha256": "4fb547d082407ac97ca35cc855017ef4e110fdb2d098b6955397f58f9c55a256",
+  "compilerSha256": "986af49c2d1eefeac324f724ff54597753d1053927fa5d58a37a457f578e1cf8",
+  "fixtureBinarySha256": "76cb689c498d4c6728a3ec9b629a52e3fe82f40fe8173f58af9509ce328eb29f",
+  "stdout": "cases=1 actualRemapLoader=true actualControllerInit=true adapter=257 unrelatedButtonMappingsPreserved=true",
+  "unchangedRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "actualAndroidVariablesMeasured": false,
+  "physicalGameplayValidated": false,
+  "limitations": [
+    "Config getters, settings structures, port dispatch and default button maps controlled on host; not full Android runtime",
+    "Profiles and networking unchanged; actual installed adapter still needs phone test",
+    "Parser bodies and hash map real; include/reference branches stubbed to fail and never entered. Room fixture reproduces R142 duplicate flag, not a phone-private config read."
+  ],
+  "configParserExecuted": true,
+  "duplicateFlagConfirmedDisabled": true,
+  "uniqueFlagConfirmedEnabled": true,
+  "parserExecutedCases": 3,
+  "configFileSourceSha256": "084e7fc70ee2420094b96d393d84f90fce7678d5f92eacd099652421e168cb11",
+  "parserBodiesSha256": {
+    "static char *config_file_strip_comment(": "96b81fe6fe9c708a77a180abce562cdc1285d13bf50beb6f0a4ea5fdd522f248",
+    "static char *config_file_extract_value(": "429cb6893ed7406c95647e650dbc5bbeefdcd0747c79a9147703d0fc397c192b",
+    "static bool config_file_parse_line(": "d486931f24baea04610747599c8829345934ec64e4ac244c53d8195a4acef6ba",
+    "static int config_file_from_string_internal(": "42eaaad2e2c6115174605c647a1fe88786356ab4de15160825251ad60c8cad81",
+    "struct config_entry_list *config_get_entry(": "4ebd34d61490baba63c6860ce37f2bc987f937001390dfae5fbf1e5535220c0c",
+    "bool config_get_bool(": "97cd2d6e51904b7d1cf919e758fc91962ba0b2197977b22837fd61a2f19e3979"
+  },
+  "parserFixtureSourceSha256": "3492a2bb61d0ae20eb800c066cd032cef01cf966b095022d001090df885f37d8",
+  "parserFixtureBinarySha256": "30246f45811f240ca017d7bdeba4dfad534995a19eccd95829f8b6b1d50676fb",
+  "parserCompilerSha256": "986af49c2d1eefeac324f724ff54597753d1053927fa5d58a37a457f578e1cf8",
+  "parserStdout": "actualParser=true duplicateFalseThenTrue=false uniqueTrue=true unrelatedFalse=false cases=3"
+}

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "completedUtc": "2026-10-15T16:56:39.857387+00:00",
+  "serverDataPublished": true,
+  "signedLocalEditions": 84,
+  "signedPublicEditions": 84,
+  "roomModeAdmissions": 23,
+  "unsupportedAdmissionsRefused": 167,
+  "twoParticipantPublicTransportPassed": true,
+  "actualCoreSnapshotBytesPassed": 4456448,
+  "publicCatalogEditions": 84,
+  "exactPublicCovers": 84,
+  "signedDownloadDescriptors": 84,
+  "exactPublicDownloadSamples": 84,
+  "realLicensesPreserved": true,
+  "ownSyntheticLicensesRemoved": true,
+  "apiRestarted": false,
+  "physicalAndroidGameplayValidated": false
+}

@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "revision": "R167",
+  "originalKitSha256": "82cf0bff9f4ec3083fc395cd6cf38d6d9f227df6aac06b09b6d97882c9947477",
+  "originalKitBytes": 13632995,
+  "manifestFilesVerified": 47,
+  "actualArm64ElfVerified": 27,
+  "coreAnd21DependenciesUnchanged": true,
+  "psxNativeSourcesEqualR165": true,
+  "runtimeIdentityAndFrozenSourceHashesVerified": true,
+  "inheritedExactPsxDependencyFix": true,
+  "all40DexPreservedFromR166": true,
+  "exactEngineIds": {
+    "psx": "pcsx-rearmed-ff81ed17-player-v3-4d5c4cb8f609",
+    "n64": "mupen64plus-ae-33bf7021-n64-v3-cf820ae1f2ca",
+    "gamecube": "dolphin-5102a033-gamecube-v3-5ce990f91db1",
+    "wii": "dolphin-5102a033-wii-v3-5ce990f91db1"
+  },
+  "sourceCommit": "9262776f6a5a0faf96b46cad2e9ca1d801606d6b",
+  "producerSignedApkSha256": "dd6f8f8131cf5ee55d450c60e0b08963a662dc6cad092588f0db50153badd978",
+  "producerSignedProofVerified": true,
+  "apkReceivedOrInspectedHere": false,
+  "physicalAndroidGameplayValidated": false,
+  "physicalVisualResultValidated": false,
+  "fingerprints": [
+    {
+      "runtimeLibrary": "libstation_psx_online.so",
+      "sha256": "4d5c4cb8f609f5d1eb49a002d137d68172d03f59505443071d02903e25630991",
+      "frozenNativePolicyAndSourceHistoryEqual": true,
+      "onlyCarouselPayloadChangedFromR166": true
+    },
+    {
+      "runtimeLibrary": "libstation_mupen64plus_runtime.so",
+      "sha256": "cf820ae1f2ca667c6b66019b64ed42f036780c7f5fbbcdbf766e153233a906fb",
+      "frozenNativePolicyAndSourceHistoryEqual": true,
+      "onlyCarouselPayloadChangedFromR166": true
+    },
+    {
+      "runtimeLibrary": "libstation_dolphin_runtime.so",
+      "sha256": "5ce990f91db164d970222f0230fe988f9d11ff071837e6b0b4b57fa15713fe60",
+      "frozenNativePolicyAndSourceHistoryEqual": true,
+      "onlyCarouselPayloadChangedFromR166": true
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "station.r147.final-backup.public-summary.v1",
+  "revision": "R147",
+  "confirmed": false,
+  "sourceCommit": "64a6da91aee9c61d26a3a85172af6521fcc82a36",
+  "backupExecutedNotInferred": true,
+  "stablePromoted": false
+}

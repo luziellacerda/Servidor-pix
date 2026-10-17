@@ -181,20 +181,24 @@ public sealed class StationService(PostgresStationStore store,
         });
     }
 
-    public async Task<object> CatalogAsync(string bearer, CancellationToken token, bool includeMetadata = false)
+    public async Task<object> CatalogAsync(string bearer, CancellationToken token,
+        bool includeMetadata = false, string? maximumItems = null)
     {
         var session = await Session(bearer, token);
         var library = libraryMonitor?.Current ?? initialLibrary;
         if (library is null)
             throw new SuiteException(503, "STATION_CATALOG_NOT_READY",
                 "Station catalog is not ready.");
+        var maximum = StationLibrary.CatalogMaximumItems(maximumItems);
         return signer.Sign(new
         {
             schemaVersion = 1, domain = StationProtocol.Prefix + "catalog/v1",
             productId = StationProtocol.Product, applicationId = StationProtocol.Application,
             licenseId = session.LicenseId, deviceId = session.DeviceId,
             sessionId = session.SessionId, revision = library.Revision,
-            items = library.Catalog.Select(item => item.PublicValue(includeMetadata))
+            totalItems = library.Catalog.Count,
+            hasMore = library.Catalog.Count > maximum,
+            items = library.Catalog.Take(maximum).Select(item => item.PublicValue(includeMetadata))
         });
     }
 

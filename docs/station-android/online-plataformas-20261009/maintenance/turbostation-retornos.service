@@ -5,7 +5,7 @@ After=network-online.target
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/python3 /home/lz-servidor/.local/share/turbostation-retornos/monitor.py
-WorkingDirectory=/mnt/DADOS/servidor-pix-station-r128-20261011
+WorkingDirectory=/mnt/DADOS/servidor-pix-station-nes-20261012
 Environment=PATH=/home/lz-servidor/.local/bin:/usr/local/bin:/usr/bin:/bin
 Environment=DISPLAY=:1
 Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus

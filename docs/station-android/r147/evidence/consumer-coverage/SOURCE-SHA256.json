@@ -1,0 +1,33 @@
+{
+  "schema": "station.r147.consumer-coverage.public-source-hashes.v1",
+  "sourceAuditFilesSha256": {
+    "coverage-summary.json": "b3bc58d10a0d6e44da8ce608566ca1bbc097cb557210f7236891b7787b44fbef",
+    "reviewed-modes-sanitized.json": "f073f0cfa8420d4c9ac8e53f5b825520415b4c5571bffda1213ab02a27b9a1d3",
+    "catalog-edition-coverage-sanitized.json": "7b1fbd73f4478fc9d54997c4912b1037a8340bc44dc6d7a2c51ccd096b9b98e1",
+    "RELATORIO-COBERTURA-HANDOFF.txt": "ee254564d815f3e7f8acfa20eadb6f3a7e434dba8eebd407ec0aea8ad629089e"
+  },
+  "actualSourceFilesPreserved": true,
+  "summaryPrivateLocationsReplacedByPortableRoles": true,
+  "sourceInputHashesByRole": {
+    "server/docs/station-android/r139/prepare_independent_owners.py": "dc623d265aa11f660472bfa6f2b2dba263a9bd54b68d2c60012a1128a32c4bc0",
+    "server/docs/station-android/r128/operator/build_incoming_manifest.py": "362bcae9d8915f7f43aac4c48d06b35bdf57efc88d6acb9199aa06e3a0231426",
+    "server/docs/station-android/r128/operator/merge_scoped_modes.py": "e7022a95f2c8c100411c2225a6ff3f980d8f4b92dd3baba0174f6d7dbff9f568",
+    "server/docs/station-android/online-plataformas-20261009/library-tools/station_online_profiles.py": "4c50ac36bb18532c3d128abbee14e7a59fa2d42d62a296319bdb23c9e5d2ae6b",
+    "server/docs/station-android/online-plataformas-20261009/catalogo-cruzado-completo.json": "d82dbfe68c25e9c1edff66b111b1f8eb971c0e70103a86536c970a494f9b0a4d",
+    "server/docs/station-android/online-plataformas-20261009/n64-capas-usb-20261013.json": "e89dfd745fc8d794b2ba0576f5d9b805ad1244253f7aa7cc2ebca9e0c2843141",
+    "server/docs/station-android/r139/server-matrix.json": "e29fe88d020417574b45ed2202831b1c017ee2dfd9d32ed2c0619d9d7ffd996a",
+    "server/docs/station-android/r133/catalog/matrix.json": "c88b05521b19f5ebe39d5e47b19e4c88aad094095aadc61898b88d8bdbd26eee",
+    "server/docs/station-android/r141/server-return.json": "865049819df565f8ba7b50f66caa55897460c75547b0232af46496e9af2362b1",
+    "received-r146-kit-reference/references/reviewed-78-mode-provenance.json": "e5099271eda573bd6e67c80e6bff813cdadb5cbd308076152247bb9f3a30b8b1",
+    "server/docs/station-android/r133/catalog/reviewed-mode-provenance.json": "e5099271eda573bd6e67c80e6bff813cdadb5cbd308076152247bb9f3a30b8b1",
+    "server/docs/station-android/r134/catalog/psx-primary-consolidated.json": "e7dcc503caea35c04d233aac50e7293dec7e76e42736f523b9bfcba856d60863",
+    "received-r146-kit-reference/engines-apk.json": "74b5a5f420ecedd024128bef3a601078f6d83debde59305f4f3240cd0800b9d9",
+    "server/docs/station-android/online-plataformas-20261009/server-prepared-modes.json": "3665b1c3b3cb221075b8a2ce76894c11d8aa01eb800073d3b53582b141d6df4a",
+    "server/docs/station-android/r133/catalog/web-mode-research.json": "d8464318c14cefeae25d3419da7dc32722fadf920f0b9ae84498f8aa695b8845",
+    "server/docs/station-android/r133/catalog/n64-root-mode-decisions.json": "6fca6d97e6338932ca3189b5cef2267209a0808b80821187eb0afc9969898d8e",
+    "server/docs/station-android/online-plataformas-20261009/profiles-complete.json": "f71ec6d61e5a59c408053e37e2b16ff31903e0cb2c0b3f5cd1b613bd2820dd0c",
+    "server/docs/station-android/r133/catalog/n64-additional-primary-review.json": "c457b850d2f38f89fa7a663b616a7a7a95c28ae74d30d357854c9b1720d75881"
+  },
+  "consumerReady": false,
+  "noCodeOrApprovalChange": true
+}

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "baseSourceSha256": "f594e1aa8fe0e54733652fda2e0330acbde9a15cfa4119b1a291dda2ee85be2d",
+  "candidateSourceSha256": "bb045d8113c6ca7887a26c79b066a74ca79ad7f340d7032cf9399006db14ad4b",
+  "otherProductionMethodsEqualAfterEolNormalization": true,
+  "exactlyOneProductionMethodChanged": true,
+  "existingLibCppExactNameFixRetained": true,
+  "hostCompiledProductiveTypes": [
+    "StationPsxLaunch$1.class",
+    "StationPsxLaunch.class"
+  ],
+  "newProductiveTypes": [
+    "Lorg/emulationstation/frontend/netplay/StationPsxLaunch$1;"
+  ],
+  "newThreadsTimersWorkersOrPolling": false,
+  "nativeCoreOptionsAndControllerProtocolSourceWritten": false,
+  "installedApkBuiltOrModified": false
+}

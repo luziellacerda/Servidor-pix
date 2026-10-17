@@ -1,0 +1,98 @@
+{
+  "schema": "station.hourly-maintenance.v1",
+  "utc": "2026-10-14T20:05:57.911891+00:00",
+  "status": "partial",
+  "eventFingerprint": "a9bef3595b075ce8dfa99da23c7aee0ae994048cc9a1e2ea72cfc7154588df84",
+  "sourceRefs": {
+    "server": "2fe82c8b6f3a681eba27054dbaf2be117112e9d6",
+    "app": "685c49366b321789494602b04f39cf7d48e24385",
+    "coversMain": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+    "coversSNES": "9f85e9df1ec0c82d77156ed072b997855f719288"
+  },
+  "backupBranch": "backup/station-before-hourly-20261014-20z",
+  "backupRemotesVerified": true,
+  "deliveryBranch": "feat/station-hourly-20261014-20z",
+  "privateWorkDirectory": "/mnt/DADOS/station-maintenance-20261014-20z",
+  "handoff": "HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md",
+  "newIncomingHandoffSinceUSBDelivery": false,
+  "previousUSBDeliveryReconciled": true,
+  "priorAuthority": {
+    "authorityDirectory": "/mnt/DADOS/station-usb-room-diagnostic-20261014-1819",
+    "currentAppliedPassed": true,
+    "engineCount": 59,
+    "profileCount": 13322,
+    "modeCount": 8417,
+    "catalogRevision": 59,
+    "dllSha256": "b3473cc0160169f686501af914cdbf8ebfdf8dcaa4dff768e1106ee8461c9179",
+    "pid": 3297582,
+    "actualApkSha256": "6203804f1590d5377c261ac079a7bf302decc9e8c7269ddd2495bfaac70de7c6",
+    "engineEnrollmentReappliedThisCycle": false,
+    "hashRepairReappliedThisCycle": false,
+    "originalProducerZIPReceived": false,
+    "originalProducerZIPHashVerifiedHere": false,
+    "androidHashRepairPassed": true,
+    "correctedProfiles": 1425,
+    "physicalRoomCreatedPreviously": true,
+    "physicalGameplayValidated": false,
+    "countsSource": "previous applied receipt, not a fresh protected baseline from this cycle"
+  },
+  "newAPKOrEngineBytesReceivedThisCycle": false,
+  "enginesRegisteredThisCycle": 0,
+  "coverBatch": {
+    "gitRefsUnchanged": true,
+    "gitCoverImports": 0,
+    "manifestChangedSince18z": true,
+    "finalizedAtSnapshot": 191,
+    "newLocalFinalArtworks": 48,
+    "exactMatchedMagazines": 36,
+    "bindings": 36,
+    "uniqueArtworkSources": 34,
+    "unmatchedArtworks": 14,
+    "unmatchedPreserved": true,
+    "format": "JPEG RGB",
+    "resolution": [
+      480,
+      720
+    ],
+    "quality": 90,
+    "planSha256": "6713f4436143ec0e2c36f86307cccf18a029972669d66574f38775509fee71f6",
+    "sourceManifestSha256": "817fe992acce5d741be8817bb216f320010a48f3cc1a6b09cb057c143950d549",
+    "inputMappingsAndBytesMatch18z": true,
+    "preflightPassed": true,
+    "published": false,
+    "appliedAndHTTPProofPassed": false
+  },
+  "authentication": {
+    "authenticated": false,
+    "waitSeconds": 115.17,
+    "ownUnauthenticatedRequestCancelled": true,
+    "rootOperationInterrupted": false,
+    "exitCode": -15
+  },
+  "effectiveServices": {
+    "api": "MainPID=3297582\nNRestarts=0\nExecMainStatus=0\nExecStart={ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-station-n64-ready-20261014-b3473cc01601/TurboRamaSuiteOnlineServer.dll ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }\nActiveState=active",
+    "scanner": "MainPID=0\nNRestarts=0\nExecMainStatus=0\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -B /opt/turborama-station-library-quarantine-20261014-a10c78f53797/library-tools/atualizar-biblioteca-station.py --config /mnt/DADOS/station-library-auto-private-20261004/config.json ; ignore_errors=no ; start_time=[Wed 2026-10-14 17:05:34 -03] ; stop_time=[Wed 2026-10-14 17:05:41 -03] ; pid=3413265 ; code=exited ; status=0 }\nActiveState=inactive",
+    "scannerTimer": "ActiveState=active"
+  },
+  "protectedBaselineReadThisCycle": false,
+  "protectedDLLAndConfigReadThisCycle": false,
+  "preservation": {
+    "originalCheckoutsAndHistoricalDirtyFilesPreserved": true,
+    "noNewAutomation": true,
+    "noExternalMessages": true,
+    "noAPKModification": true,
+    "noAPIOrOtherServiceRestart": true,
+    "noEngineEnrollmentOrHashMigrationRepeated": true,
+    "noROMHashCopyOrRebuild": true,
+    "noSecurityRelaxation": true,
+    "noScannerTimerStopBeforeAuthentication": true,
+    "maintenanceLockHeldByExistingParentMonitor": true,
+    "maintenanceParentPID": 3411362,
+    "lockReleaseAfterParentReturnsNotYetClaimed": true
+  },
+  "pending": [
+    "Autenticação Linux nativa para publicar as 36 capas SNES do plano 20z e comprovar catálogo assinado e 36 corpos locais/públicos.",
+    "Homologação de partidas físicas Android permanece pendente; criação da sala 007 e transporte sintético anteriores não comprovam gameplay físico."
+  ],
+  "finalRemoteInputsRecheckedUnchanged": true
+}

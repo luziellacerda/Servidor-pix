@@ -1,0 +1,878 @@
+{
+  "schema": "station.hourly-maintenance.v1",
+  "utc": "2026-10-15T11:14:14.928543+00:00",
+  "status": "partial",
+  "event": {
+    "utc": "2026-10-15T11:01:05.851368+00:00",
+    "fingerprint": "f9b901a3c06039a5b1d0f6366c4a6618c5cb7e3240a4f11264d4a893003c70a9",
+    "inputs": {
+      "server:origin/docs/station-online-exit-r135-20261012": "35e7b6b1d09e43fdc5943e544309e71e327b744a",
+      "app:origin/build/station-online-exit-r135-20261012": "50d1a61193b6d587345aa97c1033150052e26fe9",
+      "covers:origin/capas-super-nintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
+      "covers:origin/main": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+      "privateInputFingerprint": "88df89bcec614114ffdf051f7b294dd55be9ed67e41030f3ad7bd8c34b8e6fb8"
+    },
+    "newInput": true
+  },
+  "deliveryBranch": "feat/station-hourly-20261015-11z",
+  "backups": {
+    "server": {
+      "branch": "backup/station-before-hourly-20261015-11z",
+      "commit": "35e7b6b1d09e43fdc5943e544309e71e327b744a",
+      "remoteVerified": true
+    },
+    "app": {
+      "branch": "backup/station-before-hourly-20261015-11z",
+      "commit": "50d1a61193b6d587345aa97c1033150052e26fe9",
+      "remoteVerified": true
+    }
+  },
+  "remoteRefs": {
+    "utc": "2026-10-15T11:02:27.657998+00:00",
+    "refs": {
+      "server": {
+        "refs/heads/docs/station-app-r55-review-20261006": "8d9c670ba813fb970a61ff9bf329e6286b51ad07",
+        "refs/heads/docs/station-four-player-rooms-audit-20261008": "6d40e26fc132d68ca482421bc29f10cf33d5d699",
+        "refs/heads/docs/station-neogeo-audit-r65-20261007": "4d9893d898213ec3202313d3209c072e73642586",
+        "refs/heads/docs/station-neogeocd-bios-r66-20261007": "7a5db18564d50607a6ef90ef31b45a03232ae45a",
+        "refs/heads/docs/station-online-exit-r135-20261012": "35e7b6b1d09e43fdc5943e544309e71e327b744a",
+        "refs/heads/docs/station-online-normal-motors-r128-20261011": "c433052ce12c662355dac81c9d9c106b5f283bb1",
+        "refs/heads/docs/station-psx-real-r127-20261011": "5696ed9bed01fdfa8cbd3414197c2eea4f3fc898",
+        "refs/heads/docs/station-r126-real-emulators-20261011": "6e3a7fac6f728ec30a57bf4f4d42f00fdd1c1534",
+        "refs/heads/docs/station-r133-final-console-modes-20261011": "524d2ebff08353fda62aacbc5f05f9248ba69b7c",
+        "refs/heads/docs/station-r62-client-delivery-20261006": "24f74206c8761989a6131364032fd319e1dd0154",
+        "refs/heads/docs/station-r63-integrated-20261006": "860b120fae847df7149e2014c36157c0e35149b8",
+        "refs/heads/docs/station-r64-recovery-request-20261007": "553a26c8045cd2fd324ec871ef79950faa316728",
+        "refs/heads/docs/station-r67-recovery-implementation-20261007": "6c5f5cf33cf3ee9930066d52a55fa3357de75c13",
+        "refs/heads/docs/station-r71-recovery-build-20261007": "e03a87217df9e51908b97bb775ecac889c22088c",
+        "refs/heads/docs/station-r72-native-registration-20261007": "5e4509270b27f9158a7e637515e3ef6e1d93987f",
+        "refs/heads/docs/station-r73-handshake-flush-20261007": "1b26b34cd0f205afaf70b4f9ebf2391da7853537",
+        "refs/heads/docs/station-r74-server-stability-return-20261007": "ed9ca9fdcc16f3b9f86792d43ed01d5812a9f1d8",
+        "refs/heads/docs/station-r74-session-lifecycle-20261007": "8d48252fb7e91af83b6138afa411d5c2607edcc8",
+        "refs/heads/docs/station-r74-stability-research-20261007": "7ad4fb05a69d8f95030f029f3670333a0c7bd6c2",
+        "refs/heads/docs/station-r76-pump-wakeup-20261008": "a9f7f41b243f62e7ff5c3240d65eb7704034184c",
+        "refs/heads/docs/station-r76-server-review-20261008": "bee3dcd5c2c0c0a228805957fe89b9a6023e8402",
+        "refs/heads/docs/station-r77-handoff-review-20261008": "ae77b9cca7fc881771bdb809a308e40bafaad1c5",
+        "refs/heads/docs/station-r77-multiplayer-candidate-20261008": "6c52830f121ff5f3fae403c64a49ace11153cc0e",
+        "refs/heads/docs/station-r78-server-review-20261008": "af58034595614098ea4df4d959e50947670c080f",
+        "refs/heads/docs/station-r78-synopses-20261008": "525f03735cbec194e942c91417d38a4d799c8910",
+        "refs/heads/docs/station-r79-room-bootstrap-20261008": "706f47ff06659feb777d3c4c999b645cb5c3a1ff",
+        "refs/heads/docs/station-r79-server-return-20261008": "a4fd0d73a7eaaf43fafbae1c42e9b83580985433",
+        "refs/heads/docs/station-r81-activation-final-20261008": "2cd3571919f54126f2bfe9576864a8d8329b9db3",
+        "refs/heads/docs/station-r81-server-return-20261008": "9502c02e43cf375640b8f99de281a1efe9eb5358",
+        "refs/heads/docs/station-retornos-r66-20261007": "b37c873b70bf361388b3a18fd58eed3b5452565a"
+      },
+      "app": {
+        "refs/heads/build/station-online-exit-r135-20261012": "50d1a61193b6d587345aa97c1033150052e26fe9",
+        "refs/heads/fix/station-auto-room-access-20261006": "029612b06205ff66cc1c7dcb2a2dd1a4c47aa1f9",
+        "refs/heads/fix/station-bluetooth-controls-r96-20261009": "d9db7833455fea26598bbacf82cf0bb5a2e7b634",
+        "refs/heads/fix/station-carousel-diagonal-online-compact-r123-20261011": "728c79a7169e845ba3afa6b240335422845c5dc5",
+        "refs/heads/fix/station-carousel-online-ui-r119-20261010": "15de1405e68cdeab297acec95f70436842368b4d",
+        "refs/heads/fix/station-codes-panel-return-20261006": "d1b535cc35c926172182c47686b6b44333a529de",
+        "refs/heads/fix/station-collection-corners-r68-20261007": "c2a1a6d130552b4470b2be3f49db0d1ab72c37b5",
+        "refs/heads/fix/station-collection-media-r69-20261007": "17cd4718740e79c62e0522a1b0d3c363d7177068",
+        "refs/heads/fix/station-collection-navigation-r70-20261007": "17c0194b519e693cff37c36084eafcf16a883a40",
+        "refs/heads/fix/station-community-return-r41-20261006": "0449f455e721971ae91e76708cf85083b09f74a5",
+        "refs/heads/fix/station-console-mode-completion-r133-20261011": "c00f469517d41cf14f0d54a2d5cd3491cae6db00",
+        "refs/heads/fix/station-controller-ui-r97-20261009": "c8c4df2ef23cfbae7cd7bd728114cafa42a2b599",
+        "refs/heads/fix/station-cover-sequential-r116-20261010": "2c7132bc2e023a8f8e17c3c15d8bc59fbe72ba7d",
+        "refs/heads/fix/station-customer-provision-return-20261006": "d1b535cc35c926172182c47686b6b44333a529de",
+        "refs/heads/fix/station-download-actions-r92-20261009": "fc8fd99c976a016a30f6834c79cfe6f9db79d23f",
+        "refs/heads/fix/station-download-center-r90-20261009": "1cb887782b931a5a86dffc7a77278a9b07fb9f24",
+        "refs/heads/fix/station-effects-server-r117-20261010": "b71190037264e1cb5537439b542999853a358086",
+        "refs/heads/fix/station-game-layout-r84-20261008": "f422b276e3e37ddc3faf6479dbd74d0448e3f943",
+        "refs/heads/fix/station-game-menu-controller-audit-r120-20261010": "da9d7ecc749de696413db52bce2b350a5770a623",
+        "refs/heads/fix/station-gamecube-led-r93-20261009": "0abefb7b7a0bfccb79c597d930aa492887f6dc81",
+        "refs/heads/fix/station-menu-loop-r130-20261011": "50d2b3edf90aa5eb9a9db4e13acf595a41ee335d",
+        "refs/heads/fix/station-n64-usb-070241-20261014": "7ab5ef9e7bf84b790b0460c640adcabd3bf79166",
+        "refs/heads/fix/station-neogeo-cd-r65-20261007": "db0ca4c391c09b4577836bb04bb9fbfdaa04765d",
+        "refs/heads/fix/station-neogeo-collection-map-r75-20261007": "2c0b1fb84cc32a3740ce327907ce8d039e2c0861",
+        "refs/heads/fix/station-neogeocd-bundled-bios-r66-20261007": "6c515fdb7dc81db1d9509197d8fed083b28b8745",
+        "refs/heads/fix/station-online-cover-led-r86-20261008": "d0515ea514132a991122f0690148791adba8be78",
+        "refs/heads/fix/station-online-layout-recovery-r71-20261007": "7ef2555d91983d39165eadb3ebbf3dc1f1f976fe",
+        "refs/heads/fix/station-online-readiness-r81-20261008": "4521218492ec65c33398aed07893f95e2d7f499d",
+        "refs/heads/fix/station-online-recovery-after-r67-20261007": "0455f002ff17fa9e85e66635130fabab59c7264d",
+        "refs/heads/fix/station-online-room-gpu-reuse-r121-20261011": "8f74bf2d7178b9c0411420d4ef88965296d1c448",
+        "refs/heads/fix/station-platform-led-r87-20261008": "16ad674829af1378adf17aa3dbd475b053c639a3",
+        "refs/heads/fix/station-player-facts-r82-20261008": "9652d4211815ee87974da26795d71f4d84d0c92e",
+        "refs/heads/fix/station-psx-real-owner-r127-20261011": "30d2c0b83d79e0642ee5f1ee5aea7350a7c75c84",
+        "refs/heads/fix/station-pump-wakeup-r76-20261008": "a81c7fde61c6d048b4cea4c746052bd7304e600e",
+        "refs/heads/fix/station-r55-reconciliation-20261006": "3fc66a6d873ada92496948f22c8646290acbc22d",
+        "refs/heads/fix/station-r62-integrated-20261006": "087b6823814d1ec6fc3b925dba8045d9b5628f02",
+        "refs/heads/fix/station-r63-auto-access-20261006": "8613d88d4f553e72e5fedcd1d3ea470010301734",
+        "refs/heads/fix/station-r64-controls-drop-diagnostics-20261007": "3d8ab189ce64ce4f39e0a024ab390b426b5ea1f8",
+        "refs/heads/fix/station-r67-media-security-20261007": "319a74150213d525f06b7a16fb234294bfd83edb",
+        "refs/heads/fix/station-r72-native-registration-profiles-20261007": "22d7e665664e8ad9c97c8137a2da90172c8750fc",
+        "refs/heads/fix/station-r73-recovery-handshake-20261007": "339f585f00401b085965a83182d71c5d6a9111d9",
+        "refs/heads/fix/station-r74-session-lifecycle-20261007": "02b78919862ac40ea08ddff284e65c604b6d7f9f",
+        "refs/heads/fix/station-relay-ready-return-20261006": "d1b535cc35c926172182c47686b6b44333a529de",
+        "refs/heads/fix/station-remote-media-r91-20261009": "53fd5d0a8b225c7726ff241f24c04060b55a598d",
+        "refs/heads/fix/station-room-bootstrap-r79-20261008": "fd362b9eacbfa04dda7be44ea7bc729f120d0149",
+        "refs/heads/fix/station-second-player-20261005": "a626b50a61c8ac1a82a2a5390bbf1a74f848dbe1",
+        "refs/heads/fix/station-security-20261007": "250a3e51a2876175155d148235af1fc402b84d08",
+        "refs/heads/fix/station-server-integration-r99-20261009": "9248d9a7810241b06ad400c550e6e1717dfb3dd2",
+        "refs/heads/fix/station-settings-refinement-r134-20261011": "4f9039eb9ce13907ce043870bfe1f6e294888556",
+        "refs/heads/fix/station-single-pass-r88-20261009": "cc8ece658b3e64360b72fc993e93a3196d5b8141",
+        "refs/heads/fix/station-snes-light-maps-r95-20261009": "90cab6386b8b217e00bcf242a9b9182fee0ee7f0",
+        "refs/heads/fix/station-sony-demo-installer-r129-20261011": "a773988fa9076f6b9f1eee7e7468e86c8409442d",
+        "refs/heads/fix/station-sony-internal-r131-20261011": "8a199d025e9eb338f1973f8e2f8ca975862cdef5",
+        "refs/heads/fix/station-sony-offline-integrated-r128-20261011": "3ca742b3e97e73fecb36fc38689ca6fd44c1ead6",
+        "refs/heads/fix/station-startup-cleanup-r132-20261011": "e50ff324cca1642ea2d1bce953590d318d606f4e",
+        "refs/heads/fix/station-synopses-r78-20261008": "f23e1878d13bf3f4a8f6517b96d23ca1978535fc",
+        "refs/heads/fix/station-theme-room-download-r122-20261011": "dbbfaae13ba454038873fd762f70639130b8ac2b",
+        "refs/heads/fix/station-title-count-r85-20261008": "35a4220ba3b3446bf9c53a3ebaf4667bcec77b2d",
+        "refs/heads/fix/station-usb-salas-r157-20261014": "685c49366b321789494602b04f39cf7d48e24385",
+        "refs/heads/fix/station-video-endframe-r89-20261009": "51331b0d1990f671215c7941f2eaac703369a9c8",
+        "refs/heads/fix/station-visual-refinement-r118-20261010": "52e66c72f17d41ffd3472a0826cd8483fe3f7e80"
+      },
+      "covers": {
+        "refs/heads/capas-super-nintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
+        "refs/heads/main": "5c6cc32c06e6944b9258df36ffdb846baa368a7f"
+      }
+    },
+    "changesSince02z": {
+      "server": {
+        "refs/heads/docs/station-online-exit-r135-20261012": {
+          "previous": "720a4b18a0d78b741d0280b6943d572cb56671cb",
+          "current": "35e7b6b1d09e43fdc5943e544309e71e327b744a"
+        }
+      },
+      "app": {
+        "refs/heads/build/station-online-exit-r135-20261012": {
+          "previous": "5da48f3e3984dc7b9999055865024fa7a6947bc0",
+          "current": "50d1a61193b6d587345aa97c1033150052e26fe9"
+        }
+      },
+      "covers": {}
+    },
+    "allIncomingBranchesEqualFetchedRefs": true
+  },
+  "newUsefulHandoff": false,
+  "newEngineBytesReceived": false,
+  "R159": {
+    "authority": "/mnt/DADOS/station-r159-20261014/applied.json",
+    "authoritySha256": "d93a7941ed195044538b3a6b18d32d27412a18554bbeb6e2452fbb9004af40cd",
+    "passed": true,
+    "reapplied": false
+  },
+  "covers": {
+    "gitImports": 0,
+    "gitRefsUnchanged": true,
+    "preparedMagazines": 36,
+    "bindings": 36,
+    "uniqueArtworks": 34,
+    "unmatchedArtworksPreserved": 14,
+    "finalizedSnapshot": 191,
+    "format": "JPEG RGB480x720/q90",
+    "planSha256": "c047dfe11fab045053e2f4973bfea97cc2de515a523ee5928c191c3399a65830",
+    "operatorSha256": "73bf68c2d804adc4c7a4b49a76a27eb161c3876a6f39f2464e3a79bd3b28a39e",
+    "preflightPassed": true,
+    "published": true,
+    "applied": true,
+    "authority": "/mnt/DADOS/station-maintenance-20261015-11z/native-attempt4/applied.json"
+  },
+  "authentication": {
+    "authenticated": true,
+    "elapsedSeconds": 42.58,
+    "ownUnauthenticatedRequestCancelled": false,
+    "rootOperationInterrupted": false,
+    "exitCode": 0,
+    "publicationExists": true,
+    "appliedExists": true
+  },
+  "attempt1": {
+    "nativeAuthenticated": true,
+    "published": false,
+    "reason": "Auxiliary inspect.py shadowed standard Python module; renamed inspect-cycle.py before separate attempt2."
+  },
+  "baseline": {
+    "utc": "2026-10-15T11:13:34.835547+00:00",
+    "catalogRevision": 88,
+    "pid": 19631,
+    "dllSha256": "b3473cc0160169f686501af914cdbf8ebfdf8dcaa4dff768e1106ee8461c9179",
+    "protectedSha256": {
+      "/mnt/DADOS/station-library-auto-private-20261004/config.json": "373d4eb2d33f594441f64326a94cb7648fa0dca977a1cb37b8e9d57f2d51d743",
+      "/mnt/DADOS/turbostation-library-auto-20261004/content-identities-online-platforms-20261009.json": "d9072835c27e548361866994bde0d7cfa2664ff0c988d3720986ccd5cac842c2",
+      "/mnt/DADOS/turbostation-library-auto-20261004/online-profiles-platforms-20261009.json": "74e864c358256164a66f3a09a72ba2422c6f82a03b450bbfec841f69c4a83622",
+      "/mnt/DADOS/turbostation-library-auto-20261004/online-app-engines-persistent-20261009.json": "2adbbffb8d568d6cce983fd8b616542882306117e133c9a04a99ea35965de4bf",
+      "/mnt/DADOS/turbostation-library-auto-20261004/online-prepared-modes-20261009.json": "48eb2711fe4d58d383ce0078c9debaed2b5f7797079e3b23df75029a9c4a3550"
+    },
+    "services": {
+      "turborama-station-api.service": "MainPID=19631\nNRestarts=0\nExecMainStartTimestamp=Wed 2026-10-14 18:44:15 -03\nActiveState=active",
+      "nginx.service": "MainPID=3197\nNRestarts=0\nExecMainStartTimestamp=Wed 2026-10-14 18:19:27 -03\nActiveState=active",
+      "station-network-priority.service": "MainPID=3232\nNRestarts=0\nExecMainStartTimestamp=Wed 2026-10-14 18:19:27 -03\nActiveState=active",
+      "turborama-station-management.service": "MainPID=3410\nNRestarts=0\nExecMainStartTimestamp=Wed 2026-10-14 18:19:28 -03\nActiveState=active",
+      "turborama-suite-api.service": "MainPID=3416\nNRestarts=0\nExecMainStartTimestamp=Wed 2026-10-14 18:19:28 -03\nActiveState=active",
+      "turborama-suite-content-gateway.service": "MainPID=3417\nNRestarts=0\nExecMainStartTimestamp=Wed 2026-10-14 18:19:28 -03\nActiveState=active",
+      "turborama-suite-admin.service": "MainPID=3414\nNRestarts=0\nExecMainStartTimestamp=Wed 2026-10-14 18:19:28 -03\nActiveState=active"
+    },
+    "authentication": "native Linux pkexec"
+  },
+  "publication": {
+    "passed": true,
+    "utc": "2026-10-15T11:13:45.619422+00:00",
+    "previousCatalogRevision": 88,
+    "catalogRevision": 89,
+    "changedMagazines": 36,
+    "changedBindings": 36,
+    "ROMsReadOrCopiedByPublisher": 0,
+    "apiRestarted": false
+  },
+  "application": {
+    "passed": true,
+    "appliedUtc": "2026-10-15T11:14:06.124258+00:00",
+    "previousCatalogRevision": 88,
+    "catalogRevision": 89,
+    "changedMagazines": 36,
+    "changedBindings": 36,
+    "updatedFingerprints": 36,
+    "local": {
+      "passed": true,
+      "signedCatalogExact": true,
+      "checkedCovers": 36,
+      "covers": [
+        {
+          "itemId": "bd7c338745e46a055f7ab53b3c0e4363",
+          "coverId": "b718eae24d7929e8937b542841ebba2e",
+          "revision": 89,
+          "sha256": "c41c4f78beb40a9bc053542ae644b6a480a749e955606bfe4fcac7bf564cd4dd",
+          "bytes": 158102
+        },
+        {
+          "itemId": "39334c5fa178dfb28c3f93ac5ce2f661",
+          "coverId": "3ea2072516b95c40936ab8dde3a78b19",
+          "revision": 89,
+          "sha256": "3d149151cf4d36ca21765307df5d78d927f1d0dbf22ae038e60d097c37b563d7",
+          "bytes": 168038
+        },
+        {
+          "itemId": "station_4194034cc606ee0af1e916090ab8ec70",
+          "coverId": "cover_4194034cc606ee0af1e916090ab8ec70",
+          "revision": 89,
+          "sha256": "92d5bc6b2ec85f7b81178574c8f629e5511ec81441f5b845fae328883b1256b7",
+          "bytes": 138454
+        },
+        {
+          "itemId": "station_2cf50f13fd0bcbf82bcaf3904405370f",
+          "coverId": "cover_2cf50f13fd0bcbf82bcaf3904405370f",
+          "revision": 89,
+          "sha256": "e54c784dec260b2612f2a564ed4d0fc3aff5720d8f9206a80a770dfca5445191",
+          "bytes": 152892
+        },
+        {
+          "itemId": "station_dfacfbd2fd649c979ed55d446b30ccf2",
+          "coverId": "cover_dfacfbd2fd649c979ed55d446b30ccf2",
+          "revision": 89,
+          "sha256": "006179a6e03765f42764442a45d0b200c23ffe4be31310ea9ad0e0060029e9c8",
+          "bytes": 170023
+        },
+        {
+          "itemId": "station_c991b2b04890b5ac6b3a0f7237129728",
+          "coverId": "cover_c991b2b04890b5ac6b3a0f7237129728",
+          "revision": 89,
+          "sha256": "f58d545845868ab17687de3d280e0e0144dcb0784ad89d044c4e5f538304273d",
+          "bytes": 155161
+        },
+        {
+          "itemId": "station_ade27e99748fc259e61c1e616e62790b",
+          "coverId": "cover_ade27e99748fc259e61c1e616e62790b",
+          "revision": 89,
+          "sha256": "7bf99fb3e26b852014c42e8753c7b4f28e31b0b82167c3f826e873241c9b5e62",
+          "bytes": 152608
+        },
+        {
+          "itemId": "station_15758b31e43d35c4cc2f99efd07a91da",
+          "coverId": "cover_15758b31e43d35c4cc2f99efd07a91da",
+          "revision": 89,
+          "sha256": "67a800c37605e0d2d72a514691d433017cf5d19a50dd340a4534f66dc1ddeee5",
+          "bytes": 157979
+        },
+        {
+          "itemId": "station_184e80cfc00b4057cb96bf479cf38b48",
+          "coverId": "cover_184e80cfc00b4057cb96bf479cf38b48",
+          "revision": 89,
+          "sha256": "1de058598f4b8d0ff6ab4899cb6b058a679584573917445db44beba5387bbab8",
+          "bytes": 166075
+        },
+        {
+          "itemId": "station_632f44b64ad6d8cdfffd75ed7af8274a",
+          "coverId": "cover_632f44b64ad6d8cdfffd75ed7af8274a",
+          "revision": 89,
+          "sha256": "1a59ac912e8a7219a5b7ae0dcb445a3c7b729bfdd21ed83d6817703cf635e8b8",
+          "bytes": 164604
+        },
+        {
+          "itemId": "station_40078034f6e0a3df307d045844dd3b42",
+          "coverId": "cover_40078034f6e0a3df307d045844dd3b42",
+          "revision": 89,
+          "sha256": "0389b298cb66efc527c0db917be0e20597cca84d8f1b3f0b080c657200f26697",
+          "bytes": 159085
+        },
+        {
+          "itemId": "station_ac06c36d530a36a8e2e1360a520d8bf8",
+          "coverId": "cover_ac06c36d530a36a8e2e1360a520d8bf8",
+          "revision": 89,
+          "sha256": "095fb665063411a968d4de909076c171ebf17fe68754053d566ddfeceb87f1ae",
+          "bytes": 169932
+        },
+        {
+          "itemId": "station_696cc13719d5c89263b8685b6eaf60bf",
+          "coverId": "cover_696cc13719d5c89263b8685b6eaf60bf",
+          "revision": 89,
+          "sha256": "095fb665063411a968d4de909076c171ebf17fe68754053d566ddfeceb87f1ae",
+          "bytes": 169932
+        },
+        {
+          "itemId": "station_8ec6d85a680c00f82ab453d9ea344513",
+          "coverId": "cover_8ec6d85a680c00f82ab453d9ea344513",
+          "revision": 89,
+          "sha256": "70eba5104f37a93abfe805fcf97d73a608f0607a7b3289a7be8d56c02a78a4df",
+          "bytes": 163323
+        },
+        {
+          "itemId": "station_e41c5a002bb49a140e4fc0fec025f8e1",
+          "coverId": "cover_e41c5a002bb49a140e4fc0fec025f8e1",
+          "revision": 89,
+          "sha256": "2d0b6993807deca29ad1f08ce11514ddc2651081f8d9f5314f1156322db4a101",
+          "bytes": 154236
+        },
+        {
+          "itemId": "station_d15cb1ab13d83bba42e6b9e98409d07e",
+          "coverId": "cover_d15cb1ab13d83bba42e6b9e98409d07e",
+          "revision": 89,
+          "sha256": "9f7fb4f810716ff990f4802f0bbc7faa3ffc44300e60929fcd1ba77416efaa49",
+          "bytes": 168979
+        },
+        {
+          "itemId": "station_0998a461347b0dcc85c6805b2e6b70b6",
+          "coverId": "cover_0998a461347b0dcc85c6805b2e6b70b6",
+          "revision": 89,
+          "sha256": "a58002a906dbc90e45b3382e97a9ead47aba6b99ca130b27c9901784ff65328a",
+          "bytes": 128355
+        },
+        {
+          "itemId": "station_89b783b0091b4baf2251d88595171c54",
+          "coverId": "cover_89b783b0091b4baf2251d88595171c54",
+          "revision": 89,
+          "sha256": "f5925f6ce357c77b836ab44a4672f170d1d1eddcbde6d9f0cd479671eea083c3",
+          "bytes": 159527
+        },
+        {
+          "itemId": "station_675393a80fa6ca0936293fff5ed07351",
+          "coverId": "cover_675393a80fa6ca0936293fff5ed07351",
+          "revision": 89,
+          "sha256": "bbf64c313ce6b13a157e13a1818cd9d137e7bf06fa74a68e4d5d86bbcd1d07ee",
+          "bytes": 154499
+        },
+        {
+          "itemId": "station_7a146b45c8afc5eaafffbe3579d32192",
+          "coverId": "cover_7a146b45c8afc5eaafffbe3579d32192",
+          "revision": 89,
+          "sha256": "842a60c961d463b4daa65956c8cc040b72ac861a489be19a720e7ed866576878",
+          "bytes": 161848
+        },
+        {
+          "itemId": "station_706033608edc46b8d321b17410964199",
+          "coverId": "cover_706033608edc46b8d321b17410964199",
+          "revision": 89,
+          "sha256": "6273c1098a63f7dd06d7ecd0ce9754b6948e492e54ebc67a9f42dad28c9e883a",
+          "bytes": 160337
+        },
+        {
+          "itemId": "station_79ca63bf924c0b94ca216c97e8ccb5ec",
+          "coverId": "cover_79ca63bf924c0b94ca216c97e8ccb5ec",
+          "revision": 89,
+          "sha256": "1ef69a34a24a1b5bba643454472b6ce420217f79e61eae7ce98b18795811ccbb",
+          "bytes": 170200
+        },
+        {
+          "itemId": "station_e4f3a48449c46025670d6d30898de805",
+          "coverId": "cover_e4f3a48449c46025670d6d30898de805",
+          "revision": 89,
+          "sha256": "29a45273d0dbe2e6761a5aad6c48818dba87517b9a337990c1c539582a3885ce",
+          "bytes": 155941
+        },
+        {
+          "itemId": "station_f07bfe68cffaa7eae822906bb7cbe715",
+          "coverId": "cover_f07bfe68cffaa7eae822906bb7cbe715",
+          "revision": 89,
+          "sha256": "75d4a25322a5e5bfcb10abb5ab94fce28985e71f4017d1828a9fbc9dc21b03b9",
+          "bytes": 147947
+        },
+        {
+          "itemId": "station_81844c5c3ef7ce8178db335c5ea18b03",
+          "coverId": "cover_81844c5c3ef7ce8178db335c5ea18b03",
+          "revision": 89,
+          "sha256": "7dbcfe4fac70ea26e40a26960fce66b2cfcf97f089e418e0172c8f9d5bda489d",
+          "bytes": 158908
+        },
+        {
+          "itemId": "station_a8bbb161b0be74fc8ed874e400acd78b",
+          "coverId": "cover_a8bbb161b0be74fc8ed874e400acd78b",
+          "revision": 89,
+          "sha256": "1f522c248a6cd3a7de0cf1814c08a2f3e56d732bfc5c13848aeceb03818c8149",
+          "bytes": 159677
+        },
+        {
+          "itemId": "station_dfba3446735e982e2aebf165b33fa771",
+          "coverId": "cover_dfba3446735e982e2aebf165b33fa771",
+          "revision": 89,
+          "sha256": "b1979eecb85bf0cffd142cb9d9469347af819b8121178e4b6d0da48b83c200cd",
+          "bytes": 152008
+        },
+        {
+          "itemId": "station_6dd191758a32801dccc18422d75cf54e",
+          "coverId": "cover_6dd191758a32801dccc18422d75cf54e",
+          "revision": 89,
+          "sha256": "053be9b8e4b381262cd7b4a6781bd359d8de1f5ee71040c96fb28a1269a6507e",
+          "bytes": 142534
+        },
+        {
+          "itemId": "station_6b63186ec8a03267acce6385e5c34761",
+          "coverId": "cover_6b63186ec8a03267acce6385e5c34761",
+          "revision": 89,
+          "sha256": "119bee508422ee0fda9cd3ec0ffa8a288e30a096db75b318e680d08ea197f987",
+          "bytes": 138821
+        },
+        {
+          "itemId": "station_c09a4ee6f97360bd09a884fa51b40960",
+          "coverId": "cover_c09a4ee6f97360bd09a884fa51b40960",
+          "revision": 89,
+          "sha256": "0388978d8737bff60de35580f08a36edd2e899b374b5d8c76b4981a815ee486c",
+          "bytes": 162802
+        },
+        {
+          "itemId": "station_c6c3ef24f4bbb960eb51c471fb998470",
+          "coverId": "cover_c6c3ef24f4bbb960eb51c471fb998470",
+          "revision": 89,
+          "sha256": "22ba96dcb375d8fada97facf55ebae24353ff2b347375602552b3b86414b62f1",
+          "bytes": 132406
+        },
+        {
+          "itemId": "station_0dd7bc7a5b320b4de6ca2554139c336f",
+          "coverId": "cover_0dd7bc7a5b320b4de6ca2554139c336f",
+          "revision": 89,
+          "sha256": "1062cd38a6bc171532fe52cc64e6790338d58132ef92d56da307a2ad426b2f9b",
+          "bytes": 170819
+        },
+        {
+          "itemId": "station_6b0a82be57b3ddda7b761b600b451526",
+          "coverId": "cover_6b0a82be57b3ddda7b761b600b451526",
+          "revision": 89,
+          "sha256": "7a0e4f94291df48f683aa67ed73dc7549fe00e53eeb3d786ac45f29447e1eb44",
+          "bytes": 153797
+        },
+        {
+          "itemId": "station_368e6194d59a976bec4df88432c3f229",
+          "coverId": "cover_368e6194d59a976bec4df88432c3f229",
+          "revision": 89,
+          "sha256": "a427eb2e7aae35e160360d38b1ff2c7a0cb601e7c014b00c3be15d0e5de45c7f",
+          "bytes": 130125
+        },
+        {
+          "itemId": "station_dcdc98559f1d0da61b0005e7dd589371",
+          "coverId": "cover_dcdc98559f1d0da61b0005e7dd589371",
+          "revision": 89,
+          "sha256": "8b81d728de1432cc69c1ea1f360d0b67f4fe56639997eec7dd9a9802cce6f5ab",
+          "bytes": 144123
+        },
+        {
+          "itemId": "station_7950304a432ad601a0fa8c14c694a255",
+          "coverId": "cover_7950304a432ad601a0fa8c14c694a255",
+          "revision": 89,
+          "sha256": "0389b298cb66efc527c0db917be0e20597cca84d8f1b3f0b080c657200f26697",
+          "bytes": 159085
+        }
+      ]
+    },
+    "public": {
+      "passed": true,
+      "signedCatalogExact": true,
+      "checkedCovers": 36,
+      "covers": [
+        {
+          "itemId": "bd7c338745e46a055f7ab53b3c0e4363",
+          "coverId": "b718eae24d7929e8937b542841ebba2e",
+          "revision": 89,
+          "sha256": "c41c4f78beb40a9bc053542ae644b6a480a749e955606bfe4fcac7bf564cd4dd",
+          "bytes": 158102
+        },
+        {
+          "itemId": "39334c5fa178dfb28c3f93ac5ce2f661",
+          "coverId": "3ea2072516b95c40936ab8dde3a78b19",
+          "revision": 89,
+          "sha256": "3d149151cf4d36ca21765307df5d78d927f1d0dbf22ae038e60d097c37b563d7",
+          "bytes": 168038
+        },
+        {
+          "itemId": "station_4194034cc606ee0af1e916090ab8ec70",
+          "coverId": "cover_4194034cc606ee0af1e916090ab8ec70",
+          "revision": 89,
+          "sha256": "92d5bc6b2ec85f7b81178574c8f629e5511ec81441f5b845fae328883b1256b7",
+          "bytes": 138454
+        },
+        {
+          "itemId": "station_2cf50f13fd0bcbf82bcaf3904405370f",
+          "coverId": "cover_2cf50f13fd0bcbf82bcaf3904405370f",
+          "revision": 89,
+          "sha256": "e54c784dec260b2612f2a564ed4d0fc3aff5720d8f9206a80a770dfca5445191",
+          "bytes": 152892
+        },
+        {
+          "itemId": "station_dfacfbd2fd649c979ed55d446b30ccf2",
+          "coverId": "cover_dfacfbd2fd649c979ed55d446b30ccf2",
+          "revision": 89,
+          "sha256": "006179a6e03765f42764442a45d0b200c23ffe4be31310ea9ad0e0060029e9c8",
+          "bytes": 170023
+        },
+        {
+          "itemId": "station_c991b2b04890b5ac6b3a0f7237129728",
+          "coverId": "cover_c991b2b04890b5ac6b3a0f7237129728",
+          "revision": 89,
+          "sha256": "f58d545845868ab17687de3d280e0e0144dcb0784ad89d044c4e5f538304273d",
+          "bytes": 155161
+        },
+        {
+          "itemId": "station_ade27e99748fc259e61c1e616e62790b",
+          "coverId": "cover_ade27e99748fc259e61c1e616e62790b",
+          "revision": 89,
+          "sha256": "7bf99fb3e26b852014c42e8753c7b4f28e31b0b82167c3f826e873241c9b5e62",
+          "bytes": 152608
+        },
+        {
+          "itemId": "station_15758b31e43d35c4cc2f99efd07a91da",
+          "coverId": "cover_15758b31e43d35c4cc2f99efd07a91da",
+          "revision": 89,
+          "sha256": "67a800c37605e0d2d72a514691d433017cf5d19a50dd340a4534f66dc1ddeee5",
+          "bytes": 157979
+        },
+        {
+          "itemId": "station_184e80cfc00b4057cb96bf479cf38b48",
+          "coverId": "cover_184e80cfc00b4057cb96bf479cf38b48",
+          "revision": 89,
+          "sha256": "1de058598f4b8d0ff6ab4899cb6b058a679584573917445db44beba5387bbab8",
+          "bytes": 166075
+        },
+        {
+          "itemId": "station_632f44b64ad6d8cdfffd75ed7af8274a",
+          "coverId": "cover_632f44b64ad6d8cdfffd75ed7af8274a",
+          "revision": 89,
+          "sha256": "1a59ac912e8a7219a5b7ae0dcb445a3c7b729bfdd21ed83d6817703cf635e8b8",
+          "bytes": 164604
+        },
+        {
+          "itemId": "station_40078034f6e0a3df307d045844dd3b42",
+          "coverId": "cover_40078034f6e0a3df307d045844dd3b42",
+          "revision": 89,
+          "sha256": "0389b298cb66efc527c0db917be0e20597cca84d8f1b3f0b080c657200f26697",
+          "bytes": 159085
+        },
+        {
+          "itemId": "station_ac06c36d530a36a8e2e1360a520d8bf8",
+          "coverId": "cover_ac06c36d530a36a8e2e1360a520d8bf8",
+          "revision": 89,
+          "sha256": "095fb665063411a968d4de909076c171ebf17fe68754053d566ddfeceb87f1ae",
+          "bytes": 169932
+        },
+        {
+          "itemId": "station_696cc13719d5c89263b8685b6eaf60bf",
+          "coverId": "cover_696cc13719d5c89263b8685b6eaf60bf",
+          "revision": 89,
+          "sha256": "095fb665063411a968d4de909076c171ebf17fe68754053d566ddfeceb87f1ae",
+          "bytes": 169932
+        },
+        {
+          "itemId": "station_8ec6d85a680c00f82ab453d9ea344513",
+          "coverId": "cover_8ec6d85a680c00f82ab453d9ea344513",
+          "revision": 89,
+          "sha256": "70eba5104f37a93abfe805fcf97d73a608f0607a7b3289a7be8d56c02a78a4df",
+          "bytes": 163323
+        },
+        {
+          "itemId": "station_e41c5a002bb49a140e4fc0fec025f8e1",
+          "coverId": "cover_e41c5a002bb49a140e4fc0fec025f8e1",
+          "revision": 89,
+          "sha256": "2d0b6993807deca29ad1f08ce11514ddc2651081f8d9f5314f1156322db4a101",
+          "bytes": 154236
+        },
+        {
+          "itemId": "station_d15cb1ab13d83bba42e6b9e98409d07e",
+          "coverId": "cover_d15cb1ab13d83bba42e6b9e98409d07e",
+          "revision": 89,
+          "sha256": "9f7fb4f810716ff990f4802f0bbc7faa3ffc44300e60929fcd1ba77416efaa49",
+          "bytes": 168979
+        },
+        {
+          "itemId": "station_0998a461347b0dcc85c6805b2e6b70b6",
+          "coverId": "cover_0998a461347b0dcc85c6805b2e6b70b6",
+          "revision": 89,
+          "sha256": "a58002a906dbc90e45b3382e97a9ead47aba6b99ca130b27c9901784ff65328a",
+          "bytes": 128355
+        },
+        {
+          "itemId": "station_89b783b0091b4baf2251d88595171c54",
+          "coverId": "cover_89b783b0091b4baf2251d88595171c54",
+          "revision": 89,
+          "sha256": "f5925f6ce357c77b836ab44a4672f170d1d1eddcbde6d9f0cd479671eea083c3",
+          "bytes": 159527
+        },
+        {
+          "itemId": "station_675393a80fa6ca0936293fff5ed07351",
+          "coverId": "cover_675393a80fa6ca0936293fff5ed07351",
+          "revision": 89,
+          "sha256": "bbf64c313ce6b13a157e13a1818cd9d137e7bf06fa74a68e4d5d86bbcd1d07ee",
+          "bytes": 154499
+        },
+        {
+          "itemId": "station_7a146b45c8afc5eaafffbe3579d32192",
+          "coverId": "cover_7a146b45c8afc5eaafffbe3579d32192",
+          "revision": 89,
+          "sha256": "842a60c961d463b4daa65956c8cc040b72ac861a489be19a720e7ed866576878",
+          "bytes": 161848
+        },
+        {
+          "itemId": "station_706033608edc46b8d321b17410964199",
+          "coverId": "cover_706033608edc46b8d321b17410964199",
+          "revision": 89,
+          "sha256": "6273c1098a63f7dd06d7ecd0ce9754b6948e492e54ebc67a9f42dad28c9e883a",
+          "bytes": 160337
+        },
+        {
+          "itemId": "station_79ca63bf924c0b94ca216c97e8ccb5ec",
+          "coverId": "cover_79ca63bf924c0b94ca216c97e8ccb5ec",
+          "revision": 89,
+          "sha256": "1ef69a34a24a1b5bba643454472b6ce420217f79e61eae7ce98b18795811ccbb",
+          "bytes": 170200
+        },
+        {
+          "itemId": "station_e4f3a48449c46025670d6d30898de805",
+          "coverId": "cover_e4f3a48449c46025670d6d30898de805",
+          "revision": 89,
+          "sha256": "29a45273d0dbe2e6761a5aad6c48818dba87517b9a337990c1c539582a3885ce",
+          "bytes": 155941
+        },
+        {
+          "itemId": "station_f07bfe68cffaa7eae822906bb7cbe715",
+          "coverId": "cover_f07bfe68cffaa7eae822906bb7cbe715",
+          "revision": 89,
+          "sha256": "75d4a25322a5e5bfcb10abb5ab94fce28985e71f4017d1828a9fbc9dc21b03b9",
+          "bytes": 147947
+        },
+        {
+          "itemId": "station_81844c5c3ef7ce8178db335c5ea18b03",
+          "coverId": "cover_81844c5c3ef7ce8178db335c5ea18b03",
+          "revision": 89,
+          "sha256": "7dbcfe4fac70ea26e40a26960fce66b2cfcf97f089e418e0172c8f9d5bda489d",
+          "bytes": 158908
+        },
+        {
+          "itemId": "station_a8bbb161b0be74fc8ed874e400acd78b",
+          "coverId": "cover_a8bbb161b0be74fc8ed874e400acd78b",
+          "revision": 89,
+          "sha256": "1f522c248a6cd3a7de0cf1814c08a2f3e56d732bfc5c13848aeceb03818c8149",
+          "bytes": 159677
+        },
+        {
+          "itemId": "station_dfba3446735e982e2aebf165b33fa771",
+          "coverId": "cover_dfba3446735e982e2aebf165b33fa771",
+          "revision": 89,
+          "sha256": "b1979eecb85bf0cffd142cb9d9469347af819b8121178e4b6d0da48b83c200cd",
+          "bytes": 152008
+        },
+        {
+          "itemId": "station_6dd191758a32801dccc18422d75cf54e",
+          "coverId": "cover_6dd191758a32801dccc18422d75cf54e",
+          "revision": 89,
+          "sha256": "053be9b8e4b381262cd7b4a6781bd359d8de1f5ee71040c96fb28a1269a6507e",
+          "bytes": 142534
+        },
+        {
+          "itemId": "station_6b63186ec8a03267acce6385e5c34761",
+          "coverId": "cover_6b63186ec8a03267acce6385e5c34761",
+          "revision": 89,
+          "sha256": "119bee508422ee0fda9cd3ec0ffa8a288e30a096db75b318e680d08ea197f987",
+          "bytes": 138821
+        },
+        {
+          "itemId": "station_c09a4ee6f97360bd09a884fa51b40960",
+          "coverId": "cover_c09a4ee6f97360bd09a884fa51b40960",
+          "revision": 89,
+          "sha256": "0388978d8737bff60de35580f08a36edd2e899b374b5d8c76b4981a815ee486c",
+          "bytes": 162802
+        },
+        {
+          "itemId": "station_c6c3ef24f4bbb960eb51c471fb998470",
+          "coverId": "cover_c6c3ef24f4bbb960eb51c471fb998470",
+          "revision": 89,
+          "sha256": "22ba96dcb375d8fada97facf55ebae24353ff2b347375602552b3b86414b62f1",
+          "bytes": 132406
+        },
+        {
+          "itemId": "station_0dd7bc7a5b320b4de6ca2554139c336f",
+          "coverId": "cover_0dd7bc7a5b320b4de6ca2554139c336f",
+          "revision": 89,
+          "sha256": "1062cd38a6bc171532fe52cc64e6790338d58132ef92d56da307a2ad426b2f9b",
+          "bytes": 170819
+        },
+        {
+          "itemId": "station_6b0a82be57b3ddda7b761b600b451526",
+          "coverId": "cover_6b0a82be57b3ddda7b761b600b451526",
+          "revision": 89,
+          "sha256": "7a0e4f94291df48f683aa67ed73dc7549fe00e53eeb3d786ac45f29447e1eb44",
+          "bytes": 153797
+        },
+        {
+          "itemId": "station_368e6194d59a976bec4df88432c3f229",
+          "coverId": "cover_368e6194d59a976bec4df88432c3f229",
+          "revision": 89,
+          "sha256": "a427eb2e7aae35e160360d38b1ff2c7a0cb601e7c014b00c3be15d0e5de45c7f",
+          "bytes": 130125
+        },
+        {
+          "itemId": "station_dcdc98559f1d0da61b0005e7dd589371",
+          "coverId": "cover_dcdc98559f1d0da61b0005e7dd589371",
+          "revision": 89,
+          "sha256": "8b81d728de1432cc69c1ea1f360d0b67f4fe56639997eec7dd9a9802cce6f5ab",
+          "bytes": 144123
+        },
+        {
+          "itemId": "station_7950304a432ad601a0fa8c14c694a255",
+          "coverId": "cover_7950304a432ad601a0fa8c14c694a255",
+          "revision": 89,
+          "sha256": "0389b298cb66efc527c0db917be0e20597cca84d8f1b3f0b080c657200f26697",
+          "bytes": 159085
+        }
+      ]
+    },
+    "onlineRegistriesAndConfigurationPreserved": true,
+    "otherServicesPreserved": true,
+    "romCopies": 0,
+    "romHashes": 0,
+    "apiRestarted": false,
+    "physicalAndroidVisualVerified": false,
+    "ownSyntheticLicensesRemoved": true
+  },
+  "operationError": null,
+  "priorAttempts": [
+    {
+      "path": "/mnt/DADOS/station-maintenance-20261015-11z/native-attempt2",
+      "authentication": {
+        "authenticated": true,
+        "elapsedSeconds": 54.44,
+        "ownUnauthenticatedRequestCancelled": false,
+        "rootOperationInterrupted": false,
+        "exitCode": 1,
+        "publicationExists": false,
+        "appliedExists": false
+      },
+      "error": {
+        "utc": "2026-10-15T11:04:27.423959+00:00",
+        "errorType": "RuntimeError",
+        "reason": "Cover-only operation attempted ROM preparation",
+        "publicationExists": false
+      }
+    },
+    {
+      "path": "/mnt/DADOS/station-maintenance-20261015-11z/native-attempt3",
+      "authentication": {
+        "authenticated": true,
+        "elapsedSeconds": 33.62,
+        "ownUnauthenticatedRequestCancelled": false,
+        "rootOperationInterrupted": false,
+        "exitCode": 1,
+        "publicationExists": false,
+        "appliedExists": false
+      },
+      "error": {
+        "utc": "2026-10-15T11:12:40.935042+00:00",
+        "errorType": "ValueError",
+        "reason": "invalid trusted engine manifest",
+        "publicationExists": false
+      }
+    }
+  ],
+  "effectiveServices": {
+    "turborama-station-api.service": {
+      "MainPID": "19631",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-station-n64-ready-20261014-b3473cc01601/TurboRamaSuiteOnlineServer.dll ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "nginx.service": {
+      "MainPID": "3197",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/sbin/nginx ; argv[]=/usr/sbin/nginx -g daemon on; master_process on; ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "station-network-priority.service": {
+      "MainPID": "3232",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /opt/station-network-qos/priority.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "turborama-station-management.service": {
+      "MainPID": "3410",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-station-management-20261006-fe4b631/backend/TurboRamaSuiteAdminServer.dll ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "turborama-suite-api.service": {
+      "MainPID": "3416",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-suite-r5-releases/downloads-bd82bc3-20260908/server/TurboRamaSuiteOnlineServer.dll ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "turborama-suite-content-gateway.service": {
+      "MainPID": "3417",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-suite-r5-releases/r5-908-gateway-policy-20260830/gateway/TurboRamaSuiteContentGateway.dll --urls http://127.0.0.1:5191 --Suite:ContentUrlKeyRingFile=/run/credentials/turborama-suite-content-gateway.service/content-url-keyring --Suite:ContentGrantTokenPepperFile=/run/credentials/turborama-suite-content-gateway.service/content-grant-token-pepper --Suite:Content:AllowedUpstreamHostsFile=/run/credentials/turborama-suite-content-gateway.service/content-allowed-hosts ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "turborama-suite-admin.service": {
+      "MainPID": "3414",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/env ; argv[]=/usr/bin/env SUITE_ADMIN_PEPPER_FILE=/run/credentials/turborama-suite-admin.service/activation-pepper /usr/bin/dotnet /opt/turborama-suite-r5-releases/downloads-bd82bc3-20260908/admin-backend/TurboRamaSuiteAdminServer.dll ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "turborama-station-library-scan.service": {
+      "MainPID": "0",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -B /opt/turborama-station-library-quarantine-20261014-a10c78f53797/library-tools/atualizar-biblioteca-station.py --config /mnt/DADOS/station-library-auto-private-20261004/config.json ; ignore_errors=no ; start_time=[Thu 2026-10-15 08:14:06 -03] ; stop_time=[Thu 2026-10-15 08:14:13 -03] ; pid=211673 ; code=exited ; status=0 }",
+      "ActiveState": "inactive"
+    },
+    "turborama-station-library-scan.timer": {
+      "ActiveState": "active"
+    }
+  },
+  "hourlyTimer": {
+    "is-active": "active",
+    "is-enabled": "enabled"
+  },
+  "preservation": {
+    "originalCheckoutsPreserved": true,
+    "historicalCRLFPreserved": true,
+    "otherServicesPreserved": true,
+    "noServiceRestarted": true,
+    "ROMsHashedCopiedOrRebuilt": 0,
+    "APKChanged": false,
+    "newAutomation": false,
+    "externalMessages": false
+  },
+  "maintenanceLock": {
+    "holder": 204239,
+    "existingMonitorParent": true,
+    "releaseExpectedOnlyAfterAgentReturn": true
+  },
+  "privateWorkDirectory": "/mnt/DADOS/station-maintenance-20261015-11z",
+  "pending": [
+    "Tela preta/áudio de007 e homologação física Android continuam pendentes de captura real; nenhuma causa nova confirmada neste ciclo."
+  ]
+}

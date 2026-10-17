@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "source": "isolated bounded candidate; no production writes",
+  "nativeBudgetBytes": 262144,
+  "allPreviousProfilesPreserved": true,
+  "allPreviousModesPreserved": true,
+  "profilesBefore": 16404,
+  "profilesAfter": 16896,
+  "modesBefore": 11489,
+  "modesAfter": 11981,
+  "enginesBefore": 87,
+  "enginesAfter": 91,
+  "maximumContentBytes": 138876,
+  "modesCompactBytes": 8126781,
+  "profilesIndentedBytes": 16762688,
+  "profilesCompactSha256": "a29d02f6ac2755c853b1856f9dd0e4ad0a3c10d52ba27e7e18839664d4f9d6f5",
+  "summary": {
+    "passed": true,
+    "enginesAdded": 4,
+    "profilesAdded": 492,
+    "modesAdded": 492,
+    "nativeReviewedModes": 399,
+    "psx": {
+      "reviewedEditions": 84,
+      "decisions": 93,
+      "approvedMultiplayerModes": 23,
+      "approvedMultiplayerEditions": 19,
+      "pendingMultiplayerModes": 17,
+      "localClassificationsWithoutSeats": 53,
+      "exactEditionAndReceivedRuntimePolicyReevaluated": true,
+      "metadataUsedForApproval": false,
+      "sourceRealCoreEvidenceReusedForIdenticalCoreAndOptions": true,
+      "physicalAndroidGameplayValidated": false
+    },
+    "previousEngineCount": 87,
+    "previousProfileCount": 16404,
+    "previousModeCount": 11489,
+    "engineCount": 91,
+    "profileCount": 16896,
+    "modeCount": 11981,
+    "owners": {
+      "psx": "pcsx-rearmed-ff81ed17-player-v3-b21623fee188",
+      "n64": "mupen64plus-ae-33bf7021-n64-v3-a0c9d15cfbc7",
+      "gamecube": "dolphin-5102a033-gamecube-v3-04383e1f63a0",
+      "wii": "dolphin-5102a033-wii-v3-04383e1f63a0"
+    },
+    "allPreviousBindingsPreserved": true,
+    "physicalGameplayValidated": false
+  }
+}

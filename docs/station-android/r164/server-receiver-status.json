@@ -1,0 +1,10 @@
+{
+  "schema": "station.r164.receiver-status.v1",
+  "serverApplied": true,
+  "serverN64Ready": true,
+  "privateKitVerified": true,
+  "new1080CoverPublished": true,
+  "physicalAndroidGameplayValidated": false,
+  "physicalNewCoverVerified": false,
+  "currentServerReturn": "server-return.json"
+}

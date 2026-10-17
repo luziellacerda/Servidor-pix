@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checkedUtc": "2026-10-14T20:51:27.754653+00:00",
+  "model": "SM-A566E",
+  "actualInstalledDexUsed": true,
+  "profiles": 387,
+  "editions": 157,
+  "multiplayerEditions": 120,
+  "failures": 0,
+  "publicTestFixture": true,
+  "productionChanged": false
+}

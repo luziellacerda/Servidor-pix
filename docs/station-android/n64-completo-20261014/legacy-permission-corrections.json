@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "corrections": [
+    {
+      "itemId": "station_742ab5abda8117702ed2ee457350c28c",
+      "game": "Mortal Kombat Mythologies: Sub-Zero",
+      "engineId": "parallel-3be1f437-n64-v3-81b3daa38fb9",
+      "profileId": "local-mode-20261009",
+      "approvedBefore": true,
+      "approvedAfter": false,
+      "reason": "Original manual documents an individual-only game",
+      "originalManual": {
+        "url": "https://archive.org/download/Nintendo64GameManuals/MortalKombatMythologies-Sub-zerousa_text.pdf",
+        "sha256": "5154a0dde68c9a7e5c09cdcd45941eb7155a7f647e0a991a7ebe6b7b26d873ff",
+        "sizeBytes": 4470025,
+        "pdfPages": 12,
+        "textSource": "embedded OCR",
+        "relevantPdfPagesOneBased": [
+          2
+        ],
+        "rawScanPublishedInGit": false
+      }
+    },
+    {
+      "itemId": "station_23c83c0af84a554b338c8eac2876cd8c",
+      "game": "The Legend of Zelda: Ocarina of Time (ROM alternativa)",
+      "engineId": "parallel-3be1f437-n64-v3-81b3daa38fb9",
+      "profileId": "local-mode-20261009",
+      "approvedBefore": true,
+      "approvedAfter": false,
+      "reason": "Original manual documents an individual-only game",
+      "originalManual": {
+        "url": "https://archive.org/download/Nintendo64GameManuals/LegendOfZeldaThe-OcarinaOfTimea_text.pdf",
+        "sha256": "05542422ddb47c8d56001aee56d926a4afc5b58638d164c60b5695c1fd539001",
+        "sizeBytes": 4829965,
+        "pdfPages": 22,
+        "textSource": "embedded OCR",
+        "relevantPdfPagesOneBased": [
+          2,
+          3,
+          6
+        ],
+        "rawScanPublishedInGit": false
+      }
+    }
+  ],
+  "changedFields": [
+    "approved"
+  ],
+  "bindingsRemoved": 0,
+  "otherProfilesPreserved": true,
+  "scannerWouldPreserveCorrections": true
+}

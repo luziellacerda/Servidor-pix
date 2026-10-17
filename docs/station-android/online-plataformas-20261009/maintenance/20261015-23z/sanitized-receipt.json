@@ -1,0 +1,195 @@
+{
+  "schema": "station.hourly-maintenance-return.v1",
+  "cycle": "20261015-23z",
+  "utc": "2026-10-15T23:06:51.154133+00:00",
+  "status": "partial",
+  "scope": "Read-only verification of applied R168, covers and newly observed R169 recipes; documentation only",
+  "eventFingerprint": "bb91696e350aafe8b6be4f6e34a4177a6302a12b3a135d10f86fa0af72d6a97c",
+  "observedFingerprint": "dc7af2b0d43c19deb4613e9931d9a8419fd6e5a770d0cded273d50ad1f2ff452",
+  "newProductionDataPublishedThisCycle": false,
+  "currentR168ServerApplied": true,
+  "currentR168ServerQualifiedByExistingAuthority": true,
+  "r168Authority": "/mnt/DADOS/station-r168-capacity-20261015/completed.json",
+  "r168DeliveryReconciled": {
+    "remoteReadbackVerified": true,
+    "priorMaintenanceLeaseReleased": true
+  },
+  "newR169Delivery": {
+    "ref": "origin/fix/station-psx-cas-r169-20261015",
+    "commit": "e0fea23e96ccedad686f7d7d7d2a821780e486a0",
+    "deliveryKind": "Producer R169 patch/package/signing recipes only in this public ref; final receipt and server kit absent from the scoped tree",
+    "scopedFiles": [
+      "integration/psx-cas-r169/README.md",
+      "integration/psx-cas-r169/recipe/package_candidate.py",
+      "integration/psx-cas-r169/recipe/patch_dex.py",
+      "integration/psx-cas-r169/recipe/sign_private.py"
+    ],
+    "localKitGlobsFound": [],
+    "finalSignedApkProofReceived": false,
+    "matchingPrivateKitReceived": false,
+    "serverRegistered": false,
+    "producerCasDiagnosisReproducedHere": false,
+    "apkRecipesExecutedHere": false
+  },
+  "nativeAuthentication": {
+    "authenticated": true,
+    "elapsedSeconds": 6.37,
+    "ownUnauthenticatedRequestCancelled": false,
+    "rootOperationInterrupted": false,
+    "exitCode": 0,
+    "protectedAuditPassed": true
+  },
+  "protectedBaseline": {
+    "utc": "2026-10-15T23:03:18.363106+00:00",
+    "actualApiPid": 215916,
+    "automaticRestarts": 0,
+    "dllPath": "/opt/turborama-station-r168-profile-capacity-20261015-3480b991ac87/TurboRamaSuiteOnlineServer.dll",
+    "dllSha256": "3480b991ac8761692f8c962e87f7a5e717ba1aed77d89ce895fb6e804eeb0eca",
+    "requiredAppliedVersion": "R168",
+    "sourceCommitFromAppliedAuthority": "b1d53643cb0fdfebbc1bf351485d868a079664fe",
+    "currentDataEqualAppliedR168": true,
+    "counts": {
+      "catalogRevision": 100,
+      "catalogEntries": 4744,
+      "engines": 91,
+      "profiles": 16896,
+      "modes": 11981
+    },
+    "dataSha256": {
+      "catalog": "5f0ac1dfc7297cb9ab49bfab9e9f19b77955799a077b339967d7c798f3bbe4bb",
+      "profiles": "a29d02f6ac2755c853b1856f9dd0e4ad0a3c10d52ba27e7e18839664d4f9d6f5",
+      "current": "ecd0116c5a3c9010c3dd560b066706b37914a625ad6f6fff31304a08ceb9990c",
+      "modes": "18465cca93f3aa0413e2f6d90a6f2978f212fa472e5b869607d3bf220c60dd83"
+    },
+    "scannerConfigSha256": "373d4eb2d33f594441f64326a94cb7648fa0dca977a1cb37b8e9d57f2d51d743",
+    "realProcessIndexMatchesScanner": true,
+    "serviceConfigurationEqualApplied": true,
+    "serviceConfigurationFilesHashed": 28,
+    "libraryToolsSha256": {
+      "atualizar-biblioteca-station.py": "b777d2c5f5fe38d88ea6cbdf539d0592c3bfd9d8de1af8ae9d2f29aa9ff26089",
+      "station_online_profiles.py": "51522a3bd2a9c5982001c12a50ba0a5ad774895273aa195b9d02222c0e7b4d57",
+      "cadastrar-motor-online-station.py": "a3c81e0c379984d6b7736f79ce963c73a3f3250883f6304a32b5c6cfda73a096"
+    },
+    "allFourAppliedOwnersPresent": true,
+    "scanLockAcquired": true,
+    "scanLockWaitSeconds": 0.0
+  },
+  "covers": {
+    "manifestSha256": "c78c2fed7eb724347896dd9b8ae92f566a5bd113c379521fc8dbedff7cc48f05",
+    "manifestRows": 1003,
+    "finalized": 220,
+    "declaredOriginalsPresent": 0,
+    "declaredOriginalsAbsent": 220,
+    "pngFilesInCoverDirectory": 0,
+    "requiredOriginals": [
+      {
+        "title": "Fighter's History",
+        "sourceFile": "capas/FIGHTER_S_HISTORY_4K.png",
+        "expectedSha256": "2e0c7792ecffbe30cb42f4bbd1fb1d1a3ed1476d2dfedaf244efdd0427b69344",
+        "exists": false
+      },
+      {
+        "title": "FIFA International Soccer",
+        "sourceFile": "capas/FIFA_INTERNATIONAL_SOCCER_4K.png",
+        "expectedSha256": "260ff871cd433009ca06aa546d85b0de5f34f543cdc25ecc32b7c05ea93bb839",
+        "exists": false
+      },
+      {
+        "title": "FIFA Soccer 96",
+        "sourceFile": "capas/FIFA_SOCCER_96_4K.png",
+        "expectedSha256": "3321eed4ff8682d2cf1deb3b519f53fe9d6e66d309353ca7f5a653f6cf78ac8a",
+        "exists": false
+      }
+    ],
+    "finalizedDefinition": "Rows with declared outputFile and outputSha256, including provided-original-4k",
+    "unchangedSince13z": true,
+    "gitMain": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+    "gitSuperNintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
+    "newGitAssets": 0,
+    "newImports": 0,
+    "jpegsCompiled": 0,
+    "existingCoversPreserved": true,
+    "artworksWithoutExactInstalledEditionRetained": 20
+  },
+  "git": {
+    "branch": "feat/station-hourly-20261015-23z",
+    "backups": {
+      "server": {
+        "ref": "backup/station-before-hourly-20261015-23z",
+        "commit": "82c81df9c042f1470a6b94e4cede7059c9db1865",
+        "remoteReadbackVerified": true
+      },
+      "app": {
+        "ref": "backup/station-before-hourly-20261015-23z",
+        "commit": "35a29d8d446e526b2d7cad906788c87da19f7927",
+        "remoteReadbackVerified": true
+      }
+    },
+    "incomingR169Backup": {
+      "passed": true,
+      "repo": "app",
+      "ref": "backup/station-before-hourly-20261015-23z-r169",
+      "commit": "e0fea23e96ccedad686f7d7d7d2a821780e486a0",
+      "remoteReadbackVerified": true
+    },
+    "serverWorktree": "/mnt/DADOS/servidor-pix-station-manutencao-20261015-23z",
+    "appWorktree": "/mnt/DADOS/turboelden-station-manutencao-20261015-23z",
+    "canonicalReceivedServerCommit": "82c81df9c042f1470a6b94e4cede7059c9db1865",
+    "canonicalReceivedAppCommit": "35a29d8d446e526b2d7cad906788c87da19f7927",
+    "incomingBranchesChecked": {
+      "server": 31,
+      "app": 73,
+      "covers": 2
+    },
+    "incomingRemoteReadbacksMatched": true
+  },
+  "productionEffects": {
+    "filesPublished": 0,
+    "apiRestarts": 0,
+    "scannerTimerStopped": false,
+    "scannerInvoked": false,
+    "fullR168ProofsRepeated": false,
+    "romsReadOrCopied": 0,
+    "apkBuiltSignedInstalledOrModified": false,
+    "appSourceModified": false,
+    "realLicensesWritten": false,
+    "networkChanged": false,
+    "otherProductsChanged": false,
+    "newAutomationCreated": false,
+    "externalMessagesSent": false
+  },
+  "serialization": {
+    "maintenanceLockOwner": "Existing hourly monitor parent PID225524",
+    "lockHeldUntilParentReturns": true,
+    "agentReleasedParentLock": false,
+    "hourlyTimerActiveAndEnabled": true,
+    "scannerTimerActive": true,
+    "scannerLastExitCode": 0,
+    "monitorStateManuallyEdited": false,
+    "monitorConfigEdited": false
+  },
+  "pending": [
+    "R169 recebida somente como receitas e fonte pública e0fea23e: faltam recibo final assinado, handoff e kit privado real correspondente para preflight e cadastro; não reutilizar IDs R168.",
+    "Receber três PNGs exatos pendentes; 20 artes continuam sem edição instalada correspondente.",
+    "Servidor R168 aplicado e qualificado. Confirmar/publicar instalador permanente e mesma R168 nos dois aparelhos; registrar hashes e teste físico Capcom VS2P, vídeo, som, controles e retorno do convidado por25s. Não repetir cadastro ou deploy nem pedir outro kit R168.",
+    "Preservar os 17 impedimentos PSX; sinopses, campos editoriais e mapeamento das demais plataformas continuam pendentes.",
+    "HTTP502 histórico segue sem causa estabelecida; N64 com três/quatro Android e saída física ainda não homologados."
+  ],
+  "nextCycle": "Read this receipt and R168 completed/delivery authorities first. R169 requires final producer proof, exact accepted private bytes and explicit modes before fresh protected baseline, complete preflight and transactional registrar under existing scan.lock. Preserve 256KiB per-content budget and all other limits; stop only scanner timer during real publication, wait current oneshot, prove signed capabilities and served bytes as applicable. Do not rerun R168 deploy/enrollment/proofs or historic operators. If only these recipes and unchanged covers remain, record verification only.",
+  "verification": {
+    "documentationDiffJsonAndMirrorChecksPassed": true,
+    "existingCheckoutsAndHistoricalCrLfPreserved": true,
+    "originalHandoffsPreserved": true,
+    "healthHttpStatus": 200,
+    "diagnosticsSnapshot": {
+      "activeRooms": 0,
+      "activeConnections": 0,
+      "retainedBytes": 0
+    },
+    "sharedServicePidsAndRestartsPreserved": true,
+    "scannerTimerActive": true,
+    "scannerLastExitCode": 0,
+    "hourlyTimerActiveAndEnabled": true,
+    "newGameTestsExecuted": false
+  }
+}

@@ -1,0 +1,6 @@
+FAIL first=1 epoch=1 protocol rejects early peer packet: from=1 kind=2 result=5
+FAIL first=2 epoch=1 resume deadlock: second owner must consume valid queued gameplay after PLAYING; first=2 epoch=1
+FAIL first=1 epoch=3 protocol rejects early peer packet: from=1 kind=2 result=5
+FAIL first=2 epoch=3 resume deadlock: second owner must consume valid queued gameplay after PLAYING; first=2 epoch=3
+Exception in thread "main" java.lang.AssertionError: staggered resume failures=4
+	at org.emulationstation.frontend.netplay.StationPsxResumeRaceProbe.main(StationPsxResumeRaceProbe.java:118)

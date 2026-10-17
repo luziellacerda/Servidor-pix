@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Fetch bounded Git updates; invoke authenticated Codex only on new relevant input."""
-import argparse,datetime,fcntl,hashlib,json,os,re,subprocess,sys,tempfile
+import argparse,datetime,fcntl,glob,hashlib,json,os,re,subprocess,sys,tempfile
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 CFG=json.loads((HERE/'config.json').read_text())
@@ -14,13 +14,16 @@ def save(path,value):
  finally:
   if os.path.exists(tmp):os.unlink(tmp)
 def git(repo,*args):
- p=subprocess.run(['git','-c','gc.auto=0','-c','http.curloptResolve=github.com:443:4.228.31.150',*args],cwd=repo['path'],stdin=subprocess.DEVNULL,capture_output=True,text=True,timeout=180)
- if p.returncode:raise RuntimeError('Git operation failed for '+repo['name']+' (exit '+str(p.returncode)+')')
+ p=subprocess.run(['git','-c','gc.auto=0',*args],cwd=repo['path'],stdin=subprocess.DEVNULL,capture_output=True,text=True,timeout=180)
+ if p.returncode:
+  known=('could not resolve','failed to connect','couldn\'t connect','timed out','authentication failed','cannot lock ref','permission denied','dubious ownership','unable to access')
+  cause=next((message for message in known if message in p.stderr.lower()),'unclassified Git error')
+  raise RuntimeError('Git operation failed for '+repo['name']+' (exit '+str(p.returncode)+'; '+cause+')')
  return p.stdout
 def observe(fetch):
  result={}
  for repo in CFG['repositories']:
-  if fetch:git(repo,'-c','remote.origin.url='+repo['url'],'fetch','--no-tags','origin','+refs/heads/*:refs/remotes/origin/*')
+  if fetch:git(repo,'fetch','--no-tags',repo['url'],'+refs/heads/*:refs/remotes/origin/*')
   refs=git(repo,'for-each-ref','--format=%(refname:short)\t%(objectname)\t%(committerdate:unix)','refs/remotes/origin').splitlines()
   candidates=[]
   for line in refs:
@@ -28,16 +31,19 @@ def observe(fetch):
    if repo['name']=='covers':
     if ref in ('origin/main','origin/capas-super-nintendo'):result[repo['name']+':'+ref]=sha
     continue
-   if not ref.startswith(repo['incomingPrefix']):continue
+   prefixes=repo.get('incomingPrefixes',[repo.get('incomingPrefix','origin/docs/station-')])
+   if not any(ref.startswith(prefix) for prefix in prefixes):continue
    revision=re.search(r'(?:^|[-/])r(\d+)(?:[-/]|$)',ref,re.I)
    if revision:candidates.append((int(revision[1]),stamp,ref,sha))
   if candidates:
    # Each release supersedes its predecessors. Avoid older native-engine identities.
-   highest=max(x[0] for x in candidates)
+   newest=max(x[1] for x in candidates)
    for revision,stamp,ref,sha in candidates:
-    if revision==highest:result[repo['name']+':'+ref]=sha
+    if stamp==newest:result[repo['name']+':'+ref]=sha
  private=[]
- for root in CFG['privateInputs']:
+ roots=list(CFG['privateInputs'])
+ for pattern in CFG.get('privateKitGlobs',[]):roots.extend(glob.glob(pattern))
+ for root in sorted(set(roots)):
   folder=Path(root)
   if folder.is_dir():
    for p in sorted(folder.rglob('*')):

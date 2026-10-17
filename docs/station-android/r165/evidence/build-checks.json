@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "multiplayer-unit",
+      "passed": true,
+      "seconds": 13.961,
+      "terminalResult": {
+        "passed": true,
+        "checks": 1467,
+        "scope": "isolated synthetic C# hub/stream/codec/budget; no Android gameplay or deployment"
+      }
+    },
+    {
+      "name": "multiplayer-http",
+      "passed": true,
+      "seconds": 10.68,
+      "terminalResult": {
+        "passed": true,
+        "checks": 226,
+        "scope": "synthetic loopback TLS: five authenticated players, eight WS links, signed HTTP, bound proofs, stream, disconnect/resume and chat; not Android gameplay or public network"
+      }
+    }
+  ],
+  "buildPassed": true,
+  "sourceCommit": "c0ca229802909556223e54b3f610f084081b2837",
+  "previousDllSha256": "5722fcf64f81644a7227533a4b002d528d6952344e511e8dc9f00dc0ab3cc97e",
+  "delayedCloseRegressionFailedBeforeFix": true,
+  "physicalGameplayValidated": false,
+  "terminalTestResults": [
+    {
+      "passed": true,
+      "checks": 1467,
+      "scope": "isolated synthetic C# hub/stream/codec/budget; no Android gameplay or deployment"
+    },
+    {
+      "passed": true,
+      "checks": 226,
+      "scope": "synthetic loopback TLS: five authenticated players, eight WS links, signed HTTP, bound proofs, stream, disconnect/resume and chat; not Android gameplay or public network"
+    }
+  ]
+}

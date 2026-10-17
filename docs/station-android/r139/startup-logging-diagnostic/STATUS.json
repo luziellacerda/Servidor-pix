@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "status": "temporary-diagnostic-installed-both-models; four separate mode attempts captured; private server delivery completed; correction and restoration pending",
+  "updatedUtc": "2026-10-13T18:47:03.063560+00:00",
+  "diagnosticTemporary": true,
+  "permanentRelease": false,
+  "sourceCommit": "7ca5e5c8f8c93de4451830413318a0172a30ac91",
+  "sourceUrl": "https://github.com/luziellacerda/TurboElden/tree/7ca5e5c8f8c93de4451830413318a0172a30ac91/integration/startup-logging-diagnostic-r139-20261013",
+  "artifact": {
+    "apkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+    "bytes": 2715028584,
+    "signed": true,
+    "originalCertificatePreserved": true,
+    "v2": true,
+    "v3": true,
+    "alignmentBytes": 16384
+  },
+  "releasePreserved": {
+    "apkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+    "productiveSourceCommit": "42da152e54bbbb4a6d569ca26fe90835503bcccb",
+    "nativeRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+    "currentPointersUpdated": false,
+    "retroArchDescriptorsUnchanged": 9,
+    "activeV3RetroArchIdsUnchanged": 8,
+    "independentTemporaryDescriptorsRenewed": 4,
+    "independentTemporaryIdsRegisteredOnServer": false
+  },
+  "diagnosticScope": {
+    "game": "Top Gear 3000",
+    "platform": "SNES",
+    "purpose": "startup log capture",
+    "newGameplayLogic": false,
+    "hleControllersReadyAckAndFpsPreserved": true,
+    "useForPerformanceBenchmark": false
+  },
+  "phones": [
+    {
+      "model": "moto g52",
+      "installedApkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+      "diagnosticInstalled": true,
+      "installedUtc": "2026-10-13T18:16:13.900356+00:00",
+      "installedHashVerified": true,
+      "originalUidPreserved": true,
+      "dataPreserved": true,
+      "frontendObserved": true,
+      "originalR139Restored": false,
+      "currentStateEvidence": "last verified temporary diagnostic installation; original R139 restoration not performed"
+    },
+    {
+      "model": "motorola edge 30",
+      "installedApkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+      "diagnosticInstalled": true,
+      "installedUtc": "2026-10-13T18:28:54.271924+00:00",
+      "installedHashVerified": true,
+      "originalUidPreserved": true,
+      "originalInstallTimePreserved": true,
+      "dataPreserved": true,
+      "frontendObserved": true,
+      "originalR139Restored": false,
+      "currentStateEvidence": "last verified temporary diagnostic installation; original R139 restoration not performed"
+    }
+  ],
+  "capture": {
+    "startedUtc": "2026-10-13T18:16:28.718Z",
+    "currentDevice": null,
+    "capturedAttempts": 4,
+    "participantCountConfirmedInThisUpdate": false,
+    "capturedHostRole": true,
+    "attempts": [
+      {
+        "deviceModel": "moto g52",
+        "mode": "Top Gear 3000 VS",
+        "captureStartedHostUtc": "2026-10-13T18:16:28.718118+00:00",
+        "captureCompletedUtc": "2026-10-13T18:19:01.287724+00:00",
+        "missingDsp4FirmwareReportedUtc": "2026-10-13T18:18:46.980000+00:00",
+        "missingFiles": [
+          "dsp4.program.rom",
+          "dsp4.data.rom"
+        ],
+        "failedToLoadContentUtc": "2026-10-13T18:18:47.088000+00:00",
+        "nativeReturnObserved": true,
+        "nativeRunloopReturnedUtc": "2026-10-13T18:18:47.104000+00:00",
+        "nativeRunloopResult": 1,
+        "newCrashesObserved": 0,
+        "clockObservation": {
+          "hostBeforeEpoch": 1791915388.7185125,
+          "hostAfterEpoch": 1791915388.7886748,
+          "deviceEpochSeconds": 1791915388,
+          "resolutionSeconds": 1,
+          "roundTripSeconds": 0.07016229629516602,
+          "deviceMinusHostIntervalSeconds": [
+            -0.7886748313903809,
+            0.28148746490478516
+          ]
+        },
+        "warmSecondActivityInSameProcess": false,
+        "host": true
+      },
+      {
+        "deviceModel": "moto g52",
+        "mode": "Top Gear 3000 Campeonato em dupla",
+        "captureStartedHostUtc": "2026-10-13T18:19:40.775149+00:00",
+        "captureCompletedUtc": "2026-10-13T18:21:25.055549+00:00",
+        "missingDsp4FirmwareReportedUtc": "2026-10-13T18:20:58.122000+00:00",
+        "missingFiles": [
+          "dsp4.program.rom",
+          "dsp4.data.rom"
+        ],
+        "failedToLoadContentUtc": "2026-10-13T18:20:58.226000+00:00",
+        "nativeReturnObserved": true,
+        "nativeRunloopReturnedUtc": "2026-10-13T18:20:58.239000+00:00",
+        "nativeRunloopResult": 1,
+        "newCrashesObserved": 0,
+        "clockObservation": {
+          "hostBeforeEpoch": 1791915580.7755482,
+          "hostAfterEpoch": 1791915580.839112,
+          "deviceEpochSeconds": 1791915580,
+          "resolutionSeconds": 1,
+          "roundTripSeconds": 0.06356382369995117,
+          "deviceMinusHostIntervalSeconds": [
+            -0.8391120433807373,
+            0.22445178031921387
+          ]
+        },
+        "warmSecondActivityInSameProcess": false,
+        "host": true
+      },
+      {
+        "deviceModel": "motorola edge 30",
+        "mode": "Top Gear 3000 VS",
+        "captureStartedHostUtc": "2026-10-13T18:29:56.735104+00:00",
+        "captureCompletedUtc": "2026-10-13T18:33:05.889079+00:00",
+        "missingDsp4FirmwareReportedUtc": "2026-10-13T18:32:53.379000+00:00",
+        "missingFiles": [
+          "dsp4.program.rom",
+          "dsp4.data.rom"
+        ],
+        "failedToLoadContentUtc": "2026-10-13T18:32:53.434000+00:00",
+        "nativeReturnObserved": true,
+        "nativeRunloopReturnedUtc": "2026-10-13T18:32:53.445000+00:00",
+        "nativeRunloopResult": 1,
+        "newCrashesObserved": 0,
+        "clockObservation": {
+          "hostBeforeEpoch": 1791916196.7355492,
+          "hostAfterEpoch": 1791916196.8304114,
+          "deviceEpochSeconds": 1791916198,
+          "resolutionSeconds": 1,
+          "roundTripSeconds": 0.09486222267150879,
+          "deviceMinusHostIntervalSeconds": [
+            1.169588565826416,
+            2.264450788497925
+          ]
+        },
+        "warmSecondActivityInSameProcess": false
+      },
+      {
+        "deviceModel": "motorola edge 30",
+        "mode": "Top Gear 3000 Campeonato em dupla",
+        "captureStartedHostUtc": "2026-10-13T18:33:17.110728+00:00",
+        "captureCompletedUtc": "2026-10-13T18:36:10.350788+00:00",
+        "missingDsp4FirmwareReportedUtc": "2026-10-13T18:33:56.724000+00:00",
+        "missingFiles": [
+          "dsp4.program.rom",
+          "dsp4.data.rom"
+        ],
+        "failedToLoadContentUtc": "2026-10-13T18:33:56.777000+00:00",
+        "nativeReturnObserved": false,
+        "nativeRunloopReturnedUtc": null,
+        "nativeRunloopResult": null,
+        "newCrashesObserved": 0,
+        "clockObservation": {
+          "hostBeforeEpoch": 1791916397.1112535,
+          "hostAfterEpoch": 1791916397.176991,
+          "deviceEpochSeconds": 1791916398,
+          "resolutionSeconds": 1,
+          "roundTripSeconds": 0.06573748588562012,
+          "deviceMinusHostIntervalSeconds": [
+            0.8230090141296387,
+            1.8887465000152588
+          ]
+        },
+        "warmSecondActivityInSameProcess": true,
+        "menuInitializationError": "Unable to init menu driver",
+        "menuInitializationErrorUtc": "2026-10-13T18:33:56.895000+00:00",
+        "nativeReadyStatus": -1,
+        "nativeLocalReady": false,
+        "nativeReadySent": -1,
+        "nativeTxBytes": 0,
+        "nativeRxBytes": 0,
+        "relayPongObserved": true,
+        "sessionReachedPlaying": false,
+        "waitingScreenObservedPrivately": true,
+        "exitButtonUserReportedReturnedToRooms": true
+      }
+    ],
+    "campaignCaptured": true,
+    "g52ModeCapturesComplete": true,
+    "g52RequestedThreeFilesAvailable": true,
+    "edge30Captured": true,
+    "bothPhonesCovered": true,
+    "rawLogsPublished": false,
+    "clockOffsetsCalibrated": true,
+    "clockCalibrationUsesBoundsNotExactOffsets": true,
+    "participantCountReportedByUser": 2,
+    "lastCapturedDevice": "motorola edge 30",
+    "edge30ModeCapturesComplete": true,
+    "edge30RequestedThreeFilesAvailable": true,
+    "bothPhoneModelsAndBothModesCaptured": true,
+    "capturedAsFourSeparateAttempts": true,
+    "simultaneousPairCapture": false
+  },
+  "findings": {
+    "immediateFailureObserved": "All four attempts reported missing DSP4 program/data firmware and failed to load content",
+    "underlyingCauseConfirmed": false,
+    "hleOptionConsumptionUnderInvestigation": true,
+    "requiredNextAnalysis": "Qualify the two-key room configuration binding and test it on the phones; do not attribute an unread legacy .opt file to the current phone",
+    "correctivePatchApplied": false,
+    "gameplayValidated": false,
+    "exitFailureResolved": false,
+    "filePrecedenceConfirmedOnHost": true,
+    "hostResolverQualificationCases": 20,
+    "exactPhoneOptionsFileRead": false,
+    "exactPhoneOptionsFileSelectionConfirmed": false,
+    "edge30WarmActivityMenuInitializationErrorObserved": true,
+    "edge30WarmActivityExitUserReportedReturnedToRooms": true,
+    "candidate": {
+      "stage": "source-preparation",
+      "compiled": false,
+      "installed": false,
+      "keys": {
+        "global_core_options": "true",
+        "game_specific_options": "false"
+      },
+      "changesHleValuesOrProfiles": false,
+      "changesNativeRuntime": false
+    }
+  },
+  "serverHandoff": {
+    "requestedFiles": [
+      "logcat-topgear3000-vs.txt",
+      "logcat-topgear3000-campeonato.txt",
+      "erro-inicializacao-retroarch.txt"
+    ],
+    "captureRequirement": "both phones, start through failure; VS and two-player championship with internal RetroArch/core/driver error",
+    "privateDestinationFolder": "SERVIDOR LER",
+    "g52ThreeFilesAvailable": true,
+    "edge30CoveragePending": false,
+    "complete": true,
+    "delivered": true,
+    "newNativeLibrariesRequired": false,
+    "apiDeployed": false,
+    "apiRestarted": false,
+    "serverRegistrationPerformed": false,
+    "edge30ThreeFilesAvailable": true,
+    "simultaneousPairCapture": false,
+    "privateArchive": {
+      "file": "Diagnostico-TopGear3000-R139-20261013.zip",
+      "sha256": "43ed435a1d0540d440f28b53de1403e305819ddf3e8e424f0dba156ab4387e9a",
+      "bytes": 53620,
+      "destinationFolder": "SERVIDOR LER",
+      "copyHashVerified": true,
+      "deliveredUtc": "2026-10-13T18:42:41.734605+00:00"
+    }
+  },
+  "restoration": {
+    "planned": true,
+    "targetApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+    "after": "required captures completed; reconnect each authorized phone",
+    "completed": false,
+    "lastKnownBothPhonesStillDiagnostic": true,
+    "restorationReceiptAvailable": false
+  },
+  "evidence": {
+    "signed-apk-proof.json": "evidence/signed-apk-proof.json",
+    "android-sidecar-probe.json": "evidence/android-sidecar-probe.json",
+    "package-review.json": "evidence/package-review.json",
+    "instalacao-moto-g52.json": "evidence/instalacao-moto-g52.json",
+    "instalacao-edge30.json": "evidence/instalacao-edge30.json",
+    "entrega-diagnostico-topgear-r139.json": "evidence/entrega-diagnostico-topgear-r139.json",
+    "host-resolver-qualification.json": "evidence/host-resolver-qualification.json"
+  },
+  "evidenceScopesClarified": true,
+  "containsRawLogsBinariesSecretsOrPhoneIdentifiers": false
+}

@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "revision": "R140",
+  "sourceCommit": "b93623b708bafe151441d3e4920acad51718e118",
+  "apkSha256": "61e873e7bbd75a13fbd0d55515a3726f4debd8984cc0fe8f9d73401e0897792c",
+  "signed": true,
+  "installedOnMotoG52": true,
+  "releasePromoted": false,
+  "releasePointersChanged": false,
+  "nativeRuntimeRebuilt": false,
+  "diagnosticLoggerIncluded": false,
+  "appDocumentationCommit": "73a39fc87a79a36880981046298f7b9cfca6fa2b",
+  "serverDocumentationCommit": "dceb9a42f3c95222b0df632c90329b9a459144e9",
+  "appBundle": {
+    "file": "TurboElden-core-options-R140-20261013-incremental.bundle",
+    "sha256": "2c7f16ba41bb4b1b7c676c3ed0f419eda917e805de909d14e99a75207d19308f",
+    "requires": "e6eb620 and preserved prior bundles"
+  },
+  "serverBundle": {
+    "file": "Servidor-pix-core-options-R140-20261013-incremental.bundle",
+    "sha256": "8764e97c2e1054b28129b61704eb7b6ae7139b31461538d6d82061101b9dee60",
+    "requires": "e06819b and preserved prior bundles"
+  },
+  "files": {
+    "clinical-qualification/.gitattributes": {
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "bytes": 8
+    },
+    "evidence/instalacao-r140-g52-tentativa2.json": {
+      "sha256": "67ca1c21dd218166d71fbcad434bd46dd7be9f3c9252697eab7514143a5be786",
+      "bytes": 2035
+    },
+    "evidence/instalacao-r140-g52.json": {
+      "sha256": "f38a0b92c5ec43007193ea9635961240747a2863959ec566abbe10b731fbb446",
+      "bytes": 1885
+    },
+    "evidence/Instalar-TurboStations-USB.bat": {
+      "sha256": "af9b568ebaf14bd428dac1bc98ee3e6feea453fe58a3c74e52d97a2881247172",
+      "bytes": 601
+    },
+    "evidence/Instalar-TurboStations-USB.ps1": {
+      "sha256": "10d930863253e7ea04d7a1576ecb3856088a7933cb40e0385246d0d71c268fc3",
+      "bytes": 25281
+    },
+    "evidence/Leia-me-Instalar-TurboStations-USB.md": {
+      "sha256": "e24d025866225b65c4efa26b3b92e462e4d40e0df0713846f61099ef42adad2d",
+      "bytes": 3409
+    },
+    "evidence/turbostations-apk-teste.json": {
+      "sha256": "261fcfd0048e35ee4aacd3233d1ff36711bbf9e00fd679166d85528be3a8af64",
+      "bytes": 751
+    },
+    "private-tooling/install_r140_private.py": {
+      "sha256": "9d175083c7ac6221a55ef0714e508a6756608dc06dc59300095fa537f8d59140",
+      "bytes": 15193
+    },
+    "private-tooling/qualify_r140_core_options_resolver.py": {
+      "sha256": "2754a5f88d882c5503f37aa64432faa6bb7dcffcf0c4b917d788aae30e569671",
+      "bytes": 17948
+    },
+    "private-tooling/sign_r140_private.py": {
+      "sha256": "95248c8246337fa1b6756eac5e5c7b16a58eb37d0d3e52efe71d545e212ac205",
+      "bytes": 14906
+    },
+    "source/.gitattributes": {
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "bytes": 8
+    },
+    "source/PROPOSED-SCOPE.json": {
+      "sha256": "ec0a46f1e986d801f12e930d8d242dd1a74614df9947e3476a1c529b6401cbef",
+      "bytes": 2624
+    },
+    "source/README.md": {
+      "sha256": "da203c8857514f3e449e3a51437b8172354e03dbeb3bfe56b15ba1e2732cf06c",
+      "bytes": 6346
+    },
+    "source/evidence/source-preparation-review.json": {
+      "sha256": "ea83df4df89ceae9b6e8d19e0ef5abd791f3425d28bf52a3495827753c752b86",
+      "bytes": 1763
+    },
+    "source/recipe/AssembleScopedPartition.java": {
+      "sha256": "5ea794aad4cb177080e331b09d449419e352020ac61a6b9ea4194e32b4b1b022",
+      "bytes": 8424
+    },
+    "source/recipe/assemble_apk.py": {
+      "sha256": "3f07c1014a20aea3add3ac4eb8e4ee07296156981376ba812fd04f2fe81dc8c3",
+      "bytes": 6014
+    },
+    "source/recipe/build_dex.py": {
+      "sha256": "78eaf30bec215e1fd3cc8c70e9cb8f34928ff14dd7bf076f9097edd55c2a166e",
+      "bytes": 4834
+    },
+    "source/recipe/build_identity.py": {
+      "sha256": "aaf49396fcbbea2d3278eaffc085c7264fe988284dcc2b177d16285fc38334e0",
+      "bytes": 7433
+    },
+    "source/recipe/common.py": {
+      "sha256": "7be126dae7ca280200fd8b1e913d02eeb28de6a82053a1b2de6cb8fcf4074c51",
+      "bytes": 6884
+    },
+    "source/recipe/DecodeDolphinPartition.java": {
+      "sha256": "d1365cf8cce05fb08c6e04dbcc47e9b154af268637bf0d768c32f851420c2b67",
+      "bytes": 1556
+    },
+    "source/recipe/patch_binding.py": {
+      "sha256": "3b4321052d98948444464baa5cdeecb8c152466e11db5d7186388eb5e45b678b",
+      "bytes": 4778
+    },
+    "source/recipe/VerifyScopedPartition.java": {
+      "sha256": "6a8208beb2edd6c601d64b0b82ba86e8c4fb11e72a92ed70a477bfac38962df1",
+      "bytes": 7549
+    },
+    "source/recipe/verify_apk.py": {
+      "sha256": "bf61c2d0ff397316f711510ada89409f4717b58cbd49e06fb6c60b63e2332266",
+      "bytes": 4449
+    },
+    "clinical-qualification/evidence/host-resolver-qualification.json": {
+      "sha256": "42db9aa7537486f15b555987ac05d0d4850de7b34af9ffa5063a014438bfc821",
+      "bytes": 12851
+    },
+    "build/assembly/final-apk-proof.json": {
+      "sha256": "f2a85284952c0697aa5debcf0d398384a273dec6de8de65dad24a49b10c75193",
+      "bytes": 1427
+    },
+    "build/assembly/unsigned-package.json": {
+      "sha256": "9873b08093cffcf9b0a9741f252b3311cb9ae5953f065b5a31a17244cdfe5a7b",
+      "bytes": 1733626
+    },
+    "build/assembly/verified-final.json": {
+      "sha256": "331e07a45c3563748555245598993f1a7cf7f12b0fbf8d7729c13bd83a96013a",
+      "bytes": 1318
+    },
+    "build/dex/classes35.dex": {
+      "sha256": "49f381dc3ef375797d2db56b25a8a6c86a8150c2515ce115f4639b7bb243478e",
+      "bytes": 771632
+    },
+    "build/dex/dex-compilation.json": {
+      "sha256": "fa2a3820f9e1ee360cbe7844fbdaa1b7c87807eafc4c3978f33eb94b84186382",
+      "bytes": 3136
+    },
+    "build/dex/scope.properties": {
+      "sha256": "7cade9e02be37506bbca8e5217727b933afa697515cece6aaceae825d35b32ca",
+      "bytes": 379
+    },
+    "build/identity/engines.json": {
+      "sha256": "819ddc5fad20bdb2b4034c5306cce709d5656789ab028cc440d9f35d4e41c281",
+      "bytes": 19121
+    },
+    "build/identity/libstation_dolphin_runtime.so": {
+      "sha256": "7df312d0e8dbbe37ea66bfec60d054e1ceeb823c3fc03a9b0fe4dca84777a42c",
+      "bytes": 116664
+    },
+    "build/identity/libstation_dolphin_runtime.so.c": {
+      "sha256": "163c77cea603d2c876a50f5e9c83a9530bb4a9c17972df204c2054a0d7717da5",
+      "bytes": 116398
+    },
+    "build/identity/libstation_dolphin_runtime.so.compile.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "build/identity/libstation_dolphin_runtime.so.fingerprint.json": {
+      "sha256": "473de25eec6939b2497b1828b7d95e03265df5bfecb7df3a3c487f28408d96a4",
+      "bytes": 112368
+    },
+    "build/identity/libstation_mupen64plus_runtime.so": {
+      "sha256": "1ef68413f83c82eb267b408f00922cc5a4c77f202182548cfd474246f3960664",
+      "bytes": 105752
+    },
+    "build/identity/libstation_mupen64plus_runtime.so.c": {
+      "sha256": "e75fe31e02d868fe63ac86f70775a899753a061f4c00cd4f4d5450838209c7ef",
+      "bytes": 104789
+    },
+    "build/identity/libstation_mupen64plus_runtime.so.compile.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "build/identity/libstation_mupen64plus_runtime.so.fingerprint.json": {
+      "sha256": "386abb07ce9b502569550a5823abd239f77609e307ca11701838e927058ac156",
+      "bytes": 101460
+    },
+    "build/identity/psx.fingerprint.json": {
+      "sha256": "9fb33e7eea4ed53e885109778270051a4d0098e8e0dd71293216e572ad93c47c",
+      "bytes": 99284
+    },
+    "build/identity/runtime-identity.json": {
+      "sha256": "160bf3b09d78a1f54f013dc8abaefb73924fd0d4583066818b13909cdc74d2cf",
+      "bytes": 68667
+    },
+    "build/identity/StationPsxIdentity.cpp": {
+      "sha256": "293ef91aa78817f9f9b35f3dc04bda49dff8745f6d9302c9221307db2797e9b9",
+      "bytes": 102512
+    },
+    "build/identity/native/build.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "build/identity/native/entry-build-receipt.json": {
+      "sha256": "a9a2ef8bc501fa5ae781124af1e2515b2f604edfd111cf3cb693644cb0aa7bc8",
+      "bytes": 2739
+    },
+    "build/identity/native/libstation_psx_online.so": {
+      "sha256": "28371f460a4dc45d86ce4cdb434c972fc4cfaa08de674503cf60cbece1397529",
+      "bytes": 302952
+    },
+    "build/dex/tools/AssembleScopedPartition.class": {
+      "sha256": "f769e624fb5dca2d91afe0b2f9aaa82f0f6117b719c6b6f559d3064e21ee5fbc",
+      "bytes": 12819
+    },
+    "build/dex/tools/DecodeDolphinPartition.class": {
+      "sha256": "558d49f7e3352ae1c340513380196fb075eade0cb848a20739b2384975d17678",
+      "bytes": 3111
+    },
+    "build/dex/tools/VerifyScopedPartition$Scope.class": {
+      "sha256": "0d20bab1efd2813e5d5bddc9eb1e9b438756fbd5c779f3a1a94a6a8466532713",
+      "bytes": 1341
+    },
+    "build/dex/tools/VerifyScopedPartition.class": {
+      "sha256": "43b706b228f154a7694906c1cded383bd2c17b5bbe389e78bd7b016414b95cad",
+      "bytes": 9507
+    }
+  },
+  "gameplayValidated": false,
+  "frontendObservedAtInstall": false,
+  "reconstructionDependencies": "Exact original R139 APK, preserved R139/R138/R135 reconstruction and pinned F toolchain."
+}

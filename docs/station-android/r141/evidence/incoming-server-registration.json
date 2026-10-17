@@ -1,0 +1,30 @@
+{
+  "status": "applied",
+  "utc": "2026-10-13T18:38:14.769601+00:00",
+  "apkSha256": "e69616ee6377920f808f3b5a267f5592ffff9ae70c2bbe2063c6902cd903c02a",
+  "enginesAdded": 4,
+  "profilesAdded": 78,
+  "originalProfilesPreserved": 11448,
+  "profileCount": 11526,
+  "approvedProfiles": 11505,
+  "originalModesPreserved": 6587,
+  "preparedModes": 6665,
+  "engineCount": 35,
+  "catalogRevision": 46,
+  "apiRestarted": false,
+  "dllSha256": "ef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a",
+  "psxHleGameApprovalsAdded": 0,
+  "physicalGameplayValidated": false,
+  "signedBindingsVerified": true,
+  "realLicensesPreserved": true,
+  "catalogConfigurationAndContentIdentitiesPreserved": true,
+  "signedPlatforms": [
+    "n64",
+    "gamecube",
+    "wii"
+  ],
+  "negativeAdmissionsVerified": 6,
+  "realLibrariesVerified": 6,
+  "distinctDependenciesVerified": 20,
+  "serverRebuildRequired": false
+}

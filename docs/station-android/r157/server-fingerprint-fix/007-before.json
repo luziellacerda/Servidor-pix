@@ -1,0 +1,55 @@
+{
+  "multiplayerVersion": 3,
+  "capability": "station-multiplayer.v3",
+  "profiles": [
+    {
+      "engineId": "mupen64plus-ae-33bf7021-n64-v3-fc7449c38d08",
+      "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+      "runtimeSha256": "fc7449c38d08ea74aa28b0a2241459ed8ed62b183815f6948e2e069f80ed31ab",
+      "itemId": "station_c16309c829ad81a41da0b4cb7236a4fb",
+      "contentSha256": "b5787cdab9a724f52831b5b560d444a4e3694d62021018a7d919636396b0c22a",
+      "platform": "n64",
+      "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+      "profileId": "n64-full-1-solo-v1-owner-210a819ac351",
+      "maximumPlayers": 1,
+      "allowedPlayerCounts": [],
+      "approved": true,
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "solo",
+      "modeTitle": "Modo individual",
+      "instructions": [
+        "Este modo é para uma pessoa. Não oferece vagas de sala online."
+      ],
+      "sources": [
+        "https://archive.org/download/Nintendo64GameManuals/007%20-%20The%20World%20Is%20Not%20Enough%20%28U%29_text.pdf"
+      ]
+    },
+    {
+      "engineId": "mupen64plus-ae-33bf7021-n64-v3-fc7449c38d08",
+      "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+      "runtimeSha256": "fc7449c38d08ea74aa28b0a2241459ed8ed62b183815f6948e2e069f80ed31ab",
+      "itemId": "station_c16309c829ad81a41da0b4cb7236a4fb",
+      "contentSha256": "b5787cdab9a724f52831b5b560d444a4e3694d62021018a7d919636396b0c22a",
+      "platform": "n64",
+      "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+      "profileId": "n64-full-1-arena-v1-owner-210a819ac351",
+      "maximumPlayers": 4,
+      "allowedPlayerCounts": [
+        2,
+        3,
+        4
+      ],
+      "approved": true,
+      "controllerProfile": "direct-four-ports-v1",
+      "mode": "arena",
+      "modeTitle": "Arena",
+      "instructions": [
+        "Entre em Multiplayer e Arena; cada participante seleciona o personagem no seu controle.",
+        "Cada participante da sala usa seu próprio controle e a mesma edição do jogo."
+      ],
+      "sources": [
+        "https://archive.org/download/Nintendo64GameManuals/007%20-%20The%20World%20Is%20Not%20Enough%20%28U%29_text.pdf"
+      ]
+    }
+  ]
+}

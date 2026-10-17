@@ -1,0 +1,273 @@
+{
+  "preparedUtc": "2026-10-15T12:10:18.289440+00:00",
+  "sourceManifestSha256": "0d1317d7bf4f6b4fb1646409c6b073b26d78b8d2bf5391c27d7fc2e847c59552",
+  "finalizedAtSnapshot": 203,
+  "newFinalArtworks": 12,
+  "matches": [
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Fatal Fury Special (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/FATAL_FURY_SPECIAL_4K.png",
+      "sourceSha256": "33b8e808cb4535ea0085e1e89d9fe09eecd657e9e97024ecf03afcfcfc363241",
+      "sourceTitle": "Fatal Fury Special",
+      "primaryRelease": "Fatal Fury Special (USA)",
+      "sourceBytes": 12200991,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-12z/covers-next-plan/compiled/33b8e808cb4535ea0085e1e89d9fe09eecd657e9e97024ecf03afcfcfc363241",
+      "compiledSha256": "7ab72ef794b835d8f463194a32a94641acf25d54b3656240d3f7bced12d3e43d",
+      "compiledBytes": 159431,
+      "oldMagazineSha256": "9e58b73a2e4274ecf53d05901404e172e43ea5208d0fd4b3629c08223b86ff23",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Fatal Fury Special (USA).zip",
+          "bindingIds": [
+            "de85a88485d206651fa0bfde244cfc82",
+            "5092f2b508e4476924e033353f0d5292"
+          ],
+          "itemId": "5092f2b508e4476924e033353f0d5292",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Fatal Fury 2 (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/FATAL_FURY_2_4K.png",
+      "sourceSha256": "544419f89ba9acb8c8ce8d2c70c9e9d8f15db40c032274d9de608ef8be9bc4ed",
+      "sourceTitle": "Fatal Fury 2",
+      "primaryRelease": "Fatal Fury 2 (USA)",
+      "sourceBytes": 11764246,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-12z/covers-next-plan/compiled/544419f89ba9acb8c8ce8d2c70c9e9d8f15db40c032274d9de608ef8be9bc4ed",
+      "compiledSha256": "48fead47c487d9e1e1adf92989b1f655314c2c91d82fb7420c4ece482d6ab757",
+      "compiledBytes": 150102,
+      "oldMagazineSha256": "834fe20e587622c35d26ced037460060626fd526aa222acc76199be915b47de5",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Fatal Fury 2 (USA).zip",
+          "bindingIds": [
+            "ecfc0d49c89efd10e4b0d3e2e921ab95"
+          ],
+          "itemId": "ecfc0d49c89efd10e4b0d3e2e921ab95",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Extra Innings (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/EXTRA_INNINGS_4K.png",
+      "sourceSha256": "dddc2db217dd3ac3b457c6d6271a1e09c3e2e406807e9ad4b327377a6a6979fa",
+      "sourceTitle": "Extra Innings",
+      "primaryRelease": "Extra Innings (USA)",
+      "sourceBytes": 11036658,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-12z/covers-next-plan/compiled/dddc2db217dd3ac3b457c6d6271a1e09c3e2e406807e9ad4b327377a6a6979fa",
+      "compiledSha256": "e3e29dd3e60e0082ec57854277eba8cd030afe4d9e354852d99769bad8dd3d70",
+      "compiledBytes": 152617,
+      "oldMagazineSha256": "bd1f6d961c706769125f721380cfd1bfc8ed5f9f2d373f167330a32a1f974744",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Extra Innings (USA).sfc",
+          "bindingIds": [
+            "station_84841ef51b0fc5f1855a2dc84b5db323"
+          ],
+          "itemId": "station_84841ef51b0fc5f1855a2dc84b5db323",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/F1 Pole Position 2 (Europe).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/F1_POLE_POSITION_2_4K.png",
+      "sourceSha256": "ce73230a375b70068ba67e646fd284834028da1707db92db0ce0f51bcc889b37",
+      "sourceTitle": "F1 Pole Position 2",
+      "primaryRelease": "F1 Pole Position 2 (Europe)",
+      "sourceBytes": 10806209,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-12z/covers-next-plan/compiled/ce73230a375b70068ba67e646fd284834028da1707db92db0ce0f51bcc889b37",
+      "compiledSha256": "839cfc96fc63f2cb8eaa5ccc6b9dbe72b722adc97041114d9eb5fe585685e46f",
+      "compiledBytes": 132488,
+      "oldMagazineSha256": "21918e679dce003ada71c4a9b2a332ba3e5985c34983549a643be03b90c827c7",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/F1 Pole Position 2 (Europe).sfc",
+          "bindingIds": [
+            "station_ce47cba4706d271a5e22b603066f5344"
+          ],
+          "itemId": "station_ce47cba4706d271a5e22b603066f5344",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/F1 Pole Position (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/F1_POLE_POSITION_4K.png",
+      "sourceSha256": "781d42b21d8e4322aa6b174d2856d172fece23d782718fd6c7f26d5fc31c4397",
+      "sourceTitle": "F1 Pole Position",
+      "primaryRelease": "F1 Pole Position (USA)",
+      "sourceBytes": 11188660,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-12z/covers-next-plan/compiled/781d42b21d8e4322aa6b174d2856d172fece23d782718fd6c7f26d5fc31c4397",
+      "compiledSha256": "ba3582b709af24def9f58ed2822d4f19331340c1e3d236503c06f1332aab8930",
+      "compiledBytes": 147113,
+      "oldMagazineSha256": "25ef9e77df51b911a68bc84ecd4477abb210675d86638ed83315a206daeb6c84",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/F1 Pole Position (USA).sfc",
+          "bindingIds": [
+            "station_5d40b2c0b9bf3c701cbad749618b7f9d"
+          ],
+          "itemId": "station_5d40b2c0b9bf3c701cbad749618b7f9d",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/F1 ROC - Race of Champions (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/F1_ROC_RACE_OF_CHAMPIONS_4K.png",
+      "sourceSha256": "b7edcf013e9db73fb9bdb88339b9a76e4cb8e16e6f071c56f4cc1023b6317caa",
+      "sourceTitle": "F1 ROC - Race of Champions",
+      "primaryRelease": "F1 ROC - Race of Champions (USA)",
+      "sourceBytes": 11322257,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-12z/covers-next-plan/compiled/b7edcf013e9db73fb9bdb88339b9a76e4cb8e16e6f071c56f4cc1023b6317caa",
+      "compiledSha256": "d7c64094cb69fc3718b511614517ac5a48fd16239d7e164fbcbf65eee72d5dc4",
+      "compiledBytes": 141620,
+      "oldMagazineSha256": "0a88d73df784eda372208de002ff51041b3feef4582ad6d0b87671486a608208",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/F1 ROC - Race of Champions (USA).sfc",
+          "bindingIds": [
+            "station_2e1819cf35effd9bffd2c71b3ade7260"
+          ],
+          "itemId": "station_2e1819cf35effd9bffd2c71b3ade7260",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/F1 World Championship Edition (Europe).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/F1_WORLD_CHAMPIONSHIP_EDITION_4K.png",
+      "sourceSha256": "82cb4496a87d15a48141afad7ea9687276ef188b49d88c52303de9ee7496757a",
+      "sourceTitle": "F1 World Championship Edition",
+      "primaryRelease": "F1 World Championship Edition (Europe)",
+      "sourceBytes": 10824479,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-12z/covers-next-plan/compiled/82cb4496a87d15a48141afad7ea9687276ef188b49d88c52303de9ee7496757a",
+      "compiledSha256": "49b4441513291a9fbab77b4202d623ef6cb2e4d3e8c3273bb28a05da1c39932b",
+      "compiledBytes": 135557,
+      "oldMagazineSha256": "4f497ab0cef2bfdbb840b38e20086cdc9a684a84f0151dc3d00a717515d50025",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/F1 World Championship Edition (Europe).sfc",
+          "bindingIds": [
+            "station_5ff3d62fc7967b12a2ec1776dd7268ee"
+          ],
+          "itemId": "station_5ff3d62fc7967b12a2ec1776dd7268ee",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Faceball 2000 (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/FACEBALL_2000_4K.png",
+      "sourceSha256": "dcc9dfc0b7909b9ae170c57da3c15afc292d4fc267445a943c3a8419e329159a",
+      "sourceTitle": "Faceball 2000",
+      "primaryRelease": "Faceball 2000 (USA)",
+      "sourceBytes": 11180994,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-12z/covers-next-plan/compiled/dcc9dfc0b7909b9ae170c57da3c15afc292d4fc267445a943c3a8419e329159a",
+      "compiledSha256": "45876082cfb03bc25eab22cbb1a82df85b6a016041314771107da400403a9d1c",
+      "compiledBytes": 141963,
+      "oldMagazineSha256": "f155aac4a522ffc832ab24c38cdf847eb5e278b613ee15e362a1e3ff3f365a73",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Faceball 2000 (USA).sfc",
+          "bindingIds": [
+            "station_9e085fea638b277792ee128b8901d1b0"
+          ],
+          "itemId": "station_9e085fea638b277792ee128b8901d1b0",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Family Dog (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/FAMILY_DOG_4K.png",
+      "sourceSha256": "3a60fe77c9de97d0235a01407bbdda113d5ba21f182ed49d22a2c592e4989c13",
+      "sourceTitle": "Family Dog",
+      "primaryRelease": "Family Dog (USA)",
+      "sourceBytes": 11115029,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-12z/covers-next-plan/compiled/3a60fe77c9de97d0235a01407bbdda113d5ba21f182ed49d22a2c592e4989c13",
+      "compiledSha256": "766106217c6c0ab4e554d5484d4236a16c18011e9cc5533d3a30e62f60d6b44c",
+      "compiledBytes": 142245,
+      "oldMagazineSha256": "ef60f2c1b885125c4b538fefb3ea8fc2baf17945c9a58b075d8a73d13a9779f5",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Family Dog (USA).sfc",
+          "bindingIds": [
+            "station_47a48b97db43eae022e607a387882b20"
+          ],
+          "itemId": "station_47a48b97db43eae022e607a387882b20",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Family Feud (USA) (Rev 1).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/FAMILY_FEUD_4K.png",
+      "sourceSha256": "bc090518fce3137afc8683aead7e69a4c3052291228be01253e985edd2d4b344",
+      "sourceTitle": "Family Feud",
+      "primaryRelease": "Family Feud (USA)",
+      "sourceBytes": 10477133,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-12z/covers-next-plan/compiled/bc090518fce3137afc8683aead7e69a4c3052291228be01253e985edd2d4b344",
+      "compiledSha256": "f3aec0bee9b0df59e6558faaeeb8e8d32c52c87a19b7641cd9d523f0bd31eb5e",
+      "compiledBytes": 143722,
+      "oldMagazineSha256": "fb75a7b8835bd5d256ed05eae6de2cc4e6f836fd833f839e4dba1b5708501d95",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Family Feud (USA) (Rev 1).sfc",
+          "bindingIds": [
+            "station_52934997d48f7f43e364528d602d412d"
+          ],
+          "itemId": "station_52934997d48f7f43e364528d602d412d",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    },
+    {
+      "magazinePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/media/revista/Fatal Fury (USA).jpg",
+      "sourcePath": "/mnt/DADOS/IMAGENS SNES/capas/FATAL_FURY_4K.png",
+      "sourceSha256": "da9921d494bedec1c17b0323cc4fca724a4aa536b7af27efaf32dd09e8df405e",
+      "sourceTitle": "Fatal Fury",
+      "primaryRelease": "Fatal Fury (USA)",
+      "sourceBytes": 12212996,
+      "compiledPath": "/mnt/DADOS/station-maintenance-20261015-12z/covers-next-plan/compiled/da9921d494bedec1c17b0323cc4fca724a4aa536b7af27efaf32dd09e8df405e",
+      "compiledSha256": "d8cd587f4ed173ddd5a5e242c9dc4a21d9d24f77c6dcd24452a43d0ff1499813",
+      "compiledBytes": 153490,
+      "oldMagazineSha256": "6514af6f75a0420c263cd545cd7c697bdd81148929c67ad393692bc9eaaff3a4",
+      "bindings": [
+        {
+          "sourcePath": "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc/snes/Fatal Fury (USA).sfc",
+          "bindingIds": [
+            "station_f7a80fafbd6df3bcf1a5b286f923930b"
+          ],
+          "itemId": "station_f7a80fafbd6df3bcf1a5b286f923930b",
+          "system": "snes"
+        }
+      ],
+      "matchRule": "exact-ROM-release-region-and-edition; revision/language-tags-only-normalized"
+    }
+  ],
+  "unmatched": [
+    {
+      "title": "F1-ROC II - Race of Champions",
+      "primaryRelease": "F1-ROC II - Race of Champions (USA)",
+      "sourceFile": "capas/F1_ROC_II_RACE_OF_CHAMPIONS_4K.png",
+      "reason": "no exact installed ROM release/region/edition"
+    }
+  ],
+  "compilerPath": "/mnt/DADOS/servidor-pix-station-manutencao-20261015-12z/docs/station-android/online-plataformas-20261009/library-tools/atualizar-biblioteca-station.py",
+  "compilerSha256": "b777d2c5f5fe38d88ea6cbdf539d0592c3bfd9d8de1af8ae9d2f29aa9ff26089",
+  "productionChanged": false
+}

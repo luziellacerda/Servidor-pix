@@ -1,0 +1,1 @@
+R138 aplicada; catálogo42; oito motores/3091 perfis novos; prefixo5176 preservado. Capas SNES/Mega/PSX atualizadas, N64 conferido e cache atualizado. Matriz única em server-return.json. Quatro motores independentes R137 aguardam kit correspondente; sem nova DLL/restart ou gameplay físico alegado.

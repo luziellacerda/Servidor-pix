@@ -1,0 +1,74 @@
+{
+  "schema": "station.engine-receiver.v1",
+  "utc": "2026-10-15T12:38:13.110493+00:00",
+  "producerCommit": "aba688e8619303a1dc9091a9931e55ef65457221",
+  "documentReceived": true,
+  "expected": {
+    "apk": {
+      "file": "TurboStations-Premium-R161-n64-online-dynarec.apk",
+      "bytes": 2715122703,
+      "sha256": "66f429d47af725a6767064c3623ee10c505171a85fbc8c0a50dc9e5bc4f80081"
+    },
+    "kit": {
+      "file": "Kit-Servidor-TurboStations-R161-Independentes.zip",
+      "bytes": 12189409,
+      "sha256": "bcfbe393e6e560cd04f8994de3267fd7ff76487c3e9f234aa5bd20abd7f0eadf"
+    },
+    "n64EngineId": "mupen64plus-ae-33bf7021-n64-v3-656d6d7c017f",
+    "n64RuntimeSha256": "656d6d7c017f17b55c3da06a5ee5ed11a60072f1b159790c78c4a8ab4606c9e3",
+    "n64ProfileSha256": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63"
+  },
+  "privateApkReceived": true,
+  "privateKitReceived": true,
+  "externalFileHashesVerifiedHere": true,
+  "elfAndDependenciesVerifiedHere": true,
+  "serverApplied": true,
+  "serverCountsFreshlyRead": true,
+  "physicalGameplayValidated": false,
+  "previousR159Authority": "/mnt/DADOS/station-r159-20261014/applied.json",
+  "previousR159Reapplied": false,
+  "search": {
+    "utc": "2026-10-15T12:03:13.757940+00:00",
+    "roots": [
+      "/mnt/DADOS",
+      "/media/lz-servidor"
+    ],
+    "followSymlinks": false,
+    "excludedDirectoryNames": [
+      ".git",
+      "node_modules",
+      ".cache",
+      "__pycache__"
+    ],
+    "directories": 55227,
+    "inaccessibleDirectories": 127,
+    "candidatePaths": [],
+    "artifactBytesRead": 0,
+    "elapsedSeconds": 7.72
+  },
+  "documentProfileCheck": {
+    "passed": true,
+    "checks": 2,
+    "source": "Pure serializer AST from producer aba688e8619303a1dc9091a9931e55ef65457221; exact received R159 policy input",
+    "priorAndroidProfileSha256": "688d519ae641911804fe3286e6b5f50cc7f8c06c42ccb1be36781f0fb067b83d",
+    "declaredR161ProfileSha256Reproduced": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
+    "engineELFBytesVerified": false,
+    "R161ApkOrKitReceived": false,
+    "androidExecuted": false,
+    "productionMutated": false
+  },
+  "pending": [
+    "Testar a mesma R161 nos dois aparelhos; gameplay físico e causa da tela preta ainda não homologados."
+  ],
+  "latestProducerCommit": "28f82a13ff3e9bf8623195f6fc15c4d1011cf30e",
+  "producerA56InstallReceiptReceived": true,
+  "producerA56InstalledSha256": "66f429d47af725a6767064c3623ee10c505171a85fbc8c0a50dc9e5bc4f80081",
+  "installationPersonallyReadFromDeviceHere": false,
+  "producerObservedLoginActivityOnly": true,
+  "producerUSBDeliveryReceiptReceived": true,
+  "producerUSBFolder": "SERVIDOR LER/R161-N64-ONLINE-DYNAREC-20261015",
+  "producerUSBReadbackDoesNotProveLinuxReceipt": true,
+  "usbVolumeESDUSBDetectedHere": true,
+  "serverN64Ready": true,
+  "currentServerReturn": "server-return.json"
+}

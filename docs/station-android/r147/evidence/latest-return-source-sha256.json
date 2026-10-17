@@ -1,0 +1,49 @@
+{
+  "schema": "station.r147.received-return.source-hashes.v1",
+  "sources": {
+    "hourly01z": {
+      "repository": "app",
+      "commit": "8f7f8289be2318825be9843f14bd9fe34bb1534f",
+      "publicGitPath": "docs/server/r146/evidence/maintenance-20261014-01z.json",
+      "blobSha256": "6bb03aa8b9943fc52e090561a078bd8fdb816d64e149788b64a3a00ce5fb297e"
+    },
+    "previous23z": {
+      "repository": "server",
+      "commit": "c926aa9cc27c462c508b87f207cfef0964e4b7f9",
+      "publicGitPath": "docs/station-android/r143/maintenance-20261013-23z.json",
+      "blobSha256": "07f060e092e2122b47f73e41efbaf7fb9bfa38d2925281a0a8bc2cb3d1e8c35d"
+    },
+    "downloadReport": {
+      "repository": "app",
+      "commit": "f5145968ec86931186f99ebfe4af172b71580ff8",
+      "publicGitPath": "integration/station-direct-download-20261013/operator-speed-result.json",
+      "blobSha256": "4e33b071bdfd48a9a815e403d2aaecc33355336589c2eae4184cdf963dd90ecb"
+    },
+    "downloadQualification": {
+      "repository": "app",
+      "commit": "f5145968ec86931186f99ebfe4af172b71580ff8",
+      "publicGitPath": "integration/station-direct-download-20261013/qualification.json",
+      "blobSha256": "4a6bcf7ea6434bcbf0d6735491988a312273aa7df5da31b1a312e2b1bc65e8f2"
+    },
+    "historicalUsbManifest": {
+      "repository": "app",
+      "commit": "f5145968ec86931186f99ebfe4af172b71580ff8",
+      "publicGitPath": "tooling/usb-installer/turbostations-apk-teste.json",
+      "blobSha256": "3afe8224b3a933dc047432a7d4ce3cad5742f0f480c6d8afe01ba6f217081a5a"
+    },
+    "historicalRegistration": {
+      "repository": "server",
+      "commit": "c8817a2c0e6bfadef7c422cd041c431697f70410",
+      "publicGitPath": "ops/station-direct-download-20261013/registration.json",
+      "blobSha256": "c604bc9c2b2e34991d17ed376abc484ed791c98be57061e373d34e8777f84422"
+    },
+    "protectedDownloadProbe": {
+      "repository": "server",
+      "commit": "c8817a2c0e6bfadef7c422cd041c431697f70410",
+      "publicGitPath": "ops/station-direct-download-20261013/protected-download-validation.json",
+      "blobSha256": "6af3334b316ee30c7cc01e47567b3252aa46f3a0e4bea8c42a9329345da28038"
+    }
+  },
+  "previousN64CoverCommit": "989b12b45d468338670c07bf92f1be6631915759",
+  "sanitizedSummariesOnly": true
+}

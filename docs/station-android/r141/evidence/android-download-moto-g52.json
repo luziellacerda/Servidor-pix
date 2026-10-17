@@ -1,0 +1,96 @@
+{
+  "schema": "station.r141.android-download.observation.v1",
+  "revision": "R141",
+  "deviceModel": "moto g52",
+  "apkSha256": "b5a76023860bceb2aa11c946c8003fa2d92951e700dbde3a498f8316857670d4",
+  "sourceCommit": "240b7c0504252e542975089f585bd67d5264f074",
+  "captureStartedUTC": "2026-10-13T19:46:02.181554+00:00",
+  "captureCompletedUTC": "2026-10-13T19:53:45.039228+00:00",
+  "ownPidVerified": true,
+  "installedApkHashVerified": true,
+  "authorizedHttpStatus": 200,
+  "artifactHttpStatus": 200,
+  "artifactBytes": 546776387,
+  "downloadElapsedMillis": 75288,
+  "averageBytesPerSecond": 7262463.965040909,
+  "averageDecimalMegabytesPerSecond": 7.26246396504091,
+  "authorizeElapsedMillis": 801,
+  "artifactHeadersElapsedMillis": 1105,
+  "installElapsedMillis": 5862,
+  "installFinishedObserved": true,
+  "installFinishedCounter": 1093552774,
+  "expandedBytesFromCounter": 546776387,
+  "installCounterMeaning": "artifact.sizeBytes + artifact.expandedSizeBytes; not additional network bytes",
+  "postCaptureDownloadServiceRecordPresent": false,
+  "postCaptureForegroundServiceRecords": 0,
+  "newDownloadFailureEventsInCapturedAttempt": 0,
+  "noAppStopOrSettingsMutationByCollector": true,
+  "rawLogsPrivateOnly": true,
+  "gameTitleProvidedByOperator": false,
+  "physicalAuthorizedDownloadAndInstallValidated": true,
+  "operatorReportedSpeedImprovement": "mais que dobro velocidade",
+  "previousOriginControlledBenchmarkPerformed": false,
+  "measuredSpeedImprovementRatio": null,
+  "socketHostIndependentlyObserved": false,
+  "directOriginSelectionEvidence": "Exact installed R141 DEX28 compiled from byte-pinned source selects the direct origin for every canonical artifact GET; destination is inferred from code, not independently observed socket/Host",
+  "physicalCancelFreshGrantTestPerformed": false,
+  "gameplayValidated": false,
+  "events": [
+    {
+      "deviceLoggedUTC": "2026-10-13 19:50:13.247",
+      "event": "AUTHORIZE",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "deviceLoggedUTC": "2026-10-13 19:50:13.256",
+      "event": "AUTHORIZE_ELAPSED_MS",
+      "status": 0,
+      "count": 801
+    },
+    {
+      "deviceLoggedUTC": "2026-10-13 19:50:14.367",
+      "event": "ARTIFACT",
+      "status": 200,
+      "count": 0
+    },
+    {
+      "deviceLoggedUTC": "2026-10-13 19:50:14.367",
+      "event": "ARTIFACT_HEADERS_ELAPSED_MS",
+      "status": 0,
+      "count": 1105
+    },
+    {
+      "deviceLoggedUTC": "2026-10-13 19:51:29.656",
+      "event": "DOWNLOAD_ELAPSED_MS",
+      "status": 0,
+      "count": 75288
+    },
+    {
+      "deviceLoggedUTC": "2026-10-13 19:51:29.656",
+      "event": "DOWNLOAD_BYTES",
+      "status": 0,
+      "count": 546776387
+    },
+    {
+      "deviceLoggedUTC": "2026-10-13 19:51:35.519",
+      "event": "INSTALL_ELAPSED_MS",
+      "status": 0,
+      "count": 5862
+    },
+    {
+      "deviceLoggedUTC": "2026-10-13 19:51:35.520",
+      "event": "INSTALL_FINISHED",
+      "status": 0,
+      "count": 1093552774
+    }
+  ],
+  "privateCaptureSha256": "da7348ab9d6ad455b3acef69e869c9182b8bf1c8c6051c5892c277c002216ad1",
+  "privateAppLogSha256": "861fc69d7d39cc7e994c1698439a3bc551e0edf815fcc7671546b478e5d6d90e",
+  "limits": [
+    "One authorized Android download completed; not all games/platforms tested",
+    "Average is observed artifact bytes over the existing transfer body timer, not a paired old/new WAN benchmark",
+    "The passive app main buffer does not prove absence of every ANR/native crash",
+    "Server cancellation/regrant receipts are separate; this Android trial completed without cancellation"
+  ]
+}

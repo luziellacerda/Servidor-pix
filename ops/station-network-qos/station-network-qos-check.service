@@ -1,0 +1,16 @@
+[Unit]
+Description=Check Station network queue ownership
+After=network-online.target station-network-qos.service
+Requires=station-network-qos.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/station-network-qos/policy.py check
+CapabilityBoundingSet=CAP_NET_ADMIN
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK

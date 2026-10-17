@@ -1,0 +1,13 @@
+{
+  "schema": "station.psx.review-input-seals.v1",
+  "files": {
+    "reviewed-library.json": "fd5d55c4c4a04c9761ac3f9245ae12bc465d081e5a90dfc9d8d547948dd14da3",
+    "evidence/core-qualification.json": "83bf191e60b48c45113045d8d60b7a7ea1780fce0f77db7cad660602eefc3a3d",
+    "evidence/software-mode-review.json": "6d7ffac05f92c22ed9b387db8281ee8b86783252c7884b6a18eb50f3c6580237",
+    "prepare_psx_online.py": "39fde9e88ddb0830acba4877e32277cbda5837fdcea67bd4bc6e7d55076a65b9",
+    "disc-inventory.json": "9dbcc2352b2dd30661f5a8316c0d88f8305ac2647695bb1b6e1f0a49a75810f8",
+    "catalogo-psx-completo.csv": "95d1839ac677c7eff2050783d2ca6887f47553d99eb14beadfb60a1e6836f82d"
+  },
+  "privateProofRunnerSha256": "f6a75536a4fce648cd387d8eef37bb381e49db7b072fbf2394eb9391d6523ecf",
+  "privatePublisherSha256": "740af2aeff027a8c766f017d5b0826dcdcdaab6dc84c8d4ffe31f25594c6a12c"
+}

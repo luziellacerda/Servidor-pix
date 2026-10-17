@@ -1,0 +1,15 @@
+{
+  "localHealthStatus": 200,
+  "localHealthSeconds": 0.004672,
+  "publicApiResponded": true,
+  "publicRelayResponded": true,
+  "apiRestarted": false,
+  "cloudflaredRestartDuringCheck": false,
+  "priorFourParticipantReadinessFailureHttpStatus": 502,
+  "journalErrorClassCounts": {
+    "stream-canceled": 8
+  },
+  "exactCauseNotEstablished": true,
+  "noServiceOrNetworkConfigurationChanged": true,
+  "fullRawJournalKeptPrivate": true
+}

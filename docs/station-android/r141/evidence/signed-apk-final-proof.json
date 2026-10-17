@@ -1,0 +1,42 @@
+{
+  "schema": "station.r141.direct-downloads.final.v1",
+  "passed": true,
+  "apkSha256": "b5a76023860bceb2aa11c946c8003fa2d92951e700dbde3a498f8316857670d4",
+  "apkBytes": 2715008015,
+  "signatureCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "v2": true,
+  "v3": true,
+  "zipAlignment16KiB": true,
+  "sourceCommit": "240b7c0504252e542975089f585bd67d5264f074",
+  "checkedEntries": 13860,
+  "preservedEntryCount": 13855,
+  "replacedEntries": [
+    "assets/station-online/engines.json",
+    "classes28.dex",
+    "lib/arm64-v8a/libstation_dolphin_runtime.so",
+    "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+    "lib/arm64-v8a/libstation_psx_online.so"
+  ],
+  "addedEntries": [],
+  "removedEntries": [],
+  "preservedDex35Sha256": "49f381dc3ef375797d2db56b25a8a6c86a8150c2515ce115f4639b7bb243478e",
+  "preservedRetroArchSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "preservedDexPartitions": 39,
+  "preservedRetroArchDescriptors": 9,
+  "wrapperFingerprints": [
+    "e921e49466c45c6bbbf96da21f9f78502c55a06876418302d425e38ba855eed3",
+    "05f2d45ccd2b1cfd6bba6e0e0006a19459674bf6b2080953308597ccc69d91aa",
+    "7f5a50db3ce0810271992a2516d65e033a6cb736e2484dabadccb6f5d4e501bd"
+  ],
+  "revision": "R141",
+  "candidateOnly": true,
+  "diagnosticLoggerIncluded": false,
+  "nativeRuntimeRebuilt": false,
+  "promoted": false,
+  "installed": false,
+  "serverRegistered": false,
+  "serverRegistrationPending": true,
+  "physicalGameplayValidated": false,
+  "physicalDownloadValidated": false,
+  "speedImprovementMeasured": false
+}

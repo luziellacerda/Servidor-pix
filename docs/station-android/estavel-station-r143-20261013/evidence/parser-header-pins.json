@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "headers": {
+    "libretro-common/include/array/rhmap.h": "a19e2d207ebdbfb326f2b0a1e812500d52072dc90e0abe73f707b992cbff75cb",
+    "libretro-common/include/file/config_file.h": "bfbf74e9c0f2a8862a8e83ffffd4dc5f8a9e8307032110a3d8d47684f2ff011d"
+  }
+}

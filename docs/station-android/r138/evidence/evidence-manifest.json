@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "dateLocal": "2026-10-12",
+  "timezone": "America/Fortaleza",
+  "captures": [
+    {
+      "kind": "load",
+      "game": "Super Mario Kart",
+      "chipMode": "LLE",
+      "accuracyOverrides": "disabled",
+      "capturedTextSHA256Lf": "019623001508778a18f8a059a5be672e1ff1d600af10d8f4ce1752f71605b0f8",
+      "storedLogFileSHA256": "9590afb3c0d1e3760cd877be5659149402438ab1014798db1958da35e1cf150a"
+    },
+    {
+      "kind": "load",
+      "game": "Super Mario Kart",
+      "chipMode": "HLE",
+      "accuracyOverrides": "disabled",
+      "capturedTextSHA256Lf": "71dc62f2d2b5ddfa83e4f800ece2cfc31fd9e79e5ed2bbbc840fc8575d999fb9",
+      "storedLogFileSHA256": "ba2a0bc43784a19359973c5a8d3f133ff40e680511e513a4b145106f5d533813"
+    },
+    {
+      "kind": "load",
+      "game": "Super Mario Kart",
+      "chipMode": "HLE",
+      "accuracyOverrides": "enabled",
+      "capturedTextSHA256Lf": "fdfda7230f2483bb8cde0c2c2e48191e0da42f8a696fb107acddd4535b1b7a32",
+      "storedLogFileSHA256": "49d1d04a83697cb488a582f78b2248b1f1d46c9cbd73cda2304b01bd66606863"
+    },
+    {
+      "kind": "load",
+      "game": "Top Gear 3000",
+      "chipMode": "LLE",
+      "accuracyOverrides": "disabled",
+      "capturedTextSHA256Lf": "e1ea7fc2af7efa8824d3f0233cb217f404743f8e55d38ac21b8101d08bc06998",
+      "storedLogFileSHA256": "b7096a85f2f3fa5216630af278464eac1b2a34633f4d33206ccebdfc19302615"
+    },
+    {
+      "kind": "load",
+      "game": "Top Gear 3000",
+      "chipMode": "HLE",
+      "accuracyOverrides": "disabled",
+      "capturedTextSHA256Lf": "cad7918db6ba3ec2ac639750e1fa266c210c95495c558b62d8f4ea8b11b17527",
+      "storedLogFileSHA256": "bfb09353ac80d9c754e2208c247d39df655ce6b3fe335d3e5ce5afdea7bacd0a"
+    },
+    {
+      "kind": "load",
+      "game": "Top Gear 3000",
+      "chipMode": "HLE",
+      "accuracyOverrides": "enabled",
+      "capturedTextSHA256Lf": "f2f59624943547e14996778f1f133571b5e004f65cbeced198d6fcfb3cbe4e9a",
+      "storedLogFileSHA256": "be585f06d4c808fed3f8ba4dd7ff908921b570c7dfef9f009b6aa246b8abb7cc"
+    },
+    {
+      "kind": "frames",
+      "game": "Super Mario Kart",
+      "chipMode": "HLE",
+      "accuracyOverrides": "enabled",
+      "capturedTextSHA256Lf": "43423a35939f812d931b1632d930af7d7bc0152d52a81f19564b1e0c4441328d",
+      "storedLogFileSHA256": "2217a4943fd8b8a940accfc1802eec02f4e672948c3b6c25a7aef00db49978fa"
+    },
+    {
+      "kind": "frames",
+      "game": "Top Gear 3000",
+      "chipMode": "HLE",
+      "accuracyOverrides": "enabled",
+      "capturedTextSHA256Lf": "c18e439f9e9723c06060c0148993085e7fe289e08f70e9a68ccf1c52850c2064",
+      "storedLogFileSHA256": "976c38e1a1fa6615201d7316e73ca2e3bd811ebc78bd58161526f2b94c57f4ea"
+    }
+  ],
+  "physicalScope": "Isolated core load and bounded startup on moto g52; no room/network gameplay.",
+  "containsPrivateIdentifiers": false,
+  "nativeBuildInputs": {
+    "baseline": {
+      "inputReceiptSHA256": "3f8d4fb85f77dc53060d17ef0eb870f1a14ab30aa60ca476f3f76cdaaeb4749a",
+      "sanitizedReceiptSHA256": "3f8d4fb85f77dc53060d17ef0eb870f1a14ab30aa60ca476f3f76cdaaeb4749a"
+    },
+    "candidate": {
+      "inputReceiptSHA256": "173731fdaefe032a3d6bf96c40539bad6cbaa8f28bf31df5d817d352a7cd700a",
+      "sanitizedReceiptSHA256": "173731fdaefe032a3d6bf96c40539bad6cbaa8f28bf31df5d817d352a7cd700a"
+    }
+  },
+  "probeSources": {
+    "native-core-probe.c": "f0c04ab0f65ce5f4baca4498ecf717b86e2aeb856a125cf079a49c241c53ed1c",
+    "native-core-frame-probe.c": "527966b203362c95c704d65a1d33b81b3a6719e09a14245f8e7a957ef09bd1ef"
+  },
+  "evidenceFilesSHA256": {
+    "frame-probes.json": "48b166d4254ce97005e1c3a92907e9c3e0e38a00b15057fc700def026a6646aa",
+    "load-probes.json": "649e5e2cbbbaba52c4b609e771dcab6962bcdc37b46d5fe40a9439ca754b1e54",
+    "native-build-baseline.json": "3f8d4fb85f77dc53060d17ef0eb870f1a14ab30aa60ca476f3f76cdaaeb4749a",
+    "native-build-candidate.json": "173731fdaefe032a3d6bf96c40539bad6cbaa8f28bf31df5d817d352a7cd700a",
+    "probe-recipe-reproduction.json": "cc1d40e6ba6dc5308a13a1d06c4d55c3344636fe7cf69674334ef24faa5312a3"
+  },
+  "publicProbeRecipeSHA256": {
+    "build_probes.py": "9e8e16bb2a18b4f256d513ae9a8a7908582a4ff37c760de45bf9e547f8511e03",
+    "prepare_frame_probe.py": "f1e05856fa6bbd827188ffc1b424d9065bc61d19fcc461044852c416f7c275bd"
+  }
+}

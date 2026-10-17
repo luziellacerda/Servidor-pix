@@ -1,0 +1,18 @@
+{
+  "schema": "station.r162.kit-only-operator.v1",
+  "sha256": {
+    "enroll-current-from-usb.py": "9ac1da65843aff420a8edbaddffa0f6f047f6ebc730fd0d39c40987b9b81ca42",
+    "received_policy.py": "a40fe74a9ebfe6ffe051b2567f60cc327715a2af1f7a7de88c60e8b6798e2f9e",
+    "prove-current.py": "60dd697c3594e76d592a9064d2f161f3fbd9df44b869d3bb0b7963bb307f8996",
+    "four-player-complete-check.py": "a3ad6b3a500816c2af461772631afc91a5cab2ae2860e8d7675ced410c0623e6",
+    "proof_http.py": "b5b5655f440aaa017a340f2d1c30ae0035c88c9ae8905d387a9532e93e098647",
+    "resume-321/resume-321.py": "3c8e8779d05ffe8ae885a760b93e5088ecc1f99f822cc6ce18d9eec774df7eb7",
+    "proof-only/prove-only.py": "47b7d8e04eddb373dcde6ffa7d1f6e6a41e9aa644214bab7a18038c40fe09d80"
+  },
+  "apkNotRequired": true,
+  "actualKitHashAnd27BinariesRequired": true,
+  "first78TransactionNotRepeated": true,
+  "compactJsonUsedForPending321": true,
+  "protectedRegistrarAndItsLimitsUnchanged": true,
+  "nativeLinuxAuthenticationRequired": true
+}

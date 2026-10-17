@@ -1,0 +1,67 @@
+{
+  "schema": "station.r147.historical-download-branch.public-audit.v1",
+  "appBranchCommit": "f5145968ec86931186f99ebfe4af172b71580ff8",
+  "serverBranchCommit": "c8817a2c0e6bfadef7c422cd041c431697f70410",
+  "report": {
+    "recordedAtUtc": "2026-10-13T20:04:07.235507+00:00",
+    "source": "operator report in conversation",
+    "result": "Downloads improved by more than twice, approaching 10 megabytes per second.",
+    "approximateReportedPeakMegabytesPerSecond": 10,
+    "reportedImprovementMoreThanTwice": true,
+    "practicalDeviceDownloadTestReported": true,
+    "controlledSameFileAndNetworkComparisonRecorded": false,
+    "installedApkHashIndependentlyVerified": false,
+    "publicReleaseApproved": false
+  },
+  "qualifiedHistoricalApk": {
+    "revision": "DIRECT-DOWNLOAD-20261013",
+    "signedApkSha256": "e69616ee6377920f808f3b5a267f5592ffff9ae70c2bbe2063c6902cd903c02a",
+    "signedApkBytes": 2713648143,
+    "registeredOnServer": true,
+    "practicalDeviceDownloadTestReported": true,
+    "controlledSpeedComparisonRecorded": false,
+    "installedApkHashIndependentlyVerified": false
+  },
+  "appliedHistoricalRegistration": {
+    "status": "applied",
+    "utc": "2026-10-13T18:38:14.769601+00:00",
+    "apkSha256": "e69616ee6377920f808f3b5a267f5592ffff9ae70c2bbe2063c6902cd903c02a",
+    "enginesAdded": 4,
+    "profilesAdded": 78,
+    "profileCount": 11526,
+    "preparedModes": 6665,
+    "engineCount": 35,
+    "catalogRevision": 46,
+    "apiRestarted": false,
+    "psxHleGameApprovalsAdded": 0,
+    "physicalGameplayValidated": false,
+    "signedBindingsVerified": true,
+    "realLicensesPreserved": true,
+    "serverRebuildRequired": false
+  },
+  "protectedProbe": {
+    "authorizedCompleteDownloadVerified": true,
+    "artifactHashVerified": true,
+    "artifactBytes": 4194304,
+    "platform": "snes",
+    "publicCaHostnameAndSpkiVerified": true,
+    "foreignSessionRefused": true,
+    "grantReuseRefused": true,
+    "expiryRefused": true,
+    "socketDestination": "local-production-vhost",
+    "customerWanSpeedMeasured": false,
+    "androidDeviceTestCompleted": false,
+    "realLicensesPreserved": true
+  },
+  "oldUsbManifest": {
+    "revision": "DIRECT-DOWNLOAD-20261013",
+    "sha256": "e69616ee6377920f808f3b5a267f5592ffff9ae70c2bbe2063c6902cd903c02a",
+    "status": "test-operator-reported-speed-improvement"
+  },
+  "oldUsbManifestAdbPathEmpty": true,
+  "latestAppCommitChangesDocumentationAndTestManifestOnly": true,
+  "broadMergeWouldDowngradeCurrentR147Manifest": true,
+  "historicalRegistrationDoesNotRegisterCurrentFinal": true,
+  "downloadReportDoesNotMeasureOnlineLatencyFpsOrGameplay": true,
+  "operatorDeploySourcesNotCopiedOrExecuted": true
+}

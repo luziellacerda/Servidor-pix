@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "scope": "ARM64 API28 link/JNI probe only; no productive runtime identity, APK or phone installation",
+  "jniCount": 16,
+  "expectedJniCount": 16,
+  "exports": [
+    "nativeAuthorizeHumanExit",
+    "nativeAwaitOutgoing",
+    "nativeControl",
+    "nativeCopied",
+    "nativeDeliver",
+    "nativeFail",
+    "nativeFailure",
+    "nativeHumanExitAuthorized",
+    "nativePreparationFailed",
+    "nativePrepare",
+    "nativeReleaseReceipt",
+    "nativeRequestState",
+    "nativeResume",
+    "nativeStatus",
+    "nativeTakeCommit",
+    "nativeTakeOutgoing"
+  ],
+  "loadAlignments": [
+    16384,
+    16384,
+    16384,
+    16384
+  ],
+  "binarySha256": "32441f95b68fcc98edae9124c3641bd2d1eee5163c03ac992011835bbf5984b1",
+  "binaryBytes": 207024,
+  "notForDeployment": true
+}

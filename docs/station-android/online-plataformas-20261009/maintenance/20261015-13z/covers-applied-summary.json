@@ -1,0 +1,987 @@
+{
+  "passed": true,
+  "catalogRevision": 94,
+  "changes": [
+    {
+      "title": "Final Fight",
+      "edition": "Final Fight (USA)",
+      "sourceSha256": "8b20d1805e0d9e16d7717faecfe6581624ee89c8537b02b664e65693ee0a4bf2",
+      "servedSha256": "09e7e4d99ed4b16c58651519cbd4c00f774ca7a2c49207835aca051f504f182c",
+      "bytes": 154028,
+      "items": [
+        "31feb4cae74e98ed7f4462338f40287f",
+        "ea2c145672f92e2692f1bfa4c991c3b2"
+      ]
+    },
+    {
+      "title": "Final Fight 2",
+      "edition": "Final Fight 2 (USA)",
+      "sourceSha256": "9da659e9bae20f660ac769da87c3889678be37a978eb14200073505864f62106",
+      "servedSha256": "49c81a2f5ac98b10d9141d0aa0fd4db3f337292e1c7f04ddbe5eb9677244d408",
+      "bytes": 160066,
+      "items": [
+        "d5156a9ac3ee2e85bd9ba68fa037086f",
+        "2c59bd5f83c03dad8a1c171e40547e1a"
+      ]
+    },
+    {
+      "title": "Final Fight 3",
+      "edition": "Final Fight 3 (USA)",
+      "sourceSha256": "5d6b3f082e23a761e791b9adb9c9940b8a211effd6e79b93d2361bf0f4e3a108",
+      "servedSha256": "3cfcba2934b912fbcd231efe6b06a4c7ad87a08225627e5f91669f8b5dd04561",
+      "bytes": 161998,
+      "items": [
+        "62fe9cd9cbe35e1dc5663fd8c1627fca"
+      ]
+    },
+    {
+      "title": "Final Fantasy - Mystic Quest",
+      "edition": "Final Fantasy - Mystic Quest (USA)",
+      "sourceSha256": "eaf22b114a046f104b8d34cfffd9ca7c6ba88136c2cfd352d7c2acf3a1beed64",
+      "servedSha256": "21c5fcbc26dafe0739d1cc172aa6956e966d89facda478d94b2bd017b8c3e393",
+      "bytes": 142434,
+      "items": [
+        "station_a818e87c9dbb2a03379daae3552adad6"
+      ]
+    },
+    {
+      "title": "Final Fantasy III",
+      "edition": "Final Fantasy III (USA)",
+      "sourceSha256": "16a8fd9164ed8322571817b0d5c6d8310dd4ef2319e52c24c8f026112b3d98fc",
+      "servedSha256": "cb3893ac8334942b72afca501a34d40b1d583f2fc565deacdbf52855b1bbd932",
+      "bytes": 137789,
+      "items": [
+        "station_0b37b19b9069b7bf9610b6a7afa4ab96"
+      ]
+    },
+    {
+      "title": "Final Fantasy II",
+      "edition": "Final Fantasy II (USA)",
+      "sourceSha256": "8cd9130811be0b84a7325b3dbc9dd59f5fdb7f88742cc5a891451ce04481e46e",
+      "servedSha256": "1199713e80c655478b2f76fb67d4c1dda4dffc0ab4db0dab871819bfcb2b2371",
+      "bytes": 138131,
+      "items": [
+        "station_080086e36dc168e799479433811cd0f2"
+      ]
+    },
+    {
+      "title": "Final Fight 2",
+      "edition": "Final Fight 2 (USA)",
+      "sourceSha256": "9da659e9bae20f660ac769da87c3889678be37a978eb14200073505864f62106",
+      "servedSha256": "49c81a2f5ac98b10d9141d0aa0fd4db3f337292e1c7f04ddbe5eb9677244d408",
+      "bytes": 160066,
+      "items": [
+        "station_6afe9a2a90a3db86929269d4a7a3c459"
+      ]
+    },
+    {
+      "title": "Final Fight Guy",
+      "edition": "Final Fight Guy (USA)",
+      "sourceSha256": "6c4cbfb87ab15f6e973ecdac50586b2d073a48875e5dbde55b6c689145d0781f",
+      "servedSha256": "7bc04d1270c511c2b533cc1919e6b48541f1450f14356dfe472fe06613a72cb2",
+      "bytes": 158024,
+      "items": [
+        "station_88e8508991b2f24780c3c36cdf508ff1"
+      ]
+    },
+    {
+      "title": "Final Fight",
+      "edition": "Final Fight (USA)",
+      "sourceSha256": "8b20d1805e0d9e16d7717faecfe6581624ee89c8537b02b664e65693ee0a4bf2",
+      "servedSha256": "09e7e4d99ed4b16c58651519cbd4c00f774ca7a2c49207835aca051f504f182c",
+      "bytes": 154028,
+      "items": [
+        "station_14505b31b37987fe75e74deaabb66fa0"
+      ]
+    },
+    {
+      "title": "Firepower 2000",
+      "edition": "Firepower 2000 (USA)",
+      "sourceSha256": "72d69bd5b17d11de8a55eed9b49eb947c341d95e6497388244c61aaba9cec5d8",
+      "servedSha256": "8ae64e716577b1be8de1dc06f4913141149518cdc698679a25d3f46d036f9c5f",
+      "bytes": 159737,
+      "items": [
+        "station_10be810a28237bdd27a2137c16568668"
+      ]
+    },
+    {
+      "title": "Firemen, The",
+      "edition": "Firemen, The (USA) (Proto)",
+      "sourceSha256": "55b0e2f15020353cce0e8ce9611d675b878dea5fd306ffde7500d526883a6005",
+      "servedSha256": "9a2d43fb20bd0660818abb3bdfff8b418375e1f1595b595ac815d6ed5a52d167",
+      "bytes": 164659,
+      "items": [
+        "station_93747e765e00be4b6cf1314ea32d84ef"
+      ]
+    }
+  ],
+  "local": {
+    "passed": true,
+    "signedCatalogExact": true,
+    "checkedCovers": 61,
+    "covers": [
+      {
+        "itemId": "bd7c338745e46a055f7ab53b3c0e4363",
+        "coverId": "b718eae24d7929e8937b542841ebba2e",
+        "revision": 90,
+        "sha256": "cbf29056f817a8458332dde00e56b1280bfb899d83c3b9ecb3f77b8ab6222629",
+        "bytes": 219876
+      },
+      {
+        "itemId": "39334c5fa178dfb28c3f93ac5ce2f661",
+        "coverId": "3ea2072516b95c40936ab8dde3a78b19",
+        "revision": 90,
+        "sha256": "3a6c7276aa935eec76ceefcd6e55af165089c628dd83c114063407cd2b1c543c",
+        "bytes": 238333
+      },
+      {
+        "itemId": "station_4194034cc606ee0af1e916090ab8ec70",
+        "coverId": "cover_4194034cc606ee0af1e916090ab8ec70",
+        "revision": 90,
+        "sha256": "50558a873e46ac7caa59a37c666fe2b250637c9bea32c5a9f9f1c410404200bd",
+        "bytes": 183462
+      },
+      {
+        "itemId": "station_2cf50f13fd0bcbf82bcaf3904405370f",
+        "coverId": "cover_2cf50f13fd0bcbf82bcaf3904405370f",
+        "revision": 90,
+        "sha256": "bb2083ed84034d053baab6ceb6512c4403f3d07c578867cad4c10838d385433c",
+        "bytes": 218520
+      },
+      {
+        "itemId": "station_dfacfbd2fd649c979ed55d446b30ccf2",
+        "coverId": "cover_dfacfbd2fd649c979ed55d446b30ccf2",
+        "revision": 90,
+        "sha256": "a5a4473078e664349055b860146ed5cbe226f1e1c4f505861ad974ab42d75b7f",
+        "bytes": 241236
+      },
+      {
+        "itemId": "station_c991b2b04890b5ac6b3a0f7237129728",
+        "coverId": "cover_c991b2b04890b5ac6b3a0f7237129728",
+        "revision": 90,
+        "sha256": "d3c66e0c7bf2516b66dbe2cf487c93cd424ac14af0c081a4f609c9899e6b0416",
+        "bytes": 219175
+      },
+      {
+        "itemId": "station_ade27e99748fc259e61c1e616e62790b",
+        "coverId": "cover_ade27e99748fc259e61c1e616e62790b",
+        "revision": 90,
+        "sha256": "1d196f8a5a0059510c2f1ae5418173d9a482cedbe13e8cffac3e199792bcf657",
+        "bytes": 212563
+      },
+      {
+        "itemId": "station_15758b31e43d35c4cc2f99efd07a91da",
+        "coverId": "cover_15758b31e43d35c4cc2f99efd07a91da",
+        "revision": 90,
+        "sha256": "ade6ee7fdc7d62a30389e36638037fae613771c40d107053f5b04d9f52292366",
+        "bytes": 223024
+      },
+      {
+        "itemId": "station_184e80cfc00b4057cb96bf479cf38b48",
+        "coverId": "cover_184e80cfc00b4057cb96bf479cf38b48",
+        "revision": 90,
+        "sha256": "17fa6f455a104d6411a6995a553538fa348bd3a5927ceda8518d0221fdb95285",
+        "bytes": 230747
+      },
+      {
+        "itemId": "station_632f44b64ad6d8cdfffd75ed7af8274a",
+        "coverId": "cover_632f44b64ad6d8cdfffd75ed7af8274a",
+        "revision": 90,
+        "sha256": "2051518d19eed7fd880416efbad0aa7e0743fb18f0731a13f28d1884ce9d7ec6",
+        "bytes": 235498
+      },
+      {
+        "itemId": "station_40078034f6e0a3df307d045844dd3b42",
+        "coverId": "cover_40078034f6e0a3df307d045844dd3b42",
+        "revision": 90,
+        "sha256": "fcd41e0a9042c04617d7cbb0375556d8e45f4e14d47ae08f3228379df5f200e1",
+        "bytes": 224855
+      },
+      {
+        "itemId": "station_ac06c36d530a36a8e2e1360a520d8bf8",
+        "coverId": "cover_ac06c36d530a36a8e2e1360a520d8bf8",
+        "revision": 91,
+        "sha256": "8c0c646b84d8fdba54534e40bc6fe0e3376dd0553957aea5473fddbe9fb032a1",
+        "bytes": 240272
+      },
+      {
+        "itemId": "station_696cc13719d5c89263b8685b6eaf60bf",
+        "coverId": "cover_696cc13719d5c89263b8685b6eaf60bf",
+        "revision": 90,
+        "sha256": "8c0c646b84d8fdba54534e40bc6fe0e3376dd0553957aea5473fddbe9fb032a1",
+        "bytes": 240272
+      },
+      {
+        "itemId": "station_8ec6d85a680c00f82ab453d9ea344513",
+        "coverId": "cover_8ec6d85a680c00f82ab453d9ea344513",
+        "revision": 90,
+        "sha256": "60dda264542ceb16436a4536b8fc7d9a75d90cfb7b9adebd542b8e1a58d4f700",
+        "bytes": 226451
+      },
+      {
+        "itemId": "station_e41c5a002bb49a140e4fc0fec025f8e1",
+        "coverId": "cover_e41c5a002bb49a140e4fc0fec025f8e1",
+        "revision": 90,
+        "sha256": "d7b2f2924ba2dc2146cc71d6392cb6f00187a3841a606026333c9338f25243cf",
+        "bytes": 218870
+      },
+      {
+        "itemId": "station_d15cb1ab13d83bba42e6b9e98409d07e",
+        "coverId": "cover_d15cb1ab13d83bba42e6b9e98409d07e",
+        "revision": 90,
+        "sha256": "ac2584d1161d02cfeda2db3ef59f798a2517f8bbc0a6710f9a6efcde9cb96f9b",
+        "bytes": 238187
+      },
+      {
+        "itemId": "station_0998a461347b0dcc85c6805b2e6b70b6",
+        "coverId": "cover_0998a461347b0dcc85c6805b2e6b70b6",
+        "revision": 90,
+        "sha256": "6948f608032d1230a52502001547d5197b1b5dd4d9b78f745e5aecca93fe947b",
+        "bytes": 179800
+      },
+      {
+        "itemId": "station_89b783b0091b4baf2251d88595171c54",
+        "coverId": "cover_89b783b0091b4baf2251d88595171c54",
+        "revision": 90,
+        "sha256": "4af81c2c60f507cb9f680b253c8d795a059653c28230ebb6210c08ba4cb56678",
+        "bytes": 222881
+      },
+      {
+        "itemId": "station_675393a80fa6ca0936293fff5ed07351",
+        "coverId": "cover_675393a80fa6ca0936293fff5ed07351",
+        "revision": 90,
+        "sha256": "606efbc16f52a6a61d634e77e75c132479f8b86f2aec931582ab9b9cdef7032c",
+        "bytes": 219964
+      },
+      {
+        "itemId": "station_7a146b45c8afc5eaafffbe3579d32192",
+        "coverId": "cover_7a146b45c8afc5eaafffbe3579d32192",
+        "revision": 90,
+        "sha256": "a0dff307a511bb318fa168082b1f5ef71f78a3328b83d84e6f4a4d08be9db105",
+        "bytes": 213885
+      },
+      {
+        "itemId": "station_706033608edc46b8d321b17410964199",
+        "coverId": "cover_706033608edc46b8d321b17410964199",
+        "revision": 90,
+        "sha256": "4eacc0e56b9747ec3c1311bcc25ac1d0852466682856a97140a8ede6422d4c52",
+        "bytes": 225201
+      },
+      {
+        "itemId": "station_79ca63bf924c0b94ca216c97e8ccb5ec",
+        "coverId": "cover_79ca63bf924c0b94ca216c97e8ccb5ec",
+        "revision": 90,
+        "sha256": "998e7f2f40936f623e8e5810e22c81ebb896b9ba323804d4edbe95b8afd7d9ef",
+        "bytes": 238861
+      },
+      {
+        "itemId": "station_e4f3a48449c46025670d6d30898de805",
+        "coverId": "cover_e4f3a48449c46025670d6d30898de805",
+        "revision": 90,
+        "sha256": "03678262662229854850e9041d74f9b666e7df1535aef67335b71d4251db6e7f",
+        "bytes": 217483
+      },
+      {
+        "itemId": "station_f07bfe68cffaa7eae822906bb7cbe715",
+        "coverId": "cover_f07bfe68cffaa7eae822906bb7cbe715",
+        "revision": 90,
+        "sha256": "e455fb7adbac9525f603bcf085cbe3a94b8142d0fadb941ac80a6a6a0dcc0849",
+        "bytes": 210446
+      },
+      {
+        "itemId": "station_81844c5c3ef7ce8178db335c5ea18b03",
+        "coverId": "cover_81844c5c3ef7ce8178db335c5ea18b03",
+        "revision": 90,
+        "sha256": "9e76b1ca2e2e431063a82b26fe758830748492c95af442e191756516874b912d",
+        "bytes": 223457
+      },
+      {
+        "itemId": "station_a8bbb161b0be74fc8ed874e400acd78b",
+        "coverId": "cover_a8bbb161b0be74fc8ed874e400acd78b",
+        "revision": 90,
+        "sha256": "c6e31a8785527b5ebb2bbf085dcda68e7c43170a0623992b94541e044b14e495",
+        "bytes": 225659
+      },
+      {
+        "itemId": "station_dfba3446735e982e2aebf165b33fa771",
+        "coverId": "cover_dfba3446735e982e2aebf165b33fa771",
+        "revision": 90,
+        "sha256": "c379408420efabc3b5efc140cd5c67bfd3a3eae9d7d0c57b98b5664cf764b391",
+        "bytes": 209879
+      },
+      {
+        "itemId": "station_6dd191758a32801dccc18422d75cf54e",
+        "coverId": "cover_6dd191758a32801dccc18422d75cf54e",
+        "revision": 90,
+        "sha256": "6169ddff9ddd84518ba84b740521b638d10d2534080e2b595e49c8a30cada42a",
+        "bytes": 193084
+      },
+      {
+        "itemId": "station_6b63186ec8a03267acce6385e5c34761",
+        "coverId": "cover_6b63186ec8a03267acce6385e5c34761",
+        "revision": 90,
+        "sha256": "2a23412f38689a97a7fec1305843bdc020bc111a8981c0b17d0d404f45383150",
+        "bytes": 187013
+      },
+      {
+        "itemId": "station_c09a4ee6f97360bd09a884fa51b40960",
+        "coverId": "cover_c09a4ee6f97360bd09a884fa51b40960",
+        "revision": 90,
+        "sha256": "27d0b62c5d97dc441f7afae9d609c969eec7b9fee32b300b9a2c30d005e4af98",
+        "bytes": 229541
+      },
+      {
+        "itemId": "station_c6c3ef24f4bbb960eb51c471fb998470",
+        "coverId": "cover_c6c3ef24f4bbb960eb51c471fb998470",
+        "revision": 90,
+        "sha256": "f88189851b5ddc809f7e433deee7581048dfa9c0bc3aa45d182074e380fb090b",
+        "bytes": 185041
+      },
+      {
+        "itemId": "station_0dd7bc7a5b320b4de6ca2554139c336f",
+        "coverId": "cover_0dd7bc7a5b320b4de6ca2554139c336f",
+        "revision": 90,
+        "sha256": "325f4bdb7c9257a1901fdfd8ea4a5ba3a91091e00318ce40391e50423e8cc08c",
+        "bytes": 232212
+      },
+      {
+        "itemId": "station_6b0a82be57b3ddda7b761b600b451526",
+        "coverId": "cover_6b0a82be57b3ddda7b761b600b451526",
+        "revision": 90,
+        "sha256": "722697af3072098c6311936b77b59e47cdb42fe05f5b5811dd0d9b319c705a6d",
+        "bytes": 213935
+      },
+      {
+        "itemId": "station_368e6194d59a976bec4df88432c3f229",
+        "coverId": "cover_368e6194d59a976bec4df88432c3f229",
+        "revision": 90,
+        "sha256": "9be8acbc5d6c802614f01e478858e2c4a91926de766f5fde9fac05040c73d350",
+        "bytes": 178232
+      },
+      {
+        "itemId": "station_dcdc98559f1d0da61b0005e7dd589371",
+        "coverId": "cover_dcdc98559f1d0da61b0005e7dd589371",
+        "revision": 90,
+        "sha256": "9565eb999ddac5286697facf6df2b1938a4b8f3b839b0fda1bef3dcf5304fff5",
+        "bytes": 188835
+      },
+      {
+        "itemId": "station_7950304a432ad601a0fa8c14c694a255",
+        "coverId": "cover_7950304a432ad601a0fa8c14c694a255",
+        "revision": 90,
+        "sha256": "fcd41e0a9042c04617d7cbb0375556d8e45f4e14d47ae08f3228379df5f200e1",
+        "bytes": 224855
+      },
+      {
+        "itemId": "de85a88485d206651fa0bfde244cfc82",
+        "coverId": "d678e0970c09aaa505a3fd4c3e036c82",
+        "revision": 43,
+        "sha256": "205a7c37e0d174f3fcf40c98582dab36186573b935d8e267a9df2746c5161758",
+        "bytes": 219198
+      },
+      {
+        "itemId": "5092f2b508e4476924e033353f0d5292",
+        "coverId": "0e4ae3492f5b064af1dba214d175ed09",
+        "revision": 43,
+        "sha256": "205a7c37e0d174f3fcf40c98582dab36186573b935d8e267a9df2746c5161758",
+        "bytes": 219198
+      },
+      {
+        "itemId": "ecfc0d49c89efd10e4b0d3e2e921ab95",
+        "coverId": "2741b979148f261e2415ad9715a495e4",
+        "revision": 43,
+        "sha256": "f04eee853c88f44d8609080f57c2b5db780423a30dccfe4bdc8685bcb9ee4ac4",
+        "bytes": 205651
+      },
+      {
+        "itemId": "station_84841ef51b0fc5f1855a2dc84b5db323",
+        "coverId": "cover_84841ef51b0fc5f1855a2dc84b5db323",
+        "revision": 43,
+        "sha256": "bd1f6d961c706769125f721380cfd1bfc8ed5f9f2d373f167330a32a1f974744",
+        "bytes": 216442
+      },
+      {
+        "itemId": "station_ce47cba4706d271a5e22b603066f5344",
+        "coverId": "cover_ce47cba4706d271a5e22b603066f5344",
+        "revision": 43,
+        "sha256": "21918e679dce003ada71c4a9b2a332ba3e5985c34983549a643be03b90c827c7",
+        "bytes": 179685
+      },
+      {
+        "itemId": "station_5d40b2c0b9bf3c701cbad749618b7f9d",
+        "coverId": "cover_5d40b2c0b9bf3c701cbad749618b7f9d",
+        "revision": 43,
+        "sha256": "25ef9e77df51b911a68bc84ecd4477abb210675d86638ed83315a206daeb6c84",
+        "bytes": 198691
+      },
+      {
+        "itemId": "station_2e1819cf35effd9bffd2c71b3ade7260",
+        "coverId": "cover_2e1819cf35effd9bffd2c71b3ade7260",
+        "revision": 43,
+        "sha256": "0a88d73df784eda372208de002ff51041b3feef4582ad6d0b87671486a608208",
+        "bytes": 194892
+      },
+      {
+        "itemId": "station_5ff3d62fc7967b12a2ec1776dd7268ee",
+        "coverId": "cover_5ff3d62fc7967b12a2ec1776dd7268ee",
+        "revision": 43,
+        "sha256": "4f497ab0cef2bfdbb840b38e20086cdc9a684a84f0151dc3d00a717515d50025",
+        "bytes": 180426
+      },
+      {
+        "itemId": "station_9e085fea638b277792ee128b8901d1b0",
+        "coverId": "cover_9e085fea638b277792ee128b8901d1b0",
+        "revision": 43,
+        "sha256": "f155aac4a522ffc832ab24c38cdf847eb5e278b613ee15e362a1e3ff3f365a73",
+        "bytes": 195847
+      },
+      {
+        "itemId": "station_47a48b97db43eae022e607a387882b20",
+        "coverId": "cover_47a48b97db43eae022e607a387882b20",
+        "revision": 43,
+        "sha256": "ef60f2c1b885125c4b538fefb3ea8fc2baf17945c9a58b075d8a73d13a9779f5",
+        "bytes": 194053
+      },
+      {
+        "itemId": "station_52934997d48f7f43e364528d602d412d",
+        "coverId": "cover_52934997d48f7f43e364528d602d412d",
+        "revision": 43,
+        "sha256": "fb75a7b8835bd5d256ed05eae6de2cc4e6f836fd833f839e4dba1b5708501d95",
+        "bytes": 203467
+      },
+      {
+        "itemId": "station_f7a80fafbd6df3bcf1a5b286f923930b",
+        "coverId": "cover_f7a80fafbd6df3bcf1a5b286f923930b",
+        "revision": 43,
+        "sha256": "6514af6f75a0420c263cd545cd7c697bdd81148929c67ad393692bc9eaaff3a4",
+        "bytes": 213489
+      },
+      {
+        "itemId": "31feb4cae74e98ed7f4462338f40287f",
+        "coverId": "13a690b74ad1b0511760e58223d07520",
+        "revision": 94,
+        "sha256": "09e7e4d99ed4b16c58651519cbd4c00f774ca7a2c49207835aca051f504f182c",
+        "bytes": 154028
+      },
+      {
+        "itemId": "ea2c145672f92e2692f1bfa4c991c3b2",
+        "coverId": "b56a5ba5ef30c0ba9b5c7f6919b0911e",
+        "revision": 94,
+        "sha256": "09e7e4d99ed4b16c58651519cbd4c00f774ca7a2c49207835aca051f504f182c",
+        "bytes": 154028
+      },
+      {
+        "itemId": "d5156a9ac3ee2e85bd9ba68fa037086f",
+        "coverId": "c4052d21d49de0e6340c242902e0137f",
+        "revision": 94,
+        "sha256": "49c81a2f5ac98b10d9141d0aa0fd4db3f337292e1c7f04ddbe5eb9677244d408",
+        "bytes": 160066
+      },
+      {
+        "itemId": "2c59bd5f83c03dad8a1c171e40547e1a",
+        "coverId": "a86658bf7cfc564f0adc2b7aa84c5b2d",
+        "revision": 94,
+        "sha256": "49c81a2f5ac98b10d9141d0aa0fd4db3f337292e1c7f04ddbe5eb9677244d408",
+        "bytes": 160066
+      },
+      {
+        "itemId": "62fe9cd9cbe35e1dc5663fd8c1627fca",
+        "coverId": "b3025bfa06cbbb6def12c7401222723c",
+        "revision": 94,
+        "sha256": "3cfcba2934b912fbcd231efe6b06a4c7ad87a08225627e5f91669f8b5dd04561",
+        "bytes": 161998
+      },
+      {
+        "itemId": "station_a818e87c9dbb2a03379daae3552adad6",
+        "coverId": "cover_a818e87c9dbb2a03379daae3552adad6",
+        "revision": 94,
+        "sha256": "21c5fcbc26dafe0739d1cc172aa6956e966d89facda478d94b2bd017b8c3e393",
+        "bytes": 142434
+      },
+      {
+        "itemId": "station_0b37b19b9069b7bf9610b6a7afa4ab96",
+        "coverId": "cover_0b37b19b9069b7bf9610b6a7afa4ab96",
+        "revision": 94,
+        "sha256": "cb3893ac8334942b72afca501a34d40b1d583f2fc565deacdbf52855b1bbd932",
+        "bytes": 137789
+      },
+      {
+        "itemId": "station_080086e36dc168e799479433811cd0f2",
+        "coverId": "cover_080086e36dc168e799479433811cd0f2",
+        "revision": 94,
+        "sha256": "1199713e80c655478b2f76fb67d4c1dda4dffc0ab4db0dab871819bfcb2b2371",
+        "bytes": 138131
+      },
+      {
+        "itemId": "station_6afe9a2a90a3db86929269d4a7a3c459",
+        "coverId": "cover_6afe9a2a90a3db86929269d4a7a3c459",
+        "revision": 94,
+        "sha256": "49c81a2f5ac98b10d9141d0aa0fd4db3f337292e1c7f04ddbe5eb9677244d408",
+        "bytes": 160066
+      },
+      {
+        "itemId": "station_88e8508991b2f24780c3c36cdf508ff1",
+        "coverId": "cover_88e8508991b2f24780c3c36cdf508ff1",
+        "revision": 94,
+        "sha256": "7bc04d1270c511c2b533cc1919e6b48541f1450f14356dfe472fe06613a72cb2",
+        "bytes": 158024
+      },
+      {
+        "itemId": "station_14505b31b37987fe75e74deaabb66fa0",
+        "coverId": "cover_14505b31b37987fe75e74deaabb66fa0",
+        "revision": 94,
+        "sha256": "09e7e4d99ed4b16c58651519cbd4c00f774ca7a2c49207835aca051f504f182c",
+        "bytes": 154028
+      },
+      {
+        "itemId": "station_10be810a28237bdd27a2137c16568668",
+        "coverId": "cover_10be810a28237bdd27a2137c16568668",
+        "revision": 94,
+        "sha256": "8ae64e716577b1be8de1dc06f4913141149518cdc698679a25d3f46d036f9c5f",
+        "bytes": 159737
+      },
+      {
+        "itemId": "station_93747e765e00be4b6cf1314ea32d84ef",
+        "coverId": "cover_93747e765e00be4b6cf1314ea32d84ef",
+        "revision": 94,
+        "sha256": "9a2d43fb20bd0660818abb3bdfff8b418375e1f1595b595ac815d6ed5a52d167",
+        "bytes": 164659
+      }
+    ]
+  },
+  "public": {
+    "passed": true,
+    "signedCatalogExact": true,
+    "checkedCovers": 61,
+    "covers": [
+      {
+        "itemId": "bd7c338745e46a055f7ab53b3c0e4363",
+        "coverId": "b718eae24d7929e8937b542841ebba2e",
+        "revision": 90,
+        "sha256": "cbf29056f817a8458332dde00e56b1280bfb899d83c3b9ecb3f77b8ab6222629",
+        "bytes": 219876
+      },
+      {
+        "itemId": "39334c5fa178dfb28c3f93ac5ce2f661",
+        "coverId": "3ea2072516b95c40936ab8dde3a78b19",
+        "revision": 90,
+        "sha256": "3a6c7276aa935eec76ceefcd6e55af165089c628dd83c114063407cd2b1c543c",
+        "bytes": 238333
+      },
+      {
+        "itemId": "station_4194034cc606ee0af1e916090ab8ec70",
+        "coverId": "cover_4194034cc606ee0af1e916090ab8ec70",
+        "revision": 90,
+        "sha256": "50558a873e46ac7caa59a37c666fe2b250637c9bea32c5a9f9f1c410404200bd",
+        "bytes": 183462
+      },
+      {
+        "itemId": "station_2cf50f13fd0bcbf82bcaf3904405370f",
+        "coverId": "cover_2cf50f13fd0bcbf82bcaf3904405370f",
+        "revision": 90,
+        "sha256": "bb2083ed84034d053baab6ceb6512c4403f3d07c578867cad4c10838d385433c",
+        "bytes": 218520
+      },
+      {
+        "itemId": "station_dfacfbd2fd649c979ed55d446b30ccf2",
+        "coverId": "cover_dfacfbd2fd649c979ed55d446b30ccf2",
+        "revision": 90,
+        "sha256": "a5a4473078e664349055b860146ed5cbe226f1e1c4f505861ad974ab42d75b7f",
+        "bytes": 241236
+      },
+      {
+        "itemId": "station_c991b2b04890b5ac6b3a0f7237129728",
+        "coverId": "cover_c991b2b04890b5ac6b3a0f7237129728",
+        "revision": 90,
+        "sha256": "d3c66e0c7bf2516b66dbe2cf487c93cd424ac14af0c081a4f609c9899e6b0416",
+        "bytes": 219175
+      },
+      {
+        "itemId": "station_ade27e99748fc259e61c1e616e62790b",
+        "coverId": "cover_ade27e99748fc259e61c1e616e62790b",
+        "revision": 90,
+        "sha256": "1d196f8a5a0059510c2f1ae5418173d9a482cedbe13e8cffac3e199792bcf657",
+        "bytes": 212563
+      },
+      {
+        "itemId": "station_15758b31e43d35c4cc2f99efd07a91da",
+        "coverId": "cover_15758b31e43d35c4cc2f99efd07a91da",
+        "revision": 90,
+        "sha256": "ade6ee7fdc7d62a30389e36638037fae613771c40d107053f5b04d9f52292366",
+        "bytes": 223024
+      },
+      {
+        "itemId": "station_184e80cfc00b4057cb96bf479cf38b48",
+        "coverId": "cover_184e80cfc00b4057cb96bf479cf38b48",
+        "revision": 90,
+        "sha256": "17fa6f455a104d6411a6995a553538fa348bd3a5927ceda8518d0221fdb95285",
+        "bytes": 230747
+      },
+      {
+        "itemId": "station_632f44b64ad6d8cdfffd75ed7af8274a",
+        "coverId": "cover_632f44b64ad6d8cdfffd75ed7af8274a",
+        "revision": 90,
+        "sha256": "2051518d19eed7fd880416efbad0aa7e0743fb18f0731a13f28d1884ce9d7ec6",
+        "bytes": 235498
+      },
+      {
+        "itemId": "station_40078034f6e0a3df307d045844dd3b42",
+        "coverId": "cover_40078034f6e0a3df307d045844dd3b42",
+        "revision": 90,
+        "sha256": "fcd41e0a9042c04617d7cbb0375556d8e45f4e14d47ae08f3228379df5f200e1",
+        "bytes": 224855
+      },
+      {
+        "itemId": "station_ac06c36d530a36a8e2e1360a520d8bf8",
+        "coverId": "cover_ac06c36d530a36a8e2e1360a520d8bf8",
+        "revision": 91,
+        "sha256": "8c0c646b84d8fdba54534e40bc6fe0e3376dd0553957aea5473fddbe9fb032a1",
+        "bytes": 240272
+      },
+      {
+        "itemId": "station_696cc13719d5c89263b8685b6eaf60bf",
+        "coverId": "cover_696cc13719d5c89263b8685b6eaf60bf",
+        "revision": 90,
+        "sha256": "8c0c646b84d8fdba54534e40bc6fe0e3376dd0553957aea5473fddbe9fb032a1",
+        "bytes": 240272
+      },
+      {
+        "itemId": "station_8ec6d85a680c00f82ab453d9ea344513",
+        "coverId": "cover_8ec6d85a680c00f82ab453d9ea344513",
+        "revision": 90,
+        "sha256": "60dda264542ceb16436a4536b8fc7d9a75d90cfb7b9adebd542b8e1a58d4f700",
+        "bytes": 226451
+      },
+      {
+        "itemId": "station_e41c5a002bb49a140e4fc0fec025f8e1",
+        "coverId": "cover_e41c5a002bb49a140e4fc0fec025f8e1",
+        "revision": 90,
+        "sha256": "d7b2f2924ba2dc2146cc71d6392cb6f00187a3841a606026333c9338f25243cf",
+        "bytes": 218870
+      },
+      {
+        "itemId": "station_d15cb1ab13d83bba42e6b9e98409d07e",
+        "coverId": "cover_d15cb1ab13d83bba42e6b9e98409d07e",
+        "revision": 90,
+        "sha256": "ac2584d1161d02cfeda2db3ef59f798a2517f8bbc0a6710f9a6efcde9cb96f9b",
+        "bytes": 238187
+      },
+      {
+        "itemId": "station_0998a461347b0dcc85c6805b2e6b70b6",
+        "coverId": "cover_0998a461347b0dcc85c6805b2e6b70b6",
+        "revision": 90,
+        "sha256": "6948f608032d1230a52502001547d5197b1b5dd4d9b78f745e5aecca93fe947b",
+        "bytes": 179800
+      },
+      {
+        "itemId": "station_89b783b0091b4baf2251d88595171c54",
+        "coverId": "cover_89b783b0091b4baf2251d88595171c54",
+        "revision": 90,
+        "sha256": "4af81c2c60f507cb9f680b253c8d795a059653c28230ebb6210c08ba4cb56678",
+        "bytes": 222881
+      },
+      {
+        "itemId": "station_675393a80fa6ca0936293fff5ed07351",
+        "coverId": "cover_675393a80fa6ca0936293fff5ed07351",
+        "revision": 90,
+        "sha256": "606efbc16f52a6a61d634e77e75c132479f8b86f2aec931582ab9b9cdef7032c",
+        "bytes": 219964
+      },
+      {
+        "itemId": "station_7a146b45c8afc5eaafffbe3579d32192",
+        "coverId": "cover_7a146b45c8afc5eaafffbe3579d32192",
+        "revision": 90,
+        "sha256": "a0dff307a511bb318fa168082b1f5ef71f78a3328b83d84e6f4a4d08be9db105",
+        "bytes": 213885
+      },
+      {
+        "itemId": "station_706033608edc46b8d321b17410964199",
+        "coverId": "cover_706033608edc46b8d321b17410964199",
+        "revision": 90,
+        "sha256": "4eacc0e56b9747ec3c1311bcc25ac1d0852466682856a97140a8ede6422d4c52",
+        "bytes": 225201
+      },
+      {
+        "itemId": "station_79ca63bf924c0b94ca216c97e8ccb5ec",
+        "coverId": "cover_79ca63bf924c0b94ca216c97e8ccb5ec",
+        "revision": 90,
+        "sha256": "998e7f2f40936f623e8e5810e22c81ebb896b9ba323804d4edbe95b8afd7d9ef",
+        "bytes": 238861
+      },
+      {
+        "itemId": "station_e4f3a48449c46025670d6d30898de805",
+        "coverId": "cover_e4f3a48449c46025670d6d30898de805",
+        "revision": 90,
+        "sha256": "03678262662229854850e9041d74f9b666e7df1535aef67335b71d4251db6e7f",
+        "bytes": 217483
+      },
+      {
+        "itemId": "station_f07bfe68cffaa7eae822906bb7cbe715",
+        "coverId": "cover_f07bfe68cffaa7eae822906bb7cbe715",
+        "revision": 90,
+        "sha256": "e455fb7adbac9525f603bcf085cbe3a94b8142d0fadb941ac80a6a6a0dcc0849",
+        "bytes": 210446
+      },
+      {
+        "itemId": "station_81844c5c3ef7ce8178db335c5ea18b03",
+        "coverId": "cover_81844c5c3ef7ce8178db335c5ea18b03",
+        "revision": 90,
+        "sha256": "9e76b1ca2e2e431063a82b26fe758830748492c95af442e191756516874b912d",
+        "bytes": 223457
+      },
+      {
+        "itemId": "station_a8bbb161b0be74fc8ed874e400acd78b",
+        "coverId": "cover_a8bbb161b0be74fc8ed874e400acd78b",
+        "revision": 90,
+        "sha256": "c6e31a8785527b5ebb2bbf085dcda68e7c43170a0623992b94541e044b14e495",
+        "bytes": 225659
+      },
+      {
+        "itemId": "station_dfba3446735e982e2aebf165b33fa771",
+        "coverId": "cover_dfba3446735e982e2aebf165b33fa771",
+        "revision": 90,
+        "sha256": "c379408420efabc3b5efc140cd5c67bfd3a3eae9d7d0c57b98b5664cf764b391",
+        "bytes": 209879
+      },
+      {
+        "itemId": "station_6dd191758a32801dccc18422d75cf54e",
+        "coverId": "cover_6dd191758a32801dccc18422d75cf54e",
+        "revision": 90,
+        "sha256": "6169ddff9ddd84518ba84b740521b638d10d2534080e2b595e49c8a30cada42a",
+        "bytes": 193084
+      },
+      {
+        "itemId": "station_6b63186ec8a03267acce6385e5c34761",
+        "coverId": "cover_6b63186ec8a03267acce6385e5c34761",
+        "revision": 90,
+        "sha256": "2a23412f38689a97a7fec1305843bdc020bc111a8981c0b17d0d404f45383150",
+        "bytes": 187013
+      },
+      {
+        "itemId": "station_c09a4ee6f97360bd09a884fa51b40960",
+        "coverId": "cover_c09a4ee6f97360bd09a884fa51b40960",
+        "revision": 90,
+        "sha256": "27d0b62c5d97dc441f7afae9d609c969eec7b9fee32b300b9a2c30d005e4af98",
+        "bytes": 229541
+      },
+      {
+        "itemId": "station_c6c3ef24f4bbb960eb51c471fb998470",
+        "coverId": "cover_c6c3ef24f4bbb960eb51c471fb998470",
+        "revision": 90,
+        "sha256": "f88189851b5ddc809f7e433deee7581048dfa9c0bc3aa45d182074e380fb090b",
+        "bytes": 185041
+      },
+      {
+        "itemId": "station_0dd7bc7a5b320b4de6ca2554139c336f",
+        "coverId": "cover_0dd7bc7a5b320b4de6ca2554139c336f",
+        "revision": 90,
+        "sha256": "325f4bdb7c9257a1901fdfd8ea4a5ba3a91091e00318ce40391e50423e8cc08c",
+        "bytes": 232212
+      },
+      {
+        "itemId": "station_6b0a82be57b3ddda7b761b600b451526",
+        "coverId": "cover_6b0a82be57b3ddda7b761b600b451526",
+        "revision": 90,
+        "sha256": "722697af3072098c6311936b77b59e47cdb42fe05f5b5811dd0d9b319c705a6d",
+        "bytes": 213935
+      },
+      {
+        "itemId": "station_368e6194d59a976bec4df88432c3f229",
+        "coverId": "cover_368e6194d59a976bec4df88432c3f229",
+        "revision": 90,
+        "sha256": "9be8acbc5d6c802614f01e478858e2c4a91926de766f5fde9fac05040c73d350",
+        "bytes": 178232
+      },
+      {
+        "itemId": "station_dcdc98559f1d0da61b0005e7dd589371",
+        "coverId": "cover_dcdc98559f1d0da61b0005e7dd589371",
+        "revision": 90,
+        "sha256": "9565eb999ddac5286697facf6df2b1938a4b8f3b839b0fda1bef3dcf5304fff5",
+        "bytes": 188835
+      },
+      {
+        "itemId": "station_7950304a432ad601a0fa8c14c694a255",
+        "coverId": "cover_7950304a432ad601a0fa8c14c694a255",
+        "revision": 90,
+        "sha256": "fcd41e0a9042c04617d7cbb0375556d8e45f4e14d47ae08f3228379df5f200e1",
+        "bytes": 224855
+      },
+      {
+        "itemId": "de85a88485d206651fa0bfde244cfc82",
+        "coverId": "d678e0970c09aaa505a3fd4c3e036c82",
+        "revision": 43,
+        "sha256": "205a7c37e0d174f3fcf40c98582dab36186573b935d8e267a9df2746c5161758",
+        "bytes": 219198
+      },
+      {
+        "itemId": "5092f2b508e4476924e033353f0d5292",
+        "coverId": "0e4ae3492f5b064af1dba214d175ed09",
+        "revision": 43,
+        "sha256": "205a7c37e0d174f3fcf40c98582dab36186573b935d8e267a9df2746c5161758",
+        "bytes": 219198
+      },
+      {
+        "itemId": "ecfc0d49c89efd10e4b0d3e2e921ab95",
+        "coverId": "2741b979148f261e2415ad9715a495e4",
+        "revision": 43,
+        "sha256": "f04eee853c88f44d8609080f57c2b5db780423a30dccfe4bdc8685bcb9ee4ac4",
+        "bytes": 205651
+      },
+      {
+        "itemId": "station_84841ef51b0fc5f1855a2dc84b5db323",
+        "coverId": "cover_84841ef51b0fc5f1855a2dc84b5db323",
+        "revision": 43,
+        "sha256": "bd1f6d961c706769125f721380cfd1bfc8ed5f9f2d373f167330a32a1f974744",
+        "bytes": 216442
+      },
+      {
+        "itemId": "station_ce47cba4706d271a5e22b603066f5344",
+        "coverId": "cover_ce47cba4706d271a5e22b603066f5344",
+        "revision": 43,
+        "sha256": "21918e679dce003ada71c4a9b2a332ba3e5985c34983549a643be03b90c827c7",
+        "bytes": 179685
+      },
+      {
+        "itemId": "station_5d40b2c0b9bf3c701cbad749618b7f9d",
+        "coverId": "cover_5d40b2c0b9bf3c701cbad749618b7f9d",
+        "revision": 43,
+        "sha256": "25ef9e77df51b911a68bc84ecd4477abb210675d86638ed83315a206daeb6c84",
+        "bytes": 198691
+      },
+      {
+        "itemId": "station_2e1819cf35effd9bffd2c71b3ade7260",
+        "coverId": "cover_2e1819cf35effd9bffd2c71b3ade7260",
+        "revision": 43,
+        "sha256": "0a88d73df784eda372208de002ff51041b3feef4582ad6d0b87671486a608208",
+        "bytes": 194892
+      },
+      {
+        "itemId": "station_5ff3d62fc7967b12a2ec1776dd7268ee",
+        "coverId": "cover_5ff3d62fc7967b12a2ec1776dd7268ee",
+        "revision": 43,
+        "sha256": "4f497ab0cef2bfdbb840b38e20086cdc9a684a84f0151dc3d00a717515d50025",
+        "bytes": 180426
+      },
+      {
+        "itemId": "station_9e085fea638b277792ee128b8901d1b0",
+        "coverId": "cover_9e085fea638b277792ee128b8901d1b0",
+        "revision": 43,
+        "sha256": "f155aac4a522ffc832ab24c38cdf847eb5e278b613ee15e362a1e3ff3f365a73",
+        "bytes": 195847
+      },
+      {
+        "itemId": "station_47a48b97db43eae022e607a387882b20",
+        "coverId": "cover_47a48b97db43eae022e607a387882b20",
+        "revision": 43,
+        "sha256": "ef60f2c1b885125c4b538fefb3ea8fc2baf17945c9a58b075d8a73d13a9779f5",
+        "bytes": 194053
+      },
+      {
+        "itemId": "station_52934997d48f7f43e364528d602d412d",
+        "coverId": "cover_52934997d48f7f43e364528d602d412d",
+        "revision": 43,
+        "sha256": "fb75a7b8835bd5d256ed05eae6de2cc4e6f836fd833f839e4dba1b5708501d95",
+        "bytes": 203467
+      },
+      {
+        "itemId": "station_f7a80fafbd6df3bcf1a5b286f923930b",
+        "coverId": "cover_f7a80fafbd6df3bcf1a5b286f923930b",
+        "revision": 43,
+        "sha256": "6514af6f75a0420c263cd545cd7c697bdd81148929c67ad393692bc9eaaff3a4",
+        "bytes": 213489
+      },
+      {
+        "itemId": "31feb4cae74e98ed7f4462338f40287f",
+        "coverId": "13a690b74ad1b0511760e58223d07520",
+        "revision": 94,
+        "sha256": "09e7e4d99ed4b16c58651519cbd4c00f774ca7a2c49207835aca051f504f182c",
+        "bytes": 154028
+      },
+      {
+        "itemId": "ea2c145672f92e2692f1bfa4c991c3b2",
+        "coverId": "b56a5ba5ef30c0ba9b5c7f6919b0911e",
+        "revision": 94,
+        "sha256": "09e7e4d99ed4b16c58651519cbd4c00f774ca7a2c49207835aca051f504f182c",
+        "bytes": 154028
+      },
+      {
+        "itemId": "d5156a9ac3ee2e85bd9ba68fa037086f",
+        "coverId": "c4052d21d49de0e6340c242902e0137f",
+        "revision": 94,
+        "sha256": "49c81a2f5ac98b10d9141d0aa0fd4db3f337292e1c7f04ddbe5eb9677244d408",
+        "bytes": 160066
+      },
+      {
+        "itemId": "2c59bd5f83c03dad8a1c171e40547e1a",
+        "coverId": "a86658bf7cfc564f0adc2b7aa84c5b2d",
+        "revision": 94,
+        "sha256": "49c81a2f5ac98b10d9141d0aa0fd4db3f337292e1c7f04ddbe5eb9677244d408",
+        "bytes": 160066
+      },
+      {
+        "itemId": "62fe9cd9cbe35e1dc5663fd8c1627fca",
+        "coverId": "b3025bfa06cbbb6def12c7401222723c",
+        "revision": 94,
+        "sha256": "3cfcba2934b912fbcd231efe6b06a4c7ad87a08225627e5f91669f8b5dd04561",
+        "bytes": 161998
+      },
+      {
+        "itemId": "station_a818e87c9dbb2a03379daae3552adad6",
+        "coverId": "cover_a818e87c9dbb2a03379daae3552adad6",
+        "revision": 94,
+        "sha256": "21c5fcbc26dafe0739d1cc172aa6956e966d89facda478d94b2bd017b8c3e393",
+        "bytes": 142434
+      },
+      {
+        "itemId": "station_0b37b19b9069b7bf9610b6a7afa4ab96",
+        "coverId": "cover_0b37b19b9069b7bf9610b6a7afa4ab96",
+        "revision": 94,
+        "sha256": "cb3893ac8334942b72afca501a34d40b1d583f2fc565deacdbf52855b1bbd932",
+        "bytes": 137789
+      },
+      {
+        "itemId": "station_080086e36dc168e799479433811cd0f2",
+        "coverId": "cover_080086e36dc168e799479433811cd0f2",
+        "revision": 94,
+        "sha256": "1199713e80c655478b2f76fb67d4c1dda4dffc0ab4db0dab871819bfcb2b2371",
+        "bytes": 138131
+      },
+      {
+        "itemId": "station_6afe9a2a90a3db86929269d4a7a3c459",
+        "coverId": "cover_6afe9a2a90a3db86929269d4a7a3c459",
+        "revision": 94,
+        "sha256": "49c81a2f5ac98b10d9141d0aa0fd4db3f337292e1c7f04ddbe5eb9677244d408",
+        "bytes": 160066
+      },
+      {
+        "itemId": "station_88e8508991b2f24780c3c36cdf508ff1",
+        "coverId": "cover_88e8508991b2f24780c3c36cdf508ff1",
+        "revision": 94,
+        "sha256": "7bc04d1270c511c2b533cc1919e6b48541f1450f14356dfe472fe06613a72cb2",
+        "bytes": 158024
+      },
+      {
+        "itemId": "station_14505b31b37987fe75e74deaabb66fa0",
+        "coverId": "cover_14505b31b37987fe75e74deaabb66fa0",
+        "revision": 94,
+        "sha256": "09e7e4d99ed4b16c58651519cbd4c00f774ca7a2c49207835aca051f504f182c",
+        "bytes": 154028
+      },
+      {
+        "itemId": "station_10be810a28237bdd27a2137c16568668",
+        "coverId": "cover_10be810a28237bdd27a2137c16568668",
+        "revision": 94,
+        "sha256": "8ae64e716577b1be8de1dc06f4913141149518cdc698679a25d3f46d036f9c5f",
+        "bytes": 159737
+      },
+      {
+        "itemId": "station_93747e765e00be4b6cf1314ea32d84ef",
+        "coverId": "cover_93747e765e00be4b6cf1314ea32d84ef",
+        "revision": 94,
+        "sha256": "9a2d43fb20bd0660818abb3bdfff8b418375e1f1595b595ac815d6ed5a52d167",
+        "bytes": 164659
+      }
+    ]
+  },
+  "prior36Preserved": true
+}

@@ -1,0 +1,13 @@
+{
+  "copiedRuntimeIdentityMatches": true,
+  "enginesAssetSha256": "76b3cb61149293200cb8853784e6b6e4023f4e4c33b6b7cfcad8a954e1f9f519",
+  "incomingEngineCount": 8,
+  "inactiveGeolithPreserved": true,
+  "controllerHashes": [
+    "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+    "88568b97800afa017e3c75684effe23f3aad8e93f5b2ac947a0638a4268bd8f3"
+  ],
+  "validatedAgainstActualServerGenerator": true,
+  "serverPublished": false,
+  "signedApkSha256": null
+}

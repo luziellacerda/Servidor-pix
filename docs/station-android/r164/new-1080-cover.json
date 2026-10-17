@@ -1,0 +1,65 @@
+{
+  "schema": "station.r164.1080-cover-applied.v1",
+  "passed": true,
+  "published": true,
+  "name": "1080° Snowboarding",
+  "platform": "n64",
+  "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+  "coverId": "cover_c13a5bbc179ccbe871697999c62ba13d",
+  "sourceSha256": "2f8ee5b6d4c91979a7e75658def15f3daabc04b299aa44145f2c9a5efb3fdcc1",
+  "sourceBytes": 2698285,
+  "compiledSha256": "abd127d8f6668fc918c7cb5c46c3d5980a4867b52b2197397825ecc7d6529cbf",
+  "compiledBytes": 150488,
+  "outputFormat": "JPEG",
+  "colorMode": "RGB",
+  "width": 480,
+  "height": 720,
+  "jpegQuality": 90,
+  "uncropped": true,
+  "oldServedSha256": "b4f8596b77ecc09b887c2a1f5dd9a4833059f4d5c31bf8e205cf60415b85d330",
+  "oldMagazineSha256": "b4f8596b77ecc09b887c2a1f5dd9a4833059f4d5c31bf8e205cf60415b85d330",
+  "previousCatalogRevision": 99,
+  "catalogRevision": 100,
+  "previousItemRevision": 45,
+  "itemRevision": 100,
+  "cacheKey": "coverId + item.revision",
+  "changedMagazines": 1,
+  "changedBindings": 1,
+  "freshProtectedBaselineAndOldAuthenticatedBodyVerified": true,
+  "backupRecoverable": true,
+  "isolatedEffectiveScannerPassed": true,
+  "onlineRegistriesAndOtherCatalogRowsPreserved": true,
+  "local": {
+    "passed": true,
+    "signedCatalogExact": true,
+    "checkedCovers": 1,
+    "covers": [
+      {
+        "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+        "coverId": "cover_c13a5bbc179ccbe871697999c62ba13d",
+        "revision": 100,
+        "sha256": "abd127d8f6668fc918c7cb5c46c3d5980a4867b52b2197397825ecc7d6529cbf",
+        "bytes": 150488
+      }
+    ]
+  },
+  "public": {
+    "passed": true,
+    "signedCatalogExact": true,
+    "checkedCovers": 1,
+    "covers": [
+      {
+        "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+        "coverId": "cover_c13a5bbc179ccbe871697999c62ba13d",
+        "revision": 100,
+        "sha256": "abd127d8f6668fc918c7cb5c46c3d5980a4867b52b2197397825ecc7d6529cbf",
+        "bytes": 150488
+      }
+    ]
+  },
+  "authenticatedMimeDimensionsLengthAndSha256Verified": true,
+  "romBytesReadOrCopied": 0,
+  "apiRestarted": false,
+  "physicalNewCoverVerified": false,
+  "privateAuthority": "/mnt/DADOS/station-r164-git-20261015/cover/applied.json"
+}

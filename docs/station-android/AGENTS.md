@@ -1,3 +1,570 @@
+<!-- STATION-APP-UPDATES-20261017 -->
+## Atualizador interno autorizado, fonte preparada
+
+Ler o topo do MESMO handoff e updates-20261017/README.md/implementation.json.
+Sete classes novas + três hooks no cliente, três rotas protegidas e publicador
+privado no servidor. Código/testes preparados, sem deploy, APK de produção,
+instalação ou homologação Android. Backup privado/assinatura original ainda
+necessários; juntar correções PSX ec2c693. Fluxo por toque no aviso autorizado
+pelo mantenedor, preservando confirmação Android; não é permissão para
+instalar automaticamente por USB, alterar SDK ou contornar o sistema.
+Congelar fontes, preservar DEX fora do escopo e dados, renovar identidades e
+kit exato, cadastrar/validar antes de publicar APK. Não repetir R169 aplicada.
+80 checks servidor,43Java,8receitas,13publicador e regressões passaram;
+store/painel de laboratório são fixtures explicitadas, nunca empacotadas.
+Servidor f0aa/PID238611, rede, licenças, outros produtos preservados.
+
+<!-- STATION-PSX-RESUME-PACING-20261016 -->
+## PSX: correção de inicialização e espera de envio preparada
+
+Ler o topo do MESMO handoff e r169/diagnostics/psx-resume-race-20261016.
+Moto+A56 DEX35/runtime R169 iguais conferidos; NATIVE_DATAGRAM no convidado;
+partida ~51FPS/85%, espera25ms medida por Perfetto nos dois. Três correções
+em fonte no Git do app, com62+202916+16090+64+61+192+470 verificações e linkARM64.
+Nenhum APK corrigido instalado, nenhum dado/serviço/rede alterado aqui.
+Produção precisa compilar delta completo, manter XML/CAS/assinatura, regenerar
+identidades/kit exato; instalador MANUAL. Não reutilizar IDs antigos nem
+repetir cadastro/deploy R169 ou declarar candidata homologada. Usuário deixou
+os dois telefones para observação autônoma e volta08h17/10; não solicitar
+comandos repetidos. Respeitar sessões ativas e todas as pendências globais.
+
+<!-- STATION-R169-USER-TEST-SUCCESS-20261016 -->
+## Resultado informado pelo usuário
+
+Após a entrega R169, o usuário disse “funcioou em testes”. Relato positivo
+registrado no MESMO handoff e r169/server-return.json. Jogo/revisão/aparelhos/
+saída não especificados nesta mensagem; preservar essa precisão e o sucesso
+relatado. Não repetir implantação, cadastro ou provas pelo recebimento deste relato.
+
+<!-- STATION-R169-APPLIED-20261015 -->
+## R169 aplicada — ler o recibo e não repetir etapas
+
+O mesmo handoff e r169/server-return.json são a autoridade atual.
+Kit859b33b1/54arquivos53hashes27ELF, quatro novos owners/492 vínculos.
+Cat100/4744,95motores17388perfis12473modos; anteriores preservados.
+BuildC#3781bcc/operadorf1c2266/DLLf0aa8c5c2e41/PID238611; um restart sem sala.
+Leitor17MiB, scanner/registrador/módulo17/9MiB,256owners/manifesto1MiB ativos.
+Controle explícito/256KiBconteúdo/32porbinding/50000perfis e lógicaN64 preservados.
+1472C#/226HTTP/seisPythoncapacidade/seispreparador PASS. Preparador recebido
+corrigido para comparar declaração Android com política enriquecida, sem afrouxar gates.
+Capabilities84PSX157N64 assinadas local/público, admissões/recusas, PSX2/N644
+clientes sintéticos e saídaSTATE3 antes declose1000 PASS; NÃO é gameplay Android.
+PSX23modos2P/19edições,17impedidos/53locais; N64387/230MP/157solo,GC9/Wii3.
+Auditor4744 somente leitura:139revisadas,171locais,18pendentes,325semperfil,
+1087semmotorAPK,3003aprovaçõeshistóricas semprova,1formatoincompatível.
+Não aprovar por título/metadados, não publicar saídas privadas por edição.
+R168NoSuchMethodAndroid preservado; clientePSX usarR16968521db5, nãoR168.
+NenhumAPKrecebido/instaladoaqui. Instalador permanente MANUAL; produção relata
+ambosR169, mas piloto Capcom VS/quadro/som/controles/retornoconvidado25s pendente.
+Não repetir cadastro/deploy/provas/controladores históricos. Rootautoridade
+station-r169-20261015/completed.json PASSED e current-applied-audit.json fresca.
+Novas mutações exigem audit fresca, limites e rollback de dados/ferramentas/software
+compatíveis; restaurar só módulo8MiB sobre modosR169 é inválido.
+Scanner/timerhorário, licenças, demaisprodutos,ROMs/capas/saves/rede100800/R164 preservados.
+
+## Histórico preservado
+
+<!-- STATION-R168-APPLIED-CAPACITY-20261015 -->
+## R168 aplicada — correção de abertura PSX
+
+Cadastro e provas completas do servidor concluídos. Ler o topo do MESMO
+handoff e r168/server-return.json. Autoridade privada station-r168-capacity-20261015/completed.json PASSED.
+Kit c0de71c3, 51 arquivos/50 hashes/27 ELF, APK875fb069 por recibo do produtor.
+91 motores/16.896 perfis/11.981 modos; quatro owners/492 vínculos aditivos.
+PSX 84/93 decisões,23 modos2P/19 edições,17 impedidos/53 locais; N64 157/387.
+Conferência assinada local e pública, admissões/recusas, PSX2P/N644P e saída
+STATE3 antes de close1000 passaram. Não é gameplay físico Android.
+Capacidade de metadados por conteúdo 128→256KiB no C# e no único módulo instalado;
+demais limites preservados. WinBack133 perfis/nove R168, envelope189469B<524288B.
+1470 C#/226 HTTP/quatro Python passaram; todos os prefixos antigos preservados.
+Fonte b1d5364/DLL3480b991ac87/PID215916, um restart controlado sem sala,
+zero automáticos. Reparos N64/R165, DLL53d4/overrides anteriores e R164 preservados.
+NÃO repetir publicação/provas/deploy/R167. Recibo serverApplied=false do kit e
+bloqueio WinBack abaixo são históricos. Rollback só com dados/software
+compatíveis; retirar apenas o override novo não serve com a projeção R168.
+Instalador permanente MANUAL; confirmar mesmo APK R168 nos dois aparelhos e
+observar Capcom VS2P/quadro/som/controles/retorno convidado25s. Não pedir kit de novo.
+Preservar licenças, esquema, outros produtos, ROMs/artes/saves/rede100800 e pendências.
+
+## Histórico preservado
+
+<!-- STATION-R168-PSX-ANDROID-XML-HANDOFF-20261015 -->
+## R168: kit e handoff recebidos, cadastro ainda pendente
+
+Ler `r168/README.md`, `r168/HANDOFF-R168-PSX-ANDROID-XML-20261015.md` e
+`r168/server-kit-receipt-r168.json`. ZIP privado sem APK `c0de71c3a4e1`,
+commit `4733c00f` de `luziellacerda/TurboramaEmulationStation`; fonte
+TurboElden `e8c0e8c6`. O APK assinado R168 `875fb0696c4f` foi conferido
+pelo produtor, mas este ramo do Servidor-pix é somente documentação;
+`serverApplied=false`. R167 já está aplicada e não deve ser repetida.
+Conferir kit exato, cadastrar R168 aditivamente, requalificar modos por
+identidade completa e preservar a lógica N64. A exceção XML Android da R167
+foi corrigida no APK R168; gameplay PSX nos telefones permanece pendente.
+Não tratar este commit como cadastro ou deploy.
+
+## Histórico preservado
+
+<!-- STATION-PSX-ANDROID-XML-20261015 -->
+## PSX R167: falha de preparação Android confirmada
+
+Ler o topo do MESMO handoff e `docs/station-android/r167/diagnostics/psx-android-xml-20261015/incident.json`.
+Moto g52 R167 identificado pelo hash do APK no próprio aparelho; preparação
+Capcom VS falha em ParserConfigurationException antes de conectar o motor.
+Fonte StationPsxLaunch corrigido SHA bb045d8113c6ca7887a26c79b066a74ca79ad7f340d7032cf9399006db14ad4b:
+29 verificações Android reais, incluindo preferências intactas, e 64 JVM passaram.
+Nenhum APK novo compilado/assinado/instalado aqui. Produção precisa compilar
+sucessor com assinatura original, publicar kit exato e instalador USB manual.
+DEX35: 609 classes, 607 preservadas, root alterada e novo StationPsxLaunch$1;
+não reutilizar receita R166 de uma classe sem adaptação. Não repetir R167
+aplicada/provas/serviço. Crash mantém seus impedimentos. Serviço53d4 sem restart,
+rede/ROMs/saves/licenças preservados; logs/preferências/serial permanecem privados.
+As instruções R167 de instalar o APK antigo abaixo são histórico anterior ao erro.
+
+## Histórico preservado
+
+<!-- STATION-R167-APPLIED-20261015 -->
+## R167 aplicada: motores cadastrados e API pública conferida
+
+O retorno combinado da produção foi aplicado. Ler o [recibo](r167/server-return.json),
+o [contrato de consumo e piloto](r167/README.md) e os [492 vínculos exatos](r167/profiles-r167.json).
+A R166 não foi aplicada: foi substituída diretamente pela R167, conforme o pedido.
+Não executar o controlador R166 que ficou pendente no ciclo 20z.
+
+Kit privado `82cf0bff`: 48 arquivos, 47 hashes e 27 ELF ARM64 conferidos.
+Quatro motores novos: PSX `4d5c4cb8f609`, N64 `cf820ae1f2ca`, GameCube/Wii
+`5ce990f91db1`. Núcleos, 21 dependências, opções e controles preservados;
+os marcadores vinculam o novo carrossel. Os recibos da produção confirmam as
+40 partições DEX da R166 e a correção do nome `libc++_shared.so` no PSX.
+Nenhum APK recebido ou assinatura do APK verificada neste Linux.
+
+Baseline protegida: 83 motores, 15.912 perfis e 10.997 modos. Após o cadastro:
+**87 motores, 16.404 perfis e 11.489 modos**, catálogo 100 com 4.744 itens.
+Todas as linhas anteriores foram preservadas. Cobertura requalificada:
+
+- PSX: 84 edições, 93 decisões; 23 modos para duas pessoas em 19 edições,
+  17 modos impedidos e 53 classificações locais sem vagas online.
+- N64: 157 edições, 387 perfis; 230 modos multiplayer e 157 individuais.
+- GameCube: nove modos; Wii: três modos.
+
+Conteúdo, motor, core, runtime, perfil, controles e capacidade foram conferidos.
+Seis instruções novas de WinBack foram condensadas para respeitar o orçamento
+vigente, mantendo aprovação, capacidade, fontes e todos os registros antigos.
+Nenhum jogo foi aprovado pelo nome ou por `metadata.players`.
+
+Passaram as capabilities assinadas locais e públicas das 84 edições PSX e
+157 N64, com 23 admissões/167 recusas PSX e 230 admissões/245 recusas N64.
+Os quatro motores e os 12 modos GameCube/Wii foram conferidos. Transporte PSX
+com dois clientes e snapshot real de 4.456.448 bytes; N64 com quatro clientes,
+seis WSS, TLS/SPKI, prioridade e pausa/retomada passaram. A saída do anfitrião
+entregou STATE3 antes de close1000 nos dois clientes, com três tentativas do
+mesmo leave. Essas provas são sintéticas e não homologam gameplay Android.
+
+**Zero reinícios nesta entrega.** DLL `53d4adc9c114`, fonte `c0ca229`, PID 152812,
+NRestarts 0. A correção N64/R165 permanece ativa, sem nova lógica de jogo.
+Scanner ativo; licenças reais preservadas e contas próprias de teste removidas.
+ROMs, capas, saves, IDs, downloads, outros produtos, rede 100/800 e R164 preservados.
+Autoridade: `/mnt/DADOS/station-r167-git-20261015/completed.json`, PASSED.
+Não repetir cadastro, provas completas, DLL, capas ou operadores históricos.
+
+Produção: confirmar o instalador privado e instalar manualmente o mesmo APK
+R167 (`dd6f8f81…`) nos dois aparelhos, preservando dados. Testar as vizinhas
+10% mais largas e Capcom vs. SNK / VS com duas vagas na edição exata do README.
+Registrar cada hash instalado, primeiro quadro, som, controles e retorno do
+convidado por 25 segundos após sair o anfitrião. **R167/PSX Android ainda não
+estão homologados.** As demais pendências globais permanecem registradas.
+
+## Histórico preservado
+
+<!-- STATION-R165-APPLIED-20261015 -->
+## R165 aplicada: cadastro e saída confirmada — 15/10/2026
+
+Ler o topo do MESMO handoff, r165/server-return.json e r165/README.md.
+Autoridade privada station-psx-return-20261015-1736/completed.json PASSED.
+Quatro motores e 492 vínculos aditivos: catálogo100,83 motores,15.912 perfis,
+10.997 modos. Anteriores preservados. PSX:84 edições,23 modos2P em19 edições,
+17 impedidos e53 classificações locais sem vagas. N64:157 edições/387 perfis,
+230 modos multiplayer/157 individuais. GameCube9/Wii3.
+
+DLL53d4adc9c114/fontec0ca229 publicada após sombra no mesmo sandbox e sem salas:
+dois reinícios somente do Station. Leave confirmado entrega STATE3 antes de
+close1000, com janela máxima2s. DLLb347 e configurações antigas preservadas.
+Passaram1.467+226 verificações, sete regressões, capabilities locais/públicas
+de84PSX/157N64, admissões/recusas, transporte sintético PSX2P/N644P e saída
+pública com replay3x. Isso NÃO é gameplay Android. A56R165 por recibo do produtor;
+g52R165, partida e saída física pendentes. R164 estável preservada.
+
+NÃO repetir cadastro/provas completas/deploy/capas/R164/R162. Nenhum APK
+recebido. Limites, licenças reais, esquema, outros produtos, rede100/800,
+DNS/onboard, ROMs e artes intactos. Preservar recibos e pendências globais;
+não copiar aprovações por nome ou metadata.players.
+
+
+## Histórico preservado
+
+## R165: handoff urgente de cadastro - 15/10/2026
+Ler r165/HANDOFF-URGENTE-CADASTRO-R165-20261015.md. Kit privado bbe57e5 ja entregue; retorno PSX 3f55caa ainda vincula o motor R164. A56 R165 relata motor ausente/sem modos. Registrar owners R165 e qualificar modos por identidade completa, com recibo aplicado. Host-exit N64 220bc64 continua sem implantacao comprovada.
+
+## PSX publicado e mapa integral das 84 edições — 15/10/2026
+
+Ler o topo do MESMO handoff e `docs/station-android/psx-online-20261015/server-return.json`.
+Autoridades privadas station-psx-online-20261015/published.json e completed.json
+PASSED:93 novos perfis/modos,19 edições/23 modos2P aprovados,17 modos impedidos,
+53 classificações locais sem vagas.84 mapas/93 discos/84 capas e grants públicos,
+84 capabilities locais+públicas,23 admissões/167 recusas/2 clientes WSS passaram.
+Core ARM64 recebido executado nas84 em QEMU/Bionic; NÃO é APK/gameplay físico.
+Não declarar todos84 online nem copiar aprovações antigas. Cat100/79motores/
+15420perfis/10505modos,API2489/DLLb347 semrestart,anteriores preservados.
+NÃO repetir publicação/provas/DLL/capas ou operadoresR164. Mesma R164 PSX
+engine1b315b86/profile81c0,duas portas Standard. Impedimentos exatos e consumo no
+mapa/README; três sinopses e campos editoriais vazios registrados para próxima
+rodada de catálogo. Produção a762b46 confirma R164/N64 007 dois jogadores por
+relato humano/hash g52;3/4/saída e medições não homologados. Preservar esse recibo,
+fontes/recibos anteriores, licenças, rede100/800 e demais pendências globais.
+
+## Histórico preservado
+
+## R164 aplicada e capa de 1080° publicada — 15/10/2026
+
+Ler o topo do mesmo handoff e r164/server-return.json. Autoridade
+/mnt/DADOS/station-r164-git-20261015/completed.json PASSED. Kit privado 37e3b9dd, 40 arquivos/27 ELF,
+quatro motores/399 perfis adicionados, prefixos R162 e anteriores preservados.
+157 capabilities locais/públicas, 164 admissões/223 recusas e quatro clientes
+sintéticos passaram. Não é gameplay Android. Capa exata de 1080° publicada:
+JPEG 480×720/q90, 150488 bytes, hash abd127d8; cache coverId+item.revision.
+NÃO repetir cadastro/capa/DLL/R162/R161/R159. APK não recebido; A56 R164 por
+recibo da produção. Testar mesma R164/edição nos dois aparelhos e novo efeito
+da capa. Preservar pendências SNES, rede onboard, banda100/800 e demais produtos.
+
+## Histórico preservado
+
+## R162 aplicada por kit privado — 15/10/2026
+
+Ler o topo do mesmo handoff e r162/server-return.json. Kit a777e90a conferido,
+27 ELF/40 arquivos; APK não solicitado/recebido nem assinatura local alegada.
+Ponte VideoExt online nova, offline/core/opções preservados. Cadastro 78+321
+concluído; etapa de 78 não repetida após falha de tamanho do JSON indentado.
+JSON compacto semanticamente igual; limites/registrador protegido intactos.
+Autoridade /mnt/DADOS/station-git-return-20261015-1355/applied.json PASSED.
+157 capabilities locais/públicas, 164 admissões/223 recusas e quatro clientes sintéticos PASS.
+NÃO repetir cadastro/provas/DLL/R161/R159/boot recovery. Teste físico R162 e
+saída do anfitrião seguem separados/pendentes. Preservar capas 13z/rede/banda.
+
+## Histórico preservado
+
+## Manutenção13z aplicada — 15/10/2026
+
+Ler o topo do MESMO handoff e maintenance/20261015-13z/sanitized-receipt.json.
+Capas:11 revistas/13 vínculos publicados, catálogo94;61 provas locais+61 públicas.
+As36 diferenças de JPEG foram conciliadas como mesma arte/edição com outro
+codificador; preservadas sem replay11z. Autoridade privada
+/mnt/DADOS/station-maintenance-20261015-13z/covers-next-plan/applied.json PASSED.
+NÃO executar publicadores11z/13z nem repetir enrollment R161/R159/DLL.
+Restam3 PNGs exatos ausentes e6 novas artes sem edição instalada; paths/hashes
+em covers-pending.json. Novo input exige NOVO plano/baseline/scan.lock e o
+cover-sync.lock existente da produtora. R161g52/A56 pelo recibo da produção,
+mesmoAPK66f429d4; gameplay físico007 não homologado. Capturador corrigido para
+org.turboramastation.frontend e fixture passou. Rede/outrosprodutos/CRLF/tags
+preservados. Não pedir kit R161 de novo nem recriar artes ausentes.
+
+## Histórico preservado
+
+## R161 aplicada pela USB — 15/10/2026
+
+Ler o topo do mesmo handoff e r161/server-return.json. Kit bcfbe393/APK66f429d4
+conferidos neste Linux, 38 arquivos/26ELF, assinatura e certificado. Cadastro
+78+321 aplicado, quatro motores/399perfis; R159 e owners anteriores preservados.
+N64 owner656d6d7c017f/CPUdynarec/perfilef8bfd6e:157edições e provas assinadas,
+164admissões/recusas e quatro clientes sintéticos passaram. Não é gameplayAndroid.
+NÃO repetir cadastro/provas/DLL/boot recovery. Autoridade privada
+/mnt/DADOS/station-r161-usb-20261015/applied.json. Os dois aparelhos precisam do
+mesmo APK R161 para testar. Preservar rede onboard/DNS/banda100/800.
+Capas36/ciclo11z são recibo histórico: a divergência12z e o lote novo permanecem
+na manutenção própria; não publicar/reaplicar capas por este retorno.
+
+## Histórico preservado
+
+## Atualização 15/10/2026: diagnóstico N64, rede e capas
+
+Ler o topo do mesmo HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e
+r159/diagnostics/README.md. R159 já aplicada: não repetir cadastro/provas/deploy.
+282 verificações JVM com a política real de controles passaram; não são gameplay
+Android. Capturador ADB testado em fixture para a produção; usuário testará depois,
+telefone no PC do APK, conector remoto desconectado, causa física007 não confirmada.
+Preservar somente rede onboard e DNS corrigido conforme autoridade privada
+/mnt/DADOS/station-network-connectivity-20261015/completed.json. Não reativar Wi-Fi
+nem executar device reapply como consulta. As36 capas SNES foram aplicadas/provadas
+no ciclo11z/Cat89; não republicar.14 artes sem edição correspondente preservadas.
+Não mudar renderer/JIT/timeouts por hipótese; APK/serviços/ROMs/licenças intactos.
+
+## Histórico preservado
+
+## R159 aplicada; diagnóstico físico007 pendente — 14/10/2026
+
+Ler o topo do mesmo handoff e r159/server-return.json. Autoridade `/mnt/DADOS/station-r159-20261014/applied.json` PASSED: kit original USB d1f0b380 e APK4837be70 lidos/conferidos, 38 arquivos/26ELF; cadastro78+321 aplicado.67 motores/14127perfis/9215modos/Cat 84, 63 owners anteriores preservados, sem reinício da API 19631/DLLb347. N64R159 owner7d50f27b4702:387perfis/157edições/120MP/37solo.157 capabilities locais/públicas, 164 admissõesMP/157 recusasSolo/223contagens inválidas e4clientes sintéticos/6WSS/recuperação passaram. Não é gameplayAndroid. Importador MAXIMUM_TRUSTED_ENGINES=128, 512 KiB/hash/controles intactos; módulo instalado82d95a86;4regressõescapacidade+3versões+6hash passaram. NÃO repetir cadastro/provas/deploy/bootrecovery.
+
+Usuário relata007online preto com áudio travando, offline abre. Sem captura atual/ADB local nem hash dos dois aparelhos nessa tentativa; causa NÃOconfirmada. N64_OWNER_MISSING capturado eraR158, corrigida pela produçãoR159. Código online forçaGlide 64mk2+cached interpreter1; não alterar renderer/JIT/timeout sem evidência. Pesquisa oficial e captura no mesmo handoff. Produção corrigeAPK; última análise lifecycleb173499 preservada. DNS contornada APENAS nos clientes de teste/Git, mantendo TLS/hostkeys; sistema/rede intactos. API/scanner/timer/licençasreais/ROM/capas/outrosprodutos/banda100/800/tagsR143R157 preservados.36capas20z e aceiteAndroid pendentes: REVALIDAR plano de capas porque hash do módulo protegido mudou. Recibos originais da produção congelados; preferir retorno efetivo r159. Globalpartial.
+
+## Histórico preservado
+
+## Retorno R159 recebido; preservar distinção entre versões
+
+Produçãodf3ef713 confirmaAPKfc1d2d98 comoR158final e mesmo N64_OWNER_MISSING no g52. R159APK4837be70/motor7d50f27b4702 relatada assinada+instaladag52, mas ZIPprivado ainda não entregue/verificado aqui; R159ServerApplied=false. R158owner070241 está cadastrado. Ler r159/server-receiver-status.json e mesmo handoff. Não confundir relatório do produtor, cadastro do servidor e gameplay físico; não reexecutar operadores anteriores.
+
+## Boot posterior recuperado — 14/10/2026
+
+PCreiniciou18:19UTC−3; volumejogosnãoautomontado causou226/NAMESPACE naAPI. Recuperação aplicada: UUIDcorreto/entradafstabnofail/RequiresMountsFor somenteAPI+scanner, mesmaDLL, API19631ativa/NRestarts0. Capabilities assinadas007owner070241 locais/públicas PASS outra vez,387perfis preservados. Sala anterior não deve ser considerada aberta apósboot. ErroAndroidN64_OWNER_MISSING às18:08/18:09 continua responsabilidade da correção doAPK pela produção. Mesmo handoff/evidência `r157/current-usb-070241-20261014/boot-recovery.json`; autoridade privada /mnt/DADOS/station-n64-new-phone-20261014-204558/boot-recovery-applied.json. NÃOrepetiroperador.
+
+## Atual USB070241: servidor cadastrado; falha Android confirmada — 14/10/2026
+
+APKfc1d2d98/N64owner0702412628d2: 6ELF+20deps reais conferidos; cadastro78+321 aplicado, 63motores/13728perfis/8816modos/Cat79 no snapshot, semreinício. Parserreal387/157/zerofalhas; 157capabilities locais/públicas,164admissõesMP/157recusasSolo e4clientessintéticos/6WSS/recuperação PASS. SalaREAL007/Arena2P criada no SamsungA56, depois tentativa física2P falhou: APPCRASH :n64core/N64_OWNER_MISSING em StationN64Bridge.onServiceStart linha33, 18:08:37.586/18:08:39.444/18:09:20.217 UTC−3. Causa confirmada nosDEX35/36: CoreFragment passa ApplicationContext; propagate reconhece apenas Activity/serviço já registrado, omite station.n64.launch; CoreService recusa. Server2prontos/iniciado/0WSS/hasPlayedfalse. Produção corrige app e analisa convidado; não inventar causa específica do loop sem seuslogs. ServidorN64Ready=true, offline=false, gameplayAndroid=false. Não repetir enrollment/migrações. Mesmo handoff e r157/server-return.json; autoridade /mnt/DADOS/station-n64-new-phone-20261014-204558/applied.json e host-crash-confirmed.json. Arquivos temporários próprios removidos e ajuste de tela restaurado; sala real mantida para usuário. Fontescongeladas/tagsR143R157/API/scanner/outrosserviços/ROM/capas/licençasreais/100800 preservados. 36capas20z e aceiteAndroid continuam pendentes fora desta entrega.
+
+Ler [o mesmo handoff](HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md).
+
+## Histórico preservado
+
+<!-- STATION-USB-007-20261014 -->
+## USB 007: criação de sala confirmada no Samsung — 14/10/2026
+
+**Bloqueio de criação resolvido e conferido no aparelho.** O Samsung SM-A566E criou uma sala de **007: The World Is Not Enough**, modo **Arena**, com duas vagas. A tela “Sua sala” e o diagnóstico efetivo do Station confirmam a mesma edição e o motor atual. A sala real foi deixada aberta. Isso comprova a criação; não registra uma partida física com dois ou quatro celulares.
+
+Foram encontrados dois problemas concretos. O APK R157 instalado inicialmente tinha motores ainda sem cadastro. Depois do cadastro, o próprio DEX instalado reproduziu a recusa de classificação na linha43: o Android escapa a barra de `SN64/1` ao calcular o SHA256 da configuração, enquanto o servidor usava outra representação JSON. A configuração e os controles eram iguais, mas os hashes divergiam. O registrador de perfis, o importador e a receita do próximo kit agora usam os bytes do Android. Somente o fingerprint foi corrigido em1.425 perfis de sete motores N64; as aprovações, recusas, capacidades e binários não foram alterados.
+
+Durante a reconexão, o Samsung recebeu outro APK às15h57min31s: SHA256 `6203804f1590d5377c261ac079a7bf302decc9e8c7269ddd2495bfaac70de7c6`, derivado do R157 estável. O motor N64 atual é `mupen64plus-ae-33bf7021-n64-v3-30cb5db4dbc6`. O número dessa nova versão e seu commit ainda não tinham sido publicados na branch da produção; não foi inventado um rótulo R158. Os26 ELF da instalação atual foram lidos e conferidos por USB. Seus cores, opções, controles e vinte dependências coincidem com a política anterior, e o DEX35 é idêntico ao R157. O novo owner também foi cadastrado, em duas transações reais78+321; o cadastro R157 anterior permanece disponível. Nenhum ZIP original da produção foi recebido ou declarado verificado: a origem dos bytes foi o APK instalado autorizado.
+
+Para o APK atual:157 edições N64 classificadas,120 com multiplayer e37 individuais;387 perfis desse owner, incluindo321 decisões da revisão completa e66 modos anteriores. O DEX real executado no Android aceitou todos387, sem falhas. Capabilities assinadas locais/públicas das157 edições,164 admissões de modos multiplayer e157 recusas de modos individuais passaram. Quatro clientes sintéticos no transporte público também passaram; não são quatro Android executando jogos. Seis regressões de hash/migração e17 de renovação passaram.
+
+Consulte [estado atual e identidades exatas](r157/server-return.json), [causa, correção e consumo pelo app](r157/server-fingerprint-fix/README.md) e [confirmação da sala real](r157/server-fingerprint-fix/physical-room-created.json). Os dois aparelhos precisam do mesmo motor/revisão e da mesma edição para entrar juntos. A API não foi reiniciada; a janela nativa do Linux foi usada nas gravações protegidas. Capas, ROMs, licenças reais, serviços compartilhados, banda100/800 e tags estáveis foram preservados. A configuração temporária de tela USB foi restaurada e os arquivos de diagnóstico temporários do telefone foram removidos. As36 capas preparadas no ciclo18z continuam fora desta correção.
+
+Não repetir os cadastros R157/atual, a migração de hashes ou os operadores datados. Autoridades privadas: `/mnt/DADOS/station-usb-room-diagnostic-20261014-1819/applied.json`, `fingerprint-applied.json`, `current-apk-6203804f/applied.json` e `physical-room-created.json`. Fontes/recibos congelados e relatos anteriores permanecem abaixo como histórico.
+
+
+## Histórico anterior preservado
+
+# Manutenção 18h UTC — R157 instalada por recibo; capas preparadas — 14/10/2026
+
+Retornos08ac3f9d/bd0c51d2 recebidos: R157 assinada/instaladaA56 conforme produtora, aceitevisual/kit/USB/cadastro pendentes. R153–R156 retidas; NÃOAPLICAR. R152/R151 e157N64 já aplicadas/provadas, não repetir. CapasGit iguais;48locais novas,36revistas/36vínculos/34artes compiladas,14sem edição correspondente. Primeira authLinux concluiu mas faltouwebsockets antes de baseline/publicação; dependência agora usa venv existente. Tentativa2canceladasemroot após148s por erro do monitor corrigido; tentativa3expirou118s. NENHUMA capa/seed/fingerprint/catálogo publicada nem provaHTTP executada; API3297582/scannera10c78f53797/timers preservados. Ler MESMO handoff/maintenance/20261014-18z e /mnt/DADOS/station-maintenance-20261014-18z. Próximo ciclo conciliar published/applied antes de executar publicador novo com authnativa<=120s/baseline fresca/scan.lock. R157kit exige78modos/nova baseline/321decisõesN64 próprias; não relaxar replay por relato409. R143/CRLF/ROMs/capas/licenças/outros produtos/banda100/800/globalpartial preservados.
+
+## Histórico anterior preservado
+
+# N64 — coleção de 157 edições revisada — 14/10/2026
+
+**Aplicado e comprovado no servidor para R152/R151.** As 157 edições foram identificadas na ROM real e revisadas nos manuais originais: 120 têm multiplayer documentado e 37 são individuais. Entre as multiplayer, 85 permitem até quatro pessoas, duas até três e 33 até duas, conforme o modo. Não restam edições sem classificação nesta coleção.
+
+Publicação sem reinício da API: 51 motores, 12509 perfis e 7619 modos preparados; 642 perfis/modos novos, 321 por revisão. Corrigidas somente as duas permissões históricas que ofereciam multiplayer a jogos individuais. As capabilities assinadas locais e públicas das 157 edições, a admissão dos 164 novos modos multiplayer R152 e a recusa dos 157 modos individuais passaram. O transporte público com quatro participantes sintéticos também passou, incluindo portas independentes, barreira, bytes separados e recuperação. Isso não executa os 157 jogos em Android nem homologa o desempenho dos celulares.
+
+Ler o topo do MESMO handoff e n64-completo-20261014/server-return.json. Autoridade privada /mnt/DADOS/station-n64-complete-review-20261014/applied.json. Não repetir cadastros concluídos R151/R152, deploy da DLL ou scanner/quarentena. O operador completo /mnt/DADOS/station-n64-complete-review-20261014/apply-complete-review.py executa publicação e provas em uma invocação administrativa genuína; se houver recibo de enrollment/publicação, conciliar o estado antes de reexecutar. Os dois CRLF históricos server ficam fora dos commits.
+
+Produção6775e8ea mesclada: R156 visual instalada, aprovação pendente/kit não gerado; kitsR153/R154/R155retidos, última aplicação confirmadaR152. Não registrar kit retido ou inventar runtime final. Próximo kit aceito: fluxo R139 original78 modos mais preparador completo321 N64, baseline fresca/scan.lock/registrador vigente, sem nova DLL. R143 estável e outros serviços/licenças/capas/ROMs/banda100/800 preservados. Não falsear gameplay físico dos157/4Android. Manutenção horária existente conserva as pendências globais e acompanha a próxima entrega aceita.
+
+## Histórico anterior preservado
+
+# N64 R152 pronto no servidor; R151 preservada — 14/10/2026
+
+Ler o topo do MESMO handoff e r152/server-return.json. Kits R151/R152 da USB verificados e aplicados sob scan.lock, sem deploy/reinício. A56 agora R152 conforme novo documento USB, APKf06747b7/fonte6d76c1dd. Motor atual mupen64plus-ae-33bf7021-n64-v3-62d4d48b1184, runtime62d4d48b; R1518eda4863 também registrada. Catálogo49,51motores/11838perfis/6977modos, API3297582/DLLb3473cc0. Cada revisão4IDs/6ELF/20deps/78modos,66N64/9GC/3Wii/0HLEPS1novo, prefixos antigos conservados.
+
+Capabilities assinadas locais/públicas R151/R152 passaram. R152:1080Snowboarding2P criar/entrar/Pronto/iniciar; MarioKart64 quatro clientes/6WSS/READY/playing/24.615B/pausa/epoch2/reconexão/TLS+SPKI+prioridade passaram.66modos/33edições/26edições4P;124demais sem novo modo revisado desse owner. Não inventar gameplay em quatroAndroid. Licenças sintéticas removidas, reais/outrosserviços/índice/capas/ROMs preservados. Atualizar cache capabilities no app; todos jogadores mesma revisão/edição. STATUS servidor true/online agora; aceite físico não homologado.
+
+Autoridade /mnt/DADOS/station-r151-20261014/applied.json PASSED; published.json/enrollment-r152/r151 e provas existentes. NÃO REAPLICAR operadores/cadastro/DLL nem pedir kits já recebidos. WindWaker/quarentena/scanner aplicados continuam corretos; scanner a10c78f53797, timerativo. Mesmas branches/handoff/monitor, backup station-before-r151-r152-engines-20261014 confirmado, R143 estável intacta. SNES/N64 novas capas e limites100/800 do operador conservados. Fontes/receitas/recibos congelados e os doisCRLF históricos locais ficam intactos.
+
+
+## Histórico anterior preservado
+
+# App atual R151 exige seu kit; não confundir a liberação R149 — 14/10/2026
+
+Ler o topo do MESMO handoff, r151/README.md e r151/server-receiver-status.json. Retornoappbcb1fc6/fonteR151d5afd35/APKc6090d6 instaladoA56. Mensagem N64: indicadorOnline, nenhum modo aprovado para motor instalado. Exige engine mupen64plus-ae-33bf7021-n64-v3-8eda486330ca/runtime8eda4863, corefe6e810a igual. R149dcad0757 já aplicada e nova prova4clientes pública passou; STATUSr149 corrigido true refere-se SÓ R149. Não marcarR151aplicada nem relaxar vínculos por core igual.
+
+KitR151 SHA76cf298a4a9efffc068bddb94e312dacc10e0ca35aca2ffc57ddf8c7b8f51651 não encontrado noUSB(SERVIDORLER contémR149/WindWaker) ou busca nativa61.902pastas/367ZIPcandidatos. Uma pasta temporária privada de WhatsApp ficou fora, conectorPCAPKoffline. Receptor /mnt/DADOS/station-r151-20261014/kit-privado criado; pergunta assíncrona pedeZIPexato/caminho, semAPK/senhas. Receber6ELF20deps4IDs78modos,baselineprotegido fresco49+, preparar/registrar aditivo vigente/scan.lock, semdeploy/restart; devolvercapabilities1080Snowboardingpara2 e modos4PcomidentidadeR151. Arquivos congelados/receitas/recibos da produçãoR150/R151 preservados.
+
+WindWaker aplicado,catálogo49/API3297582/DLLb3473cc0/scannera10c78f53797,43motores/11682perfis/6821modos atuais preservados. Não repetir operadores/aplicados; manterglobalpartialporbytesR151pendentes. Não declararN64pronto para APKR151 enquanto sóR149cadastrada. R143estável intacta; mesmasbranches/handoff/monitor.
+
+## Histórico preservado integralmente
+
+# N64 R149 pronto para a produção: STATUS corrigido e prova pública atual — 14/10/2026
+
+Ler a seção atual do mesmo handoff e r149/evidence/server-n64-live-ready-20261014.json. A inconsistência que mantinha STATUSr149 com serverKitApplied=false/serverRegistrationConfirmed=false foi corrigida em ambos Gits: agora true, serverConsumerReady/n64ServerReady=true, n64ServerOffline=false. O consumerReady de aceite físico do APK permanece separado e não indica o servidor offline. README/recebimento abrem pelo estado atual; hashes/APK/kit/fontes congeladas/candidata/estável/flags físicas preservados.
+
+Nova prova pública15h19UTC com catálogo49/PID3297582 passou:66modos33edições,4clientes/slots1–4,6WSS,playing24.615B semmistura,queda/epoch2/retomada,TLS+SPKI+prioridade,próprias licenças sintéticas removidas. Motor mupen64plus-ae-33bf7021-n64-v3-dcad075758e5. 26edições permitem4;124outros sem modo revisado do owner,legados retidos; não inventar aprovação ou gameplay4Android. Consumir capabilities assinadas com clientMaximumPlayers=4/tupla exata/allowedPlayerCounts; não confundir estado físico global com disponibilidade do servidor. Sessão180s requer renovação pelo contrato existente em chamadas posteriores a transferências longas. Não reaplicar kit R149/quarentena/scanner nem pedir kit já recebido; R143estável intacta.
+
+## Histórico preservado integralmente
+
+# Wind Waker USB aplicado; scanner corrigido — 14/10/2026
+
+Ler a seção atual do MESMO handoff e r149/evidence/server-wind-waker-applied-20261014.json. Catálogo49/4690registros/4434visíveis: somente station_12b835c9539b4800a6bb29ca00a25f94 oculto e sem artifact; origem de546.776.387B em quarentena, bytes e artefato imutável retidos. Edição completa station_d0a6aa65e5900ba9167a200f8dccfae5 já estava no servidor e coincide com ISOUSB1.459.978.240B/SHA3ea3cc8f. Download público integral e catálogo/grant assinados passaram; nova autorização do defeituoso recusa503/STATION_ARTIFACT_NOT_READY; licenças sintéticas próprias removidas, reais preservadas. Usar no app The Legend of Zelda The Wind Waker sem Europe; atualização de catálogo não troca instalação antiga de outroID.
+
+A varredura encontrou KeyError artifact após a quarentena. Reproduzida a falha no scanner completo e corrigidos somente station_cartridge.py/atualizar-biblioteca-station.py: oculto sem artefato não converte/vincula; identidade histórica retida, visível sem artefato ainda rejeitado. Dois testes de integração passaram no ambiente descartável e cópia instalada,16 do operador passaram. Scanner efetivo /opt/turborama-station-library-quarantine-20261014-a10c78f53797/library-tools, exec0/timerativo. API segue PID3297582/DLLb3473cc0 sem restart;43motores/11682perfis/6821modos/N64R149 preservados. Outras entradas/serviços/licenças/configuração/banda100/800/capas preservados. BackupGit prévio station-before-wind-waker-quarantine-20261014 confirmado; R143estável intacta.
+
+Autoridade /mnt/DADOS/station-wind-waker-usb-20261014/applied.json PASSED e scanner-applied.json. NÃO reaplicar workflow inicial, quarentena ou publicação do scanner; o workflow inicial parou DEPOIS da publicação correta, por falha do scanner, e não fez rollback. Para eventual retirada da correção, conciliar primeiro a quarentena; scanner anterior falha com a linha sem artefato. Preservar os históricos congelados e o mesmo handoff. Não ampliar a quarentena a outros discos só por tamanho. Não houve novo APK ou gameplay online/pausa física homologados aqui. N64continua33edições/66modos/26edições4P,124demaissemperfilnativorevisado; demais pendências globais e manutenção horária existentes preservadas.
+
+## Histórico preservado integralmente
+
+# N64 R149 aplicado e transporte de quatro participantes comprovado — 14/10/2026
+
+Ler a seção atual do MESMO handoff `HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md` e `r149/server-return.json` no diretório documental correspondente. Kit USB R149 recebido e verificado: ed95ba61/12.181.272 B, APK698e8a79. Cadastro aplicado:43 motores/11.682 perfis/6.821 modos, quatro motores e78 modos novos; N64 owner mupen64plus-ae-33bf7021-n64-v3-dcad075758e5 com33 edições/66 modos revisados,26 edições de quatro jogadores. Os124 outros itens não têm modo revisado desse owner; legados retidos. Não declarar todos157 online ou quatro jogadores.
+
+Defeito efetivo corrigido na API e importador: cota32 por vínculo exato de motor, orçamento128KiB por jogo/conteúdo; versões históricas coexistem e resposta capabilities não trunca modos. Conker chegava a33 perfis totais. Release efetiva /opt/turborama-station-n64-ready-20261014-b3473cc01601, DLLb3473cc0160169f686501af914cdbf8ebfdf8dcaa4dff768e1106ee8461c9179, PID3297582/NRestarts0 no recibo. Um reinício controlado sóStation após zero salas; scanner na release nova passou exit0/timerativo. Catálogo48/4690IDs/4435visíveis, capas/ROMs/licenças/prefixos antigos/outros serviços preservados. BackupGit prévio station-before-n64-four-players-20261014; R143 estável intacta.
+
+1.463 checks C#,192 HTTP/TLS,9 Python passaram (10 testes root alheios ignorados). Local e público: quatro clientes sintéticos licenciados, slots1–4, três ligações/seis WSS, READY/playing reais,24.615B separados, pausa/reconexão/epoch/offsets corretos; TLS/pin/prioridade pública e limpeza das próprias licenças passaram. Isso não é gameplay em quatro Android. Todos participantes físicos precisam da mesmaR149; novo recibo confirma R149 no A56 e torna a recusa antiga de armazenamento histórica.
+
+Autoridade /mnt/DADOS/station-n64-online-audit-20261014/applied.json PASSED. Não reaplicar operadores/R141/R149 nem pedir este kit novamente. Futuras versões: kit exato do APK final e registrador aditivo vigente/scan.lock, sem repetir deploy destaDLL. CPU/JIT, prioridades e limites100/800 do operador preservados, sem NIC/portas/firewall/túnel alterados. SNES130revistas e N64USB132 mantêm precedência. R150 visual/novas artes/partida física e WindWaker mídia/quarentena permanecem separados, sem falsear conclusão global. Manutenção horária existente serializada; doisCRLF históricos não commitados preservados.
+
+## Histórico preservado integralmente
+
+# R147 — backup completo conferido
+
+Backup da candidata fonte `64a6da91aee9c61d26a3a85172af6521fcc82a36`, APK `c038a0d75113359187d8eb9d2762e8d7e4ceee1f3538d1982313fc1e3a781ad6` e kit `38041c427894dfd502bcc0d6859ca036630ebaab6c8df1ecd05f65a944f201ee` concluído: 57,665 arquivos/8,294,993,331 bytes verificados, incluindo 33.847 inputs originais do motor. Os dois bundles Git foram recuperados em repositórios bare novos, com fsck completo estrito, sem alternates, remotes ou reflogs; snapshots app `71873f584b503b825a1b1827f840bf54d6d9c22c` e servidor `c5ba9d636ffe7b98a07f55dfc252d49254e5633b` preservados. As dependências completas R146/R145 foram revalidadas; ferramentas/NDK e autoridade privada mantêm as referências aos checkpoints obrigatórios. R143 permanece a referência estável. A conclusão do backup não confirma instalação, partida ou aplicação do kit no servidor; o aceite para consumidor continua pendente. Ler r147/evidence/r147-backup-complete-summary.json. O resumo anterior de backup pendente e os demais históricos permanecem íntegros.
+
+## Histórico preservado integralmente
+
+## Retornos recebidos: 01h UTC e ramo histórico de downloads
+
+O recibo de 14/10/2026 às 01:05 UTC (app `8f7f8289be2318825be9843f14bd9fe34bb1534f`) reconheceu R145/R146 e a rota v3 direta da R146. Ainda descrevia a primeira fonte R147 6b em compilação; esse estado é histórico. A R147 final atual continua na fonte `64a6da91aee9c61d26a3a85172af6521fcc82a36`, APK `c038a0d75113359187d8eb9d2762e8d7e4ceee1f3538d1982313fc1e3a781ad6` e kit `38041c427894dfd502bcc0d6859ca036630ebaab6c8df1ecd05f65a944f201ee` de 12.183.965 bytes. STATUS, manifesto USB, fontes congeladas e BUILD-PROGRESS histórico permanecem intactos.
+
+Naquele ciclo a autenticação Linux falhou e não houve snapshot protegido fresco nem cadastro. A leitura protegida das 23h havia concluído; 39 motores/11.604 perfis/6.743 modos no retorno 01h são evidência anterior, não baseline atual. O catálogo 47 pertence ao retorno posterior das capas N64; a precedência das artes USB foi conservada. Zero kits encontrados no escopo acessível e 91 diretórios inacessíveis não provam ausência em todo armazenamento. Para concluir, entregar somente o ZIP R147 atual, autenticar localmente, obter baseline fresco, conferir seis ELF/20 dependências/quatro IDs/78 modos e registrar aditivamente pelo preparador e registrador vigentes sob scan.lock. Não há nova DLL, deploy/restart ou migração genérica exigidos por esses retornos. Cadastro aplicado e gameplay continuam sem comprovação correspondente.
+
+O ramo de downloads `f5145968ec86931186f99ebfe4af172b71580ff8` registra o relato prático de ganho superior ao dobro/pico aproximado de 10 MB/s na candidata histórica e696 sobre R139. Não houve comparação controlada nem SHA instalado obtido por ADB. A contraparte `c8817a2c0e6bfadef7c422cd041c431697f70410` registrou aquela composição no catálogo 46, com 35 motores; não registra a R147 atual. O teste protegido de 4 MiB foi em vhost local, sem medição WAN Android ou de partidas. Preservar esse relato como histórico; não sobrescrever o manifesto R147 pelo manifesto e696 com adbPath vazio nem executar seus operadores antigos. Ganho de download não mede RTT/FPS/gameplay. Ler evidence/server-return-20261014-01z-summary.json, evidence/historical-direct-download-branch-audit.json e evidence/current-kit-receiver-action.json; fontes e hashes em evidence/latest-return-source-sha256.json.
+
+### Corpo anterior preservado integralmente
+
+# R147 final compilada — teste físico e cadastro correspondente pendentes
+
+Fonte `64a6da91aee9c61d26a3a85172af6521fcc82a36`, 52 arquivos/48 pins; APK `c038a0d75113359187d8eb9d2762e8d7e4ceee1f3538d1982313fc1e3a781ad6`. Uma classe/quatro métodos DEX10 e uma linha de limpeza de boot Dolphin, core `3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29` após reprodução integral f7/92b/quatro hooks. Seis substituições/13.854 entradas/39 DEX; 345 bindings genéricos mudam só DEX10, core separado nos campos existentes. R145 visual/R146 rota e CPU/JIT/políticas/opções/controles preservados. Kit `38041c427894dfd502bcc0d6859ca036630ebaab6c8df1ecd05f65a944f201ee` preparado, seis bibliotecas/20 dependências/mesmos78modos, zero novas aprovações PS1 HLE; sem retorno aplicado ou gameplay físico comprovado. A leitura USB atual registrou 0 aparelho(s), sendo 0 autorizado(s). Instalação desta revisão conferida em 0 modelo(s) pelos recibos fornecidos; a leitura USB não prova instalação. Ler r147/STATUS e README. Backup R146 3.619 arquivos, R145 3.632 e R143 estável intactos. Tentativa6b/BUILD-PROGRESS permanecem históricos; não reescrever como prova final. Sem deploy/restart/migração genérica/promoção estável; repasse ao consumidor ainda não homologado.
+
+## Histórico preservado integralmente
+
+# R147 primeira base rejeitada; receita final em preparação
+
+Fonte6b permanece intacta. Baseline compilou mas não passou92b: perda37newlines em zconf.h e mapa metadata mGBA sobrescrito. .text/.rodata/runtime comparados exatos; debug/buildID diferentes. Ler r147/evidence/native-baseline-attempt1.json. Nova scope-final/namespaceEFinal em preparação, sem relaxar hashes e sem motor produtivo/APK/instalação/cadastro/gameplay. DEX4d e49files/45pins anteriores preservados. Backup R146 completo3.619files e2bundles recuperados/fsckstrict verificados; dependênciasR145/R143 e estável intactas. Nenhumdeploy/restart/migração/HLEgenérica.
+
+## Histórico preservado
+
+# R147 fontes publicadas; DEX conferido, motor em compilação
+
+Fonte `6b4eab2c9221bb698362547df822962cda81cee9`, 49 arquivos/45 pins. Uma classe/quatro métodos de posse de boot Dolphin já montados: 4.990 classes preservadas, inversão integral passou, DEX4d200405. Correção nativa de uma linha exige primeiro reproduzir f7/92b e quatro hooks; configuração passou, compilação integral em andamento. Ler r147/README e BUILD-PROGRESS. Nenhum APK R147, instalação, cadastro ou gameplay comprovado. R145 visual e R146 rota preservados pela receita, a conferir no pacote final. R143 estável intacta. Não aplicar kit antigo como se fosse R147; aguardar kit real correspondente. Sem deploy/restart/migração genérica, ampliação HLE ou mudança de desempenho. Backup R146 em preparação; R145 completo verificado.
+
+## Histórico preservado
+
+# R146 conexão v3 compilada; reparos Dolphin R147 em preparação
+
+Fonte `bfea454d04ef297e9dfd1b397e0bf25df3937e93`, APK `04930201ad2f1c016f3385b3f08248ed4fa112d482a98761d00494b7a937468a`. URI+TLS v3 direta integradas; API/login/downloads/legado, visual R145, motores/controles e reparos anteriores preservados. Cinco substituições/13.855 entradas/39DEX; duas classes e um método novo, inversão integral. TLS real CA+hostname+SPKI passou, sem sessão/gameplay. Ler r146/STATUS e README. Nenhum USB na última leitura; não afirmar instalação/partida/cadastro. Kit R146 `96d057769b4ac420fb01e6896ae3738a31a92efe19529d4592b72f71ee9817af` preparado, mesmos78modos, PS1 HLE zero novas aprovações. Dois defeitos Dolphin de inicialização/posse comprovados por fixtures e tratados em R147 separada, ainda não no APK. Backup completo R145 3.632 arquivos verificado; R143 estável intacta. Sem deploy/restart, preservar fontes congeladas/políticas/dados.
+
+## Histórico preservado
+
+# R145 visual compilada — motores online em investigação
+
+Ler r145/README e STATUS. Fonte `25d10b2322d2e5687c9dfacc71a826c3955fad5d`, APK `275f31b34145eb77c457b1a9c09bbff4034cc28a990b74121b0b1fd4573c5df0`; azul céu em fundos azuis e faixas solicitadas, somente dez literais/7 classes/9 métodos mais três cabeçalhos visuais. Inversão integral, 37 DEX/13.852 entradas e reparos anteriores preservados. Instalação/aceite físico conforme STATUS; não inferir pelo build. R143 estável intacta. Kit independente R145 `89c7fb016ab23a3ecf050e1ce2f83a3e0dfecfb93eb5763a895f3c5beac50fb8` preparado, não aplicado; mesmos78modos, PS1 zero novas aprovações HLE. Retorno23z/c926aa9 ainda R141. Próxima etapa N64/PS1/GC/Wii autorizada, mas R145 não contém reparo de gameplay/rota v3. Preservar fonte congelada, políticas, dados e desempenho; nenhum deploy/restart.
+
+## Histórico preservado
+
+# Sexta tentativa R144 — instalação nova autorizada
+
+A sexta tentativa instalou a R144 como instalação nova autorizada no Samsung A56. O SHA integral do APK e a identidade do novo pacote foram conferidos. A entrada oficial não foi observada automaticamente; a abertura da interface e a aprovação visual ainda precisam de confirmação humana.
+
+A quarta tentativa registrou INSTALL_FAILED_INSUFFICIENT_STORAGE. Depois, havia aproximadamente 15,15 GB disponíveis. A quinta tentativa parou na pré-validação, antes de instalar: o pacote estava ausente globalmente e para o usuário 0. O diagnóstico foi somente leitura. A inspeção de cópias de instalador apagou zero arquivos e não desinstalou nem limpou o aplicativo. A causa da remoção prévia não foi estabelecida. Por isso a sexta operação usou instalação nova, autorizada por “instale”; preservação do UID/dados anteriores não se aplica.
+
+Mesma fonte congelada 1ac3f7d e APK 01427f4e. Teste visual físico pendente, rede v3 não integrada, helpers antigos exatos, tag e backup completos R143 preservados. Nenhuma recompilação, lógica, deploy/restart ou cadastro aplicado por este registro. O checkpoint candidato inicial foi validado com 2.047 arquivos, 158 inputs nativos e dois bundles; depende do ponto completo R143. As novas tentativas serão anexadas em diretório distinto, sem substituir o checkpoint inicial.
+
+Ler o mesmo handoff e r144/STATUS.json.
+
+## Histórico preservado
+
+# Quarta tentativa R144 — resultado conferido
+
+A quarta tentativa não confirmou a instalação da R144. O recibo registra o erro Android INSTALL_FAILED_INSUFFICIENT_STORAGE. Não atribuir outra causa nem declarar a versão instalada. Antes desta tentativa, o A56 estava ocioso com 7.564.333.056 bytes disponíveis. O teste visual físico permanece pendente. A fonte congelada 1ac3f7d e o APK 01427f4e são os mesmos; nenhuma recompilação, lógica ou cadastro foi alterado por este registro.
+
+O checkpoint candidato anterior foi validado com 2.047 arquivos, 158 inputs nativos e dois bundles Git. A recuperação depende do backup completo estável R143. A quarta tentativa será anexada em atualização distinta; o ponto inicial e a estável R143 permanecem preservados.
+
+Ler o mesmo handoff e r144/STATUS.json.
+
+## Histórico preservado
+
+# Terceira tentativa R144: armazenamento ainda insuficiente no A56
+
+Ler o mesmo handoff e r144/STATUS.json. Antes da terceira tentativa, o A56 estava ocioso e dispunha de aproximadamente 6,88 GB livres. O Android voltou a recusar a atualização com INSTALL_FAILED_INSUFFICIENT_STORAGE. Não houve confirmação de instalação da R144, desinstalação ou limpeza de dados. O último APK conferido antes desta tentativa era a R143. É necessário liberar mais espaço interno ou usar outro telefone ocioso autorizado. Fonte congelada 1ac3f7d; APK 01427f4e. Visual físico pendente; carrossel usa paletas e salas só brilho. DEX35, multiplayer R143, HLE, saída, motores e downloads preservados. R143 continua estável: não mover tag, backup ou ponteiros permanentes. Kit independente R144 preparado, sem aplicação; nenhum deploy ou restart autorizado. Chaves, APK, capturas e registros brutos permanecem privados.
+
+## Histórico preservado
+
+# Referência estável R143 aprovada em 13/10/2026
+
+Tag e ramo `estavel-station-r143-20261013` no app e neste handoff. Ler `estavel-station-r143-20261013/README.md`, manifesto, estado completo e restauração. Mesmo APK R143 `508480e3`, fonte executável `26257869`; g52 instalado, A56/Edge30 última R141. Top Gear 3000 VS três participantes e Bomberman OK por relatos do mantenedor, com limites nos recibos. Backup completo do ponto na raiz F existente. SNES conserva registro; kit R143 dos quatro owners independentes preparado, ainda não aplicado. Não reaplicar R141 nem implantar/reiniciar API por promoção Git. Dados/licenças/contratos/motores e demais produtos preservados. Receitas e recibos históricos congelados permanecem intactos; suas flags refletem o momento em que foram criados.
+
+## Histórico preservado
+
+# Três telefones na mesma R141 — 13/10/2026
+
+Moto g52, Samsung A56 e Motorola Edge30 agora com APK R141/b5a76023 exato, fonte executável240b7c05 congelada. Edge30 atualizado da DIAG5aaa: hash/UID/dados/primeira instalação preservados e versão temporária retirada, sem recompilar ou alterar lógica. Ler r141/STATUS e evidence/installation-edge30.json no mesmo handoff. Não confundir instalação com cadastro aplicado ou gameplay; usar somente retorno e testes reais. Fonte e ponteiros de recuperação intactos; binários/seriais/logs privados foraGit.
+
+## Histórico preservado
+
+# R141 aplicada no Station — 13/10/2026
+
+Ler o MESMO handoff e r141/server-return.json. A combinação APK b5a76023/fonte 240b7c0 foi cadastrada com quatro IDs e 78 vínculos às 20h19 UTC. O kit d8d9746d possui seis bibliotecas e vinte dependências conferidas. Os 35 motores, 11.526 perfis e 6.665 modos anteriores foram preservados; totais atuais: 39 motores, 11.604 perfis e 6.743 modos, catálogo 46. As provas locais e públicas para N64/GameCube/Wii e as seis recusas passaram. Licenças, DLL ef5270b3 e PID 2867363 preservados. PS1 conserva zero novas aprovações HLE por edição.
+
+A pré-validação recusou duplicações do preparador antes da publicação. A lista fixa agora renova somente os 78 modos revisados; a migração genérica mantém seu comportamento anterior. Dezessete testes passaram, incluindo renovação de um cadastro nativo já existente. O conjunto completo de operadores/testes administrativos permanece no repositório do servidor; o recibo e as instruções estão espelhados no app. O código de gameplay e a fonte congelada do APK não foram alterados.
+
+Não reaplicar: /mnt/DADOS/station-r141-20261013/applied.json existe. Não pedir novamente kit ou logs recebidos. O recibo Android comprova download de 546.776.387 bytes em 75.288 ms, instalação concluída e serviço ausente depois. Cancelamento Android e comparação pareada não testados. Moto g52 e Samsung A56 agora na mesma R141 b5a76023, por recibos de instalação/hash. A56 atualizado da R138 observada, UID/dados/primeira instalação preservados; frontend e gameplay não comprovados pelo instalador. Edge 30 última R139 de diagnóstico. Gameplay, relay409 e saída antiga continuam pendentes; o mantenedor adiou ajustes desse setor nesta entrega de downloads. Logs, chaves, binários e seriais privados fora do Git. Manter os dois arquivos históricos CRLF locais sem commit.
+
+## Histórico preservado
+
+# Samsung A56 atualizado para a mesma R141 — 13/10/2026
+
+Moto g52 e Samsung SM-A566E agora na mesma R141/b5a76023, fonte executável240b7c05; atualização A56 da R138 encontrada, SHA/UID/dados/primeira instalação preservados, sem recompilar ou alterar lógica. Ler r141/STATUS.json e evidence/installation-samsung-a56.json no mesmo handoff. Edge30 última R139-DIAG conhecida; não inferir todos os telefones atualizados, cadastro ou gameplay. Ponteiros de recuperação e fontes congeladas intactos; binários/seriais/logs privados foraGit.
+
+## Histórico preservado
+
+# R141 — downloads diretos integrados e reparos preservados
+
+Ler o MESMO handoff vigente e docs/station-android/r141/README.md/STATUS.json. Fonte executável congelada240b7c0504252e542975089f585bd67d5264f074, APKb5a76023, originalv2/v3/16KiB, instalado no moto g52 com SHA/UID/dados/primeira instalação preservados. Download Android546.776.387bytes/75.288ms e INSTALL_FINISHED, serviço ausente depois; operador percebeu >2x, sem razão pareada medida. FonteHTTP4478 copiada exatamente, somenteDEX28/famíliaHTTP+3marcadores+engines; 13.855entradas/39DEX, DEX35R14049f381, coreHLE/opções/caches/FPS/READY exatos. Kit privadoI:/SERVIDOR LER12.842.618bytes/d8d9746d,6libs20deps4novosIDs/incomingv3; cadastroR141 pendente, preservar oitoRetro IDs e os modos anteriores. Não confundircad e696/R139 comR141. BATmanifestoR141, scriptsbyteexatos; lançamento permanente R139recuperação. Edge30 últimaDIAG, A56R135. Não alterar fontes congeladas ou iniciar novos ajustes de gameplay/performance por este setor; mantenedor adiou a questão de partidas e pediu terminar downloads. Nenhuma API deploy/restart/cad nestePC. Binários/ROM/BIOS/chaves/seriais/capturas privadas foraGit.
+
+## Histórico preservado
+
+# Diagnóstico Top Gear recebido do USB — 13/10/2026
+
+Ler a seção atual do mesmo handoff e r139/server-phone-diagnostic.json. ZIP privado SHA 43ed435a…, onze arquivos conferidos, duas modalidades em moto g52 e Edge 30, quatro tentativas independentes como anfitrião. Todas registram ausência dos dois arquivos DSP4 e falha de carga do bsnes; três retornam 1, Edge Campeonato falha depois no menu e não fica READY. O core e resolvedor exatos foram revisados. Produção prepara global_core_options=true + game_specific_options=false na configuração online para prender as opções HLE da sala; valores efetivos/arquivo legado do telefone e gameplay ainda não confirmados. Recibo dos vinte testes host chegou agora nos commits e06819b/b93623b: SHA42db9a… confere com o gate R140, três corpos extraídos coincidem com upstream. Produção executou os testes com descoberta/gerenciador controlados; este servidor leu e conferiu o recibo, sem executá-los. Android e bsnes não foram testados por esse recibo. Duas recusas 409 do relay têm motivo desconhecido, solicitar código seguro no próximo teste; não remover proteções. APK de diagnóstico 5aaa… é temporário, core/runtime R139 preservados; não cadastrar seus quatro marcadores independentes. API sem alterações/reinício, PID 2867363. Não pedir novamente logs ou seis bibliotecas já recebidos. Crash antigo é ocorrência separada. Logs/identificadores/credenciais privados fora do Git; manter os dois arquivos históricos locais CRLF sem commit.
+
+## Histórico preservado
+
+# Atualização aplicada dos quatro motores — 13/10/2026
+
+A autenticação do Linux foi concluída. O cadastro aplicado às 14h06 locais está comprovado em `phone-independent-kit/applied.json`: quatro motores PS1/N64/GameCube/Wii, seis bibliotecas e vinte dependências conferidas. Foram adicionados 78 perfis e modos revisados em 44 jogos (66 N64, nove GameCube e três Wii). Totais atuais: 31 motores, 11.448 perfis, 11.427 aprovações administrativas, 11.415 aprovações vinculadas ao conteúdo atual e 6.587 modos; catálogo 46. API PID 2867363, DLL ef5270b3, sem reinício. Os 11.370 perfis e 6.509 modos anteriores e as licenças foram preservados. Capabilities assinadas locais e públicas e seis recusas foram conferidas. PS1 recebeu o motor, com zero novas aprovações HLE por edição. Não reaplicar: o recibo aplicado existe. Cancelamentos e preparações registrados abaixo são históricos. Top Gear continua sem correção comprovada; os três nomes sugeridos para os registros de início estão no mesmo handoff. As seis bibliotecas já foram recebidas. Os quatro arquivos de autoridade da raiz do pen drive são do produto TURBORAMA_SUITE e não foram importados no Station.
+
+Atualização USB das 12h34/12h35: no VS, rarch_main retornou erro1 depois de carregar hooks e owner; voltou ao frontend sem novo SIGSEGV. No Campeonato2p, PONG119..518ms, nativeStatus=-1, localReady=false, readySent=-1 e zero TX/RX; nunca Playing. A fonte Android pin69a4 (rarch_main:6029-6036) associa retorno1 à falha de carga CLI; a causa interna ainda não foi registrada. debuggerd exige root no aparelho; não contornar. A produção deve fornecer erro de core/conteúdo/driver da composição exata, com log limitado ao início, preservando HLE/READY/FPS. Recibo sanitizado atualizado no MESMO handoff.
+
+# Estado aplicado e diagnóstico USB — 13/10/2026
+
+Ler o MESMO HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e r139/server-return.json/server-phone-diagnostic.json. R139 RetroArch recebido no USB/cadastrado: oito motores,3091 perfis; HLE/controles/modos/recusas anteriores preservados. API PID2867363/DLLef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a/NRestarts0; catálogo46/4690 IDs/4435 visíveis/255aliases;27engines/11370perfis/11349aprovados administrativos/11337 vinculados ao conteúdo atual/6509modos. Seis cartuchos normalizados na importação, originais/artefatos antigos preservados; JellyBoy2 corrigido sem aprovação multiplayer inventada. Provas assinadas públicas completas +192HTTP; licenças e serviços compartilhados preservados.
+
+Pedido atual autoriza explicitamente USB neste Linux; supersede proibições históricas de depuração. Moto g52 autorizado: runtimeR139 ae72f137 e SHA de TopGear3000 coincidem com servidor; Edge30 R139 confirmado por recibo produtor14:32Z. Falha atual11:37locais/14:37Z: SIGSEGV RenderThread, mutex destruído, processo station_netplay morto; backtrace atual ausente/mainbuffer rotacionado. Não usar tombstones antigos como causa atual ou inventar ajuste de controles/HLE/timers. Captura seguinte10min sem nova tentativa. Falha inicial de loading continua sem causa isolada. Nenhum APK/dado/configuração do telefone alterado.
+
+Seis libs e20dependências reais dos quatro owners PSX/N64/GC/Wii obtidos legitimamente por ADB, privados em /mnt/DADOS/station-online-audit-20261013/phone-independent-kit, hashes exatos do manifesto instalado. Registrar não requer restart: candidato selado4engines/78perfis/modos(66N64/9GC/3Wii), prefixos preservados. NÃO APLICADO: pkexec88775 encerrou126 Request dismissed. Não contornar autenticação. PSX zero novos HLE por edição; restantes modos não documentados conservam pendência. Publicar somente via registrador atual e recibos reais; APKR139 ainda4096itens, overlayNES não incorporado. Servidor20plataformas de catálogo não equivale a20motores online. Manutenção horária serializada, reconhecer entradas já analisadas e retomar somente com novos inputs. Nunca reaplicar operadores datados; dados privados/binários/ROMs/seriais/chaves foraGit.
+
+## Histórico preservado
+
+# Edge30 atualizado para R139 — 13/10
+
+Moto g52 e Edge30: R139/19acdece…, dados/hash conferidos; ver r139/evidence/instalacao-edge30.json. A56 última R135. O novo recibo muda só inventário de instalação, sem confirmar cadastro ou gameplay.
+
+## Histórico preservado
+
+# R139 assinada com recursos nativos corrigidos — 13/10/2026
+
+Ler o MESMO `docs/station-android/HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md` e `docs/station-android/r139/README.md`/STATUS. APK R139 `19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164`, fonte produtiva `42da152e54bbbb4a6d569ca26fe90835503bcccb`, arquivo nativo `24420118e5ce94376b077051084a84d4c52f152d00b9e2330333896bced798fb`, runtime `ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378`; certificado original v2/v3/16 KiB. Instalada no moto g52/hash integral/UID/dados/primeira instalação preservados e frontend observado; Edge 30 última R138/A56 última R135. Kit privado/cadastro R139 não recebidos nem confirmados. Duas entradas mudam, 13.858 e 40 DEX preservadas; somente alocações/início/propriedade JNI, loops/quadros/timers/controles/core/opções exatos R138. Host 24 cenários e probe isolado no moto g52 com JNI/pthread reais passaram; não homologam NativeActivity/partida/pressão de memória ou ganho de CPU. Nove descritores RetroArch, oito engines v3 para novo registro, Geolith inativo; quatro owners R137 independentes exatos e seu kit seis bibliotecas ainda pendente. Preservar servidor `08e0031`, catálogo44/NES/capas/perfis/modos/recusas/R138 já aplicada; usar apenas administração v3 existente e retorno assinado fresco, sem deploy/restart por consequência. A R139 não inclui a ampliação NES: DEX/consulta/JNI do catálogo continuam R138/4.096 itens. Não aplicar snapshot R124 antigo nem alterar históricos congelados.
+
+## Histórico preservado
+
+# NES publicado e capas Recriadas corrigidas — 12/10/2026
+
+Ler o MESMO handoff ONLINE-PLATAFORMAS-STATION-20261009 e online-plataformas-20261009/nes-publicado-20261012.json. Catálogo44/4690IDs/4435visíveis/255aliases;750NES na raiz,469artes Git NES/Recriadas novas +280frentes recebidas +DancingBlocks personalizado;JPEG480×720q90,95.254MB. Scanner automático confirmou469atualizados e estabilidade, sem restart adicional. N64157artes personalizadas coincidem comGit,157corpos locais/16HTTPS conferidos. Fonte efetiva7eb+3arquivos cap/consulta, DLL25c49dd/PID2637019/NRestarts0;8267perfis/8254aprovados/serviços/licenças preservados. Query completa maximumItems20000; R138 antiga lê4096/411NES, overlayJava/JNI compilado deve entrar no próximoAPK. Prova assinada43 antes da correção44; não alegar prova assinada dos novos corpos44 nem instalação/gameplay. Kit independente6libs/4engines pendente continua; NESnetplay não cadastrado. Usar rotina automática para fotos do operador, preservar todas as correspondências seguras e fonteRecriadas; não reaplicar workflows datados. Manutenção horária serializada.
+
+## Histórico preservado
+
+# R138 registrada; capas do catálogo42 publicadas — 12/10/2026
+
+Ler o MESMO docs/station-android/HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md e r138/server-return.json. Oito motores RetroArch e3091perfis/modos acrescentados; prefixo5176perfis/321modos preservado; total8267/8254aprovados/3412modos. KitR138 SHA babf4983… conferido. MarioKart2p, TopGearVS2/3/4+Campeonato2 por edição/HLE canônico; Geolith inativo; PS3/PS4offline. Quatro motores independentes PSX/N64/GC/Wii R137 aguardam seu kit6libs/ledger qualificado, não registrar identidades inventadas. NeoCD firmware de novos conteúdos continua pendente.
+
+Catálogo42/3940IDs/3685visíveis/255aliases. Capas novas SNES/Mega/PSX publicadas;157N64 já coincidem comGit e revisão/cache atualizados. Gitmain5c6cc32/SNES9f85e9d, JPEG480×720q90; PS2/PSP/Wii/WiiU do site preservados. Provas assinadas11locais+11públicas/4recusas por interface; catálogo/capas/metadata/IDs/scanner/sandbox/licenças/esquema/outros serviços preservados; PID2136303/DLL2c0d semrestart ouDLLnova. Testesdomínio1452/29novos3p/320p80salas isolados; gameplay/saída física/perda de sinal ainda dependem dos aparelhos na mesmaR138. Não usar Git/aprovação administrativa como prova de gameplay. Manutenção horária continua, serializada; usar recibos atuais, não workflows já aplicados. BackupantesR138 publicado nos doisGits.
+
+## Histórico preservado
+
 # R133 — entrega final de consoles e modos por edição
 
 APP → SERVIDOR, não implantação. Fonte Android 5966a8ad23ae9040c570d359b999c8a31de904b4; entrega pública c00f469517d41cf14f0d54a2d5cd3491cae6db00. R133 instalada/hash integral e dados preservados no Motorola, sem gameplay/ativação novos comprovados. Ler [o handoff único](r133/HANDOFF-APP-R133-PARA-SERVIDOR-20261011.md), recibos e [a matriz integral](r133/catalog/README.md).
@@ -196,7 +763,7 @@ Leia `docs/station-android/RETORNO-SERVIDOR-APP-R74-LIFECYCLE-LATENCIA-20261007.
 
 SRV-01/02/03 implementados na candidata6f27c6c/DLL71ba30b8 (.NET8.0.31): causa antes de Detach, Close pelo escritor único, métricas limitadas.91+589+88checks locais; TLS real passou com tracing, mas fixture sem logging também apresentou timeout imediato: divergência não resolvida, DLL NÃO ativada e gates sombra/público pendentes. Não confundir provas do cadastro com provas desta DLL. Operador6f27 fica no worktree imutável servidor-pix-station-r74-relay-observability-20261007; a autenticação Linux anterior foi cancelada antes da execução.
 
-APP-01 reproduzido independentemente no Linux:1.764checks, baseline64/64 adia envio, candidato64/64 envia sem novo tick. Ainda não integra APK; PCAPK deve integrar/testar sobre R74/R75 atual. Protocolo, dados, licenças e outros produtos preservados; nenhuma porta/DNS/firewall/tuning/removal de Cloudflare. Origem direta tem pin diferente e entrada externa não comprovada. Capacidade v2 real64salas/128participantes; centenas e jogatina prolongada não homologadas. Histórico abaixo não identifica a produção atual.
+APP-01 reproduzido independentemente no Linux:1.764checks, baseline 64/64 adia envio, candidato64/64 envia sem novo tick. Ainda não integra APK; PCAPK deve integrar/testar sobre R74/R75 atual. Protocolo, dados, licenças e outros produtos preservados; nenhuma porta/DNS/firewall/tuning/removal de Cloudflare. Origem direta tem pin diferente e entrada externa não comprovada. Capacidade v2 real64salas/128participantes; centenas e jogatina prolongada não homologadas. Histórico abaixo não identifica a produção atual.
 
 ## Histórico anterior
 
@@ -369,7 +936,7 @@ Leia RETORNO-PAINEL-CODIGOS-STATION-20261006.md. Interface17e564a publicada às1
 
 # Comunidade R41 publicada — 06/10/2026
 
-Leia RETORNO-COMUNIDADE-STATION-R41-20261006.md. API a2bb176530fd4d2dfa740da7e934fd84d097404e, DLL d181bf97d5b39a334e95144267d6ece3f11d4e659a314d7d16cd2746e1999e13, PID875574; SocialEnabled=true, conversas privadas/pedidos de entrada verificados por três licenças sintéticas no domínio público, 186 checks e WSS com pin. Catálogo14/2212, relay512/1024 e licenças/chaves/outros serviços preservados. Histórico privado até32 e64KiB na resposta. Backup restaurado, nenhuma migration. Retorno Android 5e40f7e confirma R41 instalada no Samsung, hashb6b19321 e dados preservados. POCO, gameplay em dupla, Pessoas/Voltar/correspondência Boogerman–Battletoads e latência externa continuam pendentes. Preservar APK R41; nunca retomar delta R34 sobre essa fonte. Scripts históricos recusam sucessoras; usar retorno/rollback R41.
+Leia RETORNO-COMUNIDADE-STATION-R41-20261006.md. API a2bb176530fd4d2dfa740da7e934fd84d097404e, DLL d181bf97d5b39a334e95144267d6ece3f11d4e659a314d7d16cd2746e1999e13, PID875574; SocialEnabled=true, conversas privadas/pedidos de entrada verificados por três licenças sintéticas no domínio público, 186 checks e WSS com pin. Catálogo14/2212, relay512/1024 e licenças/chaves/outros serviços preservados. Histórico privado até32 e 64KiB na resposta. Backup restaurado, nenhuma migration. Retorno Android 5e40f7e confirma R41 instalada no Samsung, hashb6b19321 e dados preservados. POCO, gameplay em dupla, Pessoas/Voltar/correspondência Boogerman–Battletoads e latência externa continuam pendentes. Preservar APK R41; nunca retomar delta R34 sobre essa fonte. Scripts históricos recusam sucessoras; usar retorno/rollback R41.
 
 ## Histórico anterior — os blocos abaixo não identificam a publicação atual
 

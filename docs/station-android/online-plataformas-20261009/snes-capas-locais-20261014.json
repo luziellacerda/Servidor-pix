@@ -1,0 +1,4457 @@
+{
+  "passed": true,
+  "appliedUtc": "2026-10-14T12:20:24.118051+00:00",
+  "previousCatalogRevision": 47,
+  "catalogRevision": 48,
+  "changedMagazineCovers": 130,
+  "changedCatalogBindings": 131,
+  "unmatchedDeliveredArtworks": 15,
+  "visibleItems": 4435,
+  "indexedItems": 4690,
+  "sourceBytes": 1475664240,
+  "compiledBytes": 20014305,
+  "resolution": [
+    480,
+    720
+  ],
+  "format": "JPEG RGB",
+  "catalogIDsPreserved": true,
+  "coverIDsPreserved": true,
+  "gameFilesAndMetadataPreserved": true,
+  "otherCatalogRowsPreserved": true,
+  "onlineRegistriesPreserved": true,
+  "APIrestarted": false,
+  "nativeAuthentication": true,
+  "ownSyntheticLicensesRemoved": true,
+  "androidVisualVerified": false,
+  "source": "local IMAGENS SNES/capas",
+  "appCacheKey": "coverId + item.revision",
+  "legacyDefaultVisibilityMadeExplicit": 130,
+  "identicalLegacyGameCopiesVerified": 131,
+  "originalGameFilesRetainedAndByteIdentical": true,
+  "gameFilePathsPreserved": false,
+  "local": {
+    "passed": true,
+    "checkedCovers": 155
+  },
+  "public": {
+    "passed": true,
+    "checkedCovers": 21,
+    "downloads": [
+      {
+        "itemId": "826da6daebe9edbebffb3721f83abf12",
+        "format": "zip",
+        "bytes": 670452,
+        "fullBodyVerified": true,
+        "singleUseGrantVerified": true
+      },
+      {
+        "itemId": "station_acc7ac447394dc023c6b997d9e7d7958",
+        "format": "raw",
+        "bytes": 4194816,
+        "fullBodyVerified": true,
+        "singleUseGrantVerified": true
+      }
+    ]
+  },
+  "sourceCatalogSha256": "d769d46159f3997c6987ef21051a31189b2c78c0dfa9283aca9b5a000fb9b709",
+  "deliveredFinalArtworks": 143,
+  "uniqueSourceArtworks": 128,
+  "quality": 90,
+  "selectedProducerVersions": true,
+  "sourceSnapshot": "2026-10-14T11:55:23.906258+00:00",
+  "matches": [
+    {
+      "magazine": "Battletoads in Battlemaniacs (USA).jpg",
+      "sourceFile": "BATTLETOADS_IN_BATTLEMANIACS_4K.png",
+      "sourceTitle": "Battletoads in Battlemaniacs",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "59521b35f13d0fe5e6374974beed537e7f0b2740f2067cabe3185a31acb2e602",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "826da6daebe9edbebffb3721f83abf12",
+        "ac79b8fc351cb0811a7e9b51a099ba9c"
+      ],
+      "oldSha256": "6b5a59da0d3ced30cf9aa58d6b4dddb48d2b54a73cfa5cb5f789659082b0ff60",
+      "sourceSha256": "59521b35f13d0fe5e6374974beed537e7f0b2740f2067cabe3185a31acb2e602",
+      "sourceBytes": 12245171,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "a795a1845b43c6294509378744fc42a6bdd4a5ec30cf8ef54496edf16dd28ee8",
+      "compiledBytes": 161530,
+      "coverIds": [
+        "368fe2edb8f4f709c0fd5bf40405aef2",
+        "a29186512c4f710ab733ba4131f590d0"
+      ],
+      "names": [
+        "Battletoads in Battlemaniacs (USA)",
+        "Battletoads in Battlemaniacs (USA)"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "826da6daebe9edbebffb3721f83abf12",
+          "coverId": "368fe2edb8f4f709c0fd5bf40405aef2",
+          "revision": 43
+        },
+        {
+          "itemId": "ac79b8fc351cb0811a7e9b51a099ba9c",
+          "coverId": "a29186512c4f710ab733ba4131f590d0",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Boogerman - A Pick and Flick Adventure (USA).jpg",
+      "sourceFile": "BOOGERMAN_A_PICK_AND_FLICK_ADVENTURE_4K.png",
+      "sourceTitle": "Boogerman - A Pick and Flick Adventure",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "bdc9c02f3390cf7c4512f527db9a1546e8f41a549d3ca493cbf5a32e93298d79",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "0b6d00df789b94f5ac2587c28d8e00ae"
+      ],
+      "oldSha256": "a0506492c8720fb4ea6b423ee58342e78542d140afcbfd952bd3cbf8100e8ac9",
+      "sourceSha256": "bdc9c02f3390cf7c4512f527db9a1546e8f41a549d3ca493cbf5a32e93298d79",
+      "sourceBytes": 11545572,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "e917ba5f3f9bdf11e7f853736a2d855077597c930586eecabc948e8275eb0729",
+      "compiledBytes": 160082,
+      "coverIds": [
+        "851996e1e01bbdb97d0ebc57425d1459"
+      ],
+      "names": [
+        "Boogerman - A Pick and Flick Adventure"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "0b6d00df789b94f5ac2587c28d8e00ae",
+          "coverId": "851996e1e01bbdb97d0ebc57425d1459",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Clay Fighter (USA).jpg",
+      "sourceFile": "CLAY_FIGHTER_4K.png",
+      "sourceTitle": "Clay Fighter",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "c83e926babcf5a98ad669739da9473fdc38367a8fdbac8553849f15fabd14957",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "bba0ae28b358b6581357f6dff15799af"
+      ],
+      "oldSha256": "841040aefadbe6da508c7dfb9ab60d688bb78ba1f85ed141798d8aea29f291ec",
+      "sourceSha256": "c83e926babcf5a98ad669739da9473fdc38367a8fdbac8553849f15fabd14957",
+      "sourceBytes": 10241168,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "5c8d44464467ddc38dbb70a36c482950742f1cbac159d0bc2674bbd59d4283ed",
+      "compiledBytes": 133153,
+      "coverIds": [
+        "9bd5045ca1d3a629a5423aadcf6ee6da"
+      ],
+      "names": [
+        "Clay Fighter"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "bba0ae28b358b6581357f6dff15799af",
+          "coverId": "9bd5045ca1d3a629a5423aadcf6ee6da",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Clay Fighter - Tournament Edition (USA).jpg",
+      "sourceFile": "CLAY_FIGHTER_TOURNAMENT_EDITION_4K.png",
+      "sourceTitle": "Clay Fighter - Tournament Edition",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "5385e5e2503839c34f242739f1a14158e19e063d41e1def0fd36cd59e8cf565d",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "36713b9f340cfb4108196eafabf13c7f"
+      ],
+      "oldSha256": "bcdd6052b3a4cf474176fd88f096823562cf99c56362819b2e468b30b7a0baac",
+      "sourceSha256": "5385e5e2503839c34f242739f1a14158e19e063d41e1def0fd36cd59e8cf565d",
+      "sourceBytes": 11303091,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "60f2daedc10227083744c30e087ba82b0cb721b433852e6a5a279a62fc41281a",
+      "compiledBytes": 150490,
+      "coverIds": [
+        "65f596500fb7e22838136e464c0e8455"
+      ],
+      "names": [
+        "Clay Fighter - Tournament Edition"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "36713b9f340cfb4108196eafabf13c7f",
+          "coverId": "65f596500fb7e22838136e464c0e8455",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Clay Fighter 2 - Judgment Clay (USA).jpg",
+      "sourceFile": "CLAY_FIGHTER_2_JUDGMENT_CLAY_4K.png",
+      "sourceTitle": "Clay Fighter 2 - Judgment Clay",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "ba504945957e14aa6c5a9b7522b6dc43c7061d965955e1dba94aa0337826f056",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "b89e3826376986140375e1f6297786e9"
+      ],
+      "oldSha256": "9f088131efe585529c8fbc0242a088019d7456c5464003bac3032abfb7d3ed5b",
+      "sourceSha256": "ba504945957e14aa6c5a9b7522b6dc43c7061d965955e1dba94aa0337826f056",
+      "sourceBytes": 11474009,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "0eb4f92aa275d96ef043843898610c3ade715547f4293126f663cbe99d68e24f",
+      "compiledBytes": 154449,
+      "coverIds": [
+        "4ccd6e06b99db4b345259c2e5387d81d"
+      ],
+      "names": [
+        "Clay Fighter 2 - Judgment Clay"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "b89e3826376986140375e1f6297786e9",
+          "coverId": "4ccd6e06b99db4b345259c2e5387d81d",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Contra III - The Alien Wars (USA).jpg",
+      "sourceFile": "CONTRA_III_THE_ALIEN_WARS_4K.png",
+      "sourceTitle": "Contra III - The Alien Wars",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "c7fcbb240eb0bec3ded65a91ba90ac255c06a66012b6dc9d9700353bd1717bfa",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "6187038ca0e7c9f5b98d101e8afbf402"
+      ],
+      "oldSha256": "4453f7090dca1bd82420333458d55e13e7d4f530739840da6bb78e24c355b9d6",
+      "sourceSha256": "c7fcbb240eb0bec3ded65a91ba90ac255c06a66012b6dc9d9700353bd1717bfa",
+      "sourceBytes": 12243287,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "24bd0e0b962b4cc3e1c85284356ea444a292e9b78b77e370ae5bd033ead001ff",
+      "compiledBytes": 162015,
+      "coverIds": [
+        "c43552dd084a9016d4299260ef6e950f"
+      ],
+      "names": [
+        "Contra III : The Alien Wars"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "6187038ca0e7c9f5b98d101e8afbf402",
+          "coverId": "c43552dd084a9016d4299260ef6e950f",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/ActRaiser 2 (USA).jpg",
+      "sourceFile": "ACTRAISER_2_4K.png",
+      "sourceTitle": "ActRaiser 2",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "9fe8e9b66798839641d821d85610027520c677a1a7824961d4ceb66961d2339e",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_126db71edb23f73c94ee40ed283a7b8b"
+      ],
+      "oldSha256": "f9dea2e0edfb286a8ab484b5db23632fdbc005af08aae5b7eb61ac5f6a87466e",
+      "sourceSha256": "9fe8e9b66798839641d821d85610027520c677a1a7824961d4ceb66961d2339e",
+      "sourceBytes": 11511925,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "cdf14e0c419524249f3fe1e698b65088a85cd39edabff4ad5dae300aa822439b",
+      "compiledBytes": 151799,
+      "coverIds": [
+        "cover_126db71edb23f73c94ee40ed283a7b8b"
+      ],
+      "names": [
+        "ActRaiser 2"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_126db71edb23f73c94ee40ed283a7b8b",
+          "coverId": "cover_126db71edb23f73c94ee40ed283a7b8b",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/ActRaiser.jpg",
+      "sourceFile": "ACTRAISER_4K.png",
+      "sourceTitle": "ActRaiser",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "be755291cda2c3257bf593804c70b92416d720d6229eb80f3317449fcb019fde",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_4d94be1fc59507db76763fea08b2b3e8"
+      ],
+      "oldSha256": "9d099bd5c26e997016fb65977b0f1c6309969a69e4b8894fbff24e5e1ff4ce89",
+      "sourceSha256": "be755291cda2c3257bf593804c70b92416d720d6229eb80f3317449fcb019fde",
+      "sourceBytes": 10946471,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "904bd0c8d9ab1e8e7eb2367be04ed0ad19392ad69ce1d295a023431a55b9042e",
+      "compiledBytes": 143570,
+      "coverIds": [
+        "cover_4d94be1fc59507db76763fea08b2b3e8"
+      ],
+      "names": [
+        "ActRaiser"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_4d94be1fc59507db76763fea08b2b3e8",
+          "coverId": "cover_4d94be1fc59507db76763fea08b2b3e8",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Addams Family Values (USA).jpg",
+      "sourceFile": "ADDAMS_FAMILY_VALUES_4K.png",
+      "sourceTitle": "Addams Family Values",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "9d891df9cc4c260f57f8a02465be9eb296fa5734f99b1bb184b9210a16f3ff75",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_bd0c4dbdd693d0950e1bc302159bf62f"
+      ],
+      "oldSha256": "2b3215f9b4c5742e4f4198fc4358eacb361a78e59cc0b715ee8517a1220f0405",
+      "sourceSha256": "9d891df9cc4c260f57f8a02465be9eb296fa5734f99b1bb184b9210a16f3ff75",
+      "sourceBytes": 11931876,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "d3795b0dbaaaf38be866a2e0e919b517114d7f28b30b568c7c0608eab39da4dd",
+      "compiledBytes": 149408,
+      "coverIds": [
+        "cover_bd0c4dbdd693d0950e1bc302159bf62f"
+      ],
+      "names": [
+        "Addams Family Values"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_bd0c4dbdd693d0950e1bc302159bf62f",
+          "coverId": "cover_bd0c4dbdd693d0950e1bc302159bf62f",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Aero the Acro-Bat 2 (USA).jpg",
+      "sourceFile": "AERO_THE_ACRO_BAT_2_4K.png",
+      "sourceTitle": "Aero the Acro-Bat 2",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "d6548e29045acd9ab6f8f404a902946509f609e15c4e22b859dbdc0ac12489c9",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_30c68b7102ca5d9c4c209af8e38f8309"
+      ],
+      "oldSha256": "cce10c826a9465724993de7e169d4f9f0e2c06c49dbf60ebf856f87f4dbeec44",
+      "sourceSha256": "d6548e29045acd9ab6f8f404a902946509f609e15c4e22b859dbdc0ac12489c9",
+      "sourceBytes": 10767935,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "a89182e65e6be9f15c2dae9ea4bae1354461f1aa1841667d6178f3ba3ce55c80",
+      "compiledBytes": 153835,
+      "coverIds": [
+        "cover_30c68b7102ca5d9c4c209af8e38f8309"
+      ],
+      "names": [
+        "Aero the Acro-Bat 2"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_30c68b7102ca5d9c4c209af8e38f8309",
+          "coverId": "cover_30c68b7102ca5d9c4c209af8e38f8309",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Aero the Acro-Bat (USA).jpg",
+      "sourceFile": "AERO_THE_ACRO_BAT_4K.png",
+      "sourceTitle": "Aero the Acro-Bat",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "c0a4f04a827e05f95d45bf67219b196105d580684e5b369a27552a11a547fd31",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_86281d57fd809394297be286203e9350"
+      ],
+      "oldSha256": "9ff0c81a70aa58f18986f1c9c4e5d0bc2ef9bc6e90a6dd4157c20f0515e7d00b",
+      "sourceSha256": "c0a4f04a827e05f95d45bf67219b196105d580684e5b369a27552a11a547fd31",
+      "sourceBytes": 9872518,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "e32f9f87adc985e32daab639a38965a854b8084dcba90b1e7cfad5d30a06b103",
+      "compiledBytes": 138394,
+      "coverIds": [
+        "cover_86281d57fd809394297be286203e9350"
+      ],
+      "names": [
+        "Aero the Acro-Bat"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_86281d57fd809394297be286203e9350",
+          "coverId": "cover_86281d57fd809394297be286203e9350",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Aerobiz Supersonic (USA).jpg",
+      "sourceFile": "AEROBIZ_SUPERSONIC_4K.png",
+      "sourceTitle": "Aerobiz Supersonic",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "9709fca409c88710481f7b743dfdcb19514ec2534ffdc14bb4289446bccb6a37",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_9358da3ef38eebb459933cd7bd9ad3c5"
+      ],
+      "oldSha256": "287b21f7c2e881c8b703004ce50bf189267abce1a229f081ac28446b8ad62785",
+      "sourceSha256": "9709fca409c88710481f7b743dfdcb19514ec2534ffdc14bb4289446bccb6a37",
+      "sourceBytes": 10498251,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "d978a3a98459ccb0f4bb7c2bd4aa3cb5055b0fe2bde9e078bcece22163c353eb",
+      "compiledBytes": 149139,
+      "coverIds": [
+        "cover_9358da3ef38eebb459933cd7bd9ad3c5"
+      ],
+      "names": [
+        "Aerobiz Supersonic"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_9358da3ef38eebb459933cd7bd9ad3c5",
+          "coverId": "cover_9358da3ef38eebb459933cd7bd9ad3c5",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Aerobiz.jpg",
+      "sourceFile": "AEROBIZ_4K.png",
+      "sourceTitle": "Aerobiz",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "dadc67233836380459f78567604921b60901a51149698ae2cce3028918ce65b3",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_27ddc1074c239f7dd655174edb1bd353"
+      ],
+      "oldSha256": "89ce940e0c6fdb41523da9def70a4517afb16421596b8d0514525175af69fa31",
+      "sourceSha256": "dadc67233836380459f78567604921b60901a51149698ae2cce3028918ce65b3",
+      "sourceBytes": 9735346,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "09a577d7cb819be44f908d8abbc03abe681763e16a1a63e7a59f58f0ad4c9765",
+      "compiledBytes": 135027,
+      "coverIds": [
+        "cover_27ddc1074c239f7dd655174edb1bd353"
+      ],
+      "names": [
+        "Aerobiz"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_27ddc1074c239f7dd655174edb1bd353",
+          "coverId": "cover_27ddc1074c239f7dd655174edb1bd353",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Air Cavalry.jpg",
+      "sourceFile": "AIR_CAVALRY_4K.png",
+      "sourceTitle": "Air Cavalry",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "7cac2fd1caa8129164edfeae7a7d67672b74f5a1b82ad39866c52c616526ba77",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_548944058b15a82f5866a7a1ec33aa60"
+      ],
+      "oldSha256": "98b91b32054731f8e3a43bc203e994b14dc69718c886facf5a434ad4df8b3f49",
+      "sourceSha256": "7cac2fd1caa8129164edfeae7a7d67672b74f5a1b82ad39866c52c616526ba77",
+      "sourceBytes": 9639233,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "48452d8d6c50615a6d88d733b1f7622b02046d684e02a9a96e92b3db2d0dccc2",
+      "compiledBytes": 136358,
+      "coverIds": [
+        "cover_548944058b15a82f5866a7a1ec33aa60"
+      ],
+      "names": [
+        "Air Cavalry"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_548944058b15a82f5866a7a1ec33aa60",
+          "coverId": "cover_548944058b15a82f5866a7a1ec33aa60",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Al Unser Jr.'s Road to the Top (USA).jpg",
+      "sourceFile": "AL_UNSER_JR_S_ROAD_TO_THE_TOP_4K.png",
+      "sourceTitle": "Al Unser Jr.'s Road to the Top",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "186a05f1455d4059e67cf8b28a024b708fc0188e450a73f3d29fe78a00b2d99d",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_4d450f68af52da50db9392c1371ff7ca"
+      ],
+      "oldSha256": "a33e1ffc462644efb68a6ff588eda9e793ec76be0a2fc913f6f19b95a4240d90",
+      "sourceSha256": "186a05f1455d4059e67cf8b28a024b708fc0188e450a73f3d29fe78a00b2d99d",
+      "sourceBytes": 9911636,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "51f611aea2d70a8316e4b9977d1145259965d522e9e2cc87d22c6903b7b27eb8",
+      "compiledBytes": 137660,
+      "coverIds": [
+        "cover_4d450f68af52da50db9392c1371ff7ca"
+      ],
+      "names": [
+        "Al Unser Jr.'s Road to the Top"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_4d450f68af52da50db9392c1371ff7ca",
+          "coverId": "cover_4d450f68af52da50db9392c1371ff7ca",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Alien 3 (USA).jpg",
+      "sourceFile": "ALIEN_3_4K.png",
+      "sourceTitle": "Alien 3",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "282c51bcb0e134e6c936805ef78da250a0baa785fc0ba6f9dcd7c76577e8cf1d",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_a6ddb7c2ed3cc317c96b81c9a756f961"
+      ],
+      "oldSha256": "a2da2bd58c5a11258ad106934ef0ba3130dcab7efeaffbe7e3c7807065ff9b69",
+      "sourceSha256": "282c51bcb0e134e6c936805ef78da250a0baa785fc0ba6f9dcd7c76577e8cf1d",
+      "sourceBytes": 8922390,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "4ccb3ecc0db109c77a1c597ffc958903161ba470a9e16ac0d13caa7271b08871",
+      "compiledBytes": 122264,
+      "coverIds": [
+        "cover_a6ddb7c2ed3cc317c96b81c9a756f961"
+      ],
+      "names": [
+        "Alien 3"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_a6ddb7c2ed3cc317c96b81c9a756f961",
+          "coverId": "cover_a6ddb7c2ed3cc317c96b81c9a756f961",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Alien vs. Predator (USA).jpg",
+      "sourceFile": "ALIEN_VS_PREDATOR_4K.png",
+      "sourceTitle": "Alien vs Predator",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "2dde98b26dae5b76169e316227727dd8cba1f5f43f811c32b281c4216887dec7",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_7a490c10148ed711bd1853cecf071946"
+      ],
+      "oldSha256": "b231ac2121254d635c3168d489bfa2fb3e27f28effab163a8781da0164151c1f",
+      "sourceSha256": "2dde98b26dae5b76169e316227727dd8cba1f5f43f811c32b281c4216887dec7",
+      "sourceBytes": 11038010,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "d3fc0201a83f0ab857c47cda9f2132f0bbdb1119367a49977add6d3dc7ee33a5",
+      "compiledBytes": 156888,
+      "coverIds": [
+        "cover_7a490c10148ed711bd1853cecf071946"
+      ],
+      "names": [
+        "Alien Versus Predator"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_7a490c10148ed711bd1853cecf071946",
+          "coverId": "cover_7a490c10148ed711bd1853cecf071946",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "American Gladiators (USA).jpg",
+      "sourceFile": "AMERICAN_GLADIATORS_4K.png",
+      "sourceTitle": "American Gladiators",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "906dd01bc23850f7ebb0d9349d70155272099c7662b82745c453f43389432a2f",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_35b794021cb541d5c9adb9cda126099a"
+      ],
+      "oldSha256": "3726d1f9e04ac2b1d9f9b9a749cb9f717a60fcf0c94e410064eef246a0ecaabb",
+      "sourceSha256": "906dd01bc23850f7ebb0d9349d70155272099c7662b82745c453f43389432a2f",
+      "sourceBytes": 10588007,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "6e17682863b10fae1ef29d37d242c3d727130bcb562c3081e8dbb3c2713804b1",
+      "compiledBytes": 157328,
+      "coverIds": [
+        "cover_35b794021cb541d5c9adb9cda126099a"
+      ],
+      "names": [
+        "American Gladiators"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_35b794021cb541d5c9adb9cda126099a",
+          "coverId": "cover_35b794021cb541d5c9adb9cda126099a",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "American Tail, An - Fievel Goes West (USA).jpg",
+      "sourceFile": "AMERICAN_TAIL_AN_FIEVEL_GOES_WEST_4K.png",
+      "sourceTitle": "American Tail, An - Fievel Goes West",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "1997a844d1c9a8d52f994e7c9ee6e21d22f212530f2a46ead1c38749363a33c1",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_c96b8a2796eac2fcff73cfd0c668cade"
+      ],
+      "oldSha256": "32d42f942729655b12655ce96647212bdf47a81accc80a7a9b9f459525ea69e6",
+      "sourceSha256": "1997a844d1c9a8d52f994e7c9ee6e21d22f212530f2a46ead1c38749363a33c1",
+      "sourceBytes": 10980507,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "932b1a10cf581c168bdf3f6cf8579267b771550ba14dfa3b97e0d34c457cf84e",
+      "compiledBytes": 164648,
+      "coverIds": [
+        "cover_c96b8a2796eac2fcff73cfd0c668cade"
+      ],
+      "names": [
+        "An American Tail : Fievel Goes West"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_c96b8a2796eac2fcff73cfd0c668cade",
+          "coverId": "cover_c96b8a2796eac2fcff73cfd0c668cade",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Andre Agassi Tennis (USA).jpg",
+      "sourceFile": "ANDRE_AGASSI_TENNIS_4K.png",
+      "sourceTitle": "Andre Agassi Tennis",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "1e2016aa1ff00888c1318b71192e16581f637440e85d6b397eba3d07fbd14ab0",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_3ee3f357bbd0c8291557b5e357d6fb8c"
+      ],
+      "oldSha256": "6d4af84508155949f8566e1e0fbc905b4b36b9b6f0897b04bc1178bf3799580c",
+      "sourceSha256": "1e2016aa1ff00888c1318b71192e16581f637440e85d6b397eba3d07fbd14ab0",
+      "sourceBytes": 9591408,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "4f889ead155b3b148ae69dc5b8e321cd23c538d71b4077fbc4edc1151de98f77",
+      "compiledBytes": 122864,
+      "coverIds": [
+        "cover_3ee3f357bbd0c8291557b5e357d6fb8c"
+      ],
+      "names": [
+        "Andre Agassi Tennis"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_3ee3f357bbd0c8291557b5e357d6fb8c",
+          "coverId": "cover_3ee3f357bbd0c8291557b5e357d6fb8c",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Arcade's Greatest Hits - The Atari Collection 1 (USA).jpg",
+      "sourceFile": "ARCADE_S_GREATEST_HITS_THE_ATARI_COLLECTION_1_4K.png",
+      "sourceTitle": "Arcade's Greatest Hits - The Atari Collection 1",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "260d4fa6bc0487a53b501415eda83d64f617dd4ad9543c022f74f1cb8fc0c8a1",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_85b177e77eab31b3a103fcc3c6497cba"
+      ],
+      "oldSha256": "b32eec8bd09d78eda71a33a8b645136102661b236c7fe5a010db5ee8438fc15d",
+      "sourceSha256": "260d4fa6bc0487a53b501415eda83d64f617dd4ad9543c022f74f1cb8fc0c8a1",
+      "sourceBytes": 10050031,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "95217b7d0584a88528fed9541951fab0181a01a7ad519bf72aff58bb583fcbd8",
+      "compiledBytes": 149293,
+      "coverIds": [
+        "cover_85b177e77eab31b3a103fcc3c6497cba"
+      ],
+      "names": [
+        "Arcade's Greatest Hits : The Atari Collection 1"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_85b177e77eab31b3a103fcc3c6497cba",
+          "coverId": "cover_85b177e77eab31b3a103fcc3c6497cba",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Arcana (USA).jpg",
+      "sourceFile": "ARCANA_4K.png",
+      "sourceTitle": "Arcana",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "ed340166b21d9eaf249df7177f17a36f1fc2c81e56d1b76fe4477b21c432391b",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_fb292a509c4b42e2234a93c23e539045"
+      ],
+      "oldSha256": "3ed7d05e6f9b7d02ca07668bbe2d8d4e35cedcbf97e5c73a1effd0bcf59f9506",
+      "sourceSha256": "ed340166b21d9eaf249df7177f17a36f1fc2c81e56d1b76fe4477b21c432391b",
+      "sourceBytes": 11321993,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "70e4abe8f76c9b86149f837c433dcabdb68a7950e103a395fcdbfb992cd9f5a1",
+      "compiledBytes": 158724,
+      "coverIds": [
+        "cover_fb292a509c4b42e2234a93c23e539045"
+      ],
+      "names": [
+        "Arcana"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_fb292a509c4b42e2234a93c23e539045",
+          "coverId": "cover_fb292a509c4b42e2234a93c23e539045",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Archer Maclean's Super Dropzone (Europe).jpg",
+      "sourceFile": "ARCHER_MACLEAN_S_SUPER_DROPZONE_4K.png",
+      "sourceTitle": "Archer Maclean's Super Dropzone",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "27296b627b287e6256d14d118fec3883d7072a7c624b66112fedff102b2d9df2",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_740a7f2252803606618c95a7f1f117ae"
+      ],
+      "oldSha256": "de85778a93982598e2fbf26e1798ed30f7305778f4e2588f58614f199794f27d",
+      "sourceSha256": "27296b627b287e6256d14d118fec3883d7072a7c624b66112fedff102b2d9df2",
+      "sourceBytes": 11690740,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "518700e15fae750d6ebb8210012c5f3605cbcf447f3fee319911b4042b85f720",
+      "compiledBytes": 150272,
+      "coverIds": [
+        "cover_740a7f2252803606618c95a7f1f117ae"
+      ],
+      "names": [
+        "Archer MacLean's Super Dropzone"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_740a7f2252803606618c95a7f1f117ae",
+          "coverId": "cover_740a7f2252803606618c95a7f1f117ae",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Ardy Lightfoot (USA).jpg",
+      "sourceFile": "ARDY_LIGHTFOOT_4K.png",
+      "sourceTitle": "Ardy Lightfoot",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "fbf4174ec78cc9077982d03c1d899c770ddac580339d786cf14a14bd9c2a85cf",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_1aa5eaed53cd1799109d805d56d576cd"
+      ],
+      "oldSha256": "87555139fe6257844b554ef206112e7fadb5aff1c7eaa5e8538f5dce60c75a77",
+      "sourceSha256": "fbf4174ec78cc9077982d03c1d899c770ddac580339d786cf14a14bd9c2a85cf",
+      "sourceBytes": 12047048,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "6a935f2d9ccec6a548606f337bb6069778ca7bc4d0a644d866bc7b4eec1fb855",
+      "compiledBytes": 158748,
+      "coverIds": [
+        "cover_1aa5eaed53cd1799109d805d56d576cd"
+      ],
+      "names": [
+        "Ardy Lightfoot"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_1aa5eaed53cd1799109d805d56d576cd",
+          "coverId": "cover_1aa5eaed53cd1799109d805d56d576cd",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Arkanoid - Doh It Again (USA).jpg",
+      "sourceFile": "ARKANOID_DOH_IT_AGAIN_4K.png",
+      "sourceTitle": "Arkanoid - Doh It Again",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "8cf4196c8b6755dda742a026d753d74daaf10a06779324b06cb41a7a5bc3be6a",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_54ca6eb894ba86cabd033011157a672b"
+      ],
+      "oldSha256": "bdf321afc1d53aaade1188a2c5d57e7cc499c4bb1e794927470ae6070b408f99",
+      "sourceSha256": "8cf4196c8b6755dda742a026d753d74daaf10a06779324b06cb41a7a5bc3be6a",
+      "sourceBytes": 12286424,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "1385794a816d8e5a2a525f3cc17d691b1875e5c69080e6de0b3bd58a3a7c9fe2",
+      "compiledBytes": 164539,
+      "coverIds": [
+        "cover_54ca6eb894ba86cabd033011157a672b"
+      ],
+      "names": [
+        "Arkanoid : Doh It Again"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_54ca6eb894ba86cabd033011157a672b",
+          "coverId": "cover_54ca6eb894ba86cabd033011157a672b",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Art of Fighting (USA).jpg",
+      "sourceFile": "ART_OF_FIGHTING_4K.png",
+      "sourceTitle": "Art of Fighting",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "a910a63ddb466125171063efb6e579b812925dbbcd42c423a2921b03f25941f9",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_6e931cd1e88308572545f82ed02a5ec1"
+      ],
+      "oldSha256": "318dca4c4daa10d1af43c221e73813d672021db39753959fb36fb1e446f2833b",
+      "sourceSha256": "a910a63ddb466125171063efb6e579b812925dbbcd42c423a2921b03f25941f9",
+      "sourceBytes": 11779594,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "ad159203b8953767095412b4f7c5a5872052e2666aa2623808fd6e839f313ab6",
+      "compiledBytes": 151516,
+      "coverIds": [
+        "cover_6e931cd1e88308572545f82ed02a5ec1"
+      ],
+      "names": [
+        "Art of Fighting"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_6e931cd1e88308572545f82ed02a5ec1",
+          "coverId": "cover_6e931cd1e88308572545f82ed02a5ec1",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Asterix & Obelix (Europe).jpg",
+      "sourceFile": "ASTERIX_OBELIX_4K.png",
+      "sourceTitle": "Asterix & Obelix",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "40bfa25216aff9c156ebd94084bc074fd29377802080f06f0e3a60e04bede159",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_c94722ed2c53ef3dcfeb60a6dff5ec83"
+      ],
+      "oldSha256": "a29328f77dfed49434d89696b9ca5ef06185280bece1f70be114af1dee80c2cd",
+      "sourceSha256": "40bfa25216aff9c156ebd94084bc074fd29377802080f06f0e3a60e04bede159",
+      "sourceBytes": 12359722,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "a5ad65f1f148147addd858f0e4d367d7e1577525e5ce27d170d21cba8dda9825",
+      "compiledBytes": 163434,
+      "coverIds": [
+        "cover_c94722ed2c53ef3dcfeb60a6dff5ec83"
+      ],
+      "names": [
+        "Astérix & Obélix"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_c94722ed2c53ef3dcfeb60a6dff5ec83",
+          "coverId": "cover_c94722ed2c53ef3dcfeb60a6dff5ec83",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Asterix (Europe).jpg",
+      "sourceFile": "ASTERIX_4K.png",
+      "sourceTitle": "Asterix",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "00fa64d61a4d1bdefba41a14efe59bbef4d3bad083552b119eb56587b8a2c21c",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_355b62016e3fee590a41f949b2cfefef"
+      ],
+      "oldSha256": "968fd35635ab6942f430901fdd2cc94bf0ee214f287978335ead156454fd8bc9",
+      "sourceSha256": "00fa64d61a4d1bdefba41a14efe59bbef4d3bad083552b119eb56587b8a2c21c",
+      "sourceBytes": 12039979,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "e86ccc084145825ca720c2c65640a03f2d472be546823131766a68946add27ed",
+      "compiledBytes": 162269,
+      "coverIds": [
+        "cover_355b62016e3fee590a41f949b2cfefef"
+      ],
+      "names": [
+        "Astérix"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_355b62016e3fee590a41f949b2cfefef",
+          "coverId": "cover_355b62016e3fee590a41f949b2cfefef",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Axelay (USA).jpg",
+      "sourceFile": "AXELAY_4K.png",
+      "sourceTitle": "Axelay",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "f698e4e10685721e804e8a15eaa6cc3bdbd878a58f7844cdec0bfd7e627801b5",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_a32afd74d3e11bf913a477c91a9f8b25"
+      ],
+      "oldSha256": "beae6693d8555e3b21ae15934185592a72a3110bebb739e579fd58350d5a1e34",
+      "sourceSha256": "f698e4e10685721e804e8a15eaa6cc3bdbd878a58f7844cdec0bfd7e627801b5",
+      "sourceBytes": 12682535,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "f79a6524ad924e20e2b0087b3edea9d37df4556a426e41326e237745c2910f18",
+      "compiledBytes": 169553,
+      "coverIds": [
+        "cover_a32afd74d3e11bf913a477c91a9f8b25"
+      ],
+      "names": [
+        "Axelay"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_a32afd74d3e11bf913a477c91a9f8b25",
+          "coverId": "cover_a32afd74d3e11bf913a477c91a9f8b25",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "B.O.B. (USA).jpg",
+      "sourceFile": "B_O_B_4K.png",
+      "sourceTitle": "B.O.B.",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "d2ed8e843eff11112cd9e69421b7a3ab50542ec856994ee840d015b2502635f2",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_b771e6f305f406501d43f783424c6c78"
+      ],
+      "oldSha256": "6bedf63175ebb3c96a1970584af3c3ea3f461978d4a4a16074bb64d57f665f35",
+      "sourceSha256": "d2ed8e843eff11112cd9e69421b7a3ab50542ec856994ee840d015b2502635f2",
+      "sourceBytes": 11739874,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "58015a88d9bf9dc456ea8219bf15f403b39666bc2298f9f0f85054d92e8e13ed",
+      "compiledBytes": 157055,
+      "coverIds": [
+        "cover_b771e6f305f406501d43f783424c6c78"
+      ],
+      "names": [
+        "B.O.B."
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_b771e6f305f406501d43f783424c6c78",
+          "coverId": "cover_b771e6f305f406501d43f783424c6c78",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Ballz 3D - Fighting at Its Ballziest (USA).jpg",
+      "sourceFile": "BALLZ_3D_FIGHTING_AT_ITS_BALLZIEST_4K_V2.png",
+      "sourceTitle": "Ballz 3D - Fighting at Its Ballziest",
+      "sourceRevision": 2,
+      "sourceDeclaredSha256": "2f915a5d1364e47c821cc8cf77304c43cc748182c5d95582d3780c248993305b",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_8a2a1cb54cb830e75cdbe0583e44ebfe"
+      ],
+      "oldSha256": "d6da7cff4e66b61d052835a12a7c6f566e85a8164aec83733203940f23edf132",
+      "sourceSha256": "2f915a5d1364e47c821cc8cf77304c43cc748182c5d95582d3780c248993305b",
+      "sourceBytes": 10902431,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "a8b74a4f4473b0d12f83411e2931f9bbfcff260c08d50a485c55f7f955968ea5",
+      "compiledBytes": 142639,
+      "coverIds": [
+        "cover_8a2a1cb54cb830e75cdbe0583e44ebfe"
+      ],
+      "names": [
+        "Ballz 3D"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_8a2a1cb54cb830e75cdbe0583e44ebfe",
+          "coverId": "cover_8a2a1cb54cb830e75cdbe0583e44ebfe",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Barbie Super Model (USA).jpg",
+      "sourceFile": "BARBIE_SUPER_MODEL_4K.png",
+      "sourceTitle": "Barbie - Super Model",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "d64ed595d03530d9bacbf33e5d2cec704eae96bc06c2914e0c732a04fba7b99f",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_bb91033c8a226fa9ea95c7f833c4a044"
+      ],
+      "oldSha256": "e9bc6f2e1d6b970be5c85b674f78b0f26b50920fc54f1febc131c8022f9f0cbc",
+      "sourceSha256": "d64ed595d03530d9bacbf33e5d2cec704eae96bc06c2914e0c732a04fba7b99f",
+      "sourceBytes": 11619045,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "c0f83f2ff994e8c7ab4edb599dffe130895a098b2a5d7340a85c0b7e70b3366d",
+      "compiledBytes": 152249,
+      "coverIds": [
+        "cover_bb91033c8a226fa9ea95c7f833c4a044"
+      ],
+      "names": [
+        "Barbie : Super Model"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_bb91033c8a226fa9ea95c7f833c4a044",
+          "coverId": "cover_bb91033c8a226fa9ea95c7f833c4a044",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Barkley Shut Up and Jam! (USA).jpg",
+      "sourceFile": "BARKLEY_SHUT_UP_AND_JAM_4K.png",
+      "sourceTitle": "Barkley Shut Up and Jam!",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "b1ce80ba692240b82390b204ac00d95f83b03d98de923d10fcfb78dff4e95910",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_f0c28e8457055d6e0708c41bc3165824"
+      ],
+      "oldSha256": "a042038452c4287bf6e0345827c2bfb9c3e83826af3f82921efc688a51102cc1",
+      "sourceSha256": "b1ce80ba692240b82390b204ac00d95f83b03d98de923d10fcfb78dff4e95910",
+      "sourceBytes": 10994827,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "7adc96bd1390a6ed864f089e48187d0515539e70866e259ba69529670ccb4432",
+      "compiledBytes": 139760,
+      "coverIds": [
+        "cover_f0c28e8457055d6e0708c41bc3165824"
+      ],
+      "names": [
+        "Barkley : Shut Up and Jam!"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_f0c28e8457055d6e0708c41bc3165824",
+          "coverId": "cover_f0c28e8457055d6e0708c41bc3165824",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "BASS Masters Classic - Pro Edition (USA).jpg",
+      "sourceFile": "BASS_MASTERS_CLASSIC_PRO_EDITION_4K.png",
+      "sourceTitle": "BASS Masters Classic - Pro Edition",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "698219cc523005b96e7cc6533283e52197c1ebebca56d7d6d2f64d30915d9827",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_5b36aceedc123ecc596e84ba465fe849"
+      ],
+      "oldSha256": "1f4a66431f86a5013bf5f1359fe5801a5b4c8d66a211396cf840e41fcd106fec",
+      "sourceSha256": "698219cc523005b96e7cc6533283e52197c1ebebca56d7d6d2f64d30915d9827",
+      "sourceBytes": 12228586,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "78fe043bf3ccb9552c132da9fd822199f170334aae6b051f7033f3045ca4bf14",
+      "compiledBytes": 160389,
+      "coverIds": [
+        "cover_5b36aceedc123ecc596e84ba465fe849"
+      ],
+      "names": [
+        "Bass Masters Classic : Pro Edition"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_5b36aceedc123ecc596e84ba465fe849",
+          "coverId": "cover_5b36aceedc123ecc596e84ba465fe849",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "BASS Masters Classic (USA).jpg",
+      "sourceFile": "BASS_MASTERS_CLASSIC_4K.png",
+      "sourceTitle": "BASS Masters Classic",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "206a2fccfb5b82135df980b3a4304920dd9aa833b7769443056d13a69debab84",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_b271a9457ce8f1a1ad8c16645f5b0de3"
+      ],
+      "oldSha256": "d827b920becd05d4c7511b5672a8d2bf2273fa74c82f91a39d6287e0054cfd1c",
+      "sourceSha256": "206a2fccfb5b82135df980b3a4304920dd9aa833b7769443056d13a69debab84",
+      "sourceBytes": 13363822,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "99880659b6d9cad65de7e55ee773b207679f212a457b87779969ff0aeff794db",
+      "compiledBytes": 177846,
+      "coverIds": [
+        "cover_b271a9457ce8f1a1ad8c16645f5b0de3"
+      ],
+      "names": [
+        "Bass Masters Classic"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_b271a9457ce8f1a1ad8c16645f5b0de3",
+          "coverId": "cover_b271a9457ce8f1a1ad8c16645f5b0de3",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Bassin's Black Bass (USA).jpg",
+      "sourceFile": "BASSIN_S_BLACK_BASS_4K.png",
+      "sourceTitle": "Bassin's Black Bass",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "da9c37ff0363689a8befb9fae60227516a74fc21a731f9e2796f0ad0d1ef660f",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_b3f7c29e15a63783cefd80fdb63e6705"
+      ],
+      "oldSha256": "e1e20728987bb565ff737c39c2057954037d1963d99c026ad26211f714382d3a",
+      "sourceSha256": "da9c37ff0363689a8befb9fae60227516a74fc21a731f9e2796f0ad0d1ef660f",
+      "sourceBytes": 12508485,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "98559d3476b3c2daebf2fc85cf73971d3a09a5d72b4721077987b94fd75cd723",
+      "compiledBytes": 167918,
+      "coverIds": [
+        "cover_b3f7c29e15a63783cefd80fdb63e6705"
+      ],
+      "names": [
+        "Bassin's Black Bass"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_b3f7c29e15a63783cefd80fdb63e6705",
+          "coverId": "cover_b3f7c29e15a63783cefd80fdb63e6705",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Battle Blaze (USA).jpg",
+      "sourceFile": "BATTLE_BLAZE_4K.png",
+      "sourceTitle": "Battle Blaze",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "8a321f66148e9c63cfaae29af180fcf726572d30a9d08e647d3ae593b6f470c1",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_03f9755dcaaf112d539ae97181ea8876"
+      ],
+      "oldSha256": "d1f81b38ccd06f0691635e33ec6087dcdb3dcd5aa52b4315ee36d840a577c992",
+      "sourceSha256": "8a321f66148e9c63cfaae29af180fcf726572d30a9d08e647d3ae593b6f470c1",
+      "sourceBytes": 12176170,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "6eb5d1aeebb47b7894a462305207ba57db937dbeb0af3fa0ff51e64db1d527d9",
+      "compiledBytes": 158637,
+      "coverIds": [
+        "cover_03f9755dcaaf112d539ae97181ea8876"
+      ],
+      "names": [
+        "Battle Blaze"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_03f9755dcaaf112d539ae97181ea8876",
+          "coverId": "cover_03f9755dcaaf112d539ae97181ea8876",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Battle Cars.jpg",
+      "sourceFile": "BATTLE_CARS_4K.png",
+      "sourceTitle": "Battle Cars",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "c37a3d51a3c9044c305135aa912ae61c32891248560aa2680b31086c41bd5631",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_48193d4a97d9f17d4c1ed0f7b4b847b7"
+      ],
+      "oldSha256": "d9eca61dc3cb08535cd64904f73ab3f7aa32b2f968903cd699a3da5f0bf345f6",
+      "sourceSha256": "c37a3d51a3c9044c305135aa912ae61c32891248560aa2680b31086c41bd5631",
+      "sourceBytes": 12661494,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "27260a51d2d9c32c452b098efe000dfafea22474267276e7bbba41f167e02c90",
+      "compiledBytes": 163135,
+      "coverIds": [
+        "cover_48193d4a97d9f17d4c1ed0f7b4b847b7"
+      ],
+      "names": [
+        "Battle Cars"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_48193d4a97d9f17d4c1ed0f7b4b847b7",
+          "coverId": "cover_48193d4a97d9f17d4c1ed0f7b4b847b7",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Battle Clash (USA).jpg",
+      "sourceFile": "BATTLE_CLASH_4K.png",
+      "sourceTitle": "Battle Clash",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "20cdaf423a4269c67c62cc45ca02519098e7fa96e03704bf6ef1322dd2eb47df",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_36b2632f8e275bb222477cb2b0a63dbf"
+      ],
+      "oldSha256": "a82bfc9259d7c2db1a69214ae6aeb90b1ff32278fbf029c7e442035db58689e1",
+      "sourceSha256": "20cdaf423a4269c67c62cc45ca02519098e7fa96e03704bf6ef1322dd2eb47df",
+      "sourceBytes": 11963418,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "3f15c8e3e428597f6779cefed083391ca81334d64543adefbaea04db8902c6c1",
+      "compiledBytes": 163502,
+      "coverIds": [
+        "cover_36b2632f8e275bb222477cb2b0a63dbf"
+      ],
+      "names": [
+        "Battle Clash"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_36b2632f8e275bb222477cb2b0a63dbf",
+          "coverId": "cover_36b2632f8e275bb222477cb2b0a63dbf",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Battle Grand Prix (USA).jpg",
+      "sourceFile": "BATTLE_GRAND_PRIX_4K.png",
+      "sourceTitle": "Battle Grand Prix",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "44d325feec60850c5be4633c1944f384b7700d797559968bef8a6c731177478f",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_b5c24272b3db36c5d8071161fe6cea9f"
+      ],
+      "oldSha256": "a964032142787b83d10ea42cd9fb91fde0cd8d11e3f64555417aea681f5add15",
+      "sourceSha256": "44d325feec60850c5be4633c1944f384b7700d797559968bef8a6c731177478f",
+      "sourceBytes": 11838249,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "22a55699241dce311276f5804aa62eb61108b7b6b111844582eaf353c055295e",
+      "compiledBytes": 151931,
+      "coverIds": [
+        "cover_b5c24272b3db36c5d8071161fe6cea9f"
+      ],
+      "names": [
+        "Battle Grand Prix"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_b5c24272b3db36c5d8071161fe6cea9f",
+          "coverId": "cover_b5c24272b3db36c5d8071161fe6cea9f",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Battletoads & Double Dragon (USA).jpg",
+      "sourceFile": "BATTLETOADS_DOUBLE_DRAGON_4K.png",
+      "sourceTitle": "Battletoads-Double Dragon",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "552bb4875bc1c039906b2b36285ffc3232ee942c01cf6cad880ba0c8d0397cd2",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_018fde063f48466d1622341b9ab5eb88"
+      ],
+      "oldSha256": "b7705c6b8b4e841d59fdd80747014775af19c11794f36eb7faef58258ff85e38",
+      "sourceSha256": "552bb4875bc1c039906b2b36285ffc3232ee942c01cf6cad880ba0c8d0397cd2",
+      "sourceBytes": 12573402,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "49bf754fc402fe6e1657acf8ab07e0f28757dc6819ee96d6fd54165b13f549b9",
+      "compiledBytes": 168085,
+      "coverIds": [
+        "cover_018fde063f48466d1622341b9ab5eb88"
+      ],
+      "names": [
+        "Battletoads & Double Dragon"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_018fde063f48466d1622341b9ab5eb88",
+          "coverId": "cover_018fde063f48466d1622341b9ab5eb88",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Battletoads in Battlemaniacs (USA).jpg",
+      "sourceFile": "BATTLETOADS_IN_BATTLEMANIACS_4K.png",
+      "sourceTitle": "Battletoads in Battlemaniacs",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "59521b35f13d0fe5e6374974beed537e7f0b2740f2067cabe3185a31acb2e602",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_f1d9d06767f9a63592011424048bd181"
+      ],
+      "oldSha256": "6b5a59da0d3ced30cf9aa58d6b4dddb48d2b54a73cfa5cb5f789659082b0ff60",
+      "sourceSha256": "59521b35f13d0fe5e6374974beed537e7f0b2740f2067cabe3185a31acb2e602",
+      "sourceBytes": 12245171,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "a795a1845b43c6294509378744fc42a6bdd4a5ec30cf8ef54496edf16dd28ee8",
+      "compiledBytes": 161530,
+      "coverIds": [
+        "cover_f1d9d06767f9a63592011424048bd181"
+      ],
+      "names": [
+        "Battletoads in Battlemaniacs"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_f1d9d06767f9a63592011424048bd181",
+          "coverId": "cover_f1d9d06767f9a63592011424048bd181",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Bazooka Blitzkrieg (USA).jpg",
+      "sourceFile": "BAZOOKA_BLITZKRIEG_4K.png",
+      "sourceTitle": "Bazooka Blitzkrieg",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "b197d50a847cbc856c6daf24c3a9788b7f507397eac8b129c6860a923e07d584",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_cfe39395f8d0e3a7118af9c0303dd7cc"
+      ],
+      "oldSha256": "fd89e3575fafd4b4247f1237d8e7ee92d7ae7ab0ca292904ccda6b1236756674",
+      "sourceSha256": "b197d50a847cbc856c6daf24c3a9788b7f507397eac8b129c6860a923e07d584",
+      "sourceBytes": 11468194,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "22412c4023a5b2ff6d1544fae83e0b5ef293a5f4f3633ec8439c4549d6367c51",
+      "compiledBytes": 152273,
+      "coverIds": [
+        "cover_cfe39395f8d0e3a7118af9c0303dd7cc"
+      ],
+      "names": [
+        "Bazooka Blitzkrieg"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_cfe39395f8d0e3a7118af9c0303dd7cc",
+          "coverId": "cover_cfe39395f8d0e3a7118af9c0303dd7cc",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Beavis and Butt-Head (USA).jpg",
+      "sourceFile": "BEAVIS_AND_BUTT_HEAD_4K.png",
+      "sourceTitle": "Beavis and Butt-Head",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "bef899ee82e9f23508e762f34a46b5c2b3a6359f468196c114fc35b0d3adfaec",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_04c38d4db5daf02a08808bd45ccd9e76"
+      ],
+      "oldSha256": "be14eba382e1555e9bdd9eb171bd8c56d45982999f4207308ab4fec72c9cb1ea",
+      "sourceSha256": "bef899ee82e9f23508e762f34a46b5c2b3a6359f468196c114fc35b0d3adfaec",
+      "sourceBytes": 11535294,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "c2a8bad610e9ab13a2504611493135d91bf4ef2d0955f26e976b58b1e19510ce",
+      "compiledBytes": 155545,
+      "coverIds": [
+        "cover_04c38d4db5daf02a08808bd45ccd9e76"
+      ],
+      "names": [
+        "Beavis and Butt-Head"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_04c38d4db5daf02a08808bd45ccd9e76",
+          "coverId": "cover_04c38d4db5daf02a08808bd45ccd9e76",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Bebe's Kids (USA).jpg",
+      "sourceFile": "BEBE_S_KIDS_4K.png",
+      "sourceTitle": "Bebe's Kids",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "cf44ede13d0963e97173206c0a362f5f0b750bc8cb305241f7ed2ebb54bbbd75",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_83f4b319eaa10fe782a76ae81151d091"
+      ],
+      "oldSha256": "d6f509694613f3bcf749b6dd923797e21b04548db97609e52591cb0643144ac6",
+      "sourceSha256": "cf44ede13d0963e97173206c0a362f5f0b750bc8cb305241f7ed2ebb54bbbd75",
+      "sourceBytes": 12577095,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "2ff806b091d91118989f71c8d13649c5b84b8aac4c10ef9035ec3949a78e9e0e",
+      "compiledBytes": 174160,
+      "coverIds": [
+        "cover_83f4b319eaa10fe782a76ae81151d091"
+      ],
+      "names": [
+        "Bebe's Kids"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_83f4b319eaa10fe782a76ae81151d091",
+          "coverId": "cover_83f4b319eaa10fe782a76ae81151d091",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Beethoven - The Ultimate Canine Caper! (USA).jpg",
+      "sourceFile": "BEETHOVEN_THE_ULTIMATE_CANINE_CAPER_4K.png",
+      "sourceTitle": "Beethoven - The Ultimate Canine Caper!",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "2402b939e2d55e4aab4e2e0bfd9fadef0b45ecc9b35b028cb4547c12dfc3e151",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_f655e7d3e8b0b92bfffc9614d340d497"
+      ],
+      "oldSha256": "ac291b8193a02b3f01df1a6105cf23cadf3666e88fd1e0aa57f273ddd8f96775",
+      "sourceSha256": "2402b939e2d55e4aab4e2e0bfd9fadef0b45ecc9b35b028cb4547c12dfc3e151",
+      "sourceBytes": 12341277,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "019856cd43709b4aa1566b2c0c8d90cd2e1b41becaf726b9cfcfaca41137c27c",
+      "compiledBytes": 167535,
+      "coverIds": [
+        "cover_f655e7d3e8b0b92bfffc9614d340d497"
+      ],
+      "names": [
+        "Beethoven : The Ultimate Canine Caper!"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_f655e7d3e8b0b92bfffc9614d340d497",
+          "coverId": "cover_f655e7d3e8b0b92bfffc9614d340d497",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Best of the Best - Championship Karate (USA).jpg",
+      "sourceFile": "BEST_OF_THE_BEST_CHAMPIONSHIP_KARATE_4K.png",
+      "sourceTitle": "Best of the Best - Championship Karate",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "3868d9ab53ca2a6b97cac4f8aaabf5453a58ce075cff23c9af679d0fccc2d0e7",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_17ca2a1eece6d3b75b3dbaeef1cea94a"
+      ],
+      "oldSha256": "14bef34786a35fe8b9ba12c71c03095b87954f466dbe04f7d62e4b5ae3cec3e9",
+      "sourceSha256": "3868d9ab53ca2a6b97cac4f8aaabf5453a58ce075cff23c9af679d0fccc2d0e7",
+      "sourceBytes": 11150636,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "15083c9d04c6e881edd71232d52b99864f6c53bad13bf3fa265d30a7f83e0cba",
+      "compiledBytes": 149765,
+      "coverIds": [
+        "cover_17ca2a1eece6d3b75b3dbaeef1cea94a"
+      ],
+      "names": [
+        "Best of the Best : Championship Karate"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_17ca2a1eece6d3b75b3dbaeef1cea94a",
+          "coverId": "cover_17ca2a1eece6d3b75b3dbaeef1cea94a",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Big Sky Trooper (USA).jpg",
+      "sourceFile": "BIG_SKY_TROOPER_4K.png",
+      "sourceTitle": "Big Sky Trooper",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "a20606b4e4114a4330e27dd94485c50c47f0cbe119535512825242fdad1cc522",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_6b5c147de00efc9c757fc91ccb9ec6c9"
+      ],
+      "oldSha256": "62ddd213a51f6b08258d2f73578fae437709fd7552ca003798840dbedfd0e8e4",
+      "sourceSha256": "a20606b4e4114a4330e27dd94485c50c47f0cbe119535512825242fdad1cc522",
+      "sourceBytes": 11900908,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "bff586e0a41e02d0a0bb7f4ea1c57b4af027a6d5606151b056ff121f71d2d510",
+      "compiledBytes": 156942,
+      "coverIds": [
+        "cover_6b5c147de00efc9c757fc91ccb9ec6c9"
+      ],
+      "names": [
+        "Big Sky Trooper"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_6b5c147de00efc9c757fc91ccb9ec6c9",
+          "coverId": "cover_6b5c147de00efc9c757fc91ccb9ec6c9",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Biker Mice from Mars (USA).jpg",
+      "sourceFile": "BIKER_MICE_FROM_MARS_4K.png",
+      "sourceTitle": "Biker Mice from Mars",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "1116077690d95955b8fa119e2be6d6d89fe2dadf1bb2173c6883dd3f0c8e48a0",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_335ac2d80942158da5a6ca16f7ced1be"
+      ],
+      "oldSha256": "47dae49c590fbfc041dc4594cba14f9dd78f221c3c3f78496fa4cec658751370",
+      "sourceSha256": "1116077690d95955b8fa119e2be6d6d89fe2dadf1bb2173c6883dd3f0c8e48a0",
+      "sourceBytes": 12560240,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "3f0ab14899894e2ed02e633eb6372fb6b389a3697a66593e5a980e249298a4db",
+      "compiledBytes": 165096,
+      "coverIds": [
+        "cover_335ac2d80942158da5a6ca16f7ced1be"
+      ],
+      "names": [
+        "Biker Mice from Mars"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_335ac2d80942158da5a6ca16f7ced1be",
+          "coverId": "cover_335ac2d80942158da5a6ca16f7ced1be",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Bill Laimbeer's Combat Basketball (USA).jpg",
+      "sourceFile": "BILL_LAIMBEER_S_COMBAT_BASKETBALL_4K.png",
+      "sourceTitle": "Bill Laimbeer's Combat Basketball",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "124beee161127246acb033d537d837398765335972c345bf50651356cc99620a",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_0d8ce839c5706c4ec9280e1e6a322e38"
+      ],
+      "oldSha256": "8b6e64e493ac854506e449bacaba06ac680d9a67ef165d489b02ff4a3e5d9178",
+      "sourceSha256": "124beee161127246acb033d537d837398765335972c345bf50651356cc99620a",
+      "sourceBytes": 12532128,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "9689d2c780b172cc7382f78e7a634370823b294c1be1ea28ec77bc88a77320c0",
+      "compiledBytes": 161637,
+      "coverIds": [
+        "cover_0d8ce839c5706c4ec9280e1e6a322e38"
+      ],
+      "names": [
+        "Bill Laimbeer's Combat Basketball"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_0d8ce839c5706c4ec9280e1e6a322e38",
+          "coverId": "cover_0d8ce839c5706c4ec9280e1e6a322e38",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Bill Walsh College Football (USA).jpg",
+      "sourceFile": "BILL_WALSH_COLLEGE_FOOTBALL_4K.png",
+      "sourceTitle": "Bill Walsh College Football",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "8cc0bd33f0567d8f2ba14d3854d8dcc46cb4deea730ec234b591f9a42a490a08",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_cd950fd1c29a653d5a73d7b59a4f5e9d"
+      ],
+      "oldSha256": "a88da4fb5b292bc2c74e68dc7df84a8831917a2111e3bb6cb2c765dcdba880cd",
+      "sourceSha256": "8cc0bd33f0567d8f2ba14d3854d8dcc46cb4deea730ec234b591f9a42a490a08",
+      "sourceBytes": 10420760,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "8b18e6bf6fb977b69aa6c22d469c12bb65ce0d208481b925039fbce9b8462ae1",
+      "compiledBytes": 137286,
+      "coverIds": [
+        "cover_cd950fd1c29a653d5a73d7b59a4f5e9d"
+      ],
+      "names": [
+        "Bill Walsh College Football"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_cd950fd1c29a653d5a73d7b59a4f5e9d",
+          "coverId": "cover_cd950fd1c29a653d5a73d7b59a4f5e9d",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/BioMetal (USA).jpg",
+      "sourceFile": "BIOMETAL_4K.png",
+      "sourceTitle": "BioMetal",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "e6850e92a683a288659d0075c2aab996cf45a9251026834beecfe0cdf32f94e0",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_024ceb333394e8b88e636cbc38407bb9"
+      ],
+      "oldSha256": "ca9838deee698133e12902e3607186df6f55cfcb067e7196daae1e7472dfb637",
+      "sourceSha256": "e6850e92a683a288659d0075c2aab996cf45a9251026834beecfe0cdf32f94e0",
+      "sourceBytes": 12661513,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "8e3cc0f925d1e5a702a92eea973b36b983603062cb86804bae97aae1c5ab0f33",
+      "compiledBytes": 166865,
+      "coverIds": [
+        "cover_024ceb333394e8b88e636cbc38407bb9"
+      ],
+      "names": [
+        "BioMetal"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_024ceb333394e8b88e636cbc38407bb9",
+          "coverId": "cover_024ceb333394e8b88e636cbc38407bb9",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Blackthorne (USA).jpg",
+      "sourceFile": "BLACKTHORNE_4K.png",
+      "sourceTitle": "Blackthorne",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "55c03faa92f1def56dc2b2c950ea9e1424a2d200ae75a911d0ab4b19c077e933",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_6ae7625eb5232d673eb4353894e75a2c"
+      ],
+      "oldSha256": "abacfef9b9cc6d4a1581a451f01997a6dbcda7fcc70205e9fdddb38a99fa590e",
+      "sourceSha256": "55c03faa92f1def56dc2b2c950ea9e1424a2d200ae75a911d0ab4b19c077e933",
+      "sourceBytes": 12068379,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "f99fec8be590c5a2c2e3b8ec5f760ffdbb6f03935bc5c87182b2b6c9eca29e77",
+      "compiledBytes": 154810,
+      "coverIds": [
+        "cover_6ae7625eb5232d673eb4353894e75a2c"
+      ],
+      "names": [
+        "Blackthorne"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_6ae7625eb5232d673eb4353894e75a2c",
+          "coverId": "cover_6ae7625eb5232d673eb4353894e75a2c",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "BlaZeon - The Bio-Cyborg Challenge (USA).jpg",
+      "sourceFile": "BLAZEON_THE_BIO_CYBORG_CHALLENGE_4K.png",
+      "sourceTitle": "BlaZeon - The Bio-Cyborg Challenge",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "872411638ca115370d6b70f055f2b8ceb7937bd271dc57e67a452ebfa5ce0389",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_4061af779345bf4245132975b82f3c02"
+      ],
+      "oldSha256": "0dbf8fee7e31face0c58538713df28f8d6bca54fd2cf9b5894838d85106b2336",
+      "sourceSha256": "872411638ca115370d6b70f055f2b8ceb7937bd271dc57e67a452ebfa5ce0389",
+      "sourceBytes": 12226045,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "8d93153819fe8a2d5e43b9bf2eb676488492c50ee766a8b48009777bcf5d5c5e",
+      "compiledBytes": 166640,
+      "coverIds": [
+        "cover_4061af779345bf4245132975b82f3c02"
+      ],
+      "names": [
+        "BlaZeon : The Bio-Cyborg Challenge"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_4061af779345bf4245132975b82f3c02",
+          "coverId": "cover_4061af779345bf4245132975b82f3c02",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Bobby's World (USA) (Proto).jpg",
+      "sourceFile": "BOBBY_S_WORLD_4K.png",
+      "sourceTitle": "Bobby's World",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "df9e5d6026b589e0982d3da1114da39de962265aa75bc0016136deb14fe9ca39",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_ceff385a77408a8f793800a1965d060d"
+      ],
+      "oldSha256": "486debe66934e270f04cf32636baf1a0142850ab0050681ad08c66e1d6fa3ec3",
+      "sourceSha256": "df9e5d6026b589e0982d3da1114da39de962265aa75bc0016136deb14fe9ca39",
+      "sourceBytes": 10683966,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "6be146de51a67a83d9d3904c5d8f99c54889d6d7eb7b871e48cb9b822d4bea6f",
+      "compiledBytes": 145594,
+      "coverIds": [
+        "cover_ceff385a77408a8f793800a1965d060d"
+      ],
+      "names": [
+        "Bobby's World"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_ceff385a77408a8f793800a1965d060d",
+          "coverId": "cover_ceff385a77408a8f793800a1965d060d",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Boxing Legends of the Ring (USA).jpg",
+      "sourceFile": "BOXING_LEGENDS_OF_THE_RING_4K_V4.png",
+      "sourceTitle": "Boxing Legends of the Ring",
+      "sourceRevision": 4,
+      "sourceDeclaredSha256": "6f2a0a61afae6558448c82e6a9b40e21fad3f718b869ab743d53db80c0fab109",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_daa7535d0c3fd7464897ce6110443648"
+      ],
+      "oldSha256": "a38f5ac1f20a51c786fb4760633791259565c78e42ca649247187f69ea16586a",
+      "sourceSha256": "6f2a0a61afae6558448c82e6a9b40e21fad3f718b869ab743d53db80c0fab109",
+      "sourceBytes": 11759014,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "5e2706af3a97ac233e252c07a9f2f913f564275a340763cd8624fa7872630a5c",
+      "compiledBytes": 155621,
+      "coverIds": [
+        "cover_daa7535d0c3fd7464897ce6110443648"
+      ],
+      "names": [
+        "Boxing Legends of the Ring"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_daa7535d0c3fd7464897ce6110443648",
+          "coverId": "cover_daa7535d0c3fd7464897ce6110443648",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Chavez II (USA).jpg",
+      "sourceFile": "CHAVEZ_II_4K.png",
+      "sourceTitle": "Chavez II",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "4c46f7097f49cf8b1cb364c72a9bb7cd4719ad53b82b66deb359aaca31bf8bb2",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_518dadce584baf4359203b5ff3904f65"
+      ],
+      "oldSha256": "3d895c2cad76dc103576b6905016ea2e3ed4fe83e7b1fd5069c3013cdff0453a",
+      "sourceSha256": "4c46f7097f49cf8b1cb364c72a9bb7cd4719ad53b82b66deb359aaca31bf8bb2",
+      "sourceBytes": 12041303,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "3dcc337912157f1e2d00f87be81089497edbe5ef117f896ddd84d0c67a868467",
+      "compiledBytes": 149735,
+      "coverIds": [
+        "cover_518dadce584baf4359203b5ff3904f65"
+      ],
+      "names": [
+        "Chavez II"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_518dadce584baf4359203b5ff3904f65",
+          "coverId": "cover_518dadce584baf4359203b5ff3904f65",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Brain Lord (USA).jpg",
+      "sourceFile": "BRAIN_LORD_4K.png",
+      "sourceTitle": "Brain Lord",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "612a1eec44d97f39811b1109959d713eb88976db3f11d010a3aac642ca82e0e5",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_3e43ba95549fe15395b34c82dbf456d3"
+      ],
+      "oldSha256": "bcae40abb542de495dd04684fa14e8ac3c68e7ec513e3d884f244b2224cfe4f3",
+      "sourceSha256": "612a1eec44d97f39811b1109959d713eb88976db3f11d010a3aac642ca82e0e5",
+      "sourceBytes": 12172226,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "7b0f66e2863fa71adf299cabe49f5326659f67faab8b6df802943a75580d2535",
+      "compiledBytes": 147539,
+      "coverIds": [
+        "cover_3e43ba95549fe15395b34c82dbf456d3"
+      ],
+      "names": [
+        "Brain Lord"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_3e43ba95549fe15395b34c82dbf456d3",
+          "coverId": "cover_3e43ba95549fe15395b34c82dbf456d3",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Bram Stoker's Dracula (USA).jpg",
+      "sourceFile": "BRAM_STOKER_S_DRACULA_4K.png",
+      "sourceTitle": "Bram Stoker's Dracula",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "9ae735b9ac791e76d5956291fc5d3c6981e88e00366dd0aa5a5a2851835efb41",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_83ffb3b7bb01555911990c27bfe74a2b"
+      ],
+      "oldSha256": "af694854cdd2540330ca93fb5465a24d6deddc1fb28957de32f9da903a78a8bc",
+      "sourceSha256": "9ae735b9ac791e76d5956291fc5d3c6981e88e00366dd0aa5a5a2851835efb41",
+      "sourceBytes": 11659121,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "bba160c39f202e64273f4b217ecb0335fc613567f42868f1ce4e460ab9359780",
+      "compiledBytes": 139318,
+      "coverIds": [
+        "cover_83ffb3b7bb01555911990c27bfe74a2b"
+      ],
+      "names": [
+        "Bram Stoker's Dracula"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_83ffb3b7bb01555911990c27bfe74a2b",
+          "coverId": "cover_83ffb3b7bb01555911990c27bfe74a2b",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Brandish (USA).jpg",
+      "sourceFile": "BRANDISH_4K.png",
+      "sourceTitle": "Brandish",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "8c560c7140b4f6b01f37d892e60041ba8425fd7a9e0364867ce000dde2867f47",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_bfb16bb938850cdc4ddf8d76e2c01e2a"
+      ],
+      "oldSha256": "81c8cf0040e15d41885ddb2ff78ae3c2a0f550912ed255f68e10944f56aea106",
+      "sourceSha256": "8c560c7140b4f6b01f37d892e60041ba8425fd7a9e0364867ce000dde2867f47",
+      "sourceBytes": 12228610,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "38e7bfd5673e99a104ff219b4dedfaeaacd496047266cbb016d91ff947225117",
+      "compiledBytes": 158164,
+      "coverIds": [
+        "cover_bfb16bb938850cdc4ddf8d76e2c01e2a"
+      ],
+      "names": [
+        "Brandish"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_bfb16bb938850cdc4ddf8d76e2c01e2a",
+          "coverId": "cover_bfb16bb938850cdc4ddf8d76e2c01e2a",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Brawl Brothers (USA).jpg",
+      "sourceFile": "BRAWL_BROTHERS_4K.png",
+      "sourceTitle": "Brawl Brothers",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "62d6a92e0b2d9072bb7f60e7e94c45467590089cb55a331efbb3a6b035d49ad7",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_c195e222fb74b8dc6aeb587eae17345b"
+      ],
+      "oldSha256": "910b19cacc931337006f5f1d848176eadbb082b9fdd088b972830d4e6c435fff",
+      "sourceSha256": "62d6a92e0b2d9072bb7f60e7e94c45467590089cb55a331efbb3a6b035d49ad7",
+      "sourceBytes": 12116641,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "c38b195d67f4d120791d0077f10b268af9e3449df503233fbb98344c0d5540dd",
+      "compiledBytes": 158722,
+      "coverIds": [
+        "cover_c195e222fb74b8dc6aeb587eae17345b"
+      ],
+      "names": [
+        "Brawl Brothers"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_c195e222fb74b8dc6aeb587eae17345b",
+          "coverId": "cover_c195e222fb74b8dc6aeb587eae17345b",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "BreakThru! (USA).jpg",
+      "sourceFile": "BREAKTHRU_4K.png",
+      "sourceTitle": "BreakThru!",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "27db124432d6e079e8d6886ce3a2deec4da65d7c824d6afe217a47ab656efaa9",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_4cb59c393987924b73d38801708851ea"
+      ],
+      "oldSha256": "687555716c913bdf06f6e48f312bd716218cb9a6745b6d39755f939c85d978b1",
+      "sourceSha256": "27db124432d6e079e8d6886ce3a2deec4da65d7c824d6afe217a47ab656efaa9",
+      "sourceBytes": 12341050,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "8276d9f8a6346097c42f030564b9036c7dbe4e3a51b9b853c0447e0d4f6e0796",
+      "compiledBytes": 165162,
+      "coverIds": [
+        "cover_4cb59c393987924b73d38801708851ea"
+      ],
+      "names": [
+        "BreakThru!"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_4cb59c393987924b73d38801708851ea",
+          "coverId": "cover_4cb59c393987924b73d38801708851ea",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Breath of Fire II (USA).jpg",
+      "sourceFile": "BREATH_OF_FIRE_II_4K.png",
+      "sourceTitle": "Breath of Fire II",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "7235134ddd1382529e7c2a0cc8918cda79d67dfde5eab2787f7a58815e65d514",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_e549de82ac73b7405260993ad8c6d3bc"
+      ],
+      "oldSha256": "73d2225ae4cca1022cf8ea8c4fb38614a266e242a40ccab75cddad0a3572f6d9",
+      "sourceSha256": "7235134ddd1382529e7c2a0cc8918cda79d67dfde5eab2787f7a58815e65d514",
+      "sourceBytes": 12894688,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "aa5f1c9150becc79b6da5f629e53e89b493405d8a78ad82e0d141fc986650c52",
+      "compiledBytes": 176048,
+      "coverIds": [
+        "cover_e549de82ac73b7405260993ad8c6d3bc"
+      ],
+      "names": [
+        "Breath of Fire II"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_e549de82ac73b7405260993ad8c6d3bc",
+          "coverId": "cover_e549de82ac73b7405260993ad8c6d3bc",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Breath of Fire (USA).jpg",
+      "sourceFile": "BREATH_OF_FIRE_4K.png",
+      "sourceTitle": "Breath of Fire",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "66941d28e9737190efdac6b3a6a99ca975cf8758740a2f65268f8bea8c8ee222",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_28f690949d6d305f18fbc60b8e0fb31e"
+      ],
+      "oldSha256": "1e86586431fc74647b6e80271ca2449b3d12cfc6f76ff17109d4b7a4e4716531",
+      "sourceSha256": "66941d28e9737190efdac6b3a6a99ca975cf8758740a2f65268f8bea8c8ee222",
+      "sourceBytes": 13024657,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "9d30850798347c9c6debef6905e2c553b0759e805fb0a052cebb62c58124925b",
+      "compiledBytes": 168368,
+      "coverIds": [
+        "cover_28f690949d6d305f18fbc60b8e0fb31e"
+      ],
+      "names": [
+        "Breath of Fire"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_28f690949d6d305f18fbc60b8e0fb31e",
+          "coverId": "cover_28f690949d6d305f18fbc60b8e0fb31e",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Brett Hull Hockey '95 (USA).jpg",
+      "sourceFile": "BRETT_HULL_HOCKEY_95_4K.png",
+      "sourceTitle": "Brett Hull Hockey 95",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "f281ecde54a95748ffecab0c3b63b756c58223cb41882bf0e9490b3351bb44d7",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_b1013f2173f38bff4e115064b9be43c2"
+      ],
+      "oldSha256": "bf764af6ed91f08a1d1c6895c7860d73421c90e044f32e31fab88b5b75ec9795",
+      "sourceSha256": "f281ecde54a95748ffecab0c3b63b756c58223cb41882bf0e9490b3351bb44d7",
+      "sourceBytes": 10571600,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "87e59c2fe5f15415d6e820db0d622bc3d55c1ccae4e56acbb548359be0267001",
+      "compiledBytes": 137464,
+      "coverIds": [
+        "cover_b1013f2173f38bff4e115064b9be43c2"
+      ],
+      "names": [
+        "Brett Hull Hockey 95"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_b1013f2173f38bff4e115064b9be43c2",
+          "coverId": "cover_b1013f2173f38bff4e115064b9be43c2",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Brett Hull Hockey (USA).jpg",
+      "sourceFile": "BRETT_HULL_HOCKEY_4K.png",
+      "sourceTitle": "Brett Hull Hockey",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "a57e69cff836bc526ba13ea6dc205bec86bebaab6690caedb3f50f7eb1a48590",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_9ea757e5ed7524b29da299dae7deee97"
+      ],
+      "oldSha256": "394412012788ccb2f1b724a54b7842043fd18d114912d6ac47398afd428ba008",
+      "sourceSha256": "a57e69cff836bc526ba13ea6dc205bec86bebaab6690caedb3f50f7eb1a48590",
+      "sourceBytes": 10722767,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "8a6f623c3df3dc8bb277c658695730a2e1bd47a6d5d2a9f918183a8a479b1ab6",
+      "compiledBytes": 141250,
+      "coverIds": [
+        "cover_9ea757e5ed7524b29da299dae7deee97"
+      ],
+      "names": [
+        "Brett Hull Hockey"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_9ea757e5ed7524b29da299dae7deee97",
+          "coverId": "cover_9ea757e5ed7524b29da299dae7deee97",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Bronkie the Bronchiasaurus (USA).jpg",
+      "sourceFile": "BRONKIE_THE_BRONCHIASAURUS_4K.png",
+      "sourceTitle": "Bronkie the Bronchiasaurus",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "a23a73449cab284782032b491f2da3fe05dd2b0eb94612c335b2328e68b2bfa5",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_f01b0c84568f4ec9e98f6aa71be45aaa"
+      ],
+      "oldSha256": "bfa7085490bbb741651649f1476b85a9e802488048bbf86d5a477b09a7e319d1",
+      "sourceSha256": "a23a73449cab284782032b491f2da3fe05dd2b0eb94612c335b2328e68b2bfa5",
+      "sourceBytes": 12823234,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "a970ddea84f06acb11ed670c015533bb9a011e13dd674eb34e03014ca282d8d9",
+      "compiledBytes": 168850,
+      "coverIds": [
+        "cover_f01b0c84568f4ec9e98f6aa71be45aaa"
+      ],
+      "names": [
+        "Bronkie the Bronchiasaurus"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_f01b0c84568f4ec9e98f6aa71be45aaa",
+          "coverId": "cover_f01b0c84568f4ec9e98f6aa71be45aaa",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Brunswick World Tournament of Champions (USA).jpg",
+      "sourceFile": "BRUNSWICK_WORLD_TOURNAMENT_OF_CHAMPIONS_4K.png",
+      "sourceTitle": "Brunswick World - Tournament of Champions",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "80397db2848166d4902259a1bc2e78a9926626f548a3f2f7ea475f697ffb7c28",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_42a7f08739ffe32edfef9861ba66396c"
+      ],
+      "oldSha256": "2d2ac5dc8308c0bb967534c0d60849166f674608b7d634c4990beeaf1d721778",
+      "sourceSha256": "80397db2848166d4902259a1bc2e78a9926626f548a3f2f7ea475f697ffb7c28",
+      "sourceBytes": 10762554,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "4d8de623360012d86e5a99af08228cf6e1432ff4ab67c7c5fed7cc344c03d0f5",
+      "compiledBytes": 139262,
+      "coverIds": [
+        "cover_42a7f08739ffe32edfef9861ba66396c"
+      ],
+      "names": [
+        "Brunswick World Tournament of Champions"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_42a7f08739ffe32edfef9861ba66396c",
+          "coverId": "cover_42a7f08739ffe32edfef9861ba66396c",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Brutal - Paws of Fury (USA).jpg",
+      "sourceFile": "BRUTAL_PAWS_OF_FURY_4K.png",
+      "sourceTitle": "Brutal - Paws of Fury",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "0e0d73f9b2b64662b81b931a75dc3677fa2bb37caeb74c980a241565740b0576",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_3b35b418b40fa904586b4ede9b3b466b"
+      ],
+      "oldSha256": "89367f244b743bcbad9f346a6d161553c0e3604480ac90c82eda4f2c2f634240",
+      "sourceSha256": "0e0d73f9b2b64662b81b931a75dc3677fa2bb37caeb74c980a241565740b0576",
+      "sourceBytes": 12361447,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "b96c5d952b03eaa38edd1146ca320290a11ac80c9000b4625d1437a156d5e24d",
+      "compiledBytes": 163156,
+      "coverIds": [
+        "cover_3b35b418b40fa904586b4ede9b3b466b"
+      ],
+      "names": [
+        "Brutal : Paws of Fury"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_3b35b418b40fa904586b4ede9b3b466b",
+          "coverId": "cover_3b35b418b40fa904586b4ede9b3b466b",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Bubsy II (USA).jpg",
+      "sourceFile": "BUBSY_II_4K.png",
+      "sourceTitle": "Bubsy II",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "3b433bbc4eee1e1ced884aef95fbcbca849836a2abc1fd3bcd78bfa8c3f9e89c",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_1e7925a84c234726205210103317bd0d"
+      ],
+      "oldSha256": "4f1b4a3215baa6cd1892fe4bc54a4917ac489751468547e0d6e354ce347c6f28",
+      "sourceSha256": "3b433bbc4eee1e1ced884aef95fbcbca849836a2abc1fd3bcd78bfa8c3f9e89c",
+      "sourceBytes": 11721899,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "a0ac1bbb470102a514650dc8d03fa8e17e837f5762f390c8e9ea17067f5ea827",
+      "compiledBytes": 162119,
+      "coverIds": [
+        "cover_1e7925a84c234726205210103317bd0d"
+      ],
+      "names": [
+        "Bubsy II"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_1e7925a84c234726205210103317bd0d",
+          "coverId": "cover_1e7925a84c234726205210103317bd0d",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Bubsy in Claws Encounters of the Furred Kind (USA).jpg",
+      "sourceFile": "BUBSY_IN_CLAWS_ENCOUNTERS_OF_THE_FURRED_KIND_4K.png",
+      "sourceTitle": "Bubsy in - Claws Encounters of the Furred Kind",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "4b4fc70973a0cacb2d85057cd8aebc3258f80ed53d1f873ea95e4a8a058d28a7",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_eb86e28f8d6c389b9d316ece3688771b"
+      ],
+      "oldSha256": "7ecedb9bc1124fc9b41eb51273ddb56254cb9178b9f7dbf2b4904a145cd8860e",
+      "sourceSha256": "4b4fc70973a0cacb2d85057cd8aebc3258f80ed53d1f873ea95e4a8a058d28a7",
+      "sourceBytes": 11542993,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "3392c22cef8409d19238df4d384a1852fa9dc08d8c268477cd753d54331dbae7",
+      "compiledBytes": 154907,
+      "coverIds": [
+        "cover_eb86e28f8d6c389b9d316ece3688771b"
+      ],
+      "names": [
+        "Bubsy in : Claws Encounters of the Furred Kind"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_eb86e28f8d6c389b9d316ece3688771b",
+          "coverId": "cover_eb86e28f8d6c389b9d316ece3688771b",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Bulls vs Blazers and the NBA Playoffs (USA) (Rev 1).jpg",
+      "sourceFile": "BULLS_VS_BLAZERS_AND_THE_NBA_PLAYOFFS_4K.png",
+      "sourceTitle": "Bulls vs Blazers and the NBA Playoffs",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "337ea845b776f726019f0a1bcea2eb4bba01de78ccb87f4fd032f9e5c0297503",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_c39ec09a400c80ee1a0487ff0ea3f685"
+      ],
+      "oldSha256": "a02dcd23e40362d06061b013774fe958558d40febb01f927a81aa791001811ac",
+      "sourceSha256": "337ea845b776f726019f0a1bcea2eb4bba01de78ccb87f4fd032f9e5c0297503",
+      "sourceBytes": 11072934,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "eaeae146b3447b2319f5a1c6a837c52b33e45c413ab37391eb012afa589c5c15",
+      "compiledBytes": 147661,
+      "coverIds": [
+        "cover_c39ec09a400c80ee1a0487ff0ea3f685"
+      ],
+      "names": [
+        "Bulls vs Blazers and the NBA Playoffs"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_c39ec09a400c80ee1a0487ff0ea3f685",
+          "coverId": "cover_c39ec09a400c80ee1a0487ff0ea3f685",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Bust-A-Move (USA).jpg",
+      "sourceFile": "BUST_A_MOVE_4K.png",
+      "sourceTitle": "Bust-A-Move",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "18fcb0ff56cd03b17c01bfef8596ba7e7a0299f1783e95b375debbc3f85afe9f",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_7325e996b40eb2d49cc3ebb9b853eb8d"
+      ],
+      "oldSha256": "4e708cc00cd97c8f282e9295d0bf65e4691bfecaab44938d5b33ff61b02edc6f",
+      "sourceSha256": "18fcb0ff56cd03b17c01bfef8596ba7e7a0299f1783e95b375debbc3f85afe9f",
+      "sourceBytes": 11555568,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "fefef32d0bf346050eb29f2f1e9c8403e4aac2f12e7f0b55013b70dd27d4d6a6",
+      "compiledBytes": 152162,
+      "coverIds": [
+        "cover_7325e996b40eb2d49cc3ebb9b853eb8d"
+      ],
+      "names": [
+        "Bust-A-Move"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_7325e996b40eb2d49cc3ebb9b853eb8d",
+          "coverId": "cover_7325e996b40eb2d49cc3ebb9b853eb8d",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Cacoma Knight in Bizyland (USA).jpg",
+      "sourceFile": "CACOMA_KNIGHT_IN_BIZYLAND_4K.png",
+      "sourceTitle": "Cacoma Knight in Bizyland",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "aae169d500fe83d630b9212f9d0848bdbdf7ad45a7b0d28af7c817fd31542b51",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_fc8221835bd768b6cc7d68efff311910"
+      ],
+      "oldSha256": "50a5ba186f0d01d9ac3949795d5aa72a297084becadcc1d10495488aeafb6a36",
+      "sourceSha256": "aae169d500fe83d630b9212f9d0848bdbdf7ad45a7b0d28af7c817fd31542b51",
+      "sourceBytes": 12277455,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "e4a265b31484e9e378d74ff8f9f46aba8a5ec2687334cc52e5ebdd9e1e92a90c",
+      "compiledBytes": 171314,
+      "coverIds": [
+        "cover_fc8221835bd768b6cc7d68efff311910"
+      ],
+      "names": [
+        "Cacoma Knight in Bizyland"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_fc8221835bd768b6cc7d68efff311910",
+          "coverId": "cover_fc8221835bd768b6cc7d68efff311910",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Cal Ripken Jr. Baseball (USA).jpg",
+      "sourceFile": "CAL_RIPKEN_JR_BASEBALL_4K.png",
+      "sourceTitle": "Cal Ripken Jr. Baseball",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "63aa4831bca723d96cbe2fe2adbfd4f75d4b1e4fcb8da0a1d9a4efa254c42ffe",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_c927fcacd82cdcf3e5c3d5e06fce3cd2"
+      ],
+      "oldSha256": "7ab71fc145a01b410c438257dc7b1880852a72fd6c5cecbbe3bd266fcd2763ac",
+      "sourceSha256": "63aa4831bca723d96cbe2fe2adbfd4f75d4b1e4fcb8da0a1d9a4efa254c42ffe",
+      "sourceBytes": 10643317,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "74023c7e7ad9a10778d4ecbcacdf88fb82a7e1f0382e9abd6fb21695221a6489",
+      "compiledBytes": 138728,
+      "coverIds": [
+        "cover_c927fcacd82cdcf3e5c3d5e06fce3cd2"
+      ],
+      "names": [
+        "Cal Ripken Jr. Baseball"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_c927fcacd82cdcf3e5c3d5e06fce3cd2",
+          "coverId": "cover_c927fcacd82cdcf3e5c3d5e06fce3cd2",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "California Games II (USA).jpg",
+      "sourceFile": "CALIFORNIA_GAMES_II_4K.png",
+      "sourceTitle": "California Games II",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "a1f6dd3317e0746b511a666e52f99e8d8fdc5468e10192f9d2f32d19acad916a",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_c58221680e81b295edb6ff235580581d"
+      ],
+      "oldSha256": "200350d170f279b7c0f0e0559aabdb2237696f9f09176c37377dac728e5f296c",
+      "sourceSha256": "a1f6dd3317e0746b511a666e52f99e8d8fdc5468e10192f9d2f32d19acad916a",
+      "sourceBytes": 11733816,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "875c2e6d949b9f7aacb591fba139c6c1452460fd17804648263636f51ad796b1",
+      "compiledBytes": 154196,
+      "coverIds": [
+        "cover_c58221680e81b295edb6ff235580581d"
+      ],
+      "names": [
+        "California Games II"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_c58221680e81b295edb6ff235580581d",
+          "coverId": "cover_c58221680e81b295edb6ff235580581d",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Cannon Fodder (Europe).jpg",
+      "sourceFile": "CANNON_FODDER_4K.png",
+      "sourceTitle": "Cannon Fodder",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "4ee9c77e464d201511ebef6688db2d721d50c68dc4e2de56ab36f83cf04a6a56",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_886cb5b9679506b5c191e077555577fc"
+      ],
+      "oldSha256": "062b11b92f2af045eb97931c7e452be6a4ea1a4a5ac7431d96e60eacee67185d",
+      "sourceSha256": "4ee9c77e464d201511ebef6688db2d721d50c68dc4e2de56ab36f83cf04a6a56",
+      "sourceBytes": 11129681,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "5d8de1bebec05451a4105e9d1642cf25f84ec763a67f0645a444a8191ebbada5",
+      "compiledBytes": 155778,
+      "coverIds": [
+        "cover_886cb5b9679506b5c191e077555577fc"
+      ],
+      "names": [
+        "Cannon Fodder"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_886cb5b9679506b5c191e077555577fc",
+          "coverId": "cover_886cb5b9679506b5c191e077555577fc",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Cannondale Cup (USA).jpg",
+      "sourceFile": "CANNONDALE_CUP_4K.png",
+      "sourceTitle": "Cannondale Cup",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "2f1dcdbb3e0a8c19d2163f8244df53f532c1d861e76ee23b795e254317601bed",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_6b713474e313fa78830e5bda1e8053c7"
+      ],
+      "oldSha256": "30919ee61f2386583f1b3ad873e96592b31f6eda1e6a048f5786ec3513f168a6",
+      "sourceSha256": "2f1dcdbb3e0a8c19d2163f8244df53f532c1d861e76ee23b795e254317601bed",
+      "sourceBytes": 12909004,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "adb0576427132d7d074094b3b347436dd3b94f7e392b20aa85cd470c635c55a7",
+      "compiledBytes": 177239,
+      "coverIds": [
+        "cover_6b713474e313fa78830e5bda1e8053c7"
+      ],
+      "names": [
+        "Cannondale Cup"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_6b713474e313fa78830e5bda1e8053c7",
+          "coverId": "cover_6b713474e313fa78830e5bda1e8053c7",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Capcom's MVP Football (USA).jpg",
+      "sourceFile": "CAPCOM_S_MVP_FOOTBALL_4K.png",
+      "sourceTitle": "Capcom's MVP Football",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "611638422c5d064f32464c3d502c4281c641d3e826331b174209bf8b4966ed3d",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_f5a6363ebe9170287b1955cb6bcc50e5"
+      ],
+      "oldSha256": "8d0f1f384a6e0f12b2f34cc73fe899dc2490536d52a19bd68303c8f36ccad12b",
+      "sourceSha256": "611638422c5d064f32464c3d502c4281c641d3e826331b174209bf8b4966ed3d",
+      "sourceBytes": 11596935,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "d711d8fb70e1f939b4a0db57e63bdf8463d85afcf0680680cb943c48f8003982",
+      "compiledBytes": 154214,
+      "coverIds": [
+        "cover_f5a6363ebe9170287b1955cb6bcc50e5"
+      ],
+      "names": [
+        "Capcom's MVP Football"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_f5a6363ebe9170287b1955cb6bcc50e5",
+          "coverId": "cover_f5a6363ebe9170287b1955cb6bcc50e5",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Capcom's Soccer Shootout (USA).jpg",
+      "sourceFile": "CAPCOM_S_SOCCER_SHOOTOUT_4K.png",
+      "sourceTitle": "Capcom's Soccer Shootout",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "eeefcfc781d38e3e0dea45e83671dc239737fa4d3fca91ace3d3291833b7af8b",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_7712fe7438c7ecb2a56f1c59f083b929"
+      ],
+      "oldSha256": "0dd5865e0b41550fd512fc5fb185ffcfd3fc96cde8e2f768211a8748fa915ae6",
+      "sourceSha256": "eeefcfc781d38e3e0dea45e83671dc239737fa4d3fca91ace3d3291833b7af8b",
+      "sourceBytes": 11264578,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "4184d7f7b921cca7775a94542a8a17a191b2985d421920443533302a83155aad",
+      "compiledBytes": 147348,
+      "coverIds": [
+        "cover_7712fe7438c7ecb2a56f1c59f083b929"
+      ],
+      "names": [
+        "Capcom's Soccer Shootout"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_7712fe7438c7ecb2a56f1c59f083b929",
+          "coverId": "cover_7712fe7438c7ecb2a56f1c59f083b929",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Captain Commando (USA).jpg",
+      "sourceFile": "CAPTAIN_COMMANDO_4K.png",
+      "sourceTitle": "Captain Commando",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "7b018fdb2e2dbc71d30f747f68dbd136af7460edb93aa50590deafb47f7deb87",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_8e04f41f3f9296e4ce22fc39624293c6"
+      ],
+      "oldSha256": "a42a4ddf2455a328761aab1e73b187d40e5de617a02993ec8b75488df331675b",
+      "sourceSha256": "7b018fdb2e2dbc71d30f747f68dbd136af7460edb93aa50590deafb47f7deb87",
+      "sourceBytes": 11970578,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "fcc595a69a673a59dc6ce792466d6823751fc87d967360b80bc3f55849d5b4b7",
+      "compiledBytes": 165590,
+      "coverIds": [
+        "cover_8e04f41f3f9296e4ce22fc39624293c6"
+      ],
+      "names": [
+        "Captain Commando"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_8e04f41f3f9296e4ce22fc39624293c6",
+          "coverId": "cover_8e04f41f3f9296e4ce22fc39624293c6",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Captain Novolin (USA).jpg",
+      "sourceFile": "CAPTAIN_NOVOLIN_4K.png",
+      "sourceTitle": "Captain Novolin",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "863ac70c67bc93efb10a5b0142d1957e379fb0461352583b4dc17601280bf337",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_bffbf93f8c72dcffd664b753c24b3171"
+      ],
+      "oldSha256": "3f3cf24321607381f79daa2d3b3601608bcea26b57e2d29783a154e03ee620c3",
+      "sourceSha256": "863ac70c67bc93efb10a5b0142d1957e379fb0461352583b4dc17601280bf337",
+      "sourceBytes": 11866755,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "30a0699c5a251b4eaefddafe4962778bb93a7fb0ef62cc906b09cc347e2fb04e",
+      "compiledBytes": 158797,
+      "coverIds": [
+        "cover_bffbf93f8c72dcffd664b753c24b3171"
+      ],
+      "names": [
+        "Captain Novolin"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_bffbf93f8c72dcffd664b753c24b3171",
+          "coverId": "cover_bffbf93f8c72dcffd664b753c24b3171",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Carrier Aces (USA).jpg",
+      "sourceFile": "CARRIER_ACES_4K.png",
+      "sourceTitle": "Carrier Aces",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "a39b65275b372a93e8cfa2e0966c6c6fab17f4138bc4c4d437da3db31ad41a79",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_d2ff768761da4735499f059c68585d0d"
+      ],
+      "oldSha256": "fc2b302c1565a38ee268e40da61abfab5296d395df6ab09265a17766b9385c89",
+      "sourceSha256": "a39b65275b372a93e8cfa2e0966c6c6fab17f4138bc4c4d437da3db31ad41a79",
+      "sourceBytes": 12042766,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "fb94562a586abac79437a794322e82fdc9e1a324688ea8761324f86e7eb4b784",
+      "compiledBytes": 145733,
+      "coverIds": [
+        "cover_d2ff768761da4735499f059c68585d0d"
+      ],
+      "names": [
+        "Carrier Aces"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_d2ff768761da4735499f059c68585d0d",
+          "coverId": "cover_d2ff768761da4735499f059c68585d0d",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Casper (USA).jpg",
+      "sourceFile": "CASPER_4K.png",
+      "sourceTitle": "Casper",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "bd32972ed480e59adeef0ca2443634220b942c00350c9242d5002da19501f24c",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_47093abe1f3367932ec106e7a67260de"
+      ],
+      "oldSha256": "7061a7e03cf4077c9b5330cf3e9bfc8c9b1459cb89a6cfc470c113602ee6542a",
+      "sourceSha256": "bd32972ed480e59adeef0ca2443634220b942c00350c9242d5002da19501f24c",
+      "sourceBytes": 11484727,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "af0f40dfeb8928071e2fdf1cb722e279fd5c17e4d60469f476bf78e50ae49fc6",
+      "compiledBytes": 142162,
+      "coverIds": [
+        "cover_47093abe1f3367932ec106e7a67260de"
+      ],
+      "names": [
+        "Casper"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_47093abe1f3367932ec106e7a67260de",
+          "coverId": "cover_47093abe1f3367932ec106e7a67260de",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Castlevania - Dracula X (USA).jpg",
+      "sourceFile": "CASTLEVANIA_DRACULA_X_4K.png",
+      "sourceTitle": "Castlevania - Dracula X",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "a1d604c7809dc2f6ed07e3f1b7376007d9c2591d982129c4b1d3ca1174949ffe",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_e1766aea51bc9d1e1b8975ef87e1063d"
+      ],
+      "oldSha256": "afef8e749121a476158a549962ed8cc2ae13070136f2519cb3163ef6f686a0f0",
+      "sourceSha256": "a1d604c7809dc2f6ed07e3f1b7376007d9c2591d982129c4b1d3ca1174949ffe",
+      "sourceBytes": 12444954,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "48037d867212bdfb96d1e49c2f2c4ce134270368d5e12d64eba3f91f92cb8f32",
+      "compiledBytes": 151583,
+      "coverIds": [
+        "cover_e1766aea51bc9d1e1b8975ef87e1063d"
+      ],
+      "names": [
+        "Castlevania : Dracula X"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_e1766aea51bc9d1e1b8975ef87e1063d",
+          "coverId": "cover_e1766aea51bc9d1e1b8975ef87e1063d",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Champions - World Class Soccer (USA).jpg",
+      "sourceFile": "CHAMPIONS_WORLD_CLASS_SOCCER_4K.png",
+      "sourceTitle": "Champions - World Class Soccer",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "cca7a955080af487a5cddf05fec64f72c31452ed9db2a443b1d0b5f10fd0f4cf",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_0c6faed7ddf84bd64f7ff6b4acd2b52e"
+      ],
+      "oldSha256": "eaa651ac58c728d6028f34dcd4b03034baed7eb972089dcf9ffce8914e951590",
+      "sourceSha256": "cca7a955080af487a5cddf05fec64f72c31452ed9db2a443b1d0b5f10fd0f4cf",
+      "sourceBytes": 11647178,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "8e7d32b86a35143b57220411a307dd8f785f7dbe01f5b1a3b01b2a13763ed10a",
+      "compiledBytes": 146979,
+      "coverIds": [
+        "cover_0c6faed7ddf84bd64f7ff6b4acd2b52e"
+      ],
+      "names": [
+        "Champions : World Class Soccer"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_0c6faed7ddf84bd64f7ff6b4acd2b52e",
+          "coverId": "cover_0c6faed7ddf84bd64f7ff6b4acd2b52e",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Championship Pool (USA).jpg",
+      "sourceFile": "CHAMPIONSHIP_POOL_4K.png",
+      "sourceTitle": "Championship Pool",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "d7667ad604a38ec93ffeacd1e3b7f5e4e9147392411999fbed8c668709ef11ac",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_74601b0a9777b4f06e2151918aaaffc7"
+      ],
+      "oldSha256": "a9bc0e1b38ff572072f2b48de587cd4e14e95d35b3aa8d1614ecabea9599a80b",
+      "sourceSha256": "d7667ad604a38ec93ffeacd1e3b7f5e4e9147392411999fbed8c668709ef11ac",
+      "sourceBytes": 10061876,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "965e76116dd1ada9300b2500dc07feeb2fe7191f6f650a8fff5acebf2583ad83",
+      "compiledBytes": 118856,
+      "coverIds": [
+        "cover_74601b0a9777b4f06e2151918aaaffc7"
+      ],
+      "names": [
+        "Championship Pool"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_74601b0a9777b4f06e2151918aaaffc7",
+          "coverId": "cover_74601b0a9777b4f06e2151918aaaffc7",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Championship Soccer '94 (USA).jpg",
+      "sourceFile": "CHAMPIONSHIP_SOCCER_94_4K.png",
+      "sourceTitle": "Championship Soccer '94",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "e485c08b61c2e489508cfdfc6472b341aeb92af33a8e36cebe96924d40c80fc3",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_752c92e03abf46b1d689ddcfb6af81c5"
+      ],
+      "oldSha256": "70c9303373593a153314ddac743e335465987baf03379cd7f79150df38ccca25",
+      "sourceSha256": "e485c08b61c2e489508cfdfc6472b341aeb92af33a8e36cebe96924d40c80fc3",
+      "sourceBytes": 11350294,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "a25f701f7dda0fbbc6126ecebf52be6c2040372219e86b87627be59dd9d226a3",
+      "compiledBytes": 152704,
+      "coverIds": [
+        "cover_752c92e03abf46b1d689ddcfb6af81c5"
+      ],
+      "names": [
+        "Championship Soccer '94"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_752c92e03abf46b1d689ddcfb6af81c5",
+          "coverId": "cover_752c92e03abf46b1d689ddcfb6af81c5",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Chester Cheetah - Too Cool to Fool (USA).jpg",
+      "sourceFile": "CHESTER_CHEETAH_TOO_COOL_TO_FOOL_4K.png",
+      "sourceTitle": "Chester Cheetah - Too Cool to Fool",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "d7f11b83cfc3aabfa61bb1d7ff54afee2a64d24c505711f44aa0552640812284",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_d32e4d2e3a45daea7fcc25555f734191"
+      ],
+      "oldSha256": "5382520be3a3ff0ecc04871dc1f2847415dc1d4522a5b7e93bed84bcc1d6d3f0",
+      "sourceSha256": "d7f11b83cfc3aabfa61bb1d7ff54afee2a64d24c505711f44aa0552640812284",
+      "sourceBytes": 12684388,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "826ee4ce7aeb4fb861fc6ee1b215baef99631fc136233dd22735eac1ee8a2cc0",
+      "compiledBytes": 177788,
+      "coverIds": [
+        "cover_d32e4d2e3a45daea7fcc25555f734191"
+      ],
+      "names": [
+        "Chester Cheetah : Too Cool to Fool"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_d32e4d2e3a45daea7fcc25555f734191",
+          "coverId": "cover_d32e4d2e3a45daea7fcc25555f734191",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Chester Cheetah - Wild Wild Quest (USA).jpg",
+      "sourceFile": "CHESTER_CHEETAH_WILD_WILD_QUEST_4K_V2.png",
+      "sourceTitle": "Chester Cheetah - Wild Wild Quest",
+      "sourceRevision": 2,
+      "sourceDeclaredSha256": "181295faf8cb96b76b222f997b1006db578ec19bee016d3c96fe53de855101da",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_499e8fa36978cd2143ac036991277b0a"
+      ],
+      "oldSha256": "6fc0c4810c83f70cdf03fddcbb86a1e3ab99e7d2abb464ec1c372d310b1b1f56",
+      "sourceSha256": "181295faf8cb96b76b222f997b1006db578ec19bee016d3c96fe53de855101da",
+      "sourceBytes": 11173827,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "f50a1171c3dcb3406dc55ec22f46c4529342a9a72185022bd11f6b13c73fdabd",
+      "compiledBytes": 156130,
+      "coverIds": [
+        "cover_499e8fa36978cd2143ac036991277b0a"
+      ],
+      "names": [
+        "Chester Cheetah : Wild Wild Quest"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_499e8fa36978cd2143ac036991277b0a",
+          "coverId": "cover_499e8fa36978cd2143ac036991277b0a",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Choplifter III - Rescue & Survive (USA).jpg",
+      "sourceFile": "CHOPLIFTER_III_RESCUE_SURVIVE_4K.png",
+      "sourceTitle": "Choplifter III - Rescue-Survive",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "b286153834c509799ec849dbe1af09e21cc9cca371d724cd316341c020e6ebaf",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_8d7ec373ac81f44318b0ffe2147ba03a"
+      ],
+      "oldSha256": "0bdc99e448d75ccc5bcd6b66ff04f8e1741bd75fe1bf3d8344f57b46fb27e9b0",
+      "sourceSha256": "b286153834c509799ec849dbe1af09e21cc9cca371d724cd316341c020e6ebaf",
+      "sourceBytes": 10735802,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "2c0014bd5b0b8cfbc6600f4ac1550b5d797f3d6ce293bf2f7828511b7b8566c3",
+      "compiledBytes": 131546,
+      "coverIds": [
+        "cover_8d7ec373ac81f44318b0ffe2147ba03a"
+      ],
+      "names": [
+        "Choplifter III"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_8d7ec373ac81f44318b0ffe2147ba03a",
+          "coverId": "cover_8d7ec373ac81f44318b0ffe2147ba03a",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Chrono Trigger (USA).jpg",
+      "sourceFile": "CHRONO_TRIGGER_4K.png",
+      "sourceTitle": "Chrono Trigger",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "b51168ebb41948a66a92deeb2eca95fa352e723b2d3b30ad4097c847694677c0",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_acc7ac447394dc023c6b997d9e7d7958"
+      ],
+      "oldSha256": "c33457b50ff7ff9f5d16a1de0c991482b07c3beb0e225cfc162be14e631892aa",
+      "sourceSha256": "b51168ebb41948a66a92deeb2eca95fa352e723b2d3b30ad4097c847694677c0",
+      "sourceBytes": 12527533,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "bb201197036e4fa53302a0dd43ddfaeb0a8bdb91b01a8af97db39423f8ecea8e",
+      "compiledBytes": 167072,
+      "coverIds": [
+        "cover_acc7ac447394dc023c6b997d9e7d7958"
+      ],
+      "names": [
+        "Chrono Trigger"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_acc7ac447394dc023c6b997d9e7d7958",
+          "coverId": "cover_acc7ac447394dc023c6b997d9e7d7958",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Chuck Rock (USA).jpg",
+      "sourceFile": "CHUCK_ROCK_4K.png",
+      "sourceTitle": "Chuck Rock",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "d402c2adacf926415968d4e176e9f969ee3f1e2d3c49afd081b8fb494e1eb5a5",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_e20dc0eedd48307b9d44737def90891e"
+      ],
+      "oldSha256": "c724f095d0f93ca4d5dcc49f63293b8c4aa669ccea368d1abcf5623a5b971020",
+      "sourceSha256": "d402c2adacf926415968d4e176e9f969ee3f1e2d3c49afd081b8fb494e1eb5a5",
+      "sourceBytes": 12599181,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "99fb662da4f27534488f6383893a77e8d5b01842e3309539a922c1da6df4e882",
+      "compiledBytes": 166982,
+      "coverIds": [
+        "cover_e20dc0eedd48307b9d44737def90891e"
+      ],
+      "names": [
+        "Chuck Rock"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_e20dc0eedd48307b9d44737def90891e",
+          "coverId": "cover_e20dc0eedd48307b9d44737def90891e",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Claymates.jpg",
+      "sourceFile": "CLAYMATES_4K.png",
+      "sourceTitle": "Claymates",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "253c661edce781d2c2889e29a34de0bbfe6b60a9779eebd63e105bf87963be67",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_cf7b5ba0de160380f4252a0c87f966dc"
+      ],
+      "oldSha256": "9dc930af8bbce244a7ba166cb6ae42add4c569548520ad29dfa26522f4e00897",
+      "sourceSha256": "253c661edce781d2c2889e29a34de0bbfe6b60a9779eebd63e105bf87963be67",
+      "sourceBytes": 11603222,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "aa2efa9d32fc09b663565ef8c71bfd5fc2544694f05258020b6b7e8c36ba4263",
+      "compiledBytes": 152327,
+      "coverIds": [
+        "cover_cf7b5ba0de160380f4252a0c87f966dc"
+      ],
+      "names": [
+        "Claymates"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_cf7b5ba0de160380f4252a0c87f966dc",
+          "coverId": "cover_cf7b5ba0de160380f4252a0c87f966dc",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Cliffhanger (USA).jpg",
+      "sourceFile": "CLIFFHANGER_4K.png",
+      "sourceTitle": "Cliffhanger",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "34afafd05ccbd2e57f355a470991e6a4e6b9b051cc78491233a43b0ba6515d9a",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_fd031795d82ff4c3c5b6ae0e5d94f6b1"
+      ],
+      "oldSha256": "ce5a24d9646d16b3db543f7640ff839be29697b032ffa5e52b234fdb4ba7b745",
+      "sourceSha256": "34afafd05ccbd2e57f355a470991e6a4e6b9b051cc78491233a43b0ba6515d9a",
+      "sourceBytes": 12316229,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "a222bd6cb4a0fb23c3f917e22a1fdac3763962e89784cfefc8a3478727310e75",
+      "compiledBytes": 148271,
+      "coverIds": [
+        "cover_fd031795d82ff4c3c5b6ae0e5d94f6b1"
+      ],
+      "names": [
+        "Cliffhanger"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_fd031795d82ff4c3c5b6ae0e5d94f6b1",
+          "coverId": "cover_fd031795d82ff4c3c5b6ae0e5d94f6b1",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Clue (USA).jpg",
+      "sourceFile": "CLUE_4K.png",
+      "sourceTitle": "Clue",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "c409d532a543b1dacb713f8ee4c1e5437fe65f22372511c48bd82e244e1996b8",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_9bcc6fe2171ba4f8e295fa8983fb9e42"
+      ],
+      "oldSha256": "087242ec6710c8c8decca590835d65553def70fd8cc33249ba6e788ef230ce4c",
+      "sourceSha256": "c409d532a543b1dacb713f8ee4c1e5437fe65f22372511c48bd82e244e1996b8",
+      "sourceBytes": 11167155,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "f35b36e54097296d44edcda7b0e945e7ca50a71662b46eb59b1c4434ad4c2dc7",
+      "compiledBytes": 138501,
+      "coverIds": [
+        "cover_9bcc6fe2171ba4f8e295fa8983fb9e42"
+      ],
+      "names": [
+        "Clue"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_9bcc6fe2171ba4f8e295fa8983fb9e42",
+          "coverId": "cover_9bcc6fe2171ba4f8e295fa8983fb9e42",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "College Football USA '97 - The Road to New Orleans (USA).jpg",
+      "sourceFile": "COLLEGE_FOOTBALL_USA_97_4K.png",
+      "sourceTitle": "College Football USA 97",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "1f2264aa0271f35634c01da5421ab6d66877aba77b4b1bfb2377d38435d67a28",
+      "matchRule": "exact-current-catalog-title",
+      "itemIds": [
+        "station_0f82479c9fb350a6a61e755ad8355fb7"
+      ],
+      "oldSha256": "3850584011c00c7fed8726de24e1580c96636dd350321e3abd837d5e0b494088",
+      "sourceSha256": "1f2264aa0271f35634c01da5421ab6d66877aba77b4b1bfb2377d38435d67a28",
+      "sourceBytes": 10494168,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "532da3e42cefc8d3d130fbdc360a8cca62f86e71527a6c2c55a7360cf68bd12a",
+      "compiledBytes": 141071,
+      "coverIds": [
+        "cover_0f82479c9fb350a6a61e755ad8355fb7"
+      ],
+      "names": [
+        "College Football USA 97"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_0f82479c9fb350a6a61e755ad8355fb7",
+          "coverId": "cover_0f82479c9fb350a6a61e755ad8355fb7",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "College Slam (USA).jpg",
+      "sourceFile": "COLLEGE_SLAM_4K.png",
+      "sourceTitle": "College Slam",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "313f79431f67593ce9709c57c925ce20cf0db03c0a510904dec44e355ff2030a",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_e2381c50b37b3c8f07099a2ba8f160bf"
+      ],
+      "oldSha256": "0929d9864f20af2a370a171acdd6457f60d2d27618dba20ce9418e279f9a5481",
+      "sourceSha256": "313f79431f67593ce9709c57c925ce20cf0db03c0a510904dec44e355ff2030a",
+      "sourceBytes": 12853092,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "ef51c662f4177bdc46705f36aa41ab5ecad99d5ddb85d468dc39c3e8f3e73422",
+      "compiledBytes": 170399,
+      "coverIds": [
+        "cover_e2381c50b37b3c8f07099a2ba8f160bf"
+      ],
+      "names": [
+        "College Slam"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_e2381c50b37b3c8f07099a2ba8f160bf",
+          "coverId": "cover_e2381c50b37b3c8f07099a2ba8f160bf",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Congo's Caper (USA).jpg",
+      "sourceFile": "CONGO_S_CAPER_4K.png",
+      "sourceTitle": "Congo's Caper",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "511cface8678c519766225994fff6963a377221835a77258f990628e7935e2c5",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_00345340ffb0f573cc78dceff6bb6e25"
+      ],
+      "oldSha256": "211996e7ee5b6efa2f00aac358eb00cd0dbaea4316dd9994a79826b75bc404cf",
+      "sourceSha256": "511cface8678c519766225994fff6963a377221835a77258f990628e7935e2c5",
+      "sourceBytes": 12792126,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "ad6114868ef3584b7cca246da53a27aac3ecafb4156e89717b99f4e589c31b41",
+      "compiledBytes": 176928,
+      "coverIds": [
+        "cover_00345340ffb0f573cc78dceff6bb6e25"
+      ],
+      "names": [
+        "Congo's Caper"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_00345340ffb0f573cc78dceff6bb6e25",
+          "coverId": "cover_00345340ffb0f573cc78dceff6bb6e25",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Contra III.jpg",
+      "sourceFile": "CONTRA_III_THE_ALIEN_WARS_4K.png",
+      "sourceTitle": "Contra III - The Alien Wars",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "c7fcbb240eb0bec3ded65a91ba90ac255c06a66012b6dc9d9700353bd1717bfa",
+      "matchRule": "exact-current-catalog-title",
+      "itemIds": [
+        "station_27ce749dc5e29f26cd96ecd1ba2e5849"
+      ],
+      "oldSha256": "4453f7090dca1bd82420333458d55e13e7d4f530739840da6bb78e24c355b9d6",
+      "sourceSha256": "c7fcbb240eb0bec3ded65a91ba90ac255c06a66012b6dc9d9700353bd1717bfa",
+      "sourceBytes": 12243287,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "24bd0e0b962b4cc3e1c85284356ea444a292e9b78b77e370ae5bd033ead001ff",
+      "compiledBytes": 162015,
+      "coverIds": [
+        "cover_27ce749dc5e29f26cd96ecd1ba2e5849"
+      ],
+      "names": [
+        "Contra III : The Alien Wars (PT-BR)"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_27ce749dc5e29f26cd96ecd1ba2e5849",
+          "coverId": "cover_27ce749dc5e29f26cd96ecd1ba2e5849",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Cool Spot (USA).jpg",
+      "sourceFile": "COOL_SPOT_4K.png",
+      "sourceTitle": "Cool Spot",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "80dada98b62dff62957c797bb66066bf6a08e0110a5c0add7c3ece197e9a8eeb",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_72446070d7186010043617d95eff8d5f"
+      ],
+      "oldSha256": "0713305c6a2abda0b41ce19a1495dbbc2bed6acbbb44480f727747ac16bc5779",
+      "sourceSha256": "80dada98b62dff62957c797bb66066bf6a08e0110a5c0add7c3ece197e9a8eeb",
+      "sourceBytes": 12057129,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "76d4e9ee306b6a3c41498bf6e83dcbe56b41bfd429c40b468da18449247fcb23",
+      "compiledBytes": 164059,
+      "coverIds": [
+        "cover_72446070d7186010043617d95eff8d5f"
+      ],
+      "names": [
+        "Cool Spot"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_72446070d7186010043617d95eff8d5f",
+          "coverId": "cover_72446070d7186010043617d95eff8d5f",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Cool World (USA).jpg",
+      "sourceFile": "COOL_WORLD_4K.png",
+      "sourceTitle": "Cool World",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "8954ce0ba610d1a519d420b3f7b14276e11fec71e1eff267824b641c62a710c5",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_82be488369296f0a02e78608415efee4"
+      ],
+      "oldSha256": "6a21b6869fe21ce04fae87587de97c1b1d02db343880c813be3bff534db225be",
+      "sourceSha256": "8954ce0ba610d1a519d420b3f7b14276e11fec71e1eff267824b641c62a710c5",
+      "sourceBytes": 11388717,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "50d522ece8f9fedb694dc72777d8652bb979ac6dc68c0d6afd62aebb95983cea",
+      "compiledBytes": 151520,
+      "coverIds": [
+        "cover_82be488369296f0a02e78608415efee4"
+      ],
+      "names": [
+        "Cool World"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_82be488369296f0a02e78608415efee4",
+          "coverId": "cover_82be488369296f0a02e78608415efee4",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Cutthroat Island (USA).jpg",
+      "sourceFile": "CUTTHROAT_ISLAND_4K.png",
+      "sourceTitle": "CutThroat Island",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "95dff7d475ed358e77f174df94def054e07c78a0af996df28b53f204a1d012f5",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_57b7dcd785e01cd6ad7b91ee8a2876a3"
+      ],
+      "oldSha256": "78fb0573d419024e90056fdd536292900c3d660e570c3bf31ca3d8249fa1da8d",
+      "sourceSha256": "95dff7d475ed358e77f174df94def054e07c78a0af996df28b53f204a1d012f5",
+      "sourceBytes": 12910322,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "26f4e523cfd2f7e160a64d6dc18dc0cb3fbb0ff4bf9fd1bb7f75a755e54c131f",
+      "compiledBytes": 162353,
+      "coverIds": [
+        "cover_57b7dcd785e01cd6ad7b91ee8a2876a3"
+      ],
+      "names": [
+        "Cutthroat Island"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_57b7dcd785e01cd6ad7b91ee8a2876a3",
+          "coverId": "cover_57b7dcd785e01cd6ad7b91ee8a2876a3",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Cyber Spin (USA).jpg",
+      "sourceFile": "CYBER_SPIN_4K.png",
+      "sourceTitle": "Cyber Spin",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "d2567ea62eddba12ce0a8c39fd80fc2316671cd04ecc1521e67cb05884c84523",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_053a0766050d3be99637df353e22fb10"
+      ],
+      "oldSha256": "e6d038703dc43691148809a0df0cc857fc26b0e0e58f33ed34d4022cd39a5f45",
+      "sourceSha256": "d2567ea62eddba12ce0a8c39fd80fc2316671cd04ecc1521e67cb05884c84523",
+      "sourceBytes": 11718260,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "d71399c98373e54cfb7f4448e7deb9b8996c996a9f9b788637eb8d41390ea5ab",
+      "compiledBytes": 147354,
+      "coverIds": [
+        "cover_053a0766050d3be99637df353e22fb10"
+      ],
+      "names": [
+        "Cyber Spin"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_053a0766050d3be99637df353e22fb10",
+          "coverId": "cover_053a0766050d3be99637df353e22fb10",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Cybernator (USA).jpg",
+      "sourceFile": "CYBERNATOR_4K.png",
+      "sourceTitle": "Cybernator",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "0b3dbf76ae5013ca6c0dd21ae3ee20e1abfe54c78757f471f167ac3f528b5af9",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_d116ace30d14f3273cea3c75cdf79c93"
+      ],
+      "oldSha256": "5f37f91c44013d5fa824b962cd7cf5eef9fa8d4d6ddb032dc359a99fc2b17c32",
+      "sourceSha256": "0b3dbf76ae5013ca6c0dd21ae3ee20e1abfe54c78757f471f167ac3f528b5af9",
+      "sourceBytes": 12315444,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "a70ada7626aeedae3adaceebee819ddea30b4723b559700c8e3d5a2851bd1faf",
+      "compiledBytes": 159565,
+      "coverIds": [
+        "cover_d116ace30d14f3273cea3c75cdf79c93"
+      ],
+      "names": [
+        "Cybernator"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_d116ace30d14f3273cea3c75cdf79c93",
+          "coverId": "cover_d116ace30d14f3273cea3c75cdf79c93",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Darius Twin (USA).jpg",
+      "sourceFile": "DARIUS_TWIN_4K.png",
+      "sourceTitle": "Darius Twin",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "666042e80b6a2c8ff1cf43df837405ef34819b70a4bfc8e77ee8d892e38a2198",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_f19d493b2947c3625c98b990a2a5a4bb"
+      ],
+      "oldSha256": "3b63a800dde6cfe353828d6319f785aa5a71604bee36668d0fae9bb03e04b43c",
+      "sourceSha256": "666042e80b6a2c8ff1cf43df837405ef34819b70a4bfc8e77ee8d892e38a2198",
+      "sourceBytes": 12197604,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "5f934ec2048098c20882ab2f9cac0562ecd183021028b399a14a9904d0743eeb",
+      "compiledBytes": 151073,
+      "coverIds": [
+        "cover_f19d493b2947c3625c98b990a2a5a4bb"
+      ],
+      "names": [
+        "Darius Twin"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_f19d493b2947c3625c98b990a2a5a4bb",
+          "coverId": "cover_f19d493b2947c3625c98b990a2a5a4bb",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "David Crane's Amazing Tennis (USA).jpg",
+      "sourceFile": "DAVID_CRANE_S_AMAZING_TENNIS_4K.png",
+      "sourceTitle": "David Crane's Amazing Tennis",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "7c70ece143e267b9984bab56e562817e0369ef2bdd7fa9c5291f40bf5614fda5",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_f56f3952102eb62aa30b5a02a1a4508b"
+      ],
+      "oldSha256": "bd06192f8188882b548ed5c0cee69ffc39efafcc73277ead6ef5d2737b90e802",
+      "sourceSha256": "7c70ece143e267b9984bab56e562817e0369ef2bdd7fa9c5291f40bf5614fda5",
+      "sourceBytes": 10966111,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "7ddfd272a67751778d5e0b6007f12309208e5f329cbf04195b5b13f81e9d1625",
+      "compiledBytes": 141506,
+      "coverIds": [
+        "cover_f56f3952102eb62aa30b5a02a1a4508b"
+      ],
+      "names": [
+        "David Crane's Amazing Tennis"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_f56f3952102eb62aa30b5a02a1a4508b",
+          "coverId": "cover_f56f3952102eb62aa30b5a02a1a4508b",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Daze Before Christmas (Europe).jpg",
+      "sourceFile": "DAZE_BEFORE_CHRISTMAS_4K.png",
+      "sourceTitle": "Daze Before Christmas",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "066947a3a99fa1c6a10264824b595bceabe062c003c75bee8b4b0123bece4d76",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_ba96851534204bda06a4cf04c6d3a4c4"
+      ],
+      "oldSha256": "d43e158698dc5b4edd3fa85ffe22e5b3cb51999f153adbbde310e77ff6ac33e0",
+      "sourceSha256": "066947a3a99fa1c6a10264824b595bceabe062c003c75bee8b4b0123bece4d76",
+      "sourceBytes": 11660528,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "77cccb3eb096952a06f90a4d1ca9ffb62b8501d00700f0455a2926499141e759",
+      "compiledBytes": 162775,
+      "coverIds": [
+        "cover_ba96851534204bda06a4cf04c6d3a4c4"
+      ],
+      "names": [
+        "Daze Before Christmas"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_ba96851534204bda06a4cf04c6d3a4c4",
+          "coverId": "cover_ba96851534204bda06a4cf04c6d3a4c4",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "D-Force (USA).jpg",
+      "sourceFile": "D_FORCE_4K.png",
+      "sourceTitle": "D-Force",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "d1016d5b23e40cd25c5567307d97b12eb7f61ad186f51c122f8a5c08156becbb",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_ded7c0b2d222be4decafc52f22640141"
+      ],
+      "oldSha256": "38c55712dd157c5f7f32993431a17f80e84faed2e54b8339d7b7bb9c9ca7c2c9",
+      "sourceSha256": "d1016d5b23e40cd25c5567307d97b12eb7f61ad186f51c122f8a5c08156becbb",
+      "sourceBytes": 12391399,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "90f3176714cf5643549f7206951d53fc1811dfbb04eaab39f2d244b3a313457a",
+      "compiledBytes": 156162,
+      "coverIds": [
+        "cover_ded7c0b2d222be4decafc52f22640141"
+      ],
+      "names": [
+        "D-Force"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_ded7c0b2d222be4decafc52f22640141",
+          "coverId": "cover_ded7c0b2d222be4decafc52f22640141",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Eye of the Beholder (USA).jpg",
+      "sourceFile": "ADVANCED_DUNGEONS_DRAGONS_EYE_OF_THE_BEHOLDER_4K.png",
+      "sourceTitle": "Advanced Dungeons & Dragons - Eye of the Beholder",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "93ecac5239ff874acaea3e02431df01e9fe5076a4c32601297c12b08090e37a6",
+      "matchRule": "expanded-USA-box-art-title-Eye-of-the-Beholder",
+      "itemIds": [
+        "station_4ec132b5351f75b8afa74389bcb24827"
+      ],
+      "oldSha256": "59a394bf40c1092fa8ac3ef8f1abfd473864bd84609fe1131d07d84dc2d6c763",
+      "sourceSha256": "93ecac5239ff874acaea3e02431df01e9fe5076a4c32601297c12b08090e37a6",
+      "sourceBytes": 11314798,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "ead9f4ff32c07f2e115c565a93ca404a44c9cfaa176cd5e833978db9e4b09277",
+      "compiledBytes": 157886,
+      "coverIds": [
+        "cover_4ec132b5351f75b8afa74389bcb24827"
+      ],
+      "names": [
+        "Eye of the Beholder"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_4ec132b5351f75b8afa74389bcb24827",
+          "coverId": "cover_4ec132b5351f75b8afa74389bcb24827",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/F-Zero.jpg",
+      "sourceFile": "F_ZERO_4K.png",
+      "sourceTitle": "F-Zero",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "ca70f7c36a96727cfe7b3b93778690902bcbd930c07ec3600f7c1ef819fe6bb4",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_b898f5776494957b6c54c174c99abd04"
+      ],
+      "oldSha256": "358daed38abeae9b0cbc0075d780da9311e3f4d1f3458e8fb4f84f16ef352148",
+      "sourceSha256": "ca70f7c36a96727cfe7b3b93778690902bcbd930c07ec3600f7c1ef819fe6bb4",
+      "sourceBytes": 11266356,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "b9552f22f4f25465e856e9ffac11079e900396e6a927316bf9a998a9238e46fd",
+      "compiledBytes": 155948,
+      "coverIds": [
+        "cover_b898f5776494957b6c54c174c99abd04"
+      ],
+      "names": [
+        "F-Zero"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_b898f5776494957b6c54c174c99abd04",
+          "coverId": "cover_b898f5776494957b6c54c174c99abd04",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Chavez (USA).jpg",
+      "sourceFile": "CHAVEZ_4K.png",
+      "sourceTitle": "Chavez",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "9f0c686489b9cfcc8dc70de369854181ea43b80d4a63438fa880812644806539",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_60e165dc61cbbf78f11aacc0160e9ef1"
+      ],
+      "oldSha256": "a7f8e900b306268c4cd6c6b54500ebddd2642e063f5c46badacf5036a066b83d",
+      "sourceSha256": "9f0c686489b9cfcc8dc70de369854181ea43b80d4a63438fa880812644806539",
+      "sourceBytes": 11305913,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "7f16d3020e94ccec2c7ed3ac281ed492e25181e9b8426092fd82466816c58a06",
+      "compiledBytes": 144544,
+      "coverIds": [
+        "cover_60e165dc61cbbf78f11aacc0160e9ef1"
+      ],
+      "names": [
+        "Chavez"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_60e165dc61cbbf78f11aacc0160e9ef1",
+          "coverId": "cover_60e165dc61cbbf78f11aacc0160e9ef1",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/7th Saga, The (USA).jpg",
+      "sourceFile": "7TH_SAGA_THE_4K.png",
+      "sourceTitle": "7th Saga, The",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "f61f002cc6423f65efd1c1bb67f3e0c095a3e7bba2c5644a69fc89af8fd57643",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_fdc7ffcf7e3f6b9089631b9ddfd81015"
+      ],
+      "oldSha256": "9fd2be90a4e75ce0b0f386d03503d62c02e2f4131fefbee084f49e2f5d15768d",
+      "sourceSha256": "f61f002cc6423f65efd1c1bb67f3e0c095a3e7bba2c5644a69fc89af8fd57643",
+      "sourceBytes": 9898295,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "baf7bf31acbe2c2c9924658f2a122447d383f5123b582479d1586caeb80d55a0",
+      "compiledBytes": 121287,
+      "coverIds": [
+        "cover_fdc7ffcf7e3f6b9089631b9ddfd81015"
+      ],
+      "names": [
+        "The 7th Saga"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_fdc7ffcf7e3f6b9089631b9ddfd81015",
+          "coverId": "cover_fdc7ffcf7e3f6b9089631b9ddfd81015",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Addams Family, The - Pugsley's Scavenger Hunt (USA).jpg",
+      "sourceFile": "ADDAMS_FAMILY_THE_PUGSLEY_S_SCAVENGER_HUNT_4K.png",
+      "sourceTitle": "Addams Family, The - Pugsley's Scavenger Hunt",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "17af3312344eceaf8a4b732cb6f3109f965346b687cc594226eecbeef2c555c1",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_798623f2a94e130d7286f30a08f5d5f0"
+      ],
+      "oldSha256": "ef23326d3795be7f9babbcac1261887e7cb1339aa2776e1fc53c1ababbea4cf0",
+      "sourceSha256": "17af3312344eceaf8a4b732cb6f3109f965346b687cc594226eecbeef2c555c1",
+      "sourceBytes": 11251860,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "c1f2d6d0cce53edb4927d46a38cf31cbeeb8e7c982b398cfaa5de0cb73ccca66",
+      "compiledBytes": 161525,
+      "coverIds": [
+        "cover_798623f2a94e130d7286f30a08f5d5f0"
+      ],
+      "names": [
+        "The Addams Family : Pugsley's Scavenger Hunt"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_798623f2a94e130d7286f30a08f5d5f0",
+          "coverId": "cover_798623f2a94e130d7286f30a08f5d5f0",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Addams Family, The (USA).jpg",
+      "sourceFile": "ADDAMS_FAMILY_THE_4K.png",
+      "sourceTitle": "Addams Family, The",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "95b052a30385216f45ba903421fe4b586b0a3133d00684e954f33dbc35e8ef43",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_4105ebdddc7e4aa557981d27faab4921"
+      ],
+      "oldSha256": "2e1c2c93899a2f0b8fcc8be34ca2ee20403f5648237fdf014ceac45f891607e8",
+      "sourceSha256": "95b052a30385216f45ba903421fe4b586b0a3133d00684e954f33dbc35e8ef43",
+      "sourceBytes": 11036924,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "595fc0304b61366aa4a480641cd43193ce707cbb0db0c9837ba3736c62df52a1",
+      "compiledBytes": 141026,
+      "coverIds": [
+        "cover_4105ebdddc7e4aa557981d27faab4921"
+      ],
+      "names": [
+        "The Addams Family"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_4105ebdddc7e4aa557981d27faab4921",
+          "coverId": "cover_4105ebdddc7e4aa557981d27faab4921",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Adventures of Dr. Franken, The.jpg",
+      "sourceFile": "ADVENTURES_OF_DR_FRANKEN_THE_4K.png",
+      "sourceTitle": "Adventures of Dr. Franken, The",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "95114e9f6a141a955c30408399abdc4fb26bfd90ec418cee1f11c03bb49acdb8",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_1f1122bc6b7e52a869ecd4e8b91e65b1"
+      ],
+      "oldSha256": "86ae00c357a95a3e986cf5bb033314277429668d8d3f638c97fd0ef4f3bd9551",
+      "sourceSha256": "95114e9f6a141a955c30408399abdc4fb26bfd90ec418cee1f11c03bb49acdb8",
+      "sourceBytes": 12232607,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "d27bc0c87dc575b91480d7140906169b67b5eb3d008829316ac6a62131fcc1b3",
+      "compiledBytes": 172343,
+      "coverIds": [
+        "cover_1f1122bc6b7e52a869ecd4e8b91e65b1"
+      ],
+      "names": [
+        "The Adventures of Dr. Franken"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_1f1122bc6b7e52a869ecd4e8b91e65b1",
+          "coverId": "cover_1f1122bc6b7e52a869ecd4e8b91e65b1",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Adventures of Kid Kleets, The (USA).jpg",
+      "sourceFile": "ADVENTURES_OF_KID_KLEETS_THE_4K.png",
+      "sourceTitle": "Adventures of Kid Kleets, The",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "36c096706e2b74594437334e250a1aa0520e808e9beeef9b049d3a905eccd71e",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_46b2c985bd9c0d42acd1cf6e14663dec"
+      ],
+      "oldSha256": "99e855d50edaae4c98714b337e3b648256c4dee039e70d067438b32567c32321",
+      "sourceSha256": "36c096706e2b74594437334e250a1aa0520e808e9beeef9b049d3a905eccd71e",
+      "sourceBytes": 11364269,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "3b6b79a401c39543839056a61974a5c62c4c404c391ece47cb924fbef298a19d",
+      "compiledBytes": 170755,
+      "coverIds": [
+        "cover_46b2c985bd9c0d42acd1cf6e14663dec"
+      ],
+      "names": [
+        "The Adventures of Kid Kleets"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_46b2c985bd9c0d42acd1cf6e14663dec",
+          "coverId": "cover_46b2c985bd9c0d42acd1cf6e14663dec",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Mighty Max (USA).jpg",
+      "sourceFile": "ADVENTURES_OF_MIGHTY_MAX_THE_4K.png",
+      "sourceTitle": "Adventures of Mighty Max, The",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "acfcc5b13f8c1012d87434e9fb9e4c5fff35c56b03e5a7307c5c102ad55b950e",
+      "matchRule": "exact-current-catalog-title",
+      "itemIds": [
+        "station_f795d930636f6a9ee819dfb321c8bae9"
+      ],
+      "oldSha256": "5d155780547aa62cd7dbed5bf65ed59462961a4183b8a6067fe7e9b8ef4d03cc",
+      "sourceSha256": "acfcc5b13f8c1012d87434e9fb9e4c5fff35c56b03e5a7307c5c102ad55b950e",
+      "sourceBytes": 10710363,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "82259aa47e101b3c05ec7d943e5e0dfbba4d42a7accd245a043de6b7faa336c8",
+      "compiledBytes": 162145,
+      "coverIds": [
+        "cover_f795d930636f6a9ee819dfb321c8bae9"
+      ],
+      "names": [
+        "The Adventures of Mighty Max"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_f795d930636f6a9ee819dfb321c8bae9",
+          "coverId": "cover_f795d930636f6a9ee819dfb321c8bae9",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Adventures of Rocky and Bullwinkle and Friends, The (USA).jpg",
+      "sourceFile": "ADVENTURES_OF_ROCKY_AND_BULLWINKLE_AND_FRIENDS_THE_4K.png",
+      "sourceTitle": "Adventures of Rocky and Bullwinkle and Friends, The",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "e4a8ab8521bdf6f62a667031e222b33f4df5c50e1ddae60a534eb90f8456701a",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_3241825ab7b59ed2a536f0b0f791f111"
+      ],
+      "oldSha256": "3faf3a97ca024a86a51e6f6c1fe316a90740ff0f66dca776608b3d986237f3bf",
+      "sourceSha256": "e4a8ab8521bdf6f62a667031e222b33f4df5c50e1ddae60a534eb90f8456701a",
+      "sourceBytes": 9339379,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "cac152f046c9220ce05f8306583971e7069ee29a978b5505ec59ce006720b230",
+      "compiledBytes": 157496,
+      "coverIds": [
+        "cover_3241825ab7b59ed2a536f0b0f791f111"
+      ],
+      "names": [
+        "The Adventures of Rocky and Bullwinkle and Friends"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_3241825ab7b59ed2a536f0b0f791f111",
+          "coverId": "cover_3241825ab7b59ed2a536f0b0f791f111",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Blues Brothers, The.jpg",
+      "sourceFile": "BLUES_BROTHERS_THE_4K.png",
+      "sourceTitle": "Blues Brothers, The",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "7e27e27b4a332f76327d0ccfad047b166a0a40296938372ebff97420155c0f55",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_f296b5d792630872cf370710aba13385"
+      ],
+      "oldSha256": "896892a8adee8e043123b6a344dc5c99528be603c0f8fa8fea2627b770f38cf8",
+      "sourceSha256": "7e27e27b4a332f76327d0ccfad047b166a0a40296938372ebff97420155c0f55",
+      "sourceBytes": 11723318,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "f5b6a59513121ec12f62f18bcd5d92bfbca609f4e5014e851fdbe33dbb52a112",
+      "compiledBytes": 159119,
+      "coverIds": [
+        "cover_f296b5d792630872cf370710aba13385"
+      ],
+      "names": [
+        "The Blues Brothers"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_f296b5d792630872cf370710aba13385",
+          "coverId": "cover_f296b5d792630872cf370710aba13385",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Brainies, The.jpg",
+      "sourceFile": "BRAINIES_THE_4K.png",
+      "sourceTitle": "Brainies, The",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "aaeae5bb0b30afb36747327d90b0ad8cb80f41b43db851741f08cd6ccb72426d",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_90fcec3da992bde39fcc7c620fcc18ab"
+      ],
+      "oldSha256": "642c73e3c4c90347ad3f673ed9f98d74f4af4461359e0fc1c5c255b953b781be",
+      "sourceSha256": "aaeae5bb0b30afb36747327d90b0ad8cb80f41b43db851741f08cd6ccb72426d",
+      "sourceBytes": 11374991,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "83678cd240d4353d40d2c55cf6f1a733043e01a3380d3e5b86407a4ac84cfc5a",
+      "compiledBytes": 141557,
+      "coverIds": [
+        "cover_90fcec3da992bde39fcc7c620fcc18ab"
+      ],
+      "names": [
+        "The Brainies"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_90fcec3da992bde39fcc7c620fcc18ab",
+          "coverId": "cover_90fcec3da992bde39fcc7c620fcc18ab",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Chessmaster, The (USA).jpg",
+      "sourceFile": "CHESSMASTER_THE_4K.png",
+      "sourceTitle": "Chessmaster, The",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "6e3b8ca1fa26038ec2d07315cd369363a2189d3bc9554486d025a053fec0bb9b",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_1951f992ae41e9d33a453c40277266f4"
+      ],
+      "oldSha256": "5197d1d35083d505f211c8b7934cd84a144d89d95b5eb6733d6a7812e9bf544c",
+      "sourceSha256": "6e3b8ca1fa26038ec2d07315cd369363a2189d3bc9554486d025a053fec0bb9b",
+      "sourceBytes": 10954919,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "6c22de56cf50390bfd63bbd74b547fe5d98c9b902750e615448df0c567e76ca2",
+      "compiledBytes": 129781,
+      "coverIds": [
+        "cover_1951f992ae41e9d33a453c40277266f4"
+      ],
+      "names": [
+        "The Chessmaster"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_1951f992ae41e9d33a453c40277266f4",
+          "coverId": "cover_1951f992ae41e9d33a453c40277266f4",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Combatribes, The.jpg",
+      "sourceFile": "COMBATRIBES_THE_4K.png",
+      "sourceTitle": "Combatribes, The",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "8262e0f3b4bf8d0490d758de6a58e82e3f08513bc0835ad68b4d7c459c1af7fe",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_3e35fd978580b60fc41a6c6f81fe0121"
+      ],
+      "oldSha256": "468b81660e1893c6b1e09352630c6d477ab473791afb13e0f624dab62ef42ab4",
+      "sourceSha256": "8262e0f3b4bf8d0490d758de6a58e82e3f08513bc0835ad68b4d7c459c1af7fe",
+      "sourceBytes": 11806099,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "ff28bd761e7adccde550fb6e9cea9b874f1f9739f95dd5015d9c67c451329808",
+      "compiledBytes": 153454,
+      "coverIds": [
+        "cover_3e35fd978580b60fc41a6c6f81fe0121"
+      ],
+      "names": [
+        "The Combatribes"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_3e35fd978580b60fc41a6c6f81fe0121",
+          "coverId": "cover_3e35fd978580b60fc41a6c6f81fe0121",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/3 Ninjas Kick Back (USA).jpg",
+      "sourceFile": "3_NINJAS_KICK_BACK_4K.png",
+      "sourceTitle": "3 Ninjas Kick Back",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "44818a826503893d34fc4b93f0268c8fd07489b22292acf1c4ee7e0963a20c34",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_64e9f4ae53639d8ff1bcbe2c33d657df"
+      ],
+      "oldSha256": "386f1166437682b0e7c05e0a28d15f9fbddbd81656fb309568b76a50f97d1739",
+      "sourceSha256": "44818a826503893d34fc4b93f0268c8fd07489b22292acf1c4ee7e0963a20c34",
+      "sourceBytes": 10832010,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "52a72989262e8d8b79a28c233aff3d6a05d194cf0140f3f840a0c052cd02fae7",
+      "compiledBytes": 151362,
+      "coverIds": [
+        "cover_64e9f4ae53639d8ff1bcbe2c33d657df"
+      ],
+      "names": [
+        "3 Ninjas Kick Back"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_64e9f4ae53639d8ff1bcbe2c33d657df",
+          "coverId": "cover_64e9f4ae53639d8ff1bcbe2c33d657df",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Aaahh!!! Real Monsters (USA).jpg",
+      "sourceFile": "AAAHH_REAL_MONSTERS_4K.png",
+      "sourceTitle": "Aaahh!!! Real Monsters",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "bfcb3bd2586ec20d2e78ab9080d985b0081c77cc0cbaef4cc10387d76e3e1229",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_ff11a151b170462abe11946555b019a6"
+      ],
+      "oldSha256": "39ad36e9cf7c776d5ba56644568fdda78827b298a3c306b26659e52dc6deec65",
+      "sourceSha256": "bfcb3bd2586ec20d2e78ab9080d985b0081c77cc0cbaef4cc10387d76e3e1229",
+      "sourceBytes": 11066486,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "f2d18f79b42402241ca93c37618107c3b60c8e1989ba26aae76ae3ba0379ff0b",
+      "compiledBytes": 160521,
+      "coverIds": [
+        "cover_ff11a151b170462abe11946555b019a6"
+      ],
+      "names": [
+        "Aaahh!!! Real Monsters"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_ff11a151b170462abe11946555b019a6",
+          "coverId": "cover_ff11a151b170462abe11946555b019a6",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "## 1 -PT-BR ##/Aero Fighters.jpg",
+      "sourceFile": "AERO_FIGHTERS_4K.png",
+      "sourceTitle": "Aero Fighters",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "a6a6def19ed6c9e2d5bd804a16b760e709b92d62dc7c196857bd3d51ce5c8a25",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_19e9535ed45c120173f6972c62d2f240"
+      ],
+      "oldSha256": "a631068649a2918f282c6fc654ccf590e8f0d8d0a0fbfcac061b62fee66872c2",
+      "sourceSha256": "a6a6def19ed6c9e2d5bd804a16b760e709b92d62dc7c196857bd3d51ce5c8a25",
+      "sourceBytes": 10244627,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "a22083c0a59b39ac631b398a9b959d7294be44ef31c791e2505968e567e849d5",
+      "compiledBytes": 149174,
+      "coverIds": [
+        "cover_19e9535ed45c120173f6972c62d2f240"
+      ],
+      "names": [
+        "Aero Fighters"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_19e9535ed45c120173f6972c62d2f240",
+          "coverId": "cover_19e9535ed45c120173f6972c62d2f240",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "A.S.P. - Air Strike Patrol (USA).jpg",
+      "sourceFile": "A_S_P_AIR_STRIKE_PATROL_4K.png",
+      "sourceTitle": "A.S.P. - Air Strike Patrol",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "1ffc38c60a709ecb3f3877725c356de2e26455b5b099c14d6b18b6b29d5dc8be",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_30599f06528fb97784335bd91d24ccaf"
+      ],
+      "oldSha256": "fcef8d48654b19fdc1f3e1276d122423ad047c70c870e945053b2759703e39a1",
+      "sourceSha256": "1ffc38c60a709ecb3f3877725c356de2e26455b5b099c14d6b18b6b29d5dc8be",
+      "sourceBytes": 11325769,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "25278ee40b9eefbf3a5846362c05d9ae96ac6d0e37dc5aab95c657b042ffe24e",
+      "compiledBytes": 153375,
+      "coverIds": [
+        "cover_30599f06528fb97784335bd91d24ccaf"
+      ],
+      "names": [
+        "A.S.P. : Air Strike Patrol"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_30599f06528fb97784335bd91d24ccaf",
+          "coverId": "cover_30599f06528fb97784335bd91d24ccaf",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "90 Minutes - European Prime Goal (Europe).jpg",
+      "sourceFile": "90_MINUTES_EUROPEAN_PRIME_GOAL_4K.png",
+      "sourceTitle": "90 Minutes - European Prime Goal",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "baf72e86fa96ea903e574bdc136e7e17b0deb7f71b3ee25521f55f85468ee7f0",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_d589b63886d6b8a7640b5b65e21ff316"
+      ],
+      "oldSha256": "d4fe1a89bbbd4e21ece838fd6101e0b9ecaf0b534a773762a915af166b6883f5",
+      "sourceSha256": "baf72e86fa96ea903e574bdc136e7e17b0deb7f71b3ee25521f55f85468ee7f0",
+      "sourceBytes": 10177336,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "08df21f2d7d52dc108d92b6c2e4abc8bd2eb99a50ba068e6a6ba70efa6ef145d",
+      "compiledBytes": 142603,
+      "coverIds": [
+        "cover_d589b63886d6b8a7640b5b65e21ff316"
+      ],
+      "names": [
+        "90 Minutes : European Prime Goal"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_d589b63886d6b8a7640b5b65e21ff316",
+          "coverId": "cover_d589b63886d6b8a7640b5b65e21ff316",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "ABC Monday Night Football (USA).jpg",
+      "sourceFile": "ABC_MONDAY_NIGHT_FOOTBALL_4K.png",
+      "sourceTitle": "ABC Monday Night Football",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "11622efe0b7d86aae6c248258a295d9cca7052438ec79cc9fbfd1ce6d0dc5d7c",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_4c5f9f49edd2ad0adfd11150ff318f42"
+      ],
+      "oldSha256": "a0e035c2a50962b0f04d4c0ba2a1bebdbd361e27cc56f06691822e873febbdaa",
+      "sourceSha256": "11622efe0b7d86aae6c248258a295d9cca7052438ec79cc9fbfd1ce6d0dc5d7c",
+      "sourceBytes": 9071922,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "06443ee2d907e7b5ffbb788a2ebcb4d7b9c015e9aab24836df83bbcbe6edb0c6",
+      "compiledBytes": 124332,
+      "coverIds": [
+        "cover_4c5f9f49edd2ad0adfd11150ff318f42"
+      ],
+      "names": [
+        "ABC Monday Night Football"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_4c5f9f49edd2ad0adfd11150ff318f42",
+          "coverId": "cover_4c5f9f49edd2ad0adfd11150ff318f42",
+          "revision": 43
+        }
+      ]
+    },
+    {
+      "magazine": "Adventures of Yogi Bear (USA).jpg",
+      "sourceFile": "ADVENTURES_OF_YOGI_BEAR_4K.png",
+      "sourceTitle": "Adventures of Yogi Bear",
+      "sourceRevision": 1,
+      "sourceDeclaredSha256": "3dbb05e870e9a538f6fcfc6df1355fcfe73714b6e4f7424d2f4926f304e4db32",
+      "matchRule": "exact-ROM-title",
+      "itemIds": [
+        "station_4b51d343f608f3d5b5ce88a8606257b9"
+      ],
+      "oldSha256": "4c6aaa7da4da0f9a6759ff38270fde013b3567aca54702c65c04fddf9add0225",
+      "sourceSha256": "3dbb05e870e9a538f6fcfc6df1355fcfe73714b6e4f7424d2f4926f304e4db32",
+      "sourceBytes": 11075427,
+      "sourceResolution": [
+        2560,
+        3840
+      ],
+      "compiledSha256": "f05d3eb2c0f013e1799c86a265ebab7550a8b39f499424089e4bdf2b17ae1778",
+      "compiledBytes": 163873,
+      "coverIds": [
+        "cover_4b51d343f608f3d5b5ce88a8606257b9"
+      ],
+      "names": [
+        "Adventures of Yogi Bear"
+      ],
+      "catalogBindings": [
+        {
+          "itemId": "station_4b51d343f608f3d5b5ce88a8606257b9",
+          "coverId": "cover_4b51d343f608f3d5b5ce88a8606257b9",
+          "revision": 43
+        }
+      ]
+    }
+  ],
+  "unmatchedDelivered": [
+    {
+      "title": "Aguri Suzuki F-1 Super Driving",
+      "sourceFile": "AGURI_SUZUKI_F_1_SUPER_DRIVING_4K.png",
+      "primaryRelease": "Aguri Suzuki F-1 Super Driving (Europe)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "Alfred Chicken",
+      "sourceFile": "ALFRED_CHICKEN_4K.png",
+      "primaryRelease": "Alfred Chicken (Europe)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "All-American Championship Football",
+      "sourceFile": "ALL_AMERICAN_CHAMPIONSHIP_FOOTBALL_4K.png",
+      "primaryRelease": "All-American Championship Football (Europe)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "Another World",
+      "sourceFile": "ANOTHER_WORLD_4K.png",
+      "primaryRelease": "Another World (Europe)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "Arkanoid",
+      "sourceFile": "ARKANOID_4K.png",
+      "primaryRelease": "Arkanoid (Europe)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "Assault Suits Valken",
+      "sourceFile": "ASSAULT_SUITS_VALKEN_4K.png",
+      "primaryRelease": "Assault Suits Valken (USA) (Retro-Bit)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "Blackhawk",
+      "sourceFile": "BLACKHAWK_4K.png",
+      "primaryRelease": "Blackhawk (Europe) (En,Fr,De)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "Blanco World Class Rugby",
+      "sourceFile": "BLANCO_WORLD_CLASS_RUGBY_4K.png",
+      "primaryRelease": "Blanco World Class Rugby (France) (En)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "Blazing Skies",
+      "sourceFile": "BLAZING_SKIES_4K.png",
+      "primaryRelease": "Blazing Skies (Europe)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "Brawl Brothers - Rival Turf! 2",
+      "sourceFile": "BRAWL_BROTHERS_RIVAL_TURF_2_4K.png",
+      "primaryRelease": "Brawl Brothers - Rival Turf! 2 (Europe)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "Castlevania - Vampire's Kiss",
+      "sourceFile": "CASTLEVANIA_VAMPIRE_S_KISS_4K.png",
+      "primaryRelease": "Castlevania - Vampire's Kiss (Europe)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "Chaos Engine, The",
+      "sourceFile": "CHAOS_ENGINE_THE_4K.png",
+      "primaryRelease": "Chaos Engine, The (Europe)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "Choplifter III",
+      "sourceFile": "CHOPLIFTER_III_4K.png",
+      "primaryRelease": "Choplifter III (Europe)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "Congo - The Movie - Secret of Zinj",
+      "sourceFile": "CONGO_THE_MOVIE_SECRET_OF_ZINJ_4K.png",
+      "primaryRelease": "Congo - The Movie - Secret of Zinj (USA) (Proto)",
+      "reason": "no-exact-installed-release-match"
+    },
+    {
+      "title": "Corn Buster",
+      "sourceFile": "CORN_BUSTER_4K.png",
+      "primaryRelease": "Corn Buster (Europe) (Proto)",
+      "reason": "no-exact-installed-release-match"
+    }
+  ],
+  "regionalAlternativesNotSubstituted": true,
+  "backupVerified": true
+}

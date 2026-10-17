@@ -47,7 +47,7 @@ def https_evidence(value):
     return True
 
 
-def merge(module,catalog,existing_profiles,old_modes,runtime,decisions=None):
+def merge(module,catalog,existing_profiles,old_modes,runtime,decisions=None,*,migrate_existing_native_profiles=True):
     manifest,policies=incoming(runtime)
     module.validate_modes(old_modes)
     if not isinstance(catalog,dict) or not isinstance(catalog.get("items"),list) or not isinstance(existing_profiles,list):
@@ -91,7 +91,10 @@ def merge(module,catalog,existing_profiles,old_modes,runtime,decisions=None):
             return
         keys[key]=mode;output["modes"].append(mode);added.append(dict(itemId=row["itemId"],platform=system,profileId=mode["profileId"],
             sourceProfileId=source["profileId"],engineId=engine["engineId"],approved=mode["approved"],origin=origin))
-    for source in existing_profiles:
+    # A fixed review ledger can be the only source of renewed bindings. Existing
+    # scoped profiles still remain in the output prefix and in the preview.
+    # Migrating them as well would append a second owner suffix to the same mode.
+    for source in (existing_profiles if migrate_existing_native_profiles else []):
         system=module.platform(source.get("platform",""))
         if system not in NATIVE or source.get("approved") is not True:continue
         policy=policies[system]

@@ -1,0 +1,24 @@
+{
+  "beforePublication": {
+    "workerPreflightRejected": true,
+    "originalLimitBytes": 131072,
+    "winbackFirstStageBytes": 137167,
+    "productionWrites": false
+  },
+  "firstShadowAttempt": {
+    "testNicknameLength": 29,
+    "permittedNicknameLength": 24,
+    "correctedTo": "R168 metadata",
+    "code": "signed endpoint status400",
+    "productionRestartedOrDataPublished": false
+  },
+  "afterPublicationQualification": {
+    "oldDiagnosticPrefix": "psx-r167-20261015-",
+    "requiredPrefix": "psx-r168-20261015-",
+    "onlyRemainingQualificationsResumed": true,
+    "publicationOrDeploymentRepeated": false
+  },
+  "finalAuthenticatedAuthorityPassed": true,
+  "apkReceived": false,
+  "physicalGameplayValidated": false
+}

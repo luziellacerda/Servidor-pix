@@ -1,0 +1,2 @@
+# Patch includes literal CRLF source and intentional diff context spaces.
+StationPsxLaunch.patch -text whitespace=-blank-at-eol,cr-at-eol

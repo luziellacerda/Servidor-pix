@@ -1,0 +1,12 @@
+{
+  "oldSha256": "6bed67b8480c6846d61323f29d5c3cfeba57c3538c3bb61b13d7aeeb1410e835",
+  "newSha256": "82d95a867c359afec0de6e99f9d286d5ac8da712bdf52ee696b6b5cba37995f8",
+  "previousLimit": 64,
+  "newLimit": 128,
+  "byteLimitPreserved": 524288,
+  "focusedTestsPassed": 4,
+  "applied": true,
+  "utc": "2026-10-14T23:46:45.646510+00:00",
+  "apiRestarted": false,
+  "priorOwnersDeleted": false
+}

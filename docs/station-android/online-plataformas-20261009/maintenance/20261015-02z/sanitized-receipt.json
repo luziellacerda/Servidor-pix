@@ -1,0 +1,173 @@
+{
+  "schema": "station.hourly-maintenance.v1",
+  "utc": "2026-10-15T10:59:14.919003+00:00",
+  "status": "partial",
+  "event": {
+    "utc": "2026-10-15T02:00:25.987226+00:00",
+    "fingerprint": "40f964a788b37281df4801d2d1f172107f6232dc9c59441b31bf0b9bba55b3a7",
+    "inputs": {
+      "server:origin/docs/station-online-exit-r135-20261012": "720a4b18a0d78b741d0280b6943d572cb56671cb",
+      "app:origin/build/station-online-exit-r135-20261012": "5da48f3e3984dc7b9999055865024fa7a6947bc0",
+      "covers:origin/capas-super-nintendo": "9f85e9df1ec0c82d77156ed072b997855f719288",
+      "covers:origin/main": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+      "privateInputFingerprint": "88df89bcec614114ffdf051f7b294dd55be9ed67e41030f3ad7bd8c34b8e6fb8"
+    },
+    "newInput": true
+  },
+  "remoteRecheck": {
+    "passed": true,
+    "utc": "2026-10-15T10:58:13.111395+00:00",
+    "allIncomingBranchesEqualFetchedRefs": true,
+    "branchCounts": {
+      "server": 30,
+      "app": 61,
+      "covers": 2
+    },
+    "newUsefulGitInput": false,
+    "initialReadFailure": "Intermittent DNS; final native HTTPS recheck passed without configuration changes"
+  },
+  "deliveryBranch": "feat/station-hourly-20261015-02z",
+  "backups": {
+    "server": {
+      "commit": "720a4b18a0d78b741d0280b6943d572cb56671cb",
+      "backupRef": "refs/heads/backup/station-before-hourly-20261015-02z",
+      "verified": true
+    },
+    "app": {
+      "commit": "5da48f3e3984dc7b9999055865024fa7a6947bc0",
+      "backupRef": "refs/heads/backup/station-before-hourly-20261015-02z",
+      "verified": true
+    }
+  },
+  "R159": {
+    "authority": "/mnt/DADOS/station-r159-20261014/applied.json",
+    "authoritySha256": "d93a7941ed195044538b3a6b18d32d27412a18554bbeb6e2452fbb9004af40cd",
+    "passed": true,
+    "reapplied": false,
+    "previousSnapshotOnly": {
+      "engines": 67,
+      "profiles": 14127,
+      "modes": 9215,
+      "catalogRevision": 84
+    }
+  },
+  "covers": {
+    "gitImports": 0,
+    "newUsefulGitInput": false,
+    "sourceManifestUnchangedSince01z": true,
+    "sourceManifestSha256": "817fe992acce5d741be8817bb216f320010a48f3cc1a6b09cb057c143950d549",
+    "finalizedSnapshot": 191,
+    "preparedMagazines": 36,
+    "bindings": 36,
+    "uniqueArtworkSources": 34,
+    "unmatchedArtworksPreserved": 14,
+    "format": "JPEG RGB",
+    "resolution": [
+      480,
+      720
+    ],
+    "quality": 90,
+    "planSha256": "c047dfe11fab045053e2f4973bfea97cc2de515a523ee5928c191c3399a65830",
+    "operatorSha256": "9c8cfaaf35e2607896710a853d7f666ccda6bbd5972fdeb5e2be2aeaa24a96bc",
+    "preflightPassed": true,
+    "atomicWriteFixturePassed": true,
+    "published": false,
+    "applied": false,
+    "HTTPProofsExecuted": false
+  },
+  "authentication": {
+    "authenticated": false,
+    "waitSeconds": 115.15,
+    "ownUnauthenticatedRequestCancelled": true,
+    "rootOperationInterrupted": false,
+    "exitCode": -15
+  },
+  "effectiveServices": {
+    "turborama-station-api.service": {
+      "MainPID": "19631",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-station-n64-ready-20261014-b3473cc01601/TurboRamaSuiteOnlineServer.dll ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "nginx.service": {
+      "MainPID": "3197",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/sbin/nginx ; argv[]=/usr/sbin/nginx -g daemon on; master_process on; ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "station-network-priority.service": {
+      "MainPID": "3232",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /opt/station-network-qos/priority.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "turborama-station-management.service": {
+      "MainPID": "3410",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-station-management-20261006-fe4b631/backend/TurboRamaSuiteAdminServer.dll ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "turborama-suite-api.service": {
+      "MainPID": "3416",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-suite-r5-releases/downloads-bd82bc3-20260908/server/TurboRamaSuiteOnlineServer.dll ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "turborama-suite-content-gateway.service": {
+      "MainPID": "3417",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/dotnet ; argv[]=/usr/bin/dotnet /opt/turborama-suite-r5-releases/r5-908-gateway-policy-20260830/gateway/TurboRamaSuiteContentGateway.dll --urls http://127.0.0.1:5191 --Suite:ContentUrlKeyRingFile=/run/credentials/turborama-suite-content-gateway.service/content-url-keyring --Suite:ContentGrantTokenPepperFile=/run/credentials/turborama-suite-content-gateway.service/content-grant-token-pepper --Suite:Content:AllowedUpstreamHostsFile=/run/credentials/turborama-suite-content-gateway.service/content-allowed-hosts ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "turborama-suite-admin.service": {
+      "MainPID": "3414",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/env ; argv[]=/usr/bin/env SUITE_ADMIN_PEPPER_FILE=/run/credentials/turborama-suite-admin.service/activation-pepper /usr/bin/dotnet /opt/turborama-suite-r5-releases/downloads-bd82bc3-20260908/admin-backend/TurboRamaSuiteAdminServer.dll ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "ActiveState": "active"
+    },
+    "turborama-station-library-scan.service": {
+      "MainPID": "0",
+      "NRestarts": "0",
+      "ExecMainStatus": "0",
+      "ExecStart": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -B /opt/turborama-station-library-quarantine-20261014-a10c78f53797/library-tools/atualizar-biblioteca-station.py --config /mnt/DADOS/station-library-auto-private-20261004/config.json ; ignore_errors=no ; start_time=[Thu 2026-10-15 07:57:11 -03] ; stop_time=[Thu 2026-10-15 07:57:18 -03] ; pid=202869 ; code=exited ; status=0 }",
+      "ActiveState": "inactive"
+    },
+    "turborama-station-library-scan.timer": {
+      "ActiveState": "active"
+    }
+  },
+  "hourlyTimer": {
+    "is-active": "active",
+    "is-enabled": "enabled"
+  },
+  "protectedBaselineReadThisCycle": false,
+  "protectedDLLHashReadThisCycle": false,
+  "protectedConfigurationReadThisCycle": false,
+  "preservation": {
+    "originalCheckoutsAndHistoricalCRLFPreserved": true,
+    "noServiceRestarted": true,
+    "scannerTimerStopped": false,
+    "ROMsHashedCopiedOrRebuilt": 0,
+    "APKChanged": false,
+    "newAutomation": false,
+    "externalMessages": false
+  },
+  "maintenanceLock": {
+    "holder": 82618,
+    "existingParentMonitor": true,
+    "releaseExpectedOnlyAfterAgentReturn": true
+  },
+  "privateWorkDirectory": "/mnt/DADOS/station-maintenance-20261015-02z",
+  "pending": [
+    "Publicar as 36 capas SNES e comprovar catálogo assinado e bytes locais/públicos: autenticação Linux nativa não concluída; nenhuma publicação iniciada.",
+    "Preservar as 14 artes sem edição ROM correspondente; só vincular quando houver correspondência exata.",
+    "Tela preta/áudio em 007 e homologação Android continuam pendentes; sem captura nova ou causa confirmada neste ciclo."
+  ]
+}

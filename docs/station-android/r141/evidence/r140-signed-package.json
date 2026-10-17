@@ -1,0 +1,34 @@
+{
+  "revision": "R140",
+  "finalApkSha256": "61e873e7bbd75a13fbd0d55515a3726f4debd8984cc0fe8f9d73401e0897792c",
+  "bytes": 2715008015,
+  "sourceCommit": "b93623b708bafe151441d3e4920acad51718e118",
+  "clinicalQualificationSha256": "42db9aa7537486f15b555987ac05d0d4850de7b34af9ffa5063a014438bfc821",
+  "candidateOnly": true,
+  "diagnosticLoggerIncluded": false,
+  "promoted": false,
+  "signingCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "signatureSchemes": [
+    "v2",
+    "v3"
+  ],
+  "alignmentBytes": 16384,
+  "changedEntries": [
+    "assets/station-online/engines.json",
+    "classes35.dex",
+    "lib/arm64-v8a/libstation_dolphin_runtime.so",
+    "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+    "lib/arm64-v8a/libstation_psx_online.so"
+  ],
+  "addedEntries": [],
+  "removedEntries": [],
+  "preservedEntries": 13855,
+  "checkedEntries": 13860,
+  "nativeRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "finalVerifierReceiptSha256": "f2a85284952c0697aa5debcf0d398384a273dec6de8de65dad24a49b10c75193",
+  "unsignedPackageReceiptSha256": "9873b08093cffcf9b0a9741f252b3311cb9ae5953f065b5a31a17244cdfe5a7b",
+  "fullEntryHashesVerified": true,
+  "finalCopyHashVerified": true,
+  "currentPointersUpdated": false,
+  "installed": false
+}

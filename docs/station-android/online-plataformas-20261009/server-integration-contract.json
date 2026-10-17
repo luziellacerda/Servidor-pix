@@ -639,6 +639,44 @@
       "clientJarSha256": "61a71f796a734937c1573fe01ad33c927be0bb5ad6528e875afde97a75ab8164",
       "newTestImplementation": false
     },
-    "coverCorrection": "capas-site-ps2-psp-wii-wiiu-20261010.json"
+    "coverCorrection": "capas-site-ps2-psp-wii-wiiu-20261010.json",
+    "NES20261012": {
+      "games": 750,
+      "formats": {
+        ".nes": 748,
+        ".fds": 1,
+        ".unf": 1
+      },
+      "movedToRoot": true,
+      "folder": "nes",
+      "magazineFolder": "nes/media/revista",
+      "originalROMBytesPreserved": true,
+      "allGamesHaveCovers": true,
+      "newGitRecreatedCovers": 469,
+      "receivedFrontBoxesKept": 280,
+      "personalizedGeneratedCover": 1,
+      "gitFolder": "capas-em-producao/NES/Recriadas",
+      "gitCommit": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+      "originalArtworkBytes": 1215873810,
+      "compressedArtworkBytes": 95253724,
+      "resolution": [
+        480,
+        720
+      ],
+      "format": "JPEG RGB",
+      "quality": 90,
+      "automaticDiscoveryEnabled": true,
+      "onlineNativeEngineRegistered": false
+    }
+  },
+  "catalogReading": {
+    "fullQuery": "/v1/station/catalog?metadata=1&maximumItems=20000",
+    "maximumItems": 20000,
+    "legacyMaximumItems": 4096,
+    "totalItemsField": true,
+    "hasMoreField": true,
+    "fullVisibleItems": 4435,
+    "legacyNESItems": 411,
+    "appUpdateRequiredForAll750NES": true
   }
 }

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "revision": "R164",
+  "exactR164PolicyAccepted": true,
+  "changedRuntimeRejected": 3,
+  "firstReviewedModes": 78,
+  "completeReviewedDecisions": 321,
+  "reviewedEditions": 157,
+  "compactModeBytes": 7021945,
+  "registrarLimitBytes": 8388608,
+  "semanticEqualityVerified": true,
+  "baselineIsHistoricalPreflightOnly": true,
+  "liveBaselineRead": false,
+  "productionMutated": false,
+  "apkRequired": false,
+  "realKitBinariesChecked": 27,
+  "policyAdapterSha256": "f520690bc43eaef2fec67d79b343d511df4710a6c1a88e5f6f53ea2c838ec704"
+}

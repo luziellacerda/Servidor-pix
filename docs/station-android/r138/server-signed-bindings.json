@@ -1,0 +1,1005 @@
+{
+  "schemaVersion": 1,
+  "local": {
+    "address": "http://127.0.0.1:5192",
+    "signedChecks": [
+      {
+        "itemId": "826da6daebe9edbebffb3721f83abf12",
+        "name": "Battletoads in Battlemaniacs (USA)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "826da6daebe9edbebffb3721f83abf12",
+            "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-battletoads-in-battlemaniacs-2p-r81-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dois jogadores",
+            "instructions": [],
+            "sources": [
+              "https://github.com/luziellacerda/Servidor-pix/blob/270027cdcf00846823489eea7f539a27892800cd/docs/station-android/r138/README.md"
+            ]
+          },
+          {
+            "itemId": "826da6daebe9edbebffb3721f83abf12",
+            "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-battlemaniacs-mode-a-20261008-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player-a",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dupla com golpes entre parceiros",
+            "instructions": [
+              "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+            ],
+            "sources": [
+              "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+            ]
+          },
+          {
+            "itemId": "826da6daebe9edbebffb3721f83abf12",
+            "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-battlemaniacs-mode-b-20261008-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player-b",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dupla sem golpes entre parceiros",
+            "instructions": [
+              "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+            ],
+            "sources": [
+              "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "ce3f245960b94e064f027ffd8aefe466",
+        "name": "Cutthroat Island",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "ce3f245960b94e064f027ffd8aefe466",
+            "contentSha256": "b0b81d37eaec60283f797f8c0b945e7d5cde5697df55de8340c81e88f5d3536b",
+            "platform": "megadrive",
+            "engineId": "clownmdemu-d43c2708-mp5-463bdb0b409e",
+            "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "standard-2p-v1-owner-4a7ef0f95e15",
+            "profileSha256": "4c956b5c85d65bb8d6a02125f07aeb4c826d20b5d1bf81157ac69a77907531b5",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dois jogadores",
+            "instructions": [],
+            "sources": []
+          }
+        ]
+      },
+      {
+        "itemId": "station_6b714f8aebacccea27302ea3e7daee70",
+        "name": "3 Count Bout",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_6b714f8aebacccea27302ea3e7daee70",
+            "contentSha256": "35e6bd47aad801e3a79a15b7d05e2b830c3a4afd5bb037a6e997ffe4299d873a",
+            "platform": "neogeocd",
+            "engineId": "neocd-b1e04c73-aslr1-v3-463bdb0b409e",
+            "coreSha256": "78a35bc9a9435238d74125e77ae8f8d249ba59e90f07d43f43c84ad5ddc68870",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "local-mode-20261009-owner-1e1817f169d6",
+            "profileSha256": "4c956b5c85d65bb8d6a02125f07aeb4c826d20b5d1bf81157ac69a77907531b5",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Multiplayer local: até dois controles",
+            "instructions": [
+              "Escolha o modo multijogador local dentro do jogo. Uma campanha individual não ganha um segundo personagem por abrir uma sala.",
+              "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+              "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+            ],
+            "sources": [
+              "https://github.com/luziellacerda/Servidor-pix/blob/feat/station-online-all-platforms-20261009/docs/station-android/HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_939cf663599c63ae2141d93a198e7163",
+        "name": "2020 Super Baseball (set 1)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_939cf663599c63ae2141d93a198e7163",
+            "contentSha256": "1dd289c6a4f15f14245b14a66886c9633a2d6a383956ce0dfe0091d097e26ba3",
+            "platform": "neogeo",
+            "engineId": "fbneo-95153da1-neogeo-v3-463bdb0b409e",
+            "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "local-mode-20261009-owner-d255c1c164a3",
+            "profileSha256": "ca6b03a67805fcd54f40b939065c79d9de0e6c085f23c20fe38d44320ed551b2",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Multiplayer local: até dois controles",
+            "instructions": [
+              "Use Start/Coin de cada participante e escolha o modo do arcade. O Station libera no máximo duas entradas nesta plataforma.",
+              "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+              "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+            ],
+            "sources": [
+              "https://github.com/finalburnneo/FBNeo/blob/95153da1f113c56735bd9a818171f908df628421/src/burn/drv/neogeo/d_neogeo.cpp"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_798bf0b0befc0193c2cee3e44d7f6c2c",
+        "name": "10-Yard Fight (World, set 1)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_798bf0b0befc0193c2cee3e44d7f6c2c",
+            "contentSha256": "4951c35d905b3bee1b069f5c9db15ccdcb07a84decaa7dfc3a36138d3e56aa02",
+            "platform": "fbneo",
+            "engineId": "fbneo-95153da1-fbneo-v3-463bdb0b409e",
+            "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "local-mode-20261009-owner-a6259ab9472d",
+            "profileSha256": "ca6b03a67805fcd54f40b939065c79d9de0e6c085f23c20fe38d44320ed551b2",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Multiplayer local: até dois controles",
+            "instructions": [
+              "Use Start/Coin de cada participante e escolha o modo do arcade. O Station libera no máximo duas entradas nesta plataforma.",
+              "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+              "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+            ],
+            "sources": [
+              "https://github.com/finalburnneo/FBNeo/blob/95153da1f113c56735bd9a818171f908df628421/src/burn/drv/irem/d_m58.cpp"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_7e4887bc3e6edba81a11f5a65fe279f8",
+        "name": "1941 - Counter Attack (World)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_7e4887bc3e6edba81a11f5a65fe279f8",
+            "contentSha256": "c85e96362722c3a5f449ebfcf13a6734fa265a1c480057bbd050bc457414e262",
+            "platform": "cps1",
+            "engineId": "fbneo-95153da1-cps1-v3-463bdb0b409e",
+            "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "local-mode-20261009-owner-d591327798c8",
+            "profileSha256": "ca6b03a67805fcd54f40b939065c79d9de0e6c085f23c20fe38d44320ed551b2",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Multiplayer local: até dois controles",
+            "instructions": [
+              "Use Start/Coin de cada participante e escolha o modo do arcade. O Station libera no máximo duas entradas nesta plataforma.",
+              "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+              "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+            ],
+            "sources": [
+              "https://github.com/finalburnneo/FBNeo/blob/95153da1f113c56735bd9a818171f908df628421/src/burn/drv/capcom/d_cps1.cpp"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_a87384b87359586c74cc54b4f2a60630",
+        "name": "1944: The Loop Master (US 000620)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_a87384b87359586c74cc54b4f2a60630",
+            "contentSha256": "c654a6b850d594c6c22913b8d884123f7f4c9dce31e7de1ee98c7cf703b90818",
+            "platform": "cps2",
+            "engineId": "fbneo-95153da1-cps2-v3-463bdb0b409e",
+            "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "local-mode-20261009-owner-c4027afaf826",
+            "profileSha256": "ca6b03a67805fcd54f40b939065c79d9de0e6c085f23c20fe38d44320ed551b2",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Multiplayer local: até dois controles",
+            "instructions": [
+              "Use Start/Coin de cada participante e escolha o modo do arcade. O Station libera no máximo duas entradas nesta plataforma.",
+              "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+              "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+            ],
+            "sources": [
+              "https://github.com/finalburnneo/FBNeo/blob/95153da1f113c56735bd9a818171f908df628421/src/burn/drv/capcom/d_cps2.cpp"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_dc6c1f56a1d2795d97245205053a1205",
+        "name": "JoJo no Kimyou na Bouken (USA 990128)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_dc6c1f56a1d2795d97245205053a1205",
+            "contentSha256": "4edb64dd5c3c0a1503a9ad9077ddb8a8a04a378f5f92bb615172a2fa7194f396",
+            "platform": "cps3",
+            "engineId": "fbneo-95153da1-cps3-v3-463bdb0b409e",
+            "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "local-mode-20261009-owner-1d34245d45f6",
+            "profileSha256": "ca6b03a67805fcd54f40b939065c79d9de0e6c085f23c20fe38d44320ed551b2",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Multiplayer local: até dois controles",
+            "instructions": [
+              "Use Start/Coin de cada participante e escolha o modo do arcade. O Station libera no máximo duas entradas nesta plataforma.",
+              "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+              "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+            ],
+            "sources": [
+              "https://github.com/finalburnneo/FBNeo/blob/95153da1f113c56735bd9a818171f908df628421/src/burn/drv/cps3/d_cps3.cpp"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_c163bc17b96efcad31302280d44fb819",
+        "name": "Super Mario Kart",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_c163bc17b96efcad31302280d44fb819",
+            "contentSha256": "2ada8919688087be60a6a48cace8f877add60c45d2e5d09e2442faa55be62a49",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "standard-2p-v1-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dois jogadores",
+            "instructions": [],
+            "sources": [
+              "https://github.com/luziellacerda/Servidor-pix/blob/270027cdcf00846823489eea7f539a27892800cd/docs/station-android/r138/README.md"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_53bf1a7b190641b0c73448367a6b6557",
+        "name": "Top Gear 3000 (PT-BR)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_53bf1a7b190641b0c73448367a6b6557",
+            "contentSha256": "98b788fc146840a83ac898dbe96a4056ddb56e795d80eb610d4b2fd7a450fa02",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-topgear3000-vs-20261008-owner-b905d2954ee6",
+            "profileSha256": "88568b97800afa017e3c75684effe23f3aad8e93f5b2ac947a0638a4268bd8f3",
+            "maximumPlayers": 4,
+            "approved": true,
+            "controllerProfile": "snes-multitap-port2-v1",
+            "mode": "vs-race",
+            "allowedPlayerCounts": [
+              2,
+              3,
+              4
+            ],
+            "modeTitle": "Corrida VS",
+            "instructions": [
+              "Selecionar VS Mode e2,3ou4 humanos; demais carros podem ficar CPU."
+            ],
+            "sources": [
+              "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+            ]
+          },
+          {
+            "itemId": "station_53bf1a7b190641b0c73448367a6b6557",
+            "contentSha256": "98b788fc146840a83ac898dbe96a4056ddb56e795d80eb610d4b2fd7a450fa02",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-topgear3000-championship-20261008-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "championship-2p",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Campeonato em dupla",
+            "instructions": [
+              "Campeonato de dois humanos; não prometer quatro neste modo."
+            ],
+            "sources": [
+              "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_b0a50897ab5c3663dbabd624b7469572",
+        "name": "Top Gear 3000",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_b0a50897ab5c3663dbabd624b7469572",
+            "contentSha256": "6be49983976564f1fd9eff2f14f5bb41d3a0ff48573e39318088ecce286aca62",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-topgear3000-vs-20261008-owner-b905d2954ee6",
+            "profileSha256": "88568b97800afa017e3c75684effe23f3aad8e93f5b2ac947a0638a4268bd8f3",
+            "maximumPlayers": 4,
+            "approved": true,
+            "controllerProfile": "snes-multitap-port2-v1",
+            "mode": "vs-race",
+            "allowedPlayerCounts": [
+              2,
+              3,
+              4
+            ],
+            "modeTitle": "Corrida VS",
+            "instructions": [
+              "Selecionar VS Mode e2,3ou4 humanos; demais carros podem ficar CPU."
+            ],
+            "sources": [
+              "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+            ]
+          },
+          {
+            "itemId": "station_b0a50897ab5c3663dbabd624b7469572",
+            "contentSha256": "6be49983976564f1fd9eff2f14f5bb41d3a0ff48573e39318088ecce286aca62",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-topgear3000-championship-20261008-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "championship-2p",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Campeonato em dupla",
+            "instructions": [
+              "Campeonato de dois humanos; não prometer quatro neste modo."
+            ],
+            "sources": [
+              "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+            ]
+          }
+        ]
+      }
+    ],
+    "negativeAdmissionChecks": [
+      {
+        "case": "unknown-engine",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+        "roomCreated": false
+      },
+      {
+        "case": "wrong-content",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+        "roomCreated": false
+      },
+      {
+        "case": "unknown-profile",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED",
+        "roomCreated": false
+      },
+      {
+        "case": "top-gear-five-refused",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+        "roomCreated": false
+      }
+    ],
+    "allEightEnginesVerified": true,
+    "ownSyntheticLicenseRemoved": true,
+    "gameplayValidated": false
+  },
+  "public": {
+    "address": "https://app.lzgames.com.br",
+    "signedChecks": [
+      {
+        "itemId": "826da6daebe9edbebffb3721f83abf12",
+        "name": "Battletoads in Battlemaniacs (USA)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "826da6daebe9edbebffb3721f83abf12",
+            "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-battletoads-in-battlemaniacs-2p-r81-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dois jogadores",
+            "instructions": [],
+            "sources": [
+              "https://github.com/luziellacerda/Servidor-pix/blob/270027cdcf00846823489eea7f539a27892800cd/docs/station-android/r138/README.md"
+            ]
+          },
+          {
+            "itemId": "826da6daebe9edbebffb3721f83abf12",
+            "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-battlemaniacs-mode-a-20261008-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player-a",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dupla com golpes entre parceiros",
+            "instructions": [
+              "Escolher 2PLAYERS A no jogo; golpes entre parceiros habilitados."
+            ],
+            "sources": [
+              "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+            ]
+          },
+          {
+            "itemId": "826da6daebe9edbebffb3721f83abf12",
+            "contentSha256": "5d04756017d5999e91c017d3ce1b144f5030de82e9350fcf4c690a28551e9bb6",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-battlemaniacs-mode-b-20261008-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player-b",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dupla sem golpes entre parceiros",
+            "instructions": [
+              "Escolher 2PLAYERS B no jogo; golpes entre parceiros desabilitados."
+            ],
+            "sources": [
+              "https://www.retrogames.cz/manualy/SNES/Battletoads_in_Battlemaniacs_-_SNES_-_Manual.pdf"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "ce3f245960b94e064f027ffd8aefe466",
+        "name": "Cutthroat Island",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "ce3f245960b94e064f027ffd8aefe466",
+            "contentSha256": "b0b81d37eaec60283f797f8c0b945e7d5cde5697df55de8340c81e88f5d3536b",
+            "platform": "megadrive",
+            "engineId": "clownmdemu-d43c2708-mp5-463bdb0b409e",
+            "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "standard-2p-v1-owner-4a7ef0f95e15",
+            "profileSha256": "4c956b5c85d65bb8d6a02125f07aeb4c826d20b5d1bf81157ac69a77907531b5",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dois jogadores",
+            "instructions": [],
+            "sources": []
+          }
+        ]
+      },
+      {
+        "itemId": "station_6b714f8aebacccea27302ea3e7daee70",
+        "name": "3 Count Bout",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_6b714f8aebacccea27302ea3e7daee70",
+            "contentSha256": "35e6bd47aad801e3a79a15b7d05e2b830c3a4afd5bb037a6e997ffe4299d873a",
+            "platform": "neogeocd",
+            "engineId": "neocd-b1e04c73-aslr1-v3-463bdb0b409e",
+            "coreSha256": "78a35bc9a9435238d74125e77ae8f8d249ba59e90f07d43f43c84ad5ddc68870",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "local-mode-20261009-owner-1e1817f169d6",
+            "profileSha256": "4c956b5c85d65bb8d6a02125f07aeb4c826d20b5d1bf81157ac69a77907531b5",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Multiplayer local: até dois controles",
+            "instructions": [
+              "Escolha o modo multijogador local dentro do jogo. Uma campanha individual não ganha um segundo personagem por abrir uma sala.",
+              "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+              "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+            ],
+            "sources": [
+              "https://github.com/luziellacerda/Servidor-pix/blob/feat/station-online-all-platforms-20261009/docs/station-android/HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_939cf663599c63ae2141d93a198e7163",
+        "name": "2020 Super Baseball (set 1)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_939cf663599c63ae2141d93a198e7163",
+            "contentSha256": "1dd289c6a4f15f14245b14a66886c9633a2d6a383956ce0dfe0091d097e26ba3",
+            "platform": "neogeo",
+            "engineId": "fbneo-95153da1-neogeo-v3-463bdb0b409e",
+            "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "local-mode-20261009-owner-d255c1c164a3",
+            "profileSha256": "ca6b03a67805fcd54f40b939065c79d9de0e6c085f23c20fe38d44320ed551b2",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Multiplayer local: até dois controles",
+            "instructions": [
+              "Use Start/Coin de cada participante e escolha o modo do arcade. O Station libera no máximo duas entradas nesta plataforma.",
+              "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+              "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+            ],
+            "sources": [
+              "https://github.com/finalburnneo/FBNeo/blob/95153da1f113c56735bd9a818171f908df628421/src/burn/drv/neogeo/d_neogeo.cpp"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_798bf0b0befc0193c2cee3e44d7f6c2c",
+        "name": "10-Yard Fight (World, set 1)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_798bf0b0befc0193c2cee3e44d7f6c2c",
+            "contentSha256": "4951c35d905b3bee1b069f5c9db15ccdcb07a84decaa7dfc3a36138d3e56aa02",
+            "platform": "fbneo",
+            "engineId": "fbneo-95153da1-fbneo-v3-463bdb0b409e",
+            "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "local-mode-20261009-owner-a6259ab9472d",
+            "profileSha256": "ca6b03a67805fcd54f40b939065c79d9de0e6c085f23c20fe38d44320ed551b2",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Multiplayer local: até dois controles",
+            "instructions": [
+              "Use Start/Coin de cada participante e escolha o modo do arcade. O Station libera no máximo duas entradas nesta plataforma.",
+              "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+              "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+            ],
+            "sources": [
+              "https://github.com/finalburnneo/FBNeo/blob/95153da1f113c56735bd9a818171f908df628421/src/burn/drv/irem/d_m58.cpp"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_7e4887bc3e6edba81a11f5a65fe279f8",
+        "name": "1941 - Counter Attack (World)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_7e4887bc3e6edba81a11f5a65fe279f8",
+            "contentSha256": "c85e96362722c3a5f449ebfcf13a6734fa265a1c480057bbd050bc457414e262",
+            "platform": "cps1",
+            "engineId": "fbneo-95153da1-cps1-v3-463bdb0b409e",
+            "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "local-mode-20261009-owner-d591327798c8",
+            "profileSha256": "ca6b03a67805fcd54f40b939065c79d9de0e6c085f23c20fe38d44320ed551b2",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Multiplayer local: até dois controles",
+            "instructions": [
+              "Use Start/Coin de cada participante e escolha o modo do arcade. O Station libera no máximo duas entradas nesta plataforma.",
+              "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+              "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+            ],
+            "sources": [
+              "https://github.com/finalburnneo/FBNeo/blob/95153da1f113c56735bd9a818171f908df628421/src/burn/drv/capcom/d_cps1.cpp"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_a87384b87359586c74cc54b4f2a60630",
+        "name": "1944: The Loop Master (US 000620)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_a87384b87359586c74cc54b4f2a60630",
+            "contentSha256": "c654a6b850d594c6c22913b8d884123f7f4c9dce31e7de1ee98c7cf703b90818",
+            "platform": "cps2",
+            "engineId": "fbneo-95153da1-cps2-v3-463bdb0b409e",
+            "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "local-mode-20261009-owner-c4027afaf826",
+            "profileSha256": "ca6b03a67805fcd54f40b939065c79d9de0e6c085f23c20fe38d44320ed551b2",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Multiplayer local: até dois controles",
+            "instructions": [
+              "Use Start/Coin de cada participante e escolha o modo do arcade. O Station libera no máximo duas entradas nesta plataforma.",
+              "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+              "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+            ],
+            "sources": [
+              "https://github.com/finalburnneo/FBNeo/blob/95153da1f113c56735bd9a818171f908df628421/src/burn/drv/capcom/d_cps2.cpp"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_dc6c1f56a1d2795d97245205053a1205",
+        "name": "JoJo no Kimyou na Bouken (USA 990128)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_dc6c1f56a1d2795d97245205053a1205",
+            "contentSha256": "4edb64dd5c3c0a1503a9ad9077ddb8a8a04a378f5f92bb615172a2fa7194f396",
+            "platform": "cps3",
+            "engineId": "fbneo-95153da1-cps3-v3-463bdb0b409e",
+            "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "local-mode-20261009-owner-1d34245d45f6",
+            "profileSha256": "ca6b03a67805fcd54f40b939065c79d9de0e6c085f23c20fe38d44320ed551b2",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "local-multiplayer",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Multiplayer local: até dois controles",
+            "instructions": [
+              "Use Start/Coin de cada participante e escolha o modo do arcade. O Station libera no máximo duas entradas nesta plataforma.",
+              "Cada vaga controla uma entrada humana. Ver detalhes mostra a sala e não transmite a partida.",
+              "Cadastro autorizado para testes; jogatina nos aparelhos ainda não homologada."
+            ],
+            "sources": [
+              "https://github.com/finalburnneo/FBNeo/blob/95153da1f113c56735bd9a818171f908df628421/src/burn/drv/cps3/d_cps3.cpp"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_c163bc17b96efcad31302280d44fb819",
+        "name": "Super Mario Kart",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_c163bc17b96efcad31302280d44fb819",
+            "contentSha256": "2ada8919688087be60a6a48cace8f877add60c45d2e5d09e2442faa55be62a49",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "standard-2p-v1-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "two-player",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Dois jogadores",
+            "instructions": [],
+            "sources": [
+              "https://github.com/luziellacerda/Servidor-pix/blob/270027cdcf00846823489eea7f539a27892800cd/docs/station-android/r138/README.md"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_53bf1a7b190641b0c73448367a6b6557",
+        "name": "Top Gear 3000 (PT-BR)",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_53bf1a7b190641b0c73448367a6b6557",
+            "contentSha256": "98b788fc146840a83ac898dbe96a4056ddb56e795d80eb610d4b2fd7a450fa02",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-topgear3000-vs-20261008-owner-b905d2954ee6",
+            "profileSha256": "88568b97800afa017e3c75684effe23f3aad8e93f5b2ac947a0638a4268bd8f3",
+            "maximumPlayers": 4,
+            "approved": true,
+            "controllerProfile": "snes-multitap-port2-v1",
+            "mode": "vs-race",
+            "allowedPlayerCounts": [
+              2,
+              3,
+              4
+            ],
+            "modeTitle": "Corrida VS",
+            "instructions": [
+              "Selecionar VS Mode e2,3ou4 humanos; demais carros podem ficar CPU."
+            ],
+            "sources": [
+              "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+            ]
+          },
+          {
+            "itemId": "station_53bf1a7b190641b0c73448367a6b6557",
+            "contentSha256": "98b788fc146840a83ac898dbe96a4056ddb56e795d80eb610d4b2fd7a450fa02",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-topgear3000-championship-20261008-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "championship-2p",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Campeonato em dupla",
+            "instructions": [
+              "Campeonato de dois humanos; não prometer quatro neste modo."
+            ],
+            "sources": [
+              "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+            ]
+          }
+        ]
+      },
+      {
+        "itemId": "station_b0a50897ab5c3663dbabd624b7469572",
+        "name": "Top Gear 3000",
+        "signed": true,
+        "bindingsExact": true,
+        "onlineAvailable": true,
+        "profiles": [
+          {
+            "itemId": "station_b0a50897ab5c3663dbabd624b7469572",
+            "contentSha256": "6be49983976564f1fd9eff2f14f5bb41d3a0ff48573e39318088ecce286aca62",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-topgear3000-vs-20261008-owner-b905d2954ee6",
+            "profileSha256": "88568b97800afa017e3c75684effe23f3aad8e93f5b2ac947a0638a4268bd8f3",
+            "maximumPlayers": 4,
+            "approved": true,
+            "controllerProfile": "snes-multitap-port2-v1",
+            "mode": "vs-race",
+            "allowedPlayerCounts": [
+              2,
+              3,
+              4
+            ],
+            "modeTitle": "Corrida VS",
+            "instructions": [
+              "Selecionar VS Mode e2,3ou4 humanos; demais carros podem ficar CPU."
+            ],
+            "sources": [
+              "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+            ]
+          },
+          {
+            "itemId": "station_b0a50897ab5c3663dbabd624b7469572",
+            "contentSha256": "6be49983976564f1fd9eff2f14f5bb41d3a0ff48573e39318088ecce286aca62",
+            "platform": "snes",
+            "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+            "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+            "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+            "profileId": "snes-topgear3000-championship-20261008-owner-b905d2954ee6",
+            "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+            "maximumPlayers": 2,
+            "approved": true,
+            "controllerProfile": "standard-2p-v1",
+            "mode": "championship-2p",
+            "allowedPlayerCounts": [
+              2
+            ],
+            "modeTitle": "Campeonato em dupla",
+            "instructions": [
+              "Campeonato de dois humanos; não prometer quatro neste modo."
+            ],
+            "sources": [
+              "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+            ]
+          }
+        ]
+      }
+    ],
+    "negativeAdmissionChecks": [
+      {
+        "case": "unknown-engine",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+        "roomCreated": false
+      },
+      {
+        "case": "wrong-content",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+        "roomCreated": false
+      },
+      {
+        "case": "unknown-profile",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED",
+        "roomCreated": false
+      },
+      {
+        "case": "top-gear-five-refused",
+        "status": 409,
+        "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+        "roomCreated": false
+      }
+    ],
+    "allEightEnginesVerified": true,
+    "ownSyntheticLicenseRemoved": true,
+    "gameplayValidated": false
+  }
+}

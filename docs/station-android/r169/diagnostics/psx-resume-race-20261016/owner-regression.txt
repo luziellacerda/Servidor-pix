@@ -1,0 +1,1 @@
+{"passed":true,"checks":16090,"realAdapterCheckpointRuns":513,"scope":"host-only fake SDL/core with real Session; no Android/ROM"}

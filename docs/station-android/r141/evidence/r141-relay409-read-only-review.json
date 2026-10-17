@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-13",
+  "scope": "Read-only relay HTTP409/recovery and Android direct-download verification proposal",
+  "productSourcesModified": false,
+  "adbUsed": false,
+  "accountsOrApiUsed": false,
+  "appReturnCommit": "73a39fc",
+  "directSourceCommit": "4478e490041fe961ae7716c0aaed7bc71881066c",
+  "serverReadHead": "dceb9a42f3c95222b0df632c90329b9a459144e9",
+  "serverDirectCommit": "c8817a2c0e6bfadef7c422cd041c431697f70410",
+  "receivedReturn": {
+    "relayHttp409Count": 2,
+    "safeResponseCodesRecorded": false,
+    "reasonMayBeInferredFromStatus": false,
+    "commandRefusalsAreSeparate": [
+      "STATION_MULTIPLAYER_GENERATION_MISMATCH",
+      "STATION_MULTIPLAYER_UNRECOVERABLE"
+    ],
+    "source": "docs/server/r139/server-phone-diagnostic.json and docs/server/HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md at 73a39fc",
+    "nativeDsp4ContentFailureIsSeparateProvenObservation": true,
+    "noWholeGameplayConclusion": true
+  },
+  "existingAppCapture": {
+    "normalApi": {
+      "source": "versions/station-video-room-footer-r124-20261011/java/client/src/java/org/emulationstation/frontend/station/StationApi.java",
+      "line": 443,
+      "behavior": "success() reads a bounded error JSON body, accepts only STATION_[A-Z0-9_]{1,80}, never exposes the response body, and throws Failure(status,code,retryAfter)",
+      "diagnosticsSource": "versions/station-video-room-footer-r124-20261011/java/client/src/java/org/emulationstation/frontend/station/StationDiagnostics.java",
+      "diagnosticsLine": 50,
+      "diagnosticsLimit": "Only four download categories retain a named event; all other codes become SERVER_OTHER_FAILURE",
+      "roomsSource": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationRoomsActivity.java",
+      "roomsLine": 535,
+      "roomsBehavior": "recordFailure logs HTTP status and bounded uppercase safe Failure.code, exception class and bounded stack frames, without exception text or body"
+    },
+    "relayWebsocket": {
+      "parserSource": "versions/station-video-room-footer-r124-20261011/java/dependency-src/org/emulationstation/frontend/relay/ws/drafts/Draft.java",
+      "parserLine": 164,
+      "behavior": "The first response line rejects every status except 101 at line168 before response headers and JSON body are read",
+      "dispatchSource": "versions/station-video-room-footer-r124-20261011/java/dependency-src/org/emulationstation/frontend/relay/ws/WebSocketImpl.java",
+      "dispatchLine": 366,
+      "dispatchBehavior": "InvalidHandshakeException closes with its WebSocket protocol close code and exception reason. It is not delivered as StationApi.Failure",
+      "tunnelSource": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationMultiplayerTunnel.java",
+      "tunnelLines": [272,273],
+      "tunnelBehavior": "onClose logs epoch, WebSocket close code and peer flag; onError logs exception class. Both call lost(). Neither logs reason, HTTP status or JSON code",
+      "legacySource": "versions/station-video-room-footer-r124-20261011/java/netplay-src/org/emulationstation/frontend/netplay/StationRecoveryTunnel.java",
+      "legacyLines": [198,199],
+      "legacyBehavior": "The v2 recovery tunnel has the same diagnostic limitation",
+      "onOpenCannotObserveRejected409": true,
+      "normalApiHandlerCannotObserveThisResponse": true,
+      "printingExceptionMessageWouldNotRecoverServerJsonCode": true
+    }
+  },
+  "existingRecovery": {
+    "tunnelSource": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationMultiplayerTunnel.java",
+    "lines": [149,152,153,155,216,217,219],
+    "behavior": "lost clears the current transport and welcome/READY notification state, pauses native transport, shows waiting and requests a fresh ticket after bounded 2/4/8/10-second backoff. The 250-ms scheduler checks deadlines; there is no spin retry and no special branch for HTTP409 JSON codes",
+    "ticketCommandSource": "versions/station-video-room-footer-r124-20261011/java/netplay-src/org/emulationstation/frontend/netplay/StationGameSession.java",
+    "ticketCommandLine": 110,
+    "ticketCommandTerminalBehavior": "License denial, 404, and explicit generation/unrecoverable/game/profile/membership error codes terminate the ticket owner. Other ticket command errors use the existing unavailable/backoff path",
+    "sessionSource": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationMultiplayerSession.java",
+    "sessionLine": 63,
+    "preserve": ["READY", "generation", "ticket authentication", "proof", "timers", "retry schedule", "native/core behavior"]
+  },
+  "serverCaptureGap": {
+    "source": "src/TurboRamaSuiteOnlineServer/StationMultiplayerEndpoints.cs",
+    "lines": [48,68,69,75,92],
+    "commandLogHasSafeStatusAndCode": true,
+    "relayErrorWritesFiniteJsonStatusAndCode": true,
+    "relayErrorCurrentlyLogsSafeCode": false,
+    "legacyRelaySource": "src/TurboRamaSuiteOnlineServer/StationOnlineEndpoints.cs",
+    "legacyRelayLines": [88,89,154],
+    "potentialV3PreUpgrade409Branches": [
+      {"source":"src/TurboRamaSuiteOnlineServer/StationMultiplayer.cs","line":293,"code":"STATION_MULTIPLAYER_LEASE_STALE"},
+      {"source":"src/TurboRamaSuiteOnlineServer/StationMultiplayer.cs","line":295,"code":"STATION_MULTIPLAYER_ALREADY_ATTACHED"}
+    ],
+    "branchesAreActualReasonsOfCaptured409": false,
+    "postUpgradeErrorsMustNotBeRelabeledHttp409": true
+  },
+  "futureMinimalCaptureProposal": {
+    "implemented": false,
+    "includeInR141": false,
+    "preferred": "In a separately authorized server diagnostic change, record one structured bounded safe status/code event at the existing RelayError boundary, where the internally generated error code is already known. Include route category, UTC and existing generated trace/correlation only. Keep request headers, grant/ticket, proof, query, full URI, identity, payload, raw exception text and body out of the event",
+    "advantages": "No APK/native identity change, no rejected-handshake body parser, no changes to auth/admission/recovery/READY",
+    "minimumAppAlternativeLimitation": "The current parser discards the body before relay callbacks. Capturing JSON code on Android would need a separate carefully bounded diagnostic transport/parser change; logging onClose reason alone only recovers an HTTP status line, not the safe code",
+    "nextTest": "Keep separate per-device/private logs and backend safe diagnostic events for the next ordinary game start. Correlate windows, not millisecond ordering across unsynchronized hosts. Do not assert stale lease/duplicate attachment from HTTP409 alone"
+  },
+  "androidDirectDownloadProposal": {
+    "executed": false,
+    "model": "moto g52",
+    "appDebuggable": false,
+    "selection": "One small legitimately authorized item already available in the normal signed catalog and existing user license; initiate through the app UI",
+    "functionalEvidence": [
+      "Private bounded StationService logs: AUTHORIZE, ARTIFACT headers, DOWNLOAD elapsed/bytes and INSTALL_FINISHED",
+      "UI completion and announced/received size; cancellation only if independently needed",
+      "Existing transfer contract performs size, MIME, cancellation and staging/atomic publication checks; do not enable the previously disabled Android content hashing merely to test routing"
+    ],
+    "routeSourceEvidence": {
+      "httpSource": "integration/station-direct-download-20261013/java/org/emulationstation/frontend/station/StationHttp.java at 4478e49",
+      "originSource": "integration/station-direct-download-20261013/java/org/emulationstation/frontend/station/StationDownloadOrigin.java at 4478e49",
+      "behavior": "Only canonical grant GET uses downloads-station.lzgames.com.br and its dedicated system-CA-plus-SPKI socket factory. Authorization/catalog/profile/cover/online endpoints keep the original origin. Hostname validation and redirect refusal remain enabled. Timeouts remain10s/30s. No Range, fallback, concurrency or retry change"
+    },
+    "destinationObservation": {
+      "phoneLogHasHost": false,
+      "phoneGeneratedCorrelationAvailable": true,
+      "nginxSource": "ops/station-direct-download-20261013/station-downloads.nginx.conf at c8817a2",
+      "dedicatedVhostAccessLogEnabled": false,
+      "proxyPreservesHostAndCorrelation": true,
+      "possibleExistingBackendEvidence": "Only if the existing private request journal actually contains the dedicated Host and the same generated correlation for this transfer; do not assume it does",
+      "possibleNormalAndroidEvidence": "A read-only system socket observation with proven package UID, peerIP and time window may identify the actual direct destination if normal shell permissions/tool availability permit it. Generic byte counters or an unowned socket do not prove host. No permissions bypass if denied",
+      "withoutDestinationEvidence": "Report successful normal Android download plus source-selected dedicated route; do not claim direct WAN traffic independently proven"
+    },
+    "excluded": ["ADB now", "synthetic account/license", "manual grant URL replay", "run-as bypass", "root", "MITM", "installed CA", "network settings change", "public raw logs", "token/proof/ROM disclosure", "APK R139 rollback", "extra app logging in R141"]
+  }
+}

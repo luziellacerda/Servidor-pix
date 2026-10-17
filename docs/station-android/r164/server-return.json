@@ -1,0 +1,180 @@
+{
+  "schema": "station.r164.server-return.v1",
+  "updatedUtc": "2026-10-15T15:16:58.840435+00:00",
+  "revision": "R164",
+  "serverApplied": true,
+  "serverN64Ready": true,
+  "serverN64Offline": false,
+  "acceptedKitSha256": "37e3b9dd5b8efaae1a222b27661cb7a838689fa2b484b16268e2efa26d11457a",
+  "acceptedKitBytes": 12339010,
+  "privateKitReceivedAndHashVerifiedHere": true,
+  "privateSourceCommit": "07aaea3cbdef9c42c4339fdfe1e1f79cd2623dd4",
+  "archiveFiles": 40,
+  "manifestHashedFiles": 39,
+  "actualReceivedElfFilesVerified": 27,
+  "engineLibraries": 6,
+  "dependencies": 21,
+  "apkRequestedHere": false,
+  "apkReceivedHere": false,
+  "apkHashIndependentlyReadHere": false,
+  "producerReportedInstalledApkSha256": "903700d5d6dcd63779df636cfb11bf94e2fadbeece462d2cb7a6cdf1dfbd5210",
+  "producerReportedInstalledPhones": [
+    "Samsung A56"
+  ],
+  "bothCurrentPhonesOnR164Proven": false,
+  "currentPhonesPersonallyInspectedHere": false,
+  "exactEngineBindings": [
+    {
+      "platform": "psx",
+      "engineId": "pcsx-rearmed-ff81ed17-player-v3-1b315b86b4a7",
+      "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+      "runtimeSha256": "1b315b86b4a789247a355f09eb04bf41027e1cb8e5941019da6ade486835dd36"
+    },
+    {
+      "platform": "n64",
+      "engineId": "mupen64plus-ae-33bf7021-n64-v3-bba0ea0d7ff7",
+      "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+      "runtimeSha256": "bba0ea0d7ff730fe9548b5b4a32921ea892dbce131cb92d430dbf009f1c58f42"
+    },
+    {
+      "platform": "gamecube",
+      "engineId": "dolphin-5102a033-gamecube-v3-c3d597148345",
+      "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+      "runtimeSha256": "c3d59714834540b65961678c9736790f7c4041853bb680c1ebcd7b2f943134fb"
+    },
+    {
+      "platform": "wii",
+      "engineId": "dolphin-5102a033-wii-v3-c3d597148345",
+      "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+      "runtimeSha256": "c3d59714834540b65961678c9736790f7c4041853bb680c1ebcd7b2f943134fb"
+    }
+  ],
+  "n64ProfileSha256": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
+  "n64Cpu": "dynarec",
+  "inputDelay": 2,
+  "coresOptionsAndAll21DependenciesEqualR162": true,
+  "onlyThreeRuntimeMarkersDiffer": true,
+  "r162VideoBridgeAndAllDexPreservedAccordingToProducer": true,
+  "localDexOrApkComparisonPerformed": false,
+  "publication": {
+    "catalogRevision": 100,
+    "catalogEntries": 4744,
+    "engineCount": 79,
+    "profileCount": 15327,
+    "preparedModeCount": 10412,
+    "pid": 2489,
+    "dllSha256": "b3473cc0160169f686501af914cdbf8ebfdf8dcaa4dff768e1106ee8461c9179",
+    "enginesAdded": 4,
+    "profilesAdded": 399,
+    "preparedModesAdded": 399
+  },
+  "registrationBaselineEngineCount": 75,
+  "original78AndComplete321Applied": true,
+  "priorEngineProfileAndModePrefixesPreserved": true,
+  "compactModeSerializationUsed": true,
+  "protectedRegistrarLimitsUnchanged": true,
+  "n64Coverage": {
+    "editions": 157,
+    "multiplayerEditions": 120,
+    "individualOnlyEditions": 37,
+    "ownerProfiles": 387,
+    "maximumFourEditions": 85,
+    "maximumThreeEditions": 2,
+    "maximumTwoEditions": 33
+  },
+  "verification": {
+    "all157SignedCapabilitiesLocal": true,
+    "all157SignedCapabilitiesPublic": true,
+    "newMultiplayerModeAdmissions": 164,
+    "individualOrUnsupportedCountRefusals": 223,
+    "publicFourParticipantTransportPassed": true,
+    "publicParticipants": 4,
+    "readyPauseRecoveryTlsSpkiAndPriorityPassed": true,
+    "otherNativeSignedCapabilitySamplesPassed": true,
+    "ownSyntheticLicensesRemoved": true,
+    "realLicensesPreserved": true
+  },
+  "new1080Cover": {
+    "schema": "station.r164.1080-cover-applied.v1",
+    "passed": true,
+    "published": true,
+    "name": "1080° Snowboarding",
+    "platform": "n64",
+    "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+    "coverId": "cover_c13a5bbc179ccbe871697999c62ba13d",
+    "sourceSha256": "2f8ee5b6d4c91979a7e75658def15f3daabc04b299aa44145f2c9a5efb3fdcc1",
+    "sourceBytes": 2698285,
+    "compiledSha256": "abd127d8f6668fc918c7cb5c46c3d5980a4867b52b2197397825ecc7d6529cbf",
+    "compiledBytes": 150488,
+    "outputFormat": "JPEG",
+    "colorMode": "RGB",
+    "width": 480,
+    "height": 720,
+    "jpegQuality": 90,
+    "uncropped": true,
+    "oldServedSha256": "b4f8596b77ecc09b887c2a1f5dd9a4833059f4d5c31bf8e205cf60415b85d330",
+    "oldMagazineSha256": "b4f8596b77ecc09b887c2a1f5dd9a4833059f4d5c31bf8e205cf60415b85d330",
+    "previousCatalogRevision": 99,
+    "catalogRevision": 100,
+    "previousItemRevision": 45,
+    "itemRevision": 100,
+    "cacheKey": "coverId + item.revision",
+    "changedMagazines": 1,
+    "changedBindings": 1,
+    "freshProtectedBaselineAndOldAuthenticatedBodyVerified": true,
+    "backupRecoverable": true,
+    "isolatedEffectiveScannerPassed": true,
+    "onlineRegistriesAndOtherCatalogRowsPreserved": true,
+    "local": {
+      "passed": true,
+      "signedCatalogExact": true,
+      "checkedCovers": 1,
+      "covers": [
+        {
+          "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+          "coverId": "cover_c13a5bbc179ccbe871697999c62ba13d",
+          "revision": 100,
+          "sha256": "abd127d8f6668fc918c7cb5c46c3d5980a4867b52b2197397825ecc7d6529cbf",
+          "bytes": 150488
+        }
+      ]
+    },
+    "public": {
+      "passed": true,
+      "signedCatalogExact": true,
+      "checkedCovers": 1,
+      "covers": [
+        {
+          "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+          "coverId": "cover_c13a5bbc179ccbe871697999c62ba13d",
+          "revision": 100,
+          "sha256": "abd127d8f6668fc918c7cb5c46c3d5980a4867b52b2197397825ecc7d6529cbf",
+          "bytes": 150488
+        }
+      ]
+    },
+    "authenticatedMimeDimensionsLengthAndSha256Verified": true,
+    "romBytesReadOrCopied": 0,
+    "apiRestarted": false,
+    "physicalNewCoverVerified": false,
+    "privateAuthority": "/mnt/DADOS/station-r164-git-20261015/cover/applied.json"
+  },
+  "apiRestarted": false,
+  "psxHleApprovalsAdded": 0,
+  "priorR162StillRegistered": true,
+  "romsNetworkOtherCoversAndOtherProductsUnchanged": true,
+  "physicalAndroidGameplayValidated": false,
+  "physicalFourAndroidGameplayValidated": false,
+  "producerRecordedUserReportR162OnlineVideoWithoutSignificantStutter": true,
+  "r162UserReportInstrumented": false,
+  "physicalNewCoverVerified": false,
+  "r164StableApproved": false,
+  "hostExitAuditSeparateAndUnchanged": true,
+  "privateAuthority": "/mnt/DADOS/station-r164-git-20261015/completed.json",
+  "nextAction": "Refresh the catalog and confirm the new 1080 cover visually. Use the same R164 APK and edition on both phones; verify online first frame, audio, independent controls, fluidity and host exit. Do not repeat enrollment or cover publication.",
+  "catalogAdvanceBetweenEnrollmentAndFinalProof": {
+    "registrationCatalogRevision": 99,
+    "finalCatalogRevision": 100,
+    "explainedByThisOperationsOneCoverPublication": true
+  }
+}

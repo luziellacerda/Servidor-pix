@@ -1,0 +1,178 @@
+{
+  "passed": true,
+  "route": "local",
+  "signedCapabilities": [
+    {
+      "revision": "R151",
+      "platform": "n64",
+      "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+      "signed": true,
+      "exactApprovedProfiles": [
+        {
+          "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+          "contentSha256": "ceaa25016faab3da1ca55a4ef77305078b596e3caf3724e74f14eeea8f58debe",
+          "platform": "n64",
+          "engineId": "mupen64plus-ae-33bf7021-n64-v3-8eda486330ca",
+          "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+          "runtimeSha256": "8eda486330caf7245fb733820c11b94f3ec2c2d216e8ab7ae1dd36afbed02616",
+          "profileId": "review-2073-local-v1-owner-11efa9318395",
+          "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+          "maximumPlayers": 2,
+          "approved": true,
+          "controllerProfile": "direct-four-ports-v1",
+          "mode": "local-multiplayer",
+          "allowedPlayerCounts": [
+            2
+          ],
+          "modeTitle": "1080 Snowboarding: corrida para dois",
+          "instructions": [
+            "Escolha a corrida local 2P com um controle N64 padrão por jogador; modalidades de treino e manobras individuais continuam solo."
+          ],
+          "sources": [
+            "https://www.nintendo.com/es-es/Juegos/Nintendo-64/1080-Snowboarding-269404.html"
+          ]
+        }
+      ],
+      "platformPolicy": {
+        "platform": "n64",
+        "maximumPlayers": 4,
+        "serverReady": true,
+        "transportProtocol": "station-stream.v3",
+        "transportTopology": "host-star",
+        "engineRegistration": "trusted-manifest",
+        "profileReloadWithoutRestart": true,
+        "approvedProfileCount": 7,
+        "onlineAvailable": true,
+        "availability": "available",
+        "limitSource": "maintainer-20261009",
+        "gameModeRequired": true
+      },
+      "signedIdentityBindingVerified": true
+    },
+    {
+      "revision": "R151",
+      "platform": "gamecube",
+      "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+      "signed": true,
+      "exactApprovedProfiles": [
+        {
+          "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+          "contentSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26",
+          "platform": "gamecube",
+          "engineId": "dolphin-5102a033-gamecube-v3-7591d3abfa15",
+          "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+          "runtimeSha256": "7591d3abfa1512864599e719cec77fc73006e9e846d3ab3af474664273ca7a94",
+          "profileId": "prepared-local-1-20261009-owner-40438242f8b8",
+          "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+          "maximumPlayers": 4,
+          "approved": true,
+          "controllerProfile": "dolphin-gamecube-four-ports-v1",
+          "mode": "local-multiplayer",
+          "allowedPlayerCounts": [
+            2,
+            3,
+            4
+          ],
+          "modeTitle": "Corrida local",
+          "instructions": [
+            "Mais de quatro envolve LAN com vários consoles/TVs; não é um Multitap.",
+            "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
+          ]
+        }
+      ],
+      "platformPolicy": {
+        "platform": "gamecube",
+        "maximumPlayers": 4,
+        "serverReady": true,
+        "transportProtocol": "station-stream.v3",
+        "transportTopology": "host-star",
+        "engineRegistration": "trusted-manifest",
+        "profileReloadWithoutRestart": true,
+        "approvedProfileCount": 6,
+        "onlineAvailable": true,
+        "availability": "available",
+        "limitSource": "maintainer-20261009",
+        "gameModeRequired": true
+      },
+      "signedIdentityBindingVerified": true
+    },
+    {
+      "revision": "R151",
+      "platform": "wii",
+      "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+      "signed": true,
+      "exactApprovedProfiles": [
+        {
+          "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+          "contentSha256": "7f1874db282a19cf369625603ac5665d486220f470c5c1e29f7309160579bef5",
+          "platform": "wii",
+          "engineId": "dolphin-5102a033-wii-v3-7591d3abfa15",
+          "coreSha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+          "runtimeSha256": "7591d3abfa1512864599e719cec77fc73006e9e846d3ab3af474664273ca7a94",
+          "profileId": "review-dkreturns-coop2-v1-owner-c403797fbb5e",
+          "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+          "maximumPlayers": 2,
+          "approved": true,
+          "controllerProfile": "dolphin-wii-remotes-four-v1",
+          "mode": "local-coop-2p",
+          "allowedPlayerCounts": [
+            2
+          ],
+          "modeTitle": "Donkey Kong Country Returns: dupla",
+          "instructions": [
+            "Entre no modo cooperativo de Donkey Kong e Diddy: somente dois jogadores.",
+            "Use Wii Remote horizontal com os comandos de movimento configurados; a ação de sacudir é necessária para bater, rolar e soprar.",
+            "Esta aprovação documental de modo não comprova os bindings ou a partida física em cada aparelho."
+          ],
+          "sources": [
+            "https://www.nintendo.com/en-gb/Games/Wii/Donkey-Kong-Country-Returns-280968.html",
+            "https://www.nintendo.com/en-gb/News/2010/Donkey-Kong-Country-Returns-a-rip-roaring-banana-scoring-treat-251997.html"
+          ]
+        }
+      ],
+      "platformPolicy": {
+        "platform": "wii",
+        "maximumPlayers": 4,
+        "serverReady": true,
+        "transportProtocol": "station-stream.v3",
+        "transportTopology": "host-star",
+        "engineRegistration": "trusted-manifest",
+        "profileReloadWithoutRestart": true,
+        "approvedProfileCount": 6,
+        "onlineAvailable": true,
+        "availability": "available",
+        "limitSource": "maintainer-20261009",
+        "gameModeRequired": true
+      },
+      "signedIdentityBindingVerified": true
+    }
+  ],
+  "negativeAdmissionChecks": [
+    {
+      "case": "1080-four-refused",
+      "status": 409,
+      "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+      "roomCreated": false
+    },
+    {
+      "case": "wrong-runtime-refused",
+      "status": 409,
+      "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+      "roomCreated": false
+    },
+    {
+      "case": "unknown-engine-refused",
+      "status": 409,
+      "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+      "roomCreated": false
+    }
+  ],
+  "snowboardingTwoPlayerCreateJoinReadyStartPassed": true,
+  "physicalAndroidGameplayValidated": false,
+  "ownSyntheticLicensesRemoved": true,
+  "snowboardingTwoPlayerRoomRevision": "R152",
+  "negativeAdmissionCheckRevision": "R152"
+}

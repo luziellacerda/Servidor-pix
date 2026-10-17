@@ -1,0 +1,359 @@
+{
+  "schema": "station.incoming-direct-downloads.preservation-review.v1",
+  "createdUtc": "2026-10-13T19:12:00.914780+00:00",
+  "incomingApkSha256": "e69616ee6377920f808f3b5a267f5592ffff9ae70c2bbe2063c6902cd903c02a",
+  "incomingApkBytes": 2713648143,
+  "actualEntriesHashed": 13860,
+  "baselineR139ApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+  "baselineR140ApkSha256": "61e873e7bbd75a13fbd0d55515a3726f4debd8984cc0fe8f9d73401e0897792c",
+  "againstR139": {
+    "changed": [
+      "assets/station-online/engines.json",
+      "classes28.dex",
+      "lib/arm64-v8a/libstation_dolphin_runtime.so",
+      "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+      "lib/arm64-v8a/libstation_psx_online.so"
+    ],
+    "added": [],
+    "removed": [],
+    "preserved": 13855
+  },
+  "againstR140": {
+    "changed": [
+      "assets/station-online/engines.json",
+      "classes28.dex",
+      "classes35.dex",
+      "lib/arm64-v8a/libstation_dolphin_runtime.so",
+      "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+      "lib/arm64-v8a/libstation_psx_online.so"
+    ],
+    "added": [],
+    "removed": [],
+    "preserved": 13854
+  },
+  "classReviews": {
+    "classes28.dex": {
+      "R139": {
+        "baselineClassCount": 271,
+        "incomingClassCount": 272,
+        "modifiedClasses": [
+          "org/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda0.smali",
+          "org/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda1.smali",
+          "org/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda2.smali",
+          "org/emulationstation/frontend/station/StationHttp$1.smali",
+          "org/emulationstation/frontend/station/StationHttp.smali"
+        ],
+        "addedClasses": [
+          "org/emulationstation/frontend/station/StationDownloadOrigin.smali"
+        ],
+        "removedClasses": [],
+        "methodDetails": {
+          "org/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda0.smali": {
+            "changedMethods": [],
+            "addedMethods": [
+              ".method public final run()V",
+              ".method public synthetic constructor <init>(Ljavax/net/ssl/HttpsURLConnection;)V"
+            ],
+            "removedMethods": [
+              ".method public final getAsBoolean()Z",
+              ".method public synthetic constructor <init>()V"
+            ]
+          },
+          "org/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda1.smali": {
+            "changedMethods": [],
+            "addedMethods": [
+              ".method public final close()V",
+              ".method public synthetic constructor <init>(Lorg/emulationstation/frontend/station/StationHttp$ResponseBody;Lorg/emulationstation/frontend/station/StationApi$Cancellation;Ljava/lang/Runnable;)V"
+            ],
+            "removedMethods": [
+              ".method public final run()V",
+              ".method public synthetic constructor <init>(Ljavax/net/ssl/HttpsURLConnection;)V"
+            ]
+          },
+          "org/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda2.smali": {
+            "changedMethods": [],
+            "addedMethods": [
+              ".method public final getAsBoolean()Z",
+              ".method public synthetic constructor <init>()V"
+            ],
+            "removedMethods": [
+              ".method public final close()V",
+              ".method public synthetic constructor <init>(Lorg/emulationstation/frontend/station/StationHttp$ResponseBody;Lorg/emulationstation/frontend/station/StationApi$Cancellation;Ljava/lang/Runnable;)V"
+            ]
+          },
+          "org/emulationstation/frontend/station/StationHttp$1.smali": {
+            "changedMethods": [
+              ".method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V",
+              ".method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V",
+              ".method public getAcceptedIssuers()[Ljava/security/cert/X509Certificate;"
+            ],
+            "addedMethods": [
+              ".method constructor <init>(Ljavax/net/ssl/X509TrustManager;[B)V"
+            ],
+            "removedMethods": [
+              ".method constructor <init>(Lorg/emulationstation/frontend/station/StationHttp;Ljavax/net/ssl/X509TrustManager;[B)V"
+            ]
+          },
+          "org/emulationstation/frontend/station/StationHttp.smali": {
+            "changedMethods": [
+              ".method private static decodeHex(Ljava/lang/String;)[B",
+              ".method public available()Z",
+              ".method public constructor <init>()V",
+              ".method public constructor <init>(Ljava/util/function/BooleanSupplier;)V",
+              ".method public exchange(Ljava/lang/String;Ljava/lang/String;[BLjava/lang/String;Ljava/lang/String;Lorg/emulationstation/frontend/station/StationApi$Cancellation;)Lorg/emulationstation/frontend/station/StationApi$Response;",
+              ".method public exchange(Ljava/lang/String;Ljava/lang/String;[BLjava/lang/String;Lorg/emulationstation/frontend/station/StationApi$Cancellation;)Lorg/emulationstation/frontend/station/StationApi$Response;",
+              ".method public supportsRequestProof()Z",
+              ".method static allowed(Ljava/lang/String;Ljava/lang/String;)Z",
+              ".method static closeResponse(Lorg/emulationstation/frontend/station/StationHttp$ResponseBody;Lorg/emulationstation/frontend/station/StationApi$Cancellation;Ljava/lang/Runnable;)V",
+              ".method static synthetic lambda$exchange$1(Lorg/emulationstation/frontend/station/StationHttp$ResponseBody;Lorg/emulationstation/frontend/station/StationApi$Cancellation;Ljava/lang/Runnable;)V",
+              ".method static synthetic lambda$new$0()Z"
+            ],
+            "addedMethods": [
+              ".method private static pinnedSockets(Ljava/lang/String;)Ljavax/net/ssl/SSLSocketFactory;",
+              ".method private static verifiedOrigin(Ljava/lang/String;)Ljava/net/URL;"
+            ],
+            "removedMethods": []
+          }
+        },
+        "preservedClasses": 266
+      },
+      "R140": {
+        "baselineClassCount": 271,
+        "incomingClassCount": 272,
+        "modifiedClasses": [
+          "org/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda0.smali",
+          "org/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda1.smali",
+          "org/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda2.smali",
+          "org/emulationstation/frontend/station/StationHttp$1.smali",
+          "org/emulationstation/frontend/station/StationHttp.smali"
+        ],
+        "addedClasses": [
+          "org/emulationstation/frontend/station/StationDownloadOrigin.smali"
+        ],
+        "removedClasses": [],
+        "methodDetails": {
+          "org/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda0.smali": {
+            "changedMethods": [],
+            "addedMethods": [
+              ".method public final run()V",
+              ".method public synthetic constructor <init>(Ljavax/net/ssl/HttpsURLConnection;)V"
+            ],
+            "removedMethods": [
+              ".method public final getAsBoolean()Z",
+              ".method public synthetic constructor <init>()V"
+            ]
+          },
+          "org/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda1.smali": {
+            "changedMethods": [],
+            "addedMethods": [
+              ".method public final close()V",
+              ".method public synthetic constructor <init>(Lorg/emulationstation/frontend/station/StationHttp$ResponseBody;Lorg/emulationstation/frontend/station/StationApi$Cancellation;Ljava/lang/Runnable;)V"
+            ],
+            "removedMethods": [
+              ".method public final run()V",
+              ".method public synthetic constructor <init>(Ljavax/net/ssl/HttpsURLConnection;)V"
+            ]
+          },
+          "org/emulationstation/frontend/station/StationHttp$$ExternalSyntheticLambda2.smali": {
+            "changedMethods": [],
+            "addedMethods": [
+              ".method public final getAsBoolean()Z",
+              ".method public synthetic constructor <init>()V"
+            ],
+            "removedMethods": [
+              ".method public final close()V",
+              ".method public synthetic constructor <init>(Lorg/emulationstation/frontend/station/StationHttp$ResponseBody;Lorg/emulationstation/frontend/station/StationApi$Cancellation;Ljava/lang/Runnable;)V"
+            ]
+          },
+          "org/emulationstation/frontend/station/StationHttp$1.smali": {
+            "changedMethods": [
+              ".method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V",
+              ".method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V",
+              ".method public getAcceptedIssuers()[Ljava/security/cert/X509Certificate;"
+            ],
+            "addedMethods": [
+              ".method constructor <init>(Ljavax/net/ssl/X509TrustManager;[B)V"
+            ],
+            "removedMethods": [
+              ".method constructor <init>(Lorg/emulationstation/frontend/station/StationHttp;Ljavax/net/ssl/X509TrustManager;[B)V"
+            ]
+          },
+          "org/emulationstation/frontend/station/StationHttp.smali": {
+            "changedMethods": [
+              ".method private static decodeHex(Ljava/lang/String;)[B",
+              ".method public available()Z",
+              ".method public constructor <init>()V",
+              ".method public constructor <init>(Ljava/util/function/BooleanSupplier;)V",
+              ".method public exchange(Ljava/lang/String;Ljava/lang/String;[BLjava/lang/String;Ljava/lang/String;Lorg/emulationstation/frontend/station/StationApi$Cancellation;)Lorg/emulationstation/frontend/station/StationApi$Response;",
+              ".method public exchange(Ljava/lang/String;Ljava/lang/String;[BLjava/lang/String;Lorg/emulationstation/frontend/station/StationApi$Cancellation;)Lorg/emulationstation/frontend/station/StationApi$Response;",
+              ".method public supportsRequestProof()Z",
+              ".method static allowed(Ljava/lang/String;Ljava/lang/String;)Z",
+              ".method static closeResponse(Lorg/emulationstation/frontend/station/StationHttp$ResponseBody;Lorg/emulationstation/frontend/station/StationApi$Cancellation;Ljava/lang/Runnable;)V",
+              ".method static synthetic lambda$exchange$1(Lorg/emulationstation/frontend/station/StationHttp$ResponseBody;Lorg/emulationstation/frontend/station/StationApi$Cancellation;Ljava/lang/Runnable;)V",
+              ".method static synthetic lambda$new$0()Z"
+            ],
+            "addedMethods": [
+              ".method private static pinnedSockets(Ljava/lang/String;)Ljavax/net/ssl/SSLSocketFactory;",
+              ".method private static verifiedOrigin(Ljava/lang/String;)Ljava/net/URL;"
+            ],
+            "removedMethods": []
+          }
+        },
+        "preservedClasses": 266
+      }
+    },
+    "classes35.dex": {
+      "R139": {
+        "baselineClassCount": 608,
+        "incomingClassCount": 608,
+        "modifiedClasses": [],
+        "addedClasses": [],
+        "removedClasses": [],
+        "methodDetails": {},
+        "preservedClasses": 608
+      },
+      "R140": {
+        "baselineClassCount": 608,
+        "incomingClassCount": 608,
+        "modifiedClasses": [
+          "org/emulationstation/frontend/netplay/StationRetroLaunch.smali"
+        ],
+        "addedClasses": [],
+        "removedClasses": [],
+        "methodDetails": {
+          "org/emulationstation/frontend/netplay/StationRetroLaunch.smali": {
+            "changedMethods": [
+              ".method static prepare(Landroid/content/Context;Lorg/emulationstation/frontend/netplay/StationOnlineGame;Lorg/json/JSONObject;Lorg/json/JSONObject;Lorg/emulationstation/frontend/station/StationApi$Cancellation;)Ljava/lang/String;"
+            ],
+            "addedMethods": [],
+            "removedMethods": []
+          }
+        },
+        "preservedClasses": 607
+      }
+    }
+  },
+  "incomingDex28Sha256": "9b890b013de4f8fa0442829cdfc2aa0038265a8ebf6be36e98109bbc0e1dd36a",
+  "incomingDex35Sha256": "dd6ea401376aafcba86518038fa2589c3d626c076cdcfc21252efca1a93ab6a9",
+  "r140Dex35Sha256": "49f381dc3ef375797d2db56b25a8a6c86a8150c2515ce115f4639b7bb243478e",
+  "incomingDex35IsExactR139": true,
+  "r140CoreOptionsBindingRolledBack": true,
+  "retroArchRuntimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+  "retroArchRuntimeMatchesR139AndR140": true,
+  "nativeChangesAgainstR139": [
+    "lib/arm64-v8a/libstation_dolphin_runtime.so",
+    "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+    "lib/arm64-v8a/libstation_psx_online.so"
+  ],
+  "retroArchDescriptors": 9,
+  "allRetroArchDescriptorsMatchR139": true,
+  "registryChangesAgainstR139": [
+    {
+      "platform": "psx",
+      "changedFields": [
+        "engineId",
+        "runtimeSha256"
+      ],
+      "oldEngineId": "pcsx-rearmed-ff81ed17-player-v3-c26d8836df25",
+      "newEngineId": "pcsx-rearmed-ff81ed17-player-v3-63d1b4a1da17"
+    },
+    {
+      "platform": "n64",
+      "changedFields": [
+        "engineId",
+        "runtimeSha256"
+      ],
+      "oldEngineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+      "newEngineId": "mupen64plus-ae-33bf7021-n64-v3-1d627765bec9"
+    },
+    {
+      "platform": "gamecube",
+      "changedFields": [
+        "engineId",
+        "runtimeSha256"
+      ],
+      "oldEngineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+      "newEngineId": "dolphin-5102a033-gamecube-v3-4a21c80a69f3"
+    },
+    {
+      "platform": "wii",
+      "changedFields": [
+        "engineId",
+        "runtimeSha256"
+      ],
+      "oldEngineId": "dolphin-5102a033-wii-v3-2e0b36222097",
+      "newEngineId": "dolphin-5102a033-wii-v3-4a21c80a69f3"
+    }
+  ],
+  "wrapperReview": [
+    {
+      "library": "libstation_psx_online.so",
+      "actualRuntimeSha256": "63d1b4a1da17652a0d300111061727dab894cdcc6e57586bf62f75684f1172c4",
+      "fingerprintSha256": "76771d31798aeca2d5cb532d3fa5352d5adfb01aa207abf657257eaaabf6e5f5",
+      "baseApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+      "payloadCount": 345,
+      "payloadMatchesActual": true,
+      "policyMatchesR139": true,
+      "boundDex28Sha256": "9b890b013de4f8fa0442829cdfc2aa0038265a8ebf6be36e98109bbc0e1dd36a",
+      "boundDex35Sha256": "dd6ea401376aafcba86518038fa2589c3d626c076cdcfc21252efca1a93ab6a9",
+      "productiveTransformNames": [
+        "station-direct-download-20261013/java/org/emulationstation/frontend/station/StationDownloadOrigin.java",
+        "station-direct-download-20261013/java/org/emulationstation/frontend/station/StationHttp.java",
+        "station-direct-download-20261013/recipe/ScopedHttpDex.java",
+        "station-direct-download-20261013/recipe/build_wrappers.py"
+      ]
+    },
+    {
+      "library": "libstation_mupen64plus_runtime.so",
+      "actualRuntimeSha256": "1d627765bec91da880465d42cdf6b85730d16d9f670ba466414470fa284de3b1",
+      "fingerprintSha256": "25b19a3e09b76eab92ed3548ed642389628e7024397918f881877fc3e3a529b9",
+      "baseApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+      "payloadCount": 345,
+      "payloadMatchesActual": true,
+      "policyMatchesR139": true,
+      "boundDex28Sha256": "9b890b013de4f8fa0442829cdfc2aa0038265a8ebf6be36e98109bbc0e1dd36a",
+      "boundDex35Sha256": "dd6ea401376aafcba86518038fa2589c3d626c076cdcfc21252efca1a93ab6a9",
+      "productiveTransformNames": [
+        "station-direct-download-20261013/java/org/emulationstation/frontend/station/StationDownloadOrigin.java",
+        "station-direct-download-20261013/java/org/emulationstation/frontend/station/StationHttp.java",
+        "station-direct-download-20261013/recipe/ScopedHttpDex.java",
+        "station-direct-download-20261013/recipe/build_wrappers.py"
+      ]
+    },
+    {
+      "library": "libstation_dolphin_runtime.so",
+      "actualRuntimeSha256": "4a21c80a69f3ec5a60d2dbf52e93fa4a9658066e10f5efb87a645d335febaeb1",
+      "fingerprintSha256": "d1e4ca83b9bdb28481b6e003e73d6326ae3a85e6d7c8d430910c2e1f151c5214",
+      "baseApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+      "payloadCount": 345,
+      "payloadMatchesActual": true,
+      "policyMatchesR139": true,
+      "boundDex28Sha256": "9b890b013de4f8fa0442829cdfc2aa0038265a8ebf6be36e98109bbc0e1dd36a",
+      "boundDex35Sha256": "dd6ea401376aafcba86518038fa2589c3d626c076cdcfc21252efca1a93ab6a9",
+      "productiveTransformNames": [
+        "station-direct-download-20261013/java/org/emulationstation/frontend/station/StationDownloadOrigin.java",
+        "station-direct-download-20261013/java/org/emulationstation/frontend/station/StationHttp.java",
+        "station-direct-download-20261013/recipe/ScopedHttpDex.java",
+        "station-direct-download-20261013/recipe/build_wrappers.py"
+      ]
+    }
+  ],
+  "manifestAndSdkSettingsBytePreserved": true,
+  "signatureVerified": true,
+  "originalCertificateVerified": true,
+  "v2Verified": true,
+  "v3Verified": true,
+  "zipAlignment16KiBVerified": true,
+  "externalRegistrationClaimsAccepted": false,
+  "serverRegistrationIndependentlyVerified": false,
+  "installed": false,
+  "adbUsed": false,
+  "sourceMerged": false,
+  "currentPointersChanged": false,
+  "recommendation": "Merge only reviewed HTTP/DEX28 overlay onto latest R140; keep exact R140 DEX35 and renew identities for both partitions",
+  "limits": [
+    "Baseline maps are the existing independently verified R139 and final R140 package maps; their full APKs were not rehashed here",
+    "Source provenance and server registration claims require separate verified receipts",
+    "No phone, gameplay or performance test performed"
+  ]
+}

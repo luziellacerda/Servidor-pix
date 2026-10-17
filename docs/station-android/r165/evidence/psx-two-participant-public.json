@@ -1,0 +1,28 @@
+{
+  "physicalAndroidGameplayValidated": false,
+  "participants": 2,
+  "engineId": "pcsx-rearmed-ff81ed17-player-v3-0a01a6ef6e99",
+  "game": "Capcom vs. SNK - Millennium Fight 2000 Pro",
+  "scope": "Two signed synthetic clients, real published PSX mode, opaque PXL1 payloads and actual core snapshot bytes; no Android execution",
+  "passed": true,
+  "uniqueControllerSlots": [
+    1,
+    2
+  ],
+  "authenticatedWebSockets": 2,
+  "publicTlsAndSpkiVerified": true,
+  "prioritizedRelayVerified": true,
+  "exactSnapshotBytes": 4456448,
+  "snapshotSha256": "cf7ec33ff148e743e469fdc08d80942ba2f9bf2720650c665e7c764f0b28d4a3",
+  "snapshotWirePackets": 3279,
+  "snapshotTransferSeconds": 1.046,
+  "actualCoreStateTransferredByteExactly": true,
+  "twoDirectionControllerMessagesVerified": 120,
+  "transportPauseAndResumeVerified": true,
+  "emulatorRecoveryValidatedByThisTest": false,
+  "nativePxl1SessionExecuted": false,
+  "syntheticPxl1Identity": true,
+  "physicalGameplayValidatedByThisTest": false,
+  "totalWireBytes": 4592454,
+  "ownSyntheticLicensesRemoved": true
+}

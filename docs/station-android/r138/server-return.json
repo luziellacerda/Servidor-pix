@@ -1,0 +1,504 @@
+{
+  "schemaVersion": 1,
+  "status": "received-R138-RetroArch-kit-applied-and-verified",
+  "appliedAt": "2026-10-12T17:22:38.003226+00:00",
+  "consolidatedAt": "2026-10-12T17:42:02.894696+00:00",
+  "incomingServerCommit": "270027cdcf00846823489eea7f539a27892800cd",
+  "incomingAppCommit": "5f6f82861875532bf8921ee1326de6fe7e10f36c",
+  "apkSha256": "9183462e4d45cfcf2d2599d9e682b81890fee7b094505bf3073ab8183dd1dd10",
+  "privateKitSha256": "babf4983f9404ce10df17e27dc43dcc4f1da4692ada1a9763dc882a62410b306",
+  "service": {
+    "name": "turborama-station-api.service",
+    "pid": 2136303,
+    "nRestarts": 0,
+    "dllSha256": "2c0d034476969cbed58b519b744e841111373f89a4bcd6abb9cd14543abcde35",
+    "apiRestarted": false,
+    "serverDllChanged": false,
+    "operatorHashes": {
+      "station_online_profiles.py": "3d5d5b5563e2a6825ab9e798da80313cdbf2640522bc4dfd6b47e25c7f69eae1",
+      "cadastrar-motor-online-station.py": "a3c81e0c379984d6b7736f79ce963c73a3f3250883f6304a32b5c6cfda73a096"
+    }
+  },
+  "catalog": {
+    "revision": 42,
+    "items": 3940,
+    "visibleItems": 3685,
+    "aliases": 255,
+    "indexSha256": "ec0ec425c3409af45dbfd8a782d7aced26b0ee62449d2daabd138558779b2db1",
+    "contentIdentitySha256": "9ea31cab398951b65277eaf343e55aa5adcfbc5359d3dced0c9a4bbc15510526"
+  },
+  "registration": {
+    "enginesAdded": 8,
+    "previousProfilesPreserved": 5176,
+    "profilesAdded": 3091,
+    "approvedProfilesAdded": 3085,
+    "refusedProfilesAdded": 6,
+    "totalProfiles": 8267,
+    "approvedProfiles": 8254,
+    "previousModesPreserved": 321,
+    "modesAdded": 3091,
+    "totalPreparedModes": 3412,
+    "enginesSha256": "719217e8942d4af2b798f14efdf63514b1c945bab35c2cbaa985531e5723de22",
+    "profilesSha256": "f5d81251ce1894681de6361dca78ec05358d8e073ef6d62c14d21beb2de49ccd",
+    "modesSha256": "cbba5e283de7f9fc12c06c4651e9be6bb734f9da8ddb1cbec4a9fac7e1111f8f",
+    "reloadWithinSeconds": 10,
+    "engineMatrix": [
+      {
+        "platform": "snes",
+        "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+        "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+        "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "status": "applied-and-signed-verified",
+        "profilesAdded": 850,
+        "approvedProfilesAdded": 850,
+        "maximumRegisteredPlayers": 5
+      },
+      {
+        "platform": "megadrive",
+        "engineId": "clownmdemu-d43c2708-mp5-463bdb0b409e",
+        "coreSha256": "109b62ac11b2f59572de0666bcb02b3701676896b91cb32529bbe5c5032b6b69",
+        "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "status": "applied-and-signed-verified",
+        "profilesAdded": 978,
+        "approvedProfilesAdded": 978,
+        "maximumRegisteredPlayers": 2
+      },
+      {
+        "platform": "neogeocd",
+        "engineId": "neocd-b1e04c73-aslr1-v3-463bdb0b409e",
+        "coreSha256": "78a35bc9a9435238d74125e77ae8f8d249ba59e90f07d43f43c84ad5ddc68870",
+        "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "status": "applied-and-signed-verified",
+        "profilesAdded": 50,
+        "approvedProfilesAdded": 50,
+        "maximumRegisteredPlayers": 2
+      },
+      {
+        "platform": "neogeo",
+        "engineId": "fbneo-95153da1-neogeo-v3-463bdb0b409e",
+        "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+        "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "status": "applied-and-signed-verified",
+        "profilesAdded": 189,
+        "approvedProfilesAdded": 185,
+        "maximumRegisteredPlayers": 2
+      },
+      {
+        "platform": "fbneo",
+        "engineId": "fbneo-95153da1-fbneo-v3-463bdb0b409e",
+        "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+        "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "status": "applied-and-signed-verified",
+        "profilesAdded": 913,
+        "approvedProfilesAdded": 913,
+        "maximumRegisteredPlayers": 2
+      },
+      {
+        "platform": "cps1",
+        "engineId": "fbneo-95153da1-cps1-v3-463bdb0b409e",
+        "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+        "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "status": "applied-and-signed-verified",
+        "profilesAdded": 36,
+        "approvedProfilesAdded": 36,
+        "maximumRegisteredPlayers": 2
+      },
+      {
+        "platform": "cps2",
+        "engineId": "fbneo-95153da1-cps2-v3-463bdb0b409e",
+        "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+        "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "status": "applied-and-signed-verified",
+        "profilesAdded": 64,
+        "approvedProfilesAdded": 64,
+        "maximumRegisteredPlayers": 2
+      },
+      {
+        "platform": "cps3",
+        "engineId": "fbneo-95153da1-cps3-v3-463bdb0b409e",
+        "coreSha256": "e3fd40b3aeb1ae9e8af7a80760b0b8f5fc8eb9aec8c18e25b4b604f9594ee7a7",
+        "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "status": "applied-and-signed-verified",
+        "profilesAdded": 11,
+        "approvedProfilesAdded": 9,
+        "maximumRegisteredPlayers": 2
+      },
+      {
+        "platform": "psx",
+        "engineId": "pcsx-rearmed-ff81ed17-player-v3-c26d8836df25",
+        "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+        "runtimeSha256": "c26d8836df255ad4cc10d19d328b6fc8dcbc6a429725794c88acd4de5ca3dc50",
+        "status": "private-kit-not-received-not-registered",
+        "profilesAdded": 0,
+        "reason": "R138 ZIP contains only the five RetroArch libraries; the six independent R137 libraries and qualified per-edition ledger are still required"
+      },
+      {
+        "platform": "n64",
+        "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+        "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+        "runtimeSha256": "2f248cfcdc9e6d0e20795b1dab84f581b8fe9ea59eb0994ae96036aed2abeb77",
+        "status": "private-kit-not-received-not-registered",
+        "profilesAdded": 0,
+        "reason": "R138 ZIP contains only the five RetroArch libraries; the six independent R137 libraries and qualified per-edition ledger are still required"
+      },
+      {
+        "platform": "gamecube",
+        "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+        "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+        "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+        "status": "private-kit-not-received-not-registered",
+        "profilesAdded": 0,
+        "reason": "R138 ZIP contains only the five RetroArch libraries; the six independent R137 libraries and qualified per-edition ledger are still required"
+      },
+      {
+        "platform": "wii",
+        "engineId": "dolphin-5102a033-wii-v3-2e0b36222097",
+        "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+        "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+        "status": "private-kit-not-received-not-registered",
+        "profilesAdded": 0,
+        "reason": "R138 ZIP contains only the five RetroArch libraries; the six independent R137 libraries and qualified per-edition ledger are still required"
+      }
+    ],
+    "targetBindings": [
+      {
+        "name": "Super Mario Kart",
+        "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+        "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+        "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "itemId": "station_c163bc17b96efcad31302280d44fb819",
+        "contentSha256": "2ada8919688087be60a6a48cace8f877add60c45d2e5d09e2442faa55be62a49",
+        "platform": "snes",
+        "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+        "profileId": "standard-2p-v1-owner-b905d2954ee6",
+        "maximumPlayers": 2,
+        "allowedPlayerCounts": [
+          2
+        ],
+        "approved": true,
+        "controllerProfile": "standard-2p-v1",
+        "mode": "two-player",
+        "modeTitle": "Dois jogadores",
+        "instructions": [],
+        "sources": [
+          "https://github.com/luziellacerda/Servidor-pix/blob/270027cdcf00846823489eea7f539a27892800cd/docs/station-android/r138/README.md"
+        ]
+      },
+      {
+        "name": "Top Gear 3000 (PT-BR)",
+        "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+        "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+        "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "itemId": "station_53bf1a7b190641b0c73448367a6b6557",
+        "contentSha256": "98b788fc146840a83ac898dbe96a4056ddb56e795d80eb610d4b2fd7a450fa02",
+        "platform": "snes",
+        "profileSha256": "88568b97800afa017e3c75684effe23f3aad8e93f5b2ac947a0638a4268bd8f3",
+        "profileId": "snes-topgear3000-vs-20261008-owner-b905d2954ee6",
+        "maximumPlayers": 4,
+        "allowedPlayerCounts": [
+          2,
+          3,
+          4
+        ],
+        "approved": true,
+        "controllerProfile": "snes-multitap-port2-v1",
+        "mode": "vs-race",
+        "modeTitle": "Corrida VS",
+        "instructions": [
+          "Selecionar VS Mode e2,3ou4 humanos; demais carros podem ficar CPU."
+        ],
+        "sources": [
+          "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+        ]
+      },
+      {
+        "name": "Top Gear 3000 (PT-BR)",
+        "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+        "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+        "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "itemId": "station_53bf1a7b190641b0c73448367a6b6557",
+        "contentSha256": "98b788fc146840a83ac898dbe96a4056ddb56e795d80eb610d4b2fd7a450fa02",
+        "platform": "snes",
+        "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+        "profileId": "snes-topgear3000-championship-20261008-owner-b905d2954ee6",
+        "maximumPlayers": 2,
+        "allowedPlayerCounts": [
+          2
+        ],
+        "approved": true,
+        "controllerProfile": "standard-2p-v1",
+        "mode": "championship-2p",
+        "modeTitle": "Campeonato em dupla",
+        "instructions": [
+          "Campeonato de dois humanos; não prometer quatro neste modo."
+        ],
+        "sources": [
+          "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+        ]
+      },
+      {
+        "name": "Top Gear 3000",
+        "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+        "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+        "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "itemId": "station_b0a50897ab5c3663dbabd624b7469572",
+        "contentSha256": "6be49983976564f1fd9eff2f14f5bb41d3a0ff48573e39318088ecce286aca62",
+        "platform": "snes",
+        "profileSha256": "88568b97800afa017e3c75684effe23f3aad8e93f5b2ac947a0638a4268bd8f3",
+        "profileId": "snes-topgear3000-vs-20261008-owner-b905d2954ee6",
+        "maximumPlayers": 4,
+        "allowedPlayerCounts": [
+          2,
+          3,
+          4
+        ],
+        "approved": true,
+        "controllerProfile": "snes-multitap-port2-v1",
+        "mode": "vs-race",
+        "modeTitle": "Corrida VS",
+        "instructions": [
+          "Selecionar VS Mode e2,3ou4 humanos; demais carros podem ficar CPU."
+        ],
+        "sources": [
+          "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+        ]
+      },
+      {
+        "name": "Top Gear 3000",
+        "engineId": "bsnes-mercury-performance-79d7f9de-mt1-mp5-hle-463bdb0b409e",
+        "coreSha256": "0a3ac7b4fa5da318b1c993d8867aa944eaa2d012680b49e9929bf7a4a398f527",
+        "runtimeSha256": "463bdb0b409e028aa34f6c9a09d291a3715ffb3eacb8f18ee28843e7373eb80f",
+        "itemId": "station_b0a50897ab5c3663dbabd624b7469572",
+        "contentSha256": "6be49983976564f1fd9eff2f14f5bb41d3a0ff48573e39318088ecce286aca62",
+        "platform": "snes",
+        "profileSha256": "8a79b81e1797bedf4c00058e004af7bbe7a00014d7b6041ef2b2a0c0bd39c793",
+        "profileId": "snes-topgear3000-championship-20261008-owner-b905d2954ee6",
+        "maximumPlayers": 2,
+        "allowedPlayerCounts": [
+          2
+        ],
+        "approved": true,
+        "controllerProfile": "standard-2p-v1",
+        "mode": "championship-2p",
+        "modeTitle": "Campeonato em dupla",
+        "instructions": [
+          "Campeonato de dois humanos; não prometer quatro neste modo."
+        ],
+        "sources": [
+          "https://www.gamingalexandria.com/snes/Top%20Gear%203000/Top%20Gear%203000%20-%20Manual.pdf"
+        ]
+      }
+    ],
+    "unknownSnesNotApprovedByPlayerMetadata": true,
+    "geolithInactive": true
+  },
+  "signedVerification": [
+    {
+      "scope": "local",
+      "address": "http://127.0.0.1:5192",
+      "signedChecks": 11,
+      "allEightEnginesVerified": true,
+      "negativeAdmissionChecks": [
+        {
+          "case": "unknown-engine",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "wrong-content",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "unknown-profile",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED",
+          "roomCreated": false
+        },
+        {
+          "case": "top-gear-five-refused",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+          "roomCreated": false
+        }
+      ],
+      "ownSyntheticLicenseRemoved": true
+    },
+    {
+      "scope": "public",
+      "address": "https://app.lzgames.com.br",
+      "signedChecks": 11,
+      "allEightEnginesVerified": true,
+      "negativeAdmissionChecks": [
+        {
+          "case": "unknown-engine",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "wrong-content",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "unknown-profile",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_PROFILE_UNAPPROVED",
+          "roomCreated": false
+        },
+        {
+          "case": "top-gear-five-refused",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+          "roomCreated": false
+        }
+      ],
+      "ownSyntheticLicenseRemoved": true
+    }
+  ],
+  "verificationTransport": {
+    "originalHttpsHostnameAndCertificateValidated": true,
+    "deviceRequestProofPreserved": true,
+    "systemDnsChanged": false,
+    "probeUsedFreshlyObservedAddressesDuringDnsFailures": true
+  },
+  "covers": {
+    "status": "applied",
+    "mainCommit": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+    "snesCommit": "9f85e9df1ec0c82d77156ed072b997855f719288",
+    "firstBatchGames": 2255,
+    "firstBatchArtwork": 2150,
+    "latestArtworkAdded": 322,
+    "latestGameArtwork": {
+      "megadrive": 295,
+      "psx": 27
+    },
+    "format": "JPEG",
+    "mode": "RGB",
+    "resolution": [
+      480,
+      720
+    ],
+    "quality": 90,
+    "generatedArtwork": 0,
+    "reviewedUnmatchedGamesKeepExistingArtwork": 278,
+    "ps2PspWiiWiiuWebsiteCorrectionsPreserved": true,
+    "coverIdsPreserved": true,
+    "proofs": [
+      {
+        "batch": "base-git-artwork",
+        "catalogRevision": 40,
+        "coverReplacements": 2353,
+        "replacedByPlatform": {
+          "megadrive": 1133,
+          "snes": 653,
+          "megadrivebr": 94,
+          "snesbr": 191,
+          "neogeo": 148,
+          "dreamcast": 11,
+          "gamecube": 21,
+          "psx": 82,
+          "switch": 3,
+          "saturn": 17
+        },
+        "localAuthenticatedBodies": 2255,
+        "publicHttpsBodySamples": 43,
+        "allPublicCatalogFieldsExact": true,
+        "compiledResolution": [
+          480,
+          720
+        ],
+        "romRebuildAttempts": 0,
+        "apiRestarted": false
+      },
+      {
+        "batch": "latest-git-artwork",
+        "catalogRevision": 41,
+        "coverReplacements": 412,
+        "replacedByPlatform": {
+          "megadrive": 385,
+          "psx": 27
+        },
+        "localAuthenticatedBodies": 322,
+        "publicHttpsBodySamples": 8,
+        "allPublicCatalogFieldsExact": true,
+        "compiledResolution": [
+          480,
+          720
+        ],
+        "romRebuildAttempts": 0,
+        "apiRestarted": false
+      }
+    ],
+    "cacheRefresh": {
+      "status": "applied",
+      "utc": "2026-10-12T17:32:34.517452+00:00",
+      "previousRevision": 41,
+      "catalogRevision": 42,
+      "refreshedByPlatform": {
+        "megadrive": 1133,
+        "snes": 653,
+        "megadrivebr": 94,
+        "snesbr": 191,
+        "n64": 157,
+        "psx": 84
+      },
+      "visibleRefreshed": 2057,
+      "n64CoversVerified": 157,
+      "n64ArtworkAlreadyMatchesGit": true,
+      "publicN64Samples": 4,
+      "bytesUnchangedByCacheRefresh": true,
+      "onlyItemRevisionChanged": true,
+      "apiRestarted": false,
+      "romRebuilds": 0
+    }
+  },
+  "preservation": {
+    "gameIds": true,
+    "contentIdentities": true,
+    "gameMetadata": true,
+    "artifactDescriptors": true,
+    "oldModesAndProfiles": true,
+    "realLicenses": true,
+    "databaseSchema": true,
+    "serviceConfigurations": true,
+    "otherServices": true,
+    "tunnelProxyFirewall": true,
+    "romsRebuiltDuringCoverPublication": 0
+  },
+  "qualification": {
+    "domainChecks": 1452,
+    "newThreePlayerChecks": 29,
+    "isolatedCapacityPlayers": 320,
+    "isolatedCapacityRooms": 80,
+    "modeGates": {
+      "checksPassed": 4,
+      "passed": true
+    },
+    "sourceDllDiagnosticsOnlyNotDeployed": true
+  },
+  "pending": [
+    {
+      "scope": "independent-current-app-engines",
+      "platforms": [
+        "psx",
+        "n64",
+        "gamecube",
+        "wii"
+      ],
+      "reason": "matching six-library R137 private kit not received; no new registrations invented"
+    },
+    {
+      "scope": "neogeocd-new-content",
+      "reason": "scanner still reports neocdz firmware missing/invalid; no BIOS was supplied or generated"
+    },
+    {
+      "scope": "physical-gameplay",
+      "reason": "two/three/four/five-player gameplay, signal return and native exit remain physical acceptance tests; all participants need the same R138 identity"
+    }
+  ]
+}

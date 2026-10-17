@@ -15,6 +15,11 @@ discovery = importlib.util.module_from_spec(spec); spec.loader.exec_module(disco
 
 
 class DiscoveryTests(unittest.TestCase):
+    def test_metadata_matches_android_and_dotnet_string_limits(self):
+        self.assertEqual(discovery.text('A\x8d\x7fB\nC',80),'AB\nC')
+        self.assertEqual(discovery.text('ab😀cd',4),'ab😀')
+        self.assertEqual(discovery.text('ab😀cd',3),'ab')
+
     def test_add_without_xml_preserve_ids_metadata_and_stability(self):
         with tempfile.TemporaryDirectory() as temp:
             r=Path(temp); volume=r/'volume'; platform=volume/'n64'; platform.mkdir(parents=True)

@@ -1,3 +1,32 @@
+<!-- STATION-R165-APPLIED-20261015 -->
+## R165 aplicada — cadastro e saída confirmada do anfitrião
+
+Ler o [mesmo handoff](HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md),
+[estado efetivo R165](r165/server-return.json) e [instruções ao app](r165/README.md).
+Quatro motores e492 vínculos publicados,23 modos PSX2P requalificados,
+387 perfis N64,9 modos GameCube e3 Wii; anteriores preservados. Correção de
+saída publicada e comprovada no transporte público. R165 pronta para teste
+físico nos dois aparelhos da mesma revisão; provas sintéticas não são
+gameplay Android. Não repetir operadores.
+
+
+## Histórico preservado
+
+## PSX: mapa de todas as 84 edições e cadastro atual publicado
+
+Consulte o [mesmo handoff](HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md) e o
+[mapa PSX completo](psx-online-20261015/README.md). Dados ativos e provas concluídas:
+19 edições/23 modos de duas pessoas aprovados; todos os84 jogos/capas/downloads
+conferidos, com impedimentos explícitos dos demais modos. Sem reinício da API.
+
+## Histórico preservado
+
+NES/capas atuais: leia o MESMO [handoff](HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md) e seu recibo NES. Catálogo44, 750NES e469artes Recriadas publicados; ajuste de capacidade do APK preparado.
+
+## Estado atual — R138 aplicada, catálogo42
+
+Leia o [handoff único atualizado](HANDOFF-ONLINE-PLATAFORMAS-STATION-20261009.md) e a [matriz real](r138/server-return.json). Oito motores do kit recebido e capas publicados; quatro motores independentes dependem de seu kit R137.
+
 # R133 — entrega final de consoles e modos por edição
 
 APP → SERVIDOR, não implantação. Fonte Android 5966a8ad23ae9040c570d359b999c8a31de904b4; entrega pública c00f469517d41cf14f0d54a2d5cd3491cae6db00. R133 instalada/hash integral e dados preservados no Motorola, sem gameplay/ativação novos comprovados. Ler [o handoff único](r133/HANDOFF-APP-R133-PARA-SERVIDOR-20261011.md), recibos e [a matriz integral](r133/catalog/README.md).

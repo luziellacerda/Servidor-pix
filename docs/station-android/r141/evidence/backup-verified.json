@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "revision": "R141",
+  "sourceCommit": "240b7c0504252e542975089f585bd67d5264f074",
+  "apkSha256": "b5a76023860bceb2aa11c946c8003fa2d92951e700dbde3a498f8316857670d4",
+  "signed": true,
+  "releasePromoted": false,
+  "releasePointersChanged": false,
+  "appDocumentationCommit": "54b04af4382b68ae6fff309d1c46a95124ef6af9",
+  "serverDocumentationCommit": "742a8902b0dcf54a59b5fd84dcc3910ccd3b7aed",
+  "appBundle": {
+    "file": "TurboElden-downloads-R141-20261013-incremental.bundle",
+    "sha256": "8a06b54bda522856e3ec6db2c9171e6ae49125bb03ac2c3d748a824915e80766",
+    "requires": "73a39fc and preserved earlier bundles"
+  },
+  "serverBundle": {
+    "file": "Servidor-pix-downloads-R141-20261013-incremental.bundle",
+    "sha256": "84dd046b6a29402a44bd7aca45cbe2455587294fe463e038d9a15f8c7606ab9b",
+    "requires": "dceb9a4 and preserved earlier bundles"
+  },
+  "reconstructionDependencies": "Exact R140 APK and reconstruction, original R139/R138/R135 reconstruction, pinned F tools and preserved dependency JARs.",
+  "binariesOrKeysPublished": false,
+  "backupVerified": true,
+  "verifiedFileCount": 403,
+  "privateBackupReceiptSha256": "7af1d2f0906d99667dd52a41d88a3351788c61b1b657f2c12ad93bc9baa80762",
+  "backupRoot": "Existing F complete backup, no second full backup created"
+}

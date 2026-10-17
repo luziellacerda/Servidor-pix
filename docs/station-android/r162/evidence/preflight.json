@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "exactR162PolicyAccepted": true,
+  "changedOptionsIdOrMissingBridgeRejected": 3,
+  "firstReviewedModes": 78,
+  "completeReviewedDecisions": 321,
+  "reviewedEditions": 157,
+  "baselineIsHistoricalPreflightOnly": true,
+  "liveBaselineRead": false,
+  "productionMutated": false,
+  "apkRequired": false,
+  "realKitBinariesChecked": 27,
+  "policyAdapterSha256": "a40fe74a9ebfe6ffe051b2567f60cc327715a2af1f7a7de88c60e8b6798e2f9e"
+}

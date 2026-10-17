@@ -1,0 +1,119 @@
+{
+  "schema": "station.psx.android-xml-incident.v1",
+  "status": "CLIENT_FAILURE_CAPTURED_SOURCE_FIX_QUALIFIED_APK_BUILD_PENDING",
+  "observedLocalDate": "2026-10-15",
+  "localUtcOffset": "-03:00",
+  "game": "Capcom vs. SNK - Millennium Fight 2000 Pro",
+  "itemId": "station_767e5e92f2f353479e6120f1c28f96a7",
+  "contentSha256": "6782ccca63a19cbc6760ca928b3c36d0e6ac4b3e479c722083c96111bd25cc73",
+  "engineId": "pcsx-rearmed-ff81ed17-player-v3-4d5c4cb8f609",
+  "profileId": "psx-r167-20261015-005-versus",
+  "mode": "versus",
+  "capacity": 2,
+  "deviceModel": "moto g52",
+  "installedApkSha256IndependentlyReadOnPhone": "dd6f8f8131cf5ee55d450c60e0b08963a662dc6cad092588f0db50153badd978",
+  "installedRevisionByExactSha256": "R167",
+  "otherPhoneInstalledHashRead": false,
+  "apkReceivedHere": false,
+  "phoneException": {
+    "type": "javax.xml.parsers.ParserConfigurationException",
+    "localTimes": [
+      "17:47:56.453",
+      "17:47:58.427"
+    ],
+    "stack": [
+      "org.apache.harmony.xml.parsers.DocumentBuilderFactoryImpl.setFeature:101",
+      "StationPsxLaunch.copyPresentationSettings:176",
+      "StationPsxLaunch.preparePresentation:170",
+      "StationPsxLaunch.prepare:50",
+      "StationRoomsActivity.lambda$launch:1094"
+    ],
+    "phase": "prepare",
+    "nativeEmulatorStarted": false
+  },
+  "serverObservation": {
+    "twoHumanMembersJoined": true,
+    "bothReady": true,
+    "startAccepted": true,
+    "startUtc": "2026-10-15T20:47:56.2384437+00:00",
+    "generation": 3,
+    "activeConnections": 0,
+    "hasPlayed": false,
+    "timeline": [
+      {
+        "utc": "2026-10-15T20:47:40.2028054+00:00",
+        "members": 1,
+        "generation": 1,
+        "ready": 0,
+        "started": false,
+        "activeConnections": 0,
+        "hasPlayed": false
+      },
+      {
+        "utc": "2026-10-15T20:47:52.2296108+00:00",
+        "members": 2,
+        "generation": 2,
+        "ready": 0,
+        "started": false,
+        "activeConnections": 0,
+        "hasPlayed": false
+      },
+      {
+        "utc": "2026-10-15T20:47:53.2318247+00:00",
+        "members": 2,
+        "generation": 2,
+        "ready": 1,
+        "started": false,
+        "activeConnections": 0,
+        "hasPlayed": false
+      },
+      {
+        "utc": "2026-10-15T20:47:54.2342079+00:00",
+        "members": 2,
+        "generation": 2,
+        "ready": 2,
+        "started": false,
+        "activeConnections": 0,
+        "hasPlayed": false
+      },
+      {
+        "utc": "2026-10-15T20:47:56.2384437+00:00",
+        "members": 2,
+        "generation": 3,
+        "ready": 2,
+        "started": true,
+        "activeConnections": 0,
+        "hasPlayed": false
+      }
+    ]
+  },
+  "confirmedCause": "Installed Android DOM factory rejects the feature URI before preferences parsing and native attachment.",
+  "additionalCompatibilityFindings": [
+    "Real normal settings contain native sibling named entries including map, not a single XML document root.",
+    "Exact libmain Settings::loadFile reads document children directly; generated private preferences must preserve this fragment format."
+  ],
+  "sourceFix": {
+    "sourcePath": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxLaunch.java",
+    "sha256": "bb045d8113c6ca7887a26c79b066a74ca79ad7f340d7032cf9399006db14ad4b",
+    "changedProductionMethod": "copyPresentationSettings",
+    "xmlReader": "Android framework SAX with DefaultHandler2 lexical handler and entity resolver",
+    "maximumInputBytes": 1048576,
+    "copiedKeys": [
+      "Player1Controller",
+      "Player2Controller",
+      "LibretroStretch"
+    ],
+    "normalPreferencesUnchanged": true,
+    "signedApkBuiltHere": false,
+    "installedFix": false
+  },
+  "serverChangedForThisFix": false,
+  "serverRestartedForThisFix": false,
+  "physicalGameplayValidated": false,
+  "crashFindings": {
+    "crash1_2_3": "Single-player editions; no online seats.",
+    "ctrAndCrashBash": "Existing unapproved modes retain recoveryReplayRamEqual blocking finding; unrelated to this Java XML fix.",
+    "newModesApproved": false
+  },
+  "nextAction": "Build a signed successor with this exact source using original production signer and exact R167 donor; publish final proof, exact independent kit, and permanent manual USB installer. Install manually on both phones and observe actual gameplay."
+}

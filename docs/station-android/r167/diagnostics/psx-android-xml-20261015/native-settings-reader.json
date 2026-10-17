@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "librarySha256": "62ad07ba8e62e3227d488f9075eb15167c2e95b721c43e480e2535b4319467f6",
+  "method": "Settings::loadFile()",
+  "methodAddress": "0x287b44",
+  "childLookups": [
+    {
+      "callAddress": "287c10",
+      "name": "bool"
+    },
+    {
+      "callAddress": "287dd0",
+      "name": "int"
+    },
+    {
+      "callAddress": "287f0c",
+      "name": "float"
+    },
+    {
+      "callAddress": "288048",
+      "name": "string"
+    },
+    {
+      "callAddress": "288208",
+      "name": "map"
+    }
+  ],
+  "rootConfigLookupAbsent": true,
+  "actualNativeMethodExecuted": false,
+  "evidenceType": "AArch64 disassembly of exact received ELF plus load-segment string resolution"
+}

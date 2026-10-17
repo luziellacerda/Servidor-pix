@@ -1,0 +1,258 @@
+{
+  "schema": "station.server.delivery.consumer.review.v1",
+  "revisionInstalled": "R135",
+  "supersedesRuntimeIdentityRevision": "R134",
+  "appExecutableCommit": "ca8f1ccda18bef397e71e1c979a4f813acf608c0",
+  "appPublicRelease": "https://github.com/luziellacerda/TurboElden/tree/build/station-online-exit-r135-20261012/versions/station-online-exit-r135-20261012",
+  "apkSha256": "f6abe89490e7ba5e2cdd432625888bed6f40aea115d730cf612d509ec6ca9896",
+  "apkBytes": 2714991631,
+  "baseApkSha256": "f8cb09184f41bc7c942ce84541dbd90d575b7240467ce0033d35be65e57caee2",
+  "serverCodeBaseline": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+  "priorDeliveryCommit": "524d2ebff08353fda62aacbc5f05f9248ba69b7c",
+  "qualifiedServerSourceRef": "1adcc732455da0887dfecb901a8a94bdf79f258d",
+  "serverPullRequest": "https://github.com/luziellacerda/Servidor-pix/pull/5",
+  "compiled": true,
+  "signedAndVerified": true,
+  "installed": true,
+  "signatureSchemesVerified": [
+    "v2",
+    "v3"
+  ],
+  "zipAlignmentVerifiedBytes": 16384,
+  "signingCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "installation": {
+    "deviceModel": "motorola edge 30",
+    "completedUtc": "2026-10-12T04:33:05Z",
+    "officialFrontendObservedUtc": "2026-10-12T04:33:07Z",
+    "officialFrontendObserved": true,
+    "installedApkHashMatchesPackage": true,
+    "dataPreserved": true,
+    "evidenceScope": "direct update and official frontend observation; no online gameplay acceptance",
+    "otherPhonesUpdatedByThisOperation": true,
+    "currentInstalledDevices": [
+      {
+        "model": "motorola edge 30",
+        "completedUtc": "2026-10-12T04:33:05.661370+00:00",
+        "frontendObserved": true,
+        "apkHashMatchesPackage": true,
+        "dataPreserved": true
+      },
+      {
+        "model": "moto g52",
+        "completedUtc": "2026-10-12T04:56:01.658258+00:00",
+        "frontendObserved": false,
+        "apkHashMatchesPackage": true,
+        "dataPreserved": true
+      },
+      {
+        "model": "SM-A566E",
+        "completedUtc": "2026-10-12T05:01:38.320391+00:00",
+        "frontendObserved": true,
+        "apkHashMatchesPackage": true,
+        "dataPreserved": true
+      }
+    ],
+    "currentInstalledDeviceCount": 3,
+    "motoG52VisualOpeningUnobservedBecauseDozing": true,
+    "latestCompletedUtc": "2026-10-12T05:01:38.320391+00:00"
+  },
+  "composition": {
+    "replacementCount": 5,
+    "additionCount": 0,
+    "preservedEntryCount": 13855,
+    "entryCount": 13860,
+    "changedDexPartitions": [
+      "classes35.dex"
+    ],
+    "existing39DexByteIdentical": true,
+    "dexOriginalClasses": 606,
+    "dexFinalClasses": 608,
+    "unrelatedClassesPreserved": 582,
+    "permittedOriginalTypes": 24,
+    "permittedFinalTypes": 26,
+    "addedTypes": 2,
+    "removedTypes": 0,
+    "nativeRebuildsIdentityOnly": true,
+    "manifestByteIdentical": true,
+    "resourcesAndSonyAssetsByteIdentical": true,
+    "coreAndControllerPoliciesUnchanged": true
+  },
+  "engines": [
+    {
+      "platform": "psx",
+      "controllerProfile": "standard-2p-v1",
+      "profileSha256": "81c0e2323a37130dbdbdb9c2efefca8837a9bb6e7169304b4e5731b2ec56290a",
+      "maximumPlayers": 2,
+      "engineId": "pcsx-rearmed-ff81ed17-player-v3-841204679ef2",
+      "coreSha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+      "runtimeSha256": "841204679ef25419d9084462c8f9f31717ea11c78abd3363a9cdefdbb2e26400",
+      "recoveryProtocol": "station-stream.v3",
+      "threePlayerModeApprovalRequired": false
+    },
+    {
+      "platform": "n64",
+      "controllerProfile": "direct-four-ports-v1",
+      "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+      "maximumPlayers": 4,
+      "engineId": "mupen64plus-ae-33bf7021-n64-v3-de303362cf1c",
+      "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+      "runtimeSha256": "de303362cf1c7b686b7005833b3a9a45a53db06fb9e01575d469d4204cdf24de",
+      "recoveryProtocol": "station-stream.v3",
+      "threePlayerModeApprovalRequired": true
+    },
+    {
+      "platform": "gamecube",
+      "controllerProfile": "dolphin-gamecube-four-ports-v1",
+      "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+      "maximumPlayers": 4,
+      "engineId": "dolphin-5102a033-gamecube-v3-76ce6c2190d4",
+      "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+      "runtimeSha256": "76ce6c2190d4b51c0432a9676b0657bb4152beff9f52431318c4fa292fe9d1ce",
+      "recoveryProtocol": "station-stream.v3",
+      "threePlayerModeApprovalRequired": true
+    },
+    {
+      "platform": "wii",
+      "controllerProfile": "dolphin-wii-remotes-four-v1",
+      "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+      "maximumPlayers": 4,
+      "engineId": "dolphin-5102a033-wii-v3-76ce6c2190d4",
+      "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+      "runtimeSha256": "76ce6c2190d4b51c0432a9676b0657bb4152beff9f52431318c4fa292fe9d1ce",
+      "recoveryProtocol": "station-stream.v3",
+      "threePlayerModeApprovalRequired": true
+    }
+  ],
+  "privateKit": {
+    "schema": "station.r135.private-server-kit.v1",
+    "preparedUtc": "2026-10-12T04:40:49.351928+00:00",
+    "privateKitPrepared": true,
+    "hashManifestSha256": "3e946079b74f1ca75d02a48b63cf708f9d56bcfdff62547c0bcc3912cb247853",
+    "selectedLibraryCount": 6,
+    "inventoryFileCount": 16,
+    "originalPackageReceiptSha256": "a913af6a405cc8d0e1db6223b07c98f600f9c5c010843137d95e6d9a4aff9dbe",
+    "originalRuntimeReceiptSha256": "07754bea0ceabac68d59ee044600d012443d85c222c8f238574e63d607fa53cd",
+    "originalSourceFreezeSha256": "03325b613ba513db026bf50a288016aa0cbb8853a988048a7c2141951ffb0917",
+    "originalPairIdentitySealMatched": true,
+    "operatorSourceCommit": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+    "operatorSourceSha256": {
+      "extract_private_server_artifacts.py": "27053b843d763adcf570e859b2c8658e216dbf6f80963b600fa5326958f70ef4",
+      "build_incoming_manifest.py": "362bcae9d8915f7f43aac4c48d06b35bdf57efc88d6acb9199aa06e3a0231426"
+    },
+    "inventory": {
+      "server-kit/artifact-kit-receipt.json": {
+        "bytes": 5480,
+        "sha256": "0a632ffda2a0e83bd4c4bcc3447be6513a10cd4cae21dc80b68462814878155f"
+      },
+      "server-kit/incoming-engine-manifest.json": {
+        "bytes": 12221,
+        "sha256": "e26f351668e7460df874bb76e0d756657eedf941e227f4bad7baddcff38a3c0f"
+      },
+      "server-kit/libpcsx_rearmed_libretro_android.so": {
+        "bytes": 1582960,
+        "sha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9"
+      },
+      "server-kit/libstation_dolphin_online.so": {
+        "bytes": 15781128,
+        "sha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d"
+      },
+      "server-kit/libstation_dolphin_runtime.so": {
+        "bytes": 115144,
+        "sha256": "76ce6c2190d4b51c0432a9676b0657bb4152beff9f52431318c4fa292fe9d1ce"
+      },
+      "server-kit/libstation_mupen64plus_core.so": {
+        "bytes": 561056,
+        "sha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8"
+      },
+      "server-kit/libstation_mupen64plus_runtime.so": {
+        "bytes": 104232,
+        "sha256": "de303362cf1c7b686b7005833b3a9a45a53db06fb9e01575d469d4204cdf24de"
+      },
+      "server-kit/libstation_psx_online.so": {
+        "bytes": 301432,
+        "sha256": "841204679ef25419d9084462c8f9f31717ea11c78abd3363a9cdefdbb2e26400"
+      },
+      "server-kit/profile-canonical-receipt.json": {
+        "bytes": 2126,
+        "sha256": "b8fdb57bf565b6ae549a991832147daab87fe3a071940240e58f1d8d7a2e41e4"
+      },
+      "server-kit-original-receipts/engines.json": {
+        "bytes": 19118,
+        "sha256": "4302a91d7caa9cf0b42f21de4e8b3d0f3126fd691c81525fc69a65270f57270d"
+      },
+      "server-kit-original-receipts/package-final.json": {
+        "bytes": 2027044,
+        "sha256": "a913af6a405cc8d0e1db6223b07c98f600f9c5c010843137d95e6d9a4aff9dbe"
+      },
+      "server-kit-original-receipts/psx-controller-profile.json": {
+        "bytes": 859,
+        "sha256": "60adcbb778dc49fed47909b693d5b6f192ef62efa90f822d44198d6c453c60a3"
+      },
+      "server-kit-original-receipts/runtime-final.json": {
+        "bytes": 411578,
+        "sha256": "07754bea0ceabac68d59ee044600d012443d85c222c8f238574e63d607fa53cd"
+      },
+      "server-kit-original-receipts/source-freeze.json": {
+        "bytes": 294761,
+        "sha256": "03325b613ba513db026bf50a288016aa0cbb8853a988048a7c2141951ffb0917"
+      },
+      "server-kit-tools/build_incoming_manifest.py": {
+        "bytes": 4372,
+        "sha256": "362bcae9d8915f7f43aac4c48d06b35bdf57efc88d6acb9199aa06e3a0231426"
+      },
+      "server-kit-tools/extract_private_server_artifacts.py": {
+        "bytes": 6099,
+        "sha256": "27053b843d763adcf570e859b2c8658e216dbf6f80963b600fa5326958f70ef4"
+      }
+    },
+    "librariesAndDependenciesCheckedByPinnedExtractor": true,
+    "originalsAreRequiredAdministrativeInputs": true,
+    "publicDocumentContainsOriginalPrivateIdentityPackagePair": false,
+    "uploaded": false,
+    "deployed": false
+  },
+  "requiredCompatibility": {
+    "protocol": "station-stream.v3",
+    "exactSameEngineCoreRuntimeContentProfileOnAllParticipants": true,
+    "r134RuntimeIdsAreNotValidAliasesForR135": true,
+    "allowedPlayerCountsMustExplicitlyContainThree": true,
+    "maximumPlayersFourDoesNotApproveThree": true,
+    "psxMaximumPlayers": 2,
+    "threePlayerCandidatePlatforms": [
+      "n64",
+      "gamecube",
+      "wii"
+    ],
+    "existingModePreparationMustBeRevalidatedUnderR135Identity": true,
+    "licenseAndExplicitEditionContentOwnerModeValidationPreserved": true,
+    "threePlayerHostStarLinks": 2,
+    "threePlayerExpectedAttachments": 4,
+    "startRequiresHelloPausedReadyAtCurrentEpochOnAllFourAttachments": true,
+    "startRequiresPendingBytesZero": true,
+    "humanDepartureMustBeConfirmedByFreshOwnRoomSnapshot": true,
+    "generationMismatchMayRetryOnlyAfterFreshSignedExactOriginalBinding": true,
+    "httpOrNetworkAmbiguousFailureDoesNotAuthorizeMutationRetry": true
+  },
+  "userReportedIncidents": [
+    "three-player continuous loading",
+    "app-close prompt on online departure"
+  ],
+  "appCorrectionState": "R135 compiled, signed, verified and installed; physical online acceptance pending",
+  "serverCorrectionState": "qualified published member-only barrier diagnostics and domain tests; deployment unconfirmed",
+  "privateKitReceivedConfirmed": false,
+  "serverActivationConfirmed": false,
+  "privateArtifactsPublishedToGit": false,
+  "productionDeployedByThisReview": false,
+  "phoneUSBUsedByKitPreparation": false,
+  "physicalCauseOfReportedIncidentsConfirmed": false,
+  "physicalThreePlayerGameplayValidated": false,
+  "physicalHumanDepartureValidated": false,
+  "consumerOnlineAcceptancePending": true,
+  "publicKitIsDeploymentKit": false,
+  "historicalOperationalReturn": {
+    "ref": "a6b58e9beb12eb564c1b58d9d4c32ed3e7513861",
+    "reviewedRevision": "R129",
+    "path": "docs/station-android/online-plataformas-20261009/r128-retorno-servidor-20261011.json",
+    "isR135ActivationReceipt": false
+  }
+}

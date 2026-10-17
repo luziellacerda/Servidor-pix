@@ -1,0 +1,1256 @@
+{
+  "schemaVersion": 1,
+  "status": "R139 and independent owners applied; private USB startup diagnosis received: DSP4 content-load failure confirmed, corrective app and gameplay pending",
+  "consolidatedUtc": "2026-10-13T19:03:02.026117+00:00",
+  "incomingServerCommit": "4ff2d4f6fac380f2ecd5372e8d5ba79afccbb119",
+  "incomingAppCommit": "645af7fc41c124fcfe2cc7f1dc8baad9e9acbceb",
+  "apkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+  "privateKitSha256": "1449d2f93d3aa345809529a93bcdfb143381383574c79f507181a1b8c48f8fdd",
+  "registration": {
+    "status": "applied",
+    "revision": "R139",
+    "utc": "2026-10-13T13:40:06.220478+00:00",
+    "privateKitSha256": "1449d2f93d3aa345809529a93bcdfb143381383574c79f507181a1b8c48f8fdd",
+    "enginesAdded": 8,
+    "previousProfilesPreserved": 8267,
+    "profilesAdded": 3091,
+    "profileCount": 11358,
+    "approvedProfiles": 11339,
+    "previousModesPreserved": 3412,
+    "preparedModes": 6503,
+    "catalogRevision": 44,
+    "indexedItems": 4690,
+    "apiRestarted": false,
+    "pid": 2637019,
+    "dllSha256": "25c49dd9327f14c0dbbd0d605b0f33e51398682bb20a6e7cb3d1e3ef002ab2c7",
+    "freshSignedLocalChecks": 12,
+    "freshSignedPublicChecks": 12,
+    "negativeAdmissionChecks": 8,
+    "realLicensesPreserved": true,
+    "existingCatalogAndIdentitiesPreserved": true,
+    "existingBindingsPreserved": true,
+    "controllerOptionsAndHlePreserved": true,
+    "independentR137EnginesStillAwaitSixLibraries": true,
+    "physicalGameplayValidated": false
+  },
+  "service": {
+    "name": "turborama-station-api.service",
+    "pid": 2867363,
+    "dllSha256": "ef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a",
+    "nRestarts": 0,
+    "onlyStationRestartedForExplicitAudit": true
+  },
+  "catalog": {
+    "revision": 46,
+    "items": 4690,
+    "visibleItems": 4435,
+    "aliases": 255
+  },
+  "effectiveBindings": {
+    "engines": 31,
+    "profiles": 11448,
+    "rawApprovedProfiles": 11427,
+    "approvedProfilesMatchingCurrentContent": 11415,
+    "preparedModes": 6587
+  },
+  "cartridgeRepairs": {
+    "count": 6,
+    "originalsPreserved": true,
+    "normalizedOnImportOnly": true,
+    "perDownloadIntegrityChecksAdded": false,
+    "completeSignedDownloadsVerifiedLocallyAndOverPublicHttps": true,
+    "jellyBoy2TitleAndCoverCorrected": true,
+    "jellyBoy2MultiplayerNotApprovedWithoutEvidence": true
+  },
+  "testEvidence": {
+    "domain1452": true,
+    "threePlayer29": true,
+    "capacity320Peers80Rooms": true,
+    "httpChecks192": true,
+    "modePreservation4": true,
+    "publicR139SignedChecks": 12,
+    "publicR139NegativeChecks": 4,
+    "publicCatalogItems": 4435,
+    "twoSyntheticR139MembersJoinedReadyStarted": true,
+    "actualNativeFramesOrAndroidGameplay": false,
+    "independentOwnerLocalSignedPlatforms": 3,
+    "independentOwnerPublicSignedPlatforms": 3,
+    "independentOwnerNegativeAdmissionChecks": 6,
+    "independentOwnerReviewedProfilesAdded": 78
+  },
+  "sharedServices": {
+    "services": {
+      "turborama-management.service": true,
+      "turborama-suite-api.service": true,
+      "turborama-es-api.service": true,
+      "nginx.service": true,
+      "cloudflared.service": true,
+      "postgresql.service": true,
+      "mariadb.service": true,
+      "redis-server.service": true
+    },
+    "allRecordedSharedServiceStatesPreserved": true
+  },
+  "platforms": [
+    {
+      "platform": "cps1",
+      "visibleGames": 36,
+      "currentR139Profiles": 36,
+      "gamesWithAdministrativeMultiplayerProfile": 36,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 36
+    },
+    {
+      "platform": "cps2",
+      "visibleGames": 64,
+      "currentR139Profiles": 64,
+      "gamesWithAdministrativeMultiplayerProfile": 62,
+      "gamesWithOnlyIndividualProfile": 2,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 64
+    },
+    {
+      "platform": "cps3",
+      "visibleGames": 11,
+      "currentR139Profiles": 9,
+      "gamesWithAdministrativeMultiplayerProfile": 9,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 9
+    },
+    {
+      "platform": "dreamcast",
+      "visibleGames": 243,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
+    },
+    {
+      "platform": "fbneo",
+      "visibleGames": 913,
+      "currentR139Profiles": 913,
+      "gamesWithAdministrativeMultiplayerProfile": 846,
+      "gamesWithOnlyIndividualProfile": 67,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 913
+    },
+    {
+      "platform": "gamecube",
+      "visibleGames": 21,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 8,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "independent-owner-registered-with-reviewed-modes-signed-verified",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 9
+    },
+    {
+      "platform": "megadrive",
+      "visibleGames": 981,
+      "currentR139Profiles": 981,
+      "gamesWithAdministrativeMultiplayerProfile": 979,
+      "gamesWithOnlyIndividualProfile": 2,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 981
+    },
+    {
+      "platform": "n64",
+      "visibleGames": 157,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 33,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "independent-owner-registered-with-reviewed-modes-signed-verified",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 66
+    },
+    {
+      "platform": "neogeo",
+      "visibleGames": 189,
+      "currentR139Profiles": 185,
+      "gamesWithAdministrativeMultiplayerProfile": 180,
+      "gamesWithOnlyIndividualProfile": 5,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 185
+    },
+    {
+      "platform": "neogeocd",
+      "visibleGames": 50,
+      "currentR139Profiles": 50,
+      "gamesWithAdministrativeMultiplayerProfile": 47,
+      "gamesWithOnlyIndividualProfile": 3,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 50
+    },
+    {
+      "platform": "nes",
+      "visibleGames": 750,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
+    },
+    {
+      "platform": "ps2",
+      "visibleGames": 25,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
+    },
+    {
+      "platform": "psp",
+      "visibleGames": 9,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
+    },
+    {
+      "platform": "psx",
+      "visibleGames": 84,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "independent-owner-registered-HLE-game-approval-pending",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
+    },
+    {
+      "platform": "saturn",
+      "visibleGames": 19,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
+    },
+    {
+      "platform": "sega32x",
+      "visibleGames": 36,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
+    },
+    {
+      "platform": "snes",
+      "visibleGames": 835,
+      "currentR139Profiles": 852,
+      "gamesWithAdministrativeMultiplayerProfile": 833,
+      "gamesWithOnlyIndividualProfile": 1,
+      "status": "registered-R139-RetroArch",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 852
+    },
+    {
+      "platform": "switch",
+      "visibleGames": 4,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
+    },
+    {
+      "platform": "wii",
+      "visibleGames": 7,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 3,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "independent-owner-registered-with-reviewed-modes-signed-verified",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 3
+    },
+    {
+      "platform": "wiiu",
+      "visibleGames": 1,
+      "currentR139Profiles": 0,
+      "gamesWithAdministrativeMultiplayerProfile": 0,
+      "gamesWithOnlyIndividualProfile": 0,
+      "status": "catalog-downloads-no-current-app-online-engine",
+      "androidGameplayValidated": false,
+      "currentAppProfiles": 0
+    }
+  ],
+  "independentOwners": {
+    "schemaVersion": 1,
+    "source": "read-only authorized USB installed app",
+    "files": [
+      {
+        "name": "libpcsx_rearmed_libretro_android.so",
+        "sha256": "e7534aa6f4a993e03f4563152f0e017324b710f5a5c224b0f1f722abeabed2b9",
+        "bytes": 1582960,
+        "matchesInstalledManifest": true,
+        "elf64Aarch64": true
+      },
+      {
+        "name": "libstation_psx_online.so",
+        "sha256": "c26d8836df255ad4cc10d19d328b6fc8dcbc6a429725794c88acd4de5ca3dc50",
+        "bytes": 301656,
+        "matchesInstalledManifest": true,
+        "elf64Aarch64": true
+      },
+      {
+        "name": "libstation_mupen64plus_core.so",
+        "sha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+        "bytes": 561056,
+        "matchesInstalledManifest": true,
+        "elf64Aarch64": true
+      },
+      {
+        "name": "libstation_mupen64plus_runtime.so",
+        "sha256": "2f248cfcdc9e6d0e20795b1dab84f581b8fe9ea59eb0994ae96036aed2abeb77",
+        "bytes": 104456,
+        "matchesInstalledManifest": true,
+        "elf64Aarch64": true
+      },
+      {
+        "name": "libstation_dolphin_online.so",
+        "sha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+        "bytes": 15781128,
+        "matchesInstalledManifest": true,
+        "elf64Aarch64": true
+      },
+      {
+        "name": "libstation_dolphin_runtime.so",
+        "sha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+        "bytes": 115368,
+        "matchesInstalledManifest": true,
+        "elf64Aarch64": true
+      }
+    ],
+    "dependencies": [
+      {
+        "name": "libmain.so",
+        "sha256": "62ad07ba8e62e3227d488f9075eb15167c2e95b721c43e480e2535b4319467f6",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libSDL2.so",
+        "sha256": "a282b35554eb006773349430e117bfeeff32a84e246a058c8fb7c7027c2e4dee",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libc++_shared.so",
+        "sha256": "b5d97c38a728afe28d341cda3369f512d35eaf9c680c1b0563cd6a63e395230f",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libstation_frontend.so",
+        "sha256": "4e7ad58e1e8f8a284654120c27280eed8c124ad5301a9e87d769e41f100d8d0d",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libSDL2_net.so",
+        "sha256": "f668cb9971913181761213be7d04dbfe5a3bf92c92d4ac9c1ab6d3eeaf44b9f5",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libae-bridge.so",
+        "sha256": "ba5a7582295215f159e197f805dbfe85851aa912462996870f61ccd752ecb360",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libjnidispatch.so",
+        "sha256": "ddfc6c965bbe366615c000ec1f06552ddf0bb2b4f9d921d0bff8c75b3cb2ca4c",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libmupen64plus-audio-android-fp.so",
+        "sha256": "79bd6457b4a77364721e98df4946fadde2bc44256b156ae8b361bcf769e03f74",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libmupen64plus-audio-android.so",
+        "sha256": "a8f8a5f83827a5056fca58bf72dc25951c56cdba568c55773f81efb20f2f0be5",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libmupen64plus-input-android.so",
+        "sha256": "11783275d71eaa14f3e15eff330a784195fdd98b31ea4c16d23d4691e5f91512",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libmupen64plus-rsp-hle.so",
+        "sha256": "67d0f74eb35a889c6abbc0ab0503691f45555ca601570911e0435be492bcf189",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libmupen64plus-video-glide64mk2.so",
+        "sha256": "5c10d28d442ce37cacaba892317319029a0340b4503dd8ac10ff850fdc5e9ce6",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libn64cpp.so",
+        "sha256": "fa2c06d3c09c0d9a4931fa7cd03a3aba15f6ed7ea990d8e4a37b8a5811867c0d",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "liboboe.so",
+        "sha256": "2d1ab385a0817273cbcd249ce6488b54a7d31dde193a8bf3037bcd901ea2079f",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libsoundtouch.so",
+        "sha256": "9944e132db1c2362b52cd88b438413d92802847b2174c64ce4dc801a7eaa41e3",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libsoundtouch_fp.so",
+        "sha256": "5fae9c0a403f01415327b1175ac20460a438184075c8da467dcfea56435a002a",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libstation_dolphin_file_redirect_hook.so",
+        "sha256": "23347bb99e0e73fde1f6deaf1b39d544ab4e4a5cc9e5f2c61c8d9facf5dfe06c",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libstation_dolphin_gsl_alloc_hook.so",
+        "sha256": "e9254fe5325818c1ef50cf986cd6db9a87d9b3c29c4567cd74e666b512598d02",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libstation_dolphin_hook.so",
+        "sha256": "7547dd37533c4352edf7666ef3b5220db08364054578bde7570c388658e0de16",
+        "matchesInstalledManifest": true
+      },
+      {
+        "name": "libstation_dolphin_hook_impl.so",
+        "sha256": "b3f2973bdccfb877cfc10fcaadd40b69e48af39434cc232d02bfc81a1669e264",
+        "matchesInstalledManifest": true
+      }
+    ],
+    "allSixLibrariesAndTwentyDependenciesMatchInstalledManifest": true,
+    "currentEngineIds": [
+      "dolphin-5102a033-gamecube-v3-2e0b36222097",
+      "dolphin-5102a033-wii-v3-2e0b36222097",
+      "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+      "pcsx-rearmed-ff81ed17-player-v3-c26d8836df25"
+    ],
+    "preparedEngines": 4,
+    "preparedModesAdded": 78,
+    "preparedProfilesAdded": 78,
+    "preparedModesByPlatform": {
+      "n64": 66,
+      "gamecube": 9,
+      "wii": 3
+    },
+    "unknownGamesApproved": false,
+    "psxHleGameApprovalsAdded": 0,
+    "status": "applied-and-signed-verified",
+    "published": true,
+    "apiRestartRequired": false,
+    "linuxAuthenticationOutcome": "completed",
+    "physicalGameplayValidated": false,
+    "applied": {
+      "status": "applied",
+      "utc": "2026-10-13T17:06:43.279495+00:00",
+      "source": "authorized read-only USB installed R139",
+      "enginesAdded": 4,
+      "realLibrariesVerified": 6,
+      "realDependenciesVerified": 20,
+      "profilesAdded": 78,
+      "originalProfilesPreserved": 11370,
+      "profileCount": 11448,
+      "approvedProfiles": 11427,
+      "originalModesPreserved": 6509,
+      "preparedModes": 6587,
+      "engineCount": 31,
+      "catalogRevision": 46,
+      "apiRestarted": false,
+      "pid": 2867363,
+      "dllSha256": "ef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a",
+      "realLicensesPreserved": true,
+      "signedPlatforms": [
+        "n64",
+        "gamecube",
+        "wii"
+      ],
+      "psxEngineRegistered": true,
+      "psxHleGameApprovalsAdded": 0,
+      "physicalGameplayValidated": false
+    },
+    "localSignedChecks": {
+      "address": "http://127.0.0.1:5192",
+      "signedChecks": [
+        {
+          "platform": "n64",
+          "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+              "contentSha256": "ceaa25016faab3da1ca55a4ef77305078b596e3caf3724e74f14eeea8f58debe",
+              "platform": "n64",
+              "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+              "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+              "runtimeSha256": "2f248cfcdc9e6d0e20795b1dab84f581b8fe9ea59eb0994ae96036aed2abeb77",
+              "profileId": "review-2073-local-v1-owner-6463a58773d9",
+              "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+              "maximumPlayers": 2,
+              "approved": true,
+              "controllerProfile": "direct-four-ports-v1",
+              "mode": "local-multiplayer",
+              "allowedPlayerCounts": [
+                2
+              ],
+              "modeTitle": "1080 Snowboarding: corrida para dois",
+              "instructions": [
+                "Escolha a corrida local 2P com um controle N64 padrão por jogador; modalidades de treino e manobras individuais continuam solo."
+              ],
+              "sources": [
+                "https://www.nintendo.com/es-es/Juegos/Nintendo-64/1080-Snowboarding-269404.html"
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "gamecube",
+          "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+              "contentSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26",
+              "platform": "gamecube",
+              "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+              "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+              "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+              "profileId": "prepared-local-1-20261009-owner-a848dc80a588",
+              "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+              "maximumPlayers": 4,
+              "approved": true,
+              "controllerProfile": "dolphin-gamecube-four-ports-v1",
+              "mode": "local-multiplayer",
+              "allowedPlayerCounts": [
+                2,
+                3,
+                4
+              ],
+              "modeTitle": "Corrida local",
+              "instructions": [
+                "Mais de quatro envolve LAN com vários consoles/TVs; não é um Multitap.",
+                "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+              ],
+              "sources": [
+                "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "wii",
+          "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+              "contentSha256": "7f1874db282a19cf369625603ac5665d486220f470c5c1e29f7309160579bef5",
+              "platform": "wii",
+              "engineId": "dolphin-5102a033-wii-v3-2e0b36222097",
+              "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+              "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+              "profileId": "review-dkreturns-coop2-v1-owner-550ee4076a78",
+              "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+              "maximumPlayers": 2,
+              "approved": true,
+              "controllerProfile": "dolphin-wii-remotes-four-v1",
+              "mode": "local-coop-2p",
+              "allowedPlayerCounts": [
+                2
+              ],
+              "modeTitle": "Donkey Kong Country Returns: dupla",
+              "instructions": [
+                "Entre no modo cooperativo de Donkey Kong e Diddy: somente dois jogadores.",
+                "Use Wii Remote horizontal com os comandos de movimento configurados; a ação de sacudir é necessária para bater, rolar e soprar.",
+                "Esta aprovação documental de modo não comprova os bindings ou a partida física em cada aparelho."
+              ],
+              "sources": [
+                "https://www.nintendo.com/en-gb/Games/Wii/Donkey-Kong-Country-Returns-280968.html",
+                "https://www.nintendo.com/en-gb/News/2010/Donkey-Kong-Country-Returns-a-rip-roaring-banana-scoring-treat-251997.html"
+              ]
+            }
+          ]
+        }
+      ],
+      "negativeAdmissionChecks": [
+        {
+          "case": "wrong-content",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "unknown-engine",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "n64-five-refused",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+          "roomCreated": false
+        }
+      ],
+      "syntheticLicenseRemoved": true,
+      "physicalGameplayValidated": false,
+      "psxHleGameApprovalsAdded": 0
+    },
+    "publicSignedChecks": {
+      "address": "https://app.lzgames.com.br",
+      "signedChecks": [
+        {
+          "platform": "n64",
+          "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_c13a5bbc179ccbe871697999c62ba13d",
+              "contentSha256": "ceaa25016faab3da1ca55a4ef77305078b596e3caf3724e74f14eeea8f58debe",
+              "platform": "n64",
+              "engineId": "mupen64plus-ae-33bf7021-n64-v3-2f248cfcdc9e",
+              "coreSha256": "fe6e810a1c7fc50a494b50b1dccf581b84385667191c0cbcd235d585a0703dd8",
+              "runtimeSha256": "2f248cfcdc9e6d0e20795b1dab84f581b8fe9ea59eb0994ae96036aed2abeb77",
+              "profileId": "review-2073-local-v1-owner-6463a58773d9",
+              "profileSha256": "2966309729f8a19c03b564f0178f263170e1843172f6719002f35fb54e313f9c",
+              "maximumPlayers": 2,
+              "approved": true,
+              "controllerProfile": "direct-four-ports-v1",
+              "mode": "local-multiplayer",
+              "allowedPlayerCounts": [
+                2
+              ],
+              "modeTitle": "1080 Snowboarding: corrida para dois",
+              "instructions": [
+                "Escolha a corrida local 2P com um controle N64 padrão por jogador; modalidades de treino e manobras individuais continuam solo."
+              ],
+              "sources": [
+                "https://www.nintendo.com/es-es/Juegos/Nintendo-64/1080-Snowboarding-269404.html"
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "gamecube",
+          "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_203c099590c11a7650a006d1dc4d705f",
+              "contentSha256": "dfdcb3cbdf95a7e7e3f390c78e5d578be65879a753f1fa1cf0a4c167496eab26",
+              "platform": "gamecube",
+              "engineId": "dolphin-5102a033-gamecube-v3-2e0b36222097",
+              "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+              "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+              "profileId": "prepared-local-1-20261009-owner-a848dc80a588",
+              "profileSha256": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+              "maximumPlayers": 4,
+              "approved": true,
+              "controllerProfile": "dolphin-gamecube-four-ports-v1",
+              "mode": "local-multiplayer",
+              "allowedPlayerCounts": [
+                2,
+                3,
+                4
+              ],
+              "modeTitle": "Corrida local",
+              "instructions": [
+                "Mais de quatro envolve LAN com vários consoles/TVs; não é um Multitap.",
+                "Cada vaga é uma entrada de controle. Ver detalhes não transmite gameplay."
+              ],
+              "sources": [
+                "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "wii",
+          "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+          "signed": true,
+          "bindingsExact": true,
+          "profiles": [
+            {
+              "itemId": "station_b3c07c1607efaed3e805f8e4e3da7b09",
+              "contentSha256": "7f1874db282a19cf369625603ac5665d486220f470c5c1e29f7309160579bef5",
+              "platform": "wii",
+              "engineId": "dolphin-5102a033-wii-v3-2e0b36222097",
+              "coreSha256": "f7ebe048e030a029c0667cf071ab4a49d702f77daf50d40ad40ed1f493ded37d",
+              "runtimeSha256": "2e0b362220979226c4996fce6691b9f8330fb9193e4d16c67b5f4c06e46bec82",
+              "profileId": "review-dkreturns-coop2-v1-owner-550ee4076a78",
+              "profileSha256": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed",
+              "maximumPlayers": 2,
+              "approved": true,
+              "controllerProfile": "dolphin-wii-remotes-four-v1",
+              "mode": "local-coop-2p",
+              "allowedPlayerCounts": [
+                2
+              ],
+              "modeTitle": "Donkey Kong Country Returns: dupla",
+              "instructions": [
+                "Entre no modo cooperativo de Donkey Kong e Diddy: somente dois jogadores.",
+                "Use Wii Remote horizontal com os comandos de movimento configurados; a ação de sacudir é necessária para bater, rolar e soprar.",
+                "Esta aprovação documental de modo não comprova os bindings ou a partida física em cada aparelho."
+              ],
+              "sources": [
+                "https://www.nintendo.com/en-gb/Games/Wii/Donkey-Kong-Country-Returns-280968.html",
+                "https://www.nintendo.com/en-gb/News/2010/Donkey-Kong-Country-Returns-a-rip-roaring-banana-scoring-treat-251997.html"
+              ]
+            }
+          ]
+        }
+      ],
+      "negativeAdmissionChecks": [
+        {
+          "case": "wrong-content",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "unknown-engine",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+          "roomCreated": false
+        },
+        {
+          "case": "n64-five-refused",
+          "status": 409,
+          "code": "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+          "roomCreated": false
+        }
+      ],
+      "syntheticLicenseRemoved": true,
+      "physicalGameplayValidated": false,
+      "psxHleGameApprovalsAdded": 0
+    }
+  },
+  "phoneDiagnostic": {
+    "schemaVersion": 1,
+    "deviceModel": "moto g52",
+    "package": "org.turboramastation.frontend",
+    "runtimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+    "runtimeMatchesR139": true,
+    "topGear3000ContentMatchesServer": true,
+    "topGear3000ContentSha256": "6be49983976564f1fd9eff2f14f5bb41d3a0ff48573e39318088ecce286aca62",
+    "timezone": "America/Maceio",
+    "events": [
+      {
+        "utc": "2026-10-13T14:35:55.192+00:00",
+        "source": "server-loopback-snapshot",
+        "event": "Top Gear 3000 VS: two lobby members ready; start accepted; no native attachment/HELLO/READY at this sample"
+      },
+      {
+        "utc": "2026-10-13T14:35:56.784134+00:00",
+        "source": "server-journal",
+        "event": "WebSocket HTTP101 completed after 166.3749ms connection lifetime"
+      },
+      {
+        "utc": "2026-10-13T14:35:56.790067+00:00",
+        "source": "server-journal",
+        "event": "WebSocket HTTP101 completed after 230.8867ms connection lifetime"
+      },
+      {
+        "utc": "2026-10-13T14:35:57.208+00:00",
+        "source": "server-loopback-snapshot",
+        "event": "native barrier became terminal without reaching Playing"
+      },
+      {
+        "utc": "2026-10-13T14:37:03.658+00:00",
+        "source": "phone-activity-events",
+        "event": "new StationRetroActivity created"
+      },
+      {
+        "utc": "2026-10-13T14:37:23.890514+00:00",
+        "source": "server-journal",
+        "event": "WebSocket HTTP101 completed after 19937.2224ms connection lifetime"
+      },
+      {
+        "utc": "2026-10-13T14:37:23.918+00:00",
+        "source": "phone-activity-events",
+        "event": "StationRetroActivity paused"
+      },
+      {
+        "utc": "2026-10-13T14:37:23.923+00:00",
+        "source": "phone-crash-buffer",
+        "event": "SIGSEGV SEGV_MAPERR fault address0x10 on RenderThread in station_netplay process"
+      },
+      {
+        "utc": "2026-10-13T14:37:24.041+00:00",
+        "source": "phone-crash-buffer",
+        "event": "FORTIFY pthread_mutex_lock on a destroyed mutex on two other threads"
+      },
+      {
+        "utc": "2026-10-13T14:37:24.214+00:00",
+        "source": "phone-activity-events",
+        "event": "station_netplay process died"
+      },
+      {
+        "utc": "2026-10-13T14:37:26.347+00:00",
+        "source": "server-journal",
+        "event": "subsequent command refused404 STATION_MULTIPLAYER_ROOM_UNKNOWN"
+      }
+    ],
+    "currentCrashFullBacktraceAvailable": false,
+    "currentExitInfoReason": "EXIT_SELF status0",
+    "oldOct11And12TombstonesNotUsedAsCurrentCause": true,
+    "connectionLifetimeIsNotHandshakeLatency": true,
+    "oneSecondSamplingCannotExcludeBriefAttachments": true,
+    "laterTenMinuteUsbCapture": {
+      "startUtc": "2026-10-13T15:04:54+00:00",
+      "activeRoomsObserved": 0,
+      "activeConnectionsObserved": 0,
+      "newGameplayAttemptCaptured": false
+    },
+    "mainBufferRotatedPastFailure": true,
+    "unresolved": [
+      "Why the declared room HLE options were not consumed on the physical phones; validate both cfg settings with exact preserved composition",
+      "Exact rejection code of the two relay HTTP409 responses; do not infer reason from status or relax generation/READY",
+      "Cause of the earlier RenderThread SIGSEGV/destruction sequence",
+      "Physical online gameplay after corrective APK"
+    ],
+    "causalServerOrAppGameplayConclusion": "Immediate native core content-load failure proven on four separate host attempts; why HLE option selection differed and relay409 reasons still need confirmation; no end-to-end gameplay validation",
+    "apkModified": false,
+    "deviceDataCleared": false,
+    "deviceSettingsChanged": false,
+    "containsSerialOrPersonalData": false,
+    "newAttempt": {
+      "vs": {
+        "utcStart": "2026-10-13T15:34:20.320+00:00",
+        "nativeHooksLoaded": true,
+        "sessionOwnerBound": true,
+        "nativeReturnUtc": "2026-10-13T15:34:21.193+00:00",
+        "nativeReturnCode": 1,
+        "returnedToFrontendUtc": "2026-10-13T15:34:21.292+00:00",
+        "newCrashRecorded": false
+      },
+      "championshipTwoPlayer": {
+        "utcStart": "2026-10-13T15:35:22.548+00:00",
+        "nativeHooksLoaded": true,
+        "sessionOwnerBound": true,
+        "streamState": 0,
+        "epoch": 1,
+        "nativeStatus": -1,
+        "nativeLocalReady": false,
+        "nativeReadySent": -1,
+        "txBytes": 0,
+        "rxBytes": 0,
+        "pongRttMsSamples": [
+          119,
+          178,
+          160,
+          165,
+          518
+        ],
+        "sessionNotPlaying": true,
+        "serverTerminalUtc": "2026-10-13T15:36:09.819+00:00"
+      },
+      "sourceReview": {
+        "rarchMainAndroidReturn1": "task_push_load_content_from_cli returned false",
+        "files": "pinned corresponding source retroarch.c:6029-6036 and tasks/task_content.c:2716-2724",
+        "contentInitCauseNotYetLogged": true,
+        "confirmingNativeEpochRequired": true
+      },
+      "clockOffsetsNotCalibrated": true,
+      "phoneNativeStackPermission": "debuggerd requires root; no root or bypass attempted"
+    },
+    "newAttemptCapturedAfterEarlierWindow": true,
+    "latestAnalysisUtc": "2026-10-13T18:55:24.430608+00:00",
+    "receivedUsbDiagnostic": {
+      "receivedUtc": "2026-10-13T18:55:24.430608+00:00",
+      "zipName": "Diagnostico-TopGear3000-R139-20261013.zip",
+      "zipBytes": 53620,
+      "zipSha256": "43ed435a1d0540d440f28b53de1403e305819ddf3e8e424f0dba156ab4387e9a",
+      "manifestListedFilesVerified": 11,
+      "phonesCovered": [
+        "moto g52",
+        "motorola edge 30"
+      ],
+      "modesCovered": [
+        "vs",
+        "campeonato"
+      ],
+      "simultaneousPairCapture": false,
+      "captures": [
+        {
+          "phoneModel": "moto g52",
+          "declaredMode": "vs",
+          "hostRoleObserved": true,
+          "scope": "separate host attempt; not simultaneous two-phone capture",
+          "diagnosticApkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+          "startUtc": "2026-10-13T18:16:28.718118+00:00",
+          "endUtc": "2026-10-13T18:19:01.287724+00:00",
+          "clockDeviceMinusHostIntervalSeconds": [
+            -0.7886748313903809,
+            0.28148746490478516
+          ],
+          "observations": [
+            {
+              "utc": "2026-10-13T18:18:46.980000+00:00",
+              "category": "missing-dsp4-program",
+              "sourceFile": "moto-g52/logcat-topgear3000-vs.txt",
+              "line": 614
+            },
+            {
+              "utc": "2026-10-13T18:18:46.980000+00:00",
+              "category": "missing-dsp4-data",
+              "sourceFile": "moto-g52/logcat-topgear3000-vs.txt",
+              "line": 615
+            },
+            {
+              "utc": "2026-10-13T18:18:47.088000+00:00",
+              "category": "content-load-failed",
+              "sourceFile": "moto-g52/logcat-topgear3000-vs.txt",
+              "line": 623
+            },
+            {
+              "utc": "2026-10-13T18:18:47.104000+00:00",
+              "category": "native-return-1",
+              "sourceFile": "moto-g52/logcat-topgear3000-vs.txt",
+              "line": 624
+            }
+          ],
+          "nativeNotReadySamples": [],
+          "newCrashMarkers": [],
+          "physicalGameplayValidated": false
+        },
+        {
+          "phoneModel": "moto g52",
+          "declaredMode": "campeonato",
+          "hostRoleObserved": true,
+          "scope": "separate host attempt; not simultaneous two-phone capture",
+          "diagnosticApkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+          "startUtc": "2026-10-13T18:19:40.775149+00:00",
+          "endUtc": "2026-10-13T18:21:25.055549+00:00",
+          "clockDeviceMinusHostIntervalSeconds": [
+            -0.8391120433807373,
+            0.22445178031921387
+          ],
+          "observations": [
+            {
+              "utc": "2026-10-13T18:20:58.122000+00:00",
+              "category": "missing-dsp4-program",
+              "sourceFile": "moto-g52/logcat-topgear3000-campeonato.txt",
+              "line": 217
+            },
+            {
+              "utc": "2026-10-13T18:20:58.122000+00:00",
+              "category": "missing-dsp4-data",
+              "sourceFile": "moto-g52/logcat-topgear3000-campeonato.txt",
+              "line": 218
+            },
+            {
+              "utc": "2026-10-13T18:20:58.226000+00:00",
+              "category": "content-load-failed",
+              "sourceFile": "moto-g52/logcat-topgear3000-campeonato.txt",
+              "line": 220
+            },
+            {
+              "utc": "2026-10-13T18:20:58.239000+00:00",
+              "category": "native-return-1",
+              "sourceFile": "moto-g52/logcat-topgear3000-campeonato.txt",
+              "line": 222
+            }
+          ],
+          "nativeNotReadySamples": [],
+          "newCrashMarkers": [],
+          "physicalGameplayValidated": false
+        },
+        {
+          "phoneModel": "motorola edge 30",
+          "declaredMode": "vs",
+          "hostRoleObserved": true,
+          "scope": "separate host attempt; not simultaneous two-phone capture",
+          "diagnosticApkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+          "startUtc": "2026-10-13T18:29:56.735104+00:00",
+          "endUtc": "2026-10-13T18:33:05.889079+00:00",
+          "clockDeviceMinusHostIntervalSeconds": [
+            1.169588565826416,
+            2.264450788497925
+          ],
+          "observations": [
+            {
+              "utc": "2026-10-13T18:32:53.379000+00:00",
+              "category": "missing-dsp4-program",
+              "sourceFile": "edge30/logcat-topgear3000-vs.txt",
+              "line": 465
+            },
+            {
+              "utc": "2026-10-13T18:32:53.379000+00:00",
+              "category": "missing-dsp4-data",
+              "sourceFile": "edge30/logcat-topgear3000-vs.txt",
+              "line": 466
+            },
+            {
+              "utc": "2026-10-13T18:32:53.434000+00:00",
+              "category": "content-load-failed",
+              "sourceFile": "edge30/logcat-topgear3000-vs.txt",
+              "line": 470
+            },
+            {
+              "utc": "2026-10-13T18:32:53.445000+00:00",
+              "category": "native-return-1",
+              "sourceFile": "edge30/logcat-topgear3000-vs.txt",
+              "line": 471
+            }
+          ],
+          "nativeNotReadySamples": [],
+          "newCrashMarkers": [],
+          "physicalGameplayValidated": false
+        },
+        {
+          "phoneModel": "motorola edge 30",
+          "declaredMode": "campeonato",
+          "hostRoleObserved": true,
+          "scope": "separate host attempt; not simultaneous two-phone capture",
+          "diagnosticApkSha256": "5aaa6db5199a450894a7ac2b40776732d9da5f42b606bcf1faf73ed14671076d",
+          "startUtc": "2026-10-13T18:33:17.110728+00:00",
+          "endUtc": "2026-10-13T18:36:10.350788+00:00",
+          "clockDeviceMinusHostIntervalSeconds": [
+            0.8230090141296387,
+            1.8887465000152588
+          ],
+          "observations": [
+            {
+              "utc": "2026-10-13T18:33:56.724000+00:00",
+              "category": "missing-dsp4-program",
+              "sourceFile": "edge30/logcat-topgear3000-campeonato.txt",
+              "line": 171
+            },
+            {
+              "utc": "2026-10-13T18:33:56.724000+00:00",
+              "category": "missing-dsp4-data",
+              "sourceFile": "edge30/logcat-topgear3000-campeonato.txt",
+              "line": 172
+            },
+            {
+              "utc": "2026-10-13T18:33:56.777000+00:00",
+              "category": "content-load-failed",
+              "sourceFile": "edge30/logcat-topgear3000-campeonato.txt",
+              "line": 173
+            },
+            {
+              "utc": "2026-10-13T18:33:56.895000+00:00",
+              "category": "menu-driver-init-failed-after-content-load-failure",
+              "sourceFile": "edge30/logcat-topgear3000-campeonato.txt",
+              "line": 182
+            }
+          ],
+          "nativeNotReadySamples": [
+            {
+              "utc": "2026-10-13T18:33:57.136000+00:00",
+              "nativeStatus": -1,
+              "localReady": false,
+              "readySent": -1,
+              "txBytes": 0,
+              "rxBytes": 0
+            },
+            {
+              "utc": "2026-10-13T18:34:07.147000+00:00",
+              "nativeStatus": -1,
+              "localReady": false,
+              "readySent": -1,
+              "txBytes": 0,
+              "rxBytes": 0
+            },
+            {
+              "utc": "2026-10-13T18:34:17.165000+00:00",
+              "nativeStatus": -1,
+              "localReady": false,
+              "readySent": -1,
+              "txBytes": 0,
+              "rxBytes": 0
+            },
+            {
+              "utc": "2026-10-13T18:34:27.182000+00:00",
+              "nativeStatus": -1,
+              "localReady": false,
+              "readySent": -1,
+              "txBytes": 0,
+              "rxBytes": 0
+            },
+            {
+              "utc": "2026-10-13T18:34:37.198000+00:00",
+              "nativeStatus": -1,
+              "localReady": false,
+              "readySent": -1,
+              "txBytes": 0,
+              "rxBytes": 0
+            }
+          ],
+          "newCrashMarkers": [],
+          "physicalGameplayValidated": false
+        }
+      ],
+      "declaredReleaseRuntimePreserved": true,
+      "runtimeSha256": "ae72f1371e8e5a2d35f9250793ce2870f3feab73a3e17c83c9fbd48a9d15f378",
+      "diagnosticApkIsRelease": false,
+      "temporaryIndependentEngineMarkersRegistered": false,
+      "immediateFailureConfirmed": "DSP4 files requested but absent; content load failed on all four captured attempts",
+      "specificLegacyOverrideFileReadOnPhone": false,
+      "underlyingHleOptionSelectionProvenOnPhone": false,
+      "proposedAppCfgSettings": {
+        "global_core_options": "true",
+        "game_specific_options": "false"
+      },
+      "coreHleValuesAlreadyDeclared": {
+        "bsnes_violate_accuracy": "enabled",
+        "bsnes_chip_hle": "HLE"
+      },
+      "producerReportsHostResolverCases": 20,
+      "producerHostResolverEvidenceIncludedInUsb": false,
+      "producerHostResolverEvidenceFoundInReceivedGit": true,
+      "serverIndependentStaticSourceReview": {
+        "coreSource": "https://github.com/libretro/bsnes-mercury/blob/79d7f9de218b/target-libretro/libretro.cpp",
+        "coreSourceSha256": "90bfb5826f9e2e85a05d11137eeeebdbc05359b7eba3632d4296e87c5dae007a",
+        "runtimeSource": "https://github.com/libretro/RetroArch/blob/69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576/runloop.c",
+        "runtimeSourceSha256": "0a7414cce55674b37a2c08f371b95b1533b83d895bf3d1083d7fc48fb1e8c657",
+        "finding": "Missing requested files sets load_request_error and makes cartridge loading return false; resolver allows game/folder/core paths to precede room path unless both proposed settings bind it",
+        "physicalConfigurationConsumptionValidated": false
+      },
+      "serverJournalCrossCheck": {
+        "windowStartUtc": "2026-10-13T18:16:00+00:00",
+        "windowEndUtc": "2026-10-13T18:37:00+00:00",
+        "records": 8510,
+        "acceptedRelay101": 6,
+        "refusedRelay409": 2,
+        "refusedRelay409TimesUtc": [
+          "2026-10-13T18:18:46.957442+00:00",
+          "2026-10-13T18:32:53.185256+00:00"
+        ],
+        "relay409ResponseCodesRecorded": false,
+        "relay409CauseInferred": false,
+        "commandRefusals": [
+          {
+            "utc": "2026-10-13T18:20:49.000054+00:00",
+            "httpStatus": 409,
+            "code": "STATION_MULTIPLAYER_GENERATION_MISMATCH"
+          },
+          {
+            "utc": "2026-10-13T18:21:00.725653+00:00",
+            "httpStatus": 409,
+            "code": "STATION_MULTIPLAYER_UNRECOVERABLE"
+          },
+          {
+            "utc": "2026-10-13T18:34:45.634227+00:00",
+            "httpStatus": 409,
+            "code": "STATION_MULTIPLAYER_UNRECOVERABLE"
+          }
+        ],
+        "lobbyEvents429": [
+          {
+            "utc": "2026-10-13T18:22:06.701027+00:00",
+            "route": "/v1/station/online/events"
+          }
+        ],
+        "unhandledOrFatalMarkersObserved": 0,
+        "servicePid": 2867363,
+        "serviceNRestarts": 0,
+        "connectionLifetimeIsNotHandshakeLatency": true,
+        "clockIntervalsDoNotPermitMillisecondCausalOrdering": true
+      },
+      "apiAppliedOrRestarted": false,
+      "correctiveApkInstalledOrGameplayValidated": false,
+      "priorCrashStillSeparateUnresolvedIncident": true,
+      "rawLogsOrPhoneIdentifiersPublished": false,
+      "producerHostResolverEvidenceReadUtc": "2026-10-13T19:03:02.025415+00:00",
+      "producerHostResolverQualification": {
+        "sourceCommit": "b93623b708bafe151441d3e4920acad51718e118",
+        "receiptSha256": "42db9aa7537486f15b555987ac05d0d4850de7b34af9ffa5063a014438bfc821",
+        "passed": true,
+        "executedCases": 20,
+        "reviewedOnServer": true,
+        "executedByThisServer": false,
+        "threeExtractedFunctionHashesMatchCorrespondingUpstreamBodiesWithNewlineVariants": true,
+        "fullUpstreamSourceShaMatchesProducerModifiedSource": false,
+        "discoveryHelpersMocked": true,
+        "optionManagerMocked": true,
+        "actualPhoneLegacyFileRead": false,
+        "actualBsnesVariablesMeasured": false,
+        "androidExecuted": false,
+        "gameplayValidated": false,
+        "receipt": "startup-logging-diagnostic/evidence/host-resolver-qualification.json"
+      },
+      "appR140Candidate": {
+        "sourceCommit": "b93623b708bafe151441d3e4920acad51718e118",
+        "state": "source-and-recipes-versioned; no compiled/signed/installed artifact receipt received",
+        "baselineApkSha256": "19acdeceef86bc66c2475300cbd142da783850c02f5a9e2068d8652ef8523164",
+        "cfgKeys": {
+          "global_core_options": "true",
+          "game_specific_options": "false"
+        },
+        "retroArchDescriptorsAndActiveIdsPreserved": true,
+        "activeRetroArchIdsPreserved": 8,
+        "independentEngineIdsToRenewAfterActualBytesReceived": 4,
+        "newMarkerLibrariesToVerifyAfterCompile": 3,
+        "serverRegistered": false,
+        "physicalGameplayValidated": false
+      }
+    }
+  },
+  "pending": [
+    "Top Gear 3000: validate the R140 two-key room options candidate on both phones with actual effective HLE values and gameplay; qualify its four independent IDs only after verified compiled marker bytes; retain relay409 exact-code and earlier RenderThread crash investigations",
+    "PSX: current owner still has zero per-edition HLE-reviewed approvals; original-hardware manuals do not validate current HLE",
+    "NES catalog capacity overlay is not in R139 APK (4096 legacy limit); complete server catalog query uses maximumItems=20000",
+    "Dreamcast/PS2/Saturn/WiiU/Switch/PSP/32X/NES: current received app has no corresponding online native owner"
+  ],
+  "realLicensesPreserved": true,
+  "physicalGameplayValidated": false,
+  "allPlatformsGameplayReady": false,
+  "usbRootInspection": {
+    "mountedReadOnly": true,
+    "authorityFiles": [
+      "content-authority-envelope.json",
+      "content-authority-issuer.spki.der",
+      "suite-authority-envelope.json",
+      "suite-authority-issuer.spki.der"
+    ],
+    "authorityProductId": "TURBORAMA_SUITE",
+    "stationProductId": "TURBORAMA_STATION_ANDROID",
+    "authorityFilesNotAppliedToStation": true,
+    "r139KitInServidorLerMatchesAlreadyReceived": true
+  },
+  "requestedProductionDiagnostics": {
+    "suggestedFilenames": [
+      "logcat-topgear3000-vs.txt",
+      "logcat-topgear3000-campeonato.txt",
+      "erro-inicializacao-retroarch.txt"
+    ],
+    "capture": "both devices, from start to failure, include internal RetroArch/bsnes content/core/driver load error",
+    "transfer": "private USB SERVIDOR LER",
+    "newNativeLibrariesStillRequired": false,
+    "received": true,
+    "receivedPrivateZipSha256": "43ed435a1d0540d440f28b53de1403e305819ddf3e8e424f0dba156ab4387e9a",
+    "bothPhonesAndBothModesCaptured": true,
+    "simultaneousPairCapture": false,
+    "furtherDiagnosticNeeded": "effective room core option values and safe error code for any relay409 in the next corrective APK test; no repeat of already received logs required"
+  }
+}

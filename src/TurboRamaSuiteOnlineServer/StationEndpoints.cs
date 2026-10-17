@@ -38,7 +38,9 @@ public static class StationEndpoints
             if (!limiter.Allow(context.Connection.RemoteIpAddress, "/v1/station/catalog"))
                 return Limited();
             return await Handle(context, (service, token) =>
-                service.CatalogAsync(Bearer(context), token, context.Request.Query["metadata"] == "1"));
+                service.CatalogAsync(Bearer(context), token, context.Request.Query["metadata"] == "1",
+                    context.Request.Query.TryGetValue("maximumItems", out var maximumItems)
+                        ? maximumItems.ToString() : null));
         }).TraceStation("catalog");
         app.MapGet("/v1/station/covers/{coverId}", async (HttpContext context, string coverId) =>
         {

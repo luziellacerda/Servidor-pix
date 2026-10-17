@@ -59,7 +59,14 @@ def atomic_json(path, data, gid=None):
 
 
 def text(value, maximum):
-    return ''.join(c for c in (value or '') if ord(c) >= 32 or c in '\n\t').strip()[:maximum]
+    clean = ''.join(c for c in (value or '') if unicodedata.category(c) != 'Cc' or c in '\n\t').strip()
+    # C# and Android bound strings in UTF-16 units. Never split a surrogate pair.
+    result, units = [], 0
+    for character in clean:
+        width = 2 if ord(character) > 0xffff else 1
+        if units + width > maximum: break
+        result.append(character); units += width
+    return ''.join(result)
 
 
 def metadata(game=None, override=None):
@@ -288,7 +295,7 @@ def content_identities(path):
     if not isinstance(document, dict) or set(document) != {'schemaVersion', 'entries'} or type(document['schemaVersion']) is not int or document['schemaVersion'] not in (1,2):
         raise ValueError('invalid content identity schema')
     entries = document['entries']
-    if not isinstance(entries, list) or len(entries) > 4096:
+    if not isinstance(entries, list) or len(entries) > 20_000:
         raise ValueError('invalid content identity count')
     keys = {'itemId', 'platform', 'artifactSha256', 'launchPath', 'expandedSizeBytes', 'fileCount', 'contentSha256'}
     def hash_value(value):
@@ -310,6 +317,8 @@ def content_identities(path):
 
 def bind_content_identities(items, identities):
     for row in items:
+        if row.get('catalogVisible', True) is False and 'artifact' not in row:
+            continue  # Retain the historical identity of quarantined bytes.
         # Unknown or replaced payloads have no public hash; existing metadata is preserved.
         row.pop('contentSha256', None)
         row.pop('contentIdentityScheme', None)
@@ -441,7 +450,7 @@ def publish(config, bootstrap=False, on_progress=None):
                         row['folderPath'] = folder_path
                         new_metadata = metadata(game, override)
                         seed = metadata_seed.get(item_id)
-                        if not new_metadata['description'] and seed and seed['platform'] == row['platform'] and seed['name'] == row['name']:
+                        if not new_metadata['description'] and 'description' not in override and seed and seed['platform'] == row['platform'] and seed['name'] == row['name']:
                             new_metadata['description'] = metadata(override={'description':seed['description']})['description']
                         if row.get('metadata') != new_metadata: row['metadata'] = new_metadata
                         if override.get('name'): row['name'] = text(override['name'], 120)
@@ -543,8 +552,21 @@ def publish(config, bootstrap=False, on_progress=None):
             seed = metadata_seed.get(row['itemId'])
             if seed and seed['platform'] == row['platform'] and seed['name'] == row['name'] and not row.get('metadata', {}).get('description'):
                 row['metadata'] = dict(row.get('metadata', metadata()), description=metadata(override={'description':seed['description']})['description'])
-        if len(rows) > 4096: raise ValueError('Station library capacity exceeded')
+        if len(rows) > 20_000: raise ValueError('Station library capacity exceeded')
         items = list(rows.values())
+        normalization = config.get('cartridgeNormalization')
+        if normalization is not None:
+            if not isinstance(normalization, dict) or set(normalization) != {'outputDirectory'}:
+                raise ValueError('invalid cartridge normalization policy')
+            target = Path(normalization['outputDirectory'])
+            if not target.is_absolute() or not (target.is_relative_to(home) or target.is_relative_to(root)):
+                raise ValueError('cartridge normalization leaves configured volumes')
+            from station_cartridge import prepare as prepare_cartridges
+            receipts, normalized_raw, pending = prepare_cartridges(items, target, gid)
+            verified_raw.update(normalized_raw)
+            report['cartridgeNormalizations'] = receipts
+            report['cartridgeNormalizationPending'] = pending
+            report['updated'] += len(receipts)
         if config.get('autoContentIdentity', False):
             registry_path=Path(config['contentIdentityRegistry'])
             if type(config['autoContentIdentity']) is not bool or registry_path.parent!=home or registry_path.is_symlink():
@@ -555,6 +577,8 @@ def publish(config, bootstrap=False, on_progress=None):
             binder=importlib.util.module_from_spec(binder_spec);binder_spec.loader.exec_module(binder)
             from station_content_sets import bind_set
             for row in items:
+                if row.get('catalogVisible', True) is False and 'artifact' not in row:
+                    continue  # No current launch payload to bind or republish.
                 artifact=row.get('artifact',{});entry=identities.get(row['itemId'])
                 if entry and entry['platform']==row['platform'] and entry['artifactSha256']==artifact.get('sha256') and all(entry[k]==artifact.get(k) for k in ('launchPath','expandedSizeBytes','fileCount')):continue
                 try:
@@ -571,18 +595,19 @@ def publish(config, bootstrap=False, on_progress=None):
         bind_content_identities(items, identities)
         online=config.get('autoOnlineProfiles')
         if online is not None:
+            from station_online_profiles import (MAXIMUM_PREPARED_MODE_BYTES,
+                MAXIMUM_PROFILE_REGISTRY_BYTES, MAXIMUM_TRUSTED_MANIFEST_BYTES, prepare)
             required={'registry','engineManifest','maintainerAuthorizedTwoSeats'}
             if not isinstance(online,dict) or not required<=set(online) or set(online)-required-{'preparedModes'} or online['maintainerAuthorizedTwoSeats'] is not True:
                 raise ValueError('explicit automatic room policy required')
             output=Path(online['registry']);manifest=Path(online['engineManifest'])
             if output.parent!=home or output.is_symlink() or not manifest.is_absolute() or manifest.is_symlink():raise ValueError('unsafe automatic room inputs')
-            if output.stat().st_size>16*1024*1024 or manifest.stat().st_size>512*1024:raise ValueError('automatic room input too large')
+            if output.stat().st_size>MAXIMUM_PROFILE_REGISTRY_BYTES or manifest.stat().st_size>MAXIMUM_TRUSTED_MANIFEST_BYTES:raise ValueError('automatic room input too large')
             modes=None
             if 'preparedModes' in online:
                 mode_path=Path(online['preparedModes'])
-                if mode_path.parent!=home or mode_path.is_symlink() or mode_path.stat().st_size>8*1024*1024:raise ValueError('unsafe prepared mode input')
+                if mode_path.parent!=home or mode_path.is_symlink() or mode_path.stat().st_size>MAXIMUM_PREPARED_MODE_BYTES:raise ValueError('unsafe prepared mode input')
                 modes=json.loads(mode_path.read_bytes())
-            from station_online_profiles import prepare
             current_profiles=json.loads(output.read_bytes())
             updated_profiles=prepare(items,current_profiles,json.loads(manifest.read_bytes()),modes)
             if updated_profiles!=current_profiles:atomic_json(output,updated_profiles,gid)

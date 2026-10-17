@@ -1,0 +1,152 @@
+{
+  "schema": "station.hourly-maintenance.receipt.v1",
+  "utc": "2026-10-13T23:06:04.241525+00:00",
+  "cycle": "20261013-23z",
+  "status": "partial",
+  "eventFingerprint": "5cad33db133a0ad94529b5ee68722b82328267644bc578b4273a8f103193a379",
+  "privateInputFingerprint": "a98e9bf06052df61387965c23c1df6d65e61fbaead5f35be9fd0013736422b3d",
+  "inputRefsVerifiedViaLsRemote": {
+    "server": "f2294f8ecb1c3ab60a2d61ac8ee504cfa8d1dedc",
+    "app": "c349ef551bcd9e31f887f710f94d9c5c7f025ca9",
+    "coversMain": "5c6cc32c06e6944b9258df36ffdb846baa368a7f",
+    "coversSuperNintendo": "9f85e9df1ec0c82d77156ed072b997855f719288"
+  },
+  "newUsefulPayloadReceived": false,
+  "backup": {
+    "branch": "backup/station-antes-manutencao-20261013-23z",
+    "server": "f2294f8ecb1c3ab60a2d61ac8ee504cfa8d1dedc",
+    "app": "c349ef551bcd9e31f887f710f94d9c5c7f025ca9",
+    "pushedAndRemoteVerified": true
+  },
+  "deliveryBranch": "feat/station-hourly-20261013-23z",
+  "serialization": {
+    "maintenanceLockHeldByParentMonitorPid": 3021351,
+    "confirmedInProcLocks": true,
+    "scanLock": {
+      "path": "/mnt/DADOS/turbostation-library-auto-20261004/scan.lock",
+      "acquired": true,
+      "mode": "shared read"
+    }
+  },
+  "nativeLinuxAuthentication": {
+    "completed": true,
+    "boundedUnauthenticatedRequestSeconds": 120,
+    "rootOperationTerminated": false,
+    "auditUtc": "2026-10-13T23:02:46.764282+00:00"
+  },
+  "effectiveRuntime": {
+    "apiPid": 2867363,
+    "apiNRestarts": 0,
+    "dll": {
+      "path": "/opt/turborama-station-online-audit-20261013-ef5270b3d47b-e/TurboRamaSuiteOnlineServer.dll",
+      "sha256": "ef5270b3d47bcc38407cf4821a9b33a13935409f54835874ab9926f31f73ca4a"
+    },
+    "scannerConfig": {
+      "path": "/mnt/DADOS/station-library-auto-private-20261004/config.json",
+      "sha256": "373d4eb2d33f594441f64326a94cb7648fa0dca977a1cb37b8e9d57f2d51d743"
+    },
+    "importer": {
+      "path": "/opt/turborama-station-online-audit-20261013-ef5270b3d47b-e/library-tools/atualizar-biblioteca-station.py",
+      "sha256": "0b16e8d94562f85a5e14a810a0b353a5be4682ed6585be5715bf34ad5455de48",
+      "helpersSha256": {
+        "station_online_profiles.py": "3d5d5b5563e2a6825ab9e798da80313cdbf2640522bc4dfd6b47e25c7f69eae1",
+        "cadastrar-motor-online-station.py": "a3c81e0c379984d6b7736f79ce963c73a3f3250883f6304a32b5c6cfda73a096",
+        "station_cartridge.py": "964998b75a3e3d6207bd3d3c769aea18a37141c29f0bd963f4f7d10e44ee09db",
+        "atualizar-biblioteca-station.py": "0b16e8d94562f85a5e14a810a0b353a5be4682ed6585be5715bf34ad5455de48"
+      }
+    },
+    "helpersByteMatchRepository": true,
+    "legacyEngineRegistry": {
+      "utc": "2026-10-13T23:04:25.893523+00:00",
+      "path": "/opt/turborama-station-server-ready-20261009-34fdc4b1ecea/online-engine-registry.json",
+      "sha256": "a5f9de948ab3fcf15b2657061d540dcbbafda98e1dd7a68137e617b58a894843",
+      "containerType": "list",
+      "count": 10,
+      "authentication": "native Linux pkexec",
+      "productionFilesChanged": false
+    },
+    "v3PersistentRegistryCounts": {
+      "catalog": {
+        "path": "/mnt/DADOS/turbostation-library-auto-20261004/index.json",
+        "sha256": "45792de61ee9944af23ea97f2ce2fc5246bb1fac5992f6c18d027951c62d7829",
+        "count": 4690,
+        "revision": 46,
+        "visible": 4435
+      },
+      "profiles": {
+        "path": "/mnt/DADOS/turbostation-library-auto-20261004/online-profiles-platforms-20261009.json",
+        "sha256": "b56b5d499e93e2ce0aedf77162e9c8c0c34422461c4fd9c1ba7c6178e0615b47",
+        "count": 11604,
+        "approved": 11583
+      },
+      "engines": {
+        "path": "/mnt/DADOS/turbostation-library-auto-20261004/online-app-engines-persistent-20261009.json",
+        "sha256": "571dcd20ed494a18a06300c956c67a61fbd86d98a19fce8abf13055275925646",
+        "count": 39
+      },
+      "modes": {
+        "path": "/mnt/DADOS/turbostation-library-auto-20261004/online-prepared-modes-20261009.json",
+        "sha256": "ac323ec0ff4d487c0ae8bea705c237fcb718484bd1d1e80392f26b0e4ea27dc2",
+        "count": 6743
+      }
+    },
+    "enginesProfilesModesByteIdenticalToR141AppliedExports": true,
+    "serverBinaryChangeRequiredByReceivedPayload": false
+  },
+  "r143": {
+    "receiptSha256": "b468686c9e2d2066a69cf3a0721e3b8e98b8f43cd877764f33b4fcf083bbbb49",
+    "receiptByteIdenticalInAppMirror": true,
+    "expectedZipSha256": "a4ba210580ea68beb0086c2c986c6a884e888a1e9ad599bd7e9d9ae33364f606",
+    "expectedZipBytes": 12161998,
+    "privateKitLocated": false,
+    "searchScope": [
+      "/mnt/DADOS (up to five path components; dependency/Git/ROM folders excluded)",
+      "/media/lz-servidor/ESD-USB",
+      "/media/lz-servidor/a2700961-7d8b-435f-9408-9132877ff0fc"
+    ],
+    "protectedDirectoriesAlsoCheckedWithNativeAuthentication": true,
+    "windowsFCheckpointMountedHere": false,
+    "librariesVerifiedThisCycle": 0,
+    "ownersRegisteredThisCycle": 0,
+    "profileBindingsAddedThisCycle": 0,
+    "preparedModesAddedThisCycle": 0,
+    "existingSnesRegistrationPreserved": true,
+    "psxHleApprovalsAdded": 0
+  },
+  "covers": {
+    "refsChanged": false,
+    "coversImported": 0,
+    "romsOpenedHashedOrRebuilt": 0,
+    "catalogRevision": 46,
+    "signedCatalogOrCoverBodiesRetestedThisCycle": false,
+    "reason": "No new covers or catalog publication; previous real proofs retained without claiming a fresh signed response."
+  },
+  "productionChanges": {
+    "dataPublished": false,
+    "apiRestarted": false,
+    "scannerTimerStopped": false,
+    "scannerTerminated": false,
+    "qosReapplied": false,
+    "apkChanged": false,
+    "credentialsImported": false,
+    "newAutomationsCreated": false,
+    "externalMessagesSent": false
+  },
+  "checks": {
+    "existingR141AndQosAppliedReceiptsPresent": true,
+    "runtimeRegistrySchema": "legacy JSON array with 10 entries; distinct from v3 persistent manifest with 39 entries",
+    "otherActiveServicesComparison": {
+      "count": 87,
+      "allSelectedServicesUnchanged": true,
+      "changes": []
+    },
+    "historicalLocalCrlfFiles": "excluded from delivery commits",
+    "historicalLocalCrlfFilesBytePreserved": true
+  },
+  "privateAuditDirectory": "/mnt/DADOS/station-maintenance-20261013-23z",
+  "pending": [
+    "Receber neste Linux o ZIP privado R143 a4ba210580ea68beb0086c2c986c6a884e888a1e9ad599bd7e9d9ae33364f606 (12.161.998 bytes) para conferir seis bibliotecas/vinte dependências e cadastrar quatro owners com os mesmos 78 modos; nenhum byte R143 recebido foi localizado.",
+    "Produção integrar URI e fábrica TLS do relay direto v3 sobre a estável R143 e entregar o APK/kit resultantes; esta manutenção não altera o APK.",
+    "Preservar pendências anteriores: validação física da rota direta/saída prolongada/4–5 jogadores, cancelamento e reautorização Android, comparação pareada, ledger HLE PS1 por edição, código seguro relay409 e owners/overlay NES ainda não entregues."
+  ]
+}
