@@ -1,3 +1,49 @@
+<!-- STATION-R170-SERVER-APPLIED-20261017 -->
+# R170 aplicada e conferida neste servidor
+
+O backup completo foi recebido, usado na compilação e no cadastro. **As etapas do
+servidor desta R170 estão concluídas:** quatro motores novos e492 decisões
+adicionados, API do atualizador ativa e acesso local/público conferido.
+Não pedir kit novamente, recompilar esta candidata sem novo input ou repetir o
+cadastro/restart. Ler r170/server-return.json e r170/server-validation.json.
+
+- Catálogo100/4.744 itens preservado;95→99 motores,17.388→17.880 perfis e12.473→12.965 modos.
+- PSX9fb3e1531246,N6418ac41c7a808,GC/Wii7809f15fe05c. Mesmos cores, controles e
+  modos revisados;23 modos PSX2P/19 edições,17 recusas e53 locais preservados.
+- Fonte servidor`770e9765106403de38114423fec43527c3867517`, DLL`f8303b6dc41216213d8824f59d729f9269499fdade66e4fe9c2abfe79e8bc495`, PID723553,
+  um restart sem sala e zero automáticos. Fonte do APK continua fb80831d79d2f10132454ed0751befdb3e38cbfe.
+- Limite coordenado de perfis18MiB; modos9MiB/manifesto1MiB/256 owners e conteúdo256KiB
+  preservados. O conjunto novo indentado tem17.826.870B,1.078B acima do limite antigo.
+-1472C#/226HTTP/85atualizador/6preparador/2negativos da projeção passaram.
+  Capabilities assinadas84PSX/157N64 local e público, admissões/recusas, PSX2P,
+  N644P e saídaSTATE3 antes de close1000 passaram com clientes sintéticos.
+- Atualizador: três rotas protegidas ativas; teste isolado no mesmo sandbox com
+  Postgres real baixou2.714.221.666B do APK exato, conferiu SHA e recusou outro
+  aparelho e reutilização. Sessão/proof/assinatura/AES existentes; admissão60s.
+  Produção responde assinada sem oferta enquanto não houver APK homologado.
+- Agendador do catálogo recuperado: estava failed/resources desde07h14 após uma
+  tentativa com mount mascarado; o disco atual foi conferido ativo e correto.
+  Nenhum mount, rede, licença, esquema, ROM, capa, save ou outro produto alterado.
+
+**O que exige o celular:** instalação inicial MANUAL do APK R170 nos dois
+aparelhos, seguida de piloto PSX com ambos os anfitriões e conferência da tela de
+atualização Android. Não houve instalação automática ou gameplay Android nesta
+entrega. A R169 não tem atualizador; versões seguintes precisam versionCode>12.
+A confirmação de instalação do Android continua necessária. A oferta geral do
+APK permanece sem versão publicada até esse piloto; a API e o armazenamento
+privado já estão operacionais. As pendências globais anteriores do catálogo e
+capas permanecem registradas e não são falta do backup nem deste cadastro.
+
+Autoridade privada atual: /mnt/DADOS/station-r170-activation-20261017/completed.json.
+APK pronto: /mnt/DADOS/station-build-r170-20261017/final/TurboStations-Premium-R170.apk,
+SHA42533ba2b53532be38872bcb97a07b0647e5a9b6091b565a1af7292f390be1c3,
+kit c559c5e8775e86f82e5f1e192cbcc42952d4c1de2ef180a1f38962d628909e42.
+Não confundir transporte sintético com desempenho físico nem repetir operadores
+históricos. Rollback exige os dados, ferramentas e software compatíveis; módulo
+antigo17MiB sozinho não comporta a projeção indentada nova.
+
+## Histórico preservado
+
 ## Atualização da entrega: candidata R170 compilada
 
 O backup foi recebido e a R170 assinada contém o atualizador e as correções PSX.

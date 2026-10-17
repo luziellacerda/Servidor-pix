@@ -1,0 +1,73 @@
+{
+  "schema": "station.r170.server-return.v1",
+  "revision": "R170",
+  "serverApplied": true,
+  "serverQualified": true,
+  "acceptedKitSha256": "c559c5e8775e86f82e5f1e192cbcc42952d4c1de2ef180a1f38962d628909e42",
+  "apkSha256": "42533ba2b53532be38872bcb97a07b0647e5a9b6091b565a1af7292f390be1c3",
+  "apkSourceCommit": "fb80831d79d2f10132454ed0751befdb3e38cbfe",
+  "serverSourceCommit": "770e9765106403de38114423fec43527c3867517",
+  "dllSha256": "f8303b6dc41216213d8824f59d729f9269499fdade66e4fe9c2abfe79e8bc495",
+  "publication": {
+    "catalogRevision": 100,
+    "catalogItems": 4744,
+    "before": {
+      "engineCount": 95,
+      "profileCount": 17388,
+      "modeCount": 12473
+    },
+    "engineCount": 99,
+    "profileCount": 17880,
+    "modeCount": 12965,
+    "enginesAdded": 4,
+    "profilesAdded": 492,
+    "modesAdded": 492,
+    "previousBindingsPreserved": true,
+    "catalogAndContentIdentityBytesPreserved": true,
+    "rawFileSha256": {
+      "catalog": "5f0ac1dfc7297cb9ab49bfab9e9f19b77955799a077b339967d7c798f3bbe4bb",
+      "profiles": "5f17aa7e960151b9fe03cc5232bdd7d5ad53df86f7446b8c568ec5f3cf24f3b6",
+      "current": "85f4005690bc5f4f84dfa917989e1befdddcb9c1342d9545a9474f2f04d8fc49",
+      "modes": "6b703ae7e804e2f45d950414a20fbfacaecf8fa464ad555ffd3e27fe2ae7b168"
+    }
+  },
+  "exactEngineIds": {
+    "psx": "pcsx-rearmed-ff81ed17-player-v3-9fb3e1531246",
+    "n64": "mupen64plus-ae-33bf7021-n64-v3-18ac41c7a808",
+    "gamecube": "dolphin-5102a033-gamecube-v3-7809f15fe05c",
+    "wii": "dolphin-5102a033-wii-v3-7809f15fe05c"
+  },
+  "modeCounts": {
+    "psx": 93,
+    "n64": 387,
+    "gamecube": 9,
+    "wii": 3
+  },
+  "psxApprovedTwoPlayerModes": 23,
+  "psxApprovedEditions": 19,
+  "psxRefusedModesPreserved": 17,
+  "psxLocalOnly": 53,
+  "apiPid": 723553,
+  "controlledApiRestarts": 1,
+  "automaticRestarts": 0,
+  "profileRegistryByteLimit": 18874368,
+  "modesByteLimit": 9437184,
+  "manifestByteLimit": 1048576,
+  "trustedEngineLimit": 256,
+  "appUpdateServerFeatureDeployed": true,
+  "appUpdateAuthenticatedRoutes": [
+    "POST /v1/station/updates/check",
+    "POST /v1/station/updates/authorize",
+    "GET /v1/station/updates/artifacts/{grantId}"
+  ],
+  "appUpdateRealPostgresAndFullApkStreamVerified": true,
+  "appUpdateGlobalReleaseOffered": false,
+  "initialR170Adoption": "manual, same signed APK on both phones; R169 has no updater",
+  "physicalAndroidGameplayValidated": false,
+  "physicalAndroidInstallerValidated": false,
+  "globalCatalogCoverageUnchanged": {
+    "audit": "R169 catalog audit preserved; no new blanket approvals"
+  },
+  "privateNativeAuthority": "station-r170-activation-20261017/completed.json",
+  "privateFreshAudit": "station-r170-activation-20261017/current-applied-audit.json"
+}
