@@ -2,7 +2,7 @@
 ## GameCube: coleção revisada; R173 corrige falsa sala completa
 
 O proprietário pediu GameCube e relatou Mario Kart como sala completa. O serviço
-mostrava duas vagas, um jogador e nenhuma conexão. O app R172 ignorava o perfil
+mostrava capacidade para dois, um jogador e nenhuma conexão. O app R172 ignorava o perfil
 `dolphin-gamecube-four-ports-v1` na apresentação; reproduzido em sua classe real.
 R173 reconhece somente esse identificador, com os gates de aprovação/contagem/elenco.
 82 verificações JVM e82 no ART de CADA telefone passaram;672 outros casos idênticos.
@@ -21,13 +21,25 @@ APK7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a,
 PSXinput8 não mudou. Kitff4dc7bde0fae8a4506803773d0bc9c5537f454fb337c294c9853d5ff5ba4580.
 IDsPSXa7c5c8aa45d8/N64fcbb4c272d8e/GC-Wii27da50adc1c5.
 
-FASE ATUAL: cadastro R173 preparado, aguardando autenticação Linux; ainda não
-aplicado ou instalado. Projeção4owners+507 decisões/507vínculos, zero linhas de
-modo novas;111motores/19386perfis/13472modos. A salaR172 do usuário precisa ser
-encerrada pelo app antes de instalar; criar sala nova depois com ambosR173.
-Autoridades:station-r173-activation-20261017 e station-r173-usb-install-20261017.
-Ler gamecube-20261017/README.md, CATALOGO.md e server-return.json antes de continuar.
-R172 estável/backup/tag preservados. Sem oferta geral, rede ou API alteradas.
+FASE ATUAL: cadastro R173 aplicado e conferência concluída.111 motores,
+19386 perfis,13472 modos; catálogo100/4744 intacto. Quatro owners e507 decisões/
+vínculos aditivos, sem novas linhas de modo e sem repetir o cadastro anterior.
+Consultas assinadas local e pública:20edições/20admissões/28recusas por rota.
+Relay público com4clientes sintéticos/3links/6conexões autenticadas passou, incluindo
+isolamento e recuperação após perda de um link; PSX/N64/Wii atuais conferidos.
+Isso não executou os quatro emuladores nem comprova gameplay Android.
+
+A prova inicial usou uma geração de sala anterior ao join no leave. A cópia
+corrigida passou; a sala sintética órfã foi limpa com um restart controlado do
+MESMO binário, sem jogo conectado e após janela sem transferência. PID atual
+795999/NRestarts0; DLLf8303b6d e configuração/ferramentas/dados/rede preservados.
+Moto g52 e Samsung A56 atualizados paraR173/15, mesmoAPK7e15d21c lido nos dois;
+UID/dados preservados, abertura sem falha fatal observada. Não reinstalar.
+Autoridades:station-r173-activation-20261017/completed.json e
+station-r173-usb-install-20261017/installed-verified.json.
+Ler gamecube-20261017/README.md, CATALOGO.md e server-return.json.
+Criar sala NOVA de MarioKart após ambosR173; gameplay físico ainda pendente.
+R172 estável/backup/tag preservados, sem oferta geral de APK.
 
 ## Histórico preservado
 

@@ -1,3 +1,40 @@
+<!-- STATION-GAMECUBE-R173-APPLIED-20261017 -->
+## R173 aplicada e instalada: entrada nas salas GameCube corrigida
+
+O erro de Mario Kart como sala completa foi reproduzido e corrigido na classe
+StationGamePlayerInfo, reconhecendo dolphin-gamecube-four-ports-v1 com os
+limites e verificações anteriores. Fonte congelada 69f90f8; APK 7e15d21c,
+versão 15. Seis entradas mudaram; 13.855 entradas e 39 DEX preservados.
+PSX inputDelay8, N64, núcleos e opções reais mantidos. Não recompilar por docs.
+
+Servidor: 111 motores, 19.386 perfis e 13.472 modos; catálogo 100/4.744 intacto.
+Quatro identidades e 507 decisões/vínculos adicionados, zero linhas de modo
+novas. GameCube: 21 registros, 20 visíveis com SHA integral conferido; nove
+jogos/dez modos multiplayer, 12 individuais e duas recusas de integração GBA.
+Cada rota local e pública passou em 20 edições, 20 admissões e 28 recusas.
+O relay com quatro clientes sintéticos, três links e seis conexões passou,
+incluindo isolamento e recuperação. PSX/N64/Wii atuais também conferidos.
+Isso não executou um emulador nem comprova a partida Android.
+
+A prova inicial tentou sair com a geração anterior ao join. Uma cópia
+corrigida passou, sem repetir o cadastro. Um reinício controlado do MESMO
+binário limpou a sala sintética órfã, sem partida conectada e após conferir
+transferências inativas. PID atual 795999; DLL f8303b6d, zero reinício automático;
+dados, ferramentas, configuração e rede preservados.
+
+Moto g52/Android33 e Samsung A56/Android36 já estão na R173/15. O base.apk
+lido em cada aparelho confere com
+7e15d21c04499a77772fd3aa046a27a0d71959974f20df746c7df6b6afc7fd4a.
+UID, dados e assinatura preservados; abertura passou. Não reinstalar, repetir
+cadastros históricos ou solicitar kit/senha por causa deste registro.
+Autoridades privadas: station-r173-activation-20261017/completed.json e
+station-r173-usb-install-20261017/installed-verified.json. Ler o MESMO handoff,
+seção GameCube e gamecube-20261017/server-return.json; no app, GAMECUBE-R173-20261017.md.
+Criar sala NOVA de Mario Kart para confirmar imagem, som, controles e saída.
+R172 segue estável, com checkpoint e tags intactos. Sem oferta geral da R173.
+
+## Histórico preservado
+
 <!-- STATION-APP-UPDATES-20261017 -->
 ## Atualizador interno autorizado, fonte preparada
 

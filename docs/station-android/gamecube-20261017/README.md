@@ -1,5 +1,15 @@
 # GameCube — revisão completa e correção de entrada
 
+## Estado aplicado e instalado
+
+R173/15 cadastrada e instalada no Moto g52 e Samsung A56; ambos os APKs lidos
+conferem com7e15d21c. Provas local/pública das20edições e relay sintético4P
+passaram, com3links/6conexões e recuperação. Consultar o [recibo atual](server-return.json).
+Dados anteriores preservados; um restart do mesmo binário limpou um registro
+sintético deixado por uma falha da prova inicial. Não repetir o cadastro.
+O piloto físico de Mario Kart ainda deve confirmar imagem, som, controles e saída.
+
+
 Base estável R172 preservada. Em 17/10, o proprietário pediu o GameCube e
 relatou Mario Kart como “sala completa” com apenas um jogador.
 
