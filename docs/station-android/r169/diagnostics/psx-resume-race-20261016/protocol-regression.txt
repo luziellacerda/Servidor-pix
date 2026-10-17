@@ -1,0 +1,2 @@
+network_simulation delay0_rtt50_host=30 delay4_rtt50_host=120 delay4_rtt50_guest=119 delay4_rtt150_host=60 durationMs=2000
+checks=202916; result=passed; synthetic_owner_only=true

@@ -1,3 +1,17 @@
+<!-- STATION-PSX-RESUME-PACING-20261016 -->
+## PSX: correção de inicialização e espera de envio preparada
+
+Ler o topo do MESMO handoff e r169/diagnostics/psx-resume-race-20261016.
+Moto+A56 DEX35/runtime R169 iguais conferidos; NATIVE_DATAGRAM no convidado;
+partida ~51FPS/85%, espera25ms medida por Perfetto nos dois. Três correções
+em fonte no Git do app, com62+202916+16090+64+61+192+470 verificações e linkARM64.
+Nenhum APK corrigido instalado, nenhum dado/serviço/rede alterado aqui.
+Produção precisa compilar delta completo, manter XML/CAS/assinatura, regenerar
+identidades/kit exato; instalador MANUAL. Não reutilizar IDs antigos nem
+repetir cadastro/deploy R169 ou declarar candidata homologada. Usuário deixou
+os dois telefones para observação autônoma e volta08h17/10; não solicitar
+comandos repetidos. Respeitar sessões ativas e todas as pendências globais.
+
 <!-- STATION-R169-USER-TEST-SUCCESS-20261016 -->
 ## Resultado informado pelo usuário
 

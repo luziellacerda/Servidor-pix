@@ -178,5 +178,16 @@
       "newInstrumentedGameplayChecksPerformed": false
     }
   ],
-  "userReportedWorkingInTests": true
+  "userReportedWorkingInTests": true,
+  "latestPhysicalObservation": "R169 intermittent startup failure and measured ~51FPS/85% online speed; see postDeliveryDiagnostic",
+  "postDeliveryDiagnostic": {
+    "path": "r169/diagnostics/psx-resume-race-20261016/incident.json",
+    "appSourceFixReady": true,
+    "correctedApkInstalled": false,
+    "correctedPhysicalGameplayValidated": false,
+    "serverRuntimeChangedInDiagnostic": false,
+    "bothObservedPhonesExactR169DexAndRuntimeConfirmed": true,
+    "userAwayUntilLocal": "2026-10-17T08:00:00-03:00",
+    "requiredProducerAction": "Build/sign successor with complete Java/native delta, regenerate exact runtime fingerprints and private kit; manual installer; physical requalification"
+  }
 }

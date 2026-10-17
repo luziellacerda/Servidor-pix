@@ -1,3 +1,37 @@
+<!-- STATION-PSX-RESUME-PACING-20261016 -->
+# PSX: tela preta e lentidão analisadas nos dois aparelhos — 16/10/2026
+
+O [diagnóstico e contrato de recompilação](r169/diagnostics/psx-resume-race-20261016/README.md)
+reúne a prova física, pesquisa, fontes corrigidas e testes. Moto g52 e A56
+com os mesmos DEX35/runtime R169 conferidos. Falha física: convidado registra
+NATIVE_DATAGRAM após sincronizar. Partida que avançou: ~51FPS/~85% do offline.
+Perfetto confirmou esperas periódicas25ms nos dois workers de envio.
+
+**Correção no código, ainda sem APK corrigido instalado:** destravar retomada
+com INPUT já admitido, aguardar FRAME neutro inicial até prime real e acordar
+a saída PSX por notificação nativa. READY/ACK/época/serial, controles e capacidade
+preservados; default Dolphin/TCP preservado. Baseline falha4/candidata passa62;
+protocolo202916,adaptador16090/513,Session64,wake61,PSX192,Dolphin/TCP470 e
+linkARM64API28/JNI16/alinhamento16KiB passaram. Não são gameplay da candidata.
+
+Produção: compilar sucessora preservando XML/CAS R169 e assinatura original;
+regenerar DEX/identidade/runtime/kit privado exato, publicar no fluxo existente
+e atualizar instalador manual. A receita de uma instrução CAS não cobre os
+cinco Java/innerSession e três nativos desta correção. Não reutilizar IDs R169
+com bytes novos. Ler o contrato inteiro antes de compilar ou cadastrar.
+
+Servidor R169, registros, licenças, rede100/800 e serviços preservados, sem
+restart nesta análise. Cadastro do runtime sucessor e prova física dependem
+do kit final e APK correto; não repetir cadastro/deploy R169 nem liberar
+jogos sem prova. O relato positivo anterior permanece histórico.
+
+Observação privada autônoma dos dois USBs e do relay ativa até08h17/10 local,
+com tamanho limitado, sem instalar APK, tocar na UI ou encerrar salas. A
+checagem horária de retornos continua. O usuário estará ausente; não solicitar
+comandos repetidos. Registros da R169 não homologam o APK corrigido pendente.
+
+## Histórico preservado
+
 <!-- STATION-R169-USER-TEST-SUCCESS-20261016 -->
 ## Relato de teste recebido — 16/10/2026
 

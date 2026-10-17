@@ -1,0 +1,182 @@
+{
+  "passed": true,
+  "result": "PASS staggered-resume first=1 epoch=1 hostFrame=241 guestFrame=240\nPASS staggered-resume first=2 epoch=1 hostFrame=240 guestFrame=240\nPASS staggered-resume first=1 epoch=3 hostFrame=241 guestFrame=240\nPASS staggered-resume first=2 epoch=3 hostFrame=240 guestFrame=240\nPASS PSX resume race checks=62 actualJavaAndProtocol=true syntheticOwner=true physicalGameplay=false",
+  "actualJavaAndProtocol": true,
+  "syntheticOwner": true,
+  "physicalGameplay": false,
+  "fixtureShipped": false,
+  "sources": [
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxSession.java",
+      "sha256": "727a62365a34df77960f9d4b8b56dfda0eb5a6342fa3548f35a478e2197ae780"
+    },
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxLaunch.java",
+      "sha256": "bb045d8113c6ca7887a26c79b066a74ca79ad7f340d7032cf9399006db14ad4b"
+    },
+    {
+      "file": "integration/psx-online/java/org/emulationstation/frontend/netplay/StationPsxPolicy.java",
+      "sha256": "602f742ff0b31844305131ea2bb310768f9d5489a41303ad75cb9c2b83591731"
+    },
+    {
+      "file": "integration/psx-online/tests/StationPsxSessionProbe.java",
+      "sha256": "d9190ec8090477b006838dd4b58bb4169cd72ba234713e68bc26ab945a76545c"
+    },
+    {
+      "file": "integration/psx-online/tests/StationPsxResumeRaceProbe.java",
+      "sha256": "06d2fc87f705afde6b52fb0edbac39548cb460d08f3ce45ff6a69985f55f7e09"
+    },
+    {
+      "file": "versions/station-video-room-footer-r124-20261011/java/netplay-src/org/emulationstation/frontend/netplay/StationContentIdentity.java",
+      "sha256": "ad28ac0ef87361e4954e7b76d6180dcb96fe2762877f3ec3d81374df8ba58aeb"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/app/Activity.java",
+      "sha256": "b9dad35aedfe5cc9b788bda16507a8ad8398f499e215045806d23b0eed9e030e"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/app/AlertDialog.java",
+      "sha256": "bba7e0ec53a084c3bfd374eaebb2c65e4d86160dc42fc40b7495f102fdb6ec46"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/app/Dialog.java",
+      "sha256": "67dfedbed0d75d9d48a2f8a42548b984ce791e3316cb8dd6711e104a20970009"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/content/Context.java",
+      "sha256": "ac296447fc33aa8213ae3408604a8ad04a1d833e75b86d4580cb1eb836d391c1"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/content/DialogInterface.java",
+      "sha256": "21d038946cd61eca9670519c383ac907811c1f3bf86dab931f06c110fcef87fc"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/content/Intent.java",
+      "sha256": "8d04e7b92b67de588ae5a77f9bdc21d6ca24d72fe18bc3190b75521ba34a0221"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/content/pm/ApplicationInfo.java",
+      "sha256": "409249cc9a76249abea6da9d0476b3daea9974605c951aade6a26a242ce1595c"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/content/res/AssetManager.java",
+      "sha256": "7c2dcb5e1e9d4297a089e9e0e2e898bb7b3bf6b417f8845ee93e9c54c86e1416"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/os/Build.java",
+      "sha256": "dc22480f84e846a0901d8c18723ffd03bf9fad5378c22899466f86b53b61cb2b"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/os/Bundle.java",
+      "sha256": "579f088cde333139a3abed41aa2b4fe9611b7453e110e948548d20ce687b0793"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/os/Environment.java",
+      "sha256": "4684c9b9264c9127539fb47202b3cf8564c545e60a3df7a3630bb0b5b4ab7017"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/os/Handler.java",
+      "sha256": "657132d3bd0ce99affaafa0927a71788d75dd0a5c209c1a268e47349e8fbc278"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/os/Looper.java",
+      "sha256": "762c9fe2b1fdae53bda22e598b4b3a3a5c0aa82e0237d827307ddf0530321b25"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/os/ResultReceiver.java",
+      "sha256": "1165a8a90ac8e7cb305c3de9a17f6cee28641767e2ed373456b72365879789c9"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/os/SystemClock.java",
+      "sha256": "2200763eacf80e01e598c0ed229aaf23e85eec2412137233c8952c84c4f8bb03"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/util/Log.java",
+      "sha256": "3e04a8d4c1f1c09663702691bc53232e3af33c2d010a5ac55fd69fc0231a6ec3"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/view/Gravity.java",
+      "sha256": "2b9f0799c5f7dbb358dc8d02f393b1876c8d798a963ba388b68c2bcc08d86071"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/view/Window.java",
+      "sha256": "5a4cf27ccca8655a2b4e87c741811b28d15b148b9bec35d7e74c88e738654573"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/view/WindowManager.java",
+      "sha256": "6505f4dcad0b921391b101df7bc305f396295494db5a60a73413d4781c55d840"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/widget/LinearLayout.java",
+      "sha256": "e44c988629186d75b3b01f5d4e77fdfe6ab03007bd942bbd1e6dd250ce239485"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/android/widget/TextView.java",
+      "sha256": "85118590d7fb6f202cfcaf26e4f3655673357c04e5ded902c10050b53c1c8595"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/org/emulationstation/frontend/netplay/StationGameSession.java",
+      "sha256": "3a437af749fe3c10184a007e0123d281e2c02e67b8da0d0d23b012b34113ceb6"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/org/emulationstation/frontend/netplay/StationMultiplayerProfile.java",
+      "sha256": "c378e8bccbcb9971e578e512e4787085a488c752ffc3ca8832aea5811823a989"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/org/emulationstation/frontend/netplay/StationMultiplayerSession.java",
+      "sha256": "764f94a5f9a79df8589f62d1cd6ad640d0a33508bf4e03b000e143b457f586f1"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/org/emulationstation/frontend/netplay/StationOnlineGame.java",
+      "sha256": "dc03d1d1caf08914a34a17eca5a0749f91f6ee87c5410386858d3e37616da25d"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/org/emulationstation/frontend/netplay/StationPsxBridge.java",
+      "sha256": "729ca0cbaea8d2f2533ab7ab0be0a26762f5f06798f0d9e35d1a9cb337416715"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/org/emulationstation/frontend/netplay/StationPsxEndpoint.java",
+      "sha256": "6802b30d2f06fc31b89723e16deaa15a137521cf533f1979ee453959707bbc08"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/org/emulationstation/frontend/netplay/StationPsxOnlineActivity.java",
+      "sha256": "faac084e48eb9ea85d5d4598a18a8d93b5e3d8925cedfa57fa1a01684cfe7e34"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/org/emulationstation/frontend/netplay/StationSessionChannel.java",
+      "sha256": "eb21f2c4f139529b75f839739c88e6c40ce47a5699da77442c9f7b60840fb881"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/org/emulationstation/frontend/netplay/StationSessionLink.java",
+      "sha256": "23442f67d42c791fc403440fa339c078a69f7e45fd74490c9672ae5734826f07"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/org/emulationstation/frontend/station/StationApi.java",
+      "sha256": "9d957059fe75a56b2c8aa7f974a324d83187845a056432a012be37e28fefc3c4"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/org/json/JSONArray.java",
+      "sha256": "1b36d15da2c58107ad29e9a665dc2cf70726684404fb5d059cbb877132d6554b"
+    },
+    {
+      "file": "integration/psx-online/tests/session-fixtures/org/json/JSONObject.java",
+      "sha256": "23e2b1293a842cd7b2b8250b3d3c220e10a91698371aec9186a05096e44a6377"
+    },
+    {
+      "file": "integration/psx-online/tests/resume_race_jni.cpp",
+      "sha256": "c27fbbd6783d8f3463347119e4fd8a08a4402eb758f757d06ee784df36060f2b"
+    },
+    {
+      "file": "integration/psx-online/native/StationPsxProtocol.cpp",
+      "sha256": "f6cba4f4342292ebf29256fc2d860895d7d6ae704d214db503989b1002e79143"
+    },
+    {
+      "file": "integration/psx-online/native/StationPsxSha256.cpp",
+      "sha256": "0459d697ed286705b2fc9c11aa6204aed54e1e05840fd448d8d06e48d491cd3c"
+    },
+    {
+      "file": "integration/psx-online/native/StationPsxProtocol.hpp",
+      "sha256": "11def66295a42c2b04fd5365d46bc913683faba4291729857c2ec02c00364475"
+    }
+  ]
+}

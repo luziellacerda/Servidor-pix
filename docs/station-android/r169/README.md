@@ -1,3 +1,12 @@
+<!-- STATION-PSX-RESUME-PACING-20261016 -->
+## Diagnóstico físico posterior à R169
+
+Ler [a análise e a recompilação necessária](diagnostics/psx-resume-race-20261016/README.md).
+Dois aparelhos conferidos: inicialização intermitente e ~51FPS/~85% do offline;
+25ms de espera periódica comprovados. Correção de fonte com testes passou;
+APK corrigido/kit sucessor e piloto físico ainda pendentes. Servidor R169
+permanece aplicado, sem nova mutação nesta análise. Histórico abaixo preservado.
+
 <!-- STATION-R169-USER-TEST-SUCCESS-20261016 -->
 ## Relato de teste recebido — 16/10/2026
 
