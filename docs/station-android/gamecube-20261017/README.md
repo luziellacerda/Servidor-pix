@@ -1,19 +1,27 @@
-# GameCube — desempenho R174 em comparação
+# GameCube — R176 cadastrada e instalada; comparação de desempenho
 
-R174/16 instalada e conferida no Moto g52 e Samsung A56, mesmo APK6ab94ff0.
-Cadastro e provas local/pública/relay4P concluídos sem restart;115owners,
-19893perfis/13472modos, catálogo102/4844 preservado. UID e dados mantidos.
-A entrada R173 foi confirmada pelo proprietário, mas houve lentidão.
+A R174 entrou no jogo, mas não melhorou a lentidão relatada. O Motorola ficou
+com a thread CPU-GPU principal executando 98,76% da captura. A R176 remove esse
+ensaio, restaurando o DEX35 assinado R173 sobre toda a ampliação da R175. Isso
+retira a imposição de thread única; não declara a lentidão original corrigida.
 
-A candidata testa Core.CPUThread=false somente no GameCube online via camada
-CurrentRun, com leitura nativa Active confirmada. A [observação R173](performance-observation.json)
-localiza a maior espera medida do anfitrião no vídeo. O [Dolphin oficial](https://github.com/dolphin-emu/dolphin/blob/5102a0339c2177575378107b76541e47cc52122d/Source/Android/app/src/main/res/values/strings.xml)
-alerta para problemas de Dual Core no netplay; isso fundamenta a comparação,
-sem provar melhora antes da partida. [Recibo atual](server-return.json).
+R176 / 18 já foi cadastrada e instalada nos dois telefones, com leitura integral
+do APK de cada um e preservação de UID/dados. Fonte ff5022c, APK d444e920,
+kit 38e0b361. As quatro identidades e 507 decisões/vínculos foram aplicados sem
+restart: 123 motores / 20.907 perfis / 13.472 modos / catálogo 102 / 4.844. Rotas assinadas e
+relay de 4 participantes sintético passaram. [Recibo atual](server-return.json).
 
-Falta a comparação física R174 de Mario Kart com sala nova e ambos na mesma
-revisão. PSXinput8/N64/Wii/núcleos/renderer/resolução/buffer/clock preservados.
-R172 permanece estável. Não repetir cadastro/instalação; não publicar oferta geral.
+O offline normal informado foi no Samsung, realmente capturado com CPU/vídeo
+separados; não foi medido o mesmo modo offline no Motorola. A primeira captura
+dele só viu catálogo. Não atribuir FPS do SurfaceFlinger global ao jogo, nem
+comparar cenas diferentes como benchmark. [Medições](performance-observation.json).
+Próximo: Motorola offline, 2 jogadores → VS e sala NOVA R176 nos dois, Moto anfitrião, mesma
+corrida, quadro/som/controles e saída. R172 permanece a estável de recuperação.
+
+O [relatório oficial Dolphin 2609](https://dolphin-emu.org/blog/2026/09/24/dolphin-progress-report-release-2609/)
+explica que netplay determinístico tem custo adicional nos dois modos de CPU;
+isso fundamenta a investigação e não substitui o teste nestes aparelhos.
+Não repetir operadores nem instalar por mera leitura. Não houve oferta geral.
 
 ## Histórico da R173
 

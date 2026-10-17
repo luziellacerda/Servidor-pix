@@ -1,3 +1,55 @@
+<!-- STATION-GAMECUBE-R176-20261017 -->
+## GameCube R176 instalada: retirado o ensaio que não ajudou
+
+R174 foi testada: o proprietário disse que os dois entraram, mas continuaram
+lentos, depois relatou aparente piora. Em uma captura da corrida, a thread
+CPU-GPU principal do Motorola executou 19,740 de 19,987 s (98,76%). As duas
+conexões permaneceram presentes nas 240 amostras. As janelas de imagem ficaram
+em 27–30 FPS; isso não mede VPS ou velocidade nativa e não foi a mesma cena da
+R173. Não converter esse número sozinho em porcentagem de emulação ou melhora.
+
+R176 retira somente Core.CPUThread=false da R174: restaura classes35.dex EXATO
+do APK R173 e remove o helper. 611 classes externas ao delta, 39 DEX e 13.855
+entradas ficaram preservados em relação à R175. Mantém integralmente a R175,
+inclusive catálogo de 20 mil itens, classes28 e frontend nativo, PSX input8/N64/Wii e a
+correção de entrada GameCube. Nenhum ajuste novo de renderer/resolução/clock,
+buffer, sincronização ou diagnóstico por quadro foi acrescentado ao produto.
+
+Fonte compilada ff5022c878782dc2aa86642f226585735e668c4d; APK
+d444e920418d130c2da338f0fc8ff96d2f5cf0484c64f0ed3cf15fda071aba65,
+versionCode 18 / 1.0.8-R176, mesmo certificado/16KiB. Kit privado
+38e0b36165c2f68fd989d82854055b9f55ccacb6be96754e042a80496ae06867.
+Não recompilar, reinstalar ou repetir cadastro por causa deste registro.
+
+Cadastro concluído sem restart: 123 motores / 20.907 perfis / 13.472 modos,
+catálogo 102 / 4.844 preservado. Quatro IDs e 507 decisões/vínculos aditivos;
+aprovações/recusas/individual/controles anteriores conservados. Rotas assinadas
+local e pública: 20 edições / 20 admissões / 28 recusas cada, inclusive revisão
+misturada recusada. Relay sintético com 4 participantes, 3 links e 6 WSS e os outros três owners
+passaram. PID 795999 / DLL f8303b6d, scanner restaurado e licenças de teste removidas.
+
+Moto g52/Android 33 e Samsung A56/Android 36 atualizados de 17 para 18. O base.apk lido
+em CADA telefone confere com d444e920; UID/dados preservados, sem desinstalar
+ou limpar saves. A R175 anterior também foi concluída; não repetir seu operador.
+Autoridades: station-r176-gamecube-activation-20261017/completed.json e
+station-r176-gamecube-usb-install-20261017/installed-verified.json.
+
+O proprietário esclareceu que o teste offline normal foi no SAMSUNG. A captura
+confirmou EmulationActivity, CPU e vídeo separados, zero conexão online e
+estado térmico 1; não forneceu FPS do app nem confirmou a cena/modo visualmente. A
+captura inicial do Motorola só viu catálogo, portanto não comprova seu offline.
+As bibliotecas são Dolphin 2609-7 (offline libdolp e online StationDPL1 separados).
+O fonte oficial documenta custo adicional do modo determinístico no netplay;
+isso não prova a causa específica deste jogo. Foi solicitado Motorola offline, 2 jogadores → VS
+para medir o mesmo aparelho, depois sala NOVA R176 em ambos, na mesma corrida.
+
+A lentidão ORIGINAL ainda exige essa comparação; retirar o ensaio sem melhora
+não a declara resolvida. Ver performance-observation.json/server-return.json
+no MESMO handoff. R172 segue estável/backup/tags intocados, sem oferta geral.
+Preservar jogo em andamento e trabalhos de catálogo de outra tarefa.
+
+## Histórico preservado
+
 <!-- STATION-GAMECUBE-R174-20261017 -->
 ## GameCube R174: candidata para comparar a lentidão
 

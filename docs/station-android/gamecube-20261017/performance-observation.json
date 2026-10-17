@@ -1,34 +1,115 @@
 {
-  "schema": "station.gamecube.performance.r173.observation.v1",
-  "userReportedBothPlaying": true,
-  "userReportedSlowdown": true,
+  "schema": "station.gamecube.performance.r176.observations.v1",
   "game": "Mario Kart: Double Dash!!",
-  "host": "moto g52",
-  "guest": "Samsung A56",
-  "sampleSeconds": 20,
-  "serverSamples": 240,
-  "sameRoomEpochAndPlayingStateThroughout": true,
-  "connectionsThroughout": 2,
-  "motoCpuExecutingSeconds": 14.8302,
-  "motoVideoExecutingSeconds": 14.6337,
-  "motoCpuSleepingSeconds": 4.8799,
-  "motoCpuSleepingWokenByVideoSeconds": 4.813,
-  "motoCpuSleepingWokenByNativeNetworkSeconds": 0.017,
-  "samsungCpuExecutingSeconds": 10.2538,
-  "samsungCpuSleepingWokenByNativeNetworkSeconds": 6.387,
-  "samsungCpuSleepingWokenByVideoSeconds": 3.127,
-  "motoRenderedSurfaceWindowFps": [
-    44.22,
-    45.47
-  ],
-  "samsungRenderedSurfaceFpsMeasured": false,
-  "thermalStatusMoto": 0,
-  "thermalStatusSamsung": 1,
-  "motoThermalHalReady": false,
-  "temporaryMotoDisplay60HzTestImproved": false,
-  "originalDisplaySettingsRestored": true,
-  "sceneIdenticalBetweenSamples": false,
-  "controlledBenchmark": false,
-  "conclusion": "The largest measured host CPU wait was released by video, while the guest waited for native netplay. This observation does not rule out other network delays.",
-  "r174PhysicalImprovementValidated": false
+  "r173": {
+    "schema": "station.gamecube.performance.r173.observation.v1",
+    "userReportedBothPlaying": true,
+    "userReportedSlowdown": true,
+    "game": "Mario Kart: Double Dash!!",
+    "host": "moto g52",
+    "guest": "Samsung A56",
+    "sampleSeconds": 20,
+    "serverSamples": 240,
+    "sameRoomEpochAndPlayingStateThroughout": true,
+    "connectionsThroughout": 2,
+    "motoCpuExecutingSeconds": 14.8302,
+    "motoVideoExecutingSeconds": 14.6337,
+    "motoCpuSleepingSeconds": 4.8799,
+    "motoCpuSleepingWokenByVideoSeconds": 4.813,
+    "motoCpuSleepingWokenByNativeNetworkSeconds": 0.017,
+    "samsungCpuExecutingSeconds": 10.2538,
+    "samsungCpuSleepingWokenByNativeNetworkSeconds": 6.387,
+    "samsungCpuSleepingWokenByVideoSeconds": 3.127,
+    "motoRenderedSurfaceWindowFps": [
+      44.22,
+      45.47
+    ],
+    "samsungRenderedSurfaceFpsMeasured": false,
+    "thermalStatusMoto": 0,
+    "thermalStatusSamsung": 1,
+    "motoThermalHalReady": false,
+    "temporaryMotoDisplay60HzTestImproved": false,
+    "originalDisplaySettingsRestored": true,
+    "sceneIdenticalBetweenSamples": false,
+    "controlledBenchmark": false,
+    "conclusion": "The largest measured host CPU wait was released by video, while the guest waited for native netplay. This observation does not rule out other network delays.",
+    "r174PhysicalImprovementValidated": false
+  },
+  "r174": {
+    "ownerAnswer": "Entraram, mas continua lento",
+    "ownerAdditionalReport": "parece que ficou mais lento",
+    "physicalImprovementValidated": false,
+    "mainCpuPolicyMarkerVerifiedInBothRealProcesses": true,
+    "motorolaMainCpuThread": "CPU-GPU thread",
+    "motorolaMainCpuRunningSeconds": 19.739908,
+    "traceSeconds": 19.986968,
+    "motorolaMainCpuRunningFraction": 0.9876389455369118,
+    "motorolaRenderedSurfaceWindowFps": [
+      29.970200372881813,
+      27.30127849475578
+    ],
+    "samsungMainCpuRunningSeconds": 12.74956,
+    "samsungMainCpuNativeClientWakesSleepSeconds": 6.968153,
+    "serverSamples": 240,
+    "connectionsThroughout": 2,
+    "renderedSurfaceFpsIsNotNativeVpsOrSpeed": true,
+    "sameSceneControlledBenchmark": false,
+    "conclusion": "Single-core trial did not solve the reported problem. Measured host CPU thread was almost continuously executing. R176 removes this trial."
+  },
+  "r175OfflineSamsung": {
+    "ownerAnswer": "Offline fica normal",
+    "ownerClarification": "jongando off line no sansung",
+    "versionCode": 17,
+    "installedApkSha256": "c55017acd4dc7b866bb0b2248fcf4103c9936a80f4b98b815b24478bb0adbf9a",
+    "utcStarted": "2026-10-17T20:22:23.651768+00:00",
+    "utcEnded": "2026-10-17T20:22:57.073773+00:00",
+    "emulationActivityObservedBeforeAndAfter": true,
+    "mainCpuThread": "CPU thread",
+    "mainVideoThread": "Video thread",
+    "traceSeconds": 19.986358,
+    "mainCpuRunningSeconds": 7.521226,
+    "mainVideoRunningSeconds": 9.314484,
+    "serverSamples": 240,
+    "onlineConnectionsThroughout": 0,
+    "thermalStatusBefore": 1,
+    "thermalStatusAfter": 1,
+    "renderedAppFpsMeasured": false,
+    "frameTimelineDisplaySamplesAreNotAppFrames": true,
+    "modeRequested": "2P VS offline",
+    "modeAndSceneIndependentlyVerified": false,
+    "motorolaOfflineGameplayCaptured": false,
+    "firstMotoCaptureOnlyObservedCatalog": true,
+    "sameDeviceVersionModeAndSceneControlledComparison": false,
+    "inputsOrSettingsChanged": false
+  },
+  "emulatorLibraries": {
+    "regularOffline": {
+      "name": "libdolp.so",
+      "sha256": "a436ab9d34e3e5895e3a5459cc140ce1832299fc492d47f04e7d6ba07d248c1d",
+      "embeddedRevisionString": "Dolphin 2609-7"
+    },
+    "stationOnline": {
+      "name": "libstation_dolphin_online.so",
+      "sha256": "3438ce727ab3a0d6f6fb4aa2a1b8068be5d17360e6c7aa0b8ff3594dbfde7c29",
+      "embeddedRevisionString": "Dolphin 2609-7-station-dpl1-r126"
+    },
+    "selectorUsesDistinctLibraryAndSessionDirectory": true,
+    "sourceCodeLibrarySelectionVerified": true,
+    "liveProcessMemoryMapsReadable": false
+  },
+  "remainingDiagnosis": "Measure the same race after removing the unsuccessful override. Samsung offline normal does not establish full-speed online emulation on Motorola. Do not infer native speed from surface FPS, identify incomplete library, or change synchronization/rendering settings without evidence.",
+  "sources": [
+    {
+      "title": "Dolphin 2609 Android NetPlay and deterministic emulation",
+      "url": "https://dolphin-emu.org/blog/2026/09/24/dolphin-progress-report-release-2609/"
+    },
+    {
+      "title": "Dolphin NetPlay Guide",
+      "url": "https://dolphin-emu.org/docs/guides/netplay-guide/"
+    },
+    {
+      "title": "Pinned deterministic GPU implementation",
+      "url": "https://github.com/dolphin-emu/dolphin/blob/5102a0339c2177575378107b76541e47cc52122d/Source/Core/VideoCommon/Fifo.cpp"
+    }
+  ]
 }
