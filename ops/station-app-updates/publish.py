@@ -190,7 +190,7 @@ def publish(args):
             raise ValueError('Release notes are invalid or too long')
         descriptor = dict(schemaVersion=1, packageName=PACKAGE, **release,
                           abi='arm64-v8a', notes=notes, sizeBytes=before.st_size)
-        if not 1 <= descriptor['versionCode'] <= 2100000000 or not 28 <= descriptor['minimumSdk'] <= 1000 or not 1 <= units(descriptor['versionName']) <= 100 or any(unicodedata.category(c)=='Cc' for c in descriptor['versionName']):
+        if not 1 <= descriptor['versionCode'] <= 2100000000 or not 26 <= descriptor['minimumSdk'] <= 1000 or not 1 <= units(descriptor['versionName']) <= 100 or any(unicodedata.category(c)=='Cc' for c in descriptor['versionName']):
             raise ValueError('APK version metadata is invalid')
         fd, temporary_name = tempfile.mkstemp(prefix='.incoming-', dir=root / 'apks')
         temporary = Path(temporary_name)

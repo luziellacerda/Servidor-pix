@@ -1,3 +1,34 @@
+<!-- STATION-R170-LOCAL-BUILD-20261017 -->
+## R170 compilada e assinada neste Linux — candidata, sem implantação
+
+O backup privado R169 foi recebido e usado:11 insumos críticos e dois bundles
+conferidos, certificado original verificado. Fonte produtiva `fb80831d79d2f10132454ed0751befdb3e38cbfe`;
+APK `42533ba2b53532be38872bcb97a07b0647e5a9b6091b565a1af7292f390be1c3` (2714221666B), v2/v3,16KiB, versão interna12/SDK26/34.
+Retorno PSX `ec2c693` e atualizador incluídos; XML/CAS, cores e demais componentes
+preservados. Sete entradas substituídas,13.854/38DEX preservados,803 classes
+externas ao delta intactas;51.632 classes únicas/969 referências. R168/CAS
+inválido rejeitado. Backend85/Java45/receitas8/publicador13 passaram, sem fixtures
+no APK. Desempenho/gameplay/instalador Android não foram homologados.
+
+Kit exato `c559c5e8775e86f82e5f1e192cbcc42952d4c1de2ef180a1f38962d628909e42`:58 arquivos/27ELF, disponível privadamente em
+`station-build-r170-20261017/private-server-kit`; não pedir R169 ou backup de novo.
+Ler `r170/README.md` e `r170/build-receipt.json` para IDs, provas e sequência.
+Ajuste26 do backend/publicador está em fonte; não foi implantado. Novos owners
+não cadastrados, APK não publicado/instalado. Instalador Windows preparado,
+sem executar EXE/PowerShell no Linux ou trocar o permanente da outra máquina.
+Servidor permanece R169/PID238611/NRestarts0; zero mudanças de banco, rede,
+capas, ROMs, saves, licenças, salas ou outros produtos nesta entrega.
+
+Próximo: baseline protegida fresca, cadastro aditivo das quatro identidades e
+492 decisões existentes sem copiar aprovações por nome; limites17/9/1MiB e256
+owners. Depois capabilities, instalação MANUAL e piloto com ambos os anfitriões;
+só então oferta do APK pelo atualizador. Primeira adoção é manual: R169 não tem
+esse recurso. Não executar operadores R169 históricos, recompilar a candidata
+sem novo input ou confundir build com instalação/produção. Pendências globais
+anteriores mantidas. Autoridade privada `station-build-r170-20261017`.
+
+## Histórico preservado
+
 <!-- STATION-APP-UPDATES-20261017 -->
 # Atualizador interno protegido preparado — 17/10/2026
 

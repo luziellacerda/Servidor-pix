@@ -43,6 +43,11 @@ async Task Reject(Func<Task> action,int status,string name) {
 }
 string Grant(object envelope)=>Verified(envelope).GetProperty("grantId").GetString()!;
 try {
+    Publish(release with {MinimumSdk=26});
+    Check(Verified(await updates.CheckAsync("valid",Request() with {AndroidSdk=26},default)).GetProperty("available").GetBoolean(),"received SDK26 base can update without changing SDK");
+    try {StationAppUpdateCatalog.Validate(release with {MinimumSdk=25});throw new Exception("SDK25 accepted");}
+    catch(InvalidDataException) {Check(true,"unsupported SDK25 metadata refused");}
+    Publish(release);
     var checkRequest=Request(); var response=Verified(await updates.CheckAsync("valid",checkRequest,default));
     Check(response.GetProperty("available").GetBoolean(),"new version offered");
     Check(response.GetProperty("requestId").GetString()==checkRequest.RequestId,"fresh check request bound");

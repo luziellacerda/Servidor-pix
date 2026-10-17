@@ -1,3 +1,9 @@
+## Atualização da entrega: candidata R170 compilada
+
+O backup foi recebido e a R170 assinada contém o atualizador e as correções PSX.
+Leia [R170](../r170/README.md) e seu recibo: cadastro/deploy/instalação/piloto
+ainda pendentes. A descrição e o recibo iniciais abaixo são históricos de preparo.
+
 # Atualizações protegidas do aplicativo — 17/10/2026
 
 **Implementação preparada e testada em código; não publicada no serviço nem
@@ -52,7 +58,7 @@ Resposta `no-store`, MIME APK, tamanho exato e redirects recusados. GET com
 query/Range é recusado; após falha, uma nova tentativa obtém outro grant e
 reinicia a transferência. Este primeiro protocolo não promete retomada parcial.
 
-Corpo de8KiB; manifesto privado16KiB; APK até8GiB; ARM64/SDK28 ou superior.
+Corpo de8KiB; manifesto privado16KiB; APK até8GiB; ARM64/SDK26 ou superior; manter o SDK declarado pelo APK.
 Limite por origem configurável em `Station:Updates:OriginRequestsPerMinute`
 (padrão300, faixa30–3000). Não há limitador artificial de bytes/s nesta rota.
 

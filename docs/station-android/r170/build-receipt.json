@@ -1,0 +1,83 @@
+{
+  "schema": "station.r170.compilation-delivery.v1",
+  "createdAtUtc": "2026-10-17T13:55:36.455952+00:00",
+  "status": "signed-candidate-not-deployed",
+  "appProductiveSourceCommit": "fb80831d79d2f10132454ed0751befdb3e38cbfe",
+  "buildPolicyCommit": "7d66818b57adffb422fc7cc1f16153fecec02b1e",
+  "baselineApkSha256": "68521db5fbd46d6da9895c4d9b291febda5597c82ba3b51935ccd7e98520877d",
+  "apkSha256": "42533ba2b53532be38872bcb97a07b0647e5a9b6091b565a1af7292f390be1c3",
+  "apkBytes": 2714221666,
+  "versionCode": 12,
+  "minimumSdk": 26,
+  "targetSdk": 34,
+  "signatureCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+  "v2": true,
+  "v3": true,
+  "zipAlignment16KiB": true,
+  "criticalBackupInputsVerified": 11,
+  "completeGitBundlesVerified": 2,
+  "allHistorical43ApkHashesRepeatedHere": false,
+  "changedApkEntries": [
+    "AndroidManifest.xml",
+    "assets/station-online/engines.json",
+    "classes28.dex",
+    "classes35.dex",
+    "lib/arm64-v8a/libstation_dolphin_runtime.so",
+    "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+    "lib/arm64-v8a/libstation_psx_online.so"
+  ],
+  "preservedEntryCount": 13854,
+  "preservedDexPartitions": 38,
+  "unrelatedClassesInChangedPartitionsPreserved": 803,
+  "finalUniqueTypes": 51632,
+  "changedOwnerMethodReferencesChecked": 969,
+  "knownR168BadCasTargetRejected": true,
+  "privateKit": {
+    "sha256": "c559c5e8775e86f82e5f1e192cbcc42952d4c1de2ef180a1f38962d628909e42",
+    "bytes": 15026006,
+    "files": 58,
+    "elfFiles": 27,
+    "engineIds": {
+      "psx": "pcsx-rearmed-ff81ed17-player-v3-9fb3e1531246",
+      "n64": "mupen64plus-ae-33bf7021-n64-v3-18ac41c7a808",
+      "gamecube": "dolphin-5102a033-gamecube-v3-7809f15fe05c",
+      "wii": "dolphin-5102a033-wii-v3-7809f15fe05c"
+    },
+    "recipeSha256": "e3fcbd380bca085506c3515155604451543fa5c52859be27d6d7651eb964e6ae"
+  },
+  "tests": {
+    "javaUpdater": 45,
+    "serverUpdater": 85,
+    "sourceRecipes": 8,
+    "publisher": 13,
+    "realSdkD8ApkSignatureAndAlignment": true,
+    "physicalAndroidInstallerOrGameplay": false,
+    "realProductionDatabaseExercisedByUpdateTests": false,
+    "fixturesPackaged": false,
+    "compileUsesPanelFixture": false
+  },
+  "productionUnchanged": {
+    "apiPid": 238611,
+    "restartCount": 0,
+    "registeredRevision": "R169",
+    "serverCodeDeployed": false,
+    "newOwnersRegistered": false,
+    "apkUpdatePublished": false,
+    "phonesInstalled": false,
+    "networkRomCoverLicenseSaveChanges": false
+  },
+  "windowsInstaller": {
+    "preparedFromReceivedBootstrap": true,
+    "apkDuplicated": false,
+    "runtimeValidationPerformed": false,
+    "permanentInstallerUpdated": false
+  },
+  "stable": false,
+  "pending": [
+    "Fresh protected baseline and additive registration of four exact R170 IDs and existing edition/mode bindings.",
+    "Deploy compatible updater routes and SDK26 publisher deliberately; retain current rollback/limits, no active-room interruption.",
+    "Validate Windows installer on Windows or approved manual installation path; install candidate manually preserving data.",
+    "Observe PSX picture/audio/independent controls/host exit on both roles; record installed APK hashes and measured pacing.",
+    "Only after the pilot, publish a vetted APK into private update storage; R169 has no updater and first adoption is manual."
+  ]
+}

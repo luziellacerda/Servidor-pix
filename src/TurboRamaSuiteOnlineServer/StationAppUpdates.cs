@@ -34,7 +34,7 @@ public sealed class StationAppUpdateCatalog(string? directory, bool enabled)
             string.IsNullOrWhiteSpace(r.VersionName) || r.VersionName.Length > 100 ||
             r.VersionName.Any(char.IsControl) || !Hex(r.Sha256) || r.ReleaseId != r.Sha256 ||
             r.SizeBytes is < 1024 or > MaximumApkBytes || !Hex(r.CertificateSha256) ||
-            r.MinimumSdk is < 28 or > 1000 || r.Abi != "arm64-v8a" ||
+            r.MinimumSdk is < 26 or > 1000 || r.Abi != "arm64-v8a" ||
             r.Notes is null || r.Notes.Length > 2000 || r.Notes.Any(c => char.IsControl(c) && c is not '\n' and not '\r' and not '\t'))
             throw new InvalidDataException("Invalid Station app release.");
     }

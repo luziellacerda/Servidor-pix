@@ -47,7 +47,7 @@ def main():
         with zipfile.ZipFile(jar,'w') as archive:
             for p in classes.rglob('*.class'):archive.write(p,p.relative_to(classes).as_posix())
         dex=root/'dex';dex.mkdir()
-        run(['java','-cp',tools/'lib/d8.jar','com.android.tools.r8.D8','--release','--min-api','28','--lib',android,'--output',dex,jar])
+        run(['java','-cp',tools/'lib/d8.jar','com.android.tools.r8.D8','--release','--min-api','26','--lib',android,'--output',dex,jar])
         elf=bytearray(64);elf[:7]=b'\x7fELF\x02\x01\x01';struct.pack_into('<HHI',elf,16,3,183,1);struct.pack_into('<H',elf,52,64)
         core, runtime=bytes(elf)+b'synthetic core',bytes(elf)+b'synthetic runtime'
         identity=dict(engineId='synthetic-v3-engine',library='libsynthetic_core.so',runtimeLibrary='libsynthetic_runtime.so',coreSha256=hashlib.sha256(core).hexdigest(),runtimeSha256=hashlib.sha256(runtime).hexdigest(),recoveryProtocol='station-stream.v3',launchReady=True)
@@ -55,7 +55,7 @@ def main():
         def apk(version,key=0,components=True):
             manifest=root/('manifest-'+str(version)+'-'+str(key)+'.xml')
             declarations=''.join('<'+tag+' android:name="org.emulationstation.frontend.station.'+name+'" android:exported="false" />' for tag,name in zip(('activity','service','receiver'),names[:3])) if components else ''
-            manifest.write_text('<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="'+publisher.PACKAGE+'" android:versionCode="'+str(version)+'" android:versionName="Lab '+str(version)+'"><uses-sdk android:minSdkVersion="28" android:targetSdkVersion="28"/>'+
+            manifest.write_text('<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="'+publisher.PACKAGE+'" android:versionCode="'+str(version)+'" android:versionName="Lab '+str(version)+'"><uses-sdk android:minSdkVersion="26" android:targetSdkVersion="28"/>'+
                 ''.join('<uses-permission android:name="android.permission.'+p+'"/>' for p in ('REQUEST_INSTALL_PACKAGES','FOREGROUND_SERVICE','FOREGROUND_SERVICE_DATA_SYNC'))+
                 '<application android:label="Do not install synthetic lab">'+declarations+'</application></manifest>')
             unsigned=root/('unsigned-'+str(version)+'-'+str(key)+'.apk')
