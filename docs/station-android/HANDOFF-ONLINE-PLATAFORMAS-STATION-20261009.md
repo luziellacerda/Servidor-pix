@@ -1,25 +1,43 @@
-<!-- STATION-R172-CANDIDATE-PREPARED-20261017 -->
-## R172 preparada; ainda não aplicada nem instalada
+<!-- STATION-R172-PHYSICAL-IMPROVEMENT-20261017 -->
+## R172 nos dois aparelhos: melhora PSX medida e relatada
 
-Candidata PSX com antecedência assinada4→8 quadros, mesmo core/BIOS/opções e
-relógio; cerca de67ms extras de atraso nominal no controle. Modelo reproduziu a
-limitação, sem comprovar correção física. Não habilitou frameskip ou45fps.
-Fonte congelada8317792; APK4a926279, versionCode14, certificado original;
-13.855 entradas e39 DEX preservados. Recibos em r172/server-return.json.
+A R172 foi cadastrada, instalada e testada em Capcom vs.SNK VS com Moto g52
+e Samsung A56. Ambos os base.apk lidos conferem com
+`4a92627952a4f9673ff402667825fcb1f926aaf85a44bef7882559f000c56c5b`, versão14;
+mesmo certificado, UID e dados preservados. Não reinstalar nem recadastrar.
+Fonte de compilação congelada8317792, distinta do HEAD de documentação.
 
-A R171 continua instalada nos dois celulares e cadastrada no servidor. Não
-interromper partida ativa. Há uma única autenticação nativa do Linux pendente
-em /mnt/DADOS/station-r172-activation-20261017/authentication-request.json;
-conferir authentication-result/native-started/data-applied/completed antes de
-qualquer ação. Não executar novamente operadores antigos nem iniciar outro
-cadastro concorrente. Preparação validou4 owners+492 perfis e extensão de492
-listas de owners; decisões/modos anteriores intactos, sem restart da API.
+Comparação física: R171 ~46,2 quadros nativos equivalentes/s e áudio~77%;
+R172 ~59,87/59,89 e áudio99,66%/99,90%, zero descarte de áudio observado.
+Janela nova23,93s/240 amostras do servidor, mesma sala/epoch/state2; traces e
+contadores de áudio dos dois. O contador de bytes não mede FPS renderizado.
+Moto thermal0 nas duas observações; A56 passou de3 para2, diferença a registrar
+na comparação, sem atribuir causa exclusiva à temperatura. O proprietário
+relatou exatamente: “tivemos grandes melhoras”. Não converter esse relato em
+confirmação de todos os controles/saída, todos os jogos ou ambos os anfitriões.
 
-APK: /mnt/DADOS/station-build-r172-20261017/final/TurboStations-Premium-R172.apk.
-Dados de produção atuais:103 owners/18.372 perfis/13.457 modos, catálogo100/4.744.
-Depois da aplicação real, conferir capabilities/admissão/recusas assinadas e
-instalar os dois somente após a saída da partida. Medir imagem, áudio,
-controles, saída e temperatura; não promover a estável pelo modelo ou build.
+Único delta funcional: PSX inputDelay4→8, +67ms nominais de atraso no controle.
+Sem frameskip/45fps ou mudança de core/BIOS/render/áudio/thread/clock. Modelo do
+protocolo real reproduziu a limitação; nova medição sustenta melhora nesta
+partida. N64 mantém sua lógica e o relato anterior de funcionamento.
+
+Servidor efetivo:107 owners/18.864 perfis/13.457 modos, catálogo100/4.744 intacto;
+4 owners+492 perfis e492 engineIds estendidos, zero novas linhas de modo.
+Preservadas aprovações/recusas/decisões anteriores. Consultas assinadas local e
+pública paraPSX/N64/GC/Wii, oito admissões e dez recusas passaram. PID723553
+intacto/sem restart; scanner timer ativo restaurado. Nenhuma rede/QoS alterada.
+
+Autoridades privadas concluídas, não repetir operadores históricos:
+
+- /mnt/DADOS/station-r172-activation-20261017/completed.json
+- /mnt/DADOS/station-r172-usb-install-20261017/installed-verified.json
+- /mnt/DADOS/station-r172-online-comparison-20261017/sanitized-comparison.json
+- /mnt/DADOS/station-build-r172-20261017/final/final-apk-proof.json
+
+Retorno consolidado e evidência sanitizada em r172/server-return.json.
+Não há senha Linux ou instalação pendente. Preservar a partida ativa; o usuário
+não pediu encerrá-la. Sem oferta geral do atualizador ou promoção estável.
+Controles/saída e abrangência de jogos continuam com limites acima documentados.
 
 ## Histórico preservado
 

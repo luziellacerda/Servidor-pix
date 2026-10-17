@@ -36,3 +36,16 @@ Instalar a mesma candidata nos dois aparelhos somente fora da partida e
 preservando os dados. Registrar velocidade nativa, áudio, controles, saída e
 temperatura. Não publicar no atualizador geral nem promover a estável antes
 da comparação física. A R171 atual dos dois teve desempenho reprovado.
+
+## Aplicação e observação efetivas
+
+A autenticação Linux concluiu. Cadastro107/18.864/13.457 efetivo, capabilities,
+admissões e recusas local/públicas passaram sem restart. Ambos os telefones
+receberam o APK exato14 com hash e UID conferidos. Não repetir o operador.
+
+Piloto Capcom vs.SNK VS:23,93s,240 amostras, avanço nativo equivalente59,87/59,89
+quadros/s e áudio99,66%/99,90%, contra46,2/~77% na R171. O usuário relatou
+“tivemos grandes melhoras”. A56thermal2, contra3 anteriormente; Moto0 em ambas.
+Não é uma medida direta de FPS renderizado nem homologação de todos os jogos,
+controles/saída ou ambos os anfitriões. Ver server-return.json. A partida foi
+preservada; sem promoção estável ou publicação geral do atualizador.

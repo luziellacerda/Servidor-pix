@@ -1,7 +1,7 @@
 {
   "schema": "station.r172.server-return.v1",
-  "utc": "2026-10-17T17:29:16.218301+00:00",
-  "status": "candidate-ready-native-linux-authentication-pending",
+  "utc": "2026-10-17T17:46:50.004250+00:00",
+  "status": "physical-psx-improvement-measured-and-owner-reported",
   "revision": "R172",
   "sourceCommit": "8317792fa231831f788cb10b7061bb11bc9fa97d",
   "serverOperatorSourceCommit": "09954af1901d6ae5a9e34d29ed8d4dfd6b66b67a",
@@ -127,11 +127,11 @@
     "serverApplied": false,
     "physicalGameplayValidated": false
   },
-  "serverApplied": false,
-  "installedOnMeasuredPhones": false,
+  "serverApplied": true,
+  "installedOnMeasuredPhones": true,
   "physicalPerformanceApproved": false,
-  "currentlyInstalledRevision": "R171",
-  "currentlyAppliedServerRevision": "R171",
+  "currentlyInstalledRevision": "R172",
+  "currentlyAppliedServerRevision": "R172",
   "functionalDelta": {
     "psxInputDelayFrames": {
       "before": 4,
@@ -193,5 +193,222 @@
     "thermalSoleCauseProven": false,
     "relayPreviousMaximumInternalForwardMilliseconds": 0.442,
     "renderedFpsMeasuredByThisByteCounter": false
+  },
+  "nativePublication": {
+    "passed": true,
+    "counts": {
+      "catalogRevision": 100,
+      "catalogItems": 4744,
+      "engines": 107,
+      "profiles": 18864,
+      "modes": 13457
+    },
+    "exactEngineIds": {
+      "psx": "pcsx-rearmed-ff81ed17-player-v3-7a14d3a4d304",
+      "n64": "mupen64plus-ae-33bf7021-n64-v3-8cfc9b1a45d4",
+      "gamecube": "dolphin-5102a033-gamecube-v3-ff5113148661",
+      "wii": "dolphin-5102a033-wii-v3-ff5113148661"
+    },
+    "profileSha256": {
+      "psx": "86f543015f84ca292c6853d10cbc58e4869b825520dbff117a4868bf18637683",
+      "n64": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
+      "gamecube": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+      "wii": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed"
+    },
+    "previousBindingsPreserved": true,
+    "previousModeDecisionsPreserved": true,
+    "preparedModeRowsAdded": 0,
+    "preparedModeEngineBindingsAdded": 492,
+    "apiRestarted": false,
+    "apiPid": "723553",
+    "scannerTimerRestored": true,
+    "localAndPublicSignedProof": {
+      "passed": true,
+      "routes": {
+        "local": {
+          "passed": true,
+          "checks": [
+            {
+              "platform": "psx",
+              "engineId": "pcsx-rearmed-ff81ed17-player-v3-7a14d3a4d304",
+              "signedExactProfiles": 1,
+              "exactRoomAdmission": true,
+              "syntheticTwoSlots": true
+            },
+            {
+              "platform": "n64",
+              "engineId": "mupen64plus-ae-33bf7021-n64-v3-8cfc9b1a45d4",
+              "signedExactProfiles": 2,
+              "exactRoomAdmission": true,
+              "syntheticTwoSlots": false
+            },
+            {
+              "platform": "gamecube",
+              "engineId": "dolphin-5102a033-gamecube-v3-ff5113148661",
+              "signedExactProfiles": 1,
+              "exactRoomAdmission": true,
+              "syntheticTwoSlots": false
+            },
+            {
+              "platform": "wii",
+              "engineId": "dolphin-5102a033-wii-v3-ff5113148661",
+              "signedExactProfiles": 1,
+              "exactRoomAdmission": true,
+              "syntheticTwoSlots": false
+            }
+          ],
+          "refusals": [
+            "STATION_MULTIPLAYER_GAME_MISMATCH",
+            "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+            "STATION_MULTIPLAYER_PROFILE_UNAPPROVED",
+            "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+            "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+          ]
+        },
+        "public": {
+          "passed": true,
+          "checks": [
+            {
+              "platform": "psx",
+              "engineId": "pcsx-rearmed-ff81ed17-player-v3-7a14d3a4d304",
+              "signedExactProfiles": 1,
+              "exactRoomAdmission": true,
+              "syntheticTwoSlots": true
+            },
+            {
+              "platform": "n64",
+              "engineId": "mupen64plus-ae-33bf7021-n64-v3-8cfc9b1a45d4",
+              "signedExactProfiles": 2,
+              "exactRoomAdmission": true,
+              "syntheticTwoSlots": false
+            },
+            {
+              "platform": "gamecube",
+              "engineId": "dolphin-5102a033-gamecube-v3-ff5113148661",
+              "signedExactProfiles": 1,
+              "exactRoomAdmission": true,
+              "syntheticTwoSlots": false
+            },
+            {
+              "platform": "wii",
+              "engineId": "dolphin-5102a033-wii-v3-ff5113148661",
+              "signedExactProfiles": 1,
+              "exactRoomAdmission": true,
+              "syntheticTwoSlots": false
+            }
+          ],
+          "refusals": [
+            "STATION_MULTIPLAYER_GAME_MISMATCH",
+            "STATION_MULTIPLAYER_CAPACITY_UNSUPPORTED",
+            "STATION_MULTIPLAYER_PROFILE_UNAPPROVED",
+            "STATION_MULTIPLAYER_GAME_UNCLASSIFIED",
+            "STATION_MULTIPLAYER_PROFILE_UNAPPROVED"
+          ]
+        }
+      },
+      "syntheticLicensesRemoved": true,
+      "realAccountsChanged": false,
+      "physicalGameplayValidated": false
+    }
+  },
+  "installation": {
+    "passed": true,
+    "revision": "R172",
+    "bothPhonesSameApk": true,
+    "installedApkSha256": "4a92627952a4f9673ff402667825fcb1f926aaf85a44bef7882559f000c56c5b",
+    "phones": [
+      {
+        "passed": true,
+        "phone": "moto_g52",
+        "model": "moto g52",
+        "androidSdk": 33,
+        "versionCode": 14,
+        "versionName": "1.0.8-R172",
+        "installedApkSha256": "4a92627952a4f9673ff402667825fcb1f926aaf85a44bef7882559f000c56c5b",
+        "originalUidPreserved": true,
+        "uninstalled": false,
+        "dataCleared": false,
+        "physicalGameplayValidated": false
+      },
+      {
+        "passed": true,
+        "phone": "SM_A566E",
+        "model": "SM-A566E",
+        "androidSdk": 36,
+        "versionCode": 14,
+        "versionName": "1.0.8-R172",
+        "installedApkSha256": "4a92627952a4f9673ff402667825fcb1f926aaf85a44bef7882559f000c56c5b",
+        "originalUidPreserved": true,
+        "uninstalled": false,
+        "dataCleared": false,
+        "physicalGameplayValidated": false
+      }
+    ],
+    "dataPreserved": true,
+    "physicalGameplayValidated": false
+  },
+  "physicalPerformanceImprovementObserved": true,
+  "physicalPilot": {
+    "measured": {
+      "revision": "R172",
+      "readOnlyExistingMatch": true,
+      "gameInputsInjected": false,
+      "captureUtcStarted": "2026-10-17T17:44:56.241622+00:00",
+      "captureUtcEnded": "2026-10-17T17:45:20.280894+00:00",
+      "serverSamples": 240,
+      "stableServerSamples": 240,
+      "phones": [
+        {
+          "phone": "moto_g52",
+          "audioCounterIntervals": 3,
+          "nativeAudioSamplesPerSecondMean": 43949.25435307494,
+          "nativeAudioSpeedPercent": 99.65817313622435,
+          "expectedCoreAudioSampleRate": 44100,
+          "audioDropsLastObserved": 0,
+          "thermalStatusBefore": 0,
+          "thermalStatusAfter": 0
+        },
+        {
+          "phone": "SM_A566E",
+          "audioCounterIntervals": 3,
+          "nativeAudioSamplesPerSecondMean": 44057.88357726537,
+          "nativeAudioSpeedPercent": 99.90449790763122,
+          "expectedCoreAudioSampleRate": 44100,
+          "audioDropsLastObserved": 0,
+          "thermalStatusBefore": 2,
+          "thermalStatusAfter": 2
+        }
+      ],
+      "physicalControlsAndSubjectiveAudioNeedHumanReport": true,
+      "stablePromoted": false,
+      "serverWindowSeconds": 23.92690632501035,
+      "nativeFrameRateEquivalent": {
+        "host": {
+          "acceptedBytesDelta": 111734,
+          "expectedStableBytesPerNativeFrame": 78,
+          "nativeFrameRateEquivalent": 59.86930194940527
+        },
+        "guest": {
+          "acceptedBytesDelta": 108908,
+          "expectedStableBytesPerNativeFrame": 76,
+          "nativeFrameRateEquivalent": 59.89073474585019
+        }
+      },
+      "renderedFpsDirectlyMeasured": false,
+      "frameRateEquivalentQualified": true
+    },
+    "ownerReport": {
+      "utc": "2026-10-17T17:46:50.004250+00:00",
+      "source": "owner report in this conversation",
+      "text": "tivemos grandes melhoras",
+      "significantImprovementReported": true,
+      "explicitBothControlsConfirmed": false,
+      "explicitHostExitConfirmed": false,
+      "allGamesOrHostRolesValidated": false
+    },
+    "allGamesValidated": false,
+    "bothHostRolesValidated": false,
+    "stablePromoted": false,
+    "noSettingChangedDuringCapture": true
   }
 }
