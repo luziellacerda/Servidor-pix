@@ -1,0 +1,197 @@
+{
+  "schema": "station.r172.server-return.v1",
+  "utc": "2026-10-17T17:29:16.218301+00:00",
+  "status": "candidate-ready-native-linux-authentication-pending",
+  "revision": "R172",
+  "sourceCommit": "8317792fa231831f788cb10b7061bb11bc9fa97d",
+  "serverOperatorSourceCommit": "09954af1901d6ae5a9e34d29ed8d4dfd6b66b67a",
+  "apk": {
+    "schema": "station.psx-buffer.final.r172.v1",
+    "passed": true,
+    "packageRevision": "R172",
+    "sourceCommit": "8317792fa231831f788cb10b7061bb11bc9fa97d",
+    "apkSha256": "4a92627952a4f9673ff402667825fcb1f926aaf85a44bef7882559f000c56c5b",
+    "apkBytes": 2714238050,
+    "baseApkSha256": "11231dae0ba776a56505102fdbb431632890ca3c4a85fcb086582930c316bbfd",
+    "signatureCertificateSha256": "7b16ee1aca7db7a50e7cc6c8612cf2a3568f474894a468865d842bf720c89825",
+    "v2": true,
+    "v3": true,
+    "zipAlignment16KiB": true,
+    "versionCode": 14,
+    "minimumSdk": 26,
+    "targetSdk": 34,
+    "checkedEntries": 13861,
+    "preservedEntryCount": 13855,
+    "replacedEntries": [
+      "AndroidManifest.xml",
+      "assets/station-online/engines.json",
+      "classes35.dex",
+      "lib/arm64-v8a/libstation_dolphin_runtime.so",
+      "lib/arm64-v8a/libstation_mupen64plus_runtime.so",
+      "lib/arm64-v8a/libstation_psx_online.so"
+    ],
+    "changedDexPartitions": [
+      "classes35.dex"
+    ],
+    "preservedDexPartitions": 39,
+    "unsignedPackageReceiptSha256": "425eef10f8166cb1fc366fd4e2793720ed14249ce26745e14b880f41fc77918b",
+    "signerRecipeSha256": "ba63a179202a5a4d65fd49db0c85c77b43ab6377ce96129410af3c687115e946",
+    "installed": false,
+    "serverRegistered": false,
+    "productionUpdaterEnabled": false,
+    "physicalGameplayValidated": false,
+    "physicalInstallerValidated": false,
+    "stable": false
+  },
+  "kit": {
+    "schema": "station.r172.private-kit-receipt.v1",
+    "passed": true,
+    "apkSha256": "4a92627952a4f9673ff402667825fcb1f926aaf85a44bef7882559f000c56c5b",
+    "zipSha256": "cd0a4e43bd48a04cc5b8fc72e9a8236f737f13ed0e46a5eb556774d1d8e326be",
+    "zipBytes": 15023145,
+    "fileCount": 62,
+    "elfCount": 27,
+    "engineIds": {
+      "psx": "pcsx-rearmed-ff81ed17-player-v3-7a14d3a4d304",
+      "n64": "mupen64plus-ae-33bf7021-n64-v3-8cfc9b1a45d4",
+      "gamecube": "dolphin-5102a033-gamecube-v3-ff5113148661",
+      "wii": "dolphin-5102a033-wii-v3-ff5113148661"
+    },
+    "recipeSha256": "ba21168cdfafc2cb160e15c0278ac519601b71261635a0c098f73a18447a8595",
+    "serverApplied": false,
+    "physicalGameplayValidated": false
+  },
+  "sourceChecks": {
+    "passed": true,
+    "protocolChecks": 202916,
+    "adapterChecks": 16098,
+    "adapterFixtureRuns": 513,
+    "sessionLaunchWifiFixtureChecks": 111,
+    "timingModelCases": 90,
+    "javaNativeCanonicalPolicyIdentical": true,
+    "manifestDonor13Successor14Passed": true,
+    "physicalGameplayValidated": false
+  },
+  "preflight": {
+    "schema": "station.r172.server-preflight.v1",
+    "passed": true,
+    "baselineAppliedR171": true,
+    "enginesAdded": 4,
+    "profilesAdded": 492,
+    "modesAdded": 0,
+    "modeEngineBindingsAdded": 492,
+    "before": {
+      "catalogRevision": 100,
+      "catalogItems": 4744,
+      "engines": 103,
+      "profiles": 18372,
+      "modes": 13457
+    },
+    "after": {
+      "catalogRevision": 100,
+      "catalogItems": 4744,
+      "engines": 107,
+      "profiles": 18864,
+      "modes": 13457
+    },
+    "modeCounts": {
+      "psx": 93,
+      "n64": 387,
+      "gamecube": 9,
+      "wii": 3
+    },
+    "previousBindingsPreserved": true,
+    "previousDecisionFieldsPreserved": true,
+    "profilesCompactBytes": 16419134,
+    "modesCompactBytes": 9176895,
+    "profilesIndentedBytes": 18891052,
+    "maximumProfileBytes": 18874368,
+    "maximumModeBytes": 9437184,
+    "candidateSha256": {
+      "manifest": "746cc6705fe8c189fa6c53d90f2e212c9be551d6d84db6c9192cb718e1cc4f56",
+      "profiles": "e342eeb18344043ac7f4593ef04e7a29a52e73e386d2a0d54efba9313c990b6c",
+      "modes": "271c387b52cf453cd25868d49e4e183f8fa82da6dc0c2ad606ae908b32e5cbc6"
+    },
+    "exactEngineIds": {
+      "psx": "pcsx-rearmed-ff81ed17-player-v3-7a14d3a4d304",
+      "n64": "mupen64plus-ae-33bf7021-n64-v3-8cfc9b1a45d4",
+      "gamecube": "dolphin-5102a033-gamecube-v3-ff5113148661",
+      "wii": "dolphin-5102a033-wii-v3-ff5113148661"
+    },
+    "profileSha256": {
+      "psx": "86f543015f84ca292c6853d10cbc58e4869b825520dbff117a4868bf18637683",
+      "n64": "ef8bfd6e6287a205da4f73422a194c7fc05b9246363a8311501a6efa3bca2b63",
+      "gamecube": "89dc579c37afab7731a2d7322ab7fcf70ed0afa86ba7e491a605c45cd5443fc1",
+      "wii": "cf3b214d63ce324a82b331fc96a95c6f35e8cc1c7b6bc2bcd659cf35743ceaed"
+    },
+    "serverApplied": false,
+    "physicalGameplayValidated": false
+  },
+  "serverApplied": false,
+  "installedOnMeasuredPhones": false,
+  "physicalPerformanceApproved": false,
+  "currentlyInstalledRevision": "R171",
+  "currentlyAppliedServerRevision": "R171",
+  "functionalDelta": {
+    "psxInputDelayFrames": {
+      "before": 4,
+      "after": 8
+    },
+    "additionalNominalControlDelayMilliseconds": 66.67,
+    "frameskipEnabled": false,
+    "emulatedClockChanged": false,
+    "coreBiosRenderOrAudioOptionsChanged": false,
+    "newThreadsTimersOrPolling": false,
+    "n64LogicChanged": false,
+    "networkChanged": false
+  },
+  "userQuestion": {
+    "frameskip1Or2TestedOnPhones": false,
+    "frameskipAssessment": "Can reduce rendering cost, but cannot supply missing remote input; only useful if graphics work is measured as bottleneck.",
+    "fps45Assessment": "Rendering at45 and executing the emulated machine at45 are different. Reducing a60Hz machine to45Hz slows game/audio25%.",
+    "backgroundWorkAssessment": "Thread scheduling examined; no unrelated task proved to account for all missing frames."
+  },
+  "authorities": {
+    "candidateBuild": "/mnt/DADOS/station-build-r172-20261017",
+    "nativeRegistration": "/mnt/DADOS/station-r172-activation-20261017",
+    "model": "/mnt/DADOS/station-r171-online-comparison-20261017/stall-bios-audit"
+  },
+  "sources": [
+    "https://docs.libretro.com/library/pcsx_rearmed/",
+    "https://docs.libretro.com/development/retroarch/netplay/"
+  ],
+  "stable": false,
+  "productionUpdaterEnabled": false,
+  "measuredBaseline": {
+    "revision": "R171",
+    "nativeFrameRateEquivalent": {
+      "host": 46.2213,
+      "guest": 46.1377
+    },
+    "nativeAudioSpeedPercent": {
+      "moto_g52": 77.1463,
+      "SM_A566E": 76.8342
+    },
+    "audioDropsInObservedLogs": 0,
+    "frontendCpuPercentOfOneCore": {
+      "moto_g52": 0.8,
+      "SM_A566E": 1.1
+    },
+    "coreOwnerScheduling20Seconds": {
+      "moto_g52": {
+        "runningSeconds": 12.188659,
+        "sleepingSeconds": 7.218724,
+        "runnableSeconds": 0.554214
+      },
+      "SM_A566E": {
+        "runningSeconds": 6.966681,
+        "sleepingSeconds": 12.775385,
+        "runnableSeconds": 0.208188
+      }
+    },
+    "a56ThermalStatus": 3,
+    "thermalSoleCauseProven": false,
+    "relayPreviousMaximumInternalForwardMilliseconds": 0.442,
+    "renderedFpsMeasuredByThisByteCounter": false
+  }
+}

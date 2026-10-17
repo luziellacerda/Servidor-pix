@@ -1,3 +1,28 @@
+<!-- STATION-R172-CANDIDATE-PREPARED-20261017 -->
+## R172 preparada; ainda não aplicada nem instalada
+
+Candidata PSX com antecedência assinada4→8 quadros, mesmo core/BIOS/opções e
+relógio; cerca de67ms extras de atraso nominal no controle. Modelo reproduziu a
+limitação, sem comprovar correção física. Não habilitou frameskip ou45fps.
+Fonte congelada8317792; APK4a926279, versionCode14, certificado original;
+13.855 entradas e39 DEX preservados. Recibos em r172/server-return.json.
+
+A R171 continua instalada nos dois celulares e cadastrada no servidor. Não
+interromper partida ativa. Há uma única autenticação nativa do Linux pendente
+em /mnt/DADOS/station-r172-activation-20261017/authentication-request.json;
+conferir authentication-result/native-started/data-applied/completed antes de
+qualquer ação. Não executar novamente operadores antigos nem iniciar outro
+cadastro concorrente. Preparação validou4 owners+492 perfis e extensão de492
+listas de owners; decisões/modos anteriores intactos, sem restart da API.
+
+APK: /mnt/DADOS/station-build-r172-20261017/final/TurboStations-Premium-R172.apk.
+Dados de produção atuais:103 owners/18.372 perfis/13.457 modos, catálogo100/4.744.
+Depois da aplicação real, conferir capabilities/admissão/recusas assinadas e
+instalar os dois somente após a saída da partida. Medir imagem, áudio,
+controles, saída e temperatura; não promover a estável pelo modelo ou build.
+
+## Histórico preservado
+
 <!-- STATION-R171-PHYSICAL-PERFORMANCE-FAILED-20261017 -->
 ## R171 nos dois aparelhos: lentidão permanece; pesquisa PSX concluída
 
