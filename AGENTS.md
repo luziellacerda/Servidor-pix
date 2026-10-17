@@ -1,3 +1,19 @@
+<!-- STATION-APP-UPDATES-20261017 -->
+## Atualizador interno autorizado, fonte preparada
+
+Ler o topo do MESMO handoff e updates-20261017/README.md/implementation.json.
+Sete classes novas + três hooks no cliente, três rotas protegidas e publicador
+privado no servidor. Código/testes preparados, sem deploy, APK de produção,
+instalação ou homologação Android. Backup privado/assinatura original ainda
+necessários; juntar correções PSX ec2c693. Fluxo por toque no aviso autorizado
+pelo mantenedor, preservando confirmação Android; não é permissão para
+instalar automaticamente por USB, alterar SDK ou contornar o sistema.
+Congelar fontes, preservar DEX fora do escopo e dados, renovar identidades e
+kit exato, cadastrar/validar antes de publicar APK. Não repetir R169 aplicada.
+80 checks servidor,43Java,8receitas,13publicador e regressões passaram;
+store/painel de laboratório são fixtures explicitadas, nunca empacotadas.
+Servidor f0aa/PID238611, rede, licenças, outros produtos preservados.
+
 <!-- STATION-PSX-RESUME-PACING-20261016 -->
 ## PSX: correção de inicialização e espera de envio preparada
 

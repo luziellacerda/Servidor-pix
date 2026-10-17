@@ -1,0 +1,78 @@
+{
+  "schema": "station.app-update.prepared.v1",
+  "generatedUtc": "2026-10-17T12:55:44.061868+00:00",
+  "status": "IMPLEMENTED_IN_SOURCE_NOT_DEPLOYED",
+  "serverFeatureDeployed": false,
+  "productionApkBuiltSignedOrInstalled": false,
+  "physicalInstallerAndUiValidated": false,
+  "publishedProductionUpdate": false,
+  "requiresPrivateCurrentBuildAndOriginalSigning": true,
+  "userInitiatedUpdateFlow": true,
+  "androidUserActionRequiredByThisImplementation": true,
+  "routes": [
+    "POST /v1/station/updates/check",
+    "POST /v1/station/updates/authorize",
+    "GET /v1/station/updates/artifacts/{grantId}"
+  ],
+  "grantSeconds": 60,
+  "grantConsumedAtomicallyOnce": true,
+  "storage": "private SHA-addressed APK with atomic current.json",
+  "newDatabaseMigration": false,
+  "sourceClientHashes": {
+    "integration/secure-app-updates/SCOPED-TYPES.json": "c9183441fbc36ecfb114f80a67168fab3409e5727b3ee9489aceaad5f084554b",
+    "integration/secure-app-updates/manifest-fragment.xml": "c4489b4c0cc16e47d0164abee963adc8c73ac06a2a2d645af755182654c39d11",
+    "integration/secure-app-updates/tests/source_recipe_checks.py": "da58d8e6e8602c16bd2121968e95bffb19bd6378864ad33b3f8901beb295c9f8",
+    "integration/secure-app-updates/tests/StationAppUpdateProbe.java": "7fc809a3519da31211b8ef9e4dde36d77e7f41b8e275a71e96eb9eb1775046f7",
+    "integration/secure-app-updates/tests/run_probe.py": "46694c944b90831135c31c4543c0afbd9ab190d4c4c8718d533cdada67bd0bf1",
+    "integration/secure-app-updates/recipe/compile_overlay.py": "fcf99ec79196439b1b13e1f6c73c66364f647f7399bf290708e30d85952fab10",
+    "integration/secure-app-updates/recipe/patch_sources.py": "985dcbcb4fff90eada5b509a77189ef04f338997c603e80bb86d3b4bf87b29c3",
+    "integration/secure-app-updates/recipe/merge_manifest.py": "d67f6e57ca74cd608121a4f1d7dbc3da9baf8180ed84f9cd3a5f5014efec2ebf",
+    "integration/secure-app-updates/tests/fixtures/StationDownloadPanel.java": "8453e304554d4583d193d5b0c50f43e3c4fa72bd95dceeed3b02d064e251f087",
+    "integration/secure-app-updates/java/org/emulationstation/frontend/station/StationAppUpdateActivity.java": "aed73e1b0d7345524775f9489e7d2fc57f30630adfb11d3061dd6961561e1efe",
+    "integration/secure-app-updates/java/org/emulationstation/frontend/station/StationAppUpdateService.java": "7a931362aaea08a541b45a3a5aeef49740dff778e7a8e4264d92417f2c618d6c",
+    "integration/secure-app-updates/java/org/emulationstation/frontend/station/StationAppUpdateUi.java": "3cc29bc3c69465fb68710e5ee5c4a5e77309b79e2377531bc539ce12143d2c3d",
+    "integration/secure-app-updates/java/org/emulationstation/frontend/station/StationAppUpdateFiles.java": "ada7c64a8ff19698b7714f4dab95b985abf4c957a6d644fa8ef947ce60f6be4a",
+    "integration/secure-app-updates/java/org/emulationstation/frontend/station/StationAppUpdater.java": "da1a86d04520f9eec3a9a30a2f75e740ec5f1f12aa6605285da5ff5d08cef0bf",
+    "integration/secure-app-updates/java/org/emulationstation/frontend/station/StationAppRelease.java": "cdbc93f81802c6ad6c287fd069e9c44119c28edc49a1f7f3a82d14f1195b61d3",
+    "integration/secure-app-updates/java/org/emulationstation/frontend/station/StationAppUpdateReceiver.java": "1d90bca6adc52823090492fcf625ec050db20b6f16702dba1f0d7a2fee462120"
+  },
+  "sourceServerHashes": {
+    "src/TurboRamaSuiteOnlineServer/Program.cs": "18fb22e95775115378637b6816176fd8c24a475e4c60a4200d818525a51549eb",
+    "src/TurboRamaSuiteOnlineServer/StationAppUpdates.cs": "9139855202a95a286868a90e73d1a63220b48a20d7cbfe16842f66326d03288f",
+    "src/TurboRamaSuiteOnlineServer/StationAppUpdateEndpoints.cs": "e1c7bfce2084448be7e592469389b95466c2bf3d6c54e7bd0a84f631f23aba70",
+    "ops/station-app-updates/publish.py": "a585921894991b040785325aba21c7de91021ab73dc65dc11e9ecc3820138597"
+  },
+  "verification": {
+    "newServerChecks": 80,
+    "newServerGrantStore": "synthetic; existing production Postgres adapter and SQL reused unchanged",
+    "clientActualApiAndStagingChecks": 43,
+    "clientCompileSdk": 36,
+    "isolatedD8MinimumApi": 28,
+    "panelSurfaceFixtureUsedForIsolatedCompilation": true,
+    "fixturePackagedInCompiledModule": false,
+    "manifestAndSourceRecipeTests": 8,
+    "publisherChecks": 13,
+    "publisherUsesRealApksignerAaptD8Zipalign": true,
+    "publisherApksAndKeys": "disposable synthetic fixtures; never installed",
+    "existingSuiteStationRegression": "passed; no production database/provider used",
+    "compiledModuleClasses": 32,
+    "isolatedDexSha256": "7775949928952c9ab4ab61f681276e18383e3030dddc0fdd7522e332590a2c8e",
+    "nativeRootProductionPublicationValidated": false,
+    "actualApkNativeBytesCheckedBeforePublication": true
+  },
+  "liveBaselinePreserved": {
+    "pid": 238611,
+    "restarts": 0,
+    "dllPrefix": "f0aa8c5c2e41",
+    "network": "100Mbps up / 800Mbps down, onboard",
+    "registriesLicensesCoversRomsAndSavesUnchanged": true
+  },
+  "pending": [
+    "Receive private complete current compilation/signing inputs.",
+    "Merge updater and existing ec2c693 PSX fixes into preserved current APK; regenerate exact identities and private kit.",
+    "Register final engine identities and publish Station API feature without active sessions, following fresh baseline and native authorization if required.",
+    "Validate actual Android notice/download/permission/install/data persistence before publishing a production update."
+  ],
+  "grantBoundToSessionDeviceAndLicense": true,
+  "gameplayEpochChanged": false
+}

@@ -157,6 +157,14 @@ if (enabled || stationEnabled)
             sp.GetRequiredService<StationResponseSigner>(),
             stationPepper!, stationLibrary, stationGrants, stationMonitor,
             sp.GetRequiredService<StationSecurityPolicy>(), sp.GetRequiredService<IHttpContextAccessor>()));
+        builder.Services.AddSingleton<IStationAppUpdateAccess, StationAppUpdateAccess>();
+        builder.Services.AddSingleton(new StationAppUpdateCatalog(
+            builder.Configuration["Station:Updates:Directory"],
+            builder.Configuration.GetValue("Station:Updates:Enabled", false)));
+        builder.Services.AddSingleton(sp => new StationAppUpdates(
+            sp.GetRequiredService<StationAppUpdateCatalog>(),
+            sp.GetRequiredService<IStationAppUpdateAccess>(),
+            sp.GetRequiredService<StationResponseSigner>(), stationGrants));
     }
     if (emulationStationEnabled)
     {
@@ -313,6 +321,7 @@ Map<ChallengeRequest>("/v1/suite/challenges", ChallengeAsync);
 Map<SessionProof>("/v1/suite/sessions", (s, r, c) => s.SessionAsync(r, c));
 app.MapEmulationStation(emulationStationEnabled);
 app.MapStation(stationEnabled);
+app.MapStationAppUpdates(stationEnabled);
 app.MapStationOnline(stationEnabled && builder.Configuration.GetValue("Station:Online:Enabled", false));
 app.MapNetworkInventory(networkInventoryEnabled);
 if (inventoryEnabled)

@@ -1,3 +1,39 @@
+<!-- STATION-APP-UPDATES-20261017 -->
+# Atualizador interno protegido preparado — 17/10/2026
+
+O usuário solicitou aviso no app e atualização obtida do servidor privado,
+com link temporário. A [implementação e contrato](updates-20261017/README.md)
+estão preparados: três rotas, sessão/prova/assinatura/grants existentes,
+APK privado imutável e publicação atômica. Grant60s, uso único, vinculado à
+sessão/aparelho/licença. App com aviso, progresso, cancelamento, hash durante
+o download, certificado original, versão crescente e PackageInstaller.
+
+**Fonte preparada; serviço e APK de produção não alterados.** A primeira
+montagem exige o backup privado atual/assinatura original prometidos pelo
+usuário. O fluxo por toque no aviso foi autorizado; a confirmação do Android
+é mantida. Não confundir isso com instalação automática por USB ou root.
+
+Servidor80 checks, Java43, receitas8 e publicador13 passaram; regressões
+Suite/Station passaram. Houve compilação SDK/D8 isolada e APKs sintéticos
+para testar ferramentas, não uma compilação do aplicativo completo nem
+homologação Android. Ler `updates-20261017/implementation.json` para hashes
+escopo/limites. Fixtures de teste não entram no APK.
+
+No TurboElden, usar `integration/secure-app-updates`: sete classes novas,
+três hooks aplicados aos fontes atuais, receita de compilação congelada,
+merge do Manifest com versionCode crescente e escopo fechado de famílias.
+Incluir as correções PSX de ec2c693 na mesma primeira compilação. Preservar
+a base atual, SDK, XML/CAS, cores, controles, dados, licença e assinatura.
+Regenerar fingerprints/kit exato, cadastrar e validar antes de publicar APK.
+Não reutilizar IDs antigos com novos bytes nem oferecer APK ainda não testado.
+
+Servidor ativo R169/PID238611/DLLf0aa8c5c preservado; sem restart, alteração
+de registro, banco, rede100/800 ou outros serviços. A ferramenta de publicação
+recusa motor v3 sem correspondência no registro efetivo. O mesmo handoff
+consolidado continua sendo a referência; não repetir operadores R169.
+
+## Histórico preservado
+
 <!-- STATION-PSX-RESUME-PACING-20261016 -->
 # PSX: tela preta e lentidão analisadas nos dois aparelhos — 16/10/2026
 
